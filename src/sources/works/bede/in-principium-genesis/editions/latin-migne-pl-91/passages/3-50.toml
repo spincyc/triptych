@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-50"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.50"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[278, 278]]
+text = """
+Perrexitque Abram vadens, et ultra progrediens ad meridiem. Meridiana quippe plaga, unde sol ardentior mundum illustrare consuevit, fervorem dilectionis mystice demonstrat, qua corda electorum, ne in rerum infimarum appetitu ac desideriis torpeant, Sole justitiae desuper, videlicet Christo, illucente, semper accenduntur. Itaque Abraham videre ac nosse desiderans terram quam accepturus erat in possessionem, humana quidem curiositate perrexit, vadens et ultra progrediens ad meridiem: mystica autem significatione docuit sese ascendentem de virtute in virtutem continuum divinae dilectionis, sicut et omnes electos, semper agere profectum, donec ipsum videre donetur Deum deorum in Sion.\
+"""
+transcription_segments = [
+  { line = 278, text = """
+Perrexitque Abram vadens, et ultra progrediens ad meridiem. Meridiana quippe plaga, unde sol ardentior mundum illustrare consuevit, fervorem dilectionis mystice demonstrat, qua corda electorum, ne in rerum infimarum appetitu ac desideriis torpeant, Sole justitiae desuper, videlicet Christo, illucente, semper accenduntur. Itaque Abraham videre ac nosse desiderans terram quam accepturus erat in possessionem, humana quidem curiositate perrexit, vadens et ultra progrediens ad meridiem: mystica autem significatione docuit sese ascendentem de virtute in virtutem continuum divinae dilectionis, sicut et omnes electos, semper agere profectum, donec ipsum videre donetur Deum deorum in Sion.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

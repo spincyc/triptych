@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.20-3"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "20.3"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 12-15.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[221, 221]]
+text = """
+VERS. 12-15.-- Respondit Abraham: Alias autem vere soror mea est, filia patris mei, et non filia matris meae. Pater enim, ut nonnulli volunt, pro fratre ponitur, Thara itaque genuit Abraham, et Aran, cujus | filia exstitit, Scriptura teste, Saraa. Et ideo dixit, sororem suam esse, sive quia de semine su patris procreando per filium nata est Saraa, et consuetudo est etiam Scripturarum consobrinos fratres appellari, similiter et sorores. Propterea non immerito ait: Alias soror mea est. Et quia fuerunt Abraham et Aran de uno patre, et non de una matre, idcirco subjunxit, filia patris mei, et non filia matris meae.\
+"""
+transcription_segments = [
+  { line = 221, text = """
+VERS. 12-15.-- Respondit Abraham: Alias autem vere soror mea est, filia patris mei, et non filia matris meae. Pater enim, ut nonnulli volunt, pro fratre ponitur, Thara itaque genuit Abraham, et Aran, cujus | filia exstitit, Scriptura teste, Saraa. Et ideo dixit, sororem suam esse, sive quia de semine su patris procreando per filium nata est Saraa, et consuetudo est etiam Scripturarum consobrinos fratres appellari, similiter et sorores. Propterea non immerito ait: Alias soror mea est. Et quia fuerunt Abraham et Aran de uno patre, et non de una matre, idcirco subjunxit, filia patris mei, et non filia matris meae.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

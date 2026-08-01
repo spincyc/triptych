@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.190"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "190"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 43.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[194, 194]]
+text = """
+(Vers. 43.) Et clamavit ante eum praeco, et constituit eum super omnem terram Aegypti. Pro quo Aquila transtulit: Et clamavit in conspectu ejus adgeniculationem. Symmachus ipsum Hebraicum sermonem interpretans ait: Et clamavit ante eum ABRECH (אברך). Unde mihi videtur non tam praeco, sive adgeniculatio, quae in salutando vel adorando Joseph accipi potest, intelligenda: quam illud quod Hebraei tradunt, dicentes patrem tenerum, et hoc sermone transferri; AB (אב) quippe dicitur pater, RECH (רך) delicatus sive tenerrimus; significante Scriptura, quod juxta prudentiam quidem pater omnium fuerit: sed juxta aetatem tenerrimus adolescens et puer.\
+"""
+transcription_segments = [
+  { line = 194, text = """
+(Vers. 43.) Et clamavit ante eum praeco, et constituit eum super omnem terram Aegypti. Pro quo Aquila transtulit: Et clamavit in conspectu ejus adgeniculationem. Symmachus ipsum Hebraicum sermonem interpretans ait: Et clamavit ante eum ABRECH (אברך). Unde mihi videtur non tam praeco, sive adgeniculatio, quae in salutando vel adorando Joseph accipi potest, intelligenda: quam illud quod Hebraei tradunt, dicentes patrem tenerum, et hoc sermone transferri; AB (אב) quippe dicitur pater, RECH (רך) delicatus sive tenerrimus; significante Scriptura, quod juxta prudentiam quidem pater omnium fuerit: sed juxta aetatem tenerrimus adolescens et puer.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

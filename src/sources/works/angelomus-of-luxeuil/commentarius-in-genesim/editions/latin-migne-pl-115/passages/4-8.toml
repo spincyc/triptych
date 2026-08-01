@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.4-8"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "4.8"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 13-14.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[98, 98]]
+text = """
+VERS. 13, 14.-- Dixitque Cain ad Dominum: Major est iniquitas mea quam ut veniam merear. Ecce desperando locutus est, quod est peccatum maximum. Non enim est confessus scelus suum, sed ad desperationis malum proruit. Unde et subjunxit: Ecce! Ejicis me hodie a facie terrae, et a facie tua abscondar, et ero vagus et profugus. Vel sicut Septuaginta transtulerunt: Gemens et tremens in terra. Omnis igitur qui invenerit me, occidet me. Ideo taliter se damnavit, ut compendio mortis cruciatus evaderet praesentes.\
+"""
+transcription_segments = [
+  { line = 98, text = """
+VERS. 13, 14.-- Dixitque Cain ad Dominum: Major est iniquitas mea quam ut veniam merear. Ecce desperando locutus est, quod est peccatum maximum. Non enim est confessus scelus suum, sed ad desperationis malum proruit. Unde et subjunxit: Ecce! Ejicis me hodie a facie terrae, et a facie tua abscondar, et ero vagus et profugus. Vel sicut Septuaginta transtulerunt: Gemens et tremens in terra. Omnis igitur qui invenerit me, occidet me. Ideo taliter se damnavit, ut compendio mortis cruciatus evaderet praesentes.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

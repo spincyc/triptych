@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-51"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.51"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[178, 178]]
+text = """
+Anno sexcentesimo vitae Noe, mense secundo, septimo decimo die mensis, rupti sunt omnes fontes abyssi magnae, et cataractae coeli apertae sunt, et facta est pluvia super terram quadraginta diebus et quadraginta noctibus. Menses apud Hebraeos non nisi juxta lunae cursum a prima usque ad primam computantur, primusque eorum mensis in quo pascha fieri praeceptum est, et in quo mundus est factus, appellatur Nisan, quem nos Aprilem vocamus. Secundus Jair, quem nos Maium dicimus, cujus die septimo decimo, id est, cum luna ejusdem mensis esset septima decima, venit diluvium, cum eodem ipso die intrasset Noe in arcam cum hominibus et animantibus cunctis ac volatilibus, quae per illam erant salvanda, hoc est enim quod sequitur.\
+"""
+transcription_segments = [
+  { line = 178, text = """
+Anno sexcentesimo vitae Noe, mense secundo, septimo decimo die mensis, rupti sunt omnes fontes abyssi magnae, et cataractae coeli apertae sunt, et facta est pluvia super terram quadraginta diebus et quadraginta noctibus. Menses apud Hebraeos non nisi juxta lunae cursum a prima usque ad primam computantur, primusque eorum mensis in quo pascha fieri praeceptum est, et in quo mundus est factus, appellatur Nisan, quem nos Aprilem vocamus. Secundus Jair, quem nos Maium dicimus, cujus die septimo decimo, id est, cum luna ejusdem mensis esset septima decima, venit diluvium, cum eodem ipso die intrasset Noe in arcam cum hominibus et animantibus cunctis ac volatilibus, quae per illam erant salvanda, hoc est enim quod sequitur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

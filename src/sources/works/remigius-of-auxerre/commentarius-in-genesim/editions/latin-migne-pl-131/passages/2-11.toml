@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.2-11"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "2.11"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 19.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[72, 73]]
+text = """
+Vers. 19. Formatis igitur, etc. Superius ex aquis volatilia progenita dictum est. Nunc vero dicit e terra simul caeteris animantibus esse formata: quod duplici modo solvi potest, ut vel subaudiendum relinquatur, cum dicit: formatis de humo animantibus terrae et volatilibus coeli, subaudis, de aqua formatis: vel universaliter terrae nomine comprehendantur | et aquae quae in terra sunt, sicut et in psalmo Propheta simul cum terra comprehendit etiam quae in aere et in aquis constant, dicens: Laudate Dominum de terra, dracones et omnes abyssi, ignis, grando, nix, glacies, spiritus procellarum (Psal. CXLVIII, 7, 8), etc.-- Et adduxit eam ad Adam. Non sicut pastor minans gregem suum, sed adduxit, id est nutu suae dispositionis venire fecit, sicut et in diluvio ex universis animantibus in arcam congregari fecit. Omne quod vocavit Adam, ipsum est nomen ejus. Hebraice Adam rebus omnibus nomina imposuit. Sed facta divisione linguarum, singulae gentes secundum proprietatem | et placitum suum universa vocitaverunt. Ideo autem Dominus cuncta animantia venire fecit ad Adam, ut ex suo arbitrio eis nomina imponeret, ut per hoc cognosceret quia charior et dignior aliis rebus haberetur cui talis potestas a Domino concedebatur.
+
+Mystice Adam Christum significat, qui de sinu paternae majestatis descendens hominibus visendus apparuit. Qui universae creaturae, id est hominibus, quos regenerando in novam transtulit creaturam, nomen imposuit, quia eos ex suo nomine Christianos vocari voluit, sicut per prophetam dictum est: Servos suos vocabit nomine alio (Isa. LXV, 15).\
+"""
+transcription_segments = [
+  { line = 72, text = """
+Vers. 19. Formatis igitur, etc. Superius ex aquis volatilia progenita dictum est. Nunc vero dicit e terra simul caeteris animantibus esse formata: quod duplici modo solvi potest, ut vel subaudiendum relinquatur, cum dicit: formatis de humo animantibus terrae et volatilibus coeli, subaudis, de aqua formatis: vel universaliter terrae nomine comprehendantur | et aquae quae in terra sunt, sicut et in psalmo Propheta simul cum terra comprehendit etiam quae in aere et in aquis constant, dicens: Laudate Dominum de terra, dracones et omnes abyssi, ignis, grando, nix, glacies, spiritus procellarum (Psal. CXLVIII, 7, 8), etc.-- Et adduxit eam ad Adam. Non sicut pastor minans gregem suum, sed adduxit, id est nutu suae dispositionis venire fecit, sicut et in diluvio ex universis animantibus in arcam congregari fecit. Omne quod vocavit Adam, ipsum est nomen ejus. Hebraice Adam rebus omnibus nomina imposuit. Sed facta divisione linguarum, singulae gentes secundum proprietatem | et placitum suum universa vocitaverunt. Ideo autem Dominus cuncta animantia venire fecit ad Adam, ut ex suo arbitrio eis nomina imponeret, ut per hoc cognosceret quia charior et dignior aliis rebus haberetur cui talis potestas a Domino concedebatur.\
+""" },
+  { line = 73, text = """
+Mystice Adam Christum significat, qui de sinu paternae majestatis descendens hominibus visendus apparuit. Qui universae creaturae, id est hominibus, quos regenerando in novam transtulit creaturam, nomen imposuit, quia eos ex suo nomine Christianos vocari voluit, sicut per prophetam dictum est: Servos suos vocabit nomine alio (Isa. LXV, 15).\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.41"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "41"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 27.' and running to the next such heading, in 2 paragraphs, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[43, 44]]
+text = """
+(Vers. 27.) Dilatet Deus Japheth, et habitet in tabernaculis Sem. De Sem, Hebraei; de Japheth, populus gentium nascitur. Quia igitur lata est multitudo credentium, a latitudine, quae IAPHETH (יפת) dicitur, latitudo nomen accepit. Quod autem ait: Et habitet in tabernaculis Sem, de nobis prophetatur, qui in eruditione et scientia Scripturarum, ejecto Israele, versamur.
+
+(Vers 29.) Et facti sunt omnes dies Noe nongenti quinquaginta anni. Ecce post diluvium trecentis quinquaginta annis vixit Noe. Ex quo perspicuum est, centum viginti annos generationi illi, ut supra diximus, ad poenitentiam datos, et non vitae mortalium constitutos.\
+"""
+transcription_segments = [
+  { line = 43, text = """
+(Vers. 27.) Dilatet Deus Japheth, et habitet in tabernaculis Sem. De Sem, Hebraei; de Japheth, populus gentium nascitur. Quia igitur lata est multitudo credentium, a latitudine, quae IAPHETH (יפת) dicitur, latitudo nomen accepit. Quod autem ait: Et habitet in tabernaculis Sem, de nobis prophetatur, qui in eruditione et scientia Scripturarum, ejecto Israele, versamur.\
+""" },
+  { line = 44, text = """
+(Vers 29.) Et facti sunt omnes dies Noe nongenti quinquaginta anni. Ecce post diluvium trecentis quinquaginta annis vixit Noe. Ex quo perspicuum est, centum viginti annos generationi illi, ut supra diximus, ad poenitentiam datos, et non vitae mortalium constitutos.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

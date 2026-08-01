@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.49-8"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "49.8"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 12.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[444, 444]]
+text = """
+Vers. 12. Pulchriores sunt oculi ejus vino. Oculi Christi apostoli sunt et evangelistae, qui nobis spiritalem scientiam infuderunt. Vinum vero austeritatem legalis observantiae designat. Oculi ergo Christi vino pulchriores sunt, quia doctrina evangelica clarior est legali traditione. Dentes vero sancti praedicatores | sunt, qui sicut dentes cibos, ita infideles a sua duritia comminuunt, ut in corpus Ecclesiae recipiantur. Lac vero est legalis traditio, qua Judaei tanquam parvuli nutriebantur, non valentes recipere solidum cibum. Dentes ergo lacte candidiores sunt, quia praedicatores Novi Testamenti praecellunt legis doctores. Et bene candidi dicuntur, quia qui alios docent, mundi et ab omni labe peccati immunes esse debent.\
+"""
+transcription_segments = [
+  { line = 444, text = """
+Vers. 12. Pulchriores sunt oculi ejus vino. Oculi Christi apostoli sunt et evangelistae, qui nobis spiritalem scientiam infuderunt. Vinum vero austeritatem legalis observantiae designat. Oculi ergo Christi vino pulchriores sunt, quia doctrina evangelica clarior est legali traditione. Dentes vero sancti praedicatores | sunt, qui sicut dentes cibos, ita infideles a sua duritia comminuunt, ut in corpus Ecclesiae recipiantur. Lac vero est legalis traditio, qua Judaei tanquam parvuli nutriebantur, non valentes recipere solidum cibum. Dentes ergo lacte candidiores sunt, quia praedicatores Novi Testamenti praecellunt legis doctores. Et bene candidi dicuntur, quia qui alios docent, mundi et ab omni labe peccati immunes esse debent.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.46-2"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "46.2"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 15.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[386, 386]]
+text = """
+VERS. 15.-- Hi filii Liae, quos genuit in Mesopotamia Syriae cum Dina; animae filiorum et filiarum triginta tres. Nunquid istae omnes triginta et tres animae ex Lia in Mesopotamia Syriae natae sunt, dum ibi Jacob non plus viginti annis cum socero suo moratus est, et septem anni transierunt antequam Liam uxorem duxisset? Ideo etiam Scriptura sancta hos omnes in Mesopotamia ortos esse dixit, quoniam eorum patres ibi orti sunt.\
+"""
+transcription_segments = [
+  { line = 386, text = """
+VERS. 15.-- Hi filii Liae, quos genuit in Mesopotamia Syriae cum Dina; animae filiorum et filiarum triginta tres. Nunquid istae omnes triginta et tres animae ex Lia in Mesopotamia Syriae natae sunt, dum ibi Jacob non plus viginti annis cum socero suo moratus est, et septem anni transierunt antequam Liam uxorem duxisset? Ideo etiam Scriptura sancta hos omnes in Mesopotamia ortos esse dixit, quoniam eorum patres ibi orti sunt.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

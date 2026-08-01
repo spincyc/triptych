@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_type = "web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Bede's Latin as printed by Migne in 1850, in the public domain by age of both the text and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes."
+rights_jurisdiction = "United States"
+provenance = "Derived on 2026-08-01 from the hashed export above by the tracked script named in transformation. No model stood anywhere in the path: the bytes were fetched with curl, hashed, and transformed locally. The file holds 386 lines, one per printed paragraph. The letter to Acca stands at lines 1-5 and the four books at 6-109, 110-219, 220-301 and 302-386. Every line is prefixed by a braced locator, which for this work is always {1.0}: the printing marks no division the transcriber can count."
+retrieved = "2026-08-01"
+sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+byte_size = 485055
+path = "src/sources/works/bede/in-principium-genesis/editions/latin-migne-pl-91/artifacts/bede-genesis-latin-text-dac5a6e2/beda-in-principium-genesis.txt"
+derived_from = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-wikisource-export-d6d33522"
+transformation = "python3 scripts/migne_transcribe.py <export> --unit page --out beda-in-principium-genesis.txt, run over the exact bytes of the parent artifact. The script removes every wiki template whole except the closed table of prose-bearing ones it unwraps to a named parameter, and removes the Patrologia Latina navigation line, the Corpus Corporum encoding note, categories, footnote bodies, comments, tags and wiki headings; unwraps links; folds typographic punctuation to ASCII; strips Migne's inline column markers; normalises to NFC; collapses runs of whitespace; and writes one LF-terminated UTF-8 line per source paragraph, prefixed by a braced book-and-chapter locator taken from the printing's own CAPUT divisions."
+encoding = "utf-8"
+indexable = true
+notes = "Keyed text, not OCR. guidance/catena.md recorded that the unencumbered Latin is OCR wreckage and the clean Latin encumbered, measuring Migne PL 34's Internet Archive text layer at roughly one corrupted word in eight; that is true of the scan and false of the volume. This is the University of Zurich's Corpus Corporum encoding of Migne PL 91, keyed rather than scanned, republished on Latin Wikisource under a stated CC BY-SA 4.0 markup licence over a public-domain printing. It is a transcription of a web witness of that printing and not a collation against the printed column, so no passage taken from it rises above inspected."

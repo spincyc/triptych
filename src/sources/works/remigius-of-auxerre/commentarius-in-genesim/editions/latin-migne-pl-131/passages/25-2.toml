@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.25-2"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "25.2"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 2.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[283, 284]]
+text = """
+Vers. 2. Quae peperit. Hi qui de Cetura nati sunt occupaverunt terram Trogoditen et Arabiam, quae Eudemon dicitur, usque ad mare Rubrum.
+
+Allegorice sicut per Agar et Ismaelem designantur Judaei in servitutem generati, ita per Ceturam et ejus filios designantur haeretici qui in Novo Testamento | sub praetextu nominis Christi male de ejus veritate fidei senserunt. Unde bene postea Abraham filiis concubinarum munera largitus fuisse dicitur, haereditatem vero solus Isaac consecutus est, quia haereticis Christus in praesenti beneficia scientiae et intelligentiae tribuit, sola autem Ecclesia catholica ad regnum perducitur.\
+"""
+transcription_segments = [
+  { line = 283, text = """
+Vers. 2. Quae peperit. Hi qui de Cetura nati sunt occupaverunt terram Trogoditen et Arabiam, quae Eudemon dicitur, usque ad mare Rubrum.\
+""" },
+  { line = 284, text = """
+Allegorice sicut per Agar et Ismaelem designantur Judaei in servitutem generati, ita per Ceturam et ejus filios designantur haeretici qui in Novo Testamento | sub praetextu nominis Christi male de ejus veritate fidei senserunt. Unde bene postea Abraham filiis concubinarum munera largitus fuisse dicitur, haereditatem vero solus Isaac consecutus est, quia haereticis Christus in praesenti beneficia scientiae et intelligentiae tribuit, sola autem Ecclesia catholica ad regnum perducitur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

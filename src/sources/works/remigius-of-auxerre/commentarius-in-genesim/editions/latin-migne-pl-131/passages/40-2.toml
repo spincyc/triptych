@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.40-2"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "40.2"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 17.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[394, 394]]
+text = """
+Vers. 17. Et in uno canistro, quod erat excelsius, portare me omnes cibos, qui fiunt arte pistoria. In Graeco habetur, portare me chondriton, id est panem cibarium. Sed hoc non convenit Pharaoni, ut cibario pane vesceretur. Potuit tamen fieri, ut beatus Augustinus dicit, ut canistra videretur habere deorsum panes cibarios, supra quos erant omnia, quae fiunt arte pistoria. Mystice hi duo viri duo sunt populi, qui ambo graviter peccaverunt, ut Apostolus dicit: Non est distinctio Judaei et Graeci, | Omnes peccaverunt et egent gloria Dei (Rom. X, 12). Sed apparente vero Joseph, alter, id est Judaicus, non credendo in ligno crucis damnatus est, in ligno praevaricationis.\
+"""
+transcription_segments = [
+  { line = 394, text = """
+Vers. 17. Et in uno canistro, quod erat excelsius, portare me omnes cibos, qui fiunt arte pistoria. In Graeco habetur, portare me chondriton, id est panem cibarium. Sed hoc non convenit Pharaoni, ut cibario pane vesceretur. Potuit tamen fieri, ut beatus Augustinus dicit, ut canistra videretur habere deorsum panes cibarios, supra quos erant omnia, quae fiunt arte pistoria. Mystice hi duo viri duo sunt populi, qui ambo graviter peccaverunt, ut Apostolus dicit: Non est distinctio Judaei et Graeci, | Omnes peccaverunt et egent gloria Dei (Rom. X, 12). Sed apparente vero Joseph, alter, id est Judaicus, non credendo in ligno crucis damnatus est, in ligno praevaricationis.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

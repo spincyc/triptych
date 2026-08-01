@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.98"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "98"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 15-16.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[101, 101]]
+text = """
+(Vers. 15, 16.) Et projecit puerum subter abietem, et abiens sedit de contra longe, quasi jactu sagittae. Dixit enim: Non videbo mortem parvuli mei. Et sedit contra eum. Et statim jungitur: Exclamavit puer, et flevit, et audivit Deus vocem pueri de loco ubi erat. Et Dixit Angelus Dei ad Agar de coelo, et reliqua, nullum moveat. In Hebraeo enim post hoc, quod scriptum est, Non videbo mortem parvuli mei, ita legitur, quod ipsa Agar sederit contra puerum, et levaverit vocem suam, et fleverit, et exaudierit Deus vocem parvuli. Flente enim matre, et mortem filii miserabiliter praestolante, Deus exaudivit puerum: de quo pollicitus fuerat Abrahae, dicens: Sed et filium ancillae tuae in gentem magnam faciam (Gen. XVII, 20). Alioquin et ipsa mater non suam mortem, sed filii deplorabat. Pepercit igitur ei Deus, pro quo fuerat et fletus. Denique in consequentibus dicitur: Surge et tolle puerum, et tene manum ejus (Gen. XVII, 18). Ex quo manifestum est, eum qui tenetur, non oneri matri fuisse, sed comitem. Quod autem manu parentis tenetur, sollicitus monstratur affectus.\
+"""
+transcription_segments = [
+  { line = 101, text = """
+(Vers. 15, 16.) Et projecit puerum subter abietem, et abiens sedit de contra longe, quasi jactu sagittae. Dixit enim: Non videbo mortem parvuli mei. Et sedit contra eum. Et statim jungitur: Exclamavit puer, et flevit, et audivit Deus vocem pueri de loco ubi erat. Et Dixit Angelus Dei ad Agar de coelo, et reliqua, nullum moveat. In Hebraeo enim post hoc, quod scriptum est, Non videbo mortem parvuli mei, ita legitur, quod ipsa Agar sederit contra puerum, et levaverit vocem suam, et fleverit, et exaudierit Deus vocem parvuli. Flente enim matre, et mortem filii miserabiliter praestolante, Deus exaudivit puerum: de quo pollicitus fuerat Abrahae, dicens: Sed et filium ancillae tuae in gentem magnam faciam (Gen. XVII, 20). Alioquin et ipsa mater non suam mortem, sed filii deplorabat. Pepercit igitur ei Deus, pro quo fuerat et fletus. Denique in consequentibus dicitur: Surge et tolle puerum, et tene manum ejus (Gen. XVII, 18). Ex quo manifestum est, eum qui tenetur, non oneri matri fuisse, sed comitem. Quod autem manu parentis tenetur, sollicitus monstratur affectus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

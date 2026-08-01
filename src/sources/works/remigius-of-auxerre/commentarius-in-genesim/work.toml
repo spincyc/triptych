@@ -1,0 +1,16 @@
+schema = 1
+record_type = "work"
+id = "work.remigius-of-auxerre.commentarius-in-genesim"
+title = "Commentarius in Genesim"
+responsible = "Remigius of Auxerre"
+work_type = "biblical-commentary"
+composed = "c. 890-908"
+composed_basis = "Remigius taught at Reims and then at Paris and died about 908. His scriptural commentaries are products of that teaching and are not separately dated; the range covers the years in which he taught. The date is the writing, not Migne's 1853 printing."
+alternate_titles = [
+  "Expositio super Genesim",
+  "Expositio Remigii super Bresith, id est super Genesim",
+  "Commentarium in Genesim",
+]
+languages = ["lat"]
+locus_pattern = '(?:prologus|[1-9][0-9]?\.[1-9][0-9]{0,2})'
+description = "A schoolmaster's commentary on the whole of Genesis: short glosses, one to a phrase, explaining a word, a Hebrew name, a difficulty or a figure, and moving on. It opens on Jerome's prologue rather than on Genesis 1, because the prologue is what a reader of the Vulgate meets first, and it runs to the last verse of Genesis 50."

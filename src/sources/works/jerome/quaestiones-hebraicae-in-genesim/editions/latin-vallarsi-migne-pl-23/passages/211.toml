@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.211"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "211"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 9.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[215, 215]]
+text = """
+(Vers. 9.) Adorabunt te filii patris tui. Catulus leonis Juda, ex germine, fili mi, ascendisti, procumbens ut leo, et quasi catulus leonis. Quis suscitabit eum? Licet de Christo grande mysterium sit, tamen juxta litteram prophetatur [Al. interpretatur], quod reges ex Juda per David stirpem generentur, et quod adorent eum omnes tribus. Non enim ait, filii matris tuae, sed filii patris tui. Et quod sequitur, ex germine, fili mi, in Hebraeo habet, de captivitate, fili mi, ascendisti; ut ostenderet eum captivos populos esse ducturum: et juxta intelligentiam sacratiorem, ascendisse in altum, et captivam duxisse captivitatem (Psal. LXVII). Sive quod melius puto, captivitas passionem, ascensus resurrectionem signat.\
+"""
+transcription_segments = [
+  { line = 215, text = """
+(Vers. 9.) Adorabunt te filii patris tui. Catulus leonis Juda, ex germine, fili mi, ascendisti, procumbens ut leo, et quasi catulus leonis. Quis suscitabit eum? Licet de Christo grande mysterium sit, tamen juxta litteram prophetatur [Al. interpretatur], quod reges ex Juda per David stirpem generentur, et quod adorent eum omnes tribus. Non enim ait, filii matris tuae, sed filii patris tui. Et quod sequitur, ex germine, fili mi, in Hebraeo habet, de captivitate, fili mi, ascendisti; ut ostenderet eum captivos populos esse ducturum: et juxta intelligentiam sacratiorem, ascendisse in altum, et captivam duxisse captivitatem (Psal. LXVII). Sive quod melius puto, captivitas passionem, ascensus resurrectionem signat.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

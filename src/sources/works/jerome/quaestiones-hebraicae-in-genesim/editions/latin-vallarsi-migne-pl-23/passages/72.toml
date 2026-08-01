@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.72"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "72"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 18.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[75, 75]]
+text = """
+(Vers. 18.) Et Melchisedech rex Salem protulit panem et vinum, et ipse Sacerdos Dei excelsi, et benedixit ei. Quia semel opusculum nostrum, vel Quaestionum Hebraicarum, vel Traditionum congregatio est, propterea quid Hebraei de hoc sentiant, inferamus. Aiunt hunc esse Sem filium Noe: et supputantes annos vitae ipsius, ostendunt eum ad Isaac usque vixisse, omnesque primogenitos Noe donec sacerdotio fungeretur Aaron, fuisse pontifices. Porro Salem, rex Jerusalem dicitur, quae prius Salem appellabatur. Melchisedech autem beatus Apostolus ad Hebraeos (VII, 3), sine patre et matre commemorans, ad Christum refert, et per Christum ad gentium Ecclesiam. Omnis enim capitis gloria refertur ad membra, eo quod praeputium habens, Abrahae benedixerit circumciso, et in Abraham Levi, et per Levi Aaron: de quo postea sacerdotium. Ex quo colligi vult, sacerdotium Ecclesiae habentis praeputium, benedixisse circumciso sacerdotio Synagogae. Quod autem ait: Tu es sacerdos in aeternum, secundum ordinem Melchisedech (Ps. CIX, 4): mysterium nostrum in verbo ordinis significatur: nequaquam per Aaron irrationalibus victimis immolandis, sed oblato pane et vino: id est, corpore et sanguine Domini Jesu.\
+"""
+transcription_segments = [
+  { line = 75, text = """
+(Vers. 18.) Et Melchisedech rex Salem protulit panem et vinum, et ipse Sacerdos Dei excelsi, et benedixit ei. Quia semel opusculum nostrum, vel Quaestionum Hebraicarum, vel Traditionum congregatio est, propterea quid Hebraei de hoc sentiant, inferamus. Aiunt hunc esse Sem filium Noe: et supputantes annos vitae ipsius, ostendunt eum ad Isaac usque vixisse, omnesque primogenitos Noe donec sacerdotio fungeretur Aaron, fuisse pontifices. Porro Salem, rex Jerusalem dicitur, quae prius Salem appellabatur. Melchisedech autem beatus Apostolus ad Hebraeos (VII, 3), sine patre et matre commemorans, ad Christum refert, et per Christum ad gentium Ecclesiam. Omnis enim capitis gloria refertur ad membra, eo quod praeputium habens, Abrahae benedixerit circumciso, et in Abraham Levi, et per Levi Aaron: de quo postea sacerdotium. Ex quo colligi vult, sacerdotium Ecclesiae habentis praeputium, benedixisse circumciso sacerdotio Synagogae. Quod autem ait: Tu es sacerdos in aeternum, secundum ordinem Melchisedech (Ps. CIX, 4): mysterium nostrum in verbo ordinis significatur: nequaquam per Aaron irrationalibus victimis immolandis, sed oblato pane et vino: id est, corpore et sanguine Domini Jesu.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

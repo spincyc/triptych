@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.15-5"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "15.5"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 10-12.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[187, 187]]
+text = """
+VERS. 10-12.-- Et abigebat eas Abram. Quod hoc moraliter intelligi volunt. Saepe corda justorum subortae cogitationes polluunt, et terrenarum rerum delectationibus tangunt; sed dum citius manu sanctae discretionis abiguntur, quasi aves repelluntur, ne cordis faciem caligo tentationis operiat, quae hanc jam ex illicita delectatione tangebat. Nam saepe in ipso orationis nostrae sacrificio importunae cogitationes | se ingerunt, quae hoc rapere vel maculare valeant, quod in nobis Deo flentes immolamus. Unde et Abram, cum ad occasum solis sacrificium offerret, insistentes aves pertulit, quas studiose, ne oblatum sacrificium raperent, abegit. Sic nos, dum in ara cordis holocausta Deo offerimus, ab immundis haec volucribus custodimus, ne maligni spiritus et perversae cogitationes rapiant quod mens nostra offerre Domino utiliter poterat.\
+"""
+transcription_segments = [
+  { line = 187, text = """
+VERS. 10-12.-- Et abigebat eas Abram. Quod hoc moraliter intelligi volunt. Saepe corda justorum subortae cogitationes polluunt, et terrenarum rerum delectationibus tangunt; sed dum citius manu sanctae discretionis abiguntur, quasi aves repelluntur, ne cordis faciem caligo tentationis operiat, quae hanc jam ex illicita delectatione tangebat. Nam saepe in ipso orationis nostrae sacrificio importunae cogitationes | se ingerunt, quae hoc rapere vel maculare valeant, quod in nobis Deo flentes immolamus. Unde et Abram, cum ad occasum solis sacrificium offerret, insistentes aves pertulit, quas studiose, ne oblatum sacrificium raperent, abegit. Sic nos, dum in ara cordis holocausta Deo offerimus, ab immundis haec volucribus custodimus, ne maligni spiritus et perversae cogitationes rapiant quod mens nostra offerre Domino utiliter poterat.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

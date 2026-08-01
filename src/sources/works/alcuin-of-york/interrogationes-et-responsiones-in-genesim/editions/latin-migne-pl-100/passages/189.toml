@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.189"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "189"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 189 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[193, 193]]
+text = """
+Inter. 189. Quo consilio filiae Lot concubitum patris petierunt (vers. 31, 33); vel ab incestu purgari possunt, dum hoc scientes fecerunt; ille vero [quasi] nesciens?-- Resp. Videtur [namque] filias Lot quaedam didicisse de saeculi [ Ms. mundi] consummatione, quae immineret per ignem: sed tanquam puellae non intelligebant perfecte, quae didicerant. [Nescierunt] quod Sodomiticis igne vastatis multum adhuc spatium integrum resideret in mundo suspicatae sunt, tale aliquid factum, quale in temporibus Noe audierant, et ob reparandam mortalium posteritatem solas se esse cum parente servatas. Recuperandi igitur humani generis desiderium sumunt, atque instaurandi saeculi ex sese dandum opinantur exordium. Et quanquam grave eis crimen [videatur] furari concubitum patris, gravior tamen eis impietas videbatur, si humanae, ut putabant, posteritatis spem servata castitate delessent. Propter hoc ergo consilium ineunt, minore, ut arbitror, culpa [spe tamen] argumentoque majore, patris moestitiam vel rigorem vino molliunt et resolvunt: singulis ingressae noctibus, singulae suscipiunt ab ignorante conceptum; ultra non repetunt, nec requirunt. Ubi hinc libidinis culpa, ibi incesti crimen arguitur; quomodo dabitur in vitio, quod non iteratur in facto?\
+"""
+transcription_segments = [
+  { line = 193, text = """
+Inter. 189. Quo consilio filiae Lot concubitum patris petierunt (vers. 31, 33); vel ab incestu purgari possunt, dum hoc scientes fecerunt; ille vero [quasi] nesciens?-- Resp. Videtur [namque] filias Lot quaedam didicisse de saeculi [ Ms. mundi] consummatione, quae immineret per ignem: sed tanquam puellae non intelligebant perfecte, quae didicerant. [Nescierunt] quod Sodomiticis igne vastatis multum adhuc spatium integrum resideret in mundo suspicatae sunt, tale aliquid factum, quale in temporibus Noe audierant, et ob reparandam mortalium posteritatem solas se esse cum parente servatas. Recuperandi igitur humani generis desiderium sumunt, atque instaurandi saeculi ex sese dandum opinantur exordium. Et quanquam grave eis crimen [videatur] furari concubitum patris, gravior tamen eis impietas videbatur, si humanae, ut putabant, posteritatis spem servata castitate delessent. Propter hoc ergo consilium ineunt, minore, ut arbitror, culpa [spe tamen] argumentoque majore, patris moestitiam vel rigorem vino molliunt et resolvunt: singulis ingressae noctibus, singulae suscipiunt ab ignorante conceptum; ultra non repetunt, nec requirunt. Ubi hinc libidinis culpa, ibi incesti crimen arguitur; quomodo dabitur in vitio, quod non iteratur in facto?\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

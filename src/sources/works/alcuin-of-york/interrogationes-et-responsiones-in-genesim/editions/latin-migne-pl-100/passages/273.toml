@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.273"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "273"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 273 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[277, 277]]
+text = """
+Inter. 273. Filii Jacob interrogati quid operis haberent, responderunt: Pastores ovium sumus, sicut et patres nostri (Gen. XLVII, 3). Quare patriarchas primos, pastores ovium, et non [reges] gentium fuisse legimus?-- Resp. Quia sine ulla dubitatione justa servitus, et justa est dominatio, cum pecora homini serviunt, et homo pecoribus dominatur. Sic enim dictum est homini cum crearetur: Faciamus hominem ad imaginem et similitudinem nostram, et habeat potestatem piscium maris et volatilium coeli, et omnium quae sunt super terram (Gen. I). Ubi insinuatur rationem debere dominari irrationali vitae. Servum autem hominem homini vel iniquitas fecit, vel adversitas. Iniquitas quidem, sicut dictum est: Maledictus Chanaan, erit servus fratribus suis (Gen. IX, 25). Adversitas vero, sicut accidit ipsi Joseph, ut venditus a fratribus servus alienigenae fieret. Itaque primos servos, quibus hoc nomen in Latina lingua inductum est, bella fecerunt; cum [ Ms., qui] enim homo ab homine superatus, jure belli possit occidi, quia servatus est, servus est appellatus. Inde et mancipia, quia [sunt] manu capta.\
+"""
+transcription_segments = [
+  { line = 277, text = """
+Inter. 273. Filii Jacob interrogati quid operis haberent, responderunt: Pastores ovium sumus, sicut et patres nostri (Gen. XLVII, 3). Quare patriarchas primos, pastores ovium, et non [reges] gentium fuisse legimus?-- Resp. Quia sine ulla dubitatione justa servitus, et justa est dominatio, cum pecora homini serviunt, et homo pecoribus dominatur. Sic enim dictum est homini cum crearetur: Faciamus hominem ad imaginem et similitudinem nostram, et habeat potestatem piscium maris et volatilium coeli, et omnium quae sunt super terram (Gen. I). Ubi insinuatur rationem debere dominari irrationali vitae. Servum autem hominem homini vel iniquitas fecit, vel adversitas. Iniquitas quidem, sicut dictum est: Maledictus Chanaan, erit servus fratribus suis (Gen. IX, 25). Adversitas vero, sicut accidit ipsi Joseph, ut venditus a fratribus servus alienigenae fieret. Itaque primos servos, quibus hoc nomen in Latina lingua inductum est, bella fecerunt; cum [ Ms., qui] enim homo ab homine superatus, jure belli possit occidi, quia servatus est, servus est appellatus. Inde et mancipia, quia [sunt] manu capta.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

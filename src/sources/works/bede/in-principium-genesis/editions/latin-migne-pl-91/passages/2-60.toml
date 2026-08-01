@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-60"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.60"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[188, 188]]
+text = """
+Requievitque arca mense septimo, vigesima septima die mensis super montes Armeniae. Quod arca septimo mense requievit, ad illam septimam requiem, de qua saepius dictum est significatio recurrit, quia perfecti quique, et qui constantia fixae in Deum cogitationis velut quadrati sunt, ad requiem tendunt. Bene vicesima septima die mensis ejusdem, qui numerus est juxta arithmeticam rationem ternarius quadratus solidus, ad requiem arca pervenit. Ternarius namque numerus devotioni nostrae mentis congruit propter memoriam qua Deum recolimus, propter intelligentiam qua cognoscimus, propter voluntatem qua diligimus. Sed haec ipsa trinitas ut de simplici ac recta linea ad quadraturam perveniat, multiplica tria per tria, fiunt novem; ut vero eadem quadratura etiam altitudinem sumat ac solida efficiatur, item multiplica novem per tria, erunt viginti septem, id est, numerum ternarium quadratum solidum complebis, in quo arca requievit, quia Ecclesiae suae mentis atque actionis stabilitate quasi conquadrata requiem et in hac vita exspectat, et in futura percipit aeternam. Requievit autem super montes Armeniae, quia calcato apice pompae mundialis, etiam in hac peregrinatione vitam ducens, coelestibus gaudiis animo propinquat.\
+"""
+transcription_segments = [
+  { line = 188, text = """
+Requievitque arca mense septimo, vigesima septima die mensis super montes Armeniae. Quod arca septimo mense requievit, ad illam septimam requiem, de qua saepius dictum est significatio recurrit, quia perfecti quique, et qui constantia fixae in Deum cogitationis velut quadrati sunt, ad requiem tendunt. Bene vicesima septima die mensis ejusdem, qui numerus est juxta arithmeticam rationem ternarius quadratus solidus, ad requiem arca pervenit. Ternarius namque numerus devotioni nostrae mentis congruit propter memoriam qua Deum recolimus, propter intelligentiam qua cognoscimus, propter voluntatem qua diligimus. Sed haec ipsa trinitas ut de simplici ac recta linea ad quadraturam perveniat, multiplica tria per tria, fiunt novem; ut vero eadem quadratura etiam altitudinem sumat ac solida efficiatur, item multiplica novem per tria, erunt viginti septem, id est, numerum ternarium quadratum solidum complebis, in quo arca requievit, quia Ecclesiae suae mentis atque actionis stabilitate quasi conquadrata requiem et in hac vita exspectat, et in futura percipit aeternam. Requievit autem super montes Armeniae, quia calcato apice pompae mundialis, etiam in hac peregrinatione vitam ducens, coelestibus gaudiis animo propinquat.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

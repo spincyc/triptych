@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.41-1"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "41.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 1.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[396, 396]]
+text = """
+Vers. 1. Post duos annos Pharao vidit somnium, etc. Septem anni ubertatis, quae per septem boves pingues, et per totidem spicas plenas atque formosas designantur, mystice significant plenitudinem septiformis gratiae Spiritus sancti, quae primis temporibus in apostolis et caeteris credentibus manifestabantur. Sterilitas autem septem annorum sequentium, | quae per septem boves macilentos et per totidem spicas tenues et uredine percussas ostensa est, tempus illud significat, quo in fine saeculi refrigescente charitate et abundante iniquitate erit fames verbi Dei, quam Dominus per prophetam praedixit: Mittam, inquiens, famem in terram, non famem panis, neque sitim aquae, sed audiendi verbi Dei (Amos VIII, 11).\
+"""
+transcription_segments = [
+  { line = 396, text = """
+Vers. 1. Post duos annos Pharao vidit somnium, etc. Septem anni ubertatis, quae per septem boves pingues, et per totidem spicas plenas atque formosas designantur, mystice significant plenitudinem septiformis gratiae Spiritus sancti, quae primis temporibus in apostolis et caeteris credentibus manifestabantur. Sterilitas autem septem annorum sequentium, | quae per septem boves macilentos et per totidem spicas tenues et uredine percussas ostensa est, tempus illud significat, quo in fine saeculi refrigescente charitate et abundante iniquitate erit fames verbi Dei, quam Dominus per prophetam praedixit: Mittam, inquiens, famem in terram, non famem panis, neque sitim aquae, sed audiendi verbi Dei (Amos VIII, 11).\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

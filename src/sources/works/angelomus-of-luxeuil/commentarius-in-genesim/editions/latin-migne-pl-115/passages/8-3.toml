@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.8-3"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "8.3"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 6.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[131, 131]]
+text = """
+VERS. 6.-- Post quadraginta dies aperuit Noe fenestram, et emisit corvum, qui egrediebatur et non revertebatur. In Hebraeo scriptum est exiens et revertens, donec siccarentur aquae de terra. Sed ideo, ut nostra translatio innuit, non est reversus, quia aut ab aquis est absorptus et interemptus, aut aliquo cadavere supernatante est illectus, et desuper sedere est delectatus, quod columba naturaliter refugit, de qua dicitur: quae cum non invenisset ubi requiesceret | pes ejus, reversa est ad eum in arcam. Verumtamen requirendum est cur quadragenario numero pluvia inundabat, et iterum post quadraginta dies dicitur Noe fenestram arcae aperuisse? Quadragenarius enim iste spiritaliter tribulationem poenitentiae ostendit. Quod vero post quadraginta dies fenestram aperuit, significat jejunio coelum reserari. Ideo Moyses et Elias, etiam et ipse Salvator, jejunia consecravit, tanquam tribus temporibus necessaria ante legem, sub lege, sub gratia. Sequitur:\
+"""
+transcription_segments = [
+  { line = 131, text = """
+VERS. 6.-- Post quadraginta dies aperuit Noe fenestram, et emisit corvum, qui egrediebatur et non revertebatur. In Hebraeo scriptum est exiens et revertens, donec siccarentur aquae de terra. Sed ideo, ut nostra translatio innuit, non est reversus, quia aut ab aquis est absorptus et interemptus, aut aliquo cadavere supernatante est illectus, et desuper sedere est delectatus, quod columba naturaliter refugit, de qua dicitur: quae cum non invenisset ubi requiesceret | pes ejus, reversa est ad eum in arcam. Verumtamen requirendum est cur quadragenario numero pluvia inundabat, et iterum post quadraginta dies dicitur Noe fenestram arcae aperuisse? Quadragenarius enim iste spiritaliter tribulationem poenitentiae ostendit. Quod vero post quadraginta dies fenestram aperuit, significat jejunio coelum reserari. Ideo Moyses et Elias, etiam et ipse Salvator, jejunia consecravit, tanquam tribus temporibus necessaria ante legem, sub lege, sub gratia. Sequitur:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

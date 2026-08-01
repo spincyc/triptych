@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.18-8"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "18.8"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 26.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[230, 230]]
+text = """
+| Vers. 26. Non delebo propter quinquaginta. Quinquagenarius numerus dicatus est poenitentiae. Unde et quinquagesimus psalmus in poenitentia cantatus est. Quod ergo dicit: Non delebo propter quinquaginta, ostendit potuisse eos ab imminenti interitu liberari, si ad poenitentiam confugere voluissent. Quod autem paulatim descendendo ad decem pervenit, ostendit neminem posse salvari, nisi eum qui crucem Christi ferre eumque sequi studuerit, et decem legis praecepta impleverit. Denarius enim crucem Christi designat, quia decima littera qua denarius numerus exprimitur figuram habet crucis.\
+"""
+transcription_segments = [
+  { line = 230, text = """
+| Vers. 26. Non delebo propter quinquaginta. Quinquagenarius numerus dicatus est poenitentiae. Unde et quinquagesimus psalmus in poenitentia cantatus est. Quod ergo dicit: Non delebo propter quinquaginta, ostendit potuisse eos ab imminenti interitu liberari, si ad poenitentiam confugere voluissent. Quod autem paulatim descendendo ad decem pervenit, ostendit neminem posse salvari, nisi eum qui crucem Christi ferre eumque sequi studuerit, et decem legis praecepta impleverit. Denarius enim crucem Christi designat, quia decima littera qua denarius numerus exprimitur figuram habet crucis.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.65"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "65"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 14.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[68, 68]]
+text = """
+(Vers. 14 et 15.) Leva oculos tuos, et vide a loco, in quo tu nunc es ad Aquilonem, et ad austrum, et ad orientem, et ad mare: quia omnem terram, quam tu vides, tibi dabo eam et semini tuo. Quatuor climata mundi posuit, orientem et occidentem, septentrionem et meridianum. Quod autem in omnibus Scripturis legitur, hic semel dixisse sufficiat, mare semper pro occidente poni: ab eo quod Palaestinae regio ita sita sit, ut mare in occidentis plaga habeat.\
+"""
+transcription_segments = [
+  { line = 68, text = """
+(Vers. 14 et 15.) Leva oculos tuos, et vide a loco, in quo tu nunc es ad Aquilonem, et ad austrum, et ad orientem, et ad mare: quia omnem terram, quam tu vides, tibi dabo eam et semini tuo. Quatuor climata mundi posuit, orientem et occidentem, septentrionem et meridianum. Quod autem in omnibus Scripturis legitur, hic semel dixisse sufficiat, mare semper pro occidente poni: ab eo quod Palaestinae regio ita sita sit, ut mare in occidentis plaga habeat.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-24"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.24"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[246, 246]]
+text = """
+Dixitque alter ad proximum suum: Venite, faciamus lateres et coquamus eos igni, habueruntque lateres pro saxis, et bitumen pro caemento. Forte ideo lateribus pro saxis et bitumine utebantur pro caemento, quia illis in regionibus copia lapidum, unde tantum opus compleretur, deerat; vel quia murum lateritium periculo ignium fortius obsistere noverant. Fit autem bitumen de arboribus, fit et de terra, sive aquis; unde scriptum est in sequentibus de terra Sodomorum. Vallis autem silvestris habebat puteos multos bituminis; et mare Mortuum Graece lacus Asfalti, id est bituminis appellatur; eo quod bitumen supernatans soleat in illo colligi, quo magis videtur muros Babylonis fuisse compactos.\
+"""
+transcription_segments = [
+  { line = 246, text = """
+Dixitque alter ad proximum suum: Venite, faciamus lateres et coquamus eos igni, habueruntque lateres pro saxis, et bitumen pro caemento. Forte ideo lateribus pro saxis et bitumine utebantur pro caemento, quia illis in regionibus copia lapidum, unde tantum opus compleretur, deerat; vel quia murum lateritium periculo ignium fortius obsistere noverant. Fit autem bitumen de arboribus, fit et de terra, sive aquis; unde scriptum est in sequentibus de terra Sodomorum. Vallis autem silvestris habebat puteos multos bituminis; et mare Mortuum Graece lacus Asfalti, id est bituminis appellatur; eo quod bitumen supernatans soleat in illo colligi, quo magis videtur muros Babylonis fuisse compactos.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

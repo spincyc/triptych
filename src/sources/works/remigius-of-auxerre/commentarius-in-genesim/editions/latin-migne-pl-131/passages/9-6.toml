@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.9-6"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "9.6"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 21.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[148, 148]]
+text = """
+Vers. 21. Et in tabernaculo suo nudatus est. Id est in plebe Judaica, inter domesticos generis sui. Cham filius ejus, qui nuditatem patris fratribus nuntiavit, Judaeos designat passionem Christi longe ante in prophetis legentes qui nuntiabant futuram. Sed hoc quod diu praenuntiaverunt impletum videntes deridere potius quam credere maluerunt. Sem | vero primogenitus et Japheth minimus significant eos qui in primitiva Ecclesia fuerunt, apostolos videlicet et eos qui ex gentibus crediderunt. Medius Cham Judaeos significat qui, nec primum cum apostolis, nec postea gentibus fidem Domini recipere voluerunt. Sem vero et Japheth nuditatem patris sibi nuntiatam audire noluerunt, sed pallio operuerunt: quia fideles mysteria passionis Christi non cum Judaeis despiciunt, sed digna veneratione honorant. Et bene pallium in humeris portant: quia ipsam passionem non futuram exspectant, sed impletam credunt.\
+"""
+transcription_segments = [
+  { line = 148, text = """
+Vers. 21. Et in tabernaculo suo nudatus est. Id est in plebe Judaica, inter domesticos generis sui. Cham filius ejus, qui nuditatem patris fratribus nuntiavit, Judaeos designat passionem Christi longe ante in prophetis legentes qui nuntiabant futuram. Sed hoc quod diu praenuntiaverunt impletum videntes deridere potius quam credere maluerunt. Sem | vero primogenitus et Japheth minimus significant eos qui in primitiva Ecclesia fuerunt, apostolos videlicet et eos qui ex gentibus crediderunt. Medius Cham Judaeos significat qui, nec primum cum apostolis, nec postea gentibus fidem Domini recipere voluerunt. Sem vero et Japheth nuditatem patris sibi nuntiatam audire noluerunt, sed pallio operuerunt: quia fideles mysteria passionis Christi non cum Judaeis despiciunt, sed digna veneratione honorant. Et bene pallium in humeris portant: quia ipsam passionem non futuram exspectant, sed impletam credunt.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

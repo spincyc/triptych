@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-23"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.23"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[142, 142]]
+text = """
+Septuplum ultio dabitur de Cain: de Lamech vero septuagies septies. Septuplum ultio data est de Cain, quia usque ad septimam generationem fratricidii et invidiae suae vagus profugusque poenas luebat. De Lamech vero septuagies septies, quia sicut Hieronymus relatum sibi ab Hebraeis testatur, et Josephus idem affirmat, LXX et VII animae progenitae sunt de stirpe Cain, quae diluvio perierunt. Et in hoc numero de Lamech factam aiunt esse vindictam, quod genus ipsius usque ad diluvium perseveraverit. Interpretatur autem Lamech Percutiens sive Percussus, quae utraque interpretatio eidem uni convenit qui et percussit Cain, et ob hoc idem parricidium etiam ipse divina ultione percussus est. Mystice autem Lamech genus humanum significat, et percussum fraude antiqui hostis in primo parente, et percutiens seipsum quotidianarum augmentatione culparum, de quo ultio septuagies septies data est; quia usque ad adventum Christi, qui in septuagesima et septima generatione in mundo apparuit, noxa primae praevaricationis genus premebat humanum, donec adveniens ille tolleret peccata mundi, et in aeternam nos vitam, quam in Adam perdidimus, aperta suo baptismate vel passione janua regni coelestis, induceret. Tunc ergo ultio de Lamech cessavit, quia contrito per passionem ac resurrectionem dominicam aculeo mortis atque peccati, genus humanum ad regnum coeleste rediit.\
+"""
+transcription_segments = [
+  { line = 142, text = """
+Septuplum ultio dabitur de Cain: de Lamech vero septuagies septies. Septuplum ultio data est de Cain, quia usque ad septimam generationem fratricidii et invidiae suae vagus profugusque poenas luebat. De Lamech vero septuagies septies, quia sicut Hieronymus relatum sibi ab Hebraeis testatur, et Josephus idem affirmat, LXX et VII animae progenitae sunt de stirpe Cain, quae diluvio perierunt. Et in hoc numero de Lamech factam aiunt esse vindictam, quod genus ipsius usque ad diluvium perseveraverit. Interpretatur autem Lamech Percutiens sive Percussus, quae utraque interpretatio eidem uni convenit qui et percussit Cain, et ob hoc idem parricidium etiam ipse divina ultione percussus est. Mystice autem Lamech genus humanum significat, et percussum fraude antiqui hostis in primo parente, et percutiens seipsum quotidianarum augmentatione culparum, de quo ultio septuagies septies data est; quia usque ad adventum Christi, qui in septuagesima et septima generatione in mundo apparuit, noxa primae praevaricationis genus premebat humanum, donec adveniens ille tolleret peccata mundi, et in aeternam nos vitam, quam in Adam perdidimus, aperta suo baptismate vel passione janua regni coelestis, induceret. Tunc ergo ultio de Lamech cessavit, quia contrito per passionem ac resurrectionem dominicam aculeo mortis atque peccati, genus humanum ad regnum coeleste rediit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

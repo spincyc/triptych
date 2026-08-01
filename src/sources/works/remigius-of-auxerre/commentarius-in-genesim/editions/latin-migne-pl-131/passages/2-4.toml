@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.2-4"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "2.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 7.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[60, 60]]
+text = """
+Vers. 7. Formavit Deus hominem. Cavenda est hic | paupertas intellectus humani ut cogitemus Deum manibus operatum fuisse hominem et labiis carneis locutum, aut tale aliquid, quod nefas est de Deo cogitari. Deus enim spiritus est, et ideo non distinguitur membris nec gravatur mole corporis, ut de illo aliquid carneum cogitemus vel intelligamus. Sed quod dicit: formavit hominem ex limo, id est volendo et jubendo extra produxit. Et inspiravit. Quod dicit: spiravit, non intelligendum est, quod hunc corpulentum aerem homini sufflaverit vel immiserit, sed inspiravit, id est, animavit eum vita rationali, quod in sequentibus spiraculum vitae appellavit. Ad comparationem enim caeterorum animalium quorum animae moriuntur, homo rationalem animam sortitus est. Unde et Graeci differentiam facientes animalium | quae tantum sine ratione vivunt zoa vocant, quia zoe vita dicitur: quae vero rationis participantur psychica, quia psyche anima. In faciem autem hominis spirasse (dicitur), quia in capite maxime omnes sensus vigent, horum uno, id est tactu, per omne corpus diffuso.\
+"""
+transcription_segments = [
+  { line = 60, text = """
+Vers. 7. Formavit Deus hominem. Cavenda est hic | paupertas intellectus humani ut cogitemus Deum manibus operatum fuisse hominem et labiis carneis locutum, aut tale aliquid, quod nefas est de Deo cogitari. Deus enim spiritus est, et ideo non distinguitur membris nec gravatur mole corporis, ut de illo aliquid carneum cogitemus vel intelligamus. Sed quod dicit: formavit hominem ex limo, id est volendo et jubendo extra produxit. Et inspiravit. Quod dicit: spiravit, non intelligendum est, quod hunc corpulentum aerem homini sufflaverit vel immiserit, sed inspiravit, id est, animavit eum vita rationali, quod in sequentibus spiraculum vitae appellavit. Ad comparationem enim caeterorum animalium quorum animae moriuntur, homo rationalem animam sortitus est. Unde et Graeci differentiam facientes animalium | quae tantum sine ratione vivunt zoa vocant, quia zoe vita dicitur: quae vero rationis participantur psychica, quia psyche anima. In faciem autem hominis spirasse (dicitur), quia in capite maxime omnes sensus vigent, horum uno, id est tactu, per omne corpus diffuso.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

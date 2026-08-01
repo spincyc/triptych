@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.1-8"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "1.8"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 14.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[41, 41]]
+text = """
+Vers. 14. Fiant luminaria in firmamento coeli. Luminaria solem, et lunam, et caeteras stellas accipimus. Verum sol et luna et septem planetae non sunt in firmamento positae, sed in aethere pendent: ideo in firmamento positae dicuntur. Et dividant diem ac noctem. Sol diei praeest, luna nocti. Sint in signa. Hoc, vel propter terminum Paschalem dicitur, quia luna signum est Paschalis termini qui non nisi post quatuordecimam lunam celebratur, vel quia sidera signa sunt navigantibus per mare vel iter agentibus per Libyam ubi vestigium itineris ad | motum venti dissipatur. Luna apud Hebraeos tribus nominibus nuncupatur, Lare, Lavana, Mavors. Lara vocatur a numero dierum mensis: Lavana a candiditate: Mavors a defectu, quia deficit singulis mensibus.\
+"""
+transcription_segments = [
+  { line = 41, text = """
+Vers. 14. Fiant luminaria in firmamento coeli. Luminaria solem, et lunam, et caeteras stellas accipimus. Verum sol et luna et septem planetae non sunt in firmamento positae, sed in aethere pendent: ideo in firmamento positae dicuntur. Et dividant diem ac noctem. Sol diei praeest, luna nocti. Sint in signa. Hoc, vel propter terminum Paschalem dicitur, quia luna signum est Paschalis termini qui non nisi post quatuordecimam lunam celebratur, vel quia sidera signa sunt navigantibus per mare vel iter agentibus per Libyam ubi vestigium itineris ad | motum venti dissipatur. Luna apud Hebraeos tribus nominibus nuncupatur, Lare, Lavana, Mavors. Lara vocatur a numero dierum mensis: Lavana a candiditate: Mavors a defectu, quia deficit singulis mensibus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

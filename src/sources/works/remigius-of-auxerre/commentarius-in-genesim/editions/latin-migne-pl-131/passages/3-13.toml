@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.3-13"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "3.13"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 21.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[90, 90]]
+text = """
+Vers. 21. Fecit Dominus Deus Adae et uxori ejus tunicas pelliceas. Pelles ex mortuis animalibus detrahuntur. Per tunicas ergo pelliceas ostendebatur quia mortales jam facti erant ex immortalibus, et non solum amiserunt beatum statum in quem mutari poterant, si non peccassent, verum etiam ipsam felicem vitam, qua in paradiso beate vivere poterant, perdiderunt. Ipsi quidem fecerunt sibi perizomata, ut peccatum suum Deo absconderent. Deus vero fecit illis tunicas pelliceas quibus totum corpus eorum induit, quia in corpore et in anima justo judicio damnavit. | In anima quidem propter peccatum praevaricationis, in corpore vero propter poenam peccati. Stulta vero quaestio est, si quis velit requirere qualiter vel quo operante pelles ab animalibus subductae sint. Qui enim de nihilo condidit omnia Deus, hoc quoque quomodo vel qualiter voluit fecit.\
+"""
+transcription_segments = [
+  { line = 90, text = """
+Vers. 21. Fecit Dominus Deus Adae et uxori ejus tunicas pelliceas. Pelles ex mortuis animalibus detrahuntur. Per tunicas ergo pelliceas ostendebatur quia mortales jam facti erant ex immortalibus, et non solum amiserunt beatum statum in quem mutari poterant, si non peccassent, verum etiam ipsam felicem vitam, qua in paradiso beate vivere poterant, perdiderunt. Ipsi quidem fecerunt sibi perizomata, ut peccatum suum Deo absconderent. Deus vero fecit illis tunicas pelliceas quibus totum corpus eorum induit, quia in corpore et in anima justo judicio damnavit. | In anima quidem propter peccatum praevaricationis, in corpore vero propter poenam peccati. Stulta vero quaestio est, si quis velit requirere qualiter vel quo operante pelles ab animalibus subductae sint. Qui enim de nihilo condidit omnia Deus, hoc quoque quomodo vel qualiter voluit fecit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

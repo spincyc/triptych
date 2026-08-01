@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.37-4"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "37.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 25-34.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[369, 369]]
+text = """
+VERS. 25-34.-- Viderunt viatores Ismaelitas venire de Galaad, et camelos eorum portantes aromata, et resinam, et stacten in Aegyptum, et reliqua usque et praetereuntibus Madianitis negotiatoribus vendiderunt viginti [Z., triginta] argenteis. Quaeritur quare Ismaelitas Scriptura, quibus a fratribus venditus est Joseph, etiam Madianitas vocet cum Ismael sit de | Agar filius Abrahae, Madianitae vero de Cethura? Quia Scriptura dixerat de Abraham quod munera dederit filiis concubinarum suarum, Agar scilicet et Cethura, et dimisit eos ab Isaac filio suo, in terra Orientis unam gentem fecisse intelligendi sunt. Spiritaliter vero aromata quae in camelis portantur, duas leges significant: per resinam autem legem librorum, per stacten quippe legem prophetarum. Per camelos namque doctores designantur. Quod autem Joseph non est liberatus per consilium Judae, significat Christum non liberatum ex parte carnis per seram poenitentiam Judae Scarioth.\
+"""
+transcription_segments = [
+  { line = 369, text = """
+VERS. 25-34.-- Viderunt viatores Ismaelitas venire de Galaad, et camelos eorum portantes aromata, et resinam, et stacten in Aegyptum, et reliqua usque et praetereuntibus Madianitis negotiatoribus vendiderunt viginti [Z., triginta] argenteis. Quaeritur quare Ismaelitas Scriptura, quibus a fratribus venditus est Joseph, etiam Madianitas vocet cum Ismael sit de | Agar filius Abrahae, Madianitae vero de Cethura? Quia Scriptura dixerat de Abraham quod munera dederit filiis concubinarum suarum, Agar scilicet et Cethura, et dimisit eos ab Isaac filio suo, in terra Orientis unam gentem fecisse intelligendi sunt. Spiritaliter vero aromata quae in camelis portantur, duas leges significant: per resinam autem legem librorum, per stacten quippe legem prophetarum. Per camelos namque doctores designantur. Quod autem Joseph non est liberatus per consilium Judae, significat Christum non liberatum ex parte carnis per seram poenitentiam Judae Scarioth.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

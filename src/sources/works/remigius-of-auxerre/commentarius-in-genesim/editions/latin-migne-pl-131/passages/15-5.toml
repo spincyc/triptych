@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.15-5"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "15.5"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 9.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[201, 201]]
+text = """
+Vers. 9. Sume vaccam triennem, capram trimam, et arietem trium annorum. Haec juxta litteram manifesta sunt. Mystice per haec animalia plebs Judaica designatur quae ab Abraham ducit originem. Per vaccam quidem, quia jugum legis traxit: per capram olidam et fetosam, quia peccatrix futura erat: per arietem vero qui est dux gregis significatur quia alio tempore regni imperium potentissime tenuit. Quod vero dicit vel capram, vel vaccam, vel arietem trium annorum esse debere, ostendit hanc plebem trium temporum articulis ad regni dignitatem | profecisse sub David. Prima aetas fuit sub Adam usque ad Noe, secunda a Noe usque ad Abraham, tertia ad Abraham usque ad David. Quod vero animalia divisa sunt, aves vero non sunt divisae, significat quia carnales quique subjacent divisioni. Dividuntur enim per sectarum scandala. Spiritales vero qui significantur per aves indivisibiles permanent, quia nullam fidei patiuntur corruptionem.\
+"""
+transcription_segments = [
+  { line = 201, text = """
+Vers. 9. Sume vaccam triennem, capram trimam, et arietem trium annorum. Haec juxta litteram manifesta sunt. Mystice per haec animalia plebs Judaica designatur quae ab Abraham ducit originem. Per vaccam quidem, quia jugum legis traxit: per capram olidam et fetosam, quia peccatrix futura erat: per arietem vero qui est dux gregis significatur quia alio tempore regni imperium potentissime tenuit. Quod vero dicit vel capram, vel vaccam, vel arietem trium annorum esse debere, ostendit hanc plebem trium temporum articulis ad regni dignitatem | profecisse sub David. Prima aetas fuit sub Adam usque ad Noe, secunda a Noe usque ad Abraham, tertia ad Abraham usque ad David. Quod vero animalia divisa sunt, aves vero non sunt divisae, significat quia carnales quique subjacent divisioni. Dividuntur enim per sectarum scandala. Spiritales vero qui significantur per aves indivisibiles permanent, quia nullam fidei patiuntur corruptionem.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

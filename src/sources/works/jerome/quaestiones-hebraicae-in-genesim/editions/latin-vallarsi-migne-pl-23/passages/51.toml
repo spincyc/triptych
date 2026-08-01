@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.51"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "51"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 13.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[54, 54]]
+text = """
+(Vers. 13.) Et Mesraim genuit Ludim, et Anamim, et Laabim, et Nephtuim, et Phetrosim, et Chasloim, e quibus egressi sunt Philistiim et Caphthorim. Exceptis Laabim, a quibus Libyes postea nominati sunt, qui prius Phutaei vocabantur: et Chasloim, qui deinceps Philistiim appellati sunt, quos nos corrupte Palaestinos dicimus, caeterae sex gentes ignotae nobis sunt, quia (Al. qua) bello Aethiopico subversae, usque ad oblivionem praeteritorum nominum pervenere. Possederunt autem terram a Gaza usque ad extremos fines Aegypti.\
+"""
+transcription_segments = [
+  { line = 54, text = """
+(Vers. 13.) Et Mesraim genuit Ludim, et Anamim, et Laabim, et Nephtuim, et Phetrosim, et Chasloim, e quibus egressi sunt Philistiim et Caphthorim. Exceptis Laabim, a quibus Libyes postea nominati sunt, qui prius Phutaei vocabantur: et Chasloim, qui deinceps Philistiim appellati sunt, quos nos corrupte Palaestinos dicimus, caeterae sex gentes ignotae nobis sunt, quia (Al. qua) bello Aethiopico subversae, usque ad oblivionem praeteritorum nominum pervenere. Possederunt autem terram a Gaza usque ad extremos fines Aegypti.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

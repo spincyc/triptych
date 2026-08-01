@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-8"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.8"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[229, 229]]
+text = """
+Ab hoc exivit proverbium: Quasi Nemrod robustus venator coram Domino. Ideo in proverbium versa, quia insolita saeculis ejus facta fuere; quod vero additur coram Domino, exaggerandi facinoris causa est, quia videlicet satis temerarium fuerit et superbum, ut coram Domino, qui de coelo prospicit super filios hominum, taliter vivere homo in terra praesumeret; ex quo nimirum proverbio patet quia multi tempore illo fuere qui talia facere metu superni respectus vitabant, quamvis alia Editio habet quia Nemrod gigans venator contra Dominum. Ex ambiguo quippe Graeco, quod est enantion, utrumque potest interpretari. Denique in psalmo ubi canimus ploremus coram Domino qui fecit nos (Psal. CIV, 6), hoc verbum est enantion Cyrium. Hoc et in libro Job, ubi scriptum est, in furorem erupisti contra Dominum. Facilis ergo patet intellectus de gigante, quia robustus fuerit venator brutorum animalium, quasi homo potens; sed quia homo impius contra voluntatem Conditoris vitam duxerit superbam.\
+"""
+transcription_segments = [
+  { line = 229, text = """
+Ab hoc exivit proverbium: Quasi Nemrod robustus venator coram Domino. Ideo in proverbium versa, quia insolita saeculis ejus facta fuere; quod vero additur coram Domino, exaggerandi facinoris causa est, quia videlicet satis temerarium fuerit et superbum, ut coram Domino, qui de coelo prospicit super filios hominum, taliter vivere homo in terra praesumeret; ex quo nimirum proverbio patet quia multi tempore illo fuere qui talia facere metu superni respectus vitabant, quamvis alia Editio habet quia Nemrod gigans venator contra Dominum. Ex ambiguo quippe Graeco, quod est enantion, utrumque potest interpretari. Denique in psalmo ubi canimus ploremus coram Domino qui fecit nos (Psal. CIV, 6), hoc verbum est enantion Cyrium. Hoc et in libro Job, ubi scriptum est, in furorem erupisti contra Dominum. Facilis ergo patet intellectus de gigante, quia robustus fuerit venator brutorum animalium, quasi homo potens; sed quia homo impius contra voluntatem Conditoris vitam duxerit superbam.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.33"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "33"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 3.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[35, 35]]
+text = """
+(Vers. 3.) Et dixit Dominus Deus: Non permanebit spiritus meus in hominibus istis in aeternum, quia carnes sunt. In Hebraeo scriptum est, Non judicabit spiritus meus homines istos in sempiternum, quia caro sunt: hoc est, quia fragilis est in homine conditio, non eos ad aeternos servabo cruciatus: sed hic illis restituam quod merentur. Ergo non severitatem, ut in nostris codicibus legitur, sed clementiam Dei sonat, dum peccator hic pro suo scelere visitatur. Unde et iratus Deus loquitur ad quosdam: Non visitabo filias eorum, cum fuerint fornicatae, et sponsas eorum, cum adulteraverint (Osee IV, 14). Et in alio loco: Visitabo in virga iniquitates eorum, et in flagellis peccata eorum: verumtamen misericordiam meam non auferam ab eis (Ps. LXXXVIII, 33). Porro ne videretur in eo esse crudelis, quod peccantibus locum poenitentiae non dedisset, adjecit: Sed erunt dies eorum centum viginti anni, hoc est, habebunt centum viginti annos ad agendam poenitentiam. Non igitur humana vita, ut multi errant, in centum viginti annos contracta est: sed generationi illi, centum viginti anni ad poenitentiam dati sunt. Siquidem invenimus, quod post diluvium Abraham vixerit annos centum septuaginta quinque, et caeteri amplius ducentis et trecentis annis. Quia vero poenitentiam agere contempserunt, noluit Deus tempus exspectare decretum: sed viginti annorum spatiis amputatis, induxit diluvium anno centesimo agendae poenitentiae destinato.\
+"""
+transcription_segments = [
+  { line = 35, text = """
+(Vers. 3.) Et dixit Dominus Deus: Non permanebit spiritus meus in hominibus istis in aeternum, quia carnes sunt. In Hebraeo scriptum est, Non judicabit spiritus meus homines istos in sempiternum, quia caro sunt: hoc est, quia fragilis est in homine conditio, non eos ad aeternos servabo cruciatus: sed hic illis restituam quod merentur. Ergo non severitatem, ut in nostris codicibus legitur, sed clementiam Dei sonat, dum peccator hic pro suo scelere visitatur. Unde et iratus Deus loquitur ad quosdam: Non visitabo filias eorum, cum fuerint fornicatae, et sponsas eorum, cum adulteraverint (Osee IV, 14). Et in alio loco: Visitabo in virga iniquitates eorum, et in flagellis peccata eorum: verumtamen misericordiam meam non auferam ab eis (Ps. LXXXVIII, 33). Porro ne videretur in eo esse crudelis, quod peccantibus locum poenitentiae non dedisset, adjecit: Sed erunt dies eorum centum viginti anni, hoc est, habebunt centum viginti annos ad agendam poenitentiam. Non igitur humana vita, ut multi errant, in centum viginti annos contracta est: sed generationi illi, centum viginti anni ad poenitentiam dati sunt. Siquidem invenimus, quod post diluvium Abraham vixerit annos centum septuaginta quinque, et caeteri amplius ducentis et trecentis annis. Quia vero poenitentiam agere contempserunt, noluit Deus tempus exspectare decretum: sed viginti annorum spatiis amputatis, induxit diluvium anno centesimo agendae poenitentiae destinato.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

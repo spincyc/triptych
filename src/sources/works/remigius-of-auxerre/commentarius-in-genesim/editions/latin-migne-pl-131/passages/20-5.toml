@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.20-5"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "20.5"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 16.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[248, 248]]
+text = """
+Vers. 16. Hoc erit velamen oculorum. Id est: in funeris praeparatione: Mementoque te deprehensam. Hoc quasi jocando dicit monens eam amabiliter ne hoc auderet facere, ne similiter deprehensa videretur. Mystice loco hoc Abraham Christum significat, Sara vero Ecclesiam. Abraham honorabatur propter Sarae pulchritudinem et Christus laudatur in mundo et honoratur per Ecclesiam; quia sicut Psalmista dicit: Mirabilis Deus in sanctis suis (Ps. XVII, 36). Habebat Sara virum, sed latebat, et Ecclesia habet Christum, sed videtur in praesenti receptus secretis coelestibus.\
+"""
+transcription_segments = [
+  { line = 248, text = """
+Vers. 16. Hoc erit velamen oculorum. Id est: in funeris praeparatione: Mementoque te deprehensam. Hoc quasi jocando dicit monens eam amabiliter ne hoc auderet facere, ne similiter deprehensa videretur. Mystice loco hoc Abraham Christum significat, Sara vero Ecclesiam. Abraham honorabatur propter Sarae pulchritudinem et Christus laudatur in mundo et honoratur per Ecclesiam; quia sicut Psalmista dicit: Mirabilis Deus in sanctis suis (Ps. XVII, 36). Habebat Sara virum, sed latebat, et Ecclesia habet Christum, sed videtur in praesenti receptus secretis coelestibus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

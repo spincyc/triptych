@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-6"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.6"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[116, 116]]
+text = """
+Dixitque Dominus ad eum: Quare iratus es, et cur concidit facies tua? Nonne si bene egeris, recipies; sin autem male, statim in foribus peccatum tuum aderit? Quare, inquit, irasceris, et invidiae in fratrem livore cruciaris, vultum dimittis in terram? Nonne si bene egeris, si pura mente sacrificium obtuleris, recipies, respiciente Domino ad te et ad sacrificium tuum: sin autem male egeris, statim in foribus peccatum tuum aderit, et tali janitore intrans semper exiensque comitaberis, pro eo ut Dominus custodiret introitum tuum et exitum tuum, et sicut de sapientia dicitur: Qui de luce vigilaverit ad illam non laborabit. Assidentem enim illam in foribus suis inveniet (Sap. VI, 15). Et iterum: Quoniam dignos se ipsa circuit quaerens, et in viis ostendit se illis habitator, et in omni providentia occurrit illis (Ibid., 17).\
+"""
+transcription_segments = [
+  { line = 116, text = """
+Dixitque Dominus ad eum: Quare iratus es, et cur concidit facies tua? Nonne si bene egeris, recipies; sin autem male, statim in foribus peccatum tuum aderit? Quare, inquit, irasceris, et invidiae in fratrem livore cruciaris, vultum dimittis in terram? Nonne si bene egeris, si pura mente sacrificium obtuleris, recipies, respiciente Domino ad te et ad sacrificium tuum: sin autem male egeris, statim in foribus peccatum tuum aderit, et tali janitore intrans semper exiensque comitaberis, pro eo ut Dominus custodiret introitum tuum et exitum tuum, et sicut de sapientia dicitur: Qui de luce vigilaverit ad illam non laborabit. Assidentem enim illam in foribus suis inveniet (Sap. VI, 15). Et iterum: Quoniam dignos se ipsa circuit quaerens, et in viis ostendit se illis habitator, et in omni providentia occurrit illis (Ibid., 17).\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

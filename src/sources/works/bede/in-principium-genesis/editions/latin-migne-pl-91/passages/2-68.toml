@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-68"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.68"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[196, 196]]
+text = """
+Igitur sexcentesimo primo anno, primo mense, primo die mensis immutatae sunt aquae super terram; et aperiens tectum arcae Noe aspexit, viditque quod exsiccata esset superficies terrae. Tectum arcae supremam ejus tabulam dicit de qua praedictum erat: Et in cubito consummabis summitatem. In quo videlicet tecto unum cubitum longo ac lato ipsum Mediatorem Dei et hominum significari diximus, qui ita membris Ecclesiae suae voluit humanitus sociari, ut dignitate suae potestatis singulariter hanc transcenderet, ac totam ab alto protegeret. Hoc autem tectum, abeunte diluvio, aperuit Noe, quia celebrato baptismi sacramento, singulis fidelium oportet diligentius ex tempore dominicae Incarnationis arcana doctorum ore reserari, ut cognitis eis quae ille gessit vel docuit in carne, vestigia ejus pro modulo suo imitando sequantur. Et hoc aptissime primo post sexcentos annos, primo mense, prima die mensis, factum esse perhibetur, ut primordium quoque anni, mensis, et diei, novam vitae spiritalis inchoationem quae fidelibus esset inchoanda monstraret. Denique idem mensis in lege in quo et pascha fieri praeceptum est, mensis novorum vocatur, ob magnum utique sacramentum innovandae in Christi passione nostrae vitae veteris.\
+"""
+transcription_segments = [
+  { line = 196, text = """
+Igitur sexcentesimo primo anno, primo mense, primo die mensis immutatae sunt aquae super terram; et aperiens tectum arcae Noe aspexit, viditque quod exsiccata esset superficies terrae. Tectum arcae supremam ejus tabulam dicit de qua praedictum erat: Et in cubito consummabis summitatem. In quo videlicet tecto unum cubitum longo ac lato ipsum Mediatorem Dei et hominum significari diximus, qui ita membris Ecclesiae suae voluit humanitus sociari, ut dignitate suae potestatis singulariter hanc transcenderet, ac totam ab alto protegeret. Hoc autem tectum, abeunte diluvio, aperuit Noe, quia celebrato baptismi sacramento, singulis fidelium oportet diligentius ex tempore dominicae Incarnationis arcana doctorum ore reserari, ut cognitis eis quae ille gessit vel docuit in carne, vestigia ejus pro modulo suo imitando sequantur. Et hoc aptissime primo post sexcentos annos, primo mense, prima die mensis, factum esse perhibetur, ut primordium quoque anni, mensis, et diei, novam vitae spiritalis inchoationem quae fidelibus esset inchoanda monstraret. Denique idem mensis in lege in quo et pascha fieri praeceptum est, mensis novorum vocatur, ob magnum utique sacramentum innovandae in Christi passione nostrae vitae veteris.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

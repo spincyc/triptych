@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-63"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.63"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[370, 370]]
+text = """
+Ascenditque Lot de Segor, mansitque in monte, duae quoque filiae ejus cum eo. Timuerat enim manere in Segor. Festinavit ad montem ascendere de Segor, quia hoc magis placuisse angelis per quos ereptus est cognovit, timens ne quae et articulo temporis illius sua intercessione periculum mortis evasit, postea tamen, ob scelera civium, eadem urbs posset simili cum vicinis urbibus perditione consumi; pertimuit maxime, cum nosset eam tempore superiori crebro terrae motu fuisse consumptam; unde et Bale, id est, praecipitans sive devorans vocata est. Sed et juxta intelligentiam spiritalem, quia Sodoma flammas vitiorum, Segor modicam adhuc inchoationem bonorum operum, mons altitudinem virtutum designat, necesse est ut cum ab incendio vitiorum quisque ad initium virtutis accesserit, non jam in ipso initio segnis perseveret, sed ad altiorem bonae actionis profectum semper alacri gressu tendere ac properare contendat.\
+"""
+transcription_segments = [
+  { line = 370, text = """
+Ascenditque Lot de Segor, mansitque in monte, duae quoque filiae ejus cum eo. Timuerat enim manere in Segor. Festinavit ad montem ascendere de Segor, quia hoc magis placuisse angelis per quos ereptus est cognovit, timens ne quae et articulo temporis illius sua intercessione periculum mortis evasit, postea tamen, ob scelera civium, eadem urbs posset simili cum vicinis urbibus perditione consumi; pertimuit maxime, cum nosset eam tempore superiori crebro terrae motu fuisse consumptam; unde et Bale, id est, praecipitans sive devorans vocata est. Sed et juxta intelligentiam spiritalem, quia Sodoma flammas vitiorum, Segor modicam adhuc inchoationem bonorum operum, mons altitudinem virtutum designat, necesse est ut cum ab incendio vitiorum quisque ad initium virtutis accesserit, non jam in ipso initio segnis perseveret, sed ad altiorem bonae actionis profectum semper alacri gressu tendere ac properare contendat.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

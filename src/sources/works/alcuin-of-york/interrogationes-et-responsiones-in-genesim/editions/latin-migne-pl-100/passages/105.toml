@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.105"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "105"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 105 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[109, 109]]
+text = """
+Inter. 105. Qualem ergo arcae speciem vel formam debemus intelligere (vers. 15)?-- Resp. Ut videtur habuit quatuor angulos ex imo assurgentes, et iisdem paulatim usque ad summum in angustum attractis in spatium unius cubiti fuit collecta [ Ms., ut videtur quatuor angulis eam ex imo adsurgentem . . . fuisse collectam]. Sic [enim] refertur quod in fundamentis trecenti cubiti in longitudine et in latitudine quinquaginta sint; et in altitudine triginta, sed collecta in cacumen angustum, ita ut cubitus sit longitudinis et latitudinis. Et vere nulla potuit tam conveniens et congrua arcae species dari, quam ut summo velut [e] tecto quodam angusto culmen [ Ms., culmine] diffunderet imbrium ruinas, et ima in aquis quadrata stabilitate consistens nec impulsu ventorum, nec impetu fluctuum, nec inquietudine animalium, quae intrinsecus erant, aut inclinari posset, aut mergi.\
+"""
+transcription_segments = [
+  { line = 109, text = """
+Inter. 105. Qualem ergo arcae speciem vel formam debemus intelligere (vers. 15)?-- Resp. Ut videtur habuit quatuor angulos ex imo assurgentes, et iisdem paulatim usque ad summum in angustum attractis in spatium unius cubiti fuit collecta [ Ms., ut videtur quatuor angulis eam ex imo adsurgentem . . . fuisse collectam]. Sic [enim] refertur quod in fundamentis trecenti cubiti in longitudine et in latitudine quinquaginta sint; et in altitudine triginta, sed collecta in cacumen angustum, ita ut cubitus sit longitudinis et latitudinis. Et vere nulla potuit tam conveniens et congrua arcae species dari, quam ut summo velut [e] tecto quodam angusto culmen [ Ms., culmine] diffunderet imbrium ruinas, et ima in aquis quadrata stabilitate consistens nec impulsu ventorum, nec impetu fluctuum, nec inquietudine animalium, quae intrinsecus erant, aut inclinari posset, aut mergi.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

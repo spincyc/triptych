@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.82"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "82"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 3.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[85, 85]]
+text = """
+(Cap. XVII.—Vers. 3 et seqq.) Et locutus est ei Dominus, dicens: Ecce testamentum meum tecum: et eris pater multitudinis gentium, et non vocabitur ultra nomen tuum Abram, sed erit nomen tuum Abraam, quia patrem multarum gentium posui te. Notandum quod ubicumque in Graeco, Testamentum legimus, ibi in Hebraeo sermone sit foedus, sive pactum, id est, BERITH (ברית). Dicunt autem Hebraei, quod ex nomine suo, Deus, quod apud illos Tetragrammum est, HE litteram, Abraae et Sarae addiderit: dicebatur enim primum ABRAM (אברם), quod interpretatur, pater excelsus: et postea vocatus est ABRAAM (אברהם), quod transfertur pater multarum: nam quod sequitur gentium, non habetur in nomine, sed subauditur. Nec mirandum, quare cum apud Graecos et nos Α littera videatur addita: nos HE litteram Hebraeam additam dixerimus; idioma enim linguae illius est, per HE (ה) quidem scribere, sed per A (א) legere: sicut e contrario A litteram saepe per HE pronuntiant.\
+"""
+transcription_segments = [
+  { line = 85, text = """
+(Cap. XVII.—Vers. 3 et seqq.) Et locutus est ei Dominus, dicens: Ecce testamentum meum tecum: et eris pater multitudinis gentium, et non vocabitur ultra nomen tuum Abram, sed erit nomen tuum Abraam, quia patrem multarum gentium posui te. Notandum quod ubicumque in Graeco, Testamentum legimus, ibi in Hebraeo sermone sit foedus, sive pactum, id est, BERITH (ברית). Dicunt autem Hebraei, quod ex nomine suo, Deus, quod apud illos Tetragrammum est, HE litteram, Abraae et Sarae addiderit: dicebatur enim primum ABRAM (אברם), quod interpretatur, pater excelsus: et postea vocatus est ABRAAM (אברהם), quod transfertur pater multarum: nam quod sequitur gentium, non habetur in nomine, sed subauditur. Nec mirandum, quare cum apud Graecos et nos Α littera videatur addita: nos HE litteram Hebraeam additam dixerimus; idioma enim linguae illius est, per HE (ה) quidem scribere, sed per A (א) legere: sicut e contrario A litteram saepe per HE pronuntiant.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

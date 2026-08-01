@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.181"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "181"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 181 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[185, 185]]
+text = """
+Inter. 181. Quaeri solet utrum quod de Sodomis dixit Deus, non se perdere locum, si invenirentur illic centum vel decem justi (vers. 26, 32), speciali quadam sententia de illa civitate, an de omnibus intelligendum sit generaliter, parcere Deum loco, in quocunque vel decem justi fuerint?-- Resp. Non est [quidem] necesse, ut hoc de omni loco accipere compellamur. Verumtamen de Sodomis potuit sic dici, quia sciebat Deus, ibi non esse vel decem, et ideo sic respondebatur Abrahae, ut significaretur nec tot ibi posse inveniri, ad exaggerationem iniquitatis illorum.\
+"""
+transcription_segments = [
+  { line = 185, text = """
+Inter. 181. Quaeri solet utrum quod de Sodomis dixit Deus, non se perdere locum, si invenirentur illic centum vel decem justi (vers. 26, 32), speciali quadam sententia de illa civitate, an de omnibus intelligendum sit generaliter, parcere Deum loco, in quocunque vel decem justi fuerint?-- Resp. Non est [quidem] necesse, ut hoc de omni loco accipere compellamur. Verumtamen de Sodomis potuit sic dici, quia sciebat Deus, ibi non esse vel decem, et ideo sic respondebatur Abrahae, ut significaretur nec tot ibi posse inveniri, ad exaggerationem iniquitatis illorum.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

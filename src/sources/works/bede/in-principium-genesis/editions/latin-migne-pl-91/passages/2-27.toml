@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-27"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.27"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[146, 146]]
+text = """
+Hic est liber generationis Adam. In die qua creavit Deus hominem, ad similitudinem Dei fecit illum: masculum et feminam creavit eos, et benedixit illis. Hic est liber primae creationis hominis, quod ad similitudinem suam fecit illum Deus, ut videlicet participatione bonitatis ejus esset perpetuo bonus, immortalis et felix; quod masculum et feminam fecit eos, quod factos gratia suae benedictionis illustravit. Talis erat generatio Adam cum uxore sua in die qua creatus est: Sed, heu! proh dolor! profanavit ille similitudinem Dei, hosti magis quam Creatori credendo, contraxit primogenitus ejus poenam maledictionis graviorem invidendo et occidendo fratrem, corrupit septimus ab illo Lamech statutam masculi et feminae legem, de qua dictum erat, Erunt duo in carne una (Gen. II, 24), accipiendo duas uxores, et in una carne tres conjungendo, et crebrescentibus passim malis, in tantum a similitudine sui Conditoris ac prima benedictione genus recessit humanum, ut in decima generatione, exceptis paucis, quos arca cohibuit, totum deleri meruisset; ad quam tamen similitudinem ac benedictionem nobis redire concessit Conditor ipse, in nostrae naturae similitudine nasci ac maledici morique dignatus, quatenus per ipsum redempti et dicere de ipso mereamur: Scimus quia cum apparuerit, similes ei erimus: videbimus enim eum sicuti est (I Joan. III, 2), et audire ab ipso: Venite, benedicti Patris mei, possidete paratum vobis regnum a constitutione mundi (Matth. XXV, 34).\
+"""
+transcription_segments = [
+  { line = 146, text = """
+Hic est liber generationis Adam. In die qua creavit Deus hominem, ad similitudinem Dei fecit illum: masculum et feminam creavit eos, et benedixit illis. Hic est liber primae creationis hominis, quod ad similitudinem suam fecit illum Deus, ut videlicet participatione bonitatis ejus esset perpetuo bonus, immortalis et felix; quod masculum et feminam fecit eos, quod factos gratia suae benedictionis illustravit. Talis erat generatio Adam cum uxore sua in die qua creatus est: Sed, heu! proh dolor! profanavit ille similitudinem Dei, hosti magis quam Creatori credendo, contraxit primogenitus ejus poenam maledictionis graviorem invidendo et occidendo fratrem, corrupit septimus ab illo Lamech statutam masculi et feminae legem, de qua dictum erat, Erunt duo in carne una (Gen. II, 24), accipiendo duas uxores, et in una carne tres conjungendo, et crebrescentibus passim malis, in tantum a similitudine sui Conditoris ac prima benedictione genus recessit humanum, ut in decima generatione, exceptis paucis, quos arca cohibuit, totum deleri meruisset; ad quam tamen similitudinem ac benedictionem nobis redire concessit Conditor ipse, in nostrae naturae similitudine nasci ac maledici morique dignatus, quatenus per ipsum redempti et dicere de ipso mereamur: Scimus quia cum apparuerit, similes ei erimus: videbimus enim eum sicuti est (I Joan. III, 2), et audire ab ipso: Venite, benedicti Patris mei, possidete paratum vobis regnum a constitutione mundi (Matth. XXV, 34).\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

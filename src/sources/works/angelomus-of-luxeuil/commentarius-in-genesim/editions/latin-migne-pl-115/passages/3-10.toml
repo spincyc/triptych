@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.3-10"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "3.10"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 12.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[78, 78]]
+text = """
+VERS. 12.-- Dixitque Adam: Mulier quam dedisti sociam, dedit mihi de ligno, et comedi. Heu, ubi peccatum finem habere debuit, ibi augmentum coepit! | Non enim culpam ad se retulit, sed quodam modo ad mulierem, quam Dominus dederat, et reatum suum oblique in Auctorem redegit [ Z., rediit], qui ei talem sociam dederat, unde occasio peccati esset. Unde nunc quoque humani generis rami ex hac adhuc radice amaritudinem trahunt, et cum de vitio suo quisque arguitur, sub defensionum umbra, quasi sub quaedam se arborum folia abscondit. In qua videlicet occultatione non se Domino, sed Dominum abscondit sibi.\
+"""
+transcription_segments = [
+  { line = 78, text = """
+VERS. 12.-- Dixitque Adam: Mulier quam dedisti sociam, dedit mihi de ligno, et comedi. Heu, ubi peccatum finem habere debuit, ibi augmentum coepit! | Non enim culpam ad se retulit, sed quodam modo ad mulierem, quam Dominus dederat, et reatum suum oblique in Auctorem redegit [ Z., rediit], qui ei talem sociam dederat, unde occasio peccati esset. Unde nunc quoque humani generis rami ex hac adhuc radice amaritudinem trahunt, et cum de vitio suo quisque arguitur, sub defensionum umbra, quasi sub quaedam se arborum folia abscondit. In qua videlicet occultatione non se Domino, sed Dominum abscondit sibi.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.138"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "138"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 35.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[142, 142]]
+text = """
+(Vers. 35.) Et concepit, et peperit filium, et dixit: Nunc super hoc confitebor Domino, et ob id vocavit nomen ejus Juda. JUDA (יהודה) confessio dicitur. A confessione itaque confessoris nomen est dictum. Verumtamen hic confessio pro gratiarum actione, aut pro laude accipitur, ut frequenter in Psalmis, et in Evangelio (Matth. XI, 25): Confitebor tibi, Domine, pater coeli et terrae, id est, gratias ago tibi, sive glorifico te.\
+"""
+transcription_segments = [
+  { line = 142, text = """
+(Vers. 35.) Et concepit, et peperit filium, et dixit: Nunc super hoc confitebor Domino, et ob id vocavit nomen ejus Juda. JUDA (יהודה) confessio dicitur. A confessione itaque confessoris nomen est dictum. Verumtamen hic confessio pro gratiarum actione, aut pro laude accipitur, ut frequenter in Psalmis, et in Evangelio (Matth. XI, 25): Confitebor tibi, Domine, pater coeli et terrae, id est, gratias ago tibi, sive glorifico te.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

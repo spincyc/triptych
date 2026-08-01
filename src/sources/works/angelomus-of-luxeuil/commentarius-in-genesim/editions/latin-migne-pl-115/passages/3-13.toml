@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.3-13"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "3.13"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 15.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[81, 81]]
+text = """
+VERS. 15.-- Inimicitias ponam inter te et mulierem, et semen tuum et semen illius. Semen diaboli perversa est suggestio, semen mulieris est totum genus humanum. Quae duo semina ex praecepto divino continuum inter se gerere odium debent, ut non faciamus quae diabolus vult, quia ille nunquam vult nobis profutura. Licet nonnulli velint intelligi mulierem mentem, semen mulieris fructum boni operis. Potest etiam et de beata Maria virgine, ex qua natus est Dominus, non incongrue accipi. Lege Augustinum et Isidorum. Ipsa conteret caput tuum, | et tu insidiaberis calcaneo ejus. Caput itaque serpentis est cogitatio illicitae suggestionis, quam nos omni intentione atque manu sollicitae considerationis a cordis auditu funditus exstirpare, et ad petram, qui est Christus, allidere debemus. Calcaneum vero mulieris extremum est vitae nostrae tempus, quo diabolus nos acrius impugnare satagit, qui cum ab initio deprehenditur [ Z., reprehenditur], percutere calcaneum molitur. Quia etsi suggestione primae intentionis non percutit, decipere in fine intendit. Cui, si viriliter resistimus, victoriam perseverantiae cum salute nostra accipiemus. Notandum est quia in hoc quod ait: Maledictus eris inter omnia animantia et bestias terrae, ad diabolum refertur, qui maledictus dicitur, quia poenitentiam | agere non potest. Inter omnia animantia, id est quae suam servaverunt naturam. Et bestias terrae, hoc est inter homines, sive universalem Ecclesiam.\
+"""
+transcription_segments = [
+  { line = 81, text = """
+VERS. 15.-- Inimicitias ponam inter te et mulierem, et semen tuum et semen illius. Semen diaboli perversa est suggestio, semen mulieris est totum genus humanum. Quae duo semina ex praecepto divino continuum inter se gerere odium debent, ut non faciamus quae diabolus vult, quia ille nunquam vult nobis profutura. Licet nonnulli velint intelligi mulierem mentem, semen mulieris fructum boni operis. Potest etiam et de beata Maria virgine, ex qua natus est Dominus, non incongrue accipi. Lege Augustinum et Isidorum. Ipsa conteret caput tuum, | et tu insidiaberis calcaneo ejus. Caput itaque serpentis est cogitatio illicitae suggestionis, quam nos omni intentione atque manu sollicitae considerationis a cordis auditu funditus exstirpare, et ad petram, qui est Christus, allidere debemus. Calcaneum vero mulieris extremum est vitae nostrae tempus, quo diabolus nos acrius impugnare satagit, qui cum ab initio deprehenditur [ Z., reprehenditur], percutere calcaneum molitur. Quia etsi suggestione primae intentionis non percutit, decipere in fine intendit. Cui, si viriliter resistimus, victoriam perseverantiae cum salute nostra accipiemus. Notandum est quia in hoc quod ait: Maledictus eris inter omnia animantia et bestias terrae, ad diabolum refertur, qui maledictus dicitur, quia poenitentiam | agere non potest. Inter omnia animantia, id est quae suam servaverunt naturam. Et bestias terrae, hoc est inter homines, sive universalem Ecclesiam.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

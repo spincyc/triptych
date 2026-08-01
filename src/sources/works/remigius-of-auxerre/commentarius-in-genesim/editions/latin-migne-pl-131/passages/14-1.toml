@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.14-1"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "14.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 1.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[187, 187]]
+text = """
+Vers. 1. Factum est autem in illo tempore ut Amraphel Sennaar, etc. Quatuor reges inierunt bellum contra quinque. Hi quatuor reges mystice significant adversarias potestates quae per carnem quae quatuor humoribus constat, in quinque sensus corporis dominari quaerunt. Amraphel interpretatur: dixit ut caderet, et est rex Sennaar qui, ut superius diximus, interpretatur excussio vel fetor dentium. Significat haereticos qui ex proposito peccant et cadunt contra Deum, perversa loquentes et obsceni | dogmatis fetorem emittentes. Arioch ebrius vel ebrietas interpretatur. Significat gentiles qui poculo erroris ebriati creaturam pro Creatore colunt. Cohdorlachamor interpretatur decorus vel manipulus. Ponitur in significatione hypocritarum qui, cum sint pleni malitia, vulgo decori putantur virtutibus. Est rex Elamitarum, id est saeculi vel orbis. Thadal interpretatur sciens jugum. Praesignat avaritiam cujus jugum sciunt avari libenter ferre. Est gentium rex, quia avaritia maxime gentibus dominatur.\
+"""
+transcription_segments = [
+  { line = 187, text = """
+Vers. 1. Factum est autem in illo tempore ut Amraphel Sennaar, etc. Quatuor reges inierunt bellum contra quinque. Hi quatuor reges mystice significant adversarias potestates quae per carnem quae quatuor humoribus constat, in quinque sensus corporis dominari quaerunt. Amraphel interpretatur: dixit ut caderet, et est rex Sennaar qui, ut superius diximus, interpretatur excussio vel fetor dentium. Significat haereticos qui ex proposito peccant et cadunt contra Deum, perversa loquentes et obsceni | dogmatis fetorem emittentes. Arioch ebrius vel ebrietas interpretatur. Significat gentiles qui poculo erroris ebriati creaturam pro Creatore colunt. Cohdorlachamor interpretatur decorus vel manipulus. Ponitur in significatione hypocritarum qui, cum sint pleni malitia, vulgo decori putantur virtutibus. Est rex Elamitarum, id est saeculi vel orbis. Thadal interpretatur sciens jugum. Praesignat avaritiam cujus jugum sciunt avari libenter ferre. Est gentium rex, quia avaritia maxime gentibus dominatur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

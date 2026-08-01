@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-72"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.72"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[99, 99]]
+text = """
+Super pectus tuum gradieris, et terram comedes cunctis diebus vitae tuae. Super pectus quippe graditur serpens, quia omnes gressus diaboli nequitiae sunt et fraudes: nam in pectore calliditatem et versutias cogitationum ejus indicat, quibus ad eos quos vult decipere serpit, pro quo antiqua translatio habet: Pectore et ventre repes. Repit autem pectore, cum terrenas hominibus, quos sua membra facere desiderat, cogitationes suggerit. Repit et ventre, cum eos ingluvie superatos in aestum libidinis excitat. Omnia namque quae repunt, corpus per terram trahunt. Corpus autem diaboli sunt omnes reprobi; et ipse pectore et ventre suo repit, cum eos per iniquas cogitationes vel illecebras comessationis ac luxuriae ad infima deprimit. Devorat autem terram, cum errore peccantium pascitur ac delectatur, eosque seducens ad interitum rapit. Sicut enim sancti saepe coelorum, ita nomine terrae hi qui terrena sapiunt, indicantur, quomodo in sequentibus Adae dicitur: Terra es, et in terram ibis, quod nostra translatio habet: Quia pulvis es et in pulverem reverteris. In cujus signum devorationis spiritalis ipse etiam serpens irrationalis, quo ad decipiendum hominem velut organo suo usus est diabolus, nunc terram materialem comedere jubetur, cui prius una cum caeteris animantibus terrae herbis et lignorum fructu vesci concessum erat.\
+"""
+transcription_segments = [
+  { line = 99, text = """
+Super pectus tuum gradieris, et terram comedes cunctis diebus vitae tuae. Super pectus quippe graditur serpens, quia omnes gressus diaboli nequitiae sunt et fraudes: nam in pectore calliditatem et versutias cogitationum ejus indicat, quibus ad eos quos vult decipere serpit, pro quo antiqua translatio habet: Pectore et ventre repes. Repit autem pectore, cum terrenas hominibus, quos sua membra facere desiderat, cogitationes suggerit. Repit et ventre, cum eos ingluvie superatos in aestum libidinis excitat. Omnia namque quae repunt, corpus per terram trahunt. Corpus autem diaboli sunt omnes reprobi; et ipse pectore et ventre suo repit, cum eos per iniquas cogitationes vel illecebras comessationis ac luxuriae ad infima deprimit. Devorat autem terram, cum errore peccantium pascitur ac delectatur, eosque seducens ad interitum rapit. Sicut enim sancti saepe coelorum, ita nomine terrae hi qui terrena sapiunt, indicantur, quomodo in sequentibus Adae dicitur: Terra es, et in terram ibis, quod nostra translatio habet: Quia pulvis es et in pulverem reverteris. In cujus signum devorationis spiritalis ipse etiam serpens irrationalis, quo ad decipiendum hominem velut organo suo usus est diabolus, nunc terram materialem comedere jubetur, cui prius una cum caeteris animantibus terrae herbis et lignorum fructu vesci concessum erat.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-46"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.46"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[72, 72]]
+text = """
+Ibique invenitur bdoellium et lapis onychinus. Bdoellium est, ut idem Plinius scribit, arbor aromatica, colore nigro, magnitudine oleae, et folia roboris, fructu caprificis, ipsius natura quae gummis. Est autem lacryma ejus lucida, subalbida, levis, pinguis, aequaliter cerea, et quae facile molliatur, gustu amara, odoris boni, sed vino perfusa odoratior, cujus et liber Numerorum meminit, Erat autem, inquiens, man quasi semen coriandri coloris bdellii (Num. XI, 7), id est, lucidi et subalbidi. Onyx autem lapis est pretiosus, inde appellatus quod habet in se permistum candorem in similitudinem unguis humani. Graeci enim unguem onychem dicunt. Hanc et Arabia gignit, sed Indica igniculos habet, albis cingentibus zonis; Arabica autem nigra est cum candentibus zonis. Antiqua Translatio pro his habet carbunculum et lapidem prasinum. Est autem carbunculus, sicut et nomine probat, lapis ignei coloris, quo noctis quoque tenebras illustrare perhibetur. Est lapis prasinus viridantis aspectus: unde et Graece a porro, quod apud eos prason dicitur, nomen accepit.\
+"""
+transcription_segments = [
+  { line = 72, text = """
+Ibique invenitur bdoellium et lapis onychinus. Bdoellium est, ut idem Plinius scribit, arbor aromatica, colore nigro, magnitudine oleae, et folia roboris, fructu caprificis, ipsius natura quae gummis. Est autem lacryma ejus lucida, subalbida, levis, pinguis, aequaliter cerea, et quae facile molliatur, gustu amara, odoris boni, sed vino perfusa odoratior, cujus et liber Numerorum meminit, Erat autem, inquiens, man quasi semen coriandri coloris bdellii (Num. XI, 7), id est, lucidi et subalbidi. Onyx autem lapis est pretiosus, inde appellatus quod habet in se permistum candorem in similitudinem unguis humani. Graeci enim unguem onychem dicunt. Hanc et Arabia gignit, sed Indica igniculos habet, albis cingentibus zonis; Arabica autem nigra est cum candentibus zonis. Antiqua Translatio pro his habet carbunculum et lapidem prasinum. Est autem carbunculus, sicut et nomine probat, lapis ignei coloris, quo noctis quoque tenebras illustrare perhibetur. Est lapis prasinus viridantis aspectus: unde et Graece a porro, quod apud eos prason dicitur, nomen accepit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

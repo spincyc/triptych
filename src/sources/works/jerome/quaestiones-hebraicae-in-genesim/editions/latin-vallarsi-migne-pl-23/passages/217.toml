@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.217"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "217"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 22.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[221, 221]]
+text = """
+(Vers. 22 et seqq.). Filius auctus Joseph, filius auctus super fontem filiae, gradu composito incedentes super murum. Et exacerbaverunt eum, et contenderunt, et irascebantur adversus eum, habentes sagittas. Sedit in forti arcus ejus, et dirupta sunt vincula manuum ejus, a manibus fortis Jacob, inde pascetur lapis Israel a Deo patris tui: et reliqua. Quia Septuaginta Interpretes in plerisque dissentiunt, pro interpretatione eorum, ut in Hebraeo habetur, expressimus. Et est sensus capituli: O Joseph, qui ideo sic vocaris, quia adauxit te mihi Deus, sive quia inter fratres tuos major futurus es (fortissima siquidem fuit tribus Ephraim, ut in Regnorum et Paralipomenon libris legimus); O, inquam, fili mi Joseph, qui tam pulcher es, ut te tota de muris, et turribus, ac fenestris puellarum Aegypti turba prospectet, inviderunt tibi, et te ad iracundiam provocaverunt fratres tui, habentes livoris sagittas, et zeli jaculis vulnerati. Verum tu arcum tuum et arma pugnandi posuisti in Deo, qui fortis est propugnator: et vincula tua, quibus te fratres ligaverunt, ab ipso soluta sunt, et dirupta, ut ex tuo semine tribus nascatur Ephraim, fortis, et stabilis, et instar lapidis durioris invicta, imperans quoque decem tribubus Israel.\
+"""
+transcription_segments = [
+  { line = 221, text = """
+(Vers. 22 et seqq.). Filius auctus Joseph, filius auctus super fontem filiae, gradu composito incedentes super murum. Et exacerbaverunt eum, et contenderunt, et irascebantur adversus eum, habentes sagittas. Sedit in forti arcus ejus, et dirupta sunt vincula manuum ejus, a manibus fortis Jacob, inde pascetur lapis Israel a Deo patris tui: et reliqua. Quia Septuaginta Interpretes in plerisque dissentiunt, pro interpretatione eorum, ut in Hebraeo habetur, expressimus. Et est sensus capituli: O Joseph, qui ideo sic vocaris, quia adauxit te mihi Deus, sive quia inter fratres tuos major futurus es (fortissima siquidem fuit tribus Ephraim, ut in Regnorum et Paralipomenon libris legimus); O, inquam, fili mi Joseph, qui tam pulcher es, ut te tota de muris, et turribus, ac fenestris puellarum Aegypti turba prospectet, inviderunt tibi, et te ad iracundiam provocaverunt fratres tui, habentes livoris sagittas, et zeli jaculis vulnerati. Verum tu arcum tuum et arma pugnandi posuisti in Deo, qui fortis est propugnator: et vincula tua, quibus te fratres ligaverunt, ab ipso soluta sunt, et dirupta, ut ex tuo semine tribus nascatur Ephraim, fortis, et stabilis, et instar lapidis durioris invicta, imperans quoque decem tribubus Israel.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

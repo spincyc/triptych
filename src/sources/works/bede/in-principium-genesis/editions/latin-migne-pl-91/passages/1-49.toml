@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-49"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.49"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[75, 75]]
+text = """
+Praecepitque ei dicens: Ex omni ligno paradisi comede, de ligno autem scientiae boni et mali ne comedas. Non est credendum quod in ligno illo aliquid mali naturaliter inesset, sicut et supra docuimus, sed ab eo ligno quod malum non erat prohibitus est homo, ut ipsa per se praecepti conservatio bonum illi esset et transgressio malum. Denique a peccante nihil aliud appetitum est nisi non esse sub dominatione Dei, quando illud admissum est in quo ne admitteretur sola deberet jussio dominantis attendi, quae si sola attenderetur quid aliud quam Dei voluntas amaretur? quid aliud quam Dei voluntas humanae voluntati praeponeretur? Nec fieri potest ut voluntas propria non grandi ruinae pondere super hominem cadat, si eam voluntati superioris extollendo praeponat. Hoc expertus est homo contemnens praeceptum Dei; et hoc experimento didicit quid interesset inter bonum et malum, scilicet bonum obedientiiae, malum autem inobedientiae, id est, superbiae, contumaciae, perversae imitationis Dei, et noxiae libertatis. Hoc autem in quo accidere potuit ex ipsa re, ut supra dictum est, nomen accepit.\
+"""
+transcription_segments = [
+  { line = 75, text = """
+Praecepitque ei dicens: Ex omni ligno paradisi comede, de ligno autem scientiae boni et mali ne comedas. Non est credendum quod in ligno illo aliquid mali naturaliter inesset, sicut et supra docuimus, sed ab eo ligno quod malum non erat prohibitus est homo, ut ipsa per se praecepti conservatio bonum illi esset et transgressio malum. Denique a peccante nihil aliud appetitum est nisi non esse sub dominatione Dei, quando illud admissum est in quo ne admitteretur sola deberet jussio dominantis attendi, quae si sola attenderetur quid aliud quam Dei voluntas amaretur? quid aliud quam Dei voluntas humanae voluntati praeponeretur? Nec fieri potest ut voluntas propria non grandi ruinae pondere super hominem cadat, si eam voluntati superioris extollendo praeponat. Hoc expertus est homo contemnens praeceptum Dei; et hoc experimento didicit quid interesset inter bonum et malum, scilicet bonum obedientiiae, malum autem inobedientiae, id est, superbiae, contumaciae, perversae imitationis Dei, et noxiae libertatis. Hoc autem in quo accidere potuit ex ipsa re, ut supra dictum est, nomen accepit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

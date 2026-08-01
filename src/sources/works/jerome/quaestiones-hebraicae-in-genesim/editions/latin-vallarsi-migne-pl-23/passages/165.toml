@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.165"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "165"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 16.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[169, 169]]
+text = """
+(Vers. 16.) Et factum est dum appropinquaret Chabratha in terra Chanaan, ut veniret Ephratha, peperit Rachel. Verbum Hebraicum (כברת) CHABRATHA, in consequentibus, ubi Jacob loquitur ad Joseph: Ego autem cum venirem de Mesopotamia Syriae, mortua est mater tua Rachel in terra Chanaan, in via Hippodromi, ut venirem Ephrata (Gen. XLVIII): nescio quid volentes, Hippodromum Septuaginta Interpretes transtulerunt: et statim ibi, ubi in Hebraeo dicitur: Et sepelierunt eam in via Ephrata, haec est Bethleem (Gen. XXXV, 19), rursum Septuaginta pro Ephrata posuerunt Hippodromum: cum utique si CHABRATHA Hippodromus est, Ephrata Hippodromus esse non possit. Aquila autem hoc ita transtulit: Et factum est καθ᾽ ὁδον τῆς γῆς, id est, in itinere terrae, introiens in Ephrata. Sed melius est si transferatur, in electo terrae tempore cum introiret Ephratha. Porro vernum tempus significat, cum in florem cuncta rumpuntur, et anni tempus electum est: vel cum transeuntes per viam carpunt, et eligunt e vicinis agris quodcumque ad manus venerit, diversis floribus invitati. Ephrata vero et Bethleem unius urbis vocabulum est, sub interpretatione consimili. Siquidem in frugiferam et in domum panis vertitur: propter eum panem, qui de coelo descendisse se dicit (Joan. VI).\
+"""
+transcription_segments = [
+  { line = 169, text = """
+(Vers. 16.) Et factum est dum appropinquaret Chabratha in terra Chanaan, ut veniret Ephratha, peperit Rachel. Verbum Hebraicum (כברת) CHABRATHA, in consequentibus, ubi Jacob loquitur ad Joseph: Ego autem cum venirem de Mesopotamia Syriae, mortua est mater tua Rachel in terra Chanaan, in via Hippodromi, ut venirem Ephrata (Gen. XLVIII): nescio quid volentes, Hippodromum Septuaginta Interpretes transtulerunt: et statim ibi, ubi in Hebraeo dicitur: Et sepelierunt eam in via Ephrata, haec est Bethleem (Gen. XXXV, 19), rursum Septuaginta pro Ephrata posuerunt Hippodromum: cum utique si CHABRATHA Hippodromus est, Ephrata Hippodromus esse non possit. Aquila autem hoc ita transtulit: Et factum est καθ᾽ ὁδον τῆς γῆς, id est, in itinere terrae, introiens in Ephrata. Sed melius est si transferatur, in electo terrae tempore cum introiret Ephratha. Porro vernum tempus significat, cum in florem cuncta rumpuntur, et anni tempus electum est: vel cum transeuntes per viam carpunt, et eligunt e vicinis agris quodcumque ad manus venerit, diversis floribus invitati. Ephrata vero et Bethleem unius urbis vocabulum est, sub interpretatione consimili. Siquidem in frugiferam et in domum panis vertitur: propter eum panem, qui de coelo descendisse se dicit (Joan. VI).\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

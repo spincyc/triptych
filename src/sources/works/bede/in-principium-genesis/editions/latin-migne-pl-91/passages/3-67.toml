@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-67"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.67"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 2 paragraphs."
+physical_line_ranges = [[301, 302]]
+text = """
+Dixit autem rex Sodomorum ad Abram: Da mihi animas, caetera tolle tibi. Qui respondit ei: Levo manum meam ad Dominum Deum excelsum possessorem coeli et terrae quod a filo subtegminis usque ad corrigiam caligae non accipiam ex omnibus quae tua sunt, et caetera. Diligenter notandum, et ad exemplum vitae moralis trahendum, quod Abraham qui quasi necessitatibus proximorum veraciter compatiens, pro liberando Loth se periculo obtulerat, quasi Deo devotus sacerdoti a quo benedicebatur decimas dederat: ipse quasi pecuniarum contemptor, aliquid de praeda quam eripuerat, etiam cum rex cui vicerat obtulisset, accipere renuit. Quasi justitiae amator militibus qui secum pugnaverant suas partes distribuere non neglexit. Merito talis conscientia ut ad arcem virtutum pervenire ocius possit, novis semper gratiae supernae beneficiis adtollitur. Unde recte his ita transactis confestim dono coelestis oraculi ac divinae benedictionis compos efficitur, quae sequentis libri melius lectione consideranda et pertractanda servemus.
+
+LIBER QUARTUS.\
+"""
+transcription_segments = [
+  { line = 301, text = """
+Dixit autem rex Sodomorum ad Abram: Da mihi animas, caetera tolle tibi. Qui respondit ei: Levo manum meam ad Dominum Deum excelsum possessorem coeli et terrae quod a filo subtegminis usque ad corrigiam caligae non accipiam ex omnibus quae tua sunt, et caetera. Diligenter notandum, et ad exemplum vitae moralis trahendum, quod Abraham qui quasi necessitatibus proximorum veraciter compatiens, pro liberando Loth se periculo obtulerat, quasi Deo devotus sacerdoti a quo benedicebatur decimas dederat: ipse quasi pecuniarum contemptor, aliquid de praeda quam eripuerat, etiam cum rex cui vicerat obtulisset, accipere renuit. Quasi justitiae amator militibus qui secum pugnaverant suas partes distribuere non neglexit. Merito talis conscientia ut ad arcem virtutum pervenire ocius possit, novis semper gratiae supernae beneficiis adtollitur. Unde recte his ita transactis confestim dono coelestis oraculi ac divinae benedictionis compos efficitur, quae sequentis libri melius lectione consideranda et pertractanda servemus.\
+""" },
+  { line = 302, text = """
+LIBER QUARTUS.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

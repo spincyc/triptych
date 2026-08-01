@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-7"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.7"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[228, 228]]
+text = """
+Porro Chus genuit Nemrod. Ipse coepit esse potens in terra, et erat robustus venator coram Domino. Progenie Sem et Japheth in vitae simplicitatis innocentia permanente, nascitur de stirpe Cham maledictus, qui statum humanae conversationis novo vivendi genere perverteret, dum singulari potentia elatus, primum venatu viveret; dein, collecto exercitu, insolitam in populos tyrannidem studuit exercere; denique in sequentibus regnum habuisse et civitates maximas aedificasse legitur: quod quia primus ipse fecerit testatur Scriptura, quae ait: Ipse coepit esse potens. Coepit enim, quia primus fecit. Potens autem erat in terra, quia, neglectis coelestibus, in quo justi sunt potentes, infima quaerere, et in his spem ponere didicit.\
+"""
+transcription_segments = [
+  { line = 228, text = """
+Porro Chus genuit Nemrod. Ipse coepit esse potens in terra, et erat robustus venator coram Domino. Progenie Sem et Japheth in vitae simplicitatis innocentia permanente, nascitur de stirpe Cham maledictus, qui statum humanae conversationis novo vivendi genere perverteret, dum singulari potentia elatus, primum venatu viveret; dein, collecto exercitu, insolitam in populos tyrannidem studuit exercere; denique in sequentibus regnum habuisse et civitates maximas aedificasse legitur: quod quia primus ipse fecerit testatur Scriptura, quae ait: Ipse coepit esse potens. Coepit enim, quia primus fecit. Potens autem erat in terra, quia, neglectis coelestibus, in quo justi sunt potentes, infima quaerere, et in his spem ponere didicit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

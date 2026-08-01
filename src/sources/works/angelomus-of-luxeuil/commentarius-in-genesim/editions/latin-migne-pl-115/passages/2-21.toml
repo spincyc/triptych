@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.2-21"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "2.21"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 22-23.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[64, 64]]
+text = """
+VERS. 22, 23, etc.-- Et aedificavit Dominus Deus costam quam tulerat de Adam in mulierem, et reliqua, usque quo ait: et vocabitur virago, quoniam de viro sumpta est. Quomodo hic feminam aedificatam dicit, qui superius ab omni opere suo requievit? Non enim hic creavit in materia, sed expressit in forma. Dixitque Adam: Hoc nunc os ex ossibus meis, et reliqua. Vocavit ergo uxorem suam vir tanquam potior inferiorem, et dixit: Hoc os ex ossibus meis, etc. Os de ossibus meis fortassis propter fortitudinem, et caro de carne propter temperantiam. Hae namque duae virtutes ad inferiorem animae partem, quam prudentia rationalis regit, docentur pertinere allegorice. | Haec vocabitur virago. In quibusdam codicibus invenitur, haec vocabitur mulier. Non enim videtur in Graeco et in Latino resonare cur mulier appelletur, quia ex viro sumpta sit; sed etymologia in Hebraeo sermone servatur [ Z., servetur]: vir quippe vocatur Is et mulier Issa. Recte igitur ab Is appellata est mulier Issa. Et hoc est quod hic ait, haec vocabitur virago, quoniam de viro sumpta est.\
+"""
+transcription_segments = [
+  { line = 64, text = """
+VERS. 22, 23, etc.-- Et aedificavit Dominus Deus costam quam tulerat de Adam in mulierem, et reliqua, usque quo ait: et vocabitur virago, quoniam de viro sumpta est. Quomodo hic feminam aedificatam dicit, qui superius ab omni opere suo requievit? Non enim hic creavit in materia, sed expressit in forma. Dixitque Adam: Hoc nunc os ex ossibus meis, et reliqua. Vocavit ergo uxorem suam vir tanquam potior inferiorem, et dixit: Hoc os ex ossibus meis, etc. Os de ossibus meis fortassis propter fortitudinem, et caro de carne propter temperantiam. Hae namque duae virtutes ad inferiorem animae partem, quam prudentia rationalis regit, docentur pertinere allegorice. | Haec vocabitur virago. In quibusdam codicibus invenitur, haec vocabitur mulier. Non enim videtur in Graeco et in Latino resonare cur mulier appelletur, quia ex viro sumpta sit; sed etymologia in Hebraeo sermone servatur [ Z., servetur]: vir quippe vocatur Is et mulier Issa. Recte igitur ab Is appellata est mulier Issa. Et hoc est quod hic ait, haec vocabitur virago, quoniam de viro sumpta est.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

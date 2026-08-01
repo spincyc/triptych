@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.18-7"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "18.7"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 21.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[229, 229]]
+text = """
+Vers. 21. Descendam et videbo utrum clamorem qui venit ad me opere compleverint. Clamor quidem ad Deum pervenerat, sed non statim puniuntur, nisi Angelus descendisset et vidisset utrum hoc perpetrassent. Mox autem, ut inventum est, absque dilatione misso coelitus igne consumpti sunt. Ubi docemur non facile auditis quorumdam criminibus credere: statim vero, ut res probata fuerit, continuo ultio subsequitur. Quod autem dicitur: descendam et videbo, more nostro Deus loquitur tanquam dubitans et ignorans, cum tamen ipse sanctam et ratam habeat scientiam.\
+"""
+transcription_segments = [
+  { line = 229, text = """
+Vers. 21. Descendam et videbo utrum clamorem qui venit ad me opere compleverint. Clamor quidem ad Deum pervenerat, sed non statim puniuntur, nisi Angelus descendisset et vidisset utrum hoc perpetrassent. Mox autem, ut inventum est, absque dilatione misso coelitus igne consumpti sunt. Ubi docemur non facile auditis quorumdam criminibus credere: statim vero, ut res probata fuerit, continuo ultio subsequitur. Quod autem dicitur: descendam et videbo, more nostro Deus loquitur tanquam dubitans et ignorans, cum tamen ipse sanctam et ratam habeat scientiam.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

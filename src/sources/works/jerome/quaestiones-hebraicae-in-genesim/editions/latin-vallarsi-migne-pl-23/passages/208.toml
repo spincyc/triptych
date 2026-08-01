@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.208"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "208"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 5.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[212, 212]]
+text = """
+(Vers. 5 et 6.) Simeon et Levi fratres consummaverunt iniquitatem adinventionis suae: in consilium eorum non veniat anima mea: et in congregatione eorum non aemuletur jecur meum, quia in furore suo interfecerunt homines, et in desiderio suo subnervaverunt taurum. Necessitate compellimur juxta propositum operis longius ea repetere, quae ab Hebraica veritate discordant. Legitur enim ibi: Simeon et Levi fratres, vasa iniquitatis arma eorum. In arcanum eorum, ne intret anima mea, et in conventu eorum ne desoletur gloria mea, quia in furore suo interfecerunt virum, et in libidine sua suffoderunt murum (Gen. XXXIV). Significat autem non sui consilii fuisse, quod Sichem et Emor foederatos viros interfecerint, contraque jus pacis et amicitiarum sanguinem fuderint innocentem, et quasi quodam furore, sic crudelitate rapti, muros hospitae urbis everterint. Unde sequitur et dicit:\
+"""
+transcription_segments = [
+  { line = 212, text = """
+(Vers. 5 et 6.) Simeon et Levi fratres consummaverunt iniquitatem adinventionis suae: in consilium eorum non veniat anima mea: et in congregatione eorum non aemuletur jecur meum, quia in furore suo interfecerunt homines, et in desiderio suo subnervaverunt taurum. Necessitate compellimur juxta propositum operis longius ea repetere, quae ab Hebraica veritate discordant. Legitur enim ibi: Simeon et Levi fratres, vasa iniquitatis arma eorum. In arcanum eorum, ne intret anima mea, et in conventu eorum ne desoletur gloria mea, quia in furore suo interfecerunt virum, et in libidine sua suffoderunt murum (Gen. XXXIV). Significat autem non sui consilii fuisse, quod Sichem et Emor foederatos viros interfecerint, contraque jus pacis et amicitiarum sanguinem fuderint innocentem, et quasi quodam furore, sic crudelitate rapti, muros hospitae urbis everterint. Unde sequitur et dicit:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

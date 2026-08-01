@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.4-1"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "4.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 1.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[91, 91]]
+text = """
+VERS. 1.-- Adam vero cognovit Evam, uxorem suam, quae concepit, et peperit Cain, et caetera. Cain interpretatur acquisitio sive possessio, unde etymologiam ipsius exprimens mater ait: Possedi hominem per Deum. A nonnullis etiam lamentatio dicitur, eo quod post interfectum Abel interfectus sit, et poenam sui sceleris dederit.\
+"""
+transcription_segments = [
+  { line = 91, text = """
+VERS. 1.-- Adam vero cognovit Evam, uxorem suam, quae concepit, et peperit Cain, et caetera. Cain interpretatur acquisitio sive possessio, unde etymologiam ipsius exprimens mater ait: Possedi hominem per Deum. A nonnullis etiam lamentatio dicitur, eo quod post interfectum Abel interfectus sit, et poenam sui sceleris dederit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,29 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.15-7"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "15.7"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 18.' and running to the next such heading, in 3 paragraphs."
+physical_line_ranges = [[189, 191]]
+text = """
+VERS. 18.-- Semini tuo dabo terram hanc a flumine Aegypti usque ad flumen Euphratem. De quo flumine Aegypti dixit? Non ergo a flumine magno Aegypti, hoc est, Nilo, sed a parvo, quod dividit inter Aegyptum et Palaestinam [ Z., dividit Aegypt. et Pal.], ubi est civitas Rhina curura [Rhinocorura]. Quod vero adjungitur: Cum sol occubuisset, facta est caligo tenebrosa, et apparuit clibanus fumans, et lampas ignis, transiens inter media illa, quae divisa erant, significat post finem saeculi futurum diem judicii, quando per ignem segregabuntur sanctorum populi et iniquorum.
+
+| Deinde legitur qualiter Abram ad Agar ancillam Aegyptiam ingressus est, et genuit ex ea filium, vocavitque nomen ejus Ismael, de quo dicitur: Hic erit ferus homo: manus ejus contra omnes, et reliqua.
+
+Quomodo defenditur Abram adulterii reus non esse, dum vivente legitima uxore conjunctus sit ancillae suae? Necdum promulgata erat unius uxoris Evangelica lex. Habebat quoque promissionem a Deo multiplicandi [ Petr., multiplicati] seminis sui; sed necdum sciebat ex qua uxore, quia postea dictum ei de Sara habere filium. Nam propterea sic propagandi voluntas pia fuit, quia concumbendi voluntas libidinosa non fuit, etiam et Sarai prolem, | quam de se habere non potuit, de ancilla habere voluit, consentiebat uterque in facto, quia uterque Sarai sterilem esse sciebat. Sed quomodo manus omnium contra Ismael, vel manus ejus contra omnes? Invenit enim angelus Domini Agar super fontem aquae in deserto ad fontem in via Assur, quae per eremum ducit, quando ad Aegyptum ire festinabat, et vocavit nomen ejus Ismael; quia exaudivit Dominus humilitatem ejus. Ismael interpretatur exauditio Dei. Hic erit ferus homo; manus ejus super omnes, et manus omnium super eum, et contra faciem omnium fratrum suorum habitabit. Significabat autem semen ejus habitaturum in eremo, id est, Saracenos vagos incertisque sedibus, qui universas gentes quibus desertum ex latere jungitur, incursant, | et impugnantur ab omnibus. Potest et in loco Judaeorum et haereticorum e regione Ecclesiae tabernacula figentium, ferox et vaga infidelitatis incursio intelligi.\
+"""
+transcription_segments = [
+  { line = 189, text = """
+VERS. 18.-- Semini tuo dabo terram hanc a flumine Aegypti usque ad flumen Euphratem. De quo flumine Aegypti dixit? Non ergo a flumine magno Aegypti, hoc est, Nilo, sed a parvo, quod dividit inter Aegyptum et Palaestinam [ Z., dividit Aegypt. et Pal.], ubi est civitas Rhina curura [Rhinocorura]. Quod vero adjungitur: Cum sol occubuisset, facta est caligo tenebrosa, et apparuit clibanus fumans, et lampas ignis, transiens inter media illa, quae divisa erant, significat post finem saeculi futurum diem judicii, quando per ignem segregabuntur sanctorum populi et iniquorum.\
+""" },
+  { line = 190, text = """
+| Deinde legitur qualiter Abram ad Agar ancillam Aegyptiam ingressus est, et genuit ex ea filium, vocavitque nomen ejus Ismael, de quo dicitur: Hic erit ferus homo: manus ejus contra omnes, et reliqua.\
+""" },
+  { line = 191, text = """
+Quomodo defenditur Abram adulterii reus non esse, dum vivente legitima uxore conjunctus sit ancillae suae? Necdum promulgata erat unius uxoris Evangelica lex. Habebat quoque promissionem a Deo multiplicandi [ Petr., multiplicati] seminis sui; sed necdum sciebat ex qua uxore, quia postea dictum ei de Sara habere filium. Nam propterea sic propagandi voluntas pia fuit, quia concumbendi voluntas libidinosa non fuit, etiam et Sarai prolem, | quam de se habere non potuit, de ancilla habere voluit, consentiebat uterque in facto, quia uterque Sarai sterilem esse sciebat. Sed quomodo manus omnium contra Ismael, vel manus ejus contra omnes? Invenit enim angelus Domini Agar super fontem aquae in deserto ad fontem in via Assur, quae per eremum ducit, quando ad Aegyptum ire festinabat, et vocavit nomen ejus Ismael; quia exaudivit Dominus humilitatem ejus. Ismael interpretatur exauditio Dei. Hic erit ferus homo; manus ejus super omnes, et manus omnium super eum, et contra faciem omnium fratrum suorum habitabit. Significabat autem semen ejus habitaturum in eremo, id est, Saracenos vagos incertisque sedibus, qui universas gentes quibus desertum ex latere jungitur, incursant, | et impugnantur ab omnibus. Potest et in loco Judaeorum et haereticorum e regione Ecclesiae tabernacula figentium, ferox et vaga infidelitatis incursio intelligi.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

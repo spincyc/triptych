@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-59"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.59"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[85, 85]]
+text = """
+Erat autem uterque nudus. Adam scilicet et uxor ejus, et non erubescebant. « Et merito, quid enim puderet quando nullam legem senserant in membris suis repugnantem legi mentis suae? quae illos poena peccati post perpetrationem praevaricationis secuta est, usurpante inobedientia prohibitum, et justitia puniente commissum: quod antequam fieret, nudi erant, ut dictum est, et non confundebantur. Nullus erat motus in corpore, cui verecundia deberetur; nihil putabant velandum, quia nihil senserant refrenandum. »\
+"""
+transcription_segments = [
+  { line = 85, text = """
+Erat autem uterque nudus. Adam scilicet et uxor ejus, et non erubescebant. « Et merito, quid enim puderet quando nullam legem senserant in membris suis repugnantem legi mentis suae? quae illos poena peccati post perpetrationem praevaricationis secuta est, usurpante inobedientia prohibitum, et justitia puniente commissum: quod antequam fieret, nudi erant, ut dictum est, et non confundebantur. Nullus erat motus in corpore, cui verecundia deberetur; nihil putabant velandum, quia nihil senserant refrenandum. »\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

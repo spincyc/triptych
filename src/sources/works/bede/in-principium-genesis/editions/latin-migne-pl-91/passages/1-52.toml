@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-52"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.52"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[78, 78]]
+text = """
+Formatis igitur Dominus Deus de humo cunctis animantibus terrae, et universis volatilibus coeli, adduxit ea ad Adam. Si quem movet quia non dixit, formatis de humo cunctis animantibus terrae et de aquis universis volatilibus coeli, sed tanquam utraque genera de terra formaverit, Formatis igitur, inquit, Dominus Deus de humo cunctis animantibus terrae et universis volatilibus coeli; videat duobus modis esse intelligendum: aut tacuisse nunc unde formaverit volatilia coeli, quia et tacitum posset occurrere, ut non de terra utrumque accipiatur Dominum formasse; sed tantummodo animantia terrae et volatilia coeli, etiam tacente Scriptura intelligamus unde formaverit; aut terram universaliter sic appellatam simul cum aquis, quemadmodum appellata est illo psalmo ubi, coelestium laudibus terminatis, ad terram facta est conversio sermonis et dictum: Laudate Dominum de terra, dracones, et omnes abyssi (Ps. CXLVIII, 7), etc. Nec postea dictum est: Laudate Dominum de aquis. Ubi enim sunt omnes abyssi quae de terra laudant Dominum, ibi etiam reptilia et volatilia pennata quae nihilominus de terra laudant Deum secundum istam universalem appellationem terrae, secundum quam etiam de toto mundo dicitur: Deus qui fecit coelum et terram, sive de arida sive de aquis quaecunque creata sunt de terra creata veraciter intelliguntur.\
+"""
+transcription_segments = [
+  { line = 78, text = """
+Formatis igitur Dominus Deus de humo cunctis animantibus terrae, et universis volatilibus coeli, adduxit ea ad Adam. Si quem movet quia non dixit, formatis de humo cunctis animantibus terrae et de aquis universis volatilibus coeli, sed tanquam utraque genera de terra formaverit, Formatis igitur, inquit, Dominus Deus de humo cunctis animantibus terrae et universis volatilibus coeli; videat duobus modis esse intelligendum: aut tacuisse nunc unde formaverit volatilia coeli, quia et tacitum posset occurrere, ut non de terra utrumque accipiatur Dominum formasse; sed tantummodo animantia terrae et volatilia coeli, etiam tacente Scriptura intelligamus unde formaverit; aut terram universaliter sic appellatam simul cum aquis, quemadmodum appellata est illo psalmo ubi, coelestium laudibus terminatis, ad terram facta est conversio sermonis et dictum: Laudate Dominum de terra, dracones, et omnes abyssi (Ps. CXLVIII, 7), etc. Nec postea dictum est: Laudate Dominum de aquis. Ubi enim sunt omnes abyssi quae de terra laudant Dominum, ibi etiam reptilia et volatilia pennata quae nihilominus de terra laudant Deum secundum istam universalem appellationem terrae, secundum quam etiam de toto mundo dicitur: Deus qui fecit coelum et terram, sive de arida sive de aquis quaecunque creata sunt de terra creata veraciter intelliguntur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

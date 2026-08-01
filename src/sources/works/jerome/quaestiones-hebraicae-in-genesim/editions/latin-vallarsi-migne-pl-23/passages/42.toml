@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.42"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "42"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 2.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[45, 45]]
+text = """
+(Cap. X.—Vers. 2.) Filii Japheth, Gomer, et Magog et Madai, et Javan, et Thubal, et Mosoch, et Thiras. Japhet filio Noe, nati sunt septem filii, qui possederunt terram in Asia ab Amano et Tauro, Syriae Coeles et Ciliciae montibus, usque ad fluvium Tanain. In Europa vero usque ad Gadira, nomina locis et gentibus relinquentes: e quibus postea immutata sunt plurima, caetera permanent ut fuerunt. Sunt autem Gomer, Galatae: Magog, Scythae: Madai, Medi: Javan, Iones, qui et Graeci: unde et mare Ionium. Thubal Iberi, qui et Hispani, a quibus Celtiberi, licet quidam Italos suspieentur. Mosoch, Cappadoces: unde et urbs usque hodie apud eos Mazeca dicitur: (porro Septuaginta interpretes, Caphthorim Cappadoces arbitrantur:) Thiras, Thraces, quorum non satis immutatum vocabulum est. Scio quemdam Gog et Magog, tam de praesenti loco, quam de Ezechiel, ad Gotthorum nuper in terra nostra bacchantium historiam retulisse, quod utrum verum sit, praelii ipsius fine monstratur. Et certe Gotthos omnes retro eruditi, magis Getas, quam Gog et Magog appellare consueverunt. Hae itaque septem gentes, quas de Japheth venire stirpe memoravi, aquilonis partem inhabitant.\
+"""
+transcription_segments = [
+  { line = 45, text = """
+(Cap. X.—Vers. 2.) Filii Japheth, Gomer, et Magog et Madai, et Javan, et Thubal, et Mosoch, et Thiras. Japhet filio Noe, nati sunt septem filii, qui possederunt terram in Asia ab Amano et Tauro, Syriae Coeles et Ciliciae montibus, usque ad fluvium Tanain. In Europa vero usque ad Gadira, nomina locis et gentibus relinquentes: e quibus postea immutata sunt plurima, caetera permanent ut fuerunt. Sunt autem Gomer, Galatae: Magog, Scythae: Madai, Medi: Javan, Iones, qui et Graeci: unde et mare Ionium. Thubal Iberi, qui et Hispani, a quibus Celtiberi, licet quidam Italos suspieentur. Mosoch, Cappadoces: unde et urbs usque hodie apud eos Mazeca dicitur: (porro Septuaginta interpretes, Caphthorim Cappadoces arbitrantur:) Thiras, Thraces, quorum non satis immutatum vocabulum est. Scio quemdam Gog et Magog, tam de praesenti loco, quam de Ezechiel, ad Gotthorum nuper in terra nostra bacchantium historiam retulisse, quod utrum verum sit, praelii ipsius fine monstratur. Et certe Gotthos omnes retro eruditi, magis Getas, quam Gog et Magog appellare consueverunt. Hae itaque septem gentes, quas de Japheth venire stirpe memoravi, aquilonis partem inhabitant.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

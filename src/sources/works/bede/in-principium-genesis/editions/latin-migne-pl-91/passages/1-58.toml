@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-58"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.58"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[84, 84]]
+text = """
+Quamobrem relinquet homo patrem suum et matrem, et adhaerebit uxori suae, et erunt duo in carne una. Quae primi cum verba hominis fuisse Scriptura ipsa testatur, Dominus tamen in Evangelio Deum dixisse declaravit. Ait enim: Non legistis quia qui fecit ab initio masculum et feminam fecit eos, et dixit: Propter hoc dimittet homo patrem et matrem et adhaerebit uxori suae, et erunt duo in carne una (Matth. XIX, 4), ut hinc intelligeremus propter exstasim quae praecesserat in Adam, hoc eum divinitus tanquam prophetam dicere potuisse. Si ergo Christus adhaesit Ecclesiae, ut essent duo in carne una, quomodo reliquit Patrem, quomodo matrem? Reliquit Patrem, quia cum in forma Dei esset, non rapinam arbitratus est esse se aequalem Deo, sed semetipsum exinanivit formam servi accipiens (Phil. II, 6). Hoc est enim reliquit Patrem, quia non deseruit et recessit a Patre, sed quia non in ea forma apparuit hominibus, in qua aequalis est Patri, quomodo reliquit matrem relinquendo Synagogam Judaeorum, de qua secundum carnem natus est, et inhaerendo Ecclesiae, quam ex omnibus gentibus congregavit, ut pace Novi Testamenti essent duo in carne una: quia cum sit Deus apud Patrem per quem facti sumus, factus est per carnem particeps noster, ut illius capitis corpus esse possemus.\
+"""
+transcription_segments = [
+  { line = 84, text = """
+Quamobrem relinquet homo patrem suum et matrem, et adhaerebit uxori suae, et erunt duo in carne una. Quae primi cum verba hominis fuisse Scriptura ipsa testatur, Dominus tamen in Evangelio Deum dixisse declaravit. Ait enim: Non legistis quia qui fecit ab initio masculum et feminam fecit eos, et dixit: Propter hoc dimittet homo patrem et matrem et adhaerebit uxori suae, et erunt duo in carne una (Matth. XIX, 4), ut hinc intelligeremus propter exstasim quae praecesserat in Adam, hoc eum divinitus tanquam prophetam dicere potuisse. Si ergo Christus adhaesit Ecclesiae, ut essent duo in carne una, quomodo reliquit Patrem, quomodo matrem? Reliquit Patrem, quia cum in forma Dei esset, non rapinam arbitratus est esse se aequalem Deo, sed semetipsum exinanivit formam servi accipiens (Phil. II, 6). Hoc est enim reliquit Patrem, quia non deseruit et recessit a Patre, sed quia non in ea forma apparuit hominibus, in qua aequalis est Patri, quomodo reliquit matrem relinquendo Synagogam Judaeorum, de qua secundum carnem natus est, et inhaerendo Ecclesiae, quam ex omnibus gentibus congregavit, ut pace Novi Testamenti essent duo in carne una: quia cum sit Deus apud Patrem per quem facti sumus, factus est per carnem particeps noster, ut illius capitis corpus esse possemus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

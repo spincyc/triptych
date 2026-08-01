@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.215"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "215"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 19.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[219, 219]]
+text = """
+(Vers. 19.) Gad latrunculus latrocinabitur eum, et ipse latrocinabitur plantam. Juxta Hebraeum interpretati sumus. Sed ubi nos latrunculum posuimus, ibi scriptum est GEDUD (גדוד), ut ad GAD nomen alluderet, qui significantius εὔζωνος, id est, accinctus, sive expeditus exprimi potest. Totum autem illud est, quod Ruben, et dimidiam tribum Manasse, ad filios, quos trans Jordanem in possessionem dimiserat, post quatuordecim annos revertens, praelium adversum eos gentium vicinarum grande repererit, et victis hostibus, fortiter dimicarit. Lege librum Jesu Nave (Josue XIII), et Paralipomenon I, V). Non ignoro plura in benedictionibus patriarcharum esse mysteria, sed ad praesens opusculum non pertinet.\
+"""
+transcription_segments = [
+  { line = 219, text = """
+(Vers. 19.) Gad latrunculus latrocinabitur eum, et ipse latrocinabitur plantam. Juxta Hebraeum interpretati sumus. Sed ubi nos latrunculum posuimus, ibi scriptum est GEDUD (גדוד), ut ad GAD nomen alluderet, qui significantius εὔζωνος, id est, accinctus, sive expeditus exprimi potest. Totum autem illud est, quod Ruben, et dimidiam tribum Manasse, ad filios, quos trans Jordanem in possessionem dimiserat, post quatuordecim annos revertens, praelium adversum eos gentium vicinarum grande repererit, et victis hostibus, fortiter dimicarit. Lege librum Jesu Nave (Josue XIII), et Paralipomenon I, V). Non ignoro plura in benedictionibus patriarcharum esse mysteria, sed ad praesens opusculum non pertinet.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

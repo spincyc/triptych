@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-14"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.14"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[236, 236]]
+text = """
+De Sem quoque nati sunt patres omnium filiorum Heber fratre Japheth majore. Fratrem Japheth dicit, fratrem vero Cham eum esse reticet, quia quos in fide pietatis unanimes novit, eos jure fratres vocandos intelligit; perfidum vero, quamvis eisdem parentibus natum, a fraterna justorum societate demonstrat alienum. Videtur autem hac sententia designari quod cum multi de Sem nati filii multos populos procreaverint, illa tamen progenies specialius ejus sit fidem ac pietatem secuta, quae per Heber ad Abraham ac populum descendit Hebraeorum; unde et ipsorum proprie, id est, omnium filiorum Heber pater appellatur. Denique soli in constructione turris, ut Scriptura dicit, labio universae terrae in domo Heber, qui illa aetate fuit, ut in sequentibus legitur, prima humani generis loquela remansit, quod nomina sequentis aevi hominum Hebraea manifeste probant, illo ut credendum est merito, quia fidem proavi Sem cum sua domo secutus, a conjuratione superbi operis se se immunem servaverit. Neque enim frustra Abraham Hebraeus appellari elegit; sed quia hujus Seth vitam imitari noverat, hujus vocabulum et sibi habere cognomen et suis in posterum relinquere voluit.\
+"""
+transcription_segments = [
+  { line = 236, text = """
+De Sem quoque nati sunt patres omnium filiorum Heber fratre Japheth majore. Fratrem Japheth dicit, fratrem vero Cham eum esse reticet, quia quos in fide pietatis unanimes novit, eos jure fratres vocandos intelligit; perfidum vero, quamvis eisdem parentibus natum, a fraterna justorum societate demonstrat alienum. Videtur autem hac sententia designari quod cum multi de Sem nati filii multos populos procreaverint, illa tamen progenies specialius ejus sit fidem ac pietatem secuta, quae per Heber ad Abraham ac populum descendit Hebraeorum; unde et ipsorum proprie, id est, omnium filiorum Heber pater appellatur. Denique soli in constructione turris, ut Scriptura dicit, labio universae terrae in domo Heber, qui illa aetate fuit, ut in sequentibus legitur, prima humani generis loquela remansit, quod nomina sequentis aevi hominum Hebraea manifeste probant, illo ut credendum est merito, quia fidem proavi Sem cum sua domo secutus, a conjuratione superbi operis se se immunem servaverit. Neque enim frustra Abraham Hebraeus appellari elegit; sed quia hujus Seth vitam imitari noverat, hujus vocabulum et sibi habere cognomen et suis in posterum relinquere voluit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

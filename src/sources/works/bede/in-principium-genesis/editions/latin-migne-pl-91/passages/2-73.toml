@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-73"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.73"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[201, 201]]
+text = """
+Et ait ad eum: Nequaquam ultra maledicam terrae propter homines; sensus enim et cogitatio humani cordis in malum prona sunt ab adolescentia sua. Non igitur ultra percutiam omnem animantem sicut feci. Non se ultra maledicturum terrae, neque omnem animantem percussurum Dominus pollicetur, eo quod in tantum sint homines ad peccandum proclives, ut etiamsi diluvio rursum puniantur, nihilominus, transacto illo, denuo sese vitiis ac sceleribus involvant. Ubi intuendum quia etsi sensus humani cordis ab adolescentia ad malum pronus esse perhibetur, ex qua nimirum aetate carnalium in nobis desideriorum solent incentiva generari, non tamen est consequens ut a tempore pubertatis primum incipiamus peccatis esse obnoxii, quamvis ex tunc ad majora patranda aetas lasciva incitet. Nam et illa divina est sententia quae dicit: Grave jugum super filios Adam a die exitus de ventre matris eorum (Eccli. XL, 1), ipsum videlicet jugum primae praevaricationis, propter quam omnes in iniquitatibus concepti et in delictis sumus editi, quamvis ab ineunte adolescentia sponte plura addimus eis quibus non nostra sponte, sed paterni merito reatus gravati hanc in lucem venimus; a quibus omnibus non nisi gratia Dei per Jesum Christum liberamur. Non igitur, inquit, ultra percutiam omnem animantem sicut feci; sed haec promissio pietatis quo usque pertingat subdendo manifestat cum dicit:\
+"""
+transcription_segments = [
+  { line = 201, text = """
+Et ait ad eum: Nequaquam ultra maledicam terrae propter homines; sensus enim et cogitatio humani cordis in malum prona sunt ab adolescentia sua. Non igitur ultra percutiam omnem animantem sicut feci. Non se ultra maledicturum terrae, neque omnem animantem percussurum Dominus pollicetur, eo quod in tantum sint homines ad peccandum proclives, ut etiamsi diluvio rursum puniantur, nihilominus, transacto illo, denuo sese vitiis ac sceleribus involvant. Ubi intuendum quia etsi sensus humani cordis ab adolescentia ad malum pronus esse perhibetur, ex qua nimirum aetate carnalium in nobis desideriorum solent incentiva generari, non tamen est consequens ut a tempore pubertatis primum incipiamus peccatis esse obnoxii, quamvis ex tunc ad majora patranda aetas lasciva incitet. Nam et illa divina est sententia quae dicit: Grave jugum super filios Adam a die exitus de ventre matris eorum (Eccli. XL, 1), ipsum videlicet jugum primae praevaricationis, propter quam omnes in iniquitatibus concepti et in delictis sumus editi, quamvis ab ineunte adolescentia sponte plura addimus eis quibus non nostra sponte, sed paterni merito reatus gravati hanc in lucem venimus; a quibus omnibus non nisi gratia Dei per Jesum Christum liberamur. Non igitur, inquit, ultra percutiam omnem animantem sicut feci; sed haec promissio pietatis quo usque pertingat subdendo manifestat cum dicit:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

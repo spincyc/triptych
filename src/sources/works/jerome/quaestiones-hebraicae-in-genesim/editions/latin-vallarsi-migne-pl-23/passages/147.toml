@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.147"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "147"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 41.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[151, 151]]
+text = """
+(Vers. 41 et 42.) Et concipiebant pecora contra virgas Jacob, virgas quas posuerat coram pecoribus [Al. pecore] in canalibus ad concipiendum in eis, et in serotinis ovibus non ponebat; et fiebant serotina Laban, et temporanea Jacob. Hoc in Septuaginta Interpretibus non habetur, sed pro serotinis et temporaneis, aliud nescio quid, quod a sensum non pertinet, transtulerunt. Quod autem dicit Scriptura, hoc est: Jacob prudens et callidus justitiam et aequitatem etiam in nova arte servabat. Si enim omnes agnos et haedos varios pecora procreassent, erat aliqua suspicio doli, et aperte huic rei Laban invidus contraisset. Ergo ita omnia temperavit, ut et ipse fructum sui laboris acciperet, et Laban non penitus spoliaretur. Si quando oves et caprae primo tempore ascendebantur, quia melior vernus est fetus, ante ipsas ponebat virgas, ut varia soboles nasceretur. Quaecumque autem oves et caprae sero quaerebant marem, ante earum oculos non ponebat, ut unius coloris pecora nascerentur. Et quidquid primum nascebatur, suum erat, quia discolor et varium erat: quidquid postea, Laban: unius enim tam in nigro, quam in albo, coloris pecus oriebatur. In eo autem loco ubi scriptum est, ut conciperent in virgis: in Hebraeo habet JEAMENA (יחמנה). Vim verbi Hebraici nisi circumitu exprimere non possum. JEAMENA enim proprie dicitur extremus in coitu calor, quo corpus omne concutitur, et patranti voluptati vicinus est finis.\
+"""
+transcription_segments = [
+  { line = 151, text = """
+(Vers. 41 et 42.) Et concipiebant pecora contra virgas Jacob, virgas quas posuerat coram pecoribus [Al. pecore] in canalibus ad concipiendum in eis, et in serotinis ovibus non ponebat; et fiebant serotina Laban, et temporanea Jacob. Hoc in Septuaginta Interpretibus non habetur, sed pro serotinis et temporaneis, aliud nescio quid, quod a sensum non pertinet, transtulerunt. Quod autem dicit Scriptura, hoc est: Jacob prudens et callidus justitiam et aequitatem etiam in nova arte servabat. Si enim omnes agnos et haedos varios pecora procreassent, erat aliqua suspicio doli, et aperte huic rei Laban invidus contraisset. Ergo ita omnia temperavit, ut et ipse fructum sui laboris acciperet, et Laban non penitus spoliaretur. Si quando oves et caprae primo tempore ascendebantur, quia melior vernus est fetus, ante ipsas ponebat virgas, ut varia soboles nasceretur. Quaecumque autem oves et caprae sero quaerebant marem, ante earum oculos non ponebat, ut unius coloris pecora nascerentur. Et quidquid primum nascebatur, suum erat, quia discolor et varium erat: quidquid postea, Laban: unius enim tam in nigro, quam in albo, coloris pecus oriebatur. In eo autem loco ubi scriptum est, ut conciperent in virgis: in Hebraeo habet JEAMENA (יחמנה). Vim verbi Hebraici nisi circumitu exprimere non possum. JEAMENA enim proprie dicitur extremus in coitu calor, quo corpus omne concutitur, et patranti voluptati vicinus est finis.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

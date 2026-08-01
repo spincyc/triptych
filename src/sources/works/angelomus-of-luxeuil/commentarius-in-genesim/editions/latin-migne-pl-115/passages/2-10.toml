@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.2-10"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "2.10"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 10.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[50, 50]]
+text = """
+VERS. 10.-- Et fluvius egrediebatur de loco voluptatis ad irrigandum paradisum, qui inde dividitur in quatuor capita. Sciendum est quia nec per hoc paradisus | disus declaratur evidenter ubi sit, quasi per flumina inveniri possit locus ipsius. Qui sicuti nonnulli dicunt, et beatus Augustinus autumat, licet ab uno fonte Scriptura teste procedant, tamen subtus terra profluunt, et post longos tractus suis locis erumpunt et celantur interim amnes.\
+"""
+transcription_segments = [
+  { line = 50, text = """
+VERS. 10.-- Et fluvius egrediebatur de loco voluptatis ad irrigandum paradisum, qui inde dividitur in quatuor capita. Sciendum est quia nec per hoc paradisus | disus declaratur evidenter ubi sit, quasi per flumina inveniri possit locus ipsius. Qui sicuti nonnulli dicunt, et beatus Augustinus autumat, licet ab uno fonte Scriptura teste procedant, tamen subtus terra profluunt, et post longos tractus suis locis erumpunt et celantur interim amnes.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.276"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "276"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 276 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[280, 280]]
+text = """
+Inter. 276. Quid sibi vult, a tanto viro et tali patriarcha tam sollicita corporis commendatio, ut non in terra Aegypti sepeliatur, sed in terra Chanaan juxta patres suos (vers. 30)?-- Resp. In his [figurae] sacramenta tibi quaerenda sunt, et [majoris] admirationis gaudium invenies. Cadaveribus quippe mortuorum peccata significari in lege non est dubium. Hinc illa sententia ducta [ Ms., dicta] est: Qui baptizatur a mortuo, et iterum tangit illum, quid proficit lavatio ejus? sic et qui jejunat super peccata sua et iterum ambulans haec eadem facit, etc. (Eccle. XXXIV, 30, 31). Sepultura ergo mortuorum remissionem significat peccatorum. Eo pertinet quod dictum est: Beati quorum remissae sunt iniquitates et quorum tecta sunt peccata (Psal. XXXI, 1). Ubi ergo sepelienda erant haec significantia cadavera patriarcharum, nisi in ea terra ubi ille crucifixus est cujus sanguine facta est remissio peccatorum.\
+"""
+transcription_segments = [
+  { line = 280, text = """
+Inter. 276. Quid sibi vult, a tanto viro et tali patriarcha tam sollicita corporis commendatio, ut non in terra Aegypti sepeliatur, sed in terra Chanaan juxta patres suos (vers. 30)?-- Resp. In his [figurae] sacramenta tibi quaerenda sunt, et [majoris] admirationis gaudium invenies. Cadaveribus quippe mortuorum peccata significari in lege non est dubium. Hinc illa sententia ducta [ Ms., dicta] est: Qui baptizatur a mortuo, et iterum tangit illum, quid proficit lavatio ejus? sic et qui jejunat super peccata sua et iterum ambulans haec eadem facit, etc. (Eccle. XXXIV, 30, 31). Sepultura ergo mortuorum remissionem significat peccatorum. Eo pertinet quod dictum est: Beati quorum remissae sunt iniquitates et quorum tecta sunt peccata (Psal. XXXI, 1). Ubi ergo sepelienda erant haec significantia cadavera patriarcharum, nisi in ea terra ubi ille crucifixus est cujus sanguine facta est remissio peccatorum.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

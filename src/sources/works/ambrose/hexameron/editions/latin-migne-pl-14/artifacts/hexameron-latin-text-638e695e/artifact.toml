@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ambrose.hexameron.latin-migne-pl-14.hexameron-latin-text-638e695e"
+edition_id = "edition.ambrose.hexameron.latin-migne-pl-14"
+artifact_type = "web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Ambrose of Milan's Latin as printed by Migne in 1845, in the public domain by age of both the text and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes."
+rights_jurisdiction = "United States"
+provenance = "Derived on 2026-08-01 from the hashed export above by the tracked script named in transformation. No model stood anywhere in the path: the bytes were fetched with curl, hashed, and transformed locally. The file holds 223 lines, one per printed paragraph, each prefixed by a braced locator giving the book and the chapter of Migne's own division. Book I stands at lines 1-50, II at 51-71, III at 72-116, IV at 117-138, V at 139-198 and VI at 199-223."
+retrieved = "2026-08-01"
+sha256 = "638e695e76421a8c4b247bb750b182e7b7cc720d3d1a532a3b602c83415f6dcf"
+byte_size = 384387
+path = "src/sources/works/ambrose/hexameron/editions/latin-migne-pl-14/artifacts/hexameron-latin-text-638e695e/ambrosius-hexameron.txt"
+derived_from = "artifact.ambrose.hexameron.latin-migne-pl-14.hexameron-wikisource-export-252e9aec"
+transformation = "python3 scripts/migne_transcribe.py <export> --unit page --out ambrosius-hexameron.txt, run over the exact bytes of the parent artifact. The script removes every wiki template whole except the closed table of prose-bearing ones it unwraps to a named parameter, and removes the Patrologia Latina navigation line, the Corpus Corporum encoding note, categories, footnote bodies, comments, tags and wiki headings; unwraps links; folds typographic punctuation to ASCII; strips Migne's inline column markers; normalises to NFC; collapses runs of whitespace; and writes one LF-terminated UTF-8 line per source paragraph, prefixed by a braced book-and-chapter locator taken from the printing's own CAPUT divisions."
+encoding = "utf-8"
+indexable = true
+notes = "Keyed text, not OCR. guidance/catena.md recorded that the unencumbered Latin is OCR wreckage and the clean Latin encumbered, measuring Migne PL 34's Internet Archive text layer at roughly one corrupted word in eight; that is true of the scan and false of the volume. This is the University of Zurich's Corpus Corporum encoding of Migne PL 14, keyed rather than scanned, republished on Latin Wikisource under a stated CC BY-SA 4.0 markup licence over a public-domain printing. It is a transcription of a web witness of that printing and not a collation against the printed column, so no passage taken from it rises above inspected."

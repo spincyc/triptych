@@ -1,0 +1,39 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.47-1"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "47.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 3-31.' and running to the next such heading, in 5 paragraphs."
+physical_line_ranges = [[389, 393]]
+text = """
+VERS. 3-31.--Filii Jacob, interrogati quid operis haberent? responderunt: Pastores ovium sumus, sicut et patres nostri, et reliqua, usquequo ait, vocavit autem Jacob filios suos, et ait eis: Congregamini, ut annuntiem quae ventura sunt vobis diebus novissimis. Filii Jacob, interrogati quid operis haberent, responderunt: Pastores ovium sumus, sicut et patres nostri. Quare patriarchas primos pastores ovium, et non reges gentium legimus esse? Quia sine ulla dubitatione | justa servitus et justa dominatio, cum pecora homini serviunt, et homo pecoribus dominatur. Sic enim dictum est cum crearetur: Faciamus hominem ad imaginem et similitudinem nostram, et habeat potestatem piscium maris, et volatilium coeli, et omnium quae sunt super terram. Ubi insinuatur rationem [Z., rationalem] debere dominari irrationali vitae. Seryum autem hominem homini vel iniquitas vel adversitas fecit. Iniquitas quidem, sicut dictum est: Maledictus Chanaan, erit servus fratribus suis. Adversitas vero, sicut accidit ipsi Joseph, ut venditus a fratribus servus alienigenae fieret. Itaque primos servos quibus hoc nomen in Latina lingua inductum est, bella fecerunt. Qui enim homo ab | homine superatus jure belli posset occidi, quia servatus est, appellatus inde servus; et mancipia, quia manu capta sunt.
+
+Quae est terra Gessen vel Ramesses? Ut Judaei autumant, quae nunc Thebaida vocatur. Ramesses igitur pagum Arsenoiten sic olim vocatum putant.
+
+Quaeritur quomodo in terra Aegypti pascua pecoribus invenire potuissent, dum terra Aegypti pluviis non irrigatur, dum fratres Joseph ideo terram Chanaan reliquisse se dicunt quod herbam gregibus suis non invenissent? Perhibetur ab eis, qui loca sciunt, in multis Aegypti paludibus potuisse pascua non deesse, etiam cum fames esset frumentorum, quae solent Nili fluminis inundatione provenire. Magis enim dicuntur paludes illae feraces pascua gignere, | quando aqua Nili minus excresceret [Z., excrevisset]. Unde Gessen vertitur in imbrem.
+
+Quid sibi vult a tanto viro et tali patriarcha tam sollicita corporis commendantia, ut non in terra Aegypti sepeliatur, sed in terra Chanaan juxta patres suos? In his ergo sacramenta tibi quaerenda sunt et admirationis gaudium invenies. Cadaveribus quippe mortuorum peccata significari in lege non dubium est. Hinc illa sententia dicta est: Qui baptizatur a mortuo, et iterum tangit illum, quid proficit [Z., prodest] lavatio ejus? (Eccli. XXXIV, 30.) Sic et qui jejunat super peccato suo, et iterum ambulans haec eadem facit. Sepultura ergo mortuorum remissionem significat peccatorum. Eo pertinet quod dictum est: Beati quorum remissae sunt iniquitates, et | quorum tecta sunt peccata (Psal. XXXI, 25). Ubi ergo sepelienda erant haec significantia cadavera patriarcharum, nisi in ea terra ubi ille crucifixus est, cujus sanguine facta est remissio peccatorum?
+
+Quid est quod Jacob conversus ad caput lectuli sui oravit Deum? Scilicet postquam juraverat ei filius de petitione quam rogaverat, adorare Deum contra caput lectuli sui voluit. Sanctus quippe et Deo deditus vir, oppressus senectute, habebat lectulum positum, ut ipse jacens habitus absque difficultate ulla ad orationem esset paratus.\
+"""
+transcription_segments = [
+  { line = 389, text = """
+VERS. 3-31.--Filii Jacob, interrogati quid operis haberent? responderunt: Pastores ovium sumus, sicut et patres nostri, et reliqua, usquequo ait, vocavit autem Jacob filios suos, et ait eis: Congregamini, ut annuntiem quae ventura sunt vobis diebus novissimis. Filii Jacob, interrogati quid operis haberent, responderunt: Pastores ovium sumus, sicut et patres nostri. Quare patriarchas primos pastores ovium, et non reges gentium legimus esse? Quia sine ulla dubitatione | justa servitus et justa dominatio, cum pecora homini serviunt, et homo pecoribus dominatur. Sic enim dictum est cum crearetur: Faciamus hominem ad imaginem et similitudinem nostram, et habeat potestatem piscium maris, et volatilium coeli, et omnium quae sunt super terram. Ubi insinuatur rationem [Z., rationalem] debere dominari irrationali vitae. Seryum autem hominem homini vel iniquitas vel adversitas fecit. Iniquitas quidem, sicut dictum est: Maledictus Chanaan, erit servus fratribus suis. Adversitas vero, sicut accidit ipsi Joseph, ut venditus a fratribus servus alienigenae fieret. Itaque primos servos quibus hoc nomen in Latina lingua inductum est, bella fecerunt. Qui enim homo ab | homine superatus jure belli posset occidi, quia servatus est, appellatus inde servus; et mancipia, quia manu capta sunt.\
+""" },
+  { line = 390, text = """
+Quae est terra Gessen vel Ramesses? Ut Judaei autumant, quae nunc Thebaida vocatur. Ramesses igitur pagum Arsenoiten sic olim vocatum putant.\
+""" },
+  { line = 391, text = """
+Quaeritur quomodo in terra Aegypti pascua pecoribus invenire potuissent, dum terra Aegypti pluviis non irrigatur, dum fratres Joseph ideo terram Chanaan reliquisse se dicunt quod herbam gregibus suis non invenissent? Perhibetur ab eis, qui loca sciunt, in multis Aegypti paludibus potuisse pascua non deesse, etiam cum fames esset frumentorum, quae solent Nili fluminis inundatione provenire. Magis enim dicuntur paludes illae feraces pascua gignere, | quando aqua Nili minus excresceret [Z., excrevisset]. Unde Gessen vertitur in imbrem.\
+""" },
+  { line = 392, text = """
+Quid sibi vult a tanto viro et tali patriarcha tam sollicita corporis commendantia, ut non in terra Aegypti sepeliatur, sed in terra Chanaan juxta patres suos? In his ergo sacramenta tibi quaerenda sunt et admirationis gaudium invenies. Cadaveribus quippe mortuorum peccata significari in lege non dubium est. Hinc illa sententia dicta est: Qui baptizatur a mortuo, et iterum tangit illum, quid proficit [Z., prodest] lavatio ejus? (Eccli. XXXIV, 30.) Sic et qui jejunat super peccato suo, et iterum ambulans haec eadem facit. Sepultura ergo mortuorum remissionem significat peccatorum. Eo pertinet quod dictum est: Beati quorum remissae sunt iniquitates, et | quorum tecta sunt peccata (Psal. XXXI, 25). Ubi ergo sepelienda erant haec significantia cadavera patriarcharum, nisi in ea terra ubi ille crucifixus est, cujus sanguine facta est remissio peccatorum?\
+""" },
+  { line = 393, text = """
+Quid est quod Jacob conversus ad caput lectuli sui oravit Deum? Scilicet postquam juraverat ei filius de petitione quam rogaverat, adorare Deum contra caput lectuli sui voluit. Sanctus quippe et Deo deditus vir, oppressus senectute, habebat lectulum positum, ut ipse jacens habitus absque difficultate ulla ad orationem esset paratus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

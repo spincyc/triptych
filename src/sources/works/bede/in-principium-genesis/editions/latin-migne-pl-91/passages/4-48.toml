@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-48"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.48"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[355, 355]]
+text = """
+Dixit itaque Dominus: Clamor Sodomorum et Gomorrhae multiplicatus est, et peccatum eorum aggravatum est nimis. Clamorem Sodomorum scelerum famam vel potius infamiam dicit, a quo nos prohibens Apostolus dicit: Omnis amaritudo, et ira, et indignatio, et clamor, et blasphemia, tollatur a vobis cum omni malitia (Ephes. IV, 31); cui nimirum clamori contrarius est clamor electorum, de quo confidenter suo Creatori supplicantes, aiunt dicentes singuli: Domine, exaudi orationem meam, et clamor meus ad te perveniat (Psal. CI, 2). Magnus quippe illorum clamor est meritum sublime et intentio fidei coelestia sola quaerens, ubi Christus est in dextera Dei sedens; qui quoniam non terrenas opes, non gloriam inanem caducamque, non moritura carnis gaudia, sed superna tantum bona, desiderant, altum profecto et quasi clamore personum est omne quod agunt. Verum multiplicato clamore peccatorum, id est enormi illorum scelere, videamus quid sequitur.\
+"""
+transcription_segments = [
+  { line = 355, text = """
+Dixit itaque Dominus: Clamor Sodomorum et Gomorrhae multiplicatus est, et peccatum eorum aggravatum est nimis. Clamorem Sodomorum scelerum famam vel potius infamiam dicit, a quo nos prohibens Apostolus dicit: Omnis amaritudo, et ira, et indignatio, et clamor, et blasphemia, tollatur a vobis cum omni malitia (Ephes. IV, 31); cui nimirum clamori contrarius est clamor electorum, de quo confidenter suo Creatori supplicantes, aiunt dicentes singuli: Domine, exaudi orationem meam, et clamor meus ad te perveniat (Psal. CI, 2). Magnus quippe illorum clamor est meritum sublime et intentio fidei coelestia sola quaerens, ubi Christus est in dextera Dei sedens; qui quoniam non terrenas opes, non gloriam inanem caducamque, non moritura carnis gaudia, sed superna tantum bona, desiderant, altum profecto et quasi clamore personum est omne quod agunt. Verum multiplicato clamore peccatorum, id est enormi illorum scelere, videamus quid sequitur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

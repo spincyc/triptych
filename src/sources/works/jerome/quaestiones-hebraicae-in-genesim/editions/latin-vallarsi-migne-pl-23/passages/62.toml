@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.62"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "62"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 15.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[65, 65]]
+text = """
+(Vers. 15 et 16.) Et viderunt eam principes Pharaonis, et laudaverunt eam apud Pharaonem, et introduxerunt eam in domum Pharaonis: et Abram benefecit propter eam: et fuerunt ei oves, et armenta, et asini, et servi, et ancillae, muli et cameli. Licet corpus sanctarum mulierum non vis maculet, sed voluntas: et excusari possit Sarai, quod famis tempore sola regis in peregrinis locis, marito connivente, resistere nequiverit; tamen potest et aliter foeda necessitas excusari: quod juxta librum Esther quaecumque mulierum placuisset regi apud veteres, sex mensibus ungebatur oleo myrtino, et sex mensibus in pigmentis variis erat, et curationibus feminarum, et tunc demum ingrediebatur ad regem. Atque ita potest fieri, ut Sarai postquam placuerat regi, dum per annum ejus ad regem praepararetur introitus, et Abrahae Pharao multa donaverit, et Pharao postea sit percussus a Domino, illa adhuc intacta ab ejus concubitu permanente.\
+"""
+transcription_segments = [
+  { line = 65, text = """
+(Vers. 15 et 16.) Et viderunt eam principes Pharaonis, et laudaverunt eam apud Pharaonem, et introduxerunt eam in domum Pharaonis: et Abram benefecit propter eam: et fuerunt ei oves, et armenta, et asini, et servi, et ancillae, muli et cameli. Licet corpus sanctarum mulierum non vis maculet, sed voluntas: et excusari possit Sarai, quod famis tempore sola regis in peregrinis locis, marito connivente, resistere nequiverit; tamen potest et aliter foeda necessitas excusari: quod juxta librum Esther quaecumque mulierum placuisset regi apud veteres, sex mensibus ungebatur oleo myrtino, et sex mensibus in pigmentis variis erat, et curationibus feminarum, et tunc demum ingrediebatur ad regem. Atque ita potest fieri, ut Sarai postquam placuerat regi, dum per annum ejus ad regem praepararetur introitus, et Abrahae Pharao multa donaverit, et Pharao postea sit percussus a Domino, illa adhuc intacta ab ejus concubitu permanente.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

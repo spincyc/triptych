@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-12"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.12"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[234, 234]]
+text = """
+Chanaam autem genuit Sidonem primogenitum suum, Ethaeum, et Jebussaeum, et Amorrhaeum, Gergesaeum, Evaeum et Arachaeum, Sinaeum, et Aradium, Samariten, et Amathaeum. « A Sydone primogenito Chanaan urbs in Phoenice insignis Sidon vocatur, olim terminus Chananaeorum ad Aquilonem. Arachaeus Arcas condidit, oppidum contra Tripolim in radicibus Libani situm, a quo haud procul alia civitas fuit nomine Sim, quae postea vario eventu bellorum eversa nomen tantummodo loco pristinum reservavit. Aradii sunt qui Aradum insulam possederunt angusto freto a Phoenicis littore separatam: quae videlicet insula, in vicinia Tyri posita, tuta esse civitas, et contra se positum oppidum Antaradum habere usque hodie cernitur. Samari, Emissa nobilis Syriae civitas. Aemath, usque ad nostrum tempus, tam ab Assyriis quam ab Hebraeis, ita ut apud veteres dicta fuerat appellatur. Hanc Macedones, qui post Alexandrum in Oriente regnaverunt Aepiphaniam nuncupaverunt, nonnulli Antiochiam ita appellatam putant. » Revera autem duae fuere Emath civitates, una Aemath magna, quae nunc Antiochia nominatur, magna autem ad distinctionem minoris Emath, quae appellatur Epiphania, in qua a Nabuchodonosor oculi Sedechiae excaecati sunt.\
+"""
+transcription_segments = [
+  { line = 234, text = """
+Chanaam autem genuit Sidonem primogenitum suum, Ethaeum, et Jebussaeum, et Amorrhaeum, Gergesaeum, Evaeum et Arachaeum, Sinaeum, et Aradium, Samariten, et Amathaeum. « A Sydone primogenito Chanaan urbs in Phoenice insignis Sidon vocatur, olim terminus Chananaeorum ad Aquilonem. Arachaeus Arcas condidit, oppidum contra Tripolim in radicibus Libani situm, a quo haud procul alia civitas fuit nomine Sim, quae postea vario eventu bellorum eversa nomen tantummodo loco pristinum reservavit. Aradii sunt qui Aradum insulam possederunt angusto freto a Phoenicis littore separatam: quae videlicet insula, in vicinia Tyri posita, tuta esse civitas, et contra se positum oppidum Antaradum habere usque hodie cernitur. Samari, Emissa nobilis Syriae civitas. Aemath, usque ad nostrum tempus, tam ab Assyriis quam ab Hebraeis, ita ut apud veteres dicta fuerat appellatur. Hanc Macedones, qui post Alexandrum in Oriente regnaverunt Aepiphaniam nuncupaverunt, nonnulli Antiochiam ita appellatam putant. » Revera autem duae fuere Emath civitates, una Aemath magna, quae nunc Antiochia nominatur, magna autem ad distinctionem minoris Emath, quae appellatur Epiphania, in qua a Nabuchodonosor oculi Sedechiae excaecati sunt.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

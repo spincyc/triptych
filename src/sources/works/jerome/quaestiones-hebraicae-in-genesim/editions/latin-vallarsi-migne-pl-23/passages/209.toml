@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.209"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "209"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 7.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[213, 213]]
+text = """
+(Vers. 7.) Maledictus furor eorum, quia procax; et ira eorum, quia dura: dividam eos in Jacob, et dispergam eos in Israel. Levi enim haereditatem propriam non accepit, sed in omnibus sceptris, paucas urbes ad habitandum habuit. De Simeon vero in libro Jesu scriptum est (Josue XIX), quod et ipse proprium funiculum non fuerit consecutus, sed de tribu Juda quiddam acceperit. In Paralipomenon (I, 4) autem libris manifestius scribitur, quod, cum multiplicatus fuisset, et non haberet possessionis locum, exierit in desertum. Quidam prophetice interfectos homines, Apostolos, et subnervatum taurum a Pharisaeis, Christum interpretantur.\
+"""
+transcription_segments = [
+  { line = 213, text = """
+(Vers. 7.) Maledictus furor eorum, quia procax; et ira eorum, quia dura: dividam eos in Jacob, et dispergam eos in Israel. Levi enim haereditatem propriam non accepit, sed in omnibus sceptris, paucas urbes ad habitandum habuit. De Simeon vero in libro Jesu scriptum est (Josue XIX), quod et ipse proprium funiculum non fuerit consecutus, sed de tribu Juda quiddam acceperit. In Paralipomenon (I, 4) autem libris manifestius scribitur, quod, cum multiplicatus fuisset, et non haberet possessionis locum, exierit in desertum. Quidam prophetice interfectos homines, Apostolos, et subnervatum taurum a Pharisaeis, Christum interpretantur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

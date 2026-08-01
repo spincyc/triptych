@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.12"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "12"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 8.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[13, 13]]
+text = """
+(Vers. 8.) Et audierunt vocem Domini Dei ambulantis in paradiso ad vesperam. In plerisque codicibus Latinorum, pro eo quod hic posuimus ad vesperam, post meridiem habet: quia τὸ δειλινὸν Graecum sermonem ad verbum transferre non possumus: pro quo in Hebraeo scriptum est, LARUE AIOM (היום לרוח), quod Aquila interpretatus est ἐν τῷ ἀνέμω τῆς ἡμέρας, id est, in vento diei. Symmachus vero διὰ πνεύματος ἡμέρας, id est, per spiritum diei. Porro Theodotion manifestius ἐν τῷ πνεύματι πρὸς κατάψυξιν τῆς ἡμέρας, ut meridiano calore transacto, refrigerium aurae spirantis ostenderet.\
+"""
+transcription_segments = [
+  { line = 13, text = """
+(Vers. 8.) Et audierunt vocem Domini Dei ambulantis in paradiso ad vesperam. In plerisque codicibus Latinorum, pro eo quod hic posuimus ad vesperam, post meridiem habet: quia τὸ δειλινὸν Graecum sermonem ad verbum transferre non possumus: pro quo in Hebraeo scriptum est, LARUE AIOM (היום לרוח), quod Aquila interpretatus est ἐν τῷ ἀνέμω τῆς ἡμέρας, id est, in vento diei. Symmachus vero διὰ πνεύματος ἡμέρας, id est, per spiritum diei. Porro Theodotion manifestius ἐν τῷ πνεύματι πρὸς κατάψυξιν τῆς ἡμέρας, ut meridiano calore transacto, refrigerium aurae spirantis ostenderet.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

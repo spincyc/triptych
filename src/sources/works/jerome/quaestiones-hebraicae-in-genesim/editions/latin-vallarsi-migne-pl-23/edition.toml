@@ -1,0 +1,10 @@
+schema = 1
+record_type = "edition"
+id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+work_id = "work.jerome.quaestiones-hebraicae-in-genesim"
+title = "Liber Hebraicarum quaestionum in Genesim, Patrologia Latina tomus 23"
+language = "la"
+publication = "Patrologia Latina, tomus 23, Paris: J.-P. Migne, 1845, coll. 935-1010, reprinting Vallarsi and Maffei's Verona edition of 1767"
+date = "1845"
+editors = ["Jacques-Paul Migne"]
+notes = "Migne reprints Vallarsi and Maffei's text. Each quaestio is headed by the printing's own reference, `(Cap. II.—Vers. 8.)` at a chapter change and `(Vers. 11.)` within one, and that reference is what bounds each fragment here. The Hebrew and Greek words the work exists to compare are carried in the transcription: the first pass of the transcriber removed them along with the wiki templates that hold them and exited zero, which is why scripts/migne_transcribe.py now unwraps a named table of prose-bearing templates. No public-domain English translation exists: C. T. R. Hayward's, Oxford Early Christian Studies, 1995, is the first complete one and is in copyright."

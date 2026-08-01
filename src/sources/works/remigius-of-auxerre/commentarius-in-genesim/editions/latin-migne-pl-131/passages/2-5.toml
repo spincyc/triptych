@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.2-5"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "2.5"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 8.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[61, 62]]
+text = """
+Vers. 8. Plantaverat paradisum voluptatis a principio. Id est hortum voluptatis. Graece enim paradisus hortus, Hebraice Eden vocatur. A principio, id est in initio, remotis aquis a superficie terrae et in unum collectis. Ubi autem nos habemus: Paradisum a principio, quidam codices habent: Eden ad ortum, ex quo possumus conjicere paradisum in Oriente situm. In quacunque autem orbis parte sit, scimus eum terrenum esse, et interjecto Oceano et montibus | oppositis a nostro orbe longe remotissimum. Est enim in altissimo loco situs pertingens usque ad lunarem circulum. Unde et illuc aquae diluvii minime pervenisse dicuntur. In quo posuit hominem. Ex quo, quod positus in paradisum homo dicitur, datur intelligi non ibi fuisse conditum, sed in hac nostra mortali terra, quia, divina praescientia, illum peccaturum et ob hoc ab illa sancta terra in hanc convallem miseriae propellendum.
+
+Vers 9.-- Produxitque de humo. Subauditur paradisi. Lignum vitae et reliqua. Lignum vitae species arboris fuit ita vocata, quod naturaliter hanc virtutem | sortitum est, ut si quis ex eo fructum comederet perpetua soliditate firmaretur et beata immortalitate vestiretur, nullis deinceps infirmitatibus vel anxietatibus deprimendus, nulla senii lassitudine vel imbecillitate deterendus. Lignum autem scientiae boni et mali nullius arboris certa species credenda est, sed in posterum ventura nomen ejus inditum fuit ex qualitate scilicet obedientiae vel inobedientiae, quae obedienti scientia boni existeret: inobedientia vero, mali ac per hoc peccati nervum incurrenti scientia mali fieret. Obedientia autem sola virtus est quae hominem Deo conciliat, sicut e contra tumor, id est inobedientia, longe a Deo separat. Quid enim aliud est inobedientia quam nolle subdi Deo, sed suae velle esse potestatis?\
+"""
+transcription_segments = [
+  { line = 61, text = """
+Vers. 8. Plantaverat paradisum voluptatis a principio. Id est hortum voluptatis. Graece enim paradisus hortus, Hebraice Eden vocatur. A principio, id est in initio, remotis aquis a superficie terrae et in unum collectis. Ubi autem nos habemus: Paradisum a principio, quidam codices habent: Eden ad ortum, ex quo possumus conjicere paradisum in Oriente situm. In quacunque autem orbis parte sit, scimus eum terrenum esse, et interjecto Oceano et montibus | oppositis a nostro orbe longe remotissimum. Est enim in altissimo loco situs pertingens usque ad lunarem circulum. Unde et illuc aquae diluvii minime pervenisse dicuntur. In quo posuit hominem. Ex quo, quod positus in paradisum homo dicitur, datur intelligi non ibi fuisse conditum, sed in hac nostra mortali terra, quia, divina praescientia, illum peccaturum et ob hoc ab illa sancta terra in hanc convallem miseriae propellendum.\
+""" },
+  { line = 62, text = """
+Vers 9.-- Produxitque de humo. Subauditur paradisi. Lignum vitae et reliqua. Lignum vitae species arboris fuit ita vocata, quod naturaliter hanc virtutem | sortitum est, ut si quis ex eo fructum comederet perpetua soliditate firmaretur et beata immortalitate vestiretur, nullis deinceps infirmitatibus vel anxietatibus deprimendus, nulla senii lassitudine vel imbecillitate deterendus. Lignum autem scientiae boni et mali nullius arboris certa species credenda est, sed in posterum ventura nomen ejus inditum fuit ex qualitate scilicet obedientiae vel inobedientiae, quae obedienti scientia boni existeret: inobedientia vero, mali ac per hoc peccati nervum incurrenti scientia mali fieret. Obedientia autem sola virtus est quae hominem Deo conciliat, sicut e contra tumor, id est inobedientia, longe a Deo separat. Quid enim aliud est inobedientia quam nolle subdi Deo, sed suae velle esse potestatis?\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,34 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.38-1"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "38.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 1-30.' and running to the next such heading, in 4 paragraphs."
+physical_line_ranges = [[371, 374]]
+text = """
+VERS. 1-30.-- Eodem tempore descendens Judas, a fratribus suis divertit ad virum Odollamitem, nomine Hiram, et caetera usque postea egressus est frater ejus, in cujus manu erat coccinum, quem appellavit Zaram. Qualiter historia de Juda, et tribus filiis ejus, et uxore Thamar intra tam paucos annos compleri potuit? cum ergo ipse Joseph anno septimo decimo aetatis suae venditus fuisse credatur, tredecim | annos peregerat in Aegypto ignotus Pharaoni. Ad hos enim tredecim annos accesserunt septem anni ubertatis, et facti sunt anni viginti; his adduntur duo, quia secundo anno famis intravit Jacob in Aegyptum cum filiis suis, et inveniuntur viginti duo anni quibus abfuit Joseph a patre et a fratribus suis; quo medio tempore quomodo fieri potuerunt?
+
+Solet enim Scriptura sancta pro capitulatione multa praeferre. Aliquot annos ante venditum Joseph haec fieri coepisse intelligi datur. Etiam mox, ut adolesceret Judas, coeperit incidisse in amorem ejus quam duxit uxorem, nondum vendito Joseph in Aegyptum. Cur dixit de Thamar, depositis vestimentis viduitatis suae? Quatenus intelligeres ex temporibus patriarcharum certa et sua fuisse vestimenta | viduarum, non utique talia qualia conjugatarum.
+
+Quare dixit Judas: Justior est Thamar quam ego? Thamar vero in bivio sive in compito sedens, ubi diligentius debet viator aspicere quod iter gradiendi capiat, non ut vagans turpitudinis libidinem impleret, sed ut liberos a socero acciperet, justior est causa quam socer. Ille libidinis, illa liberorum. Et ideo in comparatione ejus minus male fecerat.
+
+Si enim Phares inde sortitus est nomen divisionis, quia diviserat membranam secundarum, unde Zara sic nomen accepit? Zara interpretatur Oriens. Sive igitur quia primus apparuit, sive quia plurimi ex eo nati sunt justi, sicuti in Paralipomenon legimus.\
+"""
+transcription_segments = [
+  { line = 371, text = """
+VERS. 1-30.-- Eodem tempore descendens Judas, a fratribus suis divertit ad virum Odollamitem, nomine Hiram, et caetera usque postea egressus est frater ejus, in cujus manu erat coccinum, quem appellavit Zaram. Qualiter historia de Juda, et tribus filiis ejus, et uxore Thamar intra tam paucos annos compleri potuit? cum ergo ipse Joseph anno septimo decimo aetatis suae venditus fuisse credatur, tredecim | annos peregerat in Aegypto ignotus Pharaoni. Ad hos enim tredecim annos accesserunt septem anni ubertatis, et facti sunt anni viginti; his adduntur duo, quia secundo anno famis intravit Jacob in Aegyptum cum filiis suis, et inveniuntur viginti duo anni quibus abfuit Joseph a patre et a fratribus suis; quo medio tempore quomodo fieri potuerunt?\
+""" },
+  { line = 372, text = """
+Solet enim Scriptura sancta pro capitulatione multa praeferre. Aliquot annos ante venditum Joseph haec fieri coepisse intelligi datur. Etiam mox, ut adolesceret Judas, coeperit incidisse in amorem ejus quam duxit uxorem, nondum vendito Joseph in Aegyptum. Cur dixit de Thamar, depositis vestimentis viduitatis suae? Quatenus intelligeres ex temporibus patriarcharum certa et sua fuisse vestimenta | viduarum, non utique talia qualia conjugatarum.\
+""" },
+  { line = 373, text = """
+Quare dixit Judas: Justior est Thamar quam ego? Thamar vero in bivio sive in compito sedens, ubi diligentius debet viator aspicere quod iter gradiendi capiat, non ut vagans turpitudinis libidinem impleret, sed ut liberos a socero acciperet, justior est causa quam socer. Ille libidinis, illa liberorum. Et ideo in comparatione ejus minus male fecerat.\
+""" },
+  { line = 374, text = """
+Si enim Phares inde sortitus est nomen divisionis, quia diviserat membranam secundarum, unde Zara sic nomen accepit? Zara interpretatur Oriens. Sive igitur quia primus apparuit, sive quia plurimi ex eo nati sunt justi, sicuti in Paralipomenon legimus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

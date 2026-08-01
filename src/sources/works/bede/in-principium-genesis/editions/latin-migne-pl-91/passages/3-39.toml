@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-39"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.39"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[267, 267]]
+text = """
+Vixitque Thare septuaginta annis, et genuit Abram et Nachor et Aran. Septuaginta interpretes in hac sola generatione nihil a veritate differunt Hebraica. Et huc usque secunda mundi aetas pertingit, habens juxta Hebraicam veritatem annos CXCII, juxta Septuaginta interpretes mille septuaginta duos, juxta vero statuta chronographorum DCCCCXLII. Ita autem dicitur Thare cum annis septuaginta vixisset genuisse Abram et Nachor et Aran, sicut ante diluvium Noe tres filios, cum esset annorum quingentorum, genuisse narratur; cum unus vir de una conjuge uno anno tres filios generasse non posset. Intelligitur enim, quia septuaginta annorum cum esset, genuit Abram, qui nunc Abraham, ac deinde fratres ejus tempore sequente; sed minus curavit Scriptura nativitatis eorum tempus exprimere, cum sola adnotatio temporis quo natus est Abraham ad significantiam aetatis illius exprimeret et sufficere posset.\
+"""
+transcription_segments = [
+  { line = 267, text = """
+Vixitque Thare septuaginta annis, et genuit Abram et Nachor et Aran. Septuaginta interpretes in hac sola generatione nihil a veritate differunt Hebraica. Et huc usque secunda mundi aetas pertingit, habens juxta Hebraicam veritatem annos CXCII, juxta Septuaginta interpretes mille septuaginta duos, juxta vero statuta chronographorum DCCCCXLII. Ita autem dicitur Thare cum annis septuaginta vixisset genuisse Abram et Nachor et Aran, sicut ante diluvium Noe tres filios, cum esset annorum quingentorum, genuisse narratur; cum unus vir de una conjuge uno anno tres filios generasse non posset. Intelligitur enim, quia septuaginta annorum cum esset, genuit Abram, qui nunc Abraham, ac deinde fratres ejus tempore sequente; sed minus curavit Scriptura nativitatis eorum tempus exprimere, cum sola adnotatio temporis quo natus est Abraham ad significantiam aetatis illius exprimeret et sufficere posset.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

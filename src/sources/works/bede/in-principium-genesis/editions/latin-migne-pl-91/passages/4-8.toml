@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-8"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.8"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[310, 310]]
+text = """
+Respondens Dominus: Sume, inquit, mihi vaccam triennem, et capram trinam, et arietem annorum trium, turturem quoque et columbam. Qui tollens universa haec divisit per medium, et utrasque partes contra se altrinsecus posuit, aves autem non divisit. Sive enim per juvencam significata sit plebs sub jugo legis posita; per capram eadem plebs peccatrix futura, per arietem eadem plebs etiam regnatura. Propterea trina dicuntur haec animalia, quia tertia aetate saeculi populus ille adolevit, ac terram repromissionis intravit. Prima quippe aetas ab Adam usque ad Noe, secunda a Noe usque ad ipsum Abraham, tertia ab Abraham usque ad David; in qua de Aegyptia servitute salvatus, atque in terra promissionis populus ille translatus est. Sive aliud aliquid convenientius ista significent, nullo modo tamen dubitaverim spiritales in eo praefiguratos additamento turturis et columbae; et ideo dictum est: aves autem non divisit: quoniam carnales inter se dividuntur, spiritales autem nullo modo, sive a negotiosis conversationibus hominum se removeant sicut turtur, sive inter illas degant sicut columba; utraque tamen avis est simplex et innoxia, significans et in ipso Israelitico populo, cui terra illa danda erat, futuros individuos populos promissionis, et haeredes regni in aeterna felicitate mansuri.\
+"""
+transcription_segments = [
+  { line = 310, text = """
+Respondens Dominus: Sume, inquit, mihi vaccam triennem, et capram trinam, et arietem annorum trium, turturem quoque et columbam. Qui tollens universa haec divisit per medium, et utrasque partes contra se altrinsecus posuit, aves autem non divisit. Sive enim per juvencam significata sit plebs sub jugo legis posita; per capram eadem plebs peccatrix futura, per arietem eadem plebs etiam regnatura. Propterea trina dicuntur haec animalia, quia tertia aetate saeculi populus ille adolevit, ac terram repromissionis intravit. Prima quippe aetas ab Adam usque ad Noe, secunda a Noe usque ad ipsum Abraham, tertia ab Abraham usque ad David; in qua de Aegyptia servitute salvatus, atque in terra promissionis populus ille translatus est. Sive aliud aliquid convenientius ista significent, nullo modo tamen dubitaverim spiritales in eo praefiguratos additamento turturis et columbae; et ideo dictum est: aves autem non divisit: quoniam carnales inter se dividuntur, spiritales autem nullo modo, sive a negotiosis conversationibus hominum se removeant sicut turtur, sive inter illas degant sicut columba; utraque tamen avis est simplex et innoxia, significans et in ipso Israelitico populo, cui terra illa danda erat, futuros individuos populos promissionis, et haeredes regni in aeterna felicitate mansuri.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

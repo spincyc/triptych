@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-10"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.10"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[21, 21]]
+text = """
+Et vidit Deus quod esset bonum. Necdum terra germinabat, necdum vel ipsa, vel aquae animantia viva produxerant, et tamen videre dicitur Deus quod esset bonum, cedentibus aquis, apparuisse aridam, quia videlicet aquae creator atque aestimator universitatis praevidens quae futura sunt, quasi perfecta jam laudat, quae adhuc in primi operis exordio sunt, nec mirum apud quem rerum perfectio non in consummatione operis, sed in suae est praedestinatione voluntatis.\
+"""
+transcription_segments = [
+  { line = 21, text = """
+Et vidit Deus quod esset bonum. Necdum terra germinabat, necdum vel ipsa, vel aquae animantia viva produxerant, et tamen videre dicitur Deus quod esset bonum, cedentibus aquis, apparuisse aridam, quia videlicet aquae creator atque aestimator universitatis praevidens quae futura sunt, quasi perfecta jam laudat, quae adhuc in primi operis exordio sunt, nec mirum apud quem rerum perfectio non in consummatione operis, sed in suae est praedestinatione voluntatis.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.6-12"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "6.12"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 19.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[132, 132]]
+text = """
+Vers. 19. Ex cunctis animantibus bina induces in arcam. Quaeritur de minutis animantibus, non solum quales sunt mures et stelliones, sed etiam quales sunt muscae, et scabriones, et scarabei et pulices, si in his hic numerus poterit conservari. Sed sciendum quia illa quae non coitu generantur, sed humore terrae vel ex quacunque cadaverum aut aliarum | rerum corruptione nascuntur, non necesse fuit contineri in arca. Nam et hoc intelligendum innuitur, cum dicitur: De volucribus juxta genus suum, et de jumentis in genere suo. Illa quoque quae in domibus versantur, sicut pulices, mures, muscae, non necesse fuit in his hunc numerum observari, quae intelliguntur tunc plura in domibus fuisse. Sed et illa animalia quae ex commistione diversi generis nascuntur, sicut muli et burdones et caetera talia, non est dicendum fuisse in arca. Item quaeritur de his animantibus quae in aquis et in terra communiter vivunt, utrum fuisse credantur in arca, aut si non fuerunt, quomodo vivere potuerint sicut lutri et vituli marini. Sed de his credi potest quod extra | arcam fuerint: habebant tamen loculos praeparatos extra arcam in quibus se poterant recipere, veluti in aridis. Hoc et de avibus sentiendum marinis et fluvialibus, quia vicibus in aquis erant, et item in praeparatis mansiunculis extra arcam se recipiebant.\
+"""
+transcription_segments = [
+  { line = 132, text = """
+Vers. 19. Ex cunctis animantibus bina induces in arcam. Quaeritur de minutis animantibus, non solum quales sunt mures et stelliones, sed etiam quales sunt muscae, et scabriones, et scarabei et pulices, si in his hic numerus poterit conservari. Sed sciendum quia illa quae non coitu generantur, sed humore terrae vel ex quacunque cadaverum aut aliarum | rerum corruptione nascuntur, non necesse fuit contineri in arca. Nam et hoc intelligendum innuitur, cum dicitur: De volucribus juxta genus suum, et de jumentis in genere suo. Illa quoque quae in domibus versantur, sicut pulices, mures, muscae, non necesse fuit in his hunc numerum observari, quae intelliguntur tunc plura in domibus fuisse. Sed et illa animalia quae ex commistione diversi generis nascuntur, sicut muli et burdones et caetera talia, non est dicendum fuisse in arca. Item quaeritur de his animantibus quae in aquis et in terra communiter vivunt, utrum fuisse credantur in arca, aut si non fuerunt, quomodo vivere potuerint sicut lutri et vituli marini. Sed de his credi potest quod extra | arcam fuerint: habebant tamen loculos praeparatos extra arcam in quibus se poterant recipere, veluti in aridis. Hoc et de avibus sentiendum marinis et fluvialibus, quia vicibus in aquis erant, et item in praeparatis mansiunculis extra arcam se recipiebant.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

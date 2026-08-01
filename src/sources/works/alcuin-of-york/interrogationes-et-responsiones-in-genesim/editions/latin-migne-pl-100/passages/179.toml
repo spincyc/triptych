@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.179"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "179"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 179 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[183, 183]]
+text = """
+322 Inter. 179. Quid est clamor Sodomorum; vel quid est, quod Dominus dixit: Descendam et videbo, utrum clamorem qui venit ad me, opere compleverint (Gen. XVIII, 20, 21) ?-- Resp. Peccatum cum voce est culpa in actione; peccatum vero cum clamore est culpa cum libertate et jactantia. Quod autem dixit: Descendam et videbo, et [caetera] hujusmodi, omnipotens Dominus et omnia sciens; cur ante probationem quasi dubitat, nisi ut gravitatis nobis exemplum proponat, ne mala hominum ante praesumamus credere quam probare? Et ecce ut per angelos ad cognoscenda mala descendit, mox facinorosos percutit. Atque ille patiens, ille mitis, [ille], de quo scriptum est: Tu autem [Domine] cum tranquillitate judicas (Sap. XII, 18). Ille de quo rursum scriptum est: Dominus patiens est, cum [in] tanto crimine involutos inveniens, quasi patientiam praetermisit, et diem extremi judicii exspectare ad vindictam noluit, sed eos igne judicii ante diem judicii praevenit. Ecce malum, et quasi cum difficultate credidit cum audivit; et tamen sine tarditate percussit, cum verum cognoscendo reperit: ut nobis videlicet daret exemplum, quia majora crimina et tarde credenda sunt cum audiuntur, et citius punienda, cum veraciter agnoscuntur.\
+"""
+transcription_segments = [
+  { line = 183, text = """
+322 Inter. 179. Quid est clamor Sodomorum; vel quid est, quod Dominus dixit: Descendam et videbo, utrum clamorem qui venit ad me, opere compleverint (Gen. XVIII, 20, 21) ?-- Resp. Peccatum cum voce est culpa in actione; peccatum vero cum clamore est culpa cum libertate et jactantia. Quod autem dixit: Descendam et videbo, et [caetera] hujusmodi, omnipotens Dominus et omnia sciens; cur ante probationem quasi dubitat, nisi ut gravitatis nobis exemplum proponat, ne mala hominum ante praesumamus credere quam probare? Et ecce ut per angelos ad cognoscenda mala descendit, mox facinorosos percutit. Atque ille patiens, ille mitis, [ille], de quo scriptum est: Tu autem [Domine] cum tranquillitate judicas (Sap. XII, 18). Ille de quo rursum scriptum est: Dominus patiens est, cum [in] tanto crimine involutos inveniens, quasi patientiam praetermisit, et diem extremi judicii exspectare ad vindictam noluit, sed eos igne judicii ante diem judicii praevenit. Ecce malum, et quasi cum difficultate credidit cum audivit; et tamen sine tarditate percussit, cum verum cognoscendo reperit: ut nobis videlicet daret exemplum, quia majora crimina et tarde credenda sunt cum audiuntur, et citius punienda, cum veraciter agnoscuntur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

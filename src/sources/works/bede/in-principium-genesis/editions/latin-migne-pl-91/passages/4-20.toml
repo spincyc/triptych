@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-20"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.20"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[323, 323]]
+text = """
+Postquam vero nonaginta et novem annorum esse coeperat, apparuit ei Dominus, dixitque ad eum: Ego Deus omnipotens, ambula coram me, et esto perfectus, ponamque foedus inter me et te, et multiplicabo te vehementer nimis. Unde centenario Abrahae nomen amplificatur, testamentum circumcisionis datur, Isaac nasciturus promittitur, ut in magno mysterio contenarius filium promissionis jam circumcisus accipiat. Ambulat autem coram Domino, ut possit esse perfectus, qui omnibus momentis in conspectu Divinitatis se consistere et quasi in obsequium ejus positum se esse meminit; quomodo Elias qui ait: Vivit Dominus, in cujus conspectu sto (III Reg. XVII, 1); semper se ad divinum promptum obsequium, praesentiam sui Conditoris in mente habere signavit; et quia primus perfectionis gradus humilitas est, recte subjungitur:\
+"""
+transcription_segments = [
+  { line = 323, text = """
+Postquam vero nonaginta et novem annorum esse coeperat, apparuit ei Dominus, dixitque ad eum: Ego Deus omnipotens, ambula coram me, et esto perfectus, ponamque foedus inter me et te, et multiplicabo te vehementer nimis. Unde centenario Abrahae nomen amplificatur, testamentum circumcisionis datur, Isaac nasciturus promittitur, ut in magno mysterio contenarius filium promissionis jam circumcisus accipiat. Ambulat autem coram Domino, ut possit esse perfectus, qui omnibus momentis in conspectu Divinitatis se consistere et quasi in obsequium ejus positum se esse meminit; quomodo Elias qui ait: Vivit Dominus, in cujus conspectu sto (III Reg. XVII, 1); semper se ad divinum promptum obsequium, praesentiam sui Conditoris in mente habere signavit; et quia primus perfectionis gradus humilitas est, recte subjungitur:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

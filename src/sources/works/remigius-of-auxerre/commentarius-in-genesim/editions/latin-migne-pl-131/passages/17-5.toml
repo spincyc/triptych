@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.17-5"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "17.5"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 14.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[217, 217]]
+text = """
+Vers. 14. De populo suo. Id est de coetu sanctorum. Unde et legimus: Tu autem ibis ad populum tuum, quia pactum meum irritum fecit. Pactum scilicet illud quod Adae in paradiso datum est, in quo omnes peccaverunt (Rom. III, 12). Omnes enim causaliter | in Adam fuimus, et ideo originalis peccati rei sumus. Haec autem circumcisio quae in uno membro fiebat significat circumcisionem spiritalem quae in corde et in omnibus membris exhibenda est. Circumcidendum est cor a noxiis cogitationibus, circumcidendi sunt oculi ne videant vanitatem, circumcidendae sunt aures, id est, obturandae ne audiant sanguinem, et sic in omnibus sensibus celebranda est circumcisio.\
+"""
+transcription_segments = [
+  { line = 217, text = """
+Vers. 14. De populo suo. Id est de coetu sanctorum. Unde et legimus: Tu autem ibis ad populum tuum, quia pactum meum irritum fecit. Pactum scilicet illud quod Adae in paradiso datum est, in quo omnes peccaverunt (Rom. III, 12). Omnes enim causaliter | in Adam fuimus, et ideo originalis peccati rei sumus. Haec autem circumcisio quae in uno membro fiebat significat circumcisionem spiritalem quae in corde et in omnibus membris exhibenda est. Circumcidendum est cor a noxiis cogitationibus, circumcidendi sunt oculi ne videant vanitatem, circumcidendae sunt aures, id est, obturandae ne audiant sanguinem, et sic in omnibus sensibus celebranda est circumcisio.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

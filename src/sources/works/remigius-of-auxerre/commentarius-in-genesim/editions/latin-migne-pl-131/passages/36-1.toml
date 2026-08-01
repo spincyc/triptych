@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.36-1"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "36.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 6.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[366, 366]]
+text = """
+Vers. 6. Abiit in alteram regionem. Hic quaeri potest cur Esau post mortem patris dicatur abiisse in Seir, et recessisse a fratre suo, cum jam, quando venit Jacob, in Seir dicatur habitasse? Sed fieri potuit ut, Jacob fugiente in Mesopotamiam, dolore et ira praereptae sibi benedictionis recesserit a parentibus, et habitaverit in Seir per viginti annos, quibus Jacob absens fuit. Postquam vero reversus est Jacob, et fratri suo reconciliatur, rursus de Seir cum fratre suo, donec pater vixit, nabitavit cum eo. Isaac | mortuo, sicut hic dicitur, tulit substantiam domus suae et recessit a fratre suo. Divites enim erant valde, et simul habitare non poterant.\
+"""
+transcription_segments = [
+  { line = 366, text = """
+Vers. 6. Abiit in alteram regionem. Hic quaeri potest cur Esau post mortem patris dicatur abiisse in Seir, et recessisse a fratre suo, cum jam, quando venit Jacob, in Seir dicatur habitasse? Sed fieri potuit ut, Jacob fugiente in Mesopotamiam, dolore et ira praereptae sibi benedictionis recesserit a parentibus, et habitaverit in Seir per viginti annos, quibus Jacob absens fuit. Postquam vero reversus est Jacob, et fratri suo reconciliatur, rursus de Seir cum fratre suo, donec pater vixit, nabitavit cum eo. Isaac | mortuo, sicut hic dicitur, tulit substantiam domus suae et recessit a fratre suo. Divites enim erant valde, et simul habitare non poterant.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

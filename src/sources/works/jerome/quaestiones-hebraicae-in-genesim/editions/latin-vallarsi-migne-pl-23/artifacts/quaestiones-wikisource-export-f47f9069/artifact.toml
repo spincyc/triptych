@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-wikisource-export-f47f9069"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_type = "wiki-export-xml"
+media_type = "application/xml"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "Jerome's Latin is of the fourth century and Migne's printing is of 1845, so the text beneath these bytes is in the public domain everywhere. The bytes themselves are the wiki source of a Latin Wikisource transcription, and Latin Wikisource contributions are licensed CC BY-SA 4.0 — a condition on the contributors' markup rather than on Migne's text under it. The exact bytes are therefore hashed and recorded but not retained here, and only the printed Latin reaches the tracked derivative, stripped of every template, link, heading and column marker the contributors and the encoder added."
+rights_jurisdiction = "United States"
+source_url = "https://la.wikisource.org/wiki/Special:Export"
+provenance = "Retrieved 2026-08-01 in one request, by POSTing the page list (Quaestiones Hebraicae in Genesim (Hieronymus)) to Latin Wikisource's Special:Export with curonly=1, so the whole work arrived as a single document. No model stood anywhere in the retrieval path: the bytes were fetched with curl, hashed, and read locally, which is the rule this corpus exists under because the same corpus has already been shown to come back paraphrased when a model was asked for it verbatim. Latin Wikisource states its contributor licence through its own API (action=query&meta=siteinfo&siprop=rightsinfo) as Creative Commons Attribution-Share Alike 4.0; that response was fetched and hashed (sha256 5131b8f6c7bcc6717ff869623ec0ed1824ad0e79fe24697a6ed75f33787c560a, 162 bytes) before any payload was kept, which is the order guidance/sources.md requires. Wikisource is a mutable witness, so this artifact identifies a dated state of it and not a stable republication."
+retrieved = "2026-08-01"
+sha256 = "f47f9069250f5d45a7aa591c159b7e4681229957b0ae19c00acfab70ddd1c595"
+byte_size = 148529
+encoding = "utf-8"
+indexable = false
+notes = "The work occupies one wiki page, current revision 253468 at retrieval, which is the preface and the whole of the questions. Its transcribers keyed every verse number as an anchor template rather than as text, so the printed numbers reach the transcription only through the template table named on the transformation."

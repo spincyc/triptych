@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-4"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[114, 114]]
+text = """
+Et respexit Dominus ad Abel et ad munera ejus, ad Cain vero et ad munera illius non respexit. Non enim ait: Et respexit Dominus ad munera Abel et ad ipsum; ad munera vero Cain et ad ipsum non respexit: sed primo personam offerentis acceptam Deo vel non acceptam, deinde munera respecta, vel non respecta esse testatur. Homines etenim saepe muneribus eorum a quibus fuerant offensi placantur; Deus autem, qui est discretor cogitationum et intentionum cordis, nullo magis munere quam pia offerentis devotione placatur: Qui cum puritatem nostrae mentis probaverit, consequenter etiam vota orationum vel operum nostrorum suscipiet\
+"""
+transcription_segments = [
+  { line = 114, text = """
+Et respexit Dominus ad Abel et ad munera ejus, ad Cain vero et ad munera illius non respexit. Non enim ait: Et respexit Dominus ad munera Abel et ad ipsum; ad munera vero Cain et ad ipsum non respexit: sed primo personam offerentis acceptam Deo vel non acceptam, deinde munera respecta, vel non respecta esse testatur. Homines etenim saepe muneribus eorum a quibus fuerant offensi placantur; Deus autem, qui est discretor cogitationum et intentionum cordis, nullo magis munere quam pia offerentis devotione placatur: Qui cum puritatem nostrae mentis probaverit, consequenter etiam vota orationum vel operum nostrorum suscipiet\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.19-4"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "19.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 10-18.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[207, 208]]
+text = """
+VERS. 10-18.-- Clauseruntque ostium viri, et eos qui erant foris percusserunt caecitate, etc.
+
+Graeci habent, aorosia [aorasia], quod magis dici potest, avidentia, quae faciat non videre, non omnia, sed quod opus non est. Hac enim aorosia et illi percussi sunt, qui quaerebant Eliseum. Moraliter vero, quid est quod, malis adversantibus, intra domum | Lot reducitur et munitur, nisi quod justus quisque, dum pravorum insidias sustinet, ad mentem revertitur et imperterritus manet? Sodomitae autem viri in domo Lot invenire ostium nequeunt, quia corruptores mentium contra vitam justi nullum accusationis aditum deprehendunt. Percussi enim caecitate quasi domum circumeunt, qui invidentes facta dictaque perscrutantur. Sed quia eis de vita justi fortis undique ac laudabilis actio obviat, errantes nil aliud quam parietem palpant.\
+"""
+transcription_segments = [
+  { line = 207, text = """
+VERS. 10-18.-- Clauseruntque ostium viri, et eos qui erant foris percusserunt caecitate, etc.\
+""" },
+  { line = 208, text = """
+Graeci habent, aorosia [aorasia], quod magis dici potest, avidentia, quae faciat non videre, non omnia, sed quod opus non est. Hac enim aorosia et illi percussi sunt, qui quaerebant Eliseum. Moraliter vero, quid est quod, malis adversantibus, intra domum | Lot reducitur et munitur, nisi quod justus quisque, dum pravorum insidias sustinet, ad mentem revertitur et imperterritus manet? Sodomitae autem viri in domo Lot invenire ostium nequeunt, quia corruptores mentium contra vitam justi nullum accusationis aditum deprehendunt. Percussi enim caecitate quasi domum circumeunt, qui invidentes facta dictaque perscrutantur. Sed quia eis de vita justi fortis undique ac laudabilis actio obviat, errantes nil aliud quam parietem palpant.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

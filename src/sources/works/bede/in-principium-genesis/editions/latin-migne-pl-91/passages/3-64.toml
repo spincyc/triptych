@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-64"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.64"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[297, 297]]
+text = """
+Quod cum audisset Abram captum videlicet Loth fratrem suum, numeravit expeditos vernaculos suos trecentos decem et octo, et caetera. Miraculum quidem est divinae potentiae permaximum, quod cum cohorte tam modica tantam hostium stragem fecerit Abraham, sed altius sacramentum fidei, in qua nobis spiritalis est pugna superanda, continet numerus ille militum cum quibus superavit. Erant quippe trecenti decem et octo, quo nimirum numero signum victoriosissimae crucis et nomen Salvatoris nostri Jesu Christi, per quem hoc in munimentum nostrae salutis consecratum est, designatur. Si quidem apud Graecos trecenti per T litteram notantur, quae in crucis figuram aptatur. Nam si apicem in medio recepisset, non figura crucis, sed ipsum jam signum crucis manifeste cerneretur expressum. Decem vero et octo apud eos per Ι et Η quae in nomine Jesu primae sunt litterae notantur: et ideo cum trecenti decem et octo Graece notantur, non multum distat ab eo ut crux Jesu legi possit. Bene ergo in trecentis decem et octo sociis vicit hostes, ac fratrem liberavit Abraham, ut mystice figuraret nasciturum de suo semine eum qui per passionem crucis mundum a morte revocaret; et ipse quoque nomine Salvatoris, id est, Jesus, sublimis atque omni mundo colendus emineret: sed et omnes qui ad salutem pertinerent, non nisi per hoc signum venerabile, perque nomen ejus terribile salutem esse consecuturos.\
+"""
+transcription_segments = [
+  { line = 297, text = """
+Quod cum audisset Abram captum videlicet Loth fratrem suum, numeravit expeditos vernaculos suos trecentos decem et octo, et caetera. Miraculum quidem est divinae potentiae permaximum, quod cum cohorte tam modica tantam hostium stragem fecerit Abraham, sed altius sacramentum fidei, in qua nobis spiritalis est pugna superanda, continet numerus ille militum cum quibus superavit. Erant quippe trecenti decem et octo, quo nimirum numero signum victoriosissimae crucis et nomen Salvatoris nostri Jesu Christi, per quem hoc in munimentum nostrae salutis consecratum est, designatur. Si quidem apud Graecos trecenti per T litteram notantur, quae in crucis figuram aptatur. Nam si apicem in medio recepisset, non figura crucis, sed ipsum jam signum crucis manifeste cerneretur expressum. Decem vero et octo apud eos per Ι et Η quae in nomine Jesu primae sunt litterae notantur: et ideo cum trecenti decem et octo Graece notantur, non multum distat ab eo ut crux Jesu legi possit. Bene ergo in trecentis decem et octo sociis vicit hostes, ac fratrem liberavit Abraham, ut mystice figuraret nasciturum de suo semine eum qui per passionem crucis mundum a morte revocaret; et ipse quoque nomine Salvatoris, id est, Jesus, sublimis atque omni mundo colendus emineret: sed et omnes qui ad salutem pertinerent, non nisi per hoc signum venerabile, perque nomen ejus terribile salutem esse consecuturos.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

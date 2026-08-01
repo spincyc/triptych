@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.46-2"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "46.2"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 26.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[421, 421]]
+text = """
+Vers. 26. Omnes animae quae ingressae sunt in Aegyptum fuerunt septuaginta. Haec est Hebraica veritas. Nam quod in LXX legitur: Omnes animae fuerunt septuaginta quinque, supputatis Jacob filiis aperte ostenditur non convenire. Illi enim qui cum | Jacob Aegyptum intraverunt, sexaginta sex fuerunt, quibus si addam ipsum Joseph et filios ejus, quos in Aegypto genuerat, fuerunt sexaginta novem. His etiam adde ipsum Jacob, patrem omnium, fiunt septuaginta. Quod in Actibus apostolorum Lucas dicit: Descendit Jacob in Aegyptum in animabus septuaginta quinque (Act. VII, 14), similis error est. Sed quia tunc LXX majoris auctoritatis erant quam Hebraica veritas, et ab omnibus Ecclesiis legebantur, ideo sanctus Lucas septuaginta quinque posuit. Omnes animae quae egressae sunt de femore Jacob. Hoc quidam haeretici ad suum errorem traxerunt dicentes animas sicut et corpora ex patris seminario | nasci. Sed aliter veritas se habet. Deus enim de nihilo creat animas, non de corporibus, neque de aliis animabus, easque quando et quomodo vult, corporibus tribuit. Ergo quod dicit: Animae quae egressae sunt de femore Jacob, per animas totum hominem debemus accipere, a majore videlicet parte, sicut et aliquando ab inferiori parte totus homo accipitur, juxta quod Joannes dicit: Verbum caro factum est (Joan. I, 15), per carnem totum hominem designans.\
+"""
+transcription_segments = [
+  { line = 421, text = """
+Vers. 26. Omnes animae quae ingressae sunt in Aegyptum fuerunt septuaginta. Haec est Hebraica veritas. Nam quod in LXX legitur: Omnes animae fuerunt septuaginta quinque, supputatis Jacob filiis aperte ostenditur non convenire. Illi enim qui cum | Jacob Aegyptum intraverunt, sexaginta sex fuerunt, quibus si addam ipsum Joseph et filios ejus, quos in Aegypto genuerat, fuerunt sexaginta novem. His etiam adde ipsum Jacob, patrem omnium, fiunt septuaginta. Quod in Actibus apostolorum Lucas dicit: Descendit Jacob in Aegyptum in animabus septuaginta quinque (Act. VII, 14), similis error est. Sed quia tunc LXX majoris auctoritatis erant quam Hebraica veritas, et ab omnibus Ecclesiis legebantur, ideo sanctus Lucas septuaginta quinque posuit. Omnes animae quae egressae sunt de femore Jacob. Hoc quidam haeretici ad suum errorem traxerunt dicentes animas sicut et corpora ex patris seminario | nasci. Sed aliter veritas se habet. Deus enim de nihilo creat animas, non de corporibus, neque de aliis animabus, easque quando et quomodo vult, corporibus tribuit. Ergo quod dicit: Animae quae egressae sunt de femore Jacob, per animas totum hominem debemus accipere, a majore videlicet parte, sicut et aliquando ab inferiori parte totus homo accipitur, juxta quod Joannes dicit: Verbum caro factum est (Joan. I, 15), per carnem totum hominem designans.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

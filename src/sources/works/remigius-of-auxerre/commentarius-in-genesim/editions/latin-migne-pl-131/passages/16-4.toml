@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.16-4"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "16.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 12.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[211, 211]]
+text = """
+Vers. 12. Hic ferus homo erit. Id est agrestis et rusticus. Pro quo LXX dicunt: Hic erit Phara. Phara interpretatur onager, significans autem Sarracenos, qui de Ismael ducunt originem, qui per latam solitudinem incertis sedibus vagantes impugnant omnes | eremi vicinos et ab omnibus impugnantur. Allegorice hae duae mulieres, exponente Apostolo (Galat. IV, 22 et seq.), Synagogam et Ecclesiam significant. Agar quidem Synagogam quae in servitutem generat populum Judaeorum qui feri sunt et agrestes, jugum Domini leve et fidem ejus nolentes recipere, ideoque dispersi, et vagabundi sunt per totum orbem et omnibus maxime Christianis contrarii. Sara vero Ecclesiam quae primum sterilis et infecunda fuit, postea vero in libertatem fidei et gratiae plebem catholicam generavit.\
+"""
+transcription_segments = [
+  { line = 211, text = """
+Vers. 12. Hic ferus homo erit. Id est agrestis et rusticus. Pro quo LXX dicunt: Hic erit Phara. Phara interpretatur onager, significans autem Sarracenos, qui de Ismael ducunt originem, qui per latam solitudinem incertis sedibus vagantes impugnant omnes | eremi vicinos et ab omnibus impugnantur. Allegorice hae duae mulieres, exponente Apostolo (Galat. IV, 22 et seq.), Synagogam et Ecclesiam significant. Agar quidem Synagogam quae in servitutem generat populum Judaeorum qui feri sunt et agrestes, jugum Domini leve et fidem ejus nolentes recipere, ideoque dispersi, et vagabundi sunt per totum orbem et omnibus maxime Christianis contrarii. Sara vero Ecclesiam quae primum sterilis et infecunda fuit, postea vero in libertatem fidei et gratiae plebem catholicam generavit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

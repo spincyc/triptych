@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-42"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.42"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[166, 166]]
+text = """
+Et bitumine linies intrinsecus et extrinsecus, et facies sic eam. Bitumen est ferventissimum et violentissimum gluten, cujus haec virtus est, ut ligna quae ex eo fuerint lita, nec vermibus exedi, nec solis ardore, vel ventorum flatibus, vel aquarum possint inundatione dissolvi; unde quid aliud mystice in bitumine quam constantia fidei accipitur? Bituminatur autem arca intrinsecus et extrinsecus, et sic universe perficitur, dum et cogitationes electorum et opera, ne ullis vincantur aut decipiantur vitiorum incursibus, fidei in omnibus virtute muniuntur.\
+"""
+transcription_segments = [
+  { line = 166, text = """
+Et bitumine linies intrinsecus et extrinsecus, et facies sic eam. Bitumen est ferventissimum et violentissimum gluten, cujus haec virtus est, ut ligna quae ex eo fuerint lita, nec vermibus exedi, nec solis ardore, vel ventorum flatibus, vel aquarum possint inundatione dissolvi; unde quid aliud mystice in bitumine quam constantia fidei accipitur? Bituminatur autem arca intrinsecus et extrinsecus, et sic universe perficitur, dum et cogitationes electorum et opera, ne ullis vincantur aut decipiantur vitiorum incursibus, fidei in omnibus virtute muniuntur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

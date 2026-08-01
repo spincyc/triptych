@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.6-1"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "6.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 2.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[114, 114]]
+text = """
+VERS. 2.-- Videntes filii Dei filias hominum quod essent pulchrae, et reliqua. Filios Dei filios Seth, et filios hominum progeniem Cain dicit. Sed postquam filii Seth, concupiscentia victi, ex filiabus Cain semine indignissimo connubia junxerunt, ex tali conjunctione homines immensi corpore, viribus superbi, moribus inconditi, quos Scriptura Gigantes vocat, procreati sunt. Displicuit Deo, et abbreviavit illis tempus vitae. Gigantes enim vocant Graeci juxta sermonis etymologiam fabulose quasi terrigenas, id est terra genitos, eo quod immensa mole, et similes sibi terra genuerit; ge enim terra dicitur. Falso | opinantur, qui putant praevaricatores angelos cum filiabus hominum ante diluvium concubuisse, et exinde natos gigantes, id est nimirum grandes et fortes viros de quibus terra completa est.\
+"""
+transcription_segments = [
+  { line = 114, text = """
+VERS. 2.-- Videntes filii Dei filias hominum quod essent pulchrae, et reliqua. Filios Dei filios Seth, et filios hominum progeniem Cain dicit. Sed postquam filii Seth, concupiscentia victi, ex filiabus Cain semine indignissimo connubia junxerunt, ex tali conjunctione homines immensi corpore, viribus superbi, moribus inconditi, quos Scriptura Gigantes vocat, procreati sunt. Displicuit Deo, et abbreviavit illis tempus vitae. Gigantes enim vocant Graeci juxta sermonis etymologiam fabulose quasi terrigenas, id est terra genitos, eo quod immensa mole, et similes sibi terra genuerit; ge enim terra dicitur. Falso | opinantur, qui putant praevaricatores angelos cum filiabus hominum ante diluvium concubuisse, et exinde natos gigantes, id est nimirum grandes et fortes viros de quibus terra completa est.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

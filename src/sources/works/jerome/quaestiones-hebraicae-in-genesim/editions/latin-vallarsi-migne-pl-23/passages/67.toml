@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.67"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "67"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 5.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[70, 70]]
+text = """
+(Vers. 5.) Et condiderunt gigantes in Astaroth Carnaim, et gentes fortes simul cum eis: et Ominaeos in Save civitate, antequam Sodomam pervenirent. Quatuor reges profecti de Babylone, interfecerunt gigantes, hoc est RAPHAIM (רפאים), robustos quosque [Al. quoque] Arabiae, et Zozim, in Hom, et Emim in civitate Save, quae usque hodie sic vocatur. ZUZIM (זוזים) autem et EMIM (אימים), terribiles et horrendi interpretantur: pro quo Septuaginta, sensum magis quam verbum ex verbo transferentes, gentes fortissimas posuerunt. Porro BAEM, pro quo dixerunt, ἅμα αὐτοῖς, hoc est cum eis, putaverunt scribi per HE (ה), ducti elementi similitudine, cum per HETH scriptum sit. BAEM (בהם) enim cum per tres litteras scribitur: si mediam HE habet, interpretatur, in eis: si autem HETH, ut in praesenti, locum significat, id est, IN HOM (בחם).\
+"""
+transcription_segments = [
+  { line = 70, text = """
+(Vers. 5.) Et condiderunt gigantes in Astaroth Carnaim, et gentes fortes simul cum eis: et Ominaeos in Save civitate, antequam Sodomam pervenirent. Quatuor reges profecti de Babylone, interfecerunt gigantes, hoc est RAPHAIM (רפאים), robustos quosque [Al. quoque] Arabiae, et Zozim, in Hom, et Emim in civitate Save, quae usque hodie sic vocatur. ZUZIM (זוזים) autem et EMIM (אימים), terribiles et horrendi interpretantur: pro quo Septuaginta, sensum magis quam verbum ex verbo transferentes, gentes fortissimas posuerunt. Porro BAEM, pro quo dixerunt, ἅμα αὐτοῖς, hoc est cum eis, putaverunt scribi per HE (ה), ducti elementi similitudine, cum per HETH scriptum sit. BAEM (בהם) enim cum per tres litteras scribitur: si mediam HE habet, interpretatur, in eis: si autem HETH, ut in praesenti, locum significat, id est, IN HOM (בחם).\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

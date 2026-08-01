@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-56"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.56"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[363, 363]]
+text = """
+Et ecce miserunt manum viri, et introduxerunt ad se Lot, clauseruntque ostium, et eos qui erant foris percusserunt caecitate, a minimo usque ad maximum, ita ut ostium invenire non possent, et caetera usque ad id quod dixit Lot ad generes suos: Surgite, egredimini de loco isto, quia delebit Dominus civitatem hanc, et visus est quasi ludens loqui. Quod ostium Lot obcluserunt angeli, ne vel ipsum, vel aliquem de domo ipsius possent ad perdendum rapere Sodomitae, patenter insinuat quia nullum de electis Dei perditura sit impietas et persecutio reproborum, dicente Domino de ovibus suis: Et ego vitam aeternam do eis, et non peribunt in aeternum, et non rapiet eas quisquam de manu mea (Joan. X, 28). Quod item Lot, facultate ab angelis data, nullum de civibus perfidis, ne de suis quidem cognatis sive amicis, tametsi multum conatus, potuit ad salutem revocare, significat quia nullius labor hominis ad numerum praedestinatorum, qui ante constitutionem mundi electi sunt a Domino, vel unam possit animam adjicere: Novit enim Dominus qui sunt ejus. Verum etsi nostram fragilitatem qui ad electorum sortem pertinent latet, non tamen ab agenda cura nostrae salutis cessandum, non ab instruendis proximis lingua est continenda, sed ad exemplum beati Lot, et nobis caste vivendum, et errantium quoque correctioni officium pietatis impendendum, constat enim quia etsi praedestinatos ad interitum salvare nequivimus, nostrae tamen benignitatis quam erga illorum salutem impendimus mercedem non perdimus.\
+"""
+transcription_segments = [
+  { line = 363, text = """
+Et ecce miserunt manum viri, et introduxerunt ad se Lot, clauseruntque ostium, et eos qui erant foris percusserunt caecitate, a minimo usque ad maximum, ita ut ostium invenire non possent, et caetera usque ad id quod dixit Lot ad generes suos: Surgite, egredimini de loco isto, quia delebit Dominus civitatem hanc, et visus est quasi ludens loqui. Quod ostium Lot obcluserunt angeli, ne vel ipsum, vel aliquem de domo ipsius possent ad perdendum rapere Sodomitae, patenter insinuat quia nullum de electis Dei perditura sit impietas et persecutio reproborum, dicente Domino de ovibus suis: Et ego vitam aeternam do eis, et non peribunt in aeternum, et non rapiet eas quisquam de manu mea (Joan. X, 28). Quod item Lot, facultate ab angelis data, nullum de civibus perfidis, ne de suis quidem cognatis sive amicis, tametsi multum conatus, potuit ad salutem revocare, significat quia nullius labor hominis ad numerum praedestinatorum, qui ante constitutionem mundi electi sunt a Domino, vel unam possit animam adjicere: Novit enim Dominus qui sunt ejus. Verum etsi nostram fragilitatem qui ad electorum sortem pertinent latet, non tamen ab agenda cura nostrae salutis cessandum, non ab instruendis proximis lingua est continenda, sed ad exemplum beati Lot, et nobis caste vivendum, et errantium quoque correctioni officium pietatis impendendum, constat enim quia etsi praedestinatos ad interitum salvare nequivimus, nostrae tamen benignitatis quam erga illorum salutem impendimus mercedem non perdimus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

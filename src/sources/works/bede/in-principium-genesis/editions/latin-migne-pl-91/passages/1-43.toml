@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-43"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.43"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[68, 68]]
+text = """
+Et fluvius egrediebatur de loco voluptatis ad irrigandum paradisum. Id est ligna illa pulchra atque fructuosa quae omnem terram regionis illius opacabant, quo eo factitatum fuisse credendum est, quo in hac quam nos incolimus terra Nilus plana irrigat Aegypti, unde, quod et supra posuimus, dictum est de terra Sodomorum, quae universa irrigabatur sicut paradisus Domini, et sicut Aegyptus (Gen. XIII, 10). Et provida utique dispositione Dominus ac Conditor rerum in nostro orbe voluit habere similitudinem nonnullam patriae illius ad quam possidendam in primo parente creati sumus, ut ad promerendum ejus reditum de vicino nos admoneret exemplo, maxime et flumine illo quod de paradiso constat emanare. Nilus namque qui irrigat Aegyptum, ipse est Geon, qui in sequentibus de paradiso procedere memoratur. Sicut etiam eversis eisdem Sodomorum civitatibus, quae quondam ut paradisus Domini irrigabantur, exemplum eorum qui impie acturi sunt posuit, ut vestigia perditionis malorum certissima in mundo vigilantia aeterna eorum tormenta fugeremus.\
+"""
+transcription_segments = [
+  { line = 68, text = """
+Et fluvius egrediebatur de loco voluptatis ad irrigandum paradisum. Id est ligna illa pulchra atque fructuosa quae omnem terram regionis illius opacabant, quo eo factitatum fuisse credendum est, quo in hac quam nos incolimus terra Nilus plana irrigat Aegypti, unde, quod et supra posuimus, dictum est de terra Sodomorum, quae universa irrigabatur sicut paradisus Domini, et sicut Aegyptus (Gen. XIII, 10). Et provida utique dispositione Dominus ac Conditor rerum in nostro orbe voluit habere similitudinem nonnullam patriae illius ad quam possidendam in primo parente creati sumus, ut ad promerendum ejus reditum de vicino nos admoneret exemplo, maxime et flumine illo quod de paradiso constat emanare. Nilus namque qui irrigat Aegyptum, ipse est Geon, qui in sequentibus de paradiso procedere memoratur. Sicut etiam eversis eisdem Sodomorum civitatibus, quae quondam ut paradisus Domini irrigabantur, exemplum eorum qui impie acturi sunt posuit, ut vestigia perditionis malorum certissima in mundo vigilantia aeterna eorum tormenta fugeremus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

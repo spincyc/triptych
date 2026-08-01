@@ -1,0 +1,17 @@
+schema = 1
+record_type = "work"
+id = "work.bede.in-principium-genesis"
+title = "In principium Genesis"
+responsible = "Bede"
+work_type = "biblical-commentary"
+composed = "c. 717-725"
+composed_basis = "Bede's dedicatory letter to Acca of Hexham says the work was undertaken at Acca's asking and first carried only as far as Adam's expulsion from paradise, in two books, and was afterwards extended. Acca held Hexham from 709 to 731. The four-book redaction Migne prints is conventionally placed in the early 720s and the two-book one shortly before it; the range covers both, and no source held here narrows it. The date is the writing, not Migne's 1850 printing."
+alternate_titles = [
+  "Hexaemeron",
+  "Hexaemeron, sive libri quatuor in principium Genesis",
+  "In Genesim",
+  "On Genesis",
+]
+languages = ["lat"]
+locus_pattern = '(?:praefatio|[1-4]\.[1-9][0-9]{0,2})'
+description = "Bede's commentary on the opening of Genesis, in four books, running from the first verse to the expulsion of Ishmael at Genesis 21:10 and no further. Its preface to Acca of Hexham states the method plainly: what Basil, Ambrose and Augustine wrote on these chapters is too long and too deep for ordinary readers, so Bede gathers from them what an unlearned reader can use, sometimes in their words and sometimes in his own. Migne titles it Hexaemeron, which names only the first of its four books."

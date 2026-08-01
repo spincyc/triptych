@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.237"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "237"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 237 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[241, 241]]
+text = """
+Inter. 237. Quomodo decem vicibus dicit Jacob socero suo, mutasse eum mercedem suam (Gen. XXXI, 41)?-- Resp. Hic est sensus, quod per singulos fetus semper Laban conditionem mutaverit. Si videbat varium nasci pecus [post fetum] dicebat: Nolo [ F., volo] in futurum varia mihi nascantur. Rursum cum vidisset unius coloris nasci pecora [Jacob quoque, hoc audito, virgas in canalibus non ponebat] dicebat: futuros fetus unius coloris pecora mihi procreabunt. Et quid plura? usque ad decem vices semper [a Laban pecoris sui] Jacob mutata conditio est: et quodcunque sibi proposuerat Laban, ut nasceretur, in contrarium colorem vertebatur. Ne cui autem in sex annis decem pariendi vices incredibiles videantur, lege Virgilium, in quo dicitur: Bis gravidae pecudes . . . . . Natura autem Italicarum ovium et Mesopotamiae una esse perhibetur.\
+"""
+transcription_segments = [
+  { line = 241, text = """
+Inter. 237. Quomodo decem vicibus dicit Jacob socero suo, mutasse eum mercedem suam (Gen. XXXI, 41)?-- Resp. Hic est sensus, quod per singulos fetus semper Laban conditionem mutaverit. Si videbat varium nasci pecus [post fetum] dicebat: Nolo [ F., volo] in futurum varia mihi nascantur. Rursum cum vidisset unius coloris nasci pecora [Jacob quoque, hoc audito, virgas in canalibus non ponebat] dicebat: futuros fetus unius coloris pecora mihi procreabunt. Et quid plura? usque ad decem vices semper [a Laban pecoris sui] Jacob mutata conditio est: et quodcunque sibi proposuerat Laban, ut nasceretur, in contrarium colorem vertebatur. Ne cui autem in sex annis decem pariendi vices incredibiles videantur, lege Virgilium, in quo dicitur: Bis gravidae pecudes . . . . . Natura autem Italicarum ovium et Mesopotamiae una esse perhibetur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

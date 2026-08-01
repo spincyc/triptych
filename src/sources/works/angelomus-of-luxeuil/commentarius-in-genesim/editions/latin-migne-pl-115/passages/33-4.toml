@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.33-4"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "33.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 18.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[348, 348]]
+text = """
+VERS. 18.-- Transivitque in Salem, urbem Sicimorum, quae est in terra Chanaan, et reliqua. Error oboritur: quomodo Salem civitas appellatur, cum Hierusalem, in qua regnavit Melchisedech, Salem ante sit dicta? Aut igitur unius nominis urbs utraque est, quod etiam de pluribus Judaeae locis possumus invenire, ut idem urbis et loci nomen in alia atque alia tribu, ita ut aut certe istam Salem, quae nunc pro Sichima nominatur, dicimus hic interpretari consummatam, atque perfectam; et illam quae | postea Hierusalem dicta est pacifica nostro sermone transferre. Utrumque enim accentu [Petr., acceptu] paululum declinato hoc vocabulum sonat. Tradunt Hebraei quod claudicantis femur Jacob ibi convaluerit et sanatum sit, propterea eamdem civitatem curati atque perfecti vocabulum consecutam.\
+"""
+transcription_segments = [
+  { line = 348, text = """
+VERS. 18.-- Transivitque in Salem, urbem Sicimorum, quae est in terra Chanaan, et reliqua. Error oboritur: quomodo Salem civitas appellatur, cum Hierusalem, in qua regnavit Melchisedech, Salem ante sit dicta? Aut igitur unius nominis urbs utraque est, quod etiam de pluribus Judaeae locis possumus invenire, ut idem urbis et loci nomen in alia atque alia tribu, ita ut aut certe istam Salem, quae nunc pro Sichima nominatur, dicimus hic interpretari consummatam, atque perfectam; et illam quae | postea Hierusalem dicta est pacifica nostro sermone transferre. Utrumque enim accentu [Petr., acceptu] paululum declinato hoc vocabulum sonat. Tradunt Hebraei quod claudicantis femur Jacob ibi convaluerit et sanatum sit, propterea eamdem civitatem curati atque perfecti vocabulum consecutam.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

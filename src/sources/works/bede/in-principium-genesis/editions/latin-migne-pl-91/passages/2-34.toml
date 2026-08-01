@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-34"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.34"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[155, 155]]
+text = """
+Dixitque Deus: Non permanebit Spiritus meus in homine in aeternum, quia caro est: eruntque dies illius centum viginti annorum. Hos versiculos exponens S. Hieronimus, In Hebraeo, inquit, scriptum est: Non judicabit Spiritus meus homines istos in sempiternum, quia caro sunt: hoc est, quia fragilis est in homine conditio, non eos ad aeternos servabo cruciatus; sed hic illis restituam quod merentur. Ergo non severitatem, ut in nostris Codicibus legitur; sed clementiam Dei sonat, dum peccator hic pro suo scelere visitatur: unde et iratus Deus loquitur ad quosdam: Non visitabo filias eorum cum fuerint fornicatae, et sponsas eorum cum adulteraverint (Ose. IV). Et in alio loco: Visitabo in virga iniquitates eorum, et in flagellis peccata eorum, verumtamen misericordiam meam non auferam ab eis (Psal. LXXXVIII). Porro ne videretur in eo esse crudelis, quod peccantibus locum poenitentiae non dedisset, adjecit: Eruntque dies illius centum viginti annorum (Gen. VI), hoc est, habebunt centum viginti annos ad agendam poenitentiam; quia vero poenitentiam agere contempserunt, noluit Deus tempus exspectare decretum, sed viginti annorum spatiis amputatis, induxit diluvium anno centesimo agendae poenitentiae destinato.\
+"""
+transcription_segments = [
+  { line = 155, text = """
+Dixitque Deus: Non permanebit Spiritus meus in homine in aeternum, quia caro est: eruntque dies illius centum viginti annorum. Hos versiculos exponens S. Hieronimus, In Hebraeo, inquit, scriptum est: Non judicabit Spiritus meus homines istos in sempiternum, quia caro sunt: hoc est, quia fragilis est in homine conditio, non eos ad aeternos servabo cruciatus; sed hic illis restituam quod merentur. Ergo non severitatem, ut in nostris Codicibus legitur; sed clementiam Dei sonat, dum peccator hic pro suo scelere visitatur: unde et iratus Deus loquitur ad quosdam: Non visitabo filias eorum cum fuerint fornicatae, et sponsas eorum cum adulteraverint (Ose. IV). Et in alio loco: Visitabo in virga iniquitates eorum, et in flagellis peccata eorum, verumtamen misericordiam meam non auferam ab eis (Psal. LXXXVIII). Porro ne videretur in eo esse crudelis, quod peccantibus locum poenitentiae non dedisset, adjecit: Eruntque dies illius centum viginti annorum (Gen. VI), hoc est, habebunt centum viginti annos ad agendam poenitentiam; quia vero poenitentiam agere contempserunt, noluit Deus tempus exspectare decretum, sed viginti annorum spatiis amputatis, induxit diluvium anno centesimo agendae poenitentiae destinato.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

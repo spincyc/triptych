@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.191"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "191"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 45.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[195, 195]]
+text = """
+(Vers. 45.) Et vocavit Pharao nomen Joseph Saphaneth Phanee, et dedit ei Aseneth filiam Phutiphar sacerdotis Heliopoleos in uxorem. Licet Hebraice hoc nomen, absconditorum repertorem sonet, tamen quia ab Aegyptio ponitur, ipsius linguae debet habere rationem. Interpretatur ergo sermone Aegyptio SAPHANETH PHANEE (צפנת פענח), sive ut Septuaginta transferre voluerunt, Psomthom-Phanech, Salvator mundi, eo quod orbem terrae ab imminente famis excidio liberavit. Notandum autem, quod Domini quondam et emptoris sui filiam uxorem acceperit, qui ad id locorum pontifex Heliopoleos erat. Neque enim fas absque eunuchis idoli illius esse antistites, ut vera illa Hebraeorum super eo quod ante jam diximus, suspicio comprobetur.\
+"""
+transcription_segments = [
+  { line = 195, text = """
+(Vers. 45.) Et vocavit Pharao nomen Joseph Saphaneth Phanee, et dedit ei Aseneth filiam Phutiphar sacerdotis Heliopoleos in uxorem. Licet Hebraice hoc nomen, absconditorum repertorem sonet, tamen quia ab Aegyptio ponitur, ipsius linguae debet habere rationem. Interpretatur ergo sermone Aegyptio SAPHANETH PHANEE (צפנת פענח), sive ut Septuaginta transferre voluerunt, Psomthom-Phanech, Salvator mundi, eo quod orbem terrae ab imminente famis excidio liberavit. Notandum autem, quod Domini quondam et emptoris sui filiam uxorem acceperit, qui ad id locorum pontifex Heliopoleos erat. Neque enim fas absque eunuchis idoli illius esse antistites, ut vera illa Hebraeorum super eo quod ante jam diximus, suspicio comprobetur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

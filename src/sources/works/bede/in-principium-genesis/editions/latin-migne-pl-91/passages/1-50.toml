@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-50"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.50"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[76, 76]]
+text = """
+In quocunque die comederis ex eo, morte morieris. Non ait, si comederis mortalis eris, sed in quocunque die, inquit, comederis ex eo, morte morieris. Mortuus namque est homo in anima cum peccavit, quia recessit ab eo Deus, qui est vita animae, cujus merito mortem secuta est mors corporis, discedente ab illo anima, quae est vita ejus, quaeque mors eidem primo homini tunc evenit, cum praesentis vitae terminum accepit non parvo post tempore quam vetitum comedit. Potest etiam intelligi quod illam mortem in eis fecerit dies ille in quo peccaverunt, quam Apostolus gemit dicens: Condelector legi Dei secundum interiorem hominem; video autem aliam legem in membris meis repugnantem legi mentis meae, et captivantem me in lege peccati, quae est in membris meis. Infelix ego homo! quis me liberabit de corpore mortis hujus (Rom. VII, 22)? Non enim sufficit ei si diceret: Quis me liberabit de corpore mortali hoc, sed de corpore, inquit, mortis hujus. Sicut etiam illud: Corpus quidem, inquit, mortuum est propter peccatum (Rom. VIII, 10); nec ibi ait, mortale, sed mortuum, quamvis utique et mortale quia moriturum, non ita credendum est fuisse illa corpora, sed licet animalia nondum spiritalia, non tamen mortua, id est, quae necesse esset ut morerentur, quod eo die factum est quo lignum contra vetitum tetigerunt.\
+"""
+transcription_segments = [
+  { line = 76, text = """
+In quocunque die comederis ex eo, morte morieris. Non ait, si comederis mortalis eris, sed in quocunque die, inquit, comederis ex eo, morte morieris. Mortuus namque est homo in anima cum peccavit, quia recessit ab eo Deus, qui est vita animae, cujus merito mortem secuta est mors corporis, discedente ab illo anima, quae est vita ejus, quaeque mors eidem primo homini tunc evenit, cum praesentis vitae terminum accepit non parvo post tempore quam vetitum comedit. Potest etiam intelligi quod illam mortem in eis fecerit dies ille in quo peccaverunt, quam Apostolus gemit dicens: Condelector legi Dei secundum interiorem hominem; video autem aliam legem in membris meis repugnantem legi mentis meae, et captivantem me in lege peccati, quae est in membris meis. Infelix ego homo! quis me liberabit de corpore mortis hujus (Rom. VII, 22)? Non enim sufficit ei si diceret: Quis me liberabit de corpore mortali hoc, sed de corpore, inquit, mortis hujus. Sicut etiam illud: Corpus quidem, inquit, mortuum est propter peccatum (Rom. VIII, 10); nec ibi ait, mortale, sed mortuum, quamvis utique et mortale quia moriturum, non ita credendum est fuisse illa corpora, sed licet animalia nondum spiritalia, non tamen mortua, id est, quae necesse esset ut morerentur, quod eo die factum est quo lignum contra vetitum tetigerunt.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

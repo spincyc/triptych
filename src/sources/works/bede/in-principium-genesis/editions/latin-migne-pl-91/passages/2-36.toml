@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-36"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.36"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[157, 157]]
+text = """
+Postquam enim ingressi sunt filii Dei ad filias hominum, illaeque genuerunt: isti sunt potentes a saeculo viri famosi. Notandum autem quod hoc in loco pro gigantibus, in Hebraeo cadentes, id est, annasilim leguntur; facilisque atque absolutus est sensus, quia cadentes erant in terram homines in diebus illis, id est, terrenis concupiscentiis adhaerentes, amisso statu Deo devotae rectitudinis. Gigantes autem illorum lingua proprie Rafaim nominantur. Ponitur vero et gigans aliquando in bono, ut est istud de Domino: Ex ultavit ut gigans ad currendam viam (Psal. XVIII, 6); sed hoc pro potentia singulari qua caeterum genus humanum jure transcendit, dispositumque Incarnationis sacramentum mirabili virtute peregit, sicut etiam leo aliquando Dominum, aliquando diabolum designat; sed diabolum, propter superbiam et ferocitatem; Dominum, propter potentiam: quamvis in Hebraica veritate memoratus psalmi versiculus ita scriptus sit: Exsultavit ut potens ad currendam viam.\
+"""
+transcription_segments = [
+  { line = 157, text = """
+Postquam enim ingressi sunt filii Dei ad filias hominum, illaeque genuerunt: isti sunt potentes a saeculo viri famosi. Notandum autem quod hoc in loco pro gigantibus, in Hebraeo cadentes, id est, annasilim leguntur; facilisque atque absolutus est sensus, quia cadentes erant in terram homines in diebus illis, id est, terrenis concupiscentiis adhaerentes, amisso statu Deo devotae rectitudinis. Gigantes autem illorum lingua proprie Rafaim nominantur. Ponitur vero et gigans aliquando in bono, ut est istud de Domino: Ex ultavit ut gigans ad currendam viam (Psal. XVIII, 6); sed hoc pro potentia singulari qua caeterum genus humanum jure transcendit, dispositumque Incarnationis sacramentum mirabili virtute peregit, sicut etiam leo aliquando Dominum, aliquando diabolum designat; sed diabolum, propter superbiam et ferocitatem; Dominum, propter potentiam: quamvis in Hebraica veritate memoratus psalmi versiculus ita scriptus sit: Exsultavit ut potens ad currendam viam.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

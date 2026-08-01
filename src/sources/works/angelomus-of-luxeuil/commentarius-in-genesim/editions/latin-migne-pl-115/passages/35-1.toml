@@ -1,0 +1,49 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.35-1"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "35.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 1-29.' and running to the next such heading, in 7 paragraphs."
+physical_line_ranges = [[352, 358]]
+text = """
+VERS. 1-29.-- Dixit Jacob: Abjicite deos alienos, qui in medio vestri sunt. Et dederunt ei postea omnes deos alienos quos habebant, et inaures quae erant | in auribus eorum. Deinde etiam sequitur quemadmodum apparuit iterum Deus Jacob, et benedixit ei, et ipse postmodum egressus inde venit verno tempore ad terram quae ducit Ephratam, et reliqua usque hae sunt autem generationes Esau.
+
+Quomodo [Z., Quid est, quod Jac.] Jacob dixit domui suae: Projicite deos alienos qui in medio sunt vestri? Et iterum: Dederunt ergo ei omnes deos alienos quos habebant, inaures quae in auribus eorum erant? Quae si ornamenta erant, ad idololatriam non pertinebant. Intelligendum est has inaures phylacteria fuisse deorum alienorum. Nam Rebeccam a servo Abrahae inaures accepisse Scriptura testatur, quod non fieret si eis inaures habere ornamenti gratia non liceret. Ergo illae inaures quae cum idolis datae sunt, | ut dictum est, idolorum phylacteria fuerant.
+
+Quare secundo dicitur ad Jacob: Non vocaberis Jacob, sed Israel erit nomen tuum, et appellavit eum Israel?
+
+Dudum nequaquam ei ab angelo nomen imponitur; sed quod imponendum a Deo sit, praedicatur. Quod igitur futurum promittitur, hic dicitur expletum. Nimirum ergo nomen hoc ad illam recte intelligitur pertinere promissionem, ubi sic videbitur Deus, quomodo non est antea a patribus visus.
+
+Quae est Ephrata, ubi Jacob Rachel uxorem suam condidisse dicitur, quaerendum videtur. Ephrata vero et Bethlehem unius urbis vocabulum est sub interpretatione consimili; siquidem in frugiferam domum et domum panis vertitur, propter eum panem qui de | coelo descendisse dicitur.
+
+Sed movet ubi est turris gregis, juxta quam dicitur Jacob habitasse? Juxta Bethlehem, ubi vel angelorum grex Domini in ortu cecinit; vel Jacob pecora sua pavit, loco nomen imponens; vel, quod verius est, quod vaticinatio [F., vaticinio] futurorum jam tunc mysterium monstrabatur.
+
+Quid est quod de Isaac dicitur: Et consumptus aetate mortuus est, et appositus populo suo? Quomodo comsumptus, vel a quo populo appositus? Consumptus aetate, id est perfectus aetate. Verum angelorum populo, vel sanctarum animarum apponuntur, qui hanc vitam placentes Deo finiunt. Tunc dicuntur apponi, quando nulla jam remanet sollicitudo tentationum et periculum peccatorum. Quod intuens ait | Scriptura: Ante mortem ne laudes hominem quemquam (Eccli. XI, 30).\
+"""
+transcription_segments = [
+  { line = 352, text = """
+VERS. 1-29.-- Dixit Jacob: Abjicite deos alienos, qui in medio vestri sunt. Et dederunt ei postea omnes deos alienos quos habebant, et inaures quae erant | in auribus eorum. Deinde etiam sequitur quemadmodum apparuit iterum Deus Jacob, et benedixit ei, et ipse postmodum egressus inde venit verno tempore ad terram quae ducit Ephratam, et reliqua usque hae sunt autem generationes Esau.\
+""" },
+  { line = 353, text = """
+Quomodo [Z., Quid est, quod Jac.] Jacob dixit domui suae: Projicite deos alienos qui in medio sunt vestri? Et iterum: Dederunt ergo ei omnes deos alienos quos habebant, inaures quae in auribus eorum erant? Quae si ornamenta erant, ad idololatriam non pertinebant. Intelligendum est has inaures phylacteria fuisse deorum alienorum. Nam Rebeccam a servo Abrahae inaures accepisse Scriptura testatur, quod non fieret si eis inaures habere ornamenti gratia non liceret. Ergo illae inaures quae cum idolis datae sunt, | ut dictum est, idolorum phylacteria fuerant.\
+""" },
+  { line = 354, text = """
+Quare secundo dicitur ad Jacob: Non vocaberis Jacob, sed Israel erit nomen tuum, et appellavit eum Israel?\
+""" },
+  { line = 355, text = """
+Dudum nequaquam ei ab angelo nomen imponitur; sed quod imponendum a Deo sit, praedicatur. Quod igitur futurum promittitur, hic dicitur expletum. Nimirum ergo nomen hoc ad illam recte intelligitur pertinere promissionem, ubi sic videbitur Deus, quomodo non est antea a patribus visus.\
+""" },
+  { line = 356, text = """
+Quae est Ephrata, ubi Jacob Rachel uxorem suam condidisse dicitur, quaerendum videtur. Ephrata vero et Bethlehem unius urbis vocabulum est sub interpretatione consimili; siquidem in frugiferam domum et domum panis vertitur, propter eum panem qui de | coelo descendisse dicitur.\
+""" },
+  { line = 357, text = """
+Sed movet ubi est turris gregis, juxta quam dicitur Jacob habitasse? Juxta Bethlehem, ubi vel angelorum grex Domini in ortu cecinit; vel Jacob pecora sua pavit, loco nomen imponens; vel, quod verius est, quod vaticinatio [F., vaticinio] futurorum jam tunc mysterium monstrabatur.\
+""" },
+  { line = 358, text = """
+Quid est quod de Isaac dicitur: Et consumptus aetate mortuus est, et appositus populo suo? Quomodo comsumptus, vel a quo populo appositus? Consumptus aetate, id est perfectus aetate. Verum angelorum populo, vel sanctarum animarum apponuntur, qui hanc vitam placentes Deo finiunt. Tunc dicuntur apponi, quando nulla jam remanet sollicitudo tentationum et periculum peccatorum. Quod intuens ait | Scriptura: Ante mortem ne laudes hominem quemquam (Eccli. XI, 30).\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

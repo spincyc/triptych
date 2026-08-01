@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.1-10"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "1.10"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 14-19.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[29, 30]]
+text = """
+VERS. 14-19.-- Dixit autem [ Z., itaque ] Deus: Fiant luminaria in firmamento coeli, et caetera. Si quarta die facta sunt luminaria, quare superius [ Z., prius] dictum est vespere et mane, nisi, prout jam dictum est, in vespere accipitur expletio precedentis | operis, in mane inchoatio subsequentis?
+
+Et sint in signa, et tempora, et annos, et dies. In signa, juxta quod Dominus ait: Erunt signa in sole, et luna, et stellis (Luc. 21, 25). Signa dicuntur eo quod in futurum aliquid signant quia sunt talia signa in sideribus quae tempestates, et pluvias, et bella denuntiant, et etiam nonnulla navigantibus in mari viam ostendunt. Et in tempora, quia suis vicissitudinibus tempora distinguunt, veris videlicet et aestatis, autumni et hiemis. Dies et anni ad cursum solis et lunae quia sunt solares dies, sunt et lunares juxta calculatores. Seu quia antequam formarentur, non erat unde diei noctisque horae signarentur. Nam scriptum est: Fecit lunam in tempora [ Z., tempore ]; | sol cognovit occasum suum (Psal. CIII, 19). Sed quaerendum est, si coepta hic sunt tempora, et incipiunt dies articulis et momentis horarum decerni, quid dicendum est de illo spatio quod fuit usque ad quartum diem? Nunquid non [ Z. om. non] tempora fuerunt? Sed quodammodo tempora fuerunt, sed non est illud spatium distinctum articulis horarum ut modo distinguitur [ Z., distinguuntur], sed pertransiit quia sol non erat quo discernerentur. Tali modo factum est quodammodo, sicut nunc agitur quando sol nube tegitur et tempora non possunt distingui, sed tamen spatium diei transit.\
+"""
+transcription_segments = [
+  { line = 29, text = """
+VERS. 14-19.-- Dixit autem [ Z., itaque ] Deus: Fiant luminaria in firmamento coeli, et caetera. Si quarta die facta sunt luminaria, quare superius [ Z., prius] dictum est vespere et mane, nisi, prout jam dictum est, in vespere accipitur expletio precedentis | operis, in mane inchoatio subsequentis?\
+""" },
+  { line = 30, text = """
+Et sint in signa, et tempora, et annos, et dies. In signa, juxta quod Dominus ait: Erunt signa in sole, et luna, et stellis (Luc. 21, 25). Signa dicuntur eo quod in futurum aliquid signant quia sunt talia signa in sideribus quae tempestates, et pluvias, et bella denuntiant, et etiam nonnulla navigantibus in mari viam ostendunt. Et in tempora, quia suis vicissitudinibus tempora distinguunt, veris videlicet et aestatis, autumni et hiemis. Dies et anni ad cursum solis et lunae quia sunt solares dies, sunt et lunares juxta calculatores. Seu quia antequam formarentur, non erat unde diei noctisque horae signarentur. Nam scriptum est: Fecit lunam in tempora [ Z., tempore ]; | sol cognovit occasum suum (Psal. CIII, 19). Sed quaerendum est, si coepta hic sunt tempora, et incipiunt dies articulis et momentis horarum decerni, quid dicendum est de illo spatio quod fuit usque ad quartum diem? Nunquid non [ Z. om. non] tempora fuerunt? Sed quodammodo tempora fuerunt, sed non est illud spatium distinctum articulis horarum ut modo distinguitur [ Z., distinguuntur], sed pertransiit quia sol non erat quo discernerentur. Tali modo factum est quodammodo, sicut nunc agitur quando sol nube tegitur et tempora non possunt distingui, sed tamen spatium diei transit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

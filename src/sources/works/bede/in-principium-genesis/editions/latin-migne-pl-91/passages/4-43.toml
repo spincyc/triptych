@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-43"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.43"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[350, 350]]
+text = """
+Erant autem ambo senes provectaeque aetatis, et desierant Sarae fieri muliebria. Ad faciendam auxesin potentiae coelestis, ambos dicit esse seniores, et insuper Saram, cum fuisset sterilis, tum etiam cruore menstruo jam destitutam, propter quod jam parere non posset, etiamsi sterilis non fuisset. Porro si femina ita sit provectioris aetatis, ut ei solita mulierum adhuc fluant, de juvene parere potest, de seniore non potest; quamvis adhuc possit ille senior, sed de adolescentula gignere, sicut Abraham post mortem Sarae de Cethura potuit, quia vividam ejus invenit aetatem; hoc ergo est quod nimirum commendat Apostolus cum ait: Qui praeter spem in spe credidit, ut fieret pater multarum gentium, secundum quod dictum est ei: Sic erit semen tuum; et non infirmatus in fide non consideravit corpus suum jam emortuum, cum fere centum esset annorum, et emortuam vulvam Sarae, in promissione etiam Dei non haesitavit (Rom. IV, 18). Ad hoc enim dicit Abrahae jam corpus fuisse emortuum, quoniam non ex omni femina, cui adhuc esset aliquod pariendi tempus extremum, generare ipse in illa aetate adhuc posset: ad aliquid enim emortuum corpus intelligere debemus, non ad omnia; nam si ad omnia, non jam senectus vivi, sed cadaver est mortui.\
+"""
+transcription_segments = [
+  { line = 350, text = """
+Erant autem ambo senes provectaeque aetatis, et desierant Sarae fieri muliebria. Ad faciendam auxesin potentiae coelestis, ambos dicit esse seniores, et insuper Saram, cum fuisset sterilis, tum etiam cruore menstruo jam destitutam, propter quod jam parere non posset, etiamsi sterilis non fuisset. Porro si femina ita sit provectioris aetatis, ut ei solita mulierum adhuc fluant, de juvene parere potest, de seniore non potest; quamvis adhuc possit ille senior, sed de adolescentula gignere, sicut Abraham post mortem Sarae de Cethura potuit, quia vividam ejus invenit aetatem; hoc ergo est quod nimirum commendat Apostolus cum ait: Qui praeter spem in spe credidit, ut fieret pater multarum gentium, secundum quod dictum est ei: Sic erit semen tuum; et non infirmatus in fide non consideravit corpus suum jam emortuum, cum fere centum esset annorum, et emortuam vulvam Sarae, in promissione etiam Dei non haesitavit (Rom. IV, 18). Ad hoc enim dicit Abrahae jam corpus fuisse emortuum, quoniam non ex omni femina, cui adhuc esset aliquod pariendi tempus extremum, generare ipse in illa aetate adhuc posset: ad aliquid enim emortuum corpus intelligere debemus, non ad omnia; nam si ad omnia, non jam senectus vivi, sed cadaver est mortui.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.12-2"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "12.2"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 4.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[166, 166]]
+text = """
+VERS. 4.-- Septuaginta quinque annorum erat Abram cum egrederetur de Charran. Hic indissolubilis nascitur quaestio: si enim Thara, pater Abram, cum esset in regione Chaldaea, septuaginta annorum | genuit Abram, et postea in Charan (Petr. semper, Charram) ducentesimo quinto aetatis suae anno mortuus est, quomodo nunc post mortem Tharae Abram exiens de Chara septuaginta quinque annorum fuisse memoratur, cum a nativitate Abram usque ad mortem patris ejus centum triginta quinque annorum fuisse doceantur (Z., doceatur)? Nisi quia vera est illa traditio Hebraeorum, quam supra diximus, quod egressus sit Thara cum filiis suis de igne Chaldaeorum, et quod Abram Babylonio vallatus incendio, quia illud adorare nolebat, Dei sit auxilio liberatus. Unde et Dominus postea ait Ego Dominus, qui eduxi te de Ur Chaldaeorum, et ex illo tempore ei dies vitae et tempus reputatur aetatis, ex quo confessus | est Dominum, spernens idola Chaldaeorum. Potest autem fieri ut, quia Scriptura reliquit incertum, ante paucos annos Thara de Chaldaea profectus, venerit in Charran, quam morte obiret, vel certe statim post persecutionem Charran veniret, et ibi diutius sit moratus. Si quis ergo huic solutioni contrarius est, quaerat aliam solutionem, et tunc recte ea quae a nobis dicta sunt, improbabit.\
+"""
+transcription_segments = [
+  { line = 166, text = """
+VERS. 4.-- Septuaginta quinque annorum erat Abram cum egrederetur de Charran. Hic indissolubilis nascitur quaestio: si enim Thara, pater Abram, cum esset in regione Chaldaea, septuaginta annorum | genuit Abram, et postea in Charan (Petr. semper, Charram) ducentesimo quinto aetatis suae anno mortuus est, quomodo nunc post mortem Tharae Abram exiens de Chara septuaginta quinque annorum fuisse memoratur, cum a nativitate Abram usque ad mortem patris ejus centum triginta quinque annorum fuisse doceantur (Z., doceatur)? Nisi quia vera est illa traditio Hebraeorum, quam supra diximus, quod egressus sit Thara cum filiis suis de igne Chaldaeorum, et quod Abram Babylonio vallatus incendio, quia illud adorare nolebat, Dei sit auxilio liberatus. Unde et Dominus postea ait Ego Dominus, qui eduxi te de Ur Chaldaeorum, et ex illo tempore ei dies vitae et tempus reputatur aetatis, ex quo confessus | est Dominum, spernens idola Chaldaeorum. Potest autem fieri ut, quia Scriptura reliquit incertum, ante paucos annos Thara de Chaldaea profectus, venerit in Charran, quam morte obiret, vel certe statim post persecutionem Charran veniret, et ibi diutius sit moratus. Si quis ergo huic solutioni contrarius est, quaerat aliam solutionem, et tunc recte ea quae a nobis dicta sunt, improbabit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

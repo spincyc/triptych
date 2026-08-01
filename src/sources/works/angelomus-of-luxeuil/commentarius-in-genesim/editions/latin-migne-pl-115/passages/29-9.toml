@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.29-9"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "29.9"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 12.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[308, 308]]
+text = """
+VERS. 12.-- Et indicavit ei quod frater esset patris ejus et filius Rebeccae. Bene ait, et indicavit quod frater esset patris ejus et filius Rebeccae. Quia ex stirpe patriarcharum et ex Synagoga Judaeorum Dominus incarnari dignatus est: At illa festinans nuntiavit patri suo. Quia Ecclesia non exstitit contenta solummodo propria salute, sed gentibus atque sapientibus hujus mundi praedicare studuit.\
+"""
+transcription_segments = [
+  { line = 308, text = """
+VERS. 12.-- Et indicavit ei quod frater esset patris ejus et filius Rebeccae. Bene ait, et indicavit quod frater esset patris ejus et filius Rebeccae. Quia ex stirpe patriarcharum et ex Synagoga Judaeorum Dominus incarnari dignatus est: At illa festinans nuntiavit patri suo. Quia Ecclesia non exstitit contenta solummodo propria salute, sed gentibus atque sapientibus hujus mundi praedicare studuit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

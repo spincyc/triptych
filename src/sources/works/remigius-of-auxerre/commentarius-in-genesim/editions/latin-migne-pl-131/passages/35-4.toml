@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.35-4"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "35.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 11.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[358, 358]]
+text = """
+Vers. 11. Cresce et multiplicare. Hoc melius ad spiritalem Israel refertur, qui crescit et multiplicatur in virtutibus. Omnis enim quicunque supplantator est vitiorum, et mente Deum contemplatur, recte Jacob vel Israel appellatur. Quod ergo dicit: Ultra non vocaberis Jacob, non ad illum hominem, sed ad spiritale | semen Jacob pertinet. Ille enim postea Jacob vocatus est. Sancti vero omnes, id est verus Israel, postquam omnem corruptionem et vetustatem deposuerit, non dicetur Jacob, id est supplantator (non enim erunt vitia quae supplantet), sed potius Israel vocabitur, quoniam Deum sicut est videbit, et summa beatitudo erit ei visio creatoris. Reges de lumbis tuis. Id est qui vere reges sunt, semetipsos secundum voluntatem Dei bene regentes, qui filii sunt Israel per imitationem.\
+"""
+transcription_segments = [
+  { line = 358, text = """
+Vers. 11. Cresce et multiplicare. Hoc melius ad spiritalem Israel refertur, qui crescit et multiplicatur in virtutibus. Omnis enim quicunque supplantator est vitiorum, et mente Deum contemplatur, recte Jacob vel Israel appellatur. Quod ergo dicit: Ultra non vocaberis Jacob, non ad illum hominem, sed ad spiritale | semen Jacob pertinet. Ille enim postea Jacob vocatus est. Sancti vero omnes, id est verus Israel, postquam omnem corruptionem et vetustatem deposuerit, non dicetur Jacob, id est supplantator (non enim erunt vitia quae supplantet), sed potius Israel vocabitur, quoniam Deum sicut est videbit, et summa beatitudo erit ei visio creatoris. Reges de lumbis tuis. Id est qui vere reges sunt, semetipsos secundum voluntatem Dei bene regentes, qui filii sunt Israel per imitationem.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

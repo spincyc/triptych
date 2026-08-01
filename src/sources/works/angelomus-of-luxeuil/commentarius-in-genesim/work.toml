@@ -1,0 +1,16 @@
+schema = 1
+record_type = "work"
+id = "work.angelomus-of-luxeuil.commentarius-in-genesim"
+title = "Commentarius in Genesim"
+responsible = "Angelomus of Luxeuil"
+work_type = "biblical-commentary"
+composed = "c. 845-855"
+composed_basis = "Angelomus was a monk of Luxeuil in the middle of the ninth century and wrote for the Emperor Lothar I, who reigned from 840 to 855 and whom the verse prooemium addresses. The Genesis commentary is placed with his commentaries on Kings and on the Song of Songs in that decade. The wiki header gives the eleventh century, which is a century and a half out and is not followed. The date is the writing, not Migne's 1852 printing."
+alternate_titles = [
+  "Commentarius in Genesin",
+  "Commentarii in Genesin",
+  "Enarrationes in Genesim",
+]
+languages = ["lat"]
+locus_pattern = '(?:prooemium|[1-9][0-9]?\.[1-9][0-9]{0,2})'
+description = "A continuous commentary on the whole of Genesis, chapter by chapter and verse by verse, compiled in the Carolingian manner out of Jerome, Augustine, Gregory, Isidore and Bede, with the historical sense given first and the mystical after it. Migne prints it with the verse ranges the compiler himself set at the head of every block."

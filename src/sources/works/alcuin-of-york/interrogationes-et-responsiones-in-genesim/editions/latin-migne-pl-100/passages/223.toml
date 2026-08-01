@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.223"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "223"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 223 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[227, 227]]
+text = """
+Inter. 223. Quid est quod dicitur de Ismaele (vers. 16), quod duodecim generasset principes, vel duces [qui regionibus vel tribubus nomina dederunt ( omissa in ms. )]?-- Resp. Significat quod singuli filiorum Ismaelis [regionibus vel tribubus nomina dederunt], e quibus primogenitus ejus fuit Nabaioth [ Ms., Nabaoth; al., Nabeoth], a quo omnis regio ab Euphrate ad mare Rubrum Nabathena usque hodie dicitur, quae pars est Arabiae. Nam et familiae eorum oppidaque et pagi ac munita castella, et tribus horum appellatione celebrantur. Ab uno ex his Cedaar in deserto, Eoduma alia regio, et Hemanea [ Ms., Themana] ad austrum et Cedema ad Orientem dicitur.\
+"""
+transcription_segments = [
+  { line = 227, text = """
+Inter. 223. Quid est quod dicitur de Ismaele (vers. 16), quod duodecim generasset principes, vel duces [qui regionibus vel tribubus nomina dederunt ( omissa in ms. )]?-- Resp. Significat quod singuli filiorum Ismaelis [regionibus vel tribubus nomina dederunt], e quibus primogenitus ejus fuit Nabaioth [ Ms., Nabaoth; al., Nabeoth], a quo omnis regio ab Euphrate ad mare Rubrum Nabathena usque hodie dicitur, quae pars est Arabiae. Nam et familiae eorum oppidaque et pagi ac munita castella, et tribus horum appellatione celebrantur. Ab uno ex his Cedaar in deserto, Eoduma alia regio, et Hemanea [ Ms., Themana] ad austrum et Cedema ad Orientem dicitur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

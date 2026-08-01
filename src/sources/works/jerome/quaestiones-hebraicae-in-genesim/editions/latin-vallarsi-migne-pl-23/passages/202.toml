@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.202"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "202"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 1.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[206, 206]]
+text = """
+(Cap. XLVIII.—Vers. 1.) Et nuntiatum est Joseph, Ecce pater tuus aegrotat: et tulit duos filios secum, Manassen et Ephraim. Et ex hoc illud quod supra diximus, demonstratur, quia Joseph ad id locorum duos tantum filios habuerit, Ephraim et Manassen. Si enim post multos annos, moriente Jacob patre suo, duos tantummodo filios duxit ad benedictionem, utique illo tempore, cum filii ejus generare non quiverant, parvuli atque lactentes, in ingressu patris et fratrum, nepotes ex eis habere non potuit.\
+"""
+transcription_segments = [
+  { line = 206, text = """
+(Cap. XLVIII.—Vers. 1.) Et nuntiatum est Joseph, Ecce pater tuus aegrotat: et tulit duos filios secum, Manassen et Ephraim. Et ex hoc illud quod supra diximus, demonstratur, quia Joseph ad id locorum duos tantum filios habuerit, Ephraim et Manassen. Si enim post multos annos, moriente Jacob patre suo, duos tantummodo filios duxit ad benedictionem, utique illo tempore, cum filii ejus generare non quiverant, parvuli atque lactentes, in ingressu patris et fratrum, nepotes ex eis habere non potuit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

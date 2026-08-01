@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.216"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "216"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 21.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[220, 220]]
+text = """
+(Vers. 21.) Nephthalim virgultum resolutum, dans in generatione pulchritudinem. In Hebraeo ita scriptum est: Nephthalim ager irriguus, dans eloquia pulchritudinis, significans, quod aquae calidae in ipsa nascantur tribu: sive quod super lacum Genesareth, fluento Jordanis irrigua sit. Hebraei autem volunt, propter Tiberiadem, quae Legis videbatur habere notitiam, agrum irriguum, et eloquia pulchritudinis prophetari. Porro ubi nos agrum irriguum, et Septuaginta στέλεχος ἀνειμένον, id est virgultum resolutum posuerunt, in Hebraeo legitur AJALA SLUAA (אילה שלחה), quod potest et cervus emissus transferri, propter temporaneas fruges, velocitatem terrae uberioris ostendens. Sed melius, si ad doctrinam Salvatoris cuncta referamus quod ibi vel maxime docuerit, ut in Evangelio quoque scriptum est.\
+"""
+transcription_segments = [
+  { line = 220, text = """
+(Vers. 21.) Nephthalim virgultum resolutum, dans in generatione pulchritudinem. In Hebraeo ita scriptum est: Nephthalim ager irriguus, dans eloquia pulchritudinis, significans, quod aquae calidae in ipsa nascantur tribu: sive quod super lacum Genesareth, fluento Jordanis irrigua sit. Hebraei autem volunt, propter Tiberiadem, quae Legis videbatur habere notitiam, agrum irriguum, et eloquia pulchritudinis prophetari. Porro ubi nos agrum irriguum, et Septuaginta στέλεχος ἀνειμένον, id est virgultum resolutum posuerunt, in Hebraeo legitur AJALA SLUAA (אילה שלחה), quod potest et cervus emissus transferri, propter temporaneas fruges, velocitatem terrae uberioris ostendens. Sed melius, si ad doctrinam Salvatoris cuncta referamus quod ibi vel maxime docuerit, ut in Evangelio quoque scriptum est.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

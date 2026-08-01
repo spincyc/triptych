@@ -1,0 +1,39 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.2-7"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "2.7"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 12.' and running to the next such heading, in 5 paragraphs."
+physical_line_ranges = [[64, 68]]
+text = """
+Vers. 12. Ibique invenitur bdellium. Bdellium enim arbor est aromatica magnitudine olivae, folio roboris, odore caprifici, cujus lacryma vel gummi est lucida et subalba veluti man. Unde in Exodo dicitur: | Erat autem man quasi semen coriandri albi, colorem habens bdellii (Exod. XVI, 31). Et lapis onychinus. Onyches Graece unguis. Hinc Onychius lapis albis maculis intertinctus ad similitudinem humani unguis
+
+Geon ipse est Nilus qui per Mauritaniam currit. Interpretatur autem praeruptus vel praeruptio, qui ex altissimis rupibus praecipitatus adeo validum sonum reddit ut incolas suos surditate damnet. Locus autem a quo elabitur, Cataduppa vocatur.
+
+Tygris per Armeniam currit. Et dicitur Tygris a bestia velocissima quam imitatur velocitate sua.
+
+Euphrates interpretatur frugifer, eo quod terram quam praeterlabitur frugiferam reddat.
+
+Allegorice autem paradisus praesentem significat | Ecclesiam, quae recte hortus deliciarum dicitur, dum nobis in ea spiritales deliciae administrantur. Lignum vitae in medio paradisi Christus est in medio Ecclesiae, de quo per quemdam sapientem dicitur: Lignum vitae est his qui apprehenderint eum (Prov. III, 18). Ipse est etiam fons, qui de Patris substantia descendens ad irrigandam suam Ecclesiam sanctam venit. De quo per prophetam Zachariam dicitur: Erit fons patens domui David in ablutionem peccatoris et menstruatae (Zach. XIII, 1). Domus David sancta est Ecclesia, cui, id est, ad cujus salutem patet fons, id est Christus, in ablutionem peccatoris. Peccator est qui | malum quod mente cogitat operibus exsequitur. Menstruata est quae alienam carnem non tangit, sed propria foedatur. Significat peccatricem animam quae malum quod cogitat nequaquam effectu explet. Unde non extrinsecus quasi aliena carne foedatur, sed intrinsecus velut propria carne suis cogitationibus inquinatur. A quo uno et singulari fonte quatuor flumina emergunt, id est, ab ipso procedit doctrina quatuor Evangeliorum, vel quatuor virtutes quibus praepollet Ecclesia.\
+"""
+transcription_segments = [
+  { line = 64, text = """
+Vers. 12. Ibique invenitur bdellium. Bdellium enim arbor est aromatica magnitudine olivae, folio roboris, odore caprifici, cujus lacryma vel gummi est lucida et subalba veluti man. Unde in Exodo dicitur: | Erat autem man quasi semen coriandri albi, colorem habens bdellii (Exod. XVI, 31). Et lapis onychinus. Onyches Graece unguis. Hinc Onychius lapis albis maculis intertinctus ad similitudinem humani unguis\
+""" },
+  { line = 65, text = """
+Geon ipse est Nilus qui per Mauritaniam currit. Interpretatur autem praeruptus vel praeruptio, qui ex altissimis rupibus praecipitatus adeo validum sonum reddit ut incolas suos surditate damnet. Locus autem a quo elabitur, Cataduppa vocatur.\
+""" },
+  { line = 66, text = """
+Tygris per Armeniam currit. Et dicitur Tygris a bestia velocissima quam imitatur velocitate sua.\
+""" },
+  { line = 67, text = """
+Euphrates interpretatur frugifer, eo quod terram quam praeterlabitur frugiferam reddat.\
+""" },
+  { line = 68, text = """
+Allegorice autem paradisus praesentem significat | Ecclesiam, quae recte hortus deliciarum dicitur, dum nobis in ea spiritales deliciae administrantur. Lignum vitae in medio paradisi Christus est in medio Ecclesiae, de quo per quemdam sapientem dicitur: Lignum vitae est his qui apprehenderint eum (Prov. III, 18). Ipse est etiam fons, qui de Patris substantia descendens ad irrigandam suam Ecclesiam sanctam venit. De quo per prophetam Zachariam dicitur: Erit fons patens domui David in ablutionem peccatoris et menstruatae (Zach. XIII, 1). Domus David sancta est Ecclesia, cui, id est, ad cujus salutem patet fons, id est Christus, in ablutionem peccatoris. Peccator est qui | malum quod mente cogitat operibus exsequitur. Menstruata est quae alienam carnem non tangit, sed propria foedatur. Significat peccatricem animam quae malum quod cogitat nequaquam effectu explet. Unde non extrinsecus quasi aliena carne foedatur, sed intrinsecus velut propria carne suis cogitationibus inquinatur. A quo uno et singulari fonte quatuor flumina emergunt, id est, ab ipso procedit doctrina quatuor Evangeliorum, vel quatuor virtutes quibus praepollet Ecclesia.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

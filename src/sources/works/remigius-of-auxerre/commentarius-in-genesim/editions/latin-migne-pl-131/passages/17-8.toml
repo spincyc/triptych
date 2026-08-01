@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.17-8"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "17.8"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 21.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[220, 221]]
+text = """
+Vers. 21. Pactum meum statuam cum Isaac. Quia misericordia et gratia ejus in populo est Christiano.
+
+Vers 23. Circumcidit Ismaelem et cunctos mares. Quaeri potest, si mares circumcisione salvabantur, feminae quomodo salvabantur, quae non circumcidebantur? Utique fide et hostiarum oblatione, quomodo et per ante dictum praeceptum circumcisionis sancti homines mundabantur, juxta quod Paulus | dicit: fide purificans corda (Act. X, 9).\
+"""
+transcription_segments = [
+  { line = 220, text = """
+Vers. 21. Pactum meum statuam cum Isaac. Quia misericordia et gratia ejus in populo est Christiano.\
+""" },
+  { line = 221, text = """
+Vers 23. Circumcidit Ismaelem et cunctos mares. Quaeri potest, si mares circumcisione salvabantur, feminae quomodo salvabantur, quae non circumcidebantur? Utique fide et hostiarum oblatione, quomodo et per ante dictum praeceptum circumcisionis sancti homines mundabantur, juxta quod Paulus | dicit: fide purificans corda (Act. X, 9).\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

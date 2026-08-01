@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_type = "web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Alcuin of York's Latin as printed by Migne in 1851, in the public domain by age of both the text and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes."
+rights_jurisdiction = "United States"
+provenance = "Derived on 2026-08-01 from the hashed export above by the tracked script named in transformation. No model stood anywhere in the path: the bytes were fetched with curl, hashed, and transformed locally. The file holds 310 lines, one per printed paragraph. The preface stands at lines 1-7 and the numbered questions at 8-310."
+retrieved = "2026-08-01"
+sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+byte_size = 149902
+path = "src/sources/works/alcuin-of-york/interrogationes-et-responsiones-in-genesim/editions/latin-migne-pl-100/artifacts/interrogationes-latin-text-bcd7bc6b/alcuinus-interrogationes.txt"
+derived_from = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-wikisource-export-f3cb13d1"
+transformation = "python3 scripts/migne_transcribe.py <export> --unit page --out alcuinus-interrogationes.txt, run over the exact bytes of the parent artifact. The script removes every wiki template whole except the closed table of prose-bearing ones it unwraps to a named parameter, and removes the Patrologia Latina navigation line, the Corpus Corporum encoding note, categories, footnote bodies, comments, tags and wiki headings; unwraps links; folds typographic punctuation to ASCII; strips Migne's inline column markers; normalises to NFC; collapses runs of whitespace; and writes one LF-terminated UTF-8 line per source paragraph, prefixed by a braced book-and-chapter locator taken from the printing's own CAPUT divisions."
+encoding = "utf-8"
+indexable = true
+notes = "Keyed text, not OCR. guidance/catena.md recorded that the unencumbered Latin is OCR wreckage and the clean Latin encumbered, measuring Migne PL 34's Internet Archive text layer at roughly one corrupted word in eight; that is true of the scan and false of the volume. This is the University of Zurich's Corpus Corporum encoding of Migne PL 100, keyed rather than scanned, republished on Latin Wikisource under a stated CC BY-SA 4.0 markup licence over a public-domain printing. It is a transcription of a web witness of that printing and not a collation against the printed column, so no passage taken from it rises above inspected."

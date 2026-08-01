@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.18"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "18"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 24.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[20, 20]]
+text = """
+(Vers. 24.) Et ejecit Adam, et habitare fecit contra paradisum voluptatis. Et statuit Cherubim et flammeam romphaeam, quae vertitur ad custodiendam viam ligni vitae. Alius multo sensus est in Hebraeo quam hic intelligitur. Ait enim: Et ejecit Adam, haud dubium quin Dominus: Et habitare fecit ante paradisum voluptatis Cherubim, et flammeum gladium, qui verteretur, et custodiret viam ligni vitae. Non quod ipsum Adam, quem ejecerat Deus, habitare fecerit contra paradisum voluptatis; sed quod illo ejecto ante fores paradisi Cherubim, et flammeum gladium posuerit ad custodiendum paradisi vestibulum, ne quis posset intrare.\
+"""
+transcription_segments = [
+  { line = 20, text = """
+(Vers. 24.) Et ejecit Adam, et habitare fecit contra paradisum voluptatis. Et statuit Cherubim et flammeam romphaeam, quae vertitur ad custodiendam viam ligni vitae. Alius multo sensus est in Hebraeo quam hic intelligitur. Ait enim: Et ejecit Adam, haud dubium quin Dominus: Et habitare fecit ante paradisum voluptatis Cherubim, et flammeum gladium, qui verteretur, et custodiret viam ligni vitae. Non quod ipsum Adam, quem ejecerat Deus, habitare fecerit contra paradisum voluptatis; sed quod illo ejecto ante fores paradisi Cherubim, et flammeum gladium posuerit ad custodiendum paradisi vestibulum, ne quis posset intrare.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

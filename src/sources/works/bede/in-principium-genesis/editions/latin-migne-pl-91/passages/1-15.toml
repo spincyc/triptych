@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-15"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.15"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 2 paragraphs."
+physical_line_ranges = [[26, 27]]
+text = """
+Ut luceant in firmamento coeli, et illuminent terram; et factum est ita. Semper quidem luminaria in firmamento coeli lucent, ut diximus, et proxima ei loca claro lumine perfundunt, sed temporibus opportunis illuminant terram. Namque aliquoties nubilosus obsistit aer, ne vel lunae, cum parva est, vel stellarum lumen terris appareat; sed et ortus sol lunam stellasque majore lumine, ne terram illuminent impedit; unde et nomen Latine accepit, quod solus, obtunsis una stellis cum luna, per diem terris fulgeat.
+
+Fecit quoque Deus duo magna luminaria. Luminaria magna possumus accipere, non tam aliorum comparatione, quam suo munere, ut est coelum magnum et mare magnum. Nam et magnus sol qui complet orbem terrarum suo calore, vel luna suo lumine, quae in quacunque parte fuerint coeli, terrae illuminant omnia, et aeque spectantur a cunctis. Exemplum magnitudinis eorum evidens, quod omnibus hominibus orbis ipsorum idem videtur. Nam si longe positis minor videretur, et propius constitutis major refulgeret, proderet exiguitatis indicium.\
+"""
+transcription_segments = [
+  { line = 26, text = """
+Ut luceant in firmamento coeli, et illuminent terram; et factum est ita. Semper quidem luminaria in firmamento coeli lucent, ut diximus, et proxima ei loca claro lumine perfundunt, sed temporibus opportunis illuminant terram. Namque aliquoties nubilosus obsistit aer, ne vel lunae, cum parva est, vel stellarum lumen terris appareat; sed et ortus sol lunam stellasque majore lumine, ne terram illuminent impedit; unde et nomen Latine accepit, quod solus, obtunsis una stellis cum luna, per diem terris fulgeat.\
+""" },
+  { line = 27, text = """
+Fecit quoque Deus duo magna luminaria. Luminaria magna possumus accipere, non tam aliorum comparatione, quam suo munere, ut est coelum magnum et mare magnum. Nam et magnus sol qui complet orbem terrarum suo calore, vel luna suo lumine, quae in quacunque parte fuerint coeli, terrae illuminant omnia, et aeque spectantur a cunctis. Exemplum magnitudinis eorum evidens, quod omnibus hominibus orbis ipsorum idem videtur. Nam si longe positis minor videretur, et propius constitutis major refulgeret, proderet exiguitatis indicium.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

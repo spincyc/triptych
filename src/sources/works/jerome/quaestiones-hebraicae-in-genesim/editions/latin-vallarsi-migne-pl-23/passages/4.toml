@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.4"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 8.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[5, 5]]
+text = """
+(Vers. 8.) Et plantavit Dominus Deus paradisum in Eden, contra orientem. Pro paradiso, in Hebraeo hortum habet: id est, GAN (גן). Porro EDEN (עדן), deliciae interpretantur. Pro quo Symmachus transtulit, paradisum florentem. Necnon quod sequitur, contra orientem, in Hebraeo MECEDEM (מקדם) scribitur, quod Aquila posuit ἀπὸ ἀρχῆς: et nos, ab exordio, possumus dicere. Symmachus vero, ἐκ πρώτης, et Theodotion, ἐν πρώτοις, quod et ipsum non orientem, sed principium significat. Ex quo manifestissime comprobatur, quod priusquam coelum et terram Deus faceret, paradisum ante condiderat, sicut et legitur in Hebraeo: Plantaverat autem Dominus Deus paradisum in Eden, a principio.\
+"""
+transcription_segments = [
+  { line = 5, text = """
+(Vers. 8.) Et plantavit Dominus Deus paradisum in Eden, contra orientem. Pro paradiso, in Hebraeo hortum habet: id est, GAN (גן). Porro EDEN (עדן), deliciae interpretantur. Pro quo Symmachus transtulit, paradisum florentem. Necnon quod sequitur, contra orientem, in Hebraeo MECEDEM (מקדם) scribitur, quod Aquila posuit ἀπὸ ἀρχῆς: et nos, ab exordio, possumus dicere. Symmachus vero, ἐκ πρώτης, et Theodotion, ἐν πρώτοις, quod et ipsum non orientem, sed principium significat. Ex quo manifestissime comprobatur, quod priusquam coelum et terram Deus faceret, paradisum ante condiderat, sicut et legitur in Hebraeo: Plantaverat autem Dominus Deus paradisum in Eden, a principio.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.2-3"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "2.3"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 6.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[59, 59]]
+text = """
+| Vers. 6. Sed fons ascendens e terra universam ejus superficiem irrigabat. Fons autem ille, vel per occultos meatus terrae decurrens ascendebat ad irrigandam terrae superficiem, more Nili fluminis qui alvei sui metas progrediens irrigat plana Aegypti: vel etiam irrigans universam superficiem terrae, non quo omnem terrae superficiem operiret, sed rivatim more fluminum per diversa loca dirivaretur. Vel, quod melius placet more sacrae Scripturae, singularem posuit pro plurali, vel fontem pro fontibus, sicut muscam pro muscis, ranam pro ranis. Aut etiam fontem propter universitatem omnium aquarum quae simul sunt et quasi unus fons in matrice abysso.\
+"""
+transcription_segments = [
+  { line = 59, text = """
+| Vers. 6. Sed fons ascendens e terra universam ejus superficiem irrigabat. Fons autem ille, vel per occultos meatus terrae decurrens ascendebat ad irrigandam terrae superficiem, more Nili fluminis qui alvei sui metas progrediens irrigat plana Aegypti: vel etiam irrigans universam superficiem terrae, non quo omnem terrae superficiem operiret, sed rivatim more fluminum per diversa loca dirivaretur. Vel, quod melius placet more sacrae Scripturae, singularem posuit pro plurali, vel fontem pro fontibus, sicut muscam pro muscis, ranam pro ranis. Aut etiam fontem propter universitatem omnium aquarum quae simul sunt et quasi unus fons in matrice abysso.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

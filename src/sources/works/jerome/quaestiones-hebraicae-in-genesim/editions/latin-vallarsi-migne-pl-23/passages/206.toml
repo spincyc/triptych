@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.206"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "206"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 22.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[210, 210]]
+text = """
+(Vers. 22.) Et ego dedi [Al. do] tibi Sicimam praecipuam super fratres tuos, quam accepi de manibus Amorrhaeorum in gladio meo et sagitta. Sicima juxta Graecam et Latinam consuetudinem declinata est. Alioquin Hebraice SICHEM dicitur, ut Joannes quoque Evangelista testatur (IV, 5): licet vitiose, ut Sichar legatur, error inolevit: et est nunc Neapolis urbs Samaritanorum. Quia igitur SICHEM (שכם) lingua Hebraea transfertur in humerum, pulchre allusit ad nomen, dicens: Et ego dabo tibi humerum unum. Pro praecipuo enim, id est, ἐξαιρέτῳ, unum scribitur in Hebraeo. Quod autem dicit se eam in arcu, et gladio possedisse: arcum hic, et gladium, justitiam vocat, per quam meruit peregrinus, et advena, interfecto Sichem, et Emor, de periculo liberari. Timuit enim, ut supra legimus, ne vicina oppida, atque castella ob eversionem foederatae urbis adversum se consurgerent (Gen. XXXIV): et Dominus non dedit eis ut nocerent illi. Vel certe sic intelligendum: Dabo tibi Sicimam, quam emi in fortitudine mea, hoc est in pecunia, quam multo labore multoque sudore acquisivi. Quod autem ait, super fratres tuos, ostendit absque sorte dedisse eam tribui Joseph. Siquidem eodem loco sepultus est Joseph, et mausoleum ejus ibi hodieque cernitur.\
+"""
+transcription_segments = [
+  { line = 210, text = """
+(Vers. 22.) Et ego dedi [Al. do] tibi Sicimam praecipuam super fratres tuos, quam accepi de manibus Amorrhaeorum in gladio meo et sagitta. Sicima juxta Graecam et Latinam consuetudinem declinata est. Alioquin Hebraice SICHEM dicitur, ut Joannes quoque Evangelista testatur (IV, 5): licet vitiose, ut Sichar legatur, error inolevit: et est nunc Neapolis urbs Samaritanorum. Quia igitur SICHEM (שכם) lingua Hebraea transfertur in humerum, pulchre allusit ad nomen, dicens: Et ego dabo tibi humerum unum. Pro praecipuo enim, id est, ἐξαιρέτῳ, unum scribitur in Hebraeo. Quod autem dicit se eam in arcu, et gladio possedisse: arcum hic, et gladium, justitiam vocat, per quam meruit peregrinus, et advena, interfecto Sichem, et Emor, de periculo liberari. Timuit enim, ut supra legimus, ne vicina oppida, atque castella ob eversionem foederatae urbis adversum se consurgerent (Gen. XXXIV): et Dominus non dedit eis ut nocerent illi. Vel certe sic intelligendum: Dabo tibi Sicimam, quam emi in fortitudine mea, hoc est in pecunia, quam multo labore multoque sudore acquisivi. Quod autem ait, super fratres tuos, ostendit absque sorte dedisse eam tribui Joseph. Siquidem eodem loco sepultus est Joseph, et mausoleum ejus ibi hodieque cernitur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

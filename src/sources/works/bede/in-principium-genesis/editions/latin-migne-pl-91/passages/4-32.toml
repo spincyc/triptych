@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-32"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.32"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[335, 335]]
+text = """
+Et ex illa dabo tibi filium cui benedicturus sum, eritque in nationes, et reges populorum orientur ex eo. Signanterque non ut in Graeco legimus: dixit Deus ad Abraham, Sarai uxor tua non vocabitur Sarai; in Hebraeo habetur non vocabis nomen ejus Sarai; id est, non dices ei Princeps mea es: futura quippe omnium gentium jam princeps esse, unde et Apostolus Petrus mulierum vitam instituens ait: Sic enim aliquando et sanctae mulieres, sperantes in Domino, ornabant se subjectae propriis viris, sicut Sara obediebat Abrahae dominum eum vocans; cujus estis filiae benefacientes, et non perturbationem timentes ullam (I Petr. III, 5).\
+"""
+transcription_segments = [
+  { line = 335, text = """
+Et ex illa dabo tibi filium cui benedicturus sum, eritque in nationes, et reges populorum orientur ex eo. Signanterque non ut in Graeco legimus: dixit Deus ad Abraham, Sarai uxor tua non vocabitur Sarai; in Hebraeo habetur non vocabis nomen ejus Sarai; id est, non dices ei Princeps mea es: futura quippe omnium gentium jam princeps esse, unde et Apostolus Petrus mulierum vitam instituens ait: Sic enim aliquando et sanctae mulieres, sperantes in Domino, ornabant se subjectae propriis viris, sicut Sara obediebat Abrahae dominum eum vocans; cujus estis filiae benefacientes, et non perturbationem timentes ullam (I Petr. III, 5).\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

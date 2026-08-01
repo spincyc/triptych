@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.96"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "96"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 96 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[100, 100]]
+text = """
+Inter. 96. De quibus dixit: Cum coepissent homines multiplicari super terram et filias procreassent. [Et iterum] videntes Filii Dei filias hominum quod 312 essent pulchrae (Gen. VI, 1, 2)?-- Resp. Filias hominum, progeniem Cham; et filios Dei sobolem Seth [ Ms., Sem] appellare Scriptura voluit. Hi avita benedictione religiosi; illae paterna maledictione impudicae [ Ms., illi . . . impudici]: sed postquam filii Seth [ Ms., Sem] concupiscentia victi ex filiabus Cham connubia junxerunt, ex tali conjunctione homines immenso corpore, viribus superbi, moribus [inconditi], quos Scriptura gigantes nominat, procreati sunt.\
+"""
+transcription_segments = [
+  { line = 100, text = """
+Inter. 96. De quibus dixit: Cum coepissent homines multiplicari super terram et filias procreassent. [Et iterum] videntes Filii Dei filias hominum quod 312 essent pulchrae (Gen. VI, 1, 2)?-- Resp. Filias hominum, progeniem Cham; et filios Dei sobolem Seth [ Ms., Sem] appellare Scriptura voluit. Hi avita benedictione religiosi; illae paterna maledictione impudicae [ Ms., illi . . . impudici]: sed postquam filii Seth [ Ms., Sem] concupiscentia victi ex filiabus Cham connubia junxerunt, ex tali conjunctione homines immenso corpore, viribus superbi, moribus [inconditi], quos Scriptura gigantes nominat, procreati sunt.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

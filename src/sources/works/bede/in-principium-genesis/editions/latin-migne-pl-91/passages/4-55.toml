@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-55"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.55"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[362, 362]]
+text = """
+Quod vero furentibus eis in tale flagitium patrandum dicit inter alia Lot: Habeo duas filias quae nec dum cognoverunt virum, educam eas ad vos, et abutimini eis, sicut placuerit vobis, dummodo viris istis nihil faciatis mali. Quoniam prostituere volebat filias suas hac compensatione, ut viri hospites ejus nihil a Sodomitis tale paterentur, utrum admittenda sit compensatio flagitiorum vel quorumque peccatorum, ut nos faciamus mali aliquid, ne alius gravius malum faciat, an potius perturbationi Lot non consilio tribuendum sit quia hoc dixerit, merito quaeritur; et nimirum periculosissime admittitur haec compensatio; si autem perturbationi humanae tribuitur, et menti tanto malo permotae, nullomodo imitanda est.\
+"""
+transcription_segments = [
+  { line = 362, text = """
+Quod vero furentibus eis in tale flagitium patrandum dicit inter alia Lot: Habeo duas filias quae nec dum cognoverunt virum, educam eas ad vos, et abutimini eis, sicut placuerit vobis, dummodo viris istis nihil faciatis mali. Quoniam prostituere volebat filias suas hac compensatione, ut viri hospites ejus nihil a Sodomitis tale paterentur, utrum admittenda sit compensatio flagitiorum vel quorumque peccatorum, ut nos faciamus mali aliquid, ne alius gravius malum faciat, an potius perturbationi Lot non consilio tribuendum sit quia hoc dixerit, merito quaeritur; et nimirum periculosissime admittitur haec compensatio; si autem perturbationi humanae tribuitur, et menti tanto malo permotae, nullomodo imitanda est.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

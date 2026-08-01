@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-11"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.11"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[233, 233]]
+text = """
+At vero Mesraim genuit Ludim, et Anamim, et Laabim Nepthuhim, et Phethusim, et Chesluim; de quibus egressi sunt Philistiim et Capturim. Magis haec gentium quam hominum singulorum videntur esse vocabula, cum dictum sit manifeste et Chesluim de quibus egressi sunt Philistiim. Nam et cuncta in im desinunt, quod est proprium numeri pluralis apud Hebraeos in genere masculino, sed et interpretata pluralem magis numerum quam singularem significant. Sunt autem Laabim Lybies, Philistiim Palaestini, Capturim Cappadoces, ut in libro nominum Hebraeorum juxta opinionem Septuaginta interpretum positum invenimus. Caeterarum quae nunc habeantur ignota sunt nobis gentium vocabula. Possederunt autem terram a Gaza usque ad terminos et fines Aegypti.\
+"""
+transcription_segments = [
+  { line = 233, text = """
+At vero Mesraim genuit Ludim, et Anamim, et Laabim Nepthuhim, et Phethusim, et Chesluim; de quibus egressi sunt Philistiim et Capturim. Magis haec gentium quam hominum singulorum videntur esse vocabula, cum dictum sit manifeste et Chesluim de quibus egressi sunt Philistiim. Nam et cuncta in im desinunt, quod est proprium numeri pluralis apud Hebraeos in genere masculino, sed et interpretata pluralem magis numerum quam singularem significant. Sunt autem Laabim Lybies, Philistiim Palaestini, Capturim Cappadoces, ut in libro nominum Hebraeorum juxta opinionem Septuaginta interpretum positum invenimus. Caeterarum quae nunc habeantur ignota sunt nobis gentium vocabula. Possederunt autem terram a Gaza usque ad terminos et fines Aegypti.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

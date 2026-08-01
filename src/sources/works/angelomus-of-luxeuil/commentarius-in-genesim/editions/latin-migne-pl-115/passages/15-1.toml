@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.15-1"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "15.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 2-4.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[182, 182]]
+text = """
+VERS. 2-4.-- Dixitque Abram: Domine Deus, quid dabis mihi? ego vadam absque liberis, et filius procuratoris domus meae iste Damascus Eliezer, et reliqua. Non quasi dubius, an fieret, de promissione Dei, cum ait: Domine Deus, quid dabis mihi? sed quomodo futurum [ Z., venturum] esset, exquirens. Sed requirendum est quis fuerit iste Eliezer Damascus, de quo dixit Abram, haeres meus erit? Ille utique fuit filius procuratoris Abrahae, qui postea, ut aiunt Hebraei, Damascum condidit, et nomen civitatis dedit regnumque in ea obtinuit. Attamen notandum, ubi nos habemus, filius procuratoris, nonnulli transtulerunt: filius Masech vernaculi mei. | Aquila vero, filius potum dantis domui meae. Theodotion, filius ejus qui super domum meam est, id est villici, qui universa dispensat, et distribuit cibaria familiae; vocaturque Damascus Eliezer. Porro Eliezer Deus meus adjutor interpretatur, qui, ut diximus, Damascum condidit. Sequitur:\
+"""
+transcription_segments = [
+  { line = 182, text = """
+VERS. 2-4.-- Dixitque Abram: Domine Deus, quid dabis mihi? ego vadam absque liberis, et filius procuratoris domus meae iste Damascus Eliezer, et reliqua. Non quasi dubius, an fieret, de promissione Dei, cum ait: Domine Deus, quid dabis mihi? sed quomodo futurum [ Z., venturum] esset, exquirens. Sed requirendum est quis fuerit iste Eliezer Damascus, de quo dixit Abram, haeres meus erit? Ille utique fuit filius procuratoris Abrahae, qui postea, ut aiunt Hebraei, Damascum condidit, et nomen civitatis dedit regnumque in ea obtinuit. Attamen notandum, ubi nos habemus, filius procuratoris, nonnulli transtulerunt: filius Masech vernaculi mei. | Aquila vero, filius potum dantis domui meae. Theodotion, filius ejus qui super domum meam est, id est villici, qui universa dispensat, et distribuit cibaria familiae; vocaturque Damascus Eliezer. Porro Eliezer Deus meus adjutor interpretatur, qui, ut diximus, Damascum condidit. Sequitur:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

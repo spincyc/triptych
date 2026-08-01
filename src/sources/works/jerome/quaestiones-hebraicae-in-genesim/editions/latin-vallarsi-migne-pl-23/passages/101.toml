@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.101"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "101"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 2.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[104, 104]]
+text = """
+(Cap. XXII.—Vers. 2.) Et dixit ei Deus: Tolle filium tuum unigenitum, quem diligis, Isaac, et vade in terram excelsam, et offer illum ibi in holocaustum super unum de montibus quem ego dicam tibi. Difficile est idioma linguae Hebraeae in Latinum sermonem vertere. Ubi nunc dicitur, vade in terram excelsam, in Hebraeo habet, MORIA (מריה), quod Aquila transtulit τὴν καταφανῆ, hoc est, lucidam: Symmachus, τῆς ὀπτασίας, hoc est, visionis. Aiunt ergo Hebraei hunc montem esse in quo postea templum conditum est in area Ornae Jebusaei, sicut et in Paralipomenis scriptum est: Et coeperunt aedificare templum in mense secundo, in secunda die mensis, in monte Moria (II Paralip. III, 1). Qui idcirco illuminans interpretatur et lucens, quia ibi est DABIR (דביר), hoc est, oraculum Dei: et Lex et Spiritus sanctus, qui docet homines veritatem, et inspirat prophetias.\
+"""
+transcription_segments = [
+  { line = 104, text = """
+(Cap. XXII.—Vers. 2.) Et dixit ei Deus: Tolle filium tuum unigenitum, quem diligis, Isaac, et vade in terram excelsam, et offer illum ibi in holocaustum super unum de montibus quem ego dicam tibi. Difficile est idioma linguae Hebraeae in Latinum sermonem vertere. Ubi nunc dicitur, vade in terram excelsam, in Hebraeo habet, MORIA (מריה), quod Aquila transtulit τὴν καταφανῆ, hoc est, lucidam: Symmachus, τῆς ὀπτασίας, hoc est, visionis. Aiunt ergo Hebraei hunc montem esse in quo postea templum conditum est in area Ornae Jebusaei, sicut et in Paralipomenis scriptum est: Et coeperunt aedificare templum in mense secundo, in secunda die mensis, in monte Moria (II Paralip. III, 1). Qui idcirco illuminans interpretatur et lucens, quia ibi est DABIR (דביר), hoc est, oraculum Dei: et Lex et Spiritus sanctus, qui docet homines veritatem, et inspirat prophetias.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

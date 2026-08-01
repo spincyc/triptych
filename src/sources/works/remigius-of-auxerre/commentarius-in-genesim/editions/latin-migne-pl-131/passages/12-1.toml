@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.12-1"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "12.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 3.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[174, 174]]
+text = """
+Vers. 3. Benedicam benedicentes te, et maledicam maledicentibus te. Duae repromissiones factae sunt ad Abraham: una terrena, qua ei terra Chanaan repromissa est, cum dictum est: Egredere de terra tua et cognatione, etc. Alia quae major est et spiritalis, qua dictum est: Benedicam tibi, ut esset videlicet pater Christi et omnium in Christo credentium. Sed et hoc notandum quia jam egressus fuerat de terra sua quando ei dictum fuerat: Egredere de terra tua. Sed ibi egressus corpore, hic vero mente et voluntate. Fortassis adhuc habebat affectum revertendi illuc quando dictum est: Egredere.--In te benedicentur | universae cognationes tuae: quia de ipso Christus erat nasciturus per quem cunctae generationes benedictionem percipere debuerant.\
+"""
+transcription_segments = [
+  { line = 174, text = """
+Vers. 3. Benedicam benedicentes te, et maledicam maledicentibus te. Duae repromissiones factae sunt ad Abraham: una terrena, qua ei terra Chanaan repromissa est, cum dictum est: Egredere de terra tua et cognatione, etc. Alia quae major est et spiritalis, qua dictum est: Benedicam tibi, ut esset videlicet pater Christi et omnium in Christo credentium. Sed et hoc notandum quia jam egressus fuerat de terra sua quando ei dictum fuerat: Egredere de terra tua. Sed ibi egressus corpore, hic vero mente et voluntate. Fortassis adhuc habebat affectum revertendi illuc quando dictum est: Egredere.--In te benedicentur | universae cognationes tuae: quia de ipso Christus erat nasciturus per quem cunctae generationes benedictionem percipere debuerant.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

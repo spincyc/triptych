@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-5"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.5"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[16, 16]]
+text = """
+Appellavitque lucem diem et tenebras noctem. Hoc ad intellectum nostrum dictum est; qua enim lingua appellavit Deus lucem diem ac tenebras noctem; utrum Hebraea, an Graeca, an alia aliqua! Et sic omnia quae vocavit quaeri potest qua lingua vocaverit; sed apud Deum purus intellectus est sine strepitu et diversitate linguarum. Appellavit autem dictum est: Appellari fecit, quia sic distinxit omnia et ordinavit, ut et dies cerni possent, et nomina accipere. Sic enim dicimus: Ille paterfamilias aedificavit istam domum, id est aedificari fecit, et multa talia per omnes libros divinarum Scripturarum inveniuntur.\
+"""
+transcription_segments = [
+  { line = 16, text = """
+Appellavitque lucem diem et tenebras noctem. Hoc ad intellectum nostrum dictum est; qua enim lingua appellavit Deus lucem diem ac tenebras noctem; utrum Hebraea, an Graeca, an alia aliqua! Et sic omnia quae vocavit quaeri potest qua lingua vocaverit; sed apud Deum purus intellectus est sine strepitu et diversitate linguarum. Appellavit autem dictum est: Appellari fecit, quia sic distinxit omnia et ordinavit, ut et dies cerni possent, et nomina accipere. Sic enim dicimus: Ille paterfamilias aedificavit istam domum, id est aedificari fecit, et multa talia per omnes libros divinarum Scripturarum inveniuntur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

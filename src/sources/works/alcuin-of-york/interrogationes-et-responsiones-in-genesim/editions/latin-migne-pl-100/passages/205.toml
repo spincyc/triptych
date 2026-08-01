@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.205"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "205"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 205 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[209, 209]]
+text = """
+Inter. 205. Si Abraham indubitanter et firmo animo cogitabat mactare puerum Domino in holocaustum, quid est quod dixit pueris suis: Vos exspectate hic: ego et puer, cum adoraverimus, revertemur ad vos (Gen. XXII, 5)?-- Resp. [Igitur et dubitanti animo mactare puerum cogitabat, et indubitanti animo in Deum resuscitari credebat eum.] Idcirco utrumque laudis [ Ms., laudabilis] est et in constantia offerendi, et in fide resuscitandi. Sciebat certissime Deum fallere non posse: et licet puer occideretur, promissionem tamen Dei salvam permanere. Unde et Paulus apostolus per Spiritum sanctum didicerat, quid animi habuisset Abraham intra se, dum fidem ejus laudat [ Ms., laudavit] dicens: Fide Abraham non haesitavit, cum unicum offerret, in quo acceperat promissionem [ Ms., repromissiones], [cogitans] quia a mortuis eum resuscitare potens est Deus (Rom. IV, 20).\
+"""
+transcription_segments = [
+  { line = 209, text = """
+Inter. 205. Si Abraham indubitanter et firmo animo cogitabat mactare puerum Domino in holocaustum, quid est quod dixit pueris suis: Vos exspectate hic: ego et puer, cum adoraverimus, revertemur ad vos (Gen. XXII, 5)?-- Resp. [Igitur et dubitanti animo mactare puerum cogitabat, et indubitanti animo in Deum resuscitari credebat eum.] Idcirco utrumque laudis [ Ms., laudabilis] est et in constantia offerendi, et in fide resuscitandi. Sciebat certissime Deum fallere non posse: et licet puer occideretur, promissionem tamen Dei salvam permanere. Unde et Paulus apostolus per Spiritum sanctum didicerat, quid animi habuisset Abraham intra se, dum fidem ejus laudat [ Ms., laudavit] dicens: Fide Abraham non haesitavit, cum unicum offerret, in quo acceperat promissionem [ Ms., repromissiones], [cogitans] quia a mortuis eum resuscitare potens est Deus (Rom. IV, 20).\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

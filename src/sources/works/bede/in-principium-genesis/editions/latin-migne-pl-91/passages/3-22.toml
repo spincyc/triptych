@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-22"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.22"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[244, 244]]
+text = """
+Erat autem terra labii unius et sermonum eorumdem. Quia praeoccupando dixerat filios Noe terram secundum cognationes et linguas et regiones in gentibus suis divisisse, redit ostendere quomodo fuerint homines ab invicem disjuncti: ubi certissime claret quia genus humanum quandiu Conditori suo debita humilitate servivit, etiam sibimetipsi pacifica charitate concordavit. At ubi contra Auctorem cervicem superbiens erexit, mox juste punitum, nec ad seipsum pacem habere potuit. Quanta autem hominum esse felicitas posset etiam paradiso dejectorum, si vel tunc Creatori suo servire humiliter vellent, testatur gratia ejusdem Domini Conditoris ac Redemptoris nostri, qui discipulis sibi fideliter adhaerentibus misso desuper Spiritu omnium notitiam tribuit linguarum; unde mira immutatione dexterae Excelsi factum est ut sicut hic linguis ob superbiam divisis gentes sunt ab invicem toto orbe dispersae, ita illic, ob meritum humilitatis, adunata diversitate linguarum, collecti ex omni natione quae sub coelo est populi una et non dispari confessione ac fide laudes et magnalia Dei resonarent; meritoque haec civitas, in qua linguae divisae ac gentes sunt dispersae, Babylon, id est Confusio; illa dicitur Jerusalem, id est, Visio pacis, in qua, adunatis in Dei laudem loquelis universarum gentium, est facta concordia. Sed haec postmodum latius. Interim textum litterae videamus\
+"""
+transcription_segments = [
+  { line = 244, text = """
+Erat autem terra labii unius et sermonum eorumdem. Quia praeoccupando dixerat filios Noe terram secundum cognationes et linguas et regiones in gentibus suis divisisse, redit ostendere quomodo fuerint homines ab invicem disjuncti: ubi certissime claret quia genus humanum quandiu Conditori suo debita humilitate servivit, etiam sibimetipsi pacifica charitate concordavit. At ubi contra Auctorem cervicem superbiens erexit, mox juste punitum, nec ad seipsum pacem habere potuit. Quanta autem hominum esse felicitas posset etiam paradiso dejectorum, si vel tunc Creatori suo servire humiliter vellent, testatur gratia ejusdem Domini Conditoris ac Redemptoris nostri, qui discipulis sibi fideliter adhaerentibus misso desuper Spiritu omnium notitiam tribuit linguarum; unde mira immutatione dexterae Excelsi factum est ut sicut hic linguis ob superbiam divisis gentes sunt ab invicem toto orbe dispersae, ita illic, ob meritum humilitatis, adunata diversitate linguarum, collecti ex omni natione quae sub coelo est populi una et non dispari confessione ac fide laudes et magnalia Dei resonarent; meritoque haec civitas, in qua linguae divisae ac gentes sunt dispersae, Babylon, id est Confusio; illa dicitur Jerusalem, id est, Visio pacis, in qua, adunatis in Dei laudem loquelis universarum gentium, est facta concordia. Sed haec postmodum latius. Interim textum litterae videamus\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

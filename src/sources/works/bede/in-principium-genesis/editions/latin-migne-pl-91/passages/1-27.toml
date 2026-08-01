@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-27"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.27"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[39, 39]]
+text = """
+Cum autem sequitur: Et vidit Deus quod esset bonum, quaeritur merito, quare non hic addatur illud quod dictum est de eis quae aquae produxerant de animantibus: Benedixitque eis dicens: Crescite et multiplicamini et replete terram: An forte quod de prima creatura animae viventis dictum a Deo commendaverit, etiam de secunda nobis subintelligendum reliquit? maxime, quia in hujus diei operibus plura erat alia subjuncturus; porro de homine facto hoc necessario iterare curavit dicens. Benedixitque illis Deus et ait: Crescite et multiplicamini et replete terram, ne quis honorabili connubio inesse peccatum thorumque foeditati fornicationis putaret esse comparandum. Facta autem atque ornata habitatione mundana, supererat ut ipse etiam propter quem omnia parabantur habitator ac dominus rerum homo crearetur, sequitur:\
+"""
+transcription_segments = [
+  { line = 39, text = """
+Cum autem sequitur: Et vidit Deus quod esset bonum, quaeritur merito, quare non hic addatur illud quod dictum est de eis quae aquae produxerant de animantibus: Benedixitque eis dicens: Crescite et multiplicamini et replete terram: An forte quod de prima creatura animae viventis dictum a Deo commendaverit, etiam de secunda nobis subintelligendum reliquit? maxime, quia in hujus diei operibus plura erat alia subjuncturus; porro de homine facto hoc necessario iterare curavit dicens. Benedixitque illis Deus et ait: Crescite et multiplicamini et replete terram, ne quis honorabili connubio inesse peccatum thorumque foeditati fornicationis putaret esse comparandum. Facta autem atque ornata habitatione mundana, supererat ut ipse etiam propter quem omnia parabantur habitator ac dominus rerum homo crearetur, sequitur:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

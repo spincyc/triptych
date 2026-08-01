@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-21"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.21"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[243, 243]]
+text = """
+Hae familiae Noe juxta populos et nationes suas. Ab his divisae sunt gentes in terra post diluvium. Recenseat diligens lector ex ordine nomina hominum sive populorum qui ex tribus filiis nati esse perhibentur, et invenientur numero LXX et unum: XIII videlicet de Japheth, XXXI de Cham, XXVI de Sem, ex quibus totidem gentium linguas et nationes mundum implesse creduntur, vel potius LXXII, ut clarior fama habet, cum aliquis fuerit eorum de quo postmodum duae nationes et populi nascerentur; nisi forte duo esse Assur, et duos creasse populos intelligendi sunt: unus qui de terra Sennaar egressus Ninivem aedificavit, et alter filius Sem; et sic numerus LXX duarum nationum adimpleatur. Neque abs re videtur quod Dominus ideo LXXII ad praedicandum discipulos miserit, quod tot essent gentes et linguae, quibus verbum praedicationis erat committendum, ut sicut prius duodecim apostolos elegit propter totidem tribus Israel ad fidem vocandas; ita postmodum septuaginta duos designaret doctores ad insinuandam gentium universarum salvationem, quae eodem essent numero comprehensae.\
+"""
+transcription_segments = [
+  { line = 243, text = """
+Hae familiae Noe juxta populos et nationes suas. Ab his divisae sunt gentes in terra post diluvium. Recenseat diligens lector ex ordine nomina hominum sive populorum qui ex tribus filiis nati esse perhibentur, et invenientur numero LXX et unum: XIII videlicet de Japheth, XXXI de Cham, XXVI de Sem, ex quibus totidem gentium linguas et nationes mundum implesse creduntur, vel potius LXXII, ut clarior fama habet, cum aliquis fuerit eorum de quo postmodum duae nationes et populi nascerentur; nisi forte duo esse Assur, et duos creasse populos intelligendi sunt: unus qui de terra Sennaar egressus Ninivem aedificavit, et alter filius Sem; et sic numerus LXX duarum nationum adimpleatur. Neque abs re videtur quod Dominus ideo LXXII ad praedicandum discipulos miserit, quod tot essent gentes et linguae, quibus verbum praedicationis erat committendum, ut sicut prius duodecim apostolos elegit propter totidem tribus Israel ad fidem vocandas; ita postmodum septuaginta duos designaret doctores ad insinuandam gentium universarum salvationem, quae eodem essent numero comprehensae.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

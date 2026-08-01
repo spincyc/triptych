@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.4-19"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "4.19"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 8-9.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[111, 111]]
+text = """
+VERS. 8, 9-21.-- Vixitque Seth nongentorum duodecim annorum, et mortuus est. Vixit quoque Enos qui [ Z., postquam] genuit Cainan, nongentorum quinque annorum, et mortuus est. Cainan lamentatio | vel possessio eorum dicitur. Sicut enim Cain possessio, ita derivativum nomen, quod est Cainan facit possessio eorum [ Z., derivatum est nomen, quod Cainan facit, possessio eorum]. Sed in hoc quod anni filiorum Adam decrescunt, significabat quod minuendi essent anni generis humani post se. Sequitur:\
+"""
+transcription_segments = [
+  { line = 111, text = """
+VERS. 8, 9-21.-- Vixitque Seth nongentorum duodecim annorum, et mortuus est. Vixit quoque Enos qui [ Z., postquam] genuit Cainan, nongentorum quinque annorum, et mortuus est. Cainan lamentatio | vel possessio eorum dicitur. Sicut enim Cain possessio, ita derivativum nomen, quod est Cainan facit possessio eorum [ Z., derivatum est nomen, quod Cainan facit, possessio eorum]. Sed in hoc quod anni filiorum Adam decrescunt, significabat quod minuendi essent anni generis humani post se. Sequitur:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

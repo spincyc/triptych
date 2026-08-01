@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.18-4"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "18.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 27.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[202, 203]]
+text = """
+VERS. 27.-- | Dixitque Abraham: Quia semel coepi, loquar ad Dominum meum, cum sim pulvis et cinis, et reliqua usquequo ait: non delebo propter decem. Quare Abraham se pulverem dixit esse et cinerem, dum tantas promissiones accepit a Deo? Sublimitatem promissionum humilitatis temperavit subjectione. Aperte enim intelligitur in quo loco se posuerat, qui pulverem se esse ac cinerem etiam dum cum Deo loqueretur, aestimabat. Si igitur se ita despicit, qui usque ad honorem divinae collocutionis ascendit, sollicita intentione pensandum est qua poena illi feriendi sint, qui ad summam non proficiunt, et tamen de minimis extolluntur.
+
+Quaeri solet utrum quod de Sodomis dixit Deus, non se perdere locum, si invenirentur illic vel decem | justi, speciali quadam sententia de illa civitate, an de omnibus intelligendum sit generaliter parcere Deum loco in quocunque vel decem justi fuerint? Non est necesse ut hoc de omni loco accipere compellamur. Verumtamen de Sodomis potuit sic dici; quia sciebat Deus ibi non esse vel decem, et ideo sic respondebatur Abrahae, ut significaretur, nec tot ibi posse inveniri, ad exagerationem iniquitatis illorum [ Z., inveniri ad excusationem iniq. ill.]. Sed sciendum est quia, quantum ad allegoriam pertinet, per quinquaginta significantur poenitentes, per quinque quadraginta hi qui per quatuor Evangelia gradiuntur, et per quinque sensus corporis abstinent se a malo et faciunt bonum. Per viginti vero, qui utriusque Testamenti | scientiam atque observantiam habent. Per triginta quoque illi designantur qui in fide consistunt sanctae Trinitatis vel in spe futurae beatitudinis. In denario autem numero, qui sub mysterio sanctae crucis se humiliter subdunt, et in dilectione Dei et proximi, quae in Decalogo continetur, perfecti reperiuntur. Sequitur:\
+"""
+transcription_segments = [
+  { line = 202, text = """
+VERS. 27.-- | Dixitque Abraham: Quia semel coepi, loquar ad Dominum meum, cum sim pulvis et cinis, et reliqua usquequo ait: non delebo propter decem. Quare Abraham se pulverem dixit esse et cinerem, dum tantas promissiones accepit a Deo? Sublimitatem promissionum humilitatis temperavit subjectione. Aperte enim intelligitur in quo loco se posuerat, qui pulverem se esse ac cinerem etiam dum cum Deo loqueretur, aestimabat. Si igitur se ita despicit, qui usque ad honorem divinae collocutionis ascendit, sollicita intentione pensandum est qua poena illi feriendi sint, qui ad summam non proficiunt, et tamen de minimis extolluntur.\
+""" },
+  { line = 203, text = """
+Quaeri solet utrum quod de Sodomis dixit Deus, non se perdere locum, si invenirentur illic vel decem | justi, speciali quadam sententia de illa civitate, an de omnibus intelligendum sit generaliter parcere Deum loco in quocunque vel decem justi fuerint? Non est necesse ut hoc de omni loco accipere compellamur. Verumtamen de Sodomis potuit sic dici; quia sciebat Deus ibi non esse vel decem, et ideo sic respondebatur Abrahae, ut significaretur, nec tot ibi posse inveniri, ad exagerationem iniquitatis illorum [ Z., inveniri ad excusationem iniq. ill.]. Sed sciendum est quia, quantum ad allegoriam pertinet, per quinquaginta significantur poenitentes, per quinque quadraginta hi qui per quatuor Evangelia gradiuntur, et per quinque sensus corporis abstinent se a malo et faciunt bonum. Per viginti vero, qui utriusque Testamenti | scientiam atque observantiam habent. Per triginta quoque illi designantur qui in fide consistunt sanctae Trinitatis vel in spe futurae beatitudinis. In denario autem numero, qui sub mysterio sanctae crucis se humiliter subdunt, et in dilectione Dei et proximi, quae in Decalogo continetur, perfecti reperiuntur. Sequitur:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

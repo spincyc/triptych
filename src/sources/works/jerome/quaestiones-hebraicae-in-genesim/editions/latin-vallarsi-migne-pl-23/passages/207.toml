@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.207"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "207"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 3.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[211, 211]]
+text = """
+(Cap. XLIX.—Vers. 3.) Ruben primogenitus meus, tu fortitudo mea et principium filiorum meorum, durus ad ferendum et durus procacitate, et injuria, sicut aqua non ebullias. Ascendisti enim super lectulum patris tui. Tunc violasti stratum, cum ascendisti. In Hebraeo scriptum est: Ruben primogenitus meus, tu fortitudo mea, et capitulum in liberis meis. Major ad portandum, et major robore. Effusus es sicut aqua, ne adjicias. Ascendisti enim cubile patris tui, et contaminasti stratum in ascensu. Est autem sensus hic: Tu es primogenitus meus, major in liberis, et debebas juxta ordinem nativitatis tuae, haereditatem, quae primogenitis jure debebatur, et sacerdotium accipere et regnum: hoc quippe in portando onere et praevalido robore demonstratur. Verum quia peccasti, et quasi aqua, quae vasculo non tenetur, voluptatis impetu effusus es, idcirco praecipio tibi, ut ultra non pecces, sisque in fratrum numero, poenam peccati luens, quod primogeniti ordinem perdidisti.\
+"""
+transcription_segments = [
+  { line = 211, text = """
+(Cap. XLIX.—Vers. 3.) Ruben primogenitus meus, tu fortitudo mea et principium filiorum meorum, durus ad ferendum et durus procacitate, et injuria, sicut aqua non ebullias. Ascendisti enim super lectulum patris tui. Tunc violasti stratum, cum ascendisti. In Hebraeo scriptum est: Ruben primogenitus meus, tu fortitudo mea, et capitulum in liberis meis. Major ad portandum, et major robore. Effusus es sicut aqua, ne adjicias. Ascendisti enim cubile patris tui, et contaminasti stratum in ascensu. Est autem sensus hic: Tu es primogenitus meus, major in liberis, et debebas juxta ordinem nativitatis tuae, haereditatem, quae primogenitis jure debebatur, et sacerdotium accipere et regnum: hoc quippe in portando onere et praevalido robore demonstratur. Verum quia peccasti, et quasi aqua, quae vasculo non tenetur, voluptatis impetu effusus es, idcirco praecipio tibi, ut ultra non pecces, sisque in fratrum numero, poenam peccati luens, quod primogeniti ordinem perdidisti.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

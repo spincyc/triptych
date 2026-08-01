@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.219"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "219"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 219 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[223, 223]]
+text = """
+Inter. 219.--Quae est [ista] Cethura, aut unde genus duxit [ Ms., ducens]?-- Resp. [Cethura interpretatur copulata, aut vincta; quam ob causam] suspicantur Hebraei 327 eamdem esse Agar quae, Sarra mortua, ex concubina transierit in uxorem [ Al., facta sit uxor]. Et sic videtur [depositi jam] Abrahae aetas excusari, ne senex post mortem uxoris vetulae novis nuptiis arguatur lascivisse. [Fertur] quoque quia filii Abrahae, qui ei de Cethura nati sunt, [occupaverunt terram quae Arabia vocatur, usque ad maris Rubri] littora. Dicitur autem unus ex posteris Abrahae, qui appellatur Asser [ Ms., appellabatur Assur], duxisse adversus Lubian [ Ms., Laban] exercitum, et ibi devictis hostibus consedisse, ejusque posteros ex nomine Atavi Africam nuncupasse. Alios quoque filios Abrahae ex Cethura occupasse Judeae regiones [ Ms., Indiam regionem] aestimatur.\
+"""
+transcription_segments = [
+  { line = 223, text = """
+Inter. 219.--Quae est [ista] Cethura, aut unde genus duxit [ Ms., ducens]?-- Resp. [Cethura interpretatur copulata, aut vincta; quam ob causam] suspicantur Hebraei 327 eamdem esse Agar quae, Sarra mortua, ex concubina transierit in uxorem [ Al., facta sit uxor]. Et sic videtur [depositi jam] Abrahae aetas excusari, ne senex post mortem uxoris vetulae novis nuptiis arguatur lascivisse. [Fertur] quoque quia filii Abrahae, qui ei de Cethura nati sunt, [occupaverunt terram quae Arabia vocatur, usque ad maris Rubri] littora. Dicitur autem unus ex posteris Abrahae, qui appellatur Asser [ Ms., appellabatur Assur], duxisse adversus Lubian [ Ms., Laban] exercitum, et ibi devictis hostibus consedisse, ejusque posteros ex nomine Atavi Africam nuncupasse. Alios quoque filios Abrahae ex Cethura occupasse Judeae regiones [ Ms., Indiam regionem] aestimatur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

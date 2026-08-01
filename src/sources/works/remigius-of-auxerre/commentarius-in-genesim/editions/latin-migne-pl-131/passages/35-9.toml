@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.35-9"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "35.9"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 22.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[363, 364]]
+text = """
+Vers. 22. Abiit, et dormivit cum concubina patris sui. Juxta litteram facinus Ruben describitur. Allegorice vero Ruben primogenitus Judaeos designat, quibus primo cognitio Dei facta est, et de quibus dictum est: Filius primogenitus meus Israel. Bala | concubina legem designat. Quod enim lex per concubinam designetur, apostolus Paulus ostendit, qui per Agar concubinam Abrahae dicit designari legem, quae in monte Sina data est (Gal. IV, 24). Ruben vero cum concubina patris concubuit, quia Judaicus populus legem sanctam et justam corrupit falsis traditionibus, atque dignitatem primogeniti amisit.
+
+Vers 26. Hi filii Jacob, qui nati sunt ei in Mesopotamia. Quaeri potest quare omnes in Mesopotamia hos natos dicit, cum Benjamin non sit natus in Mesopotamia? Potest facilis esse responsio, ut dicamus per synecdochen esse dictum, id est a toto partem. Vel etiam ideo omnes dicuntur in Mesopotamia nati, quia Benjamin, licet ibi natus non sit, causas tamen | nascendi inde habuit. Ibi enim conceptus est, sed intra Chanaan natus.\
+"""
+transcription_segments = [
+  { line = 363, text = """
+Vers. 22. Abiit, et dormivit cum concubina patris sui. Juxta litteram facinus Ruben describitur. Allegorice vero Ruben primogenitus Judaeos designat, quibus primo cognitio Dei facta est, et de quibus dictum est: Filius primogenitus meus Israel. Bala | concubina legem designat. Quod enim lex per concubinam designetur, apostolus Paulus ostendit, qui per Agar concubinam Abrahae dicit designari legem, quae in monte Sina data est (Gal. IV, 24). Ruben vero cum concubina patris concubuit, quia Judaicus populus legem sanctam et justam corrupit falsis traditionibus, atque dignitatem primogeniti amisit.\
+""" },
+  { line = 364, text = """
+Vers 26. Hi filii Jacob, qui nati sunt ei in Mesopotamia. Quaeri potest quare omnes in Mesopotamia hos natos dicit, cum Benjamin non sit natus in Mesopotamia? Potest facilis esse responsio, ut dicamus per synecdochen esse dictum, id est a toto partem. Vel etiam ideo omnes dicuntur in Mesopotamia nati, quia Benjamin, licet ibi natus non sit, causas tamen | nascendi inde habuit. Ibi enim conceptus est, sed intra Chanaan natus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

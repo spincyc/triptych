@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.198"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "198"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 21.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[202, 202]]
+text = """
+(Vers. 21.) Et dedit illis cibaria in via. Verbum SEDA (צדה), quod hic omnes ore consono, ἐπισιτισμὸν, id est, cibaria, vel sitarcia interpretati sunt, in Psalterio quoque habetur. Ubi enim nostri legunt, Viduam ejus benedicens benedicam (Psal. CXXXI, 15), (licet in plerisque codicibus pro vidua, hoc est pro χήρᾳ, nonnulli legant θήραν), in Hebraeo habet SEDA (צידה), id est, Cibaria ejus benedicens benedicam. Porro θήραν venationem magis potest sonare, quam fruges; tametsi moris sit Aegyptiorum θήραν etiam far vocare, quod nunc corrupte atheran nuncupant.\
+"""
+transcription_segments = [
+  { line = 202, text = """
+(Vers. 21.) Et dedit illis cibaria in via. Verbum SEDA (צדה), quod hic omnes ore consono, ἐπισιτισμὸν, id est, cibaria, vel sitarcia interpretati sunt, in Psalterio quoque habetur. Ubi enim nostri legunt, Viduam ejus benedicens benedicam (Psal. CXXXI, 15), (licet in plerisque codicibus pro vidua, hoc est pro χήρᾳ, nonnulli legant θήραν), in Hebraeo habet SEDA (צידה), id est, Cibaria ejus benedicens benedicam. Porro θήραν venationem magis potest sonare, quam fruges; tametsi moris sit Aegyptiorum θήραν etiam far vocare, quod nunc corrupte atheran nuncupant.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

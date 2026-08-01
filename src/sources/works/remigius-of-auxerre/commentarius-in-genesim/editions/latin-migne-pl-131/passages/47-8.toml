@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.47-8"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "47.8"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 31.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[431, 431]]
+text = """
+Vers. 31. Adoravit Israel Deum, conversus ad lectuli caput. Augustinus: Quod habent quidam Latini codices: Et adoravit super caput virgae ejus, vel in capite, fallit eos Graecum verbum, quod eisdem litteris scriptum est, sive suae, sive ejus, sed accentu dispares sunt, et ab eis qui ista noverunt, in codicibus | non contemnuntur: valent enim ad magnam discretionem. Ac per hoc quaeritur quid sit quod dictum est. Nam facile intelligeretur senem adorare fastigium virgae suae, quam sic ferebat, ut super eam caput inclinando adoraret Deum. Sed quod dicit ejus, aliter sese refert; quia post juramentum filii sui, ipsi filio virga sumpta iterum innisus eidem adoravit cacumen ejus vel illius. Sanctus vir et Deo deditus senectute gravatus ita lectum in quo jacebat compositum habebat, ut capite ad orientem verso mox si vellet, absque difficultate ad orandum se vertere posset.\
+"""
+transcription_segments = [
+  { line = 431, text = """
+Vers. 31. Adoravit Israel Deum, conversus ad lectuli caput. Augustinus: Quod habent quidam Latini codices: Et adoravit super caput virgae ejus, vel in capite, fallit eos Graecum verbum, quod eisdem litteris scriptum est, sive suae, sive ejus, sed accentu dispares sunt, et ab eis qui ista noverunt, in codicibus | non contemnuntur: valent enim ad magnam discretionem. Ac per hoc quaeritur quid sit quod dictum est. Nam facile intelligeretur senem adorare fastigium virgae suae, quam sic ferebat, ut super eam caput inclinando adoraret Deum. Sed quod dicit ejus, aliter sese refert; quia post juramentum filii sui, ipsi filio virga sumpta iterum innisus eidem adoravit cacumen ejus vel illius. Sanctus vir et Deo deditus senectute gravatus ita lectum in quo jacebat compositum habebat, ut capite ad orientem verso mox si vellet, absque difficultate ad orandum se vertere posset.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

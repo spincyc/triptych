@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-12"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.12"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[23, 23]]
+text = """
+Dixit autem Deus: Fiant luminaria in firmamento coeli. Decenti satis ordine mundus ex materia informi congruam procedit ad formam. Postquam enim ante omnem hujus saeculi diem coelum et terram et aquam Deus creavit, hoc est, superiorem illum et spiritalem cum suis incolis mundum, et informem totius hujus mundi materiam, juxta hoc quod scriptum est: Qui vivit in aeternum, creavit omnia simul (Eccli. XVIII, 1); primo hujus saeculi die lucem fecit, quae caeteras creaturas specie capaces redderet. Secundo firmamentum coeli, superiorem videlicet hujus mundi partem, in aquarum medio solidavit. Tertio in inferioribus mare terrasque suis discrevit finibus, aeremque suis in locis, cedente aqua, diffudit. Oportuit ergo ut eodem quo creata sunt ordine profectum caperent elementa amplioris ornatus, id est, quarto die coelum luminaribus insigniretur. Quinto aer et mare, sexto terra suis impleretur animantibus. Nam quod die tertio terra herbis est arboribusque vestita, non ad ornatum ejus, sed ad ipsam, ut ita dixerim, figurae ejus superficiem pertinet.\
+"""
+transcription_segments = [
+  { line = 23, text = """
+Dixit autem Deus: Fiant luminaria in firmamento coeli. Decenti satis ordine mundus ex materia informi congruam procedit ad formam. Postquam enim ante omnem hujus saeculi diem coelum et terram et aquam Deus creavit, hoc est, superiorem illum et spiritalem cum suis incolis mundum, et informem totius hujus mundi materiam, juxta hoc quod scriptum est: Qui vivit in aeternum, creavit omnia simul (Eccli. XVIII, 1); primo hujus saeculi die lucem fecit, quae caeteras creaturas specie capaces redderet. Secundo firmamentum coeli, superiorem videlicet hujus mundi partem, in aquarum medio solidavit. Tertio in inferioribus mare terrasque suis discrevit finibus, aeremque suis in locis, cedente aqua, diffudit. Oportuit ergo ut eodem quo creata sunt ordine profectum caperent elementa amplioris ornatus, id est, quarto die coelum luminaribus insigniretur. Quinto aer et mare, sexto terra suis impleretur animantibus. Nam quod die tertio terra herbis est arboribusque vestita, non ad ornatum ejus, sed ad ipsam, ut ita dixerim, figurae ejus superficiem pertinet.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

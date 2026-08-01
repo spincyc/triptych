@@ -1,0 +1,15 @@
+schema = 1
+record_type = "work"
+id = "work.alcuin-of-york.interrogationes-et-responsiones-in-genesim"
+title = "Interrogationes et responsiones in Genesim"
+responsible = "Alcuin of York"
+work_type = "biblical-commentary"
+composed = "c. 796-800"
+composed_basis = "The dedicatory letter addresses Sigewulf, Alcuin's pupil and his successor at Tours, and says the questions are ones Sigewulf had put to him over a long acquaintance and are now gathered. Alcuin was abbot of Tours from 796 until his death in 804. The work is conventionally placed in the Tours years and near their beginning; the range records that and no more. The date is the writing, not Migne's 1851 printing, and it is not the seventh century the wiki header gives, which is a century out."
+alternate_titles = [
+  "Interrogationes et responsiones in Genesin",
+  "Questions and Answers on Genesis",
+]
+languages = ["lat"]
+locus_pattern = '(?:praefatio|[1-9][0-9]{0,2})'
+description = "Two hundred and eighty short questions on Genesis with their answers, gathered for Sigewulf out of Augustine, Jerome, Isidore and Bede. Alcuin's preface says what it is not: the hardest questions in the book are left alone, and what is here is mostly historical and answerable in a sentence, because a traveller cannot carry the weight of books. Many questions name the verse they are about and many do not."

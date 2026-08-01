@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.123"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "123"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 17.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[126, 126]]
+text = """
+(Vers. 17.) Et abiit inde Isaac, et venit in vallem Gerarum, et habitavit ibi. Pro valle, torrentem habet in Hebraeo. Neque enim Isaac postquam magnificatus est, habitare poterat in valle. Habitavit autem in torrente, de quo scriptum est: De torrente in via bibet (Psalm. CIX, 7). De quo etiam Elias tempore famis bibit. Sed quia Elias non erat perfectus, ut Christus: ideo ei torrens ille aruit (III Reg. XVII, 7). Dominus vero noster, etiam in torrente traditus est: dedicans regenerationem nostram et Baptismi sacramentum.\
+"""
+transcription_segments = [
+  { line = 126, text = """
+(Vers. 17.) Et abiit inde Isaac, et venit in vallem Gerarum, et habitavit ibi. Pro valle, torrentem habet in Hebraeo. Neque enim Isaac postquam magnificatus est, habitare poterat in valle. Habitavit autem in torrente, de quo scriptum est: De torrente in via bibet (Psalm. CIX, 7). De quo etiam Elias tempore famis bibit. Sed quia Elias non erat perfectus, ut Christus: ideo ei torrens ille aruit (III Reg. XVII, 7). Dominus vero noster, etiam in torrente traditus est: dedicans regenerationem nostram et Baptismi sacramentum.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

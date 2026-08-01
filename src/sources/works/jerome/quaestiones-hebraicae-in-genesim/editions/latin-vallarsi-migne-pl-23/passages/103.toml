@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.103"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "103"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 13.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[106, 106]]
+text = """
+(Vers. 13.) Et elevavit Abraham oculos suos: et ecce aries post tergum ejus tenebatur in virgulto Sabech cornibus suis. Ridiculam rem in hoc loco Emisenus Eusebius est locutus: Sabech, inquiens, dicitur hircus, qui rectis cornibus et ad carpendas arboris frondes sublimis attollitur. Rursum Aquila συχνεῶνα interpretatus est, quem nos veprem possumus dicere, vel spinetum: et ut verbi vim interpretemur, condensa et inter se implexa virgulta. Unde et Symmachus in eamdem ductus opinionem, Et apparuit, ait, aries post hoc retentus in rete cornibus suis. Verum quibusdam, in hoc dumtaxat loco, melius videntur interpretati esse Septuaginta et Theodotio, qui ipsum nomen SABECH (סבך) posuerunt, dicentes: In virgulto sabech cornibus suis. Etenim σύχνεων, sive rete, quod Aquila posuit et Symmachus, per SIN (ש) litteram scribitur: hic vero (ס) SAMECH littera posita est: ex quo manifestum est non interpretationem stirpium condensarum, et in modum retis inter se virgulta contexta verbum Sabech, sed nomen sonare virgulti, quod ita Hebraice dicitur. Ego vero diligenter inquirens, συχνεῶνα per SAMECH (ס) litteram scribi crebro reperi.\
+"""
+transcription_segments = [
+  { line = 106, text = """
+(Vers. 13.) Et elevavit Abraham oculos suos: et ecce aries post tergum ejus tenebatur in virgulto Sabech cornibus suis. Ridiculam rem in hoc loco Emisenus Eusebius est locutus: Sabech, inquiens, dicitur hircus, qui rectis cornibus et ad carpendas arboris frondes sublimis attollitur. Rursum Aquila συχνεῶνα interpretatus est, quem nos veprem possumus dicere, vel spinetum: et ut verbi vim interpretemur, condensa et inter se implexa virgulta. Unde et Symmachus in eamdem ductus opinionem, Et apparuit, ait, aries post hoc retentus in rete cornibus suis. Verum quibusdam, in hoc dumtaxat loco, melius videntur interpretati esse Septuaginta et Theodotio, qui ipsum nomen SABECH (סבך) posuerunt, dicentes: In virgulto sabech cornibus suis. Etenim σύχνεων, sive rete, quod Aquila posuit et Symmachus, per SIN (ש) litteram scribitur: hic vero (ס) SAMECH littera posita est: ex quo manifestum est non interpretationem stirpium condensarum, et in modum retis inter se virgulta contexta verbum Sabech, sed nomen sonare virgulti, quod ita Hebraice dicitur. Ego vero diligenter inquirens, συχνεῶνα per SAMECH (ס) litteram scribi crebro reperi.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

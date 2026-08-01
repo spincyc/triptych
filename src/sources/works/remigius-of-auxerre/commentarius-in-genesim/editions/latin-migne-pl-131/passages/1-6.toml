@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.1-6"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "1.6"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 6.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[39, 39]]
+text = """
+Vers. 6. Fiat firmamentum in medio aquarum. Quo scilicet firmamento aquae superiores divisae sunt ab aquis inferioribus, et illa pars superior in modum crystallini lapidis congelata est, caetera vero inferior | in mare redacta est. Et hoc quidem secunda die actum est, cujus diei opera minime bona esse dicuntur, sicut caeterorum dierum ubi dicitur: Vidit Deus, quod esset bonum, non ideo quod bonum non sit quod factum est, et pulchrum, sed propter binarium numerum, qui est transgressio unitatis et malam habet significationem. Unde et eum sancti Patres discordiae dedicaverunt. Ipse etiam bigamiam significat. In ejus etiam significatione bina animalia de immundis missa sunt in aream.\
+"""
+transcription_segments = [
+  { line = 39, text = """
+Vers. 6. Fiat firmamentum in medio aquarum. Quo scilicet firmamento aquae superiores divisae sunt ab aquis inferioribus, et illa pars superior in modum crystallini lapidis congelata est, caetera vero inferior | in mare redacta est. Et hoc quidem secunda die actum est, cujus diei opera minime bona esse dicuntur, sicut caeterorum dierum ubi dicitur: Vidit Deus, quod esset bonum, non ideo quod bonum non sit quod factum est, et pulchrum, sed propter binarium numerum, qui est transgressio unitatis et malam habet significationem. Unde et eum sancti Patres discordiae dedicaverunt. Ipse etiam bigamiam significat. In ejus etiam significatione bina animalia de immundis missa sunt in aream.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

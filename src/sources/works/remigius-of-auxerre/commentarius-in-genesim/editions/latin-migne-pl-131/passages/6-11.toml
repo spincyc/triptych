@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.6-11"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "6.11"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 16.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[131, 131]]
+text = """
+Vers. 16. Fenestram in arca facies. Ad hoc fenestra in arcae summitate facta est, ut haberet aditum Noe, per quam emitteret, sicut postea fecit emittens columbam et corvum. Quam fenestram tradunt Hebraei crystallinam fuisse. Mystice autem Noe, vir justus et perfectus nomine et actu, Christum significat. Interpretatur enim requies, quia electos suos finitis laboribus saeculi hujus ad aeternam Christus perducturus est requiem. Qui vere solus et justus et perfectus est, de quo Apostolus: Ut sit ipse justus et justificans eum qui ex fide est (Rom. III, 26). Potest etiam Noe typum tenere praepositorum in Ecclesia sive etiam totius familiae Christi, membrorum videlicet | ejus qui per lignum crucis et aquam baptismatis salvantur. Arca vero sancta est Ecclesia quae de lignis levigatis, hoc est, sanctis in aeternum victuris construitur. Et sicut in arca diversa erant genera animalium, sic in Ecclesia diversa sunt hominum genera. Ostium in latere vulnus significat in latere Christi, de quo ipsa Ecclesia una cum sacramentis constat sanguinis et aquae.\
+"""
+transcription_segments = [
+  { line = 131, text = """
+Vers. 16. Fenestram in arca facies. Ad hoc fenestra in arcae summitate facta est, ut haberet aditum Noe, per quam emitteret, sicut postea fecit emittens columbam et corvum. Quam fenestram tradunt Hebraei crystallinam fuisse. Mystice autem Noe, vir justus et perfectus nomine et actu, Christum significat. Interpretatur enim requies, quia electos suos finitis laboribus saeculi hujus ad aeternam Christus perducturus est requiem. Qui vere solus et justus et perfectus est, de quo Apostolus: Ut sit ipse justus et justificans eum qui ex fide est (Rom. III, 26). Potest etiam Noe typum tenere praepositorum in Ecclesia sive etiam totius familiae Christi, membrorum videlicet | ejus qui per lignum crucis et aquam baptismatis salvantur. Arca vero sancta est Ecclesia quae de lignis levigatis, hoc est, sanctis in aeternum victuris construitur. Et sicut in arca diversa erant genera animalium, sic in Ecclesia diversa sunt hominum genera. Ostium in latere vulnus significat in latere Christi, de quo ipsa Ecclesia una cum sacramentis constat sanguinis et aquae.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

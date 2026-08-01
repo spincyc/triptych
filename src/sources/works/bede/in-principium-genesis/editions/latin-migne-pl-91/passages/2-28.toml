@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-28"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.28"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[147, 147]]
+text = """
+Et vocavit nomina eorum Adam in die quo creati sunt. Adam sicut et Enos interpretatur Homo, sed sic Enos sonare fertur Hominem, ut masculis tantum congruat: Adam vero ita ut utrique sexui possit aptari; unde recte dicitur quia vocavit nomina eorum Adam, id est, Homo. Sicut autem homo Latine ab humo nominis etymologiam habet, quia de humo carnis originem traxit, ita apud Hebraeos Adam a terra nominatur, quia de limo terrae homo formatus est; unde etiam Adam Terrenus, sive terra rubra potest interpretari. Porro apud Graecos homo aliam habet etymologiam: vocatur enim antropos, ab eo quod superna speculari et ad coelestia contuenda debeat oculos mentis attollere. Inest autem nomini Adam, excepta interpretatione qua hominem designat, et aliud sacramentum quod silentio praeteriri non debet. Habet enim litteras quatuor A, et D, et A, et M, a quibus litteris et quatuor orbis plagae, cum Graece nominantur, initium sumunt. Vocatur namque apud eos anatole oriens, dysis occidens, arctos septentrio, mesembria meridies; multumque decebat ut nomen protoplasti omnes mundi plagas ipse mystice contineret, per cujus progeniem mundus erat omnis implendus. Quod autem dicit, Et vocavit nomina eorum Adam, et addidit, In die quo creati sunt, patenter insinuat quod uno eodemque die, id est, sexto mundi nascentis, Adam et uxor ejus facti sunt, et non uxor de latere ejus post sextum aut septimum diem seorsum creata.\
+"""
+transcription_segments = [
+  { line = 147, text = """
+Et vocavit nomina eorum Adam in die quo creati sunt. Adam sicut et Enos interpretatur Homo, sed sic Enos sonare fertur Hominem, ut masculis tantum congruat: Adam vero ita ut utrique sexui possit aptari; unde recte dicitur quia vocavit nomina eorum Adam, id est, Homo. Sicut autem homo Latine ab humo nominis etymologiam habet, quia de humo carnis originem traxit, ita apud Hebraeos Adam a terra nominatur, quia de limo terrae homo formatus est; unde etiam Adam Terrenus, sive terra rubra potest interpretari. Porro apud Graecos homo aliam habet etymologiam: vocatur enim antropos, ab eo quod superna speculari et ad coelestia contuenda debeat oculos mentis attollere. Inest autem nomini Adam, excepta interpretatione qua hominem designat, et aliud sacramentum quod silentio praeteriri non debet. Habet enim litteras quatuor A, et D, et A, et M, a quibus litteris et quatuor orbis plagae, cum Graece nominantur, initium sumunt. Vocatur namque apud eos anatole oriens, dysis occidens, arctos septentrio, mesembria meridies; multumque decebat ut nomen protoplasti omnes mundi plagas ipse mystice contineret, per cujus progeniem mundus erat omnis implendus. Quod autem dicit, Et vocavit nomina eorum Adam, et addidit, In die quo creati sunt, patenter insinuat quod uno eodemque die, id est, sexto mundi nascentis, Adam et uxor ejus facti sunt, et non uxor de latere ejus post sextum aut septimum diem seorsum creata.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

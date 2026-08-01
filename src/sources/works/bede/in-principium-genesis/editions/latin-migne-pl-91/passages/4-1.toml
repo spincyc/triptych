@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-1"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[303, 303]]
+text = """
+His itaque transactis, factus est sermo Domini ad Abram per visionem, dicens: Noli timere, Abram, ego protector tuus sum et merces tua magna nimis. Benedictionem quam a sacerdote Melchisedech perceperat Abraham, hanc per se Dominus ipse confirmat. Dixerat quippe sacerdos: Et benedictus Deus excelsus, quo protegente hostes in manibus tuis sunt (Gen. XIV, 20). Dicit Dominus: Ego protector tuus sum. Dixerat sacerdos: Benedictus Deus excelsus. Dicit ipse Deus: Et merces tua magna nimis. Mercedem autem dicit, non tantum dilectionis, quam fratri in angustia posito exhibuerat; sed et totius dilectionis, qua ipsi Domino ex quo patriam parentesque deseruerat, integro ex corde servierat.\
+"""
+transcription_segments = [
+  { line = 303, text = """
+His itaque transactis, factus est sermo Domini ad Abram per visionem, dicens: Noli timere, Abram, ego protector tuus sum et merces tua magna nimis. Benedictionem quam a sacerdote Melchisedech perceperat Abraham, hanc per se Dominus ipse confirmat. Dixerat quippe sacerdos: Et benedictus Deus excelsus, quo protegente hostes in manibus tuis sunt (Gen. XIV, 20). Dicit Dominus: Ego protector tuus sum. Dixerat sacerdos: Benedictus Deus excelsus. Dicit ipse Deus: Et merces tua magna nimis. Mercedem autem dicit, non tantum dilectionis, quam fratri in angustia posito exhibuerat; sed et totius dilectionis, qua ipsi Domino ex quo patriam parentesque deseruerat, integro ex corde servierat.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

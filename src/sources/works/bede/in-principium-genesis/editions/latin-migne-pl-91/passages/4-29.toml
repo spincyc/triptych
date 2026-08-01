@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-29"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.29"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[332, 332]]
+text = """
+Eritque pactum meum in carne vestra in foedus aeternum. Quo foedere utique significatur quod carnem vestram et animam simul perpetua sim innovatione atque immortalitate vestiturus.\
+"""
+transcription_segments = [
+  { line = 332, text = """
+Eritque pactum meum in carne vestra in foedus aeternum. Quo foedere utique significatur quod carnem vestram et animam simul perpetua sim innovatione atque immortalitate vestiturus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

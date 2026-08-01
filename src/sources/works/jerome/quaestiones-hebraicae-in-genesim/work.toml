@@ -1,0 +1,16 @@
+schema = 1
+record_type = "work"
+id = "work.jerome.quaestiones-hebraicae-in-genesim"
+title = "Liber quaestionum hebraicarum in Genesim"
+responsible = "Jerome"
+work_type = "biblical-commentary"
+composed = "c. 391-393"
+composed_basis = "Written at Bethlehem and named in Jerome's own De viris illustribus 135, finished in 393, among the works already published; the preface announces it as the first of a series of Hebrew Questions on the whole of Scripture that he never continued. The early 390s is as close as the evidence held here reaches. The date is the writing, not the 1845 printing and not Vallarsi's 1767 edition."
+alternate_titles = [
+  "Quaestiones Hebraicae in Genesim",
+  "Liber Hebraicarum Quaestionum in Genesim",
+  "Hebrew Questions on Genesis",
+]
+languages = ["lat"]
+locus_pattern = '(?:praefatio|[1-9][0-9]{0,2})'
+description = "Not a commentary but a collection of notes, each on one verse, comparing the Latin and Greek of a passage with the Hebrew behind it and with Aquila, Symmachus and Theodotion. Jerome's preface answers his critics before he begins and tells the reader to look for no eloquence in it. The questions run from Genesis 1:2 to Genesis 49, passing over whatever raises nothing in the Hebrew, which is most of the book."

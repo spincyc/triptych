@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.44"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "44"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 4.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[47, 47]]
+text = """
+(Vers. 4.) Filii Javan, Elisa, et Tharsis, Cethim et Dodanim. Ab his divisae sunt insulae nationum in terris suis. Vir secundum linguam suam et cognationem suam, et gentem suam. De Ionibus, id est, Graecis nascuntur Elisaei, qui vocantur Aeolides: unde et quinta lingua Graeciae Aeolis appellatur, quam illi vocant πέμπτην διάλεκτον. THARSIS Josephus Cilicas arbitratur, θ aspirationis litteram vitiose a posteris in τ dicens fuisse corruptam: unde et metropolis eorum civitas Tarsus appellatur, Paulo apostolo gloriosa. Cethim, sunt Citii, a quibus usque hodie quoque urbs Cypri Citium nominatur. Dodanim, Rhodii: ita enim Septuaginta Interpretes transtulerunt. Legamus Varronis de Antiquitatibus libros, et Sisinnii Capitonis, et Graecum Phlegonta, caeterosque eruditissimos viros: et videbimus omnes pene insulas, et totius orbis littora, terrasque mari vicinas, Graecis accolis occupatas: qui, ut supra diximus, ab Amano et Tauro montibus, omnia maritima loca usque ad oceanum possedere Britannicum.\
+"""
+transcription_segments = [
+  { line = 47, text = """
+(Vers. 4.) Filii Javan, Elisa, et Tharsis, Cethim et Dodanim. Ab his divisae sunt insulae nationum in terris suis. Vir secundum linguam suam et cognationem suam, et gentem suam. De Ionibus, id est, Graecis nascuntur Elisaei, qui vocantur Aeolides: unde et quinta lingua Graeciae Aeolis appellatur, quam illi vocant πέμπτην διάλεκτον. THARSIS Josephus Cilicas arbitratur, θ aspirationis litteram vitiose a posteris in τ dicens fuisse corruptam: unde et metropolis eorum civitas Tarsus appellatur, Paulo apostolo gloriosa. Cethim, sunt Citii, a quibus usque hodie quoque urbs Cypri Citium nominatur. Dodanim, Rhodii: ita enim Septuaginta Interpretes transtulerunt. Legamus Varronis de Antiquitatibus libros, et Sisinnii Capitonis, et Graecum Phlegonta, caeterosque eruditissimos viros: et videbimus omnes pene insulas, et totius orbis littora, terrasque mari vicinas, Graecis accolis occupatas: qui, ut supra diximus, ab Amano et Tauro montibus, omnia maritima loca usque ad oceanum possedere Britannicum.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

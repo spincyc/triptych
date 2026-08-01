@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-5"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.5"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[115, 115]]
+text = """
+Iratusque est Cain vehementer, et concidit vultus ejus. Unde noverat Cain respexisse Dominum ad Abel et ad munera ejus; a se autem ac suis muneribus vultum avertisse, nisi quia, sicut quidam interpretati sunt, inflammavit Dominus super Abel et sacrificium ejus, super Cain vero et sacrificium ejus non inflammavit, id est igne misso de coelis hostiam Abel suscepit, quod saepissime factum offerentibus sanctis viris legimus. Cain vero ipse sacrificium suum consumere igne debebat. Nam et hoc significare videtur Apostolus, cum ait: Fide plurimam hostiam Abel quam Cain obtulit Deo, per quam testimonium consecutus est esse justus, testimonium perhibente muneribus ejus Deo (Hebr. XI, 4). Testimonium ergo perhibuit muneribus Abel Deus per ignem, haec suscipiendo de coelis, quo etiam Apostoli testimonio docemur, quod hostia Abel per fidei illius devotionem acceptabilis Deo facta est, et e contrario subintelligere debemus Cain propterea reprobatum, quod non integra suo Conditori fide servierit.\
+"""
+transcription_segments = [
+  { line = 115, text = """
+Iratusque est Cain vehementer, et concidit vultus ejus. Unde noverat Cain respexisse Dominum ad Abel et ad munera ejus; a se autem ac suis muneribus vultum avertisse, nisi quia, sicut quidam interpretati sunt, inflammavit Dominus super Abel et sacrificium ejus, super Cain vero et sacrificium ejus non inflammavit, id est igne misso de coelis hostiam Abel suscepit, quod saepissime factum offerentibus sanctis viris legimus. Cain vero ipse sacrificium suum consumere igne debebat. Nam et hoc significare videtur Apostolus, cum ait: Fide plurimam hostiam Abel quam Cain obtulit Deo, per quam testimonium consecutus est esse justus, testimonium perhibente muneribus ejus Deo (Hebr. XI, 4). Testimonium ergo perhibuit muneribus Abel Deus per ignem, haec suscipiendo de coelis, quo etiam Apostoli testimonio docemur, quod hostia Abel per fidei illius devotionem acceptabilis Deo facta est, et e contrario subintelligere debemus Cain propterea reprobatum, quod non integra suo Conditori fide servierit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

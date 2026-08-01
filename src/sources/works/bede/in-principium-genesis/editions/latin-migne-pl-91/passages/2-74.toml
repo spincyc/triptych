@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-74"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.74"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[202, 202]]
+text = """
+Cunctis diebus terrae sementis et messis, frigus et aestus, aestas et hiems, nox et dies, non requiescent. Cum enim dixisset cunctis diebus, mox addidit terrae, ut intelligeres cunctis diebus quibus terra modernum habitura est statum securos homines ab impetu universalis diluvii esse debere; nec tamen defuturum tempus quando, cessante hac labentium rerum vicissitudine quae annuatim geritur, orbis universus cum animantibus sit igne periturus, Petro attestante, qui ait: Quia coeli erant prius, et terra, de aqua et per aquam consistens Dei verbo, per quae ille tunc mundus aqua inundatus periit. Coeli autem qui nunc sunt, et terra, eodem verbo repositi sunt igni reservati in diem judicii (II Pet. III, 5). Ubi notandum quia coelos quos vel aqua perditos vel igni perituros dicit, non alios quam turbulentum hunc aerem qui terrae proximus est accipere debemus, a quo volucres coeli quod in eo volitent, cognominantur. Non enim aetherei aut siderei coeli igne consumendi sunt, sicut nec aqua consumpti sunt.\
+"""
+transcription_segments = [
+  { line = 202, text = """
+Cunctis diebus terrae sementis et messis, frigus et aestus, aestas et hiems, nox et dies, non requiescent. Cum enim dixisset cunctis diebus, mox addidit terrae, ut intelligeres cunctis diebus quibus terra modernum habitura est statum securos homines ab impetu universalis diluvii esse debere; nec tamen defuturum tempus quando, cessante hac labentium rerum vicissitudine quae annuatim geritur, orbis universus cum animantibus sit igne periturus, Petro attestante, qui ait: Quia coeli erant prius, et terra, de aqua et per aquam consistens Dei verbo, per quae ille tunc mundus aqua inundatus periit. Coeli autem qui nunc sunt, et terra, eodem verbo repositi sunt igni reservati in diem judicii (II Pet. III, 5). Ubi notandum quia coelos quos vel aqua perditos vel igni perituros dicit, non alios quam turbulentum hunc aerem qui terrae proximus est accipere debemus, a quo volucres coeli quod in eo volitent, cognominantur. Non enim aetherei aut siderei coeli igne consumendi sunt, sicut nec aqua consumpti sunt.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

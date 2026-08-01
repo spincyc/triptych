@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-52"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.52"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[179, 179]]
+text = """
+In articulo diei illius ingressus est Noe et Sem et Cham et Japhet, filii ejus, et uxor ejus, et tres uxores filiorum ejus cum eis in arcam. Ipsi et omne animal secundum genus suum, et caetera usque dum ait: omnesque volucres ingressae sunt ad Noe in arcam. Cuncta ergo animantia uno eodemque die ingressa sunt in arcam, quia non Noe laboravit ea multo labore ac longo tempore colligere atque introducere vel minare in arcam; sed divino nutu coacta, sponte cuncta veniebant in suo quaeque numero, praecedente illo cum liberis suis et uxoribus, sequebantur ex ordine, ac suas singula mansiunculas, Domino agente, quasi propria sponte subibant. Ad hoc enim valet quod dicitur de avibus, ingressae sunt ad Noe in arcam, et supra generaliter, et ex omni quod movetur super terram duo et duo ingressa sunt ad Noe in arcam. Eodem quoque die, id est, septimo decimo mensis secundi factum est quod sequitur.\
+"""
+transcription_segments = [
+  { line = 179, text = """
+In articulo diei illius ingressus est Noe et Sem et Cham et Japhet, filii ejus, et uxor ejus, et tres uxores filiorum ejus cum eis in arcam. Ipsi et omne animal secundum genus suum, et caetera usque dum ait: omnesque volucres ingressae sunt ad Noe in arcam. Cuncta ergo animantia uno eodemque die ingressa sunt in arcam, quia non Noe laboravit ea multo labore ac longo tempore colligere atque introducere vel minare in arcam; sed divino nutu coacta, sponte cuncta veniebant in suo quaeque numero, praecedente illo cum liberis suis et uxoribus, sequebantur ex ordine, ac suas singula mansiunculas, Domino agente, quasi propria sponte subibant. Ad hoc enim valet quod dicitur de avibus, ingressae sunt ad Noe in arcam, et supra generaliter, et ex omni quod movetur super terram duo et duo ingressa sunt ad Noe in arcam. Eodem quoque die, id est, septimo decimo mensis secundi factum est quod sequitur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

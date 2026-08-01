@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-9"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.9"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 2 paragraphs."
+physical_line_ranges = [[311, 312]]
+text = """
+Descenderuntque volucres super cadavera, et abigebat eas Abram. Divisae volucres hae, quae super ea quae erant cadavera descenderunt, non boni aliquid, sed spiritus indicant aeris hujus pastum quemdam suum de carnalium divisione quaerentes; vel certe carnales ejusdem populi adversarios, qui juxta consilium Balaan arioli, de sceleribus eorum occasionem sibi victoriae aucupabantur, de quibus dicit propheta: Velociores fuerunt persecutores nostri aquilis coeli (Thren. IV, 19).
+
+Abigebat autem eas Abram, quia ejus meritis saepe, et de angustia temporalium malorum, et de insidiis spirituum malignorum liberatus est Israel.\
+"""
+transcription_segments = [
+  { line = 311, text = """
+Descenderuntque volucres super cadavera, et abigebat eas Abram. Divisae volucres hae, quae super ea quae erant cadavera descenderunt, non boni aliquid, sed spiritus indicant aeris hujus pastum quemdam suum de carnalium divisione quaerentes; vel certe carnales ejusdem populi adversarios, qui juxta consilium Balaan arioli, de sceleribus eorum occasionem sibi victoriae aucupabantur, de quibus dicit propheta: Velociores fuerunt persecutores nostri aquilis coeli (Thren. IV, 19).\
+""" },
+  { line = 312, text = """
+Abigebat autem eas Abram, quia ejus meritis saepe, et de angustia temporalium malorum, et de insidiis spirituum malignorum liberatus est Israel.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

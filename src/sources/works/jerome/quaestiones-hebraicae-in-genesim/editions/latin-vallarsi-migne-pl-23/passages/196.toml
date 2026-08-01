@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.196"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "196"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 9.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[200, 200]]
+text = """
+(Cap. XLV.—Vers. 9 et 10.) Descende ergo ad me, ne steteris, et habitabis in terra Gesen Arabiae. Hic Arabiae additum est: in Hebraeis enim voluminibus non habetur. Unde et error increbuit, quod terra Gesen in Arabia sit. Porro si, ut in nostris codicibus est, per extremum m scribitur GESEM (גשם), quod mihi nequaquam placet, terram signat complutam; GESEM enim in imbrem vertitur.\
+"""
+transcription_segments = [
+  { line = 200, text = """
+(Cap. XLV.—Vers. 9 et 10.) Descende ergo ad me, ne steteris, et habitabis in terra Gesen Arabiae. Hic Arabiae additum est: in Hebraeis enim voluminibus non habetur. Unde et error increbuit, quod terra Gesen in Arabia sit. Porro si, ut in nostris codicibus est, per extremum m scribitur GESEM (גשם), quod mihi nequaquam placet, terram signat complutam; GESEM enim in imbrem vertitur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

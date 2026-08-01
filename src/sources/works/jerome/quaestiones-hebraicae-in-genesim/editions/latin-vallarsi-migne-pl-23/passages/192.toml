@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.192"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "192"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 50.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[196, 196]]
+text = """
+(Vers. 50 et seqq.) Et Joseph nati sunt duo filii antequam venirent anni famis, quos peperit ei Aseneth filia Phutipharis sacerdotis Heliopoleos. Vocavit autem Joseph nomen primogeniti Manasse: quia oblivisci me fecit Deus omnium laborum meorum, et omnis domus patris mei. Nomen autem secundi vocavit Ephraim, quia crescere me fecit Deus in terra humilitatis meae. Observa propter quaestionem, quae post paululum de Joseph filiis proponenda est, quod ante famis tempus, quo Jacob intravit in Aegyptum, duos tantum Joseph filios habuerit, Manasse et Ephraim. Manasse vocans ab eo, quod sit oblitus laborum suorum: ita enim Hebraice vocatur oblivio. Ephraim, eo quod auxerit eum Deus. Et ex hoc enim vocabulo in linguam nostram transfertur augmentum.\
+"""
+transcription_segments = [
+  { line = 196, text = """
+(Vers. 50 et seqq.) Et Joseph nati sunt duo filii antequam venirent anni famis, quos peperit ei Aseneth filia Phutipharis sacerdotis Heliopoleos. Vocavit autem Joseph nomen primogeniti Manasse: quia oblivisci me fecit Deus omnium laborum meorum, et omnis domus patris mei. Nomen autem secundi vocavit Ephraim, quia crescere me fecit Deus in terra humilitatis meae. Observa propter quaestionem, quae post paululum de Joseph filiis proponenda est, quod ante famis tempus, quo Jacob intravit in Aegyptum, duos tantum Joseph filios habuerit, Manasse et Ephraim. Manasse vocans ab eo, quod sit oblitus laborum suorum: ita enim Hebraice vocatur oblivio. Ephraim, eo quod auxerit eum Deus. Et ex hoc enim vocabulo in linguam nostram transfertur augmentum.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

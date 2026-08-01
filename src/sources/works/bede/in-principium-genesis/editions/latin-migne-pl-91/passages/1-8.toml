@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-8"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.8"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[19, 19]]
+text = """
+Dixit vero Deus: Congregentur aquae quae sub coelo sunt in locum unum, et appareat arida; factumque est ita. Subducuntur aquae quae inter coelum et terram universa compleverant, et unum congregantur in locum, ut et lux quae praeterito biduo aquas clara lustrabat, clarior puro in aere splendesceret; et terra quae latebat appareret, quaeque contecta aquis limosa manebat et invalida, harum abscessu, redderetur arida, et suscipiendis apta germinibus. Si quis vero quaesierit ubi congregatae sint aquae quae omnes terrae partes ad coelum usque cooperuerant, sciat fieri potuisse ut terra ipsa longe lateque jussu Creatoris subsidens alias partes praeberet concavas, quibus confluentes aquae reciperentur, ut appareret arida ex his partibus, unde humor abscesserat. Potest etiam non absurde credi rariores, sicut et supra commemoravimus, primarias fuisse aquas, quae velut nebulae terras tegerent; congregatione autem esse spissatas, quae datis sibi locis capi possent, apparente arida in reliquis. Bene autem cum multa constet esse maria, in locum tamen unum congregatas dicit aquas, quia videlicet cuncta haec jugi unda atque continua Oceano ac mari junguntur magno; sed etsi qui lacus in semetipsis videntur esse circumscripti, et hos ferunt occultis quibusdam perforatos cavernis, in mare suos evolvere meatus. Nam et fossores puteorum hoc probant, quia tellus omnis per invisibiles venas aquis est repleta manantibus, quae trahunt ex mari principium.\
+"""
+transcription_segments = [
+  { line = 19, text = """
+Dixit vero Deus: Congregentur aquae quae sub coelo sunt in locum unum, et appareat arida; factumque est ita. Subducuntur aquae quae inter coelum et terram universa compleverant, et unum congregantur in locum, ut et lux quae praeterito biduo aquas clara lustrabat, clarior puro in aere splendesceret; et terra quae latebat appareret, quaeque contecta aquis limosa manebat et invalida, harum abscessu, redderetur arida, et suscipiendis apta germinibus. Si quis vero quaesierit ubi congregatae sint aquae quae omnes terrae partes ad coelum usque cooperuerant, sciat fieri potuisse ut terra ipsa longe lateque jussu Creatoris subsidens alias partes praeberet concavas, quibus confluentes aquae reciperentur, ut appareret arida ex his partibus, unde humor abscesserat. Potest etiam non absurde credi rariores, sicut et supra commemoravimus, primarias fuisse aquas, quae velut nebulae terras tegerent; congregatione autem esse spissatas, quae datis sibi locis capi possent, apparente arida in reliquis. Bene autem cum multa constet esse maria, in locum tamen unum congregatas dicit aquas, quia videlicet cuncta haec jugi unda atque continua Oceano ac mari junguntur magno; sed etsi qui lacus in semetipsis videntur esse circumscripti, et hos ferunt occultis quibusdam perforatos cavernis, in mare suos evolvere meatus. Nam et fossores puteorum hoc probant, quia tellus omnis per invisibiles venas aquis est repleta manantibus, quae trahunt ex mari principium.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

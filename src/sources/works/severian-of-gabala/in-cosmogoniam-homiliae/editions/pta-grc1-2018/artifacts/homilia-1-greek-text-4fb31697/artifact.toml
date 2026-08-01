@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-1-greek-text-4fb31697"
+edition_id = "edition.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018"
+artifact_type = "web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "Severian’s Greek as the Patristic Text Archive prints it, under the CC BY-SA 4.0 licence that file’s own header states, which permits redistribution with attribution and under the same terms. The attribution is carried on the edition record: the transcription is Sever J. Voicu’s and the TEI encoding and biblical annotation Annette von Stockhausen’s, published by the Berlin-Brandenburgische Akademie der Wissenschaften. No part of the encoding, the apparatus or the annotation is reproduced in these bytes; only the Greek is."
+rights_jurisdiction = "Germany"
+license = "CC-BY-SA-4.0"
+provenance = "Derived on 2026-08-01 from the hashed TEI above by the tracked script named in transformation. No model stood anywhere in the path. The file holds 8 lines, one per paragraph of the edition, the first being the homily’s title as the printing gives it."
+retrieved = "2026-08-01"
+sha256 = "4fb31697bc194b3295467154b33592f886980be83e0f4173d67f2515f95af892"
+byte_size = 45531
+path = "src/sources/works/severian-of-gabala/in-cosmogoniam-homiliae/editions/pta-grc1-2018/artifacts/homilia-1-greek-text-4fb31697/severian-in-cosmogoniam-1.txt"
+derived_from = "artifact.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-1-tei-994c2aef"
+transformation = "python3 scripts/pta_transcribe.py <edition> --out <name>.txt, run over the exact bytes of the parent artifact. The script keeps the edition division's prose paragraph by paragraph, prefixed by a braced locator giving the file's own CTS chapter and the paragraph within it; keeps quotations, editorial insertions and the names of persons, places and groups, which are prose; removes the editors' biblical pointers, the source printing's page, line and column breaks, and every note body; normalises to NFC so a polytonic accent written as a combining sequence and the same accent precomposed cannot produce two files from one reading; and collapses runs of whitespace."
+encoding = "utf-8"
+indexable = true
+notes = "Keyed text, not OCR, which is the whole reason this route was taken: the same homilies stand in Migne’s Patrologia Graeca 56 on the Internet Archive, whose polytonic OCR is not usable text. Inspected against the transcription, not collated against Migne’s printed column."

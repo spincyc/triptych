@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-40"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.40"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[347, 347]]
+text = """
+Tulit quoque butyrum, et lac, et vitulum quem coxerat, et posuit coram eis. Per lac primordia et velut elementa legis Mosaicae, per butyrum evangelicae perfectio doctrinae; per lac simplicitas litterae in Scripturis, per butyrum virtus sensus mystici qui de littera generari solet exprimitur. Vel certe lac initium fidei, butyrum perfectionem operis quae ex fide creatur insinuat. Quae cuncta Abraham posuit coram viris quos susceperat, ut significaret filios promissionis epulas spiritales Domino semper oblaturos, panes videlicet lectionum sanctarum, vitulum dominicae Incarnationis, lac fidei sive historicae perfectionis; butyrum sensuum sive operum bonorum, ubi bene adjungitur:\
+"""
+transcription_segments = [
+  { line = 347, text = """
+Tulit quoque butyrum, et lac, et vitulum quem coxerat, et posuit coram eis. Per lac primordia et velut elementa legis Mosaicae, per butyrum evangelicae perfectio doctrinae; per lac simplicitas litterae in Scripturis, per butyrum virtus sensus mystici qui de littera generari solet exprimitur. Vel certe lac initium fidei, butyrum perfectionem operis quae ex fide creatur insinuat. Quae cuncta Abraham posuit coram viris quos susceperat, ut significaret filios promissionis epulas spiritales Domino semper oblaturos, panes videlicet lectionum sanctarum, vitulum dominicae Incarnationis, lac fidei sive historicae perfectionis; butyrum sensuum sive operum bonorum, ubi bene adjungitur:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

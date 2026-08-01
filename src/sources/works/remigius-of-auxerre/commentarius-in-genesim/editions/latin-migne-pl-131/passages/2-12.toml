@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.2-12"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "2.12"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 21.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[74, 74]]
+text = """
+Vers. 21. Immisit Dominus soporem in Adam, et tulit unam de costis ejus. Nunquid vigilante Adam | sine dolore Dominus costam ejus auferre non potuit quam eo dormiente abstulisse dicitur? Potuit utique. Sed hoc in mysterio potius fuisse credendum est, ut in principio mundi praefiguraretur sacramentum Dominicae passionis quod suo tempore, id est, in novissima saeculi aetate futurum erat. Nam dormitio Adae mortem Christi significat in cruce. Quo in cruce pendente, mysteria sanguinis et aquae de ejus latere profluxerunt, quibus sancta constat Ecclesia et unde roboratur. Unde et bene dicit: non formavit costam, sed aedificavit, quasi domum Ecclesiae praesignans quae ex vivis et electis lapidibus aedificatur. Et quod superius dixit breviter: Masculum et feminam creavit eos, nunc apertius exponit quomodo ipsam feminam creaverit:\
+"""
+transcription_segments = [
+  { line = 74, text = """
+Vers. 21. Immisit Dominus soporem in Adam, et tulit unam de costis ejus. Nunquid vigilante Adam | sine dolore Dominus costam ejus auferre non potuit quam eo dormiente abstulisse dicitur? Potuit utique. Sed hoc in mysterio potius fuisse credendum est, ut in principio mundi praefiguraretur sacramentum Dominicae passionis quod suo tempore, id est, in novissima saeculi aetate futurum erat. Nam dormitio Adae mortem Christi significat in cruce. Quo in cruce pendente, mysteria sanguinis et aquae de ejus latere profluxerunt, quibus sancta constat Ecclesia et unde roboratur. Unde et bene dicit: non formavit costam, sed aedificavit, quasi domum Ecclesiae praesignans quae ex vivis et electis lapidibus aedificatur. Et quod superius dixit breviter: Masculum et feminam creavit eos, nunc apertius exponit quomodo ipsam feminam creaverit:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

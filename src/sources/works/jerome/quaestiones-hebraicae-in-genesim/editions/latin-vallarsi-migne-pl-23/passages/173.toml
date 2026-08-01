@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.173"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "173"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 24.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[177, 177]]
+text = """
+(Vers. 24.) Ipse est Ana, qui invenit Jamin in deserto, cum pasceret asinos Zebeon patris sui. Multa et varia apud Hebraeos de hoc capitulo disputantur: apud Graecos quippe et nostros super hoc silentium est. Alii putant AJAMIM (הימם) maria appellata. Iisdem enim litteris scribuntur maria, quibus et nunc hic sermo descriptus est. Et volunt illum, dum pascit asinos patris sui in deserto, aquarum congregationes reperisse, quae juxta idioma linguae Hebraicae maria nuncupentur: quod scilicet stagnum repererit, cujus rei inventio in eremo difficilis est. Nonnulli putant, aquas calidas juxta Punicae linguae viciniam, quae Hebraeae contermina est, hoc vocabulo signari. Sunt qui arbitrentur onagros ab hoc admissos esse ad asinas: et ipsum istius modi reperisse concubitum, ut velocissimi ex his asini nascerentur qui vocantur JAMIM (ימים). Plerique putant, quod equarum greges ab asinis in deserto ipse fecerit primus ascendi, ut mulorum inde nova contra naturam animalia nascerentur. Aquila hunc locum ita transtulit: Ipse est Ana, qui invenit σὺν τοὺς ἐμίμ. Et Symmachus similiter τοὺς ἐμὶμ, quae interpretatio pluralem numerum significat. Septuaginta vero, et Theodotion aequaliter transtulerunt dicentes: τὸν ἰαμὶμ, quod indicat numerum singularem.\
+"""
+transcription_segments = [
+  { line = 177, text = """
+(Vers. 24.) Ipse est Ana, qui invenit Jamin in deserto, cum pasceret asinos Zebeon patris sui. Multa et varia apud Hebraeos de hoc capitulo disputantur: apud Graecos quippe et nostros super hoc silentium est. Alii putant AJAMIM (הימם) maria appellata. Iisdem enim litteris scribuntur maria, quibus et nunc hic sermo descriptus est. Et volunt illum, dum pascit asinos patris sui in deserto, aquarum congregationes reperisse, quae juxta idioma linguae Hebraicae maria nuncupentur: quod scilicet stagnum repererit, cujus rei inventio in eremo difficilis est. Nonnulli putant, aquas calidas juxta Punicae linguae viciniam, quae Hebraeae contermina est, hoc vocabulo signari. Sunt qui arbitrentur onagros ab hoc admissos esse ad asinas: et ipsum istius modi reperisse concubitum, ut velocissimi ex his asini nascerentur qui vocantur JAMIM (ימים). Plerique putant, quod equarum greges ab asinis in deserto ipse fecerit primus ascendi, ut mulorum inde nova contra naturam animalia nascerentur. Aquila hunc locum ita transtulit: Ipse est Ana, qui invenit σὺν τοὺς ἐμίμ. Et Symmachus similiter τοὺς ἐμὶμ, quae interpretatio pluralem numerum significat. Septuaginta vero, et Theodotion aequaliter transtulerunt dicentes: τὸν ἰαμὶμ, quod indicat numerum singularem.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

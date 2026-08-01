@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-58"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.58"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[365, 365]]
+text = """
+Dixitque Lot ad eos: Quaeso, domine mi, quia invenit servus tuus gratiam coram te, et magnificasti misericordiam tuam quam fecisti mecum, ut salvares animam meam, nec possum in monte salvari ne forte apprehendat me malum. Est civitas haec juxta ad quam possum fugere parva, et salvabor in ea. Non ita praesidium vicinae civitatis petiit beatus Lot, quasi malum sibi alicujus plagae superventurum timeret, si ad montem pervenire potuisset; sed ea potius intentione ad civitatem juxta positam divertere cupiebat, ne dum montis altitudinem qui longius aberat peteret, in ipso itinere positum flamma quae impiis proxima imminebat absumeret.\
+"""
+transcription_segments = [
+  { line = 365, text = """
+Dixitque Lot ad eos: Quaeso, domine mi, quia invenit servus tuus gratiam coram te, et magnificasti misericordiam tuam quam fecisti mecum, ut salvares animam meam, nec possum in monte salvari ne forte apprehendat me malum. Est civitas haec juxta ad quam possum fugere parva, et salvabor in ea. Non ita praesidium vicinae civitatis petiit beatus Lot, quasi malum sibi alicujus plagae superventurum timeret, si ad montem pervenire potuisset; sed ea potius intentione ad civitatem juxta positam divertere cupiebat, ne dum montis altitudinem qui longius aberat peteret, in ipso itinere positum flamma quae impiis proxima imminebat absumeret.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

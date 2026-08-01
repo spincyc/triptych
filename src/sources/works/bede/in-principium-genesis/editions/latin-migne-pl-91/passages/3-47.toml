@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-47"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.47"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[275, 275]]
+text = """
+Tulit itaque Sarai uxorem suam, et Loth filium fratris sui, universamque substantiam quam possederant et animas quas fecerant in Haran; et egressi sunt ut irent in terram Chanaan. Quod dixit animas quas fecerunt pro eo positum est, ut diceret filios quos genuerant. Solet enim in Scripturis homo aliquando animae solius, aliquando carnis nomine solius indicari. Animae, sicut dictum est: anima quae peccaverit, ipsa morietur (Ezech. XVIII, 20); carnis, ut in Psalmo: at te omnis caro veniet (Psal. LXIV, 3), cum neque caro sine anima ad Deum venire, neque sine carne possit anima peccare, sed propter unam partem totus homo signetur. Neque ex hac sententia quidquam habent auxilii qui sicut carnem ex carne, ita ex anima animam aestimant procreari: cum vocabulo animae, ut diximus, totus homo designetur. Animas autem fecisse, id est, animas procreasse in Haran non Abraham et Loth, sed familiae eorum et vernaculi intelligendi sunt: nam ipsos patriarchas adhuc absque liberis permansisse sequentia sacrae historiae testantur.\
+"""
+transcription_segments = [
+  { line = 275, text = """
+Tulit itaque Sarai uxorem suam, et Loth filium fratris sui, universamque substantiam quam possederant et animas quas fecerant in Haran; et egressi sunt ut irent in terram Chanaan. Quod dixit animas quas fecerunt pro eo positum est, ut diceret filios quos genuerant. Solet enim in Scripturis homo aliquando animae solius, aliquando carnis nomine solius indicari. Animae, sicut dictum est: anima quae peccaverit, ipsa morietur (Ezech. XVIII, 20); carnis, ut in Psalmo: at te omnis caro veniet (Psal. LXIV, 3), cum neque caro sine anima ad Deum venire, neque sine carne possit anima peccare, sed propter unam partem totus homo signetur. Neque ex hac sententia quidquam habent auxilii qui sicut carnem ex carne, ita ex anima animam aestimant procreari: cum vocabulo animae, ut diximus, totus homo designetur. Animas autem fecisse, id est, animas procreasse in Haran non Abraham et Loth, sed familiae eorum et vernaculi intelligendi sunt: nam ipsos patriarchas adhuc absque liberis permansisse sequentia sacrae historiae testantur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

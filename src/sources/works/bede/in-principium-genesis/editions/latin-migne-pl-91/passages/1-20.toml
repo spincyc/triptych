@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-20"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.20"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[32, 32]]
+text = """
+Factum est vespere et mane dies quartus. Haec est vespera illa memoranda, in qua populus Dei in Aegypto in celebrationem paschae obtulit agnum hoc mane quod primum post excussum longae servitutis jugum, coepto libertatis itinere, vidit. Scriptum est dicente Domino ad Moysen: Mensis iste vobis principium mensium primus erit in mensibus anni. Decima die mensis hujus tollat unusquisque agnum per familias et domos suas, et servabitis eum usque ad quartam decimam diem mensis hujus, immolabitque eum universa multitudo filiorum Israel, ad vesperam (Exod. XII, 2), etc. Qua etiam vespera, ad consummanda paschae legalis sacramenta, Dominus noster post esum agni typice mysteria nobis sui corporis et sanguinis celebranda initiavit; quo lucescente mane, quasi agnus immaculatus, suo nos sanguine redimens, a daemonicae dominationis servitute liberavit. Quae videlicet lunae plenissimae dies in creatione quidem mundi quarta processit; at in tempore Dominicae passionis, altioris gratia sacramenti, in quintam Sabbati incidit, ut videlicet Dominus sexta Sabbati crucifixus, Sabbato ipso in sepulcro quiesceret, ac primam Sabbati sua resurrectione consecraret, et nobis quoque in ea, in qua lux facta est, resurgendi a mortuis ac lucem perpetuam intrandi fidem spemque donaret.\
+"""
+transcription_segments = [
+  { line = 32, text = """
+Factum est vespere et mane dies quartus. Haec est vespera illa memoranda, in qua populus Dei in Aegypto in celebrationem paschae obtulit agnum hoc mane quod primum post excussum longae servitutis jugum, coepto libertatis itinere, vidit. Scriptum est dicente Domino ad Moysen: Mensis iste vobis principium mensium primus erit in mensibus anni. Decima die mensis hujus tollat unusquisque agnum per familias et domos suas, et servabitis eum usque ad quartam decimam diem mensis hujus, immolabitque eum universa multitudo filiorum Israel, ad vesperam (Exod. XII, 2), etc. Qua etiam vespera, ad consummanda paschae legalis sacramenta, Dominus noster post esum agni typice mysteria nobis sui corporis et sanguinis celebranda initiavit; quo lucescente mane, quasi agnus immaculatus, suo nos sanguine redimens, a daemonicae dominationis servitute liberavit. Quae videlicet lunae plenissimae dies in creatione quidem mundi quarta processit; at in tempore Dominicae passionis, altioris gratia sacramenti, in quintam Sabbati incidit, ut videlicet Dominus sexta Sabbati crucifixus, Sabbato ipso in sepulcro quiesceret, ac primam Sabbati sua resurrectione consecraret, et nobis quoque in ea, in qua lux facta est, resurgendi a mortuis ac lucem perpetuam intrandi fidem spemque donaret.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

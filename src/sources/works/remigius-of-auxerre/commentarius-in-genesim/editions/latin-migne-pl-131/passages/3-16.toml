@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.3-16"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "3.16"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 24.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[93, 93]]
+text = """
+Vers. 24. Collocavit autem ante paradisum voluptatis cherubim et flammeum gladium. Id est, per ministerium angelicum igneam custodiam constituit. Flammeus gladius tribulationes et labores significat hujus saeculi, quibus sancti in praesenti vita exercentur; sive per flammeum gladium significatur sententia justae damnationis quae homini data est. Qui tamen ita damnatus est, ut posset passione Christi redimi. Unde et recte gladius ipse versatilis dicitur qui posset aliquando removeri. Remotus est enim Henoch, et Eliae, et Domino baptizato omnibusque quotidie fidelibus, cum de hac vita ad illam supernam transeunt beatitudinem. Et non dicit: flammam et gladium, sed flammeum gladium: quia quicunque | ad paradisum redire cupiunt, necesse est ut igne Spiritus sancti omnes concupiscentias hujus vitae exurant, et gladio verbi Dei praecidant quidquid in se noxium et inutile conspexerint. Alia translatio habet: contra paradisum, quoniam vehemens contrarietas Adae contigit. Non enim parvo contraria sunt beatitudo et miseria. Siquidem qui prius beatus, factus est miser, et qui antea immortalis conditus, mortalis effectus est. Cherubim plenitudo scientiae interpretatur. Cherubim ergo et flammeus gladius ante paradisum collocatur, ut detur intelligi quia per scientiam disciplinae coelestis et per tribulationes et labores vitae praesentis ad paradisum possumus redire.\
+"""
+transcription_segments = [
+  { line = 93, text = """
+Vers. 24. Collocavit autem ante paradisum voluptatis cherubim et flammeum gladium. Id est, per ministerium angelicum igneam custodiam constituit. Flammeus gladius tribulationes et labores significat hujus saeculi, quibus sancti in praesenti vita exercentur; sive per flammeum gladium significatur sententia justae damnationis quae homini data est. Qui tamen ita damnatus est, ut posset passione Christi redimi. Unde et recte gladius ipse versatilis dicitur qui posset aliquando removeri. Remotus est enim Henoch, et Eliae, et Domino baptizato omnibusque quotidie fidelibus, cum de hac vita ad illam supernam transeunt beatitudinem. Et non dicit: flammam et gladium, sed flammeum gladium: quia quicunque | ad paradisum redire cupiunt, necesse est ut igne Spiritus sancti omnes concupiscentias hujus vitae exurant, et gladio verbi Dei praecidant quidquid in se noxium et inutile conspexerint. Alia translatio habet: contra paradisum, quoniam vehemens contrarietas Adae contigit. Non enim parvo contraria sunt beatitudo et miseria. Siquidem qui prius beatus, factus est miser, et qui antea immortalis conditus, mortalis effectus est. Cherubim plenitudo scientiae interpretatur. Cherubim ergo et flammeus gladius ante paradisum collocatur, ut detur intelligi quia per scientiam disciplinae coelestis et per tribulationes et labores vitae praesentis ad paradisum possumus redire.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

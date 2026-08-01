@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.4-11"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "4.11"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 17.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[103, 103]]
+text = """
+VERS. 17.-- Cognovit autem Cain uxorem suam, et peperit Henoch. Aliqui dicunt in hoc quod dicit, cognovit uxorem suam, significare quod [ Z., ut significaret quod] vindicta desineret, si uxorem non accepisset. Et aedificavit civitatem, vocavitque nomen ejus ex nomine filii sui Henoch. Henoch dedicatio interpretatur. In ipsius enim nomine civitatem postea aedificavit Cain. Hic primus civitatem construxisse describitur, ut aperte monstraretur quia ipse in terra fundamentum posuit, qui a soliditate aeternae | patriae alienus fuit. Peregrinus quippe a summis, fundamentum in imis posuit, qui stationem cordis in terrena delectatione collocavit. Unde in stirpe ejus Henoch, qui dedicatio interpretatur, primus nascitur; in electorum vero progenie Henoch septimus fuisse memoratur. Quia videlicet reprobi in hac vita, quae ante est, semetipsos aedificando dedicant. Electi vero aedificationis suae dedicationem in fine [ Pert., finem] temporis, id est in septimo exspectant. Hinc est quod Paulo attestante Abraham in casulis habitavit, quia habentem fundamenta civitatem, quam super nos [ Z., supernus] artifex construit, exspectabat.\
+"""
+transcription_segments = [
+  { line = 103, text = """
+VERS. 17.-- Cognovit autem Cain uxorem suam, et peperit Henoch. Aliqui dicunt in hoc quod dicit, cognovit uxorem suam, significare quod [ Z., ut significaret quod] vindicta desineret, si uxorem non accepisset. Et aedificavit civitatem, vocavitque nomen ejus ex nomine filii sui Henoch. Henoch dedicatio interpretatur. In ipsius enim nomine civitatem postea aedificavit Cain. Hic primus civitatem construxisse describitur, ut aperte monstraretur quia ipse in terra fundamentum posuit, qui a soliditate aeternae | patriae alienus fuit. Peregrinus quippe a summis, fundamentum in imis posuit, qui stationem cordis in terrena delectatione collocavit. Unde in stirpe ejus Henoch, qui dedicatio interpretatur, primus nascitur; in electorum vero progenie Henoch septimus fuisse memoratur. Quia videlicet reprobi in hac vita, quae ante est, semetipsos aedificando dedicant. Electi vero aedificationis suae dedicationem in fine [ Pert., finem] temporis, id est in septimo exspectant. Hinc est quod Paulo attestante Abraham in casulis habitavit, quia habentem fundamenta civitatem, quam super nos [ Z., supernus] artifex construit, exspectabat.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

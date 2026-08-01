@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.25-10"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "25.10"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 23.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[292, 292]]
+text = """
+Vers. 23. Duae gentes in utero tuo sunt. Juxta litteram duas gentes Idumaeorum et Judaeorum dicit. Quod vero in sequentibus dicit: Major serviet minori, illud tempus, quando Esau major Idumaeorum servivit Jacob, id est Judaeis. David enim eos tributarios fecit, et sic servierunt sub tributo usquequo rebellaverunt, juxta quod in libro Regum legitur: Recessit | Edom, ne esset sub Juda (IV Reg. VIII, 20). Mystice hi duo gemini duos significant populos, Esau major natu Judaeos, Jacob vero minor gentilem populum. Major ergo servit minori, quia Judaicus populus dispersus per totum orbem servit gentibus, non solum corporali servitute, verum etiam quia legem et prophetas ad gentium utilitates servat. In nobis etiam ipsis haec rixa duorum populorum agitur, cum lex carnis repugnat legi mentis, cum vitia virtutibus contraveniunt. Nam per majorem vitia designantur, quia plura sunt virtutibus, et semper numero plures vel priores sunt mali quam boni. Sed per Dei | auxilium mali superantur a bonis et vitia cedunt virtutibus.\
+"""
+transcription_segments = [
+  { line = 292, text = """
+Vers. 23. Duae gentes in utero tuo sunt. Juxta litteram duas gentes Idumaeorum et Judaeorum dicit. Quod vero in sequentibus dicit: Major serviet minori, illud tempus, quando Esau major Idumaeorum servivit Jacob, id est Judaeis. David enim eos tributarios fecit, et sic servierunt sub tributo usquequo rebellaverunt, juxta quod in libro Regum legitur: Recessit | Edom, ne esset sub Juda (IV Reg. VIII, 20). Mystice hi duo gemini duos significant populos, Esau major natu Judaeos, Jacob vero minor gentilem populum. Major ergo servit minori, quia Judaicus populus dispersus per totum orbem servit gentibus, non solum corporali servitute, verum etiam quia legem et prophetas ad gentium utilitates servat. In nobis etiam ipsis haec rixa duorum populorum agitur, cum lex carnis repugnat legi mentis, cum vitia virtutibus contraveniunt. Nam per majorem vitia designantur, quia plura sunt virtutibus, et semper numero plures vel priores sunt mali quam boni. Sed per Dei | auxilium mali superantur a bonis et vitia cedunt virtutibus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

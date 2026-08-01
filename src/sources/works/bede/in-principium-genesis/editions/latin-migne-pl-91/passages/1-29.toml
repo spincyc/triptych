@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-29"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.29"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[42, 42]]
+text = """
+Et praesit piscibus maris et volatilibus coeli, et bestiis, universaeque terrae, omnique reptili quod movetur in terra; quia nimirum in hoc maxime factus est homo ad imaginem Dei, in quo irrationabilibus antecellit: capax videlicet rationis conditus, per quam et creata quaeque in mundo recte gubernare, et ejus qui cuncta creavit posset agnitione perfrui. In quo honore positus, si non intellexerit ut bene agat, eisdem ipsis animantibus insensatis, quibus praelatus est, comparabitur, sicut Psalmista testatur (Psal. XLVIII, 13).\
+"""
+transcription_segments = [
+  { line = 42, text = """
+Et praesit piscibus maris et volatilibus coeli, et bestiis, universaeque terrae, omnique reptili quod movetur in terra; quia nimirum in hoc maxime factus est homo ad imaginem Dei, in quo irrationabilibus antecellit: capax videlicet rationis conditus, per quam et creata quaeque in mundo recte gubernare, et ejus qui cuncta creavit posset agnitione perfrui. In quo honore positus, si non intellexerit ut bene agat, eisdem ipsis animantibus insensatis, quibus praelatus est, comparabitur, sicut Psalmista testatur (Psal. XLVIII, 13).\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

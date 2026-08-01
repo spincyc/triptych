@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-68"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.68"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[375, 375]]
+text = """
+Venit autem Deus ad Abimelech per somnium noctis, et ait illi: En morieris propter mulierem quam tulisti, habet enim virum; Abimelech vero non tetigerat eam, et ait: Domine num gentem ignorantem et justam interficies? Et caetera hujus lectionis. Videtur Abimelech cultum verae religionis et nosse et cum suis omnibus sedulus exercuisse; quomodo enim homo alienus a cognitione et timore Dei, vel Deo alloquente mereretur corripi cum peccasset, vel verba Dei corripientis tanta humilitate susciperet; nam et suae gentis innocentiam demonstravit, cum ait: Num gentem ignorantem et justam interficies? Et sui puritatem cordis simul atque operis ostendit, cum adjunxit: In simplicitate cordis mei et munditia manuum feci hoc. Unde etiam quia prudenter atque humiliter Domino respondit, mox secunda ejus meruit voce laudari simul et consolari dicentis:\
+"""
+transcription_segments = [
+  { line = 375, text = """
+Venit autem Deus ad Abimelech per somnium noctis, et ait illi: En morieris propter mulierem quam tulisti, habet enim virum; Abimelech vero non tetigerat eam, et ait: Domine num gentem ignorantem et justam interficies? Et caetera hujus lectionis. Videtur Abimelech cultum verae religionis et nosse et cum suis omnibus sedulus exercuisse; quomodo enim homo alienus a cognitione et timore Dei, vel Deo alloquente mereretur corripi cum peccasset, vel verba Dei corripientis tanta humilitate susciperet; nam et suae gentis innocentiam demonstravit, cum ait: Num gentem ignorantem et justam interficies? Et sui puritatem cordis simul atque operis ostendit, cum adjunxit: In simplicitate cordis mei et munditia manuum feci hoc. Unde etiam quia prudenter atque humiliter Domino respondit, mox secunda ejus meruit voce laudari simul et consolari dicentis:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

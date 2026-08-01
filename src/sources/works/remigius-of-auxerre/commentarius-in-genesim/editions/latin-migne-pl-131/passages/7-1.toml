@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.7-1"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "7.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 2.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[134, 134]]
+text = """
+| Vers. 2. Ex omnibus animantibus tolle septena. Quod dicit: Septena et septena, non geminatum septenarium, id est quatuordecim, sed tantum septem debemus accipere. Similiter ubi duo et duo, non quatuor, sed duo debemus intelligere. Masculum et feminam. Et hic notandum quod munda animalia impari numero, id est, septenario introducuntur in arcam, immunda vero pari: quia impar numerus quamdam virtutis praetendit speciem, par vero infirmitatis et vitii signum est. Munda animalia plura, id est septena dicuntur introducta, ut egrediens Noe de arca haberet quod Domino immolaret, et quo ipse cum filiis vesceretur\
+"""
+transcription_segments = [
+  { line = 134, text = """
+| Vers. 2. Ex omnibus animantibus tolle septena. Quod dicit: Septena et septena, non geminatum septenarium, id est quatuordecim, sed tantum septem debemus accipere. Similiter ubi duo et duo, non quatuor, sed duo debemus intelligere. Masculum et feminam. Et hic notandum quod munda animalia impari numero, id est, septenario introducuntur in arcam, immunda vero pari: quia impar numerus quamdam virtutis praetendit speciem, par vero infirmitatis et vitii signum est. Munda animalia plura, id est septena dicuntur introducta, ut egrediens Noe de arca haberet quod Domino immolaret, et quo ipse cum filiis vesceretur\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

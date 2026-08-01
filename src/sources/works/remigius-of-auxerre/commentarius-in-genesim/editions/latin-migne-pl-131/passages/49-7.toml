@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.49-7"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "49.7"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 10.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[442, 443]]
+text = """
+Vers. 10. Non auferetur sceptrum de Juda et dux de femore ejus, donec veniat qui mittendus est. Patet omnibus hoc de Christo dici, ad cujus usque adventum principes de tribu Juda exstiterunt in populo Judaeorum. Nam Herodes, sub quo Dominus natus est, alienigena erat et proselytus. Jam enim venerat qui mittendus erat. Et ipse erit exspectatio gentium, ut quae pretioso sanguine ejus redimendae erant. Ligans ad vineam pullum suum, et ad vitem, o fili mi, asinam suam. Hic aperte ostenditur quod non de Juda, sed de Christo ista dicantur. Nam cum de Juda videatur loqui, tamen ad ipsum Judam conversus | quasi de alio dicit: ligans ad vineam pullum suum. Vineam chorum appellat apostolorum, qui quasi palmites de una et vera vite succreverant, sicut ipse in Evangelio: Ego sum vitis, vos palmites. Pullus vero, gentilis populus, quem ad vineam ligavit, quando per apostolicam praedicationem populum domuit, ut illorum fidem et doctrinam sequerentur. Asina vero Ecclesia est ex gentibus congregata, quondam stulta et oneribus peccatorum praegravata, sed postquam fidem Christi recepit, versa vice jugum diaboli projecit et onus Christi leve suscepit. Hanc asinam ad vitem ligavit, quia Ecclesiam ex gentibus vinculis charitatis sibi conjunxit. Lavabit vino stolam suam. Stola Christi caro ejus est, quam vino lavit quod de botro in cruce pendente | expressum est, quia videlicet carnem suam sanguine passionis suae perfudit.
+
+Pallium gentes significat, quibus Christus indutus est, juxta quod ei per prophetam dictum est: His omnibus velut ornamento vestieris (Isa. XLIX, 18). Pallium ergo suum lavit in sanguine uvae, quia populum gentium suo redemit cruore. Hinc Joannes: Qui dilexit nos, et lavit nos a peccatis nostris in sanguine suo (Apoc. I, 5).\
+"""
+transcription_segments = [
+  { line = 442, text = """
+Vers. 10. Non auferetur sceptrum de Juda et dux de femore ejus, donec veniat qui mittendus est. Patet omnibus hoc de Christo dici, ad cujus usque adventum principes de tribu Juda exstiterunt in populo Judaeorum. Nam Herodes, sub quo Dominus natus est, alienigena erat et proselytus. Jam enim venerat qui mittendus erat. Et ipse erit exspectatio gentium, ut quae pretioso sanguine ejus redimendae erant. Ligans ad vineam pullum suum, et ad vitem, o fili mi, asinam suam. Hic aperte ostenditur quod non de Juda, sed de Christo ista dicantur. Nam cum de Juda videatur loqui, tamen ad ipsum Judam conversus | quasi de alio dicit: ligans ad vineam pullum suum. Vineam chorum appellat apostolorum, qui quasi palmites de una et vera vite succreverant, sicut ipse in Evangelio: Ego sum vitis, vos palmites. Pullus vero, gentilis populus, quem ad vineam ligavit, quando per apostolicam praedicationem populum domuit, ut illorum fidem et doctrinam sequerentur. Asina vero Ecclesia est ex gentibus congregata, quondam stulta et oneribus peccatorum praegravata, sed postquam fidem Christi recepit, versa vice jugum diaboli projecit et onus Christi leve suscepit. Hanc asinam ad vitem ligavit, quia Ecclesiam ex gentibus vinculis charitatis sibi conjunxit. Lavabit vino stolam suam. Stola Christi caro ejus est, quam vino lavit quod de botro in cruce pendente | expressum est, quia videlicet carnem suam sanguine passionis suae perfudit.\
+""" },
+  { line = 443, text = """
+Pallium gentes significat, quibus Christus indutus est, juxta quod ei per prophetam dictum est: His omnibus velut ornamento vestieris (Isa. XLIX, 18). Pallium ergo suum lavit in sanguine uvae, quia populum gentium suo redemit cruore. Hinc Joannes: Qui dilexit nos, et lavit nos a peccatis nostris in sanguine suo (Apoc. I, 5).\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

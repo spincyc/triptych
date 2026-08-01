@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.1-14"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "1.14"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 27.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[34, 35]]
+text = """
+| VERS. 27.--Notandum [ Z., Notandumque quod], quia quod homo ad imaginem Dei conditus sit, et bestiis praeesse, in ipsa creatione sui et creaturarum ostensum est. Homo namque creatus est erectus ut coelestia consideraret; bestiae vero pronae, ut ostenderent obedientiam suam. Creavit igitur Dei Filius [ Z., Deus Filius] hominem ad imaginem suam, et creavit ad imaginem Patris, quia ipse est imago Dei Patris, ad cujus imaginem etiam conditus est homo. Secundum enim, prout jam dictum est, interiorem hominem [ Z., in interiore homine], quia rationalis est, et animam habet in sua natura, et immortalis factus est. Unde Apostolus ait: Vir non debet velare caput [ Z., caput suum ], quia imago Dei est: mulier autem velet | caput suum, quia imago est viri (I Cor. XI, 7). In quantum enim homo ad coelestia tendit et divina contemplatur, non debet velare caput, id est, obstaculum peccati menti opponere. Si autem omiserit divina meditari, et converterit ad terrena superflue, non jam vir, sed femina dicitur, et ideo velet caput ut mulier, id est ponat obstaculum justitiae, ne dum licita cogitare coeperit, ad illicita prorumpat, et totum se ad exteriora diffundat, unde Deum offendat.
+
+Masculum et feminam creavit eos. Cur dicitur feminam creatam esse, cum postmodum narratur formata, nisi quia per originem in viro creavit eam, quia [ Z., quae] ex viro formanda erat? Masculum autem unum et feminam imprimis creavit Deus unam, | non ut animalia et caetera plura, ut humanum genus ardore ad invicem charitatis constringeret, quod se ex uno parente ortum [ Z., ortum esse] meminisset. Unde mulierem ex viri latere formavit, ut mutua illorum conjunctione terram esse implendam doceret.\
+"""
+transcription_segments = [
+  { line = 34, text = """
+| VERS. 27.--Notandum [ Z., Notandumque quod], quia quod homo ad imaginem Dei conditus sit, et bestiis praeesse, in ipsa creatione sui et creaturarum ostensum est. Homo namque creatus est erectus ut coelestia consideraret; bestiae vero pronae, ut ostenderent obedientiam suam. Creavit igitur Dei Filius [ Z., Deus Filius] hominem ad imaginem suam, et creavit ad imaginem Patris, quia ipse est imago Dei Patris, ad cujus imaginem etiam conditus est homo. Secundum enim, prout jam dictum est, interiorem hominem [ Z., in interiore homine], quia rationalis est, et animam habet in sua natura, et immortalis factus est. Unde Apostolus ait: Vir non debet velare caput [ Z., caput suum ], quia imago Dei est: mulier autem velet | caput suum, quia imago est viri (I Cor. XI, 7). In quantum enim homo ad coelestia tendit et divina contemplatur, non debet velare caput, id est, obstaculum peccati menti opponere. Si autem omiserit divina meditari, et converterit ad terrena superflue, non jam vir, sed femina dicitur, et ideo velet caput ut mulier, id est ponat obstaculum justitiae, ne dum licita cogitare coeperit, ad illicita prorumpat, et totum se ad exteriora diffundat, unde Deum offendat.\
+""" },
+  { line = 35, text = """
+Masculum et feminam creavit eos. Cur dicitur feminam creatam esse, cum postmodum narratur formata, nisi quia per originem in viro creavit eam, quia [ Z., quae] ex viro formanda erat? Masculum autem unum et feminam imprimis creavit Deus unam, | non ut animalia et caetera plura, ut humanum genus ardore ad invicem charitatis constringeret, quod se ex uno parente ortum [ Z., ortum esse] meminisset. Unde mulierem ex viri latere formavit, ut mutua illorum conjunctione terram esse implendam doceret.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

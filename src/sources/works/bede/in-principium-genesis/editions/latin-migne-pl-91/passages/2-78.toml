@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-78"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.78"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[207, 207]]
+text = """
+Ad imaginem quippe Dei factus est homo. Idcirco namque majoris est sceleris innocentem occidi hominem; quoniam qui hoc facit, non solum opus quod fecit Deus solvit, sed et imaginem ipsius corrumpit. Idcirco requirit Deus animas hominum a bestiis, vel hominibus a quibus fuerant effugatae de corpore, quia ad imaginem suam fecit hominem in eo quod hunc manere ad aeternitatem voluit, neque ad similitudinem animantium cum corporis morte perire; et hujus sacramenti causa carnem cum sanguine non licet comedi, ut admoneamur hoc praecepto semper quod ad imaginem Conditoris nostri secundum animae substantiam creati sumus, eamdemque in nobis imaginem peccando corrumpere timeamus.\
+"""
+transcription_segments = [
+  { line = 207, text = """
+Ad imaginem quippe Dei factus est homo. Idcirco namque majoris est sceleris innocentem occidi hominem; quoniam qui hoc facit, non solum opus quod fecit Deus solvit, sed et imaginem ipsius corrumpit. Idcirco requirit Deus animas hominum a bestiis, vel hominibus a quibus fuerant effugatae de corpore, quia ad imaginem suam fecit hominem in eo quod hunc manere ad aeternitatem voluit, neque ad similitudinem animantium cum corporis morte perire; et hujus sacramenti causa carnem cum sanguine non licet comedi, ut admoneamur hoc praecepto semper quod ad imaginem Conditoris nostri secundum animae substantiam creati sumus, eamdemque in nobis imaginem peccando corrumpere timeamus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

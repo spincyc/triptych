@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.25-4"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "25.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 24.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[280, 280]]
+text = """
+VERS. 24.-- Factus est Esau vir gnarus venandi et homo agricola; Jacob autem vir simplex habitavit in tabernaculis. Vel sicut in alia translatione dicitur, habitabat domi. Quid per venationem Esau nisi eorum vita figuratur qui in exterioribus voluptatibus fusi carnem sequuntur? Qui etiam agricola esse describitur, quia amatores hujus saeculi tanto magis exteriora incolunt quanto interiora sua inculta derelinquunt. Jacob vero simplex in tabernaculis vel in domo habitare perhibetur. Quia nimirum omnes qui in curis exterioribus spargi refugiunt, simplices in cognitione atque in conscientiae suae habitatione consistunt. In tabernaculis enim aut in domo habitare | est se intra mentis secreta restringere, et nequaquam exterius per desideria dissipare; ne, dum ad multa foras inhiant, a seipsis alienati cogitationibus recedant.\
+"""
+transcription_segments = [
+  { line = 280, text = """
+VERS. 24.-- Factus est Esau vir gnarus venandi et homo agricola; Jacob autem vir simplex habitavit in tabernaculis. Vel sicut in alia translatione dicitur, habitabat domi. Quid per venationem Esau nisi eorum vita figuratur qui in exterioribus voluptatibus fusi carnem sequuntur? Qui etiam agricola esse describitur, quia amatores hujus saeculi tanto magis exteriora incolunt quanto interiora sua inculta derelinquunt. Jacob vero simplex in tabernaculis vel in domo habitare perhibetur. Quia nimirum omnes qui in curis exterioribus spargi refugiunt, simplices in cognitione atque in conscientiae suae habitatione consistunt. In tabernaculis enim aut in domo habitare | est se intra mentis secreta restringere, et nequaquam exterius per desideria dissipare; ne, dum ad multa foras inhiant, a seipsis alienati cogitationibus recedant.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.51"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "51"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 51 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[55, 55]]
+text = """
+Inter. 51. Quid est, quod dixit [ Ms., dicitur]: Et posuit Deus hominem in paradiso voluptatis, ut operaretur et custodiret illum (Gen. II, 15)? [Nunquid homini laborare in paradiso opus fuit]; aut a quo custodire illum [ Edit., illud; al. custodiri ille] debuit?-- Resp. Non enim [homini erat] laboris afflictio in paradiso, sed voluntatis exhilaratio; cum ea quae Deus creaverat humani operis adjutorio laetius feraciusque [ Ms., veracius] provenirent. Et custodiret illum, ut custodiret eumdem paradisum sibi ipsi, et [ Ms., ne] si aliquid amitteret, ut inde mereretur expelli.\
+"""
+transcription_segments = [
+  { line = 55, text = """
+Inter. 51. Quid est, quod dixit [ Ms., dicitur]: Et posuit Deus hominem in paradiso voluptatis, ut operaretur et custodiret illum (Gen. II, 15)? [Nunquid homini laborare in paradiso opus fuit]; aut a quo custodire illum [ Edit., illud; al. custodiri ille] debuit?-- Resp. Non enim [homini erat] laboris afflictio in paradiso, sed voluntatis exhilaratio; cum ea quae Deus creaverat humani operis adjutorio laetius feraciusque [ Ms., veracius] provenirent. Et custodiret illum, ut custodiret eumdem paradisum sibi ipsi, et [ Ms., ne] si aliquid amitteret, ut inde mereretur expelli.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

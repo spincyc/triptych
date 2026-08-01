@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.12-4"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "12.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 7-9.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[168, 168]]
+text = """
+VERS. 7-9.-- Semini tuo dabo terram hanc. Juxta illud Psalmographi [ Z. Psalmigraphl]: Postula a me, et dabo tibi gentes, et reliqua (Psal. II, 8), ubi aedificavit altare, unitatem scilicet fidei in Ecclesia. Tetendit igitur tabernaculum suum, ab occidente habens Bethel, et ab oriente Hai. Bethel interpretatur domus Dei. Significat Judaeos, qui aliquando fuerant domus Dei per cognitionem, et quasi in oriente, dum sub lege fuerant, hoc est usque ad adventum Christi, | sed [ Z., et] propter incredulitatem suam deciderunt ad occidentem non credendo in Christum. Hai interpretatur chaos, id est vorago intransmeabilis. Significat gentes quae in voragine et profunditate peccatorum detinebantur usque ad adventum Christi, quae relicto errore crediderunt in Christum [ Z., in Deum], qui est verus Oriens.\
+"""
+transcription_segments = [
+  { line = 168, text = """
+VERS. 7-9.-- Semini tuo dabo terram hanc. Juxta illud Psalmographi [ Z. Psalmigraphl]: Postula a me, et dabo tibi gentes, et reliqua (Psal. II, 8), ubi aedificavit altare, unitatem scilicet fidei in Ecclesia. Tetendit igitur tabernaculum suum, ab occidente habens Bethel, et ab oriente Hai. Bethel interpretatur domus Dei. Significat Judaeos, qui aliquando fuerant domus Dei per cognitionem, et quasi in oriente, dum sub lege fuerant, hoc est usque ad adventum Christi, | sed [ Z., et] propter incredulitatem suam deciderunt ad occidentem non credendo in Christum. Hai interpretatur chaos, id est vorago intransmeabilis. Significat gentes quae in voragine et profunditate peccatorum detinebantur usque ad adventum Christi, quae relicto errore crediderunt in Christum [ Z., in Deum], qui est verus Oriens.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

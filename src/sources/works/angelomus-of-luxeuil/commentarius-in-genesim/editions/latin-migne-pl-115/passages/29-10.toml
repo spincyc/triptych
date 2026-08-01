@@ -1,0 +1,29 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.29-10"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "29.10"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 13.' and running to the next such heading, in 3 paragraphs."
+physical_line_ranges = [[309, 311]]
+text = """
+VERS. 13.-- Qui cum audisset venisse Jacob, filium | sororis suae, cucurrit, gressibus fidei, et amplexatus est eum brachiis dilectionis, et fidei; et in oscula ruens, videlicet societatem reconciliationis, promeruit et charitatis. Duxit in domum suam. Quia hospitium mentis ei praeparavit per fidem, ut in ipso habitare dignaretur, juxta quod ipse ait per Prophetam: Et inhabitabo, inambulabo in eis, eroque eis pater, et ipsi erunt mihi in filios, dicit Dominus (II Cor. VI, 16, 18).
+
+Deinde jam sequitur quatenus Jacob serviendo apud Laban duas accepit uxores, hoc est, primo Liam, secundo Rachel, pro qua servivit septem annis aliis. Sed animadvertendum est quia nunc quidam male aestimant post septem annos alios eam accepit uxorem, sed post septem dies nuptiarum primae | uxoris. Nam sequitur: Et ingressus est ad Rachel, et dilexit Rachel magis quam Liam, et servivit ei septem annis aliis. Inde sibi accepit Liae ancillam, nomine Zelfam, et ancillam Rachelis Balam, ex quibus quatuor genuit duodecim filios et unam filiam. De Lia scilicet genuit Ruben, Simeon, Levi, Judam, Isachar, Zabulon; de Rachel autem Joseph et Benjamin; de Bala, ancilla Rachelis, Dan et Nephthalim; de Zelfa, ancilla Liae, Gad et Aser. Hi sunt duodecim filii Israel patriarchae.
+
+Sed antequam inde [Petr., in] longius stylum vertamus, libet istorum propter compendium lectionis etymologias nominum pariter dicere, ut compendioso sermone ostendamus legentibus quid in suis vocabulis resonant. Nam ex causis propriis nomina | propria acceperunt, ut aut futuris quibusdam aut praecedentibus eorum causis conveniant. Verum manente in eis spiritali sacramento, nunc prius tantum ad litteram interpretationes historiae prosequimur, ut postea valeamus manifestius spiritales eorum significationes depromere. Jacob quippe interpretatur supplantator, sive quod in ortu plantam nascentis fratris apprehenderit, sive quod postea fratrem arte deceperit. Unde et Esau dixit: Juste vocatum est nomen ejus Jacob; supplantavit enim me en altera vice. Lia interpretatur laboriosa, utique generando. Plures enim dolores quam Rachel fecunditate pariendi experta est. Rachel interpretatur ovis. Pro ea enim Jacob pavit primum oves Laban.\
+"""
+transcription_segments = [
+  { line = 309, text = """
+VERS. 13.-- Qui cum audisset venisse Jacob, filium | sororis suae, cucurrit, gressibus fidei, et amplexatus est eum brachiis dilectionis, et fidei; et in oscula ruens, videlicet societatem reconciliationis, promeruit et charitatis. Duxit in domum suam. Quia hospitium mentis ei praeparavit per fidem, ut in ipso habitare dignaretur, juxta quod ipse ait per Prophetam: Et inhabitabo, inambulabo in eis, eroque eis pater, et ipsi erunt mihi in filios, dicit Dominus (II Cor. VI, 16, 18).\
+""" },
+  { line = 310, text = """
+Deinde jam sequitur quatenus Jacob serviendo apud Laban duas accepit uxores, hoc est, primo Liam, secundo Rachel, pro qua servivit septem annis aliis. Sed animadvertendum est quia nunc quidam male aestimant post septem annos alios eam accepit uxorem, sed post septem dies nuptiarum primae | uxoris. Nam sequitur: Et ingressus est ad Rachel, et dilexit Rachel magis quam Liam, et servivit ei septem annis aliis. Inde sibi accepit Liae ancillam, nomine Zelfam, et ancillam Rachelis Balam, ex quibus quatuor genuit duodecim filios et unam filiam. De Lia scilicet genuit Ruben, Simeon, Levi, Judam, Isachar, Zabulon; de Rachel autem Joseph et Benjamin; de Bala, ancilla Rachelis, Dan et Nephthalim; de Zelfa, ancilla Liae, Gad et Aser. Hi sunt duodecim filii Israel patriarchae.\
+""" },
+  { line = 311, text = """
+Sed antequam inde [Petr., in] longius stylum vertamus, libet istorum propter compendium lectionis etymologias nominum pariter dicere, ut compendioso sermone ostendamus legentibus quid in suis vocabulis resonant. Nam ex causis propriis nomina | propria acceperunt, ut aut futuris quibusdam aut praecedentibus eorum causis conveniant. Verum manente in eis spiritali sacramento, nunc prius tantum ad litteram interpretationes historiae prosequimur, ut postea valeamus manifestius spiritales eorum significationes depromere. Jacob quippe interpretatur supplantator, sive quod in ortu plantam nascentis fratris apprehenderit, sive quod postea fratrem arte deceperit. Unde et Esau dixit: Juste vocatum est nomen ejus Jacob; supplantavit enim me en altera vice. Lia interpretatur laboriosa, utique generando. Plures enim dolores quam Rachel fecunditate pariendi experta est. Rachel interpretatur ovis. Pro ea enim Jacob pavit primum oves Laban.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

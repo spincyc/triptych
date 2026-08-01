@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-68"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.68"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 2 paragraphs."
+physical_line_ranges = [[94, 95]]
+text = """
+Qui ait: Vocem tuam audivi in paradiso, et timui eo quod nudus essem, et abscondi me. Satis probabile est solere Deum per creaturam tali actioni congruam in forma humana primis illis hominibus apparere, quos tamen nunquam permisit advertere nuditatem suam, eorum intentionem in superna sustollens, nisi post peccatum pudendum in membris motum poenali membrorum lege sensissent. Sic ergo affecti sunt, ut solent affici homines sub oculis hominum: et talis affectio de peccati poena erat, eum latere velle quem latere nihil potest. Quod enim jam ipsos pudebat erga se ipsos, unde sibi et succinctoria fecerant, multo vehementius ab illo etiam sic succincti videri verebantur, qui tanquam familiari temperamento ad eos videndos per creaturam visibilem velut humanos oculos afferebat.
+
+« Dominus ergo volens jam peccatores more justitiae interrogatos punire amplius quam erat illa poena, de qua jam cogebantur erubescere, Quis enim, inquit, indicavit tibi quod nudus esses, nisi quod ex ligno de quo tibi praeceptum ne comederes, comedisti? Hinc enim mors concepta propter Dei sententiam, qui sic fuerat comminatus, fecit adverti concupiscentialiter membra: ubi dicti sunt aperti oculi, et secutum est quod puderet. »\
+"""
+transcription_segments = [
+  { line = 94, text = """
+Qui ait: Vocem tuam audivi in paradiso, et timui eo quod nudus essem, et abscondi me. Satis probabile est solere Deum per creaturam tali actioni congruam in forma humana primis illis hominibus apparere, quos tamen nunquam permisit advertere nuditatem suam, eorum intentionem in superna sustollens, nisi post peccatum pudendum in membris motum poenali membrorum lege sensissent. Sic ergo affecti sunt, ut solent affici homines sub oculis hominum: et talis affectio de peccati poena erat, eum latere velle quem latere nihil potest. Quod enim jam ipsos pudebat erga se ipsos, unde sibi et succinctoria fecerant, multo vehementius ab illo etiam sic succincti videri verebantur, qui tanquam familiari temperamento ad eos videndos per creaturam visibilem velut humanos oculos afferebat.\
+""" },
+  { line = 95, text = """
+« Dominus ergo volens jam peccatores more justitiae interrogatos punire amplius quam erat illa poena, de qua jam cogebantur erubescere, Quis enim, inquit, indicavit tibi quod nudus esses, nisi quod ex ligno de quo tibi praeceptum ne comederes, comedisti? Hinc enim mors concepta propter Dei sententiam, qui sic fuerat comminatus, fecit adverti concupiscentialiter membra: ubi dicti sunt aperti oculi, et secutum est quod puderet. »\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

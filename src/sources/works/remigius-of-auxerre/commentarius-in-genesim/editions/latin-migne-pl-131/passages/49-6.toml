@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.49-6"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "49.6"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 9.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[441, 441]]
+text = """
+Vers. 9. Ad praedam, fili mi, ascendisti. Haec quae tradita sunt tam de David ad litteram, quam et de Christo spiritaliter pertinent, quem per apostrophen patriarcha alloquitur: Ad praedam, fili mi, ascendisti. Christus ad praedam ascendit, quia contra diabolum pugnaturus venit, ut eos quos captivaverat, | eriperet. Quod autem dicit, ascendisti, confidentiam et securitatem Creatoris ostendit. Ipse requiescens accubuit ut leo, quia in spe firmissima resurrectionis mortem suscepit, quam in potestate habuit. Requievit ut catulus leonis, quia tribus diebus in sepulcro jacuit. Ferunt enim physici de catulo leonis quod natus tribus diebus dormiat, tertio tandem die magno rugitu patris excitatur. Sic et Christus tribus diebus dormivit in sepulcro, et tandem tertia die a Deo Patre excitatus est, cujus rugitum Psalmista describit dicens: Exsurge, gloria mea, exsurge, psalterium et cithara (Psal. CVII, 3). Et respondit | ipse: Exsurgam diluculo. Quis suscitavit eum? Nullus videlicet nisi Pater et ipsa divinitas qua humanitas ejus plena erat.\
+"""
+transcription_segments = [
+  { line = 441, text = """
+Vers. 9. Ad praedam, fili mi, ascendisti. Haec quae tradita sunt tam de David ad litteram, quam et de Christo spiritaliter pertinent, quem per apostrophen patriarcha alloquitur: Ad praedam, fili mi, ascendisti. Christus ad praedam ascendit, quia contra diabolum pugnaturus venit, ut eos quos captivaverat, | eriperet. Quod autem dicit, ascendisti, confidentiam et securitatem Creatoris ostendit. Ipse requiescens accubuit ut leo, quia in spe firmissima resurrectionis mortem suscepit, quam in potestate habuit. Requievit ut catulus leonis, quia tribus diebus in sepulcro jacuit. Ferunt enim physici de catulo leonis quod natus tribus diebus dormiat, tertio tandem die magno rugitu patris excitatur. Sic et Christus tribus diebus dormivit in sepulcro, et tandem tertia die a Deo Patre excitatus est, cujus rugitum Psalmista describit dicens: Exsurge, gloria mea, exsurge, psalterium et cithara (Psal. CVII, 3). Et respondit | ipse: Exsurgam diluculo. Quis suscitavit eum? Nullus videlicet nisi Pater et ipsa divinitas qua humanitas ejus plena erat.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

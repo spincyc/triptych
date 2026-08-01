@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-1"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[111, 111]]
+text = """
+Adam vero cognovit Evam uxorem suam, quae concepit et peperit Cain dicens: Possedi hominem per Deum. Hinc jam post delicias paradisi et praevaricationis primae reatum, hujus saeculi ac vitae mortalis gesta narrantur, cum protoplasti, qui immortales fuerant conditi, post acceptam moriendi conditionem mortalium ex se sobolem gignere incipiunt, omnibus in iniquitate conceptis, et in delictis materno ex utero prodeuntibus. Interpretatur autem Caïn possessio, cujus causam vocabuli exposuit genitrix ipsa cum ait: Possedi hominem per Deum. Et hoc dicto, mater nostra jam catholica discretione nos docet, quod ita filium peccato suae praevaricationis obnoxium genuit, ut tamen hoc quod homo natus est, id est, quod anima constans et corpore, effectu divinae creationis ac primae benedictionis munere possideret.\
+"""
+transcription_segments = [
+  { line = 111, text = """
+Adam vero cognovit Evam uxorem suam, quae concepit et peperit Cain dicens: Possedi hominem per Deum. Hinc jam post delicias paradisi et praevaricationis primae reatum, hujus saeculi ac vitae mortalis gesta narrantur, cum protoplasti, qui immortales fuerant conditi, post acceptam moriendi conditionem mortalium ex se sobolem gignere incipiunt, omnibus in iniquitate conceptis, et in delictis materno ex utero prodeuntibus. Interpretatur autem Caïn possessio, cujus causam vocabuli exposuit genitrix ipsa cum ait: Possedi hominem per Deum. Et hoc dicto, mater nostra jam catholica discretione nos docet, quod ita filium peccato suae praevaricationis obnoxium genuit, ut tamen hoc quod homo natus est, id est, quod anima constans et corpore, effectu divinae creationis ac primae benedictionis munere possideret.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

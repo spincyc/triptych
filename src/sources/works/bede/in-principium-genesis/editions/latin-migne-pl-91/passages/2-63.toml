@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-63"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.63"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[191, 191]]
+text = """
+Cumque transissent quadraginta dies, aperiens Noe fenestram arcae, quam fecerat, dimisit corvum, etc. Diximus supra de fenestra arcae, quae transacto diluvio aperitur, quod illa designet arcana mysteriorum coelestium, quibus baptizati specialiter initiantur; sed eisdem ipsis sacramentis quidam ad illecebras saeculi, quidam vero ad opera pietatis utuntur; et hi quidem in corvo, illi exprimuntur in columba. Quod vero quadraginta per decem quater ducta complentur, potest in numero dierum quadragenario non immerito divinae legis impletio, quae per evangelii gratiam perficitur, intimari. Lex enim in decem praeceptis continetur: Evangelii doctrina in quatuor libris descripta est, et apte post initium decimi mensis, post apparentia montium cacumina quadraginta dies transeunt, et sic fenestram suam aperiens Noe novae lucis in arcam patefecit introitum, quia nimirum patefacta fidelibus vita futura quam percepturi sunt, patefacta superbia eorum qui extra Ecclesiam positi de mundana se gloria jactant, etiam hoc patefacit fidelibus suis Christus, quia praecepta legis non viribus humanae libertatis, sed evangelicae gratiae per ipsum debeant munere perfici, qui cum et hanc fidem atque humilitatem flagitandi in omnibus divini auxilii perceperint, tunc etiam altiora supernae patriae dona cognoscere, quasi aperta noviter fenestra in arca merentur, sed eamdem donorum coelestium cognitionem, ut diximus, alii ad perniciem suam, alii utuntur ad salutem; unde bene de emisso ex arca corvo subjungitur.\
+"""
+transcription_segments = [
+  { line = 191, text = """
+Cumque transissent quadraginta dies, aperiens Noe fenestram arcae, quam fecerat, dimisit corvum, etc. Diximus supra de fenestra arcae, quae transacto diluvio aperitur, quod illa designet arcana mysteriorum coelestium, quibus baptizati specialiter initiantur; sed eisdem ipsis sacramentis quidam ad illecebras saeculi, quidam vero ad opera pietatis utuntur; et hi quidem in corvo, illi exprimuntur in columba. Quod vero quadraginta per decem quater ducta complentur, potest in numero dierum quadragenario non immerito divinae legis impletio, quae per evangelii gratiam perficitur, intimari. Lex enim in decem praeceptis continetur: Evangelii doctrina in quatuor libris descripta est, et apte post initium decimi mensis, post apparentia montium cacumina quadraginta dies transeunt, et sic fenestram suam aperiens Noe novae lucis in arcam patefecit introitum, quia nimirum patefacta fidelibus vita futura quam percepturi sunt, patefacta superbia eorum qui extra Ecclesiam positi de mundana se gloria jactant, etiam hoc patefacit fidelibus suis Christus, quia praecepta legis non viribus humanae libertatis, sed evangelicae gratiae per ipsum debeant munere perfici, qui cum et hanc fidem atque humilitatem flagitandi in omnibus divini auxilii perceperint, tunc etiam altiora supernae patriae dona cognoscere, quasi aperta noviter fenestra in arca merentur, sed eamdem donorum coelestium cognitionem, ut diximus, alii ad perniciem suam, alii utuntur ad salutem; unde bene de emisso ex arca corvo subjungitur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

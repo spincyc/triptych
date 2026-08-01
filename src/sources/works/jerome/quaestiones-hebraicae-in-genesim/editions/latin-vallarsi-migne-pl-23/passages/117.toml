@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.117"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "117"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 13.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[120, 120]]
+text = """
+(Vers. 13.) Et haec nomina filiorum Ismael in nominibus suis et in generationibus suis. Primogenitus Ismaelis Nabajoth, et Cedar, et reliqui, usque ad eum locum ubi ait: Et habitaverunt ab Evila usque Sur, quae est contra faciem Aegypti venientibus in Assyrios, in conspectu omnium fratrum suorum cecidit. Duodecim filii nascuntur Ismaeli, e quibus primogenitus fuit Nabajoth, a quo omnis regio ab Euphrate usque ad mare Rubrum Nabathena usque hodie dicitur, quae pars Arabiae est. Nam et familiae eorum, oppidaque et pagi, ac munita castella, et tribus eorum hac appellatione celebrantur: ab uno ex his, Cedar in deserto, et Duma alia regio, et Theman ad austrum, et Cedema ad orientalem plagam dicitur. Quod autem in extremo hujus capituli, juxta Septuaginta legimus, contra faciem omnium fratrum suorum habitavit (Gen. XIII, 18): verius est illud quod nos posuimus, coram omnibus fratribus suis occubuit, id est, in manibus omnium filiorum suorum mortuus est, superstitibus liberis, et nullo prius morte praerepto. Fratres autem pro filiis appellari, Jacob quoque ad Laban demonstrat, dicens: Quod est peccatum meum, quia persecutus es post me: et quia scrutatus es omnia vasa mea? Quid invenisti de universis vasis domus tuae? Ponatur coram fratribus meis et fratribus tuis: et dijudicent inter nos (Ibid. 35). Nec enim possumus credere, ut Scriptura commemoret, quod Jacob, exceptis liberis, secum fratres aliquos habuerit.\
+"""
+transcription_segments = [
+  { line = 120, text = """
+(Vers. 13.) Et haec nomina filiorum Ismael in nominibus suis et in generationibus suis. Primogenitus Ismaelis Nabajoth, et Cedar, et reliqui, usque ad eum locum ubi ait: Et habitaverunt ab Evila usque Sur, quae est contra faciem Aegypti venientibus in Assyrios, in conspectu omnium fratrum suorum cecidit. Duodecim filii nascuntur Ismaeli, e quibus primogenitus fuit Nabajoth, a quo omnis regio ab Euphrate usque ad mare Rubrum Nabathena usque hodie dicitur, quae pars Arabiae est. Nam et familiae eorum, oppidaque et pagi, ac munita castella, et tribus eorum hac appellatione celebrantur: ab uno ex his, Cedar in deserto, et Duma alia regio, et Theman ad austrum, et Cedema ad orientalem plagam dicitur. Quod autem in extremo hujus capituli, juxta Septuaginta legimus, contra faciem omnium fratrum suorum habitavit (Gen. XIII, 18): verius est illud quod nos posuimus, coram omnibus fratribus suis occubuit, id est, in manibus omnium filiorum suorum mortuus est, superstitibus liberis, et nullo prius morte praerepto. Fratres autem pro filiis appellari, Jacob quoque ad Laban demonstrat, dicens: Quod est peccatum meum, quia persecutus es post me: et quia scrutatus es omnia vasa mea? Quid invenisti de universis vasis domus tuae? Ponatur coram fratribus meis et fratribus tuis: et dijudicent inter nos (Ibid. 35). Nec enim possumus credere, ut Scriptura commemoret, quod Jacob, exceptis liberis, secum fratres aliquos habuerit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

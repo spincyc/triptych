@@ -1,0 +1,29 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.21-3"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "21.3"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 14-20.' and running to the next such heading, in 3 paragraphs."
+physical_line_ranges = [[226, 228]]
+text = """
+VERS. 14-20.-- | Surrexit itaque Abraham mane, et tollens panem et utrem aquae, imposuit in scapula ejus, et reliqua. Si tredecim annorum erat Ismael quando natus est Isaac, adjunctisque aetate ablactationis annis, quomodo convenit tantae aetatis adolescentem matris sedisse cervicibus dum dicitur: Sumpsit Abraham panes et utrem aquae, et dedit Agar ponens super humerum ejus, et parvulum, et dimisit eam? Omnis igitur filius secundum idioma linguae Hebraeorum ad comparationem parentum infans vocatur et parvulus. Et est sensus: posuit ergo Abraham panes et utrem super humerum Agar, et hoc facto dedit puerum matri, hoc est, in manum ejus eum tradidit, commendavit, et ita emisit e domo; quod in sequentibus declaratur, dum dicitur: | Surge, tolle puerum, et tene manum ejus, non ut eum de terra velut jacentem tolleret, sed quasi comitem manu teneret. Quod autem manu parentis tenetur, sollicitus monstratur affectus.
+
+Quid est quod dicitur matrem flevisse, et Deum vocem pueri exaudisse? Quia mater non suam mortem, sed filii deplorabat, pepercitque Deus puero suo, pro quo fuerat fletus matris.
+
+Quomodo ad [ Z., quom. autem ad, etc.] puteum Juramenti agrum plantaverat Abraham, si in terra illa, quemadmodum Stephanus dicit, non acceperat haereditatem nec spatium pedis? Ea est intelligenda haereditas quam Deus munere suo fuerat daturus gratuito, non in ista quae pretio empta est. Intelligitur | autem spatium circa puteum ad illud emptionis pactum pertinere in quo fuerant agnae septem datae, quando Abimelech et Abraham sibi etiam juraverunt.\
+"""
+transcription_segments = [
+  { line = 226, text = """
+VERS. 14-20.-- | Surrexit itaque Abraham mane, et tollens panem et utrem aquae, imposuit in scapula ejus, et reliqua. Si tredecim annorum erat Ismael quando natus est Isaac, adjunctisque aetate ablactationis annis, quomodo convenit tantae aetatis adolescentem matris sedisse cervicibus dum dicitur: Sumpsit Abraham panes et utrem aquae, et dedit Agar ponens super humerum ejus, et parvulum, et dimisit eam? Omnis igitur filius secundum idioma linguae Hebraeorum ad comparationem parentum infans vocatur et parvulus. Et est sensus: posuit ergo Abraham panes et utrem super humerum Agar, et hoc facto dedit puerum matri, hoc est, in manum ejus eum tradidit, commendavit, et ita emisit e domo; quod in sequentibus declaratur, dum dicitur: | Surge, tolle puerum, et tene manum ejus, non ut eum de terra velut jacentem tolleret, sed quasi comitem manu teneret. Quod autem manu parentis tenetur, sollicitus monstratur affectus.\
+""" },
+  { line = 227, text = """
+Quid est quod dicitur matrem flevisse, et Deum vocem pueri exaudisse? Quia mater non suam mortem, sed filii deplorabat, pepercitque Deus puero suo, pro quo fuerat fletus matris.\
+""" },
+  { line = 228, text = """
+Quomodo ad [ Z., quom. autem ad, etc.] puteum Juramenti agrum plantaverat Abraham, si in terra illa, quemadmodum Stephanus dicit, non acceperat haereditatem nec spatium pedis? Ea est intelligenda haereditas quam Deus munere suo fuerat daturus gratuito, non in ista quae pretio empta est. Intelligitur | autem spatium circa puteum ad illud emptionis pactum pertinere in quo fuerant agnae septem datae, quando Abimelech et Abraham sibi etiam juraverunt.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

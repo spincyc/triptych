@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.140"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "140"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 7.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[144, 144]]
+text = """
+(Vers. 7 et 8.) Et concepit adhuc, et peperit Bala ancilla Rachel filium secundum Jacob: et dixit Rachel: Habitare fecit me Deus habitatione cum sorore mea, et invalui: et vocavit nomen ejus Nephthalim. Causam nominis Nephthalim, alia hic multo exponitur, quam in libro Hebraeorum Nominum scripta est. Unde et Aquila ait, συνανέστρεψέν με ὁ Θεὸς, καὶ συνανεστράφην, pro quo in Hebraeo scriptum est, NEPHTHULE ELOIM, NEPHTHALETHI. Unde a conversione, sive a comparatione, quia utrumque sonat, conversionem, sive comparationem, Nephthalim nomen filio imposuit. Quod autem sequitur.\
+"""
+transcription_segments = [
+  { line = 144, text = """
+(Vers. 7 et 8.) Et concepit adhuc, et peperit Bala ancilla Rachel filium secundum Jacob: et dixit Rachel: Habitare fecit me Deus habitatione cum sorore mea, et invalui: et vocavit nomen ejus Nephthalim. Causam nominis Nephthalim, alia hic multo exponitur, quam in libro Hebraeorum Nominum scripta est. Unde et Aquila ait, συνανέστρεψέν με ὁ Θεὸς, καὶ συνανεστράφην, pro quo in Hebraeo scriptum est, NEPHTHULE ELOIM, NEPHTHALETHI. Unde a conversione, sive a comparatione, quia utrumque sonat, conversionem, sive comparationem, Nephthalim nomen filio imposuit. Quod autem sequitur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

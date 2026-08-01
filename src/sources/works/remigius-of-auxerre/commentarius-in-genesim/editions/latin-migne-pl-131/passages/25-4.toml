@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.25-4"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "25.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 8.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[286, 286]]
+text = """
+Vers. 8. Deficiens mortuus est. Beatus Hieronymus dicit hoc male additum scriptorum vitio. Neque enim defectus vel imminutio justo viro convenit, cum potius augeri et multiplicari debeat Psalmista dicente: Justus ut cedrus Libani multiplicabitur (Psal. XCI, | 13). Plenus dierum. Plenitudo in ortu, actu et obitu sanctorum solet inveniri. Et ideo recte Abraham plenus dierum mortuus fuisse legitur, consummatus et perfectus erat omnibus virtutibus. Econtra in reprobis omnia quadam imperfectione notantur. Unde et psalmus: Viri sanguinum et dolosi non dimidiabunt dies suos (Psal. LIV, 24).-- Congregatus est ad populum suum, id est ad multitudinem praecedentium patrum.\
+"""
+transcription_segments = [
+  { line = 286, text = """
+Vers. 8. Deficiens mortuus est. Beatus Hieronymus dicit hoc male additum scriptorum vitio. Neque enim defectus vel imminutio justo viro convenit, cum potius augeri et multiplicari debeat Psalmista dicente: Justus ut cedrus Libani multiplicabitur (Psal. XCI, | 13). Plenus dierum. Plenitudo in ortu, actu et obitu sanctorum solet inveniri. Et ideo recte Abraham plenus dierum mortuus fuisse legitur, consummatus et perfectus erat omnibus virtutibus. Econtra in reprobis omnia quadam imperfectione notantur. Unde et psalmus: Viri sanguinum et dolosi non dimidiabunt dies suos (Psal. LIV, 24).-- Congregatus est ad populum suum, id est ad multitudinem praecedentium patrum.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

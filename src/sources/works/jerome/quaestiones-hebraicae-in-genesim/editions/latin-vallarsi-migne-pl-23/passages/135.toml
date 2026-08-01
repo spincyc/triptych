@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.135"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "135"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 32.' and running to the next such heading, in 2 paragraphs, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[138, 139]]
+text = """
+(Vers. 32.) Et concepit, et peperit filium, et vocavit nomen ejus Ruben. Omnium patriarcharum propter compendium lectionis, etymologias nominum volo pariter dicere.
+
+Et vocavit, inquit, Ruben nomen ejus, dicens: Quia vidit Dominus humilitatem meam. RUBEN (ראובן) interpretatur visionis filius.\
+"""
+transcription_segments = [
+  { line = 138, text = """
+(Vers. 32.) Et concepit, et peperit filium, et vocavit nomen ejus Ruben. Omnium patriarcharum propter compendium lectionis, etymologias nominum volo pariter dicere.\
+""" },
+  { line = 139, text = """
+Et vocavit, inquit, Ruben nomen ejus, dicens: Quia vidit Dominus humilitatem meam. RUBEN (ראובן) interpretatur visionis filius.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

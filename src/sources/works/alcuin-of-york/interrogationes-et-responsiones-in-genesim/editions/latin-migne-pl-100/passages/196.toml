@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.196"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "196"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 196 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[200, 200]]
+text = """
+Inter. 196. De quo ludo arguit Sarra Ismael filium Agar (Ibid. v. 9, 10)?-- Resp. Dupliciter [itaque] hoc ab Hebraeis exponitur; sive quod idolothytum fecerit; juxta illud [quod alibi scriptum est]: Sedit populus manducare et bibere et surrexerunt ludere (Exod. XXXII, 6); sive quod adversum Isaac, quasi majoris aetatis, joco sibi et ludo primogenita vindicaret: quod [ Edit., quando] quidem Sarra audiens non tulit. Et hoc ex ipsius approbatur sermone [dicentis ei]: Ejice ancillam hanc cum filio suo; non enim erit haeres filius ancillae cum filio meo Isaac.\
+"""
+transcription_segments = [
+  { line = 200, text = """
+Inter. 196. De quo ludo arguit Sarra Ismael filium Agar (Ibid. v. 9, 10)?-- Resp. Dupliciter [itaque] hoc ab Hebraeis exponitur; sive quod idolothytum fecerit; juxta illud [quod alibi scriptum est]: Sedit populus manducare et bibere et surrexerunt ludere (Exod. XXXII, 6); sive quod adversum Isaac, quasi majoris aetatis, joco sibi et ludo primogenita vindicaret: quod [ Edit., quando] quidem Sarra audiens non tulit. Et hoc ex ipsius approbatur sermone [dicentis ei]: Ejice ancillam hanc cum filio suo; non enim erit haeres filius ancillae cum filio meo Isaac.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

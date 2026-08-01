@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.92"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "92"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 30.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[95, 95]]
+text = """
+(Vers. 30.) Et ascendit Lot de Segor, et sedit in monte: et duae filiae ejus cum eo. Timuit enim sedere in Segor. Quaeritur quare cum primum fugae montis Segor praetulerit, et eam in habitaculum suum voluerit liberari, nunc de Segor rursum ad montem migret? Respondebimus veram esse illam Hebraeorum conjecturam de Segor, quod frequenter terrae motu subruta, Bale primum, et postea Salisa appellata sit: timueritque Lot, dicens, Si cum caeterae adhuc urbes starent, ista saepe subversa est: quanto magis nunc in communi ruina non poterit liberari? Et ob hanc occasionem infidelitatis, etiam in filias coitus dedisse principium. Qui enim caeteras viderat subrui civitates, et hanc stare, seque Dei auxilio erutum: utique de eo, quod sibi concessum audierat, ambigere non debuit. Illud igitur, quod pro excusatione dicitur filiarum, eo quod putaverint defecisse humanum gentis, et ideo cum patre concubuerint, non excusat patrem. Denique Hebraei, quod sequitur:\
+"""
+transcription_segments = [
+  { line = 95, text = """
+(Vers. 30.) Et ascendit Lot de Segor, et sedit in monte: et duae filiae ejus cum eo. Timuit enim sedere in Segor. Quaeritur quare cum primum fugae montis Segor praetulerit, et eam in habitaculum suum voluerit liberari, nunc de Segor rursum ad montem migret? Respondebimus veram esse illam Hebraeorum conjecturam de Segor, quod frequenter terrae motu subruta, Bale primum, et postea Salisa appellata sit: timueritque Lot, dicens, Si cum caeterae adhuc urbes starent, ista saepe subversa est: quanto magis nunc in communi ruina non poterit liberari? Et ob hanc occasionem infidelitatis, etiam in filias coitus dedisse principium. Qui enim caeteras viderat subrui civitates, et hanc stare, seque Dei auxilio erutum: utique de eo, quod sibi concessum audierat, ambigere non debuit. Illud igitur, quod pro excusatione dicitur filiarum, eo quod putaverint defecisse humanum gentis, et ideo cum patre concubuerint, non excusat patrem. Denique Hebraei, quod sequitur:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

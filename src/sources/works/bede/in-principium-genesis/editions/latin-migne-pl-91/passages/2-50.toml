@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-50"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.50"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[177, 177]]
+text = """
+Cumque transissent septem dies, aquae diluvii inundaverunt terram. Septima dies sabbatum, id est, requiem, indicat vitae futurae. Cum ergo diluvium aquam baptismi significat, apte post septem dies ex quo arca facta est venit, quia in spe perpetuae quietis baptizamur. Cum vero fluctus tentationum aquae diluvii figurant, merito etiam tunc post septem dies veniunt, quia propter fidem ad spem futurorum bonorum, persecutionem justi patiuntur ab eis qui terrena miseri bona coelestibus, mansuris temporalia praeponunt. At vero diluvium cum adventui novissimi examinis assimilatur, etiam sic congruenter post dies septem terram inundat, quia tunc electi omnes qui jugum Christi suave et onus leve portaverunt inveniunt requiem animabus suis.\
+"""
+transcription_segments = [
+  { line = 177, text = """
+Cumque transissent septem dies, aquae diluvii inundaverunt terram. Septima dies sabbatum, id est, requiem, indicat vitae futurae. Cum ergo diluvium aquam baptismi significat, apte post septem dies ex quo arca facta est venit, quia in spe perpetuae quietis baptizamur. Cum vero fluctus tentationum aquae diluvii figurant, merito etiam tunc post septem dies veniunt, quia propter fidem ad spem futurorum bonorum, persecutionem justi patiuntur ab eis qui terrena miseri bona coelestibus, mansuris temporalia praeponunt. At vero diluvium cum adventui novissimi examinis assimilatur, etiam sic congruenter post dies septem terram inundat, quia tunc electi omnes qui jugum Christi suave et onus leve portaverunt inveniunt requiem animabus suis.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.15-9"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "15.9"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 16.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[205, 205]]
+text = """
+Vers. 16. Generatione quarta revertentur huc. Moyses dicit: quinta generatione egressi sunt filii Israel de Aegypto. Hic vero dicit: generatione quarta. Sed utrumque verum est. Nam si per Levi computes, quartam inventes generationem ita: Levi, Caaz, Caaz genuit Amram, Amram genuit Aaron, Aaron genuit Eleazar, Eleazar genuit Phinees. Caaz ingressus | est Aegyptum cum patre suo Levi: Phinees vero filius Eleazari ingressus est terram repromissionis. Si vero et quomodo quinta generatione hoc factum sit velis scire, per Judam computare debebis. Judas genuit Phares, Phares genuit Esrom, Esrom genuit Aminadab, Aminadab genuit Naason, Naason genuit Salmon. Judas ingressus est cum filio suo Phares in Aegyptum. Naason vero princeps fuit tribus Judae in deserto, cujus filius intravit in terram promissionis.\
+"""
+transcription_segments = [
+  { line = 205, text = """
+Vers. 16. Generatione quarta revertentur huc. Moyses dicit: quinta generatione egressi sunt filii Israel de Aegypto. Hic vero dicit: generatione quarta. Sed utrumque verum est. Nam si per Levi computes, quartam inventes generationem ita: Levi, Caaz, Caaz genuit Amram, Amram genuit Aaron, Aaron genuit Eleazar, Eleazar genuit Phinees. Caaz ingressus | est Aegyptum cum patre suo Levi: Phinees vero filius Eleazari ingressus est terram repromissionis. Si vero et quomodo quinta generatione hoc factum sit velis scire, per Judam computare debebis. Judas genuit Phares, Phares genuit Esrom, Esrom genuit Aminadab, Aminadab genuit Naason, Naason genuit Salmon. Judas ingressus est cum filio suo Phares in Aegyptum. Naason vero princeps fuit tribus Judae in deserto, cujus filius intravit in terram promissionis.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

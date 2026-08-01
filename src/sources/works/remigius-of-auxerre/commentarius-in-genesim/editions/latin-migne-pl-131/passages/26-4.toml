@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.26-4"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "26.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 22.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[299, 300]]
+text = """
+Vers. 22. Foderunt alium puteum pro quo non contenderunt. Pro tertio puteo jam victi non contenderunt, quia, postquam fides Trinitatis sanctae per mundum praedicari coepit, patientia sanctorum victi adversarii cessaverunt Unde bene puteo nomen impositum est ei, latitudo. Dilatatus est enim verus Isaac, id est Christus fide omnium credentium, et notus quidem antea tantum in Judaea Deus modo vero dicitur: In omnem terram exivit sonus eorum et in fines orbis terrae verba eorum (Psal. XVIII, 5).
+
+Moraliter puteos fodimus, quando divinae scientiae | alta sapimus vel penetramus. Quos tamen puteos allophyli terra repleverunt: quia nobis profunda Scripturarum investigantibus saepe daemones terrenas cogitationes aggerunt, ut a nobis aquam divinae scientiae tollant.\
+"""
+transcription_segments = [
+  { line = 299, text = """
+Vers. 22. Foderunt alium puteum pro quo non contenderunt. Pro tertio puteo jam victi non contenderunt, quia, postquam fides Trinitatis sanctae per mundum praedicari coepit, patientia sanctorum victi adversarii cessaverunt Unde bene puteo nomen impositum est ei, latitudo. Dilatatus est enim verus Isaac, id est Christus fide omnium credentium, et notus quidem antea tantum in Judaea Deus modo vero dicitur: In omnem terram exivit sonus eorum et in fines orbis terrae verba eorum (Psal. XVIII, 5).\
+""" },
+  { line = 300, text = """
+Moraliter puteos fodimus, quando divinae scientiae | alta sapimus vel penetramus. Quos tamen puteos allophyli terra repleverunt: quia nobis profunda Scripturarum investigantibus saepe daemones terrenas cogitationes aggerunt, ut a nobis aquam divinae scientiae tollant.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

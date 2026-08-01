@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-66"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.66"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[373, 373]]
+text = """
+Et peregrinatus est in Geraris. Nam et verbo peregrinationis et nomine Gerarae, id est incolatus, decenter sanctorum vita figuratur, quae, quantum divinis mancipata praeceptis, tantum a temporalibus est alienata gaudiis; unde et Apostolus eorumdem patriarcharum vitam glorificans aiebat: Fide moratus est Abraham in terra repromissionis, tanquam in aliena, in casulis habitando cum Isaac et Jacob cohaeredibus promissionis ejusdem; exspectabat enim fundamenta habentem civitatem, cujus artifex et conditor Deus (Heb. XI, 9). Et paulo post: Juxta fidem defuncti sunt omnes isti, non acceptis repromissionibus, sed a longe eas aspicientes et salutantes, et confitentes quia peregrini et hospites sunt super terram (Ibid., 13). Qui enim haec dicunt significant se patriam inquirere; erat autem Geraris olim terminus Chananaeorum ad meridiem, et civitas metropolis Palaestinae, posita inter Cades et Sur, hoc est inter duas solitudines, quarum una Aegypto jungitur, ad quam populus transfretum Rubri maris pervenit, altera vero Cades usque ad Sarracenorum eremum extenditur. Sequitur:\
+"""
+transcription_segments = [
+  { line = 373, text = """
+Et peregrinatus est in Geraris. Nam et verbo peregrinationis et nomine Gerarae, id est incolatus, decenter sanctorum vita figuratur, quae, quantum divinis mancipata praeceptis, tantum a temporalibus est alienata gaudiis; unde et Apostolus eorumdem patriarcharum vitam glorificans aiebat: Fide moratus est Abraham in terra repromissionis, tanquam in aliena, in casulis habitando cum Isaac et Jacob cohaeredibus promissionis ejusdem; exspectabat enim fundamenta habentem civitatem, cujus artifex et conditor Deus (Heb. XI, 9). Et paulo post: Juxta fidem defuncti sunt omnes isti, non acceptis repromissionibus, sed a longe eas aspicientes et salutantes, et confitentes quia peregrini et hospites sunt super terram (Ibid., 13). Qui enim haec dicunt significant se patriam inquirere; erat autem Geraris olim terminus Chananaeorum ad meridiem, et civitas metropolis Palaestinae, posita inter Cades et Sur, hoc est inter duas solitudines, quarum una Aegypto jungitur, ad quam populus transfretum Rubri maris pervenit, altera vero Cades usque ad Sarracenorum eremum extenditur. Sequitur:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

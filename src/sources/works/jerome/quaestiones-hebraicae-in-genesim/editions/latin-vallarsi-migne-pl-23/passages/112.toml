@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.112"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "112"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 59.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[115, 115]]
+text = """
+(Vers. 59.) Et dimiserunt Rebeccam sororem suam, et substantiam ejus, et servum Abraham, et viros qu cum eo erant. In Hebraeo habet: Et dimiserunt Rebeccam sororem suam, et nutricem ejus, et servum Abrahae, et viros illius. Decens quippe erat, ut ad nuptias absque parentibus virgo proficiscens, nutricis solatio foveretur.\
+"""
+transcription_segments = [
+  { line = 115, text = """
+(Vers. 59.) Et dimiserunt Rebeccam sororem suam, et substantiam ejus, et servum Abraham, et viros qu cum eo erant. In Hebraeo habet: Et dimiserunt Rebeccam sororem suam, et nutricem ejus, et servum Abrahae, et viros illius. Decens quippe erat, ut ad nuptias absque parentibus virgo proficiscens, nutricis solatio foveretur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.213"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "213"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 14.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[217, 217]]
+text = """
+(Vers. 14 et 15.) Issachar bonum desideravit, requiescens inter medios cleros, et videns requiem, quia bona est, et terram, quia pinguis: supposuit humerum suum ad laborandum, et factus est vir agricola. In Hebraeo ita scriptum est: Issachar asinus osseus, recumbens inter terminos, et videns requiem, quia bona est, et terram, quia pulchra est: inclinavit humerum suum ad portandum, et factus est in tributum serviens. Quia supra de Zabulon dixerat, quod maris magni esset littora possessurus, Sidonem quoque et reliquas Phoenicis urbes contingeret; nunc ad mediterraneam provinciam redit, et Issachar, quia juxta Nephthalim, pulcherrimam in Galilaea regionem possessurus est, benedictione sua habitatorem facit. Asinum autem osseum vocat, et humerum ad portandum deditum, quia in labore terrae, et vehendis ad mare oneribus, quae in suis finibus nascebantur, plurimum laboraret, regibus quoque tributa comportans. Aiunt Hebraei, per metaphoram significari, quod Scripturas sanctas die ac nocte meditans, studium suum dederit ad laborandum, et ideo ei omnes tribus serviant, quasi magistro dona portantes.\
+"""
+transcription_segments = [
+  { line = 217, text = """
+(Vers. 14 et 15.) Issachar bonum desideravit, requiescens inter medios cleros, et videns requiem, quia bona est, et terram, quia pinguis: supposuit humerum suum ad laborandum, et factus est vir agricola. In Hebraeo ita scriptum est: Issachar asinus osseus, recumbens inter terminos, et videns requiem, quia bona est, et terram, quia pulchra est: inclinavit humerum suum ad portandum, et factus est in tributum serviens. Quia supra de Zabulon dixerat, quod maris magni esset littora possessurus, Sidonem quoque et reliquas Phoenicis urbes contingeret; nunc ad mediterraneam provinciam redit, et Issachar, quia juxta Nephthalim, pulcherrimam in Galilaea regionem possessurus est, benedictione sua habitatorem facit. Asinum autem osseum vocat, et humerum ad portandum deditum, quia in labore terrae, et vehendis ad mare oneribus, quae in suis finibus nascebantur, plurimum laboraret, regibus quoque tributa comportans. Aiunt Hebraei, per metaphoram significari, quod Scripturas sanctas die ac nocte meditans, studium suum dederit ad laborandum, et ideo ei omnes tribus serviant, quasi magistro dona portantes.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

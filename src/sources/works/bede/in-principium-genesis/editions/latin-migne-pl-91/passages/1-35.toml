@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-35"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.35"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[49, 49]]
+text = """
+Viditque Deus cuncta quae fecit, et erant valde bona. Quia de singulis Dei operibus singulatim fuerat dictum quod videret ea esse bona, recte in conclusione, perfectis omnibus, positum est cum additamento, quia vidit cuncta quae fecit, et erant valde bona. Sed quaeritur merito, quare de homine facto non sit adjunctum singillatim: Et vidit Deus quod esset bonum, sed ipsius magis factura inter caetera universaliter laudando reservetur? An quia praesciebat Deus hominem peccaturum, nec in suae imaginis perfectione mansurum, non singillatim, sed cum caeteris eum dicere voluit bonum, velut intimans quid esset futurum? Homo igitur ante peccatum et in suo utique genere bonus erat, sed Scriptura praetermisit hoc dicere, ut potius illud diceret quod futurum aliquid praenuntiaret. Deus enim naturarum optimus conditor, peccantium vero justissimus ordinator est, ut etiam si qua singillatim fiunt delinquendo deformia, semper tamen universitas cum eis pulchra sit.\
+"""
+transcription_segments = [
+  { line = 49, text = """
+Viditque Deus cuncta quae fecit, et erant valde bona. Quia de singulis Dei operibus singulatim fuerat dictum quod videret ea esse bona, recte in conclusione, perfectis omnibus, positum est cum additamento, quia vidit cuncta quae fecit, et erant valde bona. Sed quaeritur merito, quare de homine facto non sit adjunctum singillatim: Et vidit Deus quod esset bonum, sed ipsius magis factura inter caetera universaliter laudando reservetur? An quia praesciebat Deus hominem peccaturum, nec in suae imaginis perfectione mansurum, non singillatim, sed cum caeteris eum dicere voluit bonum, velut intimans quid esset futurum? Homo igitur ante peccatum et in suo utique genere bonus erat, sed Scriptura praetermisit hoc dicere, ut potius illud diceret quod futurum aliquid praenuntiaret. Deus enim naturarum optimus conditor, peccantium vero justissimus ordinator est, ut etiam si qua singillatim fiunt delinquendo deformia, semper tamen universitas cum eis pulchra sit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

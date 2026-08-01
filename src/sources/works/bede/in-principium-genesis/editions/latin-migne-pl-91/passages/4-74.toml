@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-74"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.74"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[381, 381]]
+text = """
+Crevit igitur puer et ablactatus est, fecitque Abraham grande convivium in die ablactationis ejus. Lacte nutritur Isaac cum electus quisque, filius videlicet promissionis, nuper in Christo genitus, prima fidei rudimenta suscipit, et quamvis necdum summa divinitatis arcana scrutari sufficit, dulcedine tamen praemiorum coelestium delectatus, bonis insistere operibus contendit, per quae Deo adjuvante largienteque potiora capere mereatur, juxta illud apostoli Petri: Deponentes igitur omnem malitiam, et omnem dolum, et simulationes, et invidias, et omnes detractiones, sicut modo geniti infantes, rationabile et sine dolo lac concupiscite, ut in eo crescatis in salutem, si tamen gustastis quoniam dulcis est Dominus. Sed ablactatus Isaac atque ad panis edulium pervenit, cum electi proficientibus fidei incrementis non solum Jesum Christum, et hunc crucifixum confiteri discunt, verum etiam addere quia in principio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum.\
+"""
+transcription_segments = [
+  { line = 381, text = """
+Crevit igitur puer et ablactatus est, fecitque Abraham grande convivium in die ablactationis ejus. Lacte nutritur Isaac cum electus quisque, filius videlicet promissionis, nuper in Christo genitus, prima fidei rudimenta suscipit, et quamvis necdum summa divinitatis arcana scrutari sufficit, dulcedine tamen praemiorum coelestium delectatus, bonis insistere operibus contendit, per quae Deo adjuvante largienteque potiora capere mereatur, juxta illud apostoli Petri: Deponentes igitur omnem malitiam, et omnem dolum, et simulationes, et invidias, et omnes detractiones, sicut modo geniti infantes, rationabile et sine dolo lac concupiscite, ut in eo crescatis in salutem, si tamen gustastis quoniam dulcis est Dominus. Sed ablactatus Isaac atque ad panis edulium pervenit, cum electi proficientibus fidei incrementis non solum Jesum Christum, et hunc crucifixum confiteri discunt, verum etiam addere quia in principio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.11-3"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "11.3"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 5.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[171, 171]]
+text = """
+Vers. 5. Descendit, ut videret. Descendere Deus dicitur quando se sensibus vel operibus commodat humanis, sicut ad Moysen dixit: Videns vidi afflictionem populi mei, et descendi liberare eos (Exod. III, 8). Et de Sodomitis dictum est: Descendam, et videbo utrum eum clamorem qui venit ad me opere compleverint (Gen. XVIII, 21). Et nota in sequentibus hic mysterium Trinitatis commendari, cum dicit: Descendamus et confundamus. Mystice turris haec mundi superbiam signat, sive etiam elationem haereticorum qui turrim pravi dogmatis contra Deum volunt aedificare. Quae merito turris Babel, id est confusionis | appellatur. Profecti sunt autem de Oriente, quia verum solem reliquerunt. Invenerunt campum Sennaar, qui interpretatur fetor vel excussio dentium, quia dogmata haereticorum non bonum Christi odorem, sed fetorem habent, et amiserunt dentes quibus cibos verbi Dei commolerent.\
+"""
+transcription_segments = [
+  { line = 171, text = """
+Vers. 5. Descendit, ut videret. Descendere Deus dicitur quando se sensibus vel operibus commodat humanis, sicut ad Moysen dixit: Videns vidi afflictionem populi mei, et descendi liberare eos (Exod. III, 8). Et de Sodomitis dictum est: Descendam, et videbo utrum eum clamorem qui venit ad me opere compleverint (Gen. XVIII, 21). Et nota in sequentibus hic mysterium Trinitatis commendari, cum dicit: Descendamus et confundamus. Mystice turris haec mundi superbiam signat, sive etiam elationem haereticorum qui turrim pravi dogmatis contra Deum volunt aedificare. Quae merito turris Babel, id est confusionis | appellatur. Profecti sunt autem de Oriente, quia verum solem reliquerunt. Invenerunt campum Sennaar, qui interpretatur fetor vel excussio dentium, quia dogmata haereticorum non bonum Christi odorem, sed fetorem habent, et amiserunt dentes quibus cibos verbi Dei commolerent.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

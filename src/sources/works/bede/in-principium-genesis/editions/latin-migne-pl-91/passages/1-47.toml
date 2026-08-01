@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-47"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.47"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[73, 73]]
+text = """
+Et nomen fluvio secundo Geon. Ipse est qui circuit omnem terram Aethiopiae. Nomen vero fluminis tertii Tigris. Ipse vadit contra Assyrios. Fluvius vero quartus ipse est Euphrates. Idcirco de Euphrate ubi vadat quasve terras circumeat non dicit, quia ipse in vicino profluens terrae repromissionis, facillime a populo Israel, qui ibidem positus, haec lecturus erat, poterat sciri. Quia vero per aquas regeneratrices regressus nobis ad coelestia patet, congruit satis dispensationem divinae pietatis, ut ipsum elementum per quod ad supernam patriam reducimur nobis sit cum paradiso, in quo positus sit homo primus, commune, et sicut gratia nos recreans invisibiliter regni coelestis ingressui praeparat: ita etiam invisibiliter ad Dominum orbem de paradiso per terrae venas ipsa per quam nos recreat unda prosiliat. Sicut ergo Spiritus ubi vult spirat, et vocem ejus audis, sed non scis unde veniat, aut quo vadat (Joan. III, 8); sic etiam decebat ut aqua quae eos quos vult Spiritus sanctificat, ignotis ad nos viis de paradiso adveniat, ad ignota nobis loca redeat, quia tantum de paradiso voluptatis originem constat habere.\
+"""
+transcription_segments = [
+  { line = 73, text = """
+Et nomen fluvio secundo Geon. Ipse est qui circuit omnem terram Aethiopiae. Nomen vero fluminis tertii Tigris. Ipse vadit contra Assyrios. Fluvius vero quartus ipse est Euphrates. Idcirco de Euphrate ubi vadat quasve terras circumeat non dicit, quia ipse in vicino profluens terrae repromissionis, facillime a populo Israel, qui ibidem positus, haec lecturus erat, poterat sciri. Quia vero per aquas regeneratrices regressus nobis ad coelestia patet, congruit satis dispensationem divinae pietatis, ut ipsum elementum per quod ad supernam patriam reducimur nobis sit cum paradiso, in quo positus sit homo primus, commune, et sicut gratia nos recreans invisibiliter regni coelestis ingressui praeparat: ita etiam invisibiliter ad Dominum orbem de paradiso per terrae venas ipsa per quam nos recreat unda prosiliat. Sicut ergo Spiritus ubi vult spirat, et vocem ejus audis, sed non scis unde veniat, aut quo vadat (Joan. III, 8); sic etiam decebat ut aqua quae eos quos vult Spiritus sanctificat, ignotis ad nos viis de paradiso adveniat, ad ignota nobis loca redeat, quia tantum de paradiso voluptatis originem constat habere.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

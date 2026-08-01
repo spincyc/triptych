@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.3-15"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "3.15"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 23.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[92, 92]]
+text = """
+Vers. 23. Ejecit eum de paradiso. Actus ipse est, et est defectiva locutio irato vel perturbato conveniens, non quod in Deum ullus irae vel perturbationis motus cadat qui est summae tranquillitatis, sed more sacrae Scripturae hoc dictum est, quae de Deo loquens quae sunt hominum ipsi Deo attribuit. Sumat de ligno vitae et vivat. Sicut jam diximus, impleto numero electorum gustaturi erant omnes de ligno vitae, et ad illum statum beatum migraturi. Et, quia se indignum fecerat illo statu, recte custodia ei adhibita | est, ne posset ulterius lignum vitae contingere.\
+"""
+transcription_segments = [
+  { line = 92, text = """
+Vers. 23. Ejecit eum de paradiso. Actus ipse est, et est defectiva locutio irato vel perturbato conveniens, non quod in Deum ullus irae vel perturbationis motus cadat qui est summae tranquillitatis, sed more sacrae Scripturae hoc dictum est, quae de Deo loquens quae sunt hominum ipsi Deo attribuit. Sumat de ligno vitae et vivat. Sicut jam diximus, impleto numero electorum gustaturi erant omnes de ligno vitae, et ad illum statum beatum migraturi. Et, quia se indignum fecerat illo statu, recte custodia ei adhibita | est, ne posset ulterius lignum vitae contingere.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

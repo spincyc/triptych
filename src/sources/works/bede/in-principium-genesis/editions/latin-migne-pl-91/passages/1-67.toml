@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-67"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.67"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[93, 93]]
+text = """
+Vocavitque Dominus Deus Adam, et dixit ei: Ubi es? Non utique ignorando quaesivit, sed increpando admonuit, ut attenderet ubi esset in quo Deus non esset. Jam enim quia de arbore vetita comederat, mortuus erat morte animae, cum eam deseruisse vita sua dicitur. « Et hoc sane ad aliquam pertinet significationem, quod sicut praeceptum viro datum est per quem perveniret ad feminam; ita vir prior interrogatur. Praeceptum enim a Domino per virum usque ad feminam: peccatum autem a diabolo per feminam usque ad virum. Haec mysticis significationibus plena sunt, non id agentibus in quibus facta sunt, sed de his id agente potentissima sapientia Dei non autem nunc significata referamus, sed gesta defendimus. »\
+"""
+transcription_segments = [
+  { line = 93, text = """
+Vocavitque Dominus Deus Adam, et dixit ei: Ubi es? Non utique ignorando quaesivit, sed increpando admonuit, ut attenderet ubi esset in quo Deus non esset. Jam enim quia de arbore vetita comederat, mortuus erat morte animae, cum eam deseruisse vita sua dicitur. « Et hoc sane ad aliquam pertinet significationem, quod sicut praeceptum viro datum est per quem perveniret ad feminam; ita vir prior interrogatur. Praeceptum enim a Domino per virum usque ad feminam: peccatum autem a diabolo per feminam usque ad virum. Haec mysticis significationibus plena sunt, non id agentibus in quibus facta sunt, sed de his id agente potentissima sapientia Dei non autem nunc significata referamus, sed gesta defendimus. »\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

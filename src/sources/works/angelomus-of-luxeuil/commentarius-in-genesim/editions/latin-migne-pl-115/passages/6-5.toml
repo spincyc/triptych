@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.6-5"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "6.5"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 13.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[118, 118]]
+text = """
+| VERS. 13.-- Dixitque Dominus ad Noe: Finis universae carnis venit coram me. Universae enim carnis significatur omnium mortalium, praeter illos qui in arca salvandi erant. Illi igitur quasi seminarium secundae originis servati sunt. Sequitur: Et disperdam eos cum terra. Quomodo cum terra, cum terra postea remansit? Tradunt enim doctores terrae vigorem et fecunditatem longe inferiorem esse post diluvium quam ante, et idcirco hominibus carnem edere licentiam esse datam, et ante etiam diluvium fructibus terrae solummodo victitasse.\
+"""
+transcription_segments = [
+  { line = 118, text = """
+| VERS. 13.-- Dixitque Dominus ad Noe: Finis universae carnis venit coram me. Universae enim carnis significatur omnium mortalium, praeter illos qui in arca salvandi erant. Illi igitur quasi seminarium secundae originis servati sunt. Sequitur: Et disperdam eos cum terra. Quomodo cum terra, cum terra postea remansit? Tradunt enim doctores terrae vigorem et fecunditatem longe inferiorem esse post diluvium quam ante, et idcirco hominibus carnem edere licentiam esse datam, et ante etiam diluvium fructibus terrae solummodo victitasse.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

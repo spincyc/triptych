@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-42"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.42"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[270, 270]]
+text = """
+Duxerunt autem Abram et Nachor uxores. Nomen uxoris Abram Sarai, et nomen uxoris Nachor Melcha, filia Aran patris Melchae et patris Jeschae. Dicunt majores nostri Jescham hanc ipsam esse Saram uxorem Abrahae, quia videlicet iidem fratres germani Abraham et Nachor duas sorores filias Aran uxores habuerint. Quod si ita est, non potest Aran pater earumdem idem intelligi qui fuit frater junior Abrahae et Nachor, sed alter ejusdem nominis homo. Constat enim quia Abraham decem solum annis Saram conjugem suam praecessit, dicente ipso coram Domino: Putasne centenario nascetur filius, et Sara nonagenaria pariet filium (Genes. XVII, 37)? Et quomodo frater ejus junior potuit habere filiam, quae illo decem annis minor esset, se autem ipso septem aut non amplius quam octo?\
+"""
+transcription_segments = [
+  { line = 270, text = """
+Duxerunt autem Abram et Nachor uxores. Nomen uxoris Abram Sarai, et nomen uxoris Nachor Melcha, filia Aran patris Melchae et patris Jeschae. Dicunt majores nostri Jescham hanc ipsam esse Saram uxorem Abrahae, quia videlicet iidem fratres germani Abraham et Nachor duas sorores filias Aran uxores habuerint. Quod si ita est, non potest Aran pater earumdem idem intelligi qui fuit frater junior Abrahae et Nachor, sed alter ejusdem nominis homo. Constat enim quia Abraham decem solum annis Saram conjugem suam praecessit, dicente ipso coram Domino: Putasne centenario nascetur filius, et Sara nonagenaria pariet filium (Genes. XVII, 37)? Et quomodo frater ejus junior potuit habere filiam, quae illo decem annis minor esset, se autem ipso septem aut non amplius quam octo?\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

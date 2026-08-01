@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-63"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.63"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[89, 89]]
+text = """
+QUI COMEDIT. ET APERTI SUNT OCULI AMBORUM. « Quo? nisi ad invicem concupiscendum, ad peccati poenam carnis ipsius morte conceptam, ut jam esset corpus non animale tantum, quod poterat, si obedientiam conservarent, in meliorem spiritalemque habitum sine morte mutari, sed jam corpus mortis, in quo lex in membris repugnaret legi mentis. » Neque enim clausis oculis facti erant, et in paradiso deliciarum caeci palpantesque oberrabant. Tale est illud Evangelii cum diceret de illis duobus, quorum erat unus Cleophas, quod cum fregisset eis Dominus panem, aperti sunt oculi eorum, et cognoverunt eum quem per viam non cognoverant: non utique clausis oculis ambulantes, sed eum cognoscere non valentes. Ad hoc ergo aperti sunt oculi primorum hominum, ad quod antea non patebant, quamvis ad alia paterent.\
+"""
+transcription_segments = [
+  { line = 89, text = """
+QUI COMEDIT. ET APERTI SUNT OCULI AMBORUM. « Quo? nisi ad invicem concupiscendum, ad peccati poenam carnis ipsius morte conceptam, ut jam esset corpus non animale tantum, quod poterat, si obedientiam conservarent, in meliorem spiritalemque habitum sine morte mutari, sed jam corpus mortis, in quo lex in membris repugnaret legi mentis. » Neque enim clausis oculis facti erant, et in paradiso deliciarum caeci palpantesque oberrabant. Tale est illud Evangelii cum diceret de illis duobus, quorum erat unus Cleophas, quod cum fregisset eis Dominus panem, aperti sunt oculi eorum, et cognoverunt eum quem per viam non cognoverant: non utique clausis oculis ambulantes, sed eum cognoscere non valentes. Ad hoc ergo aperti sunt oculi primorum hominum, ad quod antea non patebant, quamvis ad alia paterent.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

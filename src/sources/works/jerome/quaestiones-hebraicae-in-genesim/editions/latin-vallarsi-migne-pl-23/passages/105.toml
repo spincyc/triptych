@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.105"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "105"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 20.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[108, 108]]
+text = """
+(Vers. 20.) Et nuntiaverunt Abraham, dicentes: Ecce peperit Melcha et ipsa filios Nachor fratri tuo: Us primogenitum ejus, et Buz fratrem ejus, et Camuel patrem Syrorum, et Cased. Primogenitus Nachor fratris Abraham de Melcha uxore ejus filia Aran, natus est Us: de cujus stirpe Job descendit, sicut scriptum est in exordio voluminis ejus: Vir fuit in terra Us, nomine Job. Male igitur quidam aestimant, Job de genere esse Esau: siquidem illud quod in fine libri ipsius habetur, Eo quod de Syro sermone translatus est, et quartus sit ab Esau, et reliqua, quae ibi continentur, in Hebraeis voluminibus non habentur. Secundus natus est de Melcha Buz, quem Septuaginta Bauz transferre voluerunt. Et ex hujus genere est Balaam ille divinus (Num. XXIV, 3 et seq.; Jos. XIII, 22), ut Hebraei tradunt, qui in libro Job dicitur Eliu: primum vir sanctus, et prophetes Dei, postea per inobedientiam et desiderium munerum, dum Israel maledicere cupit, divini vocabulo nuncupatur: diciturque in eodem libro: Et iratus Eliu filius Barachiel Buzites (Job XXXII, 2), de hujus videlicet Buzi radice descendens. Camuel vero pater est Damasci. Ipsa enim vocatur Aran, quae hic pro Syria scripta est: et ipso nomine legitur in Isaia. Chased quoque quartus est, a quo Chasdim, id est, Chaldaei postea vocati sunt.\
+"""
+transcription_segments = [
+  { line = 108, text = """
+(Vers. 20.) Et nuntiaverunt Abraham, dicentes: Ecce peperit Melcha et ipsa filios Nachor fratri tuo: Us primogenitum ejus, et Buz fratrem ejus, et Camuel patrem Syrorum, et Cased. Primogenitus Nachor fratris Abraham de Melcha uxore ejus filia Aran, natus est Us: de cujus stirpe Job descendit, sicut scriptum est in exordio voluminis ejus: Vir fuit in terra Us, nomine Job. Male igitur quidam aestimant, Job de genere esse Esau: siquidem illud quod in fine libri ipsius habetur, Eo quod de Syro sermone translatus est, et quartus sit ab Esau, et reliqua, quae ibi continentur, in Hebraeis voluminibus non habentur. Secundus natus est de Melcha Buz, quem Septuaginta Bauz transferre voluerunt. Et ex hujus genere est Balaam ille divinus (Num. XXIV, 3 et seq.; Jos. XIII, 22), ut Hebraei tradunt, qui in libro Job dicitur Eliu: primum vir sanctus, et prophetes Dei, postea per inobedientiam et desiderium munerum, dum Israel maledicere cupit, divini vocabulo nuncupatur: diciturque in eodem libro: Et iratus Eliu filius Barachiel Buzites (Job XXXII, 2), de hujus videlicet Buzi radice descendens. Camuel vero pater est Damasci. Ipsa enim vocatur Aran, quae hic pro Syria scripta est: et ipso nomine legitur in Isaia. Chased quoque quartus est, a quo Chasdim, id est, Chaldaei postea vocati sunt.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

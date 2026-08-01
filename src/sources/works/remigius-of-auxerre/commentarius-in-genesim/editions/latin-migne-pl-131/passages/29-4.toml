@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.29-4"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "29.4"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 27.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[321, 321]]
+text = """
+Vers. 27. Imple hebdomadam hujus copulae. Hebdomadam hic septem annos dicit. Hebdomada dicitur septem dierum, et septem annorum, et septies | septem annorum. Allegorice hae duae mulieres duas significant vitas, activam et contemplativam. Lia laboriosa interpretatur: significat activam vitam. Quae bene lippis oculis, sed fecunda fuisse dicitur, quia activa vita minus videt per contemplationem, sed spiritales Deo parit filios per praedicationem et bonorum operum exempla. Rachel vero, quae ovis vel visus principium interpretatur, contemplativam designat vitam simplicem et quiete gaudentem, quae illud cernit principium, quod loquitur in Evangelio: Ego principium, qui et loquor (Joan. VIII, 25). Est pulchra, sed infecunda, quia contemplativa vita decora et Deo amabilis, nullo pulvere terreni contagii foedata, sed soli Deo vacans, eique tantum placere quaerens, nequaquam spiritales filios per | praedicationem generat. Amat Jacob Rachel, sed Liam in nocte accipit: quia unusquisque sanctus desiderat frui quiete contemplativae vitae, sed prius necesse est ut nocte hujus saeculi exerceatur labore activae vitae.\
+"""
+transcription_segments = [
+  { line = 321, text = """
+Vers. 27. Imple hebdomadam hujus copulae. Hebdomadam hic septem annos dicit. Hebdomada dicitur septem dierum, et septem annorum, et septies | septem annorum. Allegorice hae duae mulieres duas significant vitas, activam et contemplativam. Lia laboriosa interpretatur: significat activam vitam. Quae bene lippis oculis, sed fecunda fuisse dicitur, quia activa vita minus videt per contemplationem, sed spiritales Deo parit filios per praedicationem et bonorum operum exempla. Rachel vero, quae ovis vel visus principium interpretatur, contemplativam designat vitam simplicem et quiete gaudentem, quae illud cernit principium, quod loquitur in Evangelio: Ego principium, qui et loquor (Joan. VIII, 25). Est pulchra, sed infecunda, quia contemplativa vita decora et Deo amabilis, nullo pulvere terreni contagii foedata, sed soli Deo vacans, eique tantum placere quaerens, nequaquam spiritales filios per | praedicationem generat. Amat Jacob Rachel, sed Liam in nocte accipit: quia unusquisque sanctus desiderat frui quiete contemplativae vitae, sed prius necesse est ut nocte hujus saeculi exerceatur labore activae vitae.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-21"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.21"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[33, 33]]
+text = """
+Dixit etiam Deus: Producant aquae reptile animae viventis, et volatile super terram sub firmamento coeli. Post ornatam quarto die coeli faciem luminaribus, ornantur consequenter quinta inferioris mundi partes, aquae videlicet et aer, his quae spiritu vitae moventur, quia et haec elementa quadam quasi cognatione et sibi ad invicem et coelo copulantur. Sibi quidem, quia natura aquarum aeris qualitati proxima est; unde exhalationibus earum pinguescere probatur, ita ut nubila contrahat, et possit volatus avium sustinere, attestante Scriptura: Quia subito aer cogetur in nubes, et ventus transiens fugabit eas (Job. XXXVII, 21). Denique per noctes etiam serenas rorat, cujus roris guttae mane in herbis inveniuntur; coelo autem hoc modo junguntur, quia adeo vicinus est ei aer iste, ut et ipse nonnunquam ejus nomen acceperit, sicut volatilia coeli cognominat Scriptura, quae volare constat in aere; et Dominus ipse turbis, quae tempus adventus sui de virtutum ostensione non cognoverant, loquitur dicens: Cum videritis nubem orientem ab occasu, statim dicitis: Nimbus venit, et ita fit; et cum Austrum flantem, dicitis quia ventus erit, et fit. Hypocritae, faciem terrae et coeli nostis probare, hoc autem tempus quomodo non probatis (Luc. XII, 54)? Ubi certum est, quia faciem coeli non aliam quam variantem hunc statum aeris appellat.\
+"""
+transcription_segments = [
+  { line = 33, text = """
+Dixit etiam Deus: Producant aquae reptile animae viventis, et volatile super terram sub firmamento coeli. Post ornatam quarto die coeli faciem luminaribus, ornantur consequenter quinta inferioris mundi partes, aquae videlicet et aer, his quae spiritu vitae moventur, quia et haec elementa quadam quasi cognatione et sibi ad invicem et coelo copulantur. Sibi quidem, quia natura aquarum aeris qualitati proxima est; unde exhalationibus earum pinguescere probatur, ita ut nubila contrahat, et possit volatus avium sustinere, attestante Scriptura: Quia subito aer cogetur in nubes, et ventus transiens fugabit eas (Job. XXXVII, 21). Denique per noctes etiam serenas rorat, cujus roris guttae mane in herbis inveniuntur; coelo autem hoc modo junguntur, quia adeo vicinus est ei aer iste, ut et ipse nonnunquam ejus nomen acceperit, sicut volatilia coeli cognominat Scriptura, quae volare constat in aere; et Dominus ipse turbis, quae tempus adventus sui de virtutum ostensione non cognoverant, loquitur dicens: Cum videritis nubem orientem ab occasu, statim dicitis: Nimbus venit, et ita fit; et cum Austrum flantem, dicitis quia ventus erit, et fit. Hypocritae, faciem terrae et coeli nostis probare, hoc autem tempus quomodo non probatis (Luc. XII, 54)? Ubi certum est, quia faciem coeli non aliam quam variantem hunc statum aeris appellat.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-6"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.6"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 2 paragraphs."
+physical_line_ranges = [[226, 227]]
+text = """
+« Filii Chus: Saba, et Hevila, et Sabatha, et Recma et Sabatacha. Saba a quo Sabaei. Virgilius: Solis est, inquit, thurea virga Sabaeis. Centumque Sabaeo thure calent aerae. Hevila a quo Getuli in parte remotioris Africae eremo cohaerentes. Sabatha a quo Sabathani, qui nunc Astabari nuncupantur. Recma vero et Sabatacha paulatim antiqua vocabula perdidere; et quae nunc pro veteribus habeant ignorantur. » Attamen ex eo quod in visione Tyri dicit Ezechiel venditores Saba et Recma, sive ut LXX interpretes dixerunt, Regma, ipsi negotiatores tui, videtur etiam ille suam gentem fecisse, et quia jungitur Saba, vicinam provinciae huic ejus esse regionem.
+
+Filii Saba Recma et Dadan. « Hic Saba per Sin litteram scribitur, supra vero per Samech, a quo diximus appellatos Sabaeos. Interpretatur ergo nunc Saba Arabia. Nam in septuagesimo psalmo, ubi nos habemus Reges Arabum et Saba munera offerent (Psal. LXXI, 10), in Hebraeo scriptum est Reges Saba et Saba, primum nomen per Sin, secundum per Samech (quae nostrae litterae similis est). Dadan gens est Aethiopiae in occidentali plaga. »\
+"""
+transcription_segments = [
+  { line = 226, text = """
+« Filii Chus: Saba, et Hevila, et Sabatha, et Recma et Sabatacha. Saba a quo Sabaei. Virgilius: Solis est, inquit, thurea virga Sabaeis. Centumque Sabaeo thure calent aerae. Hevila a quo Getuli in parte remotioris Africae eremo cohaerentes. Sabatha a quo Sabathani, qui nunc Astabari nuncupantur. Recma vero et Sabatacha paulatim antiqua vocabula perdidere; et quae nunc pro veteribus habeant ignorantur. » Attamen ex eo quod in visione Tyri dicit Ezechiel venditores Saba et Recma, sive ut LXX interpretes dixerunt, Regma, ipsi negotiatores tui, videtur etiam ille suam gentem fecisse, et quia jungitur Saba, vicinam provinciae huic ejus esse regionem.\
+""" },
+  { line = 227, text = """
+Filii Saba Recma et Dadan. « Hic Saba per Sin litteram scribitur, supra vero per Samech, a quo diximus appellatos Sabaeos. Interpretatur ergo nunc Saba Arabia. Nam in septuagesimo psalmo, ubi nos habemus Reges Arabum et Saba munera offerent (Psal. LXXI, 10), in Hebraeo scriptum est Reges Saba et Saba, primum nomen per Sin, secundum per Samech (quae nostrae litterae similis est). Dadan gens est Aethiopiae in occidentali plaga. »\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

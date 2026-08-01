@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.166"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "166"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 18.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[170, 170]]
+text = """
+(Vers. 18.) Et factum est cum dimitteret eam anima, siquidem moriebatur: vocavit nomen ejus, Filius doloris mei: pater vero ejus vocavit nomen ejus Benjamin. In Hebraeo similitudo nominis resonat; filius enim doloris mei, quod nomen moriens mater imposuit, dicitur BENONI (בן אוני). Filius vero dextrae, hoc est, virtutis, quod Jacob mutavit, appellatur BENJAMIM. Unde errant qui putant BENJAMIM (בנימין) filium dierum interpretari. Cum enim dextera appelletur JAMIN (ימין), et finiatur in n litteram: dies quidem appellantur et ipsi JAMIM (ימים), sed in m litteram terminantur.\
+"""
+transcription_segments = [
+  { line = 170, text = """
+(Vers. 18.) Et factum est cum dimitteret eam anima, siquidem moriebatur: vocavit nomen ejus, Filius doloris mei: pater vero ejus vocavit nomen ejus Benjamin. In Hebraeo similitudo nominis resonat; filius enim doloris mei, quod nomen moriens mater imposuit, dicitur BENONI (בן אוני). Filius vero dextrae, hoc est, virtutis, quod Jacob mutavit, appellatur BENJAMIM. Unde errant qui putant BENJAMIM (בנימין) filium dierum interpretari. Cum enim dextera appelletur JAMIN (ימין), et finiatur in n litteram: dies quidem appellantur et ipsi JAMIM (ימים), sed in m litteram terminantur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

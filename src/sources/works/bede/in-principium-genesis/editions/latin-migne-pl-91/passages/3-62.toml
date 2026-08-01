@@ -1,0 +1,34 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-62"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.62"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 4 paragraphs."
+physical_line_ranges = [[292, 295]]
+text = """
+Reversique sunt, et venerunt ad fontem Mesphat. Ipsa est Cades. Mesphat interpretatur Judicium: unde vetus translatio modo dicit apertius, venerunt ad fontem judicii. Dicitur autem et hoc per anticipationem, cum longe post illud nomen locus acceperit, eo quod ibi Dominus egressum ex Aegypto populum judicaverit
+
+Et percusserunt omnem regionem Amalecitarum. Superiori versu jungendum est, ut intelligatur juxta Cades Barne caesum esse populum Amalech, ubi accubuit Maria, et Moyses rupe percussa aquas sitienti populo de petra produxit.
+
+Quod vero sequitur: Et Amorrhaeum qui habitabat in Asason Thamar, ad alium locum pertinet, hoc est oppidum quod nunc vocatur Engaddi, balsami et palmarum fertile: unde Asason Thamar Urbs palmarum interpretatur. Thamar quippe Palma dicitur.
+
+Et direxerunt contra eos aciem in valle silvestri. Pro valle silvestri in Hebraeo habet in valle Seddim, quod significat amoena et nemorosa loca. Talis enim erat Pentapolis quae propter malitiam inhabitantium non solum ignibus assumi, sed et aquarum abysso meruit a cunctorum viventium intuitu in perpetuum abscondi.\
+"""
+transcription_segments = [
+  { line = 292, text = """
+Reversique sunt, et venerunt ad fontem Mesphat. Ipsa est Cades. Mesphat interpretatur Judicium: unde vetus translatio modo dicit apertius, venerunt ad fontem judicii. Dicitur autem et hoc per anticipationem, cum longe post illud nomen locus acceperit, eo quod ibi Dominus egressum ex Aegypto populum judicaverit\
+""" },
+  { line = 293, text = """
+Et percusserunt omnem regionem Amalecitarum. Superiori versu jungendum est, ut intelligatur juxta Cades Barne caesum esse populum Amalech, ubi accubuit Maria, et Moyses rupe percussa aquas sitienti populo de petra produxit.\
+""" },
+  { line = 294, text = """
+Quod vero sequitur: Et Amorrhaeum qui habitabat in Asason Thamar, ad alium locum pertinet, hoc est oppidum quod nunc vocatur Engaddi, balsami et palmarum fertile: unde Asason Thamar Urbs palmarum interpretatur. Thamar quippe Palma dicitur.\
+""" },
+  { line = 295, text = """
+Et direxerunt contra eos aciem in valle silvestri. Pro valle silvestri in Hebraeo habet in valle Seddim, quod significat amoena et nemorosa loca. Talis enim erat Pentapolis quae propter malitiam inhabitantium non solum ignibus assumi, sed et aquarum abysso meruit a cunctorum viventium intuitu in perpetuum abscondi.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

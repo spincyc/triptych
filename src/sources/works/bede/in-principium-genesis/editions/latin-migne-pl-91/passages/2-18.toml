@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-18"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.18"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[136, 136]]
+text = """
+Egressusque Cain a facie Domini habitavit in terra profugus ad orientalem plagam Eden. In facie Domini agnitio ejus, qua se manifestat ac dignoscitur, solet intelligi. Merito ergo populus, qui a divinae cognitionis gratia recessit, in terra habitare perhibetur. Non enim potest dicere cum electis: Nostra autem conversatio in coelis est: unde etiam Salvatorem exspectamus Dominum nostrum Jesum Christum (Philip. III, 20). Hunc locum LXX Interpretes ita transtulere: Exiit autem Cain a facie Domini Dei, et habitavit in terra Naid contra Eden. Naid autem in profugum, sive ut in libro Hebraeorum nominum invenimus, instabilem motum et fluctuationem vertitur, quod nonnulli, quibus et Josephus consentit, locum esse in quo habitaverit Caïn, autumant. Porro noster interpres non hoc nomen loci, sed rei ipsius esse significantiam intellexit; quia Caïn instabilis semper et fluctuans atque incertarum sedium esset futurus. Quod quantum praesenti Judaeorum statui conveniat, universus testis est mundus. Qui bene etiam contra Eden habitare perhibetur. Eden quippe voluptatem sive delicias significat: quia nimirum perfidus ille populus quantum aversus a cognitione veritatis terrenis se negotiis implicat, tantum contrariam deliciis coelestibus vitam gerit; et quia temporalia solummodo gaudia sitit, torrenti voluptatis divinae, quo justi potantur, siccis faucibus cordis adversarius existit.\
+"""
+transcription_segments = [
+  { line = 136, text = """
+Egressusque Cain a facie Domini habitavit in terra profugus ad orientalem plagam Eden. In facie Domini agnitio ejus, qua se manifestat ac dignoscitur, solet intelligi. Merito ergo populus, qui a divinae cognitionis gratia recessit, in terra habitare perhibetur. Non enim potest dicere cum electis: Nostra autem conversatio in coelis est: unde etiam Salvatorem exspectamus Dominum nostrum Jesum Christum (Philip. III, 20). Hunc locum LXX Interpretes ita transtulere: Exiit autem Cain a facie Domini Dei, et habitavit in terra Naid contra Eden. Naid autem in profugum, sive ut in libro Hebraeorum nominum invenimus, instabilem motum et fluctuationem vertitur, quod nonnulli, quibus et Josephus consentit, locum esse in quo habitaverit Caïn, autumant. Porro noster interpres non hoc nomen loci, sed rei ipsius esse significantiam intellexit; quia Caïn instabilis semper et fluctuans atque incertarum sedium esset futurus. Quod quantum praesenti Judaeorum statui conveniat, universus testis est mundus. Qui bene etiam contra Eden habitare perhibetur. Eden quippe voluptatem sive delicias significat: quia nimirum perfidus ille populus quantum aversus a cognitione veritatis terrenis se negotiis implicat, tantum contrariam deliciis coelestibus vitam gerit; et quia temporalia solummodo gaudia sitit, torrenti voluptatis divinae, quo justi potantur, siccis faucibus cordis adversarius existit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

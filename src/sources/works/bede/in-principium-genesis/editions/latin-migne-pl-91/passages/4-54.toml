@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-54"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.54"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[361, 361]]
+text = """
+Prius autem quam irent cubitum, viri civitatis vallaverunt domum, a puero usque ad senem, omnis populus simul; vocaveruntque Lot, et dixerunt ei: Ubi sunt viri qui introierunt ad te nocte; educ illos huc, ut cognoscamus eos, etc. Hoc est quod propheta Isaias de populo Israel supra modum peccante ait: Peccatum suum sicut Sodoma praedicaverunt nec absconderunt (Isai. III, 9). Peccatum quippe suum sicut Sodomitae praedicaverunt, nec absconderunt, cum absque respectu pudoris alicujus omnes a puerili aetate usque ad ultimam senectutem masculi in masculos turpitudinem operari solebant, adeo ut ne hospitibus quidem ac peregrinis sua scelera abscondere, sed et hos, vim inferendo, suis similes facere sceleribus atque suis facinoribus implicare contenderent.\
+"""
+transcription_segments = [
+  { line = 361, text = """
+Prius autem quam irent cubitum, viri civitatis vallaverunt domum, a puero usque ad senem, omnis populus simul; vocaveruntque Lot, et dixerunt ei: Ubi sunt viri qui introierunt ad te nocte; educ illos huc, ut cognoscamus eos, etc. Hoc est quod propheta Isaias de populo Israel supra modum peccante ait: Peccatum suum sicut Sodoma praedicaverunt nec absconderunt (Isai. III, 9). Peccatum quippe suum sicut Sodomitae praedicaverunt, nec absconderunt, cum absque respectu pudoris alicujus omnes a puerili aetate usque ad ultimam senectutem masculi in masculos turpitudinem operari solebant, adeo ut ne hospitibus quidem ac peregrinis sua scelera abscondere, sed et hos, vim inferendo, suis similes facere sceleribus atque suis facinoribus implicare contenderent.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

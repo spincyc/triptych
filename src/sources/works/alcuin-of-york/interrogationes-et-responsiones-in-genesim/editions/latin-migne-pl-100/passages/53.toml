@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.53"
+edition_id = "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100"
+artifact_id = "artifact.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.interrogationes-latin-text-bcd7bc6b"
+artifact_sha256 = "bcd7bc6bb006a21c2daf78c9345cb890e7e26c89d633ae887b378c5bcb0dd5e1"
+locus = "53"
+states = ["cataloged", "acquired", "inspected"]
+context = "Interrogatio 53 of Alcuin's questions on Genesis with its response, as Migne numbers and prints it, in 1 paragraph."
+physical_line_ranges = [[57, 57]]
+text = """
+Inter. 53. Quid significat in eo quod dixit: Morte morieris (vers. 17)?-- Resp. Duplicem hominis mortem designat, id est, animae et corporis. Animae mors est, dum propter peccatum quodlibet animam Deus deserit. Corporis mors est, dum propter necessitatem quamlibet corpus deseritur ab anima. Et hanc duplam hominis mortem Christus sua simpla [morte] destruxit. Nam sola carne mortuus est ad tempus, anima vero nunquam, quia nunquam peccavit.\
+"""
+transcription_segments = [
+  { line = 57, text = """
+Inter. 53. Quid significat in eo quod dixit: Morte morieris (vers. 17)?-- Resp. Duplicem hominis mortem designat, id est, animae et corporis. Animae mors est, dum propter peccatum quodlibet animam Deus deserit. Corporis mors est, dum propter necessitatem quamlibet corpus deseritur ab anima. Et hanc duplam hominis mortem Christus sua simpla [morte] destruxit. Nam sola carne mortuus est ad tempus, anima vero nunquam, quia nunquam peccavit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

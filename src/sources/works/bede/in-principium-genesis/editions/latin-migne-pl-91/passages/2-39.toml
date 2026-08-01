@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-39"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.39"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[160, 160]]
+text = """
+Hae generationes Noe. Noe vir justus atque perfectus fuit in generationibus suis, cum Deo ambulavit. Eadem laude Noe qua Enoch praedicatur, videlicet quod divinae vestigia jussionis rectis operum bonorum gressibus secutus sit, atque ideo mundo perituro ille in paradisum translatus; iste mundo pereunte in arca salvatus est. Justus autem atque perfectus fuit Noe, non sicut perficiendi sunt sancti in illa immortalitate qua aequabuntur angelis Dei, sed sicut esse possunt in hac peregrinatione perfecti; et propterea adjungitur in generationibus suis, ut significetur eum, non juxta justitiam consummatam, sed juxta generationum suarum justum fuisse justitiam, illarum videlicet generationum in quibus Seth, Enos, Enoch et caeteri illius temporis viri sancti ac perfecti fuere. Ad quas generationes etiam filios ejus Sem et Japheth pertinere sequens sanctae Scripturae textus insinuat.\
+"""
+transcription_segments = [
+  { line = 160, text = """
+Hae generationes Noe. Noe vir justus atque perfectus fuit in generationibus suis, cum Deo ambulavit. Eadem laude Noe qua Enoch praedicatur, videlicet quod divinae vestigia jussionis rectis operum bonorum gressibus secutus sit, atque ideo mundo perituro ille in paradisum translatus; iste mundo pereunte in arca salvatus est. Justus autem atque perfectus fuit Noe, non sicut perficiendi sunt sancti in illa immortalitate qua aequabuntur angelis Dei, sed sicut esse possunt in hac peregrinatione perfecti; et propterea adjungitur in generationibus suis, ut significetur eum, non juxta justitiam consummatam, sed juxta generationum suarum justum fuisse justitiam, illarum videlicet generationum in quibus Seth, Enos, Enoch et caeteri illius temporis viri sancti ac perfecti fuere. Ad quas generationes etiam filios ejus Sem et Japheth pertinere sequens sanctae Scripturae textus insinuat.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

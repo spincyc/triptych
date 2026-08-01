@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.9-2"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "9.2"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 13.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[135, 135]]
+text = """
+VERS. 13.-- Arcum meum ponam in nubibus, et | reliqua. Datur itaque signum securitatis, quia praescivit Creator formidabiles hominum animos, ne iterum diluvio se deleri crederent, dum saepius inundationes pluviarum cernerent. Et bene idem signum securitatis in coelo positum est, scilicet ut ab omnibus inspici potuisset, et ut pro quacunque tribulatione oculos cordis ad eum attollamus, qui habitat in coelis. Sed quaeritur cur diversi coloris datur hominibus? Propter securitatem et timorem. Unde et in arcu color aquae et ignis simul ostenditur, quia ex parte est caeruleus, et ex parte rubicundus, ut utriusque judicii testis sint [ Z., sit], unius videlicet facti, et alterius faciendi, id est quia mundus judicii igne cremabitur. Nam aqua diluvii non delebitur. Hic enim nonnullos movet an pluviae ante diluvium fuerint? | Sed videntur [ Z., videtur] non fuisse, quia arcus non efficitur nisi ex radiis solis et humida nube. Poterat enim fieri ut ex roris et fontium, sicut Aegyptus, irrigatione terra fecundaretur.\
+"""
+transcription_segments = [
+  { line = 135, text = """
+VERS. 13.-- Arcum meum ponam in nubibus, et | reliqua. Datur itaque signum securitatis, quia praescivit Creator formidabiles hominum animos, ne iterum diluvio se deleri crederent, dum saepius inundationes pluviarum cernerent. Et bene idem signum securitatis in coelo positum est, scilicet ut ab omnibus inspici potuisset, et ut pro quacunque tribulatione oculos cordis ad eum attollamus, qui habitat in coelis. Sed quaeritur cur diversi coloris datur hominibus? Propter securitatem et timorem. Unde et in arcu color aquae et ignis simul ostenditur, quia ex parte est caeruleus, et ex parte rubicundus, ut utriusque judicii testis sint [ Z., sit], unius videlicet facti, et alterius faciendi, id est quia mundus judicii igne cremabitur. Nam aqua diluvii non delebitur. Hic enim nonnullos movet an pluviae ante diluvium fuerint? | Sed videntur [ Z., videtur] non fuisse, quia arcus non efficitur nisi ex radiis solis et humida nube. Poterat enim fieri ut ex roris et fontium, sicut Aegyptus, irrigatione terra fecundaretur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

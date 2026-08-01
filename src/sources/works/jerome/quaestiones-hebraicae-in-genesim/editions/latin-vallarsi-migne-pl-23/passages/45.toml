@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.45"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "45"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 6.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[48, 48]]
+text = """
+(Vers. 6.) Filii Cham, Chus, et Mesraim, et Phuth, et Chanaan. Chus usque hodie ab Hebraeis Aethiopia nuncupatur: Mesraim, Aegyptus: Phuth, Libyes. A quo et Mauritaniae fluvius usque in praesens Phuth dicitur, omnisque circa eum regio Phutensis. Multi scriptores tam Graeci quam Latini, hujus rei testes sunt. Quare autem in una tantum climatis parte, antiquum Libyae nomen resederit, et reliqua terra vocata sit Africa, disserere non hujus loci nec temporis est. Porro Chanaan obtinuit terram, quam Judaei deinceps possederunt, ejectis Chananaeis.\
+"""
+transcription_segments = [
+  { line = 48, text = """
+(Vers. 6.) Filii Cham, Chus, et Mesraim, et Phuth, et Chanaan. Chus usque hodie ab Hebraeis Aethiopia nuncupatur: Mesraim, Aegyptus: Phuth, Libyes. A quo et Mauritaniae fluvius usque in praesens Phuth dicitur, omnisque circa eum regio Phutensis. Multi scriptores tam Graeci quam Latini, hujus rei testes sunt. Quare autem in una tantum climatis parte, antiquum Libyae nomen resederit, et reliqua terra vocata sit Africa, disserere non hujus loci nec temporis est. Porro Chanaan obtinuit terram, quam Judaei deinceps possederunt, ejectis Chananaeis.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

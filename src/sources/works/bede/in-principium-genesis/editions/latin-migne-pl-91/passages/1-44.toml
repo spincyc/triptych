@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-44"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.44"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[69, 69]]
+text = """
+Qui inde dividitur in quatuor capita nomen uni Phison. Constat, astruentibus certissimis auctoribus, horum omnium fluminum quae de paradiso exire referuntur, in nostra terra fontes esse notos. Phisonis quidem, quem nunc Gangem appellant, in locis Gaucasi montis; Nili vero, quem Scriptura, ut diximus, Geon nuncupat, nunc procul ab Atlante monte, quod est ultimus finis Africae ad occidentem. Porro Tigris et Euphrates ex Armenia, unde credendum est quoniam locus ipse paradisi a cognitione hominum est remotissimus, indeque quatuor aquarum partes dividi; sed ea flumina quorum fontes noti esse dicuntur, alicubi esse sub terris et post tractus prolixarum locis regionum aliis erupisse, ubi tanquam in suis fontibus noti esse perhibentur. Nam hoc solere nonnullas aquas facere quis ignorat? Sed ibi hoc scitur, ubi non diu sub terris currunt. Denique eadem ipsa flumina Tigrim, Euphratem et Nilum, ferunt historici plerisque in locis terrae sumi, et aliquanto interjacente spatio rursus emergentia solitum agere cursum; quod etiam ipsum Dominus ad indicium facere credendus est illius cursus, quo ad nos de paradiso per occultiores terrae sinus venasque longiores exeunt. Interpretatur autem Phison oris mutatio, et recte, quia nimirum aliam in nostra gratiam suae faciei, id est, viliorem multo quam in paradiso habent ostendit.\
+"""
+transcription_segments = [
+  { line = 69, text = """
+Qui inde dividitur in quatuor capita nomen uni Phison. Constat, astruentibus certissimis auctoribus, horum omnium fluminum quae de paradiso exire referuntur, in nostra terra fontes esse notos. Phisonis quidem, quem nunc Gangem appellant, in locis Gaucasi montis; Nili vero, quem Scriptura, ut diximus, Geon nuncupat, nunc procul ab Atlante monte, quod est ultimus finis Africae ad occidentem. Porro Tigris et Euphrates ex Armenia, unde credendum est quoniam locus ipse paradisi a cognitione hominum est remotissimus, indeque quatuor aquarum partes dividi; sed ea flumina quorum fontes noti esse dicuntur, alicubi esse sub terris et post tractus prolixarum locis regionum aliis erupisse, ubi tanquam in suis fontibus noti esse perhibentur. Nam hoc solere nonnullas aquas facere quis ignorat? Sed ibi hoc scitur, ubi non diu sub terris currunt. Denique eadem ipsa flumina Tigrim, Euphratem et Nilum, ferunt historici plerisque in locis terrae sumi, et aliquanto interjacente spatio rursus emergentia solitum agere cursum; quod etiam ipsum Dominus ad indicium facere credendus est illius cursus, quo ad nos de paradiso per occultiores terrae sinus venasque longiores exeunt. Interpretatur autem Phison oris mutatio, et recte, quia nimirum aliam in nostra gratiam suae faciei, id est, viliorem multo quam in paradiso habent ostendit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

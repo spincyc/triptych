@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.10-3"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "10.3"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 4-5.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[144, 144]]
+text = """
+VERS. 4, 5.-- Filii Jaban Elisa, et Tharsis, Cethim, et Dodanim. Ab his divisae sunt insulae nationum in terris suis, vir secundum linguam suam, et cognitionem, et gentem suam. De Ionibus, id est Graecis, nascuntur Helisei, qui vocantur Aeolides, unde et quinta lingua Graeciae Aeolis appellatur. Denique Tharsis Josephus Cilicias arbitratur. Unde et metropolis civitas eorum Tharsis appellatur Paulo apostolo gloriosa. Cethim Cithii [ Z., Scitii,] a quibus hodieque urbs Cypri nominatur. Dodanim, Rhodii. | Denique, sicut in Antiquitatum libris invenitur, omnes pene insulas et totius orbis littora, terrasque mari vicinas, a Graecis accolis occupatas usque Oceanum possedere Britannicum, videlicet a Tauro et Amano montibus, ut supra diximus.\
+"""
+transcription_segments = [
+  { line = 144, text = """
+VERS. 4, 5.-- Filii Jaban Elisa, et Tharsis, Cethim, et Dodanim. Ab his divisae sunt insulae nationum in terris suis, vir secundum linguam suam, et cognitionem, et gentem suam. De Ionibus, id est Graecis, nascuntur Helisei, qui vocantur Aeolides, unde et quinta lingua Graeciae Aeolis appellatur. Denique Tharsis Josephus Cilicias arbitratur. Unde et metropolis civitas eorum Tharsis appellatur Paulo apostolo gloriosa. Cethim Cithii [ Z., Scitii,] a quibus hodieque urbs Cypri nominatur. Dodanim, Rhodii. | Denique, sicut in Antiquitatum libris invenitur, omnes pene insulas et totius orbis littora, terrasque mari vicinas, a Graecis accolis occupatas usque Oceanum possedere Britannicum, videlicet a Tauro et Amano montibus, ut supra diximus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

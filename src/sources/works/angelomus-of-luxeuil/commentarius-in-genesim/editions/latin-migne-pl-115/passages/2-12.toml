@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.2-12"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "2.12"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 13.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[52, 52]]
+text = """
+VERS. 13.-- Nomen fluvio secundo Geon, ipse est et Nilus fluvius Aegypti, ipse est qui circuit omnem terram Aethiopiae. Qui ab oriente fluens, a radicibus videlicet Atlantis montis, sicut autumant, et ad septentrionem flexus, autumnalibus pluviis auctus, plana Aegypti irrigat, usque dum in littore maris Rubri sub terra celatur, deinde irrumpens Aegyptum ad occidentem fluit. Interpretatur quippe tenebrosus, quia per Aethiopiam et Aegyptum currit; sed melius terrae gratia, vel fertilitas, quia felices homines reddit, quod magis ad spiritalem intelligentiam pertinet.\
+"""
+transcription_segments = [
+  { line = 52, text = """
+VERS. 13.-- Nomen fluvio secundo Geon, ipse est et Nilus fluvius Aegypti, ipse est qui circuit omnem terram Aethiopiae. Qui ab oriente fluens, a radicibus videlicet Atlantis montis, sicut autumant, et ad septentrionem flexus, autumnalibus pluviis auctus, plana Aegypti irrigat, usque dum in littore maris Rubri sub terra celatur, deinde irrumpens Aegyptum ad occidentem fluit. Interpretatur quippe tenebrosus, quia per Aethiopiam et Aegyptum currit; sed melius terrae gratia, vel fertilitas, quia felices homines reddit, quod magis ad spiritalem intelligentiam pertinet.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

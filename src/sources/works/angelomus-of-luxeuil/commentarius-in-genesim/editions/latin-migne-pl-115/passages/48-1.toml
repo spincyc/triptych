@@ -1,0 +1,29 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.48-1"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "48.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 5-22.' and running to the next such heading, in 3 paragraphs."
+physical_line_ranges = [[394, 396]]
+text = """
+VERS. 5-22.--Quid est quod Jacob dicit: Duo filii tui, Ephrem et Manasses, sicut Ruben et Simeon duae tribus erunt, et suis vocabulis vocabuntur? Sicut | Ephraim et Manasses duae tribus erunt, duosque populos procreabunt, et sic haereditabunt repromissionis terram sicut et filii mei [ Z., duo filii tui Ephr. et Ma. sicut Rub. et Simeon erunt mei? Significat, sicut Rub. et Sim. duae tribus erunt, et suis vocabulis vocabuntur, sic Ephr. et Ma. duae tribus erunt, duosque pop. procreabunt, et sic h. r. t. s. et f. m. ]. Reliquos autem filios quos post mortem meam genueris, tui erunt. In nomine patrum suorum vocabuntur in haereditate sua. Qui non accipient separatim terram, nec funiculos habebunt proprios, ut reliquae tribus: in tribu Ephraim et Manasse quasi appendices populi commiseebuntur.
+
+| Cur Jacob Joseph filio suo, quasi nescienti, indicare voluit ubi et quando sepelierit matrem ejus? Forte prophetice commemorare voluit ibi sepultam matrem Joseph ubi Christus fuerat nasciturus.
+
+Quae est pars una quam Jacob dedit Joseph filio suo extra fratres suos, quam tulisse se de manu Amorrhaeorum dicit in gladio et arcu suo? Significavit urbem, quae Hebraice Sichem dicitur, et secundum Graecam et Latinam declinationem Sicma appellatur, et corrupte a plurimis Sychar nominatur: quae et nunc Neapolis dicitur, urbs Samaritanorum. Sichem Hebraea lingua transfertur in humerum. Unde Septuaginta ita interpretati sunt. Quod autem dicit se eam in arcu et in gladio possedisse, arcum hic et gladium justitiam vocat, per quam meruit peregrinus | et advena, interfecto Sichem et Emor, de periculo liberari. Timuit enim, quod supra legimus, ne vicina oppida atque castella ob eversionem foederatae urbis adversum se consurgerent: et Dominus non dedit eis ut nocerent illi. Vel certe sic intelligendum: Dabo tibi Sichimam, quam emi in fortitudine mea, hoc est, in pecunia, quam multo labore et sudore quaesivi. Quod autem ait, super fratres suos, ostendit absque sorte dedisse eam tribui Joseph, et mausolaeum ejus ibi hodieque cernitur. Sequitur:\
+"""
+transcription_segments = [
+  { line = 394, text = """
+VERS. 5-22.--Quid est quod Jacob dicit: Duo filii tui, Ephrem et Manasses, sicut Ruben et Simeon duae tribus erunt, et suis vocabulis vocabuntur? Sicut | Ephraim et Manasses duae tribus erunt, duosque populos procreabunt, et sic haereditabunt repromissionis terram sicut et filii mei [ Z., duo filii tui Ephr. et Ma. sicut Rub. et Simeon erunt mei? Significat, sicut Rub. et Sim. duae tribus erunt, et suis vocabulis vocabuntur, sic Ephr. et Ma. duae tribus erunt, duosque pop. procreabunt, et sic h. r. t. s. et f. m. ]. Reliquos autem filios quos post mortem meam genueris, tui erunt. In nomine patrum suorum vocabuntur in haereditate sua. Qui non accipient separatim terram, nec funiculos habebunt proprios, ut reliquae tribus: in tribu Ephraim et Manasse quasi appendices populi commiseebuntur.\
+""" },
+  { line = 395, text = """
+| Cur Jacob Joseph filio suo, quasi nescienti, indicare voluit ubi et quando sepelierit matrem ejus? Forte prophetice commemorare voluit ibi sepultam matrem Joseph ubi Christus fuerat nasciturus.\
+""" },
+  { line = 396, text = """
+Quae est pars una quam Jacob dedit Joseph filio suo extra fratres suos, quam tulisse se de manu Amorrhaeorum dicit in gladio et arcu suo? Significavit urbem, quae Hebraice Sichem dicitur, et secundum Graecam et Latinam declinationem Sicma appellatur, et corrupte a plurimis Sychar nominatur: quae et nunc Neapolis dicitur, urbs Samaritanorum. Sichem Hebraea lingua transfertur in humerum. Unde Septuaginta ita interpretati sunt. Quod autem dicit se eam in arcu et in gladio possedisse, arcum hic et gladium justitiam vocat, per quam meruit peregrinus | et advena, interfecto Sichem et Emor, de periculo liberari. Timuit enim, quod supra legimus, ne vicina oppida atque castella ob eversionem foederatae urbis adversum se consurgerent: et Dominus non dedit eis ut nocerent illi. Vel certe sic intelligendum: Dabo tibi Sichimam, quam emi in fortitudine mea, hoc est, in pecunia, quam multo labore et sudore quaesivi. Quod autem ait, super fratres suos, ostendit absque sorte dedisse eam tribui Joseph, et mausolaeum ejus ibi hodieque cernitur. Sequitur:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

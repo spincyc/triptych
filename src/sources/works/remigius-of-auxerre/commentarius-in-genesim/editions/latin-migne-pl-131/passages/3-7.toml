@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.3-7"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "3.7"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 10.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[84, 84]]
+text = """
+Vers. 10. Audivi vocem tuam et abscondi me. Sicut amens et nimio timore perterritus. Abscondit autem se, non ut ejus scelera Dominus non videret, sed ut se indignum factum ejus aspectui ostenderet. Duplici autem verecundia arctabantur: vel quia illum obscenum motum in membris suis sentiebant quem antea nunquam experti fuerant, vel quia intelligebant ob transgressionem Dei praecepti hoc sibi contigisse. Adam, ubi es? Non quasi nescius interrogavit quem nihil latere potest, sed miseriam praevaricationis illi exprimit, cum dicit: Adam, ubi es? Id est, quam miser effectus es! Qui immortalis conditus fueras, mortis damno teneris, et innocentiae beatitudine | privaris. Vel, sicut B. Gregorius dicit, interrogatur a Domino, non ut Deus disceret quod ignorabat, sed ut ad humilitatem confessionis illum provocaret ut quod praevaricando deliquerat confitendo deleret. Sed ille peccatum suum in alium retorquere voluit, dicens:\
+"""
+transcription_segments = [
+  { line = 84, text = """
+Vers. 10. Audivi vocem tuam et abscondi me. Sicut amens et nimio timore perterritus. Abscondit autem se, non ut ejus scelera Dominus non videret, sed ut se indignum factum ejus aspectui ostenderet. Duplici autem verecundia arctabantur: vel quia illum obscenum motum in membris suis sentiebant quem antea nunquam experti fuerant, vel quia intelligebant ob transgressionem Dei praecepti hoc sibi contigisse. Adam, ubi es? Non quasi nescius interrogavit quem nihil latere potest, sed miseriam praevaricationis illi exprimit, cum dicit: Adam, ubi es? Id est, quam miser effectus es! Qui immortalis conditus fueras, mortis damno teneris, et innocentiae beatitudine | privaris. Vel, sicut B. Gregorius dicit, interrogatur a Domino, non ut Deus disceret quod ignorabat, sed ut ad humilitatem confessionis illum provocaret ut quod praevaricando deliquerat confitendo deleret. Sed ille peccatum suum in alium retorquere voluit, dicens:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

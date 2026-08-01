@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.49-3"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "49.3"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 5-7.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[399, 399]]
+text = """
+VERS. 5-7.-- | Simeon et Levi fratres, vasa iniquitatis bellantia: in consilium eorum non veniat anima mea, et in coetu illorum non sit gloria mea; quia in furore suo occiderunt virum, et in voluntate sua suffoderunt murum. Maledictus furor eorum, quia pertinax; et indignatio illorum, quia dura. Dividam eos in Jacob, et dispergam illos in Israel. Significat autem non sui fuisse consilii quod Sichem et Hemor, foederatos viros, interfecerint contra jus pacis, et amicitiarum tempore sanguinem fuderunt innocentem, et quasi quodam furore, sic crudelitate raptati murum hospitae urbis everterent. Unde dicit: Maledictus furor eorum, quia pertinax, et reliqua. Et: Dispergam eos in Israel. Levi enim haereditatem propriam non accepit, sed in omnibus | sceptris paucas urbes ad inhabitandum [Cod., ad inhabitandas] habuit. De Simeone vero in libro Jesu scriptum est quod et ipse proprium funiculum non acceperit, sed de tribu Juda quiddam acceperit. In Paralipomenon autem manifestius scribitur quod, cum multiplicatus fuisset et non haberet possessionis locum, exierit in desertum.\
+"""
+transcription_segments = [
+  { line = 399, text = """
+VERS. 5-7.-- | Simeon et Levi fratres, vasa iniquitatis bellantia: in consilium eorum non veniat anima mea, et in coetu illorum non sit gloria mea; quia in furore suo occiderunt virum, et in voluntate sua suffoderunt murum. Maledictus furor eorum, quia pertinax; et indignatio illorum, quia dura. Dividam eos in Jacob, et dispergam illos in Israel. Significat autem non sui fuisse consilii quod Sichem et Hemor, foederatos viros, interfecerint contra jus pacis, et amicitiarum tempore sanguinem fuderunt innocentem, et quasi quodam furore, sic crudelitate raptati murum hospitae urbis everterent. Unde dicit: Maledictus furor eorum, quia pertinax, et reliqua. Et: Dispergam eos in Israel. Levi enim haereditatem propriam non accepit, sed in omnibus | sceptris paucas urbes ad inhabitandum [Cod., ad inhabitandas] habuit. De Simeone vero in libro Jesu scriptum est quod et ipse proprium funiculum non acceperit, sed de tribu Juda quiddam acceperit. In Paralipomenon autem manifestius scribitur quod, cum multiplicatus fuisset et non haberet possessionis locum, exierit in desertum.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.2-8"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "2.8"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[118, 118]]
+text = """
+Dixitque Cain ad Abel fratrem suum: Egrediamur in agrum: cumque essent in agro, consurrexit Cain adversus Abel fratrem suum, et interfecit eum. Et hic perfidia Cain simul et innocentia demonstratur Abel: innocentia quidem Abel, in eo quod majorem fratrem, sed erga se hostili odio accensum simpliciter quo jubebatur ut fratrem frater secutus est; perfidia vero Cain, in eo quod occisurus fratrem foras ducit, quasi in loco secretiori divinam possit declinare praesentiam: non recogitans, neque intelligens quia qui occulta cordis sui quae redarguit noverat, etiam quo ipse secederet quidve in abdito gereret posset intueri.\
+"""
+transcription_segments = [
+  { line = 118, text = """
+Dixitque Cain ad Abel fratrem suum: Egrediamur in agrum: cumque essent in agro, consurrexit Cain adversus Abel fratrem suum, et interfecit eum. Et hic perfidia Cain simul et innocentia demonstratur Abel: innocentia quidem Abel, in eo quod majorem fratrem, sed erga se hostili odio accensum simpliciter quo jubebatur ut fratrem frater secutus est; perfidia vero Cain, in eo quod occisurus fratrem foras ducit, quasi in loco secretiori divinam possit declinare praesentiam: non recogitans, neque intelligens quia qui occulta cordis sui quae redarguit noverat, etiam quo ipse secederet quidve in abdito gereret posset intueri.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

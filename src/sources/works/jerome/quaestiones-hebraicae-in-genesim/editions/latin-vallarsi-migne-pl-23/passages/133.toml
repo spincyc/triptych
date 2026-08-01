@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.133"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "133"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 19.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[136, 136]]
+text = """
+(Cap. XXVIII.—Vers. 19.) Et vocavit Jacob nomen loci illius Bethel, et Ulammaus erat nomen civitatis prius. Ab eo quod supra dixerat: Quam terribilis est locus iste: non est hic nisi domus Dei, et haec porta coeli: nunc loco nomen imponit, et vocat illum BETHEL (בית אל), id est, domum Dei: qui locus vocabatur ante LUZA (לוז) quod interpretatur nux, sive amygdalon. Unde ridicule quidam verbum Hebraicum ULAM (אולם), nomen esse urbis putant: cum ULAM interpretetur prius. Ordo itaque est lectionis: Et vocavit nomen loci illius Bethel, et prius Luza vocabulum erat civitatis. Antiquae omnes scripturae verbo, ulam, sive ELAM plenae sunt, quod nihil aliud signat, nisi ante, aut prius, vel vestibulum, sive superliminare, vel postes.\
+"""
+transcription_segments = [
+  { line = 136, text = """
+(Cap. XXVIII.—Vers. 19.) Et vocavit Jacob nomen loci illius Bethel, et Ulammaus erat nomen civitatis prius. Ab eo quod supra dixerat: Quam terribilis est locus iste: non est hic nisi domus Dei, et haec porta coeli: nunc loco nomen imponit, et vocat illum BETHEL (בית אל), id est, domum Dei: qui locus vocabatur ante LUZA (לוז) quod interpretatur nux, sive amygdalon. Unde ridicule quidam verbum Hebraicum ULAM (אולם), nomen esse urbis putant: cum ULAM interpretetur prius. Ordo itaque est lectionis: Et vocavit nomen loci illius Bethel, et prius Luza vocabulum erat civitatis. Antiquae omnes scripturae verbo, ulam, sive ELAM plenae sunt, quod nihil aliud signat, nisi ante, aut prius, vel vestibulum, sive superliminare, vel postes.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

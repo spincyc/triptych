@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.137"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "137"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 34.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[141, 141]]
+text = """
+(Vers. 34.) Et concepit adhuc, et peperit filium, et dixit: Nunc mecum erit vir meus, quia peperi ei tres filios: ideo vocavit nomen ejus Levi. Ubi nos legimus, Apud me erit vir meus, Aquila interpretatus est, applicabitur mihi vir meus, quod Hebraice dicitur (ילוה), ILLAVE, et a doctoribus Hebraeorum aliter transfertur, ut dicant, prosequetur me vir meus, id est, non ambigo de amore in me viri mei: erit mihi in hac vita comes, et ejus dilectio me ad mortem usque deducet, et prosequetur: tres enim filios ei genui.\
+"""
+transcription_segments = [
+  { line = 141, text = """
+(Vers. 34.) Et concepit adhuc, et peperit filium, et dixit: Nunc mecum erit vir meus, quia peperi ei tres filios: ideo vocavit nomen ejus Levi. Ubi nos legimus, Apud me erit vir meus, Aquila interpretatus est, applicabitur mihi vir meus, quod Hebraice dicitur (ילוה), ILLAVE, et a doctoribus Hebraeorum aliter transfertur, ut dicant, prosequetur me vir meus, id est, non ambigo de amore in me viri mei: erit mihi in hac vita comes, et ejus dilectio me ad mortem usque deducet, et prosequetur: tres enim filios ei genui.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

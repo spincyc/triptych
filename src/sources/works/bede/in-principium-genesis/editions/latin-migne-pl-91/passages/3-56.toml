@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-56"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.56"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[284, 284]]
+text = """
+Sed et Loth qui erat cum Abram fuerunt greges ovium, et armenta, et tabernacula; nec poterat eos capere terra ut habitarent simul: erat quippe substantia eorum multa, et non quibant habitare communiter: unde et facta est rixa inter pastores gregum Abram et Loth, et caetera quibus ex ordine replicatur quomodo Loth ab Abraham salva charitate discessit, malente illo fratrem charissimum et sanctissimum a se corporaliter separari, quam cum scandalo et jurgiis infirmorum secum teneri: quem tamen a se corpore separatum nequaquam ab intimo suae mentis amore separavit, sicut sequentia sacrae historiae manifestissime probant: ubi eum ab hostibus captum strenuissime cum suis omnibus salvavit, et merito quia nec ipse Loth opus virtutis ac fidei, quod cum fratre majore consueverat exercere, etiam separatim conversatus ulla in parte mutavit.\
+"""
+transcription_segments = [
+  { line = 284, text = """
+Sed et Loth qui erat cum Abram fuerunt greges ovium, et armenta, et tabernacula; nec poterat eos capere terra ut habitarent simul: erat quippe substantia eorum multa, et non quibant habitare communiter: unde et facta est rixa inter pastores gregum Abram et Loth, et caetera quibus ex ordine replicatur quomodo Loth ab Abraham salva charitate discessit, malente illo fratrem charissimum et sanctissimum a se corporaliter separari, quam cum scandalo et jurgiis infirmorum secum teneri: quem tamen a se corpore separatum nequaquam ab intimo suae mentis amore separavit, sicut sequentia sacrae historiae manifestissime probant: ubi eum ab hostibus captum strenuissime cum suis omnibus salvavit, et merito quia nec ipse Loth opus virtutis ac fidei, quod cum fratre majore consueverat exercere, etiam separatim conversatus ulla in parte mutavit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

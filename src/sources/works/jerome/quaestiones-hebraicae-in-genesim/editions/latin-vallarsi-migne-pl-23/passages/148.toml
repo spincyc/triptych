@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.148"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "148"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 7.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[152, 152]]
+text = """
+(Cap. XXXI.—Vers. 7 et 8.) Et pater vester mentitus est mihi, et mutavit mercedem meam decem vicibus, et non dedit ei Deus ut noceret mihi. Si dixerat, hoc varium pecus erit merces tua: nascebatur [Al. nasceretur] omne pecus varium. Et si dixerat, unius coloris erit merces tua: nascebatur omne pecus unius coloris. Pro eo quod nos posuimus, mutavit mercedem meam decem vicibus, Septuaginta Interpretes posuerunt, decem agnis, nescio qua opinione ducti, cum verbum Hebraicum, MONI (מני) numerum magis quam agnos sonet. Denique et ex consequentibus hic magis sensus probatur, quod per singulos fetus semper Laban conditionem mutaverit. Si videbat varium nasci pecus, post fetum dicebat, volo ut in futurum mihi varia nascantur. Rursum cum vidisset unius coloris nasci pecora (Jacob quippe hoc audito, virgas in canalibus non ponebat), dicebat, ut futuros fetus unius coloris sibi pecora procrearent. Et quid plura? usque ad vices decem semper a Laban pecoris sui, sive Jacob, mutata conditio est. Et quodcumque sibi proposuerat ut nasceretur, in colorem contrarium vertebatur. Ne cui autem in sex annis decem pariendi vices incredibiles videantur, lege Virgilium (Georg. II), in quo dicitur: bis gravidae pecudes. Natura autem Italicarum ovium et Mesopotamiae una esse traditur.\
+"""
+transcription_segments = [
+  { line = 152, text = """
+(Cap. XXXI.—Vers. 7 et 8.) Et pater vester mentitus est mihi, et mutavit mercedem meam decem vicibus, et non dedit ei Deus ut noceret mihi. Si dixerat, hoc varium pecus erit merces tua: nascebatur [Al. nasceretur] omne pecus varium. Et si dixerat, unius coloris erit merces tua: nascebatur omne pecus unius coloris. Pro eo quod nos posuimus, mutavit mercedem meam decem vicibus, Septuaginta Interpretes posuerunt, decem agnis, nescio qua opinione ducti, cum verbum Hebraicum, MONI (מני) numerum magis quam agnos sonet. Denique et ex consequentibus hic magis sensus probatur, quod per singulos fetus semper Laban conditionem mutaverit. Si videbat varium nasci pecus, post fetum dicebat, volo ut in futurum mihi varia nascantur. Rursum cum vidisset unius coloris nasci pecora (Jacob quippe hoc audito, virgas in canalibus non ponebat), dicebat, ut futuros fetus unius coloris sibi pecora procrearent. Et quid plura? usque ad vices decem semper a Laban pecoris sui, sive Jacob, mutata conditio est. Et quodcumque sibi proposuerat ut nasceretur, in colorem contrarium vertebatur. Ne cui autem in sex annis decem pariendi vices incredibiles videantur, lege Virgilium (Georg. II), in quo dicitur: bis gravidae pecudes. Natura autem Italicarum ovium et Mesopotamiae una esse traditur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

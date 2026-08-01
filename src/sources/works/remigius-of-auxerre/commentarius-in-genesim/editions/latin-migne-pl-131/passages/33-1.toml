@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.33-1"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "33.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 10.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[351, 352]]
+text = """
+Vers. 10. Sic vide faciem tuam, quasi vultum Dei. Hoc ad adulationem dixit, vel magis perturbato animo ob timorem fratris. Quamvis etiam posset dici quia Deum pro aliquo magno viro posuit. Solent enim sancti viri dii appellari, sicut Moysi dictum est: constitui te deum Pharaonis (Exod. VII, 1). Nam | et in Graeco non habetur tu Theu cum articulo, quo divina substantia intelligitur, sed absolute Theu, in quo homo significatur.
+
+Vers 28. Transiit in Salem, urbem Sichimorum. Salem pro Sichem beatus Hieronymus corrupte positum dicit. Potest etiam intelligi duas esse civitates unius nominis: Salem urbs Jebusaeorum, in qua regnavit Melchisedech; et alia Sale urbs Sichimorum: sed diversis litteris scribuntur apud Hebraeos, et diversam habent interpretationem. Illa enim Salem pacis civitas dicitur, haec vero Sale consummata interpretatur.\
+"""
+transcription_segments = [
+  { line = 351, text = """
+Vers. 10. Sic vide faciem tuam, quasi vultum Dei. Hoc ad adulationem dixit, vel magis perturbato animo ob timorem fratris. Quamvis etiam posset dici quia Deum pro aliquo magno viro posuit. Solent enim sancti viri dii appellari, sicut Moysi dictum est: constitui te deum Pharaonis (Exod. VII, 1). Nam | et in Graeco non habetur tu Theu cum articulo, quo divina substantia intelligitur, sed absolute Theu, in quo homo significatur.\
+""" },
+  { line = 352, text = """
+Vers 28. Transiit in Salem, urbem Sichimorum. Salem pro Sichem beatus Hieronymus corrupte positum dicit. Potest etiam intelligi duas esse civitates unius nominis: Salem urbs Jebusaeorum, in qua regnavit Melchisedech; et alia Sale urbs Sichimorum: sed diversis litteris scribuntur apud Hebraeos, et diversam habent interpretationem. Illa enim Salem pacis civitas dicitur, haec vero Sale consummata interpretatur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

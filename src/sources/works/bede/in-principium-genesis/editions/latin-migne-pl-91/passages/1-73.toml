@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-73"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.73"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[100, 100]]
+text = """
+Inimicitias ponam inter te et mulierem, et semen tuum et semen illius. Semen mulieris totum est genus humanum, semen diaboli praevaricatores sunt angeli, qui exemplo sunt superbiae illius ac rebellionis depravati. Semen illius est perversa suggestio: semen mulieris fructus boni operis, quo perversae suggestioni resistitur. Hujus autem serpentis ac seminis ejus memorati inimicitiam quantum genus humanum toleret, quantam adversus eum inimicitiam omnes electi recte vivendo exerceant, cunctis sole clarius fidelibus constat. Cujus signum inimicitiae in natura etiam apparet irrationabilis serpentis, qua cunctis animantibus et bestiis terrae pro insita sibi peste veneni generalis semper existit inimicus: quod videlicet ei a tempore maledictionis hujus, et non ante insitum esse credendum est.\
+"""
+transcription_segments = [
+  { line = 100, text = """
+Inimicitias ponam inter te et mulierem, et semen tuum et semen illius. Semen mulieris totum est genus humanum, semen diaboli praevaricatores sunt angeli, qui exemplo sunt superbiae illius ac rebellionis depravati. Semen illius est perversa suggestio: semen mulieris fructus boni operis, quo perversae suggestioni resistitur. Hujus autem serpentis ac seminis ejus memorati inimicitiam quantum genus humanum toleret, quantam adversus eum inimicitiam omnes electi recte vivendo exerceant, cunctis sole clarius fidelibus constat. Cujus signum inimicitiae in natura etiam apparet irrationabilis serpentis, qua cunctis animantibus et bestiis terrae pro insita sibi peste veneni generalis semper existit inimicus: quod videlicet ei a tempore maledictionis hujus, et non ante insitum esse credendum est.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

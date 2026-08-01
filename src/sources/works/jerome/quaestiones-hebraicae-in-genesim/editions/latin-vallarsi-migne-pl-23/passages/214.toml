@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.214"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "214"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 16.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[218, 218]]
+text = """
+(Vers. 16 et seqq.) Dan judicabit populum suum, sicut unum de sceptris Israel. Fiat Dan coluber in via, regulus in semita, mordens ungulas equi, ut cadat [Al. et cadet] ascensor ejus retrorsum: salvatorem tuum exspectabo, Domine. Samson judex in Israel, de tribu Dan fuit. Hoc ergo dicit: Nunc videns in spiritu comam nutrire Samson Nazaraeum tuum, caesisque hostibus triumphare; quod in similitudinem colubri regulique obsidentis vias, nullum per terram Israel transire permittat: sed [Al. sicut] etiam si quis temerarius virtute sua, quasi equi velocitate confisus, eam voluerit praedonis more populari, effugere non valebit. Totum autem per metaphoram serpentis et equitis loquitur. Videns ergo tam fortem Nazaraeum tuum, quod et ipse propter meretricem mortuus est, et moriens nostros occidit inimicos, putavi, O Deus, ipsum esse Christum Filium tuum; verum quia mortuus est, et non resurrexit, et rursum captivus ductus est Israel, alius mihi Salvator mundi, et mei generis praestolandus est, Ut veniat cui repositum est et ipse erit exspectatio gentium.\
+"""
+transcription_segments = [
+  { line = 218, text = """
+(Vers. 16 et seqq.) Dan judicabit populum suum, sicut unum de sceptris Israel. Fiat Dan coluber in via, regulus in semita, mordens ungulas equi, ut cadat [Al. et cadet] ascensor ejus retrorsum: salvatorem tuum exspectabo, Domine. Samson judex in Israel, de tribu Dan fuit. Hoc ergo dicit: Nunc videns in spiritu comam nutrire Samson Nazaraeum tuum, caesisque hostibus triumphare; quod in similitudinem colubri regulique obsidentis vias, nullum per terram Israel transire permittat: sed [Al. sicut] etiam si quis temerarius virtute sua, quasi equi velocitate confisus, eam voluerit praedonis more populari, effugere non valebit. Totum autem per metaphoram serpentis et equitis loquitur. Videns ergo tam fortem Nazaraeum tuum, quod et ipse propter meretricem mortuus est, et moriens nostros occidit inimicos, putavi, O Deus, ipsum esse Christum Filium tuum; verum quia mortuus est, et non resurrexit, et rursum captivus ductus est Israel, alius mihi Salvator mundi, et mei generis praestolandus est, Ut veniat cui repositum est et ipse erit exspectatio gentium.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

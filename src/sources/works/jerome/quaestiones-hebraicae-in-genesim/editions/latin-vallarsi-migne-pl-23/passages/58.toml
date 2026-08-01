@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.58"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "58"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 28.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[61, 61]]
+text = """
+(Cap. XI.—Vers. 28.) Et mortuus est Aran ante patrem suum in terra, qua natus est in regione Chaldaeorum. Pro eo, quod legimus, in regione Chaldaeorum, in Hebraeo habetur, in UR CHESDIM (כשדים באור), id est in igne Chaldaeorum. Tradunt autem Hebraei ex hac occasione, istiusmodi fabulam: Quod Abraham in ignem missus sit, quia ignem adorare noluerit, quem Chaldaei colunt, et Dei auxilio liberatus, de idololatriae igne profugerit: quod in sequentibus scribitur, egressum esse Tharam cum sobole sua de regione Chaldaeorum: pro quo in Hebraeo habetur, de incendio Chaldaeorum. Et hoc esse quod nunc dicitur: Mortuus est Aran ante conspectum Thare patris sui in terra nativitatis suae, in igne Chaldaeorum: quod videlicet ignem nolens adorare, igne consumptus sit. Loquitur autem postea Dominus ad Abraham: Ego sum qui eduxi te de igne Chaldaeorum.\
+"""
+transcription_segments = [
+  { line = 61, text = """
+(Cap. XI.—Vers. 28.) Et mortuus est Aran ante patrem suum in terra, qua natus est in regione Chaldaeorum. Pro eo, quod legimus, in regione Chaldaeorum, in Hebraeo habetur, in UR CHESDIM (כשדים באור), id est in igne Chaldaeorum. Tradunt autem Hebraei ex hac occasione, istiusmodi fabulam: Quod Abraham in ignem missus sit, quia ignem adorare noluerit, quem Chaldaei colunt, et Dei auxilio liberatus, de idololatriae igne profugerit: quod in sequentibus scribitur, egressum esse Tharam cum sobole sua de regione Chaldaeorum: pro quo in Hebraeo habetur, de incendio Chaldaeorum. Et hoc esse quod nunc dicitur: Mortuus est Aran ante conspectum Thare patris sui in terra nativitatis suae, in igne Chaldaeorum: quod videlicet ignem nolens adorare, igne consumptus sit. Loquitur autem postea Dominus ad Abraham: Ego sum qui eduxi te de igne Chaldaeorum.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

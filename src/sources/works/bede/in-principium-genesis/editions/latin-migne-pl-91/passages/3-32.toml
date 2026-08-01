@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.3-32"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "3.32"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[260, 260]]
+text = """
+Porro Arfaxat vixit triginta quinque annos et genuit Sale. In hoc loco Septuaginta Interpretes unam generationem plus quam Hebraica veritas posuere, dicentes quod Arfaxat cum esset annorum centum triginta quinque genuit Caïnan: qui cum centum triginta annorum fuerit, gennerit ipse Sale: quorum translationem evangelista Lucas hoc in loco videtur esse secutus. Verum chronographi Graecorum hac comperta distantia, generationum quidem seriem ad auctoritatem Hebraicam, ablato Cainan, emendarunt: nec tamen numerum annorum in generationibus, quas cum Hebraeis Codicibus habuere communes, ad eorum auctoritatem emendare curarunt: sed propriam secuti auctoritatem, dederunt huic aetati quae a diluvio tendit ad Abraham annorum summam; minorem quidem LXX Translatorum editione annis centum triginta, sed Hebraica veritate annis sexcentis et quinquaginta majorem.\
+"""
+transcription_segments = [
+  { line = 260, text = """
+Porro Arfaxat vixit triginta quinque annos et genuit Sale. In hoc loco Septuaginta Interpretes unam generationem plus quam Hebraica veritas posuere, dicentes quod Arfaxat cum esset annorum centum triginta quinque genuit Caïnan: qui cum centum triginta annorum fuerit, gennerit ipse Sale: quorum translationem evangelista Lucas hoc in loco videtur esse secutus. Verum chronographi Graecorum hac comperta distantia, generationum quidem seriem ad auctoritatem Hebraicam, ablato Cainan, emendarunt: nec tamen numerum annorum in generationibus, quas cum Hebraeis Codicibus habuere communes, ad eorum auctoritatem emendare curarunt: sed propriam secuti auctoritatem, dederunt huic aetati quae a diluvio tendit ad Abraham annorum summam; minorem quidem LXX Translatorum editione annis centum triginta, sed Hebraica veritate annis sexcentis et quinquaginta majorem.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

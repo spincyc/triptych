@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.4-18"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "4.18"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[321, 321]]
+text = """
+Hic erit ferus homo, manus ejus contra omnes, et manus omnium contra eum, et e regione universorum fratrum suorum figet tabernacula. Significat semen ejus habitaturum in eremo, id est, Saracenos vagos, incertisque sedibus, qui universas gentes quibus desertum ex latere jungitur incursant, et expugnantur ab omnibus: sed haec antiquitus. Nunc autem in tantum manus ejus contra omnes, et manus sunt omnium contra eum; ut Africam totam in longitudine sua ditione premant, sed et Asiae maximam partem, et Europae nonnullam omnibus exosi et contrarii teneant. Quod autem dicit: Figet tabernacula; morem gentis antiquum ostendit, quae in tabernaculis semper, non in domibus, habitare solebat.\
+"""
+transcription_segments = [
+  { line = 321, text = """
+Hic erit ferus homo, manus ejus contra omnes, et manus omnium contra eum, et e regione universorum fratrum suorum figet tabernacula. Significat semen ejus habitaturum in eremo, id est, Saracenos vagos, incertisque sedibus, qui universas gentes quibus desertum ex latere jungitur incursant, et expugnantur ab omnibus: sed haec antiquitus. Nunc autem in tantum manus ejus contra omnes, et manus sunt omnium contra eum; ut Africam totam in longitudine sua ditione premant, sed et Asiae maximam partem, et Europae nonnullam omnibus exosi et contrarii teneant. Quod autem dicit: Figet tabernacula; morem gentis antiquum ostendit, quae in tabernaculis semper, non in domibus, habitare solebat.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

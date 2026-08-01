@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.66"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "66"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 3.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[69, 69]]
+text = """
+(Cap. XIV.—Vers. 3.) Et rex Bale, haec est Segor. Omnes hi consenserunt apud vallem Salsam, hoc est, mare Salis. Bale lingua Hebraea, κατάποσις, id est, devoratio dicitur. Tradunt igitur Hebraei, hanc eamdem in alio Scripturarum loco Salisa nominari: dicique rursum, μόσχον τριετίζουσαν, id est, vitulam conternantem, quod scilicet tertio motu terrae absorpta sit (I Samuel IX, 4; Isai., XV, 5). Et ex eo tempore, quo Sodoma et Gomorrha, Adama et Seboim divino igne subversae sunt, illa parvula nuncupetur. Siquidem Segor transfertur in parvam, quae lingua Syra Zoara dicitur. Vallis autem Salinarum, sicut in hoc eodem libro scribitur, in qua fuerunt ante putei bituminis, post Dei iram, et sulphuris pluviam, in mare Mortuum versa est: quod a Graecis λίμνη Ἀσφαλτῖτις, id est, stagnum bituminis appellatur.\
+"""
+transcription_segments = [
+  { line = 69, text = """
+(Cap. XIV.—Vers. 3.) Et rex Bale, haec est Segor. Omnes hi consenserunt apud vallem Salsam, hoc est, mare Salis. Bale lingua Hebraea, κατάποσις, id est, devoratio dicitur. Tradunt igitur Hebraei, hanc eamdem in alio Scripturarum loco Salisa nominari: dicique rursum, μόσχον τριετίζουσαν, id est, vitulam conternantem, quod scilicet tertio motu terrae absorpta sit (I Samuel IX, 4; Isai., XV, 5). Et ex eo tempore, quo Sodoma et Gomorrha, Adama et Seboim divino igne subversae sunt, illa parvula nuncupetur. Siquidem Segor transfertur in parvam, quae lingua Syra Zoara dicitur. Vallis autem Salinarum, sicut in hoc eodem libro scribitur, in qua fuerunt ante putei bituminis, post Dei iram, et sulphuris pluviam, in mare Mortuum versa est: quod a Graecis λίμνη Ἀσφαλτῖτις, id est, stagnum bituminis appellatur.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

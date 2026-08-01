@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.159"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "159"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 18.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[163, 163]]
+text = """
+(Vers. 18.) Et venit Jacob Salem civitatem Sichem in terram Chanaan, cum venisset de Mesopotamia Syriae. Error oboritur, quomodo Salem, Sichem civitas appelletur, cum Jerusalem in qua regnavit Melchisedech, Salem ante sit dicta. Aut igitur utraque urbs unius nominis est: quod etiam de pluribus Judaeae locis possumus invenire: ut idem urbis et loci nomen in alia atque alia tribu sit; aut certe istam Salem, quae nunc pro Sichem nominatur, dicimus hic interpretari consummatam, atque perfectam: et illam quae postea Jerusalem dicta est, pacificam nostro sermone transferri. Utrumque enim, accentu paululum declinato, hoc vocabulum sonat. Tradunt Hebraei, quod claudicantis femur Jacob ibi convaluerit, et sanatum sit: propterea eamdem civitatem curati atque perfecti vocabulum consecutam.\
+"""
+transcription_segments = [
+  { line = 163, text = """
+(Vers. 18.) Et venit Jacob Salem civitatem Sichem in terram Chanaan, cum venisset de Mesopotamia Syriae. Error oboritur, quomodo Salem, Sichem civitas appelletur, cum Jerusalem in qua regnavit Melchisedech, Salem ante sit dicta. Aut igitur utraque urbs unius nominis est: quod etiam de pluribus Judaeae locis possumus invenire: ut idem urbis et loci nomen in alia atque alia tribu sit; aut certe istam Salem, quae nunc pro Sichem nominatur, dicimus hic interpretari consummatam, atque perfectam: et illam quae postea Jerusalem dicta est, pacificam nostro sermone transferri. Utrumque enim, accentu paululum declinato, hoc vocabulum sonat. Tradunt Hebraei, quod claudicantis femur Jacob ibi convaluerit, et sanatum sit: propterea eamdem civitatem curati atque perfecti vocabulum consecutam.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

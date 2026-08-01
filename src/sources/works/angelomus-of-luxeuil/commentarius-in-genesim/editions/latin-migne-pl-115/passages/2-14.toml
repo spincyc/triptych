@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.2-14"
+edition_id = "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115"
+artifact_id = "artifact.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.angelomus-latin-text-ffe03dd2"
+artifact_sha256 = "ffe03dd2ee80ca6eec129c888199ffaa2cd38ea7d828f34b11ffdcbe47f410d3"
+locus = "2.14"
+states = ["cataloged", "acquired", "inspected"]
+context = "One block of Angelomus's commentary as Migne prints it, headed 'VERS. 15.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[57, 57]]
+text = """
+VERS. 15.-- Tulit ergo Dominus Deus hominem, et posuit eum in paradiso voluptatis. Hic enim ostenditur | quia extra paradisum conditus est. Quidam enim dixerunt quod in Hebron [Petr., quod Hebron] conditus sit, ubi et sepultus jacet, et subito illuc positus. Hoc historia divinae legis non narrat. Ut operaretur et custodiret illum. Quid operaretur, cum nondum erat laboris defectio? vel quid custodiret, cum nullus erat aggressor vel praedo? An propter bestias dicit? Minime. Quia bestiae nocivae non fuerunt, nisi post peccatum. Sed quod ait, ut operaretur et custodiret illum, non pertinet ad servilem laborem, sed ad exercitium jucunditatis, et honestam animi voluptatem, sicut potentes, cum nullis indigent, propter jucunditatem tamen laboribus se exercent. Seu etiam propterea dictum est, ut operaretur, | et custodiret illum, id est, operaretur praecepta justitiae, et perseveraret in mandato, et custodiret semetipsum, ne perderet paradisum. Dicunt et aliter: Tulit ergo Deus hominem, et posuit eum in paradiso, ut operaretur et custodiret illum, id est ut ipsum hominem Deus operaretur, et custodiret illum; operaretur, ut justus esset; et custodiret, ut tutus esset; sicut terra operari dicitur ab hominibus non creando, sed exercendo, ut fructum ferat, quem sensum nonnulli reprehendere voluerunt, quia, inquiunt, si eum custodiret, non peccaret. Sequitur:\
+"""
+transcription_segments = [
+  { line = 57, text = """
+VERS. 15.-- Tulit ergo Dominus Deus hominem, et posuit eum in paradiso voluptatis. Hic enim ostenditur | quia extra paradisum conditus est. Quidam enim dixerunt quod in Hebron [Petr., quod Hebron] conditus sit, ubi et sepultus jacet, et subito illuc positus. Hoc historia divinae legis non narrat. Ut operaretur et custodiret illum. Quid operaretur, cum nondum erat laboris defectio? vel quid custodiret, cum nullus erat aggressor vel praedo? An propter bestias dicit? Minime. Quia bestiae nocivae non fuerunt, nisi post peccatum. Sed quod ait, ut operaretur et custodiret illum, non pertinet ad servilem laborem, sed ad exercitium jucunditatis, et honestam animi voluptatem, sicut potentes, cum nullis indigent, propter jucunditatem tamen laboribus se exercent. Seu etiam propterea dictum est, ut operaretur, | et custodiret illum, id est, operaretur praecepta justitiae, et perseveraret in mandato, et custodiret semetipsum, ne perderet paradisum. Dicunt et aliter: Tulit ergo Deus hominem, et posuit eum in paradiso, ut operaretur et custodiret illum, id est ut ipsum hominem Deus operaretur, et custodiret illum; operaretur, ut justus esset; et custodiret, ut tutus esset; sicut terra operari dicitur ab hominibus non creando, sed exercendo, ut fructum ferat, quem sensum nonnulli reprehendere voluerunt, quia, inquiunt, si eum custodiret, non peccaret. Sequitur:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.128"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "128"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 32.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[131, 131]]
+text = """
+(Vers. 32 et 33.) Et venerunt servi Isaac, et nuntiaverunt ei de puteo, quem foderunt: et dixerunt ei, invenimus aquam: et vocavit nomen ejus saturitas. Nescio quomodo in Septuaginta Interpretibus habeatur: Et venerunt pueri Isaac, et nuntiaverunt ei de puteo, quem foderunt: et dixerunt ei, non invenimus aquam: et vocavit nomen ejus juramentum. Quae enim etymologia est, propterea vocari juramentum, quod aquam non invenerunt? E contrario in Hebraeo, cui interpretationi Aquila consentit et Symmachus, hoc significat, quia invenerint aquam, et propterea appellatus sit puteus ipse saturitas: et vocata civitas BERSABEE, hoc est, puteus saturitatis (Gen. XXI): licet enim [Al. nos] supra ex verbo juramenti, sive ex septenario ovium numero, quod SABEE (שבע) dicitur, asseruerimus BERSABEE appellatam: tamen nunc ex eo quod aqua inventa est, Isaac ad nomen civitatis, quae ita vocabatur alludens, declinavit paululum litteram, et pro stridulo Hebraeorum SIN, a quo SABEE incipitur, Graecum sigma, id est Hebraeum SAMECH posuit: alioquin et juxta allegoriae legem, post tantos puteos in fine virtutum, nequaquam congruit, ut Isaac aquam minime repererit.\
+"""
+transcription_segments = [
+  { line = 131, text = """
+(Vers. 32 et 33.) Et venerunt servi Isaac, et nuntiaverunt ei de puteo, quem foderunt: et dixerunt ei, invenimus aquam: et vocavit nomen ejus saturitas. Nescio quomodo in Septuaginta Interpretibus habeatur: Et venerunt pueri Isaac, et nuntiaverunt ei de puteo, quem foderunt: et dixerunt ei, non invenimus aquam: et vocavit nomen ejus juramentum. Quae enim etymologia est, propterea vocari juramentum, quod aquam non invenerunt? E contrario in Hebraeo, cui interpretationi Aquila consentit et Symmachus, hoc significat, quia invenerint aquam, et propterea appellatus sit puteus ipse saturitas: et vocata civitas BERSABEE, hoc est, puteus saturitatis (Gen. XXI): licet enim [Al. nos] supra ex verbo juramenti, sive ex septenario ovium numero, quod SABEE (שבע) dicitur, asseruerimus BERSABEE appellatam: tamen nunc ex eo quod aqua inventa est, Isaac ad nomen civitatis, quae ita vocabatur alludens, declinavit paululum litteram, et pro stridulo Hebraeorum SIN, a quo SABEE incipitur, Graecum sigma, id est Hebraeum SAMECH posuit: alioquin et juxta allegoriae legem, post tantos puteos in fine virtutum, nequaquam congruit, ut Isaac aquam minime repererit.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

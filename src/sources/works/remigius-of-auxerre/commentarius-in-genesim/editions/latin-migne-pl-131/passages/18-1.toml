@@ -1,0 +1,24 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.18-1"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "18.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 1.' and running to the next such heading, in 2 paragraphs."
+physical_line_ranges = [[222, 223]]
+text = """
+Vers. 1. Apparuit ei Dominus in convalle Mambre. Quaeri potest juxta litteram, si Abraham angelos intelligebat esse qui in figura hominum apparebant, cur eis ea quae mortalibus conveniunt obsequia praeparavit? Fortassis quia primo homines esse credebat, postea vero ex his quae ab illis dicta sunt vel facta angelos intellexit. Intelligebat eos esse angelos, cum eos ad coelum redire videbat, sicut in libro Judicum de Manue legimus, qui primo videns angelum hominem esse putavit, dicens: Tu es ille vir qui locutus es mulieri (Judic. XIII, 11)? Cumque ei humanitatis causa haedum fecisse voluisset, dicit ei angelus: Si cogis me, non comedam. Sin autem: | offer illud Domino. Cumque hoc fecisset, et flamma sacrificii ascenderet, angelus in flamma pariter ascendit. Caeterum de Sara nulli dubium quod homines esse putabat. Nam et negare ausa est quod angelus dixit ad Abraham: Cur risit Sara uxor tua? Negavit enim, et dixit: Non risi.
+
+Mystice Abraham triplicem gessit figuram, Dei videlicet Patris in eo quod Isaac obtulit. Gestat et figuram Filii in eo quod de domo sua et cognatione exivit. Hic vero unamquamque sanctam significat animam quae Deum in hospitio suae mentis cum gaudio suscipit. Tres viros qui ei apparuerunt, quidam interpretantur Christum, et ipsum Moysen et Eliam qui etiam cum eo in monte transfigurati apparuerunt. | Tunc ergo Dominus venit quando mysterium incarnationis Abrahae ostendit, quia lex quae per Moysen data est, et prophetia quae per Eliam designatur, semper ejus praedixerunt adventum.\
+"""
+transcription_segments = [
+  { line = 222, text = """
+Vers. 1. Apparuit ei Dominus in convalle Mambre. Quaeri potest juxta litteram, si Abraham angelos intelligebat esse qui in figura hominum apparebant, cur eis ea quae mortalibus conveniunt obsequia praeparavit? Fortassis quia primo homines esse credebat, postea vero ex his quae ab illis dicta sunt vel facta angelos intellexit. Intelligebat eos esse angelos, cum eos ad coelum redire videbat, sicut in libro Judicum de Manue legimus, qui primo videns angelum hominem esse putavit, dicens: Tu es ille vir qui locutus es mulieri (Judic. XIII, 11)? Cumque ei humanitatis causa haedum fecisse voluisset, dicit ei angelus: Si cogis me, non comedam. Sin autem: | offer illud Domino. Cumque hoc fecisset, et flamma sacrificii ascenderet, angelus in flamma pariter ascendit. Caeterum de Sara nulli dubium quod homines esse putabat. Nam et negare ausa est quod angelus dixit ad Abraham: Cur risit Sara uxor tua? Negavit enim, et dixit: Non risi.\
+""" },
+  { line = 223, text = """
+Mystice Abraham triplicem gessit figuram, Dei videlicet Patris in eo quod Isaac obtulit. Gestat et figuram Filii in eo quod de domo sua et cognatione exivit. Hic vero unamquamque sanctam significat animam quae Deum in hospitio suae mentis cum gaudio suscipit. Tres viros qui ei apparuerunt, quidam interpretantur Christum, et ipsum Moysen et Eliam qui etiam cum eo in monte transfigurati apparuerunt. | Tunc ergo Dominus venit quando mysterium incarnationis Abrahae ostendit, quia lex quae per Moysen data est, et prophetia quae per Eliam designatur, semper ejus praedixerunt adventum.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

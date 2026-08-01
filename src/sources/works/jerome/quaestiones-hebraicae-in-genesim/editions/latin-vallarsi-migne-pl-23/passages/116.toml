@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.116"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "116"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 8.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[119, 119]]
+text = """
+(Vers. 8.) Et mortuus est Abraham in senectute bona, senex et plenus, et collectus est ad populum suum. Male in Septuaginta Interpretibus additum est, et deficiens Abraham mortuus est: quia non convenit Abrahae deficere, et imminui. Illud quoque quod nos posuimus, in senectute bona senex et plenus: in Graecis codicibus ponitur, plenus dierum. Quod cum sensum videatur exponere, eo quod luce et diei operibus plenus occubuerit: tamen magis ad anagogen facit, si simpliciter ponatur plenus.\
+"""
+transcription_segments = [
+  { line = 119, text = """
+(Vers. 8.) Et mortuus est Abraham in senectute bona, senex et plenus, et collectus est ad populum suum. Male in Septuaginta Interpretibus additum est, et deficiens Abraham mortuus est: quia non convenit Abrahae deficere, et imminui. Illud quoque quod nos posuimus, in senectute bona senex et plenus: in Graecis codicibus ponitur, plenus dierum. Quod cum sensum videatur exponere, eo quod luce et diei operibus plenus occubuerit: tamen magis ad anagogen facit, si simpliciter ponatur plenus.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

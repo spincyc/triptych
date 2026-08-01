@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.47-3"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "47.3"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 19.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[426, 426]]
+text = """
+| Vers. 19. Eme nos in servitutem regiam. Allegorice omnis Aegyptus servus est, et eo amplius, quo se sponte tradit. Nam filii Israel et ipsi servi fuerant in Aegypto, sed non sponte. Aegyptii vero spontaneam subierunt servitutem, eos utique designantes qui Deum a sua mente excludentes, tradunt se servire immunditiae et iniquitati ad iniquitatem.\
+"""
+transcription_segments = [
+  { line = 426, text = """
+| Vers. 19. Eme nos in servitutem regiam. Allegorice omnis Aegyptus servus est, et eo amplius, quo se sponte tradit. Nam filii Israel et ipsi servi fuerant in Aegypto, sed non sponte. Aegyptii vero spontaneam subierunt servitutem, eos utique designantes qui Deum a sua mente excludentes, tradunt se servire immunditiae et iniquitati ad iniquitatem.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

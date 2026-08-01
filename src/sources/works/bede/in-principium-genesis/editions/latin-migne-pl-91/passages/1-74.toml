@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-principium-genesis.latin-migne-pl-91.1-74"
+edition_id = "edition.bede.in-principium-genesis.latin-migne-pl-91"
+artifact_id = "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2"
+artifact_sha256 = "dac5a6e2b5845552a4e47eb0a633f32ba3ef4dfae06d967b1991c05561cfe667"
+locus = "1.74"
+states = ["cataloged", "acquired", "inspected"]
+context = "One lemma of Bede's commentary with the exposition Migne prints under it, in 1 paragraph."
+physical_line_ranges = [[101, 101]]
+text = """
+Ipsa conteret caput tuum, et insidiaberis calcaneo ejus. Mulier conterit caput serpentis, cum Ecclesia sancta insidias diaboli et suasiones venenosas in ipso mox initio deprehensas abigit, et quasi conculcans ad nihilum deducit. Conterit caput serpentis, cum superbiae, per quam Eva decepta est, saepe sub potenti manu Dei humiliando resistit: initium enim omnis peccati superbia. Et serpens insidiatur calcaneo mulieris, quia circuiens Ecclesiam diabolus velut leo rugiens quaerit quem devoret, quomodo gressus bonae nostrae actionis evertat. Insidiatur calcaneo, cum in fine vitae praesentis nos rapere satagit. Calcaneo namque qui finis est corporis, non immerito finis vitae nostrae designatur, quod utrumque ipsa quoque serpentis conditio figurate denuntiat, qui conteri solet ab omnibus qui possunt, et ipse feriendis hominum vestigiis insidiari non desinit\
+"""
+transcription_segments = [
+  { line = 101, text = """
+Ipsa conteret caput tuum, et insidiaberis calcaneo ejus. Mulier conterit caput serpentis, cum Ecclesia sancta insidias diaboli et suasiones venenosas in ipso mox initio deprehensas abigit, et quasi conculcans ad nihilum deducit. Conterit caput serpentis, cum superbiae, per quam Eva decepta est, saepe sub potenti manu Dei humiliando resistit: initium enim omnis peccati superbia. Et serpens insidiatur calcaneo mulieris, quia circuiens Ecclesiam diabolus velut leo rugiens quaerit quem devoret, quomodo gressus bonae nostrae actionis evertat. Insidiatur calcaneo, cum in fine vitae praesentis nos rapere satagit. Calcaneo namque qui finis est corporis, non immerito finis vitae nostrae designatur, quod utrumque ipsa quoque serpentis conditio figurate denuntiat, qui conteri solet ab omnibus qui possunt, et ipse feriendis hominum vestigiis insidiari non desinit\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

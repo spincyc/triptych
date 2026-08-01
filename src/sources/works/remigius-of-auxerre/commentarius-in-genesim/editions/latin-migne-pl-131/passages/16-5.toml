@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.16-5"
+edition_id = "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131"
+artifact_id = "artifact.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.remigius-latin-text-8c3d9117"
+artifact_sha256 = "8c3d91171ce4994fa2253817968f476367ceaf99a2f9f7afbdb9f1fcfd20b1c6"
+locus = "16.5"
+states = ["cataloged", "acquired", "inspected"]
+context = "One gloss of Remigius's commentary as Migne prints it, headed 'VERS. 13.' and running to the next such heading, in 1 paragraph."
+physical_line_ranges = [[212, 212]]
+text = """
+Vers. 13. Tu Deus, qui vidisti me. Hoc est, qui | misertus es mihi. Videre enim Dei misereri est. Quod autem hic dicit: vidi posteriora videntis me concordat cum eo loco ubi Dominus ad Moysen dixit: Non enim videbit me homo et vivet. Ac deinde: Est locus apud me: stabis supra petram. Cum pertransiero, auferam manum meam, et videbis posteriora mea (Exod. XXXIII, 20 et seq.). Illam enim sapientiam, quae est Deus, invisibilem omni creaturae profecto nullus videre potest. Posteriora autem Dei mysterium est incarnationis Christi per quam videri ab hominibus potuit. Unde et bene dixit: Cum pertransiero. Nam transire hominis est.\
+"""
+transcription_segments = [
+  { line = 212, text = """
+Vers. 13. Tu Deus, qui vidisti me. Hoc est, qui | misertus es mihi. Videre enim Dei misereri est. Quod autem hic dicit: vidi posteriora videntis me concordat cum eo loco ubi Dominus ad Moysen dixit: Non enim videbit me homo et vivet. Ac deinde: Est locus apud me: stabis supra petram. Cum pertransiero, auferam manum meam, et videbis posteriora mea (Exod. XXXIII, 20 et seq.). Illam enim sapientiam, quae est Deus, invisibilem omni creaturae profecto nullus videre potest. Posteriora autem Dei mysterium est incarnationis Christi per quam videri ab hominibus potuit. Unde et bene dixit: Cum pertransiero. Nam transire hominis est.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

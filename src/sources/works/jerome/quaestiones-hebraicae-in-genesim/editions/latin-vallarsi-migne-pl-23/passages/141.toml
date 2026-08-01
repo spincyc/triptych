@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.141"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "141"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 10.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[145, 145]]
+text = """
+(Vers. 10 et 11.) Et peperit Zelpha ancilla Liae Jacob filium: et dixit Lia, In fortuna: et vocavit nomen ejus Gad. Ubi nos posuimus, in fortuna, et Graece dicitur, ἐν τύχῃ, quae potest eventus dici: in Hebraeo habet BAGAD (בגד), quod Aquila interpretatur, venit accinctio. Nos autem dicere possumus in procinctu. BA enim potest praepositionem sonare in, et venit. Ab eventu ergo, sive procinctu, qui GAD (גד) dicitur, Zelphae filius Gad vocatus est. Sequitur:\
+"""
+transcription_segments = [
+  { line = 145, text = """
+(Vers. 10 et 11.) Et peperit Zelpha ancilla Liae Jacob filium: et dixit Lia, In fortuna: et vocavit nomen ejus Gad. Ubi nos posuimus, in fortuna, et Graece dicitur, ἐν τύχῃ, quae potest eventus dici: in Hebraeo habet BAGAD (בגד), quod Aquila interpretatur, venit accinctio. Nos autem dicere possumus in procinctu. BA enim potest praepositionem sonare in, et venit. Ab eventu ergo, sive procinctu, qui GAD (גד) dicitur, Zelphae filius Gad vocatus est. Sequitur:\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."

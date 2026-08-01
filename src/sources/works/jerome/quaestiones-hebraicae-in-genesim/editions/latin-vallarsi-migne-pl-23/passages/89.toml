@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.89"
+edition_id = "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23"
+artifact_id = "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b"
+artifact_sha256 = "9924ed7bec963237dde1f33fad5d6f46295fb1005602e59a95078d3297464f7e"
+locus = "89"
+states = ["cataloged", "acquired", "inspected"]
+context = "One quaestio of Jerome's Hebrew Questions as Migne prints it, headed 'VERS. 14.' and running to the next such heading, in 1 paragraph, with the Hebrew and Greek words it compares."
+physical_line_ranges = [[92, 92]]
+text = """
+(Cap. XIX.—Vers. 14.) Et locutus est ad generos suos, qui acceperant filias ejus. Quia postea duae filiae Lot virgines fuisse dicuntur (de quibus et ipse dudum ad Sodomaeos dixerat: Ecce duae filiae meae, quae non cognoverunt virum), et nunc Scriptura commemorat eum habuisse generos; nonnulli arbitrantur illas, quae viros habuerunt, in Sodomis remansisse, et eas exisse cum patre, quae virgines fuerunt. Quod cum Scriptura non dicat, Hebraea veritas exponenda est, in qua scribitur: Egressus est Lot, et locutus est ad sponsos, qui accepturi erant filias ejus. Necdum igitur virgines filiae matrimonio fuerant copulatae.\
+"""
+transcription_segments = [
+  { line = 92, text = """
+(Cap. XIX.—Vers. 14.) Et locutus est ad generos suos, qui acceperant filias ejus. Quia postea duae filiae Lot virgines fuisse dicuntur (de quibus et ipse dudum ad Sodomaeos dixerat: Ecce duae filiae meae, quae non cognoverunt virum), et nunc Scriptura commemorat eum habuisse generos; nonnulli arbitrantur illas, quae viros habuerunt, in Sodomis remansisse, et eas exisse cum patre, quae virgines fuerunt. Quod cum Scriptura non dicat, Hebraea veritas exponenda est, in qua scribitur: Egressus est Lot, et locutus est ad sponsos, qui accepturi erant filias ejus. Necdum igitur virgines filiae matrimonio fuerant copulatae.\
+""" },
+]
+notes = "Acquired 2026-08-01 for the Genesis catena from the hashed Latin Wikisource export named above, fetched with curl and transcribed by a tracked script with no model anywhere in the path. Held in Latin only. Inspected against the transcription, not collated against Migne's printed column."
