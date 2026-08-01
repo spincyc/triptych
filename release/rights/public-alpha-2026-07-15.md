@@ -1925,11 +1925,11 @@ release attachment, announcement, or promotion.
 | `src/web/browser/history/history.js` | `a4fd720a6bee38409df7f7177c76784d50ed1dddefc029eaa3ec8448ab18f393` |
 | `src/web/browser/history/index.html` | `869e098a72db36cd07e19f2b11dfe853816c39693ae0c5cd7959d4c309848fae` |
 | `src/web/browser/liturgy/assembly-model.js` | `55425213cde4f34cf1c7f491c1710d6d5f5e9171e3e281ec26a28b4bd98a0159` |
-| `src/web/browser/liturgy/day.css` | `42da9c67970b6e18c9e447a99874d758c0b5b6218b14d611fd2b53a0aaa18015` |
-| `src/web/browser/liturgy/day.html` | `dc3828f032da977f21d675bc6877e5703ba75f9521483ff423c5bf460c28cbeb` |
-| `src/web/browser/liturgy/day.js` | `5ac28ffed65e658817ae2f4e2c700a1f1e5998e7fe762ef8ef444381460c27b8` |
+| `src/web/browser/liturgy/day.css` | `ad00be76c20279a9917383c4b562d13b63614e7d1a1decb2b4f2124d1e9eaf38` |
+| `src/web/browser/liturgy/day.html` | `c6a3b235a64e2641378deb934a71948848b5811a34738fc56b856195e5bb54e6` |
+| `src/web/browser/liturgy/day.js` | `ed187884ac5b4b4d87ef232f9cbccd3eac3952bb8cfa4b79ba874dcb943e9639` |
 | `src/web/browser/liturgy/index.html` | `da08c05d1c4b200e2418717dd956283967f736022067c233fd8ed65ed88e74d5` |
-| `src/web/browser/liturgy/liturgy.css` | `f942d07d7b9d06900a9d9dd2f9e341a8631805cb6a595fcb4c9f9f4ebac4d3c7` |
+| `src/web/browser/liturgy/liturgy.css` | `a8d2af04ae3fc0af91fec2234816bdffb6daaf2fb61cb772f898bb8342cee4cd` |
 | `src/web/browser/liturgy/liturgy.js` | `7283e6e1b0308ac159b37324dcc9edb118defe291b1fc875769f6f44c1cf5d1a` |
 | `src/web/browser/scripture/index.html` | `ffab2b4ae7a0f3036c37adf62158c09e73b62bb2e87c7924fe4e711a40ff1ff9` |
 | `src/web/browser/scripture/plan-model.js` | `c0c7a6635844f2e88e2d8d2e290790fa05f73ba1153f59e380812e3b8775ee51` |
@@ -1938,7 +1938,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/scripture/track.html` | `6f8858de7b6dfe6af1bdb27dbda9062cc21df664df56ca0869ca0daf7e7fe40b` |
 | `src/web/browser/scripture/track.js` | `1c84a1dfeae747288d2dd910a9c8bf6a52ff1abdfa28c3db14f8184c4623cc1b` |
 | `src/web/browser/shared/browser-core.css` | `99fd1497f2f617ed2b601100bed77504bc31fe57e82dfc5161deecebd57c0436` |
-| `src/web/browser/shared/browser-core.js` | `aaec1b0707ae207a76334c05300041b7e9b615fccb7900e1c13e92d0a8ebd17e` |
+| `src/web/browser/shared/browser-core.js` | `07f3cc8ebb3f338d6a029b1feb7746ad6d9ae6432634c1ed9e03cf7e46795467` |
 | `src/web/browser/texts/catalogue-model.js` | `1bd5266d4b2d469403ad8efa63af8c21838d745258295f548bdd7c1f2603996a` |
 | `src/web/browser/texts/index.html` | `b0851885d98262f3358c1a261082eda0c723639f181d0aa9f4587302617a01b1` |
 | `src/web/browser/texts/texts.css` | `b977867ed055026d0280e61945bf74d90730443e3f98b43835098bf252f704a1` |
