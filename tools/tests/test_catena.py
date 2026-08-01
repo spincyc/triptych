@@ -65,6 +65,7 @@ class CatenaFixture(unittest.TestCase):
             title = "De civitate Dei"
             responsible = "Augustine of Hippo"
             work_type = "patristic-treatise"
+            languages = ["lat"]
             """,
         )
         self.write(
@@ -77,6 +78,7 @@ class CatenaFixture(unittest.TestCase):
             title = "The City of God"
             language = "en"
             publication = "Edinburgh, 1871"
+            translators = ["Marcus Dods"]
             """,
         )
         self.write(
@@ -287,6 +289,7 @@ class IdentityTests(CatenaFixture):
             title = "NPNF 2-8"
             language = "en"
             publication = "New York, 1895"
+            translators = ["Blomfield Jackson"]
             """,
         )
         self.write(
@@ -337,6 +340,7 @@ class IdentityTests(CatenaFixture):
             title = "Homiliae in Hexaemeron"
             responsible = "Basil the Great"
             work_type = "patristic-homily-series"
+            languages = ["grc"]
             """,
         )
         self.write_edges(
@@ -433,6 +437,142 @@ class RightsTests(CatenaFixture):
             """,
         )
         self.assertIn("has no locator", " ".join(self.errors()))
+
+
+class VoiceTests(CatenaFixture):
+    """Whose words a fragment carries, and the two signals that must agree.
+
+    The reader chooses between the author's own language and a translation of
+    it, so every fragment has to answer which it is. The answer is derived from
+    the work's language history against the edition's, and cross-checked
+    against whether the edition names a translator, because each signal alone
+    reads perfectly when it is wrong: an edition in Latin is Ambrose writing or
+    Eustathius translating, and nothing in the word "Latin" tells them apart.
+    """
+
+    def edition(self, language: str, extra: str = "") -> None:
+        self.write(
+            "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/edition.toml",
+            f"""
+            schema = 1
+            record_type = "edition"
+            id = "edition.augustine.de-civitate-dei.dods-1871"
+            work_id = "work.augustine.de-civitate-dei"
+            title = "The City of God"
+            language = "{language}"
+            publication = "Edinburgh, 1871"
+            {extra}
+            """,
+        )
+
+    def work(self, languages: str) -> None:
+        self.write(
+            "src/sources/works/augustine/de-civitate-dei/work.toml",
+            f"""
+            schema = 1
+            record_type = "work"
+            id = "work.augustine.de-civitate-dei"
+            title = "De civitate Dei"
+            responsible = "Augustine of Hippo"
+            work_type = "patristic-treatise"
+            languages = {languages}
+            """,
+        )
+
+    def test_the_english_of_a_latin_father_is_a_translation(self) -> None:
+        rows = _catena.fragments_for_book(self.root, "Gen")
+        self.assertEqual([row["voice"] for row in rows], [_catena.TRANSLATION])
+
+    def test_the_latin_of_a_latin_father_is_his_own(self) -> None:
+        self.edition("la")
+        rows = _catena.fragments_for_book(self.root, "Gen")
+        self.assertEqual([row["voice"] for row in rows], [_catena.ORIGINAL])
+        self.assertEqual(self.errors(), [])
+
+    def test_the_two_iso_code_spaces_are_folded_before_they_are_compared(self) -> None:
+        """`lat` and `la` are one language, and comparing them raw is silent.
+
+        The work records name a language in ISO 639-2/B and the edition records
+        in 639-1. Left unfolded, Migne's Latin of a Latin father reads as a
+        TRANSLATION of him — a well-formed answer, arrived at correctly, and
+        wrong.
+        """
+        self.work('["lat"]')
+        self.edition("la")
+        self.assertEqual(
+            _catena.voice_of({"languages": ["lat"]}, {"language": "la"}),
+            _catena.ORIGINAL,
+        )
+        self.assertEqual(self.errors(), [])
+
+    def test_a_language_the_table_does_not_know_is_an_error_not_a_guess(self) -> None:
+        self.work('["tlh"]')
+        joined = " ".join(self.errors())
+        self.assertIn("LANGUAGE_EQUIVALENTS", joined)
+        # And never silently a translation, which is what an unfoldable code
+        # would become if it were simply dropped from the comparison.
+        self.assertEqual(_catena.voice_of({"languages": ["tlh"]}, {"language": "la"}), "")
+
+    def test_a_work_that_says_nothing_about_its_language_is_refused(self) -> None:
+        self.write(
+            "src/sources/works/augustine/de-civitate-dei/work.toml",
+            """
+            schema = 1
+            record_type = "work"
+            id = "work.augustine.de-civitate-dei"
+            title = "De civitate Dei"
+            responsible = "Augustine of Hippo"
+            work_type = "patristic-treatise"
+            """,
+        )
+        self.assertIn("states no `languages`", " ".join(self.errors()))
+
+    def test_a_translation_that_names_no_translator_is_refused(self) -> None:
+        """The signal that would let a translation pass as the author's words."""
+        self.edition("en")
+        self.assertIn("names no translator", " ".join(self.errors()))
+
+    def test_an_original_that_names_translators_is_refused(self) -> None:
+        """And the same disagreement from the other side."""
+        self.edition("la", 'translators = ["Marcus Dods"]')
+        joined = " ".join(self.errors())
+        self.assertIn("names Marcus Dods as translators", joined)
+
+    def test_the_page_s_own_model_filters_on_the_voice(self) -> None:
+        """One derivation again: the browser's file decides, not this test."""
+        self.edition("la")
+        # The emit runs the page's own model, so the fixture carries the real
+        # one: a copy here would be the second derivation the arrangement
+        # exists to stop.
+        model = self.root / _catena.MODEL_RELATIVE
+        model.parent.mkdir(parents=True, exist_ok=True)
+        model.write_text(
+            (ROOT / _catena.MODEL_RELATIVE).read_text(encoding="utf-8"),
+            encoding="utf-8",
+        )
+        _catena.structure(self.root, self.root / "out")
+        chapter = self.root / "out" / "structure" / "catena" / "01-gen" / "1.json"
+        script = f"""
+        const M = require({str(ROOT / 'src/web/browser/catena/catena-model.js')!r});
+        const file = require({str(chapter)!r});
+        const all = M.chapterFragments(file);
+        console.log(JSON.stringify({{
+          voices: M.chapterVoices(file).map((one) => one.key),
+          original: all.filter((one) => M.matchesVoice(one, 'original')).length,
+          english: all.filter((one) => M.matchesVoice(one, 'translation:en')).length,
+          everything: all.filter((one) => M.matchesVoice(one, '')).length
+        }}));
+        """
+        result = subprocess.run(
+            ["node", "-e", textwrap.dedent(script)],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        self.assertEqual(
+            json.loads(result.stdout),
+            {"voices": ["original"], "original": 1, "english": 0, "everything": 1},
+        )
 
 
 class TitleCoverageTests(unittest.TestCase):

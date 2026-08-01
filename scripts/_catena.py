@@ -112,6 +112,50 @@ EXTENT_FIELDS = {
 # filter looked strict and was inert, which is this repository's one defect in
 # its apparatus costume.
 PUBLISHABLE_RIGHTS = {"public-domain"}
+
+# WHOSE WORDS THESE ARE. The reader's axis is not `la / grc / en`, and the
+# maintainer is right that it should not be. Severian's Greek, Eustathius's
+# fifth-century Latin of Basil's Greek, and Jackson's 1895 English of that same
+# Greek are three different claims about one page of words, and the middle one
+# is INVISIBLE on a language axis: it prints "Latin", indistinguishably from
+# Ambrose writing Latin himself.
+#
+# So a fragment says which it is, and the answer is derived rather than typed:
+# `original` where the edition is in a language the work was written in,
+# `translation` otherwise.
+ORIGINAL = "original"
+TRANSLATION = "translation"
+
+# Two ISO code spaces meet at that comparison and neither of them is wrong. An
+# edition record names its language in 639-1 where the language has a
+# two-letter code (`la`, `en`, `de`) and in 639-3 where it does not (`grc`); a
+# work record names its language history in 639-2/B (`lat`, `deu`, `grc`).
+# Comparing them raw calls Migne's Latin of a Latin father a TRANSLATION,
+# because `lat` != `la` — a fact that resolves successfully and wrongly, and
+# silently, since both strings are well-formed and neither side is malformed.
+#
+# So both sides fold through this one closed table before they are compared,
+# and a code the table does not know is an ERROR rather than a guess: an
+# unfoldable code compares unequal to everything, which would make every
+# edition of that work read as a translation of it. The table is a standard ISO
+# equivalence and not a project judgement, which is why it may live in code at
+# all; the moment a row here needed an argument it would belong in a record.
+LANGUAGE_EQUIVALENTS = {
+    "la": "la", "lat": "la",
+    "grc": "grc", "gre": "grc", "ell": "grc", "el": "grc",
+    "en": "en", "eng": "en",
+    "de": "de", "deu": "de", "ger": "de",
+    "fr": "fr", "fra": "fr", "fre": "fr",
+    "it": "it", "ita": "it",
+    "es": "es", "spa": "es",
+    "he": "he", "heb": "he",
+    "syr": "syr",
+    "ar": "ar", "ara": "ar",
+    "cop": "cop",
+    "hy": "hy", "hye": "hy", "arm": "hy",
+    "ka": "ka", "kat": "ka", "geo": "ka",
+}
+
 REDISTRIBUTABLE_LICENSES = {
     "CC0-1.0",
     "CC-BY-3.0",
@@ -419,6 +463,55 @@ def fragment_year(fragment: dict[str, Any], work: dict[str, Any] | None) -> int 
     return composed_year(work)
 
 
+def fold_language(code: Any) -> str | None:
+    """One ISO code space, or nothing. Never a guess; see LANGUAGE_EQUIVALENTS."""
+    return LANGUAGE_EQUIVALENTS.get(str(code or "").strip().lower())
+
+
+def work_languages(work: dict[str, Any] | None) -> tuple[set[str], list[str]]:
+    """The languages a work was WRITTEN in, folded, and the codes that would not fold.
+
+    Returned as a pair rather than as a set with the failures dropped, because a
+    dropped code is exactly the silence this comparison cannot afford: a work
+    whose only declared language did not fold would come back as "written in
+    nothing", and every edition of it would then read as a translation.
+    """
+    declared = (work or {}).get("languages")
+    if not isinstance(declared, list):
+        return set(), []
+    spoken: set[str] = set()
+    unknown: list[str] = []
+    for code in declared:
+        folded = fold_language(code)
+        if folded is None:
+            unknown.append(str(code))
+        else:
+            spoken.add(folded)
+    return spoken, unknown
+
+
+def voice_of(work: dict[str, Any] | None, edition: dict[str, Any] | None) -> str:
+    """Whether this edition carries the author's own words, or someone else's.
+
+    Derived from the work's language history against the edition's language,
+    and never from the edition alone: "Latin" is the true language of both
+    Ambrose's Hexameron and Eustathius's Latin Basil, and only the work record
+    knows that the second is a translation.
+
+    `validate` cross-checks the answer against a SECOND, independent signal —
+    whether the edition names translators — and refuses a fragment whose two
+    signals disagree. Either signal alone can be wrong and neither announces it;
+    together they cannot both be wrong quietly. Nothing is returned here when
+    the comparison could not be made, and validation is where that becomes an
+    error, so a caller never receives a guess dressed as an answer.
+    """
+    spoken, unknown = work_languages(work)
+    printed = fold_language((edition or {}).get("language"))
+    if unknown or printed is None or not spoken:
+        return ""
+    return ORIGINAL if printed in spoken else TRANSLATION
+
+
 class Sources(NamedTuple):
     """The records a fragment can reach, loaded once."""
 
@@ -721,6 +814,69 @@ def _extent_errors(
     return errors
 
 
+def _voice_errors(
+    sources: Sources,
+    label: str,
+    work_id: str,
+    edition_id: str,
+    edition: dict[str, Any],
+) -> list[str]:
+    """That the page can say whose words these are, and that two signals agree.
+
+    The page offers the reader the author's own language against a translation
+    of it, so every fragment must be able to answer which it carries. Two
+    independent signals answer it — the work's language history against the
+    edition's language, and whether the edition names a translator — and this
+    refuses the fragment when they disagree rather than preferring one.
+
+    That has teeth in both directions. An edition in a language the author did
+    not write, naming nobody, is a translation whose translator has been lost;
+    an edition in the author's own language naming translators is either
+    mislabelled or is a version of a version. Each reads perfectly on its own.
+    """
+    errors: list[str] = []
+    work = sources.works.get(work_id) or {}
+    if not isinstance(work.get("languages"), list) or not work.get("languages"):
+        errors.append(
+            f"{label}: {work_id} states no `languages`, so nothing can say whether "
+            f"{edition_id} carries the author's own words or a translation of them"
+        )
+        return errors
+
+    spoken, unknown = work_languages(work)
+    if unknown:
+        errors.append(
+            f"{label}: {work_id} is written in {', '.join(unknown)}, which "
+            f"`LANGUAGE_EQUIVALENTS` does not know; add the code there rather than "
+            f"letting it compare unequal to every edition of the work"
+        )
+    stated = str(edition.get("language") or "")
+    printed = fold_language(stated)
+    if stated and printed is None:
+        errors.append(
+            f"{label}: {edition_id} is in {stated!r}, which `LANGUAGE_EQUIVALENTS` "
+            f"does not know"
+        )
+    if unknown or printed is None or not spoken:
+        return errors
+
+    translators = [str(one) for one in (edition.get("translators") or ())]
+    if printed in spoken and translators:
+        errors.append(
+            f"{label}: {edition_id} is in {stated}, which is a language {work_id} was "
+            f"written in, and yet names {', '.join(translators)} as translators; it is "
+            f"either an original mislabelled or a version nobody has said it is"
+        )
+    if printed not in spoken and not translators:
+        errors.append(
+            f"{label}: {edition_id} is in {stated} and {work_id} was written in "
+            f"{', '.join(sorted(spoken))}, so it is a translation, and it names no "
+            f"translator; a translation whose translator is unrecorded is one this "
+            f"page would publish as though it were the author's own words"
+        )
+    return errors
+
+
 def _passage_errors(
     sources: Sources,
     label: str,
@@ -785,6 +941,7 @@ def _passage_errors(
             )
     if not str(edition.get("language") or "").strip():
         errors.append(f"{label}: {edition_id} declares no language")
+    errors.extend(_voice_errors(sources, label, work_id, edition_id, edition))
 
     artifact_id = str(passage.get("artifact_id") or "")
     artifact = sources.artifacts.get(artifact_id)
@@ -866,6 +1023,10 @@ def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
                     fragment.get("text_date_basis") or work.get("composed_basis") or ""
                 ),
                 "language": str(edition.get("language") or ""),
+                # Whose words, on the axis the reader actually chooses along.
+                # Derived from the work and the edition together, because the
+                # edition alone cannot tell Ambrose's Latin from Eustathius's.
+                "voice": voice_of(work, edition),
                 "edition": str(edition.get("title") or ""),
                 "edition_published": str(edition.get("publication") or ""),
                 "translators": list(edition.get("translators") or ()),
@@ -1091,6 +1252,7 @@ SHARED_WITH_EDITION = (
     "work",
     "date",
     "language",
+    "voice",
     "edition",
     "edition_published",
     "translators",

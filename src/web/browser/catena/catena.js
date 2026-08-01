@@ -74,11 +74,50 @@
     return LANGUAGE_NAMES[String(code || '')] || String(code || '');
   }
 
-  /** "Latin and English", for a sentence rather than a control. */
-  function languageList(file) {
-    const names = ((file && file.languages) || []).map(languageName);
+  /** "Latin, Greek and English" — a list, joined the way a sentence needs. */
+  function joinNames(names) {
     if (names.length <= 1) return names.join('');
     return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
+  }
+
+  /**
+   * One voice, named for a reader.
+   *
+   * The original is named by nothing but itself, because the whole point of the
+   * axis is that "Latin" does not distinguish Ambrose writing it from
+   * Eustathius translating into it. A translation is named by the language it
+   * translates INTO, because that is what a reader who wants English is asking
+   * for.
+   */
+  function voiceLabel(entry) {
+    if (!entry) return '';
+    if (entry.voice === M.ORIGINAL) return 'The author’s own language';
+    return languageName(entry.language) + ' translation';
+  }
+
+  /** The same, inside a sentence: "the author’s own language". */
+  function voicePhrase(entry) {
+    if (!entry) return '';
+    if (entry.voice === M.ORIGINAL) return 'the author’s own language';
+    return languageName(entry.language) + ' translation';
+  }
+
+  /** "the author’s own language and English translation", for prose. */
+  function voiceList(file) {
+    return joinNames(M.chapterVoices(file).map(voicePhrase));
+  }
+
+  /**
+   * The voice a selection names, whether or not this chapter holds it.
+   *
+   * A reader who asked for English on a chapter that has none must be told
+   * "English" — so the selection is read back from its own key rather than
+   * looked up among what is present, which would leave the sentence with a
+   * blank where the answer belongs.
+   */
+  function chosen(file, wanted) {
+    const held = M.chapterVoices(file).find((one) => one.key === wanted);
+    return held || M.parseVoiceKey(wanted);
   }
 
   const reference = document.getElementById('reference');
@@ -88,7 +127,10 @@
   const bookSelect = document.getElementById('book-select');
   const chapterSelect = document.getElementById('chapter-select');
   const bibleSelect = document.getElementById('bible-select');
-  const languageSelect = document.getElementById('language-select');
+  // The control is `#language-select` in the markup and stays so: another lane
+  // is refactoring this page's stylesheet, and a renamed hook would collide with
+  // it for no gain a reader can see.
+  const voiceSelect = document.getElementById('language-select');
   const previousButton = document.getElementById('prev-button');
   const nextButton = document.getElementById('next-button');
 
@@ -347,9 +389,24 @@
     if (fragment.date !== null && fragment.date !== undefined) {
       head.appendChild(T.el('span', 'fragment-date', String(fragment.date)));
     }
+    // The language, and WHOSE it is. "Latin" alone is true of Ambrose writing
+    // and of Eustathius translating Basil, and a reader cannot tell them apart
+    // from it; the second word is what makes the chip a claim rather than a
+    // label. Where the generator could not establish the voice the chip says
+    // only the language, because inventing the missing half is the failure this
+    // whole axis exists to prevent.
     if (fragment.language) {
+      const name = languageName(fragment.language);
       head.appendChild(
-        T.el('span', 'fragment-language', languageName(fragment.language))
+        T.el(
+          'span',
+          'fragment-language',
+          fragment.voice === M.ORIGINAL
+            ? name + ' — the author’s own'
+            : fragment.voice === M.TRANSLATION
+              ? name + ' translation'
+              : name
+        )
       );
     }
     if (Number.isFinite(Number(fragment.text_words)) && fragment.text_words > 0) {
@@ -474,8 +531,8 @@
     // What each fragment shares with its edition is stored once per file and
     // rejoined here, which is the same file's `chapterFragments`.
     const all = M.chapterFragments(file);
-    const wanted = languageSelect.value;
-    const held = wanted ? all.filter((one) => one.language === wanted) : all;
+    const wanted = voiceSelect.value;
+    const held = all.filter((one) => M.matchesVoice(one, wanted));
     const headingText =
       held.length === 0
         ? 'Commentary held here'
@@ -493,13 +550,13 @@
           'aside-note',
           all.length
             ? 'No commentary on this chapter is held in ' +
-                languageName(wanted) +
+                voicePhrase(chosen(file, wanted)) +
                 '. ' +
                 all.length +
                 (all.length === 1 ? ' fragment is' : ' fragments are') +
-                ' held here in ' +
-                languageList(file) +
-                '; choose “All languages” to see ' +
+                ' held here, in ' +
+                voiceList(file) +
+                '; choose “Everything held” to see ' +
                 (all.length === 1 ? 'it' : 'them') +
                 '.'
             : 'No commentary on this chapter is held yet.'
@@ -508,20 +565,20 @@
       return 0;
     }
 
-    // Which languages this chapter is held in, and which the reader is not
-    // seeing. Said rather than hidden: a father held only in Latin must not
-    // disappear from the page because the selector is set to English.
+    // Which voices this chapter is held in, and which the reader is not seeing.
+    // Said rather than hidden: a father held only in his own Latin must not
+    // disappear from the page because the control is set to English.
     if (wanted) {
-      const others = (file.languages || []).filter((one) => one !== wanted);
+      const others = M.chapterVoices(file).filter((one) => one.key !== wanted);
       if (others.length) {
         container.appendChild(
           T.el(
             'p',
             'aside-note',
             'Showing ' +
-              languageName(wanted) +
+              voicePhrase(chosen(file, wanted)) +
               ' only. This chapter is also held in ' +
-              others.map(languageName).join(', ') +
+              joinNames(others.map(voicePhrase)) +
               '.'
           )
         );
@@ -739,7 +796,7 @@
     }
     if (!T.isCurrentRender(renderToken)) return;
 
-    fillLanguages(file);
+    fillVoices(file);
     const leads = (file && file.leads) || [];
     T.clear(reading);
     renderRefusal(reading, file, bible, book, chapter);
@@ -769,32 +826,46 @@
       ['book', token],
       ['chapter', String(chapter)],
       ['bible', bible.id],
-      ['language', languageSelect.value],
+      // `voice`, not `language`, because the value is no longer a language
+      // code. A link carrying the old `language=en` is not translated into a
+      // voice: the two axes do not correspond — `la` named Ambrose's own Latin
+      // AND Eustathius's Latin of Basil, which the new axis exists to separate —
+      // so an old link opens on everything held rather than on a guess about
+      // which half of it was meant.
+      ['voice', voiceSelect.value],
     ]);
     updateSteps();
   }
 
   /**
-   * The commentary-language control, filled from what this chapter actually
-   * holds.
+   * The commentary control, filled from what this chapter actually holds.
    *
-   * The list is COUNTED, never assumed. A chapter held in Latin alone offers
-   * Latin, and a reader whose selection is not held here keeps it — the chain
-   * then says so and names what is held instead, rather than silently widening
-   * to a language the reader did not ask for or hiding the author who is only
-   * in the other one.
+   * The axis is the AUTHOR'S OWN LANGUAGE against a translation of it, not the
+   * bare language code. Those two are different questions wherever a work is
+   * held in a translation that is not English — Basil's Hexaemeron stands here
+   * in Eustathius's ancient Latin as well as in Jackson's English, and on a
+   * language axis that Latin is indistinguishable from Ambrose's own.
+   *
+   * The list is COUNTED, never assumed. A chapter held only in its authors'
+   * own words offers only that, and a reader whose selection is not held here
+   * KEEPS IT — the chain then says so and names what is held instead, rather
+   * than silently widening to something the reader did not ask for or hiding
+   * the father who is only in the other voice.
    */
-  function fillLanguages(file) {
-    const held = (file && file.languages) || [];
-    const wanted = languageSelect.value;
-    const items = [{ value: '', label: 'All languages' }];
-    for (const code of held) items.push({ value: code, label: languageName(code) });
-    if (wanted && !held.includes(wanted)) {
-      items.push({ value: wanted, label: languageName(wanted) + ' — none here' });
+  function fillVoices(file) {
+    const held = M.chapterVoices(file);
+    const wanted = voiceSelect.value;
+    const items = [{ value: '', label: 'Everything held' }];
+    for (const entry of held) items.push({ value: entry.key, label: voiceLabel(entry) });
+    if (wanted && !held.some((one) => one.key === wanted)) {
+      items.push({
+        value: wanted,
+        label: voiceLabel(chosen(file, wanted)) + ' — none here'
+      });
     }
-    T.fillSelect(languageSelect, items);
-    languageSelect.value = wanted;
-    languageSelect.disabled = held.length < 2 && !wanted;
+    T.fillSelect(voiceSelect, items);
+    voiceSelect.value = wanted;
+    voiceSelect.disabled = held.length < 2 && !wanted;
   }
 
   function fillChapters(token, wanted) {
@@ -868,7 +939,7 @@
       bibleSelect.value = hash.get('bible');
     }
 
-    if (hash.get('language')) languageSelect.value = hash.get('language');
+    if (hash.get('voice')) voiceSelect.value = hash.get('voice');
 
     bookSelect.disabled = false;
     chapterSelect.disabled = false;
@@ -880,7 +951,7 @@
     });
     chapterSelect.addEventListener('change', render);
     bibleSelect.addEventListener('change', render);
-    languageSelect.addEventListener('change', render);
+    voiceSelect.addEventListener('change', render);
     previousButton.addEventListener('click', () => step(-1));
     nextButton.addEventListener('click', () => step(1));
     T.onArrowStep(step);
@@ -888,7 +959,7 @@
       if (next.get('book')) bookSelect.value = next.get('book');
       fillChapters(bookSelect.value, next.get('chapter') || 1);
       if (next.get('bible')) bibleSelect.value = next.get('bible');
-      languageSelect.value = next.get('language') || '';
+      voiceSelect.value = next.get('voice') || '';
       render();
     });
 

@@ -52,16 +52,22 @@
     </select>
   </div>
 
-  <!-- The language of the COMMENTARY, which is a different question from the
-       language of the translation above it. A father may be held in his own
-       Greek, in a Latin version and in a public-domain English, and each of
-       those is a separate edition of one work rather than one edition with
-       three texts. The control lists what this chapter actually holds, and
-       says what it does not hold rather than hiding the author. -->
+  <!-- Whose words the COMMENTARY is in, which is a different question from the
+       translation of scripture chosen above. A father may be held in his own
+       Greek, in an ancient Latin version of that Greek, and in a public-domain
+       English of it, and each of those is a separate edition of one work rather
+       than one edition with three texts.
+
+       The axis is the author's own language against a translation of it, and
+       not the bare language code, because "Latin" is true of Ambrose writing it
+       and of Eustathius translating Basil into it — one word covering two
+       different claims. The control lists what this chapter actually holds, and
+       when it holds nothing in the chosen voice it says so and names what it
+       does hold, rather than hiding the author. -->
   <div class="field">
-    <label for="language-select">Commentary language</label>
-    <select id="language-select" name="language" disabled>
-      <option value="">All languages</option>
+    <label for="language-select">Commentary in</label>
+    <select id="language-select" name="voice" disabled>
+      <option value="">Everything held</option>
     </select>
   </div>
 

@@ -307,6 +307,52 @@ what lets a father's Greek be publishable while a modern English rendering of hi
 is not. The source library already models this, because an edition carries the
 language and the artifact carries the rights.
 
+### The axis the reader chooses along is not the language code
+
+Settled 2026-08-01, on the maintainer's direction that the commentary control
+should read *original / English* rather than *la / grc / en*.
+
+The language code is a true fact about an edition and a **misleading one about
+the claim**. Three editions of Basil's *Hexaemeron* stand in this corpus:
+Severian's neighbour in the original Greek, Eustathius's fifth-century Latin
+version of Basil made for the deaconess Syncletica, and Blomfield Jackson's
+1895 English. On a language axis the middle one prints "Latin" —
+indistinguishably from Ambrose writing Latin himself. A reader asking for the
+father's own words would be handed a translation with nothing on the page
+saying so, which is [the shape](the-shape.md) §1 in the selector.
+
+> **Rule 11.** A fragment declares whether it carries the author's **own
+> language** or a **translation** of it, and the control runs along that axis.
+> The declaration is derived, never typed: `original` where the edition's
+> language is one the work was written in, `translation` otherwise.
+
+Three consequences worth stating, because each was a decision:
+
+- **The derivation is cross-checked against a second, independent signal.** An
+  edition that translates names translators; an edition in the author's own
+  language does not. `catena check` refuses a fragment whose two signals
+  disagree, because either alone reads perfectly when it is wrong. It has teeth
+  in both directions: a translation naming nobody is one this page would publish
+  as the author's own words, and an original naming translators is either
+  mislabelled or a version nobody has declared.
+- **Two ISO code spaces meet at that comparison.** Work records name a language
+  in 639-2/B (`lat`), edition records in 639-1 (`la`). Compared raw, Migne's
+  Latin of a Latin father is a *translation* of him — a well-formed answer,
+  reached correctly, and wrong. Both sides fold through one closed table first,
+  and a code the table does not know is an error rather than a guess: an
+  unfoldable code compares unequal to everything, so dropping it would make
+  every edition of that work read as a translation.
+- **The original is one offer and translations are one per language.** A reader
+  asking for the author's own words is asking a single question, so a chapter
+  holding Ambrose's Latin beside Severian's Greek offers *the author's own
+  language* once. Translations are offered by the language they translate into,
+  because English and Latin are different offers.
+
+Where a chapter holds nothing in the chosen voice the page says so and names
+what it does hold, exactly as it already did for a language. Genesis 1 is the
+worked case: 107 fragments, 84 in their authors' own language, 14 in English
+translation and 9 in Latin translation [verified 2026-08-01].
+
 ### Three prerequisites the survey turned up
 
 - ~~**No structure file enumerates the canon.**~~ **Done.** It was true when

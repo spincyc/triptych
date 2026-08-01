@@ -112,11 +112,117 @@
     });
   }
 
+  /* ------------------------------------------------------------------------
+   * Whose words these are — the axis the commentary control runs along
+   *
+   * NOT `la / grc / en`. A father may be held in his own Greek, in an ancient
+   * Latin version of that Greek, and in a Victorian English of it, and those
+   * are three different claims about one page of words. On a language axis the
+   * middle one is invisible: it prints "Latin", indistinguishably from Ambrose
+   * writing Latin himself, and a reader who asked for the original would be
+   * handed a translation with nothing on the page to say so.
+   *
+   * So the generator derives `voice` per edition — `original` where the
+   * edition is in a language the work was written in, `translation` otherwise —
+   * from the work record and the edition record together, and refuses to emit a
+   * fragment whose two independent signals for it disagree. This file only
+   * counts what arrived.
+   *
+   * The key a selection carries is `original`, or `translation:` and the
+   * language, because "English" and "Latin" are different offers and a reader
+   * choosing between them is choosing between two translations.
+   * --------------------------------------------------------------------- */
+
+  const ORIGINAL = 'original';
+  const TRANSLATION = 'translation';
+
+  /** The selectable key for one edition's voice, or '' where it has none. */
+  function voiceKey(source) {
+    const voice = (source && source.voice) || '';
+    if (voice === ORIGINAL) return ORIGINAL;
+    if (voice === TRANSLATION) return TRANSLATION + ':' + ((source && source.language) || '');
+    return '';
+  }
+
+  /**
+   * Every voice this chapter actually holds, counted rather than assumed.
+   *
+   * Read off `sources`, which the spine writes with exactly one entry per
+   * edition standing under this chapter — so an offer appears here only when
+   * something is behind it, and a chapter held in one voice offers one.
+   * Originals first, then translations by language, so the control reads
+   * outward from the author.
+   */
+  function chapterVoices(file) {
+    const sources = (file && file.sources) || {};
+    const found = new Map();
+    for (const key in sources) {
+      if (!Object.hasOwn(sources, key)) continue;
+      const source = sources[key];
+      const wanted = voiceKey(source);
+      if (!wanted || found.has(wanted)) continue;
+      found.set(wanted, {
+        key: wanted,
+        voice: source.voice,
+        // Named for a translation and deliberately blank for an original. The
+        // reader asking for the author's own language is asking one question,
+        // not one per language: a chapter holding Ambrose's Latin beside
+        // Severian's Greek holds both authors' own words, and offering them
+        // separately would put the reader back on the axis this replaced.
+        language: source.voice === TRANSLATION ? source.language || '' : ''
+      });
+    }
+    return Array.from(found.values()).sort(function (a, b) {
+      if (a.voice !== b.voice) return a.voice === ORIGINAL ? -1 : 1;
+      return a.language < b.language ? -1 : a.language > b.language ? 1 : 0;
+    });
+  }
+
+  /**
+   * A selection key read back as the voice it names.
+   *
+   * Composed by `voiceKey` and taken apart only here, so a page that has to
+   * NAME a selection the chapter does not hold — which it must, rather than
+   * silently widening — never parses the key a second way.
+   */
+  function parseVoiceKey(wanted) {
+    const key = String(wanted || '');
+    if (!key) return null;
+    if (key === ORIGINAL) return { key: key, voice: ORIGINAL, language: '' };
+    const cut = key.indexOf(':');
+    if (cut < 0) return null;
+    return {
+      key: key,
+      voice: key.slice(0, cut),
+      language: key.slice(cut + 1)
+    };
+  }
+
+  /**
+   * Does this fragment answer that selection?
+   *
+   * An empty selection is every fragment. A fragment whose voice could not be
+   * derived answers no selection at all rather than the nearest one: it is
+   * refused by the generator's check before it reaches here, and if one ever
+   * arrives it must not be served as though someone had established whose
+   * words it carries.
+   */
+  function matchesVoice(fragment, wanted) {
+    if (!wanted) return true;
+    return voiceKey(fragment) === wanted;
+  }
+
   return {
     touchesChapter: touchesChapter,
     fragmentsOnChapter: fragmentsOnChapter,
     chapterFragments: chapterFragments,
     formatExtent: formatExtent,
-    spansChapters: spansChapters
+    spansChapters: spansChapters,
+    chapterVoices: chapterVoices,
+    matchesVoice: matchesVoice,
+    voiceKey: voiceKey,
+    parseVoiceKey: parseVoiceKey,
+    ORIGINAL: ORIGINAL,
+    TRANSLATION: TRANSLATION
   };
 }));
