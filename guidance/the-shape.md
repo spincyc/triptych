@@ -1,7 +1,7 @@
 # The shape
 
-Twenty-two guidance documents stand beside this one, each governing a part of
-the work. This document governs nothing. It exists because the same small set of
+The guidance documents that stand beside this one each govern a part of the
+work. This document governs nothing. It exists because the same small set of
 ideas keeps being rediscovered independently in different corners of the project
 — in retrieval, in storage, in derivation, in what a page prints — and a reader
 who has seen them stated once will recognise the next instance instead of
@@ -129,13 +129,23 @@ happened here, is a real fault even when the bytes turn out to be fine.
 
 A history of changes is a history of **acts**: a constitution, a decree, an
 instruction, a documented refusal. Books are witnesses to acts. Two printings of
-one prayer differ constantly, and no act stands behind those differences, so no
-printing can become a station.
+one prayer differ constantly, and no act stands behind those differences, so a
+printing does not become a station by being different.
 
 This is what keeps a history from becoming a list of everything that was ever
 different. It also forces honesty about gaps, because an act is dateable and
 citable: where the descent runs through something unrepresented, the line is
 drawn broken and named, rather than joined as though nothing sat between.
+
+One narrow exception, and it declares itself. Before Trent there are missals no
+act has been located for, and refusing them left the record silent about books
+that demonstrably survive. So a station states its kind: `promulgated`, or
+`printed` where a missal survives and **no act is claimed at all**. A printed
+station is the weaker claim and reads as one everywhere — it must name the
+printing it stands on and say why that printing is a distinct edition rather
+than a rescan of one already carried, which is the whole hazard of letting a
+book be a station. `time-machine.md` Rule 1 owns the rule and its exception;
+`tools/act-history` enforces both.
 
 ## What this is, underneath
 

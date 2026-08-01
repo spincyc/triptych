@@ -8,9 +8,10 @@ each. Nothing was acquired.
 **Seven corrections are recorded, and three of them are to this audit's own
 rows.** That is the most useful thing in the file and §3 is about it.
 
-**This document owns no rules.** `act-histories.md` settles that the station is
-the act and never the book; `recensions.md` settles the departure model;
-`sources.md` settles retrieval, aliases and rights. Those govern. This document
+**This document owns no rules.** `time-machine.md` Rule 1 settles that the
+station is the act, and the narrow `printed` exception where a surviving book
+declares itself one; `recensions.md` settles the departure model; `sources.md`
+settles retrieval, aliases and rights. Those govern. This document
 reports what applying them to the missals actually found, and where it found
 this repository disagreeing with itself.
 
@@ -85,9 +86,9 @@ records have been corrected in place, and the correction box in `act-histories.m
 
 ## 2. Typical edition, printing, act: a three-way distinction, not two
 
-`act-histories.md` rules that the station is the act and a printing is a witness.
-Acquisition needs one more cut, because "witness" flattens two very different
-things:
+`time-machine.md` Rule 1 rules that the station is the act and a printing is a
+witness. Acquisition needs one more cut, because "witness" flattens two very
+different things:
 
 | | what it is | in the record |
 | --- | --- | --- |
@@ -96,8 +97,11 @@ things:
 | **Printing** | a commercial edition conformed to a typical one, a lay translation, a critical edition | a witness, weaker |
 
 Every book row in the audit carries `station = false`, and the derived count
-`books_that_are_stations = 0` is an assertion under test rather than a tally: if
-a later edit ever sets it true, the rule breaks visibly.
+`books_that_are_stations = 0` is an assertion under test rather than a tally.
+Every book here is held as a witness to an act located elsewhere, so none of
+them is a station; a row that ever set it true would have to be a `printed`
+station under Rule 1's exception, meeting all four of its conditions, and the
+count going non-zero is the prompt to check that it does.
 
 The distinction has teeth. Two books in this repository have already been
 mistaken for stations — the 1862 Pustet and the 1962 Benziger — and the audit

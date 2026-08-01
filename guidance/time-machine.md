@@ -23,9 +23,10 @@ was **done**, on a date, by someone, recorded somewhere.
 
 Three things follow, and the third was not anticipated when the rule was made.
 
-**The graph is sourced by construction.** A node without an act is not a station,
-so the map cannot contain an unsourced node. This is stronger than requiring
-every edge to cite a source, because it binds the nodes too.
+**The graph is sourced by construction.** Every node names what it rests on — an
+act, or under the exception below a surviving printing — so the map cannot
+contain an unsourced node. This is stronger than requiring every edge to cite a
+source, because it binds the nodes too.
 
 **A refusal is an event, and that is where a branch is born.** A local church
 declining to receive a change is an act. So branches do not have to be asserted
@@ -42,8 +43,35 @@ change to the missal**. It is a difference between witnesses, and witnesses live
 beneath the history. Compositor's variation, printing differences and OCR error
 never become stations, so a reader cannot mistake one for a revision.
 
-> **Rule 1.** No station without an act. A version nobody can cite an act for
-> does not appear on the map, however many printings attest it.
+> **Rule 1.** No station without an act, except a printing that declares itself
+> one. A station states its kind: `promulgated`, where an act stands behind it
+> and its instrument is cited; or `printed`, where a missal survives and **no
+> act is claimed at all**. A version nobody can cite an act for and nobody can
+> show a distinct surviving edition of does not appear on the map, however many
+> printings attest it.
+
+**The exception, and why it was made** (2026-08-01). Before Trent there are
+missals for which no act has been located, and refusing them left the record
+silent about books that demonstrably survive — the rule was suppressing
+evidence rather than unsourced assertion. A `printed` station is therefore
+allowed, and held narrow by four conditions `tools/act-history` enforces:
+
+- it claims **no** instrument (`act_citation = "none-claimed"`), which is not
+  the same as `not-found`. Not-found says an instrument is believed to exist
+  and nobody here has read it; none-claimed says none is asserted;
+- it names the printing it stands on, and that printing must be a witness;
+- it states a `distinct_edition_basis` — why this is a distinct edition and not
+  a reprint or a rescan of one already carried. Two scans of one printing are
+  one witness and never two stations;
+- it names no instrument. If an act was located, the station is `promulgated`.
+
+A printed station reads as the weaker claim everywhere it appears: in `check`,
+in `acts/`, and in the commit subject, which is prefixed `[printed]`.
+
+This does **not** reopen the OCR hazard above. A printed station is created by a
+distinct edition that survives, never by noticing that two printings differ.
+Compositor's variation, printing differences and OCR error remain differences
+between witnesses and still become no station at all.
 
 **A qualification the research forced, and it is not a small one.** Searching the
 missal's history turned up **no formal refusal act anywhere** [sourced]. Branch
