@@ -242,7 +242,14 @@ departure of `recensions.md` §3 natively: the Easter Vigil postcommunion becomi
 the Vespers prayer *Spiritum* renders as a rename with similarity rather than as
 a deletion beside an unrelated addition. If that holds, the hardest departure
 kind needs no special machinery in the viewer — git already tells the story.
-[inferred, under test]
+
+**Tested, and it holds.** The Holy Week tracer of `act-histories.md` §4.5 finds
+the *Spiritum* reslot as a rename at 89 per cent similarity under a bare
+`git show`, with no flags: `diff.renames` has defaulted to true since git 2.9,
+so a reader gets it without knowing rename detection exists. The boundary found:
+where an act both moves a unit **and** rewrites its words, no threshold recovers
+the link, so `reslotted` stays a first-class departure kind in the source even
+though the viewer usually needs nothing. [verified]
 
 ---
 

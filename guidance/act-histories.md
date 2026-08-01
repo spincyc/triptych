@@ -1,0 +1,706 @@
+# Act histories: a tracer through Holy Week, 1570 to 1962
+
+A liturgical history rendered as a Git repository, where the shape of the graph
+is the finding. This is the report on a tracer built on 2026-07-31: what it
+proved, what it broke, and what it cost.
+
+**This document owns no rules.** `time-machine.md` settles them — no station
+without an act, parallel stays parallel, the diff is the acceptance test — and
+`recensions.md` settles the departure model, a base and its departures with
+identity writing no row. Those two propose; this one measures. Everything below
+was built and run, and where a ruling left a question open under test, the
+result is here rather than in the document that asked it.
+
+## Evidence conventions
+
+- **[verified]** — measured during this tracer against tracked artifacts or by
+  running the tool. Reproducible.
+- **[sourced]** — read out of an external document, cited by artifact and line.
+- **[inferred]** — reasoned from the above, flagged wherever it matters.
+
+## What was built
+
+| | |
+| --- | --- |
+| source encoding | `src/sources/inventories/roman-holy-week-acts-v1.toml` |
+| generator | `tools/act-history` (`check`, `graph`, `emit`) |
+| generated repository | `build/act-history/roman-holy-week`, untracked |
+| corpus read | seven Internet Archive OCR text layers at `~/git/lt-hist` |
+| size | 12 acts, 2 lines, 8 witnesses, 4 masses, 38 base units, 42 departures |
+
+The generated repository is a build artifact, like a PDF. Regenerating it
+rewrites every hash and that is expected. The record is the source encoding.
+
+---
+
+## 1. Applying Rule 1: which of these nodes is a station?
+
+`time-machine.md` Rule 1 — no station without an act — was applied node by node.
+The tracer began keyed on books, as the brief framed it, and was re-keyed on
+acts. **The rule pruned the brief's own line, and that is the tracer's first
+finding rather than a shortfall.**
+
+| Candidate node | Act found? | Verdict |
+| --- | --- | --- |
+| 1570 Missal | *Quo primum tempore*, Pius V, 14 July 1570, printed in the front matter of two witnesses | **station** |
+| 1604 Missal | *Cum sanctissimum*, Clement VIII, 7 July 1604, dateline read | **station** |
+| — | *Si quid est*, Urban VIII, 2 September 1634, dateline read | **station** the brief did not list |
+| **1862 Pustet** | **none. Its title page says *CUM APPROBATIONE SACRORUM RITUUM CONGREGATIONIS* — leave to print. The two decrees in its front matter are of 1862 and concern a Mass of the Japanese Martyrs and one of Bl. John Leonardi *pro aliquibus locis*, neither in this slice** | **witness, not a station** |
+| 1920 Missal | *Decretum approbationis editionis typicae Vaticanae*, in the book | **station** |
+| 1955 reform | *Maxima redemptionis*, S.R.C., 16 November 1955, AAS 47 (1955) 838-841 | **station** |
+| — | *Rubricarum instructum* 25 July 1960 and the S.R.C. decree of 26 July 1960, both printed entire in the 1962 witness | **two stations** the brief did not list |
+| **1962 Missal** | **none found in this corpus. See §7.2 — the node stands, flagged** | **station, instrument not found** |
+| **1806 English** | **none. No approbation, imprimatur, *permissu*, licence or Vicars Apostolic anywhere in the book** | **witness, not a station** |
+| **1843 English** | **none about the rite. Its title page carries a US copyright registration and a treatise by a bishop; neither changes the missal** | **witness, not a station** |
+
+Four of the brief's seven nodes are not stations. Two stations the brief did not
+name are, and were found only because the rule forced the question. The Latin
+line the brief drew — 1570 → 1604 → 1862 → 1920 → 1962 — has one false edge in
+it, and the English line does not exist in this encoding at all.
+
+Section 6 measures what the rule buys against the OCR. It is worth a great deal.
+
+---
+
+## 2. The DAG, and every edge with its source
+
+```
+                    quo-primum-1570  (root)
+                    ├── quo-primum-exemption-1570        [line: exempt-uses]
+                    └── cum-sanctissimum-1604
+                        └── si-quid-est-1634
+                            └── divino-afflatu-1911
+                                └── abhinc-duos-annos-1913
+                                    └── editio-typica-1920   (via unrepresented: typica 1900)
+                                        ├── de-rubricis-simpliciorem-1955
+                                        │   └── rubricarum-instructum-1960
+                                        │       └── codex-rubricarum-1960 ──┐
+                                        └── maxima-redemptionis-1955 ───────┤
+                                                                            └── editio-typica-1962
+```
+
+Two branches, one merge, one root per line, and one edge marked as crossing a
+station the record does not hold.
+
+| Edge | Basis, and where it was read |
+| --- | --- |
+| — → `quo-primum-1570` | Root. What precedes it — the pre-Tridentine curial missal, the 1474 Milan printing — is a live question and **no edge is drawn into it**. A root means "the record starts here". |
+| `quo-primum-1570` → `quo-primum-exemption-1570` | Same instrument, same day. Drawn as its own station because it is what makes the other uses a line rather than an absence. [sourced: pustet-1862 OCR 189-198, 231] |
+| `quo-primum-1570` → `cum-sanctissimum-1604` | The bull's own account of what it revises: *tum in primis fel. rec. Pius Papa Quintus Missale Romanum ex Decreto Sac. Concilii Tridentini ad veterem, et emendatiorem normam restitui, Romaeque imprimi curavit*. [sourced: pustet-1862 OCR 286-406] |
+| `cum-sanctissimum-1604` → `si-quid-est-1634` | The bull names both predecessors and says it follows in their steps: *Pius V. et Clemens VIII. diligentissime recognosci atque instaurari curaverunt; Nos quoque eorum vestigiis inhaerentes*. [sourced: pustet-1862 OCR 409-447] |
+| `si-quid-est-1634` → `divino-afflatu-1911` | The 1920 decree of approbation names the two norms its edition was made to. [sourced: missale-romanum-1920 OCR 18-19] |
+| `divino-afflatu-1911` → `abhinc-duos-annos-1913` | Named beside it in the same clause, and later. [sourced: missale-romanum-1920 OCR 19-20] |
+| `abhinc-duos-annos-1913` → `editio-typica-1920` | The decree of approbation, 25 July 1920, Card. Vico prefect, Alexander Verde secretary. **Marked `via_unrepresented`**: the decree says the text was drawn *ex altera typica anni 1900*, an edition not in this corpus. The edge means "descends from", not "immediately follows". [sourced: missale-romanum-1920 OCR 7-64] |
+| `editio-typica-1920` → `de-rubricis-simpliciorem-1955` | It simplifies the rubrics of the books that edition carried. [sourced: named and dated in *Rubricarum instructum*, benziger-1962 OCR 1131-1134, 1171-1173] |
+| `editio-typica-1920` → `maxima-redemptionis-1955` | The state the decree reformed is the one that edition carried. [sourced: AAS 47 (1955) 838-841, aas-47-1955 OCR 51717-51940] |
+| `de-rubricis-simpliciorem-1955` → `rubricarum-instructum-1960` | **An act that says what it supersedes has drawn its own edge**: *Pariter vigere cessat Decretum generale S. R. C. diei 23 Martii anni 1955 De rubricis ad simpliciorem formam redigendis, in hac nova rubricarum redactione assumptum*. [sourced: benziger-1962 OCR 1171-1173] |
+| `rubricarum-instructum-1960` → `codex-rubricarum-1960` | The decree recites the act it executes, by title and date. [sourced: benziger-1962 OCR 1235-1254] |
+| `maxima-redemptionis-1955` + `codex-rubricarum-1960` → `editio-typica-1962` | **The one merge.** Reception shown from both sides — see section 5. The node's own instrument was **not found**; see section 7. |
+
+### Edges deliberately left undrawn
+
+- **1862 Pustet → 1920.** Chronologically adjacent, and false. The 1862 is a
+  commercial Ratisbon printing whose title page says *CUM APPROBATIONE SACRORUM
+  RITUUM CONGREGATIONIS* — leave to print — and whose latest named authority is
+  Urban VIII [verified]. The 1920 decree names its own parent and it is the 1900
+  typical edition [sourced]. A generator that chains versions by date would have
+  drawn this edge and asserted that the Roman Holy Week descends through a German
+  publisher.
+- **1806 and 1843 English → any Latin edition.** Neither book names a Latin
+  exemplar. A search of both for an approbation, imprimatur, *permissu*,
+  licence, or the Vicars Apostolic returns nothing [verified]. They are attached
+  as witnesses on a **date bound only**, labelled `attests_kind = "date-bound"`,
+  and that weakness is on the record rather than hidden behind a confident edge.
+  The repository's own family ledger had already found the same thing of the
+  1861 Cummiskey: *the book states no Latin exemplar, and its formularies were
+  matched to the 1962 Missal by collation, not by a stated descent*.
+- **A pre-1955 line continuing beside 1962.** The brief expected this branch —
+  the emacs/xemacs case. No act permitting it was found in this corpus, and none
+  is asserted from memory, so **it is not drawn**. The absence is a statement
+  about this search, not about history.
+
+---
+
+## 3. The pruning, stated plainly
+
+**The English line does not survive Rule 1.** A lay translation is not an act.
+Nothing in the 1806 or the 1843 changes the missal, and no decree, edict or
+approbation for either was found. The 1843's title page carries a US copyright
+registration — *Entered according to the Act of Congress, in the year 1843, by
+EUGENE CUMMISKEY* [sourced] — which is an act, dated, by a named party, in a
+named jurisdiction, and is not an act about the rite. So the English books are
+witnesses, and **the parallel English line the brief asked for does not exist in
+this encoding.**
+
+That is not a gap to be filled later by finding a better source. It is the rule
+saying that a translation is evidence about a state, not a state of its own. The
+convergence the brief expected from the English side — each lay missal taking
+from a Latin edition — survives as a witness attachment, and a weak one: both
+books are attached on a date bound, because neither names an exemplar.
+
+**The 1862 Pustet is not a station either**, for the reason in §1.
+
+That leaves the exemption clause of *Quo primum* as the tracer's only genuine
+parallel line, and it is a good one: the constitution excepts uses whose
+institution the Apostolic See approved or whose custom had run above two hundred
+years, and says of them *praefatam celebrandi constitutionem, vel consuetudinem
+nequaquam auferimus* [sourced: pustet-1862 OCR 189-198, 231]. Those uses kept
+their own Holy Week and never rejoined. **This corpus holds no witness for any
+of them**, so the branch is a root and nothing more.
+
+An empty branch that is honestly empty is worth having. The fork is in the
+record because an act put it there, and its emptiness measures what the corpus
+holds rather than what happened.
+
+---
+
+## 4. The four storage decisions, settled against real diffs
+
+`time-machine.md` Rule 6 fixes the acceptance test and names the four things
+that decide it. This section reports what each was set to and what it measured.
+The full station diff that tests all four at once is §4.6.
+
+### 4.1 Granularity: one file per addressable unit
+
+`holy-week/<mass>/<slot>.txt`, plus `mass.txt` and `order.txt` per mass. Forty-
+eight files at the tip [verified]. The alternative measurements:
+
+| Encoding | What the 1955 reform's diff would look like |
+| --- | --- |
+| one file per missal | one file, wholly rewritten |
+| one file per mass | four files, each wholly rewritten |
+| **one file per unit** | **36 files, 31 of them changing by exactly two lines** [verified] |
+| one file per line of text | thousands of files; git copes, a reader does not |
+
+The unit — one proper, one rubric, one antiphon — is where the acts actually
+bite, so it is where the file boundary goes.
+
+### 4.2 Path is liturgical identity, never page order
+
+`holy-week/sabbato-sancto/prophetia-04.txt` is the same object in 1634 and in
+1955. Nothing in a path is a page, a leaf, a line range or an ordinal position
+in the printed book. Order lives in a separate `order.txt`, so a reordering is
+one file's diff rather than a cascade of renames.
+
+This is the defect `time-machine.md` Rule 6 names in the earlier corpus, and it
+was confirmed on the way past: that corpus's `source_lines: 50001-70000` windows
+mean any insertion shifts every offset below it.
+
+### 4.3 Deterministic serialisation
+
+Sorted iteration everywhere, one fixed author identity, timestamps derived from
+act dates alone, trees built with `mktree` from a sorted flat path map rather
+than through an index. Measured: two successive `emit` runs produce byte-
+identical commit hashes, `c3b024c4…` both times [verified].
+
+### 4.4 Semantic line breaks, applied by the generator
+
+Break points set at full stop, colon and semicolon, and **not at commas**: Latin
+orations are comma-dense, and breaking there puts three words on a line and
+loses the clause as the unit a reader compares. Rule 6 requires the rule be
+mechanical; it is applied by `tools/act-history` at emit time and the source
+stores text unwrapped, so there is nothing for a later hand to re-wrap.
+
+```
+Omnipotens sempiterne Deus, qui etiam judaicam perfidiam a tua misericordia non repellis:
+exaudi preces nostras, quas pro illius populi obcaecatione deferimus;
+ut, agnita veritatis tuae luce, quae Christus est, a suis tenebris eruantur.
+Per eundem Dominum.
+```
+
+### 4.5 The one that was free: git carries `reslotted` natively
+
+`reslotted` is the hard departure kind — the same words in a different slot,
+invisible to any matcher keyed on `(mass, proper-name)`. Under this encoding
+git's own rename detection finds it without being told [verified]:
+
+```
+$ git show -M --format='' 291c0d3 -- holy-week/sabbato-sancto/postcommunio-seu-oratio.txt
+diff --git a/holy-week/sabbato-sancto/vesperae-oratio.txt b/holy-week/sabbato-sancto/postcommunio-seu-oratio.txt
+similarity index 89%
+rename from holy-week/sabbato-sancto/vesperae-oratio.txt
+rename to holy-week/sabbato-sancto/postcommunio-seu-oratio.txt
+@@ -1,4 +1,4 @@
+-Oratio
++Postcommunio seu Oratio
+ Spiritum nobis, Domine, tuae caritatis infunde
+```
+
+`git log --follow` walks through it to the unit's introduction in 1634
+[verified]. The whole 1955 station, with rename detection on:
+
+```
+ rename holy-week/dominica-in-palmis/{evangelium-ante-benedictionem.txt => evangelium-post-distributionem.txt} (100%)
+ delete mode 100644 holy-week/dominica-in-palmis/graduale-collegerunt.txt
+ delete mode 100644 holy-week/dominica-in-palmis/praefatio.txt
+ delete mode 100644 holy-week/dominica-in-palmis/sanctus.txt
+ ... eight more deletions
+ rename holy-week/sabbato-sancto/{prophetia-01.txt => lectio-01.txt} (72%)
+ rename holy-week/sabbato-sancto/{prophetia-04.txt => lectio-02.txt} (73%)
+ rename holy-week/sabbato-sancto/{prophetia-11.txt => lectio-04.txt} (68%)
+ rename holy-week/sabbato-sancto/{vesperae-oratio.txt => postcommunio-seu-oratio.txt} (89%)
+ delete mode 100644 holy-week/sabbato-sancto/prophetia-02.txt
+ ... seven more suppressed prophecies
+```
+
+And the mass header carries `renamed` and `moved` as two legible lines:
+
+```
+-title: Sabbato Sancto
++title: Sabbato Sancto: De Vigilia paschali
+ day: Saturday of Holy Week
+-hour: in the morning, after None
++hour: circa mediam noctem inter sabbatum sanctum et dominicam Resurrectionis
+```
+
+**How free is free? Measured across four flag settings** [verified, git 2.55],
+counting renames detected in the 1955 station:
+
+| invocation | renames found |
+| --- | ---: |
+| `git show` (no flags at all) | **6** |
+| `git show -M` | 6 |
+| `git show -M --find-copies-harder` | 6 |
+| `git show -M20% --find-copies-harder` | 6 |
+
+**No flags are needed.** `diff.renames` has defaulted to true since git 2.9, so
+a reader who clones this repository and types `git show` gets the reslotted
+prayer as a rename without knowing that rename detection exists. Neither
+`--find-copies-harder` nor a threshold as low as 20 per cent finds one more.
+
+**Where it fails, and it matters.** When an act both moves a unit and rewrites
+it, similarity collapses and git shows a delete beside an unrelated create. Two
+cases here: the third Vigil lesson, which is Isaiah 4 with verse 1 dropped, and
+the Holy Saturday canticle antiphon, which moves from Magnificat to Benedictus
+with new words. Nothing in the table above recovers either — the files are three
+lines long, so there is not enough text left to match on.
+
+So the answer to `time-machine.md` §7's open question is **yes, with one
+boundary**. The viewer needs no machinery for `reslotted` where the words are
+unchanged, which is six of eight cases here. `reslotted` must nonetheless stay a
+first-class departure kind in the source, because the two it misses are exactly
+the cases where a reader most needs telling that the words did not appear from
+nowhere.
+
+### 4.6 The acceptance test: a real station, in full
+
+`git show` on `maxima-redemptionis-1955`, unedited except for eliding
+twenty-three further file lines of the same shape:
+
+```
+commit 6890a1f
+Author: Roman Holy Week tracer
+Date:   11955-11-16
+
+    Maxima redemptionis restores the order of Holy Week
+
+    The largest set of departures in this slice.
+
+    Act: Decree Maxima redemptionis nostrae mysteria
+    Act-date: 1955-11-16
+    Authority: Pius XII, through the Sacred Congregation of Rites
+    Line: typica
+    Citation: Sacred Congregation of Rites, Maxima redemptionis nostrae mysteria,
+      16 November 1955, in Acta Apostolicae Sedis 47 (1955), with the Instruction.
+    Descends-from: editio-typica-1920
+    Effect-established: yes
+    Departures: absent 20, moved 3, renamed 3, replaced 2, reslotted 8
+    Timestamp-shift: +10000 years; git refuses a pre-1970 date
+
+ acts/maxima-redemptionis-1955.txt                        | 28 ++++++++++
+ witnesses/aas-47-1955.txt                                | 14 ++++++
+ ...ionem.txt => evangelium-post-distributionem.txt}      |  0
+ holy-week/dominica-in-palmis/graduale-collegerunt.txt    |  2 --
+ holy-week/dominica-in-palmis/lectio-exodi.txt            |  2 --
+ holy-week/dominica-in-palmis/mass.txt                    |  4 +-
+ holy-week/dominica-in-palmis/praefatio.txt               |  2 --
+ holy-week/dominica-in-palmis/sanctus.txt                 |  2 --
+ holy-week/sabbato-sancto/{prophetia-01.txt => lectio-01.txt}                  |  2 +-
+ holy-week/sabbato-sancto/{vesperae-oratio.txt => postcommunio-seu-oratio.txt} |  2 +-
+ holy-week/sabbato-sancto/mass.txt                        |  4 +-
+ holy-week/sabbato-sancto/order.txt                       | 23 +++++-----
+ ... 26 more file lines
+ 38 files changed, 65 insertions(+), 83 deletions(-)
+```
+
+Read it as a reader would. An act, dated, with its instrument and its citation
+in the header. The blessing of palms loses its lesson, its gradual, its preface,
+its Sanctus and five blessing prayers — one deleted file each. The Gospel of the
+blessing moves after the distribution as a hundred-per-cent rename. The first
+prophecy becomes the first lesson, and the Vespers prayer becomes the
+Postcommunion, both as renames carrying their words.
+
+**The measured shape of it** [verified]. Of the 38 files, two are the station's
+own record — the act and the witness it was read in — leaving 36 files of
+liturgy, 23 insertions and 83 deletions. Their size distribution:
+
+| changed lines in the file | files |
+| ---: | ---: |
+| 0 (a pure rename) | 1 |
+| 2 | 31 |
+| 4 | 2 |
+| 13 | 1 |
+| 23 | 1 |
+
+**Thirty-one of thirty-six files change by exactly two lines**, because a unit
+file is a name and an incipit and a suppressed unit takes both with it. The two
+four-line files are mass headers, changing title and hour. Not one unit file is
+a wall.
+
+**The outlier is real and is the cost of a deliberate choice.** The 23-line file
+is `sabbato-sancto/order.txt`, which absorbs the whole reordering of Holy
+Saturday — eight prophecies gone, four renamed to lessons — in one hunk. Keeping
+order in its own file is what stops a reordering cascading into renames of every
+unit below it (§4.2); the price is that the reordering lands in one place and
+looks big there. That is the right trade and it should be stated rather than
+averaged away: the largest hunk in the station is 25 lines and every one of them
+is in that file.
+
+That is the acceptance test passing at four liturgies, which is where it is
+cheap to fail.
+
+---
+
+## 5. Divergence, convergence, parallelism, and the empty station
+
+**Divergence** — `maxima-redemptionis-1955` carries 34 of the 42 departures. The
+blessing of palms loses its collect, its lesson, its gradual, its preface, its
+Sanctus and five of six blessing prayers; the twelve prophecies of Holy Saturday
+become four lessons; the Vigil moves from Saturday morning to midnight
+[verified against both sides].
+
+**Convergence** — the single merge, and it is drawn because the reception is
+shown to the letter and not inferred from the fact that both acts precede it:
+
+- section 9 of *Maxima redemptionis*, fixing the Vigil at midnight, is printed in
+  the 1962 witness as the same sentence: the Acta at `aas-47-1955` OCR
+  51915-51921, the book at `benziger-iuxta-typicam-1962` OCR 40203-40212. The
+  two were compared token by token [verified], and the comparison is worth
+  reporting exactly, because it turned into the tracer's own sharpest measurement
+  of the OCR hazard — see the note below.
+- the Code of Rubrics is printed entire in the same book's front matter from
+  line 1276, with its promulgating decree above it at 1235-1272, and its
+  renaming of the Introit is then carried into the Palm Sunday propers at 35155
+  [sourced].
+
+**The note, and it is the tracer in miniature.** That comparison was first
+written up here as "word for word", which is what it looks like to a reader and
+is not what the bytes say. Normalised to letters and spaces and compared as
+token sequences, the two OCR renderings of one sentence agree on **75.7 per
+cent** of tokens [verified]:
+
+```
+AAS  : solemnis paschalis vigilia celebranda est hora competenti ea scili cet quae permittat ...
+1962 : h solemnis vigilia paachalis cclebranda est hora competenti ea scilicet quee permittat ...
+```
+
+`celebranda`/`cclebranda`, `quae`/`quee`, `vigiliae`/`vigilite`, `scilicet`
+split across a line break in one scan and not the other. Every one of those is a
+scanner. One is not: the Acta read *Solemnis paschalis vigilia* and the book
+*Solemnis Vigilia paschalis*, a word order difference that could be the decree,
+could be the book, and **cannot be told apart from the other seven without page
+images**.
+
+So the single strongest piece of evidence in this tracer — an act and a book
+agreeing to the letter — degrades to three-quarters agreement the moment it is
+measured through two scans. The reception is not in doubt; no reading of these
+divergences makes the book print a different rule. But if a quarter of the
+tokens move on the sentence chosen *because* it is identical, nothing about a
+diff of two OCR texts should be trusted where an act does not stand behind it.
+
+`act-history check` enforces the reception rule: **an act with more than one
+parent that carries no `reception_basis` is rejected.** A merge asserts a
+synthesis, so it must cite one.
+
+The three-way merge itself refuses to guess. Where two parents leave the same
+unit in two different states, the tool raises rather than preferring a side,
+because silently preferring one is how a synthesis nobody performed gets drawn.
+
+**Parallelism** — `exempt-uses` forks at 1570 and never rejoins. No act in the
+encoding may name parents on two different lines, so the tool cannot draw a
+merge across them even by mistake.
+
+**The empty station** — `divino-afflatu-1911` and `abhinc-duos-annos-1913` each
+commit exactly one file, their own act record:
+
+```
+$ git show --stat c3b9a15
+c3b9a15 11911-11-01 Divino afflatu orders the new arrangement of the Psalter
+ acts/divino-afflatu-1911.txt | 30 ++++++++++++++++++++++++++++++
+```
+
+A history keyed on diffs would have dropped both. A history keyed on acts keeps
+them, and the empty commit is the record saying that an authority acted and this
+slice did not move.
+
+There is a sharper version of the same point. *Maxima redemptionis* §6 legislates
+the hour of the Palm Sunday blessing: *fiunt mane, hora consueta; in choro autem
+post Tertiam* [sourced: aas-47-1955 OCR 51902-51903]. That is exactly the hour
+the pre-1955 books already kept. **A decree explicitly legislated a thing and
+changed nothing, so it writes no row** — identity writing no row, arriving from
+an act rather than from a comparison.
+
+### Departure kinds actually needed
+
+All seven of `recensions.md` §3 were exercised [verified]:
+
+| kind | count | hardest instance |
+| --- | ---: | --- |
+| `absent` | 20 | eight of twelve prophecies suppressed |
+| `added` | 1 | the numbered titles over the solemn prayers |
+| `moved` | 3 | the Vigil from Saturday morning to midnight |
+| `renamed` | 5 | *Feria VI in Parasceve* → *in Passione et Morte Domini* |
+| `replaced` | 2 | Isaiah 4,1-6 → 4,2-6, verse 1 dropped |
+| `reslotted` | 8 | *Spiritum nobis* — the case this whole apparatus exists for |
+| `unrecorded` | 3 | the Good Friday prayer for the Jews |
+
+**`reslotted` needed to be split from `replaced`.** The Isaiah lesson both moves
+and changes, and it is recorded as two rows because they are two different
+claims — one about where it stands, one about what it says. Collapsing them
+would make a reader unable to tell which was established.
+
+**`unrecorded` needed a stronger implementation than "resolves to nothing".**
+`recensions.md` Rule 3 says it must never silently fall back to the base, and a
+first implementation that simply skipped the row did exactly that: the 1962
+commit would have carried `perfidis` forward, which is false to the witness. The
+tool now **removes the unit from the liturgy and writes a marker** under
+`unestablished/` saying the state is not known and why. Carrying the inherited
+text forward would have been the stronger claim, made for free.
+
+---
+
+## 6. What the OCR does to a diff, measured
+
+Every reading in the tracer is `ocr-only`. Not one was collated against a page
+image, and the file says so in its own `evidence` block.
+
+**The calibration this repository already owns.** On 2026-07-31 it collated 99
+orations taken from an OCR text layer of an 1861 printing against the page
+images of that same printing and corrected 38 of them — `Lard` for `Lord`,
+`tliese` for `these`, a comma where the page prints a full stop [verified from
+`roman-1962-proper-translations-v1.toml`]. That sample was biased toward the
+loci most likely to be wrong, so 38 per cent is an upper bound, not an estimate.
+
+**The measurement made here.** Lines matching each unit label, inside the Holy
+Week slice of three witnesses [verified]:
+
+| label | 1862 Pustet | 1920 typica | 1962 Benziger |
+| --- | ---: | ---: | ---: |
+| `Prophetia` | 8 | 15 | 0 |
+| `Postcommunio` | 3 | 8 | 6 |
+| `Introitus` | 0 | 5 | 0 |
+| `Oratio` | 37 | 52 | 32 |
+| `Antiphona` | 16 | 25 | 50 |
+
+**The first two columns are two witnesses of the same state.** No act stands
+between them in this record. Both books print twelve prophecies — confirmed by
+reading every heading with its biblical citation and incipit, one by one, in
+both [verified]. A strict search for the label returns 8 lines in the 1862 and
+15 in the 1920, and of the 1862's 8 only six are headings: its OCR renders the
+rest as `lYophetia priina`, `IVophcfia secunda`, `Prophotia qunrta`,
+`Prophet.ia dedma`, `Prophctia undeciina`. The `Postcommunio` count differs by
+a factor of nearly three, and the 1862 scan loses the word `Introitus` entirely.
+
+Every one of those differences is a scanner. A generator that built its unit
+inventory by matching labels in OCR would report the 1862 book as having lost
+seven prophecies and five postcommunions between 1862 and 1920, and would date
+the loss to a printing.
+
+**And the failures are not random.** They concentrate on the chanted and
+ceremonial units, which is exactly where the 1955 reform acted:
+
+- The Palm Sunday Introit's own words, *Domine, ne longe facias*, return nothing
+  in the 1862 and 1920 scans and are found at line 35161 in the 1962 scan
+  [verified]. Both older books print the Introit; both set it with chant
+  notation, and the text layer does not carry it.
+- *Vere dignum* returns 0 in the 1862 and 1920 scans and 16 in the 1962
+  [verified].
+- The *Improperia* incipit *Popule meus* returns nothing in any of the three
+  within Holy Week [verified].
+
+So a diff built on these text layers would be blindest precisely where the
+change was largest. Three of the tracer's own units carry a label and citation
+read from the page and **no incipit**, because the words were not in the scan;
+that is a different claim from a unit nobody looked for, and the encoding keeps
+them apart.
+
+**What the act rule buys.** None of the above can become a commit, because a
+commit is an act. The OCR's disagreements live at the witness level, where they
+belong. One example is in the data: the two pre-1955 witnesses print different
+rubrics at the Good Friday prayer for the Jews — the 1920 has the long form, the
+1862 only *Non respondetur Amen, sed statim dicitur* — and with no act between
+them, that is recorded as a disagreement between witnesses and generates no
+station.
+
+**What a diff between two OCR texts is worth.** As evidence about the books,
+nothing on its own. It is worth something when an act stands behind it, and it
+is worth something as a **negative bound** on a whole-file search: a word absent
+from every line of a scan may still be printed in the book, but a word present
+was read by something. Every "not in the witness" basis in the encoding is a
+whole-file search, stated as such, and correctable.
+
+---
+
+## 7. What broke
+
+### 7.1 The tracer misidentified its own principal witness, and the rule caught it
+
+The corpus records its 1962 text as *Missale Romanum 1962*, and the encoding
+recorded it that way until its front matter was read. It is not the Vatican
+typical edition. Its title page says **EDITIO IUXTA TYPICAM**, its publisher is
+Benziger Brothers of New York, and its authority page is a diocesan imprimatur:
+Francis Cardinal Spellman, under canon 1390, approving this first edition *iuxta
+typicam* and citing the Congregation of Rites' declaration of 21 October 1961
+that the Benziger Missal agrees with the typical edition [sourced].
+
+This is the 1862 Pustet case a century later, and the tracer walked straight
+into it. It was caught because the act rule forces the question *which act does
+this book attest* to be answered in writing, for every witness.
+
+### 7.2 The merge has no citable act, and the node stands anyway
+
+The 1962 scan contains **no** decree approbating a 1962 typical edition, no *Quo
+primum*, and only three occurrences of the word `DECRETUM` in 136,068 lines, all
+belonging to the 1960 documents [verified].
+
+So `editio-typica-1962` fails the rule that every station cites its instrument.
+It is kept, flagged `act_citation = "not-found"`, with a required note saying
+so, and `act-history check` refuses that value without the note. The reasoning:
+an edition certainly was promulgated — both parent acts order their content into
+the typical editions of the Missal, and a book exists that carries both — but
+the instrument was not found here and is not asserted from memory. Dropping the
+node would leave the two reforms on branches that never join, which is false in
+the other direction. **A reader can see a flagged gap; a reader cannot see a
+node that was never drawn.**
+
+This is the tracer's least comfortable result and the one most worth arguing
+with.
+
+### 7.3 A famous change has no instrument, and therefore no station
+
+Between the pre-1955 witnesses and the 1962 witness, the Good Friday prayer for
+the Jews changes in three ways: *Oremus et pro perfidis Judaeis* becomes *Oremus
+et pro Iudaeis*; *qui etiam judaicam perfidiam a tua misericordia non repellis*
+becomes *qui Iudaeos etiam a tua misericordia non repellis*; and the rubric
+forbidding the kneeling is gone, replaced by *Oremus. Flectamus genua. Levate.*
+A whole-file search of the 1962 scan for `perfid` returns nothing [verified].
+
+The change is commonly attributed to John XXIII in 1959. **No instrument for it
+was found in this corpus, so no station carries it**, and all three units are
+recorded `unrecorded` — removed from the liturgy at that point, with a marker
+saying the state is not established. The rule bit hard on a change everyone
+knows, and that is the rule working.
+
+### 7.4 The encoding the brief asked for cannot be derived from these scans
+
+Section 6 is the measurement. Addressing text by what it is requires the unit
+labels and the unit texts, and these text layers carry neither reliably, with
+the failures concentrated on the ceremonial units. **The re-encoding has to be
+read off page images.** The tracer's 38 units took a working day of targeted
+searching across three scans to establish at the level of "label and citation
+read, words sometimes not"; the four Holy Week liturgies hold on the order of
+170 propers in this repository's own 1962 index.
+
+### 7.5 The scan is not the book
+
+Lines 134 to 780 of the 1962 text layer are not the missal. They are polemical
+matter from a body calling itself The Fatima Movement, inserted ahead of the
+title page at line 816 [sourced]. **A generator that slices by line window and
+calls the result the book would publish that material as the Missale Romanum.**
+
+### 7.6 Two stations have no Holy Week at all
+
+`quo-primum-1570` and `cum-sanctissimum-1604` commit their act records and no
+liturgy. Every unit enters at `si-quid-est-1634`, because the earliest witness
+read for any unit is the 1862 Pustet and the latest act it attests is Urban
+VIII's revision. The two 1570 and 1604 scans are two-column and their OCR
+interleaves the columns, so Holy Week is locatable in them and not readable unit
+by unit.
+
+The history shows what was read, not what existed, and it shows it by being
+visibly empty at the top.
+
+---
+
+## 8. Commit dates: keep the ten-thousand-year shift
+
+The corpus this drew on shifts commit dates 10,000 years forward, so every
+commit reads year 11570. That looked like a defect worth removing. It is not,
+and the reason is measurable [verified, git 2.55]:
+
+- `git commit` and `git commit-tree` **refuse** a pre-1970 date outright:
+  `fatal: invalid date format: 1570-07-14T12:00:00+0000`, and the same for a raw
+  negative epoch.
+- Writing the object directly with `git hash-object --literally` succeeds, and
+  the result is broken: `git fsck --strict` reports
+  `badDate: invalid author/committer line`, and `%ad`, `%ai` and `%at` all print
+  **empty** under every date format.
+
+So a true 1570 date cannot be stored in a way any tool will display. Given a
+shift is forced, 10,000 years is the right one: a shift small enough to look
+plausible would be read as a real date, and 11570 cannot be mistaken for
+anything. The true date is carried in the tree, in the commit subject line, and
+in an `Act-date` trailer, so nothing depends on reading the stamp.
+
+Recorded here rather than left to be re-derived, since it looks wrong and is
+right.
+
+---
+
+## 9. Where the encoding lives, and why not beside the calendars
+
+`src/sources/inventories/roman-holy-week-acts-v1.toml`, which is not where a
+recension belongs. The constraints, each verified:
+
+- `check-calendar-masses` reads every `.yaml` under `src/sources/calendars` as a
+  mass index, and `scripts/_calendars.py` makes an unrecognised schema in a
+  calendar directory a **hard failure** by design.
+- `source-library validate` rejects any file under `src/sources` outside its own
+  schema, **except** `.md` and `.toml` under `inventories/`.
+- A new calendar directory would also be discovered by `calendar-days`,
+  `calendar-rubrics`, the census, the harvest corpus and the browser's missal
+  control, none of which a tracer is ready to answer to.
+
+`source-library validate` and `source-inventory check` both pass with the file
+in place [verified]. When the shape is settled, its home is a calendar-scoped
+companion schema registered in `COMPANION_SCHEMAS`, which is the extension point
+`scripts/_calendars.py` documents for exactly this.
+
+**No canonical source manifests were created.** Adding one blocks
+`source-family-migration refresh` and requires every family with canonical IDs
+to be re-reviewed. A tracer should not levy that. The editions are identified in
+the encoding by human-readable citation and artifact line number, and
+canonicalising them is the next step, not this one.
+
+---
+
+## 10. What this proved, and what to do next
+
+**The shape works.** Twelve acts, two lines that never rejoin, one merge that
+cites its reception, one edge that admits it crosses an unrepresented station,
+three units whose state is honestly unknown, and diffs a reader can read. All
+seven departure kinds were needed. Git's rename detection carries the hard one
+for free.
+
+**The blocker is not the model. It is the evidence.** These OCR text layers
+cannot support the unit-level encoding the model requires, and the tracer's own
+measurements say so quantitatively rather than as an impression.
+
+So, in order:
+
+1. **Read Holy Week off page images**, for the 1920 and one pre-1955 witness at
+   minimum. The tracer's `read_from` field is already there to be upgraded from
+   `ocr-only` to `page-image`, and `check` already refuses a `page-image` claim
+   without a collation date.
+2. **Find or refuse the 1962 promulgating decree.** One flagged station is
+   tolerable; a habit of them is not.
+3. **Settle the pre-1955 branch question.** Either an act permitting the older
+   Holy Week's continued use is citable, in which case the branch is drawn, or
+   it is not, in which case the current silence is correct and should be
+   recorded as a settled negative rather than an open one.
+4. **Then move the encoding beside the calendars**, as a companion schema, and
+   only then widen past Holy Week.
+
+Not, in any order: enlarging the corpus, adding more editions, or drawing more
+edges. The tracer's finding is that the edges are the expensive part and the
+scans are the weak part, and neither gets better by adding books.
