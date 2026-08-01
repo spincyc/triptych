@@ -35,8 +35,14 @@ EXAMPLES = {
         Example(
             "tools/release-bindings status",
             (
-                "exact: 0 stale binding(s)",
+                "stale site source README.md: recorded 7aaeb703f9a63777919a2bfe535911c493a940981d1638d21715f8a71b3f02f7, actual... [+65 chars]",
+                "stale site source docs/reading-and-commentary.md: recorded 81ed3ce14abcb1c613b6ac765e7eeabce754fc7b204118f5a73... [+86 chars]",
+                "stale site source docs/the-mass.md: recorded 9801ae5974a7e5d6eeb30e0a3323a0c65f58da715e1f8a43ecacbf9708327612,... [+72 chars]",
+                "... 17 more lines",
             ),
+            "exit 1, ending `stale: 19 stale binding(s)`: every recorded site "
+            "source is hashed and compared, and each divergence names the "
+            "recorded and the actual digest. `refresh` is what re-records them",
         ),
         Example(
             "tools/release-bindings status --help",
@@ -54,9 +60,11 @@ EXAMPLES = {
         Example(
             "tools/release-bindings status",
             (
-                "exact: 0 stale binding(s)",
+                "stale site source README.md: recorded 7aaeb703f9a63777919a2bfe535911c493a940981d1638d21715f8a71b3f02f7, actual... [+65 chars]",
+                "... 19 more lines",
             ),
-            "read-only first: `status` counts what `refresh` would rewrite",
+            "read-only first: `status` names exactly what `refresh` would "
+            "rewrite, from the same comparison, without writing anything",
         ),
         Example(
             "tools/release-bindings refresh",
@@ -66,14 +74,17 @@ EXAMPLES = {
                 "refreshed rights_record_sha256",
                 "... 1 more line",
             ),
-            "WRITES release/ when a binding is stale. This run had nothing to change, which is why it was safe to capture",
+            "WRITES release/. Captured on a settled tree, which is why it moved "
+            "so little; run against the nineteen divergences above it re-records "
+            "every one of them, sweeping in whatever else is mid-flight",
         ),
     ),
     "migrate-publications": (
         Example(
             "tools/release-bindings status",
             (
-                "exact: 0 stale binding(s)",
+                "stale site source README.md: recorded 7aaeb703f9a63777919a2bfe535911c493a940981d1638d21715f8a71b3f02f7, actual... [+65 chars]",
+                "... 19 more lines",
             ),
             "read-only first",
         ),
@@ -223,10 +234,38 @@ def recognized_site_sources() -> set[str]:
         raise BindingError(f"cannot read the recognized site-source set: {exc}")
 
 
-def compute_site_hashes(authorization: dict, adopt: bool = False) -> dict[str, str]:
+def recorded_site_sources(authorization: dict) -> dict[str, str]:
     site_sources = authorization.get("site_sources")
     if not isinstance(site_sources, dict) or not site_sources:
         raise BindingError("authorization site_sources must be a non-empty object")
+    return site_sources
+
+
+# A recorded path with no file behind it. A rename produces this, and it is a
+# divergence exactly as a changed byte is: the record names something the
+# release cannot supply.
+ABSENT = "<no such file>"
+
+
+def site_source_divergences(authorization: dict) -> list[tuple[str, str, str]]:
+    """Every recorded site binding whose file is not what the record says.
+
+    The one comparison in this tool. ``status`` reports it and ``refresh``
+    rewrites from it; a second copy would drift from this one, and the drift
+    would be invisible because both would still print a number.
+    """
+    recorded = recorded_site_sources(authorization)
+    divergences: list[tuple[str, str, str]] = []
+    for source in sorted(recorded):
+        path = ROOT / source
+        actual = sha256_file(path) if path.is_file() else ABSENT
+        if actual != recorded[source]:
+            divergences.append((source, recorded[source], actual))
+    return divergences
+
+
+def compute_site_hashes(authorization: dict, adopt: bool = False) -> dict[str, str]:
+    site_sources = recorded_site_sources(authorization)
     # Refresh re-derives the recorded inputs only; adoption reconciles the
     # record with the set the renderer currently recognizes.
     sources = recognized_site_sources() if adopt else set(site_sources)
@@ -258,15 +297,17 @@ def refresh(manifest: dict, adopt: bool = False) -> list[str]:
     authorization = single_authorization(manifest)
     record_path = rights_record_path(authorization)
 
+    # Read the divergences before rewriting the record they are measured
+    # against; `status` reports this same list without writing anything.
+    diverged = {source for source, _, _ in site_source_divergences(authorization)}
     site_hashes = compute_site_hashes(authorization, adopt)
     recorded = authorization["site_sources"]
     for source in sorted(set(site_hashes) - set(recorded)):
         changes.append(f"adopted site {source}")
     for source in sorted(set(recorded) - set(site_hashes)):
         changes.append(f"retired site {source}")
-    for source, current in site_hashes.items():
-        if source in recorded and recorded[source] != current:
-            changes.append(f"site {source}")
+    for source in sorted(diverged & set(site_hashes) & set(recorded)):
+        changes.append(f"site {source}")
     authorization["site_sources"] = dict(sorted(site_hashes.items()))
 
     text = record_path.read_text(encoding="utf-8")
@@ -400,8 +441,21 @@ def migrate_publications(manifest: dict) -> int:
 def report_status(manifest: dict) -> int:
     stale = 0
     authorization = single_authorization(manifest)
-    # Publication and site identities are generated and verified by
-    # ``public-alpha``. Legacy source hashes remain historical migration data.
+    # Site sources are compared here, against their bytes, because nothing else
+    # does it. Publication PDF hashes are genuinely generated into the artifact
+    # and are not recorded here, but this comment used to say the same of the
+    # site sources and drop them from the report. It was wrong twice: the
+    # renderer's policy check proves an entry is a well-formed hash naming a
+    # file that exists, never that the two correspond, and `refresh` maintains
+    # these entries and the artifact publishes them, so they are live records
+    # rather than migration history. Between 2026-07-27 and this change the
+    # comparison existed only inside `refresh`, which meant the drift could be
+    # seen only by performing the write that a lane mid-flight must not do.
+    for source, recorded, actual in site_source_divergences(authorization):
+        detail = "no such file" if actual == ABSENT else f"actual {actual}"
+        label = "missing" if actual == ABSENT else "stale"
+        print(f"{label} site source {source}: recorded {recorded}, {detail}")
+        stale += 1
     record_path = rights_record_path(authorization)
     if authorization.get("rights_record_sha256") != sha256_file(record_path):
         print("stale rights_record_sha256")

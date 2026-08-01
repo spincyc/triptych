@@ -1,8 +1,10 @@
 """Tests for the mechanical release-binding bookkeeping tool."""
 
+import contextlib
 import hashlib
 import importlib.machinery
 import importlib.util
+import io
 import json
 import pathlib
 import tempfile
@@ -132,7 +134,10 @@ class ReleaseBindingsTests(unittest.TestCase):
         original_record = self.record.read_text()
         self.claude_pdf.write_bytes(b"claude pdf v2")
         self.readme.write_bytes(b"readme v2")
-        self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
+        # The changed site source is stale until refresh records it. This
+        # assertion read 0 until 2026-07-31, which is the defect: it locked in
+        # a status that could not see the divergence it was written beside.
+        self.assertEqual(1, self.tool.report_status(self.tool.load_manifest()))
         changes = self.tool.refresh(self.tool.load_manifest())
         self.assertIn("site README.md", changes)
         manifest = self.read_manifest()
@@ -171,6 +176,67 @@ class ReleaseBindingsTests(unittest.TestCase):
         )
         self.assertIsNone(refreshed["approval"])
         self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
+
+    def capture_status(self):
+        """(exit code, printed lines) for a read-only status run."""
+        stream = io.StringIO()
+        with contextlib.redirect_stdout(stream):
+            code = self.tool.report_status(self.tool.load_manifest())
+        return code, stream.getvalue().splitlines()
+
+    def test_status_fails_on_a_changed_site_source_and_names_both_hashes(self):
+        self.tool.refresh(self.tool.load_manifest())
+        self.assertEqual(0, self.capture_status()[0])
+
+        self.readme.write_bytes(b"readme v2")
+        code, lines = self.capture_status()
+
+        self.assertEqual(1, code)
+        self.assertIn("stale site source README.md", lines[0])
+        self.assertIn(sha(b"readme v1"), lines[0])
+        self.assertIn(sha(b"readme v2"), lines[0])
+        self.assertIn("stale: 1 stale binding(s)", lines[-1])
+
+    def test_status_fails_on_a_site_source_whose_file_is_gone(self):
+        self.tool.refresh(self.tool.load_manifest())
+        self.assertEqual(0, self.capture_status()[0])
+
+        self.readme.unlink()
+        code, lines = self.capture_status()
+
+        self.assertEqual(1, code)
+        self.assertIn("missing site source README.md", lines[0])
+        self.assertIn(sha(b"readme v1"), lines[0])
+        self.assertIn("no such file", lines[0])
+        self.assertIn("stale: 1 stale binding(s)", lines[-1])
+
+    def test_status_passes_and_reports_exact_on_a_settled_tree(self):
+        self.tool.refresh(self.tool.load_manifest())
+
+        code, lines = self.capture_status()
+
+        self.assertEqual(0, code)
+        self.assertEqual(["exact: 0 stale binding(s)"], lines)
+
+    def test_status_and_refresh_read_one_divergence_comparison(self):
+        """`status` must see exactly what `refresh` would rewrite."""
+        self.tool.refresh(self.tool.load_manifest())
+        self.readme.write_bytes(b"readme v2")
+
+        reported = {
+            source
+            for source, _, _ in self.tool.site_source_divergences(
+                self.tool.single_authorization(self.tool.load_manifest())
+            )
+        }
+        rewritten = {
+            change.removeprefix("site ")
+            for change in self.tool.refresh(self.tool.load_manifest())
+            if change.startswith("site ")
+        }
+
+        self.assertEqual({"README.md"}, reported)
+        self.assertEqual(reported, rewritten)
 
     def test_refresh_leaves_legacy_expected_counts_untouched(self):
         manifest = self.read_manifest()

@@ -1330,6 +1330,57 @@ class PublicAlphaTest(unittest.TestCase):
         publications = self.tool.validate_manifest(self.manifest)
         self.assertIn(("gpt", "review-work"), publications)
 
+    def build_verified_artifact(self) -> tuple[dict, Path]:
+        """A settled tree, built and proven to verify, for a test to then break."""
+        self.authorize_current_inputs()
+        publications = self.tool.validate_manifest(self.manifest)
+        output = self.tool.build_site(self.manifest, publications, preview=False)
+        self.tool.verify_output(self.manifest, publications, output, preview=False)
+        return publications, output
+
+    def test_verifier_passes_when_every_site_source_matches_its_approved_hash(
+        self,
+    ) -> None:
+        publications, output = self.build_verified_artifact()
+
+        self.assertEqual([], self.tool.site_source_binding_errors(self.manifest))
+        self.tool.verify_output(self.manifest, publications, output, preview=False)
+
+    def test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash(
+        self,
+    ) -> None:
+        publications, output = self.build_verified_artifact()
+        approved = self.manifest["authorizations"]["test-authorization"][
+            "site_sources"
+        ]["tools/public-alpha"]
+        # A bound input that no page renders from: the artifact is untouched, so
+        # only the attestation is wrong, which is the case that used to pass.
+        self.write("tools/public-alpha", b"test generator v2\n")
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.verify_output(self.manifest, publications, output, preview=False)
+
+        message = str(failure.exception)
+        self.assertIn(
+            "site source tools/public-alpha does not match its approved SHA-256",
+            message,
+        )
+        self.assertIn(approved, message)
+        self.assertIn(digest(b"test generator v2\n"), message)
+        self.assertIn("make refresh-release-bindings ADOPT=1", message)
+
+    def test_verifier_rejects_a_site_source_whose_file_is_gone(self) -> None:
+        publications, output = self.build_verified_artifact()
+        (self.root / "tools/public-alpha").unlink()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.verify_output(self.manifest, publications, output, preview=False)
+
+        self.assertIn(
+            "site source does not exist: tools/public-alpha",
+            str(failure.exception),
+        )
+
     def test_verifier_rejects_copied_pdf_without_owning_catalog_link(self) -> None:
         self.authorize_current_inputs()
         publications = self.tool.validate_manifest(self.manifest)

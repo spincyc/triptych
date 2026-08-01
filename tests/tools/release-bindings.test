@@ -28,20 +28,73 @@ done
 sandbox="$(mktemp -d)"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
 
-# The recorded bindings are exact: the rights record still hashes to the value
-# the manifest authorization names.  A stale binding exits nonzero.
-run_tool status >"$sandbox/status.txt"
-status_line="$(cat "$sandbox/status.txt")"
-case "$status_line" in
-"exact: 0 stale binding(s)") ;;
+# `status` reports and exits together, whatever the tree happens to hold.  This
+# used to assert "exact: 0 stale binding(s)" outright, which made the smoke test
+# a statement about the checkout rather than about the tool: while `status`
+# compared nothing but the rights record it passed on a tree with nineteen
+# recorded site-source hashes that did not match their files.  A check whose
+# green depends on the data never failing cannot report that the data changed.
+status_exit=0
+run_tool status >"$sandbox/status.txt" || status_exit=$?
+summary_line="$(tail -1 "$sandbox/status.txt")"
+divergences="$(grep -c '^\(stale\|missing\) ' "$sandbox/status.txt" || true)"
+case "$summary_line" in
+"exact: 0 stale binding(s)")
+	if [ "$status_exit" -ne 0 ]; then
+		echo "status reported exact but exited $status_exit" >&2
+		exit 1
+	fi
+	if [ "$divergences" -ne 0 ]; then
+		echo "status reported exact beside $divergences divergence line(s)" >&2
+		exit 1
+	fi
+	;;
+"stale: "*" stale binding(s)")
+	if [ "$status_exit" -eq 0 ]; then
+		echo "status reported a stale binding and still exited 0" >&2
+		exit 1
+	fi
+	counted="${summary_line#stale: }"
+	counted="${counted% stale binding(s)}"
+	if [ "$counted" -ne "$divergences" ]; then
+		echo "status counted $counted but named $divergences" >&2
+		exit 1
+	fi
+	;;
 *)
-	echo "release bindings are not exact: $status_line" >&2
+	echo "status printed no recognizable summary: $summary_line" >&2
 	exit 1
 	;;
 esac
 
-# The report is byte-stable for unchanged release records.
-run_tool status >"$sandbox/status-again.txt"
+# An independent oracle, deliberately not sharing the tool's own comparison:
+# recount the divergences straight from the manifest and require `status` to
+# have found the same number.  The consistency check above would have passed the
+# defect this replaced, because a `status` that compares nothing reports nothing
+# and exits 0 in perfect self-agreement.  Only a second, separate derivation
+# catches a comparison that has stopped happening.
+expected="$(python3 - <<'PY'
+import hashlib, json, pathlib
+manifest = json.loads(pathlib.Path("release/public-alpha.json").read_text(encoding="utf-8"))
+count = 0
+for authorization in manifest.get("authorizations", {}).values():
+    for source, recorded in authorization.get("site_sources", {}).items():
+        path = pathlib.Path(source)
+        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != recorded:
+            count += 1
+    record = pathlib.Path(authorization["rights_record"])
+    if hashlib.sha256(record.read_bytes()).hexdigest() != authorization["rights_record_sha256"]:
+        count += 1
+print(count)
+PY
+)"
+if [ "$expected" -ne "$divergences" ]; then
+	echo "status named $divergences divergence(s); the manifest holds $expected" >&2
+	exit 1
+fi
+
+# The report is byte-stable for unchanged release records, stale or exact.
+run_tool status >"$sandbox/status-again.txt" || true
 if ! cmp -s "$sandbox/status.txt" "$sandbox/status-again.txt"; then
 	echo "status output is not byte-stable across runs" >&2
 	exit 1

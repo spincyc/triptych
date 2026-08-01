@@ -2892,13 +2892,63 @@ def expected_checksum_text(output: Path) -> str:
     return "\n".join(lines) + "\n"
 
 
+REFRESH_BINDINGS_INSTRUCTION = (
+    "the approved site-source record no longer describes these files. Run "
+    "`make check-release-bindings` to list every divergence, and "
+    "`make refresh-release-bindings ADOPT=1` to re-record them once the files "
+    "are final. Never hand-edit a release hash."
+)
+
+
+def site_source_binding_errors(manifest: dict) -> list[str]:
+    """Prove every approved site-source hash is the file's actual content.
+
+    Manifest validation proves an entry is a well-formed hash naming a file that
+    exists; only this proves the two correspond. Verification owns the check
+    because `artifact_manifest_data` republishes these hashes inside
+    PUBLICATION-MANIFEST.json as an attestation about the files that built the
+    artifact, and verification is the last gate before that is published.
+    """
+    errors: list[str] = []
+    authorizations = manifest.get("authorizations")
+    if not isinstance(authorizations, dict):
+        return errors
+    for authorization_id, authorization in sorted(authorizations.items()):
+        if not isinstance(authorization, dict):
+            continue
+        site_sources = authorization.get("site_sources")
+        if not isinstance(site_sources, dict):
+            continue
+        label = f"authorization {authorization_id!r} site source"
+        for source_relative, approved_hash in sorted(site_sources.items()):
+            if not isinstance(source_relative, str) or not isinstance(approved_hash, str):
+                continue
+            try:
+                source_path = safe_relative_path(source_relative, label)
+            except ReleaseError as exc:
+                errors.append(str(exc))
+                continue
+            if source_path.is_symlink() or not source_path.is_file():
+                errors.append(f"{label} does not exist: {source_relative}")
+                continue
+            actual_hash = sha256(source_path)
+            if actual_hash != approved_hash:
+                errors.append(
+                    f"{label} {source_relative} does not match its approved "
+                    f"SHA-256: approved {approved_hash}, actual {actual_hash}"
+                )
+    if errors:
+        errors.append(REFRESH_BINDINGS_INSTRUCTION)
+    return errors
+
+
 def verify_output(
     manifest: dict,
     publications: dict[tuple[str, str], dict],
     output: Path,
     preview: bool,
 ) -> None:
-    errors: list[str] = []
+    errors: list[str] = site_source_binding_errors(manifest)
     primary, _ = declared_providers(manifest)
     included = included_publications(publications, preview)
     expected_authorization = artifact_authorization(manifest, included)
