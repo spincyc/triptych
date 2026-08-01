@@ -52,6 +52,31 @@
     },
     "note": "Universal Norms 7 assigns these celebrations to a Sunday only where the competent authority has actually so decided. Both forms are emitted; a candidate tagged with one option holds only under that option, and an untagged candidate holds under both. This file does not know which option applies in any place, and a transfer is never inferred from arithmetic."
    }
+  },
+  {
+   "calendar": "roman-pre-1955",
+   "edition": "Missale Romanum, editio typica Vaticana 1920",
+   "lectionary_cycles": false,
+   "path": "structure/calendar/roman-pre-1955/{civil_year}.json",
+   "territorial": {
+    "ascension": {
+     "options": [
+      "ascension-thursday",
+      "ascension-transferred-to-sunday"
+     ]
+    },
+    "body_and_blood_of_christ": {
+     "options": [
+      "corpus-christi-thursday",
+      "corpus-christi-transferred-to-sunday"
+     ]
+    },
+    "epiphany": {
+     "computed": "6 January",
+     "transferred_sunday_form": "not computed: the Sundays-after-Epiphany mechanism in guidance/liturgy/calendar-computation.md is stated from January 6, and no rule is given for recounting them after a territorial transfer"
+    },
+    "note": "Universal Norms 7 assigns these celebrations to a Sunday only where the competent authority has actually so decided. Both forms are emitted; a candidate tagged with one option holds only under that option, and an untagged candidate holds under both. This file does not know which option applies in any place, and a transfer is never inferred from arithmetic."
+   }
   }
  ],
  "guidance": "guidance/liturgy/calendar-computation.md",
