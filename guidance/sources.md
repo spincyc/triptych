@@ -162,7 +162,10 @@ src/sources/
 ordered propers, one directory per calendar (`roman-1962`, `postconciliar`,
 `roman-pre-1955`)
 and one `propers.yaml` in each, whose `sections` map holds every mass of that
-calendar — seasonal, marian, christological and sanctoral alike. Each file
+calendar — seasonal, common, marian, christological and sanctoral alike. The
+`common` section is the Commune Sanctorum, which this repository held nothing of
+until 2026-07-31; its masses carry no date and are reached only by reference
+from a saint's day. Each file
 declares the
 `triptych-calendar-masses/v1` schema, the controlling edition, its ordering
 rule, the registry that owns its identities, its citation and orthography
@@ -200,6 +203,18 @@ proper's keys are closed and checked against that closure, a split scalar
 announces itself nowhere: it is [the shape](the-shape.md) §1 in the storage
 layer, a reference that resolves successfully and wrongly. Closing it is open
 work, and quoting is the discipline that stands in for it meanwhile.
+
+**A mass or proper names where its text is printed instead of reprinting it.**
+`takes_from` on a mass takes the whole formulary; on a proper it names a single
+proper of another mass. A record that takes its text this way carries none of
+its own — not the incipit, not a translation — and `check-calendar-masses`
+refuses one that does. `_calendars.resolve_propers` resolves the reference once
+for the validator and for the browser alike, so the reference a gate accepts and
+the reference a page renders cannot come apart. The field exists because the
+schema could not previously say "this mass takes that text": the four resumed
+Sundays after the Epiphany held one set of orations twice and the two copies had
+already drifted five ways. [The proper data guide](propers-for-agents.md) owns
+the field's grammar and the defects it closed.
 
 An index is a planning and cross-reference spine, not a source of record: it
 carries no artifact hash and proves nothing on its own. A publication still
@@ -599,6 +614,23 @@ valid data. It must include a regression test and a schema changelog entry when
 the observable validator or query behavior changes. Pure diagnostic output may
 evolve compatibly when it does not alter manifests, bindings, fingerprints, or
 research receipts.
+
+## Reading the library
+
+Four registered tools reach this library, and they do different jobs:
+
+| Tool | What it is for |
+| --- | --- |
+| `source-library` | validate and query the records themselves |
+| `source-reader` | read the corpus — search it, step through a work passage by passage, and write `structure/sources` for the browser, under each record's own rights |
+| `source-inventory` | the publication-source inventory and its classification review |
+| `source-family-migration` | the reviewed family-migration ledger |
+
+`source-reader` is the one that serves text, so it is the one bound by rights:
+a record with no publishable basis is projected as identity and absence, never
+as bytes. `tools/tpt source-reader list` reports the library's current extent —
+works, editions, artifacts, passages, and how many of those are readable here —
+and is the derivation to quote rather than a count typed into prose.
 
 ## Migration and gates
 

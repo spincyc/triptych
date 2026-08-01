@@ -105,13 +105,28 @@ omits it. A page that says `[absent: icel]` has told the truth.
 A tool that always answers is a tool that lies when it does not know.
 
 This calendar states no general table of precedence, so a date carrying two
-Masses reports two — 71 such dates in 2026 — rather than picking one. The
+Masses reports both — 124 of 365 dates in 2026 carry unranked candidates —
+rather than picking one. The
 family-migration ledger will not refresh without an `--audited-on` date, because
-re-pinning asserts a review. A lane recovered 109 sanctoral pointers to Commons
-mechanically and **did not land them**, because a pointer resolving to the wrong
-Common gives a saint an entire Mass that is not his, resolves cleanly, and looks
-right. A lane authorised to supply its own English translations supplied
-**zero**, having found a public-domain witness nobody had opened.
+re-pinning asserts a review.
+
+The sanctoral pointers into the Commons are the fullest case. The Missal prints,
+under each saint, which Mass of the Commune Sanctorum he takes. Two lanes
+recovered those lines by a linear scan and **landed none**, because such a scan
+loses its date headings and a pointer with the right Common under the wrong
+saint reads perfectly — one pass put eleven consecutive pointers under 21
+December. A third lane recovered all 148 geometrically instead and landed
+**five**, the five read on the page image; 143 stayed out, 87 of them because
+the day prints orations nobody has transcribed and the Common's *beati N.*
+would be served in their place.
+
+Where a witness exists, refusing to write is also the answer: a lane authorised
+to supply its own English for the 1962 orations supplied **zero**, having found
+242 public-domain ones nobody had opened. Where none exists the project may
+compose, and then it says so — the 70 postconciliar orations translated from
+their ancient sources are labelled as the project's own, unreviewed and
+non-liturgical. The refusal is not a preference for silence; it is a refusal to
+let a composition pass as a witness.
 
 The strongest evidence that a rule is real is that it deletes work. When the act
 tracer was given seven candidate nodes it kept three, and the line it removed was
