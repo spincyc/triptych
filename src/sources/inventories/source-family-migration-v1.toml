@@ -8,7 +8,7 @@ classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e
 canonical_catalog_snapshot = "sha256:1b1d17b8c90fb60c641eee5192d3532340997d20854996b4f6f9917ee5c0d15a"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:336124991744453862523fce16c3f1b9b7648986cea1bc60052d71044d43ada2"
+snapshot = "sha256:4daec65a39f1b6b583561f2490d407052df6133c8e9a75d9009d92aab171e953"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -1088,7 +1088,7 @@ priority = "p1"
 canonical_ids = ["work.basil-of-caesarea.homiliae-in-hexaemeron"]
 trace_patterns = ["basil\\-of\\-caesarea\\.homiliae\\-in\\-hexaemeron"]
 reviewed_on = "2026-07-31"
-notes = "Reviewed 2026-07-31 as the distinct source family for Basil's nine Lenten homilies on the six days, which are a different work from De Spiritu Sancto and must not be merged with it. The work record carries the author identity only: this family has no edition and no artifact of its own, which is why edition and artifact are recorded as identity gaps and availability as candidate-partial. The one text held is an English translation of the first homily alone, one of nine, and it lives under family.nicene-and-post-nicene-fathers.series-2-volume-8 because the exact bytes were taken from that container volume. That passage is inspected rather than verified, resting on two agreeing web transcriptions rather than on a collation against the printed page. The series expounds Genesis 1:1 to 1:26 and stops there, the ninth homily breaking off before the creation of man, so no member of this family may be extended past that verse."
+notes = "Reviewed 2026-07-31 as the distinct source family for Basil's nine Lenten homilies on the six days, which are a different work from De Spiritu Sancto and must not be merged with it. The work record carries the author identity only: this family has no edition and no artifact of its own, which is why edition and artifact are recorded as identity gaps. Reviewed again the same day when the text held ceased to be the first homily alone and became all nine, in English translation, under family.nicene-and-post-nicene-fathers.series-2-volume-8, because the exact bytes were taken from that container volume. Those nine passages are inspected rather than verified, resting on one web witness of the 1895 printing rather than on a collation against the printed page. The series expounds Genesis 1:1 to 1:26 and stops there, the ninth homily breaking off before the creation of man, so no member of this family may be extended past that verse."
 
 [[families]]
 id = "family.bede.in-lucae-evangelium-expositio"
@@ -2849,6 +2849,26 @@ canonical_ids = ["artifact.gregory-of-nazianzus.oration-40.english-browne-swallo
 trace_patterns = ["(?:(?:Gregory (?:of Nazianzus|Nazianzen)|Gregory Nazianzen)[^\\n]{0,160}(?:Oration|Oratio)\\s*(?:40|XL)|(?:Oration|Oratio)\\s*(?:40|XL)[^\\n]{0,160}Gregory)", "gregory\\-of\\-nazianzus\\.oration\\-40"]
 reviewed_on = "2026-07-31"
 notes = "Reviewed as the distinct source family for Oratio XL: In sanctum baptisma. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers."
+
+[[families]]
+id = "family.gregory-of-nyssa.de-hominis-opificio"
+label = "De hominis opificio"
+kind = "work"
+source_categories = ["patristic"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition"]
+artifact_availability = "candidate-partial"
+storage_plan = ["tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["work.gregory-of-nyssa.de-hominis-opificio"]
+trace_patterns = ["(?:De hominis opificio|De opificio hominis|On the Making of Man)", "gregory-of-nyssa\\.de-hominis-opificio"]
+reviewed_on = "2026-07-31"
+notes = "Reviewed 2026-07-31 as the distinct source family for Gregory of Nyssa's treatise on the making of man, written about 379 as the supplement his brother Basil's Hexaemeron left undone. It is a different work from the Oratio catechetica magna and must not be merged with it. The work record carries the author identity only: this family has no edition and no artifact of its own, which is why edition and artifact are recorded as identity gaps and availability as candidate-partial. The one text held is Wilson's 1893 English translation, entire, and it lives under family.nicene-and-post-nicene-fathers.series-2-volume-5 because the exact bytes were taken from that container volume. Its passage is inspected rather than verified: the wording rests on one web witness of the printing and no facsimile has been hashed or collated. The treatise expounds Genesis 1:26 and 1:27 and no other scripture at length."
 
 [[families]]
 id = "family.gregory-of-nyssa.oratio-catechetica-magna"
@@ -5358,17 +5378,17 @@ source_categories = ["patristic"]
 identity_confidence = "confirmed"
 identity_gaps = []
 artifact_availability = "canonicalized"
-storage_plan = ["remote"]
+storage_plan = ["remote", "tracked"]
 rights_review = "all-known-artifacts-reviewed"
 mutability = "fixed"
 freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p1"
-canonical_ids = ["edition.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893", "work.nicene-and-post-nicene-fathers.series-2-volume-5"]
+canonical_ids = ["artifact.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio-web-text-b09a66d1", "artifact.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio-wikisource-export-d693d15a", "edition.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893", "passage.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio", "work.nicene-and-post-nicene-fathers.series-2-volume-5"]
 trace_patterns = ["nicene-and-post-nicene-fathers\\.series-2-volume-5"]
 reviewed_on = "2026-07-31"
-notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
+notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers. Reviewed again 2026-07-31, when the volume acquired its first artifacts: a remote hashed Wikisource export of the 1893 printing of Gregory of Nyssa's De hominis opificio and the tracked transcription derived from it. The volume is the container and Gregory's treatise is the work; the treatise's own identity is reviewed separately as family.gregory-of-nyssa.de-hominis-opificio. The passage stops at inspected, resting on one web witness of the printing rather than on a collation against the page."
 
 [[families]]
 id = "family.nicene-and-post-nicene-fathers.series-2-volume-8"
@@ -5385,10 +5405,10 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p1"
-canonical_ids = ["artifact.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1-web-text-0823184f", "edition.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895", "passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1", "work.nicene-and-post-nicene-fathers.series-2-volume-8"]
+canonical_ids = ["artifact.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-web-text-dd9b7ac8", "artifact.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-wikisource-export-4aff3a7b", "edition.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895", "passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1", "passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-2", "passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-3", "passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-4", "passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-5", "passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-6", "passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-7", "passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-8", "passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-9", "work.nicene-and-post-nicene-fathers.series-2-volume-8"]
 trace_patterns = ["(?:Nicene and Post-Nicene Fathers[^\\n]{0,80}(?:Series 2[^\\n]{0,40})?Vol(?:ume)?\\.?~?\\s*(?:8|VIII)|newadvent\\.org/fathers/320[^\\s]*)", "nicene-and-post-nicene-fathers\\.series-2-volume-8"]
 reviewed_on = "2026-07-31"
-notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers. The first tracked artifact under this volume was registered 2026-07-31 for the Genesis catena pilot: a transcription of the whole of Basil's first Hexaemeron homily, the volume's only Genesis exposition. Its passage stops at the inspected state and is deliberately not verified, because the wording rests on two independent web transcriptions of the 1895 printing that agree with each other rather than on a collation against the printed page, and three divergences between those witnesses remain open on the artifact. Basil's own work identity is reviewed separately as family.basil-of-caesarea.homiliae-in-hexaemeron; this family owns the container volume and the exact bytes taken from it."
+notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers. Reviewed again 2026-07-31 after the volume's Genesis holding was replaced. It had been one artifact carrying Basil's first Hexaemeron homily alone, assembled by hand from two model-mediated readings; it is now two artifacts carrying all nine homilies, a remote hashed Wikisource export of the 1895 printing and the tracked transcription derived from it by a tracked script with no model anywhere in the path. Collating the two showed the superseded file had lost a whole paragraph of section 5 and run two others together, which is why it was superseded rather than extended. The nine passages stop at the inspected state and are deliberately not verified: the wording rests on one web witness of the printing rather than on a collation against the printed page. Basil's own work identity is reviewed separately as family.basil-of-caesarea.homiliae-in-hexaemeron; this family owns the container volume and the exact bytes taken from it."
 
 [[families]]
 id = "family.nicene-and-post-nicene-fathers.series-2-volume-9"
