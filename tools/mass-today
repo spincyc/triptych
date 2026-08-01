@@ -180,8 +180,6 @@ def run_show(arguments: argparse.Namespace) -> dict:
     except ValueError as error:
         raise ValueError(f"--date must be an ISO date, not {when!r}") from error
 
-    resolved = invoke("calendar-days", ["day", "--date", when])
-
     # The ranking, taken from where it already lives. `calendar-days` refuses to
     # rank — correctly, it is the arithmetic layer — and this tool used to print
     # its candidates under "no precedence is stated". That sentence stopped
@@ -189,6 +187,13 @@ def run_show(arguments: argparse.Namespace) -> dict:
     # offered Easter Sunday and a third-class confessor as equal candidates.
     # `calendar-rubrics day` runs the browser's own model under node, so the
     # terminal and the page give one answer by construction.
+    #
+    # It is asked FIRST, and where it answers, the arithmetic layer is not asked
+    # at all. Its result already carries the season, the week and the liturgical
+    # year, so calling `calendar-days day` as well re-parsed a megabyte of YAML
+    # to recompute what was already in hand — 2.1 of the 7.4 seconds a single
+    # run took. The call remains as the fallback, which is the only case that
+    # now needs it.
     ranked: dict[str, dict] = {}
     ranking_refused = None
     try:
@@ -201,6 +206,12 @@ def run_show(arguments: argparse.Namespace) -> dict:
     except Refused as error:
         ranking_refused = str(error)
 
+    wanted = [name for name in ranked if not arguments.calendar or name == arguments.calendar]
+    if wanted:
+        resolved = {"days": [{"calendar": name} for name in sorted(wanted)]}
+    else:
+        resolved = invoke("calendar-days", ["day", "--date", when])
+
     days = []
     for day in resolved.get("days") or []:
         if arguments.calendar and day.get("calendar") != arguments.calendar:
@@ -208,6 +219,12 @@ def run_show(arguments: argparse.Namespace) -> dict:
         held = ranked.get(str(day.get("calendar")))
         branches = (held or {}).get("options") or []
         branch = branches[0] if branches else None
+        # Where the model answered, its own account of the day is the account:
+        # asking a second tool for the season would be the second derivation
+        # this tool exists not to have.
+        if branch is not None:
+            day = dict(day, season=held.get("season"), week=held.get("week"),
+                       unresolved=(held.get("liturgicalYear") or {}).get("unresolved") or [])
 
         if branch is not None:
             # One entry per formulary the date carries, each with its standing.

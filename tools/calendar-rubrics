@@ -1062,11 +1062,25 @@ def run_day(arguments: argparse.Namespace) -> dict:
     under node — the same file, through the same harness the solved cases use —
     so the terminal and the page agree by construction and not by coincidence.
     """
-    root = Path(arguments.root)
     data = Path(arguments.out)
-    built, problems, _ = build(root, arguments.calendar)
-    if problems:
-        raise SourceError("; ".join(problems[:3]))
+    problems: list[str] = []
+    # Read from the emitted layer, not rebuilt from the YAML sources. `build`
+    # parses both calendars' mass indexes — a megabyte of YAML — to answer one
+    # date, which cost 2.7 of the 7.4 seconds a single `mass-today` took. The
+    # emitted file is byte-for-byte what `build` would produce and is exactly
+    # what the browser consumes, so reading it is the same derivation over the
+    # same input. Whether it is CURRENT is `check`'s question and it fails on a
+    # stale one; a reading verb that re-validated the whole corpus on every
+    # lookup would be answering a question nobody asked.
+    built = []
+    for name in calendars(Path(arguments.root), arguments.calendar):
+        path = data / "structure" / "rubrics" / f"{name}.json"
+        if not path.is_file():
+            problems.append(f"no rubrics file at {path}; run `calendar-rubrics structure` first")
+            continue
+        built.append(json.loads(path.read_text(encoding="utf-8")))
+    if not built:
+        raise SourceError("; ".join(problems) or "no calendar has an emitted rubrics file")
     if not MODEL.is_file():
         raise SourceError(f"{MODEL.relative_to(ROOT)} is absent, so nothing can be derived")
     if not shutil.which("node"):
