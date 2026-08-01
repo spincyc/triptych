@@ -1,0 +1,986 @@
+# The names under which each Genesis commentary was looked for.
+#
+# `guidance/sources.md` makes this file policy: "Resolve a source's aliases
+# before retrieving it... The aliases a retrieval used are part of how it was
+# made, so record them with the artifact. A later reader must be able to see
+# which names were tried, because that is the only way to tell a work that is
+# genuinely unreachable from one that was looked for under the wrong name."
+#
+# The promoted index names 84 works on Genesis 1-50 across 1,298 attributions.
+# It names them as three model runs happened to name them, so the 84 are not 84
+# works: `Bede` and `Bede the Venerable` head the same commentary, Cajetan heads
+# five spellings of one, and Pererius four. Grouping them is the first act of
+# this survey, and it is recorded here rather than performed silently, because a
+# work searched twice under two names and found once reads afterwards as one
+# found and one absent.
+#
+# Each group carries, where they exist: the Latin title, the Greek title, the
+# vernacular title, the incipit where it stands in for a title, the Migne PL or
+# PG volume, the author named by see, by epithet, in Latin and in the
+# vernacular, and the modern editor's or series' short form. `searched` is
+# written by `scripts/_availability.py`, which drives its queries from this file
+# and from nothing else, so a name absent here was not tried.
+#
+# `distinct_works` is derived and checked: it is the number of groups, and the
+# sum of each group's `index_names` must be the 84 the index holds.
+schema: triptych-genesis-work-aliases/v1
+updated: '2026-08-01'
+index_names_total: 84
+distinct_works: 62
+attributions_total: 1298
+source_index: src/sources/commentary/passage-commentary-index.yaml
+
+groups:
+
+# ---------------------------------------------------------------- patristic
+- id: origen-hom-gen
+  canonical: Origen, Homiliae in Genesim
+  death: 254
+  index_names:
+    - {author: Origen, title: Homiliae in Genesim}
+    - {author: Origen of Alexandria, title: Homiliae in Genesim}
+  author_aliases: [Origen, Origenes, Origenes Adamantius, Ὠριγένης, Origène, Origene]
+  title_aliases:
+    - Homiliae in Genesim
+    - In Genesim homiliae XVI
+    - Homilies on Genesis
+    - Homélies sur la Genèse
+    - Εἰς τὴν Γένεσιν ὁμιλίαι
+    - Origenis in Genesim homiliae
+  translator_form: Rufinus of Aquileia (the surviving text is Rufinus's Latin)
+  migne: PG 12
+  editor_short_forms: [GCS 29 Baehrens, SC 7bis Doutreleau, FOTC 71 Heine]
+
+- id: hippolytus-benedictions
+  canonical: Hippolytus of Rome, On the Blessings of Isaac and Jacob
+  death: 235
+  index_names:
+    - {author: Hippolytus of Rome, title: On the Blessings of Isaac and Jacob}
+  author_aliases: [Hippolytus, Hippolytus of Rome, Hippolytus Romanus, Ἱππόλυτος, Hippolyte de Rome]
+  title_aliases:
+    - De benedictionibus Isaaci et Iacobi
+    - On the Blessings of Isaac and Jacob
+    - Benedictiones Isaaci et Iacobi
+    - Sur les benedictions d'Isaac et de Jacob
+    - De benedictione Iacob
+  migne: PG 10 (fragments); the full text survives in Armenian and Georgian
+  editor_short_forms: [PO 27 Brière-Mariès-Mercier]
+
+- id: eusebius-none
+  canonical: null
+  note: not present in the Genesis index; retained slot deleted
+
+- id: ephrem-gen
+  canonical: Ephrem the Syrian, Commentarii in Genesim
+  death: 373
+  index_names:
+    - {author: Ephrem the Syrian, title: Commentarii in Genesim et in Exodum}
+  author_aliases: [Ephrem the Syrian, Ephraem Syrus, Ephraim, Mar Aprem, ܐܦܪܝܡ, Éphrem le Syrien, Ephraem Grecus]
+  title_aliases:
+    - Commentarii in Genesim et in Exodum
+    - Commentarius in Genesim
+    - Commentary on Genesis
+    - In Genesim commentarius
+    - Turgama d-Bresith
+  language_note: Syriac. No Latin or Greek original.
+  migne: none (Assemani's Rome edition 1737-1743 is the Latin/Syriac printing)
+  editor_short_forms: [CSCO 152-153 Tonneau, FOTC 91 Mathews]
+
+- id: basil-hexaemeron
+  canonical: Basil of Caesarea, Homiliae in Hexaemeron
+  death: 379
+  index_names:
+    - {author: Basil the Great, title: Homiliae in Hexaemeron}
+    - {author: Basil of Caesarea, title: Homiliae in Hexaemeron}
+  author_aliases: [Basil of Caesarea, Basil the Great, Basilius Magnus, Basilius Caesariensis, Βασίλειος ὁ Μέγας, Basile de Césarée]
+  title_aliases:
+    - Homiliae in Hexaemeron
+    - Hexaemeron
+    - The Hexaemeron
+    - Ὁμιλίαι εἰς τὴν Ἑξαήμερον
+    - Homiliae novem in Hexaemeron
+  migne: PG 29
+  editor_short_forms: [NPNF 2-8 Jackson, SC 26bis Giet, GCS NF 2 Amand de Mendieta-Rudberg]
+  held: work.basil-of-caesarea.homiliae-in-hexaemeron
+
+- id: gregory-nyssa-hominis
+  canonical: Gregory of Nyssa, De hominis opificio
+  death: 395
+  index_names:
+    - {author: Gregory of Nyssa, title: De hominis opificio}
+  author_aliases: [Gregory of Nyssa, Gregorius Nyssenus, Γρηγόριος Νύσσης, Grégoire de Nysse]
+  title_aliases:
+    - De hominis opificio
+    - On the Making of Man
+    - Περὶ κατασκευῆς ἀνθρώπου
+    - De opificio hominis
+    - The Making of Man
+  migne: PG 44
+  editor_short_forms: [NPNF 2-5 Wilson, SC 6 Laplace-Daniélou]
+  held: work.gregory-of-nyssa.de-hominis-opificio
+
+- id: gregory-nyssa-hexaemeron
+  canonical: Gregory of Nyssa, Apologia in Hexaemeron
+  death: 395
+  index_names:
+    - {author: Gregory of Nyssa, title: Apologia in Hexaemeron}
+  author_aliases: [Gregory of Nyssa, Gregorius Nyssenus, Γρηγόριος Νύσσης, Grégoire de Nysse]
+  title_aliases:
+    - Apologia in Hexaemeron
+    - In Hexaemeron
+    - Explicatio apologetica in Hexaemeron
+    - Ἀπολογητικὸς περὶ τῆς Ἑξαημέρου
+    - On the Six Days' Work
+    - Apologetic Explanation of the Hexaemeron
+  migne: PG 44
+  editor_short_forms: [GNO IV/1 Drobner, FOTC Orton 2021]
+
+- id: didymus-gen
+  canonical: Didymus the Blind, Commentary on Genesis
+  death: 398
+  index_names:
+    - {author: Didymus the Blind, title: Commentary on Genesis}
+  author_aliases: [Didymus the Blind, Didymus Caecus, Didymus Alexandrinus, Δίδυμος ὁ Τυφλός, Didyme l'Aveugle]
+  title_aliases:
+    - In Genesim
+    - Commentary on Genesis
+    - Sur la Genèse
+    - Εἰς τὴν Γένεσιν
+    - Commentarii in Genesim
+  discovery_note: Recovered 1941 at Tura on papyrus; unknown to Migne.
+  migne: none
+  editor_short_forms: [SC 233/244 Nautin-Doutreleau, FOTC 132 Hill]
+
+- id: ambrose-hexameron
+  canonical: Ambrose of Milan, Hexameron
+  death: 397
+  index_names:
+    - {author: Ambrose of Milan, title: Hexameron}
+  author_aliases: [Ambrose of Milan, Ambrosius Mediolanensis, Ambrose, Sant'Ambrogio, Ambroise de Milan]
+  title_aliases: [Hexameron, Hexaemeron, Exameron, Libri sex in Hexaemeron, Six Days of Creation]
+  migne: PL 14
+  editor_short_forms: [CSEL 32/1 Schenkl, FOTC 42 Savage]
+
+- id: ambrose-paradiso
+  canonical: Ambrose of Milan, De paradiso
+  death: 397
+  index_names:
+    - {author: Ambrose of Milan, title: De paradiso}
+  author_aliases: [Ambrose of Milan, Ambrosius Mediolanensis, Ambroise de Milan]
+  title_aliases: [De paradiso, Paradise, Le paradis, De paradiso liber unus]
+  migne: PL 14
+  editor_short_forms: [CSEL 32/1 Schenkl, FOTC 42 Savage]
+
+- id: ambrose-cain
+  canonical: Ambrose of Milan, De Cain et Abel
+  death: 397
+  index_names:
+    - {author: Ambrose of Milan, title: De Cain et Abel}
+  author_aliases: [Ambrose of Milan, Ambrosius Mediolanensis, Ambroise de Milan]
+  title_aliases: [De Cain et Abel, Cain and Abel, De Cain et Abel libri duo]
+  migne: PL 14
+  editor_short_forms: [CSEL 32/1 Schenkl, FOTC 42 Savage]
+
+- id: ambrose-noe
+  canonical: Ambrose of Milan, De Noe et arca
+  death: 397
+  index_names:
+    - {author: Ambrose of Milan, title: De Noe et arca}
+  author_aliases: [Ambrose of Milan, Ambrosius Mediolanensis, Ambroise de Milan]
+  title_aliases: [De Noe et arca, De Noe, Noah and the Ark, De Noe et arca liber unus]
+  migne: PL 14
+  editor_short_forms: [CSEL 32/1 Schenkl]
+
+- id: ambrose-abraham
+  canonical: Ambrose of Milan, De Abraham
+  death: 397
+  index_names:
+    - {author: Ambrose of Milan, title: De Abraham}
+  author_aliases: [Ambrose of Milan, Ambrosius Mediolanensis, Ambroise de Milan]
+  title_aliases: [De Abraham, De Abraham libri duo, Abraham]
+  migne: PL 14
+  editor_short_forms: [CSEL 32/1 Schenkl]
+
+- id: ambrose-isaac
+  canonical: Ambrose of Milan, De Isaac vel anima
+  death: 397
+  index_names:
+    - {author: Ambrose of Milan, title: De Isaac vel anima}
+  author_aliases: [Ambrose of Milan, Ambrosius Mediolanensis, Ambroise de Milan]
+  title_aliases: [De Isaac vel anima, De Isaac et anima, Isaac or the Soul, De Isaac]
+  migne: PL 14
+  editor_short_forms: [CSEL 32/1 Schenkl, FOTC 65 McHugh]
+
+- id: ambrose-iacob
+  canonical: Ambrose of Milan, De Iacob et vita beata
+  death: 397
+  index_names:
+    - {author: Ambrose of Milan, title: De Iacob et vita beata}
+  author_aliases: [Ambrose of Milan, Ambrosius Mediolanensis, Ambroise de Milan]
+  title_aliases: [De Iacob et vita beata, De Jacob et vita beata, Jacob and the Happy Life]
+  migne: PL 14
+  editor_short_forms: [CSEL 32/2 Schenkl, FOTC 65 McHugh]
+
+- id: ambrose-ioseph
+  canonical: Ambrose of Milan, De Ioseph
+  death: 397
+  index_names:
+    - {author: Ambrose of Milan, title: De Ioseph}
+  author_aliases: [Ambrose of Milan, Ambrosius Mediolanensis, Ambroise de Milan]
+  title_aliases: [De Ioseph, De Joseph, De Ioseph patriarcha, Joseph]
+  migne: PL 14
+  editor_short_forms: [CSEL 32/2 Schenkl, FOTC 65 McHugh]
+
+- id: ambrose-patriarchis
+  canonical: Ambrose of Milan, De patriarchis
+  death: 397
+  index_names:
+    - {author: Ambrose of Milan, title: De patriarchis}
+  author_aliases: [Ambrose of Milan, Ambrosius Mediolanensis, Ambroise de Milan]
+  title_aliases: [De patriarchis, De benedictionibus patriarcharum, The Patriarchs]
+  migne: PL 14
+  editor_short_forms: [CSEL 32/2 Schenkl, FOTC 65 McHugh]
+
+- id: chrysostom-gen
+  canonical: John Chrysostom, Homiliae in Genesim
+  death: 407
+  index_names:
+    - {author: John Chrysostom, title: Homilies on Genesis}
+  author_aliases: [John Chrysostom, Ioannes Chrysostomus, Joannes Chrysostomus, Ἰωάννης ὁ Χρυσόστομος, Jean Chrysostome, Chrysostom]
+  title_aliases:
+    - Homiliae in Genesim
+    - Homilies on Genesis
+    - In Genesim homiliae LXVII
+    - Ὁμιλίαι εἰς τὴν Γένεσιν
+    - Sermones in Genesim
+    - Homélies sur la Genèse
+  migne: PG 53-54
+  editor_short_forms: [FOTC 74/82/87 Hill, SC 433 Brottier]
+
+- id: severian-cosmogonia
+  canonical: Severian of Gabala, In cosmogoniam homiliae sex
+  death: 408
+  index_names:
+    - {author: Severian of Gabala, title: In cosmogoniam homiliae sex}
+  author_aliases: [Severian of Gabala, Severianus Gabalensis, Σευηριανὸς Γαβάλων, Sévérien de Gabala]
+  title_aliases:
+    - In cosmogoniam homiliae sex
+    - Homiliae sex in mundi creationem
+    - Εἰς τὴν κοσμογονίαν
+    - Six Homilies on Creation
+    - In mundi creationem
+  attribution_note: Printed among Chrysostom's spuria in Migne.
+  migne: PG 56
+  editor_short_forms: [Bareille, Zellinger]
+
+- id: rufinus-benedictionibus
+  canonical: Rufinus of Aquileia, De benedictionibus patriarcharum
+  death: 411
+  index_names:
+    - {author: Rufinus of Aquileia, title: De benedictionibus patriarcharum}
+  author_aliases: [Rufinus of Aquileia, Tyrannius Rufinus, Rufinus Aquileiensis, Rufin d'Aquilée]
+  title_aliases:
+    - De benedictionibus patriarcharum
+    - De benedictionibus duodecim patriarcharum
+    - On the Blessings of the Patriarchs
+    - Les bénédictions des patriarches
+  migne: PL 21
+  editor_short_forms: [CCSL 20 Simonetti, SC 140 Blanc-Simonetti]
+
+- id: jerome-quaestiones
+  canonical: Jerome, Liber quaestionum hebraicarum in Genesim
+  death: 420
+  index_names:
+    - {author: Jerome, title: Hebrew Questions on Genesis}
+  author_aliases: [Jerome, Hieronymus, Eusebius Sophronius Hieronymus, Saint Jerome, Jérôme, Girolamo]
+  title_aliases:
+    - Liber quaestionum hebraicarum in Genesim
+    - Quaestiones hebraicae in Genesim
+    - Hebrew Questions on Genesis
+    - Quaestiones in Genesim
+    - Hebraicae quaestiones in libro Geneseos
+  migne: PL 23
+  editor_short_forms: [CCSL 72 de Lagarde, Hayward OUP 1995]
+
+- id: augustine-gen-litteram
+  canonical: Augustine of Hippo, De Genesi ad litteram
+  death: 430
+  index_names:
+    - {author: Augustine of Hippo, title: De Genesi ad litteram}
+  author_aliases: [Augustine of Hippo, Augustinus Hipponensis, Aurelius Augustinus, Saint Augustine, Augustin d'Hippone]
+  title_aliases:
+    - De Genesi ad litteram
+    - De Genesi ad litteram libri duodecim
+    - The Literal Meaning of Genesis
+    - On Genesis, a Refutation of the Manichees / literal commentary
+    - La Genèse au sens littéral
+  migne: PL 34
+  editor_short_forms: [CSEL 28/1 Zycha, ACW 41-42 Taylor, WSA I/13 Hill]
+
+- id: augustine-gen-imperfectus
+  canonical: Augustine of Hippo, De Genesi ad litteram imperfectus liber
+  death: 430
+  index_names:
+    - {author: Augustine of Hippo, title: De Genesi ad litteram imperfectus liber}
+  author_aliases: [Augustine of Hippo, Augustinus Hipponensis, Aurelius Augustinus]
+  title_aliases:
+    - De Genesi ad litteram imperfectus liber
+    - Unfinished Literal Commentary on Genesis
+    - Liber imperfectus de Genesi ad litteram
+  migne: PL 34
+  editor_short_forms: [CSEL 28/1 Zycha, WSA I/13 Hill]
+
+- id: augustine-gen-manichaeos
+  canonical: Augustine of Hippo, De Genesi contra Manichaeos
+  death: 430
+  index_names:
+    - {author: Augustine of Hippo, title: De Genesi contra Manichaeos}
+  author_aliases: [Augustine of Hippo, Augustinus Hipponensis, Aurelius Augustinus]
+  title_aliases:
+    - De Genesi contra Manichaeos
+    - On Genesis against the Manichees
+    - De Genesi adversus Manichaeos
+    - La Genèse contre les manichéens
+  migne: PL 34
+  editor_short_forms: [CSEL 91 Weber, WSA I/13 Hill]
+
+- id: augustine-quaestiones-hept
+  canonical: Augustine of Hippo, Quaestiones in Heptateuchum
+  death: 430
+  index_names:
+    - {author: Augustine of Hippo, title: Quaestiones in Heptateuchum}
+  author_aliases: [Augustine of Hippo, Augustinus Hipponensis, Aurelius Augustinus]
+  title_aliases:
+    - Quaestiones in Heptateuchum
+    - Quaestionum in Heptateuchum libri septem
+    - Questions on the Heptateuch
+    - Quaestiones in Genesim (book I)
+  migne: PL 34
+  editor_short_forms: [CCSL 33 Fraipont, CSEL 28/2 Zycha]
+
+- id: augustine-locutionum
+  canonical: Augustine of Hippo, Locutionum in Heptateuchum libri septem
+  death: 430
+  index_names:
+    - {author: Augustine of Hippo, title: Locutionum in Heptateuchum libri septem}
+  author_aliases: [Augustine of Hippo, Augustinus Hipponensis, Aurelius Augustinus]
+  title_aliases:
+    - Locutionum in Heptateuchum libri septem
+    - Locutiones in Heptateuchum
+    - Sayings in the Heptateuch
+  migne: PL 34
+  editor_short_forms: [CCSL 33 Fraipont, CSEL 28/1 Zycha]
+
+- id: augustine-civitate
+  canonical: Augustine of Hippo, De civitate Dei
+  death: 430
+  index_names:
+    - {author: Augustine of Hippo, title: De civitate Dei}
+  author_aliases: [Augustine of Hippo, Augustinus Hipponensis, Aurelius Augustinus]
+  title_aliases:
+    - De civitate Dei
+    - The City of God
+    - De civitate Dei contra paganos
+    - La cité de Dieu
+  genesis_extent: books XI-XV expound Genesis 1-4 inside an argument about two cities
+  migne: PL 41
+  editor_short_forms: [CCSL 47-48 Dombart-Kalb, NPNF 1-2 Dods]
+  held: partially, via De civitate Dei passages already landed by another lane
+
+- id: cyril-glaphyra
+  canonical: Cyril of Alexandria, Glaphyra in Pentateuchum
+  death: 444
+  index_names:
+    - {author: Cyril of Alexandria, title: Glaphyra in Pentateuchum}
+  author_aliases: [Cyril of Alexandria, Cyrillus Alexandrinus, Κύριλλος Ἀλεξανδρείας, Cyrille d'Alexandrie]
+  title_aliases:
+    - Glaphyra in Pentateuchum
+    - Glaphyrorum in Genesim libri septem
+    - Γλαφυρὰ εἰς τὴν Γένεσιν
+    - Elegant Comments on the Pentateuch
+    - Glaphyra on Genesis
+  migne: PG 69
+  editor_short_forms: [Aubert, Pusey]
+
+- id: theodoret-quaestiones
+  canonical: Theodoret of Cyrus, Quaestiones in Octateuchum
+  death: 466
+  index_names:
+    - {author: Theodoret of Cyrus, title: Quaestiones in Octateuchum}
+  author_aliases: [Theodoret of Cyrus, Theodoretus Cyrensis, Theodoret of Cyrrhus, Θεοδώρητος Κύρου, Théodoret de Cyr]
+  title_aliases:
+    - Quaestiones in Octateuchum
+    - Quaestiones in Genesim
+    - Εἰς τὰ ἄπορα τῆς θείας Γραφῆς
+    - Questions on the Octateuch
+    - Quaestiones et responsiones in Octateuchum
+  migne: PG 80
+  editor_short_forms: [Fernández Marcos-Sáenz-Badillos, Hill LEC 2007]
+
+- id: procopius-octateuch
+  canonical: Procopius of Gaza, Commentarii in Octateuchum
+  death: 528
+  index_names:
+    - {author: Procopius of Gaza, title: Commentarii in Octateuchum}
+  author_aliases: [Procopius of Gaza, Procopius Gazaeus, Προκόπιος Γαζαῖος, Procope de Gaza]
+  title_aliases:
+    - Commentarii in Octateuchum
+    - In Octateuchum commentarii
+    - Catena in Octateuchum
+    - Εἰς τὴν Ὀκτάτευχον
+    - Epitome in Octateuchum
+  migne: PG 87/1
+  editor_short_forms: [CCSG 84 Metzler]
+
+- id: caesarius-sermons
+  canonical: Caesarius of Arles, Sermones in Genesim
+  death: 542
+  index_names:
+    - {author: Caesarius of Arles, title: Sermons on Genesis}
+  author_aliases: [Caesarius of Arles, Caesarius Arelatensis, Césaire d'Arles, Cesarius]
+  title_aliases:
+    - Sermones
+    - Sermones in Genesim
+    - Sermons on Genesis
+    - Sermones de Genesi
+    - Homiliae
+  attribution_note: Many circulated under Augustine's name in Migne.
+  migne: PL 39 (among Augustine's spurious sermons), PL 67
+  editor_short_forms: [CCSL 103-104 Morin, FOTC 31/47/66 Mueller]
+
+- id: isidore-quaestiones
+  canonical: Isidore of Seville, Quaestiones in Vetus Testamentum
+  death: 636
+  index_names:
+    - {author: Isidore of Seville, title: Quaestiones in Vetus Testamentum}
+  author_aliases: [Isidore of Seville, Isidorus Hispalensis, Isidoro de Sevilla, Isidore]
+  title_aliases:
+    - Quaestiones in Vetus Testamentum
+    - Mysticorum expositiones sacramentorum seu quaestiones in Vetus Testamentum
+    - In Genesim
+    - Questions on the Old Testament
+  migne: PL 83
+  editor_short_forms: [Arévalo]
+
+- id: anastasius-hexaemeron
+  canonical: Anastasius of Sinai, Hexaemeron
+  death: 700
+  index_names:
+    - {author: Anastasius of Sinai, title: Hexaemeron}
+  author_aliases: [Anastasius of Sinai, Anastasius Sinaita, Ἀναστάσιος Σιναΐτης, Anastase le Sinaïte]
+  title_aliases:
+    - Hexaemeron
+    - In Hexaemeron anagogicarum contemplationum libri duodecim
+    - Ἀναγωγικαὶ θεωρίαι εἰς τὴν Ἑξαήμερον
+    - Anagogical Contemplations on the Hexaemeron
+  migne: PG 89
+  editor_short_forms: [OCA 278 Kuehn-Baggarly]
+
+- id: bede-genesis
+  canonical: Bede, In principium Genesis
+  death: 735
+  index_names:
+    - {author: Bede the Venerable, title: In principium Genesis}
+    - {author: Bede, title: In principium Genesis}
+  author_aliases: [Bede, Bede the Venerable, Beda Venerabilis, Baeda, Bède le Vénérable]
+  title_aliases:
+    - In principium Genesis
+    - Hexaemeron
+    - In Genesim
+    - Libri quatuor in principium Genesis usque ad nativitatem Isaac
+    - On Genesis
+  migne: PL 91
+  editor_short_forms: [CCSL 118A Jones, TTH 48 Kendall]
+
+- id: alcuin-interrogationes
+  canonical: Alcuin of York, Interrogationes et responsiones in Genesim
+  death: 804
+  index_names:
+    - {author: Alcuin of York, title: Interrogationes et responsiones in Genesim}
+  author_aliases: [Alcuin of York, Alcuinus, Albinus Flaccus, Alcuin, Alchuine]
+  title_aliases:
+    - Interrogationes et responsiones in Genesim
+    - Interrogationes et responsiones in Genesin
+    - Quaestiones in Genesim
+    - Questions and Answers on Genesis
+  migne: PL 100
+  editor_short_forms: [Froben]
+
+- id: rabanus-genesis
+  canonical: Rabanus Maurus, Commentaria in Genesim
+  death: 856
+  index_names:
+    - {author: Rabanus Maurus, title: Commentaria in Genesim}
+    - {author: Hrabanus Maurus, title: Commentary on Genesis in Four Books}
+  author_aliases: [Rabanus Maurus, Hrabanus Maurus, Rhabanus Maurus, Rabanus Maurus Magnentius, Raban Maur]
+  title_aliases:
+    - Commentaria in Genesim
+    - Commentariorum in Genesim libri quatuor
+    - Commentary on Genesis in Four Books
+    - In Genesim
+    - Enarrationes in Genesim
+  migne: PL 107
+  editor_short_forms: [Colvener]
+
+- id: walafrid-glossa
+  canonical: Glossa ordinaria (indexed under Walafrid Strabo)
+  death: 849
+  index_names:
+    - {author: Walafrid Strabo, title: Glossa ordinaria}
+    - {author: Anselm of Laon, title: Glossa ordinaria in Genesim}
+  author_aliases: [Walafrid Strabo, Walahfrid Strabo, Strabus, Anselm of Laon, Anselmus Laudunensis, Gilbert the Universal]
+  title_aliases:
+    - Glossa ordinaria
+    - Glossa ordinaria in Genesim
+    - Biblia latina cum glossa ordinaria
+    - Glossa interlinearis
+    - Bibliorum sacrorum cum glossa ordinaria
+  attribution_note: >-
+    The attribution to Walafrid is known to be wrong and the work is a layered
+    twelfth-century compilation with no single author or date. Rule 7 of
+    guidance/catena.md (order by the date of the text) has no answer for it
+    until that decision is taken, so it is surveyed and not acquired.
+  migne: PL 113-114
+  editor_short_forms: [Rusch Strasbourg 1480/81, Froehlich-Gibson facsimile]
+
+- id: angelomus-genesis
+  canonical: Angelomus of Luxeuil, Commentarius in Genesim
+  death: 895
+  index_names:
+    - {author: Angelomus of Luxeuil, title: Commentarius in Genesim}
+  author_aliases: [Angelomus of Luxeuil, Angelomus Luxoviensis, Angelome de Luxeuil]
+  title_aliases:
+    - Commentarius in Genesim
+    - Commentarii in Genesim
+    - In Genesim
+  migne: PL 115
+  editor_short_forms: [Mabillon]
+
+- id: remigius-genesis
+  canonical: Remigius of Auxerre, Commentarius in Genesim
+  death: 908
+  index_names:
+    - {author: Remigius of Auxerre, title: Commentarius in Genesim}
+  author_aliases: [Remigius of Auxerre, Remigius Autissiodorensis, Rémi d'Auxerre]
+  title_aliases:
+    - Commentarius in Genesim
+    - Commentarium in Genesim
+    - Expositio super Genesim
+    - In Genesim
+  migne: PL 131
+  editor_short_forms: [Pitra]
+
+# ---------------------------------------------------------------- medieval
+- id: bruno-segni-pentateuch
+  canonical: Bruno of Segni, Expositio in Pentateuchum
+  death: 1123
+  index_names:
+    - {author: Bruno of Segni, title: Expositio in Pentateuchum}
+  author_aliases: [Bruno of Segni, Bruno Signiensis, Bruno Astensis, Brunon de Segni]
+  title_aliases:
+    - Expositio in Pentateuchum
+    - Expositio in Genesim
+    - Commentaria in Pentateuchum
+    - In Genesim expositio
+  migne: PL 164
+  editor_short_forms: [Bruno Bruni Venice 1651]
+
+- id: rupert-trinitate
+  canonical: Rupert of Deutz, De sancta Trinitate et operibus eius
+  death: 1129
+  index_names:
+    - {author: Rupert of Deutz, title: De sancta Trinitate et operibus eius}
+  author_aliases: [Rupert of Deutz, Rupertus Tuitiensis, Rupert von Deutz, Rupert de Deutz]
+  title_aliases:
+    - De sancta Trinitate et operibus eius
+    - De operibus sanctae Trinitatis
+    - In Genesim libri IX
+    - Commentaria in Genesim
+    - On the Holy Trinity and Its Works
+  genesis_extent: books I-IX of 42
+  migne: PL 167
+  editor_short_forms: [CCCM 21-24 Haacke]
+
+- id: hugh-victor-adnotationes
+  canonical: Hugh of Saint Victor, Adnotationes elucidatoriae in Pentateuchon
+  death: 1141
+  index_names:
+    - {author: Hugh of Saint Victor, title: Elucidatory Notes on the Pentateuch}
+    - {author: Hugh of St Victor, title: Adnotationes elucidatoriae in Pentateuchon}
+  author_aliases: [Hugh of Saint Victor, Hugh of St Victor, Hugo de Sancto Victore, Hugues de Saint-Victor]
+  title_aliases:
+    - Adnotationes elucidatoriae in Pentateuchon
+    - Adnotationes elucidatoriae in Heptateuchum
+    - Elucidatory Notes on the Pentateuch
+    - Notulae in Genesim
+  migne: PL 175
+  editor_short_forms: [Rouen 1648]
+
+- id: peter-comestor-historia
+  canonical: Peter Comestor, Historia Scholastica
+  death: 1178
+  index_names:
+    - {author: Peter Comestor, title: Historia Scholastica}
+  author_aliases: [Peter Comestor, Petrus Comestor, Peter Manducator, Pierre le Mangeur, Petrus Manducator]
+  title_aliases:
+    - Historia Scholastica
+    - Historia scholastica in Genesim
+    - Scholastic History
+    - Historia libri Genesis
+  migne: PL 198
+  editor_short_forms: [CCCM 191 Sylwan (Genesis)]
+
+- id: andrew-victor-heptateuch
+  canonical: Andrew of Saint Victor, Expositio super Heptateuchum
+  death: 1175
+  index_names:
+    - {author: Andrew of Saint Victor, title: 'Expositio super Heptateuchum: In Genesim'}
+    - {author: Andrew of Saint Victor, title: 'Exposition on the Heptateuch: Genesis'}
+  author_aliases: [Andrew of Saint Victor, Andreas de Sancto Victore, André de Saint-Victor]
+  title_aliases:
+    - Expositio super Heptateuchum
+    - Expositio in Heptateuchum
+    - Expositio historica in librum Genesis
+    - Exposition on the Heptateuch
+  migne: none
+  editor_short_forms: [CCCM 53 Lohr-Berndt]
+
+- id: hugh-cher-postillae
+  canonical: Hugh of Saint-Cher, Postillae in universa Biblia
+  death: 1263
+  index_names:
+    - {author: Hugh of Saint-Cher, title: Postillae in universa Biblia}
+    - {author: Hugh of St. Cher, title: Postillae in universa Biblia}
+  author_aliases: [Hugh of Saint-Cher, Hugh of St Cher, Hugo de Sancto Caro, Hugues de Saint-Cher, Hugo Cardinalis]
+  title_aliases:
+    - Postillae in universa Biblia
+    - Postilla super totam Bibliam
+    - Opera omnia in universum Vetus et Novum Testamentum
+    - Postillae in Genesim
+    - Hugonis Cardinalis Opera omnia
+  migne: none
+  editor_short_forms: [Venice 1600, Lyons 1669]
+
+- id: bonaventure-hexaemeron
+  canonical: Bonaventure, Collationes in Hexaemeron
+  death: 1274
+  index_names:
+    - {author: Bonaventure, title: Collationes in Hexaemeron}
+  author_aliases: [Bonaventure, Bonaventura, Giovanni di Fidanza, Saint Bonaventure]
+  title_aliases:
+    - Collationes in Hexaemeron
+    - Collationes in Hexaëmeron
+    - Illuminationes ecclesiae in Hexaemeron
+    - Conferences on the Hexaemeron
+  migne: none
+  editor_short_forms: [Quaracchi Opera omnia V, Delorme]
+
+- id: grosseteste-hexaemeron
+  canonical: Robert Grosseteste, Hexaemeron
+  death: 1253
+  index_names:
+    - {author: Robert Grosseteste, title: Hexaemeron}
+  author_aliases: [Robert Grosseteste, Robertus Grosseteste, Robert Greathead, Lincolniensis]
+  title_aliases: [Hexaemeron, Hexaëmeron, On the Six Days of Creation]
+  migne: none
+  editor_short_forms: [Auctores Britannici 6 Dales-Gieben]
+
+- id: lyra-postilla
+  canonical: Nicholas of Lyra, Postilla litteralis super totam Bibliam
+  death: 1349
+  index_names:
+    - {author: Nicholas of Lyra, title: Postilla litteralis super totam Bibliam}
+  author_aliases: [Nicholas of Lyra, Nicolaus de Lyra, Nicolas de Lyre, Nicholas Lyranus, Nicolaus Lyranus]
+  title_aliases:
+    - Postilla litteralis super totam Bibliam
+    - Postillae perpetuae in universam S. Scripturam
+    - Biblia sacra cum glossa ordinaria et postilla Nicolai Lyrani
+    - Postilla super totam Bibliam
+    - Literal Postill on the Whole Bible
+  migne: none
+  editor_short_forms: [Rusch 1480/81, Strasbourg 1492, Douai 1617, Antwerp 1634]
+
+- id: tostado-genesis
+  canonical: Alonso Tostado, Commentaria in Genesim
+  death: 1455
+  index_names:
+    - {author: Alonso Tostado, title: 'Tostatus, Commentaria in Pentateuchum'}
+    - {author: Alfonso Tostado, title: Commentary on Genesis}
+  author_aliases: [Alonso Tostado, Alfonso Tostado, Alphonsus Tostatus, Tostatus Abulensis, El Tostado, Alonso de Madrigal]
+  title_aliases:
+    - Commentaria in Genesim
+    - Commentaria in Pentateuchum
+    - Opera omnia
+    - Super Genesim
+    - Commentaria in primam partem Genesis
+  migne: none
+  editor_short_forms: [Venice 1728 Opera omnia]
+
+- id: denis-carthusian
+  canonical: Denis the Carthusian, Enarrationes in Genesim
+  death: 1471
+  index_names:
+    - {author: Denis the Carthusian, title: Enarrationes in universam Bibliam}
+    - {author: Denis the Carthusian, title: Enarrationes in omnes libros sacrae Scripturae}
+  author_aliases: [Denis the Carthusian, Dionysius Carthusianus, Denys van Leeuwen, Dionysius Rijkel, Denys the Carthusian, Doctor Ecstaticus]
+  title_aliases:
+    - Enarrationes in universam Bibliam
+    - Enarrationes in omnes libros sacrae Scripturae
+    - Enarratio in Genesim
+    - Opera omnia
+    - In Genesim enarratio
+  migne: none
+  editor_short_forms: [Montreuil-Tournai Opera omnia 1896-1935, Cologne 1534]
+
+# ---------------------------------------------------------------- early modern
+- id: cajetan-pentateuch
+  canonical: Thomas Cajetan, Commentarii in Pentateuchum
+  death: 1534
+  index_names:
+    - {author: Thomas Cajetan, title: Commentary on the Pentateuch}
+    - {author: Thomas de Vio Cajetan, title: Commentarii illustres in quinque Mosaicos libros}
+    - {author: Thomas de Vio (Cajetan), title: 'Commentarii in Pentateuchum: In Genesim'}
+    - {author: Thomas Cajetan (Thomas de Vio), title: 'Commentarii in Pentateuchum: in Genesim'}
+    - {author: Thomas de Vio (Cajetan), title: Commentarii in Pentateuchum (Genesis)}
+  author_aliases: [Thomas Cajetan, Thomas de Vio, Tommaso de Vio, Thomas de Vio Caietanus, Cajetan, Caietanus, Gaetano]
+  title_aliases:
+    - Commentarii in Pentateuchum
+    - Commentarii illustres planeque insignes in quinque Mosaicos libros
+    - In Pentateuchum commentarii
+    - Commentary on the Pentateuch
+    - Opera omnia quotquot in Sacrae Scripturae expositionem reperiuntur
+  migne: none
+  editor_short_forms: [Paris 1539, Lyons 1639 Opera omnia]
+
+- id: luther-genesis
+  canonical: Martin Luther, Lectures on Genesis
+  death: 1546
+  index_names:
+    - {author: Martin Luther, title: Lectures on Genesis}
+  author_aliases: [Martin Luther, Martinus Lutherus, Luther]
+  title_aliases:
+    - Lectures on Genesis
+    - Enarrationes in Genesin
+    - In primum librum Mose enarrationes
+    - Vorlesungen über 1. Mose
+    - Genesisvorlesung
+    - Commentary on Genesis
+  migne: none
+  editor_short_forms: [WA 42-44, LW 1-8 Pelikan]
+
+- id: calvin-genesis
+  canonical: John Calvin, Commentarius in Genesin
+  death: 1564
+  index_names:
+    - {author: John Calvin, title: Commentary on Genesis}
+  author_aliases: [John Calvin, Jean Calvin, Ioannes Calvinus, Calvin]
+  title_aliases:
+    - Commentarius in Genesin
+    - Commentary on Genesis
+    - In primum Mosis librum, qui Genesis vulgo dicitur, commentarius
+    - Commentaires sur le premier livre de Moyse dit Genese
+    - Commentaries on the First Book of Moses called Genesis
+  migne: none
+  editor_short_forms: [CO 23, Calvin Translation Society, John King 1847]
+
+- id: pererius-genesis
+  canonical: Benedict Pererius, Commentariorum et disputationum in Genesim tomi quatuor
+  death: 1610
+  index_names:
+    - {author: Benedict Pererius, title: Commentaries and Disputations on Genesis}
+    - {author: Benedict Pereira, title: Commentariorum et disputationum in Genesim tomi quatuor}
+    - {author: Benedictus Pererius, title: Commentariorum et disputationum in Genesim tomi quatuor}
+    - {author: Benito Pereira, title: Commentariorum et disputationum in Genesim tomi quatuor}
+  author_aliases: [Benedict Pererius, Benedictus Pererius, Benito Pereira, Bento Pereira, Benet Perera, Pererius]
+  title_aliases:
+    - Commentariorum et disputationum in Genesim tomi quatuor
+    - Commentaries and Disputations on Genesis
+    - Commentariorum in Genesim
+    - Prior tomus commentariorum et disputationum in Genesim
+  migne: none
+  editor_short_forms: [Rome 1589-1598, Lyons 1607, Cologne 1601]
+
+- id: lapide-pentateuch
+  canonical: Cornelius a Lapide, Commentaria in Pentateuchum (in Genesim)
+  death: 1637
+  index_names:
+    - {author: Cornelius a Lapide, title: Commentaria in Scripturam Sacram}
+  author_aliases: [Cornelius a Lapide, Cornelis Cornelissen van den Steen, Cornelius Cornelii a Lapide, Corneille de la Pierre]
+  title_aliases:
+    - Commentaria in Scripturam Sacram
+    - Commentaria in Pentateuchum Mosis
+    - Commentarius in Genesim
+    - The Great Commentary
+    - Commentarii in Sacram Scripturam
+  migne: none
+  editor_short_forms: [Antwerp 1616/1700, Vivès Paris 1866, Mossman (Gospels only)]
+  held: work.cornelius-a-lapide.commentaria-in-pentateuchum
+
+- id: tirinus-scriptura
+  canonical: Jacobus Tirinus, Commentarius in Sacram Scripturam
+  death: 1636
+  index_names:
+    - {author: Jacobus Tirinus, title: Commentarius in Sacram Scripturam}
+  author_aliases: [Jacobus Tirinus, Jacques Tirin, Jakob Tirinus, Tirinus]
+  title_aliases:
+    - Commentarius in Sacram Scripturam
+    - Commentarius in Vetus et Novum Testamentum
+    - In universam Sacram Scripturam commentarius
+  migne: none
+  editor_short_forms: [Antwerp 1632, Lyons 1690]
+
+- id: bonfrerius-pentateuch
+  canonical: Jacobus Bonfrerius, Pentateuchus Moysis commentario illustratus
+  death: 1642
+  index_names:
+    - {author: Jacobus Bonfrerius, title: Pentateuchus Moysis commentario illustratus}
+  author_aliases: [Jacobus Bonfrerius, Jacques Bonfrère, Jacobus Bonfrere, Bonfrerius]
+  title_aliases:
+    - Pentateuchus Moysis commentario illustratus
+    - Pentateuchus Moysis
+    - Commentarius in Pentateuchum
+  migne: none
+  editor_short_forms: [Antwerp 1625]
+
+- id: menochio-brevis
+  canonical: Giovanni Stefano Menochio, Brevis explicatio sensus litteralis totius Sacrae Scripturae
+  death: 1655
+  index_names:
+    - {author: Giovanni Stefano Menochio, title: Brevis explicatio sensus litteralis totius Sacrae Scripturae}
+  author_aliases: [Giovanni Stefano Menochio, Joannes Stephanus Menochius, Menochius, Jean-Étienne Menochio]
+  title_aliases:
+    - Brevis explicatio sensus litteralis totius Sacrae Scripturae
+    - Commentarii totius Sacrae Scripturae
+    - Brevis expositio sensus litteralis
+  migne: none
+  editor_short_forms: [Cologne 1630, Venice 1722, Paris 1719]
+
+- id: poole-annotations
+  canonical: Matthew Poole, Annotations upon the Holy Bible
+  death: 1679
+  index_names:
+    - {author: Matthew Poole, title: Annotations upon the Holy Bible}
+  author_aliases: [Matthew Poole, Matthew Pool, Matthaeus Polus, Poole]
+  title_aliases:
+    - Annotations upon the Holy Bible
+    - Annotations upon the Whole Bible
+    - Synopsis criticorum aliorumque Sacrae Scripturae interpretum
+    - A Commentary on the Holy Bible
+  migne: none
+  editor_short_forms: [London 1683-1685, Robert Carter 1853]
+
+- id: matthew-henry-exposition
+  canonical: Matthew Henry, An Exposition of the Old and New Testament
+  death: 1714
+  index_names:
+    - {author: Matthew Henry, title: An Exposition of the Old and New Testament}
+  author_aliases: [Matthew Henry, Henry]
+  title_aliases:
+    - An Exposition of the Old and New Testament
+    - An Exposition of All the Books of the Old and New Testament
+    - Matthew Henry's Commentary on the Whole Bible
+    - Complete Commentary on the Whole Bible
+    - Exposition of the Old and New Testaments
+  migne: none
+  editor_short_forms: [London 1708-1710, Fleming Revell]
+
+- id: calmet-commentaire
+  canonical: Augustin Calmet, Commentaire littéral sur tous les livres de l'Ancien et du Nouveau Testament
+  death: 1757
+  index_names:
+    - {author: Augustin Calmet, title: Commentaire littéral sur tous les livres de l'Ancien et du Nouveau Testament}
+  author_aliases: [Augustin Calmet, Antoine Augustin Calmet, Augustinus Calmet, Dom Calmet]
+  title_aliases:
+    - Commentaire littéral sur tous les livres de l'Ancien et du Nouveau Testament
+    - Commentarius litteralis in omnes libros Veteris et Novi Testamenti
+    - Commentaire littéral sur la Genèse
+    - Dictionnaire historique de la Bible
+  migne: none
+  editor_short_forms: [Paris 1707-1716, Würzburg Latin translation 1789-1793]
+
+- id: gill-exposition
+  canonical: John Gill, An Exposition of the Old Testament
+  death: 1771
+  index_names:
+    - {author: John Gill, title: An Exposition of the Old Testament}
+  author_aliases: [John Gill, Gill]
+  title_aliases:
+    - An Exposition of the Old Testament
+    - An Exposition of the Whole Bible
+    - Gill's Exposition of the Entire Bible
+    - Exposition of the Old and New Testaments
+  migne: none
+  editor_short_forms: [London 1748-1763, Mathews and Leigh 1810]
+
+- id: wesley-notes
+  canonical: John Wesley, Explanatory Notes upon the Old Testament
+  death: 1791
+  index_names:
+    - {author: John Wesley, title: Explanatory Notes upon the Old Testament}
+  author_aliases: [John Wesley, Wesley]
+  title_aliases:
+    - Explanatory Notes upon the Old Testament
+    - Notes on the Old Testament
+    - Wesley's Notes on the Bible
+    - Explanatory Notes upon the New Testament
+  migne: none
+  editor_short_forms: [Bristol 1765]
+
+- id: clarke-commentary
+  canonical: Adam Clarke, The Holy Bible with a Commentary and Critical Notes
+  death: 1832
+  index_names:
+    - {author: Adam Clarke, title: The Holy Bible with a Commentary and Critical Notes}
+  author_aliases: [Adam Clarke, Clarke]
+  title_aliases:
+    - The Holy Bible with a Commentary and Critical Notes
+    - Clarke's Commentary
+    - A Commentary and Critical Notes on the Holy Bible
+    - The Holy Bible, containing the Old and New Testaments
+  migne: none
+  editor_short_forms: [London 1810-1826, Carlton and Porter]
+
+- id: haydock-commentary
+  canonical: George Leo Haydock, Douay-Rheims with Haydock Commentary
+  death: 1849
+  index_names:
+    - {author: George Leo Haydock, title: "Haydock's Catholic Bible Commentary"}
+  author_aliases: [George Leo Haydock, Haydock, George Haydock]
+  title_aliases:
+    - "Haydock's Catholic Bible Commentary"
+    - The Holy Bible... with useful notes
+    - Douay-Rheims Bible with Haydock Commentary
+    - Haydock's Douay Rheims Bible
+  migne: none
+  editor_short_forms: [Manchester 1811-1814, Dublin 1852, New York 1859]
+  held: work.george-leo-haydock.douay-rheims-with-haydock-commentary
+
+- id: lange-genesis
+  canonical: Johann Peter Lange, Commentary on the Holy Scriptures — Genesis
+  death: 1884
+  index_names:
+    - {author: Johann Peter Lange, title: 'Commentary on the Holy Scriptures: Genesis'}
+  author_aliases: [Johann Peter Lange, J. P. Lange, Lange, Philip Schaff (translator-editor)]
+  title_aliases:
+    - 'Commentary on the Holy Scriptures: Genesis'
+    - Theologisch-homiletisches Bibelwerk
+    - A Commentary on the Holy Scriptures, Critical, Doctrinal and Homiletical
+    - Lange's Commentary on the Holy Scriptures
+  migne: none
+  editor_short_forms: [Scribner New York 1868, Tayler Lewis and A. Gosman translators]
+
+- id: keil-pentateuch
+  canonical: Carl Friedrich Keil, Biblical Commentary on the Old Testament — The Pentateuch
+  death: 1888
+  index_names:
+    - {author: Carl Friedrich Keil, title: 'Biblical Commentary on the Old Testament: The Pentateuch'}
+    - {author: Carl Friedrich Keil, title: "Biblischer Commentar über die Bücher Mose's: Genesis"}
+  author_aliases: [Carl Friedrich Keil, Karl Friedrich Keil, C. F. Keil, Keil and Delitzsch, Franz Delitzsch]
+  title_aliases:
+    - 'Biblical Commentary on the Old Testament: The Pentateuch'
+    - "Biblischer Commentar über die Bücher Mose's"
+    - Biblischer Commentar über das Alte Testament
+    - Keil and Delitzsch Commentary on the Old Testament
+    - Commentary on the Old Testament in Ten Volumes
+  migne: none
+  editor_short_forms: [T. and T. Clark Edinburgh 1866-1891, James Martin translator]
