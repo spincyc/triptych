@@ -2295,6 +2295,56 @@ def add_table_header_scopes(rendered_html: str) -> str:
     )
 
 
+# Web editions are endnote-heavy and carry their own section anchors, so
+# footnotes and heading attributes must become real markup rather than literal
+# [^n] and {#id} text. `fenced_code` is here because a triple-backtick block is
+# not a Markdown core construct: without the extension the backticks are read as
+# an inline code span, so the block's lines run together inside a paragraph and
+# its language word prints as prose. `reject_unrendered_code_fences` below
+# refuses any page carrying that shape, so dropping an extension from this list
+# fails the build rather than quietly changing what a reader sees.
+MARKDOWN_EXTENSIONS = [
+    "tables",
+    "sane_lists",
+    "toc",
+    "footnotes",
+    "attr_list",
+    "fenced_code",
+]
+# The shape a fence leaves behind when it is not recognised as a fence: a code
+# span that opens a block — a paragraph, a list item, a quotation, a table cell
+# — and then runs onto a second line. A genuine inline code span may wrap across
+# source lines, but only in the middle of prose, never as the block's first
+# thing, which is why the anchor is what keeps this from firing on real spans.
+UNRENDERED_FENCE_RE = re.compile(
+    r"<(?:p|li|dd|td|th|blockquote)(?:\s[^>]*)?>\s*<code(?:\s[^>]*)?>"
+    r"(?P<body>(?:(?!</code>).)*?\n(?:(?!</code>).)*?)</code>",
+    re.DOTALL,
+)
+
+
+def reject_unrendered_code_fences(source_relative: str, rendered_html: str) -> None:
+    """Refuse a page where a fenced block did not become preformatted text.
+
+    Nothing renders these pages in the ordinary editing workflow, so a missing
+    render extension is invisible until a reader meets it: the site printed a
+    bare `yaml` and four run-together lines for months. This is the check that
+    makes that a build failure instead.
+    """
+    match = UNRENDERED_FENCE_RE.search(rendered_html)
+    if match is None:
+        return
+    first_line = match.group("body").split("\n", 1)[0].strip()
+    language = ""
+    if re.fullmatch(r"[A-Za-z][\w+#-]*", first_line):
+        language = f" tagged {first_line!r}"
+    raise ReleaseError(
+        f"{source_relative}: a fenced code block{language} rendered as running "
+        "prose rather than preformatted text; the Markdown render is missing "
+        "the fenced_code extension"
+    )
+
+
 def reject_internal_reader_labels(source_relative: str, rendered_html: str) -> None:
     """Keep implementation identities out of navigation and catalog prose."""
     if source_relative == "README.md" or source_relative.startswith("library/"):
@@ -2326,12 +2376,10 @@ def render_page(
 
     content = add_table_header_scopes(markdown.markdown(
         page_body_markdown(source_relative, markdown_text),
-        # Web editions are endnote-heavy and carry their own section anchors,
-        # so footnotes and heading attributes must become real markup rather
-        # than literal [^n] and {#id} text.
-        extensions=["tables", "sane_lists", "toc", "footnotes", "attr_list"],
+        extensions=MARKDOWN_EXTENSIONS,
         output_format="html5",
     ))
+    reject_unrendered_code_fences(source_relative, content)
     return wrap_in_layout(
         source_relative,
         output_relative,

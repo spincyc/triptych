@@ -320,6 +320,60 @@ class PublicAlphaTest(unittest.TestCase):
             '<th scope="col">Focus</th></tr></thead></table>',
         )
 
+    def test_fenced_block_becomes_preformatted_text(self) -> None:
+        import markdown
+
+        rendered = markdown.markdown(
+            "Create an experimental branch:\n\n```sh\ngit switch -c work\n```\n",
+            extensions=self.tool.MARKDOWN_EXTENSIONS,
+            output_format="html5",
+        )
+        self.assertIn('<pre><code class="language-sh">git switch -c work', rendered)
+        self.tool.reject_unrendered_code_fences("CONTRIBUTING.md", rendered)
+
+    def test_unrendered_fence_is_refused_with_its_language_named(self) -> None:
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.reject_unrendered_code_fences(
+                "CONTRIBUTING.md", "<p><code>sh\ngit switch -c work</code></p>"
+            )
+        message = str(failure.exception)
+        self.assertIn("tagged 'sh'", message)
+        self.assertIn("fenced_code", message)
+
+    def test_untagged_unrendered_fence_is_refused(self) -> None:
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.reject_unrendered_code_fences(
+                "docs/bibles.md", "<li><code>Psalm 100:1-2\nPsalm 102:1</code></li>"
+            )
+        self.assertIn("fenced code block rendered", str(failure.exception))
+
+    def test_a_wrapped_inline_code_span_is_not_a_fence(self) -> None:
+        # Two live pages carry a code span whose source wraps mid-prose. Neither
+        # is a fence, and a check that refused them would be unusable.
+        self.tool.reject_unrendered_code_fences(
+            "docs/bibles.md",
+            '<p>records <code>rights_jurisdiction = "United\nStates"</code> beside it</p>',
+        )
+
+    def test_no_site_page_renders_a_fence_as_running_prose(self) -> None:
+        # Nothing in the ordinary editing workflow renders these pages, which is
+        # how a paragraph reading "yaml" followed by four run-together lines
+        # reached readers unnoticed. This renders every one of them.
+        import markdown
+
+        tool = load_tool()
+        for source_relative in sorted({**tool.PAGE_MAP, **tool.document_pages()}):
+            with self.subTest(source=source_relative):
+                text = (REPOSITORY_ROOT / source_relative).read_text(encoding="utf-8")
+                tool.reject_unrendered_code_fences(
+                    source_relative,
+                    markdown.markdown(
+                        tool.page_body_markdown(source_relative, text),
+                        extensions=tool.MARKDOWN_EXTENSIONS,
+                        output_format="html5",
+                    ),
+                )
+
     def make_manifest(self) -> dict:
         stale_hash = "0" * 64
         return {
