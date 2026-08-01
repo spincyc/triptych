@@ -113,7 +113,7 @@ Assume more of the same kind exist.
 | A celebration in the **spine and in no section** | The two artifacts had different histories and nothing compared them. Three Christmas octave days sat in the gap. | Now caught: `spine_problems` in `check-calendar-masses`. |
 | A verse **past the end of a chapter** | `index-bible` derives a chapter's bounds from the verses the edition prints, so it clamps rather than reports. `Mark 4:41`, `1 Thessalonians 4:18`, `Acts 7:60` are each dropped this way. | Open. The remedy is a `merged-verse` row in the edition's verse-aliases artifact, because the Douay and Clementine disagree here. |
 | **1962 commemorations** | They existed only as prose inside a `name` string, so none could be looked up or commemorated. | Now caught: the sixty folded into feast names are dated entries of rank `Comm.`, 104 in all, and `check-calendar-masses` refuses a `comm.` anywhere but the start of a name. Their orations are still placeholders. |
-| Any **stale count table** | Nothing regenerates the tables in `src/sources/calendars/README.md` or `guidance/liturgy/propers-completion-todo.md`. Both currently understate the 1962 seasonal section. | Count it yourself. See below. |
+| Any **stale count table** | One census of these files existed in three retyped copies, and all three disagreed; the 1962 sanctoral section read 247 in a document that called itself current and 307 in the file. | Now caught for the two documents that carry the derived block — this one and `docs/the-mass.md` — by `mass-propers census --check`, which `make check-propers-census` runs. `src/sources/calendars/README.md` and `guidance/liturgy/propers-completion-todo.md` still carry hand-typed tables. Open. |
 
 ## Tool ownership
 
@@ -124,7 +124,7 @@ Never re-derive what a tool owns; that is how two artifacts come to disagree.
 | `tools/citations` | The canonical book list, citation parsing and encoding, passage validation | yes (`encode`) |
 | `tools/check-calendar-masses` | Schema, identity, `propers`/`forms` exclusivity, source-kind rules, cycle shape, the psalm-exception ledger, spine agreement. Delegates citation contents to `citations`. | no |
 | `tools/calendar-spine` | The date-ordered list of celebrations and its `kind` classification, derived from the calendar-reference publications | no |
-| `tools/mass-propers` | Reading one mass; per-proper psalm-numbering inheritance; the browser's structure files | no |
+| `tools/mass-propers` | Reading one mass; per-proper psalm-numbering inheritance; the browser's structure files; **the census** and the derived block both count-bearing documents carry | yes (`structure`, `census --write`) |
 | `tools/index-bible` | Indexed bibles keyed by the reference strings the calendars actually make; validation of `citation_divergences` | yes |
 | `scripts/_psalms.py` | The Vulgate↔Hebrew verse-level concordance and every psalm bound | — |
 
@@ -154,59 +154,85 @@ tools/tpt mass-propers list --calendar postconciliar
 tools/tpt calendar-spine derive --calendar roman-1962
 ```
 
-Counting. Do not estimate, and do not trust a table — including this one.
+Counting. Never count by hand and never retype a count. One verb owns the
+census, and the block under [Current numbers](#current-numbers) is its output:
 
-```sh
-# Per-section census.
-python3 - <<'PY'
-import yaml, pathlib
-for cal in ("roman-1962", "postconciliar"):
-    doc = yaml.safe_load(pathlib.Path(f"src/sources/calendars/{cal}/propers.yaml").read_text())
-    for name, body in doc["sections"].items():
-        masses = body["masses"]
-        propers = sum(len(m.get("propers") or [])
-                      + sum(len(f["propers"]) for f in m.get("forms") or [])
-                      for m in masses)
-        ph = sum(1 for m in masses
-                 if [p["name"] for p in m.get("propers") or []] == ["Placeholder"])
-        print(f"{cal:14s} {name:15s} {len(masses):4d} masses {propers:5d} propers {ph:4d} placeholder-only")
-PY
+    # Print the derived block; writes nothing.
+    tools/tpt mass-propers census
 
-grep -c 'Only the scripture-bearing propers are recorded' src/sources/calendars/roman-1962/propers.yaml
-grep -c "registry: '1962-T-" src/sources/calendars/roman-1962/propers.yaml
-grep -c '^ *psalm_numbering: vulgate' src/sources/calendars/postconciliar/propers.yaml
-grep -c '^ *cycles:' src/sources/calendars/postconciliar/propers.yaml
-```
+    # Rewrite the block in every document that carries it.
+    tools/tpt mass-propers census --write
+
+    # Fail, naming each stale document, without writing. `make
+    # check-propers-census` runs this.
+    tools/tpt mass-propers census --check
 
 ## Current numbers
 
-Counted 2026-07-31 with the commands above. Re-count before relying on any of
-them; other agents are actively expanding these files.
+Everything between the markers below is written by
+`tools/tpt mass-propers census --write` and by nothing else. Do not edit it, and
+do not restate any of it in prose here or anywhere: that restatement is exactly
+how one census came to exist in three copies that disagreed. `docs/the-mass.md`
+carries the identical block.
 
-| Calendar | Section | Masses | Propers | Placeholder-only |
+<!-- census:begin — derived; edit nothing between these markers -->
+
+| Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
-| roman-1962 | seasonal | 125 | 1129 | 3 |
-| roman-1962 | christological | 8 | 8 | 8 |
+| roman-1962 | seasonal | 128 | 1141 | 5 |
+| roman-1962 | christological | 8 | 10 | 8 |
 | roman-1962 | marian | 17 | 17 | 17 |
 | roman-1962 | sanctoral | 307 | 307 | 307 |
-| postconciliar | seasonal | 63 | 821 | 0 |
+| postconciliar | seasonal | 66 | 824 | 3 |
 | postconciliar | christological | 7 | 7 | 7 |
-| postconciliar | marian | 14 | 14 | 14 |
-| postconciliar | sanctoral | 181 | 181 | 181 |
+| postconciliar | marian | 14 | 15 | 14 |
+| postconciliar | sanctoral | 181 | 185 | 181 |
 
-- Totals: 1962 457 masses / 1461 propers; postconciliar 265 / 1023.
-- 537 of 722 masses hold nothing but a placeholder (335 + 202).
-- Passages: 1108 in 47 books (1962); 1082 in 61 books (postconciliar).
-  Counted with `tools/tpt citations check`.
-- 252 postconciliar propers carry `cycles`; zero 1962 propers do.
+| Measure | roman-1962 | postconciliar |
+| --- | ---: | ---: |
+| Masses | 460 | 268 |
+| Propers | 1475 | 1031 |
+| — named `Placeholder` | 339 | 210 |
+| — inside a `forms` block | 97 | 117 |
+| — carrying a `cycles` mapping | 0 | 252 |
+| Masses holding only placeholders | 337 | 205 |
+| Propers that are not placeholders | 1136 | 821 |
+| — of those, scripture-bearing | 922 | 548 |
+| Encoded passages | 1115 | 1082 |
+| Distinct books cited | 47 | 61 |
+| Distinct slot names | 88 | 86 |
+
+Counted from `src/sources/calendars/*/propers.yaml` and written here by
+`tools/mass-propers census --write`, which is the only thing that writes the
+block above; `make check-propers-census` refuses a copy that has drifted. What
+each row counts, because two honest counts of “propers” differ by hundreds
+when they key differently: a **mass** is one entry under `sections[*].masses`.
+A **proper** is one entry in a mass's `propers`, or in the `propers` of one of
+its `forms`; a proper carrying `cycles` counts once, not three times.
+Placeholders are **inside** the proper and mass totals, and are also given
+their own rows. A mass **holds only placeholders** when every proper it holds,
+those inside `forms` included, is named `Placeholder` — keying on the mass's
+own `propers` alone undercounts, because it misses the masses whose
+placeholders sit inside a `forms` block. **Scripture-bearing** means a
+`source` of `scripture` or `mixed`, or a `cycles` entry that is. **Encoded
+passages** and **distinct books** are `tools/citations check`'s own counts,
+one passage per encoded citation entry and books counted distinct within a
+file. **Distinct slot names** counts distinct proper `name` values, with
+`Placeholder` among them.
+
+<!-- census:end -->
+
+What the census does not cover, and what still has to be counted by reading:
+
 - 63 of the 1962 seasonal entries carry only their scripture-bearing propers and
   a `notes` line saying so; their registry ids read `1962-T-<key>` and are
-  synthetic. Identity, rank and citations were read from an **OCR text layer** of
-  the CMAA 1962 facsimile, not the images. Nothing has been visually collated.
-- The tables in `src/sources/calendars/README.md` (59/636/548 for 1962) and
-  `guidance/liturgy/propers-completion-todo.md` (59 seasonal masses, 474
-  placeholders, three Christmas octave days missing) are **stale**. The data has
-  moved past both.
+  synthetic. Three further entries carry that registry form without the note.
+  Identity, rank and citations were read from an **OCR text layer** of the CMAA
+  1962 facsimile, not the images. Nothing has been visually collated.
+- `src/sources/calendars/README.md` and
+  `guidance/liturgy/propers-completion-todo.md` still carry hand-typed count
+  tables that nothing regenerates. Treat both as stale, and do not copy a figure
+  out of either.
 
 ## The psalm-numbering situation
 

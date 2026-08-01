@@ -15,9 +15,14 @@ differently, and read scripture on entirely different schedules. This repository
 models both, side by side, and refuses to harmonize them where they genuinely
 differ.
 
-Every number below was counted from the repository's own files; the commands
-that count them are in
-[`guidance/propers-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/propers-for-agents.md).
+Every count below is derived from the repository's own files by
+`tools/tpt mass-propers census`, and lands in one table under
+[What is actually here](#what-is-actually-here). That command is the only thing
+that writes the table, and the prose around it states no figure the table does
+not. It had to become one derived table because it was three typed ones: this
+page, [`guidance/propers-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/propers-for-agents.md)
+and the calendars' own README each carried a retyped copy of the same census,
+and all three disagreed.
 
 **[Browse the propers](../liturgy/)** — every Mass of both calendars, with each
 appointed passage rendered in the translation you choose.
@@ -104,17 +109,17 @@ What varies falls into three kinds:
   prayers. They quote scripture only incidentally and are not built from it.
 
 Only scripture-bearing propers contribute anything to a passage-keyed index; the
-orations contribute nothing, because their words are their own. Setting
-placeholders aside, 915 of the 1126 real 1962 propers carry scripture, and 546
-of the 821 postconciliar ones.
+orations contribute nothing, because their words are their own. Set the
+placeholders aside and rather more than half of what remains carries scripture
+in either book; the census below counts both.
 
 Propers are also not a fixed template. The repository stores each Mass's propers
 **in the order the edition appoints them**, so Tracts, Sequences, the palm-rite
 antiphons, the Improperia, the Exsultet, the Holy Saturday prophecies and the
 litanies appear only where they are actually appointed, and a ten-row Sunday
-template is never imposed on a day that does not have ten rows. The data uses 88
-distinct slot names in the 1962 file and 86 in the postconciliar one, and many
-occur exactly once: *First Antiphon at the Imposition of Ashes*, *Exsultet
+template is never imposed on a day that does not have ten rows. Each file uses
+scores of distinct slot names — the census below counts them — and many occur
+exactly once: *First Antiphon at the Imposition of Ashes*, *Exsultet
 (Praeconium paschale)*, *Improperia*, *Washing of Feet, Antiphon 4*, *Chant at
 the Place of Reposition*.
 
@@ -181,10 +186,11 @@ odd years and Year II in even ones, which is *independent*: with periods 3 and
 2 the pairing repeats only every six years, and neither letter can ever be
 derived from the other.
 
-In the repository's data, 252 postconciliar propers carry a cycles mapping —
-55 Gospels, 54 Second Readings, 51 First Readings, 50 Responsorial Psalms,
-39 Gospel Acclamations, and a handful of Holy Week items. No 1962 proper carries
-one, and none ever should.
+In the repository's data the propers that carry a `cycles` mapping are the
+Gospels, the Second and First Readings, the Responsorial Psalms and the Gospel
+Acclamations, plus a handful of Holy Week items; the census below counts them.
+Every one of them is postconciliar. No 1962 proper carries a cycle, and none
+ever should.
 
 ### The calendar arithmetic, and its hard limit
 
@@ -291,36 +297,74 @@ a wrong range.
 
 ### What is actually here
 
-The seasonal sections carry real propers. Everything else is a placeholder
-skeleton. These counts are current as of 31 July 2026 and were counted from the
-files, not estimated:
+The seasonal sections carry real propers. **Most of the rest is a name, not a
+formulary**: a mass that holds nothing but a placeholder establishes that the
+mass exists and where it falls, and records nothing of what is said at it.
+Coverage is wide and shallow by design, and a reader who sees a Mass listed
+should not infer that its texts are here.
 
-| Calendar | Section | Masses | Propers | Placeholder-only |
+The table below is derived, not typed. `tools/tpt mass-propers census --write`
+rewrites it in place, `make check-propers-census` fails when it has drifted from
+the calendars, and nothing else on this page states a figure it gives.
+
+<!-- census:begin — derived; edit nothing between these markers -->
+
+| Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
-| roman-1962 | seasonal | 125 | 1129 | 3 |
-| roman-1962 | christological | 8 | 8 | 8 |
+| roman-1962 | seasonal | 128 | 1141 | 5 |
+| roman-1962 | christological | 8 | 10 | 8 |
 | roman-1962 | marian | 17 | 17 | 17 |
-| roman-1962 | sanctoral | 247 | 247 | 247 |
-| postconciliar | seasonal | 63 | 821 | 0 |
+| roman-1962 | sanctoral | 307 | 307 | 307 |
+| postconciliar | seasonal | 66 | 824 | 3 |
 | postconciliar | christological | 7 | 7 | 7 |
-| postconciliar | marian | 14 | 14 | 14 |
-| postconciliar | sanctoral | 181 | 181 | 181 |
+| postconciliar | marian | 14 | 15 | 14 |
+| postconciliar | sanctoral | 181 | 185 | 181 |
 
-Totals: **397 masses and 1401 propers** for 1962, **265 and 1023** for the
-postconciliar calendar. **477 of those 662 masses hold nothing but a
-placeholder** — 275 in the 1962 file, 202 in the postconciliar one. Between them
-the two files encode 2190 scripture passages, in 47 and 61 distinct books.
+| Measure | roman-1962 | postconciliar |
+| --- | ---: | ---: |
+| Masses | 460 | 268 |
+| Propers | 1475 | 1031 |
+| — named `Placeholder` | 339 | 210 |
+| — inside a `forms` block | 97 | 117 |
+| — carrying a `cycles` mapping | 0 | 252 |
+| Masses holding only placeholders | 337 | 205 |
+| Propers that are not placeholders | 1136 | 821 |
+| — of those, scripture-bearing | 922 | 548 |
+| Encoded passages | 1115 | 1082 |
+| Distinct books cited | 47 | 61 |
+| Distinct slot names | 88 | 86 |
+
+Counted from `src/sources/calendars/*/propers.yaml` and written here by
+`tools/mass-propers census --write`, which is the only thing that writes the
+block above; `make check-propers-census` refuses a copy that has drifted. What
+each row counts, because two honest counts of “propers” differ by hundreds
+when they key differently: a **mass** is one entry under `sections[*].masses`.
+A **proper** is one entry in a mass's `propers`, or in the `propers` of one of
+its `forms`; a proper carrying `cycles` counts once, not three times.
+Placeholders are **inside** the proper and mass totals, and are also given
+their own rows. A mass **holds only placeholders** when every proper it holds,
+those inside `forms` included, is named `Placeholder` — keying on the mass's
+own `propers` alone undercounts, because it misses the masses whose
+placeholders sit inside a `forms` block. **Scripture-bearing** means a
+`source` of `scripture` or `mixed`, or a `cycles` entry that is. **Encoded
+passages** and **distinct books** are `tools/citations check`'s own counts,
+one passage per encoded citation entry and books counted distinct within a
+file. **Distinct slot names** counts distinct proper `name` values, with
+`Placeholder` among them.
+
+<!-- census:end -->
 
 ### The 1962 temporal expansion, and what it deliberately omits
 
-The 1962 seasonal section was 59 Masses — the Sunday run plus the Triduum and
-Palm Sunday. It is now 125: 63 temporal days were added, plus the three Christmas
-octave placeholders. The 63 cover the days the Missal keeps and the file did not
-— the Ember Days of all four seasons, Ash Wednesday and the days after it, the
-ferias of Lent and Passiontide and of Holy Week to Wednesday, the Chrism Mass,
-the Easter and Whitsun octaves, the Rogation Mass, the Vigil and feast of the
-Ascension, the Vigil of Pentecost, the Mass of the First Sunday after Pentecost,
-Corpus Christi, and the Sacred Heart.
+The 1962 seasonal section began as 59 Masses — the Sunday run plus the Triduum
+and Palm Sunday. Its largest single expansion added 63 temporal days, and the
+three Christmas octave placeholders came with it; a few more entries have landed
+since, and the census above holds the current figure. The 63 cover the days the
+Missal keeps and the file did not — the Ember Days of all four seasons, Ash
+Wednesday and the days after it, the ferias of Lent and Passiontide and of Holy
+Week to Wednesday, the Chrism Mass, the Easter and Whitsun octaves, the Rogation
+Mass, the Vigil and feast of the Ascension, the Vigil of Pentecost, the Mass of
+the First Sunday after Pentecost, Corpus Christi, and the Sacred Heart.
 
 Every one of those 63 entries carries **only its scripture-bearing propers**, and
 says so in its own notes:

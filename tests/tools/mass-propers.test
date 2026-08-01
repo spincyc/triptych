@@ -348,4 +348,60 @@ case "$missing" in
 *"Grant, O Lord"*) echo "a missing witness must not be filled in from another" >&2; exit 1 ;;
 esac
 
+# `census` derives the count of both calendars once. One census used to exist in
+# three retyped copies that disagreed by as much as sixty masses in a section,
+# so what matters here is that the derivation is stable and that a document
+# which has fallen behind it is refused rather than believed.
+run_tool census >census-one.md
+run_tool census >census-two.md
+if ! cmp -s census-one.md census-two.md; then
+	echo "census output is not byte-stable across runs" >&2
+	exit 1
+fi
+for want in "census:begin" "| Calendar | Section | Masses |" "| Measure |" "census:end"; do
+	if ! grep -q -- "$want" census-one.md; then
+		echo "census output is missing $want" >&2
+		exit 1
+	fi
+done
+
+# The tracked documents are current, and `--check` writes nothing.
+run_tool census --check >/dev/null
+
+# A drifted document is named and exits 1; `--write` restores it and leaves the
+# prose outside the region alone.
+begin="$(head -1 census-one.md)"
+mkdir -p docroot/docs docroot/guidance
+printf 'before\n\n%s\nstale\n<!-- census:end -->\n\nafter\n' "$begin" >docroot/docs/the-mass.md
+cp docroot/docs/the-mass.md docroot/guidance/propers-for-agents.md
+status=0
+run_tool census --check --doc-root docroot >stale.txt 2>/dev/null || status=$?
+if [ "$status" -ne 1 ]; then
+	echo "a stale document should exit 1, got $status" >&2
+	exit 1
+fi
+if [ "$(grep -c '^stale	' stale.txt)" -ne 2 ]; then
+	echo "both stale documents should be named" >&2
+	exit 1
+fi
+run_tool census --write --doc-root docroot >/dev/null
+run_tool census --check --doc-root docroot >/dev/null
+for kept in '^before$' '^after$'; do
+	if ! grep -q "$kept" docroot/docs/the-mass.md; then
+		echo "census --write did not leave the prose outside the region alone" >&2
+		exit 1
+	fi
+done
+
+# A document carrying no markers is refused rather than appended to.
+printf 'no markers here\n' >docroot/docs/the-mass.md
+if run_tool census --check --doc-root docroot >/dev/null 2>&1; then
+	echo "expected failure for a document with no census region" >&2
+	exit 1
+fi
+if grep -q 'census:begin' docroot/docs/the-mass.md; then
+	echo "a markerless document must not be written to" >&2
+	exit 1
+fi
+
 echo ok

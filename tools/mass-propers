@@ -10,6 +10,9 @@ import argparse
 import json
 import re
 import sys
+import textwrap
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -103,6 +106,30 @@ EXAMPLES = {
                 "  refused: 13",
             ),
             "WRITES one file per mass. --out here is untracked; the default writes tracked src/web/data",
+        ),
+    ),
+    "census": (
+        Example(
+            "tools/mass-propers census",
+            (
+                "<!-- census:begin — derived; edit nothing between these markers -->",
+                "",
+                "| Calendar | Section | Masses | Propers | Masses holding only placeholders |",
+                "| --- | --- | ---: | ---: | ---: |",
+                "| roman-1962 | seasonal | 128 | 1141 | 5 |",
+                "| roman-1962 | christological | 8 | 10 | 8 |",
+                "... 40 more lines",
+            ),
+            "prints the block and writes nothing; two tables, then the keys each row counts by",
+        ),
+        Example(
+            "tools/mass-propers census --check",
+            (
+                "current\tdocs/the-mass.md",
+                "current\tguidance/propers-for-agents.md",
+            ),
+            "one line a document, `current` or `stale`; a stale one exits 1 and "
+            "`--write` rewrites it in place",
         ),
     ),
 }
@@ -694,6 +721,253 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     }
 
 
+# --- The census -------------------------------------------------------------
+#
+# One count of this corpus existed in three hand-typed copies — docs/the-mass.md,
+# guidance/propers-for-agents.md, and the table in src/sources/calendars/README.md
+# — and all three disagreed, because each was retyped at a different hour and
+# none was rederived when the calendars moved. The 1962 sanctoral section alone
+# read 247 in one document and 307 in the file. So the count is derived here,
+# once, and the documents carry the derivation rather than a transcription of it.
+#
+# Every figure below is a decision about what to count, not a fact about the
+# corpus, and two honest counters differ by hundreds if they key differently.
+# CENSUS_KEYS states each key in the emitted block, so a reader never has to
+# guess whether a placeholder was in the total.
+PLACEHOLDER = "Placeholder"
+SCRIPTURE_BEARING = frozenset({"scripture", "mixed"})
+# Section order in the emitted table. The two files list their sections in
+# different orders, and a table that followed file order would reshuffle when a
+# section moved; this order is the one the prose already reads in.
+KIND_ORDER = ("seasonal", "christological", "marian", "sanctoral")
+# Calendar order, oldest book first, matching how every document introduces
+# them. Anything unlisted follows, sorted, so a third calendar still lands
+# somewhere deterministic.
+CALENDAR_ORDER = ("roman-1962", "postconciliar")
+
+# The markers name no command. A marker is a delimiter, and one carrying the
+# invocation would have to be rewritten in every document the day the verb is
+# renamed — with every document that had not yet been rewritten refused as
+# markerless. The regeneration command is in the emitted prose instead, which
+# is where a reader is actually reading.
+CENSUS_BEGIN = "<!-- census:begin — derived; edit nothing between these markers -->"
+CENSUS_END = "<!-- census:end -->"
+# Every document that carries the derived block. A document not listed here
+# carries no census figures at all; that is the point of the list.
+CENSUS_DOCUMENTS = ("docs/the-mass.md", "guidance/propers-for-agents.md")
+
+# The emitted prose names the direct paths, `tools/mass-propers` and
+# `tools/citations`, not the launcher. That is not a style choice: tmt reads a
+# bare sibling id in a tool body as an undeclared dependency, so naming the
+# launcher here fails `tmt check` with
+#     FAIL mass-propers: uses sibling 'tpt' without declaring it in requires
+# Both forms run. Do not "fix" these to the launcher form.
+CENSUS_KEYS = (
+    "Counted from `src/sources/calendars/*/propers.yaml` and written here by "
+    "`tools/mass-propers census --write`, which is the only thing that writes "
+    "the block above; `make check-propers-census` refuses a copy that has "
+    "drifted. What each row counts, because two honest counts of “propers” "
+    "differ by hundreds when they key differently: a **mass** is one entry under "
+    "`sections[*].masses`. A **proper** is one entry in a mass's `propers`, or in "
+    "the `propers` of one of its `forms`; a proper carrying `cycles` counts once, "
+    "not three times. Placeholders are **inside** the proper and mass totals, and "
+    "are also given their own rows. A mass **holds only placeholders** when every "
+    "proper it holds, those inside `forms` included, is named `Placeholder` — "
+    "keying on the mass's own `propers` alone undercounts, because it misses the "
+    "masses whose placeholders sit inside a `forms` block. **Scripture-bearing** "
+    "means a `source` of `scripture` or `mixed`, or a `cycles` entry that is. "
+    "**Encoded passages** and **distinct books** are `tools/citations check`'s "
+    "own counts, one passage per encoded citation entry and books counted distinct "
+    "within a file. **Distinct slot names** counts distinct proper `name` values, "
+    "with `Placeholder` among them."
+)
+
+
+def ordered(names: list[str], preferred: tuple[str, ...]) -> list[str]:
+    """Declared order first, then anything else sorted. Deterministic either way."""
+    known = [name for name in preferred if name in names]
+    return known + sorted(set(names) - set(known))
+
+
+def proper_sources(proper: dict) -> set[str]:
+    """A proper's `source`, or its cycles' where the kind varies by year."""
+    declared = proper.get("source")
+    if declared:
+        return {str(declared)}
+    return {
+        str(cycle["source"])
+        for cycle in (proper.get("cycles") or {}).values()
+        if isinstance(cycle, dict) and cycle.get("source")
+    }
+
+
+def census_of(document: dict) -> dict:
+    """Count one calendar file. Sections first, then the file's own totals."""
+    rows = []
+    for name, body in (document.get("sections") or {}).items():
+        if not isinstance(body, dict):
+            continue
+        masses = [mass for mass in (body.get("masses") or []) if isinstance(mass, dict)]
+        propers = [proper for mass in masses for _, proper in propers_of(mass)]
+        rows.append(
+            {
+                "section": str(name),
+                "kind": str(body.get("kind") or ""),
+                "masses": len(masses),
+                "propers": len(propers),
+                "placeholder_only_masses": sum(
+                    1 for mass in masses if placeholder_only(mass)
+                ),
+            }
+        )
+    rows.sort(
+        key=lambda row: (
+            KIND_ORDER.index(row["kind"]) if row["kind"] in KIND_ORDER else len(KIND_ORDER),
+            row["section"],
+        )
+    )
+    every = [
+        (form, proper)
+        for _, mass in masses_of(document)
+        for form, proper in propers_of(mass)
+    ]
+    substantive = [proper for _, proper in every if proper.get("name") != PLACEHOLDER]
+    return {
+        "sections": rows,
+        "masses": sum(row["masses"] for row in rows),
+        "propers": len(every),
+        "placeholder_propers": sum(
+            1 for _, proper in every if proper.get("name") == PLACEHOLDER
+        ),
+        "propers_in_forms": sum(1 for form, _ in every if form),
+        "cycle_propers": sum(1 for _, proper in every if proper.get("cycles")),
+        "placeholder_only_masses": sum(row["placeholder_only_masses"] for row in rows),
+        "substantive_propers": len(substantive),
+        "scripture_bearing_propers": sum(
+            1 for proper in substantive if proper_sources(proper) & SCRIPTURE_BEARING
+        ),
+        "slot_names": len({str(proper.get("name") or "") for _, proper in every}),
+    }
+
+
+def placeholder_only(mass: dict) -> bool:
+    """Every proper it holds, forms included, is a placeholder.
+
+    Reading the mass's own `propers` alone is the wrong key and was the one in
+    use: it reports False for a mass that holds nothing but `forms`, so the
+    Christmas octave and four postconciliar vigil-and-day pairs counted as
+    substantive when they hold nothing but placeholders.
+    """
+    names = [str(proper.get("name") or "") for _, proper in propers_of(mass)]
+    return bool(names) and set(names) == {PLACEHOLDER}
+
+
+def passage_counts(root: Path) -> dict[str, dict[str, int]]:
+    """Passages and distinct books, from the tool that owns citations.
+
+    Re-deriving these here is exactly how the three copies came to disagree, so
+    they are read from `citations check` rather than recounted.
+    """
+    loader = SourceFileLoader("_citations", str(Path(__file__).resolve().parent / "citations"))
+    spec = spec_from_loader(loader.name, loader)
+    module = module_from_spec(spec)
+    loader.exec_module(module)
+    counted = module.check(root)["files"]
+    return {
+        Path(path).parent.name: {"passages": row["passages"], "books": row["books"]}
+        for path, row in counted.items()
+    }
+
+
+def census(root: Path) -> dict[str, dict]:
+    cited = passage_counts(root)
+    found = {}
+    for name in ordered(calendars(root), CALENDAR_ORDER):
+        counted = census_of(load_calendar(root, name))
+        counted.update(cited.get(name) or {"passages": 0, "books": 0})
+        found[name] = counted
+    return found
+
+
+CENSUS_MEASURES = (
+    ("Masses", "masses"),
+    ("Propers", "propers"),
+    ("— named `Placeholder`", "placeholder_propers"),
+    ("— inside a `forms` block", "propers_in_forms"),
+    ("— carrying a `cycles` mapping", "cycle_propers"),
+    ("Masses holding only placeholders", "placeholder_only_masses"),
+    ("Propers that are not placeholders", "substantive_propers"),
+    ("— of those, scripture-bearing", "scripture_bearing_propers"),
+    ("Encoded passages", "passages"),
+    ("Distinct books cited", "books"),
+    ("Distinct slot names", "slot_names"),
+)
+
+
+def render_census(counted: dict[str, dict]) -> str:
+    """The block both documents carry, byte-identical in each."""
+    names = list(counted)
+    lines = [CENSUS_BEGIN, ""]
+    lines.append("| Calendar | Section | Masses | Propers | Masses holding only placeholders |")
+    lines.append("| --- | --- | ---: | ---: | ---: |")
+    for name in names:
+        for row in counted[name]["sections"]:
+            lines.append(
+                f"| {name} | {row['kind'] or row['section']} | {row['masses']} | "
+                f"{row['propers']} | {row['placeholder_only_masses']} |"
+            )
+    lines.append("")
+    lines.append("| Measure | " + " | ".join(names) + " |")
+    lines.append("| --- |" + " ---: |" * len(names))
+    for label, key in CENSUS_MEASURES:
+        lines.append(
+            f"| {label} | " + " | ".join(str(counted[name][key]) for name in names) + " |"
+        )
+    lines.append("")
+    lines.extend(textwrap.wrap(CENSUS_KEYS, WIDTH))
+    lines.append("")
+    lines.append(CENSUS_END)
+    return "\n".join(lines) + "\n"
+
+
+def replace_census(text: str, block: str) -> str:
+    """Swap the delimited region for ``block``; refuse anything else."""
+    begin, end = text.find(CENSUS_BEGIN), text.find(CENSUS_END)
+    if begin < 0 or end < 0:
+        raise ValueError(f"no census region: expected {CENSUS_BEGIN} and {CENSUS_END}")
+    if end < begin:
+        raise ValueError("census region is inverted: the end marker precedes the begin")
+    return text[:begin] + block + text[end + len(CENSUS_END) + 1 :]
+
+
+def run_census(arguments: argparse.Namespace) -> dict:
+    """Derive the census; optionally rewrite or check the documents carrying it."""
+    counted = census(Path(arguments.root))
+    block = render_census(counted)
+    payload: dict[str, object] = {"calendars": counted, "block": block, "status": "ok"}
+    if not (arguments.write or arguments.check):
+        return payload
+    documents, stale = [], False
+    for relative in CENSUS_DOCUMENTS:
+        path = Path(arguments.doc_root) / relative
+        if not path.is_file():
+            raise ValueError(f"no document at {path}")
+        before = path.read_text(encoding="utf-8")
+        after = replace_census(before, block)
+        if after == before:
+            state = "current"
+        elif arguments.write:
+            path.write_text(after, encoding="utf-8")
+            state = "rewritten"
+        else:
+            state = "stale"
+            stale = True
+        documents.append({"path": relative, "state": state})
+    payload["documents"] = documents
+    payload["status"] = "stale" if stale else "ok"
+    return payload
+
+
 def run_show(arguments: argparse.Namespace) -> dict:
     if not arguments.calendar:
         raise ValueError("--calendar is required")
@@ -730,8 +1004,6 @@ def run_list(arguments: argparse.Namespace) -> dict:
 
 
 def wrap(text: str, indent: str) -> list[str]:
-    import textwrap
-
     lines: list[str] = []
     for paragraph in text.strip().split("\n\n"):
         block = " ".join(paragraph.split())
@@ -869,6 +1141,21 @@ def main(argv: list[str] | None = None) -> int:
         "--out", default="src/web/data", help="where `structure` writes its files"
     )
     shared.add_argument(
+        "--doc-root",
+        default=str(ROOT),
+        help="repository root holding the documents `census` writes into",
+    )
+    shared.add_argument(
+        "--write",
+        action="store_true",
+        help="`census`: rewrite the derived block in every document carrying it",
+    )
+    shared.add_argument(
+        "--check",
+        action="store_true",
+        help="`census`: exit 1 naming any document whose block is stale, writing nothing",
+    )
+    shared.add_argument(
         "--verbose", action="store_true", help="list every citation that refused to resolve"
     )
     shared.add_argument(
@@ -897,6 +1184,14 @@ def main(argv: list[str] | None = None) -> int:
         ),
         EXAMPLES["structure"],
     )
+    with_examples(
+        sub.add_parser(
+            "census",
+            help="derive the count of both calendars, and write it into the documents",
+            parents=[shared],
+        ),
+        EXAMPLES["census"],
+    )
 
     def render(payload: object, arguments: argparse.Namespace) -> int:
         if not isinstance(payload, dict):
@@ -909,6 +1204,20 @@ def main(argv: list[str] | None = None) -> int:
             import yaml
 
             print(yaml.safe_dump(payload, sort_keys=False, allow_unicode=True).rstrip())
+            return 0
+        if "block" in payload:
+            rows = payload.get("documents")
+            if rows is None:
+                print(str(payload["block"]), end="")
+                return 0
+            for row in rows:  # type: ignore[union-attr]
+                print(f"{row['state']}\t{row['path']}")
+            if payload["status"] == "stale":
+                print(
+                    "mass-propers census: stale; rerun with --write",
+                    file=sys.stderr,
+                )
+                return 1
             return 0
         if "written" in payload:
             for calendar, counts in payload["calendars"].items():
@@ -939,7 +1248,12 @@ def main(argv: list[str] | None = None) -> int:
 
     return run_verb_cli(
         parser=parser,
-        handlers={"show": run_show, "list": run_list, "structure": run_structure},
+        handlers={
+            "show": run_show,
+            "list": run_list,
+            "structure": run_structure,
+            "census": run_census,
+        },
         renderer=render,
         prefix="mass-propers",
         argv=argv,

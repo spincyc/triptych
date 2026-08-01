@@ -207,6 +207,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
 	distclean check-tools check-tool-registry check-calendar-masses \
+	check-propers-census \
 	check-metadata check-web-editions \
 	check-proper-components \
 	web-editions install-web-editions check-web-editions-current \
@@ -444,6 +445,7 @@ help:
 		'make reading-structure  Rewrite the browser structure of every abridged plan' \
 		'make check    Run every repository policy check' \
 		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
+		'make check-propers-census  Refuse a document whose derived count table has gone stale' \
 		'make check-tests  Run the complete script unit-test suite' \
 		'make check-staleness  Suspended 2026-07-31; reports the suspension and exits clean' \
 		'make measure-staleness  Run the suspended signal anyway, without acting on it' \
@@ -671,7 +673,7 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-proper-components \
 	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
 	check-public-alpha check-release-bindings check-tool-registry \
-	check-calendar-masses check-calendar-rubrics
+	check-calendar-masses check-calendar-rubrics check-propers-census
 
 # tmt.json indexes the repo's tools; invoke them through tpt.
 # tools dispatch through tmt entries to their implementation under tools/.
@@ -695,6 +697,15 @@ check-calendar-rubrics:
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) tools/tpt calendar-rubrics check; \
 	else echo "PyYAML missing; skipping calendar-rubric check"; fi
+
+# The count of both calendars is derived, not typed: one census, written into
+# every document that carries it. This refuses a document whose block has
+# drifted from the calendars, and writes nothing — `mass-propers census --write`
+# is what fixes it. Needs PyYAML, skipped rather than failed without it.
+check-propers-census:
+	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
+		$(PYTHON) tools/tpt mass-propers census --check; \
+	else echo "PyYAML missing; skipping propers-census check"; fi
 
 check-tests:
 	@$(PYTHON) -m unittest discover -s tools/tests

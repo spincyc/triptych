@@ -200,14 +200,14 @@
       "idempotent": true,
       "json": true,
       "lang": "python",
-      "mutates": false,
+      "mutates": true,
       "origin": "local",
       "purpose": "Print one mass's propers as YAML, JSON, or a reading view.",
       "requires": [
         "citations"
       ],
       "stage": "draft",
-      "usage": "mass-propers [--root DIR] [--calendar NAME] [--mass KEY] {show,list,structure} [--format {text,yaml,json}] [--out DIR]"
+      "usage": "mass-propers [--root DIR] [--calendar NAME] [--mass KEY] {show,list,structure,census} [--format {text,yaml,json}] [--out DIR] [--write|--check]"
     },
     "pdf-review": {
       "idempotent": true,
