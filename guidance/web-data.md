@@ -158,6 +158,24 @@ octave, a 1962 year with twenty-three Sundays after Pentecost — the year recor
 the refusal in `unresolved` instead of choosing. Each file carries the advisory
 that says so, so the caution cannot be separated from the data.
 
+A second map, `ferial_formulary`, answers the question `days` cannot: which Mass
+a feria takes on a date whose index carries none. In the 1962 books that is most
+of the year — RGMR 299 gives a proper Mass only to the ferias of Lent and
+Passiontide and to the six Ember Days of Advent and September, and appoints the
+Mass of the preceding Sunday everywhere else — so a date absent from `days` is
+usually the book's own arrangement rather than an untranscribed gap. The entry is
+a **reference and never a copy**: it is a mass key in the same propers structure
+`days` points at, carrying the same kind of `rule`, so the Sunday's text exists
+in exactly one place and a feria cannot drift from the Sunday it repeats. It
+states no ranking, and a date carrying a feast carries its ferial formulary
+beside it, unused; whether the day is a feria belongs to the rubrics layer below.
+Where the immediately preceding Sunday carries no Mass of the Sunday in the index
+— a Sunday the Most Holy Name of Jesus has taken — the map fails closed and the
+year records the refusal, rather than borrowing the feast's Mass instead. Only a
+calendar whose own rubrics appoint such a borrowing carries the block at all: the
+reformed books give a weekday its own formulary and, in Ordinary Time, a choice
+under IGMR 355, so the postconciliar files carry none.
+
 ## The rubrics layer
 
 `structure/rubrics/<calendar>.json`, written by `calendar-rubrics structure`,

@@ -72,7 +72,7 @@ EXAMPLES = {
                 "    unranked: more than one candidate, and no precedence is stated",
                 "  roman-1962: christmastide, liturgical year 2027",
                 "    nativitate-domini-octave: In Nativitate Domini, with octave",
-                "... 1 more line",
+                "... 2 more lines",
             ),
         ),
         Example(
@@ -83,7 +83,8 @@ EXAMPLES = {
                 "    easter-sunday: Easter Sunday",
                 "    s-vincentii-ferrerii-confessoris: S. Vincentii Ferrerii Confessoris",
                 "    unranked: more than one candidate, and no precedence is stated",
-                "  Computed, not celebrated. Every date here is derived from the arithmetic in guidance/liturgy/c... [+333 chars]",
+                "    unresolved this year: the ferial Mass from 2026-01-05 to 2026-01-05 - the Most Holy Name of ... [+245 chars]",
+                "  Computed, not celebrated. Every date here is derived from the arithmetic in guidance/liturgy/calendar-computation.md and is a finding aid only. The competent General, territorial, diocesan, religious, parish and church calendar, the approved books and the competent annual Ordo control an actual celebration. Verify against a dated official witness before relying on any date, and never cite this file as an occurrence witness.",
             ),
         ),
     ),
@@ -119,7 +120,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-days coverage --calendar postconciliar --first 2026 --last 2026 --json",
             (
-                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_resolved\":229,\"dates_unresolved\":136... [+751 chars]",
+                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_reaching_no_mass_at_all\":136,\"dates_... [+821 chars]",
             ),
         ),
     ),
@@ -222,6 +223,52 @@ EMBER_DAYS = ((3, "wednesday"), (5, "friday"), (6, "saturday"))
 FIXED_TERRITORIAL = {
     ("postconciliar", "epiphany-lord"): TERRITORIAL_OPTIONS["epiphany"][0],
 }
+
+# The 1962 seasons in which a feria has no Mass of its own, with the window
+# inside the season that the ferial rule actually covers. RGMR 299 gives a
+# proper Mass to every feria of Lent and Passiontide and to the six Ember Days
+# of Advent and September, and to no other feria: "In reliquis feriis dicitur
+# Missa dominicae praecedentis, nisi a rubricis aliter provisum sit." The Latin
+# is transcribed once, visually collated against the tracked facsimile, in the
+# `conventions` of src/sources/calendars/roman-1962/propers.yaml; nothing here
+# restates it, and every rule below cites the locus instead.
+#
+# Two windows are narrower than their season and both are stated, not chosen.
+# Christmastide runs from 25 December, but 25 December is the feast, 26 to 31
+# December are days within the octave whose own formulary the Missal prints and
+# this index does not carry, and 1 January is the octave day; only 2 to 5
+# January are ferias in the sense of RGMR 299. Epiphanytide runs from 6
+# January, which is the feast itself; the Missal's rubric at printed p. 39
+# begins the ferias at 7 January.
+FERIAL_SEASONS_1962 = (
+    ("advent", None, None),
+    ("christmastide", (1, 2), (1, 5)),
+    ("epiphanytide", (1, 7), None),
+    ("septuagesima", None, None),
+    ("paschaltide", None, None),
+    ("after-pentecost", None, None),
+)
+
+FERIAL_RULE = "RGMR 299: the Mass of the preceding Sunday, "
+
+FERIAL_NOTE = (
+    "`ferial_formulary` answers a different question from `days`, for the same "
+    "dates. `days` says which masses a date carries as celebrations. This says "
+    "which Mass a feria of that date takes when it has none of its own: RGMR "
+    "299 gives a proper Mass to the ferias of Lent and Passiontide and to the "
+    "six Ember Days of Advent and September, and appoints the Mass of the "
+    "preceding Sunday on every other feria unless the rubrics provide "
+    "otherwise. The entry is a reference and never a copy: `key` names a mass "
+    "in this calendar's own propers structure, exactly as a `days` entry does, "
+    "and `rule` indexes the same `rules` list. Whether the day actually is a "
+    "feria is not decided here and never was: a date carrying a feast carries "
+    "its ferial formulary too, unused, because precedence belongs to "
+    "structure/rubrics/<calendar>.json and this layer states no ranking. A "
+    "date is absent where the season gives the feria a Mass of its own, or "
+    "where the immediately preceding Sunday carries no Mass of the Sunday in "
+    "this index, which fails closed rather than borrowing from a feast that "
+    "occupied the Sunday."
+)
 
 
 # ---------------------------------------------------------------- computus
@@ -354,6 +401,15 @@ class Year:
         self.unresolved: list[dict] = []
         self.missing: list[dict] = []
         self.facts: dict[str, object] = {}
+        # The Mass a feria takes where it has none of its own. `governors` is
+        # keyed by the Sunday whose Mass governs the ferias that follow it, and
+        # `borrowed` holds the dates a rubric provides for otherwise, keyed by
+        # the date itself. Both hold mass keys and never mass text.
+        self.governors: dict[date, dict] = {}
+        self.contested: set[date] = set()
+        self.borrowed: dict[date, list[dict]] = {}
+        self.otherwise: dict[date, str | None] = {}
+        self.ferial: dict[date, list[dict]] = {}
 
     def put(
         self,
@@ -374,6 +430,47 @@ class Year:
         if entry not in held:
             held.append(entry)
 
+    def governs(self, sunday: date, key: str, rule: str) -> None:
+        """Record the Mass that the ferias following `sunday` take.
+
+        A second governor for the same Sunday is refused rather than resolved.
+        The one year that produces one is a year of twenty-three Sundays after
+        Pentecost, where the numbered Sunday and the last Sunday share a slot
+        and the guidance already declines to choose between them; borrowing
+        from a Sunday whose own Mass is undecided would decide it by the back
+        door.
+        """
+        if key not in self.known:
+            return
+        held = self.governors.get(sunday)
+        if held is not None and held["key"] != key:
+            self.contested.add(sunday)
+            return
+        self.governors[sunday] = {"key": key, "rule": rule}
+
+    def borrows(
+        self,
+        when: date,
+        key: str,
+        rule: str,
+        territorial: str | None = None,
+        under_the_other_option: str | None = None,
+    ) -> None:
+        """A date whose ferial Mass a rubric provides otherwise for.
+
+        `under_the_other_option` names the option under which this rubric does
+        not reach the date, so that the preceding Sunday's Mass may still be
+        emitted there and say which option it holds under. Where it is None the
+        preceding Sunday is not reached at all and nothing else is emitted.
+        """
+        if key not in self.known:
+            return
+        entry = {"key": key, "rule": rule}
+        if territorial:
+            entry["territorial"] = territorial
+        self.borrowed.setdefault(when, []).append(entry)
+        self.otherwise[when] = under_the_other_option
+
     def season_of(self, when: date) -> str | None:
         for start, end, name in self.seasons:
             if start <= when <= end:
@@ -383,6 +480,56 @@ class Year:
     def refuse(self, what: str, why: str) -> None:
         self.unresolved.append({"what": what, "why": why})
 
+    def resolve_ferial(self, windows: tuple) -> None:
+        """Fill `ferial` for every date whose feria has no Mass of its own.
+
+        A date is skipped where it already carries a temporal candidate, since
+        that candidate is the day's own Mass and RGMR 299 reaches only the
+        remaining ferias. Sundays are skipped because a Sunday is not a feria.
+        Everything else in a covered window takes the Mass its immediately
+        preceding Sunday governs -- the *immediately* preceding one, so that a
+        Sunday occupied by a feast, which this index gives no Mass of the
+        Sunday, stops the search rather than being stepped over.
+        """
+        covered = {name: (start, end) for name, start, end in windows}
+        when = self.anchors.begins
+        while when <= self.anchors.last_day:
+            entries = self._ferial_on(when, covered)
+            if entries:
+                self.ferial[when] = entries
+            when += timedelta(days=1)
+
+    def _ferial_on(self, when: date, covered: dict) -> list[dict]:
+        if when.weekday() == 6:
+            return []
+        if any(e["origin"] == "temporal" for e in self.placements.get(when, [])):
+            return []
+        window = covered.get(self.season_of(when) or "")
+        if window is None:
+            return []
+        start, end = window
+        if start and (when.month, when.day) < start:
+            return []
+        if end and (when.month, when.day) > end:
+            return []
+
+        held = list(self.borrowed.get(when, []))
+        sunday = when - timedelta(days=(when.weekday() + 1) % 7 or 7)
+        governor = None if sunday in self.contested else self.governors.get(sunday)
+        if not governor:
+            return held
+        entry = dict(governor)
+        # Where a rubric has already provided otherwise under one territorial
+        # option, the preceding Sunday's Mass is what the day takes under the
+        # other, and each entry says which it holds under.
+        if held:
+            option = self.otherwise[when]
+            if option is None:
+                return held
+            entry["territorial"] = option
+        held.append(entry)
+        return held
+
 
 def build_1962(ending: int, known: set[str]) -> Year:
     year = Year("roman-1962", ending, known)
@@ -390,11 +537,17 @@ def build_1962(ending: int, known: set[str]) -> Year:
     easter = a.easter
 
     year.put(a.begins, "advent-1", "the fourth Sunday before 25 December")
+    year.governs(a.begins, "advent-1", FERIAL_RULE + "the First Sunday of Advent")
     for n in (2, 3, 4):
         year.put(
             a.begins + timedelta(days=7 * (n - 1)),
             f"advent-{n}",
             f"First Sunday of Advent +{7 * (n - 1)}",
+        )
+        year.governs(
+            a.begins + timedelta(days=7 * (n - 1)),
+            f"advent-{n}",
+            FERIAL_RULE + f"Sunday {n} of Advent",
         )
 
     # The Ember Days of Advent follow the Third Sunday of Advent, which hangs
@@ -413,6 +566,11 @@ def build_1962(ending: int, known: set[str]) -> Year:
     within = sunday_after(a.christmas)
     if within <= date(ending - 1, 12, 31):
         year.put(within, "sunday-within-octave-of-nativity", "the Sunday falling 26-31 December")
+        year.governs(
+            within,
+            "sunday-within-octave-of-nativity",
+            FERIAL_RULE + "the Sunday within the octave of the Nativity",
+        )
     else:
         year.refuse(
             "sunday-within-octave-of-nativity",
@@ -434,11 +592,40 @@ def build_1962(ending: int, known: set[str]) -> Year:
         "Sunday, whose slot the Holy Family occupies, printed for the ferias "
         "of the week that follows it",
     )
+    # The Missal provides otherwise for the ferias before that Sunday, and its
+    # rubric at printed p. 39 states both halves in one sentence: "Diebus
+    # ferialibus a 7 ad 12 ianuarii ante dominicam I post Epiphaniam
+    # occurrentibus, dicitur Missa de festo Epiphaniae; post eandem dominicam
+    # vero Missa de ea." The formulary printed for those later ferias is the
+    # one the Holy Family displaced, at printed p. 40.
+    when = date(ending, 1, 7)
+    while when < first_after:
+        year.borrows(
+            when,
+            "epiphania-domini",
+            "RGMR 299 provided otherwise: the Missal's rubric at printed p. 39 "
+            "gives the Mass of the Epiphany to the ferias falling from 7 to 12 "
+            "January before the first Sunday after the Epiphany",
+        )
+        when += timedelta(days=1)
+    year.governs(
+        first_after,
+        "mass-of-the-first-sunday-after-epiphany",
+        FERIAL_RULE
+        + "the first Sunday after 6 January, whose own formulary the Missal "
+        "prints at printed p. 40 for the ferias of the week that follows it, "
+        "the Holy Family having taken the Sunday",
+    )
     for n in range(2, count + 1):
         year.put(
             first_after + timedelta(days=7 * (n - 1)),
             f"epiphany-{n}",
             f"Sunday {n} after 6 January",
+        )
+        year.governs(
+            first_after + timedelta(days=7 * (n - 1)),
+            f"epiphany-{n}",
+            FERIAL_RULE + f"Sunday {n} after 6 January",
         )
 
     # Septuagesima is stated as Easter -63 and Ash Wednesday as Easter -46, so
@@ -446,6 +633,12 @@ def build_1962(ending: int, known: set[str]) -> Year:
     year.put(a.septuagesima, "septuagesima", "Easter -63")
     year.put(a.sexagesima, "sexagesima", "Easter -56")
     year.put(a.quinquagesima, "quinquagesima", "Easter -49")
+    for sunday, key in (
+        (a.septuagesima, "septuagesima"),
+        (a.sexagesima, "sexagesima"),
+        (a.quinquagesima, "quinquagesima"),
+    ):
+        year.governs(sunday, key, FERIAL_RULE + f"{key.capitalize()} Sunday")
 
     year.put(a.ash_wednesday, "ash-wednesday", "Easter -46")
     for offset, name in ((1, "thursday"), (2, "friday"), (3, "saturday")):
@@ -486,11 +679,17 @@ def build_1962(ending: int, known: set[str]) -> Year:
     for step, name in enumerate(WEEKDAYS, start=1):
         year.put(easter + timedelta(days=step), f"easter-{name}", f"Easter +{step}")
     year.put(easter + timedelta(days=7), "low-sunday", "Easter +7")
+    year.governs(easter + timedelta(days=7), "low-sunday", FERIAL_RULE + "Low Sunday")
     for n in (2, 3, 4, 5):
         year.put(
             easter + timedelta(days=7 + 7 * (n - 1)),
             f"easter-{n}",
             f"Easter +{7 + 7 * (n - 1)}",
+        )
+        year.governs(
+            easter + timedelta(days=7 + 7 * (n - 1)),
+            f"easter-{n}",
+            FERIAL_RULE + f"Sunday {n} after Easter",
         )
 
     # The two Litanies share one formulary, `in Litaniis maioribus et minoribus`,
@@ -523,6 +722,25 @@ def build_1962(ending: int, known: set[str]) -> Year:
     year.put(a.ascension_sunday, "sunday-after-ascension", "Easter +42", thursday_form)
     year.put(a.ascension_sunday, "ascension", "Easter +42", sunday_form)
 
+    # The Missal provides otherwise at In Ascensione Domini, printed p. 352:
+    # "Diebus a feria VI post Ascensionem usque ad feriam VI ante vigiliam
+    # Pentecostes inclusive, dicitur Missa de festo Ascensionis." The rubric is
+    # stated from the Ascension's own day, so it holds only where the Ascension
+    # is kept on the Thursday; where the competent authority has moved it to
+    # the Sunday, these ferias are still governed by the preceding Sunday, and
+    # after that Sunday this repository states nothing at all.
+    for offset in range(40, 48):
+        when = easter + timedelta(days=offset)
+        year.borrows(
+            when,
+            "ascension",
+            "RGMR 299 provided otherwise: the Missal's rubric at printed p. 352 "
+            "gives the Mass of the Ascension to the days from the Friday after "
+            "it to the Friday before the vigil of Pentecost inclusive",
+            territorial=thursday_form,
+            under_the_other_option=sunday_form if offset < 42 else None,
+        )
+
     year.put(easter + timedelta(days=48), "vigil-of-pentecost", "Easter +48")
     year.put(a.pentecost, "pentecost", "Easter +49")
     for step, key in (
@@ -544,6 +762,14 @@ def build_1962(ending: int, known: set[str]) -> Year:
         "mass-of-the-first-sunday-after-pentecost",
         "Easter +56; the Missal's own formulary for the first Sunday after "
         "Pentecost, whose slot Trinity Sunday occupies",
+    )
+    year.governs(
+        a.trinity,
+        "mass-of-the-first-sunday-after-pentecost",
+        FERIAL_RULE
+        + "the first Sunday after Pentecost, whose own formulary the Missal "
+        "prints for the ferias of the week that follows it, Trinity Sunday "
+        "having taken the Sunday",
     )
     corpus_thursday, corpus_sunday = TERRITORIAL_OPTIONS["corpus-christi"]
     year.put(a.corpus_christi_thursday, "corpus-christi", "Easter +60", corpus_thursday)
@@ -575,6 +801,24 @@ def build_1962(ending: int, known: set[str]) -> Year:
         if holy_name.weekday() == 6
         else "general rubric 17 a: no Sunday falls 2-5 January this year, so 2 January",
     )
+    # Where that Sunday is reached, it is the last Sunday before the Epiphany,
+    # and a feria after it has no preceding Sunday whose Mass this index
+    # carries: the Holy Name has taken the day, and the Mass of the dominica it
+    # displaced is not printed. `resolve_ferial` therefore emits nothing for
+    # those ferias, and the refusal is declared here rather than left as a
+    # silent hole in `ferial_formulary`.
+    if holy_name.weekday() == 6 and holy_name < date(ending, 1, 5):
+        year.refuse(
+            "the ferial Mass from "
+            + (holy_name + timedelta(days=1)).isoformat()
+            + " to "
+            + date(ending, 1, 5).isoformat(),
+            "the Most Holy Name of Jesus occupies the Sunday those ferias "
+            "follow, and RGMR 299 gives them the Mass of the preceding "
+            "Sunday, which this calendar index does not carry; borrowing the "
+            "feast's own Mass instead would decide by preference what no "
+            "rubric read here decides",
+        )
 
     # The Ember Days of September follow the third Sunday of September, reckoned
     # by general rubric 19. This is a Sunday of the civil month, not an offset
@@ -593,6 +837,7 @@ def build_1962(ending: int, known: set[str]) -> Year:
         # Slot 2 is the Sunday a transferred Body and Blood of Christ occupies.
         mark = corpus_thursday if slot == 2 else None
         year.put(when, f"pentecost-{slot}", f"slot {slot} of {after} Sundays after Pentecost", mark)
+        year.governs(when, f"pentecost-{slot}", FERIAL_RULE + f"Sunday {slot} after Pentecost")
     for index, ordinal in enumerate(range(7 - resumed, 7)):
         slot = 24 + index
         year.put(
@@ -600,14 +845,31 @@ def build_1962(ending: int, known: set[str]) -> Year:
             f"resumed-epiphany-{ordinal}",
             f"resumption slot {slot} of {after} Sundays after Pentecost",
         )
+        year.governs(
+            a.pentecost + timedelta(days=7 * slot),
+            f"resumed-epiphany-{ordinal}",
+            FERIAL_RULE
+            + f"slot {slot} after Pentecost, which resumes Sunday {ordinal} "
+            "after the Epiphany",
+        )
     year.put(
         a.sunday_before_advent,
         "last-sunday-after-pentecost",
         "the Sunday before the First Sunday of Advent; the twenty-fourth "
         "formulary always keeps the last place",
     )
+    year.governs(
+        a.sunday_before_advent,
+        "last-sunday-after-pentecost",
+        FERIAL_RULE + "the last Sunday after Pentecost",
+    )
     if after == 23:
         year.put(a.sunday_before_advent, "pentecost-23", "slot 23 of 23 Sundays after Pentecost")
+        year.governs(
+            a.sunday_before_advent,
+            "pentecost-23",
+            FERIAL_RULE + "Sunday 23 after Pentecost",
+        )
         year.refuse(
             "the last Sunday after Pentecost",
             "23 Sundays after Pentecost. "
@@ -636,6 +898,8 @@ def build_1962(ending: int, known: set[str]) -> Year:
         (easter, a.pentecost + timedelta(days=6), "paschaltide"),
         (a.trinity, a.last_day, "after-pentecost"),
     ]
+    # Last, because it reads both the placements and the seasons above.
+    year.resolve_ferial(FERIAL_SEASONS_1962)
     return year
 
 
@@ -949,20 +1213,28 @@ def year_document(index: dict, civil_year: int, built: dict[int, Year]) -> dict:
         return seen[where]
 
     days: dict[str, list[dict]] = {}
+    ferial: dict[str, list[dict]] = {}
     when = date(civil_year, 1, 1)
     stop = date(civil_year, 12, 31)
     while when <= stop:
-        _, found = candidates_for(index, built, civil_year, when)
+        owner, found = candidates_for(index, built, civil_year, when)
         if found:
             days[when.isoformat()] = [
                 {"key": entry["key"], "rule": rule_id(entry)}
                 | ({"territorial": entry["territorial"]} if entry.get("territorial") else {})
                 for entry in found
             ]
+        borrowed = owner.ferial.get(when)
+        if borrowed:
+            ferial[when.isoformat()] = [
+                {"key": entry["key"], "rule": rule_id({"origin": "ferial", "rule": entry["rule"]})}
+                | ({"territorial": entry["territorial"]} if entry.get("territorial") else {})
+                for entry in borrowed
+            ]
         when += timedelta(days=1)
 
     name = index["directory"]
-    return {
+    document = {
         "advisory": ADVISORY,
         "calendar": index["calendar"],
         "civil_year": civil_year,
@@ -976,6 +1248,15 @@ def year_document(index: dict, civil_year: int, built: dict[int, Year]) -> dict:
         "schema": SCHEMA,
         "territorial": territorial_block(name),
     }
+    # Carried only by a calendar whose own rubrics appoint one. The reformed
+    # books give a weekday its own formulary and, in Ordinary Time, a choice
+    # among several; nothing there points a weekday at the preceding Sunday, so
+    # that calendar carries no such block rather than an empty one asserting
+    # that it looked and found none.
+    if ferial:
+        document["ferial_formulary"] = ferial
+        document["ferial_formulary_note"] = FERIAL_NOTE
+    return document
 
 
 def spans(runs: list[tuple[date, date, str]]) -> list[dict]:
@@ -1053,22 +1334,32 @@ def coverage_of(index: dict, first: int, last: int) -> dict:
     with_fixed(index, list(range(first, last + 1)))
     masses = index["masses"]
     placed: dict[str, int] = {}
-    total = resolved = empty = unranked = 0
+    total = resolved = empty = unranked = ferial = still_empty = 0
     empty_by_season: dict[str, int] = {}
     for civil_year in range(first, last + 1):
         when = date(civil_year, 1, 1)
         stop = date(civil_year, 12, 31)
         while when <= stop:
             owner, found = candidates_for(index, built, civil_year, when)
+            borrowed = owner.ferial.get(when) or []
             total += 1
+            # Counted apart from `placed` on purpose. `masses_never_placed`
+            # answers "does a rule fix a date for this mass", and a ferial
+            # formulary fixes no date for the mass it points at; folding the
+            # two together would let a mass that nothing ever places stop being
+            # reported because some feria borrows it.
+            if borrowed:
+                ferial += 1
             if found:
                 resolved += 1
                 for entry in found:
                     placed[entry["key"]] = placed.get(entry["key"], 0) + 1
             else:
                 empty += 1
-                season = owner.season_of(when) or "unassigned"
-                empty_by_season[season] = empty_by_season.get(season, 0) + 1
+                if not borrowed:
+                    still_empty += 1
+                    season = owner.season_of(when) or "unassigned"
+                    empty_by_season[season] = empty_by_season.get(season, 0) + 1
             if len(found) > 1:
                 unranked += 1
             when += timedelta(days=1)
@@ -1089,8 +1380,14 @@ def coverage_of(index: dict, first: int, last: int) -> dict:
         "calendar": index["calendar"],
         "dates": total,
         "dates_resolved": resolved,
+        # `dates_unresolved` counts a date with no mass of its own, which is
+        # what a mass index's coverage means. `dates_reaching_no_mass_at_all`
+        # is the number a reader feels: a date with neither a mass of its own
+        # nor a ferial formulary to take.
         "dates_unresolved": empty,
         "dates_unresolved_by_season": dict(sorted(empty_by_season.items())),
+        "dates_reaching_no_mass_at_all": still_empty,
+        "dates_with_a_ferial_formulary": ferial,
         "dates_with_unranked_candidates": unranked,
         "masses": len(masses),
         "masses_never_placed": never,
@@ -1499,6 +1796,10 @@ def run_day(arguments: argparse.Namespace) -> dict:
             {
                 "calendar": index["calendar"],
                 "candidates": candidates,
+                "ferial_formulary": [
+                    decorate(entry, index["masses"][entry["key"]])
+                    for entry in owner.ferial.get(when) or []
+                ],
                 "lectionary": summary["lectionary"],
                 "ranked": len(candidates) <= 1,
                 "season": owner.season_of(when),
@@ -1526,6 +1827,10 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 f"{row['dates_with_unranked_candidates']} carry unranked candidates"
             )
             print(
+                f"  ferial formulary on {row['dates_with_a_ferial_formulary']} dates; "
+                f"{row['dates_reaching_no_mass_at_all']} dates reach no mass at all"
+            )
+            print(
                 f"  masses {row['masses']}: {row['masses_placed']} reachable, "
                 f"{len(row['masses_never_placed'])} never placed"
             )
@@ -1544,7 +1849,10 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             for entry in row["candidates"]:
                 tag = f"  [{entry['territorial']}]" if entry.get("territorial") else ""
                 print(f"    {entry['key']}: {entry['name']}{tag}")
-            if not row["candidates"]:
+            for entry in row.get("ferial_formulary") or []:
+                tag = f"  [{entry['territorial']}]" if entry.get("territorial") else ""
+                print(f"    a feria here takes {entry['key']}: {entry['name']}{tag}")
+            if not row["candidates"] and not row.get("ferial_formulary"):
                 print("    no mass is written for this day")
             if not row["ranked"]:
                 print("    unranked: more than one candidate, and no precedence is stated")
