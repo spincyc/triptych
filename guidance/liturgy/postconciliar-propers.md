@@ -207,13 +207,27 @@ Present each passage as a compact two-tier dossier, following the established te
 
 `The Propers: Detailed Commentary` supplies the evidence and claim-local qualifications behind the synthesis. Treat every inventoried prayer, antiphon, reading, psalm, acclamation, sequence, Preface, insert, blessing, dismissal, or other variable unit in full. For every appointed Scripture passage, move from complete canonical context through direct patristic exegesis to medieval and later saintly reception, explaining the interpretive reasoning and comparing material differences or developments. Do not let liturgical synthesis substitute for passage-level exegesis, and do not use a list of authorities as depth. Organize by the strongest evidenced relationships and ritual movement rather than mechanically repeating the inventory. Each substantial claim has one fullest home.
 
-`The Propers: Notable and Quotable` is a required compact gallery of three to five non-obvious afterlives of wording from the scriptural propers. Each entry pairs a short exact phrase from an appointed biblical text or authorized branch with a documented later use that changes its register or force: cultural, humorous, ironic, idiomatic, literary, political, institutional, visual, scientific, commercial, or another surprising reuse. Identify the proper and branch, later user or work, context and exact locus; then explain the turn in meaning. Prefer a varied gallery and include humorous, ironic, or deliberate reversal where a verified example exists.
+**`The Propers: Notable and Quotable` and `The Propers: Interpretive
+Possibilities` are governed by [the 1962 proper-guide profile](roman-1962-propers.md),
+"Themes, commentary, and exploration",** which owns both contracts for every
+proper guide in either collection: what qualifies as an afterlife and what does
+not, the `Notable-and-quotable audit`, the four-to-six proposal shape, the
+targeted precedent search, the `Interpretive-proposal audit`, and the three
+novelty classifications. The two profiles carried that text verbatim until
+2026-08-01, when the copies were found identical and one owner was named.
 
-Straight exegesis, doctrinal or devotional reception, an independently similar phrase, and a bare quotation, title, motto, artwork, or musical setting do not qualify. Those materials belong in detailed commentary or references unless the later use demonstrably redirects, contests, jokes with, secularizes, or otherwise makes unexpected work of the appointed wording. Verify the verbal link and later context in a primary source or reliable edition; describe an echo as an echo unless dependence is documented; keep protected excerpts brief. The `Notable-and-quotable audit` in `research/scope.md` records both texts and loci, relationship strength, wording check, context, translation and rights status, cultural payoff, limiting qualification, branch, and material negative results. Quote aggregators and attribution sites are leads only. Never invent a weak example to fill the gallery.
+Four deltas apply here, all of them consequences of the postconciliar rite's
+option branches:
 
-Place every original analogy, typological extension, compositional inference, or unsourced cross-element connection in the required `The Propers: Interpretive Possibilities`. This is a discovery section, not a recap. Give four to six substantial proposals. Each must join at least two precisely named appointed elements; explain the connecting mechanism and the theological, intellectual, spiritual, or pastoral fruit; identify what the ordinary element-by-element reading misses; and end with the strongest material limit, alternative, or disconfirming condition. Prefer non-obvious multi-step relations across different ritual moments, literary units, images, verbs, temporal movements, or sacramental actions. Keep optional branches distinct unless the proposal explicitly compares them as alternatives. Reject generic applications, decorative symbolism, uncontrolled numerology, and compressed restatements of the detailed commentary.
-
-Before retaining a proposal, search the leaf's checked corpus and run a targeted precedent search for its distinctive conjunction. Record an `Interpretive-proposal audit` in `research/scope.md` naming the anchors, mechanism, nearest located precedent or analogue, search boundary, and controlling limit. Classify the novelty result as `precedent located`, `near analogue located`, or `not located in the checked corpus`. The last formula is bounded and correctable; never claim that a connection is universally unknown, unprecedented, first, or authored by the model. A daring proposal may remain when the precedent search is negative, but official correlations, independent or semi-continuous strands, authorized branches, evidence, doctrine, literal senses, and historical uncertainty still control it. Attribute no proposal to a cited authority and claim no historical compositional intent.
+- A gallery entry may draw its phrase from an appointed biblical text **or an
+  authorized branch**, and it identifies the branch as well as the proper.
+- The `Notable-and-quotable audit` records the **branch** alongside the other
+  fields that entry names.
+- A proposal keeps **optional branches distinct** unless it explicitly compares
+  them as alternatives.
+- A surviving proposal is controlled additionally by **official correlations,
+  independent or semi-continuous strands, and authorized branches**. Attribute no
+  proposal to a cited authority and claim no historical compositional intent.
 
 ## Terminal appendices
 
