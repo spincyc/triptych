@@ -1,37 +1,251 @@
 /* ===========================================================================
- * The assembly page — what only this page renders
+ * Why this Mass today — the margin, and what it becomes when there is no margin
  * ===========================================================================
  *
- * The palette is `liturgy.css`, which this page shares with the propers page
- * because both are entered from the liturgy section and the section has one
- * colour. Nothing here redeclares a colour variable; everything below is
- * structure, and every colour it uses comes from the six the section set.
+ * This page sets NO TEXT. The date heading, the propers, the passages, the
+ * composed orations and their notes are all set by browser-core.css and
+ * liturgy.css, exactly as they are on the propers page, because they are the
+ * same texts and a reader moving between the two pages must not find that
+ * scripture has changed size on the way. In particular `.passage` is not
+ * touched here: one setting for scripture across all three dynamic pages.
  *
- * The page is an argument, so it is built as one: numbered steps down the left,
- * each step's rubric beside its claim, and every uncertainty in a form the eye
- * cannot skip. Three states are visually distinct on purpose —
- *
- *   settled          the rules reach an answer
- *   conditional      the answer holds unless something this repository cannot
- *                    check turns out to be true
- *   unsettled        the rules, as this repository holds them, do not decide
- *
- * — because a reader who cannot tell them apart has been told the third is the
- * first, which is the failure this whole page exists to avoid.
- *
- * The site declares `color-scheme: only light`, so there is no dark block here.
+ * What this file owns is the annotation: a margin beside the text carrying the
+ * rubric that put it there.
  * ======================================================================== */
 
-/* The derivation is a wide argument rather than a column of prose, so it is not
-   held to the reading measure the propers are set in. */
-.reading-wide { max-width: none; }
+
+/* ---- The annotated column ------------------------------------------------
+   Text and margin are one grid, so a note sits beside the proper it explains
+   rather than after it. The text column is capped at the reading measure and
+   the margin takes a fixed, narrower column: a margin that grew with the
+   viewport would end up competing with the prayer for the reader's eye, which
+   is precisely the failure this layout replaced. */
+
+.annotated {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.annotated-text { min-width: 0; }
+
+@media (min-width: 60rem) {
+  .annotated {
+    grid-template-columns: minmax(0, 1fr) 17rem;
+    align-items: start;
+  }
+  .annotated-text { grid-column: 1; }
+  .annotated > .margin { grid-column: 2; }
+}
+
+/* The reading area on this page carries two columns, so it may run wider than
+   the single measure the propers page wants. */
+.reading-annotated { max-width: none; }
 
 
-/* ---- The standing warning ----------------------------------------------
-   It sits after the derivation, not before the controls: a reader who has an
-   answer on the screen is the reader who needs telling what the answer is
-   worth. Its weight is unchanged — it is still the loudest block on the page —
-   only its place. */
+/* ---- The margin ----------------------------------------------------------
+   A `<details>`, so that with no script at all it is one line a reader may
+   open, and so that on a narrow screen it collapses to that line INSTEAD of
+   stacking its whole contents above the prayer. Wide, the script opens it and
+   the summary is hidden: it reads as a marginal note and not as a control.
+
+   It is quiet on purpose. Nothing in here is an error, and the previous
+   version's boxes — a verdict panel, five numbered steps and nine to eleven
+   bordered rows on every date — were read as errors precisely because they had
+   the weight of one. */
+
+.margin {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--ink-faint);
+  border-left: 2px solid var(--section-row);
+  padding-left: 0.8rem;
+}
+
+.margin-summary {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+  cursor: pointer;
+  padding: 0.15rem 0;
+}
+
+/* Wide, it is a note and not a disclosure. The marker goes with the summary. */
+@media (min-width: 60rem) {
+  .margin-summary { display: none; }
+}
+
+.margin p { margin: 0 0 0.4rem; }
+.margin p:last-child { margin-bottom: 0; }
+
+.margin-lead { color: var(--ink-soft); }
+
+.margin-why { margin: 0 0 0.4rem; }
+
+.margin-heading {
+  margin: 0.7rem 0 0.3rem;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+}
+
+.margin-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.margin-list > li {
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dotted var(--section-row);
+}
+
+.margin-list > li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.margin-name {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+
+.margin-of { color: var(--ink-soft); }
+
+.margin-incipit {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* The rubric number is the load-bearing thing in the margin: it is what makes a
+   claim checkable, so it is set as a citation rather than as decoration. It
+   wraps: "RGMR 306-309, 314-317, 326, 328, 341, 384-387" is one locus, and held
+   on one line it ran off the side of a phone and took the page with it. */
+.locus {
+  display: inline;
+  padding: 0.02rem 0.3rem;
+  font-family: var(--sans);
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--section-ink);
+  background: var(--section-row);
+  border-radius: 3px;
+  overflow-wrap: anywhere;
+}
+
+
+/* ---- The Mass itself ---------------------------------------------------- */
+
+.mass-head { margin: 0.9rem 0 0.2rem; }
+
+.mass-name {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--section-ink);
+}
+
+.mass-subheading {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--section-ink);
+}
+
+.branch-option {
+  margin: 1.6rem 0 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.branch + .branch { border-top: 1px solid var(--section-pale); }
+
+
+/* ---- Ranks and dispositions ----------------------------------------------
+   A badge says what became of a day in one word. It wraps on a narrow screen:
+   a tag that breaks is better than a page that scrolls sideways. */
+
+.tag {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.02rem 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--section-line);
+  border-radius: 3px;
+  color: var(--section-ink);
+  white-space: normal;
+}
+
+.tag-commemorated { background: var(--section-row); }
+.tag-transferred { background: var(--panel); }
+.tag-omitted { color: var(--ink-faint); border-color: var(--section-pale); }
+.tag-reduced { background: var(--section-row); }
+
+
+/* ---- A day the rules do not settle --------------------------------------
+   This one IS a warning, and is the only thing on the page that looks like one.
+   A page where everything is boxed says nothing by boxing something. */
+
+.day-warning {
+  margin: 0.8rem 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--section-line);
+  border-left: 0.28rem solid var(--section-accent);
+  border-radius: 4px;
+  background: var(--section-wash);
+  font-size: 0.88rem;
+}
+
+.day-warning.is-unsettled {
+  border-color: var(--notice);
+  border-left-color: var(--notice);
+  background: var(--notice-bg);
+}
+
+.day-warning h3 {
+  margin: 0 0 0.3rem;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+}
+
+.day-warning.is-unsettled h3 { color: var(--notice); }
+
+.day-warning p { margin: 0 0 0.4rem; }
+
+.day-warning ul { margin: 0; padding-left: 1.1rem; }
+
+
+/* ---- The standing warning ------------------------------------------------
+   It sits after the Mass, not before the controls: a reader who has the day's
+   Mass on the screen is the reader who needs telling what it is worth. */
 
 .standing-warning {
   margin: 2.5rem 0 0;
@@ -57,437 +271,21 @@
 /* The warning and the footer are one closing block, not two separated ones. */
 .standing-warning + .page-footer { margin-top: 1.5rem; }
 
+
+/* ---- The date field ----------------------------------------------------- */
+
 .field input[type="date"] {
   width: 100%;
-  padding: 0.5rem 0.6rem;
+  padding: 0.42rem 0.5rem;
   font: inherit;
+  font-size: 0.9rem;
   color: var(--ink);
   background: var(--panel);
   border: 1px solid var(--section-line);
   border-radius: 4px;
 }
 
-.field input[type="date"]:hover { border-color: var(--section-accent); }
-
-
-/* ---- Where the date falls ---------------------------------------------- */
-
-.day-head {
-  margin: 0 0 1.25rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 2px solid var(--section-accent);
-}
-
-.day-head h2 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 1.7rem;
-  line-height: 1.2;
-  color: var(--section-ink);
-}
-
-.day-facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.9rem;
-  margin: 0.5rem 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0.86rem;
-  color: var(--ink-soft);
-}
-
-.day-facts b {
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-right: 0.3rem;
-}
-
-
-/* ---- A territorial branch ---------------------------------------------- */
-
-.branch {
-  margin: 0 0 2rem;
-  padding: 0.9rem 1.1rem 1.1rem;
-  background: var(--panel);
-  border: 1px solid var(--section-pale);
-  border-radius: 6px;
-}
-
-.branch-head {
-  margin: 0 0 0.9rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid var(--section-row);
-}
-
-.branch-head h3 {
-  margin: 0;
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--section-ink);
-}
-
-.branch-head p { margin: 0.3rem 0 0; font-size: 0.86rem; color: var(--ink-soft); }
-
-
-/* ---- The five steps ----------------------------------------------------- */
-
-.step { margin: 0 0 1.4rem; }
-
-.step:last-child { margin-bottom: 0; }
-
-.step-head {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  margin: 0 0 0.5rem;
-}
-
-.step-number {
-  flex: 0 0 auto;
-  min-width: 1.6rem;
-  height: 1.6rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--section-accent);
-  color: #fff;
-  font-family: var(--sans);
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.step-head h4 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 1.12rem;
-  font-weight: 600;
-  color: var(--section-ink);
-}
-
-.step-lede {
-  margin: 0 0 0.7rem 2.2rem;
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-}
-
-.step-body { margin-left: 2.2rem; }
-
-
-/* ---- A candidate, a loser, an oration: one row form --------------------- */
-
-.rows { margin: 0; padding: 0; list-style: none; }
-
-.row-item {
-  margin: 0 0 0.5rem;
-  padding: 0.55rem 0.7rem;
-  background: var(--section-wash);
-  border-left: 3px solid var(--section-line);
-  border-radius: 0 4px 4px 0;
-}
-
-.row-item:last-child { margin-bottom: 0; }
-
-.row-item.is-winner {
-  background: var(--section-row);
-  border-left-color: var(--section-accent);
-}
-
-.row-item.is-uncertain { border-left-style: dashed; }
-
-.row-title {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0 0.5rem;
-  font-weight: 600;
-}
-
-.row-title .name { color: var(--ink); }
-
-.row-place {
-  font-family: var(--sans);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--section-ink);
-  white-space: nowrap;
-}
-
-.row-why { margin: 0.2rem 0 0; font-size: 0.86rem; color: var(--ink-soft); }
-
-.row-meta {
-  margin: 0.2rem 0 0;
-  font-size: 0.78rem;
-  color: var(--ink-faint);
-}
-
-/* The rubric number is the load-bearing thing on the page: it is what makes a
-   claim checkable. It is set as a citation, not as decoration. */
-.locus {
-  display: inline-block;
-  padding: 0.02rem 0.34rem;
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--section-ink);
-  background: var(--section-row);
-  border-radius: 3px;
-  /* A locus is not always short: "RGMR 306-309, 314-317, 326, 328, 341,
-     384-387" is one of them. Held on one line it ran off the side of a phone
-     and took the page with it, so it wraps, at its own commas where it can. */
-  overflow-wrap: anywhere;
-}
-
-.latin {
-  margin: 0.4rem 0 0;
-  font-style: italic;
-  font-size: 0.86rem;
-  color: var(--ink-soft);
-}
-
-
-/* ---- Dispositions ------------------------------------------------------- */
-
-.tag {
-  display: inline-block;
-  padding: 0.04rem 0.42rem;
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  border-radius: 3px;
-  white-space: nowrap;
-  border: 1px solid var(--section-line);
-  color: var(--section-ink);
-  background: var(--panel);
-}
-
-.tag-commemorated { background: var(--section-row); }
-.tag-transferred { background: var(--panel); }
-.tag-omitted { color: var(--ink-faint); border-color: var(--section-pale); }
-.tag-reduced { background: var(--section-row); }
-.tag-source { text-transform: none; letter-spacing: 0.04em; font-weight: 600; }
-
-
-/* ---- States: conditional and unsettled ---------------------------------- */
-
-.verdict {
-  margin: 0 0 0.9rem;
-  padding: 0.6rem 0.8rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  border: 1px solid var(--section-line);
-  background: var(--section-wash);
-}
-
-.verdict h5 {
-  margin: 0 0 0.25rem;
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.verdict-settled h5 { color: var(--section-ink); }
-
-.verdict-conditional {
-  border-left: 0.28rem solid var(--section-accent);
-  border-style: dashed solid solid dashed;
-}
-
-.verdict-conditional h5 { color: var(--section-ink); }
-
-.verdict-unsettled {
-  background: var(--notice-bg);
-  border-color: var(--notice);
-  border-left: 0.28rem solid var(--notice);
-}
-
-.verdict-unsettled h5 { color: var(--notice); }
-
-.verdict ul { margin: 0.4rem 0 0; padding-left: 1.1rem; }
-
-.verdict li { margin-bottom: 0.3rem; }
-
-
-/* ---- The formulary ------------------------------------------------------ */
-
-.formulary { margin-top: 0.4rem; }
-
-.formulary-list { margin: 0; padding: 0; list-style: none; }
-
-.formulary-item {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0 0.5rem;
-  padding: 0.28rem 0;
-  border-bottom: 1px solid var(--section-row);
-}
-
-.formulary-item:last-child { border-bottom: none; }
-
-.formulary-slot {
-  flex: 0 0 11rem;
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--section-ink);
-}
-
-.formulary-detail { flex: 1 1 14rem; font-size: 0.86rem; color: var(--ink-soft); }
-
-/* Which year of the lectionary the reading beside it belongs to. */
-.formulary-cycle {
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--section-ink);
-}
-
-/* ---- Subordination -------------------------------------------------------
-   The ranking is the content. A day can carry a commemoration under each of the
-   day's own orations, and a flat list of them says nothing about which is the
-   Mass and which is said under it. So a subordinate oration is a list inside the
-   slot it is said in: one level of nesting, marked by a rule down its left edge
-   and by its own rank badge, and never by a number that would imply an order the
-   rubrics do not state.
-
-   One level, and only one. Deeper nesting stops being legible on a phone, and
-   the rubrics themselves stop at three orations. */
-
-.subordinates {
-  flex: 1 1 100%;
-  margin: 0.3rem 0 0.15rem;
-  padding: 0 0 0 0.75rem;
-  list-style: none;
-  border-left: 2px solid var(--section-accent);
-}
-
-.subordinates-rule {
-  margin: 0 0 0.3rem;
-  font-style: italic;
-}
-
-.formulary-item.is-subordinate,
-.formulary-item.is-silent {
-  display: block;
-  padding: 0.35rem 0 0.4rem;
-  border-bottom: 1px dotted var(--section-row);
-}
-
-.formulary-item.is-subordinate:last-child,
-.formulary-item.is-silent:last-child { border-bottom: none; }
-
-.subordinate-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.2rem 0.45rem;
-}
-
-.subordinate-of { font-weight: 600; color: var(--ink); }
-
-.subordinate-words { margin: 0.15rem 0 0; font-size: 0.86rem; color: var(--ink-soft); }
-
-/* A day the calendar keeps and the corpus has not transcribed. It reads as the
-   stated fact it is, and deliberately not as a failure: no red, no "error", and
-   no drawn-out list of empty slots that would tell a reader how many parts this
-   Mass has when this repository does not know. */
-.formulary-uncompiled {
-  margin: 0.4rem 0 0.6rem;
-  padding: 0.7rem 0.85rem;
-  background: var(--section-wash);
-  border: 1px dashed var(--section-line);
-  border-radius: 4px;
-}
-
-.formulary-uncompiled h5 {
-  margin: 0 0 0.25rem;
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-
-.formulary-uncompiled p {
-  margin: 0 0 0.4rem;
-  font-size: 0.86rem;
-  color: var(--ink-soft);
-}
-
-.formulary-uncompiled p:last-child { margin-bottom: 0; }
-
-.formulary-heading {
-  margin: 0.9rem 0 0.3rem;
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--section-ink);
-}
-
-/* Which celebration these texts are of, and by what rule — said once, above
-   them, rather than repeated against each. */
-.formulary-why {
-  margin: 0 0 0.5rem;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-}
-
-
-/* ---- The closing apparatus ---------------------------------------------- */
-
-.apparatus {
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--section-pale);
-}
-
-.apparatus h3 {
-  margin: 0 0 0.4rem;
-  font-family: var(--sans);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-
-.apparatus ul { margin: 0 0 1rem; padding-left: 1.1rem; font-size: 0.86rem; color: var(--ink-soft); }
-
-.apparatus li { margin-bottom: 0.3rem; }
-
-.apparatus p { margin: 0 0 0.8rem; font-size: 0.86rem; color: var(--ink-soft); }
-
-
-@media (max-width: 34rem) {
-  .step-lede, .step-body { margin-left: 0; }
-  .formulary-slot { flex-basis: 100%; }
-  /* A row place and a disposition tag are short enough to keep on one line on
-     a desktop, which is why they say so; on a narrow screen one unbreakable
-     phrase is enough to scroll the whole page sideways, and a tag that wraps
-     is better than a page that does. */
-  .row-place, .tag { white-space: normal; }
-  /* The slot label takes its own line, so a nested oration keeps its indent
-     instead of spending it on a column that no longer fits. */
-  .subordinates { padding-left: 0.55rem; }
+.field input[type="date"]:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
 }

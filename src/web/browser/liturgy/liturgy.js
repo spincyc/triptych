@@ -151,29 +151,12 @@
     kind: null,
     masses: [],
     massKey: null,
-    // The language the composed propers are asked for. SOURCE_LANGUAGE means
+    // The language the composed propers are asked for. T.SOURCE_LANGUAGE means
     // "as the missal prints them", which is the only setting guaranteed to
     // have a text behind it for every proper.
     orations: null,
     orationLanguages: []
   };
-
-  // The missals hold their orations in Latin; a translation is an addition to
-  // that, never a replacement of it.
-  const SOURCE_LANGUAGE = 'la';
-  const LANGUAGE_NAMES = {
-    la: 'Latin',
-    en: 'English',
-    fr: 'French',
-    de: 'German',
-    es: 'Spanish',
-    it: 'Italian',
-    pl: 'Polish'
-  };
-
-  function languageName(code) {
-    return LANGUAGE_NAMES[code] || String(code || '').toUpperCase();
-  }
 
   /* ------------------------------------------------------------------------
    * Elements
@@ -325,83 +308,17 @@
     return state.masses.find((mass) => mass.key === state.massKey) || null;
   }
 
-  /**
-   * Every language this missal can render its composed propers in, with how
-   * much of the missal each one actually reaches.
-   *
-   * The coverage is counted rather than assumed. A translation set that reaches
-   * a tenth of the orations is a legitimate state here — the rights position
-   * differs sharply between the two missals and partial coverage is expected to
-   * be permanent, not temporary — so the reader is owed the figure instead of a
-   * dropdown that implies completeness.
-   */
-  function orationLanguagesOf(structure) {
-    let composed = 0;
-    const held = new Map();
-    for (const mass of (structure && structure.masses) || []) {
-      for (const proper of mass.propers || []) {
-        if (!proper.text) continue;
-        composed += 1;
-        for (const translation of proper.translations || []) {
-          if (!translation || !translation.lang || !translation.text) continue;
-          held.set(translation.lang, (held.get(translation.lang) || 0) + 1);
-        }
-      }
-    }
-    const languages = [{ lang: SOURCE_LANGUAGE, held: composed, composed: composed }];
-    for (const lang of Array.from(held.keys()).sort()) {
-      languages.push({ lang: lang, held: held.get(lang), composed: composed });
-    }
-    return languages;
-  }
-
   function fillOrationsSelect() {
     T.fillSelect(orationsSelect, state.orationLanguages.map((entry) => ({
       value: entry.lang,
       // The source language needs no coverage figure: it is what the missal
       // prints, so it is complete by definition. Every other entry states how
       // far it reaches, because none of them reaches everywhere.
-      label: entry.lang === SOURCE_LANGUAGE
-        ? languageName(entry.lang) + ', as printed'
-        : languageName(entry.lang) + ' — ' + entry.held + ' of ' + entry.composed,
+      label: T.orationLanguageLabel(entry),
       title: entry.lang
     })));
     orationsSelect.disabled = state.orationLanguages.length < 2;
     if (state.orations) orationsSelect.value = state.orations;
-  }
-
-  /**
-   * The composed text to show, and what to say about it.
-   *
-   * A proper with no translation in the chosen language is the ordinary case,
-   * not an error — but it must not silently fall back to Latin and let the
-   * reader believe they are looking at the English they asked for. The absence
-   * is stated where the text would have been.
-   */
-  function orationFor(proper) {
-    const wanted = state.orations || SOURCE_LANGUAGE;
-    if (wanted === SOURCE_LANGUAGE) {
-      return { text: proper.text, lang: SOURCE_LANGUAGE, missing: false, source: null };
-    }
-    const found = (proper.translations || []).find(
-      (translation) => translation && translation.lang === wanted && translation.text
-    );
-    if (found) {
-      return {
-        text: found.text,
-        lang: wanted,
-        missing: false,
-        source: found.source_id || found.source || null,
-        notice: found.notice || null
-      };
-    }
-    return {
-      text: proper.text,
-      lang: SOURCE_LANGUAGE,
-      missing: true,
-      wanted: wanted,
-      source: null
-    };
   }
 
   function massIndex() {
@@ -427,181 +344,13 @@
       ['mass', state.massKey],
       ['bible', state.bibleId],
       // Only when it is not the default, so an ordinary link stays short.
-      ['orations', state.orations === SOURCE_LANGUAGE ? null : state.orations]
+      ['orations', state.orations === T.SOURCE_LANGUAGE ? null : state.orations]
     ]);
   }
 
   /* ------------------------------------------------------------------------
    * Rendering
    * --------------------------------------------------------------------- */
-
-  /**
-   * One year of a cycle-varying proper: its citations and its own words.
-   *
-   * A cycle is an object and not a list of citations, because a proper may vary
-   * in kind as well as in text — an acclamation composed one year and
-   * scriptural the next — so each year carries both. Every reader of `cycles`
-   * on this page goes through here, so the shape is asserted in one place
-   * rather than assumed in four.
-   */
-  function cycleOf(proper, key) {
-    const held = (proper && proper.cycles && proper.cycles[key]) || null;
-    if (!held) return { citations: [], text: null };
-    return { citations: held.citations || [], text: held.text || null };
-  }
-
-  /** The years a proper actually varies over, in order, each carrying something. */
-  function cycleKeysOf(proper) {
-    return Object.keys((proper && proper.cycles) || {})
-      .sort()
-      .filter((key) => {
-        const cycle = cycleOf(proper, key);
-        return cycle.citations.length || cycle.text;
-      });
-  }
-
-  /** Every citation a Mass carries, including each cycle's. */
-  function citationsOf(mass) {
-    const found = [];
-    for (const proper of (mass && mass.propers) || []) {
-      for (const citation of proper.citations || []) found.push(citation);
-      for (const key of cycleKeysOf(proper)) {
-        for (const citation of cycleOf(proper, key).citations) found.push(citation);
-      }
-    }
-    return found;
-  }
-
-  /** A cycle's readable name: "Year A" for the Sunday cycles, else the key. */
-  function cycleLabel(key) {
-    return /^[A-C]$/.test(key) ? 'Year ' + key : 'Cycle ' + key;
-  }
-
-  function renderProper(proper, bible, fragments) {
-    const section = T.el('section', 'proper');
-
-    const heading = T.el('h3', 'proper-name', proper.name || 'Proper');
-    // "Vigil Mass", "Mass at Dawn" — the form this proper belongs to, where a
-    // day carries more than one.
-    if (proper.form) heading.appendChild(T.el('span', 'proper-form', proper.form));
-
-    // The reference belongs beside the name, not on a line of its own: one
-    // heading says what this proper is and where it comes from. Segments stay
-    // together in that one reference, since they are one passage.
-    const refs = (proper.citations || [])
-      .map((citation) => citation.ref)
-      .filter(Boolean);
-    if (refs.length) {
-      heading.appendChild(T.el('span', 'proper-ref', refs.join('; ')));
-    }
-    section.appendChild(heading);
-
-    // The incipit is the passage's own opening words, so printing it above the
-    // passage says the same thing twice. It earns its place only when the words
-    // themselves are not shown.
-    const showsWords = Boolean(proper.text) || refs.length > 0;
-    if (proper.incipit && !showsWords) {
-      section.appendChild(T.el('p', 'proper-incipit', proper.incipit));
-    }
-
-    // Composed propers — Collects, Secrets, Postcommunions — are not scripture
-    // and have no citation to resolve. Where the structure file carries the
-    // text, it is shown; where it carries only the incipit, that is said, once
-    // and quietly. It is not a failure: the corpus indexes these propers by
-    // their opening words and does not hold their bodies.
-    if (proper.text) {
-      const oration = orationFor(proper);
-      const composed = T.el('p', 'composed');
-      const label = oration.missing
-        ? 'Composed text — not scripture · ' + languageName(SOURCE_LANGUAGE)
-        : 'Composed text — not scripture' +
-          (oration.lang === SOURCE_LANGUAGE ? '' : ' · ' + languageName(oration.lang));
-      composed.appendChild(T.el('span', 'composed-label', label));
-      composed.appendChild(document.createTextNode(oration.text));
-      composed.lang = oration.lang;
-      section.appendChild(composed);
-
-      // Said where the English would have been, not in a footnote: a reader who
-      // asked for English and was handed Latin needs to know that at the text.
-      if (oration.missing) {
-        section.appendChild(
-          T.el('p', 'composed-note',
-            'No ' + languageName(oration.wanted) + ' translation is recorded for ' +
-            'this proper. The Latin the missal prints is shown instead.')
-        );
-      }
-      // Whose English it is. A translation is someone's expression, and the
-      // reader is entitled to know whose before weighing it.
-      if (oration.source) {
-        section.appendChild(
-          T.el('p', 'composed-note', 'Translation: ' + oration.source)
-        );
-      }
-      if (oration.notice) {
-        section.appendChild(T.el('p', 'composed-note', oration.notice));
-      }
-    } else if (proper.incipit && proper.source === 'composed') {
-      section.appendChild(
-        T.el('p', 'composed-note',
-          'Composed text — not scripture. The corpus carries its incipit only.')
-      );
-    }
-
-    const numbering = (state.structure && state.structure.numbering) || null;
-    const citations = proper.citations || [];
-    for (const citation of citations) {
-      section.appendChild(
-        T.renderCitation(citation, bible, fragments, numbering, { showRef: false })
-      );
-    }
-
-    // A cycle-varying proper reads differently in each year of the lectionary.
-    // The structure file keeps the years apart, and so does this: merging them
-    // would hand the reader three readings with no way to tell which is this
-    // year's. A year may carry composed words instead of, or beside, a reading.
-    const cycleKeys = cycleKeysOf(proper);
-    for (const key of cycleKeys) {
-      const cycle = cycleOf(proper, key);
-      const block = T.el('div', 'cycle');
-      block.appendChild(T.el('h4', 'cycle-name', cycleLabel(key)));
-      if (cycle.text) {
-        const composed = T.el('p', 'composed');
-        composed.appendChild(T.el('span', 'composed-label', 'Composed text — not scripture'));
-        composed.appendChild(document.createTextNode(cycle.text));
-        composed.lang = SOURCE_LANGUAGE;
-        block.appendChild(composed);
-      }
-      for (const citation of cycle.citations) {
-        block.appendChild(T.renderCitation(citation, bible, fragments, numbering));
-      }
-      section.appendChild(block);
-    }
-
-    if (!proper.text && !proper.incipit && !citations.length && !cycleKeys.length) {
-      section.appendChild(
-        T.notice('this proper carries neither a citation nor a text.')
-      );
-    }
-
-    return section;
-  }
-
-  /**
-   * Does this Mass carry anything to read?
-   *
-   * Most of the sanctoral is presently a registry entry and a placeholder
-   * proper: the calendar knows the day, and the propers for it have not been
-   * compiled yet. That is worth saying once, plainly, rather than repeating
-   * "this proper carries neither a citation nor a text" down an empty page.
-   */
-  function hasContent(mass) {
-    for (const proper of (mass && mass.propers) || []) {
-      if (proper.text || proper.incipit) return true;
-      if ((proper.citations || []).length) return true;
-      if (cycleKeysOf(proper).length) return true;
-    }
-    return false;
-  }
 
   function renderMass(mass, bible, fragments, chapterCount) {
     reading.appendChild(T.el('h2', 'entry-title', mass.name || mass.key));
@@ -619,17 +368,17 @@
     );
 
     const propers = mass.propers || [];
-    const empty = !hasContent(mass);
+    const empty = !T.massHasContent(mass);
     if (empty) {
-      reading.appendChild(
-        T.el('p', 'placeholder',
-          'This missal keeps the day, and its structure file carries no propers ' +
-          'for it yet' + (mass.registry ? ' (registry ' + mass.registry + ')' : '') +
-          '. Nothing is hidden here: there is nothing compiled to show.')
-      );
+      // One line, and the same line the assembly page shows, because it is the
+      // same fact about the same Mass.
+      reading.appendChild(T.uncompiledNote(mass));
     } else {
       for (const proper of propers) {
-        reading.appendChild(renderProper(proper, bible, fragments));
+        reading.appendChild(T.renderProper(proper, bible, fragments, {
+          numbering: (state.structure && state.structure.numbering) || null,
+          orations: state.orations
+        }));
       }
     }
 
@@ -650,7 +399,7 @@
     const token = T.beginRender();
     reading.setAttribute('aria-busy', 'true');
 
-    const held = await T.fetchFragments(bible, citationsOf(mass));
+    const held = await T.fetchFragments(bible, T.citationsOf(mass));
 
     // A later selection may have overtaken this one while fragments were in
     // flight; the newest render wins.
@@ -751,9 +500,9 @@
     // absent from the other. A selection that the new missal cannot honour
     // falls back to what it prints rather than silently showing Latin under an
     // English label.
-    state.orationLanguages = orationLanguagesOf(loaded.file);
+    state.orationLanguages = T.orationLanguagesOf(loaded.file);
     if (!state.orationLanguages.some((entry) => entry.lang === state.orations)) {
-      state.orations = SOURCE_LANGUAGE;
+      state.orations = T.SOURCE_LANGUAGE;
     }
     fillOrationsSelect();
 
@@ -928,7 +677,7 @@
     const hash = T.readHash();
     // Settled before the first missal loads, so the first render already
     // honours it; setMissal drops it if that missal cannot offer it.
-    state.orations = hash.get('orations') || SOURCE_LANGUAGE;
+    state.orations = hash.get('orations') || T.SOURCE_LANGUAGE;
     const wantedBible = hash.get('bible');
     state.bibleId = state.bibles.some((bible) => bible.id === wantedBible)
       ? wantedBible
@@ -986,7 +735,7 @@
   T.onArrowStep((delta) => step(delta, { moveFocus: false }));
 
   T.onHashChange((hash) => {
-    const wantedOrations = hash.get('orations') || SOURCE_LANGUAGE;
+    const wantedOrations = hash.get('orations') || T.SOURCE_LANGUAGE;
     if (state.orationLanguages.some((entry) => entry.lang === wantedOrations)) {
       state.orations = wantedOrations;
     }

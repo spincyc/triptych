@@ -7,22 +7,19 @@
 <!-- The shared machinery, then the liturgy section's colour, then what only
      this page renders. All three are local; the page makes no external request
      of any kind. `liturgy.css` is shared with the propers page deliberately:
-     it is the section's palette, and forking it would let the two pages drift
-     apart in colour. -->
+     it is the section's palette and the setting of a proper, and forking it
+     would let two pages that show the same texts drift apart. -->
 <link rel="stylesheet" href="../shared/browser-core.css">
 <link rel="stylesheet" href="liturgy.css">
 <link rel="stylesheet" href="day.css">
 </head>
 <body>
-<a class="skip-link" href="#reading">Skip to the derivation</a>
+<a class="skip-link" href="#reading">Skip to the Mass</a>
 
-<!-- The title, the date, and the answer. What the page is and what it is not
-     are said below the derivation, whole and not trimmed: the reader arriving
-     at a page called "why this Mass today" wants the day's Mass and the reason,
-     and three paragraphs of preface before the date field is a page that
-     obscures its own answer. Nothing goes uncaveated by the move — the verdict
-     that opens every derivation states that this is not an Ordo, at the
-     answer, which is where a caution is actually read. -->
+<!-- The title, then the controls, then the Mass. This page shows the same thing
+     the propers page shows — the text of a Mass — and differs only in how the
+     Mass is reached, and in what it says in the margin about why this one.
+     Everything else waits below it. -->
 <header class="page-header">
   <h1><span class="page-mark" aria-hidden="true">℣</span>Why this Mass today</h1>
 </header>
@@ -44,6 +41,23 @@
     </select>
   </div>
 
+  <!-- The same two text controls the propers page carries, because this page
+       shows the same two kinds of text: the bible governs what is quoted, the
+       orations control governs what was composed. -->
+  <div class="field">
+    <label for="bible-select">Scripture</label>
+    <select id="bible-select" name="bible" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="orations-select">Orations</label>
+    <select id="orations-select" name="orations" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
   <div class="field field-steps">
     <span class="field-legend" id="step-legend">Day</span>
     <div class="steps" role="group" aria-labelledby="step-legend">
@@ -58,13 +72,13 @@
   </div>
 </form>
 
-<main id="reading" class="reading reading-wide" tabindex="-1" aria-busy="false">
+<main id="reading" class="reading reading-annotated" tabindex="-1" aria-busy="false">
   <p class="placeholder">Loading the calendar…</p>
 </main>
 
-<!-- Said once, whole, and never repeated in small print elsewhere. Everything
-     on this page is derived from computed dates and a transcribed table. The
-     Ordo of the place is the answer; this is a way of understanding it. -->
+<!-- Said once, whole, below the Mass it qualifies. Everything on this page is
+     derived from computed dates and a transcribed table; the Ordo of the place
+     is the answer, and this is a way of understanding it. -->
 <aside class="standing-warning" role="note">
   <h2>This is a finding aid, not an Ordo</h2>
   <p>
@@ -80,13 +94,13 @@
 
 <footer class="page-footer">
   <p class="lede">
-    Pick a date and a missal, and see why that day's Mass is that day's Mass:
-    which days fell on the date, which one took it, and which of the rest
-    survive as the second and third collects — with the numbered rubric behind
-    every step.
+    Pick a date and a missal, and read that day's Mass: the text of each proper,
+    with the rubric that put it there in the margin beside it — which days fell
+    on the date, which one took it, and which of the rest survive as the second
+    and third collects.
   </p>
   <p>
-    To read the Mass itself rather than the reasoning behind it, see
+    To choose a Mass rather than a date, see
     <a href="index.html">the propers of the Mass</a>.
   </p>
 </footer>

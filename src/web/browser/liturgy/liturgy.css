@@ -93,3 +93,24 @@ body:not(:has(> .site-header)) {
 .elision {
   color: var(--ink-faint);
 }
+
+/* A day the calendar keeps whose propers this repository has not transcribed.
+   One line for the Mass, on both pages, and deliberately not a box: 337 of the
+   1962 missal's 460 masses are in this state, and at that density anything with
+   a border reads as a page full of errors. Nothing has failed, so nothing here
+   is coloured like a failure — it is a small grey sentence, and the reader is
+   told the Mass is appointed rather than left to think it is short. */
+.uncompiled {
+  margin: 0.6rem 0;
+  font-size: 0.88rem;
+  color: var(--ink-faint);
+}
+
+.uncompiled-mark {
+  margin-right: 0.45rem;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}

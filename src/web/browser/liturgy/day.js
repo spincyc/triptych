@@ -1,31 +1,35 @@
 /* ===========================================================================
- * The assembly page — a date, a missal, and the argument between them
+ * Why this Mass today — the day's Mass, with the reasoning in the margin
  * ===========================================================================
  *
- * This file renders. It decides nothing. Every rank, disposition, ceiling and
- * rubric number below arrives from `assembly-model.js`, which reads them out of
- * the rubrics file the repository tracks; the same model is run under node by
- * `calendar-rubrics check` against the solved cases, so what a reader sees here
- * is what the check holds.
+ * THIS PAGE SHOWS THE TEXT. It is the propers page reached by a different
+ * route: there a reader chooses a Mass, here a reader chooses a date and the
+ * rubrics choose the Mass. What is on the screen in both cases is the same
+ * thing — the propers, in order, in the reader's translation, set by the same
+ * shared code in ../shared/browser-core.js.
  *
- * WHAT IT FETCHES, AND WHY IT IS SO LITTLE
+ * The rubrical account is why the reader is being shown THAT Mass rather than
+ * another, so it belongs beside the text and not in front of it. It renders
+ * into the margin: `<details class="margin">` beside each proper it explains.
+ * The page used to render that reasoning as the body — a verdict box, five
+ * numbered step blocks and nine to eleven bordered rows on every date, before
+ * a word of any prayer — and it read as a wall of error boxes.
+ *
+ * NOTHING IS DECIDED HERE. Every rank, disposition, ceiling and rubric number
+ * arrives from `assembly-model.js`, which reads them out of the rubrics file
+ * the repository tracks; `calendar-rubrics check` runs that same model under
+ * node against the solved cases, so what a reader sees is what the check holds.
  *
  *   structure/rubrics/index.json      which missals have rules   ~1 KB
  *   structure/rubrics/<missal>.json   the rules themselves       ~45-75 KB
  *   structure/calendar/<missal>/<year>.json   the day's candidates   ~30 KB
+ *   structure/propers/<missal>.json   the texts                  ~1 MB
  *
- * Three small files, and the argument is complete. The formulary is a fourth
- * fetch, deferred: `structure/propers/<missal>.json` is most of a megabyte and
- * the reasoning does not need it, so the five decisions render first and the
- * propers are appended when they land. A reader who never scrolls that far
- * never pays for them.
- *
- * Nothing is stored per day. An assembly for every date of every year in both
- * missals would be some seventy-four thousand objects, and correcting one
- * rubric would invalidate all of them at once.
+ * The propers file is the big one and is fetched last, after the day is named,
+ * so the reader is not looking at nothing while a megabyte lands.
  *
  *   ?data=<root>        where the corpus lives (default ../browse)
- *   #date=<YYYY-MM-DD>&missal=<id>    the current selection; shareable
+ *   #date=<YYYY-MM-DD>&missal=<id>&bible=<id>&orations=<lang>
  * ======================================================================== */
 
 'use strict';
@@ -49,16 +53,27 @@
     thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday'
   };
 
+  // Above this the margin is a margin. Below it there is no room for one, and
+  // what it becomes is decided in `openMargins` rather than left to reflow.
+  const WIDE = '(min-width: 60rem)';
+
   const state = {
     missals: [],
     missalId: null,
     rubrics: null,
     date: null,
-    derived: null
+    derived: null,
+    bibles: [],
+    bibleId: null,
+    structure: null,
+    orations: null,
+    orationLanguages: []
   };
 
   const dateInput = document.getElementById('date-input');
   const missalSelect = document.getElementById('missal-select');
+  const bibleSelect = document.getElementById('bible-select');
+  const orationsSelect = document.getElementById('orations-select');
   const prevButton = document.getElementById('prev-button');
   const nextButton = document.getElementById('next-button');
   const todayButton = document.getElementById('today-button');
@@ -101,6 +116,37 @@
   }
 
   /* ------------------------------------------------------------------------
+   * The margin
+   *
+   * A margin is a `<details>` so that it works with no script at all and so
+   * that on a narrow screen it is one line the reader may open, sitting AFTER
+   * the text it annotates rather than before it. Stacking it above the text is
+   * what the wide layout is there to avoid, and a narrow screen must not undo
+   * that by another route.
+   *
+   * On a wide screen the disclosure is opened and its summary hidden, so it
+   * reads as a marginal note and not as a control. That is done here rather
+   * than in CSS because `details` hides its own content when it is closed, and
+   * no stylesheet can overrule that.
+   * --------------------------------------------------------------------- */
+
+  function margin(summaryText) {
+    const node = document.createElement('details');
+    node.className = 'margin';
+    const summary = document.createElement('summary');
+    summary.className = 'margin-summary';
+    summary.textContent = summaryText;
+    node.appendChild(summary);
+    return node;
+  }
+
+  function openMargins(root) {
+    const wide = window.matchMedia ? window.matchMedia(WIDE).matches : true;
+    const found = root.querySelectorAll ? root.querySelectorAll('details.margin') : [];
+    for (const one of found) one.open = wide;
+  }
+
+  /* ------------------------------------------------------------------------
    * Discovery
    * --------------------------------------------------------------------- */
 
@@ -108,10 +154,7 @@
     const file = await T.loadJSON(RUBRICS_INDEX);
     const rows = (file && file.calendars) || [];
     // The short name for the control and the edition for the hover, the same
-    // two names the propers page shows and out of the same calendar source, so
-    // a reader moving between the pages is choosing between the same two words.
-    // The full identification is not lost: the derivation prints it as the
-    // first fact of every day.
+    // two names the propers page shows and out of the same calendar source.
     return rows.map((row) => ({
       id: row.calendar,
       label: row.edition_short || row.edition || T.titleCase(row.calendar),
@@ -138,274 +181,44 @@
     return attempt;
   }
 
+  function currentMissal() {
+    return state.missals.find((one) => one.id === state.missalId) || null;
+  }
+
+  function currentBible() {
+    return state.bibles.find((one) => one.id === state.bibleId) || null;
+  }
+
   /* ------------------------------------------------------------------------
-   * Rendering: the head
+   * The head: what day this is
    * --------------------------------------------------------------------- */
 
-  function renderHead(derived) {
-    const head = T.el('div', 'day-head');
-    head.appendChild(T.el('h2', null, longDate(derived.date, derived.weekday)));
+  function renderHead(derived, bible) {
+    reading.appendChild(T.el('h2', 'entry-title', longDate(derived.date, derived.weekday)));
 
-    const facts = T.el('ul', 'day-facts');
-    function fact(label, value) {
-      if (value === null || value === undefined || value === '') return;
-      const item = T.el('li');
-      item.appendChild(T.el('b', null, label));
-      item.appendChild(document.createTextNode(String(value)));
-      facts.appendChild(item);
-    }
-    fact('Missal', derived.edition);
-    if (derived.liturgicalYear) fact('Liturgical year', derived.liturgicalYear.label);
-    fact('Season', derived.season ? T.titleCase(derived.season) : 'not stated for this date');
-    if (derived.week) fact('Week', derived.week);
-    if (derived.liturgicalYear && derived.liturgicalYear.lectionary) {
-      const cycle = derived.liturgicalYear.lectionary;
-      fact('Lectionary', 'Sunday ' + cycle.sunday + ', weekday ' + cycle.weekday);
-    }
-    head.appendChild(facts);
+    const missal = currentMissal();
+    const meta = [];
+    if (missal) meta.push(missal.edition || missal.label);
+    if (derived.season) meta.push(T.titleCase(derived.season));
+    if (derived.week) meta.push('Week ' + derived.week);
+    const cycle = derived.liturgicalYear && derived.liturgicalYear.lectionary;
+    if (cycle) meta.push('Lectionary ' + cycle.sunday + '/' + cycle.weekday);
+    reading.appendChild(
+      T.el('p', 'entry-meta', meta.concat(T.bibleMeta(bible)).join(' · '))
+    );
 
     // A year the calendar computation itself refused to resolve is a fact about
-    // this date's whole year, and it belongs above the argument rather than
-    // inside it.
+    // this whole year, not about one proper, so it is said once here.
     const unresolved = (derived.liturgicalYear && derived.liturgicalYear.unresolved) || [];
     for (const row of unresolved) {
-      head.appendChild(
-        paragraph('row-meta', 'Unresolved this year: ' + row.what + ' — ' + row.why)
-      );
+      reading.appendChild(
+        T.notice('unresolved this year: ' + row.what + ' — ' + row.why));
     }
-    return head;
   }
 
   /* ------------------------------------------------------------------------
-   * Rendering: the verdict
-   *
-   * Three states, and they must never look alike. A conditional result is not a
-   * settled one with a note attached: it is an answer that may be wrong, and
-   * the condition is what would make it wrong.
+   * The margin beside the Mass: why this Mass and not another
    * --------------------------------------------------------------------- */
-
-  function renderVerdict(branch, rubrics) {
-    const blocking = (branch.absent || []).filter((one) => one.blocks_result);
-    const bad = branch.unsettled.length || blocking.length;
-    const kind = bad ? 'unsettled' : (branch.conditions.length ? 'conditional' : 'settled');
-    const node = T.el('div', 'verdict verdict-' + kind);
-
-    if (kind === 'settled') {
-      node.appendChild(T.el('h5', null, 'The rules reach an answer'));
-      node.appendChild(T.el('p', null,
-        'Every step below follows from a numbered rubric this repository has ' +
-        'transcribed and checked. It is still not an Ordo: a particular calendar ' +
-        'you have not told this page about can change the answer.'));
-      return node;
-    }
-
-    if (kind === 'conditional') {
-      node.appendChild(T.el('h5', null, 'This answer holds only conditionally'));
-      node.appendChild(T.el('p', null,
-        'One of the days below was constituted from its season because the ' +
-        'calendar index carries no formulary for it, and this repository cannot ' +
-        'rule out a competing identity for it. If the condition fails, the answer ' +
-        'changes.'));
-      const list = T.el('ul');
-      for (const row of branch.conditions) {
-        const item = T.el('li');
-        item.appendChild(T.el('strong', null, row.what + ' — unless '));
-        item.appendChild(document.createTextNode(row.unless));
-        list.appendChild(item);
-      }
-      node.appendChild(list);
-      return node;
-    }
-
-    node.appendChild(T.el('h5', null, 'This day is not settled here'));
-    node.appendChild(T.el('p', null,
-      'The rules as this repository holds them do not decide this date. What ' +
-      'follows is shown so the state of the question is visible; it is not an ' +
-      'answer, and it must not be read as one.'));
-    const list = T.el('ul');
-    for (const row of branch.unsettled) {
-      const item = T.el('li');
-      item.appendChild(T.el('strong', null, row.what + ': '));
-      item.appendChild(document.createTextNode(row.why));
-      for (const also of row.seeAlso || []) {
-        const note = T.el('div', 'row-meta', also.why || '');
-        withLocus(note, also.locus);
-        item.appendChild(note);
-      }
-      list.appendChild(item);
-    }
-    for (const row of blocking) {
-      const item = T.el('li');
-      item.appendChild(T.el('strong', null, row.what + ' is missing from this calendar index: '));
-      item.appendChild(document.createTextNode(row.effect));
-      withLocus(item, row.locus);
-      list.appendChild(item);
-    }
-    node.appendChild(list);
-    return node;
-  }
-
-  /* ------------------------------------------------------------------------
-   * Rendering: the five steps
-   * --------------------------------------------------------------------- */
-
-  function step(number, title, lede) {
-    const section = T.el('section', 'step');
-    const head = T.el('div', 'step-head');
-    head.appendChild(T.el('span', 'step-number', String(number)));
-    head.appendChild(T.el('h4', null, title));
-    section.appendChild(head);
-    if (lede) section.appendChild(T.el('p', 'step-lede', lede));
-    const body = T.el('div', 'step-body');
-    section.appendChild(body);
-    return { section: section, body: body };
-  }
-
-  const SOURCE_WORDS = {
-    index: 'in the calendar',
-    implied: 'constituted from the season',
-    arrived: 'transferred here'
-  };
-
-  function rowItem(candidate, rubrics, options) {
-    const held = options || {};
-    const item = T.el('li', 'row-item' +
-      (held.winner ? ' is-winner' : '') +
-      (candidate.certain === false ? ' is-uncertain' : ''));
-
-    const title = T.el('div', 'row-title');
-    title.appendChild(T.el('span', 'name', candidate.name));
-    if (candidate.row != null) {
-      title.appendChild(T.el('span', 'row-place',
-        Model.placeWord(rubrics) + ' ' + candidate.row +
-        (candidate.class ? ' · class ' + candidate.class : '')));
-    } else {
-      title.appendChild(T.el('span', 'row-place', 'no row of the table'));
-    }
-    title.appendChild(T.el('span', 'tag tag-source', SOURCE_WORDS[candidate.source] || candidate.source));
-    item.appendChild(title);
-
-    if (candidate.rowLabel) item.appendChild(T.el('p', 'row-why', candidate.rowLabel));
-    item.appendChild(paragraph('row-meta', candidate.why, candidate.locus));
-
-    // How the date came to carry it at all — the calendar layer's own rule.
-    if (candidate.rule) {
-      item.appendChild(T.el('p', 'row-meta',
-        'Placed here because: ' + candidate.rule.rule + ' (' + candidate.rule.origin + ')'));
-    }
-    if (candidate.arrivedFrom && candidate.seat) {
-      const note = T.el('p', 'row-meta',
-        'Moved here from ' + candidate.arrivedFrom + ', as to its own proper seat: ' +
-        candidate.seat.destination);
-      withLocus(note, candidate.seat.locus);
-      item.appendChild(note);
-      if (candidate.seat.latin) item.appendChild(T.el('p', 'latin', candidate.seat.latin));
-    }
-    if (candidate.office) {
-      const note = T.el('p', 'row-meta', candidate.office.why);
-      withLocus(note, candidate.office.locus);
-      item.appendChild(note);
-    }
-    if (candidate.note) item.appendChild(T.el('p', 'row-meta', candidate.note));
-    if (candidate.caveat) {
-      item.appendChild(T.el('p', 'row-meta', 'Not certain: unless ' + candidate.caveat));
-    }
-    if (candidate.territorial) {
-      item.appendChild(T.el('p', 'row-meta',
-        'Holds only where the competent authority has taken the option “' +
-        candidate.territorial + '”.'));
-    }
-    if ((candidate.alsoInscribedAs || []).length) {
-      item.appendChild(T.el('p', 'row-meta',
-        'The index inscribes this celebration twice, also as ' +
-        candidate.alsoInscribedAs.join(', ') + '; they are one day, not two.'));
-    }
-    if (!candidate.competes && candidate.row == null) {
-      item.appendChild(T.el('p', 'row-meta',
-        'It occupies no row, so it never takes the day.'));
-    }
-    return item;
-  }
-
-  function renderStepOne(branch, rubrics) {
-    const held = step(1, 'The day: what falls on this date',
-      'Write down every Sunday, feria, vigil, feast and octave day that lands here, ' +
-      'in every calendar that binds you. The list below is the universal calendar ' +
-      'only; a particular calendar adds to it and can outrank everything on it.');
-    const list = T.el('ul', 'rows');
-    for (const candidate of branch.candidates) {
-      list.appendChild(rowItem(candidate, rubrics, { winner: branch.winner && branch.winner.id === candidate.id }));
-    }
-    if (!branch.candidates.length) {
-      list.appendChild(T.el('li', 'row-item',
-        'This calendar index carries no mass for this date, and no rule in the ' +
-        'rubrics source constitutes a day for it.'));
-    }
-    held.body.appendChild(list);
-
-    for (const row of branch.folded || []) {
-      held.body.appendChild(T.el('p', 'row-meta',
-        'The index also carries ' + row.key + ' here; it is the same celebration as ' +
-        row.into + ' (' + row.what + ') and is counted once.'));
-    }
-    return held.section;
-  }
-
-  function renderStepTwo(branch, rubrics) {
-    const table = rubrics.precedence || {};
-    const held = step(2, 'Precedence: which of them takes the day',
-      'Apply the table, and nothing else.');
-
-    const rule = T.el('div', 'row-item');
-    rule.appendChild(withLocus(T.el('span', 'row-place', 'The governing sentence'), table.locus));
-    if (table.latin) rule.appendChild(T.el('p', 'latin', table.latin));
-    if (table.gloss) rule.appendChild(T.el('p', 'row-why', table.gloss));
-    held.body.appendChild(rule);
-
-    if (branch.winner) {
-      const winner = T.el('p', 'row-why');
-      winner.appendChild(T.el('strong', null, branch.winner.name));
-      winner.appendChild(document.createTextNode(
-        (branch.winner.optional ? ' stands highest' : ' takes the day') +
-        '. It stands at ' + Model.placeWord(rubrics) + ' ' +
-        branch.winner.row + ' — ' + (branch.winner.rowLabel || '') + ' — and every ' +
-        'other candidate stands lower.'));
-      held.body.appendChild(winner);
-      // Outranking the day is not the same as being obligatory.
-      if (branch.winner.optional) {
-        const note = T.el('p', 'row-why');
-        note.appendChild(T.el('strong', null, 'It is optional. '));
-        note.appendChild(document.createTextNode(
-          branch.winner.why + '. The day below it may be kept instead, and where ' +
-          'several optional memorials fall together only one of them may be kept.'));
-        withLocus(note, branch.winner.locus);
-        held.body.appendChild(note);
-      }
-    } else if (branch.choice) {
-      const node = T.el('p', 'row-why');
-      node.appendChild(T.el('strong', null, 'The choice belongs to the celebrant. '));
-      node.appendChild(document.createTextNode(
-        branch.choice.what + ' — ' +
-        branch.choice.among.map((one) => one.name).join('; ') + '.'));
-      held.body.appendChild(node);
-    } else {
-      held.body.appendChild(T.el('p', 'row-why',
-        'No winner is named, for the reason stated above. Nothing below should be ' +
-        'read as the day’s assembly.'));
-    }
-
-    // Occurrence and concurrence are different questions, and the confusion is
-    // common enough that the page says so at the step rather than in a footnote.
-    const occurrence = table.occurrence || null;
-    const concurrence = table.concurrence || null;
-    if (occurrence) {
-      held.body.appendChild(paragraph('row-meta', occurrence.gloss, occurrence.locus));
-    }
-    if (concurrence) {
-      held.body.appendChild(paragraph('row-meta', concurrence.gloss, concurrence.locus));
-    }
-    return held.section;
-  }
 
   const DISPOSITION_WORDS = {
     commemorated: 'commemorated',
@@ -414,169 +227,114 @@
     reduced: 'reduced'
   };
 
-  function renderStepThree(branch, rubrics) {
-    const impediment = rubrics.impediment || {};
-    const held = step(3, 'The impeded day: what becomes of the ones that lost',
-      'The outcome is decided by its own rule, never inferred from the margin of ' +
-      'defeat. A first-class feast beaten by a hair is transferred; a feast one row ' +
-      'lower may be commemorated, or simply lost for the year.');
+  const SOURCE_WORDS = {
+    index: 'in the calendar',
+    implied: 'constituted from the season',
+    arrived: 'transferred here'
+  };
 
-    if (impediment.outcomes) {
-      held.body.appendChild(paragraph('row-meta',
-        'The only outcomes are ' + impediment.outcomes.join(', ') + '.',
-        impediment.outcomes_locus));
-    }
+  function massMargin(branch, rubrics, derived) {
+    const node = margin('Why this Mass');
 
-    if (!branch.losers.length) {
-      held.body.appendChild(T.el('p', 'row-why', 'Nothing else stood on this date.'));
-      return held.section;
-    }
-
-    const list = T.el('ul', 'rows');
-    for (const loser of branch.losers) {
-      const item = T.el('li', 'row-item');
-      const title = T.el('div', 'row-title');
-      title.appendChild(T.el('span', 'name', loser.name));
-      title.appendChild(T.el('span', 'tag tag-' + loser.disposition,
-        DISPOSITION_WORDS[loser.disposition] || loser.disposition));
-      if (loser.kind) title.appendChild(T.el('span', 'row-place', loser.kind));
-      item.appendChild(title);
-      item.appendChild(paragraph('row-why', loser.why, loser.locus));
-      if (loser.latin) item.appendChild(T.el('p', 'latin', loser.latin));
-      if (loser.defeatedBy) {
-        item.appendChild(paragraph('row-meta', loser.defeatedBy.why, loser.defeatedBy.locus));
+    if (branch.winner) {
+      const took = T.el('p', 'margin-lead');
+      took.appendChild(T.el('strong', null, branch.winner.name));
+      took.appendChild(document.createTextNode(
+        branch.winner.row != null
+          ? (branch.winner.optional ? ' stands highest at ' : ' takes the day at ') +
+            Model.placeWord(rubrics) + ' ' + branch.winner.row +
+            (branch.winner.class ? ', class ' + branch.winner.class : '') + '.'
+          : ' takes the day.'));
+      node.appendChild(took);
+      if (branch.winner.rowLabel) {
+        node.appendChild(paragraph('margin-why', branch.winner.rowLabel, branch.winner.locus));
       }
-      if (loser.destination) {
-        item.appendChild(T.el('p', 'row-meta',
-          'It is kept on ' + longDate(loser.destination, Model.weekdayOf(loser.destination)) + '.'));
+      node.appendChild(T.el('p', 'margin-why',
+        SOURCE_WORDS[branch.winner.source] || branch.winner.source));
+      if (branch.winner.optional) {
+        node.appendChild(paragraph('margin-why',
+          'It is optional; the day below it may be kept instead.', branch.winner.locus));
       }
-      if (loser.destinationNotComputed) {
-        item.appendChild(T.el('p', 'row-meta',
-          'This page does not compute where it goes. ' + loser.destinationNotComputed));
+      if (branch.winner.territorial) {
+        node.appendChild(T.el('p', 'margin-why',
+          'Holds only where the competent authority has taken the option “' +
+          branch.winner.territorial + '”.'));
       }
-      list.appendChild(item);
+    } else if (branch.choice) {
+      const held = T.el('p', 'margin-lead');
+      held.appendChild(T.el('strong', null, 'The choice belongs to the celebrant. '));
+      held.appendChild(document.createTextNode(
+        branch.choice.what + ' — ' + branch.choice.among.map((one) => one.name).join('; ') + '.'));
+      node.appendChild(held);
     }
-    held.body.appendChild(list);
 
-    const sunday = impediment.sunday_not_resumed;
-    if (sunday && branch.losers.some((one) => one.name && /sunday/i.test(one.name))) {
-      held.body.appendChild(paragraph('row-meta', sunday.gloss, sunday.locus));
+    // What else stood on the date, and what became of it. This is the whole of
+    // the old steps one and three, said in the space it deserves.
+    const others = (branch.candidates || []).filter(
+      (one) => !branch.winner || one.id !== branch.winner.id);
+    if (others.length) {
+      node.appendChild(T.el('h4', 'margin-heading', 'Also on this date'));
+      const list = T.el('ul', 'margin-list');
+      for (const candidate of others) {
+        const loser = (branch.losers || []).find((one) => one.id === candidate.id) || null;
+        const item = T.el('li');
+        item.appendChild(T.el('span', 'margin-name', candidate.name));
+        if (loser) {
+          item.appendChild(T.el('span', 'tag tag-' + loser.disposition,
+            DISPOSITION_WORDS[loser.disposition] || loser.disposition));
+        }
+        const why = loser ? loser.why : candidate.why;
+        const where = loser ? loser.locus : candidate.locus;
+        if (why) item.appendChild(paragraph('margin-why', why, where));
+        if (loser && loser.destination) {
+          item.appendChild(T.el('p', 'margin-why',
+            'Kept on ' + longDate(loser.destination, Model.weekdayOf(loser.destination)) + '.'));
+        }
+        if (loser && loser.destinationNotComputed) {
+          item.appendChild(T.el('p', 'margin-why',
+            'This page does not compute where it goes. ' + loser.destinationNotComputed));
+        }
+        list.appendChild(item);
+      }
+      node.appendChild(list);
     }
-    return held.section;
-  }
 
-  function renderStepFour(rubrics) {
+    // Why this many orations, whether or not it turned anything away.
+    const ceiling = (branch.ceilings || {}).low_mass;
+    if (ceiling) {
+      node.appendChild(paragraph('margin-why', ceiling.what ||
+        ('This day admits ' + ceiling.max + ' commemoration' +
+         (ceiling.max === 1 ? '' : 's') + '.'), ceiling.locus));
+    }
+
     const category = rubrics.mass_category || {};
-    const held = step(4, 'The Mass category: which Mass may be said',
-      'A day’s rank tells you only that a category is not excluded. What admits ' +
-      'one is a separate fact, and permission is never inferred from rank.');
-    held.body.appendChild(paragraph('row-why',
-      'This page assumes ' + (category.assumed || 'the Mass of the day') + '.',
-      category.locus));
-    if (category.latin) held.body.appendChild(T.el('p', 'latin', category.latin));
-    if (category.warning) held.body.appendChild(T.el('p', 'row-meta', category.warning));
-
-    const list = T.el('ul', 'rows');
-    for (const row of category.not_tested || []) {
-      const item = T.el('li', 'row-item');
-      const title = T.el('div', 'row-title');
-      title.appendChild(T.el('span', 'name', row.category));
-      title.appendChild(T.el('span', 'tag tag-omitted', 'not tested here'));
-      item.appendChild(title);
-      item.appendChild(paragraph('row-meta', 'Its conditions are stated at', row.locus));
-      list.appendChild(item);
-    }
-    if (list.childNodes.length) held.body.appendChild(list);
-    return held.section;
-  }
-
-  function renderStepFive(branch, rubrics) {
-    const orations = rubrics.orations || {};
-    const commemorates = !(rubrics.commemoration && rubrics.commemoration.exists === false);
-    const held = step(5, 'The Mass that is said',
-      commemorates
-        ? 'The day’s own propers, and under each oration the days that lost, which ' +
-          'survive as the second and third collects.'
-        : 'One collect, whatever else fell on the day. This rite does not commemorate, ' +
-          'and that is the sharpest difference between the two books.');
-
-    // The orations used to be listed twice here, as a rank-and-reason table, and
-    // then a third time in the formulary below with their words. One tree now
-    // carries all of it: the slot, the words, the rank and the rubric together,
-    // which is the only arrangement in which a reader can see what is said and
-    // why in the same glance. Where the sung Mass differs, the affected orations
-    // say so on themselves.
-
-    if (commemorates) {
-      const order = (rubrics.commemoration && rubrics.commemoration.order) || null;
-      if (order) held.body.appendChild(paragraph('row-meta', order.gloss, order.locus));
-      const cap = orations.absolute_cap;
-      if (cap) held.body.appendChild(paragraph('row-meta', cap.gloss, cap.locus));
-      // `orations.tracked_by` is not restated here: the formulary below prints
-      // each of those rules at the slot it governs, which is where it can be
-      // checked against what is actually said.
-      const abolished = (rubrics.commemoration || {}).abolished;
-      if (abolished) held.body.appendChild(paragraph('row-meta', abolished.what, abolished.locus));
-    } else {
-      const surviving = (rubrics.commemoration || {}).surviving_qualification;
-      if (surviving) held.body.appendChild(paragraph('row-meta', surviving.what, surviving.locus));
-      const gap = orations.general_rule_not_collated;
-      if (gap) held.body.appendChild(paragraph('row-meta', gap.what, gap.locus));
+    if (category.assumed) {
+      node.appendChild(paragraph('margin-why',
+        'This page assumes ' + category.assumed + '; it does not test whether a ' +
+        'votive, ritual, requiem or festive Mass is admitted.', category.locus));
     }
 
     for (const extra of branch.extras || []) {
-      held.body.appendChild(paragraph('row-meta', extra.slot + ': ' + extra.what, extra.locus));
+      node.appendChild(paragraph('margin-why', extra.slot + ': ' + extra.what, extra.locus));
     }
     for (const remark of branch.remarks || []) {
-      held.body.appendChild(paragraph('row-meta', remark.what, remark.locus));
+      node.appendChild(paragraph('margin-why', remark.what, remark.locus));
     }
-
-    // The formulary lands here once the propers structure has been fetched.
-    const formulary = T.el('div', 'formulary');
-    formulary.appendChild(T.el('p', 'row-meta', 'Fetching the formulary…'));
-    held.body.appendChild(formulary);
-    held.section.dataset.formulary = branch.option === null ? '' : branch.option;
-    return { section: held.section, formulary: formulary };
+    return node;
   }
 
   /* ------------------------------------------------------------------------
-   * The formulary, fetched after the argument is on screen
+   * The margin beside a proper: what is said under it
    * --------------------------------------------------------------------- */
-
-  /**
-   * The year of a cycle-varying proper that this date actually falls in.
-   *
-   * A structure file keeps the years apart under `cycles`, each one an object
-   * carrying that year's citations and, where the year is composed rather than
-   * read, its own words. The Sunday cycles are keyed A, B and C and the ferial
-   * ones I and II, which is what the calendar layer states for the date; a key
-   * the lectionary does not name is not this date's, and returning nothing is
-   * right — this page shows one day, not three.
-   */
-  function cycleFor(proper, lectionary) {
-    const cycles = (proper && proper.cycles) || {};
-    const keys = Object.keys(cycles);
-    if (!keys.length || !lectionary) return null;
-    const wanted = keys.indexOf(lectionary.sunday) >= 0
-      ? lectionary.sunday
-      : (keys.indexOf(lectionary.weekday) >= 0 ? lectionary.weekday : null);
-    if (!wanted) return null;
-    const held = cycles[wanted] || {};
-    const refs = (held.citations || []).map((one) => one.ref).filter(Boolean);
-    const what = refs.length ? refs.join('; ') : (held.text ? 'composed text' : null);
-    if (!what) return null;
-    return { label: /^[A-C]$/.test(wanted) ? 'Year ' + wanted : 'Cycle ' + wanted, what: what };
-  }
 
   /**
    * The proper slots a subordinate oration is said in, and the rubric for each.
    *
    * The collect is the slot the derivation ranks; the rest are read from
    * `orations.tracked_by`, which is where the source states that the Secret and
-   * the Postcommunion follow the collects in number and order. Naming them here
-   * instead would be a list of slots standing beside the rule that governs
-   * them, free to disagree with it — and a rite that added a fourth tracked
-   * slot, or a rite that tracks none, would not reach this page.
+   * the Postcommunion follow the collects in number and order. A rite that
+   * tracks none — the postconciliar one, which does not commemorate at all —
+   * therefore gets no subordinate anywhere, without this page knowing that.
    */
   function trackedSlots(branch, rubrics) {
     const series = branch.orations.all || branch.orations.low_mass || [];
@@ -590,345 +348,234 @@
     return slots;
   }
 
-  // Position in a series of orations, said the way the rubrics say it. Three is
-  // the absolute cap in both rites, and a fourth would be a defect upstream, so
-  // an unnamed position falls back to its number rather than inventing a word.
+  // Three is the absolute cap in both rites; a fourth would be a defect upstream,
+  // so an unnamed position falls back to its number rather than inventing a word.
   const ORDINALS = { 2: 'Second', 3: 'Third' };
 
   function ordinalOf(position) {
     return ORDINALS[position] || ('Oration ' + position);
   }
 
-  /** Is this mass a day the calendar keeps and the corpus has not compiled? */
-  function isUncompiled(mass) {
-    const propers = (mass && mass.propers) || [];
-    return propers.length > 0 && propers.every((one) => one.name === 'Placeholder');
-  }
-
-  /** What a proper says of itself: its incipit, its reference, or its absence. */
-  function properDetail(proper, lectionary) {
-    const detail = T.el('span', 'formulary-detail');
-    const refs = (proper.citations || []).map((one) => one.ref).filter(Boolean);
-    if (proper.incipit) detail.appendChild(T.el('em', null, proper.incipit));
-    if (refs.length) {
-      if (proper.incipit) detail.appendChild(document.createTextNode(' · '));
-      detail.appendChild(document.createTextNode(refs.join('; ')));
-    }
-    // A proper that varies with the lectionary carries its reading under the
-    // year rather than on the proper, and this page knows which year the date
-    // falls in. Reading only the proper's own citations printed "no citation or
-    // text is compiled here" against five readings the corpus holds.
-    const cycle = cycleFor(proper, lectionary);
-    if (cycle) {
-      if (refs.length || proper.incipit) detail.appendChild(document.createTextNode(' · '));
-      detail.appendChild(T.el('span', 'formulary-cycle', cycle.label));
-      detail.appendChild(document.createTextNode(' ' + cycle.what));
-    }
-    if (!proper.incipit && !refs.length && !cycle) {
-      detail.appendChild(document.createTextNode(
-        proper.text ? 'composed text' : 'no citation or text is compiled here'));
-    }
-    return detail;
-  }
-
-  /**
-   * One subordinate oration, under the slot it is said in.
-   *
-   * Everything about it is derived: which celebration it is of, what kind of
-   * commemoration, the rubric that admits it, and the conclusion it takes, all
-   * from the oration series the model built out of the tracked precedence
-   * tables. The only thing looked up here is its words, from the propers
-   * structure, and their absence is stated rather than passed over.
-   */
   function subordinateItem(oration, slot, structure, sungDiffers) {
-    const item = T.el('li', 'formulary-item is-subordinate');
-
-    const head = T.el('div', 'subordinate-head');
-    head.appendChild(T.el('span', 'formulary-slot',
+    const item = T.el('li');
+    item.appendChild(T.el('span', 'margin-name',
       ordinalOf(oration.position) + ' ' + String(slot.slot).toLowerCase()));
-    head.appendChild(T.el('span', 'subordinate-of', 'of ' + oration.of_name));
-    if (oration.kind) head.appendChild(T.el('span', 'tag tag-commemorated', oration.kind));
-    item.appendChild(head);
+    item.appendChild(T.el('span', 'margin-of', 'of ' + oration.of_name));
+    if (oration.kind) item.appendChild(T.el('span', 'tag tag-commemorated', oration.kind));
 
-    // Its words, where the corpus holds them. A commemoration whose own
-    // formulary is a placeholder is not a broken row: the day is kept and its
-    // three orations are appointed; this repository has not transcribed them.
+    // Its words, where the corpus holds them.
     const of = (structure.masses || []).find((one) => one.key === oration.of);
     const matching = of && (of.propers || []).find((one) => one.name === slot.slot);
-    const words = T.el('p', 'subordinate-words');
-    if (matching && (matching.incipit || matching.text)) {
-      words.appendChild(T.el('em', null, matching.incipit || 'composed text'));
-    } else if (of) {
-      words.appendChild(document.createTextNode(
-        'Its ' + String(slot.slot).toLowerCase() + ' is appointed and is not compiled here.'));
-    } else {
-      words.appendChild(document.createTextNode(
-        'It is constituted from its season and the calendar index carries no ' +
-        'formulary of its own, so this oration is taken from the season’s Mass.'));
+    if (matching && matching.incipit) {
+      item.appendChild(T.el('p', 'margin-incipit', matching.incipit));
+    } else if (of && !T.massIsUncompiled(of)) {
+      item.appendChild(T.el('p', 'margin-why',
+        'Its ' + String(slot.slot).toLowerCase() + ' is appointed and is not transcribed here.'));
     }
-    item.appendChild(words);
 
-    // Why it is said at all, and under what conclusion.
-    item.appendChild(paragraph('row-meta', oration.why, oration.locus));
+    item.appendChild(paragraph('margin-why', oration.why, oration.locus));
     if (oration.conclusion) {
-      item.appendChild(T.el('p', 'row-meta', 'Said under ' + oration.conclusion + '.'));
+      item.appendChild(T.el('p', 'margin-why', 'Said under ' + oration.conclusion + '.'));
     }
     if (oration.alternative) {
-      const alt = T.el('p', 'row-meta',
+      item.appendChild(paragraph('margin-why',
         'The collect of ' + oration.alternative.of_name + ' may be said in its place: ' +
-        oration.alternative.what);
-      withLocus(alt, oration.alternative.locus);
-      item.appendChild(alt);
+        oration.alternative.what, oration.alternative.locus));
     }
     if (sungDiffers) {
-      item.appendChild(T.el('p', 'row-meta',
+      item.appendChild(T.el('p', 'margin-why',
         'Not said at a sung Mass that is not the conventual Mass.'));
     }
     return item;
   }
 
-  /** The days that stood here and are not said, with the rule that disposed of them. */
-  function renderNotSaid(node, branch) {
-    const silent = (branch.losers || []).filter((one) => one.disposition !== 'commemorated');
-    if (!silent.length) return;
-    node.appendChild(T.el('h5', 'formulary-heading', 'What stood here and is not said'));
-    const list = T.el('ul', 'formulary-list');
-    for (const loser of silent) {
-      const item = T.el('li', 'formulary-item is-silent');
-      const head = T.el('div', 'subordinate-head');
-      head.appendChild(T.el('span', 'subordinate-of', loser.name));
-      head.appendChild(T.el('span', 'tag tag-' + loser.disposition,
-        DISPOSITION_WORDS[loser.disposition] || loser.disposition));
-      item.appendChild(head);
-      item.appendChild(paragraph('row-meta', loser.why, loser.locus));
-      if (loser.destination) {
-        item.appendChild(T.el('p', 'row-meta',
-          'It is kept on ' + longDate(loser.destination, Model.weekdayOf(loser.destination)) + '.'));
-      }
+  function properMargin(slot, subordinate, branch, structure) {
+    const node = margin('What follows this');
+    if (slot.what) node.appendChild(paragraph('margin-why', slot.what, slot.locus));
+    const list = T.el('ul', 'margin-list');
+    for (const oration of subordinate) {
+      list.appendChild(
+        subordinateItem(oration, slot, structure, Boolean(branch.sungDiffers)));
+    }
+    node.appendChild(list);
+    return node;
+  }
+
+  /* ------------------------------------------------------------------------
+   * The Mass
+   * --------------------------------------------------------------------- */
+
+  /** An annotated block: the text, and the margin beside it. */
+  function annotated(body, note) {
+    const node = T.el('div', 'annotated');
+    const text = T.el('div', 'annotated-text');
+    text.appendChild(body);
+    node.appendChild(text);
+    if (note) node.appendChild(note);
+    return node;
+  }
+
+  /**
+   * The year of a cycle-varying proper that this date actually falls in.
+   *
+   * The Sunday cycles are keyed A, B and C and the ferial ones I and II, which
+   * is what the calendar layer states for the date. Narrowing to the one year
+   * is the whole point of reaching a Mass by its date: the propers page cannot
+   * know which year it is and shows all three.
+   */
+  function cycleKeyFor(proper, lectionary) {
+    if (!lectionary) return null;
+    const keys = T.cycleKeysOf(proper);
+    if (keys.indexOf(lectionary.sunday) >= 0) return lectionary.sunday;
+    if (keys.indexOf(lectionary.weekday) >= 0) return lectionary.weekday;
+    return null;
+  }
+
+  function renderVerdictNotice(branch) {
+    const blocking = (branch.absent || []).filter((one) => one.blocks_result);
+    if (!branch.unsettled.length && !blocking.length && !branch.conditions.length) return null;
+
+    const unsettled = branch.unsettled.length || blocking.length;
+    const node = T.el('div', 'day-warning' + (unsettled ? ' is-unsettled' : ''));
+    node.appendChild(T.el('h3', null, unsettled
+      ? 'This day is not settled here'
+      : 'This answer holds only conditionally'));
+    node.appendChild(T.el('p', null, unsettled
+      ? 'The rules as this repository holds them do not decide this date. What ' +
+        'follows is shown so the state of the question is visible; it is not an ' +
+        'answer and must not be read as one.'
+      : 'One of the days below was constituted from its season because the calendar ' +
+        'index carries no formulary for it, and a competing identity cannot be ruled ' +
+        'out. If the condition fails, the answer changes.'));
+    const list = T.el('ul');
+    for (const row of branch.unsettled) {
+      const item = T.el('li');
+      item.appendChild(T.el('strong', null, row.what + ': '));
+      item.appendChild(document.createTextNode(row.why));
+      list.appendChild(item);
+    }
+    for (const row of blocking) {
+      const item = T.el('li');
+      item.appendChild(T.el('strong', null, row.what + ' is missing from this calendar index: '));
+      item.appendChild(document.createTextNode(row.effect));
+      withLocus(item, row.locus);
+      list.appendChild(item);
+    }
+    for (const row of branch.conditions) {
+      const item = T.el('li');
+      item.appendChild(T.el('strong', null, row.what + ' — unless '));
+      item.appendChild(document.createTextNode(row.unless));
       list.appendChild(item);
     }
     node.appendChild(list);
+    return node;
   }
 
-  function renderFormulary(node, branch, structure, rubrics, lectionary) {
-    T.clear(node);
-    if (!branch.winner) {
-      node.appendChild(T.el('p', 'row-meta',
-        'No formulary is shown: no day was settled above.'));
-      return;
+  function renderBranch(branch, rubrics, derived, structure, bible, fragments) {
+    const section = T.el('section', 'branch');
+
+    if (branch.option) {
+      section.appendChild(T.el('h3', 'branch-option',
+        'Where the option is “' + branch.option + '”'));
     }
 
-    // Why these texts and not others, said once, at the head of them, out of the
-    // same ranking that chose them.
-    const why = T.el('p', 'formulary-why');
-    why.appendChild(T.el('strong', null, branch.winner.name));
-    why.appendChild(document.createTextNode(
-      branch.winner.row != null
-        ? ' took the day at ' + Model.placeWord(rubrics) + ' ' + branch.winner.row +
-          (branch.winner.rowLabel ? ' — ' + branch.winner.rowLabel : '') + '.'
-        : ' takes the day.'));
-    withLocus(why, branch.winner.locus);
-    node.appendChild(why);
+    const warning = renderVerdictNotice(branch);
+    if (warning) section.appendChild(warning);
+
+    // The Mass's own heading carries the margin that says why it is this Mass.
+    const head = T.el('div', 'mass-head');
+    head.appendChild(T.el('h3', 'mass-name',
+      branch.winner ? branch.winner.name : 'No day is settled here'));
+    section.appendChild(annotated(head, massMargin(branch, rubrics, derived)));
+
+    if (!branch.winner) return section;
 
     const series = branch.orations.all || branch.orations.low_mass || [];
     const subordinate = series.filter((one) => one.position > 1);
     const slots = trackedSlots(branch, rubrics);
     const slotFor = (name) => slots.find((one) => one.slot === name) || null;
 
-    /**
-     * The commemorations, where there is no list of the day's own propers for
-     * them to sit under.
-     *
-     * They are still said. A page that showed nothing here because the day's own
-     * Mass is not written down would be reporting that the day carries one
-     * oration when the rubrics give it three, which is the same class of wrong
-     * answer as omitting a proper.
-     */
-    function renderOrphans(into) {
-      if (!subordinate.length) return;
-      into.appendChild(T.el('p', 'row-meta',
-        'The ' + (subordinate.length === 1 ? 'commemoration' : 'commemorations') +
-        ' below ' + (subordinate.length === 1 ? 'is' : 'are') + ' still appointed, and ' +
-        (subordinate.length === 1 ? 'follows' : 'follow') + ' each of the day’s own orations.'));
-      const orphans = T.el('ul', 'formulary-list subordinates');
-      for (const oration of subordinate) {
-        orphans.appendChild(
-          subordinateItem(oration, slots[0] || { slot: 'Collect' }, structure, false));
-      }
-      into.appendChild(orphans);
-    }
+    const mass = branch.winner.key
+      ? (structure.masses || []).find((one) => one.key === branch.winner.key)
+      : null;
 
-    if (!branch.winner.key) {
-      node.appendChild(T.el('p', 'row-meta',
-        'It is constituted from its season and this calendar index carries no ' +
-        'formulary of its own for it. Most ferias take the preceding Sunday’s ' +
-        'Mass, which the index does not repeat.'));
-      renderOrphans(node);
-      renderNotSaid(node, branch);
-      return;
-    }
-
-    const mass = (structure.masses || []).find((one) => one.key === branch.winner.key);
     if (!mass) {
-      node.appendChild(T.el('p', 'row-meta',
-        'The propers structure carries no mass keyed ' + branch.winner.key + '.'));
-      renderOrphans(node);
-      renderNotSaid(node, branch);
-      return;
-    }
-
-    // A day the calendar keeps whose formulary this repository has not
-    // transcribed. It is stated as the one fact it is, rather than drawn as a
-    // list of empty slots: a reader must not count the parts of this Mass off a
-    // page that invented them, and must not read the absence as a page that
-    // failed to load.
-    if (isUncompiled(mass)) {
-      const held = T.el('div', 'formulary-uncompiled');
-      held.appendChild(T.el('h5', null, 'The formulary is not compiled here'));
-      held.appendChild(T.el('p', null,
-        'This missal keeps the day and appoints its Mass; this repository has not ' +
-        'yet transcribed the propers of it. Nothing has failed to load and nothing ' +
-        'is hidden — the texts are simply not held yet, so the page will not say ' +
-        'how many parts this Mass has or what they are.'));
-      node.appendChild(held);
-      renderOrphans(node);
-      renderNotSaid(node, branch);
-      return;
-    }
-
-    node.appendChild(T.el('h5', 'formulary-heading',
-      'The formulary, in the order the missal appoints it'));
-
-    const list = T.el('ul', 'formulary-list');
-    let placed = false;
-
-    for (const proper of mass.propers || []) {
-      const item = T.el('li', 'formulary-item');
-      item.appendChild(T.el('span', 'formulary-slot', proper.name || 'Proper'));
-      item.appendChild(properDetail(proper, lectionary));
-      list.appendChild(item);
-
-      // What is said under this proper, and why. A slot that tracks the collects
-      // carries the whole subordinate series, so the reader sees the Mass that
-      // is actually said rather than the day's own texts alone.
-      const slot = slotFor(proper.name);
-      if (!slot || !subordinate.length) continue;
-      placed = true;
-      const nested = T.el('ul', 'subordinates');
-      if (slot.what) {
-        nested.appendChild(paragraph('row-meta subordinates-rule', slot.what, slot.locus));
+      const note = T.el('p', 'uncompiled');
+      note.appendChild(T.el('span', 'uncompiled-mark', 'No formulary of its own'));
+      note.appendChild(document.createTextNode(branch.winner.key
+        ? 'The propers structure carries no mass keyed ' + branch.winner.key + '.'
+        : 'It is constituted from its season and the calendar index carries no ' +
+          'formulary of its own for it. Most ferias take the preceding Sunday’s ' +
+          'Mass, which the index does not repeat.'));
+      section.appendChild(note);
+    } else if (T.massIsUncompiled(mass)) {
+      // One line for the Mass, never one per slot, and never dressed as a
+      // failure: nothing failed, and the Mass is not shorter than it is.
+      section.appendChild(T.uncompiledNote(mass));
+    } else {
+      const lectionary = (derived.liturgicalYear && derived.liturgicalYear.lectionary) || null;
+      const numbering = (structure && structure.numbering) || null;
+      for (const proper of mass.propers || []) {
+        if (T.isPlaceholder(proper)) continue;
+        const body = T.renderProper(proper, bible, fragments, {
+          numbering: numbering,
+          orations: state.orations,
+          cycle: cycleKeyFor(proper, lectionary)
+        });
+        const slot = slotFor(proper.name);
+        const note = (slot && subordinate.length)
+          ? properMargin(slot, subordinate, branch, structure)
+          : null;
+        section.appendChild(annotated(body, note));
       }
-      for (const oration of subordinate) {
-        nested.appendChild(
-          subordinateItem(oration, slot, structure, Boolean(branch.sungDiffers)));
-      }
-      item.appendChild(nested);
     }
-    node.appendChild(list);
 
-    // A commemoration with nowhere to sit must be said, not dropped. Many of this
-    // corpus's seasonal ferias carry only their scripture-bearing propers, so the
-    // slot a second collect would follow is not written down — a gap in the
-    // corpus and not a fact about the Mass. The orations are still shown; only
-    // their place in the list is unknown.
-    if (subordinate.length && !placed) {
-      node.appendChild(T.el('p', 'row-meta',
+    // A commemoration that found no slot to sit under is still said. It is put
+    // once, after the Mass, rather than dropped.
+    const anySlot = mass && !T.massIsUncompiled(mass) &&
+      (mass.propers || []).some((one) => slotFor(one.name));
+    if (subordinate.length && !anySlot) {
+      const held = T.el('div', 'mass-head');
+      held.appendChild(T.el('h4', 'mass-subheading',
+        subordinate.length === 1 ? 'A commemoration is said with this Mass'
+          : subordinate.length + ' commemorations are said with this Mass'));
+      held.appendChild(T.el('p', 'row-meta',
         'This corpus carries no oration slot for the day’s own Mass, so the page ' +
-        'cannot say which proper each of these follows. They are appointed, not absent.'));
-      renderOrphans(node);
+        'cannot say which proper each follows. They are appointed, not absent.'));
+      section.appendChild(
+        annotated(held, properMargin(slots[0] || { slot: 'Collect' }, subordinate, branch, structure)));
     }
-
-    // Why this many, whether or not it turned anything away.
-    const ceiling = (branch.ceilings || {}).low_mass;
-    if (ceiling) {
-      node.appendChild(paragraph('row-meta', ceiling.what ||
-        ('This day admits ' + ceiling.max + ' commemoration' + (ceiling.max === 1 ? '' : 's') +
-         (ceiling.privileged_only ? ', and only a privileged one.' : '.')), ceiling.locus));
-    }
-
-    renderNotSaid(node, branch);
-    node.appendChild(T.el('p', 'row-meta',
-      'The texts themselves, with their translations, are on the propers page.'));
+    return section;
   }
 
   /* ------------------------------------------------------------------------
-   * Rendering: one branch, and the closing apparatus
+   * Controls
    * --------------------------------------------------------------------- */
 
-  function renderBranch(branch, rubrics, derived) {
-    const node = T.el('section', 'branch');
-    const head = T.el('div', 'branch-head');
-    if (branch.option) {
-      head.appendChild(T.el('h3', null, 'Where the option is “' + branch.option + '”'));
-      const family = derived.territorial || {};
-      const note = (family && family.note) || null;
-      head.appendChild(T.el('p', null,
-        note || 'This branch holds only where the competent authority has taken that option.'));
-    } else {
-      head.appendChild(T.el('h3', null, 'The derivation'));
-    }
-    node.appendChild(head);
-
-    node.appendChild(renderVerdict(branch, rubrics));
-    node.appendChild(renderStepOne(branch, rubrics));
-    node.appendChild(renderStepTwo(branch, rubrics));
-    node.appendChild(renderStepThree(branch, rubrics));
-    node.appendChild(renderStepFour(rubrics));
-    const five = renderStepFive(branch, rubrics);
-    node.appendChild(five.section);
-    return { node: node, formulary: five.formulary, branch: branch };
+  function fillOrationsSelect() {
+    T.fillSelect(orationsSelect, state.orationLanguages.map((entry) => ({
+      value: entry.lang,
+      label: T.orationLanguageLabel(entry),
+      title: entry.lang
+    })));
+    orationsSelect.disabled = state.orationLanguages.length < 2;
+    if (state.orations) orationsSelect.value = state.orations;
   }
 
-  function renderApparatus(rubrics) {
-    const node = T.el('section', 'apparatus');
+  function syncControls() {
+    dateInput.value = state.date || '';
+    if (state.missalId) missalSelect.value = state.missalId;
+    if (state.bibleId) bibleSelect.value = state.bibleId;
+    if (state.orations) orationsSelect.value = state.orations;
+  }
 
-    node.appendChild(T.el('h3', null, 'What this page does not decide'));
-    const notDecided = T.el('ul');
-    for (const row of rubrics.not_decided_here || []) {
-      notDecided.appendChild(T.el('li', null, row));
-    }
-    node.appendChild(notDecided);
-
-    if ((rubrics.unsettled || []).length) {
-      node.appendChild(T.el('h3', null, 'Questions this repository leaves open'));
-      const open = T.el('ul');
-      for (const row of rubrics.unsettled) {
-        const item = T.el('li');
-        item.appendChild(T.el('strong', null, row.what + ': '));
-        item.appendChild(document.createTextNode(row.why));
-        if (row.effect) item.appendChild(document.createTextNode(' ' + row.effect));
-        open.appendChild(item);
-      }
-      node.appendChild(open);
-    }
-
-    if ((rubrics.divergences || []).length) {
-      node.appendChild(T.el('h3', null, 'Where this file departs from the study it was taken from'));
-      const diverge = T.el('ul');
-      for (const row of rubrics.divergences) {
-        const item = T.el('li');
-        item.appendChild(T.el('strong', null, row.what + ': '));
-        item.appendChild(document.createTextNode(
-          'the study reads “' + row.publication_reads + '”; this file reads “' +
-          row.this_file_reads + '”. ' + row.why));
-        diverge.appendChild(item);
-      }
-      node.appendChild(diverge);
-    }
-
-    node.appendChild(T.el('h3', null, 'Where the rules came from'));
-    const from = rubrics.derived_from || {};
-    node.appendChild(T.el('p', null,
-      'The rules are ' + (rubrics.code || 'the governing code') +
-      ', transcribed from this repository’s own collated study at ' +
-      (from.publication || 'an in-repository publication') +
-      '. Not one of them was read for this page; each carries the locus the study ' +
-      'recorded against it.'));
-    for (const witness of from.witnesses || []) {
-      node.appendChild(T.el('p', null, witness.role + ': ' + witness.what));
-    }
-    if (rubrics.source_advisory) node.appendChild(T.el('p', null, rubrics.source_advisory));
-    return node;
+  function writeHash() {
+    T.writeHash([
+      ['date', state.date],
+      ['missal', state.missalId],
+      ['bible', state.bibleId],
+      ['orations', state.orations === T.SOURCE_LANGUAGE ? null : state.orations]
+    ]);
   }
 
   /* ------------------------------------------------------------------------
@@ -937,6 +584,8 @@
 
   async function render(options) {
     if (!state.date || !state.missalId) return;
+    const bible = currentBible();
+    if (!bible) return;
     const token = T.beginRender();
     reading.setAttribute('aria-busy', 'true');
 
@@ -951,8 +600,7 @@
     state.rubrics = rubrics;
 
     const civilYear = state.date.slice(0, 4);
-    const yearKey = state.missalId + '/' + civilYear;
-    const yearHeld = await once(yearCache, yearKey,
+    const yearHeld = await once(yearCache, state.missalId + '/' + civilYear,
       () => T.loadJSON(yearPath(state.missalId, civilYear)));
     if (!T.isCurrentRender(token)) return;
     if (!yearHeld.ok) {
@@ -972,63 +620,61 @@
     }
     state.derived = derived;
 
-    T.clear(reading);
-    reading.appendChild(renderHead(derived));
+    // The propers are a megabyte; the day's name is not. Both are needed before
+    // anything is drawn, but the fetch is cached per missal, so it is paid once.
+    const propersHeld = await once(propersCache, state.missalId,
+      () => T.loadJSON(propersPath(state.missalId)));
+    if (!T.isCurrentRender(token)) return;
+    if (!propersHeld.ok) {
+      T.fail('The propers for “' + state.missalId + '” could not be loaded: ' +
+        propersHeld.message);
+      return;
+    }
+    const structure = propersHeld.value;
+    if (state.structure !== structure) {
+      state.structure = structure;
+      state.orationLanguages = T.orationLanguagesOf(structure);
+      if (!state.orationLanguages.some((entry) => entry.lang === state.orations)) {
+        state.orations = T.SOURCE_LANGUAGE;
+      }
+      fillOrationsSelect();
+    }
 
-    const rendered = derived.options.map((branch) => renderBranch(branch, rubrics, derived));
-    for (const one of rendered) reading.appendChild(one.node);
-    reading.appendChild(renderApparatus(rubrics));
+    // Every citation every branch's Mass needs, fetched in one pass.
+    const wanted = [];
+    for (const branch of derived.options) {
+      const mass = branch.winner && branch.winner.key
+        ? (structure.masses || []).find((one) => one.key === branch.winner.key)
+        : null;
+      if (mass) for (const citation of T.citationsOf(mass)) wanted.push(citation);
+    }
+    const held = await T.fetchFragments(bible, wanted);
+    if (!T.isCurrentRender(token)) return;
+
+    T.clear(reading);
+    renderHead(derived, bible);
+    for (const branch of derived.options) {
+      reading.appendChild(
+        renderBranch(branch, rubrics, derived, structure, bible, held.fragments));
+    }
+    openMargins(reading);
     reading.setAttribute('aria-busy', 'false');
 
-    // The spoken summary must not claim a settled day where there is none: an
-    // unsettled derivation still names a leading candidate, and reading that out
-    // as "takes the day" would be the page's own failure mode in one sentence.
     const first = derived.options[0];
-    const blocked = !first.settled;
-    const held = first.orations.all || first.orations.low_mass;
-    const count = held.length === 1 ? 'one oration' : held.length + ' orations';
     T.statusLine(
       longDate(derived.date, derived.weekday) + ', ' + derived.calendar + '. ' +
       (derived.options.length > 1 ? derived.options.length + ' territorial branches. ' : '') +
       (first.winner
-        ? (blocked
-            ? first.winner.name + ' stands highest, but this day is not settled here'
-            : first.winner.name + (first.winner.optional ? ' stands highest, and is optional' : ' takes the day'))
-        : 'the day is not settled here') +
-      ', ' + count + (first.orations.all ? '.' : ' at Low Mass.'));
+        ? (first.settled ? first.winner.name + ' takes the day'
+            : first.winner.name + ' stands highest, but this day is not settled here')
+        : 'the day is not settled here') + '.');
 
     if (options && options.moveFocus) reading.focus();
-
-    // The formulary is a megabyte and the argument does not need it, so it is
-    // fetched only after the argument is readable.
-    const propersHeld = await once(propersCache, state.missalId,
-      () => T.loadJSON(propersPath(state.missalId)));
-    if (!T.isCurrentRender(token)) return;
-    for (const one of rendered) {
-      if (!propersHeld.ok) {
-        T.clear(one.formulary);
-        one.formulary.appendChild(T.el('p', 'row-meta',
-          'The formulary could not be fetched: ' + propersHeld.message));
-        continue;
-      }
-      renderFormulary(
-        one.formulary, one.branch, propersHeld.value, rubrics,
-        (derived.liturgicalYear && derived.liturgicalYear.lectionary) || null);
-    }
   }
 
   /* ------------------------------------------------------------------------
    * Selection
    * --------------------------------------------------------------------- */
-
-  function syncControls() {
-    dateInput.value = state.date || '';
-    if (state.missalId) missalSelect.value = state.missalId;
-  }
-
-  function writeHash() {
-    T.writeHash([['date', state.date], ['missal', state.missalId]]);
-  }
 
   function select(date, missalId, options) {
     if (date) state.date = date;
@@ -1058,6 +704,14 @@
   }
 
   async function start() {
+    const loaded = await T.loadBibles();
+    if (!loaded.ok) {
+      T.fail(loaded.message);
+      return;
+    }
+    state.bibles = loaded.bibles;
+    T.fillBibleSelect(bibleSelect, state.bibles);
+
     let missals;
     try {
       missals = await discoverMissals();
@@ -1080,8 +734,12 @@
     })));
 
     const hash = T.readHash();
-    const wantedDate = hash.get('date');
-    state.date = validDate(wantedDate) ? wantedDate : todayISO();
+    state.orations = hash.get('orations') || T.SOURCE_LANGUAGE;
+    const wantedBible = hash.get('bible');
+    state.bibleId = state.bibles.some((one) => one.id === wantedBible)
+      ? wantedBible
+      : state.bibles[0].id;
+    state.date = validDate(hash.get('date')) ? hash.get('date') : todayISO();
     const wantedMissal = hash.get('missal');
     state.missalId = missals.some((one) => one.id === wantedMissal) ? wantedMissal : missals[0].id;
 
@@ -1102,6 +760,16 @@
     select(null, missalSelect.value, { moveFocus: false });
   });
 
+  bibleSelect.addEventListener('change', () => {
+    state.bibleId = bibleSelect.value;
+    select(null, null, { moveFocus: false });
+  });
+
+  orationsSelect.addEventListener('change', () => {
+    state.orations = orationsSelect.value;
+    select(null, null, { moveFocus: false });
+  });
+
   prevButton.addEventListener('click', () => step_(-1, { moveFocus: true }));
   nextButton.addEventListener('click', () => step_(1, { moveFocus: true }));
   todayButton.addEventListener('click', () => select(todayISO(), null, { moveFocus: true }));
@@ -1110,9 +778,26 @@
 
   T.onArrowStep((delta) => step_(delta, { moveFocus: false }));
 
+  // A margin is a margin only while there is room for one. Re-deciding on the
+  // breakpoint rather than on every resize keeps a reader's own disclosure
+  // choices intact while they are reading at one width.
+  if (window.matchMedia) {
+    const wide = window.matchMedia(WIDE);
+    const listen = wide.addEventListener
+      ? wide.addEventListener.bind(wide, 'change')
+      : wide.addListener.bind(wide);
+    listen(() => openMargins(reading));
+  }
+
   T.onHashChange((hash) => {
     const wantedMissal = hash.get('missal');
     if (state.missals.some((one) => one.id === wantedMissal)) state.missalId = wantedMissal;
+    const wantedBible = hash.get('bible');
+    if (state.bibles.some((one) => one.id === wantedBible)) state.bibleId = wantedBible;
+    const wantedOrations = hash.get('orations') || T.SOURCE_LANGUAGE;
+    if (state.orationLanguages.some((entry) => entry.lang === wantedOrations)) {
+      state.orations = wantedOrations;
+    }
     const wantedDate = hash.get('date');
     select(validDate(wantedDate) ? wantedDate : state.date, null, { moveFocus: false });
   });

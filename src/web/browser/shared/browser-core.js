@@ -960,6 +960,323 @@ window.Triptych = (function () {
   });
 
   /* ------------------------------------------------------------------------
+   * Propers
+   *
+   * WHAT A PROPER IS, AND HOW IT READS, IS SHARED. Two pages now show the text
+   * of a Mass: the propers browser, which reaches it by choosing a Mass, and the
+   * assembly page, which reaches it by choosing a date. They must not disagree
+   * about what a Collect looks like, when an incipit earns its place, which
+   * translation is shown, or how an absent text is said — so none of that lives
+   * in either page.
+   *
+   * Page-specific vocabulary stays in the page. A proper is not page-specific.
+   * --------------------------------------------------------------------- */
+
+  // The missals hold their orations in Latin; a translation is an addition to
+  // that, never a replacement of it.
+  const SOURCE_LANGUAGE = 'la';
+  const LANGUAGE_NAMES = {
+    la: 'Latin',
+    en: 'English',
+    fr: 'French',
+    de: 'German',
+    es: 'Spanish',
+    it: 'Italian',
+    pl: 'Polish'
+  };
+
+  function languageName(code) {
+    return LANGUAGE_NAMES[code] || String(code || '').toUpperCase();
+  }
+
+  /**
+   * One year of a cycle-varying proper: its citations and its own words.
+   *
+   * A cycle is an object and not a list of citations, because a proper may vary
+   * in kind as well as in text — an acclamation composed one year and
+   * scriptural the next — so each year carries both. Every reader of `cycles`
+   * goes through here, so the shape is asserted in one place rather than
+   * assumed in four; assuming it is what threw a TypeError on every
+   * cycle-bearing Mass when the shape changed under the pages.
+   */
+  function cycleOf(proper, key) {
+    const held = (proper && proper.cycles && proper.cycles[key]) || null;
+    if (!held) return { citations: [], text: null };
+    return { citations: held.citations || [], text: held.text || null };
+  }
+
+  /** The years a proper actually varies over, in order, each carrying something. */
+  function cycleKeysOf(proper) {
+    return Object.keys((proper && proper.cycles) || {})
+      .sort()
+      .filter((key) => {
+        const cycle = cycleOf(proper, key);
+        return cycle.citations.length || cycle.text;
+      });
+  }
+
+  /** A cycle's readable name: "Year A" for the Sunday cycles, else the key. */
+  function cycleLabel(key) {
+    return /^[A-C]$/.test(key) ? 'Year ' + key : 'Cycle ' + key;
+  }
+
+  /** Every citation a Mass carries, including each cycle's. */
+  function citationsOf(mass) {
+    const found = [];
+    for (const proper of (mass && mass.propers) || []) {
+      for (const citation of proper.citations || []) found.push(citation);
+      for (const key of cycleKeysOf(proper)) {
+        for (const citation of cycleOf(proper, key).citations) found.push(citation);
+      }
+    }
+    return found;
+  }
+
+  /**
+   * A stand-in for a formulary nobody has transcribed yet.
+   *
+   * The compiler writes one proper named "Placeholder", whose body is a sentence
+   * about the corpus rather than a prayer. Rendering it as a proper prints an
+   * oration that does not exist, under a slot name that is not a slot name, and
+   * a reader counting the parts of the Mass off the page would count wrong. It
+   * is recognised here, once, so that both pages say the same quiet thing about
+   * it — one line for the Mass, never one line per slot.
+   */
+  function isPlaceholder(proper) {
+    return Boolean(proper) && proper.name === 'Placeholder';
+  }
+
+  /** Is this Mass a day the calendar keeps whose propers are not compiled? */
+  function massIsUncompiled(mass) {
+    const propers = (mass && mass.propers) || [];
+    return propers.length > 0 && propers.every(isPlaceholder);
+  }
+
+  /**
+   * Does this Mass carry anything to read?
+   *
+   * A placeholder is not content. Most of the sanctoral is presently a registry
+   * entry and a placeholder: the calendar knows the day, and the propers for it
+   * have not been compiled. That is worth saying once, plainly, rather than
+   * printing a sentence about the corpus where a prayer belongs.
+   */
+  function massHasContent(mass) {
+    for (const proper of (mass && mass.propers) || []) {
+      if (isPlaceholder(proper)) continue;
+      if (proper.text || proper.incipit) return true;
+      if ((proper.citations || []).length) return true;
+      if (cycleKeysOf(proper).length) return true;
+    }
+    return false;
+  }
+
+  /**
+   * Every language a missal can render its composed propers in, with how much
+   * of the missal each one actually reaches.
+   *
+   * The coverage is counted rather than assumed. A translation set that reaches
+   * a tenth of the orations is a legitimate state — the rights position differs
+   * sharply between the two missals and partial coverage is expected to be
+   * permanent, not temporary — so the reader is owed the figure instead of a
+   * dropdown that implies completeness.
+   */
+  function orationLanguagesOf(structure) {
+    let composed = 0;
+    const held = new Map();
+    for (const mass of (structure && structure.masses) || []) {
+      for (const proper of mass.propers || []) {
+        if (!proper.text || isPlaceholder(proper)) continue;
+        composed += 1;
+        for (const translation of proper.translations || []) {
+          if (!translation || !translation.lang || !translation.text) continue;
+          held.set(translation.lang, (held.get(translation.lang) || 0) + 1);
+        }
+      }
+    }
+    const languages = [{ lang: SOURCE_LANGUAGE, held: composed, composed: composed }];
+    for (const lang of Array.from(held.keys()).sort()) {
+      languages.push({ lang: lang, held: held.get(lang), composed: composed });
+    }
+    return languages;
+  }
+
+  /** The label an orations control gives one of those languages. */
+  function orationLanguageLabel(entry) {
+    // The source language needs no coverage figure: it is what the missal
+    // prints, so it is complete by definition. Every other entry states how far
+    // it reaches, because none of them reaches everywhere.
+    return entry.lang === SOURCE_LANGUAGE
+      ? languageName(entry.lang) + ', as printed'
+      : languageName(entry.lang) + ' — ' + entry.held + ' of ' + entry.composed;
+  }
+
+  /**
+   * The composed text to show, and what to say about it.
+   *
+   * A proper with no translation in the chosen language is the ordinary case,
+   * not an error — but it must not silently fall back to Latin and let the
+   * reader believe they are looking at the English they asked for. The absence
+   * is stated where the text would have been.
+   */
+  function orationFor(proper, wanted) {
+    const asked = wanted || SOURCE_LANGUAGE;
+    if (asked === SOURCE_LANGUAGE) {
+      return { text: proper.text, lang: SOURCE_LANGUAGE, missing: false, source: null };
+    }
+    const found = (proper.translations || []).find(
+      (translation) => translation && translation.lang === asked && translation.text
+    );
+    if (found) {
+      return {
+        text: found.text,
+        lang: asked,
+        missing: false,
+        source: found.source_id || found.source || null,
+        notice: found.notice || null
+      };
+    }
+    return {
+      text: proper.text,
+      lang: SOURCE_LANGUAGE,
+      missing: true,
+      wanted: asked,
+      source: null
+    };
+  }
+
+  /**
+   * One proper, with its text.
+   *
+   *   options.numbering  the numbering the structure file's references are in
+   *   options.orations   the language the composed propers are asked for
+   */
+  function renderProper(proper, bible, fragments, options) {
+    const held = options || {};
+    const numbering = held.numbering || null;
+    const section = el('section', 'proper');
+
+    const heading = el('h3', 'proper-name', proper.name || 'Proper');
+    // "Vigil Mass", "Mass at Dawn" — the form this proper belongs to, where a
+    // day carries more than one.
+    if (proper.form) heading.appendChild(el('span', 'proper-form', proper.form));
+
+    // The reference belongs beside the name, not on a line of its own: one
+    // heading says what this proper is and where it comes from. Segments stay
+    // together in that one reference, since they are one passage.
+    const refs = (proper.citations || []).map((citation) => citation.ref).filter(Boolean);
+    if (refs.length) heading.appendChild(el('span', 'proper-ref', refs.join('; ')));
+    section.appendChild(heading);
+
+    // The incipit is the passage's own opening words, so printing it above the
+    // passage says the same thing twice. It earns its place only when the words
+    // themselves are not shown.
+    const showsWords = Boolean(proper.text) || refs.length > 0;
+    if (proper.incipit && !showsWords) {
+      section.appendChild(el('p', 'proper-incipit', proper.incipit));
+    }
+
+    // Composed propers — Collects, Secrets, Postcommunions — are not scripture
+    // and have no citation to resolve. Where the structure file carries the
+    // text, it is shown; where it carries only the incipit, that is said, once
+    // and quietly. It is not a failure: the corpus indexes these propers by
+    // their opening words and does not hold their bodies.
+    if (proper.text) {
+      const oration = orationFor(proper, held.orations);
+      const composed = el('p', 'composed');
+      const label = oration.missing
+        ? 'Composed text — not scripture · ' + languageName(SOURCE_LANGUAGE)
+        : 'Composed text — not scripture' +
+          (oration.lang === SOURCE_LANGUAGE ? '' : ' · ' + languageName(oration.lang));
+      composed.appendChild(el('span', 'composed-label', label));
+      composed.appendChild(document.createTextNode(oration.text));
+      composed.lang = oration.lang;
+      section.appendChild(composed);
+
+      // Said where the English would have been, not in a footnote: a reader who
+      // asked for English and was handed Latin needs to know that at the text.
+      if (oration.missing) {
+        section.appendChild(
+          el('p', 'composed-note',
+            'No ' + languageName(oration.wanted) + ' translation is recorded for ' +
+            'this proper. The Latin the missal prints is shown instead.')
+        );
+      }
+      // Whose English it is. A translation is someone's expression, and the
+      // reader is entitled to know whose before weighing it.
+      if (oration.source) {
+        section.appendChild(el('p', 'composed-note', 'Translation: ' + oration.source));
+      }
+      if (oration.notice) {
+        section.appendChild(el('p', 'composed-note', oration.notice));
+      }
+    } else if (proper.incipit && proper.source === 'composed') {
+      section.appendChild(
+        el('p', 'composed-note',
+          'Composed text — not scripture. The corpus carries its incipit only.')
+      );
+    }
+
+    const citations = proper.citations || [];
+    for (const citation of citations) {
+      section.appendChild(
+        renderCitation(citation, bible, fragments, numbering, { showRef: false })
+      );
+    }
+
+    // A cycle-varying proper reads differently in each year of the lectionary.
+    // The structure file keeps the years apart, and so does this: merging them
+    // would hand the reader three readings with no way to tell which is this
+    // year's. A year may carry composed words instead of, or beside, a reading.
+    //
+    // `options.cycle` narrows it to the one year the caller is showing, which is
+    // what a page that knows the date wants; without it every year is shown,
+    // which is what a page that knows only the Mass wants.
+    const cycleKeys = held.cycle
+      ? cycleKeysOf(proper).filter((key) => key === held.cycle)
+      : cycleKeysOf(proper);
+    for (const key of cycleKeys) {
+      const cycle = cycleOf(proper, key);
+      const block = el('div', 'cycle');
+      block.appendChild(el('h4', 'cycle-name', cycleLabel(key)));
+      if (cycle.text) {
+        const composed = el('p', 'composed');
+        composed.appendChild(el('span', 'composed-label', 'Composed text — not scripture'));
+        composed.appendChild(document.createTextNode(cycle.text));
+        composed.lang = SOURCE_LANGUAGE;
+        block.appendChild(composed);
+      }
+      for (const citation of cycle.citations) {
+        block.appendChild(renderCitation(citation, bible, fragments, numbering));
+      }
+      section.appendChild(block);
+    }
+
+    if (!proper.text && !proper.incipit && !citations.length && !cycleKeys.length) {
+      section.appendChild(notice('this proper carries neither a citation nor a text.'));
+    }
+
+    return section;
+  }
+
+  /**
+   * The one line a Mass gets when its formulary is not compiled.
+   *
+   * Small, quiet, and singular. It must not read as a failure — nothing failed —
+   * and it must not let a reader conclude the Mass is short: the day is kept and
+   * its propers are appointed, and what is missing is this repository's
+   * transcription of them.
+   */
+  function uncompiledNote(mass) {
+    const node = el('p', 'uncompiled');
+    node.appendChild(el('span', 'uncompiled-mark', 'Not yet transcribed'));
+    node.appendChild(document.createTextNode(
+      'This missal keeps the day and appoints its Mass; the propers of it are not ' +
+      'in this repository yet' +
+      (mass && mass.registry ? ' (registry ' + mass.registry + ')' : '') + '.'));
+    return node;
+  }
+
+  /* ------------------------------------------------------------------------
    * What the pages may use
    * --------------------------------------------------------------------- */
 
@@ -990,6 +1307,22 @@ window.Triptych = (function () {
     formatLoci: formatLoci,
     chaptersNeeded: chaptersNeeded,
     fetchFragments: fetchFragments,
+
+    // propers, shared by both pages that show the text of a Mass
+    SOURCE_LANGUAGE: SOURCE_LANGUAGE,
+    languageName: languageName,
+    cycleOf: cycleOf,
+    cycleKeysOf: cycleKeysOf,
+    cycleLabel: cycleLabel,
+    citationsOf: citationsOf,
+    isPlaceholder: isPlaceholder,
+    massIsUncompiled: massIsUncompiled,
+    massHasContent: massHasContent,
+    orationLanguagesOf: orationLanguagesOf,
+    orationLanguageLabel: orationLanguageLabel,
+    orationFor: orationFor,
+    renderProper: renderProper,
+    uncompiledNote: uncompiledNote,
 
     // rendering
     el: el,
