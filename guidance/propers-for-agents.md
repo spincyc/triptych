@@ -129,7 +129,7 @@ Assume more of the same kind exist.
 | **1962 commemorations** | They existed only as prose inside a `name` string, so none could be looked up or commemorated. | Now caught: the sixty folded into feast names are dated entries of rank `Comm.`, 104 in all, and `check-calendar-masses` refuses a `comm.` anywhere but the start of a name. Their orations are still placeholders. |
 | The **book's identity** retyped in a second file | `edition` sat in `propers.yaml` and again in `rubrics.yaml`, in both calendars — four hand-typed copies of two strings, with nothing comparing them. They agreed; nothing made them agree. | Now caught: the mass index owns `edition` and `edition_short`, `calendar-rubrics` reads both from it, and `_calendars.restated_identity` refuses a companion that carries either — whether or not its value matches. |
 | One formulary **retyped under a second mass** | The schema could not say "this mass takes that text", so a day the Missal carries by a pointer had to be carried by a copy, and nothing compared the copies. The four resumed Sundays after the Epiphany held one set of orations twice and disagreed in five ways — `caelestis`/`coelestis`, `Caelestibus`/`Coelestibus`, `caelestibus`/`coelestibus`, one Introit citation encoded as a contiguous range against three discrete verses, and a dozen truncated incipits. The English was duplicated with it, twelve sidecar rows for four orations. | Now expressible: `takes_from` on a mass or a proper, resolved once by `_calendars.resolve_propers` for both the validator and the browser. The four Sundays now reference `epiphany-3`..`-6` and `pentecost-23` under RGMR 298. **Not yet caught** — nothing detects a formulary retyped where a reference would do. |
-| Any **stale count table** | One census of these files existed in three retyped copies, and all three disagreed; the 1962 sanctoral section read 247 in a document that called itself current and 307 in the file. | Now caught for the two documents that carry the derived block — this one and `docs/the-mass.md` — by `mass-propers census --check`, which `make check-propers-census` runs. `src/sources/calendars/README.md` and `guidance/liturgy/propers-completion-todo.md` still carry hand-typed tables. Open. |
+| Any **stale count table** | One census of these files existed in three retyped copies, and all three disagreed; the 1962 sanctoral section read 247 in a document that called itself current and 307 in the file. | Now caught for the two documents that carry the derived block — this one and `docs/the-mass.md` — by `mass-propers census --check`, which `make check-propers-census` runs. `guidance/liturgy/propers-completion-todo.md` carried a third and was deleted on 2026-08-01 rather than corrected, its every count having drifted and nothing in it still being both unique and true. `src/sources/calendars/README.md` still carries a hand-typed table. Open. |
 
 ## Tool ownership
 
@@ -253,10 +253,8 @@ What the census does not cover, and what still has to be counted by reading:
   synthetic. Three further entries carry that registry form without the note.
   Identity, rank and citations were read from an **OCR text layer** of the CMAA
   1962 facsimile, not the images. Nothing has been visually collated.
-- `src/sources/calendars/README.md` and
-  `guidance/liturgy/propers-completion-todo.md` still carry hand-typed count
-  tables that nothing regenerates. Treat both as stale, and do not copy a figure
-  out of either.
+- `src/sources/calendars/README.md` still carries a hand-typed count table that
+  nothing regenerates. Treat it as stale, and do not copy a figure out of it.
 
 ## The psalm-numbering situation
 
@@ -320,7 +318,7 @@ or shared, so nothing in the fixed-date spine reports them missing.
 | Whether the eleven antiphons move their number or keep the per-slot declaration | TASK-32; `psalm_numbering_exceptions` |
 | Whether `ascension`, `corpus-christi`, `sacred-heart`, `chrism-mass` belong under `seasonal` or `christological` | 1962 `open_collation_items` |
 | A registry scheme for 1962 ferias | 1962 `open_collation_items` |
-| A schema for 1962 commemorations | `guidance/liturgy/propers-completion-todo.md` |
+| A schema giving a commemoration's own three orations somewhere to live — the 104 are dated entries of rank `Comm.`, but their orations are still placeholders | 1962 `open_collation_items` |
 | Which numbering system each of a further 23 non-psalm postconciliar citations speaks | postconciliar `open_collation_items` |
 | Whether prefaces and the *Oratio super populum* belong in this index | postconciliar `open_collation_items` |
 | The 1962 `P = 23` shortfall after Pentecost | `guidance/liturgy/calendar-computation.md` |

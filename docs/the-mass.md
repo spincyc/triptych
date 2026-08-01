@@ -498,7 +498,7 @@ Each of these is recorded in the repository as unresolved, not silently decided.
 | Whether the eleven antiphons should move their numbers or keep their per-slot declaration | TASK-32; the `psalm_numbering_exceptions` ledger |
 | Whether Ascension, Corpus Christi, the Sacred Heart and the Chrism Mass belong under `seasonal` (where the Missal prints them) or `christological` (what they are by kind) | 1962 `open_collation_items` |
 | A registry scheme for 1962 ferias, which have no printed identifier | 1962 `open_collation_items` |
-| How 1962 commemorations should be modelled — they exist only as prose inside a `name` string, so a commemoration's own three orations have nowhere to live | `guidance/liturgy/propers-completion-todo.md` |
+| How 1962 commemorations should be modelled — the 104 are now dated entries of rank `Comm.`, but a commemoration's own three orations still have nowhere to live | 1962 `open_collation_items` |
 | Which numbering system each of a further 23 non-psalm postconciliar citations actually speaks, before any of them is corrected | postconciliar `open_collation_items` |
 | Whether proper prefaces and the *Oratio super populum* belong in this index at all | postconciliar `open_collation_items` |
 | The 1962 twenty-three-Sunday shortfall after Pentecost | `guidance/liturgy/calendar-computation.md` |
@@ -511,7 +511,7 @@ Each of these is recorded in the repository as unresolved, not silently decided.
 | --- | --- |
 | The schema and how to read an index | [`src/sources/calendars/README.md`](https://github.com/spincyc/triptych/blob/main/src/sources/calendars/README.md) |
 | The calendar arithmetic, authoritatively | [`guidance/liturgy/calendar-computation.md`](https://github.com/spincyc/triptych/blob/main/guidance/liturgy/calendar-computation.md) |
-| What completing the propers would cost | [`guidance/liturgy/propers-completion-todo.md`](https://github.com/spincyc/triptych/blob/main/guidance/liturgy/propers-completion-todo.md) |
+| What is outstanding, and what each open item is blocked on | [`guidance/propers-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/propers-for-agents.md) |
 | The source contract for calendars | [`guidance/sources.md`](https://github.com/spincyc/triptych/blob/main/guidance/sources.md) |
 | Working here as an agent | [`guidance/propers-for-agents.md`](https://github.com/spincyc/triptych/blob/main/guidance/propers-for-agents.md) |
 
