@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own English wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Project transcription read visually from rendered page images of the parent facsimile, not from any optical-character-recognition layer. Artifact pages 44-50 were rendered with pdftoppm at 800 dpi in half-page slices and read; four doubtful words were re-rendered at 1600 dpi. The Canon was divided into its printed blocks, one row per block, and the block's English column transcribed as set. Nineteenth-century spelling, capitalisation, punctuation and the printing's abbreviated conclusions are reproduced as printed and were not modernised, expanded, or corrected against the Latin. Where the scan has lost ink at the right edge of the English column or a sort has failed, the damaged word is given whole and the damage is named in the row's `notes`; every such reading was controlled against the facing Latin column of the same opening. Nothing was supplied that the page does not print. Latin incipits are given in the normalised spelling of the Latin column's opening words and are apparatus, not transcription."
+retrieved = "2026-07-31"
+sha256 = "9b729821becda739585c9a2fc0e6cc35186e53d6383362f85e4435212fe603c4"
+byte_size = 11254
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-en/canon-missae-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header line and 30 data lines; one physical line per printed block, with no embedded newlines, so a raw-line literal search over the `english` column returns exactly one line per element. Columns: seq, element_key, part, kind, speaker, printed_page, ia_leaf, latin_incipit, english, notes. `kind` is one of heading, rubric, prayer, form, dialogue. Coverage: the Canon of the Mass in the strict sense, Te igitur through the doxology Per ipsum and its concluding versicle, printed pp. xxxiii-xxxix, that is Internet Archive leaves n43-n49 and artifact pages 44-50 of the parent facsimile. The book's own running head THE CANON OF THE MASS continues to p. xlii, over the Pater noster, the fraction, the Agnus Dei and the priest's Communion; that material is deliberately excluded here because the running head is a printer's device and not the boundary of the Canon. The proper forms of Communicantes and Hanc igitur, which this printing sets elsewhere among the prefaces, are not included. This printing is a pre-1955 lay hand missal, not an approved liturgical translation and never an altar book; nothing here may be used for recitation. It renders the Roman Canon as the 1570-1962 books print it. It is NOT a translation of the postconciliar Prex eucharistica I, which differs from it at the points recorded in the source review of 2026-07-31, and must never be served as one."
