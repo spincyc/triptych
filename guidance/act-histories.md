@@ -49,7 +49,7 @@ finding rather than a shortfall.**
 | 1920 Missal | *Decretum approbationis editionis typicae Vaticanae*, in the book | **station** |
 | 1955 reform | *Maxima redemptionis*, S.R.C., 16 November 1955, AAS 47 (1955) 838-841 | **station** |
 | — | *Rubricarum instructum* 25 July 1960 and the S.R.C. decree of 26 July 1960, both printed entire in the 1962 witness | **two stations** the brief did not list |
-| **1962 Missal** | **none found in this corpus. See §7.2 — the node stands, flagged** | **station, instrument not found** |
+| **1962 Missal** | **none in this corpus: 136,068 lines hold three occurrences of `DECRETUM`, all belonging to the 1960 documents. Named *Novo rubricarum corpore* from `time-machine.md` §4, not read. See §7.2** | **station, instrument not read** |
 | **1806 English** | **none. No approbation, imprimatur, *permissu*, licence or Vicars Apostolic anywhere in the book** | **witness, not a station** |
 | **1843 English** | **none about the rite. Its title page carries a US copyright registration and a treatise by a bishop; neither changes the missal** | **witness, not a station** |
 
@@ -57,6 +57,12 @@ Four of the brief's seven nodes are not stations. Two stations the brief did not
 name are, and were found only because the rule forced the question. The Latin
 line the brief drew — 1570 → 1604 → 1862 → 1920 → 1962 — has one false edge in
 it, and the English line does not exist in this encoding at all.
+
+**Independently corroborated.** `time-machine.md` §4, deriving a coarse view from
+a different property entirely — whether an act produced a new typical edition —
+arrives at a skeleton of 1570, 1604, **1634**, 1884, 1920, 1962 and later. It
+includes the 1634 revision this tracer had to add, and excludes 1862, which this
+tracer had to remove. Two routes to the same set is worth more than either.
 
 Section 6 measures what the rule buys against the OCR. It is worth a great deal.
 
@@ -90,7 +96,7 @@ station the record does not hold.
 | `cum-sanctissimum-1604` → `si-quid-est-1634` | The bull names both predecessors and says it follows in their steps: *Pius V. et Clemens VIII. diligentissime recognosci atque instaurari curaverunt; Nos quoque eorum vestigiis inhaerentes*. [sourced: pustet-1862 OCR 409-447] |
 | `si-quid-est-1634` → `divino-afflatu-1911` | The 1920 decree of approbation names the two norms its edition was made to. [sourced: missale-romanum-1920 OCR 18-19] |
 | `divino-afflatu-1911` → `abhinc-duos-annos-1913` | Named beside it in the same clause, and later. [sourced: missale-romanum-1920 OCR 19-20] |
-| `abhinc-duos-annos-1913` → `editio-typica-1920` | The decree of approbation, 25 July 1920, Card. Vico prefect, Alexander Verde secretary. **Marked `via_unrepresented`**: the decree says the text was drawn *ex altera typica anni 1900*, an edition not in this corpus. The edge means "descends from", not "immediately follows". [sourced: missale-romanum-1920 OCR 7-64] |
+| `abhinc-duos-annos-1913` → `editio-typica-1920` | The decree of approbation, subscribed *Die 25 Julii 1920*, A. Card. Vico prefect, Alexander Verde secretary. **Marked `via_unrepresented`**: the decree says the text was drawn *ex altera typica anni 1900*, an edition not in this corpus. The edge means "descends from", not "immediately follows". [sourced: missale-romanum-1920 OCR 7-64] |
 | `editio-typica-1920` → `de-rubricis-simpliciorem-1955` | It simplifies the rubrics of the books that edition carried. [sourced: named and dated in *Rubricarum instructum*, benziger-1962 OCR 1131-1134, 1171-1173] |
 | `editio-typica-1920` → `maxima-redemptionis-1955` | The state the decree reformed is the one that edition carried. [sourced: AAS 47 (1955) 838-841, aas-47-1955 OCR 51717-51940] |
 | `de-rubricis-simpliciorem-1955` → `rubricarum-instructum-1960` | **An act that says what it supersedes has drawn its own edge**: *Pariter vigere cessat Decretum generale S. R. C. diei 23 Martii anni 1955 De rubricis ad simpliciorem formam redigendis, in hac nova rubricarum redactione assumptum*. [sourced: benziger-1962 OCR 1171-1173] |
@@ -573,8 +579,17 @@ node would leave the two reforms on branches that never join, which is false in
 the other direction. **A reader can see a flagged gap; a reader cannot see a
 node that was never drawn.**
 
-This is the tracer's least comfortable result and the one most worth arguing
-with.
+**Since first drawing it, the instrument has acquired a name from elsewhere.**
+`time-machine.md` §4 records, from separate research, that the 1962 decree is
+*Novo rubricarum corpore* and that **it is not in AAS 54** [sourced] — which
+explains why searching an AAS volume and a missal scan for it returned nothing.
+The station now names it. It is **not** promoted: no text of it has been read
+here, `act_citation` stays `not-found`, and it stays there until someone reads
+the decree rather than a report of one. Naming a document and reading it are
+different acts, and the encoding keeps them apart.
+
+This remains the tracer's least comfortable result and the one most worth
+arguing with.
 
 ### 7.3 A famous change has no instrument, and therefore no station
 

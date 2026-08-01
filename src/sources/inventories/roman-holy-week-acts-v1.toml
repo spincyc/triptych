@@ -363,11 +363,13 @@ citation = "Sacred Congregation of Rites, Decretum approbationis editionis typic
 attested_in = ["missale-romanum-1920"]
 read_from = "ocr-only"
 locus = "missale-romanum-1920 OCR lines 7-60"
+dateline = "Die 25 Julii 1920"
+signatories = "A. Card. Vico, Ep. Portuen. et S. Rufinae, S. R. C. Praefectus; Alexander Verde, S. R. C. Secretarius"
 date_note = """
-The day is taken from the corpus record that supplied the scan, not from a
-dateline read in the decree itself. The decree's own subscription was not
-legible in the OCR examined, so the date is `sourced` at one remove and should be
-confirmed against the page before it is relied on.
+Read from the decree's own subscription at missale-romanum-1920 OCR 57-64, not
+taken from the corpus metadata. An earlier draft of this file said the
+subscription was not legible and dated the act at one remove; that was wrong, and
+the correction is recorded rather than quietly applied.
 """
 effect = "No departure in this slice has been established for it."
 effect_established = false
@@ -506,7 +508,7 @@ kind = "promulgation"
 date = "1962-06-23"
 date_precision = "day"
 authority = "John XXIII, through the Sacred Congregation of Rites"
-instrument = "Typical edition of the Missale Romanum of 1962"
+instrument = "Decree Novo rubricarum corpore, promulgating the typical edition of the Missale Romanum of 1962"
 title = "The 1962 typical edition carries the reform and the new code"
 parents = ["maxima-redemptionis-1955", "codex-rubricarum-1960"]
 parent_basis = """
@@ -531,7 +533,7 @@ Where a reception cannot be shown like that, this file draws no merge, and
 `act-history check` refuses any act with more than one parent that does not carry
 this field.
 """
-citation = "Missale Romanum, typical edition of 1962. NO PROMULGATING ACT FOR IT WAS FOUND IN THIS CORPUS."
+citation = "Sacred Congregation of Rites, Novo rubricarum corpore, 1962, promulgating the typical edition. THE INSTRUMENT'S TEXT WAS NOT READ HERE; the title is taken from the sibling research recorded in guidance/time-machine.md section 4, which also records that it is not in Acta Apostolicae Sedis 54."
 act_citation = "not-found"
 act_citation_note = """
 This station fails the rule the rest of the file keeps, and it is kept anyway,
@@ -547,6 +549,14 @@ the station would leave the two reforms on branches that never join, which is
 false in the other direction and is the error `parallel stays parallel` exists to
 prevent in reverse. So the node stands and says plainly that its act is missing.
 A reader can see the gap; a reader cannot see a node that was never drawn.
+
+The instrument now has a name it did not have when this station was first drawn.
+guidance/time-machine.md section 4 records, from separate research, that the 1962
+decree is `Novo rubricarum corpore` and that it is not in Acta Apostolicae Sedis
+54 -- which explains why searching an AAS volume and a missal scan for it found
+nothing. Naming it does not promote the station: no text of it has been read
+here, so `act_citation` stays `not-found` and will stay there until someone reads
+the decree rather than a report of it.
 """
 attested_in = ["benziger-iuxta-typicam-1962"]
 read_from = "ocr-only"
