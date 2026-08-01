@@ -405,5 +405,66 @@ class TrackedRecensionTest(unittest.TestCase):
         self.assertFalse((self.root / "roman-pre-1955" / "rubrics.yaml").exists())
 
 
+def _calendar_rubrics():
+    """The `calendar-rubrics` tool, imported from a file with no `.py` suffix."""
+    import importlib.machinery
+    import importlib.util
+
+    spec = importlib.util.spec_from_loader(
+        "calendar_rubrics",
+        importlib.machinery.SourceFileLoader("calendar_rubrics", str(ROOT / "tools" / "calendar-rubrics")),
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+class OneWayToResolveADayTest(unittest.TestCase):
+    """Every tool that reads a calendar reads the same derivation.
+
+    `calendar-days` and `mass-propers` go through `_calendars.load_document`;
+    `calendar-rubrics` used to parse `propers.yaml` itself. For the two
+    non-recension calendars the two routes agree, which is why the divergence
+    went unnoticed --- and for a recension they differ by four hundred and
+    eighty-six masses, because a recension's file states only its departures.
+    Rubrics read the short way would decide five days and be silent about the
+    rest while the browser served all of them.
+    """
+
+    root = ROOT / "src" / "sources" / "calendars"
+
+    def setUp(self) -> None:
+        self.tool = _calendar_rubrics()
+
+    def test_rubrics_see_every_mass_the_recension_serves(self):
+        served = _calendars.mass_index(_calendars.load_document(self.root, "roman-pre-1955"))
+        classified = self.tool.load_masses(self.root, "roman-pre-1955")
+        # The Commune is formularies rather than days and `load_masses` drops it,
+        # so the rubrics see fewer keys than the calendar serves; what matters is
+        # that they see the inherited year and not the five departure rows.
+        self.assertGreater(len(classified), 400)
+        self.assertLessEqual(len(classified), len(served))
+        self.assertIn("advent-1", classified)
+
+    def test_a_recensions_formularies_include_the_ones_it_inherits(self):
+        formularies = self.tool.all_formularies(self.root, "roman-pre-1955")
+        self.assertIn("commune-virginum-1", formularies)
+        self.assertIn("blessing-of-palms", formularies)
+
+    def test_a_calendar_that_is_nobodys_recension_is_read_exactly_as_before(self):
+        import yaml
+
+        raw = yaml.safe_load(
+            (self.root / "roman-1962" / "propers.yaml").read_text(encoding="utf-8")
+        )
+        direct = {
+            str(mass["key"])
+            for body in (raw.get("sections") or {}).values()
+            for mass in ((body or {}).get("masses") or [])
+            if isinstance(mass, dict) and mass.get("key")
+        }
+        self.assertEqual(self.tool.all_formularies(self.root, "roman-1962"), direct)
+
+
 if __name__ == "__main__":
     unittest.main()

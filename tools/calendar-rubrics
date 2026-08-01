@@ -230,13 +230,22 @@ def calendars(root: Path, only: str | None) -> list[str]:
 def load_masses(root: Path, name: str) -> dict[str, dict]:
     """The calendar's own mass index, which the rubrics classify.
 
-    Read from the same `propers.yaml` `calendar-days` reads, so a rank or a kind
-    is never restated beside the file that owns it.
-    """
-    import yaml
+    Read through `_calendars.load_document`, which is the same derivation
+    `calendar-days` and `mass-propers` read, so a rank or a kind is never
+    restated beside the file that owns it.
 
+    THE `effective=True` IS LOAD-BEARING AND WAS NOT ALWAYS HERE. A recension's
+    `propers.yaml` states only its DEPARTURES, so a raw parse of it returns the
+    five rows of `roman-pre-1955` rather than the 491 masses that recension
+    actually serves. Rubrics read that way would classify five days and be
+    silent about four hundred and eighty-six, while the browser served all of
+    them --- a second way to resolve a day, disagreeing with the first, in the
+    layer that decides which day wins. A calendar that declares no `text_from`
+    is returned exactly as it sits on disk, so the two non-recension calendars
+    read identically through this path.
+    """
     path = root / name / "propers.yaml"
-    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    document = _calendars.load_document(root, name, effective=True)
     if not isinstance(document, dict):
         raise SourceError(f"{path}: top level must be a mapping")
     masses: dict[str, dict] = {}
@@ -275,10 +284,8 @@ def all_formularies(root: Path, name: str) -> set[str]:
     what the Saturday Office's Mass and a mass choice point AT, so the check
     that those pointers resolve has to see the whole index.
     """
-    import yaml
-
     path = root / name / "propers.yaml"
-    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    document = _calendars.load_document(root, name, effective=True)
     if not isinstance(document, dict):
         raise SourceError(f"{path}: top level must be a mapping")
     return {
