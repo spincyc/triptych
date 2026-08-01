@@ -27,13 +27,19 @@ import sys
 from collections import defaultdict
 from importlib.machinery import SourceFileLoader
 from pathlib import Path
-from typing import Any
+from typing import Any, NamedTuple
 
 # Shared CLI helpers live outside tools/ so that tmt's registry scan,
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from _commentary import chapter_loci
+from _commentary import (
+    UNRECORDED,
+    chapter_loci,
+    declared_numbering,
+    moved_citations,
+    row_numbering,
+)
 from _psalms import PSALMS, NumberingError, convert_point
 from _tooling import (
     Example,
@@ -67,6 +73,17 @@ EXAMPLES = {
                 "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+401 chars]",
             ),
         ),
+        Example(
+            "tools/commentary-work-index discover --passage 'Joel 3:1-5' --max-results 3",
+            (
+                "passage: Joel 3:1-3:5",
+                "  cited as: Joel 3:1-5",
+                "  refused Joel 3: postconciliar cites 'Joel 3:1-5', which that calendar's"
+                " own citation_divergences resolves to 'Joel 2:28-32'... [+130 chars]",
+                "  - no mapped commentaries yet",
+            ),
+            "a refusal is a result: the index holds a Joel 3 row and says it is not this canon's Joel 3",
+        ),
     ),
     "build-corpus": (
         Example(
@@ -83,9 +100,10 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml",
             (
-                "masses: 126 covered of 126",
-                "total works in union corpus: 124",
-                "unresolved passages: 44",
+                "masses: 127 covered of 127",
+                "total works in union corpus: 130",
+                "unresolved passages: 1",
+                "refused loci: 0",
                 "",
                 "roman-1962::advent-1 [seasonal] -> 20 works",
                 "... 20 more lines",
@@ -107,11 +125,18 @@ CANONICAL_NUMBERING = "vulgate"
 NUMBERING_SYSTEMS = ("vulgate", "hebrew")
 
 
-def _canonical_passage(record: dict[str, Any], source: str) -> dict[str, Any]:
-    """Renumber a psalm passage into the canonical system."""
+def _canonical_passage(
+    record: dict[str, Any], source: str, target: str = CANONICAL_NUMBERING
+) -> dict[str, Any]:
+    """Renumber a psalm passage into the system the index is keyed in.
+
+    `target` is a parameter and not the constant, because the index now says
+    which system it is keyed in and a consumer must follow the declaration
+    rather than its own assumption about it.
+    """
     if not isinstance(record, dict):
         return record
-    if record.get("book") != PSALMS or source == CANONICAL_NUMBERING:
+    if record.get("book") != PSALMS or source == target:
         # Still re-render, so every key uses one spelling regardless of system.
         canonical = dict(record)
         canonical["ref"] = _normalize_ref_from_record(canonical)
@@ -121,11 +146,11 @@ def _canonical_passage(record: dict[str, Any], source: str) -> dict[str, Any]:
         begin = dict(entry.get("begin") or {})
         end = dict(entry.get("end") or begin)
         b_ch, b_v, _ = convert_point(
-            begin.get("chapter"), begin.get("verse"), source, CANONICAL_NUMBERING
+            begin.get("chapter"), begin.get("verse"), source, target
         )
         e_ch, e_v, _ = convert_point(
             end.get("chapter", begin.get("chapter")), end.get("verse"),
-            source, CANONICAL_NUMBERING,
+            source, target,
         )
         ranges.append(
             {**entry, "begin": {**begin, "chapter": b_ch, "verse": b_v},
@@ -382,12 +407,32 @@ def _file_sha256(path: Path) -> str:
         return ""
 
 
-def _load_discovery(path: Path) -> dict[str, list[dict[str, Any]]]:
+class Discovery(NamedTuple):
+    """An index, the system it declares, and the keys that are not in it.
+
+    `refusals` is not a gap. A key whose own row declares another system is a
+    positive statement that the runs behind it answered about different text,
+    and a lookup that returned it would be this repository's governing failure
+    — real commentary under a correct-looking reference, counted as a hit.
+    """
+
+    numbering: str
+    works: dict[str, list[dict[str, Any]]]
+    refusals: dict[str, str]
+
+
+def _load_discovery(path: Path) -> Discovery:
     data = _load_yaml(path)
     if not data:
-        return {}
+        return Discovery(CANONICAL_NUMBERING, {}, {})
+
+    # An index with no declaration cannot be read safely at all: its keys name
+    # a chapter and not the system numbering it, and both readings resolve.
+    # Refusing to load is the only answer that cannot be a wrong one.
+    numbering = declared_numbering(data, str(path))
 
     mapping: dict[str, list[dict[str, Any]]] = {}
+    refusals: dict[str, str] = {}
     if isinstance(data.get("passages"), list):
         for entry in data["passages"]:
             if not isinstance(entry, dict):
@@ -395,6 +440,12 @@ def _load_discovery(path: Path) -> dict[str, list[dict[str, Any]]]:
             key = _coerce_str(entry.get("passage") or entry.get("passage_ref"))
             works = entry.get("works")
             if not key or not isinstance(works, list):
+                continue
+            declared = row_numbering(entry)
+            if declared and declared != numbering:
+                refusals[key] = _coerce_str(entry.get("numbering_basis")) or (
+                    f"this row is keyed {declared!r}, not the index's {numbering!r}"
+                )
                 continue
             normalized: list[dict[str, Any]] = []
             for raw in works:
@@ -404,7 +455,7 @@ def _load_discovery(path: Path) -> dict[str, list[dict[str, Any]]]:
                     continue
             if normalized:
                 mapping[key] = _sort_works(normalized)
-        return mapping
+        return Discovery(numbering, mapping, refusals)
 
     for key, works in data.get("by_passage", {}).items():
         if not isinstance(key, str) or not isinstance(works, list):
@@ -412,15 +463,102 @@ def _load_discovery(path: Path) -> dict[str, list[dict[str, Any]]]:
         normalized = [_coerce_work_record(work) for work in works if isinstance(work, dict)]
         if normalized:
             mapping[key.strip()] = _sort_works(normalized)
-    return mapping
+    return Discovery(numbering, mapping, refusals)
+
+
+def numbering_survey(citations, calendars: dict[str, dict[str, Any]]) -> dict[str, dict[str, str]]:
+    """Index keys that are not in `CANONICAL_NUMBERING`, and why — derived.
+
+    A key is in the canon's numbering when some citation that produces it means
+    that chapter of the canon. It is `unrecorded` when *every* citation
+    producing it is one the citing calendar's own `citation_divergences`
+    resolves into a different chapter: nothing then asks about that chapter of
+    the canon at all, and the works under the key were harvested by asking a
+    model a question whose system nobody stated.
+
+    "Every", not "any", is the load-bearing word. `Malachi 3` is reached by
+    `Malachi 3:1`, which means Vulgate Malachi 3, *and* by `Malachi 3:19-20a`,
+    which means Vulgate Malachi 4. The key is sound; the second citation is
+    misrouted, which is a fact about resolution and not about the key, and
+    `misrouted_citations` reports it separately rather than condemning the row.
+    """
+    reached: dict[str, list[tuple[str, str, str]]] = {}
+    for calendar in sorted(calendars):
+        document = calendars[calendar]
+        moved = moved_citations(document)
+        for record in _collect_mass_records(citations, document, calendar):
+            cited = _coerce_str(
+                record["passage"].get("cited_ref") or record["passage"].get("ref")
+            )
+            try:
+                canonical = _canonical_passage(record["passage"], record["numbering"])
+            except NumberingError:
+                # Already refused by build-corpus and reported there; a
+                # reference that cannot be converted produces no key.
+                continue
+            for locus in chapter_loci(canonical["ref"]):
+                entry = (calendar, cited, moved.get(cited, ""))
+                if entry not in reached.setdefault(locus, []):
+                    reached[locus].append(entry)
+
+    survey: dict[str, dict[str, str]] = {}
+    for locus, entries in reached.items():
+        foreign = [
+            (calendar, cited, resolved)
+            for calendar, cited, resolved in entries
+            if resolved and locus not in chapter_loci(resolved)
+        ]
+        if not entries or len(foreign) != len(entries):
+            continue
+        calendar, cited, resolved = foreign[0]
+        others = "; ".join(
+            f"{c} cites {q!r} ({r})" for c, q, r in foreign[1:]
+        )
+        survey[locus] = {
+            "numbering": UNRECORDED,
+            "numbering_basis": (
+                f"{calendar} cites {cited!r}, which that calendar's own "
+                f"citation_divergences resolves to {resolved!r}; no proper cites "
+                f"this chapter of the {CANONICAL_NUMBERING} canon, so the works "
+                "here were harvested against a locus whose system nobody stated"
+                + (f". Also reached by: {others}" if others else "")
+            ),
+        }
+    return survey
+
+
+def misrouted_citations(citations, calendars: dict[str, dict[str, Any]]) -> list[dict[str, str]]:
+    """Citations that reach a sound key while meaning a different chapter.
+
+    The other half of what the survey measures, kept apart from it because the
+    remedy is different: the key is right and the routing is wrong, so this is
+    reported for whoever owns citation resolution rather than written onto a
+    row.
+    """
+    rows: list[dict[str, str]] = []
+    for calendar in sorted(calendars):
+        document = calendars[calendar]
+        for cited, resolved in sorted(moved_citations(document).items()):
+            for locus in chapter_loci(cited):
+                if locus in chapter_loci(resolved):
+                    continue
+                rows.append(
+                    {
+                        "calendar": calendar,
+                        "cited": cited,
+                        "reaches": locus,
+                        "means": resolved,
+                    }
+                )
+    return sorted(rows, key=lambda row: (row["calendar"], row["cited"], row["reaches"]))
 
 
 def _lookup_works(
-    discovery: dict[str, list[dict[str, Any]]],
+    discovery: Discovery,
     citations,
     passage_input: object,
     max_results: int,
-) -> tuple[str, list[dict[str, Any]]]:
+) -> tuple[str, list[dict[str, Any]], list[dict[str, str]]]:
     records = _parse_passage_value(citations, passage_input)
     if not records:
         raise ValueError("no parseable passage")
@@ -442,7 +580,18 @@ def _lookup_works(
     ordered: list[dict[str, Any]] = []
     seen: dict[str, dict[str, Any]] = {}
 
-    for work in discovery.get(passage_ref, []):
+    # A key the index declares to be in another system is refused rather than
+    # answered, and the reason travels with the refusal. Returning it would be
+    # the failure this whole chain is built against: the row holds real works,
+    # harvested against real text, and the text is not the text asked for.
+    wanted = [passage_ref, *chapter_loci(passage_ref)]
+    refused = [
+        {"locus": locus, "reason": discovery.refusals[locus]}
+        for locus in dict.fromkeys(wanted)
+        if locus in discovery.refusals
+    ]
+
+    for work in discovery.works.get(passage_ref, []):
         key = _work_key(work)
         if key in seen:
             continue
@@ -459,7 +608,9 @@ def _lookup_works(
     # chapter's first work, then every chapter's second — keeps each chapter's
     # own confidence order while guaranteeing that no chapter the citation
     # names is starved by the cut at --max-results.
-    per_locus = [(locus, discovery.get(locus, [])) for locus in chapter_loci(passage_ref)]
+    per_locus = [
+        (locus, discovery.works.get(locus, [])) for locus in chapter_loci(passage_ref)
+    ]
     for index in range(max((len(works) for _, works in per_locus), default=0)):
         for locus, works in per_locus:
             if index >= len(works):
@@ -488,7 +639,7 @@ def _lookup_works(
 
     if max_results > 0:
         ordered = ordered[:max_results]
-    return passage_ref, ordered
+    return passage_ref, ordered, refused
 
 
 def _category_for_kind(kind: object) -> str:
@@ -632,7 +783,7 @@ class CorpusWork:
 
 def _build_mass_coverage(
     citations,
-    discovery: dict[str, list[dict[str, Any]]],
+    discovery: Discovery,
     records: list[dict[str, Any]],
     max_per_mass: int,
     max_per_passage: int,
@@ -643,6 +794,7 @@ def _build_mass_coverage(
     dict[str, list[str]],
     list[dict[str, str]],
     list[str],
+    list[dict[str, str]],
 ]:
     if max_per_mass <= 0:
         max_per_mass = 20
@@ -655,6 +807,7 @@ def _build_mass_coverage(
     unresolved: list[str] = []
     widened: list[str] = []
     unconvertible: list[dict[str, str]] = []
+    refusals: list[dict[str, str]] = []
     work_metadata: dict[str, dict[str, Any]] = {}
     mass_seen: dict[str, dict[str, Any]] = {}
 
@@ -667,7 +820,9 @@ def _build_mass_coverage(
         )
         try:
             canonical = _canonical_passage(
-                item["passage"], item.get("numbering", CANONICAL_NUMBERING)
+                item["passage"],
+                item.get("numbering", discovery.numbering),
+                target=discovery.numbering,
             )
         except NumberingError as error:
             # A reference that does not exist in the system its calendar
@@ -693,7 +848,18 @@ def _build_mass_coverage(
         )
         passage_to_masses[passage_ref].append(mass_id)
 
-        _, works = _lookup_works(discovery, citations, item["passage"], max_per_passage)
+        _, works, refused = _lookup_works(
+            discovery, citations, item["passage"], max_per_passage
+        )
+        for row in refused:
+            entry = {
+                "mass": mass_id,
+                "ref": cited_ref,
+                "locus": row["locus"],
+                "reason": row["reason"],
+            }
+            if entry not in refusals:
+                refusals.append(entry)
         if any(work.get("matched") == "chapter" for work in works):
             if passage_ref not in widened:
                 widened.append(passage_ref)
@@ -793,6 +959,7 @@ def _build_mass_coverage(
         full_corpus,
         sorted(unconvertible, key=lambda row: (row["mass"], row["ref"])),
         sorted(widened),
+        sorted(refusals, key=lambda row: (row["mass"], row["ref"], row["locus"])),
     )
 
 
@@ -819,6 +986,8 @@ def _render_payload(
             print(f"passage: {item['passage']}")
             if item.get("cited"):
                 print(f"  cited as: {item['cited']}")
+            for row in item.get("refused_loci") or []:
+                print(f"  refused {row['locus']}: {row['reason']}")
             works = item.get("works", [])
             if not works:
                 print("  - no mapped commentaries yet")
@@ -846,6 +1015,12 @@ def _render_payload(
         print(f"unresolved passages: {payload['unresolved_passage_count']}")
         for row in payload.get("unconvertible_references") or []:
             print(f"unconvertible {row['mass']} {row['ref']}: {row['reason']}")
+        print(f"refused loci: {len(payload.get('refused_loci') or [])}")
+        for row in payload.get("misrouted_citations") or []:
+            print(
+                f"misrouted {row['calendar']} {row['cited']} reaches "
+                f"{row['reaches']} but means {row['means']}"
+            )
         print()
         for mass in payload["masses"][:20]:
             print(
@@ -867,8 +1042,25 @@ def _select_output_format(arguments: argparse.Namespace) -> str:
     return "text"
 
 
+def _psalm_target(discovery: Discovery) -> str:
+    """The system a psalm citation must be converted into to meet the index.
+
+    The index declares its own; the psalm concordance models two. An index in
+    any other system is refused rather than converted approximately, because an
+    approximate psalm number is a different psalm.
+    """
+    if discovery.numbering not in NUMBERING_SYSTEMS:
+        raise ValueError(
+            f"the index declares numbering {discovery.numbering!r}; the tracked "
+            f"psalm concordance models only {list(NUMBERING_SYSTEMS)}, so a psalm "
+            "citation cannot be converted into this index's key space"
+        )
+    return discovery.numbering
+
+
 def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
     discovery = _load_discovery(args.discovery)
+    target = _psalm_target(discovery)
 
     passages = list(args.passage)
     if args.passage_file:
@@ -897,13 +1089,16 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
         # --passage-file may have carried in.
         named = _coerce_str(record.get("cited_ref") or record.get("ref")) or repr(passage)
 
-        # The index is keyed in one numbering system and a psalm reference does
-        # not say which one it is written in. Vulgate 50 is Hebrew 51, so
+        # The index says which numbering its keys are in and a psalm reference
+        # does not say which one it is written in. Vulgate 50 is Hebrew 51, so
         # guessing returns a real, confident, wrong psalm — worse than the miss
         # it replaces. The two missals disagree here by declaration, not by
         # accident: roman-1962 is vulgate and postconciliar is hebrew, which is
         # why build-corpus reads the system off the calendar and why a bare
-        # lookup has to be told.
+        # lookup has to be told. Until the index declared its own system this
+        # refusal was the only thing standing between a lookup and a wrong
+        # answer, and it guarded one book: it asks what the citation is in, and
+        # nothing asked what the index was in.
         if record.get("book") == PSALMS and args.numbering is None:
             raise ValueError(
                 f"invalid passage {named}: a psalm reference does not say which "
@@ -911,12 +1106,16 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
                 f"{{{'|'.join(NUMBERING_SYSTEMS)}}} to name the system it is written in"
             )
         try:
-            canonical = _canonical_passage(record, args.numbering or CANONICAL_NUMBERING)
+            canonical = _canonical_passage(
+                record, args.numbering or target, target=target
+            )
         except NumberingError as error:
             raise ValueError(f"invalid passage {named}: {error}") from error
 
         try:
-            ref, works = _lookup_works(discovery, citations, canonical, args.max_results)
+            ref, works, refused = _lookup_works(
+                discovery, citations, canonical, args.max_results
+            )
         except Exception as error:
             raise ValueError(f"invalid passage {named}: {error}") from error
 
@@ -924,6 +1123,8 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
             "passage": ref,
             "works": _sort_works([_coerce_work_record(item) for item in works]),
         }
+        if refused:
+            entry["refused_loci"] = refused
         cited = _coerce_str(record.get("cited_ref") or record.get("ref"))
         if cited and cited != ref:
             entry["cited"] = cited
@@ -932,10 +1133,12 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
     payload = {
         "status": "ok",
         "schema": SCHEMA_DISCOVERY,
-        # The keys returned are always CANONICAL_NUMBERING, whatever the input
-        # was written in, for the same reason the corpus says so: "Psalms 24"
-        # printed beside "1 Samuel 16" reads as Hebrew unless it is told not to.
-        "numbering": CANONICAL_NUMBERING,
+        # The keys returned are in the system the index declares, whatever the
+        # input was written in, for the same reason the corpus says so:
+        # "Psalms 24" printed beside "1 Samuel 16" reads as Hebrew unless it is
+        # told not to. It is read off the index rather than assumed here, so
+        # that one file answers the question for every consumer.
+        "numbering": target,
         "cited_numbering": args.numbering,
         "max_results": args.max_results,
         "discoveries": discoveries,
@@ -946,11 +1149,13 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
 
 def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
     discovery = _load_discovery(args.discovery)
+    _psalm_target(discovery)
     root = Path(args.root)
     if not root.is_dir():
         raise ValueError(f"calendar root is missing: {root}")
 
     calendar_records: list[dict[str, Any]] = []
+    calendar_documents: dict[str, dict[str, Any]] = {}
     calendars = args.calendar or DEFAULT_CALENDARS
 
     for calendar in calendars:
@@ -959,6 +1164,7 @@ def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
             raise ValueError(f"missing calendar index: {path}")
         try:
             doc = _load_calendar_doc(path)
+            calendar_documents[calendar] = doc
             calendar_records.extend(_collect_mass_records(citations, doc, calendar))
         except Exception as error:
             raise ValueError(f"failed to read {path}: {error}") from error
@@ -973,6 +1179,7 @@ def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
         full_corpus,
         unconvertible,
         widened,
+        refusals,
     ) = _build_mass_coverage(
         citations,
         discovery,
@@ -984,16 +1191,20 @@ def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
     payload = {
         "schema": SCHEMA_CORPUS,
         "status": "ok",
-        # Every locus below is normalised to CANONICAL_NUMBERING, but the book
-        # names are printed as they are commonly written, so "Psalms 24" sits
-        # beside "1 Samuel 16" and looks like it should be read the same way.
-        # It should not: 24 here is Ad te levavi. Leaving that to be inferred
-        # already sent one of three readers to the Hebrew psalter.
-        "numbering": CANONICAL_NUMBERING,
+        # Every psalm locus below is normalised into the system the index
+        # declares, but the book names are printed as they are commonly
+        # written, so "Psalms 24" sits beside "1 Samuel 16" and looks like it
+        # should be read the same way. It should not: 24 here is Ad te levavi.
+        # Leaving that to be inferred already sent one of three readers to the
+        # Hebrew psalter.
+        "numbering": discovery.numbering,
         "numbering_note": (
-            f"Psalm loci are {CANONICAL_NUMBERING} numbering, not Hebrew, "
+            f"Psalm loci are {discovery.numbering} numbering, not Hebrew, "
             "though the book names are modern: Psalms 24 is Ad te levavi. "
-            "Every other book is numbered as it is printed."
+            "Every other book stands as its missal printed it, which is the "
+            "Vulgate's division for roman-1962 and the Lectionary's for "
+            "postconciliar; where those differ by a chapter the citation is "
+            "listed under refused_loci or misrouted_citations below."
         ),
         "discovery_sha256": _file_sha256(Path(args.discovery)),
         "max_results_per_passage": args.max_results_per_passage,
@@ -1008,6 +1219,15 @@ def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
         "chapter_matched_passage_count": len(widened),
         "chapter_matched_passages": sorted(widened),
         "unconvertible_references": unconvertible,
+        # A citation that reached a key the index declares to be in another
+        # system. The works under that key are real and are about other text,
+        # so the lookup refuses and says so rather than counting a hit.
+        "refused_loci": refusals,
+        # A citation that reaches a sound key while meaning a different chapter
+        # of the canon. The key is right and the routing is wrong, which is a
+        # different repair, so it is derived and reported here rather than
+        # written onto a row.
+        "misrouted_citations": misrouted_citations(citations, calendar_documents),
         "passages": [
             {
                 "passage": passage,

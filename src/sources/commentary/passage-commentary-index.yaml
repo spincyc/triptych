@@ -1,5 +1,15 @@
 schema: triptych-commentary-work-index/v1
 updated: '2026-07-31'
+numbering: vulgate
+numbering_note: 'Keys are addressed in vulgate numbering. Every psalm key is derived by converting
+  each calendar''s citations out of the system that calendar declares, so Psalms 24 here is
+  Ad te levavi and not the Hebrew 24. Every other book stands as its missal printed it: that
+  is the Vulgate''s division for roman-1962, and the Lectionary''s for postconciliar, which
+  divides Joel, Malachi, Isaiah and Esther differently. A key that only a Lectionary-numbered
+  citation reaches therefore names no chapter of this canon at all; it carries its own numbering:
+  unrecorded and is refused by every lookup, because the works under it are real commentary
+  on other text and returning them would be a hit on the wrong words.'
+numbering_unrecorded_count: 3
 harvest_runs: 9
 min_confidence: 0.0
 passages:
@@ -9068,6 +9078,10 @@ passages:
     confidence: 0.3333
     runs: 3
 - passage: Esther 4
+  numbering: unrecorded
+  numbering_basis: postconciliar cites 'Esther 4:17', which that calendar's own citation_divergences
+    resolves to 'Esther 13:9-11'; no proper cites this chapter of the vulgate canon, so the
+    works here were harvested against a locus whose system nobody stated
   works:
   - author: Cornelius a Lapide
     title: Commentaria in Scripturam Sacram
@@ -17672,6 +17686,10 @@ passages:
     confidence: 0.3333
     runs: 3
 - passage: Isaiah 8
+  numbering: unrecorded
+  numbering_basis: postconciliar cites 'Isaiah 8:23-9:3', which that calendar's own citation_divergences
+    resolves to 'Isaiah 9:1-4'; no proper cites this chapter of the vulgate canon, so the
+    works here were harvested against a locus whose system nobody stated
   works:
   - author: Albert the Great
     title: Postilla super Isaiam
@@ -19646,6 +19664,10 @@ passages:
     confidence: 0.3333
     runs: 3
 - passage: Joel 3
+  numbering: unrecorded
+  numbering_basis: postconciliar cites 'Joel 3:1-5', which that calendar's own citation_divergences
+    resolves to 'Joel 2:28-32'; no proper cites this chapter of the vulgate canon, so the
+    works here were harvested against a locus whose system nobody stated
   works:
   - author: Cornelius a Lapide
     title: Commentaria in Scripturam Sacram

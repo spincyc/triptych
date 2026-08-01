@@ -70,7 +70,17 @@ contains "unknown book" "$err" "unknown book is reported by the citations siblin
 cat >"$sandbox/discovery.yaml" <<'YAML'
 schema: triptych-commentary-work-index/v1
 updated: 2026-07-30
+numbering: vulgate
 passages:
+  - passage: "Joel 3"
+    numbering: unrecorded
+    numbering_basis: only a Lectionary-numbered citation reaches this key
+    works:
+      - work_id: jerome.in-ioelem
+        author: Jerome
+        title: Commentarii in Ioelem
+        role: church-father
+        confidence: 1.0
   - passage: "John 3:16"
     works:
       - work_id: aug.tract-io
@@ -201,6 +211,37 @@ contains '"work_id":"theodoret.in-psalmos"' "$out" "renumbered lookup finds the 
 # The same citation read as Vulgate is a different psalm, and must not find it.
 out="$(discover --passage "Psalm 23:1-3" --numbering vulgate --json)"
 lacks '"work_id":"theodoret.in-psalmos"' "$out" "vulgate input is not renumbered"
+
+# ---------------------------------------------------------------------------
+# The index says which numbering its keys are in, and a key that is not in it
+# is refused rather than answered.
+#
+# `Psalms 24` resolves in both systems and means two different psalms, so an
+# index with no declaration cannot be read safely at all. Refusing to load is
+# the only answer that cannot be a wrong one.
+cat >"$sandbox/undeclared.yaml" <<'YAML'
+schema: triptych-commentary-work-index/v1
+passages:
+  - passage: "John 3:16"
+    works:
+      - work_id: aug.tract-io
+        author: Augustine
+        title: Tractates on John
+        role: church-father
+        confidence: 0.9
+YAML
+reject "an index that declares no numbering" \
+	discover --discovery "$sandbox/undeclared.yaml" --passage "John 3:16"
+err="$(run_tool discover --discovery "$sandbox/undeclared.yaml" \
+	--passage "John 3:16" 2>&1 || true)"
+contains "no \`numbering\` declared" "$err" "the refusal names the missing declaration"
+
+# A row that declares another system holds real works about other text. The
+# lookup refuses it and carries the reason, rather than counting a hit.
+out="$(discover --passage "Joel 3:1-5" --json)"
+lacks '"work_id":"jerome.in-ioelem"' "$out" "a foreign key does not answer"
+contains '"refused_loci"' "$out" "the refusal is reported"
+contains "only a Lectionary-numbered citation reaches this key" "$out" "the refusal carries its reason"
 
 # A range crossing a chapter boundary is a query about every chapter it names.
 # Taking each chapter's works in a block let the first fill the result alone:

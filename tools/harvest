@@ -33,12 +33,20 @@ from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
 from datetime import date
+from functools import lru_cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _commentary import book_of, chapter_loci, overlapping_keys  # noqa: E402
+from _commentary import (  # noqa: E402
+    CANONICAL,
+    UNRECORDED,
+    book_of,
+    chapter_loci,
+    impossible_key,
+    overlapping_keys,
+)
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -233,12 +241,30 @@ CUTOFF_YEAR = 1900
 # leaving the existing coarse tag visible for what it is.
 # The loci are addressed in Vulgate psalm numbering while the book names are
 # modern, and the two conventions do not announce themselves. Anything that
-# hands this worklist to a reader must say so.
-NUMBERING = "vulgate"
+# hands this worklist to a reader must say so. The value is `_commentary`'s,
+# not a second copy: the worklist, the index it promotes into and the corpus
+# built from that index are all one key space, and a key space with two
+# statements of its own numbering is the defect one layer up.
+NUMBERING = CANONICAL
 NUMBERING_NOTE = (
     "Psalm numbers here are Vulgate, not Hebrew, though the book names are "
     "modern: Psalms 24 is Ad te levavi. Every other book is numbered as it is "
     "printed."
+)
+# What the promoted index declares about itself. Longer than the worklist's
+# note because it has to say what "as it is printed" resolves to once two
+# missals in two divisions have both fed it.
+INDEX_NUMBERING_NOTE = (
+    f"Keys are addressed in {NUMBERING} numbering. Every psalm key is derived "
+    "by converting each calendar's citations out of the system that calendar "
+    "declares, so Psalms 24 here is Ad te levavi and not the Hebrew 24. Every "
+    "other book stands as its missal printed it: that is the Vulgate's "
+    "division for roman-1962, and the Lectionary's for postconciliar, which "
+    "divides Joel, Malachi, Isaiah and Esther differently. A key that only a "
+    "Lectionary-numbered citation reaches therefore names no chapter of this "
+    f"canon at all; it carries its own numbering: {UNRECORDED} and is refused "
+    "by every lookup, because the works under it are real commentary on other "
+    "text and returning them would be a hit on the wrong words."
 )
 ROLES = (
     "church-father",
@@ -1374,9 +1400,53 @@ def run_promote(arguments: argparse.Namespace) -> dict:
             f"{', +more' if len(clashes) > 4 else ''}); the index stores one "
             "granularity and derives the rest"
         )
+    # Which system the keys above are addressed in, derived rather than
+    # asserted. The psalter half is settled by construction: every psalm key
+    # comes through `_canonical_passage`, which converts each calendar's
+    # citations out of the system that calendar declares and into this one, so
+    # a key is Vulgate because the conversion made it Vulgate. The rest of the
+    # canon is not converted at all — a citation's chapter becomes the key as
+    # printed — so a calendar citing the Lectionary's division can produce a
+    # key that is not in this system, and `numbering_survey` finds exactly
+    # those from the calendars' own divergence registers.
+    survey = _index_numbering_survey()
+    for entry in payload:
+        override = survey.get(entry["passage"])
+        if override:
+            entry.update(override)
+            entry["works"] = entry.pop("works")
+    # And a key that claims the declared system must be able to exist in it.
+    # A row already declaring `unrecorded` claims nothing and is exempt: it is
+    # the statement that the key is *not* in this system, so measuring it
+    # against this system's bounds would refuse the honest row.
+    ceilings = dict(_canonical_chapters())
+    impossible = [
+        problem
+        for entry in payload
+        if not entry.get("numbering")
+        for problem in [impossible_key(entry["passage"], NUMBERING, ceilings)]
+        if problem
+    ]
+    if impossible:
+        shown = "; ".join(impossible[:4])
+        raise ValueError(
+            f"{len(impossible)} index key(s) cannot exist in {NUMBERING} "
+            f"numbering ({shown}{', +more' if len(impossible) > 4 else ''}); a "
+            "key outside the declared system resolves against nothing and "
+            "would be answered from whatever the reader's edition happens to "
+            "print at those numbers"
+        )
     index = {
         "schema": INDEX_SCHEMA,
         "updated": arguments.audited_on,
+        "numbering": NUMBERING,
+        "numbering_note": INDEX_NUMBERING_NOTE,
+        # Derived, and worth a diff of its own: §8.0's rule that a projection's
+        # size measures how far a thing sits from the canon applies here too.
+        # If this grows, the index has taken on another key nobody can resolve.
+        "numbering_unrecorded_count": sum(
+            1 for entry in payload if entry.get("numbering")
+        ),
         "harvest_runs": len(runs),
         "min_confidence": arguments.min_confidence,
         "passages": payload,
@@ -1388,6 +1458,8 @@ def run_promote(arguments: argparse.Namespace) -> dict:
         "runs": len(runs),
         "works": sum(len(p["works"]) for p in payload),
         "distinct_works": len({(w["author"], w["title"]) for p in payload for w in p["works"]}),
+        "numbering": NUMBERING,
+        "numbering_unrecorded": index["numbering_unrecorded_count"],
         "index": str(target),
         # Deferred so the index lands only once the run can also be reported.
         # Writing first left a text-mode promote having written the file and
@@ -1396,11 +1468,55 @@ def run_promote(arguments: argparse.Namespace) -> dict:
     }
 
 
-def _mass_passages(missal: str, mass: str) -> list[str]:
-    """The canonical passage keys a mass cites, via the corpus's own speller."""
+@lru_cache(maxsize=1)
+def _canonical_chapters(root: Path = ROOT) -> tuple[tuple[str, int], ...]:
+    """The last chapter each book of the canon prints, read from the witness.
+
+    Not typed here and not typed anywhere: `_catena.canon` already derives the
+    canon and its chapter counts from the tracked Clementine, which is the
+    edition `_projection.CANONICAL` names, so this is the same table the catena
+    validates fragment extents against rather than a second copy of it.
+    """
+    import _catena
+
+    return tuple((book["name"], int(book["chapters"])) for book in _catena.canon(root))
+
+
+def _work_index_tool():
     from importlib.machinery import SourceFileLoader
 
-    index = SourceFileLoader("cwi", str(ROOT / "tools" / "commentary-work-index")).load_module()
+    return SourceFileLoader(
+        "cwi", str(ROOT / "tools" / "commentary-work-index")
+    ).load_module()
+
+
+@lru_cache(maxsize=1)
+def _index_numbering_survey(root: Path = ROOT) -> dict[str, dict[str, str]]:
+    """Index keys the calendars themselves put outside `NUMBERING`.
+
+    Derived on every promotion and never hand-typed, so it is self-cleaning in
+    both directions: a key that stops being reached only by a divergent
+    citation loses its override, and a new divergent citation gains one. The
+    tracked calendars' `citation_divergences` are already gated against the
+    citations actually made, so this rests on a register that cannot go stale
+    without its own build failing first.
+    """
+    import yaml
+
+    index = _work_index_tool()
+    citations = index._load_citations_tool()
+    documents: dict[str, dict] = {}
+    for calendar in index.DEFAULT_CALENDARS:
+        path = root / "src" / "sources" / "calendars" / calendar / "propers.yaml"
+        if not path.is_file():
+            raise ValueError(f"missing calendar index: {path}")
+        documents[calendar] = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return index.numbering_survey(citations, documents)
+
+
+def _mass_passages(missal: str, mass: str) -> list[str]:
+    """The canonical passage keys a mass cites, via the corpus's own speller."""
+    index = _work_index_tool()
     import yaml
 
     document = yaml.safe_load(
