@@ -130,6 +130,16 @@
   color: var(--ink-soft);
 }
 
+/* The rubric in its own words. Latin is quoted rather than paraphrased where a
+   reader might want to check the gloss against it, so it is set apart from the
+   gloss and not run together with it. */
+.margin-latin {
+  font-style: italic;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--section-row);
+  padding-left: 0.5rem;
+}
+
 /* The rubric number is the load-bearing thing in the margin: it is what makes a
    claim checkable, so it is set as a citation rather than as decoration. It
    wraps: "RGMR 306-309, 314-317, 326, 328, 341, 384-387" is one locus, and held
@@ -158,6 +168,108 @@
   font-size: 1.35rem;
   font-weight: 600;
   color: var(--section-ink);
+}
+
+/* Who is speaking. The complaint this answers was that the priest's and the
+   server's parts were hard to tell apart, and the cause was that the marks
+   doing that work were two bare letters in the reading face, inline with the
+   words. A tag is set away from the reading face — sans, small caps, its own
+   colour — so the eye finds the turn before it reads the line.
+
+   `Priest` and `Server` are tinted differently because telling THOSE two apart
+   is the whole request. `Response` is left neutral: it names a position in a
+   dialogue and not a person, and colouring it like a speaker would assert who
+   makes it, which the book does not always say. */
+.speaker-tag {
+  display: inline-block;
+  margin-right: 0.35rem;
+  padding: 0.02rem 0.32rem;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  vertical-align: 0.08em;
+  white-space: nowrap;
+  color: var(--ink-soft);
+  border: 1px solid var(--section-row);
+  border-radius: 3px;
+}
+
+/* A turn that begins mid-line needs air before it or it reads as part of the
+   clause that just ended. */
+.speaker-tag + .speaker-tag,
+.composed .speaker-tag:not(:first-child) { margin-left: 0.3rem; }
+
+.speaker-tag.is-priest {
+  color: var(--section-ink);
+  border-color: var(--section-ink);
+}
+
+.speaker-tag.is-server,
+.speaker-tag.is-all {
+  color: var(--ink-soft);
+  background: var(--section-row);
+  border-color: var(--section-row);
+}
+
+/* A choice the RUBRICS create — the book says the Mass may be either of two.
+   Deliberately not styled like `.day-warning`: that box says the page has no
+   answer, and this control says the book has two. Making them look alike would
+   tell a reader that a permission is a failure. */
+.mass-choice {
+  margin: 0.5rem 0 0.2rem;
+  padding: 0.5rem 0.7rem;
+  background: var(--section-row);
+  border-radius: 4px;
+}
+
+.mass-choice-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.mass-choice-label {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--section-ink);
+}
+
+/* Allowed to grow, never to overflow: the option labels are whole clauses
+   ("The proper Mass of the Commemoration of Our Lady of Mount Carmel"), and a
+   fixed width either truncated them or pushed the page sideways on a phone. */
+.mass-choice-select {
+  flex: 1 1 14rem;
+  max-width: 100%;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+
+.mass-choice .row-meta { margin: 0.35rem 0 0; }
+
+/* The standing of what is on screen, where it is not the Mass that is said.
+   `is-displaced` is the loud one on purpose: a reader who followed a link to a
+   Mass that is certainly not said today must be told so before they read it,
+   and told it in a register they cannot skim past. The permissive standings are
+   deliberately quieter — they are not warnings, and dressing a permission as a
+   failure is the mirror of the error this box exists to prevent. */
+.day-warning.is-standing { border-left-width: 4px; }
+
+.day-warning.is-displaced,
+.day-warning.is-unresolved {
+  border-left-color: var(--section-ink);
+}
+
+.day-warning.is-option,
+.day-warning.is-additional,
+.day-warning.is-commemorated {
+  border-left-color: var(--section-row);
+  background: transparent;
 }
 
 .mass-subheading {

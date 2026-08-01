@@ -120,7 +120,12 @@
     showRubrics: true,
     // group id -> chosen option id, so a missal that grows a second choice
     // needs a row in its inventory and no line here.
-    variants: {}
+    variants: {},
+    // The formulary the reader has asked to see, by mass key. Null is "the one
+    // that is said". Cleared on every date change, because a selection belongs
+    // to the day it was made on and carrying yesterday's onto today would put a
+    // Mass on a date that never carried it.
+    shownMass: null
   };
 
   const dateInput = document.getElementById('date-input');
@@ -296,6 +301,164 @@
     arrived: 'transferred here'
   };
 
+  /**
+   * Which Mass this day's text is drawn from, and on whose authority.
+   *
+   * Three cases, and the page must not flatten them. A day inscribed in the
+   * calendar prints its own formulary. A day constituted from the season
+   * ordinarily borrows the preceding Sunday's Mass under RGMR 299. And the
+   * Office of Our Lady on Saturday has a Mass of its own, because it is not a
+   * feria at all but row 27 of the table, so RGMR 299 never reaches it.
+   *
+   * Where the rubrics offer a choice, the reader's answer wins over all three —
+   * that is what the selector is for.
+   */
+  /** The entry of `branch.readable` the reader is looking at. */
+  function shownEntry(branch) {
+    const rows = branch.readable || [];
+    if (!rows.length) return null;
+    const wanted = state.shownMass && rows.find((one) => one.key === state.shownMass);
+    return wanted || rows.find((one) => one.state === 'said') || rows[0];
+  }
+
+  function formularyOf(branch) {
+    if (!branch.winner) return null;
+    const entry = shownEntry(branch);
+    if (entry && entry.state !== 'said') {
+      return { key: entry.key, name: entry.label, kind: 'chosen', entry: entry };
+    }
+    if (branch.winner.formulary) return branch.winner.formulary;
+    return branch.winner.key ? { key: branch.winner.key, kind: 'own' } : null;
+  }
+
+  /**
+   * The selector itself, and the rubric that creates it.
+   *
+   * A choice the rubrics state is NOT a day this repository could not settle.
+   * The unsettled warning is a red box saying the page has no answer; this is a
+   * control saying the book has two. They are rendered as different things on
+   * purpose, and this one never sets or clears `settled`.
+   */
+  // The heading each standing is offered under. These are the labels that keep
+  // "may be said instead" apart from "is certainly not said", so they are
+  // written out rather than derived from the state name.
+  const STANDING_GROUPS = {
+    said: 'Said today',
+    option: 'The rubrics permit either',
+    additional: 'Also said today, at another hour',
+    commemorated: 'Commemorated within today’s Mass',
+    displaced: 'Not said today — displaced',
+    unresolved: 'Candidates; this date is not settled here'
+  };
+  const STANDING_ORDER = ['said', 'option', 'additional', 'commemorated', 'displaced', 'unresolved'];
+
+  /**
+   * One control for every formulary the date carries, grouped by standing.
+   *
+   * Grouped, and never a flat list. A flat list of Masses is precisely the thing
+   * that lets a reader take a displaced Mass for the day's — the failure this
+   * whole page is built to refuse. The `<optgroup>` label is the guard, and the
+   * notice below is the second one.
+   */
+  function formularySelector(branch, onPick) {
+    const rows = branch.readable || [];
+    if (rows.length < 2) return null;
+
+    const node = T.el('div', 'mass-choice');
+    const field = T.el('p', 'mass-choice-field');
+    const id = 'mass-shown';
+
+    const label = T.el('label', 'mass-choice-label', 'Show the Mass of');
+    label.setAttribute('for', id);
+    field.appendChild(label);
+
+    const select = document.createElement('select');
+    select.id = id;
+    select.className = 'mass-choice-select';
+    for (const standing of STANDING_ORDER) {
+      const held = rows.filter((one) => one.state === standing);
+      if (!held.length) continue;
+      const group = document.createElement('optgroup');
+      group.label = STANDING_GROUPS[standing];
+      for (const row of held) {
+        const item = document.createElement('option');
+        item.value = row.key;
+        item.textContent = row.label;
+        group.appendChild(item);
+      }
+      select.appendChild(group);
+    }
+    const entry = shownEntry(branch);
+    if (entry) select.value = entry.key;
+    select.addEventListener('change', function () {
+      state.shownMass = select.value;
+      writeHash();
+      onPick();
+    });
+    field.appendChild(select);
+    node.appendChild(field);
+    return node;
+  }
+
+  /**
+   * What a reader who has selected something other than today's Mass must see.
+   *
+   * Shown on ARRIVAL and not only on selection, because the hash carries the
+   * choice: a link to a displaced Mass must state its displacement to the
+   * person who follows the link, who did not choose it and has no reason to
+   * suspect it.
+   */
+  function standingNotice(branch) {
+    const entry = shownEntry(branch);
+    if (!entry || entry.state === 'said') return null;
+    const said = (branch.readable || []).find((one) => one.state === 'said');
+
+    const node = T.el('div', 'day-warning is-standing is-' + entry.state);
+    node.appendChild(T.el('h3', null, entry.state === 'option'
+      ? 'This is one of two Masses the rubrics permit'
+      : entry.state === 'additional'
+        ? 'This is a further Mass of the same day'
+        : entry.state === 'commemorated'
+          ? 'This Mass is not said today; its collect is'
+          : entry.state === 'displaced'
+            ? 'This Mass is NOT said on this date'
+            : 'This date is not settled here'));
+
+    if (said && entry.state !== 'option' && entry.state !== 'additional') {
+      node.appendChild(T.el('p', null,
+        'What is said on this date is ' + said.label + '. You are reading ' +
+        entry.label + ', which is shown here to be read and not to be celebrated.'));
+    } else if (said && entry.state === 'additional') {
+      node.appendChild(T.el('p', null,
+        'It is said on this date in addition to ' + said.label +
+        ', at another hour. It competes for the day with nothing.'));
+    }
+    const why = T.el('p', null, entry.why || '');
+    node.appendChild(withLocus(why, entry.locus));
+    return node;
+  }
+
+  /** The rubrical account of a choice, set in the margin like every other. */
+  function choiceMargin(node, choice) {
+    node.appendChild(T.el('h4', 'margin-heading', 'The choice the rubrics make'));
+    node.appendChild(paragraph('margin-why', choice.why, choice.locus));
+    if (choice.latin) node.appendChild(T.el('p', 'margin-latin', choice.latin));
+    if (!choice.preferred && choice.openBecause) {
+      node.appendChild(T.el('p', 'margin-why', choice.openBecause));
+    }
+    const list = T.el('ul', 'margin-list');
+    for (const option of choice.among || []) {
+      const item = T.el('li');
+      item.appendChild(T.el('span', 'margin-name', option.label));
+      if (choice.preferred === option.id) {
+        item.appendChild(T.el('span', 'tag tag-commemorated', 'ordinarily said'));
+      }
+      item.appendChild(paragraph('margin-why', option.why, option.locus));
+      list.appendChild(item);
+    }
+    node.appendChild(list);
+  }
+
   function massMargin(branch, rubrics, derived) {
     const node = margin('Propers resolution');
 
@@ -322,6 +485,23 @@
         node.appendChild(T.el('p', 'margin-why',
           'Holds only where the competent authority has taken the option “' +
           branch.winner.territorial + '”.'));
+      }
+      // Which Mass is said on it, where that is not simply the day's own.
+      const held = branch.winner.formulary;
+      if (held && held.kind === 'borrowed') {
+        node.appendChild(T.el('h4', 'margin-heading', 'The Mass it takes'));
+        node.appendChild(T.el('p', 'margin-why',
+          'This day prints no formulary of its own and takes ' + held.name + '.'));
+        if (held.rule && held.rule.rule) {
+          node.appendChild(T.el('p', 'margin-why', held.rule.rule));
+        }
+      } else if (held && held.kind === 'own' && held.printed) {
+        node.appendChild(T.el('h4', 'margin-heading', 'The Mass it takes'));
+        node.appendChild(paragraph('margin-why', held.why, held.locus));
+        if (held.latin) node.appendChild(T.el('p', 'margin-latin', held.latin));
+        node.appendChild(T.el('p', 'margin-why',
+          'The Missal prints it under the heading “' + held.printed + '”.'));
+        if (held.note) node.appendChild(T.el('p', 'margin-why', held.note));
       }
     } else if (branch.choice) {
       const held = T.el('p', 'margin-lead');
@@ -383,6 +563,7 @@
     for (const remark of branch.remarks || []) {
       node.appendChild(paragraph('margin-why', remark.what, remark.locus));
     }
+    for (const choice of branch.massChoices || []) choiceMargin(node, choice);
     return node;
   }
 
@@ -547,7 +728,21 @@
     const head = T.el('div', 'mass-head');
     head.appendChild(T.el('h3', 'mass-name',
       branch.winner ? branch.winner.name : 'No day is settled here'));
+    // The formulary said on the day, where it is not the day's own name. The
+    // heading stays the DAY — "the Office of Our Lady on Saturday" — because
+    // that is what the day is; the Mass is named under it.
+    const taken = formularyOf(branch);
+    if (taken && taken.key && taken.key !== (branch.winner && branch.winner.key)) {
+      head.appendChild(T.el('p', 'row-meta', 'Mass: ' + (taken.name || taken.key)));
+    }
+    // One control for everything the date carries, grouped by standing; the
+    // reasoning goes to the margin with every other rubrical decision.
+    const selector = formularySelector(branch, () => render({ moveFocus: false }));
+    if (selector) head.appendChild(selector);
     section.appendChild(annotated(head, massMargin(branch, rubrics, derived)));
+    // After the head, so it sits immediately above the words it qualifies.
+    const standing = standingNotice(branch);
+    if (standing) section.appendChild(standing);
 
     if (!branch.winner) return section;
 
@@ -559,8 +754,8 @@
     const orationSlots = trackedSlots(branch, rubrics);
     const orationSlotFor = (name) => orationSlots.find((one) => one.slot === name) || null;
 
-    const mass = branch.winner.key
-      ? (structure.masses || []).find((one) => one.key === branch.winner.key)
+    const mass = taken && taken.key
+      ? (structure.masses || []).find((one) => one.key === taken.key)
       : null;
 
     /**
@@ -594,11 +789,11 @@
     if (!mass) {
       const note = T.el('p', 'uncompiled');
       note.appendChild(T.el('span', 'uncompiled-mark', 'No formulary of its own'));
-      note.appendChild(document.createTextNode(branch.winner.key
-        ? 'The propers structure carries no mass keyed ' + branch.winner.key + '.'
+      note.appendChild(document.createTextNode(taken && taken.key
+        ? 'The propers structure carries no mass keyed ' + taken.key + '.'
         : 'It is constituted from its season and the calendar index carries no ' +
-          'formulary of its own for it. Most ferias take the preceding Sunday’s ' +
-          'Mass, which the index does not repeat.'));
+          'formulary of its own for it, and the year file appoints none for it ' +
+          'to take.'));
       section.appendChild(note);
     } else if (T.massIsUncompiled(mass)) {
       // One line for the Mass, never one per slot, and never dressed as a
@@ -748,9 +943,95 @@
   function elementHeading(element) {
     if (!element.name) return null;
     const heading = T.el(PART_HEADING, 'proper-name', element.name);
-    if (element.speaker) heading.appendChild(T.el('span', 'proper-form', element.speaker));
+    // The speaker is deliberately NOT set here any more. It rode in the heading
+    // as a small grey span, which meant the 9 elements that carry a speaker and
+    // no name showed none at all, and the rest showed it where a reader looking
+    // at the words was not looking. It is now set against the words themselves.
     if (element.locus) heading.appendChild(T.el('span', 'proper-ref', element.locus));
     return heading;
+  }
+
+  /* ------------------------------------------------------------------------
+   * Who is speaking
+   *
+   * THE 1861 BOOK MIXES TWO AXES AND THIS IS WHY THE PAGE WAS HARD TO READ.
+   * `P.` marks the PRIEST — a person. `R.` marks a RESPONSE — a position in a
+   * dialogue, whoever makes it. They are not two values of one thing, and the
+   * book prints them in one column as though they were:
+   *
+   *   priest   P. I confess to Almighty God, &c.
+   *   server   R. May Almighty God be merciful to thee…
+   *   server   R. I confess to Almighty God…
+   *   priest   P. May Almighty God be merciful unto you…
+   *
+   * In the fourth row the priest's `P.` line IS the response to the server. So
+   * setting every `P.` as ℣ would put "versicle" over a response — and in two
+   * rubric elements `P.` is not a speaker mark at all but an abbreviation
+   * inside running text ("is said the P. COMMUNION"). Neither letter can be
+   * mapped onto the ℣/℟ axis, and this renders each as the word it abbreviates.
+   *
+   * THE MARKS ARE NOT MERELY DROPPED, and this is the part that is easy to get
+   * wrong. 28 of the 39 marked elements hold a two-party dialogue inside ONE
+   * element — "P. The Lord be with you. R. And with thy spirit." carries
+   * `speaker: priest`, which names the first line only. Drop every mark and the
+   * server's responses are printed as the priest's words. So a LEADING mark,
+   * which only repeats the element's own speaker, goes; an INTERIOR mark, which
+   * is the one thing recording that the speaker changed mid-element, stays and
+   * is set as a speaker tag like the first.
+   *
+   * Nothing upstream is edited: the artifacts keep what the book prints.
+   * --------------------------------------------------------------------- */
+
+  const SPEAKER_WORDS = { priest: 'Priest', server: 'Server', all: 'All' };
+  const MARK_WORDS = { 'P.': 'Priest', 'R.': 'Response' };
+  // Only where a mark can be a speaker at all. A rubric is printed matter about
+  // the Mass, not words said in it, and it is where both false positives live.
+  const SPOKEN_KINDS = { dialogue: true, prayer: true, form: true };
+  const A_MARK = /(^|[.;:,!?)\]"'’”]\s+|\n\s*)(P\.|R\.)(?=\s|$)/g;
+
+  function speakerTag(word, speaker) {
+    return T.el('span', 'speaker-tag' + (speaker ? ' is-' + speaker : ''), word);
+  }
+
+  /**
+   * One element's words, with every change of speaker made plain.
+   *
+   * Returns a fragment. The element's own speaker opens it; a mark inside the
+   * text opens each further turn.
+   */
+  function spoken(element, text) {
+    const source = String(text === null || text === undefined ? '' : text);
+    if (!SPOKEN_KINDS[element.kind]) return T.versicled(source);
+
+    const fragment = document.createDocumentFragment();
+    const opening = SPEAKER_WORDS[element.speaker] || null;
+    if (opening) fragment.appendChild(speakerTag(opening, element.speaker));
+
+    let at = 0;
+    let found;
+    let first = true;
+    A_MARK.lastIndex = 0;
+    while ((found = A_MARK.exec(source)) !== null) {
+      const word = MARK_WORDS[found[2]];
+      const start = found.index + found[1].length;
+      // A mark at the head of an element whose speaker is already announced is
+      // furniture and goes — including `R.` on the server's own lines, where
+      // "Server" and "Response" are both true and printing both said one thing
+      // twice. An INTERIOR mark is never dropped: it is the only record that
+      // the speaker changed inside the element.
+      const leading = first && source.slice(0, start).trim() === '';
+      first = false;
+      if (leading && opening) { at = start + found[2].length; continue; }
+      if (start > at) fragment.appendChild(document.createTextNode(source.slice(at, start)));
+      fragment.appendChild(speakerTag(word, word === 'Priest' ? 'priest' : null));
+      at = start + found[2].length;
+    }
+    // The space that followed the mark is the mark's own spacing, and left in
+    // place it opened every turn with a double space.
+    const rest = source.slice(at);
+    const tail = at === 0 ? rest : rest.replace(/^[ \t]+/, '');
+    if (tail) fragment.appendChild(document.createTextNode(tail));
+    return fragment;
   }
 
   function renderElement(element, file) {
@@ -777,9 +1058,9 @@
       if (!heading && element.locus) {
         body.appendChild(T.el('span', 'ordinary-locus', element.locus));
       }
-      // ℣ and ℟ are set here and nowhere upstream: the artifacts hold what the
-      // book prints, and the book prints "R." for want of the sort.
-      body.appendChild(T.versicled(held.text));
+      // Speaker tags are set here and nowhere upstream: the artifacts hold what
+      // the book prints, and the book prints "P." and "R." in one column.
+      body.appendChild(spoken(element, held.text));
       body.lang = held.lang;
       section.appendChild(body);
 
@@ -855,7 +1136,10 @@
    */
   function ordinaryPreamble(file) {
     const body = T.el('div', 'mass-head');
-    body.appendChild(T.el('h3', 'mass-name', file.title));
+    // Named for where it now stands. It used to head the page, so "The Ordinary
+    // of the Mass" was a title; at the foot it is a note about the frame the
+    // reader has just read the Mass in, and it says so.
+    body.appendChild(T.el('h3', 'mass-name', 'About this Ordinary: ' + file.title));
 
     const language = chosenLanguage(file);
     body.appendChild(T.el('p', 'entry-meta', [
@@ -1156,7 +1440,10 @@
       ['ordinary-lang', state.ordinaryLang],
       // Only when turned off: the hash carries departures from the page as it
       // opens, and the rubrics are on as it opens.
-      ['rubrics', state.showRubrics ? null : '0']
+      ['rubrics', state.showRubrics ? null : '0'],
+      // So a displaced Mass can be linked to. `standingNotice` is what makes
+      // that safe: it states the displacement to whoever follows the link.
+      ['mass', state.shownMass]
     ];
     // Keyed by the group's own id, so a second choice in some later missal
     // rides in the hash without a line being added here.
@@ -1228,13 +1515,16 @@
       fillOrationsSelect();
     }
 
-    // Every citation every branch's Mass needs, fetched in one pass.
+    // Every citation every branch's Mass needs, fetched in one pass. EVERY
+    // formulary the date carries is fetched, not only the one on screen:
+    // switching the selector must not send the reader back to the network for a
+    // Mass the page already knew it might be asked for.
     const wanted = [];
     for (const branch of derived.options) {
-      const mass = branch.winner && branch.winner.key
-        ? (structure.masses || []).find((one) => one.key === branch.winner.key)
-        : null;
-      if (mass) for (const citation of T.citationsOf(mass)) wanted.push(citation);
+      for (const row of branch.readable || []) {
+        const mass = (structure.masses || []).find((one) => one.key === row.key);
+        if (mass) for (const citation of T.citationsOf(mass)) wanted.push(citation);
+      }
     }
     const held = await T.fetchFragments(bible, wanted);
     if (!T.isCurrentRender(token)) return;
@@ -1260,9 +1550,7 @@
     fillVariantSelect(frame);
     // The rubrics belong to the frame, so the control for them appears with it.
     rubricsField.hidden = !frame;
-    if (frame) {
-      reading.appendChild(ordinaryPreamble(frame));
-    } else if (ordinary) {
+    if (!frame && ordinary) {
       reading.appendChild(T.notice(
         'the Ordinary of this missal. It could not be loaded: ' + ordinary.message));
     } else if (state.ordinary) {
@@ -1275,6 +1563,12 @@
       reading.appendChild(
         renderBranch(branch, rubrics, derived, structure, bible, held.fragments, frame));
     }
+    // The standing matter goes UNDER the Mass, not over it. What this book is,
+    // whose English it is, on what condition and what it withholds are all true
+    // and none of them is what a reader opened the page for: this page is meant
+    // to be usable at Mass, and three thousand characters of provenance before
+    // the first prayer is a page you cannot use at Mass. Facts first.
+    if (frame) reading.appendChild(ordinaryPreamble(frame));
     openMargins(reading);
     reading.setAttribute('aria-busy', 'false');
 
@@ -1295,6 +1589,12 @@
    * --------------------------------------------------------------------- */
 
   function select(date, missalId, options) {
+    // A choice belongs to the day it was offered on. Carrying an answer across
+    // a date or a missal change would apply a reader's decision to a rubric
+    // that never asked the question.
+    if ((date && date !== state.date) || (missalId && missalId !== state.missalId)) {
+      state.shownMass = null;
+    }
     if (date) state.date = date;
     if (missalId) state.missalId = missalId;
     syncControls();
@@ -1374,6 +1674,9 @@
     // the file's to state, not this function's to assume.
     state.ordinaryLang = hash.get('ordinary-lang') || null;
     state.showRubrics = hash.get('rubrics') !== '0';
+    // Taken as asked and resolved against the date's own formularies in
+    // `shownEntry`; nothing here knows yet what this date carries.
+    state.shownMass = hash.get('mass') || null;
     for (const row of state.ordinaryIndex) {
       for (const group of row.variants || []) {
         const wanted = hash.get(group);
@@ -1480,6 +1783,9 @@
     state.ordinary = hash.get('ordinary') === '1';
     state.ordinaryLang = hash.get('ordinary-lang') || null;
     state.showRubrics = hash.get('rubrics') !== '0';
+    // Taken as asked and resolved against the date's own formularies in
+    // `shownEntry`; nothing here knows yet what this date carries.
+    state.shownMass = hash.get('mass') || null;
     for (const row of state.ordinaryIndex) {
       for (const group of row.variants || []) {
         const wanted = hash.get(group);
