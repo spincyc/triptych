@@ -183,23 +183,71 @@ if [ "$breaks" -lt 1000 ]; then
 fi
 # Removing the projection must change the paragraphing and nothing else. Every
 # verse of the edition must still be set, in the same order, with the same text.
-grep '^\\vn{' "$kjv" >with.txt
+# The pilcrow is discounted on purpose: it is a paragraph mark and belongs to
+# the layer being switched off, so it goes with the breaks. What must survive
+# untouched is the scripture, and that is what is compared.
+grep '^\\vn{' "$kjv" | sed 's/\\printedmark{}//' >with.txt
 grep '^\\vn{' "$plain" >without.txt
 if ! cmp -s with.txt without.txt; then
 	echo "--no-paragraphs changed the verse text, not only the paragraphing" >&2
+	diff with.txt without.txt | head -4 >&2
+	exit 1
+fi
+# And the marks really were there to discount, so the check above cannot pass by
+# comparing two files that never differed.
+if [ "$(grep -c '\\printedmark{}' "$kjv")" -eq 0 ]; then
+	echo "no printed marks were set, so the comparison proved nothing" >&2
 	exit 1
 fi
 # Every break traces to the tracked tables. The King James is the one edition
 # whose own printing supplies some of them, and the two sources are counted
 # apart so that a transcriber's paragraphing cannot be credited to the printers
 # of 1769.
-for want in 'printed.} This edition' 'projected.} No paragraph mark survives' \
+for want in 'printed}, and each is set with the' 'projected.} No paragraph mark survives' \
 	'2,970 pilcrows' 'Acts 20:36'; do
 	if ! grep -q "$want" "$kjv"; then
 		echo "the paragraph note does not say $want" >&2
 		exit 1
 	fi
 done
+
+# A recovered mark and a projected one must be distinguishable on the page, not
+# only in the appendix totals. This is the assertion that matters most here: one
+# of them is the edition speaking and the other is this project inferring, and a
+# volume that set them identically would offer the inference as the edition's
+# own. The pilcrow is the edition's own character, so setting it invents nothing.
+marks="$(grep -c '\\printedmark{}' "$kjv")"
+if [ "$marks" -lt 100 ]; then
+	echo "the edition's own printed paragraph marks were not set, found $marks" >&2
+	exit 1
+fi
+if ! grep -q 'newcommand{\\printedmark}{\\textparagraph' "$kjv"; then
+	echo "the printed mark is not the pilcrow the edition itself prints" >&2
+	exit 1
+fi
+# Every printed mark rides a paragraph the volume actually opened, and no
+# projected break carries one.
+if grep -q '^\\parbreak$' "$kjv" && ! grep -q '\\vn{[0-9]*}\\printedmark{}' "$kjv"; then
+	echo "a printed mark is not attached to its verse" >&2
+	exit 1
+fi
+if ! grep -q 'told apart on the page and not' "$kjv"; then
+	echo "the volume does not tell a reader how to tell the two apart" >&2
+	exit 1
+fi
+# The Douay-Rheims has no printing of its own to recover, so every one of its
+# breaks is projected and none may carry a pilcrow.
+run_tool render --volume narrative-spine-landmarks-douay-rheims \
+	--out "$sandbox/dr" >/dev/null
+dr="$sandbox/dr/narrative-spine-landmarks-douay-rheims.tex"
+if grep -q '\\vn{[0-9]*}\\printedmark{}' "$dr"; then
+	echo "an edition with no printed paragraph marks was given some" >&2
+	exit 1
+fi
+if ! grep -q 'Paragraphs.} [0-9]* paragraph breaks' "$dr"; then
+	echo "the Douay-Rheims volume does not account for its paragraph breaks" >&2
+	exit 1
+fi
 
 # Book identity comes from the book index, never from file position. A verse
 # file holding another book's text is refused rather than filed under the wrong
