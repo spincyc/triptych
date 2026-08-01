@@ -130,6 +130,7 @@ emptiness measures what this corpus holds, not what happened.
 
 [[acts]]
 id = "quo-primum-1570"
+station_kind = "promulgated"
 line = "typica"
 kind = "promulgation"
 date = "1570-07-14"
@@ -158,6 +159,7 @@ effect_established = true
 
 [[acts]]
 id = "quo-primum-exemption-1570"
+station_kind = "promulgated"
 line = "exempt-uses"
 kind = "exemption"
 date = "1570-07-14"
@@ -166,6 +168,7 @@ authority = "Pius V"
 instrument = "Apostolic constitution Quo primum tempore, exempting clause"
 title = "Quo primum excepts the uses above two hundred years old"
 parents = ["quo-primum-1570"]
+parent_kind = "act-states-it"
 parent_basis = """
 The same instrument, on the same day. The clause is drawn as a separate station
 because it is what makes the other uses a line rather than an absence, and
@@ -197,6 +200,7 @@ effect_established = true
 
 [[acts]]
 id = "cum-sanctissimum-1604"
+station_kind = "promulgated"
 line = "typica"
 kind = "revision"
 date = "1604-07-07"
@@ -205,6 +209,7 @@ authority = "Clement VIII"
 instrument = "Apostolic constitution Cum sanctissimum Eucharistiae sacramentum"
 title = "Clement VIII issues the emended Missal"
 parents = ["quo-primum-1570"]
+parent_kind = "act-states-it"
 parent_basis = """
 The bull says so itself: it recites that Pius V had the Missale Romanum restored
 by decree of the Council of Trent and printed at Rome, that printers' and others'
@@ -233,6 +238,7 @@ could not be read unit by unit; the question is open, not answered.
 
 [[acts]]
 id = "si-quid-est-1634"
+station_kind = "promulgated"
 line = "typica"
 kind = "revision"
 date = "1634-09-02"
@@ -241,6 +247,7 @@ authority = "Urban VIII"
 instrument = "Apostolic constitution Si quid est in rebus humanis"
 title = "Urban VIII issues the further emended Missal"
 parents = ["cum-sanctissimum-1604"]
+parent_kind = "act-states-it"
 parent_basis = """
 The bull names both predecessors and says it follows in their steps: the manner
 and prayers of celebrating which Pius V and Clement VIII had most diligently
@@ -267,6 +274,7 @@ effect_note = "The witnesses this tracer read for units are 1862, 1920 and 1962;
 
 [[acts]]
 id = "divino-afflatu-1911"
+station_kind = "promulgated"
 line = "typica"
 kind = "reform"
 date = "1911-11-01"
@@ -275,6 +283,7 @@ authority = "Pius X"
 instrument = "Apostolic constitution Divino afflatu"
 title = "Divino afflatu orders the new arrangement of the Psalter"
 parents = ["si-quid-est-1634"]
+parent_kind = "line-order"
 parent_basis = """
 Named as one of the two norms the 1920 edition was made to, in the decree of
 approbation printed at the head of that edition: `ad normam Bullae Divino
@@ -300,6 +309,7 @@ commit is the record saying that an authority acted and this slice did not move.
 
 [[acts]]
 id = "abhinc-duos-annos-1913"
+station_kind = "promulgated"
 line = "typica"
 kind = "reform"
 date = "1913-10-23"
@@ -308,6 +318,7 @@ authority = "Pius X"
 instrument = "Motu proprio Abhinc duos annos"
 title = "Abhinc duos annos orders the calendar's revision"
 parents = ["divino-afflatu-1911"]
+parent_kind = "act-states-it"
 parent_basis = "Named beside Divino afflatu in the same clause of the 1920 decree of approbation, and dated after it."
 act_citation = "cited-in-corpus"
 citation = "Pius X, Abhinc duos annos, 23 October 1913, cited by name in the 1920 decree of approbation."
@@ -320,6 +331,7 @@ effect_note = "Second of the two stations that write no row; see divino-afflatu-
 
 [[acts]]
 id = "editio-typica-1920"
+station_kind = "promulgated"
 line = "typica"
 kind = "promulgation"
 date = "1920-07-25"
@@ -328,6 +340,7 @@ authority = "Benedict XV, through the Sacred Congregation of Rites"
 instrument = "Decretum approbationis editionis typicae Vaticanae"
 title = "The Vatican typical edition of 1920 is approved"
 parents = ["abhinc-duos-annos-1913"]
+parent_kind = "act-states-it"
 parent_basis = """
 The decree printed at the head of the edition states what it was made from and
 to: the Pontifical Commission instituted by Pius X on 2 July 1911, having
@@ -383,6 +396,7 @@ its Holy Week effect open rather than asserted empty.
 
 [[acts]]
 id = "maxima-redemptionis-1955"
+station_kind = "promulgated"
 line = "typica"
 kind = "reform"
 date = "1955-11-16"
@@ -391,6 +405,7 @@ authority = "Pius XII, through the Sacred Congregation of Rites"
 instrument = "Decree Maxima redemptionis nostrae mysteria"
 title = "Maxima redemptionis restores the order of Holy Week"
 parents = ["editio-typica-1920"]
+parent_kind = "line-order"
 parent_basis = """
 The state the decree reformed is the one the 1920 typical edition carried; that
 is the book in use when it was issued, and the departures below are measured
@@ -413,6 +428,7 @@ except where a departure quotes the decree.
 
 [[acts]]
 id = "de-rubricis-simpliciorem-1955"
+station_kind = "promulgated"
 line = "typica"
 kind = "rubrical-code"
 date = "1955-03-23"
@@ -421,6 +437,7 @@ authority = "Sacred Congregation of Rites"
 instrument = "Decretum generale De rubricis ad simpliciorem formam redigendis"
 title = "The rubrics are reduced to a simpler form"
 parents = ["editio-typica-1920"]
+parent_kind = "line-order"
 parent_basis = "It simplifies the rubrics of the books the 1920 typical edition carried."
 citation = "Sacred Congregation of Rites, De rubricis ad simpliciorem formam redigendis, 23 March 1955, named and dated in Rubricarum instructum."
 act_citation = "cited-in-corpus"
@@ -438,6 +455,7 @@ redemptionis look emptier than they were.
 
 [[acts]]
 id = "rubricarum-instructum-1960"
+station_kind = "promulgated"
 line = "typica"
 kind = "rubrical-code"
 date = "1960-07-25"
@@ -446,6 +464,7 @@ authority = "John XXIII"
 instrument = "Apostolic letter motu proprio Rubricarum instructum"
 title = "Rubricarum instructum approves the new body of rubrics"
 parents = ["de-rubricis-simpliciorem-1955"]
+parent_kind = "act-states-it"
 parent_basis = """
 The motu proprio names its predecessor and disposes of it: it declares that the
 general Decree of the Sacred Congregation of Rites of 23 March 1955 De rubricis
@@ -476,6 +495,7 @@ lose a day, an authority and a document.
 
 [[acts]]
 id = "codex-rubricarum-1960"
+station_kind = "promulgated"
 line = "typica"
 kind = "rubrical-code"
 date = "1960-07-26"
@@ -484,6 +504,7 @@ authority = "Sacred Congregation of Rites"
 instrument = "Decretum generale quo novus rubricarum Breviarii ac Missalis Romani codex promulgatur"
 title = "The Code of Rubrics is promulgated"
 parents = ["rubricarum-instructum-1960"]
+parent_kind = "act-states-it"
 parent_basis = """
 The decree recites the act it executes: the new code of rubrics which John XXIII
 approved by the apostolic letter Rubricarum instructum, given motu proprio on 25
@@ -503,6 +524,7 @@ effect_established = true
 
 [[acts]]
 id = "editio-typica-1962"
+station_kind = "promulgated"
 line = "typica"
 kind = "promulgation"
 date = "1962-06-23"
@@ -511,6 +533,7 @@ authority = "John XXIII, through the Sacred Congregation of Rites"
 instrument = "Decree Novo rubricarum corpore, promulgating the typical edition of the Missale Romanum of 1962"
 title = "The 1962 typical edition carries the reform and the new code"
 parents = ["maxima-redemptionis-1955", "codex-rubricarum-1960"]
+parent_kind = "act-states-it"
 parent_basis = """
 Two lines of descent, both on the same line of the rite: the reformed Holy Week
 of 1955 and the code of rubrics of 1960. Neither alone accounts for the book.

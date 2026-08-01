@@ -1,16 +1,30 @@
 #!/usr/bin/env python3
 """Build a liturgical slice's act-keyed history as a Git repository.
 
-Usage: act-history {check,graph,emit} [--source PATH] [--out DIR] [--json]
+Usage: act-history {check,graph,structure,commonality,emit} [--source PATH]
 
-The station is the act, never the book. Every commit is a promulgation, a
+The station is normally the act, never the book. A commit is a promulgation, a
 revision, a reform, a rubrical code or a documented exemption, and carries the
 instrument it cites; a printing is a witness and hangs beneath the history in
 `witnesses/`. That is what keeps a scanner out of the record: two printings of
 one prayer differ constantly and no act stands behind those differences, so none
 of them can become a commit.
 
-Three things this does that a linear generator cannot, and the third is the one
+THE ONE EXCEPTION, and it is narrow. Before Trent there are missals for which no
+act has been located at all, and refusing them would leave the record silent
+about books that survive. So a station declares which kind it is:
+
+  promulgated  an act stands behind it and its instrument is cited.
+  printed      a missal survives and NO act is claimed. A weaker station, and it
+               reads as one everywhere -- in `check`, in acts/, and in the commit
+               subject, which is prefixed `[printed]`.
+
+`printed` is not a synonym for `act_citation = "not-found"`. Not-found means an
+instrument is believed to exist and nobody here has read it; printed means no
+instrument is claimed. Two scans of one printing are one witness and never two
+stations: a station is a distinct edition, never a rescan.
+
+Four things this does that a linear generator cannot, and the last is the one
 the shape exists for:
 
   MULTIPLE PARENTS   an act may apply a decree to a text, and both are parents.
@@ -22,6 +36,10 @@ the shape exists for:
   PARALLEL STAYS PARALLEL  a fork is born at an act. Where a line's other side
                      has no witness in the corpus, the branch is a root and
                      nothing more, and its emptiness is the record.
+  COMMONALITY IS COMPUTED  `commonality` answers "what did two lines share
+                     before diverging" with `git merge-base` against the emitted
+                     repository, and with a tree comparison of the two tips. No
+                     table of commonalities is written by hand.
 
 Commit dates are the acts' own dates, shifted forward ten thousand years. That
 is not cosmetic and not inherited thoughtlessly: git 2.55 rejects a negative
@@ -69,7 +87,35 @@ READINGS = ("page-image", "ocr-only", "not-read")
 # Whether the act's own instrument was found. A station whose instrument nobody
 # has read is a weaker claim than one whose text is quoted, and the difference
 # has to be visible or the graph launders it.
-ACT_CITATIONS = ("cited-in-corpus", "cited-externally", "not-found")
+#
+# `none-claimed` is reserved for `printed` stations and is NOT a synonym for
+# `not-found`. Not-found means an instrument is believed to exist and nobody
+# here has read it; none-claimed means no instrument is asserted at all.
+ACT_CITATIONS = ("cited-in-corpus", "cited-externally", "not-found", "none-claimed")
+
+# What kind of thing the station is. The default is the rule; the exception is
+# narrow and declares itself. See the module docstring.
+STATION_KINDS = ("promulgated", "printed")
+
+# What an edge rests on. An edge is a claim of descent, and the claims are not
+# of one strength, so the kind is written out beside the prose basis and can be
+# counted. Ordered strongest first.
+#
+#   act-states-it    an instrument's text draws the edge -- either the act's own,
+#                    naming what it revises or supersedes, or a later act
+#                    reciting both in order.
+#   book-states-it   the printing's own title page or colophon names what it
+#                    follows, revises or corrects.
+#   attributed       a scholarly attribution, cited to its source in
+#                    `parent_basis`. Never a bare inference of this tracer's.
+#   use-continuity   two PRINTINGS declare THE SAME USE, and the edge asserts
+#                    only that they stand in that use in this order. It does
+#                    NOT assert that the later book was set from the earlier.
+#                    It must say what each book declares, in `use_declared`.
+#   line-order       two ACTS stand on one line and this is their order, and
+#                    nothing in either names the other. The weakest edge there
+#                    is: it says where a station sits, not what it inherited.
+PARENT_KINDS = ("act-states-it", "book-states-it", "attributed", "use-continuity", "line-order")
 
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 UNIT_ID = re.compile(r"^[a-z0-9]+(?:[-.][a-z0-9]+)*$")
@@ -80,6 +126,7 @@ YEAR_SHIFT = 10000
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
     "structure": (),
+    "commonality": (),
     "check": (
         Example(
             "tools/act-history check",
@@ -127,13 +174,78 @@ class Problem(Exception):
 # --- Loading ----------------------------------------------------------------
 
 
+# Tables whose rows carry an identity, and can therefore be amended by a file
+# that extends another. `departures` is not among them: it has no identity, so
+# an extending file only ever adds departures.
+KEYED_TABLES = ("lines", "acts", "witnesses", "masses", "units")
+APPENDED_TABLES = ("departures",)
+
+
 def load(source: Path) -> dict:
+    """Read a slice, resolving `extends` so a wider slice never copies a narrower one.
+
+    A slice may declare `extends = "<file>"`, and then it is read on top of that
+    file rather than beside it. This exists because guidance/the-shape.md
+    section 2 is unambiguous: two copies of a fact are a prediction that they
+    will differ, and it has never failed here. A wider history that restated the
+    twelve Holy Week acts would be that copy.
+
+    A row whose id already stands in the base must carry `amends`, which says
+    why the base is being changed, and it then PATCHES that row field by field.
+    Anything else is appended. So an extending file can only add, or amend in
+    writing -- it cannot quietly replace.
+    """
+    return _load(source, seen=[])
+
+
+def _load(source: Path, seen: list[Path]) -> dict:
+    source = source.resolve()
+    if source in seen:
+        raise Problem("extends: " + " -> ".join(str(step) for step in [*seen, source]) + " is a cycle")
     if not source.exists():
         raise Problem(f"no source at {source}")
     data = tomllib.loads(source.read_text(encoding="utf-8"))
     if data.get(SCHEMA_KEY) != SCHEMA_VERSION:
         raise Problem(f"{source}: {SCHEMA_KEY} must be {SCHEMA_VERSION}")
-    return data
+    extends = data.pop("extends", None)
+    if not extends:
+        data["extends_chain"] = [source.name]
+        return data
+    base = _load(source.parent / extends, [*seen, source])
+    return overlay(base, data, source)
+
+
+def overlay(base: dict, extension: dict, source: Path) -> dict:
+    """Read one slice on top of another. Additive, or amended in writing."""
+    merged = dict(base)
+    for key, value in extension.items():
+        if key not in KEYED_TABLES and key not in APPENDED_TABLES:
+            merged[key] = value
+    for table in APPENDED_TABLES:
+        merged[table] = list(base.get(table, [])) + list(extension.get(table, []))
+    for table in KEYED_TABLES:
+        rows = [dict(row) for row in base.get(table, [])]
+        at = {row.get("id"): index for index, row in enumerate(rows)}
+        for row in extension.get(table, []):
+            identifier = row.get("id")
+            if identifier in at:
+                if not str(row.get("amends", "")).strip():
+                    raise Problem(
+                        f"{source.name}: {table} row {identifier!r} already stands in "
+                        f"{base.get('extends_chain', ['the base'])[-1]}; an extending file that "
+                        "changes a row must say why, in `amends`"
+                    )
+                rows[at[identifier]].update(row)
+            else:
+                if str(row.get("amends", "")).strip():
+                    raise Problem(
+                        f"{source.name}: {table} row {identifier!r} carries `amends` and amends "
+                        "nothing; the base holds no such row"
+                    )
+                rows.append(dict(row))
+        merged[table] = rows
+    merged["extends_chain"] = [*base.get("extends_chain", []), source.name]
+    return merged
 
 
 def indexed(rows: list[dict], key: str, what: str) -> dict[str, dict]:
@@ -180,8 +292,78 @@ def topological(acts: dict[str, dict]) -> list[str]:
 # trees.
 
 
-def unit_path(mass: str, slot: str) -> str:
-    return f"holy-week/{mass}/{slot}.txt"
+# The top directory a mass stands in. It defaults to `holy-week` because that
+# is where the first slice put everything and a default that moved existing
+# paths would rewrite a history nobody changed. A slice carrying more than one
+# part of the missal sets `book` on each mass.
+DEFAULT_BOOK = "holy-week"
+
+# Everything a station writes that is NOT liturgy. `commonality` compares two
+# lines' liturgies, and comparing their act records instead would report that
+# two rites differ because two decrees have different names.
+RECORD_PREFIXES = ("acts/", "witnesses/", "gaps/", "unestablished/")
+
+# --- Paths sort in the order the thing has ----------------------------------
+#
+# `acts/` and `witnesses/` are directory listings a reader browses, and a
+# listing of a history that reads in alphabetical order is a listing that hides
+# the one property the history has. So every per-act and per-witness path takes
+# its date as a prefix, and a corpus running from 1474 to 2008 reads in order in
+# any file manager, on GitHub, and in `ls`.
+#
+# The prefix is DERIVED, here, from the date already in the record. It is never
+# typed beside it: a hand-typed prefix and a date field are two copies of one
+# fact, and guidance/the-shape.md section 2 predicts they will differ. The
+# functions below are idempotent, so an id that already carries its date is not
+# given it twice.
+#
+# An UNDATED printing gets the literal prefix `undated`, which sorts after every
+# year because `u` follows `9`. It is not given a guessed year: a year invented
+# into a filename is provenance invented in the quietest place there is.
+
+YEAR = re.compile(r"(\d{4})")
+
+
+def year_of(printed: str) -> str:
+    found = YEAR.search(str(printed or ""))
+    return found.group(1) if found else "undated"
+
+
+def sorted_name(prefix: str, identifier: str) -> str:
+    """`1570-07-14` + `quo-primum-1570` -> `1570-07-14-quo-primum`.
+
+    Ids in this project already end in their year, because that is how a reader
+    tells `editio-typica-1920` from `editio-typica-1962`. Moving that year to
+    the front rather than printing it twice is the whole convention; a trailing
+    year is dropped only when it is the SAME year the prefix carries, so an id
+    naming a different year keeps it.
+    """
+    if identifier.startswith(f"{prefix}-"):
+        return identifier
+    year = year_of(prefix)
+    if identifier.endswith(f"-{year}"):
+        identifier = identifier[: -len(year) - 1]
+    return f"{prefix}-{identifier}"
+
+
+def act_file(act: dict) -> str:
+    return f"acts/{sorted_name(str(act['date']), act['id'])}.txt"
+
+
+def gap_file(act: dict) -> str:
+    return f"gaps/{sorted_name(str(act['date']), act['id'])}.txt"
+
+
+def witness_file(witness: dict) -> str:
+    return f"witnesses/{sorted_name(year_of(witness.get('printed')), witness['id'])}.txt"
+
+
+def unit_path(book: str, mass: str, slot: str) -> str:
+    return f"{book}/{mass}/{slot}.txt"
+
+
+def is_liturgy(path: str) -> bool:
+    return path != "README.md" and not path.startswith(RECORD_PREFIXES)
 
 
 # A clause ends at a full stop, a colon or a semicolon. Breaking there and
@@ -256,11 +438,12 @@ class State:
             mass = self.masses.get(mass_id)
             if mass is None:
                 raise Problem(f"unit stands in mass {mass_id!r}, which no act has introduced")
-            out[f"holy-week/{mass_id}/mass.txt"] = mass_body(mass)
+            book = mass.get("book") or DEFAULT_BOOK
+            out[f"{book}/{mass_id}/mass.txt"] = mass_body(mass)
             ordered = sorted(units, key=lambda unit: (unit["order"], unit["slot"]))
-            out[f"holy-week/{mass_id}/order.txt"] = order_body([unit["slot"] for unit in ordered])
+            out[f"{book}/{mass_id}/order.txt"] = order_body([unit["slot"] for unit in ordered])
             for unit in ordered:
-                out[unit_path(mass_id, unit["slot"])] = unit_body(
+                out[unit_path(book, mass_id, unit["slot"])] = unit_body(
                     unit["name"], unit["incipit"], unit.get("text", "")
                 )
         return out
@@ -424,24 +607,46 @@ def apply_departures(state: State, act_id: str, departures: list[dict]) -> list[
     return used
 
 
+PRINTED_WARNING = """\
+THIS STATION IS A PRINTING, AND THAT IS A WEAKER CLAIM.
+No act has been located for it. It stands here because the book survives and
+refusing it would leave the record silent about a missal that exists -- not
+because an authority is known to have issued it. Nothing about the date, the
+authority or the reach of a change may be read off this station.
+"""
+
+
 def render_act(act: dict) -> str:
+    printed = act.get("station_kind") == "printed"
     lines = [
         act["title"],
         "",
-        f"instrument: {act['instrument']}",
-        f"authority:  {act['authority']}",
+        f"station:    {act.get('station_kind', 'promulgated')}",
+    ]
+    if printed:
+        lines.extend(["", PRINTED_WARNING.strip(), ""])
+        lines.append(f"printing:   {act.get('printing', 'not named')}")
+    else:
+        lines.append(f"instrument: {act['instrument']}")
+        lines.append(f"authority:  {act['authority']}")
+    lines.extend([
         f"date:       {act['date']} ({act.get('date_precision', 'day')})",
         f"kind:       {act['kind']}",
         f"line:       {act['line']}",
         f"citation:   {act['citation']}",
         f"instrument: {act['act_citation']}",
         f"read from:  {act.get('read_from', 'not-read')}",
-    ]
+    ])
+    if act.get("parent_kind"):
+        lines.append(f"edge:       {act['parent_kind']}")
     if act.get("locus"):
         lines.append(f"locus:      {act['locus']}")
     if act.get("dateline"):
         lines.extend(["", "dateline as printed:", act["dateline"].strip()])
     for field, label in (("root_basis", "why this is a root"), ("parent_basis", "why this edge"),
+                         ("use_declared", "what each book declares its use to be"),
+                         ("distinct_edition_basis", "why this is a distinct edition"),
+                         ("amends", "why this row was amended"),
                          ("reception_basis", "why these parents converge"),
                          ("act_citation_note", "on the missing instrument"),
                          ("quotation", "quoted"), ("parent_quotation", "quoted for the edge"),
@@ -537,7 +742,10 @@ def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]
                 raise Problem(f"{act_id}: merges across lines; lines never rejoin")
         state = merge([states[parent] for parent in parents], common_ancestor(act_id, acts, states), act_id)
         for mass in masses_by_act.get(act_id, []):
-            state.masses[mass["id"]] = {"title": mass["title"], "day": mass["day"], "hour": mass.get("hour", "")}
+            state.masses[mass["id"]] = {
+                "title": mass["title"], "day": mass["day"], "hour": mass.get("hour", ""),
+                "book": mass.get("book") or DEFAULT_BOOK,
+            }
         for unit in units_by_act.get(act_id, []):
             state.units[unit["id"]] = {
                 "mass": unit["mass"], "slot": unit["slot"], "name": unit["name"],
@@ -545,11 +753,11 @@ def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]
                 "order": unit["order"],
             }
         kinds_used[act_id] = apply_departures(state, act_id, departures_by_act.get(act_id, []))
-        state.files[f"acts/{act_id}.txt"] = render_act(act)
+        state.files[act_file(act)] = render_act(act)
         for witness in sorted(witnesses_by_act.get(act_id, []), key=lambda row: row["id"]):
-            state.files[f"witnesses/{witness['id']}.txt"] = render_witness(witness)
+            state.files[witness_file(witness)] = render_witness(witness)
         if act.get("via_unrepresented"):
-            state.files[f"gaps/{act_id}.txt"] = (
+            state.files[gap_file(act)] = (
                 "Stations between this act and its parent that this record does not hold:\n\n"
                 + "".join(f"  - {item}\n" for item in act["via_unrepresented"])
                 + "\nThe edge below this commit therefore means 'descends from', not\n"
@@ -574,7 +782,13 @@ def check(data: dict) -> dict:
     for act_id, act in sorted(acts.items()):
         if not SLUG.match(act_id):
             problems.append(f"act {act_id!r}: id is not a slug")
-        for field in ("line", "kind", "date", "authority", "instrument", "title", "citation"):
+        station_kind = act.get("station_kind")
+        if station_kind not in STATION_KINDS:
+            problems.append(f"act {act_id}: station_kind must be one of {STATION_KINDS}")
+        required = ("line", "kind", "date", "title", "citation")
+        if station_kind != "printed":
+            required += ("authority", "instrument")
+        for field in required:
             if not act.get(field):
                 problems.append(f"act {act_id}: missing {field}")
         if act.get("line") not in lines:
@@ -582,10 +796,20 @@ def check(data: dict) -> dict:
         if act.get("read_from") not in READINGS:
             problems.append(f"act {act_id}: read_from must be one of {READINGS}")
         parents = act.get("parents", [])
+        parent_kind = act.get("parent_kind")
         if not parents and not act.get("root_basis"):
             problems.append(f"act {act_id}: a root must say why the record starts here")
         if parents and not act.get("parent_basis"):
             problems.append(f"act {act_id}: an edge is a claim of descent and must cite its basis")
+        if parents and parent_kind not in PARENT_KINDS:
+            problems.append(f"act {act_id}: parent_kind must be one of {PARENT_KINDS}")
+        if not parents and parent_kind:
+            problems.append(f"act {act_id}: a root has no edge and may not declare a parent_kind")
+        if parent_kind == "use-continuity" and not act.get("use_declared"):
+            problems.append(
+                f"act {act_id}: a use-continuity edge asserts only that two books declare the same "
+                "use, so it must quote what each declares, in `use_declared`"
+            )
         if len(parents) > 1 and not act.get("reception_basis"):
             problems.append(
                 f"act {act_id}: more than one parent asserts a reception; cite it or draw no merge"
@@ -598,6 +822,36 @@ def check(data: dict) -> dict:
             problems.append(
                 f"act {act_id}: a station whose instrument was not found must say so at length"
             )
+        # The narrow exception, held narrow. A `printed` station claims no act,
+        # so it must name the printing it stands on and say why that printing is
+        # a distinct edition and not a rescan of one already carried -- which is
+        # the whole hazard of letting a book be a station at all.
+        if station_kind == "printed":
+            if act.get("act_citation") != "none-claimed":
+                problems.append(
+                    f"act {act_id}: a printed station claims no instrument, so act_citation must be "
+                    "'none-claimed'; 'not-found' says an instrument is believed to exist"
+                )
+            if not act.get("printing"):
+                problems.append(f"act {act_id}: a printed station must name the printing it stands on")
+            elif act["printing"] not in witnesses:
+                problems.append(f"act {act_id}: printing {act['printing']!r} is not a witness")
+            if not act.get("distinct_edition_basis"):
+                problems.append(
+                    f"act {act_id}: a printed station must say why this is a distinct edition and "
+                    "not a reprint or a rescan of one already carried"
+                )
+            if act.get("instrument"):
+                problems.append(
+                    f"act {act_id}: a printed station names an instrument; if an act was located "
+                    "the station is promulgated"
+                )
+        elif act.get("act_citation") == "none-claimed":
+            problems.append(
+                f"act {act_id}: only a printed station may claim no instrument at all"
+            )
+        elif act.get("printing"):
+            problems.append(f"act {act_id}: `printing` belongs to a printed station")
 
     for witness_id, witness in sorted(witnesses.items()):
         for field in ("label", "language", "printed", "attests", "attests_basis", "read_from", "rights", "rights_basis"):
@@ -655,14 +909,26 @@ def check(data: dict) -> dict:
     for kinds in kinds_used.values():
         for kind in kinds:
             counted[kind] = counted.get(kind, 0) + 1
+    stations: dict[str, int] = {}
+    edges: dict[str, int] = {}
+    for act in acts.values():
+        key = str(act.get("station_kind"))
+        stations[key] = stations.get(key, 0) + 1
+        if act.get("parents"):
+            kind = str(act.get("parent_kind"))
+            edges[kind] = edges.get(kind, 0) + len(act["parents"])
     return {
         "acts": len(acts),
         "base_units": len(units),
         "departure_kinds": counted,
         "departures": len(departures),
+        "edge_kinds": edges,
+        "extends_chain": data.get("extends_chain", []),
         "lines": len(lines),
         "masses": len(masses),
         "order": order,
+        "roots": sorted(act_id for act_id, act in acts.items() if not act.get("parents")),
+        "station_kinds": stations,
         "status": "ok",
         "witnesses": len(witnesses),
     }
@@ -740,17 +1006,32 @@ def commit_message(act: dict, kinds: list[str]) -> str:
     # So the stamp is shifted and the real date goes where every view of the
     # history shows it — `git log --oneline`, `--graph`, a GitHub commit list —
     # rather than only in the trailer, which none of those print.
-    body = [f"{act['date']}  {act['title']}", ""]
+    #
+    # A `printed` station says so in the subject line, because the subject is
+    # the only part of a commit that `git log --oneline` and a GitHub commit
+    # list show. A weaker station that reads identically to a stronger one in
+    # the one view everybody uses is a claim laundered by a renderer.
+    printed = act.get("station_kind") == "printed"
+    mark = "[printed] " if printed else ""
+    body = [f"{act['date']}  {mark}{act['title']}", ""]
+    if printed:
+        body.extend([PRINTED_WARNING.strip(), ""])
     effect = act.get("effect", "").strip()
     if effect:
         body.extend([effect, ""])
-    body.append(f"Act: {act['instrument']}")
+    body.append("Station: " + str(act.get("station_kind", "promulgated")))
+    if printed:
+        body.append(f"Printing: {act.get('printing', 'not named')}")
+        body.append("Act: none claimed")
+    else:
+        body.append(f"Act: {act['instrument']}")
+        body.append(f"Authority: {act['authority']}")
     body.append(f"Act-date: {act['date']}")
-    body.append(f"Authority: {act['authority']}")
     body.append(f"Line: {act['line']}")
     body.append(f"Citation: {act['citation']}")
     if act.get("parents"):
         body.append("Descends-from: " + ", ".join(act["parents"]))
+        body.append("Descent-rests-on: " + str(act.get("parent_kind")))
     if act.get("via_unrepresented"):
         body.append("Via-unrepresented: " + ", ".join(act["via_unrepresented"]))
     body.append("Effect-established: " + ("yes" if act.get("effect_established") else "not established"))
@@ -788,14 +1069,21 @@ def emit(data: dict, out: Path) -> dict:
         commits[act_id] = git(out, "hash-object", "--literally", "-t", "commit", "-w", "--stdin", stdin=raw)
         git(out, "update-ref", f"refs/tags/act/{act_id}", commits[act_id])
 
-    tips: dict[str, str] = {}
-    for act_id in order:
-        tips[acts[act_id]["line"]] = commits[act_id]
-    for line, commit in sorted(tips.items()):
-        git(out, "update-ref", f"refs/heads/{line}", commit)
+    # One ref per line, at that line's head. A line whose descent is broken --
+    # several pre-Tridentine printings of one use with nothing joining them --
+    # has more than one head, and each extra head gets its own ref rather than
+    # being dropped. A commit reachable from no branch is a commit a clone will
+    # not show, and silently losing a station is worse than an awkward ref name.
+    branches: dict[str, str] = {}
+    for line, heads in sorted(line_heads(acts, order).items()):
+        for index, act_id in enumerate(heads):
+            ref = line if index == 0 else f"{line}--{act_id}"
+            branches[ref] = commits[act_id]
+    for ref, commit in sorted(branches.items()):
+        git(out, "update-ref", f"refs/heads/{ref}", commit)
     git(out, "symbolic-ref", "HEAD", f"refs/heads/{acts[order[0]]['line']}")
     return {
-        "branches": sorted(tips),
+        "branches": sorted(branches),
         "commits": len(order),
         "out": str(out),
         "status": "ok",
@@ -815,9 +1103,178 @@ def graph(data: dict) -> dict:
             "departures": sorted(set(kinds_used[act_id])),
             "line": act["line"],
             "parents": act.get("parents", []),
+            "station_kind": act.get("station_kind"),
+            "parent_kind": act.get("parent_kind"),
             "via_unrepresented": act.get("via_unrepresented", []),
         })
     return {"rows": rows, "status": "ok"}
+
+
+# --- What two lines share, computed ------------------------------------------
+#
+# This is the reason the Git shape earns its keep. "What did Sarum and Rome
+# share before they diverged" is not a question anyone should answer by writing
+# a table; a hand-written table beside a derived one is a second source of truth
+# and this project has already been bitten by exactly that
+# (guidance/the-shape.md section 2). It is a merge-base query.
+#
+# The shared base is derived ONCE, here, from the act graph. `commonality` then
+# runs `git merge-base` against the emitted repository and REFUSES if the two
+# disagree -- so the derivation is not merely trusted, it is proved against the
+# tool whose semantics it claims to have.
+#
+# The commonest answer in liturgical history is NONE, and that is a finding
+# rather than a failure. Two rites that never shared an act in this record have
+# no shared base, and saying so is the whole point of not drawing an edge.
+
+
+def ancestors(acts: dict[str, dict], act_id: str) -> set[str]:
+    """Every act reachable from this one, itself included."""
+    seen: set[str] = set()
+    pending = [act_id]
+    while pending:
+        current = pending.pop()
+        if current in seen:
+            continue
+        seen.add(current)
+        pending.extend(acts[current].get("parents", []))
+    return seen
+
+
+def merge_base_acts(acts: dict[str, dict], left: str, right: str) -> list[str]:
+    """The best common ancestors of two acts: git's merge-base, on the act graph.
+
+    A common ancestor that is itself an ancestor of another common ancestor is
+    not a best one, so it is dropped. What remains is what `git merge-base`
+    returns, and the equality is asserted rather than assumed.
+    """
+    shared = ancestors(acts, left) & ancestors(acts, right)
+    best = [
+        candidate for candidate in shared
+        if not any(candidate in ancestors(acts, other) - {other} for other in shared)
+    ]
+    return sorted(best, key=lambda identifier: (acts[identifier].get("date", ""), identifier))
+
+
+def line_heads(acts: dict[str, dict], order: list[str]) -> dict[str, list[str]]:
+    """Each line's heads: its acts that no act on the same line descends from.
+
+    Normally one. More than one means the line's own descent is broken, which
+    is the honest pre-Tridentine shape and must not be hidden by picking the
+    latest and calling it the line.
+    """
+    named: dict[str, set[str]] = {}
+    for act_id, act in acts.items():
+        for parent in act.get("parents", []):
+            if acts[parent]["line"] == act["line"]:
+                named.setdefault(act["line"], set()).add(parent)
+    heads: dict[str, list[str]] = {}
+    for act_id in reversed(order):
+        line = acts[act_id]["line"]
+        if act_id not in named.get(line, set()):
+            heads.setdefault(line, []).append(act_id)
+    return heads
+
+
+def shared_bases(data: dict) -> list[dict]:
+    """Every pair of lines, with the acts they last held in common."""
+    order, _, _ = build(data)
+    acts = indexed(data.get("acts", []), "id", "acts")
+    heads = line_heads(acts, order)
+    rows = []
+    names = sorted(heads)
+    for index, left in enumerate(names):
+        for right in names[index + 1:]:
+            base: set[str] = set()
+            for left_head in heads[left]:
+                for right_head in heads[right]:
+                    base.update(merge_base_acts(acts, left_head, right_head))
+            rows.append({
+                "a": left,
+                "b": right,
+                "shared_base": sorted(base, key=lambda identifier: (acts[identifier]["date"], identifier)),
+                "shared_base_line": sorted({acts[identifier]["line"] for identifier in base}),
+                "diverged_at": (
+                    max(base, key=lambda identifier: (acts[identifier]["date"], identifier))
+                    if base else None
+                ),
+            })
+    return rows
+
+
+def blobs(repo: Path, ref: str) -> dict[str, str]:
+    """One commit's liturgy, path to blob hash. The record files are excluded."""
+    out: dict[str, str] = {}
+    listing = git(repo, "ls-tree", "-r", ref)
+    for row in listing.splitlines():
+        meta, path = row.split("\t", 1)
+        if is_liturgy(path):
+            out[path] = meta.split()[2]
+    return out
+
+
+def commonality(data: dict, repo: Path, wanted: tuple[str, str] | None) -> dict:
+    """What two lines share and where they part, from the emitted repository.
+
+    Two halves, and they answer different questions:
+
+      THE SHARED BASE is about ACTS. It is `git merge-base` on the two lines'
+      heads, and it says whether any authority's act stands behind both. Where
+      the answer is none, the two rites have no act in common in this record and
+      the tool says exactly that.
+
+      THE DIVERGENCE is about TEXT. It compares the two tips' trees and reports
+      what stands in both identically, in both differently, and in one alone.
+      Two lines with no shared act can still hold the same prayer, and that is
+      the interesting case -- inheritance older than anything this record
+      carries, visible as agreement without an edge.
+    """
+    if not repo.exists():
+        emit(data, repo)
+    order, _, _ = build(data)
+    acts = indexed(data.get("acts", []), "id", "acts")
+    heads = line_heads(acts, order)
+    derived = {(row["a"], row["b"]): row for row in shared_bases(data)}
+    pairs = [wanted] if wanted else sorted(derived)
+
+    rows = []
+    for left, right in pairs:
+        key = (left, right) if (left, right) in derived else (right, left)
+        if key not in derived:
+            raise Problem(f"commonality: no such pair of lines: {left!r}, {right!r}")
+        row = derived[key]
+        # The proof. git is asked the same question the DAG was asked, and a
+        # disagreement is a defect in this tool rather than a fact about the
+        # history, so it raises instead of reporting.
+        left_ref, right_ref = heads[key[0]][0], heads[key[1]][0]
+        result = subprocess.run(
+            ["git", "merge-base", "--all", f"act/{left_ref}", f"act/{right_ref}"],
+            cwd=repo, text=True, capture_output=True,
+        )
+        found = sorted(line.strip() for line in result.stdout.splitlines() if line.strip())
+        expected = sorted(
+            git(repo, "rev-parse", f"act/{act_id}") for act_id in row["shared_base"]
+        )
+        if found != expected:
+            raise Problem(
+                f"commonality {key[0]}/{key[1]}: git merge-base and the act graph disagree; "
+                f"git says {found}, the graph says {expected}"
+            )
+        left_tree, right_tree = blobs(repo, f"act/{left_ref}"), blobs(repo, f"act/{right_ref}")
+        both = sorted(set(left_tree) & set(right_tree))
+        same = [path for path in both if left_tree[path] == right_tree[path]]
+        rows.append({
+            **row,
+            "a_head": key[0] and heads[key[0]][0],
+            "b_head": heads[key[1]][0],
+            "same_text": same,
+            "differing_text": [path for path in both if left_tree[path] != right_tree[path]],
+            "only_a": sorted(set(left_tree) - set(right_tree)),
+            "only_b": sorted(set(right_tree) - set(left_tree)),
+        })
+    return {"pairs": rows, "repo": str(repo), "status": "ok"}
+
+
 
 
 def structure(data: dict, out: Path) -> dict:
@@ -828,9 +1285,12 @@ def structure(data: dict, out: Path) -> dict:
     order is the graph's own topological order, which is what lets a drawing
     put a station to the right of the act it descends from without deciding
     anything the history does not already say.
+
     """
     rows = graph(data)["rows"]
     known = {act["id"]: act for act in data["acts"]}
+    slice_id = str(data.get("slice"))
+    root = out / "structure" / "act-history"
     stations = []
     for row in rows:
         act = known[row["act"]]
@@ -847,16 +1307,35 @@ def structure(data: dict, out: Path) -> dict:
                 "parents": list(act.get("parents") or []),
                 "via_unrepresented": list(act.get("via_unrepresented") or []),
                 "departures": row["departures"],
+                # Added, never substituted. A map that drew a printing and a
+                # promulgation the same way would show a reader a weaker claim
+                # wearing a stronger one's clothes.
+                "station_kind": act.get("station_kind"),
+                "parent_kind": act.get("parent_kind"),
+                "printing": act.get("printing"),
+                "act_citation": act.get("act_citation"),
+                "citation": act.get("citation"),
+                "effect": act.get("effect"),
+                "effect_established": bool(act.get("effect_established")),
+                "amended": bool(act.get("amends")),
+                # Derived once, here, and read rather than rebuilt. Both are
+                # relative to structure/act-history/.
+                "station_path": f"{slice_id}/station/{sorted_name(str(act['date']), act['id'])}.json",
+                "state_path": f"{slice_id}/state/{sorted_name(str(act['date']), act['id'])}.json",
             }
         )
     payload = {
         "schema": "triptych-act-map/v1",
-        "slice": data.get("slice"),
+        "slice": slice_id,
         "extent": data.get("extent"),
         "lines": data.get("lines"),
         "stations": stations,
+        # Derived from the act graph, never typed. `commonality` proves the same
+        # derivation against `git merge-base` on the emitted repository.
+        "commonality": shared_bases(data),
+        "extends_chain": data.get("extends_chain", []),
     }
-    target = out / "structure" / "act-history" / f"{data.get('slice')}.json"
+    target = root / f"{slice_id}.json"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(
         json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n",
@@ -880,6 +1359,10 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             f"ok: {payload['acts']} acts, {payload['lines']} lines, {payload['witnesses']} witnesses, "
             f"{payload['masses']} masses, {payload['base_units']} base units, {payload['departures']} departures"
         )
+        print("stations: " + ", ".join(f"{kind} {count}" for kind, count in sorted(payload["station_kinds"].items()))
+              + f"; {len(payload['roots'])} roots")
+        if payload["edge_kinds"]:
+            print("edges rest on: " + ", ".join(f"{kind} {count}" for kind, count in sorted(payload["edge_kinds"].items())))
         print("departure kinds used: " + (", ".join(f"{kind} {count}" for kind, count in sorted(kinds.items())) or "none"))
     elif verb == "graph":
         for row in payload["rows"]:
@@ -887,10 +1370,23 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             if row["via_unrepresented"]:
                 edge += " (via unrepresented: " + ", ".join(row["via_unrepresented"]) + ")"
             marks = " [" + ",".join(row["departures"]) + "]" if row["departures"] else ""
-            print(f"{row['line']:<17} {row['act']:<31} {row['date']}  {edge}{marks}")
+            printed = "* " if row.get("station_kind") == "printed" else "  "
+            print(f"{printed}{row['line']:<17} {row['act']:<38} {row['date']}  {edge}{marks}")
     elif verb == "structure":
         print(f"{payload['stations']} stations on {payload['lines']} lines")
         print(f"  -> {payload['written']}")
+    elif verb == "commonality":
+        for row in payload["pairs"]:
+            base = ", ".join(row["shared_base"]) if row["shared_base"] else "NONE: no act stands behind both"
+            print(f"{row['a']} / {row['b']}")
+            print(f"  shared base : {base}")
+            print(f"  tips        : {row['a_head']} / {row['b_head']}")
+            print(
+                f"  units       : {len(row['same_text'])} identical, {len(row['differing_text'])} differing, "
+                f"{len(row['only_a'])} only in {row['a']}, {len(row['only_b'])} only in {row['b']}"
+            )
+            for path in row["same_text"][:5]:
+                print(f"    = {path}")
     else:
         print(f"wrote {payload['commits']} commits on {len(payload['branches'])} branches to {payload['out']}")
     return 0
@@ -909,6 +1405,7 @@ def main(argv: list[str] | None = None) -> int:
         ("check", "validate the act history and its departures"),
         ("graph", "print the act graph in topological order"),
         ("structure", "write the browser's map file"),
+        ("commonality", "report what two lines share, by git merge-base"),
         ("emit", "write the Git repository"),
     ):
         sub = subparsers.add_parser(verb, help=help_text, parents=[shared])
@@ -916,6 +1413,11 @@ def main(argv: list[str] | None = None) -> int:
             sub.add_argument("--out", type=Path, default=DEFAULT_OUT)
         if verb == "structure":
             sub.add_argument("--out", type=Path, default=DEFAULT_DATA)
+        if verb == "commonality":
+            sub.add_argument("lines", nargs="*", metavar="LINE",
+                             help="two line ids; omit for every pair")
+            sub.add_argument("--repo", type=Path, default=DEFAULT_OUT,
+                             help="an emitted repository; written if it is not there")
         with_examples(sub, EXAMPLES[verb])
 
     def run(arguments: argparse.Namespace) -> object:
@@ -927,11 +1429,16 @@ def main(argv: list[str] | None = None) -> int:
         check(data)
         if arguments.command == "structure":
             return structure(data, arguments.out)
+        if arguments.command == "commonality":
+            wanted = getattr(arguments, "lines", []) or []
+            if len(wanted) not in (0, 2):
+                raise Problem("commonality takes two line ids, or none for every pair")
+            return commonality(data, arguments.repo, (wanted[0], wanted[1]) if wanted else None)
         return emit(data, arguments.out)
 
     return run_verb_cli(
         parser=parser,
-        handlers={verb: run for verb in ("check", "graph", "structure", "emit")},
+        handlers={verb: run for verb in ("check", "graph", "structure", "commonality", "emit")},
         renderer=render,
         prefix="act-history",
         argv=argv,
