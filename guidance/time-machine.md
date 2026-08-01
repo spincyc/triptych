@@ -139,3 +139,54 @@ nicety.
 > printed map comes from the constraint system — the angle set, the spacing, the
 > label rules — and not from hand-tweaking, because a tweak is a restatement and
 > restatements drift.
+
+---
+
+## 6. What is precedented, and what is not
+
+Researched 2026-07-31. Recorded here so the claim can be checked rather than
+asserted, and so nobody has to establish it twice.
+
+**The primitive has been used, twice, in unrelated domains.**
+
+- Burkhard and Meier, *J.UCS* 11(4), 2005, put dated milestones in the station
+  slot for hospital project-management posters, with lines as stakeholder
+  audiences and an explicit left-to-right time axis. Field-evaluated: 45
+  responses from 81 staff, 78 per cent agreeing it gave overview. Their stated
+  limitation is one this project inherits and answers — *"the printed posters
+  are static and difficult to update"* — which is exactly why Rule 5 requires the
+  printed map to be generated. An automated successor exists (Stott, Rodgers,
+  Burkhard, Meier and Smis, IV'05). [sourced]
+- Narrative Maps (Keith Norambuena, Mitra and North, CSCW 2021) put events on
+  routes for sensemaking over news corpora, and were evaluated against a timeline
+  baseline. Two of their design guidelines apply directly to a chronology of
+  acts: **avoid edges inferable transitively**, and **distinguish connection
+  types** — a topical relation and a causal one should not share a stroke.
+  [sourced]
+
+**Nothing exists for a documentary or juridical chronology.** An exact-phrase
+search for `"tube map" "canon law"` returns zero results. Legislative history is
+universally drawn as a flowchart, which is the right diagram for *process* — how
+a bill becomes law — and the wrong one for *descent and coexistence*. Church
+history exists only as conventional timelines. Brexit Mapping, by a transit-map
+scholar, keys stations to issues and lines to economic sectors, with no dates at
+all: a thematic map, not a chronology. [sourced]
+
+**The notation this project needs is unclaimed.** Burkhard and Meier have
+"collective milestones" in their data model and publish no visual grammar for
+them. Shahaf and others formalise an interchange as shared-station identity and
+say nothing about meaningless crossings. MetroSets' central criticism of a rival
+idiom is precisely that it produces *"many crossings without semantic meaning"*.
+**No published metro map has a grammar separating "these lines meet" from "these
+lines merely cross".** That separation is Rule 2, and it is the part of this
+design with no prior art.
+
+So the honest position, which is stronger than a claim of pure originality
+because it is checkable: the application is new, one narrow precedent exists for
+the station-as-event slot and is cited, and the grammar is unclaimed.
+
+Two bounds declared rather than hidden: treaty and diplomatic history beyond
+Brexit Mapping is **unverified, not negative** — the search died on rate limits —
+and a snippet-referenced paper, "Metaphorical metro maps: design challenges"
+(Ruhr University Bochum), could not be located in OpenAlex, arXiv or Semantic
+Scholar and **may not exist as described**. [inferred]
