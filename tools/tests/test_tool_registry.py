@@ -34,7 +34,7 @@ COMPANION_SUFFIXES = (".md", ".test")
 PURPOSE_LIMIT = 80
 # scripts/_tooling.py owns the heading; asserting on it here rather than on
 # prose means a reworded example cannot silently stop being checked.
-EXAMPLES_HEADING = "examples (real output, captured; counts move with the sources):"
+EXAMPLES_HEADING = "examples (real invocations; `make check-examples` replays each one):"
 INVOCATION = re.compile(r"^\s+\$ \S", re.M)
 NO_EXAMPLE = "no runnable example:"
 VERBS = re.compile(r"positional arguments:\n\s+\{([a-z0-9,\-]+)\}")

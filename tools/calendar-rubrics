@@ -111,6 +111,13 @@ EXAMPLES = {
             ),
             "read-only; runs assembly-model.js under node, which is the same derivation the page runs and the solved cases hold",
         ),
+        Example(
+            "tools/calendar-rubrics day --date 2026-12-19 --calendar roman-1962 --json",
+            (
+                "{\"date\":\"2026-12-19\",\"days\":[{\"advisory\":\"A finding aid for how a day is put together, and nev... [+5906 chars]",
+            ),
+            "the machine form carries every field the model returns, of which the text form prints six",
+        ),
     ),
     "structure": (
         Example(

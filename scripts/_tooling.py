@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 import sys
+import unicodedata
 from typing import Callable, NamedTuple, Sequence
 
 PROTOCOL_VERSION = 1
@@ -22,7 +23,16 @@ ELISION = "..."
 
 # One heading, so a reader who has seen one tool's examples recognizes every
 # other tool's, and so a test can find the section without parsing prose.
-HEADING = "examples (real output, captured; counts move with the sources):"
+#
+# The heading no longer says "real output, captured", because the help page no
+# longer prints the output. The capture is still real and still captured — it
+# is held in each tool's EXAMPLES table and replayed line for line by
+# scripts/replay_examples.py, which is the only thing that ever proved the
+# claim. What changed is who reads it: a reader opening `--help` wants the
+# command to copy, and printing 25 lines of transcript under each of a verb's
+# two examples buried the verb list under a page of output. The transcript is
+# data for the replay; the help page is for the reader.
+HEADING = "examples (real invocations; `make check-examples` replays each one):"
 
 
 # --- The tool listing's grouping -------------------------------------------
@@ -240,14 +250,15 @@ def format_examples(
         if not examples:
             return "\n".join(lines)
         lines.append("")
-    for index, example in enumerate(examples):
-        if index:
-            lines.append("")
+    for example in examples:
         lines.append(f"  $ {example.command}")
+        # The note is the one thing the transcript could never show — that the
+        # verb writes, what it wrote, which precondition it assumed — so it
+        # stays where the reader is looking. The transcript itself does not:
+        # it is captured, stored and replayed, and reprinting it here made the
+        # help page a wall of output nobody asked for.
         if example.note:
             lines.append(f"    ({example.note})")
-        for line in example.output:
-            lines.append(f"    {line}")
         if not example.output:
             lines.append("    (prints nothing)")
     return "\n".join(lines)
@@ -287,6 +298,292 @@ def examples_live_on_the_verbs(
     return parser
 
 
+# --- What the far end can actually show ------------------------------------
+#
+# Until this existed, nothing in this module asked. `mass-today show` prints
+# nine em-dashes and five ellipses for a single Sunday, and it printed them at
+# a VT100, into a pipe, and into a file under an ASCII locale alike: mojibake
+# in the first case and a UnicodeEncodeError in the last. Neither was
+# hypothetical and neither was any tool's own fault, because the question —
+# what can the stream on the other end carry — is a property of the run and
+# not of the tool. So it is answered once, here, for all of them.
+#
+# THREE TIERS, and what decides each:
+#
+#   plain    ASCII and nothing else. `V.` and `R.`, `--`, `...`, no colour.
+#            Reached by `--plain` REGARDLESS OF DETECTION, because detection
+#            is a guess and an operator who says plain means plain; and
+#            reached by detection when the stream's encoding cannot carry the
+#            glyphs, or when a terminal advertises no capabilities at all.
+#   unicode  The glyphs, decided by the STREAM'S ENCODING and not by TERM: a
+#            UTF-8 pipe into a file carries ℣ perfectly well with no terminal
+#            at the other end at all.
+#   rich     Headings, rules and colour, when the stream is a tty AND the
+#            terminal names itself. Colour honours NO_COLOR, and is never the
+#            only carrier of meaning: every distinction it draws is also drawn
+#            in words, so a monochrome reader loses decoration and no fact.
+#
+# THE MACHINE PATHS ARE UNTOUCHED. `--json` is a contract other tools consume
+# and `--format yaml` is read by programs; both bypass this entirely, so their
+# bytes do not move with the terminal they happen to be printed at.
+PLAIN, UNICODE, RICH = "plain", "unicode", "rich"
+STYLES = ("auto", PLAIN, UNICODE, RICH)
+
+# The fold, written down rather than computed, because "what does this
+# character become without Unicode" is an editorial decision per character and
+# a decomposition would silently drop the ones that carry meaning. Every entry
+# is a character these tools or these sources actually print; the census that
+# produced the list ran over tools/ and over the served structure files.
+FOLD = {
+    "—": "--",   # em dash, the separator this project's output leans on
+    "–": "-",
+    "…": "...",
+    "‘": "'",
+    "’": "'",
+    "“": '"',
+    "”": '"',
+    " ": " ",
+    "·": "-",    # the middle dot used between fields
+    "§": "sec.",
+    "¶": "para.",
+    "©": "(c)",
+    "†": "+",    # dagger
+    "‡": "++",
+    "✠": "+",    # the maltese cross of a blessing
+    "☧": "Chi-Rho",
+    "→": "->",
+    "‹": "<",
+    "›": ">",
+    "æ": "ae",
+    "Æ": "AE",
+    "œ": "oe",
+    "Œ": "OE",
+    "℣": "V.",   # ℣ and ℟ are introduced by the tiers above, and fold
+    "℟": "R.",   # back to the letters the book itself prints
+    "ℤ": "V.",
+}
+
+VERSICLE = "℣"
+RESPONSE = "℟"
+
+# Colour, by role rather than by hue, so a caller names what a thing IS.
+_SGR = {
+    "heading": "1",       # bold
+    "rule": "2",          # dim
+    "note": "2",
+    "said": "1",
+    "withheld": "3",      # italic where the terminal has it
+}
+
+
+def fold_to_ascii(text: str) -> str:
+    """A string as an ASCII terminal can print it, losing decoration only.
+
+    Anything not in the table is decomposed and stripped of its accents, which
+    is right for `Iesú` and wrong for nothing this corpus holds; what survives
+    both passes becomes `?`, because a byte a stream cannot encode raises
+    rather than prints, and a visible `?` is the honest report of a character
+    that could not be shown.
+    """
+    out = []
+    for character in str(text):
+        if ord(character) < 128:
+            out.append(character)
+            continue
+        replacement = FOLD.get(character)
+        if replacement is not None:
+            out.append(replacement)
+            continue
+        decomposed = unicodedata.normalize("NFKD", character)
+        kept = "".join(one for one in decomposed if not unicodedata.combining(one))
+        out.append(kept if kept.isascii() and kept else "?")
+    return "".join(out)
+
+
+class Style:
+    """The one decision about what this run may print, passed to renderers.
+
+    A renderer asks it for a heading or a mark; it does not ask what tier it
+    is in. That is deliberate: the moment a renderer branches on the tier, the
+    three tiers become three renderers and the plain one is the one nobody
+    looks at.
+    """
+
+    def __init__(self, tier: str = UNICODE, colour: bool = False) -> None:
+        self.tier = tier
+        self.colour = bool(colour) and tier == RICH
+
+    @property
+    def plain(self) -> bool:
+        return self.tier == PLAIN
+
+    def text(self, value: object) -> str:
+        """Any string, made safe for this stream."""
+        return fold_to_ascii(value) if self.plain else str(value)
+
+    def dash(self) -> str:
+        return "--" if self.plain else "—"
+
+    def sgr(self, value: str, role: str) -> str:
+        code = _SGR.get(role)
+        if not self.colour or not code:
+            return value
+        return f"\033[{code}m{value}\033[0m"
+
+    def heading(self, value: str, *, rule: str = "") -> list[str]:
+        """A heading, and under it the rule the caller asked for.
+
+        The rule is drawn in EVERY tier, because a rule is ASCII and because it
+        is the carrier that survives when weight and colour do not: a reader on
+        a monochrome VT100 must still be able to tell a heading from a prayer.
+        Weight and colour are added on top where the terminal has them, and
+        nothing is ever carried by them alone.
+        """
+        shown = self.text(value)
+        lines = [self.sgr(shown, "heading")]
+        if rule:
+            lines.append(self.sgr(rule * len(shown), "rule"))
+        return lines
+
+    def note(self, value: str) -> str:
+        return self.sgr(self.text(value), "note")
+
+    def said(self, value: str) -> str:
+        return self.sgr(self.text(value), "said")
+
+    def versicled(self, value: str) -> str:
+        """`V.` and `R.` as the glyphs, where the stream can carry them.
+
+        Only those two letters, and only as whole marks at a line's head or
+        after a sentence, which is where the books print them. Nothing here
+        tries to decide who is speaking: the 1861 book's `P.`/`R.` column
+        mixes a person with a position in a dialogue, the browser says so at
+        length, and a terminal guessing at it would be a second answer to a
+        question that already has one.
+        """
+        if self.plain:
+            return self.text(value)
+        out = str(value)
+        for mark, glyph in (("V.", VERSICLE), ("R.", RESPONSE)):
+            out = out.replace(f"\n{mark} ", f"\n{glyph} ")
+            if out.startswith(f"{mark} "):
+                out = glyph + out[len(mark):]
+            out = out.replace(f" {mark} ", f" {glyph} ")
+        return out
+
+
+def stream_carries_unicode(stream: object) -> bool:
+    """Whether this stream's own encoding can carry the glyphs."""
+    encoding = getattr(stream, "encoding", None)
+    if not encoding:
+        return False
+    try:
+        (VERSICLE + "—…").encode(encoding)
+    except (LookupError, UnicodeEncodeError):
+        return False
+    return True
+
+
+def resolve_style(
+    arguments: argparse.Namespace | None = None,
+    *,
+    stream=None,
+    environ: dict | None = None,
+) -> Style:
+    """The tier this run prints in, and whether it may use colour.
+
+    Order matters and is the whole of the policy: an explicit request wins
+    over every detection, because detection is a guess.
+    """
+    stream = sys.stdout if stream is None else stream
+    environ = os.environ if environ is None else environ
+    wanted = getattr(arguments, "style", None) or "auto"
+    if getattr(arguments, "plain", False):
+        wanted = PLAIN
+    colour = not environ.get("NO_COLOR")
+
+    if wanted != "auto":
+        return Style(wanted, colour)
+    if not stream_carries_unicode(stream):
+        return Style(PLAIN, False)
+    try:
+        interactive = bool(stream.isatty())
+    except (AttributeError, ValueError):
+        interactive = False
+    if not interactive:
+        # A pipe or a file: no cursor, no colour, but the encoding is the
+        # encoding and it can carry the glyphs.
+        return Style(UNICODE, False)
+    term = str(environ.get("TERM") or "").strip()
+    if term in ("", "dumb"):
+        # A terminal that advertises nothing gets nothing. This is the older
+        # and dumber terminal the whole tier exists for.
+        return Style(PLAIN, False)
+    return Style(RICH, colour)
+
+
+def add_style_flags(parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
+    """Give a parser and every verb under it the two capability flags.
+
+    Both are declared with SUPPRESS defaults so that `tool --plain verb` and
+    `tool verb --plain` mean the same thing: an ordinary default on a verb
+    parser overwrites what the top-level parser already put in the namespace,
+    which would make the flag work in one position and be silently discarded
+    in the other.
+    """
+    for one in _parser_tree(parser):
+        for flag, options in (
+            (
+                "--plain",
+                {
+                    "action": "store_true",
+                    "help": "print ASCII only, whatever the terminal reports",
+                },
+            ),
+            (
+                "--style",
+                {
+                    "choices": STYLES,
+                    "help": "force an output tier (default: auto-detected)",
+                },
+            ),
+        ):
+            try:
+                one.add_argument(flag, default=argparse.SUPPRESS, **options)
+            except argparse.ArgumentError:
+                pass
+    return parser
+
+
+def _parser_tree(parser: argparse.ArgumentParser) -> list[argparse.ArgumentParser]:
+    found = [parser]
+    for action in parser._actions:  # noqa: SLF001 - argparse exposes no public walk
+        choices = getattr(action, "choices", None)
+        if isinstance(action, argparse._SubParsersAction) and isinstance(choices, dict):
+            for child in choices.values():
+                if isinstance(child, argparse.ArgumentParser) and child not in found:
+                    found.extend(_parser_tree(child))
+    return found
+
+
+class _Folded:
+    """A stdout that folds to ASCII, installed only for the plain tier.
+
+    It sits around the renderer rather than inside every `print` in thirty-four
+    tools, which is the difference between a rule that holds and a rule each
+    tool remembers. The machine paths never reach it.
+    """
+
+    def __init__(self, stream) -> None:
+        self._stream = stream
+
+    def write(self, value: str) -> int:
+        return self._stream.write(fold_to_ascii(value))
+
+    def __getattr__(self, name):
+        return getattr(self._stream, name)
+
+
 def dump_json(payload: dict[str, object]) -> str:
     return json.dumps(
         {**payload, "v": PROTOCOL_VERSION},
@@ -297,7 +594,18 @@ def dump_json(payload: dict[str, object]) -> str:
 
 
 def print_json(payload: dict[str, object], *, stream=sys.stdout) -> None:
-    print(dump_json(payload), file=stream)
+    text = dump_json(payload)
+    # The bytes do not move with the terminal — except where the stream cannot
+    # carry them at all, and there the choice is between an escaped-but-valid
+    # JSON document and a UnicodeEncodeError. Same data, same parse.
+    if not stream_carries_unicode(stream):
+        text = json.dumps(
+            {**payload, "v": PROTOCOL_VERSION},
+            ensure_ascii=True,
+            sort_keys=True,
+            separators=(",", ":"),
+        )
+    print(text, file=stream)
 
 
 def fail(message: str, code: str, as_json: bool, status: int, prefix: str) -> int:
@@ -326,6 +634,7 @@ def run_verb_cli(
     dependency_message: str | None = None,
     mapped_errors: dict[type[BaseException], tuple[str, int]] | None = None,
 ) -> int:
+    add_style_flags(parser)
     arguments = parser.parse_args(argv)
     verb = getattr(arguments, "command", None) or default_verb
     if verb is None:
@@ -335,6 +644,15 @@ def run_verb_cli(
         parser.error(f"unknown command: {verb}")
 
     as_json = bool(getattr(arguments, "json", False))
+    # Machine output bypasses the capability layer entirely: `--json` is a
+    # contract other tools read and `--format yaml` is read by programs, and
+    # neither may move a byte because of the terminal it happened to be
+    # printed at. Every other path gets the resolved tier, which the renderer
+    # takes as an argument rather than detecting for itself — that is what
+    # lets a test ask for all three tiers from any machine.
+    machine = as_json or str(getattr(arguments, "format", "") or "") in ("json", "yaml")
+    arguments.style_resolved = resolve_style(arguments) if not machine else Style(UNICODE, False)
+
     try:
         payload = handler(arguments)
     except ModuleNotFoundError as error:
@@ -365,4 +683,14 @@ def run_verb_cli(
             70,
             prefix,
         )
-    return renderer(payload, arguments)
+    if machine or not arguments.style_resolved.plain:
+        return renderer(payload, arguments)
+    # The plain tier holds for every one of the thirty-four tools, including
+    # the thirty-three that have never heard of it, which is what a fold around
+    # the renderer buys and a per-tool rule does not.
+    held = sys.stdout
+    sys.stdout = _Folded(held)  # type: ignore[assignment]
+    try:
+        return renderer(payload, arguments)
+    finally:
+        sys.stdout = held

@@ -260,12 +260,33 @@ def restated_identity(root: Path, calendar: str | None = None) -> list[str]:
     return problems
 
 
-def _read(path: Path) -> dict:
+def read_yaml(path: Path):
+    """Read a YAML file with the fastest SAFE loader this machine has.
+
+    `yaml.safe_load` is the pure-Python scanner, and it was the whole cost of
+    answering a single date: 2.1 of the 2.5 seconds `calendar-days day` took
+    were spent scanning a megabyte of `propers.yaml` character by character,
+    and `mass-propers show --bible` spent as much again on a 1.3 MB bible
+    index. libyaml parses the same bytes about eight times faster.
+
+    It is the same derivation over the same input and not a shortcut past one.
+    That claim was checked rather than assumed: both loaders were run over
+    every `propers.yaml` in this repository and the documents compared equal.
+    `CSafeLoader` is the C SAFE loader — it constructs no arbitrary Python
+    objects, exactly as `safe_load` does not — and where libyaml is not
+    installed this falls back to the pure-Python one and only the speed
+    changes.
+    """
     import yaml
 
+    loader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+    return yaml.load(path.read_text(encoding="utf-8"), Loader=loader)
+
+
+def _read(path: Path) -> dict:
     if not path.is_file():
         raise ValueError(f"no calendar index at {path}")
-    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    document = read_yaml(path)
     if not isinstance(document, dict):
         raise ValueError(f"{path}: top level must be a mapping")
     return document
@@ -723,3 +744,48 @@ def _resolve_proper(
         f"{where}: {TAKES_FROM} names proper {wanted!r}{where_form} of mass "
         f"{target_key!r}, which appoints no such proper",
     ]
+
+
+def texts_of(
+    proper: dict, lang: str, witness: str | None = None
+) -> list[tuple[str, str, str]]:
+    """Which of a proper's texts to print, and under whose name.
+
+    Latin is the tracked text; any other language is a carried translation.
+    Where a proper holds two translations in the requested language, BOTH are
+    returned and each is named. A terminal has no dropdown, and picking one
+    silently would hide exactly what the reader asked to see: two witnesses to
+    one prayer are worth showing precisely because they differ, and their
+    disagreement is what caught 38 wrong orations in this corpus. `witness`
+    narrows to one when that is what is wanted.
+
+    Returns `(text, attribution, note)` triples; the attribution is empty
+    where there is nothing to choose between. It lives here rather than in
+    `mass-propers` because two tools print a proper — that one and
+    `mass-today --expanded` — and a second copy of this rule would be a second
+    answer to "which text is this Mass said in".
+    """
+    if lang == "la":
+        return [(str(proper.get("text") or ""), "", "")]
+    found = [
+        translation
+        for translation in proper.get("translations") or []
+        if isinstance(translation, dict) and translation.get("lang") == lang
+        and (witness is None or translation.get("source_id") == witness)
+    ]
+    if found:
+        named = len(found) > 1
+        return [
+            (
+                str(translation.get("text") or ""),
+                str(translation.get("source_id") or "this project") if named else "",
+                "",
+            )
+            for translation in found
+        ]
+    if proper.get("text"):
+        scope = f" from {witness}" if witness else ""
+        return [
+            (str(proper["text"]), "", f"no {lang} translation{scope} recorded; showing Latin")
+        ]
+    return []

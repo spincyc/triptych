@@ -1,0 +1,215 @@
+#!/bin/sh
+# Test for `tools/tpt mass-ordinary`: exit 0 = pass (the stable gate).
+# Only `structure` writes, and it is aimed at a sandbox here; everything else
+# reads the inventories and prints.
+#
+# TWO KINDS OF ASSERTION MATTER HERE, and neither is about a crash.
+#
+# The first is rights. Thirty-nine of the postconciliar frame's forty-eight
+# elements are withheld under a recorded reason, and an element that shows
+# nothing where a prayer belongs has told the reader that the Mass omits it. So
+# every silence must name its reason, in every form this tool prints.
+#
+# The second is the seats. The slots are the missal's own statement of where a
+# proper stands, they anchor to the frame's own elements — including its
+# rubrics — and `mass-today --expanded` and the browser both read them from
+# here. A slot whose anchor no longer exists loses a proper silently.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="mass-ordinary"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# `check` validates the inventories and reports whether the written files are
+# current. It writes nothing.
+summary="$(run_tool check --calendar roman-1962 | head -1)"
+case "$summary" in
+*" sections, "*" elements, "*" witness"*" slots; "*" elements translated, "*" absent") ;;
+*)
+	echo "unexpected summary line: $summary" >&2
+	exit 1
+	;;
+esac
+
+# `structure` writes what the browser fetches, and only where --out points.
+run_tool structure --out "$sandbox/data" >/dev/null
+root="$sandbox/data/structure/ordinary"
+if [ ! -d "$root" ]; then
+	echo "structure wrote no ordinary" >&2
+	exit 1
+fi
+
+python3 - "$root" <<'PY'
+import json, pathlib, sys
+
+root = pathlib.Path(sys.argv[1])
+index = json.loads((root / "index.json").read_text(encoding="utf-8"))
+assert index["calendars"], "the index names no calendar"
+files = sorted(p for p in root.glob("*.json") if p.name != "index.json")
+assert files, "structure wrote no calendar file"
+
+for path in files:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    assert payload["schema"] == "triptych-ordinary-structure/v1", payload["schema"]
+    assert payload["advisory"], f"{path.name}: no caution about itself"
+
+    elements = {
+        element["key"]: element
+        for section in payload["sections"]
+        for element in section["elements"]
+    }
+    assert elements, path.name
+
+    # ---- Absence, with its reason, everywhere ----------------------------
+    #
+    # An element holds a text in a language or names why it does not. The
+    # reason is keyed by the side of the book — `english`, `latin` — because
+    # that is how the printing is organised, and a silence with no key is a
+    # defect in the source rather than a silence about the rite.
+    languages = [one["lang"] for one in payload["languages"]]
+    sides = {"en": "english", "la": "latin"}
+    for element in elements.values():
+        held = {one["lang"] for one in (element["translations"] or [])}
+        for lang in languages:
+            if lang in held:
+                continue
+            reason = (element["absent"] or {}).get(sides[lang], None)
+            assert reason, (path.name, element["key"], lang)
+        # Every reason an element names is accounted for once, above, with how
+        # many elements it covers.
+        for reason in (element["absent"] or {}).values():
+            if reason:
+                assert any(one["key"] == reason for one in payload["absences"]), reason
+
+    # A witness that reaches the served file has a recorded rights basis.
+    for witness in payload["translations"]:
+        assert witness["rights"], witness
+
+    # ---- The seats -------------------------------------------------------
+    #
+    # A slot anchors to an element this file really emits, cites the rubric
+    # that puts it there, and claims a proper name no other slot claims.
+    claimed = {}
+    order = [
+        element["key"]
+        for section in payload["sections"]
+        for element in section["elements"]
+    ]
+    last = -1
+    for slot in payload["slots"]:
+        assert slot["anchor"] in elements, (path.name, slot["key"], slot["anchor"])
+        assert slot["where"] in ("before", "after"), slot
+        assert slot["locus"], slot["key"]
+        assert slot["propers"], slot["key"]
+        for name in slot["propers"]:
+            assert name not in claimed, (name, claimed.get(name), slot["key"])
+            claimed[name] = slot["key"]
+        # The slots run forward through the elements, which is what makes the
+        # file's own order readable as the order of the rite.
+        here = order.index(slot["anchor"])
+        assert here >= last, (path.name, slot["key"], here, last)
+        last = here
+    if payload["slots"]:
+        assert payload["slots_derived_from"], path.name
+PY
+
+# The same inventories produce the same bytes.
+run_tool structure --out "$sandbox/again" >/dev/null
+if ! diff -r "$root" "$sandbox/again/structure/ordinary" >/dev/null; then
+	echo "structure is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# ---- What `show` prints ---------------------------------------------------
+#
+# A rubric is an instruction and not a prayer. It was set at the same indent in
+# the same face as the prayer beside it, so the two rubrics bracketing the
+# Placeat read as its first and last lines.
+shown="$(run_tool show --calendar roman-1962)"
+case "$shown" in
+*"[ Bowing before the Altar, the Priest says ]"*) ;;
+*)
+	echo "a rubric is not set apart from the prayers" >&2
+	exit 1
+	;;
+esac
+case "$shown" in
+*"[ Let the performance of my homage"*)
+	echo "a prayer was set as though it were a rubric" >&2
+	exit 1
+	;;
+esac
+
+# The priest's actions can be hidden, and hiding them touches nothing else.
+hidden="$(run_tool show --calendar roman-1962 --no-rubrics)"
+case "$hidden" in
+*"Bowing before the Altar"*)
+	echo "--no-rubrics did not hide the priest's actions" >&2
+	exit 1
+	;;
+esac
+case "$hidden" in
+*"Placeat tibi sancta Trinitas"*) ;;
+*)
+	echo "--no-rubrics removed a prayer" >&2
+	exit 1
+	;;
+esac
+
+# A withheld text says why, at the place it falls due, rather than showing a
+# blank where a prayer belongs.
+withheld="$(run_tool show --calendar postconciliar)"
+case "$withheld" in
+*"[absent: icel]"*) ;;
+*)
+	echo "a withheld element does not name its reason" >&2
+	exit 1
+	;;
+esac
+
+# `--lang la` reports the LATIN's reason. Reading the block by ISO code found
+# nothing and fell through to the English one, which reported the postconciliar
+# Latin withheld under ICEL: a real reason, for the other text.
+latin="$(run_tool show --calendar roman-1962 --lang la)"
+case "$latin" in
+*"[absent: latin-not-transcribed]"*) ;;
+*)
+	echo "--lang la does not report the Latin's own reason" >&2
+	exit 1
+	;;
+esac
+
+# ---- The tiers ------------------------------------------------------------
+run_tool show --calendar roman-1962 --plain >"$sandbox/plain.txt"
+if LC_ALL=C grep -q '[^ -~	]' "$sandbox/plain.txt"; then
+	echo "--plain printed a byte above 0x7F" >&2
+	exit 1
+fi
+run_tool show --calendar roman-1962 --json >"$sandbox/one.json"
+run_tool show --calendar roman-1962 --json --plain >"$sandbox/two.json"
+if ! cmp -s "$sandbox/one.json" "$sandbox/two.json"; then
+	echo "--json is not byte-identical across tiers" >&2
+	exit 1
+fi
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $*" >&2
+		exit 1
+	fi
+}
+
+reject show --calendar nonesuch
+reject show --lang xx
+reject check --calendar nonesuch
+
+echo ok

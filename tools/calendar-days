@@ -73,7 +73,7 @@ EXAMPLES = {
                 "    unranked: more than one candidate, and no precedence is stated",
                 "  roman-1962: christmastide, liturgical year 2027",
                 "    nativitate-domini-octave: In Nativitate Domini, with octave",
-                "... 2 more lines",
+                "... 5 more lines",
             ),
         ),
         Example(
@@ -101,7 +101,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-days check --json",
             (
-                "{\"calendars\":{\"postconciliar\":{\"placements\":6735,\"rules_without_a_mass\":[]},\"roman-1962\":{\"place... [+241 chars]",
+                "{\"calendars\":{\"postconciliar\":{\"placements\":6735,\"rules_without_a_mass\":[]},\"roman-1962\":{\"place... [+318 chars]",
             ),
         ),
     ),
@@ -138,7 +138,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-days structure --out build/example-days --first 2026 --last 2026",
             (
-                "wrote 3 files for 2026-2026",
+                "wrote 4 files for 2026-2026",
                 "  -> build/example-days/structure/calendar/index.json",
             ),
             "WRITES one file per date. --out here is untracked; the default writes tracked src/web/data",
@@ -1888,6 +1888,25 @@ def run_coverage(arguments: argparse.Namespace) -> dict:
 
 
 def run_day(arguments: argparse.Namespace) -> dict:
+    """One date, computed. A reading verb, and it must stay a cheap one.
+
+    It took 2.1 seconds, and all but a tenth of that was `yaml.safe_load`
+    scanning a megabyte of `propers.yaml` character by character in pure
+    Python. The obvious fix — answer from the emitted
+    `structure/calendar/<cal>/<year>.json`, as `calendar-rubrics day` does —
+    was examined and NOT taken, because that file deliberately carries a
+    candidate's key and nothing else about it: its own note says the title
+    lives in the propers structure, and a candidate here carries its name, its
+    section and its RANK, which is what tells a commemoration from a mass. To
+    answer from the year file, those three would have to be written into it,
+    and a rank restated beside the one in `propers.yaml` is exactly the second
+    copy guidance/the-shape.md section 2 is about — the copy that agrees today.
+
+    So the arithmetic still runs and the index is still read; what changed is
+    that `_calendars.read_yaml` hands the bytes to libyaml where it is
+    installed. Same parse, same document — checked, not assumed — and about a
+    sixth of the time.
+    """
     if not arguments.date:
         raise ValueError("day needs --date YYYY-MM-DD")
     try:

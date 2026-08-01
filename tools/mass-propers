@@ -51,7 +51,7 @@ EXAMPLES = {
         Example(
             "tools/mass-propers list --calendar postconciliar --format json",
             (
-                "{\"calendars\":{\"postconciliar\":[{\"key\":\"most-holy-name-jesus\",\"kind\":\"christological\",\"name\":\"The... [+36054 chars]",
+                "{\"calendars\":{\"postconciliar\":[{\"key\":\"most-holy-name-jesus\",\"kind\":\"christological\",\"name\":\"The... [+36056 chars]",
             ),
         ),
     ),
@@ -82,7 +82,7 @@ EXAMPLES = {
                 "  key: advent-1",
                 "  name: First Sunday of Advent",
                 "  registry: '39'",
-                "... 137 more lines",
+                "... 188 more lines",
             ),
         ),
     ),
@@ -117,9 +117,9 @@ EXAMPLES = {
                 "",
                 "| Calendar | Section | Masses | Propers | Masses holding only placeholders |",
                 "| --- | --- | ---: | ---: | ---: |",
+                "| roman-pre-1955 | seasonal | 6 | 6 | 6 |",
                 "| roman-1962 | seasonal | 128 | 1121 | 5 |",
-                "| roman-1962 | christological | 8 | 10 | 8 |",
-                "... 48 more lines",
+                "... 49 more lines",
             ),
             "prints the block and writes nothing; two tables, then the keys each row counts by",
         ),
@@ -211,8 +211,6 @@ def appointed_propers(document: dict, mass: dict) -> list[tuple[str, dict, dict 
 
 def load_bible(name: str, root: Path) -> dict:
     """Resolve an indexed bible, keyed by the citations-encoded passage."""
-    import yaml
-
     path = root / name / "index.yaml"
     if not path.is_file():
         available = (
@@ -224,7 +222,7 @@ def load_bible(name: str, root: Path) -> dict:
             f"no indexed bible {name!r} at {path}"
             + (f"; available: {', '.join(available)}" if available else "; none are indexed yet")
         )
-    document = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    document = _calendars.read_yaml(path) or {}
     return {
         "numbering": document.get("numbering"),
         "edition": document.get("edition"),
@@ -1058,11 +1056,45 @@ def run_show(arguments: argparse.Namespace) -> dict:
     payload = find_mass(Path(arguments.root), arguments.calendar, arguments.mass)
     arguments.appointed = appointed_propers(payload.pop("_document"), payload["mass"])
     # Resolve here so a missing bible or an unusable numbering fails before rendering.
-    arguments.resolved_bible = (
-        resolve_passages(payload, load_bible(arguments.bible, Path(arguments.bible_root)))
-        if arguments.bible
-        else {}
-    )
+    bible = load_bible(arguments.bible, Path(arguments.bible_root)) if arguments.bible else None
+    arguments.resolved_bible = resolve_passages(payload, bible) if bible else {}
+
+    # What the day USES, in the payload and not only in the reading view.
+    #
+    # `mass.propers` is what the entry CARRIES, and for a great many masses
+    # that is not the Mass: a third-class saint carries three orations and
+    # points at a Common for everything else, and Christmas carries no flat
+    # list at all but four `forms`. A caller reading `mass.propers` from the
+    # JSON therefore saw a Sunday correctly, a saint with no Epistle and no
+    # Gospel, and Christmas as an empty Mass — an absence with no reason,
+    # printed by `mass-today` for months. The resolution already existed and
+    # was reachable from the text renderer alone; this is the same one
+    # derivation, `_calendars.resolve_propers`, serialised.
+    payload["appointed"] = [
+        {
+            "form": form or None,
+            "name": proper.get("name"),
+            "taken_from": taken_from,
+            "proper": proper,
+        }
+        for form, proper, taken_from in arguments.appointed
+    ]
+    # And the words behind the citations, when a bible was named. `--bible`
+    # resolved them and printed them and never put them in the payload, so
+    # `mass-today --bible` passed the flag through and showed no scripture at
+    # all: the flag was inert everywhere except this tool's own text view.
+    #
+    # The key is present only where a bible was named. `--bible` is a rendering
+    # option and an option may not sit in a record — the smoke test says so and
+    # is right — so what appears here is not the flag but what the flag
+    # RESOLVED, and where nothing was resolved there is nothing to carry.
+    if bible:
+        payload["bible"] = {
+            "id": arguments.bible,
+            "edition": bible.get("edition"),
+            "numbering": bible.get("numbering"),
+            "passages": arguments.resolved_bible,
+        }
     return payload
 
 
@@ -1164,42 +1196,12 @@ def render_reading(
 def select_texts(
     proper: dict, lang: str, witness: str | None = None
 ) -> list[tuple[str, str, str]]:
-    """Latin is the tracked text; any other language is a carried translation.
+    """Which texts of a proper to print. The rule lives in `_calendars`.
 
-    Where a proper holds two translations in the requested language, both are
-    printed and each is named. A terminal has no dropdown, and picking one
-    silently would hide exactly what the reader asked to see: two witnesses to
-    one prayer are worth showing precisely because they differ, and their
-    disagreement is what caught 38 wrong orations in this corpus. `--witness`
-    narrows to one when that is what is wanted.
-
-    Returns `(text, attribution, note)` triples; the attribution is empty where
-    there is nothing to choose between.
+    It was here, and `mass-today --expanded` prints propers too; a second copy
+    would have been a second answer to which text a Mass is said in.
     """
-    if lang == "la":
-        return [(str(proper.get("text") or ""), "", "")]
-    found = [
-        translation
-        for translation in proper.get("translations") or []
-        if isinstance(translation, dict) and translation.get("lang") == lang
-        and (witness is None or translation.get("source_id") == witness)
-    ]
-    if found:
-        named = len(found) > 1
-        return [
-            (
-                str(translation.get("text") or ""),
-                str(translation.get("source_id") or "this project") if named else "",
-                "",
-            )
-            for translation in found
-        ]
-    if proper.get("text"):
-        scope = f" from {witness}" if witness else ""
-        return [
-            (str(proper["text"]), "", f"no {lang} translation{scope} recorded; showing Latin")
-        ]
-    return []
+    return _calendars.texts_of(proper, lang, witness)
 
 
 def render_listing(payload: dict) -> int:

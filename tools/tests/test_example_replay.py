@@ -7,8 +7,10 @@ that every declaration narrowing the replay names a real capture, that nothing
 is exempted by tool, that the comparison fails on the three things it exists to
 catch, and that `make check` still invokes the replay at all.
 
-That last one is the point of the exercise. The convention this guards —
-"examples (real output, captured)" — was enforced by a test that counted lines
+That last one is the point of the exercise, and it is now the whole of it: the
+help page prints the invocations and no longer the transcripts, so the replay
+is the only reader a capture has. The convention this guards was once enforced
+by a test that counted lines
 beginning with a "$ " prompt, so nothing noticed when `tpt --list` stopped
 printing its recorded fourth line, or when `research-staleness status` recorded
 25 stale documents against a real 51. A replay nobody runs would be the same

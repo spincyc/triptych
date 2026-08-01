@@ -712,10 +712,13 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-calendar-masses check-calendar-rubrics check-propers-census \
 	check-mass-ordinary check-catena check-examples
 
-# Every tool's help ends in transcripts headed "real output, captured", and
-# until this target existed nothing ran one: the registry test counted lines
-# beginning with a "$$ " prompt. This runs each captured invocation and holds
-# the transcript to what it prints. It is in `check` rather than behind a flag
+# Every tool carries a table of captured invocations, and until this target
+# existed nothing ran one: the registry test counted lines beginning with a
+# "$$ " prompt. This runs each captured invocation and holds the transcript to
+# what it prints. The transcripts are no longer printed in `--help` — a reader
+# wants the command, not a page of output — which makes this the only reader
+# they have and the only thing standing behind the claim that they are real.
+# It is in `check` rather than behind a flag
 # because an example nobody replays is the defect it exists to catch; it takes
 # about two minutes, which is the price of the claim.
 check-examples:

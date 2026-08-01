@@ -7,6 +7,27 @@ invoked as a command and read back as JSON, so that what a reader sees here
 and what the browser renders come from the same three derivations rather than
 from a fourth restatement of the same rules.
 
+TWO MODES, for two different readers.
+
+`show` is terse: what day it is, which Masses the date carries, and each
+proper by name and citation. It is what a reader wants when checking the day
+rather than praying it, and it fits on a screen.
+
+`show --expanded` is the whole Mass as a reader would follow it, in one
+printable piece: scripture resolved to its words under a named edition, and
+the day's propers set INTO the Ordinary at the places the missal appoints
+them, rather than appended after it. Where each proper sits is not worked out
+here — the ordo-missae inventories declare it, each slot naming the element it
+attaches to, the propers it receives and the rubric that puts it there, and
+`src/web/browser/liturgy/day.js` renders the page from those same
+declarations. This reads them. The seating RULE is stated in day.js and
+followed here to the letter, including the one clause that matters most: a
+proper that would send the reading backwards ends the interleaving, so a day
+carrying four formularies (Christmas), a second formulary (the Ember
+Saturdays), or a rite that departs from the frame (Good Friday, the paschal
+Vigil) breaks out of it and says so instead of being poured into a Mass that
+was never said.
+
 Two refusals are load-bearing, and both are inherited rather than invented.
 
 The first is precedence. This project states no general table of it, so a date
@@ -36,8 +57,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import _calendars  # noqa: E402
+from _ordinary_text import element_lines, wrap as wrap_lines  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
+    Style,
     examples_live_on_the_verbs,
     print_json,
     run_verb_cli,
@@ -46,6 +70,8 @@ from _tooling import (  # noqa: E402
 
 TOOLS = ROOT / "tools"
 WIDTH = 88
+# The manifest `index-bible` writes, and the only list of what is indexed here.
+BIBLES = ROOT / "src" / "web" / "data" / "bibles.json"
 
 # The text every placeholder entry carries; matched on its opening rather than
 # in full so that a reworded placeholder is still recognised as one.
@@ -120,6 +146,30 @@ EXAMPLES = {
             "a Mass whose text is not yet transcribed says so; the placeholder is "
             "never printed as the prayer",
         ),
+        Example(
+            "tools/mass-today show --date 2026-11-29 --calendar roman-1962 --expanded",
+            (
+                "2026-11-29",
+                "",
+                "roman-1962 — advent",
+                "===================",
+                "  scripture read from Douay-Rheims (Challoner) (defaulted; name another with --bible)",
+                "",
+                "  First Sunday of Advent",
+                "  ----------------------",
+                "",
+                "    The Priest at the Foot of the Altar",
+                "    -----------------------------------",
+                "",
+                "      THE ORDINARY OF THE MASS.",
+                "      -------------------------",
+                "... 883 more lines",
+            ),
+            "the whole Mass in one piece: scripture in words under a named "
+            "edition, and the propers set into the Ordinary at the slots the "
+            "missal declares. --no-rubrics hides the priest's actions without "
+            "unseating anything",
+        ),
     ),
 }
 
@@ -152,8 +202,47 @@ def is_placeholder(proper: dict) -> bool:
     return str(proper.get("text") or "").lstrip().startswith(PLACEHOLDER)
 
 
+def indexed_bibles() -> list[dict]:
+    """What `index-bible` has actually indexed, from its own manifest."""
+    if not BIBLES.is_file():
+        return []
+    try:
+        return [
+            one
+            for one in (json.loads(BIBLES.read_text(encoding="utf-8")).get("bibles") or [])
+            if isinstance(one, dict)
+        ]
+    except json.JSONDecodeError:
+        return []
+
+
+def default_bible(lang: str) -> dict | None:
+    """The bible the expanded mode reads scripture from when none was named.
+
+    Expanded means the words, so a reader must not have to remember a `--bible`
+    to see them. The default is not written down here: it is the first indexed
+    bible of the language asked for, in the order the manifest lists them, and
+    whichever one that turns out to be is PRINTED with the Mass. A defaulted
+    edition nobody is told about is an unattributed text, which is the one
+    thing a scripture citation may never be.
+    """
+    for one in indexed_bibles():
+        if str(one.get("language")) == lang:
+            return one
+    return None
+
+
 def propers_of(calendar: str, key: str, arguments: argparse.Namespace) -> dict:
-    """One Mass's propers, with placeholders separated from real text."""
+    """One Mass's propers as APPOINTED, with placeholders separated out.
+
+    `mass.propers` is what the entry carries; `appointed` is what the day says.
+    They differ wherever the Missal prints a pointer instead of a formulary — a
+    saint taking the Mass of a Common, a feria taking the preceding Sunday —
+    and wherever a mass is printed in forms rather than as one list, which is
+    Christmas. Reading the first was why this tool printed the Nativity as a
+    Mass with no propers at all: an absence with no reason, in the one place
+    this repository refuses to leave one.
+    """
     argv = ["show", "--calendar", calendar, "--mass", key]
     for flag in ("bible", "lang", "witness"):
         value = getattr(arguments, flag, None)
@@ -164,12 +253,33 @@ def propers_of(calendar: str, key: str, arguments: argparse.Namespace) -> dict:
     except Refused as error:
         return {"refused": str(error), "propers": [], "placeholders": 0}
     mass = payload.get("mass") or {}
-    entries = [p for p in (mass.get("propers") or []) if isinstance(p, dict)]
+    passages = ((payload.get("bible") or {}).get("passages")) or {}
+    entries = []
+    for row in payload.get("appointed") or []:
+        if not isinstance(row, dict) or not isinstance(row.get("proper"), dict):
+            continue
+        proper = dict(row["proper"])
+        proper["form"] = row.get("form")
+        proper["taken_from"] = row.get("taken_from")
+        # The words behind each citation, from the resolution `mass-propers`
+        # performed. A verse the bible does not carry keeps its reference and
+        # says so where the text would have been.
+        proper["verses"] = [
+            dict(verse, **{k: v for k, v in (passages.get(str(verse.get("ref"))) or {}).items()})
+            for verse in (proper.get("verses") or [])
+            if isinstance(verse, dict)
+        ]
+        entries.append(proper)
     return {
         "propers": [p for p in entries if not is_placeholder(p)],
         "placeholders": sum(1 for p in entries if is_placeholder(p)),
         "rank": mass.get("rank"),
         "edition": payload.get("edition"),
+        "takes_from": mass.get("takes_from"),
+        "bible": payload.get("bible") and {
+            "id": payload["bible"].get("id"),
+            "edition": payload["bible"].get("edition"),
+        },
     }
 
 
@@ -179,6 +289,21 @@ def run_show(arguments: argparse.Namespace) -> dict:
         dt.date.fromisoformat(when)
     except ValueError as error:
         raise ValueError(f"--date must be an ISO date, not {when!r}") from error
+
+    # Expanded means the words, so it defaults a bible rather than leaving a
+    # reader to remember one. It refuses rather than silently printing
+    # citations with nothing behind them: an expanded Mass with no scripture in
+    # it is not the thing that was asked for.
+    chosen_bible = None
+    if arguments.expanded and not arguments.bible:
+        chosen_bible = default_bible(arguments.lang or "en")
+        if chosen_bible is None:
+            held = ", ".join(sorted({str(one.get("id")) for one in indexed_bibles()})) or "none"
+            raise ValueError(
+                f"--expanded reads scripture and no indexed bible is held in "
+                f"{arguments.lang or 'en'}; name one with --bible (indexed: {held})"
+            )
+        arguments.bible = str(chosen_bible.get("id"))
 
     # The ranking, taken from where it already lives. `calendar-days` refuses to
     # rank — correctly, it is the arithmetic layer — and this tool used to print
@@ -196,8 +321,9 @@ def run_show(arguments: argparse.Namespace) -> dict:
     # now needs it.
     ranked: dict[str, dict] = {}
     ranking_refused = None
+    narrow = ["--calendar", arguments.calendar] if arguments.calendar else []
     try:
-        payload = invoke("calendar-rubrics", ["day", "--date", when])
+        payload = invoke("calendar-rubrics", ["day", "--date", when, *narrow])
         ranked = {
             str(one.get("calendar")): one
             for one in (payload.get("days") or [])
@@ -210,7 +336,9 @@ def run_show(arguments: argparse.Namespace) -> dict:
     if wanted:
         resolved = {"days": [{"calendar": name} for name in sorted(wanted)]}
     else:
-        resolved = invoke("calendar-days", ["day", "--date", when])
+        # Narrowed, because the arithmetic layer loads every calendar it is not
+        # told to skip and this tool knew which one it wanted all along.
+        resolved = invoke("calendar-days", ["day", "--date", when, *narrow])
 
     days = []
     for day in resolved.get("days") or []:
@@ -272,7 +400,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
                 "ferial_formulary": day.get("ferial_formulary"),
                 "precedence": None if day.get("ranked") else PRECEDENCE,
             }
-        if arguments.ordinary:
+        if arguments.ordinary or arguments.expanded:
             argv = [
                 "show",
                 "--calendar",
@@ -283,6 +411,10 @@ def run_show(arguments: argparse.Namespace) -> dict:
             try:
                 row["ordinary"] = (invoke("mass-ordinary", argv).get("ordinary") or [None])[0]
             except Refused as error:
+                # A calendar with no ordo-missae inventory is a stated absence,
+                # not an empty frame: the propers are still printed, in the
+                # missal's own order, and the reader is told why there is no
+                # frame around them.
                 row["ordinary"] = {"refused": str(error)}
         days.append(row)
 
@@ -290,6 +422,16 @@ def run_show(arguments: argparse.Namespace) -> dict:
         "date": when,
         "days": days,
         "advisory": resolved.get("advisory"),
+        "scripture": (
+            {
+                "id": arguments.bible,
+                "label": (chosen_bible or {}).get("label"),
+                "edition": (chosen_bible or {}).get("edition"),
+                "defaulted": chosen_bible is not None,
+            }
+            if arguments.bible
+            else None
+        ),
     }
 
 
@@ -303,25 +445,269 @@ def wrap(text: str, indent: str) -> list[str]:
     return [indent + line if line else "" for line in (out[:-1] or out)]
 
 
-def render_ordinary(one: dict, lang: str) -> None:
+def render_ordinary(one: dict, lang: str, style: Style, show_rubrics: bool) -> None:
+    """The frame printed after the propers, which is what `--ordinary` means.
+
+    It is deliberately NOT what `--expanded` does. This appends the Ordinary
+    below the day's propers; expanded sets the propers into it at the places
+    the missal appoints. Both are useful and they are different questions.
+    """
     if "refused" in one:
         print(f"  ordinary unavailable: {one['refused']}")
         return
-    print(f"\n  {one.get('title') or 'The Ordinary'}")
+    print("")
+    for line in style.heading(one.get("title") or "The Ordinary"):
+        print(f"  {line}")
     for section in one.get("sections") or []:
-        print(f"\n  {section['name']}")
+        print("")
+        for line in style.heading(str(section["name"]), rule="-"):
+            print(f"  {line}")
         for element in section.get("elements") or []:
-            held = [t for t in (element.get("translations") or []) if t.get("lang") == lang]
-            named = element.get("name") or element.get("latin_incipit")
-            if not held:
-                if named:
-                    reason = (element.get("absent") or {}).get("english")
-                    print(f"    {named} [absent: {reason or 'not held'}]")
-                continue
-            if named:
-                print(f"\n    {named}")
-            for line in wrap(held[0]["text"], "      "):
+            for line in element_lines(
+                element, lang, style, indent="    ", show_rubrics=show_rubrics
+            ):
                 print(line)
+
+
+# ---------------------------------------------------------------- the seating
+#
+# The rule below is `seatPropers` in src/web/browser/liturgy/day.js, followed
+# to the letter and not reinvented; the SLOTS it works over are read from the
+# ordo-missae inventories through `mass-ordinary show`, which is where they are
+# declared and where the page reads them too. Two implementations of one
+# ordering is exactly the restatement guidance/the-shape.md section 2 is about,
+# and the reason this one is written out rather than shared is that day.js is a
+# DOM renderer: it cannot be imported here, and the alternative — inventing a
+# plausible order for the terminal — is the failure that section describes.
+
+
+def shown_elements(ordinary: dict) -> list[tuple[dict, dict]]:
+    """(section, element) for every element this frame is actually showing.
+
+    An element that names a variant shows only under the chosen option, which
+    is what makes the postconciliar control a choice between Eucharistic
+    Prayers rather than a list of all four printed one after another.
+    """
+    group = (ordinary.get("variants") or [None])[0]
+    options = (group or {}).get("options") or []
+    chosen = next((one for one in options if one.get("default")), options[0] if options else None)
+    held = []
+    for section in ordinary.get("sections") or []:
+        for element in section.get("elements") or []:
+            variant = element.get("variant")
+            if variant and (not chosen or chosen.get("id") != variant):
+                continue
+            held.append((section, element))
+    return held
+
+
+def seats(ordinary: dict, shown: list[tuple[dict, dict]]) -> tuple[list, dict, dict]:
+    """The declared seats, resolved to positions among the elements shown.
+
+    `at[n]` is the index a proper seated by slot `n` is inserted at: an `after`
+    puts it one place further on than a `before` on the same element.
+    """
+    where = {str(element.get("key")): index for index, (_, element) in enumerate(shown)}
+    slots = ordinary.get("slots") or []
+    at: dict[int, int] = {}
+    by_name: dict[str, int] = {}
+    for ordinal, slot in enumerate(slots):
+        anchor = where.get(str(slot.get("anchor")))
+        # An unresolvable anchor loses the seat, never the proper.
+        if anchor is None:
+            continue
+        at[ordinal] = anchor + (1 if slot.get("where") == "after" else 0)
+        for name in slot.get("propers") or []:
+            by_name[str(name)] = ordinal
+    return slots, at, by_name
+
+
+def seat_propers(propers: list[dict], slots: list, at: dict, by_name: dict) -> dict:
+    """Which propers go where, without ever reordering the missal.
+
+    Walk the day's propers in the order the missal prints them. A proper whose
+    name a slot claims is seated there, PROVIDED that seat is not behind the
+    last one used. A proper no slot claims rides with the one before it, which
+    is where the missal put it. And the first proper that would send the
+    reading backwards ends the interleaving: it and everything after it are
+    shown after the frame, in the missal's own order.
+
+    That last clause is the whole of the honesty here, and it is what makes
+    Christmas's four formularies, an Ember Saturday's second, Good Friday and
+    the paschal Vigil break out of the frame rather than be interleaved into
+    one Mass that was never said.
+    """
+    before: list[tuple[dict, dict | None]] = []
+    buckets: dict[int, list[tuple[dict, dict | None]]] = {}
+    after: list[tuple[dict, dict | None]] = []
+    reached = -1
+    riding: list | None = None
+    broke = False
+    for proper in propers:
+        if broke:
+            after.append((proper, None))
+            continue
+        ordinal = by_name.get(str(proper.get("name")), -1)
+        if ordinal < 0 or ordinal not in at:
+            (riding if riding is not None else before).append((proper, None))
+            continue
+        if ordinal < reached:
+            broke = True
+            after.append((proper, None))
+            continue
+        reached = ordinal
+        riding = buckets.setdefault(at[ordinal], [])
+        riding.append((proper, slots[ordinal]))
+    return {"before": before, "buckets": buckets, "after": after, "broke": broke}
+
+
+def proper_head(proper: dict) -> str:
+    """A proper's name, its form where it has one, and its citations."""
+    head = str(proper.get("name") or "proper")
+    if proper.get("form"):
+        head += f" [{proper['form']}]"
+    refs = [
+        str(one.get("ref"))
+        for one in (proper.get("verses") or [])
+        if isinstance(one, dict) and one.get("ref")
+    ]
+    if refs:
+        head += f" — {'; '.join(refs)}"
+    return head
+
+
+def proper_lines(
+    proper: dict,
+    style: Style,
+    indent: str,
+    *,
+    lang: str,
+    witness: str | None,
+    seat: dict | None,
+    why: bool,
+) -> list[str]:
+    """One proper of the day, expanded: its words, and where they came from."""
+    body = indent + "  "
+    lines = [""]
+    lines.extend(indent + one for one in style.heading(proper_head(proper)))
+    if proper.get("taken_from"):
+        taken = proper["taken_from"]
+        named = str(taken.get("mass") or "")
+        printed = str(taken.get("citation") or "").strip()
+        lines.append(body + style.note(
+            f"taken from {named}"
+            + (f", {taken['proper']}" if taken.get("proper") else "")
+            + (f" ({printed})" if printed else "")
+        ))
+    if why and seat:
+        lines.append(body + style.note(f"seated here by {seat.get('locus')}"))
+
+    for verse in proper.get("verses") or []:
+        if not isinstance(verse, dict) or not verse.get("ref"):
+            continue
+        note = str(verse.get("note") or "")
+        lines.append("")
+        lines.append(body + style.note(str(verse["ref"]) + (f"  ({note})" if note else "")))
+        if verse.get("text"):
+            lines.extend(wrap_lines(str(verse["text"]), body + "  ", WIDTH))
+        else:
+            # A citation the named bible does not answer keeps its reference
+            # and says so where the words would have been.
+            lines.append(body + "  " + style.note(
+                "[unresolved: the bible named here carries no text for this reference]"
+            ))
+
+    for text, attribution, note in _calendars.texts_of(proper, lang, witness):
+        if text:
+            lines.append("")
+            if attribution:
+                lines.append(body + style.note(f"[{attribution}]"))
+            lines.extend(wrap_lines(text, body, WIDTH))
+        if note:
+            lines.append(body + style.note(f"({note})"))
+    if proper.get("untranslated"):
+        lines.append(body + style.note(f"[untranslated: {proper['untranslated']}]"))
+    return lines
+
+
+def render_expanded_mass(
+    mass: dict,
+    ordinary: dict | None,
+    arguments: argparse.Namespace,
+    style: Style,
+    *,
+    frame: bool,
+) -> None:
+    """One Mass, set into the frame if it is the one the frame is drawn for."""
+    indent = "      "
+    propers = mass["propers"]
+    if mass.get("refused"):
+        print(f"    refused: {mass['refused']}")
+    if mass.get("takes_from"):
+        reference = mass["takes_from"]
+        print(f"    takes the Mass of {reference.get('mass')}"
+              + (f", form {reference['form']}" if reference.get("form") else ""))
+
+    def aside(what: str) -> None:
+        print("")
+        for line in wrap_lines(what, "    ", WIDTH):
+            print(style.note(line))
+
+    def pour(held: list) -> None:
+        for proper, seat in held:
+            for line in proper_lines(
+                proper, style, indent,
+                lang=arguments.lang or "en", witness=arguments.witness,
+                seat=seat, why=arguments.why,
+            ):
+                print(line)
+
+    if ordinary is None or "refused" in (ordinary or {}) or not frame:
+        if ordinary is not None and "refused" in ordinary:
+            print(f"\n    no Ordinary is held for this calendar: {ordinary['refused']}")
+            print("    the propers are printed in the missal's own order.")
+        elif not frame:
+            aside(
+                "the Ordinary is printed once, above; this formulary's propers "
+                "are set out here in the missal's own order."
+            )
+        pour([(proper, None) for proper in propers])
+        return
+
+    shown = shown_elements(ordinary)
+    slots, at, by_name = seats(ordinary, shown)
+    placed = seat_propers(propers, slots, at, by_name)
+
+    if placed["before"]:
+        aside(
+            "this Mass opens with propers the Ordinary appoints no place for; "
+            "they are shown first, in the missal's own order."
+        )
+        pour(placed["before"])
+
+    current = None
+    for index, (section, element) in enumerate(shown):
+        if section is not current:
+            current = section
+            print("")
+            for line in style.heading(str(section.get("name") or ""), rule="-"):
+                print(f"    {line}")
+        pour(placed["buckets"].get(index) or [])
+        for line in element_lines(
+            element, arguments.lang or "en", style,
+            indent=indent, show_rubrics=arguments.rubrics, why=arguments.why,
+        ):
+            print(line)
+    pour(placed["buckets"].get(len(shown)) or [])
+
+    if placed["after"]:
+        aside(
+            "from here the day's propers no longer run forward through the "
+            "Ordinary: this day carries more than one formulary, or its rite "
+            "departs from the frame. The rest is shown in the missal's own "
+            "order, unseated and unreordered."
+        )
+        pour(placed["after"])
 
 
 def render(payload: object, arguments: argparse.Namespace) -> int:
@@ -337,14 +723,27 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         print(yaml.safe_dump(payload, sort_keys=False, allow_unicode=True).rstrip())
         return 0
 
+    style = getattr(arguments, "style_resolved", None) or Style()
+    scripture = payload.get("scripture")
+
     print(payload["date"])
     for day in payload["days"]:
-        head = f"\n{day['calendar']}"
+        head = f"{day['calendar']}"
         if day.get("season"):
             head += f" — {day['season']}"
             if day.get("week"):
                 head += f", week {day['week']}"
-        print(head)
+        print("")
+        print("\n".join(style.heading(head, rule="=")) if arguments.expanded else head)
+        # Which edition the scripture was read from, said with the Mass and not
+        # left to a flag the reader may not have passed. An unattributed
+        # scripture text is the one thing a citation may never resolve to.
+        if arguments.expanded and scripture:
+            named = scripture.get("label") or scripture.get("id")
+            print("  " + style.note(
+                f"scripture read from {named}"
+                + (" (defaulted; name another with --bible)" if scripture.get("defaulted") else "")
+            ))
         if not day["masses"]:
             print("  no mass is written for this day")
         appointed = day.get("appointed")
@@ -372,6 +771,19 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 key=lambda m: (m["key"] != appointed, m["key"] in commemorated),
             )
         )
+        # The frame is drawn once a day, for the Mass that is said. A date
+        # carrying several formularies still shows every one of them and every
+        # one of their propers; what it does not do is print a hundred and
+        # ninety-five unvarying elements four times over, or leave a reader to
+        # work out which of four Ordinaries is the one they are at.
+        framed = next(
+            (
+                one["key"]
+                for one in ordered
+                if one.get("standing") in (None, "said") and one["key"] not in commemorated
+            ),
+            ordered[0]["key"] if ordered else None,
+        )
         for mass in ordered:
             rank = f" ({mass['rank']})" if mass.get("rank") else ""
             mark = ""
@@ -384,9 +796,29 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 mark = "  — commemorated within the mass above"
             elif appointed and mass["key"] != appointed:
                 mark = "  — also appointed here"
-            print(f"\n  {mass.get('name') or mass['key']}{rank}{mark}")
+            name = f"{mass.get('name') or mass['key']}{rank}"
+            print("")
+            if arguments.expanded:
+                for line in style.heading(name, rule="-"):
+                    print(f"  {line}")
+                if mark:
+                    print("  " + style.note(mark.strip()))
+            else:
+                print(f"  {style.said(name) if not mark else name}{mark}")
             if arguments.why and mass.get("rule"):
                 print(f"    why: {mass['rule']}")
+            if arguments.expanded:
+                render_expanded_mass(
+                    mass, day.get("ordinary"), arguments, style,
+                    frame=mass["key"] == framed,
+                )
+                if mass["placeholders"]:
+                    count = mass["placeholders"]
+                    print(
+                        f"\n    {count} placeholder{'' if count == 1 else 's'}: "
+                        "this Mass's text is not yet transcribed"
+                    )
+                continue
             if mass.get("refused"):
                 print(f"    refused: {mass['refused']}")
             for proper in mass["propers"]:
@@ -416,8 +848,8 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         if arguments.why and day.get("why"):
             for note in day["why"].get("unresolved") or []:
                 print(f"\n  unresolved: {note}")
-        if arguments.ordinary and day.get("ordinary"):
-            render_ordinary(day["ordinary"], arguments.lang or "en")
+        if arguments.ordinary and not arguments.expanded and day.get("ordinary"):
+            render_ordinary(day["ordinary"], arguments.lang or "en", style, arguments.rubrics)
     return 0
 
 
@@ -428,7 +860,19 @@ def main(argv: list[str] | None = None) -> int:
     shared.add_argument(
         "--ordinary",
         action="store_true",
-        help="print the Ordinary alongside the propers",
+        help="print the Ordinary after the propers, unseated",
+    )
+    shared.add_argument(
+        "--expanded",
+        action="store_true",
+        help="the whole Mass: scripture in words, propers set into the Ordinary",
+    )
+    shared.add_argument(
+        "--no-rubrics",
+        dest="rubrics",
+        action="store_false",
+        default=True,
+        help="hide the priest's actions (they still seat the propers)",
     )
     shared.add_argument(
         "--why",

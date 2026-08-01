@@ -1,0 +1,261 @@
+#!/bin/sh
+# Test for `tools/tpt mass-today`: exit 0 = pass (the stable gate).
+# The tool writes nothing at all: it resolves a date with `calendar-rubrics`,
+# the propers with `mass-propers` and the Ordinary with `mass-ordinary`, and
+# prints. So every invocation here runs against the repository itself and no
+# sandbox is needed for anything but the files this test compares.
+#
+# THE ASSERTIONS THAT MATTER ARE THE ONES ABOUT WHAT IS NOT SAID. This tool's
+# characteristic failure is not a crash: it is a Mass that reads correctly and
+# is not the one appointed — a displaced formulary printed as the day's, a
+# placeholder printed under the heading `Collect`, a proper silently dropped
+# because the entry pointed at a Common, or four Christmas formularies poured
+# into one Ordinary as though they were one Mass. Nothing looks wrong when any
+# of that happens, so each is checked here rather than trusted.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="mass-today"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# ---- The terse mode -------------------------------------------------------
+#
+# A settled Sunday: one Mass, its propers named, each scripture proper carrying
+# the citation the Missal prints rather than an empty slot.
+terse="$(run_tool show --date 2026-11-29 --calendar roman-1962)"
+for want in "roman-1962" "First Sunday of Advent" "Introit" "Epistle — Romans 13:11-14"; do
+	case "$terse" in
+	*"$want"*) ;;
+	*)
+		echo "terse output is missing: $want" >&2
+		exit 1
+		;;
+	esac
+done
+
+# A date the rubrics settle must NOT be reported as unranked. This sentence was
+# printed over Easter Sunday, beside a third-class confessor offered as an
+# equal candidate, until the ranking moved to `calendar-rubrics day`.
+easter="$(run_tool show --date 2026-04-05 --calendar roman-1962)"
+case "$easter" in
+*"no precedence is stated"*)
+	echo "a settled date was reported as unranked" >&2
+	exit 1
+	;;
+esac
+case "$easter" in
+*"Easter Sunday"*) ;;
+*)
+	echo "Easter Sunday is not the Mass of Easter Sunday" >&2
+	exit 1
+	;;
+esac
+# ...and the confessor it displaces is still shown, and still says so. A Mass
+# dropped because it is not said is a Mass the reader cannot check.
+case "$easter" in
+*"NOT said today; displaced by the Mass above"*) ;;
+*)
+	echo "a displaced formulary is not marked as displaced" >&2
+	exit 1
+	;;
+esac
+
+# ---- The expanded mode ----------------------------------------------------
+#
+# The whole Mass in one piece: scripture in words, under a named edition, with
+# the propers set into the Ordinary at the places the missal appoints.
+expanded="$(run_tool show --date 2026-11-29 --calendar roman-1962 --expanded)"
+
+# Scripture is resolved, and the edition it was resolved from is printed. An
+# unattributed scripture text is the one thing a citation may never resolve to.
+case "$expanded" in
+*"scripture read from "*) ;;
+*)
+	echo "expanded does not name the bible it read scripture from" >&2
+	exit 1
+	;;
+esac
+case "$expanded" in
+*"To thee, O Lord, have I lifted up my soul"*) ;;
+*)
+	echo "expanded printed a citation with no words behind it" >&2
+	exit 1
+	;;
+esac
+
+# The Ordinary is INTERLEAVED, not appended: each proper stands where the
+# missal's own slot declaration puts it. Checked by order rather than by
+# presence, because an appended Ordinary contains all the same words.
+python3 - <<'PY'
+import subprocess, pathlib
+
+out = subprocess.run(
+    ["tools/mass-today", "show", "--date", "2026-11-29",
+     "--calendar", "roman-1962", "--expanded"],
+    capture_output=True, text=True, cwd=pathlib.Path.cwd(),
+)
+assert out.returncode == 0, out.stderr
+lines = out.stdout.splitlines()
+
+
+def at(needle):
+    """The first line whose whole stripped text starts with `needle`.
+
+    Matched at the head of a line rather than anywhere in it, because the
+    Ordinary's rubrics NAME the propers they introduce — "reads the INTROIT",
+    "Kyrie eleison ... are alternately sung" — and a substring search finds the
+    rubric that mentions a thing before the thing itself.
+    """
+    for index, line in enumerate(lines):
+        if line.strip().startswith(needle):
+            return index
+    raise AssertionError(f"not printed: {needle}")
+
+
+# The frame's own elements and the day's propers, in the order the Mass is
+# said. If the Ordinary were appended, every proper would precede every
+# element instead.
+introit = at("Introit —")
+kyrie = at("Kyrie eleison (priest)")
+collect = at("Collect")
+canon = at("The Canon of the Mass")
+communion = at("Communion —")
+assert introit < kyrie, ("Introit is not before the Kyrie", introit, kyrie)
+assert kyrie < collect, ("the Kyrie is not before the Collect", kyrie, collect)
+assert collect < canon < communion, (collect, canon, communion)
+
+# A rubric is set apart from a prayer. The two rubrics bracketing the Placeat
+# read as its first and last lines until this held.
+placeat = at("Placeat tibi sancta Trinitas")
+bowing = at("[ Bowing before the Altar")
+assert bowing < placeat, (bowing, placeat)
+assert not lines[placeat + 1].strip().startswith("["), lines[placeat + 1]
+PY
+
+# The priest's actions can be hidden — and hiding them may not move a proper,
+# because the slots are anchored to those very rubrics.
+hidden="$(run_tool show --date 2026-11-29 --calendar roman-1962 --expanded --no-rubrics)"
+case "$hidden" in
+*"Bowing before the Altar"*)
+	echo "--no-rubrics did not hide the priest's actions" >&2
+	exit 1
+	;;
+esac
+for want in "Introit — Psalm 24:1-3" "Collect" "Gospel — Luke 21:25-33"; do
+	case "$hidden" in
+	*"$want"*) ;;
+	*)
+		echo "hiding the rubrics unseated a proper: $want" >&2
+		exit 1
+		;;
+	esac
+done
+
+# ---- The days that break the frame ----------------------------------------
+#
+# A day carrying more than one formulary, or a rite that departs from the
+# frame, must break out of the Ordinary and say so — the same break the page
+# makes, from the same declarations. Nothing is dropped and nothing is
+# reordered.
+for date in 2026-12-19 2026-04-03 2026-04-04; do
+	broke="$(run_tool show --date "$date" --calendar roman-1962 --expanded)"
+	case "$broke" in
+	*"no longer run forward through the"*) ;;
+	*)
+		echo "$date did not break out of the frame, or did not say so" >&2
+		exit 1
+		;;
+	esac
+done
+
+# Good Friday and the Vigil open with propers the Ordinary appoints no place
+# for, and those are shown first rather than seated somewhere plausible.
+good_friday="$(run_tool show --date 2026-04-03 --calendar roman-1962 --expanded)"
+case "$good_friday" in
+*"appoints no place for"*) ;;
+*)
+	echo "Good Friday's unplaced propers were not declared unplaced" >&2
+	exit 1
+	;;
+esac
+
+# ---- Absence, placeholders and provenance ---------------------------------
+#
+# A Mass whose text is not transcribed is counted, and never printed as the
+# prayer it stands in for.
+placeholder="$(run_tool show --date 2026-01-01 --calendar roman-1962 --expanded)"
+case "$placeholder" in
+*"This entry is a placeholder"*)
+	echo "a placeholder was printed as the prayer" >&2
+	exit 1
+	;;
+esac
+case "$placeholder" in
+*"placeholder"*) ;;
+*)
+	echo "placeholders are not counted" >&2
+	exit 1
+	;;
+esac
+
+# ---- The tiers ------------------------------------------------------------
+#
+# Plain is reachable by flag whatever the terminal is, and contains no byte
+# above 0x7F. Detection itself is tested by table in
+# tools/tests/test_terminal_tiers.py, from any machine.
+run_tool show --date 2026-11-29 --calendar roman-1962 --expanded --plain >"$sandbox/plain.txt"
+if LC_ALL=C grep -q '[^ -~	]' "$sandbox/plain.txt"; then
+	echo "--plain printed a byte above 0x7F" >&2
+	LC_ALL=C grep -n '[^ -~	]' "$sandbox/plain.txt" | head -3 >&2
+	exit 1
+fi
+for want in "V." "--" "First Sunday of Advent"; do
+	if ! grep -q -- "$want" "$sandbox/plain.txt"; then
+		echo "--plain lost something it should have folded: $want" >&2
+		exit 1
+	fi
+done
+
+# The machine forms are machine forms: identical whatever the terminal says,
+# because a capability layer has no business in a contract another tool reads.
+run_tool show --date 2026-11-29 --calendar roman-1962 --json >"$sandbox/one.json"
+run_tool show --date 2026-11-29 --calendar roman-1962 --json --plain >"$sandbox/two.json"
+run_tool show --date 2026-11-29 --calendar roman-1962 --json --style rich >"$sandbox/three.json"
+if ! cmp -s "$sandbox/one.json" "$sandbox/two.json" || ! cmp -s "$sandbox/one.json" "$sandbox/three.json"; then
+	echo "--json is not byte-identical across tiers" >&2
+	exit 1
+fi
+for want in '"date"' '"days"' '"masses"' '"propers"'; do
+	if ! grep -q "$want" "$sandbox/one.json"; then
+		echo "payload is missing $want" >&2
+		exit 1
+	fi
+done
+run_tool show --date 2026-11-29 --calendar roman-1962 --format yaml >"$sandbox/one.yaml"
+if ! grep -q '^date:' "$sandbox/one.yaml"; then
+	echo "yaml payload is missing date" >&2
+	exit 1
+fi
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $*" >&2
+		exit 1
+	fi
+}
+
+# A refusal is a first-class answer.
+reject show --date not-a-date
+reject show --date 2026-11-29 --calendar nonesuch
+reject show --date 2026-11-29 --expanded --lang xx
+
+echo ok

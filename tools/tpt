@@ -32,6 +32,9 @@ TOOLS = ROOT / "tools"
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from _tooling import (  # noqa: E402
+    _Folded,
+    add_style_flags,
+    resolve_style,
     GROUPS,
     GROUP_OF,
     MODEL,
@@ -60,13 +63,13 @@ EXAMPLES = {
                 "acquisition:",
                 "  Retrieval from outside the project. This is the only group that reaches",
                 "  outside your machine at all, and no tool in any other group makes a network",
-                "... 60 more lines",
+                "... 61 more lines",
             ),
         ),
         Example(
             "tools/tpt --list --json",
             (
-                "[{\"group\": \"calendar\", \"mutates\": true, \"nam... [+8765 chars]",
+                "[{\"group\": \"calendar\", \"mutates\": true, \"nam... [+9078 chars]",
             ),
             "one object a tool, each carrying the group its listing section came from",
         ),
@@ -110,13 +113,13 @@ EXAMPLES = {
         Example(
             "tools/tpt --check",
             (
-                "registry ok: 33 tools",
+                "registry ok: 34 tools",
             ),
         ),
         Example(
             "tools/tpt --check --json",
             (
-                "registry ok: 33 tools",
+                "registry ok: 34 tools",
             ),
             "--check reports in text either way; it is a gate, not a query",
         ),
@@ -397,7 +400,16 @@ def dispatch(registry: Registry, raw: list[str]) -> int:
             return run_tool(registry, raw[0], raw[1:])
         raise ToolError(f"unknown tool: {raw[0]}\navailable: {', '.join(registry)}")
 
-    args = build_parser().parse_args(raw)
+    parser = add_style_flags(build_parser())
+    args = parser.parse_args(raw)
+    # The launcher prints too — a group's prose, a tool's registry entry — and
+    # is subject to the same terminal as everything it dispatches to. It does
+    # not go through `run_verb_cli`, so it installs the fold itself; a tool run
+    # THROUGH it inherits nothing from here, because it is a subprocess with
+    # its own stdout and answers the same question for itself.
+    style = resolve_style(args)
+    if style.plain and not args.json:
+        sys.stdout = _Folded(sys.stdout)
     if args.check:
         return check_registry(registry)
     if args.list:
