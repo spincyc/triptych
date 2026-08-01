@@ -1918,9 +1918,9 @@ release attachment, announcement, or promotion.
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/priest-stole.toml` | `5c3f574d850498a159c6f6d3909ec821194983227fae0d2ab316091f05667dec` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/tunicle.toml` | `c5783b74f453bf7206f001f79c4a30a2c2b5a46e0f14307340267843d1027520` |
 | `src/web/browser/catena/catena-model.js` | `b766ff4f92474eaaa212ad4503b416186fe173211749ce0ae392da6ca1040217` |
-| `src/web/browser/catena/catena.css` | `be7e2462edd8c7c0d4addcfd8b3d7f9450df8295441b2d6cddee406551909191` |
-| `src/web/browser/catena/catena.js` | `a1521e8b0211ecd8dcd403e3a149b4575cc5578627386ef2ab9e40db7c0e68b9` |
-| `src/web/browser/catena/index.html` | `102b0772520f61b8905c98b564e3b83e4ee2dd0872013a5fe0795600b3d08d3f` |
+| `src/web/browser/catena/catena.css` | `d7cccd33782776185c16594312650adacb54b5c3134cad1ff1f644387caa17ac` |
+| `src/web/browser/catena/catena.js` | `cf681055a9d637b1f571852b127457f824577d354ca8a0bcbbbe8bcac75e13d6` |
+| `src/web/browser/catena/index.html` | `f8143b3d37a5ccd1897692a41783067156535032131459a1fab0a8194dbe0fcb` |
 | `src/web/browser/history/history.css` | `25ed5ba0ae6fe7e373b46bb69dadbf1c90234f3324eaad1ff9f8e55e7760712b` |
 | `src/web/browser/history/history.js` | `6997649cfca908a52c8f4be00ec915017237c0a9e282054e0727adf65685c353` |
 | `src/web/browser/history/index.html` | `869e098a72db36cd07e19f2b11dfe853816c39693ae0c5cd7959d4c309848fae` |
