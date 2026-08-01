@@ -56,6 +56,20 @@ PRECEDENCE = (
     "date and does not choose among them"
 )
 
+# What each formulary's standing is called in a terminal. The words matter as
+# much here as on the page: a reader must not be able to read a displaced Mass
+# as the day's, and in a terminal there is no colour or grouping to help — only
+# this line. `said` is deliberately unmarked, because the thing that is said is
+# the thing a reader asked for.
+STANDING_WORDS = {
+    "said": "",
+    "option": "the rubrics permit this or the Mass above",
+    "additional": "also said today, at another hour; it competes for the day with nothing",
+    "commemorated": "NOT said today; its collect is said within the Mass above",
+    "displaced": "NOT said today; displaced by the Mass above",
+    "unresolved": "a candidate; this date is not settled here",
+}
+
 EXAMPLES = {
     "show": (
         Example(
@@ -91,7 +105,17 @@ EXAMPLES = {
                 "",
                 "  S. Ignatii Confessoris (III)",
                 "",
-                "    1 placeholder: this Mass's text is not yet transcribed",
+                "    Introit — Philippians 2:10-11",
+                "",
+                "    Epistle — 2 Timothy 2:8-10",
+                "",
+                "    Gradual — Psalms 91:13, 14",
+                "",
+                "    Gospel — Luke 10:1-9",
+                "",
+                "    Offertory — Psalms 88:25",
+                "",
+                "    Communion — Luke 12:49",
             ),
             "a Mass whose text is not yet transcribed says so; the placeholder is "
             "never printed as the prayer",
@@ -157,26 +181,61 @@ def run_show(arguments: argparse.Namespace) -> dict:
         raise ValueError(f"--date must be an ISO date, not {when!r}") from error
 
     resolved = invoke("calendar-days", ["day", "--date", when])
+
+    # The ranking, taken from where it already lives. `calendar-days` refuses to
+    # rank — correctly, it is the arithmetic layer — and this tool used to print
+    # its candidates under "no precedence is stated". That sentence stopped
+    # being true when the rubrics sources landed: on Easter Sunday 2026 it
+    # offered Easter Sunday and a third-class confessor as equal candidates.
+    # `calendar-rubrics day` runs the browser's own model under node, so the
+    # terminal and the page give one answer by construction.
+    ranked: dict[str, dict] = {}
+    ranking_refused = None
+    try:
+        payload = invoke("calendar-rubrics", ["day", "--date", when])
+        ranked = {
+            str(one.get("calendar")): one
+            for one in (payload.get("days") or [])
+            if isinstance(one, dict)
+        }
+    except Refused as error:
+        ranking_refused = str(error)
+
     days = []
     for day in resolved.get("days") or []:
         if arguments.calendar and day.get("calendar") != arguments.calendar:
             continue
-        candidates = [c for c in (day.get("candidates") or []) if isinstance(c, dict)]
-        # A commemoration is said within a mass, so a date whose only entries
-        # are commemorations has no mass of its own and takes the borrowed
-        # formulary the calendar names — 32 dates in 2026 are exactly this, and
-        # rendering only the commemoration showed the reader nothing at all.
-        commemorated = set(day.get("commemorations") or [])
-        proper_masses = [c for c in candidates if c["key"] not in commemorated]
-        if not proper_masses:
-            for borrowed in day.get("ferial_formulary") or []:
-                if isinstance(borrowed, dict):
-                    candidates = [dict(borrowed, borrowed=True), *candidates]
-        masses = []
-        for candidate in candidates:
-            entry = dict(candidate)
-            entry.update(propers_of(day["calendar"], candidate["key"], arguments))
-            masses.append(entry)
+        held = ranked.get(str(day.get("calendar")))
+        branches = (held or {}).get("options") or []
+        branch = branches[0] if branches else None
+
+        if branch is not None:
+            # One entry per formulary the date carries, each with its standing.
+            masses = []
+            for found in branch.get("readable") or []:
+                entry = {
+                    "key": found.get("key"),
+                    "name": found.get("label"),
+                    "standing": found.get("state"),
+                    "rule": found.get("why"),
+                    "locus": found.get("locus"),
+                }
+                entry.update(propers_of(day["calendar"], str(found.get("key")), arguments))
+                masses.append(entry)
+        else:
+            candidates = [c for c in (day.get("candidates") or []) if isinstance(c, dict)]
+            commemorated = set(day.get("commemorations") or [])
+            proper_masses = [c for c in candidates if c["key"] not in commemorated]
+            if not proper_masses:
+                for borrowed in day.get("ferial_formulary") or []:
+                    if isinstance(borrowed, dict):
+                        candidates = [dict(borrowed, borrowed=True), *candidates]
+            masses = []
+            for candidate in candidates:
+                entry = dict(candidate)
+                entry.update(propers_of(day["calendar"], candidate["key"], arguments))
+                masses.append(entry)
+
         row = {
             "calendar": day.get("calendar"),
             "season": day.get("season"),
@@ -185,6 +244,9 @@ def run_show(arguments: argparse.Namespace) -> dict:
             "appointed": day.get("appointed"),
             "commemorations": day.get("commemorations") or [],
             "masses": masses,
+            "settled": None if branch is None else bool(branch.get("settled")),
+            "unsettled": [] if branch is None else (branch.get("unsettled") or []),
+            "ranking_refused": ranking_refused,
         }
         if arguments.why:
             row["why"] = {
@@ -270,19 +332,36 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             print("  no mass is written for this day")
         appointed = day.get("appointed")
         commemorated = set(day.get("commemorations") or [])
-        # Where the commemorations alone settle the day, lead with the mass
-        # that is said and mark the rest for what they are. Where two masses
-        # remain, say so rather than choosing between them.
-        if day["masses"] and not appointed and not day.get("ranked"):
+
+        if day.get("ranking_refused"):
+            print(f"  the rubrics could not be consulted: {day['ranking_refused']}")
+        # A day the rubrics settle is stated. A day they do not is stated as
+        # not settled, with the reason — which is a different thing from the
+        # arithmetic layer's older "no precedence is stated", and must not be
+        # printed over a day that IS settled.
+        if day.get("settled") is False:
+            print("  this date is not settled here:")
+            for note in day.get("unsettled") or []:
+                print(f"    {note.get('what')}: {note.get('why')}")
+        elif day.get("settled") is None and day["masses"] and not appointed \
+                and not day.get("ranked"):
             print(f"  {len(day['masses'])} masses; {PRECEDENCE}")
-        ordered = sorted(
-            day["masses"],
-            key=lambda m: (m["key"] != appointed, m["key"] in commemorated),
+
+        ordered = (
+            day["masses"]
+            if day.get("settled") is not None
+            else sorted(
+                day["masses"],
+                key=lambda m: (m["key"] != appointed, m["key"] in commemorated),
+            )
         )
         for mass in ordered:
             rank = f" ({mass['rank']})" if mass.get("rank") else ""
             mark = ""
-            if mass.get("borrowed"):
+            if mass.get("standing"):
+                word = STANDING_WORDS.get(mass["standing"], mass["standing"])
+                mark = f"  — {word}" if word else ""
+            elif mass.get("borrowed"):
                 mark = "  — " + str(mass.get("rule") or "the formulary this day borrows")
             elif mass["key"] in commemorated:
                 mark = "  — commemorated within the mass above"

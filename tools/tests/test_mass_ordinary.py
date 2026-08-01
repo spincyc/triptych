@@ -354,19 +354,47 @@ class OrdinaryPage(unittest.TestCase):
         self.assertNotIn("transcribed the English column only",
                          report["te_igitur_in_each"]["la"])
 
-    def test_the_versicle_marks_are_set_and_a_name_is_not(self) -> None:
-        """℣ and ℟ where the book means them, and nowhere else.
+    def test_the_speaker_is_named_and_a_name_is_not_a_mark(self) -> None:
+        """Who is speaking, in words, and never a ℣ standing over a response.
 
-        Every "V." in the 1861 Ordinary — all four — is the V of "the B. V. M.",
-        the Blessed Virgin Mary. A blanket substitution would have set all four
-        as versicles and read perfectly. This holds both halves: the marks that
-        are marks, and the initial that is not.
+        SUPERSEDES a ruling of this same test, 2026-08-01. It formerly held that
+        the Ordinary set ℟ for the book's "R.". The maintainer's complaint was
+        that the priest's and the server's parts could not be told apart and
+        that the ℣/℟ letters were doing that job badly; the proposed fix, to set
+        the book's "P." as ℣, would have introduced an error, and the evidence
+        is in the book's own rows:
+
+            priest   P. I confess to Almighty God, &c.
+            server   R. May Almighty God be merciful to thee…
+            server   R. I confess to Almighty God…
+            priest   P. May Almighty God be merciful unto you…
+
+        "P." marks the PRIEST and "R." marks a RESPONSE — two axes, printed in
+        one column. In the fourth row the priest's line IS the response, so a ℣
+        there would say "versicle" over a response. And in two rubric elements
+        "P." is not a speaker mark at all but an abbreviation inside running
+        text. So each is now set as the word it abbreviates.
+
+        The marks are not merely dropped, which is the part that is easy to get
+        wrong: 28 of the 39 marked elements hold a two-party dialogue inside ONE
+        element, whose `speaker` field names the first line only. A leading mark
+        is redundant with the speaker and goes; an INTERIOR mark is the only
+        record that the speaker changed, and stays.
+
+        Both halves of the original ruling that still hold are kept: the initial
+        that is not a mark, and ℣/℟ outside the Ordinary, where `versicled` is
+        untouched and the propers still use them.
         """
         report = self.run_harness()
-        self.assertIn("℟", report["versicles_1861"])
-        self.assertIn("Response.", report["versicles_1861"],
-                      "the mark is named for a reader who cannot see it")
-        self.assertNotIn("R. And with thy spirit", report["versicles_1861"])
+        held = report["versicles_1861"]
+        self.assertIn("Priest", held, "the speaker is named, not lettered")
+        self.assertIn("Response", held)
+        self.assertNotIn("R. And with thy spirit", held,
+                         "the raw mark is never left in the reading face")
+        self.assertNotIn("℣", held, "a versicle mark must never stand over a response")
+        # The leading mark repeats the element's own speaker and is dropped;
+        # what follows it is the words, not another tag.
+        self.assertNotIn("Priest Priest", held)
         self.assertIn("B. V. M.", report["virgin_1861"])
         self.assertNotIn("℣", report["virgin_1861"])
 

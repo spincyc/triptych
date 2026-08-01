@@ -44,7 +44,7 @@
         "calendar-days"
       ],
       "stage": "draft",
-      "usage": "calendar-rubrics {check,structure,assign} [--calendar NAME] [--root DIR] [--out DIR]"
+      "usage": "calendar-rubrics {check,structure,assign,day} [--calendar NAME] [--date ISO] [--root DIR] [--out DIR]"
     },
     "calendar-spine": {
       "idempotent": true,
@@ -253,6 +253,7 @@
       "purpose": "Print the Mass appointed for a date, with its propers and Ordinary.",
       "requires": [
         "calendar-days",
+        "calendar-rubrics",
         "mass-ordinary",
         "mass-propers"
       ],
