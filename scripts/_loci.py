@@ -30,11 +30,24 @@ def range_to_loci(begin: dict, end: dict) -> list[dict]:
             f"range ends at chapter {last_chapter} but begins at {first_chapter}"
         )
     if first_chapter == last_chapter:
+        first_verse, last_verse = begin.get("verse"), end.get("verse")
+        # The same refusal as the chapter one above, for the same reason. It was
+        # missing here for as long as the chapter check has existed, and the
+        # test named for it never reached this branch because every case it
+        # carried crossed a chapter — so `Psalm 24:9-3` returned a locus running
+        # from 9 to 3, which renders as nothing at all. That is the very defect
+        # this module's docstring was written about, surviving inside it.
+        if first_verse is not None and last_verse is not None:
+            if int(last_verse) < int(first_verse):
+                raise ValueError(
+                    f"range ends at {first_chapter}:{last_verse} "
+                    f"but begins at {first_chapter}:{first_verse}"
+                )
         return [
             {
                 "chapter": first_chapter,
-                "first": begin.get("verse"),
-                "last": end.get("verse"),
+                "first": first_verse,
+                "last": last_verse,
             }
         ]
     loci = [{"chapter": first_chapter, "first": begin.get("verse"), "last": None}]

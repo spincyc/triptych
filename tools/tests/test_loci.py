@@ -68,8 +68,22 @@ class AcrossChaptersTests(unittest.TestCase):
         )
 
     def test_no_locus_ever_runs_backwards(self) -> None:
-        """The defect that produced nothing on the page: first above last."""
+        """The defect that produced nothing on the page: first above last.
+
+        This test asserted nothing for as long as it existed. Every case it
+        carried crossed a chapter, and a cross-chapter range gives every locus
+        an open end, so `first is not None and last is not None` was false for
+        all of them and the assertion never ran once. The same-chapter case it
+        was named for was the one case it did not carry — and that branch had no
+        ordering check, so it returned `first: 9, last: 3` without complaint.
+
+        The guard stays, because an open end genuinely cannot be compared, but a
+        same-chapter range is now among the cases and the count below fails if a
+        future edit makes every case unassertable again.
+        """
+        compared = 0
         for begin, end in (
+            ({"chapter": 24, "verse": 1}, {"chapter": 24, "verse": 3}),
             ({"chapter": 14, "verse": 15}, {"chapter": 15, "verse": 1}),
             ({"chapter": 13, "verse": 17}, {"chapter": 14, "verse": 14}),
             ({"chapter": 63, "verse": 16}, {"chapter": 64, "verse": 7}),
@@ -77,12 +91,26 @@ class AcrossChaptersTests(unittest.TestCase):
             for locus in range_to_loci(begin, end):
                 if locus["first"] is not None and locus["last"] is not None:
                     self.assertLessEqual(locus["first"], locus["last"], locus)
+                    compared += 1
+        self.assertGreater(compared, 0, "every case was unassertable; the test proved nothing")
 
 
 class RefusalTests(unittest.TestCase):
     def test_a_descending_chapter_range_raises(self) -> None:
         with self.assertRaises(ValueError):
             range_to_loci({"chapter": 15, "verse": 1}, {"chapter": 14, "verse": 15})
+
+    def test_a_descending_verse_range_in_one_chapter_raises(self) -> None:
+        """The same refusal the chapter above gets, which this branch lacked."""
+        with self.assertRaises(ValueError):
+            range_to_loci({"chapter": 24, "verse": 9}, {"chapter": 24, "verse": 3})
+
+    def test_an_open_end_is_not_mistaken_for_a_descending_range(self) -> None:
+        """A whole chapter has no verses to order, and must still resolve."""
+        self.assertEqual(
+            range_to_loci({"chapter": 24, "verse": None}, {"chapter": 24, "verse": None}),
+            [{"chapter": 24, "first": None, "last": None}],
+        )
 
     def test_a_range_without_a_chapter_yields_nothing(self) -> None:
         self.assertEqual(range_to_loci({}, {}), [])
