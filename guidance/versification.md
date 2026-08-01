@@ -637,13 +637,92 @@ Vulgate numbers in antiphons, Nova Vulgata numbers, and NAB numbers — and no
 file-level declaration can be true of all of them. §8.4 follows from this
 paragraph.
 
+#### Correction, 1 August 2026: the Ordo is Nova Vulgata for the books and Vulgate for the psalter
+
+The paragraph above says "the *Ordo Lectionum Missae* cites in Nova Vulgata
+numbering" without qualification, and the row for Psalms in the next table
+concludes from it that `psalm_numbering: hebrew` is "right for responsorial
+psalms". **That is wrong for the responsorial psalms, and it was wrong at the
+head of every psalm conversion this project makes from a Lectionary citation.**
+
+**[verified]** in page images of the 1981 *Ordo lectionum Missae* rendered at
+200 dpi from `artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e`.
+Artifact page 100, printed page 46, carries the whole of the Third Sunday in
+Ordinary Time and settles it on a single page:
+
+| Slot, n. 67-69 | The Ordo prints | System |
+|---|---|---|
+| Lectio I, year A | `Is 8, 23b — 9, 3` | **Nova Vulgata** — the Vulgate numbers this pericope 9:1-4 |
+| Ps. resp., year A | `Ps 26, 1. 4. 13-14`, ℞ *Dominus illuminatio mea et salus mea* | **Vulgate** — that response is Hebrew 27:1 |
+| Ps. resp., year B | `Ps 24, 4bc-5ab. 6-7bc. 8-9`, ℞ *Vias tuas, Domine, demonstra mihi* | **Vulgate** — Hebrew 25:4 |
+| Ps. resp., year C | `Ps 18, 8. 9. 10. 15`, ℞ *Verba tua, Domine, Spiritus et vita sunt* | **Vulgate** — Hebrew 19 |
+
+The two systems are not merely both present in the book; they are present in
+adjacent lines of one formulary. The Nova Vulgata numbers its psalter
+Hebrew-first and prints the Vulgate number in parentheses (`PSALMUS 11 (10)`);
+the Ordo prints the Vulgate number bare, with no parenthesis and no Hebrew
+number anywhere.
+
+Confirmed across the Sunday lectionary **[verified]**, reading artifact pages
+59-61 (printed 5-7, Advent 1-3) and 99-102 (printed 45-48, Ordinary Time 2-4).
+Every responsorial psalm on those seven pages, with the response the Ordo
+prints beside it:
+
+| Printed | ℞ | Hebrew |
+|---|---|---|
+| `Ps 121` | *In domum Domini laetantes ibimus* | 122 |
+| `Ps 79` | *Deus, converte nos* | 80 |
+| `Ps 24` | *Ad te, Domine, levavi animam meam* | 25 |
+| `Ps 84` | *Ostende nobis, Domine, misericordiam tuam* | 85 |
+| `Ps 71` | *Florebit in diebus eius iustitia* | 72 |
+| `Ps 125` | *Magnificavit Dominus facere nobiscum* | 126 |
+| `Ps 145` | *Veni, Domine, ad salvandum nos* / *Beati pauperes spiritu* | 146 |
+| `Ps 39` | *Ecce venio, Domine, facere voluntatem tuam* | 40 |
+| `Ps 95` | *Annuntiate in omnibus populis mirabilia Domini* | 96 |
+| `Ps 94` | *Utinam hodie vocem Domini audiatis* | 95 |
+| `Ps 70` | *Os meum annuntiabit salutare tuum, Domine* | 71 |
+
+Thirteen responsorial psalms over seven pages, counting the two repeated by
+*Ut supra*. Every one is one lower than the Hebrew, which is the Vulgate
+correspondence across 10-112 and 116-145, and none is dual-numbered.
+
+A third convention belongs on this record, because it shows the book knows
+perfectly well how to flag a second system when it wants to. Where Sirach's
+Latin and Greek traditions diverge the Ordo prints **the Greek number in
+parentheses after the Latin one** — `Sir 15, 16-21 (gr. 15-20)`, artifact page
+104, printed page 50, n. 76 **[verified]**. So the Ordo does not merely use one
+system per book: **it names the second system where the reader may be holding a
+Greek-numbered Bible, and names none for the psalter.** The absence of a
+parenthesis there is not an oversight; the Vulgate psalm number is the only
+number the Latin liturgy has ever printed for a psalm, and the book treats it
+as needing no gloss.
+
+What this costs and what it does not:
+
+- §5's finding — no tracked edition witnesses the numbering the calendar cites
+  in — **stands for the books and is relieved for the psalter.** The tracked
+  Douay-Rheims psalm concordance witnesses the Vulgate psalm numbering exactly,
+  so an Ordo responsorial psalm needs no acquisition at all: it converts
+  through `scripts/_psalms` from a table this project already owns.
+- The postconciliar calendar's `psalm_numbering: hebrew` is a declaration about
+  **storage**, not about the source. It stays right, and reaching it now
+  requires a conversion at the point of reading rather than none.
+- **A responsorial psalm taken from the Ordo and stored unconverted is off by
+  one psalm through most of the psalter** — a citation that resolves cleanly to
+  a different psalm, which is §1's failure exactly.
+- The eleven antiphons already recorded under `psalm_numbering_exceptions` are
+  not, after this, a different class from the responsorial psalms beside them.
+  They are the same class caught earlier, and the `citation_convention` line
+  that predicted them — antiphons keep the Missal's number, responsorial psalms
+  take the Lectionary's — predicted a distinction the books do not draw.
+
 ### What the Nova Vulgata actually does, book by book
 
 **[sourced]**, verified against <https://www.vatican.va/archive/bible/nova_vulgata/>:
 
 | Book | Nova Vulgata | Consequence for this project |
 |---|---|---|
-| Psalms | **Hebrew numbering**, Vulgate number in parentheses (`PSALMUS 11 (10)`) | the calendar's `psalm_numbering: hebrew` is right for responsorial psalms |
+| Psalms | **Hebrew numbering**, Vulgate number in parentheses (`PSALMUS 11 (10)`) | **true of the Nova Vulgata and not of the Ordo lectionum.** This row formerly concluded that the calendar's `psalm_numbering: hebrew` was "right for responsorial psalms" and therefore that an Ordo psalm citation could be stored as printed. It cannot: the 1981 Ordo prints Vulgate psalm numbers bare, **[verified]** in its own page images — see the correction above — so an Ordo responsorial psalm must be converted through `scripts/_psalms` before it is stored |
 | Joel | 4 chapters | as already recorded |
 | Malachi | 3 chapters, ch. 3 to v. 24 | as already recorded |
 | Isaiah | ch. 8 to v. 23; ch. 64 has 11 verses | as already recorded |
