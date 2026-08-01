@@ -92,6 +92,18 @@ REQUIRED_HEADER = (
     "verification",
 )
 ENTRY_REQUIRED = ("key", "name", "registry")
+# Every field a proper may carry. Enumerated because the schema's silence about
+# unrecognised keys is itself a defect: YAML reads an unquoted scalar carrying
+# `: ` as a second mapping key, so `incipit: Manete in me, et ego in vobis`
+# became `incipit: Manete in me` beside `et ego in vobis: null`, and the site
+# served the truncation. Nothing here reported it, because `check_reference`
+# enumerates unknown fields only inside `takes_from` and this function looked at
+# no key it did not already want. Four defects of that class landed in one day.
+PROPER_FIELDS = frozenset(
+    {"name", "source", "verses", "incipit", "text", "notes", "cycles",
+     "takes_from", "psalm_numbering"}
+)
+
 SOURCES = ("scripture", "composed", "mixed")
 CYCLES = ("A", "B", "C")
 KINDS = ("christological", "marian", "sanctoral", "seasonal")
@@ -146,6 +158,12 @@ def check_proper(where: str, proper: object, problems: list[str]) -> None:
         problems.append(f"{where}: proper has no name")
         return
     where = f"{where}/{name}"
+    unknown = sorted(set(proper) - PROPER_FIELDS)
+    if unknown:
+        problems.append(
+            f"{where}: unrecognised field(s) {', '.join(repr(k) for k in unknown)}; "
+            "an unquoted scalar carrying a colon becomes a key of its own"
+        )
     if TAKES_FROM in proper:
         # A proper that names where its text is printed holds none of its own.
         # Its incipit and translations come from the resolved proper too, so a
