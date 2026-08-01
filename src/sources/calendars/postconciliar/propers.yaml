@@ -8704,6 +8704,15 @@ sections:
       name: Tenth Sunday in Ordinary Time
       registry: pc-s34
       season: ordinary-time
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 109, printed page 55, nn.
+        88-90. The Ordo prints its responsorial psalms in Vulgate numbering; they are
+        converted here by scripts/_psalms from the tracked verse concordance, because
+        this file declares psalm_numbering hebrew. The Communion Antiphon and the
+        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
+        does not, and they are still model-generated leads. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
         incipit: Dominus illuminatio mea
@@ -8760,7 +8769,7 @@ sections:
                 end: {chapter: 50, verse: 13}
               - begin: {chapter: 50, verse: 14}
                 end: {chapter: 50, verse: 15}
-              ref: Psalm 50:1, 8, 12-13, 14-15
+              ref: "Psalm 50:1, 8, 12-13, 14-15"
           B:
             verses:
             - book: Psalms
@@ -8768,12 +8777,12 @@ sections:
               - begin: {chapter: 130, verse: 1}
                 end: {chapter: 130, verse: 2}
               - begin: {chapter: 130, verse: 3}
-                end: {chapter: 130, verse: 4}
-              - begin: {chapter: 130, verse: 5}
+                end: {chapter: 130, verse: 4, part: ab}
+              - begin: {chapter: 130, verse: 4, part: c}
                 end: {chapter: 130, verse: 6}
               - begin: {chapter: 130, verse: 7}
                 end: {chapter: 130, verse: 8}
-              ref: Psalm 130:1-2, 3-4, 5-6, 7-8
+              ref: "Psalm 130:1-2, 3-4ab, 4c-6, 7-8"
           C:
             verses:
             - book: Psalms
@@ -8785,10 +8794,12 @@ sections:
               - begin: {chapter: 30, verse: 5}
                 end: {chapter: 30, verse: 6}
               - begin: {chapter: 30, verse: 11}
+                end: {chapter: 30, verse: 11}
+              - begin: {chapter: 30, verse: 12, part: a}
                 end: {chapter: 30, verse: 12, part: a}
               - begin: {chapter: 30, verse: 13, part: b}
                 end: {chapter: 30, verse: 13, part: b}
-              ref: Psalm 30:2, 4, 5-6, 11-12a, 13b
+              ref: "Psalm 30:2, 4, 5-6, 11, 12a, 13b"
       - name: Second Reading
         source: scripture
         cycles:
@@ -8897,6 +8908,15 @@ sections:
       name: Eleventh Sunday in Ordinary Time
       registry: pc-s35
       season: ordinary-time
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 110, printed page 56, nn.
+        91-93. The Ordo prints its responsorial psalms in Vulgate numbering; they are
+        converted here by scripts/_psalms from the tracked verse concordance, because
+        this file declares psalm_numbering hebrew. The Communion Antiphon and the
+        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
+        does not, and they are still model-generated leads. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
         incipit: Exaudi, Domine, vocem meam
@@ -8942,7 +8962,7 @@ sections:
                 end: {chapter: 12, verse: 10}
               - begin: {chapter: 12, verse: 13}
                 end: {chapter: 12, verse: 13}
-              ref: 2 Samuel 12:7-10, 13
+              ref: "2 Samuel 12:7-10, 13"
       - name: Responsorial Psalm
         source: scripture
         cycles:
@@ -8950,13 +8970,13 @@ sections:
             verses:
             - book: Psalms
               ranges:
-              - begin: {chapter: 100, verse: 1}
+              - begin: {chapter: 100, verse: 2}
                 end: {chapter: 100, verse: 2}
               - begin: {chapter: 100, verse: 3}
                 end: {chapter: 100, verse: 3}
               - begin: {chapter: 100, verse: 5}
                 end: {chapter: 100, verse: 5}
-              ref: Psalm 100:1-2, 3, 5
+              ref: "Psalm 100:2, 3, 5"
           B:
             verses:
             - book: Psalms
@@ -8967,7 +8987,7 @@ sections:
                 end: {chapter: 92, verse: 14}
               - begin: {chapter: 92, verse: 15}
                 end: {chapter: 92, verse: 16}
-              ref: Psalm 92:2-3, 13-14, 15-16
+              ref: "Psalm 92:2-3, 13-14, 15-16"
           C:
             verses:
             - book: Psalms
@@ -8980,7 +9000,7 @@ sections:
                 end: {chapter: 32, verse: 7}
               - begin: {chapter: 32, verse: 11}
                 end: {chapter: 32, verse: 11}
-              ref: Psalm 32:1-2, 5, 7, 11
+              ref: "Psalm 32:1-2, 5, 7, 11"
       - name: Second Reading
         source: scripture
         cycles:
@@ -9006,7 +9026,7 @@ sections:
                 end: {chapter: 2, verse: 16}
               - begin: {chapter: 2, verse: 19}
                 end: {chapter: 2, verse: 21}
-              ref: Galatians 2:16, 19-21
+              ref: "Galatians 2:16, 19-21"
       - name: Gospel Acclamation
         source: scripture
         cycles:
@@ -9093,6 +9113,15 @@ sections:
       name: Twelfth Sunday in Ordinary Time
       registry: pc-s36
       season: ordinary-time
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 111, printed page 57, nn.
+        94-96. The Ordo prints its responsorial psalms in Vulgate numbering; they are
+        converted here by scripts/_psalms from the tracked verse concordance, because
+        this file declares psalm_numbering hebrew. The Communion Antiphon and the
+        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
+        does not, and they are still model-generated leads. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
         incipit: Dominus fortitudo plebis suae
@@ -9128,7 +9157,7 @@ sections:
                 end: {chapter: 38, verse: 1}
               - begin: {chapter: 38, verse: 8}
                 end: {chapter: 38, verse: 11}
-              ref: Job 38:1, 8-11
+              ref: "Job 38:1, 8-11"
           C:
             verses:
             - book: Zechariah
@@ -9153,7 +9182,7 @@ sections:
                 end: {chapter: 69, verse: 17}
               - begin: {chapter: 69, verse: 33}
                 end: {chapter: 69, verse: 35}
-              ref: Psalm 69:8-10, 14, 17, 33-35
+              ref: "Psalm 69:8-10, 14, 17, 33-35"
           B:
             verses:
             - book: Psalms
@@ -9166,20 +9195,20 @@ sections:
                 end: {chapter: 107, verse: 29}
               - begin: {chapter: 107, verse: 30}
                 end: {chapter: 107, verse: 31}
-              ref: Psalm 107:23-24, 25-26, 28-29, 30-31
+              ref: "Psalm 107:23-24, 25-26, 28-29, 30-31"
           C:
             verses:
             - book: Psalms
               ranges:
-              - begin: {chapter: 63, verse: 2}
-                end: {chapter: 63, verse: 2}
-              - begin: {chapter: 63, verse: 3}
+              - begin: {chapter: 63, verse: 2, part: abcd}
+                end: {chapter: 63, verse: 2, part: abcd}
+              - begin: {chapter: 63, verse: 2, part: e}
                 end: {chapter: 63, verse: 4}
               - begin: {chapter: 63, verse: 5}
                 end: {chapter: 63, verse: 6}
               - begin: {chapter: 63, verse: 8}
                 end: {chapter: 63, verse: 9}
-              ref: Psalm 63:2, 3-4, 5-6, 8-9
+              ref: "Psalm 63:2abcd, 2e-4, 5-6, 8-9"
       - name: Second Reading
         source: scripture
         cycles:
@@ -9215,7 +9244,7 @@ sections:
                 end: {chapter: 15, verse: 26, part: b}
               - begin: {chapter: 15, verse: 27, part: a}
                 end: {chapter: 15, verse: 27, part: a}
-              ref: John 15:26b, 27a
+              ref: "John 15:26b, 27a"
           B:
             verses:
             - book: Luke
@@ -9293,6 +9322,15 @@ sections:
       name: Thirteenth Sunday in Ordinary Time
       registry: pc-s37
       season: ordinary-time
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact pages 112-113, printed pages
+        58-59, nn. 97-99. The Ordo prints its responsorial psalms in Vulgate numbering;
+        they are converted here by scripts/_psalms from the tracked verse concordance,
+        because this file declares psalm_numbering hebrew. The Communion Antiphon and
+        the Entrance Antiphon of this Mass were NOT read: the Missal prints them, the
+        Ordo does not, and they are still model-generated leads. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
         incipit: Omnes gentes, plaudite manibus
@@ -9321,7 +9359,7 @@ sections:
                 end: {chapter: 4, verse: 11}
               - begin: {chapter: 4, verse: 14}
                 end: {chapter: 4, verse: 16, part: a}
-              ref: 2 Kings 4:8-11, 14-16a
+              ref: "2 Kings 4:8-11, 14-16a"
           B:
             verses:
             - book: Wisdom
@@ -9339,7 +9377,7 @@ sections:
                 end: {chapter: 19, verse: 16, part: b}
               - begin: {chapter: 19, verse: 19}
                 end: {chapter: 19, verse: 21}
-              ref: 1 Kings 19:16b, 19-21
+              ref: "1 Kings 19:16b, 19-21"
       - name: Responsorial Psalm
         source: scripture
         cycles:
@@ -9353,7 +9391,7 @@ sections:
                 end: {chapter: 89, verse: 17}
               - begin: {chapter: 89, verse: 18}
                 end: {chapter: 89, verse: 19}
-              ref: Psalm 89:2-3, 16-17, 18-19
+              ref: "Psalm 89:2-3, 16-17, 18-19"
           B:
             verses:
             - book: Psalms
@@ -9365,10 +9403,12 @@ sections:
               - begin: {chapter: 30, verse: 5}
                 end: {chapter: 30, verse: 6}
               - begin: {chapter: 30, verse: 11}
+                end: {chapter: 30, verse: 11}
+              - begin: {chapter: 30, verse: 12, part: a}
                 end: {chapter: 30, verse: 12, part: a}
               - begin: {chapter: 30, verse: 13, part: b}
                 end: {chapter: 30, verse: 13, part: b}
-              ref: Psalm 30:2, 4, 5-6, 11-12a, 13b
+              ref: "Psalm 30:2, 4, 5-6, 11, 12a, 13b"
           C:
             verses:
             - book: Psalms
@@ -9383,7 +9423,7 @@ sections:
                 end: {chapter: 16, verse: 10}
               - begin: {chapter: 16, verse: 11}
                 end: {chapter: 16, verse: 11}
-              ref: Psalm 16:1-2a, 5, 7-8, 9-10, 11
+              ref: "Psalm 16:1-2a, 5, 7-8, 9-10, 11"
       - name: Second Reading
         source: scripture
         cycles:
@@ -9395,7 +9435,7 @@ sections:
                 end: {chapter: 6, verse: 4}
               - begin: {chapter: 6, verse: 8}
                 end: {chapter: 6, verse: 11}
-              ref: Romans 6:3-4, 8-11
+              ref: "Romans 6:3-4, 8-11"
           B:
             verses:
             - book: 2 Corinthians
@@ -9406,7 +9446,7 @@ sections:
                 end: {chapter: 8, verse: 9}
               - begin: {chapter: 8, verse: 13}
                 end: {chapter: 8, verse: 15}
-              ref: 2 Corinthians 8:7, 9, 13-15
+              ref: "2 Corinthians 8:7, 9, 13-15"
           C:
             verses:
             - book: Galatians
@@ -9415,7 +9455,7 @@ sections:
                 end: {chapter: 5, verse: 1}
               - begin: {chapter: 5, verse: 13}
                 end: {chapter: 5, verse: 18}
-              ref: Galatians 5:1, 13-18
+              ref: "Galatians 5:1, 13-18"
       - name: Gospel Acclamation
         source: scripture
         cycles:
@@ -9507,6 +9547,15 @@ sections:
       name: Fourteenth Sunday in Ordinary Time
       registry: pc-s38
       season: ordinary-time
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 114, printed page 60, nn.
+        100-102. The Ordo prints its responsorial psalms in Vulgate numbering; they are
+        converted here by scripts/_psalms from the tracked verse concordance, because
+        this file declares psalm_numbering hebrew. The Communion Antiphon and the
+        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
+        does not, and they are still model-generated leads. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
         incipit: Suscepimus, Deus, misericordiam tuam
@@ -9561,35 +9610,35 @@ sections:
                 end: {chapter: 145, verse: 9}
               - begin: {chapter: 145, verse: 10}
                 end: {chapter: 145, verse: 11}
-              - begin: {chapter: 145, verse: 13}
+              - begin: {chapter: 145, verse: 13, part: cd}
                 end: {chapter: 145, verse: 14}
-              ref: Psalm 145:1-2, 8-9, 10-11, 13-14
+              ref: "Psalm 145:1-2, 8-9, 10-11, 13cd-14"
           B:
             verses:
             - book: Psalms
               ranges:
               - begin: {chapter: 123, verse: 1}
                 end: {chapter: 123, verse: 2, part: a}
-              - begin: {chapter: 123, verse: 2, part: bc}
-                end: {chapter: 123, verse: 2, part: bc}
+              - begin: {chapter: 123, verse: 2, part: bcd}
+                end: {chapter: 123, verse: 2, part: bcd}
               - begin: {chapter: 123, verse: 3}
                 end: {chapter: 123, verse: 4}
-              ref: Psalm 123:1-2a, 2bc, 3-4
+              ref: "Psalm 123:1-2a, 2bcd, 3-4"
           C:
             verses:
             - book: Psalms
               ranges:
               - begin: {chapter: 66, verse: 1}
-                end: {chapter: 66, verse: 3}
+                end: {chapter: 66, verse: 3, part: a}
               - begin: {chapter: 66, verse: 4}
                 end: {chapter: 66, verse: 5}
               - begin: {chapter: 66, verse: 6}
-                end: {chapter: 66, verse: 7}
+                end: {chapter: 66, verse: 7, part: a}
               - begin: {chapter: 66, verse: 16}
                 end: {chapter: 66, verse: 16}
               - begin: {chapter: 66, verse: 20}
                 end: {chapter: 66, verse: 20}
-              ref: Psalm 66:1-3, 4-5, 6-7, 16, 20
+              ref: "Psalm 66:1-3a, 4-5, 6-7a, 16, 20"
       - name: Second Reading
         source: scripture
         cycles:
@@ -9601,7 +9650,7 @@ sections:
                 end: {chapter: 8, verse: 9}
               - begin: {chapter: 8, verse: 11}
                 end: {chapter: 8, verse: 13}
-              ref: Romans 8:9, 11-13
+              ref: "Romans 8:9, 11-13"
           B:
             verses:
             - book: 2 Corinthians
@@ -9644,7 +9693,7 @@ sections:
                 end: {chapter: 3, verse: 15, part: a}
               - begin: {chapter: 3, verse: 16, part: a}
                 end: {chapter: 3, verse: 16, part: a}
-              ref: Colossians 3:15a, 16a
+              ref: "Colossians 3:15a, 16a"
       - name: Gospel
         source: scripture
         cycles:
@@ -9670,7 +9719,7 @@ sections:
                 end: {chapter: 10, verse: 12}
               - begin: {chapter: 10, verse: 17}
                 end: {chapter: 10, verse: 20}
-              ref: Luke 10:1-12, 17-20
+              ref: "Luke 10:1-12, 17-20"
         notes: Year C short form, Luke 10:1-9.
       - name: Prayer over the Offerings
         incipit: Oblatio nos, Domine, tuo nomini dicata purificet
@@ -9707,6 +9756,15 @@ sections:
       name: Fifteenth Sunday in Ordinary Time
       registry: pc-s39
       season: ordinary-time
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 115, printed page 61, nn.
+        103-105. The Ordo prints its responsorial psalms in Vulgate numbering; they are
+        converted here by scripts/_psalms from the tracked verse concordance, because
+        this file declares psalm_numbering hebrew. The Communion Antiphon and the
+        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
+        does not, and they are still model-generated leads. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
         incipit: Ego autem cum iustitia apparebo in conspectu tuo
@@ -9756,28 +9814,26 @@ sections:
             verses:
             - book: Psalms
               ranges:
-              - begin: {chapter: 65, verse: 10}
-                end: {chapter: 65, verse: 10}
-              - begin: {chapter: 65, verse: 11}
+              - begin: {chapter: 65, verse: 10, part: abcd}
+                end: {chapter: 65, verse: 10, part: abcd}
+              - begin: {chapter: 65, verse: 10, part: e}
                 end: {chapter: 65, verse: 11}
               - begin: {chapter: 65, verse: 12}
                 end: {chapter: 65, verse: 13}
               - begin: {chapter: 65, verse: 14}
                 end: {chapter: 65, verse: 14}
-              ref: Psalm 65:10, 11, 12-13, 14
+              ref: "Psalm 65:10abcd, 10e-11, 12-13, 14"
           B:
             verses:
             - book: Psalms
               ranges:
               - begin: {chapter: 85, verse: 9, part: ab}
-                end: {chapter: 85, verse: 9, part: ab}
-              - begin: {chapter: 85, verse: 10}
                 end: {chapter: 85, verse: 10}
               - begin: {chapter: 85, verse: 11}
                 end: {chapter: 85, verse: 12}
               - begin: {chapter: 85, verse: 13}
                 end: {chapter: 85, verse: 14}
-              ref: Psalm 85:9ab, 10, 11-12, 13-14
+              ref: "Psalm 85:9ab-10, 11-12, 13-14"
           C:
             verses:
             - book: Psalms
@@ -9790,11 +9846,11 @@ sections:
                 end: {chapter: 69, verse: 31}
               - begin: {chapter: 69, verse: 33}
                 end: {chapter: 69, verse: 34}
-              - begin: {chapter: 69, verse: 36, part: a}
-                end: {chapter: 69, verse: 36, part: a}
+              - begin: {chapter: 69, verse: 36, part: ab}
+                end: {chapter: 69, verse: 36, part: ab}
               - begin: {chapter: 69, verse: 37}
                 end: {chapter: 69, verse: 37}
-              ref: Psalm 69:14, 17, 30-31, 33-34, 36a, 37
+              ref: "Psalm 69:14, 17, 30-31, 33-34, 36ab, 37"
         notes: Year C admits Psalm 19:8, 9, 10, 11 as an alternative.
       - name: Second Reading
         source: scripture
@@ -9912,6 +9968,15 @@ sections:
       name: Sixteenth Sunday in Ordinary Time
       registry: pc-s40
       season: ordinary-time
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 116, printed page 62, nn.
+        106-108. The Ordo prints its responsorial psalms in Vulgate numbering; they are
+        converted here by scripts/_psalms from the tracked verse concordance, because
+        this file declares psalm_numbering hebrew. The Communion Antiphon and the
+        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
+        does not, and they are still model-generated leads. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
         incipit: Ecce Deus adiuvat me
@@ -9942,7 +10007,7 @@ sections:
                 end: {chapter: 12, verse: 13}
               - begin: {chapter: 12, verse: 16}
                 end: {chapter: 12, verse: 19}
-              ref: Wisdom 12:13, 16-19
+              ref: "Wisdom 12:13, 16-19"
           B:
             verses:
             - book: Jeremiah
@@ -9969,8 +10034,8 @@ sections:
               - begin: {chapter: 86, verse: 9}
                 end: {chapter: 86, verse: 10}
               - begin: {chapter: 86, verse: 15}
-                end: {chapter: 86, verse: 16}
-              ref: Psalm 86:5-6, 9-10, 15-16
+                end: {chapter: 86, verse: 16, part: a}
+              ref: "Psalm 86:5-6, 9-10, 15-16a"
           B:
             verses:
             - book: Psalms
@@ -9983,18 +10048,18 @@ sections:
                 end: {chapter: 23, verse: 5}
               - begin: {chapter: 23, verse: 6}
                 end: {chapter: 23, verse: 6}
-              ref: Psalm 23:1-3a, 3b-4, 5, 6
+              ref: "Psalm 23:1-3a, 3b-4, 5, 6"
           C:
             verses:
             - book: Psalms
               ranges:
               - begin: {chapter: 15, verse: 2}
-                end: {chapter: 15, verse: 3, part: a}
-              - begin: {chapter: 15, verse: 3, part: b}
-                end: {chapter: 15, verse: 4}
+                end: {chapter: 15, verse: 3, part: ab}
+              - begin: {chapter: 15, verse: 3, part: cd}
+                end: {chapter: 15, verse: 4, part: ab}
               - begin: {chapter: 15, verse: 5}
                 end: {chapter: 15, verse: 5}
-              ref: Psalm 15:2-3a, 3b-4, 5
+              ref: "Psalm 15:2-3ab, 3cd-4ab, 5"
       - name: Second Reading
         source: scripture
         cycles:
@@ -10110,6 +10175,15 @@ sections:
       name: Seventeenth Sunday in Ordinary Time
       registry: pc-s41
       season: ordinary-time
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 117, printed page 63, nn.
+        109-111. The Ordo prints its responsorial psalms in Vulgate numbering; they are
+        converted here by scripts/_psalms from the tracked verse concordance, because
+        this file declares psalm_numbering hebrew. The Communion Antiphon and the
+        Entrance Antiphon of this Mass were NOT read: the Missal prints them, the Ordo
+        does not, and they are still model-generated leads. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
         incipit: Deus in loco sancto suo
@@ -10141,7 +10215,7 @@ sections:
                 end: {chapter: 3, verse: 5}
               - begin: {chapter: 3, verse: 7}
                 end: {chapter: 3, verse: 12}
-              ref: 1 Kings 3:5, 7-12
+              ref: "1 Kings 3:5, 7-12"
           B:
             verses:
             - book: 2 Kings
@@ -10173,7 +10247,7 @@ sections:
                 end: {chapter: 119, verse: 128}
               - begin: {chapter: 119, verse: 129}
                 end: {chapter: 119, verse: 130}
-              ref: Psalm 119:57, 72, 76-77, 127-128, 129-130
+              ref: "Psalm 119:57, 72, 76-77, 127-128, 129-130"
           B:
             verses:
             - book: Psalms
@@ -10184,20 +10258,20 @@ sections:
                 end: {chapter: 145, verse: 16}
               - begin: {chapter: 145, verse: 17}
                 end: {chapter: 145, verse: 18}
-              ref: Psalm 145:10-11, 15-16, 17-18
+              ref: "Psalm 145:10-11, 15-16, 17-18"
           C:
             verses:
             - book: Psalms
               ranges:
               - begin: {chapter: 138, verse: 1}
                 end: {chapter: 138, verse: 2, part: a}
-              - begin: {chapter: 138, verse: 2, part: b}
+              - begin: {chapter: 138, verse: 2, part: bc}
                 end: {chapter: 138, verse: 3}
               - begin: {chapter: 138, verse: 6}
-                end: {chapter: 138, verse: 7, part: a}
-              - begin: {chapter: 138, verse: 7, part: b}
+                end: {chapter: 138, verse: 7, part: ab}
+              - begin: {chapter: 138, verse: 7, part: c}
                 end: {chapter: 138, verse: 8}
-              ref: Psalm 138:1-2a, 2b-3, 6-7a, 7b-8
+              ref: "Psalm 138:1-2a, 2bc-3, 6-7ab, 7c-8"
       - name: Second Reading
         source: scripture
         cycles:
@@ -10312,6 +10386,15 @@ sections:
       name: Eighteenth Sunday in Ordinary Time
       registry: pc-s42
       season: ordinary-time
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 118, printed page 64, nn.
+        112-114. The Ordo prints its responsorial psalms in Vulgate numbering; they are
+        converted here by scripts/_psalms from the tracked verse concordance, because
+        this file declares psalm_numbering hebrew. The Communion Antiphon, the Communion
+        Antiphon (alternative) and the Entrance Antiphon of this Mass were NOT read: the
+        Missal prints them, the Ordo does not, and they are still model-generated leads.
+        See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
         incipit: Deus, in adiutorium meum intende
@@ -10352,7 +10435,7 @@ sections:
                 end: {chapter: 16, verse: 4}
               - begin: {chapter: 16, verse: 12}
                 end: {chapter: 16, verse: 15}
-              ref: Exodus 16:2-4, 12-15
+              ref: "Exodus 16:2-4, 12-15"
           C:
             verses:
             - book: Ecclesiastes
@@ -10375,20 +10458,22 @@ sections:
                 end: {chapter: 145, verse: 16}
               - begin: {chapter: 145, verse: 17}
                 end: {chapter: 145, verse: 18}
-              ref: Psalm 145:8-9, 15-16, 17-18
+              ref: "Psalm 145:8-9, 15-16, 17-18"
           B:
             verses:
             - book: Psalms
               ranges:
               - begin: {chapter: 78, verse: 3}
-                end: {chapter: 78, verse: 4}
+                end: {chapter: 78, verse: 3}
+              - begin: {chapter: 78, verse: 4, part: bc}
+                end: {chapter: 78, verse: 4, part: bc}
               - begin: {chapter: 78, verse: 23}
                 end: {chapter: 78, verse: 24}
               - begin: {chapter: 78, verse: 25}
                 end: {chapter: 78, verse: 25}
               - begin: {chapter: 78, verse: 54}
                 end: {chapter: 78, verse: 54}
-              ref: Psalm 78:3-4, 23-24, 25, 54
+              ref: "Psalm 78:3, 4bc, 23-24, 25, 54"
           C:
             verses:
             - book: Psalms
@@ -10403,7 +10488,7 @@ sections:
                 end: {chapter: 90, verse: 14}
               - begin: {chapter: 90, verse: 17}
                 end: {chapter: 90, verse: 17}
-              ref: Psalm 90:3-4, 5-6, 12-13, 14, 17
+              ref: "Psalm 90:3-4, 5-6, 12-13, 14, 17"
       - name: Second Reading
         source: scripture
         cycles:
@@ -10415,7 +10500,7 @@ sections:
                 end: {chapter: 8, verse: 35}
               - begin: {chapter: 8, verse: 37}
                 end: {chapter: 8, verse: 39}
-              ref: Romans 8:35, 37-39
+              ref: "Romans 8:35, 37-39"
           B:
             verses:
             - book: Ephesians
@@ -10424,7 +10509,7 @@ sections:
                 end: {chapter: 4, verse: 17}
               - begin: {chapter: 4, verse: 20}
                 end: {chapter: 4, verse: 24}
-              ref: Ephesians 4:17, 20-24
+              ref: "Ephesians 4:17, 20-24"
           C:
             verses:
             - book: Colossians
@@ -10433,7 +10518,7 @@ sections:
                 end: {chapter: 3, verse: 5}
               - begin: {chapter: 3, verse: 9}
                 end: {chapter: 3, verse: 11}
-              ref: Colossians 3:1-5, 9-11
+              ref: "Colossians 3:1-5, 9-11"
       - name: Gospel Acclamation
         source: scripture
         cycles:
@@ -10519,6 +10604,16 @@ sections:
       name: Nineteenth Sunday in Ordinary Time
       registry: pc-s43
       season: ordinary-time
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact pages 119-120, printed pages
+        65-66, nn. 115-117. The Ordo prints its responsorial psalms in Vulgate
+        numbering; they are converted here by scripts/_psalms from the tracked verse
+        concordance, because this file declares psalm_numbering hebrew. The Communion
+        Antiphon, the Communion Antiphon (alternative) and the Entrance Antiphon of this
+        Mass were NOT read: the Missal prints them, the Ordo does not, and they are
+        still model-generated leads. See
+        src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
         incipit: Respice, Domine, in testamentum tuum
@@ -10562,7 +10657,7 @@ sections:
                 end: {chapter: 19, verse: 9, part: a}
               - begin: {chapter: 19, verse: 11}
                 end: {chapter: 19, verse: 13, part: a}
-              ref: 1 Kings 19:9a, 11-13a
+              ref: "1 Kings 19:9a, 11-13a"
           B:
             verses:
             - book: 1 Kings
@@ -10590,7 +10685,7 @@ sections:
                 end: {chapter: 85, verse: 12}
               - begin: {chapter: 85, verse: 13}
                 end: {chapter: 85, verse: 14}
-              ref: Psalm 85:9ab-10, 11-12, 13-14
+              ref: "Psalm 85:9ab-10, 11-12, 13-14"
           B:
             verses:
             - book: Psalms
@@ -10603,7 +10698,7 @@ sections:
                 end: {chapter: 34, verse: 7}
               - begin: {chapter: 34, verse: 8}
                 end: {chapter: 34, verse: 9}
-              ref: Psalm 34:2-3, 4-5, 6-7, 8-9
+              ref: "Psalm 34:2-3, 4-5, 6-7, 8-9"
           C:
             verses:
             - book: Psalms
@@ -10615,8 +10710,10 @@ sections:
               - begin: {chapter: 33, verse: 18}
                 end: {chapter: 33, verse: 19}
               - begin: {chapter: 33, verse: 20}
+                end: {chapter: 33, verse: 20}
+              - begin: {chapter: 33, verse: 22}
                 end: {chapter: 33, verse: 22}
-              ref: Psalm 33:1, 12, 18-19, 20-22
+              ref: "Psalm 33:1, 12, 18-19, 20, 22"
       - name: Second Reading
         source: scripture
         cycles:
@@ -10642,7 +10739,7 @@ sections:
                 end: {chapter: 11, verse: 2}
               - begin: {chapter: 11, verse: 8}
                 end: {chapter: 11, verse: 19}
-              ref: Hebrews 11:1-2, 8-19
+              ref: "Hebrews 11:1-2, 8-19"
         notes: 'Year C has a short form: Hebrews 11:1-2, 8-12.'
       - name: Gospel Acclamation
         source: scripture
@@ -10669,7 +10766,7 @@ sections:
                 end: {chapter: 24, verse: 42, part: a}
               - begin: {chapter: 24, verse: 44}
                 end: {chapter: 24, verse: 44}
-              ref: Matthew 24:42a, 44
+              ref: "Matthew 24:42a, 44"
       - name: Gospel
         source: scripture
         cycles:
