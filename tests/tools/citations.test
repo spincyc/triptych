@@ -236,6 +236,145 @@ if run_tool check --root calendars >/dev/null 2>&1; then
 	exit 1
 fi
 
+# `ref` is a side field and the ranges are the truth, so nothing made the two
+# agree: a page could print one reference and fetch another. `check` now
+# re-derives the passage from its own `ref` through `parse_citation`, and what
+# it compares is the parsed structure, never the strings.
+passage() {
+	cat >calendars/test/sundays.yaml <<YAML
+schema: triptych-calendar-masses/v1
+edition: test edition
+calendar: test
+series: test series
+ordering: test ordering
+registry: test registry
+psalm_numbering: vulgate
+citation_convention: test convention
+orthography: test orthography
+verification: unverified test fixture
+sections:
+ seasonal:
+  kind: seasonal
+  label: Seasonal
+  masses:
+  - key: test-sunday
+    name: Test Sunday
+    registry: "01"
+    season: test
+    propers:
+      - name: Introit
+        source: scripture
+        verses:
+$1
+YAML
+}
+
+# An edition spells a book however it prints it, and the ranges are what must
+# match. Every one of these is a legitimate display string for the passage
+# beside it, and none of them is a divergence.
+passage '          - book: Psalms
+            ranges: [{begin: {chapter: 24, verse: 1}, end: {chapter: 24, verse: 3}}]
+            ref: "Ps 24:1-3"
+          - book: Song of Songs
+            ranges: [{begin: {chapter: 2, verse: 1}, end: {chapter: 2, verse: 1}}]
+            ref: "Cant 2:1"
+          - book: Song of Songs
+            ranges: [{begin: {chapter: 2, verse: 1}, end: {chapter: 2, verse: 1}}]
+            ref: "Canticle of Canticles 2:1"
+          - book: Psalms
+            ranges: [{begin: {chapter: 46}, end: {chapter: 46}}]
+            ref: "Psalm 46"
+          - book: Isaiah
+            ranges: [{begin: {chapter: 50, verse: 4}, end: {chapter: 50, part: a, verse: 9}}]
+            ref: "Isaiah 50:4-9a"
+          - book: Exodus
+            ranges:
+            - {begin: {chapter: 14, verse: 24}, end: {chapter: 14, verse: 31}}
+            - {begin: {chapter: 15, verse: 1}, end: {chapter: 15, verse: 1}}
+            ref: "Exodus 14:24-31; 15:1"
+          - book: Philemon
+            ranges: [{begin: {chapter: 1, verse: 9}, end: {chapter: 1, verse: 10}}]
+            ref: "Philemon 9-10"'
+if ! out="$(run_tool check --root calendars 2>&1)"; then
+	echo "a ref spelled differently from its canonical parse must pass: $out" >&2
+	exit 1
+fi
+
+# Ranges moved to another psalm while the printed reference stays put. This is
+# the defect the check exists for, and the complaint names both readings and
+# rules on neither: which is right is a question about the missal.
+passage '          - book: Psalms
+            ranges: [{begin: {chapter: 30, verse: 2}, end: {chapter: 30, verse: 4}}]
+            ref: "Psalm 24:1-3"'
+if out="$(run_tool check --root calendars 2>&1)"; then
+	echo "expected check to refuse ranges that disagree with their ref" >&2
+	exit 1
+fi
+case "$out" in
+*"derives 24:1-24:3"*"stores 30:2-30:4"*) ;;
+*) echo "expected both readings in the complaint, got: $out" >&2; exit 1 ;;
+esac
+
+# A dropped selection, and a dropped part-verse letter: neither changes a
+# number the eye compares, and both change what is fetched.
+passage '          - book: Psalms
+            ranges: [{begin: {chapter: 22, verse: 8}, end: {chapter: 22, verse: 9}}]
+            ref: "Psalm 22:8-9, 17-20"'
+if run_tool check --root calendars >/dev/null 2>&1; then
+	echo "expected check to refuse a ref carrying a selection the ranges drop" >&2
+	exit 1
+fi
+passage '          - book: Isaiah
+            ranges: [{begin: {chapter: 50, verse: 4}, end: {chapter: 50, verse: 9}}]
+            ref: "Isaiah 50:4-9a"'
+if run_tool check --root calendars >/dev/null 2>&1; then
+	echo "expected check to refuse a ref whose part letter the ranges drop" >&2
+	exit 1
+fi
+
+# The book is compared after alias resolution, so this is a real disagreement
+# and not a spelling: the ref names one book and the passage stores another.
+passage '          - book: Isaiah
+            ranges: [{begin: {chapter: 24, verse: 1}, end: {chapter: 24, verse: 3}}]
+            ref: "Psalm 24:1-3"'
+if out="$(run_tool check --root calendars 2>&1)"; then
+	echo "expected check to refuse a ref naming a different book" >&2
+	exit 1
+fi
+case "$out" in
+*"names book 'Psalms'"*"stores 'Isaiah'"*) ;;
+*) echo "expected the diverging book named both ways, got: $out" >&2; exit 1 ;;
+esac
+
+# A ref this parser cannot read is its own outcome, reported under its own
+# wording: nothing was derived, so there is nothing to disagree with, and
+# passing it would reopen the hole the check closes.
+passage '          - book: Psalms
+            ranges: [{begin: {chapter: 24, verse: 1}, end: {chapter: 24, verse: 3}}]
+            ref: "Psalm 24 verses one to three"'
+if out="$(run_tool check --root calendars 2>&1)"; then
+	echo "expected check to refuse a ref it cannot re-derive" >&2
+	exit 1
+fi
+case "$out" in
+*"cannot be re-derived"*) ;;
+*) echo "expected the unparseable ref reported as such, got: $out" >&2; exit 1 ;;
+esac
+
+# A malformed range owns its own complaint: re-deriving against it would bury
+# the defect under the disagreement it necessarily produces.
+passage '          - book: Psalms
+            ranges: [{begin: {chapter: 24, verse: 5}, end: {chapter: 24, verse: 2}}]
+            ref: "Psalm 24:1-3"'
+if out="$(run_tool check --root calendars 2>&1)"; then
+	echo "expected check to refuse a descending range" >&2
+	exit 1
+fi
+case "$out" in
+*"derives"*) echo "a malformed range must not also raise a ref disagreement: $out" >&2; exit 1 ;;
+*) ;;
+esac
+
 # A verse beyond its own system's psalm is a numbering leak: Hebrew Psalm 9
 # ends at verse 21 where the Vulgate runs to 39.
 mkdir -p leak/heb

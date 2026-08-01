@@ -15,7 +15,10 @@ list is a passage:
 `book` is the canonical Catholic-canon name. `ranges` holds one or more
 contiguous extents; a range may cross a chapter boundary, and a range with no
 verse denotes a whole chapter. `part` records a printed part-verse letter
-(8b, 3ac). `ref` is the edition's own display string, kept as a side field.
+(8b, 3ac). `ref` is the edition's own display string, kept as a side field —
+and `check` re-derives the passage from it, so a page cannot print one
+reference while fetching another. Only the parsed structure is compared, so an
+edition may spell a book however it prints it.
 
 Requires PyYAML (requirements-tools.txt).
 """
@@ -290,6 +293,99 @@ def parse_citation(text: str) -> dict[str, object]:
     return {"book": book, "ranges": ranges, "ref": stripped}
 
 
+def locus(marker: object) -> tuple[object, object, str]:
+    """One endpoint reduced to what a citation actually names.
+
+    A whole-chapter edge carries no verse and no printed part letter, and the
+    absent key and an empty one mean the same thing, so both normalize to the
+    same tuple. Comparing these rather than the mappings keeps the cross-check
+    blind to key order and to a written-out `part: ''`.
+    """
+    if not isinstance(marker, dict):
+        return (None, None, "")
+    return (marker.get("chapter"), marker.get("verse"), marker.get("part") or "")
+
+
+def extents(passage: dict) -> list[tuple[tuple, tuple]]:
+    """A passage's ranges as ordered begin/end loci."""
+    return [
+        (locus(extent.get("begin")), locus(extent.get("end")))
+        for extent in passage.get("ranges") or []
+        if isinstance(extent, dict)
+    ]
+
+
+def spell(bounds: list[tuple[tuple, tuple]]) -> str:
+    """Render loci for a complaint, naming no book.
+
+    The book is stated separately, and leaving it out here also keeps these
+    messages clear of the calendar checker's psalm-exception ledger, which
+    matches a `Psalm N:V` locus followed by a refusal verb. A ledger is for the
+    defect it records, and a disagreement between a reference and its ranges
+    must not be able to hide behind one.
+    """
+
+    def edge(point: tuple[object, object, str]) -> str:
+        chapter, verse, part = point
+        return f"{chapter}" if verse is None else f"{chapter}:{verse}{part}"
+
+    return ", ".join(f"{edge(begin)}-{edge(end)}" for begin, end in bounds) or "nothing"
+
+
+def check_ref_agrees(where: str, passage: dict, problems: list[str]) -> None:
+    """Re-derive the passage from its own `ref` and refuse a disagreement.
+
+    The structured form is the source of truth and `ref` is the edition's
+    display string, but nothing made the two agree: a page could print one
+    reference and fetch another, without limit and without failing anything.
+
+    What is compared is the **parsed structure**, never the strings. `ref` is
+    run back through this tool's own `parse_citation` — the one that encoded it
+    in the first place, so no second implementation can drift from it — and the
+    result is compared field by field:
+
+    - `book`, after alias resolution, so "Psalm" and "Psalms", "Cant" and
+      "Canticle of Canticles" agree; an edition may spell a book however it
+      prints it.
+    - `ranges`, as ordered begin/end loci of chapter, verse and part letter.
+      Whitespace, punctuation and the choice of `;` or `,` never reach the
+      comparison, because they do not survive parsing.
+
+    The complaint names which field diverged and gives both readings. It never
+    says which is right: that is a question about the missal, answerable only
+    against the missal, and harmonising a citation to itself would destroy the
+    evidence that they disagreed.
+
+    A `ref` this parser cannot read is a third outcome, reported under its own
+    wording rather than folded into a disagreement, because nothing was
+    derived to disagree with. The tracked calendars carry none today.
+    """
+    ref = passage.get("ref")
+    if not isinstance(ref, str) or not ref.strip():
+        return
+    try:
+        derived = parse_citation(ref)
+    except CitationError as error:
+        problems.append(
+            f"{where}: ref {ref!r} cannot be re-derived, so nothing checks it "
+            f"against the ranges beside it: {error}"
+        )
+        return
+    # A book the passage spells wrongly is already reported above; saying it
+    # again here would count one defect twice.
+    if passage.get("book") in CANONICAL and derived["book"] != passage["book"]:
+        problems.append(
+            f"{where}: ref {ref!r} names book {derived['book']!r}, "
+            f"but the passage stores {passage['book']!r}"
+        )
+    stored, wanted = extents(passage), extents(derived)
+    if stored != wanted:
+        problems.append(
+            f"{where}: ref {ref!r} derives {spell(wanted)}, "
+            f"but the passage stores {spell(stored)}"
+        )
+
+
 def check_passage(
     where: str, passage: object, problems: list[str], numbering: str | None = None
 ) -> None:
@@ -317,6 +413,7 @@ def check_passage(
                 trouble = validate_psalm(point.get("chapter"), point.get("verse"), numbering)
                 if trouble:
                     problems.append(f"{where}/{edge}: {trouble}")
+    structural = len(problems)
     for index, extent in enumerate(ranges):
         scope = f"{where}/range[{index}]"
         if not isinstance(extent, dict):
@@ -357,6 +454,14 @@ def check_passage(
     ref = passage.get("ref")
     if ref is not None and (not isinstance(ref, str) or not ref.strip()):
         problems.append(f"{where}: ref must be a nonempty string when present")
+        return
+    # A malformed range has nothing to compare against, and reporting the
+    # disagreement it necessarily produces would bury the defect that caused
+    # it. The psalm-numbering complaints above are not structural: a locus the
+    # calendar's own numbering refuses is still a locus, and its ref is still
+    # owed the cross-check.
+    if len(problems) == structural:
+        check_ref_agrees(where, passage, problems)
 
 
 def iter_masses(document: dict) -> list:
