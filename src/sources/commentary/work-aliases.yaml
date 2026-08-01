@@ -15,7 +15,7 @@
 # new grouping has been looked at.
 schema: triptych-commentary-work-aliases/v1
 derived_on: '2026-07-31'
-evidence_sha256: 8d7de9569baa101875f511a47bbfbc133ff7291b6dd4c9ae1e0e24fbfbe4431a
+evidence_sha256: 6a9af2d38d5a14ee58440b8d3e3de175305e377e1284a355f6f999b57f9497ba
 review:
   ambiguous_titles:
   - author: Peter Lombard
@@ -88,33 +88,6 @@ review:
     - Praelectiones in Jeremiam prophetam
     reason: The third of the same three, joined for the same reason.
   canonical_titles:
-  - author: Thomas Aquinas
-    instead_of: Super Epistolam ad Romanos lectura
-    title: Super Epistolas S. Pauli lectura
-    reason: 'One work over ten epistles, named after the first of them. Derivation takes the
-      most-used title and Romans is what the missals quote, so 242 uses across the Pauline
-      corpus were filed under the Romans lectura. The collected commentary is printed as Super
-      epistolas S. Pauli lectura (Marietti, ed. R. Cai, 8th revised edition, Turin-Rome 1953,
-      2 vols), which is the title taken here. The grouping is not in question: the runs themselves
-      assert Expositio in omnes S. Pauli epistolas as one of its names.'
-  - author: Theophylact of Ohrid
-    instead_of: Expositio in epistulam ad Romanos
-    title: In omnes D. Pauli apostoli epistolas enarrationes
-    reason: 'The same defect as the Aquinas entry, on the same corpus: 140 uses over the ten
-      epistles named after Romans. The standard Latin form is Lonicerus''s version, Theophylacti
-      Bulgariae archiepiscopi in omnes D. Pauli apostoli epistolas enarrationes (Cologne,
-      Cervicornus 1532, and the reprints behind Migne PG 124-125). Migne''s own short heading,
-      Expositio in epistolas S. Pauli, is not used here: two other Theophylact groups already
-      carry that name, and one title may not reach two groups.'
-  - author: Theophylact of Ohrid
-    instead_of: Expositio in epistulam Iacobi
-    title: Commentarius in epistulas catholicas
-    reason: 'Nine uses over James, 1 Peter and 1 John under the name of James alone, which
-      the check does not reach: the words that would prove it, petri and ioannis, are used
-      too narrowly to qualify as book names, so this one was found by measuring the promoted
-      index rather than by the gate. Migne''s heading, Expositio in epistolas catholicas,
-      is already another Theophylact group''s canonical title, so this group takes the whole-naming
-      title it already holds.'
   - author: Albert the Great
     instead_of: Commentarii in Amos prophetam
     title: Commentarii in duodecim prophetas minores
@@ -141,6 +114,25 @@ review:
     instead_of: Expositio super Isaiam
     title: Expositio in Ezechielem et Isaiam
     reason: Isaiah and Ezekiel under the name of Isaiah, and the group holds the name of both.
+  - author: Augustin Calmet
+    instead_of: 'Commentaire littéral sur tous les livres de l''Ancien et du Nouveau Testament:
+      la Genèse'
+    title: Commentaire littéral sur tous les livres de l'Ancien et du Nouveau Testament
+    reason: The Aquinas defect again, and this time Genesis caused it. Calmet's commentary
+      is one work over the whole canon, published in twenty-three volumes at Paris between
+      1707 and 1716, and its group holds fifty-seven names reaching Exodus, Leviticus, Numbers,
+      Job, Wisdom, Isaiah, Jeremiah, Daniel, Osee, Zacharias, the twelve minor prophets, the
+      Maccabees and Acts. Harvesting all fifty chapters of Genesis made the Genesis volume's
+      title the most-used one, so derivation named the whole after the part and Rule 8 refused
+      it. The title taken here is the group's own name for the whole, which the runs assert
+      in French and in Latin alike. The grouping is not in question; only the name was.
+  - author: Augustine of Hippo
+    instead_of: 'Locutiones in Heptateuchum, Liber I: Locutiones de Genesi'
+    title: Locutionum in Heptateuchum libri septem
+    reason: One work in seven books over the seven books of the Heptateuch, named after the
+      first. Its own group holds Locutiones de Exodo and Locutiones de Numeris, so the Genesis
+      book cannot be the name of the whole. The title taken here is the group's own name for
+      the collected work, as Migne prints it at PL 34.
   - author: Bruno of Segni
     instead_of: Expositio in Leviticum
     title: Expositio in Pentateuchum
@@ -150,6 +142,19 @@ review:
     title: Complexiones in epistulas et acta apostolorum et apocalypsin
     reason: The Complexiones are one work over the Epistles, Acts and the Apocalypse; the
       group reaches Acts and the Apocalypse and was named for Acts alone.
+  - author: Cyril of Alexandria
+    instead_of: Glaphyra in Genesim
+    title: Glaphyra in Pentateuchum
+    reason: The Glaphyra are one work of thirteen books over the Pentateuch, of which seven
+      are on Genesis; the group reaches Exodus, Leviticus, Numbers and Deuteronomy as well.
+      Genesis dominated the derivation only because Genesis is what was harvested. The title
+      taken here is the group's own name for the whole, as Migne prints it at PG 69.
+  - author: Ephrem the Syrian
+    instead_of: Commentary on Genesis
+    title: Commentarii in Genesim et in Exodum
+    reason: The Syriac commentary is transmitted as one work on Genesis and Exodus together,
+      and the group's own names say so. Naming it for Genesis alone would hide the Exodus
+      half, which is the same defect the Aquinas entry records.
   - author: Jacques-Bénigne Bossuet
     instead_of: 'Libri Salomonis: Sapientia (notes and exposition)'
     title: Libri Salomonis, Proverbia, Ecclesiastes, Canticum Canticorum, Sapientia, Ecclesiasticus,
@@ -165,13 +170,6 @@ review:
       check knows, so that name reads as naming Lamentations alone and would trade one part-naming
       title for another. The English name of the whole is exact and is what the group takes.'
   - author: Juan Maldonado
-    instead_of: Commentarii in Jeremiam prophetam
-    title: 'Commentarii in prophetas quatuor: Ieremiam, Baruch, Ezechielem et Danielem'
-    reason: Jeremiah, Baruch, Ezekiel and Daniel under the name of Jeremiah. Maldonado's four
-      prophets stand in three groups, one per spelling of the same work; each is renamed to
-      the whole-naming name it holds rather than merged, because merging is an assertion about
-      the works and renaming is not.
-  - author: Juan Maldonado
     instead_of: Commentarii in Ieremiam prophetam
     title: 'Maldonatus, Commentarii in prophetas quatuor: Ieremiam, Baruch, Ezechielem, Danielem'
     reason: The second spelling of the same work, with the only whole-naming name that group
@@ -181,17 +179,24 @@ review:
     title: 'Maldonatus, Commentarii in prophetas IV: Ieremiam, Baruch, Ezechielem, Danielem'
     reason: The third spelling of the same work, with the only whole-naming name that group
       holds.
+  - author: Juan Maldonado
+    instead_of: Commentarii in Jeremiam prophetam
+    title: 'Commentarii in prophetas quatuor: Ieremiam, Baruch, Ezechielem et Danielem'
+    reason: Jeremiah, Baruch, Ezekiel and Daniel under the name of Jeremiah. Maldonado's four
+      prophets stand in three groups, one per spelling of the same work; each is renamed to
+      the whole-naming name it holds rather than merged, because merging is an assertion about
+      the works and renaming is not.
+  - author: Julian of Eclanum
+    instead_of: Tractatus in Osee, Iohel et Amos
+    title: Expositio libri Iob et tractatus prophetarum Osee, Iohel et Amos
+    reason: A second Julian group, reaching Job as well as the prophets, named after the prophets
+      alone. The name of both is the one the group already holds.
   - author: Julian of Eclanum
     instead_of: Tractatus prophetarum Osee, Iohel et Amos
     title: Commentary on Hosea, Joel and Amos
     reason: 'The group reaches Hosea, Joel and Amos and was named after two of the three.
       Only the English name of the three is read as naming all of them: the Latin names in
       the group spell Joel Iohel, which is not among the forms the coverage check knows.'
-  - author: Julian of Eclanum
-    instead_of: Tractatus in Osee, Iohel et Amos
-    title: Expositio libri Iob et tractatus prophetarum Osee, Iohel et Amos
-    reason: A second Julian group, reaching Job as well as the prophets, named after the prophets
-      alone. The name of both is the one the group already holds.
   - author: Martin Luther
     instead_of: 'Praelectiones in prophetas minores: in Michaeam'
     title: Praelectiones in prophetas minores
@@ -201,6 +206,53 @@ review:
     title: Ghislerius, In Ieremiam prophetam commentarii, item in Baruch et Threnos
     reason: Jeremiah, Baruch and Lamentations under the name of Jeremiah, the same defect
       Theodoret's group carries and on the same three books.
+  - author: Peter Comestor
+    instead_of: 'Historia Scholastica: Historia libri Genesis'
+    title: Historia Scholastica
+    reason: The Historia Scholastica is one continuous history over the whole biblical narrative;
+      its group holds the Exodus and Daniel books. The part cannot name the whole, and the
+      group already carries the whole's name.
+  - author: Procopius of Gaza
+    instead_of: Commentary on Genesis
+    title: Commentarii in Octateuchum
+    reason: Procopius's epitome runs over the Octateuch, and the group reaches Exodus, Leviticus,
+      Numbers and Deuteronomy. The Genesis portion is the part that survives best and is what
+      the Genesis harvest asked about, which is exactly why derivation picked it.
+  - author: Rupert of Deutz
+    instead_of: 'De sancta Trinitate et operibus eius: In Genesim'
+    title: De sancta Trinitate et operibus eius
+    reason: 'Rupert''s Genesis exposition is books I to IX of a forty-two book treatise, and
+      the group reaches Exodus, Leviticus, Numbers and the twelve minor prophets because the
+      same treatise contains those too. This is the case src/sources/commentary/pilot-genesis/licence-survey.md
+      singles out as the sharpest test in its set: the work identity, the extent and the container
+      are three different things, and only the first of them is a name.'
+  - author: Theophylact of Ohrid
+    instead_of: Expositio in epistulam Iacobi
+    title: Commentarius in epistulas catholicas
+    reason: 'Nine uses over James, 1 Peter and 1 John under the name of James alone, which
+      the check does not reach: the words that would prove it, petri and ioannis, are used
+      too narrowly to qualify as book names, so this one was found by measuring the promoted
+      index rather than by the gate. Migne''s heading, Expositio in epistolas catholicas,
+      is already another Theophylact group''s canonical title, so this group takes the whole-naming
+      title it already holds.'
+  - author: Theophylact of Ohrid
+    instead_of: Expositio in epistulam ad Romanos
+    title: In omnes D. Pauli apostoli epistolas enarrationes
+    reason: 'The same defect as the Aquinas entry, on the same corpus: 140 uses over the ten
+      epistles named after Romans. The standard Latin form is Lonicerus''s version, Theophylacti
+      Bulgariae archiepiscopi in omnes D. Pauli apostoli epistolas enarrationes (Cologne,
+      Cervicornus 1532, and the reprints behind Migne PG 124-125). Migne''s own short heading,
+      Expositio in epistolas S. Pauli, is not used here: two other Theophylact groups already
+      carry that name, and one title may not reach two groups.'
+  - author: Thomas Aquinas
+    instead_of: Super Epistolam ad Romanos lectura
+    title: Super Epistolas S. Pauli lectura
+    reason: 'One work over ten epistles, named after the first of them. Derivation takes the
+      most-used title and Romans is what the missals quote, so 242 uses across the Pauline
+      corpus were filed under the Romans lectura. The collected commentary is printed as Super
+      epistolas S. Pauli lectura (Marietti, ed. R. Cai, 8th revised edition, Turin-Rome 1953,
+      2 vols), which is the title taken here. The grouping is not in question: the runs themselves
+      assert Expositio in omnes S. Pauli epistolas as one of its names.'
   - author: Thomas de Vio Cajetan
     instead_of: 'Commentarii in Pentateuchum: In Leviticum'
     title: Commentarii illustres in quinque Mosaicos libros
@@ -208,12 +260,14 @@ review:
 groups:
 - author: Adam Clarke
   work: The Holy Bible with a Commentary and Critical Notes
-  uses: 4
-  attested_by: 2
+  uses: 9
+  attested_by: 5
   titles:
   - clarke's commentary
+  - clarke's commentary on the bible
   - 'commentary on the bible: jeremiah'
   - the holy bible with a commentary and critical notes
+  - 'the holy bible with a commentary and critical notes: genesis'
   - 'the holy bible with a commentary and critical notes: jeremiah'
 - author: Albert Barnes
   work: Notes, Critical, Illustrative and Practical, on the Book of Job
@@ -458,6 +512,16 @@ groups:
   - commentary on lamentations
   - postilla super threnos
 - author: Alcuin of York
+  work: Interrogationes et responsiones in Genesim
+  uses: 159
+  attested_by: 10
+  titles:
+  - in genesim quaestiones
+  - interrogationes et responsiones in genesim
+  - interrogationes et responsiones in genesin
+  - quaestiones in genesim
+  - questions and answers on genesis
+- author: Alcuin of York
   work: Commentaria in S. Ioannis Evangelium
   uses: 42
   attested_by: 6
@@ -471,16 +535,6 @@ groups:
   - expositio in evangelium iohannis
   - expositio in ioannem
   - in ioannis evangelium commentariorum libri vii
-- author: Alcuin of York
-  work: Interrogationes et responsiones in Genesim
-  uses: 22
-  attested_by: 6
-  titles:
-  - in genesim quaestiones
-  - interrogationes et responsiones in genesim
-  - interrogationes et responsiones in genesin
-  - quaestiones in genesim
-  - questions and answers on genesis
 - author: Alcuin of York
   work: Expositio in psalmos poenitentiales, in psalmum CXVIII et in psalmos graduales
   uses: 14
@@ -501,21 +555,34 @@ groups:
   titles:
   - commentaria super ecclesiasten
   - expositio in ecclesiasten
+- author: Alfonso Tostado
+  work: Commentary on Genesis
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentaria in genesim
+  - commentary on genesis
+  - tostatus, in genesim
 - author: Alonso Tostado
   work: Tostatus, Commentaria in Pentateuchum
-  uses: 11
-  attested_by: 3
+  uses: 26
+  attested_by: 7
   titles:
   - abulensis
   - alfonso de madrigal, in leviticum
   - alfonso tostado de madrigal
+  - alfonso tostado de madrigal, in genesim
   - alfonso tostado de madrigal, in leviticum
   - alphonsus tostatus abulensis
+  - alphonsus tostatus abulensis, in genesim
   - alphonsus tostatus abulensis, in leviticum
+  - alphonsus tostatus, commentary on genesis
   - commentaria in exodum
   - commentaria in genesim
   - commentaria in leviticum
   - commentaria in numeros
+  - commentaria in pentateuchum
+  - commentaria in primam partem genesis
   - commentaries on numbers
   - commentary on exodus
   - commentary on genesis
@@ -526,6 +593,9 @@ groups:
   - 'tostatus abulensis, opera omnia: in leviticum'
   - tostatus, commentaria in leviticum
   - tostatus, commentaria in pentateuchum
+  - tostatus, commentary on genesis
+  - tostatus, in genesim
+  - 'tostatus, opera omnia: in genesim'
 - author: Alphonsus Liguori
   work: Commentary on the Psalms and Canticles of the Divine Office
   uses: 1
@@ -559,6 +629,27 @@ groups:
   - in lucam libri decem
   - tractatus in lucam
 - author: Ambrose of Milan
+  work: De Abraham
+  uses: 48
+  attested_by: 6
+  titles:
+  - de abraham
+  - de abraham libri duo
+  - libri duo de abraham
+  - on abraham
+- author: Ambrose of Milan
+  work: De Ioseph
+  uses: 34
+  attested_by: 7
+  titles:
+  - de ioseph
+  - de ioseph patriarcha
+  - de joseph
+  - de joseph patriarcha
+  - joseph the patriarch
+  - on joseph
+  - on joseph the patriarch
+- author: Ambrose of Milan
   work: Explanatio Psalmorum XII
   uses: 27
   attested_by: 6
@@ -572,21 +663,45 @@ groups:
   - explanation of twelve psalms
   - exposition of twelve psalms
 - author: Ambrose of Milan
-  work: De Abraham
-  uses: 14
-  attested_by: 3
+  work: De Noe et arca
+  uses: 15
+  attested_by: 6
   titles:
-  - de abraham
-  - de abraham libri duo
-  - on abraham
+  - de noe
+  - de noe et arca
+  - liber de noe et arca
+  - on noah and the ark
+- author: Ambrose of Milan
+  work: De Iacob et vita beata
+  uses: 14
+  attested_by: 7
+  titles:
+  - de iacob et vita beata
+  - de jacob et vita beata
+  - jacob and the happy life
+  - on jacob and the blessed life
+  - on jacob and the happy life
 - author: Ambrose of Milan
   work: De paradiso
-  uses: 5
-  attested_by: 3
+  uses: 11
+  attested_by: 6
   titles:
   - de paradiso
   - liber de paradiso
   - on paradise
+- author: Ambrose of Milan
+  work: Hexameron
+  uses: 7
+  attested_by: 6
+  titles:
+  - exameron
+  - hexaemeron
+  - hexaemeron libri sex
+  - hexameron
+  - hexameron libri sex
+  - homilies on the six days
+  - libri sex in hexaemeron
+  - six days of creation
 - author: Ambrose of Milan
   work: Apologia prophetae David
   uses: 4
@@ -601,13 +716,6 @@ groups:
   - the apology of the prophet david
   - the prophet david's apology
 - author: Ambrose of Milan
-  work: De Iacob et vita beata
-  uses: 4
-  attested_by: 4
-  titles:
-  - de iacob et vita beata
-  - on jacob and the happy life
-- author: Ambrose of Milan
   work: Expositio Psalmi CXVIII
   uses: 4
   attested_by: 3
@@ -619,17 +727,14 @@ groups:
   - expositio psalmi cxviii
   - exposition of psalm 118
 - author: Ambrose of Milan
-  work: Hexameron
-  uses: 4
+  work: De Cain et Abel
+  uses: 3
   attested_by: 3
   titles:
-  - exameron
-  - hexaemeron
-  - hexaemeron libri sex
-  - hexameron
-  - hexameron libri sex
-  - homilies on the six days
-  - six days of creation
+  - cain and abel
+  - de cain et abel
+  - de cain et abel libri duo
+  - on cain and abel
 - author: Ambrose of Milan
   work: De Elia et ieiunio
   uses: 3
@@ -638,24 +743,21 @@ groups:
   - de elia et ieiunio
   - on elijah and fasting
 - author: Ambrose of Milan
-  work: De Ioseph
+  work: De patriarchis
   uses: 3
   attested_by: 3
   titles:
-  - de ioseph
-  - de ioseph patriarcha
-  - joseph the patriarch
-  - on joseph
-  - on joseph the patriarch
+  - de benedictionibus patriarcharum
+  - de patriarchis
+  - on the patriarchs
 - author: Ambrose of Milan
-  work: De Noe et arca
-  uses: 3
-  attested_by: 3
+  work: De Isaac vel anima
+  uses: 1
+  attested_by: 1
   titles:
-  - de noe
-  - de noe et arca
-  - liber de noe et arca
-  - on noah and the ark
+  - de isaac et anima
+  - de isaac vel anima
+  - on isaac, or the soul
 - author: Ambrosiaster
   work: Commentarius in xiii epistulas Paulinas
   uses: 24
@@ -664,6 +766,16 @@ groups:
   - commentaria in epistolas b. pauli
   - commentarius in epistulas paulinas
   - commentarius in xiii epistulas paulinas
+- author: Anastasius of Sinai
+  work: Hexaemeron
+  uses: 2
+  attested_by: 2
+  titles:
+  - anagogicae contemplationes in hexaemeron
+  - anagogical contemplations on the hexaemeron
+  - hexaemeron
+  - in hexaemeron anagogicarum contemplationum libri duodecim
+  - in hexaemeron libri duodecim
 - author: Andrew of Caesarea
   work: Commentarius in Apocalypsin
   uses: 12
@@ -695,6 +807,15 @@ groups:
   - expositiones historicae in exodum
   - expositiones historicae in heptateuchum
 - author: Andrew of Saint Victor
+  work: 'Expositio super Heptateuchum: In Genesim'
+  uses: 3
+  attested_by: 3
+  titles:
+  - expositio hystorica in librum genesis
+  - expositio in heptateuchum
+  - 'expositio super heptateuchum: in genesim'
+  - expositiones historicae in genesim
+- author: Andrew of Saint Victor
   work: Expositio super duodecim prophetas
   uses: 1
   attested_by: 1
@@ -709,6 +830,14 @@ groups:
   titles:
   - andreas de sancto victore
   - 'expositio super duodecim prophetas: in osee'
+- author: Andrew of Saint Victor
+  work: 'Exposition on the Heptateuch: Genesis'
+  uses: 1
+  attested_by: 1
+  titles:
+  - expositio in genesim
+  - expositio super heptateuchum
+  - 'exposition on the heptateuch: genesis'
 - author: Andrew of St Victor
   work: 'Expositio super Heptateuchum: in Leviticum'
   uses: 1
@@ -724,19 +853,32 @@ groups:
   - expositio in isaiam
   - expositio super isaiam
 - author: Angelomus of Luxeuil
+  work: Commentarius in Genesim
+  uses: 34
+  attested_by: 6
+  titles:
+  - commentarii in genesim
+  - commentarii in genesin
+  - commentarius in genesim
+  - commentarius in genesin
+  - commentary on genesis
+- author: Angelomus of Luxeuil
   work: Enarrationes in libros Regum
   uses: 12
   attested_by: 1
   titles:
   - commentarius in libros regum
   - enarrationes in libros regum
-- author: Angelomus of Luxeuil
-  work: Commentarius in Genesim
+- author: Anselm of Laon
+  work: Glossa ordinaria in Genesim
   uses: 2
-  attested_by: 2
+  attested_by: 1
   titles:
-  - commentarius in genesim
-  - commentary on genesis
+  - attributed to walafrid strabo
+  - biblia latina cum glossa ordinaria
+  - glossa ordinaria
+  - glossa ordinaria in genesim
+  - ordinary gloss on genesis
 - author: Anselm of Laon
   work: Glossa Ordinaria on Jeremiah
   uses: 1
@@ -811,19 +953,26 @@ groups:
   - orationes contra arianos
 - author: Augustin Calmet
   work: Commentaire littéral sur tous les livres de l'Ancien et du Nouveau Testament
-  uses: 53
-  attested_by: 3
+  uses: 135
+  attested_by: 7
   titles:
   - calmet on daniel
+  - calmet on genesis
   - calmet on jeremiah
   - calmet on leviticus
   - calmet on the book of wisdom
   - calmet's literal commentary
+  - calmet, commentaire litteral sur la genese
   - calmet, commentaire littéral
+  - commentaire litteral sur la genese
   - commentaire litteral sur tous les livres de l'ancien et du nouveau testament
+  - 'commentaire litteral sur tous les livres de l''ancien et du nouveau testament: genese'
+  - 'commentaire litteral sur tous les livres de l''ancien et du nouveau testament: la genese'
+  - 'commentaire litteral: genese'
   - commentaire littéral
   - commentaire littéral sur isaïe
   - commentaire littéral sur jérémie
+  - commentaire littéral sur la genèse
   - commentaire littéral sur le livre de job
   - commentaire littéral sur le lévitique
   - commentaire littéral sur les actes des apôtres
@@ -834,6 +983,7 @@ groups:
   - commentaire littéral sur tous les livres de l'ancien et du nouveau testament, on isaiah
   - 'commentaire littéral sur tous les livres de l''ancien et du nouveau testament: daniel'
   - 'commentaire littéral sur tous les livres de l''ancien et du nouveau testament: exode'
+  - 'commentaire littéral sur tous les livres de l''ancien et du nouveau testament: genèse'
   - 'commentaire littéral sur tous les livres de l''ancien et du nouveau testament: isaiah'
   - 'commentaire littéral sur tous les livres de l''ancien et du nouveau testament: l''exode'
   - 'commentaire littéral sur tous les livres de l''ancien et du nouveau testament: la genèse'
@@ -848,11 +998,17 @@ groups:
   - 'commentaire littéral sur tous les livres de l''ancien et du nouveau testament: lévitique'
   - 'commentaire littéral sur tous les livres de l''ancien et du nouveau testament: osée'
   - 'commentaire littéral sur tous les livres de l''ancien et du nouveau testament: zacharie'
+  - commentarius literalis in genesim
   - commentarius literalis in leviticum
   - commentarius literalis in omnes libros veteris et novi testamenti
+  - commentarius literalis in omnes libros veteris testamenti
+  - commentarius litteralis in genesim
   - commentarius litteralis in isaiam
+  - commentarius litteralis in omnes libros veteri et novi testamenti
   - commentarius litteralis in omnes libros veteris et novi testamenti
   - 'commentarius litteralis in omnes libros veteris et novi testamenti: exodus'
+  - commentarius litteralis in omnes libros veteris testamenti
+  - 'commentarius litteralis in omnes libros veteris testamenti: genesis'
   - literal commentary on all the books of the old and new testament
   - 'literal commentary on all the books of the old and new testament: genesis'
   - 'literal commentary on all the books of the old and new testament: leviticus'
@@ -899,9 +1055,10 @@ groups:
   - sermones in psalmos
 - author: Augustine of Hippo
   work: Quaestiones in Heptateuchum
-  uses: 135
-  attested_by: 6
+  uses: 275
+  attested_by: 10
   titles:
+  - locutiones et quaestiones in genesim
   - locutiones et quaestiones in heptateuchum
   - locutiones in heptateuchum
   - locutionum et quaestionum in heptateuchum libri septem
@@ -910,10 +1067,14 @@ groups:
   - quaestiones in deuteronomium
   - quaestiones in exodum
   - quaestiones in genesim
+  - quaestiones in genesin
   - quaestiones in heptateuchum
   - quaestiones in heptateuchum, book i
+  - quaestiones in heptateuchum, book i (quaestiones in genesim)
+  - 'quaestiones in heptateuchum, book i: quaestiones in genesim'
   - 'quaestiones in heptateuchum, book iii: quaestiones de levitico'
   - quaestiones in heptateuchum, liber i
+  - 'quaestiones in heptateuchum, liber i: quaestiones in genesim'
   - quaestiones in heptateuchum, liber ii
   - quaestiones in heptateuchum, liber iii
   - 'quaestiones in heptateuchum, liber iii: quaestiones de levitico'
@@ -921,12 +1082,15 @@ groups:
   - 'quaestiones in heptateuchum, liber iv: quaestiones in numeros'
   - quaestiones in heptateuchum, liber v
   - quaestiones in heptateuchum, liber vi
+  - 'quaestiones in heptateuchum: quaestiones in genesim'
   - quaestiones in iesum nave
   - quaestiones in iosue
   - quaestiones in leviticum
   - quaestiones in numeros
+  - quaestionum in heptateuchum liber i
   - quaestionum in heptateuchum liber ii
   - quaestionum in heptateuchum libri septem
+  - quaestionum in heptateuchum libri vii
   - questions on deuteronomy
   - questions on exodus
   - questions on genesis
@@ -934,6 +1098,9 @@ groups:
   - questions on leviticus
   - questions on numbers
   - questions on the heptateuch
+  - questions on the heptateuch, book i
+  - questions on the heptateuch, book i (genesis)
+  - questions on the heptateuch, book i (questions on genesis)
   - 'questions on the heptateuch, book i: questions on genesis'
   - 'questions on the heptateuch, book iii: questions on leviticus'
   - 'questions on the heptateuch, book iv: questions on numbers'
@@ -986,6 +1153,28 @@ groups:
   - quaestionum evangeliorum libri duo
   - questions on the gospels
 - author: Augustine of Hippo
+  work: De Genesi ad litteram
+  uses: 18
+  attested_by: 6
+  titles:
+  - de genesi ad litteram
+  - de genesi ad litteram libri duodecim
+  - on genesis according to the letter
+  - 'on genesis: a literal commentary'
+  - 'on genesis: a literal commentary in twelve books'
+  - on the literal interpretation of genesis
+  - on the literal meaning of genesis
+  - the literal interpretation of genesis
+  - the literal meaning of genesis
+- author: Augustine of Hippo
+  work: De Genesi contra Manichaeos
+  uses: 18
+  attested_by: 6
+  titles:
+  - de genesi adversus manichaeos
+  - de genesi contra manichaeos
+  - on genesis against the manichees
+- author: Augustine of Hippo
   work: Expositio epistulae ad Galatas
   uses: 18
   attested_by: 3
@@ -1015,23 +1204,6 @@ groups:
   - tractatus in epistolam ioannis ad parthos
   - tractatus in epistulam ioannis ad parthos
 - author: Augustine of Hippo
-  work: De Genesi ad litteram
-  uses: 9
-  attested_by: 3
-  titles:
-  - de genesi ad litteram
-  - de genesi ad litteram libri duodecim
-  - on the literal interpretation of genesis
-  - the literal meaning of genesis
-- author: Augustine of Hippo
-  work: De Genesi contra Manichaeos
-  uses: 9
-  attested_by: 3
-  titles:
-  - de genesi adversus manichaeos
-  - de genesi contra manichaeos
-  - on genesis against the manichees
-- author: Augustine of Hippo
   work: De sermone Domini in monte
   uses: 9
   attested_by: 3
@@ -1046,6 +1218,23 @@ groups:
   - the lord's sermon on the mount
   - the sermon on the mount
 - author: Augustine of Hippo
+  work: Locutionum in Heptateuchum libri septem
+  uses: 9
+  attested_by: 6
+  titles:
+  - expressions in the heptateuch
+  - locutiones de exodo
+  - locutiones in exodum
+  - locutiones in heptateuchum, book i (locutiones de genesi)
+  - 'locutiones in heptateuchum, liber i: locutiones de genesi'
+  - 'locutiones in heptateuchum, liber ii: locutiones de exodo'
+  - 'locutiones in heptateuchum, liber iv: locutiones de numeris'
+  - locutiones in numeros
+  - locutions in the heptateuch
+  - locutions on the heptateuch
+  - locutionum in heptateuchum libri septem
+  - 'locutionum in heptateuchum libri septem, liber iv: locutiones de numeris'
+- author: Augustine of Hippo
   work: De civitate Dei
   uses: 6
   attested_by: 1
@@ -1053,18 +1242,6 @@ groups:
   - de civitate dei
   - de civitate dei contra paganos
   - the city of god
-- author: Augustine of Hippo
-  work: Locutions on the Heptateuch
-  uses: 4
-  attested_by: 3
-  titles:
-  - expressions in the heptateuch
-  - locutiones de exodo
-  - locutiones in exodum
-  - 'locutiones in heptateuchum, liber ii: locutiones de exodo'
-  - 'locutiones in heptateuchum, liber iv: locutiones de numeris'
-  - locutions on the heptateuch
-  - locutionum in heptateuchum libri septem
 - author: Augustine of Hippo
   work: Adnotationes in Iob
   uses: 3
@@ -1093,13 +1270,24 @@ groups:
   - sermon 343
   - sermon 343, on susanna and joseph
 - author: Augustine of Hippo
-  work: 'Locutionum in Heptateuchum libri septem, liber IV: Locutiones de Numeris'
+  work: De Genesi ad litteram imperfectus liber
   uses: 1
   attested_by: 1
   titles:
-  - locutiones in numeros
-  - locutions in the heptateuch
-  - 'locutionum in heptateuchum libri septem, liber iv: locutiones de numeris'
+  - de genesi ad litteram imperfectus liber
+  - 'on the literal interpretation of genesis: an unfinished book'
+  - unfinished literal commentary on genesis
+- author: Basil of Caesarea
+  work: Homiliae in Hexaemeron
+  uses: 2
+  attested_by: 2
+  titles:
+  - hexaemeron
+  - homiliae in hexaemeron
+  - homilies on the hexaemeron
+  - nine homilies on the hexaemeron
+  - nine homilies on the six days of creation
+  - on the six days of creation
 - author: Basil of Caesarea
   work: Commentary on Isaiah
   uses: 1
@@ -1131,13 +1319,14 @@ groups:
   - pseudo-basil, commentary on isaiah
 - author: Basil the Great
   work: Homiliae in Hexaemeron
-  uses: 3
-  attested_by: 3
+  uses: 4
+  attested_by: 4
   titles:
   - hexaemeron
   - homiliae in hexaemeron
   - homilies on the hexaemeron
   - in hexaemeron homiliae ix
+  - in hexaemeron homiliae novem
   - nine homilies on the hexaemeron
   - on the six days
 - author: Beatus of Liebana
@@ -1149,6 +1338,19 @@ groups:
   - commentarius in apocalypsin
   - commentary on the apocalypse
   - in apocalypsin libri duodecim
+- author: Bede
+  work: In principium Genesis
+  uses: 13
+  attested_by: 4
+  titles:
+  - commentary on genesis
+  - expositio in genesim
+  - hexaemeron
+  - in genesim
+  - in principium genesis
+  - libri quatuor in principium genesis
+  - libri quatuor in principium genesis usque ad nativitatem isaac
+  - on genesis
 - author: Bede
   work: In Lucae Evangelium expositio
   uses: 9
@@ -1188,16 +1390,6 @@ groups:
   - expositio super epistolas catholicas
   - in epistolas septem catholicas
   - in epistulas vii catholicas
-- author: Bede
-  work: In principium Genesis
-  uses: 4
-  attested_by: 1
-  titles:
-  - commentary on genesis
-  - expositio in genesim
-  - hexaemeron
-  - in principium genesis
-  - libri quatuor in principium genesis
 - author: Bede
   work: Expositio Apocalypseos
   uses: 2
@@ -1244,6 +1436,23 @@ groups:
   - expositio in proverbia
   - in proverbia salomonis
   - in proverbia salomonis libri tres
+- author: Bede the Venerable
+  work: In principium Genesis
+  uses: 77
+  attested_by: 6
+  titles:
+  - commentary on genesis
+  - hexaemeron
+  - in genesim
+  - in principium genesis
+  - in principium genesis libri quattuor
+  - in principium genesis usque ad nativitatem isaac
+  - in principium genesis usque ad nativitatem isaac et eiectionem ismahelis
+  - in principium genesis usque ad nativitatem isaac libri quattuor
+  - libri quattuor in principium genesis
+  - libri quatuor in principium genesis
+  - libri quatuor in principium genesis usque ad nativitatem isaac
+  - on genesis
 - author: Bede the Venerable
   work: In Lucae evangelium expositio
   uses: 66
@@ -1294,21 +1503,6 @@ groups:
   - in epistulam iacobi
   - in epistulas septem catholicas
   - super epistolas catholicas expositio
-- author: Bede the Venerable
-  work: In principium Genesis
-  uses: 23
-  attested_by: 3
-  titles:
-  - commentary on genesis
-  - hexaemeron
-  - in genesim
-  - in principium genesis
-  - in principium genesis libri quattuor
-  - in principium genesis usque ad nativitatem isaac
-  - libri quattuor in principium genesis
-  - libri quatuor in principium genesis
-  - libri quatuor in principium genesis usque ad nativitatem isaac
-  - on genesis
 - author: Bede the Venerable
   work: In Regum librum XXX quaestiones
   uses: 17
@@ -1396,6 +1590,27 @@ groups:
   - de templo salomonis
   - on the temple
 - author: Benedict Pereira
+  work: Commentariorum et disputationum in Genesim tomi quatuor
+  uses: 27
+  attested_by: 4
+  titles:
+  - benedictus pererius, commentaria in genesim
+  - benedictus pererius, commentary on genesis
+  - benedictus pererius, in genesim
+  - benito pereira, commentary on genesis
+  - commentaria in genesim
+  - commentaries and disputations on genesis
+  - commentariorum et disputationum in genesim
+  - commentariorum et disputationum in genesim tomi quattuor
+  - commentariorum et disputationum in genesim tomi quatuor
+  - commentary and disputations on genesis
+  - commentary on genesis
+  - disputationes in genesim
+  - in genesim commentarii
+  - pererius
+  - pererius, commentary on genesis
+  - pererius, in genesim
+- author: Benedict Pereira
   work: Commentariorum in Danielem prophetam libri sexdecim
   uses: 1
   attested_by: 1
@@ -1404,12 +1619,44 @@ groups:
   - commentariorum in danielem prophetam libri sexdecim
 - author: Benedict Pererius
   work: Commentaries and Disputations on Genesis
-  uses: 2
-  attested_by: 1
+  uses: 38
+  attested_by: 5
   titles:
+  - benedictus pererius on genesis
+  - benedictus pererius, commentaria in genesim
+  - benedictus pererius, in genesim
+  - benito pereira on genesis
+  - benito pereira, commentaria in genesim
+  - benito pereira, commentaries and disputations on genesis
+  - benito pereira, commentary on genesis
+  - benito pereira, in genesim
+  - bento pereira, commentary on genesis
+  - commentaria in genesim
   - commentaries and disputations on genesis
+  - commentariorum et disputationum in genesim
   - commentariorum et disputationum in genesim tomi quattuor
   - commentariorum et disputationum in genesim tomi quatuor
+  - commentary and disputations on genesis
+  - disputationes in genesim
+  - disputations on genesis
+  - in genesim commentarii
+- author: Benedictus Pererius
+  work: Commentariorum et disputationum in Genesim tomi quatuor
+  uses: 16
+  attested_by: 3
+  titles:
+  - benito pereira, commentaria in genesim
+  - benito pereira, commentaries and disputations on genesis
+  - benito pereira, commentaries on genesis
+  - benito pereira, commentariorum et disputationum in genesim tomi quatuor
+  - benito pereira, commentary on genesis
+  - benito pereira, in genesim
+  - commentaria in genesim
+  - commentaries and disputations on genesis
+  - commentariorum et disputationum in genesim
+  - commentariorum et disputationum in genesim tomi quattuor
+  - commentariorum et disputationum in genesim tomi quatuor
+  - in genesim
 - author: Benedictus Pererius
   work: Commentariorum in Danielem prophetam libri sexdecim
   uses: 4
@@ -1433,6 +1680,13 @@ groups:
   titles:
   - benedictus arias montanus
   - 'commentaria in duodecim prophetas: in osee'
+- author: Benito Pereira
+  work: Commentariorum et disputationum in Genesim tomi quatuor
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentariorum et disputationum in genesim tomi quatuor
+  - pererius, in genesim
 - author: Benito Pereira
   work: Commentariorum in Danielem prophetam libri sexdecim
   uses: 1
@@ -1496,6 +1750,55 @@ groups:
   - expositio in ecclesiasten
   - in ecclesiasten expositio
   - in librum ecclesiastes
+- author: Bonaventure
+  work: Collationes in Hexaemeron
+  uses: 1
+  attested_by: 1
+  titles:
+  - collationes in hexaemeron
+  - collationes in hexaëmeron seu illuminationes ecclesiae
+  - conferences on the hexaemeron
+- author: Bruno of Segni
+  work: Expositio in Pentateuchum
+  uses: 93
+  attested_by: 7
+  titles:
+  - bruno astensis
+  - bruno astensis, commentaria in genesim
+  - bruno astensis, expositio in pentateuchum
+  - 'bruno astensis, expositio in pentateuchum: genesis'
+  - bruno astensis, in exodum
+  - bruno astensis, in genesim
+  - bruno astensis, in leviticum
+  - bruno of asti
+  - bruno of asti, commentaria in genesim
+  - bruno of asti, commentarius in genesim
+  - bruno of asti, commentary on genesis
+  - bruno of asti, expositio in pentateuchum
+  - 'bruno of asti, expositio in pentateuchum: in genesim'
+  - bruno of asti, in genesim
+  - commentaria in exodum
+  - commentaria in genesim
+  - commentaria in pentateuchum
+  - commentarius in genesim
+  - commentary on genesis
+  - commentary on the pentateuch
+  - expositio in exodum
+  - expositio in genesim
+  - expositio in leviticum
+  - expositio in numeros
+  - expositio in pentateuchum
+  - 'expositio in pentateuchum: exodus'
+  - 'expositio in pentateuchum: genesis'
+  - 'expositio in pentateuchum: in genesim'
+  - 'expositio in pentateuchum: in numeros'
+  - exposition of exodus
+  - exposition of genesis
+  - exposition on exodus
+  - exposition on genesis
+  - exposition on leviticus
+  - exposition on the pentateuch
+  - in genesim
 - author: Bruno of Segni
   work: Commentaria in Matthaeum
   uses: 19
@@ -1505,25 +1808,6 @@ groups:
   - commentarius in evangelium matthaei
   - commentary on matthew
   - expositio in matthaeum
-- author: Bruno of Segni
-  work: Expositio in Pentateuchum
-  uses: 17
-  attested_by: 3
-  titles:
-  - bruno astensis, expositio in pentateuchum
-  - bruno astensis, in exodum
-  - bruno astensis, in leviticum
-  - commentaria in exodum
-  - expositio in exodum
-  - expositio in leviticum
-  - expositio in numeros
-  - expositio in pentateuchum
-  - 'expositio in pentateuchum: exodus'
-  - 'expositio in pentateuchum: in numeros'
-  - exposition of exodus
-  - exposition on exodus
-  - exposition on leviticus
-  - exposition on the pentateuch
 - author: Bruno of Segni
   work: Commentaria in Lucam
   uses: 8
@@ -1540,15 +1824,6 @@ groups:
   - commentaria in iohannem
   - commentary on john
   - expositio in ioannem
-- author: Bruno of Segni
-  work: Expositio in Genesim
-  uses: 3
-  attested_by: 2
-  titles:
-  - bruno of asti, commentary on genesis
-  - commentary on genesis
-  - expositio in genesim
-  - 'expositio in pentateuchum: in genesim'
 - author: Bruno of Segni
   work: Expositio in Apocalypsim
   uses: 2
@@ -1609,14 +1884,19 @@ groups:
   - expositio in omnes epistolas pauli
 - author: Caesarius of Arles
   work: Sermons on Genesis
-  uses: 3
-  attested_by: 2
+  uses: 21
+  attested_by: 5
   titles:
   - sermones 81-105
   - sermones de genesi
+  - sermones in genesim
   - sermons 81-105
+  - sermons 81-110
   - sermons on genesis
   - sermons on joseph
+  - sermons on the old testament
+  - sermons on the patriarch joseph
+  - sermons on the patriarchs
 - author: Caesarius of Arles
   work: Expositio in Apocalypsim
   uses: 2
@@ -1638,6 +1918,18 @@ groups:
   titles:
   - commentarius in librum prophetiarum jesaiae
   - commentary on isaiah
+- author: Carl Friedrich Keil
+  work: 'Biblical Commentary on the Old Testament: The Pentateuch'
+  uses: 7
+  attested_by: 3
+  titles:
+  - 'biblical commentary on the old testament: the pentateuch'
+  - 'biblical commentary on the old testament: the pentateuch (genesis)'
+  - biblischer commentar über die bücher mose's
+  - keil and delitzsch commentary on the old testament
+  - keil and delitzsch, commentary on genesis
+  - keil and delitzsch, commentary on the old testament
+  - keil and delitzsch, commentary on the pentateuch
 - author: Carl Friedrich Keil
   work: Biblischer Commentar über den Propheten Jeremia und die Klagelieder
   uses: 3
@@ -1671,6 +1963,14 @@ groups:
   - biblischer commentar über den propheten daniel
   - commentary on the book of daniel
   - keil and delitzsch, daniel
+- author: Carl Friedrich Keil
+  work: 'Biblischer Commentar über die Bücher Mose''s: Genesis'
+  uses: 1
+  attested_by: 1
+  titles:
+  - 'biblical commentary on the old testament: genesis'
+  - 'biblischer commentar über die bücher mose''s: genesis'
+  - 'keil and delitzsch, commentary on the old testament: the pentateuch'
 - author: Carl Friedrich Keil
   work: 'Biblischer Commentar über die Bücher Mose''s: Numeri'
   uses: 1
@@ -1760,8 +2060,8 @@ groups:
   - outlines on the catholic epistles
 - author: Cornelius a Lapide
   work: Commentaria in Scripturam Sacram
-  uses: 1180
-  attested_by: 6
+  uses: 1330
+  attested_by: 10
   titles:
   - commentaria in acta apostolorum
   - commentaria in acta apostolorum, epistolas canonicas et apocalypsin
@@ -1778,6 +2078,7 @@ groups:
   - commentaria in esdram, nehemiam, tobiam, iudith, esther et machabaeos
   - commentaria in esdram, nehemiam, tobiam, judith, esther et machabaeos
   - commentaria in exodum
+  - commentaria in genesim
   - commentaria in ieremiam prophetam
   - commentaria in ieremiam, threnos et baruch
   - commentaria in iosue, iudicum, ruth, iv libros regum et ii paralipomenon
@@ -1787,13 +2088,17 @@ groups:
   - commentaria in librum iob
   - commentaria in numeros
   - commentaria in omnes divi pauli epistolas
+  - commentaria in pentateuchum
   - commentaria in pentateuchum mosis
   - 'commentaria in pentateuchum mosis: exodus'
+  - 'commentaria in pentateuchum mosis: genesis'
   - 'commentaria in pentateuchum mosis: in exodum'
   - 'commentaria in pentateuchum mosis: in genesim'
   - 'commentaria in pentateuchum mosis: in leviticum'
   - 'commentaria in pentateuchum mosis: in numeros'
   - 'commentaria in pentateuchum mosis: leviticus'
+  - 'commentaria in pentateuchum: genesis'
+  - 'commentaria in pentateuchum: in genesim'
   - commentaria in proverbia salomonis
   - commentaria in psalmos
   - commentaria in quatuor evangelia
@@ -1812,12 +2117,17 @@ groups:
   - commentaria in scripturam sacram
   - commentaria in scripturam sacram (ieremias)
   - commentaria in scripturam sacram, on isaiah
+  - 'commentaria in scripturam sacram: genesis'
   - 'commentaria in scripturam sacram: in danielem'
+  - 'commentaria in scripturam sacram: in genesim'
   - 'commentaria in scripturam sacram: in ieremiam'
   - 'commentaria in scripturam sacram: isaias'
+  - 'commentaria in scripturam sacram: pentateuchus'
   - commentarii in sacram scripturam
   - commentarii in scripturam sacram
+  - commentarii in scripturam sacram, in genesim
   - 'commentarii in scripturam sacram: in danielem'
+  - 'commentarii in scripturam sacram: in genesim'
   - commentarius in actus apostolorum
   - commentarius in amos
   - commentarius in apocalypsim
@@ -1873,6 +2183,7 @@ groups:
   - commentarius in michaeam
   - commentarius in numeros
   - commentarius in osee
+  - commentarius in pentateuchum mosis
   - commentarius in primam epistolam ad corinthios
   - commentarius in primam epistolam ad thessalonicenses
   - commentarius in primam epistolam ad timotheum
@@ -1945,8 +2256,11 @@ groups:
   - commentary on the gospel of john
   - commentary on the minor prophets
   - commentary on the pentateuch
+  - commentary on the pentateuch (genesis)
   - commentary on the pentateuch of moses
   - 'commentary on the pentateuch: exodus'
+  - 'commentary on the pentateuch: genesis'
+  - 'commentary on the pentateuch: in genesim'
   - 'commentary on the pentateuch: leviticus'
   - commentary on titus
   - commentary on wisdom
@@ -1954,21 +2268,29 @@ groups:
   - commentary on zephaniah
   - cornelis cornelissen van den steen
   - cornelis cornelissen van den steen, commentaria in libros machabaeorum
+  - cornelis cornelissen van den steen, commentary on genesis
+  - cornelis cornelissen van den steen, in pentateuchum
   - cornelius cornelii a lapide
   - cornelius cornelii a lapide on wisdom
   - cornelius cornelii a lapide, commentaria in machabaeorum libros
+  - cornelius cornelii a lapide, commentaria in scripturam sacram
   - cornelius cornelii a lapide, commentary on exodus
+  - cornelius cornelii a lapide, commentary on genesis
   - cornelius cornelii a lapide, commentary on the minor prophets
   - cornelius cornelii a lapide, in amos
+  - cornelius cornelii a lapide, in genesim
+  - cornelius cornelii a lapide, in genesim commentarius
   - cornelius cornelii a lapide, in ioannem
   - cornelius cornelii a lapide, in pentateuchum
   - great commentary
+  - great commentary on genesis
   - great commentary on job
   - great commentary on matthew
   - great commentary on the gospel of john
   - great commentary on the minor prophets
   - in danielem
   - in exodum
+  - in genesim
   - in ieremiam
   - in michaeam
   - in xii prophetas minores
@@ -1984,27 +2306,15 @@ groups:
   - de dominica oratione
   - on the lord's prayer
 - author: Cyril of Alexandria
-  work: Commentarius in Isaiam
-  uses: 105
-  attested_by: 6
-  titles:
-  - commentarius in isaiam
-  - commentarius in isaiam prophetam
-  - commentary on isaiah
-  - explanatio in isaiam
-  - explanatio in isaiam prophetam
-  - in isaiam commentarius
-  - in isaiam prophetam
-  - in isaiam prophetam commentarius
-- author: Cyril of Alexandria
   work: Glaphyra in Pentateuchum
-  uses: 85
-  attested_by: 6
+  uses: 210
+  attested_by: 10
   titles:
   - elegant comments on exodus
   - elegant comments on genesis
   - elegant comments on leviticus
   - elegant comments on the pentateuch
+  - 'elegant comments on the pentateuch: genesis'
   - glaphyra
   - glaphyra in deuteronomium
   - glaphyra in exodum
@@ -2020,12 +2330,26 @@ groups:
   - glaphyrorum in exodum libri
   - glaphyrorum in exodum libri iii
   - glaphyrorum in exodum libri tres
+  - glaphyrorum in genesim
   - glaphyrorum in genesim libri
   - glaphyrorum in genesim libri septem
   - glaphyrorum in genesim libri vii
   - glaphyrorum in leviticum liber
   - glaphyrorum in numeros liber
   - glaphyrorum in pentateuchum libri
+- author: Cyril of Alexandria
+  work: Commentarius in Isaiam
+  uses: 105
+  attested_by: 6
+  titles:
+  - commentarius in isaiam
+  - commentarius in isaiam prophetam
+  - commentary on isaiah
+  - explanatio in isaiam
+  - explanatio in isaiam prophetam
+  - in isaiam commentarius
+  - in isaiam prophetam
+  - in isaiam prophetam commentarius
 - author: Cyril of Alexandria
   work: Commentarius in xii prophetas minores
   uses: 78
@@ -2158,8 +2482,8 @@ groups:
   - on the paralytic at bethesda
 - author: Denis the Carthusian
   work: Enarrationes in universam Bibliam
-  uses: 1090
-  attested_by: 6
+  uses: 1236
+  attested_by: 10
   titles:
   - commentaria in actus apostolorum
   - commentaria in amos
@@ -2202,6 +2526,7 @@ groups:
   - commentaria in numeros
   - commentaria in omnes libros bibliorum
   - commentaria in omnes libros sacrae scripturae
+  - commentaria in pentateuchum
   - commentaria in primam epistolam ad corinthios
   - commentaria in primam epistolam ad thessalonicenses
   - commentaria in primam epistolam ad timotheum
@@ -2294,15 +2619,19 @@ groups:
   - dionysius cartusianus, commentaria in danielem
   - dionysius cartusianus, commentaria in evangelium ioannis
   - dionysius cartusianus, commentaria in evangelium matthaei
+  - dionysius cartusianus, commentaria in genesim
   - dionysius cartusianus, commentaria in iob
   - dionysius cartusianus, commentaria in libros salomonis
   - dionysius cartusianus, commentaria in librum sapientiae
   - dionysius cartusianus, commentaria in pentateuchum
+  - dionysius cartusianus, commentarii in genesim
+  - dionysius cartusianus, commentarius in genesim
   - dionysius cartusianus, commentary on genesis
   - dionysius cartusianus, commentary on job
   - dionysius cartusianus, enarratio in davidicum psalterium
   - dionysius cartusianus, enarrationes
   - dionysius cartusianus, enarrationes in duodecim prophetas minores
+  - dionysius cartusianus, enarrationes in genesim
   - dionysius cartusianus, enarrationes in pentateuchum
   - dionysius cartusianus, enarrationes in psalmos
   - dionysius cartusianus, enarrationes in psalterium
@@ -2311,6 +2640,7 @@ groups:
   - dionysius cartusianus, in duodecim prophetas minores
   - dionysius cartusianus, in exodum
   - dionysius cartusianus, in genesim
+  - dionysius cartusianus, in genesim enarratio
   - dionysius cartusianus, in ieremiam
   - dionysius cartusianus, in ioannem
   - dionysius cartusianus, in iob commentaria
@@ -2431,6 +2761,7 @@ groups:
   - enarratio on jeremiah
   - enarratio on leviticus
   - enarratio on the book of numbers
+  - enarration on genesis
   - enarrationes in actus apostolorum
   - enarrationes in amos
   - enarrationes in apocalypsim
@@ -2471,7 +2802,10 @@ groups:
   - enarrationes in ionam
   - enarrationes in isaiam
   - enarrationes in isaiam prophetam
+  - enarrationes in libros geneseos
+  - enarrationes in libros moysi
   - enarrationes in libros pentateuchi
+  - 'enarrationes in libros veteris testamenti: genesis'
   - enarrationes in librum esther
   - enarrationes in librum primum paralipomenon
   - enarrationes in librum primum regum
@@ -2488,18 +2822,21 @@ groups:
   - enarrationes in numeros
   - enarrationes in osee
   - enarrationes in pentateuchum
+  - enarrationes in pentateuchum, in genesim
   - 'enarrationes in pentateuchum: exodus'
   - enarrationes in prophetas
   - enarrationes in proverbia
   - enarrationes in psalmos
   - enarrationes in psalmos davidicos
   - enarrationes in quatuor evangelistas
+  - enarrationes in quinque libros mosaicos
   - enarrationes in sophoniam
   - enarrationes in threnos
   - enarrationes in universam bibliam
   - enarrationes in universam sacram scripturam
   - enarrationes in universos libros sacrae scripturae
   - enarrationes in zachariam
+  - enarrations on genesis
   - expositio in actus apostolorum
   - expositio in amos
   - expositio in apocalypsim
@@ -2550,6 +2887,7 @@ groups:
   - expositio in sophoniam
   - expositio in tertium librum regum
   - expositio in zachariam
+  - exposition of genesis
   - in amos prophetam enarratio
   - in duodecim prophetas minores enarrationes
   - in ieremiam prophetam enarratio
@@ -2611,6 +2949,20 @@ groups:
   - paraphrase on the gospel of john
   - paraphrasis in evangelium ioannis
   - paraphrasis in ioannem
+- author: Didymus the Blind
+  work: Commentary on Genesis
+  uses: 39
+  attested_by: 3
+  titles:
+  - commentarii in genesim
+  - commentarii in genesim (tura papyrus)
+  - commentary on genesis
+  - commentary on genesis (tura papyrus)
+  - in genesim
+  - sur la genese
+  - sur la genèse
+  - tura commentary on genesis
+  - tura genesis commentary
 - author: Didymus the Blind
   work: In epistolas catholicas brevis enarratio
   uses: 25
@@ -2706,15 +3058,19 @@ groups:
   - emanuel sá, notationes in sacram scripturam
   - notationes in totam scripturam sacram
 - author: Ephrem the Syrian
-  work: Commentary on Genesis
-  uses: 30
-  attested_by: 6
+  work: Commentarii in Genesim et in Exodum
+  uses: 187
+  attested_by: 10
   titles:
   - commentarii in genesim
+  - commentarii in genesim et in exodum
   - commentarius in genesim
   - commentary on genesis
+  - commentary on genesis and exodus
   - commentary on the book of genesis
   - explanation of genesis
+  - explanation of the book of genesis
+  - in genesim
   - in genesim commentarii
   - in genesim commentarius
 - author: Ephrem the Syrian
@@ -2741,13 +3097,6 @@ groups:
   - in ieremiam prophetam
   - in jeremiam explanatio
   - in jeremiam prophetam
-- author: Ephrem the Syrian
-  work: Commentarii in Genesim et in Exodum
-  uses: 7
-  attested_by: 1
-  titles:
-  - commentarii in genesim et in exodum
-  - commentary on genesis and exodus
 - author: Ephrem the Syrian
   work: Commentary on the Acts of the Apostles
   uses: 3
@@ -2923,14 +3272,19 @@ groups:
   - gaspar sanctius, commentarii in jeremiam
   - in jeremiam prophetam commentarii
 - author: George Leo Haydock
-  work: The Holy Bible with Explanatory Notes (Haydock's Catholic Family Bible)
-  uses: 2
-  attested_by: 2
+  work: Haydock's Catholic Bible Commentary
+  uses: 5
+  attested_by: 5
   titles:
   - haydock bible commentary
+  - haydock douay-rheims notes
+  - haydock's catholic bible commentary
   - haydock's douay-rheims notes
+  - the douay bible with notes
   - the holy bible with explanatory notes (haydock's catholic family bible and commentary)
   - the holy bible with explanatory notes (haydock's catholic family bible)
+  - 'the holy bible with explanatory notes: daniel'
+  - 'the holy bible with explanatory notes: genesis'
 - author: George Leo Haydock
   work: Notes on the Second Book of Machabees (Haydock's Catholic Family Bible)
   uses: 1
@@ -2938,14 +3292,6 @@ groups:
   titles:
   - haydock douay-rheims bible commentary
   - notes on the second book of machabees (haydock's catholic family bible)
-- author: George Leo Haydock
-  work: 'The Holy Bible with Explanatory Notes: Daniel'
-  uses: 1
-  attested_by: 1
-  titles:
-  - haydock douay-rheims notes
-  - haydock's catholic bible commentary
-  - 'the holy bible with explanatory notes: daniel'
 - author: Gerhoh of Reichersberg
   work: Commentarius aureus in Psalmos
   uses: 5
@@ -2995,19 +3341,21 @@ groups:
     illustrati
 - author: Giovanni Stefano Menochio
   work: Brevis explicatio sensus litteralis totius Sacrae Scripturae
-  uses: 14
-  attested_by: 3
+  uses: 15
+  attested_by: 4
   titles:
   - brevis explicatio sensus literalis totius sacrae scripturae
   - brevis explicatio sensus litteralis totius sacrae scripturae
   - 'brevis explicatio sensus litteralis totius sacrae scripturae: in danielem'
   - 'brevis explicatio sensus litteralis totius sacrae scripturae: in zachariam'
+  - brevis explicatio sensus litteralis totius scripturae
   - brevis expositio sensus litteralis totius sacrae scripturae
   - brief exposition of the literal sense of the whole of sacred scripture
   - commentarii totius sacrae scripturae
   - joannes stephanus menochius
   - menochius
   - menochius on jeremiah
+  - menochius, brief exposition of the literal sense
   - menochius, commentarii totius sacrae scripturae
 - author: Giovanni Stefano Menochio
   work: 'Brevis explicatio sensus litteralis totius Sacrae Scripturae: Liber Sapientiae'
@@ -3056,6 +3404,22 @@ groups:
   - the life of moses
   - vita moysis
 - author: Gregory of Nyssa
+  work: Apologia in Hexaemeron
+  uses: 6
+  attested_by: 6
+  titles:
+  - apologetic explanation of the hexaemeron
+  - apologetic treatise on the hexaemeron
+  - apologia in hexaemeron
+  - explanatio apologetica in hexaemeron
+  - explanation of the hexaemeron
+  - explanatory discourse on the hexaemeron
+  - explicatio apologetica in hexaemeron
+  - in hexaemeron
+  - in hexaemeron explicatio apologetica
+  - on the hexaemeron
+  - on the six days of creation
+- author: Gregory of Nyssa
   work: Homiliae in Ecclesiasten
   uses: 6
   attested_by: 3
@@ -3065,17 +3429,13 @@ groups:
   - in ecclesiasten homiliae octo
   - in ecclesiasten homiliae viii
 - author: Gregory of Nyssa
-  work: Apologia in Hexaemeron
-  uses: 3
+  work: De hominis opificio
+  uses: 4
   attested_by: 3
   titles:
-  - apologetic treatise on the hexaemeron
-  - apologia in hexaemeron
-  - explanatory discourse on the hexaemeron
-  - explicatio apologetica in hexaemeron
-  - in hexaemeron
-  - in hexaemeron explicatio apologetica
-  - on the six days of creation
+  - de hominis opificio
+  - de opificio hominis
+  - on the making of man
 - author: Gregory of Nyssa
   work: De beatitudinibus
   uses: 1
@@ -3446,20 +3806,34 @@ groups:
   - scholia on daniel
 - author: Hippolytus of Rome
   work: On the Blessings of Isaac and Jacob
-  uses: 3
-  attested_by: 3
+  uses: 9
+  attested_by: 7
   titles:
+  - de benedictionibus isaac et iacob
   - de benedictionibus isaac et jacob
+  - de benedictionibus isaaci et iacobi
+  - de benedictionibus patriarcharum
   - on the blessings of isaac and jacob
   - on the blessings of isaac, jacob and moses
   - on the blessings of the patriarchs
+- author: Hrabanus Maurus
+  work: Commentary on Genesis in Four Books
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentariorum in genesim libri quattuor
+  - commentary on genesis in four books
+  - in genesim
 - author: Hugh of Saint Victor
   work: Elucidatory Notes on the Pentateuch
-  uses: 2
-  attested_by: 2
+  uses: 9
+  attested_by: 5
   titles:
   - adnotationes elucidatoriae in pentateuchon
+  - adnotationes in genesim
+  - adnotationes in pentateuchon
   - elucidatory notes on the pentateuch
+  - notes on the pentateuch
   - notulae in genesim
   - notulae in pentateuchon
 - author: Hugh of Saint Victor
@@ -3471,16 +3845,20 @@ groups:
   - in salomonis ecclesiasten homiliae xix
 - author: Hugh of Saint-Cher
   work: Postillae in universa Biblia
-  uses: 1231
-  attested_by: 6
+  uses: 1320
+  attested_by: 10
   titles:
   - hugo cardinalis
   - hugo cardinalis, opera omnia in universum vetus et novum testamentum
   - hugo cardinalis, postilla on matthew
+  - hugo cardinalis, postilla super genesim
   - hugo cardinalis, postillae
+  - hugo cardinalis, postils on genesis
   - hugo de sancto caro
+  - hugo de sancto caro, in genesim
   - hugo de sancto caro, in leviticum
   - hugo de sancto caro, opera omnia in universum vetus et novum testamentum
+  - hugo de sancto caro, postilla on genesis
   - hugo de sancto caro, postilla super sapientiam
   - hugo de sancto caro, postillae
   - hugo de sancto charo, opera omnia in universum vetus et novum testamentum
@@ -3544,12 +3922,17 @@ groups:
   - postilla in tertium librum regum
   - postilla in totam bibliam
   - 'postilla in totam bibliam: exodus'
+  - 'postilla in totam bibliam: in genesim'
   - 'postilla in totam bibliam: in leviticum'
+  - postilla in universa biblia
+  - 'postilla in universa biblia: in genesim'
   - postilla in zachariam
   - postilla on exodus
+  - postilla on genesis
   - postilla on isaiah
   - postilla on jeremiah
   - postilla on the whole bible
+  - 'postilla on the whole bible: genesis'
   - postilla super actus apostolorum
   - postilla super amos
   - postilla super danielem
@@ -3564,12 +3947,18 @@ groups:
   - postilla super psalmos
   - postilla super psalterium
   - postilla super totam bibliam
+  - 'postilla super totam bibliam: genesis'
   - postilla super zachariam
+  - postillae
+  - postillae in genesim
   - postillae in isaiam
   - postillae in leviticum
   - postillae in psalterium
   - postillae in totam bibliam
   - postillae in totam bibliam (psalms)
+  - 'postillae in totam bibliam: genesis'
+  - 'postillae in totam bibliam: in genesim'
+  - 'postillae in totam bibliam: on genesis'
   - 'postillae in totam bibliam: psalmi'
   - postillae in universa biblia
   - postillae in universa biblia (ieremias)
@@ -3581,6 +3970,7 @@ groups:
   - postillae in universa biblia (on daniel)
   - postillae in universa biblia iuxta quadruplicem sensum
   - 'postillae in universa biblia: exodus'
+  - 'postillae in universa biblia: genesis'
   - 'postillae in universa biblia: hieremias'
   - 'postillae in universa biblia: in amos'
   - 'postillae in universa biblia: in danielem'
@@ -3597,8 +3987,11 @@ groups:
   - 'postillae in universa biblia: isaiah'
   - 'postillae in universa biblia: liber sapientiae'
   - postillae on the whole bible
+  - 'postillae on the whole bible: genesis'
   - 'postillae on the whole of scripture: leviticus'
+  - postills on genesis
   - postils on the whole bible
+  - 'postils on the whole of scripture: genesis'
 - author: Hugh of Saint-Cher
   work: Postilla in Librum Sapientiae
   uses: 1
@@ -3642,6 +4035,14 @@ groups:
   titles:
   - postilla super isaiam
   - postillae in universa biblia, on isaiah
+- author: Hugh of St Victor
+  work: Adnotationes elucidatoriae in Pentateuchon
+  uses: 1
+  attested_by: 1
+  titles:
+  - adnotationes elucidatoriae in pentateuchon
+  - adnotationes in pentateuchon
+  - notulae in genesim
 - author: Hugh of St. Cher
   work: Postillae in universa Biblia
   uses: 4
@@ -3687,11 +4088,14 @@ groups:
   - in septem psalmos poenitentiales expositio
 - author: Isidore of Seville
   work: Quaestiones in Vetus Testamentum
-  uses: 154
-  attested_by: 6
+  uses: 291
+  attested_by: 10
   titles:
+  - allegoriae in genesim
   - allegoriae quaedam sacrae scripturae
+  - allegorical expositions on genesis
   - allegorical questions on genesis
+  - allegories on genesis
   - commentary on the old testament
   - expositio in genesim
   - expositio in vetus testamentum
@@ -3700,6 +4104,7 @@ groups:
   - in exodum expositio
   - in genesim
   - in genesim expositio
+  - in genesin
   - in leviticum
   - in leviticum expositio
   - in libros veteris ac novi testamenti prooemia
@@ -3712,9 +4117,12 @@ groups:
   - in tertium librum regum expositio
   - mysticorum expositiones sacramentorum
   - mysticorum expositiones sacramentorum seu quaestiones in vetus testamentum
+  - mysticorum expositiones sacramentorum seu quaestiones in vetus testamentum, in genesim
   - 'mysticorum expositiones sacramentorum seu quaestiones in vetus testamentum: in exodum'
+  - 'mysticorum expositiones sacramentorum seu quaestiones in vetus testamentum: in genesim'
   - 'mysticorum expositiones sacramentorum seu quaestiones in vetus testamentum: in leviticum'
   - 'mysticorum expositiones sacramentorum seu quaestiones in vetus testamentum: in numeros'
+  - mysticorum expositionum sacramentorum seu quaestiones in vetus testamentum
   - quaestiones in deuteronomium
   - quaestiones in exodum
   - quaestiones in genesim
@@ -3726,6 +4134,8 @@ groups:
   - quaestiones in librum tertium regum
   - quaestiones in numeros
   - quaestiones in vetus testamentum
+  - quaestiones in vetus testamentum, in genesim
+  - quaestiones in vetus testamentum, in genesin
   - 'quaestiones in vetus testamentum: in exodum'
   - 'quaestiones in vetus testamentum: in genesim'
   - 'quaestiones in vetus testamentum: in genesin'
@@ -3733,14 +4143,22 @@ groups:
   - questions on exodus
   - questions on genesis
   - questions on the old testament
+  - 'questions on the old testament: genesis'
   - 'questions on the old testament: on exodus'
   - 'questions on the old testament: on genesis'
   - 'questions on the old testament: on leviticus'
   - 'questions on the old testament: on numbers'
+- author: Jacobus Bonfrerius
+  work: Pentateuchus Moysis commentario illustratus
+  uses: 1
+  attested_by: 1
+  titles:
+  - jacques bonfrère, commentary on the pentateuch
+  - pentateuchus moysis commentario illustratus
 - author: Jacobus Tirinus
   work: Commentarius in Sacram Scripturam
-  uses: 13
-  attested_by: 3
+  uses: 14
+  attested_by: 4
   titles:
   - commentaria in vetus et novum testamentum
   - commentarius in acta apostolorum
@@ -3751,6 +4169,7 @@ groups:
   - commentary on sacred scripture
   - jacques tirin, commentarius in sacram scripturam
   - jacques tirin, commentarius in vetus et novum testamentum
+  - jacques tirin, commentary on holy scripture
   - jacques tirin, in danielem
   - jacques tirin, in universam sacram scripturam commentarius
   - tirinus on jeremiah
@@ -3871,6 +4290,17 @@ groups:
   - little commentaries on the psalms
   - notes on the psalms
   - short notes on the psalms
+- author: Jerome
+  work: Hebrew Questions on Genesis
+  uses: 165
+  attested_by: 10
+  titles:
+  - hebraicae quaestiones in genesim
+  - hebraicae quaestiones in libro geneseos
+  - hebrew questions on genesis
+  - liber hebraicarum quaestionum in genesim
+  - liber quaestionum hebraicarum in genesim
+  - quaestiones hebraicae in genesim
 - author: Jerome
   work: Commentariorum in Isaiam libri XVIII
   uses: 105
@@ -4023,16 +4453,6 @@ groups:
   - in hieremiam prophetam libri vi
   - in ieremiam prophetam
 - author: Jerome
-  work: Liber quaestionum hebraicarum in Genesim
-  uses: 26
-  attested_by: 6
-  titles:
-  - hebraicae quaestiones in genesim
-  - hebrew questions on genesis
-  - liber hebraicarum quaestionum in genesim
-  - liber quaestionum hebraicarum in genesim
-  - quaestiones hebraicae in genesim
-- author: Jerome
   work: Commentarii in Hiezechielem
   uses: 24
   attested_by: 3
@@ -4140,6 +4560,14 @@ groups:
   titles:
   - gnomon novi testamenti
   - gnomon of the new testament
+- author: Johann Peter Lange
+  work: 'Commentary on the Holy Scriptures: Genesis'
+  uses: 1
+  attested_by: 1
+  titles:
+  - 'commentary on the holy scriptures: genesis'
+  - lange's commentary
+  - 'theologisch-homiletisches bibelwerk: die genesis'
 - author: Johannes Lorinus
   work: Commentarii in Librum Sapientiae
   uses: 1
@@ -4147,6 +4575,20 @@ groups:
   titles:
   - commentarii in librum sapientiae
   - jean de lorin, in librum sapientiae commentarii
+- author: John Calvin
+  work: Commentary on Genesis
+  uses: 18
+  attested_by: 4
+  titles:
+  - commentaries on the first book of moses called genesis
+  - commentarii in genesin
+  - commentarii in primum librum mosis
+  - commentarii in primum librum mosis, vulgo genesin
+  - commentarius in genesin
+  - commentary on genesis
+  - commentary on the first book of moses called genesis
+  - in primum mosis librum commentarius
+  - in primum mosis librum, qui genesis vulgo dicitur, commentarius
 - author: John Calvin
   work: Praelectiones in duodecim prophetas minores
   uses: 5
@@ -4198,13 +4640,6 @@ groups:
   - commentarii in acta apostolorum
   - commentary on the acts of the apostles
 - author: John Calvin
-  work: Commentary on the First Book of Moses called Genesis
-  uses: 1
-  attested_by: 1
-  titles:
-  - commentary on the first book of moses called genesis
-  - in primum mosis librum, qui genesis vulgo dicitur, commentarius
-- author: John Calvin
   work: Commentary on the Prophet Isaiah
   uses: 1
   attested_by: 1
@@ -4219,6 +4654,20 @@ groups:
   - conciones in iobum
   - sermons on the book of job
   - sermons sur le livre de job
+- author: John Chrysostom
+  work: Homilies on Genesis
+  uses: 186
+  attested_by: 10
+  titles:
+  - commentary on genesis
+  - homiliae in genesim
+  - homiliae lxvii in genesim
+  - homilies on genesis
+  - in genesim homiliae
+  - in genesim homiliae lxvii
+  - sermones in genesim
+  - sermons on genesis
+  - sixty-seven homilies on genesis
 - author: John Chrysostom
   work: Expositiones in Psalmos
   uses: 155
@@ -4302,19 +4751,6 @@ groups:
   - in epistolam primam ad corinthios homiliae
   - in epistulam i ad corinthios homiliae
   - in epistulam i ad corinthios homiliae xliv
-- author: John Chrysostom
-  work: Homiliae in Genesim
-  uses: 36
-  attested_by: 6
-  titles:
-  - commentary on genesis
-  - homiliae in genesim
-  - homilies on genesis
-  - in genesim homiliae
-  - in genesim homiliae lxvii
-  - sermones in genesim
-  - sermons on genesis
-  - sixty-seven homilies on genesis
 - author: John Chrysostom
   work: Homiliae in epistulam ad Hebraeos
   uses: 30
@@ -4594,18 +5030,21 @@ groups:
   - this treatyse concernynge the fruytfull saynges of davyd the kynge
 - author: John Gill
   work: An Exposition of the Old Testament
-  uses: 12
-  attested_by: 3
+  uses: 22
+  attested_by: 6
   titles:
   - an exposition of the new testament
   - an exposition of the old and new testament
+  - an exposition of the old and new testaments
   - an exposition of the old testament
   - an exposition of the old testament (micah)
+  - 'an exposition of the old testament: genesis'
   - 'an exposition of the old testament: jeremiah'
   - 'an exposition of the old testament: job'
   - 'an exposition of the old testament: leviticus'
   - 'an exposition of the old testament: numbers'
   - exposition of hosea
+  - exposition of the old and new testament
   - exposition of the old and new testaments
   - 'exposition of the whole bible: job'
   - gill's exposition of the entire bible
@@ -4617,6 +5056,13 @@ groups:
   - a commentary on the psalms from primitive and mediaeval writers
   - a commentary on the psalms from primitive and mediæval writers
   - neale and littledale, commentary on the psalms
+- author: John Wesley
+  work: Explanatory Notes upon the Old Testament
+  uses: 1
+  attested_by: 1
+  titles:
+  - explanatory notes upon the old testament
+  - wesley's notes on the bible
 - author: Joseph Addison Alexander
   work: Commentary on the Prophecies of Isaiah
   uses: 1
@@ -4806,6 +5252,19 @@ groups:
   - commentarii in epistulam ad philippenses
   - in epistolam pauli ad philippenses
 - author: Martin Luther
+  work: Lectures on Genesis
+  uses: 18
+  attested_by: 4
+  titles:
+  - commentary on genesis
+  - enarrationes in genesin
+  - genesisvorlesung
+  - in genesin enarrationes
+  - in primum librum mose enarrationes
+  - lectures on genesis
+  - vorlesungen uber 1. mose
+  - vorlesungen über 1. mose
+- author: Martin Luther
   work: Praelectiones in prophetas minores
   uses: 3
   attested_by: 2
@@ -4817,14 +5276,6 @@ groups:
   - 'lectures on the minor prophets: micah'
   - praelectiones in prophetas minores
   - 'praelectiones in prophetas minores: in michaeam'
-- author: Martin Luther
-  work: Lectures on Genesis
-  uses: 1
-  attested_by: 1
-  titles:
-  - enarrationes in genesin
-  - in genesin enarrationes
-  - lectures on genesis
 - author: Martin Luther
   work: Lectures on Isaiah
   uses: 1
@@ -4842,11 +5293,12 @@ groups:
   - works on the psalms (1519-1521)
 - author: Matthew Henry
   work: An Exposition of the Old and New Testament
-  uses: 15
-  attested_by: 3
+  uses: 26
+  attested_by: 6
   titles:
   - an exposition of the old and new testament
   - an exposition of the old and new testament (micah)
+  - 'an exposition of the old and new testament: genesis'
   - 'an exposition of the old and new testament: jeremiah'
   - 'an exposition of the old and new testament: numbers'
   - an exposition of the old and new testaments
@@ -4854,17 +5306,20 @@ groups:
   - 'an exposition of the old and new testaments: leviticus'
   - commentary on job
   - commentary on the whole bible
+  - complete commentary
   - exposition of hosea
   - exposition of the old and new testament
   - 'exposition of the old and new testaments: jeremiah'
   - matthew henry's commentary on the whole bible
 - author: Matthew Poole
   work: Annotations upon the Holy Bible
-  uses: 2
-  attested_by: 2
+  uses: 4
+  attested_by: 4
   titles:
   - a commentary on the holy bible
   - annotations upon the holy bible
+  - english annotations
+  - synopsis criticorum
   - synopsis criticorum aliorumque sacrae scripturae interpretum
 - author: Melito of Sardis
   work: Peri Pascha
@@ -4928,17 +5383,19 @@ groups:
   - ghislerius, in ieremiam prophetam commentarii, item in baruch et threnos
 - author: Nicholas of Lyra
   work: Postilla litteralis super totam Bibliam
-  uses: 1577
-  attested_by: 6
+  uses: 1727
+  attested_by: 10
   titles:
   - biblia sacra cum glossa ordinaria et postilla nicolai lyrani
   - glossa ordinaria cum postilla nicolai de lyra
   - glossa ordinaria cum postillis nicolai de lyra
+  - 'literal postil on the whole bible: genesis'
   - literal postill
   - literal postill on genesis
   - literal postill on leviticus
   - literal postill on the psalms
   - literal postill on the whole bible
+  - 'literal postill on the whole bible: genesis'
   - 'literal postill on the whole bible: leviticus'
   - literal postilla on isaiah
   - nicolaus de lyra
@@ -4947,10 +5404,13 @@ groups:
   - nicolaus de lyra, postillae perpetuae
   - nicolaus de lyra, postillae perpetuae in universam s. scripturam
   - postilla in danielem
+  - postilla in genesim
   - postilla in ioannem
+  - postilla literalis
   - postilla litteralis
   - postilla litteralis et moralis
   - postilla litteralis in exodum
+  - postilla litteralis in genesim
   - postilla litteralis in leviticum
   - postilla litteralis in psalterium
   - postilla litteralis on 1 chronicles
@@ -5017,6 +5477,7 @@ groups:
   - postilla litteralis super librum sapientiae
   - postilla litteralis super psalterium
   - postilla litteralis super totam bibliam
+  - postilla litteralis super totam bibliam (genesis)
   - postilla litteralis super totam bibliam (ieremias)
   - postilla litteralis super totam bibliam (in amos)
   - postilla litteralis super totam bibliam (in ioannem)
@@ -5044,8 +5505,10 @@ groups:
   - 'postilla litteralis super totam bibliam: in zachariam'
   - 'postilla litteralis super totam bibliam: isaiah'
   - 'postilla litteralis super totam bibliam: liber sapientiae'
+  - 'postilla litteralis super totam bibliam: on genesis'
   - postilla moralis
   - postilla on exodus
+  - postilla on genesis
   - postilla super actus apostolorum
   - postilla super amos
   - postilla super apocalypsim
@@ -5121,11 +5584,13 @@ groups:
   - postilla super zachariam
   - postillae perpetuae
   - postillae perpetuae in exodum
+  - postillae perpetuae in genesim
   - postillae perpetuae in ieremiam
   - postillae perpetuae in universa biblia
   - postillae perpetuae in universam s. scripturam
   - postillae perpetuae in universam sacram scripturam
   - postillae perpetuae in vetus et novum testamentum
+  - postils on genesis
   - postils on the whole bible
 - author: Nicholas of Lyra
   work: Postilla litteralis super Iob
@@ -5173,6 +5638,16 @@ groups:
   titles:
   - commentarii in iob
   - commentary on job
+- author: Origen
+  work: Homiliae in Genesim
+  uses: 75
+  attested_by: 8
+  titles:
+  - de arca noe (hom. 2)
+  - homiliae in genesim
+  - homilies on genesis
+  - in genesim homiliae
+  - in genesim homiliae xvi
 - author: Origen
   work: Commentarium in Matthaeum
   uses: 45
@@ -5227,14 +5702,6 @@ groups:
   - commentary on the gospel of john
   - in ioannem commentarii
   - in ioannem commentariorum libri
-- author: Origen
-  work: Homiliae in Genesim
-  uses: 19
-  attested_by: 4
-  titles:
-  - homiliae in genesim
-  - homilies on genesis
-  - in genesim homiliae xvi
 - author: Origen
   work: Homiliae in Lucam
   uses: 19
@@ -5340,6 +5807,14 @@ groups:
   - epistula ad africanum
   - letter to africanus
   - letter to julius africanus on the history of susanna
+- author: Origen of Alexandria
+  work: Homiliae in Genesim
+  uses: 8
+  attested_by: 3
+  titles:
+  - homiliae in genesim
+  - homilies on genesis
+  - in genesim homiliae xvi
 - author: Otto Fridolin Fritzsche
   work: 'Kurzgefasstes exegetisches Handbuch zu den Apokryphen des Alten Testamentes: Zusätze
     zu Daniel'
@@ -5382,23 +5857,33 @@ groups:
   - in threnos sive lamentationes hieremiae libri quinque
 - author: Peter Comestor
   work: Historia Scholastica
-  uses: 10
-  attested_by: 3
+  uses: 59
+  attested_by: 7
   titles:
   - historia genesis
   - historia libri danielis
   - historia libri exodi
   - historia libri genesis
   - historia scholastica
+  - historia scholastica, historia genesis
+  - historia scholastica, historia libri genesis
   - 'historia scholastica: book of exodus'
+  - 'historia scholastica: genesis'
+  - 'historia scholastica: historia genesis'
   - 'historia scholastica: historia libri genesis'
   - 'historia scholastica: liber danielis'
   - 'historia scholastica: liber exodi'
   - 'historia scholastica: liber genesis'
   - 'historia scholastica: the book of exodus'
+  - petrus comestor, historia libri genesis
   - petrus comestor, historia scholastica
   - scholastic history
+  - scholastic history on genesis
+  - scholastic history, genesis
   - 'scholastic history: genesis'
+  - 'scholastic history: the book of genesis'
+  - 'scholastic history: the history of genesis'
+  - 'scholastic history: the history of the book of genesis'
 - author: Peter Lombard
   work: Commentarium in Psalmos
   uses: 400
@@ -5482,13 +5967,16 @@ groups:
   - in apocalypsin libri quinque
 - author: Procopius of Gaza
   work: Commentarii in Octateuchum
-  uses: 62
-  attested_by: 4
+  uses: 207
+  attested_by: 8
   titles:
   - catena in exodum
   - catena in genesim
+  - catena in genesim (procopian epitome)
   - catena in octateuchum
+  - catena on genesis
   - catena on the octateuch
+  - 'catena on the octateuch: genesis'
   - commentarii in exodum
   - commentarii in genesim
   - commentarii in genesim, exodum, leviticum, numeros, deuteronomium
@@ -5498,11 +5986,22 @@ groups:
   - commentary on exodus
   - commentary on genesis
   - commentary on the octateuch
+  - commentary on the octateuch (genesis)
+  - eclogae in genesim
+  - eclogarum in genesim epitome
+  - eclogarum in libros historicos veteris testamenti epitome
+  - 'eclogarum in libros historicos veteris testamenti epitome: genesis'
+  - epitome in genesim
   - epitome in leviticum
   - epitome in numeros
   - epitome in octateuchum
+  - epitome of patristic comments on genesis
   - epitome of the fathers on the octateuch
+  - epitome on genesis
   - epitome on the octateuch
+  - in genesim
+  - in genesim catena
+  - in genesim commentarii
 - author: Procopius of Gaza
   work: Commentarii in Isaiam
   uses: 41
@@ -5544,6 +6043,30 @@ groups:
   - expositio psalmorum a centesimo usque ad centesimum quinquagesimum
   - expositio psalmorum c-cl
   - exposition of psalms 100-150
+- author: Rabanus Maurus
+  work: Commentaria in Genesim
+  uses: 180
+  attested_by: 10
+  titles:
+  - commentaria in genesim
+  - commentariorum in genesim libri iv
+  - commentariorum in genesim libri quattuor
+  - commentariorum in genesim libri quatuor
+  - commentarius in genesim
+  - commentary on genesis
+  - commentary on genesis in four books
+  - enarrationes in genesim
+  - expositio in genesim
+  - hrabanus maurus, commentaria in genesim
+  - hrabanus maurus, commentariorum in genesim libri quatuor
+  - hrabanus maurus, commentary on genesis
+  - hrabanus maurus, in genesim
+  - hrabanus maurus, in genesim libri quattuor
+  - hrabanus maurus, in genesim libri quatuor
+  - in genesim
+  - in genesim libri quattuor
+  - in genesim libri quatuor
+  - libri quatuor commentariorum in genesim
 - author: Rabanus Maurus
   work: Enarrationes in epistolas beati Pauli
   uses: 115
@@ -5605,16 +6128,6 @@ groups:
   - commentary on the books of kings
   - commentary on the four books of kings
   - expositio in libros regum
-- author: Rabanus Maurus
-  work: Commentaria in Genesim
-  uses: 33
-  attested_by: 6
-  titles:
-  - commentaria in genesim
-  - commentariorum in genesim libri quattuor
-  - commentariorum in genesim libri quatuor
-  - commentary on genesis
-  - expositio in genesim
 - author: Rabanus Maurus
   work: Expositio super Ieremiam
   uses: 33
@@ -5723,7 +6236,6 @@ groups:
   - enarrationum in librum numerorum libri quattuor
   - enarrationum in librum numerorum libri quatuor
   - expositio in librum numerorum
-  - hrabanus maurus
 - author: Rabanus Maurus
   work: Expositio in Proverbia Salomonis
   uses: 8
@@ -5810,6 +6322,14 @@ groups:
   - commentarius in psalmos
   - commentary on the psalms
   - enarrationes in psalmos
+- author: Remigius of Auxerre
+  work: Commentarius in Genesim
+  uses: 5
+  attested_by: 2
+  titles:
+  - commentarius in genesim
+  - commentary on genesis
+  - expositio super genesim
 - author: Richard of Saint Victor
   work: In Apocalypsim Ioannis
   uses: 8
@@ -5885,6 +6405,14 @@ groups:
   - explanation of the psalms
   - in omnes psalmos dilucida explanatio
   - in omnes psalmos dilucida expositio
+- author: Robert Grosseteste
+  work: Hexaemeron
+  uses: 2
+  attested_by: 2
+  titles:
+  - hexaemeron
+  - hexaëmeron
+  - on the six days of creation
 - author: Robert Holcot
   work: Super libros Sapientiae
   uses: 12
@@ -5897,10 +6425,18 @@ groups:
   - super libros sapientiae
   - super librum sapientiae
   - super sapientiam salomonis
+- author: Rufinus of Aquileia
+  work: De benedictionibus patriarcharum
+  uses: 2
+  attested_by: 2
+  titles:
+  - de benedictionibus duodecim patriarcharum
+  - de benedictionibus patriarcharum
+  - on the blessings of the patriarchs
 - author: Rupert of Deutz
   work: De sancta Trinitate et operibus eius
-  uses: 120
-  attested_by: 6
+  uses: 269
+  attested_by: 10
   titles:
   - commentaria in duodecim prophetas minores
   - 'commentaria in duodecim prophetas minores: in amos'
@@ -5908,9 +6444,11 @@ groups:
   - commentaria in genesim
   - commentaria in leviticum
   - commentarii in duodecim prophetas minores
+  - commentarii in genesim
   - commentarium in genesim
   - commentarius in abacuc
   - commentarius in amos
+  - commentarius in genesim
   - commentarius in ioel
   - commentarius in leviticum
   - commentarius in malachiam
@@ -5919,6 +6457,7 @@ groups:
   - commentary on amos
   - commentary on exodus
   - commentary on genesis
+  - commentary on genesis (de sancta trinitate et operibus eius, books i-ix)
   - commentary on habakkuk
   - commentary on hosea
   - commentary on joel
@@ -5930,15 +6469,28 @@ groups:
   - 'de operibus sanctae trinitatis: in exodum'
   - 'de operibus sanctae trinitatis: in genesim'
   - de operibus spiritus sancti
+  - de operibus spiritus sancti (genesis books)
+  - 'de operibus spiritus sancti: in genesim'
+  - de operibus trinitatis
+  - 'de operibus trinitatis: commentaria in genesim'
   - de sancta trinitate et operibus eius
+  - de sancta trinitate et operibus eius, books i-ix
+  - de sancta trinitate et operibus eius, in genesim
+  - de sancta trinitate et operibus eius, in genesim libri ix
+  - de sancta trinitate et operibus eius, libri i-ix
+  - de sancta trinitate et operibus eius, libri i-ix (in genesim)
+  - de sancta trinitate et operibus eius, libri in genesim
   - 'de sancta trinitate et operibus eius: in exodum'
   - 'de sancta trinitate et operibus eius: in genesim'
+  - 'de sancta trinitate et operibus eius: in genesim libri ix'
   - 'de sancta trinitate et operibus eius: in leviticum'
   - 'de sancta trinitate et operibus eius: in leviticum libri duo'
   - 'de sancta trinitate et operibus eius: in librum numerorum'
+  - 'de sancta trinitate et operibus eius: on genesis'
   - de trinitate et operibus eius
   - 'de trinitate et operibus eius: in exodum'
   - 'de trinitate et operibus eius: in exodum libri iv'
+  - 'de trinitate et operibus eius: in genesim'
   - 'de trinitate et operibus eius: in leviticum'
   - 'de trinitate et operibus eius: in numeros'
   - 'de trinitate et operibus eius: in xii prophetas minores'
@@ -5953,8 +6505,11 @@ groups:
   - in exodum libri iv
   - in exodum libri quattuor
   - in genesim
+  - in genesim (de sancta trinitate et operibus eius)
+  - in genesim (de sancta trinitate et operibus eius, libri i-ix)
   - in genesim commentariorum libri ix
   - in genesim libri ix
+  - in genesim libri novem
   - in leviticum
   - in leviticum (de sancta trinitate et operibus eius)
   - in leviticum libri
@@ -5970,10 +6525,14 @@ groups:
   - in zachariam prophetam
   - on exodus
   - on genesis
+  - on genesis (de sancta trinitate et operibus eius, books i-ix)
+  - on genesis (from on the holy trinity and its works)
   - on leviticus (de trinitate et operibus eius)
   - on the holy trinity and its works
   - on the holy trinity and its works, books on genesis
   - 'on the holy trinity and its works: commentary on genesis'
+  - 'on the holy trinity and its works: genesis'
+  - 'on the holy trinity and its works: on genesis'
   - 'on the holy trinity and its works: on numbers'
   - rupertus tuitiensis
   - rupertus tuitiensis, in amos
@@ -6054,6 +6613,17 @@ groups:
   - 'de sancta trinitate et operibus eius: in exodum libri quatuor'
   - 'on the trinity and its works: on exodus'
 - author: Severian of Gabala
+  work: In cosmogoniam homiliae sex
+  uses: 4
+  attested_by: 3
+  titles:
+  - homiliae sex in mundi creationem
+  - homilies on creation
+  - in cosmogoniam homiliae
+  - in cosmogoniam homiliae sex
+  - six homilies on creation
+  - six homilies on the creation of the world
+- author: Severian of Gabala
   work: Fragments on the Acts of the Apostles
   uses: 1
   attested_by: 1
@@ -6105,6 +6675,50 @@ groups:
   - interpretatio in psalmos
   - interpretatio in psalmos davidis
   - interpretatio psalmorum
+- author: Theodoret of Cyrus
+  work: Quaestiones in Octateuchum
+  uses: 322
+  attested_by: 10
+  titles:
+  - interpretatio in libros regnorum
+  - interpretatio in octateuchum
+  - interpretatio in paralipomena
+  - interrogationes in exodum
+  - interrogationes in genesim
+  - quaestiones in deuteronomium
+  - quaestiones in exodum
+  - quaestiones in genesim
+  - quaestiones in genesim et in reliquos libros
+  - quaestiones in genesim, exodum, leviticum, numeros, deuteronomium, iesum nave, iudices
+    et ruth
+  - quaestiones in genesim, exodum, leviticum, numeros, deuteronomium, iosue, iudices, ruth
+  - quaestiones in iosue
+  - quaestiones in leviticum
+  - quaestiones in libros paralipomenon
+  - quaestiones in libros regnorum
+  - quaestiones in libros regnorum et paralipomenon
+  - quaestiones in libros regum
+  - quaestiones in libros regum et paralipomenon
+  - quaestiones in numeros
+  - quaestiones in octateuchum
+  - quaestiones in primum librum regum
+  - quaestiones in quartum librum regum
+  - quaestiones in secundum librum regum
+  - quaestiones in tertium librum regum
+  - questions on chronicles
+  - questions on deuteronomy
+  - questions on exodus
+  - questions on genesis
+  - questions on joshua
+  - questions on kings and chronicles
+  - questions on leviticus
+  - questions on numbers
+  - questions on the books of kings
+  - questions on the books of kings and chronicles
+  - questions on the octateuch
+  - questions on the octateuch, genesis
+  - 'questions on the octateuch: exodus'
+  - 'questions on the octateuch: genesis'
 - author: Theodoret of Cyrus
   work: Interpretatio in xiv epistulas sancti Pauli
   uses: 254
@@ -6166,48 +6780,6 @@ groups:
   - interpretatio in quatuordecim epistulas sancti pauli
   - interpretatio in xiv epistulas sancti pauli
   - interpretatio quattuordecim epistularum sancti pauli
-- author: Theodoret of Cyrus
-  work: Quaestiones in Octateuchum
-  uses: 173
-  attested_by: 6
-  titles:
-  - interpretatio in libros regnorum
-  - interpretatio in octateuchum
-  - interpretatio in paralipomena
-  - interrogationes in exodum
-  - interrogationes in genesim
-  - quaestiones in deuteronomium
-  - quaestiones in exodum
-  - quaestiones in genesim
-  - quaestiones in genesim et in reliquos libros
-  - quaestiones in genesim, exodum, leviticum, numeros, deuteronomium, iesum nave, iudices
-    et ruth
-  - quaestiones in genesim, exodum, leviticum, numeros, deuteronomium, iosue, iudices, ruth
-  - quaestiones in iosue
-  - quaestiones in leviticum
-  - quaestiones in libros paralipomenon
-  - quaestiones in libros regnorum
-  - quaestiones in libros regnorum et paralipomenon
-  - quaestiones in libros regum
-  - quaestiones in libros regum et paralipomenon
-  - quaestiones in numeros
-  - quaestiones in octateuchum
-  - quaestiones in primum librum regum
-  - quaestiones in quartum librum regum
-  - quaestiones in secundum librum regum
-  - quaestiones in tertium librum regum
-  - questions on chronicles
-  - questions on deuteronomy
-  - questions on exodus
-  - questions on genesis
-  - questions on joshua
-  - questions on kings and chronicles
-  - questions on leviticus
-  - questions on numbers
-  - questions on the books of kings
-  - questions on the books of kings and chronicles
-  - questions on the octateuch
-  - 'questions on the octateuch: exodus'
 - author: Theodoret of Cyrus
   work: Commentarius in Isaiam
   uses: 105
@@ -6885,6 +7457,55 @@ groups:
   - lectura super epistolam ad timotheum ii
   - super epistolam ad timotheum ii lectura
 - author: Thomas Cajetan
+  work: Commentary on the Pentateuch
+  uses: 58
+  attested_by: 7
+  titles:
+  - commentaries on the five books of moses
+  - commentarii illustres in quinque mosaicos libros
+  - commentarii in pentateuchum
+  - commentarii in pentateuchum mosis
+  - 'commentarii in pentateuchum: exodus'
+  - 'commentarii in pentateuchum: genesis'
+  - 'commentarii in pentateuchum: in exodum'
+  - 'commentarii in pentateuchum: in genesim'
+  - commentarii in quinque libros mosaicos
+  - 'commentarii in quinque libros mosaicos: genesis'
+  - commentarii in quinque mosaicos libros
+  - 'commentarii in quinque mosaicos libros: genesis'
+  - 'commentarii in quinque mosaicos libros: in genesim'
+  - commentary on genesis
+  - commentary on the five books of moses
+  - commentary on the pentateuch
+  - 'commentary on the pentateuch: genesis'
+  - in genesim
+  - in genesim commentarii
+  - in pentateuchum
+  - in pentateuchum commentarii
+  - in pentateuchum mosis iuxta sensum literalem commentarii
+  - in quinque mosaicos libros
+  - in quinque mosaicos libros commentarii
+  - literal commentary on the pentateuch
+  - thomas de vio caietanus, commentarii in quinque libros mosaicos
+  - thomas de vio cajetan, commentarii illustres in quinque mosaicos libros
+  - thomas de vio cajetan, commentarii in quinque mosaicos libros
+  - thomas de vio cajetan, commentary on the pentateuch
+  - thomas de vio cajetan, in genesim
+  - thomas de vio cajetan, in quinque mosaicos libros commentarii
+  - thomas de vio cajetanus, commentary on exodus
+  - thomas de vio, commentarii illustres in quinque mosaicos libros
+  - thomas de vio, commentarii in genesim
+  - thomas de vio, commentarii in quinque libros mosis
+  - thomas de vio, commentary on genesis
+  - thomas de vio, commentary on the pentateuch
+  - thomas de vio, in exodum
+  - thomas de vio, in genesim
+  - thomas de vio, in quinque mosaicos libros
+  - thomas de vio, in quinque mosaicos libros commentarii
+  - tommaso de vio, commentary on the pentateuch
+  - tommaso de vio, in leviticum
+  - tommaso de vio, in pentateuchum
+- author: Thomas Cajetan
   work: In Psalmos commentarii
   uses: 5
   attested_by: 3
@@ -6916,14 +7537,6 @@ groups:
   - thomas de vio, in esaiam
   - tommaso de vio, commentary on isaiah
 - author: Thomas Cajetan
-  work: 'Commentarii in Pentateuchum: Exodus'
-  uses: 2
-  attested_by: 2
-  titles:
-  - commentaries on the five books of moses
-  - 'commentarii in pentateuchum: exodus'
-  - commentarii in quinque mosaicos libros
-- author: Thomas Cajetan
   work: Commentary on the Acts of the Apostles
   uses: 2
   attested_by: 2
@@ -6933,15 +7546,6 @@ groups:
   - thomas de vio, commentary on acts
   - thomas de vio, in acta apostolorum commentarii
 - author: Thomas Cajetan
-  work: Commentary on the Pentateuch
-  uses: 2
-  attested_by: 1
-  titles:
-  - commentarii in pentateuchum mosis
-  - commentary on the pentateuch
-  - thomas de vio cajetan, in genesim
-  - thomas de vio, in exodum
-- author: Thomas Cajetan
   work: Commentarii in librum Iob
   uses: 1
   attested_by: 1
@@ -6949,22 +7553,6 @@ groups:
   - commentarii in librum iob
   - in librum iob commentarii ad sensum litteralem
   - tommaso de vio, iob cum commentariis
-- author: Thomas Cajetan
-  work: Commentarii in Pentateuchum
-  uses: 1
-  attested_by: 1
-  titles:
-  - commentarii in pentateuchum
-  - literal commentary on the pentateuch
-  - tommaso de vio, in leviticum
-- author: Thomas Cajetan
-  work: 'Commentarii in Pentateuchum: In Exodum'
-  uses: 1
-  attested_by: 1
-  titles:
-  - 'commentarii in pentateuchum: in exodum'
-  - in quinque mosaicos libros commentarii
-  - thomas de vio cajetanus, commentary on exodus
 - author: Thomas Cajetan
   work: Commentarii in quatuor Evangelia
   uses: 1
@@ -7008,35 +7596,80 @@ groups:
   titles:
   - in quatuor evangelia commentarii
   - thomas de vio, commentary on the four gospels
-- author: Thomas de Vio Cajetan
-  work: Commentarii in Pentateuchum
-  uses: 8
+- author: Thomas Cajetan (Thomas de Vio)
+  work: 'Commentarii in Pentateuchum: in Genesim'
+  uses: 1
+  attested_by: 1
+  titles:
+  - 'commentarii in pentateuchum: in genesim'
+  - commentary on the five books of moses
+- author: Thomas de Vio (Cajetan)
+  work: 'Commentarii in Pentateuchum: In Genesim'
+  uses: 10
   attested_by: 3
   titles:
+  - cajetan on genesis
+  - cajetan, commentary on the pentateuch
+  - cajetan, in quinque mosaicos libros
+  - commentarii illustres in quinque mosaicos libros
+  - commentarii in genesim
+  - commentarii in pentateuchum
+  - 'commentarii in pentateuchum mosis: in genesim'
+  - 'commentarii in pentateuchum: genesis'
+  - 'commentarii in pentateuchum: in genesim'
+  - commentarii in quinque mosaicos libros
+  - commentary on genesis
+  - commentary on the pentateuch
+  - 'commentary on the pentateuch: genesis'
+  - 'commentary on the pentateuch: in genesim'
+  - in genesim commentarii
+  - in pentateuchum mosis
+  - in quinque mosaicos libros commentarii
+- author: Thomas de Vio (Cajetan)
+  work: Commentarii in Pentateuchum (Genesis)
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentarii in pentateuchum (genesis)
+  - in quinque mosaicos libros
+- author: Thomas de Vio Cajetan
+  work: Commentarii illustres in quinque Mosaicos libros
+  uses: 39
+  attested_by: 7
+  titles:
   - cajetan
+  - cajetan on genesis
+  - cajetan on the pentateuch
+  - cajetan, commentary on genesis
   - cajetan, literal commentary on exodus
   - cajetan, literal commentary on the pentateuch
+  - commentarii illustres in quinque mosaicos libros
+  - commentarii in genesim
   - commentarii in pentateuchum
+  - commentarii in pentateuchum (in genesim)
+  - 'commentarii in pentateuchum: genesis'
   - 'commentarii in pentateuchum: in exodum'
+  - 'commentarii in pentateuchum: in genesim'
+  - 'commentarii in pentateuchum: in leviticum'
+  - 'commentarii in pentateuchum: in librum numerorum'
   - 'commentarii in pentateuchum: leviticus'
+  - 'commentarii in quinque libros mosaicos: in genesim'
   - 'commentarii in quinque libros mosaicos: in numeros'
+  - commentarii in quinque mosaicos libros
+  - commentary on genesis
   - commentary on the five books of moses
   - commentary on the pentateuch
+  - commentary on the pentateuch (on genesis)
   - 'commentary on the pentateuch: genesis'
   - commentary on zechariah
   - in exodum commentarii
+  - in genesim
+  - in genesim commentarii
   - 'in omnes authenticos veteris testamenti libros commentarii: in zachariam'
+  - in pentateuchum commentarii
+  - in pentateuchum mosis iuxta sensum litteralem commentarii
   - in quinque mosaicos libros commentarii
   - 'literal commentary on the pentateuch: leviticus'
-- author: Thomas de Vio Cajetan
-  work: Commentarii illustres in quinque Mosaicos libros
-  uses: 3
-  attested_by: 2
-  titles:
-  - cajetan on the pentateuch
-  - commentarii illustres in quinque mosaicos libros
-  - 'commentarii in pentateuchum: in leviticum'
-  - 'commentarii in pentateuchum: in librum numerorum'
 - author: Thomas de Vio Cajetan
   work: Psalmi Davidici ad hebraicam veritatem castigati et iuxta sensum literalem enarrati
   uses: 2
@@ -7099,21 +7732,23 @@ groups:
   - scholia in apocalypsin
   - scholia in apocalypsin beati ioannis
 - author: Walafrid Strabo
-  work: Glossa Ordinaria
-  uses: 286
-  attested_by: 4
+  work: Glossa ordinaria
+  uses: 293
+  attested_by: 7
   titles:
   - biblia latina cum glossa ordinaria
   - bibliorum sacrorum cum glossa ordinaria
   - glossa
   - glossa in duodecim prophetas minores
   - glossa in exodum
+  - glossa in genesim
   - glossa in isaiam prophetam
   - glossa in jeremiam
   - glossa in jeremiam prophetam
   - glossa in leviticum
   - glossa ordinaria
   - glossa ordinaria (in zachariam)
+  - glossa ordinaria (traditionally attributed to walafrid strabo)
   - glossa ordinaria in acta apostolorum
   - glossa ordinaria in actus apostolorum
   - glossa ordinaria in amos
@@ -7121,6 +7756,7 @@ groups:
   - glossa ordinaria in duodecim prophetas minores
   - 'glossa ordinaria in duodecim prophetas minores: in osee'
   - glossa ordinaria in exodum
+  - glossa ordinaria in genesim
   - glossa ordinaria in ieremiam
   - glossa ordinaria in isaiam
   - glossa ordinaria in leviticum
@@ -7139,6 +7775,7 @@ groups:
   - glossa ordinaria super genesim
   - ordinary gloss
   - ordinary gloss (traditionally ascribed; school of laon)
+  - ordinary gloss on genesis
   - ordinary gloss on leviticus
   - the ordinary gloss
 - author: Walafrid Strabo
