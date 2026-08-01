@@ -300,3 +300,24 @@
 }
 
 .field-check input { min-width: 1rem; min-height: 1rem; }
+
+
+/* ---------------------------------------------------------------------------
+ * The Ordinary, on request
+ *
+ * It sets no text of its own: an element of the Ordinary is a composed prayer
+ * and is set by `.composed` in browser-core.css, exactly as a Collect is on the
+ * propers page. What is owned here is the one thing the Ordinary has that no
+ * proper has — a licence condition that must travel with the words it licenses.
+ * ------------------------------------------------------------------------ */
+
+.ordinary-element { margin-bottom: 0.9rem; }
+
+/* The acknowledgement a free licence requires. Quiet, because it is apparatus
+   and not the prayer; never hidden, because it is the condition on which the
+   prayer above it may be here at all, and a reader copying the text out is
+   owed it in the same breath. */
+.ordinary-grant {
+  font-style: italic;
+  color: var(--ink-soft);
+}

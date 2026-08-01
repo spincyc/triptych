@@ -39,10 +39,12 @@
   const Model = window.MassAssembly;
 
   const RUBRICS_INDEX = 'structure/rubrics/index.json';
+  const ORDINARY_INDEX = 'structure/ordinary/index.json';
 
   function rubricsPath(id) { return 'structure/rubrics/' + id + '.json'; }
   function yearPath(id, year) { return 'structure/calendar/' + id + '/' + year + '.json'; }
   function propersPath(id) { return 'structure/propers/' + id + '.json'; }
+  function ordinaryPath(id) { return 'structure/ordinary/' + id + '.json'; }
 
   const MONTHS = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -68,7 +70,15 @@
     structure: null,
     orations: null,
     orationLanguages: [],
-    why: false
+    why: false,
+    // The Ordinary is a second document, not an annotation on the first, so it
+    // is fetched and drawn only when it is asked for rather than hidden by a
+    // class the way the margins are.
+    ordinary: false,
+    ordinaryIndex: [],
+    // group id -> chosen option id, so a missal that grows a second choice
+    // needs a row in its inventory and no line here.
+    variants: {}
   };
 
   const dateInput = document.getElementById('date-input');
@@ -76,6 +86,10 @@
   const bibleSelect = document.getElementById('bible-select');
   const orationsSelect = document.getElementById('orations-select');
   const whyToggle = document.getElementById('why-toggle');
+  const ordinaryToggle = document.getElementById('ordinary-toggle');
+  const variantField = document.getElementById('variant-field');
+  const variantLabel = document.getElementById('variant-label');
+  const variantSelect = document.getElementById('variant-select');
   const prevButton = document.getElementById('prev-button');
   const nextButton = document.getElementById('next-button');
   const todayButton = document.getElementById('today-button');
@@ -171,6 +185,7 @@
   const rubricsCache = new Map();
   const yearCache = new Map();
   const propersCache = new Map();
+  const ordinaryCache = new Map();
 
   function once(cache, key, load) {
     const held = cache.get(key);
@@ -549,6 +564,134 @@
   }
 
   /* ------------------------------------------------------------------------
+   * The Ordinary
+   *
+   * The unvarying frame the day's propers are set into. It is a different
+   * document from the Mass, fetched from its own file, and it renders after the
+   * Mass because the page's first duty is the Mass appointed for the date.
+   *
+   * NOTHING ABOUT RIGHTS IS DECIDED HERE. The generator has already dropped
+   * every witness it may not publish and has written, on each element, which of
+   * its two texts is absent and under which recorded reason. This code prints
+   * what it is handed. That matters most where it would be easiest to be
+   * careless: one missal's English is freely given and another's is withheld by
+   * a licence, and a reader must be able to tell those two apart on sight.
+   * --------------------------------------------------------------------- */
+
+  function variantGroupOf(file) {
+    return (file.variants || [])[0] || null;
+  }
+
+  /** The option chosen in each group, defaulting to the one the source marks. */
+  function chosenOption(file, group) {
+    const wanted = state.variants[group.group];
+    const found = (group.options || []).find((one) => one.id === wanted);
+    return found || (group.options || []).find((one) => one.default) || null;
+  }
+
+  /**
+   * Whether an element is shown at all.
+   *
+   * An element with no `variant` belongs to the frame and always shows. One that
+   * names an option shows only under that option — which is what makes the
+   * control a choice between prayers rather than a filter over a list of them.
+   */
+  function elementShows(element, file) {
+    if (!element.variant) return true;
+    const group = variantGroupOf(file);
+    const chosen = group && chosenOption(file, group);
+    return Boolean(chosen && chosen.id === element.variant);
+  }
+
+  /** A witness's acknowledgement, printed where its words are, never in a footer. */
+  function witnessNote(file, sourceId) {
+    return (file.translations || []).find((one) => one.source_id === sourceId) || null;
+  }
+
+  function absenceWord(file, key) {
+    const found = (file.absences || []).find((one) => one.key === key);
+    return found ? found.what : key;
+  }
+
+  function renderElement(element, file) {
+    const section = T.el('section', 'proper ordinary-element');
+
+    const heading = T.el('h4', 'proper-name', element.name || element.key.split('/').pop());
+    if (element.speaker) heading.appendChild(T.el('span', 'proper-form', element.speaker));
+    if (element.locus) heading.appendChild(T.el('span', 'proper-ref', element.locus));
+    section.appendChild(heading);
+
+    const held = (element.translations || [])[0] || null;
+    if (held) {
+      const body = T.el('p', 'composed');
+      body.appendChild(T.el('span', 'composed-label',
+        element.kind === 'rubric' ? 'Rubric — the book’s own words'
+          : 'Composed text — not scripture'));
+      body.appendChild(document.createTextNode(held.text));
+      body.lang = held.lang;
+      section.appendChild(body);
+
+      const witness = witnessNote(file, held.source_id);
+      if (witness) {
+        section.appendChild(T.el('p', 'composed-note', 'Translation: ' + witness.label));
+        // The condition the licence attaches travels with the words it
+        // licenses. Printing it once at the foot of the page would let the two
+        // be separated by any reader who copied a prayer out of it.
+        if (witness.acknowledgement) {
+          section.appendChild(T.el('p', 'composed-note ordinary-grant', witness.acknowledgement));
+        }
+      }
+    }
+
+    // The Latin incipit earns its place only where the words are not shown: it
+    // is then the sole thing identifying which prayer this is.
+    if (!held && element.latin_incipit) {
+      const incipit = T.el('p', 'proper-incipit', element.latin_incipit);
+      incipit.lang = 'la';
+      section.appendChild(incipit);
+    }
+
+    const absent = element.absent || {};
+    if (absent.english) {
+      section.appendChild(T.notice('its English. ' + absenceWord(file, absent.english)));
+    }
+    if (absent.latin && !held) {
+      section.appendChild(T.notice('its Latin. ' + absenceWord(file, absent.latin)));
+    }
+    if (element.note) section.appendChild(T.el('p', 'composed-note', element.note));
+    return section;
+  }
+
+  function renderOrdinary(file) {
+    const wrapper = T.el('section', 'branch ordinary');
+    wrapper.appendChild(T.el('h3', 'mass-name', file.title));
+    wrapper.appendChild(T.el('p', 'entry-meta',
+      [file.edition_short || file.edition, 'the unvarying frame'].filter(Boolean).join(' · ')));
+    wrapper.appendChild(T.el('p', 'row-meta', file.advisory));
+
+    for (const witness of file.translations || []) {
+      if (witness.caution) {
+        wrapper.appendChild(T.el('p', 'row-meta', witness.label + ' — ' + witness.caution));
+      }
+    }
+
+    const group = variantGroupOf(file);
+    const chosen = group && chosenOption(file, group);
+    if (group && chosen) {
+      wrapper.appendChild(T.el('p', 'row-meta',
+        group.name + ': ' + chosen.name + '. ' + group.what));
+    }
+
+    for (const section of file.sections || []) {
+      const shown = (section.elements || []).filter((one) => elementShows(one, file));
+      if (!shown.length) continue;
+      wrapper.appendChild(T.el('h3', 'mass-subheading', section.name));
+      for (const element of shown) wrapper.appendChild(renderElement(element, file));
+    }
+    return wrapper;
+  }
+
+  /* ------------------------------------------------------------------------
    * Controls
    * --------------------------------------------------------------------- */
 
@@ -562,12 +705,37 @@
     if (state.orations) orationsSelect.value = state.orations;
   }
 
+  /**
+   * The variant control, filled from the chosen missal's own Ordinary.
+   *
+   * Hidden where there is nothing to choose — which is the 1962 Missal, with one
+   * Canon — and hidden while the Ordinary is not showing, because a control for
+   * something invisible is a control that does nothing.
+   */
+  function fillVariantSelect(file) {
+    const group = file && variantGroupOf(file);
+    if (!state.ordinary || !group) {
+      variantField.hidden = true;
+      return;
+    }
+    variantLabel.textContent = group.name;
+    T.fillSelect(variantSelect, (group.options || []).map((one) => ({
+      value: one.id,
+      label: one.name,
+      title: one.id
+    })));
+    const chosen = chosenOption(file, group);
+    if (chosen) variantSelect.value = chosen.id;
+    variantField.hidden = false;
+  }
+
   function syncControls() {
     dateInput.value = state.date || '';
     if (state.missalId) missalSelect.value = state.missalId;
     if (state.bibleId) bibleSelect.value = state.bibleId;
     if (state.orations) orationsSelect.value = state.orations;
     whyToggle.checked = state.why;
+    ordinaryToggle.checked = state.ordinary;
     applyWhy();
   }
 
@@ -579,13 +747,20 @@
   }
 
   function writeHash() {
-    T.writeHash([
+    const pairs = [
       ['date', state.date],
       ['missal', state.missalId],
       ['bible', state.bibleId],
       ['orations', state.orations === T.SOURCE_LANGUAGE ? null : state.orations],
-      ['why', state.why ? '1' : null]
-    ]);
+      ['why', state.why ? '1' : null],
+      ['ordinary', state.ordinary ? '1' : null]
+    ];
+    // Keyed by the group's own id, so a second choice in some later missal
+    // rides in the hash without a line being added here.
+    for (const group of Object.keys(state.variants).sort()) {
+      pairs.push([group, state.variants[group]]);
+    }
+    T.writeHash(pairs);
   }
 
   /* ------------------------------------------------------------------------
@@ -661,11 +836,35 @@
     const held = await T.fetchFragments(bible, wanted);
     if (!T.isCurrentRender(token)) return;
 
+    // The Ordinary, only if it was asked for. The fetch is after the Mass's,
+    // and its failure is reported in place rather than replacing the Mass: a
+    // missing Ordinary is no reason to withhold the propers of the day.
+    let ordinary = null;
+    if (state.ordinary && state.ordinaryIndex.some((one) => one.calendar === state.missalId)) {
+      ordinary = await once(ordinaryCache, state.missalId,
+        () => T.loadJSON(ordinaryPath(state.missalId)));
+      if (!T.isCurrentRender(token)) return;
+    }
+
     T.clear(reading);
     renderHead(derived, bible);
     for (const branch of derived.options) {
       reading.appendChild(
         renderBranch(branch, rubrics, derived, structure, bible, held.fragments));
+    }
+    if (ordinary && ordinary.ok) {
+      fillVariantSelect(ordinary.value);
+      reading.appendChild(renderOrdinary(ordinary.value));
+    } else {
+      fillVariantSelect(null);
+      if (ordinary) {
+        reading.appendChild(T.notice(
+          'the Ordinary of this missal. It could not be loaded: ' + ordinary.message));
+      } else if (state.ordinary) {
+        reading.appendChild(T.notice(
+          'the Ordinary of this missal. This corpus carries none for “' +
+          state.missalId + '”.'));
+      }
     }
     openMargins(reading);
     reading.setAttribute('aria-busy', 'false');
@@ -743,6 +942,16 @@
       title: one.edition || one.code || one.id
     })));
 
+    // One fetch, at start-up, for which missals have an Ordinary at all. It is
+    // ~1 KB; the Ordinary itself is not fetched until it is asked for. A corpus
+    // built before this layer existed simply has none, which is not an error.
+    try {
+      const file = await T.loadJSON(ORDINARY_INDEX);
+      state.ordinaryIndex = (file && file.calendars) || [];
+    } catch (error) {
+      state.ordinaryIndex = [];
+    }
+
     const hash = T.readHash();
     state.orations = hash.get('orations') || T.SOURCE_LANGUAGE;
     const wantedBible = hash.get('bible');
@@ -750,6 +959,13 @@
       ? wantedBible
       : state.bibles[0].id;
     state.why = hash.get('why') === '1';
+    state.ordinary = hash.get('ordinary') === '1';
+    for (const row of state.ordinaryIndex) {
+      for (const group of row.variants || []) {
+        const wanted = hash.get(group);
+        if (wanted) state.variants[group] = wanted;
+      }
+    }
     state.date = validDate(hash.get('date')) ? hash.get('date') : todayISO();
     const wantedMissal = hash.get('missal');
     state.missalId = missals.some((one) => one.id === wantedMissal) ? wantedMissal : missals[0].id;
@@ -771,6 +987,23 @@
     state.why = whyToggle.checked;
     applyWhy();
     writeHash();
+  });
+
+  ordinaryToggle.addEventListener('change', () => {
+    state.ordinary = ordinaryToggle.checked;
+    select(null, null, { moveFocus: false });
+  });
+
+  variantSelect.addEventListener('change', () => {
+    const held = ordinaryCache.get(state.missalId);
+    // The select's own options came from this missal's groups, so the group is
+    // read back from the file rather than assumed from the control's id.
+    Promise.resolve(held).then((resolved) => {
+      const group = resolved && resolved.ok && variantGroupOf(resolved.value);
+      if (!group) return;
+      state.variants[group.group] = variantSelect.value;
+      select(null, null, { moveFocus: false });
+    });
   });
 
   missalSelect.addEventListener('change', () => {
@@ -814,6 +1047,13 @@
     const wantedOrations = hash.get('orations') || T.SOURCE_LANGUAGE;
     if (state.orationLanguages.some((entry) => entry.lang === wantedOrations)) {
       state.orations = wantedOrations;
+    }
+    state.ordinary = hash.get('ordinary') === '1';
+    for (const row of state.ordinaryIndex) {
+      for (const group of row.variants || []) {
+        const wanted = hash.get(group);
+        if (wanted) state.variants[group] = wanted;
+      }
     }
     const wantedDate = hash.get('date');
     select(validDate(wantedDate) ? wantedDate : state.date, null, { moveFocus: false });

@@ -71,6 +71,26 @@
     </label>
   </div>
 
+  <!-- Also off unless asked for, and for the same reason: the page's first duty
+       is the Mass appointed for the date, and the Ordinary is the unvarying
+       frame that Mass sits in rather than part of it. It is fetched only when
+       it is asked for, so a reader who never wants it never pays for it. -->
+  <div class="field field-check">
+    <label for="ordinary-toggle">
+      <input type="checkbox" id="ordinary-toggle" name="ordinary">
+      Ordinary of the Mass
+    </label>
+  </div>
+
+  <!-- Postconciliar only, and hidden until the Ordinary is showing. The 1962
+       Missal has one Canon and no choice to offer, so this control appears when
+       the chosen missal's Ordinary declares a variant group and not otherwise;
+       nothing here knows what a Eucharistic Prayer is. -->
+  <div class="field" id="variant-field" hidden>
+    <label for="variant-select" id="variant-label">Eucharistic Prayer</label>
+    <select id="variant-select" name="variant"></select>
+  </div>
+
   <div class="field field-steps">
     <span class="field-legend" id="step-legend">Day</span>
     <div class="steps" role="group" aria-labelledby="step-legend">
@@ -95,6 +115,11 @@
     with the rubric that put it there in the margin beside it — which days fell
     on the date, which one took it, and which of the rest survive as the second
     and third collects.
+  </p>
+  <p>
+    The Ordinary is the unvarying frame the day's propers are set into. Where a
+    missal's English cannot be published, each element says which of its two
+    texts is missing and under what recorded reason, rather than going quiet.
   </p>
   <p>
     To choose a Mass rather than a date, see
