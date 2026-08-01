@@ -281,3 +281,161 @@ variation marked is close to what is being described, and transposition is the
 known hard case that some collation tools handle and others explicitly refuse.
 Genome browsers solved the horizontal-coordinate-with-stacked-tracks problem
 long ago. Both are better starting points than anything in version control.
+
+---
+
+## 9. What the research settled
+
+Two lanes surveyed the field on 2026-07-31. What follows is only what changes
+what gets built; the full reports are cited from their sources.
+
+### Do not write a layout algorithm
+
+Octilinear layout is **NP-complete** — Nöllenburg, Tech. Rep. 2005-25, by
+reduction from Planar 3-SAT. The 2011 mixed-integer formulation takes **ten
+hours on London** and cannot label it at all. The 2020 grid-routing
+approximation (Bast, Brosi and Storandt, *CGF* 39(3)) does London in **2.7
+seconds** within 7.3 per cent of optimal. [sourced]
+
+**LOOM/`octi`** implements it — GPL-3.0, C++, actively maintained. Decisively,
+it accepts a **DOT file with `pos="x,y"`** as plain Cartesian doubles, so an
+abstract graph needs no geography: a generator can emit *x = date, y = tradition
+lane* and let `octi` octilinearise it. One emitter, DOT, `octi`, SVG — and the
+same emitter feeds the interactive version, which is Rule 5 satisfied rather
+than worked around. [sourced]
+
+**Labelling, not layout, is where automation still fails**, and the generator
+must do it. Neither `octi` nor TikZ will.
+
+### TikZ cannot do this under pdflatex
+
+PGF's `graphdrawing` refuses to load outside LuaTeX, and ships **no octilinear
+algorithm** in any case; no metro-map package exists on CTAN. TikZ is a
+renderer, not a layout engine. The route that keeps the document's own
+typography is the **`svg` package** with Inkscape's LaTeX text export: generated
+geometry, typeset labels. [verified against this machine's TeX Live]
+
+### Monochrome works, and the ceiling is measured
+
+Transport for London publishes an official black-and-white Tube map — *"© TfL
+April 2026"*, 1053 × 668 mm — distinguishing **22 services with no colour at
+all**. The grammar is copyable: **constant band width** for every line, so
+weight stays free for another dimension; the differentiation is the band's
+**internal texture** plus **three grey values**; and it is paid for with
+**2.4× more repeated inline naming** than the colour map. [verified from the
+plate]
+
+At ten or so traditions this is comfortable, with weight left over.
+
+Note one convention already in a reader's vocabulary: TfL's glyph for an
+out-of-station walking interchange is **two circles joined by three dots** — a
+connection that is *not* a through-running of the line. That is close to Rule 2's
+"contact without reception".
+
+### Citation on the plate
+
+Priestley's *Chart of Biography* (1765) put 2,000 dated items on a timeline and
+solved the apparatus with **numbered items and a facing catalogue**. He also put
+a complete **uncertainty grammar** on the plate: a full line for certainty, and
+dots disposed differently for "a little before or after", "about", birth known
+and death not, and — where even the century is uncertain — **no full line at
+all**. That is an implementable monochrome epistemic notation, tested on 2,000
+items, using only the dash channel. [sourced]
+
+What to reject in him: he refused per-item citation as "endless" and gave a
+global bibliography instead. That refusal is precisely what separates an
+infographic from scholarship.
+
+The modern complement is the ICS chronostratigraphic chart, which carries on the
+plate: a notation legend, an epistemic marker defined (`~` for approximate), a
+status disclaimer, the provenance of the data *with its exceptions named*, an
+edition stamp, a **version-pinned URL**, and a **"To cite:" line**. For a derived
+artifact that must match its interactive twin at a stated moment, the pinned URL
+and edition stamp are the highest-value lines on the sheet. [sourced]
+
+### Sizing, measured rather than estimated
+
+TfL's black-and-white plate carries ~500 stations at ~1,400 mm² each with 2.9 mm
+cap height. So: **40 nodes fit A3, 100 fit A2, 200 fit A1 with room for the
+apparatus, 400–700 need A0.** Reserve 15–25 per cent for the key unless it goes
+in facing text. [verified by measurement]
+
+### Three findings that argue against parts of the metaphor
+
+These are recorded because the design should answer them, not because they sink
+it.
+
+**Beck's rule-set is not a gold standard.** Roberts and others compared the
+official octilinear Paris Métro map against a hand-drawn all-curves version:
+journey planning was *faster* on the curves, effect sizes 0.48 to 1.12, and their
+conclusion is that "there is no evidence to suggest that any rule-set can be
+claimed to be a gold-standard". Preference and performance correlate at
+effectively zero — **do not evaluate this map by asking whether people like it.**
+[sourced]
+
+**Symbol choice changes what readers believe.** Guo measured that the London map
+represents about **4 per cent** of the variation in real distance, and that over
+30 per cent of passengers chose a route ~15 per cent slower because the map made
+it look shorter. More pointedly, the same interchange drawn as a dot versus as a
+long link between platforms **changed which transfer passengers made**. Rule 2's
+whole burden — that a meeting and a crossing must look different — is the same
+mechanism, and it cuts both ways. [sourced]
+
+**Storyline visualisation has no merge operator**, which is a gift. Lines run
+adjacent and separate again; they never fuse. That is Rule 2's parallel case,
+already published and evaluated. Conversely it offers no vocabulary for a genuine
+merge, so reception needs its own mark. [sourced]
+
+### When the industry needed branching and time together
+
+It kept the topology and **put the time in labels, not geometry**. The Swiss
+*Netzgrafik*, in service since 1982, prints arrival and departure minutes beside
+stations on a topological graph, and encodes frequency in line style. TfL's
+Walking Tube Map prints minutes on uniform-length edges; a 1960s San Francisco
+map printed travel time at each station. **Two mature independent systems both
+chose to label the edge rather than lengthen it.** [sourced]
+
+Against that, one published diagram deliberately does the opposite: the
+project-plan metro map deletes the uniform-edge-length objective because "long
+edges convey meaning". Strict octilinearity and strictly time-proportional
+Euclidean length **cannot both hold** — a 45° edge's x-extent is length/√2 — so
+this is a choice that must be made explicitly. No diagram exists that is both.
+[sourced]
+
+### Stemmatology has the vocabulary for uncertainty, and none for refusal
+
+The discipline standardises sigla — `O` the lost original, `ω` the archetype,
+Greek minuscules for lost hyparchetypes, Latin capitals for extant witnesses —
+and a solid line for descent, usually without arrowheads. Contamination is a
+broken line, though dotted versus dashed is the author's choice. **The y-axis is
+generation depth, not time**, explicitly. [sourced]
+
+Three things to take:
+
+- **The crux, †.** A centuries-old first-class sign meaning *something is
+  demonstrably wrong here and I cannot account for it*. The nearest respectable
+  precedent for a change whose authority cannot be established — with the caveat
+  that the crux asserts corruption where our case may be neutral.
+- **The Leiden Conventions.** Bracket shape encodes **who is responsible** for a
+  deviation: `[…]` the material perished, `⟨…⟩` the scribe erred, `{…}` the
+  editor judges, `(…)` the editor expands. Same content, different bracket,
+  different agent. That architectural pattern is worth copying wholesale.
+- **The soft polytomy.** Where the order of branching cannot be recovered, draw
+  the branches from one point rather than inventing an order. Phylogenetics
+  distinguishes *quantified but drawn* from *unquantifiable so not drawn*, which
+  is exactly Rule 3's distinction.
+
+And the negative that matters: **no convention exists for an absent or refused
+relation** — not in stemmatology, not in genealogy, not in phylogenetics, where
+absence of a branch is simply absence. A documented refusal-to-receive as a
+first-class branch-creating event is notation this project invents. Define it in
+a legend and do not claim conventionality. [sourced]
+
+### One number, read correctly
+
+Gallotti, Porter and Barthelemy put the cognitive limit for planning a trip at
+about **8 bits**, and concluded maps "should not consist of more than 250
+connection points". That counts **branch alternatives a reader must discard**,
+not stations: a 500-node chain sits under it, a 250-node high-branching graph
+does not. For this project it is a constraint on **branching factor**, not on how
+many acts the map may carry. [sourced]
