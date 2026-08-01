@@ -1,0 +1,123 @@
+# Collating the postconciliar seasonal citations against the book they came from.
+#
+# The calendar index's own `verification` header declared the defect this record
+# closes: the seasonal section carried 533 scripture propers holding 1,059
+# book-references, none of them read at a witness. They were model-generated
+# leads, and `guidance/sources.md` forbids source text routing through a model
+# in terms. A citation produced by recall is the same defect wearing the costume
+# of a number, and this file was the largest outstanding instance of it in the
+# repository.
+#
+# This record says what was read, at which page, what agreed, what did not, and
+# what is still a lead. It does not restate the citations; those live on the
+# Masses, each carrying on its own `notes` the artifact page it was read at.
+#
+# The rights basis is not reopened here. It is settled in
+# src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml under
+# `the_citation_question`: a citation is a fact and may be carried, the
+# Lectionary's words may not be taken, and the Ordo's selection across 600 pages
+# is a compilation this project does not claim a right to transcribe. This lane
+# stays inside that ruling. What it takes is, per celebration this calendar
+# already holds by identity, the citation appointed for it.
+
+acquisition_schema = 1
+record_type = "calendar-seasonal-collation"
+calendar = "postconciliar"
+target = "src/sources/calendars/postconciliar/propers.yaml"
+recorded_on = "2026-08-01"
+
+witness = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+witness_label = "Ordo lectionum Missae, editio typica altera, 1981"
+witness_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+
+method = """
+Every citation landed here was read in a page image of the Ordo rendered at 200
+dpi. Nothing was taken from a compilation, and no citation was recalled. The
+Adobe Paper Capture text layer the artifact carries was used only to find which
+page a celebration is on; it was never the source of a number.
+
+Artifact page N is printed page N-54 through the Proprium de Tempore, the same
+offset the sanctoral lane recorded for the Proprium de Sanctis. The Sunday
+lectionary — Pars I, `LECTIONES PRO DOMINICIS` — runs artifact pages 55 to 152.
+It is dense: one page usually carries a whole Sunday in all three cycles, so the
+sanctoral lane's measured rate of one page per two celebrations understates what
+the temporal costs. Here it was closer to one page per Sunday, three formularies
+at a time.
+
+Every passage was encoded by `tools/citations`'s own `parse_citation`, and every
+responsorial psalm was converted from the Ordo's printed Vulgate number by
+`scripts/_psalms`, which derives from the tracked verse-level concordance rather
+than restating a correspondence. Every display string was then re-parsed and
+checked against the structure it was rendered from, so a page cannot print one
+reference and fetch another. Nothing in the landed payload is hand-typed
+structure.
+"""
+
+scope = """
+What the Ordo can settle and what it cannot. A seasonal Mass in this file holds
+two kinds of scripture proper:
+
+  the Lectionary slots   First and Second Reading, Responsorial Psalm, Gospel
+                         Acclamation, Gospel, and the Vigil's readings — printed
+                         in the Ordo lectionum, and therefore readable
+  the antiphons          Entrance and Communion — printed in the Missal, not in
+                         the Ordo, and not readable from this witness
+
+This lane read the first and did not touch the second. Each collated Mass says
+so on its own notes rather than leaving a reader to infer it. The antiphons are
+the next lane and are bounded: the Missale Romanum 2002 is registered, the
+citation ruling covers an antiphon exactly as it covers a reading, and what is
+wanted is the scripture reference the Missal prints beside a scriptural antiphon
+and the fact that a non-scriptural one has none.
+"""
+
+# ---------------------------------------------------------------------------
+# The numbering finding, which had to be settled before any psalm was converted.
+# ---------------------------------------------------------------------------
+
+[numbering]
+finding = """
+`guidance/versification.md` stated that the Ordo lectionum cites in Nova Vulgata
+numbering, and that the Nova Vulgata numbers psalms Hebrew-first. Both cannot be
+true of this book, and the page images settle which.
+
+The 1981 Ordo prints its responsorial psalms in VULGATE numbering, bare, with no
+parenthesis and no Hebrew number anywhere. Artifact page 100, printed page 46,
+carries the whole Third Sunday in Ordinary Time and shows both systems in
+adjacent lines of one formulary: `Is 8, 23b - 9, 3` for the first reading, which
+is Nova Vulgata numbering — the Vulgate numbers that pericope 9:1-4 — beside
+`Ps 26`, `Ps 24` and `Ps 18` for the three responsorial psalms, whose printed
+responses are the Hebrew 27:1, 25:4 and 19.
+
+The same book shows it knows how to flag a second system when it wants to:
+`Sir 15, 16-21 (gr. 15-20)` at artifact page 104 prints the Greek number in
+parentheses after the Latin. It prints no parenthesis for a psalm.
+
+The correction is recorded in `guidance/versification.md`, dated 1 August 2026,
+with the pages it was read at. It is upstream of every psalm conversion this
+project makes from a Lectionary citation, which is why it was settled first.
+"""
+consequence = """
+This calendar declares `psalm_numbering: hebrew`, so an Ordo responsorial psalm
+cannot be stored as printed: through most of the psalter it would be off by one
+psalm, resolving cleanly to the wrong text. Every psalm landed here is converted
+by `scripts/_psalms`, and every collated Mass carrying a psalm says so.
+"""
+relief = """
+One thing this makes cheaper rather than dearer. §5 of versification.md finds
+that no edition this repository tracks witnesses the numbering the calendar
+cites in. That stands for the books and is relieved for the psalter: the tracked
+Douay-Rheims concordance witnesses the Vulgate psalm numbering exactly, so an
+Ordo responsorial psalm needs no acquisition at all.
+"""
+
+# ---------------------------------------------------------------------------
+
+[counts]
+counts_note = """
+Measured, not estimated. `references_before` is the count the index's own
+verification header declared and this lane re-derived from the file before
+touching it.
+"""
+scripture_propers_before = 533
+references_before = 1059
