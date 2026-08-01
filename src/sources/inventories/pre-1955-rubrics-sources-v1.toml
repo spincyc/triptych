@@ -1,0 +1,370 @@
+# What the pre-1955 recension needs before it can decide a day, and where it is.
+#
+# A SOURCING RECORD, not an acquisition. Nothing below was added to the
+# repository as payload: every row is an identification, a rights position, a
+# retrieval route, or a bounded negative, so that a later lane can act
+# deliberately rather than on whatever a search returns first.
+#
+# It sits in inventories/ for the reason its sibling
+# `missal-acquisition-audit-v1.toml` gives: `source-library validate` rejects any
+# file under src/sources outside its own schema except .md and .toml under
+# inventories/, and this record is not ready to be a work in the library.
+#
+# WHY IT IS SEPARATE FROM THE MISSAL AUDIT. That audit's own `extent` excludes
+# the Office `except where one of them is the only carrier of a missal act`. The
+# finding recorded here is that for PRECEDENCE the Office is exactly that: the
+# pre-1955 Missal says in its own general rubrics that the order of Masses is the
+# order of the Office and that translation follows the Breviary. So the books
+# this recension needs are not missals, and the audit that covers missals was
+# right to leave them out rather than wrong to.
+
+audit_schema = 1
+record_type = "recension-rubrics-sources"
+slice = "roman-pre-1955"
+recorded_on = "2026-08-01"
+
+question = """
+`src/sources/calendars/roman-pre-1955/` serves 490 masses and resolves 316 of
+the 365 dates of 2026, and it ships no `rubrics.yaml`, so the browser's missal
+selector does not offer it. guidance/recensions.md Rule 6 makes that the right
+way round -- a recension is offered only where it can be served -- and this file
+is the record of what would have to be true for it to be served.
+
+`tools/calendar-rubrics` will not accept a rubrics source that does not state a
+precedence table: `check_precedence` fails on `precedence.stated: false` with
+`this file exists to state it`, and requires the rows to number 1..N in order.
+That is a deliberate refusal to ship a rubrics source that decides nothing, and
+it is the reason this file exists rather than a `rubrics.yaml` with a hole in it.
+
+So the whole question reduces to one thing: WHERE IS THE PRE-1955 ORDER OF
+PRECEDENCE PRINTED? The answer is not in the Missal, and that is not an
+inference. It is what the Missal says.
+"""
+
+evidence = """
+Three evidence levels, and no row claims one it did not reach. The classes are
+the ones `missal-acquisition-audit-v1.toml` fixed, used identically here.
+
+  [verified]  Read on 2026-08-01 from bytes fetched for this record, at a
+              recorded sha256. Reproducible.
+  [sourced]   Read from an external document cited by URL or identifier.
+  [recorded]  Taken from a record already in this repository, cited by path,
+              and not independently re-verified unless the row says so.
+
+Nothing is asserted from recall. Where a position could not be sourced the field
+says `unresolved` or `unrecorded`, and establishing it is treated as the work.
+"""
+
+ocr_bound = """
+Every pre-1955 reading in this repository, this file included, is through an
+Internet Archive OCR text layer. That grade is `ocr-only` in
+`roman-holy-week-acts-v1.toml` and it is not a witness to WORDING: this
+repository collated 99 orations from one such layer against that printing's page
+images and corrected 38 [recorded, guidance/recensions.md section 8.4].
+
+It is admissible for STRUCTURE, and the distinction is what this file rests on.
+Whether a book contains a section titled `De Translatione Festorum`, and whether
+a numbered table of precedence appears anywhere between two headings, are facts
+about the presence and absence of large printed structures over hundreds of
+lines. They survive character-level error; a table cannot be spelt away. Every
+Latin phrase quoted below is quoted as the OCR gives it and is offered as a
+locator, never as a transcription fit to publish.
+"""
+
+derivative_hazard = """
+INTERNET ARCHIVE DERIVATIVES ARE REGENERATED, AND THIS REPOSITORY ALREADY HOLDS
+LOCI PINNED TO OLD ONES. `roman-holy-week-acts-v1.toml` records the 1920 witness
+as `MissaleRomanum1920_djvu.txt, 123278 lines, 2918085 bytes`. The copy fetched
+on 2026-08-01 from the same item is 119621 lines and 2932349 bytes [verified], so
+line numbers pinned against the older derivative land somewhere else in the newer
+one, or nowhere. Nothing in that inventory is changed here.
+
+Every locus in this file therefore carries the sha256 of the bytes it was read
+from, and a locus without one should be treated as unreproducible rather than as
+wrong.
+"""
+
+# ---------------------------------------------------------------------------
+# The finding. It is the reason this file is short and the reason no
+# `rubrics.yaml` accompanies it.
+# ---------------------------------------------------------------------------
+
+[[findings]]
+id = "the-missal-defers-precedence-to-the-office"
+claim = "The pre-1955 Missal does not state an order of precedence, and says so itself."
+grade = "verified"
+basis = """
+Two sentences, both in the Missal's own Rubricae generales, both read in two
+independent pre-1955 witnesses.
+
+FIRST, the opening rubric of the whole apparatus, before title I:
+`Missa quotidie dicitur secundum Ordinem Officii: de Festo Duplici, vel
+Semiduplici, vel Simplici: de Dominica, vel Feria, vel Vigilia, vel Octava: et
+extra Ordinem Officii, Votiva, vel pro Defunctis.`
+The Mass follows the ORDER OF THE OFFICE. The Missal is telling the reader that
+the ranking is not its own.
+
+SECOND, title VI, `De Translatione Festorum`, in terms:
+`In dicendis Missis servetur Ordo Breviarii de Translatione Festorum Duplicium,
+quando majori aliquo Festo, seu Dominica impediuntur.`
+When a feast is impeded, what governs is the ORDER OF THE BREVIARY.
+
+That is a book declining jurisdiction over the decision `rubrics.yaml` exists to
+record, and it is the single most useful thing established here.
+"""
+loci = [
+  "missale-romanum-1920 8894-8897 (opening rubric) and 9134-9136 (title VI), sha256 eaf3ba379d4d9c0227ce991ac34be66e5177ab52642a8e0376776be81fd0041a",
+  "benziger-1942 4497-4501 (opening rubric) and 4722-4726 (title VI), sha256 724a04fa083f780580a066b6ff2cad806190406d0c2112f74d2d8b8efbfc4bcb",
+]
+consequence = """
+A pre-1955 `rubrics.yaml` CANNOT BE BUILT FROM A MISSAL WITNESS, and this
+repository holds only missal witnesses for the period. The 1962 calendar's
+rubrics source could be built from a missal because the 1960 code reprints its
+pars prima and pars tertia at the front of the 1962 typical edition; the
+pre-1955 books carry no such reprint, because before 1960 there was no such code.
+
+This is not a gap that a more careful reading of the Missal would close. It is
+the Missal saying the answer is in another book.
+"""
+
+[[findings]]
+id = "the-two-witnesses-disagree-about-the-hour"
+claim = "The general rubric De hora celebrandi Missam differs between two pre-1955 printings."
+grade = "verified"
+basis = """
+The 1920 typical edition prints `Missa privata saltem post Matutinum et Laudes
+quacumque hora ab aurora usque ad meridiem dici potest`. The 1942 Benziger
+prints the same title with a wider window, `ab una hora ante auroram usque ad
+unam horam post meridiem`, which is the measure of canon 821 of the 1917 Code
+rather than the older rubric.
+
+Recorded because `src/sources/calendars/roman-pre-1955/propers.yaml` argues from
+this rubric in its largest departure, the Easter Vigil, and because it is a
+worked example of the hazard guidance/recensions.md Rule 5 names: `pre-1955` is
+a boundary and not an edition, and one witness does not speak for the state.
+"""
+loci = [
+  "missale-romanum-1920 9710-9713, sha256 eaf3ba379d4d9c0227ce991ac34be66e5177ab52642a8e0376776be81fd0041a",
+  "benziger-1942 5248-5250, sha256 724a04fa083f780580a066b6ff2cad806190406d0c2112f74d2d8b8efbfc4bcb",
+]
+consequence = """
+The Easter Vigil row's conclusion is untouched -- one hour after noon is still
+not the night the reform moved the Vigil to -- and its reasoning is narrowed.
+Both are recorded in that file's `open_collation_items`.
+"""
+
+[[findings]]
+id = "holy-thursday-carries-one-mass"
+claim = "Neither pre-1955 witness prints a Chrism Mass; Holy Thursday has one Introit."
+grade = "verified"
+basis = """
+In each witness the span from the Holy Thursday heading to the Good Friday
+heading contains exactly one `Introitus`, `Gal. 6, 14`, `Nos autem gloriari`, and
+the string `Chrismatis` occurs nowhere in Holy Week in either book. Immediately
+before the heading the 1920 witness prints `Triduo sequenti prohibentur omnes
+Missae privatae`, which forbids the other Masses rather than merely omitting them.
+
+This closed an open question that had been carried deliberately unanswered, and
+the departure now stands in the recension with this reading as its basis.
+"""
+loci = [
+  "missale-romanum-1920 34612-35196, single Introit at 34620, next day at 35197",
+  "benziger-1942 32721-33444, single Introit at 32730",
+]
+consequence = """
+It is a statement about THE MISSAL. In the pre-1955 rite the oils are blessed
+within the one Mass of the Lord's Supper by a rite the Pontificale Romanum
+carries; no pre-1955 Pontificale has been read here, so the recension says
+nothing about the blessing of the oils. See `[[wanted]]` `pontificale-pre-1955`.
+"""
+
+# ---------------------------------------------------------------------------
+# The witnesses actually read for this record.
+# ---------------------------------------------------------------------------
+
+[[held]]
+id = "benziger-1942"
+label = "Missale Romanum, editio IV iuxta typicam Vaticanam, Benziger Brothers, copyright 1942"
+registered = "edition.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947"
+artifact = "artifact.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947.ia-djvu-ocr-724a04fa"
+repository = "Internet Archive, item missale-romanum-1947"
+read_from = "ocr-only"
+sha256 = "724a04fa083f780580a066b6ff2cad806190406d0c2112f74d2d8b8efbfc4bcb"
+byte_size = 3278166
+lines = 152164
+retrieved = "2026-08-01"
+bytes_match_the_registered_artifact = true
+bytes_match_basis = """
+The fetched sha256 and byte size are identical to the ones the artifact record
+carries [verified]. This is the first reading in this repository made against the
+exact registered object rather than against a re-fetch assumed to be the same
+bytes, and it is recorded because the sibling 1920 witness shows what happens
+when that assumption is not checked -- see `derivative_hazard`.
+"""
+rights = "unresolved"
+may_publish_text = "unresolved"
+rights_basis = """
+Carried unchanged from the artifact record: the Internet Archive item carries no
+licence, rights statement or public-domain determination, and names only an
+uploader address. The printing's own copyright line reads 1942 and 1944, which is
+inside the term for a US work of that date if it was renewed, and no renewal
+search was performed. `unresolved` is therefore the position and not a placeholder.
+"""
+carries = """
+Rubricae generales Missalis, titles I-XX [4494-5678]; Additiones et Variationes
+in Rubricis Missalis ad normam Bullae Divino afflatu, titles I-X [5678-6931];
+Ritus servandus in celebratione Missae [6931-8800]; De defectibus [8800-9200].
+"""
+does_not_carry = """
+Any Breviary rubric, any table of occurrence, any table of concurrence, and any
+numbered order of precedence. Its title VI refers the reader to the Breviary; see
+`[[findings]]` `the-missal-defers-precedence-to-the-office`.
+"""
+
+[[held]]
+id = "missale-romanum-1920"
+label = "Missale Romanum, editio typica Vaticana, 1920"
+registered = "unregistered in the source library; used as a witness in roman-holy-week-acts-v1.toml"
+repository = "Internet Archive, item MissaleRomanum1920"
+read_from = "ocr-only"
+sha256 = "eaf3ba379d4d9c0227ce991ac34be66e5177ab52642a8e0376776be81fd0041a"
+byte_size = 2932349
+lines = 119621
+retrieved = "2026-08-01"
+bytes_match_the_registered_artifact = false
+bytes_match_basis = """
+There is no registered artifact to match. `roman-holy-week-acts-v1.toml` records
+this text layer as `123278 lines, 2918085 bytes`, and the copy fetched on
+2026-08-01 from the same item is 119621 lines and 2932349 bytes. The derivative
+was regenerated between the two readings. See `derivative_hazard`.
+"""
+rights = "public-domain-us-pre-1931"
+may_publish_text = "yes"
+rights_basis = """
+A 1920 printing, published before 1931, and therefore in the public domain in the
+United States on the frame `missal-acquisition-audit-v1.toml` sources line by
+line. The Internet Archive item carries no licence field, which is why the acts
+inventory calls this a weaker basis than the pre-1900 printings; the date alone
+carries it.
+"""
+carries = "The same Rubricae generales Missalis and Additiones et Variationes, in the typical edition's own setting."
+does_not_carry = "The same absences as the row above, for the same reason."
+
+# ---------------------------------------------------------------------------
+# What is wanted, in the order that settles the most.
+# ---------------------------------------------------------------------------
+
+[[wanted]]
+id = "breviarium-romanum-pre-1955"
+priority = 1
+what = "A pre-1955 Breviarium Romanum carrying Rubricae generales Breviarii and the tables of occurrence and concurrence."
+why = """
+It is the book the Missal points at, and it is the ONLY thing standing between
+this recension and a `rubrics.yaml`. Everything else in this file is a smaller
+question.
+
+The 1962 calendar's precedence table has 28 rows because the 1960 code prints 28
+numbered rows and the rows are addresses later rubrics cite. The pre-1955 regime
+has no such table in the Missal, and whether it has one anywhere -- as against an
+order recoverable only from prose about occurrence, translation and
+commemoration -- is itself unestablished here. If it turns out the pre-1955 order
+is nowhere printed as a numbered table, that is a finding about the rite and not
+a failure of the search, and `calendar-rubrics` would have to be taught the
+difference before a source could be written. THAT QUESTION IS OPEN.
+"""
+status = "unrecorded"
+status_note = """
+Left `unrecorded` rather than `not-located`. The distinction is the one
+`missal-acquisition-audit-v1.toml` paid for in its `not-located-verdicts`
+correction: two rows were written `not-located` on the strength of one
+repository's search and the books were in another library the whole time. This
+row records that the search has not been completed here, which is a weaker and
+truer claim than saying the book was not found.
+"""
+
+[[wanted]]
+id = "ordo-hebdomadae-sanctae-1956"
+priority = 2
+what = "The Ordo Hebdomadae Sanctae instauratus, Vatican, 1956, the reformed rite's own book."
+why = """
+Not needed for the rubrics, and needed for the recension's largest open item.
+Every departure this recension states is measured PRE-1955 AGAINST 1962, because
+the act history reads the post-reform state entirely from a 1962 printing.
+Whether the 1956-1960 book differs from the 1962 one in these liturgies is
+unrecorded, and only this book settles it.
+"""
+status = "restricted"
+status_note = """
+Recorded at `missal-acquisition-audit-v1.toml` row `ordo-hebdomadae-sanctae-1956`
+as located, identified, and `access-restricted-item` at both Internet Archive
+copies, rights `holy-see-post-1929`, `may_publish_text = no` [recorded]. It is
+already step 1 of that audit's acquisition order and is not restated here beyond
+the pointer.
+"""
+not_the_same_book_as = """
+`work.catholic-church.ritus-pontificalis-ordinis-hebdomadae-sanctae-instaurati`,
+the Ritus Pontificalis Ordinis Hebdomadae Sanctae Instaurati, Vatican 1957, which
+IS registered in the source library with a 1957 edition record. That is the
+PONTIFICAL ceremonial for the restored Holy Week -- what a bishop does -- and the
+Ordo is the book of the rite itself. The source library keeps them as two works
+and this file keeps them as two rows. Collapsing them would let a ceremonial for
+bishops stand as the witness to a rite celebrated everywhere, which is the
+`printing-conformed-to-a-typical-edition` error in another costume.
+"""
+
+[[wanted]]
+id = "de-rubricis-simpliciorem-1955"
+priority = 3
+what = "The decree De rubricis ad simpliciorem formam redigendis, Sacred Congregation of Rites, 23 March 1955, in Acta Apostolicae Sedis 47 (1955)."
+why = """
+`src/sources/inventories/latin-missal-acts-v1.toml` already models this act. It
+removed most octaves and vigils and changed the ranking vocabulary, and those are
+calendar-wide rubrical departures -- probably the largest set this recension will
+ever carry. NOT ONE of them is stated in the recension, because they are rubrical
+and it ships no rubrics source.
+
+The decree is what fixes the extent of that set. Without it the recension cannot
+say which octaves and vigils the pre-1955 books keep that the 1962 book does not,
+and an attempt to answer it by comparing calendars would be the pre-1955 book
+reconstructed by undoing 1962.
+"""
+status = "unrecorded"
+status_note = """
+The repository holds a witness `aas-47-1955` for the 16 November decree Maxima
+Redemptionis. Whether the same volume scan carries the 23 March decree, and at
+which pages, is not established here.
+"""
+
+[[wanted]]
+id = "pontificale-pre-1955"
+priority = 4
+what = "A pre-1955 Pontificale Romanum, for the blessing of the oils on Holy Thursday."
+why = """
+The Chrism Mass row in the recension states that the pre-1955 MISSAL prints no
+such Mass, and deliberately says nothing about the blessing of the oils, because
+that rite is the Pontifical's. A reader who wanted to know what the pre-1955
+books do with the oils would need this book, and the recension should not answer
+that question until someone has read it.
+"""
+status = "unrecorded"
+status_note = "`work.catholic-church.pontificale-romanum` exists in the source library; which of its editions is pre-1955 and whether any is retrievable was not established here."
+
+[counts]
+findings_verified = 3
+witnesses_read_at_the_bytes = 2
+witnesses_whose_bytes_match_a_registered_artifact = 1
+books_wanted = 4
+books_wanted_that_are_blocking_the_rubrics = 1
+rubrics_sources_this_record_makes_writable = 0
+counts_note = """
+`rubrics_sources_this_record_makes_writable = 0` is the honest headline and is
+written as a number so that it cannot be read past. This record establishes where
+the pre-1955 order of precedence is NOT, with the book's own words, and does not
+establish where it is.
+
+That is worth having. Before it, `no rubrics.yaml` rested on a general argument
+that the 1960 code is not this book's code. After it, it rests on the pre-1955
+Missal declining the question in two places -- which also tells the next lane
+exactly which book to go and get, and that the missal audit's silence about the
+Office was correct rather than an oversight.
+"""
