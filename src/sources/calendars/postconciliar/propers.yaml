@@ -272,7 +272,7 @@ citation_divergences:
   numbering:
     hebrew: resolved
   citations:
-    "Isaiah 8:23-9:3": "Isaiah 9:1-4"
+    "Isaiah 8:23b-9:3": "Isaiah 9:1b-4"
     "Isaiah 9:1": "Isaiah 9:2"
     "Isaiah 9:1-6": "Isaiah 9:2-7"
     "Isaiah 9:5": "Isaiah 9:6"
@@ -296,7 +296,7 @@ citation_divergences:
     hebrew: as-cited
   citations:
     "Acts 7:55-60": "Acts 7:55-59"
-    "Acts 14:21-27": "Acts 14:20-26"
+    "Acts 14:21b-27": "Acts 14:20b-26"
 - book: Esther
   chapters: [4]
   divergence: the Nova Vulgata keeps the Greek additions where the Greek has them
@@ -349,7 +349,6 @@ citation_divergences:
     "John 6:57": "John 6:57"
     "John 6:58": "John 6:58"
     "John 6:60-69": "John 6:61-70"
-    "John 6:63c": "John 6:64c"
     "John 6:63c, 68c": "John 6:64c, 69"
     "John 6:68c": "John 6:69"
 - book: Mark
@@ -357,14 +356,19 @@ citation_divergences:
   divergence: the Vulgate joins Mark 4:40-41 into one verse, so its chapter 4 ends
     at 40 where the Greek ends at 41; and it opens chapter 9 at the Transfiguration,
     which the Greek numbers 9:2, so its whole chapter 9 runs one verse behind and
-    ends at 49 where the Greek ends at 50
+    ends at 49 where the Greek ends at 50. The Ordo lectionum does not speak one
+    system here either, and this is not this file's doing - it prints the
+    Transfiguration Gospel at Mc 9, 2-10 in Greek numbering (n. 26, artifact page
+    74) and the Baptism's Alleluia at Cf. Mc 9, 6 in the Vulgate's (n. 21,
+    artifact page 69), and both were read in the page images. Each is recorded as
+    printed, so 9:6 resolves to itself and 9:2-10 is corrected
   numbering:
     hebrew: as-cited
   citations:
     "Mark 4:26-34": "Mark 4:26-34"
     "Mark 4:35-41": "Mark 4:35-40"
     "Mark 9:2-10": "Mark 9:1-9"
-    "Mark 9:7": "Mark 9:6"
+    "Mark 9:6": "Mark 9:6"
     "Mark 9:30-37": "Mark 9:29-36"
     "Mark 9:38-43, 45, 47-48": "Mark 9:37-42, 44, 46-47"
 - book: Sirach
@@ -372,17 +376,22 @@ citation_divergences:
   divergence: the Vulgate carries verses the Greek does not, so its numbering runs
     ahead of the Greek by one in chapter 3, by one in chapter 27 rising to three
     across 27-28, and by up to four in chapter 35. This section's Sirach citations
-    do not all speak one system. 27:5-8 is already the number the Vulgate prints and
-    resolves to itself, and the rest carry the Greek numbering the US Lectionary
-    uses. 15:16-21 is the Vulgate's own numbering and is therefore not listed here
+    used to mix the two systems; they no longer do. The Ordo lectionum prints the
+    LATIN number and glosses the Greek one in parentheses - Sir 15, 16-21 (gr.
+    15-20) at artifact page 104, Sir 3, 19-21. 30-31 (gr. 17-18. 20. 28-29) at 123,
+    Sir 35, 15b-17. 20-22a (gr. 12-14. 16-18) at 136 - and every Sirach citation in
+    this section was read there and now carries the Latin number the book prints.
+    Each therefore resolves to itself against a Vulgate-numbered edition. The rows
+    are kept rather than deleted because a Greek-numbered edition still needs a
+    ruling, and the unrecorded stance below refuses rather than guesses
   numbering:
     hebrew: unrecorded
   citations:
-    "Sirach 3:2-6, 12-14": "Sirach 3:3-7, 14-17a"
-    "Sirach 3:17-18, 20, 28-29": "Sirach 3:19-21, 30-31"
+    "Sirach 3:3-7, 14-17a": "Sirach 3:3-7, 14-17a"
+    "Sirach 3:19-21, 30-31": "Sirach 3:19-21, 30-31"
     "Sirach 27:5-8": "Sirach 27:5-8"
-    "Sirach 27:30-28:7": "Sirach 27:33-28:9"
-    "Sirach 35:12-14, 16-18": "Sirach 35:15b-17, 20-22"
+    "Sirach 27:33-28:9": "Sirach 27:33-28:9"
+    "Sirach 35:15b-17, 20-22a": "Sirach 35:15b-17, 20-22a"
 - book: Wisdom
   chapters: [6, 11]
   divergence: the Vulgate carries a verse the Greek does not at the head of both
