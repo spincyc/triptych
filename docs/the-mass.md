@@ -312,9 +312,9 @@ the calendars, and nothing else on this page states a figure it gives.
 | Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
 | roman-1962 | seasonal | 128 | 1121 | 5 |
-| roman-1962 | christological | 8 | 10 | 8 |
-| roman-1962 | marian | 17 | 17 | 17 |
-| roman-1962 | sanctoral | 307 | 309 | 306 |
+| roman-1962 | christological | 8 | 12 | 7 |
+| roman-1962 | marian | 17 | 62 | 4 |
+| roman-1962 | sanctoral | 307 | 996 | 171 |
 | roman-1962 | common | 30 | 130 | 0 |
 | postconciliar | seasonal | 66 | 824 | 3 |
 | postconciliar | christological | 7 | 7 | 7 |
@@ -324,17 +324,17 @@ the calendars, and nothing else on this page states a figure it gives.
 | Measure | roman-1962 | postconciliar |
 | --- | ---: | ---: |
 | Masses | 490 | 268 |
-| Propers | 1587 | 1031 |
-| — named `Placeholder` | 338 | 210 |
+| Propers | 2321 | 1031 |
+| — named `Placeholder` | 189 | 210 |
 | — inside a `forms` block | 97 | 117 |
 | — carrying a `cycles` mapping | 0 | 252 |
-| Masses holding only placeholders | 336 | 205 |
+| Masses holding only placeholders | 187 | 205 |
 | Masses taking a formulary from another entry | 6 | 0 |
 | Propers taking their text from another entry | 40 | 0 |
-| Propers that are not placeholders | 1249 | 821 |
-| — of those, scripture-bearing | 904 | 548 |
-| Encoded passages | 1095 | 1082 |
-| Distinct books cited | 48 | 61 |
+| Propers that are not placeholders | 2132 | 821 |
+| — of those, scripture-bearing | 1787 | 548 |
+| Encoded passages | 2079 | 1082 |
+| Distinct books cited | 54 | 61 |
 | Distinct slot names | 119 | 86 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
