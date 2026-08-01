@@ -192,8 +192,9 @@ was taken is citations, under `the_citation_question`.
 """
 landed = true
 landed_what = """
-The Lectionary citations of six celebrations, read at 200 dpi on artifact pages
-346-348 (printed 292-294), nn. 583 and 586-592. See `[landed]` below.
+The Lectionary citations of twelve celebrations, read at 200 dpi on artifact
+pages 328-329 and 346-348 (printed 274-275 and 292-294), nn. 516-521, 583 and
+586-592. See `[landed]` below.
 """
 
 [[works]]
@@ -388,23 +389,48 @@ lectionary published under the Indian conference's copyright. Under
 grant matters less than it looks - what matters is whether the citations are
 RIGHT.
 """
-accuracy_verdict = "unresolved"
+accuracy_verdict = "collated at 15 formularies with no divergence in any reading or any Common"
 accuracy_basis = """
-Two risks, one of them declared by the author. The README says the verse
-divisions follow the official Tamil lectionary and that the English and Tamil
-lectionaries divide verses differently - so a sub-verse letter such as `14b`
-may not be the Latin Ordo's. Book names are Tamil abbreviations and are
-mechanically mappable. Nothing has been collated against the Ordo lectionum,
-which is the check that decided the LitCal question and is the check this one
-needs.
+It was collated, on the same sample and by the same method that refused LitCal;
+see `[collation]`. Fifteen formularies over four contiguous pages of the Ordo,
+and on every one of them its book, chapter and verse range agree with the page
+images for the first reading, the second reading where there is one, the
+Alleluia verse and the Gospel, and its Common pointer agrees with the Ordo's own
+`De Communi` heading including the sub-selections - `_Martyr or _Pastor~4` for
+Saint Fabian against `De Communi martyrum vel pastorum [pro papa]`, `_Saint~5`
+for Saint Aloysius against `De Communi sanctorum virorum [pro religiosis]`.
+
+It is right in both places LitCal is wrong. At the Nativity of Saint John the
+Baptist it gives the Vigil and the Day their own distinct formularies, matching
+the Ordo at nn. 586 and 587; and at Saints John Fisher and Thomas More it gives
+the Alleluia at Matthew 5:10, which is what the Ordo prints.
+
+Two divergences remain and both are conventions rather than errors, and both are
+describable. Its psalm verse numbers run one lower than the Ordo's on exactly
+the psalms whose superscription English Bibles leave unnumbered - Psalm 89, 19,
+34 and 40 in this sample, and not Psalm 124 or 16 or 71 or 139 or 37 - which is
+the offset `scripts/_psalms.english_verse` already models, and which this
+repository applies at resolution rather than at storage. So the two agree once
+the convention is named. And its sub-verse letters are simplified where the
+author warns they would be, `15ab` printed as `15a` and `13-14ab, 14c-15` as
+`13-14, 15`.
+
+The corroboration runs both ways and is worth stating: this lane converted the
+Ordo's Vulgate psalm numbers by `scripts/_psalms` and this dataset was keyed
+independently from a printed Tamil lectionary, and the two agree on which
+psalms carry the English offset and which do not. Two derivations reaching the
+same answer from different directions is the strongest evidence either has.
 """
 landed = false
 why_not = """
-Not collated. It is the strongest candidate and the natural next lane: 179
-Common pointers and 204 sanctoral reading sets, against a primary witness this
-repository can already open at page images. Collating a sample of it against
-the Ordo would settle it in an afternoon, and the verse-subdivision risk is
-precisely what such a sample would measure.
+Fifteen of 244 is a collated sample, not a collated dataset, and the sample was
+chosen contiguously to avoid flattering it rather than sized to bound an error
+rate. Nothing is landed from it because everything landed here was read in the
+Ordo's own page images, and taking its unread rows would be taking on trust
+exactly what LitCal proved cannot be taken on trust - from a better dataset, but
+on the same evidence. What has changed is that it is no longer a lead: a lane
+that widens this collation and finds the rate holding has a defensible basis for
+landing its Common pointers, which are the key to the antiphons as well.
 """
 
 [[works]]
@@ -591,18 +617,28 @@ why_not = "Redistributable and carries none of the three things wanted. Named so
 # ---------------------------------------------------------------------------
 
 [collation]
-what = "Eight sanctoral formularies, read in the Ordo lectionum page images and compared with LitCal."
+what = "Fifteen sanctoral formularies, read in the Ordo lectionum page images and compared with both compilations."
 method = """
-Artifact pages 346-348 of internet-archive-scan-pdf-ed4bc14e (printed pages
-292-294) were rendered at 200 dpi and read. They carry nn. 583-592 without a
-break, so the sample is a contiguous stretch of the book rather than a choice
-of convenient entries, and it spans every shape the Proprium de Sanctis has: a
-memorial taking a Common, a memorial with proper readings, a solemnity with
-distinct Vigil and Day formularies, and a celebration this calendar does not
-carry.
+Artifact pages 328-329 and 346-348 of internet-archive-scan-pdf-ed4bc14e
+(printed pages 274-275 and 292-294) were rendered at 200 dpi and read. They
+carry nn. 514-521 and 583-592 without a break, so the sample is two contiguous
+stretches of the book rather than a choice of convenient entries, and between
+them they span every shape the Proprium de Sanctis has: a memorial taking a
+Common with a sub-selection, a memorial with proper readings, a memorial whose
+first reading alone is proper, a feast with a Vel alternative, a solemnity with
+distinct Vigil and Day formularies, and celebrations this calendar joins under
+one key or does not carry.
 """
-sample = 8
-divergences = 2
+sample = 15
+litcal_divergences = 2
+tamil_divergences = 0
+tamil_note = """
+The two compilations were measured against the same pages and did not perform
+alike. LitCal diverges twice in eight, once wholly. The Tamil lectionary
+diverges in no reading and no Common pointer over all fifteen, and is right in
+both places LitCal is wrong. That is why one is refused and the other is
+recorded as the next lane's candidate; see `[[works]]` for each.
+"""
 divergence_1 = """
 DECISIVE. At the Nativity of Saint John the Baptist, the Ordo prints n. 586 Ad
 Missam in Vigilia and n. 587 Ad Missam in die with entirely different readings.
@@ -648,8 +684,14 @@ cleanly, and looks right.
 # ---------------------------------------------------------------------------
 
 [landed]
-what = "Six Masses, eight formularies, thirty-four Lectionary citations."
+what = "Twelve Masses, fourteen formularies, sixty Lectionary citations."
 masses = [
+  "saint-agnes-virgin-martyr",
+  "saint-vincent-deacon-martyr",
+  "saint-francis-sales-bishop-doctor-church",
+  "conversion-saint-paul-apostle",
+  "saints-timothy-titus-bishops",
+  "saint-angela-merici-virgin",
   "saint-aloysius-gonzaga-religious",
   "nativity-saint-john-baptist",
   "saint-cyril-alexandria-bishop-doctor-church",
@@ -658,7 +700,14 @@ masses = [
   "first-martyrs-holy-roman-church",
 ]
 witness = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
-loci = "artifact pages 346-348, printed pages 292-294, nn. 583 and 586-592"
+loci = "artifact pages 328-329 and 346-348, printed pages 274-275 and 292-294, nn. 516-521 and 583 and 586-592"
+every_landed_citation_was_read = """
+Nothing here was taken from a compilation. Every one of the sixty citations was
+read in a page image of the Ordo, and the twelve Masses are exactly the
+celebrations on those pages that this calendar carries under a key of their own.
+The four celebrations read on the same pages and NOT landed are named under
+`not_landed_from_the_same_pages`.
+"""
 how = """
 Every passage was encoded by `tools/citations`'s own `parse_citation`, and
 every responsorial psalm was converted from the Ordo's printed Vulgate number
@@ -678,13 +727,17 @@ into a `takes_from`, because this calendar carries no Common as a Mass and a
 pointer to a Common that does not exist would resolve to nothing.
 """
 not_landed_from_the_same_pages = """
-n. 584, Saint Paulinus of Nola, and n. 585, Saints John Fisher and Thomas More,
-were read on the same pages and were NOT landed. This calendar joins both under
-one key, `saint-paulinus-nola-bishop`, rank `Optional memorials`, because 22
-June carries more than one optional memorial and the index does not separate
-them. Writing one saint's readings onto a key that stands for several would
-attribute them to all of them. The joined-key problem is already recorded in
-rubrics.yaml under `unsettled`; this is a second consequence of it.
+Four celebrations were read on these pages and were NOT landed, and all four
+fail the same way. This calendar joins several optional memorials of one date
+under a single key: n. 584 Saint Paulinus of Nola and n. 585 Saints John Fisher
+and Thomas More both fall under `saint-paulinus-nola-bishop`, rank `Optional
+memorials`, and n. 514 Saint Fabian and n. 515 Saint Sebastian both fall under
+`saint-fabian-pope-martyr`. Writing one saint's readings onto a key that stands
+for several would attribute them to all of them, and each of these four has its
+own formulary in the Ordo. The joined-key problem is already recorded in
+rubrics.yaml under `unsettled`; this is four further consequences of it, and it
+is now the cheapest unblocking left - four collated formularies are sitting
+here unable to land for want of four keys.
 """
 
 [counts]
@@ -707,9 +760,9 @@ on anybody's grant.
 """
 
 placeholder_masses_before = 205
-placeholder_masses_after = 199
+placeholder_masses_after = 193
 placeholder_propers_before = 210
-placeholder_propers_after = 202
+placeholder_propers_after = 196
 
 [open_items]
 the_antiphons = """
@@ -743,14 +796,22 @@ first; this lane expects it to be low and did not measure it.
 """
 the_seasonal_citations = "See `the_seasonal_leads`. 1,059 book-references stand unread."
 the_next_lane = """
-Collate `tamil-catholic-lectionary` against the Ordo lectionum page images, the
-way `[collation]` did for LitCal, and on a sample chosen the same way — a
-contiguous stretch of the book rather than convenient entries. Two questions
-decide it: do its Common pointers agree with the Ordo's `De Communi` headings,
-and do its verse subdivisions agree with the Ordo's, given that its author warns
-they follow the Tamil lectionary's divisions. If it survives, it supplies 179
-Common pointers and 204 sanctoral reading sets at one stroke, and romcal is the
-independent second opinion on the Commons.
+Two things, and the cheaper one first.
+
+Split the joined optional-memorial keys. Four formularies collated in this lane
+cannot land because 20 January and 22 June each hold two optional memorials
+under one key. Splitting them costs four calendar entries and no acquisition at
+all, and it lands four Masses already read at page images.
+
+Then widen the Tamil collation. This lane took it to fifteen formularies with no
+divergence in any reading or any Common pointer; the next should take it far
+enough to bound an error rate, on stretches chosen from elsewhere in the year.
+If the rate holds, its 179 Common pointers are the key to the antiphons as well
+as to the readings, because the Missal sends most memorials to a Common for
+their antiphons too - so a Common pointer plus the Communia's own antiphon
+citations would resolve the large majority of the remaining placeholders without
+any per-saint acquisition. romcal is the independent second opinion on the
+Commons and must never be the licence basis.
 """
 already_cleared = """
 Do not re-survey these; they were named, opened and found empty of what is
