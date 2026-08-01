@@ -1634,6 +1634,68 @@ def check_1962(known: set[str]) -> list[str]:
             problems.append(f"{ending}: P is {facts['sundays_after_pentecost']}, outside 23-28")
         if facts["surplus"] not in (0, 1):
             problems.append(f"{ending}: surplus is {facts['surplus']}, not 0 or 1")
+    problems.extend(check_ferial(known))
+    return problems
+
+
+# What RGMR 299 excludes, stated the other way round so the check is about the
+# rubric and not about the tool's own season list: a feria of these seasons has
+# a Mass of its own, and a ferial formulary standing on one of their dates would
+# mean the rule had reached past the rubric.
+FERIAL_EXCLUDED_SEASONS = ("lent", "passiontide", "triduum")
+
+
+def check_ferial(known: set[str]) -> list[str]:
+    """The ferial-formulary rule against what RGMR 299 says it may reach.
+
+    Four claims, over every year the tool emits. A rule this quiet -- it puts
+    no mass on a date, it points a date at a mass -- would otherwise drift
+    without moving a single number anyone reads.
+    """
+    problems: list[str] = []
+    for ending in range(FIRST_YEAR, LAST_YEAR + 1):
+        year = build_1962(ending, known)
+        easter = year.anchors.easter
+        window = {easter + timedelta(days=n) for n in range(40, 48)}
+        seen_window = set()
+        for when, entries in sorted(year.ferial.items()):
+            if when.weekday() == 6:
+                problems.append(f"{ending}: a ferial formulary stands on Sunday {when}")
+            season = year.season_of(when)
+            if season in FERIAL_EXCLUDED_SEASONS:
+                problems.append(
+                    f"{ending}: {when} is in {season}, whose ferias RGMR 299 gives a "
+                    "Mass of their own, and it carries a ferial formulary"
+                )
+            if any(e["origin"] == "temporal" for e in year.placements.get(when, [])):
+                problems.append(
+                    f"{ending}: {when} carries a temporal mass of its own and a "
+                    "ferial formulary as well"
+                )
+            for entry in entries:
+                if entry["key"] not in known:
+                    problems.append(f"{ending}: {when} borrows {entry['key']}, not in the index")
+                if entry["key"] == "ascension":
+                    seen_window.add(when)
+                    if entry.get("territorial") != TERRITORIAL_OPTIONS["ascension"][0]:
+                        problems.append(
+                            f"{ending}: {when} takes the Ascension's Mass untagged; the "
+                            "Missal states that rubric from the Ascension's own day"
+                        )
+        # Every day of the stated window that is not a Sunday and has no Mass
+        # of its own must be in it, and nothing outside it may be.
+        expected = {
+            when
+            for when in window
+            if when.weekday() != 6
+            and not any(e["origin"] == "temporal" for e in year.placements.get(when, []))
+        }
+        if seen_window != expected:
+            problems.append(
+                f"{ending}: the Ascension's ferial window is "
+                f"{sorted(d.isoformat() for d in expected)}, computed "
+                f"{sorted(d.isoformat() for d in seen_window)}"
+            )
     return problems
 
 
