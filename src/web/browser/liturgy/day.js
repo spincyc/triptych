@@ -15,6 +15,16 @@
  * numbered step blocks and nine to eleven bordered rows on every date, before
  * a word of any prayer — and it read as a wall of error boxes.
  *
+ * WITH THE ORDINARY ON, this is a missal to follow the Mass in: the Ordinary is
+ * the frame and the day's propers are set into it in the order they are said —
+ * Introit, Kyrie, Gloria, Collect, Epistle, Gradual, Gospel, Credo, Offertory,
+ * Secret, Preface, Canon, Pater, Agnus, Communion, Postcommunion, Ite. WHERE
+ * EACH PROPER SITS IS NOT DECIDED HERE. It is declared in the missal's own
+ * ordo-missae inventory, carried through `structure/ordinary/<calendar>.json`
+ * as `slots`, and each slot cites the rubric that puts it there. This file
+ * resolves those declarations against the elements actually on screen and
+ * refuses to invent a seat for a proper that has none.
+ *
  * NOTHING IS DECIDED HERE. Every rank, disposition, ceiling and rubric number
  * arrives from `assembly-model.js`, which reads them out of the rubrics file
  * the repository tracks; `calendar-rubrics check` runs that same model under
@@ -486,7 +496,7 @@
     return node;
   }
 
-  function renderBranch(branch, rubrics, derived, structure, bible, fragments) {
+  function renderBranch(branch, rubrics, derived, structure, bible, fragments, ordinary) {
     const section = T.el('section', 'branch');
 
     if (branch.option) {
@@ -507,12 +517,37 @@
 
     const series = branch.orations.all || branch.orations.low_mass || [];
     const subordinate = series.filter((one) => one.position > 1);
-    const slots = trackedSlots(branch, rubrics);
-    const slotFor = (name) => slots.find((one) => one.slot === name) || null;
+    // The oration slots — Collect, Secret, Postcommunion — under which a
+    // commemoration is said. A different thing entirely from the Ordinary's
+    // seats below, which are places in the frame; these are places in a series.
+    const orationSlots = trackedSlots(branch, rubrics);
+    const orationSlotFor = (name) => orationSlots.find((one) => one.slot === name) || null;
 
     const mass = branch.winner.key
       ? (structure.masses || []).find((one) => one.key === branch.winner.key)
       : null;
+
+    /** One proper of the day, with whatever the margin has to say beside it. */
+    function renderMassProper(proper, seat) {
+      const body = T.renderProper(proper, bible, fragments, {
+        numbering: (structure && structure.numbering) || null,
+        orations: state.orations,
+        cycle: cycleKeyFor(
+          proper, (derived.liturgicalYear && derived.liturgicalYear.lectionary) || null)
+      });
+      // The rubric that seats this proper in the frame, shown with the rest of
+      // the reasoning rather than in the body: a reader following the Mass
+      // wants the prayer, and a reader checking the page wants the citation.
+      if (seat && state.why) {
+        body.appendChild(T.el('p', 'composed-note element-apparatus',
+          'Seated here by ' + seat.locus + '.'));
+      }
+      const oration = orationSlotFor(proper.name);
+      const note = (oration && subordinate.length)
+        ? properMargin(oration, subordinate, branch, structure)
+        : null;
+      return annotated(body, note);
+    }
 
     if (!mass) {
       const note = T.el('p', 'uncompiled');
@@ -527,28 +562,24 @@
       // One line for the Mass, never one per slot, and never dressed as a
       // failure: nothing failed, and the Mass is not shorter than it is.
       section.appendChild(T.uncompiledNote(mass));
+    }
+
+    const propers = (mass && !T.massIsUncompiled(mass) && mass.propers) || [];
+    if (ordinary) {
+      // The Ordinary is the frame and the propers go into it. A Mass with no
+      // formulary still gets the frame: the reader is following the same rite,
+      // and the line above has already said what is not transcribed.
+      section.appendChild(renderFrame(ordinary, propers, renderMassProper));
     } else {
-      const lectionary = (derived.liturgicalYear && derived.liturgicalYear.lectionary) || null;
-      const numbering = (structure && structure.numbering) || null;
-      for (const proper of mass.propers || []) {
+      for (const proper of propers) {
         if (T.isPlaceholder(proper)) continue;
-        const body = T.renderProper(proper, bible, fragments, {
-          numbering: numbering,
-          orations: state.orations,
-          cycle: cycleKeyFor(proper, lectionary)
-        });
-        const slot = slotFor(proper.name);
-        const note = (slot && subordinate.length)
-          ? properMargin(slot, subordinate, branch, structure)
-          : null;
-        section.appendChild(annotated(body, note));
+        section.appendChild(renderMassProper(proper, null));
       }
     }
 
     // A commemoration that found no slot to sit under is still said. It is put
     // once, after the Mass, rather than dropped.
-    const anySlot = mass && !T.massIsUncompiled(mass) &&
-      (mass.propers || []).some((one) => slotFor(one.name));
+    const anySlot = propers.some((one) => orationSlotFor(one.name));
     if (subordinate.length && !anySlot) {
       const held = T.el('div', 'mass-head');
       held.appendChild(T.el('h4', 'mass-subheading',
@@ -557,8 +588,8 @@
       held.appendChild(T.el('p', 'row-meta',
         'This corpus carries no oration slot for the day’s own Mass, so the page ' +
         'cannot say which proper each follows. They are appointed, not absent.'));
-      section.appendChild(
-        annotated(held, properMargin(slots[0] || { slot: 'Collect' }, subordinate, branch, structure)));
+      section.appendChild(annotated(held,
+        properMargin(orationSlots[0] || { slot: 'Collect' }, subordinate, branch, structure)));
     }
     return section;
   }
@@ -566,9 +597,9 @@
   /* ------------------------------------------------------------------------
    * The Ordinary
    *
-   * The unvarying frame the day's propers are set into. It is a different
-   * document from the Mass, fetched from its own file, and it renders after the
-   * Mass because the page's first duty is the Mass appointed for the date.
+   * The unvarying frame the day's propers are set into — literally so: with the
+   * Ordinary on, the propers are rendered inside it, each at the place its
+   * missal declares, so the page reads down the Mass in the order it is said.
    *
    * NOTHING ABOUT RIGHTS IS DECIDED HERE. The generator has already dropped
    * every witness it may not publish and has written, on each element, which of
@@ -576,6 +607,13 @@
    * what it is handed. That matters most where it would be easiest to be
    * careless: one missal's English is freely given and another's is withheld by
    * a licence, and a reader must be able to tell those two apart on sight.
+   *
+   * NOR IS ANY PLACEMENT DECIDED HERE. `file.slots` is the missal's own
+   * statement of where each proper stands, each with the rubric that puts it
+   * there. Thirty-nine of the postconciliar frame's forty-eight elements carry
+   * no text at all, and that changes nothing: an element that names its absence
+   * still marks the place, and the day's Collect is seated after the withheld
+   * one rather than in its stead.
    * --------------------------------------------------------------------- */
 
   function variantGroupOf(file) {
@@ -673,11 +711,19 @@
     return section;
   }
 
-  function renderOrdinary(file) {
-    const wrapper = T.el('section', 'branch ordinary');
+  /**
+   * What the Ordinary says about itself, once for the page.
+   *
+   * It is the same file for every branch on the date, so saying it per branch
+   * would say it twice about one thing. It stands above the Masses because it
+   * governs all of them.
+   */
+  function ordinaryPreamble(file) {
+    const wrapper = T.el('section', 'ordinary-preamble');
     wrapper.appendChild(T.el('h3', 'mass-name', file.title));
     wrapper.appendChild(T.el('p', 'entry-meta',
-      [file.edition_short || file.edition, 'the unvarying frame'].filter(Boolean).join(' · ')));
+      [file.edition_short || file.edition, 'the frame the day’s propers are set into']
+        .filter(Boolean).join(' · ')));
     wrapper.appendChild(T.el('p', 'row-meta', file.advisory));
 
     // Named once, here, rather than under every element it supplied.
@@ -701,11 +747,130 @@
         group.name + ': ' + chosen.name + '. ' + group.what));
     }
 
+    // Where the seats came from. A page that sets one book's propers into
+    // another book's frame owes the reader that sentence.
+    if (file.slots_derived_from) {
+      wrapper.appendChild(T.el('p', 'row-meta', file.slots_derived_from));
+    }
+    return wrapper;
+  }
+
+  /**
+   * The elements this frame is actually showing, in order.
+   *
+   * Which they are depends on the reader's choice of Eucharistic Prayer, which
+   * is why a seat is resolved against this list and not against the file.
+   */
+  function shownElements(file) {
+    const held = [];
     for (const section of file.sections || []) {
-      const shown = (section.elements || []).filter((one) => elementShows(one, file));
-      if (!shown.length) continue;
-      wrapper.appendChild(T.el('h3', 'mass-subheading', section.name));
-      for (const element of shown) wrapper.appendChild(renderElement(element, file));
+      for (const element of section.elements || []) {
+        if (elementShows(element, file)) held.push({ section: section, element: element });
+      }
+    }
+    return held;
+  }
+
+  /**
+   * The declared seats, resolved to positions among the elements on screen.
+   *
+   * `at[n]` is the index a proper seated by slot `n` is inserted at: an `after`
+   * puts it one place further on than a `before` on the same element, which is
+   * how two slots on neighbouring elements land in one position without either
+   * being ambiguous about which element it named.
+   */
+  function seats(file, shown) {
+    const where = new Map();
+    shown.forEach((row, index) => where.set(row.element.key, index));
+    const slots = file.slots || [];
+    const at = [];
+    const byName = new Map();
+    slots.forEach((slot, ordinal) => {
+      const anchor = where.get(slot.anchor);
+      // A file the generator accepted cannot get here; a file from somewhere
+      // else can, and an unresolvable anchor must lose the seat, not the proper.
+      if (anchor === undefined) return;
+      at[ordinal] = anchor + (slot.where === 'after' ? 1 : 0);
+      for (const name of slot.propers || []) byName.set(name, ordinal);
+    });
+    return { slots: slots, at: at, byName: byName };
+  }
+
+  /**
+   * Which propers go where, without ever reordering the missal.
+   *
+   * The rule is one sentence and it is worth stating exactly, because the
+   * tempting alternatives all quietly rearrange a book. Walk the day's propers
+   * in the order the missal prints them. A proper whose name a slot claims is
+   * seated there, PROVIDED that seat is not behind the last one used. A proper
+   * no slot claims rides with the one before it, which is where the missal put
+   * it. And the first proper that would send the reading backwards ends the
+   * interleaving: it and everything after it are shown after the frame, in the
+   * missal's own order.
+   *
+   * That last clause is the whole of the honesty here. A day carrying four
+   * Masses — Christmas — or a rite that departs from the frame — Good Friday,
+   * the paschal Vigil — cannot be poured into one Ordinary, and a page that
+   * tried would interleave two formularies into one Mass that was never said.
+   * Nothing is dropped, nothing is reordered, and the break is stated.
+   */
+  function seatPropers(propers, seating) {
+    const before = [];
+    const buckets = new Map();
+    const after = [];
+    let reached = -1;
+    let riding = null;
+    let broke = false;
+    for (const proper of propers) {
+      if (T.isPlaceholder(proper)) continue;
+      if (broke) { after.push({ proper: proper, seat: null }); continue; }
+      const ordinal = seating.byName.has(proper.name) ? seating.byName.get(proper.name) : -1;
+      if (ordinal < 0) { (riding || before).push({ proper: proper, seat: null }); continue; }
+      if (ordinal < reached) { broke = true; after.push({ proper: proper, seat: null }); continue; }
+      reached = ordinal;
+      const index = seating.at[ordinal];
+      riding = buckets.get(index) || [];
+      buckets.set(index, riding);
+      riding.push({ proper: proper, seat: seating.slots[ordinal] });
+    }
+    return { before: before, buckets: buckets, after: after, broke: broke };
+  }
+
+  /** The frame, with the day's propers set into it. */
+  function renderFrame(file, propers, renderMassProper) {
+    const wrapper = T.el('section', 'ordinary ordinary-frame');
+    const shown = shownElements(file);
+    const placed = seatPropers(propers, seats(file, shown));
+
+    const pour = (held) => {
+      for (const row of held) wrapper.appendChild(renderMassProper(row.proper, row.seat));
+    };
+
+    if (placed.before.length) {
+      wrapper.appendChild(T.el('p', 'row-meta ordinary-aside',
+        'This Mass opens with propers the Ordinary appoints no place for. They ' +
+        'are shown first, in the missal’s own order.'));
+      pour(placed.before);
+    }
+
+    let current = null;
+    for (let index = 0; index < shown.length; index += 1) {
+      if (shown[index].section !== current) {
+        current = shown[index].section;
+        wrapper.appendChild(T.el('h3', 'mass-subheading', current.name));
+      }
+      pour(placed.buckets.get(index) || []);
+      wrapper.appendChild(renderElement(shown[index].element, file));
+    }
+    pour(placed.buckets.get(shown.length) || []);
+
+    if (placed.after.length) {
+      wrapper.appendChild(T.el('p', 'row-meta ordinary-aside',
+        'From here the day’s propers no longer run forward through the Ordinary: ' +
+        'this day carries more than one formulary, or its rite departs from the ' +
+        'frame. The rest is shown in the missal’s own order, unseated and ' +
+        'unreordered.'));
+      pour(placed.after);
     }
     return wrapper;
   }
@@ -867,23 +1032,26 @@
 
     T.clear(reading);
     renderHead(derived, bible);
+
+    // The frame is settled before a word of any Mass is drawn, because each
+    // Mass is drawn inside it. Where there is no frame the Masses render as
+    // they always did — a missing Ordinary withholds nothing but itself.
+    const frame = ordinary && ordinary.ok ? ordinary.value : null;
+    fillVariantSelect(frame);
+    if (frame) {
+      reading.appendChild(ordinaryPreamble(frame));
+    } else if (ordinary) {
+      reading.appendChild(T.notice(
+        'the Ordinary of this missal. It could not be loaded: ' + ordinary.message));
+    } else if (state.ordinary) {
+      reading.appendChild(T.notice(
+        'the Ordinary of this missal. This corpus carries none for “' +
+        state.missalId + '”.'));
+    }
+
     for (const branch of derived.options) {
       reading.appendChild(
-        renderBranch(branch, rubrics, derived, structure, bible, held.fragments));
-    }
-    if (ordinary && ordinary.ok) {
-      fillVariantSelect(ordinary.value);
-      reading.appendChild(renderOrdinary(ordinary.value));
-    } else {
-      fillVariantSelect(null);
-      if (ordinary) {
-        reading.appendChild(T.notice(
-          'the Ordinary of this missal. It could not be loaded: ' + ordinary.message));
-      } else if (state.ordinary) {
-        reading.appendChild(T.notice(
-          'the Ordinary of this missal. This corpus carries none for “' +
-          state.missalId + '”.'));
-      }
+        renderBranch(branch, rubrics, derived, structure, bible, held.fragments, frame));
     }
     openMargins(reading);
     reading.setAttribute('aria-busy', 'false');

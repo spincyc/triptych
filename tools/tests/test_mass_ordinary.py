@@ -208,11 +208,7 @@ class OrdinaryPage(unittest.TestCase):
             self.skipTest("no ordinary layer written")
 
     def test_the_page_shows_one_prayer_and_states_what_it_withholds(self) -> None:
-        run = subprocess.run(
-            ["node", "-e", HARNESS],
-            capture_output=True, text=True, cwd=ROOT, check=False)
-        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
-        report = json.loads(run.stdout)
+        report = self.run_harness()
         self.assertEqual(report["shown_by_default"], ["ep-i"])
         self.assertEqual(report["shown_when_third_chosen"], ["ep-iii"])
         self.assertIn("Lord, have mercy.", report["kyrie"])
@@ -223,6 +219,69 @@ class OrdinaryPage(unittest.TestCase):
         self.assertIn("Te igitur, clementissime Pater", report["prayer_one"])
         self.assertIn("WE therefore, humbly pray", report["te_igitur_1861"])
         self.assertNotIn("used by permission", report["te_igitur_1861"])
+
+    def test_the_propers_are_read_in_the_order_the_mass_is_said(self) -> None:
+        """The whole point of the frame, over the real Easter Sunday formulary.
+
+        Not a spot check of two placements: the full reading order, so that a
+        seat moved to a plausible neighbour fails here rather than serving a
+        Mass whose parts are all present and in the wrong order.
+        """
+        report = self.run_harness()
+        self.assertEqual(report["easter_1962"], [
+            "Introit",
+            "praeparatio/kyrie-eleison",
+            "praeparatio/gloria-in-excelsis",
+            "Collect",
+            "Epistle",
+            "Gradual", "Alleluia", "Sequence",
+            "Gospel",
+            "oblatio/credo-in-unum-deum",
+            "Offertory",
+            "Secret",
+            "praefatio/praefatio-communis",
+            "praefatio/sanctus",
+            "canon/te-igitur",
+            "canon/forma-corporis",
+            "canon/forma-sanguinis",
+            "communio/pater-noster",
+            "communio/agnus-dei",
+            "Communion",
+            "Postcommunion",
+            "conclusio/dominus-vobiscum-ite-missa-est",
+        ])
+
+    def test_a_day_the_frame_does_not_fit_is_said_so_and_not_rearranged(self) -> None:
+        """Christmas carries four Masses; one Ordinary cannot hold them.
+
+        The failure this guards is the attractive one: pouring all four into the
+        frame would put four Collects under one Collect and read as a Mass that
+        was never said. What must happen instead is that the frame takes the
+        first, the rest follow it whole, and the page says why.
+        """
+        report = self.run_harness()
+        self.assertTrue(report["nativity_broke"])
+        self.assertEqual(report["nativity_seated"], 10)
+        self.assertEqual(report["nativity_after"], 31)
+        self.assertEqual(report["nativity_total"], 41, "nothing is dropped")
+
+    def test_a_withheld_element_still_holds_the_place_of_its_proper(self) -> None:
+        """Absence does not forfeit a seat.
+
+        The postconciliar Collect is withheld under ICEL's licence. The day's
+        Collect is still set down immediately after it, so a reader sees both
+        what is withheld and what is not, at the moment each falls due.
+        """
+        report = self.run_harness()
+        self.assertEqual(report["postconciliar_collect"],
+                         ["ritus-initiales/collecta", "Collect"])
+
+    def run_harness(self) -> dict:
+        run = subprocess.run(
+            ["node", "-e", HARNESS],
+            capture_output=True, text=True, cwd=ROOT, check=False)
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+        return json.loads(run.stdout)
 
 
 # A DOM small enough to write here and faithful enough to prove the join.
@@ -249,16 +308,19 @@ global.window = {
     readHash: () => new Map(), writeHash() {}, onHashChange() {}, onArrowStep() {},
     loadBibles: async () => ({ ok: false, message: 'stub' }), fillBibleSelect() {},
     setInlineNotice() {}, fail() {}, SOURCE_LANGUAGE: 'la', dataRoot: '',
-    dataPath: (p) => p, titleCase: (s) => s },
+    dataPath: (p) => p, titleCase: (s) => s,
+    isPlaceholder: (p) => Boolean(p) && p.name === 'Placeholder' },
   MassAssembly: { derive: () => ({}) }, matchMedia: null, addEventListener() {} };
 
 let src = fs.readFileSync('src/web/browser/liturgy/day.js', 'utf8');
 src = src.replace('  start();',
-  '  global.__probe = { renderElement, elementShows, state };');
+  '  global.__probe = { renderElement, elementShows, state, ' +
+  'seats, seatPropers, shownElements };');
 eval(src);
 const P = global.__probe;
-const pc = JSON.parse(fs.readFileSync('src/web/data/structure/ordinary/postconciliar.json', 'utf8'));
-const tlm = JSON.parse(fs.readFileSync('src/web/data/structure/ordinary/roman-1962.json', 'utf8'));
+const read = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
+const pc = read('src/web/data/structure/ordinary/postconciliar.json');
+const tlm = read('src/web/data/structure/ordinary/roman-1962.json');
 const all = (f) => f.sections.flatMap((s) => s.elements);
 const eps = all(pc).filter((e) => e.variant);
 const shown = () => eps.filter((e) => P.elementShows(e, pc)).map((e) => e.variant);
@@ -266,12 +328,52 @@ const byDefault = shown();
 P.state.variants['eucharistic-prayer'] = 'ep-iii';
 const whenThird = shown();
 P.state.variants = {};
+
+/* The frame with a real formulary poured into it, as one flat sequence: a
+   proper by its name, an element by its key. This is what the page renders, in
+   the order it renders it. */
+function pour(file, calendar, key) {
+  const mass = read('src/web/data/structure/propers/' + calendar + '.json')
+    .masses.find((m) => m.key === key);
+  const frame = P.shownElements(file);
+  const placed = P.seatPropers(mass.propers || [], P.seats(file, frame));
+  const out = [];
+  for (const row of placed.before) out.push(row.proper.name);
+  for (let i = 0; i < frame.length; i += 1) {
+    for (const row of placed.buckets.get(i) || []) out.push(row.proper.name);
+    out.push(frame[i].element.key);
+  }
+  for (const row of placed.buckets.get(frame.length) || []) out.push(row.proper.name);
+  const seated = out.length - placed.before.length - frame.length;
+  for (const row of placed.after) out.push(row.proper.name);
+  return { order: out, broke: placed.broke, seated: seated,
+    before: placed.before.length, after: placed.after.length };
+}
+
+// Landmarks of the frame, one per position the reading order names. Anything
+// not a landmark and not a proper is dropped, so the assertion is about order.
+const MARKS = new Set(['praeparatio/kyrie-eleison', 'praeparatio/gloria-in-excelsis',
+  'oblatio/credo-in-unum-deum', 'praefatio/praefatio-communis', 'praefatio/sanctus',
+  'canon/te-igitur', 'canon/forma-corporis', 'canon/forma-sanguinis',
+  'communio/pater-noster', 'communio/agnus-dei',
+  'conclusio/dominus-vobiscum-ite-missa-est']);
+const easter = pour(tlm, 'roman-1962', 'easter-sunday');
+const nativity = pour(pc, 'postconciliar', 'nativity');
+const collect = pour(pc, 'postconciliar', 'easter-sunday').order;
+const seat = collect.indexOf('ritus-initiales/collecta');
+
 process.stdout.write(JSON.stringify({
   shown_by_default: byDefault,
   shown_when_third_chosen: whenThird,
   kyrie: P.renderElement(all(pc).find((e) => e.key.endsWith('/kyrie')), pc).text(),
   prayer_one: P.renderElement(eps.find((e) => e.variant === 'ep-i'), pc).text(),
-  te_igitur_1861: P.renderElement(all(tlm).find((e) => e.key === 'canon/te-igitur'), tlm).text()
+  te_igitur_1861: P.renderElement(all(tlm).find((e) => e.key === 'canon/te-igitur'), tlm).text(),
+  easter_1962: easter.order.filter((one) => MARKS.has(one) || one.indexOf('/') < 0),
+  nativity_broke: nativity.broke,
+  nativity_seated: nativity.seated,
+  nativity_after: nativity.after,
+  nativity_total: nativity.seated + nativity.before + nativity.after,
+  postconciliar_collect: collect.slice(seat, seat + 2)
 }));
 """
 

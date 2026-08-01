@@ -307,11 +307,42 @@
  *
  * It sets no text of its own: an element of the Ordinary is a composed prayer
  * and is set by `.composed` in browser-core.css, exactly as a Collect is on the
- * propers page. What is owned here is the one thing the Ordinary has that no
- * proper has — a licence condition that must travel with the words it licenses.
+ * propers page. What is owned here are the two things the Ordinary has that no
+ * proper has — a licence condition that must travel with the words it licenses,
+ * and, with the propers poured into it, the job of staying visibly the frame.
  * ------------------------------------------------------------------------ */
 
 .ordinary-element { margin-bottom: 0.9rem; }
+
+.ordinary-preamble { margin-bottom: 1.6rem; }
+
+/* The day's own text, inside the frame.
+ *
+ * The one thing a follow-along missal must never blur is which words are said
+ * every day and which belong to this day, so the propers keep the section's own
+ * rule and the frame around them is set back from it. Nothing is hidden and
+ * nothing is dimmed to the point of being hard to read: the distinction is
+ * position and weight of rule, which survives being printed in black and white.
+ */
+.ordinary-frame > .proper:not(.ordinary-element) {
+  border-left-color: var(--section-line);
+  border-left-width: 3px;
+}
+
+.ordinary-frame > .ordinary-element {
+  border-left-color: var(--section-row);
+}
+
+/* Said where the frame stops fitting, and only there: before the Ordinary for a
+   Mass that opens outside it, after the Ordinary where the day's propers stop
+   running forward through it. Never a warning — nothing has failed — but never
+   quiet enough to miss, because it is the page saying what it has not done. */
+.ordinary-aside {
+  margin: 1.4rem 0 0.8rem;
+  padding-left: 1rem;
+  border-left: 2px dotted var(--section-line);
+  font-style: italic;
+}
 
 /* The acknowledgement a free licence requires. Quiet, because it is apparatus
    and not the prayer; never hidden, because it is the condition on which the
