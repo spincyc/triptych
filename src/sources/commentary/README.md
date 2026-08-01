@@ -27,6 +27,9 @@ passage to a ranked list of works.
 ```yaml
 schema: triptych-commentary-work-index/v1
 updated: 2026-07-30
+numbering: vulgate
+numbering_note: ...
+numbering_unrecorded_count: 3
 passages:
   - passage: John 3:16
     works:
@@ -100,6 +103,69 @@ reads `psalm_numbering` off each calendar. Conversion runs through
 `scripts/_psalms.py` and the tracked concordance; nothing is renumbered by hand,
 and a reference that does not exist in its declared system is reported
 `unconvertible` rather than moved.
+
+## Numbering
+
+That flag asks what the *citation* is in. Until 31 July 2026 nothing asked what
+the *index* was in, and the index said nothing: 524 keys spelled `Psalms 24`
+with no statement of whose Psalm 24 that is. Vulgate 24 is Ad te levavi and
+Hebrew 24 is Domini est terra; both resolve, and a lookup on the wrong one
+returns real commentary attached to the wrong text.
+
+**The keys are `vulgate`, and the file now says so.** Not asserted — derived.
+Every psalm key comes through `_canonical_passage`, which converts each
+calendar's citations out of the system that calendar declares, so all 130 psalm
+keys are exactly the set that conversion produces; the no-conversion hypothesis
+differs from the tracked keys on twenty of them, which is what proves it. The
+eleven antiphons the postconciliar file prints in Vulgate numbers under a Hebrew
+declaration never reach a key at all: each exceeds its Hebrew psalm and is
+refused as `unconvertible`, so the psalter half of the index is clean by
+construction.
+
+**The rest of the canon is not converted, so the file is mixed.** A non-psalm
+citation's chapter becomes the key as printed, which is the Vulgate's division
+for `roman-1962` and the Lectionary's for `postconciliar`. Where the two divide
+a book differently the calendar's own `citation_divergences` says so, and three
+keys turn out to name no chapter of this canon at all:
+
+| Key | Reached only by | Which means | Vulgate's own chapter is |
+| --- | --- | --- | --- |
+| `Joel 3` | `Joel 3:1-5` | `Joel 2:28-32` | the valley of Josaphat |
+| `Esther 4` | `Esther 4:17` | `Esther 13:9-11` | Mardochai going away as Esther asked |
+| `Isaiah 8` | `Isaiah 8:23-9:3` | `Isaiah 9:1-4` | the darkness before the great light |
+
+Each carries `numbering: unrecorded` and a `numbering_basis`, and every lookup
+refuses it with that reason rather than answering. `unrecorded` and not
+`nova-vulgata`: the harvest ledger records no numbering for any run, so which
+system the works under those keys were named for cannot be derived, and naming
+one would be the guess this whole chain exists to refuse.
+
+`Malachi 3` is deliberately *not* in that list. Two citations reach it —
+`Malachi 3:1`, which means Vulgate Malachi 3, and `Malachi 3:19-20a`, which
+means Vulgate Malachi 4. The key is sound and the second citation is misrouted,
+which is a fact about resolution rather than about the key, so the corpus
+reports it under `misrouted_citations` instead. A key is foreign only when
+*every* citation reaching it means somewhere else.
+
+Three gates hold the line, all derived and none hand-typed:
+
+- `_load_discovery` refuses an index with no `numbering`, or one whose
+  declaration is outside the vocabulary. The vocabulary is wider than
+  vulgate-or-hebrew on purpose: `guidance/versification.md` §3.3 records that
+  the Vulgate and the Greek disagree with each other and not merely with the
+  Hebrew, and Septuagint-derived commentary will be keyed here.
+- `harvest promote` re-derives the overrides from the calendars on every run,
+  so an override the calendars stop supporting disappears and a new divergence
+  gains one. `tools/tests/test_commentary_index.py` asserts the tracked rows
+  equal a fresh derivation in both directions.
+- `harvest promote` also refuses a key that cannot exist in the declared
+  system, measured against `_psalms` for the psalter and against the canonical
+  witness's own chapter counts for everything else. Nova Vulgata Joel runs to
+  four chapters; a `Joel 4` key would stop the promotion.
+
+`fragment-loci.yaml` already had this right and keeps it: `scripts/_catena.py`
+refuses the file, and every fragment in it, unless both declare
+`_projection.CANONICAL`. That is `guidance/catena.md` Rule 3.
 
 **A range crossing a chapter boundary resolves to every chapter it touches.**
 It is never collapsed to one. 43 distinct references cross a boundary — the
