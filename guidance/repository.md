@@ -160,22 +160,52 @@ Everything else under `tools/` is either a subdirectory, which `tmt` ignores,
 or a `.md`/`.test` companion. Shared library code and tool data live in
 `scripts/`; a bare file in `tools/` without a registry entry fails the gate.
 Python tests live in `tools/tests/`; `tests/tools/<id>.test` holds each tool's
-shell smoke test, and every registered id must have one. Nothing enforces that
-today — `tmt check` counts the registry, not the smoke tests — and three ids
-are missing one as of 2026-08-01: `act-history`, `mass-ordinary`, `mass-today`.
-A rule stated as enforced and checked by nothing is the apparatus committing the
-defect it exists to catch.
+shell smoke test, and every registered id must have one. `tmt check` counts the
+registry and not the smoke tests, so the rule is enforced by
+`tools/tests/test_tool_registry.py`; one id is missing one as of 2026-08-01,
+`act-history`. A rule stated as enforced and checked by nothing is the
+apparatus committing the defect it exists to catch.
 
 Register a new tool with `tmt new <id>`. `make check` runs `tmt check`, which
 must stay green; it is skipped, not failed, where `tmt` is not installed.
 
-Every verb's help ends in two captured invocations, and they are held to real
-runs: `make check` runs `make check-examples`, which replays each recorded
-invocation and compares it line for line, so a transcript changes by
+Every verb's help ends in two real invocations, and they are held to real runs:
+`make check` runs `make check-examples`, which replays each one and compares it
+to the transcript stored beside it, line for line, so a transcript changes by
 `make recapture-examples` and never by hand. An invocation that must not be
 replayed — one that reaches a model or the network, or writes tracked release
 state — is named with its reason in `scripts/replay_examples.py`, as is every
 transcript already known to be stale; all of them are printed on each run.
+
+The help page shows the invocations and the note, and **not** the transcript.
+The two jobs a capture does are separate: the reader wants the command to copy,
+and the replay wants the bytes. Printing both put a page of output under every
+verb. The transcripts are still captured, still stored in each tool's
+`EXAMPLES` table, and still replayed — the replay is now their only reader,
+which is what keeps them honest.
+
+## What a tool may print
+
+The stream at the far end of a tool decides what it can carry, and the question
+is a property of the run rather than of any tool, so it is answered once in
+`scripts/_tooling.py` and passed to every renderer as an argument. Three tiers:
+
+- **plain** — ASCII only: `V.`/`R.` for ℣/℟, `--` for an em dash, no colour. It
+  is reached by `--plain` (or `--style plain`) **whatever is detected**, because
+  detection is a guess and an operator who says plain means plain; and by
+  detection where the stream's encoding cannot carry the glyphs, or where a
+  terminal advertises no capability at all (`TERM` empty or `dumb`).
+- **unicode** — the glyphs, decided by the stream's own encoding and not by
+  `TERM`: a UTF-8 pipe into a file carries ℣ with no terminal at either end.
+- **rich** — headings, rules, weight and colour, where the stream is a tty and
+  the terminal names itself. Colour honours `NO_COLOR` and is never the only
+  carrier of meaning: every distinction it draws is also drawn in words or in a
+  rule, so a monochrome reader loses decoration and no fact.
+
+`--json` and `--format yaml` bypass the layer entirely and are byte-identical
+across tiers: they are contracts other programs read, and must not move with
+the terminal they happen to be printed at. Detection is tested by table in
+`tools/tests/test_terminal_tiers.py`, from any machine and with no pty.
 
 ## Build and review contract
 
