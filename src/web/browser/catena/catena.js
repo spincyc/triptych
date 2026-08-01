@@ -118,7 +118,16 @@
   function renderFragment(fragment, bookName) {
     const item = T.el('li', 'fragment');
 
-    const head = T.el('div', 'fragment-head');
+    // Collapsed by default, and `details` rather than a scripted toggle so the
+    // control is keyboard-reachable and the text is still findable by the
+    // browser's own search. The summary carries author, work, date and extent,
+    // which is what makes a closed chain worth reading on its own: it becomes a
+    // chronological index of who comments here and how far each one reaches.
+    const details = document.createElement('details');
+    details.className = 'fragment-body';
+
+    const head = document.createElement('summary');
+    head.className = 'fragment-head';
     head.appendChild(T.el('span', 'fragment-author', fragment.author));
     head.appendChild(T.el('span', 'fragment-work', fragment.work));
     if (fragment.date !== null && fragment.date !== undefined) {
@@ -136,11 +145,11 @@
       );
     }
     head.appendChild(extent);
-    item.appendChild(head);
+    details.appendChild(head);
 
     const text = T.el('p', 'fragment-text', fragment.text);
     text.lang = fragment.language || 'en';
-    item.appendChild(text);
+    details.appendChild(text);
 
     // Where it came from and how to check it. Below the text, never above.
     const source = T.el('p', 'fragment-source');
@@ -170,7 +179,8 @@
       source.appendChild(T.el('span', 'sep'));
       source.appendChild(T.el('span', 'state', fragment.review + ', not collated'));
     }
-    item.appendChild(source);
+    details.appendChild(source);
+    item.appendChild(details);
     return item;
   }
 

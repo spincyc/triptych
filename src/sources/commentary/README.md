@@ -65,12 +65,22 @@ second identity reconciliation.
 The index and the propers do not speak the same key space, and the bridge
 between them is `discover`'s, not the index's.
 
-- **The index is keyed by chapter locus.** 490 of its 497 keys are one chapter
-  (`Psalms 24`), because the harvest is run `--by-chapter` and a locus is one
-  chapter, never wider. The other 7 are verse ranges left by the pilot runs
-  (`Psalms 24:1-24:3`). Both are live; neither hides the other.
+- **The index is keyed by chapter locus, and by nothing else.** All 490 keys are
+  one chapter (`Psalms 24`), because the harvest is run `--by-chapter` and a
+  locus is one chapter, never wider. It once also held 7 verse ranges left by
+  the pilot runs (`Psalms 24:1-24:3`), and the two granularities disagreed:
+  `Psalms 24:4` carried 19 works of which 7 appeared on no chapter row, and
+  `Luke 21:25-21:33` carried 27 of which 14 did not. A consumer keyed on
+  chapters lost those silently; a consumer keyed on the pilot loci saw a
+  different corpus for the same text; both answers looked complete. Promotion
+  now derives every key with `chapter_loci`, so a pilot run's answer about
+  `Psalms 24:4` is that run's answer about Psalms 24 — widened, which is sound,
+  and never narrowed, which would not be. `overlapping_keys` refuses to write an
+  index where two keys cover the same text.
 - **A proper cites a verse range** (`Psalm 24:1-3`, `Baruch 3:9-15, 32-4:4`).
-  Of the 2190 references the two calendars carry, 2 met an index key exactly.
+  Of the 1600 distinct references the corpus carries, 6 name a bare chapter and
+  so meet an index key as a string; the other 1594 reach the index only through
+  the bridge below, which is `discover`'s and not the index's.
 
 Three rules close the gap, all of them in `commentary-work-index`:
 

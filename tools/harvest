@@ -38,7 +38,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _commentary import book_of, chapter_loci  # noqa: E402
+from _commentary import book_of, chapter_loci, overlapping_keys  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -53,16 +53,16 @@ EXAMPLES = {
         Example(
             "tools/harvest propers --top 3",
             (
-                "# 3 works across 497 passages, 6 runs",
-                "  430  Augustine of Hippo \u2014 Enarrationes in Psalmos  conf 1.00  128 passages",
-                "  1471  Denis the Carthusian \u2014 Enarrationes in universam Bibliam  conf 1.00  495 passages",
-                "  1349  Nicholas of Lyra \u2014 Postilla litteralis super totam Bibliam  conf 1.00  497 passages",
+                "# 3 works across 490 passages, 6 runs",
+                "  430  Augustine of Hippo \u2014 Enarrationes in Psalmos  conf 1.00  123 passages",
+                "  1471  Denis the Carthusian \u2014 Enarrationes in universam Bibliam  conf 1.00  490 passages",
+                "  1349  Nicholas of Lyra \u2014 Postilla litteralis super totam Bibliam  conf 1.00  490 passages",
             ),
         ),
         Example(
             "tools/harvest propers --top 2 --format json",
             (
-                "{\"harvest_runs\":6,\"passages_harvested\":497,\"v\":1,\"works\":[{\"author\":\"Augustine of Hippo\",\"confid... [+8074 chars]",
+                "{\"harvest_runs\":6,\"passages_harvested\":490,\"v\":1,\"works\":[{\"author\":\"Augustine of Hippo\",\"confid... [+8050 chars]",
             ),
         ),
     ),
@@ -72,14 +72,14 @@ EXAMPLES = {
             (
                 "  430  Augustine of Hippo \u2014 Enarrationes in Psalmos  conf 1.00",
                 "  585  Cassiodorus \u2014 Expositio Psalmorum  conf 1.00",
-                "  458  Theodoret of Cyrus \u2014 Interpretatio in Psalmos  conf 1.00",
+                "  604  Gregory the Great \u2014 Homiliae in Evangelia  conf 1.00",
             ),
         ),
         Example(
             "tools/harvest harvest postconciliar advent-1 --top 2 --src-list-only",
             (
                 "  430  Augustine of Hippo \u2014 Enarrationes in Psalmos",
-                "  585  Cassiodorus \u2014 Expositio Psalmorum",
+                "  420  Jerome \u2014 Commentariorum in Isaiam libri XVIII",
             ),
         ),
     ),
@@ -88,10 +88,10 @@ EXAMPLES = {
             "tools/harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml --limit 3",
             (
                 "# Psalm numbers here are Vulgate, not Hebrew, though the book names are modern: Psalms 24 is Ad ... [+57 chars]",
-                "# 3 of 1596 passages below 3 runs",
-                "0\t1 Chronicles 29:12",
-                "0\t1 Corinthians 10:1-10:5",
-                "0\t1 Corinthians 10:1-10:6; 10:10-10:12",
+                "# 3 of 1600 passages below 3 runs",
+                "0\t2 Maccabees 1:23-1:26; 1:27",
+                "0\tActs 19:1-19:8",
+                "0\tAmos 9:13-9:15",
             ),
         ),
         Example(
@@ -144,9 +144,9 @@ EXAMPLES = {
             "tools/harvest aliases",
             (
                 "derived_groups: 300",
-                "reviewed: 6",
+                "reviewed: 10",
                 "status: current",
-                "titles: 2862",
+                "titles: 2864",
                 "tracked_groups: 300",
             ),
             "read-only: compares the derived grouping with the tracked table",
@@ -155,9 +155,9 @@ EXAMPLES = {
             "tools/harvest aliases --rebuild --alias-table build/example-harvest/aliases.yaml --audited-on 2026-07-31",
             (
                 "groups: 300",
-                "reviewed: 6",
+                "reviewed: 10",
                 "status: rebuilt",
-                "titles: 2862",
+                "titles: 2864",
             ),
             "WRITES the alias table. --alias-table here is an untracked copy; the default rewrites tracked src/sources/commentary/work-aliases.yaml",
         ),
@@ -187,10 +187,10 @@ EXAMPLES = {
             (
                 "distinct_works: 341",
                 "index: src/sources/commentary/passage-commentary-index.yaml",
-                "passages: 497",
+                "passages: 490",
                 "runs: 6",
                 "status: dry-run",
-                "works: 7297",
+                "works: 7203",
             ),
             "read-only first: --dry-run reports what promotion would write and writes nothing",
         ),
@@ -199,10 +199,10 @@ EXAMPLES = {
             (
                 "distinct_works: 341",
                 "index: build/example-discovery.yaml",
-                "passages: 497",
+                "passages: 490",
                 "runs: 6",
                 "status: promoted",
-                "works: 7297",
+                "works: 7203",
             ),
             "WRITES the discovery index. --index here is untracked; the default rewrites tracked src/sources/commentary/passage-commentary-index.yaml",
         ),
@@ -348,6 +348,29 @@ def _ledger_runs(ledger: dict) -> list[dict]:
 _chapter_loci = chapter_loci
 
 
+def _locus_answers(run: dict, aliases: dict) -> dict[str, dict]:
+    """One run's answer, folded onto the loci the index stores.
+
+    A run may hold several keys over one chapter — three early pilot runs asked
+    about `Psalms 24:1-24:3`, `Psalms 24:3` and `Psalms 24:4` separately — and
+    all of them are that run's single answer about Psalms 24. Folded here they
+    are counted once; counted per key a work would appear more often than there
+    were runs to produce it, and confidence is appearances over runs.
+
+    Widening a verse range to its chapter is the sound direction: a work that
+    comments on Psalms 24:4 comments on Psalms 24. The reverse is not, which is
+    why nothing here ever narrows.
+    """
+    answered: dict[str, dict] = {}
+    for passage, works in (run.get("passages") or {}).items():
+        for locus in _chapter_loci(passage):
+            bucket = answered.setdefault(locus, {})
+            for rank, work in enumerate(works):
+                found = bucket.setdefault(_key(work, aliases), {"work": work, "best": rank})
+                found["best"] = min(found["best"], rank)
+    return answered
+
+
 def run_plan(arguments: argparse.Namespace) -> dict:
     """Passages that still need harvesting, with how many runs each has."""
     corpus = _load(Path(arguments.corpus)) if arguments.corpus else {}
@@ -357,8 +380,17 @@ def run_plan(arguments: argparse.Namespace) -> dict:
         raise ValueError("--corpus is required; build it with commentary-work-index")
     seen: dict[str, int] = defaultdict(int)
     for run in _ledger_runs(_load(Path(getattr(arguments, 'ledger', LEDGER)))):
-        for passage in (run.get("passages") or {}):
-            seen[passage] += 1
+        for locus in {
+            locus
+            for passage in (run.get("passages") or {})
+            for locus in _chapter_loci(passage)
+        }:
+            seen[locus] += 1
+
+    def harvested(passage: str) -> int:
+        """A reference is harvested only as far as its least-harvested chapter."""
+        return min((seen[locus] for locus in _chapter_loci(passage)), default=0)
+
     target = arguments.runs
     if arguments.by_chapter:
         loci: list[str] = []
@@ -367,7 +399,7 @@ def run_plan(arguments: argparse.Namespace) -> dict:
                 if locus not in loci:
                     loci.append(locus)
         wanted = loci
-    pending = [p for p in wanted if seen[p] < target]
+    pending = [p for p in wanted if harvested(p) < target]
     if arguments.limit:
         pending = pending[: arguments.limit]
     return {
@@ -387,7 +419,7 @@ def run_plan(arguments: argparse.Namespace) -> dict:
         # out.
         "numbering": NUMBERING,
         "numbering_note": NUMBERING_NOTE,
-        "passages": [{"passage": p, "runs": seen[p]} for p in pending],
+        "passages": [{"passage": p, "runs": harvested(p)} for p in pending],
     }
 
 
@@ -1267,11 +1299,12 @@ def run_promote(arguments: argparse.Namespace) -> dict:
     seen: dict[str, dict[tuple[str, str], dict]] = defaultdict(dict)
     counts: dict[str, int] = defaultdict(int)
     for run in runs:
-        for passage, works in (run.get("passages") or {}).items():
-            counts[passage] += 1
-            for work in works:
-                key = _key(work, aliases)
-                entry = seen[passage].setdefault(key, {"work": work, "key": key, "appearances": 0})
+        for locus, answers in _locus_answers(run, aliases).items():
+            counts[locus] += 1
+            for key, found in answers.items():
+                entry = seen[locus].setdefault(
+                    key, {"work": found["work"], "key": key, "appearances": 0}
+                )
                 entry["appearances"] += 1
     payload = []
     for passage in sorted(seen):
@@ -1299,6 +1332,20 @@ def run_promote(arguments: argparse.Namespace) -> dict:
         works.sort(key=lambda w: (-w["confidence"], w["author"].casefold(), w["title"].casefold()))
         if works:
             payload.append({"passage": passage, "works": works})
+    # The index answers one question once. It was promoted holding both
+    # `Psalms 24` and `Psalms 24:4`, and the two carried different corpora for
+    # the same text: a consumer keyed on chapters lost seven of the verse row's
+    # nineteen works, a consumer keyed on the verse row saw a different list,
+    # and both looked complete. The detector is cheap and its absence is why
+    # that reached a tracked artifact.
+    clashes = overlapping_keys([entry["passage"] for entry in payload])
+    if clashes:
+        shown = "; ".join(f"{one!r} and {two!r}" for one, two in clashes[:4])
+        raise ValueError(
+            f"{len(clashes)} pairs of index keys cover the same text ({shown}"
+            f"{', +more' if len(clashes) > 4 else ''}); the index stores one "
+            "granularity and derives the rest"
+        )
     index = {
         "schema": INDEX_SCHEMA,
         "updated": arguments.audited_on,
@@ -1350,18 +1397,26 @@ def run_harvest(arguments: argparse.Namespace) -> dict:
     The cache stays keyed by passage, not by mass: masses share passages, and
     asking per mass would consult the model repeatedly for the same text.
     """
-    passages = _mass_passages(arguments.missal, arguments.mass)
+    # The mass cites verse ranges and the harvest is keyed by chapter, so the
+    # citation is resolved to the loci the index stores rather than matched
+    # against them as a string. Matching by spelling met only the handful of
+    # pilot keys that happened to be spelled as a range.
+    passages: list[str] = []
+    for cited in _mass_passages(arguments.missal, arguments.mass):
+        for locus in _chapter_loci(cited):
+            if locus not in passages:
+                passages.append(locus)
     ledger_runs = _ledger_runs(_load(Path(getattr(arguments, 'ledger', LEDGER))))
     aliases, naming = _seed_registry(arguments, ledger_runs)
     runs_for: dict[str, int] = defaultdict(int)
     works_for: dict[str, dict] = defaultdict(dict)
     for run in ledger_runs:
-        for passage, works in (run.get("passages") or {}).items():
-            if passage not in passages:
+        for locus, answers in _locus_answers(run, aliases).items():
+            if locus not in passages:
                 continue
-            runs_for[passage] += 1
-            for work in works:
-                entry = works_for[passage].setdefault(_key(work, aliases), {"work": work, "n": 0})
+            runs_for[locus] += 1
+            for key, found in answers.items():
+                entry = works_for[locus].setdefault(key, {"work": found["work"], "n": 0})
                 entry["n"] += 1
     pending = [p for p in passages if runs_for[p] < arguments.runs]
 
@@ -1413,14 +1468,14 @@ def run_propers(arguments: argparse.Namespace) -> dict:
     per_passage: dict[str, dict] = defaultdict(dict)
     counts: dict[str, int] = defaultdict(int)
     for run in runs:
-        for passage, works in (run.get("passages") or {}).items():
-            counts[passage] += 1
-            for rank, work in enumerate(works):
-                entry = per_passage[passage].setdefault(
-                    _key(work, aliases), {"work": work, "n": 0, "best": rank}
+        for locus, answers in _locus_answers(run, aliases).items():
+            counts[locus] += 1
+            for key, found in answers.items():
+                entry = per_passage[locus].setdefault(
+                    key, {"work": found["work"], "n": 0, "best": found["best"]}
                 )
                 entry["n"] += 1
-                entry["best"] = min(entry["best"], rank)
+                entry["best"] = min(entry["best"], found["best"])
 
     collated: dict[tuple[str, str], dict] = {}
     for passage, entries in per_passage.items():

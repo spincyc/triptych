@@ -21299,266 +21299,186 @@ passages:
     runs: 3
 - passage: Luke 21
   works:
-  - author: Albert the Great
-    title: Super Lucam
-    date: '1280'
-    role: doctor
-    confidence: 1.0
-    runs: 3
   - author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
     date: '397'
     role: church-father
     confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Bonaventure
     title: Commentarius in Evangelium S. Lucae
     date: '1274'
     role: doctor
     confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Cornelius a Lapide
     title: Commentaria in Scripturam Sacram
     date: '1637'
     role: saintly
     confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Cyril of Alexandria
     title: Commentarius in Lucam
     date: '444'
     role: church-father
     confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Gregory the Great
     title: Homiliae in Evangelia
     date: '604'
     role: pope
     confidence: 1.0
-    runs: 3
-  - author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
-    date: '1349'
-    role: saintly
-    confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Theophylact of Ohrid
     title: Enarratio in Evangelium Lucae
     date: '1107'
     role: saintly
     confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Thomas Aquinas
     title: Catena aurea in quatuor Evangelia
     date: '1274'
     role: doctor
     confidence: 1.0
-    runs: 3
+    runs: 6
+  - author: Albert the Great
+    title: Super Lucam
+    date: '1280'
+    role: doctor
+    confidence: 0.8333
+    runs: 6
   - author: Bede the Venerable
     title: In Lucae evangelium expositio
     date: '735'
     role: doctor
     confidence: 0.6667
-    runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in omnes libros sacrae Scripturae
-    date: '1471'
+    runs: 6
+  - author: Nicholas of Lyra
+    title: Postilla litteralis super totam Bibliam
+    date: '1349'
     role: saintly
     confidence: 0.6667
-    runs: 3
-  - author: Hugh of Saint-Cher
-    title: Postillae in universa Biblia
-    date: '1263'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Juan Maldonado
-    title: Commentarii in quatuor Evangelistas
-    date: '1583'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Bede
-    title: In Lucae Evangelium expositio
-    date: '735'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-  - author: Euthymius Zigabenus
-    title: Commentarius in quatuor Evangelia
-    date: '1122'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-- passage: Luke 21:25-21:33
-  works:
-  - author: Ambrose of Milan
-    title: Expositio Evangelii secundum Lucam
-    date: '397'
-    role: church-father
-    confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Augustine of Hippo
     title: De civitate Dei
     date: '430'
     role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Bonaventure
-    title: Commentarius in Evangelium S. Lucae
-    date: '1274'
-    role: doctor
-    confidence: 1.0
-    runs: 3
-  - author: Cornelius a Lapide
-    title: Commentaria in Scripturam Sacram
-    date: '1637'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Cyril of Alexandria
-    title: Commentarius in Lucam
-    date: '444'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Gregory the Great
-    title: Homiliae in Evangelia
-    date: '604'
-    role: pope
-    confidence: 1.0
-    runs: 3
-  - author: John Chrysostom
-    title: Homiliae in Matthaeum
-    date: '407'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Theophylact of Ohrid
-    title: Enarratio in Evangelium Lucae
-    date: '1107'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Thomas Aquinas
-    title: Catena aurea in quatuor Evangelia
-    date: '1274'
-    role: doctor
-    confidence: 1.0
-    runs: 3
-  - author: Albert the Great
-    title: Super Lucam
-    date: '1280'
-    role: doctor
-    confidence: 0.6667
-    runs: 3
-  - author: Bede the Venerable
-    title: In Lucae evangelium expositio
-    date: '735'
-    role: doctor
-    confidence: 0.6667
-    runs: 3
-  - author: Bernard of Clairvaux
-    title: Sermones de Adventu Domini
-    date: '1153'
-    role: doctor
-    confidence: 0.6667
-    runs: 3
-  - author: Denis the Carthusian
-    title: Enarratio in Evangelium Lucae
-    date: '1471'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
+    confidence: 0.5
+    runs: 6
   - author: Euthymius Zigabenus
     title: Commentarius in quatuor Evangelia
     date: '1122'
     role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Jerome
-    title: Commentariorum in Matthaeum Libri IV
-    date: '420'
-    role: doctor
-    confidence: 0.6667
-    runs: 3
-  - author: Alphonsus Liguori
-    title: Preparation for Death
-    date: '1787'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.5
+    runs: 6
+  - author: John Chrysostom
+    title: Homiliae in Matthaeum
+    date: '407'
+    role: church-father
+    confidence: 0.5
+    runs: 6
+  - author: Juan Maldonado
+    title: Commentarii in quatuor Evangelistas
+    date: '1583'
+    role: saintly
+    confidence: 0.5
+    runs: 6
   - author: Bede
     title: In Lucae Evangelium expositio
     date: '735'
     role: doctor
     confidence: 0.3333
-    runs: 3
+    runs: 6
+  - author: Bernard of Clairvaux
+    title: Sermones de Adventu Domini
+    date: '1153'
+    role: doctor
+    confidence: 0.3333
+    runs: 6
+  - author: Denis the Carthusian
+    title: Enarratio in Evangelium Lucae
+    date: '1471'
+    role: saintly
+    confidence: 0.3333
+    runs: 6
+  - author: Denis the Carthusian
+    title: Enarrationes in omnes libros sacrae Scripturae
+    date: '1471'
+    role: saintly
+    confidence: 0.3333
+    runs: 6
+  - author: Hugh of Saint-Cher
+    title: Postillae in universa Biblia
+    date: '1263'
+    role: saintly
+    confidence: 0.3333
+    runs: 6
+  - author: Jerome
+    title: Commentariorum in Matthaeum Libri IV
+    date: '420'
+    role: doctor
+    confidence: 0.3333
+    runs: 6
+  - author: Alphonsus Liguori
+    title: Preparation for Death
+    date: '1787'
+    role: doctor
+    confidence: 0.1667
+    runs: 6
   - author: Bernard of Clairvaux
     title: Sermones in Adventu Domini
     date: '1153'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
+  - author: Denis the Carthusian
+    title: Enarrationes in universam Bibliam
+    date: '1471'
+    role: saintly
+    confidence: 0.1667
+    runs: 6
   - author: Ephrem the Syrian
     title: Commentary on the Diatessaron
     date: '373'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Hilary of Poitiers
     title: Commentarius in Matthaeum
     date: '367'
     role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Juan Maldonado
-    title: Commentarii in quatuor Evangelistas
-    date: '1583'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Leo the Great
     title: Sermones
     date: '461'
     role: pope
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Maximus of Turin
     title: Sermones
     date: '465'
     role: saint
-    confidence: 0.3333
-    runs: 3
-  - author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
-    date: '1349'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Origen
     title: Homiliae in Lucam
     date: '254'
     role: church-father
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Origen of Alexandria
     title: Homiliae in Lucam
     date: '254'
     role: church-father
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Peter Chrysologus
     title: Sermones
     date: '450'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
 - passage: Luke 22
   works:
   - author: Albert the Great
@@ -33990,463 +33910,181 @@ passages:
     date: '430'
     role: church-father
     confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Cassiodorus
     title: Expositio Psalmorum
     date: '585'
     role: saintly
     confidence: 1.0
-    runs: 3
-  - author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
-    date: '1349'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Peter Lombard
-    title: Commentarium in Psalmos
-    date: '1160'
-    role: saintly
-    confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
     confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Theodoret of Cyrus
     title: Interpretatio in Psalmos
     date: '458'
     role: church-father
     confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Thomas Aquinas
     title: Postilla super Psalmos
     date: '1274'
     role: doctor
     confidence: 1.0
-    runs: 3
+    runs: 6
+  - author: Peter Lombard
+    title: Commentarium in Psalmos
+    date: '1160'
+    role: saintly
+    confidence: 0.8333
+    runs: 6
+  - author: Denis the Carthusian
+    title: Enarrationes in universam Bibliam
+    date: '1471'
+    role: saintly
+    confidence: 0.6667
+    runs: 6
+  - author: Nicholas of Lyra
+    title: Postilla litteralis super totam Bibliam
+    date: '1349'
+    role: saintly
+    confidence: 0.6667
+    runs: 6
+  - author: Euthymius Zigabenus
+    title: Commentarius in Psalterium
+    date: '1122'
+    role: saintly
+    confidence: 0.5
+    runs: 6
+  - author: Jerome
+    title: Commentarioli in Psalmos
+    date: '420'
+    role: church-father
+    confidence: 0.5
+    runs: 6
+  - author: Jerome
+    title: Tractatus in Psalmos
+    date: '420'
+    role: doctor
+    confidence: 0.5
+    runs: 6
   - author: Albert the Great
     title: Commentarii in Psalmos
     date: '1280'
     role: doctor
-    confidence: 0.6667
-    runs: 3
-  - author: Bruno the Carthusian
-    title: Expositio in Psalmos
-    date: '1101'
-    role: saint
-    confidence: 0.6667
-    runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in omnes libros sacrae Scripturae
-    date: '1471'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Hugh of Saint-Cher
-    title: Postillae in universa Biblia
-    date: '1263'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Jerome
-    title: Commentarioli in Psalmos
-    date: '420'
-    role: church-father
-    confidence: 0.6667
-    runs: 3
-  - author: Arnobius the Younger
-    title: Commentarii in Psalmos
-    date: '455'
-    role: saintly
     confidence: 0.3333
-    runs: 3
+    runs: 6
   - author: Athanasius of Alexandria
     title: Expositiones in Psalmos
     date: '373'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-  - author: Euthymius Zigabenus
-    title: Commentarius in Psalterium
-    date: '1122'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-  - author: Jerome
-    title: Tractatus in Psalmos
-    date: '420'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Richard Rolle
-    title: English Psalter
-    date: '1349'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-- passage: Psalms 24:1-24:3
-  works:
-  - author: Augustine of Hippo
-    title: Enarrationes in Psalmos
-    date: '430'
     role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Cassiodorus
-    title: Expositio Psalmorum
-    date: '585'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Robert Bellarmine
-    title: Explanatio in Psalmos
-    date: '1621'
-    role: doctor
-    confidence: 1.0
-    runs: 3
-  - author: Theodoret of Cyrus
-    title: Interpretatio in Psalmos
-    date: '458'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Thomas Aquinas
-    title: Postilla super Psalmos
-    date: '1274'
-    role: doctor
-    confidence: 1.0
-    runs: 3
+    confidence: 0.3333
+    runs: 6
   - author: Basil the Great
     title: Homiliae in Psalmos
     date: '379'
     role: church-father
-    confidence: 0.6667
-    runs: 3
-  - author: Euthymius Zigabenus
-    title: Commentarius in Psalterium
-    date: '1122'
+    confidence: 0.3333
+    runs: 6
+  - author: Bruno the Carthusian
+    title: Expositio in Psalmos
+    date: '1101'
+    role: saint
+    confidence: 0.3333
+    runs: 6
+  - author: Denis the Carthusian
+    title: Enarrationes in omnes libros sacrae Scripturae
+    date: '1471'
     role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Jerome
-    title: Tractatus in Psalmos
-    date: '420'
-    role: doctor
-    confidence: 0.6667
-    runs: 3
+    confidence: 0.3333
+    runs: 6
+  - author: Hugh of Saint-Cher
+    title: Postillae in universa Biblia
+    date: '1263'
+    role: saintly
+    confidence: 0.3333
+    runs: 6
   - author: John Chrysostom
     title: Expositiones in Psalmos
     date: '407'
     role: church-father
-    confidence: 0.6667
-    runs: 3
-  - author: Peter Lombard
-    title: Commentarium in Psalmos
-    date: '1160'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
+    confidence: 0.3333
+    runs: 6
   - author: Alphonsus Liguori
     title: Traduzione dei Salmi e dei Cantici del Breviario Romano
     date: '1787'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Ambrose of Milan
     title: Explanatio Psalmorum XII
     date: '397'
     role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Athanasius of Alexandria
-    title: Expositiones in Psalmos
-    date: '373'
-    role: church-father
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
+  - author: Arnobius the Younger
+    title: Commentarii in Psalmos
+    date: '455'
+    role: saintly
+    confidence: 0.1667
+    runs: 6
   - author: Bede
     title: In Psalmorum librum exegesis
     date: '735'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Bede the Venerable
     title: In Psalmorum librum exegesis
     date: '735'
     role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Bruno of Wurzburg
-    title: Expositio Psalmorum
-    date: '1045'
-    role: saint
-    confidence: 0.3333
-    runs: 3
-  - author: Cornelius a Lapide
-    title: Commentaria in Scripturam Sacram
-    date: '1637'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-  - author: Gregory of Nyssa
-    title: In inscriptiones Psalmorum
-    date: '395'
-    role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Hilary of Poitiers
-    title: Tractatus super Psalmos
-    date: '367'
-    role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Jerome
-    title: Commentarioli in Psalmos
-    date: '420'
-    role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
-    date: '1349'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-- passage: Psalms 24:3
-  works:
-  - author: Augustine of Hippo
-    title: Enarrationes in Psalmos
-    date: '430'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Cassiodorus
-    title: Expositio Psalmorum
-    date: '585'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Robert Bellarmine
-    title: Explanatio in Psalmos
-    date: '1621'
-    role: doctor
-    confidence: 1.0
-    runs: 3
-  - author: Theodoret of Cyrus
-    title: Interpretatio in Psalmos
-    date: '458'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Thomas Aquinas
-    title: Postilla super Psalmos
-    date: '1274'
-    role: doctor
-    confidence: 1.0
-    runs: 3
-  - author: Euthymius Zigabenus
-    title: Commentarius in Psalterium
-    date: '1122'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Jerome
-    title: Tractatus in Psalmos
-    date: '420'
-    role: doctor
-    confidence: 0.6667
-    runs: 3
-  - author: Peter Lombard
-    title: Commentarium in Psalmos
-    date: '1160'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Alphonsus Liguori
-    title: Traduzione dei Salmi e dei Cantici del Breviario Romano
-    date: '1787'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Athanasius of Alexandria
-    title: Expositiones in Psalmos
-    date: '373'
-    role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Bede
-    title: In Psalmorum librum exegesis
-    date: '735'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Bede the Venerable
-    title: In Psalmorum librum exegesis
-    date: '735'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Cornelius a Lapide
-    title: Commentaria in Scripturam Sacram
-    date: '1637'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-  - author: Hilary of Poitiers
-    title: Tractatus super Psalmos
-    date: '367'
-    role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Jerome
-    title: Commentarioli in Psalmos
-    date: '420'
-    role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
-    date: '1349'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-- passage: Psalms 24:4
-  works:
-  - author: Augustine of Hippo
-    title: Enarrationes in Psalmos
-    date: '430'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Cassiodorus
-    title: Expositio Psalmorum
-    date: '585'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Robert Bellarmine
-    title: Explanatio in Psalmos
-    date: '1621'
-    role: doctor
-    confidence: 1.0
-    runs: 3
-  - author: Theodoret of Cyrus
-    title: Interpretatio in Psalmos
-    date: '458'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Thomas Aquinas
-    title: Postilla super Psalmos
-    date: '1274'
-    role: doctor
-    confidence: 1.0
-    runs: 3
-  - author: Euthymius Zigabenus
-    title: Commentarius in Psalterium
-    date: '1122'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Jerome
-    title: Tractatus in Psalmos
-    date: '420'
-    role: doctor
-    confidence: 0.6667
-    runs: 3
-  - author: Peter Lombard
-    title: Commentarium in Psalmos
-    date: '1160'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Alphonsus Liguori
-    title: Traduzione dei Salmi e dei Cantici del Breviario Romano
-    date: '1787'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Athanasius of Alexandria
-    title: Expositiones in Psalmos
-    date: '373'
-    role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Bede
-    title: In Psalmorum librum exegesis
-    date: '735'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Bede the Venerable
-    title: In Psalmorum librum exegesis
-    date: '735'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Bernard of Clairvaux
     title: Sermones de Adventu Domini
     date: '1153'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Bernard of Clairvaux
     title: Sermones de Diversis
     date: '1153'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
+  - author: Bruno of Wurzburg
+    title: Expositio Psalmorum
+    date: '1045'
+    role: saint
+    confidence: 0.1667
+    runs: 6
   - author: Cornelius a Lapide
     title: Commentaria in Scripturam Sacram
     date: '1637'
     role: saintly
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
+  - author: Gregory of Nyssa
+    title: In inscriptiones Psalmorum
+    date: '395'
+    role: church-father
+    confidence: 0.1667
+    runs: 6
   - author: Hilary of Poitiers
     title: Tractatus super Psalmos
     date: '367'
     role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Jerome
-    title: Commentarioli in Psalmos
-    date: '420'
-    role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
+    confidence: 0.1667
+    runs: 6
+  - author: Richard Rolle
+    title: English Psalter
     date: '1349'
     role: saintly
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
 - passage: Psalms 25
   works:
   - author: Augustine of Hippo
@@ -39580,299 +39218,139 @@ passages:
     date: '430'
     role: church-father
     confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Cassiodorus
     title: Expositio Psalmorum
     date: '585'
     role: saintly
     confidence: 1.0
-    runs: 3
-  - author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
-    date: '1349'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Peter Lombard
-    title: Commentarium in Psalmos
-    date: '1160'
-    role: saintly
-    confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
     confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Theodoret of Cyrus
     title: Interpretatio in Psalmos
-    date: '457'
+    date: '458'
     role: church-father
     confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Denis the Carthusian
     title: Enarrationes in universam Bibliam
     date: '1471'
     role: saintly
+    confidence: 0.8333
+    runs: 6
+  - author: Peter Lombard
+    title: Commentarium in Psalmos
+    date: '1160'
+    role: saintly
+    confidence: 0.8333
+    runs: 6
+  - author: Jerome
+    title: Tractatus in Psalmos
+    date: '420'
+    role: doctor
     confidence: 0.6667
-    runs: 3
+    runs: 6
+  - author: Nicholas of Lyra
+    title: Postilla litteralis super totam Bibliam
+    date: '1349'
+    role: saintly
+    confidence: 0.6667
+    runs: 6
+  - author: Euthymius Zigabenus
+    title: Commentarius in Psalterium
+    date: '1122'
+    role: saintly
+    confidence: 0.5
+    runs: 6
   - author: Hugh of Saint-Cher
     title: Postillae in universa Biblia
     date: '1263'
     role: saintly
-    confidence: 0.6667
-    runs: 3
+    confidence: 0.3333
+    runs: 6
   - author: Albert the Great
     title: Commentarii in Psalmos
     date: '1280'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
+  - author: Alphonsus Liguori
+    title: Traduzione dei Salmi e dei Cantici del Breviario Romano
+    date: '1787'
+    role: doctor
+    confidence: 0.1667
+    runs: 6
+  - author: Athanasius of Alexandria
+    title: Expositiones in Psalmos
+    date: '373'
+    role: church-father
+    confidence: 0.1667
+    runs: 6
+  - author: Bede
+    title: In Psalmorum librum exegesis
+    date: '735'
+    role: doctor
+    confidence: 0.1667
+    runs: 6
+  - author: Bede the Venerable
+    title: In Psalmorum librum exegesis
+    date: '735'
+    role: doctor
+    confidence: 0.1667
+    runs: 6
+  - author: Bernard of Clairvaux
+    title: Sermones de Adventu Domini
+    date: '1153'
+    role: doctor
+    confidence: 0.1667
+    runs: 6
+  - author: Bernard of Clairvaux
+    title: Sermones in Adventu Domini
+    date: '1153'
+    role: doctor
+    confidence: 0.1667
+    runs: 6
   - author: Bruno the Carthusian
     title: Expositio in Psalmos
     date: '1101'
     role: saint
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
+  - author: Cornelius a Lapide
+    title: Commentaria in Scripturam Sacram
+    date: '1637'
+    role: saintly
+    confidence: 0.1667
+    runs: 6
   - author: Denis the Carthusian
     title: Enarrationes in omnes libros sacrae Scripturae
     date: '1471'
     role: saintly
-    confidence: 0.3333
-    runs: 3
-  - author: Euthymius Zigabenus
-    title: Commentarius in Psalterium
-    date: '1122'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Jerome
     title: Commentarioli in Psalmos
     date: '420'
     role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Jerome
-    title: Tractatus in Psalmos
-    date: '420'
+    confidence: 0.1667
+    runs: 6
+  - author: Thomas Aquinas
+    title: Postilla super Psalmos
+    date: '1274'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Walafrid Strabo
     title: Glossa Ordinaria
     date: '849'
     role: saintly
-    confidence: 0.3333
-    runs: 3
-- passage: Psalms 84:13
-  works:
-  - author: Augustine of Hippo
-    title: Enarrationes in Psalmos
-    date: '430'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Cassiodorus
-    title: Expositio Psalmorum
-    date: '585'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Jerome
-    title: Tractatus in Psalmos
-    date: '420'
-    role: doctor
-    confidence: 1.0
-    runs: 3
-  - author: Robert Bellarmine
-    title: Explanatio in Psalmos
-    date: '1621'
-    role: doctor
-    confidence: 1.0
-    runs: 3
-  - author: Theodoret of Cyrus
-    title: Interpretatio in Psalmos
-    date: '458'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Euthymius Zigabenus
-    title: Commentarius in Psalterium
-    date: '1122'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Peter Lombard
-    title: Commentarium in Psalmos
-    date: '1160'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Alphonsus Liguori
-    title: Traduzione dei Salmi e dei Cantici del Breviario Romano
-    date: '1787'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Athanasius of Alexandria
-    title: Expositiones in Psalmos
-    date: '373'
-    role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Bede
-    title: In Psalmorum librum exegesis
-    date: '735'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Bede the Venerable
-    title: In Psalmorum librum exegesis
-    date: '735'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Bernard of Clairvaux
-    title: Sermones de Adventu Domini
-    date: '1153'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Bernard of Clairvaux
-    title: Sermones in Adventu Domini
-    date: '1153'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Cornelius a Lapide
-    title: Commentaria in Scripturam Sacram
-    date: '1637'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-  - author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
-    date: '1349'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-  - author: Thomas Aquinas
-    title: Postilla super Psalmos
-    date: '1274'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-- passage: Psalms 84:8
-  works:
-  - author: Augustine of Hippo
-    title: Enarrationes in Psalmos
-    date: '430'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Cassiodorus
-    title: Expositio Psalmorum
-    date: '585'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Jerome
-    title: Tractatus in Psalmos
-    date: '420'
-    role: doctor
-    confidence: 1.0
-    runs: 3
-  - author: Robert Bellarmine
-    title: Explanatio in Psalmos
-    date: '1621'
-    role: doctor
-    confidence: 1.0
-    runs: 3
-  - author: Theodoret of Cyrus
-    title: Interpretatio in Psalmos
-    date: '458'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Euthymius Zigabenus
-    title: Commentarius in Psalterium
-    date: '1122'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Peter Lombard
-    title: Commentarium in Psalmos
-    date: '1160'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Alphonsus Liguori
-    title: Traduzione dei Salmi e dei Cantici del Breviario Romano
-    date: '1787'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Athanasius of Alexandria
-    title: Expositiones in Psalmos
-    date: '373'
-    role: church-father
-    confidence: 0.3333
-    runs: 3
-  - author: Bede
-    title: In Psalmorum librum exegesis
-    date: '735'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Bede the Venerable
-    title: In Psalmorum librum exegesis
-    date: '735'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Bernard of Clairvaux
-    title: Sermones de Adventu Domini
-    date: '1153'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Bernard of Clairvaux
-    title: Sermones in Adventu Domini
-    date: '1153'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Cornelius a Lapide
-    title: Commentaria in Scripturam Sacram
-    date: '1637'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-  - author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
-    date: '1349'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-  - author: Thomas Aquinas
-    title: Postilla super Psalmos
-    date: '1274'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
 - passage: Psalms 85
   works:
   - author: Augustine of Hippo
@@ -42280,225 +41758,169 @@ passages:
     date: '1637'
     role: saintly
     confidence: 1.0
-    runs: 3
+    runs: 6
   - author: John Chrysostom
     title: Homiliae in epistulam ad Romanos
     date: '407'
     role: church-father
     confidence: 1.0
-    runs: 3
-  - author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
-    date: '1349'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Origen
-    title: Commentarii in Epistulam ad Romanos
-    date: '254'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Peter Lombard
-    title: Collectanea in omnes divi Pauli epistolas
-    date: '1160'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: Theodoret of Cyrus
-    title: Interpretatio in xiv epistulas sancti Pauli
-    date: '458'
-    role: church-father
-    confidence: 1.0
-    runs: 3
+    runs: 6
   - author: Thomas Aquinas
     title: Super Epistolas S. Pauli lectura
     date: '1274'
     role: doctor
     confidence: 1.0
-    runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in omnes libros sacrae Scripturae
-    date: '1471'
+    runs: 6
+  - author: Origen
+    title: Commentarii in Epistulam ad Romanos
+    date: '254'
+    role: church-father
+    confidence: 0.8333
+    runs: 6
+  - author: Peter Lombard
+    title: Collectanea in omnes divi Pauli epistolas
+    date: '1160'
+    role: saintly
+    confidence: 0.8333
+    runs: 6
+  - author: Theodoret of Cyrus
+    title: Interpretatio in xiv epistulas sancti Pauli
+    date: '458'
+    role: church-father
+    confidence: 0.8333
+    runs: 6
+  - author: Augustine of Hippo
+    title: Expositio quarundam propositionum ex epistula ad Romanos
+    date: '430'
+    role: church-father
+    confidence: 0.6667
+    runs: 6
+  - author: Nicholas of Lyra
+    title: Postilla litteralis super totam Bibliam
+    date: '1349'
     role: saintly
     confidence: 0.6667
-    runs: 3
-  - author: Hugh of Saint-Cher
-    title: Postillae in universa Biblia
-    date: '1263'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
+    runs: 6
   - author: Theophylact of Ohrid
     title: In omnes D. Pauli apostoli epistolas enarrationes
     date: '1107'
     role: saintly
     confidence: 0.6667
-    runs: 3
-  - author: Willem Hessels van Est
-    title: In omnes divi Pauli epistolas commentarii
-    date: '1613'
-    role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Augustine of Hippo
-    title: Expositio quarundam propositionum ex epistula ad Romanos
-    date: '430'
-    role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-  - author: Rabanus Maurus
-    title: Enarrationes in epistolas beati Pauli
-    date: '856'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
-  - author: Theophylact of Ohrid
-    title: Expositio in epistolas sancti Pauli
-    date: '1107'
-    role: saint
-    confidence: 0.3333
-    runs: 3
-- passage: Romans 13:11-13:14
-  works:
+    runs: 6
   - author: Augustine of Hippo
     title: Confessiones
     date: '430'
     role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Augustine of Hippo
-    title: Expositio quarundam propositionum ex epistula ad Romanos
-    date: '430'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Cornelius a Lapide
-    title: Commentaria in Scripturam Sacram
-    date: '1637'
-    role: saintly
-    confidence: 1.0
-    runs: 3
-  - author: John Chrysostom
-    title: Homiliae in epistulam ad Romanos
-    date: '407'
-    role: church-father
-    confidence: 1.0
-    runs: 3
-  - author: Thomas Aquinas
-    title: Super Epistolas S. Pauli lectura
-    date: '1274'
-    role: doctor
-    confidence: 1.0
-    runs: 3
+    confidence: 0.5
+    runs: 6
   - author: Cyril of Alexandria
     title: Explanatio in epistulam ad Romanos
     date: '444'
     role: church-father
-    confidence: 0.6667
-    runs: 3
-  - author: Origen
-    title: Commentarii in Epistulam ad Romanos
-    date: '254'
-    role: church-father
-    confidence: 0.6667
-    runs: 3
-  - author: Peter Lombard
-    title: Collectanea in omnes divi Pauli epistolas
-    date: '1160'
+    confidence: 0.3333
+    runs: 6
+  - author: Denis the Carthusian
+    title: Enarrationes in omnes libros sacrae Scripturae
+    date: '1471'
     role: saintly
-    confidence: 0.6667
-    runs: 3
-  - author: Theodoret of Cyrus
-    title: Interpretatio in xiv epistulas sancti Pauli
-    date: '458'
-    role: church-father
-    confidence: 0.6667
-    runs: 3
-  - author: Theophylact of Ohrid
-    title: In omnes D. Pauli apostoli epistolas enarrationes
-    date: '1107'
+    confidence: 0.3333
+    runs: 6
+  - author: Hugh of Saint-Cher
+    title: Postillae in universa Biblia
+    date: '1263'
     role: saintly
-    confidence: 0.6667
-    runs: 3
+    confidence: 0.3333
+    runs: 6
+  - author: Willem Hessels van Est
+    title: In omnes divi Pauli epistolas commentarii
+    date: '1613'
+    role: saintly
+    confidence: 0.3333
+    runs: 6
   - author: Alphonsus Liguori
     title: Preparation for Death
     date: '1787'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Augustine of Hippo
     title: Epistulae ad Romanos inchoata expositio
     date: '430'
     role: church-father
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Bernard of Clairvaux
     title: Sermones de Adventu Domini
     date: '1153'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Bernard of Clairvaux
     title: Sermones in Adventu Domini
     date: '1153'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Denis the Carthusian
     title: Enarrationes in Epistolas S. Pauli
     date: '1471'
     role: saintly
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
+  - author: Denis the Carthusian
+    title: Enarrationes in universam Bibliam
+    date: '1471'
+    role: saintly
+    confidence: 0.1667
+    runs: 6
   - author: John Damascene
     title: Commentarii in Epistulas Pauli
     date: '749'
     role: church-father
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: John Damascene
     title: In epistulam ad Romanos
     date: '749'
     role: doctor
-    confidence: 0.3333
-    runs: 3
-  - author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
-    date: '1349'
-    role: saintly
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Origen of Alexandria
     title: Commentarii in epistulam ad Romanos
     date: '254'
     role: church-father
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
+  - author: Rabanus Maurus
+    title: Enarrationes in epistolas beati Pauli
+    date: '856'
+    role: saintly
+    confidence: 0.1667
+    runs: 6
   - author: Robert Bellarmine
     title: Disputationes de Controversiis Christianae Fidei
     date: '1621'
     role: doctor
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
   - author: Theodoret of Cyrus
     title: Interpretatio in Epistulam ad Romanos
     date: '458'
     role: church-father
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
+  - author: Theophylact of Ohrid
+    title: Expositio in epistolas sancti Pauli
+    date: '1107'
+    role: saint
+    confidence: 0.1667
+    runs: 6
   - author: Willem Estius
     title: In omnes divi Pauli epistolas commentaria
     date: '1613'
     role: saintly
-    confidence: 0.3333
-    runs: 3
+    confidence: 0.1667
+    runs: 6
 - passage: Romans 14
   works:
   - author: Cornelius a Lapide

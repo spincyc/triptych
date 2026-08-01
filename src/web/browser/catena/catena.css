@@ -126,7 +126,56 @@ body:not(:has(> .site-header)) {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.15rem 0.55rem;
+  /* Closed, the head is the whole row and needs no gap beneath it; open, the
+     text wants air. `details[open]` supplies it rather than a constant margin
+     that would loosen a collapsed chain into a sparse list. */
+  margin-bottom: 0;
+  cursor: pointer;
+  list-style: none;
+  /* The whole head is the target, not just a marker glyph — on a phone a
+     12px triangle is not a tap target. */
+  min-height: 2.75rem;
+  align-content: center;
+  padding-right: 1.4rem;
+  position: relative;
+}
+
+.fragment-head::-webkit-details-marker {
+  display: none;
+}
+
+/* The project's own disclosure mark, drawn rather than typed, so it rotates
+   with the state instead of swapping one character for another. */
+.fragment-head::after {
+  content: '';
+  position: absolute;
+  right: 0.15rem;
+  top: 1.05rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-right: 2px solid var(--section-accent);
+  border-bottom: 2px solid var(--section-accent);
+  transform: rotate(45deg);
+  transition: transform 0.15s ease-in-out;
+}
+
+.fragment-body[open] > .fragment-head {
   margin-bottom: 0.6rem;
+}
+
+.fragment-body[open] > .fragment-head::after {
+  transform: rotate(-135deg);
+}
+
+.fragment-head:focus-visible {
+  outline: 2px solid var(--section-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fragment-head::after {
+    transition: none;
+  }
 }
 
 .fragment-author {
