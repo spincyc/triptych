@@ -182,6 +182,22 @@ open_collation_items:
   machine-readable from two independent scans; what remains is to key the lines
   to the day headings by page and position rather than by proximity in a linear
   text, and to collate the result
+- that keying was done later on 2026-08-01 and its result is
+  src/sources/inventories/roman-1962-sanctoral-commons-v1.toml, which carries
+  148 pointers keyed by page, by column and by the printed saint's name, with
+  the method, the four corroborations and the reason each unlanded row is
+  unlanded. Five are landed here - In Dedicatione S. Mariae ad Nives, In
+  Dedicatione Basilicarum Ss. Petri et Pauli, and the commemoration of
+  S. Pontiani, each of which the Missal gives the whole Mass of a Common with
+  no oration of its own; and S. Bibianae and S. Elisabeth, whose own Collect the
+  Missal substitutes and which is transcribed beside the reference. All five
+  were read on the facsimile page image, not on its text layer. The other 143
+  are recovered and not landed, and the record says why for each - 87 because
+  the day prints orations this repository has not transcribed and the Common's
+  beati N. would stand in their place, 12 because the day carries several
+  pointers or one under a seasonal condition this schema cannot express, 2
+  because the day could not be attached to an entry, and 42 for no reason but
+  that nobody has yet read the page image
 - the two forms of a Common are two masses here, the second taking the first and
   replacing only the propers that differ, because a mass printed in forms cannot
   carry takes_from and a form cannot reference its sibling. Where a Common prints
@@ -24676,12 +24692,16 @@ sections:
       date: 08-05
       rank: III
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: The Missal gives this day the whole Mass of the Common of feasts of the
+        Blessed Virgin Mary and prints no oration of its own, adding only et non dicitur
+        Credo and the preface of the Blessed Virgin. The pointer was read on 2026-08-01
+        from the page image of the CMAA facsimile of the controlling edition at printed
+        p. 613 (digital p. 694), rendered at 140 dpi from the tracked PDF whose sha256
+        is 648fdb8f. The Common it reaches carries orations only, so this Mass shows
+        those and no chant or reading.
+      takes_from:
+        mass: commune-festorum-bmv
+        citation: Missa Salve, de Communi festorum B. Mariae Virginis [41]
     - key: comm-ss-xysti-ii-papae-felicissimi
       name: Comm. Ss. Xysti II Papae, Felicissimi et Agapiti Martyrum
       registry: '1962-08-06-comm'
@@ -29348,36 +29368,57 @@ sections:
       date: 11-18
       rank: III
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: The Missal gives this day the whole Mass of the Common of the Dedication of
+        a church and prints no oration of its own, adding only Et non dicitur Credo. The
+        pointer was read on 2026-08-01 from the page image of the CMAA facsimile of the
+        controlling edition at printed p. 721 (digital p. 802), rendered at 140 dpi from
+        the tracked PDF whose sha256 is 648fdb8f.
+      takes_from:
+        mass: commune-dedicationis-ecclesiae
+        citation: Missa Terribilis, de Communi Dedicationis ecclesiae [39]
     - key: s-elisabeth-viduae
       name: S. Elisabeth Viduae
       registry: '1962-11-19'
       date: 11-19
       rank: III
       kind: sanctoral
+      notes: The Missal gives this day the second Mass of the Common of Holy Women who
+        were not virgins except for the Collect, which it prints in full and which is
+        transcribed below. The commemoration of S. Pontiani that the day carries is its
+        own dated entry and its three orations, printed here headed Pro S. Pontiano, are
+        not transcribed. Both the pointer and the Collect were read on 2026-08-01 from
+        the page image of the CMAA facsimile of the controlling edition at printed p.
+        721 (digital p. 802), rendered at 140 dpi from the tracked PDF whose sha256 is
+        648fdb8f.
+      takes_from:
+        mass: commune-non-virginum-2
+        citation: Missa Cognovi, de Communi non Virginum II loco [37], praeter orationem
+          sequentem
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Tuorum corda fidelium
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 721, no. 4122, marked P.
+        text: |
+          Tuorum corda fidelium, Deus miserator, illustra: et, beatae Elisabeth
+          precibus gloriosis; fac nos prospera mundi despicere, et caelesti semper
+          consolatione gaudere. Per Dominum.
     - key: comm-s-pontiani-papae-martyris
       name: Comm. S. Pontiani Papae et Martyris
       registry: '1962-11-19-comm'
       date: 11-19
       rank: Comm.
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: A commemoration, whose own three orations the Missal prints under the Mass
+        of S. Elisabeth on the same page, headed Pro S. Pontiano; its own entry appoints
+        the Mass of the Common and nothing else. Those three orations are not
+        transcribed here. The pointer was read on 2026-08-01 from the page image of the
+        CMAA facsimile of the controlling edition at printed p. 721 (digital p. 802),
+        rendered at 140 dpi from the tracked PDF whose sha256 is 648fdb8f.
+      takes_from:
+        mass: commune-summorum-pontificum
+        citation: Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum
+          [1]
     - key: s-felicis-valois-confessoris
       name: S. Felicis de Valois Confessoris
       registry: '1962-11-20'
@@ -29780,12 +29821,28 @@ sections:
       date: 12-02
       rank: III
       kind: sanctoral
+      notes: The Missal gives this day the second Mass of the Common of Virgins except
+        for the Collect, which it prints in full with the saint’s name supplied and
+        which is transcribed below; its Secret and Postcommunion are marked C, of the
+        Common. Both the pointer and the Collect were read on 2026-08-01 from the page
+        image of the CMAA facsimile of the controlling edition at printed p. 430
+        (digital p. 511), rendered at 140 dpi from the tracked PDF whose sha256 is
+        648fdb8f. The orthography is this file’s, not the typica’s, which prints i where
+        this writes j.
+      takes_from:
+        mass: commune-virginum-2
+        citation: Missa Me exspectaverunt, de Communi Virginum II loco [30], praeter
+          orationem sequentem
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, omnium largitor bonorum
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 430, no. 1823, marked P.
+        text: |
+          Deus, omnium largitor bonorum, qui in famula tua Bibiana cum virginitatis
+          flore martyrii palmam conjunxisti: mentes nostras ejus intercessione tibi
+          caritate conjunge; ut, amotis periculis, praemia consequamur aeterna. Per
+          Dominum.
     - key: s-francisci-xaverii-confessoris
       name: S. Francisci Xaverii Confessoris
       registry: '1962-12-03'

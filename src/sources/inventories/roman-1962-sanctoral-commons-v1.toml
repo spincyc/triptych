@@ -1,0 +1,2328 @@
+# Which Mass of the Commune Sanctorum each day of the 1962 Proprium Sanctorum
+# takes, as the Missal itself prints it.
+#
+# A recovery, not a landing. Five of these rows are in
+# src/sources/calendars/roman-1962/propers.yaml; the other 143 are not, and this
+# file exists so that the reading does not have to be done a fourth time and so
+# that each row can be checked before it is used.
+#
+# THE DEFECT THIS FILE IS BUILT AGAINST. A pointer that names the right Common
+# and the wrong saint gives that saint an entire Mass that is not his. It
+# resolves cleanly, it renders, and it reads correctly. Two lanes before this
+# one recovered 109 and then 153 such candidates from a linear pass over the
+# text and landed NONE of them, rightly: that pass took each candidate's date
+# from the nearest preceding DIE N MENSIS heading, and the scan loses enough
+# headings that eleven consecutive candidates fell under 21 December.
+
+inventory_schema = 1
+record_type = "roman-1962-sanctoral-commons"
+recorded_on = "2026-08-01"
+
+method = """
+The book is set in two columns and the pointer stands in the same column as the
+day heading it belongs to, three or four lines below it. So the recovery is
+geometric, not proximate:
+
+  1. `pdftotext -bbox-layout` over the tracked CMAA facsimile, sha256
+     648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a.
+  2. Every WORD assigned to a column by its own x, and a line element that
+     spans both columns cut at the gap that ends the left column and begins the
+     right one. A display line -- a feast title set across the page -- is never
+     cut.
+  3. Each page read in BANDS delimited by its full-width lines, left column
+     then right within a band. Reading the full-width lines last, as a first
+     draft did, put a day's heading after the columns it heads and gave
+     S. Wenceslaus the Gospel of S. Michael.
+  4. Each `Die N mensis` heading opens a day; the printed name and class line
+     follow it; the pointer is taken only from the lines before the day's first
+     oration or antiphon.
+
+That yielded 308 day headings over digital pp. 509-944 and 149 pointers.
+"""
+
+corroboration = """
+Four checks, each independent of the extraction:
+
+  THE BRACKET. Every pointer prints the Commune's own page, `de Communi
+  Virginum II loco [30]`. Those pages were read in a separate pass, when the
+  Commune Sanctorum itself was transcribed, and are recorded in each common
+  mass's notes. 146 of 148 pointers name a Common whose printed first page is
+  exactly the bracket they print. The two that do not are recorded at
+  `[[divergences]]` below and were read on the page image; both name the right
+  Common.
+
+  THE SAINT'S NAME. Each day was attached to an entry of the calendar index by
+  matching the name printed under the heading against the entry's name, never
+  by position. A date carrying a feast and a commemoration offers two entries
+  and the match must choose; where it could not choose clearly, the day is
+  absent from this file.
+
+  THE DATE SEQUENCE. The headings were checked for monotonicity through the
+  book. Exactly one fell out of order -- S. Caeciliae, whose `Die 22 novembris`
+  the scan reads as `Die 12` -- and it is not in this file.
+
+  THE PAGE IMAGE. Five rows were rendered at 140 dpi and read. Those five are
+  the only ones marked `landed`.
+"""
+
+what_blocks_the_rest = """
+Not doubt about the Common. The Missal names it plainly and two independent
+readings agree. What blocks a row is that the day usually prints ORATIONS OF
+ITS OWN -- `praeter orationem sequentem`, `cum orationibus ut infra` -- and this
+repository has not transcribed them. Landing the pointer without them would
+serve the Common's `beati N.` under the saint's name, in place of the prayer the
+book prints for him. That is the same defect in a smaller costume, so the rows
+are held.
+
+  87 rows  the day prints orations of its own
+  12 rows  the day carries several pointers, or one under a seasonal condition
+           this schema cannot express (`Tempore paschali ... Extra tempus
+           paschale ...`)
+   2 rows  the day could not be attached to an entry, or its rubric was not
+           recognised
+  42 rows  nothing blocks them but that no one has read the page image yet
+   5 rows  landed, two of them with the day's own Collect transcribed from the
+           same image
+
+The 42 are the cheapest remaining work in this file: each is a page image, a
+reading, and a two-line reference. The 87 are the next cheapest, and each is
+one Collect or three orations off a page this file already names.
+"""
+
+[[divergences]]
+date = "06-17"
+printed = "Missa Statuit, de Communi Confessoris Pontificis I loco [4]"
+mass = "s-gregorii-barbadici-episcopi-confessoris"
+finding = """
+Read on the page image at printed p. 554. The bracket is [4], where the Mass
+Statuit ei Dominus is printed in full under the Commune unius Martyris; the
+Commune Confessoris Pontificis prints the same formulary at [19] with its own
+orations. The Common NAMED is Confessoris Pontificis I loco, and that is the one
+a landing should take, because this file's Commons carry orations and the
+orations are what differ.
+"""
+
+[[divergences]]
+date = "09-22"
+printed = "Missa Statuit, de Communi Confessoris Pontificis I loco [20]"
+mass = "s-thomae-villanova-episcopi-confessoris"
+finding = """
+Read on the page image at printed p. 665. The Commune Confessoris Pontificis
+Missa I runs pp. [19]-[20], so the bracket falls inside the Mass it names and
+the row is sound; only the equality test on the first page fails.
+"""
+
+[[pointers]]
+date = "01-14"
+printed_page = 443
+digital_page = 524
+column = "L"
+printed_name = "S. Felicis Presb. et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Laetabitur"
+printed_common = "unius Martyris IV loco"
+printed_bracket = 8
+common_mass = "commune-unius-martyris-4"
+mass = "comm-s-felicis-presbyteri-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "01-16"
+printed_page = 444
+digital_page = 525
+column = "R"
+printed_name = "S. Marcelli I Papae et Mart."
+printed_rank = "Ill classis"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "s-marcelli-i-papae-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "01-18"
+printed_page = 446
+digital_page = 527
+column = "L"
+printed_name = "S. Priscse Virg. et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Me exspectaverunt"
+printed_common = "Virginum II loco"
+printed_bracket = 30
+common_mass = "commune-virginum-2"
+mass = "comm-s-priscae-virginis-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "01-19"
+printed_page = 448
+digital_page = 529
+column = "L"
+printed_name = "S. Canuti Regis, Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "In virtiite"
+printed_common = "unius Martyris III loco"
+printed_bracket = 6
+common_mass = "commune-unius-martyris-3"
+mass = "comm-s-canuti-regis-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "01-22"
+printed_page = 451
+digital_page = 532
+column = "R"
+printed_name = "Ss. Vincentii et Anastasii Martyrum"
+printed_rank = "III classis"
+printed_incipit = "Intret"
+printed_common = "plurimorum Martyrum I loco"
+printed_bracket = 10
+common_mass = "commune-plurimorum-martyrum-1"
+mass = "ss-vincentii-anastasii-martyrum"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "01-23"
+printed_page = 452
+digital_page = 533
+column = "L"
+printed_name = "S. Raymundi de Pefiafort Confessoris"
+printed_rank = "III classis"
+printed_incipit = "Os iusti"
+printed_common = "Confessoris non Pontificis I loco"
+printed_bracket = 24
+common_mass = "commune-confessoris-non-pontificis-1"
+mass = "s-raymundi-penafort-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "01-23"
+printed_page = 452
+digital_page = 533
+column = "R"
+printed_name = "S. Emerentianae Virg.et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Me exspectaveiunt"
+printed_common = "Virginum II loco"
+printed_bracket = 30
+common_mass = "commune-virginum-2"
+mass = "comm-s-emerentianae-virginis-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "01-28"
+printed_page = 458
+digital_page = 539
+column = "R"
+printed_name = "S. Petri Nolasci Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Iustus"
+printed_common = "Confessoris non Pontificis II loco"
+printed_bracket = 25
+common_mass = "commune-confessoris-non-pontificis-2"
+mass = "s-petri-nolasci-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "01-29"
+printed_page = 460
+digital_page = 541
+column = "R"
+printed_name = "S. Francisci Salesii Ep., Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "In m£dio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-francisci-salesii-episcopi-confessoris-ecclesiae"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "01-30"
+printed_page = 461
+digital_page = 542
+column = "L"
+printed_name = "S. Martinae Virg. et Mart."
+printed_rank = "Ill classis"
+printed_incipit = "Loqu6bar"
+printed_common = "Virginum I loco"
+printed_bracket = 28
+common_mass = "commune-virginum-1"
+mass = "s-martinae-virginis-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "02-03"
+printed_page = 468
+digital_page = 549
+column = "L"
+printed_name = "S. Blasii Ep. et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Sacerdotes Dei"
+printed_common = "unius Martyris II loco"
+printed_bracket = 5
+common_mass = "commune-unius-martyris-2"
+mass = "comm-s-blasii-episcopi-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "02-04"
+printed_page = 468
+digital_page = 549
+column = "R"
+printed_name = "S. Andreae Corsini Ep. et Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Statuit"
+printed_common = "Confessoris Pontificis I loco"
+printed_bracket = 19
+common_mass = "commune-confessoris-pontificis-1"
+mass = "s-andreae-corsini-episcopi-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "02-06"
+printed_page = 472
+digital_page = 553
+column = "L"
+printed_name = "S. Dorothea Virg. et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Me exspectaveiunt"
+printed_common = "Virginum II loco"
+printed_bracket = 30
+common_mass = "commune-virginum-2"
+mass = "comm-s-dorotheae-virginis-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "02-07"
+printed_page = 472
+digital_page = 553
+column = "L"
+printed_name = "S. Romualdi Abbatis"
+printed_rank = "III classis"
+printed_incipit = "Os iusti"
+printed_common = "Abbatum"
+printed_bracket = 27
+common_mass = "commune-abbatum"
+mass = "s-romualdi-abbatis"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "02-08"
+printed_page = 472
+digital_page = 553
+column = "L"
+printed_name = "S. Ioannis de Matha Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Os iusti"
+printed_common = "Confessoris non Pontificis I loco"
+printed_bracket = 24
+common_mass = "commune-confessoris-non-pontificis-1"
+mass = "s-ioannis-matha-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "02-09"
+printed_page = 472
+digital_page = 553
+column = "R"
+printed_name = "S. Cyrilli Ep. Alexandrini, Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "In medio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "02-09"
+printed_page = 473
+digital_page = 554
+column = "L"
+printed_name = "S. Apolloniae Virg. et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Loqu£bar"
+printed_common = "Virginura I loco"
+printed_bracket = 28
+common_mass = "commune-virginum-1"
+mass = "comm-s-apolloniae-virginis-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "02-10"
+printed_page = 473
+digital_page = 554
+column = "L"
+printed_name = "S. Scholasticae Virg. tuo"
+printed_rank = "Ill classis"
+printed_incipit = "Dilexisti"
+printed_common = "Virginum III loco"
+printed_bracket = 32
+common_mass = "commune-virginum-3"
+mass = "s-scholasticae-virginis"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "02-14"
+printed_page = 476
+digital_page = 557
+column = "R"
+printed_name = "S. Valentini Presb. et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "In virtute"
+printed_common = "unius Martyr is III loco"
+printed_bracket = 6
+common_mass = "commune-unius-martyris-3"
+mass = "comm-s-valentini-presbyteri-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "02-15"
+printed_page = 476
+digital_page = 557
+column = "R"
+printed_name = "Ss. Faustini et Iovitae Mm."
+printed_rank = "Commemoratio"
+printed_incipit = "Salus autem"
+printed_common = "plurimorum Martyrum III loco"
+printed_bracket = 12
+common_mass = "commune-plurimorum-martyrum-3"
+mass = "comm-ss-faustini-iovitae-martyrum"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "02-18"
+printed_page = 477
+digital_page = 558
+column = "L"
+printed_name = "S. Simeonis Ep. et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Statuit"
+printed_common = "unius Martyris I loco"
+printed_bracket = 4
+common_mass = "commune-unius-martyris-1"
+mass = "comm-s-simeonis-episcopi-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "02-23"
+printed_page = 479
+digital_page = 560
+column = "L"
+printed_name = "S. Petri Damiani Ep., Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "In medio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-petri-damiani-episcopi-confessoris-ecclesiae"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "03-04"
+printed_page = 482
+digital_page = 563
+column = "R"
+printed_name = "S. Casimiri Confessoris"
+printed_rank = "III classis"
+printed_incipit = "Os iusti"
+printed_common = "Confessoris non Pontificis I loco"
+printed_bracket = 24
+common_mass = "commune-confessoris-non-pontificis-1"
+mass = "s-casimiri-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "03-04"
+printed_page = 483
+digital_page = 564
+column = "R"
+printed_name = "S. Lucii I Papae et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-lucii-i-papae-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "03-06"
+printed_page = 483
+digital_page = 564
+column = "R"
+printed_name = "Ss. Perpetuae et Felicitatis Martyrum"
+printed_rank = "III classis"
+printed_incipit = "Me exspectaverunt"
+printed_common = "non Virginum I loco"
+printed_bracket = 35
+common_mass = "commune-non-virginum-1"
+mass = "ss-perpetuae-felicitatis-martyrum"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "03-09"
+printed_page = 486
+digital_page = 567
+column = "R"
+printed_name = "S. Franciscae Romanic Vid."
+printed_rank = "Ill classis"
+printed_incipit = "Cogn6vi"
+printed_common = "non Virginum II loco"
+printed_bracket = 37
+common_mass = "commune-non-virginum-2"
+mass = "s-franciscae-romanae-viduae"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "03-12"
+printed_page = 488
+digital_page = 569
+column = "L"
+printed_name = "S. Gregorii I Papae, Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "s-gregorii-i-papae-confessoris-ecclesiae"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "03-17"
+printed_page = 488
+digital_page = 569
+column = "R"
+printed_name = "S. Patficii Ep. et Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Statuit"
+printed_common = "Confessoris Pontificis I loco"
+printed_bracket = 19
+common_mass = "commune-confessoris-pontificis-1"
+mass = "s-patricii-episcopi-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "03-21"
+printed_page = 492
+digital_page = 573
+column = "R"
+printed_name = "S. Benedicti Abbatis"
+printed_rank = "III classis"
+printed_incipit = "Os iusti"
+printed_common = "Abbatum"
+printed_bracket = 27
+common_mass = "commune-abbatum"
+mass = "s-benedicti-abbatis"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "04-04"
+printed_page = 503
+digital_page = 584
+column = "L"
+printed_name = "S. Isidori L Ep., Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "In medio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-isidori-episcopi-confessoris-ecclesiae-doctoris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "04-05"
+printed_page = 503
+digital_page = 584
+column = "R"
+printed_name = "S. Vincentii Ferrerii Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Os iusti"
+printed_common = "Confessoris non Pontificis I loco"
+printed_bracket = 24
+common_mass = "commune-confessoris-non-pontificis-1"
+mass = "s-vincentii-ferrerii-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "04-14"
+printed_page = 507
+digital_page = 588
+column = "L"
+printed_name = "Ss. Tiburtii, Valeriani et Maximi Mm."
+printed_rank = "Commemoratio"
+printed_incipit = "Sancti tui"
+printed_common = "Martyrum II loco"
+printed_bracket = 17
+common_mass = "commune-martyrum-tempore-paschali-2"
+mass = "comm-ss-tiburtii-valeriani-maximi-martyrum"
+state = "held"
+blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "04-14"
+printed_page = 507
+digital_page = 588
+column = "L"
+printed_name = "Ss. Tiburtii, Valeriani et Maximi Mm."
+printed_rank = "Commemoratio"
+printed_incipit = "Protexisti"
+printed_common = "Martyrum I loco"
+printed_bracket = 15
+common_mass = "commune-martyrum-tempore-paschali-1"
+mass = "comm-ss-tiburtii-valeriani-maximi-martyrum"
+state = "held"
+blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "04-14"
+printed_page = 507
+digital_page = 588
+column = "L"
+printed_name = "Ss. Tiburtii, Valeriani et Maximi Mm."
+printed_rank = "Commemoratio"
+printed_incipit = "Sapi6ntiam"
+printed_common = "plurimorum Martyrum II loco"
+printed_bracket = 11
+common_mass = "commune-plurimorum-martyrum-2"
+mass = "comm-ss-tiburtii-valeriani-maximi-martyrum"
+state = "held"
+blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "04-21"
+printed_page = 508
+digital_page = 589
+column = "L"
+printed_name = "S. Anselmi Ep., Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "In m£dio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-anselmi-episcopi-confessoris-ecclesiae-doctoris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "04-22"
+printed_page = 508
+digital_page = 589
+column = "L"
+printed_name = "Ss. Soteris et Caii Summorum Pontificum et Mm."
+printed_rank = "Ill classis"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "ss-soteris-caii-paparum-martyrum"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "04-24"
+printed_page = 509
+digital_page = 590
+column = "R"
+printed_name = "S. Fidelis de Sigmaringa Mart."
+printed_rank = "Ill classis"
+printed_incipit = "Protexisti"
+printed_common = "Martyrum tempore paschali I loco"
+printed_bracket = 15
+common_mass = "commune-martyrum-tempore-paschali-1"
+mass = "s-fidelis-sigmaringa-martyris"
+state = "held"
+blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "04-26"
+printed_page = 511
+digital_page = 592
+column = "R"
+printed_name = "Ss. Cleti et Marcellini Summorum Pontificum et Mm."
+printed_rank = "Ill classis"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "ss-cleti-marcellini-paparum-martyrum"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "04-27"
+printed_page = 512
+digital_page = 593
+column = "L"
+printed_name = "S. Petri Canisii Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "In medio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-petri-canisii-confessoris-ecclesiae-doctoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "04-30"
+printed_page = 515
+digital_page = 596
+column = "R"
+printed_name = "S. Catharinae Senensis Virg."
+printed_rank = "Ill classis"
+printed_incipit = "Dilexisti"
+printed_common = "Virginum III loco"
+printed_bracket = 32
+common_mass = "commune-virginum-3"
+mass = "s-catharinae-senensis-virginis"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "05-03"
+printed_page = 519
+digital_page = 600
+column = "L"
+printed_name = "Ss. Alexandri, Eventii et Theoduli Mm. ac Iuvenalis Ep. et Conf."
+printed_rank = "Commemoratio"
+printed_incipit = "Sancti tui"
+printed_common = "Martyrum tempore paschali II loco"
+printed_bracket = 17
+common_mass = "commune-martyrum-tempore-paschali-2"
+mass = "comm-ss-alexandri-eventii-theoduli-martyrum"
+state = "held"
+blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "05-05"
+printed_page = 520
+digital_page = 601
+column = "R"
+printed_name = "S. Pii V Papse et Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summomm Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "s-pii-v-papae-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "05-07"
+printed_page = 520
+digital_page = 601
+column = "R"
+printed_name = "S. Stanislai Episcppi et Martyris"
+printed_rank = "III classis"
+printed_incipit = "Protexisti"
+printed_common = "Martyrum tempore paschali I loco"
+printed_bracket = 15
+common_mass = "commune-martyrum-tempore-paschali-1"
+mass = "s-stanislai-episcopi-martyris"
+state = "held"
+blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "05-10"
+printed_page = 522
+digital_page = 603
+column = "R"
+printed_name = "S. Antonini Ep. et Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Statuit"
+printed_common = "Confessoris Pontificis I loco"
+printed_bracket = 19
+common_mass = "commune-confessoris-pontificis-1"
+mass = "s-antonini-episcopi-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "05-14"
+printed_page = 530
+digital_page = 611
+column = "L"
+printed_name = "S. Bonifatii Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Protexisti"
+printed_common = "Martyrum tempore paschali I loco"
+printed_bracket = 15
+common_mass = "commune-martyrum-tempore-paschali-1"
+mass = "comm-s-bonifatii-martyris"
+state = "held"
+blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "05-14"
+printed_page = 530
+digital_page = 611
+column = "L"
+printed_name = "S. Bonifatii Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "In virtute"
+printed_common = "unius Martyris III loco"
+printed_bracket = 6
+common_mass = "commune-unius-martyris-3"
+mass = "comm-s-bonifatii-martyris"
+state = "held"
+blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "05-16"
+printed_page = 531
+digital_page = 612
+column = "R"
+printed_name = "S. Ubaldi Ep. et Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Statuit"
+printed_common = "Confessoris Pontificis I loco"
+printed_bracket = 19
+common_mass = "commune-confessoris-pontificis-1"
+mass = "s-ubaldi-episcopi-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "05-17"
+printed_page = 532
+digital_page = 613
+column = "L"
+printed_name = "S. Paschalis Baylon Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Os iusti"
+printed_common = "Confessoris non Pontificis I loco"
+printed_bracket = 24
+common_mass = "commune-confessoris-non-pontificis-1"
+mass = "s-paschalis-baylon-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "05-18"
+printed_page = 532
+digital_page = 613
+column = "R"
+printed_name = "S. Venantii Mart."
+printed_rank = "Ill classis"
+printed_incipit = "Protexisti"
+printed_common = "Martyrum I loco"
+printed_bracket = 15
+common_mass = "commune-martyrum-tempore-paschali-1"
+mass = "s-venantii-martyris"
+state = "held"
+blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "05-18"
+printed_page = 532
+digital_page = 613
+column = "R"
+printed_name = "S. Venantii Mart."
+printed_rank = "Ill classis"
+printed_incipit = "In virtute"
+printed_common = "unius Martyris III loco"
+printed_bracket = 6
+common_mass = "commune-unius-martyris-3"
+mass = "s-venantii-martyris"
+state = "held"
+blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "05-19"
+printed_page = 532
+digital_page = 613
+column = "R"
+printed_name = "S. Petri Caelestini Papae et Confessoris"
+printed_rank = "III classis"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "s-petri-caelestini-papae-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "05-19"
+printed_page = 533
+digital_page = 614
+column = "R"
+printed_name = "S. Pudentianae Virg."
+printed_rank = "Commemoratio"
+printed_incipit = "Dilexisti"
+printed_common = "Virginum III loco"
+printed_bracket = 32
+common_mass = "commune-virginum-3"
+mass = "comm-s-pudentianae-virginis"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "05-25"
+printed_page = 534
+digital_page = 615
+column = "R"
+printed_name = "S. Gregorii VII Papae et Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "s-gregorii-vii-papae-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "05-25"
+printed_page = 535
+digital_page = 616
+column = "R"
+printed_name = "S. Urbani I Papae et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-urbani-i-papae-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "05-26"
+printed_page = 537
+digital_page = 618
+column = "L"
+printed_name = "S. Eleutherii Papae et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-eleutherii-papae-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "05-27"
+printed_page = 537
+digital_page = 618
+column = "L"
+printed_name = "S. Bedze Venerabilis Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "In m£dio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-bedae-venerabilis-confessoris-ecclesiae-doctoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "05-27"
+printed_page = 537
+digital_page = 618
+column = "R"
+printed_name = "S. Ioannis I Papae et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-ioannis-i-papae-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "05-29"
+printed_page = 539
+digital_page = 620
+column = "R"
+printed_name = "S. Mariae Magdalenae de Pazzis Virginis"
+printed_rank = "III classis"
+printed_incipit = "Dilexisti"
+printed_common = "Virginum III loco"
+printed_bracket = 32
+common_mass = "commune-virginum-3"
+mass = "s-mariae-magdalenae-pazzis-virginis"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "05-30"
+printed_page = 539
+digital_page = 620
+column = "R"
+printed_name = "S. Felicis I Papae et Martyris"
+printed_rank = "Commemoratio"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-felicis-i-papae-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "05-31"
+printed_page = 541
+digital_page = 622
+column = "R"
+printed_name = "S. Petronillae Virg."
+printed_rank = "Commemoratio"
+printed_incipit = "Vultum tuum"
+printed_common = "Virginum IV loco"
+printed_bracket = 33
+common_mass = "commune-virginum-4"
+mass = "comm-s-petronillae-virginis"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "06-01"
+printed_page = 542
+digital_page = 623
+column = "L"
+printed_name = "S. Angelae Mericiae Virg."
+printed_rank = "Ill classis"
+printed_incipit = "Dilexisti"
+printed_common = "Virginum III loco"
+printed_bracket = 32
+common_mass = "commune-virginum-3"
+mass = "s-angelae-mericiae-virginis"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "06-06"
+printed_page = 546
+digital_page = 627
+column = "R"
+printed_name = "S. Norberti Ep. et Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Statuit"
+printed_common = "Confessoris Pontificis I loco"
+printed_bracket = 19
+common_mass = "commune-confessoris-pontificis-1"
+mass = "s-norberti-episcopi-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "06-10"
+printed_page = 548
+digital_page = 629
+column = "L"
+printed_name = "S. Margarita Reginae, Vid."
+printed_rank = "Ill classis"
+printed_incipit = "Cognovi"
+printed_common = "non Virginum II loco"
+printed_bracket = 37
+common_mass = "commune-non-virginum-2"
+mass = "s-margaritae-reginae-viduae"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "06-12"
+printed_page = 549
+digital_page = 630
+column = "R"
+printed_name = "S. Ioannis de S. Facundo Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Os iusti"
+printed_common = "Confessoris non Pontificis I loco"
+printed_bracket = 24
+common_mass = "commune-confessoris-non-pontificis-1"
+mass = "s-ioannis-s-facundo-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "06-13"
+printed_page = 551
+digital_page = 632
+column = "R"
+printed_name = "S. Antonii de Padua Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "In medio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-antonii-padua-confessoris-ecclesiae-doctoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "06-18"
+printed_page = 555
+digital_page = 636
+column = "L"
+printed_name = "S. Ephraem Syri Diac, Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "In medio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-ephraem-syri-diaconi-confessoris-ecclesiae"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "06-19"
+printed_page = 556
+digital_page = 637
+column = "R"
+printed_name = "S. Iulianae de Falconeriis Vifginis"
+printed_rank = "III classis"
+printed_incipit = "Dilexisti"
+printed_common = "Virginum III loco"
+printed_bracket = 32
+common_mass = "commune-virginum-3"
+mass = "s-iulianae-falconeriis-virginis"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "06-20"
+printed_page = 558
+digital_page = 639
+column = "R"
+printed_name = "S. Silverii Papae et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-silverii-papae-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "06-25"
+printed_page = 564
+digital_page = 645
+column = "R"
+printed_name = "S. Gulielmi Abbatis"
+printed_rank = "III classis"
+printed_incipit = "Os iusti"
+printed_common = "Abbatum"
+printed_bracket = 27
+common_mass = "commune-abbatum"
+mass = "s-gulielmi-abbatis"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "07-08"
+printed_page = 582
+digital_page = 663
+column = "L"
+printed_name = "S. Elisabeth Reginae, Vid."
+printed_rank = "Ill classis"
+printed_incipit = "Cognovi"
+printed_common = "non Virginum II loco"
+printed_bracket = 37
+common_mass = "commune-non-virginum-2"
+mass = "s-elisabeth-reginae-viduae"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "07-11"
+printed_page = 583
+digital_page = 664
+column = "R"
+printed_name = "S. Pii I Papae et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-pii-i-papae-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "07-12"
+printed_page = 585
+digital_page = 666
+column = "L"
+printed_name = "Ss. Naboris et Felicis Martyrum"
+printed_rank = "Commemoratio"
+printed_incipit = "Salus autem"
+printed_common = "plurimorum Martyrum III loco"
+printed_bracket = 12
+common_mass = "commune-plurimorum-martyrum-3"
+mass = "comm-ss-naboris-felicis-martyrum"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "07-20"
+printed_page = 594
+digital_page = 675
+column = "R"
+printed_name = "S. Margaritae Virg. et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Me exspectav6runt"
+printed_common = "Virginum II loco"
+printed_bracket = 30
+common_mass = "commune-virginum-2"
+mass = "comm-s-margaritae-virginis-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "07-21"
+printed_page = 594
+digital_page = 675
+column = "R"
+printed_name = "S. Laurentii de Brundusio Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "In m£dio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-laurentii-brundusio-confessoris-ecclesiae-doctoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "07-23"
+printed_page = 600
+digital_page = 681
+column = "L"
+printed_name = "S. Liborii Ep. et Conf."
+printed_rank = "Commemoratio"
+printed_incipit = "Statuit"
+printed_common = "Confessoris Pontificis I loco"
+printed_bracket = 19
+common_mass = "commune-confessoris-pontificis-1"
+mass = "comm-s-liborii-episcopi-confessoris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "07-24"
+printed_page = 600
+digital_page = 681
+column = "L"
+printed_name = "S. Chris tinae Virg. et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Me exspectaveiunt"
+printed_common = "Virginum II loco"
+printed_bracket = 30
+common_mass = "commune-virginum-2"
+mass = "comm-s-christinae-virginis-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "07-25"
+printed_page = 602
+digital_page = 683
+column = "L"
+printed_name = "S. Christophori Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "In virtiite"
+printed_common = "unius Martyris III loco"
+printed_bracket = 6
+common_mass = "commune-unius-martyris-3"
+mass = "comm-s-christophori-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "07-27"
+printed_page = 603
+digital_page = 684
+column = "R"
+printed_name = "S. Pantaleonis Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Lsetabitur"
+printed_common = "unius MartyrisIVloco"
+printed_bracket = 8
+common_mass = "commune-unius-martyris-4"
+mass = "comm-s-pantaleonis-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "07-29"
+printed_page = 606
+digital_page = 687
+column = "R"
+printed_name = "Ss. Felicis, Simplicii, Faustini et Beatricis Martyrum"
+printed_rank = "Commemoratio"
+printed_incipit = "Sapientiam"
+printed_common = "plurimorum Martyrum II loco"
+printed_bracket = 11
+common_mass = "commune-plurimorum-martyrum-2"
+mass = "comm-ss-felicis-simplicii-faustini-beatricis"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "08-02"
+printed_page = 612
+digital_page = 693
+column = "R"
+printed_name = "S. Stephani I Papae et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-stephani-i-papae-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "08-05"
+printed_page = 613
+digital_page = 694
+column = "R"
+printed_name = "In Dedicatione S. Marias ad Nives"
+printed_rank = "III classis"
+printed_incipit = "Salve"
+printed_common = "festorum B. Mariae Virginis"
+printed_bracket = 41
+common_mass = "commune-festorum-bmv"
+mass = "dedicatione-s-mariae-ad-nives"
+state = "landed"
+
+[[pointers]]
+date = "08-09"
+printed_page = 621
+digital_page = 702
+column = "R"
+printed_name = "S. Romani Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Laetabitur"
+printed_common = "unius Martyris IV loco"
+printed_bracket = 8
+common_mass = "commune-unius-martyris-4"
+mass = "comm-s-romani-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "08-12"
+printed_page = 624
+digital_page = 705
+column = "L"
+printed_name = "S. Clarae Virginis"
+printed_rank = "III classis"
+printed_incipit = "Dilexisti"
+printed_common = "Virginum III loco"
+printed_bracket = 32
+common_mass = "commune-virginum-3"
+mass = "s-clarae-virginis"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "08-13"
+printed_page = 624
+digital_page = 705
+column = "R"
+printed_name = "Ss. Hippolyti et Cassiani Mm."
+printed_rank = "Commemoratio"
+printed_incipit = "Salus autem"
+printed_common = "plurimorum Martyrum III loco"
+printed_bracket = 12
+common_mass = "commune-plurimorum-martyrum-3"
+mass = "comm-ss-hippolyti-cassiani-martyrum"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "08-17"
+printed_page = 630
+digital_page = 711
+column = "L"
+printed_name = "S. Hyacinthi Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Os iusti"
+printed_common = "Confessoris non Pontificis I loco"
+printed_bracket = 24
+common_mass = "commune-confessoris-non-pontificis-1"
+mass = "s-hyacinthi-confessoris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "08-18"
+printed_page = 630
+digital_page = 711
+column = "R"
+printed_name = "S. Agapiti Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Laetabitur"
+printed_common = "unius Martyris IV loco"
+printed_bracket = 8
+common_mass = "commune-unius-martyris-4"
+mass = "comm-s-agapiti-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "08-19"
+printed_page = 631
+digital_page = 712
+column = "L"
+printed_name = "S. Ioannis Eudes Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Os iusti"
+printed_common = "Confessotis non Pontificis I loco"
+printed_bracket = 24
+common_mass = "commune-confessoris-non-pontificis-1"
+mass = "s-ioannis-eudes-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "08-21"
+printed_page = 632
+digital_page = 713
+column = "R"
+printed_name = "S. Ioannae Franciscae Fremiot de Chantal Vid."
+printed_rank = "Ill classis"
+printed_incipit = "Cognovi"
+printed_common = "non Virginum II loco"
+printed_bracket = 37
+common_mass = "commune-non-virginum-2"
+mass = "s-ioannae-franciscae-fremiot-chantal-viduae"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "08-22"
+printed_page = 634
+digital_page = 715
+column = "R"
+printed_name = "Ss. Timothei, Hippolyti et Symphoriani Mm."
+printed_rank = "Commemoratio"
+printed_incipit = "Salus autem"
+printed_common = "plurimorum Martyrum III loco"
+printed_bracket = 12
+common_mass = "commune-plurimorum-martyrum-3"
+mass = "comm-ss-timothei-sociorum-martyrum"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "08-23"
+printed_page = 635
+digital_page = 716
+column = "L"
+printed_name = "S. Philippi Benitii Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Iustus"
+printed_common = "Confessoris non Pontificis II loco"
+printed_bracket = 25
+common_mass = "commune-confessoris-non-pontificis-2"
+mass = "s-philippi-benitii-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "08-26"
+printed_page = 638
+digital_page = 719
+column = "L"
+printed_name = "S. Zephyrini Papae et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-zephyrini-papae-martyris"
+state = "held"
+blocked_by = "rubric not recognised: Missa Si diligis me, de Communi unius aut plurium Summorum P"
+
+[[pointers]]
+date = "08-28"
+printed_page = 641
+digital_page = 722
+column = "L"
+printed_name = "S. Her metis Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Laetabitur"
+printed_common = "unius Marty ris IV loco"
+printed_bracket = 8
+common_mass = "commune-unius-martyris-4"
+mass = "comm-s-hermetis-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "08-29"
+printed_page = 643
+digital_page = 724
+column = "L"
+printed_name = "S. Sabinae Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Me exspectaverunt"
+printed_common = "non Virginum I loco"
+printed_bracket = 35
+common_mass = "commune-non-virginum-1"
+mass = "comm-s-sabinae-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "08-30"
+printed_page = 643
+digital_page = 724
+column = "R"
+printed_name = "S. Rosse Limanse Virginis"
+printed_rank = "III classis"
+printed_incipit = "Dilexisti"
+printed_common = "Virginum III loco"
+printed_bracket = 32
+common_mass = "commune-virginum-3"
+mass = "s-rosae-limanae-virginis"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "08-31"
+printed_page = 645
+digital_page = 726
+column = "L"
+printed_name = "S. Raymundi Nonnati Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Os iusti"
+printed_common = "Confessoris non Pontificis I loco"
+printed_bracket = 24
+common_mass = "commune-confessoris-non-pontificis-1"
+mass = "s-raymundi-nonnati-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "09-01"
+printed_page = 645
+digital_page = 726
+column = "L"
+printed_name = "S. ^Egidii Abbatis"
+printed_rank = "Commemoratio"
+printed_incipit = "Os iusti"
+printed_common = "Abbatum"
+printed_bracket = 27
+common_mass = "commune-abbatum"
+mass = "comm-s-aegidii-abbatis"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "09-05"
+printed_page = 649
+digital_page = 730
+column = "R"
+printed_name = "S. Laurentii Iustiniani Ep. et Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Statuit"
+printed_common = "Confessoris Pontificis I loco"
+printed_bracket = 19
+common_mass = "commune-confessoris-pontificis-1"
+mass = "s-laurentii-iustiniani-episcopi-confessoris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "09-08"
+printed_page = 652
+digital_page = 733
+column = "L"
+printed_name = "S. Hadriani Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "In viftiite"
+printed_common = "unius Martyris III loco"
+printed_bracket = 6
+common_mass = "commune-unius-martyris-3"
+mass = "comm-s-hadriani-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "09-09"
+printed_page = 652
+digital_page = 733
+column = "L"
+printed_name = "S. Gorgonii Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Laetabitur"
+printed_common = "unius Martyris IV loco"
+printed_bracket = 8
+common_mass = "commune-unius-martyris-4"
+mass = "comm-s-gorgonii-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "09-10"
+printed_page = 652
+digital_page = 733
+column = "L"
+printed_name = "S. Nicolai de Tolentino Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Iustus"
+printed_common = "Confessoris non Pontificis II loco"
+printed_bracket = 25
+common_mass = "commune-confessoris-non-pontificis-2"
+mass = "s-nicolai-tolentino-confessoris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "09-11"
+printed_page = 652
+digital_page = 733
+column = "R"
+printed_name = "Ss. Proti et Hyacinthi Martyrum"
+printed_rank = "Commemoratio"
+printed_incipit = "Salus autem"
+printed_common = "plurimorum Martyrum III loco"
+printed_bracket = 12
+common_mass = "commune-plurimorum-martyrum-3"
+mass = "comm-ss-proti-hyacinthi-martyrum"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "09-15"
+printed_page = 658
+digital_page = 739
+column = "R"
+printed_name = "S. Nicomedis Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "In virtiite"
+printed_common = "unius Martyris III loco"
+printed_bracket = 6
+common_mass = "commune-unius-martyris-3"
+mass = "comm-s-nicomedis-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "09-16"
+printed_page = 659
+digital_page = 740
+column = "R"
+printed_name = "Ss. Euphemiae Virg., Luciae et Geminiani Mm."
+printed_rank = "Commemoratio"
+printed_incipit = "Intret"
+printed_common = "plurimorum Martyrum I loco"
+printed_bracket = 10
+common_mass = "commune-plurimorum-martyrum-1"
+mass = "comm-ss-euphemiae-virginis-luciae-geminiani"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "09-20"
+printed_page = 664
+digital_page = 745
+column = "L"
+printed_name = "Ss. Eustachii et Sociorum Mm."
+printed_rank = "Commemoratio"
+printed_incipit = "Sapientiam"
+printed_common = "plurimorum Marty rum II loco"
+printed_bracket = 11
+common_mass = "commune-plurimorum-martyrum-2"
+mass = "comm-ss-eustachii-sociorum-martyrum"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "09-22"
+printed_page = 666
+digital_page = 747
+column = "R"
+printed_name = "Ss. Mauritii et Sociorum Martyrum"
+printed_rank = "Commemoratio"
+printed_incipit = "Intret"
+printed_common = "plurimorum Martyrum I loco"
+printed_bracket = 10
+common_mass = "commune-plurimorum-martyrum-1"
+mass = "comm-ss-mauritii-sociorum-martyrum"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "09-23"
+printed_page = 667
+digital_page = 748
+column = "L"
+printed_name = "S. Lini Papae et Mart."
+printed_rank = "HI classis"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "s-lini-papae-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "09-23"
+printed_page = 667
+digital_page = 748
+column = "R"
+printed_name = "S. Theclae Virg. et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Loquebar"
+printed_common = "Virginum I loco"
+printed_bracket = 28
+common_mass = "commune-virginum-1"
+mass = "comm-s-theclae-virginis-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "09-24"
+printed_page = 667
+digital_page = 748
+column = "R"
+printed_name = "Beatae Mariae Virginis a Mercede"
+printed_rank = "Commemoratio"
+printed_incipit = "Salve"
+printed_common = "festorum beatae Mariae Vkginis"
+printed_bracket = 41
+common_mass = "commune-festorum-bmv"
+mass = "comm-beatae-mariae-virginis-a-mercede"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "09-26"
+printed_page = 668
+digital_page = 749
+column = "L"
+printed_name = "Ss. Cypriani et Iustinae Virg., Martyrum"
+printed_rank = "Commemoratio"
+printed_incipit = "Salus autem"
+printed_common = "plurimorum Martyrum III loco"
+printed_bracket = 12
+common_mass = "commune-plurimorum-martyrum-3"
+mass = "comm-ss-cypriani-iustinae-virginis-martyrum"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "09-28"
+printed_page = 669
+digital_page = 750
+column = "R"
+printed_name = "S. Wenceslai Ducis, Mart."
+printed_rank = "Ill classis"
+printed_incipit = "In virtiite"
+printed_common = "unius Martyris III loco"
+printed_bracket = 6
+common_mass = "commune-unius-martyris-3"
+mass = "s-wenceslai-ducis-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "09-30"
+printed_page = 672
+digital_page = 753
+column = "L"
+printed_name = "S. Hieronymi Presb., Conf. et Eccl. Doct."
+printed_rank = "• III classis"
+printed_incipit = "In medio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-hieronymi-presbyteri-confessoris-ecclesiae-doctoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "10-01"
+printed_page = 672
+digital_page = 753
+column = "L"
+printed_name = "S. Remigii Ep. et Conf."
+printed_rank = "Commemoratio"
+printed_incipit = "Statuit"
+printed_common = "Confessoris Pontificis I loco"
+printed_bracket = 19
+common_mass = "commune-confessoris-pontificis-1"
+mass = "comm-s-remigii-episcopi-confessoris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "10-05"
+printed_page = 676
+digital_page = 757
+column = "R"
+printed_name = "Ss. Placidi et Sociorum Martyrum"
+printed_rank = "Commemoratio"
+printed_incipit = "Salus autem"
+printed_common = "plurimorum Maftyrum III loco"
+printed_bracket = 12
+common_mass = "commune-plurimorum-martyrum-3"
+mass = "comm-ss-placidi-sociorum-martyrum"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "10-06"
+printed_page = 677
+digital_page = 758
+column = "L"
+printed_name = "S. Brunonis Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Os iusti"
+printed_common = "Confessoris non Pontificis I loco"
+printed_bracket = 24
+common_mass = "commune-confessoris-non-pontificis-1"
+mass = "s-brunonis-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "10-07"
+printed_page = 679
+digital_page = 760
+column = "R"
+printed_name = "S. Marci Papae et Conf."
+printed_rank = "Commemoratio"
+printed_incipit = "Si dfligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-marci-papae-confessoris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "10-08"
+printed_page = 681
+digital_page = 762
+column = "L"
+printed_name = "Ss. Sergii, Bacchi, Marcelli et Apuleii Mm."
+printed_rank = "Commemoratio"
+printed_incipit = "Sapientiam"
+printed_common = "plurimorum Martyrum II loco"
+printed_bracket = 11
+common_mass = "commune-plurimorum-martyrum-2"
+mass = "comm-ss-sergii-bacchi-marcelli-apuleii"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "10-13"
+printed_page = 686
+digital_page = 767
+column = "R"
+printed_name = "S. Eduardi Regis, Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Os iusti"
+printed_common = "Confessoris non Pontificis I loco"
+printed_bracket = 24
+common_mass = "commune-confessoris-non-pontificis-1"
+mass = "s-eduardi-regis-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "10-14"
+printed_page = 687
+digital_page = 768
+column = "L"
+printed_name = "S. Callisti I Papae et Mart."
+printed_rank = "Ill classis"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summomm Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "s-callisti-i-papae-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "10-15"
+printed_page = 687
+digital_page = 768
+column = "R"
+printed_name = "S. Teresiae Virg."
+printed_rank = "Ill classis"
+printed_incipit = "Dilexisti"
+printed_common = "Vkginum in loco"
+printed_bracket = 32
+common_mass = "commune-virginum-3"
+mass = "s-teresiae-virginis"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "10-16"
+printed_page = 687
+digital_page = 768
+column = "R"
+printed_name = "S. Hedwigis Viduae"
+printed_rank = "HI classis"
+printed_incipit = "Cogn6vi"
+printed_common = "non Virginum II loco"
+printed_bracket = 37
+common_mass = "commune-non-virginum-2"
+mass = "s-hedwigis-viduae"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "10-21"
+printed_page = 693
+digital_page = 774
+column = "R"
+printed_name = "S. Hilarionis Abbatis"
+printed_rank = "Commemoratio"
+printed_incipit = "Os iusti"
+printed_common = "Abbatum"
+printed_bracket = 27
+common_mass = "commune-abbatum"
+mass = "comm-s-hilarionis-abbatis"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "10-21"
+printed_page = 694
+digital_page = 775
+column = "L"
+printed_name = "Ss. Ursulae et Sociarum Vv. et Mm."
+printed_rank = "Commemoratio"
+printed_incipit = "Loqu£bar"
+printed_common = "Virginum I loco"
+printed_bracket = 28
+common_mass = "commune-virginum-1"
+mass = "comm-ss-ursulae-ac-sociarum-virginum"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "10-23"
+printed_page = 694
+digital_page = 775
+column = "R"
+printed_name = "S. Antonii Mariae Claret Ep. et Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Sacerd6tes tui"
+printed_common = "Confessoris Pontificis II loco"
+printed_bracket = 20
+common_mass = "commune-confessoris-pontificis-2"
+mass = "s-antonii-mariae-claret-episcopi-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "11-04"
+printed_page = 710
+digital_page = 791
+column = "L"
+printed_name = "S, Catoli Bp. et Conf,"
+printed_rank = "III classis"
+printed_incipit = "Statuit^"
+printed_common = "Confessofis Pontificid I loco"
+printed_bracket = 19
+common_mass = "commune-confessoris-pontificis-1"
+mass = ""
+state = "held"
+blocked_by = "day not attached to an entry"
+
+[[pointers]]
+date = "11-09"
+printed_page = 713
+digital_page = 794
+column = "L"
+printed_name = "IN DEDIC. ARCHIBASILKLE SS.MI SALVATORIS"
+printed_rank = "II classis"
+printed_incipit = "Terribilis"
+printed_common = "Dedicationis ecclesiae"
+printed_bracket = 39
+common_mass = "commune-dedicationis-ecclesiae"
+mass = "comm-s-theodori-martyris"
+state = "held"
+blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "11-09"
+printed_page = 713
+digital_page = 794
+column = "L"
+printed_name = "S. Theodori Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Laetabitur"
+printed_common = "unius Martyris IV loco"
+printed_bracket = 8
+common_mass = "commune-unius-martyris-4"
+mass = "comm-s-theodori-martyris"
+state = "held"
+blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "11-10"
+printed_page = 713
+digital_page = 794
+column = "R"
+printed_name = "S. Andreae Avellini Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Os iusti"
+printed_common = "Confessoris non Pontificis I loco"
+printed_bracket = 24
+common_mass = "commune-confessoris-non-pontificis-1"
+mass = "s-andreae-avellini-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "11-11"
+printed_page = 717
+digital_page = 798
+column = "L"
+printed_name = "S. Mennae Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Laetabitur"
+printed_common = "unius Martyris IV loco"
+printed_bracket = 8
+common_mass = "commune-unius-martyris-4"
+mass = "comm-s-mennae-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "11-12"
+printed_page = 717
+digital_page = 798
+column = "R"
+printed_name = "S. Martini I Papae et Mart."
+printed_rank = "Ill classis"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "s-martini-i-papae-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "11-13"
+printed_page = 717
+digital_page = 798
+column = "R"
+printed_name = "S. Didaci Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Iustus"
+printed_common = "Confessoris non Pontificis II loco"
+printed_bracket = 25
+common_mass = "commune-confessoris-non-pontificis-2"
+mass = "s-didaci-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "11-15"
+printed_page = 719
+digital_page = 800
+column = "L"
+printed_name = "S. Alberti Magni Ep., Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "In m£dio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-alberti-magni-episcopi-confessoris-ecclesiae"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "11-16"
+printed_page = 719
+digital_page = 800
+column = "R"
+printed_name = "S. Gertrudis Virg."
+printed_rank = "HI classis"
+printed_incipit = "Dilexisti"
+printed_common = "Virginum III loco"
+printed_bracket = 32
+common_mass = "commune-virginum-3"
+mass = "s-gertrudis-virginis"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "11-18"
+printed_page = 721
+digital_page = 802
+column = "L"
+printed_name = "In Dedicatione Basilicarum Ss. Petri et Pauli App."
+printed_rank = "Ill classis"
+printed_incipit = "Terribilis"
+printed_common = "Dedicationis ecclesiae"
+printed_bracket = 39
+common_mass = "commune-dedicationis-ecclesiae"
+mass = "dedicatione-basilicarum-ss-petri-pauli-apostolorum"
+state = "landed"
+
+[[pointers]]
+date = "11-19"
+printed_page = 721
+digital_page = 802
+column = "L"
+printed_name = "S. Elisabeth Vid."
+printed_rank = "Ill classis"
+printed_incipit = "Cognovi"
+printed_common = "non Virginum II loco"
+printed_bracket = 37
+common_mass = "commune-non-virginum-2"
+mass = "s-elisabeth-viduae"
+state = "landed"
+
+[[pointers]]
+date = "11-19"
+printed_page = 721
+digital_page = 802
+column = "R"
+printed_name = "S. Pontiani Papae et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-pontiani-papae-martyris"
+state = "landed"
+
+[[pointers]]
+date = "11-20"
+printed_page = 721
+digital_page = 802
+column = "R"
+printed_name = "S. Felicis de Valois Conf."
+printed_rank = "Ill classis"
+printed_incipit = "Iustus"
+printed_common = "Confessoris non Pontificis II loco"
+printed_bracket = 25
+common_mass = "commune-confessoris-non-pontificis-2"
+mass = "s-felicis-valois-confessoris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "11-23"
+printed_page = 725
+digital_page = 806
+column = "R"
+printed_name = "S. Felicitatis Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Me exspectaveirunt"
+printed_common = "non Virginum I loco"
+printed_bracket = 35
+common_mass = "commune-non-virginum-1"
+mass = "comm-s-felicitatis-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "11-24"
+printed_page = 725
+digital_page = 806
+column = "R"
+printed_name = "S. Ioannis a Cruce Conf. et Eccl. Doct."
+printed_rank = "Ill classis"
+printed_incipit = "In medio"
+printed_common = "Doctorum"
+printed_bracket = 22
+common_mass = "commune-doctorum-pontificis"
+mass = "s-ioannis-a-cruce-confessoris-ecclesiae"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "11-24"
+printed_page = 726
+digital_page = 807
+column = "L"
+printed_name = "S. Chrysogoni Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "In virtiite"
+printed_common = "unius Martyris III loco"
+printed_bracket = 6
+common_mass = "commune-unius-martyris-3"
+mass = "comm-s-chrysogoni-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "11-25"
+printed_page = 726
+digital_page = 807
+column = "R"
+printed_name = "S. Catharinae Virg. et Mart."
+printed_rank = "Ill classis"
+printed_incipit = "Loquebar"
+printed_common = "Virginum I loco"
+printed_bracket = 28
+common_mass = "commune-virginum-1"
+mass = "s-catharinae-virginis-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "11-26"
+printed_page = 726
+digital_page = 807
+column = "R"
+printed_name = "S. Silvestri Abbatis"
+printed_rank = "HI classis"
+printed_incipit = "Os iusti"
+printed_common = "Abbatum"
+printed_bracket = 27
+common_mass = "commune-abbatum"
+mass = "s-silvestri-abbatis"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "11-26"
+printed_page = 727
+digital_page = 808
+column = "R"
+printed_name = "S. Petri Alexandrini Ep. et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Statuit"
+printed_common = "unius Martyris I loco"
+printed_bracket = 4
+common_mass = "commune-unius-martyris-1"
+mass = "comm-s-petri-alexandrini-episcopi-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "11-29"
+printed_page = 428
+digital_page = 509
+column = "L"
+printed_name = "S. Saturnini Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Laetabitur"
+printed_common = "unius Martyris IV loco"
+printed_bracket = 8
+common_mass = "commune-unius-martyris-4"
+mass = "comm-s-saturnini-martyris"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "12-02"
+printed_page = 430
+digital_page = 511
+column = "R"
+printed_name = "S. Bibianae Virg. et Mart."
+printed_rank = "Ill classis"
+printed_incipit = "Me exspectaverunt"
+printed_common = "Virginum II loco"
+printed_bracket = 30
+common_mass = "commune-virginum-2"
+mass = "s-bibianae-virginis-martyris"
+state = "landed"
+
+[[pointers]]
+date = "12-04"
+printed_page = 433
+digital_page = 514
+column = "R"
+printed_name = "S. Barbaras Virg. et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Loquebar"
+printed_common = "Virginum I loco"
+printed_bracket = 28
+common_mass = "commune-virginum-1"
+mass = "comm-s-barbarae-virginis-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "12-05"
+printed_page = 433
+digital_page = 514
+column = "R"
+printed_name = "S. Sabbse Abbatis"
+printed_rank = "Commemoratio"
+printed_incipit = "Os iusti"
+printed_common = "Abbatum"
+printed_bracket = 27
+common_mass = "commune-abbatum"
+mass = "comm-s-sabbae-abbatis"
+state = "held"
+blocked_by = "the day prints orations of its own, which are not transcribed"
+
+[[pointers]]
+date = "12-10"
+printed_page = 439
+digital_page = 520
+column = "L"
+printed_name = "S. Melchiadis Papae et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-melchiadis-papae-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
+
+[[pointers]]
+date = "12-16"
+printed_page = 440
+digital_page = 521
+column = "R"
+printed_name = "S. Eusebii Ep. et Mart."
+printed_rank = "Ill classis"
+printed_incipit = "Sacerd6tes Dei"
+printed_common = "unius Martyris II loco"
+printed_bracket = 5
+common_mass = "commune-unius-martyris-2"
+mass = "s-eusebii-episcopi-martyris"
+state = "landable"
+blocked_by = "nothing; not yet read on the page image"
