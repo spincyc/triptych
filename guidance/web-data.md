@@ -180,7 +180,10 @@ The source is `src/sources/calendars/<calendar>/rubrics.yaml`, beside the mass
 index it classifies. It carries the precedence table with its locus, the bases
 that assign each mass to a row, the rules that constitute a day the index has no
 formulary for, the commemoration ceilings, the oration rules, and — as much as
-the rest — what it does not decide. Every rule names the rubric number behind
+the rest — what it does not decide. It does not name the book: `edition` and
+`edition_short` are read from the mass index, which is the file that identifies
+the printing, and a rubrics source that writes either of them out again is
+refused by `check-calendar-masses`. Every rule names the rubric number behind
 it, and every rule is transcribed from a collated in-repository publication
 rather than read afresh. Where the file departs from that publication it says so
 in `divergences` and does not silently choose.
