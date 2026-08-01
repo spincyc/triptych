@@ -384,6 +384,13 @@
    under it, which is backwards on a page whose whole point is the Mass. The
    summary is the closed state and reads as one field like the selects beside
    it; the checks appear only when a reader goes looking for them. */
+/* The panel is absolutely positioned, so the field itself has to be the
+   positioned ancestor or the panel lays itself out against the page and
+   lands wherever the page happens to put it. */
+.field-options {
+  position: relative;
+}
+
 .field-options > summary {
   cursor: pointer;
   list-style: none;
