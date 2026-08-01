@@ -39,6 +39,12 @@ it is the reason this file exists rather than a `rubrics.yaml` with a hole in it
 So the whole question reduces to one thing: WHERE IS THE PRE-1955 ORDER OF
 PRECEDENCE PRINTED? The answer is not in the Missal, and that is not an
 inference. It is what the Missal says.
+
+IT WAS THEN FOUND, AND THE ANSWER MOVED THE PROBLEM RATHER THAN SOLVING IT. The
+rule is in the Acta Apostolicae Sedis of 1911, open and publishable. It is not a
+table. See `[[findings]]` `the-rule-is-criteria-not-rows`, which is now the
+blocking item and is a fact about this repository's tooling rather than about the
+availability of any book.
 """
 
 evidence = """
@@ -144,6 +150,113 @@ pre-1955 books carry no such reprint, because before 1960 there was no such code
 
 This is not a gap that a more careful reading of the Missal would close. It is
 the Missal saying the answer is in another book.
+"""
+
+[[findings]]
+id = "the-rule-is-criteria-not-rows"
+claim = "The pre-1955 order of precedence is five ordered criteria, not a numbered table, and this repository's rubrics schema can only express a numbered table."
+grade = "verified"
+basis = """
+The rule was located and read whole. It is Titulus II, `De Festorum praestantia`,
+of the `RUBRICAE IN RECITATIONE DIVINI OFFICII ET IN MISSARUM CELEBRATIONE
+SERVANDAE AD NORMAM CONSTITUTIONIS APOSTOLICAE DIVINO AFFLATU`, at Acta
+Apostolicae Sedis 3 (1911) 641-642. It opens by saying what it is for:
+
+  `Ut recte dignoscatur quale ex pluribus Officiis sit praestantius et proinde
+  sive in occurrentia, sive in concurrentia, sive in ordine repositionis aut
+  translationis praeferendum, sequentes praestantiae characteres considerandi
+  sunt`
+
+and then gives five characters, in order:
+
+  a) `Ritus altior`, unless a Sunday, a feria, a privileged octave or any octave
+     day under the Rubrics occurs;
+  b) `Ratio Primarii aut Secundarii`;
+  c) `Dignitas Personalis`, in a stated order -- feasts of the Lord, of the
+     Blessed Virgin, of the Angels, of St John the Baptist, of St Joseph, of the
+     Apostles and Evangelists;
+  d) `Sollemnitas externa`, that is, whether the feast is of obligation or has an
+     octave;
+  e) `Proprietas Festorum`, which n. 2 says applies IN OCCURRENCE AND IN
+     REPOSITION OR TRANSLATION ONLY and not in concurrence, with its own
+     exceptions for Sundays, ferias, privileged octaves and vigils, and primary
+     first-class feasts of the universal Church.
+
+THIS IS A COMPARISON, NOT A POSITION. Two days are ranked by taking the criteria
+in order until one separates them. The 1960 code replaced it with a table of
+twenty-eight numbered rows whose numbers later rubrics cite as addresses, and
+that is the shape `tools/calendar-rubrics` models: `check_precedence` requires
+`rows` numbering 1..N in order, and `check_bases` requires each competing basis
+to name one of those rows.
+
+There is no honest mapping. Criterion (a) alone ranges over grades and over four
+exceptions that are not grades; criterion (e) applies to some questions and not
+others, so the same two days can be ordered differently in occurrence and in
+concurrence -- which a single row number cannot express, because a row number is
+one order for all questions.
+"""
+loci = [
+  "AAS 3 (1911) 641-642, in AAS-03-1911-ocr.pdf, sha256 590a78b670da67f013ea6fc0b62bb7ed347dc89a9267fbb7ddc0380f1e872f7c, 3418093 bytes, fetched from vatican.va 2026-08-01; pdftotext lines 24105-24125",
+]
+consequence = """
+THE BLOCKER IS NO LONGER SOURCING. The rule is found, it is open, it is
+`public-domain-us-pre-1931`, and it may be published. What is missing is that
+this repository's rubrics schema admits one shape of precedence, and the
+pre-1955 rite has another.
+
+Writing a `rubrics.yaml` anyway would mean inventing a linear table by flattening
+five criteria that do not flatten, giving each row a number no book prints, and
+letting `assembly-model.js` compare those numbers. It would validate, it would
+resolve every day, and it would decide days wrongly -- the exact failure
+guidance/the-shape.md section 1 says wears every costume, committed in the file
+written to prevent it.
+
+So guidance/recensions.md Rule 6 still holds and now has a sharper reason: the
+calendar is not offered because the tool cannot yet state its rule, not because
+nobody has found the book. What would have to change is `check_precedence`, and
+after it the winner comparison in `assembly-model.js`, which today is
+`for (const one of standing) if (one.row < best.row) best = one` -- a comparison
+of one integer. That is a deliberate design change and not a patch, and it should
+be argued before it is written.
+"""
+
+[[findings]]
+id = "the-1955-simplification-states-its-own-extent"
+claim = "The 23 March 1955 decree names the vigils and octaves that survive, so the size of that departure set comes from the act rather than from comparing calendars."
+grade = "verified"
+basis = """
+`DE RUBRICIS AD SIMPLICIOREM FORMAM REDIGENDIS`, Sacred Congregation of Rites,
+`die 23 mensis Martii anni 1955`, at AAS 47 (1955) 218-224, read whole. It takes
+effect `kalendis Ianuariis anni 1956`. Titulus II, `VARIATIONES IN CALENDARIO`,
+states the extent in three places:
+
+  n. 1  `Gradus et ritus semiduplex supprimitur.` The semidouble grade is
+        abolished outright, which is the ranking-vocabulary change.
+  n. 9  Common vigils are Ascension, the Assumption, St John the Baptist, SS
+        Peter and Paul, and St Lawrence; privileged are the Nativity and
+        Pentecost (n. 8). `Omnes aliae vigiliae, etiam quae calendariis
+        particularibus sunt inscriptae, supprimuntur.`
+  n. 11 `Celebrantur tantum octavae Nativitatis Domini, Paschatis et Pentecostes,
+        suppressis omnibus aliis`, in the universal and in particular calendars
+        alike. n. 15 suppresses the octave of the Epiphany by name.
+
+SEVEN VIGILS AND THREE OCTAVES SURVIVE, AND EVERY OTHER ONE GOES. That is the
+extent of the largest unstated departure set in the recension, stated by the act
+itself.
+"""
+loci = [
+  "AAS 47 (1955) 218-224, in AAS-47-1955-ocr.pdf, sha256 87faf82170a12abb564990fb189f289258327b1279469768be4af4883eb74d58, 4272421 bytes, fetched from vatican.va 2026-08-01; pdftotext lines 11479-11625",
+]
+consequence = """
+The recension still states none of these departures, and now says so with a
+citation rather than with a shrug. They are calendar-wide and rubrical, and they
+cannot be written without the rubrics source this file is about.
+
+Note what the decree does NOT give: it names what survives, not what dies. Turning
+`omnes aliae supprimuntur` into a list of departures needs a pre-1955 calendar to
+subtract from -- and subtracting the 1962 calendar would be the pre-1955 book
+reconstructed by undoing 1962. The list has to come from a pre-1955 book's own
+kalendarium.
 """
 
 [[findings]]
@@ -273,32 +386,182 @@ does_not_carry = "The same absences as the row above, for the same reason."
 # What is wanted, in the order that settles the most.
 # ---------------------------------------------------------------------------
 
-[[wanted]]
-id = "breviarium-romanum-pre-1955"
-priority = 1
-what = "A pre-1955 Breviarium Romanum carrying Rubricae generales Breviarii and the tables of occurrence and concurrence."
-why = """
-It is the book the Missal points at, and it is the ONLY thing standing between
-this recension and a `rubrics.yaml`. Everything else in this file is a smaller
-question.
+# ---------------------------------------------------------------------------
+# What the search found. `[[located]]` is a book identified and its rights
+# settled; it is not an acquisition, and nothing below is in the repository.
+# ---------------------------------------------------------------------------
 
-The 1962 calendar's precedence table has 28 rows because the 1960 code prints 28
-numbered rows and the rows are addresses later rubrics cite. The pre-1955 regime
-has no such table in the Missal, and whether it has one anywhere -- as against an
-order recoverable only from prose about occurrence, translation and
-commemoration -- is itself unestablished here. If it turns out the pre-1955 order
-is nowhere printed as a numbered table, that is a finding about the rite and not
-a failure of the search, and `calendar-rubrics` would have to be taught the
-difference before a source could be written. THAT QUESTION IS OPEN.
+[[located]]
+id = "aas-03-1911"
+priority = 1
+what = "The Divino afflatu general rubrics, Titulus I-XIII, at AAS 3 (1911) 639-651, with the Constitution itself at 633-638."
+carries = """
+`RUBRICAE IN RECITATIONE DIVINI OFFICII ET IN MISSARUM CELEBRATIONE SERVANDAE AD
+NORMAM CONSTITUTIONIS APOSTOLICAE DIVINO AFFLATU`, thirteen titles and
+`PRAESCRIPTIONES TEMPORARIAE`. Titulus II is `De Festorum praestantia`, which is
+the precedence rule; III accidental occurrence and translation; IV perpetual
+occurrence and reposition; V concurrence; VI commemorations.
 """
-status = "unrecorded"
-status_note = """
-Left `unrecorded` rather than `not-located`. The distinction is the one
-`missal-acquisition-audit-v1.toml` paid for in its `not-located-verdicts`
-correction: two rows were written `not-located` on the strength of one
-repository's search and the books were in another library the whole time. This
-row records that the search has not been completed here, which is a weaker and
-truer claim than saying the book was not found.
+repository = "vatican.va, https://www.vatican.va/archive/aas/documents/AAS-03-1911-ocr.pdf; mirrored on Internet Archive"
+sha256 = "590a78b670da67f013ea6fc0b62bb7ed347dc89a9267fbb7ddc0380f1e872f7c"
+byte_size = 3418093
+retrieved = "2026-08-01"
+read_from = "publisher-pdf-with-ocr-text-layer"
+retrievable = "whole"
+rights = "public-domain-us-pre-1931"
+may_publish_text = "yes"
+rights_basis = """
+Published 1911, before the 1931 line the frame in
+`missal-acquisition-audit-v1.toml` sources. This is the strongest position any
+source in this file holds: the RULE ITSELF is publishable, which is not true of
+the 1960 code that governs the calendar beside it.
+"""
+verified_here = """
+Fetched and read locally on 2026-08-01, not taken from the search that found it.
+Titulus II was read in full and is quoted in `[[findings]]`
+`the-rule-is-criteria-not-rows`.
+"""
+
+[[located]]
+id = "aas-05-1913"
+priority = 2
+what = "Abhinc duos annos, 23 October 1913, at AAS 5 (1913) 449-451, and the general decree upon it at 457-464."
+carries = """
+`DECRETUM GENERALE SUPER MOTU PROPRIO ABHINC DUOS ANNOS`, Sacred Congregation of
+Rites, 28 October 1913. Titulus IV, at 461-463, is `De occurrentia et
+translatione Festorum, eorumque concurrentia`, and works in the grades the
+recension needs -- Duplicia I and II classis, Duplicia maiora and minora,
+Semiduplicia, octaves of the first, second and third order, privileged ferias and
+vigils.
+"""
+repository = "vatican.va, AAS-05-1913-ocr.pdf"
+sha256 = "5fc83f2ff003508f94720e57afe02cede224ab6b2930e3e4130f6c4350b42dd9"
+byte_size = 2889855
+retrieved = "2026-08-01"
+retrievable = "whole"
+rights = "public-domain-us-pre-1931"
+may_publish_text = "yes"
+rights_basis = "Published 1913."
+verified_here = "Not re-read locally. Reported at the bytes by the search that found it, and recorded at that grade rather than raised to it."
+
+[[located]]
+id = "aas-06-1914"
+priority = 3
+what = "The decree approving the typical Breviary, AAS 6 (1914) 672, 25 March 1914."
+carries = """
+`DECRETUM ADPROBATIONIS BREVIARII TYPICI VATICANI`. It is the act that declares
+the post-Divino afflatu typical Breviary, and therefore the station beneath which
+every printing in this file hangs -- the thing that stops a Breviary printing
+being chained into the history as though the rite descended through a publisher.
+"""
+repository = "vatican.va, AAS-06-1914-ocr.pdf"
+sha256 = "b655eb5e24d52cfabc538f3da1e3e19d7056fe9dc1fcb67189a3b1bea5c8831f"
+byte_size = 3527052
+retrieved = "2026-08-01"
+retrievable = "whole"
+rights = "public-domain-us-pre-1931"
+may_publish_text = "yes"
+verified_here = "Not re-read locally."
+bounded_negative = """
+AAS 6 (1914) was searched for `ADDITIONES ET VARIATIONES`, `IN RUBRICIS
+BREVIARII` and `RUBRICIS BREVIARII ET MISSALIS`; the only hit is `ADDITIONES ET
+VARIATIONES IN MARTYROLOGIO ROMANO`. So the `Additiones et Variationes in
+Rubricis Breviarii` that the printed books carry under that heading appears to be
+the EDITORS' CONSOLIDATION of the 1911 rubrics with the 1913 decree, and not a
+separately promulgated instrument. Anything in this repository that cites a
+distinct `Additiones` act should be re-checked against that. Recorded as a
+bounded negative over one volume under three names, not as a claim that no such
+act exists.
+"""
+
+[[located]]
+id = "aas-47-1955"
+priority = 4
+what = "Both 1955 decrees in one volume: De rubricis ad simpliciorem formam redigendis at 218-224, and Maxima Redemptionis at 838ff."
+repository = "vatican.va, AAS-47-1955-ocr.pdf; the Internet Archive item AAS-47-1955 is byte-identical"
+sha256 = "87faf82170a12abb564990fb189f289258327b1279469768be4af4883eb74d58"
+byte_size = 4272421
+retrieved = "2026-08-01"
+retrievable = "whole"
+rights = "holy-see-post-1929"
+may_publish_text = "no"
+verified_here = """
+Fetched and read locally on 2026-08-01. The March decree is there, at the pages
+reported, with its dating `die 23 mensis Martii anni 1955`, its subscription by
+Cardinal Cicognani and Archbishop Carinci, and its effective date `kalendis
+Ianuariis anni 1956`. See `[[findings]]` `the-1955-simplification-states-its-own-extent`.
+"""
+already_held = """
+THIS IS NOT AN ACQUISITION. The repository's `roman-holy-week-acts-v1.toml`
+already carries a witness `aas-47-1955` for Maxima Redemptionis, and the same
+volume carries the March decree that no record here had used. What was acquired
+is knowledge of what was already in hand, which is the cheapest kind and the kind
+an audit exists to produce.
+"""
+
+[[located]]
+id = "breviarium-romanum-1922-mame"
+priority = 5
+what = "Breviarium Romanum, pars verna, Mame / Benziger, editio duodecima juxta typicam, approbation dated Turonibus 17 June 1922."
+carries = """
+`DUAE TABELLAE EX RUBRICIS GENERALIBUS BREVIARII ET EX RUBRICIS JUXTA
+CONSTITUTIONEM DIVINO AFFLATU REFORMATIS EXCERPTAE` -- the grade lists, the
+`SI OCCURRAT EODEM DIE` occurrence grid, the `QUANDO CONCURRIT` concurrence grid,
+and the `NOTANDA IN PRAECEDENTIBUS TABELLIS`.
+"""
+repository = "Internet Archive, item breviariumromanu0000pars"
+retrievable = "whole"
+rights = "public-domain-us-pre-1931"
+may_publish_text = "yes"
+rights_basis = "Published 1922; no access restriction on the item."
+verified_here = "Not re-read locally."
+caveat = """
+THE GRIDS DO NOT SURVIVE OCR AND MUST BE READ FROM PAGE IMAGES. The occurrence
+table is printed as a numeric grid and the text layer renders it as orphaned
+glyph runs. The `NOTANDA` prose and the grade lists do survive. Any lane that
+takes the grid from the text layer will be transcribing noise, and the noise will
+look like data.
+"""
+
+[[located]]
+id = "breviarium-romanum-1927-pustet"
+priority = 6
+what = "Breviarium Romanum, pars verna, Pustet, editio X juxta typicam amplificata VIII, approbation dated Ratisbonae 9 January 1927."
+carries = "The same two tables, with the grade lists from `DUPLICIA I CLASSIS PRIMARIA` through `OCTAVAE SIMPLICES`, and `Tabella occurrentiae` / `Tabella concurrentiae`."
+repository = "Internet Archive, item breviarium_romanum_pars_verna_1927"
+retrievable = "whole"
+rights = "public-domain-us-pre-1931"
+may_publish_text = "yes"
+rights_basis = "Published 1927; the Internet Archive item carries a Public Domain Mark."
+verified_here = "Not re-read locally."
+caveat = "The same grid caveat as the row above, marginally less severe and not enough less to change the instruction."
+
+[[located]]
+id = "breviarium-romanum-1942-desclee"
+priority = 7
+what = "Breviarium Romanum, Desclee, 1942, editio juxta typicam amplificata, complete in four parts."
+carries = """
+The only located witness to the CONSOLIDATED editorial form in one volume: the
+full `Rubricae Generales Breviarii` titles I-XXXVII, the `Additiones et
+Variationes in Rubricis Breviarii ad normam Bullae Divino afflatu`, and the two
+tables -- all in PARS HIEMALIS.
+"""
+repository = "Internet Archive, item breviarium-romanum-1942"
+retrievable = "whole"
+rights = "third-party-copyright"
+may_publish_text = "no"
+rights_basis = """
+A 1942 commercial printing by Desclee, not a Holy See publication, with no rights
+statement in the item metadata. Reading is unaffected; publication is not
+available on any basis established here.
+"""
+verified_here = "Not re-read locally."
+structural_finding = """
+IN EVERY FOUR-PART BREVIARY EXAMINED THE FULL RUBRICS ARE IN PARS HIEMALIS ALONE.
+The verna, autumnalis and 1931 volumes checked carry the Tabellae and NOT the
+titles or the Additiones. A lane that acquires the wrong volume will find the
+tables and conclude the rubrics are absent from the edition. Recorded because it
+is the kind of fact that costs a day and is invisible from a catalogue record.
 """
 
 [[wanted]]
@@ -319,6 +582,19 @@ as located, identified, and `access-restricted-item` at both Internet Archive
 copies, rights `holy-see-post-1929`, `may_publish_text = no` [recorded]. It is
 already step 1 of that audit's acquisition order and is not restated here beyond
 the pointer.
+
+THE BOUND IS NOW WIDER AND UNCHANGED IN VERDICT. A second repository and a third
+witness were reached on 2026-08-01. HathiTrust holds it as record 102973859, htid
+`iau.31858049248663`, University of Iowa, `rightsCode = ic`, `usRightsString =
+Limited (search-only)`. A third Internet Archive item not in the missal audit,
+`officiumhebdomad0000cath` -- Desclee, Rome, 1957, 858 images, cum cantu, iuxta
+ordinem breviarii, missalis et Pontificalis Romani -- is also
+`access-restricted-item`. The Marietti 1956 item's PDF was requested directly and
+answers HTTP 302 to 401.
+
+So four digitisations across two repositories, and not one of them open. That is
+a stronger negative than the audit had, and it should be added to that row's
+`digitisation` by whoever owns that file; it is not edited from here.
 """
 not_the_same_book_as = """
 `work.catholic-church.ritus-pontificalis-ordinis-hebdomadae-sanctae-instaurati`,
@@ -332,26 +608,29 @@ bishops stand as the witness to a rite celebrated everywhere, which is the
 """
 
 [[wanted]]
-id = "de-rubricis-simpliciorem-1955"
+id = "pre-1955-kalendarium-read-as-data"
 priority = 3
-what = "The decree De rubricis ad simpliciorem formam redigendis, Sacred Congregation of Rites, 23 March 1955, in Acta Apostolicae Sedis 47 (1955)."
+what = "A pre-1955 general calendar, read from a pre-1955 book, as a list of days with their grades and their octaves and vigils."
 why = """
-`src/sources/inventories/latin-missal-acts-v1.toml` already models this act. It
-removed most octaves and vigils and changed the ranking vocabulary, and those are
-calendar-wide rubrical departures -- probably the largest set this recension will
-ever carry. NOT ONE of them is stated in the recension, because they are rubrical
-and it ships no rubrics source.
+The March 1955 decree names what SURVIVES the simplification and says `omnes
+aliae supprimuntur` of the rest. Turning that into departures needs the rest, and
+the rest is a pre-1955 kalendarium. Subtracting the 1962 calendar would be the
+pre-1955 book reconstructed by undoing 1962, which this recension exists to
+refuse.
 
-The decree is what fixes the extent of that set. Without it the recension cannot
-say which octaves and vigils the pre-1955 books keep that the 1962 book does not,
-and an attempt to answer it by comparing calendars would be the pre-1955 book
-reconstructed by undoing 1962.
+This is the largest single body of work the recension has left, and it is
+deliberately placed below the rubrics, because octaves and vigils are ranked
+days and a calendar of ranked days with no rule to rank them by would serve
+nothing.
 """
 status = "unrecorded"
 status_note = """
-The repository holds a witness `aas-47-1955` for the 16 November decree Maxima
-Redemptionis. Whether the same volume scan carries the 23 March decree, and at
-which pages, is not established here.
+Both held witnesses print a kalendarium -- the 1942 Benziger at lines 3067-4470
+of its text layer. It is set as a multi-column table and the OCR fragments it:
+counting `Octava` in that span returns 33 hits and counting `Vigilia` returns 7,
+and neither number is a count of anything. It is a floor produced by broken
+column reconstruction, and it is recorded here as the reason no figure is stated
+rather than as a figure. This must be read from page images.
 """
 
 [[wanted]]
@@ -368,22 +647,131 @@ that question until someone has read it.
 status = "unrecorded"
 status_note = "`work.catholic-church.pontificale-romanum` exists in the source library; which of its editions is pre-1955 and whether any is retrievable was not established here."
 
+# ---------------------------------------------------------------------------
+# The searches, so that a negative can be read as a bound on a search rather
+# than as a claim about the world. guidance/sources.md requires the aliases a
+# retrieval used be recorded with it.
+# ---------------------------------------------------------------------------
+
+aliases_method = """
+Every search was driven from a resolved alias set rather than from one string,
+because a work looked for under one name reads afterwards as an absence. The
+alias classes that paid off here, in order:
+
+1. THE SEASONAL PART, not the book. `Breviarium Romanum` returns 85 items and
+   mostly the wrong centuries; `title:(breviarium) AND (hiemalis OR aestiva OR
+   verna OR autumnalis)` was the best single query in the whole search. A
+   four-part Breviary is catalogued four times and the useful volume is one of
+   them -- see `breviarium-romanum-1942-desclee`, `structural_finding`.
+2. THE GAZETTE INSTEAD OF THE BOOK. The decisive source was not found by looking
+   for a Breviary at all. The rubrics were promulgated in the Acta and are
+   catalogued as a volume of the Acta, under no liturgical title whatever.
+3. The Latin heading as printed, for confirming identity inside a text layer:
+   `DE OFFICIO DUPLICI`, `DE ORDINANDO OFFICIO`, `ad normam Bull`.
+
+TWO ALIAS CLASSES PRODUCED NOTHING AND THE NEGATIVES ARE RECORDED. On the
+Internet Archive, `"rubricis breviarii"` and `"Additiones et Variationes"` each
+return ZERO items. Both are the standard printed headings. That is a fact about
+full-text search over that repository's holdings under those strings, and not a
+fact about the books, every one of which prints them.
+"""
+
+[[repositories_searched]]
+id = "internet-archive"
+how = "advancedsearch.php for candidates, the metadata API to confirm, and each item's own text layer to identify."
+aliases_that_hit = [
+  'title:("Breviarium Romanum") -- 85',
+  'title:(breviarium) AND (hiemalis OR aestiva OR verna OR autumnalis) -- 55, the best query',
+  'title:("Breviarium Romanum") AND year:[1912 TO 1955] -- 8',
+  'title:(hebdomadae sanctae) AND year:[1955 TO 1962] -- 3',
+]
+aliases_that_produced_nothing = [
+  '"rubricis breviarii" -- 0',
+  '"Additiones et Variationes" -- 0',
+  '"Maxima Redemptionis" -- 0',
+  "creator:(O'Connell) AND rubrics AND breviary -- 0",
+]
+weak_hits = [
+  '"Divino afflatu" -- 6, no Breviary editions among them',
+  '"Rubricae generales" -- 4, nothing after 1911',
+  'title:("Roman Breviary") -- 111, English devotional only',
+]
+misidentification_caught = """
+`breviariumroman00churgoog` and its two siblings are catalogued by the Internet
+Archive as `1946, Benziger`. All three carry `year = 1799` in their own metadata
+and their text layers are long-s eighteenth-century type. They are not
+post-Divino afflatu books and must not be used. This is the same class of error
+the missal audit caught at `missale-romanum-1570-venice`, and it was caught the
+same way -- by reading the object instead of the catalogue record.
+"""
+
+[[repositories_searched]]
+id = "vatican-va-aas-archive"
+how = "The AAS index at https://www.vatican.va/archive/aas/index_sp.htm, then volume PDFs by direct URL."
+result = """
+The most productive repository in the search, and the only one that produced a
+publishable rule. Volumes 3 (1911), 5 (1913), 6 (1914), 12 (1920) and 47 (1955)
+were fetched. The AAS 47 PDF is BYTE-IDENTICAL to the Internet Archive item
+`AAS-47-1955` that this repository already cites, which is worth knowing before
+anyone acquires it twice.
+"""
+
+[[repositories_searched]]
+id = "hathitrust"
+how = "The Bib API at catalog.hathitrust.org/api/volumes/brief/json/oclc:<n>."
+result = "Reached, and used to extend the 1956 Ordo's bound to a second repository. Its rights code for that book is `ic`, search-only."
+bounded_negative = "The catalogue's HTML search interface answers HTTP 403 to this environment, with and without a browser user agent. The Bib API is the working route and needs an OCLC number, so it confirms identities and does not discover them."
+
+[[repositories_searched]]
+id = "gallica-bnf"
+how = "The SRU endpoint, which requires a browser user agent and answers 403 without one."
+bounded_negative = """
+`gallica all "Breviarium Romanum" and dc.date >= "1912"` returns 410 records and
+NOT ONE post-1911 Roman Breviary edition: auction catalogues, manuscript studies
+and diocesan weeklies. `gallica all "Ordo Hebdomadae Sanctae instauratus"`
+returns 155 records, none the 1956 book. BnF's digitised liturgical books stop
+well before Divino afflatu. A bound on that catalogue under those strings.
+"""
+
+[[repositories_searched]]
+id = "google-books"
+how = "The Books API."
+bounded_negative = """
+NOT SEARCHED, AND THE DISTINCTION MATTERS. Every query returned HTTP 429, `Quota
+exceeded for quota metric Queries`, including a bare `q=breviarium+romanum`. Five
+aliases were prepared and NONE was answered -- not answered negatively. Recorded
+as a repository that was not reached, which is the honest verdict and the one the
+missal audit's `not-located-verdicts` correction was written to insist on.
+"""
+
 [counts]
-findings_verified = 3
-witnesses_read_at_the_bytes = 2
+findings_verified = 5
+witnesses_read_at_the_bytes_here = 4
 witnesses_whose_bytes_match_a_registered_artifact = 1
-books_wanted = 4
-books_wanted_that_are_blocking_the_rubrics = 1
+sources_located = 7
+sources_located_that_may_be_published = 5
+repositories_searched = 5
+repositories_actually_reached = 4
+books_still_wanted = 3
 rubrics_sources_this_record_makes_writable = 0
 counts_note = """
-`rubrics_sources_this_record_makes_writable = 0` is the honest headline and is
-written as a number so that it cannot be read past. This record establishes where
-the pre-1955 order of precedence is NOT, with the book's own words, and does not
-establish where it is.
+`rubrics_sources_this_record_makes_writable = 0` is the headline and is written
+as a number so that it cannot be read past. IT DID NOT MOVE WHEN THE SEARCH
+SUCCEEDED, and that is the most useful thing in this file.
 
-That is worth having. Before it, `no rubrics.yaml` rested on a general argument
-that the 1960 code is not this book's code. After it, it rests on the pre-1955
-Missal declining the question in two places -- which also tells the next lane
-exactly which book to go and get, and that the missal audit's silence about the
-Office was correct rather than an oversight.
+The record now holds the pre-1955 precedence rule itself, from the gazette that
+promulgated it, in the public domain and publishable. The count is still zero,
+because the rule is five ordered criteria and `tools/calendar-rubrics` can only
+express a table of numbered rows. Sourcing is finished; the schema is the
+blocker. See `[[findings]]` `the-rule-is-criteria-not-rows`.
+
+`repositories_actually_reached = 4` of 5 is the other number to read. Google
+Books was quota-blocked on every query including a trivial one, so five prepared
+aliases went unanswered rather than answered negatively, and no conclusion about
+that repository's holdings may be drawn from this file.
+
+`sources_located_that_may_be_published = 5` of 7 is the encouraging figure and
+inverts the missal audit's shape, where nearly three quarters could be read and
+fewer than half published. The reason is that the rubrics of this period were
+promulgated before 1931 while the missals that carry them were printed after.
 """

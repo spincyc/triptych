@@ -414,6 +414,54 @@ class TrackedRecensionTest(unittest.TestCase):
         self.assertFalse((self.root / "roman-pre-1955" / "rubrics.yaml").exists())
 
 
+class RubricsSourcingRecordTest(unittest.TestCase):
+    """The sourcing record's counts, checked against its own rows.
+
+    This repository has held one census in three copies that all disagreed, and
+    a hand-typed total beside the rows it totals is that defect in miniature.
+    The counts stay in the file, because a reader wants them there; what stops
+    them drifting is here.
+    """
+
+    path = ROOT / "src" / "sources" / "inventories" / "pre-1955-rubrics-sources-v1.toml"
+
+    def setUp(self) -> None:
+        import tomllib
+
+        self.record = tomllib.loads(self.path.read_text(encoding="utf-8"))
+
+    def test_the_counts_are_the_rows(self):
+        counts = self.record["counts"]
+        self.assertEqual(counts["findings_verified"], len(self.record["findings"]))
+        self.assertEqual(counts["sources_located"], len(self.record["located"]))
+        self.assertEqual(counts["books_still_wanted"], len(self.record["wanted"]))
+        self.assertEqual(
+            counts["repositories_searched"], len(self.record["repositories_searched"])
+        )
+        self.assertEqual(
+            counts["sources_located_that_may_be_published"],
+            sum(1 for row in self.record["located"] if row.get("may_publish_text") == "yes"),
+        )
+
+    def test_every_located_source_states_a_rights_position(self):
+        allowed = {
+            "public-domain-us-pre-1931",
+            "holy-see-post-1929",
+            "third-party-copyright",
+            "mixed",
+            "unresolved",
+        }
+        for row in [*self.record["located"], *self.record["held"]]:
+            self.assertIn(row.get("rights"), allowed, row["id"])
+            self.assertIn(row.get("may_publish_text"), {"yes", "no", "mixed", "unresolved"}, row["id"])
+
+    def test_the_headline_stays_honest_while_no_rubrics_source_ships(self):
+        """Rule 6, as a number. If a rubrics.yaml lands, this count has to move with it."""
+        shipped = (ROOT / "src" / "sources" / "calendars" / "roman-pre-1955" / "rubrics.yaml").exists()
+        writable = self.record["counts"]["rubrics_sources_this_record_makes_writable"]
+        self.assertEqual(bool(writable), shipped)
+
+
 def _calendar_rubrics():
     """The `calendar-rubrics` tool, imported from a file with no `.py` suffix."""
     import importlib.machinery
