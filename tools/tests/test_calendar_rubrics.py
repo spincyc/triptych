@@ -165,19 +165,40 @@ class LayerTests(unittest.TestCase):
         written = sorted(path.name for path in DATA.glob("*.json"))
         self.assertEqual(written, ["index.json", "postconciliar.json", "roman-1962.json"])
 
-    def test_every_mass_in_each_calendar_is_classified(self) -> None:
+    def test_every_celebration_in_each_calendar_is_classified(self) -> None:
+        """Every mass a calendar can keep, which is every mass but the Commons.
+
+        The Commune Sanctorum is formularies, not days. A Common has no date, no
+        season and no rank; it never occurs, never competes, and takes the rank
+        and the rubrics of whatever day takes it. Requiring an assignment basis
+        for one would put a celebration in the precedence table that the
+        calendar never keeps, so the section is excluded here and in
+        `calendar-rubrics.load_masses`, which is the only other place that
+        knows.
+        """
         import yaml
 
         for name in ("roman-1962", "postconciliar"):
             source = yaml.safe_load((CALENDARS / name / "propers.yaml").read_text(encoding="utf-8"))
             keys = {
                 mass["key"]
-                for body in (source.get("sections") or {}).values()
+                for section, body in (source.get("sections") or {}).items()
+                if str((body or {}).get("kind") or section) != "common"
                 for mass in (body or {}).get("masses") or []
                 if isinstance(mass, dict) and mass.get("key")
             }
             emitted = json.loads((DATA / f"{name}.json").read_text(encoding="utf-8"))
             self.assertEqual(keys - set(emitted["keys"]), set(), f"{name}: unclassified masses")
+            commons = {
+                mass["key"]
+                for section, body in (source.get("sections") or {}).items()
+                if str((body or {}).get("kind") or section) == "common"
+                for mass in (body or {}).get("masses") or []
+                if isinstance(mass, dict) and mass.get("key")
+            }
+            self.assertEqual(
+                commons & set(emitted["keys"]), set(), f"{name}: a Common was classified"
+            )
 
     def test_every_basis_names_a_row_the_table_carries_or_declines_to_compete(self) -> None:
         for name in ("roman-1962", "postconciliar"):

@@ -191,6 +191,8 @@ EMITTED = (
 )
 
 PREDICATE_FIELDS = ("keys", "key_matches", "dated", "kind", "rank", "season")
+# The one section of a mass index that holds no celebrations; see `load_masses`.
+COMMON_KIND = "common"
 
 
 class SourceError(ValueError):
@@ -227,6 +229,13 @@ def load_masses(root: Path, name: str) -> dict[str, dict]:
         raise SourceError(f"{path}: top level must be a mapping")
     masses: dict[str, dict] = {}
     for section, body in sorted((document.get("sections") or {}).items()):
+        # The Commune Sanctorum is formularies, not days. A Common has no date,
+        # no season and no rank, it never occurs and never competes, and the
+        # rank and rubrics of a day that takes one are the day's own. Giving it
+        # an assignment basis would put a celebration in the precedence table
+        # that the calendar never keeps.
+        if str((body or {}).get("kind") or section) == COMMON_KIND:
+            continue
         for mass in (body or {}).get("masses") or []:
             if not isinstance(mass, dict) or not mass.get("key"):
                 continue
