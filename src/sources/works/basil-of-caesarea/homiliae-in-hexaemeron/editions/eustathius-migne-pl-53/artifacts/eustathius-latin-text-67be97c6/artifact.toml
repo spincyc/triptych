@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-latin-text-67be97c6"
+edition_id = "edition.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53"
+artifact_type = "web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The Latin of Eustathius's fifth-century version as printed by Migne in 1847, in the public domain by age of both the translation and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes."
+rights_jurisdiction = "United States"
+provenance = "Derived on 2026-08-01 from the hashed export above by the tracked script named in transformation. No model stood anywhere in the path: the bytes were fetched with curl, hashed, and transformed locally. The file holds 14 lines. Lines 1-3 are Eustathius's own title and dedicatory letter to Syncletica and are not Basil; the nine books stand at lines 4, 5, 6, 7-8, 9-10, 11, 12, 13 and 14 in order. Each line is prefixed by a braced locator giving the book and the chapter of the printing, and this printing subdivides no book, so every chapter number is 0."
+retrieved = "2026-08-01"
+sha256 = "67be97c6ecf2bc46652daf37a78eef2498b051cc7c9b58080e21620d26e1b73b"
+byte_size = 226980
+path = "src/sources/works/basil-of-caesarea/homiliae-in-hexaemeron/editions/eustathius-migne-pl-53/artifacts/eustathius-latin-text-67be97c6/eustathius-hexaemeron.txt"
+derived_from = "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-wikisource-export-25821064"
+transformation = "python3 scripts/migne_transcribe.py <export> --unit division --out eustathius-hexaemeron.txt, run over the exact bytes of the parent artifact. The script removes every wiki template whole by counting braces, the Patrologia Latina navigation line, the Corpus Corporum encoding note, categories, footnote bodies, comments, tags and wiki headings; unwraps links; folds typographic punctuation to ASCII; strips Migne's inline column markers; normalises to NFC; collapses runs of whitespace; and writes one LF-terminated UTF-8 line per source paragraph, prefixed by a braced book-and-chapter locator taken from the printing's own divisions."
+encoding = "utf-8"
+indexable = true
+notes = "Keyed text, not OCR. guidance/catena.md recorded that \"the unencumbered Latin is OCR wreckage and the clean Latin is encumbered\", measuring Migne PL 34's Internet Archive text layer at roughly one corrupted word in eight. That holds of the scan and not of this corpus: Latin Wikisource carries the University of Zurich's Corpus Corporum TEI encodings of Migne, keyed rather than scanned, under a stated CC BY-SA 4.0 markup licence over a public-domain printing. This is a transcription of a web witness of the 1847 printing and not a collation against the printed column, so no passage taken from it rises above inspected."

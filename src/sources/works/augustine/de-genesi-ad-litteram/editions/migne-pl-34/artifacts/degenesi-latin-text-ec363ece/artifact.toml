@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.augustine.de-genesi-ad-litteram.migne-pl-34.degenesi-latin-text-ec363ece"
+edition_id = "edition.augustine.de-genesi-ad-litteram.migne-pl-34"
+artifact_type = "web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Augustine's Latin as printed by Migne in 1841, in the public domain by age of both the text and the printing. No host's markup, navigation, headings, categories or column apparatus is reproduced, and the Corpus Corporum encoding note has been removed, so nothing of the contributors' or the encoder's own work survives in these bytes."
+rights_jurisdiction = "United States"
+provenance = "Derived on 2026-08-01 from the hashed export above by the tracked script named in transformation. No model stood anywhere in the path: the bytes were fetched with curl, hashed, and transformed locally. The file holds 360 lines, one per printed paragraph. Book I stands at lines 1-24, II at 25-42, III at 43-67, IV at 68-108, V at 109-133, VI at 134-166, VII at 167-202, VIII at 203-231, IX at 232-252, X at 253-277, XI at 278-321 and XII at 322-360. Each line is prefixed by a braced locator giving the book and the chapter of Migne's own division; chapter 0 is the running head and the Maurist argument that stand before the first chapter of a book."
+retrieved = "2026-08-01"
+sha256 = "ec363ece6c4919df05487a4c2f4084b57f49e98fbcc342f4f96c85f65612e1d0"
+byte_size = 679307
+path = "src/sources/works/augustine/de-genesi-ad-litteram/editions/migne-pl-34/artifacts/degenesi-latin-text-ec363ece/de-genesi-ad-litteram.txt"
+derived_from = "artifact.augustine.de-genesi-ad-litteram.migne-pl-34.degenesi-wikisource-export-d46cdc8e"
+transformation = "python3 scripts/migne_transcribe.py <export> --unit page --out de-genesi-ad-litteram.txt, run over the exact bytes of the parent artifact. The script removes every wiki template whole by counting braces, the Patrologia Latina navigation line, the Corpus Corporum encoding note, categories, footnote bodies, comments, tags and wiki headings; unwraps links; folds typographic punctuation to ASCII; strips Migne's inline column markers; normalises to NFC; collapses runs of whitespace; and writes one LF-terminated UTF-8 line per source paragraph, prefixed by a braced book-and-chapter locator taken from the printing's own CAPUT divisions."
+encoding = "utf-8"
+indexable = true
+notes = "Keyed text, not OCR, and that distinction is the whole finding here. guidance/catena.md records that Migne PL 34's Internet Archive text layer corrupts roughly one word in eight and concluded that \"the unencumbered Latin is OCR wreckage and the clean Latin is encumbered\". That is true of the scan and false of the volume: this is the University of Zurich's Corpus Corporum TEI encoding of the same columns, keyed rather than scanned, republished on Latin Wikisource under a stated CC BY-SA 4.0 markup licence over a public-domain printing. This is a transcription of a web witness of the 1841 printing and not a collation against the printed column, so no passage taken from it rises above inspected."

@@ -1,0 +1,15 @@
+schema = 1
+record_type = "work"
+id = "work.augustine.de-genesi-ad-litteram"
+title = "De Genesi ad litteram"
+responsible = "Augustine of Hippo"
+work_type = "biblical-commentary"
+alternate_titles = [
+  "De Genesi ad litteram libri duodecim",
+  "The Literal Meaning of Genesis",
+  "On Genesis according to the letter",
+  "Sur la Genese au sens litteral",
+]
+languages = ["lat"]
+locus_pattern = '(?:1[0-2]|[1-9])(?:\.[1-9][0-9]?)?'
+description = "Augustine's third and longest commentary on the opening of Genesis, written between about 401 and 415 and running to twelve books. It reaches Genesis 3 and no further: books I to III expound the six days, IV to IX the second chapter, and XI the fall, while X on the origin of souls and XII on paradise and the third heaven are excursuses the earlier books provoked. It is 'ad litteram' in Augustine's own sense of asking what happened rather than what it signifies, which he distinguishes in book I from the figurative reading he had given in De Genesi contra Manichaeos. Distinct from the abandoned De Genesi ad litteram imperfectus liber, which is a separate work and a separate record."
