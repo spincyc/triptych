@@ -1345,7 +1345,7 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
                     ),
                 },
             )
-            written.append(path)  # noqa: E501
+            written.append(path)
 
         index.append(
             {

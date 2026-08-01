@@ -1708,7 +1708,7 @@ release attachment, announcement, or promotion.
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `README.md` | `34f935c869fb50db51926eeceaec81335467ad179f8a04964a885b42238c359d` |
-| `THIRD_PARTY.md` | `829b6ecd62d8385f5c566e952f9e905e2ef1f652413c12e87a3d0a3dc812621b` |
+| `THIRD_PARTY.md` | `ebd94814a5d55ad8bcb94f08938ac42feb11e9c8e9cf438dc7c6ba92ba9102f2` |
 | `docs/bibles.md` | `f97601d14da975140e987cbcb405266dc3138b2739edddc1b0fda83290bb7b52` |
 | `docs/reading-and-commentary.md` | `b0861dd1b6ce0a81b62ab2158b20d093664381cc3c93d9e62f53cdb2b1a84e32` |
 | `docs/the-mass.md` | `f1aaf79816772c5ca1f3f169b6d6da64565b61228e9ebb69c235c8c70a22cf7d` |
@@ -1917,9 +1917,9 @@ release attachment, announcement, or promotion.
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/maniple.toml` | `f2f451ddc7c0b7a5bc01751411f99816818a58d6f7ff5ef58bc1221054c6a0ce` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/priest-stole.toml` | `5c3f574d850498a159c6f6d3909ec821194983227fae0d2ab316091f05667dec` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/tunicle.toml` | `c5783b74f453bf7206f001f79c4a30a2c2b5a46e0f14307340267843d1027520` |
-| `src/web/browser/catena/catena-model.js` | `b766ff4f92474eaaa212ad4503b416186fe173211749ce0ae392da6ca1040217` |
+| `src/web/browser/catena/catena-model.js` | `fa73984001ae9d8da3a500043119c31031cb828dc4c50115c9eaf2bb037a59d7` |
 | `src/web/browser/catena/catena.css` | `2397ecb79701cd92121a2a3334d005e7e710a6db765379a596d1c6ade4b5b476` |
-| `src/web/browser/catena/catena.js` | `967eed9c7b1aecf54dde6046785d62be8d95b5a49b11d7a1e9b6b74f1bd87aca` |
+| `src/web/browser/catena/catena.js` | `62be04cbc01d3d9f80d835ed183360af4fd4a2bff5c08b93159ac09e65b607b0` |
 | `src/web/browser/catena/index.html` | `46555fc652526ac7ab651e9aa3a8985b66efb4e28fe12c103d0dd078246a2ad1` |
 | `src/web/browser/history/history.css` | `25ed5ba0ae6fe7e373b46bb69dadbf1c90234f3324eaad1ff9f8e55e7760712b` |
 | `src/web/browser/history/history.js` | `d2dd2de2c2416b97e07eb3dd0ca73603767a28a2ac1d2d49a5694486451b6401` |

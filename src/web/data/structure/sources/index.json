@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 1427,
-  "editions": 636,
-  "passages": 1274,
-  "readable": 153,
-  "works": 479
+  "artifacts": 1451,
+  "editions": 643,
+  "passages": 2751,
+  "readable": 1630,
+  "works": 486
  },
  "facets": {
   "authors": [
@@ -22,6 +22,10 @@
     "works": 1
    },
    {
+    "id": "Alcuin of York",
+    "works": 1
+   },
+   {
     "id": "Alexander Roberts, James Donaldson, and A. Cleveland Coxe",
     "works": 5
    },
@@ -31,7 +35,7 @@
    },
    {
     "id": "Ambrose of Milan",
-    "works": 3
+    "works": 4
    },
    {
     "id": "Ambrosian liturgical tradition; digital handout publisher not identified in the PDF",
@@ -43,6 +47,10 @@
    },
    {
     "id": "André Jacob",
+    "works": 1
+   },
+   {
+    "id": "Angelomus of Luxeuil",
     "works": 1
    },
    {
@@ -148,6 +156,10 @@
    {
     "id": "Basil of Caesarea",
     "works": 2
+   },
+   {
+    "id": "Bede",
+    "works": 1
    },
    {
     "id": "Bede the Venerable",
@@ -543,7 +555,7 @@
    },
    {
     "id": "Jerome",
-    "works": 3
+    "works": 4
    },
    {
     "id": "Jim Uhls",
@@ -870,6 +882,10 @@
     "works": 1
    },
    {
+    "id": "Remigius of Auxerre",
+    "works": 1
+   },
+   {
     "id": "René-Jean Hesbert",
     "works": 1
    },
@@ -939,6 +955,10 @@
    },
    {
     "id": "Second Vatican Council, Doctrinal Commission",
+    "works": 1
+   },
+   {
+    "id": "Severian of Gabala",
     "works": 1
    },
    {
@@ -1081,7 +1101,7 @@
   "categories": [
    {
     "id": "biblical-commentary",
-    "works": 21
+    "works": 28
    },
    {
     "id": "patristic-translation-anthology",
@@ -2086,7 +2106,7 @@
     "id": "en"
    },
    {
-    "editions": 186,
+    "editions": 192,
     "id": "la"
    },
    {
@@ -2103,11 +2123,11 @@
    },
    {
     "editions": 12,
-    "id": "he"
+    "id": "grc"
    },
    {
-    "editions": 11,
-    "id": "grc"
+    "editions": 12,
+    "id": "he"
    },
    {
     "editions": 5,
@@ -2204,7 +2224,7 @@
     "label": "18th century"
    },
    {
-    "editions": 105,
+    "editions": 111,
     "id": "1800",
     "label": "19th century"
    },
@@ -2214,14 +2234,14 @@
     "label": "20th century"
    },
    {
-    "editions": 344,
+    "editions": 345,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 937,
+    "artifacts": 949,
     "id": "public-domain"
    },
    {
@@ -2233,7 +2253,7 @@
     "id": "unresolved"
    },
    {
-    "artifacts": 34,
+    "artifacts": 46,
     "id": "licensed"
    },
    {
@@ -2349,6 +2369,34 @@
     "en"
    ],
    "title": "The Ceremonies of the Roman Rite Described"
+  },
+  {
+   "alternate_titles": [
+    "Interrogationes et responsiones in Genesin",
+    "Questions and Answers on Genesis"
+   ],
+   "author": "Alcuin of York",
+   "category": "biblical-commentary",
+   "directory": "editions/alcuin-of-york/interrogationes-et-responsiones-in-genesim/",
+   "editions": [
+    {
+     "date": "1851",
+     "file": "1851-latin-migne-pl-100.json",
+     "id": "edition.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100",
+     "language": "la",
+     "passages": 281,
+     "readable": 281,
+     "rights": [
+      "public-domain"
+     ],
+     "year": 1851
+    }
+   ],
+   "id": "work.alcuin-of-york.interrogationes-et-responsiones-in-genesim",
+   "languages": [
+    "lat"
+   ],
+   "title": "Interrogationes et responsiones in Genesim"
   },
   {
    "alternate_titles": [
@@ -2565,6 +2613,36 @@
   },
   {
    "alternate_titles": [
+    "Hexaemeron",
+    "Exameron",
+    "Hexameron libri sex",
+    "Six Days of Creation"
+   ],
+   "author": "Ambrose of Milan",
+   "category": "biblical-commentary",
+   "directory": "editions/ambrose/hexameron/",
+   "editions": [
+    {
+     "date": "1845",
+     "file": "1845-latin-migne-pl-14.json",
+     "id": "edition.ambrose.hexameron.latin-migne-pl-14",
+     "language": "la",
+     "passages": 6,
+     "readable": 6,
+     "rights": [
+      "public-domain"
+     ],
+     "year": 1845
+    }
+   ],
+   "id": "work.ambrose.hexameron",
+   "languages": [
+    "lat"
+   ],
+   "title": "Hexameron"
+  },
+  {
+   "alternate_titles": [
     "Epistula 70",
     "Letter to the Church of Vercellae"
    ],
@@ -2668,6 +2746,35 @@
     "fr"
    ],
    "title": "Les euchologes du fonds Barberini grec"
+  },
+  {
+   "alternate_titles": [
+    "Commentarius in Genesin",
+    "Commentarii in Genesin",
+    "Enarrationes in Genesim"
+   ],
+   "author": "Angelomus of Luxeuil",
+   "category": "biblical-commentary",
+   "directory": "editions/angelomus-of-luxeuil/commentarius-in-genesim/",
+   "editions": [
+    {
+     "date": "1852",
+     "file": "1852-latin-migne-pl-115.json",
+     "id": "edition.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115",
+     "language": "la",
+     "passages": 254,
+     "readable": 254,
+     "rights": [
+      "public-domain"
+     ],
+     "year": 1852
+    }
+   ],
+   "id": "work.angelomus-of-luxeuil.commentarius-in-genesim",
+   "languages": [
+    "lat"
+   ],
+   "title": "Commentarius in Genesim"
   },
   {
    "alternate_titles": [
@@ -4034,6 +4141,36 @@
     "grc"
    ],
    "title": "Homiliae in Hexaemeron"
+  },
+  {
+   "alternate_titles": [
+    "Hexaemeron",
+    "Hexaemeron, sive libri quatuor in principium Genesis",
+    "In Genesim",
+    "On Genesis"
+   ],
+   "author": "Bede",
+   "category": "biblical-commentary",
+   "directory": "editions/bede/in-principium-genesis/",
+   "editions": [
+    {
+     "date": "1850",
+     "file": "1850-latin-migne-pl-91.json",
+     "id": "edition.bede.in-principium-genesis.latin-migne-pl-91",
+     "language": "la",
+     "passages": 315,
+     "readable": 315,
+     "rights": [
+      "public-domain"
+     ],
+     "year": 1850
+    }
+   ],
+   "id": "work.bede.in-principium-genesis",
+   "languages": [
+    "lat"
+   ],
+   "title": "In principium Genesis"
   },
   {
    "alternate_titles": [
@@ -9216,6 +9353,35 @@
    "title": "Letter 108"
   },
   {
+   "alternate_titles": [
+    "Quaestiones Hebraicae in Genesim",
+    "Liber Hebraicarum Quaestionum in Genesim",
+    "Hebrew Questions on Genesis"
+   ],
+   "author": "Jerome",
+   "category": "biblical-commentary",
+   "directory": "editions/jerome/quaestiones-hebraicae-in-genesim/",
+   "editions": [
+    {
+     "date": "1845",
+     "file": "1845-latin-vallarsi-migne-pl-23.json",
+     "id": "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23",
+     "language": "la",
+     "passages": 219,
+     "readable": 219,
+     "rights": [
+      "public-domain"
+     ],
+     "year": 1845
+    }
+   ],
+   "id": "work.jerome.quaestiones-hebraicae-in-genesim",
+   "languages": [
+    "lat"
+   ],
+   "title": "Liber quaestionum hebraicarum in Genesim"
+  },
+  {
    "alternate_titles": [],
    "author": "Jim Uhls",
    "category": "screenplay",
@@ -13460,6 +13626,35 @@
    "title": "Libri duo de synodalibus causis et disciplinis ecclesiasticis"
   },
   {
+   "alternate_titles": [
+    "Expositio super Genesim",
+    "Expositio Remigii super Bresith, id est super Genesim",
+    "Commentarium in Genesim"
+   ],
+   "author": "Remigius of Auxerre",
+   "category": "biblical-commentary",
+   "directory": "editions/remigius-of-auxerre/commentarius-in-genesim/",
+   "editions": [
+    {
+     "date": "1853",
+     "file": "1853-latin-migne-pl-131.json",
+     "id": "edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131",
+     "language": "la",
+     "passages": 396,
+     "readable": 396,
+     "rights": [
+      "public-domain"
+     ],
+     "year": 1853
+    }
+   ],
+   "id": "work.remigius-of-auxerre.commentarius-in-genesim",
+   "languages": [
+    "lat"
+   ],
+   "title": "Commentarius in Genesim"
+  },
+  {
    "alternate_titles": [],
    "author": "René-Jean Hesbert",
    "category": "critical-synoptic-edition",
@@ -15116,6 +15311,37 @@
     "la"
    ],
    "title": "Nota explicativa praevia"
+  },
+  {
+   "alternate_titles": [
+    "In cosmogoniam homiliae 1-6",
+    "Homiliae sex in mundi creationem",
+    "Εἰς τὴν κοσμοποιίαν",
+    "In mundi creationem orationes sex",
+    "Homilies on Creation"
+   ],
+   "author": "Severian of Gabala",
+   "category": "biblical-commentary",
+   "directory": "editions/severian-of-gabala/in-cosmogoniam-homiliae/",
+   "editions": [
+    {
+     "date": "2018",
+     "file": "2018-pta-grc1-2018.json",
+     "id": "edition.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018",
+     "language": "grc",
+     "passages": 6,
+     "readable": 6,
+     "rights": [
+      "licensed"
+     ],
+     "year": 2018
+    }
+   ],
+   "id": "work.severian-of-gabala.in-cosmogoniam-homiliae",
+   "languages": [
+    "grc"
+   ],
+   "title": "In cosmogoniam homiliae sex"
   },
   {
    "alternate_titles": [

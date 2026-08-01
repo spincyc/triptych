@@ -224,6 +224,13 @@ ALLOWED_FIELDS_V1 = {
         "rights_status",
         "rights_basis",
         "rights_jurisdiction",
+        # The licence identifier, where a `licensed` artifact carries one that
+        # names itself. `rights_status = "licensed"` says a licence governs the
+        # bytes and says nothing about what it permits: CC BY-SA 4.0 and CC
+        # BY-NC-ND 4.0 are the same status and opposite answers to "may this be
+        # republished". A consumer that has to decide reads this; prose cannot
+        # be read by a filter.
+        "license",
         "source_url",
         "provenance",
         "retrieved",
@@ -527,6 +534,7 @@ def _validate_strings(library: Library, record: Record) -> None:
         "rights_status",
         "rights_basis",
         "rights_jurisdiction",
+        "license",
         "source_url",
         "provenance",
         "retrieved",
@@ -2038,6 +2046,28 @@ def _validate_loci(library: Library) -> None:
                     break
 
 
+def _validate_artifact_licenses(library: Library) -> None:
+    """A licence identifier belongs only on bytes a licence actually governs.
+
+    `rights_status` says which kind of claim is being made and `license` says
+    which licence, and the second only makes sense under the first. Public-domain
+    bytes have no licence, and putting one on them would let a filter republish
+    something on a permission nobody granted.
+    """
+    for record in library.records.values():
+        if record.record_type != "artifact":
+            continue
+        identifier = record.data.get("license")
+        if identifier is None:
+            continue
+        status = record.data.get("rights_status")
+        if status not in {"licensed", "permission"}:
+            library.error(
+                record.path,
+                f"license requires rights_status licensed or permission, not {status!r}",
+            )
+
+
 def _validate_work_dates(library: Library) -> None:
     """A work's composition date must carry the ground it rests on.
 
@@ -2276,6 +2306,7 @@ def load_library(
     _validate_source_tree(library)
     _validate_loci(library)
     _validate_work_dates(library)
+    _validate_artifact_licenses(library)
     _validate_cycles(library)
     if check_binding_fingerprints:
         _validate_binding_fingerprints(library)
