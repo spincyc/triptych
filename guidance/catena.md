@@ -477,3 +477,67 @@ catenae, and the bulk availability and licensing of the patristic text corpora i
 in progress and will be folded in here. It is expected to bear chiefly on §2
 (addressing) and §6 (licence), and may replace the addressing scheme proposed
 here with a standard one, which would be a better outcome than keeping ours.
+
+---
+
+## 10. Coverage: what is held, against what the work reaches
+
+Everything above governs a fragment that exists. Nothing above governs the
+fragment that does not, and that is where the apparatus had a hole.
+
+The hole was found by eye rather than by a check. Augustine reaches Genesis 3
+and stops, which a reader noticed on the page and no gate had anything to say
+about. `catena check` reported 1,351 fragments and reported nothing whatever
+about where they are not: the harvest names works, acquisition lands what is
+reachable, and the two were never subtracted. *De Genesi ad litteram* holding
+12 fragments over Genesis 1–3 is that work being finished. *De civitate Dei*
+holding 3 over Genesis 1–2 is acquisition stopping, and the two were
+indistinguishable from anything the repository recorded.
+
+They are indistinguishable *in principle*, not for want of effort. The index
+and the fragments together cannot say how far a work goes; only the work can.
+So the extent is stored, once, per work and book, with its basis — the
+author's preface, the printing's own headings, or a second work written to
+supply what the first left undone — exactly as `composed` carries
+`composed_basis`.
+
+> **Rule 11.** A work's extent is recorded where it can be sourced, and the
+> coverage check subtracts it. Where it is not recorded the difference between
+> named and held is reported as **unexamined**, never as a gap. "We have not
+> established where this work ends" and "this work is missing" are different
+> claims and the record must be able to say which it is making.
+
+Four readings, and they must not collapse into one number:
+
+| Reading | What it means | What to do |
+| --- | --- | --- |
+| `complete` | the extent is recorded and held entire | nothing |
+| `gap` | chapters unheld inside a **continuous** work's extent | acquire |
+| `not-established` | chapters unheld inside a **selective** work's extent | read the printing before calling it anything |
+| `unexamined` | no extent recorded | establish the extent, and only then ask |
+
+Two consequences worth stating because both were decided against the obvious
+alternative.
+
+The extent lives *beside* the work record and not on it, in
+`src/sources/commentary/work-extents.yaml`. This is not tidiness. `work.toml`
+has a closed field set, and opening it moves that record's
+`source_fingerprint` and every fingerprint descending from it — measured at 53
+reviewed bindings across 17 tracked files for one Augustine record alone. §7
+already states the policy; `fragment-loci.yaml` already obeys it. The cost is
+that a work's prose `description` may also state its reach, and the guard
+against those two drifting is not discipline but a check: a recorded extent
+that a held fragment of the same work already reaches past is a hard failure,
+because either the extent is short or the fragment is misplaced and the
+subtraction reports a clean corpus either way.
+
+And a gap never fails the build. An unacquired work is not a defect, and a
+`check` that stayed red until someone had gone and got the rest of *De
+civitate Dei* is a `check` nobody could ship. What fails is the extent record
+being unusable. What *prints*, on every run, is the count — because the whole
+reason a work sat held on a sliver of itself was that every gate passed and
+none of them said anything about absence. `guidance/the-shape.md` §4: absence
+is data, and it has to have somewhere to live.
+
+`commentary-work-index coverage` is the verb; `make check-commentary-coverage`
+is the one line it prints into the build.

@@ -1,0 +1,204 @@
+# How far into a book each held commentary work actually reaches.
+#
+# WHY THIS EXISTS. The harvest names works, acquisition lands what is reachable,
+# and until this file nothing compared the two. `catena check` counted 1,351
+# fragments and said nothing about where they are not, so a work held on a
+# sliver of what it comments on passed every gate. It was found by eye, not by
+# the apparatus: Augustine reaches Genesis 3 and stops, and nothing anywhere
+# reported that De Genesi ad litteram stopping there is the work ending while
+# De civitate Dei stopping at Genesis 2 is the acquisition ending.
+#
+# That is the whole distinction this file exists to draw, and it cannot be
+# derived. A difference between what is named and what is held means nothing
+# until something states how far the work itself goes. Where that is recorded
+# here, `commentary-work-index coverage` subtracts it and what remains is a
+# work item. Where it is not, the difference is reported as UNEXAMINED rather
+# than as a defect, because "we have not established where this work ends" and
+# "this work is missing" are different claims and only one of them is true.
+#
+# WHY IT IS NOT A FIELD ON `work.toml`. Measured, not assumed. Appending one
+# field to `src/sources/works/augustine/de-civitate-dei/work.toml` produces
+#
+#     source-library error: work.toml: unknown fields: scripture_extent
+#
+# and, were the schema opened to admit it, moves that record's
+# `source_fingerprint` and every fingerprint descending from it: 53 reviewed
+# bindings across 17 tracked files would have to be re-reviewed to record a
+# fact about a book. `guidance/catena.md` §7 states the policy — new records
+# are cheap, edits to old ones are not — and `fragment-loci.yaml` sits beside
+# the passage records for the same reason. So does this.
+#
+# The cost of sitting beside rather than inside is that a work's prose
+# `description` may also state its extent, and two statements of one fact are a
+# disagreement waiting to happen (`guidance/the-shape.md` §2). This is the
+# machine-readable one and the only one anything reads. The guard against drift
+# is not prose discipline but `catena check`, which refuses any recorded extent
+# that a held fragment of the same work already reaches past.
+#
+# EACH EXTENT IS SOURCED. A work's extent is a claim about the book and carries
+# its basis exactly as `composed` carries `composed_basis`: the author's own
+# preface, the printing's own headings and book divisions, or a second work
+# written to supply what the first left undone. A basis that merely restates
+# this repository's own prose is not a basis. Where no such evidence is in
+# hand the row is ABSENT, and the coverage report says so — two works below are
+# absent for that reason and both are real work items.
+#
+# `within` says how to read a chapter inside the extent that holds nothing:
+#
+#   continuous  the work expounds its span straight through, so an unheld
+#               chapter inside the extent is a GAP — something was not landed.
+#   selective   the work addresses what its subject raises and passes over the
+#               rest, so an unheld chapter inside the extent is NOT ESTABLISHED:
+#               it may be the work's own silence. Reported, never counted as a
+#               defect.
+#
+# Numbering is canonical throughout, as Rule 3 requires of every address in
+# this project: chapters and verses are the Clementine Vulgate's, which is what
+# `_projection.CANONICAL` projects into.
+schema: triptych-commentary-work-extents/v1
+updated: '2026-08-01'
+numbering: vulgate
+extents:
+- work_id: work.ambrose.hexameron
+  token: Gen
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 2
+  last_verse: 3
+  within: continuous
+  basis: 'Six books, one to each day, and the printing heads them so: Migne runs
+    DE OPERE PRIMI DIEI through DE OPERE SEXTI DIEI across PL 14 coll. 133-288,
+    which prints all six entire. The sixth closes on the making of man and on the
+    rest that follows it, which is Genesis 2:2-3. Nothing in the six books expounds
+    the garden, the naming of the animals or the fall, so the work reaches 2:3 and
+    stops there rather than running into the second chapter.'
+- work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+  token: Gen
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 50
+  last_verse: 25
+  within: continuous
+  basis: 'A continuous commentary on the whole book, and Migne prints it with the
+    verse ranges the compiler himself set at the head of every block, so the extent
+    is the printing''s own statement rather than a judgement about it. PL 115 coll.
+    107-244 prints the commentary entire, and a commentary on the whole of Genesis
+    ends where Genesis ends. Continuous rather than selective: consecutive blocks
+    head consecutive verses, and where the CAPUT markers go stale the lemma still
+    runs on, which is why `scripts/_lemmata.py` reads the lemma and not the marker.
+    The last block held closes at 50:23; the extent is the book''s end because that
+    is what a commentary on the whole of it reaches.'
+- work_id: work.augustine.de-genesi-ad-litteram
+  token: Gen
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 3
+  last_verse: 24
+  within: continuous
+  basis: 'Twelve books, whose subjects the work''s own plan fixes and which
+    Augustine''s Retractationes account of it confirms: I-III expound the six days
+    of the first chapter, IV-IX the second, and XI the fall of the third, while X
+    on the origin of souls and XII on paradise and the third heaven are excursuses
+    the earlier books provoked rather than exposition of further chapters. It
+    reaches Genesis 3 and no further. This is the row that makes Genesis 4-50 not
+    a gap in this work, and it is why the same silence in De civitate Dei — which
+    has no row here — is a different thing.'
+- work_id: work.basil-of-caesarea.homiliae-in-hexaemeron
+  token: Gen
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 1
+  last_verse: 26
+  within: continuous
+  basis: 'Nine Lenten homilies on the six days, preached at Caesarea in 378. The
+    ninth breaks off before the creation of man, so the series expounds Genesis 1:1
+    to 1:26 and has no extent past that verse. The endpoint has independent
+    testimony rather than resting on the printing alone: Gregory of Nyssa wrote De
+    hominis opificio for their brother Peter expressly as the supplement this work
+    left undone, and says so, which fixes where it stops from outside it.'
+- work_id: work.bede.in-principium-genesis
+  token: Gen
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 21
+  last_verse: 10
+  within: continuous
+  basis: 'Bede''s dedicatory preface to Acca of Hexham says the work was first
+    carried only as far as Adam''s expulsion from paradise, in two books, and was
+    afterwards extended. The four-book redaction Migne prints at PL 91 coll. 9-190
+    runs from the first verse to the expulsion of Ishmael at Genesis 21:10 and
+    stops there; the preface''s account of the extension is why the four-book
+    endpoint and not the two-book one is the work''s reach.'
+- work_id: work.gregory-of-nyssa.de-hominis-opificio
+  token: Gen
+  first_chapter: 1
+  first_verse: 26
+  last_chapter: 1
+  last_verse: 27
+  within: continuous
+  basis: 'A treatise in thirty chapters on one divine utterance and its
+    accomplishment: "let us make man after our image and likeness" at Genesis 1:26,
+    and "God created man, in the image of God created he him; male and female
+    created he them" at 1:27. Written about 379 for his brother Peter as the
+    supplement Basil''s Hexaemeron left undone, which fixes where it begins and
+    that it is a treatise on those two verses rather than a commentary running past
+    them. The discovery index names it on Genesis 2 as well; nothing in the thirty
+    chapters expounds the garden, so that row is the index reaching past the work.'
+- work_id: work.jerome.quaestiones-hebraicae-in-genesim
+  token: Gen
+  first_chapter: 1
+  first_verse: 2
+  last_chapter: 49
+  last_verse: 32
+  within: selective
+  basis: 'Jerome''s own preface says what the book is: notes on what the Hebrew
+    raises, written for no eloquence, and not a commentary. The questions run from
+    Genesis 1:2 to Genesis 49 and pass over whatever raises nothing in the Hebrew,
+    which is most of the book — which is why this row is selective and a chapter
+    inside the span holding nothing is the work''s own silence rather than an
+    unread page. The endpoint is stated to the chapter and not to the verse, so the
+    last verse is the chapter''s; the last question held is on 49:27. PL 23 coll.
+    935-1010, reprinting Vallarsi and Maffei''s Verona edition of 1767.'
+- work_id: work.martin-luther.lectures-on-genesis
+  token: Gen
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 50
+  last_verse: 25
+  within: continuous
+  basis: 'The lectures were delivered at Wittenberg between 1535 and 1545 and run
+    the whole book from the creation to the death of Joseph; they are the last and
+    longest of Luther''s exegetical courses and the printed text of 1544-1554 keeps
+    that whole extent. The extent recorded here is the WORK''S, and the difference
+    it exposes is an edition boundary rather than a hole in this work: Lenker''s
+    Minneapolis 1904 translation, the only edition held, prints volumes I and II
+    alone — volume I breaks off inside Genesis 4 and volume II closes at 9:29. The
+    forty-one chapters this work reaches and this project does not hold are
+    unpublished in that translation, not unread in it.'
+- work_id: work.remigius-of-auxerre.commentarius-in-genesim
+  token: Gen
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 50
+  last_verse: 25
+  within: continuous
+  basis: 'A schoolmaster''s continuous gloss, one to a phrase, over the whole book.
+    It opens on Jerome''s prologue rather than on Genesis 1, because the prologue
+    is what a reader of the Vulgate meets first, and it runs to the last verse of
+    Genesis 50. PL 131 coll. 51-134 prints it entire, and the held fragments reach
+    50:25, so the extent and the holding agree at both ends.'
+- work_id: work.severian-of-gabala.in-cosmogoniam-homiliae
+  token: Gen
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 3
+  last_verse: 24
+  within: continuous
+  basis: 'Six homilies, and all six are held. The sixth is titled on the
+    first-formed, the serpent, the tree of knowledge and the sojourn in paradise,
+    and opens by saying that the subject of paradise begun in the fifth will now be
+    finished; the series closes at the end of Genesis 3 and there is no seventh.
+    The Patristic Text Archive''s Greek is Sever J. Voicu''s transcription of PG 56
+    coll. 429-500, which prints the six entire. Their numbering does not answer the
+    days one for one, which bears on each fragment''s extent and not on the
+    series''s reach.'

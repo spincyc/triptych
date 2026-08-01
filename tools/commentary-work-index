@@ -7,9 +7,20 @@ Usage:
   commentary-work-index build-corpus [--discovery PATH] [--root DIR]
     [--calendar CALENDAR ...] [--max-results-per-mass N]
     [--max-results-per-passage N] [--output PATH]
+  commentary-work-index coverage [--book TOKEN] [--all]
 
 This tool does not invoke external search agents. It works from curated mapping
 records in `--discovery`, and returns ranked work metadata for each passage.
+
+`coverage` asks the same question of what is HELD rather than of what is named:
+for every work acquisition has begun on, which chapters of a book are landed
+and which are not. It lives here rather than beside the fragment edge because
+this tool's whole subject is which works comment where, and because a verb in
+`scripts/` is registered nowhere, is reachable through no launcher, and — the
+deciding reason — is never replayed: `scripts/replay_examples.py` walks
+`tools/` alone, so a transcript recorded anywhere else is a claim nothing
+checks. The derivation itself stays in `scripts/_coverage.py`, where the index
+and the fragments already meet.
 
 The index and the propers speak two key spaces: the index is keyed one chapter
 at a time and a proper cites a verse range. A lookup therefore builds its key
@@ -33,6 +44,7 @@ from typing import Any, NamedTuple
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+import _coverage
 from _commentary import (
     UNRECORDED,
     chapter_loci,
@@ -85,6 +97,35 @@ EXAMPLES = {
             "a refusal is a result: the index holds a Joel 3 row and says it is not this canon's Joel 3",
         ),
     ),
+    "coverage": (
+        Example(
+            "tools/commentary-work-index coverage",
+            (
+                "coverage: 12 works held, 13 work-and-book pairs, 60 chapters not held",
+                "  gap 2 \u00b7 unexamined 3 \u00b7 not-established 1 \u00b7 complete 7 \u00b7 extents recorded 10 of 13",
+                "",
+                "  1. Martin Luther \u2014 Enarrationes in Genesin \u00b7 Genesis  [gap, 41 of 50 chapters not held]",
+                "     named on 14 \u00b7 held on 9 \u00b7 10 fragments \u00b7 extent 1:1-50:25 continuous",
+                "     not held: 10-50",
+                "     acquisition stopped inside the work's own extent",
+                "... 24 more lines",
+            ),
+            "ranked by how much is missing; a gap is a work item, never a build failure",
+        ),
+        Example(
+            "tools/commentary-work-index coverage --book Luke",
+            (
+                "coverage: 1 work held, 1 work-and-book pair, 1 chapter not held",
+                "  unexamined 1 \u00b7 extents recorded 0 of 1",
+                "",
+                "  1. Augustine of Hippo \u2014 De civitate Dei \u00b7 Luke  [unexamined, 1 of 24 chapters not held]",
+                "     named on 1 \u00b7 held on 0 \u00b7 0 fragments \u00b7 extent unrecorded",
+                "     not held: 21",
+                "     no extent recorded, so nothing can say whether this is a gap",
+            ),
+            "the cheapest kind of win: a work already acquired, named on a second book, nothing landed there",
+        ),
+    ),
     "build-corpus": (
         Example(
             "tools/commentary-work-index discover --passage 'John 3:16' --max-results 2",
@@ -100,9 +141,9 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml",
             (
-                "masses: 124 covered of 124",
-                "total works in union corpus: 129",
-                "unresolved passages: 3",
+                "masses: 277 covered of 277",
+                "total works in union corpus: 172",
+                "unresolved passages: 83",
                 "refused loci: 0",
                 "",
                 "roman-1962::advent-1 [seasonal] -> 20 works",
@@ -1006,6 +1047,10 @@ def _render_payload(
                     print(f"      source hint: {work['source_hint']}")
         return None
 
+    if payload.get("totals") is not None:
+        _render_coverage(payload)
+        return None
+
     if payload.get("masses") is not None:
         print(
             f"masses: {payload['covered_mass_count']} covered"
@@ -1032,6 +1077,79 @@ def _render_payload(
                 f"… and {len(payload['masses']) - 20} more masses (full output in YAML/JSON)"
             )
     return None
+
+
+def _ranges(numbers: list[int]) -> str:
+    """Consecutive chapters as ranges. Forty-one bare numbers are a wall, not a report."""
+    if not numbers:
+        return "—"
+    spans: list[tuple[int, int]] = []
+    for number in numbers:
+        if spans and number == spans[-1][1] + 1:
+            spans[-1] = (spans[-1][0], number)
+        else:
+            spans.append((number, number))
+    return ", ".join(
+        str(first) if first == last else f"{first}-{last}" for first, last in spans
+    )
+
+
+def _plural(count: int, singular: str, plural: str) -> str:
+    return f"{count} {singular if count == 1 else plural}"
+
+
+def _render_coverage(payload: dict[str, Any]) -> None:
+    totals = payload["totals"]
+    by_status = totals["by_status"]
+    print(
+        f"coverage: {_plural(totals['works'], 'work', 'works')} held, "
+        f"{_plural(totals['rows'], 'work-and-book pair', 'work-and-book pairs')}, "
+        f"{_plural(totals['chapters_missing'], 'chapter', 'chapters')} not held"
+    )
+    print(
+        "  "
+        + " · ".join(
+            f"{status} {count}" for status, count in by_status.items() if count
+        )
+        + f" · extents recorded {totals['extents_recorded']}"
+        f" of {totals['rows']}"
+    )
+    shown = payload["rows"]
+    if not shown:
+        print()
+        print("  nothing to act on: every held work covers its recorded extent")
+        return
+    print()
+    for ordinal, row in enumerate(shown, start=1):
+        label = f"{row['author']} — {row['work']}" if row["author"] else row["work_id"]
+        print(
+            f"{ordinal:>3}. {label} · {row['book']}"
+            f"  [{row['status']}, {len(row['missing'])} of "
+            f"{row['chapters_in_book']} chapters not held]"
+        )
+        extent = row["extent"]
+        stated = (
+            f"{extent['first_chapter']}:{extent['first_verse']}-"
+            f"{extent['last_chapter']}:{extent['last_verse']} {extent['within']}"
+            if extent
+            else "unrecorded"
+        )
+        print(
+            f"     named on {len(row['named'])} · held on {len(row['held'])}"
+            f" · {_plural(row['fragments'], 'fragment', 'fragments')}"
+            f" · extent {stated}"
+        )
+        if row["missing"]:
+            print(f"     not held: {_ranges(row['missing'])}")
+        if row["named_beyond_extent"]:
+            # The index and the extent disagree about the work's reach. One of
+            # them is wrong and the row says which two claims to compare rather
+            # than silently preferring either.
+            print(
+                f"     named beyond the recorded extent: "
+                f"{_ranges(row['named_beyond_extent'])}"
+            )
+        print(f"     {row['note']}")
 
 
 def _select_output_format(arguments: argparse.Namespace) -> str:
@@ -1248,6 +1366,45 @@ def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
     return payload
 
 
+def run_coverage(arguments: argparse.Namespace) -> dict[str, Any]:
+    """Where a held work is not held, ranked by how much is missing.
+
+    The extent record is validated before it is subtracted, and an invalid one
+    is a refusal rather than a report: subtracting a boundary that contradicts
+    a held fragment would return a clean corpus whichever of the two is wrong.
+    A GAP never sets `status` to anything but `ok` — an unacquired work is not
+    a defect, and the count is a work item rather than a build failure.
+    """
+    errors = _coverage.validate()
+    if errors:
+        return {
+            "schema": _coverage.REPORT_SCHEMA,
+            "status": "invalid",
+            "errors": errors,
+            "totals": {
+                "works": 0,
+                "rows": 0,
+                "by_status": {},
+                "chapters_missing": 0,
+                "extents_recorded": 0,
+                "extents_unrecorded": 0,
+            },
+            "rows": [],
+        }
+    report = _coverage.coverage(token=arguments.book)
+    if not arguments.all_rows:
+        # A row with nothing missing and nothing disputed carries no work item,
+        # and printing it is the noise the report was asked to avoid. The totals
+        # above still count it, so nothing is hidden — only unlisted.
+        report["rows"] = [
+            row
+            for row in report["rows"]
+            if row["missing"] or row["named_beyond_extent"]
+        ]
+    report["status"] = "ok"
+    return report
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="commentary-work-index",
@@ -1352,7 +1509,29 @@ def main(argv: list[str] | None = None) -> int:
         help=f"write corpus output (default: {DEFAULT_CORPUS_PATH})",
     )
 
+    cover = with_examples(
+        sub.add_parser(
+            "coverage",
+            help="Report where a held work is not held, and whether that is expected.",
+            parents=[shared],
+        ),
+        EXAMPLES["coverage"],
+    )
+    cover.add_argument(
+        "--book",
+        default=None,
+        help="restrict to one canonical book token, such as Gen",
+    )
+    cover.add_argument(
+        "--all",
+        dest="all_rows",
+        action="store_true",
+        help="list every (work, book) pair, including those with nothing missing",
+    )
+
     def dispatch(arguments: argparse.Namespace):
+        if arguments.command == "coverage":
+            return run_coverage(arguments)
         if arguments.command == "discover":
             citations = _load_citations_tool()
             return run_discover(arguments, citations)
@@ -1371,6 +1550,7 @@ def main(argv: list[str] | None = None) -> int:
         handlers={
             "discover": dispatch,
             "build-corpus": dispatch,
+            "coverage": dispatch,
         },
         renderer=render,
         prefix="commentary-work-index",

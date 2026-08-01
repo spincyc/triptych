@@ -710,7 +710,7 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
 	check-public-alpha check-release-bindings check-tool-registry \
 	check-calendar-masses check-calendar-rubrics check-propers-census \
-	check-mass-ordinary check-catena check-examples
+	check-mass-ordinary check-catena check-commentary-coverage check-examples
 
 # Every tool carries a table of captured invocations, and until this target
 # existed nothing ran one: the registry test counted lines beginning with a
@@ -782,6 +782,25 @@ check-catena:
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) scripts/_catena.py check; \
 	else echo "PyYAML missing; skipping catena check"; fi
+
+# A GAP NEVER FAILS THIS. An unacquired work is not a defect, and a build that
+# refused to go green until someone had gone and got the rest of De civitate Dei
+# would be a build nobody could ship. What fails is the extent RECORD being
+# unusable — a row naming no work, an extent past the end of a book, or an
+# extent a held fragment of the same work already reaches past, which means one
+# of the two is wrong and subtracting either from the other reports a clean
+# corpus regardless.
+#
+# But it prints on every run, because the whole reason De civitate Dei sat held
+# on Genesis 1-2 while its fifteenth book expounds Cain and Abel was that every
+# gate passed and none of them said anything about where the fragments were not.
+# `guidance/the-shape.md` §4: absence is data and has to have somewhere to live.
+# The line names the verb that expands it rather than listing the works, so the
+# summary stays one line and the detail stays one command away.
+check-commentary-coverage:
+	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
+		$(PYTHON) scripts/_coverage.py; \
+	else echo "PyYAML missing; skipping commentary coverage"; fi
 
 check-tests:
 	@$(PYTHON) -m unittest discover -s tools/tests

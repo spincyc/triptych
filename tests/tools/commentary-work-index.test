@@ -359,6 +359,49 @@ if [ -e "$sandbox/src" ]; then
 fi
 
 # ---------------------------------------------------------------------------
+# coverage reads the repository's own records and writes nothing.
+#
+# Its sources are the discovery index, the fragment edge and the extent record,
+# all resolved from the tool's own location, so like discover above it has to
+# work from a scratch directory with no `src/` under it at all. The assertions
+# below are about the SHAPE of the answer, not about today's corpus: a count
+# asserted here would fail every time a fragment landed, which is the opposite
+# of what a smoke test is for.
+out="$(run_tool coverage --json)"
+contains '"status":"ok"' "$out" "coverage"
+contains '"schema":"triptych-commentary-coverage/v1"' "$out" "coverage schema"
+contains '"numbering":"vulgate"' "$out" "coverage anchors canonically"
+# Every one of the four readings must survive into the payload vocabulary.
+contains '"gap"' "$out" "coverage keeps the gap reading"
+contains '"unexamined"' "$out" "coverage keeps the unexamined reading"
+contains '"not-established"' "$out" "coverage keeps the selective reading"
+contains '"complete"' "$out" "coverage keeps the complete reading"
+
+# A gap is a work item, not a failure: the verb exits 0 with gaps present.
+run_tool coverage >/dev/null
+
+# --book narrows to one canonical token, and an unknown one is empty rather
+# than an error: nothing is held there, which is a true answer.
+out="$(run_tool coverage --book Gen --json)"
+contains '"token":"Gen"' "$out" "coverage --book narrows"
+lacks '"token":"Luke"' "$out" "coverage --book excludes other books"
+
+# coverage carries no clock: it is byte-stable.
+run_tool coverage --json >"$sandbox/coverage-first"
+run_tool coverage --json >"$sandbox/coverage-second"
+if ! cmp -s "$sandbox/coverage-first" "$sandbox/coverage-second"; then
+	echo "coverage output is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# It is read-only. Nothing under the scratch directory grew a src/ tree, and
+# the repository's own records are untouched by a report about them.
+if [ -e "$sandbox/src" ]; then
+	echo "coverage wrote into the working directory" >&2
+	exit 1
+fi
+
+# ---------------------------------------------------------------------------
 # Negative cases: bad input is refused, never guessed at.
 reject "unknown verb" bogus
 reject "discover with no passage input" discover --discovery "$sandbox/discovery.yaml"
