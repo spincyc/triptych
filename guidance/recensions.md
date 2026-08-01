@@ -3,7 +3,7 @@
 A design study for carrying more than one state of the same rite — the Roman
 Missal as it stood before the Holy Week reform of 1955, and the 1962 typical
 edition as a revision applied on top of it — without holding two copies of the
-eighty-seven per cent they share.
+great majority they share.
 
 **The base is the pre-1955 book.** That is the maintainer's ruling of
 2026-07-31, and it is the direction the rite actually ran: the older book is not
@@ -60,23 +60,26 @@ distinction that turns a good witness into a generator of phantom absences.
 ## 2. The mechanics are already free; the duplication is the whole problem
 
 `scripts/_calendars.partition` discovers calendars by walking
-`src/sources/calendars/*/` and keying on the directory name [verified]. Nothing
+`src/sources/calendars/` and dispatching on each file's **declared schema**,
+filtering by directory name only when one calendar is asked for [verified]. Nothing
 is fixed at two. A third directory would be found by `calendar-days`,
 `calendar-spine`, `calendar-rubrics`, the census, the harvest corpus and the
 browser's missal control without any of them being told.
 
-What is not free is the data. Measured against `roman-1962/propers.yaml`
-[verified]:
+What is not free is the data. This section used to carry its own count of
+`roman-1962/propers.yaml` — 460 masses and 1,378 propers, marked [verified] —
+and both figures have since drifted well past a rounding error; the derived
+census in `guidance/propers-for-agents.md` reports the current ones and is the
+only place they are stated. **The ratio below has not been re-derived against
+them, and the Passiontide subset it rests on was never reproducible from the
+figures printed beside it**, so treat the percentage as an order of magnitude
+and re-derive before quoting it. That this section restated a census at all is
+the defect §2 of `the-shape.md` describes, committed by the document arguing
+against it.
 
-| | count |
-| --- | --- |
-| masses | 460 |
-| propers | 1,378 |
-| Passiontide and Holy Week | 16 masses, **172 propers** |
-| the four Triduum liturgies alone | 91 propers |
-
-**A pre-1955 recension departs in roughly 12.5 per cent of the book.** Copying
-1,378 propers to change 172 leaves 1,206 duplicated, and this repository's
+**A pre-1955 recension departs in something on the order of a tenth of the
+book.** Copying every proper to change that tenth leaves the rest duplicated,
+and this repository's
 standing rule exists because copies drift: on one day it found three disagreeing
 copies of one census, an edition string written out four times, a README
 restating its own table differently, and a release manifest attesting a hash that
@@ -88,8 +91,8 @@ the largest such copy in the tree.
 
 ### The text we hold was read from the newer book, and that does not have to move
 
-Making the pre-1955 book the base raises an obvious objection: all 1,378 propers
-now in the tree were transcribed from the 1962 typical edition and collated
+Making the pre-1955 book the base raises an obvious objection: every proper now
+in the tree was transcribed from the 1962 typical edition and collated
 against it, and relabelling them as though they had been read from a pre-reform
 printing would be a false provenance claim — the exact defect class this
 repository spends its effort catching.
@@ -130,8 +133,8 @@ rather than how large the edition is.
 
 A recension is the same instrument pointed at a calendar. It declares its base
 and records only where it departs, so the shared year has exactly one home and
-the diff *is* the document — about 172 rows instead of 1,378, and no possibility
-of the shared 1,206 disagreeing with itself.
+the diff *is* the document — the departures alone instead of the whole book, and
+no possibility of the shared remainder disagreeing with itself.
 
 The vocabulary a departure needs is wider than the projection's, because a
 calendar can differ in ways a numbering cannot:
