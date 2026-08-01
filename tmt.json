@@ -233,6 +233,21 @@
       "stage": "draft",
       "usage": "mass-propers [--root DIR] [--calendar NAME] [--mass KEY] {show,list,structure,census} [--format {text,yaml,json}] [--out DIR] [--write|--check]"
     },
+    "mass-today": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Print the Mass appointed for a date, with its propers and Ordinary.",
+      "requires": [
+        "calendar-days",
+        "mass-ordinary",
+        "mass-propers"
+      ],
+      "stage": "draft",
+      "usage": "mass-today show [--date ISO] [--calendar NAME] [--ordinary] [--why] [--format {text,yaml,json}]"
+    },
     "pdf-review": {
       "idempotent": true,
       "json": false,
