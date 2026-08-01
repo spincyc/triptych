@@ -186,18 +186,21 @@ open_collation_items:
   src/sources/inventories/roman-1962-sanctoral-commons-v1.toml, which carries
   148 pointers keyed by page, by column and by the printed saint's name, with
   the method, the four corroborations and the reason each unlanded row is
-  unlanded. Five are landed here - In Dedicatione S. Mariae ad Nives, In
-  Dedicatione Basilicarum Ss. Petri et Pauli, and the commemoration of
-  S. Pontiani, each of which the Missal gives the whole Mass of a Common with
-  no oration of its own; and S. Bibianae and S. Elisabeth, whose own Collect the
-  Missal substitutes and which is transcribed beside the reference. All five
-  were read on the facsimile page image, not on its text layer. The other 143
-  are recovered and not landed, and the record says why for each - 87 because
-  the day prints orations this repository has not transcribed and the Common's
-  beati N. would stand in their place, 12 because the day carries several
-  pointers or one under a seasonal condition this schema cannot express, 2
-  because the day could not be attached to an entry, and 42 for no reason but
-  that nobody has yet read the page image
+  unlanded. Thirteen are landed here, off six page images - nine days the Missal
+  gives the whole Mass of a Common with no oration proper to them, and four
+  whose own Collect it substitutes, transcribed beside the reference. Reading
+  the images also recovered the letter the Missal prints beside each oration
+  heading, C for of the Common and P for proper to the day, with a numeral
+  saying which of the Common's sets; S. Bedae is marked C 2 under a pointer
+  naming only de Communi Doctorum [22], and C 2 is the set pro Doctore non
+  Pontifice, so the bracket alone would have given a Doctor who was not a bishop
+  the bishop's Secret and Postcommunion. The other 135 are recovered and not
+  landed, and the record says why for each - 85 because the day prints orations
+  this repository has not transcribed and the Common's beati N. would stand in
+  their place, 12 because the day carries several pointers or one under a
+  seasonal condition this schema cannot express, 2 because the day could not be
+  attached to an entry, and 36 for no reason but that nobody has yet read the
+  page image
 - the two forms of a Common are two masses here, the second taking the first and
   replacing only the propers that differ, because a mass printed in forms cannot
   carry takes_from and a form cannot reference its sibling. Where a Common prints
@@ -16955,36 +16958,50 @@ sections:
       date: 02-06
       rank: Comm.
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: A commemoration to which the Missal gives the whole second Mass of the
+        Common of Virgins, printing no oration of its own. Read on 2026-08-01 from the
+        page image of the CMAA facsimile at printed p. 472 (digital p. 553).
+      takes_from:
+        mass: commune-virginum-2
+        citation: Missa Me exspectaverunt, de Communi Virginum II loco [30]
     - key: s-romualdi-abbatis
       name: S. Romualdi Abbatis
       registry: '1962-02-07'
       date: 02-07
       rank: III
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: The Missal gives this day the whole Mass of the Common of Abbots. It prints
+        the three orations under the day for convenience and marks each C, of the
+        Common, so none is proper to the saint. Read on 2026-08-01 from the page image
+        of the CMAA facsimile at printed p. 472 (digital p. 553).
+      takes_from:
+        mass: commune-abbatum
+        citation: Missa Os iusti, de Communi Abbatum [27]
     - key: s-ioannis-matha-confessoris
       name: S. Ioannis de Matha Confessoris
       registry: '1962-02-08'
       date: 02-08
       rank: III
       kind: sanctoral
+      notes: The Missal gives this day the first Mass of the Common of a Confessor not a
+        Bishop except for the Collect, which it prints in full and which is transcribed
+        below; its Secret and Postcommunion are marked C, of the Common. Both were read
+        on 2026-08-01 from the page image of the CMAA facsimile at printed p. 472
+        (digital p. 553). The orthography is this file’s, not the typica’s.
+      takes_from:
+        mass: commune-confessoris-non-pontificis-1
+        citation: Missa Os iusti, de Communi Confessoris non Pontificis I loco [24],
+          praeter orationem sequentem
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui per sanctum Joannem
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 472, no. 2152, marked P.
+        text: |
+          Deus, qui per sanctum Joannem Ordinem sanctissimae Trinitatis ad redimendum
+          de potestate Saracenorum captivos caelitus instituere dignatus es: praesta,
+          quaesumus; ut, ejus suffragantibus meritis, a captivitate corporis et
+          animae, te adjuvante, liberemur. Per Dominum nostrum.
     - key: s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae
       name: S. Cyrilli Episcopi Alexandrini, Confessoris et Ecclesiae Doctoris
       registry: '1962-02-09'
@@ -20305,36 +20322,52 @@ sections:
       date: 05-26
       rank: Comm.
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: A commemoration to which the Missal gives the whole Mass of the Common of
+        Supreme Pontiffs, printing no oration of its own. Read on 2026-08-01 from the
+        page image of the CMAA facsimile at printed p. 537 (digital p. 618).
+      takes_from:
+        mass: commune-summorum-pontificum
+        citation: Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum
+          [1]
     - key: s-bedae-venerabilis-confessoris-ecclesiae-doctoris
       name: S. Bedae Venerabilis Confessoris et Ecclesiae Doctoris
       registry: '1962-05-27'
       date: 05-27
       rank: III
       kind: sanctoral
+      notes: The Missal names the Common of Doctors without saying which of its two sets
+        of orations, and marks this day’s Secret and Postcommunion C 2 - of the Common,
+        second set - which is the form pro Doctore non Pontifice, the saint not having
+        been a bishop. The reference is therefore to that entry and not to the Doctor
+        Bishop’s. The Collect, marked P, is transcribed below. Read on 2026-08-01 from
+        the page image of the CMAA facsimile at printed p. 537 (digital p. 618).
+      takes_from:
+        mass: commune-doctorum-non-pontificis
+        citation: Missa In medio, de Communi Doctorum [22], praeter orationem sequentem
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui Ecclesiam tuam
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 537, no. 2658, marked P.
+        text: |
+          Deus, qui Ecclesiam tuam beati Bedae Confessoris tui atque Doctoris
+          eruditione clarificas: concede propitius famulis tuis; ejus semper
+          illustrari sapientia et meritis adjuvari. Per Dominum nostrum.
     - key: comm-s-ioannis-i-papae-martyris
       name: Comm. S. Ioannis I Papae et Martyris
       registry: '1962-05-27-comm'
       date: 05-27
       rank: Comm.
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: A commemoration whose own Collect the Missal prints under the Mass of S.
+        Bedae on the same page, and whose Secret and Postcommunion it prints there
+        headed Pro S. Ioanne; its own entry appoints the Mass of the Common and nothing
+        else, and those three orations are not transcribed here. Read on 2026-08-01 from
+        the page image of the CMAA facsimile at printed p. 537 (digital p. 618).
+      takes_from:
+        mass: commune-summorum-pontificum
+        citation: Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum
+          [1]
     - key: s-augustini-episcopi-confessoris
       name: S. Augustini Episcopi et Confessoris
       registry: '1962-05-28'
@@ -23762,24 +23795,25 @@ sections:
       date: 07-23
       rank: Comm.
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: A commemoration to which the Missal gives the whole first Mass of the
+        Common of a Confessor Bishop, printing no oration of its own. Read on 2026-08-01
+        from the page image of the CMAA facsimile at printed p. 600 (digital p. 681).
+      takes_from:
+        mass: commune-confessoris-pontificis-1
+        citation: Missa Statuit, de Communi Confessoris Pontificis I loco [19]
     - key: comm-s-christinae-virginis-martyris
       name: Comm. S. Christinae Virginis et Martyris
       registry: '1962-07-24'
       date: 07-24
       rank: Comm.
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: The Missal gives this day the whole second Mass of the Common of Virgins.
+        It prints the three orations under the day for convenience and marks each C, of
+        the Common, so none is proper to the saint. Read on 2026-08-01 from the page
+        image of the CMAA facsimile at printed p. 600 (digital p. 681).
+      takes_from:
+        mass: commune-virginum-2
+        citation: Missa Me exspectaverunt, de Communi Virginum II loco [30]
     - key: s-iacobi-apostoli
       name: S. Iacobi Apostoli
       registry: '1962-07-25'

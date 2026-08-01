@@ -1,8 +1,8 @@
 # Which Mass of the Commune Sanctorum each day of the 1962 Proprium Sanctorum
 # takes, as the Missal itself prints it.
 #
-# A recovery, not a landing. Five of these rows are in
-# src/sources/calendars/roman-1962/propers.yaml; the other 143 are not, and this
+# A recovery, not a landing. Thirteen of these rows are in
+# src/sources/calendars/roman-1962/propers.yaml; the other 135 are not, and this
 # file exists so that the reading does not have to be done a fourth time and so
 # that each row can be checked before it is used.
 #
@@ -61,8 +61,17 @@ Four checks, each independent of the extraction:
   book. Exactly one fell out of order -- S. Caeciliae, whose `Die 22 novembris`
   the scan reads as `Die 12` -- and it is not in this file.
 
-  THE PAGE IMAGE. Five rows were rendered at 140 dpi and read. Those five are
-  the only ones marked `landed`.
+  THE PAGE IMAGE. Six pages were rendered at 140 dpi and read, settling
+  thirteen rows. Those thirteen are the only ones marked `landed`. Reading the
+  image also settled two things the text layer could not: the letter C or P the
+  Missal prints beside each oration heading, which says whether that oration is
+  of the Common or proper to the day, and the numeral after it, which says
+  WHICH set of the Common's orations. S. Bedae is marked C 2 under a pointer
+  that names only `de Communi Doctorum [22]`, and C 2 is the set pro Doctore
+  non Pontifice; landing the bracket alone would have given a Doctor who was
+  not a bishop the bishop's Secret and Postcommunion. The letters survive OCR
+  in about a quarter of cases, so they are a reason to read the image, not a
+  substitute for reading it.
 """
 
 what_blocks_the_rest = """
@@ -74,19 +83,20 @@ serve the Common's `beati N.` under the saint's name, in place of the prayer the
 book prints for him. That is the same defect in a smaller costume, so the rows
 are held.
 
-  87 rows  the day prints orations of its own
+  85 rows  the day prints orations of its own
   12 rows  the day carries several pointers, or one under a seasonal condition
            this schema cannot express (`Tempore paschali ... Extra tempus
            paschale ...`)
    2 rows  the day could not be attached to an entry, or its rubric was not
            recognised
-  42 rows  nothing blocks them but that no one has read the page image yet
-   5 rows  landed, two of them with the day's own Collect transcribed from the
+  36 rows  nothing blocks them but that no one has read the page image yet
+  13 rows  landed, four of them with the day's own Collect transcribed from the
            same image
 
-The 42 are the cheapest remaining work in this file: each is a page image, a
-reading, and a two-line reference. The 87 are the next cheapest, and each is
-one Collect or three orations off a page this file already names.
+The 36 are the cheapest remaining work in this file: each is a page image, a
+reading, and a two-line reference, and one image often settles two or three
+days. The 85 are the next cheapest, and each is one Collect or three orations
+off a page this file already names.
 """
 
 [[divergences]]
@@ -304,8 +314,7 @@ printed_common = "Virginum II loco"
 printed_bracket = 30
 common_mass = "commune-virginum-2"
 mass = "comm-s-dorotheae-virginis-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "02-07"
@@ -319,8 +328,7 @@ printed_common = "Abbatum"
 printed_bracket = 27
 common_mass = "commune-abbatum"
 mass = "s-romualdi-abbatis"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "02-08"
@@ -334,8 +342,7 @@ printed_common = "Confessoris non Pontificis I loco"
 printed_bracket = 24
 common_mass = "commune-confessoris-non-pontificis-1"
 mass = "s-ioannis-matha-confessoris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "02-09"
@@ -934,8 +941,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "comm-s-eleutherii-papae-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "05-27"
@@ -949,8 +955,7 @@ printed_common = "Doctorum"
 printed_bracket = 22
 common_mass = "commune-doctorum-pontificis"
 mass = "s-bedae-venerabilis-confessoris-ecclesiae-doctoris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "05-27"
@@ -964,8 +969,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "comm-s-ioannis-i-papae-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "05-29"
@@ -1234,8 +1238,7 @@ printed_common = "Confessoris Pontificis I loco"
 printed_bracket = 19
 common_mass = "commune-confessoris-pontificis-1"
 mass = "comm-s-liborii-episcopi-confessoris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "07-24"
@@ -1249,8 +1252,7 @@ printed_common = "Virginum II loco"
 printed_bracket = 30
 common_mass = "commune-virginum-2"
 mass = "comm-s-christinae-virginis-martyris"
-state = "landable"
-blocked_by = "nothing; not yet read on the page image"
+state = "landed"
 
 [[pointers]]
 date = "07-25"
