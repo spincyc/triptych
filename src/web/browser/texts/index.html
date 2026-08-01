@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every Document</title>
+<!-- The shared machinery first, then this section's colour. Both are local;
+     the page makes no external request of any kind. -->
+<link rel="stylesheet" href="../shared/browser-core.css">
+<link rel="stylesheet" href="texts.css">
+</head>
+<body class="texts-page">
+<a class="skip-link" href="#reading">Skip to the list</a>
+
+<header class="page-header">
+  <h1><span class="page-mark" aria-hidden="true">¶</span>Every Document</h1>
+  <p class="lede">
+    Everything this project has published, with what is recorded about it: which
+    models wrote it, when it was last revised, how long it runs, and whether it
+    can be read here or only downloaded. Nothing on this page is written by
+    hand. It is one generated file, and
+    <code>tools/tpt document-library</code> is what generates it.
+  </p>
+  <p class="tally" id="tally"></p>
+</header>
+
+<div id="banner" class="banner" role="status" hidden></div>
+
+<form id="controls" class="controls" aria-labelledby="controls-heading">
+  <h2 id="controls-heading" class="visually-hidden">Narrow the list</h2>
+
+  <div class="field">
+    <label for="author-select">Author</label>
+    <select id="author-select" name="author" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-narrow">
+    <label for="edition-select">Edition</label>
+    <select id="edition-select" name="edition" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-narrow">
+    <label for="section-select">Section</label>
+    <select id="section-select" name="section" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-narrow">
+    <label for="reading-select">Reading</label>
+    <select id="reading-select" name="reading" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-narrow">
+    <label for="sort-select">Order</label>
+    <select id="sort-select" name="sort" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="find-input">Find</label>
+    <input id="find-input" name="find" type="search" autocomplete="off"
+           placeholder="title, subject or path" disabled>
+  </div>
+</form>
+
+<!-- The whole record of one document, opened from the list below it rather
+     than after it: a panel under a hundred and thirty cards is a panel nobody
+     sees open. -->
+<aside id="detail" class="detail" aria-live="polite" hidden></aside>
+
+<!-- Not a live region: replacing it would read the whole corpus aloud on every
+     change. The shared script announces a one-line summary instead. -->
+<main id="reading" class="reading catalogue" tabindex="-1" aria-busy="true">
+  <p class="placeholder">Loading the catalogue…</p>
+</main>
+
+<footer class="page-footer">
+  <p>
+    A <strong>work</strong> is one subject; an <strong>edition</strong> is one
+    model's treatment of it, and the two editions of a work are separate
+    documents that usually carry different titles. So no work is given a single
+    name here: each edition is listed under the title it actually prints, and
+    where a work is issued twice both titles stand. A <strong>synthesis
+    edition</strong> is the same document set a second time with the appointed
+    texts and the per-element sweep left out, and it is shown as a second issue
+    of its document rather than counted as another one.
+  </p>
+  <!-- The caution the catalogue carries about itself, written here from the
+       file rather than repeated in this page. The generator states it once and
+       every consumer of the file gets it; a second copy in this markup would
+       be free to disagree with the one the data carries. -->
+  <p class="advisory" id="advisory"></p>
+  <p>
+    <a href="../liturgy/day.html">Today’s Missal</a> ·
+    <a href="../liturgy/">The propers of the Mass</a> ·
+    <a href="../scripture/">The Story of Salvation</a> ·
+    <a href="../catena/">Catena Omnia</a> ·
+    <a href="../history/">The Missal Line</a>
+  </p>
+</footer>
+
+<script src="../shared/browser-core.js"></script>
+<script src="catalogue-model.js"></script>
+<script src="texts.js"></script>
+</body>
+</html>

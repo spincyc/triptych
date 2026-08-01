@@ -1,0 +1,298 @@
+/* Every document. A catalogue is a scanning surface rather than a reading one,
+   so it drops the shared reading measure and lays its cards out in whatever
+   columns the viewport affords. No colour is declared here: the section palette
+   arrives from the site stylesheet, which the build selects by entrance. */
+
+.catalogue {
+  max-width: none;
+}
+
+/* Six controls will not fit one line on a phone and must not be forced to.
+   The shared .controls already wraps; this only keeps each field usable once
+   it has wrapped. */
+.texts-page .controls {
+  align-items: end;
+}
+
+.texts-page .field {
+  flex: 1 1 12rem;
+}
+
+.texts-page .field input[type="search"] {
+  width: 100%;
+}
+
+/* --- The list ---------------------------------------------------------- */
+
+.catalogue {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  align-items: start;
+}
+
+.catalogue > .placeholder,
+.catalogue > .error {
+  grid-column: 1 / -1;
+}
+
+.work {
+  border: 1px solid var(--section-line, #cfcfcf);
+  border-top: 0.2rem solid var(--section-accent, #484d57);
+  border-radius: 0.2rem;
+  padding: 0.85rem 1rem 1rem;
+  background: var(--panel, #fff);
+}
+
+.work-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0 0 0.6rem;
+  font-size: 0.8rem;
+}
+
+.work-section {
+  color: var(--section-ink, #2f333a);
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.work-leaf {
+  font-size: 0.76rem;
+  opacity: 0.72;
+  overflow-wrap: anywhere;
+}
+
+.work-catalog {
+  font-size: 0.76rem;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* --- One edition of one work ------------------------------------------- */
+
+/* Two editions of a work carry different titles, so the divider between them
+   is real: it separates two documents, not two views of one. */
+.edition + .edition {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px dotted var(--section-line, #cfcfcf);
+}
+
+.edition-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.edition-mark {
+  flex: 0 0 auto;
+  padding: 0.05rem 0.4rem;
+  border-radius: 0.15rem;
+  background: var(--section-pale, #cfd1d3);
+  color: var(--section-ink, #2f333a);
+  font-size: 0.72rem;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.edition-title {
+  flex: 1 1 12rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.edition-title:hover,
+.edition-title:focus-visible {
+  color: var(--section-ink, #2f333a);
+  text-decoration: underline;
+}
+
+.edition-title[aria-expanded="true"] {
+  color: var(--section-ink, #2f333a);
+  text-decoration: underline;
+}
+
+/* A document with no recorded title shows its path instead, and the path must
+   not be able to pass for a name. */
+.unrecorded {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.86em;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.edition-subject {
+  margin: 0.35rem 0 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  opacity: 0.85;
+}
+
+.edition-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.5rem 0 0;
+}
+
+.pill {
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--section-line, #cfcfcf);
+  border-radius: 0.8rem;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.pill-model {
+  border-color: var(--section-accent, #484d57);
+  color: var(--section-ink, #2f333a);
+}
+
+/* Something the record does not state. It is shown, and it is shown as a gap
+   rather than styled to look like a value. */
+.pill-absent,
+.absent {
+  border-style: dashed;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+.absent {
+  font-size: 0.76rem;
+}
+
+.edition-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+}
+
+.edition-links .read {
+  font-weight: 700;
+}
+
+.edition .notice {
+  margin: 0.4rem 0 0;
+  font-size: 0.82rem;
+}
+
+/* --- The detail panel --------------------------------------------------- */
+
+.detail {
+  position: relative;
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.2rem 1.2rem;
+  border: 1px solid var(--section-line, #cfcfcf);
+  border-left: 0.25rem solid var(--section-accent, #484d57);
+  border-radius: 0.2rem;
+  background: var(--section-row, #e9eaeb);
+}
+
+.detail[hidden] {
+  display: none;
+}
+
+.detail-title {
+  margin: 0;
+  font-size: 1.15rem;
+  padding-right: 5rem;
+}
+
+.detail-sub {
+  margin: 0.2rem 0 0.8rem;
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+
+.detail-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 1.1rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--section-line, #cfcfcf);
+  border-radius: 0.15rem;
+  background: var(--panel, #fff);
+  color: inherit;
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.detail-close:hover {
+  border-color: var(--section-accent, #484d57);
+}
+
+.detail-heading {
+  margin: 1rem 0 0.35rem;
+  font-size: 0.78rem;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--section-ink, #2f333a);
+}
+
+.detail-line {
+  margin: 0.25rem 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.detail-label {
+  display: inline-block;
+  min-width: 9.5rem;
+  padding-right: 0.6rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  opacity: 0.75;
+}
+
+.detail-aside {
+  display: block;
+  margin-left: 9.5rem;
+  font-style: italic;
+}
+
+.contribution {
+  margin: 0.5rem 0 0;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--section-line, #cfcfcf);
+}
+
+.contribution-model {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.86rem;
+}
+
+/* --- The advisory the file carries about itself ------------------------- */
+
+.advisory {
+  font-style: italic;
+}
+
+@media (max-width: 34rem) {
+  .detail-label {
+    display: block;
+    min-width: 0;
+  }
+
+  .detail-aside {
+    margin-left: 0;
+  }
+}

@@ -25,6 +25,10 @@ from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+from _corpus import (  # noqa: E402
+    CorpusError,
+    eligible_document_ids as corpus_eligible_document_ids,
+)
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -145,7 +149,7 @@ SITE_DATA_ROOT = PurePosixPath("browse")
 # may drift on live once, in shared. The fixture beside them is a development
 # aid and is not published.
 # The reading pages a reader is sent to; `shared` carries no page of its own.
-WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena", "history")
+WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena", "history", "texts")
 # Derived, never restated. These were two hand-kept lists, and adding a section
 # to one and not the other shipped a page whose stylesheet and script were left
 # out of the artifact — the build passed and the link check caught it.
@@ -224,7 +228,6 @@ LICENSE_SOURCE_PATHS = {
     if path.is_file()
 }
 SITE_SOURCE_PATHS = set(PAGE_MAP) | FIXED_ARTIFACT_INPUT_PATHS | LICENSE_SOURCE_PATHS
-WEB_EDITION_RECORD = "web-edition.toml"
 WEB_PAGE_RE = re.compile(r"web/([a-z0-9-]+)/(.+)\.html")
 
 # Matches any provider edition link; provider membership in the manifest's
@@ -275,21 +278,17 @@ def requires_unadvertised_controls(authorization: dict) -> bool:
 
 
 def eligible_document_ids() -> set[tuple[str, str]]:
-    """Return every leaf whose own record declares a publishable web edition."""
-    source_root = ROOT / "src"
-    eligible: set[tuple[str, str]] = set()
-    for record_path in sorted(source_root.glob(f"*/**/{WEB_EDITION_RECORD}")):
-        try:
-            record = tomllib.loads(record_path.read_text(encoding="utf-8"))
-        except (OSError, tomllib.TOMLDecodeError) as exc:
-            raise ReleaseError(
-                f"cannot read {record_path.relative_to(ROOT)}: {exc}"
-            ) from exc
-        if record.get("eligibility") != "eligible":
-            continue
-        relative = record_path.parent.relative_to(source_root)
-        eligible.add((relative.parts[0], PurePosixPath(*relative.parts[1:]).as_posix()))
-    return eligible
+    """Every leaf whose own record declares a publishable web edition.
+
+    The walk itself is scripts/_corpus.py's, so this tool and the catalogue
+    cannot come to different answers about which documents are publishable. The
+    tree it walks is this tool's `ROOT`, read at call time, because that is what
+    a test repoints at a fixture.
+    """
+    try:
+        return corpus_eligible_document_ids(ROOT / "src")
+    except CorpusError as error:
+        raise ReleaseError(str(error)) from error
 
 
 def document_pages(keys: set[tuple[str, str]] | None = None) -> dict[str, str]:
@@ -2577,6 +2576,9 @@ BROWSER_SECTION_COLOURS = {
     "scripture": "gold",
     "catena": "violet",
     "history": "green",
+    # The catalogue takes black, whose marks are § and ¶: the section that
+    # points at every other one rather than carrying a text of its own.
+    "texts": "black",
 }
 
 # An entrance with no colour raised KeyError deep inside the build, and only in

@@ -5,7 +5,9 @@
 ## Library
 
 Choose a section, open a PDF, and read. New here? Start with
-[About](ABOUT.md).
+[About](ABOUT.md). To see the whole corpus at once — every document, with its
+authors, its extent, and when it was last revised — open
+[Every Document](texts/).
 
 | Section | Focus |
 | --- | --- |
@@ -28,6 +30,7 @@ missals, with the rubric behind each choice.
 | [The Story of Salvation](scripture/) | The abridged reading plan, at three depths. |
 | [Catena Omnia](catena/) | A chapter, and the commentary held on it, oldest first. |
 | [The Missal Line](history/) | The acts that changed the Missal, drawn as a map. |
+| [Every Document](texts/) | The whole corpus, filtered by author, edition or section. |
 
 ## How this was built
 
