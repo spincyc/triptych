@@ -150,7 +150,7 @@ WEB_BROWSER_DIRECTORIES = ("shared", "liturgy", "scripture", "catena")
 # says nothing about whether the page is publishable.
 WEB_BROWSER_SUFFIXES = (".html", ".css", ".js")
 # The two a reader is sent to; shared carries no page of its own.
-WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena")
+WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena", "history")
 # Fragments stay beside the edition that owns them, where index-bible checks
 # them for staleness and orphans; copying them into src/web/data as well would
 # put the same verse text in the tree twice.

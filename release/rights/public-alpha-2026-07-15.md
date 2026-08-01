@@ -1921,6 +1921,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/catena/catena.css` | `293964787600ed0c4016a328bbbacb3f592cbb1dcfec80c3d9104ca747609931` |
 | `src/web/browser/catena/catena.js` | `a2d19a7499dba2a811662dc3389a94019cb4a197d35622729b10991ee20aafb6` |
 | `src/web/browser/catena/index.html` | `281ec034c83d7097915b2c8163ec950e6ee0623bd69bf82b020b88f1710ebee2` |
+| `src/web/browser/history/index.html` | `2ae66701e6fc781bb178506b0aa8bc54f3d175e6d9d075f5ccb854c1884ad0f6` |
 | `src/web/browser/liturgy/assembly-model.js` | `1a677e24ae5a644dc5e2bcc93adac046e54e459e67c2ba0a158984397e4727aa` |
 | `src/web/browser/liturgy/day.css` | `d4ab4feb45777558723f16ee35f438af01d44baedf38c313bc279175bae9b5dd` |
 | `src/web/browser/liturgy/day.html` | `963cdbf7049bb74077f37e76a0e96cccd269e68d4a77d843f8e5e52a2d457ca0` |
@@ -1937,7 +1938,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/shared/browser-core.css` | `99fd1497f2f617ed2b601100bed77504bc31fe57e82dfc5161deecebd57c0436` |
 | `src/web/browser/shared/browser-core.js` | `aaec1b0707ae207a76334c05300041b7e9b615fccb7900e1c13e92d0a8ebd17e` |
 | `src/web/data/bibles.json` | `2833103696cfde54ee1266c7d74909beb433a7951f216c423858868b9d4001d6` |
-| `tools/public-alpha` | `d4932d80e9b76f24789c06b1ad7fe0cbbe353db8b808b40657e9a1643dfe1211` |
+| `tools/public-alpha` | `18ae558104d5bfedb92bd4b533e8ea4577e52101b01312ba9572096be3d4744b` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `4d97a8a50671d69dac75bd40ba84646439bbc3c9426db541f17b63002e0a204e` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `5142fc621475233a8843f98ca10e49e22bc63adc6cd001044335b5f9e1634482` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `6b86977adffdece0e49c43803db515040f30e115d68ba382d8e9658b14fc3569` |

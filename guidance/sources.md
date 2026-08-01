@@ -183,6 +183,26 @@ or served only in fragments — record the exact bound reached and why, and mark
 the artifact's completeness explicitly. A bounded retrieval, declared, is a
 usable source. A bounded retrieval, undeclared, is a false one.
 
+**Resolve a source's aliases before retrieving it.** A work is rarely catalogued
+once. It carries a Latin title and a vernacular one, an incipit that stands in
+for a title, an author named in Latin, in Greek, in the vernacular and by see or
+epithet, a Migne volume number, and often a modern editor's short form. Search
+the aliases first, and drive the retrieval from all of them rather than from the
+one string a question happened to use.
+
+Two failures follow from skipping this, and they pull in opposite directions.
+The first is a false absence: the work is held, or reachable, under a name
+nobody searched, and the lane records "no text available" for something that was
+available all along. The second is a false duplicate: the same work arrives twice
+under two names, the two copies drift, and nothing compares them — which has
+already happened here, where four Sundays' orations were held a second time and
+the copies had silently diverged in five ways before anything noticed.
+
+The aliases a retrieval used are part of how it was made, so record them with
+the artifact. A later reader must be able to see which names were tried, because
+that is the only way to tell a work that is genuinely unreachable from one that
+was looked for under the wrong name.
+
 **Source text must never route through a model.** Retrieval fetches and retains
 whole byte streams, hashes them, and seeks within them locally. A model in the
 retrieval path does not merely risk truncating a document; it will silently

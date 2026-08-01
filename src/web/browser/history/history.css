@@ -1,0 +1,134 @@
+/* The missal line. The map is wide by nature, so it scrolls inside its own
+   box and the page body never does. */
+
+.history-page {
+  --section-accent: #7a5230;
+  --section-line: #d9c9b6;
+}
+
+.map {
+  margin: 0 0 1.5rem;
+}
+
+.map-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.map-scroll svg {
+  display: block;
+  max-width: none;
+}
+
+.track {
+  stroke: var(--section-accent);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* A descent through an edition this tracer does not carry is drawn broken.
+   A solid line there would claim a continuity the record does not hold. */
+.track-gap {
+  stroke-dasharray: 10 9;
+  opacity: 0.7;
+}
+
+.station {
+  cursor: pointer;
+}
+
+.station-mark {
+  fill: var(--panel, #fff);
+  stroke: var(--section-accent);
+  stroke-width: 5;
+}
+
+.station:hover .station-mark,
+.station:focus .station-mark {
+  fill: var(--section-accent);
+}
+
+.station:focus {
+  outline: none;
+}
+
+.station:focus .station-name {
+  text-decoration: underline;
+}
+
+.station-name {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  text-anchor: middle;
+  fill: var(--ink, #1b1b1b);
+}
+
+.station-year {
+  font-family: var(--sans);
+  font-size: 13px;
+  text-anchor: middle;
+  fill: var(--ink-soft, #5a5a5a);
+}
+
+/* The second line is drawn in the same ink but hollow, so a reader can see it
+   is a different line without being told one matters more. */
+.line-exempt-uses .station-mark {
+  stroke-dasharray: 4 3;
+}
+
+.detail {
+  margin: 0 0 2rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--section-line);
+  border-top: 4px solid var(--section-accent);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.detail-title {
+  margin: 0 0 0.6rem;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+}
+
+.detail-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3rem 1rem;
+  margin: 0;
+}
+
+.detail-list dt {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  align-self: baseline;
+}
+
+.detail-list dd {
+  margin: 0;
+}
+
+.detail-departures,
+.detail-gap {
+  margin: 0.8rem 0 0;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 40rem) {
+  .detail-list {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+  .detail-list dd {
+    margin-bottom: 0.5rem;
+  }
+}

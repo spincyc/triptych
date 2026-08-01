@@ -34,6 +34,7 @@ commit message, and in an `Act-date` trailer, so nothing depends on the stamp.
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import subprocess
 import sys
@@ -53,6 +54,7 @@ from _tooling import (
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = ROOT / "src/sources/inventories/roman-holy-week-acts-v1.toml"
 DEFAULT_OUT = ROOT / "build/act-history/roman-holy-week"
+DEFAULT_DATA = ROOT / "src" / "web" / "data"
 SCHEMA_KEY = "acts_schema"
 SCHEMA_VERSION = 1
 
@@ -77,6 +79,7 @@ YEAR_SHIFT = 10000
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
+    "structure": (),
     "check": (
         Example(
             "tools/act-history check",
@@ -794,6 +797,51 @@ def graph(data: dict) -> dict:
     return {"rows": rows, "status": "ok"}
 
 
+def structure(data: dict, out: Path) -> dict:
+    """Write the browser's map file: the stations in order, whole.
+
+    The map is drawn from this and from nothing else, so every field a reader
+    sees on a station is carried here rather than restated in the page. The
+    order is the graph's own topological order, which is what lets a drawing
+    put a station to the right of the act it descends from without deciding
+    anything the history does not already say.
+    """
+    rows = graph(data)["rows"]
+    known = {act["id"]: act for act in data["acts"]}
+    stations = []
+    for row in rows:
+        act = known[row["act"]]
+        stations.append(
+            {
+                "id": act["id"],
+                "line": act["line"],
+                "date": str(act["date"]),
+                "date_precision": act.get("date_precision"),
+                "kind": act.get("kind"),
+                "title": act.get("title"),
+                "authority": act.get("authority"),
+                "instrument": act.get("instrument"),
+                "parents": list(act.get("parents") or []),
+                "via_unrepresented": list(act.get("via_unrepresented") or []),
+                "departures": row["departures"],
+            }
+        )
+    payload = {
+        "schema": "triptych-act-map/v1",
+        "slice": data.get("slice"),
+        "extent": data.get("extent"),
+        "lines": data.get("lines"),
+        "stations": stations,
+    }
+    target = out / "structure" / "act-history" / f"{data.get('slice')}.json"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(
+        json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+    )
+    return {"stations": len(stations), "lines": len(payload["lines"] or []), "written": str(target)}
+
+
 # --- CLI ---------------------------------------------------------------------
 
 
@@ -817,6 +865,9 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 edge += " (via unrepresented: " + ", ".join(row["via_unrepresented"]) + ")"
             marks = " [" + ",".join(row["departures"]) + "]" if row["departures"] else ""
             print(f"{row['line']:<17} {row['act']:<31} {row['date']}  {edge}{marks}")
+    elif verb == "structure":
+        print(f"{payload['stations']} stations on {payload['lines']} lines")
+        print(f"  -> {payload['written']}")
     else:
         print(f"wrote {payload['commits']} commits on {len(payload['branches'])} branches to {payload['out']}")
     return 0
@@ -834,11 +885,14 @@ def main(argv: list[str] | None = None) -> int:
     for verb, help_text in (
         ("check", "validate the act history and its departures"),
         ("graph", "print the act graph in topological order"),
+        ("structure", "write the browser's map file"),
         ("emit", "write the Git repository"),
     ):
         sub = subparsers.add_parser(verb, help=help_text, parents=[shared])
         if verb == "emit":
             sub.add_argument("--out", type=Path, default=DEFAULT_OUT)
+        if verb == "structure":
+            sub.add_argument("--out", type=Path, default=DEFAULT_DATA)
         with_examples(sub, EXAMPLES[verb])
 
     def run(arguments: argparse.Namespace) -> object:
@@ -848,11 +902,13 @@ def main(argv: list[str] | None = None) -> int:
         if arguments.command == "graph":
             return graph(data)
         check(data)
+        if arguments.command == "structure":
+            return structure(data, arguments.out)
         return emit(data, arguments.out)
 
     return run_verb_cli(
         parser=parser,
-        handlers={verb: run for verb in ("check", "graph", "emit")},
+        handlers={verb: run for verb in ("check", "graph", "structure", "emit")},
         renderer=render,
         prefix="act-history",
         argv=argv,
