@@ -143,16 +143,19 @@ WIDTH = 78
 CHAPTER = re.compile(r"^(\D*?)(\d+)")
 
 
-def load_calendar(root: Path, calendar: str) -> dict:
-    import yaml
+def load_calendar(root: Path, calendar: str, effective: bool = True) -> dict:
+    """The calendar's document; for a recension, the base with departures applied.
 
-    path = root / calendar / INDEX
-    if not path.is_file():
-        raise ValueError(f"no calendar index at {path}")
-    document = yaml.safe_load(path.read_text(encoding="utf-8"))
-    if not isinstance(document, dict):
-        raise ValueError(f"{path}: top level must be a mapping")
-    return document
+    The derivation lives in `scripts/_calendars.py` and is shared with the
+    calendar-mass check and the browser's structure pass, so a recension the
+    validator accepts and a recension the site serves cannot come apart. A
+    calendar declaring no base is returned exactly as it sits on disk.
+
+    `effective=False` is the census's call, and the distinction is the point: a
+    census of the merged document would report the base's mass count under the
+    recension's name, and a projection is measured by its diff.
+    """
+    return _calendars.load_document(root, calendar, effective=effective)
 
 
 def calendars(root: Path) -> list[str]:
@@ -797,7 +800,7 @@ KIND_ORDER = ("seasonal", "christological", "marian", "sanctoral")
 # Calendar order, oldest book first, matching how every document introduces
 # them. Anything unlisted follows, sorted, so a third calendar still lands
 # somewhere deterministic.
-CALENDAR_ORDER = ("roman-1962", "postconciliar")
+CALENDAR_ORDER = ("roman-pre-1955", "roman-1962", "postconciliar")
 
 # The markers name no command. A marker is a delimiter, and one carrying the
 # invocation would have to be rewritten in every document the day the verb is
@@ -957,7 +960,10 @@ def census(root: Path) -> dict[str, dict]:
     cited = passage_counts(root)
     found = {}
     for name in ordered(calendars(root), CALENDAR_ORDER):
-        counted = census_of(load_calendar(root, name))
+        # The file as written, not the merged document: a recension's size is the
+        # size of its diff, and counting the base's masses under the recension's
+        # name would report a projection as though it were a second whole book.
+        counted = census_of(load_calendar(root, name, effective=False))
         counted.update(cited.get(name) or {"passages": 0, "books": 0})
         found[name] = counted
     return found

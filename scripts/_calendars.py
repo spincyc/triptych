@@ -70,6 +70,77 @@ REFERENCE_FIELDS = ("mass", "form", "proper", "citation", "note")
 # comes from the resolved proper and may not be retyped beside the reference.
 REFERENCE_EXCLUDES = ("source", "text", "verses", "cycles", "incipit", "translations")
 
+# --------------------------------------------------------------- recensions
+#
+# A recension is one state of a rite held as its DEPARTURES from another state,
+# never as a second copy of it. guidance/recensions.md Rule 2 owns the rule; this
+# is the mechanism, and it lives here because `resolve_propers` lives here and
+# there must be exactly one way to resolve a day.
+#
+# Two relations are declared, and they are deliberately not the same field,
+# because collapsing them is how a record ends up asserting that the older book
+# descends from the newer one:
+#
+#   `text_from`     MECHANICAL. The calendar that supplies every entry this file
+#                   does not state. It is a statement about where text has been
+#                   transcribed in THIS REPOSITORY, not about which book came
+#                   first. Today it points from the pre-1955 recension at
+#                   `roman-1962`, because the 1962 typical edition is the only
+#                   printing anyone here has read a proper from.
+#
+#   `stands_before` HISTORICAL. The id, in an acts inventory, of the act this
+#                   recension stands before. Nothing mechanical reads it. It is
+#                   the claim about descent, and it is kept in the vocabulary of
+#                   acts because guidance/the-shape.md section 7 fixes the
+#                   station as the act and not the book.
+#
+# So a file may say "I stand before Maxima Redemptionis" and "my untouched
+# entries were read from a 1962 printing" at once, and both are true. That is
+# guidance/recensions.md Rule 2a -- attestation is separated from residence --
+# and it is what lets a recension be declared before anything is transcribed.
+RECENSION_BASE = "text_from"
+RECENSION_ACT = "stands_before"
+
+# guidance/recensions.md section 3 fixes this vocabulary. It is closed here so a
+# misspelt kind fails instead of being read as a departure nobody classified.
+DEPARTURE = "departure"
+DEPARTURE_KINDS = (
+    "absent",  # the base has this mass; this recension does not
+    "added",  # this recension has one the base does not
+    "replaced",  # both have it and the text differs
+    "renamed",  # the same formulary under another name or key
+    "moved",  # the same liturgy on another day, or at another hour
+    "reslotted",  # the same words in a different slot
+    "unrecorded",  # known to differ, correspondence not established
+)
+# Which kinds require the base to hold the key, and which require it not to.
+# `added` is the only one that names something the base has never had; every
+# other kind is a statement ABOUT a base entry, so a key the base does not hold
+# is a reference that resolves to nothing -- the defect of guidance/the-shape.md
+# section 1, in the one file written to prevent it.
+DEPARTURE_NEEDS_BASE = tuple(k for k in DEPARTURE_KINDS if k != "added")
+# A departure that resolves to the base entry unchanged, with only the scalar
+# fields the recension restates overlaid. `renamed` and `moved` say the liturgy
+# is the same one; restating its propers beside it would be the second copy
+# Rule 2 exists to refuse.
+DEPARTURE_OVERLAYS = ("renamed", "moved")
+# Scalar fields a `renamed` or `moved` departure may overlay onto the base entry.
+# Anything outside this list would be a silent edit of the base's text.
+OVERLAY_FIELDS = ("name", "title", "date", "rank", "day", "hour", "key")
+# Every departure must say what established it. A departure with no basis is a
+# difference someone asserted, which is precisely what this vocabulary exists to
+# keep apart from a difference someone read.
+DEPARTURE_BASIS = "basis"
+# One liturgy can depart in several ways at once, and the Triduum is where that
+# is the rule rather than the exception: the pre-1955 Holy Saturday service is
+# the same liturgy MOVED to another hour, RENAMED, and REPLACED in most of its
+# lessons. Forcing one kind per row would make the file choose which of those to
+# record and drop the rest, so the primary `departure` is the one the machinery
+# acts on and `also` carries the others, each with its own basis. Every kind in
+# `also` is checked against the same closed vocabulary, so the secondary claims
+# are held to the primary one's standard rather than living in prose.
+DEPARTURE_ALSO = "also"
+
 # A YAML top-level key sits at column zero, which is what makes this cheap scan
 # equivalent to a parse for the one field it wants.
 SCHEMA_LINE = re.compile(r"^schema:[ \t]*(?:['\"])?([^'\"\s#]+)", re.MULTILINE)
@@ -185,6 +256,269 @@ def restated_identity(root: Path, calendar: str | None = None) -> list[str]:
                     f"{owned!r}. Two files claim a different book for the same "
                     f"calendar; the mass index is the owner, and {companion['owner']} "
                     "reads it from there. Delete the line."
+                )
+    return problems
+
+
+def _read(path: Path) -> dict:
+    import yaml
+
+    if not path.is_file():
+        raise ValueError(f"no calendar index at {path}")
+    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if not isinstance(document, dict):
+        raise ValueError(f"{path}: top level must be a mapping")
+    return document
+
+
+def base_of(root: Path, calendar: str) -> str | None:
+    """The calendar a recension takes its unstated entries from, or None.
+
+    Read with the cheap header scan rather than a parse, because callers ask
+    this of every directory before deciding whether to load anything.
+    """
+    found = header(root / calendar / MASS_INDEX, RECENSION_BASE)
+    return found or None
+
+
+def departures_of(document: dict) -> list[tuple[str, dict, dict]]:
+    """Every departure the document states, as (section, section body, mass)."""
+    out: list[tuple[str, dict, dict]] = []
+    for section, body in sorted((document.get("sections") or {}).items()):
+        if not isinstance(body, dict):
+            continue
+        for mass in body.get("masses") or []:
+            if isinstance(mass, dict):
+                out.append((section, body, mass))
+    return out
+
+
+def load_document(root: Path, calendar: str, effective: bool = True) -> dict:
+    """A calendar's document: for a recension, the base with its departures applied.
+
+    This is the single derivation, and every tool that serves a day reads it
+    from here. A calendar that declares no `text_from` is returned exactly as it
+    sits on disk, so the two existing calendars are untouched by this path.
+
+    `effective=False` returns the file as written, which is what the census
+    counts: the size of a recension is the size of its DIFF, and a census that
+    counted the merged document would report the base's mass count under the
+    recension's name and call the projection large. guidance/versification.md
+    section 8.0 settles the same point for editions -- the default rule writes no
+    row, so the projection measures distance rather than volume.
+    """
+    document = _read(root / calendar / MASS_INDEX)
+    base_name = document.get(RECENSION_BASE)
+    if not effective or not isinstance(base_name, str) or not base_name:
+        return document
+    base = load_document(root, base_name, effective=True)
+    return _apply_departures(document, base, base_name)
+
+
+def _also(mass: dict) -> list[dict]:
+    found = mass.get(DEPARTURE_ALSO)
+    return [row for row in found if isinstance(row, dict)] if isinstance(found, list) else []
+
+
+def _stamp(
+    mass: dict,
+    calendar: str,
+    kind: str,
+    basis: str,
+    stated: bool,
+    also: list[dict] | tuple = (),
+) -> dict:
+    """Mark a mass with how the recension reached it, so a page can say so.
+
+    guidance/recensions.md Rule 2a: a text attested by only one printing says so.
+    An entry carried through from the base with no departure is exactly that
+    case, and it is the overwhelming majority, so the stamp goes on every entry
+    rather than only on the interesting ones. A renderer that finds no stamp is
+    reading a calendar that is nobody's recension.
+    """
+    out = dict(mass)
+    out["recension"] = {
+        "calendar": calendar,
+        "kind": kind,
+        "stated": stated,
+        "text_from": "" if stated else calendar,
+        "basis": basis,
+        "also": [
+            {"kind": str(row.get(DEPARTURE) or ""), "basis": str(row.get(DEPARTURE_BASIS) or "")}
+            for row in also
+        ],
+    }
+    return out
+
+
+def _apply_departures(document: dict, base: dict, base_name: str) -> dict:
+    calendar = str(document.get("calendar") or "")
+    stated: dict[str, dict] = {}
+    for _, _, mass in departures_of(document):
+        key = str(mass.get("key") or "")
+        if key:
+            stated[key] = mass
+
+    merged: dict[str, dict] = {}
+    for section, body in sorted((base.get("sections") or {}).items()):
+        if not isinstance(body, dict):
+            continue
+        kept: list[dict] = []
+        for mass in body.get("masses") or []:
+            if not isinstance(mass, dict):
+                continue
+            key = str(mass.get("key") or "")
+            departure = stated.pop(key, None)
+            if departure is None:
+                kept.append(_stamp(mass, base_name, "", "", stated=False))
+                continue
+            kind = str(departure.get(DEPARTURE) or "")
+            basis = str(departure.get(DEPARTURE_BASIS) or "")
+            also = _also(departure)
+            if kind == "absent":
+                # Dropped outright. The reason lives in the departure row and is
+                # reported by `recension_problems` if it is missing, so an
+                # absence can never be silent.
+                continue
+            if kind in DEPARTURE_OVERLAYS:
+                carried = dict(mass)
+                for field in OVERLAY_FIELDS:
+                    if field in departure:
+                        carried[field] = departure[field]
+                kept.append(_stamp(carried, base_name, kind, basis, stated=False, also=also))
+                continue
+            if kind == "unrecorded":
+                # Known to differ, correspondence not established. The base entry
+                # is carried so the day still resolves, and the stamp is what
+                # stops the page claiming the base's text was checked.
+                kept.append(_stamp(mass, base_name, kind, basis, stated=False, also=also))
+                continue
+            # replaced, reslotted: the recension's own entry wins outright.
+            kept.append(_stamp(departure, calendar, kind, basis, stated=True, also=also))
+        merged[section] = dict(body, masses=kept)
+
+    # `added`, and anything whose key the base does not hold. The latter is a
+    # defect `recension_problems` reports; it is still carried here so that one
+    # bad row does not silently remove a mass from the served calendar.
+    for key, departure in stated.items():
+        section = _section_for(document, key) or "seasonal"
+        body = merged.setdefault(section, dict((base.get("sections") or {}).get(section) or {}, masses=[]))
+        body["masses"] = [
+            *body.get("masses", []),
+            _stamp(
+                departure,
+                calendar,
+                str(departure.get(DEPARTURE) or "added"),
+                str(departure.get(DEPARTURE_BASIS) or ""),
+                stated=True,
+                also=_also(departure),
+            ),
+        ]
+
+    out = {k: v for k, v in document.items() if k != "sections"}
+    out["sections"] = merged
+    return out
+
+
+def _section_for(document: dict, key: str) -> str | None:
+    for section, _, mass in departures_of(document):
+        if str(mass.get("key") or "") == key:
+            return section
+    return None
+
+
+def recension_problems(root: Path, calendar: str) -> list[str]:
+    """Every way a recension's departures fail to mean anything.
+
+    guidance/recensions.md section 6 item 2 asks for exactly this check: one that
+    fails when a recension's base does not exist, and when a departure names a
+    mass the base does not hold. A row pointing at nothing is the same defect as
+    a citation that resolves wrongly, and it is worse here, because a departure
+    that resolves to nothing removes a Mass from the calendar instead of adding a
+    broken link to it.
+    """
+    problems: list[str] = []
+    path = root / calendar / MASS_INDEX
+    try:
+        document = _read(path)
+    except ValueError as error:
+        return [str(error)]
+    base_name = document.get(RECENSION_BASE)
+    if not isinstance(base_name, str) or not base_name:
+        return []
+    if not (root / base_name / MASS_INDEX).is_file():
+        return [
+            f"{path}: {RECENSION_BASE} names calendar {base_name!r}, which this "
+            f"repository has no {MASS_INDEX} for. A recension whose base does not "
+            "exist serves nothing and says nothing."
+        ]
+    if base_name == calendar:
+        return [f"{path}: {RECENSION_BASE} points at itself"]
+    if document.get(RECENSION_ACT) in (None, ""):
+        problems.append(
+            f"{path}: declares {RECENSION_BASE} without {RECENSION_ACT}. A recension "
+            "must say which act it stands before, because `text_from` records where "
+            "text was transcribed and is not a claim about which book came first."
+        )
+    base = load_document(root, base_name, effective=True)
+    held = mass_index(base)
+    seen: set[str] = set()
+    for _, _, mass in departures_of(document):
+        key = str(mass.get("key") or "")
+        where = f"{path}: departure {key or '(no key)'!r}"
+        if not key:
+            problems.append(f"{where}: every departure needs the key it departs in")
+            continue
+        if key in seen:
+            problems.append(f"{where}: stated twice; a departure has one row")
+        seen.add(key)
+        kind = mass.get(DEPARTURE)
+        if kind not in DEPARTURE_KINDS:
+            problems.append(
+                f"{where}: {DEPARTURE} must be one of {', '.join(DEPARTURE_KINDS)}, "
+                f"got {kind!r}"
+            )
+            continue
+        if not str(mass.get(DEPARTURE_BASIS) or "").strip():
+            problems.append(
+                f"{where}: {kind} departure states no {DEPARTURE_BASIS}. A difference "
+                "with no basis is a difference someone asserted."
+            )
+        if kind in DEPARTURE_NEEDS_BASE and key not in held:
+            problems.append(
+                f"{where}: {kind} names a mass {base_name!r} does not hold. Only "
+                "`added` may name a key the base has never had."
+            )
+        if kind == "added" and key in held:
+            problems.append(
+                f"{where}: added names a mass {base_name!r} already holds; that is "
+                "`replaced`, not `added`."
+            )
+        found = mass.get(DEPARTURE_ALSO)
+        if found is not None and not isinstance(found, list):
+            problems.append(f"{where}: {DEPARTURE_ALSO} must be a list of departures")
+            continue
+        for row in found or []:
+            if not isinstance(row, dict):
+                problems.append(f"{where}: every {DEPARTURE_ALSO} entry is a mapping")
+                continue
+            secondary = row.get(DEPARTURE)
+            if secondary not in DEPARTURE_KINDS:
+                problems.append(
+                    f"{where}: {DEPARTURE_ALSO} {DEPARTURE} must be one of "
+                    f"{', '.join(DEPARTURE_KINDS)}, got {secondary!r}"
+                )
+            if secondary == kind:
+                problems.append(
+                    f"{where}: {DEPARTURE_ALSO} repeats the primary kind {kind!r}; "
+                    "a second row saying the same thing is a restatement, not a "
+                    "second departure"
+                )
+            if not str(row.get(DEPARTURE_BASIS) or "").strip():
+                problems.append(
+                    f"{where}: {DEPARTURE_ALSO} {secondary!r} states no "
+                    f"{DEPARTURE_BASIS}; a secondary claim is held to the primary "
+                    "one's standard"
                 )
     return problems
 

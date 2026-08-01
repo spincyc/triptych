@@ -16,9 +16,12 @@ The base is chosen on that ground and on no other. It is a claim about which
 book came first, not about which is better, and this document takes no position
 on the second question — see `editorial.md`, "No side in what is described".
 
-**Nothing here has been built.** It is written now, before any data moves,
-because the shape is cheap to choose and expensive to change once a second
-calendar exists in the tree.
+**This was written before anything was built, and section 8 now records what
+was.** The mechanism, a first recension, and its checks landed on 2026-08-01;
+sections 1 to 7 are left as they were written, because a design study that is
+quietly edited to match what got built stops being evidence of anything.
+Section 8 is where the differences between the plan and the thing are recorded,
+including the two places the plan was wrong.
 
 ## Evidence conventions
 
@@ -77,8 +80,13 @@ and re-derive before quoting it. That this section restated a census at all is
 the defect §2 of `the-shape.md` describes, committed by the document arguing
 against it.
 
-**A pre-1955 recension departs in something on the order of a tenth of the
-book.** Copying every proper to change that tenth leaves the rest duplicated,
+**The "tenth of the book" figure below was never reproducible and is now
+withdrawn; section 8.1 carries what was measured in its place.** It is left
+standing here, struck, because the instruction to re-derive it is the reason
+anyone did.
+
+~~**A pre-1955 recension departs in something on the order of a tenth of the
+book.**~~ Copying every proper to change that tenth leaves the rest duplicated,
 and this repository's
 standing rule exists because copies drift: on one day it found three disagreeing
 copies of one census, an edition string written out four times, a README
@@ -230,3 +238,123 @@ results, and under a projection the rest of the year expresses no departure —
 which is to say, no rows at all. So the first recension can be four liturgies
 wide and still be correct about everything else, because it says nothing about
 everything else.
+
+---
+
+## 8. What was built, and where this document was wrong
+
+Landed 2026-08-01. Sections 1 to 7 above are the plan as written; this section
+is the thing as built, and it exists separately so that the two can be compared
+rather than merged.
+
+### 8.1 The measurements this document asked for
+
+Section 2 told a reader to treat its own ratio as an order of magnitude and
+re-derive it. Re-derived, against the tracked files [verified]:
+
+| Measure | Value |
+| --- | ---: |
+| `roman-1962` masses / propers | 490 / 2,312 |
+| `roman-pre-1955` rows (departures stated) | 5 |
+| Departures as a share of the base's masses | **1.02 %** |
+| Masses the recension serves | 491 |
+| — stated by the recension | 1 |
+| — inherited, stamped `text_from: roman-1962` | 490 |
+| Dates in 2026 resolving to a mass | 316 of 365 |
+
+**The old figure was not merely stale, it was measuring the wrong thing.** "A
+tenth of the book" is a claim about how far the two states of the rite stand
+apart. 1.02 % is a claim about how much of that distance anyone here has
+*established*. The projection is small because the evidence is thin, not because
+the books are close, and a reader who reads 1.02 % as agreement has made exactly
+the mistake Rule 4 exists to prevent.
+
+What can be measured about the distance itself is narrower and comes from
+`roman-holy-week-acts-v1.toml`, which models 38 units of the four liturgies
+[verified]:
+
+| At the 1955 reform | Units |
+| --- | ---: |
+| `absent` — in the pre-1955 book, gone after | **20** |
+| `reslotted` | 8 |
+| `renamed` | 3 |
+| `moved` | 3 |
+| `replaced` | 2 |
+| Departures recorded at the 1962 edition against that state | 4 (1 `added`, 3 `unrecorded`) |
+
+**Twenty of thirty-eight modelled units — 53 % — do not survive the reform.**
+
+### 8.2 The direction, which this settles
+
+That table is the concrete argument for the ruling in this document's second
+paragraph, and it is worth stating as an argument rather than a preference.
+
+If the pre-1955 state were expressed as departures *from* 1962, those twenty
+units would each be an `added` row. A recension whose departures are
+overwhelmingly additions is not a recension: it is a base wearing the wrong
+label, and the file would be reconstructing the older book by undoing the newer
+one — a reference that resolves successfully and wrongly, in the one file
+written to prevent that.
+
+**One caution, and it is the largest open item.** The act history reads the
+post-reform state entirely from a **1962** printing, because the reformed rite's
+own book — the *Ordo Hebdomadae Sanctae instauratus* of 1956 — is
+`access-restricted-item` at both Internet Archive copies and carries
+`may_publish_text = no` [verified, `missal-acquisition-audit-v1.toml`]. So the
+figures above measure **pre-1955 against 1962**, and attribute the difference to
+the 1955 act on the strength of the decree's own words. Whether the 1956–1960
+book differs from the 1962 one in these liturgies is **unrecorded**. Section 5
+predicted exactly this hazard; it has arrived.
+
+### 8.3 Where the plan was wrong
+
+**Section 6 item 3 was too optimistic about `calendar-days`.** The claim in
+section 2 that "nothing is fixed at two" was true of `partition` and false of
+the tools: `calendar-days.BUILDERS`, `calendar-spine.SOURCES` and
+`commentary-work-index.DEFAULT_CALENDARS` are closed two-element sets, so a
+third calendar directory was *discovered* by four tools and *refused* by three.
+A recension now inherits its base's year builder through `temporal_base`, which
+is item 3's second option — placements are the base's — made explicit rather
+than assumed. This is correct for the date and says nothing about the hour, and
+the pre-1955 Easter Vigil is a difference of hour.
+
+**One departure kind per row was not enough.** The Triduum is where one liturgy
+departs several ways at once: the pre-1955 Holy Saturday service is `moved` to
+another hour, `renamed`, `replaced` in most of its lessons and `reslotted` in
+its Postcommunion and its following office, all at the same time. A schema
+admitting one kind per row would have forced the file to choose which of those to
+record and drop the rest. The primary `departure` is what the machinery acts on;
+`also` carries the others, each with its own basis, each checked against the same
+closed vocabulary.
+
+### 8.4 What was deliberately not done
+
+**Residence was not flipped.** The base is still where the text lives, and the
+text lives in `roman-1962`. Section 6 item 0 is the reason and it is unmet: no
+proper in this repository yet records which printings have been read for it, so
+moving 2,312 transcriptions under a 1920 heading would assert a provenance
+nobody established. The two relations are therefore carried as two fields that
+must never be collapsed — `text_from`, which says where text was transcribed in
+this repository, and `stands_before`, which says which act the recension stands
+before and is the only place descent is claimed.
+
+**No text was transcribed, and the reason is measurable.** The pre-1955
+witnesses this project holds are read only through OCR text layers. On
+2026-07-31 this repository collated 99 orations taken from the OCR of a single
+printing against that printing's page images and corrected **38** of them
+[verified]. Landing OCR as payload would put a known 38-in-99 error rate into a
+file a page reads from.
+
+**No `rubrics.yaml` was written, and this is why the missal selector does not
+yet offer the recension.** The 1962 precedence table answers to the 1960 *Codex
+rubricarum*; the pre-1955 calendar answers to the general rubrics that preceded
+both the 1955 simplification and the 1960 code. Those must be sourced. Obtaining
+them by subtracting 1962 from itself would produce a precedence table that
+resolves cleanly and decides days wrongly, which is worse than having none. The
+browser discovers missals from `structure/rubrics/index.json`, so a calendar with
+no rubrics source is not offered — the dropdown is downstream of the sourcing,
+which is the right way round.
+
+> **Rule 6.** A recension is offered to a reader only where it can be served.
+> The absence of a rubrics source is not a gap to be filled from the base; it is
+> the reason the calendar is not yet in the selector.

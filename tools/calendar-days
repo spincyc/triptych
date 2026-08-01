@@ -50,6 +50,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import _calendars  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -1093,13 +1094,36 @@ CYCLED = {"roman-1962": False, "postconciliar": True}
 # --------------------------------------------------------------- calendar I/O
 
 
-def load_calendar(root: Path, name: str) -> dict:
-    import yaml
+def temporal_base(root: Path, name: str) -> str:
+    """The calendar whose temporal cycle computes this one's placements.
 
+    guidance/recensions.md section 6 item 3 asks for `calendar-days` to compute
+    placements per recension, or to say plainly that it cannot and that the
+    placements are the base's. This is the second answer, made explicit: a
+    recension has no year builder of its own and inherits the one belonging to
+    the calendar it takes its text from.
+
+    That is right for most of the year and WRONG for the days this recension
+    exists to record. The pre-1955 Easter Vigil is a Saturday MORNING service and
+    the base places it at night; `calendar-days` computes the date, not the hour,
+    so the date it returns is correct and the hour is not its business — but a
+    recension whose departures ever move a liturgy to another DATE would be
+    placed wrongly here, silently. No such departure exists today, and the
+    departure check is where one would have to be caught.
+    """
+    seen = [name]
+    while name not in BUILDERS:
+        found = _calendars.base_of(root, name)
+        if not found or found in seen:
+            break
+        seen.append(found)
+        name = found
+    return name
+
+
+def load_calendar(root: Path, name: str) -> dict:
+    document = _calendars.load_document(root, name, effective=True)
     path = root / name / "propers.yaml"
-    document = yaml.safe_load(path.read_text(encoding="utf-8"))
-    if not isinstance(document, dict):
-        raise ValueError(f"{path}: top level must be a mapping")
     masses: dict[str, dict] = {}
     for section, body in sorted((document.get("sections") or {}).items()):
         for mass in (body or {}).get("masses") or []:
@@ -1114,11 +1138,16 @@ def load_calendar(root: Path, name: str) -> dict:
             }
     if not masses:
         raise ValueError(f"{path}: carries no masses")
-    if name not in BUILDERS:
+    builder = temporal_base(root, name)
+    if builder not in BUILDERS:
         raise ValueError(f"{name}: no temporal cycle is implemented for this calendar")
     return {
         "calendar": document.get("calendar") or name,
         "directory": name,
+        # The calendar whose year builder places these masses. It differs from
+        # `directory` only for a recension, and it is recorded rather than
+        # recomputed so that a caller can say whose arithmetic it is looking at.
+        "builder": builder,
         "edition": document.get("edition"),
         "masses": masses,
         "keys": set(masses),
@@ -1156,7 +1185,7 @@ def fixed_dates(index: dict, civil_year: int) -> dict[date, list[dict]]:
         # the entry is filed under and repeating it per mass would put the
         # calendar's whole sanctoral into every year's rule table.
         entry = {"key": mass["key"], "origin": "fixed-date", "rule": FIXED_DATE_RULE}
-        option = FIXED_TERRITORIAL.get((index["directory"], mass["key"]))
+        option = FIXED_TERRITORIAL.get((index["builder"], mass["key"]))
         if option:
             entry["territorial"] = option
         out.setdefault(when, []).append(entry)
@@ -1167,7 +1196,7 @@ def fixed_dates(index: dict, civil_year: int) -> dict[date, list[dict]]:
 
 
 def build_years(index: dict, endings: list[int]) -> dict[int, Year]:
-    builder = BUILDERS[index["directory"]]
+    builder = BUILDERS[index["builder"]]
     return {ending: builder(ending, index["keys"]) for ending in endings}
 
 
@@ -1261,7 +1290,7 @@ def year_document(index: dict, civil_year: int, built: dict[int, Year]) -> dict:
         "days_note": DAYS_NOTE,
         "edition": index["edition"],
         "guidance": GUIDANCE,
-        "liturgical_years": [year_summary(built[e], name) for e in sorted(built)],
+        "liturgical_years": [year_summary(built[e], index["builder"]) for e in sorted(built)],
         "precedence": {"note": PRECEDENCE_NOTE, "stated": False},
         "rules": rules,
         "schema": SCHEMA,
@@ -1747,7 +1776,7 @@ def run_check(arguments: argparse.Namespace) -> dict:
         placements = 0
         missing: list[dict] = []
         for ending in range(first, last + 2):
-            year = BUILDERS[name](ending, index["keys"])
+            year = BUILDERS[index["builder"]](ending, index["keys"])
             placements += sum(len(v) for v in year.placements.values())
             missing.extend(year.missing)
         # Every emitted key is in the calendar by construction; this reports the
@@ -1816,9 +1845,9 @@ def run_structure(arguments: argparse.Namespace) -> dict:
             {
                 "calendar": index["calendar"],
                 "edition": index["edition"],
-                "lectionary_cycles": CYCLED[name],
+                "lectionary_cycles": CYCLED[index["builder"]],
                 "path": f"structure/calendar/{name}/{{civil_year}}.json",
-                "territorial": territorial_block(name),
+                "territorial": territorial_block(index["builder"]),
             }
         )
     index_path = out / "structure" / "calendar" / "index.json"
@@ -1872,7 +1901,7 @@ def run_day(arguments: argparse.Namespace) -> dict:
         built = build_years(index, [when.year, when.year + 1])
         with_fixed(index, [when.year])
         owner, candidates = candidates_for(index, built, when.year, when)
-        summary = year_summary(owner, name)
+        summary = year_summary(owner, index["builder"])
         found.append(
             {
                 "calendar": index["calendar"],

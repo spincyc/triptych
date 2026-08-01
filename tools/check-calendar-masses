@@ -24,6 +24,7 @@ from _calendars import (
     REFERENCE_FIELDS,
     TAKES_FROM,
     partition,
+    recension_problems,
     resolve_propers,
     restated_identity,
 )
@@ -548,6 +549,14 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
         path.as_posix(): check_file(path, problems)
         for path in paths
     }
+    # A recension states departures, not a book. Its rows are checked against the
+    # base they depart from: guidance/recensions.md section 6 item 2 asks for a
+    # check that fails when a recension's base does not exist and when a
+    # departure names a mass the base does not hold. That second case is worse
+    # than a broken link, because a departure resolving to nothing REMOVES a Mass
+    # from the served calendar instead of adding a dangling pointer to it.
+    for path in paths:
+        problems.extend(recension_problems(root, path.parent.name))
     problems.extend(citation_problems(root, calendar))
     problems.extend(spine_problems(paths))
     problems.extend(overlay_problems(paths))
