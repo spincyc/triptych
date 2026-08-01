@@ -29,7 +29,12 @@ Header keys, all required: `schema`, `calendar`, `edition`, `series`, `ordering`
 
 `sections` is the **single canonical mass list**. A top-level `masses` key is
 rejected. Each section carries `kind` ∈ {`seasonal`, `christological`, `marian`,
-`sanctoral`}, a `label`, and `masses`.
+`sanctoral`, `common`}, a `label`, and `masses`.
+
+`common` is the *Commune Sanctorum*: formularies no day owns, reached only by
+`takes_from`. A mass in a `common` section carries **neither** `season` nor
+`date` — it is placed by use, not by the year — and every mass in every other
+section still carries exactly one of the two.
 
 A mass requires `key`, `name`, `registry`. `registry` is always a **quoted
 string** — `'39'`, never `39`. It may carry `date`, `rank`, `season`, `kind`,
@@ -193,7 +198,8 @@ carries the identical block.
 | roman-1962 | seasonal | 128 | 1121 | 5 |
 | roman-1962 | christological | 8 | 10 | 8 |
 | roman-1962 | marian | 17 | 17 | 17 |
-| roman-1962 | sanctoral | 307 | 307 | 307 |
+| roman-1962 | sanctoral | 307 | 309 | 306 |
+| roman-1962 | common | 2 | 15 | 0 |
 | postconciliar | seasonal | 66 | 824 | 3 |
 | postconciliar | christological | 7 | 7 | 7 |
 | postconciliar | marian | 14 | 15 | 14 |
@@ -201,19 +207,19 @@ carries the identical block.
 
 | Measure | roman-1962 | postconciliar |
 | --- | ---: | ---: |
-| Masses | 460 | 268 |
-| Propers | 1455 | 1031 |
-| — named `Placeholder` | 339 | 210 |
+| Masses | 462 | 268 |
+| Propers | 1472 | 1031 |
+| — named `Placeholder` | 338 | 210 |
 | — inside a `forms` block | 97 | 117 |
 | — carrying a `cycles` mapping | 0 | 252 |
-| Masses holding only placeholders | 337 | 205 |
-| Masses taking a formulary from another entry | 4 | 0 |
+| Masses holding only placeholders | 336 | 205 |
+| Masses taking a formulary from another entry | 6 | 0 |
 | Propers taking their text from another entry | 20 | 0 |
-| Propers that are not placeholders | 1116 | 821 |
-| — of those, scripture-bearing | 894 | 548 |
-| Encoded passages | 1083 | 1082 |
-| Distinct books cited | 47 | 61 |
-| Distinct slot names | 88 | 86 |
+| Propers that are not placeholders | 1134 | 821 |
+| — of those, scripture-bearing | 904 | 548 |
+| Encoded passages | 1095 | 1082 |
+| Distinct books cited | 48 | 61 |
+| Distinct slot names | 90 | 86 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the
@@ -310,6 +316,7 @@ or shared, so nothing in the fixed-date spine reports them missing.
 
 | Item | Recorded in |
 | --- | --- |
+| Twelve of the thirteen 1962 Commons, and the sanctoral pointers into them | 1962 `open_collation_items` |
 | Whether the eleven antiphons move their number or keep the per-slot declaration | TASK-32; `psalm_numbering_exceptions` |
 | Whether `ascension`, `corpus-christi`, `sacred-heart`, `chrism-mass` belong under `seasonal` or `christological` | 1962 `open_collation_items` |
 | A registry scheme for 1962 ferias | 1962 `open_collation_items` |

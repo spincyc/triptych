@@ -202,11 +202,11 @@ STALE: dict[str, str] = {
     "tools/calendar-days check":
         "2026-07-31: roman-1962 gained a mass; 12667 placements recorded, 12769 now",
     "tools/calendar-days coverage --calendar roman-1962 --first 2026 --last 2026":
-        "2026-07-31: 459 masses and 454 reachable recorded; 460 and 455 now",
+        "2026-07-31: 459 masses and 454 reachable recorded; 462 and 455 now. The two new masses are the Commune Sanctorum's, which no date reaches and which are therefore correctly unreachable",
     "tools/check-calendar-masses check --calendar roman-1962":
-        "2026-07-31: 459 masses over 1465 propers recorded; 460 over 1475 now",
+        "2026-07-31: 459 masses over 1465 propers recorded; 462 over 1472 now",
     "tools/citations encode --root build/example-cal":
-        "2026-07-31: roman-1962 propers grew; 1108 already-encoded recorded, 1115 now",
+        "2026-07-31: roman-1962 propers grew; 1108 already-encoded recorded, 1151 now",
     "tools/citations check":
         "2026-07-31: the transcript ends claiming 25 further lines; the run prints 26",
     "tools/commentary-work-index discover --passage 'Psalm 24:1-3'"
@@ -250,9 +250,10 @@ STALE: dict[str, str] = {
     "tools/index-bible build --bible douay-rheims --bible-root build/example-bibles":
         "2026-07-31: 1601 passages recorded, 1605 now, with the resolved counts behind them",
     "tools/mass-propers list --calendar roman-1962":
-        "2026-07-31: the calendar gained a mass; 459 recorded, 460 now",
+        "2026-07-31: the calendar gained masses; 459 recorded, 462 now, the last two "
+        "being the Commune Sanctorum's first entries",
     "tools/mass-propers structure --out build/example-propers":
-        "2026-07-31: 459 masses over 1108 citations recorded; 460 over 1115 now",
+        "2026-07-31: 459 masses over 1108 citations recorded; 462 over 1151 now",
     "tools/public-alpha prepare":
         "2026-07-31: the candidate inventory grew; 2257 further lines recorded, 2305 now",
     "tools/release-bindings status":

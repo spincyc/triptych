@@ -94,6 +94,12 @@ ENTRY_REQUIRED = ("key", "name", "registry")
 SOURCES = ("scripture", "composed", "mixed")
 CYCLES = ("A", "B", "C")
 KINDS = ("christological", "marian", "sanctoral", "seasonal")
+# The Commune Sanctorum is a section of formularies that no day owns. A Common
+# is placed by use, not by the year: it has neither a season nor a date, and
+# every other section's masses have exactly one of the two. Its masses are
+# reached only by `takes_from`, which is why the section could not exist before
+# the reference did.
+COMMON_KIND = "common"
 KEY_CHARS = set("abcdefghijklmnopqrstuvwxyz0123456789-")
 DAYS_IN_MONTH = (31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 DATE_RE = re.compile(r"^(\d{2})-(\d{2})$")
@@ -358,7 +364,7 @@ def check_name(where: str, name: object, problems: list[str]) -> None:
         return
 
 
-def iter_masses(document: dict) -> list:
+def iter_masses(document: dict) -> list[tuple[str, dict]]:
     """Yield every mass from the calendar's one canonical container.
 
     `sections` is the single source; the mass list is not duplicated elsewhere,
@@ -367,11 +373,16 @@ def iter_masses(document: dict) -> list:
     out = []
     for _, body in sorted((document.get("sections") or {}).items()):
         if isinstance(body, dict):
-            out.extend(m for m in (body.get("masses") or []) if isinstance(m, dict))
+            kind = str(body.get("kind") or "")
+            out.extend(
+                (kind, m) for m in (body.get("masses") or []) if isinstance(m, dict)
+            )
     return out
 
 
-def check_entry(entry: object, index: int, problems: list[str]) -> str | None:
+def check_entry(
+    entry: object, index: int, problems: list[str], section_kind: str = ""
+) -> str | None:
     where = f"mass[{index}]"
     if not isinstance(entry, dict):
         problems.append(f"{where}: entry is not a mapping")
@@ -393,7 +404,14 @@ def check_entry(entry: object, index: int, problems: list[str]) -> str | None:
     # A seasonal entry is placed by season, and a dated entry is sanctoral.
     has_season = "season" in entry
     has_date = "date" in entry
-    if has_season == has_date:
+    if section_kind == COMMON_KIND:
+        # A Common is a formulary, not a day. It is placed by use.
+        if has_season or has_date:
+            problems.append(
+                f"{where}: a mass of the Commune Sanctorum carries neither a "
+                "season nor a date; it is placed by the masses that take it"
+            )
+    elif has_season == has_date:
         problems.append(f"{where}: exactly one of season or date is required")
     if has_date:
         check_date(where, entry["date"], problems)
@@ -494,9 +512,9 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
         problems.append(f"{path}: sections must contain at least one mass")
         return {"masses": 0, "propers": 0}
     keys: list[str] = []
-    for index, entry in enumerate(masses):
+    for index, (section_kind, entry) in enumerate(masses):
         scoped: list[str] = []
-        key = check_entry(entry, index, scoped)
+        key = check_entry(entry, index, scoped, section_kind)
         problems.extend(f"{path}: {problem}" for problem in scoped)
         if key:
             keys.append(key)
@@ -507,12 +525,12 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
     # only resolving it proves the mass, form and proper it names exist and
     # that the chain terminates. Both this check and the browser's structure
     # read that from `resolve_propers`, so neither can drift from the other.
-    for entry in masses:
+    for _, entry in masses:
         _, trouble = resolve_propers(document, entry)
         problems.extend(f"{path}: {problem}" for problem in dict.fromkeys(trouble))
     return {
         "masses": len(masses),
-        "propers": sum(count_propers(entry) for entry in masses),
+        "propers": sum(count_propers(entry) for _, entry in masses),
     }
 
 
