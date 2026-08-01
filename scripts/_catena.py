@@ -42,6 +42,8 @@ from __future__ import annotations
 
 import argparse
 import csv
+import importlib.machinery
+import importlib.util
 import json
 import re
 import subprocess
@@ -54,6 +56,7 @@ from typing import Any, Iterable, NamedTuple
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import _canon  # noqa: E402
+import _paragraphs  # noqa: E402
 import _projection  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1235,7 +1238,11 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
         path,
         {
             "numbering": _projection.CANONICAL,
-            "canon": books,
+            # Every book of the canon, each carrying the path component derived
+            # for it. A consumer that needs a book's folder — this page's
+            # paragraph layer does, for books the catena itself holds nothing on
+            # — reads it here rather than composing one.
+            "canon": [dict(book, path=folders[book["token"]]) for book in books],
             "held": index,
             "texts": f"structure/catena/{TEXT_DIRECTORY}/",
             # How a chapter number becomes a filename. Derived from the longest
@@ -1246,6 +1253,121 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
     )
     written.append(path)
 
+    kept = {one.resolve() for one in written}
+    for stale in sorted(directory.rglob("*.json")):
+        if stale.resolve() not in kept:
+            stale.unlink()
+    for empty in sorted(directory.rglob("*"), reverse=True):
+        if empty.is_dir() and not any(empty.iterdir()):
+            empty.rmdir()
+    return written
+
+
+# ---------------------------------------------------------------------------
+# Where a paragraph opens — an EDITION's property, emitted here for now
+# ---------------------------------------------------------------------------
+#
+# This layer is not the catena's. Where a bible edition opens a paragraph is a
+# property of that edition, and `index-bible build` is where it belongs beside
+# the verse fragments it divides. It is emitted here because the catena is its
+# first consumer and `index-bible` is live in another lane — exactly the shape
+# `canon()` had before it was lifted into `scripts/_canon.py`, and it should be
+# moved the same way as soon as that file is free. `guidance/web-data.md` says so
+# too, so the next pass has a note rather than a search.
+#
+# The derivation itself is NOT reimplemented: `scripts/_paragraphs.py` owns it,
+# including the distinction this layer exists to carry. A mark the edition's own
+# printing carries is the edition's; a projected break is this project's
+# inference from concurring witnesses. They are different claims and the page
+# says which is which.
+
+PARAGRAPHS_DIRECTORY = "paragraphs"
+
+
+def _index_bible(root: Path) -> Any:
+    """`tools/index-bible` as a module, for its edition table and its `Bible`.
+
+    Loaded rather than reimplemented. `Bible.carrier` is what puts a projected
+    break into an edition's own numbering, and an edition can print real text at
+    numbers a citation does not mean — so a paragraph placed by arithmetic
+    instead of by that resolver would open in the wrong words with nothing to
+    report.
+    """
+    loader = importlib.machinery.SourceFileLoader(
+        "index_bible", str(root / "tools" / "index-bible")
+    )
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    module = importlib.util.module_from_spec(spec)
+    loader.exec_module(module)
+    return module
+
+
+def paragraph_structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
+    """One file per edition per chapter that opens a paragraph anywhere in it.
+
+    `<edition>/<NN-book>/<chapter>.json`, carrying the verses at which a
+    paragraph opens and, for each, whether the EDITION prints the mark or this
+    project projected it. A chapter with no break has no file, so a reader on a
+    chapter that runs on pays nothing and the 404 is the answer.
+
+    Additive on the same terms as everything else: an edition adds its own
+    chapters and rewrites nothing, and a corrected projection rewrites the
+    chapters it touches and no page.
+    """
+    out = out or (root / "src/web/data")
+    module = _index_bible(root)
+    folders = path_forms(root)
+    width = _canon.chapter_width(root)
+    directory = out / "structure" / PARAGRAPHS_DIRECTORY
+    directory.mkdir(parents=True, exist_ok=True)
+    written: list[Path] = []
+    editions: dict[str, Any] = {}
+    for identifier, record in module.EDITIONS.items():
+        if not record.get("publishable"):
+            continue
+        artifacts = root / "src/sources/works" / str(record["artifacts"])
+        if not artifacts.is_dir():
+            continue
+        found = _paragraphs.breaks(artifacts, module.Bible(artifacts))
+        by_chapter: dict[tuple[str, int], dict[str, str]] = {}
+        for (token, chapter, verse), kind in found.items():
+            by_chapter.setdefault((token, chapter), {})[str(verse)] = kind
+        for (token, chapter), marks in sorted(by_chapter.items()):
+            folder = folders.get(token)
+            if folder is None:
+                continue
+            path = directory / identifier / folder / _canon.chapter_name(chapter, width)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            _write_json(
+                path,
+                {
+                    "edition": identifier,
+                    "token": token,
+                    "chapter": chapter,
+                    "breaks": dict(sorted(marks.items(), key=lambda one: int(one[0]))),
+                },
+            )
+            written.append(path)
+        editions[identifier] = dict(
+            _paragraphs.counts(found),
+            path=f"structure/{PARAGRAPHS_DIRECTORY}/{identifier}/",
+        )
+    concurring, positions = _paragraphs.disagreement()
+    path = directory / "index.json"
+    _write_json(
+        path,
+        {
+            "editions": editions,
+            "witnesses": _paragraphs.witnesses(),
+            # Counted from the table rather than restated beside it. The page
+            # prints the figure, and a figure typed into a renderer is a second
+            # source of truth that will eventually disagree with its table.
+            "concurring": concurring,
+            "positions": positions,
+            "chapter_digits": width,
+        },
+    )
+    written.append(path)
     kept = {one.resolve() for one in written}
     for stale in sorted(directory.rglob("*.json")):
         if stale.resolve() not in kept:
@@ -1355,6 +1477,10 @@ def main(argv: list[str] | None = None) -> int:
     verbs.add_parser("titles", help="print the alias groups failing the title check")
     emit = verbs.add_parser("structure", help="write what the browser fetches")
     emit.add_argument("--out", type=Path, default=None)
+    marks = verbs.add_parser(
+        "paragraphs", help="write where each edition opens a paragraph"
+    )
+    marks.add_argument("--out", type=Path, default=None)
     args = parser.parse_args(argv)
     root = args.root.resolve()
     try:
@@ -1366,6 +1492,10 @@ def main(argv: list[str] | None = None) -> int:
         if args.verb == "titles":
             for author, work, reason in failing_groups(root):
                 print(f"{author}\t{work}\t{reason}")
+            return 0
+        if args.verb == "paragraphs":
+            for path in paragraph_structure(root, args.out):
+                print(path.relative_to(root) if path.is_relative_to(root) else path)
             return 0
         for path in structure(root, args.out):
             print(path.relative_to(root) if path.is_relative_to(root) else path)

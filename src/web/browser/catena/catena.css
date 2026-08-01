@@ -147,6 +147,51 @@ body:not(:has(> .site-header)) {
    wants more presence; it read as loose instead, and the shared setting has
    since been tightened for the same reason. One setting for scripture. */
 
+/* Paragraphs, where the edition or the projection divides the chapter. The
+   first takes no top margin, so a chapter that divides opens exactly where a
+   chapter that runs on opens. */
+.passage-paragraph {
+  margin: 0.85rem 0 0;
+}
+
+.passage-paragraph:first-child {
+  margin-top: 0;
+}
+
+/* A break this project PROJECTED, marked apart from one the edition prints.
+   The two are different claims and the page must not render them alike: the
+   marker is quiet enough not to interrupt reading and present enough that a
+   reader can see which divisions are ours. */
+.passage-paragraph.projected {
+  border-left: 2px solid var(--section-pale);
+  padding-left: 0.7rem;
+  margin-left: -0.9rem;
+}
+
+/* What the divisions are owed to, in words, below the text. */
+.paragraph-note {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: var(--ink-faint);
+  margin: 0.9rem 0 0;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--section-wash);
+  max-width: var(--measure);
+}
+
+/* A checkbox in the control row, aligned with the labelled selects beside it. */
+.field-check {
+  align-self: end;
+}
+
+.field-check label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
 /* ---------------------------------------------------------------------------
  * The chain
  * ------------------------------------------------------------------------ */

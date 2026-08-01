@@ -50,6 +50,7 @@
   const M = window.CatenaModel;
 
   const INDEX_PATH = 'structure/catena/index.json';
+  const PARAGRAPH_INDEX_PATH = 'structure/paragraphs/index.json';
 
   // The languages a fragment's edition can be in, named for a reader. The codes
   // are the source library's, which are ISO 639 and are what the `lang`
@@ -73,6 +74,13 @@
     return LANGUAGE_NAMES[String(code || '')] || String(code || '');
   }
 
+  /** "Latin and English", for a sentence rather than a control. */
+  function languageList(file) {
+    const names = ((file && file.languages) || []).map(languageName);
+    if (names.length <= 1) return names.join('');
+    return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
+  }
+
   const reference = document.getElementById('reference');
   const referenceBook = document.getElementById('reference-book');
   const tally = document.getElementById('tally');
@@ -80,6 +88,8 @@
   const bookSelect = document.getElementById('book-select');
   const chapterSelect = document.getElementById('chapter-select');
   const bibleSelect = document.getElementById('bible-select');
+  const languageSelect = document.getElementById('language-select');
+  const paragraphToggle = document.getElementById('paragraph-toggle');
   const previousButton = document.getElementById('prev-button');
   const nextButton = document.getElementById('next-button');
 
@@ -89,6 +99,13 @@
   // One promise per fragment text file, so a reader who closes a fragment and
   // opens it again, or pages away and back, refetches nothing.
   const fragmentTexts = new Map();
+  const paragraphFiles = new Map();
+  // The paragraph layer, and whether the reader wants it. On by default because
+  // a whole chapter set as one block is the reason the layer exists; the switch
+  // is what lets it be turned off, and turned off the chapter renders exactly as
+  // it did before the layer existed.
+  let paragraphs = null;
+  let paragraphsWanted = true;
   // Authors the reader has switched OFF, held across chapters. Storing the
   // exclusions rather than the inclusions is what lets an author who does not
   // comment on the next chapter stay off rather than reappear checked.
@@ -138,6 +155,42 @@
   }
 
   /**
+   * Where this edition opens a paragraph in this chapter.
+   *
+   * The layer is the EDITION's, not the catena's — `scripts/_paragraphs.py`
+   * owns the derivation and this page owns none of it. A chapter that runs on
+   * has no file, so the 404 is the answer and costs one request; a chapter that
+   * divides costs about 220 bytes.
+   *
+   * Switched off, this asks for nothing at all and the chapter renders exactly
+   * as it did before the layer existed. That is the point of the switch: a
+   * mechanical review of an edition must be able to see the edition and not
+   * this project's reading of it.
+   */
+  function chapterParagraphs(bible, token, chapter) {
+    if (!paragraphsWanted || !paragraphs) return Promise.resolve(null);
+    const edition = (paragraphs.editions || {})[bible.id];
+    // The book's path component is the one the canon index wrote down. It is
+    // read, never composed: the convention lives in `scripts/_canon.py` and a
+    // page that rebuilt it would be the second place it lived.
+    const book = canonEntry(token);
+    if (!edition || !book || !book.path) return Promise.resolve(null);
+    const digits = Number(paragraphs.chapter_digits) || 1;
+    const path =
+      edition.path + book.path + '/' + String(chapter).padStart(digits, '0') + '.json';
+    if (paragraphFiles.has(path)) return paragraphFiles.get(path);
+    const pending = T.loadJSON(path).then(
+      (file) => file,
+      (error) => {
+        if (error instanceof T.NotFound) return null;
+        throw error;
+      }
+    );
+    paragraphFiles.set(path, pending);
+    return pending;
+  }
+
+  /**
    * One fragment's prose, fetched once and kept.
    *
    * Keyed by the path the SPINE gave, never by a path this file assembles from
@@ -158,15 +211,13 @@
    * Rendering — the chapter
    * --------------------------------------------------------------------- */
 
-  function renderChapter(container, bible, book, chapter, result) {
+  function renderChapter(container, bible, book, chapter, result, marks) {
     const section = T.el('section', 'chapter');
     if (!result.ok) {
       section.appendChild(T.notice(result.problem));
       container.appendChild(section);
       return;
     }
-    const passage = T.el('p', 'passage');
-    passage.lang = bible.language || 'en';
     const numbers = Object.keys(result.verses)
       .map(Number)
       .filter((n) => Number.isFinite(n))
@@ -176,7 +227,27 @@
       container.appendChild(section);
       return;
     }
+
+    // The chapter is set as prose, not as a stack of verse-lines, because a
+    // stack of verse-lines is a concordance. Where paragraph structure is held
+    // it divides that prose; where it is not, the chapter runs on as it always
+    // has. `marks` is empty in both the "switched off" and the "none held"
+    // cases, and the note below says which of the two a reader is looking at.
+    const breaks = (marks && marks.breaks) || {};
+    const body = T.el('div', 'passage');
+    body.lang = bible.language || 'en';
+    let passage = null;
+    let printed = 0;
+    let projected = 0;
     for (const number of numbers) {
+      const kind = breaks[String(number)];
+      if (!passage || kind) {
+        passage = T.el('p', 'passage-paragraph');
+        if (kind === 'projected') passage.classList.add('projected');
+        if (kind === 'printed') printed += 1;
+        if (kind === 'projected') projected += 1;
+        body.appendChild(passage);
+      }
       const verse = T.el('span', 'verse');
       verse.appendChild(T.el('sup', 'verse-num', String(number)));
       verse.appendChild(document.createTextNode(result.verses[String(number)] + ' '));
@@ -201,8 +272,47 @@
         numbers.length + (numbers.length === 1 ? ' verse' : ' verses')
       )
     );
+    if (printed + projected) {
+      head.appendChild(
+        T.el(
+          'span',
+          'chapter-count',
+          printed + projected + (printed + projected === 1 ? ' paragraph' : ' paragraphs')
+        )
+      );
+    }
     holder.appendChild(head);
-    holder.appendChild(passage);
+    holder.appendChild(body);
+    // A printed mark and a projected one are not the same claim, so the page
+    // says which it is showing rather than letting a division this project
+    // inferred read as the edition's own printing.
+    if (printed + projected) {
+      const note = T.el('p', 'paragraph-note');
+      const parts = [];
+      if (printed) {
+        parts.push(
+          printed + (printed === 1 ? ' break is' : ' breaks are') +
+            ' printed in this edition'
+        );
+      }
+      if (projected) {
+        parts.push(
+          projected + (projected === 1 ? ' is' : ' are') +
+            ' projected from the witnesses that concur, and marked'
+        );
+      }
+      note.appendChild(document.createTextNode('Paragraphs: ' + parts.join('; ') + '.'));
+      holder.appendChild(note);
+    } else if (paragraphsWanted) {
+      holder.appendChild(
+        T.el(
+          'p',
+          'paragraph-note',
+          'No paragraph division is held for this chapter in this edition, so it ' +
+            'runs on. Another edition’s paragraphs are not borrowed for it.'
+        )
+      );
+    }
     section.appendChild(holder);
     container.appendChild(section);
   }
@@ -346,7 +456,9 @@
     // Already the chapter's own list: the spine is addressed by chapter, and the
     // derivation that decided which fragments stand here ran in the generator,
     // out of `catena-model.js` under node. One derivation, and it is that file's.
-    const held = (file && file.fragments) || [];
+    const all = (file && file.fragments) || [];
+    const wanted = languageSelect.value;
+    const held = wanted ? all.filter((one) => one.language === wanted) : all;
     const headingText =
       held.length === 0
         ? 'Commentary held here'
@@ -359,9 +471,44 @@
       // Rule 1: a chapter with no fragments shows no fragments, and says so
       // plainly rather than showing something else in their place.
       container.appendChild(
-        T.el('p', 'aside-note', 'No commentary on this chapter is held yet.')
+        T.el(
+          'p',
+          'aside-note',
+          all.length
+            ? 'No commentary on this chapter is held in ' +
+                languageName(wanted) +
+                '. ' +
+                all.length +
+                (all.length === 1 ? ' fragment is' : ' fragments are') +
+                ' held here in ' +
+                languageList(file) +
+                '; choose “All languages” to see ' +
+                (all.length === 1 ? 'it' : 'them') +
+                '.'
+            : 'No commentary on this chapter is held yet.'
+        )
       );
       return 0;
+    }
+
+    // Which languages this chapter is held in, and which the reader is not
+    // seeing. Said rather than hidden: a father held only in Latin must not
+    // disappear from the page because the selector is set to English.
+    if (wanted) {
+      const others = (file.languages || []).filter((one) => one !== wanted);
+      if (others.length) {
+        container.appendChild(
+          T.el(
+            'p',
+            'aside-note',
+            'Showing ' +
+              languageName(wanted) +
+              ' only. This chapter is also held in ' +
+              others.map(languageName).join(', ') +
+              '.'
+          )
+        );
+      }
     }
 
     // Grouped by author, in the order the chain already runs, which is oldest
@@ -562,10 +709,12 @@
 
     let file;
     let chapterResult;
+    let marks;
     try {
-      [file, chapterResult] = await Promise.all([
+      [file, chapterResult, marks] = await Promise.all([
         chapterFile(token, chapter),
-        T.loadChapter(bible.id, token, chapter)
+        T.loadChapter(bible.id, token, chapter),
+        chapterParagraphs(bible, token, chapter)
       ]);
     } catch (error) {
       T.fail('This chapter could not be loaded: ' + (error.message || error));
@@ -573,10 +722,11 @@
     }
     if (!T.isCurrentRender(renderToken)) return;
 
+    fillLanguages(file);
     const leads = (file && file.leads) || [];
     T.clear(reading);
     renderRefusal(reading, file, bible, book, chapter);
-    renderChapter(reading, bible, book, chapter, chapterResult);
+    renderChapter(reading, bible, book, chapter, chapterResult, marks);
     const count = renderChain(reading, file, book);
     renderLeads(reading, leads);
     renderBlocked(reading, file);
@@ -601,9 +751,34 @@
     T.writeHash([
       ['book', token],
       ['chapter', String(chapter)],
-      ['bible', bible.id]
+      ['bible', bible.id],
+      ['language', languageSelect.value],
+      ['paragraphs', paragraphsWanted ? '' : 'off']
     ]);
     updateSteps();
+  }
+
+  /**
+   * The commentary-language control, filled from what this chapter actually
+   * holds.
+   *
+   * The list is COUNTED, never assumed. A chapter held in Latin alone offers
+   * Latin, and a reader whose selection is not held here keeps it — the chain
+   * then says so and names what is held instead, rather than silently widening
+   * to a language the reader did not ask for or hiding the author who is only
+   * in the other one.
+   */
+  function fillLanguages(file) {
+    const held = (file && file.languages) || [];
+    const wanted = languageSelect.value;
+    const items = [{ value: '', label: 'All languages' }];
+    for (const code of held) items.push({ value: code, label: languageName(code) });
+    if (wanted && !held.includes(wanted)) {
+      items.push({ value: wanted, label: languageName(wanted) + ' — none here' });
+    }
+    T.fillSelect(languageSelect, items);
+    languageSelect.value = wanted;
+    languageSelect.disabled = held.length < 2 && !wanted;
   }
 
   function fillChapters(token, wanted) {
@@ -644,7 +819,16 @@
 
     let manifest;
     try {
-      [index, manifest] = await Promise.all([T.loadJSON(INDEX_PATH), T.loadBibles()]);
+      [index, manifest, paragraphs] = await Promise.all([
+        T.loadJSON(INDEX_PATH),
+        T.loadBibles(),
+        // The paragraph layer is optional in the strongest sense: a data root
+        // without it serves the page, and the chapter runs on as it always did.
+        T.loadJSON(PARAGRAPH_INDEX_PATH).catch((error) => {
+          if (error instanceof T.NotFound) return null;
+          throw error;
+        })
+      ]);
     } catch (error) {
       T.fail('The catena index could not be loaded: ' + (error.message || error));
       return;
@@ -668,6 +852,10 @@
       bibleSelect.value = hash.get('bible');
     }
 
+    if (hash.get('language')) languageSelect.value = hash.get('language');
+    paragraphsWanted = hash.get('paragraphs') !== 'off';
+    paragraphToggle.checked = paragraphsWanted;
+
     bookSelect.disabled = false;
     chapterSelect.disabled = false;
     bibleSelect.disabled = false;
@@ -678,6 +866,11 @@
     });
     chapterSelect.addEventListener('change', render);
     bibleSelect.addEventListener('change', render);
+    languageSelect.addEventListener('change', render);
+    paragraphToggle.addEventListener('change', () => {
+      paragraphsWanted = paragraphToggle.checked;
+      render();
+    });
     previousButton.addEventListener('click', () => step(-1));
     nextButton.addEventListener('click', () => step(1));
     T.onArrowStep(step);
@@ -685,6 +878,9 @@
       if (next.get('book')) bookSelect.value = next.get('book');
       fillChapters(bookSelect.value, next.get('chapter') || 1);
       if (next.get('bible')) bibleSelect.value = next.get('bible');
+      languageSelect.value = next.get('language') || '';
+      paragraphsWanted = next.get('paragraphs') !== 'off';
+      paragraphToggle.checked = paragraphsWanted;
       render();
     });
 

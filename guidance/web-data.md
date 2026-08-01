@@ -118,6 +118,41 @@ a reader chooses what to open knowing how long it is.
 **The next candidate is the propers structure**, roughly 1 MB per missal, which
 `day.js` already fetches last because it is the big one.
 
+## The paragraph layer
+
+`structure/paragraphs/<edition>/<NN-book>/<chapter>.json`, one file per edition
+per chapter that opens a paragraph anywhere in it, each about 220 bytes:
+
+```json
+{"edition":"king-james-version","token":"Gen","chapter":1,
+ "breaks":{"3":"projected","6":"printed","9":"printed","14":"printed"}}
+```
+
+The derivation is `scripts/_paragraphs.py` and is not reimplemented anywhere
+else. What this layer adds is the addressing, on the same terms as everything
+above: a chapter that runs on has no file, so the 404 is the answer.
+
+**A printed mark and a projected one are not the same claim.** A mark the
+edition's own printing carries is the edition's; a projected break is this
+project's inference from the witnesses that concur. The value says which, the
+page marks the projected ones apart and states the counts beneath the chapter,
+and an edition with neither runs on and says so rather than borrowing another
+edition's paragraphs. It is the same distinction the missal map draws between
+`promulgated` and `printed`, for the same reason: a weaker claim must read as
+one.
+
+**The layer is opt-out.** `?paragraphs=off` renders the chapter exactly as it
+rendered before the layer existed and asks for none of these files, because a
+mechanical review of an edition must be able to see the edition and not this
+project's reading of it.
+
+**It is emitted from the wrong place, on purpose and temporarily.** Where an
+edition opens a paragraph is a property of that edition and belongs beside its
+verse fragments, in `index-bible build`. It is emitted by `_catena.py paragraphs`
+because the catena is its first consumer and `index-bible` was live in another
+lane — exactly the shape `canon()` had before it was lifted — and it should move
+there as soon as that file is free.
+
 ## The four layers
 
 Each layer is generated from the one above it and is checked against it, so a

@@ -52,6 +52,26 @@
     </select>
   </div>
 
+  <!-- The language of the COMMENTARY, which is a different question from the
+       language of the translation above it. A father may be held in his own
+       Greek, in a Latin version and in a public-domain English, and each of
+       those is a separate edition of one work rather than one edition with
+       three texts. The control lists what this chapter actually holds, and
+       says what it does not hold rather than hiding the author. -->
+  <div class="field">
+    <label for="language-select">Commentary language</label>
+    <select id="language-select" name="language" disabled>
+      <option value="">All languages</option>
+    </select>
+  </div>
+
+  <div class="field field-check">
+    <label for="paragraph-toggle">
+      <input type="checkbox" id="paragraph-toggle" name="paragraphs" checked>
+      Paragraphs
+    </label>
+  </div>
+
   <div class="field field-steps">
     <span class="field-legend" id="step-legend">Chapter</span>
     <div class="steps" role="group" aria-labelledby="step-legend">
