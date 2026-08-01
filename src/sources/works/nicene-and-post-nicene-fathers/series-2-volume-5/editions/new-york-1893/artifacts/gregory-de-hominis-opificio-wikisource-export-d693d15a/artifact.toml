@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio-wikisource-export-d693d15a"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893"
+artifact_type = "wiki-export-xml"
+media_type = "application/xml"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "The Nicene and Post-Nicene Fathers English translation printed in this volume is in the United States public domain by date of publication, and its translators and editors died before 1930, so it is also out of copyright in jurisdictions applying a life-plus-seventy term. The bytes here are the wiki source of an English Wikisource transcription of that printing, retrieved whole in one Special:Export request. English Wikisource contributions are licensed CC BY-SA 4.0, which is a condition on the contributors' markup rather than on the printed translation beneath it; the exact bytes are therefore recorded and hashed but not retained here, and only the printed translation reaches the tracked derivative, stripped of every template, link, footnote and heading the contributors added."
+rights_jurisdiction = "United States"
+source_url = "https://en.wikisource.org/wiki/Special:Export"
+provenance = "Retrieved 2026-07-31 in one request, by POSTing the complete page list to English Wikisource's Special:Export with curonly=1, so the whole of Gregory of Nyssa's De hominis opificio, the dedicatory letter and all thirty chapters, together with the volume editors' note arrived as a single document rather than a page at a time. No model stood anywhere in the retrieval path: the bytes were fetched with curl, hashed, and read locally. The document holds 32 pages, which is every page of the work that Wikisource carries. The current revision of each page at retrieval was 2267779 for the editors' note and 11996122, 12722050, 12719520, 12719522, 12719523, 12719524, 12719525, 12719526, 12722056, 12719510, 12719511, 12719512, 12722049, 12719513, 12722044, 12722058, 12722046, 12722055, 12719516, 12719517, 12719518, 12722048, 12722051, 12722052, 12722069, 12722045, 12722054, 12722053, 12722057, 12722070 and 12719521 for Chapters 1 to 31. Wikisource is a mutable witness, so this artifact identifies a dated state of it and not a stable republication; re-running the same request later may return different bytes and would be a different artifact."
+retrieved = "2026-07-31"
+sha256 = "d693d15aaed02f65e611e43aefed4ee5cbd66c3c505fa442c983b6bc12034ede"
+byte_size = 301636
+encoding = "utf-8"
+indexable = false
+notes = "Recorded remote rather than tracked: these bytes carry the Wikisource contributors' own markup under CC BY-SA, and the repository redistributes only the public-domain printed translation extracted from them. The hash is kept so that the tracked derivative below names a transformation input that is exactly identified, which a bare URL would not be."

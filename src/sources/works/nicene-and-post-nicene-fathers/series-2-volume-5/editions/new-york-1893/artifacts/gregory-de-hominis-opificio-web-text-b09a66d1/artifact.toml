@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio-web-text-b09a66d1"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893"
+artifact_type = "web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The complete text of Gregory of Nyssa's De hominis opificio in Henry Austin Wilson's Nicene and Post-Nicene Fathers English translation, published New York 1893 and in the United States public domain by date of publication. Wilson died in 1927 and Schaff in 1893, so the translation is also out of copyright in jurisdictions applying a life-plus-seventy term. No host's markup, formatting, pagination, footnotes or annotation is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Derived on 2026-07-31 from the hashed Wikisource export above by the tracked script named in transformation. No model stood anywhere in the path. This is the work the Genesis pilot could not land: asked for it verbatim, a model-mediated route returned a paraphrase of chapter 1 under Gregory's name, and nothing was written rather than write words that might not be the translator's. Fetching the bytes directly settles it. Line 1 is the volume editors' note on the treatise, which is Schaff's and not Gregory's; lines 2 to 281 are Gregory's, the dedicatory letter to Peter and the printing's table of chapter headings at lines 2 to 35 and chapters I to XXX at lines 36 to 281."
+retrieved = "2026-07-31"
+sha256 = "b09a66d11d380f548cad43e6659197d8f99ff487c62404954da9b6856fbdd2cd"
+byte_size = 207962
+path = "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-5/editions/new-york-1893/artifacts/gregory-de-hominis-opificio-web-text-b09a66d1/gregory-de-hominis-opificio.txt"
+derived_from = "artifact.nicene-and-post-nicene-fathers.series-2-volume-5.new-york-1893.gregory-de-hominis-opificio-wikisource-export-d693d15a"
+transformation = "python3 scripts/wikisource_transcribe.py <export> --label Chapter --no-sections --drop '—+' --drop 'On the Making of Man\\.' --drop 'Note on the Treatise .*' --out gregory-de-hominis-opificio.txt, run over the exact bytes of the parent artifact. The script drops the Wikisource page header, every <ref> footnote body, every wiki heading and the three dropped patterns, which are the printing's rule, its running head and the editors' note title; unwraps templates, links and italics; decodes HTML entities; folds typographic quotation marks, apostrophes and non-breaking spaces to their ASCII equivalents; normalises to NFC; collapses runs of whitespace; and writes one LF-terminated UTF-8 line per source paragraph, prefixed by a braced locator naming the Wikisource page. --no-sections because this printing numbers no subdivision inside a chapter, unlike Basil's homilies."
+encoding = "utf-8"
+indexable = true
+notes = "A transcription of a web witness of the 1893 printing, not a collation against the printed page, so no passage taken from it rises above inspected. One bound is worth recording because it was nearly missed: Wikisource's own contents page for this treatise lists thirty chapter pages and stops, while a thirty-first page exists and carries the printing's chapter XXX. A retrieval driven by that contents list would have produced a file that stopped one chapter early and would have looked exactly like a complete one. The page list was therefore probed past the end of the contents until a page genuinely did not exist, and the export holds all thirty-one chapter pages."

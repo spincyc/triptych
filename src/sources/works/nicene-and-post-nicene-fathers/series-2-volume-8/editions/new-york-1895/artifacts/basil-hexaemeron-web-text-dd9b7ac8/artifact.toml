@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-web-text-dd9b7ac8"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895"
+artifact_type = "web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The complete text of all nine homilies of Basil's Hexaemeron in Blomfield Jackson's Nicene and Post-Nicene Fathers English translation, published New York 1895 and in the United States public domain by date of publication. Jackson died in 1905 and Schaff in 1893, so the translation is also out of copyright in jurisdictions applying a life-plus-seventy term. No host's markup, formatting, pagination, footnotes or annotation is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Derived on 2026-07-31 from the hashed Wikisource export above by the tracked script named in transformation. The retrieval fetched whole byte streams with curl, hashed them, and read them locally; no model stood in the path at any point, which matters here because the same corpus has already been shown to come back paraphrased when a model was asked for it verbatim. The file holds 162 lines: Homily I at lines 1-16, II at 17-37, III at 38-54, IV at 55-68, V at 69-85, VI at 86-110, VII at 111-126, VIII at 127-146 and IX at 147-162."
+retrieved = "2026-07-31"
+sha256 = "dd9b7ac88d652d5190ba175da6801d677561c758102b3909b33baca34820af0f"
+byte_size = 239631
+path = "src/sources/works/nicene-and-post-nicene-fathers/series-2-volume-8/editions/new-york-1895/artifacts/basil-hexaemeron-web-text-dd9b7ac8/basil-hexaemeron.txt"
+derived_from = "artifact.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-wikisource-export-4aff3a7b"
+transformation = "python3 scripts/wikisource_transcribe.py <export> --label Homily --roman --out basil-hexaemeron.txt, run over the exact bytes of the parent artifact. The script drops the Wikisource page header, every <ref> footnote body, every wiki heading, and the printing's running head and scriptural lemma; unwraps templates, links and italics; decodes HTML entities; folds typographic quotation marks, apostrophes and non-breaking spaces to their ASCII equivalents; normalises to NFC; collapses runs of whitespace; and writes one LF-terminated UTF-8 line per source paragraph, prefixed by a braced homily-and-section locator taken from the printing's own numbering."
+encoding = "utf-8"
+indexable = true
+notes = "This is a transcription of a web witness of the 1895 printing, not a collation against the printed page, so no passage taken from it rises above inspected. It supersedes the earlier basil-hexaemeron-1-web-text-0823184f, which held Homily I alone and was assembled by hand from two model-mediated readings. Collating that file against these bytes found two defects in it that the route it used could not have shown: an entire paragraph of section 5 was missing, beginning “The first movement is called beginning”, and two further paragraphs had been run together into one. The earlier file also read “according heaven the privilege of seniority” where this witness reads “according to heaven”; that one is a genuine divergence between readings rather than a defect in either, and it stands open against the printed page along with the three divergences the earlier record listed."
