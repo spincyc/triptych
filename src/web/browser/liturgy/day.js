@@ -490,87 +490,31 @@
     return held.section;
   }
 
-  function orationSet(title, note, series, rubrics, ceiling) {
-    const node = T.el('div', 'oration-set');
-    node.appendChild(T.el('h5', null, title));
-    node.appendChild(T.el('p', 'count',
-      series.length === 1 ? 'One oration.' : series.length + ' orations.' +
-        (note ? ' ' + note : '')));
-    if (note && series.length === 1) node.appendChild(T.el('p', 'count', note));
-    const list = T.el('ol');
-    for (const oration of series) {
-      const item = T.el('li');
-      item.appendChild(T.el('span', 'oration-label', oration.label));
-      item.appendChild(T.el('span', 'oration-of', oration.of_name));
-      const why = T.el('div', 'oration-why', oration.kind + ' — ' + oration.why);
-      withLocus(why, oration.locus);
-      item.appendChild(why);
-      if (oration.conclusion) {
-        item.appendChild(T.el('div', 'oration-why', 'Said under ' + oration.conclusion + '.'));
-      }
-      if (oration.alternative) {
-        const alt = T.el('div', 'oration-why',
-          'The collect of ' + oration.alternative.of_name + ' may be said in its place: ' +
-          oration.alternative.what);
-        withLocus(alt, oration.alternative.locus);
-        item.appendChild(alt);
-      }
-      list.appendChild(item);
-    }
-    node.appendChild(list);
-    // The ceiling is the answer to "why this many", so it is stated whether or
-    // not it turned anything away.
-    if (ceiling) {
-      const rule = T.el('p', 'oration-why', ceiling.what ||
-        ('This day admits ' + ceiling.max + ' commemoration' + (ceiling.max === 1 ? '' : 's') +
-         (ceiling.privileged_only ? ', and only a privileged one.' : '.')));
-      withLocus(rule, ceiling.locus);
-      node.appendChild(rule);
-    }
-    return node;
-  }
-
   function renderStepFive(branch, rubrics) {
     const orations = rubrics.orations || {};
     const commemorates = !(rubrics.commemoration && rubrics.commemoration.exists === false);
-    const held = step(5, 'Assembly: the orations, and what is read out of the book',
+    const held = step(5, 'The Mass that is said',
       commemorates
-        ? 'The collects are where the days that lost survive. The number is capped by ' +
-          'the class of the day that won, and again by how the Mass is celebrated.'
+        ? 'The day’s own propers, and under each oration the days that lost, which ' +
+          'survive as the second and third collects.'
         : 'One collect, whatever else fell on the day. This rite does not commemorate, ' +
           'and that is the sharpest difference between the two books.');
 
-    const sets = T.el('div', 'orations');
-    const ceilings = branch.ceilings || {};
-    if (branch.orations.all) {
-      sets.appendChild(orationSet('Every Mass', orations.what || null, branch.orations.all, rubrics, null));
-    } else {
-      sets.appendChild(orationSet(
-        'Low Mass, and the conventual Mass',
-        null,
-        branch.orations.low_mass, rubrics, ceilings.low_mass));
-      sets.appendChild(orationSet(
-        'A sung Mass that is not the conventual Mass',
-        branch.sungDiffers
-          ? 'Fewer than at the Low Mass an hour earlier: an ordinary commemoration is ' +
-            'made only at Lauds, at the conventual Mass and at Low Masses.'
-          : (branch.orations.low_mass.length > 1
-              ? 'The same, because every commemoration due here is privileged, and a ' +
-                'privileged commemoration is made in every Mass.'
-              : 'The same: nothing on this day was commemorated.'),
-        branch.orations.sung_non_conventual, rubrics, ceilings.sung_non_conventual));
-    }
-    held.body.appendChild(sets);
+    // The orations used to be listed twice here, as a rank-and-reason table, and
+    // then a third time in the formulary below with their words. One tree now
+    // carries all of it: the slot, the words, the rank and the rubric together,
+    // which is the only arrangement in which a reader can see what is said and
+    // why in the same glance. Where the sung Mass differs, the affected orations
+    // say so on themselves.
 
     if (commemorates) {
       const order = (rubrics.commemoration && rubrics.commemoration.order) || null;
       if (order) held.body.appendChild(paragraph('row-meta', order.gloss, order.locus));
       const cap = orations.absolute_cap;
       if (cap) held.body.appendChild(paragraph('row-meta', cap.gloss, cap.locus));
-      for (const row of orations.tracked_by || []) {
-        held.body.appendChild(paragraph('row-meta',
-          'The ' + row.slot + 's follow the collects: ' + row.what, row.locus));
-      }
+      // `orations.tracked_by` is not restated here: the formulary below prints
+      // each of those rules at the slot it governs, which is where it can be
+      // checked against what is actually said.
       const abolished = (rubrics.commemoration || {}).abolished;
       if (abolished) held.body.appendChild(paragraph('row-meta', abolished.what, abolished.locus));
     } else {
@@ -624,6 +568,148 @@
     return { label: /^[A-C]$/.test(wanted) ? 'Year ' + wanted : 'Cycle ' + wanted, what: what };
   }
 
+  /**
+   * The proper slots a subordinate oration is said in, and the rubric for each.
+   *
+   * The collect is the slot the derivation ranks; the rest are read from
+   * `orations.tracked_by`, which is where the source states that the Secret and
+   * the Postcommunion follow the collects in number and order. Naming them here
+   * instead would be a list of slots standing beside the rule that governs
+   * them, free to disagree with it — and a rite that added a fourth tracked
+   * slot, or a rite that tracks none, would not reach this page.
+   */
+  function trackedSlots(branch, rubrics) {
+    const series = branch.orations.all || branch.orations.low_mass || [];
+    const slots = [];
+    if (series.length && series[0].label) {
+      slots.push({ slot: series[0].label, what: null, locus: null });
+    }
+    for (const row of (rubrics.orations || {}).tracked_by || []) {
+      if (row && row.slot) slots.push(row);
+    }
+    return slots;
+  }
+
+  // Position in a series of orations, said the way the rubrics say it. Three is
+  // the absolute cap in both rites, and a fourth would be a defect upstream, so
+  // an unnamed position falls back to its number rather than inventing a word.
+  const ORDINALS = { 2: 'Second', 3: 'Third' };
+
+  function ordinalOf(position) {
+    return ORDINALS[position] || ('Oration ' + position);
+  }
+
+  /** Is this mass a day the calendar keeps and the corpus has not compiled? */
+  function isUncompiled(mass) {
+    const propers = (mass && mass.propers) || [];
+    return propers.length > 0 && propers.every((one) => one.name === 'Placeholder');
+  }
+
+  /** What a proper says of itself: its incipit, its reference, or its absence. */
+  function properDetail(proper, lectionary) {
+    const detail = T.el('span', 'formulary-detail');
+    const refs = (proper.citations || []).map((one) => one.ref).filter(Boolean);
+    if (proper.incipit) detail.appendChild(T.el('em', null, proper.incipit));
+    if (refs.length) {
+      if (proper.incipit) detail.appendChild(document.createTextNode(' · '));
+      detail.appendChild(document.createTextNode(refs.join('; ')));
+    }
+    // A proper that varies with the lectionary carries its reading under the
+    // year rather than on the proper, and this page knows which year the date
+    // falls in. Reading only the proper's own citations printed "no citation or
+    // text is compiled here" against five readings the corpus holds.
+    const cycle = cycleFor(proper, lectionary);
+    if (cycle) {
+      if (refs.length || proper.incipit) detail.appendChild(document.createTextNode(' · '));
+      detail.appendChild(T.el('span', 'formulary-cycle', cycle.label));
+      detail.appendChild(document.createTextNode(' ' + cycle.what));
+    }
+    if (!proper.incipit && !refs.length && !cycle) {
+      detail.appendChild(document.createTextNode(
+        proper.text ? 'composed text' : 'no citation or text is compiled here'));
+    }
+    return detail;
+  }
+
+  /**
+   * One subordinate oration, under the slot it is said in.
+   *
+   * Everything about it is derived: which celebration it is of, what kind of
+   * commemoration, the rubric that admits it, and the conclusion it takes, all
+   * from the oration series the model built out of the tracked precedence
+   * tables. The only thing looked up here is its words, from the propers
+   * structure, and their absence is stated rather than passed over.
+   */
+  function subordinateItem(oration, slot, structure, sungDiffers) {
+    const item = T.el('li', 'formulary-item is-subordinate');
+
+    const head = T.el('div', 'subordinate-head');
+    head.appendChild(T.el('span', 'formulary-slot',
+      ordinalOf(oration.position) + ' ' + String(slot.slot).toLowerCase()));
+    head.appendChild(T.el('span', 'subordinate-of', 'of ' + oration.of_name));
+    if (oration.kind) head.appendChild(T.el('span', 'tag tag-commemorated', oration.kind));
+    item.appendChild(head);
+
+    // Its words, where the corpus holds them. A commemoration whose own
+    // formulary is a placeholder is not a broken row: the day is kept and its
+    // three orations are appointed; this repository has not transcribed them.
+    const of = (structure.masses || []).find((one) => one.key === oration.of);
+    const matching = of && (of.propers || []).find((one) => one.name === slot.slot);
+    const words = T.el('p', 'subordinate-words');
+    if (matching && (matching.incipit || matching.text)) {
+      words.appendChild(T.el('em', null, matching.incipit || 'composed text'));
+    } else if (of) {
+      words.appendChild(document.createTextNode(
+        'Its ' + String(slot.slot).toLowerCase() + ' is appointed and is not compiled here.'));
+    } else {
+      words.appendChild(document.createTextNode(
+        'It is constituted from its season and the calendar index carries no ' +
+        'formulary of its own, so this oration is taken from the season’s Mass.'));
+    }
+    item.appendChild(words);
+
+    // Why it is said at all, and under what conclusion.
+    item.appendChild(paragraph('row-meta', oration.why, oration.locus));
+    if (oration.conclusion) {
+      item.appendChild(T.el('p', 'row-meta', 'Said under ' + oration.conclusion + '.'));
+    }
+    if (oration.alternative) {
+      const alt = T.el('p', 'row-meta',
+        'The collect of ' + oration.alternative.of_name + ' may be said in its place: ' +
+        oration.alternative.what);
+      withLocus(alt, oration.alternative.locus);
+      item.appendChild(alt);
+    }
+    if (sungDiffers) {
+      item.appendChild(T.el('p', 'row-meta',
+        'Not said at a sung Mass that is not the conventual Mass.'));
+    }
+    return item;
+  }
+
+  /** The days that stood here and are not said, with the rule that disposed of them. */
+  function renderNotSaid(node, branch) {
+    const silent = (branch.losers || []).filter((one) => one.disposition !== 'commemorated');
+    if (!silent.length) return;
+    node.appendChild(T.el('h5', 'formulary-heading', 'What stood here and is not said'));
+    const list = T.el('ul', 'formulary-list');
+    for (const loser of silent) {
+      const item = T.el('li', 'formulary-item is-silent');
+      const head = T.el('div', 'subordinate-head');
+      head.appendChild(T.el('span', 'subordinate-of', loser.name));
+      head.appendChild(T.el('span', 'tag tag-' + loser.disposition,
+        DISPOSITION_WORDS[loser.disposition] || loser.disposition));
+      item.appendChild(head);
+      item.appendChild(paragraph('row-meta', loser.why, loser.locus));
+      if (loser.destination) {
+        item.appendChild(T.el('p', 'row-meta',
+          'It is kept on ' + longDate(loser.destination, Model.weekdayOf(loser.destination)) + '.'));
+      }
+      list.appendChild(item);
+    }
+    node.appendChild(list);
+  }
+
   function renderFormulary(node, branch, structure, rubrics, lectionary) {
     T.clear(node);
     if (!branch.winner) {
@@ -631,11 +717,54 @@
         'No formulary is shown: no day was settled above.'));
       return;
     }
+
+    // Why these texts and not others, said once, at the head of them, out of the
+    // same ranking that chose them.
+    const why = T.el('p', 'formulary-why');
+    why.appendChild(T.el('strong', null, branch.winner.name));
+    why.appendChild(document.createTextNode(
+      branch.winner.row != null
+        ? ' took the day at ' + Model.placeWord(rubrics) + ' ' + branch.winner.row +
+          (branch.winner.rowLabel ? ' — ' + branch.winner.rowLabel : '') + '.'
+        : ' takes the day.'));
+    withLocus(why, branch.winner.locus);
+    node.appendChild(why);
+
+    const series = branch.orations.all || branch.orations.low_mass || [];
+    const subordinate = series.filter((one) => one.position > 1);
+    const slots = trackedSlots(branch, rubrics);
+    const slotFor = (name) => slots.find((one) => one.slot === name) || null;
+
+    /**
+     * The commemorations, where there is no list of the day's own propers for
+     * them to sit under.
+     *
+     * They are still said. A page that showed nothing here because the day's own
+     * Mass is not written down would be reporting that the day carries one
+     * oration when the rubrics give it three, which is the same class of wrong
+     * answer as omitting a proper.
+     */
+    function renderOrphans(into) {
+      if (!subordinate.length) return;
+      into.appendChild(T.el('p', 'row-meta',
+        'The ' + (subordinate.length === 1 ? 'commemoration' : 'commemorations') +
+        ' below ' + (subordinate.length === 1 ? 'is' : 'are') + ' still appointed, and ' +
+        (subordinate.length === 1 ? 'follows' : 'follow') + ' each of the day’s own orations.'));
+      const orphans = T.el('ul', 'formulary-list subordinates');
+      for (const oration of subordinate) {
+        orphans.appendChild(
+          subordinateItem(oration, slots[0] || { slot: 'Collect' }, structure, false));
+      }
+      into.appendChild(orphans);
+    }
+
     if (!branch.winner.key) {
       node.appendChild(T.el('p', 'row-meta',
-        'The day that won is constituted from its season and this calendar index ' +
-        'carries no formulary of its own for it. Most ferias take the preceding ' +
-        'Sunday’s Mass, which the index does not repeat.'));
+        'It is constituted from its season and this calendar index carries no ' +
+        'formulary of its own for it. Most ferias take the preceding Sunday’s ' +
+        'Mass, which the index does not repeat.'));
+      renderOrphans(node);
+      renderNotSaid(node, branch);
       return;
     }
 
@@ -643,98 +772,81 @@
     if (!mass) {
       node.appendChild(T.el('p', 'row-meta',
         'The propers structure carries no mass keyed ' + branch.winner.key + '.'));
+      renderOrphans(node);
+      renderNotSaid(node, branch);
       return;
     }
 
-    node.appendChild(T.el('h5', 'oration-label', 'The formulary, in the order the missal appoints it'));
-
-    const commemorated = branch.losers.filter((one) => one.disposition === 'commemorated');
-    const added = new Map();
-    for (const row of commemorated) {
-      const held = (structure.masses || []).find((one) => one.key === row.id);
-      added.set(row.id, { loser: row, mass: held || null });
+    // A day the calendar keeps whose formulary this repository has not
+    // transcribed. It is stated as the one fact it is, rather than drawn as a
+    // list of empty slots: a reader must not count the parts of this Mass off a
+    // page that invented them, and must not read the absence as a page that
+    // failed to load.
+    if (isUncompiled(mass)) {
+      const held = T.el('div', 'formulary-uncompiled');
+      held.appendChild(T.el('h5', null, 'The formulary is not compiled here'));
+      held.appendChild(T.el('p', null,
+        'This missal keeps the day and appoints its Mass; this repository has not ' +
+        'yet transcribed the propers of it. Nothing has failed to load and nothing ' +
+        'is hidden — the texts are simply not held yet, so the page will not say ' +
+        'how many parts this Mass has or what they are.'));
+      node.appendChild(held);
+      renderOrphans(node);
+      renderNotSaid(node, branch);
+      return;
     }
 
+    node.appendChild(T.el('h5', 'formulary-heading',
+      'The formulary, in the order the missal appoints it'));
+
     const list = T.el('ul', 'formulary-list');
-    // The Secret and the Postcommunion track the collects in number and order,
-    // so a commemoration is inserted after each of the three, not only after
-    // the Collect. Anything else would print a Mass nobody says.
-    const TRACKS = { Collect: 'Collect', Secret: 'Secret', Postcommunion: 'Postcommunion' };
     let placed = false;
 
     for (const proper of mass.propers || []) {
       const item = T.el('li', 'formulary-item');
       item.appendChild(T.el('span', 'formulary-slot', proper.name || 'Proper'));
-      const detail = T.el('span', 'formulary-detail');
-      const refs = (proper.citations || []).map((one) => one.ref).filter(Boolean);
-      if (proper.incipit) detail.appendChild(T.el('em', null, proper.incipit));
-      if (refs.length) {
-        if (proper.incipit) detail.appendChild(document.createTextNode(' · '));
-        detail.appendChild(document.createTextNode(refs.join('; ')));
-      }
-      // A proper that varies with the lectionary carries its reading under the
-      // year rather than on the proper, and this page knows which year the date
-      // falls in. Reading only the proper's own citations printed "no citation
-      // or text is compiled here" against five readings the corpus holds.
-      const cycle = cycleFor(proper, lectionary);
-      if (cycle) {
-        if (refs.length || proper.incipit) detail.appendChild(document.createTextNode(' · '));
-        detail.appendChild(T.el('span', 'formulary-cycle', cycle.label));
-        detail.appendChild(document.createTextNode(' ' + cycle.what));
-      }
-      if (!proper.incipit && !refs.length && !cycle) {
-        detail.appendChild(document.createTextNode(
-          proper.text ? 'composed text' : 'no citation or text is compiled here'));
-      }
-      item.appendChild(detail);
+      item.appendChild(properDetail(proper, lectionary));
       list.appendChild(item);
 
-      const tracked = TRACKS[proper.name];
-      if (!tracked) continue;
+      // What is said under this proper, and why. A slot that tracks the collects
+      // carries the whole subordinate series, so the reader sees the Mass that
+      // is actually said rather than the day's own texts alone.
+      const slot = slotFor(proper.name);
+      if (!slot || !subordinate.length) continue;
       placed = true;
-      let position = 2;
-      for (const [key, row] of added) {
-        const extra = T.el('li', 'formulary-item is-added');
-        extra.appendChild(T.el('span', 'formulary-slot',
-          (position === 2 ? 'Second ' : 'Third ') + tracked.toLowerCase()));
-        const say = T.el('span', 'formulary-detail');
-        say.appendChild(document.createTextNode('of ' + row.loser.name));
-        const held = row.mass;
-        const matching = held && (held.propers || []).find((one) => one.name === tracked);
-        if (matching && matching.incipit) {
-          say.appendChild(document.createTextNode(' — '));
-          say.appendChild(T.el('em', null, matching.incipit));
-        } else if (held) {
-          say.appendChild(document.createTextNode(
-            ' — its ' + tracked.toLowerCase() + ' is not compiled in this corpus'));
-        } else {
-          say.appendChild(document.createTextNode(
-            ' — this day has no formulary in the index, so its oration is taken ' +
-            'from the season’s own Mass'));
-        }
-        extra.appendChild(say);
-        list.appendChild(extra);
-        position += 1;
+      const nested = T.el('ul', 'subordinates');
+      if (slot.what) {
+        nested.appendChild(paragraph('row-meta subordinates-rule', slot.what, slot.locus));
       }
+      for (const oration of subordinate) {
+        nested.appendChild(
+          subordinateItem(oration, slot, structure, Boolean(branch.sungDiffers)));
+      }
+      item.appendChild(nested);
     }
     node.appendChild(list);
 
-    if (!(mass.propers || []).length) {
+    // A commemoration with nowhere to sit must be said, not dropped. Many of this
+    // corpus's seasonal ferias carry only their scripture-bearing propers, so the
+    // slot a second collect would follow is not written down — a gap in the
+    // corpus and not a fact about the Mass. The orations are still shown; only
+    // their place in the list is unknown.
+    if (subordinate.length && !placed) {
       node.appendChild(T.el('p', 'row-meta',
-        'This missal keeps the day and the corpus carries no propers for it yet.'));
+        'This corpus carries no oration slot for the day’s own Mass, so the page ' +
+        'cannot say which proper each of these follows. They are appointed, not absent.'));
+      renderOrphans(node);
     }
-    // A commemoration with nowhere to sit must be said, not dropped. Many of
-    // this corpus's seasonal ferias carry only their scripture-bearing propers,
-    // so the slot the second collect belongs in is not written down here — which
-    // is a gap in the corpus and not a fact about the Mass.
-    if (added.size && !placed) {
-      node.appendChild(T.el('p', 'row-meta',
-        'The ' + (added.size === 1 ? 'commemoration' : 'commemorations') + ' derived above ' +
-        (added.size === 1 ? 'has' : 'have') + ' no place to sit in the list: this corpus ' +
-        'carries no Collect, Secret or Postcommunion for the day’s own Mass, so the slots ' +
-        'the second orations follow are not written down. The orations are appointed, not ' +
-        'absent.'));
+
+    // Why this many, whether or not it turned anything away.
+    const ceiling = (branch.ceilings || {}).low_mass;
+    if (ceiling) {
+      node.appendChild(paragraph('row-meta', ceiling.what ||
+        ('This day admits ' + ceiling.max + ' commemoration' + (ceiling.max === 1 ? '' : 's') +
+         (ceiling.privileged_only ? ', and only a privileged one.' : '.')), ceiling.locus));
     }
+
+    renderNotSaid(node, branch);
     node.appendChild(T.el('p', 'row-meta',
       'The texts themselves, with their translations, are on the propers page.'));
   }

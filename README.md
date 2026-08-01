@@ -21,7 +21,7 @@ Choose a section, open a PDF, and read. New here? Start with
 
 - **[The Propers of the Mass](liturgy/)** — any Mass in either missal, in the
   translations this site can publish.
-- **[How this day's Mass is assembled](liturgy/day.html)** — from a date to its
+- **[Why this Mass today](liturgy/day.html)** — from a date to its
   Mass, with the rubric behind each step.
 - **[The Story of Salvation](scripture/)** — the abridged reading plan, at three
   depths.

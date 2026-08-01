@@ -281,59 +281,6 @@
 .tag-source { text-transform: none; letter-spacing: 0.04em; font-weight: 600; }
 
 
-/* ---- The orations ------------------------------------------------------- */
-
-.orations {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  gap: 0.9rem;
-  margin: 0;
-}
-
-.oration-set {
-  padding: 0.7rem 0.8rem;
-  background: var(--section-wash);
-  border: 1px solid var(--section-pale);
-  border-radius: 4px;
-}
-
-.oration-set h5 {
-  margin: 0 0 0.15rem;
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--section-ink);
-}
-
-.oration-set .count {
-  margin: 0 0 0.5rem;
-  font-size: 0.8rem;
-  color: var(--ink-faint);
-}
-
-.oration-set ol { margin: 0; padding-left: 1.1rem; }
-
-.oration-set li { margin-bottom: 0.45rem; }
-
-.oration-set li:last-child { margin-bottom: 0; }
-
-.oration-label {
-  font-family: var(--sans);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  display: block;
-}
-
-.oration-of { font-weight: 600; }
-
-.oration-why { font-size: 0.82rem; color: var(--ink-soft); }
-
-
 /* ---- States: conditional and unsettled ---------------------------------- */
 
 .verdict {
@@ -413,10 +360,97 @@
   color: var(--section-ink);
 }
 
-.formulary-item.is-added {
+/* ---- Subordination -------------------------------------------------------
+   The ranking is the content. A day can carry a commemoration under each of the
+   day's own orations, and a flat list of them says nothing about which is the
+   Mass and which is said under it. So a subordinate oration is a list inside the
+   slot it is said in: one level of nesting, marked by a rule down its left edge
+   and by its own rank badge, and never by a number that would imply an order the
+   rubrics do not state.
+
+   One level, and only one. Deeper nesting stops being legible on a phone, and
+   the rubrics themselves stop at three orations. */
+
+.subordinates {
+  flex: 1 1 100%;
+  margin: 0.3rem 0 0.15rem;
+  padding: 0 0 0 0.75rem;
+  list-style: none;
+  border-left: 2px solid var(--section-accent);
+}
+
+.subordinates-rule {
+  margin: 0 0 0.3rem;
+  font-style: italic;
+}
+
+.formulary-item.is-subordinate,
+.formulary-item.is-silent {
+  display: block;
+  padding: 0.35rem 0 0.4rem;
+  border-bottom: 1px dotted var(--section-row);
+}
+
+.formulary-item.is-subordinate:last-child,
+.formulary-item.is-silent:last-child { border-bottom: none; }
+
+.subordinate-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.45rem;
+}
+
+.subordinate-of { font-weight: 600; color: var(--ink); }
+
+.subordinate-words { margin: 0.15rem 0 0; font-size: 0.86rem; color: var(--ink-soft); }
+
+/* A day the calendar keeps and the corpus has not transcribed. It reads as the
+   stated fact it is, and deliberately not as a failure: no red, no "error", and
+   no drawn-out list of empty slots that would tell a reader how many parts this
+   Mass has when this repository does not know. */
+.formulary-uncompiled {
+  margin: 0.4rem 0 0.6rem;
+  padding: 0.7rem 0.85rem;
   background: var(--section-wash);
-  border-left: 3px solid var(--section-accent);
-  padding-left: 0.5rem;
+  border: 1px dashed var(--section-line);
+  border-radius: 4px;
+}
+
+.formulary-uncompiled h5 {
+  margin: 0 0 0.25rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.formulary-uncompiled p {
+  margin: 0 0 0.4rem;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+.formulary-uncompiled p:last-child { margin-bottom: 0; }
+
+.formulary-heading {
+  margin: 0.9rem 0 0.3rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--section-ink);
+}
+
+/* Which celebration these texts are of, and by what rule — said once, above
+   them, rather than repeated against each. */
+.formulary-why {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
 }
 
 
@@ -453,4 +487,7 @@
      phrase is enough to scroll the whole page sideways, and a tag that wraps
      is better than a page that does. */
   .row-place, .tag { white-space: normal; }
+  /* The slot label takes its own line, so a nested oration keeps its indent
+     instead of spending it on a column that no longer fits. */
+  .subordinates { padding-left: 0.55rem; }
 }
