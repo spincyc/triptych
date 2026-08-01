@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-08-01"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:96bbce70753710f5725db3b2168a83555a593192d63c4be17b7b38132e396da3"
+inventory_snapshot = "sha256:7e47ae0e09188109b2ccc0e0608304d72386224f0504a2c8c7105d94b7de9a2d"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
-canonical_catalog_snapshot = "sha256:5b5cef65c95947b6dc580e7d1ed666fe114c2c0c2a1ea760baf2929fee96d89d"
+canonical_catalog_snapshot = "sha256:c1aeba6826f4a01f04b52bd6329f2a34460d85bd0112321b095ab8579cf641ca"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:be349b49b089ba8108bc9f19d554a7456799064932ea48b44c6f33d1389b366b"
+snapshot = "sha256:4f14e9d24d2c2ebcd8c85d1f7e8ac4b82e8990ac8a51caa9f4f59537ffa4bc2a"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -9370,7 +9370,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression"
-surface_snapshot = "sha256:5817e7aa36c2eac379304df1452983f6c5833b47e39527ee815f10e34549e104"
+surface_snapshot = "sha256:75d65327cdbd71bc3dc027962b2bc4fa379179502444cd5ec2f2159c6f528548"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9394,7 +9394,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon"
-surface_snapshot = "sha256:e61c0a788af507eb82033cf29978c3a2b1fef53554f3a36b68cd6cf849ed04ab"
+surface_snapshot = "sha256:4b77f3d31af04ac2363f86f5a2273d46761bc090a8662ef1eae52fe06a794aae"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9403,7 +9403,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/16-c
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons"
-surface_snapshot = "sha256:f2f871a677ab01e4cba2bff3c920ba9f0e57bb0d289a2d693f4ec10d2cebdea8"
+surface_snapshot = "sha256:34085065bb651a41086e1cd430d1efa3895d19e822d5f70e36bb0e1582524d15"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9412,7 +9412,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/17-t
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass"
-surface_snapshot = "sha256:68c40f10628d3c136f75cef96a4f2d9a15d0d26edda34a2cff9f02125ca65372"
+surface_snapshot = "sha256:d1bb04bb2b0dc8ab6ae1e7a589d5604d58107a72b8d78e8d2d75786d478e1849"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9438,7 +9438,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-registe
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose"
-surface_snapshot = "sha256:602d92360b9fbaef53f59a6f30a02fdc2fe8a7537ab420705735631d82a869eb"
+surface_snapshot = "sha256:138ccfb1e4bc61878f796b5b43718f8bd00917467fcd9131e546724a91d0f749"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9447,7 +9447,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusio
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation"
-surface_snapshot = "sha256:df8457e00e011c85652402e6377898bc55b3b37fabe178fd5cf1ad8fae00222f"
+surface_snapshot = "sha256:821af8fdc9bbc4c3a69eadfeb1f3dc28b03214738951c09740d7ca1f128ac506"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9460,7 +9460,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collati
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research"
-surface_snapshot = "sha256:79c557551bb07e75cc9265001f16c32e356fdbb18b87b86d6ab9373e84c0a136"
+surface_snapshot = "sha256:b701f0daedf18e392a4dd42eb30b91a3614437df280027647e93cda5735b99a9"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9505,7 +9505,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics"
-surface_snapshot = "sha256:754d4de2cfc01640b75ba6f5495e7d0938baa74cb3dc960bc832052c09788901"
+surface_snapshot = "sha256:04b7d86594b15571bdb15853307b1373dc1cd6631712d44668007013bd833505"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9514,7 +9514,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/05-
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences"
-surface_snapshot = "sha256:0749809076bd7b56defa4b3fc59399e2a22789b777b08a34a17ef28cc177ee4b"
+surface_snapshot = "sha256:81a75b616393f440435c2f0e0ca2edb4b27ad43bcd52622d2f70169d9695eb4b"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9523,7 +9523,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary"
-surface_snapshot = "sha256:9dbf84771f48f9fb8f36e3d0a9e4eaa4137b9d3b01fef55211baae19236983b1"
+surface_snapshot = "sha256:80d2cb207b1de648a8b92d811610f56fba5c9101d73c6dc4758bcbb57a26d404"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9532,7 +9532,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/07-
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition"
-surface_snapshot = "sha256:dc0de6c650ecb5c96707149353e1360418ba5cfeda4d55b9f6cab34bbc16d25e"
+surface_snapshot = "sha256:51d5670afdc621d47cdc68815a01360386b6c607a505a92e9ecc7453a302f31a"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9551,7 +9551,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading"
-surface_snapshot = "sha256:5bf038ccf29163bd0d511bf1c1a26a9b02f3e405cd06dc12c971c15b492599a8"
+surface_snapshot = "sha256:c181e5d086778d40cccd0b95f9c7350ff8bca2008daca438e25331823f63918e"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9560,7 +9560,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/0
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"
-surface_snapshot = "sha256:358078bd6dd4f73e25b14dc2dd3cd7c7b9e4f0a5c377f798fc83200ee65a8d42"
+surface_snapshot = "sha256:fb36e21e19417ce8c96c01ac49ee4fac42cafbfbf2c6a4e1aadee8b8fdae2be0"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -9581,7 +9581,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/0
 
 [[review_units]]
 owner_id = "devotions/novenas/00-ascension-to-pentecost"
-surface_snapshot = "sha256:23831b782bba376953ed8ff620058355877b1ff42a60ebd4352fc61aa15eeedc"
+surface_snapshot = "sha256:9a98b37193b9ed3eab611e8fa6bbcdf942ea41ab517845161f0645f2884baf35"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.apostolic-penitentiary.enchiridion-indulgentiarum"
@@ -9630,7 +9630,7 @@ record_paths = ["src/gpt/devotions/novenas/00-ascension-to-pentecost/days/03-mar
 
 [[review_units]]
 owner_id = "devotions/novenas/00-ascension-to-pentecost-daily-prayer"
-surface_snapshot = "sha256:287203ccd912c5ba41069510defed5aed418d14d0e7eb0f374817638409daec9"
+surface_snapshot = "sha256:2489c8e5f962d0aa37680ba844ed8a7b68cc47dbf97c8bf44bb55e20c1c22d40"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.gaspar-lefebvre.daily-missal-with-vespers"
@@ -10293,7 +10293,7 @@ record_paths = ["src/gpt/history/traditional-priestly-institutes/03-icksp/sectio
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
-surface_snapshot = "sha256:053f0da2afcc2dc5960a18d09c4de25f1dd7f8e8afd7da5856412bebb4f94742"
+surface_snapshot = "sha256:b0e1a43df9b14bb086548df1869243ea7121451e5799f7210ef89e9e18f7b60a"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -10402,7 +10402,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mas
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"
-surface_snapshot = "sha256:9d3d10b64e5ea56d3b380c62fa7747549e52945459415a5c7756207cae25be91"
+surface_snapshot = "sha256:dd72be1bbe8691108e000e6194ea34cea62120ba88570be166fe95617841941b"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.anonymous.book-of-tobit"
@@ -10483,7 +10483,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday"
-surface_snapshot = "sha256:c40a129a6f5e2fdf0eb279ec79c5d65ec5a8cc48358304f855c11623a8baecca"
+surface_snapshot = "sha256:f18c19c5aca149f51d11d1a5590cc1d62581c3c9d9e0afd3750a62555e9a6db1"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.anonymous.apostolic-constitutions"
@@ -10536,7 +10536,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sun
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"
-surface_snapshot = "sha256:3fec9a0c667df17981eec3725bda27a3220951562b826e97613414e0c932e078"
+surface_snapshot = "sha256:8ccadf08f88934646924bdfd2421efbdfe4732a57b9e4e9929fd42da2db65a32"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.anthony-of-padua.sermons-for-sundays-and-festivals"
@@ -10585,7 +10585,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-afte
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost"
-surface_snapshot = "sha256:501d13e07f22c42b03703e2eb3a04b415f2394a72fc35c29e3746fa79aa71c0d"
+surface_snapshot = "sha256:97486759842d42da040ef6406adf242c599f7c703cb65d92404b82ccd60b31aa"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ambrose.expositio-evangelii-secundum-lucam"
@@ -10638,7 +10638,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost"
-surface_snapshot = "sha256:74daa5a34884269a1e2a2ef0755935ef22686f040d09610204a28f81a560910c"
+surface_snapshot = "sha256:0212fb4992ea283e9111718744014529c8ddd107b46a33851a4eabe3d0f52c64"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ambrose.expositio-evangelii-secundum-lucam"
@@ -10687,7 +10687,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-afte
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost"
-surface_snapshot = "sha256:d533e5e4b4e257eb33d637c215436fa483a1fb5e2596c2c1595605cbc36aff65"
+surface_snapshot = "sha256:96fb8e71c7d044cdbb617b680a8740aa34cd5b43be81a9e9b2be663a3fbe07ba"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.anthony-of-padua.sermons-for-sundays-and-festivals"
@@ -10732,7 +10732,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost"
-surface_snapshot = "sha256:9c41652eae68698564cf128d4b4fbd6633008c88a3f4cacac3c00541fde1d6b2"
+surface_snapshot = "sha256:1255199b99bdb7b1ef6daa5a2282496fdda2c9e4cd9fd69ab26fe545070bd41b"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ambrose.de-mysteriis"
@@ -10773,7 +10773,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost"
-surface_snapshot = "sha256:d1c40db403e692c4e1040bf18835683b8915a8282525375b36a751fd914c3f36"
+surface_snapshot = "sha256:0342073ccdbb52f906e686d4d4c3ae965c00450b0dcb10c9aab1c7000cda30a9"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.anthony-of-padua.sermons-for-sundays-and-festivals"
@@ -10822,7 +10822,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-aft
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
-surface_snapshot = "sha256:4059d22f999f5d2e9bfcbcc991e0a79c4eac45461da49e4443d7b188c3e3a7c9"
+surface_snapshot = "sha256:d359500bc4ff62626de657e5caaf9b27f7686ec534a640e7fd2a393499b32dca"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.anthony-of-padua.sermons-for-sundays-and-festivals"
@@ -10875,7 +10875,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-afte
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
-surface_snapshot = "sha256:241e0211948cbeb3e8642e7b2e8e91ec052dc9d2b9d861d34b51fb86ad8b41ac"
+surface_snapshot = "sha256:cac8497103a0fdc5fb3b99abd7766b576b49ddde5186c13d2df185902982cc84"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -10968,7 +10968,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"
-surface_snapshot = "sha256:1d5b13c30f5663d1cca40a76fb7b6356ca1c725fecaa4ae2bfa8f5f245313126"
+surface_snapshot = "sha256:4c6b080c74e7069996894c84097a8c7d7902b0bcec6133415835a159d974f272"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ambrosiaster.commentaria-in-epistolam-ad-corinthios-primam"
@@ -11180,7 +11180,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
-surface_snapshot = "sha256:ea9aa08c64656402bb726dbd2ad9c78e2c3cad4339852db714683abd6efec84f"
+surface_snapshot = "sha256:8350b0b568ebf42681d0d8bfd09b56b7431c617c52c3aa6f796c45b5e2a9fd15"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -11205,7 +11205,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/r
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
-surface_snapshot = "sha256:f3d43eb323bb296d77cdaab780249990cd6a15743edbd9bfd457cd3859e0c708"
+surface_snapshot = "sha256:66e33023c67e0f2c2938074a8c33f7c30f662aa2e32f0659dbda5b2d12067082"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -11226,7 +11226,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/m
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
-surface_snapshot = "sha256:32c35aecb40b457f7e6c92c822b5cce932c197226e799ca629b87ec7bd87ee8a"
+surface_snapshot = "sha256:255b48156812f2fdbc5872925aa2712583fcef142dbb2955a48dfa2cb71b6d35"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.adrian-fortescue.ceremonies-of-the-roman-rite-described"
@@ -11287,7 +11287,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dicti
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive"
-surface_snapshot = "sha256:7db80ebbbf1fa8adbfea27102d2d88490af4341be2d9e3f46c8b782043e706b5"
+surface_snapshot = "sha256:1618ba4f08ead7000c795380240fd00ea958557703d18afca02ed6bf194f68af"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.holy-see.cic-1917"

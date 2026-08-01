@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-07-31"
+audited_on = "2026-08-01"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 45
 source_surface_file_count = 954
-snapshot = "sha256:5ad450f3fa0ec2029c90754e9433cd8b989d6e2bc135fc307ce50511acb4c818"
+snapshot = "sha256:c92d396da9d07ddf11efb69c5253b2e8c6537637921eb059217bd0a54f6de378"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -4159,7 +4159,7 @@ owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-bindings.toml"
-sha256 = "609e1f6b42d5a0e23c4ee4ee434221b29e856a5d1a4063b7850b3152fe298bdb"
+sha256 = "36cc6f450924c47d28ed2567dd129dd12f28fddadcf33437d1be18ecf85d8455"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
@@ -4291,7 +4291,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/source-bindings.toml"
-sha256 = "6e43456c38108fd0a6596e4826da57ae77d5e40d87f3161a8e58d295ae7e99a8"
+sha256 = "1599c1bc5fddac099707f82fb926a71fcf4879bdeca29e2e9b4553dfae9817c4"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
@@ -4399,7 +4399,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-bindings.toml"
-sha256 = "e2e7ef98f918b2eb624bcf8d9372c1de87bf1811d79935bcd307352eec8374fc"
+sha256 = "0b15e751f38a3bc0faa325c774642b013d9c7882a6f146d0cca93fc140d483d0"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
@@ -4519,7 +4519,7 @@ owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-bindings.toml"
-sha256 = "3cdb8ac7a98126f71d97a047593d51527e064694e75cc0cab51215a56e5f99bf"
+sha256 = "e56fd3539903831b2823757a5082858f6803b1d17677b44e7cd4801e2e86295f"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
 
@@ -4801,7 +4801,7 @@ owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-bindings.toml"
-sha256 = "9385f86d8831056bbfbbdab443900ca2f8130c77d8b8bc653e00f06f90976f97"
+sha256 = "b5fa5275b373cc09039f07f7a11699c74433dbb8b0ba06951fcb8d485a4e54d0"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 
