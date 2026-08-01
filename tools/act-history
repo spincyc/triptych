@@ -1275,6 +1275,556 @@ def commonality(data: dict, repo: Path, wanted: tuple[str, str] | None) -> dict:
     return {"pairs": rows, "repo": str(repo), "status": "ok"}
 
 
+# --- What an act changed, unit by unit ---------------------------------------
+#
+# The map's detail panel shows a reader WHAT an act did, not merely that it did
+# five things called `absent`. The only honest source for that is the same state
+# computation `emit` commits, so the change set is derived here out of `build`'s
+# own states and written for the browser to read. Nothing recomputes it. A
+# second derivation in the page is how two answers to "what changed in 1955"
+# ship inside one artifact, and guidance/the-shape.md section 2 is about
+# precisely that.
+#
+# The departure KIND is never inferred from the diff. A field that moved says
+# which field; what the act called the movement is read from the recorded
+# departure beside it, with the basis the source states. Where a unit enters
+# with no departure behind it, that is the tracer first carrying the unit and is
+# labelled as such rather than as an addition somebody made.
+
+UNIT_FIELDS = ("mass", "slot", "name", "incipit", "text", "order")
+MASS_FIELDS = ("title", "day", "hour")
+UNESTABLISHED = "unestablished/"
+
+
+def side(row: dict | None, fields: tuple[str, ...]) -> dict | None:
+    """One side of a change, carrying only what the state holds.
+
+    An empty incipit is not an empty prayer: it is a unit whose words this
+    tracer never read. The value is passed through as it stands so the page can
+    say so, and nothing here fills it in.
+    """
+    if row is None:
+        return None
+    return {field: row.get(field, "") for field in fields}
+
+
+def differing(before: dict | None, after: dict | None, fields: tuple[str, ...]) -> list[str]:
+    if before is None or after is None:
+        return []
+    return [field for field in fields if before.get(field, "") != after.get(field, "")]
+
+
+def cited(departures: list[dict]) -> list[dict]:
+    """What the source says it did, and on what basis, for one target."""
+    return [
+        {
+            "kind": departure.get("kind"),
+            "basis": (departure.get("basis") or "").strip(),
+            "note": (departure.get("note") or "").strip(),
+        }
+        for departure in departures
+    ]
+
+
+def inherited(act_id: str, acts: dict[str, dict], states: dict[str, State]) -> State:
+    """The state an act inherits, through the same merge `build` performs.
+
+    Not a reimplementation: it calls the two functions the build calls, in the
+    same order, so a merge that refuses there refuses here.
+    """
+    parents = acts[act_id].get("parents", [])
+    return merge([states[parent] for parent in parents], common_ancestor(act_id, acts, states), act_id)
+
+
+def markers(state: State) -> dict[str, str]:
+    return {
+        path[len(UNESTABLISHED):-len(".txt")]: text
+        for path, text in state.files.items()
+        if path.startswith(UNESTABLISHED)
+    }
+
+
+def change_set(act_id: str, before: State, after: State, departures: list[dict]) -> dict:
+    """Everything one act moved, keyed by the unit or mass it moved."""
+    by_unit: dict[str, list[dict]] = {}
+    by_mass: dict[str, list[dict]] = {}
+    for departure in departures:
+        if departure.get("unit"):
+            by_unit.setdefault(departure["unit"], []).append(departure)
+        elif departure.get("mass"):
+            by_mass.setdefault(departure["mass"], []).append(departure)
+
+    units = []
+    for unit_id in sorted(set(before.units) | set(after.units) | set(by_unit)):
+        was = before.units.get(unit_id)
+        now = after.units.get(unit_id)
+        recorded = by_unit.get(unit_id, [])
+        if was == now and not recorded:
+            continue
+        units.append({
+            "unit": unit_id,
+            "state": "entered" if was is None else ("gone" if now is None else "changed"),
+            "kinds": sorted({departure.get("kind") for departure in recorded}),
+            "fields": differing(was, now, UNIT_FIELDS),
+            "before": side(was, UNIT_FIELDS),
+            "after": side(now, UNIT_FIELDS),
+            "cited": cited(recorded),
+        })
+
+    masses = []
+    for mass_id in sorted(set(before.masses) | set(after.masses) | set(by_mass)):
+        was = before.masses.get(mass_id)
+        now = after.masses.get(mass_id)
+        recorded = by_mass.get(mass_id, [])
+        if was == now and not recorded:
+            continue
+        masses.append({
+            "mass": mass_id,
+            "state": "entered" if was is None else ("gone" if now is None else "changed"),
+            "kinds": sorted({departure.get("kind") for departure in recorded}),
+            "fields": differing(was, now, MASS_FIELDS),
+            "before": side(was, MASS_FIELDS),
+            "after": side(now, MASS_FIELDS),
+            "cited": cited(recorded),
+        })
+
+    was_marked = markers(before)
+    unestablished = [
+        {"unit": unit_id, "marker": text}
+        for unit_id, text in sorted(markers(after).items())
+        if was_marked.get(unit_id) != text
+    ]
+
+    return {
+        "act": act_id,
+        "units": units,
+        "masses": masses,
+        "unestablished": unestablished,
+        "totals": {
+            "units_entered": sum(1 for row in units if row["state"] == "entered"),
+            "units_gone": sum(1 for row in units if row["state"] == "gone"),
+            "units_changed": sum(1 for row in units if row["state"] == "changed"),
+            "masses_touched": len(masses),
+            "unestablished": len(unestablished),
+            "standing": len(after.units),
+        },
+    }
+
+
+def standing(act_id: str, act: dict, state: State) -> dict:
+    """The liturgy as it stood when that act had done its work.
+
+    A reader arriving at a station wants to read the missal, not only the delta,
+    and a mass that holds no unit is printed with none rather than dropped: an
+    empty mass is this tracer saying it carries nothing there.
+    """
+    held: dict[str, list[dict]] = {}
+    for unit_id, unit in state.units.items():
+        held.setdefault(unit["mass"], []).append({"unit": unit_id, **side(unit, UNIT_FIELDS)})
+    masses = []
+    for mass_id in sorted(set(state.masses) | set(held)):
+        mass = state.masses.get(mass_id) or {}
+        masses.append({
+            "mass": mass_id,
+            "title": mass.get("title", ""),
+            "day": mass.get("day", ""),
+            "hour": mass.get("hour", ""),
+            "units": sorted(held.get(mass_id, []), key=lambda row: (row["order"], row["slot"])),
+        })
+    return {
+        "act": act_id,
+        "date": str(act.get("date")),
+        "title": act.get("title"),
+        "line": act.get("line"),
+        "masses": masses,
+        "unestablished": [
+            {"unit": unit_id, "marker": text} for unit_id, text in sorted(markers(state).items())
+        ],
+        "totals": {"masses": len(masses), "units": len(state.units)},
+    }
+
+
+def unit_histories(order: list[str], acts: dict[str, dict], sets: dict[str, dict]) -> dict[str, dict]:
+    """One prayer's whole life, gathered from the per-act change sets.
+
+    Inverted from the same rows the stations show, so the history a reader
+    follows and the diff a reader arrives at can never disagree.
+    """
+    histories: dict[str, dict] = {}
+    for act_id in order:
+        act = acts[act_id]
+        for row in sets[act_id]["units"]:
+            history = histories.setdefault(row["unit"], {"unit": row["unit"], "stations": []})
+            history["stations"].append({
+                "act": act_id,
+                "date": str(act.get("date")),
+                "title": act.get("title"),
+                "line": act.get("line"),
+                "instrument": act.get("instrument"),
+                "state": row["state"],
+                "kinds": row["kinds"],
+                "fields": row["fields"],
+                "before": row["before"],
+                "after": row["after"],
+                "cited": row["cited"],
+            })
+    for history in histories.values():
+        stops = history["stations"]
+        last = next((stop["after"] for stop in reversed(stops) if stop["after"]), None)
+        recent = next((stop for stop in reversed(stops) if stop["after"]), None)
+        history["entered_at"] = stops[0]["act"]
+        history["standing"] = stops[-1]["state"] != "gone"
+        history["name"] = (last or {}).get("name", "")
+        history["mass"] = (last or {}).get("mass", "")
+        history["slot"] = (last or {}).get("slot", "")
+        history["last_held_at"] = recent["act"] if recent else None
+        history["left_at"] = stops[-1]["act"] if stops[-1]["state"] == "gone" else None
+    return histories
+
+
+def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
+    """Write one file per station, per state and per unit; return the summaries.
+
+    Fragmented because a reader opening the map must not download every diff of
+    every station to see the map. The spine carries the counts, which is what a
+    reader needs in order to choose; opening a station costs that station.
+    """
+    order, states, _ = build(data)
+    acts = indexed(data.get("acts", []), "id", "acts")
+    departures_by_act: dict[str, list[dict]] = {}
+    for departure in data.get("departures", []):
+        departures_by_act.setdefault(departure.get("act", ""), []).append(departure)
+
+    sets = {
+        act_id: change_set(
+            act_id,
+            inherited(act_id, acts, states),
+            states[act_id],
+            departures_by_act.get(act_id, []),
+        )
+        for act_id in order
+    }
+    histories = unit_histories(order, acts, sets)
+
+    def write(relative: str, payload: dict) -> None:
+        target = root / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(
+            json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n",
+            encoding="utf-8",
+        )
+
+    # Per-act fragments carry the act's date, so a listing of them reads in the
+    # order the history happened. The name is derived here and PUBLISHED on the
+    # spine as `station_path` and `state_path`, so the page reads a name rather
+    # than building one -- a name built in two places is a name that will come
+    # apart the first time the convention moves.
+    for act_id in order:
+        stem = sorted_name(str(acts[act_id]["date"]), act_id)
+        write(f"{slice_id}/station/{stem}.json", sets[act_id])
+        write(f"{slice_id}/state/{stem}.json", standing(act_id, acts[act_id], states[act_id]))
+    for unit_id, history in sorted(histories.items()):
+        write(f"{slice_id}/unit/{unit_id}.json", history)
+    write(f"{slice_id}/units.json", {
+        "slice": slice_id,
+        "units": [
+            {
+                "unit": history["unit"],
+                "name": history["name"],
+                "mass": history["mass"],
+                "slot": history["slot"],
+                "entered_at": history["entered_at"],
+                "left_at": history["left_at"],
+                "standing": history["standing"],
+                "stations": len(history["stations"]),
+            }
+            for _, history in sorted(histories.items())
+        ],
+    })
+    return {act_id: sets[act_id]["totals"] for act_id in order}
+
+
+# --- What an act changed, unit by unit ---------------------------------------
+#
+# The map's detail panel shows a reader WHAT an act did, not merely that it did
+# five things called `absent`. The only honest source for that is the same state
+# computation `emit` commits, so the change set is derived here out of `build`'s
+# own states and written beside the map. Nothing recomputes it. A second
+# derivation in the page is how two answers to "what changed in 1955" ship
+# inside one artifact, and guidance/the-shape.md section 2 is about exactly that
+# pair.
+#
+# The departure KIND is never inferred from the diff. A field that moved says
+# which field; what the act called the movement is read from the recorded
+# departure beside it, with the basis the source states. Where a unit enters
+# with no departure behind it, that is this record first carrying the unit and
+# is labelled as such rather than as an addition somebody made.
+#
+# Fragmented, because a reader opening the map must not download every diff of
+# every station in order to see the map. The spine carries the counts, which is
+# what a reader needs to choose; opening a station costs that station.
+
+UNIT_FIELDS = ("mass", "slot", "name", "incipit", "text", "order")
+MASS_FIELDS = ("title", "day", "hour")
+UNESTABLISHED = "unestablished/"
+
+
+def side(row: dict | None, fields: tuple[str, ...]) -> dict | None:
+    """One side of a change, carrying only what the state holds.
+
+    An empty incipit is not an empty prayer: it is a unit whose words this
+    record never carried. The value is passed through as it stands so the page
+    can say so, and nothing here fills it in.
+    """
+    if row is None:
+        return None
+    return {field: row.get(field, "") for field in fields}
+
+
+def differing(before: dict | None, after: dict | None, fields: tuple[str, ...]) -> list[str]:
+    if before is None or after is None:
+        return []
+    return [field for field in fields if before.get(field, "") != after.get(field, "")]
+
+
+def cited(departures: list[dict]) -> list[dict]:
+    """What the source says it did, and on what basis, for one target."""
+    return [
+        {
+            "kind": departure.get("kind"),
+            "basis": (departure.get("basis") or "").strip(),
+            "note": (departure.get("note") or "").strip(),
+        }
+        for departure in departures
+    ]
+
+
+def inherited(act_id: str, acts: dict[str, dict], states: dict[str, State]) -> State:
+    """The state an act inherits, through the same merge `build` performs.
+
+    Not a reimplementation: it calls the two functions the build calls, in the
+    same order, so a merge that refuses there refuses here.
+    """
+    parents = acts[act_id].get("parents", [])
+    return merge([states[parent] for parent in parents], common_ancestor(act_id, acts, states), act_id)
+
+
+def markers(state: State) -> dict[str, str]:
+    return {
+        path[len(UNESTABLISHED):-len(".txt")]: text
+        for path, text in state.files.items()
+        if path.startswith(UNESTABLISHED)
+    }
+
+
+def change_set(act_id: str, before: State, after: State, departures: list[dict]) -> dict:
+    """Everything one act moved, keyed by the unit or mass it moved."""
+    by_unit: dict[str, list[dict]] = {}
+    by_mass: dict[str, list[dict]] = {}
+    for departure in departures:
+        if departure.get("unit"):
+            by_unit.setdefault(departure["unit"], []).append(departure)
+        elif departure.get("mass"):
+            by_mass.setdefault(departure["mass"], []).append(departure)
+
+    marked = markers(after)
+    was_marked = markers(before)
+
+    units = []
+    for unit_id in sorted(set(before.units) | set(after.units) | set(by_unit)):
+        was = before.units.get(unit_id)
+        now = after.units.get(unit_id)
+        recorded = by_unit.get(unit_id, [])
+        if was == now and not recorded:
+            continue
+        units.append({
+            "unit": unit_id,
+            "state": "entered" if was is None else ("gone" if now is None else "changed"),
+            "kinds": sorted({departure.get("kind") for departure in recorded}),
+            "fields": differing(was, now, UNIT_FIELDS),
+            "before": side(was, UNIT_FIELDS),
+            "after": side(now, UNIT_FIELDS),
+            "cited": cited(recorded),
+            # Rule 3 of guidance/recensions.md, carried to the page: a unit an
+            # act left unestablished prints its marker rather than falling back
+            # to the words it inherited.
+            "marker": marked.get(unit_id) if marked.get(unit_id) != was_marked.get(unit_id) else None,
+        })
+
+    masses = []
+    for mass_id in sorted(set(before.masses) | set(after.masses) | set(by_mass)):
+        was = before.masses.get(mass_id)
+        now = after.masses.get(mass_id)
+        recorded = by_mass.get(mass_id, [])
+        if was == now and not recorded:
+            continue
+        masses.append({
+            "mass": mass_id,
+            "state": "entered" if was is None else ("gone" if now is None else "changed"),
+            "kinds": sorted({departure.get("kind") for departure in recorded}),
+            "fields": differing(was, now, MASS_FIELDS),
+            "before": side(was, MASS_FIELDS),
+            "after": side(now, MASS_FIELDS),
+            "cited": cited(recorded),
+        })
+
+    orphaned = [
+        {"unit": unit_id, "marker": text}
+        for unit_id, text in sorted(marked.items())
+        if was_marked.get(unit_id) != text and unit_id not in by_unit
+    ]
+
+    return {
+        "act": act_id,
+        "units": units,
+        "masses": masses,
+        "unestablished": orphaned,
+        "totals": {
+            "units_entered": sum(1 for row in units if row["state"] == "entered"),
+            "units_gone": sum(1 for row in units if row["state"] == "gone"),
+            "units_changed": sum(1 for row in units if row["state"] == "changed"),
+            "masses_touched": len(masses),
+            "unestablished": sum(1 for row in units if row["marker"]) + len(orphaned),
+            "standing": len(after.units),
+        },
+    }
+
+
+def standing(act_id: str, act: dict, state: State) -> dict:
+    """The liturgy as it stood when that act had done its work.
+
+    A reader arriving at a station wants to read the missal, not only the delta,
+    and a mass that holds no unit is printed with none rather than dropped: an
+    empty mass is this record saying it carries nothing there.
+    """
+    held: dict[str, list[dict]] = {}
+    for unit_id, unit in state.units.items():
+        held.setdefault(unit["mass"], []).append({"unit": unit_id, **side(unit, UNIT_FIELDS)})
+    masses = []
+    for mass_id in sorted(set(state.masses) | set(held)):
+        mass = state.masses.get(mass_id) or {}
+        masses.append({
+            "mass": mass_id,
+            "title": mass.get("title", ""),
+            "day": mass.get("day", ""),
+            "hour": mass.get("hour", ""),
+            "units": sorted(held.get(mass_id, []), key=lambda row: (row["order"], row["slot"])),
+        })
+    return {
+        "act": act_id,
+        "date": str(act.get("date")),
+        "title": act.get("title"),
+        "line": act.get("line"),
+        "station_kind": act.get("station_kind"),
+        "masses": masses,
+        "unestablished": [
+            {"unit": unit_id, "marker": text} for unit_id, text in sorted(markers(state).items())
+        ],
+        "totals": {"masses": len(masses), "units": len(state.units)},
+    }
+
+
+def unit_histories(order: list[str], acts: dict[str, dict], sets: dict[str, dict]) -> dict[str, dict]:
+    """One prayer's whole life, gathered from the per-act change sets.
+
+    Inverted from the same rows the stations show, so the history a reader
+    follows and the diff a reader arrives at can never disagree.
+    """
+    histories: dict[str, dict] = {}
+    for act_id in order:
+        act = acts[act_id]
+        for row in sets[act_id]["units"]:
+            history = histories.setdefault(row["unit"], {"unit": row["unit"], "stations": []})
+            history["stations"].append({
+                "act": act_id,
+                "date": str(act.get("date")),
+                "title": act.get("title"),
+                "line": act.get("line"),
+                "station_kind": act.get("station_kind"),
+                "instrument": act.get("instrument"),
+                **{key: row[key] for key in ("state", "kinds", "fields", "before", "after", "cited", "marker")},
+            })
+    for history in histories.values():
+        stops = history["stations"]
+        recent = next((stop for stop in reversed(stops) if stop["after"]), None)
+        last = (recent or {}).get("after") or {}
+        history["entered_at"] = stops[0]["act"]
+        history["standing"] = stops[-1]["state"] != "gone"
+        history["name"] = last.get("name", "")
+        history["mass"] = last.get("mass", "")
+        history["slot"] = last.get("slot", "")
+        history["last_held_at"] = recent["act"] if recent else None
+        history["left_at"] = stops[-1]["act"] if stops[-1]["state"] == "gone" else None
+    return histories
+
+
+def write_json(target: Path, payload: dict) -> None:
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(
+        json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+    )
+
+
+def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
+    """Write one file per station, per state and per unit; return the summaries.
+
+    The file names come from `sorted_name`, the same helper the spine's
+    `station_path` and `state_path` are built from, so there is one naming rule
+    and the page follows the path it was given rather than composing one.
+    """
+    order, states, _ = build(data)
+    acts = indexed(data.get("acts", []), "id", "acts")
+    departures_by_act: dict[str, list[dict]] = {}
+    for departure in data.get("departures", []):
+        departures_by_act.setdefault(departure.get("act", ""), []).append(departure)
+
+    sets = {
+        act_id: change_set(
+            act_id,
+            inherited(act_id, acts, states),
+            states[act_id],
+            departures_by_act.get(act_id, []),
+        )
+        for act_id in order
+    }
+    histories = unit_histories(order, acts, sets)
+
+    for act_id in order:
+        act = acts[act_id]
+        name = sorted_name(str(act["date"]), act_id)
+        # Why this station descends from what it descends from, and -- where two
+        # descents converge -- the reception the merge asserts. All of it is
+        # prose, all of it is long, and it belongs beside the diff a reader
+        # opened rather than in the spine every reader downloads.
+        edges = {
+            field: (act.get(field) or "").strip()
+            for field in ("root_basis", "parent_basis", "reception_basis",
+                          "via_unrepresented_basis", "printing_basis", "act_citation_note")
+            if act.get(field)
+        }
+        write_json(root / slice_id / "station" / f"{name}.json", {**sets[act_id], "edges": edges})
+        write_json(root / slice_id / "state" / f"{name}.json", standing(act_id, act, states[act_id]))
+    for unit_id, history in sorted(histories.items()):
+        write_json(root / slice_id / "unit" / f"{unit_id}.json", history)
+    write_json(root / slice_id / "units.json", {
+        "slice": slice_id,
+        "units": [
+            {
+                "unit": history["unit"],
+                "name": history["name"],
+                "mass": history["mass"],
+                "slot": history["slot"],
+                "entered_at": history["entered_at"],
+                "left_at": history["left_at"],
+                "standing": history["standing"],
+                "stations": len(history["stations"]),
+                "path": f"{slice_id}/unit/{history['unit']}.json",
+            }
+            for _, history in sorted(histories.items())
+        ],
+    })
+    return {act_id: sets[act_id]["totals"] for act_id in order}
 
 
 def structure(data: dict, out: Path) -> dict:
@@ -1286,11 +1836,15 @@ def structure(data: dict, out: Path) -> dict:
     put a station to the right of the act it descends from without deciding
     anything the history does not already say.
 
+    The spine holds no text. What each act changed, the state it left, and each
+    unit's own history are written beside it as fragments and fetched only when
+    a reader opens one.
     """
     rows = graph(data)["rows"]
     known = {act["id"]: act for act in data["acts"]}
     slice_id = str(data.get("slice"))
     root = out / "structure" / "act-history"
+    totals = fragments(data, root, slice_id)
     stations = []
     for row in rows:
         act = known[row["act"]]
@@ -1307,6 +1861,7 @@ def structure(data: dict, out: Path) -> dict:
                 "parents": list(act.get("parents") or []),
                 "via_unrepresented": list(act.get("via_unrepresented") or []),
                 "departures": row["departures"],
+                "changed": totals[act["id"]],
                 # Added, never substituted. A map that drew a printing and a
                 # promulgation the same way would show a reader a weaker claim
                 # wearing a stronger one's clothes.
