@@ -24,6 +24,19 @@
  *   same reason `bibles.json` excludes a licensed edition rather than the
  *   browser hiding it.
  *
+ * WHAT A READER PAYS FOR. The book file is a SPINE: it carries every fragment's
+ * author, work, date, extent, edition, rights and length, and no prose at all.
+ * Each fragment's text is its own file, named by the spine, and is fetched when
+ * the reader opens that fragment. So a chapter that holds nothing costs the
+ * spine, a chapter that holds twenty costs the spine, and reading one of the
+ * twenty costs that one. Genesis was 606 KB before this, all of it prose about
+ * chapter 1, fetched in full by a reader on chapter 40.
+ *
+ * The cost is real and is stated on the page rather than hidden: text that has
+ * not been fetched is not in the document, so the browser's own find-in-page
+ * cannot reach it. That is the trade, and it is why the summary line carries a
+ * word count — a reader chooses what to open knowing how long it is.
+ *
  * THE ORDER OF THE PAGE IS THE MAINTAINER'S STANDING DIRECTION: the facts
  * first, everything else below. Reference, chapter, chain; then the works not
  * yet acquired; then the fragments held but not renderable; then, in the
@@ -38,6 +51,28 @@
 
   const INDEX_PATH = 'structure/catena/index.json';
 
+  // The languages a fragment's edition can be in, named for a reader. The codes
+  // are the source library's, which are ISO 639 and are what the `lang`
+  // attribute needs; the words are what a selector can be read in. An unknown
+  // code prints as itself rather than being dropped, because a language nobody
+  // named is still a language the reader is looking at.
+  const LANGUAGE_NAMES = {
+    la: 'Latin',
+    grc: 'Greek',
+    el: 'Greek',
+    en: 'English',
+    de: 'German',
+    fr: 'French',
+    he: 'Hebrew',
+    syr: 'Syriac',
+    it: 'Italian',
+    es: 'Spanish'
+  };
+
+  function languageName(code) {
+    return LANGUAGE_NAMES[String(code || '')] || String(code || '');
+  }
+
   const reference = document.getElementById('reference');
   const referenceBook = document.getElementById('reference-book');
   const tally = document.getElementById('tally');
@@ -50,7 +85,10 @@
 
   let index = null;
   let bibles = [];
-  const bookFiles = new Map();
+  const chapterFiles = new Map();
+  // One promise per fragment text file, so a reader who closes a fragment and
+  // opens it again, or pages away and back, refetches nothing.
+  const fragmentTexts = new Map();
   // Authors the reader has switched OFF, held across chapters. Storing the
   // exclusions rather than the inclusions is what lets an author who does not
   // comment on the next chapter stay off rather than reappear checked.
@@ -60,24 +98,61 @@
    * Data
    * --------------------------------------------------------------------- */
 
-  function bookFile(token) {
-    if (bookFiles.has(token)) return bookFiles.get(token);
-    const pending = T.loadJSON('structure/catena/' + token + '.json').then(
+  function heldEntry(token) {
+    return (index.held || []).find((book) => book.token === token) || null;
+  }
+
+  /**
+   * The spine for one chapter: who comments here, what is led to, what is
+   * refused. It carries no prose.
+   *
+   * A chapter with nothing at all has NO FILE, and the index says which chapters
+   * have one — so a reader on Genesis 40 asks for nothing and is told plainly
+   * that nothing is held there. The path and the padding both come from the
+   * index rather than being composed here: `structure/catena/01-gen/040.json` is
+   * a form the generator owns, and a page that assembled it out of a token and a
+   * width would be the second place that convention lived.
+   */
+  function chapterFile(token, chapter) {
+    const held = heldEntry(token);
+    if (!held || !(held.present || []).includes(Number(chapter))) {
+      return Promise.resolve(null);
+    }
+    const digits = Number(index.chapter_digits) || 1;
+    const path =
+      held.path + String(chapter).padStart(digits, '0') + '.json';
+    if (chapterFiles.has(path)) return chapterFiles.get(path);
+    const pending = T.loadJSON(path).then(
       (file) => file,
       (error) => {
-        // A book with neither a fragment nor a lead has no file at all. That is
-        // an empty chapter, not a broken page.
         if (error instanceof T.NotFound) return null;
         throw error;
       }
     );
-    bookFiles.set(token, pending);
+    chapterFiles.set(path, pending);
     return pending;
   }
 
   function canonEntry(token) {
     return (index.canon || []).find((book) => book.token === token) || null;
   }
+
+  /**
+   * One fragment's prose, fetched once and kept.
+   *
+   * Keyed by the path the SPINE gave, never by a path this file assembles from
+   * an id: a page that builds its own URLs out of record identifiers is a page
+   * that can be walked out of its data root by a bad identifier. The generator
+   * checks the name and writes it down; this follows it.
+   */
+  function fragmentText(path) {
+    if (!path) return Promise.resolve(null);
+    if (fragmentTexts.has(path)) return fragmentTexts.get(path);
+    const pending = T.loadJSON(path);
+    fragmentTexts.set(path, pending);
+    return pending;
+  }
+
 
   /* ------------------------------------------------------------------------
    * Rendering — the chapter
@@ -144,10 +219,10 @@
     const item = T.el('li', 'fragment');
 
     // Collapsed by default, and `details` rather than a scripted toggle so the
-    // control is keyboard-reachable and the text is still findable by the
-    // browser's own search. The summary carries author, work, date and extent,
-    // which is what makes a closed chain worth reading on its own: it becomes a
-    // chronological index of who comments here and how far each one reaches.
+    // control is keyboard-reachable. The summary carries author, work, date,
+    // extent and length, which is what makes a closed chain worth reading on
+    // its own: it becomes a chronological index of who comments here, how far
+    // each one reaches, and how much of him there is.
     const details = document.createElement('details');
     details.className = 'fragment-body';
 
@@ -157,6 +232,20 @@
     head.appendChild(T.el('span', 'fragment-work', fragment.work));
     if (fragment.date !== null && fragment.date !== undefined) {
       head.appendChild(T.el('span', 'fragment-date', String(fragment.date)));
+    }
+    if (fragment.language) {
+      head.appendChild(
+        T.el('span', 'fragment-language', languageName(fragment.language))
+      );
+    }
+    if (Number.isFinite(Number(fragment.text_words)) && fragment.text_words > 0) {
+      head.appendChild(
+        T.el(
+          'span',
+          'fragment-length',
+          Number(fragment.text_words).toLocaleString() + ' words'
+        )
+      );
     }
 
     const extent = T.el('span', 'fragment-extent');
@@ -172,9 +261,53 @@
     head.appendChild(extent);
     details.appendChild(head);
 
-    const text = T.el('p', 'fragment-text', fragment.text);
+    // The prose is not here yet, and is fetched the first time the reader opens
+    // this fragment. A failure is reported against this fragment and nothing
+    // else: one text that will not load must not take the chain down with it.
+    const text = T.el('p', 'fragment-text', 'Loading…');
     text.lang = fragment.language || 'en';
     details.appendChild(text);
+    // The apparatus that travels with the prose: why the extent was drawn where
+    // it was, and on what ground the date rests. Both are about this one
+    // fragment, so both are in its file rather than in the spine, and both are
+    // shown below the text where a reader can weigh them against it.
+    const apparatus = T.el('div', 'fragment-apparatus');
+    details.appendChild(apparatus);
+    let asked = false;
+    details.addEventListener('toggle', () => {
+      if (!details.open || asked) return;
+      asked = true;
+      fragmentText(fragment.text_path).then(
+        (loaded) => {
+          if (!loaded) {
+            text.className = 'fragment-text missing';
+            text.textContent =
+              'This fragment carries no text file, so nothing of it can be shown.';
+            return;
+          }
+          text.textContent = String(loaded.text || '');
+          if (loaded.basis) {
+            apparatus.appendChild(
+              T.el('p', 'fragment-basis', 'Extent — ' + loaded.basis)
+            );
+          }
+          if (loaded.date_basis) {
+            apparatus.appendChild(
+              T.el('p', 'fragment-basis', 'Date — ' + loaded.date_basis)
+            );
+          }
+        },
+        (error) => {
+          asked = false;
+          text.className = 'fragment-text missing';
+          text.textContent =
+            error instanceof T.NotFound
+              ? 'The text of this fragment was not published beside the page.'
+              : 'The text of this fragment could not be loaded: ' +
+                (error.message || error);
+        }
+      );
+    });
 
     // Where it came from and how to check it. Below the text, never above.
     const source = T.el('p', 'fragment-source');
@@ -209,8 +342,11 @@
     return item;
   }
 
-  function renderChain(container, file, book, chapter) {
-    const held = file ? M.fragmentsOnChapter(file.fragments || [], chapter) : [];
+  function renderChain(container, file, book) {
+    // Already the chapter's own list: the spine is addressed by chapter, and the
+    // derivation that decided which fragments stand here ran in the generator,
+    // out of `catena-model.js` under node. One derivation, and it is that file's.
+    const held = (file && file.fragments) || [];
     const headingText =
       held.length === 0
         ? 'Commentary held here'
@@ -326,8 +462,7 @@
    * Rendering — the things that are not fragments
    * --------------------------------------------------------------------- */
 
-  function renderLeads(container, file, chapter) {
-    const leads = ((file && file.leads) || {})[String(chapter)] || [];
+  function renderLeads(container, leads) {
     if (!leads.length) return;
     const section = T.el('section', 'aside');
     section.appendChild(
@@ -355,7 +490,7 @@
     container.appendChild(section);
   }
 
-  function renderBlocked(container, file, chapter) {
+  function renderBlocked(container, file) {
     const blocked = (file && file.blocked) || [];
     if (!blocked.length) return;
     const section = T.el('section', 'aside');
@@ -381,8 +516,7 @@
    * the right one.
    */
   function renderRefusal(container, file, bible, book, chapter) {
-    const forEdition = ((file && file.refusals) || {})[bible.id] || [];
-    const here = forEdition.filter((row) => Number(row.chapter) === Number(chapter));
+    const here = ((file && file.refusals) || {})[bible.id] || [];
     if (!here.length) return;
     // The projection's own note is a clause, not a sentence, so it is set into
     // one here rather than printed as though it were prose. Nothing is added
@@ -430,7 +564,7 @@
     let chapterResult;
     try {
       [file, chapterResult] = await Promise.all([
-        bookFile(token),
+        chapterFile(token, chapter),
         T.loadChapter(bible.id, token, chapter)
       ]);
     } catch (error) {
@@ -439,15 +573,15 @@
     }
     if (!T.isCurrentRender(renderToken)) return;
 
+    const leads = (file && file.leads) || [];
     T.clear(reading);
     renderRefusal(reading, file, bible, book, chapter);
     renderChapter(reading, bible, book, chapter, chapterResult);
-    const count = renderChain(reading, file, book, chapter);
-    renderLeads(reading, file, chapter);
-    renderBlocked(reading, file, chapter);
+    const count = renderChain(reading, file, book);
+    renderLeads(reading, leads);
+    renderBlocked(reading, file);
     reading.setAttribute('aria-busy', 'false');
 
-    const leads = ((file && file.leads) || {})[String(chapter)] || [];
     T.clear(tally);
     tally.appendChild(T.el('b', null, count === 0 ? 'Nothing' : String(count)));
     tally.appendChild(

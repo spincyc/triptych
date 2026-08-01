@@ -21,6 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import _canon  # noqa: E402
 import _catena  # noqa: E402
 import _projection  # noqa: E402
 
@@ -597,6 +598,133 @@ class LeadTests(CatenaFixture):
         for work in leads["1"]:
             self.assertNotIn("confidence", work)
         self.assertEqual(leads["1"][0]["author"], "Basil the Great")
+
+
+class PathTests(CatenaFixture):
+    """The path convention: canon order, lowercase, ordinal last, padded.
+
+    `guidance/web-data.md` states it as one sentence — anything with an inherent
+    order sorts in that order in a directory listing — and every part of it is
+    derived from the tracked canon rather than typed. These test the derivation,
+    because a hand-listed table beside a derived one is the restatement this
+    repository has already been bitten by.
+    """
+
+    def test_a_book_is_numbered_by_its_place_in_the_canon(self) -> None:
+        # The fixture carries chapters for Genesis alone, so the canon it can
+        # enumerate is one book long — which is the point: the number is the
+        # position in what was actually enumerated, not a constant beside it.
+        self.assertEqual(_canon.path_forms(self.root), {"Gen": "01-gen"})
+        # And against the repository's own canon, where the positions are real.
+        forms = _canon.path_forms(ROOT)
+        self.assertEqual(forms["Gen"], "01-gen")
+        self.assertEqual(forms["Ps"], "21-ps")
+        self.assertEqual(forms["1Cor"], "53-cor-1")
+        self.assertEqual(forms["Apoc"], "73-apoc")
+
+    def test_a_numbered_book_puts_its_ordinal_last(self) -> None:
+        self.assertEqual(_canon._name_form("1Cor"), "cor-1")
+        self.assertEqual(_canon._name_form("4Kings"), "kings-4")
+        self.assertEqual(_canon._name_form("Gen"), "gen")
+
+    def test_the_chapter_width_comes_from_the_longest_book(self) -> None:
+        # The fixture's Genesis runs to three chapters, so one digit suffices;
+        # the real canon reaches 150 and takes three. The width is derived
+        # either way and never asserted.
+        self.assertEqual(_canon.chapter_width(self.root), 1)
+        self.assertEqual(_canon.chapter_name(7, 3), "007.json")
+
+    def test_no_path_component_is_capitalised_or_begins_with_a_digit(self) -> None:
+        for token, form in _canon.path_forms(self.root).items():
+            self.assertEqual(form, form.lower(), token)
+            name = form.split("-", 1)[1]
+            self.assertFalse(name[0].isdigit(), token)
+
+    def test_the_canon_is_reached_through_the_project_module(self) -> None:
+        """The catena is a consumer of the canon, never its owner."""
+        self.assertEqual(_catena.canon(self.root), _canon.books(self.root))
+
+
+class StructureTests(CatenaFixture):
+    """What a reader actually fetches, and what is deliberately not in it."""
+
+    def setUp(self) -> None:
+        super().setUp()
+        # The emit derives the chapter view by running the page's own model, so
+        # the fixture carries the real one rather than a stand-in: a copy here
+        # would be the second derivation the whole arrangement exists to stop.
+        model = self.root / _catena.MODEL_RELATIVE
+        model.parent.mkdir(parents=True, exist_ok=True)
+        model.write_text(
+            (ROOT / _catena.MODEL_RELATIVE).read_text(encoding="utf-8"),
+            encoding="utf-8",
+        )
+
+    def emit(self) -> Path:
+        out = self.root / "out"
+        _catena.structure(self.root, out)
+        return out / "structure" / "catena"
+
+    def test_the_chapter_spine_carries_no_prose(self) -> None:
+        directory = self.emit()
+        spine = json.loads(
+            (directory / "01-gen" / "1.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(len(spine["fragments"]), 1)
+        fragment = spine["fragments"][0]
+        for absent in ("text", "basis", "date_basis"):
+            self.assertNotIn(absent, fragment)
+        self.assertGreater(fragment["text_words"], 0)
+        payload = json.loads(
+            (self.root / "out" / fragment["text_path"]).read_text(encoding="utf-8")
+        )
+        self.assertIn("light", payload["text"])
+        self.assertIn("light", payload["basis"])
+
+    def test_a_chapter_with_nothing_gets_no_file(self) -> None:
+        directory = self.emit()
+        # The fixture's fragment and its one lead both stand on Genesis 1.
+        self.assertTrue((directory / "01-gen" / "1.json").is_file())
+        self.assertFalse((directory / "01-gen" / "2.json").exists())
+        index = json.loads((directory / "index.json").read_text(encoding="utf-8"))
+        held = {book["token"]: book for book in index["held"]}
+        self.assertEqual(held["Gen"]["present"], [1])
+        self.assertEqual(held["Gen"]["path"], "structure/catena/01-gen/")
+
+    def test_the_lead_stands_on_its_own_chapter_and_not_in_the_book(self) -> None:
+        directory = self.emit()
+        spine = json.loads(
+            (directory / "01-gen" / "1.json").read_text(encoding="utf-8")
+        )
+        self.assertTrue(spine["leads"])
+        self.assertNotIn("Gen.json", [path.name for path in directory.iterdir()])
+
+    def test_a_file_left_behind_by_an_earlier_emit_is_removed(self) -> None:
+        """An orphan is the failure that looks like success.
+
+        The page would never ask for it and nothing would ever notice it was
+        wrong, so the emit owns the directory and deletes what it did not write.
+        """
+        directory = self.emit()
+        stale = directory / "01-gen" / "9.json"
+        stale.write_text("{}", encoding="utf-8")
+        orphan = directory / "text" / "passage.gone.json"
+        orphan.write_text("{}", encoding="utf-8")
+        self.emit()
+        self.assertFalse(stale.exists())
+        self.assertFalse(orphan.exists())
+
+    def test_the_chapter_view_is_derived_by_the_page_s_own_model(self) -> None:
+        """One derivation, and it is `catena-model.js`.
+
+        Writing `first <= n <= last` in the generator as well would be the
+        dangerous kind of second copy: the emitted chapter files would be
+        derived by one rule while the page's own footer promised another.
+        """
+        model = self.root / _catena.MODEL_RELATIVE
+        model.write_text("module.exports = {};", encoding="utf-8")
+        with self.assertRaises(_catena.CatenaError):
+            self.emit()
 
 
 if __name__ == "__main__":

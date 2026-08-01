@@ -12,6 +12,112 @@ fragment set keyed by mass and translation would be just as combinatorial. So
 the rule is that **file counts must be additive, never multiplicative**. Adding
 a translation adds that translation's fragments and changes nothing else.
 
+## A property that is global to the project lives once, at project level
+
+A section is downstream of the universals it sits on. If a section defines
+something another section would reasonably need, it is in the wrong place.
+
+The canon of scripture is the worked example. Which books there are, what order
+they stand in, what each is called and how many chapters each has were reached
+through `scripts/_catena.py canon`, because the catena was the first thing that
+needed to walk the whole Bible. That made one page the owner of a fact about
+scripture. Every other consumer — `index-bible`, `typeset-bible`, the propers
+and their citations, the reading plan, the document catalogue — would then have
+had to import it from the catena, which is backwards, or grow its own copy,
+which is the restatement that drifts. This repository has already paid for that
+once: two copies of the same propers diverged in five ways and nothing compared
+them.
+
+So the canon lives in `scripts/_canon.py` and the catena imports it like anyone
+else. `scripts/_corpus.py` set the precedent: four facts about a document lived
+in four files, each read by whichever tool happened to need it, and were lifted
+into one module that `check-generation-metadata` and `public-alpha` now share.
+
+## Anything with an inherent order sorts in that order in a directory listing
+
+That sentence is the whole of the path convention. A listing of the corpus
+should read as the Bible reads, not as a filing cabinet.
+
+    structure/catena/01-gen/001.json          Genesis 1
+    structure/catena/21-ps/150.json           Psalm 150
+    structure/catena/53-cor-1/013.json        1 Corinthians 13
+
+Four rules, each removing a question rather than answering it repeatedly:
+
+- **The canon position first, zero-padded to two digits.** A listing then comes
+  out in canonical order and Genesis stops sorting after Ezekiel. The number is
+  the book's place in `_canon.books()`, which reads the canonical edition's one
+  tracked book index — 73 books, 46 Old Testament including the deuterocanon and
+  27 New. It is derived on every call and never typed: a hand-written table of 73
+  name-to-number pairs beside a derived one is exactly the restatement above.
+  Two digits because the canon is 73 books; the width is stated, not implicit.
+- **Lowercase.** A capitalised path inherits every capitalisation question with
+  it. `Gen` and `gen` are one file on a case-insensitive filesystem and two on a
+  case-sensitive one, so a rename that looks clean on Linux can arrive elsewhere
+  as a collision — and once a path is capitalised, every consumer must agree
+  forever on the exact casing of every token. *Genesis* and *1 Corinthians* are
+  display forms and belong in the text a reader sees.
+- **The ordinal last** — `cor-1`, not `1cor` — so the books of one name group
+  under that name, and so no component begins with a digit that is not the
+  canonical one. A leading digit is a nuisance in a glob, in an identifier
+  derived from a path, and in anything reading the component as a number.
+- **Chapters zero-padded to one width for every book,** derived from the longest
+  book the index reports, so `9` sorts before `10` and a reader never has to
+  know which book has how many chapters to predict a path.
+
+All four are derived in `_canon.path_forms` and `_canon.chapter_name`, and every
+consumer calls them rather than composing a path out of parts. The emitted
+`index.json` writes the path and the padding down, so the browser follows what
+the generator wrote instead of knowing the convention by heart.
+
+**This governs paths and nothing else.** The citation grammar is untouched: a
+citation still addresses `Gen 1:1` and `1 Cor 13:4`, and an edition that omits
+the deuterocanon or orders its books differently is a display concern.
+
+**Still outstanding.** `src/sources/bibles/<edition>/chapters/Gen/1.json` is
+capitalised, unnumbered and unpadded, and so are the other source trees.
+Migrating them touches `index-bible`, `typeset-bible`, the catena and the propers
+at once, so it belongs in one coherent change rather than in pieces.
+
+## Fragmentation: chapter-addressed spine, content-addressed payload
+
+**You pay for what you read.** A file is cut at the natural unit of the thing
+inside it, never at the shape of one view of it, and everything is collapsed by
+default so the payload is usually never fetched at all.
+
+The catena is the worked example and the measurement is the argument. Its book
+file was 605,923 bytes — 459,992 of prose from thirteen fragments that all sit
+on Genesis 1, and 138,665 of leads about the other forty-nine chapters — and the
+browser fetched the whole of it to render any chapter. A reader on Genesis 40
+downloaded 606 KB to be told nothing is held there. It is now two layers:
+
+| Layer | Addressed by | Holds |
+| --- | --- | --- |
+| `<NN-book>/<chapter>.json` | the chapter | who comments here, and what is led to, refused or blocked. **No prose.** |
+| `text/<passage_id>.json` | the fragment | one fragment's words, and the apparatus explaining them |
+
+Measured on Genesis after the split: the median chapter spine is 2,887 bytes and
+the worst is 15,107; Genesis 40 is 2,745 bytes against 605,923, which is 0.45%
+of what it was. Opening one fragment costs a median 26,925 bytes and at worst
+203,349 — paid only by the reader who opens it.
+
+The two addressings are the point, not an inconsistency. A fragment may span
+chapters. Addressed **by** chapter it is *named* under both, which is what the
+page promises; if its text were also *stored* by chapter it would be written
+into both — the multiplication `browser-core.js` forbids, and which
+`guidance/catena.md` Rule 6 forbids a second time, because a fragment cut at a
+boundary attributes to one chapter words written about another. A chapter with
+nothing at all gets no file, and `index.json` lists which chapters have one, so
+the empty case costs nothing.
+
+The trade is real and is stated on the page rather than hidden: text that has
+not been fetched is not in the document, so the browser's own find-in-page
+cannot reach it. That is why each fragment's length is printed beside its name —
+a reader chooses what to open knowing how long it is.
+
+**The next candidate is the propers structure**, roughly 1 MB per missal, which
+`day.js` already fetches last because it is the big one.
+
 ## The four layers
 
 Each layer is generated from the one above it and is checked against it, so a

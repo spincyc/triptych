@@ -46,12 +46,14 @@ import json
 import re
 import subprocess
 import sys
+import tempfile
 import tomllib
 from pathlib import Path
 from typing import Any, Iterable, NamedTuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import _canon  # noqa: E402
 import _projection  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -65,8 +67,8 @@ SCHEMA = "triptych-commentary-fragment-loci/v1"
 EDGES_RELATIVE = Path("src/sources/commentary/fragment-loci.yaml")
 ALIASES_RELATIVE = Path("src/sources/commentary/work-aliases.yaml")
 INDEX_RELATIVE = Path("src/sources/commentary/passage-commentary-index.yaml")
-CANONICAL_BIBLE = "clementine-vulgate"
-BIBLES_RELATIVE = Path("src/sources/bibles")
+CANONICAL_BIBLE = _canon.CANONICAL_BIBLE
+BIBLES_RELATIVE = _canon.BIBLES_RELATIVE
 MODEL_RELATIVE = Path("src/web/browser/catena/catena-model.js")
 
 FRAGMENT_FIELDS = {
@@ -212,58 +214,19 @@ def _load_yaml(path: Path) -> Any:
 
 
 def _book_index(root: Path) -> list[dict[str, str]]:
-    """The canonical edition's book index, read from its one tracked artifact."""
-    found = sorted(
-        (root / "src/sources/works").glob(
-            "*/*/editions/*/artifacts/book-index-*/book-index.tsv"
-        )
-    )
-    wanted = [path for path in found if "vulgata-clementina" in path.as_posix()]
-    if len(wanted) != 1:
-        raise CatenaError(
-            f"expected one Clementine book index under {root}, found {len(wanted)}"
-        )
-    with wanted[0].open(encoding="utf-8", newline="") as handle:
-        return list(csv.DictReader(handle, delimiter="\t"))
+    """The canonical edition's book index. Owned by `scripts/_canon.py`."""
+    return _canon.book_index(root)
 
 
 def canon(root: Path = ROOT) -> list[dict[str, Any]]:
-    """Every book of the canon in order, with its chapter count.
+    """Every book of the canon in order. Owned by `scripts/_canon.py`.
 
-    Derived, never enumerated by hand: the order and the names come from the
-    canonical edition's tracked book index, and the chapter count is how many
-    chapter fragments that edition actually carries. Nothing in this repository
-    enumerated the canon before — every existing structure file covers only what
-    a calendar or a reading plan happens to cite — so a page that walks the
-    Bible chapter by chapter had nothing to walk.
+    The catena was the first thing in this repository that needed to walk the
+    whole Bible, so this was written here. It is not the catena's fact: the order
+    of the books is a property of the project's scripture and every section is
+    downstream of it. It now lives in `_canon` and this is a consumer.
     """
-    chapters_root = root / BIBLES_RELATIVE / CANONICAL_BIBLE / "chapters"
-    if not chapters_root.is_dir():
-        raise CatenaError(f"{chapters_root}: the canonical edition has no chapters")
-    books: list[dict[str, Any]] = []
-    for record in _book_index(root):
-        token = (record.get("token") or "").strip()
-        directory = chapters_root / token
-        if not directory.is_dir():
-            continue
-        numbers = sorted(
-            int(path.stem) for path in directory.glob("*.json") if path.stem.isdigit()
-        )
-        if not numbers:
-            continue
-        books.append(
-            {
-                "token": token,
-                "name": (record.get("modern_name") or token).strip(),
-                "title": (record.get("douay_title") or "").strip(),
-                "testament": (record.get("testament") or "").strip(),
-                "chapters": len(numbers),
-                "last_chapter": numbers[-1],
-            }
-        )
-    if not books:
-        raise CatenaError(f"{chapters_root}: no book of the canon could be enumerated")
-    return books
+    return _canon.books(root)
 
 
 def _chapter_ceiling(root: Path) -> dict[str, int]:
@@ -1023,72 +986,273 @@ def blocked_for_book(root: Path, token: str) -> list[dict[str, Any]]:
     return rows
 
 
-def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
-    """Write what the browser fetches: one file per book, and one index.
+TEXT_DIRECTORY = "text"
 
-    Additive in both directions, which `guidance/web-data.md` makes the rule
-    rather than a preference. A new fragment grows one book file; a new
-    translation of a fragment is another fragment in the same file; a new book
-    is one more file. Nothing is keyed by chapter and nothing by translation, so
-    nothing here multiplies.
+# A fragment's text file is named by its passage id, so the name is checked
+# rather than trusted: these ids reach a URL the browser builds, and a `..` or a
+# slash arriving from a source record would leave the data root.
+SAFE_ID = re.compile(r"[a-z0-9][a-z0-9._-]*\Z")
+
+# What moves out of the chapter spine and into the fragment's own file: the
+# prose itself, and the two paragraphs of apparatus that explain it. Both are
+# reasoning about ONE fragment — why its extent was drawn where it was, and on
+# what ground its date rests — and together they were 6.7 KB of the 18 KB of
+# Genesis fragment metadata, read by nobody who had not opened the fragment.
+CARRIED_WITH_TEXT = ("text", "basis", "date_basis")
+
+# The path a book and a chapter take. Derived in `scripts/_canon.py`, which owns
+# the canon and therefore owns everything derived from it; see its header for
+# the four conventions and the reason behind each.
+path_forms = _canon.path_forms
+
+
+def _write_json(path: Path, payload: Any) -> None:
+    path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=1, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+
+# The chapter derivation, run by THE MODEL rather than beside it. See
+# `chapters_touched`.
+MEMBERSHIP_HARNESS = """
+const fs = require('fs');
+const path = process.argv[1];
+const source = fs.readFileSync(path, 'utf8');
+const module_ = { exports: {} };
+new Function('module', 'exports', source)(module_, module_.exports);
+const input = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+const answer = {};
+for (const chapter of input.chapters) {
+  answer[chapter] = module_.exports.fragmentsOnChapter(input.items, chapter).map(
+    function (item) { return item.id; }
+  );
+}
+process.stdout.write(JSON.stringify(answer));
+"""
+
+
+def chapters_touched(
+    root: Path, items: list[dict[str, Any]], chapters: Iterable[int]
+) -> dict[int, list[str]]:
+    """Which of these fragments stand under each chapter — asked of the model.
+
+    `guidance/catena.md` Rule 5 stores a fragment at its natural extent and
+    derives the chapter view; Rule 6 puts a fragment that crosses a boundary
+    under every chapter it touches, once, at its full extent. The derivation of
+    both lives in `src/web/browser/catena/catena-model.js` and it lives there
+    ONCE — so this does not reimplement it in Python, it runs that file.
+
+    Writing `first <= n <= last` here as well would be the second copy this
+    repository keeps being bitten by, and it would be the dangerous kind: the
+    emitted chapter files would be derived by one rule and the page's own
+    footer would promise another. `catena check` replays the same file against
+    the solved cases in the source, so the rule is stated once and proved once.
+
+    Node is required rather than optional. Where the check may say which
+    verification it did not perform, an emit may not: a chapter table derived by
+    a fallback nobody proved would be a claim about who comments where.
+    """
+    model = root / MODEL_RELATIVE
+    if not model.is_file():
+        raise CatenaError(f"{MODEL_RELATIVE.as_posix()}: not found")
+    chapters = list(chapters)
+    if not items:
+        return {chapter: [] for chapter in chapters}
+    with tempfile.NamedTemporaryFile(
+        "w", suffix=".json", encoding="utf-8", delete=False
+    ) as handle:
+        json.dump({"items": items, "chapters": chapters}, handle, ensure_ascii=False)
+        payload = Path(handle.name)
+    try:
+        result = subprocess.run(
+            ["node", "-e", MEMBERSHIP_HARNESS, str(model), str(payload)],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except FileNotFoundError as error:
+        raise CatenaError(
+            "node is required to emit the catena structure: the chapter view is "
+            "derived by src/web/browser/catena/catena-model.js and is not "
+            "reimplemented here"
+        ) from error
+    finally:
+        payload.unlink(missing_ok=True)
+    if result.returncode != 0:
+        raise CatenaError(f"the chapter derivation failed: {result.stderr.strip()}")
+    return {int(key): list(value) for key, value in json.loads(result.stdout).items()}
+
+
+def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
+    """Write what the browser fetches: a spine per chapter, a payload per fragment.
+
+    YOU PAY FOR WHAT YOU READ. Two layers, addressed differently on purpose:
+
+      `<book>/<chapter>.json`   THE CHAPTER SPINE. Every fragment standing under
+                                this chapter, named and described — author, work,
+                                date, language, extent, edition, rights, review
+                                state, how long — with the leads, the refusals
+                                and the blocked holdings that belong to the same
+                                chapter. IT CONTAINS NO PROSE.
+      `text/<passage_id>.json`  ONE FRAGMENT'S WORDS, stored once, with the two
+                                paragraphs of apparatus that explain them.
+                                Fetched when a reader opens that fragment.
+
+    The two addressings are not an inconsistency, they are the point, and the
+    reason is Rule 6. A fragment may span chapters. Addressed BY chapter it is
+    *named* under both, which is what the page promises; if its TEXT were also
+    stored by chapter it would be *written* into both, which is the
+    multiplication `browser-core.js` forbids and which Rule 6 forbids a second
+    time, because a fragment cut at a boundary attributes to one chapter words
+    written about another. So the spine is chapter-addressed and the payload is
+    content-addressed, and nothing is duplicated but a few hundred bytes of
+    metadata for the handful of fragments that genuinely cross a seam.
+
+    A chapter with nothing at all gets no file. `index.json` lists which chapters
+    of which books have one, so a reader on Genesis 40 fetches nothing beyond the
+    index it already has and is told plainly that nothing is held there. Before
+    this split that reader downloaded 605,923 bytes — 459,992 of prose about
+    chapter 1 and 138,665 of leads about the other forty-nine — to be shown
+    nothing.
+
+    Orphans are removed. A file left behind after the record that produced it
+    stopped being derived is the failure that looks like success: the page would
+    never ask for it and nothing would ever notice it was wrong. So this pass
+    owns the whole directory and deletes what it did not write.
     """
     out = out or (root / "src/web/data")
     written: list[Path] = []
     directory = out / "structure" / "catena"
-    directory.mkdir(parents=True, exist_ok=True)
+    texts = directory / TEXT_DIRECTORY
+    texts.mkdir(parents=True, exist_ok=True)
     books = canon(root)
+    folders = path_forms(root)
+    width = _canon.chapter_width(root)
     index: list[dict[str, Any]] = []
     for book in books:
-        rows = fragments_for_book(root, book["token"])
-        leads = leads_for_book(root, book["token"], book["name"])
-        held_back = blocked_for_book(root, book["token"])
+        token = book["token"]
+        folder = folders[token]
+        chapters = list(range(1, int(book["last_chapter"]) + 1))
+        rows = fragments_for_book(root, token)
+        leads = leads_for_book(root, token, book["name"])
+        held_back = blocked_for_book(root, token)
         if not rows and not leads and not held_back:
             continue
-        path = directory / f"{book['token']}.json"
-        path.write_text(
-            json.dumps(
+
+        # The payload, written once per fragment, and the metadata that stays
+        # behind in every chapter spine that names it.
+        metadata: dict[str, dict[str, Any]] = {}
+        for row in rows:
+            fragment = dict(row)
+            carried = {name: fragment.pop(name, "") for name in CARRIED_WITH_TEXT}
+            identifier = fragment["id"]
+            if not SAFE_ID.fullmatch(identifier):
+                raise CatenaError(f"passage id is not safe as a filename: {identifier!r}")
+            path = texts / f"{identifier}.json"
+            _write_json(path, {"id": identifier, **carried})
+            written.append(path)
+            # What the reader is about to fetch, said before they fetch it, and
+            # in words rather than bytes: a reader chooses by length of reading.
+            fragment["text_words"] = len(str(carried["text"]).split())
+            fragment["text_path"] = f"structure/catena/{TEXT_DIRECTORY}/{identifier}.json"
+            metadata[identifier] = fragment
+
+        standing = chapters_touched(
+            root,
+            [{"id": row["id"], "extent": row["extent"]} for row in rows],
+            chapters,
+        )
+        blocked_standing = chapters_touched(
+            root,
+            [
+                {"id": str(number), "extent": entry["extent"]}
+                for number, entry in enumerate(held_back)
+            ],
+            chapters,
+        )
+        refusals = refusals_for_book(root, token)
+
+        present: list[int] = []
+        for chapter in chapters:
+            here = [metadata[one] for one in standing.get(chapter, ())]
+            leads_here = leads.get(str(chapter)) or []
+            blocked_here = [held_back[int(one)] for one in blocked_standing.get(chapter, ())]
+            refused_here = {
+                edition: [one for one in entries if int(one["chapter"]) == chapter]
+                for edition, entries in refusals.items()
+            }
+            refused_here = {key: value for key, value in refused_here.items() if value}
+            if not (here or leads_here or blocked_here or refused_here):
+                continue
+            present.append(chapter)
+            path = directory / folder / _canon.chapter_name(chapter, width)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            _write_json(
+                path,
                 {
-                    "token": book["token"],
+                    "token": token,
                     "name": book["name"],
+                    "chapter": chapter,
                     "chapters": book["last_chapter"],
                     "numbering": _projection.CANONICAL,
-                    "fragments": rows,
-                    "leads": leads,
-                    "refusals": refusals_for_book(root, book["token"]),
-                    "blocked": held_back,
+                    "fragments": here,
+                    "leads": leads_here,
+                    "refusals": refused_here,
+                    "blocked": blocked_here,
+                    # Which languages this chapter is actually held in. The
+                    # selector on the page reads this, and it is counted rather
+                    # than assumed so that a chapter held in Latin alone says so
+                    # instead of offering an English that is not there.
+                    "languages": sorted(
+                        {str(one["language"]) for one in here if one.get("language")}
+                    ),
                 },
-                ensure_ascii=False,
-                indent=1,
-                sort_keys=True,
             )
-            + "\n",
-            encoding="utf-8",
-        )
-        written.append(path)
+            written.append(path)
+
         index.append(
             {
-                "token": book["token"],
+                "token": token,
                 "name": book["name"],
                 "chapters": book["last_chapter"],
                 "fragments": len(rows),
+                # The path form is derived once, in `path_forms`, and written
+                # down here so no consumer derives it a second time.
+                "path": f"structure/catena/{folder}/",
+                # Which chapters have a file. A chapter absent from this list is
+                # a chapter with nothing held, nothing led to and nothing
+                # refused, and the page says so without a fetch.
+                "present": present,
+                "languages": sorted(
+                    {str(row["language"]) for row in rows if row.get("language")}
+                ),
             }
         )
+
     path = directory / "index.json"
-    path.write_text(
-        json.dumps(
-            {
-                "numbering": _projection.CANONICAL,
-                "canon": books,
-                "held": index,
-            },
-            ensure_ascii=False,
-            indent=1,
-            sort_keys=True,
-        )
-        + "\n",
-        encoding="utf-8",
+    _write_json(
+        path,
+        {
+            "numbering": _projection.CANONICAL,
+            "canon": books,
+            "held": index,
+            "texts": f"structure/catena/{TEXT_DIRECTORY}/",
+            # How a chapter number becomes a filename. Derived from the longest
+            # book of the canon and written down here so the page pads the way
+            # the emit padded, rather than knowing the width by heart.
+            "chapter_digits": width,
+        },
     )
     written.append(path)
+
+    kept = {one.resolve() for one in written}
+    for stale in sorted(directory.rglob("*.json")):
+        if stale.resolve() not in kept:
+            stale.unlink()
+    for empty in sorted(directory.rglob("*"), reverse=True):
+        if empty.is_dir() and not any(empty.iterdir()):
+            empty.rmdir()
     return written
 
 

@@ -276,11 +276,55 @@ body:not(:has(> .site-header)) {
   font-weight: 600;
 }
 
+/* The language the fragment is actually in, and how long it is. Both are read
+   before the fragment is opened, because opening it is what fetches the text:
+   a reader choosing between Basil's Greek and Basil's English, or between four
+   hundred words and nine thousand, is owed the answer first. */
+.fragment-language {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--section-ink);
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+}
+
+.fragment-length {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
 .fragment-text {
   font-family: var(--serif-text);
   font-size: 0.96rem;
   line-height: 1.5;
   margin: 0;
+  white-space: pre-line;
+}
+
+/* A text that would not load. It says why, in the place the words would have
+   been, rather than leaving an empty panel that reads as a short fragment. */
+.fragment-text.missing {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  white-space: normal;
+}
+
+/* The apparatus that travels with the prose: why the extent was drawn where it
+   was, and on what ground the date rests. Below the text and quieter than it —
+   these are the project's reasoning about a father's words, not the words. */
+.fragment-apparatus {
+  margin: 0.7rem 0 0;
+}
+
+.fragment-basis {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ink-faint);
+  margin: 0.4rem 0 0;
 }
 
 /* Where the fragment came from and how to check it. Below the text, quiet, and
