@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Missal Line</title>
+<title>How the Missal Changed</title>
 <!-- The shared machinery first, then this section's colour. Both are local;
      the page makes no external request of any kind. -->
 <link rel="stylesheet" href="../shared/browser-core.css">
@@ -13,7 +13,13 @@
 <a class="skip-link" href="#map">Skip to the map</a>
 
 <header class="page-header">
-  <h1><span class="page-mark" aria-hidden="true">→</span>The Missal Line</h1>
+  <h1><span class="page-mark" aria-hidden="true">→</span>How the Missal Changed</h1>
+  <p class="lede">
+    Every change to the Roman Missal this project has established, the act that
+    ordered each one, and what the text said before and after. The map below is
+    the Missal Line: each station is a point at which the book changed, and the
+    track between two stations is a descent from one to the next.
+  </p>
   <p class="tally" id="tally"></p>
 </header>
 
@@ -23,16 +29,42 @@
   <p class="placeholder">Loading the line…</p>
 </main>
 
+<p class="legend" id="legend"></p>
+
 <aside id="detail" class="detail" aria-live="polite" hidden></aside>
+
+<section id="follow" class="panel" hidden>
+  <h2 class="panel-title">Follow one prayer</h2>
+  <p class="panel-note">
+    Pick a unit and see its whole life: where this record first carries it, every
+    act that touched it, and where it went absent.
+  </p>
+  <p class="panel-controls">
+    <button type="button" id="unit-index-button" class="link-button">
+      Load the index of every unit
+    </button>
+    <label for="unit-select">Unit</label>
+    <select id="unit-select" disabled></select>
+  </p>
+  <div id="unit-view"></div>
+</section>
+
+<section id="lines" class="panel" hidden>
+  <h2 class="panel-title">Where the lines part</h2>
+  <div id="lines-view"></div>
+</section>
 
 <footer class="page-footer">
   <p>
-    Every station is an act — a constitution, a decree, an instruction, or a
-    documented exemption — and never a book. A printing is a witness to an act,
-    not a station on the line, because two printings of one prayer differ
-    constantly and no act stands behind those differences. Where the descent
-    runs through an edition this tracer does not represent, the connector says
-    so rather than joining the two ends as though nothing sat between them.
+    A station is normally the act — a constitution, a decree, an instruction, or
+    a documented exemption — and never a book, because two printings of one
+    prayer differ constantly and no act stands behind those differences. The one
+    exception is drawn as a different mark: where a missal survives and no act
+    has been located, the station is <em>printed</em> rather than
+    <em>promulgated</em>, and it is a weaker claim about evidence, not a smaller
+    change. Where the descent runs through an edition this record does not
+    carry, the connector is drawn broken rather than joining the two ends as
+    though nothing sat between them.
   </p>
   <p>
     <a href="../liturgy/day.html">Today’s Missal</a> ·

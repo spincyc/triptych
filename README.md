@@ -27,7 +27,7 @@ authors, its extent, and when it was last revised — open
 | [The Propers of the Mass](liturgy/) | Any Mass, either missal. |
 | [The Story of Salvation](scripture/) | The abridged reading plan, at three depths. |
 | [Catena Omnia](catena/) | A chapter, and the commentary held on it, oldest first. |
-| [The Missal Line](history/) | The acts that changed the Missal, drawn as a map. |
+| [How the Missal Changed](history/) | Every change to the Missal, the act that ordered it, and the text on both sides. |
 | [Every Document](texts/) | The whole corpus, filtered by author, edition or section. |
 
 ## How this was built

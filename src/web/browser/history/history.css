@@ -1,13 +1,19 @@
-/* The missal line. The map is wide by nature, so it scrolls inside its own
-   box and the page body never does. */
+/* How the Missal changed. The map is wide by nature, so it scrolls inside its
+   own box and the page body never does. */
 
 .history-page {
   --section-accent: #7a5230;
   --section-line: #d9c9b6;
+  --weak-accent: #a98d6f;
+}
+
+.lede {
+  margin: 0.4rem 0 0.6rem;
+  max-width: 46rem;
 }
 
 .map {
-  margin: 0 0 1.5rem;
+  margin: 0 0 0.6rem;
 }
 
 .map-scroll {
@@ -27,28 +33,53 @@
   stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
+  fill: none;
 }
 
-/* A descent through an edition this tracer does not carry is drawn broken.
+/* The track into a station whose act nobody has located is drawn lighter and
+   thinner. It is a weaker claim about the descent and must read as one. */
+.track-to-printed,
+.track-to-unstated {
+  stroke: var(--weak-accent);
+  stroke-width: 4;
+}
+
+/* A descent through an edition this record does not carry is drawn broken.
    A solid line there would claim a continuity the record does not hold. */
 .track-gap {
   stroke-dasharray: 10 9;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .station {
   cursor: pointer;
 }
 
+/* Filled for `promulgated`, hollow for `printed`: the transit idiom, used for
+   the one thing it fits, which is that the second is a weaker claim about
+   evidence. It is not a minor stop. */
 .station-mark {
-  fill: var(--panel, #fff);
+  fill: var(--section-accent);
   stroke: var(--section-accent);
   stroke-width: 5;
 }
 
+.kind-printed .station-mark,
+.kind-unstated .station-mark {
+  fill: var(--panel, #fff);
+  stroke: var(--weak-accent);
+  stroke-dasharray: 5 4;
+}
+
 .station:hover .station-mark,
-.station:focus .station-mark {
-  fill: var(--section-accent);
+.station:focus .station-mark,
+.station-selected .station-mark {
+  stroke-width: 8;
+}
+
+.station-selected .station-name {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .station:focus {
@@ -67,6 +98,12 @@
   fill: var(--ink, #1b1b1b);
 }
 
+.kind-printed .station-name,
+.kind-unstated .station-name {
+  font-weight: 400;
+  font-style: italic;
+}
+
 .station-year {
   font-family: var(--sans);
   font-size: 13px;
@@ -74,13 +111,65 @@
   fill: var(--ink-soft, #5a5a5a);
 }
 
-/* The second line is drawn in the same ink but hollow, so a reader can see it
+.station-count {
+  font-family: var(--sans);
+  font-size: 11px;
+  text-anchor: middle;
+  fill: var(--ink-faint, #86786a);
+}
+
+/* The second line is drawn in the same ink but dashed, so a reader can see it
    is a different line without being told one matters more. */
 .line-exempt-uses .station-mark {
   stroke-dasharray: 4 3;
 }
 
-.detail {
+/* --- The legend -------------------------------------------------------- */
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  margin: 0 0 1.4rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.legend-mark {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  border: 3px solid var(--section-accent);
+  background: var(--section-accent);
+  flex: none;
+}
+
+.legend-printed .legend-mark,
+.legend-unstated .legend-mark {
+  background: var(--panel, #fff);
+  border-color: var(--weak-accent);
+  border-style: dashed;
+}
+
+.legend-gap .legend-mark {
+  width: 1.6rem;
+  height: 0;
+  border-radius: 0;
+  border: 0;
+  border-top: 4px dashed var(--section-accent);
+}
+
+/* --- The station panel ------------------------------------------------- */
+
+.detail,
+.panel {
   margin: 0 0 2rem;
   padding: 1rem 1.1rem;
   border: 1px solid var(--section-line);
@@ -89,10 +178,28 @@
   background: var(--panel);
 }
 
-.detail-title {
+.detail-title,
+.panel-title {
   margin: 0 0 0.6rem;
   font-family: var(--serif);
   font-size: 1.2rem;
+}
+
+.panel-note {
+  margin: 0 0 0.7rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.panel-controls {
+  margin: 0 0 1rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+
+.panel-controls select {
+  margin-left: 0.5rem;
+  max-width: min(100%, 34rem);
 }
 
 .detail-list {
@@ -117,10 +224,317 @@
 }
 
 .detail-departures,
-.detail-gap {
+.detail-gap,
+.detail-weak,
+.detail-summary {
   margin: 0.8rem 0 0;
   font-size: 0.92rem;
   color: var(--ink-soft);
+}
+
+.detail-gap,
+.detail-weak {
+  border-left: 3px solid var(--weak-accent);
+  padding-left: 0.7rem;
+}
+
+.detail-summary {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.detail-section {
+  margin-top: 1.4rem;
+}
+
+.detail-section-title {
+  margin: 0 0 0.6rem;
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  border-bottom: 1px solid var(--section-line);
+  padding-bottom: 0.25rem;
+}
+
+/* --- One change --------------------------------------------------------- */
+
+.change,
+.stop {
+  margin: 0 0 0.9rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--section-line);
+  border-left: 4px solid var(--weak-accent);
+  border-radius: 5px;
+}
+
+.change-gone { border-left-color: #9d3a2f; }
+.change-entered { border-left-color: #3f6b46; }
+.change-changed { border-left-color: #7a5230; }
+.change-unestablished { border-left-color: #6a6a6a; }
+
+.change-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0 0 0.2rem;
+  font-family: var(--serif);
+  font-size: 1.02rem;
+}
+
+.change-kinds {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  border: 1px solid var(--section-line);
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+}
+
+.change-where {
+  margin: 0 0 0.55rem;
+  font-family: var(--mono, monospace);
+  font-size: 0.74rem;
+  color: var(--ink-faint);
+  word-break: break-word;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.3rem 0.7rem;
+  margin: 0.35rem 0;
+  align-items: baseline;
+}
+
+.field-name {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.field-pair {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.field-pair-long {
+  grid-template-columns: 1fr;
+}
+
+.field-pair-long .field-arrow {
+  text-align: left;
+}
+
+.field-arrow {
+  color: var(--ink-faint);
+}
+
+.field-before .value {
+  text-decoration: line-through;
+  text-decoration-color: rgba(157, 58, 47, 0.55);
+}
+
+/* A value the record does not carry is never rendered as blank. A blank there
+   would say the missal held nothing; this says nobody read it. */
+.value-absent {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--ink-faint);
+  text-decoration: none !important;
+}
+
+.basis {
+  margin: 0.6rem 0 0;
+  border-top: 1px dotted var(--section-line);
+  padding-top: 0.45rem;
+}
+
+.basis-entry {
+  margin: 0.35rem 0 0;
+  font-size: 0.83rem;
+  color: var(--ink-soft);
+  white-space: pre-wrap;
+}
+
+.basis-kind {
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.standing {
+  margin: 0.2rem 0 0;
+}
+
+.standing-incipit,
+.held-incipit {
+  margin: 0;
+  font-family: var(--serif);
+}
+
+.standing-text,
+.held-text {
+  margin: 0.3rem 0 0;
+  font-family: var(--serif);
+  white-space: pre-wrap;
+}
+
+.marker {
+  margin: 0.4rem 0 0;
+  padding: 0.5rem 0.6rem;
+  background: rgba(0, 0, 0, 0.035);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+/* --- The state as it stood --------------------------------------------- */
+
+.fold {
+  margin-top: 1.3rem;
+  border-top: 1px solid var(--section-line);
+  padding-top: 0.6rem;
+}
+
+.fold-summary {
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.fold-body {
+  margin-top: 0.8rem;
+}
+
+.mass {
+  margin: 0 0 1.4rem;
+}
+
+.mass-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+}
+
+.mass-meta {
+  margin: 0.1rem 0 0.6rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.held {
+  margin: 0 0 0.7rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--section-line);
+}
+
+.held-name {
+  margin: 0 0 0.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: baseline;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.held-slot {
+  font-family: var(--mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--ink-faint);
+}
+
+/* --- Where the lines part ----------------------------------------------- */
+
+.junction {
+  margin: 0 0 1.4rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--section-line);
+  border-radius: 6px;
+}
+
+.junction-head {
+  margin: 0 0 0.4rem;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+}
+
+.junction-base {
+  margin: 0 0 0.7rem;
+  font-size: 0.92rem;
+}
+
+.junction-side {
+  margin: 0.7rem 0 0;
+}
+
+.junction-side-title {
+  margin: 0 0 0.25rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.junction-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.junction-list li {
+  margin: 0.15rem 0;
+}
+
+.junction-count {
+  margin-left: 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  color: var(--ink-faint);
+}
+
+/* --- A button that reads as a link -------------------------------------- */
+
+.link-button {
+  display: inline;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--section-accent);
+  font: inherit;
+  font-size: 0.84rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.link-button:hover,
+.link-button:focus {
+  text-decoration-thickness: 2px;
 }
 
 @media (max-width: 40rem) {
@@ -130,5 +544,14 @@
   }
   .detail-list dd {
     margin-bottom: 0.5rem;
+  }
+  .field {
+    grid-template-columns: 1fr;
+  }
+  .field-pair {
+    grid-template-columns: 1fr;
+  }
+  .field-arrow {
+    text-align: left;
   }
 }
