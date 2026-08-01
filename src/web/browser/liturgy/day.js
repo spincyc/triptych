@@ -433,20 +433,24 @@
 
   function renderVerdictNotice(branch) {
     const blocking = (branch.absent || []).filter((one) => one.blocks_result);
-    if (!branch.unsettled.length && !blocking.length && !branch.conditions.length) return null;
+    // `branch.conditions` deliberately does not appear here. The model still
+    // derives them and `assembly-model.js` still carries them for anyone asking
+    // it directly; the page does not print them, because a rubric that holds
+    // "unless" something rare is the ordinary shape of nearly every rubric, so
+    // printing each one filled the page with qualifications a reader could act
+    // on in none of them. What genuinely blocks an answer — an unsettled day, a
+    // missing index entry — still shows.
+    if (!branch.unsettled.length && !blocking.length) return null;
 
-    const unsettled = branch.unsettled.length || blocking.length;
-    const node = T.el('div', 'day-warning' + (unsettled ? ' is-unsettled' : ''));
-    node.appendChild(T.el('h3', null, unsettled
-      ? 'This day is not settled here'
-      : 'This answer holds only conditionally'));
-    node.appendChild(T.el('p', null, unsettled
-      ? 'The rules as this repository holds them do not decide this date. What ' +
-        'follows is shown so the state of the question is visible; it is not an ' +
-        'answer and must not be read as one.'
-      : 'One of the days below was constituted from its season because the calendar ' +
-        'index carries no formulary for it, and a competing identity cannot be ruled ' +
-        'out. If the condition fails, the answer changes.'));
+    // Only one branch survives the gate above, so the conditional wording that
+    // stood here is unreachable and is gone rather than left to read as though
+    // it could still fire.
+    const node = T.el('div', 'day-warning is-unsettled');
+    node.appendChild(T.el('h3', null, 'This day is not settled here'));
+    node.appendChild(T.el('p', null,
+      'The rules as this repository holds them do not decide this date. What ' +
+      'follows is shown so the state of the question is visible; it is not an ' +
+      'answer and must not be read as one.'));
     const list = T.el('ul');
     for (const row of branch.unsettled) {
       const item = T.el('li');
@@ -459,12 +463,6 @@
       item.appendChild(T.el('strong', null, row.what + ' is missing from this calendar index: '));
       item.appendChild(document.createTextNode(row.effect));
       withLocus(item, row.locus);
-      list.appendChild(item);
-    }
-    for (const row of branch.conditions) {
-      const item = T.el('li');
-      item.appendChild(T.el('strong', null, row.what + ' — unless '));
-      item.appendChild(document.createTextNode(row.unless));
       list.appendChild(item);
     }
     node.appendChild(list);
