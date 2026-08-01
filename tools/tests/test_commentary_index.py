@@ -61,11 +61,21 @@ class BookWordTests(unittest.TestCase):
         self.words = harvest._book_words(tracked_runs())
 
     def test_a_latin_book_name_is_recognized(self) -> None:
+        """`amos` used to be here and is deliberately gone.
+
+        Harvesting Hosea 14 and Amos 9 put Julian of Eclanum's *Tractatus in
+        Osee, Ioel et Amos* in the ledger under both books, so the word now
+        carries two and the derivation can no longer prove it names one. That
+        is the sound direction — a word it cannot prove is never read as a book
+        name — and it is why the list below is not a fixed vocabulary: which
+        words are provable is a fact about the corpus, and a combined
+        commentary takes one out.
+        """
         for word, book in (
             ("romanos", "Romans"),
             ("galatas", "Galatians"),
             ("hebraeos", "Hebrews"),
-            ("amos", "Amos"),
+            ("isaiam", "Isaiah"),
             ("psalmos", "Psalms"),
         ):
             with self.subTest(word=word):

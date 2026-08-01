@@ -871,7 +871,24 @@ def _alias_evidence(runs: list[dict]) -> tuple[dict, dict, dict]:
     Returned as edges keyed (author, name, name) with the runs asserting them,
     so how well attested a grouping is stays visible rather than being averaged
     away into a yes.
+
+    A name that names a person is refused as a name of a work. Runs offer the
+    author's other name in `aliases` — `Haymo of Auxerre` for Haymo of
+    Halberstadt, `Benedictus Pererius` for Benedict Pereira, six such names in
+    the ledger — and as an edge each one joins every work its author wrote:
+    Haymo's Isaiah commentary and his minor prophets came out one work whose
+    canonical title named Isaiah and whose own names named Zechariah. The set
+    of persons is the ledger's own author column, so nothing is typed here, and
+    dropping the edge is the sound direction: a work genuinely sharing a
+    person's name loses one join rather than gaining a merge.
     """
+    people = {
+        _fold(work.get("author"))
+        for run in runs
+        for works in (run.get("passages") or {}).values()
+        for work in works
+        if _fold(work.get("author"))
+    }
     edges: dict[tuple[str, str, str], set[str]] = defaultdict(set)
     used: dict[tuple[str, str], int] = defaultdict(int)
     spelling: dict[tuple[str, str], str] = {}
@@ -887,7 +904,7 @@ def _alias_evidence(runs: list[dict]) -> tuple[dict, dict, dict]:
                 spelling.setdefault((author, title), str(work.get("title")).strip())
                 for alias in work.get("aliases") or []:
                     name = _fold(alias)
-                    if not name or name == title:
+                    if not name or name == title or name in people:
                         continue
                     spelling.setdefault((author, name), str(alias).strip())
                     edges[(author, *sorted((title, name)))].add(run_id)
@@ -1000,20 +1017,31 @@ _BOOK_WORD_AUTHORS = 2
 
 
 def _book_words(runs: list[dict]) -> dict[str, str]:
-    """Title words that name exactly one book of scripture, from the evidence.
+    """Names' words that name exactly one book of scripture, from the evidence.
 
-    A word qualifies when every attributed title carrying it landed on the same
+    A word qualifies when every attributed name carrying it landed on the same
     book, at least `_BOOK_WORD_AUTHORS` authors use it, and at least
-    `_BOOK_WORD_TITLES` distinct titles do. Anything short of that is not
+    `_BOOK_WORD_TITLES` distinct names do. Anything short of that is not
     consulted, so the check is sound where it is incomplete: it never invents a
     book a title does not name.
+
+    Every name the attribution gives counts, aliases included, because an alias
+    is tied to its locus exactly as the title is and `_key` already matches on
+    it. Reading titles alone left `gospel` naming John — the six attributed
+    titles carrying it all landed there — while `commentary on the gospel of
+    luke`, `... of mark` and `... of matthew` sat in the ledger as aliases,
+    unread. Rule 8 then refused Albert the Great's Luke commentary for holding
+    a name that supposedly named John. Counting the aliases makes the word
+    ambiguous, which is what it is, and adds the book names that only ever
+    appear as aliases.
     """
     books: dict[tuple[str, str], set[str]] = defaultdict(set)
     for run in runs:
         for locus, works in (run.get("passages") or {}).items():
             book = book_of(locus)
             for work in works:
-                books[(_fold(work.get("author")), _fold(work.get("title")))].add(book)
+                for name in _titles(work):
+                    books[(_fold(work.get("author")), name)].add(book)
     named: dict[str, set[str]] = defaultdict(set)
     authors: dict[str, set[str]] = defaultdict(set)
     titles: dict[str, set[str]] = defaultdict(set)
