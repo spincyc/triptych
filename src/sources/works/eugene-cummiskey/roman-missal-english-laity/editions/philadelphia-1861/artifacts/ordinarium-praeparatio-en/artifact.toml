@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1861 Philadelphia printing was published long before 1930 and is in the public domain in the United States. This file contains only that printing's own English wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced. The rights basis is a United States one: a reader elsewhere must establish the position in their own jurisdiction."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Project transcription read visually from rendered page images of the parent facsimile, not from any optical-character-recognition layer. Artifact pages 26-30 were rendered with pdftoppm at 640 dpi and cropped into per-column upper and lower halves, with a whole-page view at 400 dpi for layout; doubtful characters were re-rendered at 1600 dpi. The section was divided into its printed blocks, one row per block, and the block's English column transcribed as set. Nineteenth-century spelling, capitalisation, punctuation and the printing's abbreviations are reproduced as printed and were not modernised, expanded, or corrected against the Latin. One typographic convention is normalised and is the only one: the compositor's French spacing before a colon, semicolon, question mark or exclamation mark is closed up, that being a setting convention of the printing rather than any part of its wording. Where the scan has lost ink at the right edge of the English column or a sort has failed, the damaged word is given whole and the damage is named in the row's `notes`; every such reading was controlled against the facing Latin column of the same opening. Nothing was supplied that the page does not print. Latin incipits are given in the Latin column's own spelling, ligatures included, and are apparatus, not transcription."
+retrieved = "2026-07-31"
+sha256 = "bba0bf1e5890201b7afacdce30598dcbde215908821dea0baa1cc72c76e50850"
+byte_size = 15145
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-en/ordinarium-praeparatio-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header line and 32 data lines; one physical line per printed block, with no embedded newlines. Columns: seq, element_key, part, kind, speaker, printed_page, ia_leaf, latin_incipit, english, notes. `kind` is one of heading, rubric, prayer, form, dialogue. Coverage: the head of THE ORDINARY OF THE MASS, from the section head and the priest at the foot of the altar through the Gloria in excelsis and the Dominus vobiscum that follows it, printed pp. xv-xix, that is Internet Archive leaves n25-n29 and artifact pages 26-30 of the parent facsimile. The last two rows stand at the foot of p. xix and precede the collect, which opens the next section. Element keys are unique within this file only: `gloria-patri`, `rubrica-conversus-ad-populum` and `rubrica-inclinatus-ante-altare` each recur in a sibling section, because the book really does say those things twice, and a consumer joining several sections must key on the section as well. This printing is a pre-1955 lay hand missal, not an approved liturgical translation and never an altar book; nothing here may be used for recitation, and its rubrics are the discipline in force before the 1955 and 1960 reforms."

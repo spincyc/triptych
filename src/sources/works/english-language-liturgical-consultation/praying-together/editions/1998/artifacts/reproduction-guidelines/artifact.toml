@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.english-language-liturgical-consultation.praying-together.1998.reproduction-guidelines"
+edition_id = "edition.english-language-liturgical-consultation.praying-together.1998"
+artifact_type = "guidance-pdf"
+media_type = "application/pdf"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The Consultation's own guidance document, dated July 2017. Its final section permits free reproduction of ELLC material other than the liturgical texts for non-commercial use, which would very likely cover retaining this file; the question was not settled, and it does not need to be, because nothing here reuses the document's wording beyond the grant it states. The bytes are recorded and not retained."
+source_url = "https://irp-cdn.multiscreensite.com/a42fbdb2/files/uploaded/Guidelines.pdf"
+provenance = "Two-page PDF linked from the Consultation's permissions page as \"Guidelines for Reproducing ELLC Texts\"; fetched over HTTPS with curl on 2026-07-31 and hashed before use. Read locally with pdftotext -layout; nothing in the retrieval path passed through a model."
+retrieved = "2026-07-31"
+sha256 = "3a30e02c35efc8afb4db5cac598e46e6c8e3c965370c458da2d9986d1cea1a54"
+byte_size = 62522
+page_count = 2
+indexable = false
+notes = "This is the document that bounds the grant, and the bound matters here. It repeats the permission for the liturgical texts and then states the exception: \"The reproduction of other texts from Praying Together such as the Introduction or notes on each text, does require permission from the Secretary.\" Each text's page on the Consultation's site carries such notes below the text; none of them is reproduced by this project. It also states two expectations about presentation - that the printed sense lines be kept, and that a modified or adapted text carry \"(adapted)\" in its acknowledgement - and gives the parallel acknowledgement for the older ICET texts."
