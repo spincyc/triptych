@@ -253,8 +253,6 @@ STALE: dict[str, str] = {
     "tools/mass-propers list --calendar roman-1962":
         "2026-07-31: the calendar gained masses; 459 recorded, 462 now, the last two "
         "being the Commune Sanctorum's first entries",
-    "tools/mass-propers structure --out build/example-propers":
-        "2026-07-31: 459 masses over 1108 citations recorded; 462 over 1151 now",
     "tools/public-alpha prepare":
         "2026-07-31: the candidate inventory grew; 2257 further lines recorded, 2305 now",
     "tools/release-bindings status":

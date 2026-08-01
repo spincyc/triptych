@@ -47,7 +47,6 @@
    * name out of the file rather than out of this list.
    * --------------------------------------------------------------------- */
 
-  const MISSAL_CANDIDATES = ['roman-1962', 'postconciliar'];
   const MISSAL_MANIFEST = 'structure/propers/index.json';
 
   function structurePath(id) {
@@ -197,30 +196,40 @@
     };
   }
 
+  /**
+   * Which missals this corpus holds, and which one to open on.
+   *
+   * `mass-propers structure` writes the manifest beside the structure files it
+   * writes, listing exactly the missals that are THERE. The page used to probe
+   * a hand-typed pair of ids instead — a restatement of what those files
+   * already declare, which cost a 404 on every load and would have gone stale
+   * the moment a third missal landed, as one now has.
+   *
+   * `landing` is read, never inferred from row order. The manifest does put it
+   * first, and relying on that would work today and break silently the day the
+   * order changed for some unrelated reason.
+   */
   async function discoverMissals() {
     const listed = T.params.get('missals');
     if (listed) {
-      return listed.split(',').map((id) => id.trim()).filter(Boolean).map((id) => described(id));
+      const named = listed.split(',').map((id) => id.trim()).filter(Boolean).map((id) => described(id));
+      return { missals: named, landing: named.length ? named[0].id : '' };
     }
 
-    try {
-      const file = await T.loadJSON(MISSAL_MANIFEST);
-      const entries = (file && (file.missals || file.calendars)) || [];
-      if (entries.length) {
-        return entries.map((entry) => {
-          if (typeof entry === 'string') return described(entry);
-          return described(
-            entry.id, entry.label || entry.edition, entry.edition, entry.edition_short);
-        });
-      }
-    } catch (error) {
-      // No manifest is the normal case today; fall through to the probe.
-    }
-
-    const present = await Promise.all(
-      MISSAL_CANDIDATES.map((id) => T.exists(structurePath(id)))
-    );
-    return MISSAL_CANDIDATES.filter((id, index) => present[index]).map((id) => described(id));
+    const file = await T.loadJSON(MISSAL_MANIFEST);
+    const entries = (file && (file.missals || file.calendars)) || [];
+    const missals = entries.map((entry) => {
+      if (typeof entry === 'string') return described(entry);
+      return described(
+        entry.id, entry.label || entry.edition, entry.edition, entry.edition_short);
+    });
+    const declared = (file && file.default) || '';
+    return {
+      missals: missals,
+      landing: missals.some((missal) => missal.id === declared)
+        ? declared
+        : (missals.length ? missals[0].id : '')
+    };
   }
 
   // One attempt per missal, remembered — including a failed one, so a missal
@@ -684,7 +693,8 @@
       : state.bibles[0].id;
     bibleSelect.value = state.bibleId;
 
-    state.missals = await discoverMissals();
+    const discovered = await discoverMissals();
+    state.missals = discovered.missals;
     if (!state.missals.length) {
       T.fail(
         'No missal could be found under "' + T.dataPath('structure/propers/') +
@@ -697,7 +707,7 @@
     const wantedMissal = hash.get('missal');
     const missalId = state.missals.some((missal) => missal.id === wantedMissal)
       ? wantedMissal
-      : state.missals[0].id;
+      : discovered.landing;
 
     await setMissal(missalId, preferenceFrom(hash), { moveFocus: false });
   }
