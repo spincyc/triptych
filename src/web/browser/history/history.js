@@ -262,7 +262,13 @@
    * Where the map and its fragments live
    * --------------------------------------------------------------------- */
 
-  const SLICE = 'roman-holy-week';
+  /* One slice is drawn at a time, and which one is a parameter rather than a
+   * fact about this file. The record is meant to grow past Holy Week, and a
+   * second slice should be reachable by asking for it rather than by editing a
+   * page. Everything below reads the file the slice names; nothing here knows
+   * what is in it. */
+  const SLICE = new URLSearchParams(window.location.search).get('slice') ||
+    'roman-holy-week';
   const ROOT = 'structure/act-history/' + SLICE;
   const NS = 'http://www.w3.org/2000/svg';
 

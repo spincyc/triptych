@@ -1922,7 +1922,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/catena/catena.js` | `a2d19a7499dba2a811662dc3389a94019cb4a197d35622729b10991ee20aafb6` |
 | `src/web/browser/catena/index.html` | `85ab8a2f65ed9adf47d3418bf82d48b33f9129038b66f8d31c4845dc11c11587` |
 | `src/web/browser/history/history.css` | `25ed5ba0ae6fe7e373b46bb69dadbf1c90234f3324eaad1ff9f8e55e7760712b` |
-| `src/web/browser/history/history.js` | `a4fd720a6bee38409df7f7177c76784d50ed1dddefc029eaa3ec8448ab18f393` |
+| `src/web/browser/history/history.js` | `ab1215550f586adaf55c046f8212db441e53787fc4251dc4de1d02005d87762e` |
 | `src/web/browser/history/index.html` | `869e098a72db36cd07e19f2b11dfe853816c39693ae0c5cd7959d4c309848fae` |
 | `src/web/browser/liturgy/assembly-model.js` | `55425213cde4f34cf1c7f491c1710d6d5f5e9171e3e281ec26a28b4bd98a0159` |
 | `src/web/browser/liturgy/day.css` | `ad00be76c20279a9917383c4b562d13b63614e7d1a1decb2b4f2124d1e9eaf38` |
