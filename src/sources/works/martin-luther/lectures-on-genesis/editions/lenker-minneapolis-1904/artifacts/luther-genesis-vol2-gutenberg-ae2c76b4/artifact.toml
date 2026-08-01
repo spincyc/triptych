@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.luther-genesis-vol2-gutenberg-ae2c76b4"
+edition_id = "edition.martin-luther.lectures-on-genesis.lenker-minneapolis-1904"
+artifact_type = "web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "John Nicholas Lenker's English translation of Luther's Genesis lectures, printed Minneapolis 1904 and in the United States public domain by date of publication. Lenker died in 1929, so the translation is also out of copyright in jurisdictions applying a life-plus-seventy term. Project Gutenberg's licence wrapper, which carries its trademark, has been removed by the transformation named below and no part of it survives in these bytes; Gutenberg asserts no 'sweat of the brow' right over the transcription itself and its permission page says so. No host's markup, pagination or annotation is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Derived on 2026-08-01 from the hashed download above by the tracked script named in transformation. No model stood anywhere in the path: the bytes were fetched with curl, hashed, and transformed locally."
+derived_from = "artifact.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.luther-genesis-vol2-gutenberg-download-ed3ec3f5"
+transformation = "python3 scripts/gutenberg_transcribe.py SOURCE --out OUT: the text between Project Gutenberg's own START and END markers, with its interior colophon line removed, curly punctuation folded to ASCII, and one LF-terminated UTF-8 line per source paragraph. The script refuses rather than guessing if either marker is absent."
+retrieved = "2026-08-01"
+sha256 = "ae2c76b49da55dcba6df04ea5b133365e578ff49e0ab0593306aa4c3b3eebead"
+byte_size = 716522
+path = "src/sources/works/martin-luther/lectures-on-genesis/editions/lenker-minneapolis-1904/artifacts/luther-genesis-vol2-gutenberg-ae2c76b4/luther-genesis-vol2.txt"
+notes = "Volume 2 of two. Keyed text, not OCR: measured by scripts/_ocr_quality.py at an English function-word share of 0.39 to 0.41, against 0.24 for the Migne PL 34 scan whose text layer guidance/catena.md measures at roughly one corrupted word in eight. The volume is complete as printed; the translation itself is not the whole work, which is recorded on the edition."
