@@ -12,7 +12,7 @@ translations_schema = 1
 record_type = "calendar-proper-translations"
 calendar = "roman-1962"
 target = "src/sources/calendars/roman-1962/propers.yaml"
-recorded_on = "2026-07-31"
+recorded_on = "2026-08-01"
 merge = """
 Each entry names one proper by mass key, form label and proper name. Set that
 proper's `translations` key to the entry's `translations` array verbatim: the
@@ -30,21 +30,23 @@ distinguished from one nobody looked at, and so that a page can say that no
 English is recorded rather than showing Latin as though it were the answer.
 """
 verification = """
-Partly collated. Of the 153 entries, 100 carry `printed_page`, `ia_leaf`,
+Partly collated. Of the 165 entries, 113 carry `printed_page`, `ia_leaf`,
 `collated` and `collation_result`: those were read against the page images of
 Internet Archive item romanmissaltran00churgoog, the same 1861 printing this
 file quotes, at
 `https://archive.org/download/romanmissaltran00churgoog/page/n<leaf>_w1400.jpg`
-on 2026-07-31. 59 were confirmed as printed, 39 were corrected against the
-page, and 2 were recorded from the page in propers this file had declared the
-witness does not print. The remaining 53 entries carry no such keys: they have
-still been read out of an optical-character-recognition text layer and
-collated against nothing, and must be treated as unverified. 51 of those 53 are
-matched by the sibling transcription of the same printing; the last 2 are the
-first entries here taken from the witness's Common of Saints, and they are
-matched instead by a second Philadelphia printing of the same translation.
+on 2026-07-31 and 2026-08-01. 59 were confirmed as printed, 39 were corrected
+against the page, and 14 were recorded from the page in propers this file had
+declared the witness does not print. One further entry had its wording
+confirmed and its page corrected: see `sexagesima`'s Secret. The remaining 52
+entries carry no such keys: they have still been read out of an
+optical-character-recognition text layer and collated against nothing, and must
+be treated as unverified. 50 of those 52 are matched by the sibling
+transcription of the same printing; the last 2 are the first entries here taken
+from the witness's Common of Saints, and they are matched instead by a second
+Philadelphia printing of the same translation.
 
-The collation ran in two passes on that day. The first 99 were not chosen at
+The collation ran in two passes on 2026-07-31. The first 99 were not chosen at
 random. They are every entry that disagreed with the project's independent
 transcription of the same book (the artifact temporal-orations-en registered
 on this edition), plus a seeded random sample
@@ -61,6 +63,31 @@ not biased at all -- it is the whole of a stratum -- and within it three of
 seven entries were corrected and two absences were refuted. Nine orations is
 too few to rate, and the stratum was selected for having no evidence, so
 nothing about the other 142 follows from it.
+
+A third pass ran on 2026-08-01 over a stratum chosen the same way -- the whole
+of what had no evidence -- and it found the same thing again. Every proper this
+file had ledgered `untranslated` for want of a text in the witness was retested
+against the page. Nine of the fifteen fell. Twelve entries were added from the
+page: the three orations of `epiphany-2`, which the witness prints inside its
+Mass of the Holy Name of Jesus under the heading `of the Sunday`; the
+Postcommunion of `epiphany-6`, whose text layer breaks off where the page does
+not; the Collect of `good-friday`, which the witness prints at Maundy Thursday
+and cross-references from its own Good Friday; the Collect of `pentecost-3` and
+the Secret and Postcommunion of `pentecost-6` and the Collect of `pentecost-7`,
+each of which had been recorded as not found and each of which is on a page
+this file had already cited for a neighbouring oration; and the three orations
+of `mass-of-the-first-sunday-after-epiphany`, a formulary this file had never
+carried at all. That is now twenty-one absences refuted against this witness
+across three passes and none confirmed, which is a rate worth stating plainly:
+**this file has never yet recorded an absence in the 1861 witness that survived
+someone opening the page.** The six untranslated rows that remain rest on a
+Latin comparison rather than on a failure to find, and the three added for
+`s-hilarii` rest on a refusal to write a name the witness does not print.
+
+The same pass corrected one entry's provenance without touching its wording.
+`sexagesima`'s Secret cited printed p. 94, and p. 94 prints a different setting
+of the same prayer. The witness sets it twice and not identically, and the page
+that was cited was the wrong one of the two.
 
 The alignment of each oration to its mass was settled by reading the English
 against the Latin the calendar carries. That is a judgement and not a
@@ -207,8 +234,8 @@ repository carries. The honest total is small and worth stating plainly,
 because it is easy to read the corrections above as the end of the problem
 rather than as the result of having looked at two thirds of one file.
 
-The repository serves English for 153 non-scriptural propers, all of them
-here - 51 collects, 51 secrets, 51 postcommunions. Every one comes from this
+The repository serves English for 165 non-scriptural propers, all of them
+here - 56 collects, 54 secrets, 55 postcommunions. Every one comes from this
 file: `tools/mass-propers` builds the browser's data by overlaying this
 inventory onto propers.yaml and reads no other translation source. The
 browser's data serves each of them at every mass that takes it, which is
@@ -219,20 +246,27 @@ served there. Outside the two calendars the only other English orations in the
 tree are quotations of the sibling artifact through passage records, not an
 independent rendering.
 
-Of the 153:
+Of the 165, revised 2026-08-01:
 
-  100  read against the 1861 page images on 2026-07-31 - 59 confirmed,
-       39 corrected, and 2 recorded from the page in propers this file had
-       declared the witness does not print. These carry `collated` and
+  113  read against the 1861 page images on 2026-07-31 and 2026-08-01 - 59
+       confirmed, 39 corrected, 14 recorded from the page in propers this file
+       had declared the witness does not print, and 1 whose wording was
+       confirmed and whose cited page was corrected. These carry `collated` and
        `collation_result`.
     2  never seen on a page, but matched word for word against a second
        Philadelphia printing of the same translation, the 1843 of Internet
        Archive item romanmissaltran00englgoog. These carry
        `detector = "second-printing-agrees"`.
-   51  never seen on a page, but matched byte for byte by the independent
+   50  never seen on a page, but matched byte for byte by the independent
        temporal-orations-en transcription of the same book. These carry
        `detector = "sibling-agrees"`.
     0  never seen on a page and with no second reading of any kind.
+
+The roman-1962 calendar appoints 174 distinct orations once every `takes_from`
+is resolved, so 165 served leaves 9 without English, and all 9 carry an
+`untranslated` row saying why. Nothing in that calendar's oration slots is
+unaccounted for: there is no longer a proper that has neither English nor a
+recorded reason for having none.
 
 **The witness's sanctoral was reached for the first time on 2026-07-31.** Every
 entry above it in this file renders a temporal oration, because the temporal is
@@ -257,10 +291,22 @@ where the 1962 typica prints two forms of a Secret or a Postcommunion, the
 witness prints one, and its one English does not always answer either Latin.
 Three propers of the Commune Doctorum are recorded `untranslated` for exactly
 that reason, and the reason is written into each row. The second is that the
-1861 Proper of Saints does not print every day the 1962 calendar keeps: it has
-no entry for S. Hilarii at 14 January, which is why that mass carries Latin and
-no English. How much of the 1962 sanctoral the witness does reach has not been
-counted.
+1861 Proper of Saints does not print every day the 1962 calendar keeps, and
+how much of it the witness does reach has not been counted.
+
+**Corrected 2026-08-01.** This paragraph used to name S. Hilarii at 14 January
+as the instance of that second limit, and said the witness has no entry for
+him. It has one. At `XIV. St. HILARY, bp. c.` the 1861 book prints `All as in
+Mass XII. p. 485, with a Commem. of St. Felix`, and Mass XII is its Mass of
+Doctors. The day is reached, by the same kind of reference the 1962 Missal uses
+at the same date. What stops the English attaching is not absence but the
+letter `N.`: the witness prints the Common's orations with the placeholder, and
+the 1962 Missal prints this day's with the saint's name written in, so the two
+texts are not the same text. The three rows now stand `untranslated` on that
+ground and not on a false absence. Note what the wrong reason cost -- an
+absence recorded against a witness had been read as a fact about the book when
+it was a fact about a reader, which is the same error this file has now made
+and corrected four times.
 
 The detector field is the disagreement test of `sibling_transcription` above,
 run over the whole file and recorded rather than left to be re-derived. It
@@ -321,10 +367,17 @@ from every pre-1956 witness while the words sit in print, which is exactly the
 false absence recorded here; that reason is now written into the entry rather
 than left to be re-derived by whoever meets it next.
 
-Four `untranslated` rows still carry the same "not found in the witness"
+Four `untranslated` rows still carried the same "not found in the witness"
 wording - pentecost-3 collect, pentecost-6 secret and postcommunion,
-pentecost-7 collect. Nothing in this pass re-tested them, and on the evidence
-of the two that fell they should be read as untested rather than as settled.
+pentecost-7 collect - and this paragraph said of them that nothing had
+re-tested them and that on the evidence of the two that fell they should be
+read as untested rather than as settled. **All four were tested on 2026-08-01
+and all four fell.** The witness prints every one of them, three of the four on
+pages this file had already opened and cited for a neighbouring oration in the
+same mass. The prediction in the sentence above was right, and it is worth
+leaving both halves of it standing, because the useful part is not that the
+four were wrong: it is that the file could say which of its own claims were
+untested, and that saying so is what got them tested.
 
 The rule the seven were left under still holds and is why they were left: an
 unverified entry recorded as verified is a worse defect than the OCR error it
@@ -612,6 +665,126 @@ May the efficacy of this sacrament, O Lord, cleanse us from our sins, and obtain
 """
 
 [[entries]]
+mass = "mass-of-the-first-sunday-after-epiphany"
+form = ""
+proper = "Collect"
+incipit = "Vota, quaesumus, Domine"
+witness = "cummiskey-1861"
+printed_page = "92"
+ia_leaf = 102
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "The 1962 Missal prints this formulary at printed p. 40 under the heading MISSA DOMINICAE PRIMAE post Epiphaniam, for the ferias of that week, because the Holy Family occupies the Sunday. The 1861 witness is older than the Holy Family and simply prints it as I. SUNDAY after EPIPHANY at its pp. 92-94, so the day the witness heads is not the day the 1962 books keep, but the formulary is the same one and its orations are read from there."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+According to thy divine mercy, O Lord, receive the vows of thy people, who pour forth their prayers to thee; that they may know what their duty requireth of them, and be able to comply with what they know. Thro'.
+"""
+
+[[entries]]
+mass = "mass-of-the-first-sunday-after-epiphany"
+form = ""
+proper = "Secret"
+incipit = "Oblatum tibi, Domine"
+witness = "cummiskey-1861"
+printed_page = "94"
+ia_leaf = 104
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "The witness sets this prayer twice, and not identically. At p. 94, under the First Sunday after the Epiphany, it reads `always enliven and defend us`; at p. 110, under Sexagesima, `always enliven us and defend us`. This entry takes the p. 94 setting because that is where the witness prints the formulary this mass carries; the sexagesima entry takes the p. 110 setting for the same reason. Neither is a copy of the other and the difference is the book's own."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the sacrifice we have offered to thee, O Lord, always enliven and defend us. Thro'.
+"""
+
+[[entries]]
+mass = "mass-of-the-first-sunday-after-epiphany"
+form = ""
+proper = "Postcommunion"
+incipit = "Supplices te rogamus"
+witness = "cummiskey-1861"
+printed_page = "94"
+ia_leaf = 104
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Set twice, as the Secret above is. The p. 94 setting prints `Grant we humbly beseech thee` and `well-pleasing`; the p. 110 setting, under Sexagesima, prints `Grant, we humbly beseech thee` and `well pleasing`. Each entry takes the setting printed with its own formulary."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant we humbly beseech thee, O Almighty God, that those whom thou refreshest with thy sacraments, may, by a life well-pleasing to thee, worthily serve thee. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-2"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens sempiterne Deus, qui coelestia"
+witness = "cummiskey-1861"
+printed_page = "95"
+ia_leaf = 105
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "This file recorded all three orations of this Sunday as untranslated, on the ground that the block the book prints for it could not be identified in the text layer. The block is there and is not hard to see once the witness's calendar is allowed for. The 1861 printing gives the Second Sunday after the Epiphany to the Feast of the Holy Name of Jesus, so the Sunday's own orations stand inside that Mass as commemorations, each headed `of the Sunday` -- COLLECT of the Sunday at p. 95, SECRET of the Sunday at p. 96, P. COMM. of the Sunday at p. 97. A matcher looking for a heading naming the Sunday finds a feast instead and reports the Sunday absent."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O almighty and eternal God, supreme Ruler, both of heaven and earth, mercifully give ear to the prayers of thy people, and grant us peace in our time. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-2"
+form = ""
+proper = "Secret"
+incipit = "Oblata, Domine, munera"
+witness = "cummiskey-1861"
+printed_page = "96"
+ia_leaf = 106
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Printed as SECRET of the Sunday inside the Mass of the Holy Name; see the Collect entry above."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Sanctify, O Lord, our offerings, and cleanse us from the stains of our sins. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-2"
+form = ""
+proper = "Postcommunion"
+incipit = "Augeatur in nobis"
+witness = "cummiskey-1861"
+printed_page = "97"
+ia_leaf = 107
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Printed as P. COMM. of the Sunday inside the Mass of the Holy Name; see the Collect entry above."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the efficacy of thy power, O Lord, be increased in us, that being fed with thy divine sacraments, we may, thro' thy bounty, be prepared to receive what they promise. Thro'.
+"""
+
+[[entries]]
 mass = "epiphany-3"
 form = ""
 proper = "Collect"
@@ -812,6 +985,26 @@ May this oblation, O God, we beseech thee, cleanse, renew, govern and protect us
 """
 
 [[entries]]
+mass = "epiphany-6"
+form = ""
+proper = "Postcommunion"
+incipit = "Caelestibus, Domine"
+witness = "cummiskey-1861"
+printed_page = "104"
+ia_leaf = 114
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Recorded untranslated until now on the ground that the witness prints it but the text layer breaks off mid-clause. The page does not break off. It prints the oration whole, and the page also settles its conclusion, which it sets as `Thro.'` with the stop inside the abbreviation; that is the transposition this file's corrections note normalises to `Thro'.`"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being fed, O Lord, with heavenly dainties, we beseech thee, that we may always hunger after them, as they preserve our life. Thro'.
+"""
+
+[[entries]]
 mass = "septuagesima"
 form = ""
 proper = "Collect"
@@ -891,10 +1084,11 @@ form = ""
 proper = "Secret"
 incipit = "Oblatum tibi, Domine"
 witness = "cummiskey-1861"
-printed_page = "94"
-ia_leaf = 104
-collated = "page-image, 2026-07-31"
-collation_result = "confirmed"
+printed_page = "110"
+ia_leaf = 120
+collated = "page-image, 2026-08-01"
+collation_result = "provenance corrected; wording confirmed"
+witness_note = "This entry carried printed_page 94 and ia_leaf 104, which is where the witness prints the same prayer under the First Sunday after the Epiphany. Page 94 does not print this wording: it reads `always enliven and defend us`, without the second `us`. The witness sets the prayer a second time, in full, at p. 110 under Sexagesima, and that setting is the one recorded here. Both pages were read on 2026-08-01. The wording was right and the page it was attributed to was wrong -- a citation that resolved successfully and to the wrong page, with the text it named on neither side of the error visible to any check."
 
 [[entries.translations]]
 lang = "en"
@@ -910,7 +1104,11 @@ form = ""
 proper = "Postcommunion"
 incipit = "Supplices te rogamus"
 witness = "cummiskey-1861"
-detector = "sibling-agrees"
+printed_page = "110"
+ia_leaf = 120
+collated = "page-image, 2026-08-01"
+collation_result = "confirmed"
+witness_note = "Read on the same page as the Sexagesima Secret above, and it is not the same setting as the one at p. 94: this one prints `Grant, we humbly beseech thee` with the comma and `well pleasing` without the hyphen."
 
 [[entries.translations]]
 lang = "en"
@@ -1358,6 +1556,26 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 We beseech thee, O Lord, our God, that being nourished with this life-giving food, we may receive by thy grace, in immortal glory, what we celebrate in this mortal life. Thro'
+"""
+
+[[entries]]
+mass = "good-friday"
+form = ""
+proper = "Collect"
+incipit = "Deus, a quo et Judas"
+witness = "cummiskey-1861"
+printed_page = "271"
+ia_leaf = 279
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Recorded untranslated until now, on the ground that the book prints no text here and refers the reader back to Maundy Thursday. Both halves of that are true and the conclusion drawn from them was not. At its Good Friday the witness prints `COLLECT. Deus, a quo, as p. 271.`, and p. 271 is where it sets the prayer whole, under Maundy Thursday; the reference is the book telling a reader where its own text is, not an absence. The 1962 books print the same prayer twice in full, once in each formulary, so this entry and the mass-of-the-lords-supper Collect above are two 1962 slots served from one printed English, and neither is a copy of the other."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, from whom both Judas received the punishment of his sin, and the thief the reward of his confession: grant us the effects of thy mercy; that as our Lord Jesus Christ, at the time of his passion, bestowed on both different rewards according to their merits; so, having destroyed the old man in us, he may give us grace to rise again with him. Who liveth.
 """
 
 [[entries]]
@@ -1952,6 +2170,26 @@ Having received, O Lord, this sacred oblation, grant, that by frequenting these 
 [[entries]]
 mass = "pentecost-3"
 form = ""
+proper = "Collect"
+incipit = "Protector in te sperantium"
+witness = "cummiskey-1861"
+printed_page = "400"
+ia_leaf = 408
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Recorded untranslated until now as `no oration answering this proper was found in the witness`. The witness prints it, headed COLLECT Protector., at the foot of p. 400 and running over to p. 401; both leaves were read. An oration that begins on the last line of a page is exactly what a search reading one page at a time loses."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, the protector of those who hope in thee, without whose aid nothing is strong, nothing holy: increase thy mercy towards us; that under thy direction and conduct, we may so pass through the blessings of this life, as not to lose those which are eternal. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-3"
+form = ""
 proper = "Secret"
 incipit = "Respice, Domine, munera"
 witness = "cummiskey-1861"
@@ -2109,6 +2347,66 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O God of all power, to whom entirely belongeth whatever is best: implant in our hearts the love of thy name, and grant us an increase of religion that thou mayest improve in us what is good, and preserve what thou thus improvest by the practice of piety. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-6"
+form = ""
+proper = "Secret"
+incipit = "Propitiare, Domine"
+witness = "cummiskey-1861"
+printed_page = "409"
+ia_leaf = 417
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Recorded untranslated until now as `no oration answering this proper was found in the witness`. It is on p. 409, three lines below the Offertory, on the same leaf this file already cited for the pentecost-7 Collect. Nothing was hidden; the page had not been opened for this slot."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Be appeased, O Lord, by our humble prayers, and mercifully receive the offerings of thy people: and that the vows and prayers of none may be in vain, grant we may effectually obtain what we ask. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-6"
+form = ""
+proper = "Postcommunion"
+incipit = "Repleti sumus, Domine"
+witness = "cummiskey-1861"
+printed_page = "409"
+ia_leaf = 417
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Recorded untranslated until now on the same ground as the Secret above, and printed on the same page."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We are filled, O Lord, with thy gifts: grant, therefore, we beseech thee, that we may be cleansed by their efficacy, and strengthened by their aid. Thro'.
+"""
+
+[[entries]]
+mass = "pentecost-7"
+form = ""
+proper = "Collect"
+incipit = "Deus, cujus providentia"
+witness = "cummiskey-1861"
+printed_page = "409"
+ia_leaf = 417
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Recorded untranslated until now as `no oration answering this proper was found in the witness`. It stands at the foot of p. 409, immediately under the Introit of the Seventh Sunday, on the leaf this file already cited for this mass's Secret and Postcommunion at p. 411. Three of the four remaining `not found` rows were on pages this file had already opened for a neighbouring oration."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, whose providence is never deceived in what it appointeth: we humbly beseech thee to remove whatever may be prejudicial to us: and grant us whatever may be to the advantage of our souls. Thro'.
 """
 
 [[entries]]
@@ -3135,56 +3433,19 @@ proper = "Postcommunion"
 reason = "the feast did not exist in 1861 and its orations were composed in the twentieth century, so this witness has no counterpart to it"
 
 [[untranslated]]
-mass = "epiphany-2"
+mass = "s-hilarii-episcopi-confessoris-ecclesiae-doctoris"
 form = ""
 proper = "Collect"
-reason = "the block the book prints for this Sunday could not be identified in the text layer with enough confidence to take its orations"
+reason = "the witness reaches this day, and reaches it by reference. At XIV. St. HILARY, bp. c. it prints `All as in Mass XII. p. 485, with a Commem. of St. Felix`, and Mass XII is its Mass of Doctors, whose Collect it sets as `O God, who didst give Blessed N. to thy people for a minister of eternal salvation`. The 1962 Missal does not print N. here. At 14 Ianuarii it prints the Common's Mass by the same kind of reference and then sets the day's own orations with the saint named -- beatum Hilarium, Sancti Hilarii Pontificis, beatus Hilarius Pontifex tuus. So the witness's English answers the Common's Latin and not this day's, and the only step from one to the other is to write the saint's name into a prayer the witness does not write it into. That step is short and it is still project-composed text, so it is not taken. The Common's English is recorded at commune-doctorum-pontificis, where the witness prints it and where the Latin still reads N."
 
 [[untranslated]]
-mass = "epiphany-2"
+mass = "s-hilarii-episcopi-confessoris-ecclesiae-doctoris"
 form = ""
 proper = "Secret"
-reason = "the block the book prints for this Sunday could not be identified in the text layer with enough confidence to take its orations"
+reason = "the same reference and the same refusal as the Collect above, and a second reason on top of it: the witness's one Secret for Doctors renders `the pious prayers of thy holy servant N.`, which answers neither Latin form the 1962 typica prints, so it would not answer Sancti Hilarii Pontificis tui atque Doctoris even with the name supplied. See the commune-doctorum rows"
 
 [[untranslated]]
-mass = "epiphany-2"
+mass = "s-hilarii-episcopi-confessoris-ecclesiae-doctoris"
 form = ""
 proper = "Postcommunion"
-reason = "the block the book prints for this Sunday could not be identified in the text layer with enough confidence to take its orations"
-
-[[untranslated]]
-mass = "epiphany-6"
-form = ""
-proper = "Postcommunion"
-reason = "the witness prints it, but the text layer breaks off mid-clause"
-
-[[untranslated]]
-mass = "good-friday"
-form = ""
-proper = "Collect"
-reason = "the book prints no text here, referring the reader back to Maundy Thursday"
-
-[[untranslated]]
-mass = "pentecost-3"
-form = ""
-proper = "Collect"
-reason = "no oration answering this proper was found in the witness"
-
-[[untranslated]]
-mass = "pentecost-6"
-form = ""
-proper = "Secret"
-reason = "no oration answering this proper was found in the witness"
-
-[[untranslated]]
-mass = "pentecost-6"
-form = ""
-proper = "Postcommunion"
-reason = "no oration answering this proper was found in the witness"
-
-[[untranslated]]
-mass = "pentecost-7"
-form = ""
-proper = "Collect"
-reason = "no oration answering this proper was found in the witness"
-
+reason = "the same reference and the same refusal, and again a second reason: the witness's one Postcommunion for Doctors names a Confessor, `thy Confessor and great Doctor`, where this day's Latin reads beatus Hilarius Pontifex tuus et Doctor egregius. It answers the non Pontifice form of the Common, not this one"
