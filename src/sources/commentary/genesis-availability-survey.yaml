@@ -1694,6 +1694,13 @@ languages_held:
   rule: A translation is a separate EDITION of the same work with its own artifact and its own rights, never a second
     text on one edition. That is what lets a father's Greek be publishable while a modern English of him is not,
     and it is what the commentary-language selector on the page reads.
+  english_moved_out: 'CLOSED 2026-08-01, and moved. The English question is now answered for EVERY held work, not
+    only the ones this block happened to name, in src/sources/commentary/translation-absences.yaml — one row per
+    work per language, with the translation that exists, why it may not be republished, the aliases searched and
+    what would overturn the finding. scripts/_catena.py check refuses a work standing in the catena with no English
+    and no row saying why, and refuses a row claiming a work reaches no English while the library holds an English
+    edition of it. The notes below are kept for the languages that record does not govern; the English reasoning
+    is NOT restated here, because a second copy of it is a disagreement waiting to happen.'
   basil-hexaemeron:
     held:
     - en
@@ -1711,9 +1718,7 @@ languages_held:
     - la
     not_held:
     - en
-    english_note: No public-domain English exists. The first complete translation is J. H. Taylor's, Ancient Christian
-      Writers 41 to 42, 1982, in copyright until 2078 in a life-plus-seventy jurisdiction. This is the finding the
-      pilot's licence survey made across the board and it is not a gap more effort closes.
+    english_note: See translation-absences.yaml, which owns this answer and every other work's.
   augustine-de-civitate-dei:
     held:
     - en

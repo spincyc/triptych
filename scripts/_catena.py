@@ -70,6 +70,29 @@ SCHEMA = "triptych-commentary-fragment-loci/v1"
 EDGES_RELATIVE = Path("src/sources/commentary/fragment-loci.yaml")
 ALIASES_RELATIVE = Path("src/sources/commentary/work-aliases.yaml")
 INDEX_RELATIVE = Path("src/sources/commentary/passage-commentary-index.yaml")
+ABSENCES_RELATIVE = Path("src/sources/commentary/translation-absences.yaml")
+ABSENCES_SCHEMA = "triptych-commentary-translation-absences/v1"
+
+# The findings a row may carry, closed so that a fourth answer has to be argued
+# for rather than typed. They say different things and the page prints them
+# differently: `none-published` is a fact about the world, `in-copyright` is a
+# fact about the law, `partial-public-domain` is an offer this project has not
+# taken, and `not-surveyed` is an admission.
+ABSENCE_FINDINGS = {
+    "none-published",
+    "in-copyright",
+    "partial-public-domain",
+    "not-surveyed",
+}
+
+# The language every held work must have an answer about. Not every language:
+# demanding a row for each of the world's would be unbounded, and demanding one
+# only where somebody felt like it would let the file rot silently. English is
+# the one the maintainer named and the one the corpus is measurably short of —
+# 1,325 of 1,356 spine rows are in Latin. A work landed in Latin alone cannot
+# pass the check without someone answering the English question, even if the
+# honest answer is that nobody has looked.
+ANSWERABLE_LANGUAGES = ("en",)
 CANONICAL_BIBLE = _canon.CANONICAL_BIBLE
 BIBLES_RELATIVE = _canon.BIBLES_RELATIVE
 MODEL_RELATIVE = Path("src/web/browser/catena/catena-model.js")
@@ -558,6 +581,171 @@ def load_edges(root: Path = ROOT) -> dict[str, Any]:
     return data
 
 
+def load_absences(root: Path = ROOT) -> dict[str, Any]:
+    """Where a held work does not reach a language, and why."""
+    path = root / ABSENCES_RELATIVE
+    if not path.exists():
+        return {"absences": [], "also_found": []}
+    data = _load_yaml(path)
+    if not isinstance(data, dict):
+        raise CatenaError(f"{ABSENCES_RELATIVE}: not a mapping")
+    if data.get("schema") != ABSENCES_SCHEMA:
+        raise CatenaError(
+            f"{ABSENCES_RELATIVE}: declares schema {data.get('schema')!r}, "
+            f"expected {ABSENCES_SCHEMA!r}"
+        )
+    return data
+
+
+def held_languages(root: Path, sources: Sources) -> dict[str, set[str]]:
+    """Every language the LIBRARY holds each work in, folded, by both routes.
+
+    A work reaches a language two ways and only one of them is obvious. The
+    obvious one is an edition of its own: Migne's PL 34 is an edition of *De
+    Genesi ad litteram*. The other is the ordinary shape of a patristic
+    translation — Basil's Hexaemeron in English is a passage inside NPNF second
+    series volume 8, whose edition belongs to the ANTHOLOGY and not to Basil. A
+    walk over editions alone therefore reports Basil as held in no English while
+    the page is serving nine English fragments of him, and this file would then
+    demand a note saying the English does not exist.
+
+    So the container route is read from the fragments' own `constituent_of`
+    declaration, which is the same declaration `_passage_errors` requires and
+    checks. Editions are read too, because a work may be held in an edition the
+    catena has not cut a fragment from yet.
+    """
+    found: dict[str, set[str]] = {}
+    for edition in sources.editions.values():
+        work_id = str(edition.get("work_id") or "")
+        folded = fold_language(edition.get("language"))
+        if work_id and folded:
+            found.setdefault(work_id, set()).add(folded)
+    for fragment in load_edges(root).get("fragments") or ():
+        if not isinstance(fragment, dict):
+            continue
+        container = str(fragment.get("constituent_of") or "")
+        work_id = str(fragment.get("work_id") or "")
+        if not container or not work_id:
+            continue
+        folded = fold_language((sources.editions.get(container) or {}).get("language"))
+        if folded:
+            found.setdefault(work_id, set()).add(folded)
+    return found
+
+
+def absences_by_work(root: Path = ROOT) -> dict[tuple[str, str], dict[str, Any]]:
+    """The recorded absences, keyed by work and folded language."""
+    rows = load_absences(root).get("absences") or []
+    found: dict[tuple[str, str], dict[str, Any]] = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        language = fold_language(row.get("language"))
+        if language is None:
+            continue
+        found[(str(row.get("work_id") or ""), language)] = row
+    return found
+
+
+def absent_by_work(root: Path = ROOT) -> dict[str, list[dict[str, str]]]:
+    """What the page is given about a language a work does not reach.
+
+    The apparatus stays behind: the aliases a search used and what would
+    overturn the negative belong in the record, where the next lane reads them.
+    A reader is owed the finding, the reason, and — where some public-domain
+    text of the work does exist without answering the chapter — the offer that
+    was found and not taken.
+    """
+    sources = load_sources(root)
+    everywhere = held_languages(root, sources)
+    served: dict[str, list[dict[str, str]]] = {}
+    for (work_id, language), row in sorted(absences_by_work(root).items()):
+        if work_id not in sources.works or language in everywhere.get(work_id, set()):
+            continue
+        entry = {
+            "language": language,
+            "finding": str(row.get("finding") or ""),
+            "reason": " ".join(str(row.get("reason") or "").split()),
+        }
+        partial = " ".join(str(row.get("partial") or "").split())
+        if partial:
+            entry["partial"] = partial
+        served.setdefault(work_id, []).append(entry)
+    return served
+
+
+def _absence_errors(root: Path, sources: Sources, standing: set[str]) -> list[str]:
+    """That the absence record is well formed, and that it has not gone stale.
+
+    The check that matters is the third: a row declaring a work absent in a
+    language the library ALREADY HOLDS AN EDITION IN. That is how this file
+    would rot — someone lands the English and nobody deletes the note saying
+    there is none, and the page then tells a reader that a text it is at that
+    moment serving does not exist. Nothing else in the repository would notice.
+    """
+    errors: list[str] = []
+    where = ABSENCES_RELATIVE.as_posix()
+    data = load_absences(root)
+    everywhere = held_languages(root, sources)
+    seen: set[tuple[str, str]] = set()
+    for ordinal, row in enumerate(data.get("absences") or (), start=1):
+        label = f"{where}: absences[{ordinal}]"
+        if not isinstance(row, dict):
+            errors.append(f"{label} must be a mapping")
+            continue
+        work_id = str(row.get("work_id") or "")
+        label = f"{where}: {work_id or '(unnamed)'}"
+        if work_id not in sources.works:
+            errors.append(f"{label} names no work record")
+            continue
+        language = fold_language(row.get("language"))
+        if language is None:
+            errors.append(
+                f"{label} is absent in {row.get('language')!r}, which "
+                f"`LANGUAGE_EQUIVALENTS` does not know"
+            )
+            continue
+        if (work_id, language) in seen:
+            errors.append(f"{label} states its {language} absence twice")
+        seen.add((work_id, language))
+        finding = str(row.get("finding") or "")
+        if finding not in ABSENCE_FINDINGS:
+            errors.append(
+                f"{label} finding {finding!r} is not one of "
+                f"{', '.join(sorted(ABSENCE_FINDINGS))}"
+            )
+        if finding != "not-surveyed" and not str(row.get("reason") or "").strip():
+            errors.append(f"{label} records no reason, so the absence explains nothing")
+        if not str(row.get("checked_on") or "").strip():
+            errors.append(f"{label} records no checked_on date")
+        if not (row.get("aliases_searched") or []) and finding != "not-surveyed":
+            errors.append(
+                f"{label} names no aliases_searched; a work looked for under one "
+                f"name is a false absence waiting to happen"
+            )
+        if language in everywhere.get(work_id, set()):
+            errors.append(
+                f"{label} says the work reaches no {language}, and the library holds "
+                f"an edition of it in {language}; delete the row rather than "
+                f"publishing a text the page says does not exist"
+            )
+
+    # And the other direction: a work the catena renders, in no edition of a
+    # language the reader is entitled to an answer about, with nothing here
+    # saying so.
+    for work_id in sorted(standing):
+        holds = everywhere.get(work_id, set())
+        for language in ANSWERABLE_LANGUAGES:
+            if language in holds or (work_id, language) in seen:
+                continue
+            errors.append(
+                f"{where}: {work_id} stands in the catena, is held in no {language}, "
+                f"and no row here says why; absence is data and needs somewhere to "
+                f"live (guidance/the-shape.md 4)"
+            )
+    return errors
+
+
 def _author_equivalences(
     data: dict[str, Any], where: str, errors: list[str]
 ) -> dict[str, str]:
@@ -726,6 +914,17 @@ def validate(root: Path = ROOT) -> list[str]:
 
     errors.extend(_blocked_errors(sources, data, where, seen))
     errors.extend(_solved_case_errors(data, where, seen))
+    errors.extend(
+        _absence_errors(
+            root,
+            sources,
+            {
+                str(one["work_id"])
+                for one in fragments
+                if isinstance(one, dict) and one.get("work_id")
+            },
+        )
+    )
     return sorted(errors)
 
 
@@ -1008,13 +1207,20 @@ def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
         if extent is None or extent.token != token:
             continue
         passage = sources.passages.get(str(fragment["passage_id"])) or {}
-        work = sources.works.get(str(fragment["work_id"])) or {}
+        work_id = str(fragment["work_id"])
+        work = sources.works.get(work_id) or {}
         edition_id = str(passage.get("edition_id") or "")
         edition = sources.editions.get(edition_id) or {}
         artifact = sources.artifacts.get(str(passage.get("artifact_id") or "")) or {}
         rows.append(
             {
                 "id": str(fragment["passage_id"]),
+                # The source-library identity, carried so that a consumer can
+                # join this fragment to what is recorded ABOUT its work — which
+                # languages the work does not reach, and why — without matching
+                # on a displayed author and title, two strings that exist to be
+                # read rather than to be keys.
+                "work_id": work_id,
                 # Derived, never stored beside the work reference.
                 "author": str(work.get("responsible") or ""),
                 "work": str(work.get("title") or ""),
@@ -1248,6 +1454,7 @@ CARRIED_WITH_TEXT = ("text", "basis", "date_basis")
 # and nineteen times into one book's spines. It is the same rule as the
 # projection's: state a fact once and read it from there.
 SHARED_WITH_EDITION = (
+    "work_id",
     "author",
     "work",
     "date",
@@ -1540,6 +1747,17 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
             "canon": [dict(book, path=folders[book["token"]]) for book in books],
             "held": index,
             "texts": f"structure/catena/{TEXT_DIRECTORY}/",
+            # Which held works do not reach a language, and why. Written ONCE
+            # for the whole catena and keyed by the work id every chapter
+            # spine's `sources` entry carries, rather than repeated into each
+            # chapter a work appears in: Bede stands on 21 chapters of Genesis
+            # and the sentence explaining that his commentary waited until 2008
+            # for an English is the same sentence 21 times.
+            #
+            # The page reads it when a reader asks for a translation and is
+            # shown less than the chapter holds. Absence with its reason, in the
+            # only place a reader can act on it.
+            "absences": absent_by_work(root),
             # How a chapter number becomes a filename. Derived from the longest
             # book of the canon and written down here so the page pads the way
             # the emit padded, rather than knowing the width by heart.

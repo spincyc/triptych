@@ -421,6 +421,36 @@ because a checklist that only ever grows teaches nothing.
    `genesis-availability-survey.yaml`]. The finding survived the widening — the
    English translations that exist are 20th- and 21st-century, the earliest
    expiring 2052. This is not a gap more effort closes.
+
+   **It survived a third widening, 2026-08-01, run against the twelve works
+   actually held rather than against the acquisition list.** Four reach English
+   and all four already did — Basil in NPNF 2-8, Gregory of Nyssa in NPNF 2-5,
+   Augustine's *City of God* in Dods, Luther in Lenker. **Eight reach none, and
+   the lane authorised to acquire English landed zero**, because for six of the
+   eight the only English is in copyright and for two — Angelomus of Luxeuil and
+   Remigius of Auxerre — no English translation of any date could be found at
+   all. Four of the negatives were settled against the actual tables of contents
+   of the series that would have carried them, volume by volume, rather than
+   inferred: the *Hexameron* is not in NPNF 2-10, the *Hebrew Questions* are not
+   in NPNF 2-6, *De Genesi ad litteram* is in none of Dods's fifteen volumes,
+   and Giles's twelve-volume Bede translates the *historical* works only, by its
+   own title page.
+
+   Two public-domain partials were found and deliberately not landed: Jerome's
+   own preface to the *Hebrew Questions*, which stands among the Prefaces in
+   NPNF 2-6 and answers no chapter of Genesis, and an English of Severian's
+   first homily made from Bareille's 1865 **French** rather than from the Greek
+   — a translation of a translation, which is a third claim again and would have
+   to be rendered as one.
+
+   All of it lives in `src/sources/commentary/translation-absences.yaml`, one
+   row per work per language, and the check has teeth in both directions: a work
+   standing in the catena with no English and no row saying why is a build
+   failure, and so is a row claiming a work reaches no English while the library
+   holds an English edition of it. The page prints the reason where the reader
+   meets the gap, which is the point — an unexplained absence is what invites
+   somebody to fill it, and the way this project would fill it is a fluent
+   English of a Latin father made here.
 5. ~~The scripture edge of Rule 10, with a validator.~~ **Done.** It lives in
    `src/sources/commentary/fragment-loci.yaml`, *beside* the passage records
    rather than inside them, because a field added to a passage would move its

@@ -1,0 +1,350 @@
+# Where a held commentary reaches a language, and where it does not.
+#
+# The catena's reader may ask for the author's own language or for a
+# translation. A chapter of Genesis carries ninety-nine fragments from eight
+# authors and two of them are in English, and a reader without Latin who asks
+# for English is entitled to know WHY the other ninety-seven are not there.
+#
+# `guidance/the-shape.md` §4: absence is data, and must have somewhere to live,
+# always with its reason. Left with nowhere to live, this particular absence
+# gets filled — and the way it gets filled is a fluent English rendering of a
+# Latin father, made here, which would be this project's signature defect in
+# its purest form. So the absence is recorded, with the translation that does
+# exist and why it may not be published, and the page prints it.
+#
+# WHAT A ROW IS. One work, one language, one finding, with the evidence that
+# produced it and the bound on that evidence. A row is not permission to stop
+# looking: `overturned_by` says what would change the answer, and it is the
+# most useful field here.
+#
+# WHAT A ROW IS NOT. It is not a rights record — `guidance/sources.md` puts
+# those in `src/sources/inventories/` and they govern what may be published
+# from bytes this project holds. This file governs the opposite case: bytes
+# nobody here holds, because the translation is under copyright, partial, or
+# was never made. Nothing in it authorises publishing anything.
+#
+# CHECKED, NOT TRUSTED. `scripts/_catena.py check` refuses:
+#   - a row naming a work record that does not exist;
+#   - a row in a language the equivalence table does not know;
+#   - a row declaring a work absent in a language the source library ALREADY
+#     HOLDS AN EDITION IN, which is the contradiction this file could most
+#     easily develop and the one nothing else would notice; and
+#   - a work standing in the catena with no edition in a language and no row
+#     here saying so. That last is what stops the file rotting: a new holding
+#     cannot land in Latin alone without someone answering the English
+#     question, even if the answer is `not-surveyed`.
+#
+# THE FINDINGS ARE A CLOSED LIST, and each says a different thing:
+#   none-published        no translation into this language exists, of any date
+#   in-copyright          one exists and may not be republished here
+#   partial-public-domain some public-domain text exists, but not the whole work
+#   not-surveyed          nobody has looked; this is data, not an estimate
+schema: triptych-commentary-translation-absences/v1
+updated: 2026-08-01
+
+question: >-
+  for each work the catena holds, is there a public-domain English translation
+  this project may publish, and if not, why not
+
+method: >-
+  Catalogue research only. No source text was retrieved, and nothing here was
+  transcribed: the question is whether a translation exists and may be
+  republished, which is answered from catalogue metadata, publisher pages and
+  tables of contents. Each work was searched under the aliases recorded on its
+  row rather than under the one name a question happened to use, because a work
+  held under a name nobody searched produces a FALSE ABSENCE, and a false
+  absence in this file is what would license someone to fill it.
+
+bound: >-
+  Free-text web search was unavailable for this pass, so the evidence is
+  structured catalogue queries — Open Library's and the Internet Archive's JSON
+  APIs, CCEL's tables of contents, tertullian.org's patristic-translation index,
+  and Wikipedia's per-author translation bibliographies. HathiTrust returned 403
+  and Google Books 429, and neither was successfully queried. HathiTrust
+  full text is precisely where a translation buried in a Victorian anthology or
+  a devotional serial would surface, so the negatives below are bounded there.
+  Dissertations deposited with ProQuest and catalogued nowhere else would
+  likewise not appear. Four of the negatives are firmer than the rest because
+  they were checked against the actual tables of contents of the series that
+  would have carried them rather than inferred: Ambrose, Jerome, Augustine and
+  Bede are absent from the Nicene and Post-Nicene Fathers, the Ante-Nicene
+  Fathers, Giles's Bede and Dods's Augustine, read volume by volume.
+
+absences:
+
+- work_id: work.ambrose.hexameron
+  language: en
+  finding: in-copyright
+  checked_on: 2026-08-01
+  reason: >-
+    The only English translation is John J. Savage's, in Hexameron, Paradise,
+    and Cain and Abel, Fathers of the Church volume 42 (New York, 1961),
+    reprinted by the Catholic University of America Press in 1977, 1985 and
+    2010 and still in print. A 1961 United States publication runs 95 years
+    from publication, so it is encumbered until about 2056.
+  nineteenth_century: >-
+    None. The Nicene and Post-Nicene Fathers second series volume 10 is Ambrose:
+    Select Works and Letters, and its table of contents runs On the Duties of
+    the Clergy, On the Holy Spirit, On the Decease of Satyrus, the Exposition of
+    the Christian Faith and the letters. It carries no Genesis material at all.
+    The near miss worth naming so it is not mistaken for a hit later: H. W.
+    Norman's The Anglo-Saxon Version of the Hexameron of St. Basil (London,
+    1848) prints AElfric's Old English Hexameron with a facing modern English,
+    and AElfric drew on Ambrose as well as Basil — but it is AElfric's own
+    composition and not a translation of either father.
+  aliases_searched:
+  - Hexameron
+  - Hexaemeron
+  - Exameron
+  - Hexameron seu de principiis rerum
+  - Six Days of Creation
+  - Ambrosius Mediolanensis
+  - Ambrose of Milan
+  - Patrologia Latina 14
+  - CSEL 32/1
+  overturned_by: >-
+    A HathiTrust full-text hit, or a 1961 copyright-renewal search showing the
+    Fathers of the Church volume was never renewed — unlikely given continuous
+    in-print status, and not performed here.
+
+- work_id: work.jerome.quaestiones-hebraicae-in-genesim
+  language: en
+  finding: partial-public-domain
+  checked_on: 2026-08-01
+  reason: >-
+    The only English translation of the commentary is C. T. R. Hayward's, Saint
+    Jerome's Hebrew Questions on Genesis, Oxford Early Christian Studies
+    (Clarendon Press, 1995), which is in copyright.
+  partial: >-
+    Jerome's own PREFACE to the book is public domain: it stands among the
+    Prefaces in the Nicene and Post-Nicene Fathers second series volume 6
+    (Fremantle and others, 1893). That is a few paragraphs of introduction and
+    not one of the quaestiones, so it would answer no chapter of Genesis and is
+    recorded rather than landed.
+  nineteenth_century: >-
+    None of the commentary. NPNF second series volume 6 is Jerome: Letters and
+    Select Works, and its contents are the letters, the three Lives, the
+    treatises against Helvidius, Jovinianus, Vigilantius, John of Jerusalem and
+    the Pelagians, the Luciferian dialogue and the Prefaces. The Hebrew
+    Questions themselves are not in it. An Internet Archive search on
+    quaestiones hebraicae returns Lagarde's 1868 Latin edition and Kamesar's
+    1993 study, neither of them English.
+  aliases_searched:
+  - Liber quaestionum hebraicarum in Genesim
+  - Quaestiones hebraicae in Genesim
+  - Hebrew Questions on Genesis
+  - Hieronymus
+  - Eusebius Hieronymus
+  - Patrologia Latina 23
+  overturned_by: A HathiTrust full-text hit on a distinctive quaestio.
+
+- work_id: work.augustine.de-genesi-ad-litteram
+  language: en
+  finding: in-copyright
+  checked_on: 2026-08-01
+  reason: >-
+    Two English translations exist and both are in copyright: John Hammond
+    Taylor's The Literal Meaning of Genesis, Ancient Christian Writers 41-42
+    (Newman Press, 1982), and Edmund Hill's On Genesis, The Works of Saint
+    Augustine I/13 (New City Press, 2002). Taylor's runs to 2078 in a
+    life-plus-seventy jurisdiction.
+  nineteenth_century: >-
+    None, and this one is settled from the contents rather than from silence.
+    Marcus Dods's The Works of Aurelius Augustine, A New Translation, fifteen
+    volumes (T. & T. Clark, Edinburgh, 1871-76), carries the City of God, the
+    Donatist writings, the anti-Pelagian works, the Manichaean writings, the
+    letters, On the Trinity, the Sermon on the Mount and the Harmony, On
+    Christian Doctrine, the Tractates on John and the Confessions. De Genesi ad
+    litteram is not among them, and the Nicene and Post-Nicene Fathers first
+    series volumes 1 to 8 are drawn from the same stock and likewise omit it.
+    Henry Woods's Augustine and Evolution (1924) is a study and not a
+    translation.
+  aliases_searched:
+  - De Genesi ad litteram
+  - The Literal Meaning of Genesis
+  - On the Literal Interpretation of Genesis
+  - On Genesis
+  - Aurelius Augustinus
+  - Patrologia Latina 34
+  overturned_by: A HathiTrust full-text hit on a Victorian partial rendering.
+
+- work_id: work.severian-of-gabala.in-cosmogoniam-homiliae
+  language: en
+  finding: partial-public-domain
+  checked_on: 2026-08-01
+  reason: >-
+    The scholarly translation is Robert C. Hill's, in Commentaries on Genesis
+    1-3: Severian of Gabala and Bede the Venerable, Ancient Christian Texts
+    (IVP Academic, 2010), which is in copyright.
+  partial: >-
+    Roger Pearse published an English of the FIRST homily only at tertullian.org
+    in 2010, dedicated to the public domain in terms that permit free copying.
+    Two things about it decide against landing it without saying so: it is one
+    homily of six, and it is a translation of J. Bareille's 1865 FRENCH rather
+    than of the Greek. A translation of a translation is a third claim again,
+    and this project would have to render it as one — which is possible and has
+    not been done, rather than impossible.
+  nineteenth_century: >-
+    None. The homilies survive under Chrysostom's name as De mundi creatione
+    among the spuria of Patrologia Graeca 56, which is why Bareille printed them
+    inside the Oeuvres completes de S. Jean Chrysostome; that alias was searched.
+    The nineteenth-century English Chrysostom collections — the Oxford Library
+    of the Fathers and NPNF first series volumes 9 to 14 — translate the genuine
+    works only and carry no spuria.
+  aliases_searched:
+  - In cosmogoniam homiliae sex
+  - De mundi creatione
+  - Sermons on Genesis
+  - Homilies on Creation and Fall
+  - Severianus Gabalensis
+  - John Chrysostom spuria
+  - Patrologia Graeca 56
+  - Oeuvres completes de S. Jean Chrysostome
+  overturned_by: >-
+    Landing Pearse's first homily, declared as an English of a French of the
+    Greek. The route is proven and the rights are affirmative; what has not been
+    done is reading it and stating its extent.
+
+- work_id: work.bede.in-principium-genesis
+  language: en
+  finding: in-copyright
+  checked_on: 2026-08-01
+  reason: >-
+    Calvin B. Kendall's Bede: On Genesis, in the Translated Texts for Historians
+    series (Liverpool University Press, 2008), is the first English translation.
+    Carmen S. Hardin's partial rendering appears in the 2010 Ancient Christian
+    Texts Genesis volume. Both are in copyright.
+  nineteenth_century: >-
+    None, and the title page of the only candidate settles it. J. A. Giles's The
+    Complete Works of Venerable Bede, twelve volumes (London: Whittaker,
+    1843-44), is "accompanied by a new translation of the HISTORICAL works":
+    the scriptural commentaries occupy the later volumes in Latin only. Bede's
+    Genesis commentary had no English rendering at all before 2008.
+  aliases_searched:
+  - In principium Genesis
+  - In Genesim
+  - Hexaemeron
+  - On Genesis
+  - On the Six Days of Creation
+  - Beda Venerabilis
+  - Patrologia Latina 91
+  - The Complete Works of Venerable Bede
+  overturned_by: A HathiTrust full-text hit inside the Giles volumes.
+
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  language: en
+  finding: in-copyright
+  checked_on: 2026-08-01
+  reason: >-
+    The only English rendering located is John Litteral's Questions and Answers
+    on Genesis by Augustine, Ambrosiaster, and Alcuin (CreateSpace, 2018), a
+    self-published devotional volume by a living author and firmly in copyright.
+    How much of the Interrogationes it renders could not be established from its
+    catalogue record. No academic translation exists.
+  nineteenth_century: >-
+    None. The Victorian and Edwardian Alcuin literature is biography and letters
+    throughout — Lorenz and Slee's Life of Alcuin (1837), West's Alcuin and the
+    Rise of the Christian Schools (1892), Gaskoin (1904), Browne (1908), Page's
+    Letters of Alcuin (1909) — and the modern translation list (Godman 1985,
+    Isbell 1971, Allott 1974, Sturgeon 1953, Howell 1965) contains no Genesis
+    work either.
+  aliases_searched:
+  - Interrogationes et responsiones in Genesim
+  - Interrogationes et responsiones in Genesin
+  - Quaestiones in Genesim
+  - Questions and Answers on Genesis
+  - Alcuinus
+  - Albinus Flaccus
+  - Alcuin of York
+  - Patrologia Latina 100
+  overturned_by: >-
+    An unpublished dissertation translation, which is the most plausible route
+    for this work and which catalogue-level metadata cannot see.
+
+- work_id: work.angelomus-of-luxeuil.commentarius-in-genesim
+  language: en
+  finding: none-published
+  checked_on: 2026-08-01
+  reason: >-
+    No English translation of any date was located. Open Library returns a
+    single record under the name — Silvia Cantelli's Angelomo e la scuola
+    esegetica di Luxeuil (1990), an Italian study — and the Internet Archive
+    returns only sixteenth-century Latin printings of his Enarrationes in libros
+    Regum (1530, 1565) and the Migne volumes. This work appears never to have
+    been put into English.
+  nineteenth_century: None.
+  aliases_searched:
+  - Angelomus
+  - Angelomo
+  - Angelome of Luxeuil
+  - Commentarius in Genesim
+  - Commentarius in Genesin
+  - Enarrationes
+  - Patrologia Latina 115
+  overturned_by: >-
+    A dissertation translation deposited with ProQuest and catalogued in neither
+    Open Library nor the Internet Archive, which is the bound on this negative.
+
+- work_id: work.remigius-of-auxerre.commentarius-in-genesim
+  language: en
+  finding: none-published
+  checked_on: 2026-08-01
+  reason: >-
+    No English translation of any date was located. The one relevant modern item
+    is Burton Van Name Edwards's The Two Commentaries on Genesis Attributed to
+    Remigius of Auxerre (UMI, 1990), a critical study whose title flags that the
+    Patrologia Latina 131 attribution is itself disputed. Everything else under
+    the name is Latin, French or reference literature.
+  nineteenth_century: None.
+  aliases_searched:
+  - Remigius Antissiodorensis
+  - Remi of Auxerre
+  - Remigius of Auxerre
+  - Commentarius in Genesim
+  - Expositio super Genesim
+  - Patrologia Latina 131
+  overturned_by: >-
+    The same dissertation route as Angelomus, and additionally any edition
+    published under the disputed attribution rather than under Remigius's name.
+
+# Public-domain English that EXISTS beside what is already held. Recorded
+# because a route found and not taken is worth more written down than
+# rediscovered, and because a second translation of a work already held in
+# English is a real offer to a reader and not a duplicate: Healey's Jacobean
+# City of God and Dods's Victorian one are two different books.
+also_found:
+
+- work_id: work.augustine.de-civitate-dei
+  language: en
+  finding: second-public-domain-translation
+  note: >-
+    John Healey's, London 1610, revised 1620 — the first English City of God,
+    reprinted often, including as the Everyman text. Fully public domain. Dods's
+    own translation also exists in a second public-domain form as NPNF first
+    series volume 2, which is the same translation in another printing rather
+    than another translation.
+
+- work_id: work.martin-luther.lectures-on-genesis
+  language: en
+  finding: second-public-domain-translation
+  note: >-
+    Henry Cole's The Creation: A Commentary on the First Five Chapters of the
+    Book of Genesis (Edinburgh: T. & T. Clark, 1858), Internet Archive
+    identifier creationcommenta00luth. Genesis 1 to 5 only, so partial where
+    Lenker is broader, but independent of him and public domain. The modern
+    Luther's Works volumes 1 to 8 (Concordia, 1958-66) are in copyright.
+
+- work_id: work.basil-of-caesarea.homiliae-in-hexaemeron
+  language: en
+  finding: no-second-public-domain-translation
+  note: >-
+    Blomfield Jackson's, NPNF second series volume 8 (1895), stands alone in the
+    public domain. Agnes Clare Way's Exegetic Homilies, Fathers of the Church 46
+    (1963), is in copyright.
+
+- work_id: work.gregory-of-nyssa.de-hominis-opificio
+  language: en
+  finding: no-second-public-domain-translation
+  note: >-
+    William Moore and Henry Austin Wilson's, NPNF second series volume 5 (1893),
+    appears to be the only English translation of any date.

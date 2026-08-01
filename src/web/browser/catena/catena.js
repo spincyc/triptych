@@ -524,6 +524,72 @@
     return item;
   }
 
+  /**
+   * Why the works standing here do not reach the language the reader asked for.
+   *
+   * A reader without Latin who chooses English on Genesis 2 is shown two
+   * fragments out of ninety-nine, and is owed the reason for the other
+   * ninety-seven. Left unsaid, the page reads as though the English had failed
+   * to load — and the pressure that answers is the one this project must never
+   * yield to, which is supplying a fluent English of a Latin father itself.
+   *
+   * The findings are the generator's, from a tracked record with its evidence
+   * and its bounds, and `catena check` refuses a record claiming a work reaches
+   * no English while the library holds an English edition of it. Nothing is
+   * decided here; this only prints it.
+   */
+  function renderAbsences(container, file, wanted) {
+    const asked = M.parseVoiceKey(wanted);
+    if (!asked || asked.voice !== M.TRANSLATION || !asked.language) return;
+    const recorded = (index && index.absences) || {};
+    const sources = (file && file.sources) || {};
+    const named = new Set();
+    const rows = [];
+    for (const key in sources) {
+      if (!Object.hasOwn(sources, key)) continue;
+      const source = sources[key];
+      const workId = source.work_id || '';
+      if (!workId || named.has(workId)) continue;
+      const found = (recorded[workId] || []).find(
+        (one) => one.language === asked.language
+      );
+      if (!found) continue;
+      named.add(workId);
+      rows.push({ author: source.author, work: source.work, absence: found });
+    }
+    if (!rows.length) return;
+
+    const note = T.el('details', 'absence-note');
+    const head = document.createElement('summary');
+    head.textContent =
+      rows.length === 1
+        ? 'One work standing here has no ' +
+          languageName(asked.language) +
+          ' this project may publish'
+        : rows.length +
+          ' works standing here have no ' +
+          languageName(asked.language) +
+          ' this project may publish';
+    note.appendChild(head);
+    const list = T.el('ul', 'absence-list');
+    for (const row of rows) {
+      const item = T.el('li', 'absence');
+      item.appendChild(T.el('span', 'absence-author', row.author));
+      item.appendChild(T.el('span', 'absence-work', row.work));
+      item.appendChild(T.el('p', 'absence-reason', row.absence.reason));
+      // A partial that exists and has not been taken is an offer, not an
+      // excuse, and reads as one only if it is kept separate from the reason.
+      if (row.absence.partial) {
+        item.appendChild(
+          T.el('p', 'absence-partial', 'Partly public domain — ' + row.absence.partial)
+        );
+      }
+      list.appendChild(item);
+    }
+    note.appendChild(list);
+    container.appendChild(note);
+  }
+
   function renderChain(container, file, book) {
     // Already the chapter's own list: the spine is addressed by chapter, and the
     // derivation that decided which fragments stand here ran in the generator,
@@ -562,6 +628,7 @@
             : 'No commentary on this chapter is held yet.'
         )
       );
+      renderAbsences(container, file, wanted);
       return 0;
     }
 
@@ -583,6 +650,7 @@
           )
         );
       }
+      renderAbsences(container, file, wanted);
     }
 
     // Grouped by author, in the order the chain already runs, which is oldest

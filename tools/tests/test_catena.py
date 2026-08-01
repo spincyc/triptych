@@ -464,6 +464,24 @@ class VoiceTests(CatenaFixture):
             {extra}
             """,
         )
+        if language != "en":
+            # Moving the fixture off English makes the work one the absence
+            # record owes an answer about; these tests are about the voice and
+            # not about that, so the answer is supplied.
+            self.write(
+                "src/sources/commentary/translation-absences.yaml",
+                f"""
+                schema: {_catena.ABSENCES_SCHEMA}
+                updated: "2026-08-01"
+                absences:
+                - work_id: work.augustine.de-civitate-dei
+                  language: en
+                  finding: in-copyright
+                  checked_on: "2026-08-01"
+                  reason: "Taylor's is of 1982."
+                  aliases_searched: [De civitate Dei]
+                """,
+            )
 
     def work(self, languages: str) -> None:
         self.write(
@@ -572,6 +590,246 @@ class VoiceTests(CatenaFixture):
         self.assertEqual(
             json.loads(result.stdout),
             {"voices": ["original"], "original": 1, "english": 0, "everything": 1},
+        )
+
+
+class AbsenceTests(CatenaFixture):
+    """That a language a work does not reach is recorded, and stays true.
+
+    The reason this is checked rather than trusted is the pressure it relieves.
+    A reader without Latin who is shown two fragments of ninety-nine and told
+    nothing reads the page as broken, and the fix that suggests itself is for
+    this project to supply the English — which is the one thing it must never
+    do. So the absence is data, and the data has to be right.
+    """
+
+    def absences(self, body: str) -> None:
+        self.write(
+            "src/sources/commentary/translation-absences.yaml",
+            f"""
+            schema: {_catena.ABSENCES_SCHEMA}
+            updated: "2026-08-01"
+            absences:
+            {body}
+            """,
+        )
+
+    def latin_only(self) -> None:
+        """Move the fixture's one fragment onto a Latin edition of a Latin work."""
+        self.write(
+            "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/edition.toml",
+            """
+            schema = 1
+            record_type = "edition"
+            id = "edition.augustine.de-civitate-dei.dods-1871"
+            work_id = "work.augustine.de-civitate-dei"
+            title = "De civitate Dei, Migne"
+            language = "la"
+            publication = "Paris, 1841"
+            """,
+        )
+
+    def test_a_work_held_in_no_english_needs_a_row_saying_why(self) -> None:
+        self.latin_only()
+        self.assertIn("no row here says why", " ".join(self.errors()))
+
+    def test_the_row_discharges_it(self) -> None:
+        self.latin_only()
+        self.absences(
+            """- work_id: work.augustine.de-civitate-dei
+              language: en
+              finding: in-copyright
+              checked_on: "2026-08-01"
+              reason: "Taylor's is of 1982."
+              aliases_searched: [De civitate Dei, The City of God]
+            """
+        )
+        self.assertEqual(self.errors(), [])
+
+    def test_an_absence_the_library_contradicts_is_refused(self) -> None:
+        """The way this file rots: the English lands and the note stays.
+
+        Nothing else in the repository compares the two, so the page would go on
+        telling a reader that a translation does not exist while serving it.
+        """
+        self.absences(
+            """- work_id: work.augustine.de-civitate-dei
+              language: en
+              finding: none-published
+              checked_on: "2026-08-01"
+              reason: "Nobody ever put it into English."
+              aliases_searched: [De civitate Dei]
+            """
+        )
+        self.assertIn(
+            "delete the row rather than publishing a text the page says does not exist",
+            " ".join(self.errors()),
+        )
+
+    def test_a_row_naming_no_work_record_is_refused(self) -> None:
+        self.latin_only()
+        self.absences(
+            """- work_id: work.augustine.de-civitate-dei
+              language: en
+              finding: in-copyright
+              checked_on: "2026-08-01"
+              reason: "Taylor's is of 1982."
+              aliases_searched: [De civitate Dei]
+            - work_id: work.nobody.nothing
+              language: en
+              finding: none-published
+              checked_on: "2026-08-01"
+              reason: "There is no such work."
+              aliases_searched: [nothing]
+            """
+        )
+        self.assertIn("names no work record", " ".join(self.errors()))
+
+    def test_a_finding_outside_the_closed_list_is_refused(self) -> None:
+        self.latin_only()
+        self.absences(
+            """- work_id: work.augustine.de-civitate-dei
+              language: en
+              finding: probably-not
+              checked_on: "2026-08-01"
+              reason: "A feeling."
+              aliases_searched: [De civitate Dei]
+            """
+        )
+        self.assertIn("is not one of", " ".join(self.errors()))
+
+    def test_a_row_that_searched_no_alias_is_refused(self) -> None:
+        """A work looked for under one name is a false absence waiting."""
+        self.latin_only()
+        self.absences(
+            """- work_id: work.augustine.de-civitate-dei
+              language: en
+              finding: none-published
+              checked_on: "2026-08-01"
+              reason: "Looked once."
+            """
+        )
+        self.assertIn("names no aliases_searched", " ".join(self.errors()))
+
+    def test_the_container_route_counts_as_holding_the_language(self) -> None:
+        """Basil's English is a passage inside NPNF, not an edition of Basil.
+
+        Read off editions alone, the library reports Basil held in no English
+        while the page serves nine English fragments of him — and this file
+        would then demand a note saying that English does not exist.
+        """
+        self.write(
+            "src/sources/works/npnf/volume-8/work.toml",
+            """
+            schema = 1
+            record_type = "work"
+            id = "work.npnf.volume-8"
+            title = "NPNF Second Series, Volume VIII"
+            responsible = "Philip Schaff and Henry Wace"
+            work_type = "patristic-translation-anthology"
+            languages = ["eng"]
+            """,
+        )
+        self.write(
+            "src/sources/works/npnf/volume-8/editions/new-york-1895/edition.toml",
+            """
+            schema = 1
+            record_type = "edition"
+            id = "edition.npnf.volume-8.new-york-1895"
+            work_id = "work.npnf.volume-8"
+            title = "NPNF 2-8"
+            language = "en"
+            publication = "New York, 1895"
+            translators = ["Blomfield Jackson"]
+            """,
+        )
+        self.write(
+            "src/sources/works/npnf/volume-8/editions/new-york-1895/"
+            "artifacts/text/artifact.toml",
+            """
+            schema = 1
+            record_type = "artifact"
+            id = "artifact.npnf.volume-8.new-york-1895.text"
+            edition_id = "edition.npnf.volume-8.new-york-1895"
+            artifact_type = "web-text"
+            media_type = "text/plain; charset=utf-8"
+            storage = "tracked"
+            rights_status = "public-domain"
+            rights_basis = "Published in 1895."
+            """,
+        )
+        self.write(
+            "src/sources/works/npnf/volume-8/editions/new-york-1895/"
+            "passages/basil-1.toml",
+            """
+            schema = 1
+            record_type = "passage"
+            id = "passage.npnf.volume-8.new-york-1895.basil-1"
+            edition_id = "edition.npnf.volume-8.new-york-1895"
+            artifact_id = "artifact.npnf.volume-8.new-york-1895.text"
+            locus = "1"
+            states = ["cataloged", "acquired", "inspected"]
+            context = "The first homily."
+            text = "It is right that any one beginning to narrate the formation of the world."
+            """,
+        )
+        self.write(
+            "src/sources/works/basil/hexaemeron/work.toml",
+            """
+            schema = 1
+            record_type = "work"
+            id = "work.basil.hexaemeron"
+            title = "Homiliae in Hexaemeron"
+            responsible = "Basil the Great"
+            work_type = "patristic-homily-series"
+            languages = ["grc"]
+            composed = "378"
+            """,
+        )
+        self.write_aliases(
+            extra="""
+            - author: Basil the Great
+              work: Homiliae in Hexaemeron
+              titles:
+              - homiliae in hexaemeron
+            """
+        )
+        self.write_edges(
+            passage_id="passage.npnf.volume-8.new-york-1895.basil-1",
+            work_id="work.basil.hexaemeron",
+            work_alias={"author": "Basil the Great", "work": "Homiliae in Hexaemeron"},
+            constituent_of="edition.npnf.volume-8.new-york-1895",
+            text_date=None,
+            text_date_basis=None,
+        )
+        held = _catena.held_languages(self.root, _catena.load_sources(self.root))
+        self.assertIn("en", held["work.basil.hexaemeron"])
+        self.assertEqual(self.errors(), [])
+
+    def test_the_page_is_given_the_reason_and_not_the_apparatus(self) -> None:
+        self.latin_only()
+        self.absences(
+            """- work_id: work.augustine.de-civitate-dei
+              language: en
+              finding: in-copyright
+              checked_on: "2026-08-01"
+              reason: "Taylor's   is of\\n  1982."
+              aliases_searched: [De civitate Dei]
+              overturned_by: "A HathiTrust hit."
+            """
+        )
+        served = _catena.absent_by_work(self.root)
+        self.assertEqual(
+            served,
+            {
+                "work.augustine.de-civitate-dei": [
+                    {
+                        "language": "en",
+                        "finding": "in-copyright",
+                        "reason": "Taylor's is of 1982.",
+                    }
+                ]
+            },
         )
 
 
