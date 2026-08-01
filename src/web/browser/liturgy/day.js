@@ -1,5 +1,5 @@
 /* ===========================================================================
- * Today’s Missal — the day's Mass, with the reasoning in the margin
+ * Today’s Missal — the day's Mass, with the propers resolution in the margin
  * ===========================================================================
  *
  * THIS PAGE SHOWS THE TEXT. It is the propers page reached by a different
