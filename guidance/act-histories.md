@@ -809,6 +809,11 @@ this document still holds it. What the unamended rule could not do is carry a
 missal for which no act has been located, and before Trent that is most of them.
 Refusing them is not neutrality — it is a record silent about books that exist.
 
+The amendment is owned by `time-machine.md` Rule 1, which states it and its four
+conditions; this document keeps the vocabulary and what the tracer measured
+under it. The two agree as written, which is exactly when a second copy is
+cheapest to remove — if they ever differ, Rule 1 governs.
+
 So every station declares which kind it is, and these are the settled words:
 
 | `station_kind` | what it says |
