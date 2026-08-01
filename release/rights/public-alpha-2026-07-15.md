@@ -1922,7 +1922,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/catena/catena.js` | `967eed9c7b1aecf54dde6046785d62be8d95b5a49b11d7a1e9b6b74f1bd87aca` |
 | `src/web/browser/catena/index.html` | `cc8eccd89c80712032d0abb3300e581d8fb450cea9af484e5a2b025a4cb13941` |
 | `src/web/browser/history/history.css` | `25ed5ba0ae6fe7e373b46bb69dadbf1c90234f3324eaad1ff9f8e55e7760712b` |
-| `src/web/browser/history/history.js` | `6997649cfca908a52c8f4be00ec915017237c0a9e282054e0727adf65685c353` |
+| `src/web/browser/history/history.js` | `d2dd2de2c2416b97e07eb3dd0ca73603767a28a2ac1d2d49a5694486451b6401` |
 | `src/web/browser/history/index.html` | `c7f05747ff39cd86bb20e146661706ad487ebe6d93c9a210875951bd41f7a5fb` |
 | `src/web/browser/liturgy/assembly-model.js` | `de239c0c7efddbfbaeba2d3ee5a9439630abc8965e61765dfd7205e4b9181789` |
 | `src/web/browser/liturgy/day.css` | `e90d99315fcf34fa7f46ac445e759d0625ec1d027ce19ddc7fece29efa91c559` |
@@ -1938,7 +1938,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/scripture/track.html` | `6f8858de7b6dfe6af1bdb27dbda9062cc21df664df56ca0869ca0daf7e7fe40b` |
 | `src/web/browser/scripture/track.js` | `1c84a1dfeae747288d2dd910a9c8bf6a52ff1abdfa28c3db14f8184c4623cc1b` |
 | `src/web/browser/shared/browser-core.css` | `99fd1497f2f617ed2b601100bed77504bc31fe57e82dfc5161deecebd57c0436` |
-| `src/web/browser/shared/browser-core.js` | `07f3cc8ebb3f338d6a029b1feb7746ad6d9ae6432634c1ed9e03cf7e46795467` |
+| `src/web/browser/shared/browser-core.js` | `42d7bb37a89a4dfe718b2f465f2dfd0d214bd0beb4d35dffd336226eb9485f9f` |
 | `src/web/browser/sources/index.html` | `4e1fa0023ea6cdbce26e4420f85ee6398d3947d9bf14c203593c646962e131fe` |
 | `src/web/browser/sources/reader-model.js` | `bd446cbe9f811ed4e7db5c9e6bbaa78ac6def5ffa74723d033603516120185f9` |
 | `src/web/browser/sources/sources.css` | `8e1fc181aac24a54b256672cc0351b41358c9648d2baa293a9c8b717f7218ede` |
