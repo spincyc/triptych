@@ -1,7 +1,8 @@
 # Discursive Articles
 
-This profile governs essays under `src/<provider>/articles/faith/` and
-`src/<provider>/articles/canon-law/`. Use a dedicated profile instead when the work is a
+This profile governs essays under `src/<provider>/articles/faith/`,
+`src/<provider>/articles/canon-law/`, and `src/<provider>/articles/scripture/`
+— the last under the Scriptural studies section below. Use a dedicated profile instead when the work is a
 repeatable liturgical, historical, devotional, biographical, or theological
 reference. A mixed article names its primary profile and applies each additional
 profile only to the claims in its field.

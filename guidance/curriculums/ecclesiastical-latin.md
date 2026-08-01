@@ -335,7 +335,9 @@ Then give, in order:
 1. `Scope and Qualifications`;
 2. `References`, containing only works actually used and source-local role or
    rights notes; and
-3. `Generation Metadata` as the final content block.
+3. the terminal generation metadata as the final content block, displayed as
+   `guidance/editorial.md` requires and never under a standalone
+   `Generation Metadata` wrapper heading.
 
 The guide and course records own course-wide corpus, edition, completeness,
 orthography, normalization, translation, rights, review, and use bounds. A

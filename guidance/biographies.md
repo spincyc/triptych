@@ -149,7 +149,7 @@ beside the claims they govern.
 ## Catalog order
 
 The biographies library groups lives in this order: Apostles, Church Fathers,
-Doctors of the Church, and Other Biographies. Place a subject in the first
+Doctors of the Church, and Early Christian Writers. Place a subject in the first
 applicable group so that an Apostle who is also received as a Father, or a
 Father who is also a Doctor, appears only once. Within each group, order lives
 chronologically by birth or plausible birth range when known; when birth is

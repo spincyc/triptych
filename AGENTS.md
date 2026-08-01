@@ -43,7 +43,7 @@ Select profiles by the document's actual genre and sources, not by superficial s
 - comprehensive historical reference works on heresies, censured propositions, and ecclesial responses: `guidance/theology/heresies.md`
 - novenas and other works in the numbered novena collection: `guidance/devotions/novenas.md`
 - repeatable source-first histories of texts, institutions, events, or reception: `guidance/history/historical-accounts.md`
-- discursive articles on faith, theology, or canon law: `guidance/articles.md`
+- discursive articles on faith, theology, canon law, or Scripture: `guidance/articles.md`
 
 A document may require more than one profile only when it truly combines genres. For example, a canonical article about a liturgical question follows the articles profile for its argument and the relevant liturgical profile for edition-specific textual claims. State which profile governs each part rather than merging their templates.
 
