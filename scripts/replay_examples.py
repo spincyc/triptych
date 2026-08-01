@@ -306,6 +306,7 @@ class Result:
     reason: str = ""
     seconds: float = 0.0
     actual: tuple[str, ...] = ()
+    exit_status: int = 0
 
 
 def tool_paths() -> list[Path]:
@@ -377,7 +378,7 @@ def captures(names: list[str] | None = None) -> list[Capture]:
     return found
 
 
-def run(command: str) -> list[str]:
+def run(command: str) -> tuple[list[str], int]:
     """Run one invocation and return what a terminal would have shown.
 
     stderr is merged into stdout because that is what the captures hold: half
@@ -396,8 +397,9 @@ def run(command: str) -> list[str]:
     )
     text = completed.stdout
     if not text:
-        return []
-    return text[:-1].split("\n") if text.endswith("\n") else text.split("\n")
+        return [], completed.returncode
+    lines = text[:-1].split("\n") if text.endswith("\n") else text.split("\n")
+    return lines, completed.returncode
 
 
 def compare(capture: Capture, actual: list[str]) -> list[str]:
@@ -540,7 +542,7 @@ def replay_one(capture: Capture) -> Result:
         return Result(capture, "not-run", reason=f"{required[1]} ({required[0]})")
     started = time.monotonic()
     try:
-        actual = run(capture.command)
+        actual, exit_status = run(capture.command)
     except subprocess.TimeoutExpired:
         return Result(capture, "diverged", problems=("the run did not finish in 900s",))
     elapsed = time.monotonic() - started
@@ -557,6 +559,7 @@ def replay_one(capture: Capture) -> Result:
         reason=known or "",
         seconds=elapsed,
         actual=tuple(actual),
+        exit_status=exit_status,
     )
 
 
@@ -648,7 +651,7 @@ def rewrite(capture: Capture, lines: list[str]) -> None:
     )
 
 
-def recapture(names: list[str] | None = None) -> int:
+def recapture(names: list[str] | None = None, *, accept_failing: bool = False) -> int:
     """Rewrite diverged transcripts from real runs, to a fixed point.
 
     A `--help` capture contains its own tool's transcripts, so refreshing one
@@ -679,6 +682,26 @@ def recapture(names: list[str] | None = None) -> int:
                     print(f"  unfixable  {capture.label}")
                     for problem in result.problems:
                         print(f"             {problem}")
+                    continue
+                # A transcript refreshed from a command that now fails is the
+                # one case where recapture can turn a caught regression into a
+                # documented one: the check goes green and the tool stays
+                # broken. It has already nearly happened — a model change made
+                # `calendar-rubrics check` fail its own solved case, and the
+                # refreshed transcript recorded the failure as the expectation.
+                #
+                # Half these captures are refusals and legitimately exit
+                # non-zero, so this cannot simply refuse. It makes the operator
+                # say so, which is the difference between a refusal that is the
+                # point and one that is the news.
+                if result.exit_status != 0 and not accept_failing:
+                    print(
+                        f"  refused    {capture.label}\n"
+                        f"             the command now exits {result.exit_status}; recording that "
+                        f"would make the transcript expect a failure.\n"
+                        f"             Fix the tool, or rerun with --accept-failing if the "
+                        f"refusal is what the example shows."
+                    )
                     continue
                 sibling = names_a_sibling(capture, fresh)
                 if sibling:
@@ -756,6 +779,11 @@ def main(argv: list[str] | None = None) -> int:
         description="Replay the captured examples in tools/ against real runs.",
     )
     parser.add_argument("--tool", action="append", dest="tools", metavar="ID")
+    parser.add_argument(
+        "--accept-failing",
+        action="store_true",
+        help="recapture a transcript even where the command now exits non-zero",
+    )
     parser.add_argument("--json", action="store_true", help="one object per example")
     parser.add_argument(
         "--recapture",
@@ -765,7 +793,7 @@ def main(argv: list[str] | None = None) -> int:
     arguments = parser.parse_args(argv)
 
     if arguments.recapture:
-        return 0 if recapture(arguments.tools) >= 0 else 1
+        return 0 if recapture(arguments.tools, accept_failing=arguments.accept_failing) >= 0 else 1
 
     results = replay(arguments.tools, echo=not arguments.json)
     if arguments.json:
