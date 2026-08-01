@@ -277,8 +277,69 @@ FERIAL_NOTE = (
     "date is absent where the season gives the feria a Mass of its own, or "
     "where the immediately preceding Sunday carries no Mass of the Sunday in "
     "this index, which fails closed rather than borrowing from a feast that "
-    "occupied the Sunday."
+    "occupied the Sunday. Every borrowing emitted here carries the WHOLE "
+    "formulary, because RGMR 299 gives the feria the Mass of the preceding "
+    "Sunday and a Mass is all of it. A calendar whose rubric lends less than a "
+    "whole Mass may not use this block unscoped; see `scope` in the block "
+    "below, which nothing emits yet."
 )
+
+# ---------------------------------------------------------------------------
+# SCOPED BORROWING: decided 2026-08-01, built by nobody yet
+#
+# The 1962 borrowing and the postconciliar one are not the same borrowing, and
+# the difference is not a detail. RGMR 299 lends the MASS of the preceding
+# Sunday. IGMR 363 lends only its ORATIONS - `praeter orationes dominicae
+# praecedentis` - and IGMR 358 gives the weekday the ferial Lectionary's own
+# readings, which are not the Sunday's and which this repository does not hold.
+#
+# So emitting a postconciliar block through this path as it stands would hand a
+# reader the Sunday's First Reading and Gospel on 72 Ordinary Time weekdays a
+# year. They would resolve cleanly, print well-formed citations, and be the
+# wrong readings. That is this project's signature defect wearing a new coat,
+# and it is the reason this block stays 1962-only until the four rules below
+# hold.
+#
+#   1. SCOPE LIVES ON THE RULE, NOT THE DATE. A row already points at `rules`
+#      by index and a rule already carries its locus. 1962 would need about
+#      thirty scope statements to cover 238 dates; stating it per date would
+#      need 238. One derivation, not a restatement per row.
+#
+#   2. ABSENT SCOPE MEANS THE WHOLE FORMULARY. That is what 1962 means today
+#      and its year files stay byte-identical. The default is the safe reading
+#      only because RGMR 299 really does lend everything; a calendar that lends
+#      less must say so rather than inherit this.
+#
+#   3. A SCOPE NAMES ITS SLOTS FROM THE CALENDAR'S OWN SOURCE. This tool must
+#      not learn that `Collect` is an oration and `Gospel` is not. The 1962
+#      rubrics already declare their oration slots at `orations.tracked_by`,
+#      and the postconciliar rubrics declare none because nothing needed them:
+#      `orations.count: 1` there answers how many collects are SAID, never
+#      which slots are orations, and reading it as the latter would be the
+#      first wrong turn. The postconciliar slots are `Collect`, `Prayer over
+#      the Offerings` and `Prayer after Communion`; `Prayer over the People` is
+#      not among them, and no tool should guess that.
+#
+#   4. A SCOPE STATES WHAT IT OMITS, WITH A LOCUS, AND WHETHER THIS REPOSITORY
+#      HOLDS IT. Restricting the borrowing is only half the fix. A weekday that
+#      shows a collect and no gospel, and says nothing, asserts by silence that
+#      the Mass has no gospel - the same defect one size smaller. The omission
+#      must reach the page as a reason, the way an uncompiled Mass already
+#      does, naming IGMR 358 and saying the ferial Lectionary is not carried
+#      here.
+#
+# What is NOT scope: the alternatives IGMR 363 and IGMR 355 c allow - another
+# Sunday in Ordinary Time, a prayer for various needs, an occurring optional
+# memorial, a votive Mass. Scope says which propers cross over from one base.
+# Those say which base, and they are a permission with options rather than an
+# appointment, so they belong in `mass_choices` and the selector. The
+# postconciliar rubrics already say so at `would_be_a_mass_choice`, and keeping
+# the two apart is what stops a permission being rendered as an appointment.
+#
+# The declaration's home when someone builds it is the postconciliar rubrics'
+# `ordinary-time-weekday.appointed_mass`, which already carries the loci and
+# the refusal this note answers.
+# ---------------------------------------------------------------------------
 
 
 # ---------------------------------------------------------------- computus
@@ -1296,11 +1357,24 @@ def year_document(index: dict, civil_year: int, built: dict[int, Year]) -> dict:
         "schema": SCHEMA,
         "territorial": territorial_block(name),
     }
-    # Carried only by a calendar whose own rubrics appoint one. The reformed
-    # books give a weekday its own formulary and, in Ordinary Time, a choice
-    # among several; nothing there points a weekday at the preceding Sunday, so
-    # that calendar carries no such block rather than an empty one asserting
-    # that it looked and found none.
+    # Carried only by a calendar this tool can borrow for WHOLE, which today is
+    # 1962 alone.
+    #
+    # This comment used to read "nothing there points a weekday at the preceding
+    # Sunday", and that was false. IGMR 363 does exactly that - `praeter
+    # orationes dominicae praecedentis` - and it is registered, verified and read
+    # at the bytes in this repository at
+    # passage.catholic-church.institutio-generalis-missalis-romani
+    # .latin-missale-romanum-typica-tertia-2002.363. The refusal was right and
+    # its stated reason was wrong, which is the worse of the two failures: it
+    # sent every later reader looking for a rubric that was already on the shelf.
+    #
+    # The true reason is that IGMR 363 lends the ORATIONS and this block lends
+    # the whole Mass, so emitting postconciliar rows here would serve the
+    # preceding Sunday's readings on 72 Ordinary Time weekdays a year in place of
+    # the ferial Lectionary's own, which IGMR 358 appoints and this repository
+    # does not hold. See SCOPED BORROWING above for the shape that would close
+    # those 72 dates safely.
     if ferial:
         document["ferial_formulary"] = ferial
         document["ferial_formulary_note"] = FERIAL_NOTE
