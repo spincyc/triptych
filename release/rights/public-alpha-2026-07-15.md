@@ -1708,7 +1708,7 @@ release attachment, announcement, or promotion.
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `README.md` | `93f1596c849c95f4ac943f53e886f397b89cc2dcab8fad10392eb8bfb71f7645` |
-| `THIRD_PARTY.md` | `3930df7ae096296c5bb73b333f77f86ac459b2cf59d82e74fab057d948fd8021` |
+| `THIRD_PARTY.md` | `829b6ecd62d8385f5c566e952f9e905e2ef1f652413c12e87a3d0a3dc812621b` |
 | `docs/bibles.md` | `f97601d14da975140e987cbcb405266dc3138b2739edddc1b0fda83290bb7b52` |
 | `docs/reading-and-commentary.md` | `b0861dd1b6ce0a81b62ab2158b20d093664381cc3c93d9e62f53cdb2b1a84e32` |
 | `docs/the-mass.md` | `7d41556b8ebf08be4a50a96b76f5ad8b7e92a019dcb34aa9e5371612ff55930e` |
@@ -1728,12 +1728,12 @@ release attachment, announcement, or promotion.
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
 | `library/traditional-latin-mass.md` | `93d8604dead2f604eb8c95fbceeb7ff8937e065668cea943ed0d683b29f5c6c8` |
-| `pdf/reading-plans/narrative-spine-full-account-douay-rheims.pdf` | `3553bf3f98aaabb01fa418f7f7ededc2e453384d7f47bab1aa4d551e5a4ea908` |
-| `pdf/reading-plans/narrative-spine-full-account-king-james-version.pdf` | `c5bc326bdeba3c77f4c33166493167afaf200c1a268a8985c9b107325d9b9509` |
-| `pdf/reading-plans/narrative-spine-landmarks-douay-rheims.pdf` | `bb302bd84c5b2dec5a6984f981dae8cdc8dc30ada7f9bc48ac6d9973fd6d4680` |
-| `pdf/reading-plans/narrative-spine-landmarks-king-james-version.pdf` | `1a869750640ab12fa2df6fcbdf80624675e761143fea16b7d06d6afce4b2aef7` |
-| `pdf/reading-plans/narrative-spine-story-douay-rheims.pdf` | `8b6a8d394d1a7f2f89dacce17139318c4f4d18192a3ea979663bd7466549eaa1` |
-| `pdf/reading-plans/narrative-spine-story-king-james-version.pdf` | `d3b10e9078df7421ace39c252cc59f487ba34d44b7eb02a729c09e092884b7ac` |
+| `pdf/reading-plans/narrative-spine-full-account-douay-rheims.pdf` | `9fb8a3d235264aa5f005e84e0fb345bb0e719b530d1f5613d2479691d67f6038` |
+| `pdf/reading-plans/narrative-spine-full-account-king-james-version.pdf` | `0292d30639df70470d2c8d334a940813a70916c07b8a2669bd7c7f5feb3bbbe2` |
+| `pdf/reading-plans/narrative-spine-landmarks-douay-rheims.pdf` | `b73e26de835324a4030398f1bddfb8ae9a2eb41606b7a95b075e493c94baf653` |
+| `pdf/reading-plans/narrative-spine-landmarks-king-james-version.pdf` | `3521b99cc7bc51db424411f8dadc63c7f97d848099794ce43a82d0526afec2b0` |
+| `pdf/reading-plans/narrative-spine-story-douay-rheims.pdf` | `c5b8a70cce466994327f746ee244c63ce5dce16dfb412d68c1a049eb57dcdc7c` |
+| `pdf/reading-plans/narrative-spine-story-king-james-version.pdf` | `61a3b6baadac24b4efb8ae4f7abecf4164dc6d6642e62d08af7c7d5fb854a7e2` |
 | `release/public-alpha/404.md` | `3813d3e1a7a03dd6ce7b397e19364fa9679cde8561dca28626cf0fa374e4db81` |
 | `release/public-alpha/assets/icon.png` | `ef1315d47930179e71319cebba58bd284756b9306a40d376ab7ca6e6d3c15ad5` |
 | `release/public-alpha/assets/site.css` | `425f31fa5830ec6054df15e3d51659675d492216392fa33acc755ffd44ecc7ed` |
