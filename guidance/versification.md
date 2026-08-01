@@ -63,6 +63,16 @@ as describing **the Vulgate system**. It describes **one edition's printing of
 it**. That confusion — between a numbering system and an edition's witness of
 it — is the root of everything in this document.
 
+> **Closed, 31 July 2026.** Both defects are fixed and the second was fixed
+> first: the clamp is gone from `Bible.span`, so by the time this was taken up
+> the citation refused whole rather than returning the wrong verse, and the key
+> was absent from the index rather than wrong in it. The renumbering is now
+> recorded — `scripts/_psalter.py` derives it, and Vulgate 115:10 resolves to the
+> Clementine's 115:1, *Credidi, propter quod locutus sum*. See §8.8, which also
+> corrects this section's implicit claim that the Clementine is the departing
+> edition at all nine psalms where it and the concordance disagree. It is the
+> departing edition at two of them.
+
 ### 1.2 The scale of divergence inside the tracked library
 
 **[verified]** comparing per-chapter verse sets across the tracked editions:
@@ -101,6 +111,11 @@ and no gate validates their contents.** The Douay's declared per-book counts do
 agree with its verse text (73 books, 35 804 verses, zero mismatches)
 **[verified]** — but that is luck, not enforcement, and the Clementine cannot
 be checked at all because it declares no counts.
+
+> **Half closed, 31 July 2026.** The Clementine's alias table now carries 28
+> derived rows and all four columns, and `_projection.alias_rows` refuses any
+> table whose header is not the four — §8.8. The `book-index.tsv` half of this
+> paragraph stands: no schema governs it and no gate validates it.
 
 ### 1.3 The silent clamp
 
@@ -1624,6 +1639,134 @@ tools rather than adding a program:
 Do not scaffold a new registry tool until two derivations recur; `tmt note` the
 candidates as they appear.
 
+### 8.8 The psalter's per-edition departures — built, 31 July 2026
+
+`scripts/_psalter.py` holds, per edition, where the psalter it prints stops
+describing the numbering it declares; `tools/tests/test_psalter.py` and
+`index-bible check` both fail if the tracked alias rows and the derivation
+disagree. This is §8.6's fifth gate, scoped to the psalter, and it is the check
+whose absence made an empty alias table look like a compliant one.
+
+#### What the eBible USFM actually numbers, and who is at fault
+
+**[verified]** by fetching `https://eBible.org/Scriptures/latVUC_usfm.zip` whole,
+hashing it to `d8c02326…` — matching the sha256 and the 3 553 911 bytes recorded
+under `.../ebible-latvuc/artifacts/ebible-usfm-d8c02326/` — and reading
+`20-PSAlatVUC.usfm`. It carries 150 chapters and 2 527 `\v` markers, and **no
+`\ca`, `\cp`, `\va` or `\vp`**, so the file states one numbering and only one.
+Psalm 115 is numbered 1-10 and Psalm 147 is numbered 1-9 in the upstream
+transcription. **This library's extraction is faithful; the numbering is
+eBible's.**
+
+#### The Clementine departs at two psalms, not nine, and the concordance at seven
+
+Nine psalms print extents the concordance contradicts. **[verified]** against
+Copenhagen's `vul.json` `maxVerses`, fetched and measured on 31 July 2026 (not
+redistributed — §6.4 option 1), and against the two calendars' own citations:
+
+| Psalm | Concordance | Clementine | `vul` | Departing edition |
+|---|---|---|---|---|
+| 15 | 1-11 | 1-10 | 10 | the concordance's witness splits; the Vulgate merges |
+| 19 | 1-9 | 1-10 | 10 | the concordance's witness merges |
+| 28 | 1-10 | 1-11 | 11 | **neither** — see below |
+| 42 | 1-6 | 1-5 | 5 | the concordance's witness divides the body differently |
+| 115 | 10-19 | 1-10 | 19 | **the Clementine** |
+| 125 | 1-7 | 1-6 | 6 | the concordance's witness splits |
+| 135 | 1-27 | 1-26 | 26 | the concordance's witness splits |
+| 147 | 12-20 | 1-9 | 20 | **the Clementine** |
+| 150 | 1-5 | 1-6 | 6 | **neither** — see below |
+
+§6.2 and §9.3 are confirmed exactly: the published `vul` scheme agrees with the
+Clementine everywhere except 115 and 147, so those two are the edition's own
+departure and the other seven are the concordance's Vulgate column following the
+Douay-Challoner. **That column cannot be anything else.** `_psalms._concordance`
+requires each row's two runs to be the same length, so wherever the Vulgate
+divides a verse the Hebrew joins, the Vulgate column has to follow the Hebrew and
+the extra number goes unrecorded. It is a property of the format, not an
+oversight, and §1.1's confusion runs in both directions.
+
+**Psalms 28 and 150 are the proof, and the repository had already recorded it.**
+The Challoner edition's own `verse-aliases.tsv` carries `Ps.28.11 → Ps.28.10` and
+`Ps.150.6 → Ps.150.5`, so the Vulgate numbering has a 28:11 and a 150:6 that the
+concordance cannot hold. `_psalter.system_extent` therefore reads the numbering
+from **both tracked artifacts together**, and the three editions that print those
+verses stop being departures at all. Nothing there is typed: the loci come out of
+the witness's alias table.
+
+**Both divisions are cited, which is why the table is keyed on the citation.**
+The 1962 communion *Notas mihi fecisti vias vitae* is cited `Psalm 15:11`, a
+number only the eleven-verse division has; the postconciliar communion *Sedebit
+Dominus Rex in aeternum* is cited `Psalm 28:10-11`, a number only the
+eleven-verse division of *that* psalm has. No single extent table serves both.
+
+#### The rule that decides which declaration writes a row
+
+**Write a row where the edition would otherwise answer with the wrong text;
+leave resolution alone, and record the divergence, where it answers with the head
+of the right text.** A `renumbered` run moves every verse; a `merged` run returns
+the containing verse with a superset note, per §8.5 rule 4; a `displaced` verse
+that no printed verse carries whole refuses. A `split` writes a row **only** when
+the printed run does not open at the cited verse's own number — the Catholic
+Public Domain Version's Psalm 92:1, where the psalm's Latin title took verse 1 —
+and otherwise writes none, because refusing at Psalm 19:9 would take away text
+the edition carries at the number the citing books print. The unrowed splits are
+still counted: they are `split` rows in the projection, which is the one override
+kind §8.0 named and nothing produced.
+
+#### The audit of all seven published editions, and the live damage
+
+**[verified]** by comparing each edition's printed psalm extents against the
+numbering it declares, and by rebuilding each index and diffing the passages map
+against the previous one:
+
+| Edition | Numbering | Psalms declared | Alias rows derived | Loci that resolved **wrongly** | Loci that refused and now resolve |
+|---|---|---|---|---|---|
+| Douay-Rheims (Challoner) | vulgate | — (the witness) | — | 0 | 0 |
+| Douay-Rheims (American 1899) | vulgate | 115, 147 | 19 | 0 | 9 |
+| Clementine Vulgate | vulgate | 15, 19, 42, 115, 125, 135, 147 | 28 | 0 | 11 |
+| Catholic Public Domain Version | vulgate | 13, 19, 42, 92, 115, 147 | 31 | **4** | 7 |
+| World English, Catholic Edition | hebrew | none | 0 | 0 | 0 |
+| King James with Apocrypha | hebrew | none | 0 | 0 | 0 |
+| Revised Version with Apocrypha | hebrew | none | 0 | 0 | 0 |
+
+**Four loci in one edition, and the Clementine's count is zero only because the
+clamp was already gone.** The Catholic Public Domain Version returned the wrong
+verse for `Psalm 13:7` (its 13:7 is the Vulgate's 13:4, the Old Latin plus that
+Romans 3 quotes standing as four verses there against one in the witness) and
+returned the psalm's Latin title for `Psalm 92:1`, `Psalm 92:1-2` and
+`Psalm 93:1a, 1b-2, 5`. Every other divergent locus overran a chapter and refused
+whole. The reading plan cites `Psalm 15:1-11` and `Psalm 125:1-7`, both reaching
+a verse the Clementine merges, but `typeset-bible` issues plan volumes only for
+the Douay and the King James, so no plan volume was affected.
+
+**The three Hebrew-numbered editions leave sixteen psalms unchecked**, and
+`_psalter.undecided` reports them rather than passing over them: they are the
+sixteen the concordance flags `english_offset_uniform: no`, for which no English
+extent is derivable and `english_verse` already refuses. An unchecked psalm and a
+checked one must not read alike.
+
+#### The schema check, which is the cheaper half
+
+The Clementine's table carried **two** columns where the others carry four, and
+the two it carried were the two a row would have had to fill. `_projection.alias_rows`
+now refuses any table whose header is not exactly `cited_locus`, `resolves_to`,
+`kind`, `note`. That alone distinguishes "this edition records no departures" from
+"this table cannot record one", and it would have flagged the file on the day it
+was written.
+
+#### What this does not do
+
+The declarations are read from the text and the record is keyed on the citation,
+but neither the concordance nor the alias table can say **which of the two
+Vulgate divisions a given citation speaks**. `Psalm 15:11` and `Psalm 28:10-11`
+prove they are both in use inside the tracked calendars. That is §8.4's
+per-citation `numbering` declaration, still unbuilt, and until it exists a
+citation of `Psalm 19:9` written in the concordance's division silently receives
+the head of the verse rather than the whole. It is recorded as a `split` and
+counted; it is not resolved. Nor can the check see a displacement in a psalm whose
+two extents agree, because the only Latin edition tracked has nothing in its own
+language to be compared against.
+
 ---
 
 ## 9. Acquire, derive, decide
@@ -1779,6 +1922,9 @@ than a number. This proposal extends that belief to the rest of the Bible.
 
 ## 12. Checklist for the implementer
 
+- [x] Per-edition psalter departures derived, tracked and gated — §8.8; the
+      numbering read from the concordance and the witness's alias table
+      together, and every alias table required to carry all four columns.
 - [ ] `verse-inventory.tsv` derived, tracked, and staleness-gated per edition.
 - [ ] `book-index.tsv` given one schema across editions; counts gated against
       the inventory; no alias claimed by two tokens.

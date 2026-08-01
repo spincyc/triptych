@@ -101,13 +101,19 @@ Ranked by how much damage it does before anyone notices.
    e-text numbers Psalm 115 to 10 and Psalm 147 to 9, where the concordance and
    published Vulgate data run them to 19 and 20. Until the clamp was removed this
    silently served `Psalm 115:10, 15, 16-17, 18-19` as one clause — a four-part
-   responsorial psalm reduced to the last words of the wrong end. It now refuses,
-   which is why the Clementine reports 12 unresolved against 3 for the Douay.
-   **A higher unresolved count is the honest number, not the worse one.** There
-   is still no departure table to record the divergence in.
-3. **Unrecorded edition divergences.** Most of the 17 Douay/Clementine chapter
-   differences have no explaining alias row. The Clementine's
-   `verse-aliases.tsv` is a header line and nothing else.
+   responsorial psalm reduced to the last words of the wrong end. It then refused
+   instead, which was the honest answer and not the whole one. **Recorded and
+   resolved, 31 July 2026**: `scripts/_psalter.py` derives the renumbering and
+   Vulgate 115:10 now returns *Credidi, propter quod locutus sum*. Read
+   `guidance/versification.md` §8.8 before touching any of this — the Clementine
+   departs at those two psalms and at no other, and at seven more it is the
+   concordance's Vulgate column, which can only be the Douay's printing, that
+   departs.
+3. **Unrecorded edition divergences outside the psalter.** The psalter is now
+   covered by `scripts/_psalter.py`, and every alias table is required to carry
+   all four columns; the Clementine's carried two until 31 July 2026, which is
+   why an empty table read as a compliant one. The Douay/Clementine differences
+   outside the Psalms still have no explaining alias row.
 4. **Unrecorded cross-edition shifts nothing currently cites.** The World English
    Bible Catholic Edition's Daniel 14 is one verse ahead of the Vulgate's
    throughout (its 14:1 is Vulgate 13:65); no alias row records it. It is inert
@@ -204,7 +210,8 @@ these.
 
 ```sh
 cat $DR/verse-aliases-*/verse-aliases.tsv   # 7 merged-verse rows
-cat $CV/verse-aliases-*/verse-aliases.tsv   # header only
+cat $CV/verse-aliases-*/verse-aliases.tsv   # 28 psalm rows derived by
+                                            # scripts/_psalter.py
 cat $KJ/verse-aliases-*/verse-aliases.tsv   # 317 renumbered rows derived from the
                                             # deuterocanon concordance, plus 1594
                                             # numbering-not-recorded refusals
@@ -421,8 +428,10 @@ Measured 31 July 2026. Re-measure before quoting any figure here.
   chapters, and most of it is unrecorded.** Three carry an explaining
   `merged-verse` row in the Douay's alias table (2 Kings 13, Psalm 28, Amos 9)
   and two more are the psalm splits the concordance owns (Psalms 115 and 147).
-  The rest have no row anywhere, and the Clementine's `verse-aliases.tsv` is
-  still a header line and nothing else.
+  **Every psalm among them is now recorded**, in the Clementine's own table
+  (28 rows) and in the American 1899's (19) and the Catholic Public Domain
+  Version's (31), all derived by `scripts/_psalter.py`. The differences outside
+  the Psalms still have no row anywhere.
 - **1 Thessalonians 4 and 2 Thessalonians 2 are the two that break live
   citations.** The Douay e-text joins verses the Clementine prints separately, so
   those chapter tails stand one number low: `1 Thessalonians 4:13-18` goes
