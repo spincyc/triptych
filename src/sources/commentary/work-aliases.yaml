@@ -73,6 +73,20 @@ review:
     - Tractatus in librum Psalmorum
     reason: One title is the other's fuller form. It reached its group only through the denied
       Commentarioli edge, and would otherwise stand alone on 10 uses.
+  - author: John Calvin
+    titles:
+    - Praelectiones in librum prophetiarum Ieremiae et Lamentationes
+    - Praelectiones in librum prophetiarum Ieremiae
+    reason: Calvin lectured once on Jeremiah and Lamentations and the lectures were printed
+      once, in 1563; the runs spelled the one work six ways and no run joined the fuller Latin
+      title to the shorter, so it came out three groups. One of the three held no name of
+      the whole at all — Commentaries on the Prophet Jeremiah beside Praelectiones ... Ieremiae
+      et Lamentationes — and so could not be named by anything it had.
+  - author: John Calvin
+    titles:
+    - Praelectiones in librum prophetiarum Ieremiae
+    - Praelectiones in Jeremiam prophetam
+    reason: The third of the same three, joined for the same reason.
   canonical_titles:
   - author: Thomas Aquinas
     instead_of: Super Epistolam ad Romanos lectura
@@ -111,6 +125,86 @@ review:
       title it already holds. Albert''s minor prophets stand in four separate groups because
       no run asserted the aliases that would join them — a grouping question, left for review,
       not settled by renaming.'
+  - author: Alonso Tostado
+    instead_of: Commentaria in Leviticum
+    title: Tostatus, Commentaria in Pentateuchum
+    reason: 'Fifteen groups came out of the 34 new loci named after one book of the several
+      they reach, and this is the first of them: Tostado''s Genesis, Exodus, Leviticus and
+      Numbers under the name of Leviticus. The two whole-naming names the group holds both
+      carry his by-name, because no run offered a bare Commentaria in Pentateuchum, and a
+      reviewed title must be one the group already holds.'
+  - author: Andrew of Saint Victor
+    instead_of: 'Expositio super Heptateuchum: In Exodum'
+    title: Expositiones historicae in Heptateuchum
+    reason: Exodus and Leviticus under the name of Exodus. The Heptateuch title is the work.
+  - author: Andrew of Saint Victor
+    instead_of: Expositio super Isaiam
+    title: Expositio in Ezechielem et Isaiam
+    reason: Isaiah and Ezekiel under the name of Isaiah, and the group holds the name of both.
+  - author: Bruno of Segni
+    instead_of: Expositio in Leviticum
+    title: Expositio in Pentateuchum
+    reason: Exodus, Leviticus and Numbers under the name of Leviticus.
+  - author: Cassiodorus
+    instead_of: Complexiones in Actus Apostolorum
+    title: Complexiones in epistulas et acta apostolorum et apocalypsin
+    reason: The Complexiones are one work over the Epistles, Acts and the Apocalypse; the
+      group reaches Acts and the Apocalypse and was named for Acts alone.
+  - author: Jacques-Bénigne Bossuet
+    instead_of: 'Libri Salomonis: Sapientia (notes and exposition)'
+    title: Libri Salomonis, Proverbia, Ecclesiastes, Canticum Canticorum, Sapientia, Ecclesiasticus,
+      cum notis
+    reason: Five Solomonic books under the name of Wisdom. The group holds the title of the
+      whole.
+  - author: John Calvin
+    instead_of: Praelectiones in librum prophetiarum Ieremiae et Lamentationes
+    title: Commentaries on Jeremiah and Lamentations
+    reason: 'One work in three fragments, joined in also_aliases above. The Latin name the
+      work is printed under, Praelectiones in librum prophetiarum Ieremiae et Lamentationes,
+      is not taken as the canonical: the genitive Ieremiae is not among the forms the coverage
+      check knows, so that name reads as naming Lamentations alone and would trade one part-naming
+      title for another. The English name of the whole is exact and is what the group takes.'
+  - author: Juan Maldonado
+    instead_of: Commentarii in Jeremiam prophetam
+    title: 'Commentarii in prophetas quatuor: Ieremiam, Baruch, Ezechielem et Danielem'
+    reason: Jeremiah, Baruch, Ezekiel and Daniel under the name of Jeremiah. Maldonado's four
+      prophets stand in three groups, one per spelling of the same work; each is renamed to
+      the whole-naming name it holds rather than merged, because merging is an assertion about
+      the works and renaming is not.
+  - author: Juan Maldonado
+    instead_of: Commentarii in Ieremiam prophetam
+    title: 'Maldonatus, Commentarii in prophetas quatuor: Ieremiam, Baruch, Ezechielem, Danielem'
+    reason: The second spelling of the same work, with the only whole-naming name that group
+      holds.
+  - author: Juan Maldonado
+    instead_of: Commentarii in Jeremiam
+    title: 'Maldonatus, Commentarii in prophetas IV: Ieremiam, Baruch, Ezechielem, Danielem'
+    reason: The third spelling of the same work, with the only whole-naming name that group
+      holds.
+  - author: Julian of Eclanum
+    instead_of: Tractatus prophetarum Osee, Iohel et Amos
+    title: Commentary on Hosea, Joel and Amos
+    reason: 'The group reaches Hosea, Joel and Amos and was named after two of the three.
+      Only the English name of the three is read as naming all of them: the Latin names in
+      the group spell Joel Iohel, which is not among the forms the coverage check knows.'
+  - author: Julian of Eclanum
+    instead_of: Tractatus in Osee, Iohel et Amos
+    title: Expositio libri Iob et tractatus prophetarum Osee, Iohel et Amos
+    reason: A second Julian group, reaching Job as well as the prophets, named after the prophets
+      alone. The name of both is the one the group already holds.
+  - author: Martin Luther
+    instead_of: 'Praelectiones in prophetas minores: in Michaeam'
+    title: Praelectiones in prophetas minores
+    reason: Hosea and Micah under the name of Micah.
+  - author: Michael Ghislieri
+    instead_of: Commentarii in Ieremiam prophetam
+    title: Ghislerius, In Ieremiam prophetam commentarii, item in Baruch et Threnos
+    reason: Jeremiah, Baruch and Lamentations under the name of Jeremiah, the same defect
+      Theodoret's group carries and on the same three books.
+  - author: Thomas de Vio Cajetan
+    instead_of: 'Commentarii in Pentateuchum: In Leviticum'
+    title: Commentarii illustres in quinque Mosaicos libros
+    reason: Leviticus and Numbers under the name of Leviticus.
 groups:
 - author: Adam Clarke
   work: The Holy Bible with a Commentary and Critical Notes
@@ -408,7 +502,7 @@ groups:
   - commentaria super ecclesiasten
   - expositio in ecclesiasten
 - author: Alonso Tostado
-  work: Commentaria in Leviticum
+  work: Tostatus, Commentaria in Pentateuchum
   uses: 11
   attested_by: 3
   titles:
@@ -580,7 +674,16 @@ groups:
   - commentary on the apocalypse
   - in apocalypsin commentarius
 - author: Andrew of Saint Victor
-  work: 'Expositio super Heptateuchum: In Exodum'
+  work: Expositio in Ezechielem et Isaiam
+  uses: 4
+  attested_by: 3
+  titles:
+  - expositio in ezechielem et isaiam
+  - expositio in isaiam
+  - expositio super isaiam
+  - exposition on isaiah
+- author: Andrew of Saint Victor
+  work: Expositiones historicae in Heptateuchum
   uses: 4
   attested_by: 3
   titles:
@@ -591,15 +694,6 @@ groups:
   - 'expositio super heptateuchum: in leviticum'
   - expositiones historicae in exodum
   - expositiones historicae in heptateuchum
-- author: Andrew of Saint Victor
-  work: Expositio super Isaiam
-  uses: 4
-  attested_by: 3
-  titles:
-  - expositio in ezechielem et isaiam
-  - expositio in isaiam
-  - expositio super isaiam
-  - exposition on isaiah
 - author: Andrew of Saint Victor
   work: Expositio super duodecim prophetas
   uses: 1
@@ -1412,7 +1506,7 @@ groups:
   - commentary on matthew
   - expositio in matthaeum
 - author: Bruno of Segni
-  work: Expositio in Leviticum
+  work: Expositio in Pentateuchum
   uses: 17
   attested_by: 3
   titles:
@@ -1627,7 +1721,7 @@ groups:
   - expositio in psalterium
   - expositio psalmorum
 - author: Cassiodorus
-  work: Complexiones in Actus Apostolorum
+  work: Complexiones in epistulas et acta apostolorum et apocalypsin
   uses: 2
   attested_by: 2
   titles:
@@ -3722,7 +3816,8 @@ groups:
   - liber sapientiae cum notis
   - 'libri salomonis: proverbia, ecclesiastes, canticum canticorum, sapientia, ecclesiasticus'
 - author: Jacques-Bénigne Bossuet
-  work: 'Libri Salomonis: Sapientia (notes and exposition)'
+  work: Libri Salomonis, Proverbia, Ecclesiastes, Canticum Canticorum, Sapientia, Ecclesiasticus,
+    cum notis
   uses: 1
   attested_by: 1
   titles:
@@ -4063,6 +4158,19 @@ groups:
   - lectures on the minor prophets
   - praelectiones in duodecim prophetas minores
 - author: John Calvin
+  work: Commentaries on Jeremiah and Lamentations
+  uses: 3
+  attested_by: 2
+  titles:
+  - commentaries on jeremiah and lamentations
+  - commentaries on the prophet jeremiah
+  - commentary on jeremiah and lamentations
+  - lectures on the book of the prophet jeremiah
+  - lectures on the prophet jeremiah
+  - praelectiones in jeremiam prophetam
+  - praelectiones in librum prophetiarum ieremiae
+  - praelectiones in librum prophetiarum ieremiae et lamentationes
+- author: John Calvin
   work: Commentary on the Last Four Books of Moses Arranged in the Form of a Harmony
   uses: 3
   attested_by: 2
@@ -4082,13 +4190,6 @@ groups:
   - commentarius in librum psalmorum
   - commentary on the book of psalms
   - in librum psalmorum commentarius
-- author: John Calvin
-  work: Commentaries on the Prophet Jeremiah
-  uses: 1
-  attested_by: 1
-  titles:
-  - commentaries on the prophet jeremiah
-  - praelectiones in librum prophetiarum ieremiae et lamentationes
 - author: John Calvin
   work: Commentary on the Acts of the Apostles
   uses: 1
@@ -4110,22 +4211,6 @@ groups:
   titles:
   - commentarii in isaiam prophetam
   - commentary on the prophet isaiah
-- author: John Calvin
-  work: Lectures on the Prophet Jeremiah
-  uses: 1
-  attested_by: 1
-  titles:
-  - commentaries on jeremiah and lamentations
-  - lectures on the prophet jeremiah
-  - praelectiones in librum prophetiarum ieremiae
-- author: John Calvin
-  work: Praelectiones in Jeremiam prophetam
-  uses: 1
-  attested_by: 1
-  titles:
-  - commentary on jeremiah and lamentations
-  - lectures on the book of the prophet jeremiah
-  - praelectiones in jeremiam prophetam
 - author: John Calvin
   work: Sermons on the Book of Job
   uses: 1
@@ -4616,7 +4701,7 @@ groups:
   - maldonatus, commentary on matthew
   - maldonatus, commentary on the four gospels
 - author: Juan Maldonado
-  work: Commentarii in Jeremiam prophetam
+  work: 'Commentarii in prophetas quatuor: Ieremiam, Baruch, Ezechielem et Danielem'
   uses: 5
   attested_by: 3
   titles:
@@ -4645,21 +4730,21 @@ groups:
   - maldonatus, commentarii in jeremiam
   - maldonatus, in jeremiam
 - author: Juan Maldonado
-  work: Commentarii in Ieremiam prophetam
-  uses: 1
-  attested_by: 1
-  titles:
-  - commentarii in ieremiam prophetam
-  - 'maldonatus, commentarii in prophetas quatuor: ieremiam, baruch, ezechielem, danielem'
-- author: Juan Maldonado
-  work: Commentarii in Jeremiam
+  work: 'Maldonatus, Commentarii in prophetas IV: Ieremiam, Baruch, Ezechielem, Danielem'
   uses: 1
   attested_by: 1
   titles:
   - commentarii in jeremiam
   - 'maldonatus, commentarii in prophetas iv: ieremiam, baruch, ezechielem, danielem'
+- author: Juan Maldonado
+  work: 'Maldonatus, Commentarii in prophetas quatuor: Ieremiam, Baruch, Ezechielem, Danielem'
+  uses: 1
+  attested_by: 1
+  titles:
+  - commentarii in ieremiam prophetam
+  - 'maldonatus, commentarii in prophetas quatuor: ieremiam, baruch, ezechielem, danielem'
 - author: Julian of Eclanum
-  work: Tractatus prophetarum Osee, Iohel et Amos
+  work: Commentary on Hosea, Joel and Amos
   uses: 5
   attested_by: 3
   titles:
@@ -4679,7 +4764,7 @@ groups:
   - expositio libri iob
   - tractatus in iob
 - author: Julian of Eclanum
-  work: Tractatus in Osee, Iohel et Amos
+  work: Expositio libri Iob et tractatus prophetarum Osee, Iohel et Amos
   uses: 1
   attested_by: 1
   titles:
@@ -4721,7 +4806,7 @@ groups:
   - commentarii in epistulam ad philippenses
   - in epistolam pauli ad philippenses
 - author: Martin Luther
-  work: 'Praelectiones in prophetas minores: in Michaeam'
+  work: Praelectiones in prophetas minores
   uses: 3
   attested_by: 2
   titles:
@@ -4835,7 +4920,7 @@ groups:
   - ghislerius, in jeremiam
   - in jeremiam prophetam commentarii
 - author: Michael Ghislieri
-  work: Commentarii in Ieremiam prophetam
+  work: Ghislerius, In Ieremiam prophetam commentarii, item in Baruch et Threnos
   uses: 1
   attested_by: 1
   titles:
@@ -6944,7 +7029,7 @@ groups:
   - in quinque mosaicos libros commentarii
   - 'literal commentary on the pentateuch: leviticus'
 - author: Thomas de Vio Cajetan
-  work: 'Commentarii in Pentateuchum: In Leviticum'
+  work: Commentarii illustres in quinque Mosaicos libros
   uses: 3
   attested_by: 2
   titles:
