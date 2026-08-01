@@ -5,10 +5,10 @@ inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:96bbce70753710f5725db3b2168a83555a593192d63c4be17b7b38132e396da3"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
-canonical_catalog_snapshot = "sha256:a9db35acbc2460c73020f658666477eec9a31d434d174aeb6f6c6732bf3a7739"
+canonical_catalog_snapshot = "sha256:a49186fac5333e27bb3a1dfbd7275ebf08922e84bebae021b431ec91c71f9236"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:5638450e879b04ae90f6be473338e1ebe6fcb5fd066a443acac28ff36fa4460d"
+snapshot = "sha256:761dce8b8e695e9d1c0bfe42da5cf80bfc9cfab6b4fdc157bc950f3dfffd74bc"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -885,10 +885,10 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "bounded-corpus"
 disposition = "bind-existing"
 priority = "p0"
-canonical_ids = ["artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf", "artifact.augustine.de-civitate-dei.dods-1871.pg45304-raw", "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf", "artifact.augustine.de-civitate-dei.dods-1871.pg45305-raw", "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-fig1", "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-tei", "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei", "corpus.augustine.de-civitate-dei.bilingual-tracer-2026-07-22", "corpus.augustine.de-civitate-dei.dods-1871-complete", "corpus.augustine.de-civitate-dei.hoffmann-csel40-2813e3a", "edition.augustine.de-civitate-dei.dods-1871", "edition.augustine.de-civitate-dei.hoffmann-csel40-1899-1900", "passage.augustine.de-civitate-dei.dods-1871.10.5-6", "passage.augustine.de-civitate-dei.dods-1871.13.11", "passage.augustine.de-civitate-dei.dods-1871.13.2", "passage.augustine.de-civitate-dei.dods-1871.15.22", "passage.augustine.de-civitate-dei.dods-1871.18.46", "passage.augustine.de-civitate-dei.dods-1871.19.13", "passage.augustine.de-civitate-dei.dods-1871.19.15", "passage.augustine.de-civitate-dei.dods-1871.20.1", "passage.augustine.de-civitate-dei.dods-1871.20.14", "passage.augustine.de-civitate-dei.dods-1871.21.11", "passage.augustine.de-civitate-dei.dods-1871.21.12", "passage.augustine.de-civitate-dei.dods-1871.21.17", "passage.augustine.de-civitate-dei.dods-1871.21.23", "passage.augustine.de-civitate-dei.dods-1871.21.26", "passage.augustine.de-civitate-dei.dods-1871.21.9", "passage.augustine.de-civitate-dei.dods-1871.22.30", "passage.augustine.de-civitate-dei.dods-1871.9.2", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.10.5-6", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.15.22", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.18.46", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.19.13", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.19.15", "work.augustine.de-civitate-dei"]
+canonical_ids = ["artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf", "artifact.augustine.de-civitate-dei.dods-1871.pg45304-raw", "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf", "artifact.augustine.de-civitate-dei.dods-1871.pg45305-raw", "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-fig1", "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-tei", "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei", "corpus.augustine.de-civitate-dei.bilingual-tracer-2026-07-22", "corpus.augustine.de-civitate-dei.dods-1871-complete", "corpus.augustine.de-civitate-dei.hoffmann-csel40-2813e3a", "edition.augustine.de-civitate-dei.dods-1871", "edition.augustine.de-civitate-dei.hoffmann-csel40-1899-1900", "passage.augustine.de-civitate-dei.dods-1871.10.5-6", "passage.augustine.de-civitate-dei.dods-1871.11.19", "passage.augustine.de-civitate-dei.dods-1871.11.6", "passage.augustine.de-civitate-dei.dods-1871.11.7", "passage.augustine.de-civitate-dei.dods-1871.13.11", "passage.augustine.de-civitate-dei.dods-1871.13.2", "passage.augustine.de-civitate-dei.dods-1871.15.22", "passage.augustine.de-civitate-dei.dods-1871.18.46", "passage.augustine.de-civitate-dei.dods-1871.19.13", "passage.augustine.de-civitate-dei.dods-1871.19.15", "passage.augustine.de-civitate-dei.dods-1871.20.1", "passage.augustine.de-civitate-dei.dods-1871.20.14", "passage.augustine.de-civitate-dei.dods-1871.21.11", "passage.augustine.de-civitate-dei.dods-1871.21.12", "passage.augustine.de-civitate-dei.dods-1871.21.17", "passage.augustine.de-civitate-dei.dods-1871.21.23", "passage.augustine.de-civitate-dei.dods-1871.21.26", "passage.augustine.de-civitate-dei.dods-1871.21.9", "passage.augustine.de-civitate-dei.dods-1871.22.30", "passage.augustine.de-civitate-dei.dods-1871.9.2", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.10.5-6", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.15.22", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.18.46", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.19.13", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.19.15", "work.augustine.de-civitate-dei"]
 trace_patterns = ["(?:De civitate Dei|City of God)", "City of God", "De civitate Dei"]
 reviewed_on = "2026-07-31"
-notes = "Reuse the existing work, editions, exact artifacts, passages, and bounded corpora; add publication bindings only after each legacy use is reviewed. The 22.30 chapter passage on the everlasting Sabbath, inspected in the tracked Dods body artifact through its rest-see-love-praise close and valediction, was registered 2026-07-25 for the trilogy Part III and joins the existing bounded Dods witness set."
+notes = "Reuse the existing work, editions, exact artifacts, passages, and bounded corpora; add publication bindings only after each legacy use is reviewed. The 22.30 chapter passage on the everlasting Sabbath, inspected in the tracked Dods body artifact through its rest-see-love-praise close and valediction, was registered 2026-07-25 for the trilogy Part III and joins the existing bounded Dods witness set. The XI.6, XI.7 and XI.19 passages on the creation of time and of light were registered 2026-07-31 for the Genesis catena and join the same Dods witness set; they are the only commentary on Genesis 1 this repository held before that pilot, and they are exposition of Genesis inside an argument about the two cities rather than a Genesis commentary."
 
 [[families]]
 id = "family.augustine.enarrationes-in-psalmos"
@@ -1069,6 +1069,26 @@ canonical_ids = ["artifact.basil-of-caesarea.de-spiritu-sancto.jackson-npnf2-8-n
 trace_patterns = ["(?:De Spiritu Sancto|(?:St\\.?\\s+)?Basil(?: of Caesarea| the Great)?[^\\n]{0,160}On the Holy Spirit|On the Holy Spirit[^\\n]{0,160}(?:St\\.?\\s+)?Basil)", "basil\\-of\\-caesarea\\.de\\-spiritu\\-sancto"]
 reviewed_on = "2026-07-31"
 notes = "Reviewed as the distinct source family for De Spiritu Sancto. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers."
+
+[[families]]
+id = "family.basil-of-caesarea.homiliae-in-hexaemeron"
+label = "Homiliae in Hexaemeron"
+kind = "work"
+source_categories = ["patristic"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition"]
+artifact_availability = "candidate-partial"
+storage_plan = ["tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["work.basil-of-caesarea.homiliae-in-hexaemeron"]
+trace_patterns = ["basil\\-of\\-caesarea\\.homiliae\\-in\\-hexaemeron"]
+reviewed_on = "2026-07-31"
+notes = "Reviewed 2026-07-31 as the distinct source family for Basil's nine Lenten homilies on the six days, which are a different work from De Spiritu Sancto and must not be merged with it. The work record carries the author identity only: this family has no edition and no artifact of its own, which is why edition and artifact are recorded as identity gaps and availability as candidate-partial. The one text held is an English translation of the first homily alone, one of nine, and it lives under family.nicene-and-post-nicene-fathers.series-2-volume-8 because the exact bytes were taken from that container volume. That passage is inspected rather than verified, resting on two agreeing web transcriptions rather than on a collation against the printed page. The series expounds Genesis 1:1 to 1:26 and stops there, the ninth homily breaking off before the creation of man, so no member of this family may be extended past that verse."
 
 [[families]]
 id = "family.bede.in-lucae-evangelium-expositio"
@@ -5358,17 +5378,17 @@ source_categories = ["patristic"]
 identity_confidence = "confirmed"
 identity_gaps = []
 artifact_availability = "canonicalized"
-storage_plan = ["remote"]
+storage_plan = ["remote", "tracked"]
 rights_review = "all-known-artifacts-reviewed"
 mutability = "fixed"
 freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p1"
-canonical_ids = ["edition.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895", "work.nicene-and-post-nicene-fathers.series-2-volume-8"]
+canonical_ids = ["artifact.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1-web-text-0823184f", "edition.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895", "passage.nicene-and-post-nicene-fathers.series-2-volume-8.new-york-1895.basil-hexaemeron-1", "work.nicene-and-post-nicene-fathers.series-2-volume-8"]
 trace_patterns = ["(?:Nicene and Post-Nicene Fathers[^\\n]{0,80}(?:Series 2[^\\n]{0,40})?Vol(?:ume)?\\.?~?\\s*(?:8|VIII)|newadvent\\.org/fathers/320[^\\s]*)", "nicene-and-post-nicene-fathers\\.series-2-volume-8"]
 reviewed_on = "2026-07-31"
-notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
+notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers. The first tracked artifact under this volume was registered 2026-07-31 for the Genesis catena pilot: a transcription of the whole of Basil's first Hexaemeron homily, the volume's only Genesis exposition. Its passage stops at the inspected state and is deliberately not verified, because the wording rests on two independent web transcriptions of the 1895 printing that agree with each other rather than on a collation against the printed page, and three divergences between those witnesses remain open on the artifact. Basil's own work identity is reviewed separately as family.basil-of-caesarea.homiliae-in-hexaemeron; this family owns the container volume and the exact bytes taken from it."
 
 [[families]]
 id = "family.nicene-and-post-nicene-fathers.series-2-volume-9"
