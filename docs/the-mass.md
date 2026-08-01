@@ -334,7 +334,7 @@ the calendars, and nothing else on this page states a figure it gives.
 | Propers taking their text from another entry | 0 | 40 | 0 |
 | Propers that are not placeholders | 0 | 2158 | 883 |
 | — of those, scripture-bearing | 0 | 1807 | 610 |
-| Encoded passages | 0 | 2102 | 1145 |
+| Encoded passages | 0 | 2102 | 1144 |
 | Distinct books cited | 0 | 55 | 61 |
 | Distinct slot names | 1 | 119 | 87 |
 
