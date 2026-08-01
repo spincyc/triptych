@@ -1924,6 +1924,10 @@ release attachment, announcement, or promotion.
 | `src/web/browser/history/history.css` | `25ed5ba0ae6fe7e373b46bb69dadbf1c90234f3324eaad1ff9f8e55e7760712b` |
 | `src/web/browser/history/history.js` | `d2dd2de2c2416b97e07eb3dd0ca73603767a28a2ac1d2d49a5694486451b6401` |
 | `src/web/browser/history/index.html` | `d930cfcd2288781e2b7cb55efd551cd1202203fb960f5da067be6674e81fa382` |
+| `src/web/browser/law/code-model.js` | `61e58d843e2cad1c17c7fc7eab21aeb4836b20e544dd36bb0167954f70ca3f49` |
+| `src/web/browser/law/index.html` | `adfbe40b5ea62efffb7272414d1a7206dc37b477c5b2c7131d9495051d7687e5` |
+| `src/web/browser/law/law.css` | `b7c324bf489a163e0d1ac79cf3aba8cd20554d6753fa80a274a3dbfbc3386742` |
+| `src/web/browser/law/law.js` | `9f4f50e40b005393f0790039f735c87df318a15e890cb3efe027d8eef83f6ca5` |
 | `src/web/browser/liturgy/assembly-model.js` | `de239c0c7efddbfbaeba2d3ee5a9439630abc8965e61765dfd7205e4b9181789` |
 | `src/web/browser/liturgy/day.css` | `e90d99315fcf34fa7f46ac445e759d0625ec1d027ce19ddc7fece29efa91c559` |
 | `src/web/browser/liturgy/day.html` | `8621e7906fe1f42f4f8de7410939f5c4478910eee44d6dbc9fc12cc477b19df3` |
