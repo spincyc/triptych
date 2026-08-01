@@ -487,6 +487,24 @@ replacement existed; Catena Omnia returned 404 on the live site until the
 replacement landed. Two other lanes had work swept into each other's commits
 the same day, and one such commit is pushed and no longer safely fixable.
 
+**The stash is shared too, and it is worse than the index.** `git stash pop`
+takes `stash@{0}` — whichever entry is on top when it runs, not the one you
+pushed. Between a sibling's push and your pop the top entry changes, so a
+scoped `git stash push -- <path>` does not make the matching pop scoped. On
+2026-08-01 a pop applied a stash taken at `4a9769b8`, months of tree-shape
+behind HEAD, leaving conflict markers in 14 paths including `scripts/_catena.py`,
+which broke every catena gate and the coverage tool with a `SyntaxError` while
+two lanes were mid-flight in the same files. Prefer `git worktree`, or copy the
+file aside and copy it back; if you must stash, pop by exact ref and message.
+
+Recovering a bad pop: a conflicted pop does NOT drop the entry, so the stash is
+still the copy of record — check `git stash list` before anything else. Take
+the working-tree side, `git checkout --ours -- <path>`, because for a stash pop
+that is the tree as it stood, uncommitted sibling work included; the stash side
+is what you are declining to apply. `git add` each path to clear the unmerged
+state, then `git reset -- <path>` so the resolution does not sit staged in the
+shared index waiting to be swept. Verify what you repaired actually parses.
+
 Every AI-assisted commit has a concise result-oriented subject and a terse body headed `AI summary:` — one or two sentences naming the material change and the verification performed. Do not claim unperformed checks or include private reasoning, narration, or machine-local state. The same terseness governs code comments: state only what the code cannot say itself.
 
 Use new commits for ordinary corrections, source substitutions, renewed verification, and reorganizations. Do not amend, filter, force-update, or otherwise rewrite published history unless the user expressly requests and coordinates that consequence.
