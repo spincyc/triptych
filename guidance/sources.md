@@ -159,7 +159,8 @@ src/sources/
 ```
 
 `calendars/` holds the normalized YAML indexes of mass formularies and their
-ordered propers, one directory per calendar (`roman-1962`, `postconciliar`)
+ordered propers, one directory per calendar (`roman-1962`, `postconciliar`,
+`roman-pre-1955`)
 and one `propers.yaml` in each, whose `sections` map holds every mass of that
 calendar — seasonal, marian, christological and sanctoral alike. Each file
 declares the
@@ -167,6 +168,38 @@ declares the
 rule, the registry that owns its identities, its citation and orthography
 conventions, and its verification state. `tools/tpt check-calendar-masses`
 validates them and runs inside `make check`.
+
+### Quote every scalar that holds liturgical text
+
+**Any YAML scalar carrying a title, incipit, name, note, citation or prayer text
+is quoted.** Not "quoted when it looks like it needs it" — always, because the
+character that breaks it is ordinary Latin punctuation and the failure is
+silent.
+
+An unquoted scalar ends at its first `:` in a block mapping and at its first `,`
+inside a flow mapping. The remainder does not vanish; it becomes a **second
+mapping key with a null value**, which is well-formed YAML, parses cleanly, and
+looks like a field nobody recognises.
+
+Four instances of this one class landed on 2026-08-01:
+
+- unquoted commas cut five notes in `roman-1962/rubrics.yaml` in half, and four
+  truncated citations plus a rubric label that lost "which nevertheless yields to
+  an occurring Sunday" shipped to the browser;
+- a comma split `Manete in me, et ego in vobis` into `incipit: Manete in me`
+  beside `et ego in vobis: null`, and the page served the truncated antiphon;
+- a colon closed the pre-1955 calendar entirely; and
+- a calendar was briefly unparseable mid-write.
+
+**The structural gap: nothing enumerates unrecognised keys on a proper.**
+`check-calendar-masses.check_reference` does enumerate unknown fields — but only
+inside a `takes_from` mapping, which is the one place the schema happens to have
+a closed field list. `check_proper` reads the keys it knows and ignores the rest,
+so `et ego in vobis: null` sitting beside `incipit` passes every gate. Until a
+proper's keys are closed and checked against that closure, a split scalar
+announces itself nowhere: it is [the shape](the-shape.md) §1 in the storage
+layer, a reference that resolves successfully and wrongly. Closing it is open
+work, and quoting is the discipline that stands in for it meanwhile.
 
 An index is a planning and cross-reference spine, not a source of record: it
 carries no artifact hash and proves nothing on its own. A publication still

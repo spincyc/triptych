@@ -31,9 +31,12 @@ It has arrived through every layer:
 - **Derivation.** Four Sundays' orations were held twice. The two copies had
   already drifted five ways — `caelestis`/`coelestis` and a citation encoded as a
   contiguous range against three discrete verses — and nothing compared them.
-- **Storage.** `et ego in vobis: null` sits in a propers file because an unquoted
+- **Storage.** `et ego in vobis: null` sat in a propers file because an unquoted
   Latin incipit contains a comma, and YAML read half of it as a second mapping
-  key. Nothing reports it, because no validator enumerates unrecognised keys.
+  key; the page served the truncated antiphon. Four defects of that one class
+  landed on a single day. Nothing reports any of them, because no validator
+  enumerates unrecognised keys on a proper — `sources.md` states the rule and
+  names the gap.
 - **Composition.** An agent briefing on the oration problem contained a Latin
   incipit recalled rather than read. It scanned correctly and was invented.
 - **The apparatus itself.** A comment claimed a check verified the release
