@@ -1,0 +1,19 @@
+schema = 1
+record_type = "corpus"
+id = "corpus.catholic-church.ancient-sacramentaries-2026-08-01"
+title = "Ancient Latin sacramentaries — declared search boundary"
+members = [
+  "artifact.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912.ia-djvu-ocr-lelibermozarabic06cath",
+  "artifact.catholic-church.missale-bobbiense.lowe-1917.ia-djvu-ocr-bobbiomissalgall01cath",
+  "artifact.catholic-church.missale-gothicum.bannister-1917.ia-djvu-ocr-missalegothicumg01cath",
+  "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog",
+  "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-libersacramentorum",
+  "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-djvu-ocr-gregoriansacrame00cath",
+  "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog",
+  "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariumle00cath",
+]
+snapshot = "sha256:af10423188c72d0515bfddb7a357a3e63206581be01f8bb197cd20b743a759dd"
+languages = ["la"]
+scope = "The exact optical text layers of six printed critical editions: the Veronense (Feltoe 1896, in two independent scans), the Old Gelasian (Wilson 1894, in two independent scans), the Hadrianum (Wilson 1915), the Liber mozarabicus sacramentorum (Ferotin 1912), the Missale Gothicum (Bannister 1917) and the Bobbio Missal (Lowe 1917). This is the boundary within which this project searched for the ancient ancestors of the postconciliar orations."
+completeness = "Bounded and correctable. The boundary is six editions, not the tradition: it holds no eighth-century Gelasian (Gellone, Angouleme, Rheinau, Bergomense), no Ambrosian book, no Gregorian supplement beyond what Wilson prints, no monastic or diocesan medieval sacramentary, and no later Roman missal. A prayer not found here may still be ancient, and every absence recorded against this corpus says only that these six editions do not carry it. The search is also a literal one over an uncorrected optical text: it will miss a prayer whose scan is damaged past recognition, and it cannot see a paraphrase or a heavily recentonised descendant at all."
+notes = "Acquisition is not inspection. Nothing in this corpus has been collated against page images; the editions are held as finding and comparison aids, and each match they produce is a lead until someone opens the printed page."

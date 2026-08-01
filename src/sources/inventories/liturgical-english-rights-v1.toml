@@ -1,0 +1,307 @@
+# The rights position on English liturgical texts, settled once so that it is
+# not settled again.
+#
+# This file exists because the same question kept being reopened: may this
+# project publish an English translation of the orations of the postconciliar
+# Roman Missal? The answer had been reached at least three times in three
+# places, in three different wordings, and no record held the reasons or the
+# citations. What follows is the position, the evidence it rests on, the routes
+# that were examined and refused, and the one route that works.
+#
+# It is not legal advice, it is not an opinion of counsel, and it binds nobody
+# outside this repository. Where it states a proposition of law it states the
+# jurisdiction, and the jurisdiction throughout is the United States.
+
+rights_schema = 1
+record_type = "liturgical-english-rights"
+recorded_on = "2026-08-01"
+jurisdiction = "United States"
+
+holding = """
+The approved English of the postconciliar Roman Missal may not be published
+here, and translating the Latin afresh does not escape that, because the Latin
+is claimed too. But most of the Missal's orations are not new compositions: they
+were restored from sacramentaries a thousand years and more out of copyright,
+and where the Missal prints such a prayer unchanged, the words on its page are
+the ancient words, in which nobody holds a right. Those may be translated and
+published. Where the reform composed or substantially rewrote a prayer, they may
+not, and this repository says so and shows the gap.
+"""
+
+[the_latin]
+question = "Does translating the Latin editio typica afresh avoid the encumbrance?"
+answer = "No, not by itself."
+reasoning = """
+The Holy See claims copyright in the Latin books in terms. Liturgiam
+authenticam n. 111 reads: "As regards the liturgical books of the Roman Rite
+promulgated in an editio typica either before or after the Second Vatican
+Council by decree of the Congregations competent at the time, the Apostolic See,
+through the Administratio Patrimonii or, in its name and by its mandate, through
+the Libreria Editrice Vaticana, possesses and reserves to itself the right of
+ownership commonly known as 'copyright'." n. 110 lists the books in view and
+names the Missale Romanum first.
+
+That claim is enforceable in the United States on ordinary principles. The Holy
+See is a party to the Berne Convention -- WIPO's contracting-party table gives
+its accession as 19 July 1935, in force 12 September 1935 -- so a work first
+published under its authority is a work of a treaty party. The 1970 editio typica
+and the 2002 editio typica tertia are both twentieth- and twenty-first-century
+works, and the 2002 book postdates the abolition of United States formalities
+for works published on or after 1 March 1989 outright. A translation is a
+derivative work, and the right to prepare one is among the rights reserved to
+the owner of the underlying work.
+
+So a fresh English of a prayer the reform composed is a derivative of a
+protected Latin text, and doing the translating oneself changes nothing about
+that. This is the point the project had not previously written down, and it is
+the point that makes the ancient-source route necessary rather than merely
+convenient.
+"""
+limits = """
+An ecclesiastical instruction states what the Holy See claims and directs how
+its officers are to act. It is not an adjudication. Whether copyright subsists
+in any particular text, and in whom it vests, would be decided by a court under
+the law of the forum, and this project has not tested the claim and does not
+propose to.
+"""
+source_ids = [
+  "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25.111",
+  "artifact.world-intellectual-property-organization.wipo-lex-berne-contracting-parties.web-2026-08-01.contracting-parties-html",
+]
+
+[the_icel_translation]
+question = "May the approved English be reproduced?"
+answer = "Not without a licence, which this project does not have."
+reasoning = """
+The English of the Roman Missal, third edition, is the work of the International
+Commission on English in the Liturgy, a mixed commission of eleven bishops'
+conferences set up at Rome in 1963 and erected as a mixed commission under
+Liturgiam authenticam on 15 September 2003. Liturgiam authenticam n. 117 directs
+that "the rights of publication and the copyright for all translations of
+liturgical books ... remain with the Conferences of Bishops or their national
+liturgical Commissions", and n. 118 provides for a licensing agreement where the
+copyright is common to several conferences, which is exactly the case of the
+English.
+
+ICEL's own published terms say the rest. The acknowledgement it requires is
+"The English translation of The Roman Missal (c) 2010, International Commission
+on English in the Liturgy Corporation. All rights reserved." Its texts are "made
+available to publishers without distinction, on a non-exclusive basis", and "all
+requests for permission should be directed to the ICEL Secretariat". Any
+publication produced for sale is subject to a royalty or flat fee, and the
+classes named include electronic media; material not used during a celebration --
+textbooks, commentaries, religious education material, private prayerbooks --
+"may be assessed a royalty or flat fee".
+
+There is exactly one royalty-free class, and a corpus like this one is not in
+it. It covers reprinting "in a publication for use at a specific Mass or
+celebration of an individual congregation or institution", on four conditions:
+not produced by a publishing firm, not sold, carrying the notice, and following
+the official editions exactly. A permanently published website of the whole
+temporale fails the first condition on its face and is not "for use at a
+specific Mass" at all.
+"""
+imprimatur_does_not_supply_it = """
+An imprimatur is an ordinary's judgement under canon law that a book is free of
+doctrinal error. It conveys no proprietary interest in anyone's text and cannot
+license the reproduction of a third party's copyrighted translation. The two
+instruments answer different questions and neither substitutes for the other.
+This has been the repository's position since before this record and nothing
+found here disturbs it.
+"""
+source_ids = [
+  "passage.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.permissions-and-royalties",
+  "artifact.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.what-is-icel-html",
+]
+
+[public_celebration]
+question = "Does a text said aloud in public, week after week, fall into the public domain?"
+answer = "No. There is no such doctrine."
+reasoning = """
+The intuition behind the question is a real thing misremembered. Before 1989,
+United States law did attach consequences to publication without the required
+notice, and a work could be forfeited that way. The Berne Convention
+Implementation Act of 1988 removed the notice requirement for works published on
+or after 1 March 1989, and even before that the rule was about publication of
+copies, not about performance.
+
+Reciting or singing a text is a performance. Performance is one of the rights
+the owner holds; exercising it, or licensing others to exercise it, is the
+opposite of abandoning the work. Nor does the fact that a congregation is
+expected to say the words along with the celebrant amount to a dedication: the
+same is true of every hymn under copyright that a parish sings from a licensed
+hymnal.
+
+Recording this because the argument is intuitive, is made often, and is wrong,
+and because an intuitive wrong argument left unanswered is one that gets made
+again.
+"""
+
+[the_1973_translation]
+question = "Is the first ICEL Sacramentary of 1973 available instead?"
+answer = "No. It is in copyright, and it is not the approved text either."
+reasoning = """
+The 1973 English is ICEL's work under its own notice in the same form as the
+2011 text -- ICEL's current acknowledgement table shows the same corporate claim
+on its other translations by year, the Lectionary for Mass at 1969, 1981 and
+1997 and Eucharistic Prayers for Masses with Children at 1975. A United States
+work published in 1973 with notice is protected for 95 years from publication,
+so the 1973 Sacramentary does not enter the public domain until the end of 2068.
+The renewal question that hangs over a 1943 imprint does not arise: renewal
+became automatic for works first published from 1964 onwards.
+
+Age is therefore not a route, and it will not be a route in any reader's
+lifetime. Two further things are worth saying so nobody reaches for it as a
+lesser evil. The 1973 text is no longer the approved translation anywhere in the
+English-speaking world; printing it beside the current Latin would misdescribe
+the book. And it was a dynamic-equivalence rendering that in many orations does
+not stand in a word-for-word relation to the Latin at all, which is the very
+property that made it unusable as a study text and provoked its replacement.
+"""
+
+[the_ellc_grant]
+question = "The project already publishes nine texts under a free grant. Does that grant reach the orations?"
+answer = "No. It is not close, and its bound is explicit."
+reasoning = """
+The grant is the English Language Liturgical Consultation's, over Praying
+Together (1998): "The texts in Praying Together may be used freely and without
+the need for prior permission. The liturgical text(s) should be properly
+acknowledged." This repository relies on it, correctly, and carries the
+acknowledgement it requires wherever the texts are served.
+
+Its scope is the ecumenical common texts and nothing else: the Lord's Prayer,
+Kyrie eleison, Gloria in excelsis, the Nicene and Apostles' Creeds, the Sursum
+corda, the Sanctus and Benedictus, the Agnus Dei, the Gloria Patri, the Te Deum
+and the three gospel canticles. Nine of them are used here, in the Order of Mass
+inventory. Every one is an invariable text of the Ordinary. Not one is a proper,
+and no oration of any Sunday or feast is within a hundred miles of the grant.
+
+The Consultation is also not a Catholic body and its texts are not the approved
+English of the Roman Rite. Where the two can be compared the difference is
+immediate: ELLC reads "And also with you" where the 2011 Missal reads "And with
+your spirit", and "We believe in one God" where it reads "I believe in one God".
+Treating an ELLC text as a Roman Missal text would be a rights error and an
+accuracy error at once.
+"""
+source_ids = [
+  "artifact.english-language-liturgical-consultation.praying-together.1998.permissions-page",
+  "artifact.english-language-liturgical-consultation.praying-together.1998.reproduction-guidelines",
+]
+
+[other_freely_granted_corpora]
+question = "Is there any other body of English liturgical text under a free grant that reaches these orations?"
+answer = "None was found, and the near misses are instructive."
+examined = """
+Four were examined.
+
+The ELLC texts, above: a real grant, bounded to the common Ordinary texts.
+
+Divinum Officium, examined and rejected in an earlier review and rejected again
+here. Its repository carries an MIT licence, but that licence covers the
+software. Its own sources page says the English of the Mass came from the
+Tridentine Latin Rite Missal Project "with the permission of the owner", from a
+collection by Fr Brian T. Austin FSSP described only as "a free project", and
+from The Catholic Missal (New York: P. J. Kenedy and Sons, 1943). A personal
+permission granted to that project's author is not a licence to this one, an
+informal declaration is not a rights record, and a 1943 American imprint raises
+a renewal question nobody has answered. An MIT licence on a repository is not
+evidence that the text inside it was the repository's to license. It is in any
+case a witness to the 1962 books, not to the postconciliar Missal.
+
+The pre-1930 English hand missals, of which this repository already carries one:
+the 1861 Cummiskey. These are genuinely in the public domain and are already
+used, for the roman-1962 calendar, where 153 orations carry their English. They
+cannot serve the postconciliar calendar, because they translate the Tridentine
+Latin. Where the reform kept a prayer unchanged the old English does render the
+same words; but the reform edited a great many of the prayers it kept, and the
+divergences are exactly the kind that read correctly and say something else.
+This route was tested mechanically against the 1962 index in this repository on
+2026-08-01: of 215 postconciliar orations, only four are word-for-word identical
+to a 1962 formulary under a normalising comparison, and ten more reach 0.95
+similarity. It is a small yield bought at a high risk, and it was not taken.
+
+National conferences' own vernacular texts, for territories outside ICEL's
+membership. Every one of them is a conference's property under Liturgiam
+authenticam n. 117 in the same way ICEL's is, and none is published under a
+free grant. Nothing here was found.
+"""
+
+[seeking_a_licence]
+question = "What would it take to carry the approved English?"
+answer = "A written grant from ICEL, and a second decision this repository cannot presently execute."
+what_would_be_involved = """
+The route is not secret and not hostile. ICEL states it: requests go to the ICEL
+Secretariat, 1100 Connecticut Avenue NW, Suite 710, Washington DC 20036, and to
+permission@eliturgy.org, and texts are made available to publishers "without
+distinction, on a non-exclusive basis". A request would have to state the extent
+sought (the orations of the temporale, or the whole Missal), the medium (a
+freely readable website), whether anything is sold (nothing is), and the
+acknowledgement carried. A royalty or flat fee may be assessed even for material
+not used during celebration. The position of a member conference would have to
+be settled beside it, since ICEL provides content to the conferences and the
+conferences authorise publishers.
+
+Only the project owner can ask, and only the project owner should: a licence
+request is a representation about who is asking and what they will do, and no
+agent may make one.
+"""
+the_machinery_is_not_ready = """
+This has to be said plainly, because a licence obtained tomorrow could not
+safely be used. A licence to reproduce is not a licence to publish, and the two
+are separate decisions. The translations contract already anticipates the first:
+an entry with rights = "licensed" carries the notice its licensor requires. The
+second is handled nowhere.
+
+`mass-propers structure` filters translations by their rights basis and
+publishes only "public-domain" and "project-created", so a licensed text would
+in fact be withheld from the site today -- which is the safe failure, but by
+accident of a filter and not by anyone's decision, and there is no way to say
+"tracked, licensed, and publishable" or "tracked, licensed, and not". The Knox
+bible is the precedent for the second state and has its own machinery
+(`publishable = false` on the edition, and `public-alpha` omitting it); no
+equivalent exists for a calendar translation. Build that before writing any
+licensed text into a propers file.
+"""
+
+[the_route_that_works]
+question = "What may be published?"
+answer = "A translation of the ancient prayer, wherever the Missal prints the ancient prayer."
+reasoning = """
+Most of the postconciliar orations are not compositions of the reform. They were
+restored from the Veronense, the Old Gelasian and the Hadrianum -- books of the
+sixth, seventh and eighth centuries, in critical editions of 1896, 1894 and 1915.
+Nothing in any of them is in copyright anywhere.
+
+Where the Missal prints such a prayer word for word, the words on the Missal's
+page are the ancient words. Copyright protects original expression; a verbatim
+reproduction of a public-domain text is not original, and copyright in a
+derivative work extends only to the material contributed by its author, not to
+the pre-existing material it uses. A compilation copyright in the Missal as a
+book -- in its selection and arrangement -- would not reach the text of a single
+prayer that its editors did not write. So an English of that prayer is an
+English of a public-domain text, however the reader happens to have met it.
+
+Where the reform altered the ancient prayer, the alteration is the reform's, and
+the question becomes how much of it there is. This project's rule is stated in
+the postconciliar translations inventory and applied there prayer by prayer: an
+English is published only where the Missal's Latin adds nothing to its ancient
+witness beyond orthography, punctuation, word order, an omission, or a
+substitution too small to be anyone's authorship, and every such difference is
+recorded in the entry, word for word, so that a reader can see the whole of what
+was judged. Where the reform composed, recentonised, or rewrote, nothing is
+published and the absence is recorded with its reason.
+
+The line between a de minimis edit and an authored one is a judgement, and it is
+the project's judgement, made conservatively and shown in full rather than
+asserted. It is the only part of this record that a reasonable person could
+disagree with, which is why the evidence for every entry travels with it.
+"""
+what_is_published = """
+Project-created English, rights = "project-created", carrying no source_id
+because the project is its own witness, offered under CC BY 4.0 with the
+project's authorship identified at the point of use. It is never presented as
+approved, as liturgical, or as ICEL's; the Latin stands beside it; and it must
+not be used for recitation. See
+src/sources/inventories/postconciliar-proper-translations-v1.toml for the
+entries, the witnesses, the divergences and the count.
+"""

@@ -251,6 +251,19 @@ jurisdiction and basis, license, permission, legal exception, restriction, or
 unresolved status. `tracked` requires an affirmative recorded distribution
 basis; online availability and successful download are insufficient.
 
+**Settle a recurring rights question once, in a rights record.** Where the same
+question governs a whole body of material and keeps being reopened, the answer
+belongs in one file under `src/sources/inventories/`, with its citations, the
+routes examined and refused, and what would change if the position changed. A
+rights position stated only in prose, in three places, in three wordings, is
+three positions. `liturgical-english-rights-v1.toml` is the first of these: it
+settles whether the English of the postconciliar Roman Missal may be published
+here, and it exists because that question had been answered independently at
+least three times and the reasons had been kept nowhere. A rights record is not
+legal advice and states its jurisdiction; it is the project's own reading, held
+to the same standard as any other claim, and citable so that the next reader
+inherits the reasoning instead of the conclusion.
+
 Segments have no independent storage disposition or rights declaration. They
 inherit both from their one controlling artifact, and a segment cannot make
 restricted or remote bytes trackable. When a schema version 2 artifact records

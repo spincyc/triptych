@@ -1,6 +1,6 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-07-31"
+audited_on = "2026-08-01"
 inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:96bbce70753710f5725db3b2168a83555a593192d63c4be17b7b38132e396da3"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
@@ -8,7 +8,7 @@ classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e
 canonical_catalog_snapshot = "sha256:f0a40121c9e9b904acf8a0606b575df38659a17532e7ff3e9a1bca69c2cf0f3a"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:eb0bbe83e9d24f48655b4219151c05b81ab0e84b777e687911c1da8d5a827a9f"
+snapshot = "sha256:4d0cd2810f3bed113462cf1f4254207e2e11b8fe4db0e22ae1b298b342dadf5e"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -1351,6 +1351,26 @@ reviewed_on = "2026-07-31"
 notes = "Reviewed as the distinct source family for Expositio Psalmorum. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers."
 
 [[families]]
+id = "family.catholic-church.ancient-latin-sacramentaries"
+label = "Ancient Latin sacramentaries in their nineteenth- and twentieth-century critical editions"
+kind = "work"
+source_categories = ["historical-primary", "liturgical"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p2"
+canonical_ids = ["artifact.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912.ia-djvu-ocr-lelibermozarabic06cath", "artifact.catholic-church.missale-bobbiense.lowe-1917.ia-djvu-ocr-bobbiomissalgall01cath", "artifact.catholic-church.missale-gothicum.bannister-1917.ia-djvu-ocr-missalegothicumg01cath", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-libersacramentorum", "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-djvu-ocr-gregoriansacrame00cath", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariumle00cath", "corpus.catholic-church.ancient-sacramentaries-2026-08-01", "edition.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912", "edition.catholic-church.missale-bobbiense.lowe-1917", "edition.catholic-church.missale-gothicum.bannister-1917", "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894", "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915", "edition.catholic-church.sacramentarium-veronense.feltoe-1896", "work.catholic-church.liber-mozarabicus-sacramentorum", "work.catholic-church.missale-bobbiense", "work.catholic-church.missale-gothicum", "work.catholic-church.sacramentarium-gelasianum-vetus", "work.catholic-church.sacramentarium-gregorianum-hadrianum", "work.catholic-church.sacramentarium-veronense"]
+trace_patterns = ["Bobbio [Mm]issal", "Gelasian(um)? [Ss]acramentar", "Hadrianum", "Liber mozarabicus", "Missale Gothicum", "Sacramentarium (Veronense|Leonianum|Gregorianum)", "catholic-church\\.liber-mozarabicus", "catholic-church\\.missale-(gothicum|bobbiense)", "catholic-church\\.sacramentarium-"]
+reviewed_on = "2026-08-01"
+notes = "A new family entered on 2026-08-01, and new because nothing in this repository previously held the sources of the Roman orations themselves. Six works, six editions, eight artifacts: the Veronense in Feltoe 1896 and the Old Gelasian in Wilson 1894, each in two independent optical text layers so the two readings can be compared, the Hadrianum in Wilson 1915, and the Mozarabic, Gothic and Bobbio books as the declared boundary of a negative result. It is deliberately NOT filed under any Roman Missal family: these are the ancestors of the Missal and not printings of it, and the point of the family is that a prayer standing here is a prayer nobody owns. Every artifact is remote with rights_status unresolved, because the underlying printings are public domain by date while the Internet Archive optical layers carry no established distribution grant; the digests pin the bytes so a reader can refetch and check. The evidence ceiling is artifact-pin and it is a real ceiling: no page image has been collated, and every match drawn from this family is a lead. The corpus record is the versioned search boundary the postconciliar translations inventory measures its census against."
+
+[[families]]
 id = "family.catholic-church.caeremoniale-episcoporum"
 label = "Caeremoniale Episcoporum"
 kind = "work"
@@ -1805,7 +1825,7 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p1"
-canonical_ids = ["artifact.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25.vatican-html-01c63c12", "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25", "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25.complete-text", "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001"]
+canonical_ids = ["artifact.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25.vatican-html-01c63c12", "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25", "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25.111", "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25.complete-text", "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001"]
 trace_patterns = ["\\bLiturgiam authenticam\\b", "congregation-for-divine-worship-and-the-discipline-of-the-sacraments\\.liturgiam-authenticam-2001"]
 reviewed_on = "2026-07-31"
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
@@ -3549,6 +3569,26 @@ canonical_ids = ["artifact.institute-for-new-testament-textual-research.editio-c
 trace_patterns = ["institute\\-for\\-new\\-testament\\-textual\\-research\\.editio\\-critica\\-maior\\-mark"]
 reviewed_on = "2026-07-31"
 notes = "Reviewed as the distinct source family for Novum Testamentum Graecum: Editio Critica Maior, Volume I.2: The Gospel of Mark. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers."
+
+[[families]]
+id = "family.international-commission-on-english-in-the-liturgy.publication-policies"
+label = "ICEL publication and copyright policies"
+kind = "work"
+source_categories = ["institutional-current"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "officially-mutable"
+freshness_rule = "dated-state"
+evidence_ceiling = "passage-pin"
+disposition = "bind-existing"
+priority = "p2"
+canonical_ids = ["artifact.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.copyright-policy-html", "artifact.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.what-is-icel-html", "edition.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01", "passage.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.permissions-and-royalties", "work.international-commission-on-english-in-the-liturgy.publication-policies"]
+trace_patterns = ["International Commission on English in the Liturgy", "\\bICEL\\b", "icelweb\\.org", "international-commission-on-english-in-the-liturgy\\."]
+reviewed_on = "2026-08-01"
+notes = "A new family entered on 2026-08-01. It holds the rightsholder's own published terms, not any ICEL liturgical text: no ICEL translation is registered, retained or reproduced anywhere in this repository, and this family must never become the place where one arrives. Its purpose is evidentiary. This repository declines to publish the approved English of the Roman Missal, and a refusal resting only on the project's own prose is an assertion; resting on the Commission's own statement of terms it is evidence. Two remote artifacts, hashed on the day read, and one passage recording what the copyright page states about acknowledgement, permissions, royalties, and the single narrow royalty-free class that a freely published web corpus does not fall inside. Officially mutable with a dated-state freshness rule: these are living web pages, and a rights position taken on them must be re-read before it is relied on again."
 
 [[families]]
 id = "family.irenaeus.adversus-haereses-anf1-1887"
@@ -7309,6 +7349,26 @@ canonical_ids = ["artifact.world-health-organization.icd-11-clinical-description
 trace_patterns = ["world-health-organization\\.icd-11-clinical-descriptions-and-diagnostic-requirements"]
 reviewed_on = "2026-07-31"
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
+
+[[families]]
+id = "family.world-intellectual-property-organization.wipo-lex-berne-contracting-parties"
+label = "WIPO Lex table of Berne Convention contracting parties"
+kind = "work"
+source_categories = ["institutional-current"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "officially-mutable"
+freshness_rule = "dated-state"
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p3"
+canonical_ids = ["artifact.world-intellectual-property-organization.wipo-lex-berne-contracting-parties.web-2026-08-01.contracting-parties-html", "edition.world-intellectual-property-organization.wipo-lex-berne-contracting-parties.web-2026-08-01", "work.world-intellectual-property-organization.wipo-lex-berne-contracting-parties"]
+trace_patterns = ["Berne Convention", "WIPO Lex", "world-intellectual-property-organization\\."]
+reviewed_on = "2026-08-01"
+notes = "A new family entered on 2026-08-01, holding one thing: the depositary's own table of who is party to the Berne Convention and from when. It exists so that the claim that a work of the Holy See is protected in the United States rests on a row someone read -- Holy See, accession 19 July 1935, in force 12 September 1935 -- rather than on a recollection. A status table is facts and not expression, which is why quoting one row raises no rights question of its own; the delivery is still remote and unresolved, because no reuse grant was established for the page."
 
 [[review_units]]
 owner_id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
