@@ -536,10 +536,14 @@ def _validate_family(
         "canonical_ids",
         "trace_patterns",
         "reviewed_on",
-        "membership_snapshot",
         "notes",
     }
-    if not isinstance(family, dict) or set(family) != expected:
+    # Optional, and its ABSENCE is meaningful: a family with no fingerprint has
+    # no record of what its review covered, so acceptance treats it as moved and
+    # asks for a fresh review. That is the safe direction, and it lets a writer
+    # that has not learned the field yet still produce a valid ledger.
+    optional = {"membership_snapshot"}
+    if not isinstance(family, dict) or not expected <= set(family) or set(family) - expected - optional:
         return None, [f"{label} must contain exactly the documented family fields"]
     normalized = dict(family)
     family_id = family.get("id")
@@ -1373,7 +1377,7 @@ def main() -> int:
             family["id"]
             for family in old["families"]
             if family["canonical_ids"]
-            and family["membership_snapshot"]
+            and family.get("membership_snapshot")
             != membership_snapshot(family["canonical_ids"])
             and family["reviewed_on"] != args.audited_on
         )
