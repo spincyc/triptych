@@ -1926,12 +1926,12 @@ release attachment, announcement, or promotion.
 | `src/web/browser/history/index.html` | `c7f05747ff39cd86bb20e146661706ad487ebe6d93c9a210875951bd41f7a5fb` |
 | `src/web/browser/liturgy/assembly-model.js` | `de239c0c7efddbfbaeba2d3ee5a9439630abc8965e61765dfd7205e4b9181789` |
 | `src/web/browser/liturgy/day.css` | `2248dc20c8dd57070ee44dd3edb76a360fec8ec9c530d301d6511287ff80f6af` |
-| `src/web/browser/liturgy/day.html` | `228f0f9e2161e7ed90944e8aee5812c1401bb32df0ba705f3ac2c87e39c56c3d` |
+| `src/web/browser/liturgy/day.html` | `35e6c7709f3e71253d58d454c2801fcda306c034cffe320cfab349b78fbda165` |
 | `src/web/browser/liturgy/day.js` | `a27cd408a3d7678ee8e7067526a215df7db35e92fcb530161904c31afae078ad` |
-| `src/web/browser/liturgy/index.html` | `85fef6563dac3f8a066c50e4458f13cd8f16a867ce66459959d52781fa81cc96` |
+| `src/web/browser/liturgy/index.html` | `9aa36595f9511e3b9614bcd9dec3f645e343bfbc802d4cbe284abd649efa4db4` |
 | `src/web/browser/liturgy/liturgy.css` | `a8d2af04ae3fc0af91fec2234816bdffb6daaf2fb61cb772f898bb8342cee4cd` |
 | `src/web/browser/liturgy/liturgy.js` | `7283e6e1b0308ac159b37324dcc9edb118defe291b1fc875769f6f44c1cf5d1a` |
-| `src/web/browser/scripture/index.html` | `6f490a92a796981276348447ef259c39d5e6257bb4ea71007fedce34e0ff833f` |
+| `src/web/browser/scripture/index.html` | `393267783269d130e0a04e5336e02302380963c4576a5f018b5a01cd1277f5e8` |
 | `src/web/browser/scripture/plan-model.js` | `c0c7a6635844f2e88e2d8d2e290790fa05f73ba1153f59e380812e3b8775ee51` |
 | `src/web/browser/scripture/plan.js` | `530644b5db9e84605cfd7be5a6cca07b711977c0b8db92de31154a655f318444` |
 | `src/web/browser/scripture/scripture.css` | `ca64bcd4bb493cf28d375aaf8b3add39a39d5e8a7f8cd6aaa480f98c982c911f` |
@@ -1944,7 +1944,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/sources/sources.css` | `8e1fc181aac24a54b256672cc0351b41358c9648d2baa293a9c8b717f7218ede` |
 | `src/web/browser/sources/sources.js` | `a39d4a90f261cbff4ce9b36879fe1b4308f59091fb67e242b5a66932ffa27416` |
 | `src/web/browser/texts/catalogue-model.js` | `1bd5266d4b2d469403ad8efa63af8c21838d745258295f548bdd7c1f2603996a` |
-| `src/web/browser/texts/index.html` | `d745380b29b157513f7522d3fa359c49889311d7f65e7635a70e6c3f9b596476` |
+| `src/web/browser/texts/index.html` | `66f0e6d093e5b25905c45b11ee1e79d3850ae0752825ec6ddbcaca24f4862e72` |
 | `src/web/browser/texts/texts.css` | `b977867ed055026d0280e61945bf74d90730443e3f98b43835098bf252f704a1` |
 | `src/web/browser/texts/texts.js` | `4c951ccf9b86fa8a125a6bc4439072d866a28a9eb9c6dc8ac0f586686db0ad40` |
 | `src/web/data/bibles.json` | `2833103696cfde54ee1266c7d74909beb433a7951f216c423858868b9d4001d6` |
