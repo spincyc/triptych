@@ -9,11 +9,16 @@ once: a companion file is skipped and named, and a file nobody claims still
 fails loudly.
 """
 
+import argparse
+import inspect
 import json
 import subprocess
 import sys
 import unittest
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -30,6 +35,17 @@ from _calendars import (  # noqa: E402
 CALENDARS = ROOT / "src" / "sources" / "calendars"
 TOOL = ROOT / "tools" / "calendar-rubrics"
 DATA = ROOT / "src" / "web" / "data" / "structure" / "rubrics"
+
+
+def load_tool(name: str):
+    loader = SourceFileLoader(f"_{name.replace('-', '_')}", str(ROOT / "tools" / name))
+    spec = spec_from_loader(loader.name, loader)
+    module = module_from_spec(spec)
+    loader.exec_module(module)
+    return module
+
+
+rubrics = load_tool("calendar-rubrics")
 
 
 class DiscoveryTests(unittest.TestCase):
@@ -199,10 +215,143 @@ class SolvedCaseTests(unittest.TestCase):
         self.assertEqual(finished.returncode, 0, finished.stderr or finished.stdout)
         payload = json.loads(finished.stdout)
         solved = payload["solved_cases"]
-        if solved["skipped"]:
-            self.skipTest(f"solved cases were not run: {solved['skipped']}")
+        # There is no `skipped` to consult any more, and this test no longer
+        # excuses itself on one. Every reason the cases could not run is a
+        # failure inside the tool, so reaching here at all means they ran.
+        self.assertNotIn("skipped", solved)
         self.assertGreater(solved["declared"], 0)
         self.assertEqual(solved["verified"], solved["declared"])
+        self.assertTrue(solved["asserted"], "the cases assert no part of the model's result")
+
+
+class UnrunIsNotPassedTests(unittest.TestCase):
+    """A gate that could not run must not report that it passed.
+
+    Both were skips returning `status: ok`: deleting `assembly-model.js`, or
+    running where `node` is absent, printed a green line over a derivation
+    nobody had exercised. That is the TASK-110 failure — "0 stale bindings"
+    printed over twenty-one real ones — and a green line asserts that something
+    was confirmed.
+    """
+
+    def arguments(self) -> argparse.Namespace:
+        return argparse.Namespace(
+            root=str(CALENDARS), out=str(ROOT / "src" / "web" / "data"),
+            calendar=None, verbose=False, json=False, format="text",
+        )
+
+    def setUp(self) -> None:
+        try:
+            import yaml  # noqa: F401
+        except ImportError:
+            self.skipTest("PyYAML is not installed")
+
+    def test_an_absent_model_is_a_failure(self) -> None:
+        with mock.patch.object(rubrics, "MODEL", ROOT / "src/web/browser/liturgy/nothing-here.js"):
+            with self.assertRaises(rubrics.SourceError) as raised:
+                rubrics.run_check(self.arguments())
+        self.assertIn("absent", str(raised.exception))
+
+    def test_an_absent_interpreter_is_a_failure(self) -> None:
+        with mock.patch.object(rubrics.shutil, "which", return_value=None):
+            with self.assertRaises(rubrics.SourceError) as raised:
+                rubrics.run_check(self.arguments())
+        self.assertIn("node is not installed", str(raised.exception))
+
+
+class ExpectedFieldTests(unittest.TestCase):
+    """A field nobody asserted must not read like a field that passed.
+
+    `compare_one` asked `if "<field>" in expect` against no list at all, so a
+    solved case with every one of its field names misspelled compared nothing
+    and still counted towards "15 of 15 verified". The tool already knew the
+    stricter idiom one screen above: `REQUIRED_TOP` lists the fields a source
+    must carry rather than inferring them.
+    """
+
+    BRANCH = {
+        "option": None,
+        "winner": {"id": "passion-wednesday", "row": 22, "source": "index"},
+        "settled": True,
+        "losers": [{"id": "s-patricii-episcopi-confessoris", "disposition": "commemorated"}],
+        "orations": {"low_mass": [{}, {}], "sung_non_conventual": [{}]},
+        "conditions": [],
+    }
+
+    def result(self) -> dict:
+        return {"options": [json.loads(json.dumps(self.BRANCH))]}
+
+    def case(self, **fields) -> dict:
+        return {"id": "case-1a", "source": "worked-cases.md", "date": "2027-03-17",
+                "why": "a worked ruling", **fields}
+
+    def test_a_case_whose_fields_agree_reports_nothing(self) -> None:
+        found = rubrics.compare(
+            self.case(expect={"winner": "passion-wednesday", "winner_row": 22, "settled": True,
+                              "commemorated": ["s-patricii-episcopi-confessoris"],
+                              "orations_low_mass": 2, "orations_sung_non_conventual": 1}),
+            self.result(), "roman-1962",
+        )
+        self.assertEqual(found, [])
+
+    def test_a_misspelled_field_is_an_error_and_not_silence(self) -> None:
+        found = rubrics.compare(
+            self.case(expect={"winnner": "passion-wednesday"}), self.result(), "roman-1962")
+        self.assertEqual(len(found), 1, found)
+        self.assertIn("winnner", found[0])
+
+    def test_one_misspelling_beside_correct_fields_is_still_caught(self) -> None:
+        found = rubrics.compare(
+            self.case(expect={"winner": "passion-wednesday", "winner_rows": 22}),
+            self.result(), "roman-1962",
+        )
+        self.assertEqual(len(found), 1, found)
+        self.assertIn("winner_rows", found[0])
+
+    def test_a_case_that_expects_nothing_is_refused(self) -> None:
+        found = rubrics.compare(self.case(expect={}), self.result(), "roman-1962")
+        self.assertEqual(len(found), 1, found)
+        self.assertIn("asserts nothing", found[0])
+
+    def test_a_case_carrying_no_expectation_block_is_refused(self) -> None:
+        found = rubrics.compare(self.case(), self.result(), "roman-1962")
+        self.assertEqual(len(found), 1, found)
+        self.assertIn("exactly one", found[0])
+
+    def test_a_case_carrying_both_blocks_is_refused(self) -> None:
+        found = rubrics.compare(
+            self.case(expect={"winner": "passion-wednesday"}, expect_by_option={}),
+            self.result(), "roman-1962",
+        )
+        self.assertEqual(len(found), 1, found)
+        self.assertIn("exactly one", found[0])
+
+    def test_an_unknown_field_on_the_case_itself_is_refused(self) -> None:
+        found = rubrics.compare(
+            self.case(note="a stray field", expect={"winner": "passion-wednesday"}),
+            self.result(), "roman-1962",
+        )
+        self.assertEqual(len(found), 1, found)
+        self.assertIn("note", found[0])
+
+    def test_an_empty_branch_table_asserts_nothing_and_is_refused(self) -> None:
+        found = rubrics.compare(self.case(expect_by_option={}), self.result(), "roman-1962")
+        self.assertEqual(len(found), 1, found)
+        self.assertIn("asserts nothing", found[0])
+
+    def test_every_declared_field_is_one_compare_one_actually_compares(self) -> None:
+        """The list and the comparison must not drift apart.
+
+        A careful enumeration and a careless comparison sitting in one file with
+        nothing between them is how this defect arose in the first place.
+        """
+        source = inspect.getsource(rubrics.compare_one)
+        for field in rubrics.EXPECTATIONS:
+            with self.subTest(field=field):
+                self.assertIn(f'"{field}"', source, f"{field} is declared and never compared")
+
+    def test_every_declared_field_names_a_part_of_the_model_result(self) -> None:
+        self.assertLessEqual(set(rubrics.EXPECTATIONS.values()), set(self.BRANCH))
 
 
 if __name__ == "__main__":

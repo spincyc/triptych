@@ -202,9 +202,13 @@ Two consequences are worth stating because they are easy to erode:
 
 The derivation itself lives in `src/web/browser/liturgy/assembly-model.js` and
 exists once. `calendar-rubrics check` runs that same file under node against the
-solved cases each source carries, so the page and the check cannot drift; where
-node is absent the check says which verification it did not perform instead of
-passing quietly.
+solved cases each source carries, so the page and the check cannot drift. A
+missing model and a missing `node` are hard failures there, for the reason a
+file with an unclaimed schema is one: naming a verification that did not happen
+is still a green line, and a green line asserts that something was confirmed.
+Each solved case may assert only fields the tool enumerates, so a misspelled
+field name is an error rather than a field nobody checked; the fields no case
+asserts are listed on every run.
 
 ## Assembling the site
 

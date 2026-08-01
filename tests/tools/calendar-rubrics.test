@@ -99,6 +99,21 @@ for want in '"calendars"' '"status"'; do
 	fi
 done
 
+# `status: ok` is not on its own evidence that the solved cases ran. Grepping
+# for two keys was the whole of this assertion, which is why deleting the model
+# left every surface here green while nothing replayed the browser's derivation.
+python3 - "$sandbox/check.json" <<'PY'
+import json, sys
+
+solved = json.load(open(sys.argv[1], encoding="utf-8"))["solved_cases"]
+assert "skipped" not in solved, "a skipped run must be a failure, never a reported field"
+assert solved["declared"] > 0, solved
+assert solved["verified"] == solved["declared"], solved
+# Which parts of the derivation the cases rule on, so a shrinking gate is
+# visible here rather than only in the tool's own output.
+assert solved["asserted"], solved
+PY
+
 if run_tool check --format nonesuch >/dev/null 2>&1; then
 	echo "expected failure for an unknown format" >&2
 	exit 1

@@ -691,8 +691,10 @@ check-calendar-masses:
 
 # Validates the rubrical precedence sources, refuses a stale generated layer,
 # and runs the browser's own derivation over each source's solved cases. Needs
-# PyYAML for the sources and node for the derivation; both are skipped rather
-# than failed, and the tool says which verification it did not perform.
+# PyYAML for the sources and node for the derivation. A missing node is a
+# failure inside the tool and not a skip: the solved cases are the only thing
+# holding assembly-model.js to the tracked tables, and a run that could not
+# exercise them has confirmed nothing to report as a pass.
 check-calendar-rubrics:
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) tools/tpt calendar-rubrics check; \

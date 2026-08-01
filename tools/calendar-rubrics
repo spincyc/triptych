@@ -30,7 +30,10 @@ entry must surface here instead of vanishing into a default.
 *It does not check the derivation in a second implementation.* The browser owns
 the derivation, in `src/web/browser/liturgy/assembly-model.js`, and `check` runs
 that same file under node against the solved cases each source carries. A Python
-re-implementation would drift from the page it is meant to hold.
+re-implementation would drift from the page it is meant to hold. A missing model,
+a missing `node` and a source with no solved case are therefore failures and not
+skips: this is the only thing holding that file to the tracked tables, and a run
+that could not exercise it has confirmed nothing to report as a pass.
 
 *It does not date what the calendar guidance leaves undated.* The Ember Days of
 Advent and September are not placed by `calendar-days`, so a weekday that could
@@ -66,15 +69,16 @@ EXAMPLES = {
             "tools/calendar-rubrics check --out build/example-web",
             (
                 "postconciliar: 268 masses classified over 12 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
-                "roman-1962: 459 masses classified over 28 bases and 28 rows, 10 implied-day rules, 6 questions l... [+8 chars]",
+                "roman-1962: 460 masses classified over 28 bases and 28 rows, 10 implied-day rules, 7 questions l... [+8 chars]",
                 "solved cases: 15 of 15 verified against the browser's model",
+                "  asserting 4 of 17 fields the model returns; no case asserts absent, candidates, ceilings, choi... [+91 chars]",
             ),
-            "check compares --out's already-written browser files against the sources, so it reports a stale --out as a failure; this one was pointed at a freshly written untracked copy",
+            "check compares --out's already-written browser files against the sources, so it reports a stale --out as a failure; this one was pointed at a freshly written untracked copy. A missing node or model is a failure here, never a skip",
         ),
         Example(
             "tools/calendar-rubrics check --out build/example-web --json",
             (
-                "{\"calendars\":[{\"bases\":12,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":268,... [+210 chars]",
+                "{\"calendars\":[{\"bases\":12,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":268,... [+402 chars]",
             ),
         ),
     ),
@@ -82,12 +86,12 @@ EXAMPLES = {
         Example(
             "tools/calendar-rubrics assign --calendar roman-1962",
             (
-                "roman-1962: 459 masses",
+                "roman-1962: 460 masses",
                 "  advent-1: row 6 \u2014 row-6-sunday",
                 "  advent-2: row 6 \u2014 row-6-sunday",
                 "  advent-3: row 6 \u2014 row-6-sunday",
                 "  advent-4: row 6 \u2014 row-6-sunday",
-                "... 455 more lines",
+                "... 456 more lines",
             ),
         ),
         Example(
@@ -102,8 +106,9 @@ EXAMPLES = {
             "tools/calendar-rubrics check --out build/example-web",
             (
                 "postconciliar: 268 masses classified over 12 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
-                "roman-1962: 459 masses classified over 28 bases and 28 rows, 10 implied-day rules, 6 questions l... [+8 chars]",
+                "roman-1962: 460 masses classified over 28 bases and 28 rows, 10 implied-day rules, 7 questions l... [+8 chars]",
                 "solved cases: 15 of 15 verified against the browser's model",
+                "  asserting 4 of 17 fields the model returns; no case asserts absent, candidates, ceilings, choi... [+91 chars]",
             ),
             "read-only first: `check` validates the sources and reports whether --out is already current",
         ),
@@ -535,14 +540,60 @@ def name_of(result: dict, key: str) -> str:
     return key
 
 
+# Everything a solved case may assert, listed rather than inferred -- the same
+# discipline REQUIRED_TOP applies to the sources themselves. `compare_one` asked
+# `if "<field>" in expect` against no list at all, so a case that misspelled
+# every one of its field names asserted nothing whatever and still counted
+# towards "15 of 15 verified": a field nobody checked read exactly like a field
+# that passed. The value is the part of the model's own result each field reads,
+# which is what lets `check` report the fields no case asserts.
+EXPECTATIONS = {
+    "arrived": "winner",
+    "commemorated": "losers",
+    "conditional_on_implied": "conditions",
+    "omitted": "losers",
+    "orations": "orations",
+    "orations_low_mass": "orations",
+    "orations_sung_non_conventual": "orations",
+    "reduced": "losers",
+    "settled": "settled",
+    "transferred": "losers",
+    "winner": "winner",
+    "winner_row": "winner",
+}
+
+# What a case carries besides its expectations: what it is, where it was read
+# from, and the date it is worked on. Anything else is a typo, not a note.
+CASE_FIELDS = ("id", "source", "date", "why")
+EXPECT_BLOCKS = ("expect", "expect_by_option")
+
+
 def compare(case: dict, result: dict, where: str) -> list[str]:
     """One solved case against what the model actually derived."""
     problems: list[str] = []
-    identifier = f"{where}: {case['id']}"
+    identifier = f"{where}: {case.get('id') or '<no id>'}"
+
+    unknown = sorted(set(case) - set(CASE_FIELDS) - set(EXPECT_BLOCKS))
+    if unknown:
+        problems.append(
+            f"{identifier}: carries unknown field(s) {unknown}; a solved case carries "
+            f"{sorted(CASE_FIELDS)} and one of {sorted(EXPECT_BLOCKS)}"
+        )
+    held = [block for block in EXPECT_BLOCKS if block in case]
+    if len(held) != 1:
+        problems.append(
+            f"{identifier}: carries {held or 'neither'} of {sorted(EXPECT_BLOCKS)}; a case "
+            "must carry exactly one, or it rules on nothing"
+        )
+        return problems
 
     if "expect_by_option" in case:
+        by_option = case["expect_by_option"] or {}
+        if not by_option:
+            problems.append(f"{identifier}: expect_by_option is empty, so the case asserts nothing")
+            return problems
         derived = {row.get("option"): row for row in result["options"]}
-        for option, expect in case["expect_by_option"].items():
+        for option, expect in by_option.items():
             if option not in derived:
                 problems.append(f"{identifier}: the model derived no branch for option {option!r}")
                 continue
@@ -553,11 +604,30 @@ def compare(case: dict, result: dict, where: str) -> list[str]:
     if len(options) != 1:
         problems.append(f"{identifier}: expected one derivation, the model returned {len(options)}")
         return problems
-    return compare_one(identifier, case["expect"], options[0])
+    problems.extend(compare_one(identifier, case["expect"], options[0]))
+    return problems
+
+
+def asserted_fields(case: dict) -> set[str]:
+    """Which parts of the model's result this case actually rules on."""
+    blocks = [case["expect"]] if "expect" in case else list((case.get("expect_by_option") or {}).values())
+    return {EXPECTATIONS[field] for block in blocks for field in (block or {}) if field in EXPECTATIONS}
 
 
 def compare_one(identifier: str, expect: dict, derived: dict) -> list[str]:
     problems: list[str] = []
+    # Before any comparison: a field this does not know how to check is a
+    # misspelling, and skipping it silently is how a case stops asserting the
+    # very thing it was written to assert.
+    expect = expect or {}
+    unknown = sorted(set(expect) - set(EXPECTATIONS))
+    if unknown:
+        problems.append(
+            f"{identifier}: asserts unknown field(s) {unknown}; a solved case may assert "
+            f"{sorted(EXPECTATIONS)}"
+        )
+    elif not expect:
+        problems.append(f"{identifier}: asserts nothing")
     winner = derived.get("winner")
     got_winner = winner.get("id") if winner else None
     if "winner" in expect and got_winner != expect["winner"]:
@@ -704,14 +774,31 @@ def run_check(arguments: argparse.Namespace) -> dict:
             cases.append({"id": f"{name}/{case['id']}", "date": case["date"], "year": year, "rubrics": payload,
                           "case": case, "calendar": name})
 
+    # A gate that cannot run is not a gate that passed. These three were skips
+    # that still returned `status: ok`, so deleting the model, or running on a
+    # host without node, printed a green line over a derivation nobody had
+    # exercised -- the failure of TASK-110 exactly, where "0 stale bindings" was
+    # printed over twenty-one real ones. There is deliberately no opt-out flag:
+    # an environment genuinely without node can decline to run this check, but
+    # nothing may run it and be told it passed.
     verified = 0
-    skipped = None
+    asserted: set[str] = set()
+    returned: set[str] = set()
     if not cases:
-        skipped = "no solved case could be prepared"
+        problems.append(
+            "no solved case could be prepared, so the browser's model was not exercised at all; "
+            "the solved cases are the only thing holding it to the tracked rubrics"
+        )
     elif not MODEL.is_file():
-        skipped = f"{MODEL.relative_to(ROOT)} is absent"
+        problems.append(
+            f"{MODEL.relative_to(ROOT)} is absent, so the model the solved cases exist to "
+            "hold could not be run"
+        )
     elif not shutil.which("node"):
-        skipped = "node is not installed, so the derivation was not exercised"
+        problems.append(
+            "node is not installed, so the derivation was not exercised; install node "
+            "(the solved cases replay the browser's own model and nothing else does)"
+        )
     else:
         answered = run_model({"cases": [{k: v for k, v in row.items() if k in ("id", "date", "year", "rubrics")}
                                         for row in cases]})
@@ -724,6 +811,9 @@ def run_check(arguments: argparse.Namespace) -> dict:
             if not got.get("ok"):
                 problems.append(f"{row['id']}: the model raised {got.get('error', '')[:300]}")
                 continue
+            asserted |= asserted_fields(row["case"])
+            for branch in got["result"].get("options") or []:
+                returned.update(branch)
             found = compare(row["case"], got["result"], row["calendar"])
             problems.extend(found)
             if not found:
@@ -744,7 +834,20 @@ def run_check(arguments: argparse.Namespace) -> dict:
             }
             for payload in built
         ],
-        "solved_cases": {"declared": len(cases), "verified": verified, "skipped": skipped},
+        # `unasserted` is reported and not failed. A solved case is a ruling
+        # taken from a worked example in the collated publications, and it rules
+        # on one question; requiring every case to assert all seventeen fields
+        # the model returns would turn a ruling into a snapshot of the current
+        # implementation, and the first honest refactor of an unruled field
+        # would fail this gate for a reason no book decides. But a field no case
+        # has ever asserted is exactly where the model can drift unopposed, so
+        # the list is printed on every run rather than left to be discovered.
+        "solved_cases": {
+            "declared": len(cases),
+            "verified": verified,
+            "asserted": sorted(asserted),
+            "unasserted": sorted(returned - asserted),
+        },
         "status": "ok",
     }
 
@@ -801,10 +904,13 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             f"{row['implied_rules']} implied-day rules, {row['unsettled']} questions left open"
         )
     solved = payload["solved_cases"]
-    if solved["skipped"]:
-        print(f"solved cases: {solved['declared']} declared, NOT RUN — {solved['skipped']}")
-    else:
-        print(f"solved cases: {solved['verified']} of {solved['declared']} verified against the browser's model")
+    print(f"solved cases: {solved['verified']} of {solved['declared']} verified against the browser's model")
+    if solved["unasserted"]:
+        covered = len(solved["asserted"])
+        print(
+            f"  asserting {covered} of {covered + len(solved['unasserted'])} fields the model "
+            f"returns; no case asserts {', '.join(solved['unasserted'])}"
+        )
     return 0
 
 
