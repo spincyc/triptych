@@ -34,6 +34,8 @@ from pathlib import Path
 from typing import NamedTuple
 
 import _psalms
+import _psalter
+from _deuterocanon import ALIAS_COLUMNS
 
 # The system a projection projects *into*. Vulgate, because both tracked
 # calendars cite in it, most tracked editions declare it, and the psalm
@@ -61,6 +63,10 @@ ALIAS_KINDS = {
     "not-in-this-edition": "absent",
     "numbering-not-recorded": "unrecorded",
 }
+
+# Overrides that say where the text is not. A row of one of these kinds
+# resolving to something would be claiming both at once.
+REFUSING = ("absent", "unrecorded", "displaced", "split")
 
 
 class Row(NamedTuple):
@@ -100,13 +106,28 @@ def alias_rows(edition_root: Path) -> list[Row]:
     Read rather than re-derived. The alias table is the edition's own statement
     about itself and its answer is final — including a recorded refusal, which is
     a row with an empty `resolves_to` and a kind that says why.
+
+    The header must carry all four columns even when the table is empty. That is
+    not pedantry about a file with no rows in it: the tracked Clementine's table
+    was a two-column header, `kind` and `note` absent entirely, and the two
+    columns it did carry were the two that a row would have had to fill. An
+    empty table saying nothing and a table that cannot say anything read exactly
+    alike from the outside, and the second is what that file was.
     """
     path = _artifact(edition_root, "verse-aliases", "verse-aliases.tsv")
     if path is None:
         return []
     rows: list[Row] = []
     with path.open(encoding="utf-8", newline="") as handle:
-        for line, record in enumerate(csv.DictReader(handle, delimiter="\t"), start=2):
+        reader = csv.DictReader(handle, delimiter="\t")
+        columns = tuple(reader.fieldnames or ())
+        if columns != ALIAS_COLUMNS:
+            raise ProjectionError(
+                f"{path}: the alias table carries the columns {list(columns)}; every "
+                f"table must carry {list(ALIAS_COLUMNS)}, so that an edition recording "
+                f"no departures is distinguishable from one that cannot record any"
+            )
+        for line, record in enumerate(reader, start=2):
             kind = (record.get("kind") or "").strip()
             if kind not in ALIAS_KINDS:
                 raise ProjectionError(
@@ -243,13 +264,80 @@ def displaced_psalms() -> list[Row]:
     return rows
 
 
+def psalter_rows(edition_root: Path, numbering: str) -> list[Row]:
+    """This edition's printed psalter checked against the numbering it declares.
+
+    The check `guidance/versification.md` §1.1 describes and nothing performed.
+    `_psalter` derives, from the tracked concordance and this edition's own verse
+    text, the psalms whose printed extent contradicts the declared numbering, and
+    refuses to load unless every one of them is declared and every declaration is
+    still needed. Deriving it here means the gate rides `index-bible check` and
+    `build` beside the rest of the projection, so an edition that has stopped
+    describing itself stops the build with the psalm named.
+
+    The rows returned are the `split` divergences alone. Every other kind is
+    already an alias row and arrives through `alias_rows`; a split is the one
+    that deliberately writes no alias — the edition prints the head of the cited
+    text at the cited number, and refusing there would take away text it carries
+    at the number the citing books print. Recorded here so that the one kind that
+    changes no resolution is still counted, which is exactly the kind nothing was
+    counting when this was found.
+    """
+    artifacts = edition_root / "artifacts"
+    edition = _psalter.edition_of(artifacts)
+    if edition is None:
+        if _psalter.WORKS in artifacts.resolve().parents:
+            raise ProjectionError(
+                f"{edition_root}: this edition is in the tracked source library and is "
+                f"not registered in _psalter.EDITIONS, so its psalter is checked against "
+                f"nothing; register it, with an empty tuple if it departs nowhere"
+            )
+        # An edition whose artifacts live outside the repository — `knox` reaches
+        # its own with --source-root — cannot be checked from here.
+        return []
+    # Deriving the table runs the whole validation, including the obligations.
+    derived = _psalter.derive_aliases(edition, numbering)
+    if edition == _psalter.WITNESS_EDITION:
+        # The witness's own psalm alias rows are an input to the numbering rather
+        # than an output of it — see `_psalter._witness_aliases` — so they are not
+        # compared against a derivation that reads them.
+        return []
+    tracked = [
+        {"cited_locus": row.cited_locus, "resolves_to": row.resolves_to,
+         "kind": _TRACKED_KINDS[row.kind], "note": row.note}
+        for row in alias_rows(edition_root)
+        if row.cited_locus.split(".")[0] == _psalter.PSALMS_TOKEN
+    ]
+    if tracked != derived:
+        raise ProjectionError(
+            f"{edition_root}: the tracked psalm alias rows are not what "
+            f"scripts/_psalter.py derives ({len(tracked)} tracked against "
+            f"{len(derived)} derived); run `python3 scripts/_psalter.py {edition}` "
+            f"and write the psalm rows back, or correct the declaration"
+        )
+    return [
+        Row(locus, "", "split", note)
+        for locus, note in _psalter.split_loci(edition, numbering)
+    ]
+
+
+# The alias kind each override came from, so a projected row can be compared
+# with the table it was read out of without either spelling being restated.
+_TRACKED_KINDS = {override: kind for kind, override in ALIAS_KINDS.items()}
+
+
 def project(edition_root: Path, numbering: str) -> list[Row]:
     """Every rule this edition needs, sorted, with identity written nowhere."""
-    rows = alias_rows(edition_root) + psalm_rows(numbering) + displaced_psalms()
+    rows = (
+        alias_rows(edition_root)
+        + psalm_rows(numbering)
+        + displaced_psalms()
+        + psalter_rows(edition_root, numbering)
+    )
     for row in rows:
         if row.kind not in OVERRIDES:
             raise ProjectionError(f"{row.cited_locus}: unknown override {row.kind!r}")
-        if row.resolves_to and row.kind in ("absent", "unrecorded", "displaced"):
+        if row.resolves_to and row.kind in REFUSING:
             raise ProjectionError(
                 f"{row.cited_locus}: a {row.kind} row must not resolve to anything"
             )

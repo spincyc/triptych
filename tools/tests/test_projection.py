@@ -78,12 +78,22 @@ class ProjectionTest(unittest.TestCase):
         )
         self.assertTrue(all(isinstance(psalm, int) for psalm in flagged))
 
-    def test_an_edition_in_the_canonical_numbering_needs_no_renumbering(self) -> None:
-        """Identity writes nothing, which is what keeps a projection small."""
-        rows = _projection.project(CLEMENTINE, "vulgate")
-        counts = _projection.divergence(rows)
-        self.assertEqual(counts["renumber"], 0)
-        self.assertEqual(counts["total"], counts["displaced"])
+    def test_an_edition_in_the_canonical_numbering_may_still_renumber(self) -> None:
+        """Declaring a numbering is not the same as printing it.
+
+        This test asserted the opposite until 2026-07-31, on the Clementine, and
+        the Clementine was the edition it was least true of: it declares
+        `vulgate` and restarts Psalms 115 and 147 at verse 1, so nineteen verses
+        answer to different numbers there and `Bible.verse('Ps', 115, 10)`
+        returned the last verse of the psalm. Identity still writes nothing —
+        which is why the Douay, whose printed psalter is the one the numbering is
+        read from, renumbers nowhere.
+        """
+        douay = _projection.divergence(_projection.project(DOUAY, "vulgate"))
+        self.assertEqual(douay["renumber"], 0)
+        clementine = _projection.divergence(_projection.project(CLEMENTINE, "vulgate"))
+        self.assertEqual(clementine["renumber"], 19)
+        self.assertGreater(clementine["total"], clementine["displaced"])
 
     def test_a_projection_measures_distance_from_the_canon(self) -> None:
         """A Vulgate-numbered edition costs tens of rules; a Hebrew one thousands."""
@@ -92,10 +102,11 @@ class ProjectionTest(unittest.TestCase):
         self.assertGreater(vulgate["merge"], 0)
 
     def test_a_refusal_never_resolves_to_anything(self) -> None:
-        """`absent`, `unrecorded` and `displaced` say where the text is not."""
-        for row in _projection.project(DOUAY, "vulgate"):
-            if row.kind in ("absent", "unrecorded", "displaced"):
-                self.assertEqual(row.resolves_to, "", row)
+        """`absent`, `unrecorded`, `displaced` and `split` say where the text is not."""
+        for root in (DOUAY, CLEMENTINE):
+            for row in _projection.project(root, "vulgate"):
+                if row.kind in _projection.REFUSING:
+                    self.assertEqual(row.resolves_to, "", row)
 
     def test_every_row_carries_a_known_override(self) -> None:
         for row in _projection.project(DOUAY, "vulgate"):
@@ -145,7 +156,7 @@ class EveryEditionProjectsTest(unittest.TestCase):
 
         The King James and the Revised Version both come to 4313 and differ
         inside it, so equality across editions proves nothing either way. What
-        does is that each total decomposes into the three derivations that
+        does is that each total decomposes into the four derivations that
         produced it — which the `displaced=3` bug would have failed, because it
         made one part the same for everyone.
         """
@@ -155,9 +166,10 @@ class EveryEditionProjectsTest(unittest.TestCase):
                 aliases = _projection.alias_rows(edition_root(name))
                 psalms = _projection.psalm_rows(numbering)
                 displaced = _projection.displaced_psalms()
+                psalter = _projection.psalter_rows(edition_root(name), numbering)
                 self.assertEqual(
                     len(_projection.project(edition_root(name), numbering)),
-                    len(aliases) + len(psalms) + len(displaced),
+                    len(aliases) + len(psalms) + len(displaced) + len(psalter),
                 )
                 self.assertEqual(bool(psalms), numbering != _projection.CANONICAL)
 

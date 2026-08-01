@@ -121,6 +121,14 @@ OPENING_WORDS = 7
 
 _NOT_LETTERS = re.compile(r"[^a-z0-9 ]+")
 
+# Ligatures a Latin text prints and the letters they stand for. Stripping them
+# with the rest of the punctuation would turn `caeli` into `c li`, which is a
+# recorded opening nobody can read and one that changes if the transcription
+# ever spells the ligature out. The three tracked witnesses of these three books
+# are all English, so this is a no-op there and matters only to `_psalter`,
+# whose printed side includes the Latin Clementine.
+_LIGATURES = str.maketrans({"æ": "ae", "Æ": "Ae", "œ": "oe", "Œ": "Oe"})
+
 
 class NumberingError(ValueError):
     """A reference cannot be converted between two arrangements."""
@@ -181,7 +189,7 @@ class Correspondence(NamedTuple):
 
 def normalize(text: str) -> str:
     """Verse text reduced to the letters and digits an opening is compared on."""
-    return " ".join(_NOT_LETTERS.sub(" ", text.casefold()).split())
+    return " ".join(_NOT_LETTERS.sub(" ", text.translate(_LIGATURES).casefold()).split())
 
 
 @lru_cache(maxsize=None)
