@@ -69,16 +69,16 @@ EXAMPLES = {
             "tools/calendar-rubrics check --out build/example-web",
             (
                 "postconciliar: 268 masses classified over 12 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
-                "roman-1962: 460 masses classified over 28 bases and 28 rows, 10 implied-day rules, 7 questions l... [+8 chars]",
-                "solved cases: 15 of 15 verified against the browser's model",
-                "  asserting 4 of 17 fields the model returns; no case asserts absent, candidates, ceilings, choi... [+91 chars]",
+                "roman-1962: 460 masses classified over 28 bases and 28 rows, 9 implied-day rules, 6 questions le... [+7 chars]",
+                "solved cases: 28 of 28 verified against the browser's model",
+                "  asserting 6 of 19 fields the model returns; no case asserts absent, candidates, ceilings, choi... [+91 chars]",
             ),
             "check compares --out's already-written browser files against the sources, so it reports a stale --out as a failure; this one was pointed at a freshly written untracked copy. A missing node or model is a failure here, never a skip",
         ),
         Example(
             "tools/calendar-rubrics check --out build/example-web --json",
             (
-                "{\"calendars\":[{\"bases\":12,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":268,... [+402 chars]",
+                "{\"calendars\":[{\"bases\":12,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":268,... [+426 chars]",
             ),
         ),
     ),
@@ -101,14 +101,25 @@ EXAMPLES = {
             ),
         ),
     ),
+    "day": (
+        Example(
+            "tools/calendar-rubrics day --date 2026-04-05 --calendar roman-1962",
+            (
+                "roman-1962 \u2014 paschaltide",
+                "  said         Easter Sunday",
+                "  displaced    S. Vincentii Ferrerii Confessoris",
+            ),
+            "read-only; runs assembly-model.js under node, which is the same derivation the page runs and the solved cases hold",
+        ),
+    ),
     "structure": (
         Example(
             "tools/calendar-rubrics check --out build/example-web",
             (
                 "postconciliar: 268 masses classified over 12 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
-                "roman-1962: 460 masses classified over 28 bases and 28 rows, 10 implied-day rules, 7 questions l... [+8 chars]",
-                "solved cases: 15 of 15 verified against the browser's model",
-                "  asserting 4 of 17 fields the model returns; no case asserts absent, candidates, ceilings, choi... [+91 chars]",
+                "roman-1962: 460 masses classified over 28 bases and 28 rows, 9 implied-day rules, 6 questions le... [+7 chars]",
+                "solved cases: 28 of 28 verified against the browser's model",
+                "  asserting 6 of 19 fields the model returns; no case asserts absent, candidates, ceilings, choi... [+91 chars]",
             ),
             "read-only first: `check` validates the sources and reports whether --out is already current",
         ),
@@ -180,6 +191,7 @@ EMITTED = (
     "keys",
     "known_absences",
     "mass_category",
+    "mass_choices",
     "not_decided_here",
     "orations",
     "overrides",
@@ -252,6 +264,29 @@ def load_masses(root: Path, name: str) -> dict[str, dict]:
     if not masses:
         raise SourceError(f"{path}: carries no masses")
     return masses
+
+
+def all_formularies(root: Path, name: str) -> set[str]:
+    """Every mass key the index carries, the Commons included.
+
+    `load_masses` drops the Commune on purpose: a Common is a formulary and not
+    a liturgical day, and giving it a row would put a celebration in the
+    precedence table that the calendar never keeps. But a formulary is exactly
+    what the Saturday Office's Mass and a mass choice point AT, so the check
+    that those pointers resolve has to see the whole index.
+    """
+    import yaml
+
+    path = root / name / "propers.yaml"
+    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if not isinstance(document, dict):
+        raise SourceError(f"{path}: top level must be a mapping")
+    return {
+        str(mass["key"])
+        for body in (document.get("sections") or {}).values()
+        for mass in ((body or {}).get("masses") or [])
+        if isinstance(mass, dict) and mass.get("key")
+    }
 
 
 def load_source(root: Path, name: str) -> dict:
@@ -394,6 +429,109 @@ def check_implied(document: dict, basis_index: dict[str, int], where: str) -> li
     if office and not office.get("stated_only"):
         if office.get("basis") not in basis_index:
             problems.append(f"{where}: saturday_office names unknown basis {office.get('basis')!r}")
+    return problems
+
+
+def check_mass_choices(document: dict, masses: dict[str, dict], basis_index: dict[str, int],
+                       where: str) -> list[str]:
+    """A choice the rubrics create, as against a collision they do not resolve.
+
+    The two are different claims and the page renders them differently, so the
+    fields that keep them apart are required rather than optional. An entry that
+    named no locus would be this repository asserting a permission out of
+    nowhere, which is the precedence-invention failure wearing another hat.
+
+    `default` is checked for presence, not truthiness: `default: null` is the
+    positive statement that the rubric orders neither, and it must be paid for
+    with `open_because`. An entry that simply omitted the key would be silence.
+    """
+    problems: list[str] = []
+    seen: set[str] = set()
+    office = ((document.get("saturday_office") or {}).get("mass") or {})
+    office_forms = {str(form.get("mass")) for form in (office.get("forms") or [])}
+
+    for form in office.get("forms") or []:
+        key = form.get("mass")
+        if key not in masses:
+            problems.append(
+                f"{where}: the Saturday Office's Mass names formulary {key!r}, which this "
+                "calendar's index does not carry"
+            )
+        if not form.get("printed"):
+            problems.append(
+                f"{where}: the Saturday Office form {key!r} does not record the heading the "
+                "Missal prints it under, which is the only evidence its window is the book's"
+            )
+    if office and not office.get("locus"):
+        problems.append(f"{where}: the Saturday Office's Mass carries no locus")
+
+    for entry in document.get("mass_choices") or []:
+        identifier = entry.get("id")
+        if not identifier:
+            problems.append(f"{where}: a mass choice carries no id")
+            continue
+        if identifier in seen:
+            problems.append(f"{where}: two mass choices share the id {identifier!r}")
+        seen.add(identifier)
+        for field in ("what", "locus", "why"):
+            if not entry.get(field):
+                problems.append(f"{where}: mass choice {identifier!r} carries no {field}")
+        if "default" not in entry:
+            problems.append(
+                f"{where}: mass choice {identifier!r} does not say which option is ordinarily "
+                "said; state `default: <option id>`, or `default: null` with `open_because` "
+                "where the rubric orders neither"
+            )
+        elif entry.get("default") is None and not entry.get("open_because"):
+            problems.append(
+                f"{where}: mass choice {identifier!r} leaves the choice open and does not say "
+                "why, so the page would present a preference-free selector with no reason"
+            )
+        basis = (entry.get("when") or {}).get("winner_basis")
+        if basis is not None and basis not in basis_index:
+            problems.append(f"{where}: mass choice {identifier!r} names unknown basis {basis!r}")
+        held = (entry.get("when") or {}).get("with_candidate")
+        if held is not None and held not in masses:
+            problems.append(
+                f"{where}: mass choice {identifier!r} requires mass {held!r}, which this "
+                "calendar's index does not carry"
+            )
+        among = entry.get("among") or []
+        if len(among) < 2:
+            problems.append(
+                f"{where}: mass choice {identifier!r} offers {len(among)} option(s); a choice "
+                "needs two"
+            )
+        names = {option.get("id") for option in among}
+        if entry.get("default") is not None and entry["default"] not in names:
+            problems.append(
+                f"{where}: mass choice {identifier!r} defaults to {entry['default']!r}, which "
+                f"is not one of its options {sorted(str(n) for n in names)}"
+            )
+        for option in among:
+            for field in ("id", "label", "locus", "why"):
+                if not option.get(field):
+                    problems.append(
+                        f"{where}: an option of mass choice {identifier!r} carries no {field}"
+                    )
+            takes = option.get("takes")
+            if takes == "office_mass":
+                if not office_forms:
+                    problems.append(
+                        f"{where}: option {option.get('id')!r} of {identifier!r} takes the "
+                        "Saturday Office's Mass, and no such Mass is declared"
+                    )
+            elif takes == "mass":
+                if option.get("mass") not in masses:
+                    problems.append(
+                        f"{where}: option {option.get('id')!r} of {identifier!r} names mass "
+                        f"{option.get('mass')!r}, which this calendar's index does not carry"
+                    )
+            else:
+                problems.append(
+                    f"{where}: option {option.get('id')!r} of {identifier!r} declares "
+                    f"takes={takes!r}; it must be 'office_mass' or 'mass'"
+                )
     return problems
 
 
@@ -560,7 +698,18 @@ EXPECTATIONS = {
     "arrived": "winner",
     "commemorated": "losers",
     "conditional_on_implied": "conditions",
+    # The formulary the day takes, which is not always the day. A feria borrows
+    # the preceding Sunday's Mass under RGMR 299 and the Office of Our Lady on
+    # Saturday has one of its own; asserting only the winner would pass whether
+    # the right Mass or the wrong one was served under it.
+    "formulary": "winner",
+    "mass_choices": "massChoices",
     "omitted": "losers",
+    # What a reader may be shown on the date, and under which standing. This is
+    # the one field that guards against a displaced Mass being offered as
+    # though it were the day's, so a case that cares about the Triduum asserts
+    # it rather than the winner alone.
+    "readable": "readable",
     "orations": "orations",
     "orations_low_mass": "orations",
     "orations_sung_non_conventual": "orations",
@@ -678,6 +827,38 @@ def compare_one(identifier: str, expect: dict, derived: dict) -> list[str]:
         elif len(got) != expect[field]:
             labels = ", ".join(row.get("of_name") or row.get("of") or "?" for row in got)
             problems.append(f"{identifier}: {series} has {len(got)} orations ({labels}), expected {expect[field]}")
+    if "formulary" in expect:
+        held = (winner or {}).get("formulary") or {}
+        got = held.get("key")
+        if got != expect["formulary"]:
+            problems.append(
+                f"{identifier}: the day takes formulary {got!r}, expected "
+                f"{expect['formulary']!r}"
+            )
+    if "mass_choices" in expect:
+        # Asserted as {choice id: [option ids]}, because a choice whose second
+        # arm silently stopped resolving would still be a choice by its id alone
+        # and the selector would have quietly become a label.
+        derived_choices = {
+            row["id"]: sorted(one["id"] for one in row.get("among") or [])
+            for row in derived.get("massChoices") or []
+        }
+        wanted = {key: sorted(value) for key, value in (expect["mass_choices"] or {}).items()}
+        if derived_choices != wanted:
+            problems.append(
+                f"{identifier}: mass choices are {derived_choices}, expected {wanted}"
+            )
+    if "readable" in expect:
+        # Asserted as {standing: [mass keys]}. The standing is the assertion:
+        # `chrism-mass` appearing at all is not the claim, `chrism-mass`
+        # appearing as `additional` and never as `said` is.
+        by_state: dict[str, list[str]] = {}
+        for row in derived.get("readable") or []:
+            by_state.setdefault(row["state"], []).append(row["key"])
+        got = {state: sorted(keys) for state, keys in by_state.items()}
+        wanted = {state: sorted(keys) for state, keys in (expect["readable"] or {}).items()}
+        if got != wanted:
+            problems.append(f"{identifier}: readable is {got}, expected {wanted}")
     if "conditional_on_implied" in expect:
         conditions = [row.get("id") for row in derived.get("conditions") or []]
         if expect["conditional_on_implied"] not in conditions:
@@ -707,6 +888,9 @@ def build(root: Path, only: str | None) -> tuple[list[dict], list[str], dict[str
         problems.extend(check_implied(document, basis_index, where))
         problems.extend(check_seats(document, assigned, where))
         problems.extend(check_absences(document, where))
+        problems.extend(
+            check_mass_choices(document, all_formularies(root, name), basis_index, where)
+        )
         for key, row in assigned.items():
             if row["name"] != masses[key]["name"]:
                 problems.append(f"{where}: the name recorded for {key} disagrees with the calendar index")
@@ -861,6 +1045,57 @@ def run_check(arguments: argparse.Namespace) -> dict:
     }
 
 
+def run_day(arguments: argparse.Namespace) -> dict:
+    """Derive one date, through the browser's own model. A reading verb.
+
+    This exists so that there is ONE answer to "what Mass is said today" in this
+    repository rather than two. The terminal reader used to compose the
+    arithmetic layer, which refuses to rank by design, and then reported every
+    candidate under the heading "no precedence is stated" — which stopped being
+    true the moment these rubrics sources landed. On Easter Sunday 2026 it
+    offered Easter Sunday and a third-class confessor as equal candidates, and
+    on Maundy Thursday it led with the Chrism Mass. Both are settled here, and
+    were.
+
+    The fix is deliberately NOT a Python re-implementation of the ranking. That
+    would make three answers where there were two. This runs `assembly-model.js`
+    under node — the same file, through the same harness the solved cases use —
+    so the terminal and the page agree by construction and not by coincidence.
+    """
+    root = Path(arguments.root)
+    data = Path(arguments.out)
+    built, problems, _ = build(root, arguments.calendar)
+    if problems:
+        raise SourceError("; ".join(problems[:3]))
+    if not MODEL.is_file():
+        raise SourceError(f"{MODEL.relative_to(ROOT)} is absent, so nothing can be derived")
+    if not shutil.which("node"):
+        raise SourceError("node is not installed, so the derivation cannot be run")
+
+    date = str(arguments.date)
+    civil_year = int(date[:4])
+    cases = []
+    for payload in built:
+        name = payload["calendar"]
+        try:
+            year = year_file(data, name, civil_year)
+        except SourceError as error:
+            problems.append(f"{name}: {error}")
+            continue
+        cases.append({"id": name, "date": date, "year": year, "rubrics": payload})
+    if not cases:
+        raise SourceError("; ".join(problems) or f"no calendar carries a year file for {civil_year}")
+
+    answered = run_model({"cases": cases})
+    days = []
+    for row in answered["results"]:
+        if not row.get("ok"):
+            problems.append(f"{row['id']}: the model raised {row.get('error', '')[:200]}")
+            continue
+        days.append(row["result"])
+    return {"date": date, "days": days, "problems": problems, "status": "ok"}
+
+
 def run_assign(arguments: argparse.Namespace) -> dict:
     """What each mass was classified as, and by which rule. A reading verb."""
     root = Path(arguments.root)
@@ -893,6 +1128,20 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         return 70
     if arguments.json or arguments.format == "json":
         print_json(payload)
+        return 0
+    if "days" in payload:
+        for day in payload["days"]:
+            print(f"{day['calendar']} — {day.get('season') or 'no season'}")
+            for branch in day["options"]:
+                if branch.get("option"):
+                    print(f"  where the option is {branch['option']}")
+                for row in branch.get("readable") or []:
+                    print(f"  {row['state']:<12} {row['label']}")
+                if not branch.get("settled"):
+                    for row in branch.get("unsettled") or []:
+                        print(f"  not settled: {row['what']}: {row['why']}")
+        for problem in payload.get("problems") or []:
+            print(f"  problem: {problem}")
         return 0
     if "assignments" in payload:
         for row in payload["assignments"]:
@@ -931,6 +1180,7 @@ def main(argv: list[str] | None = None) -> int:
     shared.add_argument("--format", choices=("text", "json"), default="text")
     shared.add_argument("--verbose", action="store_true", help="list every file written")
     shared.add_argument("--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)")
+    shared.add_argument("--date", help="the civil date to derive (the `day` verb)")
     parser = argparse.ArgumentParser(
         prog="calendar-rubrics",
         description="Validate the rubrical precedence sources and emit them for the browser.",
@@ -950,10 +1200,15 @@ def main(argv: list[str] | None = None) -> int:
         sub.add_parser("assign", help="report what each mass was classified as", parents=[shared]),
         EXAMPLES["assign"],
     )
+    with_examples(
+        sub.add_parser("day", help="derive one date through the browser's model", parents=[shared]),
+        EXAMPLES["day"],
+    )
 
     return run_verb_cli(
         parser=parser,
-        handlers={"check": run_check, "structure": run_structure, "assign": run_assign},
+        handlers={"check": run_check, "structure": run_structure, "assign": run_assign,
+                  "day": run_day},
         renderer=render,
         prefix="calendar-rubrics",
         argv=argv,

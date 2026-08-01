@@ -649,3 +649,77 @@ worked_cases:
     reduced: [saint-polycarp-bishop-martyr]
     orations: 1
     settled: true
+
+# --- The Triduum of 2026, end to end -------------------------------------
+# The same five consecutive days the 1962 source carries, asserted the same way
+# and for the same reason: `readable` as well as the winner, because the winner
+# alone would pass a page that offered a displaced celebration as though it were
+# the day's. Easter 2026 is 5 April. A third missal added to this repository
+# should carry these five days too.
+#
+# One difference from the 1962 source is worth recording rather than leaving to
+# be noticed: there is no Chrism Mass here to offer. This index is scoped to the
+# Sundays, the solemnities and the days of the Triduum, and the Chrism Mass is
+# declared absent on that ground. Whether that scope still holds is an open
+# ruling and not a question a witness settles, so nothing is added here.
+- id: triduum-2026-palm-sunday
+  source: NUALC 16, 18-19; the table of liturgical days
+  date: '2026-03-29'
+  why: Palm Sunday, place 2 of the table, which nothing on the date competes with.
+  expect:
+    winner: palm-sunday
+    winner_row: 2
+    settled: true
+    readable: {said: [palm-sunday]}
+- id: triduum-2026-holy-thursday
+  source: NUALC 19; the table of liturgical days
+  date: '2026-04-02'
+  why: >-
+    NUALC 19 runs the Triduum from this evening Mass, which is why it stands at
+    place 1 here and at row 2 under the 1960 code - the two calendars band the
+    same day differently and each is read from its own table. St Francis of
+    Paola is displaced and may be read, not celebrated.
+  expect:
+    winner: mass-of-the-lords-supper
+    winner_row: 1
+    settled: true
+    readable:
+      said: [mass-of-the-lords-supper]
+      displaced: [saint-francis-paola-hermit]
+- id: triduum-2026-good-friday
+  source: NUALC 19; the table of liturgical days
+  date: '2026-04-03'
+  why: >-
+    The Celebration of the Passion, place 1. The page is known to break its
+    Ordinary-interleaving frame here and to say so; that statement is correct
+    behaviour and must not regress into silence.
+  expect:
+    winner: good-friday
+    winner_row: 1
+    settled: true
+    readable: {said: [good-friday]}
+- id: triduum-2026-holy-saturday
+  source: NUALC 19, 21; the table of liturgical days
+  date: '2026-04-04'
+  why: the Easter Vigil, place 1, with St Isidore displaced.
+  expect:
+    winner: easter-vigil
+    winner_row: 1
+    settled: true
+    readable:
+      said: [easter-vigil]
+      displaced: [saint-isidore-bishop-doctor-church]
+- id: triduum-2026-easter-sunday
+  source: NUALC 19, 21; the table of liturgical days
+  date: '2026-04-05'
+  why: >-
+    Place 1 against an obligatory memorial. A reader may ask to see St Vincent
+    Ferrer's Mass on this date, and the page must say in terms that it is not
+    celebrated.
+  expect:
+    winner: easter-sunday
+    winner_row: 1
+    settled: true
+    readable:
+      said: [easter-sunday]
+      displaced: [saint-vincent-ferrer-priest]

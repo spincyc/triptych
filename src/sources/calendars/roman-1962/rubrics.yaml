@@ -472,9 +472,16 @@ assignment:
     eius locum tenet festum Sanctae Familiae - and the formulary at printed p. 40 is headed
     Haec Missa dicenda est diebus ferialibus huius hebdomadae, so it is said on the ferias
     after that Sunday and never displaces a celebration.'}
-- {basis: not-classified, keys: [rogation-mass], note: 'neither the Greater nor the
-    Lesser Litanies are dated in guidance/liturgy/calendar-computation.md, so this
-    mass is never placed on a date and is never reached'}
+- {basis: additional-mass, keys: [rogation-mass], note: 'RG 81 and RG 88 confine both
+    Litany observances to the Mass, nothing being done about either in the Office, so
+    the day keeps whatever identity it would otherwise have and this formulary is a
+    further Mass appointed on it. It was classified not-classified on the ground that
+    the Litanies are undated and the mass is never reached; both halves are stale.
+    guidance/liturgy/calendar-computation.md dates the Greater Litanies to 25 April
+    with RG 80''s own transfer, and the Rogation days to Easter +36, +37 and +38, and
+    calendar-days places this mass 404 times over the 101 emitted years. Left
+    unclassified it could not be ranked, so the three Rogation days and 25 April were
+    reported as carrying no liturgical day at all.'}
 - {basis: row-1-sunday, keys: [easter-sunday, pentecost]}
 - {basis: row-1-nativity, keys: [nativitate-domini-octave]}
 - {basis: row-3-feast-of-the-lord, keys: [epiphania-domini, ascension, trinity, corpus-christi,
@@ -548,30 +555,21 @@ implied:
   label: a feria of Advent before 17 December
   season: advent
   to: 12-16
-  before_anchor: {anchor: first_sunday_of_advent, offset_days: 17}
   weekday_only: true
   basis: row-25-advent-feria
   certain: true
   note: >-
-    The Ember Days of Advent follow the Third Sunday of Advent, which is the
-    First Sunday plus fourteen days, so the earliest of them is that Sunday's
-    Wednesday - the First Sunday plus seventeen. A weekday before it cannot be
-    an Ember Day, and the row is therefore settled without dating them. The
-    bound is the reasoning the publication's own Case 1b performs by hand.
-- id: advent-feria-early-ember-window
-  label: a feria of Advent before 17 December
-  season: advent
-  to: 12-16
-  from_anchor: {anchor: first_sunday_of_advent, offset_days: 17}
-  weekday_only: true
-  basis: row-25-advent-feria
-  certain: false
-  unless: >-
-    the day is one of the three Ember Days of Advent, which are second-class
-    ferias at row 18 (RG 24 b) and would take the day from a third-class feast
-    rather than yield to it. guidance/liturgy/calendar-computation.md does not
-    date the Advent Ember Days, so this repository cannot exclude them once the
-    Third Sunday of Advent has passed.
+    One rule, where there were two. The second covered the window from the
+    Third Sunday of Advent onward and was marked uncertain, because
+    guidance/liturgy/calendar-computation.md did not then date the Advent Ember
+    Days and this file could not exclude one. That guidance now dates all four
+    Ember weeks - the Wednesday, Friday and Saturday after the Third Sunday of
+    Advent - and calendar-days places them as temporal masses at row 18. An
+    implied rule fires only where no candidate constitutes the day and none is
+    temporal, so on any weekday this rule reaches, the year file has already
+    shown that no Ember Day falls there. The two rules gave the same row and
+    differed only in a caveat that no longer holds, so the window bound and the
+    duplicate are both gone.
 - id: christmas-octave-day
   label: a day within the octave of the Nativity
   season: christmastide
@@ -619,12 +617,21 @@ implied:
   to: 09-30
   weekday_only: true
   basis: row-28-feria
-  certain: false
-  unless: >-
-    the day is one of the three Ember Days of September, which are second-class
-    ferias at row 18 (RG 24 b). guidance/liturgy/calendar-computation.md does not
-    date the September Ember Days, so this repository cannot exclude them from a
-    September weekday.
+  certain: true
+  note: >-
+    Formerly uncertain, on the ground that this repository could not exclude one
+    of the three Ember Days of September - second-class ferias at row 18 (RG
+    24 b) - from a September weekday. It can.
+    guidance/liturgy/calendar-computation.md now dates them to the Wednesday,
+    Friday and Saturday after the third Sunday of September, and calendar-days
+    places them as temporal masses; an implied rule fires only where no
+    candidate constitutes the day and none is temporal, so a weekday this rule
+    reaches is one the year file has already shown carries no Ember Day. The
+    open point that remains is the one the guidance records at its own Sources
+    and open points: the act that moved this week from the Exaltation of the
+    Holy Cross to the third Sunday of September is not identified, so the anchor
+    rests on the 1962 typical edition's wording. That is a question about the
+    Ember Days themselves and not about the ferias around them.
 - id: after-pentecost-feria
   label: a feria after Pentecost
   season: after-pentecost
@@ -635,10 +642,141 @@ saturday_office:
   basis: row-27-our-lady-on-saturday
   when_implied_basis: row-28-feria
   locus: RG 78; RG 79
+  latin: >-
+    In sabbatis, in quibus occurrit Officium de feria IV classis, fit de sancta
+    Maria in sabbato. Officium sanctae Mariae in sabbato incipit a Matutino et
+    explicit post Nonam.
   why: >-
     On a Saturday carrying a fourth-class feria the Office is of Our Lady on
     Saturday. Its Mass exists and may be sung, but any occurring feast displaces
     it, because row 27 sits below rows 23 and 24.
+  # -------------------------------------------------------------------------
+  # The Mass of that Office, and why it is not the preceding Sunday's.
+  #
+  # Read off the controlling facsimile on 2026-08-01, artifact pages 14, 19 and
+  # 34 (printed XVI, XXI and XXXVI) and the Commune at printed [43]-[48].
+  #
+  # RG 78 is indicative and unqualified - `fit de sancta Maria in sabbato` -
+  # where the code says `potest` whenever it means a permission (RGMR 289, 309,
+  # 384-388). So the Office is obligatory, not offered. RG 91 then gives it row
+  # 27, its own line among the fourth-class days, DISTINCT from `feriae IV
+  # classis` at row 28. That distinction decides the Mass: RGMR 299 appoints the
+  # preceding Sunday's Mass `in reliquis feriis`, and a Saturday of Our Lady is
+  # not a feria in the code's own taxonomy, so RGMR 299 does not reach it. What
+  # reaches it is RGMR 270 - `Missa proinde per se cum Officio diei concordare
+  # debet` - and RGMR 515 b, which assigns the solemn tone to `Missa de Officio
+  # S. Mariae in sabbato` and so presupposes the category.
+  #
+  # The Missal prints five formularies for it, by season, and the block heading
+  # grants a FURTHER permission which is easily misread as making the Saturday
+  # use optional: `quae dici etiam possunt aliis diebus ut votivae de B. Maria
+  # Virgine`. The `etiam ... aliis diebus` is the extension to other days. On
+  # Saturday itself these simply are the Masses of the day.
+  # -------------------------------------------------------------------------
+  mass:
+    locus: RGMR 270; RGMR 515 b
+    latin: Missa proinde per se cum Officio diei concordare debet.
+    why: >-
+      The Mass agrees with the Office of the day, and the Office is of Our Lady.
+      This Saturday is not a fourth-class feria but the Office of Our Lady on
+      Saturday, one row above it, so it does not take the preceding Sunday's
+      Mass under RGMR 299.
+    printed: Commune Sanctorum, Missae de S. Maria in sabbato, printed pp. [43]-[48]
+    heading: >-
+      Missae de S. Maria in sabbato, quae dici etiam possunt aliis diebus ut
+      votivae de B. Maria Virgine, iuxta rubricas vel, ex indulto, pro temporum
+      diversitate
+    forms:
+    - mass: missa-de-s-maria-in-sabbato-1
+      printed: Tempore Adventus
+      season: advent
+      note: >-
+        Never reached as the Mass of the day. Every Saturday of Advent is a
+        feria of row 25 or row 18, never of row 28, so RG 78 does not fire in
+        Advent at all. The form is stated because the Missal prints it and
+        because it is reachable as a votive under RGMR 309 a.
+    - mass: missa-de-s-maria-in-sabbato-2
+      printed: A Nativitate Domini usque ad Purificationem
+      from: 12-25
+      to: 02-02
+    - mass: missa-de-s-maria-in-sabbato-3
+      printed: A die 3 februarii usque ad feriam IV Hebdomadae sanctae
+      from: 02-03
+      to_anchor: {anchor: easter, offset_days: -4}
+      note: >-
+        The Missal's own window ends at Wednesday of Holy Week, which is Easter
+        minus four. No Saturday in Lent or Passiontide carries a fourth-class
+        feria, so within this window the form is reached only between 3 February
+        and the Saturday before Ash Wednesday.
+    - mass: missa-de-s-maria-in-sabbato-4
+      printed: Tempore paschali
+      from_anchor: {anchor: easter, offset_days: 0}
+      to_anchor: {anchor: easter, offset_days: 55}
+      note: >-
+        RG 76 runs Paschaltide to None of the Saturday in the octave of
+        Pentecost, which is Easter plus fifty-five.
+    - mass: missa-de-s-maria-in-sabbato-5
+      printed: A festo Ss. Trinitatis usque ad sabbatum ante dominicam I Adventus
+      from_anchor: {anchor: trinity, offset_days: 0}
+      before_anchor: {anchor: next_first_sunday_of_advent, offset_days: 0}
+
+# ---------------------------------------------------------------------------
+# Choices the rubrics themselves create.
+#
+# A choice is NOT a collision this repository cannot resolve. Those are recorded
+# under `unsettled` and reported as unsettled: the question of which Mass occurs
+# is open and nobody here answers it. A choice is the opposite - the books have
+# answered, and the answer is that the celebrant may take either. The page must
+# not blur the two, so they are different blocks, rendered differently, and a
+# choice never sets `settled: false`.
+#
+# Each entry states the locus, the Latin, what governs each option, and either
+# the option ordinarily said or, where the rubric orders neither, that it is
+# genuinely open. Inventing a preference where the book states none would be the
+# same defect as inventing precedence.
+# ---------------------------------------------------------------------------
+mass_choices:
+- id: carmel-on-a-saturday
+  what: The Mass of Our Lady on Saturday, or the proper Mass of the Commemoration
+  locus: the Missal's own rubric at 16 July, printed p. 587
+  latin: >-
+    Si Commemoratio B. Mariae Virg. de Monte Carmelo venerit in sabbato, Missa
+    dici potest aut de sancta Maria in sabbato, aut propria de Commemoratione
+    B. Mariae Virg. de Monte Carmelo.
+  why: >-
+    Read off the controlling facsimile on 2026-08-01 at artifact page 668. The
+    Commemoration of Our Lady of Mount Carmel is a commemoration and not a
+    feast, so it never takes the day; on a Saturday whose Office is of Our Lady
+    it would ordinarily be said within the Saturday Mass of Our Lady. This
+    rubric adds that its own printed Mass may be said instead. It is the one
+    place in this calendar where the book states, in those words, that the Mass
+    may be either of two.
+  when:
+    weekday: saturday
+    winner_basis: row-27-our-lady-on-saturday
+    with_candidate: comm-beatae-mariae-virginis-monte-carmelo
+  default: null
+  open_because: >-
+    The rubric offers the two and orders neither - dici potest aut ... aut ... -
+    so this page names both and prefers neither. Where a rubric does state which
+    is ordinarily said, that one is the default and the page says so.
+  among:
+  - id: de-sancta-maria-in-sabbato
+    label: The Mass of Our Lady on Saturday
+    takes: office_mass
+    locus: RG 78; RGMR 270
+    why: >-
+      The Mass of the Office of the day, which RG 78 makes obligatory on this
+      Saturday and RGMR 270 joins to the Mass. This is what would be said if the
+      16 July rubric did not exist.
+  - id: propria-de-commemoratione
+    label: The proper Mass of the Commemoration of Our Lady of Mount Carmel
+    takes: mass
+    mass: comm-beatae-mariae-virginis-monte-carmelo
+    locus: the Missal's own rubric at 16 July
+    why: >-
+      The Missal prints a full formulary for this commemoration, and the rubric
+      at the day permits it to be said as the Mass when 16 July is a Saturday.
 
 # ---------------------------------------------------------------------------
 # Decision three. What becomes of the day that lost.
@@ -982,20 +1120,17 @@ unsettled:
     Sunday and the last Sunday in one slot, and the day file emits both. RG 18's
     closing paragraph decides it and is applied as an override; the underlying
     duplication is in the day file rather than here.
-- what: the three Ember Days of Advent and the three of September
-  why: guidance/liturgy/calendar-computation.md does not date them, so calendar-days
-    never places them and this file cannot exclude them from an Advent or after-Pentecost
-    weekday.
-  effect: an implied Advent feria before 17 December, and an implied feria after Pentecost,
-    are marked uncertain and the page says the result may not hold.
 - what: the Greater Litanies and the Rogation days
   why: >-
     The calendar index inscribes the Greater Litanies at 25 April under one key
     with the feast of St Mark, so where that day loses, this page cannot tell
     the feast's ordinary commemoration from the Litanies' commemoration, which
-    RG 109 f makes privileged in the Mass. The Rogation Mass itself is not dated
-    in guidance/liturgy/calendar-computation.md and is never placed, so the three
-    Rogation days before the Ascension do not appear at all.
+    RG 109 f makes privileged in the Mass. The Rogation Mass itself is placed -
+    404 times over the 101 emitted years, at 25 April and at Easter +36, +37 and
+    +38 - and is classified as a further Mass appointed on the day, because RG 81
+    and RG 88 do nothing about either observance in the Office. What this file
+    still does not decide is whether that Mass is said in any given church, which
+    is a question of the procession and belongs to the Mass category.
   effect: >-
     On 25 April a commemoration is derived as ordinary and may in fact be
     privileged, which changes whether it survives at a sung non-conventual Mass.
@@ -1089,6 +1224,139 @@ worked_cases:
     winner: resumed-epiphany-5
     winner_row: 15
     settled: true
+- id: the-office-of-our-lady-on-saturday-and-the-mass-it-takes
+  source: RG 78; RG 91 rows 27-28; RGMR 270; RGMR 299; RG 111 d, read off the controlling
+    facsimile 2026-08-01
+  date: '2026-08-01'
+  why: >-
+    The whole of what row 27 is for, on the date that exposed it. 1 August 2026
+    is a Saturday carrying a fourth-class feria, so RG 78 puts the Office of Our
+    Lady on Saturday there and RG 91 gives it row 27, one above the fourth-class
+    ferias. Three things follow and each was wrong before this case existed. The
+    day is the Office and not the feria, so it is named as such. It is not a
+    feria at all, so RGMR 299 does not reach it and it takes its own seasonal
+    Mass rather than the Ninth Sunday after Pentecost's. And being a fourth-class
+    day it admits two commemorations under RG 111 d, so the Machabees are
+    commemorated - where a second-class Sunday's ceiling, RG 111 b, had been
+    dropping them.
+  expect:
+    winner_row: 27
+    formulary: missa-de-s-maria-in-sabbato-5
+    commemorated: [comm-ss-machabaeorum-martyrum]
+    orations_low_mass: 2
+    settled: true
+- id: a-choice-the-rubric-states-in-so-many-words
+  source: the Missal's own rubric at 16 July, printed p. 587, read off the controlling
+    facsimile 2026-08-01
+  date: '2022-07-16'
+  why: >-
+    The one place in this calendar where the book says the Mass may be either of
+    two, and says it in those words: Missa dici potest aut de sancta Maria in
+    sabbato, aut propria de Commemoratione B. Mariae Virg. de Monte Carmelo. It
+    fires only when 16 July is a Saturday whose Office is of Our Lady, which is
+    15 of the 101 emitted years. The case exists to hold two things at once: that
+    both arms resolve to a formulary the index actually carries, and that the day
+    stays SETTLED. A choice the rubrics create is an answer, not a gap, and the
+    moment it starts clearing `settled` the page will render a permission as a
+    failure.
+  expect:
+    winner_row: 27
+    settled: true
+    mass_choices:
+      carmel-on-a-saturday: [de-sancta-maria-in-sabbato, propria-de-commemoratione]
+- id: a-feria-borrows-the-preceding-sundays-mass
+  source: RGMR 299; RG 91 row 28; RG 111 d
+  date: '2026-07-27'
+  why: >-
+    The other side of the same rule, on a weekday. A fourth-class feria after
+    Pentecost is row 28 and takes the Mass of the preceding Sunday under RGMR
+    299 - but it is the feria that is the day, not the Sunday. Classified as the
+    Sunday it borrowed, this date stood at row 15 and its commemoration of St
+    Pantaleon was dropped under the second-class Sunday's ceiling. 30 dates in
+    2026 lost a commemoration that way.
+  expect:
+    winner_row: 28
+    formulary: pentecost-9
+    commemorated: [comm-s-pantaleonis-martyris]
+    orations_low_mass: 2
+    settled: true
+# --- The Triduum of 2026, end to end -------------------------------------
+# Five consecutive days, asserted on `readable` as well as on the winner,
+# because the winner alone would pass a page that offered a displaced Mass as
+# though it were the day's. Easter 2026 is 5 April. The same five days are
+# carried in the postconciliar source, and a third missal added to this
+# repository should carry them too: the Triduum is where a calendar's hardest
+# claims all fall in one week, and it is the cheapest place to notice a
+# regression.
+- id: triduum-2026-palm-sunday
+  source: RG 91 row 6; the 1962 temporal cycle
+  date: '2026-03-29'
+  why: a first-class Sunday of Passiontide, which nothing on the date competes with.
+  expect:
+    winner: palm-sunday
+    winner_row: 6
+    settled: true
+    readable: {said: [palm-sunday]}
+- id: triduum-2026-holy-thursday-offers-the-chrism-mass
+  source: RG 91 row 2; the Missal's own heading at the Chrism Mass
+  date: '2026-04-02'
+  why: >-
+    The Chrism Mass is not a competitor and must never be ranked against the
+    Mass of the Lord's Supper: it is a second Mass of the same liturgical day,
+    said in the cathedral that morning, and this file classifies it
+    `additional-mass` with no row at all. So it is OFFERED and not ranked, and
+    this case holds exactly that - `chrism-mass` under `additional`, never under
+    `said`. St Francis of Paola, a third-class feast, is displaced by the day
+    and may be read but is not said.
+  expect:
+    winner: mass-of-the-lords-supper
+    winner_row: 2
+    settled: true
+    readable:
+      said: [mass-of-the-lords-supper]
+      additional: [chrism-mass]
+      displaced: [s-francisci-paula-confessoris]
+- id: triduum-2026-good-friday
+  source: RG 91 row 2
+  date: '2026-04-03'
+  why: >-
+    The one day of the year with no Mass in the ordinary sense. The page is
+    known to break its Ordinary-interleaving frame here and to say so; that
+    statement is correct behaviour and must not regress into silence.
+  expect:
+    winner: good-friday
+    winner_row: 2
+    settled: true
+    readable: {said: [good-friday]}
+- id: triduum-2026-holy-saturday
+  source: RG 91 row 2; RG 28
+  date: '2026-04-04'
+  why: >-
+    The Vigil is not a vigil in the sense of RG 28 - the code says so expressly,
+    cum non sit dies liturgicus - and it sits in the Triduum at row 2. St Isidore
+    is displaced.
+  expect:
+    winner: easter-vigil
+    winner_row: 2
+    settled: true
+    readable:
+      said: [easter-vigil]
+      displaced: [s-isidori-episcopi-confessoris-ecclesiae-doctoris]
+- id: triduum-2026-easter-sunday
+  source: RG 91 row 1; RG 111 a
+  date: '2026-04-05'
+  why: >-
+    The starkest displacement in the year and the reason the selector states
+    standing on every entry: row 1 against row 24. A reader may ask to see St
+    Vincent Ferrer's Mass on this date, and the page must say in terms that it
+    is not said.
+  expect:
+    winner: easter-sunday
+    winner_row: 1
+    settled: true
+    readable:
+      said: [easter-sunday]
+      displaced: [s-vincentii-ferrerii-confessoris]
 - id: all-saints-on-a-sunday
   source: derived from Case 5's dated anchors; RG 16 a and RG 111 a
   date: '2026-11-01'

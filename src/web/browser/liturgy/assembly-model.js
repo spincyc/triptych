@@ -196,19 +196,34 @@
   }
 
   /**
-   * The Mass a feria borrows, where nothing else on the date supplies one.
+   * The Mass a day borrows, where nothing on the date supplies one of its own.
    *
    * RGMR 299 gives most ferias the preceding Sunday's Mass rather than one of
    * their own, and the year file records which under `ferial_formulary`.
-   * Nothing read it, so on 77 dates of 2026 the page showed a commemoration
-   * alone or nothing at all where the missal appoints a whole formulary — a
-   * commemoration is said within a Mass, never instead of one.
+   *
+   * A BORROWED FORMULARY IS NOT A LITURGICAL DAY. It used to be returned as a
+   * candidate carrying the borrowed Mass's own basis, which made 1 August 2026 —
+   * a Saturday — compete, and win, as a second-class Sunday at row 15. Two
+   * things followed, and both were wrong. `row-15-sunday` declares
+   * `constitutes_the_day`, so the implied feria was suppressed and with it the
+   * Office of Our Lady on Saturday, which is constituted from that feria: the
+   * Office appeared on exactly the Saturdays a feast displaced it and vanished
+   * on exactly the Saturdays it is kept. And the day was given a second-class
+   * Sunday's commemoration ceiling, RG 111 b, which admits one commemoration
+   * and only of a second-class feast — so all 30 commemorations falling on a
+   * borrowed-formulary feria in 2026 were omitted, where RG 111 d admits two on
+   * a third- or fourth-class day.
+   *
+   * So the day is constituted by the implied rules as it always was, and this
+   * returns only the formulary that day takes. RGMR 270 is what joins them: the
+   * Mass agrees with the Office of the day. The day is the feria; the Mass is
+   * the Sunday's.
    *
    * This is decided against the index AND the arrivals together. Deciding it
    * against the index alone put the borrowed Mass on All Souls, whose own
    * celebration arrives rather than being inscribed, and it beat the day.
    */
-  function ferialCandidates(year, rubrics, isoDate, present) {
+  function borrowedFormularies(year, rubrics, isoDate, present) {
     const holdsAMass = present.some(
       (one) => !(one.basis && one.basis.nature === 'commemoration')
     );
@@ -216,20 +231,72 @@
     return ((year.ferial_formulary || {})[isoDate] || []).map(function (row) {
       const found = classify(rubrics, row.key);
       return {
-        id: row.key,
         key: row.key,
         name: found.name || row.key,
         known: found.known,
-        basis: found.basis,
-        row: found.basis.row,
-        source: 'ferial',
-        borrowed: true,
         rule: (year.rules || [])[row.rule] || null,
-        territorial: row.territorial || null,
-        certain: found.basis.certain !== false,
-        alsoInscribedAs: []
+        territorial: row.territorial || null
       };
     });
+  }
+
+  /**
+   * Does a rule's window hold on this date?
+   *
+   * One grammar, used by the implied-day rules and by the seasonal forms of the
+   * Saturday Mass of Our Lady. Both are "this rule applies between here and
+   * there", stated in the sources with the same six keys, and a second matcher
+   * beside this one would be the drift the repository keeps removing: the
+   * Missal's own window for the third Saturday formulary ends at a day fixed
+   * from Easter, and nothing but this can express that.
+   */
+  function windowHolds(rule, owner, isoDate, season, weekday) {
+    if (rule.season && rule.season !== season) return false;
+    if (rule.weekday && rule.weekday !== weekday) return false;
+    if (rule.weekday_only && weekday === 'sunday') return false;
+    if (rule.on_anchor && anchor(owner, rule.on_anchor) !== isoDate) return false;
+    if ((rule.from || rule.to) && !inWindow(monthDay(isoDate), rule.from, rule.to)) return false;
+    if (rule.from_anchor) {
+      const from = anchor(owner, rule.from_anchor.anchor);
+      if (!from || isoDate < shift(from, rule.from_anchor.offset_days || 0)) return false;
+    }
+    if (rule.to_anchor) {
+      const to = anchor(owner, rule.to_anchor.anchor);
+      if (!to || isoDate > shift(to, rule.to_anchor.offset_days || 0)) return false;
+    }
+    if (rule.before_anchor) {
+      const before = anchor(owner, rule.before_anchor.anchor);
+      if (!before || isoDate >= shift(before, rule.before_anchor.offset_days || 0)) return false;
+    }
+    return true;
+  }
+
+  /**
+   * The seasonal formulary the Office of Our Lady on Saturday takes as its Mass.
+   *
+   * RG 78 makes the Office obligatory on a Saturday that would otherwise carry a
+   * fourth-class feria, and RG 91 gives it row 27, its own line distinct from
+   * the fourth-class ferias at row 28. RGMR 299 appoints the preceding Sunday's
+   * Mass `in reliquis feriis` and so does not reach it; RGMR 270 does, and joins
+   * the Mass to the Office. The Missal prints five formularies by season and
+   * this picks the one whose window holds — the same window grammar as above.
+   */
+  function officeMass(rubrics, owner, isoDate, season) {
+    const block = (rubrics.saturday_office || {}).mass || null;
+    if (!block) return null;
+    const weekday = weekdayOf(isoDate);
+    for (const form of block.forms || []) {
+      if (!windowHolds(form, owner, isoDate, season, weekday)) continue;
+      return {
+        key: form.mass,
+        printed: form.printed || null,
+        locus: block.locus || null,
+        latin: block.latin || null,
+        why: block.why || null,
+        note: form.note || null
+      };
+    }
+    return null;
   }
 
   /**
@@ -251,28 +318,19 @@
     // date, so the implied octave day was constituted a second time and the two
     // tied at row 17 on every 29, 30 and 31 December in the span.
     if (present.some((one) => one.basis && one.basis.constitutes_the_day)) return null;
-    if (present.some((one) => one.rule && one.rule.origin === 'temporal')) return null;
+    // A temporal formulary that competes for nothing is not the day's own
+    // identity and must not suppress it. The Rogation Mass is placed temporally
+    // on Easter +36, +37 and +38 and on 25 April, and RG 81 and RG 88 confine
+    // both Litany observances to the Mass, nothing being done in the Office —
+    // so it is a Mass said on a day, not the day. Suppressing on origin alone
+    // left those four dates every year with no liturgical day at all.
+    if (present.some((one) => one.rule && one.rule.origin === 'temporal' &&
+                              one.basis && one.basis.competes !== false)) return null;
 
     const weekday = weekdayOf(isoDate);
-    const md = monthDay(isoDate);
 
     for (const rule of rubrics.implied || []) {
-      if (rule.season && rule.season !== season) continue;
-      if (rule.weekday_only && weekday === 'sunday') continue;
-      if (rule.on_anchor && anchor(owner, rule.on_anchor) !== isoDate) continue;
-      if ((rule.from || rule.to) && !inWindow(md, rule.from, rule.to)) continue;
-      if (rule.from_anchor) {
-        const from = anchor(owner, rule.from_anchor.anchor);
-        if (!from || isoDate < shift(from, rule.from_anchor.offset_days || 0)) continue;
-      }
-      if (rule.to_anchor) {
-        const to = anchor(owner, rule.to_anchor.anchor);
-        if (!to || isoDate > shift(to, rule.to_anchor.offset_days || 0)) continue;
-      }
-      if (rule.before_anchor) {
-        const before = anchor(owner, rule.before_anchor.anchor);
-        if (!before || isoDate >= shift(before, rule.before_anchor.offset_days || 0)) continue;
-      }
+      if (!windowHolds(rule, owner, isoDate, season, weekday)) continue;
 
       let basis = basisOf(rubrics, rule.basis);
       let office = null;
@@ -281,12 +339,21 @@
       // every third-class feast, so naming it changes what the day is called
       // without changing what wins.
       const saturday = rubrics.saturday_office;
+      let ownMass = null;
       if (
         saturday && !saturday.stated_only && weekday === 'saturday' &&
         basis && saturday.when_implied_basis === basis.id
       ) {
-        office = { underlying: basis, locus: saturday.locus, why: saturday.why };
+        office = {
+          underlying: basis,
+          locus: saturday.locus,
+          latin: saturday.latin || null,
+          why: saturday.why
+        };
         basis = basisOf(rubrics, saturday.basis) || basis;
+        // The day now stands at row 27 and is no longer a feria, so it takes
+        // its own Mass rather than the preceding Sunday's under RGMR 299.
+        ownMass = officeMass(rubrics, owner, isoDate, season);
       }
       if (!basis) continue;
 
@@ -295,7 +362,11 @@
         key: null,
         // The rule's own label where it has one, because "Ash Wednesday" is a
         // better name for the day than "a weekday of Holy Week or Ash Wednesday".
-        name: rule.label || basis.label || basis.why,
+        // Where the Office of Our Lady has been substituted the basis wins
+        // instead: the day is no longer the feria the rule names, and calling it
+        // "a feria after Pentecost" while ranking it at row 27 named one day and
+        // ranked another.
+        name: (office && basis.label) || rule.label || basis.label || basis.why,
         known: true,
         basis: basis,
         row: basis.row,
@@ -306,7 +377,8 @@
         certain: rule.certain !== false,
         caveat: rule.certain === false ? rule.unless : null,
         note: rule.note || null,
-        office: office
+        office: office,
+        ownMass: ownMass
       };
     }
     return null;
@@ -834,17 +906,181 @@
     return cap ? series.slice(0, cap) : series;
   }
 
+  /**
+   * The choices the rubrics themselves create, as against the ones they leave.
+   *
+   * THESE ARE NOT THE SAME THING AS `unsettled`, and the page must never render
+   * them as though they were. An unsettled day is a question about which Mass
+   * occurs that this repository cannot answer. A choice here is the opposite:
+   * the book HAS answered, and its answer is that the celebrant may take either.
+   * So a choice never clears `settled`, and it never appears as a warning.
+   *
+   * Nor is it `branch.choice`, which is a tie between two candidates standing at
+   * a row the rubrics mark optional. That is a fact about the precedence table.
+   * This is a fact about the Mass: one liturgical day, two formularies the book
+   * permits for it.
+   *
+   * Each arm must resolve to a formulary that actually exists, and an entry
+   * whose arms do not both resolve is dropped rather than shown half-open — a
+   * selector with one option in it is a selector that has lost an option.
+   */
+  function massChoicesFor(rubrics, winner, candidates, isoDate) {
+    if (!winner) return [];
+    const weekday = weekdayOf(isoDate);
+    const out = [];
+
+    for (const entry of rubrics.mass_choices || []) {
+      const when = entry.when || {};
+      if (when.weekday && when.weekday !== weekday) continue;
+      if (when.season && when.season !== entry.season) continue;
+      if (when.winner_basis && when.winner_basis !== winner.basis.id) continue;
+      if (when.with_candidate &&
+          !candidates.some((one) => one.key === when.with_candidate)) continue;
+
+      const own = winner.formulary && winner.formulary.kind === 'own'
+        ? winner.formulary.key : null;
+      const among = (entry.among || []).map(function (option) {
+        return {
+          id: option.id,
+          label: option.label,
+          key: option.takes === 'office_mass' ? own : (option.mass || null),
+          locus: option.locus || null,
+          why: option.why || null
+        };
+      }).filter((one) => one.key);
+      if (among.length < 2) continue;
+
+      out.push({
+        id: entry.id,
+        what: entry.what || null,
+        locus: entry.locus || null,
+        latin: entry.latin || null,
+        why: entry.why || null,
+        // The option ordinarily said, where the rubric states one. Null is not
+        // "no preference recorded"; it is the rubric declining to order them,
+        // and `openBecause` says so in the source's own words.
+        preferred: entry.default || null,
+        openBecause: entry.default ? null : (entry.open_because || null),
+        among: among
+      });
+    }
+    return out;
+  }
+
+  /**
+   * Every formulary a reader may ask to see on this date, and its STANDING.
+   *
+   * A reader may legitimately want to read a Mass that is certainly not said —
+   * to see what St Vincent Ferrer's Mass says on an Easter Sunday that displaces
+   * it. That is a good thing to allow and a dangerous thing to allow carelessly,
+   * because the failure it invites is the worst one this site has: a reference
+   * that resolves successfully and wrongly, a reader arriving at a Mass and
+   * believing it is today's.
+   *
+   * So standing is carried explicitly on every entry and is never inferred from
+   * position in a list. Five states, and the page must keep them apart:
+   *
+   *   said         the Mass the rubrics settle for this day
+   *   option       a genuine choice the rubrics leave (Our Lady on Saturday)
+   *   additional   another Mass of the SAME day at another hour (the Chrism
+   *                Mass), which competes for nothing and displaces nothing
+   *   commemorated not said, but its collect is said within the day's Mass
+   *   displaced    not said at all; the rule that displaces it travels with it
+   *   unresolved   the day itself is not settled, so nothing here is "said"
+   *
+   * `unresolved` is the one that must not be quietly converted into a choice.
+   * On a date the rubrics do not resolve, this repository reports that it does
+   * not know which Mass occurs; offering the candidates as though the celebrant
+   * might pick one would turn an honest refusal into a false permission.
+   */
+  function readableOn(winner, candidates, losers, choices, settled) {
+    const out = [];
+    const seen = {};
+
+    function add(row) {
+      if (!row.key || seen[row.key]) return;
+      seen[row.key] = true;
+      out.push(row);
+    }
+
+    if (!winner || !settled) {
+      for (const one of candidates) {
+        add({
+          id: one.id, key: one.key, label: one.name, state: 'unresolved',
+          locus: one.basis.locus || null,
+          why: 'this date is not settled here, so nothing on it is stated to be the Mass'
+        });
+      }
+      return out;
+    }
+
+    const held = winner.formulary;
+    add({
+      id: winner.id,
+      key: held && held.key ? held.key : winner.key,
+      label: held && held.kind === 'borrowed' ? held.name : winner.name,
+      state: 'said',
+      locus: winner.basis.locus || null,
+      why: winner.basis.why
+    });
+
+    for (const choice of choices || []) {
+      for (const option of choice.among || []) {
+        add({
+          id: choice.id + ':' + option.id, key: option.key, label: option.label,
+          state: 'option', locus: option.locus, why: option.why, choice: choice.id
+        });
+      }
+    }
+
+    for (const one of candidates) {
+      if (one.basis.nature !== 'additional-mass') continue;
+      add({
+        id: one.id, key: one.key, label: one.name, state: 'additional',
+        locus: one.basis.locus || null, why: one.basis.why
+      });
+    }
+
+    for (const one of losers) {
+      const candidate = one.candidate;
+      if (!candidate || !candidate.key) continue;
+      add({
+        id: one.id,
+        key: candidate.key,
+        label: candidate.name,
+        state: one.disposition === 'commemorated' ? 'commemorated' : 'displaced',
+        disposition: one.disposition,
+        locus: one.locus || null,
+        why: one.why
+      });
+    }
+    return out;
+  }
+
   /* ------------------------------------------------------------------------
    * One branch of the derivation
    * --------------------------------------------------------------------- */
 
-  function deriveBranch(rubrics, owner, isoDate, candidates, option, folded) {
+  function deriveBranch(rubrics, owner, isoDate, candidates, option, folded, orphanBorrow) {
     const unsettled = [];
     const remarks = [];
     const season = seasonOf(owner, isoDate);
     const absent = absencesOn(rubrics, isoDate);
 
     const ranked = rank(rubrics, candidates, unsettled);
+    // A formulary with no day to be the Mass of. The year file appoints one
+    // here under RGMR 299 and no rule in this source constitutes the day it
+    // would be said on, so the Mass is named and the day is not claimed —
+    // handing the day to the borrowed formulary is what this file now refuses.
+    if (!ranked.winner && orphanBorrow) {
+      unsettled.push({
+        what: orphanBorrow.name,
+        why:
+          'this date borrows a formulary under RGMR 299, and no rule in this source ' +
+          'constitutes the liturgical day it would be the Mass of. A borrowed ' +
+          'formulary is a Mass, never a day, so nothing here names the day.'
+      });
+    }
     // A date can carry entries and still constitute no day: a commemoration the
     // calendar inscribes occupies no row, and three formularies this calendar
     // index is known to be missing leave some Sundays with nothing at all. That
@@ -918,6 +1154,13 @@
       });
     }
 
+    const choices = massChoicesFor(rubrics, winner, candidates, isoDate);
+    const settled =
+      unsettled.length === 0 &&
+      conditions.length === 0 &&
+      !absent.some((one) => one.blocks_result) &&
+      (Boolean(winner) || Boolean(ranked.choice));
+
     return {
       option: option,
       season: season,
@@ -943,7 +1186,15 @@
           territorial: one.territorial,
           arrivedFrom: one.arrivedFrom || null,
           seat: one.seat ? { locus: one.seat.locus, destination: one.seat.destination, latin: one.seat.latin } : null,
-          office: one.office ? { locus: one.office.locus, why: one.office.why, underlying: one.office.underlying.why } : null,
+          office: one.office
+            ? {
+                locus: one.office.locus,
+                latin: one.office.latin || null,
+                why: one.office.why,
+                underlying: one.office.underlying.why
+              }
+            : null,
+          formulary: one.formulary || null,
           alsoInscribedAs: one.alsoInscribedAs || []
         };
       }),
@@ -966,7 +1217,13 @@
             optional: Boolean(winner.basis.optional),
             source: winner.source,
             why: winner.basis.why,
-            locus: winner.basis.locus
+            locus: winner.basis.locus,
+            // The Mass said on this day. `kind: 'own'` is a day with a
+            // formulary of its own — the Office of Our Lady on Saturday, which
+            // RGMR 270 joins to its Office; `kind: 'borrowed'` is RGMR 299's
+            // Mass of the preceding Sunday. The day is the winner; this is only
+            // the Mass said on it.
+            formulary: winner.formulary || null
           }
         : null,
       winnerRule: {
@@ -1005,14 +1262,17 @@
       ceilings: ceilings,
       extras: extras,
       remarks: remarks,
+      // Deliberately absent from `settled`: a choice the rubrics create is an
+      // answer, not a gap.
+      massChoices: choices,
+      // Every formulary a reader may ask to see, each carrying its standing.
+      // Also absent from `settled`: being able to READ a displaced Mass says
+      // nothing about which Mass is said.
+      readable: readableOn(winner, candidates, low.losers, choices, settled),
       conditions: conditions,
       absent: absent,
       unsettled: unsettled,
-      settled:
-        unsettled.length === 0 &&
-        conditions.length === 0 &&
-        !absent.some((one) => one.blocks_result) &&
-        (Boolean(winner) || Boolean(ranked.choice))
+      settled: settled
     };
   }
 
@@ -1033,22 +1293,36 @@
     const held = indexCandidates(year, rubrics, isoDate);
     const arrived = arrivals(rubrics, owner, isoDate);
     const inscribed = held.candidates.concat(arrived);
-    const all = inscribed.concat(ferialCandidates(year, rubrics, isoDate, inscribed));
+    // Decided against the inscribed candidates alone. The implied day this
+    // borrowing exists to serve must not be what suppresses it.
+    const borrowed = borrowedFormularies(year, rubrics, isoDate, inscribed);
 
     // The implied day is computed per branch, not once. Under the branch where
     // the Ascension has moved to the Sunday it is absent from its Thursday, and
     // that Thursday is then an ordinary weekday that has to be constituted —
     // computing the implied day before the split would have suppressed it.
     function branchOf(option) {
-      const set = option === null
-        ? all.slice()
-        : all.filter((one) => !one.territorial || one.territorial === option);
+      const keep = (one) => option === null || !one.territorial || one.territorial === option;
+      const set = inscribed.filter(keep);
+      const takes = borrowed.filter(keep);
       const implied = impliedCandidate(rubrics, owner, isoDate, season, set);
-      if (implied) set.unshift(implied);
-      return deriveBranch(rubrics, owner, isoDate, set, option, held.folded);
+      if (implied) {
+        // RGMR 270: the Mass agrees with the Office of the day. A day with a
+        // Mass of its own — the Office of Our Lady on Saturday — takes that
+        // one; every other implied day keeps its row and borrows a formulary.
+        implied.formulary = implied.ownMass
+          ? Object.assign({ kind: 'own' }, implied.ownMass)
+          : (takes.length ? Object.assign({ kind: 'borrowed' }, takes[0]) : null);
+        set.unshift(implied);
+      }
+      return deriveBranch(rubrics, owner, isoDate, set, option, held.folded,
+                          implied ? null : (takes[0] || null));
     }
 
-    const options = optionsToDerive(year, all);
+    // The borrowed rows carry territorial tags of their own — on the ferias
+    // after the Ascension the tag is only ever on the borrowing — so they are
+    // read for the branch split even though they are no longer candidates.
+    const options = optionsToDerive(year, inscribed.concat(borrowed));
     const branches = options.length ? options.map(branchOf) : [branchOf(null)];
 
     return {
