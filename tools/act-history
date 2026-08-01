@@ -64,6 +64,11 @@ DEPARTURE_KINDS = ("absent", "added", "replaced", "renamed", "moved", "reslotted
 # `inspected` and the values below say which of the two ways a reading was got.
 READINGS = ("page-image", "ocr-only", "not-read")
 
+# Whether the act's own instrument was found. A station whose instrument nobody
+# has read is a weaker claim than one whose text is quoted, and the difference
+# has to be visible or the graph launders it.
+ACT_CITATIONS = ("cited-in-corpus", "cited-externally", "not-found")
+
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 UNIT_ID = re.compile(r"^[a-z0-9]+(?:[-.][a-z0-9]+)*$")
 
@@ -76,8 +81,8 @@ EXAMPLES = {
         Example(
             "tools/act-history check",
             (
-                "ok: 9 acts, 2 lines, 9 witnesses, 4 masses, 34 base units, 30 departures",
-                "departure kinds used: absent 12, added 4, moved 1, renamed 3, replaced 2, reslotted 1, unrecorded 7",
+                "ok: 12 acts, 2 lines, 8 witnesses, 4 masses, 38 base units, 42 departures",
+                "departure kinds used: absent 20, added 1, moved 3, renamed 5, replaced 2, reslotted 8, unrecorded 3",
             ),
         ),
     ),
@@ -88,7 +93,15 @@ EXAMPLES = {
                 "typica            quo-primum-1570                 1570-07-14  root",
                 "exempt-uses       quo-primum-exemption-1570       1570-07-14  <- quo-primum-1570",
                 "typica            cum-sanctissimum-1604           1604-07-07  <- quo-primum-1570",
-                "... 6 more lines",
+                "typica            si-quid-est-1634                1634-09-02  <- cum-sanctissimum-1604",
+                "typica            divino-afflatu-1911             1911-11-01  <- si-quid-est-1634",
+                "typica            abhinc-duos-annos-1913          1913-10-23  <- divino-afflatu-1911",
+                "typica            editio-typica-1920              1920-07-25  <- abhinc-duos-annos-1913 (via unre... [+35 chars]",
+                "typica            de-rubricis-simpliciorem-1955   1955-03-23  <- editio-typica-1920",
+                "typica            maxima-redemptionis-1955        1955-11-16  <- editio-typica-1920 [absent,moved,... [+27 chars]",
+                "typica            rubricarum-instructum-1960      1960-07-25  <- de-rubricis-simpliciorem-1955",
+                "typica            codex-rubricarum-1960           1960-07-26  <- rubricarum-instructum-1960 [renamed]",
+                "typica            editio-typica-1962              1962-06-23  <- maxima-redemptionis-1955, codex-r... [+33 chars]",
             ),
         ),
     ),
@@ -96,7 +109,7 @@ EXAMPLES = {
         Example(
             "tools/act-history emit --out build/act-history/roman-holy-week",
             (
-                "wrote 9 commits on 2 branches to build/act-history/roman-holy-week",
+                "wrote 12 commits on 2 branches to build/act-history/roman-holy-week",
             ),
             note="writes an untracked Git repository under build/; rerunning replaces it",
         ),
@@ -168,19 +181,40 @@ def unit_path(mass: str, slot: str) -> str:
     return f"holy-week/{mass}/{slot}.txt"
 
 
+# A clause ends at a full stop, a colon or a semicolon. Breaking there and
+# nowhere else is what makes a changed clause show as a changed line instead of
+# lighting up a whole prayer, and doing it here rather than in the source is what
+# stops the next person's re-wrapping from producing a diff nobody made. Commas
+# are deliberately not breaks: Latin orations are comma-dense and breaking on
+# them would put three words on a line and lose the clause as the unit a reader
+# compares.
+CLAUSE_END = re.compile(r"(?<=[.:;])\s+")
+
+
+def ventilate(text: str) -> list[str]:
+    """One clause to a line, mechanically.
+
+    The rule is applied by the generator and never by hand, so an unchanged text
+    always serialises to the same bytes.
+    """
+    flowed = " ".join(text.split())
+    return [part for part in (piece.strip() for piece in CLAUSE_END.split(flowed)) if part]
+
+
 def unit_body(name: str, incipit: str, text: str) -> str:
     """What a unit's file holds.
 
-    The incipit and the text, and nothing else. Provenance deliberately stays
-    out: a unit file that carried its own witness list would make every
-    re-reading of a scan show up as a change to the liturgy, which is the exact
-    confusion this tool exists to prevent. The slot is the path and the name is
-    the first line, so a reslot with unchanged words is a pure rename and git's
-    own similarity detection finds it without being told.
+    The name, the incipit and the text, and nothing else. Provenance
+    deliberately stays out: a unit file that carried its own witness list would
+    make every re-reading of a scan show up as a change to the liturgy, which is
+    the exact confusion this tool exists to prevent. The slot is the path, so a
+    reslot with unchanged words is a rename and git's own similarity detection
+    finds it without being told.
     """
     lines = [name, incipit]
     if text:
-        lines.extend(["", text.strip()])
+        lines.append("")
+        lines.extend(ventilate(text))
     return "\n".join(lines) + "\n"
 
 
@@ -367,10 +401,21 @@ def apply_departures(state: State, act_id: str, departures: list[dict]) -> list[
             if "order" in departure:
                 unit["order"] = departure["order"]
         elif kind == "unrecorded":
-            # Resolves to nothing, by guidance/recensions.md Rule 3. It is on the
-            # record so that a reader is told the state is not established, and
-            # it deliberately does not fall back to the inherited state.
-            pass
+            # guidance/recensions.md Rule 3, both halves of it. The departure
+            # resolves to nothing -- no state is guessed -- and it must not
+            # silently fall back to the base either, so the unit leaves the
+            # liturgy and a marker takes its place saying what is not known.
+            # Carrying the inherited text forward would be the stronger claim,
+            # made for free, that nothing changed.
+            if target in state.units:
+                del state.units[target]
+            state.files[f"unestablished/{target}.txt"] = (
+                f"{target}\n\n"
+                "The state of this unit after this act is NOT ESTABLISHED.\n"
+                "It is not carried forward from the inherited state, because carrying it\n"
+                "forward would assert that nothing changed.\n\n"
+                + departure["note"].strip() + "\n"
+            )
         else:
             raise Problem(f"{act_id}: unknown departure kind {kind!r}")
     return used
@@ -386,6 +431,7 @@ def render_act(act: dict) -> str:
         f"kind:       {act['kind']}",
         f"line:       {act['line']}",
         f"citation:   {act['citation']}",
+        f"instrument: {act['act_citation']}",
         f"read from:  {act.get('read_from', 'not-read')}",
     ]
     if act.get("locus"):
@@ -394,6 +440,7 @@ def render_act(act: dict) -> str:
         lines.extend(["", "dateline as printed:", act["dateline"].strip()])
     for field, label in (("root_basis", "why this is a root"), ("parent_basis", "why this edge"),
                          ("reception_basis", "why these parents converge"),
+                         ("act_citation_note", "on the missing instrument"),
                          ("quotation", "quoted"), ("parent_quotation", "quoted for the edge"),
                          ("effect", "effect"), ("effect_note", "on that effect")):
         if act.get(field):
@@ -532,6 +579,12 @@ def check(data: dict) -> dict:
             )
         if "effect_established" not in act:
             problems.append(f"act {act_id}: must say whether its effect is established")
+        if act.get("act_citation") not in ACT_CITATIONS:
+            problems.append(f"act {act_id}: act_citation must be one of {ACT_CITATIONS}")
+        if act.get("act_citation") == "not-found" and not act.get("act_citation_note"):
+            problems.append(
+                f"act {act_id}: a station whose instrument was not found must say so at length"
+            )
 
     for witness_id, witness in sorted(witnesses.items()):
         for field in ("label", "language", "printed", "attests", "attests_basis", "read_from", "rights", "rights_basis"):
