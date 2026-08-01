@@ -190,3 +190,56 @@ Brexit Mapping is **unverified, not negative** — the search died on rate limit
 and a snippet-referenced paper, "Metaphorical metro maps: design challenges"
 (Ruhr University Bochum), could not be located in OpenAlex, arXiv or Semantic
 Scholar and **may not exist as described**. [inferred]
+
+---
+
+## 7. The diff is the deliverable
+
+> The missal timeline should land in a way that each commit shows a diff that
+> represents what was trying to be merged. This dictates how you store and index
+> each missal, such that it will show a "most minimal diff". We are trying to be
+> as charitable as possible; we don't want each missal revision to look like a
+> wholesale rewrite.
+> — the maintainer, 2026-07-31
+
+The repository's worth is that `git show` on a station displays what that act
+changed and nothing else. A revision touching six orations that renders as a
+rewrite of the book has failed, however correct its contents. So **"what does the
+diff look like" is the acceptance test for every storage decision**, not a
+consequence of one.
+
+Four things decide it.
+
+**File granularity.** One file for the missal means every act rewrites
+everything. One file per addressable unit means an act touches only what it
+changed. Too coarse and a one-word change shows as a page; too fine and the tree
+is thousands of files, which git handles and a browsing reader does not.
+
+**Path is liturgical identity, never page order.** A file at
+`temporal/advent-1/collect` is the same object across four centuries. A file
+named for a page or a line range is a different object every printing, and every
+insertion above it cascades. This is precisely why the earlier corpus's
+`source_lines: 50001-70000` could not produce a minimal diff: it addressed text
+by where it fell in a scan.
+
+**Deterministic serialisation.** Stable key order, stable wrapping, stable
+encoding, so that regenerating an unchanged text produces no diff at all.
+Nondeterminism becomes noise in every commit and drowns the signal.
+
+**Semantic line breaks.** Prose stored as one long line diffs as one long line:
+change a word and the whole prayer lights up. Broken at clause or sentence
+boundaries, a changed clause shows as a changed clause. The rule must be applied
+mechanically, because a hand-wrapped text will be rewrapped by the next person
+and produce a phantom diff.
+
+> **Rule 6.** Store text so that the smallest honest change produces the smallest
+> diff. Not smaller than honest — where an act genuinely rewrote a book, the diff
+> says so.
+
+**A consequence that may come free.** If each text lives in its own file at a
+path encoding its slot, git's own rename detection expresses the `reslotted`
+departure of `recensions.md` §3 natively: the Easter Vigil postcommunion becoming
+the Vespers prayer *Spiritum* renders as a rename with similarity rather than as
+a deletion beside an unrelated addition. If that holds, the hardest departure
+kind needs no special machinery in the viewer — git already tells the story.
+[inferred, under test]
