@@ -99,12 +99,31 @@ extent: |
   rubrics source is NOT OFFERED in the missal selector. The dropdown entry lands
   when the rubrics land, and not before.
 
-  The route to sourcing them is already registered and is not speculative:
-  `edition.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947`
-  is a Benziger editio IV iuxta typicam Vaticanam whose record states that its
-  scanned text "carries the pre-1955 general rubrics with the double, semidouble,
-  and simple grades". Its artifact's `rights_status` is `unresolved`, so that is
-  the question to settle first.
+  THE RUBRICS HAVE SINCE BEEN SOURCED AND STILL CANNOT BE WRITTEN, which is a
+  different sentence from the one above and a better one. On 2026-08-01 the
+  pre-1955 order of precedence was located, fetched and read: it is Titulus II,
+  De Festorum praestantia, of the rubrics issued under Divino afflatu, at Acta
+  Apostolicae Sedis 3 (1911) 641-642, and being a 1911 publication it is in the
+  public domain and may be printed. That is a stronger rights position than the
+  1960 code the 1962 calendar answers to.
+
+  It is not a table. It is five ordered criteria - higher rite, primary or
+  secondary, dignity of the Person, external solemnity, and propriety of the
+  feast - taken in order until one separates two days, with the fifth applying in
+  occurrence and translation and NOT in concurrence. `tools/calendar-rubrics`
+  requires a precedence table whose rows number 1 to N, and `assembly-model.js`
+  picks a winner by comparing those numbers. A row number is one order for all
+  questions, and the fifth criterion makes the pre-1955 answer differ between two
+  questions, so no numbering carries it.
+
+  So the blocker is no longer the book. It is that this repository's rubrics
+  schema admits one shape of precedence and the pre-1955 rite has another, and
+  bending the rule to fit would produce a file that validates, resolves every day
+  and decides some of them wrongly. The whole sourcing record - seven located
+  sources with rights, the repositories searched and the aliases each was
+  searched under - is at
+  `src/sources/inventories/pre-1955-rubrics-sources-v1.toml`, and
+  guidance/recensions.md section 9.7 states what would have to change.
 
 conventions:
 - a departure states one primary `departure` kind, which is what the machinery

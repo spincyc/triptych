@@ -518,11 +518,57 @@ order that settles the most. Its headline count is
 `rubrics_sources_this_record_makes_writable = 0`, written as a number so that it
 cannot be read past.
 
-One further consequence, which is a fact about the tooling and not about the
-rite: `calendar-rubrics.check_precedence` refuses `precedence.stated: false` with
-*this file exists to state it*, and requires rows numbering 1..N. Whether the
-pre-1955 order is printed anywhere as a numbered table — as against being
-recoverable only from prose about occurrence, translation and commemoration — is
-**unrecorded**. If it is not, that is a finding about the rite, and the tool
-would have to learn the difference before an honest source could be written.
-Nobody should discover that while writing the file.
+### 9.7 The rule was then found, and the blocker moved
+
+§9.6 asked whether the pre-1955 order is printed anywhere as a numbered table.
+It was looked for, and the answer arrived the same day.
+
+**The rule is in the *Acta Apostolicae Sedis* of 1911, and it may be published.**
+It is Titulus II, *De Festorum praestantia*, of the rubrics issued under *Divino
+afflatu*, at AAS 3 (1911) 641–642 — fetched from vatican.va and read here
+[verified, sha256 `590a78b6…`]. That is a stronger position than the calendar
+beside it holds: the 1962 rubrics rest on the 1960 code, which is
+`holy-see-post-1929` and cite-only, and this one is pre-1931 and publishable.
+
+**And it is not a table.** It is five criteria, taken in order until one
+separates two days:
+
+> *Ut recte dignoscatur quale ex pluribus Officiis sit praestantius … sequentes
+> praestantiae characteres considerandi sunt:* (a) *Ritus altior*, unless a
+> Sunday, a feria, a privileged octave or any octave day occurs; (b) *Ratio
+> Primarii aut Secundarii*; (c) *Dignitas Personalis*, in a stated order of
+> Persons; (d) *Sollemnitas externa*; (e) *Proprietas Festorum* — which n. 2
+> applies **in occurrence and translation only, and not in concurrence**.
+
+The 1960 code replaced this with twenty-eight numbered rows whose numbers later
+rubrics cite as addresses, and that is the shape the tooling models:
+`check_precedence` requires `rows` numbering 1..N, `check_bases` requires each
+competing basis to name one, and `assembly-model.js` picks the winner with
+`if (one.row < best.row)` — a comparison of one integer.
+
+**There is no honest mapping, and the reason is (e).** A row number is one order
+for all questions. Criterion (e) makes the same two days rank differently in
+occurrence than in concurrence, so no single number can carry the pre-1955
+answer. Flattening the five criteria into a linear table would produce a file
+that validates, resolves every day, and decides some of them wrongly.
+
+> **Rule 8.** Where a recension's rule has a different *shape* from the base's,
+> the schema is extended before the source is written. A rule bent to fit an
+> existing schema resolves cleanly and answers wrongly, and nothing downstream
+> can tell that it was bent.
+
+So Rule 6 holds with a sharper reason. **The calendar is not offered because the
+tool cannot yet state its rule, not because nobody has found the book.** Sourcing
+is finished; `src/sources/inventories/pre-1955-rubrics-sources-v1.toml` records
+seven located sources with rights, two witnesses read at the bytes, five
+repositories and the aliases each was searched under — including Google Books,
+which was quota-blocked on every query and is recorded as *not reached* rather
+than as a negative. Its headline count,
+`rubrics_sources_this_record_makes_writable`, is **0**, and it did not move when
+the search succeeded. That is the most useful number in the file.
+
+What would have to change, in order, is: `check_precedence`, to admit an ordered
+criteria list as a second kind of precedence; `check_bases`, whose competing
+bases name a row; and the winner comparison in `assembly-model.js`. That is a
+design change and should be argued before it is written, which is why it is
+recorded here and not attempted.
