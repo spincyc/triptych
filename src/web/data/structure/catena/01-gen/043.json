@@ -2,8 +2,123 @@
  "blocked": [],
  "chapter": 43,
  "chapters": 50,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 43,
+    "first_verse": 11,
+    "last_chapter": 43,
+    "last_verse": 11,
+    "token": "Gen"
+   },
+   "id": "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.193",
+   "locator": "193",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 69
+  },
+  {
+   "extent": {
+    "first_chapter": 43,
+    "first_verse": 32,
+    "last_chapter": 43,
+    "last_verse": 32,
+    "token": "Gen"
+   },
+   "id": "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.194",
+   "locator": "194",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 34
+  },
+  {
+   "extent": {
+    "first_chapter": 43,
+    "first_verse": 34,
+    "last_chapter": 43,
+    "last_verse": 34,
+    "token": "Gen"
+   },
+   "id": "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.266",
+   "locator": "266",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 45
+  },
+  {
+   "extent": {
+    "first_chapter": 43,
+    "first_verse": 8,
+    "last_chapter": 43,
+    "last_verse": 9,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.42-4",
+   "locator": "42.4",
+   "review": "inspected",
+   "source": "2",
+   "text_words": 93
+  },
+  {
+   "extent": {
+    "first_chapter": 43,
+    "first_verse": 11,
+    "last_chapter": 43,
+    "last_verse": 11,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.42-5",
+   "locator": "42.5",
+   "review": "inspected",
+   "source": "2",
+   "text_words": 46
+  },
+  {
+   "extent": {
+    "first_chapter": 43,
+    "first_verse": 23,
+    "last_chapter": 43,
+    "last_verse": 23,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.42-6",
+   "locator": "42.6",
+   "review": "inspected",
+   "source": "2",
+   "text_words": 66
+  },
+  {
+   "extent": {
+    "first_chapter": 43,
+    "first_verse": 32,
+    "last_chapter": 43,
+    "last_verse": 32,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.42-7",
+   "locator": "42.7",
+   "review": "inspected",
+   "source": "2",
+   "text_words": 13
+  },
+  {
+   "extent": {
+    "first_chapter": 43,
+    "first_verse": 34,
+    "last_chapter": 43,
+    "last_verse": 34,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.42-8",
+   "locator": "42.8",
+   "review": "inspected",
+   "source": "2",
+   "text_words": 30
+  }
+ ],
+ "languages": [
+  "la"
+ ],
  "leads": [
   {
    "author": "Alcuin of York",
@@ -134,5 +249,41 @@
  "name": "Genesis",
  "numbering": "vulgate",
  "refusals": {},
+ "sources": {
+  "0": {
+   "author": "Jerome",
+   "container": "",
+   "date": 391,
+   "edition": "Liber Hebraicarum quaestionum in Genesim, Patrologia Latina tomus 23",
+   "edition_published": "Patrologia Latina, tomus 23, Paris: J.-P. Migne, 1845, coll. 935-1010, reprinting Vallarsi and Maffei's Verona edition of 1767",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Liber quaestionum hebraicarum in Genesim"
+  },
+  "1": {
+   "author": "Alcuin of York",
+   "container": "",
+   "date": 796,
+   "edition": "Interrogationes et responsiones in Genesin, Patrologia Latina tomus 100",
+   "edition_published": "Patrologia Latina, tomus 100, Paris: J.-P. Migne, 1851, coll. 515-566",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Interrogationes et responsiones in Genesim"
+  },
+  "2": {
+   "author": "Remigius of Auxerre",
+   "container": "",
+   "date": 890,
+   "edition": "Commentarius in Genesim, Patrologia Latina tomus 131",
+   "edition_published": "Patrologia Latina, tomus 131, Paris: J.-P. Migne, 1853, coll. 51-134",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Commentarius in Genesim"
+  }
+ },
+ "text_prefix": "structure/catena/text/",
  "token": "Gen"
 }

@@ -2,8 +2,53 @@
  "blocked": [],
  "chapter": 39,
  "chapters": 50,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 39,
+    "first_verse": 1,
+    "last_chapter": 39,
+    "last_verse": 1,
+    "token": "Gen"
+   },
+   "id": "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.39-1",
+   "locator": "39.1",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 59
+  },
+  {
+   "extent": {
+    "first_chapter": 39,
+    "first_verse": 6,
+    "last_chapter": 39,
+    "last_verse": 6,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.39-1",
+   "locator": "39.1",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 51
+  },
+  {
+   "extent": {
+    "first_chapter": 39,
+    "first_verse": 7,
+    "last_chapter": 39,
+    "last_verse": 20,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.39-2",
+   "locator": "39.2",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 181
+  }
+ ],
+ "languages": [
+  "la"
+ ],
  "leads": [
   {
    "author": "Alcuin of York",
@@ -119,5 +164,30 @@
  "name": "Genesis",
  "numbering": "vulgate",
  "refusals": {},
+ "sources": {
+  "0": {
+   "author": "Angelomus of Luxeuil",
+   "container": "",
+   "date": 845,
+   "edition": "Commentarius in Genesin, Patrologia Latina tomus 115",
+   "edition_published": "Patrologia Latina, tomus 115, Paris: J.-P. Migne, 1852, coll. 107-244",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Commentarius in Genesim"
+  },
+  "1": {
+   "author": "Remigius of Auxerre",
+   "container": "",
+   "date": 890,
+   "edition": "Commentarius in Genesim, Patrologia Latina tomus 131",
+   "edition_published": "Patrologia Latina, tomus 131, Paris: J.-P. Migne, 1853, coll. 51-134",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Commentarius in Genesim"
+  }
+ },
+ "text_prefix": "structure/catena/text/",
  "token": "Gen"
 }

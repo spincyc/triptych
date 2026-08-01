@@ -2,8 +2,123 @@
  "blocked": [],
  "chapter": 45,
  "chapters": 50,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 45,
+    "first_verse": 9,
+    "last_chapter": 45,
+    "last_verse": 9,
+    "token": "Gen"
+   },
+   "id": "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.196",
+   "locator": "196",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 62
+  },
+  {
+   "extent": {
+    "first_chapter": 45,
+    "first_verse": 17,
+    "last_chapter": 45,
+    "last_verse": 17,
+    "token": "Gen"
+   },
+   "id": "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.197",
+   "locator": "197",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 33
+  },
+  {
+   "extent": {
+    "first_chapter": 45,
+    "first_verse": 21,
+    "last_chapter": 45,
+    "last_verse": 21,
+    "token": "Gen"
+   },
+   "id": "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.198",
+   "locator": "198",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 84
+  },
+  {
+   "extent": {
+    "first_chapter": 45,
+    "first_verse": 17,
+    "last_chapter": 45,
+    "last_verse": 17,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.45-1",
+   "locator": "45.1",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 35
+  },
+  {
+   "extent": {
+    "first_chapter": 45,
+    "first_verse": 21,
+    "last_chapter": 45,
+    "last_verse": 21,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.45-2",
+   "locator": "45.2",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 20
+  },
+  {
+   "extent": {
+    "first_chapter": 45,
+    "first_verse": 22,
+    "last_chapter": 45,
+    "last_verse": 22,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.45-3",
+   "locator": "45.3",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 103
+  },
+  {
+   "extent": {
+    "first_chapter": 45,
+    "first_verse": 23,
+    "last_chapter": 45,
+    "last_verse": 23,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.45-4",
+   "locator": "45.4",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 29
+  },
+  {
+   "extent": {
+    "first_chapter": 45,
+    "first_verse": 27,
+    "last_chapter": 45,
+    "last_verse": 27,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.45-5",
+   "locator": "45.5",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 53
+  }
+ ],
+ "languages": [
+  "la"
+ ],
  "leads": [
   {
    "author": "Alcuin of York",
@@ -134,5 +249,30 @@
  "name": "Genesis",
  "numbering": "vulgate",
  "refusals": {},
+ "sources": {
+  "0": {
+   "author": "Jerome",
+   "container": "",
+   "date": 391,
+   "edition": "Liber Hebraicarum quaestionum in Genesim, Patrologia Latina tomus 23",
+   "edition_published": "Patrologia Latina, tomus 23, Paris: J.-P. Migne, 1845, coll. 935-1010, reprinting Vallarsi and Maffei's Verona edition of 1767",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Liber quaestionum hebraicarum in Genesim"
+  },
+  "1": {
+   "author": "Remigius of Auxerre",
+   "container": "",
+   "date": 890,
+   "edition": "Commentarius in Genesim, Patrologia Latina tomus 131",
+   "edition_published": "Patrologia Latina, tomus 131, Paris: J.-P. Migne, 1853, coll. 51-134",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Commentarius in Genesim"
+  }
+ },
+ "text_prefix": "structure/catena/text/",
  "token": "Gen"
 }

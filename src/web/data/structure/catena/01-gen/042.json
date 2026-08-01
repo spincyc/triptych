@@ -2,8 +2,53 @@
  "blocked": [],
  "chapter": 42,
  "chapters": 50,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 42,
+    "first_verse": 7,
+    "last_chapter": 42,
+    "last_verse": 7,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.42-1",
+   "locator": "42.1",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 51
+  },
+  {
+   "extent": {
+    "first_chapter": 42,
+    "first_verse": 9,
+    "last_chapter": 42,
+    "last_verse": 9,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.42-2",
+   "locator": "42.2",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 41
+  },
+  {
+   "extent": {
+    "first_chapter": 42,
+    "first_verse": 24,
+    "last_chapter": 42,
+    "last_verse": 24,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.42-3",
+   "locator": "42.3",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 52
+  }
+ ],
+ "languages": [
+  "la"
+ ],
  "leads": [
   {
    "author": "Alcuin of York",
@@ -134,5 +179,19 @@
  "name": "Genesis",
  "numbering": "vulgate",
  "refusals": {},
+ "sources": {
+  "0": {
+   "author": "Remigius of Auxerre",
+   "container": "",
+   "date": 890,
+   "edition": "Commentarius in Genesim, Patrologia Latina tomus 131",
+   "edition_published": "Patrologia Latina, tomus 131, Paris: J.-P. Migne, 1853, coll. 51-134",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Commentarius in Genesim"
+  }
+ },
+ "text_prefix": "structure/catena/text/",
  "token": "Gen"
 }

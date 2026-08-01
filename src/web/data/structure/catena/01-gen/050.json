@@ -2,8 +2,67 @@
  "blocked": [],
  "chapter": 50,
  "chapters": 50,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 50,
+    "first_verse": 23,
+    "last_chapter": 50,
+    "last_verse": 23,
+    "token": "Gen"
+   },
+   "id": "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.49-12",
+   "locator": "49.12",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 354
+  },
+  {
+   "extent": {
+    "first_chapter": 50,
+    "first_verse": 10,
+    "last_chapter": 50,
+    "last_verse": 10,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.49-22",
+   "locator": "49.22",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 137
+  },
+  {
+   "extent": {
+    "first_chapter": 50,
+    "first_verse": 21,
+    "last_chapter": 50,
+    "last_verse": 21,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.49-23",
+   "locator": "49.23",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 60
+  },
+  {
+   "extent": {
+    "first_chapter": 50,
+    "first_verse": 25,
+    "last_chapter": 50,
+    "last_verse": 25,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.49-24",
+   "locator": "49.24",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 122
+  }
+ ],
+ "languages": [
+  "la"
+ ],
  "leads": [
   {
    "author": "Adam Clarke",
@@ -159,5 +218,30 @@
  "name": "Genesis",
  "numbering": "vulgate",
  "refusals": {},
+ "sources": {
+  "0": {
+   "author": "Angelomus of Luxeuil",
+   "container": "",
+   "date": 845,
+   "edition": "Commentarius in Genesin, Patrologia Latina tomus 115",
+   "edition_published": "Patrologia Latina, tomus 115, Paris: J.-P. Migne, 1852, coll. 107-244",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Commentarius in Genesim"
+  },
+  "1": {
+   "author": "Remigius of Auxerre",
+   "container": "",
+   "date": 890,
+   "edition": "Commentarius in Genesim, Patrologia Latina tomus 131",
+   "edition_published": "Patrologia Latina, tomus 131, Paris: J.-P. Migne, 1853, coll. 51-134",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Commentarius in Genesim"
+  }
+ },
+ "text_prefix": "structure/catena/text/",
  "token": "Gen"
 }

@@ -2,8 +2,151 @@
  "blocked": [],
  "chapter": 33,
  "chapters": 50,
- "fragments": [],
- "languages": [],
+ "fragments": [
+  {
+   "extent": {
+    "first_chapter": 33,
+    "first_verse": 1,
+    "last_chapter": 33,
+    "last_verse": 1,
+    "token": "Gen"
+   },
+   "id": "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.157",
+   "locator": "157",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 93
+  },
+  {
+   "extent": {
+    "first_chapter": 33,
+    "first_verse": 17,
+    "last_chapter": 33,
+    "last_verse": 17,
+    "token": "Gen"
+   },
+   "id": "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.158",
+   "locator": "158",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 47
+  },
+  {
+   "extent": {
+    "first_chapter": 33,
+    "first_verse": 18,
+    "last_chapter": 33,
+    "last_verse": 18,
+    "token": "Gen"
+   },
+   "id": "passage.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.159",
+   "locator": "159",
+   "review": "inspected",
+   "source": "0",
+   "text_words": 113
+  },
+  {
+   "extent": {
+    "first_chapter": 33,
+    "first_verse": 10,
+    "last_chapter": 33,
+    "last_verse": 10,
+    "token": "Gen"
+   },
+   "id": "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.244",
+   "locator": "244",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 91
+  },
+  {
+   "extent": {
+    "first_chapter": 33,
+    "first_verse": 14,
+    "last_chapter": 33,
+    "last_verse": 14,
+    "token": "Gen"
+   },
+   "id": "passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.245",
+   "locator": "245",
+   "review": "inspected",
+   "source": "1",
+   "text_words": 37
+  },
+  {
+   "extent": {
+    "first_chapter": 33,
+    "first_verse": 1,
+    "last_chapter": 33,
+    "last_verse": 9,
+    "token": "Gen"
+   },
+   "id": "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.33-1",
+   "locator": "33.1",
+   "review": "inspected",
+   "source": "2",
+   "text_words": 92
+  },
+  {
+   "extent": {
+    "first_chapter": 33,
+    "first_verse": 10,
+    "last_chapter": 33,
+    "last_verse": 16,
+    "token": "Gen"
+   },
+   "id": "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.33-2",
+   "locator": "33.2",
+   "review": "inspected",
+   "source": "2",
+   "text_words": 136
+  },
+  {
+   "extent": {
+    "first_chapter": 33,
+    "first_verse": 17,
+    "last_chapter": 33,
+    "last_verse": 17,
+    "token": "Gen"
+   },
+   "id": "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.33-3",
+   "locator": "33.3",
+   "review": "inspected",
+   "source": "2",
+   "text_words": 54
+  },
+  {
+   "extent": {
+    "first_chapter": 33,
+    "first_verse": 18,
+    "last_chapter": 33,
+    "last_verse": 18,
+    "token": "Gen"
+   },
+   "id": "passage.angelomus-of-luxeuil.commentarius-in-genesim.latin-migne-pl-115.33-4",
+   "locator": "33.4",
+   "review": "inspected",
+   "source": "2",
+   "text_words": 114
+  },
+  {
+   "extent": {
+    "first_chapter": 33,
+    "first_verse": 10,
+    "last_chapter": 33,
+    "last_verse": 10,
+    "token": "Gen"
+   },
+   "id": "passage.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131.33-1",
+   "locator": "33.1",
+   "review": "inspected",
+   "source": "3",
+   "text_words": 126
+  }
+ ],
+ "languages": [
+  "la"
+ ],
  "leads": [
   {
    "author": "Alcuin of York",
@@ -134,5 +277,52 @@
  "name": "Genesis",
  "numbering": "vulgate",
  "refusals": {},
+ "sources": {
+  "0": {
+   "author": "Jerome",
+   "container": "",
+   "date": 391,
+   "edition": "Liber Hebraicarum quaestionum in Genesim, Patrologia Latina tomus 23",
+   "edition_published": "Patrologia Latina, tomus 23, Paris: J.-P. Migne, 1845, coll. 935-1010, reprinting Vallarsi and Maffei's Verona edition of 1767",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Liber quaestionum hebraicarum in Genesim"
+  },
+  "1": {
+   "author": "Alcuin of York",
+   "container": "",
+   "date": 796,
+   "edition": "Interrogationes et responsiones in Genesin, Patrologia Latina tomus 100",
+   "edition_published": "Patrologia Latina, tomus 100, Paris: J.-P. Migne, 1851, coll. 515-566",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Interrogationes et responsiones in Genesim"
+  },
+  "2": {
+   "author": "Angelomus of Luxeuil",
+   "container": "",
+   "date": 845,
+   "edition": "Commentarius in Genesin, Patrologia Latina tomus 115",
+   "edition_published": "Patrologia Latina, tomus 115, Paris: J.-P. Migne, 1852, coll. 107-244",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Commentarius in Genesim"
+  },
+  "3": {
+   "author": "Remigius of Auxerre",
+   "container": "",
+   "date": 890,
+   "edition": "Commentarius in Genesim, Patrologia Latina tomus 131",
+   "edition_published": "Patrologia Latina, tomus 131, Paris: J.-P. Migne, 1853, coll. 51-134",
+   "language": "la",
+   "rights": "public-domain",
+   "translators": [],
+   "work": "Commentarius in Genesim"
+  }
+ },
+ "text_prefix": "structure/catena/text/",
  "token": "Gen"
 }
