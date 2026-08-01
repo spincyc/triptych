@@ -39,6 +39,22 @@ they are also printed mid-sentence, so leaving them in would put a five-characte
 interruption into every third line of a father's argument. They are stripped from
 the prose; the printing they locate is named on the artifact.
 
+WHAT IS UNWRAPPED, AND WHY IT HAD TO BE. Removing every template whole is right
+for a corpus whose only templates are furniture, and it was silently wrong for
+the first corpus that carried prose inside one. Jerome's *Quaestiones Hebraicae
+in Genesim* is about Hebrew and Greek words, and Latin Wikisource holds those
+words in `{{Hebraica|...}}` and `{{Graeca|...}}`; its verse numbers are
+`{{ancora+|2:8|8}}` and its transliterations `{{font-size|90%|BRESITH}}`. Under
+whole-removal the work came out reading "(Vers. .) Et plantavit ... Pro paradiso,
+in Hebraeo hortum habet: id est, ()." — deleted content, exit status zero, which
+is this repository's named worst failure.
+
+So a template whose name is in `_UNWRAP` yields one named parameter and every
+other template is still removed whole. The list is closed and each entry says
+which parameter is the prose, because a general rule ("keep the last parameter")
+would print `{{titulus2}}`'s `Fons=` line as Bede's. Adding a corpus means
+reading its template census first: `_template_census` prints one.
+
     python3 scripts/migne_transcribe.py EXPORT.xml --unit division --out OUT.txt
 
 Nothing here reaches the network and nothing here consults a model: the bytes are
@@ -129,31 +145,116 @@ def arabic(numeral: str) -> int | None:
     return total
 
 
+# The templates that carry prose rather than furniture, and which positional
+# parameter of each is the prose. Everything absent from this table is removed
+# whole. `-1` is the last parameter: `{{font-size|90%|BRESITH}}` prints the
+# transliteration and `{{ancora+|2:8|8}}` prints the verse number Migne prints,
+# its first parameter being the wiki's own anchor target and not part of the
+# printing.
+_UNWRAP = {
+    "hebraica": 1,      # {{Hebraica|בראשית}} — the Hebrew word under discussion
+    "graeca": 1,        # {{Graeca|ἀπὸ ἀρχῆς}} — the Greek Jerome compares
+    "font-size": -1,    # {{font-size|90%|BRESITH}} — Migne's small-capital forms
+    "ancora+": -1,      # {{ancora+|2:8|8}} — the printed verse number
+    "indent": 1,        # {{indent|...}} — an indented paragraph of the printing
+    "falseblock": 1,    # {{FalseBlock|verse||-1}} — quoted verse, set as a block
+}
+
+
+def _split_parameters(body: str) -> list[str]:
+    """A template body split on its top-level pipes, nesting respected."""
+
+    parameters: list[str] = []
+    current: list[str] = []
+    depth = 0
+    position = 0
+    while position < len(body):
+        pair = body[position:position + 2]
+        if pair in ("{{", "[["):
+            depth += 1
+            current.append(pair)
+            position += 2
+            continue
+        if pair in ("}}", "]]") and depth:
+            depth -= 1
+            current.append(pair)
+            position += 2
+            continue
+        if body[position] == "|" and not depth:
+            parameters.append("".join(current))
+            current = []
+            position += 1
+            continue
+        current.append(body[position])
+        position += 1
+    parameters.append("".join(current))
+    return parameters
+
+
 def templates_stripped(wikitext: str) -> str:
-    """Every `{{...}}` removed whole, counting braces rather than matching them.
+    """Every `{{...}}` resolved, counting braces rather than matching them.
 
     A regular expression cannot do this here. `{{titulus2|Scriptor=...|Fons=[...]}}`
     carries pipes and brackets, so the obvious pattern captures the tail of the
     template as though it were text and prints the encoder's metadata as
     Augustine's prose. Counting is exact and terminates.
+
+    A template named in `_UNWRAP` resolves to one of its parameters, recursively,
+    because a template may hold another. Every other template resolves to
+    nothing, which is what furniture deserves.
     """
     out: list[str] = []
-    depth = 0
     position = 0
     while position < len(wikitext):
-        pair = wikitext[position:position + 2]
-        if pair == "{{":
-            depth += 1
-            position += 2
-            continue
-        if pair == "}}" and depth:
-            depth -= 1
-            position += 2
-            continue
-        if not depth:
+        if wikitext[position:position + 2] != "{{":
             out.append(wikitext[position])
-        position += 1
+            position += 1
+            continue
+        depth = 0
+        cursor = position
+        while cursor < len(wikitext):
+            pair = wikitext[cursor:cursor + 2]
+            if pair == "{{":
+                depth += 1
+                cursor += 2
+                continue
+            if pair == "}}":
+                depth -= 1
+                cursor += 2
+                if not depth:
+                    break
+                continue
+            cursor += 1
+        else:
+            # An unclosed `{{` runs to the end of the block; drop the rest
+            # rather than printing a half-template as prose.
+            break
+        parameters = _split_parameters(wikitext[position + 2:cursor - 2])
+        name = parameters[0].strip().lower()
+        keep = _UNWRAP.get(name)
+        if keep is not None and len(parameters) > 1:
+            chosen = parameters[keep] if keep != -1 else parameters[-1]
+            out.append(templates_stripped(chosen))
+        position = cursor
     return "".join(out)
+
+
+def _template_census(export: Path) -> dict[str, int]:
+    """Every template name in an export, with its count.
+
+    Read this before transcribing a corpus that has not been transcribed here
+    before. A name absent from `_UNWRAP` is removed whole and silently, so a
+    corpus that keeps prose in a template must be recognised before its bytes
+    are kept, not after they are landed short.
+    """
+    census: dict[str, int] = {}
+    root = ElementTree.parse(export).getroot()
+    for page in root.findall(".//{*}page"):
+        text = page.find("{*}revision").find("{*}text").text or ""
+        for match in re.finditer(r"\{\{\s*([^|}\n]+)", text):
+            name = match.group(1).strip()
+            census[name] = census.get(name, 0) + 1
+    return census
 
 
 def clean(fragment: str) -> str:
@@ -263,7 +364,18 @@ def main(argv: list[str] | None = None) -> int:
         help="what the first half of a locator counts; see transcribe()",
     )
     parser.add_argument("--out", type=Path)
+    parser.add_argument(
+        "--census",
+        action="store_true",
+        help="print the export's template names and counts, and transcribe nothing",
+    )
     arguments = parser.parse_args(argv)
+    if arguments.census:
+        for name, count in sorted(_template_census(arguments.export).items()):
+            kept = _UNWRAP.get(name.lower())
+            disposition = "removed whole" if kept is None else f"unwrapped to parameter {kept}"
+            print(f"{count:6d}  {name}\t{disposition}")
+        return 0
     text, index = transcribe(arguments.export, unit_from=arguments.unit)
     empty = [entry["title"] for entry in index if entry["last_line"] < entry["first_line"]]
     if empty:
