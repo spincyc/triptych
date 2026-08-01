@@ -50,72 +50,25 @@
    * Rendering
    * --------------------------------------------------------------------- */
 
-  function figures(view) {
-    return [
-      P.plural(view.count, 'reading'),
-      P.plural(view.chapters, 'chapter'),
-      P.plural(view.books, 'book')
-    ].join(' · ');
-  }
-
   function link(text, href, className) {
     const anchor = T.el('a', className || null, text);
     anchor.href = href;
     return anchor;
   }
 
-  function trackCard(plan, view, index, total) {
-    const card = T.el('article', 'track-card');
-
-    const title = T.el('h3', 'track-card-title');
-    title.appendChild(link(
-      'The ' + view.label + ' track',
-      trackHref('#tier=' + encodeURIComponent(view.tier)),
-      'track-card-link'
-    ));
-    card.appendChild(title);
-
-    card.appendChild(T.el('p', 'track-card-rank',
-      'Depth ' + index + ' of ' + total));
-    card.appendChild(T.el('p', 'figures', figures(view)));
-
-    const daily = P.pacing(view.count)[0];
-    card.appendChild(T.el('p', 'track-card-pace',
-      'At a reading a day: ' + daily.takes + '.'));
-
-    if (view.description) card.appendChild(P.prose(view.description));
-
-    const go = T.el('p', 'track-card-go');
-    go.appendChild(link(
-      'Open the track',
-      trackHref('#tier=' + encodeURIComponent(view.tier)),
-      'begin-link'
-    ));
-    if (view.readings.length) {
-      go.appendChild(document.createTextNode(' '));
-      go.appendChild(link(
-        'Begin at reading 1',
-        trackHref('#tier=' + encodeURIComponent(view.tier) +
-          '&reading=' + encodeURIComponent(view.readings[0].key)),
-        'track-card-begin'
-      ));
-    }
-    card.appendChild(go);
-
-    return card;
-  }
-
-  function nestingTable(views) {
-    const table = T.el('table', 'nesting');
+  // One table rather than three cards and a table beside them. The figures
+  // were already tabular; the prose around them repeated what the columns
+  // say, so the columns are what remain.
+  function trackTable(views) {
+    const table = T.el('table', 'nesting tracks');
     const caption = T.el('caption', 'nesting-caption',
-      'Each track contains the one above it entire. The figures are counts of ' +
-      'readings, of the distinct chapters they touch, and of the books those ' +
-      'chapters are in.');
+      'Each track contains the one above it entire.');
     table.appendChild(caption);
 
     const head = T.el('thead');
     const headRow = T.el('tr');
-    for (const label of ['Track', 'Readings', 'New at this depth', 'Chapters', 'Books']) {
+    for (const label of
+      ['Track', 'Readings', 'New here', 'Chapters', 'Books', 'A reading a day']) {
       const cell = T.el('th', null, label);
       cell.setAttribute('scope', 'col');
       headRow.appendChild(cell);
@@ -127,13 +80,19 @@
     let previous = 0;
     for (const view of views) {
       const row = T.el('tr');
-      const name = T.el('th', null, view.label);
+      const name = T.el('th', 'track-name');
       name.setAttribute('scope', 'row');
+      name.appendChild(link(
+        view.label,
+        trackHref('#tier=' + encodeURIComponent(view.tier)),
+        'track-link'
+      ));
       row.appendChild(name);
       row.appendChild(T.el('td', null, String(view.count)));
       row.appendChild(T.el('td', null, String(view.count - previous)));
       row.appendChild(T.el('td', null, String(view.chapters)));
       row.appendChild(T.el('td', null, String(view.books)));
+      row.appendChild(T.el('td', null, P.pacing(view.count)[0].takes));
       body.appendChild(row);
       previous = view.count;
     }
@@ -205,25 +164,14 @@
 
     const tracks = section('tracks', 'Three tracks, one story');
     tracks.appendChild(T.el('p', 'plan-lead',
-      'The tracks nest. Every reading is marked with the depth at which it ' +
-      'first appears and appears at no other, so a track is read by taking ' +
-      'every reading at its own depth and at every depth above it, in order. ' +
       'The shorter tracks are not summaries of the longer ones: they are the ' +
       'same story told with fewer sittings.'));
-
-    const deck = T.el('div', 'track-deck');
-    views.forEach((view, at) => {
-      deck.appendChild(trackCard(plan, view, at + 1, views.length));
-    });
-    tracks.appendChild(deck);
-    tracks.appendChild(nestingTable(views));
+    tracks.appendChild(trackTable(views));
     content.appendChild(tracks);
 
     const periods = section('periods', 'The twelve periods');
     periods.appendChild(T.el('p', 'plan-lead',
-      'The periods are the spine of the story, and every track walks all ' +
-      'twelve. A period is where a reader should start: it is the unit at ' +
-      'which the plan explains itself.'));
+      'Every track walks all twelve.'));
     periods.appendChild(periodTable(plan, views));
     content.appendChild(periods);
 

@@ -19,21 +19,16 @@ Choose a section, open a PDF, and read. New here? Start with
 
 ## Read in the browser
 
-- **[The Propers of the Mass](liturgy/)** — any Mass in either missal, in the
-  translations this site can publish.
-- **[Today’s Missal](liturgy/day.html)** — the Mass appointed for a date, with
-  the rubric behind each choice in the margin.
-- **[The Story of Salvation](scripture/)** — the abridged reading plan, at three
-  depths.
-- **[Catena Omnia](catena/)** — a chapter, and the commentary this site holds on
-  it, oldest first. Early: four fragments so far, all in Genesis.
+**[Today’s Missal](liturgy/day.html)** — the Mass appointed for today, in both
+missals, with the rubric behind each choice.
+
+| Then | |
+| --- | --- |
+| [The Propers of the Mass](liturgy/) | Any Mass, either missal. |
+| [The Story of Salvation](scripture/) | The abridged reading plan, at three depths. |
+| [Catena Omnia](catena/) | A chapter, and the commentary held on it, oldest first. |
 
 ## How this was built
 
-- **[The Bibles](docs/bibles.md)** — why a citation is a three-part address of
-  which only two parts are ever written down.
-- **[The Mass](docs/the-mass.md)** — what a proper is, why two missals answer
-  the same day differently, and where the calendar stops being arithmetic.
-- **[Reading and Commentary](docs/reading-and-commentary.md)** — how the
-  abridged cycle was chosen and what it leaves out; what the commentary harvest
-  can and cannot establish.
+[The Bibles](docs/bibles.md) · [The Mass](docs/the-mass.md) ·
+[Reading and Commentary](docs/reading-and-commentary.md)
