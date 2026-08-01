@@ -633,10 +633,14 @@
 
       const witness = witnessNote(file, held.source_id);
       if (witness) {
-        section.appendChild(T.el('p', 'composed-note', 'Translation: ' + witness.label));
         // The condition the licence attaches travels with the words it
         // licenses. Printing it once at the foot of the page would let the two
         // be separated by any reader who copied a prayer out of it.
+        //
+        // Which witness supplied the words is different: it is the same answer
+        // for every element of an Ordinary served from one printing, and
+        // repeating it 195 times said nothing 194 of those times. It is named
+        // once, above, where the Ordinary declares what it was taken from.
         if (witness.acknowledgement) {
           section.appendChild(T.el('p', 'composed-note ordinary-grant', witness.acknowledgement));
         }
@@ -658,7 +662,14 @@
     if (absent.latin && !held) {
       section.appendChild(T.notice('its Latin. ' + absenceWord(file, absent.latin)));
     }
-    if (element.note) section.appendChild(T.el('p', 'composed-note', element.note));
+    // The note is the transcriber's apparatus — which capital is a drop, where
+    // the Latin column prints a cross, which leaf a reading came from. It is
+    // 48,000 characters across this Ordinary and none of it is the Mass, so it
+    // stays in the record and off the page a reader follows the Mass with.
+    // It reappears with the rest of the reasoning when that is asked for.
+    if (element.note && state.why) {
+      section.appendChild(T.el('p', 'composed-note element-apparatus', element.note));
+    }
     return section;
   }
 
@@ -668,6 +679,14 @@
     wrapper.appendChild(T.el('p', 'entry-meta',
       [file.edition_short || file.edition, 'the unvarying frame'].filter(Boolean).join(' · ')));
     wrapper.appendChild(T.el('p', 'row-meta', file.advisory));
+
+    // Named once, here, rather than under every element it supplied.
+    const named = (file.translations || []).filter((one) => one.label);
+    if (named.length) {
+      wrapper.appendChild(T.el('p', 'row-meta',
+        (named.length === 1 ? 'Translation: ' : 'Translations: ') +
+        named.map((one) => one.label).join('; ')));
+    }
 
     for (const witness of file.translations || []) {
       if (witness.caution) {

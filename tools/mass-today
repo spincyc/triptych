@@ -162,6 +162,16 @@ def run_show(arguments: argparse.Namespace) -> dict:
         if arguments.calendar and day.get("calendar") != arguments.calendar:
             continue
         candidates = [c for c in (day.get("candidates") or []) if isinstance(c, dict)]
+        # A commemoration is said within a mass, so a date whose only entries
+        # are commemorations has no mass of its own and takes the borrowed
+        # formulary the calendar names — 32 dates in 2026 are exactly this, and
+        # rendering only the commemoration showed the reader nothing at all.
+        commemorated = set(day.get("commemorations") or [])
+        proper_masses = [c for c in candidates if c["key"] not in commemorated]
+        if not proper_masses:
+            for borrowed in day.get("ferial_formulary") or []:
+                if isinstance(borrowed, dict):
+                    candidates = [dict(borrowed, borrowed=True), *candidates]
         masses = []
         for candidate in candidates:
             entry = dict(candidate)
@@ -272,7 +282,9 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         for mass in ordered:
             rank = f" ({mass['rank']})" if mass.get("rank") else ""
             mark = ""
-            if mass["key"] in commemorated:
+            if mass.get("borrowed"):
+                mark = "  — " + str(mass.get("rule") or "the formulary this day borrows")
+            elif mass["key"] in commemorated:
                 mark = "  — commemorated within the mass above"
             elif appointed and mass["key"] != appointed:
                 mark = "  — also appointed here"
