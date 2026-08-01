@@ -34,6 +34,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ALIASES = ROOT / "src" / "sources" / "commentary" / "work-aliases.yaml"
 LEDGER = ROOT / "src" / "sources" / "commentary" / "harvest-ledger.yaml"
 INDEX = ROOT / "src" / "sources" / "commentary" / "passage-commentary-index.yaml"
+GENESIS_ALIASES = ROOT / "src" / "sources" / "commentary" / "genesis-work-aliases.yaml"
 CALENDARS = ROOT / "src" / "sources" / "calendars"
 
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -575,6 +576,73 @@ class PromotionTests(unittest.TestCase):
         )
         self.assertEqual(list(answered), ["Psalms 24"])
         self.assertEqual(len(answered["Psalms 24"]), 1)
+
+
+class GenesisAliasCoverageTests(unittest.TestCase):
+    """The alias table must account for every name the index holds, exactly once.
+
+    `guidance/sources.md` requires that a retrieval record the names it searched
+    under, "because that is the only way to tell a work that is genuinely
+    unreachable from one that was looked for under the wrong name". That promise
+    is only kept if the table covers the index: a name the table omits is a work
+    nobody searched for, and it would read afterwards as an absence.
+
+    The three counts the table states about itself are checked against a fresh
+    derivation rather than trusted. One of them was typed wrongly on the first
+    write — 62 groups declared against 66 present — which is this repository's
+    named defect in its smallest form, and is why they are derived here.
+    """
+
+    def setUp(self) -> None:
+        import yaml
+
+        self.table = yaml.safe_load(GENESIS_ALIASES.read_text(encoding="utf-8"))
+        self.groups = self.table["groups"]
+
+    def index_names(self) -> set[tuple[str, str]]:
+        rows = tracked_index()["passages"]
+        names: set[tuple[str, str]] = set()
+        for row in rows:
+            if not row["passage"].startswith("Genesis "):
+                continue
+            for work in row["works"]:
+                names.add((work["author"], work["title"]))
+        return names
+
+    def test_declared_counts_are_derivable(self) -> None:
+        declared = self.table["distinct_works"]
+        self.assertEqual(declared, len(self.groups))
+        covered = sum(len(group["index_names"]) for group in self.groups)
+        self.assertEqual(self.table["index_names_total"], covered)
+
+    def test_every_indexed_genesis_work_was_searched_for(self) -> None:
+        indexed = self.index_names()
+        declared = [
+            (name["author"], name["title"])
+            for group in self.groups
+            for name in group["index_names"]
+        ]
+        missing = indexed - set(declared)
+        self.assertEqual(
+            missing,
+            set(),
+            "the index names these Genesis works and the alias table does not, "
+            "so nothing searched for them: " + repr(sorted(missing)),
+        )
+        self.assertEqual(
+            len(declared),
+            len(set(declared)),
+            "a name reaches two groups, so one work would be surveyed twice "
+            "under two identities",
+        )
+        self.assertEqual(len(indexed), self.table["index_names_total"])
+
+    def test_every_group_carries_names_to_search_under(self) -> None:
+        for group in self.groups:
+            with self.subTest(group=group["id"]):
+                self.assertTrue(group.get("author_aliases"), "no author alias")
+                self.assertTrue(group.get("title_aliases"), "no title alias")
+                self.assertIn("migne", group, "no Migne determination, not even 'none'")
 
 
 if __name__ == "__main__":
