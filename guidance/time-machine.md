@@ -45,6 +45,21 @@ never become stations, so a reader cannot mistake one for a revision.
 > **Rule 1.** No station without an act. A version nobody can cite an act for
 > does not appear on the map, however many printings attest it.
 
+**A qualification the research forced, and it is not a small one.** Searching the
+missal's history turned up **no formal refusal act anywhere** [sourced]. Branch
+births are more often **custom-shaped than act-shaped**: a use continues because
+nobody stopped it, and the law then recognises the custom after the fact — the
+1570 exemption for uses of two hundred years' standing is itself of that shape,
+and so is every surviving use. Canon law even sets a threshold that *changed*:
+forty years in 1917 c. 27, thirty in 1983 c. 26.
+
+So the node vocabulary needs **custom** — no author, no promulgator, a state of
+affairs that acquired force by lasting — and **civil acts**, since Sarum was
+suppressed and restored by Edwardian and Marian statute, which are canonically
+facts rather than norms. Rule 1 still holds for a change to the book. It does not
+hold for the birth of a branch, and a design that assumed it would would have
+drawn every parallel tradition as beginning at a decree that does not exist.
+
 A corollary that must be kept in the data: **the act is fixed and citable; what
 is understood to have changed may be revised and is contested for some acts.**
 Keep them separate, so a later historical judgement does not move a station.
@@ -108,12 +123,40 @@ list of *the important changes* is precisely where a partisan reading enters —
 invisibly, dressed as design. Deciding by hand that one reform is major and
 another minor is an editorial claim wearing the costume of a zoom level.
 
-The candidate derived property is the **juridical rank of the act**, which is a
-fact about the document rather than an opinion: an apostolic constitution, a
-motu proprio, a decree of a congregation, an instruction, a rescript. Whether it
-is recorded consistently enough to drive a rendering is an open question and is
-under research; if it is not, another derived property must be found rather than
-a curated list adopted.
+**The obvious candidate was juridical rank, and it was researched and rejected.**
+An apostolic constitution, a motu proprio, a decree, an instruction, a rescript —
+a fact about the document rather than an opinion, and therefore apparently ideal.
+It fails three ways [sourced]:
+
+- **Often not recorded at all.** *Quo primum* carries no type word in the missal
+  front matter that transmitted it for four centuries. The 1962 decree *Novo
+  rubricarum corpore* is not in AAS 54.
+- **Where recorded, the sources disagree — including the Holy See with itself.**
+  AAS 3 (1911) heads *Divino afflatu* `CONSTITVTIO APOSTOLICA`; John XXIII at AAS
+  52 (1960) 594 calls it a bull. The cause is structural: the vocabulary is three
+  *orthogonal* axes — juridical category (genuinely ordered, 1983 CIC cc. 29–34),
+  diplomatic form ("bull" names a lead seal, not a rank), and conventional
+  solemnity (no authoritative order) — and **every word one would use as a rank
+  label belongs to one of the two unordered axes**. Worse, the 1917 Code excluded
+  liturgical law from its own scope, so for 1917–1983 — 1955, 1960, 1962, 1969,
+  1970, the densest part of the diagram — the ranking machinery does not classify
+  our acts at all.
+- **Rank does not track scope.** The 1969 apostolic constitution approved the
+  Order but did not publish the book; the 1970 *congregation decree* promulgated
+  the editio typica and is printed first in it. A rank-keyed zoom would show the
+  constitution, hide the decree, and hide both 1955 congregation decrees that
+  rebuilt Holy Week — precisely the material the first tracer exists for.
+
+**Use instead: "did this act produce a new typical edition?" as the coarse level,
+then "who promulgated it?" as the next.** Both are derived from the book and the
+document rather than from importance, both are recoverable across 1570–2025 where
+AAS (from 1909) and vatican.va (from Leo XIII) fail, and together they yield a
+defensible nine-node skeleton — 1570, 1604, 1634, 1884, 1920, 1962, 1970, 1975,
+2002.
+
+Keep juridical type, but as a **multi-valued facet and never a scalar**. Wikidata
+types *Quo primum* as both bull and constitution; any single `type` column forces
+a falsification.
 
 > **Rule 4.** A collapsed view says that acts happened which it does not show.
 > An unbroken line where stations were omitted is the difference between
@@ -446,3 +489,64 @@ connection points". That counts **branch alternatives a reader must discard**,
 not stations: a 500-node chain sits under it, a 250-node high-branching graph
 does not. For this project it is a constraint on **branching factor**, not on how
 many acts the map may carry. [sourced]
+
+---
+
+## 10. Generation: measured answers
+
+### Pre-1970 dates are not a viewer problem
+
+The 10,000-year offset in the earlier prototype looked like a workaround for one
+broken viewer. It is not. **Git cannot represent a pre-1970 date at all**
+[verified]: `git commit --date="1570-07-14"` is `fatal: invalid date format`; via
+`fast-import` the value is written but `%ad` renders empty under all nine date
+formats, `git fsck` reports `badDate` as an ERROR, and — worst — `--since=1900`
+*returns* a 1570 commit while `--before=1980` excludes it. The floor is exact:
+epoch 0 works, −1 does not.
+
+And **10,000 years is the right magnitude rather than an arbitrary one**: it is
+exactly 25 Gregorian 400-year cycles, so month, day, leap day and weekday are all
+preserved — 1600-02-29 Tuesday becomes 11600-02-29 Tuesday. The true year is the
+printed year less 10,000.
+
+> **Rule 8.** The shifted date is a storage artefact of git, never a fact. The
+> real date rides in an `Act-Date:` trailer, and that trailer is the only date
+> any viewer reads.
+
+### Byte-identical regeneration is achievable, and was measured
+
+`git fast-import`, one stream into a fresh bare repository: **720 commits across
+12 branches in 0.04 s** [verified]. `from` and `merge` state each edge
+explicitly, and omitting `from` gives a disputed root for free — which is what
+§2's "several roots" needs.
+
+Identical refs, object ids, loose-object store and packfile bytes across
+independent runs, under varying `TZ`, `LANG`, `LC_ALL`, `umask` and
+`core.autocrlf`. Claim **the object graph**, not the directory; pack identity
+across git *versions* is untested. Sign with **SSH/Ed25519**, which was verified
+to produce identical signed commit hashes — OpenPGP embeds a creation timestamp
+and does not.
+
+### The best prior art is not a visualisation at all
+
+**legislation.gov.uk's point-in-time service** is the only system found with
+genuinely parallel, non-merging versions of one provision in production, with
+point-in-time URLs addressed by content, dates that are the *legal* moment rather
+than the publication moment, and standard honesty furniture — a status line and a
+not-yet-in-force banner.
+
+Its two-coordinate lookup maps exactly onto ours: **(date, jurisdiction) →
+(moment, tradition)**. And its granularity is ours: the missal is the Act, the
+collect is the section.
+
+### The viewer is three surfaces, not one
+
+Map orients; station reads; **per-text history answers the question a reader
+actually has**. The governing finding is that **no surveyed system does topology
+and reading in one view** — Perforce, GitLens and legislation.gov.uk all split
+them, and so should this.
+
+What the map hides, stated so it can be compensated: duration, since Beck is
+topological; everything an act did not touch; and OCR uncertainty. Rule 1 keeps
+the scanner off the *map*, but does nothing for the *reading* surface, which must
+carry the review state of every text it shows.
