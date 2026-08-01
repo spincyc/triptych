@@ -12,16 +12,21 @@ psalm_numbering: hebrew
 citation_convention: Lectionary readings and antiphons preserve the numbering in the
   controlling missal
 orthography: 2002 missal Latin (j for i, ae/oe digraphs, no accent marks)
-verification: 'three tiers now, and the third is the only one that has been read.
-  The seasonal section carries unverified model-generated leads - 533 propers
-  holding 1059 book-references - whose every citation and text requires collation
-  against the controlling edition before any evidentiary reuse. The marian, the
-  christological and most of the sanctoral remain a placeholder skeleton pending
-  formula migration. Twelve sanctoral masses are neither, and their Lectionary
-  citations were read at 200 dpi in the page images of the Ordo lectionum Missae
-  1981; each says on its own notes which artifact page it was read at. A citation
-  carrying such a note has been read; every other citation in this file has not,
-  and the difference is the whole of what verification means here'
+verification: 'a citation carrying a mass-level notes line naming an artifact page
+  has been READ, at 200 dpi, in a page image of the book it comes from. Every
+  other citation in this file has NOT been read, and the difference is the whole
+  of what verification means here. Measured on 2026-08-01, after the seasonal
+  collation: the seasonal section holds 1058 book-references, of which 845 were
+  read in the Ordo lectionum Missae 1981 over 79 artifact pages, 731 of them
+  confirming the lead already in place and 114 correcting it. The 213 that remain
+  unread are 188 antiphons - Entrance, Communion, the Washing of Feet, the
+  Communion psalm - which the Missal prints and the Ordo does not, plus 15 on the
+  Epiphany and Ascension Vigils, for which the Ordo prints no distinct formulary,
+  and the Second Sunday of Lent verse before the Gospel, which the Ordo prints
+  with no reference at all. The sanctoral''s twelve read masses are unchanged. The
+  marian, the christological and the rest of the sanctoral remain a placeholder
+  skeleton pending formula migration. See
+  src/sources/inventories/postconciliar-seasonal-collation-v1.toml'
 conventions:
 - cycle-varying elements carry a cycles mapping keyed A, B, C
 - celebrations with several Mass formularies use forms instead of propers
@@ -32,12 +37,20 @@ open_collation_items:
 - antiphon psalm numbering is not yet uniform, because some entries kept the Missal's
   printed Vulgate or Neo-Vulgate number while others were converted to Hebrew
   numbering; normalize to the printed cue at collation
-- part-verse letters such as 8b-12 are retained in some Lectionary citations and
-  dropped in others; settle one notation at collation
+- 'part-verse letters were retained in some Lectionary citations and dropped in
+  others. SETTLED for the seasonal Lectionary slots on 2026-08-01 by reading them
+  in the Ordo: every one now carries exactly the part letters the book prints, and
+  63 of the 114 corrections were nothing but a restored letter. Not settled for
+  the antiphons, which were not read'
 - oration conclusions are rendered both as the terse printed cue and in expanded
   form; settle one rendering at collation
-- where the 1998 US Lectionary and the Ordo Lectionum diverge, the Ordo reading
-  was preferred; confirm against the approved edition actually in use
+- 'where the 1998 US Lectionary and the Ordo Lectionum diverge, the Ordo reading
+  was preferred. That preference is now exercised rather than declared: the
+  seasonal leads reproduced the US Lectionary almost throughout, and where the two
+  books differ the seasonal section now carries what the Ordo prints, read at its
+  own pages. Whether the Ordo or an approved territorial edition should govern
+  this file at all is still open, and is now a decision with a measurable cost -
+  114 references'
 - proper prefaces and the Oratio super populum are recorded inconsistently across
   seasons; decide whether either belongs in this index at all
 - the three celebrations the General Roman Calendar inscribes by rule rather than
@@ -102,21 +115,30 @@ open_collation_items:
   things wanted. A Lectionary or antiphon CITATION may be published where the
   words may not, which is the ruling that ought to be applied to the rest of this
   file and has so far been applied to twelve masses
-- the Ordo lectionum Missae 1981 prints its responsorial psalms in Vulgate
-  numbering, read in its own page images on 2026-08-01. guidance/versification.md
-  states that the Ordo cites in Nova Vulgata numbering and that the Nova Vulgata
-  numbers psalms Hebrew-first. Both cannot be right about this book. The twelve
-  masses landed here convert by scripts/_psalms and say so; anyone collating the
-  seasonal section must settle the question before trusting either convention
+- 'the Ordo lectionum Missae 1981 prints its responsorial psalms in Vulgate
+  numbering, read in its own page images on 2026-08-01. SETTLED. Artifact page
+  100, printed page 46, carries the Third Sunday in Ordinary Time and shows both
+  systems in adjacent lines of one formulary - Is 8, 23b-9, 3 for the reading,
+  which is Nova Vulgata numbering, beside Ps 26, Ps 24 and Ps 18 for the three
+  responsorial psalms, whose printed responses are the Hebrew 27:1, 25:4 and 19.
+  guidance/versification.md was corrected the same day with the pages it was read
+  at, and its Psalms row no longer concludes that an Ordo psalm may be stored as
+  printed. Every seasonal responsorial psalm here is converted by scripts/_psalms
+  from the tracked verse concordance, and every collated mass says so on its notes'
 - the non-Psalm citations that resolved to the wrong verses are now settled under
   citation_divergences, which grew from four books to twelve. Two things fell out
   of settling them and are not defects of this file. Sirach 15:16-21, 24:1-4 and
   27:5-8 turned out to be in the Vulgate's own numbering and needed no
   correction, so this file's Sirach citations are known to mix two systems; and
-  the John 6 and Sirach loci are therefore `unrecorded` for a Greek-numbered
+  the John 6 and Sirach loci are therefore unrecorded for a Greek-numbered
   edition, which cannot be served by one ruling while the mixture stands.
-  Normalizing those citations onto one system would let both become `as-cited`
-  and would return about twenty references to the English indexes
+  HALF SETTLED on 2026-08-01. Sirach no longer mixes two systems - all five
+  seasonal Sirach citations were read in the Ordo, which prints the Latin number
+  and glosses the Greek in parentheses, and all five now carry the Latin and
+  resolve to themselves. John 6 still mixes, and for the reason the John block
+  states - the Communion antiphons keep the Missal's Vulgate number and were not
+  read, while the readings beside them carry the Lectionary's and were. Making
+  John 6 as-cited therefore waits on the antiphons
 - 2 Thessalonians 2:14 and 2:16-3:5 still resolve to the wrong verses in the
   tracked Douay e-texts and in the Catholic Public Domain Version, and
   1 Thessalonians 4:13-18 goes unresolved in the Douay. This is not a numbering
