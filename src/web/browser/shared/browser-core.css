@@ -51,6 +51,15 @@
 
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
     Georgia, "Times New Roman", serif;
+  /* Running scripture is set in its own face, not the page's. The Palatino
+     family above is generous on the body and wide on the em — handsome for a
+     heading and tiring for thirty verses. Charter was drawn for economy at
+     text sizes: narrower, shorter extenders, and it holds its colour at a
+     smaller size, so the same measure carries more words without crowding.
+     Source Serif and Literata are the Android and Chrome fallbacks; Charter
+     ships on Apple platforms. Georgia remains the floor. */
+  --serif-text: Charter, "Bitstream Charter", "Source Serif 4",
+    "Source Serif Pro", Literata, Cambria, Georgia, serif;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, sans-serif;
   --measure: 65ch;
@@ -390,11 +399,15 @@ body:not(:has(> .site-header)) {
 .chapter-mark-number { letter-spacing: 0.08em; }
 
 /* Scripture proper: the reason for the generous measure and leading. */
+/* 1.09rem at 1.85 leading was a display setting, not a reading one — a printed
+   bible sets nearer 1.4, and a screen wants a little more, not half again. The
+   verse numbers are what actually need the air, and they get it from their own
+   superscript rather than from the whole column. */
 .passage {
   margin: 0 0 0.75rem;
-  font-family: var(--serif);
-  font-size: 1.09rem;
-  line-height: 1.85;
+  font-family: var(--serif-text);
+  font-size: 1.02rem;
+  line-height: 1.58;
   hyphens: auto;
 }
 

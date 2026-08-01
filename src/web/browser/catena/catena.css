@@ -135,17 +135,10 @@ body:not(:has(> .site-header)) {
   border-top: 1px solid var(--section-pale);
 }
 
-/* A shade larger than the shared setting, because on this page the chapter is
-   read against the commentary rather than on its own. */
-.chapter .passage {
-  font-size: 1.13rem;
-  line-height: 1.9;
-}
-
-.chapter .passage::first-letter {
-  font-size: 1.5em;
-  line-height: 1;
-}
+/* No size or leading override here. An earlier pass set this a shade larger
+   than the shared value on the theory that a chapter read against commentary
+   wants more presence; it read as loose instead, and the shared setting has
+   since been tightened for the same reason. One setting for scripture. */
 
 /* ---------------------------------------------------------------------------
  * The chain
@@ -277,7 +270,7 @@ body:not(:has(> .site-header)) {
 }
 
 .fragment-text {
-  font-family: var(--serif);
+  font-family: var(--serif-text);
   font-size: 1.02rem;
   line-height: 1.62;
   margin: 0;
