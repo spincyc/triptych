@@ -129,6 +129,45 @@ classification. Put an artifact at the narrowest work and edition owner that
 truthfully identifies it. Do not duplicate identical bytes under several
 publication leaves or source records.
 
+**Anything with an inherent order sorts in that order in a directory listing.**
+A listing is the first index anyone reads, and one that arrives alphabetically
+when its subject is chronological or canonical makes a reader reconstruct the
+order in their head every time.
+
+So a path component carrying an ordered thing is prefixed with what orders it,
+padded to a fixed width:
+
+- **An edition of a source is prefixed with its date**, printing year first:
+  `1611-king-james-version`, `1899-douay-rheims-american`, `1962-...`. Several
+  editions carry a date today as a *suffix* and others carry none, so the
+  listing is chronological nowhere.
+- **A missal or other witness is prefixed with its print date**, for the same
+  reason and in the same form.
+- **A book of scripture is prefixed with its canonical position**, `01-gen`,
+  and a numbered book puts the ordinal last, `46-cor-1`, so that every book of
+  one name groups together and a listing reads as the canon rather than as an
+  alphabet.
+- **A chapter file is zero-padded** to the width the longest book in the canon
+  requires, so `010` follows `009`.
+
+Paths are lowercase throughout. Display casing — *Genesis*, *1 Corinthians* —
+belongs in the text a reader sees and never in a path: a capitalised path
+inherits every casing question with it, and a case-insensitive filesystem makes
+two such paths one file on one machine and two on another.
+
+Two limits on all of this, and both matter more than the convention itself.
+
+**A path is not an identity.** Stable IDs are independent of filesystem moves,
+as stated above, so date-prefixing a directory must not silently re-key the
+record that lives in it, break a citation, or rename a published artifact. A
+citation still addresses `1 Cor 13:4`. Where an id and a path have been the same
+string, separating them is the work, and it is not done by renaming a directory.
+
+**Derive the prefix; never type it beside the fact.** The date is already in the
+edition record and the canonical position is already in the tracked book index.
+A prefix hand-written next to the field it restates is a second source of truth
+that will disagree with the first, and only one of the two will be read.
+
 A segment lives beneath the edition of the constituent it identifies, and its
 `edition_id` must name that enclosing edition. Its one `artifact_id` may point
 across the work boundary to a container artifact under the container's truthful
