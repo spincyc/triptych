@@ -1,5 +1,25 @@
 # Source Schema Changelog
 
+## Optional work composition date — added 2026-08-01
+
+A `work` record may now carry `composed` and `composed_basis`, and stating one
+requires the other. `composed` is when the work was **written**; an edition's
+`date` remains when that edition was printed or translated.
+`guidance/sources.md` owns the rule and its single exception, bible
+translations, for which the act of translating is the work.
+
+Both fields are optional and additive: no existing record changes meaning, and
+no fingerprint moves until a work record is edited. That last clause is the
+whole cost of the backfill, because an edition depends on its work and every
+passage and binding above it depends on the edition — adding the field to a
+work with pinned consumers hands each of them a review obligation.
+
+`composed` is a free-form string, not a year, because composition dates are
+ranges and approximations far more often than they are points: "c. 401-415",
+"saec. VIII in.", "between 796 and 800". Rounding those to an integer asserts a
+precision nobody has, and `guidance/sources.md` requires a range to be recorded
+as a range and an unknown to be recorded unknown.
+
 ## Version 2 — added 2026-07-23
 
 Version 2 adds first-class `segment` records for bounded constituents. Segments

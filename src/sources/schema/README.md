@@ -19,6 +19,13 @@ where their added fields or relationships are needed. Existing version 1
 records, fingerprints, searches, receipts, and artifact-only corpora retain
 their exact meanings.
 
+A `work` may carry `composed`, when it was **written**, with `composed_basis`
+saying what dates it; stating either requires the other. An edition's `date`
+remains the date of that printing or translation. `guidance/sources.md` owns
+the distinction and the one exception, bible translations. `composed` is a
+free-form string so that "c. 401-415" and "saec. VIII in." can be recorded as
+what they are.
+
 Every source record has `schema`, `record_type`, and an immutable `id`.
 Version 1 bindings have `schema = 1`; version 2 bindings are required when any
 entry directly names a version 2 source. Both have

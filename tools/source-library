@@ -192,6 +192,15 @@ ALLOWED_FIELDS_V1 = {
         "locus_pattern",
         "description",
         "relations",
+        # When the work was WRITTEN, and why that is believed. Not a date of
+        # printing or of translation: those are the edition's, and an edition
+        # already carries `date`. `guidance/sources.md` states the rule and its
+        # one exception, bible translations, for which the act of translating is
+        # the work. `composed` is free-form because a composition date is often
+        # a range or an approximation — "c. 401-415", "saec. VIII in." — and
+        # rounding those to a year would assert a precision nobody has.
+        "composed",
+        "composed_basis",
     },
     "edition": COMMON_FIELDS
     | {
@@ -501,6 +510,8 @@ def _validate_strings(library: Library, record: Record) -> None:
         "title",
         "responsible",
         "work_type",
+        "composed",
+        "composed_basis",
         "description",
         "locus_pattern",
         "work_id",
@@ -2027,6 +2038,31 @@ def _validate_loci(library: Library) -> None:
                     break
 
 
+def _validate_work_dates(library: Library) -> None:
+    """A work's composition date must carry the ground it rests on.
+
+    `guidance/sources.md` settles which date belongs to which object: a work is
+    composed once and dated by that, an edition is printed or translated and
+    dated by that, and a composition date is never inferred from a printing
+    date. The inference is silent when it happens — the wrong century is a
+    well-formed integer — so the countermeasure is that stating one obliges you
+    to say where it came from.
+    """
+    for record in library.records.values():
+        if record.record_type != "work":
+            continue
+        composed = record.data.get("composed")
+        basis = record.data.get("composed_basis")
+        if basis is not None and composed is None:
+            library.error(record.path, "composed_basis requires composed")
+        if composed is not None and basis is None:
+            library.error(
+                record.path,
+                "composed requires composed_basis: say what dates the writing, "
+                "and never the printing (guidance/sources.md)",
+            )
+
+
 def _validate_cycles(library: Library) -> None:
     state: dict[str, int] = {}
     reported: set[frozenset[str]] = set()
@@ -2239,6 +2275,7 @@ def load_library(
     _validate_search_receipts(library)
     _validate_source_tree(library)
     _validate_loci(library)
+    _validate_work_dates(library)
     _validate_cycles(library)
     if check_binding_fingerprints:
         _validate_binding_fingerprints(library)

@@ -1333,6 +1333,61 @@ class SourceLibraryTests(unittest.TestCase):
             library.errors,
         )
 
+    def test_work_composition_date_requires_its_basis_and_the_converse(self) -> None:
+        self.add_valid_vertical_fixture()
+        self.write(
+            "src/sources/works/test/undated/work.toml",
+            '''
+            schema = 1
+            record_type = "work"
+            id = "work.undated"
+            title = "A work dated by nothing"
+            responsible = "Test"
+            work_type = "test-work"
+            composed = "c. 401-415"
+            ''',
+        )
+        self.write(
+            "src/sources/works/test/groundless/work.toml",
+            '''
+            schema = 1
+            record_type = "work"
+            id = "work.groundless"
+            title = "A basis for no date"
+            responsible = "Test"
+            work_type = "test-work"
+            composed_basis = "Reasoning with nothing to reason about."
+            ''',
+        )
+        library = SOURCE_LIBRARY.load_library(self.root)
+        self.assertTrue(
+            any("undated/work.toml: composed requires composed_basis" in error for error in library.errors),
+            library.errors,
+        )
+        self.assertTrue(
+            any("groundless/work.toml: composed_basis requires composed" in error for error in library.errors),
+            library.errors,
+        )
+
+    def test_work_carrying_both_composition_fields_validates(self) -> None:
+        self.add_valid_vertical_fixture()
+        self.write(
+            "src/sources/works/test/dated/work.toml",
+            '''
+            schema = 1
+            record_type = "work"
+            id = "work.dated"
+            title = "A work dated by its writing"
+            responsible = "Test"
+            work_type = "test-work"
+            composed = "c. 401-415"
+            composed_basis = "Begun about 401 and finished about 415, on the author's own account."
+            ''',
+        )
+        library = SOURCE_LIBRARY.load_library(self.root)
+        self.assertEqual(library.errors, [])
+        self.assertEqual(library.records["work.dated"].data["composed"], "c. 401-415")
+
     def test_search_rejects_empty_boundaries_queries_and_changed_files(self) -> None:
         self.add_valid_vertical_fixture()
         self.write(
