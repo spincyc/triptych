@@ -30,7 +30,7 @@ distinguished from one nobody looked at, and so that a page can say that no
 English is recorded rather than showing Latin as though it were the answer.
 """
 verification = """
-Partly collated. Of the 165 entries, 113 carry `printed_page`, `ia_leaf`,
+Partly collated. Of the 242 entries, 176 carry `printed_page`,
 `collated` and `collation_result`: those were read against the page images of
 Internet Archive item romanmissaltran00churgoog, the same 1861 printing this
 file quotes, at
@@ -41,10 +41,19 @@ declared the witness does not print. One further entry had its wording
 confirmed and its page corrected: see `sexagesima`'s Secret. The remaining 52
 entries carry no such keys: they have still been read out of an
 optical-character-recognition text layer and collated against nothing, and must
-be treated as unverified. 50 of those 52 are matched by the sibling
-transcription of the same printing; the last 2 are the first entries here taken
-from the witness's Common of Saints, and they are matched instead by a second
-Philadelphia printing of the same translation.
+be treated as unverified. All 50 are matched by the sibling
+transcription of the same printing. A further 16 entries carry
+`detector = "second-printing-agrees"`: those have never been seen on a page
+either, but the 1861 and 1843 scans render them alike, which is two independent
+optical readings of two independent printings.
+
+The 77 entries added on 2026-08-01 are the witness's Common of Saints, harvested
+for the first time. 63 of them were read on the 1861 page image and 14 rest on
+the two printings agreeing. What is not established for any of them is anything
+beyond the wording: the alignment of an oration to a 1962 slot is argued in each
+row's `witness_note` from the Introit the two books print at the head of the Mass
+and the Latin cue the 1861 sets before the English, and that argument is a
+judgement, made against the two books, and not a collation.
 
 The collation ran in two passes on 2026-07-31. The first 99 were not chosen at
 random. They are every entry that disagreed with the project's independent
@@ -234,8 +243,8 @@ repository carries. The honest total is small and worth stating plainly,
 because it is easy to read the corrections above as the end of the problem
 rather than as the result of having looked at two thirds of one file.
 
-The repository serves English for 165 non-scriptural propers, all of them
-here - 56 collects, 54 secrets, 55 postcommunions. Every one comes from this
+The repository serves English for 242 non-scriptural propers, all of them
+here - 82 collects, 78 secrets, 82 postcommunions. Every one comes from this
 file: `tools/mass-propers` builds the browser's data by overlaying this
 inventory onto propers.yaml and reads no other translation source. The
 browser's data serves each of them at every mass that takes it, which is
@@ -246,27 +255,47 @@ served there. Outside the two calendars the only other English orations in the
 tree are quotations of the sibling artifact through passage records, not an
 independent rendering.
 
-Of the 165, revised 2026-08-01:
+Of the 242, revised 2026-08-01:
 
-  113  read against the 1861 page images on 2026-07-31 and 2026-08-01 - 59
-       confirmed, 39 corrected, 14 recorded from the page in propers this file
-       had declared the witness does not print, and 1 whose wording was
-       confirmed and whose cited page was corrected. These carry `collated` and
-       `collation_result`.
-    2  never seen on a page, but matched word for word against a second
+  176  read against the 1861 page images on 2026-07-31 and 2026-08-01 - 59
+       confirmed, 39 corrected, 77 recorded from the page in propers this file
+       had no entry for or had declared the witness does not print, and 1 whose
+       wording was confirmed and whose cited page was corrected. These carry
+       `collated` and `collation_result`.
+   16  never seen on a page, but matched word for word against a second
        Philadelphia printing of the same translation, the 1843 of Internet
-       Archive item romanmissaltran00englgoog. These carry
+       Archive item romanmissaltran00englgoog, now registered as the source
+       `cummiskey-1843` above. These carry
        `detector = "second-printing-agrees"`.
    50  never seen on a page, but matched byte for byte by the independent
        temporal-orations-en transcription of the same book. These carry
        `detector = "sibling-agrees"`.
     0  never seen on a page and with no second reading of any kind.
 
-The roman-1962 calendar appoints 174 distinct orations once every `takes_from`
-is resolved, so 165 served leaves 9 without English, and all 9 carry an
+The roman-1962 calendar appoints 269 distinct orations once every `takes_from`
+is resolved, so 242 served leaves 27 without English, and all 27 carry an
 `untranslated` row saying why. Nothing in that calendar's oration slots is
 unaccounted for: there is no longer a proper that has neither English nor a
-recorded reason for having none.
+recorded reason for having none. **No oration in this file is a project-created
+translation, and the count is still zero.**
+
+**The witness's Common of Saints was harvested whole on 2026-08-01**, and it
+answers 77 of the 95 orations the 1962 Commune Sanctorum prints. What the
+harvest measured, rather than assumed, is where it does not reach. The 1861 book
+has no Common of Summorum Pontifices at all -- that Common is later than the
+printing, and the whole of its Common of Saints was read to establish it. It has
+no Mass of a Martyr who is not a Virgin, its only non-Virgin Mass being MASS XXI,
+Cognovi, of Holy Women. And it prints one Mass of the Dedication where the 1962
+prints two sets of orations. Those three gaps account for all 18 orations of the
+Commune left without English, and each carries its reason.
+
+Two of its Masses print no orations of their own but send the reader into the
+temporal: its Advent Mass of the Blessed Virgin to the second Collect, Secret and
+Postcommunion of the First Sunday of Advent, and its Christmas-to-Candlemas Mass
+to the Circumcision. Both were followed and both pages read. That is the third
+time in two days that a cross-reference in this book has turned out to be the
+book saying where its own text is, and the second time this file had to be
+corrected for having read one as an absence.
 
 **The witness's sanctoral was reached for the first time on 2026-07-31.** Every
 entry above it in this file renders a temporal oration, because the temporal is
@@ -395,6 +424,17 @@ rights = "public-domain"
 rights_jurisdiction = "United States"
 rights_basis = "Published in the United States in 1861, so in the public domain there by publication date: every United States work published before 1930 has entered the public domain and no renewal question arises for an 1861 imprint. The translator is unnamed and no proprietor survives. The basis is a United States one and is recorded as such, as the King James Version and Revised Version records here are, because a public-domain claim does not travel of itself; a reader outside the United States must establish the position in their own jurisdiction. That basis covers the 1861 book's own English, which is what this file carries. It does not cover the Internet Archive text layer the English was read out of: `artifact_id` names a remote, unretained artifact whose own rights the source library records as unresolved, because those exact bytes are a Google-produced derivative carrying Google's front matter and no distribution grant for it was established. The artifact record pins the bytes by sha256 and byte count and gives the URL, so a reader can fetch the same file and check any entry here against it; this repository does not redistribute them."
 caution = "A pre-1955 lay hand missal, not an approved liturgical translation and never an altar book. Its rubrics, its seasonal second and third orations, its Holy Week and its sanctoral are not those of 1962. It is carried only where a 1962 formulary is the same prayer, and nothing here may be used for recitation."
+
+[[sources]]
+id = "cummiskey-1843"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843"
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.ia-djvu-ocr"
+label = "The Roman Missal translated into the English language for the use of the laity (Philadelphia: Eugene Cummiskey, 1843)"
+rights = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Published in the United States in 1843, so in the public domain there by publication date, on the same basis as the 1861 printing above and with the same caveat that a reader outside the United States must establish the position in their own jurisdiction."
+role = "corroborating witness only. No entry in this file quotes the 1843 as its text: every `text` here is the 1861 printing's, and `witness` names cummiskey-1861 throughout. The 1843 is carried because it is an independent scan of an independent printing of the same translation, at the same page numbers, so a reading can be tested twice before a page image is opened. An entry marked `detector = \"second-printing-agrees\"` is one the two scans render alike; it has still never been seen on a page."
+caution = "The same caution as the 1861, and one more. Two printings of one translation are not one text: they differ in punctuation and in the conclusions they set, and this file has already recorded three places where they do. Agreement between them is evidence about the scans, not proof about the page."
 
 
 [[entries]]
@@ -3363,6 +3403,1460 @@ Grant, we beseech thee, O Lord, that whatever vice our souls are subject to may 
 """
 
 [[entries]]
+mass = "commune-unius-martyris-1"
+form = ""
+proper = "Collect"
+incipit = "Infirmitatem nostram respice"
+witness = "cummiskey-1861"
+printed_page = "461"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS I. Statuit, of a MARTYR and BP., p. 461 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Have regard, O Almighty God to our weakness; and as we sink under the weight of our doings, let the glorious intercession of blessed N. thy Martyr and Bishop, be a protection to us. Thro'.
+"""
+
+[[entries]]
+mass = "commune-unius-martyris-1"
+form = ""
+proper = "Secret"
+incipit = "Hostias tibi, Domine"
+witness = "cummiskey-1861"
+printed_page = "463"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS I. Statuit, of a MARTYR and BP., p. 461 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Mercifully receive, O Lord, the offerings dedicated to thee by the merits of blessed N. thy Martyr and Bishop, and grant they may be a continual support to us. Thro'.
+"""
+
+[[entries]]
+mass = "commune-unius-martyris-1"
+form = ""
+proper = "Postcommunion"
+incipit = "Refecti participatione muneris"
+witness = "cummiskey-1861"
+printed_page = "463"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS I. Statuit, of a MARTYR and BP., p. 461 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being fed with the participation of thy sacred gifts, we beseech, thee, O Lord our God, that we may feel the efficacy thereof by the intercession of blessed N. thy Martyr and Bishop, whose feast we celebrate. Thro'.
+"""
+
+[[entries]]
+mass = "commune-unius-martyris-2"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui nos"
+witness = "cummiskey-1861"
+printed_page = "464"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS II. Sacerdotes Dei, of the same, p. 464 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who, by the yearly solemnity of blessed N. thy Martyr and Bishop, rejoicest the hearts of thy faithful; mercifully grant that we who celebrate his martyrdom, may enjoy his protection. Thro'
+"""
+
+[[entries]]
+mass = "commune-unius-martyris-2"
+form = ""
+proper = "Secret"
+incipit = "Munera tibi, Domine"
+witness = "cummiskey-1861"
+printed_page = "465"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS II. Sacerdotes Dei, of the same, p. 464 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Sanctify, O Lord, the offerings consecrated to thee: and being appeased thereby, mercifully look upon us, by the intercession of blessed N. thy Martyr and Bishop. Thro'.
+"""
+
+[[entries]]
+mass = "commune-unius-martyris-2"
+form = ""
+proper = "Postcommunion"
+incipit = "Haec nos communio"
+witness = "cummiskey-1861"
+printed_page = "465"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS II. Sacerdotes Dei, of the same, p. 464 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May this communion, O Lord, cleanse us from sin, and, by the intercession of blessed N. thy Martyr and Bishop, make us effectually partakers of this heavenly remedy.
+"""
+
+[[entries]]
+mass = "commune-unius-martyris-3"
+form = ""
+proper = "Collect"
+incipit = "Praesta, quaesumus, omnipotens"
+witness = "cummiskey-1861"
+printed_page = "466"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS III. In virtute, of a MARTYR not a BISHOP, p. 466 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that we, who celebrate the festival of blessed N. thy Martyr, may, by his intercession, be strengthened in the love of thy name.
+"""
+
+[[entries]]
+mass = "commune-unius-martyris-3"
+form = ""
+proper = "Secret"
+incipit = "Muneribus nostris, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "467"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS III. In virtute, of a MARTYR not a BISHOP, p. 466 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Receive, O Lord, we beseech thee, our offerings and prayers: purify us by these heavenly mysteries, and mercifully hear us. Thro'.
+"""
+
+[[entries]]
+mass = "commune-unius-martyris-3"
+form = ""
+proper = "Postcommunion"
+incipit = "Da, quaesumus, Domine"
+witness = "cummiskey-1861"
+printed_page = "468"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS III. In virtute, of a MARTYR not a BISHOP, p. 466 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord our God, that as we rejoice on the feasts of thy saints in this life, so we may enjoy their sight for ever in that which is to come. Thro'.
+"""
+
+[[entries]]
+mass = "commune-unius-martyris-4"
+form = ""
+proper = "Collect"
+incipit = "Praesta, quaesumus, omnipotens"
+witness = "cummiskey-1861"
+printed_page = "468"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS IV. Laetabitur, of the same, p. 468 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that by the intercession of blessed N. thy Martyr, we may be delivered from all corporal adversities, and our hearts be cleansed from all evil thoughts. Thro'.
+"""
+
+[[entries]]
+mass = "commune-unius-martyris-4"
+form = ""
+proper = "Secret"
+incipit = "Accepta sit in"
+witness = "cummiskey-1861"
+printed_page = "469"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS IV. Laetabitur, of the same, p. 468 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May our devotion, O Lord, be acceptable in thy sight: and may this intercession on whose festival we pay it, make it available to our salvation. Thro'.
+"""
+
+[[entries]]
+mass = "commune-unius-martyris-4"
+form = ""
+proper = "Postcommunion"
+incipit = "Refecti participatione muneris"
+witness = "cummiskey-1861"
+printed_page = "469"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS IV. Laetabitur, of the same, p. 468 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being fed by the participation of thy sacred gifts, we beseech thee, O Lord our God, that we may feel the efficacy thereof, by the intercession of blessed N. thy Martyr, whose feast we celebrate. Thro'.
+"""
+
+[[entries]]
+mass = "commune-plurimorum-martyrum-1"
+form = ""
+proper = "Collect"
+incipit = "Beatorum Martyrum pariterque"
+witness = "cummiskey-1861"
+printed_page = "475"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS VII. Intret, of MANY MARTYRS, p. 475 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We beseech thee, O Lord, that the solemnity of thy blessed Martyrs and Bishops N. and N. may be a protection to us, and their venerable prayers recommend us to thy mercy Thro'.
+"""
+
+[[entries]]
+mass = "commune-plurimorum-martyrum-1"
+form = ""
+proper = "Secret"
+incipit = "Adesto, Domine, supplicationibus"
+witness = "cummiskey-1861"
+printed_page = "476"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS VII. Intret, of MANY MARTYRS, p. 475 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Attend, O Lord, to our earnest prayers, which we put up in memory of thy saints ; and since we trust not in our own righteousness, may we be helped by the merits of those, who were well-pleasing to thee. Thro'.
+"""
+
+[[entries]]
+mass = "commune-plurimorum-martyrum-1"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, Domine, salutaribus"
+witness = "cummiskey-1861"
+printed_page = "477"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS VII. Intret, of MANY MARTYRS, p. 475 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being filled with thy saving mysteries, we beseech thee, O Lord, that we may be helped by their intercession, whose festivals we celebrate. Thro'.
+"""
+
+[[entries]]
+mass = "commune-plurimorum-martyrum-2"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui nos"
+witness = "cummiskey-1861"
+printed_page = "478"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS VIII. Sapientiam, of the same, p. 478 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, by whose favour we celebrate the festival of thy holy Martyrs N. and N. grant that we may enjoy their fellowship in eternal bliss. Thro'.
+"""
+
+[[entries]]
+mass = "commune-plurimorum-martyrum-2"
+form = ""
+proper = "Secret"
+incipit = "Munera tibi, Domine"
+witness = "cummiskey-1861"
+printed_page = "479"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS VIII. Sapientiam, of the same, p. 478 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We bring thee, O Lord, the offerings of our devotion ; and may they be acceptable to thee in honour of thy saints, and, by thy mercy, available to our salvation. Thro'.
+"""
+
+[[entries]]
+mass = "commune-plurimorum-martyrum-2"
+form = ""
+proper = "Postcommunion"
+incipit = "Praesta nobis, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "479"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS VIII. Sapientiam, of the same, p. 478 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord, by the intercession of thy holy Martyrs N. and N. that what we have taken with our mouths we may receive with a pure soul. Thro'.
+"""
+
+[[entries]]
+mass = "commune-plurimorum-martyrum-3"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui nos"
+witness = "cummiskey-1861"
+printed_page = "479"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS IX. Salus autem, of the same, p. 479 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who, by the yearly solemnity of thy holy Martyrs N. and N. comfortest us thy people; mercifully grant, that, as we rejoice at their merits, we may likewise be encouraged by their examples. Thro'
+"""
+
+[[entries]]
+mass = "commune-plurimorum-martyrum-3"
+form = ""
+proper = "Secret"
+incipit = "Oblatis, quaesumus, Domine"
+witness = "cummiskey-1861"
+printed_page = "481"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS IX. Salus autem, of the same, p. 479 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Be appeased, O Lord, we beseech thee, by the offerings we have made; and defend us from all dangers, by the intercession of thy holy Martyrs N. and N. Thro'.
+"""
+
+[[entries]]
+mass = "commune-plurimorum-martyrum-3"
+form = ""
+proper = "Postcommunion"
+incipit = "Haec nos communio"
+witness = "cummiskey-1861"
+printed_page = "481"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS IX. Salus autem, of the same, p. 479 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May this communion, O Lord, purify us from sin, and, by the intercession of thy holy Martyrs N. and N. make us partakers of the joys of heaven. Thro'.
+"""
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-1"
+form = ""
+proper = "Collect (Item altera oratio)"
+incipit = "Deus, qui nos"
+witness = "cummiskey-1861"
+printed_page = "470"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS V. Protexisti, of a MARTYR in Paschal time, p. 470 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who by the yearly solemnity of blessed N. thy Martyr and Bishop, rejoicest the hearts of thy faithful, mercifully grant that we, who celebrate his martyrdom, may enjoy his protection. Thro'.
+"""
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-1"
+form = ""
+proper = "Collect (Pro Martyre tantum, item altera oratio)"
+incipit = "Praesta, quaesumus, omnipotens"
+witness = "cummiskey-1861"
+printed_page = "470"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS V. Protexisti, of a MARTYR in Paschal time, p. 470 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that by the intercession of blessed N. thy Martyr, we may be delivered from all temporal adversities, and our hearts be cleansed from all evil thoughts. Thro'.
+"""
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-1"
+form = ""
+proper = "Secret"
+incipit = "Hostias tibi, Domine"
+witness = "cummiskey-1861"
+printed_page = "472"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS V. Protexisti, of a MARTYR in Paschal time, p. 470 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Of a Martyr and a Bishop.--Mercifully receive, O Lord, the offerings dedicated to thee by the merits of blessed N. thy Martyr and Bishop, and grant they may be a continual support to us. Thro'
+"""
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-1"
+form = ""
+proper = "Secret (Pro Martyre tantum, item altera secreta)"
+incipit = "Accepta sit in"
+witness = "cummiskey-1861"
+printed_page = "472"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS V. Protexisti, of a MARTYR in Paschal time, p. 470 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May our devotion, O Lord, be acceptable in thy sight ; and may his intercession, on whose festival we pay it, make it available to our salvation. Thro'.
+"""
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-1"
+form = ""
+proper = "Postcommunion"
+incipit = "Refecti participatione muneris"
+witness = "cummiskey-1861"
+printed_page = "472"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS V. Protexisti, of a MARTYR in Paschal time, p. 470 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Of a Martyr and Bishop. Being fed by the participation of thy sacred gifts, we beseech thee, O Lord, our God, that we may feel the efficacy thereof by the intercession of blessed N. thy Martyr and Bishop. Thro'.
+"""
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-1"
+form = ""
+proper = "Postcommunion (Pro Martyre tantum)"
+incipit = "Da, quaesumus, Domine"
+witness = "cummiskey-1861"
+printed_page = "472"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS V. Protexisti, of a MARTYR in Paschal time, p. 470 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Of a Martyr not a Bishop. Grant, we beseech thee, O Lord our God. that as we rejoice on the feasts of thy saints in this life, so we may enjoy their sight for ever in that which is to come. Thro'.
+"""
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-1"
+form = ""
+proper = "Postcommunion (Pro Martyre tantum, item altera postcommunio)"
+incipit = "Refecti participatione muneris"
+witness = "cummiskey-1861"
+printed_page = "473"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS V. Protexisti, of a MARTYR in Paschal time, p. 470 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being fed by the participation of thy sacred gifts, we beseech thee, O Lord our God, that we may feel the efficacy thereof, by the intercession of blessed N. thy Martyr. Thro'.
+"""
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-2"
+form = ""
+proper = "Collect (Pro pluribus Martyribus tantum)"
+incipit = "Deus, qui nos"
+witness = "cummiskey-1861"
+printed_page = "473"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS VI. Sancti tui, of MANY MARTYRS, p. 473 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Of Martyrs only. O God, by whose favour we celebrate the festival of thy holy Martyrs N. and N. grant we may enjoy their fellowship in eternal bliss. Thro'.
+"""
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-2"
+form = ""
+proper = "Secret"
+incipit = "Adesto, Domine, supplicationibus"
+witness = "cummiskey-1861"
+printed_page = "474"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS VI. Sancti tui, of MANY MARTYRS, p. 473 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Of Martyrs and Bishops.--Attend, O Lord to our earnest prayers, which we put up in memory of thy saints; and since we trust not in our own righteousness, may we be helped by the merits of those, who were well-pleasing to thee. Thro'.
+"""
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-2"
+form = ""
+proper = "Secret (Item altera secreta)"
+incipit = "Oblatis, quaesumus, Domine"
+witness = "cummiskey-1861"
+printed_page = "481"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS IX. Salus autem, of the same, p. 479 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree. The 1962 Missal prints this prayer twice, at no. 4268 and here, differing only in how far it sets out the conclusion; the witness's English renders the conclusion as its own abbreviated cue and does not track that difference, so the one English answers both settings and is recorded at both."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Be appeased, O Lord, we beseech thee, by the offerings we have made; and defend us from all dangers, by the intercession of thy holy Martyrs N. and N. Thro'.
+"""
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-2"
+form = ""
+proper = "Postcommunion (Pro pluribus Martyribus tantum)"
+incipit = "Praesta nobis, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "475"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS VI. Sancti tui, of MANY MARTYRS, p. 473 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Of Martyrs not Bishops. Grant, we beseech thee, O Lord, by the intercession of thy Holy Martyrs N. and N. that what we have taken with our mouths, we may receive with a pure soul. Thro'.
+"""
+
+[[entries]]
+mass = "commune-martyrum-tempore-paschali-2"
+form = ""
+proper = "Postcommunion (Item altera postcommunio)"
+incipit = "Haec nos communio"
+witness = "cummiskey-1861"
+printed_page = "481"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS IX. Salus autem, of the same, p. 479 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree. The 1962 Missal prints this prayer twice, at no. 4270 and here, differing only in how far it sets out the conclusion; the witness's English renders the conclusion as its own abbreviated cue and does not track that difference, so the one English answers both settings and is recorded at both."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May this communion, O Lord, purify us from sin, and, by the intercession of thy holy Martyrs N. and N. make us partakers of the joys of heaven. Thro'.
+"""
+
+[[entries]]
+mass = "commune-confessoris-pontificis-1"
+form = ""
+proper = "Collect"
+incipit = "Da, quaesumus, omnipotens"
+witness = "cummiskey-1861"
+printed_page = "482"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS X. Statuit, of a CONFESSOR and BISHOP, p. 482 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that the venerable solemnity of blessed N. thy Confessor and Bishop, may improve our devotion, and strengthen in us the hopes of salvation. Thro'.
+"""
+
+[[entries]]
+mass = "commune-confessoris-pontificis-1"
+form = ""
+proper = "Secret"
+incipit = "Sancti tui, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "483"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS X. Statuit, of a CONFESSOR and BISHOP, p. 482 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May thy saints, O Lord, we beseech thee, cause joy to all thy people: that while we celebrate their merits, we may experience their patronage. Thro'.
+"""
+
+[[entries]]
+mass = "commune-confessoris-pontificis-1"
+form = ""
+proper = "Postcommunion"
+incipit = "Praesta, quaesumus, omnipotens"
+witness = "cummiskey-1861"
+printed_page = "483"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS X. Statuit, of a CONFESSOR and BISHOP, p. 482 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that while we return thee thanks for what we have partaken of, we may, by the intercession of blessed N. thy Confessor and Bishop, receive still greater favours. Thro'.
+"""
+
+[[entries]]
+mass = "commune-confessoris-pontificis-2"
+form = ""
+proper = "Collect"
+incipit = "Exaudi, quaesumus, Domine"
+witness = "cummiskey-1861"
+printed_page = "484"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XI. Sacerdotes tui, of the same, p. 484 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Hear, O Lord, we beseech thee, the prayers we offer on this solemnity of blessed N. thy Confessor and Bishop: and by his intercession, who worthily served thee, deliver us from all our sins. Thro'.
+"""
+
+[[entries]]
+mass = "commune-confessoris-pontificis-2"
+form = ""
+proper = "Secret"
+incipit = "Sancti N. Confessoris"
+witness = "cummiskey-1861"
+printed_page = "485"
+detector = "second-printing-agrees"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XI. Sacerdotes tui, of the same, p. 484 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the annual solemnity, we beseech thee, O Lord, of holy N. thy Confessor and Bishop, render us acceptable to thy mercy: that by this sacrifice of propitiation, he may both receive a happy reward, and obtain for us the gifts of thy mercy. Thro'.
+"""
+
+[[entries]]
+mass = "commune-confessoris-pontificis-2"
+form = ""
+proper = "Postcommunion"
+incipit = "Deus, fidelium remunerator"
+witness = "cummiskey-1861"
+printed_page = "485"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XI. Sacerdotes tui, of the same, p. 484 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, the rewarder of faithful souls, grant that we may obtain forgiveness by the prayers of blessed N. thy Confessor and Bishop, whose venerable feast we celebrate. Thro'
+"""
+
+[[entries]]
+mass = "commune-confessoris-non-pontificis-1"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui nos"
+witness = "cummiskey-1861"
+printed_page = "488"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XIII. Os justi, of a CONFESSOR not a BP, p. 488 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who comfortest us by the yearly solemnity of blessed N. thy Confessor; mercifully grant, that while we celebrate his festival, we may imitate his actions. Thro'.
+"""
+
+[[entries]]
+mass = "commune-confessoris-non-pontificis-1"
+form = ""
+proper = "Secret"
+incipit = "Laudis tibi, Domine"
+witness = "cummiskey-1861"
+printed_page = "489"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XIII. Os justi, of a CONFESSOR not a BP, p. 488 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We offer thee, O Lord, in honour of thy saints, a sacrifice of praise, by which we hope to be delivered from all present and future evils. Thro'.
+"""
+
+[[entries]]
+mass = "commune-confessoris-non-pontificis-1"
+form = ""
+proper = "Postcommunion"
+incipit = "Refecti cibo potuque"
+witness = "cummiskey-1861"
+printed_page = "489"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XIII. Os justi, of a CONFESSOR not a BP, p. 488 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being refreshed, O Lord, with this heavenly meat and drink, we humbly beseech thee, that we may be assisted by his prayers, on whose feast we have received these sacred mysteries. Thro'.
+"""
+
+[[entries]]
+mass = "commune-confessoris-non-pontificis-2"
+form = ""
+proper = "Collect"
+incipit = "Adesto, Domine, supplicationibus"
+witness = "cummiskey-1861"
+printed_page = "490"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XIV. Justus ut palma, of the same, p. 490 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Attend, O Lord, to the humble prayers we present to thee on the solemnity of blessed N. thy Confessor; that we who have no confidence in our own righteousness, may be helped by his prayers, who was so pleasing to thee. Thro'.
+"""
+
+[[entries]]
+mass = "commune-confessoris-non-pontificis-2"
+form = ""
+proper = "Secret"
+incipit = "Praesta nobis, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "491"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XIV. Justus ut palma, of the same, p. 490 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that our humble offerings may be acceptable to thee, for the honour of thy saints, and purify us both in body and mind. Thro'.
+"""
+
+[[entries]]
+mass = "commune-confessoris-non-pontificis-2"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, omnipotens Deus"
+witness = "cummiskey-1861"
+printed_page = "491"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XIV. Justus ut palma, of the same, p. 490 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We beseech thee, O Almighty God, that by the intercession of thy holy confessor N. the heavenly food we have received may defend us from all adversity. Thro'.
+"""
+
+[[entries]]
+mass = "commune-abbatum"
+form = ""
+proper = "Collect"
+incipit = "Intercessio nos, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "491"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XV. Os justi, of ABBOTS, p. 491 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the intercession, O Lord, of the blessed Abbot N, recommend us to thee: that what we cannot hope for through our own merits, we may obtain by his prayers. Thro'.
+"""
+
+[[entries]]
+mass = "commune-abbatum"
+form = ""
+proper = "Secret"
+incipit = "Sacris altaribus, Domine"
+witness = "cummiskey-1861"
+printed_page = "492"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XV. Os justi, of ABBOTS, p. 491 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May blessed N. the Abbot intercede for us, O Lord, that the offerings we have laid on thy altars, may avail us unto salvation. Thro'.
+"""
+
+[[entries]]
+mass = "commune-abbatum"
+form = ""
+proper = "Postcommunion"
+incipit = "Protegat nos, Domine"
+witness = "cummiskey-1861"
+printed_page = "492"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XV. Os justi, of ABBOTS, p. 491 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the receiving of this sacrament, and the intercession of blessed N. the Abbot, protect us, O Lord; that we may both copy after the virtues of his life, and experience the help of his intercession. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-1"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui inter"
+witness = "cummiskey-1861"
+printed_page = "493"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XVI. Loquebar, of a Virgin and Martyr, p. 493 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who amongst other miracles of thy power, has bestowed the crown of martyrdom even on the weaker sex: mercifully grant that we, who solemnize the festival of blessed N. thy Virgin and Martyr, may, by following her example, come to thee. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-1"
+form = ""
+proper = "Secret"
+incipit = "Suscipe, Domine, munera"
+witness = "cummiskey-1861"
+printed_page = "495"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XVI. Loquebar, of a Virgin and Martyr, p. 493 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Receive, O Lord, the offerings we bring on the solemnity of blessed N. thy Virgin and Martyr by whose intercession we hope to be delivered. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-1"
+form = ""
+proper = "Postcommunion"
+incipit = "Auxilientur nobis, Domine"
+witness = "cummiskey-1861"
+printed_page = "495"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XVI. Loquebar, of a Virgin and Martyr, p. 493 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the mysteries we have received, O Lord, be a help to us, and, by the intercession of blessed N. thy Virgin and Martyr, cause us to enjoy her continual protection. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-2"
+form = ""
+proper = "Collect"
+incipit = "Indulgentiam nobis, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "496"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XVII. Me expectaverunt, of the same, p. 496 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Let blessed N. thy Virgin and Martyr, O Lord, sue for our pardon: who by the purity of her life, and profession of thy virtue, was always pleasing to thee. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-2"
+form = ""
+proper = "Secret"
+incipit = "Hostias tibi, Domine"
+witness = "cummiskey-1861"
+printed_page = "497"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XVII. Me expectaverunt, of the same, p. 496 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Mercifully receive, O Lord, the offerings consecrated to thee, and by the merits of blessed N. thy Virgin and Martyr, grant they may be to us a continual support. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-2"
+form = ""
+proper = "Postcommunion"
+incipit = "Divini muneris largitate"
+witness = "cummiskey-1861"
+printed_page = "497"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XVII. Me expectaverunt, of the same, p. 496 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being plentifully fed with thy divine gifts, we beseech, thee, O Lord our God, that by partaking of them through the intercession of blessed N. thy Virgin and Martyr, we may obtain eternal life. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-2"
+form = ""
+proper = "Collect (Pro pluribus Virginibus Martyribus)"
+incipit = "Da nobis, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "497"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XVIII. Loquebar, of many VV. and MM., p. 497 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord our God, that with a constant devotion, we may celebrate the victories of thy holy Virgins and Martyrs N. and N. that though we cannot solemnize them as we ought, we may seek their prayers with all due humility. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-2"
+form = ""
+proper = "Secret (Pro pluribus Virginibus Martyribus)"
+incipit = "Intende, quaesumus, Domine"
+witness = "cummiskey-1861"
+printed_page = "497"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XVIII. Loquebar, of many VV. and MM., p. 497 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Look down, we beseech thee, O Lord, on the offerings laid on thy altar, on this feast of thy holy Virgins and Martyrs N. and N. that as thou hast bestowed glory on them so by the sacred mysteries, thou mayest grant us pardon. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-2"
+form = ""
+proper = "Postcommunion (Pro pluribus Virginibus Martyribus)"
+incipit = "Praesta nobis, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "497"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XVIII. Loquebar, of many VV. and MM., p. 497 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord, by the intercession of thy Virgins and Martyrs, to receive with a pure mind what we receive with our mouths. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-3"
+form = ""
+proper = "Collect"
+incipit = "Exaudi nos, Deus"
+witness = "cummiskey-1861"
+printed_page = "498"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XIX. Dilexisti, of a Virgin only, p. 498 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Give ear to us, O God our Saviour, that as we celebrate with joy the solemnity of blessed N. thy Virgin, so we may improve in the affection of piety. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-3"
+form = ""
+proper = "Secret"
+incipit = "Accepta tibi sit"
+witness = "cummiskey-1861"
+printed_page = "499"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XIX. Dilexisti, of a Virgin only, p. 498 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the offerings, O Lord, of thy devout people, be acceptable to thee in honour of thy saints: by whose merits they have experienced help in their afflictions. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-3"
+form = ""
+proper = "Postcommunion"
+incipit = "Satiasti, Domine, familiam"
+witness = "cummiskey-1861"
+printed_page = "499"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XIX. Dilexisti, of a Virgin only, p. 498 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Thou hast fed, O Lord, thy family with these sacred oblations: ever therefore comfort us with her intercession, whose feast we celebrate. Thro'.
+"""
+
+[[entries]]
+mass = "commune-virginum-4"
+form = ""
+proper = "Collect"
+incipit = "Exaudi nos, Deus"
+witness = "cummiskey-1861"
+printed_page = "500"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XX. Vultum tuum, of the same, p. 500 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Give ear to us, O God our Saviour, that as we celebrate with joy the solemnity of blessed N. thy Virgin, so we may improve in the affection of piety Thro'.
+"""
+
+[[entries]]
+mass = "commune-non-virginum-2"
+form = ""
+proper = "Collect"
+incipit = "Exaudi nos, Deus"
+witness = "cummiskey-1861"
+printed_page = "502"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- MASS XXI. Cognovi, of HOLY WOMEN, p. 502 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Give ear to us, O God our Saviour, that as we celebrate with joy the solemnity of blessed N. so we may improve in the affection of true piety. Thro'.
+"""
+
+[[entries]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui nobis"
+witness = "cummiskey-1861"
+printed_page = "504"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- the ANNIVERSARY MASS of the DEDICATION of a church, p. 504 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who renewest every year the day of the consecration of this thy holy temple, and bringest us always in health to the celebrating these sacred mysteries: hear the prayers of thy people, and grant that whosoever shall come hither to ask any blessing of thee, may rejoice in obtaining all his requests. Thro'.
+"""
+
+[[entries]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Secret (In ecclesia ipsa dedicata)"
+incipit = "Annue, quaesumus, Domine"
+witness = "cummiskey-1861"
+printed_page = "506"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- the ANNIVERSARY MASS of the DEDICATION of a church, p. 504 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord, our petition, that whilst we offer thee these our vows, we may, by thy help, obtain an eternal reward. Thro'.
+"""
+
+[[entries]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Postcommunion"
+incipit = "Deus, qui de"
+witness = "cummiskey-1861"
+printed_page = "506"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- the ANNIVERSARY MASS of the DEDICATION of a church, p. 504 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who, out of living and choice stones, preparest to thy majesty an eternal abode, help thy people at their prayers; that as thy Church is corporally enlarged, so it may be spiritually increased. Thro'.
+"""
+
+[[entries]]
+mass = "commune-festorum-bmv"
+form = ""
+proper = "Collect"
+incipit = "Concede nos famulos"
+witness = "cummiskey-1861"
+printed_page = "507"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- the VOTIVE MASSES of the B. V. MARY, from Candlemas to Advent, p. 507 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, O Lord, we beseech thee, that we thy servants may enjoy constant health of body and mind, and by the glorious intercession of blessed Mary, ever a Virgin, be delivered from all temporal afflictions, and come to those joys that are eternal. Thro'.
+"""
+
+[[entries]]
+mass = "commune-festorum-bmv"
+form = ""
+proper = "Secret"
+incipit = "Tua, Domine, propitiatione"
+witness = "cummiskey-1861"
+printed_page = "508"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- the VOTIVE MASSES of the B. V. MARY, from Candlemas to Advent, p. 507 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May, O Lord, by thy own mercy, and the intercession of blessed Mary, ever a Virgin. this oblation procure us peace and happiness both in this life, and in that which is to come. Thro'.
+"""
+
+[[entries]]
+mass = "commune-festorum-bmv"
+form = ""
+proper = "Postcommunion"
+incipit = "Sumptis, Domine, salutis"
+witness = "cummiskey-1861"
+printed_page = "509"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- the VOTIVE MASSES of the B. V. MARY, from Candlemas to Advent, p. 507 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Having received, O Lord, what is to advance our salvation; grant we may always be protected by the patronage of blessed Mary, ever a Virgin, in whose honour we have offered this sacrifice to thy Majesty. Thro'.
+"""
+
+[[entries]]
+mass = "missa-de-s-maria-in-sabbato-1"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui de"
+witness = "cummiskey-1861"
+printed_page = "50"
+ia_leaf = 60
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "the witness prints this Collect not in its Common but as the second Collect `Of the B. V. MARY` at the First Sunday of Advent, p. 50, which is where its Advent Mass of the Blessed Virgin at p. 509 sends the reader"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who wast pleased that thy Word, when the angel delivered his message, should take flesh in the womb of the blessed Virgin Mary: give ear to our humble petitions; and grant, that we, who believe her to be truly the Mother of God, may be helped by her prayers.
+"""
+
+[[entries]]
+mass = "missa-de-s-maria-in-sabbato-1"
+form = ""
+proper = "Secret"
+incipit = "In mentibus nostris"
+witness = "cummiskey-1861"
+printed_page = "52"
+ia_leaf = 62
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "printed as the second Secret `Of the B. V. M.` at the First Sunday of Advent, p. 52, under the same cross-reference as the Collect"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Strengthen, we beseech thee, O Lord, in our souls, the mysteries of the true faith: that we who confess him, that was conceived of a Virgin, to be true God, and true man, may, by the power of his saving resurrection, deserve to come to eternal joys. Thro' the same, &c.
+"""
+
+[[entries]]
+mass = "missa-de-s-maria-in-sabbato-1"
+form = ""
+proper = "Postcommunion"
+incipit = "Gratiam tuam, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "52"
+ia_leaf = 62
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "printed as the second Postcommunion `Of the B. V. M.` at the First Sunday of Advent, p. 52, under the same cross-reference as the Collect"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Pour forth, we beseech thee, O Lord, thy grace into our hearts, that we, who, by the message of an angel, have known the incarnation of thy Son, the Christ, may by his passion and cross, come to the glory of his resurrection. Thro'.
+"""
+
+[[entries]]
+mass = "missa-de-s-maria-in-sabbato-2"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui salutis"
+witness = "cummiskey-1861"
+printed_page = "88"
+ia_leaf = 98
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "the witness prints this Collect at the Circumcision, p. 88, which is where its Christmas-to-Candlemas Mass of the Blessed Virgin at p. 510 sends the reader. It ends `our Lord Jesus Christ thy Son, who,` at the foot of p. 88 and p. 89 begins the Epistle, so the printing carries no more of the conclusion and none was supplied"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who by the fruitful virginity of the blessed Mary, hast given mankind the rewards of eternal salvation: grant, we beseech thee, that we may experience her intercession, through whom we deserved to receive the Author of Life, our Lord Jesus Christ thy Son, who,
+"""
+
+[[entries]]
+mass = "missa-de-s-maria-in-sabbato-2"
+form = ""
+proper = "Secret"
+incipit = "Tua, Domine, propitiatione"
+witness = "cummiskey-1861"
+printed_page = "508"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- the VOTIVE MASSES of the B. V. MARY, from Candlemas to Advent, p. 507 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree. The 1962 Missal prints this prayer twice, at no. 4486 and here, differing only in how far it sets out the conclusion; the witness's English renders the conclusion as its own abbreviated cue and does not track that difference, so the one English answers both settings and is recorded at both."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May, O Lord, by thy own mercy, and the intercession of blessed Mary, ever a Virgin. this oblation procure us peace and happiness both in this life, and in that which is to come. Thro'.
+"""
+
+[[entries]]
+mass = "missa-de-s-maria-in-sabbato-2"
+form = ""
+proper = "Postcommunion"
+incipit = "Haec nos communio"
+witness = "cummiskey-1861"
+printed_page = "89"
+ia_leaf = 99
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "printed as the Postcommunion of the Circumcision, p. 89, under the same cross-reference as the Collect"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May this communion, O Lord, cleanse us from sin, and by the intercession of blessed Mary, the virgin-mother of God, make us partakers of thy heavenly remedy. Thro'.
+"""
+
+[[entries]]
+mass = "missa-de-s-maria-in-sabbato-3"
+form = ""
+proper = "Postcommunion"
+incipit = "Sumptis, Domine, salutis"
+witness = "cummiskey-1861"
+printed_page = "509"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- the VOTIVE MASSES of the B. V. MARY, from Candlemas to Advent, p. 507 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree. The 1962 Missal prints this prayer twice, at no. 4488 and here, differing only in how far it sets out the conclusion; the witness's English renders the conclusion as its own abbreviated cue and does not track that difference, so the one English answers both settings and is recorded at both."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Having received, O Lord, what is to advance our salvation; grant we may always be protected by the patronage of blessed Mary, ever a Virgin, in whose honour we have offered this sacrifice to thy Majesty. Thro'.
+"""
+
+[[entries]]
+mass = "missa-de-s-maria-in-sabbato-4"
+form = ""
+proper = "Collect"
+incipit = "Concede nos famulos"
+witness = "cummiskey-1861"
+printed_page = "507"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- the VOTIVE MASSES of the B. V. MARY, from Candlemas to Advent, p. 507 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree. The 1962 Missal prints this prayer twice, at no. 4477 and here, differing only in how far it sets out the conclusion; the witness's English renders the conclusion as its own abbreviated cue and does not track that difference, so the one English answers both settings and is recorded at both."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, O Lord, we beseech thee, that we thy servants may enjoy constant health of body and mind, and by the glorious intercession of blessed Mary, ever a Virgin, be delivered from all temporal afflictions, and come to those joys that are eternal. Thro'.
+"""
+
+[[entries]]
+mass = "missa-de-s-maria-in-sabbato-4"
+form = ""
+proper = "Postcommunion"
+incipit = "Sumptis, Domine, salutis"
+witness = "cummiskey-1861"
+printed_page = "509"
+collated = "page-image, 2026-08-01"
+collation_result = "recorded from the page"
+witness_note = "Harvested from the witness's Common of Saints on 2026-08-01. The 1962 Mass and the 1861 Mass are joined by the Introit both books print at the head of the Mass -- the VOTIVE MASSES of the B. V. MARY, from Candlemas to Advent, p. 507 -- and this oration to that Mass's by the abbreviated Latin cue the 1861 sets before its English, which is the two books' own alignment rather than a reader's judgement. Read out of the text layer of Internet Archive item romanmissaltran00churgoog, compared against the text layer of item romanmissaltran00englgoog, the 1843 Philadelphia printing of the same translation at the same page numbers, and read on the 1861 page image wherever the two scans did not agree. The 1962 Missal prints this prayer twice, at no. 4488 and here, differing only in how far it sets out the conclusion; the witness's English renders the conclusion as its own abbreviated cue and does not track that difference, so the one English answers both settings and is recorded at both."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Having received, O Lord, what is to advance our salvation; grant we may always be protected by the patronage of blessed Mary, ever a Virgin, in whose honour we have offered this sacrifice to thy Majesty. Thro'.
+"""
+
+[[entries]]
 mass = "commune-doctorum-pontificis"
 form = ""
 proper = "Collect"
@@ -3449,3 +4943,111 @@ mass = "s-hilarii-episcopi-confessoris-ecclesiae-doctoris"
 form = ""
 proper = "Postcommunion"
 reason = "the same reference and the same refusal, and again a second reason: the witness's one Postcommunion for Doctors names a Confessor, `thy Confessor and great Doctor`, where this day's Latin reads beatus Hilarius Pontifex tuus et Doctor egregius. It answers the non Pontifice form of the Common, not this one"
+
+[[untranslated]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Collect"
+reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
+
+[[untranslated]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Collect (in plurali)"
+reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
+
+[[untranslated]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Collect (Altera oratio)"
+reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
+
+[[untranslated]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Collect (Altera oratio, in plurali)"
+reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
+
+[[untranslated]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Secret"
+reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
+
+[[untranslated]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Secret (Altera secreta)"
+reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
+
+[[untranslated]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Postcommunion"
+reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
+
+[[untranslated]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Postcommunion (Altera postcommunio)"
+reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
+
+[[untranslated]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Postcommunion (in plurali)"
+reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
+
+[[untranslated]]
+mass = "commune-non-virginum-1"
+form = ""
+proper = "Collect"
+reason = "the witness's Common of Saints has no Mass of a Martyr who is not a Virgin. Its only non-Virgin Mass is MASS XXI, Cognovi, of Holy Women, which answers the second Mass of this Common and is recorded there. The 1962 first Mass has no pre-1955 counterpart"
+
+[[untranslated]]
+mass = "commune-non-virginum-1"
+form = ""
+proper = "Secret"
+reason = "the witness's Common of Saints has no Mass of a Martyr who is not a Virgin. Its only non-Virgin Mass is MASS XXI, Cognovi, of Holy Women, which answers the second Mass of this Common and is recorded there. The 1962 first Mass has no pre-1955 counterpart"
+
+[[untranslated]]
+mass = "commune-non-virginum-1"
+form = ""
+proper = "Postcommunion"
+reason = "the witness's Common of Saints has no Mass of a Martyr who is not a Virgin. Its only non-Virgin Mass is MASS XXI, Cognovi, of Holy Women, which answers the second Mass of this Common and is recorded there. The 1962 first Mass has no pre-1955 counterpart"
+
+[[untranslated]]
+mass = "commune-non-virginum-1"
+form = ""
+proper = "Collect (Pro pluribus Martyribus quae non sint Virgines)"
+reason = "the witness's Common of Saints has no Mass of a Martyr who is not a Virgin. Its only non-Virgin Mass is MASS XXI, Cognovi, of Holy Women, which answers the second Mass of this Common and is recorded there. The 1962 first Mass has no pre-1955 counterpart"
+
+[[untranslated]]
+mass = "commune-non-virginum-1"
+form = ""
+proper = "Secret (Pro pluribus Martyribus quae non sint Virgines)"
+reason = "the witness's Common of Saints has no Mass of a Martyr who is not a Virgin. Its only non-Virgin Mass is MASS XXI, Cognovi, of Holy Women, which answers the second Mass of this Common and is recorded there. The 1962 first Mass has no pre-1955 counterpart"
+
+[[untranslated]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Collect (In ipso die Dedicationis)"
+reason = "the witness prints one Mass of the Dedication, the anniversary, whose orations are recorded here. The 1962 Missal prints a second set for the day of the dedication itself, and a second Secret for the anniversary said outside the dedicated church; the witness has no counterpart to either and its one Secret does not say which case it answers"
+
+[[untranslated]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Secret (Extra ecclesiam ipsam dedicatam)"
+reason = "the witness prints one Mass of the Dedication, the anniversary, whose orations are recorded here. The 1962 Missal prints a second set for the day of the dedication itself, and a second Secret for the anniversary said outside the dedicated church; the witness has no counterpart to either and its one Secret does not say which case it answers"
+
+[[untranslated]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Secret (In ipso die Dedicationis)"
+reason = "the witness prints one Mass of the Dedication, the anniversary, whose orations are recorded here. The 1962 Missal prints a second set for the day of the dedication itself, and a second Secret for the anniversary said outside the dedicated church; the witness has no counterpart to either and its one Secret does not say which case it answers"
+
+[[untranslated]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Postcommunion (In ipso die Dedicationis)"
+reason = "the witness prints one Mass of the Dedication, the anniversary, whose orations are recorded here. The 1962 Missal prints a second set for the day of the dedication itself, and a second Secret for the anniversary said outside the dedicated church; the witness has no counterpart to either and its one Secret does not say which case it answers"

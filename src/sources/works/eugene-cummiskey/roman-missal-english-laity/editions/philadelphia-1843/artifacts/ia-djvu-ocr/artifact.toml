@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.ia-djvu-ocr"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The underlying 1843 Philadelphia printing is in the public domain in the United States by publication date. The exact bytes registered here are a Google-produced OCR derivative redistributed by the Internet Archive, carrying Google's own front matter and usage guidelines; no distribution grant was established for that Google-authored material or for the OCR derivative itself. Triptych records the exact remote bytes and retains no payload. The 1843 book's own printed English remains public domain independently of this digitisation."
+source_url = "https://archive.org/download/romanmissaltran00englgoog/romanmissaltran00englgoog_djvu.txt"
+provenance = "Internet Archive DjVuTXT derivative of item romanmissaltran00englgoog, a Google digitisation of the 1843 Cummiskey printing. Downloaded 2026-08-01 and hashed before use."
+retrieved = "2026-08-01"
+sha256 = "cacc31fcabe2a691106fea149ea5299e14eaf66adafa4f70c7d4f53cae3ece4d"
+byte_size = 1060143
+encoding = "utf-8"
+indexable = false
+notes = "36,683 LF-delimited physical lines. Uncorrected OCR of a small-type duodecimo. It controls no wording. Its only use here is as a second reading of the same translation, against which a reading taken from the 1861 scan can be corroborated before a page image is opened: the two are independent scans of independent printings, so their optical damage differs in kind and a word both render alike is established, while a word they render differently is a signal to open the page. The Common of Saints begins at line 24757, at the same printed p. 459 as the 1861's. Its aliases were resolved before retrieval and are the same as the 1861's, the work record's alternate_titles, plus the Internet Archive identifier. Not yet entered in src/sources/inventories/source-family-migration-v1.toml: it belongs in family.eugene-cummiskey.roman-missal-english-laity beside the 1861 printing, one work and one translation with two editions under it, and source-family-migration check names this artifact and its edition as canonical IDs lacking family membership until it is. The entry was not made in this change because another lane holds uncommitted edits to that ledger, and adopting another lane's working file is a fault whatever the bytes turn out to be. The next ledger refresh must review this presence rather than infer it."

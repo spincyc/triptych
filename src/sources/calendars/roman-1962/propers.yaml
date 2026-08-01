@@ -19,10 +19,13 @@ verification: three tiers; the seasonal Sundays, the Triduum and Palm Sunday car
   scripture-bearing propers, read from an OCR text layer of that edition and equally
   uncollated; the marian, christological and sanctoral sections remain a
   placeholder skeleton pending formula migration, one sanctoral entry excepted;
-  and the common section carries the one Commune transcribed so far, read from
-  the embedded text layer of the CMAA facsimile of the controlling edition and
-  corroborated word for word against an independent scan of a second 1962
-  printing, which is two machine readings agreeing and not a page collation
+  and the common section now carries every Commune the Missal prints, orations
+  only, read from the embedded text layer of the CMAA facsimile of the
+  controlling edition, corroborated against an independent scan of the 1962
+  Benziger editio iuxta typicam, and read on the facsimile page image wherever
+  the two scans did not settle a reading between them. That is two machine
+  readings plus a page reading where they disagreed, and it is not a page
+  collation of the whole Commune
 conventions:
 - every Introit concludes with the Gloria Patri and the repeated antiphon; the
   doxology is not repeated per entry
@@ -118,16 +121,33 @@ open_collation_items:
   no Common at all, which is why 307 sanctoral entries could hold nothing but a
   placeholder - in the 1962 book a third-class saint ordinarily takes the whole
   Mass from a Common and the day prints only its own orations, and the schema
-  could not say so. It can now, through takes_from. One Commune is transcribed,
-  the Commune Doctorum of printed pp. [22]-[23], and one sanctoral entry takes
-  it, S. Hilarii at 01-14. The other twelve Commons the book prints are still
-  absent, and they are - unius aut plurium Summorum Pontificum [2]-[4]; unius
-  Martyris extra tempus paschale, in four Masses, [4]-[10]; plurimorum Martyrum
-  extra tempus paschale [10]-[15]; Martyrum tempore paschali [15]-[19];
-  Confessoris Pontificis [19]-[22]; Confessoris non Pontificis [24]-[27];
-  Abbatum [27]-[28]; Virginum [28]-[35]; non Virginum [35]-[39]; Dedicationis
-  ecclesiae [39]-[41]; festorum B. Mariae Virginis [41]-[43]; and the five
-  Masses de S. Maria in sabbato [43]-[48] already recorded above
+  could not say so. It can now, through takes_from. On 2026-07-31 one Commune
+  was transcribed, the Commune Doctorum of printed pp. [22]-[23], and one
+  sanctoral entry took it, S. Hilarii at 01-14. On 2026-08-01 the other twelve
+  were added, as 28 further entries covering every Mass the Commune Sanctorum
+  prints from [1] to [48], and 115 orations. What is still absent from them is
+  not a Common but the rest of each Mass - these 28 carry their orations and
+  nothing else, no Introit, reading, chant or Communion antiphon, in the state
+  the 63 seasonal entries below are already in. The Commune Doctorum remains the
+  one entry here that carries a whole formulary
+- twenty of the Commune's 115 orations are carried by a reference rather than a
+  copy. The Missal sets the same prayer out twice in 37 places - the whole of the
+  Commune Martyrum tempore paschali repeats the orations of the two Commons
+  before it - and where the two settings are the same to the letter, this file
+  writes the prayer once and points at it. Where they are not, it writes both.
+  The difference is almost always the conclusion, which the typica sets at three
+  lengths apparently as line-fill - 21 of the 37 repetitions print a shorter or
+  longer conclusion than their first setting, so grouping on the prayer without
+  its conclusion would have served text the page does not print
+- a proper that takes another's text is rendered under the printing proper's
+  name, because resolve_propers returns the referenced object itself rather than
+  a copy of it, which is the property the whole mechanism exists for. The cost
+  shows in the Commune Martyrum tempore paschali, whose three Collects are
+  labelled in the Missal Pro pluribus Martyribus Pontificibus, Pro pluribus
+  Martyribus tantum and Item altera oratio, and which the browser lists as three
+  propers all named Collect with their provenance beneath. The labels are in this
+  file; nothing shows them. Settle whether the referring name should win at
+  render time
 - the Commons' registry ids read 1962-C-<key> and are synthetic, as the temporal
   1962-T-<key> and the commemorations' 1962-<date>-comm ids are. The registry in
   guidance/liturgy/roman-1962-propers.md numbers no Common; settle a scheme at
@@ -12348,19 +12368,650 @@ sections:
     kind: common
     label: Commune Sanctorum
     masses:
+    - key: commune-summorum-pontificum
+      name: Commune unius aut plurium Summorum Pontificum
+      registry: 1962-C-summorum-pontificum
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [1]-[4]
+        at marginal nos. 4176, 4177, 4178, 4179, 4187, 4188, 4190, 4191, 4192, transcribed
+        2026-08-01 from the CMAA facsimile of the controlling edition and corroborated
+        against the text layer of an independent scan of the 1962 Benziger editio iuxta
+        typicam; every reading the two scans did not settle between them was read off
+        the facsimile page image. The Introit, readings, chants and Communion antiphon
+        of this Mass are not transcribed, as they are not for the 63 seasonal entries
+        this file already carries in that state. An entry that takes this Mass therefore
+        takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Gregem tuum, Pastor
+        source: composed
+        notes: Printed p. [1], no. 4176.
+        text: |
+          Gregem tuum, Pastor aeterne, placatus intende: et per beatum N.
+          (Martyrem tuum atque) Summum Pontificem perpetua protectione custodi;
+          quem totius Ecclesiae praestitisti esse pastorem. Per Dominum.
+      - name: Collect (in plurali)
+        incipit: Gregem tuum, Pastor
+        source: composed
+        notes: Printed p. [2], no. 4177.
+        text: |
+          Gregem tuum, Pastor aeterne, placatus intende: et per beatos N. et N.
+          (Martyres tuos atque) Summos Pontifices perpetua protectione custodi;
+          quos totius Ecclesiae praestitisti esse pastores. Per Dominum.
+      - name: Collect (Altera oratio)
+        incipit: Deus, qui Ecclesiam
+        source: composed
+        notes: Printed p. [2], no. 4178.
+        text: |
+          Deus, qui Ecclesiam tuam, in apostolicae petrae soliditate fundatam, ab
+          infernarum eruis terrore portarum: praesta, quaesumus; ut, intercedente
+          beato N. (Martyre tuo atque) Summo Pontifice, in tua veritate
+          persistens, continua securitate muniatur. Per Dominum.
+      - name: Collect (Altera oratio, in plurali)
+        incipit: Deus, qui Ecclesiam
+        source: composed
+        notes: Printed p. [2], no. 4179.
+        text: |
+          Deus, qui Ecclesiam tuam, in apostolicae petrae soliditate fundatam, ab
+          infernarum eruis terrore portarum: praesta, quaesumus; ut,
+          intercedentibus beatis N. et N. (Martyribus tuis atque) Summis
+          Pontificibus, in tua veritate persistens, continua securitate muniatur.
+          Per Dominum.
+      - name: Secret
+        incipit: Oblatis muneribus, quaesumus
+        source: composed
+        notes: Printed p. [3], no. 4187.
+        text: |
+          Oblatis muneribus, quaesumus, Domine, Ecclesiam tuam benignus illumina:
+          ut et gregis tui proficiat ubique successus, et grati fiant nomini tuo,
+          te gubernante, pastores. Per Dominum nostrum.
+      - name: Secret (Altera secreta)
+        incipit: Munera, quae tibi
+        source: composed
+        notes: Printed p. [3], no. 4188.
+        text: |
+          Munera, quae tibi, Domine, laetantes offerimus, suscipe benignus, et
+          praesta: ut, intercedente beato N. (intercedentibus beatis N. et N.),
+          Ecclesia tua et fidei integritate laetetur, et temporum tranquillitate
+          semper exsultet. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
+          tecum vivit et regnat in unitate.
+      - name: Postcommunion
+        incipit: Refectione sancta enutritam
+        source: composed
+        notes: Printed p. [3], no. 4190.
+        text: |
+          Refectione sancta enutritam guberna, quaesumus, Domine, tuam placatus
+          Ecclesiam: ut, potenti moderatione directa, et incrementa libertatis
+          accipiat et in religionis integritate persistat. Per Dominum.
+      - name: Postcommunion (Altera postcommunio)
+        incipit: Multiplica, quaesumus, Domine
+        source: composed
+        notes: Printed p. [3], no. 4191.
+        text: |
+          Multiplica, quaesumus, Domine, in Ecclesia tua spiritum gratiae, quem
+          dedisti: ut, beati N. (Martyris tui atque) Summi Pontificis
+          deprecatione, nec pastori oboedientia gregis nec gregi desit cura
+          pastoris. Per Dominum.
+      - name: Postcommunion (in plurali)
+        incipit: Multiplica, quaesumus, Domine
+        source: composed
+        notes: Printed p. [3], no. 4192.
+        text: |
+          Multiplica, quaesumus, Domine, in Ecclesia tua spiritum gratiae, quem
+          dedisti: ut, beatorum N. et N. (Martyrum tuorum atque) Summorum
+          Pontificum deprecatione, nec pastori oboedientia gregis nec gregi desit
+          cura pastoris. Per Dominum.
+    - key: commune-unius-martyris-1
+      name: 'Commune unius Martyris extra tempus paschale, Missa I: Statuit ei Dominus'
+      registry: 1962-C-unius-martyris-1
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [4]-[5]
+        at marginal nos. 4194, 4201, 4203, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Infirmitatem nostram respice
+        source: composed
+        notes: Printed p. [4], no. 4194.
+        text: |
+          Infirmitatem nostram respice, omnipotens Deus: et, quia pondus propriae
+          actionis gravat, beati N. Martyris tui atque Pontificis intercessio
+          gloriosa nos protegat. Per Dominum.
+      - name: Secret
+        incipit: Hostias tibi, Domine
+        source: composed
+        notes: Printed p. [5], no. 4201.
+        text: |
+          Hostias tibi, Domine, beati N. Martyris tui atque Pontificis dicatas
+          meritis, benignus assume: et ad perpetuum nobis tribue provenire
+          subsidium. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum
+          vivit et regnat in unitate.
+      - name: Postcommunion
+        incipit: Refecti participatione muneris
+        source: composed
+        notes: Printed p. [5], no. 4203.
+        text: |
+          Refecti participatione muneris sacri, quaesumus, Domine Deus noster: ut,
+          cujus exsequimur cultum, intercedente beato N. Martyre tuo atque
+          Pontifice, sentiamus effectum. Per Dominum nostrum Jesum Christum,
+          Filium tuum: Qui tecum vivit et regnat in unitate.
+    - key: commune-unius-martyris-2
+      name: 'Commune unius Martyris extra tempus paschale, Missa II: Sacerdotes Dei'
+      registry: 1962-C-unius-martyris-2
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [5]-[6]
+        at marginal nos. 4205, 4212, 4214, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Deus, qui nos
+        source: composed
+        notes: Printed p. [5], no. 4205.
+        text: |
+          Deus, qui nos beati N. Martyris tui atque Pontificis annua solemnitate
+          laetificas: concede propitius; ut, cujus natalicia colimus, de ejusdem
+          etiam protectione gaudeamus. Per Dominum nostrum Jesum Christum, Filium
+          tuum: Qui tecum vivit et regnat in unitate.
+      - name: Secret
+        incipit: Munera tibi, Domine
+        source: composed
+        notes: Printed p. [6], no. 4212.
+        text: |
+          Munera tibi, Domine, dicata sanctifica: et, intercedente beato N.
+          Martyre tuo atque Pontifice, per eadem nos placatus intende. Per
+          Dominum.
+      - name: Postcommunion
+        incipit: Haec nos communio
+        source: composed
+        notes: Printed p. [6], no. 4214.
+        text: |
+          Haec nos communio, Domine, purget a crimine: et, intercedente beato N.
+          Martyre tuo atque Pontifice, caelestis remedii faciat esse consortes.
+          Per Dominum.
+    - key: commune-unius-martyris-3
+      name: 'Commune unius Martyris extra tempus paschale, Missa III: In virtute tua'
+      registry: 1962-C-unius-martyris-3
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [6]-[7]
+        at marginal nos. 4216, 4223, 4225, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Praesta, quaesumus, omnipotens
+        source: composed
+        notes: Printed p. [6], no. 4216.
+        text: |
+          Praesta, quaesumus, omnipotens Deus: ut, qui beati N. Martyris tui
+          natalicia colimus, intercessione ejus, in tui nominis amore roboremur.
+          Per Dominum nostrum.
+      - name: Secret
+        incipit: Muneribus nostris, quaesumus
+        source: composed
+        notes: Printed p. [7], no. 4223.
+        text: |
+          Muneribus nostris, quaesumus, Domine, precibusque susceptis: et
+          caelestibus nos munda mysteriis, et clementer exaudi. Per Dominum.
+      - name: Postcommunion
+        incipit: Da, quaesumus, Domine
+        source: composed
+        notes: Printed p. [7], no. 4225.
+        text: |
+          Da, quaesumus, Domine Deus noster: ut, sicut tuorum commemoratione
+          Sanctorum temporali gratulamur officio; ita perpetuo laetemur aspectu.
+          Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et
+          regnat in unitate.
+    - key: commune-unius-martyris-4
+      name: 'Commune unius Martyris extra tempus paschale, Missa IV: Laetabitur justus'
+      registry: 1962-C-unius-martyris-4
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [8]-[9]
+        at marginal nos. 4227, 4234, 4236, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Praesta, quaesumus, omnipotens
+        source: composed
+        notes: Printed p. [8], no. 4227.
+        text: |
+          Praesta, quaesumus, omnipotens Deus: ut, intercedente beato N. Martyre
+          tuo, et a cunctis adversitatibus liberemur in corpore, et a pravis
+          cogitationibus mundemur in mente. Per Dominum nostrum Jesum Christum,
+          Filium tuum: Qui tecum vivit et regnat in unitate.
+      - name: Secret
+        incipit: Accepta sit in
+        source: composed
+        notes: Printed p. [9], no. 4234.
+        text: |
+          Accepta sit in conspectu tuo, Domine, nostra devotio: et ejus nobis fiat
+          supplicatione salutaris, pro cujus solemnitate defertur. Per Dominum
+          nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
+      - name: Postcommunion
+        incipit: Refecti participatione muneris
+        source: composed
+        notes: Printed p. [9], no. 4236.
+        text: |
+          Refecti participatione muneris sacri, quaesumus, Domine Deus noster: ut,
+          cujus exsequimur cultum, intercedente beato N. Martyre tuo, sentiamus
+          effectum. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum
+          vivit et regnat in unitate.
+    - key: commune-plurimorum-martyrum-1
+      name: 'Commune plurimorum Martyrum extra tempus paschale, Missa I: Intret in conspectu
+        tuo'
+      registry: 1962-C-plurimorum-martyrum-1
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [10]-[11]
+        at marginal nos. 4239, 4246, 4248, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Beatorum Martyrum pariterque
+        source: composed
+        notes: Printed p. [10], no. 4239.
+        text: |
+          Beatorum Martyrum pariterque Pontificum N. et N. nos, quaesumus, Domine,
+          festa tueantur: et eorum commendet oratio veneranda. Per Dominum
+          nostrum.
+      - name: Secret
+        incipit: Adesto, Domine, supplicationibus
+        source: composed
+        notes: Printed p. [11], no. 4246.
+        text: |
+          Adesto, Domine, supplicationibus nostris, quas in Sanctorum tuorum
+          commemoratione deferimus: ut, qui nostrae justitiae fiduciam non
+          habemus, eorum, qui tibi placuerunt, meritis adjuvemur. Per Dominum
+          nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
+      - name: Postcommunion
+        incipit: Quaesumus, Domine, salutaribus
+        source: composed
+        notes: Printed p. [11], no. 4248.
+        text: |
+          Quaesumus, Domine, salutaribus repleti mysteriis: ut, quorum solemnia
+          celebramus, eorum orationibus adjuvemur. Per Dominum.
+    - key: commune-plurimorum-martyrum-2
+      name: 'Commune plurimorum Martyrum extra tempus paschale, Missa II: Sapientiam
+        Sanctorum'
+      registry: 1962-C-plurimorum-martyrum-2
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [11]-[12]
+        at marginal nos. 4250, 4257, 4259, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Deus, qui nos
+        source: composed
+        notes: Printed p. [11], no. 4250.
+        text: |
+          Deus, qui nos concedis sanctorum Martyrum tuorum N. et N. natalicia
+          colere: da nobis in aeterna beatitudine de eorum societate gaudere. Per
+          Dominum.
+      - name: Secret
+        incipit: Munera tibi, Domine
+        source: composed
+        notes: Printed p. [12], no. 4257.
+        text: |
+          Munera tibi, Domine, nostrae devotionis offerimus: quae et pro tuorum
+          tibi grata sint honore justorum, et nobis salutaria, te miserante,
+          reddantur. Per Dominum.
+      - name: Postcommunion
+        incipit: Praesta nobis, quaesumus
+        source: composed
+        notes: Printed p. [12], no. 4259.
+        text: |
+          Praesta nobis, quaesumus, Domine: intercedentibus sanctis Martyribus
+          tuis N. et N.; ut, quod ore contingimus, pura mente capiamus. Per
+          Dominum nostrum.
+    - key: commune-plurimorum-martyrum-3
+      name: 'Commune plurimorum Martyrum extra tempus paschale, Missa III: Salus autem
+        justorum'
+      registry: 1962-C-plurimorum-martyrum-3
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [12]-[14]
+        at marginal nos. 4261, 4268, 4270, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Deus, qui nos
+        source: composed
+        notes: Printed p. [12], no. 4261.
+        text: |
+          Deus, qui nos annua sanctorum Martyrum tuorum N. et N. solemnitate
+          laetificas: concede propitius; ut, quorum gaudemus meritis, accendamur
+          exemplis. Per Dominum.
+      - name: Secret
+        incipit: Oblatis, quaesumus, Domine
+        source: composed
+        notes: Printed p. [13], no. 4268.
+        text: |
+          Oblatis, quaesumus, Domine, placare muneribus: et, intercedentibus
+          sanctis Martyribus tuis N. et N., a cunctis nos defende periculis. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
+      - name: Postcommunion
+        incipit: Haec nos communio
+        source: composed
+        notes: Printed p. [14], no. 4270.
+        text: |
+          Haec nos communio, Domine, purget a crimine: et, intercedentibus sanctis
+          Martyribus tuis N. et N., caelestis remedii faciat esse consortes. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
+    - key: commune-martyrum-tempore-paschali-1
+      name: 'Commune Martyrum tempore paschali, Missa I: Protexisti me, Deus'
+      registry: 1962-C-martyrum-tempore-paschali-1
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [15]-[16]
+        at marginal nos. 4273, 4274, 4275, 4276, 4281, 4282, 4283, 4284, 4286, 4287,
+        4288, 4289, transcribed 2026-08-01 from the CMAA facsimile of the controlling
+        edition and corroborated against the text layer of an independent scan of the
+        1962 Benziger editio iuxta typicam; every reading the two scans did not settle
+        between them was read off the facsimile page image. The Introit, readings, chants
+        and Communion antiphon of this Mass are not transcribed, as they are not for
+        the 63 seasonal entries this file already carries in that state. An entry that
+        takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        takes_from:
+          mass: commune-unius-martyris-1
+          proper: Collect
+          citation: Commune Sanctorum, no. 4194
+          note: 'The Missal prints this prayer again here, at no. 4273, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Collect (Item altera oratio)
+        incipit: Deus, qui nos
+        source: composed
+        notes: Printed p. [15], no. 4274.
+        text: |
+          Deus, qui nos beati N. Martyris tui atque Pontificis annua solemnitate
+          laetificas: concede propitius; ut, cujus natalicia colimus, de ejusdem
+          etiam protectione gaudeamus. Per Dominum.
+      - name: Collect (Pro Martyre tantum)
+        takes_from:
+          mass: commune-unius-martyris-3
+          proper: Collect
+          citation: Commune Sanctorum, no. 4216
+          note: 'The Missal prints this prayer again here, at no. 4275, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Collect (Pro Martyre tantum, item altera oratio)
+        incipit: Praesta, quaesumus, omnipotens
+        source: composed
+        notes: Printed p. [15], no. 4276.
+        text: |
+          Praesta, quaesumus, omnipotens Deus: ut, intercedente beato N. Martyre
+          tuo, et a cunctis adversitatibus liberemur in corpore, et a pravis
+          cogitationibus mundemur in mente. Per Dominum nostrum.
+      - name: Secret
+        incipit: Hostias tibi, Domine
+        source: composed
+        notes: Printed p. [16], no. 4281.
+        text: |
+          Hostias tibi, Domine, beati N. Martyris tui atque Pontificis dicatas
+          meritis, benignus assume: et ad perpetuum nobis tribue provenire
+          subsidium. Per Dominum.
+      - name: Secret (Item altera secreta)
+        takes_from:
+          mass: commune-unius-martyris-2
+          proper: Secret
+          citation: Commune Sanctorum, no. 4212
+          note: 'The Missal prints this prayer again here, at no. 4282, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Secret (Pro Martyre tantum)
+        takes_from:
+          mass: commune-unius-martyris-3
+          proper: Secret
+          citation: Commune Sanctorum, no. 4223
+          note: 'The Missal prints this prayer again here, at no. 4283, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Secret (Pro Martyre tantum, item altera secreta)
+        incipit: Accepta sit in
+        source: composed
+        notes: Printed p. [16], no. 4284.
+        text: |
+          Accepta sit in conspectu tuo, Domine, nostra devotio: et ejus nobis fiat
+          supplicatione salutaris, pro cujus solemnitate defertur. Per Dominum.
+      - name: Postcommunion
+        incipit: Refecti participatione muneris
+        source: composed
+        notes: Printed p. [16], no. 4286.
+        text: |
+          Refecti participatione muneris sacri, quaesumus, Domine Deus noster: ut,
+          cujus exsequimur cultum, intercedente beato N. Martyre tuo atque
+          Pontifice, sentiamus effectum. Per Dominum nostrum.
+      - name: Postcommunion (Item altera postcommunio)
+        takes_from:
+          mass: commune-unius-martyris-2
+          proper: Postcommunion
+          citation: Commune Sanctorum, no. 4214
+          note: 'The Missal prints this prayer again here, at no. 4287, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Postcommunion (Pro Martyre tantum)
+        incipit: Da, quaesumus, Domine
+        source: composed
+        notes: Printed p. [16], no. 4288.
+        text: |
+          Da, quaesumus, Domine Deus noster: ut, sicut tuorum commemoratione
+          Sanctorum temporali gratulamur officio; ita perpetuo laetemur aspectu.
+          Per Dominum.
+      - name: Postcommunion (Pro Martyre tantum, item altera postcommunio)
+        incipit: Refecti participatione muneris
+        source: composed
+        notes: Printed p. [16], no. 4289.
+        text: |
+          Refecti participatione muneris sacri, quaesumus, Domine Deus noster: ut,
+          cujus exsequimur cultum; intercedente beato N. Martyre tuo, sentiamus
+          effectum. Per Dominum.
+    - key: commune-martyrum-tempore-paschali-2
+      name: 'Commune Martyrum tempore paschali, Missa II: Sancti tui, Domine'
+      registry: 1962-C-martyrum-tempore-paschali-2
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [17]-[18]
+        at marginal nos. 4291, 4292, 4293, 4298, 4299, 4300, 4302, 4303, 4304, transcribed
+        2026-08-01 from the CMAA facsimile of the controlling edition and corroborated
+        against the text layer of an independent scan of the 1962 Benziger editio iuxta
+        typicam; every reading the two scans did not settle between them was read off
+        the facsimile page image. The Introit, readings, chants and Communion antiphon
+        of this Mass are not transcribed, as they are not for the 63 seasonal entries
+        this file already carries in that state. An entry that takes this Mass therefore
+        takes its orations and nothing else.
+      propers:
+      - name: Collect
+        takes_from:
+          mass: commune-plurimorum-martyrum-1
+          proper: Collect
+          citation: Commune Sanctorum, no. 4239
+          note: 'The Missal prints this prayer again here, at no. 4291, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Collect (Pro pluribus Martyribus tantum)
+        incipit: Deus, qui nos
+        source: composed
+        notes: Printed p. [17], no. 4292.
+        text: |
+          Deus, qui nos concedis sanctorum Martyrum tuorum N. et N. natalicia
+          colere: da nobis in aeterna beatitudine de eorum societate gaudere. Per
+          Dominum nostrum.
+      - name: Collect (Item altera oratio)
+        takes_from:
+          mass: commune-plurimorum-martyrum-3
+          proper: Collect
+          citation: Commune Sanctorum, no. 4261
+          note: 'The Missal prints this prayer again here, at no. 4293, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Secret
+        incipit: Adesto, Domine, supplicationibus
+        source: composed
+        notes: Printed p. [18], no. 4298.
+        text: |
+          Adesto, Domine, supplicationibus nostris, quas in Sanctorum tuorum
+          commemoratione deferimus: ut, qui nostrae justitiae fiduciam non
+          habemus, eorum, qui tibi placuerunt, meritis adjuvemur. Per Dominum.
+      - name: Secret (Pro pluribus Martyribus tantum)
+        takes_from:
+          mass: commune-plurimorum-martyrum-2
+          proper: Secret
+          citation: Commune Sanctorum, no. 4257
+          note: 'The Missal prints this prayer again here, at no. 4299, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Secret (Item altera secreta)
+        incipit: Oblatis, quaesumus, Domine
+        source: composed
+        notes: Printed p. [18], no. 4300.
+        text: |
+          Oblatis, quaesumus, Domine, placare muneribus: et, intercedentibus
+          sanctis Martyribus tuis N. et N., a cunctis nos defende periculis. Per
+          Dominum nostrum.
+      - name: Postcommunion
+        takes_from:
+          mass: commune-plurimorum-martyrum-1
+          proper: Postcommunion
+          citation: Commune Sanctorum, no. 4248
+          note: 'The Missal prints this prayer again here, at no. 4302, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Postcommunion (Pro pluribus Martyribus tantum)
+        incipit: Praesta nobis, quaesumus
+        source: composed
+        notes: Printed p. [18], no. 4303.
+        text: |
+          Praesta nobis, quaesumus, Domine: intercedentibus sanctis Martyribus
+          tuis N. et N.; ut, quod ore contingimus, pura mente capiamus. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
+      - name: Postcommunion (Item altera postcommunio)
+        incipit: Haec nos communio
+        source: composed
+        notes: Printed p. [18], no. 4304.
+        text: |
+          Haec nos communio, Domine, purget a crimine: et, intercedentibus sanctis
+          Martyribus tuis N. et N., caelestis remedii faciat esse consortes. Per
+          Dominum nostrum.
+    - key: commune-confessoris-pontificis-1
+      name: 'Commune Confessoris Pontificis, Missa I: Statuit ei Dominus'
+      registry: 1962-C-confessoris-pontificis-1
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [19]-[20]
+        at marginal nos. 4307, 4315, 4317, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Da, quaesumus, omnipotens
+        source: composed
+        notes: Printed p. [19], no. 4307.
+        text: |
+          Da, quaesumus, omnipotens Deus: ut beati N. Confessoris tui atque
+          Pontificis veneranda solemnitas, et devotionem nobis augeat, et salutem.
+          Per Dominum nostrum.
+      - name: Secret
+        incipit: Sancti tui, quaesumus
+        source: composed
+        notes: Printed p. [20], no. 4315.
+        text: |
+          Sancti tui, quaesumus, Domine, nos ubique laetificent: ut, dum eorum
+          merita recolimus, patrocinia sentiamus. Per Dominum.
+      - name: Postcommunion
+        incipit: Praesta, quaesumus, omnipotens
+        source: composed
+        notes: Printed p. [20], no. 4317.
+        text: |
+          Praesta, quaesumus, omnipotens Deus: ut, de perceptis muneribus gratias
+          exhibentes, intercedente beato N. Confessore tuo atque Pontifice,
+          beneficia potiora sumamus. Per Dominum.
+    - key: commune-confessoris-pontificis-2
+      name: 'Commune Confessoris Pontificis, Missa II: Sacerdotes tui, Domine'
+      registry: 1962-C-confessoris-pontificis-2
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [20]-[21]
+        at marginal nos. 4319, 4327, 4329, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Exaudi, quaesumus, Domine
+        source: composed
+        notes: Printed p. [20], no. 4319.
+        text: |
+          Exaudi, quaesumus, Domine, preces nostras, quas in beati N. Confessoris
+          tui atque Pontificis solemnitate deferimus: et, qui tibi digne meruit
+          famulari, ejus intercedentibus meritis, ab omnibus nos absolve peccatis.
+          Per Dominum nostrum.
+      - name: Secret
+        incipit: Sancti N. Confessoris
+        source: composed
+        notes: Printed p. [21], no. 4327.
+        text: |
+          Sancti N. Confessoris tui atque Pontificis, quaesumus, Domine, annua
+          solemnitas pietati tuae nos reddat acceptos: ut, per haec piae
+          placationis officia, et illum beata retributio comitetur, et nobis
+          gratiae tuae dona conciliet. Per Dominum nostrum.
+      - name: Postcommunion
+        incipit: Deus, fidelium remunerator
+        source: composed
+        notes: Printed p. [21], no. 4329.
+        text: |
+          Deus, fidelium remunerator animarum: praesta; ut beati N. Confessoris
+          tui atque Pontificis, cujus venerandam celebramus festivitatem, precibus
+          indulgentiam consequamur. Per Dominum nostrum.
     - key: commune-doctorum-pontificis
       name: Commune Doctorum, pro Doctore Pontifice
       registry: 1962-C-doctorum-pontificis
-      notes: The Commune Doctorum of the 1962 typica, printed pp. [22]-[23] at
-        marginal nos. 4330-4344, transcribed 2026-07-31. The Missal prints one
-        Common here with two forms of the Secret and the Postcommunion, labelled
-        1 Pro Doctore Pontifice and 2 Pro Doctore non Pontifice; this entry is
-        the first, and commune-doctorum-non-pontificis takes it and replaces
-        those two. The Alleluia of Paschaltide replaces the Gradual and its
-        Alleluia, and the Tract replaces the Alleluia after Septuagesima, as the
-        printed rubrics direct; both stand as their own propers rather than as
-        conditions on one. The second Epistle is printed after the Postcommunions
-        under the rubric Item altera Epistola pro Doctoribus.
+      notes: The Commune Doctorum of the 1962 typica, printed pp. [22]-[23] at marginal
+        nos. 4330-4344, transcribed 2026-07-31. The Missal prints one Common here with
+        two forms of the Secret and the Postcommunion, labelled 1 Pro Doctore Pontifice
+        and 2 Pro Doctore non Pontifice; this entry is the first, and commune-doctorum-non-pontificis
+        takes it and replaces those two. The Alleluia of Paschaltide replaces the Gradual
+        and its Alleluia, and the Tract replaces the Alleluia after Septuagesima, as
+        the printed rubrics direct; both stand as their own propers rather than as conditions
+        on one. The second Epistle is printed after the Postcommunions under the rubric
+        Item altera Epistola pro Doctoribus.
       propers:
       - name: Introit
         incipit: In medio Ecclesiae
@@ -12368,28 +13019,43 @@ sections:
         verses:
         - book: Sirach
           ranges:
-          - begin: {chapter: 15, verse: 5}
-            end: {chapter: 15, verse: 5}
+          - begin:
+              chapter: 15
+              verse: 5
+            end:
+              chapter: 15
+              verse: 5
           ref: Sirach 15:5
         - book: Psalms
           ranges:
-          - begin: {chapter: 91, verse: 1}
-            end: {chapter: 91, verse: 1}
+          - begin:
+              chapter: 91
+              verse: 1
+            end:
+              chapter: 91
+              verse: 1
           ref: Psalm 91:1
       - name: Collect
         incipit: Deus, qui populo tuo
         source: composed
-        text: |
-          Deus, qui populo tuo aeternae salutis beatum N. ministrum tribuisti:
+        text: 'Deus, qui populo tuo aeternae salutis beatum N. ministrum tribuisti:
+
           praesta, quaesumus; ut, quem Doctorem vitae habuimus in terris,
+
           intercessorem habere mereamur in caelis. Per Dominum...
+
+          '
       - name: Epistle
         source: scripture
         verses:
         - book: 2 Timothy
           ranges:
-          - begin: {chapter: 4, verse: 1}
-            end: {chapter: 4, verse: 8}
+          - begin:
+              chapter: 4
+              verse: 1
+            end:
+              chapter: 4
+              verse: 8
           ref: 2 Timothy 4:1-8
       - name: Gradual
         incipit: Os justi meditabitur
@@ -12397,8 +13063,12 @@ sections:
         verses:
         - book: Psalms
           ranges:
-          - begin: {chapter: 36, verse: 30}
-            end: {chapter: 36, verse: 31}
+          - begin:
+              chapter: 36
+              verse: 30
+            end:
+              chapter: 36
+              verse: 31
           ref: Psalm 36:30-31
       - name: Alleluia
         incipit: Amavit eum Dominus
@@ -12406,8 +13076,12 @@ sections:
         verses:
         - book: Sirach
           ranges:
-          - begin: {chapter: 45, verse: 9}
-            end: {chapter: 45, verse: 9}
+          - begin:
+              chapter: 45
+              verse: 9
+            end:
+              chapter: 45
+              verse: 9
           ref: Sirach 45:9
       - name: Tract
         incipit: Beatus vir, qui timet Dominum
@@ -12416,8 +13090,12 @@ sections:
         verses:
         - book: Psalms
           ranges:
-          - begin: {chapter: 111, verse: 1}
-            end: {chapter: 111, verse: 3}
+          - begin:
+              chapter: 111
+              verse: 1
+            end:
+              chapter: 111
+              verse: 3
           ref: Psalm 111:1-3
       - name: Alleluia (Tempore paschali)
         incipit: Amavit eum Dominus
@@ -12426,21 +13104,33 @@ sections:
         verses:
         - book: Sirach
           ranges:
-          - begin: {chapter: 45, verse: 9}
-            end: {chapter: 45, verse: 9}
+          - begin:
+              chapter: 45
+              verse: 9
+            end:
+              chapter: 45
+              verse: 9
           ref: Sirach 45:9
         - book: Hosea
           ranges:
-          - begin: {chapter: 14, verse: 6}
-            end: {chapter: 14, verse: 6}
+          - begin:
+              chapter: 14
+              verse: 6
+            end:
+              chapter: 14
+              verse: 6
           ref: Hosea 14:6
       - name: Gospel
         source: scripture
         verses:
         - book: Matthew
           ranges:
-          - begin: {chapter: 5, verse: 13}
-            end: {chapter: 5, verse: 19}
+          - begin:
+              chapter: 5
+              verse: 13
+            end:
+              chapter: 5
+              verse: 19
           ref: Matthew 5:13-19
       - name: Offertory
         incipit: Justus ut palma florebit
@@ -12448,46 +13138,63 @@ sections:
         verses:
         - book: Psalms
           ranges:
-          - begin: {chapter: 91, verse: 13}
-            end: {chapter: 91, verse: 13}
+          - begin:
+              chapter: 91
+              verse: 13
+            end:
+              chapter: 91
+              verse: 13
           ref: Psalm 91:13
       - name: Secret
         incipit: Sancti N. Pontificis
         source: composed
-        text: |
-          Sancti N. Pontificis tui atque Doctoris nobis, Domine, pia non desit
+        text: 'Sancti N. Pontificis tui atque Doctoris nobis, Domine, pia non desit
+
           oratio: quae et munera nostra conciliet; et tuam nobis indulgentiam
+
           semper obtineat. Per Dominum...
+
+          '
       - name: Communion
         incipit: Fidelis servus et prudens
         source: scripture
         verses:
         - book: Luke
           ranges:
-          - begin: {chapter: 12, verse: 42}
-            end: {chapter: 12, verse: 42}
+          - begin:
+              chapter: 12
+              verse: 42
+            end:
+              chapter: 12
+              verse: 42
           ref: Luke 12:42
       - name: Postcommunion
-        incipit: 'Ut nobis, Domine'
+        incipit: Ut nobis, Domine
         source: composed
-        text: |
-          Ut nobis, Domine, tua sacrificia dent salutem: beatus N. Pontifex tuus
+        text: 'Ut nobis, Domine, tua sacrificia dent salutem: beatus N. Pontifex tuus
+
           et Doctor egregius, quaesumus, precator accedat. Per Dominum...
+
+          '
       - name: Epistle (altera pro Doctoribus)
         source: scripture
         notes: Printed after the Postcommunions as an alternative Epistle for Doctors.
         verses:
         - book: Sirach
           ranges:
-          - begin: {chapter: 39, verse: 6}
-            end: {chapter: 39, verse: 14}
+          - begin:
+              chapter: 39
+              verse: 6
+            end:
+              chapter: 39
+              verse: 14
           ref: Sirach 39:6-14
     - key: commune-doctorum-non-pontificis
       name: Commune Doctorum, pro Doctore non Pontifice
       registry: 1962-C-doctorum-non-pontificis
-      notes: The second form of the Commune Doctorum. The Missal prints one Mass
-        with two Secrets and two Postcommunions; everything but those two is the
-        same text, so it is taken by reference and not retyped.
+      notes: The second form of the Commune Doctorum. The Missal prints one Mass with
+        two Secrets and two Postcommunions; everything but those two is the same text,
+        so it is taken by reference and not retyped.
       takes_from:
         mass: commune-doctorum-pontificis
         citation: Commune Doctorum, printed pp. [22]-[23], nos. 4340 and 4343
@@ -12495,16 +13202,725 @@ sections:
       - name: Secret
         incipit: Sancti N. Confessoris
         source: composed
-        text: |
-          Sancti N. Confessoris tui atque Doctoris nobis, Domine, pia non desit
+        text: 'Sancti N. Confessoris tui atque Doctoris nobis, Domine, pia non desit
+
           oratio: quae et munera nostra conciliet; et tuam nobis indulgentiam
+
           semper obtineat. Per Dominum...
+
+          '
       - name: Postcommunion
-        incipit: 'Ut nobis, Domine'
+        incipit: Ut nobis, Domine
         source: composed
-        text: |
-          Ut nobis, Domine, tua sacrificia dent salutem: beatus N. Confessor
+        text: 'Ut nobis, Domine, tua sacrificia dent salutem: beatus N. Confessor
+
           tuus et Doctor egregius, quaesumus, precator accedat. Per Dominum...
+
+          '
+    - key: commune-confessoris-non-pontificis-1
+      name: 'Commune Confessoris non Pontificis, Missa I: Os justi meditabitur'
+      registry: 1962-C-confessoris-non-pontificis-1
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [24]-[25]
+        at marginal nos. 4346, 4354, 4356, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Deus, qui nos
+        source: composed
+        notes: Printed p. [24], no. 4346.
+        text: |
+          Deus, qui nos beati N. Confessoris tui annua solemnitate laetificas:
+          concede propitius; ut, cujus natalicia colimus, etiam actiones imitemur.
+          Per Dominum nostrum.
+      - name: Secret
+        incipit: Laudis tibi, Domine
+        source: composed
+        notes: Printed p. [25], no. 4354.
+        text: |
+          Laudis tibi, Domine, hostias immolamus in tuorum commemoratione
+          Sanctorum: quibus nos et praesentibus exui malis confidimus, et futuris.
+          Per Dominum nostrum.
+      - name: Postcommunion
+        incipit: Refecti cibo potuque
+        source: composed
+        notes: Printed p. [25], no. 4356.
+        text: |
+          Refecti cibo potuque caelesti, Deus noster, te supplices exoramus: ut,
+          in cujus haec commemoratione percepimus, ejus muniamur et precibus. Per
+          Dominum.
+    - key: commune-confessoris-non-pontificis-2
+      name: 'Commune Confessoris non Pontificis, Missa II: Justus ut palma florebit'
+      registry: 1962-C-confessoris-non-pontificis-2
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [25]-[26]
+        at marginal nos. 4358, 4366, 4368, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Adesto, Domine, supplicationibus
+        source: composed
+        notes: Printed p. [25], no. 4358.
+        text: |
+          Adesto, Domine, supplicationibus nostris, quas in beati N. Confessoris
+          tui solemnitate deferimus: ut, qui nostrae justitiae fiduciam non
+          habemus, ejus, qui tibi placuit, precibus adjuvemur. Per Dominum nostrum
+          Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
+      - name: Secret
+        incipit: Praesta nobis, quaesumus
+        source: composed
+        notes: Printed p. [26], no. 4366.
+        text: |
+          Praesta nobis, quaesumus, omnipotens Deus: ut nostrae humilitatis
+          oblatio, et pro tuorum tibi grata sit honore Sanctorum, et nos corpore
+          pariter et mente purificet. Per Dominum nostrum Jesum Christum, Filium
+          tuum: Qui tecum vivit et regnat in unitate.
+      - name: Postcommunion
+        incipit: Quaesumus, omnipotens Deus
+        source: composed
+        notes: Printed p. [26], no. 4368.
+        text: |
+          Quaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus,
+          intercedente beato N. Confessore tuo, per haec contra omnia adversa
+          muniamur. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum
+          vivit et regnat in unitate.
+    - key: commune-abbatum
+      name: Commune Abbatum
+      registry: 1962-C-abbatum
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [27]-[28]
+        at marginal nos. 4370, 4378, 4380, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Intercessio nos, quaesumus
+        source: composed
+        notes: Printed p. [27], no. 4370.
+        text: |
+          Intercessio nos, quaesumus, Domine, beati N. Abbatis commendet: ut, quod
+          nostris meritis non valemus, ejus patrocinio assequamur. Per Dominum
+          nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
+      - name: Secret
+        incipit: Sacris altaribus, Domine
+        source: composed
+        notes: Printed p. [28], no. 4378.
+        text: |
+          Sacris altaribus, Domine, hostias superpositas sanctus N. Abbas,
+          quaesumus, in salutem nobis provenire deposcat. Per Dominum nostrum
+          Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
+      - name: Postcommunion
+        incipit: Protegat nos, Domine
+        source: composed
+        notes: Printed p. [28], no. 4380.
+        text: |
+          Protegat nos, Domine, cum tui perceptione sacramenti beatus N. Abbas,
+          pro nobis intercedendo: ut et conversationis ejus experiamur insignia,
+          et intercessionis percipiamus suffragia. Per Dominum.
+    - key: commune-virginum-1
+      name: 'Commune Virginum, Missa I: Loquebar de testimoniis'
+      registry: 1962-C-virginum-1
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [28]-[29]
+        at marginal nos. 4382, 4390, 4392, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Deus, qui inter
+        source: composed
+        notes: Printed p. [28], no. 4382.
+        text: |
+          Deus, qui inter cetera potentiae tuae miracula etiam in sexu fragili
+          victoriam martyrii contulisti: concede propitius; ut, qui beatae N.
+          Virginis et Martyris tuae natalicia colimus, per ejus ad te exempla
+          gradiamur. Per Dominum nostrum.
+      - name: Secret
+        incipit: Suscipe, Domine, munera
+        source: composed
+        notes: Printed p. [29], no. 4390.
+        text: |
+          Suscipe, Domine, munera, quae in beatae N. Virginis et Martyris tuae
+          solemnitate deferimus: cujus nos confidimus patrocinio liberari. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
+      - name: Postcommunion
+        incipit: Auxilientur nobis, Domine
+        source: composed
+        notes: Printed p. [29], no. 4392.
+        text: |
+          Auxilientur nobis, Domine, sumpta mysteria: et, intercedente beata N.
+          Virgine et Martyre tua, sempiterna faciant protectione gaudere. Per
+          Dominum nostrum.
+    - key: commune-virginum-2
+      name: 'Commune Virginum, Missa II: Me exspectaverunt peccatores'
+      registry: 1962-C-virginum-2
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [30]-[32]
+        at marginal nos. 4394, 4402, 4404, 4406, 4407, 4408, transcribed 2026-08-01 from
+        the CMAA facsimile of the controlling edition and corroborated against the text
+        layer of an independent scan of the 1962 Benziger editio iuxta typicam; every
+        reading the two scans did not settle between them was read off the facsimile
+        page image. The Introit, readings, chants and Communion antiphon of this Mass
+        are not transcribed, as they are not for the 63 seasonal entries this file already
+        carries in that state. An entry that takes this Mass therefore takes its orations
+        and nothing else.
+      propers:
+      - name: Collect
+        incipit: Indulgentiam nobis, quaesumus
+        source: composed
+        notes: Printed p. [30], no. 4394.
+        text: |
+          Indulgentiam nobis, quaesumus, Domine, beata N. Virgo et Martyr
+          imploret: quae tibi grata semper exstitit, et merito castitatis, et tuae
+          professione virtutis. Per Dominum.
+      - name: Secret
+        incipit: Hostias tibi, Domine
+        source: composed
+        notes: Printed p. [31], no. 4402.
+        text: |
+          Hostias tibi, Domine, beatae N. Virginis et Martyris tuae dicatas
+          meritis, benignus assume: et ad perpetuum nobis tribue provenire
+          subsidium. Per Dominum.
+      - name: Postcommunion
+        incipit: Divini muneris largitate
+        source: composed
+        notes: Printed p. [31], no. 4404.
+        text: |
+          Divini muneris largitate satiati, quaesumus, Domine Deus noster: ut,
+          intercedente beata N. Virgine et Martyre tua, in ejus semper
+          participatione vivamus. Per Dominum.
+      - name: Collect (Pro pluribus Virginibus Martyribus)
+        incipit: Da nobis, quaesumus
+        source: composed
+        notes: Printed p. [31], no. 4406.
+        text: |
+          Da nobis, quaesumus, Domine Deus noster, sanctarum Virginum et Martyrum
+          tuarum N. et N. palmas incessabili devotione venerari: ut, quas digna
+          mente non possumus celebrare, humilibus saltem frequentemus obsequiis.
+          Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et
+          regnat in unitate.
+      - name: Secret (Pro pluribus Virginibus Martyribus)
+        incipit: Intende, quaesumus, Domine
+        source: composed
+        notes: Printed p. [32], no. 4407.
+        text: |
+          Intende, quaesumus, Domine, munera altaribus tuis pro sanctarum Virginum
+          et Martyrum tuarum N. et N. festivitate proposita: ut, sicut per haec
+          beata mysteria illis gloriam contulisti; ita nobis indulgentiam
+          largiaris. Per Dominum nostrum.
+      - name: Postcommunion (Pro pluribus Virginibus Martyribus)
+        incipit: Praesta nobis, quaesumus
+        source: composed
+        notes: Printed p. [32], no. 4408.
+        text: |
+          Praesta nobis, quaesumus, Domine: intercedentibus sanctis Virginibus et
+          Martyribus tuis N. et N.; ut, quod ore contingimus, pura mente capiamus.
+          Per Dominum.
+    - key: commune-virginum-3
+      name: 'Commune Virginum, Missa III: Dilexisti justitiam'
+      registry: 1962-C-virginum-3
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [32]-[33]
+        at marginal nos. 4410, 4418, 4420, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Exaudi nos, Deus
+        source: composed
+        notes: Printed p. [32], no. 4410.
+        text: |
+          Exaudi nos, Deus salutaris noster: ut sicut de beatae N. Virginis tuae
+          festivitate gaudemus; ita piae devotionis erudiamur affectu. Per Dominum
+          nostrum Jesum Christum.
+      - name: Secret
+        incipit: Accepta tibi sit
+        source: composed
+        notes: Printed p. [33], no. 4418.
+        text: |
+          Accepta tibi sit, Domine, sacratae plebis oblatio pro tuorum honore
+          Sanctorum: quorum se meritis de tribulatione percepisse cognoscit
+          auxilium. Per Dominum.
+      - name: Postcommunion
+        incipit: Satiasti, Domine, familiam
+        source: composed
+        notes: Printed p. [33], no. 4420.
+        text: |
+          Satiasti, Domine, familiam tuam muneribus sacris: ejus, quaesumus,
+          semper interventione nos refove, cujus solemnia celebramus. Per Dominum.
+    - key: commune-virginum-4
+      name: 'Commune Virginum, Missa IV: Vultum tuum deprecabuntur'
+      registry: 1962-C-virginum-4
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [33]-[34]
+        at marginal nos. 4422, 4429, 4431, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Exaudi nos, Deus
+        source: composed
+        notes: Printed p. [33], no. 4422.
+        text: |
+          Exaudi nos, Deus salutaris noster: ut, sicut de beatae N. Virginis tuae
+          festivitate gaudemus; ita piae devotionis erudiamur affectu. Per
+          Dominum.
+      - name: Secret
+        takes_from:
+          mass: commune-virginum-3
+          proper: Secret
+          citation: Commune Sanctorum, no. 4418
+          note: 'The Missal prints this prayer again here, at no. 4429, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Postcommunion
+        takes_from:
+          mass: commune-virginum-3
+          proper: Postcommunion
+          citation: Commune Sanctorum, no. 4420
+          note: 'The Missal prints this prayer again here, at no. 4431, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+    - key: commune-non-virginum-1
+      name: 'Commune non Virginum, Missa I: Me exspectaverunt peccatores'
+      registry: 1962-C-non-virginum-1
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [35]-[36]
+        at marginal nos. 4433, 4441, 4443, 4444, 4445, 4446, transcribed 2026-08-01 from
+        the CMAA facsimile of the controlling edition and corroborated against the text
+        layer of an independent scan of the 1962 Benziger editio iuxta typicam; every
+        reading the two scans did not settle between them was read off the facsimile
+        page image. The Introit, readings, chants and Communion antiphon of this Mass
+        are not transcribed, as they are not for the 63 seasonal entries this file already
+        carries in that state. An entry that takes this Mass therefore takes its orations
+        and nothing else.
+      propers:
+      - name: Collect
+        incipit: Deus, qui inter
+        source: composed
+        notes: Printed p. [35], no. 4433.
+        text: |
+          Deus, qui inter cetera potentiae tuae miracula etiam in sexu fragili
+          victoriam martyrii contulisti: concede propitius; ut, qui beatae N.
+          Martyris tuae natalicia colimus, per ejus ad te exempla gradiamur. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
+      - name: Secret
+        incipit: Suscipe, Domine, munera
+        source: composed
+        notes: Printed p. [36], no. 4441.
+        text: |
+          Suscipe, Domine, munera, quae in beatae N. Martyris tuae solemnitate
+          deferimus: cujus nos confidimus patrocinio liberari. Per Dominum.
+      - name: Postcommunion
+        incipit: Auxilientur nobis, Domine
+        source: composed
+        notes: Printed p. [36], no. 4443.
+        text: |
+          Auxilientur nobis, Domine, sumpta mysteria: et, intercedente beata N.
+          Martyre tua, sempiterna faciant protectione gaudere. Per Dominum nostrum
+          Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
+      - name: Collect (Pro pluribus Martyribus quae non sint Virgines)
+        incipit: Da nobis, quaesumus
+        source: composed
+        notes: Printed p. [36], no. 4444.
+        text: |
+          Da nobis, quaesumus, Domine Deus noster, sanctarum Martyrum tuarum N. et
+          N. palmas incessabili devotione venerari: ut, quas digna mente non
+          possumus celebrare, humilibus saltem frequentemus obsequiis. Per Dominum
+          nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
+      - name: Secret (Pro pluribus Martyribus quae non sint Virgines)
+        incipit: Intende, quaesumus, Domine
+        source: composed
+        notes: Printed p. [36], no. 4445.
+        text: |
+          Intende, quaesumus, Domine, munera altaribus tuis pro sanctarum Martyrum
+          tuarum N. et N. festivitate proposita: ut, sicut per haec beata mysteria
+          illis gloriam contulisti; ita nobis indulgentiam largiaris. Per Dominum
+          nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
+      - name: Postcommunion (Pro pluribus Martyribus quae non sint Virgines)
+        takes_from:
+          mass: commune-martyrum-tempore-paschali-2
+          proper: Postcommunion (Pro pluribus Martyribus tantum)
+          citation: Commune Sanctorum, no. 4303
+          note: 'The Missal prints this prayer again here, at no. 4446, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+    - key: commune-non-virginum-2
+      name: 'Commune non Virginum, Missa II: Cognovi, Domine, quia aequitas'
+      registry: 1962-C-non-virginum-2
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [37]-[38]
+        at marginal nos. 4448, 4456, 4458, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Exaudi nos, Deus
+        source: composed
+        notes: Printed p. [37], no. 4448.
+        text: |
+          Exaudi nos, Deus salutaris noster: ut, sicut de beatae N. festivitate
+          gaudemus; ita piae devotionis erudiamur affectu. Per Dominum nostrum
+          Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
+      - name: Secret
+        takes_from:
+          mass: commune-virginum-3
+          proper: Secret
+          citation: Commune Sanctorum, no. 4418
+          note: 'The Missal prints this prayer again here, at no. 4456, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Postcommunion
+        takes_from:
+          mass: commune-virginum-3
+          proper: Postcommunion
+          citation: Commune Sanctorum, no. 4420
+          note: 'The Missal prints this prayer again here, at no. 4458, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+    - key: commune-dedicationis-ecclesiae
+      name: Commune Dedicationis ecclesiae
+      registry: 1962-C-dedicationis-ecclesiae
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [39]-[41]
+        at marginal nos. 4461, 4462, 4470, 4471, 4472, 4474, 4475, transcribed 2026-08-01
+        from the CMAA facsimile of the controlling edition and corroborated against the
+        text layer of an independent scan of the 1962 Benziger editio iuxta typicam;
+        every reading the two scans did not settle between them was read off the facsimile
+        page image. The Introit, readings, chants and Communion antiphon of this Mass
+        are not transcribed, as they are not for the 63 seasonal entries this file already
+        carries in that state. An entry that takes this Mass therefore takes its orations
+        and nothing else.
+      propers:
+      - name: Collect
+        incipit: Deus, qui nobis
+        source: composed
+        notes: Printed p. [39], no. 4461.
+        text: |
+          Deus, qui nobis per singulos annos huius sancti templi tui
+          consecrationis reparas diem, et sacris semper mysteriis repraesentas
+          incolumes: exaudi preces populi tui, et praesta; ut, quisquis hoc
+          templum beneficia petiturus ingreditur, cuncta se impetrasse laetetur.
+          Per Dominum.
+      - name: Collect (In ipso die Dedicationis)
+        incipit: Deus, qui invisibiliter
+        source: composed
+        notes: Printed p. [39], no. 4462.
+        text: |
+          Deus, qui invisibiliter omnia contines, et tamen pro salute generis
+          humani signa tuae potentiae visibiliter ostendis: templum hoc potentia
+          tuae inhabitationis illustra, et concede; ut omnes, qui huc deprecaturi
+          conveniunt, ex quacumque tribulatione ad te clamaverint, consolationis
+          tuae beneficia consequantur. Per Dominum.
+      - name: Secret (In ecclesia ipsa dedicata)
+        incipit: Annue, quaesumus, Domine
+        source: composed
+        notes: Printed p. [40], no. 4470.
+        text: |
+          Annue, quaesumus, Domine, precibus nostris: ut, quicumque intra templi
+          huius, cujus anniversarium dedicationis diem celebramus, ambitum
+          continemur, plena tibi atque perfecta corporis et animae devotione
+          placeamus; ut, dum haec vota praesentia reddimus, ad aeterna praemia, te
+          adiuvante, pervenire mereamur. Per Dominum nostrum Jesum Christum,
+          Filium tuum: Qui tecum vivit et regnat in unitate.
+      - name: Secret (Extra ecclesiam ipsam dedicatam)
+        incipit: Annue, quaesumus, Domine
+        source: composed
+        notes: Printed p. [40], no. 4471.
+        text: |
+          Annue, quaesumus, Domine, precibus nostris: ut, dum haec vota praesentia
+          reddimus, ad aeterna praemia, te adiuvante, pervenire mereamur. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
+      - name: Secret (In ipso die Dedicationis)
+        incipit: Deus, qui sacrandorum
+        source: composed
+        notes: Printed p. [40], no. 4472.
+        text: |
+          Deus, qui sacrandorum tibi auctor es munerum, effunde super hanc
+          orationis domum benedictionem tuam: ut ab omnibus, in ea invocantibus
+          nomen tuum, defensionis tuae auxilium sentiatur. Per Dominum.
+      - name: Postcommunion
+        incipit: Deus, qui de
+        source: composed
+        notes: Printed p. [40], no. 4474.
+        text: |
+          Deus, qui de vivis et electis lapidibus aeternum maiestati tuae
+          praeparas habitaculum: auxiliare populo tuo supplicanti; ut, quod
+          Ecclesiae tuae corporalibus proficit spatiis, spiritualibus amplificetur
+          augmentis. Per Dominum nostrum.
+      - name: Postcommunion (In ipso die Dedicationis)
+        incipit: Quaesumus, omnipotens Deus
+        source: composed
+        notes: Printed p. [41], no. 4475.
+        text: |
+          Quaesumus, omnipotens Deus: ut in hoc loco, quem nomini tuo indigni
+          dedicavimus, cunctis petentibus aures tuae pietatis accommodes. Per
+          Dominum.
+    - key: commune-festorum-bmv
+      name: Commune festorum beatae Mariae Virginis
+      registry: 1962-C-festorum-bmv
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [41]-[42]
+        at marginal nos. 4477, 4486, 4488, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Concede nos famulos
+        source: composed
+        notes: Printed p. [41], no. 4477.
+        text: |
+          Concede nos famulos tuos, quaesumus, Domine Deus, perpetua mentis et
+          corporis sanitate gaudere: et, gloriosa beatae Mariae semper Virginis
+          intercessione, a praesenti liberari tristitia, et aeterna perfrui
+          laetitia. Per Dominum nostrum.
+      - name: Secret
+        incipit: Tua, Domine, propitiatione
+        source: composed
+        notes: Printed p. [42], no. 4486.
+        text: |
+          Tua, Domine, propitiatione, et beatae Mariae semper Virginis
+          intercessione, ad perpetuam atque praesentem haec oblatio nobis
+          proficiat prosperitatem et pacem. Per Dominum nostrum Jesum Christum,
+          Filium tuum: Qui tecum vivit et regnat in unitate.
+      - name: Postcommunion
+        incipit: Sumptis, Domine, salutis
+        source: composed
+        notes: Printed p. [42], no. 4488.
+        text: |
+          Sumptis, Domine, salutis nostrae subsidiis: da, quaesumus, beatae Mariae
+          semper Virginis patrociniis nos ubique protegi; in cujus veneratione
+          haec tuae obtulimus maiestati. Per Dominum nostrum Jesum Christum,
+          Filium tuum: Qui tecum vivit et regnat in unitate.
+    - key: missa-de-s-maria-in-sabbato-1
+      name: 'Missa de S. Maria in sabbato I: Tempore Adventus'
+      registry: 1962-C-s-maria-in-sabbato-1
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [43]-[44]
+        at marginal nos. 4490, 4496, 4498, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Deus, qui de
+        source: composed
+        notes: Printed p. [43], no. 4490.
+        text: |
+          Deus, qui de beatae Mariae Virginis utero Verbum tuum, Angelo nuntiante,
+          carnem suscipere voluisti: praesta supplicibus tuis; ut, qui vere eam
+          Genetricem Dei credimus, ejus apud te intercessionibus adjuvemur. Per
+          eundem Dominum.
+      - name: Secret
+        incipit: In mentibus nostris
+        source: composed
+        notes: Printed p. [44], no. 4496.
+        text: |
+          In mentibus nostris, quaesumus, Domine, verae fidei sacramenta confirma:
+          ut, qui conceptum de Virgine Deum verum et hominem confitemur; per ejus
+          salutiferae resurrectionis potentiam, ad aeternam mereamur pervenire
+          laetitiam. Per eundem Dominum nostrum Jesum Christum, Filium tuum: Qui
+          tecum vivit et regnat in unitate.
+      - name: Postcommunion
+        incipit: Gratiam tuam, quaesumus
+        source: composed
+        notes: Printed p. [44], no. 4498.
+        text: |
+          Gratiam tuam, quaesumus, Domine, mentibus nostris infunde: ut qui,
+          Angelo nuntiante, Christi Filii tui incarnationem cognovimus; per
+          passionem ejus et crucem, ad resurrectionis gloriam perducamur. Per
+          eundem Dominum nostrum.
+    - key: missa-de-s-maria-in-sabbato-2
+      name: 'Missa de S. Maria in sabbato II: a Nativitate Domini usque ad Purificationem'
+      registry: 1962-C-s-maria-in-sabbato-2
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [44]-[45]
+        at marginal nos. 4500, 4507, 4509, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Deus, qui salutis
+        source: composed
+        notes: Printed p. [44], no. 4500.
+        text: |
+          Deus, qui salutis aeternae, beatae Mariae virginitate fecunda, humano
+          generi praemia praestitisti: tribue, quaesumus; ut ipsam pro nobis
+          intercedere sentiamus, per quam meruimus auctorem vitae suscipere,
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
+      - name: Secret
+        incipit: Tua, Domine, propitiatione
+        source: composed
+        notes: Printed p. [45], no. 4507.
+        text: |
+          Tua, Domine, propitiatione, et beatae Mariae semper Virginis
+          intercessione, ad perpetuam atque praesentem haec oblatio nobis
+          proficiat prosperitatem et pacem. Per Dominum.
+      - name: Postcommunion
+        incipit: Haec nos communio
+        source: composed
+        notes: Printed p. [45], no. 4509.
+        text: |
+          Haec nos communio, Domine, purget a crimine: et, intercedente beata
+          Virgine Dei Genetrice Maria, caelestis remedii faciat esse consortes.
+          Per eundem Dominum.
+    - key: missa-de-s-maria-in-sabbato-3
+      name: 'Missa de S. Maria in sabbato III: a die 3 februarii usque ad feriam IV Hebdomadae
+        sanctae'
+      registry: 1962-C-s-maria-in-sabbato-3
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [45]-[46]
+        at marginal nos. 4511, 4518, 4520, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        takes_from:
+          mass: commune-festorum-bmv
+          proper: Collect
+          citation: Commune Sanctorum, no. 4477
+          note: 'The Missal prints this prayer again here, at no. 4511, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Secret
+        takes_from:
+          mass: missa-de-s-maria-in-sabbato-2
+          proper: Secret
+          citation: Commune Sanctorum, no. 4507
+          note: 'The Missal prints this prayer again here, at no. 4518, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Postcommunion
+        incipit: Sumptis, Domine, salutis
+        source: composed
+        notes: Printed p. [46], no. 4520.
+        text: |
+          Sumptis, Domine, salutis nostrae subsidiis: da, quaesumus, beatae Mariae
+          semper Virginis patrociniis nos ubique protegi; in cujus veneratione
+          haec tuae obtulimus maiestati. Per Dominum.
+    - key: missa-de-s-maria-in-sabbato-4
+      name: 'Missa de S. Maria in sabbato IV: tempore paschali'
+      registry: 1962-C-s-maria-in-sabbato-4
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [46]-[47]
+        at marginal nos. 4522, 4527, 4529, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        incipit: Concede nos famulos
+        source: composed
+        notes: Printed p. [46], no. 4522.
+        text: |
+          Concede nos famulos tuos, quaesumus, Domine Deus, perpetua mentis et
+          corporis sanitate gaudere: et, gloriosa beatae Mariae semper Virginis
+          intercessione, a praesenti liberari tristitia, et aeterna perfrui
+          laetitia. Per Dominum.
+      - name: Secret
+        takes_from:
+          mass: missa-de-s-maria-in-sabbato-2
+          proper: Secret
+          citation: Commune Sanctorum, no. 4507
+          note: 'The Missal prints this prayer again here, at no. 4527, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Postcommunion
+        incipit: Sumptis, Domine, salutis
+        source: composed
+        notes: Printed p. [47], no. 4529.
+        text: |
+          Sumptis, Domine, salutis nostrae subsidiis: da, quaesumus, beatae Mariae
+          semper Virginis patrociniis nos ubique protegi; in cujus veneratione
+          haec tuae obtulimus maiestati. Per Dominum nostrum.
+    - key: missa-de-s-maria-in-sabbato-5
+      name: 'Missa de S. Maria in sabbato V: a festo Ss. Trinitatis usque ad sabbatum
+        ante dominicam I Adventus'
+      registry: 1962-C-s-maria-in-sabbato-5
+      notes: Orations only. The Commune Sanctorum of the 1962 typica, printed pp. [47]-[48]
+        at marginal nos. 4531, 4537, 4539, transcribed 2026-08-01 from the CMAA facsimile
+        of the controlling edition and corroborated against the text layer of an independent
+        scan of the 1962 Benziger editio iuxta typicam; every reading the two scans did
+        not settle between them was read off the facsimile page image. The Introit, readings,
+        chants and Communion antiphon of this Mass are not transcribed, as they are not
+        for the 63 seasonal entries this file already carries in that state. An entry
+        that takes this Mass therefore takes its orations and nothing else.
+      propers:
+      - name: Collect
+        takes_from:
+          mass: commune-festorum-bmv
+          proper: Collect
+          citation: Commune Sanctorum, no. 4477
+          note: 'The Missal prints this prayer again here, at no. 4531, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Secret
+        takes_from:
+          mass: commune-festorum-bmv
+          proper: Secret
+          citation: Commune Sanctorum, no. 4486
+          note: 'The Missal prints this prayer again here, at no. 4537, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
+      - name: Postcommunion
+        takes_from:
+          mass: commune-festorum-bmv
+          proper: Postcommunion
+          citation: Commune Sanctorum, no. 4488
+          note: 'The Missal prints this prayer again here, at no. 4539, in full. It is
+            written once in this file, where the Commune first sets it, and referenced
+            from every later printing: two copies of one prayer are two readings waiting
+            to disagree, and this Commune sets thirty-seven of them out twice.'
   marian:
     kind: marian
     label: Marian
