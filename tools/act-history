@@ -386,7 +386,7 @@ def ventilate(text: str) -> list[str]:
     return [part for part in (piece.strip() for piece in CLAUSE_END.split(flowed)) if part]
 
 
-def unit_body(name: str, incipit: str, text: str) -> str:
+def unit_body(name: str, incipit: str, text: str, withheld: str = "") -> str:
     """What a unit's file holds.
 
     The name, the incipit and the text, and nothing else. Provenance
@@ -396,7 +396,11 @@ def unit_body(name: str, incipit: str, text: str) -> str:
     reslot with unchanged words is a rename and git's own similarity detection
     finds it without being told.
     """
-    lines = [name, incipit]
+    # An empty incipit and a WITHHELD incipit are two different claims, and a
+    # renderer that showed them alike would tell a reader the words were never
+    # read when in fact they may not be printed here. guidance/the-shape.md
+    # section 4: the gap has to survive contact with the renderer.
+    lines = [name, incipit if incipit else (f"[incipit withheld: {withheld}]" if withheld else "")]
     if text:
         lines.append("")
         lines.extend(ventilate(text))
@@ -444,7 +448,7 @@ class State:
             out[f"{book}/{mass_id}/order.txt"] = order_body([unit["slot"] for unit in ordered])
             for unit in ordered:
                 out[unit_path(book, mass_id, unit["slot"])] = unit_body(
-                    unit["name"], unit["incipit"], unit.get("text", "")
+                    unit["name"], unit["incipit"], unit.get("text", ""), unit.get("withheld", "")
                 )
         return out
 
@@ -540,13 +544,14 @@ def apply_departures(state: State, act_id: str, departures: list[dict]) -> list[
                 "incipit": departure.get("incipit", ""),
                 "text": departure.get("text", ""),
                 "order": departure["order"],
+                "withheld": departure.get("withheld", ""),
             }
         elif kind == "replaced":
             if target not in state.units:
                 raise Problem(f"{act_id}: replaced names unit {target!r}, which the inherited state does not hold")
             unit = state.units[target]
             before = dict(unit)
-            for field in ("incipit", "text", "name"):
+            for field in ("incipit", "text", "name", "withheld"):
                 if field in departure:
                     unit[field] = departure[field]
             if unit == before:
@@ -630,7 +635,7 @@ def render_act(act: dict) -> str:
         lines.append(f"instrument: {act['instrument']}")
         lines.append(f"authority:  {act['authority']}")
     lines.extend([
-        f"date:       {act['date']} ({act.get('date_precision', 'day')})",
+        f"date:       {act['date']} ({precision_of(act['date'])})",
         f"kind:       {act['kind']}",
         f"line:       {act['line']}",
         f"citation:   {act['citation']}",
@@ -643,7 +648,9 @@ def render_act(act: dict) -> str:
         lines.append(f"locus:      {act['locus']}")
     if act.get("dateline"):
         lines.extend(["", "dateline as printed:", act["dateline"].strip()])
-    for field, label in (("root_basis", "why this is a root"), ("parent_basis", "why this edge"),
+    for field, label in (("root_basis", "why this is a root"),
+                         ("root_basis_superseded", "why this was formerly a root"),
+                         ("parent_basis", "why this edge"),
                          ("use_declared", "what each book declares its use to be"),
                          ("distinct_edition_basis", "why this is a distinct edition"),
                          ("amends", "why this row was amended"),
@@ -750,7 +757,7 @@ def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]
             state.units[unit["id"]] = {
                 "mass": unit["mass"], "slot": unit["slot"], "name": unit["name"],
                 "incipit": unit.get("incipit", ""), "text": unit.get("text", ""),
-                "order": unit["order"],
+                "order": unit["order"], "withheld": unit.get("withheld", ""),
             }
         kinds_used[act_id] = apply_departures(state, act_id, departures_by_act.get(act_id, []))
         state.files[act_file(act)] = render_act(act)
@@ -795,6 +802,15 @@ def check(data: dict) -> dict:
             problems.append(f"act {act_id}: line {act.get('line')!r} is not declared")
         if act.get("read_from") not in READINGS:
             problems.append(f"act {act_id}: read_from must be one of {READINGS}")
+        try:
+            derived = precision_of(act.get("date", ""))
+            if act.get("date_precision") and act["date_precision"] != derived:
+                problems.append(
+                    f"act {act_id}: date_precision says {act['date_precision']!r} and the date "
+                    f"{act['date']!r} says {derived!r}; write the date to the precision you have"
+                )
+        except Problem as problem:
+            problems.append(f"act {act_id}: {problem}")
         parents = act.get("parents", [])
         parent_kind = act.get("parent_kind")
         if not parents and not act.get("root_basis"):
@@ -953,8 +969,32 @@ def days_from_civil(year: int, month: int, day: int) -> int:
     return era * 146097 + day_of_era - 719468
 
 
+# A date is written to the precision the record actually has: `1497` for a book
+# dated only by its year, `1971` for a reprint whose leaf gives no month, and a
+# full `1962-06-23` where a dateline prints the day. Nothing pads the source, and
+# no day is invented so that a filename will sort. The precision is DERIVED from
+# how much was written rather than declared beside it, because a declaration
+# beside a value is a second copy of one fact.
+DATE = re.compile(r"^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$")
+PRECISIONS = {1: "year", 2: "month", 3: "day"}
+
+
+def date_parts(date: str) -> tuple[int, int, int]:
+    found = DATE.match(str(date))
+    if not found:
+        raise Problem(f"date {date!r} is not YYYY, YYYY-MM or YYYY-MM-DD")
+    return tuple(int(part) if part else 1 for part in found.groups())  # type: ignore[return-value]
+
+
+def precision_of(date: str) -> str:
+    found = DATE.match(str(date))
+    if not found:
+        raise Problem(f"date {date!r} is not YYYY, YYYY-MM or YYYY-MM-DD")
+    return PRECISIONS[sum(1 for part in found.groups() if part)]
+
+
 def stamp(date: str) -> str:
-    year, month, day = (int(part) for part in date.split("-"))
+    year, month, day = date_parts(date)
     return f"{days_from_civil(year + YEAR_SHIFT, month, day) * 86400 + 12 * 3600} +0000"
 
 
@@ -1280,275 +1320,6 @@ def commonality(data: dict, repo: Path, wanted: tuple[str, str] | None) -> dict:
 # The map's detail panel shows a reader WHAT an act did, not merely that it did
 # five things called `absent`. The only honest source for that is the same state
 # computation `emit` commits, so the change set is derived here out of `build`'s
-# own states and written for the browser to read. Nothing recomputes it. A
-# second derivation in the page is how two answers to "what changed in 1955"
-# ship inside one artifact, and guidance/the-shape.md section 2 is about
-# precisely that.
-#
-# The departure KIND is never inferred from the diff. A field that moved says
-# which field; what the act called the movement is read from the recorded
-# departure beside it, with the basis the source states. Where a unit enters
-# with no departure behind it, that is the tracer first carrying the unit and is
-# labelled as such rather than as an addition somebody made.
-
-UNIT_FIELDS = ("mass", "slot", "name", "incipit", "text", "order")
-MASS_FIELDS = ("title", "day", "hour")
-UNESTABLISHED = "unestablished/"
-
-
-def side(row: dict | None, fields: tuple[str, ...]) -> dict | None:
-    """One side of a change, carrying only what the state holds.
-
-    An empty incipit is not an empty prayer: it is a unit whose words this
-    tracer never read. The value is passed through as it stands so the page can
-    say so, and nothing here fills it in.
-    """
-    if row is None:
-        return None
-    return {field: row.get(field, "") for field in fields}
-
-
-def differing(before: dict | None, after: dict | None, fields: tuple[str, ...]) -> list[str]:
-    if before is None or after is None:
-        return []
-    return [field for field in fields if before.get(field, "") != after.get(field, "")]
-
-
-def cited(departures: list[dict]) -> list[dict]:
-    """What the source says it did, and on what basis, for one target."""
-    return [
-        {
-            "kind": departure.get("kind"),
-            "basis": (departure.get("basis") or "").strip(),
-            "note": (departure.get("note") or "").strip(),
-        }
-        for departure in departures
-    ]
-
-
-def inherited(act_id: str, acts: dict[str, dict], states: dict[str, State]) -> State:
-    """The state an act inherits, through the same merge `build` performs.
-
-    Not a reimplementation: it calls the two functions the build calls, in the
-    same order, so a merge that refuses there refuses here.
-    """
-    parents = acts[act_id].get("parents", [])
-    return merge([states[parent] for parent in parents], common_ancestor(act_id, acts, states), act_id)
-
-
-def markers(state: State) -> dict[str, str]:
-    return {
-        path[len(UNESTABLISHED):-len(".txt")]: text
-        for path, text in state.files.items()
-        if path.startswith(UNESTABLISHED)
-    }
-
-
-def change_set(act_id: str, before: State, after: State, departures: list[dict]) -> dict:
-    """Everything one act moved, keyed by the unit or mass it moved."""
-    by_unit: dict[str, list[dict]] = {}
-    by_mass: dict[str, list[dict]] = {}
-    for departure in departures:
-        if departure.get("unit"):
-            by_unit.setdefault(departure["unit"], []).append(departure)
-        elif departure.get("mass"):
-            by_mass.setdefault(departure["mass"], []).append(departure)
-
-    units = []
-    for unit_id in sorted(set(before.units) | set(after.units) | set(by_unit)):
-        was = before.units.get(unit_id)
-        now = after.units.get(unit_id)
-        recorded = by_unit.get(unit_id, [])
-        if was == now and not recorded:
-            continue
-        units.append({
-            "unit": unit_id,
-            "state": "entered" if was is None else ("gone" if now is None else "changed"),
-            "kinds": sorted({departure.get("kind") for departure in recorded}),
-            "fields": differing(was, now, UNIT_FIELDS),
-            "before": side(was, UNIT_FIELDS),
-            "after": side(now, UNIT_FIELDS),
-            "cited": cited(recorded),
-        })
-
-    masses = []
-    for mass_id in sorted(set(before.masses) | set(after.masses) | set(by_mass)):
-        was = before.masses.get(mass_id)
-        now = after.masses.get(mass_id)
-        recorded = by_mass.get(mass_id, [])
-        if was == now and not recorded:
-            continue
-        masses.append({
-            "mass": mass_id,
-            "state": "entered" if was is None else ("gone" if now is None else "changed"),
-            "kinds": sorted({departure.get("kind") for departure in recorded}),
-            "fields": differing(was, now, MASS_FIELDS),
-            "before": side(was, MASS_FIELDS),
-            "after": side(now, MASS_FIELDS),
-            "cited": cited(recorded),
-        })
-
-    was_marked = markers(before)
-    unestablished = [
-        {"unit": unit_id, "marker": text}
-        for unit_id, text in sorted(markers(after).items())
-        if was_marked.get(unit_id) != text
-    ]
-
-    return {
-        "act": act_id,
-        "units": units,
-        "masses": masses,
-        "unestablished": unestablished,
-        "totals": {
-            "units_entered": sum(1 for row in units if row["state"] == "entered"),
-            "units_gone": sum(1 for row in units if row["state"] == "gone"),
-            "units_changed": sum(1 for row in units if row["state"] == "changed"),
-            "masses_touched": len(masses),
-            "unestablished": len(unestablished),
-            "standing": len(after.units),
-        },
-    }
-
-
-def standing(act_id: str, act: dict, state: State) -> dict:
-    """The liturgy as it stood when that act had done its work.
-
-    A reader arriving at a station wants to read the missal, not only the delta,
-    and a mass that holds no unit is printed with none rather than dropped: an
-    empty mass is this tracer saying it carries nothing there.
-    """
-    held: dict[str, list[dict]] = {}
-    for unit_id, unit in state.units.items():
-        held.setdefault(unit["mass"], []).append({"unit": unit_id, **side(unit, UNIT_FIELDS)})
-    masses = []
-    for mass_id in sorted(set(state.masses) | set(held)):
-        mass = state.masses.get(mass_id) or {}
-        masses.append({
-            "mass": mass_id,
-            "title": mass.get("title", ""),
-            "day": mass.get("day", ""),
-            "hour": mass.get("hour", ""),
-            "units": sorted(held.get(mass_id, []), key=lambda row: (row["order"], row["slot"])),
-        })
-    return {
-        "act": act_id,
-        "date": str(act.get("date")),
-        "title": act.get("title"),
-        "line": act.get("line"),
-        "masses": masses,
-        "unestablished": [
-            {"unit": unit_id, "marker": text} for unit_id, text in sorted(markers(state).items())
-        ],
-        "totals": {"masses": len(masses), "units": len(state.units)},
-    }
-
-
-def unit_histories(order: list[str], acts: dict[str, dict], sets: dict[str, dict]) -> dict[str, dict]:
-    """One prayer's whole life, gathered from the per-act change sets.
-
-    Inverted from the same rows the stations show, so the history a reader
-    follows and the diff a reader arrives at can never disagree.
-    """
-    histories: dict[str, dict] = {}
-    for act_id in order:
-        act = acts[act_id]
-        for row in sets[act_id]["units"]:
-            history = histories.setdefault(row["unit"], {"unit": row["unit"], "stations": []})
-            history["stations"].append({
-                "act": act_id,
-                "date": str(act.get("date")),
-                "title": act.get("title"),
-                "line": act.get("line"),
-                "instrument": act.get("instrument"),
-                "state": row["state"],
-                "kinds": row["kinds"],
-                "fields": row["fields"],
-                "before": row["before"],
-                "after": row["after"],
-                "cited": row["cited"],
-            })
-    for history in histories.values():
-        stops = history["stations"]
-        last = next((stop["after"] for stop in reversed(stops) if stop["after"]), None)
-        recent = next((stop for stop in reversed(stops) if stop["after"]), None)
-        history["entered_at"] = stops[0]["act"]
-        history["standing"] = stops[-1]["state"] != "gone"
-        history["name"] = (last or {}).get("name", "")
-        history["mass"] = (last or {}).get("mass", "")
-        history["slot"] = (last or {}).get("slot", "")
-        history["last_held_at"] = recent["act"] if recent else None
-        history["left_at"] = stops[-1]["act"] if stops[-1]["state"] == "gone" else None
-    return histories
-
-
-def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
-    """Write one file per station, per state and per unit; return the summaries.
-
-    Fragmented because a reader opening the map must not download every diff of
-    every station to see the map. The spine carries the counts, which is what a
-    reader needs in order to choose; opening a station costs that station.
-    """
-    order, states, _ = build(data)
-    acts = indexed(data.get("acts", []), "id", "acts")
-    departures_by_act: dict[str, list[dict]] = {}
-    for departure in data.get("departures", []):
-        departures_by_act.setdefault(departure.get("act", ""), []).append(departure)
-
-    sets = {
-        act_id: change_set(
-            act_id,
-            inherited(act_id, acts, states),
-            states[act_id],
-            departures_by_act.get(act_id, []),
-        )
-        for act_id in order
-    }
-    histories = unit_histories(order, acts, sets)
-
-    def write(relative: str, payload: dict) -> None:
-        target = root / relative
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(
-            json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n",
-            encoding="utf-8",
-        )
-
-    # Per-act fragments carry the act's date, so a listing of them reads in the
-    # order the history happened. The name is derived here and PUBLISHED on the
-    # spine as `station_path` and `state_path`, so the page reads a name rather
-    # than building one -- a name built in two places is a name that will come
-    # apart the first time the convention moves.
-    for act_id in order:
-        stem = sorted_name(str(acts[act_id]["date"]), act_id)
-        write(f"{slice_id}/station/{stem}.json", sets[act_id])
-        write(f"{slice_id}/state/{stem}.json", standing(act_id, acts[act_id], states[act_id]))
-    for unit_id, history in sorted(histories.items()):
-        write(f"{slice_id}/unit/{unit_id}.json", history)
-    write(f"{slice_id}/units.json", {
-        "slice": slice_id,
-        "units": [
-            {
-                "unit": history["unit"],
-                "name": history["name"],
-                "mass": history["mass"],
-                "slot": history["slot"],
-                "entered_at": history["entered_at"],
-                "left_at": history["left_at"],
-                "standing": history["standing"],
-                "stations": len(history["stations"]),
-            }
-            for _, history in sorted(histories.items())
-        ],
-    })
-    return {act_id: sets[act_id]["totals"] for act_id in order}
-
-
-# --- What an act changed, unit by unit ---------------------------------------
-#
-# The map's detail panel shows a reader WHAT an act did, not merely that it did
-# five things called `absent`. The only honest source for that is the same state
-# computation `emit` commits, so the change set is derived here out of `build`'s
 # own states and written beside the map. Nothing recomputes it. A second
 # derivation in the page is how two answers to "what changed in 1955" ship
 # inside one artifact, and guidance/the-shape.md section 2 is about exactly that
@@ -1564,7 +1335,11 @@ def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
 # every station in order to see the map. The spine carries the counts, which is
 # what a reader needs to choose; opening a station costs that station.
 
-UNIT_FIELDS = ("mass", "slot", "name", "incipit", "text", "order")
+# `withheld` is here beside `incipit` on purpose. A unit whose words were never
+# read and a unit whose words may not be published both show an empty incipit,
+# and a page that could not tell them apart would report a rights position as
+# ignorance. It is carried to the fragments so the page can say which it is.
+UNIT_FIELDS = ("mass", "slot", "name", "incipit", "text", "order", "withheld")
 MASS_FIELDS = ("title", "day", "hour")
 UNESTABLISHED = "unestablished/"
 
@@ -1853,7 +1628,7 @@ def structure(data: dict, out: Path) -> dict:
                 "id": act["id"],
                 "line": act["line"],
                 "date": str(act["date"]),
-                "date_precision": act.get("date_precision"),
+                "date_precision": precision_of(str(act["date"])),
                 "kind": act.get("kind"),
                 "title": act.get("title"),
                 "authority": act.get("authority"),

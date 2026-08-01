@@ -1,0 +1,3229 @@
+# The Latin missal as a history of acts, from the Council of Trent to 2008,
+# with the uses and the order rites as lines that never rejoin.
+#
+# THIS FILE EXTENDS `roman-holy-week-acts-v1.toml` AND DOES NOT COPY IT. The
+# twelve Holy Week acts, their witnesses, their four masses and their
+# thirty-eight units live in that file and are read from it. Two copies of a
+# fact are a prediction that they will differ, and guidance/the-shape.md
+# section 2 records that the prediction has never failed here. What is below is
+# what that slice does not hold: the Tridentine acts standing before Quo primum,
+# the postconciliar line down to 2008, the acts governing which missal may be
+# used, the Ordinary of the Mass as base units, and fifteen further lines for
+# the uses and the order rites.
+#
+# It lives in inventories/ for the reason its base gives: `source-library
+# validate` rejects any file under src/sources outside its own schema except
+# .md and .toml under inventories/.
+
+acts_schema = 1
+extends = "roman-holy-week-acts-v1.toml"
+record_type = "liturgical-act-history"
+slice = "latin-missal"
+recorded_on = "2026-08-01"
+
+model = """
+The station is the ACT. That rule stands and is the whole design: two printings
+of one prayer differ constantly, no act stands behind those differences, and a
+history keyed on books would publish a scanner's mistakes as liturgical change.
+
+THERE IS NOW ONE EXCEPTION AND IT IS NARROW. Before Trent there are missals for
+which no act has been located at all, and a record that refused them would be
+silent about books that survive -- which is a different falsehood, not a smaller
+one. So every station declares which kind it is:
+
+  promulgated  an act stands behind it, and its instrument is cited.
+  printed      a missal survives, and NO act is claimed for it.
+
+A `printed` station is a WEAKER CLAIM and reads as one everywhere it appears:
+in `act-history check`, in the station's own record under acts/, and in the
+commit subject, which begins `[printed]` and carries a paragraph saying what is
+not being asserted. It is never a synonym for `act_citation = "not-found"`.
+Not-found means an instrument is believed to exist and nobody here has read it;
+printed means no instrument is claimed at all. And a station is a DISTINCT
+EDITION, never a rescan: two Internet Archive items of one printing are one
+witness and one station, and every printed station says in
+`distinct_edition_basis` why it is not a duplicate of one already carried.
+
+PARENTAGE IS THE HARD PART AND IS WHERE THE INVENTION WOULD GO. A chain of
+printings ordered by date is not a chain of descent. So every edge declares what
+it rests on, in `parent_kind`, and the values are ordered by strength:
+
+  act-states-it   an instrument's own text draws the edge.
+  book-states-it  a title page or colophon names what the book follows.
+  attributed      a scholarly attribution, cited to its source.
+  use-continuity  two printings DECLARE THE SAME USE and this is their order.
+                  It does not assert that the later was set from the earlier.
+  line-order      two acts stand on one line in this order, and nothing in
+                  either names the other.
+
+WHERE DESCENT IS UNKNOWN THE STATION IS A ROOT. This file has many roots and
+that is the honest shape: fourteen of the seventeen lines below begin with one,
+because no act and no colophon joins a use's earliest surviving printing to
+anything this record carries. A single invented trunk would read better and
+would be a fabrication.
+"""
+
+evidence = """
+Four evidence levels, and no row claims one it did not reach.
+
+  [verified]  Read here, on 2026-08-01, from bytes this file fetched: an exact
+              OCR text layer, a repository's metadata or IIIF manifest queried
+              by URL, or a document whose SHA-256 was recomputed here and
+              matched a hash already registered in this repository.
+  [corpus]    Read here in one of the Internet Archive OCR text layers at
+              ~/git/lt-hist that the base slice already uses. The same standard
+              as [verified]; named separately because that corpus is bounded and
+              a negative in it is a negative about eight scans.
+  [recorded]  Taken from a record already in this repository, cited by path.
+              Not independently re-verified here unless the row says so.
+  [reported]  Read in a secondary source. Never sufficient for a station.
+
+NOTHING BELOW WAS ASSERTED FROM RECALL, and no source text was routed through a
+model: every quotation is a substring of bytes fetched and read here.
+
+THREE HASHES MATCHED, AND THEY ARE THE STRONGEST PROVENANCE IN THIS FILE. The
+Tridentine decrees were read in an Internet Archive text layer whose SHA-256
+recomputed here is
+`588d730873d06ce8bf00bce148d1a341ca459ed05787f170a4ed86fede06733c`, byte size
+1,098,267, matching the registered artifact
+`artifact.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.ia-canonesetdecreta00coun-0-djvu-text`
+exactly [verified]. Summorum Pontificum and Traditionis custodes were fetched
+from vatican.va here and their SHA-256 match the registered artifacts
+`...summorum-pontificum...vatican-html-7442edfd` and
+`...traditionis-custodes...vatican-html-c7e03ed6` exactly [verified]. So three
+acts in this file rest on bytes this run fetched AND on records another lane
+registered a week earlier, established independently of each other.
+
+OCR damage is reproduced exactly in every quotation. Correcting a quotation to
+make it look cleaner destroys the only signal distinguishing a reading from a
+reading of a scan.
+
+ONE MEASUREMENT ABOUT SEARCHING, made here, and worth more than any single row
+below. A whole-file search is accent-sensitive and the books are not. The 1970
+typical edition prints `Oráte, fratres` and `sacrifícium`; the 1962 Benziger
+scan renders the same words `Or&te, fratres` and `sacrificium`. A literal search
+for `Orate, fratres` returns ZERO in the 1970 text layer, and the prayer is on
+its page. Every negative recorded below was therefore run through a
+normalisation that strips diacritics, folds the ae and oe ligatures, lowercases,
+and reduces everything else to spaces, so that a search finds a word rather than
+a typesetting decision. Any earlier negative taken with a literal search should
+be re-run before it is believed.
+"""
+
+extent = """
+WHAT THIS SLICE CLAIMS.
+
+- THE ROMAN LINE, from the Council of Trent's two acts touching the Mass through
+  Quo primum and its successors to the emended reprint of 2008. The 1570-1962
+  stretch is inherited from the base slice and not restated.
+- THE ORDINARY OF THE MASS, sixteen units of the Ordo Missae, entering at the
+  1962 typical edition because that is the earliest witness in this corpus whose
+  text layer carries them, and departing at the 1970 typical edition.
+- THE ACTS GOVERNING WHICH MISSAL MAY BE USED, 1984 to 2023, as their own line.
+- FIFTEEN FURTHER LINES for uses and order rites, carried as `printed` stations
+  where a book survives and as `promulgated` stations where an instrument was
+  read.
+
+WHAT IT DOES NOT CLAIM, and this list is longer than the one above.
+
+- IT CLAIMS NO UNIT OF ANY USE. Not one prayer of Sarum, the Ambrosian, the
+  Mozarabic, the Dominican or any other line below has been read into a base
+  unit here. Those lines carry their stations, their witnesses and their
+  descent, and no liturgy at all. `commonality` therefore reports, correctly,
+  that they share no text with the Roman line -- which measures what this file
+  holds and NOT what the rites hold. See `commonality_reading`.
+- It does not claim the Ordinary before 1962 or after 1970 beyond the departures
+  recorded, nor the Canon, nor the chants, nor the lectionary, which after 1969
+  is a separate book from the Missal.
+- It claims no pre-Tridentine descent for anything. Every pre-1570 line begins
+  at a root.
+- It does not cover the Eastern Catholic books. The missal acquisition audit
+  scopes them separately and says why a Roman-shaped row about an Eastern book
+  is a reference that will resolve successfully and wrongly.
+- It takes no position on whether any rite or edition is preferable to any
+  other. guidance/editorial.md, `No side in what is described`.
+
+Silence here is silence because nothing was established, never because a thing
+was checked and found absent. guidance/recensions.md Rule 4.
+"""
+
+the_pull = """
+THE PRE-1570 PULL, AND THE REPOSITORIES IT SEARCHED.
+
+A `not-located` verdict must name the REPOSITORIES searched and not only the
+aliases: that is the rule the missal acquisition audit wrote after three of its
+own negatives fell to it. This pull obeys it, and names the repositories whether
+the answer was positive or negative.
+
+  INTERNET ARCHIVE   `https://archive.org/advancedsearch.php`, queried by curl,
+                     seventeen queries [verified]. `title:(missale) AND
+                     year:[1450 TO 1570]` alone returns 215 items. Every
+                     identifier cited below was then confirmed at
+                     `https://archive.org/metadata/<identifier>`.
+  BAVARIAN STATE LIBRARY (MDZ)  IIIF presentation manifests at
+                     `https://api.digitale-sammlungen.de/iiif/presentation/v2/<id>/manifest`,
+                     six fetched and read [verified]. This is where the
+                     Carthusian 1496 and the three Premonstratensian printings
+                     are, and not one of them is on the Internet Archive.
+  GALLICA (BnF)      NOT REACHABLE FROM THIS RUN. Every request returned
+                     `Recv failure: Connection reset by peer`, including the
+                     IIIF manifest and including a request with a browser user
+                     agent [verified]. So every Gallica row below is [recorded]
+                     from the missal acquisition audit, which reached it on
+                     2026-08-01, and is NOT re-verified here. That is a bound on
+                     this run, not a statement about Gallica.
+
+WHAT THE 215 ITEMS ACTUALLY ARE, because a count is not a corpus [verified]: a
+large share are single-leaf photographs of ONE manuscript, the Cleveland Museum
+of Art's missal of 1469, catalogued one folio to an item; another large share
+are `bim_early-english-books-1475-1640_*` microfilm-derived EEBO scans, which
+the acquisition audit already records as a last resort and not a text witness. A
+pull reporting 215 pre-1570 missals would be counting leaves and microfilm as
+books.
+
+FOUR ALIAS LESSONS, each of which changed a result [verified]:
+
+1. `carthusiense` WITH THE H FINDS WHAT `cartusiense` DOES NOT. The acquisition
+   audit recorded that no Carthusian missal was found on the Internet Archive
+   under `cartusiense`, `cartusiensis`, `cartusianum` or `chartreux`. A title
+   search including `carthusiense` returns `missale-carthusiense`, a whole 1620
+   printing with a 1,277,278-byte text layer. See `[[corrections]]`.
+2. THE ORDER'S LATIN GENITIVE, not its English adjective: `praedicatorum`
+   returns nine items; `dominican rite missal` returns two irrelevant ones.
+3. THE PLACE IN LATIN: `eboracensis` returns York and `york missal` does not;
+   and `lugdunense`, `lugdunensis` and five further forms return ZERO missals on
+   the Internet Archive, which is why the Lyon rows are Gallica rows.
+4. THE USE'S OWN OPENING WORDS. The earliest Premonstratensian book at MDZ is
+   catalogued under its incipit, `Jn nomine d[omi]ni Jncipit ordo missalis
+   s[e]c[un]d[u]m ritu[is] ordinis Premonstraten[sis]`, and a search for
+   `Missale Praemonstratense` finds the two later printings but not that one.
+"""
+
+commonality_reading = """
+HOW TO READ `act-history commonality`, BECAUSE IT IS EASY TO READ WRONGLY.
+
+The verb answers two different questions and they must not be run together.
+
+THE SHARED BASE IS ABOUT ACTS. It is `git merge-base` on two lines' heads, run
+against the emitted repository and checked against the act graph, which refuses
+if the two disagree. For almost every pair of lines below the answer is NONE,
+and that is a FINDING rather than a failure: the Sarum use and the Roman line
+share no act in this record, because no act joining them was located, and the
+graph says so by drawing no edge. The exempt-uses line and the Roman line DO
+share one, `quo-primum-1570`, because one instrument stands behind both; and the
+usus-antiquior line shares `editio-typica-1962` with the Roman line, because the
+1962 edition is what its acts are about.
+
+THE DIVERGENCE IS ABOUT TEXT, and here the reading runs the other way. Two lines
+with no shared act may still hold the same prayer, and agreement without an edge
+is the most interesting thing this shape can show: inheritance older than
+anything the record carries. THIS FILE CANNOT SHOW IT YET. No unit of any use
+has been read, so every use line's tree is empty and the verb reports zero units
+in common with everything. That is a statement about what has been transcribed
+and about nothing else, and a reader who took it for a statement about the rites
+would have it exactly backwards.
+
+The acquisition order that follows is short and is already written in the missal
+acquisition audit: the first use whose units should be read is Braga, because it
+is the only one where both the book and its promulgating acts are in hand and
+publishable.
+"""
+
+open_items = """
+- THE PRE-1570 ROMAN PRINTINGS HAVE NO ESTABLISHED DESCENT AMONG THEMSELVES.
+  They are carried on one line, `romana-curia`, joined by `use-continuity`
+  edges, which assert that each declares itself a missal of the Roman use and
+  that this is their order -- and assert nothing about which was set from which.
+- QUO PRIMUM IS NO LONGER A ROOT IN THIS SLICE. It descends from the Council of
+  Trent's own decree committing the missal to the Pope, on the bull's own words.
+  Its former root basis is kept and printed as superseded rather than deleted.
+- THE 1969 CONSTITUTION CARRIES NO DEPARTURE AND THE 1970 DECREE CARRIES THEM
+  ALL. The constitution approved the texts; the book this file could read is the
+  1970 typical edition, which the 1970 decree declared typical. Attaching the
+  departures to the act whose book was read is the honest placement, and the
+  1969 station is empty on purpose.
+- QUATTUOR ABHINC ANNOS WAS NOT READ. Its existence, date and title come from a
+  footnote in Ecclesia Dei and from a naming in Summorum Pontificum, both
+  attested here. `act_citation = "not-found"`, which is what that value is for.
+- NO ACT WAS LOCATED FOR THE AMBROSIAN, MOZARABIC, LYONNAIS, YORK, AQUILEIAN,
+  PREMONSTRATENSIAN, BENEDICTINE OR GLAGOLITIC LINES. They are carried as
+  printed stations only. The acquisition audit reports instruments for the
+  modern Ambrosian and Mozarabic editions from secondary sources; none is
+  asserted here.
+- THE SARUM USE ENDS INSIDE THIS RECORD AND THE INSTRUMENT IS NOT CARRIED. Its
+  last located printings are of 1555 and 1557, under Mary; what ended it is an
+  act of the English crown, outside this file's scope, and is not asserted.
+- THE READING VOCABULARY HAS NO VALUE FOR A BORN-DIGITAL DELIVERY. Two acts here
+  were read from HTML fetched over HTTPS and hash-matched, which is a stronger
+  reading than any OCR in this file, and both had to record `ocr-only` because
+  `page-image | ocr-only | not-read` has no better term. Flagged rather than
+  fixed: adding a value is a change to a vocabulary two files share.
+"""
+
+# --- Lines ------------------------------------------------------------------
+#
+# Seventeen: the two the base slice declares, amended, and fifteen new. Lines
+# never rejoin: no act names parents on two different lines, and the tool cannot
+# draw a merge across them even by mistake. A single-parent edge across lines is
+# a FORK, which is how a line is born from an act, and that is drawn twice here
+# -- at the exempting clause of Quo primum, and at the 1984 indult.
+
+[[lines]]
+id = "typica"
+amends = """
+The label and note are widened, because this slice carries the line from the
+Council of Trent to 2008 rather than from 1570 to 1962. Nothing about the twelve
+inherited acts changes.
+"""
+label = "The Roman line: Tridentine mandate, typical editions, postconciliar editions"
+note = """
+One line, from the Council of Trent's decree committing the missal to the Roman
+Pontiff to the emended reprint of 2008. It is drawn as ONE line and not two
+because every act on it names its predecessor or stands in its sequence, and
+because the constitution of 1969 opens by reciting Quo primum and Pius V's
+promulgation of 1570 in its first sentence, with a footnote citing the bull by
+title and date. Whether the rite after 1969 is the same rite is a question this
+file does not answer and does not need to: the line records descent of
+authority, and the departures record what changed.
+"""
+
+[[lines]]
+id = "exempt-uses"
+amends = """
+The note said this branch held no witness for any exempted use and was
+`honestly empty`. It is no longer empty: fourteen lines below carry printings
+and instruments of those uses. The note is rewritten and the superseded sentence
+is quoted inside it, so the change is legible rather than invisible.
+"""
+label = "The exempting clause of Quo primum"
+note = """
+Quo primum did not abolish every other use. It excepted those whose institution
+was approved by the Apostolic See or whose custom had been kept above two
+hundred years, and said of them in terms that it took their manner of
+celebrating away by no means.
+
+THE FIRST VERSION OF THIS NOTE ENDED: `This tracer holds no witness for any of
+them, so the line has its birth act and nothing after it. An empty branch that
+is honestly empty is the point.` That was true of the Holy Week slice and is no
+longer true of this one.
+
+The clause is still a line of ONE act, and deliberately. It is the legal fact
+that the other uses were not abolished; it is not their ancestor. Not one of the
+lines below descends from it, because Quo primum did not give those rites
+anything -- it declined to take them away, and several of them are three
+centuries older than it. Drawing an edge from this clause into the Dominican or
+the Ambrosian line would assert a derivation in exactly the direction history
+did not run.
+"""
+
+[[lines]]
+id = "usus-antiquior"
+label = "The acts governing use of the 1962 Missal after 1970"
+note = """
+A line born at an act, as every line here is. It carries the instruments
+regulating whether and how the 1962 typical edition may still be used after the
+Missal of Paul VI: the indult of 1984, Ecclesia Dei, Summorum Pontificum,
+Universae Ecclesiae, Traditionis custodes, the Responsa and the rescript of
+2023.
+
+It forks from `editio-typica-1962` and never rejoins the Roman line, and the
+reason is the rule rather than a judgement: these acts do not revise the Missal
+of Paul VI, and the acts on that line do not revise these. They run beside each
+other. Whether the two are one rite in two forms or two rites is precisely what
+the documents on this line disagree about between 2007 and 2021, and a merge
+would assert an answer.
+
+NOTHING ON THIS LINE CARRIES A DEPARTURE. These are acts about which book may be
+used, not acts that change a text, and the line's whole content is its stations.
+"""
+
+[[lines]]
+id = "romana-curia"
+label = "Printed missals of the Roman use before Trent"
+note = """
+Printings of the Missale Romanum -- the use of the Roman curia -- from before
+the Tridentine reform. Every station on this line is `printed`: no act has been
+located for any of them, and each is here because the book survives and is
+whole.
+
+It is a line and not a heap because each of these books declares itself a missal
+of the ROMAN use on its own title page, which is the only thing the edges
+assert. It is not a claim that any of them was set from its predecessor. It ends
+before Quo primum and does not run into it: the 1570 book was made, on its own
+account, by collating ancient codices of the Vatican Library, not by revising
+the printing of 1561.
+"""
+
+[[lines]]
+id = "sarum"
+label = "The use of Sarum"
+note = """
+The English secular use of Salisbury, in its printed tradition. Every station is
+`printed`, and `is_typical_edition` never applies: the acquisition audit
+establishes that Sarum is a diocesan use with no master general, no general
+chapter and no book any authority declared normative, and that its printed
+tradition is a commercial one supplied by Rouen, Paris and London printers.
+Calling one of them typical would be inventing an authority.
+"""
+
+[[lines]]
+id = "eboracensis"
+label = "The use of York"
+note = "The English secular use of York, in one early printing and one critical edition. No instrument located."
+
+[[lines]]
+id = "ambrosianum"
+label = "The Ambrosian rite of Milan"
+note = """
+The largest surviving non-Roman Latin rite. Carried as printed stations only:
+the acquisition audit reports promulgating instruments for the 1976, 1981 and
+2024 editions from the books' own front matter and from a signed decree, none of
+which was read here, so none is asserted.
+"""
+
+[[lines]]
+id = "mozarabicum"
+label = "The Hispano-Mozarabic rite"
+note = "The old Spanish rite as printed from the Cisneros edition of 1500 onward. No instrument read here."
+
+[[lines]]
+id = "bracarense"
+label = "The rite of Braga"
+note = """
+The only line in this file other than the Roman one carrying BOTH a printing and
+its own promulgating instruments. Braga's typical edition of 1924 was approved
+by a bull of Pius XI and declared typical by a decree of the Sacred Congregation
+of Rites, subscribed by the same two officials who signed the Roman typical
+edition's decree four years earlier -- which is why the generalisation that the
+diocesan uses legislate for themselves is false.
+"""
+
+[[lines]]
+id = "lugdunense"
+label = "The Lyonnais use"
+note = "The use of the primatial church of Lyon. Its printings are at the Bibliotheque nationale de France, which was not reachable from this run."
+
+[[lines]]
+id = "aquileiense"
+label = "The use of Aquileia"
+note = "A patriarchal use of north-eastern Italy. Two whole printings located; no instrument."
+
+[[lines]]
+id = "praedicatorum"
+label = "The Dominican rite"
+note = """
+The rite of the Order of Preachers. The best-documented exempt use in this file:
+its early printings are whole and publishable, and from 1604 its promulgating
+authority is printed on the title page, which makes a station promulgated rather
+than printed at no cost beyond reading a catalogue record.
+"""
+
+[[lines]]
+id = "carmelitarum"
+label = "The Carmelite rite, of the use of the Holy Sepulchre"
+note = """
+The rite of the Carmelites, which the order's own title page of 1574 describes
+as conformed to the norm and custom of the Church of Jerusalem. The Jerusalem
+claim is the book's, not a modern gloss.
+"""
+
+[[lines]]
+id = "cartusiense"
+label = "The Carthusian rite"
+note = """
+The rite of the Charterhouse. It has the clearest promulgating instrument of any
+use in this file -- a general chapter of 1677, named on the title page of the
+1679 printing -- and it is also the use this project came closest to writing off
+as unavailable. See `[[corrections]]`.
+"""
+
+[[lines]]
+id = "praemonstratense"
+label = "The Premonstratensian rite"
+note = "The rite of the Norbertines. Three early printings at the Bavarian State Library, none on the Internet Archive; no instrument read here."
+
+[[lines]]
+id = "slavonico"
+label = "The Roman rite in Old Church Slavonic, in the Glagolitic alphabet"
+note = """
+NOT A USE EXEMPTED BY QUO PRIMUM, and it is here to show that the eventual scope
+has members a search for Latin titles will never return. This is the ROMAN rite,
+printed by the Vatican Polyglot Press, in Old Church Slavonic and in the
+Glagolitic script. It is drawn as its own line and not as part of the Roman one
+because no act joining them was read here; the papal concessions behind it are
+reported in the acquisition audit and were not read.
+"""
+
+[[lines]]
+id = "monasticum"
+label = "The Benedictine monastic missal"
+note = "One printing, of the Cassinese congregation. Carried so the monastic books are not silently absent; nothing more is claimed."
+
+# --- The Roman line before Quo primum ---------------------------------------
+
+[[acts]]
+id = "tridentinum-sessio-xxii-1562"
+line = "typica"
+station_kind = "promulgated"
+kind = "conciliar-decree"
+date = "1562-09-17"
+authority = "The Council of Trent, under Pius IV"
+instrument = "Decretum de observandis et evitandis in celebratione missae, Session XXII"
+title = "Trent orders the abuses in the celebration of Mass put down"
+parents = []
+root_basis = """
+The earliest act this file carries, and it is not offered as the beginning of
+anything. What stands before it -- the mediaeval Roman curial missal, the
+sacramentaries behind that, the uses out of which all of them grew -- is not
+represented here and no edge is drawn into this station. A root means the record
+starts here.
+
+It is the earliest act rather than the Session XXV decree because it is the
+Council's own act about the CELEBRATION OF MASS, and because the reform Quo
+primum executed answers the abuses this decree names.
+"""
+act_citation = "cited-externally"
+citation = "Council of Trent, Session XXII, 17 September 1562, Decretum de observandis et evitandis in celebratione missae, in Canones et decreta sacrosancti oecumenici Concilii Tridentini, Leipzig: Tauchnitz, 1887, printed p. 121."
+attested_in = ["1887-canones-et-decreta-tridentini"]
+read_from = "ocr-only"
+locus = "1887-canones-et-decreta-tridentini OCR lines 6287-6355; the session's own heading at 6024-6032"
+dateline = "SESSIO XXII. QUAE EST SEXTA SUB PIO IV. PONT. MAX., CELEBRATA DIE XVII. SEPTEMBR^S MDLXII"
+quotation = """
+DECRETUM  DE  OBSERVANDIS  ET  EVITANDIS  IN  CE-
+LEBR ATIONE  MISSAE.
+Quanta  cura  adhibenda  sit,  ut  sacrosanctum  missae  sa-
+crificium  omui  religionis  cultu  ac  veneratione  celebretur
+[...]
+decernit  sancta  synodus,  ut  ordinarii
+Iocorum  episcopi  ea  omnia  prohibere  atque  e  medio  tollere
+sedulo  curent  ac  teneantur,  quae  vel  avaritia,  idolorum  ser-
+vitus,  vel  irreverentia,  quae  ab  impietate  vix  seiuncta  esse
+potest,  vel  superstitio,  verae  pietatis  falsa  imitatrix,  induxit.
+"""
+quotation_note = """
+Reproduced with its OCR damage (`omui` for `omni`, `Iocorum` for `locorum`,
+`LEBR ATIONE` broken by the scan). The elision spans the decree's opening
+argument and a running header.
+"""
+effect = "No departure in this slice. It is the act that makes the Tridentine reform of the missal an answer to something."
+effect_established = false
+effect_note = """
+Not a claim that it changed nothing. The decree legislates against abuses --
+avarice, irreverence, superstition -- and commits their suppression to the local
+ordinaries; it does not itself revise a formulary, and no unit of this slice was
+read against it.
+"""
+
+[[acts]]
+id = "tridentinum-sessio-xxv-1563"
+line = "typica"
+station_kind = "promulgated"
+kind = "conciliar-decree"
+date = "1563-12-04"
+authority = "The Council of Trent, under Pius IV"
+instrument = "Decretum de indice librorum et catechismo, breviario et missali, Session XXV"
+title = "Trent commits the missal to the Roman Pontiff"
+parents = ["tridentinum-sessio-xxii-1562"]
+parent_kind = "line-order"
+parent_basis = """
+Two acts of one council, in the order the council took them, and nothing in
+either names the other: the Session XXV decree recites Session II, not Session
+XXII. The edge says where this station sits, not what it inherited, which is
+what `line-order` means and why it is the weakest kind.
+"""
+act_citation = "cited-externally"
+citation = "Council of Trent, Session XXV, concluded 4 December 1563, De indice librorum et catechismo, breviario et missali, in the Tauchnitz edition of 1887."
+attested_in = ["1887-canones-et-decreta-tridentini"]
+read_from = "ocr-only"
+locus = "1887-canones-et-decreta-tridentini OCR lines 10736-10762; the session's heading at 9021-9028"
+dateline = "SESSIO XXV. QUAE EST NONA ET ULTIMA SUB PIO IV. PONT. MAX., COEPTA DIE III., ABSOLUTA DIE IV. DECEMBRIS MDLXIIl."
+quotation = """
+De  indice  librnrum  et  catechismo ,  breviario  et  missafi.
+[...]
+praecipit,  ut  quicquid  ab  illis  prae-
+stitum  est  sanctissimo  Romano  Pontifici  exhibeatur,  ut  eius
+iudicio  atque  auctoritate  terminetur  et  evulgetur.  Idemque
+de  catechismo  a  Patribus,  quibus  illud  uiaudatuni  fuerat,
+et  de  missali  et  breviario  fieri  mandat.
+"""
+quotation_note = """
+OCR damage reproduced: `librnrum` and `missafi` in the heading, `uiaudatuni` for
+`mandatum`. The operative sentence is the last: the same is ordered to be done
+concerning the missal and the breviary -- that is, referred to the Roman Pontiff
+for his judgement and authority, which is what Quo primum then says it is doing.
+"""
+effect = "Refers the missal to the Roman Pontiff. This is the act Quo primum executes, and Quo primum says so."
+effect_established = true
+
+[[acts]]
+id = "quo-primum-1570"
+amends = """
+QUO PRIMUM IS NO LONGER A ROOT. The base slice drew it as one and said in terms
+that it took no position on what preceded it. This slice goes earlier, and the
+edge it draws is not a guess: the bull's own opening recites the Tridentine
+decree that committed the missal to the Pope. An act that says what it is
+executing has drawn its own edge.
+
+The base slice's root basis is kept, not deleted, and is printed as superseded.
+It was correct about its own corpus, and a record that quietly stops saying
+something it once said is a record a reader cannot check.
+"""
+parents = ["tridentinum-sessio-xxv-1563"]
+parent_kind = "act-states-it"
+parent_basis = """
+The bull recites the decree it is executing: among the other decrees of the
+Sacred Tridentine Council it fell to us to determine concerning the sacred
+books, the Catechism, the Missal and the Breviary, to be issued and emended.
+Read here in the base slice's own 1862 witness [corpus].
+"""
+parent_quotation = """
+(..umque
+inter  alia  Sacri  Tridentini  Concilii  decreta,  nobis  statuendum  esset  de
+sacris  libris,  Catechismo,  Missali,  et  Breviario  edendis,  atque  emendan-
+dis:  edito  jam,  Deo  ipso  annuente,  ad  populi  eruditionem  Catecbismo,
+et  ad  debitas  Deo  persolvendas  laudes  Breviario  castigato
+"""
+root_basis = ""
+root_basis_superseded = """
+Superseded on 2026-08-01 by the edge above. What it said:
+
+  The earliest act this tracer represents. It is not the beginning of the Roman
+  Mass and is not offered as one: what stands before it -- the pre-Tridentine
+  curial missal, the 1474 Milan printing, the diocesan uses out of which the
+  Tridentine commission worked -- is a live question this tracer takes no
+  position on and draws no edge into. A root here means "this record starts
+  here", not "nothing preceded it".
+
+Its parenthetical list is still right about the 1474 printing and the diocesan
+uses: this slice draws NO edge from any of them into Quo primum either, and the
+pre-Tridentine Roman printings it does carry stand on their own line and stop
+before 1570. What changed is only that the Tridentine mandate, which the bull
+itself cites, is now carried. The quotation supporting the new edge stands at
+pustet-1862 OCR lines 158-164, with OCR damage reproduced, including `(..umque`
+for `Cumque` and `Catecbismo` for `Catechismo`.
+"""
+
+# --- The Roman line after 1962 ----------------------------------------------
+
+[[acts]]
+id = "sacrosanctum-concilium-1963"
+line = "typica"
+station_kind = "promulgated"
+kind = "conciliar-constitution"
+date = "1963-12-04"
+authority = "The Second Vatican Council, promulgated by Paul VI"
+instrument = "Constitution on the Sacred Liturgy Sacrosanctum Concilium"
+title = "The Council orders the rite of the Mass revised"
+parents = ["editio-typica-1962"]
+parent_kind = "line-order"
+parent_basis = """
+The state the constitution legislated for is the one the 1962 typical edition
+carried: that was the missal in use when it was promulgated, eighteen months
+after the edition was declared typical. Nothing in Sacrosanctum Concilium names
+the 1962 edition, so the edge says where the station sits and not what it
+inherited.
+"""
+act_citation = "cited-externally"
+citation = "Second Vatican Council, Sacrosanctum Concilium, 4 December 1963, in Acta Apostolicae Sedis 56 (1964); registered in this repository as work.second-vatican-council.sacrosanctum-concilium with a Latin AAS edition and two dated Vatican web deliveries."
+attested_in = []
+read_from = "not-read"
+locus = "Not read here. src/sources/works/second-vatican-council/sacrosanctum-concilium, edition latin-aas-56-1964 [recorded]."
+effect = "No departure in this slice."
+effect_established = true
+effect_note = """
+A station that writes no row on purpose, and the third such in this history. The
+constitution orders the rite of the Mass to be revised; it revises nothing
+itself, and every unit that moved moved at the books the later acts promulgated.
+It is carried because the constitution of 1969 states in its own title that the
+Missal was restored BY DECREE OF THIS COUNCIL, so leaving it out would make the
+act of 1969 look like a papal initiative standing on nothing.
+"""
+
+[[acts]]
+id = "missale-romanum-1969"
+line = "typica"
+station_kind = "promulgated"
+kind = "promulgation"
+date = "1969-04-03"
+authority = "Paul VI"
+instrument = "Apostolic constitution Missale Romanum"
+title = "Paul VI promulgates the Missal restored by decree of the Council"
+parents = ["sacrosanctum-concilium-1963"]
+parent_kind = "act-states-it"
+parent_basis = """
+The constitution's own title states the descent: the Roman Missal restored BY
+DECREE OF THE SECOND VATICAN ECUMENICAL COUNCIL is promulgated. Its opening
+sentence then recites the other end of the line as well -- the Missal
+promulgated by our predecessor St Pius V in the year 1570 by decree of the
+Council of Trent -- with a footnote citing Quo primum by title and by day.
+"""
+parent_quotation = """
+CONSTITUTIO  APOSTOLICA
+QUA  MISSALE  ROMANUM
+EX  DECRETO  CONCILII  CECUMENICI  VATICANI  II
+INSTAURATUM  PROMULGATUR
+[...]
+MISSALE  ROMANUM,  ex  decreto  Concilii  Tridentini  a  De-
+cessore  Nostro  S.  Pio  V  anno  MDLXX  prumulgatum,  nemo
+non  suscipit  in  multis  iisque  mirificis  utilitatis  fructibus
+esse  numerandum
+[...]
+1  Const.  Apost.  Quo  primum,  die  14  iulii  1570  data.
+"""
+parent_quotation_note = """
+OCR damage reproduced: `CECUMENICI` for `OECUMENICI` and `prumulgatum` for
+`promulgatum`. The footnote is the scan's own, at 1970-missale-romanum-typica
+line 173.
+"""
+act_citation = "cited-in-corpus"
+citation = "Paul VI, Missale Romanum, 3 April 1969, printed in the front matter of the 1970 typical edition; registered in this repository as work.paul-vi.missale-romanum-constitutio."
+attested_in = ["1970-missale-romanum-typica"]
+read_from = "ocr-only"
+locus = "1970-missale-romanum-typica OCR lines 136-397"
+dateline = "Datum Romz, apud S. Petrum, die 111 mensis aprilis, in Cena Domini N. I. C., anno MCMLXIX, Pontificatus Nostri sexto. PAULUS PP. VI"
+date_note = """
+OCR damage reproduced: `Romz` for `Romae`, and `111` for the roman numeral
+`III`. The day is not in doubt: the decree of 1970, read here, cites the
+constitution as `die 3 aprilis 1969 datam`, and the two readings corroborate
+each other from two documents in one book.
+"""
+in_force = "from 30 November 1969, the First Sunday of Advent, by the constitution's own words: Quae Constitutione hac Nostra praescripsimus vigere incipient a die XXX proximi mensis Novembris hoc anno, id est a Dominica I Adventus."
+effect = "Promulgates the restored Missal and approves its texts. No departure is attached to this station; see the note."
+effect_established = true
+effect_note = """
+A DELIBERATE PLACEMENT, and the kind of decision this apparatus exists to make
+visible. The constitution approves the texts; the decree of 1970 declares the
+BOOK typical, and the book is what this file could read. Every departure below
+is measured between the 1962 witness and the 1970 typical edition, so every
+departure is attached to the act that put that book out. Attaching them here
+instead would attach a measurement to an instrument nobody measured against.
+"""
+
+[[acts]]
+id = "celebrationis-eucharisticae-1970"
+line = "typica"
+station_kind = "promulgated"
+kind = "promulgation"
+date = "1970-03-26"
+authority = "Sacred Congregation for Divine Worship, by mandate of Paul VI"
+instrument = "Decree Celebrationis eucharisticae, Prot. n. 166/70"
+title = "The first postconciliar typical edition is declared typical"
+parents = ["missale-romanum-1969"]
+parent_kind = "act-states-it"
+parent_basis = """
+The decree names the constitution it executes, by title, by pope and by day: the
+texts belonging to the Roman Missal having been approved through the Apostolic
+Constitution Missale Romanum given by the Supreme Pontiff Paul VI on 3 April
+1969. An act that recites what it is executing has drawn its own edge.
+"""
+parent_quotation = """
+Celebrationis  eucharistice  Ordine  statuto,  atque  appro-
+batis  textibus  ad  Missale  Romanum  pertinentibus  per  Con-
+stitutionem  Apostolicam  Missale  Romanum  a  Summo  Pon-
+tice  Paulo  VI  die  3  aprilis  1969  datam,  hac  Sacra  Congre-
+gatio  pro  Cultu  Divino,  de  mandato  eiusdem  Summi  Pon-
+tihicis,  novam  hanc  editionem  Missalis  Romani  ad  normam
+decretorum  Concilii  Vaticani  II  confectam  promulgat  et  uti
+typicam  declarat.
+"""
+act_citation = "cited-in-corpus"
+citation = "Sacred Congregation for Divine Worship, Celebrationis eucharisticae, Prot. n. 166/70, 26 March 1970, printed at the head of the 1970 typical edition; registered as work.holy-see.decretum-de-editione-typica-missalis-romani-1970."
+attested_in = ["1970-missale-romanum-typica", "2002-missale-romanum-typica-tertia"]
+read_from = "ocr-only"
+locus = "1970-missale-romanum-typica OCR lines 89-135; the same decree stands in the 2002 typical edition at 2002-missale-romanum-typica-tertia lines 22-44"
+dateline = "Ex adibus Sacre Congregationis pro Cultu Divino, die 26 martii anni 1970, Feria V in Cena Domini."
+signatories = "Benno Card. Gut, Praefectus; A. Bugnini, a Secretis"
+effect = "Carries every departure this file records for the Ordinary of the Mass."
+effect_established = true
+effect_note = """
+TWO WITNESSES OF ONE DECREE WERE COMPARED HERE, and the comparison is the
+opposite of the one the base slice made. Both the 1970 typical edition's text
+layer and the 2002 typical edition's print this decree, and both were read here:
+the 1970 scan renders `eucharistice`, `Pontice`, `Pontihicis`, `adibus` and
+`Sacre`, while the 2002 file renders `eucharisticae`, `Pontifice`, `Pontificis`,
+`aedibus` and `Sacrae`. The wording is the same; one delivery loses the ae
+ligature and one does not. A diff of the two would report eight changes to a
+decree that did not change -- and this time the cleaner reading is the LATER
+book, which is the reverse of the usual assumption that older scans are worse.
+"""
+
+[[acts]]
+id = "reimpressio-emendata-1971"
+line = "typica"
+station_kind = "promulgated"
+kind = "emended-reprint"
+date = "1971"
+authority = "unrecorded"
+instrument = "The emended reprint of 1971; its instrument is unrecorded"
+title = "An emended reprint stands between the first and second editions"
+parents = ["celebrationis-eucharisticae-1970"]
+parent_kind = "book-states-it"
+parent_basis = """
+The 2002 typical edition's own printing-history leaf lists the states of the
+book in order, and this reprint is the second of them. The edge rests on the
+book's list, not on an instrument, which is what `book-states-it` means.
+"""
+parent_quotation = """
+Editio typica, 1970
+Reimpressio emendata, 1971
+Editio typica secunda, 1975
+Editio typica tertia, 2002
+"""
+act_citation = "not-found"
+act_citation_note = """
+NO INSTRUMENT WAS LOCATED, AND ONE IS BELIEVED TO EXIST. A reprint described as
+EMENDED was emended by someone; the 2002 book records the state and not the act.
+
+This station is drawn because omitting it would make a postconciliar recension
+silently wrong about 1971 to 1975, and the omission would be invisible: the
+missal acquisition audit found this reprint by READING a leaf rather than by
+searching, and recorded that a record omitting it `will be silently wrong`.
+
+The value is `not-found` and NOT `none-claimed`, and the difference is the whole
+point of having both. A `printed` station claims no act at all; this one says an
+act is missing.
+
+The date is `1971` with `date_precision = "year"`, which is what the leaf gives.
+No day is invented to make it sort.
+"""
+citation = "Missale Romanum, editio typica tertia, 2002, printing-history leaf: `Reimpressio emendata, 1971`."
+attested_in = ["2002-missale-romanum-typica-tertia"]
+read_from = "ocr-only"
+locus = "2002-missale-romanum-typica-tertia lines 11-14"
+effect = "No departure established."
+effect_established = false
+effect_note = "Nothing was read of what the reprint emended. The station records that a state exists between 1970 and 1975 and claims nothing about it."
+
+[[acts]]
+id = "de-editione-typica-altera-1975"
+line = "typica"
+station_kind = "promulgated"
+kind = "promulgation"
+date = "1975-03-27"
+authority = "Sacred Congregation for Divine Worship, with the approval of Paul VI"
+instrument = "De editione typica altera, Prot. N. 1970/74"
+title = "The second typical edition is emitted and declared typical"
+parents = ["reimpressio-emendata-1971"]
+parent_kind = "act-states-it"
+parent_basis = """
+The act names what it follows: variations and additions have been introduced so
+that this new edition may answer to the documents published since ITS FIRST
+EDITION OF 1970. It names the 1970 edition rather than the 1971 reprint, and the
+edge is drawn to the reprint because that is the state the line had reached; the
+act reaches past it to the edition, and that is recorded here rather than
+smoothed away.
+"""
+parent_quotation = """
+Cum Missale Romanum denuo imprimendum sit, variationes et
+additamenta inducta sunt, ut hæc nova editio respondeat documentis
+post eiusdem primam editionem anno 1970 publici iuris factis.
+"""
+act_citation = "cited-in-corpus"
+citation = "Sacred Congregation for Divine Worship, De editione typica altera, Prot. N. 1970/74, 27 March 1975, printed in the front matter of the 2002 typical edition; registered as work.holy-see.de-editione-typica-altera-missalis-romani-1975."
+attested_in = ["2002-missale-romanum-typica-tertia"]
+read_from = "ocr-only"
+locus = "2002-missale-romanum-typica-tertia lines 45-79"
+dateline = "Ex aedibus Sacrae Congregationis pro Cultu Divino, die 27 martii Anni Sancti 1975, feria V in Cena Domini."
+signatories = "Iacobus Robertus Card. Knox, Praefectus; +A. Bugnini, Archiep. tit. Diocletianensis, a Secretis"
+effect = "No departure in this slice, and the act itself says why not."
+effect_established = false
+effect_note = """
+THE ACT LISTS ITS OWN CHANGES AND NONE OF THEM IS IN THIS SLICE, which is a
+better reason for an empty station than any this history has had before. Read
+here: the description of the offices of acolyte and lector replaces those
+treating of the subdeacon at nn. 142-152 of the Institutio generalis; certain
+formularies of the ritual and votive Masses are completed with entrance and
+communion antiphons; the Masses of the dedication of a church and altar, for
+reconciliation, of the Blessed Virgin Mary Mother of the Church and of the Most
+Holy Name of Mary are added; and further minor variations are made in titles and
+rubrics. This slice carries the Ordinary and Holy Week, and the act touches
+neither.
+
+The acquisition audit calls this edition the postconciliar row with no whole
+witness located anywhere -- what exists is the Ordo Missae alone, three orders of
+magnitude too small. So the emptiness here is partly a real reading of the
+decree and partly a bound on the corpus, and both are stated rather than one
+being allowed to stand for the other.
+"""
+
+[[acts]]
+id = "de-editione-typica-tertia-2000"
+line = "typica"
+station_kind = "promulgated"
+kind = "promulgation"
+date = "2000-04-20"
+authority = "Congregation for Divine Worship and the Discipline of the Sacraments; approved by John Paul II on 10 April 2000"
+instrument = "Decretum de editione typica tertia, Prot. N. 143/00/L"
+title = "The third typical edition is declared typical"
+parents = ["de-editione-typica-altera-1975"]
+parent_kind = "act-states-it"
+parent_basis = """
+The decree stands third in the sequence the same book prints, and its own text
+gives the reason for a new edition: at the beginning of the third millennium it
+seemed good to prepare a new edition of the Roman Missal which should take in
+the more recent documents of the Apostolic See and above all the new Code of
+Canon Law. The printing-history leaf, read here, orders the three editions and
+the reprint.
+"""
+act_citation = "cited-in-corpus"
+citation = "Congregation for Divine Worship and the Discipline of the Sacraments, Decretum de editione typica tertia, Prot. N. 143/00/L, 20 April 2000, printed in the front matter of the 2002 typical edition; registered as work.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000."
+attested_in = ["2002-missale-romanum-typica-tertia"]
+read_from = "ocr-only"
+locus = "2002-missale-romanum-typica-tertia lines 80-120"
+in_force = "usable from publication, and in force from the Solemnity of Corpus Christi 2000, by the decree's own words"
+effect = "No departure in this slice; the changes the decree names lie outside it."
+effect_established = false
+effect_note = """
+The decree lists what it changed, read here: variations in the Institutio
+generalis, a wholly new chapter IX, added formularies for celebrations newly
+inserted in the General Roman Calendar, new Mass formularies in the Common of
+the Blessed Virgin Mary, an oration over the people for each day of Lent
+restored according to ancient liturgical custom, and the Eucharistic Prayer for
+Reconciliation and the one for various needs placed in an appendix to the Order
+of Mass. None of those is in this slice, whose Ordinary units are the ones the
+1970 edition dropped, kept or replaced.
+"""
+
+[[acts]]
+id = "reimpressio-emendata-2008"
+line = "typica"
+station_kind = "promulgated"
+kind = "emended-reprint"
+date = "2008"
+authority = "Congregation for Divine Worship and the Discipline of the Sacraments"
+instrument = "The emended reprint of 2008, with its official list of variations, Prot. N. 652/08/L"
+title = "The third edition is reprinted with emendations"
+parents = ["de-editione-typica-tertia-2000"]
+parent_kind = "act-states-it"
+parent_basis = "It is a reprint of the third typical edition, so declared in the official notice and the variation list that accompany it, both registered in this repository."
+act_citation = "cited-externally"
+citation = "Variationes et additiones in reimpressione emendata Missalis Romani, editionis typicae tertiae, in Notitiae 44 (2008) nos. 503-504, pp. 368-387, with the status notice at p. 367; registered as work.holy-see.variationes-et-additiones-missalis-romani-2008 and work.holy-see.reimpressio-emendata-missalis-romani-notice-2008."
+attested_in = []
+read_from = "not-read"
+locus = "Not read here. Registered at src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008 [recorded]; a reuse proof stands at src/sources/inventories/missale-romanum-2002-notitiae-2008-reuse-proof-2026-07-23.md [recorded]."
+date_note = "The date is `2008` with `date_precision = \"year\"`. The reprint is dated by its year and no day is invented for it."
+effect = "No departure in this slice."
+effect_established = false
+effect_note = """
+The altar book itself is not located; what this repository holds is the official
+change list. Under a departures model that is very nearly as good as the book --
+the acquisition audit's own judgement -- and it is why this station can stand
+honestly on a list rather than on a printing.
+"""
+
+# --- The acts governing which missal may be used ----------------------------
+
+[[acts]]
+id = "quattuor-abhinc-annos-1984"
+line = "usus-antiquior"
+station_kind = "promulgated"
+kind = "indult"
+date = "1984-10-03"
+authority = "Sacred Congregation for Divine Worship, by mandate of John Paul II"
+instrument = "Letter Quattuor abhinc annos"
+title = "An indult permits the 1962 Missal under conditions"
+parents = ["editio-typica-1962"]
+parent_kind = "act-states-it"
+parent_basis = """
+A FORK, not a merge: one parent, on another line, which is how a line is born.
+The edge is drawn because Summorum Pontificum, read here at the bytes, names
+this letter and Ecclesia Dei as `the previous documents` laying down `the
+conditions for the use of THIS MISSAL` -- the Missal `promulgated by Blessed
+John XXIII in 1962`. The act's subject is the 1962 typical edition, so the edge
+runs from that station.
+"""
+act_citation = "not-found"
+act_citation_note = """
+THE INSTRUMENT WAS NOT READ HERE AND IS BELIEVED TO EXIST. Its title and date
+come from two documents that were read at the bytes: Summorum Pontificum names
+it `Quattuor Abhinc Annos` beside Ecclesia Dei, and this repository's passage
+record for Ecclesia Dei states that the motu proprio's footnote `identifies the
+letter Quattuor abhinc annos of 3 October 1984` [recorded:
+src/sources/works/john-paul-ii/ecclesia-dei/editions/english-vatican-web-2026-07-25/passages/complete-text.toml].
+
+So the act is named, dated and twice attested by later instruments, and its own
+text has not been read. `not-found` is exactly that state, and it is not
+`none-claimed`: an instrument is claimed here and is missing, which is a
+different thing from a printing for which no instrument is claimed at all.
+"""
+citation = "Sacred Congregation for Divine Worship, Quattuor abhinc annos, 3 October 1984, as named in Summorum Pontificum and in the footnotes of Ecclesia Dei."
+attested_in = []
+read_from = "not-read"
+effect = "No departure. It governs use, not text."
+effect_established = true
+
+[[acts]]
+id = "ecclesia-dei-1988"
+line = "usus-antiquior"
+station_kind = "promulgated"
+kind = "motu-proprio"
+date = "1988-07-02"
+authority = "John Paul II"
+instrument = "Apostolic letter motu proprio Ecclesia Dei"
+title = "Ecclesia Dei calls for a wide application of the 1984 directives"
+parents = ["quattuor-abhinc-annos-1984"]
+parent_kind = "act-states-it"
+parent_basis = """
+The motu proprio's own footnote identifies the letter Quattuor abhinc annos of
+3 October 1984, and its text calls for a wide and generous application of those
+directives. Summorum Pontificum, read here, then treats the two together as the
+documents it replaces.
+"""
+act_citation = "cited-externally"
+citation = "John Paul II, Ecclesia Dei, 2 July 1988; registered in this repository as work.john-paul-ii.ecclesia-dei, with a complete-text passage verified 2026-07-25."
+attested_in = []
+read_from = "not-read"
+locus = "Not read here. src/sources/works/john-paul-ii/ecclesia-dei [recorded]."
+effect = "No departure. It institutes a commission and directs how an existing permission is to be applied."
+effect_established = true
+
+[[acts]]
+id = "summorum-pontificum-2007"
+line = "usus-antiquior"
+station_kind = "promulgated"
+kind = "motu-proprio"
+date = "2007-07-07"
+authority = "Benedict XVI"
+instrument = "Apostolic letter motu proprio Summorum Pontificum"
+title = "The 1962 Missal is declared never abrogated and an extraordinary form"
+parents = ["ecclesia-dei-1988"]
+parent_kind = "act-states-it"
+parent_basis = """
+The letter says what it supersedes, in one sentence naming both predecessors:
+the conditions for the use of this Missal laid down by the previous documents
+Quattuor Abhinc Annos and Ecclesia Dei are now replaced as follows. An act that
+names what it replaces has drawn its own edge.
+"""
+parent_quotation = """
+the typical edition of the Roman Missal, which was promulgated by Blessed John
+XXIII in 1962 and never abrogated, as an extraordinary form of the Church's
+Liturgy. The conditions for the use of this Missal laid down by the previous
+documents Quattuor Abhinc Annos and Ecclesia Dei are now replaced as follows
+"""
+act_citation = "cited-externally"
+citation = "Benedict XVI, Summorum Pontificum, 7 July 2007, English text on vatican.va."
+attested_in = []
+read_from = "ocr-only"
+read_from_note = """
+`ocr-only` is the nearest available value and is not quite the right word here:
+nothing was scanned. The text is an HTML delivery fetched over HTTPS, and the
+reading standard is higher than an OCR reading, not lower. The vocabulary
+`page-image | ocr-only | not-read` has no value for a born-digital official
+delivery, and inventing one here would put a value in the field that no other
+record in this project uses. Recorded rather than papered over.
+"""
+locus = """
+Fetched here from
+https://www.vatican.va/content/benedict-xvi/en/motu_proprio/documents/hf_ben-xvi_motu-proprio_20070707_summorum-pontificum.html
+and its SHA-256 recomputed: 7442edfd1a6e63235fd997929c1cd029304e27e255cd02155bfa01c13b1e198a,
+which matches
+artifact.benedict-xvi.summorum-pontificum.english-vatican-web-2026-07-25.vatican-html-7442edfd
+exactly [verified]. So the bytes read here are the bytes a record dated
+2026-07-25 already attests, and the two were established independently.
+"""
+in_force = "from 14 September 2007, the Feast of the Exaltation of the Holy Cross, by article 12's closing order"
+effect = "No departure. It regulates which book may be used and by whom."
+effect_established = true
+
+[[acts]]
+id = "universae-ecclesiae-2011"
+line = "usus-antiquior"
+station_kind = "promulgated"
+kind = "instruction"
+date = "2011-04-30"
+authority = "Pontifical Commission Ecclesia Dei, with the approval of Benedict XVI"
+instrument = "Instruction Universae Ecclesiae"
+title = "Norms are given for applying Summorum Pontificum"
+parents = ["summorum-pontificum-2007"]
+parent_kind = "act-states-it"
+parent_basis = "The instruction's own title and subject are the application of the motu proprio Summorum Pontificum of 7 July 2007."
+act_citation = "cited-externally"
+citation = "Pontifical Commission Ecclesia Dei, Universae Ecclesiae, 30 April 2011, in Acta Apostolicae Sedis 103 (2011) 413-420; registered as work.holy-see.universae-ecclesiae."
+attested_in = []
+read_from = "not-read"
+locus = "Not read here. src/sources/works/holy-see/universae-ecclesiae [recorded]."
+effect = "No departure."
+effect_established = true
+
+[[acts]]
+id = "traditionis-custodes-2021"
+line = "usus-antiquior"
+station_kind = "promulgated"
+kind = "motu-proprio"
+date = "2021-07-16"
+authority = "Francis"
+instrument = "Apostolic letter motu proprio Traditionis custodes"
+title = "The postconciliar books are declared the unique expression of the lex orandi"
+parents = ["universae-ecclesiae-2011"]
+parent_kind = "act-states-it"
+parent_basis = """
+Article 8 abrogates what stands before it: previous norms, instructions,
+permissions, and customs that do not conform to the provisions of the present
+Motu Proprio are abrogated. An act that disposes of its predecessors has drawn
+its own edge, and the nearest of those predecessors on this line is the
+instruction of 2011.
+"""
+parent_quotation = """
+Art. 1. The liturgical books promulgated by Saint Paul VI and Saint John Paul
+II, in conformity with the decrees of Vatican Council II, are the unique
+expression of the lex orandi of the Roman Rite.
+[...]
+Art. 8. Previous norms, instructions, permissions, and customs that do not
+conform to the provisions of the present Motu Proprio are abrogated.
+"""
+act_citation = "cited-externally"
+citation = "Francis, Traditionis custodes, 16 July 2021, English text on vatican.va."
+attested_in = []
+read_from = "ocr-only"
+read_from_note = "As for Summorum Pontificum: a born-digital delivery, read at the bytes, for which the three-value reading vocabulary has no exact term."
+locus = """
+Fetched here from
+https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html
+and its SHA-256 recomputed: c7e03ed6ddb06de70e7f9bfe29c50cc22e67e1f3e73639330c80eebd5ea1daf5,
+matching artifact.francis.traditionis-custodes.english-vatican-web-2026-07-25.vatican-html-c7e03ed6
+exactly [verified].
+"""
+dateline = "Given at Rome, at Saint John Lateran, on 16 July 2021, the liturgical Memorial of Our Lady of Mount Carmel, in the ninth year of Our Pontificate. FRANCIS"
+in_force = "immediately on publication in L'Osservatore Romano, by the letter's own order"
+effect = "No departure in this file, and this station is where the line's whole point becomes visible."
+effect_established = true
+effect_note = """
+NOTHING ON THIS LINE MOVES A TEXT, and that is why the line exists separately.
+Article 1 declares the postconciliar books the unique expression of the lex
+orandi of the Roman Rite; Summorum Pontificum article 1 had called the 1962
+edition an extraordinary form of the same rite and said it was never abrogated.
+The two are in the record, dated, quoted and NOT reconciled. No merge is drawn
+between this line and the Roman one, because a merge asserts a reception and
+what these documents show is the opposite.
+"""
+
+[[acts]]
+id = "responsa-ad-dubia-2021"
+line = "usus-antiquior"
+station_kind = "promulgated"
+kind = "responsum"
+date = "2021-12-04"
+authority = "Congregation for Divine Worship and the Discipline of the Sacraments"
+instrument = "Responsa ad dubia on certain provisions of Traditionis custodes"
+title = "Doubts on Traditionis custodes are answered"
+parents = ["traditionis-custodes-2021"]
+parent_kind = "act-states-it"
+parent_basis = "The responses are given to doubts on the provisions of the motu proprio Traditionis custodes, which they name in their own title."
+act_citation = "cited-externally"
+citation = "Congregation for Divine Worship and the Discipline of the Sacraments, Responsa ad dubia, 4 December 2021; registered as work.holy-see.responsa-ad-dubia-traditionis-custodes-2021."
+attested_in = []
+read_from = "not-read"
+locus = "Not read here. src/sources/works/holy-see/responsa-ad-dubia-traditionis-custodes-2021 [recorded]."
+effect = "No departure."
+effect_established = true
+
+[[acts]]
+id = "rescriptum-traditionis-custodes-2023"
+line = "usus-antiquior"
+station_kind = "promulgated"
+kind = "rescript"
+date = "2023-02-21"
+authority = "Dicastery for Divine Worship and the Discipline of the Sacraments, from the audience of 20 February 2023"
+instrument = "Rescriptum ex audientia Ss.mi"
+title = "Dispensations are reserved to the Apostolic See"
+parents = ["responsa-ad-dubia-2021"]
+parent_kind = "act-states-it"
+parent_basis = "The rescript confirms the 2021 Responsa and reserves to the Apostolic See the dispensations at issue in them."
+act_citation = "cited-externally"
+citation = "Dicastery for Divine Worship and the Discipline of the Sacraments, Rescriptum ex audientia, from the audience of 20 February 2023; registered as work.holy-see.rescriptum-traditionis-custodes-2023."
+attested_in = []
+read_from = "not-read"
+locus = "Not read here. src/sources/works/holy-see/rescriptum-traditionis-custodes-2023 [recorded]."
+date_note = """
+The date used is 21 February 2023, the date of the rescript, taken from the
+repository record; the audience it issues from was the previous day, 20
+February 2023, which the record states and which is carried in `authority`
+rather than being collapsed into the date.
+"""
+effect = "No departure."
+effect_established = true
+
+# --- Witnesses --------------------------------------------------------------
+#
+# New witness ids carry their printing year as a prefix, so that the id and the
+# path agree from the start. The eight ids inherited from the base slice do NOT
+# carry one and are not renamed: several of them are also edition ids in this
+# repository's source library, and re-keying a record to fix a listing order is
+# the thing a path convention must not do. Their paths are date-prefixed all the
+# same, because the prefix is derived from `printed` rather than typed into the
+# id -- so `pustet-1862` is written to `witnesses/1862-pustet.txt` and nothing
+# had to be renamed for it.
+
+[[witnesses]]
+id = "1887-canones-et-decreta-tridentini"
+label = "Canones et decreta sacrosancti oecumenici Concilii Tridentini, Leipzig: Tauchnitz, 1887"
+language = "la"
+printed = "1887"
+attests = "tridentinum-sessio-xxii-1562"
+attests_kind = "conciliar-acts-in-a-critical-printing"
+attests_basis = """
+A stereotype reprint of the Roman edition of 1834, printing the Roman edition's
+page numbers in the margin, already registered in this repository as
+edition.council-of-trent.canones-et-decreta.latin-tauchnitz-1887. It carries the
+canons and decrees of the whole council, so it attests both Tridentine stations
+here; the second is attached by `attested_in` on the act.
+"""
+read_from = "ocr-only"
+ocr_artifact = "canonesetdecreta00coun_0_djvu.txt, 1,098,267 bytes"
+provenance = """
+FETCHED HERE AND HASH-MATCHED, which is the strongest provenance in this file.
+Downloaded from
+https://archive.org/download/canonesetdecreta00coun_0/canonesetdecreta00coun_0_djvu.txt
+on 2026-08-01; SHA-256 recomputed as
+588d730873d06ce8bf00bce148d1a341ca459ed05787f170a4ed86fede06733c and byte size
+1,098,267, both matching
+artifact.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.ia-canonesetdecreta00coun-0-djvu-text
+exactly [verified].
+"""
+rights = "public-domain"
+rights_basis = "An 1887 printing. The registered artifact records the same position and adds that uncorrected recognition of a mechanical scan adds no original authorship."
+ocr_quality_warning = """
+The recognition is damaged in the ordinary nineteenth-century way and the damage
+defeats literal searching. `observandis et evitandis` returns ZERO on a literal
+whole-file search of this text layer; the decree's heading is on the page, and
+the scan renders parts of it as `LEBR ATIONE` and the index entry as `de
+observandis et vitandis`. Both quotations in the acts above were found by
+searching for fragments and then reading the surrounding lines [verified].
+"""
+
+[[witnesses]]
+id = "1970-missale-romanum-typica"
+label = "Missale Romanum, editio typica, Typis Polyglottis Vaticanis, 1970"
+language = "la"
+printed = "1970"
+attests = "celebrationis-eucharisticae-1970"
+attests_kind = "decree-printed-in-book"
+attests_basis = """
+The book prints at its head the decree Celebrationis eucharisticae, Prot. n.
+166/70, declaring this edition typical, and then the apostolic constitution
+Missale Romanum of 1969 which the decree executes. Its title page reads
+`MISSALE ROMANUM / EX DECRETO SACROSANCTI OECUMENICI CONCILII VATICANI II
+INSTAURATUM / AUCTORITATE PAULI PP. VI PROMULGATUM / EDITIO TYPICA / TYPIS
+POLYGLOTTIS VATICANIS / MCMLXX`.
+"""
+read_from = "ocr-only"
+ocr_artifact = "MissaleRomanum1970_djvu.txt, 54,658 lines, 1,130,868 bytes"
+rights = "holy-see-post-1929"
+rights_basis = """
+A 1970 typical edition of the Holy See. THE TEXT MAY BE READ AND MAY NOT BE
+PUBLISHED, and the two are separate acts. The 2002 edition's copyright leaf,
+read here, names the Administration of the Patrimony of the Apostolic See as the
+holder for the series. Every departure recorded against this witness below is
+therefore an ABSENCE or a slot, established by searching, and not a
+transcription: not one word of this book is copied into this file.
+"""
+warning = """
+The sibling corpus this text layer comes from imported it `using the project
+public-domain assumption`. THAT ASSUMPTION IS NOT THIS PROJECT'S. The missal
+acquisition audit records the divergence in full and requires any reuse to
+re-derive rights rather than inherit them.
+"""
+
+[[witnesses]]
+id = "2002-missale-romanum-typica-tertia"
+label = "Missale Romanum, editio typica tertia, Typis Vaticanis, 2002"
+language = "la"
+printed = "2002"
+attests = "de-editione-typica-tertia-2000"
+attests_kind = "decree-printed-in-book"
+attests_basis = """
+The book prints the decree that declared it typical, and above it the two
+decrees of its predecessors, so it attests four acts of this line at once: the
+1970 decree, the 1975 second edition, the 2000 third edition, and -- on its
+printing-history leaf -- the existence of the 1971 emended reprint.
+"""
+read_from = "ocr-only"
+ocr_artifact = "latin_missal2002.txt, 34,571 lines"
+rights = "holy-see-post-1929"
+rights_basis = """
+Read at the bytes on the leaf after the title page: `\" Copyright \" apud
+Administrationem Patrimonii Sedis Apostolicae in Civitate Vaticana / Venditio
+operis fit cura Librariae Editricis Vaticanae`. The holder of record is APSA,
+with Libreria Editrice Vaticana as sales agent, which is the book's own claim
+and better evidence than any inference about practice. Registered in this
+repository as edition.catholic-church.missale-romanum.vatican-typica-tertia-2002,
+storage restricted.
+"""
+note = "A digitally typeset reproduction rather than page images, so it is a text witness of unestablished fidelity to the printed altar book. The existing artifact record says so."
+
+# --- Witnesses to the printed stations --------------------------------------
+#
+# One witness per printed station, and never two for one printing: a station is
+# a distinct edition, and a second scan of the same book is the same witness
+# fetched twice. Where a second item of the same bytes exists, it is recorded on
+# the row as a mirror rather than given a station of its own.
+
+[[witnesses]]
+id = "1496-missale-romanum-lugduni"
+label = "Missale Romanum, Lyon: Claude Gibolet, [circa 1496-1497]"
+language = "la"
+printed = "1496"
+attests = "romanum-lugduni-1496"
+attests_kind = "the-printing-itself"
+attests_basis = "The station IS this printing. There is no act to attest; the book is the whole of the claim."
+read_from = "not-read"
+units_read = 0
+units_read_note = "No unit of this book was read. Its OCR text layer exists and was not opened: this file claims no pre-Tridentine text."
+rights = "public-domain"
+rights_basis = "A fifteenth-century printing. The Internet Archive item carries the Creative Commons public-domain mark [verified]."
+digitisation = "https://archive.org/details/OEXV_620 -- PDF 1,482,898,477 bytes, OCR text layer OEXV620_djvu.txt 1,047,960 bytes; catalogue date `[circa 1496-1497]`, year 1496 [verified at the metadata API]"
+
+[[witnesses]]
+id = "1501-missale-romanum-venetiis"
+label = "Missale romanum nouiter impressum, Venice: Lucantonio Giunta, 1501"
+language = "la"
+printed = "1501"
+attests = "romanum-venetiis-1501"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1501 printing; CC public-domain mark, contributed by the National Central Library of Rome [verified]."
+digitisation = "https://archive.org/details/bub_gb_CejXTn8er4wC -- 577 images, PDF 40,806,361 bytes, OCR 1,050,873 bytes [verified]"
+
+[[witnesses]]
+id = "1516-missale-romane-ecclesie-parisiis"
+label = "Missale ad sacrosancte Romane ecclesie usum, Paris: Jean Kerbriand and Jean Adam, 1516"
+language = "la"
+printed = "1516"
+attests = "romanae-ecclesiae-parisiis-1516"
+attests_kind = "the-printing-itself"
+attests_basis = """
+The station is this printing, and this is the row that makes the `romana-curia`
+line legible as a line rather than a heap: the book's own catalogued title says
+what use it is, `ad sacrosancte Romane ecclesie usum` -- to the use of the holy
+Roman church. That declaration, and not a date, is what the edges on this line
+rest on.
+"""
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1516 printing; CC public-domain mark, contributed by the Biblioteca de la Universidad de Sevilla [verified]."
+digitisation = "https://archive.org/details/ARes06601 -- 510 images, PDF 39,146,801 bytes, OCR 1,260,282 bytes [verified]"
+
+[[witnesses]]
+id = "1533-missale-romanum-venetiis"
+label = "Missale Romanum nouissime ordine quodam nouo impressum, Venice, 1533"
+language = "la"
+printed = "1533"
+attests = "romanum-venetiis-1533"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1533 printing; CC public-domain mark, National Central Library of Rome [verified]."
+digitisation = "https://archive.org/details/bub_gb__lya8qzcLswC -- 579 images, PDF 43,833,296 bytes, OCR 941,039 bytes [verified]"
+
+[[witnesses]]
+id = "1543-missale-romanum-scoto"
+label = "Missale Romanum faciliori & miro quodam ordine, Venice: apud Hieronymum Scotum, 1543"
+language = "la"
+printed = "1543"
+attests = "romanum-venetiis-1543"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1543 printing; CC public-domain mark, National Central Library of Rome [verified]."
+digitisation = "https://archive.org/details/bub_gb_ZbLKMiQvFL0C -- 723 images, PDF 49,980,756 bytes, OCR 1,538,339 bytes [verified]"
+
+[[witnesses]]
+id = "1561-missale-romanum-varisco"
+label = "Missale romanum ordine absolutissimo consummatum, Venice: Giovanni Varisco & soci, 1561"
+language = "la"
+printed = "1561"
+attests = "romanum-venetiis-1561"
+attests_kind = "the-printing-itself"
+attests_basis = """
+The station is this printing, and it is the last one on this line before Trent's
+missal appeared. ITS PRINTER IS THE SAME MAN who printed the 1570 Venice
+edition -- `Giovanni Varisco & soci` here, `apud Ioannem Variscum, & haeredes
+Bartholomaei Faletti, & socios` there [verified at both metadata records]. That
+is a fact about a printing house and NOT an edge: nothing about the Tridentine
+missal descends through a Venetian press, and no edge is drawn from this station
+to any station on the Roman typical line.
+"""
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1561 printing; CC public-domain mark, National Central Library of Rome [verified]."
+digitisation = "https://archive.org/details/bub_gb_IAMTaIqAP2IC -- 546 images, PDF 42,035,397 bytes [verified]"
+
+[[witnesses]]
+id = "1497-missale-sarum-rothomagi"
+label = "Missale secundum vsum ecclesie Sarum Anglicane, Rouen: Martin Morin for Jean Richard, 1497"
+language = "la"
+printed = "1497"
+attests = "sarum-rothomagi-1497"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing. Its catalogued title declares its use in terms: `secundum vsum ecclesie Sarum Anglicane`."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1497 printing; CC public-domain mark, Boston Public Library copy with a full provenance chain in the item record [verified]."
+digitisation = "https://archive.org/details/missalesecundumv00cath -- 540 images, PDF 41,087,043 bytes, OCR 1,448,165 bytes [verified]"
+note = "The acquisition audit calls this the best early Sarum scan found, and separately warns that a Dickinson scan with the same title may hold only some of the fascicles published between 1861 and 1883."
+
+[[witnesses]]
+id = "1554-missale-sarisburiensis"
+label = "Missale ad usum ecclesie Sarisburiensis, 1554"
+language = "la"
+printed = "1554"
+attests = "sarum-sarisburiensis-1554"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing, and it is here because it dates the use's survival into the Marian restoration."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1554 printing."
+digitisation = "https://archive.org/details/bim_early-english-books-1475-1640_missale-ad-usum-ecclesie_liturgies-latin-rite-mis_1554 [verified]"
+ocr_quality_warning = """
+AN EEBO MICROFILM SCAN, not fresh photography. The acquisition audit records the
+whole `bim_early-english-books-1475-1640_*` series as a last resort and not a
+text witness, and this row inherits that warning rather than restating it as
+though it were new.
+"""
+
+[[witnesses]]
+id = "1517-missale-eboracensis"
+label = "Missale ad usum celeberrime ecclesie eboracensis, 1517"
+language = "la"
+printed = "1517"
+attests = "eboracensis-1517"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing; its title declares the use of the church of York."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1517 printing."
+digitisation = "https://archive.org/details/bim_early-english-books-1475-1640_missale-ad-usum-celeberr_bernard-cousin_1517 -- 415 images, PDF 303,997,124 bytes [verified]"
+ocr_quality_warning = """
+THE MEASUREMENT IS ON THE ROW BECAUSE IT IS STARK. This item's text layer is
+127,736 bytes for 415 images [verified] -- about 300 bytes a page, where the
+comparable fresh scans in this file run ten times that. It is an EEBO microfilm
+reel. It can establish that the book exists and was printed; it cannot be read
+for a word.
+"""
+
+[[witnesses]]
+id = "1874-missale-eboracensis-henderson"
+label = "Missale ad usum insignis Ecclesiae Eboracensis, ed. W. G. Henderson, Surtees Society, Durham 1874"
+language = "la"
+printed = "1874"
+attests = "eboracensis-1517"
+attests_kind = "critical-edition-of-the-use"
+attests_basis = """
+A nineteenth-century critical edition of the York use, attached to the printed
+station as a witness rather than given a station of its own. A scholarly edition
+is not a state of the rite anyone celebrated; it is an instrument for reading
+one, and giving it a station would put an editor's reconstruction into a history
+of acts.
+"""
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "An 1874 printing; the Internet Archive item is marked NOT_IN_COPYRIGHT [verified]."
+digitisation = "https://archive.org/details/missaleadusumins02cath -- volume 2, 396 images, PDF 22,020,883 bytes, OCR 799,382 bytes, Wellesley College Library copy [verified]. Four further items of the same edition exist and are mirrors, not further stations."
+
+[[witnesses]]
+id = "1499-missale-ambrosianum-pachel"
+label = "Missale Ambrosianum, Milan: Leonhard Pachel, 27 August 1499"
+language = "la"
+printed = "1499"
+attests = "ambrosianum-mediolani-1499"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing. The Internet Archive record gives the day as well as the year: `27 VIII 1499` [verified]."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1499 printing; CC public-domain mark [verified]."
+digitisation = "https://archive.org/details/OEXV698 -- 394 images, PDF 1,203,559,890 bytes, OCR 1,277,898 bytes [verified]"
+note = "Reported imperfect, wanting two leaves, in the acquisition audit. Recorded so that a later reading does not take an absence in this copy for an absence in the edition."
+
+[[witnesses]]
+id = "1640-missale-ambrosianum-sirtori"
+label = "Missale Ambrosianum, Milan: Io. Ambrosius Sirturus and the heirs of Ponzio and Piccaglia, archiepiscopal printers, 1640"
+language = "la"
+printed = "1640"
+attests = "ambrosianum-mediolani-1640"
+attests_kind = "the-printing-itself"
+attests_basis = """
+The station is this printing. Its imprint says `impress. archiep.` -- printers
+to the archbishop -- which is a licence to print and NOT an act revising the
+rite, exactly as the 1862 Pustet's `cum approbatione` was. That is why this
+station is `printed` and not `promulgated`.
+"""
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1640 printing; CC public-domain mark, National Central Library of Rome [verified]."
+digitisation = "https://archive.org/details/bub_gb_6ApfhlfCMksC -- 772 images, PDF 78,039,485 bytes, OCR 1,948,375 bytes [verified]"
+
+[[witnesses]]
+id = "1755-missale-mixtum-lesley"
+label = "Missale mixtum secundum regulam Beati Isidori dictum Mozarabes, ed. Alexander Lesley, Rome: Monaldini, 1755"
+language = "la"
+printed = "1755"
+attests = "mozarabicum-lesley-1755"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing, which is also the first edition of the rite anyone here can read whole."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1755 printing; the Internet Archive item is marked NOT_IN_COPYRIGHT, New York Public Library copy [verified]."
+digitisation = "https://archive.org/details/missalemixtumse00leslgoog -- 408 images, PDF 28,715,021 bytes, OCR 1,491,426 bytes [verified]"
+note = "The Cisneros editio princeps of 1500 is at the Bibliotheque nationale de France and is recorded in the acquisition audit; Gallica was not reachable from this run, so it is not carried as a station here."
+
+[[witnesses]]
+id = "1862-liturgia-mozarabica-migne"
+label = "Liturgia Mozarabica secundum regulam beati Isidori, Paris: J.-P. Migne, 1862"
+language = "la"
+printed = "1862"
+attests = "mozarabicum-migne-1862"
+attests_kind = "the-printing-itself"
+attests_basis = """
+The station is this printing, and its own title says what it reprints: the first
+volume contains the Missale mixtum adorned with the preface, notes and
+appendices of Alexander Lesley. That statement is what the edge from the 1755
+station rests on, and it is the only `book-states-it` edge among the uses.
+"""
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "An 1862 printing; marked NOT_IN_COPYRIGHT, Harvard copy [verified]."
+digitisation = "https://archive.org/details/liturgiamozarab01churgoog -- 685 images, PDF 59,175,281 bytes, OCR 4,622,815 bytes [verified]"
+
+[[witnesses]]
+id = "1924-missale-bracarense"
+label = "Missale Bracarense, editio typica, 1924"
+language = "la"
+printed = "1924"
+attests = "decretum-missalis-bracarensis-1924"
+attests_kind = "decree-printed-in-book"
+attests_basis = """
+The book prints both its own instruments in its front matter: the bull of Pius
+XI of 8 December 1924 and the Sacred Congregation of Rites decree of 9 December
+1924 declaring the Vatican edition of this Missal to be held as typical. Both
+were read at the bytes by the missal acquisition audit in the whole OCR text
+layer of this item.
+"""
+read_from = "not-read"
+read_from_note = "`not-read` in THIS file. The audit read the front matter in this item's text layer on 2026-08-01 and quotes both instruments [recorded: src/sources/inventories/missal-acquisition-audit-v1.toml]."
+rights = "public-domain"
+rights_basis = """
+A 1924 printing, before the pre-1931 United States line, and an ARCHDIOCESAN
+book rather than a Holy See imprint, so the post-1929 Holy See class does not
+reach it. This is the only twentieth-century missal of a use in this file that
+is both whole and publishable.
+"""
+digitisation = "https://archive.org/details/missale-bracarense-1924 -- PDF 176,021,172 bytes, OCR text layer 3,210,801 bytes [verified here at the metadata API]"
+
+[[witnesses]]
+id = "1503-missale-lugdunense"
+label = "Missale ad usum ecclesie Lugdunensis, 1503, BnF Res. B-28974"
+language = "la"
+printed = "1503"
+attests = "lugdunense-1503"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing; its title declares the use of the church of Lyon."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "Gallica states `domaine public / public domain` in its own record [recorded from the missal acquisition audit, verified there on 2026-08-01]."
+digitisation = "https://gallica.bnf.fr/ark:/12148/bpt6k8708528k -- 452 image views [recorded]"
+not_verified_here = """
+GALLICA WAS NOT REACHABLE FROM THIS RUN. Every request to gallica.bnf.fr,
+including the IIIF manifest and a request with a browser user agent, returned
+`Recv failure: Connection reset by peer` [verified]. So this row and the Lyon
+station resting on it are [recorded] and not [verified], and the difference is
+on the row rather than in a preface. The Internet Archive holds no Lyon missal
+under seven alias forms, which is why there is no fallback.
+"""
+
+[[witnesses]]
+id = "1494-missale-aquileiense"
+label = "Missale Aquileiense, 1494"
+language = "la"
+printed = "1494"
+attests = "aquileiense-1494"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1494 printing. The item carries no licence field; the basis is the printing date alone, and the weakness is on the record."
+digitisation = "https://archive.org/details/missale-aquileiense-1494 -- PDF 313,701,827 bytes, OCR 1,238,114 bytes [verified]"
+
+[[witnesses]]
+id = "1517-missale-aquileiense"
+label = "Missale iuxta ritum almae Aquileiensis ecclesiae, 1517"
+language = "la"
+printed = "1517"
+attests = "aquileiense-1517"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing; its title declares the rite of the church of Aquileia."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1517 printing; no licence field, so the basis is the date alone."
+digitisation = "https://archive.org/details/missale-iuxta-ritum-almae-aquileiensis-ecclesiae-1517 -- PDF 516,118,049 bytes, OCR 1,194,082 bytes [verified]. A Bavarian State Library item of the same edition, 16776769108888bsb-10202279, is a mirror and not a further station."
+
+[[witnesses]]
+id = "1484-missale-praedicatorum-venetiis"
+label = "Incipit missale secundum Ordinem Fratrum Predicatorum, [Venice]: Nicolaus de Frankfordia, 1484"
+language = "la"
+printed = "1484"
+attests = "praedicatorum-venetiis-1484"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing, and its first words are its declaration of use: `Incipit missale secundum Ordinem Fratrum Predicatorum`."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1484 printing; CC public-domain mark, Boston Public Library copy [verified]."
+digitisation = "https://archive.org/details/incipitmissalese00cath -- 598 images, PDF 45,995,138 bytes, OCR 954,258 bytes [verified]"
+
+[[witnesses]]
+id = "1550-missale-praedicatorum-giunta"
+label = "Missale ad vsum fratrum Praedicatorum Sancti Dominici, Venice: heirs of Lucantonio Giunta, 1550"
+language = "la"
+printed = "1550"
+attests = "praedicatorum-venetiis-1550"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing. Its title declares both the use and a revision: `nouissime summa diligentia reuisum, & multis purgatum erroribus`."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1550 printing; CC public-domain mark, National Library of Naples [verified]."
+digitisation = "https://archive.org/details/bub_gb_FqVWqqFkUDsC -- 608 images, PDF 49,352,442 bytes, OCR 1,360,232 bytes [verified]. A second item, ARes12420 at the University of Seville, is another COPY of the same edition and is a mirror witness, not a second station."
+
+[[witnesses]]
+id = "1604-missale-praedicatorum-xavierre"
+label = "Missale iuxta ritum sacri Ordinis Praedicatorum, Rome: Ciacconi, apud Carolum Vulliettum, 1604"
+language = "la"
+printed = "1604"
+attests = "praedicatorum-xavierre-1604"
+attests_kind = "instrument-on-the-title-page"
+attests_basis = """
+THE TITLE PAGE IS THE INSTRUMENT, and this is the cheapest promulgated station
+in the file. The catalogued title reads: `Sub r.mo P.F. Hieronymo Xauierre
+Caesaraugustano, totius praefati Ordinis Generali magistro recognitum &
+emendatum, & auctoritate Apostolica approbatum & confirmatum` -- revised and
+emended under the Master General of the whole Order, and approved and confirmed
+by apostolic authority [verified at the Internet Archive metadata record].
+"""
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1604 printing; CC public-domain mark, National Central Library of Rome [verified]."
+digitisation = "https://archive.org/details/bub_gb_lefoIUlq2sgC -- 622 images, PDF 66,629,552 bytes, OCR 1,873,257 bytes [verified]"
+note = "A sibling 1603 Roman printing by the same press, bub_gb_jC65fvjqLnwC, exists and is not carried: its catalogued title states no instrument, so it would be a printed station adding nothing this one does not already say better."
+
+[[witnesses]]
+id = "1574-missale-carmelitarum-venetiis"
+label = "Missale antique professionis Regularium ... de Monte Carmelo, ad normam et consuetudinem Hierosolymitane Ecclesie, Venice: apud Iuntas, 1574"
+language = "la"
+printed = "1574"
+attests = "carmelitarum-venetiis-1574"
+attests_kind = "the-printing-itself"
+attests_basis = """
+The station is this printing, and its title carries the order's own account of
+its use: conformed TO THE NORM AND CUSTOM OF THE CHURCH OF JERUSALEM. The
+Holy Sepulchre attribution is the book's, printed in 1574, and not a modern
+scholarly gloss [verified at the Internet Archive metadata record].
+"""
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1574 printing; CC public-domain mark, Biblioteca de la Universidad de Sevilla [verified]."
+digitisation = "https://archive.org/details/ARes10417 -- 653 images, PDF 82,736,407 bytes, OCR 1,593,698 bytes [verified]"
+
+[[witnesses]]
+id = "1621-missale-carmelitarum-venetiis"
+label = "Missale fratrum Carmelitarum Ordinis beatae Dei genitricis Mariae, Venice: apud Iuntas, 1621"
+language = "la"
+printed = "1621"
+attests = "carmelitarum-capitulum-1621"
+attests_kind = "instrument-on-the-title-page"
+attests_basis = """
+The title states the two instruments together: `Capituli Generalis decreto, ad
+praescriptum Breuiarij eiusdem Ordinis auctoritate apostolica approbati,
+restitutum. Et reuerendissimi prioris generalis magistri Sebastiani Fantoni
+Romani iussu` -- restored by decree of the General Chapter, and by the order of
+the Prior General [verified at the Internet Archive metadata record].
+"""
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1621 printing; CC public-domain mark, National Central Library of Rome [verified]."
+digitisation = "https://archive.org/details/bub_gb_PUEgJFAvalgC -- 628 images, PDF 69,366,657 bytes [verified]"
+
+[[witnesses]]
+id = "1496-missale-cartusiense-spirae"
+label = "Missale Cartusiense, [Speyer]: Peter Drach the Middle for Henrick Eckert van Homberch, [1496]"
+language = "la"
+printed = "1496"
+attests = "cartusiense-spirae-1496"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing, the earliest Carthusian missal located anywhere in this pull."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A fifteenth-century printing."
+digitisation = """
+https://www.digitale-sammlungen.de/en/view/bsb00030081 -- IIIF manifest fetched
+and read HERE: 572 canvases for 278 leaves, imprint `[Speyer] : [Peter Drach der
+Mittlere fur Henrick Eckert van Homberch in Delft] [1496]`, shelfmark Munchen,
+Bayerische Staatsbibliothek 2 Inc.s.a. 879, with Hain/Copinger 11276,
+Weale-Bohatta 1728, GW M24135 and BSB-Ink M-423 [verified].
+"""
+note = "NOT ON THE INTERNET ARCHIVE under any of nine alias forms. This row exists because a second repository was searched."
+
+[[witnesses]]
+id = "1620-missale-carthusiense"
+label = "Missale Carthusiense, 1620"
+language = "la"
+printed = "1620"
+attests = "cartusiense-1620"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1620 printing. The item carries no licence field; the basis is the date alone."
+digitisation = "https://archive.org/details/missale-carthusiense -- PDF 452,460,457 bytes, OCR text layer 1,277,278 bytes [verified]. A duplicate upload, missale-carthusiense_202309, is a mirror and not a second station."
+corrects = """
+THIS ROW CORRECTS A NEGATIVE IN THIS REPOSITORY. The missal acquisition audit
+recorded that a search of the Internet Archive under `cartusiense`,
+`cartusiensis`, `cartusianum` and `chartreux` returns NO Carthusian missal, and
+concluded that the Carthusian books are at Gallica and the Bavarian State
+Library. The first half is still true. The conclusion was too strong: a title
+search including `carthusiense` -- the same word with an h -- returns this item
+[verified]. See `[[corrections]]`.
+"""
+
+[[witnesses]]
+id = "1510-missale-praemonstratense-argentorati"
+label = "Ordo missalis secundum ritum ordinis Premonstratensis, [Strasbourg], [circa 1510]"
+language = "la"
+printed = "1510"
+attests = "praemonstratense-argentorati-1510"
+attests_kind = "the-printing-itself"
+attests_basis = """
+The station is this printing, and the book's own opening words are its title in
+the catalogue and its declaration of use: `Jn nomine d[omi]ni Jncipit ordo
+missalis s[e]c[un]d[u]m ritu[is] ordinis Premonstraten[sis]` [verified at the
+IIIF manifest].
+"""
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "An early sixteenth-century printing."
+digitisation = "https://www.digitale-sammlungen.de/en/view/bsb00002021 -- IIIF manifest fetched here: 588 canvases, imprint `[Strassburg] : [Pruss] [um 1510]`, GW M24182, BSB-Ink M-450, VD16 M 5647, Weale-Bohatta 1671 [verified]"
+date_conflict = """
+THE DATE IS A RANGE AND IS NOT COLLAPSED. The manifest's own bibliographic note
+records three disagreeing datings, read here: GW M24182 gives `nicht vor 1500,
+nicht nach 1511`; BSB-Ink M-450 gives `nach 1500`; Weale-Bohatta 1671 gives
+`Reinhard Beck, ca. 1511` [verified]. The station is dated `1510` with
+year precision, which is the catalogue's own headline date, and this note is
+what stops that year from being read as established.
+"""
+
+[[witnesses]]
+id = "1530-missale-praemonstratense-parisiis"
+label = "Missale Praemonstratense, Paris, 1530"
+language = "la"
+printed = "1530"
+attests = "praemonstratense-parisiis-1530"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1530 printing."
+digitisation = "https://www.digitale-sammlungen.de/en/view/bsb10164241 -- IIIF manifest fetched here: 510 canvases, imprint `Paris 1530`, shelfmark 2 Liturg. 235 a [verified]"
+
+[[witnesses]]
+id = "1578-missale-praemonstratense-parisiis"
+label = "Missale Praemonstratense, Paris, 1578"
+language = "la"
+printed = "1578"
+attests = "praemonstratense-parisiis-1578"
+attests_kind = "the-printing-itself"
+attests_basis = "The station is this printing."
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1578 printing."
+digitisation = "https://www.digitale-sammlungen.de/en/view/bsb10197414 -- IIIF manifest fetched here: 604 canvases, imprint `Parisii 1578`, shelfmark Res/2 Liturg. 235 [verified]"
+
+[[witnesses]]
+id = "1580-missale-monasticum-casinense"
+label = "Missale monasticum iuxta ritum Casinensis Congregationis, alias Sanctae Iustinae ordinis d. Benedicti, Venice: apud Dominicum Nicolinum, 1580"
+language = "la"
+printed = "1580"
+attests = "monasticum-casinense-1580"
+attests_kind = "the-printing-itself"
+attests_basis = """
+The station is this printing. Its catalogued title continues `ex decreto
+generalium comitiorum & regiminis` -- by decree of the general chapter and of the
+government of the congregation -- which NAMES an instrument without giving its
+date, its incipit or its text. The station is therefore `printed` and not
+`promulgated`: naming that an act exists is not citing one, and the difference is
+what `act_citation` is for.
+"""
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "A 1580 printing; CC public-domain mark, National Library of Naples [verified]."
+digitisation = "https://archive.org/details/bub_gb_mMB31zxR8McC -- 563 images, PDF 43,615,766 bytes, OCR 1,357,323 bytes [verified]"
+
+[[witnesses]]
+id = "1893-missale-romanum-slavonico"
+label = "Missale Romanum Slavonico idiomate, Rome: Ex Typographia Polyglotta, 1893"
+language = "cu"
+printed = "1893"
+attests = "slavonico-1893"
+attests_kind = "the-printing-itself"
+attests_basis = """
+The station is this printing. The item's own title is set in GLAGOLITIC
+CHARACTERS beside the Latin one, and its language field is `chu`, Church
+Slavonic [verified]. This is the Roman rite in another language and another
+script, printed by the Vatican Polyglot Press -- not a use exempted by Quo
+primum, and not a lay translation.
+"""
+read_from = "not-read"
+rights = "public-domain"
+rights_basis = "An 1893 printing, before the pre-1931 United States line; CC public-domain mark [verified]."
+digitisation = "https://archive.org/details/missale-romanum-slavonico-idiomate-1893 -- PDF 1,323,591,298 bytes, OCR text layer 3,920,683 bytes [verified]"
+
+# --- The uses and the order rites -------------------------------------------
+#
+# Every station below is `printed` unless it names an instrument. A printed
+# station claims no act, and `check` refuses one that names an instrument, that
+# does not name its printing, or that does not say why it is a distinct edition
+# rather than a rescan of one already carried.
+
+[[acts]]
+id = "romanum-lugduni-1496"
+line = "romana-curia"
+station_kind = "printed"
+kind = "printing"
+date = "1496"
+title = "A Roman missal is printed at Lyon"
+printing = "1496-missale-romanum-lugduni"
+parents = []
+root_basis = """
+The earliest printing on this line, and the record starts here. What the Roman use was before it -- the curial missal, the Milan printing of 1474 -- is not carried, and no edge is drawn into this station.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The Lyon printing of Claude Gibolet, catalogued `[circa 1496-1497]`. It is a distinct edition and not a rescan: no other item in this file shares its printer, place or catalogue date.
+"""
+citation = "See the witness record 1496-missale-romanum-lugduni for the imprint, the extent and the repository."
+attested_in = ["1496-missale-romanum-lugduni"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "romanum-venetiis-1501"
+line = "romana-curia"
+station_kind = "printed"
+kind = "printing"
+date = "1501"
+title = "A Roman missal is printed at Venice by Giunta"
+printing = "1501-missale-romanum-venetiis"
+parents = ["romanum-lugduni-1496"]
+parent_kind = "use-continuity"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+Lucantonio Giunta's Venice printing of 1501, 577 images. A different press, city and year from every other station on this line.
+"""
+citation = "See the witness record 1501-missale-romanum-venetiis for the imprint, the extent and the repository."
+attested_in = ["1501-missale-romanum-venetiis"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "romanae-ecclesiae-parisiis-1516"
+line = "romana-curia"
+station_kind = "printed"
+kind = "printing"
+date = "1516"
+title = "A missal to the use of the holy Roman church is printed at Paris"
+printing = "1516-missale-romane-ecclesie-parisiis"
+parents = ["romanum-venetiis-1501"]
+parent_kind = "use-continuity"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The Paris printing of Kerbriand and Adam, 1516, 510 images. Distinct in press, city and year, and the only station on this line whose title spells the use out.
+"""
+citation = "See the witness record 1516-missale-romane-ecclesie-parisiis for the imprint, the extent and the repository."
+attested_in = ["1516-missale-romane-ecclesie-parisiis"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "romanum-venetiis-1533"
+line = "romana-curia"
+station_kind = "printed"
+kind = "printing"
+date = "1533"
+title = "A Roman missal is printed at Venice in a new order"
+printing = "1533-missale-romanum-venetiis"
+parents = ["romanae-ecclesiae-parisiis-1516"]
+parent_kind = "use-continuity"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The 1533 Venice printing, 579 images. Its title advertises a NEW ORDER of the book -- `nouissime ordine quodam nouo impressum` -- so it is a distinct edition on its own account.
+"""
+citation = "See the witness record 1533-missale-romanum-venetiis for the imprint, the extent and the repository."
+attested_in = ["1533-missale-romanum-venetiis"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "romanum-venetiis-1543"
+line = "romana-curia"
+station_kind = "printed"
+kind = "printing"
+date = "1543"
+title = "A Roman missal is printed at Venice by Scoto"
+printing = "1543-missale-romanum-scoto"
+parents = ["romanum-venetiis-1533"]
+parent_kind = "use-continuity"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+Girolamo Scoto's Venice printing of 1543, 723 images. Its title claims its own revision of the prophecies, epistles and gospels against the text of the Bible.
+"""
+citation = "See the witness record 1543-missale-romanum-scoto for the imprint, the extent and the repository."
+attested_in = ["1543-missale-romanum-scoto"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "romanum-venetiis-1561"
+line = "romana-curia"
+station_kind = "printed"
+kind = "printing"
+date = "1561"
+title = "A Roman missal is printed at Venice by Varisco, nine years before Trent's"
+printing = "1561-missale-romanum-varisco"
+parents = ["romanum-venetiis-1543"]
+parent_kind = "use-continuity"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+Giovanni Varisco's Venice printing of 1561, 546 images. Distinct edition, and the last on this line: the line stops here and does not run into Quo primum.
+"""
+citation = "See the witness record 1561-missale-romanum-varisco for the imprint, the extent and the repository."
+attested_in = ["1561-missale-romanum-varisco"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "sarum-rothomagi-1497"
+line = "sarum"
+station_kind = "printed"
+kind = "printing"
+date = "1497"
+title = "The Sarum missal is printed at Rouen for the English market"
+printing = "1497-missale-sarum-rothomagi"
+parents = []
+root_basis = """
+The earliest Sarum printing carried here, and the record starts here. The use is centuries older; nothing in this file reaches behind this book.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The Rouen printing of Martin Morin for Jean Richard, 1497, 540 images. It is the only Sarum item in this file that is fresh photography rather than an EEBO microfilm reel.
+"""
+citation = "See the witness record 1497-missale-sarum-rothomagi for the imprint, the extent and the repository."
+attested_in = ["1497-missale-sarum-rothomagi"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "sarum-sarisburiensis-1554"
+line = "sarum"
+station_kind = "printed"
+kind = "printing"
+date = "1554"
+title = "A Sarum missal is printed under Mary"
+printing = "1554-missale-sarisburiensis"
+parents = ["sarum-rothomagi-1497"]
+parent_kind = "use-continuity"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+A 1554 printing, distinct in year and setting from the 1497 Rouen edition. It is carried because it dates the use's survival into the Marian restoration; what ended the use afterwards is an act of the English crown and is not asserted here.
+"""
+citation = "See the witness record 1554-missale-sarisburiensis for the imprint, the extent and the repository."
+attested_in = ["1554-missale-sarisburiensis"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "eboracensis-1517"
+line = "eboracensis"
+station_kind = "printed"
+kind = "printing"
+date = "1517"
+title = "The York missal is printed"
+printing = "1517-missale-eboracensis"
+parents = []
+root_basis = """
+The only early York printing located in this pull, and the record starts here.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The 1517 printing, 415 images. The Surtees Society edition of 1874 attached beside it is a CRITICAL EDITION and hangs as a witness, not as a second station.
+"""
+citation = "See the witness record 1517-missale-eboracensis for the imprint, the extent and the repository."
+attested_in = ["1517-missale-eboracensis"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "ambrosianum-mediolani-1499"
+line = "ambrosianum"
+station_kind = "printed"
+kind = "printing"
+date = "1499"
+title = "The Ambrosian missal is printed at Milan by Pachel"
+printing = "1499-missale-ambrosianum-pachel"
+parents = []
+root_basis = """
+The earliest Ambrosian printing carried here. The editio princeps of 1475 is at the Vatican Library and was not reached in this run, so no edge runs behind this station.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+Leonhard Pachel's Milan printing, dated in the record to the day, 27 August 1499. Distinct from every other Ambrosian item in this file.
+"""
+citation = "See the witness record 1499-missale-ambrosianum-pachel for the imprint, the extent and the repository."
+attested_in = ["1499-missale-ambrosianum-pachel"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "ambrosianum-mediolani-1640"
+line = "ambrosianum"
+station_kind = "printed"
+kind = "printing"
+date = "1640"
+title = "The Ambrosian missal is printed at Milan by the archiepiscopal printers"
+printing = "1640-missale-ambrosianum-sirtori"
+parents = ["ambrosianum-mediolani-1499"]
+parent_kind = "use-continuity"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The 1640 Milan printing, 772 images, a century and a half after the other. Distinct edition; its `impress. archiep.` imprint is a licence to print and not an act.
+"""
+citation = "See the witness record 1640-missale-ambrosianum-sirtori for the imprint, the extent and the repository."
+attested_in = ["1640-missale-ambrosianum-sirtori"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "mozarabicum-lesley-1755"
+line = "mozarabicum"
+station_kind = "printed"
+kind = "printing"
+date = "1755"
+title = "The Mozarabic missal is printed at Rome in Lesley's edition"
+printing = "1755-missale-mixtum-lesley"
+parents = []
+root_basis = """
+The earliest Mozarabic printing this run could reach. The Cisneros editio princeps of 1500 is at the Bibliotheque nationale de France, which was unreachable here, so no edge runs behind this station and its absence is a bound on this run.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+Alexander Lesley's Rome edition of 1755, 408 images. Distinct edition; the 1862 station beside it reprints this one and says so.
+"""
+citation = "See the witness record 1755-missale-mixtum-lesley for the imprint, the extent and the repository."
+attested_in = ["1755-missale-mixtum-lesley"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "mozarabicum-migne-1862"
+line = "mozarabicum"
+station_kind = "printed"
+kind = "printing"
+date = "1862"
+title = "Migne reprints the Mozarabic missal in the Patrologia"
+printing = "1862-liturgia-mozarabica-migne"
+parents = ["mozarabicum-lesley-1755"]
+parent_kind = "book-states-it"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+Migne's Paris printing of 1862, 685 images. It is a distinct edition and it names what it reprints: the first volume contains the Missale mixtum adorned with the preface, notes and appendices of Alexander Lesley. That naming is the edge.
+"""
+citation = "See the witness record 1862-liturgia-mozarabica-migne for the imprint, the extent and the repository."
+attested_in = ["1862-liturgia-mozarabica-migne"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "lugdunense-1503"
+line = "lugdunense"
+station_kind = "printed"
+kind = "printing"
+date = "1503"
+title = "A missal to the use of the church of Lyon is printed"
+printing = "1503-missale-lugdunense"
+parents = []
+root_basis = """
+The earliest Lyon printing recorded here, and the record starts here. Nothing behind it is carried.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The 1503 printing, BnF Res. B-28974, 452 image views. RECORDED AND NOT VERIFIED IN THIS RUN: Gallica was unreachable, and the witness row says so at length. It is the only station in this file resting on a repository this run could not reach, and it is carried rather than dropped because the acquisition audit reached it eight hours earlier and because the alternative -- writing the Lyonnais use out of the record -- is the error that audit had already corrected once.
+"""
+citation = "See the witness record 1503-missale-lugdunense for the imprint, the extent and the repository."
+attested_in = ["1503-missale-lugdunense"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "aquileiense-1494"
+line = "aquileiense"
+station_kind = "printed"
+kind = "printing"
+date = "1494"
+title = "The Aquileian missal is printed"
+printing = "1494-missale-aquileiense"
+parents = []
+root_basis = """
+The earliest Aquileian printing located, and the record starts here.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The 1494 printing. Distinct in year and setting from the 1517 station beside it.
+"""
+citation = "See the witness record 1494-missale-aquileiense for the imprint, the extent and the repository."
+attested_in = ["1494-missale-aquileiense"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "aquileiense-1517"
+line = "aquileiense"
+station_kind = "printed"
+kind = "printing"
+date = "1517"
+title = "The Aquileian missal is printed again"
+printing = "1517-missale-aquileiense"
+parents = ["aquileiense-1494"]
+parent_kind = "use-continuity"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The 1517 printing, whose title declares the rite of the church of Aquileia. A Bavarian State Library item of the same edition is a mirror and is recorded on the witness row rather than given a station.
+"""
+citation = "See the witness record 1517-missale-aquileiense for the imprint, the extent and the repository."
+attested_in = ["1517-missale-aquileiense"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "praedicatorum-venetiis-1484"
+line = "praedicatorum"
+station_kind = "printed"
+kind = "printing"
+date = "1484"
+title = "The Dominican missal is printed at Venice"
+printing = "1484-missale-praedicatorum-venetiis"
+parents = []
+root_basis = """
+The earliest Dominican printing located, and the record starts here. The order's rite is two centuries older and nothing behind this book is carried.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+Nicolaus de Frankfordia's Venice printing of 1484, 598 images. Distinct from the 1550 Giunta edition in press, year and setting.
+"""
+citation = "See the witness record 1484-missale-praedicatorum-venetiis for the imprint, the extent and the repository."
+attested_in = ["1484-missale-praedicatorum-venetiis"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "praedicatorum-venetiis-1550"
+line = "praedicatorum"
+station_kind = "printed"
+kind = "printing"
+date = "1550"
+title = "The Dominican missal is printed at Venice by the heirs of Giunta"
+printing = "1550-missale-praedicatorum-giunta"
+parents = ["praedicatorum-venetiis-1484"]
+parent_kind = "use-continuity"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The 1550 Venice printing, 608 images. A second Internet Archive item of the SAME EDITION exists at Seville and is recorded on the witness row as a mirror: two copies of one edition are one station.
+"""
+citation = "See the witness record 1550-missale-praedicatorum-giunta for the imprint, the extent and the repository."
+attested_in = ["1550-missale-praedicatorum-giunta"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "carmelitarum-venetiis-1574"
+line = "carmelitarum"
+station_kind = "printed"
+kind = "printing"
+date = "1574"
+title = "The Carmelite missal is printed at Venice, conformed to the custom of Jerusalem"
+printing = "1574-missale-carmelitarum-venetiis"
+parents = []
+root_basis = """
+The earliest Carmelite printing located, and the record starts here. A 1490 Brescia printing is reported at the Bibliotheque nationale de France in the acquisition audit and was not reached; no edge runs behind this station.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The 1574 Venice printing by the Giunta press, 653 images. Distinct in press and year from the 1621 station.
+"""
+citation = "See the witness record 1574-missale-carmelitarum-venetiis for the imprint, the extent and the repository."
+attested_in = ["1574-missale-carmelitarum-venetiis"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "cartusiense-spirae-1496"
+line = "cartusiense"
+station_kind = "printed"
+kind = "printing"
+date = "1496"
+title = "The Carthusian missal is printed at Speyer"
+printing = "1496-missale-cartusiense-spirae"
+parents = []
+root_basis = """
+The earliest Carthusian printing located anywhere in this pull, and the record starts here.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+Peter Drach the Middle's printing for Henrick Eckert van Homberch, [1496], 278 leaves. It is at the Bavarian State Library and on no other repository searched here.
+"""
+citation = "See the witness record 1496-missale-cartusiense-spirae for the imprint, the extent and the repository."
+attested_in = ["1496-missale-cartusiense-spirae"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "cartusiense-1620"
+line = "cartusiense"
+station_kind = "printed"
+kind = "printing"
+date = "1620"
+title = "A Carthusian missal is printed"
+printing = "1620-missale-carthusiense"
+parents = ["cartusiense-spirae-1496"]
+parent_kind = "use-continuity"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The 1620 printing, whole, with a 1,277,278-byte text layer. It is the item the acquisition audit's alias set missed, and a duplicate upload of the same bytes is recorded on the witness row as a mirror.
+"""
+citation = "See the witness record 1620-missale-carthusiense for the imprint, the extent and the repository."
+attested_in = ["1620-missale-carthusiense"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "praemonstratense-argentorati-1510"
+line = "praemonstratense"
+station_kind = "printed"
+kind = "printing"
+date = "1510"
+title = "The Premonstratensian missal is printed at Strasbourg"
+printing = "1510-missale-praemonstratense-argentorati"
+parents = []
+root_basis = """
+The earliest Premonstratensian printing located, and the record starts here. Its year is itself disputed between three catalogues and the witness row records all three.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The Strasbourg printing, catalogued `[um 1510]`, 588 canvases. Distinct from the two Paris printings in press, city and date.
+"""
+citation = "See the witness record 1510-missale-praemonstratense-argentorati for the imprint, the extent and the repository."
+attested_in = ["1510-missale-praemonstratense-argentorati"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "praemonstratense-parisiis-1530"
+line = "praemonstratense"
+station_kind = "printed"
+kind = "printing"
+date = "1530"
+title = "The Premonstratensian missal is printed at Paris"
+printing = "1530-missale-praemonstratense-parisiis"
+parents = ["praemonstratense-argentorati-1510"]
+parent_kind = "use-continuity"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The Paris printing of 1530, 510 canvases, shelfmark 2 Liturg. 235 a. Distinct in year and shelfmark from the 1578.
+"""
+citation = "See the witness record 1530-missale-praemonstratense-parisiis for the imprint, the extent and the repository."
+attested_in = ["1530-missale-praemonstratense-parisiis"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "praemonstratense-parisiis-1578"
+line = "praemonstratense"
+station_kind = "printed"
+kind = "printing"
+date = "1578"
+title = "The Premonstratensian missal is printed at Paris again"
+printing = "1578-missale-praemonstratense-parisiis"
+parents = ["praemonstratense-parisiis-1530"]
+parent_kind = "use-continuity"
+parent_basis = """
+Both books declare the same use, and this is their order. The edge asserts that
+and nothing else: it does not claim the later printing was set from the earlier,
+and no colophon read here says so.
+"""
+use_declared = """
+Read from the two books' catalogued titles at the metadata records fetched here
+[verified]. Each names its use; neither names the other.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The Paris printing of 1578, 604 canvases, shelfmark Res/2 Liturg. 235. Distinct in year, extent and shelfmark from the 1530.
+"""
+citation = "See the witness record 1578-missale-praemonstratense-parisiis for the imprint, the extent and the repository."
+attested_in = ["1578-missale-praemonstratense-parisiis"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "slavonico-1893"
+line = "slavonico"
+station_kind = "printed"
+kind = "printing"
+date = "1893"
+title = "The Roman Missal is printed in Old Church Slavonic in the Glagolitic script"
+printing = "1893-missale-romanum-slavonico"
+parents = []
+root_basis = """
+The only station on this line, and the record starts here. The papal concessions permitting the Slavonic Roman rite are reported in the acquisition audit and were not read, so no edge is drawn from the Roman line into this one.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The 1893 Vatican Polyglot printing. Nothing else in this file is in this language or this script.
+"""
+citation = "See the witness record 1893-missale-romanum-slavonico for the imprint, the extent and the repository."
+attested_in = ["1893-missale-romanum-slavonico"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+[[acts]]
+id = "monasticum-casinense-1580"
+line = "monasticum"
+station_kind = "printed"
+kind = "printing"
+date = "1580"
+title = "The monastic missal of the Cassinese congregation is printed"
+printing = "1580-missale-monasticum-casinense"
+parents = []
+root_basis = """
+The only station on this line, and the record starts here.
+"""
+act_citation = "none-claimed"
+distinct_edition_basis = """
+The 1580 Venice printing by Domenico Nicolini, 563 images.
+"""
+citation = "See the witness record 1580-missale-monasticum-casinense for the imprint, the extent and the repository."
+attested_in = ["1580-missale-monasticum-casinense"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read, so this station changes nothing in the tree."
+effect_established = false
+
+# --- Promulgated stations on the use lines -----------------------------------
+#
+# Five, and every one of them was got from a TITLE PAGE or from a book's front
+# matter rather than from an archive. That is the pull's most useful finding
+# about cost: establishing a station on an order's line is cheaper than
+# establishing one on the Roman line, because the order prints its instrument on
+# the book, and the catalogue transcribes the title page.
+
+[[acts]]
+id = "praedicatorum-xavierre-1604"
+line = "praedicatorum"
+station_kind = "promulgated"
+kind = "revision"
+date = "1604"
+authority = "Jeronimo Javierre of Saragossa, Master General of the Order of Preachers, with apostolic approval"
+instrument = "The revision and emendation of the Dominican missal under the Master General, approved and confirmed by apostolic authority"
+title = "The Master General issues the revised Dominican missal"
+parents = ["praedicatorum-venetiis-1550"]
+parent_kind = "line-order"
+parent_basis = """
+Both stations are of the Dominican use and this is their order, and nothing in
+the 1604 book names the 1550 printing. `use-continuity` is not the right word
+here because one of the two is an act rather than a printing, so the weaker
+`line-order` is used: it says where the station sits, not what it inherited.
+"""
+act_citation = "cited-externally"
+citation = """
+The instrument is printed on the book's own title page and is transcribed in the
+Internet Archive catalogue record for bub_gb_lefoIUlq2sgC: `Sub r.mo P.F.
+Hieronymo Xauierre Caesaraugustano, totius praefati Ordinis Generali magistro
+recognitum & emendatum, & auctoritate Apostolica approbatum & confirmatum`
+[verified].
+"""
+attested_in = ["1604-missale-praedicatorum-xavierre"]
+read_from = "not-read"
+locus = "The title page as transcribed in the Internet Archive metadata record, fetched here. The book itself was not opened."
+date_note = """
+The year is the printing's, 1604, and the precision is `year`. The instrument
+carries no date of its own on the title page, and no day or month is invented to
+make it sort.
+"""
+effect = "No departure. No unit of this use has been read."
+effect_established = false
+effect_note = """
+`effect_established = false` on a station whose instrument IS legible, which is
+worth saying plainly. The act certainly did something -- it says so, in the words
+`recognitum & emendatum` -- and this file has read no unit of the Dominican rite
+on either side of it, so what it did is unestablished here. An act that is
+citable and whose effect is unknown is a different state from an act that
+changed nothing, and the two fields keep them apart.
+"""
+
+[[acts]]
+id = "carmelitarum-capitulum-1621"
+line = "carmelitarum"
+station_kind = "promulgated"
+kind = "revision"
+date = "1621"
+authority = "The General Chapter of the Carmelites, and Sebastiano Fantoni of Rome, Prior General"
+instrument = "Decree of the General Chapter, with the order of the Prior General, restoring the missal to the prescript of the Order's Breviary"
+title = "A general chapter and the Prior General restore the Carmelite missal"
+parents = ["carmelitarum-venetiis-1574"]
+parent_kind = "line-order"
+parent_basis = "Both stations are of the Carmelite use and this is their order; the 1621 book does not name the 1574 printing."
+act_citation = "cited-externally"
+citation = """
+Printed on the book's title page and transcribed in the Internet Archive
+catalogue record for bub_gb_PUEgJFAvalgC: `Capituli Generalis decreto, ad
+praescriptum Breuiarij eiusdem Ordinis auctoritate apostolica approbati,
+restitutum. Et reuerendissimi prioris generalis magistri Sebastiani Fantoni
+Romani iussu` [verified].
+"""
+attested_in = ["1621-missale-carmelitarum-venetiis"]
+read_from = "not-read"
+locus = "The title page as transcribed in the Internet Archive metadata record, fetched here."
+date_note = "The year is the printing's, 1621, and the precision is `year`: the chapter's own date is not on the title page and is not invented."
+effect = "No departure. No unit of this use has been read."
+effect_established = false
+
+[[acts]]
+id = "cartusiense-capitulum-1679"
+line = "cartusiense"
+station_kind = "promulgated"
+kind = "revision"
+date = "1679"
+authority = "The General Chapter of 1677, under Innocent Le Masson, Prior of the Grande Chartreuse and General of the Order"
+instrument = "The ordinance of the General Chapter of 1677, by which the missal was issued"
+title = "A general chapter of 1677 orders the Carthusian missal"
+parents = ["cartusiense-1620"]
+parent_kind = "line-order"
+parent_basis = "Both stations are of the Carthusian use and this is their order; nothing in the 1679 book names the 1620 printing."
+act_citation = "cited-externally"
+citation = """
+Printed on the title page of the 1679 edition and transcribed in Gallica's own
+catalogue record for ark:/12148/bpt6k9127828m: `Missale Cartusiani ordinis ex
+ordinatione capituli Generalis. Anno Domini M. D. CLXXVII. Celebrati sub R. P.
+D. Innocentio le Masson Priore Cartusiae ac totius eiusdem odinis generali`
+(`odinis` is the catalogue's own typo, reproduced) [recorded from the missal
+acquisition audit, which read the record on 2026-08-01].
+"""
+attested_in = []
+read_from = "not-read"
+locus = """
+NOT RE-VERIFIED HERE. Gallica was unreachable from this run, so this station
+rests on the acquisition audit's reading of the catalogue record and not on
+bytes this file fetched. The station is carried rather than dropped because it
+is the clearest promulgating instrument of any use in the file -- a general
+chapter, a year, a named prior general, and a book issued by its ordinance --
+and dropping it would lose that for the sake of a network failure.
+"""
+date_note = """
+TWO YEARS ARE IN PLAY AND THEY ARE NOT COLLAPSED. The chapter met in 1677; the
+book was printed in 1679. The station is dated by the PRINTING, 1679, because
+that is the state the line reached, and the chapter's year is in `authority` and
+in the citation rather than being averaged into the date.
+"""
+effect = "No departure. No unit of this use has been read."
+effect_established = false
+
+[[acts]]
+id = "inter-multiplices-gravesque-curas-1924"
+line = "bracarense"
+station_kind = "promulgated"
+kind = "promulgation"
+date = "1924-12-08"
+authority = "Pius XI"
+instrument = "Bull Inter multiplices gravesque curas"
+title = "Pius XI approves the revised Missal of Braga"
+parents = []
+root_basis = """
+The record of this line starts here. The Braga use is far older -- a 1558
+printing is at the Bibliotheque nationale de France and a 1498 printing is
+recorded with no digital facsimile located -- and neither is carried in this run,
+so no edge is drawn into this station.
+
+That makes this line unusual and worth noticing: it is the ONLY use line in this
+file whose root is an act rather than a printing.
+"""
+act_citation = "cited-externally"
+citation = """
+Pius XI, Inter multiplices gravesque curas, 8 December 1924, printed in the
+front matter of the 1924 Missale Bracarense. Dateline as read: `Datum Romae apud
+S. Petrum, anno millesimo nongentesimo vicesimo quarto, sexto Idus Decembris, in
+festo Immaculatae Conceptionis B. M. Virginis, praecipuae Lusitaniae Patronae,
+Pontificatus Nostri anno tertio`, subscribed `A. Card. VICO, Ep. Portuen. et S.
+Rufinae` and `Maurus Rigal, Canc. Ap. Tabularii Praefectus` [recorded: the
+missal acquisition audit read the whole OCR text layer of the item on
+2026-08-01; the item's byte sizes were re-verified here at the metadata API].
+"""
+attested_in = ["1924-missale-bracarense"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read."
+effect_established = false
+
+[[acts]]
+id = "decretum-missalis-bracarensis-1924"
+line = "bracarense"
+station_kind = "promulgated"
+kind = "promulgation"
+date = "1924-12-09"
+authority = "Sacred Congregation of Rites"
+instrument = "Decree declaring the Vatican edition of the Missale Bracarense typical"
+title = "Rome declares the Braga edition typical"
+parents = ["inter-multiplices-gravesque-curas-1924"]
+parent_kind = "act-states-it"
+parent_basis = "The decree executes the bull of the previous day and names it; the two are printed together in the book's front matter."
+act_citation = "cited-externally"
+citation = """
+Sacred Congregation of Rites, 9 December 1924, operative clause `Vaticana hujus
+Missalis editio pro typica habenda est`, with later printings `omnino
+conformandae erunt, ita ut in iis nihil immutare fas sit`; dateline `Die 9
+Decembris 1924`, subscribed `A. Card. VICO, Ep. Portuen. et S. Rufinae, S. R. C.
+Praefectus` and `Alexander Verde, S. R. C. Secretarius` [recorded, as above].
+"""
+attested_in = ["1924-missale-bracarense"]
+read_from = "not-read"
+effect = "No departure. No unit of this use has been read."
+effect_established = false
+effect_note = """
+THIS STATION IS THE COUNTER-EXAMPLE THAT KEEPS A GENERALISATION HONEST, and it
+is why the exempt-uses line is drawn the way it is. The two signatories here --
+Cardinal Vico as Prefect and Alexander Verde as Secretary -- are THE SAME TWO MEN
+who signed the Roman typical edition's decree of 25 July 1920, in the same
+offices, four years apart. So the diocesan uses do not legislate their own
+typical editions: Rome does, through the same congregation.
+
+And yet no edge is drawn from the Roman line into this one. One congregation
+acting for two rites is a fact about who signs, not a descent of one rite from
+the other, and drawing it would make the Braga use look like a branch of the
+Roman typical editions. The distinction between an authority and a lineage is
+exactly what this file's edges exist to keep.
+"""
+
+# --- The Ordinary of the Mass ------------------------------------------------
+#
+# WHY THESE UNITS ENTER AT 1962, WHICH LOOKS ABSURD AND IS NOT. The Offertory
+# prayers of the Roman Mass are older than every act in this file. They enter
+# the record at `editio-typica-1962` because THAT IS THE EARLIEST WITNESS IN
+# THIS CORPUS WHOSE TEXT LAYER CARRIES THEM, and for no other reason. The base
+# slice made the same move for the same reason, entering its Holy Week units at
+# the 1634 revision because the earliest scan it could read was of 1862.
+#
+# THE MEASUREMENT BEHIND THAT, made here [corpus]. A search of the 1570, 1604,
+# 1862, 1894 and 1920 text layers for `Suscipe, sancte Pater`, `Aufer a nobis`,
+# `Veni sanctificator`, `Placeat tibi` and `In principio erat Verbum`, in both
+# literal and accent-normalised form, returns ZERO in every one of the five, and
+# returns them in the 1962 Benziger scan. All five books print the Ordinary.
+# What the older scans lose is the ORDO MISSAE SPECIFICALLY, which is set in
+# large type with rubrics in red and drop capitals, and which the scanners of
+# those items did not resolve -- the same failure the base slice measured on the
+# chanted Introits, in a different part of the book.
+#
+# So the entry point is a fact about five scanners. A reader who took it for a
+# claim that the Offertory prayers date from 1962 would have it exactly wrong,
+# and this note is here so that nobody can.
+#
+# THE DROP CAPITAL IS THE WORST PLACE FOR OCR DAMAGE TO FALL, and it falls
+# there every time. Each incipit below is reproduced AS THE SCAN GIVES IT, with
+# only the scan's own hyphenated line breaks closed up. That is why several
+# begin with nonsense: `"Pv eus, qui humanae` is a drop-cap D read as `Pv`,
+# `a&te, fratres` is `Orate` with the O lost, `1n principio` is `In principio`,
+# and `T av&bo` is `Lavabo`. An incipit is by definition the first words of a
+# prayer, so an OCR failure concentrated on initials is an OCR failure aimed at
+# exactly the thing an incipit is. Correcting them here would hide the single
+# most useful measurement in this section.
+
+[[masses]]
+id = "ordo-missae"
+at = "editio-typica-1962"
+book = "ordo-missae"
+title = "Ordo Missae"
+day = "the invariable order of every Mass"
+hour = "not applicable"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR, the Ordo Missae running from about line 43600 to 51600, with the Canon beginning at 50099"
+note = """
+`book = \"ordo-missae\"`, so these units are written to `ordo-missae/` in the
+emitted repository rather than under `holy-week/`. The base slice's four masses
+keep their own directory and their paths do not move: a path convention that
+rewrote existing paths would rewrite a history nobody changed.
+"""
+
+[[units]]
+id = "ordo.praeparatio.psalmus-iudica-me"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "psalmus-iudica-me"
+name = "Psalmus 42"
+incipit = "Iud ica me, Deus, et disc&rne causam meam de gente non sancta: ab h6mine infquo, et dol6so 6rue me."
+order = 20
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 43679-43683, with its own heading `P«. 42, 1-5` at 43677"
+
+[[units]]
+id = "ordo.praeparatio.confiteor"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "confiteor"
+name = "Confiteor"
+incipit = "Confiteor Deo omnipotenti, be&tse Mariae semper Virgini, be&I to Michae I i Arch&ngelo, beato Iofinni Baptistee, sanctis Ap6stolis Petro et Paulo, 6mnibus Sanctis, et vobis, fratres"
+order = 30
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 43742-43758"
+
+[[units]]
+id = "ordo.praeparatio.aufer-a-nobis"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "oratio-aufer-a-nobis"
+name = "Oratio"
+incipit = "A ufer a nobis, qu&sumus, D6mine, iniquitktes nostras: ut ad Sancta sanct6rum puris mere&mur m6ntibus introfre."
+order = 40
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 43823-43827"
+
+[[units]]
+id = "ordo.praeparatio.oramus-te"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "oratio-oramus-te"
+name = "Oratio"
+incipit = "aamus te, Dom ine, per mcrita Sanct6rum tu6rum"
+order = 50
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 43830-43836"
+incipit_note = "`aamus te` is `Oramus te` with the drop capital O lost by the scanner; the rubric above it at 43829 reads `Deinde, manibus iunctis super nltare, incii-natus dicit`."
+
+[[units]]
+id = "ordo.evangelium.munda-cor-meum"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "munda-cor-meum"
+name = "Oratio"
+incipit = "Munda cor meum, ut supra, et Iube, Ddmine, benedicere."
+order = 100
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 44135-44136"
+incipit_note = """
+THE LINE READ IS A CROSS-REFERENCE AND NOT THE PRAYER. At this point the book
+prints `Munda cor meum, ut supra` -- as above -- because the prayer itself
+stands earlier in the Ordo. The unit is carried on the strength of the label and
+the citation, and its words were not read. That is a weaker reading than the
+units around it and it says so here rather than looking the same as them.
+"""
+
+[[units]]
+id = "ordo.offertorium.suscipe-sancte-pater"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "oratio-suscipe-sancte-pater"
+name = "Oratio"
+incipit = "Sfiscipe, sancte Pater, omnfpotens aet6rne Deus, hanc immacul&tam h6stiam, quam ego indignus f&mulus tuus 6ffero tibi Deo meo, vivo et vero"
+order = 200
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 44252-44264"
+
+[[units]]
+id = "ordo.offertorium.deus-qui-humanae-substantiae"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "oratio-deus-qui-humanae-substantiae"
+name = "Oratio"
+incipit = "eus, qui humanae subst&ntise dignit&tem mirabiliter condidfsti, et mirabflius reformdsti"
+order = 210
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 44272-44280"
+incipit_note = "The scan gives the line as `\"Pv eus, qui humanae subst&ntise`; `\"Pv` is the drop capital D and is dropped here rather than being read as text."
+
+[[units]]
+id = "ordo.offertorium.offerimus-tibi-calicem"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "oratio-offerimus-tibi-calicem"
+name = "Oratio"
+incipit = "0ff6rimus tibi, D6mine, c alicem salut&ris, tuam deprec&ntes clem€ntiam"
+order = 220
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 44289-44295"
+
+[[units]]
+id = "ordo.offertorium.in-spiritu-humilitatis"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "oratio-in-spiritu-humilitatis"
+name = "Oratio"
+incipit = "n spfritu humilit£tis et in 6nimo contrito suscipidmur a te, D6mine: et sic fiat sacrificium nostrum in consp6ctu tuo h6die, ut pldceat tibi, D6mine Deus."
+order = 230
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 44304-44308"
+
+[[units]]
+id = "ordo.offertorium.veni-sanctificator"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "oratio-veni-sanctificator"
+name = "Oratio"
+incipit = "Veni, sanct i fie&tor, omnfpotens tet6rne Deus"
+order = 240
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 44314-44318"
+
+[[units]]
+id = "ordo.offertorium.lavabo"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "psalmus-lavabo"
+name = "Psalmus 25"
+incipit = "av&bo inter innoc^ntes manus meas: et circumdabo alt£re tuiun, D6mine"
+order = 250
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 44384-44386, with its own heading `Ps. 25, 6-12` at 44382"
+incipit_note = "The scan gives `T av&bo`; `T` is the drop capital L."
+
+[[units]]
+id = "ordo.offertorium.suscipe-sancta-trinitas"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "oratio-suscipe-sancta-trinitas"
+name = "Oratio"
+incipit = "Siiscipe, sancta Trinitas, hanc oblati6nem, quam tibi offerimus ob mem6riam passi6nis, resurrectionis, et ascensi6nis Iesu Christi D6mini nostri"
+order = 260
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 44427-44443"
+
+[[units]]
+id = "ordo.offertorium.orate-fratres"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "orate-fratres"
+name = "Invitatorium"
+incipit = "a&te, fratres: ut meum ac vestrum sacrificium accept&bile fiat apud Deum Patrem omnipotentem."
+order = 270
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 44447-44450"
+incipit_note = "`a&te` is `Orate` with the drop capital O lost."
+
+[[units]]
+id = "ordo.conclusio.placeat-tibi"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "oratio-placeat-tibi"
+name = "Oratio"
+incipit = "Placeat tibi, sancta Trinitas, obsequium servitutis meze: et przesta; ut sacrificium, quod oculis tu£e maiestatis indignus 6btuli, tibi sit acceptabile"
+order = 300
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 51495-51501"
+
+[[units]]
+id = "ordo.conclusio.ultimum-evangelium"
+at = "editio-typica-1962"
+mass = "ordo-missae"
+slot = "ultimum-evangelium"
+name = "Ultimum Evangelium"
+incipit = "1n principio erat Verbum, et Verbum erat apud Deum, et Deus erat Verbum"
+order = 310
+read_from = "ocr-only"
+attested_by = ["benziger-iuxta-typicam-1962"]
+locus = "benziger-iuxta-typicam-1962 OCR 51569-51573, with its citation `Ioann. 1, 1-14` at 51567"
+
+# --- What the 1970 typical edition did to the Ordinary -----------------------
+#
+# EVERY ROW BELOW RESTS ON A SEARCH AND NOT ON A TRANSCRIPTION, and that is a
+# rights position as much as a method. The 1970 typical edition is a book of the
+# Holy See that this project may READ and may not PUBLISH, so nothing of it is
+# copied here: an absence is established by looking for a prayer and not finding
+# it, which produces a claim about the 1962 book -- that its prayer is gone --
+# without reproducing a word of the 1970 one.
+#
+# Every search was accent-normalised, for the reason `evidence` gives at length:
+# the 1970 book prints `Oráte` and a literal search for `Orate` returns nothing.
+#
+# TWO SEARCHES RETURNED A HIT THAT WAS NOT THE UNIT, and both are recorded on
+# their rows rather than being quietly discarded, because a hit that is not the
+# thing is the exact failure guidance/the-shape.md section 1 is about: a
+# reference that resolves successfully and wrongly.
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "absent"
+unit = "ordo.praeparatio.psalmus-iudica-me"
+basis = """
+The psalm is gone from the preparation. An accent-normalised whole-file search
+of 1970-missale-romanum-typica for `iudica me deus et discerne` returns ONE hit,
+at line 11491, AND IT IS NOT THIS UNIT: the surrounding text reads `ant ad
+introitum ps iudica me deus et discerne causam meam de gente non sancta`, which
+is the psalm serving as an ENTRANCE ANTIPHON on a day of the year, not the
+prayers at the foot of the altar [verified]. A count-only search would have
+recorded the unit as surviving.
+"""
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "absent"
+unit = "ordo.praeparatio.aufer-a-nobis"
+basis = "An accent-normalised whole-file search of 1970-missale-romanum-typica for `aufer a nobis` returns zero [verified]."
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "absent"
+unit = "ordo.praeparatio.oramus-te"
+basis = "An accent-normalised whole-file search of 1970-missale-romanum-typica for `oramus te domine` returns zero [verified]."
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "absent"
+unit = "ordo.offertorium.suscipe-sancte-pater"
+basis = """
+An accent-normalised whole-file search of 1970-missale-romanum-typica for
+`suscipe sancte pater omnipotens` returns zero, and the shorter `suscipe sancte
+pater` returns ONE hit which is NOT this unit: at line 14902 the book reads
+`suscipe, sancte Pater, laudis huius sacrificium vespertinum`, which is the
+Exsultet of the paschal vigil [verified]. The Offertory prayer is gone; a
+three-word search would have said it was not.
+"""
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "absent"
+unit = "ordo.offertorium.deus-qui-humanae-substantiae"
+basis = "An accent-normalised whole-file search of 1970-missale-romanum-typica for `deus qui humanae substantiae` returns zero, and so does `per huius aquae et vini mysterium` [verified]."
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "absent"
+unit = "ordo.offertorium.offerimus-tibi-calicem"
+basis = "An accent-normalised whole-file search of 1970-missale-romanum-typica for `offerimus tibi domine calicem` returns zero [verified]."
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "absent"
+unit = "ordo.offertorium.veni-sanctificator"
+basis = "An accent-normalised whole-file search of 1970-missale-romanum-typica for `veni sanctificator` returns zero [verified]."
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "absent"
+unit = "ordo.offertorium.suscipe-sancta-trinitas"
+basis = "An accent-normalised whole-file search of 1970-missale-romanum-typica for `suscipe sancta trinitas` returns zero [verified]."
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "absent"
+unit = "ordo.conclusio.placeat-tibi"
+basis = "An accent-normalised whole-file search of 1970-missale-romanum-typica for `placeat tibi sancta trinitas` returns zero [verified]."
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "absent"
+unit = "ordo.conclusio.ultimum-evangelium"
+basis = "An accent-normalised whole-file search of 1970-missale-romanum-typica for `in principio erat verbum` returns zero [verified]."
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "replaced"
+unit = "ordo.offertorium.lavabo"
+name = "Psalmus 50, 4"
+incipit = ""
+withheld = "a text of the 1970 typical edition, which this project may read and may not publish"
+basis = """
+THE SLOT SURVIVES AND THE PSALM IN IT DOES NOT. The washing of hands is still
+there and the verse said at it is no longer Psalm 25. An accent-normalised
+whole-file search of 1970-missale-romanum-typica for `lavabo inter innocentes`
+returns zero; a search for `lava me` returns the verse at lines 21490 and 26498,
+in the Order of Mass [verified].
+
+This is `replaced` and not `absent` followed by `added`, because the unit is the
+washing of hands and it did not go away. The new words are NOT reproduced here:
+the incipit is withheld under the rights position on the 1970 book, and the
+emitted repository prints `[incipit withheld: ...]` so that a reader can tell a
+withheld text from a text nobody read.
+"""
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "replaced"
+unit = "ordo.praeparatio.confiteor"
+incipit = ""
+withheld = "a text of the 1970 typical edition, which this project may read and may not publish"
+basis = """
+The Confiteor survives and its form does not. An accent-normalised search of
+1970-missale-romanum-typica for `confiteor deo omnipotenti` returns two hits, at
+lines 21150 and one other, so the prayer stands; and the 1962 unit's own
+enumeration -- blessed Mary ever Virgin, blessed Michael the Archangel, blessed
+John the Baptist, the holy Apostles Peter and Paul -- is not in the 1970 text at
+that place, where `et vobis fratres` follows `omnipotenti` directly [verified].
+
+The new form's words are withheld for the same reason as the Lavabo above. What
+is recorded is a difference established by searching, not a transcription.
+"""
+
+[[departures]]
+act = "celebrationis-eucharisticae-1970"
+kind = "unrecorded"
+unit = "ordo.evangelium.munda-cor-meum"
+note = """
+THE PRAYER IS IN BOTH BOOKS AND ITS STATE IS STILL NOT ESTABLISHED, which is
+what `unrecorded` is for.
+
+An accent-normalised search of 1970-missale-romanum-typica for `munda cor meum
+ac labia mea` returns the prayer at lines 21303 and 26387 [verified], so it
+survived. But the 1962 unit here was read from a CROSS-REFERENCE -- the Benziger
+book prints `Munda cor meum, ut supra` at this point and the prayer itself
+stands earlier -- so this file has never read the 1962 words. Two texts cannot be
+compared when one of them was not read, and carrying the unit forward unchanged
+would assert an identity nobody established.
+
+So the unit leaves the liturgy at this station and a marker takes its place. The
+fix is cheap and is not guesswork: read the Munda cor meum where the 1962 book
+actually prints it.
+"""
+basis = "Established by search on the 1970 side and by a cross-reference only on the 1962 side; see the note."
+
+# --- Corrections to records already in this repository -----------------------
+
+[[corrections]]
+id = "carthusian-internet-archive-negative"
+severity = "medium"
+target = "src/sources/inventories/missal-acquisition-audit-v1.toml, aliases_method and the missale-cartusiense row"
+target_says = """
+`One alias class produced nothing and the negative is recorded rather than
+dropped: no Carthusian missal was found on the Internet Archive under
+cartusiense, cartusiensis, cartusianum, or chartreux [verified].`
+"""
+finding = """
+THE NEGATIVE IS TRUE AND THE CONCLUSION DRAWN FROM IT WAS TOO STRONG, and the
+audit had already written the remedy two paragraphs above.
+
+A title search of the Internet Archive including `carthusiense` -- the same word
+with an h -- returns `missale-carthusiense`, a whole 1620 printing with a PDF of
+452,460,457 bytes and an OCR text layer of 1,277,278 bytes, plus a duplicate
+upload of the same book [verified here at the advanced-search and metadata APIs].
+
+The audit's own alias lesson says that `cartusiense` and `carthusiense` return
+different result sets in a union catalogue. It applied that to the union
+catalogue and not to the Internet Archive search it had already run, so the
+four-alias negative was recorded as though the spelling question had been
+settled. It had been settled -- one paragraph earlier, about a different
+repository.
+"""
+consequences = """
+- A Carthusian station of 1620 is carried here, on the Internet Archive item.
+- The audit's sentence should gain the fifth alias and the result.
+- THE RULE THIS ADDS, and it is a small one worth having: an alias set must be
+  applied to EVERY repository searched, not to the repository where it was
+  discovered. A lesson learnt at one host and applied at one host is half a
+  lesson.
+"""
+status = "recorded here; the audit file is another lane's surface and is not edited from here"
+
+[[corrections]]
+id = "station-is-the-act-amended"
+severity = "high"
+target = "guidance/act-histories.md, and the rule the base slice is built on"
+target_says = """
+`The station is the ACT, not the book ... A printing is not an act: it is a
+WITNESS, and it hangs beneath the history rather than standing in it. That
+single rule is what keeps a scanner out of the record.`
+"""
+finding = """
+THE RULE IS AMENDED, NARROWLY, ON THE MAINTAINER'S RULING OF 2026-08-01, AND THE
+REASON BEHIND IT IS UNCHANGED.
+
+The reason was and is that two printings of one prayer differ constantly with no
+act behind the difference, so a history keyed on books publishes scanner
+artefacts as liturgical change. That danger is real and this file meets it
+repeatedly -- see the eight OCR differences between two witnesses of ONE 1970
+decree, recorded at `celebrationis-eucharisticae-1970`.
+
+What the unamended rule could not do is carry a missal for which no act has been
+located, and before Trent that is most of them. Refusing them is not neutrality;
+it is a record that says nothing about books that exist. So:
+
+- A PRINTING MAY BE A STATION only where no act has been located for it, and
+  only where it is a distinct edition rather than a reprint or a rescan of one
+  already carried.
+- Every station declares `station_kind`, which is `promulgated` or `printed`.
+- A `printed` station is a weaker claim and reads as one everywhere, including
+  in the emitted repository's commit subject, which begins `[printed]`.
+- `act_citation` keeps its existing values and gains `none-claimed`, which only
+  a printed station may use. `not-found` still means an instrument is believed
+  to exist and nobody has read it.
+
+THE DANGER THE OLD RULE GUARDED AGAINST IS NOW GUARDED BY THE EDGES INSTEAD.
+A printed station cannot quietly assert descent, because every edge declares
+what it rests on and the weakest available claim -- `use-continuity` -- says in
+terms that it does NOT assert the later book was set from the earlier. The
+1862 Pustet and 1962 Benziger cases the base slice caught would still be caught:
+both are printings CONFORMED to a typical edition, so an act stands behind them
+and they remain witnesses, not stations.
+"""
+consequences = """
+- `tools/act-history` refuses a printed station that names an instrument, that
+  does not name its printing, that does not say why it is a distinct edition, or
+  whose `act_citation` is anything but `none-claimed`.
+- Twenty-six printed stations are carried here and none on the Roman typical
+  line, where every station has its instrument.
+- guidance/act-histories.md carries the amendment beside the path convention.
+"""
+status = "applied on 2026-08-01"
+
+[[corrections]]
+id = "dates-lead-the-path-not-the-identity"
+severity = "medium"
+target = "the emitted repository's `acts/`, `witnesses/` and `gaps/` listings, and the browser's per-act fragments"
+target_says = "`acts/<id>.txt`, `witnesses/<id>.txt`, `<slice>/station/<id>.json` -- names that sort as an alphabet."
+finding = """
+A LISTING OF A HISTORY THAT SORTS ALPHABETICALLY HIDES THE ONE PROPERTY THE
+HISTORY HAS. `acts/` and `witnesses/` are directories a reader browses on
+GitHub, and with fifty-nine stations running from 1484 to 2023 the ordering
+matters more than it did with twelve.
+
+Every per-act and per-witness path now takes its date as a prefix:
+`acts/1570-07-14-quo-primum.txt`, `witnesses/1862-pustet.txt`.
+
+TWO BOUNDARIES, AND THEY ARE THE POINT.
+
+1. THE PREFIX IS DERIVED, in one function, from the date already in the record.
+   It is never typed beside it. A hand-typed prefix and a date field are two
+   copies of one fact and guidance/the-shape.md section 2 predicts they will
+   differ.
+2. A PATH IS NOT AN IDENTITY. The eight witness ids inherited from the base
+   slice are NOT renamed, and the reason is concrete rather than cautious:
+   several of them are also edition ids in this repository's source library --
+   `benziger-iuxta-typicam-1962` is a directory under
+   src/sources/works/catholic-church/missale-romanum/editions -- and re-keying a
+   record so that a listing sorts would break the alignment between the two in
+   order to fix a filename. Their paths are date-prefixed all the same, because
+   the prefix comes from `printed` and not from the id.
+
+   New witness ids in THIS file do carry the year, because they are new and
+   nothing depends on their old shape. `sorted_name` is idempotent, so an id
+   that already leads with its year is not given it twice, and an id that ends
+   with the same year has it moved to the front rather than printed twice:
+   `quo-primum-1570` with date 1570-07-14 becomes `1570-07-14-quo-primum`.
+
+AND A DATE IS NEVER INVENTED TO MAKE A NAME SORT. `date` is written to the
+precision the record has -- `1497` for a book dated only by its year, `1971` for
+a reprint whose leaf gives no month -- and `date_precision` is DERIVED from it,
+with `check` refusing a stated precision that disagrees. Twenty-nine stations
+here carry year-only dates, and not one of them has a fabricated day.
+"""
+consequences = """
+- Emitted paths and the browser's `<slice>/station/*.json` and
+  `<slice>/state/*.json` fragments are date-prefixed.
+- The derived names are PUBLISHED on the map spine as `station_path` and
+  `state_path`, so the page reads a name rather than building one. A name built
+  in two places comes apart the first time the convention moves.
+- The convention is the scripture one keyed on date instead of canon position,
+  and both are written down in their guidance.
+"""
+status = "applied on 2026-08-01"
+
+[[corrections]]
+id = "gallica-unreachable-in-this-run"
+severity = "low"
+target = "this file's own Lyon, Mozarabic editio princeps, Braga 1558 and Carthusian 1679 rows"
+target_says = "Nothing yet; this entry exists so that a bound is recorded before it is forgotten."
+finding = """
+GALLICA WAS NOT REACHABLE FROM THIS RUN. Every request to gallica.bnf.fr
+returned `Recv failure: Connection reset by peer`, including the IIIF manifest
+and a request carrying a browser user agent [verified]. The Bavarian State
+Library's IIIF API and the Internet Archive's APIs answered normally in the same
+minutes, so the failure is specific.
+
+The consequence is that four things the missal acquisition audit verified at
+Gallica on this same day are carried here as [recorded] and not [verified]: the
+two Lyon printings, the Cisneros Mozarabic editio princeps of 1500, the Braga
+printing of 1558, and the Carthusian general chapter instrument of 1679.
+
+THE LYON LINE RESTS ENTIRELY ON THIS. It is the only line in the file whose
+single station could not be checked here, and it is carried rather than dropped
+because the alternative -- writing the Lyonnais use out of the record on a
+network failure -- is precisely the error the audit had already corrected once,
+when it wrote `not-located` for Lyon on the strength of an Internet Archive
+search while the books sat at the Bibliotheque nationale de France.
+"""
+consequences = "Recorded on each affected row, not only here. A bound named once in a preface is a bound a reader of a row will not see."
+status = "recorded"
+
+# --- Counts ------------------------------------------------------------------
+#
+# NOT TYPED HERE, AND DELIBERATELY. The base slice's sibling audit keeps a
+# `[counts]` table and a snippet to recompute it; this file keeps neither,
+# because `act-history check` already derives every one of those numbers from
+# this file and prints them, and a table beside it would be the second source of
+# truth guidance/the-shape.md section 2 forbids.
+#
+#   python3 tools/act-history check --source src/sources/inventories/latin-missal-acts-v1.toml
+#
+# reports the acts, lines, witnesses, masses, base units and departures, the
+# split between promulgated and printed stations, the number of roots, and what
+# every edge rests on. If a count is wanted in prose, run the command.
+
+[counts]
+derived_by = "python3 tools/act-history check --source src/sources/inventories/latin-missal-acts-v1.toml"
+one_assertion_under_test = """
+`printed` stations must never appear on the `typica` line. That is the model's
+remaining hard rule -- the Roman line's every station has its instrument -- and
+it is expressed as a query rather than a number:
+
+  python3 tools/act-history graph --source src/sources/inventories/latin-missal-acts-v1.toml \\
+    | grep '^\\* typica'
+
+must print nothing. A printed station on that line would mean a book had been
+allowed to stand where an act belongs.
+"""
