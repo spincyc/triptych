@@ -486,9 +486,19 @@ def render_readme(data: dict, line: dict) -> str:
         "witnesses, under witnesses/, and hang beneath the history. A difference between\n"
         "two printings with no act behind it is a difference between witnesses or an\n"
         "error of a scanner, and never appears as a commit.\n\n"
-        "Commit dates are the acts' dates shifted forward ten thousand years, because\n"
-        "git rejects a pre-1970 timestamp outright. The true date is in each commit's\n"
-        "Act-date trailer and in acts/.\n\n"
+        "READ THE DATES FROM THE SUBJECT LINE. Every commit subject begins with the\n"
+        "act's true date, so `git log --oneline` and `--graph` show 1570 through 1962.\n"
+        "The date is also in each commit's Act-date trailer and in acts/.\n\n"
+        "The commit STAMP is that date shifted forward ten thousand years, and cannot\n"
+        "be the real one. fast-import will write a negative timestamp and the object\n"
+        "keeps it, but git then prints every date format empty, `fsck --strict` calls\n"
+        "it badDate, and GitHub runs fsck on receive and refuses the push:\n\n"
+        "    remote: error: object ...: badDate: invalid author/committer line\n"
+        "    error: remote unpack failed: index-pack failed\n\n"
+        "A smaller shift was rejected on purpose. The least shift clearing 1970 is\n"
+        "about four hundred years, which would date Quo primum to 1970 and the 1962\n"
+        "edition to 2362 -- plausible enough to be mistaken for a real date, which is\n"
+        "worse than a stamp no one can misread. 11570 cannot be mistaken for anything.\n\n"
         f"{line['note'].strip()}\n"
     )
 
@@ -717,7 +727,20 @@ def write_tree(repo: Path, files: dict[str, str]) -> str:
 
 
 def commit_message(act: dict, kinds: list[str]) -> str:
-    body = [act["title"], ""]
+    # The act's true date leads the subject.
+    #
+    # It cannot lead the commit stamp. fast-import will write a negative
+    # timestamp and the object keeps it verbatim, but git prints every date
+    # format empty for one, `fsck --strict` calls it `badDate`, and GitHub
+    # runs fsck on receive and refuses the push outright:
+    #
+    #     remote: error: object ...: badDate: invalid author/committer line
+    #     error: remote unpack failed: index-pack failed
+    #
+    # So the stamp is shifted and the real date goes where every view of the
+    # history shows it — `git log --oneline`, `--graph`, a GitHub commit list —
+    # rather than only in the trailer, which none of those print.
+    body = [f"{act['date']}  {act['title']}", ""]
     effect = act.get("effect", "").strip()
     if effect:
         body.extend([effect, ""])

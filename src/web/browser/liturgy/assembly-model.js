@@ -192,37 +192,44 @@
           : []
       });
     }
-    // RGMR 299 gives most ferias the preceding Sunday's Mass rather than one of
-    // their own, and the year file records which Mass that is under
-    // `ferial_formulary`. Nothing here read it, so on the 238 dates of 2026
-    // that carry one, the page had either a commemoration alone or nothing at
-    // all to show where the missal appoints a whole formulary. A commemoration
-    // is said within a Mass, never instead of one, so a date whose only entries
-    // are commemorations still needs the Mass it borrows.
-    const holdsAMass = collapsed.some(
+    return { candidates: collapsed, folded: folded };
+  }
+
+  /**
+   * The Mass a feria borrows, where nothing else on the date supplies one.
+   *
+   * RGMR 299 gives most ferias the preceding Sunday's Mass rather than one of
+   * their own, and the year file records which under `ferial_formulary`.
+   * Nothing read it, so on 77 dates of 2026 the page showed a commemoration
+   * alone or nothing at all where the missal appoints a whole formulary — a
+   * commemoration is said within a Mass, never instead of one.
+   *
+   * This is decided against the index AND the arrivals together. Deciding it
+   * against the index alone put the borrowed Mass on All Souls, whose own
+   * celebration arrives rather than being inscribed, and it beat the day.
+   */
+  function ferialCandidates(year, rubrics, isoDate, present) {
+    const holdsAMass = present.some(
       (one) => !(one.basis && one.basis.nature === 'commemoration')
     );
-    if (!holdsAMass) {
-      for (const row of ((year.ferial_formulary || {})[isoDate] || [])) {
-        const found = classify(rubrics, row.key);
-        collapsed.push({
-          id: row.key,
-          key: row.key,
-          name: found.name || row.key,
-          known: found.known,
-          basis: found.basis,
-          row: found.basis.row,
-          source: 'ferial',
-          borrowed: true,
-          rule: (year.rules || [])[row.rule] || null,
-          territorial: row.territorial || null,
-          certain: found.basis.certain !== false,
-          alsoInscribedAs: []
-        });
-      }
-    }
-
-    return { candidates: collapsed, folded: folded };
+    if (holdsAMass) return [];
+    return ((year.ferial_formulary || {})[isoDate] || []).map(function (row) {
+      const found = classify(rubrics, row.key);
+      return {
+        id: row.key,
+        key: row.key,
+        name: found.name || row.key,
+        known: found.known,
+        basis: found.basis,
+        row: found.basis.row,
+        source: 'ferial',
+        borrowed: true,
+        rule: (year.rules || [])[row.rule] || null,
+        territorial: row.territorial || null,
+        certain: found.basis.certain !== false,
+        alsoInscribedAs: []
+      };
+    });
   }
 
   /**
@@ -1025,7 +1032,8 @@
     const season = seasonOf(owner, isoDate);
     const held = indexCandidates(year, rubrics, isoDate);
     const arrived = arrivals(rubrics, owner, isoDate);
-    const all = held.candidates.concat(arrived);
+    const inscribed = held.candidates.concat(arrived);
+    const all = inscribed.concat(ferialCandidates(year, rubrics, isoDate, inscribed));
 
     // The implied day is computed per branch, not once. Under the branch where
     // the Ascension has moved to the Sunday it is absent from its Thursday, and
