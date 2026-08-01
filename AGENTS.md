@@ -21,6 +21,27 @@ Read `guidance/sources.md` before adding, migrating, storing, or reusing a
 repository-wide external source, corpus, edition, artifact, passage record, or
 publication binding.
 
+The documents above govern publications. A second family governs the tracked
+data and the apparatus over it, and nothing else routes to them — read the one
+that owns what you are about to touch, **before** touching it, because each is
+largely a register of how that data has already gone wrong:
+
+| Before you touch | Read |
+| --- | --- |
+| a mass, proper, or rubric in `src/sources/calendars/` | `guidance/propers-for-agents.md` |
+| anything the browser fetches from `src/web/data/` | `guidance/web-data.md` |
+| a bible edition, its index, or its chapter fragments | `guidance/bibles-for-agents.md` |
+| a verse or chapter numbering question across editions | `guidance/versification.md` |
+| commentary fragments, the harvest, or the catena page | `guidance/catena.md`, `guidance/reading-plan-for-agents.md` |
+| a liturgical act history or its stations and lines | `guidance/act-histories.md`, `guidance/time-machine.md` |
+| a missal witness, its rights, or its acquisition state | `guidance/missals.md` |
+| a calendar recension and its departures from a base | `guidance/recensions.md` |
+| whether a publication's research has gone stale | `guidance/staleness.md` |
+| a promised deliverable and whether it is met | `guidance/promised-deliverables.md` |
+
+The remaining production plans and handoffs are maintainer records, linked from
+the profile or registry that owns their subject rather than from here.
+
 The user's request takes priority when it deliberately changes a project convention. Record the new convention in the correct universal or profile guidance rather than leaving the implementation and guidance inconsistent.
 
 ## Profile routing

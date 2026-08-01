@@ -14,6 +14,12 @@ Apply these priorities in order:
 
 ## Identity, registry, and ownership
 
+**This collection is closed.** The maintainer bounded it at the set already
+published on 2026-07-25; the registry's identities stay complete and permanent,
+but an identity with no guide is the normal state and not a target. See
+[the production plan](propers-production-plan.md) for the boundary and for how
+to derive what each provider has actually published.
+
 Under a provider branch, a publishable leaf lives at:
 
 `src/<provider>/liturgy/roman-rite/postconciliar/<edition-locale>/propers/<calendar-family>/<full-publication-slug>/`
