@@ -501,7 +501,7 @@ author's preface, the printing's own headings, or a second work written to
 supply what the first left undone — exactly as `composed` carries
 `composed_basis`.
 
-> **Rule 11.** A work's extent is recorded where it can be sourced, and the
+> **Rule 12.** A work's extent is recorded where it can be sourced, and the
 > coverage check subtracts it. Where it is not recorded the difference between
 > named and held is reported as **unexamined**, never as a gap. "We have not
 > established where this work ends" and "this work is missing" are different
