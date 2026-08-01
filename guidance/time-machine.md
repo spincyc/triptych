@@ -243,3 +243,41 @@ the Vespers prayer *Spiritum* renders as a rename with similarity rather than as
 a deletion beside an unrelated addition. If that holds, the hardest departure
 kind needs no special machinery in the viewer — git already tells the story.
 [inferred, under test]
+
+---
+
+## 8. The second axis: the Mass as the horizontal
+
+> A page that showed at a high level the parts of the mass that changed from one
+> missal to the next … visually tracks the mass on a horizontal timeline through
+> the mass and indicates between two missals which of each part of the mass
+> changed and how/why.
+> — the maintainer, 2026-07-31, offered as a stretch goal
+
+**This is the transpose of the map, not a separate feature.** A change is a pair:
+*(act, part of the Mass)*. The map of §3 indexes that pair by **act** — when
+things happened and how traditions descend. This view indexes it by **part** —
+what changed, in the order a Mass is actually said: Introit, Collect, Epistle,
+Gradual, Gospel, Offertory, Secret, Preface, Canon, Communion, Postcommunion.
+
+It also answers a question §3 left open. **What does a reader do on arriving at a
+station?** They see what that act changed, laid out along the Mass. The two views
+link through the act, so the *why* of any marked part is the station that changed
+it, and the *how* is the diff of Rule 6.
+
+> **Rule 7.** Both views are generated from one dataset. Neither may hold a fact
+> the other cannot see.
+
+**The hard part is that the order of the Mass is itself one of the things that
+changed.** Comparing two missals means aligning two sequences that are not the
+same sequence, so this is a genuine alignment problem and not a zip of two lists.
+A part may be unchanged, reworded, added, removed — or **moved**, which is
+`reslotted` in `recensions.md` §3, and which breaks naive alignment precisely
+because both sides hold the text.
+
+The prior art here is **not** metro maps. Textual collation has solved most of
+it: an alignment table putting witnesses in rows and the text in columns with
+variation marked is close to what is being described, and transposition is the
+known hard case that some collation tools handle and others explicitly refuse.
+Genome browsers solved the horizontal-coordinate-with-stacked-tracks problem
+long ago. Both are better starting points than anything in version control.
