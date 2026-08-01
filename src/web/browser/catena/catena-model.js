@@ -83,9 +83,39 @@
     return !!extent && Number(extent.last_chapter) > Number(extent.first_chapter);
   }
 
+  /**
+   * A chapter file's fragments, each rejoined to what it shares with its edition.
+   *
+   * The spine writes the author, the work, the date, the language, the printing,
+   * the translators and the rights ONCE per distinct set of them, under
+   * `sources`, and gives every fragment the key of its set. Written per fragment
+   * they cost more than everything else in the file put together — on Genesis 1,
+   * 107 copies of ten fields — and every copy was a chance for two of them to
+   * disagree about one edition.
+   *
+   * The join happens here and at read time, which is where `browser-core.js`
+   * says joins belong. `text_path` is composed the same way, from the file's own
+   * one statement of where fragment texts live, so the page never carries a
+   * directory layout the generator can change underneath it.
+   */
+  function chapterFragments(file) {
+    if (!file) return [];
+    const sources = file.sources || {};
+    const prefix = file.text_prefix || '';
+    return (file.fragments || []).map(function (fragment) {
+      const shared = sources[fragment.source] || {};
+      const joined = {};
+      for (const name in shared) if (Object.hasOwn(shared, name)) joined[name] = shared[name];
+      for (const name in fragment) if (Object.hasOwn(fragment, name)) joined[name] = fragment[name];
+      if (fragment.id) joined.text_path = prefix + fragment.id + '.json';
+      return joined;
+    });
+  }
+
   return {
     touchesChapter: touchesChapter,
     fragmentsOnChapter: fragmentsOnChapter,
+    chapterFragments: chapterFragments,
     formatExtent: formatExtent,
     spansChapters: spansChapters
   };

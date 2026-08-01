@@ -25,6 +25,41 @@ punctuation and spelling corrections, so these files are neither facsimiles
 nor diplomatic transcriptions. The 1871 text is recorded as public domain in
 the United States; users must determine its status in other jurisdictions.
 
+The retained Patristic Text Archive transcriptions of Severian of Gabala's six
+homilies *In cosmogoniam* are governed by their recorded [Creative Commons
+Attribution-ShareAlike 4.0 International
+License](https://creativecommons.org/licenses/by-sa/4.0/), not Triptych's CC BY
+4.0 license. Each source file states that licence in its own header, and the
+licence was read per file rather than inferred from the archive, whose README
+records that its files carry different Creative Commons licences. Sever J. Voicu
+transcribed the Greek from Migne's *Patrologia Graeca* 56, Paris 1862, and
+corrected and standardised its spelling, accents, and punctuation to modern
+editorial standards; Annette von Stockhausen converted the transcription to
+CTS-compliant PTA TEI and added the biblical references and the annotation of
+persons, groups, and places. The publisher is the Berlin-Brandenburgische
+Akademie der Wissenschaften. Reusers must retain that attribution, indicate
+changes, and satisfy ShareAlike where the licence requires it. The retained
+derivatives carry the Greek alone: the TEI header, the editors' annotation, the
+biblical pointers, the manuscript apparatus, and the source printing's page and
+line breaks are removed, and the retained files are neither facsimiles nor
+diplomatic transcriptions. Severian's fourth-century Greek and the modern
+transcription and encoding of it remain distinct rights objects.
+
+The retained Latin Wikisource transcriptions of Migne's *Patrologia Latina* --
+Ambrose's *Hexameron* (PL 14), Jerome's *Liber quaestionum hebraicarum in
+Genesim* (PL 23), Bede's *In principium Genesis* (PL 91), Alcuin's
+*Interrogationes et responsiones in Genesim* (PL 100), Angelomus of Luxeuil's
+and Remigius of Auxerre's *Commentarii in Genesim* (PL 115 and PL 131), and
+Augustine's *De Genesi ad litteram* (PL 34) -- reproduce printings of 1841 to
+1853 that are public domain in the United States. The wiki source of those pages
+is licensed CC BY-SA 4.0, a condition on the contributors' markup rather than on
+Migne's text beneath it; the exact wiki bytes are hashed and recorded but not
+retained, and the retained derivatives carry the printed Latin alone, with every
+template, link, heading, category, footnote, and column marker removed, together
+with the University of Zurich Corpus Corporum encoding note that identifies the
+encoder rather than the text. Those derivatives are transcriptions of a web
+witness of the printing and not collations against the printed column.
+
 The retained University of Leipzig/OpenGreekAndLatin CSEL 40.1--40.2 TEI files
 are governed by their recorded [Creative Commons Attribution-ShareAlike 4.0
 International License](https://creativecommons.org/licenses/by-sa/4.0/), not

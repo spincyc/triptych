@@ -471,7 +471,9 @@
     // Already the chapter's own list: the spine is addressed by chapter, and the
     // derivation that decided which fragments stand here ran in the generator,
     // out of `catena-model.js` under node. One derivation, and it is that file's.
-    const all = (file && file.fragments) || [];
+    // What each fragment shares with its edition is stored once per file and
+    // rejoined here, which is the same file's `chapterFragments`.
+    const all = M.chapterFragments(file);
     const wanted = languageSelect.value;
     const held = wanted ? all.filter((one) => one.language === wanted) : all;
     const headingText =

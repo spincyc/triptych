@@ -675,11 +675,42 @@ class StructureTests(CatenaFixture):
         for absent in ("text", "basis", "date_basis"):
             self.assertNotIn(absent, fragment)
         self.assertGreater(fragment["text_words"], 0)
+        # What the fragment shares with its edition is written once per file and
+        # referenced, and the path to its words is composed from the file's one
+        # statement of where words live.
+        shared = spine["sources"][fragment["source"]]
+        self.assertNotIn("author", fragment)
+        self.assertTrue(shared["author"])
+        text_path = spine["text_prefix"] + fragment["id"] + ".json"
         payload = json.loads(
-            (self.root / "out" / fragment["text_path"]).read_text(encoding="utf-8")
+            (self.root / "out" / text_path).read_text(encoding="utf-8")
         )
         self.assertIn("light", payload["text"])
         self.assertIn("light", payload["basis"])
+
+    def test_two_fragments_of_one_edition_share_one_source_entry(self) -> None:
+        """The spine states an edition once, however many fragments stand on it.
+
+        The restatement it replaces was not small: on Genesis 1 the author, the
+        work, the printing and the rights were written out 107 times, and every
+        copy was a chance for two of them to disagree about one edition.
+        """
+        rows = [
+            {"id": "a", "author": "X", "work": "W", "date": 400, "language": "la",
+             "edition": "E", "edition_published": "P", "translators": [],
+             "container": "", "rights": "public-domain", "locator": "1"},
+            {"id": "b", "author": "X", "work": "W", "date": 400, "language": "la",
+             "edition": "E", "edition_published": "P", "translators": [],
+             "container": "", "rights": "public-domain", "locator": "2"},
+            {"id": "c", "author": "X", "work": "W", "date": 415, "language": "la",
+             "edition": "E", "edition_published": "P", "translators": [],
+             "container": "", "rights": "public-domain", "locator": "3"},
+        ]
+        shared, slim = _catena._fold_shared(rows)
+        self.assertEqual(len(shared), 2)
+        self.assertEqual(slim[0]["source"], slim[1]["source"])
+        self.assertNotEqual(slim[0]["source"], slim[2]["source"])
+        self.assertEqual(shared[slim[2]["source"]]["date"], 415)
 
     def test_a_chapter_with_nothing_gets_no_file(self) -> None:
         directory = self.emit()

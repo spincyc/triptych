@@ -78,15 +78,16 @@ FRAGMENT_FIELDS = {
     "passage_id",
     "work_id",
     "work_alias",
-    "text_date",
-    "text_date_basis",
     "numbering",
     "extent",
     "basis",
 }
-# Optional, and required exactly when the passage's edition belongs to another
-# work. See `_passage_errors`.
-OPTIONAL_FRAGMENT_FIELDS = {"constituent_of"}
+# `constituent_of` is required exactly when the passage's edition belongs to
+# another work; see `_passage_errors`. `text_date` and `text_date_basis` are the
+# override of a date the work record otherwise supplies, and are required
+# exactly when the work states no `composed` year; see `validate`. Both are
+# refused when they merely restate what is already stated elsewhere.
+OPTIONAL_FRAGMENT_FIELDS = {"constituent_of", "text_date", "text_date_basis"}
 EXTENT_FIELDS = {
     "token",
     "first_chapter",
@@ -102,7 +103,23 @@ EXTENT_FIELDS = {
 # that way here. Anything else is not hidden at render time: it never enters the
 # emitted structure at all, exactly as an unpublishable bible is absent from
 # `bibles.json` rather than filtered in the browser.
-PUBLISHABLE_RIGHTS = {"public-domain", "licensed-for-redistribution"}
+# What Rule 9 lets onto the page. `public-domain` needs no permission. A
+# `licensed` artifact needs one, and `rights_status` alone cannot supply it:
+# CC BY-SA 4.0 and CC BY-NC-ND 4.0 carry the same status and opposite answers,
+# so the artifact's `license` identifier is read and must be one that permits
+# redistribution. This list once read `licensed-for-redistribution`, which is
+# not a status the source schema has and could therefore never match — the
+# filter looked strict and was inert, which is this repository's one defect in
+# its apparatus costume.
+PUBLISHABLE_RIGHTS = {"public-domain"}
+REDISTRIBUTABLE_LICENSES = {
+    "CC0-1.0",
+    "CC-BY-3.0",
+    "CC-BY-4.0",
+    "CC-BY-SA-3.0",
+    "CC-BY-SA-4.0",
+    "OGL-UK-3.0",
+}
 
 # Latin forms of the book names that commentary titles actually use. Declared,
 # not derived, and the reason is worth stating: the tracked book indexes carry
@@ -369,6 +386,39 @@ def _records(root: Path, pattern: str) -> dict[str, dict[str, Any]]:
     return found
 
 
+_YEAR = re.compile(r"\d{3,4}")
+
+
+def composed_year(work: dict[str, Any] | None) -> int | None:
+    """The year a work's `composed` field orders by, or None if it states none.
+
+    The chain runs oldest first, so what is wanted is one integer. A composition
+    date is a range far more often than it is a point — "c. 401-415", "1535-1545"
+    — and the ordering key is the FIRST year of the range, the year the writing
+    began, because that is when the work entered the world it is being placed in.
+    A `composed` that carries no digits at all ("saec. VIII in.") yields nothing,
+    and the fragment must then say what dates it.
+    """
+    found = _YEAR.search(str((work or {}).get("composed") or ""))
+    return int(found.group(0)) if found else None
+
+
+def fragment_year(fragment: dict[str, Any], work: dict[str, Any] | None) -> int | None:
+    """The date this fragment orders by: the work's, unless the text departs from it.
+
+    Rule 7 orders by the date of the TEXT, and for almost every fragment the text
+    is the work and the work record dates it. `text_date` exists for the case Rule
+    7 was written for — a text circulating under a name it was not written under,
+    whose date is the text's and not the claimed author's — and for a work whose
+    record cannot yet carry `composed`. It is never a second copy of a date the
+    work already states: `check` refuses one that agrees.
+    """
+    stated = fragment.get("text_date")
+    if isinstance(stated, int) and not isinstance(stated, bool):
+        return stated
+    return composed_year(work)
+
+
 class Sources(NamedTuple):
     """The records a fragment can reach, loaded once."""
 
@@ -509,13 +559,8 @@ def validate(root: Path = ROOT) -> list[str]:
                 f"not {_projection.CANONICAL!r} (Rule 3)"
             )
 
-        if not isinstance(fragment.get("text_date"), int) or isinstance(
-            fragment.get("text_date"), bool
-        ):
-            errors.append(f"{label} needs an integer text_date (Rule 7)")
-        for field in ("text_date_basis", "basis"):
-            if not str(fragment.get(field) or "").strip():
-                errors.append(f"{label} needs a {field}")
+        if not str(fragment.get("basis") or "").strip():
+            errors.append(f"{label} needs a basis")
 
         extent = _extent(fragment.get("extent"))
         if extent is None:
@@ -533,6 +578,32 @@ def validate(root: Path = ROOT) -> list[str]:
         author = str((work or {}).get("responsible") or "").strip()
         if work is not None and not author:
             errors.append(f"{label}: {work_id} has no responsible, so no author is derivable")
+
+        # Rule 7's date, derived from the work and restated nowhere. A fragment
+        # may override it, and must then say why in `text_date_basis`; it may not
+        # agree with it, because a row that restates agreement is a row that can
+        # later contradict it.
+        stated = fragment.get("text_date")
+        derived = composed_year(work)
+        if isinstance(stated, int) and not isinstance(stated, bool):
+            if not str(fragment.get("text_date_basis") or "").strip():
+                errors.append(f"{label} needs a text_date_basis for its text_date")
+            if stated == derived:
+                errors.append(
+                    f"{label} restates text_date {stated}, which {work_id} already "
+                    f"states in `composed`; delete the restatement (guidance/the-shape.md 2)"
+                )
+        elif stated is not None:
+            errors.append(f"{label} text_date must be an integer year (Rule 7)")
+        elif derived is None:
+            errors.append(
+                f"{label} is dated by nothing: {work_id} states no `composed` year "
+                f"and the fragment states no text_date (Rule 7)"
+            )
+        elif str(fragment.get("text_date_basis") or "").strip():
+            errors.append(
+                f"{label} carries a text_date_basis for a text_date it does not have"
+            )
 
         alias = fragment.get("work_alias")
         if not isinstance(alias, dict) or set(alias) != {"author", "work"}:
@@ -724,10 +795,14 @@ def _passage_errors(
         )
         return errors
     rights = str(artifact.get("rights_status") or "")
-    if rights not in PUBLISHABLE_RIGHTS:
+    identifier = str(artifact.get("license") or "")
+    if rights not in PUBLISHABLE_RIGHTS and not (
+        rights == "licensed" and identifier in REDISTRIBUTABLE_LICENSES
+    ):
         errors.append(
-            f"{label}: {artifact_id} is {rights or 'unstated'}, which may not be "
-            f"published (Rule 9)"
+            f"{label}: {artifact_id} is {rights or 'unstated'}"
+            + (f" under {identifier}" if identifier else "")
+            + ", which may not be published (Rule 9)"
         )
     if not str(artifact.get("rights_basis") or "").strip():
         errors.append(f"{label}: {artifact_id} records no rights_basis")
@@ -786,8 +861,10 @@ def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
                 # Derived, never stored beside the work reference.
                 "author": str(work.get("responsible") or ""),
                 "work": str(work.get("title") or ""),
-                "date": fragment.get("text_date"),
-                "date_basis": str(fragment.get("text_date_basis") or ""),
+                "date": fragment_year(fragment, work),
+                "date_basis": str(
+                    fragment.get("text_date_basis") or work.get("composed_basis") or ""
+                ),
                 "language": str(edition.get("language") or ""),
                 "edition": str(edition.get("title") or ""),
                 "edition_published": str(edition.get("publication") or ""),
@@ -1003,6 +1080,24 @@ SAFE_ID = re.compile(r"[a-z0-9][a-z0-9._-]*\Z")
 # Genesis fragment metadata, read by nobody who had not opened the fragment.
 CARRIED_WITH_TEXT = ("text", "basis", "date_basis")
 
+# What a fragment says about its EDITION rather than about itself. Written once
+# per chapter file under `sources` and referenced by key, because the alternative
+# is writing "Patrologia Latina, tomus 23, Paris: J.-P. Migne, 1845, coll.
+# 935-1010, reprinting Vallarsi and Maffei's Verona edition of 1767" two hundred
+# and nineteen times into one book's spines. It is the same rule as the
+# projection's: state a fact once and read it from there.
+SHARED_WITH_EDITION = (
+    "author",
+    "work",
+    "date",
+    "language",
+    "edition",
+    "edition_published",
+    "translators",
+    "container",
+    "rights",
+)
+
 # The path a book and a chapter take. Derived in `scripts/_canon.py`, which owns
 # the canon and therefore owns everything derived from it; see its header for
 # the four conventions and the reason behind each.
@@ -1087,6 +1182,38 @@ def chapters_touched(
     return {int(key): list(value) for key, value in json.loads(result.stdout).items()}
 
 
+def _fold_shared(rows: list[dict[str, Any]]) -> tuple[dict[str, dict[str, Any]], list[dict[str, Any]]]:
+    """Split a chapter's fragments into what they share and what is their own.
+
+    Two fragments of one edition agree about the author, the work, the date, the
+    language, the printing, the translators and the rights, and the spine used to
+    write all seven out for each of them. On Genesis 1 that was 107 copies of ten
+    fields; across Genesis it was 2.1 MB of spine for 1,351 fragments.
+
+    So the agreements are written once under `sources` and referenced by an
+    ordinal key. The grouping is by the exact values, not by the edition id, so a
+    fragment that departs from its edition in any of them — a text dated other
+    than its work, which is what `text_date` is for — gets a key of its own
+    instead of being quietly folded into a claim it does not make.
+    """
+    groups: dict[tuple, str] = {}
+    shared: dict[str, dict[str, Any]] = {}
+    slim: list[dict[str, Any]] = []
+    for row in rows:
+        signature = tuple(
+            json.dumps(row.get(name), sort_keys=True) for name in SHARED_WITH_EDITION
+        )
+        key = groups.get(signature)
+        if key is None:
+            key = str(len(groups))
+            groups[signature] = key
+            shared[key] = {name: row.get(name) for name in SHARED_WITH_EDITION}
+        rest = {name: value for name, value in row.items() if name not in SHARED_WITH_EDITION}
+        rest["source"] = key
+        slim.append(rest)
+    return shared, slim
+
+
 def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
     """Write what the browser fetches: a spine per chapter, a payload per fragment.
 
@@ -1158,7 +1285,6 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
             # What the reader is about to fetch, said before they fetch it, and
             # in words rather than bytes: a reader chooses by length of reading.
             fragment["text_words"] = len(str(carried["text"]).split())
-            fragment["text_path"] = f"structure/catena/{TEXT_DIRECTORY}/{identifier}.json"
             metadata[identifier] = fragment
 
         standing = chapters_touched(
@@ -1191,6 +1317,7 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
             present.append(chapter)
             path = directory / folder / _canon.chapter_name(chapter, width)
             path.parent.mkdir(parents=True, exist_ok=True)
+            shared, slim = _fold_shared(here)
             _write_json(
                 path,
                 {
@@ -1199,7 +1326,13 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
                     "chapter": chapter,
                     "chapters": book["last_chapter"],
                     "numbering": _projection.CANONICAL,
-                    "fragments": here,
+                    # Where a fragment's words are, said once for the file. The
+                    # page composes `text_prefix + id + ".json"`; writing the
+                    # path per fragment restated the id and the directory
+                    # 1,351 times over.
+                    "text_prefix": f"structure/catena/{TEXT_DIRECTORY}/",
+                    "sources": shared,
+                    "fragments": slim,
                     "leads": leads_here,
                     "refusals": refused_here,
                     "blocked": blocked_here,
@@ -1212,7 +1345,7 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
                     ),
                 },
             )
-            written.append(path)
+            written.append(path)  # noqa: E501
 
         index.append(
             {
@@ -1388,7 +1521,7 @@ const path = process.argv[1];
 const source = fs.readFileSync(path, 'utf8');
 const module_ = { exports: {} };
 new Function('module', 'exports', source)(module_, module_.exports);
-const cases = JSON.parse(process.argv[2]);
+const cases = JSON.parse(fs.readFileSync(0, 'utf8'));
 const answers = cases.cases.map(function (one) {
   return module_.exports.fragmentsOnChapter(cases.fragments, one.chapter).map(
     function (fragment) { return fragment.id; }
@@ -1417,10 +1550,15 @@ def replay_solved_chapters(root: Path = ROOT) -> tuple[list[str], str]:
         {"id": str(fragment["passage_id"]), "extent": fragment["extent"]}
         for fragment in data.get("fragments") or ()
     ]
+    # On stdin, not in argv. The payload carries every fragment's extent, and
+    # at 1,351 fragments an argv of it exceeds the kernel's limit and the check
+    # dies with `Argument list too long` — a check that stops working once the
+    # corpus it checks grows is worse than none.
     payload = json.dumps({"fragments": fragments, "cases": cases})
     try:
         result = subprocess.run(
-            ["node", "-e", HARNESS, str(model), payload],
+            ["node", "-e", HARNESS, str(model)],
+            input=payload,
             capture_output=True,
             text=True,
             check=False,
