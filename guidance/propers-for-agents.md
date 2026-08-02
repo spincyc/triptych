@@ -220,23 +220,23 @@ carries the identical block.
 | roman-1962 | sanctoral | 307 | 981 | 121 |
 | roman-1962 | common | 30 | 152 | 0 |
 | postconciliar | seasonal | 67 | 832 | 2 |
-| postconciliar | christological | 7 | 20 | 4 |
-| postconciliar | marian | 14 | 35 | 9 |
-| postconciliar | sanctoral | 181 | 469 | 91 |
+| postconciliar | christological | 7 | 23 | 3 |
+| postconciliar | marian | 14 | 52 | 4 |
+| postconciliar | sanctoral | 181 | 606 | 44 |
 
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 6 | 490 | 269 |
-| Propers | 6 | 2345 | 1356 |
-| — named `Placeholder` | 6 | 139 | 108 |
+| Propers | 6 | 2345 | 1513 |
+| — named `Placeholder` | 6 | 139 | 55 |
 | — inside a `forms` block | 0 | 130 | 140 |
 | — carrying a `cycles` mapping | 0 | 0 | 253 |
-| Masses holding only placeholders | 6 | 137 | 106 |
+| Masses holding only placeholders | 6 | 137 | 53 |
 | Masses taking a formulary from another entry | 0 | 56 | 0 |
 | Propers taking their text from another entry | 0 | 53 | 0 |
-| Propers that are not placeholders | 0 | 2206 | 1248 |
-| — of those, scripture-bearing | 0 | 1822 | 975 |
-| Encoded passages | 0 | 2123 | 1511 |
+| Propers that are not placeholders | 0 | 2206 | 1458 |
+| — of those, scripture-bearing | 0 | 1822 | 1185 |
+| Encoded passages | 0 | 2123 | 1721 |
 | Distinct books cited | 0 | 55 | 63 |
 | Distinct slot names | 1 | 119 | 89 |
 
