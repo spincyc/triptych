@@ -1711,7 +1711,7 @@ release attachment, announcement, or promotion.
 | `THIRD_PARTY.md` | `ebd94814a5d55ad8bcb94f08938ac42feb11e9c8e9cf438dc7c6ba92ba9102f2` |
 | `docs/bibles.md` | `f97601d14da975140e987cbcb405266dc3138b2739edddc1b0fda83290bb7b52` |
 | `docs/reading-and-commentary.md` | `b0861dd1b6ce0a81b62ab2158b20d093664381cc3c93d9e62f53cdb2b1a84e32` |
-| `docs/the-mass.md` | `5754d5b34165c5ceb30b787b1431751e40d3d42a40e90a0361ceb0c4fb319010` |
+| `docs/the-mass.md` | `287fb7c361f05e209a4c84a6eb0cb1b082341532076d3be582909f663b441490` |
 | `library/biographies.md` | `c2de5d8013c126500ec283334fd3311fb907c826e3a3a800145d575347be21ab` |
 | `library/catholic-exorcism.md` | `cb8dc01280320b0377bd2d48e0013379b8acee3ede3d6255beaa37356c7c63db` |
 | `library/curriculums.md` | `4d6deabc3129f825c1f11677e6ac9f0afcdf62df68fb9965f0e9f2468e95ea32` |
@@ -1931,7 +1931,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/assembly-model.js` | `de239c0c7efddbfbaeba2d3ee5a9439630abc8965e61765dfd7205e4b9181789` |
 | `src/web/browser/liturgy/day.css` | `93ef9f44ee5d6488cb95a1587e856bd75488ea6b34b6ff723a01a437a75b6ed1` |
 | `src/web/browser/liturgy/day.html` | `8621e7906fe1f42f4f8de7410939f5c4478910eee44d6dbc9fc12cc477b19df3` |
-| `src/web/browser/liturgy/day.js` | `a27cd408a3d7678ee8e7067526a215df7db35e92fcb530161904c31afae078ad` |
+| `src/web/browser/liturgy/day.js` | `27fefa134de12fa54d7eb64f66cc6f8f645d45bac3672c91f1d4ab4676dc4b32` |
 | `src/web/browser/liturgy/index.html` | `de4a08cdc27f86f8f0bb7d3c3def6b8a012ea9f9cb9d0ce7370b37812e098dcc` |
 | `src/web/browser/liturgy/liturgy.css` | `5333873c3fbcdabb5cd10b1d92897feaa27fad7d532e70c17fd2130088f936b6` |
 | `src/web/browser/liturgy/liturgy.js` | `234a001de9b8829efa0efde6394affcdfae54c60ba39f432a7f93ed720dfd23c` |
