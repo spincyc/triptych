@@ -1,0 +1,775 @@
+# What one book of a paragraphed Challoner costs, measured rather than estimated.
+#
+# A MEASUREMENT, NOT AN ACQUISITION. Nothing below was imported. No break was
+# written into a bible, no passage record was created, no bible index was
+# touched. Every number here comes from one book -- St John -- of one witness,
+# extracted for this file and discarded, so that a later lane can decide about
+# the other twenty-six books on a number instead of on an estimate.
+#
+# It sits in inventories/ for the reason `pre-1955-rubrics-sources-v1.toml`
+# gives: `source-library validate` rejects any file under src/sources outside
+# its own schema except .md and .toml under inventories/, and this record is a
+# measurement of a candidate, not a work in the library.
+#
+# THE QUESTION, in one line: this project's bibles are verse-per-line, so they
+# carry no record of where the sense breaks fall. A paragraphed witness carries
+# exactly that and nothing else this project needs. Is the structure recoverable
+# from a public scan at a quality worth having?
+#
+# THE ANSWER, in three numbers:
+#
+#   97.2%   of paragraph breaks in John land on a verse boundary, so a
+#           paragraph harvest is mechanical.
+#   34.8%   of marginal headings and glosses land INSIDE a verse rather than at
+#           a boundary, so a heading harvest is not.
+#   97.7%   is the verse-boundary rate for the subset of headings that coincide
+#           with a paragraph break -- which is the rule that separates the two.
+#
+# THE ROUTE THAT WORKED was the Internet Archive, anonymously, with no
+# credentials and no page images. HathiTrust holds the item and confirms its
+# rights but will not serve bytes to a program. Google Books has no view of this
+# edition at all. All three are recorded below with what each returned.
+#
+# ONE CORRECTION IS OWED TO WHATEVER RECORD CARRIES THE SUBJECT. The HathiTrust
+# identifier is `uc1.$b493001`. The dollar sign is part of the identifier; the
+# form `uc1.b493001` resolves to an empty record, and `uc1.b4930010` resolves
+# successfully to a Chilean archaeology journal. See [identity_correction].
+
+measurement_schema = 1
+record_type = "paragraphed-witness-measurement"
+subject_id = "the-laymans-new-testament-1927"
+scope = "St John only"
+recorded_on = "2026-08-01"
+jurisdiction = "United States"
+
+question = """
+TASK-126 asked for one book of the 1927 paragraphed Challoner to be measured
+before any decision about the New Testament, and named the number it wanted:
+how often does a marginal heading land inside a verse rather than at a verse
+boundary. That question is the right one because it is the one that decides
+whether the harvest is arithmetic or judgment. A break that falls on a verse
+boundary can be written into a verse-per-line bible by a rule. A break that
+falls inside a verse cannot: something has to decide which verse it belongs to,
+and something deciding is a person.
+
+The measurement below answers it, and then answers the question the answer
+raises -- whether the inside-a-verse cases are separable from the rest before
+the work starts, rather than discovered one at a time during it. They are.
+"""
+
+method = """
+The scan's hOCR layer carries a bounding box and a confidence for every word.
+That is enough to do the whole measurement geometrically, without reading the
+text as a stream and without guessing where the margin ends:
+
+  1. Split each OCR line at the page's gutter, computed per page from the
+     distribution of line left edges, so that marginal matter and scripture are
+     separated by position rather than by content. A line with words on both
+     sides of the gutter is a contamination event and is counted as one.
+  2. Detect paragraph starts by indentation, against a per-page least-squares
+     model of the column's left edge fitted to the lower 62% of residuals. The
+     pages are skewed -- the left edge drifts up to 45 px down a single page --
+     so a fixed threshold would be worthless. Against the fitted baseline the
+     separation is clean: paragraph starts sit +39 to +48 px, every other line
+     within +/-5 px.
+  3. Track chapter and verse by matching numerals against the expected next
+     verse, anchored at every page by the running head, which prints its own
+     chapter and verse range ("308 ST. JOHN. i. 21 - 41"). The head anchor is
+     what makes this safe: pure sequential tracking silently relabelled all of
+     John 16 as John 15 when three verse numbers in a row were lost to OCR, and
+     produced a well-formed, wrong answer. The anchor caught it at the page
+     boundary.
+  4. Group marginal lines into blocks by vertical contiguity, classify each
+     block as a section heading, a side gloss, or a cross-reference, and align
+     each block's first line to the scripture line it overlaps most.
+  5. Compare every result against src/sources/bibles/douay-rheims, read from
+     the repository rather than assumed.
+
+Two page images were fetched and read directly to confirm that the geometry
+means what the code assumed it means. Both pages agreed with the extraction
+block for block. That check is the reason the classification is stated as
+measured rather than as inferred.
+"""
+
+evidence = """
+Evidence classes, used exactly as `pre-1955-rubrics-sources-v1.toml` fixed them.
+
+  [verified]  Read on 2026-08-01 from bytes fetched for this record, at a
+              recorded sha256. Reproducible from [reproduce].
+  [sourced]   Read from an external document cited by URL or identifier.
+  [recorded]  Taken from a record already in this repository, cited by path.
+
+Nothing is asserted from recall. The counts are machine-derived from the bytes
+in [reproduce] and every one of them can be recomputed.
+"""
+
+# ---------------------------------------------------------------------------
+# The subject, and what it actually is
+# ---------------------------------------------------------------------------
+
+[subject]
+title = "The Layman's New Testament: being the Rheims text as first revised by Bishop Challoner"
+editor = "Hugh Pope, O.P."
+publisher = "Sheed & Ward"
+place = "London"
+date = "1927"
+approbation = "Nihil obstat and Imprimi potest, dated Octobris 1927"
+revision = "Challoner's first revision of 1749"
+evidence = "verified"
+note = """
+The title page in the scan reads BEING THE RHEIMS TEXT AS FIRST REVISED BY
+BISHOP CHALLONER, which settles the recorded limit that this is the 1749 first
+revision and not a later one. It is a New Testament only: the volume runs
+Matthew through the Apocalypse and then an index, with no Old Testament matter
+and no companion volume named anywhere in it.
+"""
+
+[subject.hathitrust]
+htid = "uc1.$b493001"
+record = "007346595"
+record_url = "https://catalog.hathitrust.org/Record/007346595"
+rights_code = "pdus"
+us_rights_string = "Full view"
+holding_library = "University of California"
+last_update = "20250414"
+evidence = "verified"
+note = """
+Returned by the open Bibliographic API, which needs no credential. The recorded
+rights position is confirmed: `pdus`, full view, public domain in the United
+States. A 1927 publication is out of copyright in the United States, so the
+rights code and the date agree and neither depends on the other.
+"""
+
+[subject.internet_archive]
+identifier = "laymansnewtestam0000hugh"
+details_url = "https://archive.org/details/laymansnewtestam0000hugh"
+images = 942
+scanned = "2024-12-17, Cebu"
+republished = "2025-01-15"
+ocr_engine = "tesseract 5.3.0-6-g76ae, -l eng"
+ppi = 360
+openlibrary_edition = "OL58911074M"
+restricted = false
+evidence = "verified"
+note = """
+No `access-restricted-item` field, no lending collection, and every derivative
+file returns HTTP 200 to an anonymous request: the full text, the hOCR, the
+page index, the PDF. The `urn:lcp:` external identifiers are present but do not
+gate the files. The scanner's own note on the copy is recorded in the item
+metadata and matters here: `Cut-off text on some pages due to tight binding.
+Some text is skewed in the physical copy.` Both defects were met and both are
+quantified in [measurement.ocr_damage].
+"""
+
+[identity_correction]
+wrong = "uc1.b493001"
+right = "uc1.$b493001"
+severity = "silent"
+evidence = "verified"
+finding = """
+The identifier as recorded is missing its dollar sign, and the failure is the
+quiet kind. `htid:uc1.b493001` does not error: the Bibliographic API returns
+`{"records":[],"items":[]}`, which a caller can easily read as "not in
+HathiTrust". Worse, the neighbouring form `uc1.b4930010` resolves successfully
+to record 005699611, the journal `Chungara`, so a caller repairing the
+identifier by adding a digit gets a confident wrong answer instead of an empty
+one. Only `uc1.$b493001` returns The Layman's New Testament.
+
+REPORTED FOR THE COORDINATOR TO APPLY: wherever this project records the
+HathiTrust identifier for this edition, it should read `uc1.$b493001`, and the
+`$` should be percent-encoded as `%24` in any URL built from it.
+"""
+
+# ---------------------------------------------------------------------------
+# The three routes, and what each returned
+# ---------------------------------------------------------------------------
+
+[routes.hathitrust_page_images]
+outcome = "blocked"
+evidence = "verified"
+what_was_tried = """
+`https://babel.hathitrust.org/cgi/pt?id=uc1.b493001&seq=1` and the corrected
+`uc1.$b493001`, by curl with a current Firefox user agent, and separately
+through the harness fetcher.
+"""
+what_came_back = """
+HTTP 403 with a 5,671-byte Cloudflare interstitial, `<title>Just a
+moment...</title>`. The catalog search UI at catalog.hathitrust.org/Search/Home
+returns the same 403 and the same interstitial. The Bibliographic API at
+catalog.hathitrust.org/api/volumes/ is not behind it and answered every request.
+"""
+reading = """
+HathiTrust can confirm this item's identity and rights to a program and cannot
+give it a single page. "Full view" in the rights string is a statement about
+what a human at a browser may see, not about anonymous programmatic access.
+Recording it as though it were a retrieval route would be an error.
+"""
+what_would_unblock = """
+A browser session, or the HathiTrust Data API, which requires an access key and
+is therefore outside what this measurement was permitted to use. Neither was
+needed: see [routes.internet_archive].
+"""
+
+[routes.google_books]
+outcome = "dead"
+evidence = "verified"
+what_was_tried = """
+The Books API (`googleapis.com/books/v1/volumes`) twice, twenty seconds apart,
+and the web record for the only matching volume, `Cc8NzQEACAAJ`.
+"""
+what_came_back = """
+The API returned HTTP 429 both times with `Quota exceeded for quota metric
+'Queries' and limit 'Queries per day' of service 'books.googleapis.com'`. The
+web record shows `No eBook available`, no preview, front cover only, with
+third-party purchase links.
+"""
+reading = """
+This closes the recorded note that Google Books returned 429 all session and was
+left unexamined. Two things were true at once and only one of them was the
+throttle. The 429 is a per-DAY anonymous quota on a shared project, not a
+per-session rate limit, so waiting out a session would never have cleared it.
+And it did not matter, because the record it was guarding has no view of this
+edition to give. Google Books is not a slow route to this book; it is not a
+route to this book.
+"""
+what_would_unblock = """
+An API key would clear the 429 and would change nothing, because the volume has
+no preview. Nothing unblocks this route for this edition.
+"""
+
+[routes.internet_archive]
+outcome = "worked"
+evidence = "verified"
+credentials = "none"
+page_images_downloaded = 2
+bytes_downloaded = 6700000
+what_was_used = """
+`_hocr_pageindex.json.gz` (11,541 bytes) gives per-page byte offsets into the
+hOCR file, and archive.org honours HTTP Range on it -- the request for images
+320 to 418 returned HTTP 206 and 5,235,886 bytes in 15 seconds. So the whole
+measurement was done on one ranged read of a text file plus two page images
+fetched through the IIIF endpoint for visual confirmation. The full-text
+`_djvu.txt` was fetched and then abandoned: it carries no page separators at
+all, one 1.8 MB stream, which is why the layout work had to be done in hOCR.
+"""
+
+# ---------------------------------------------------------------------------
+# What the book is, physically, which decides the cost of everything else
+# ---------------------------------------------------------------------------
+
+[layout]
+evidence = "verified"
+finding = """
+SCRIPTURE IS ON THE VERSO ONLY. Each opening carries the scripture on the
+left-hand page and the introduction-and-notes on the facing right-hand page.
+Printed p. 308 is scripture, p. 309 is notes, p. 310 is scripture, and so on
+through the volume. In John the scripture sits on the even image indices 324 to
+414 and the notes on the odd ones -- 46 scripture pages out of 91 images for the
+book, and the reason a 942-image volume holds only about 441 pages of text.
+
+THE SCRIPTURE PAGE has one text column with inline verse numbers, indented
+paragraph openings, and a marginal column at the outer edge carrying three
+different things that a harvest must not confuse:
+
+  small-caps section headings   THE CALL OF THE APOSTLES.
+  italic side glosses           Andrew and John.   The Paralytic.
+  cross-references              Mt. iii.11-12;  Mk. i.7-8; Lk. iii 16-17.
+
+Only the first two are structure. The third is apparatus, and it is 31% of the
+marginal blocks, so a harvest that does not separate them will import a third
+again as much noise as signal.
+
+CHAPTERS open with an inline compound number and extra leading -- `5. 1. After
+these things` -- not with a display heading, so a chapter opening is detectable
+but is not typographically privileged over a paragraph.
+"""
+
+# ---------------------------------------------------------------------------
+# The measurement
+# ---------------------------------------------------------------------------
+
+[measurement]
+book = "John"
+scripture_pages = 46
+image_indices = "324-414 even"
+printed_pages = "306-396 even"
+scripture_lines = 1849
+ocr_lines_on_those_pages = 2893
+evidence = "verified"
+
+[measurement.paragraph_breaks]
+detected = 215
+detector_artifacts = 1
+real = 214
+at_verse_boundary = 208
+mid_verse = 6
+at_verse_boundary_pct = 97.2
+mid_verse_pct = 2.8
+per_scripture_page = 4.65
+per_verse = 0.243
+evidence = "verified"
+per_chapter = [8, 6, 11, 14, 9, 14, 13, 16, 8, 10, 12, 12, 11, 9, 8, 8, 6, 11, 12, 9, 7]
+per_chapter_note = """
+Chapters 1 to 21 in order, summing to the 214 real breaks. Two are known
+undercounts and are left uncorrected rather than padded: the break at John 1:1
+is excluded because the book's opening page carries a display title that the
+indent detector cannot distinguish from a paragraph, and chapter 16 is counted
+from verse 5 because the OCR lost the verse numbers 16:1-3 on the most damaged
+page in the book. Both are visible in [measurement.could_not_place]; neither
+was inferred back in.
+"""
+mid_verse_loci = ["John 8:4", "John 8:6", "John 8:9", "John 11:41", "John 14:12", "John 19:15"]
+note = """
+THIS IS THE NUMBER THAT MAKES THE HARVEST WORTH DOING. 208 of 214 paragraph
+breaks fall exactly on a verse boundary, so they can be written into a
+verse-per-line bible as "a break precedes John 4:7" with no judgment involved.
+
+The six that do not are real and are worth keeping as data rather than
+smoothing: the 1927 begins a paragraph in the middle of John 8:4, 8:6, 8:9,
+11:41, 14:12 and 19:15, most often at the start of reported speech ("And Jesus
+lifting up his eyes said: Father, I give thee thanks", inside 11:41). Two of the
+six, 8:4 and 8:6, sit on the single worst-OCR page in the book and are the least
+certain of the set.
+
+One further apparent mid-verse break, at the foot of image 384, is a detector
+artifact: the page's left edge is skewed enough that the fitted baseline
+over-predicts at the last line. It is excluded above and is recorded here so
+that a later run reproducing 215 rather than 214 knows which one to discard.
+"""
+
+[measurement.marginal_blocks]
+total = 423
+section_headings = 98
+side_glosses = 181
+cross_references = 130
+too_corrupt_to_classify = 14
+evidence = "verified"
+note = """
+Block counts, not heading counts: a heading whose lines the OCR broke apart is
+counted once where the lines were rejoinable and more than once where they were
+not. Fragmentation inflates the heading and gloss counts by an estimated 5-10%,
+which is stated as a limit rather than corrected, because correcting it would
+require the page images this measurement deliberately did not fetch.
+"""
+
+[measurement.headline]
+question = "how often does a marginal heading land inside a verse rather than at a verse boundary"
+placeable_blocks = 267
+continued_from_previous_page = 12
+inside_a_verse = 93
+inside_a_verse_pct = 34.8
+at_a_verse_boundary = 174
+evidence = "verified"
+answer = """
+34.8%. Of 267 marginal headings and glosses in John that begin on their own
+page, 93 sit beside a scripture line that does not begin a verse. The printer
+could only ever set a heading beside a LINE, and a line begins mid-verse about
+two times in three, so this is a fact about the typography and not about the
+editor's intention -- but it is exactly the fact that a verse-anchored import
+runs into.
+
+BROKEN DOWN, because the two kinds do not behave alike:
+
+  major section headings   20 of 93 land inside a verse    21.5%
+  minor italic glosses     73 of 174 land inside a verse   41.9%
+
+The glosses are twice as likely to miss, which follows from what they are: a
+gloss is set beside the phrase it names, and a phrase starts wherever it starts.
+"""
+
+[measurement.headline.resolvability]
+resolvable_by_rule = 83
+unplaceable = 10
+unplaceable_pct = 3.7
+evidence = "verified"
+finding = """
+Of the 93 that land inside a verse, 83 have exactly one verse start somewhere
+within the heading block's own vertical extent, so the rule "assign the heading
+to the first verse beginning beside it" places them without a judgment. On the
+two pages read as images, that rule agreed with the sense every time: `Andrew
+and John.` beside the line carrying verse 40 belongs to verse 40, `Simon.`
+beside verse 41 belongs to verse 41, `The Paralytic.` spanning the lines that
+carry the end of 5:4 and the start of 5:5 belongs to 5:5.
+
+That agreement is a two-page check, not a proof, and it should not be reported
+as one. The rule is defensible and unverified at scale.
+
+Ten blocks (3.7% of 267) have no verse start within their extent at all. Those
+cannot be placed by any rule and need either the page image or a decision.
+"""
+
+[measurement.headline.the_useful_discriminator]
+evidence = "verified"
+finding = """
+THE INSIDE-A-VERSE CASES ARE SEPARABLE BEFORE THE WORK STARTS, and this is the
+most actionable result in the file.
+
+A heading whose anchor line is ALSO a paragraph start is at a verse boundary
+168 times out of 172 -- 97.7%. A heading whose anchor line is not a paragraph
+start is at a verse boundary 6 times out of 95 -- 6.3%.
+
+  anchor is a paragraph start      172 blocks   97.7% at a verse boundary
+  anchor is not a paragraph start   95 blocks    6.3% at a verse boundary
+
+So the same geometry that yields the paragraph breaks also sorts the headings
+into a set that can be imported mechanically and a set that cannot, in advance,
+without inspecting either. 64% of the headings fall in the safe set. The other
+36% can be left out, or queued for review, but they do not have to be discovered
+one at a time during an import.
+"""
+
+[measurement.contamination]
+question = "how often does the OCR merge a marginal gloss into a scripture line"
+merged_lines = 40
+ocr_lines = 2893
+rate_pct = 1.38
+affected_pages = 5
+evidence = "verified"
+by_image = [[346, 9], [356, 22], [360, 1], [384, 1], [390, 7]]
+finding = """
+1.38% of OCR lines, and the recorded limit is confirmed in kind but overstated
+in degree: the contamination is real, and it is not spread thin. All 40 events
+fall on 5 of the 46 pages, and image 356 alone carries 22 of them -- 49% of that
+page's lines. On the clean 41 pages the rate is zero.
+
+That distribution changes what the defect costs. Contamination at 1.4% spread
+evenly would poison every page a little and would have to be handled everywhere.
+Contamination at 1.4% concentrated on 11% of the pages is a five-page repair
+list.
+
+It is also not a cosmetic defect where it occurs. On image 356 the merge is what
+destroyed the verse tracking: `Their 40. Of that multitude therefore` and
+`SOUNCIL, QuTt Ati laid hands upon him` are single OCR lines carrying a marginal
+heading and scripture together, and a harvest splitting on line left edge --
+which is the obvious way to do it -- would classify the whole line as margin and
+silently drop nine verses of scripture. Splitting at the gutter by WORD position
+recovers them. The naive method and the correct method differ by a page of John
+7 and give no signal that they differ.
+"""
+
+[measurement.ocr_damage]
+evidence = "verified"
+right_edge_clipped_lines = 154
+right_edge_clipped_pct = 8.3
+clipped_pages = 14
+lines_dropped_entirely = 30
+verse_numbers_lost = 21
+verse_numbers_lost_pct = 2.4
+finding = """
+The contamination is not the largest defect in this scan; it is the third
+largest. Measured on the same 46 pages:
+
+  154 scripture lines (8.3%) run to the physical edge of the page image and
+      lose their last word or characters, on 14 of the 46 pages. Image 390 has
+      26 such lines. This is the scanner's recorded tight-binding note, on the
+      outer edge rather than the inner.
+
+  30 scripture lines are missing from the OCR altogether, detected as gaps in
+     the line pitch after excluding chapter and paragraph leading. Image 352
+     loses four consecutive lines carrying John 6:70-71.
+
+  21 of John's 879 verse numbers (2.4%) were not recovered.
+
+NONE OF THESE DEFECTS TOUCHES THE STRUCTURE THIS PROJECT WANTS. A clipped line
+still has its left edge, so its indentation -- and therefore whether it starts a
+paragraph -- is intact. A dropped line loses a break that would have been at
+that line, which is why the paragraph count is a floor rather than an exact
+figure. The defects would be fatal to a wording harvest and are survivable by a
+structure harvest, which is the same conclusion the recorded constraint reached
+from the other direction.
+"""
+
+[measurement.could_not_place]
+evidence = "verified"
+summary = """
+The task asked how many breaks could not be placed confidently, and why. Four
+buckets, 55 items, against 214 paragraph breaks and 267 heading blocks:
+
+  10  heading blocks with no verse start anywhere in their vertical extent.
+      Unplaceable by rule. Need the page image or a decision.
+  14  marginal blocks whose OCR confidence is below 60 and whose text is not
+      legible enough to classify as heading, gloss, or cross-reference at all
+      (`XVile oe`, `[savxlos`, `Ween si`). Not placed, and not counted as
+      headings above.
+   2  mid-verse paragraph breaks -- John 8:4 and 8:6 -- that fall on the worst
+      OCR page in the book and are recorded with lower confidence than the
+      other four.
+  ~30 breaks that may exist on the 30 lines the OCR dropped and that this
+      measurement therefore cannot see. This is why the paragraph count is a
+      floor.
+
+Everything else placed. 208 of 214 paragraph breaks and 257 of 267 heading
+blocks resolved to a chapter and verse without a judgment call.
+"""
+
+# ---------------------------------------------------------------------------
+# Against the bible this repository already holds
+# ---------------------------------------------------------------------------
+
+[against_the_repo_douay]
+compared_with = "src/sources/bibles/douay-rheims"
+edition = "Douay-Rheims, Challoner revision, Project Gutenberg eBook 1581"
+source_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+evidence = "recorded"
+chapters = 21
+repo_verses = 879
+versification_divergence = 0
+token_similarity = 0.980
+finding = """
+NO VERSIFICATION DIVERGENCE IN JOHN. The 1749 first revision as printed in 1927
+and the later Challoner in this repository agree in all 21 chapters: same
+chapter count, same last verse in every chapter, and no verse present in one
+and absent from the other. Every one of the 21 verse numbers the OCR failed to
+recover was checked against its surrounding text and is a scanning loss, not an
+absence in the edition -- John 6:70-72 are printed and their numbers were lost
+with the four lines that carried them.
+
+The task required that a divergence be recorded rather than smoothed. There is
+none to record. That is a positive result, because it means the break positions
+harvested from the 1927 address the repository's own bible directly, with no
+mapping layer and no entries in projection.tsv.
+
+WORDING, which is not to be imported and was compared only to test the recorded
+constraint: token-level similarity over the whole book is 0.980, and the
+residual tracks the OCR damage rather than the revision. The lowest chapter,
+15 at 0.913, is the chapter on the most heavily clipped page. The recorded
+constraint is confirmed from the evidence: harvesting wording from this witness
+would add nothing this repository does not already hold at better quality, and
+would import 8.3% clipped lines to get it.
+"""
+
+# ---------------------------------------------------------------------------
+# What it cost, and what the rest would cost
+# ---------------------------------------------------------------------------
+
+[cost.john_as_measured]
+wall_clock_minutes = 40
+fetch_seconds = 21
+bytes = 6700000
+page_images = 2
+hocr_pages_fetched = 99
+hocr_pages_used = 46
+evidence = "verified"
+note = """
+The fetching was 21 seconds. The rest of the 40 minutes was writing the
+extraction and checking it against two page images, and most of that is
+non-recurring: the same code runs the other twenty-six books unchanged.
+"""
+
+[cost.whole_nt_projected]
+evidence = "verified"
+scripture_pages = 441
+image_range = "20-900 even"
+page_images_needed = 0
+one_file = "laymansnewtestam0000hugh_hocr.html"
+one_file_bytes = 49168365
+finding = """
+THE RECORDED COST ESTIMATE IS RIGHT ABOUT THE PAGES AND WRONG ABOUT THE UNIT.
+About 441 scripture pages carry the New Testament, which the recorded ~470 has
+close enough. But they do not have to be fetched as 441 page images. The entire
+apparatus this harvest needs -- every word, every bounding box, every confidence,
+for all 942 images -- is one 49 MB file, and Range requests against it are
+honoured, so the NT body can be taken as a single ranged read of about 46 MB.
+
+Zero page images are needed for the harvest. Page images are needed only for
+the repair list: the 5 contaminated and 14 clipped pages found in John, which
+scale to roughly 50 and 130 pages across the NT.
+"""
+
+[cost.whole_nt_projected.break_counts]
+basis = "per-verse rates from John, 879 of the repository Douay's 7,949 NT verses"
+paragraph_breaks = 1935
+section_headings = 887
+side_glosses = 1637
+headings_and_glosses = 2523
+all_structural_marks = 4458
+uncertainty_band_pct = 30
+evidence = "verified"
+uncertainty = """
+STATED PLAINLY: John is one book and it is the wrong one to extrapolate from
+confidently. It is a discourse gospel, and its paragraphing follows long
+speeches. Narrative books -- Matthew, Mark, Luke, Acts -- will break at
+incidents, and the epistles at arguments, and neither has been measured. A +/-30%
+band on the John rates gives:
+
+  paragraph breaks        1,350 - 2,500
+  headings and glosses    1,750 - 3,300
+  combined                3,100 - 5,800
+
+AGAINST THE RECORDED ESTIMATE of 2,500-3,000 breaks for the whole NT: that
+figure sits inside the headings-and-glosses band and well above the
+paragraph-break figure, so it appears to have counted one of the two kinds
+rather than both. The combined total is roughly 4,500, which the recorded
+estimate under-counts by a third to a half. The correction does not change the
+decision -- the marginal cost per break is near zero once the file is in hand --
+but it changes the review cost, which is per break and not per byte.
+"""
+
+# ---------------------------------------------------------------------------
+# The four recorded limits, checked
+# ---------------------------------------------------------------------------
+
+[[limits_checked]]
+limit = "New Testament only -- no Old Testament companion"
+verdict = "confirmed"
+evidence = "verified"
+detail = """
+The volume runs Matthew through the Apocalypse and then a 33-page index. No Old
+Testament matter, and no companion volume is named in the front matter, the
+introduction, or the index. Half the bible would indeed differ in treatment.
+"""
+
+[[limits_checked]]
+limit = "It is Challoner's 1749 first revision; harvest break positions, import no wording"
+verdict = "confirmed, and the reason is stronger than recorded"
+evidence = "verified"
+detail = """
+The title page confirms the revision. The reason to import no wording turns out
+not to be only that it is a different revision: at 0.980 token similarity to the
+Challoner already in this repository, and with 8.3% of lines clipped at the page
+edge, importing this wording would trade quality for nothing. The constraint
+should be kept for both reasons.
+"""
+
+[[limits_checked]]
+limit = "No machine-readable structure, and hOCR contamination merges glosses into scripture"
+verdict = "confirmed in kind, overstated in degree, and understated in kind"
+evidence = "verified"
+detail = """
+No machine-readable structure: true, and worse than recorded. The plain text
+derivative has no page separators at all, so the layout work must be done in
+hOCR whether or not contamination existed.
+
+Contamination: 1.38% of lines, all of it on 5 of 46 pages. Lower than the limit
+implies, and concentrated rather than diffuse.
+
+Understated in kind: contamination is the third-largest OCR defect here, behind
+154 right-clipped lines and 30 dropped lines. A record that names only the
+contamination would leave a later lane surprised by the other two.
+"""
+
+[[limits_checked]]
+limit = "Estimated cost ~470 page images and 2,500-3,000 breaks for the whole NT"
+verdict = "pages right, unit wrong, breaks under-counted"
+evidence = "verified"
+detail = """
+441 scripture pages, so ~470 is close. But the harvest needs no page images at
+all -- one 49 MB hOCR file, range-fetchable, carries everything. And the break
+count is roughly 4,500 combined rather than 2,500-3,000. See
+[cost.whole_nt_projected].
+"""
+
+# ---------------------------------------------------------------------------
+# The recommendation
+# ---------------------------------------------------------------------------
+
+[recommendation]
+verdict = "proceed for a subset"
+evidence = "verified"
+holding = """
+PROCEED, for paragraph breaks NT-wide and for the safe subset of headings; do
+not proceed for the rest of the headings, and do not import wording.
+
+  1. HARVEST PARAGRAPH BREAKS ACROSS THE NEW TESTAMENT. 97.2% of them land on a
+     verse boundary, they are derivable from indentation geometry by the code
+     already written for John, the verse divisions match this repository's Douay
+     exactly, and the whole apparatus is one 49 MB download. This is the part
+     that turns a verse-per-line bible into one that knows where the sense
+     breaks, and it is nearly free.
+
+  2. IMPORT A MARGINAL HEADING ONLY WHERE ITS ANCHOR LINE IS ALSO A PARAGRAPH
+     START. That rule keeps 64% of the headings at 97.7% verse-boundary
+     reliability. Queue the other 36% for review or leave them out; do not
+     import them on the same footing, because in that population only 6.3% are
+     verse-aligned.
+
+  3. IMPORT NO WORDING, for both recorded reasons and the measured one: 0.980
+     similarity to a cleaner text already held.
+
+  4. BEFORE COMMITTING TO THE NT-WIDE NUMBERS, MEASURE ONE NARRATIVE BOOK AND
+     ONE EPISTLE -- Mark and Romans -- with the same code. Two more books at a
+     few minutes each. John is a discourse gospel and its paragraph rate should
+     not be assumed to hold for Acts or for Hebrews, and the +/-30% band above is
+     an admission that it has not been tested rather than a measurement of
+     variance.
+
+  5. TREAT THE CONTAMINATED AND CLIPPED PAGES AS A REPAIR LIST, NOT AS A REASON
+     TO STOP. Five pages of John needed the image rather than the OCR; roughly
+     fifty will across the NT. That is a bounded, enumerable list, produced by
+     the same pass that produces the breaks.
+
+WHY NOT "PROCEED TO THE FULL NT" WITHOUT QUALIFICATION: because 34.8% of the
+headings land inside a verse, and an unqualified import would place a third of
+them by guess. The qualification costs nothing -- the discriminating rule falls
+out of the same geometry -- and it is the difference between an import that can
+be checked and one that cannot.
+
+WHY NOT "DO NOT PROCEED": because the thing this witness was wanted for came
+through almost intact. The paragraph structure is 97.2% verse-aligned, the
+versification agrees with the repository's own bible with no divergence at all,
+and the cost is one file. Refusing that on account of the heading noise would be
+discarding the signal to avoid the apparatus.
+"""
+
+[recommendation.what_would_change_it]
+detail = """
+If Mark and Romans return paragraph rates that differ from John's by more than
+the stated band, or return a versification divergence where John returned none,
+the NT-wide projection here is void and the decision should be retaken on those
+measurements rather than on this one. If a paragraphed Challoner Old Testament
+is ever identified, the New-Testament-only limit stops being a limit and the
+whole question is worth reopening at bible scale.
+"""
+
+# ---------------------------------------------------------------------------
+# Reproduction
+# ---------------------------------------------------------------------------
+
+[reproduce]
+evidence = "verified"
+note = """
+Every number above comes from these bytes. Nothing was imported into the
+repository; the extraction ran outside it and the working files were discarded.
+"""
+
+[[reproduce.artifact]]
+what = "item metadata"
+url = "https://archive.org/metadata/laymansnewtestam0000hugh"
+bytes = 168548
+
+[[reproduce.artifact]]
+what = "hOCR page index, gives per-page byte offsets into the hOCR file"
+url = "https://archive.org/download/laymansnewtestam0000hugh/laymansnewtestam0000hugh_hocr_pageindex.json.gz"
+bytes = 11541
+ia_md5 = "9cf28d28f31e7c01b2476610ee107a67"
+sha256 = "f3fdd93c20602ea997c9778dab23e58c3e7d58fda66132998ae3626ef3b2e430"
+
+[[reproduce.artifact]]
+what = "OCR search text, used to locate John in the volume"
+url = "https://archive.org/download/laymansnewtestam0000hugh/laymansnewtestam0000hugh_hocr_searchtext.txt.gz"
+bytes = 668147
+ia_md5 = "5d1afc9c2bd301377db89f4c8a855eed"
+sha256 = "7ec14f38c4a183830733433d24c2bd97e9afb1cc74a0b093fb365c2878013a59"
+
+[[reproduce.artifact]]
+what = "hOCR for images 320-418, fetched as HTTP Range bytes=15603675-20839560 of the 49,168,365-byte whole"
+url = "https://archive.org/download/laymansnewtestam0000hugh/laymansnewtestam0000hugh_hocr.html"
+bytes = 5235886
+whole_file_ia_md5 = "11bd306a8a235b727ebbcd8f202493f3"
+range_sha256 = "c13c3cdec32d8c894121a6921b3700cd929e5e4bd3037e2f8ccf010a20925996"
+
+[[reproduce.artifact]]
+what = "page image, printed p. 308, read to confirm the geometry"
+url = "https://iiif.archive.org/iiif/laymansnewtestam0000hugh%24326/full/,1500/0/default.jpg"
+bytes = 314263
+sha256 = "bd774afaca02b58d4186571deaafa49a452ed56fb2b0813ca7f83b7f66aa5477"
+
+[[reproduce.artifact]]
+what = "page image, printed p. 322, read to confirm the geometry"
+url = "https://iiif.archive.org/iiif/laymansnewtestam0000hugh%24340/full/,1500/0/default.jpg"
+bytes = 299850
+sha256 = "37f880affdecd5607baa433e2c45ce005f28f484c375f034818b630d93093409"
+
+[[reproduce.artifact]]
+what = "HathiTrust bibliographic record, identity and rights only"
+url = "https://catalog.hathitrust.org/api/volumes/full/json/htid:uc1.%24b493001"
