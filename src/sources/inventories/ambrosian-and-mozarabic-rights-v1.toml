@@ -1,0 +1,700 @@
+# Whether the Ambrosian and Mozarabic missals acquired on 2026-08-02 may be
+# published here, settled once so that it is not settled again -- and in
+# particular so that the difference between the EDITION and the COPY THAT WAS
+# SCANNED is not collapsed for a third time.
+#
+# This file is the twin of src/sources/inventories/missale-bracarense-rights-v1.toml
+# and exists because that one does. Braga was refused on 2026-08-02 when the only
+# digitisation of its 1924 typical edition proved to be that book plus fifteen
+# supplement leaves running to 21 November 1961; the 1920 Missale Romanum had
+# been withdrawn the same day when its appendix proved to print a Mass granted to
+# a society erected in 1970. Both were caught by St Pius X, canonized 1954. The
+# maintainer's ruling that the scope is ALL LATIN RITES therefore arrived with a
+# standing instruction attached: test every printed date against the book's own
+# pages before a byte moves.
+#
+# FIVE BOOKS WERE TESTED AND FIVE PASSED. That is the headline and it is the
+# least interesting thing in this file. What the testing actually found was one
+# volume that is not the single printing its identifier claims, two items the
+# commissioning brief called duplicates that are nothing of the kind, and a
+# search method that had to be rebuilt mid-run because it was returning false
+# negatives. All four are recorded below, because a lane that reports only
+# "cleared" has proved that somebody searched and not that somebody looked.
+#
+# It is not legal advice, it is not an opinion of counsel, and it binds nobody
+# outside this repository. It is the project's own reading, held to the same
+# standard as any other claim here. The jurisdiction throughout is the United
+# States.
+
+rights_schema = 1
+record_type = "ambrosian-and-mozarabic-rights"
+recorded_on = "2026-08-02"
+jurisdiction = "United States"
+governs = [
+  "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.missale-ambrosianum-1712-text-a1319e20",
+  "artifact.archdiocese-of-milan.missale-ambrosianum.milan-pachel-1499.missale-ambrosianum-1499-text-3c876a13",
+  "artifact.archdiocese-of-milan.missale-ambrosianum.milan-sirturi-1640.missale-ambrosianum-1640-text-cc5dcff6",
+  "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.paris-migne-1862.liturgia-mozarabica-1862-text-769ccd75",
+  "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.missale-mixtum-1755-florence-text-c52ac184",
+  "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.missale-mixtum-1755-nypl-text-ed70e3ae",
+  "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712",
+  "edition.archdiocese-of-milan.missale-ambrosianum.milan-pachel-1499",
+  "edition.archdiocese-of-milan.missale-ambrosianum.milan-sirturi-1640",
+  "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.paris-migne-1862",
+  "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755",
+  "work.archdiocese-of-milan.missale-ambrosianum",
+  "work.archdiocese-of-toledo.missale-mixtum-mozarabicum",
+]
+
+holding = """
+ALL SIX ARTIFACTS ARE `tracked` AND `public-domain`, ON THE PRE-1931 UNITED
+STATES LINE AND ON THAT GROUND ALONE.
+
+The books are of 1499, 1640, 1712 (with matter of 1733 bound in), 1755 and 1862.
+The nearest of them to the line is Migne's 1862, which clears it by sixty-nine
+years; the furthest is Pachel's 1499, which clears it by four hundred and
+thirty-two. Nothing can restore any of them: URAA restoration under 17 U.S.C.
+104A runs at most 95 years from publication, which for 1862 ended in 1957 and for
+the rest very much earlier. The line moves later every January and every one of
+these books only recedes from it.
+
+WHAT MAKES THAT A CONCLUSION RATHER THAN A PRESUMPTION IS THAT THE DATES WERE
+READ IN THE BOOKS. Four of the five imprints were read on the page -- two of them
+in the page images, because the recognition could not render them -- and the fifth
+was corroborated by the book's own paschal table calling its imprint year `nunc
+currentis`. Then every leaf of every file was swept for feasts and saints that
+postdate its imprint. The sweep is set out in `[what_was_searched]` with its
+negatives, and it found post-imprint matter in exactly one volume, where that
+matter is of 1733 and free on the same ground as the rest.
+
+NO BOOK IN THIS ACQUISITION WAS REFUSED. That is stated as a fact and not as a
+result: the same test refused Braga the same week, and the reason these five pass
+is that they are old and that their scanned copies are what they say they are,
+not that the test was gentler.
+"""
+
+# --- Evidence levels ----------------------------------------------------------
+
+[evidence_levels]
+levels = """
+The classes missal-acquisition-audit-v1.toml fixed, used identically here and in
+missale-bracarense-rights-v1.toml.
+
+  [verified]  Read here, on 2026-08-02, from the bytes or the images named -- a
+              file fetched to a scratch directory at the URL given, at the line
+              or leaf given. Line numbers are one-based as `grep -n` counts;
+              leaf numbers are zero-based as the Internet Archive's `n` prefix
+              counts, so leaf n0 is the first image. Reproducible.
+  [sourced]   Read from an external document cited by URL, not independently
+              re-derived here.
+  [recorded]  Taken from a record already in this repository, cited by path.
+              Not re-verified here unless the row says so.
+
+Nothing below is asserted from recall. Where a record already in this repository
+or in the commissioning brief said something the bytes do not support, it is
+corrected in `[[corrections]]` rather than quietly dropped. Four corrections were
+needed and three of them are about the identity of a scan rather than about a
+right.
+"""
+
+# --- What was acquired --------------------------------------------------------
+
+[the_acquisition]
+summary = """
+Six exact text layers, 12,002,821 bytes in all, each the Internet Archive
+derivative as served, each authenticated against the item's own recorded sha1
+before hashing and again after the copy into the repository [verified]. No page
+image container was retained: the five PDFs run to 2.45 GB between them, of which
+one is 1.20 GB and another 1.07 GB, and this repository has no cause to hold
+bytes it can re-fetch and did not need. Where an image had to be read, it was
+read from the Internet Archive's per-leaf derivative.
+"""
+ambrosian_1499 = "https://archive.org/details/OEXV698 -- text layer sha256 3c876a132c1957e786183c3f3d967b313d524a58c1a341fe1411fa640cf83665, 1,277,898 bytes, 56,062 lines, 394 leaves, valid UTF-8, no CR, no form feeds; item sha1 fbf2880877bac98cfe174c4dd5cfd433ab262e6a matches [verified]. Recognition: no `ocr` engine field, only `ocr_converted = abbyy-to-hocr 1.1.37`. Quality by scripts/_ocr_quality.py: Latin 0.0537 over 185,461 tokens, `degraded-latin` [verified]. PDF 1,203,559,890 bytes, NOT retained."
+ambrosian_1640 = "https://archive.org/details/bub_gb_6ApfhlfCMksC -- text layer sha256 cc5dcff6b3fdd154a800b6c72d2fa772f600c373dd6c2750be40c610aa0a1427, 1,948,375 bytes, 59,670 lines, 772 leaves; item sha1 4a337fd25564f6f4819dae01221824b151999b5b matches [verified]. Recognition: ABBYY FineReader 9.0. Quality: Latin 0.1086 over 238,161 tokens, `prose-latin` [verified]. PDF 78,039,485 bytes, NOT retained."
+ambrosian_1712 = "https://archive.org/details/10869665bsb -- text layer sha256 a1319e208d2c36298721b6dd62ea6e6020bcc85fa80ea3f14249442d2b8948b5, 1,868,008 bytes, 77,003 lines, 625 leaves; item sha1 5dd7937bb1c050f74fe20db6377a73d117ce13eb matches [verified]. Recognition: tesseract 5.3.0-6-g76ae with `ocr_parameters = -l eng`, `ocr-additional-languages = Fraktur`, 72 ppi, detected language la at 1.0000 and script Latin at 0.9972. Quality: Latin 0.1259 over 255,294 tokens, `prose-latin` -- THE HIGHEST OF THE THREE AMBROSIAN FILES DESPITE THE ENGLISH MODEL [verified]. PDF 1,073,348,269 bytes, NOT retained."
+mozarabic_1755_florence = "https://archive.org/details/bub_gb_hAJaQabODUYC -- text layer sha256 c52ac184379b81e2f4924d565f4c1ced344ad7d25405c8c57b2b1b13784f1f51, 794,299 bytes, 20,253 lines, 761 leaves; item sha1 b4fc34266a87c9036844300eb282f0cc4e9c8eee matches [verified]. Recognition: ABBYY FineReader 9.0. Quality: Latin 0.0509 over 108,392 tokens, `degraded-latin` [verified]. PDF 13,372,022 bytes, NOT retained."
+mozarabic_1755_new_york = "https://archive.org/details/missalemixtumse00leslgoog -- text layer sha256 ed70e3ae6806845acfad9c0028ab4096a1dec4c2e3c34175c0022dfc3b1f0d15, 1,491,426 bytes, 53,824 lines, 408 leaves; item sha1 dd9200a9a8866869e9e2491570bd9149a59e4556 matches [verified]. Recognition: ABBYY FineReader 8.0 at 600 ppi. Quality: Latin 0.1294 over 205,273 tokens, `prose-latin` [verified]. PDF 28,715,021 bytes, NOT retained."
+mozarabic_1862 = "https://archive.org/details/liturgiamozarab01churgoog -- text layer sha256 769ccd75e6534b3cbe38d91e9e47444fc709edadfc308764315f9f225ef6ddcb, 4,622,815 bytes, 114,783 lines, 685 leaves; item sha1 c86c2fff2df14c2430e8f04572711260c72f102c matches [verified]. Recognition: ABBYY FineReader 8.0. Quality: Latin 0.1301 over 578,283 tokens, `prose-latin`, the best in this acquisition [verified]. PDF 59,175,281 bytes, NOT retained."
+recorded_identifiers_state = """
+EVERY IDENTIFIER THE ACT HISTORY AND THE COMMISSIONING BRIEF RECORD IS ALIVE AND
+UNCHANGED, and every byte size either record states was re-derived from the
+metadata API today and matches [verified]. `OEXV698`, `bub_gb_6ApfhlfCMksC`,
+`10869665bsb`, `missalemixtumse00leslgoog`, `liturgiamozarab01churgoog`,
+`bub_gb_hAJaQabODUYC` and `liturgiamozarab00churgoog` all resolve.
+
+ONE IDENTIFIER A READER IS LIKELY TO TRY IS DEAD, and it is worth a line because
+it is the obvious guess: `bsb10869665`, the Bayerische Staatsbibliothek's own
+form of the 1712 item's identifier, IS NOT AN INTERNET ARCHIVE ITEM. The
+metadata API returns an empty object for it. The Internet Archive item is
+`10869665bsb`, with the digits first [verified].
+"""
+
+# --- The line, and why it is a conclusion --------------------------------------
+
+[the_line]
+statement = """
+Any work first published outside the United States before 1931 is out of United
+States copyright. That is the line guidance/missals.md records from Cornell's
+public-domain chart as current on 1 January 2026 [recorded].
+
+THE LINE MOVES EVERY JANUARY. guidance/missals.md:249 says so in terms, so it is
+stated here as DERIVED FOR CALENDAR YEAR 2026 and not as a standing rule: on
+1 January 2027 it becomes before 1932, on 1 January 2028 before 1933, and a later
+reader must re-derive it rather than quote this sentence. The movement is always
+in these books' favour and none of them is close enough for the movement to
+matter:
+
+  1499  clears the 2026 line by 432 years
+  1640  clears it by 291 years
+  1712  clears it by 219 years; the 1733 matter bound into it by 198
+  1755  clears it by 176 years
+  1862  clears it by  69 years -- the narrowest margin in this acquisition
+"""
+uraa_is_closed = """
+Restoration under 17 U.S.C. 104A cannot reach any of them. A restored copyright
+subsists for the remainder of the term the work would have had with United States
+formalities complied with, which for a foreign work is 95 years from publication:
+1594 for the 1499, 1735 for the 1640, 1807 for the 1712, 1828 for the 1733
+matter, 1850 for the 1755, and 1957 for the 1862. Every one of those dates is in
+the past, several of them by centuries. This is the same closure
+missale-bracarense-rights-v1.toml states for 1924 and it is what makes a
+pre-1931 date a conclusion rather than a presumption.
+"""
+
+# --- The date test, book by book ------------------------------------------------
+
+[the_date_test]
+why = """
+The commissioning brief made this test mandatory and gave the reason: two
+acquisitions had already been refused for skipping it. The 1920 Missale Romanum
+was folded in on the pre-1931 line and withdrawn when its appendix proved to
+print a Mass granted to a society erected in 1970. The Braga scan proved to be a
+1924 book plus fifteen supplement leaves running to 1961. Both were caught by
+St Pius X, canonized 1954, in the sanctoral, which is the part of a missal nobody
+reads when they are checking a title page.
+
+A 1499 OR 1640 BOOK CANNOT CARRY A 1954 FEAST UNLESS THE SCAN IS OF A LATER
+STATE. That is the whole test, and it is a test about the SCAN and not about the
+edition.
+"""
+ambrosian_1499 = """
+PASSES, ON THE COLOPHON READ IN THE PAGE IMAGE.
+
+The last text leaf, n384 of 394, foliated `clxxviij`, closes the blessings and
+prints `Impressum Mediolani per magistrum Leonardum Pachel. Anno domini. M.cccc.
+lxxxx viiij. die. xxvij. Augusti.` -- Milan, master Leonard Pachel, 27 August
+1499 [verified in the image at
+https://archive.org/download/OEXV698/page/n384_medium.jpg]. Above it stands the
+printer's verse colophon, `Hoc castigatas: correcto codice missas / Ambrosij
+cernas: quo reparata fides`, and the Bibliotheque Sainte-Genevieve ownership
+stamp is impressed on the same page. That confirms against the book the
+day-precise date src/sources/inventories/latin-missal-acts-v1.toml takes from the
+item's `date` field, `27 VIII 1499` [recorded].
+
+THE COLOPHON HAD TO BE READ IN THE IMAGE BECAUSE THE TEXT LAYER CANNOT RENDER
+IT, and that is the governing fact about this book's negatives. All thirty-two
+probes returned nothing over the whole file and over its per-leaf recognition,
+and NOT ONE OF THOSE NEGATIVES IS ADMITTED AS EVIDENCE: at 0.0537 Latin
+function-word share an absent string is a fact about the recognition. The
+positive reading of the page is the whole of this book's date evidence.
+
+NOTHING IS BOUND IN. The book runs kalendar to blessings and stops at its own
+colophon on n384; n385 is a manuscript flyleaf and n386-n393 are the
+conservator's scale bars [verified]. The Sainte-Genevieve catalogue records the
+copy as wanting leaves [*]1 and m8, which is a defect and not an accretion
+[sourced, the item's own description quoting the shelfmark OEXV 698 RES and Sudoc
+notice 10011993X].
+"""
+ambrosian_1640 = """
+PASSES, ON THE ENGRAVED TITLE PAGE AND ON THE BOOK'S OWN PASCHAL TABLE, WHICH ARE
+INDEPENDENT OF EACH OTHER.
+
+Leaf n4 of 772 is Cesare Bassano's engraving of St Ambrose headed `MISSALE
+AMBROSIANVM` and lettered at the foot `MEDIOLANI / Apud Io. Ambrosium Sirturu,
+haer. Pontij, & Picaleae, Impress. Archiep. M DC XL` [verified in the image at
+https://archive.org/download/bub_gb_6ApfhlfCMksC/page/n4_medium.jpg]. It carries
+no machine-readable text, so the Google scan's text layer opens on Cardinal
+Cesare Monti's letter instead and the title page is invisible to any search over
+the file.
+
+Independently: the `TABELLA TEMPORARIA FESTORVM MOBILIVM` at leaf n22 opens its
+first row at 1640, and the rubric at n23 reads `Primus numerus, qui est vij,
+tribuatur Anno 1640, ut in Tabula Temporaria; sequens, qui est viij, tribuatur
+Anno 1641, & sic deinceps` and `Vt Anno 1640 in cellula Litterae Dominicalis A G
+NVNC CVRRENTIS` [verified]. A book that calls 1640 the current year was made for
+1640.
+
+THIRTY-NINE POST-IMPRINT YEARS STAND IN THIS FILE AND EVERY ONE IS A TABLE CELL.
+Arabic years 1641 to 1679 occur at lines 4448 to 5239 and nowhere else; they are
+the rows of that paschal table. This is the Braga shape exactly -- that book's
+tables run to 1983 and open at 1923 -- and a long computistical table is a design
+feature of a missal, not a dating signal. Recorded because the first sweep
+surfaced them as candidate anachronisms and they had to be run down.
+
+The volume ends at `F I N I S.` on leaf n767 with no supplement, no second title
+page and no second imprint [verified].
+"""
+ambrosian_1712 = """
+PASSES ON RIGHTS AND FAILS ON IDENTITY, AND THAT DISTINCTION IS THE MOST USEFUL
+THING IN THIS FILE.
+
+The letterpress title page at leaf n10 of 625 reads `NOVISSIME / CARDINALIS
+ARCHINTI / ARCHIEPISCOPI / Auctoritate recognitum / MEDIOLANI, MDCCXIj. / Apud
+Beniamin, & Fratres de Sirturis, Impressores Archiepiscopales. / CUM PRIVILEGIO.`
+[verified]. Giuseppe Archinto was Archbishop of Milan until his death in 1712.
+
+BUT THE SCANNED VOLUME IS NOT ONLY THAT BOOK. Bound at the end, after the
+Missal's own last quire, are Masses printed at Milan in 1733 by order of Cardinal
+Benedetto Odescalchi, Archinto's successor, TWO OF WHICH PRINT SAINTS CANONIZED
+AFTER 1712:
+
+  n602  `SANCTI ALOYSII GONZAGAE CONFESSORIS DIE XXVI. APRILIS` -- Aloysius
+        Gonzaga canonized 31 December 1726 [verified]
+  n604  `SANCTI IOANNIS NEPOMUCENI SACERD. ET MARTYR.` -- John Nepomucene
+        canonized 19 March 1729 [verified]
+
+with them the Mass of the Most Holy Name of Jesus (n596-598), St Francis de Sales
+(n600-601), and St Raphael printed twice (n606-608, n612-614). Their date is on
+their own title pages: leaf n606 reads `MISSA SANCTI RAPHAELIS ARCHANGELI
+SOLEMNE DIE XXIV OCTOBRIS. JUSSU Eminentiss. & Reverendiss. D. D. BENEDICTI tit.
+SS. duodecim Apostolorum S. R. E. Presbyt. Card. ODESCALCHI Sanctae
+Mediolanensis Ecclesiae Archiepiscopi. NOVISSIME IMPRESSA. MEDIOLANI,
+MDCCXXXIII. Apud Beniamin de Sirturis, heredem Pacifici Pontii, & Piccaleae,
+Impressorem Archiepiscopalem, Cum Privilegio.` [verified in the image at
+https://archive.org/download/10869665bsb/page/n606_medium.jpg]. Leaf n612 is a
+second setting of the same title with the same year, and the terminal colophon at
+n598, line 75817, carries the same imprint [verified].
+
+THE BODY UNDER THEM IS STILL 1712. The kalendar at n13-n20 carries the Milanese
+sanctoral -- Martinianus, Benignus, Castritianus, Charles Borromeo -- and none of
+the four 1733 saints [verified]. The added Masses stand physically after the
+volume's own last quire, each with its own title page, in the shape of separately
+issued fascicles bound up by whoever owned the book.
+
+WHY THIS IS NOT BRAGA. Braga's supplement ran to 1961 and the line does not reach
+1961. This one stops at 1733 and the line reaches it by a hundred and
+ninety-eight years. THE FINDING IS THEREFORE BIBLIOGRAPHIC AND NOT A RIGHTS
+DEFECT: it changes what the file may be CALLED, which the edition record now
+says in its title, and it changes nothing about what may be done with the bytes.
+Nobody upstream flagged it -- neither the Internet Archive item, which is titled
+`Missale Ambrosianum` and described `Mediolanum 1712`, nor the Bayerische
+Staatsbibliothek digitisation card bound in as the scan's last leaf, which says
+the same. It is visible only in the bytes and the images, exactly as at Braga.
+"""
+mozarabic_1755 = """
+BOTH COPIES PASS.
+
+The New York copy's title page at leaf n11 of 408 reads `MISSALE MIXTUM SECUNDUM
+REGULAM BEATI ISIDORI DICTUM MOZARABES, PRAEFATIONE, NOTIS, ET APPENDICE AB
+ALEXANDRO LESLEO S. J. SACERDOTE ORNATUM. PARS PRIMA. ROMAE MDCCLV. Sumptibus
+Venantii Monaldini Bibliopolae in Via Cursus. TYPIS JOANNIS GENEROSI SALOMONI.
+SUPERIORUM PERMISSU.` [verified]. The Florence copy carries the same setting at
+its leaf n7 [verified]. Both then print Monaldini's dedication to Benedict XIV,
+who reigned 1740-1758.
+
+Thirty-two probes over every leaf of both found nothing later than the imprint.
+The single hit was `Missale Romanum S. Pii Quinti` in Lesley's preface, where he
+argues the Mozarabic Masses are no less sacred for differing from the Roman book
+-- a scholar of 1755 discussing 1570, which is what a critical preface does
+[verified].
+
+ONE FOOTNOTE IS UNRESOLVED AND IS RECORDED RATHER THAN SMOOTHED. Line 1676 of the
+New York text layer reads `t. Lat. Venetiis 1759`, four years after the imprint,
+in a note otherwise citing Honoratus a Sancta Maria; the adjacent note in the
+same column reads `Venet. 173-` in the same position, so the likeliest reading is
+an OCR digit substitution [verified]. It was not settled against the page image
+because no reading of it can move this book across a line a hundred and
+seventy-six years away. It is written down so that a later reader who finds it
+knows it was seen.
+"""
+mozarabic_1862 = """
+PASSES, AND IS THE ONE BOOK IN THIS ACQUISITION WHERE THE TEST WAS NOT A
+FORMALITY -- 1862 is late enough that a nineteenth-century book with
+twentieth-century matter bound in is a real shape.
+
+Thirty-two probes over all 685 leaves found St Pius X absent, the Queenship
+absent, St Joseph the Worker absent, Christ the King absent, St Therese absent,
+the Immaculate Heart absent, `Signum magnum` and `ignum magnum` absent, the 1960
+class ranks absent, the restored Holy Week absent, St Joseph in the Canon absent,
+John XXIII and the Second Vatican Council absent [verified]. The one hit was
+`Tridentinum (sess. 2, cap. i)` in an editorial footnote on the authorship of the
+Canon at leaf n585 -- a nineteenth-century editor citing a sixteenth-century
+council [verified].
+
+THE ONE POST-IMPRINT DATE IN THE FILE IS A LIBRARY STAMP. Line 410 reads
+`HARVARD COLLEGE LIBRARY / TREAT FUND / CHARTRAND COLLECTION / JUNE 8, 1928`
+[verified]. It is the accession plate of the copy that was scanned; it dates
+Harvard's acquisition and not Migne's press, and 1928 is before the line in any
+case. Recorded because a sweep that reported `1928 found` and stopped there would
+have looked like the Braga finding and is nothing of the kind, and because that
+is precisely the sort of thing a hurried lane calls a hit.
+"""
+
+# --- What was searched for, including what was not found -------------------------
+
+[what_was_searched]
+method = """
+Thirty-two probes per book, case-folded and accent-stripped, with j folded to i,
+v to u, ae- and oe-digraphs expanded and `&` read as `ae`, so that `GONZAG&`,
+`Gonzagae` and `gonzagae` all match one pattern. Run over every leaf of every
+book. Every probe is named below with its outcome, INCLUDING THE ONES THAT FOUND
+NOTHING, because a sweep reported only by its hits is indistinguishable from a
+lucky one.
+
+THE METHOD HAD TO BE REBUILT MID-RUN AND THAT IS THE MOST TRANSFERABLE FINDING
+HERE. The first pass probed the `_djvu.txt` text layers LINE BY LINE. All five
+books returned clean. THEY WERE NOT CLEAN: these missals set two columns to the
+page and the Internet Archive's text layer interleaves them, so a two-word
+heading like `SANCTI IOANNIS / NEPOMUCENI` is split across two text lines and a
+line-oriented pattern can never match it. The second pass probed WHOLE LEAVES,
+reconstructed from each item's own per-leaf recognition (`<id>_djvu.xml`), and
+St Aloysius Gonzaga and St John Nepomucene appeared immediately in the 1712 --
+the two saints that turned out to date its bound-in fascicles. EVERY NEGATIVE
+REPORTED BELOW IS FROM THE LEAF-LEVEL PASS. A later lane running a negative
+search over any of these artifacts must do the same, or say that it did not.
+
+THE PROBES HAVE A SECOND, UNFIXED LIMIT AND IT IS REPORTED RATHER THAN BURIED.
+The leaf-level battery ALSO missed St Charles Borromeo in the 1640, where he is
+plainly present: the index at n7 reads `Caroli, Epifc.Mcdiol.4.Nouembris.` and
+the body has `S. Caroli,Epi(c. Mediol. folemne.` The probe looked for `Borromaei`
+and for `Caroli ... Mediol`; this book never uses the surname, and the scan reads
+`Mediol` as `Mcdiol`. He was found by reading, not by searching. Borromeo is 1610
+and expected in a 1640 book, so nothing turned on it -- but A BATTERY THAT CAN
+MISS A SAINT IT IS HUNTING IS A BATTERY WHOSE NEGATIVES CARRY THAT LIMIT, and
+the limit is attached to every negative in this file.
+"""
+found = """
+Present, and each is either expected or dates a stratum [verified]:
+
+  1712, leaf n602  St Aloysius Gonzaga, canonized 1726 -- POST-IMPRINT
+  1712, leaf n604  St John Nepomucene, canonized 1729 -- POST-IMPRINT
+  1712, leaves n598, n606, n612  the imprint MEDIOLANI MDCCXXXIII -- POST-IMPRINT
+  1712, leaf n341  St Francis de Sales, canonized 1665 -- expected in a 1712 book
+  1712, leaves n13, n20  St Charles Borromeo, canonized 1610 -- expected
+  1640, leaves n7 and body line 3376  St Charles Borromeo -- expected, and MISSED
+                   BY THE PROBE; found by reading
+  1755, leaves n32, n54, n106  `Missale Romanum S. Pii Quinti` in Lesley's
+                   critical preface -- a scholar of 1755 discussing 1570
+  1862, leaf n585  `Tridentinum (sess. 2, cap. i)` in an editorial footnote on
+                   the authorship of the Canon -- an editor of 1862 citing 1563
+  1862, line 410   the Harvard College Library accession plate, `JUNE 8, 1928` --
+                   a library stamp, not a printing
+"""
+searched_and_absent = """
+Absent from every one of the five books, at leaf level [verified]. These are the
+probes the brief named, and they are the ones that refused two other missals this
+week:
+
+  ST PIUS X, canonized 29 May 1954 -- 0 hits on `Pii Papae X`, `Sancti Pii X`,
+  `Pii X Papae`, and 0 on his collect `Deus qui ad tuendam catholicam fidem`.
+  This is the saint that caught both the 1920 Missale Romanum and the Braga scan.
+  THE QUEENSHIP OF THE BLESSED VIRGIN MARY, Ad caeli Reginam, 11 October 1954 --
+  0 hits on `Virginis Reginae`, `Mariae Reginae`, `Ad caeli Reginam`.
+  ST JOSEPH THE WORKER, instituted 1955 -- 0 hits on `Ioseph Opificis`,
+  `Iosephi Opificis`, `Opificum Patroni`.
+  CHRIST THE KING, Quas primas, 11 December 1925 -- 0 hits on `Iesu Christi
+  Regis`, `Christi Regis`, `Quas primas`, `Dominica ultima Octobris`.
+  ST THERESE OF LISIEUX, canonized 1925 and universal 1927 -- 0 hits on
+  `a Iesu Infante`, `ab Infante Iesu`, `Infante Iesu`.
+  THE IMMACULATE HEART OF MARY AS `duplex II classis`, 1944 -- 0 hits on
+  `Immaculati Cordis`, `Cordis Immaculati`.
+  THE ASSUMPTION IN THE MASS SIGNUM MAGNUM, 1950 -- 0 hits on `Signum magnum`
+  AND 0 ON `ignum magnum`, THE FORM IT TAKES WHERE A SCAN DROPS AN ORNAMENTAL
+  INITIAL. That second form is the string that hid the 1920's true date for a
+  day and it was probed for deliberately in every book here.
+  THE 1960 CODE OF RUBRICS CLASS RANKS -- 0 hits on `I classis`, `II classis`,
+  `III classis`, `1. classis`, `2. classis`, `3. classis`, `duplex II classis`.
+  Two such labels in a book that otherwise never uses them were what exposed the
+  Braga supplement.
+
+Also absent from all five [verified]:
+
+  St Rose of Lima (1671), St Vincent de Paul (1737), St Alphonsus Liguori (1839),
+  St Joan of Arc (1920), St Bernadette Soubirous (1933), St John Bosco (1934),
+  Thomas More and John Fisher (1935), St Maria Goretti (1950), St Anthony Mary
+  Claret (1950) -- 0 hits each.
+  The Immaculate Conception dogma, `Ineffabilis Deus` (1854) -- 0 hits.
+  The 1929 Mass of the Sacred Heart, `Cogitationes cordis` as an Introit --
+  0 hits.
+  Our Lady of Fatima -- 0 hits. Our Lady of Lourdes and the 1907 feast --
+  0 hits.
+  The restored Holy Week of 1955 -- 0 hits on `Vigilia paschalis`, `Ordo
+  Hebdomadae Sanctae`, `instauratus ordo`.
+  St Joseph in the Canon, inserted 1962 -- 0 hits on `eiusdem Virginis Sponsi`.
+  Rubricarum instructum, John XXIII, the Second Vatican Council, Sacrosanctum
+  Concilium, any post-conciliar matter -- 0 hits.
+  Any copyright notice or reservation of rights in five languages -- 0 hits on
+  `all rights reserved`, `tutti i diritti`, `todos los derechos`, `tous droits`,
+  `proprieta letteraria`. NOT RELIED ON IN EITHER DIRECTION: after the URAA a
+  foreign work needs no notice to be protected, so an absence proves nothing.
+  This is the same discipline missale-bracarense-rights-v1.toml applied to the
+  same absence.
+  Any arabic year later than each book's imprint, outside the paschal tables of
+  the 1640 and the worked examples in the 1712's epact rubric, and outside the
+  Harvard stamp in the 1862.
+
+A NOTE ON A FALSE POSITIVE, because it nearly became a finding. Line 970 of the
+1499 reads `0ancri marroli arcbiepifcopi mediolani` and was first read as Sancti
+CAROLI archiepiscopi Mediolani -- Charles Borromeo, canonized 1610, in a 1499
+book, which would have refused it. It is St MAROLUS, archbishop of Milan, died
+423, feast 23 April. The neighbouring entries are of the same kind: `Sancti
+Castriciani archiepiscopi Mediolani` at line 2550, Castritian being the first
+bishop of Milan. AN AMBROSIAN KALENDAR IS FULL OF LATE-ANTIQUE MILANESE
+ARCHBISHOP-SAINTS and a sweep of this rite must expect it.
+"""
+
+# --- The hosts, which are three different shapes ---------------------------------
+
+[the_hosts]
+why_this_section_exists = """
+The commissioning brief said the Sainte-Genevieve and Bayerische Staatsbibliothek
+items are NOT Internet Archive items and that their hosts' conditions of use are
+`a different rights shape from a bare public-domain mark`. THE FIRST HALF IS
+WRONG AND THE SECOND HALF IS RIGHT, and disentangling them is worth a section
+because the same confusion will recur on every institutional digitisation this
+project meets.
+
+All six files were fetched from archive.org. What differs is WHO PUT THEM THERE
+and WHAT THEY SAY ABOUT THEM, and there are three distinct shapes in this
+acquisition.
+"""
+shape_one_library_uploads_its_own_scan = """
+THE 1499. Internet Archive item `OEXV698`, in the collections
+`bibliothequesaintegenevieve` and `bibliothequesaintegenevievelivres`, uploaded
+BY the library from `bsg.numerisation@sorbonne-nouvelle.fr` [verified]. The item
+carries `rights = "domaine public"` and `licenseurl =
+http://creativecommons.org/publicdomain/mark/1.0/`, and `source = "Bibliotheque
+Sainte-Genevieve, OEXV 698 RES"` [verified]. The library's practice of
+distributing its digitised incunabula on the Internet Archive under the Public
+Domain Mark since 2010 is consistent with both [sourced].
+
+This is the CLEANEST shape and the one that most tempts a lane to lean on it. IT
+IS NOT LEANED ON HERE. A digitising library's statement is a statement about its
+scans; it cannot enlarge or shrink the copyright status of a book printed in
+1499, and where an institution asserts terms over a faithful reproduction of
+public-domain matter this repository's position is the Bridgeman one.
+"""
+shape_two_third_party_reupload_of_a_library_scan = """
+THE 1712. Internet Archive item `10869665bsb`, uploaded on 24 May 2026 by a
+PRIVATE INDIVIDUAL, `pavelserebrjanyi@gmail.com`, into `german-online-libraries`,
+with `source_url = https://www.digitale-sammlungen.de/en/view/bsb10869665`
+[verified]. The scan is the Bayerische Staatsbibliothek's: its own digitisation
+card is bound into the file as leaf n624, reading `Bayerische StaatsBibliothek /
+MDZ Munchener DigitalisierungsZentrum / Digitale Bibliothek / Missale
+Ambrosianum / Mediolanum 1712 / Res/2 Liturg. 182 /
+urn:nbn:de:bvb:12-bsb10869665-9` [verified].
+
+THE ITEM CARRIES NO `licenseurl` AND NO RIGHTS FIELD AT ALL [verified]. So unlike
+the 1499 there is no host mark here even to decline to rely on, and the basis
+rests entirely on the imprints and on Bridgeman -- which is where it should rest
+anyway. The MDZ's published practice is to serve public-domain digitisations
+under the Public Domain Mark 1.0, permitting copying, modification and
+distribution including for commercial purposes without permission, and to state
+its rights position per object [sourced]. THE OBJECT PAGE ITSELF COULD NOT BE
+LOADED FROM THIS RUN -- three attempts on 2026-08-02 returned the MDZ's error
+page -- SO IT IS NOT RELIED ON IN EITHER DIRECTION and is recorded as an
+unverified gap rather than as a licence.
+
+The shape's hazard is worth naming: a re-upload's metadata is the uploader's, not
+the library's. This item's `language` field says `English` for a wholly Latin
+book, and its `date` field says 1712 for a volume that also contains 1733 matter.
+Neither error would have been made by the holding library and both are in the
+record a consumer would read first.
+"""
+shape_three_google_scan_and_its_own_front_matter = """
+THE 1640, THE TWO 1755 COPIES AND THE 1862, all scanned by Google for the
+National Central Library of Rome, the National Central Library of Florence, the
+New York Public Library and Harvard respectively.
+
+TWO OF THESE FILES CONTAIN MODERN PROSE OF GOOGLE'S OWN AUTHORSHIP AND IT IS IN
+THE TRACKED BYTES. `missalemixtumse00leslgoog_djvu.txt` at lines 1-43 and
+`liturgiamozarab01churgoog_djvu.txt` at lines 1-46 carry Google's `Usage
+guidelines` page [verified]: `Google is proud to partner with libraries to
+digitize public domain materials...`, `+ Make non-commercial use of the files We
+designed Google Book Search for use by individuals, and we request that you use
+these files for personal, non-commercial purposes`, `+ Maintain attribution The
+Google "watermark" you see on each file is essential... Please do not remove it`.
+The two `bub_gb_*` items DO NOT carry it -- the Wikimedia `bub` upload chain
+stripped it, leaving only the watermark as OCR noise, `gitized by Godgle`
+[verified].
+
+BRIDGEMAN DOES NOT REACH THAT PAGE, because it is not a reproduction of anything;
+it is new writing of the 2000s. This is structurally the same problem as Braga's
+-- the exact artifact carries matter its basis does not cover -- and it is
+answered rather than ignored:
+
+  1. GOOGLE WROTE AND INSERTED THAT PAGE PRECISELY TO TRAVEL WITH THE FILE and
+     asks in it that the attribution not be removed. Redistributing it unaltered
+     is exactly what it requests, and that is an implied licence to do so. It is
+     redistributed unaltered.
+  2. THE NON-COMMERCIAL SENTENCE IS A REQUEST AND NOT A CONDITION. Google's
+     wording is `we request that you use these files for personal,
+     non-commercial purposes`, and the same page says `Public domain books
+     belong to the public and we are merely their custodians`. Google asserts no
+     copyright in the books or in the scans and could not sustain one in a
+     faithful reproduction.
+  3. IT IS SEVERABLE, WHICH BRAGA'S SUPPLEMENT WAS NOT. `sed '1,43d'` on the New
+     York file and `sed '1,46d'` on the Migne file are stated replayable
+     transformations on a boundary the files actually have. That route is not
+     taken, because it is not needed and because the exact acquired bytes are
+     worth more than a tidier file; it is recorded so that a later lane that
+     wants the book without the notice knows the cut is clean. Contrast
+     missale-bracarense-rights-v1.toml `[routes_examined_and_refused]`, where the
+     supplement was scattered through the sanctoral and no such cut existed.
+
+Nothing in this repository quotes the notice as source text.
+"""
+
+# --- What may and may not be done -------------------------------------------------
+
+[the_practical_answer]
+may = """
+  Publish, quote, index, search and redistribute the text of all five books from
+  these six artifacts.
+  Retain the exact acquired bytes in Git, which is what `tracked` means and what
+  has been done.
+  Build derivatives -- normalisation, OCR correction, page maps, extracted
+  passages -- as SEPARATE artifacts linked to these as inputs, per
+  guidance/sources.md. Do not silently correct these files in place.
+"""
+may_not = """
+  Quote any of these text layers as a reading of the liturgy without checking it
+  against the page images. Every one of the six is uncorrected OCR and two of
+  them are `degraded-latin`. `read_from = "not-read"` on the Ambrosian and
+  Mozarabic witness rows in src/sources/inventories/latin-missal-acts-v1.toml is
+  still correct and was not touched by this lane.
+  Rest a NEGATIVE search on the 1499 or on the Florence 1755. At 0.0537 and
+  0.0509 Latin function-word share, an absent string in either is evidence about
+  the recognition and not about the book.
+  Attribute a formulary from leaves n596-n614 of the 1712 file to the year 1712.
+  Those are the 1733 fascicles.
+  Cite `liturgiamozarab00churgoog` as a Mozarabic MISSAL. It is the Breviarium
+  Gothicum, Patrologia Latina 86.
+  Treat the New York 1755 copy as containing the whole book. It stops at its
+  leaf n401.
+"""
+
+# --- What would overturn this -----------------------------------------------------
+
+[what_would_overturn_this]
+note = "Stated concretely, so a later reader can attack this record on its own terms rather than re-deriving it."
+items = """
+  1.  EVIDENCE THAT ANY OF THE FIVE BOOKS WAS FIRST PUBLISHED LATER THAN ITS
+      IMPRINT SAYS. Every date above is a colophon or title page READ IN THE SCAN
+      or, for the 1640, corroborated by the book's own paschal table. A
+      demonstration that one of these scans is of a later re-impression carrying
+      an old date would move that book -- though for four of the five it would
+      have to move it by more than a century and a half to reach the line.
+
+  2.  POST-1931 MATTER IN ANY OF THE SIX FILES THAT THE SWEEP MISSED. This is
+      the live risk and it is not hypothetical: the sweep's own limits are
+      documented in `[what_was_searched].method`, it demonstrably missed a saint
+      it was hunting in the 1640, and its negatives over the 1499 and the
+      Florence 1755 are worthless for the reason given. THE MOST LIKELY PLACE
+      FOR SUCH MATTER IS THE END OF A VOLUME, where the 1712's 1733 fascicles
+      were found and where Braga's 1961 leaves were. The 1499, 1640 and Florence
+      1755 were each read to their last substantive leaf here; the 1862 and the
+      New York 1755 were not read leaf by leaf to the end, only swept.
+
+  3.  A DETERMINATION THAT GOOGLE'S `Usage guidelines` PAGE IS NOT REDISTRIBUTABLE
+      on the reasoning in `[the_hosts].shape_three_google_scan_and_its_own_front_matter`.
+      It would not touch the books. It would require deleting lines 1-43 of the
+      New York 1755 artifact and lines 1-46 of the 1862 artifact, on the stated
+      replayable cuts, and re-hashing both.
+
+  4.  A CHANGE IN LAW SHORTENING OR EXTENDING RESTORED TERMS. Nothing of the kind
+      is pending; recorded because a rights record that lists no such condition
+      claims a permanence it does not have.
+
+  5.  A CLAIM BY A DIGITISING INSTITUTION over its scans of these books. It would
+      be met with Bridgeman and with `[the_hosts]`, and it is recorded as a thing
+      that could be asserted rather than as a thing that would succeed.
+
+Note what does NOT overturn any of this: an Internet Archive public-domain mark,
+the absence of any rights field on an item, the absence of a copyright notice in
+a book, or the fact that a download succeeded. The last of those is the point
+guidance/sources.md:395-400 makes in terms, and the first is the ground refused
+at src/sources/inventories/lt-hist-rights-audit-v1.toml.
+"""
+
+# --- Corrections to records already in this repository, and to the brief ----------
+
+[[corrections]]
+id = "1755-new-york-copy-is-not-whole"
+claim = "The 1755 Lesley Mozarabic missal digitised as `missalemixtumse00leslgoog` is `the first edition of the rite anyone here can read whole` [recorded, src/sources/inventories/latin-missal-acts-v1.toml, witness row 1755-missale-mixtum-lesley]."
+finding = "True of the EDITION and false of THAT COPY. The New York Public Library scan's last text leaf, n401 of 408, breaks off inside the sanctoral at `IN JEJUNIO KALENDARUM NOVEMBRIUM` with no explicit and no end matter. The complete text is in the National Central Library of Florence copy, Internet Archive `bub_gb_hAJaQabODUYC`, whose leaf n591 of 761 prints `Expletum est Missale Mixtum secundum regulam Beati Isidori dictum Mozarabes` [verified]."
+effect = "Both copies are registered as artifacts of the one 1755 edition, with the difference stated on each and in the edition record, so that a reader who needs the end of the book knows where it is and a reader who needs legible Latin knows the New York copy is far better OCR (0.1294 against 0.0509) for as far as it goes. THE ROW ITSELF WAS NOT EDITED: the act-history inventories were outside this lane's ownership. Nothing about the row's identifier, image count, byte sizes or rights is wrong; all four were re-verified here."
+
+[[corrections]]
+id = "hAJaQabODUYC-is-not-a-duplicate"
+claim = "`bub_gb_hAJaQabODUYC` is a duplicate of the Lesley 1755 the act history already carries [the commissioning brief for this lane, 2026-08-02]."
+finding = "It is a different copy of the same edition and it carries more of the book: 761 leaves against 408, and it runs to the work's explicit where the other stops part way through the sanctoral [verified]. Its OCR is much worse. Neither copy substitutes for the other."
+effect = "Registered as a second artifact of the 1755 edition rather than discarded. guidance/sources.md names both failures this avoids -- a false absence, where the end of a book is held under a name nobody searched, and a false duplicate, where two copies drift and nothing compares them. Recorded because `duplicate` was the reason the brief gave for not looking, and looking took four minutes."
+
+[[corrections]]
+id = "liturgiamozarab00churgoog-is-a-breviary"
+claim = "`liturgiamozarab00churgoog` is a duplicate of the Migne 1862 Mozarabic missal [the commissioning brief for this lane, 2026-08-02]."
+finding = "IT IS A DIFFERENT BOOK AND A DIFFERENT GENRE. Its Internet Archive `volume` field says 2; its own pages say `TOMUS POSTERIOR` and carry the running signature `PATROL. LXXXVI.` throughout. It is Patrologia Latina 86, the Breviarium Gothicum recognised by Lorenzana -- a BREVIARY, 819 leaves, carrying the office and not the Mass. The missal is Patrologia Latina 85, `TOMUS PRIOR`, Internet Archive `liturgiamozarab01churgoog`, 685 leaves, which is the item the act history names and the one registered here [verified]."
+effect = "Not registered. Folding it in as a second copy of the missal would have put an office book under a missal's identity. It is named here so that the next reader does not re-derive it; the two items share the set title `Liturgia Mozarabica ... in duos tomos divisa`, which is the whole reason the confusion is easy, and the `volume` field is the quickest discriminator."
+
+[[corrections]]
+id = "the-1712-scan-is-a-composite"
+claim = "`10869665bsb` is a digitisation of the Missale Ambrosianum, Milan 1712 [the Internet Archive item's own title and description; the Bayerische Staatsbibliothek digitisation card bound into the scan; the commissioning brief]."
+finding = "The volume is that book PLUS Masses printed at Milan in 1733 by order of Cardinal Odescalchi, bound in after the Missal's own last quire, two of which print saints canonized after 1712 -- St Aloysius Gonzaga (1726) at leaf n602 and St John Nepomucene (1729) at n604. The added fascicles carry their own title pages dated MDCCXXXIII at leaves n606 and n612 and a terminal colophon of the same year at n598 [verified, and the n606 title page read in the page image]."
+effect = "The edition record's title says so, and the artifact record locates the strata. NO RIGHTS CONSEQUENCE: 1733 clears the pre-1931 line by a hundred and ninety-eight years, so unlike Braga this is a bibliographic finding and not a refusal. Recorded because an edition record reading `1712` flat would be false about the bytes, and because the next lane to quote a Mass off leaf n602 as evidence of the Ambrosian use in 1712 would be twenty-one years wrong."
+
+[[corrections]]
+id = "the-hosts-are-all-internet-archive"
+claim = "The Sainte-Genevieve and Bayerische Staatsbibliothek items are NOT Internet Archive items, and their hosts have their own conditions of use, which is a different rights shape from a bare public-domain mark [the commissioning brief for this lane, 2026-08-02]."
+finding = "Both ARE Internet Archive items and both were fetched from archive.org: `OEXV698`, uploaded by the Bibliotheque Sainte-Genevieve itself into its own Internet Archive collection, and `10869665bsb`, uploaded by a private individual from the Bayerische Staatsbibliothek's digitisation [verified]. The brief's second clause nevertheless identifies something real, and it is not what the first clause implies: the difference between these items is not archive.org versus elsewhere but WHO UPLOADED AND WHAT THEY SAID. The 1499 carries a library's own `rights = domaine public` and a CC Public Domain Mark; the 1712 carries no rights field of any kind; the four Google-scanned items carry a Public Domain Mark or a `NOT_IN_COPYRIGHT` guess, and two of them carry Google's own modern usage notice inside the bytes."
+effect = "`[the_hosts]` sets out the three shapes and the position on each. The operative point survives the correction: a host's mark is never a link in any basis in this file, and the one host whose object page could not be loaded is recorded as an unverified gap rather than as a licence."
+
+[[corrections]]
+id = "the-1640-imprint-is-not-only-a-printing-licence"
+claim = "The 1640 Ambrosian missal's `impress. archiep.` imprint `is a licence to print and NOT an act revising the rite`, which is why its station is `printed` and not `promulgated` [recorded, src/sources/inventories/latin-missal-acts-v1.toml, witness row 1640-missale-ambrosianum-sirtori]."
+finding = "The imprint limb is right about the imprint. But the book prints, at leaf n6 and before anything else, a letter of `CAESAR ... CARDINALIS MONTIVS, ARCHIEPISCOPVS` to the whole clergy of Milan, in which the archbishop says a new edition was called for -- `iam temporis edacitas nouam Missalis editionem postulabat` -- and that he has had particular orations and whole Masses of certain saints placed each in its own place, some of them instituted by himself: `collocari suis locis, prout ratio temporum exigebat, peculiares quorundam Sanctorum Orationes, et integra etiam eorum Sacra, quae ... Nos ipsi ad maiorem Dei gloriam instituimus` [verified]. That is an act of the metropolitan of the rite upon the book, not merely a licence to a printer."
+effect = "Nothing was changed. The station's classification is the act history's and the act-history inventories were outside this lane's ownership; the finding is recorded on the edition record and here so that a lane that does own them can weigh it. It is a candidate for reclassification and is expressly NOT asserted as one: whether an archbishop's preface saying he revised the book is a `promulgation` in this file's vocabulary is a question about the vocabulary, and the acquisition lane is not the place to answer it."
+
+# --- Counts -----------------------------------------------------------------------
+
+[counts]
+books_tested = 5
+books_acquired = 5
+books_refused = 0
+artifacts_registered = 6
+probes_run_per_book = 32
+post_imprint_formularies_found = 2
+post_imprint_imprints_found = 3
+copyright_notices_found = 0
+bytes_added_to_this_repository = 12002821
+page_image_bytes_not_retained = 2447550688
+corrections_recorded = 6
+identifiers_checked = 8
+dead_identifiers_found = 1
+counts_note = """
+`books_refused = 0` is the number that most needs a reason attached, because a
+lane that refuses nothing looks like a lane that checked nothing. The reason is
+the dates: 1499, 1640, 1712, 1755 and 1862 are not years in which a rights
+question is close. Braga was refused the same week on the identical test, and the
+test here was harder, not softer -- it was run twice, at line level and then at
+leaf level, and the second run is what found the 1733 fascicles that the first
+had missed.
+
+`post_imprint_formularies_found = 2` and `post_imprint_imprints_found = 3` are
+the whole of the accretion this acquisition met, all of it in one volume, all of
+it of 1733. Set against Braga's twelve formularies and twenty-five dated
+subscriptions running to 1961, that is what a book of a rite nobody has added a
+Mass to in two centuries looks like.
+
+`dead_identifiers_found = 1` is `bsb10869665`, the Bayerische Staatsbibliothek's
+own identifier form for the 1712 item, which is not an Internet Archive item and
+returns an empty metadata object. The Internet Archive item is `10869665bsb`.
+
+`bytes_added_to_this_repository = 12002821` against
+`page_image_bytes_not_retained = 2447550688`. The five page-image containers run
+to 2.45 GB, of which one is 1.20 GB and another 1.07 GB. None is registered:
+guidance/sources.md says not to introduce a large-file route until measured size
+or rights constrain the alternative, and nothing here does. Every image reading
+in this file was taken from the Internet Archive's per-leaf derivative, cited by
+URL at the point it is used, so each is re-checkable without fetching a gigabyte.
+"""

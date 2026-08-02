@@ -1,0 +1,139 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-sirturi-1640.missale-ambrosianum-1640-text-cc5dcff6"
+edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-sirturi-1640"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = """
+Public domain in the United States because the book was first published outside
+the United States before the pre-1931 line, and on that ground alone.
+
+THE LINE, AND THE YEAR IT WAS DERIVED FOR. Any work first published abroad before
+1931 is out of United States copyright; that is the line guidance/missals.md
+records from Cornell's public-domain chart as current on 1 January 2026. THE LINE
+MOVES EVERY JANUARY -- guidance/missals.md:249 states it in terms -- so it is
+written here as DERIVED FOR CALENDAR YEAR 2026 and not as a standing rule: on
+1 January 2027 it becomes before 1932, and a later reader must re-derive it
+rather than quote this sentence. Publication in 1640 clears the 2026 line by two
+hundred and ninety-one years and every later line by more. URAA restoration
+cannot reach it: a restored term runs at most 95 years from publication, which
+for 1640 ended in 1735.
+
+THE DATE WAS TESTED AGAINST THE BOOK'S OWN PAGES, TWICE AND INDEPENDENTLY. The
+engraved title page at leaf n4 of 772 is lettered `MEDIOLANI / Apud Io. Ambrosium
+Sirturu, haer. Pontij, & Picaleae, Impress. Archiep. M DC XL`, read in the page
+image because the engraving carries no machine-readable text. Independently, the
+book's own paschal table opens at 1640 and its rubric calls 1640 `nunc
+currentis`, the current year. A thirty-two-probe anachronism battery over all 772
+leaves found nothing later than the imprint; the probes and their negatives are
+listed in src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml. The
+volume ends at `F I N I S.` on leaf n767 with no supplement, no second title page
+and no second imprint. See the edition record for the thirty-nine post-1640 years
+that stand in the file and are all cells of that paschal table.
+
+THE SCAN AND ITS TEXT LAYER ADD NOTHING FOR ANYONE TO OWN. A faithful mechanical
+reproduction of a public-domain work is not original authorship (Bridgeman Art
+Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical
+character recognition adds no human authorship on top of it: this text layer was
+produced autonomously by ABBYY FineReader 9.0, per the item's own `ocr` field,
+converted by `abbyy-to-hocr 1.1.11`, and there is no author to hold a right in
+it. Bridgeman's limit applies as stated on the Braga record -- it frees a scan of
+public-domain matter and says nothing about a scan of anything else -- and there
+is nothing else here, because every leaf of this file is a photograph of a page
+printed in 1640.
+
+THE GOOGLE QUESTION, WHICH IS REAL AND IS ANSWERED RATHER THAN IGNORED. The book
+was scanned by Google for the National Central Library of Rome and the file
+carries Google's watermark as OCR noise at line 1, `gitized by Godgle`. IT DOES
+NOT CARRY GOOGLE'S `Usage guidelines` PAGE. That page -- modern prose of Google's
+own authorship, asking that the files be used for personal, non-commercial
+purposes -- IS present in the two Mozarabic artifacts of this lane, and the
+position on it is stated once, in the rights record, and applies wherever it
+appears. Here the only Google matter is a watermark, which is an image of a word
+and not a work. Google's own statement about books like this one is that `Public
+domain books belong to the public and we are merely their custodians`; it asserts
+no copyright in the scan and could not sustain one in a faithful reproduction.
+
+NOT RELIED ON, EXPRESSLY: that the Internet Archive item is available, that the
+download succeeded, or that the item carries `licenseurl =
+http://creativecommons.org/publicdomain/mark/1.0/`. guidance/sources.md:395-400
+holds the first two insufficient for `tracked`, and the third is a fact about an
+item's metadata rather than about a book -- the ground refused at
+src/sources/inventories/lt-hist-rights-audit-v1.toml. This basis would be
+unchanged if the item carried no mark or a contradictory one.
+"""
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/bub_gb_6ApfhlfCMksC/bub_gb_6ApfhlfCMksC_djvu.txt"
+provenance = "Fetched with curl from the URL above on 2026-08-02 into a scratch directory outside this repository, hashed there, and moved here unaltered. No transformation of any kind was applied -- no normalisation, no re-wrapping, no OCR correction -- so this artifact is the Internet Archive derivative exactly as served, and no model stood anywhere in the path between the server and the hash. Identity cross-checked against the item's metadata API: the recorded sha1 4a337fd25564f6f4819dae01221824b151999b5b and size 1,948,375 bytes match the fetched file, and the sha256 below was recomputed after the copy into the repository and is unchanged. The item is a Wikimedia `bub` tool upload of a Google scan of the National Central Library of Rome's copy; the chain is recorded because the item is not a library's own upload and its metadata is inherited from the Rome catalogue rather than written by the uploader."
+retrieved = "2026-08-02"
+sha256 = "cc5dcff6b3fdd154a800b6c72d2fa772f600c373dd6c2750be40c610aa0a1427"
+byte_size = 1948375
+path = "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-sirturi-1640/artifacts/missale-ambrosianum-1640-text-cc5dcff6/missale-ambrosianum-1640-text.txt"
+encoding = "utf-8"
+indexable = true
+notes = """
+WHAT THIS IS: uncorrected optical character recognition of a whole Ambrosian
+Missal of 1640, 59,670 LF-terminated lines, valid UTF-8, no CR bytes, no form
+feeds, no NUL bytes, ending in a newline. Registered as a source artifact and
+nothing more; deliberately NOT structured as liturgical records. THERE ARE NO
+PAGE BOUNDARIES IN THIS FILE.
+
+OCR QUALITY, AND IT IS SERVICEABLE. Measured here by scripts/_ocr_quality.py at a
+Latin function-word share of 0.1086 over 238,161 tokens, English 0.0298,
+classified `prose-latin`. That is above the ten per cent at which that tool says
+running Latin prose sits, and it is the class the 1862 Pustet and the 1924 Braga
+fall in. The damage that remains is ordinary for a red-and-black roman-type folio
+of this date: long s read as f throughout (`Miffali`, `facrarum`, `Epifc.`),
+ligatures and the ae-digraph unstable, and -- more consequentially -- THE BOOK
+SETS TWO COLUMNS TO THE PAGE AND THE SCAN INTERLEAVES THEM, so consecutive lines
+frequently belong to different columns and a sentence read straight down the file
+is often two sentences shuffled. Read a locus, do not read a run.
+
+A HEADING SPLIT ACROSS A COLUMN BREAK IS INVISIBLE TO A LINE-BY-LINE SEARCH, AND
+THAT IS A METHOD WARNING THIS LANE LEARNED THE HARD WAY. The first anachronism
+sweep of this acquisition was run line by line over the text layers and missed
+two post-imprint saints in the sister 1712 volume, because their headings were
+broken across two lines by the column interleave. The sweep was rebuilt to probe
+whole leaves through the item's per-leaf recognition and the missing saints
+appeared at once. Any later negative search over this file must do the same, or
+say that it did not.
+
+ST CHARLES BORROMEO IS IN THIS FILE AND THE PROBE THAT LOOKED FOR HIM MISSED HIM.
+The index at leaf n7 has `Caroli, Epifc.Mcdiol.4.Nouembris. 55o` and the body has
+`S. Caroli,Epi(c. Mediol. folemne.` at line 3376. The automated probe searched for
+`Borromaei` and for `Caroli ... Mediol`, and failed on both counts: this book
+never uses the surname, and the scan reads `Mediol` as `Mcdiol`. He was found by
+reading. He is 1610 and therefore expected in a 1640 book, so nothing turns on
+him -- but a battery that can miss a saint it is hunting is a battery whose
+negatives carry that limit, and it is recorded on the artifact rather than only
+in the rights file.
+
+WHAT THE FILE CONTAINS AND WHERE, READ RATHER THAN ASSUMED. Cardinal Cesare
+Monti's letter to the clergy of Milan opens the book at leaf n6, line 7. The
+alphabetical index of saints celebrated in the Missal runs at n7 to n8. The
+kalendar runs month by month from n9 (January) to n20. The `TABELLA TEMPORARIA
+FESTORVM MOBILIVM` and its rubrics are at n22 to n24. The rubrics of the Mass and
+the ceremonial follow from about n27. The temporal, sanctoral and Commons occupy
+the body. The book closes with Holy Saturday and the Vigil of Pentecost, the
+Blessing of Water and the Aspersion, ending `F I N I S.` at n767.
+
+IDENTITY AND EXTENT. Internet Archive item `bub_gb_6ApfhlfCMksC`, 772 leaves,
+`imagecount = 772`, matching the 772 `<OBJECT>` elements of the item's own
+djvu.xml counted here. Google id 6ApfhlfCMksC, OCLC 954958440, contributor
+National Central Library of Rome, uploaded 2014-11-12 by
+`tools.bub@tools.wmflabs.org`. The catalogue collation is `[36], 554, 176 p.` in
+folio with the note `Testo stampato in rosso e nero`, and the frontispiece and
+illustrations are engraved by Cesare Bassano. The companion page-image container
+is the item's `bub_gb_6ApfhlfCMksC.pdf`, 78,039,485 bytes, which is not
+registered: this repository has no cause to hold 78 MB of images it can re-fetch,
+and the two readings taken from the images here -- the engraved title page -- were
+taken from the item's per-leaf derivative.
+
+WHAT A READER MUST DO BEFORE READING ANY LITURGY OUT OF THIS BOOK. `read_from =
+"not-read"` on the witness row in
+src/sources/inventories/latin-missal-acts-v1.toml is still correct and was not
+touched by the lane that wrote this record. Nothing in this repository has read a
+unit of the Ambrosian use.
+"""

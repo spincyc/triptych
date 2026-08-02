@@ -1,0 +1,52 @@
+schema = 1
+record_type = "edition"
+id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.paris-migne-1862"
+work_id = "work.archdiocese-of-toledo.missale-mixtum-mozarabicum"
+title = "Liturgia Mozarabica secundum regulam beati Isidori, tomus prior: Missale mixtum, Paris: J.-P. Migne, 1862 (Patrologia Latina 85)"
+language = "la"
+publication = "Liturgia Mozarabica secundum regulam beati Isidori, in duos tomos divisa, quorum prior continet: Missale mixtum praefatione, notis et appendicibus ab Alexandro Lesleo ornatum; posterior: Breviarium Gothicum opera Fr. Ant. Lorenzana recognitum. [Paris]: excudebatur et venit apud J.-P. Migne editorem, 1862. PATROLOGIAE LATINAE TOMUS LXXXV, TOMUS PRIOR. The copy digitised is Harvard College Library's, from the bequest of John Harvey Treat, scanned by Google and uploaded to the Internet Archive as item liturgiamozarab01churgoog."
+date = "1862"
+editors = ["Jacques-Paul Migne", "Alexander Lesley"]
+authority = "None. A commercial publisher's reprint series. Migne holds no authority over the Mozarabic rite and claims none; what he reprints is Lesley's 1755 book."
+jurisdiction = "Hispano-Mozarabic rite; printed at Paris"
+notes = """
+WHICH VOLUME THIS IS, AND WHICH ONE THE OTHER ITEM IS. The two-tome set is
+Patrologia Latina 85 and 86 and only the first is a missal. This record is
+PL LXXXV, `TOMUS PRIOR`, the Missale mixtum -- read at leaf n192 of the text
+layer, `PATROLOGIAE LATINAE TOMUS LXXXV`, and at n346, `TOMUS PRIOR`, with the
+running signature `PATROL. LXXXV.` down the volume. Internet Archive item
+`liturgiamozarab01churgoog`, 685 leaves, is that.
+
+THE COMMISSIONING BRIEF CALLED `liturgiamozarab00churgoog` A DUPLICATE OF IT AND
+IT IS NOT ONE. That item is 819 leaves, its Internet Archive `volume` field says
+`2`, and its own pages say `TOMUS POSTERIOR` at leaf-text line 312 with the
+running signature `PATROL. LXXXVI.` throughout. IT IS PATROLOGIA LATINA 86, THE
+BREVIARIUM GOTHICUM -- a BREVIARY, Lorenzana's, not a missal at all. It carries
+the office and not the Mass, it is a different book by a different editor, and
+folding it in as a second copy of the missal would have put an office book under
+a missal's identity. It is not registered here because this lane's scope is the
+missals of the Latin rites; it is named so that the next lane knows it exists,
+knows what it is, and does not have to re-derive that from a shared title page.
+The two share the set title `Liturgia Mozarabica ... in duos tomos divisa` and
+that title is the whole reason the confusion is easy.
+
+THE DATE TEST. A thirty-two-probe anachronism battery over all 685 leaves found
+nothing later than the imprint. Its only hit was `Tridentinum (sess. 2, cap. i)`
+in an editorial footnote on the authorship of the Canon at leaf n585 -- a
+nineteenth-century editor citing a sixteenth-century council, which is what a
+Patrologia footnote does. THE ONE POST-IMPRINT DATE IN THE FILE IS A LIBRARY
+STAMP AND NOT A PRINTING: line 410 reads `HARVARD COLLEGE LIBRARY / TREAT FUND /
+CHARTRAND COLLECTION / JUNE 8, 1928`, the accession plate of the copy that was
+scanned. It dates Harvard's acquisition, not Migne's press, and it is in any case
+before the pre-1931 line. Recorded because a sweep that reported `1928 found` and
+stopped there would have looked like the Braga finding and is nothing of the
+kind.
+
+WHAT THIS EDITION IS A WITNESS TO, AND THE EDGE IT CARRIES. Its own title states
+what it reprints -- the first tome contains the Missale mixtum adorned with the
+preface, notes and appendices of Alexander Lesley. That statement is the ground
+of the `book-states-it` edge the act history draws from the 1755 station, and it
+was read here in the book. So this edition is a witness to the 1755 edition at
+one remove and to the Cisneros text at two, and it is NOT an independent
+recension of the rite.
+"""

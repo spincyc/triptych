@@ -1,0 +1,64 @@
+schema = 1
+record_type = "edition"
+id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755"
+work_id = "work.archdiocese-of-toledo.missale-mixtum-mozarabicum"
+title = "Missale mixtum ... ab Alexandro Lesleo ornatum, Rome: Venantius Monaldini, 1755"
+language = "la"
+publication = "MISSALE MIXTUM SECUNDUM REGULAM BEATI ISIDORI DICTUM MOZARABES, PRAEFATIONE, NOTIS, ET APPENDICE AB ALEXANDRO LESLEO S. J. SACERDOTE ORNATUM. PARS PRIMA. ROMAE MDCCLV. Sumptibus Venantii Monaldini Bibliopolae in Via Cursus. TYPIS JOANNIS GENEROSI SALOMONI. SUPERIORUM PERMISSU. Dedicated by the bookseller Monaldini to Benedict XIV."
+date = "1755"
+editors = ["Alexander Lesley"]
+authority = "None. `Superiorum permissu` on the title page is the ordinary Roman printing licence and nothing more; the book is a bookseller's undertaking dedicated to the reigning pope, not a promulgation. Lesley says in his own preface why it was made: the Cisneros book had become so rare that it could not be had except for a great sum, and liturgical scholarship needed it in print again."
+jurisdiction = "Hispano-Mozarabic rite; printed at Rome"
+notes = """
+TWO DIGITISATIONS OF THIS EDITION ARE REGISTERED AND THEY ARE NOT DUPLICATES OF
+EACH OTHER. The commissioning brief described the Florence copy as a duplicate of
+the New York copy the act history already names. It is not, and the difference is
+the whole reason both are held:
+
+  the NEW YORK PUBLIC LIBRARY copy, Internet Archive `missalemixtumse00leslgoog`,
+  408 leaves, STOPS PART WAY THROUGH THE BOOK. Its last text leaf, n401, breaks
+  off inside the sanctoral at `IN JEJUNIO KALENDARUM NOVEMBRIUM` and a running
+  head `FESTA MENS[IS]`. There is no explicit and no end matter. Its OCR is good;
+  its text is incomplete.
+
+  the NATIONAL CENTRAL LIBRARY OF FLORENCE copy, Internet Archive
+  `bub_gb_hAJaQabODUYC`, 761 leaves, RUNS TO THE END OF THE WORK. Its last text
+  leaf, n591, prints the explicit: `Ad laudem omnipotentis Dei, necnon Virginis
+  Marie matris ejus: omnium Sanctorum Sanctarumque. Expletum est Missale Mixtum
+  secundum regulam Beati Isidori dictum Mozarabes: maxima cum diligentia
+  perlectum & emmendatum per Reveren...`, preceded by the Benedictio panis. Its
+  OCR is much worse; its text is whole.
+
+Both open on the same title page and the same dedication to Benedict XIV, so
+they are the same edition and not two. GUIDANCE/SOURCES.MD NAMES BOTH FAILURES
+THIS AVOIDS: a false absence, where a work is held under a name nobody searched,
+and a false duplicate, where two copies drift and nothing compares them. They are
+compared here, and the comparison is the finding.
+
+WHAT THE ACT HISTORY CARRIES, AND WHAT IT DOES NOT KNOW.
+src/sources/inventories/latin-missal-acts-v1.toml, witness row
+1755-missale-mixtum-lesley, records `missalemixtumse00leslgoog -- 408 images`
+and calls that station `the first edition of the rite anyone here can read
+whole`. The row's identifier, image count, byte sizes and rights are all correct
+and were re-verified against the item today. THE WORD `WHOLE` IS NOT: the copy
+that row names is the one that stops at n401. The complete text is in the
+Florence copy, which no record in this repository previously named. The row
+itself was not edited -- the act-history inventories were outside this lane's
+ownership -- and the correction is recorded at
+src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml.
+
+THE DATE TEST. The title page at leaf n11 of the New York copy reads `ROMAE
+MDCCLV`. A thirty-two-probe anachronism battery over every leaf of both copies
+found nothing later than the imprint. The one hit was `Missale Romanum S. Pii
+Quinti` in Lesley's preface, where he is arguing that the Mozarabic Masses are
+no less sacred for differing from the Roman book -- a scholar of 1755 discussing
+1570, which is what a critical preface does. ONE FOOTNOTE IS UNRESOLVED AND IS
+RECORDED RATHER THAN SMOOTHED: a citation in the preface at line 1676 of the New
+York text layer reads `t. Lat. Venetiis 1759`, four years after the imprint, in
+a note otherwise citing Honoratus a Sancta Maria. The adjacent note in the same
+column reads `Venet. 173-` in the same position, so the likeliest reading is an
+OCR digit substitution; it was not settled against the page image because no
+reading of it can move this book across a line three hundred and seventy-two
+years away. It is written down so that a later reader who finds it does not
+think it was missed.
+"""

@@ -1,0 +1,149 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.paris-migne-1862.liturgia-mozarabica-1862-text-769ccd75"
+edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.paris-migne-1862"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = """
+Public domain in the United States because the book was first published outside
+the United States before the pre-1931 line, and on that ground alone. The
+qualification about Google's own front matter, which is in the bytes and not in
+the book, is the same one set out on
+artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.missale-mixtum-1755-nypl-text-ed70e3ae
+and is repeated in short below.
+
+THE LINE, AND THE YEAR IT WAS DERIVED FOR. Any work first published abroad before
+1931 is out of United States copyright; that is the line guidance/missals.md
+records from Cornell's public-domain chart as current on 1 January 2026. THE LINE
+MOVES EVERY JANUARY -- guidance/missals.md:249 states it in terms -- so it is
+written here as DERIVED FOR CALENDAR YEAR 2026 and not as a standing rule: on
+1 January 2027 it becomes before 1932, and a later reader must re-derive it
+rather than quote this sentence. Publication at Paris in 1862 clears the 2026
+line by sixty-nine years and the 2027 line by seventy. URAA restoration cannot
+reach it: a restored term runs at most 95 years from publication, which for 1862
+ended in 1957. THIS IS THE NARROWEST MARGIN IN THIS ACQUISITION AND IT IS STILL
+NOT NARROW; nothing about the annual movement of the line can ever bring 1862
+back inside it.
+
+THE DATE WAS TESTED AGAINST THE BOOK'S OWN PAGES. A thirty-two-probe anachronism
+battery over all 685 leaves found St Pius X absent, the Queenship absent, St
+Joseph the Worker absent, Christ the King absent, St Therese absent, the
+Immaculate Heart as `duplex II classis` absent, `Signum magnum` and its
+dropped-initial form `ignum magnum` absent, the 1960 class ranks absent, the
+restored Holy Week absent, St Joseph in the Canon absent, and John XXIII and the
+Second Vatican Council absent. Its one hit was `Tridentinum (sess. 2, cap. i)` in
+an editorial footnote on the authorship of the Canon at leaf n585 -- a
+nineteenth-century editor citing a sixteenth-century council. THE ONE POST-1862
+DATE IN THE FILE IS A LIBRARY STAMP: line 410 reads `HARVARD COLLEGE LIBRARY /
+TREAT FUND / CHARTRAND COLLECTION / JUNE 8, 1928`, the accession plate of the
+copy that was scanned. It dates Harvard's acquisition of the volume and not
+Migne's press, and 1928 is in any case before the line. This test was run because
+two acquisitions had already been refused for failing it, the 1920 Missale
+Romanum and the Braga digitisation, and because 1862 is late enough in the
+nineteenth century that a nineteenth-century book with twentieth-century matter
+bound in is a real shape rather than an imaginary one. The probes and their
+negatives are listed in
+src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml.
+
+THE SCAN AND ITS TEXT LAYER ADD NOTHING FOR ANYONE TO OWN. A faithful mechanical
+reproduction of a public-domain work is not original authorship (Bridgeman Art
+Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical
+character recognition adds no human authorship on top of it: this text layer was
+produced autonomously by ABBYY FineReader 8.0, per the item's own `ocr` field,
+converted by `abbyy-to-hocr 1.1.11`, and there is no author to hold a right in
+it. MIGNE'S OWN EDITORIAL MATTER IS A DIFFERENT QUESTION FROM THE SCAN'S AND IS
+NOT REACHED BY BRIDGEMAN AT ALL: the prefaces, footnotes and apparatus in this
+volume are Migne's and Lesley's original authorship, not a reproduction of
+anything. They are free for the same reason the liturgy in it is free -- first
+published in 1862 and 1755, both before the line -- and not because a scan adds
+nothing.
+
+GOOGLE'S OWN FRONT MATTER IS IN THESE BYTES. Lines 1 to about 46 are Google's
+`Usage guidelines`, modern prose of Google's authorship scanned in at the front
+of the volume, asking that the files be used for personal, non-commercial
+purposes and that the attribution not be removed. The position is the one taken
+on the sibling 1755 artifact: Google wrote and inserted that page precisely to
+travel with the file and asks in it that it not be removed, which is an implied
+licence to redistribute it unaltered and is what is done; the non-commercial
+sentence is a request and not a condition of a licence to the book; and Google's
+own text says `Public domain books belong to the public and we are merely their
+custodians`, asserting no copyright in the 1862 book or in the scan. The whole of
+the rest of this file is the book, and the notice's boundary at line 46 is one
+of the few real boundaries any of these files has.
+
+NOT RELIED ON, EXPRESSLY: that the Internet Archive item is available, that the
+download succeeded, or that the item is marked `possible-copyright-status =
+NOT_IN_COPYRIGHT`. guidance/sources.md:395-400 holds the first two insufficient
+for `tracked`, and the third is a host's guess about a book.
+"""
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/liturgiamozarab01churgoog/liturgiamozarab01churgoog_djvu.txt"
+provenance = "Fetched with curl from the URL above on 2026-08-02 into a scratch directory outside this repository, hashed there, and moved here unaltered. No transformation of any kind was applied -- no normalisation, no re-wrapping, no OCR correction, and the Google front matter was NOT stripped -- so this artifact is the Internet Archive derivative exactly as served, and no model stood anywhere in the path between the server and the hash. Identity cross-checked against the item's metadata API: the recorded sha1 c86c2fff2df14c2430e8f04572711260c72f102c and size 4,622,815 bytes match the fetched file, and the sha256 below was recomputed after the copy into the repository and is unchanged. This is the item src/sources/inventories/latin-missal-acts-v1.toml already names at its witness row 1862-liturgia-mozarabica-migne; that row's identifier, image count and byte sizes were re-verified here and are correct. NOTHING WAS TAKEN FROM ~/git/lt-hist."
+retrieved = "2026-08-02"
+sha256 = "769ccd75e6534b3cbe38d91e9e47444fc709edadfc308764315f9f225ef6ddcb"
+byte_size = 4622815
+path = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/paris-migne-1862/artifacts/liturgia-mozarabica-1862-text-769ccd75/liturgia-mozarabica-1862-text.txt"
+encoding = "utf-8"
+indexable = true
+notes = """
+WHAT THIS IS: uncorrected optical character recognition of the first tome of
+Migne's Liturgia Mozarabica, Patrologia Latina 85, the Missale mixtum, 114,783
+LF-terminated lines, valid UTF-8, no CR bytes, no form feeds, no NUL bytes,
+ending in a newline. At 4.6 MB it is the largest file this lane acquired.
+Registered as a source artifact and nothing more; deliberately NOT structured as
+liturgical records. THERE ARE NO PAGE BOUNDARIES IN THIS FILE except the Google
+front matter's.
+
+WHICH TOME THIS IS, WHICH IS THE FINDING THAT KEPT AN OFFICE BOOK OUT OF A
+MISSAL'S IDENTITY. This is PL LXXXV, `TOMUS PRIOR`, read at line 192 as
+`PATROLOGIJB LATINM TOMUS LXXXT.` and at line 346 as `TOMUS PRIOR`, with the
+running signature `PATROL. LXXXV.` down the volume. The commissioning brief named
+`liturgiamozarab00churgoog` as a duplicate of this item. IT IS PL LXXXVI, `TOMUS
+POSTERIOR`, the Breviarium Gothicum -- Lorenzana's BREVIARY, 819 leaves, a
+different book by a different editor carrying the office and not the Mass. It is
+not registered anywhere in this repository and is named here so that the next
+reader does not have to re-derive that. The two items share the set title
+`Liturgia Mozarabica ... in duos tomos divisa`, which is the whole reason the
+confusion is easy, and the Internet Archive's own `volume` fields (1 and 2) are
+the quickest way to tell them apart.
+
+OCR QUALITY, AND IT IS THE BEST IN THIS ACQUISITION. Measured here by
+scripts/_ocr_quality.py at a Latin function-word share of 0.1301 over 578,283
+tokens, English 0.0267, classified `prose-latin`. The damage that remains is the
+ordinary Migne damage and is documented elsewhere in this repository as worse
+than it looks: guidance/catena.md measures PL 34's text layer at roughly one
+corrupted word in eight. The characteristic failure here is the e/c confusion in
+a small type at a tight double-column measure (`cxpirc` for expire, `thc` for
+the, `Whcthcr` for Whether -- visible in the English of the Google notice, where
+a reader can check it against known words, and present throughout the Latin where
+a reader cannot). Migne sets two columns to the page and the scan interleaves
+them, so consecutive lines frequently belong to different columns. Read a locus,
+do not read a run. A raw-line search over this artifact establishes a lead and
+not a finding.
+
+WHAT THE FILE CONTAINS AND WHERE, READ RATHER THAN ASSUMED. Google's `Usage
+guidelines` page occupies lines 1 to about 46. The Harvard bookplate is at line
+410. Migne's series title page, `PATROLOGIAE CURSUS COMPLETUS`, is at about line
+192; `TOMUS PRIOR` at 346; Monaldini's 1755 dedication to Benedict XIV is
+reprinted from about line 415. Lesley's preface and notes follow, and the Missal
+occupies the body. The footnote on the authorship of the Canon citing Trent is at
+leaf n585.
+
+IDENTITY AND EXTENT. Internet Archive item `liturgiamozarab01churgoog`, 685
+leaves, `imagecount = 685`, matching the 685 `<OBJECT>` elements of the item's
+own djvu.xml counted here. Google id tRCtEGo_VvsC, OCLC 38607172, contributor
+Harvard University, scanned 2006-05-25, uploaded 2008-03-05 by `tpb`, `volume =
+1`. The companion page-image container is the item's
+`liturgiamozarab01churgoog.pdf`, 59,175,281 bytes, which is not registered.
+
+WHAT A READER MUST DO BEFORE READING ANY LITURGY OUT OF THIS BOOK. `read_from =
+"not-read"` on the Mozarabic witness rows in
+src/sources/inventories/latin-missal-acts-v1.toml is still correct and was not
+touched by the lane that wrote this record. Nothing in this repository has read a
+unit of the Mozarabic use. Note also that this edition is a witness at one remove:
+what it prints is Lesley's 1755 book, so a reading taken here is a reading of
+Migne's reprint of Lesley's reprint of Cisneros, and the 1755 artifacts of the
+sibling edition are the nearer witness.
+"""

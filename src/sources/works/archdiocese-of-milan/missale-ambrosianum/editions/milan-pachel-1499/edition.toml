@@ -1,0 +1,51 @@
+schema = 1
+record_type = "edition"
+id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-pachel-1499"
+work_id = "work.archdiocese-of-milan.missale-ambrosianum"
+title = "Missale Ambrosianum, Milan: Leonhard Pachel, 27 August 1499"
+language = "la"
+publication = "Missale Ambrosianum. Milan: Leonhardus Pachel, 27 VIII 1499. Folio, illustrated. The copy digitised is Bibliotheque Sainte-Genevieve, shelfmark OEXV 698 RES, wanting leaves [*]1 and m8. Internet Archive item OEXV698, uploaded by the Bibliotheque Sainte-Genevieve itself."
+date = "1499"
+authority = "None. This is a printer's book and no promulgating instrument is printed in it or claimed for it. The volume ends in its own colophon and nothing else: no bull, no decree, no episcopal letter."
+jurisdiction = "Ambrosian rite, archdiocese of Milan"
+notes = """
+THE BOOK STATES ITS OWN DATE AND ITS OWN PRINTER, AND THE STATEMENT WAS READ IN
+THE PAGE IMAGE RATHER THAN IN THE TEXT LAYER. The last text leaf of the scan,
+leaf n384 of 394, foliated `clxxviij`, closes the blessings and then prints the
+colophon:
+
+  `Impressum Mediolani per magistrum Leonardum Pachel. Anno domini. M.cccc.
+  lxxxx viiij. die. xxvij. Augusti.`
+
+-- printed at Milan by master Leonard Pachel, in the year of the Lord 1499, on
+the twenty-seventh day of August. Above it stands the printer's verse colophon,
+`Hoc castigatas: correcto codice missas / Ambrosij cernas: quo reparata fides`.
+That is the day-precise date src/sources/inventories/latin-missal-acts-v1.toml
+records for the station ambrosianum-mediolani-1499 from the Internet Archive's
+`date` field, `27 VIII 1499`, now confirmed against the book. The
+Bibliotheque Sainte-Genevieve ownership stamp is impressed on the same page.
+
+WHY THE COLOPHON HAD TO BE READ IN THE IMAGE. The item's text layer is
+`degraded-latin` -- a Latin function-word share of 0.0537, measured here by
+scripts/_ocr_quality.py, which is below even the 0.0788 of the 1570 blackletter
+Roman missal. The colophon is not recoverable from it as a string. An
+anachronism battery of thirty-two probes over the whole text layer returned
+thirty-two negatives, and those negatives are NOT the ground of anything: at
+this level of damage an absent string is evidence about the recognition and not
+about the book. The positive reading of the page is what dates this edition.
+
+THE COPY IS IMPERFECT AND THE DEFECT IS BIBLIOGRAPHIC, NOT LATER ACCRETION. The
+Sainte-Genevieve catalogue records `Exemplaire incomplet des f. [*]1 et m8` --
+two leaves wanting, the first of the preliminary quire and one leaf of quire m.
+The acquisition audit's `wanting 2 leaves` is that. NOTHING IS BOUND IN. The
+book runs from the kalendar to the blessings and stops at its own colophon on
+n384; leaf n385 is a manuscript flyleaf and n386 to n393 are the conservator's
+scale bars. There is no supplement, no later gathering, and no second title
+page -- which is the finding the Braga digitisation failed and the reason it was
+looked for here.
+
+THE EDITIO PRINCEPS IS NOT THIS. The first Ambrosian printing is of 1475 and is
+at the Vatican Library; it was not reached here and no edge is claimed to it.
+This edition is registered as a printing and as the earliest Ambrosian book this
+project holds, exactly as the act history carries the station.
+"""

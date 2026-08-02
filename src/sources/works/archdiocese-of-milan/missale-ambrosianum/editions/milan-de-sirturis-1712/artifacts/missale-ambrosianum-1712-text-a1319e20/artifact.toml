@@ -1,0 +1,186 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.missale-ambrosianum-1712-text-a1319e20"
+edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = """
+Public domain in the United States because every stratum of this volume was first
+published outside the United States before the pre-1931 line, and on that ground
+alone. THE PHRASE `EVERY STRATUM` IS DOING WORK HERE AND IS NOT DECORATIVE: THIS
+FILE IS NOT A SINGLE PRINTING.
+
+THE LINE, AND THE YEAR IT WAS DERIVED FOR. Any work first published abroad before
+1931 is out of United States copyright; that is the line guidance/missals.md
+records from Cornell's public-domain chart as current on 1 January 2026. THE LINE
+MOVES EVERY JANUARY -- guidance/missals.md:249 states it in terms -- so it is
+written here as DERIVED FOR CALENDAR YEAR 2026 and not as a standing rule: on
+1 January 2027 it becomes before 1932. The Missal was published in 1712 and the
+latest matter bound into the copy scanned was published in 1733, so the file
+clears the 2026 line at its youngest point by a hundred and ninety-eight years.
+URAA restoration reaches neither: a restored term runs at most 95 years from
+publication, expiring in 1807 for the Missal and 1828 for the added Masses.
+
+THE DATE TEST FOUND SOMETHING, AND IT IS WHY THIS BASIS IS WORDED AS IT IS. The
+brief for this lane required the printed date to be tested against the book's own
+pages, because two acquisitions had already been refused for failing that test:
+the 1920 Missale Romanum, whose appendix printed a Mass granted to a society
+erected in 1970, and the Braga scan, which proved to be a 1924 book plus fifteen
+supplement leaves running to 1961. THE SAME KIND OF THING IS TRUE OF THIS FILE
+AND THE RIGHTS CONSEQUENCE IS THE OPPOSITE. Bound at the end of the scanned
+volume, after the Missal's own last quire, are Masses printed at Milan in 1733 by
+order of Cardinal Odescalchi, two of which print saints canonized after 1712:
+
+  leaf n602  ST ALOYSIUS GONZAGA, `SANCTI ALOYSII GONZAGAE CONFESSORIS DIE XXVI.
+             APRILIS` -- canonized 31 December 1726, fourteen years after the
+             Missal's imprint;
+  leaf n604  ST JOHN NEPOMUCENE, `SANCTI IOANNIS NEPOMUCENI SACERD. ET MARTYR.`
+             -- canonized 19 March 1729, seventeen years after it.
+
+Their date is printed on their own title pages and was read in the page image:
+leaf n606 reads `MISSA SANCTI RAPHAELIS ARCHANGELI ... JUSSU Eminentiss. &
+Reverendiss. D. D. BENEDICTI ... Card. ODESCALCHI Sanctae Mediolanensis Ecclesiae
+Archiepiscopi. NOVISSIME IMPRESSA. MEDIOLANI, MDCCXXXIII. Apud Beniamin de
+Sirturis, heredem Pacifici Pontii, & Piccaleae, Impressorem Archiepiscopalem, Cum
+Privilegio.` Leaf n612 is a second setting of the same title with the same year,
+and the terminal colophon at n598 carries the same imprint and year. THE FINDING
+IS THEREFORE BIBLIOGRAPHIC AND NOT A RIGHTS DEFECT: 1733 is not 1961, and the
+pre-1931 line reaches both strata with two centuries to spare. What the finding
+changes is what the file may be called, which the edition record now says.
+
+NOTHING LATER THAN 1733 IS IN THE FILE. A thirty-two-probe anachronism battery
+over all 625 leaves found St Pius X absent, the Queenship absent, St Joseph the
+Worker absent, Christ the King absent, St Therese absent, the Immaculate Heart
+absent, `Signum magnum` and its dropped-initial form `ignum magnum` absent, the
+1960 class ranks absent, the restored Holy Week absent, and no arabic year later
+than 1712 anywhere except in worked examples inside the epact rubric. The probes
+and their negatives are listed in
+src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml.
+
+THE SCAN AND ITS TEXT LAYER ADD NOTHING FOR ANYONE TO OWN. A faithful mechanical
+reproduction of a public-domain work is not original authorship (Bridgeman Art
+Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical
+character recognition adds no human authorship on top of it: this text layer was
+produced autonomously by tesseract 5.3.0-6-g76ae, per the item's own `ocr` and
+`ocr_parameters` fields, and there is no author to hold a right in it. Bridgeman's
+limit -- it frees a scan of public-domain matter and says nothing about a scan of
+anything else -- bites on nothing here, because both strata are free.
+
+THE DIGITISING LIBRARY IS NOT THE UPLOADER, AND THAT IS A DIFFERENT RIGHTS SHAPE
+FROM A BARE PUBLIC-DOMAIN MARK. The commissioning brief described this as a
+Bayerische Staatsbibliothek item rather than an Internet Archive one. THE
+CORRECTION IS SHARPER THAN THAT AND CUTS THE OTHER WAY: it is an Internet Archive
+item, `10869665bsb`, uploaded on 24 May 2026 by a PRIVATE INDIVIDUAL
+(`pavelserebrjanyi@gmail.com`) into the `german-online-libraries` collection, and
+its `source_url` field points back to the Bayerische Staatsbibliothek's own
+digitisation at https://www.digitale-sammlungen.de/en/view/bsb10869665. The scan
+is BSB's -- the last leaf of the file, n624, is BSB's own digitisation card,
+`Bayerische StaatsBibliothek / MDZ Munchener DigitalisierungsZentrum / Digitale
+Bibliothek / Missale Ambrosianum / Mediolanum 1712 / Res/2 Liturg. 182 /
+urn:nbn:de:bvb:12-bsb10869665-9`. THE ITEM CARRIES NO `licenseurl` AND NO RIGHTS
+FIELD AT ALL. So unlike the 1499 and the 1640 there is no host mark here even to
+decline to rely on, and the basis rests entirely on the 1712 and 1733 imprints
+and on Bridgeman. The MDZ's published practice is to serve public-domain
+digitisations under the Public Domain Mark 1.0, which permits copying,
+modification and distribution including for commercial purposes without
+permission, and to state its rights position per object; the object page could
+not be loaded from this run and IS THEREFORE NOT RELIED ON IN EITHER DIRECTION.
+It could not enlarge or shrink the copyright status of books printed in 1712 and
+1733 in any case. The rights record states the position for all three hosts met
+in this lane.
+
+NOT RELIED ON, EXPRESSLY: that the Internet Archive item is available, that the
+download succeeded, or that the item carries no rights field.
+guidance/sources.md:395-400 holds the first two insufficient for `tracked`, and
+the third was never a basis in either direction -- the same discipline the Braga
+record applied to the same absence.
+"""
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/10869665bsb/10869665bsb_djvu.txt"
+provenance = "Fetched with curl from the URL above on 2026-08-02 into a scratch directory outside this repository, hashed there, and moved here unaltered. No transformation of any kind was applied -- no normalisation, no re-wrapping, no OCR correction -- so this artifact is the Internet Archive derivative exactly as served, and no model stood anywhere in the path between the server and the hash. Identity cross-checked against the item's metadata API: the recorded sha1 5dd7937bb1c050f74fe20db6377a73d117ce13eb and size 1,868,008 bytes match the fetched file, and the sha256 below was recomputed after the copy into the repository and is unchanged. The identifier `bsb10869665`, which is the Bayerische Staatsbibliothek's own form and the one a reader is likeliest to try, IS NOT AN INTERNET ARCHIVE ITEM: the metadata API returns an empty object for it. The item is `10869665bsb`, with the digits first."
+retrieved = "2026-08-02"
+sha256 = "a1319e208d2c36298721b6dd62ea6e6020bcc85fa80ea3f14249442d2b8948b5"
+byte_size = 1868008
+path = "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/missale-ambrosianum-1712-text-a1319e20/missale-ambrosianum-1712-text.txt"
+encoding = "utf-8"
+indexable = true
+notes = """
+WHAT THIS IS: uncorrected optical character recognition of an Ambrosian Missal of
+1712 together with Masses printed at Milan in 1733 and bound in with it, 77,003
+LF-terminated lines, valid UTF-8, no CR bytes, no form feeds, no NUL bytes,
+ending in a newline. Registered as a source artifact and nothing more;
+deliberately NOT structured as liturgical records. THERE ARE NO PAGE BOUNDARIES
+IN THIS FILE, which matters twice here: a line range over it is not a printed-page
+range, and it cannot on its own separate the 1712 stratum from the 1733 one. The
+item's per-leaf recognition (`10869665bsb_djvu.xml`, 625 `<OBJECT>` elements) can,
+and was used for exactly that here.
+
+THE OCR ENGINE WAS RUN ON THE WRONG LANGUAGE AND THE FILE IS STILL THE BEST OF
+THE THREE AMBROSIAN LAYERS. The item records `ocr = tesseract 5.3.0-6-g76ae` with
+`ocr_parameters = -l eng` -- ENGLISH -- and `ocr-additional-languages = Fraktur`,
+on a book that is entirely Latin. The commissioning brief predicted the text layer
+would therefore be poor. IT WAS RIGHT ABOUT THE CAUSE AND WRONG ABOUT THE
+CONSEQUENCE, and the measurement is recorded rather than the prediction:
+scripts/_ocr_quality.py gives a Latin function-word share of 0.1259 over 255,294
+tokens, English 0.0323, classified `prose-latin` -- the highest Latin share of the
+three Ambrosian files and above the 0.1086 of the 1640, which had ABBYY and the
+right language. The item's own metadata agrees the language was detected
+correctly even though the recognition was not configured for it:
+`ocr_detected_lang = la` at confidence 1.0000 and `ocr_detected_script = Latin` at
+0.9972. The English model shows up as scattered word-shaped nonsense
+(`Sie a sll hs Bl hs hn`) on ornamental and display pages rather than as damage
+across the running text, and it is worst exactly where there is least to lose.
+Note also `ppi = 72`, the lowest of this acquisition.
+
+The remaining damage is the ordinary two-column interleave: the book sets two
+columns to the page and consecutive lines frequently belong to different columns.
+Read a locus, do not read a run. A HEADING SPLIT ACROSS THE COLUMN BREAK IS
+INVISIBLE TO A LINE-BY-LINE SEARCH -- this is the file that proved it. The first
+anachronism sweep of this lane ran line by line and reported St Aloysius Gonzaga
+and St John Nepomucene ABSENT from this book. Both are in it, at leaves n602 and
+n604, and both are canonized after the Missal's imprint. They were found only
+when the sweep was rebuilt to probe whole leaves. Every negative reported for
+this acquisition was re-run at leaf level for that reason.
+
+WHAT THE FILE CONTAINS AND WHERE, READ RATHER THAN ASSUMED. The letterpress title
+page is at leaf n10, lines 308-326: `NOVISSIME / CARDINALIS ARCHINTI /
+ARCHIEPISCOPI / Auctoritate recognitum / MEDIOLANI, MDCCXIj. / Apud Beniamin, &
+Fratres de Sirturis, Impressores Archiepiscopales. / CUM PRIVILEGIO.` The
+archbishop's letter follows. The alphabetical index of saints is at n13 to n11
+(lines 470, 739). The kalendar runs from about line 730 to about line 1500 with
+the Milanese sanctoral in it -- `S. Martiniani Episc. Mediolani`, `S. Benigni
+Episc. Mediolani`, `S. Castritiani Episc. Mediolani`, `S. Caroli Episc. Mediol.
+4 Novembris`, and NONE of the four 1733 saints. The rubrics and ceremonial run
+from about line 3100. The body of the Missal occupies the bulk of the file. The
+pontifical and baptismal matter that is the archbishop's own office runs from
+about line 70790. THE 1733 FASCICLES BEGIN AFTER ALL OF THAT, at leaf n596: the
+Mass of the Most Holy Name of Jesus (n596-598), a terminal colophon `MEDIOLANI,
+MDCCXXXIII` at n598 (line 75817), the Mass of St Francis de Sales (n600-601), St
+Aloysius Gonzaga (n602), St John Nepomucene (n604-605), and the Mass of St
+Raphael printed twice with its own 1733 title page each time (n606-608 and
+n612-614). The last leaf, n624, is the Bayerische Staatsbibliothek's digitisation
+card.
+
+IDENTITY AND EXTENT. Internet Archive item `10869665bsb`, 625 leaves,
+`imagecount = 625`, matching the 625 `<OBJECT>` elements of the item's own
+djvu.xml counted here. Uploaded 2026-05-24. The copy is Munich, Bayerische
+Staatsbibliothek, Res/2 Liturg. 182. The item's `language` field says `English`,
+which is simply wrong and is recorded so that a later reader searching by
+language does not conclude the book is not there. The companion page-image
+container is the item's `10869665bsb.pdf`, 1,073,348,269 bytes, which is not
+registered: at 1.07 GB it is far beyond what this repository has cause to hold,
+and the one reading taken from the images here -- the 1733 title page at n606 --
+was taken from the item's per-leaf derivative.
+
+WHAT A READER MUST DO BEFORE READING ANY LITURGY OUT OF THIS BOOK. Two things,
+in order. First, `read_from = "not-read"` on the Ambrosian witness rows in
+src/sources/inventories/latin-missal-acts-v1.toml is still correct and was not
+touched by the lane that wrote this record; nothing in this repository has read a
+unit of the Ambrosian use. Second, and specific to this file: ESTABLISH WHICH
+STRATUM A PASSAGE COMES FROM BEFORE ATTRIBUTING IT TO 1712. Nothing turns on it
+for rights, but a formulary quoted off leaf n602 as evidence of the Ambrosian use
+in 1712 would be twenty-one years wrong, and the leaf boundary that settles it is
+not in this file.
+"""

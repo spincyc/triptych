@@ -1,0 +1,70 @@
+schema = 1
+record_type = "edition"
+id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-sirturi-1640"
+work_id = "work.archdiocese-of-milan.missale-ambrosianum"
+title = "Missale Ambrosianum, Milan: Io. Ambrosius Sirturus and the heirs of Ponzio and Piccaglia, 1640"
+language = "la"
+publication = "Missale Ambrosianum. Mediolani, Apud Io. Ambrosium Sirturum, haer. Pontij, & Picaleae, Impress. Archiep., M DC XL. Engraved title page signed C. Bassanus F. (Cesare Bassano). The copy digitised is the National Central Library of Rome's, scanned by Google and uploaded to the Internet Archive as item bub_gb_6ApfhlfCMksC. The catalogue collation is [36], 554, 176 p., folio, text printed in red and black."
+date = "1640"
+authority = "Cesare Monti, Cardinal Priest of S. Maria Transpontina and Archbishop of Milan, by his own letter to the whole clergy of Milan printed at the head of the book. NOT a papal instrument and not a decree of a Roman congregation: this is a metropolitan legislating for his own use, which is the ordinary constitutional shape of the Latin diocesan uses and the shape Braga's 1924 is the exception to."
+jurisdiction = "Ambrosian rite, archdiocese of Milan"
+notes = """
+THE DATE WAS READ TWICE IN THE BOOK, ONCE ON THE ENGRAVED TITLE PAGE AND ONCE IN
+ITS OWN PASCHAL TABLE. The Google scan opens on blank and cover leaves and the
+title page carries no machine-readable text, so it was read in the page image:
+leaf n4 of 772 is Cesare Bassano's engraving of St Ambrose, headed `MISSALE
+AMBROSIANVM`, and lettered at the foot `MEDIOLANI / Apud Io. Ambrosium Sirturu,
+haer. Pontij, & Picaleae, Impress. Archiep. M DC XL`. Independently of it, the
+`TABELLA TEMPORARIA FESTORVM MOBILIVM` at leaf n22 opens its first row at 1640
+and the rubric explaining it at n23 reads `Primus numerus, qui est vij,
+tribuatur Anno 1640, ut in Tabula Temporaria; sequens, qui est viij, tribuatur
+Anno 1641, & sic deinceps`, and at n23 again `Vt Anno 1640 in cellula Litterae
+Dominicalis A G NVNC CVRRENTIS` -- now current. A book that calls 1640 the
+current year was made for 1640.
+
+THE TABLE RUNS FORWARD TO 1679 AND THAT IS NOT A DATING SIGNAL. Arabic years
+from 1641 to 1679 stand in the file at lines 4448 to 5239 and every one of them
+is a cell of that paschal table. This is the same shape as the Braga 1924, whose
+tables run to 1983; a missal prints a long computistical table by design, and
+the only thing such a table dates is the year it opens at. Recorded because the
+first sweep over this book surfaced those years as candidate anachronisms and
+they had to be run down rather than waved away.
+
+WHAT THE ARCHBISHOP'S LETTER SAYS, AND WHY IT QUALIFIES A RECORDED CLAIM.
+src/sources/inventories/latin-missal-acts-v1.toml, witness row
+1640-missale-ambrosianum-sirtori, holds that this book's `impress. archiep.`
+imprint `is a licence to print and NOT an act revising the rite`, and files the
+station as `printed` rather than `promulgated` on that ground. The imprint limb
+is right. But the book also prints, at leaf n6 and before anything else, a
+letter of CAESAR CARDINALIS MONTIVS, ARCHIEPISCOPVS, `Vniuerso Clero
+Mediolanensi Salutem in Domino`, in which the archbishop says he had the Missal
+re-edited because `iam temporis edacitas nouam Missalis editionem postulabat`,
+and that he had `collocari suis locis, prout ratio temporum exigebat, peculiares
+quorundam Sanctorum Orationes, et integra etiam eorum Sacra, quae... Nos ipsi ad
+maiorem Dei gloria institutimus` -- particular orations and whole Masses of
+certain saints, some of them instituted by himself, placed each in its own
+place. THAT IS AN ACT OF THE ORDINARY UPON THE BOOK, not merely a licence to a
+printer, and it is signed by the metropolitan of the rite. The station's
+classification is not this lane's to change and was not touched; the act-history
+inventories were outside its ownership. What is recorded here is that the
+evidence for reclassifying it exists in the book's own front matter and where it
+stands.
+
+NOTHING IS BOUND IN AND THE VOLUME ENDS WHERE THE BOOK ENDS. The last text leaf,
+n767, closes the Aspersion of blessed water with `F I N I S.`; n768 to n771 are
+Google's end sheets. There is no later gathering, no second title page, and no
+imprint anywhere in the file other than the 1640 one. A thirty-two-probe
+anachronism battery over all 772 leaves found nothing later than the imprint;
+its negatives are named in src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml.
+
+ST CHARLES BORROMEO IS PRESENT AND IS THE POSITIVE CONTROL, NOT A PROBLEM. The
+alphabetical index at leaf n7 reads `Caroli, Episc. Mediol. 4. Nouembris. 550`
+and the solemnity stands in the body at line 3376 as `S. Caroli, Episc. Mediol.
+solemne.` Borromeo was canonized 1 November 1610, thirty years before this
+printing, so his presence is exactly what a 1640 Milanese missal must show; his
+absence would have been the anomaly. He is recorded here because the first
+automated pass MISSED him -- the book never uses the surname `Borromaei` and the
+scan reads `Mediol` as `Mcdiol` -- and a battery that can miss a saint it was
+looking for is a battery whose negatives must be reported with that limit
+attached.
+"""

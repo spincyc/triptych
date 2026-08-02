@@ -1,0 +1,82 @@
+schema = 1
+record_type = "edition"
+id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+work_id = "work.archdiocese-of-milan.missale-ambrosianum"
+title = "Missale Ambrosianum, Milan: Beniamin and the brothers de Sirturis, 1712, with Masses printed at Milan in 1733 bound in"
+language = "la"
+publication = "Missale Ambrosianum ... novissime Cardinalis Archinti Archiepiscopi auctoritate recognitum. MEDIOLANI, MDCCXII. Apud Beniamin, & Fratres de Sirturis, Impressores Archiepiscopales. CUM PRIVILEGIO. The copy digitised is Munich, Bayerische Staatsbibliothek, Res/2 Liturg. 182, urn:nbn:de:bvb:12-bsb10869665-9, digitised by the Munchener DigitalisierungsZentrum and re-uploaded to the Internet Archive by a private uploader as item 10869665bsb."
+date = "1712, with matter of 1733"
+authority = "Giuseppe Archinto, Archbishop of Milan 1699-1712, whose authority the title page names for the recension: `NOVISSIME ... CARDINALIS ARCHINTI ARCHIEPISCOPI Auctoritate recognitum`. The matter bound in at the end is by the authority of his successor: `JUSSU Eminentiss. & Reverendiss. D. D. BENEDICTI ... Card. ODESCALCHI Sanctae Mediolanensis Ecclesiae Archiepiscopi`, Benedetto Odescalchi-Erba, Archbishop of Milan 1712-1740. TWO ARCHBISHOPS, TWENTY-ONE YEARS APART, IN ONE VOLUME."
+jurisdiction = "Ambrosian rite, archdiocese of Milan"
+notes = """
+THIS EDITION RECORD NAMES THE 1712 PRINTING. THE ONE COPY DIGITISED IS THAT
+PRINTING PLUS MASSES PRINTED IN 1733, AND THE TITLE OF THIS RECORD SAYS SO
+BECAUSE THE BRAGA RECORD'S DID NOT AND HAD TO BE CORRECTED. The check that found
+this was run because src/sources/inventories/missale-bracarense-rights-v1.toml
+exists: a book folded in on the year in its identifier turned out to be that
+book plus thirty-seven years of bound-in supplement, and the same question was
+therefore put to every book in this lane.
+
+THE 1712 IMPRINT, READ IN THE BOOK. Leaf n10 of 625 carries the letterpress
+title page: `NOVISSIME` / `CARDINALIS ARCHINTI` / `ARCHIEPISCOPI` /
+`Auctoritate recognitum` / `MEDIOLANI, MDCCXIj.` / `Apud Beniamin, & Fratres de
+Sirturis, Impressores Archiepiscopales.` / `CUM PRIVILEGIO.` Archinto died in
+1712, which fixes the recension he authorised at or before that year. The
+archbishop's own letter follows, citing `Sanctus Carolus in Concilio Provinciali
+primo` on the necessity and ornament of missals, and saying he has had the book
+re-set `recentibus typis, & insigniori charactere` because the last impression
+was far behind.
+
+THE 1733 MATTER, READ IN THE BOOK AND IN THE PAGE IMAGE. Bound at the end of the
+volume, after the body of the Missal has closed, are Masses printed at Milan in
+1733 by order of Cardinal Odescalchi. TWO OF THEM PRINT SAINTS CANONIZED AFTER
+1712 and neither could stand in a book of 1712:
+
+  leaf n602  `SANCTI ALOYSII GONZAGAE CONFESSORIS DIE XXVI. APRILIS` --
+             Aloysius Gonzaga was canonized 31 December 1726, fourteen years
+             after this Missal's imprint;
+  leaf n604  `SANCTI IOANNIS NEPOMUCENI SACERD. ET MARTYR.` -- John Nepomucene
+             was canonized 19 March 1729, seventeen years after it.
+
+With them stand a Mass of the Most Holy Name of Jesus (n596-598) and a Mass of
+St Francis de Sales (n600-601), and the Mass of St Raphael, which is printed
+twice, at n606-608 and again at n612-614. Their date is on their own title
+pages, and it was read in the page image and not only in the recognition: leaf
+n606 is a full letterpress title reading `MISSA / SANCTI RAPHAELIS /
+ARCHANGELI / SOLEMNE / DIE XXIV OCTOBRIS. / JUSSU / Eminentiss. & Reverendiss.
+D. D. BENEDICTI tit. SS. duodecim Apostolorum S. R. E. Presbyt. Card.
+ODESCALCHI Sanctae Mediolanensis Ecclesiae Archiepiscopi. / NOVISSIME IMPRESSA.
+/ MEDIOLANI, MDCCXXXIII. / Apud Beniamin de Sirturis, heredem Pacifici Pontii, &
+Piccaleae, Impressorem Archiepiscopalem, Cum Privilegio.` Leaf n612 is a second
+setting of the same title with the same year, and the terminal colophon at n598
+reads `MEDIOLANI, MDCCXXXIII` with the same printers.
+
+THE BODY UNDER THE ADDITIONS IS STILL 1712, STATED SO THE FINDING IS NOT
+OVERREAD. The kalendar at leaves n13 to n20 carries the Milanese sanctoral --
+`S. Martiniani Episc. Mediolani`, `S. Benigni Episc. Mediolani`, `S. Castritiani
+Episc. Mediolani`, `S. Caroli Episc. Mediol. 4. Novembris` -- and none of the
+four 1733 saints appears in it. The added Masses stand physically after the
+volume's own last quire, each with its own title page, in the shape of separately
+issued fascicles bound up with the book by whoever owned it. So this is not a
+1733 reprint wearing a 1712 date. It is a 1712 book that stayed in use, and the
+two strata are distinguishable in the volume even where they are not
+distinguishable in a line range over the text layer.
+
+WHY THIS DOES NOT REFUSE THE ACQUISITION, WHICH IS THE DIFFERENCE FROM BRAGA.
+The Braga digitisation was refused because its supplement ran to 1961 and the
+pre-1931 United States line does not reach 1961. Here the latest matter in the
+volume is 1733, which clears that line by a hundred and ninety-eight years.
+BOTH STRATA ARE FREE, so the finding is bibliographic and not a rights defect:
+it changes what this file may be CALLED, not what may be done with it. It is
+recorded at this length anyway, because an edition record that said `1712` flat
+would be false about the bytes, and because the next lane to quote a Mass out of
+this file needs to know that four of its formularies are twenty-one years
+younger than its title page.
+
+WHAT NOBODY UPSTREAM FLAGGED. The Internet Archive item is titled `Missale
+Ambrosianum` and described `Mediolanum 1712`; the Bayerische Staatsbibliothek
+digitisation card bound into the scan as its last leaf says the same, `Missale
+Ambrosianum / Mediolanum 1712 / Res/2 Liturg. 182`. Neither mentions the 1733
+fascicles. The accretion is visible only in the bytes and in the page images --
+which is exactly what was true of Braga.
+"""

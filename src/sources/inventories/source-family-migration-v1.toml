@@ -5,10 +5,10 @@ inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:7e47ae0e09188109b2ccc0e0608304d72386224f0504a2c8c7105d94b7de9a2d"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
-canonical_catalog_snapshot = "sha256:35e5f36990be4cac373fb94274376d6e9d99f7bfe299a6ea0d2a3837fa61c231"
+canonical_catalog_snapshot = "sha256:ecac44f6f699272b8000b76c847bef8642147f9f2064070a702b97987daf1feb"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:493e992a5326602929e7db9f4b22f111496e4a7cac2efd37368632287466e8f8"
+snapshot = "sha256:0152b5e7d70fdc1781bb30e5f73198f23afd08414edcf46968b2a4a55723064b"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -5723,6 +5723,27 @@ membership_snapshot = "sha256:d853118f0cc8f0b2873de388fac12d9581541fba13a82792f0
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
 
 [[families]]
+id = "family.missale-ambrosianum.milan-printings-1499-1640-1712"
+label = "Missale Ambrosianum, the Milan printings of 1499, 1640 and 1712 (the Ambrosian rite)"
+kind = "work"
+source_categories = ["historical-primary", "liturgical"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact"]
+artifact_availability = "canonicalized"
+storage_plan = ["tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.missale-ambrosianum-1712-text-a1319e20", "artifact.archdiocese-of-milan.missale-ambrosianum.milan-pachel-1499.missale-ambrosianum-1499-text-3c876a13", "artifact.archdiocese-of-milan.missale-ambrosianum.milan-sirturi-1640.missale-ambrosianum-1640-text-cc5dcff6", "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712", "edition.archdiocese-of-milan.missale-ambrosianum.milan-pachel-1499", "edition.archdiocese-of-milan.missale-ambrosianum.milan-sirturi-1640", "work.archdiocese-of-milan.missale-ambrosianum"]
+trace_patterns = ["(?:Missale\\s+Ambrosianum|Ambrosian\\s+[Mm]issal|Messale\\s+Ambrosiano|rito\\s+ambrosiano|Ambrosian\\s+[Rr]ite)", "archdiocese\\-of\\-milan\\.missale\\-ambrosianum"]
+reviewed_on = "2026-08-02"
+membership_snapshot = "sha256:28e38a0ac8f3b78eca1e19f226dff7576c7ded7e77958b522735fb27ec6d9c0f"
+notes = "THE SECOND NON-ROMAN LATIN RITE IN THIS LIBRARY, admitted on the same maintainer's ruling of 2026-08-02 that brought in Braga: the act-history scope is all Latin rites and not the Roman rite with its uses. It is a family of the WORK, because the work is new here and because work.catholic-church.missale-romanum must not absorb it -- the Ambrosian is a different rite, not a Roman use, and src/sources/inventories/latin-missal-acts-v1.toml records that an edge from the Roman line into the Ambrosian would assert a derivation in exactly the direction history runs the other way. Three printings are canonicalized with exact tracked text layers: Pachel's incunable of 27 August 1499, dated from its own colophon read in the page image because its OCR cannot render it; the 1640 of Cardinal Cesare Monti, dated from its engraved title page and independently from its own paschal table calling 1640 the current year; and the 1712 of Cardinal Archinto. UNLIKE BRAGA THE STORAGE PLAN IS TRACKED AND THE RIGHTS ARE SETTLED: every stratum of all three books is pre-1931 by at least 198 years, and src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml states the basis, the thirty-two-probe date test with its negatives, the position on the three different kinds of host met, and what would overturn it. identity_gaps = artifact records the one thing not settled: the 1712 digitisation is that book PLUS Masses printed at Milan in 1733 by order of Cardinal Odescalchi, two of them printing saints canonized after 1712 (St Aloysius Gonzaga, 1726, and St John Nepomucene, 1729), and no leaf map yet separates the two strata, so a formulary quoted from the end of that file must not be attributed to 1712. That accretion has no rights consequence -- 1733 clears the line by 198 years -- which is the whole difference from Braga, whose supplement ran to 1961. The OCR is uncorrected throughout and the 1499's is degraded-latin, so the evidence ceiling is artifact-pin: nothing in this repository has read a unit of the Ambrosian use and read_from = not-read on the witness rows is still correct."
+
+[[families]]
 id = "family.missale-bracarense.vatican-typica-1924"
 label = "Missale Bracarense, the typical edition of 1924 (the Rite of Braga)"
 kind = "work"
@@ -5742,6 +5763,27 @@ trace_patterns = ["(?:Missale\\s+Bracarense|Missal\\s+(?:de\\s+)?Braga|Braga\\s+
 reviewed_on = "2026-08-02"
 membership_snapshot = "sha256:219ae0093b4ebedb56baa8c0c17f7d7cc9faf2b3b52ce123f19949688146a7d7"
 notes = "THE FIRST NON-ROMAN LATIN RITE IN THIS LIBRARY, admitted on the maintainer's ruling of 2026-08-02 that the act-history scope is all Latin rites and not the Roman rite with its uses. It is a family of the WORK and not of an edition, because the work is new here: nothing of the Rite of Braga was registered before, and work.catholic-church.missale-romanum must not absorb it. `identity_gaps = [\"artifact\"]` is the whole finding of the acquisition: the 1924 edition is out of United States copyright and the only digitisation of it is a scan of a working altar book carrying at least fifteen supplement leaves dated 1925 to 21 November 1961, so both artifacts stand remote and unresolved, holding no bytes, and the stratum any given page belongs to is not yet established. src/sources/inventories/missale-bracarense-rights-v1.toml settles the rights question with its loci, the routes refused, and what would overturn it. Priority p1 because the audit ranks Braga highest of the uses and it remains the cheapest use to read -- once a leaf map separates 1924 from supplement."
+
+[[families]]
+id = "family.missale-mixtum-mozarabicum.lesley-1755-and-migne-1862"
+label = "Missale mixtum dictum Mozarabes, Lesley's printing of 1755 and Migne's reprint of 1862 (the Hispano-Mozarabic rite)"
+kind = "work"
+source_categories = ["historical-primary", "liturgical"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact"]
+artifact_availability = "canonicalized"
+storage_plan = ["tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.paris-migne-1862.liturgia-mozarabica-1862-text-769ccd75", "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.missale-mixtum-1755-florence-text-c52ac184", "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.missale-mixtum-1755-nypl-text-ed70e3ae", "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.paris-migne-1862", "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755", "work.archdiocese-of-toledo.missale-mixtum-mozarabicum"]
+trace_patterns = ["(?:Missale\\s+[Mm]ixtum|Mozarab(?:es|ic|ica|icum)|Liturgia\\s+Mozarabica|Hispano\\-Mozarabic)", "archdiocese\\-of\\-toledo\\.missale\\-mixtum\\-mozarabicum"]
+reviewed_on = "2026-08-02"
+membership_snapshot = "sha256:92829f2d6b5b302defd31bf59c2c95965e1dc2a68e9ac12260f0e78989b0d489"
+notes = "THE THIRD NON-ROMAN LATIN RITE IN THIS LIBRARY, admitted on the maintainer's ruling of 2026-08-02 that the act-history scope is all Latin rites. It is a family of the WORK, registered under the archdiocese of Toledo because Toledo is the church whose ordinary has held and legislated for the rite continuously -- Cisneros for the 1500 printing, Lorenzana for the recension Migne reprints -- on the same pattern as Braga; work.catholic-church.missale-romanum must not absorb it. Two printings are canonicalized with exact tracked text layers, and NEITHER IS A TYPICAL EDITION NOR AN ACT: Alexander Lesley's of Rome 1755, a bookseller's undertaking carrying the ordinary Roman printing licence and dedicated to Benedict XIV, and Migne's of Paris 1862, Patrologia Latina 85, which reprints Lesley and says so on its own title page. Both are witnesses to the Cisneros editio princeps of 1500, which is at the Bibliotheque nationale de France and is not held here, so no edge runs behind them. The rights are settled at src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml: 1755 and 1862 clear the pre-1931 line by 176 and 69 years, the thirty-two-probe date test is recorded there with its negatives, and the two files that carry Google's own modern usage notice inside their tracked bytes are dealt with there rather than left implicit. identity_gaps = artifact records that the 1755 is held in TWO copies which are not duplicates and neither of which is sufficient alone: the New York Public Library scan has much better OCR but stops part way through the sanctoral at its leaf n401, and the National Central Library of Florence scan runs to the work's explicit but is degraded-latin. The evidence ceiling is artifact-pin: nothing in this repository has read a unit of the Mozarabic use. NOT A MEMBER OF THIS FAMILY AND NOT REGISTERED ANYWHERE: Internet Archive liturgiamozarab00churgoog, which shares the set title and which a prior survey called a duplicate of the missal; it is Patrologia Latina 86, the Breviarium Gothicum, a breviary."
 
 [[families]]
 id = "family.monumenta-germaniae-historica.clavis-canonum-statuta-ecclesiae-antiqua"

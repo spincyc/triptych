@@ -1,0 +1,138 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.missale-mixtum-1755-nypl-text-ed70e3ae"
+edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = """
+Public domain in the United States because the book was first published outside
+the United States before the pre-1931 line, and on that ground alone. THE ONE
+QUALIFICATION IS ABOUT TWO LEAVES OF GOOGLE'S OWN PROSE AND IS SET OUT BELOW,
+BECAUSE IT IS IN THE BYTES AND NOT IN THE BOOK.
+
+THE LINE, AND THE YEAR IT WAS DERIVED FOR. Any work first published abroad before
+1931 is out of United States copyright; that is the line guidance/missals.md
+records from Cornell's public-domain chart as current on 1 January 2026. THE LINE
+MOVES EVERY JANUARY -- guidance/missals.md:249 states it in terms -- so it is
+written here as DERIVED FOR CALENDAR YEAR 2026 and not as a standing rule: on
+1 January 2027 it becomes before 1932. Publication at Rome in 1755 clears the 2026
+line by a hundred and seventy-six years. URAA restoration cannot reach it: a
+restored term runs at most 95 years from publication, which for 1755 ended in
+1850.
+
+THE DATE WAS TESTED AGAINST THE BOOK'S OWN PAGES. The title page at leaf n11 of
+408 reads `MISSALE MIXTUM SECUNDUM REGULAM BEATI ISIDORI DICTUM MOZARABES,
+PRAEFATIONE, NOTIS, ET APPENDICE AB ALEXANDRO LESLEO S. J. SACERDOTE ORNATUM.
+PARS PRIMA. ROMAE MDCCLV. Sumptibus Venantii Monaldini Bibliopolae in Via Cursus.
+TYPIS JOANNIS GENEROSI SALOMONI. SUPERIORUM PERMISSU.` A thirty-two-probe
+anachronism battery over all 408 leaves found St Pius X absent, the Queenship
+absent, St Joseph the Worker absent, Christ the King absent, St Therese absent,
+the Immaculate Heart absent, `Signum magnum` and its dropped-initial form `ignum
+magnum` absent, the 1960 class ranks absent, and the Immaculate Conception dogma
+absent. Its one hit was `Missale Romanum S. Pii Quinti` in Lesley's preface,
+where he argues that the Mozarabic Masses are no less sacred for differing from
+the Roman book -- a scholar of 1755 discussing 1570. The probes and their
+negatives are listed in
+src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml.
+
+THE SCAN AND ITS TEXT LAYER ADD NOTHING FOR ANYONE TO OWN. A faithful mechanical
+reproduction of a public-domain work is not original authorship (Bridgeman Art
+Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical
+character recognition adds no human authorship on top of it: this text layer was
+produced autonomously by ABBYY FineReader 8.0 at 600 ppi, per the item's own
+`ocr` field, and there is no author to hold a right in it.
+
+THE ONE PLACE BRIDGEMAN DOES NOT REACH IN THIS FILE, STATED PLAINLY BECAUSE THE
+BRAGA RECORD'S WHOLE LESSON IS THAT THE EXACT ARTIFACT IS WHAT `tracked` GOVERNS.
+Lines 1 to about 43 of this file are not a photograph of a 1755 page. They are
+GOOGLE'S OWN `Usage guidelines`, modern prose of Google's authorship, scanned in
+at the front of the volume: `Google is proud to partner with libraries to
+digitize public domain materials...`, `+ Make non-commercial use of the files We
+designed Google Book Search for use by individuals, and we request that you use
+these files for personal, non-commercial purposes`, `+ Maintain attribution The
+Google "watermark" you see on each file is essential... Please do not remove it`.
+Bridgeman says nothing about that text, because it is not a reproduction of
+anything; it is new writing of the 2000s. THE POSITION TAKEN HERE, AND IT IS A
+POSITION AND NOT AN OVERSIGHT, is that this page may be redistributed with the
+file because Google wrote and inserted it precisely to travel with the file and
+asks in it that the attribution not be removed -- an implied licence to
+redistribute the notice unaltered, which is what is done. The notice's
+non-commercial sentence is framed as a REQUEST (`we request that you use`) and
+not as a condition of a licence to the book, and Google's own text in the same
+breath says `Public domain books belong to the public and we are merely their
+custodians`; it asserts no copyright in the 1755 book or in the scan of it. The
+whole of the rest of this file is the book. Nothing in this repository quotes the
+notice as source text, and if a later reader wants the file without it, deleting
+lines 1-43 is a stated replayable transformation on a boundary the file actually
+has -- unlike the Braga carve-out, which had no such boundary anywhere.
+
+NOT RELIED ON, EXPRESSLY: that the Internet Archive item is available, that the
+download succeeded, or that the item is marked `possible-copyright-status =
+NOT_IN_COPYRIGHT`. guidance/sources.md:395-400 holds the first two insufficient
+for `tracked`, and the third is a host's guess about a book, recorded as a fact
+about the item and not as a link in this basis.
+"""
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/missalemixtumse00leslgoog/missalemixtumse00leslgoog_djvu.txt"
+provenance = "Fetched with curl from the URL above on 2026-08-02 into a scratch directory outside this repository, hashed there, and moved here unaltered. No transformation of any kind was applied -- no normalisation, no re-wrapping, no OCR correction, and in particular the Google front matter was NOT stripped -- so this artifact is the Internet Archive derivative exactly as served, and no model stood anywhere in the path between the server and the hash. Identity cross-checked against the item's metadata API: the recorded sha1 dd9200a9a8866869e9e2491570bd9149a59e4556 and size 1,491,426 bytes match the fetched file, and the sha256 below was recomputed after the copy into the repository and is unchanged. This is the item src/sources/inventories/latin-missal-acts-v1.toml already names at its witness row 1755-missale-mixtum-lesley; that row's identifier, image count and byte sizes were re-verified here and are correct."
+retrieved = "2026-08-02"
+sha256 = "ed70e3ae6806845acfad9c0028ab4096a1dec4c2e3c34175c0022dfc3b1f0d15"
+byte_size = 1491426
+path = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/missale-mixtum-1755-nypl-text-ed70e3ae/missale-mixtum-1755-nypl-text.txt"
+encoding = "utf-8"
+indexable = true
+notes = """
+WHAT THIS IS: uncorrected optical character recognition of the New York Public
+Library copy of Lesley's 1755 Mozarabic Missal, 53,824 LF-terminated lines, valid
+UTF-8, no CR bytes, no form feeds, no NUL bytes, ending in a newline. Registered
+as a source artifact and nothing more; deliberately NOT structured as liturgical
+records. THERE ARE NO PAGE BOUNDARIES IN THIS FILE except the Google front
+matter's, which is a boundary in the scanning and not in the book.
+
+THIS COPY IS INCOMPLETE AND THE ACT HISTORY CALLS IT WHOLE. Its last text leaf,
+n401 of 408, breaks off inside the sanctoral at `IN JEJUNIO KALENDARUM
+NOVEMBRIUM` under a running head `FESTA MENS[IS]`. There is no explicit, no
+colophon and no end matter; the remaining leaves are blank and Google's end
+sheets. src/sources/inventories/latin-missal-acts-v1.toml, witness row
+1755-missale-mixtum-lesley, describes the station this item digitises as `the
+first edition of the rite anyone here can read whole`, and the edition is that;
+THIS COPY OF IT IS NOT. The complete text is in the sibling artifact
+`missale-mixtum-1755-florence-text-c52ac184`, which runs to the work's explicit
+on its leaf n591. The row was not edited -- the act-history inventories were
+outside this lane's ownership -- and the correction is recorded at
+src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml.
+
+OCR QUALITY, AND IT IS THE BEST OF THE TWO 1755 COPIES BY A LARGE MARGIN.
+Measured here by scripts/_ocr_quality.py at a Latin function-word share of 0.1294
+over 205,273 tokens, English 0.0321, classified `prose-latin` -- against 0.0509
+for the Florence copy of the very same typesetting. The item was scanned at 600
+ppi, the highest in this acquisition. The damage that remains is ordinary for a
+1755 roman-type folio: long s read as f, the ae-digraph unstable, and the
+occasional dropped ornamental initial (`UoD sumptibus meis prodit Missale
+Mozarabicum` for Quod). WHERE THE TWO COPIES OVERLAP, READ THIS ONE. Use the
+Florence copy only beyond this one's break at n401.
+
+WHAT THE FILE CONTAINS AND WHERE, READ RATHER THAN ASSUMED. Google's `Usage
+guidelines` page occupies lines 1 to about 43 and is not part of the book. The
+title page is at leaf n11, lines 47-64. Monaldini's dedication to Benedict XIV is
+at n15. Lesley's critical preface runs from about n28 to about n120, with its
+footnote apparatus; the note at line 1676 reading `t. Lat. Venetiis 1759` is the
+one unresolved date in the file and is discussed in the edition record. The
+Missal itself follows from about n130, with the Ordinary and Canon in the middle
+of the volume -- the fraction and the rubric `si forte aliqua pars hostie maneat
+plicata in filiole corporalium` stand at n295. The text stops at n401.
+
+IDENTITY AND EXTENT. Internet Archive item `missalemixtumse00leslgoog`, 408
+leaves, `imagecount = 408`, matching the 408 `<OBJECT>` elements of the item's own
+djvu.xml counted here. Google id mr8PAAAAIAAJ, OCLC 44008910, OpenLibrary
+OL20619112M, contributor New York Public Library, scanned 2006-08-02, uploaded
+2009-04-15 by `tpb`, `volume = 1`. The companion page-image container is the
+item's `missalemixtumse00leslgoog.pdf`, 28,715,021 bytes, which is not registered.
+
+WHAT A READER MUST DO BEFORE READING ANY LITURGY OUT OF THIS BOOK. `read_from =
+"not-read"` on the Mozarabic witness rows in
+src/sources/inventories/latin-missal-acts-v1.toml is still correct and was not
+touched by the lane that wrote this record.
+"""

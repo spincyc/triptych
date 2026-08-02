@@ -1,0 +1,133 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.missale-mixtum-1755-florence-text-c52ac184"
+edition_id = "edition.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = """
+Public domain in the United States because the book was first published outside
+the United States before the pre-1931 line, and on that ground alone.
+
+THE LINE, AND THE YEAR IT WAS DERIVED FOR. Any work first published abroad before
+1931 is out of United States copyright; that is the line guidance/missals.md
+records from Cornell's public-domain chart as current on 1 January 2026. THE LINE
+MOVES EVERY JANUARY -- guidance/missals.md:249 states it in terms -- so it is
+written here as DERIVED FOR CALENDAR YEAR 2026 and not as a standing rule: on
+1 January 2027 it becomes before 1932, and a later reader must re-derive it
+rather than quote this sentence. Publication at Rome in 1755 clears the 2026 line
+by a hundred and seventy-six years. URAA restoration cannot reach it: a restored
+term runs at most 95 years from publication, which for 1755 ended in 1850.
+
+THE DATE WAS TESTED AGAINST THE BOOK'S OWN PAGES. The title page at leaf n7 of
+761 reads `... AB ALEXANDRO LESLEO S. J. SACERDOTE ORNATUM. PARS PRIMA.
+Sumptibus Venantii Monaldini Bibliopolae in Via Cursus. TYPIS JOANNIS GENEROSI
+SALOMONI`, and the corresponding leaf of the sister copy carries the imprint year
+`ROMAE MDCCLV` on the same setting. A thirty-two-probe anachronism battery over
+all 761 leaves found St Pius X absent, the Queenship absent, St Joseph the Worker
+absent, Christ the King absent, St Therese absent, the Immaculate Heart absent,
+`Signum magnum` and its dropped-initial form `ignum magnum` absent, the 1960
+class ranks absent, the Immaculate Conception dogma absent, and no arabic year
+later than the imprint on any leaf. The probes and their negatives are listed in
+src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml. The volume ends
+at the work's own explicit on leaf n591, `Expletum est Missale Mixtum secundum
+regulam Beati Isidori dictum Mozarabes`, with no supplement and no second
+imprint. This test was run because two acquisitions had already been refused for
+failing it, the 1920 Missale Romanum and the Braga digitisation.
+
+THE SCAN AND ITS TEXT LAYER ADD NOTHING FOR ANYONE TO OWN. A faithful mechanical
+reproduction of a public-domain work is not original authorship (Bridgeman Art
+Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical
+character recognition adds no human authorship on top of it: this text layer was
+produced autonomously by ABBYY FineReader 9.0, per the item's own `ocr` field,
+converted by `abbyy-to-hocr 1.1.11`, and there is no author to hold a right in it.
+Bridgeman's limit -- it frees a scan of public-domain matter and says nothing
+about a scan of anything else -- bites on nothing here: every leaf of this file
+is a photograph of a page printed in 1755.
+
+THE GOOGLE QUESTION. The book was scanned by Google for the National Central
+Library of Florence. THIS FILE DOES NOT CARRY GOOGLE'S `Usage guidelines` PAGE:
+the Wikimedia `bub` upload chain stripped it, and the only Google matter is the
+watermark surviving as OCR noise. The sister artifact of this same edition,
+`missale-mixtum-1755-nypl-text-ed70e3ae`, does carry it, and the position on it
+is stated once in the rights record and applies wherever it appears.
+
+NOT RELIED ON, EXPRESSLY: that the Internet Archive item is available, that the
+download succeeded, or that the item carries `licenseurl =
+http://creativecommons.org/publicdomain/mark/1.0/`. guidance/sources.md:395-400
+holds the first two insufficient for `tracked`, and the third is a fact about an
+item's metadata rather than about a book -- the ground refused at
+src/sources/inventories/lt-hist-rights-audit-v1.toml.
+"""
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/bub_gb_hAJaQabODUYC/bub_gb_hAJaQabODUYC_djvu.txt"
+provenance = "Fetched with curl from the URL above on 2026-08-02 into a scratch directory outside this repository, hashed there, and moved here unaltered. No transformation of any kind was applied -- no normalisation, no re-wrapping, no OCR correction -- so this artifact is the Internet Archive derivative exactly as served, and no model stood anywhere in the path between the server and the hash. Identity cross-checked against the item's metadata API: the recorded sha1 b4fc34266a87c9036844300eb282f0cc4e9c8eee and size 794,299 bytes match the fetched file, and the sha256 below was recomputed after the copy into the repository and is unchanged. The item is a Wikimedia `bub` tool upload of a Google scan of the National Central Library of Florence's copy."
+retrieved = "2026-08-02"
+sha256 = "c52ac184379b81e2f4924d565f4c1ced344ad7d25405c8c57b2b1b13784f1f51"
+byte_size = 794299
+path = "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/missale-mixtum-1755-florence-text-c52ac184/missale-mixtum-1755-florence-text.txt"
+encoding = "utf-8"
+indexable = true
+notes = """
+WHAT THIS IS: uncorrected optical character recognition of the Florence copy of
+Lesley's 1755 Mozarabic Missal, 20,253 LF-terminated lines, valid UTF-8, no CR
+bytes, no form feeds, no NUL bytes, ending in a newline. Registered as a source
+artifact and nothing more; deliberately NOT structured as liturgical records.
+THERE ARE NO PAGE BOUNDARIES IN THIS FILE.
+
+WHY THIS COPY IS HELD AS WELL AS THE NEW YORK ONE, WHICH IS THE POINT OF THIS
+ARTIFACT. It is the copy that runs to the end of the book. Its last text leaf,
+n591 of 761, prints the explicit -- `Ad laudem omnipotentis Dei, necnon Virginis
+Marie matris ejus: omnium Sanctorum Sanctarumque. Expletum est Missale Mixtum
+secundum regulam Beati Isidori dictum Mozarabes: maxima cum diligentia perlectum
+& emmendatum per Reveren...` -- preceded by the Benedictio panis and the Mass of
+the Blessed Virgin. THE NEW YORK COPY THE ACT HISTORY NAMES STOPS AT ITS LEAF
+n401, part way through the sanctoral, with no explicit at all. The commissioning
+brief for this lane described this item as a duplicate of that one. It is not,
+and guidance/sources.md names both halves of the failure that would have
+followed: a false absence, where the end of a book is held under a name nobody
+searched, and a false duplicate, where two copies drift and nothing compares
+them. They are compared here and in the edition record.
+
+OCR QUALITY, AND IT IS BAD -- WHICH IS THE PRICE OF THE COMPLETENESS. Measured
+here by scripts/_ocr_quality.py at a Latin function-word share of 0.0509 over
+108,392 tokens, English 0.0207, classified `degraded-latin`. That is the lowest
+figure in this acquisition, lower even than the 1499 incunable's 0.0537, and far
+below the 0.1294 of the New York copy of the same edition. THE TWO ARE THE SAME
+TYPESETTING, so the difference is entirely the imaging and the recognition, not
+the book: this file emits long stretches of word-shaped rubble
+(`rep™ ©■ acciphnt ab eo «rcj inrriijj`) where the New York file emits readable
+Latin. DO NOT REST A NEGATIVE SEARCH ON THIS ARTIFACT. Its role is to establish
+that the end of the book exists, to bound it, and to be the file a later reader
+goes to the page images for. Where the two copies overlap, READ THE NEW YORK ONE
+AND USE THIS ONE ONLY BEYOND ITS BREAK. It is admitted `indexable` so that later
+passages can pin physical line ranges over it, not so that a search over it can be
+reported as a finding.
+
+WHAT THE FILE CONTAINS AND WHERE, READ RATHER THAN ASSUMED. The title page is at
+leaf n7. Monaldini's dedication to Benedict XIV opens at n11. Lesley's long
+critical preface, arguing the relation of the Mozarabic liturgy to the Gallican
+and to the Bobbio sacramentary, runs from about n28 to about n120. The Missal
+itself follows. The Mass of the Blessed Virgin is at n585, the Benedictio panis
+at n590, the explicit at n591. Leaves after n591 carry the indexes -- `MENSIS
+MARTII. MENSIS JUNII. INDEX RERUM.` -- and Google's end sheets.
+
+IDENTITY AND EXTENT. Internet Archive item `bub_gb_hAJaQabODUYC`, 761 leaves,
+`imagecount = 761`, matching the 761 `<OBJECT>` elements of the item's own
+djvu.xml counted here. Google id hAJaQabODUYC, contributor National Central
+Library of Florence, uploaded 2014-08-25 by `tools.bub@tools.wmflabs.org`. Its
+Internet Archive title, `... Pars prima secunda`, is the reason the leaf count is
+nearly double the New York copy's; a title page for a second part was searched
+for and NOT found in the per-leaf recognition, so whether the volume is a single
+continuous impression or two parts bound together IS NOT SETTLED HERE and is not
+asserted either way. What is settled is where the text stops in each copy, which
+is what a reader needs. The companion page-image container is the item's
+`bub_gb_hAJaQabODUYC.pdf`, 13,372,022 bytes, which is not registered.
+
+WHAT A READER MUST DO BEFORE READING ANY LITURGY OUT OF THIS BOOK. `read_from =
+"not-read"` on the Mozarabic witness rows in
+src/sources/inventories/latin-missal-acts-v1.toml is still correct and was not
+touched by the lane that wrote this record. Nothing in this repository has read a
+unit of the Mozarabic use.
+"""
