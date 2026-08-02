@@ -1,3 +1,30 @@
+# RIGHTS ARE SETTLED IN FULL AT
+# src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml
+# (TASK-114, recorded 2026-08-01). Read it before restating the fields below.
+# It keeps `rights_status = "unresolved"` and changes what the word means: the
+# CC BY-NC-ND is void because two Internet Archive items of the identical sha1
+# carry contradictory terms and neither uploader granted anything, and the
+# UNDERLYING 1962 typical edition is probably restored under 17 U.S.C. 104A to
+# the end of 2057. Publication of preexisting material rests on 17 U.S.C. 103(b)
+# plus the tracked public-domain 1920, 1862, 1604 and 1570 typical editions --
+# never on this edition's age and never on this scan.
+#
+# TWO CORRECTIONS THIS FILE'S OWN FIELDS DO NOT YET CARRY, per that record's
+# `[[corrections]]`. First, `notes` below says the English collated comes from
+# the 1861 Cummiskey; true, and it implies more than it says, because full Latin
+# READ OFF THESE PAGE IMAGES IS PUBLISHED -- Lauda Sion, the Corpus Christi
+# orations, the All Souls formularies and the Commune orations, via
+# src/sources/calendars/roman-1962/propers.yaml and thence web/. Second, the
+# 1962 Decretum is quoted in Latin at guidance/missals.md and is 1962 new matter
+# with no public-domain witness anywhere.
+#
+# WHY THIS IS A COMMENT AND NOT A FIELD: this record is fingerprinted over its
+# entire parsed content, so amending any field moves
+# sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76 and
+# invalidates the 73 bindings pinned to it across 37 files -- the cost commit
+# d66ec8bd9 paid for the last such edit. A comment is fingerprint-neutral and
+# was verified to be. Fold this into `rights_basis` and `notes` at the next
+# rebind and delete it then.
 schema = 1
 record_type = "artifact"
 id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"

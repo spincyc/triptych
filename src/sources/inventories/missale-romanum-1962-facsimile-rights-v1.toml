@@ -1,0 +1,854 @@
+# Whether this repository may do what it does with the CMAA facsimile of the
+# 1962 Missale Romanum, settled once so that it is not settled again.
+#
+# TASK-114 reported that the scan this project collates against carries a
+# CC BY-NC-ND 3.0 licence rather than a public-domain status. The report is
+# right about the tag and wrong about what follows from it, and the three
+# things it ran together have to be separated before any of them can be
+# answered:
+#
+#   1. the rights in the SCAN, which is where the CC tag lives;
+#   2. the rights in the BOOK the scan reproduces, which is a different
+#      question with a different answer; and
+#   3. what THIS PROJECT ACTUALLY DOES, which is the only question with a
+#      practical consequence.
+#
+# guidance/sources.md:402-413 requires exactly this file: "Settle a recurring
+# rights question once, in a rights record ... A rights position stated only in
+# prose, in three places, in three wordings, is three positions." That is
+# literally the state this question was in. It is stated in the artifact
+# manifest as `unresolved`, in `missal-acquisition-audit-v1.toml` as
+# `may_publish_text = "no"`, and in published prose at
+# web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.md
+# as "The 1962 Latin liturgical text is public domain and the project asserts no
+# rights in it." Three positions, and the third is the one the public can read.
+#
+# It is not legal advice, it is not an opinion of counsel, and it binds nobody
+# outside this repository. It is the project's own reading, held to the same
+# standard as any other claim here. Where it states a proposition of law it
+# states the jurisdiction, and the jurisdiction throughout is the United States.
+
+rights_schema = 1
+record_type = "missale-romanum-1962-facsimile-rights"
+recorded_on = "2026-08-01"
+jurisdiction = "United States"
+closes_open_question = "the-1962-contradiction, src/sources/inventories/lt-hist-rights-audit-v1.toml"
+governs_artifact = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+
+holding = """
+THE SCAN'S CC BY-NC-ND CONFERS NOTHING, AND THAT IS NOT THE GOOD NEWS IT LOOKS
+LIKE. It was applied by a private uploader who is neither the rights holder nor
+the scanner, over bytes in which no new copyright subsists under Bridgeman, and
+the identical file sits on Internet Archive a second time under no licence at
+all. A tag two strangers set differently on the same sha1 is not a grant. But
+disposing of the tag removes the only instrument that would have PERMITTED
+anything, and leaves the project standing on the underlying book's copyright
+with no licence at all.
+
+THE UNDERLYING 1962 TYPICAL EDITION IS PROBABLY PROTECTED IN THE UNITED STATES
+UNTIL THE END OF 2057, by URAA restoration under 17 U.S.C. 104A. This record
+does not find it public domain and the evidence does not support finding it so.
+`unresolved` on the artifact therefore stands, and the reason it stands has
+moved: it is no longer "nobody has looked" but "we looked, and the likely answer
+is that it is in copyright."
+
+WHAT SAVES THE PROJECT IS NOT A CLEARANCE BUT 17 U.S.C. 103(b). A new typical
+edition's copyright "extends only to the material contributed by the author of
+such work, as distinguished from the preexisting material employed in the work,
+and does not imply any exclusive right in the preexisting material." Nearly
+everything this project quotes out of the 1962 book -- the Canon, the Ordo
+Missae prayers, the seasonal orations -- the 1962 book inherited verbatim from
+typical editions long in the public domain, and this repository now TRACKS four
+of them. The 1962 edition's own new matter is the 1955 Holy Week, the 1960 Code
+of Rubrics, the sanctoral added after 1920, and its own front matter, and that
+is the material the project must not publish from this scan.
+
+THE BRIEF THAT COMMISSIONED THIS RECORD WAS WRONG ABOUT THE ONE FACT THAT
+MATTERS MOST. It stated that the project publishes "no image and no Latin text
+taken from it." Full Latin prayer texts read off this facsimile's page images
+are published: the whole of Lauda Sion, the Corpus Christi Collect, Secret and
+Postcommunion, the All Souls formularies and the Commune orations, in
+`src/sources/calendars/roman-1962/propers.yaml` and in `web/`. The project does
+act (b). See `[[corrections]]` `no-latin-is-published`.
+"""
+
+# --- Evidence levels ----------------------------------------------------------
+
+[evidence_levels]
+levels = """
+The classes `missal-acquisition-audit-v1.toml` fixed, used identically here.
+
+  [verified]  Read here, on 2026-08-01, from the bytes named -- a metadata API
+              queried by URL, or a file on this machine at the path and line
+              given. Reproducible.
+  [sourced]   Read from an external document cited by URL, not independently
+              re-derived here.
+  [recorded]  Taken from a record already in this repository, cited by path and
+              line. Not re-verified here unless the row says so.
+
+Nothing below is asserted from recall. THE FACSIMILE WAS NOT DOWNLOADED FOR THIS
+RECORD and no reading was taken from its page images here; every statement about
+its contents is [recorded] from the passages, bindings and collation inventories
+that did read it. Statements of law are the project's own reading and are marked
+as such rather than given an evidence class they cannot have.
+"""
+
+# ==============================================================================
+# QUESTION 1 -- THE SCAN, AND WHAT THE CC TAG IS WORTH
+# ==============================================================================
+
+[the_cc_licence]
+question = "Does the CC BY-NC-ND 3.0 that appears on this scan bind this project?"
+answer = "No. It was applied by neither the rights holder nor the scanner, over bytes carrying no new copyright, and the same bytes carry no licence at their other host."
+prior_ruling = """
+guidance/missals.md:325-341 already ruled that such a mark "confers nothing" when
+applied by neither rights holder nor scanner [recorded]. THAT RULING COVERS THIS
+CASE EXACTLY, and this record re-verified its two factual legs today rather than
+inheriting them.
+"""
+
+[[the_cc_licence.item]]
+identifier = "missale_romanum-1962"
+url = "https://archive.org/metadata/missale_romanum-1962"
+title = "Missale Romanum - 1962"
+creator = "Church Music Association of America"
+uploader = "m.kusnjacic@gmail.com"
+licenseurl = "http://creativecommons.org/licenses/by-nc-nd/3.0/"
+publicdate = "2017-01-17 10:15:03"
+collection = "milankusnjacicarchive, individual-image-collections"
+description_as_printed = "Knjiga je preuzet s ove mreze stranice -- Croatian, 'the book was taken from this web page'."
+file_sha1 = "255d3aef352b74f77f230601115af8e57328a4e8"
+file_size = 82815941
+evidence = "verified"
+note = """
+THE UPLOADER IS NOT THE CREATOR AND THE ITEM SAYS SO ON ITS FACE. `creator` names
+the CMAA; `uploader` is a private Gmail address; the collection is that
+individual's personal archive; and the description says in Croatian that the
+uploader took the book off some other web page. Every field points the same way:
+a third party re-hosting somebody else's file and ticking a licence box on a
+form. Creative Commons licences are granted by rights holders. This person is
+not one.
+"""
+
+[[the_cc_licence.item]]
+identifier = "missale62"
+url = "https://archive.org/metadata/missale62"
+title = "MISSALE ROMANUM EX DECRETO SS. CONCILII TRIDENTINI RESTITUTUM SUMMORUM PONTIFICUM CURA RECOGNITUM"
+creator = "Church Music Association of America MusicaSacra.com"
+uploader = "pperrettis06@gmail.com"
+licenseurl = "ABSENT"
+rights_field = "ABSENT"
+publicdate = "2025-06-24 01:10:14"
+collection = "opensource"
+file_sha1 = "255d3aef352b74f77f230601115af8e57328a4e8"
+file_size = 82815941
+evidence = "verified"
+note = """
+IDENTICAL SHA1, IDENTICAL BYTE COUNT, DIFFERENT TERMS. This is the control that
+makes the point without any argument about copyright at all. If a CC tag on
+Internet Archive told you the rights in a file, these two items would tell you
+two different things about one file. It does not tell you anything; it records
+what an uploader clicked.
+"""
+
+[the_cc_licence.the_host_publishes_nothing]
+what = "The CMAA's own delivery of the same file."
+url = "https://media.churchmusicassociation.org/pdf/"
+finding = """
+The PDF sits in a bare Apache-style directory index. `missale62.pdf` is listed at
+79M, dated 2023-07-31, and THE PAGE CARRIES NO COPYRIGHT NOTICE, NO LICENCE
+STATEMENT, NO TERMS OF USE AND NO RIGHTS STATEMENT OF ANY KIND [verified,
+2026-08-01]. 79M is 82,815,941 bytes to the megabyte, so the file CMAA serves is
+the file both uploaders posted. guidance/missals.md records that /copyright/ and
+/terms/ on that host answer 404 [recorded].
+"""
+reading = """
+The body actually named as `creator` on both Internet Archive items has published
+no terms at all. Absence of a notice is not a grant -- that is the rule this
+repository already applies -- but it does dispose of any suggestion that the CC
+tag descends from CMAA. It does not. Nobody in the chain of custody granted
+anything.
+"""
+evidence = "verified"
+
+[the_cc_licence.there_is_nothing_to_licence]
+reasoning = """
+A faithful mechanical reproduction of a two-dimensional public-domain original is
+not original authorship: Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191
+(S.D.N.Y. 1999). Machine OCR adds no human authorship on top of it. So there is
+no separate copyright in this scan for ANYONE to license -- not the uploaders,
+not CMAA, not the digitizer whose ABBYY FineReader stamp the PDF carries.
+
+This is the same reasoning already applied to the Lasance scan
+[recorded, lasance-new-roman-missal-rights-v1.toml `[the_ocr_text_layer]`], and
+that record draws the contrast this one has to live with: there the scan argument
+COMPLETED a case, because the underlying book had an affirmative basis of its
+own. Here it stands alone, and standing alone it only removes a layer. What is
+underneath it is Question 2.
+"""
+
+[the_cc_licence.internet_archive_guarantees_nothing]
+status = "NOT RE-VERIFIED HERE, AND NOT RELIED ON."
+note = """
+guidance/missals.md records the Internet Archive as stating that it "does not
+make guarantees as to the copyright status of items on archive.org" [recorded,
+sourced there]. Two attempts to re-fetch that sentence from archive.org/about/terms
+today returned only the page shell and not the terms body [verified, 2026-08-01],
+so this record does not restate it at [sourced]. IT DOES NOT NEED IT. The two
+contradictory items above establish the same proposition from the Archive's own
+data rather than from its disclaimer, and a disclaimer would add nothing to a
+demonstration.
+"""
+
+[the_cc_licence.verdict]
+text = """
+THE TAG IS NOT ADOPTED, IN EITHER DIRECTION. Not adopted as a grant, because a
+stranger cannot license what he does not own. Not adopted as a restriction, for
+the same reason. The artifact's `rights_status` does not become `licensed`, and
+the NC and ND terms are not this project's constraint.
+"""
+but_read_it_at_face_value_anyway = """
+WORTH DOING, BECAUSE IT SHOWS WHICH WAY THE TAG WOULD HAVE CUT. CC BY-NC-ND 3.0
+PERMITS reproduction and distribution of the unmodified work for non-commercial
+purposes with attribution. It FORBIDS distributing adaptations. So at face value
+the tag would have licensed the download and the reading, and would have bitten
+on exactly one thing: publishing a transcription, which is an adaptation.
+
+And it would have bitten hard, because of this project's own outbound licence.
+LICENSE grants project-created content under CC BY 4.0, which permits commercial
+use and derivatives. NOTHING GOVERNED BY AN ND TERM CAN BE PASSED ON UNDER
+CC BY 4.0. If the tag were operative, the incompatibility would be structural
+rather than a matter of degree. The reason it is not a problem is that the tag is
+void, not that the acts are small -- and a record that reported "NC and ND are
+not our constraint" without saying why would be hiding the near miss.
+"""
+
+# ==============================================================================
+# QUESTION 2 -- THE BOOK, ON ITS OWN EVIDENCE
+# ==============================================================================
+
+[the_underlying_edition]
+question = "Independently of any scan, is the 1962 Vatican editio typica of the Missale Romanum in copyright in the United States?"
+answer = "PROBABLY YES, TO THE END OF 2057, by restoration under 17 U.S.C. 104A. This record finds no public-domain basis and does not manufacture one."
+the_book = "Missale Romanum ex decreto SS. Concilii Tridentini restitutum, Summorum Pontificum cura recognitum, editio typica, declared typical by decree of the Sacred Congregation of Rites of 23 June 1962 [recorded, guidance/missals.md:44-66, read at the facsimile's own p. 2], published at Vatican City by Typis Polyglottis Vaticanis."
+
+[the_underlying_edition.us_formalities]
+what_happened = """
+The book carries no copyright notice: guidance/missals.md records that the
+facsimile shows none across all 54,807 extracted lines [recorded]. For a work
+published in 1962 that is decisive under the 1909 Act as ordinarily applied --
+publication without notice forfeited United States copyright.
+
+There is a contrary line for works first published abroad: Twin Books Corp. v.
+Walt Disney Co., 83 F.3d 1162 (9th Cir. 1996), held that foreign publication
+without notice did not inject a work into the United States public domain. It is
+a minority position and it is not needed here.
+"""
+why_it_does_not_matter = """
+BOTH BRANCHES END IN THE SAME PLACE, WHICH IS WHY THIS RECORD DOES NOT HAVE TO
+CHOOSE. On the ordinary branch the work fell into the public domain in 1962 for
+want of notice, and 17 U.S.C. 104A(h)(6)(C)(i) restores works that are in the
+public domain through "noncompliance with formalities imposed at any time by
+United States copyright law, including failure of renewal". On the Twin Books
+branch the work had United States copyright from 1962, its renewal fell due in
+1990, and the Copyright Renewal Act of 1992 made renewal automatic only for works
+first copyrighted from 1964 -- so an unrenewed 1962 work lapsed in 1991, which is
+again failure of renewal and again within 104A(h)(6)(C)(i).
+
+Restoration was automatic on 1 January 1996 for Berne-source works. It is what
+governs on either branch.
+"""
+
+[the_underlying_edition.uraa_conditions]
+note = "Worked through element by element, because the conclusion runs against this project's convenience and should be attackable."
+eligible_country = "The Holy See acceded to the Berne Convention on 12 September 1935 [sourced, Wikimedia Commons Copyright rules by territory/Vatican City, fetched 2026-08-01; also recorded at guidance/missals.md]. An eligible country under 104A(h)(3)."
+author_nationality = "104A(h)(6)(D) requires an author who was, when the work was created, a national or domiciliary of an eligible country. The Sacred Congregation of Rites is an organ of the Holy See. Satisfied."
+first_publication = "104A(h)(6)(D) also requires first publication in an eligible country and no United States publication within the following thirty days. The typical edition was published at Vatican City. Benziger's New York printings iuxta typicam are SEPARATE EDITIONS under separate United States registrations, not simultaneous publication of this one. THIS IS AN INFERENCE FROM THE EDITION STRUCTURE AND WAS NOT VERIFIED AGAINST A PHYSICAL COPY."
+not_expired_in_source_country = "104A(h)(6)(B) excludes works in the public domain in the source country through expiration of term. On 1 January 1996 a 1962 Vatican publication was thirty-four years old against a seventy-year term. Not expired."
+term_if_restored = "104A(a)(1)(B) gives the remainder of the term the work would have had. For a work published in 1962 that is ninety-five years from publication: 31 DECEMBER 2057."
+
+[the_underlying_edition.the_official_acts_argument]
+what_it_is = """
+THE ONE ARGUMENT THAT COULD DEFEAT RESTORATION, STATED AT ITS STRONGEST BECAUSE
+IT IS THE ARGUMENT THIS PROJECT WOULD WANT TO WIN.
+
+Vatican Law N. CXCVII is of 2017 and cannot govern what was protected in 1996.
+What governed in 1996 was the Italian Copyright Act, l. 633 of 22 April 1941,
+applied in Vatican City on a supplementary basis by virtue of the 1929 Law on
+Sources of Law [sourced, Wikimedia Commons Copyright rules by territory/Vatican
+City, fetched 2026-08-01]. Article 5 of that Act provides that "the provisions of
+this Law shall not apply to the texts of official acts of the State or of public
+administrations, whether Italian or foreign" [sourced, WIPO Lex and cyberlaws.it,
+fetched 2026-08-01].
+
+If the Missale Romanum was a text of an official act of the Holy See, then on
+1 January 1996 it was not protected in its source country at all, and the case
+for restoration is at least awkward.
+"""
+why_it_probably_fails = """
+Three reasons, and the first is fatal on the statute's own words.
+
+  1.  104A(h)(6)(B) EXCLUDES ONLY WORKS IN THE PUBLIC DOMAIN "THROUGH EXPIRATION
+      OF TERM OF PROTECTION". A work that never had a term because its
+      subject matter was excluded is not in the public domain through expiry of
+      one. On the literal reading the condition is satisfied and the work is
+      restored. The argument needs the statute to say something it does not say.
+
+  2.  ARTICLE 5 IS READ NARROWLY. It reaches laws, decrees and administrative
+      documents. A missal is a book of prayers, chants, lessons and rubrics. The
+      DECREE that declares it typical is plausibly an official act; the 1,088
+      pages the decree introduces are not obviously one, and Italian practice
+      also preserves protection in the "elaborazione e forma di presentazione"
+      of such texts even where the substance is free [sourced].
+
+  3.  THERE IS NO SUBJECT-MATTER ROUTE EITHER. 104A(h)(6)(C)(ii), the
+      lack-of-subject-matter-protection limb, is confined on its face to "sound
+      recordings fixed before February 15, 1972" [sourced,
+      law.cornell.edu/uscode/text/17/104A, fetched 2026-08-01]. A printed book
+      cannot enter through it, so the argument has nowhere to go but (B), where
+      reason 1 stops it.
+
+  4.  THE HOLY SEE IS NOT VATICAN CITY STATE. Article 5 speaks of official acts
+      of the State. The Missale was issued by a dicastery of the Holy See, a
+      distinct sovereign subject, and the Holy See has asserted copyright in its
+      own publications continuously -- through LEV, and through the decree of
+      31 May 2005 vesting in LEV the exclusive financial rights over the
+      documents by which the Supreme Pontiff exercises his Magisterium
+      [recorded, guidance/missals.md].
+
+Vatican Law N. CXCVII art. 2 now extends copyright expressly to "the texts of
+laws and official acts published, in whatever form, by the Holy See", with a
+seventy-year term from first fixation under art. 5 [sourced, vaticanstate.va and
+ULSA bulletin 26, fetched 2026-08-01; also recorded at guidance/missals.md].
+That is 2017 law and does not reach the 1996 test date, but it settles the
+present-day position in the source country: 1962 plus seventy is the end of 2032,
+and the "it is an official act, therefore free" route is closed at home as well.
+"""
+disposition = "RECORDED AS THE STRONGEST ROUTE OUT AND NOT TAKEN. It would need a court to read 104A(h)(6)(B) as covering works never protected, AND a finding that a missal is an official act of the State. This project does not build a publication basis on two contested readings stacked."
+
+[the_underlying_edition.the_limit_that_actually_matters]
+statute = "17 U.S.C. 103(b)"
+text = """
+"The copyright in a compilation or derivative work extends only to the material
+contributed by the author of such work, as distinguished from the preexisting
+material employed in the work, and does not imply any exclusive right in the
+preexisting material. The copyright in such work is independent of, and does not
+affect or enlarge the scope, duration, ownership, or subsistence of, any
+copyright protection in the preexisting material."
+
+Quoted verbatim from 17 U.S.C. 103(b) [sourced, law.cornell.edu/uscode/text/17/103,
+fetched 2026-08-01]. THE SECOND SENTENCE IS THE STRONGER ONE FOR THIS RECORD: the
+1962 edition's copyright does not "affect or enlarge the ... duration" of any
+protection in the preexisting material. Whatever the 1962 edition is, it did not
+restart a clock on the Canon.
+"""
+application = """
+THIS IS THE FINDING THAT DOES THE WORK, AND IT SURVIVES EVERY BRANCH ABOVE. Even
+on the least favourable reading -- the 1962 typical edition fully restored and in
+copyright until 2058 -- that copyright reaches only what the 1962 edition
+CONTRIBUTED. It gives no exclusive right in the preexisting material, and the
+preexisting material is most of the book.
+
+The 1962 edition is a revision of the 1920 typical edition of Benedict XV, which
+is a revision of the 1900, descending through 1604 to the editio princeps of
+1570. Four of those states are now TRACKED in this repository as public-domain
+full text [recorded]: venice-1570, vatican-typica-1604, pustet-ratisbon-1862 and
+vatican-typica-1920. Anything the 1962 book reprints from them carries no 1962
+copyright, and this repository holds the text with which to demonstrate it.
+"""
+what_is_new_matter = """
+The 1962 edition's own contribution, which 103(b) does NOT free and which this
+project must not publish from this scan:
+
+  -  The restored Holy Week of 1955 (Ordo Hebdomadae Sanctae instauratus): Palm
+     Sunday through the Easter Vigil, wholly rewritten.
+  -  The 1960 Code of Rubrics as printed in this book: the Rubricae generales
+     Missalis romani at nn. 424-513 and the Additiones et variationes, together
+     with the revisions they made to the Ritus servandus and to the rank,
+     commemoration and oration structure throughout.
+  -  Sanctoral formularies first published between the scanned 1920-family
+     printing and 1962 -- among them the Queenship of the Blessed Virgin Mary
+     and St Pius X (both 1954) and St Joseph the Worker (1955), none of which is
+     in the tracked 1920 text [verified, see `[the_1920_substitution]`].
+  -  The front matter of this edition, including the Decretum of 23 June 1962
+     quoted in Latin at guidance/missals.md:50-64. THAT IS THE MOST EXPOSED
+     SINGLE ITEM IN THE REPOSITORY on this question: it is 1962 matter, it is
+     quoted in Latin, and it is quoted in a file the repository publishes.
+  -  The edition's own apparatus of arrangement: pagination, and the continuous
+     marginal numbering 1013-1139 over the Ordinary. NUMBERS AND PAGE LOCATIONS
+     ARE FACTS AND MAY BE CITED FREELY; what 103(b) would protect is the
+     selection and arrangement, not the citation of it.
+"""
+
+[the_underlying_edition.routes_examined_and_refused]
+renewal_search = """
+NOT RUN, AND DELIBERATELY SO. A renewal search of the kind
+`lasance-new-roman-missal-rights-v1.toml` ran is the right instrument for a
+United States registration, and it is the wrong instrument here: on both branches
+of `[the_underlying_edition.us_formalities]` a failure to renew is precisely what
+104A(h)(6)(C)(i) restores. A clean negative would prove nothing this record could
+use. Recorded so that a later reader does not spend the effort believing it is
+the missing piece.
+"""
+copyright_office_online_catalog = "Not relied on, for the reasons set out at lasance-new-roman-missal-rights-v1.toml `[the_online_catalog_is_not_relied_on]`: the Catalog of Copyright Entries is 0 per cent searchable in CPRS [recorded]."
+notice_of_intent_to_enforce = """
+A restored copyright is enforceable against a "reliance party" only after a
+Notice of Intent to Enforce, 17 U.S.C. 104A(c)-(d). CHECKED AND UNAVAILABLE: a
+reliance party is one who used the work before restoration in 1996, and this
+project did not exist. There is no NIE shelter here.
+"""
+age_of_the_underlying_rite = """
+NOT A BASIS FOR THIS EDITION, though it is a basis for most of its contents. "The
+prayers are ancient" answers a question about the text and not about the edition.
+The correct route to the ancient text is 103(b) plus a public-domain witness, not
+an assertion about the 1962 book. See `[the_1920_substitution]`.
+"""
+
+[the_underlying_edition.verdict]
+text = """
+`rights_status = "unresolved"` STANDS ON THE ARTIFACT, and its meaning is now
+sharper than it was. It is not a placeholder for an unasked question. It records
+that the question was asked, that the likely answer is copyright to the end of
+2057, and that nothing found supports a public-domain finding for the 1962
+edition as such.
+
+TRACKABLE_RIGHTS excludes `unresolved` [recorded, tools/source-library:145-151],
+so the guard that matters stays on: the payload may not be installed, and the
+82.8 MB of page images may not enter Git.
+"""
+
+# ==============================================================================
+# QUESTION 3 -- WHAT THE PROJECT ACTUALLY DOES
+# ==============================================================================
+
+[the_three_acts]
+why_separated = "Because they have different answers, and the brief that commissioned this record collapsed the second into the third and got the wrong result."
+
+[the_three_acts.a_making_a_copy_to_read]
+does_the_project_do_it = "YES, once."
+what_happened = "The audit of 2026-08-01 fetched the 82.8 MB, recomputed the SHA-256 against the registered value, and read page 2 [recorded, guidance/missals.md:44-49]. The seasonal collation worked from a copy under untracked `build/`, hashed against the registered digest before any reading was taken [recorded, roman-1962-seasonal-citation-collation-v1.toml:34-47]. No payload is installed and the artifact is `storage = \"remote\"`."
+disposition = """
+LOW EXPOSURE, ON EVERY BRANCH. Read at face value the CC tag licenses it
+outright. If the tag is void and the book is restored, a single research copy,
+retained outside the repository, made to check a reading and not to substitute
+for a purchase, is the paradigm case for fair use under 17 U.S.C. 107: the
+purpose is scholarly and verificatory, the use is not a market substitute for an
+altar missal, and nothing is redistributed. This is the project's own reading and
+not an opinion of counsel.
+"""
+
+[the_three_acts.b_publishing_a_transcription_of_the_latin]
+does_the_project_do_it = "YES. THIS IS THE CORRECTION, AND IT IS THE WHOLE OF THE PRACTICAL EXPOSURE."
+what_the_apparatus_does_not_do = """
+The source-library layer is clean and was built to be. All 41 passage records
+under the 1962 edition carry `locus`, `states`, `context`, `verified_on` and
+`notes` and NO `text` field, and the schema note says so in terms: "records the
+visual locator and inspection scope but no physical-line range or checked
+transcription" [recorded, e.g. passages/canon-te-igitur.toml]. All 32
+`source-bindings.toml` entries citing the artifact record a locus and a
+fingerprint and no text [recorded]. `grep -rn '^text = ' --include=source-bindings.toml src/`
+returns nothing [recorded].
+"""
+what_the_derived_layers_do = """
+THE LATIN LEFT THE APPARATUS ANYWAY, THROUGH THREE DOORS.
+
+  1.  `src/sources/calendars/roman-1962/propers.yaml` carries full Latin prayer
+      text transcribed from this facsimile's page images: the complete Lauda Sion
+      in twenty-four strophes, the Corpus Christi Collect, Secret and
+      Postcommunion, the All Souls formularies, and the Commune orations. The
+      per-proper notes name the source in terms -- "Read from the 1962 CMAA
+      facsimile page image, printed p. 377 = digital p. 458, under the heading
+      Secreta" [recorded].
+  2.  `src/claude/liturgy/roman-rite/1962/propers/temporal/**/propers/verified.md`
+      carries transcribed formularies with "Witness: CMAA facsimile, printed
+      p. 387, left column (PDF p. 468)" [recorded].
+  3.  `web/` publishes them. Ten files under `web/` reference the facsimile
+      [recorded].
+
+The 1962 Decretum is a fourth door: five lines of its Latin are quoted at
+guidance/missals.md:50-64, and unlike everything above it is 1962 new matter with
+no earlier witness anywhere.
+"""
+is_it_lawful = """
+FOR EVERYTHING BUT THE DECRETUM AND THE 1955/1960 MATTER, YES -- BY 103(b) AND
+NOT BY ANY PROPERTY OF THIS SCAN. Lauda Sion is Aquinas; the Corpus Christi
+orations, the All Souls formularies and the Commune orations stand in the tracked
+1920 text; the Canon stands there at line 49251. What is published is preexisting
+material in which the 1962 edition has no exclusive right, and this repository
+holds a tracked public-domain witness to it. The seasonal collation record proves
+this is not theoretical: when the 1920 landed, all four Corpus Christi propers
+transcribed off the 1962 page images were checked against it and ALL FOUR
+CORROBORATED [recorded, roman-1962-seasonal-citation-collation-v1.toml:122-143].
+
+THE ROUTE MATTERS EVEN WHERE THE RESULT IS THE SAME. Reading a text off a 1962
+page and publishing it because the prayer is old is an inference. Publishing it
+because a tracked public-domain edition prints the same words is a record. This
+project's own rule is that a conclusion without a record is the thing being
+corrected.
+"""
+the_decretum = """
+NOT COVERED, AND NAMED SO IT IS NOT LOST. The Decretum of 23 June 1962 is new
+matter of the 1962 edition, quoted in Latin at guidance/missals.md:50-64. If the
+edition is restored, this is a quotation from a work in copyright. It is five
+lines of an 1,088-page book, quoted to identify and date the edition, in a
+research document, with no market effect -- which is a strong fair-use posture
+under 17 U.S.C. 107 and an ordinary act of scholarship. It is recorded here as an
+exposure rather than removed, because the quotation is what proved the act had
+been read at all and deleting it would undo the finding at
+guidance/missals.md:36-49.
+"""
+
+[the_three_acts.c_publishing_the_page_images]
+does_the_project_do_it = "NO."
+finding = "No page image from this facsimile appears anywhere in `src/`, `web/`, `library/`, `pdf/` or `release/`, and no payload is retained [recorded]. This is the one act on which both the ND term and the underlying copyright would bite hardest, and it is the one act the project does not perform."
+rule = "KEEP IT THAT WAY. Publishing a page image would put the project on the wrong side of the restored copyright with no 103(b) answer available, because a page image reproduces the 1962 typography and arrangement, which IS the edition's contribution."
+
+[the_three_acts.the_practical_answer]
+text = """
+Asked plainly -- is what this repository does with the facsimile within the
+licence and within copyright?
+
+  WITHIN THE LICENCE: the question does not arise, because there is no operative
+  licence. The tag is void. Read at face value it would have permitted (a) and
+  forbidden (b).
+
+  WITHIN COPYRIGHT: yes, on the project's own reading, but the reason is 103(b)
+  and a public-domain witness rather than anything about the 1962 edition or its
+  scan. (a) is fair use or licensed on any branch. (b) is lawful for preexisting
+  material and unresolved for the 1962 Decretum and any 1955 or 1960 matter.
+  (c) is not done and must not be.
+"""
+
+# ==============================================================================
+# QUESTION 4 -- DOES THE 1920 REDUCE THE DEPENDENCY?
+# ==============================================================================
+
+[the_1920_substitution]
+question = "Now that a tracked public-domain full text of the 1920 typical edition is in the source library, how far does it remove the need for the 1962 facsimile?"
+answer = "IT DOES NOT REDUCE THE DEPENDENCY. IT CHANGES ITS KIND -- from the source of published Latin to the verification of it -- and that is worth more than a reduction."
+the_artifact = "artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196, `storage = \"tracked\"`, `rights_status = \"public-domain\"`, 2,918,085 bytes, 123,278 lines, on disk [recorded]."
+
+[the_1920_substitution.the_distinction]
+text = """
+A WITNESS AND A RIGHTS BASIS ARE DIFFERENT JOBS AND THE 1920 CAN ONLY DO ONE.
+
+It cannot be the witness. The calendar's own rule is that a reading must come
+from a page image and not from a text layer, because the text layer is the thing
+under audit [recorded, roman-1962-seasonal-citation-collation-v1.toml:49-58]; the
+1920 artifact is text-only, so "under the rule stated above it cannot supply a
+reading for this calendar" [recorded, ibid. 122-143]. And it is a witness to a
+DIFFERENT EDITION: its own record says it "is a witness to the state of the Roman
+Missal that the 1962 edition revised, not to the 1962 edition" [recorded,
+editions/vatican-typica-1920/edition.toml].
+
+It can be the rights basis, and that is the job that was vacant. Where the 1962
+page and the 1920 text agree, the 1962 facsimile establishes WHAT THE 1962 BOOK
+PRINTS and the 1920 establishes THAT THE WORDS MAY BE PUBLISHED. Neither does
+both. The pairing is what moves a transcription from an inference about the age
+of a prayer to a recorded public-domain basis.
+"""
+
+[the_1920_substitution.where_it_substitutes]
+verified_coverage = """
+Searched here on 2026-08-01 in the tracked payload. NOTE THE SEARCH CAVEAT: the
+OCR emits double spaces between words and drops ornamental dropped initials, so
+literal-phrase grep fails and every count below used `grep -Ei` with `+` between
+tokens. A naive search for "Te igitur" returns 0 and the Canon is nevertheless
+there in full.
+
+  Canon Missae, at line 49251, opening "E IGITUR, clementissime Pater"
+      -- the dropped T is the initial the scan lost           [verified]
+  Ordo Missae                                       6 hits    [verified]
+  Ritus servandus                                  18 hits    [verified]
+  De defectibus                                    13 hits    [verified]
+  Qui pridie                                        5 hits    [verified]
+  Munda cor                                         8 hits    [verified]
+  Placeat tibi                                     12 hits    [verified]
+  Judica me                                         5 hits    [verified]
+  Hanc igitur                                      17 hits    [verified]
+  Praefatio                                       367 hits    [verified]
+  Proprium de Tempore, sanctoral, Commune Sanctorum, and the
+      pro aliquibus locis appendix, all present    [recorded]
+"""
+so_it_covers = """
+The Ordinary and the Canon entire; the Ritus servandus and De defectibus in their
+pre-1955 state; the temporal outside Holy Week; the Commons; and a sanctoral
+substantially larger than 1920 (see the defect below). That is the overwhelming
+majority of what this project quotes.
+"""
+
+[the_1920_substitution.where_it_cannot]
+items = """
+Concretely, and these are the places where the 1962 facsimile remains the only
+witness AND no public-domain basis is available from it:
+
+  1.  HOLY WEEK. The 1955 Ordo Hebdomadae Sanctae instauratus rewrote Palm Sunday
+      through the Easter Vigil. The tracked 1920 text has the PRE-1955 rite --
+      its own record says so, and this lane confirmed the absence of the reform's
+      signature elements: "Vigilia Paschalis" 0 hits, "Praeconium Paschale"
+      0 hits, and no renewal of baptismal promises [verified]. The full 1955
+      liturgical book is not in this repository at all; acquiring it is step 1 of
+      `missal-acquisition-audit-v1.toml` [recorded].
+
+  2.  THE 1960 CODE OF RUBRICS. The Rubricae generales at nn. 424-513 and the
+      Additiones et variationes as printed in the 1962 book are 1960 matter. The
+      1920 has the pre-1955 rubrical system -- `semiduplex` alone runs 169 times
+      through it [recorded, the 1920 edition record] -- and the grades it uses
+      were abolished by the 1960 code. There is no correspondence to fall back
+      on; it is a different system, not a variant reading.
+
+  3.  THE POST-1954 SANCTORAL. Verified absent from the tracked 1920 text:
+      the Queenship of the Blessed Virgin Mary (1954), St Pius X (1954) and
+      St Joseph the Worker (1955) all return 0 hits [verified].
+
+  4.  THE 1962 FRONT MATTER, above all the Decretum of 23 June 1962. Unique to
+      this edition by definition.
+
+  5.  THE COMMUNICANTES AS THIS PROJECT DESCRIBES IT. A published document states
+      that the Canon names "Joseph in the amended 1962 form" [recorded,
+      web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md:619].
+      St Joseph was inserted by John XXIII's decree Novis hisce temporibus of
+      13 November 1962, effective 8 December 1962 -- AFTER the typical edition
+      was declared typical on 23 June 1962. Either the scanned printing is a
+      later impression carrying the insertion, or the published sentence is
+      wrong. NOT ADJUDICATED HERE: settling it needs the facsimile's own page
+      opened, which this lane was not to do. Flagged because it bears on both the
+      identity of the scanned printing and the accuracy of a published claim.
+
+  6.  PAGINATION AND MARGINAL NUMBERING. Not a rights problem -- page and item
+      numbers are facts -- but the 1920 cannot supply them even as facts: its
+      internal cross-references were rendered as "000" throughout by the OCR, so
+      it cannot establish its own book's pagination [recorded, the 1920 artifact
+      notes].
+"""
+
+[the_1920_substitution.a_defect_in_the_1920_artifact_itself]
+severity = "CONSEQUENTIAL, AND NOT THIS LANE'S FILE TO FIX. Recorded here because it was found here and because it bears directly on whether the 1920 can carry the basis this record assigns it."
+finding = """
+THE SCANNED PRINTING IS NOT A 1920 IMPRESSION. It carries, as full formularies
+with ranks in the sanctoral, feasts instituted well after 1920 [verified,
+2026-08-01, in the tracked payload]:
+
+  D. N. Jesu Christi Regis        line 8133 (rank), 94367 (formulary)
+      -- instituted 1925
+  S. Teresiae a Jesu Infante      line 7856 (rank), 92091 (formulary)
+      -- extended to the universal calendar 1927
+  Immaculati Cordis B. M. V.      line 7420 (rank, duplex II classis),
+                                  line 87798 (formulary)
+      -- instituted 1944
+  S. Joannis Bosco, Conf., Duplex line 66667, under "Die 31 Januarii"
+      -- canonized 1934, universal calendar 1936
+
+and does NOT carry the Queenship of the BVM, St Pius X or St Joseph the Worker
+[verified], which bounds the printing at roughly 1944-1954.
+"""
+why_it_matters = """
+The 1920 artifact's rights basis is "first published outside the United States
+before the pre-1931 line, and ON THAT GROUND ALONE" [recorded, its own
+rights_basis]. That ground does not reach a formulary first published in 1944.
+1944 is squarely post-1931 and squarely within the same URAA restoration analysed
+at `[the_underlying_edition.uraa_conditions]`.
+
+THE EFFECT ON THIS RECORD IS NARROW AND THE BASIS SURVIVES. Everything this
+record leans on the 1920 for -- the Canon, the Ordo Missae, the Commune orations,
+the Corpus Christi and All Souls propers, the temporal -- is material the 1920
+typical edition itself carried, and is separately witnessed by the tracked 1604
+and 1570 texts. The exposure is confined to the post-1931 sanctoral additions
+this lane found, and nothing here publishes from those.
+
+THE EFFECT ON THE 1920 ARTIFACT IS NOT NARROW. It is `storage = "tracked"` and
+`rights_status = "public-domain"` on a pre-1931 ground, with a payload in Git
+that contains post-1931 matter. That is the same shape as the Lasance appendix
+problem, which was resolved by removing the excluded pages from the tracked text
+rather than disclaiming them in prose [recorded,
+lasance-new-roman-missal-rights-v1.toml `[the_appendix_exclusion]`]. WORK FOR THE
+LANE THAT OWNS THAT ARTIFACT; it is out of scope here and is not silently left
+unsaid.
+"""
+evidence = "verified"
+
+# ==============================================================================
+# THE THREE-WAY CONTRADICTION THIS RECORD FOUND AND DOES NOT OWN
+# ==============================================================================
+
+[the_three_way_contradiction]
+what = "This repository states the 1962 Latin's publishability three times, in three places, in three incompatible wordings. guidance/sources.md:405-407 says that is three positions, and it is."
+positions = """
+  1.  THE ARTIFACT MANIFEST: `rights_status = "unresolved"`, and its notes
+      expressly decline to say whether the 1962 edition is public domain
+      [recorded].
+  2.  THE ACQUISITION AUDIT: `may_publish_text = "no"` on the row
+      `missale-romanum-1962-typica`, with `rights = "holy-see-post-1929"`
+      [recorded, missal-acquisition-audit-v1.toml:963-991].
+  3.  PUBLISHED PROSE, WHICH THE PUBLIC CAN READ: "The 1962 Latin liturgical text
+      is public domain and the project asserts no rights in it" [recorded,
+      web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.md:536].
+"""
+which_governs = """
+POSITION 3 IS WRONG AND SHOULD BE CORRECTED. Nothing found by this record
+supports a public-domain finding for the 1962 typical edition as such, and
+`[the_underlying_edition]` finds the opposite more likely. Position 2 is right
+about the EDITION and reads as over-broad about its CONTENTS, since 103(b) frees
+the preexisting material. Position 1 is right and is now reasoned.
+
+The correct published sentence is not "the 1962 Latin is public domain" but "the
+Latin published here is public domain because it is preexisting material printed
+in typical editions this repository tracks as public domain, and no exclusive
+right in it arises from the 1962 edition."
+"""
+a_better_precedent_already_exists = """
+Another published document in the same corpus already gets it right, and the
+contradiction is therefore internal to the provider branch rather than to the
+project's understanding: "Rights: no public-domain conclusion is claimed for the
+1962 liturgical text merely from its date. Short Latin passages are quoted for
+source-first analysis under the repository's recorded publication authorization
+and are not offered as a recitation substitute" [recorded,
+web/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md:824]. That
+is the standard the other file fails.
+"""
+disposition = "RECORDED, NOT FIXED. Those files are outside this lane's ownership and are being written concurrently. This record exists so the next lane inherits the reasoning rather than the conclusion."
+
+# --- What would change the answer ---------------------------------------------
+
+[what_would_change_the_answer]
+note = "Stated concretely, so that a later reader can attack this record on its own terms rather than re-deriving it."
+items = """
+  1.  A GRANT FROM SOMEBODY WHO HAS ONE. A statement from the Libreria Editrice
+      Vaticana, or from CMAA if CMAA in fact holds anything, would move the
+      artifact off `unresolved` in a single step. Nothing in the chain of custody
+      has ever purported to grant anything, so this is the shortest route and
+      nobody has walked it.
+
+  2.  A HOLDING THAT 104A(h)(6)(B) EXCLUDES WORKS NEVER PROTECTED IN THE SOURCE
+      COUNTRY, together with a finding that the Missale was a text of an official
+      act under Italian l. 633/1941 art. 5 as applied in Vatican City in 1996.
+      Both are needed; either alone does nothing. This is the strongest route to
+      a public-domain finding and it is set out at
+      `[the_underlying_edition.the_official_acts_argument]` at full strength.
+
+  3.  EVIDENCE OF SIMULTANEOUS UNITED STATES PUBLICATION within thirty days of
+      the Vatican publication, which would defeat restoration under
+      104A(h)(6)(D). This record infers the contrary from the edition structure
+      and did not verify it against a physical copy.
+
+  4.  THE PASSAGE OF TIME, WHICH RUNS THE OTHER WAY FOR ONCE. The Vatican term
+      expires at the end of 2032 (seventy years from 1962 under Law N. CXCVII
+      art. 5); the restored United States term at the end of 2057. Neither is
+      near, and the second is what governs here.
+
+  5.  A CHANGE IN THE PROJECT'S ACTS. If this repository ever publishes a page
+      image from this facsimile, or transcribes the 1955 Holy Week or the 1960
+      rubrics out of it, the analysis at `[the_three_acts]` does not cover the
+      new act and this record must be reopened before the act, not after.
+
+  6.  PASSAGE RECORDS OVER THE 1920. The basis this record assigns the 1920 is
+      sound but presently unexercised: ZERO passage records exist for that
+      edition, and its own artifact says "Quote from this artifact only through a
+      checked passage" [recorded]. Until those exist, the 103(b) pairing is an
+      argument rather than an apparatus.
+
+Note what does NOT change it: the presence or absence of a Creative Commons tag
+on any Internet Archive item, a public-domain mark on any of them, the continued
+availability of the CMAA download, or a successful re-download. guidance/sources.md:399-400
+holds that availability and successful download are insufficient, and this record
+relies on neither.
+"""
+
+# --- Corrections to the brief this record was written from ---------------------
+
+[[corrections]]
+id = "no-latin-is-published"
+claim = "The project reads page images to verify a reading, \"publishing no image and no Latin text taken from it\"."
+finding = """
+HALF TRUE AND THE FALSE HALF IS THE IMPORTANT ONE. No image is published, which
+is correct and was confirmed. But full Latin prayer text read off this
+facsimile's page images IS published: the complete Lauda Sion, the Corpus Christi
+Collect, Secret and Postcommunion, the All Souls formularies and the Commune
+orations, in `src/sources/calendars/roman-1962/propers.yaml` and thence in
+`web/`; plus transcribed formularies in
+`src/claude/.../propers/verified.md`; plus five lines of the 1962 Decretum in
+Latin at guidance/missals.md:50-64 [recorded].
+"""
+effect = """
+DECISIVE. It converts the practical question from "is a read-only use within an
+NC/ND licence" -- which would have been trivially yes -- into "is a published
+transcription within the copyright of a probably-restored 1962 edition", which is
+the question `[the_three_acts.b_publishing_a_transcription_of_the_latin]`
+answers and which needs 103(b) and the tracked 1920 to answer at all. Had the
+brief's premise been accepted, this record would have cleared an act the project
+does not perform and left the act it does perform unexamined.
+"""
+
+[[corrections]]
+id = "the-artifact-note-implies-too-much"
+claim = "The artifact's own notes state: \"It stores a hash, retains no bytes, publishes no page image, and the English it collates comes from the 1861 Cummiskey rather than from these images.\""
+finding = "Every clause is true. Together they imply that nothing from these images is published, which is false: the clause about English is silent about Latin, and Latin from these images is published."
+effect = """
+The sentence should name the Latin. IT IS NOT AMENDED HERE, and the reason is
+mechanical rather than editorial: the artifact record is fingerprinted over its
+entire parsed content, so any change to its fields moves
+`sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76` and
+invalidates the 73 bindings pinned to it across 37 files owned by other lanes --
+which is exactly the cost commit d66ec8bd9 paid to make the last such edit. A
+research lane cannot pay it without writing into other lanes' files. The
+correction is recorded here and a fingerprint-neutral pointer to this file was
+placed in the artifact so it is not lost; folding it into the fields belongs to
+the next lane that rebinds.
+"""
+
+[[corrections]]
+id = "the-open-question-needed-a-maintainer-decision"
+claim = "`the-1962-contradiction` in lt-hist-rights-audit-v1.toml records that what is missing is \"not evidence but a ruling on whether absence of any affirmative permission is a bar for this project's purposes\"."
+finding = """
+THAT FRAMING IS SUPERSEDED, AND IT WAS TOO PESSIMISTIC. Evidence was available
+and had not been gathered: the underlying edition's status under 104A had never
+been worked, and 103(b) had never been applied. The contradiction dissolves
+without any ruling on absence of permission, because the two sides were about
+different objects -- the task text was loosely right about the CONTENTS (mostly
+preexisting and free) and missals.md was strictly right about the EDITION AND THE
+SCAN (unresolved).
+"""
+effect = "Closes `the-1962-contradiction` on evidence rather than by preference, which is what that open question asked for and expressly refused to fake."
+
+[[corrections]]
+id = "sanctoral-record-calls-the-facsimile-tracked"
+claim = "`roman-1962-sanctoral-commons-v1.toml`:26 refers to \"the tracked CMAA facsimile\"."
+finding = "The artifact is `storage = \"remote\"` and has never been tracked; no payload exists under its manifest [recorded]."
+effect = "Wording only, and no byte moved as a result. Recorded because `tracked` is a load-bearing term in guidance/sources.md and using it loosely in a rights-adjacent inventory is how a later reader concludes the payload may be installed. Out of this lane's ownership."
+
+# --- Counts -------------------------------------------------------------------
+
+[counts]
+internet_archive_items_of_this_file_examined = 2
+distinct_licences_asserted_over_those_identical_bytes = 2
+grants_by_anyone_entitled_to_grant = 0
+rights_notices_published_by_the_named_creator = 0
+passage_records_over_the_facsimile = 41
+passage_records_containing_transcribed_text = 0
+derived_layers_publishing_latin_from_its_page_images = 3
+page_images_published = 0
+tracked_public_domain_typical_editions_now_available_as_witnesses = 4
+passage_records_over_the_1920 = 0
+post_1931_feasts_found_in_the_tracked_1920_payload = 3
+corrections_to_the_brief = 4
+bytes_downloaded_from_the_facsimile_for_this_record = 0
+bytes_added_to_this_repository_from_any_source = 0
+
+counts_note = """
+`grants_by_anyone_entitled_to_grant = 0` is the finding about the scan, and
+`distinct_licences_asserted_over_those_identical_bytes = 2` is what makes it one.
+
+`passage_records_containing_transcribed_text = 0` beside
+`derived_layers_publishing_latin_from_its_page_images = 3` is the finding about
+the project. The apparatus held the line and the derived layers did not, which is
+the failure mode worth naming: a rule enforced in the schema and not in the
+pipeline downstream of it is enforced nowhere that matters.
+
+`tracked_public_domain_typical_editions_now_available_as_witnesses = 4` beside
+`passage_records_over_the_1920 = 0` is the remaining gap. The basis exists; the
+apparatus to cite it does not yet.
+
+`bytes_downloaded_from_the_facsimile_for_this_record = 0`: this is a record about
+a scan, produced without fetching it. Everything about its contents is cited from
+records that did.
+"""

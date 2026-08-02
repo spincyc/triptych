@@ -344,6 +344,46 @@ Three rights positions were left explicitly open rather than resolved:
   reason**: it is an assertion by someone who is neither rights holder nor
   scanner, over bytes carrying no new copyright, hosted by a body that publishes
   no notice. It confers nothing.
+
+  **Now settled in full, and the verdict moved without moving the status:**
+  `src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`. Read
+  it before restating anything above. Three things there supersede the reading a
+  page of prose can carry.
+
+  *The tag was the wrong thing to worry about.* Both Internet Archive items of
+  these exact bytes were re-checked today: `missale_romanum-1962` tags CC
+  BY-NC-ND, `missale62` tags nothing, and both hold sha1 `255d3aef35…` at
+  82,815,941 bytes [verified]. Identical bytes, contradictory terms — which
+  settles the tag from the Archive's own data rather than from its disclaimer.
+  But disposing of the tag removes the only instrument that would have
+  *permitted* anything and leaves the project standing on the underlying book's
+  copyright with no licence at all.
+
+  *The underlying edition is probably in copyright until the end of 2057.* Not
+  public domain. Restoration under 17 U.S.C. §104A reaches it on either branch of
+  the notice question, because §104A(h)(6)(C)(i) restores works in the public
+  domain through failure of any formality including renewal. The one route out —
+  that Italian l. 633/1941 art. 5, which governed in Vatican City in 1996, excludes
+  official acts — is set out there at full strength and refused, because
+  §104A(h)(6)(B) excludes only works whose *term expired*. So `unresolved` still
+  stands, and its meaning has changed: not "nobody looked" but "we looked, and the
+  likely answer is copyright".
+
+  *What saves the project is §103(b), not a clearance.* A new typical edition's
+  copyright reaches only its own contribution and gives no exclusive right in the
+  preexisting material — which is nearly everything this project quotes, and which
+  this repository now **tracks** in four public-domain typical editions. The 1962
+  edition's own new matter is the 1955 Holy Week, the 1960 Code of Rubrics, the
+  post-1920 sanctoral and its front matter, including the 1962 *Decretum* quoted
+  in Latin at §1 above.
+
+  One correction to this page's own framing, recorded there and repeated here
+  because it is the fact that changes the analysis: **the project does publish
+  Latin read off these page images** — the whole of *Lauda Sion*, the Corpus
+  Christi orations, the All Souls formularies and the Commune orations, through
+  `propers.yaml` and into `web/`. The passage and binding schemas hold the line
+  and store no text; the derived layers did not. That is lawful by §103(b) and a
+  tracked witness, and it is not lawful merely because the prayers are old.
 - **The 1942 Benziger — now answered, subject to one confirmation.** The renewal
   search this entry said was missing has been run. Benziger's Missale Romanum
   registrations of the period — **A 165097** (29 May 1942), **A 169238**
