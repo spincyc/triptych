@@ -55,7 +55,8 @@ expiry. Ten of them are sitting in lt-hist as downloaded OCR right now, and four
 of those ten carry the claimant's own copyright notice inside the very bytes
 lt-hist downloaded. See `[[notices]]`.
 
-FOUR OF THE SEVEN HAVE NOW BEEN FOLDED IN. The Lasance went first and alone on
+ALL SEVEN HAVE NOW BEEN FOLDED IN, AND THE FOLD-IN IS COMPLETE. What follows
+records how, in the order it happened. The Lasance went first and alone on
 2026-08-01, to establish the pattern: a fresh acquisition through the source
 library, a rights basis rewritten from the renewal record, the excluded appendix
 removed from the tracked bytes rather than disclaimed beside them, the text
@@ -71,12 +72,30 @@ and hashed BYTE-IDENTICAL to the corpus copies, so three more retrievals were
 controlled and no byte has yet crossed out of lt-hist. See their
 `folded_in_note`s and `[counts]`.
 
-Three remain, and they are the three this file already knew were awkward: the
-1604 and the 1862 are Google digitisations, and the 1843 is already registered
-here as an edition of the Cummiskey work, so folding it means adding an artifact
-to an existing edition rather than making a new one. Two `[[corrections]]` from
-the Lasance lane and three from the 1570/1806/1920 lane record what that will
-cost.
+THE LAST THREE FOLLOWED ON THE SAME DAY, and they were the three this file knew
+were awkward: the 1604, the 1862 and the 1843 are all Google digitisations, and
+the 1843 was already registered here as an edition of the Cummiskey work, so
+folding it meant adding an artifact to an existing edition rather than making a
+new one. All three were also fetched again here and hashed BYTE-IDENTICAL to the
+corpus copies, so seven retrievals out of seven were controlled and NO BYTE HAS
+EVER CROSSED OUT OF lt-hist.
+
+THE GOOGLE QUESTION WAS DECIDED BY READING THE FILES, AND THE PREMISE OF IT WAS
+FALSE. Two routes had been prescribed for those bytes -- a derivative with the
+Google matter removed by one stated transformation, or `remote` and `unresolved`
+holding nothing -- and neither was taken, because none of the three files contains
+Google's front-matter statement or its usage guidelines at all. What they contain
+is the four-word page-foot stamp. The searches, the counts, the contrast with the
+one artifact in this library that DOES carry the block, and the reason each route
+was refused are at `[[corrections]]`
+`the-google-scans-carry-a-stamp-and-not-the-boilerplate`. Two edits this lane
+could not make itself are at `[[open_items]]`.
+
+The 1862 additionally had to be registered as a PRINTING and not a typical
+edition, which its own approbation, its publisher's note to the reader and its
+appendix establish out of the book's own words; see its row. Two
+`[[corrections]]` from the Lasance lane, three from the 1570/1806/1920 lane and
+one from this one record what the awkward rows cost.
 """
 
 # --- What lt-hist actually is, measured rather than described ----------------
@@ -500,6 +519,59 @@ bytes = 2025007
 verdict = "admissible"
 verdict_basis = "Published 1604, pre-1931."
 lt_hist_basis_rejected = "Internet Archive Public Domain Mark 1.0 [verified]. Not the ground relied on here."
+folded_in = "2026-08-01"
+folded_in_records = [
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/edition.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/artifacts/missale-romanum-1604-text-6d12feef/artifact.toml",
+  "src/sources/inventories/source-family-migration-v1.toml -- family.roman-missal.typical-edition-1604",
+]
+folded_in_note = """
+A NEW EDITION UNDER THE EXISTING `work.catholic-church.missale-romanum`, on the
+same pattern as the 1570 and the 1920 and on the same ground: publication before
+the pre-1931 line, derived for calendar year 2026 and recorded as derived for it,
+because that line moves every January.
+
+The bytes came by fresh acquisition. Internet Archive item bub_gb_aaPpAuHRY9IC
+was fetched here on 2026-08-01 and hashed:
+6d12feef4fe19166d274ecf3129d91a2a2945fb9f5b801b602a0f10e203fa838, 2,025,007
+bytes, BYTE-IDENTICAL to sources/downloads/MissaleRomanum1604_djvu.txt. Five for
+five; see `[counts]`.
+
+THE GOOGLE QUESTION THAT HELD THIS ROW BACK WAS ANSWERED BY READING THE FILE, AND
+THE ANSWER WAS THAT THERE IS NO GOOGLE MATTER TO REMOVE. See `[[corrections]]`
+`the-google-scans-carry-a-stamp-and-not-the-boilerplate`, which records the
+searches for all three Google rows in one place. In short: Google's front-matter
+statement and its usage guidelines are absent from these bytes -- `usage
+guidelines`, `about this book`, `books.google`, `do not assume`, `copyright`, `all
+rights`, `creative commons` and `public domain` all return zero over 2,025,007
+bytes -- and the only Google matter present is the four-word page-foot stamp
+`Digitized by Google`, in 315 distinct OCR spellings over about 670 lines. It
+carries no notice and reserves nothing. The artifact is therefore TRACKED, the
+stamp is retained on the precedent of the Lasance scan's page-foot watermark, and
+the artifact record states the searches, the counts and why neither of the two
+routes offered -- a stripped derivative, or `remote` and `unresolved` -- was the
+right answer.
+
+The Public Domain Mark 1.0 this row's `lt_hist_basis_rejected` names is recorded
+as a fact about the item and expressly not relied on, and neither is availability
+or a successful download. `text_status: public-domain-ocr-latin` did not cross;
+no section file, metadata.json or manifest of the corpus exists in this
+repository. The text is landed as ONE tracked plain OCR artifact and not as
+structured liturgical records.
+
+WHAT THE FOLD-IN FOUND. THIS SCAN IS THE TYPICAL EDITION'S OWN PRINTING, which
+the 1570 held here is not. Title page and colophon both read ROMAE, Ex
+Typographia Vaticana, M D C I I I I, and Clement VIII's bull in the same book
+decrees that the Missal be printed at that press and at no other -- so where
+`[[corrections]]` `the-1570-scan-is-a-venice-issue` had to refuse the description
+editio princeps, this record can accept it. But CLEMENT VIII'S BULL CARRIES NO
+LEGIBLE DATING CLAUSE in this text layer: the page breaks into optical noise, and
+neither 1604 nor any month and day can be read in it, so the received date of 7
+July 1604 is NOT taken from these bytes and the year rests on the imprint alone.
+Quo primum's own dating clause, by contrast, is legible at lines 151-152. The
+text layer is `degraded-latin` at a Latin function-word share of 0.0763, second
+worst of the five folded in.
+"""
 evidence = "verified"
 
 [[versions]]
@@ -587,6 +659,80 @@ The same caveat as the 1806, and here lt-hist does NOT record it: its
 on the book's face and nowhere in the corpus's metadata. Recorded here because
 the fold-in would otherwise carry a lay missal in as an official English edition
 on the strength of a metadata file that never mentions the problem.
+
+CARRIED, AND NOT WHERE IT BELONGS. The caveat is written in terms on the new
+artifact record. It is NOT in
+`edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843`, which
+predates this audit and which the folding lane could not rewrite: that lane owned
+the creation of new records under `src/sources/works/` and not the amendment of
+existing ones. See `[[open_items]]` `the-1843-edition-record-needs-the-caveat`.
+"""
+folded_in = "2026-08-01"
+folded_in_records = [
+  "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1843/artifacts/roman-missal-1843-text-6949d12f/artifact.toml",
+  "src/sources/inventories/source-family-migration-v1.toml -- family.eugene-cummiskey.roman-missal-english-laity, one canonical ID admitted",
+]
+folded_in_note = """
+NOT A NEW WORK AND NOT A NEW EDITION: A SECOND ARTIFACT UNDER AN EDITION THIS
+LIBRARY ALREADY HELD, exactly as `[[corrections]]`
+`the-1843-is-already-registered-in-this-repository` predicted. No family was
+created; one canonical ID was admitted to
+`family.eugene-cummiskey.roman-missal-english-laity`, whose row was re-reviewed
+on 2026-08-01 and whose storage plan gains `tracked`.
+
+The bytes came by fresh acquisition. Internet Archive item TheRomanMissal1843 was
+fetched here on 2026-08-01 and hashed:
+6949d12fd2c18584a308f420b470ec3a238cfa9542511798f708eab25f191825, 1,721,622
+bytes, BYTE-IDENTICAL to sources/downloads/TheRomanMissal1843_djvu.txt.
+
+IT IS TRACKED WHERE ITS SIBLING SCAN IS REMOTE, AND THAT IS THE FINDING OF THIS
+FOLD-IN. The correction cited above reasoned that because lt-hist's scan opens
+"Digitized by Google" it faces the registered scan's problem, and therefore that
+a fold-in must either strip the Google matter or leave the scan remote. READING
+THE TWO FILES SHOWS THE INFERENCE DOES NOT CARRY, and the pair is now the
+cleanest demonstration in this file of why a rights position must be read off the
+bytes:
+
+  `romanmissaltran00englgoog`, the artifact already registered here, carries
+  GOOGLE'S FRONT-MATTER BLOCK ENTIRE at its lines 1-65 -- "This is a digital copy
+  of a book that was preserved for generations on library shelves" at line 4,
+  "Usage guidelines" at line 16, "About Google Book Search" at line 60 -- and no
+  page-foot stamp at all, 11 lines containing `google` in the whole file
+  [verified 2026-08-01 on a fetched copy].
+
+  `TheRomanMissal1843`, the corpus's scan, carries NONE of that block and only
+  the page-foot stamp: `usage guidelines`, `about this book`, `books.google`, `do
+  not assume`, `copyright`, `all rights`, `creative commons` and `public domain`
+  all return ZERO over its 1,721,622 bytes, while the four-word stamp appears in
+  177 distinct OCR spellings over about 892 lines [verified].
+
+Two Google digitisations of one printing, opposite findings, from one search. The
+first is rightly `remote` and `unresolved`; the second is tracked, with the stamp
+retained on the precedent of the Lasance scan's page-foot watermark. See
+`[[corrections]]` `the-google-scans-carry-a-stamp-and-not-the-boilerplate`.
+
+THE RIGHTS BASIS IS STRONGER HERE THAN ON ANY OTHER ROW IN THIS FILE, because
+this is a UNITED STATES publication and its term can be followed to its end
+rather than merely cleared by age. The book prints its own notice on the verso of
+the title leaf at lines 72-77 -- "Entered according to the Act of Congress, in
+the year 1843, by Eugene Cummiskey, in the Clerk's Office of the District Court
+for the Eastern District of Pennsylvania", mangled by the scanner but legible
+[verified]. Under the Act of 1831 that gave twenty-eight years to 1871 and one
+renewal of fourteen, so the longest term it could ever have run expired in 1885,
+before either twentieth-century extension could reach it; and 17 U.S.C. 104A
+restoration is unavailable to a United States work by its own terms. The pre-1931
+line, derived for calendar year 2026 and recorded as derived for it, agrees
+independently. The item's Public Domain Mark 1.0 is recorded and expressly not
+relied on. `text_status: public-domain-ocr` did not cross.
+
+WHAT ELSE THE FOLD-IN FOUND. The item's `scanner` field says "Internet Archive
+HTML5 Uploader 1.6.3", which describes how a private person uploaded the file and
+NOT who made the page images: those are plainly Google's, the stamp being at the
+foot of every page, re-recognised with ABBYY FineReader 11.0. A record that read
+the `scanner` field alone would state the provenance backwards, and the artifact
+record says so. The text layer is the best English of the corpus, `prose-english`
+at an English function-word share of 0.3279, and it is now the only searchable
+text this edition has.
 """
 evidence = "verified"
 
@@ -607,6 +753,87 @@ this book once: `missal-acquisition-audit-v1.toml` names "the 1862 Pustet
 printing" as one of two occasions when a generator chained books by date and
 thereby asserted that a rite descends through a publisher [recorded]. Fold it in
 as a printing with `is_typical_edition = false` or do not fold it in.
+
+SATISFIED, AND BY PROSE RATHER THAN BY THE FIELD THIS CAVEAT NAMED.
+`is_typical_edition` is not a field the source schema accepts, so the denial
+could not be written where this row asked for it. It is written instead at the
+top of the edition record, ahead of the date, and the book's own evidence for it
+is quoted there; see `folded_in_note`.
+"""
+folded_in = "2026-08-01"
+folded_in_records = [
+  "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/edition.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/missale-romanum-1862-text-f34bc7cf/artifact.toml",
+  "src/sources/inventories/source-family-migration-v1.toml -- family.roman-missal.pustet-ratisbon-1862",
+]
+folded_in_note = """
+A NEW EDITION UNDER THE EXISTING `work.catholic-church.missale-romanum`, AND IT
+IS REGISTERED AS A PRINTING. It has its own family, `family.roman-missal.
+pustet-ratisbon-1862`, and was deliberately NOT put in with the 1604 registered
+the same day, even though the two share a work, a rights basis and a retrieval
+route: one is a typical edition and one is a commercial printing, and a family
+holding both would be the very chaining this row's `caveat` exists to prevent.
+
+THE BOOK ITSELF SUPPLIES THE DENIAL, WHICH IS BETTER THAN THIS ROW HOPED FOR.
+Three readings, all [verified] in the retrieved text layer:
+
+  Its authority is a LICENCE TO PRINT granted by Ignatius von Senestrey, Bishop
+  of Ratisbon, at Ratisbon on 1 September 1861 (lines 712-745), reciting that by
+  the decrees of Clement VIII and Urban VIII no printer may publish the Missal
+  without proving conformity with the Roman archetypes and obtaining the local
+  Ordinary's licence, and that two deputed priests found Pustet's edition
+  conformed. That is the argument of a copy, not of an original.
+
+  Its publisher's note to the reader, Typographus Ratisbonensis Lectori at line
+  101601, names what was copied: "Hic finem habet Romana, anno 1856 typis Josephi
+  Salviucci et Francisci filii perfecta editio, quam nostris Ratisbonensibus
+  typis minori hac ac manuali forma reproducendam curavimus." A reduced-format
+  reproduction of a Rome 1856 printing.
+
+  Its appendix of Masses pro aliquibus locis is the FIRM'S OWN COMPILATION out of
+  diocesan and religious Propria, which the same note says in terms, and its
+  front matter is a stack of Sacred Congregation of Rites indults obtained for
+  particular petitioners in 1861-62. Its own errata list admits that sheets
+  printed before the decrees of 25 September 1860 went out uncorrected, so the
+  printing is not even internally uniform.
+
+The bytes came by fresh acquisition. Internet Archive item bub_gb_E7sPAAAAIAAJ
+was fetched here on 2026-08-01 and hashed:
+f34bc7cf9293ffb353159e94118f4316bb4cc0a60230b315904dc77ba2502162, 2,503,914
+bytes, BYTE-IDENTICAL to sources/downloads/MissaleRomanum1862_djvu.txt.
+
+THE GOOGLE QUESTION was answered the same way as the 1604's and on the same
+evidence; see `[[corrections]]`
+`the-google-scans-carry-a-stamp-and-not-the-boilerplate`. Zero hits for `usage
+guidelines`, `copyright`, `all rights`, `creative commons`, `public domain` and
+`do not assume` over 2,503,914 bytes; the page-foot stamp alone, 238 distinct OCR
+spellings over about 904 lines. Tracked, stamp retained, reasoning on the
+artifact record.
+
+The rights basis rests on publication in 1862 against the pre-1931 line, derived
+for calendar year 2026, with the arithmetic closing restoration under 17 U.S.C.
+104A -- ninety-five years from 1862 ran out at the close of 1957, so nothing was
+left to restore in 1996 -- and with the express note that the ecclesiastical
+printing privileges the book reprints were never United States copyright. The
+item's Public Domain Mark 1.0 is recorded and expressly not relied on.
+`text_status: public-domain-ocr-latin` did not cross. The text is landed as one
+tracked plain OCR artifact and not as structured liturgical records.
+
+WHAT ELSE THE FOLD-IN FOUND. This text layer is the BEST of the five folded in
+from this corpus, `prose-latin` at a Latin function-word share of 0.1792 -- more
+than twice the 1570's and the 1604's -- because it is a clean nineteenth-century
+roman face rather than sixteenth-century abbreviated printing. Its printed
+accents, however, OCR as digits and punctuation, so a negative search on an
+accented word establishes nothing. And one date in the back matter did not
+resolve: a conformity note above the colophon OCRs as "RAtUbon» 31. HatL 1866.",
+where the year could be 1862 or 1866; nothing depends on it and it is recorded on
+the artifact rather than guessed at.
+
+THE IDENTITY GAP IS RELATIONAL AND IS NOT CLOSED. The conformity of this printing
+to the Roman text is asserted by its own approbation and has not been collated
+here against the Rome 1856 printing it names or against any typical edition. It
+may be cited as a nineteenth-century printing witness and not as evidence of the
+typical text.
 """
 evidence = "verified"
 
@@ -1509,14 +1736,35 @@ versions_audited = 25
 admissible = 7
 admissible_on_age = 6
 admissible_on_a_renewal_record = 1
-admissible_folded_in = 4
-admissible_awaiting_fold_in = 3
+admissible_folded_in = 7
+admissible_awaiting_fold_in = 0
 excluded = 14
 excluded_folded_in = 0
 undecided = 4
 undecided_folded_in = 0
 admissible_bytes = 16653598
 admissible_size = "16.65 MB"
+admissible_bytes_now_tracked_here = 16628734
+admissible_bytes_now_tracked_here_note = """
+All seven, less the 24,864 bytes of the Lasance appendix that
+`[the_appendix_exclusion]` removed. That is the whole of what this audit's
+`admissible` verdict eventually put into Git, and it is the number to compare
+against `excluded_bytes_present_in_lt_hist = 14851202`, which is what it kept out.
+"""
+google_digitisations_among_the_seven = 3
+google_digitisations_carrying_googles_front_matter = 0
+google_digitisations_note = """
+The 1604, the 1862 and the 1843 are Google scans and NONE of the three carries
+Google's front-matter statement or usage guidelines: eleven distinct search
+strings return zero across all three files. The one artifact in this library that
+does carry that block is `artifact.eugene-cummiskey.roman-missal-english-laity.
+philadelphia-1843.ia-djvu-ocr`, which was already registered here, is not one of
+the twenty-five, and is correctly `remote` and `unresolved`. Counted because the
+brief that commissioned the last fold-in assumed the opposite for all three, and
+because the assumption would have cost either three undisclosed editorial hands or
+three forfeited texts. See `[[corrections]]`
+`the-google-scans-carry-a-stamp-and-not-the-boilerplate`.
+"""
 excluded_bytes_present_in_lt_hist = 14851202
 excluded_bytes_size = "14.85 MB"
 excluded_bytes_note = "Sum of the `bytes` field on the fourteen excluded rows, which is the imported payload. `sources/downloads/` holds 1,518,633 further bytes of excluded-adjacent material in the misidentified RomanMissal1970GeneralInstructionOrderMassEnglish_djvu.txt, bringing the on-disk figure to 16,369,835."
@@ -1543,24 +1791,26 @@ This file is a record about a corpus, produced without copying anything out of
 it. If a later edit makes that number nonzero it will have to say so.
 
 `bytes_moved_out_of_lt_hist_by_the_fold_in = 0` is the same number kept true
-through the act this file authorised, now across FOUR fold-ins and not one. Every
-time, the corpus was not the route: the Internet Archive item was fetched again
-here and hashed, and every time the hash was IDENTICAL to the corpus copy --
-21f1bbf1 for the Lasance, 563f4dd2 for the 1570, e9f54379 for the 1806, aa646196
-for the 1920. So the corpus has served four times as a control on a retrieval and
-never as a source of bytes.
+through the act this file authorised, now across ALL SEVEN fold-ins and not one.
+Every time, the corpus was not the route: the Internet Archive item was fetched
+again here and hashed, and every time the hash was IDENTICAL to the corpus copy --
+21f1bbf1 for the Lasance, 563f4dd2 for the 1570, 6d12feef for the 1604, e9f54379
+for the 1806, 6949d12f for the 1843, f34bc7cf for the 1862, aa646196 for the
+1920. So the corpus served seven times as a control on a retrieval and never as a
+source of bytes.
 
-THAT REPETITION IS NOW ITSELF A FINDING, and it cuts both ways. Four for four
+THAT REPETITION IS NOW ITSELF A FINDING, and it cuts both ways. Seven for seven
 means the corpus's downloads are faithful copies of what the Internet Archive
 serves; whatever is wrong with lt-hist, its retrieval is not. It also means the
-cheapest possible fold-in route was available for all four and would have been
-available for the other three, so nothing was gained by copying that could not be
-had by fetching -- which is why `bytes_moved_out_of_lt_hist_by_the_fold_in` can
-stay 0 without anyone having sacrificed anything for it.
+cheapest possible fold-in route was available every time, so nothing was gained by
+copying that could not be had by fetching -- which is why
+`bytes_moved_out_of_lt_hist_by_the_fold_in` can stay 0 without anyone having
+sacrificed anything for it.
 
-`admissible_folded_in = 4` against `admissible = 7` is the state of the work, and
-`excluded_folded_in = 0` with `undecided_folded_in = 0` is the state of the
-discipline. `section_files_copied_into_this_repository = 0` is
+`admissible_folded_in = 7` against `admissible = 7` closes the work this file
+opened, and `excluded_folded_in = 0` with `undecided_folded_in = 0` is the state
+of the discipline: nineteen versions were looked at seven times over and not one
+of them came. `section_files_copied_into_this_repository = 0` is
 `[[structural_conditions]]` `text-status-may-not-travel` measured: the fold-in
 took OCR text and wrote fresh manifests, and no lt-hist front matter, metadata
 file or manifest exists here.
@@ -1793,3 +2043,145 @@ artifact record names both zero-hit searches as artefacts rather than findings.
 Recorded because an OCR text that cannot produce its own date will silently
 launder a catalogue guess into a printed fact.
 """
+
+[[corrections]]
+id = "the-google-scans-carry-a-stamp-and-not-the-boilerplate"
+found_by = "the fold-in of the last three, 2026-08-01"
+claim = """
+That the three remaining admissible versions -- the 1604, the 1862 and the 1843 --
+are Google digitisations whose bytes the pre-1931 age ground does not clear,
+because Google's scan-boilerplate and its usage terms are Google's own matter
+added to a public-domain text; and therefore that each must either be landed as a
+derivative with that matter removed by one stated replayable transformation, or
+registered `remote` and `unresolved` holding no bytes. This file states the
+second half of that in `[[corrections]]`
+`the-1843-is-already-registered-in-this-repository`, from the fact that lt-hist's
+1843 scan opens "Digitized by Google".
+"""
+finding = """
+THE PREMISE IS FALSE OF ALL THREE FILES, AND IT WAS FALSE FOR A REASON WORTH
+KNOWING: the inference ran from the first line of a file to the contents of the
+whole of it, which is the same shape of error this audit convicts lt-hist of. Each
+file was searched whole, case-insensitively, on 2026-08-01 [verified]:
+
+                                  1604        1862        1843
+  bytes                        2,025,007   2,503,914   1,721,622
+  "usage guidelines"                   0           0           0
+  "about this book"                    0           0           0
+  "books.google"                       0           0           0
+  "do not assume"                      0           0           0
+  "watermark"                          0           0           0
+  "non-commercial"                     0           0           0
+  "attribution"                        0           0           0
+  "creative commons"                   0           0           0
+  "all rights"                         0           0           0
+  "public domain"                      0           0           0
+  "copyright"                          0           0           0
+
+Not one word of Google-authored prose is in any of them, and no notice, licence,
+reservation or condition of any kind. What IS present is the page-foot stamp
+burnt into each page image and read back by the recogniser -- four words,
+"Digitized by Google" -- in 315, 238 and 177 distinct OCR spellings respectively,
+over roughly 670, 904 and 892 lines. It states who ran the scanner. It grants
+nothing and reserves nothing.
+
+AND THE CONTRAST CASE IS IN THIS LIBRARY, WHICH IS WHY THIS IS A FINDING AND NOT
+A CONVENIENCE. `artifact.eugene-cummiskey.roman-missal-english-laity.
+philadelphia-1843.ia-djvu-ocr`, Internet Archive item romanmissaltran00englgoog,
+stands `remote` and `unresolved` on exactly the ground alleged here, and it earns
+it: its lines 1 to 65 are Google's front-matter block entire -- the digital-copy
+statement at line 4, "Usage guidelines" at line 16, "About Google Book Search" at
+line 60 -- and it carries no page stamp at all, 11 lines containing `google` in
+the whole file [verified 2026-08-01 on a fetched copy]. Two Google digitisations
+of ONE printing, opposite results, from one search.
+"""
+effect = """
+NEITHER OFFERED ROUTE WAS TAKEN FOR ANY OF THE THREE, and all three are landed
+`tracked` and `public-domain`. The reasoning is stated on each artifact record and
+is the same on each:
+
+  ROUTE (a), THE STRIPPED DERIVATIVE, IS NOT AVAILABLE IN THE FORM IT WAS
+  DESCRIBED IN, and the files are the proof rather than the excuse. A strict
+  pattern on "Digitized by Google" leaves hundreds of mangled forms behind in each
+  file -- in the 1843 it misses the MAJORITY, whose commonest spelling is
+  "Digitized byCjOO^IC" at 179 occurrences and contains no recognisable "Google"
+  at all. A pattern loose enough to catch those also matches the books: `digiti`,
+  `digitis` and `digitorum` run through the Ritus servandus and De defectibus of
+  both Latin Missals, and `gold` and `golden` through the Epiphany Masses of the
+  English one, so the loose rule deletes rubrics about the celebrant's fingers and
+  the Magi's gifts. The honest choices were a stated rule with a large known
+  residue, or an undisclosed hand-picked list of hundreds of lines -- and the
+  second is precisely what the offered route forbids, in its own words.
+
+  ROUTE (b), `remote` AND `unresolved`, WOULD RECORD A DOUBT THE BYTES DISPROVE.
+  `unresolved` means the rights question is open. On the evidence above it is not
+  open: the book is public domain on its date, the scan and its machine OCR carry
+  no authorship anyone can hold (Bridgeman; and the recognisers are named on each
+  record from the item's own metadata -- ABBYY FineReader 9.0 for the two Latin
+  books, 11.0 for the English), and the only third-party matter in the files is a
+  four-word stamp with nothing in it to resolve. Writing `unresolved` there would
+  forfeit three texts to a formula, which is the mirror image of lt-hist's fault
+  rather than its opposite: a rights conclusion held without a reason is the same
+  artifact whichever way it points.
+
+THE STAMP IS RETAINED IN ALL THREE, DELIBERATELY. It carries no notice and no
+claim, so removing it buys nothing; it is the only page-boundary evidence in these
+text layers, so removing it would destroy the one handle a later passage record
+has on a printed page; and the Lasance fold-in already set the precedent, keeping
+the `http://ccwatershed.org` stamp at the foot of every page of its scan and
+saying so on the artifact.
+
+THE SENTENCE THIS SUPERSEDES. In `the-1843-is-already-registered-in-this-
+repository`, "a fold-in must either land a derivative with the Google matter
+removed, as the Lasance fold-in did for the appendix, or leave the scan remote"
+is now wrong as to lt-hist's 1843 scan, for the reason above. It remains RIGHT as
+to the artifact it was actually written about, `romanmissaltran00englgoog`, which
+does carry the block. Route (a) is in fact cleanly available for THAT artifact --
+its Google matter is one contiguous head block that a single stated deletion would
+remove -- and this lane did not take it, because rewriting an existing artifact
+record is outside what it owned. See `[[open_items]]`
+`the-registered-1843-scan-could-be-derived-clean`.
+"""
+
+# --- Items this fold-in identified and could not do itself ---------------------
+#
+# Not questions -- the answers are known. They are edits to records this lane did
+# not own, recorded so they are inherited rather than rediscovered.
+
+[[open_items]]
+id = "the-1843-edition-record-needs-the-caveat"
+what = """
+`edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843` does not
+say that the book is a lay hand missal and not a witness to any typical edition's
+text. The 1806 row required that caveat travel with its text and it is in that
+edition record; the 1843's row requires the same and the caveat is presently only
+on the new artifact record, because the folding lane owned the creation of records
+under `src/sources/works/` and not the amendment of existing ones.
+"""
+why_it_matters = """
+An artifact note is read by whoever opens that artifact. An edition note is read
+by whoever cites the edition, which is the wider set and the one that would make
+the error. The words "for the use of the laity" are in the book's title, so the
+fact is on its face; what is missing is the sentence saying what follows from it.
+"""
+who = "any lane that owns the Cummiskey records"
+
+[[open_items]]
+id = "the-registered-1843-scan-could-be-derived-clean"
+what = """
+`artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.
+ia-djvu-ocr` is `remote` and `unresolved` because Internet Archive item
+romanmissaltran00englgoog carries Google's front matter. That matter is a SINGLE
+CONTIGUOUS HEAD BLOCK, lines 1 to 65 of the text layer, ending before the book's
+own first leaf [verified 2026-08-01]. So the Lasance pattern applies to it
+exactly: one stated deletion of one line range, replayable with no program,
+yielding a derivative that could be tracked on the same 1843 basis the new sibling
+artifact already records.
+"""
+why_it_was_not_done_here = """
+It is an amendment to an existing artifact record plus a new derivative under it,
+and the folding lane owned neither. It is also no longer urgent: the edition now
+has a tracked, searchable text from the other scan, so the value of deriving this
+one is a second searchable witness rather than a first.
+"""
+who = "any lane that owns the Cummiskey records"
