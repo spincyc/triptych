@@ -312,29 +312,29 @@ the calendars, and nothing else on this page states a figure it gives.
 | Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
 | roman-pre-1955 | seasonal | 6 | 6 | 6 |
-| roman-1962 | seasonal | 128 | 1134 | 5 |
+| roman-1962 | seasonal | 128 | 1138 | 5 |
 | roman-1962 | christological | 8 | 12 | 7 |
 | roman-1962 | marian | 17 | 62 | 4 |
-| roman-1962 | sanctoral | 307 | 951 | 122 |
+| roman-1962 | sanctoral | 307 | 981 | 121 |
 | roman-1962 | common | 30 | 152 | 0 |
-| postconciliar | seasonal | 67 | 829 | 3 |
-| postconciliar | christological | 7 | 12 | 6 |
-| postconciliar | marian | 14 | 18 | 13 |
-| postconciliar | sanctoral | 181 | 288 | 151 |
+| postconciliar | seasonal | 67 | 832 | 2 |
+| postconciliar | christological | 7 | 16 | 5 |
+| postconciliar | marian | 14 | 22 | 12 |
+| postconciliar | sanctoral | 181 | 372 | 123 |
 
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 6 | 490 | 269 |
-| Propers | 6 | 2311 | 1147 |
-| — named `Placeholder` | 6 | 140 | 176 |
-| — inside a `forms` block | 0 | 99 | 133 |
+| Propers | 6 | 2345 | 1242 |
+| — named `Placeholder` | 6 | 139 | 145 |
+| — inside a `forms` block | 0 | 130 | 133 |
 | — carrying a `cycles` mapping | 0 | 0 | 252 |
-| Masses holding only placeholders | 6 | 138 | 173 |
+| Masses holding only placeholders | 6 | 137 | 142 |
 | Masses taking a formulary from another entry | 0 | 56 | 0 |
 | Propers taking their text from another entry | 0 | 53 | 0 |
-| Propers that are not placeholders | 0 | 2171 | 971 |
-| — of those, scripture-bearing | 0 | 1807 | 698 |
-| Encoded passages | 0 | 2102 | 1232 |
+| Propers that are not placeholders | 0 | 2206 | 1097 |
+| — of those, scripture-bearing | 0 | 1822 | 824 |
+| Encoded passages | 0 | 2123 | 1358 |
 | Distinct books cited | 0 | 55 | 63 |
 | Distinct slot names | 1 | 119 | 89 |
 

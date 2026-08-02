@@ -1,5 +1,5 @@
 schema: triptych-commentary-work-index/v1
-updated: '2026-07-31'
+updated: '2026-08-02'
 numbering: vulgate
 numbering_note: 'Keys are addressed in vulgate numbering. Every psalm key is derived by converting
   each calendar''s citations out of the system that calendar declares, so Psalms 24 here is
@@ -9,7 +9,7 @@ numbering_note: 'Keys are addressed in vulgate numbering. Every psalm key is der
   citation reaches therefore names no chapter of this canon at all; it carries its own numbering:
   unrecorded and is refused by every lookup, because the works under it are real commentary
   on other text and returning them would be a hit on the wrong words.'
-numbering_unrecorded_count: 3
+numbering_unrecorded_count: 2
 harvest_runs: 13
 min_confidence: 0.0
 passages:
@@ -24008,10 +24008,6 @@ passages:
     confidence: 0.3333
     runs: 3
 - passage: Isaiah 8
-  numbering: unrecorded
-  numbering_basis: postconciliar cites 'Isaiah 8:23b-9:3', which that calendar's own citation_divergences
-    resolves to 'Isaiah 9:1b-4'; no proper cites this chapter of the vulgate canon, so the
-    works here were harvested against a locus whose system nobody stated
   works:
   - author: Albert the Great
     title: Postilla super Isaiam

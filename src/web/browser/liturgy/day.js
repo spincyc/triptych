@@ -249,8 +249,12 @@
     return attempt;
   }
 
+  function missalNamed(id) {
+    return state.missals.find((one) => one.id === id) || null;
+  }
+
   function currentMissal() {
-    return state.missals.find((one) => one.id === state.missalId) || null;
+    return missalNamed(state.missalId);
   }
 
   function currentBible() {
@@ -713,6 +717,63 @@
     return node;
   }
 
+  /**
+   * Where the words under this heading were transcribed from.
+   *
+   * A recension is held as its DEPARTURES from another calendar and never as a
+   * second copy of it, so on all but a handful of days the text below was read
+   * out of the BASE's printing and out of no other. The heading names this
+   * recension's own edition — "Missale Romanum, editio typica Vaticana 1920" —
+   * and that name standing alone over a page every word of which came from a
+   * 1962 printing is a claim about provenance that nobody made. So the mass
+   * carries its own stamp, and the stamp is printed here beside the Mass it
+   * belongs to rather than in the margin: it qualifies the TEXT, not the
+   * reasoning about which text, and a reader who has the apparatus turned off
+   * still needs it.
+   *
+   * Every field is read and none is inferred from another. `stated` says
+   * whether this recension prints the entry itself; `text_from` names the
+   * calendar that supplied it where it does not; `kind` and `basis` are the
+   * departure as the source recorded it; and `also` carries the further kinds
+   * of the SAME departure, each with its own basis, because one liturgy can
+   * depart in several ways at once — the pre-1955 Holy Saturday is moved,
+   * renamed, replaced and reslotted at the same time. A mass carrying no stamp
+   * is a calendar that is nobody's recension, and nothing is said.
+   *
+   * The kind is printed as the source spells it. The vocabulary is closed in
+   * `scripts/_calendars.py`, which is where its definitions live; a table of
+   * friendlier words here would be a second copy of them, and it would drift
+   * from the first the day a kind is added.
+   *
+   * Nothing on the page moves today, and that is the point: the missal control
+   * is built from `structure/rubrics/index.json`, and a recension with no
+   * rubrics source is not offered there. This is written now so that the day
+   * the recension IS offered, its first reader is not shown a 1920 heading over
+   * a 1962 transcription with nothing between them.
+   */
+  function departureRow(lead, row) {
+    return T.el('p', 'row-meta',
+      lead + ': ' + row.kind + (row.basis ? ' — ' + row.basis : ''));
+  }
+
+  function recensionRows(head, mass) {
+    const held = mass && mass.recension;
+    if (!held) return;
+    if (held.text_from) {
+      const base = missalNamed(held.text_from);
+      head.appendChild(T.el('p', 'row-meta',
+        'Text served from ' + ((base && (base.edition || base.label)) || held.text_from) +
+        '. This recension states no text of its own here.'));
+    } else if (held.stated) {
+      head.appendChild(T.el('p', 'row-meta',
+        'Text stated by this recension itself, and served from no other calendar.'));
+    }
+    if (held.kind) head.appendChild(departureRow('Departure', held));
+    for (const row of held.also || []) {
+      if (row && row.kind) head.appendChild(departureRow('Also', row));
+    }
+  }
+
   function renderBranch(branch, rubrics, derived, structure, bible, fragments, ordinary) {
     const section = T.el('section', 'branch');
 
@@ -732,9 +793,15 @@
     // heading stays the DAY — "the Office of Our Lady on Saturday" — because
     // that is what the day is; the Mass is named under it.
     const taken = formularyOf(branch);
+    // Resolved here rather than after the head, because the head is where the
+    // Mass says where its text came from and it cannot say that without it.
+    const mass = taken && taken.key
+      ? (structure.masses || []).find((one) => one.key === taken.key)
+      : null;
     if (taken && taken.key && taken.key !== (branch.winner && branch.winner.key)) {
       head.appendChild(T.el('p', 'row-meta', 'Mass: ' + (taken.name || taken.key)));
     }
+    recensionRows(head, mass);
     // One control for everything the date carries, grouped by standing; the
     // reasoning goes to the margin with every other rubrical decision.
     const selector = formularySelector(branch, () => render({ moveFocus: false }));
@@ -753,10 +820,6 @@
     // seats below, which are places in the frame; these are places in a series.
     const orationSlots = trackedSlots(branch, rubrics);
     const orationSlotFor = (name) => orationSlots.find((one) => one.slot === name) || null;
-
-    const mass = taken && taken.key
-      ? (structure.masses || []).find((one) => one.key === taken.key)
-      : null;
 
     /**
      * One proper of the day, with whatever the margin has to say beside it.

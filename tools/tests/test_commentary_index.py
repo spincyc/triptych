@@ -448,8 +448,16 @@ class NumberingSurveyTests(unittest.TestCase):
         outpoured spirit; Vulgate Esther 4 is Mardochai going away to do as
         Esther asked and Nova Vulgata Esther 4:17 is his prayer. Both are real
         chapters of both books, which is exactly why nothing caught them.
+
+        `Isaiah 8` left this list on 2026-08-02, and saying which moved is the
+        point of pinning the loci. It was here because the one citation reaching
+        it, `Isaiah 8:23b-9:3`, is resolved to `Isaiah 9:1b-4` by the
+        postconciliar calendar's own register, so nothing asked about Vulgate
+        Isaiah 8 at all. Reading the Annunciation out of the Ordo added
+        `Isaiah 7:10-14; 8:10`, which reaches that chapter and means it. The key
+        is sound now, on the same "every, not any" rule that keeps `Malachi 3`.
         """
-        self.assertEqual(sorted(self.survey), ["Esther 4", "Isaiah 8", "Joel 3"])
+        self.assertEqual(sorted(self.survey), ["Esther 4", "Joel 3"])
         for locus in self.survey:
             with self.subTest(locus=locus):
                 self.assertEqual(self.survey[locus]["numbering"], UNRECORDED)

@@ -39,6 +39,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import _calendars  # noqa: E402
 from _commentary import (  # noqa: E402
     CANONICAL,
     UNRECORDED,
@@ -1514,32 +1515,59 @@ def _index_numbering_survey(root: Path = ROOT) -> dict[str, dict[str, str]]:
     tracked calendars' `citation_divergences` are already gated against the
     citations actually made, so this rests on a register that cannot go stale
     without its own build failing first.
-    """
-    import yaml
 
+    The calendars are `commentary-work-index`'s own default set and are read
+    through `_calendars`, so the survey asks the same question of the same
+    documents the corpus was built from. Which calendars belong in the union,
+    and why a recension is not one of them, is stated there and not restated
+    here.
+    """
     index = _work_index_tool()
     citations = index._load_citations_tool()
     documents: dict[str, dict] = {}
     for calendar in index.DEFAULT_CALENDARS:
-        path = root / "src" / "sources" / "calendars" / calendar / "propers.yaml"
-        if not path.is_file():
-            raise ValueError(f"missing calendar index: {path}")
-        documents[calendar] = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        documents[calendar] = _calendar_document(root, calendar)
     return index.numbering_survey(citations, documents)
+
+
+def _calendar_document(root: Path, calendar: str) -> dict:
+    """One calendar's mass index, as the model resolves it and not as it sits.
+
+    `yaml.safe_load` on the file itself is the shape of defect this repository
+    has recorded before: it reads a RECENSION as the handful of departure rows
+    it is written as, so a caller asking for `roman-pre-1955` would see six
+    masses where the model has 490, would see placeholder rows in place of the
+    base's text, and would resolve no `takes_from` reference. There is one
+    derivation of a calendar document here -- `scripts/_calendars` -- and this
+    is a caller of it. A calendar that is nobody's recension comes back exactly
+    as it sits, so the tracked calendars are unaffected.
+    """
+    calendars = root / "src" / "sources" / "calendars"
+    path = calendars / calendar / "propers.yaml"
+    if not path.is_file():
+        raise ValueError(f"missing calendar index: {path}")
+    return _calendars.load_document(calendars, calendar)
 
 
 def _mass_passages(missal: str, mass: str) -> list[str]:
     """The canonical passage keys a mass cites, via the corpus's own speller."""
     index = _work_index_tool()
-    import yaml
 
-    document = yaml.safe_load(
-        (ROOT / "src" / "sources" / "calendars" / missal / "propers.yaml").read_text("utf-8")
-    )
+    document = _calendar_document(ROOT, missal)
     citations = index._load_citations_tool()
     records = index._collect_mass_records(citations, document, missal)
     found = [r for r in records if r["mass_key"] == mass or r["mass_key"].startswith(f"{mass}:")]
     if not found:
+        # Two different answers, and one message for both would be a lie in one
+        # of them. A mass the calendar holds and cites no scripture in is the
+        # ordinary case for a recension's own entries, which state a placement
+        # rather than a text; saying it is not there would send a reader
+        # looking for a key that is.
+        if mass in _calendars.mass_index(document):
+            raise KeyError(
+                f"{missal}: {mass!r} is in the calendar and cites no scripture, "
+                "so there is nothing here to harvest commentary against"
+            )
         raise KeyError(f"{missal}: no mass with key {mass!r}")
     seen: list[str] = []
     for record in found:

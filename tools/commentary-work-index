@@ -44,6 +44,7 @@ from typing import Any, NamedTuple
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+import _calendars
 import _coverage
 from _commentary import (
     UNRECORDED,
@@ -204,6 +205,29 @@ def _canonical_passage(
 
 DEFAULT_DISCOVERY_PATH = Path("src/sources/commentary/passage-commentary-index.yaml")
 DEFAULT_CORPUS_PATH = Path("src/sources/commentary/mass-commentary-corpus.yaml")
+# The calendars the corpus unions when the caller names none. TWO, with a third
+# in the repository, and the two are the ones that STATE THEIR OWN TEXT.
+#
+# `roman-pre-1955` is a recension: it is held as its departures from
+# `roman-1962` and states six of them, none of which carries a word of
+# scripture. Resolved through `_calendars.load_document` it yields 276 masses
+# and 1,178 passage keys, and every one of those keys is already contributed by
+# `roman-1962` -- measured, not assumed: the set difference is empty. Unioning
+# it would therefore double the mass rows of a corpus whose whole purpose is to
+# say which passages want commentary, and add no passage to it.
+#
+# There is a second reason, and it is the one that could go wrong quietly. A
+# recension's effective document carries the BASE's masses under the
+# RECENSION's own top-level registers, so `citation_divergences` does not cross
+# the join. `roman-1962` declares none today, so nothing moves; the day it
+# declares one, a recension unioned here would offer the same citation with no
+# divergence attached and `numbering_survey` would read the key as sound.
+#
+# So this is a refusal with a reason and not a set nobody revisited. `--calendar
+# roman-pre-1955` is accepted and now resolves correctly, because the loading
+# below goes through `_calendars` rather than round a recension's back; what is
+# refused is unioning it by DEFAULT. A calendar that states its own text belongs
+# in this tuple.
 DEFAULT_CALENDARS = ("roman-1962", "postconciliar")
 
 # An author's role, not a calendar cycle: "saintly" here describes a revered
@@ -1004,11 +1028,21 @@ def _build_mass_coverage(
     )
 
 
-def _load_calendar_doc(path: Path) -> dict[str, Any]:
-    data = _load_yaml(path)
-    if not isinstance(data, dict):
-        raise ValueError(f"calendar index is not a mapping: {path}")
-    return data
+def _load_calendar_doc(root: Path, calendar: str) -> dict[str, Any]:
+    """One calendar's mass index, as the model resolves it and not as it sits.
+
+    Through `_calendars` and never through `yaml.safe_load`: a recension's file
+    on disk is a handful of departure rows, and reading it directly would give
+    this tool six masses where the model has 490 and would put placeholder rows
+    where the base's text stands. There is one derivation of a calendar
+    document in this repository and this is a caller of it, not a second one.
+
+    A calendar that is nobody's recension is returned exactly as it sits, so
+    the two calendars unioned by default are byte-for-byte what they were. The
+    mapping check that stood here is gone rather than kept as a belt: `_read`
+    makes it, and a second copy of a rule is a second place for it to differ.
+    """
+    return _calendars.load_document(root, calendar)
 
 
 def _render_payload(
@@ -1281,7 +1315,7 @@ def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
         if not path.exists():
             raise ValueError(f"missing calendar index: {path}")
         try:
-            doc = _load_calendar_doc(path)
+            doc = _load_calendar_doc(root, calendar)
             calendar_documents[calendar] = doc
             calendar_records.extend(_collect_mass_records(citations, doc, calendar))
         except Exception as error:

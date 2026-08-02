@@ -207,9 +207,9 @@ was taken is citations, under `the_citation_question`.
 """
 landed = true
 landed_what = """
-The Lectionary citations of twelve celebrations, read at 200 dpi on artifact
-pages 328-329 and 346-348 (printed 274-275 and 292-294), nn. 516-521, 583 and
-586-592. See `[landed]` below.
+The Lectionary citations of sixty-three celebrations, read at 200 dpi on
+artifact pages 328-348 (printed 274-294), nn. 516-521, 522-544, 545-582 and 583,
+586-592, in three contiguous runs. See `[landed]` below.
 """
 
 [[works]]
@@ -699,7 +699,7 @@ cleanly, and looks right.
 # ---------------------------------------------------------------------------
 
 [landed]
-what = "Thirty-two Masses, thirty-six formularies, 143 Lectionary citations, over two waves."
+what = "Sixty-three Masses and 269 Lectionary citations, over three waves."
 masses = [
   "saint-agnes-virgin-martyr",
   "saint-vincent-deacon-martyr",
@@ -733,27 +733,82 @@ masses = [
   "saint-cyril-jerusalem-bishop-doctor-church",
   "saint-joseph-spouse-blessed-virgin-mary",
   "saint-turibius-mogrovejo-bishop",
+  "annunciation-lord",
+  "saint-francis-paola-hermit",
+  "saint-isidore-bishop-doctor-church",
+  "saint-vincent-ferrer-priest",
+  "saint-john-baptist-la-salle-priest",
+  "saint-stanislaus-bishop-martyr",
+  "saint-martin-i-pope-martyr",
+  "saint-anselm-bishop-doctor-church",
+  "saint-fidelis-sigmaringen-priest-martyr",
+  "saint-mark-evangelist",
+  "saint-catherine-siena-virgin-doctor-church",
+  "saint-pius-v-pope",
+  "saint-joseph-worker",
+  "saint-athanasius-bishop-doctor-church",
+  "saints-philip-james-apostles",
+  "saint-matthias-apostle",
+  "saint-john-i-pope-martyr",
+  "saint-bernardine-siena-priest",
+  "saint-philip-neri-priest",
+  "saint-augustine-canterbury-bishop",
+  "visitation-blessed-virgin-mary",
+  "immaculate-heart-blessed-virgin-mary",
+  "saint-justin-martyr",
+  "saints-marcellinus-peter-martyrs",
+  "saints-charles-lwanga-companions-martyrs",
+  "saint-boniface-bishop-martyr",
+  "saint-norbert-bishop",
+  "saint-ephrem-deacon-doctor-church",
+  "saint-barnabas-apostle",
+  "saint-anthony-padua-priest-doctor-church",
+  "saint-romuald-abbot",
 ]
 witness = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
-loci = "artifact pages 328-335 and 346-348, printed pages 274-281 and 292-294, nn. 516-544 and 583 and 586-592"
+loci = """
+artifact pages 328-348, printed pages 274-294, nn. 514-592 read without a break
+across three runs. Fourteen of those numbered entries were read and not landed;
+they are named under `not_landed_from_the_same_pages`.
+"""
 waves = """
-Two lanes, one method, one witness. The first landed twelve Masses and sixty
+Three lanes, one method, one witness. The first landed twelve Masses and sixty
 citations from artifact pages 328-329 and 346-348 on 2026-08-01. The second
 continued the book from artifact page 330 - the page the first lane stopped
 before - and read 330 to 335 without a break, printed pages 276 to 281, nn. 522
 to 544: twenty further Masses and eighty-three further citations, 28 January
-through 23 March. The artifact is `storage = restricted`, so its bytes are not
-retained here; it was re-acquired over HTTPS from the recorded `source_url`, its
-sha256 was verified against the artifact record before a single page was
-rendered, and the download and every render were deleted when the reading was
-done.
+through 23 March. The third continued from artifact page 336, again the page its
+predecessor stopped before, and read 336 to 345 without a break, printed pages
+282 to 291, nn. 545 to 582: thirty-one further Masses and 126 further citations,
+25 March through 19 June, ending where the first wave's second stretch begins at
+artifact page 346. The three runs now join: artifact pages 328 to 348 have been
+read end to end.
+
+The artifact is `storage = restricted`, so its bytes are not retained here; on
+each wave it was re-acquired over HTTPS from the recorded `source_url`, its
+sha256 and byte size were verified against the artifact record before a single
+page was rendered, and the download and every render were deleted when the
+reading was done.
 """
 every_landed_citation_was_read = """
-Nothing here was taken from a compilation. Every one of the 143 citations was
-read in a page image of the Ordo, and the thirty-two Masses are exactly the
-celebrations on those pages that this calendar carries under a key of their own.
-The celebrations read on the same pages and NOT landed are named under
-`not_landed_from_the_same_pages`.
+Nothing here was taken from a compilation. Every one of the 269 citations was
+read in a page image of the Ordo, and the sixty-three Masses are exactly the
+celebrations on those pages that this calendar carries under a key of their own
+and that the 1981 book prints. The celebrations read on the same pages and NOT
+landed are named under `not_landed_from_the_same_pages`; the celebrations this
+calendar carries in the same span that the 1981 book does not print at all are
+named under `inscribed_after_the_witness`.
+"""
+inscribed_after_the_witness = """
+Five keys in the span the third wave read hold celebrations the 1981 Ordo cannot
+witness, because they were inscribed in the General Roman Calendar after it, and
+they remain placeholders: `our-lady-fatima` (13 May), `saint-john-avila-priest-
+doctor-church` (10 May), `saints-christopher-magallanes-priest-companions-
+martyrs` (21 May), `saint-rita-cascia-religious` (22 May) and `saint-paul-vi-
+pope` (29 May). `saint-gregory-narek-abbot-doctor-church`, found the same way by
+the second wave, is a sixth. Nothing is wrong with these entries; the wrong book
+is being asked. A later edition of the Ordo lectionum, or the 2002 Missal
+already registered here, is what would answer for them.
 """
 how = """
 Every passage was encoded by `tools/citations`'s own `parse_citation`, and
@@ -767,6 +822,20 @@ one reference while the ranges fetch another. `make check-calendar-masses`
 passes and adds no new psalm-numbering exception - the ledger still holds
 exactly its twenty-eight pre-existing loci - which independently confirms that
 every converted psalm resolves inside its Hebrew chapter.
+
+The third wave kept both checks and added a third: the reference renderer was
+measured against the file before it was used, by rendering all 1,232 passages
+already stored from their own ranges and comparing with their stored `ref`. It
+reproduced 1,231 of them exactly; the one it did not is `Philemon 9b-10, 12-17`,
+a single-chapter book this file prints without a chapter number, and no citation
+in this wave is in a single-chapter book. The written file was then reloaded and
+every landed note, slot name, slot note, book, range list and `ref` compared
+with what the encoder had built. `tools/tpt citations check --root
+src/sources/calendars` reports the same twenty-eight ledgered antiphon errors it
+reported before, byte for byte, with one line changed: the postconciliar passage
+count, 1232 to 1358. That was proved against a scratch copy of the calendars
+holding the pre-wave file and run with the same tooling, because other lanes
+were editing tools in the same working tree.
 """
 what_is_absent_and_why = """
 Each landed Mass carries a `notes` line saying, in terms, that its Entrance and
@@ -777,14 +846,17 @@ recorded in the same note and NOT resolved into a `takes_from`, because this
 calendar carries no Common as a Mass and a pointer to a Common that does not
 exist would resolve to nothing.
 
-One slot is absent for a different reason and says so on its own Mass. At
-n. 536, Saint Polycarp, the Ordo prints against Alleluia the bare
-cross-reference `n. 717,6` and no scriptural citation at all, so that Mass
-carries no Gospel Acclamation. It was left absent rather than resolved into the
-Common it points at, on the same ground as every other Common pointer here. This
-is the sanctoral's instance of the shape the seasonal collation already recorded
-at the Second Sunday of Lent, where the Ordo prints the verse before the Gospel
-with no reference either.
+Two slots are absent for a different reason and say so on their own Masses. At
+n. 536, Saint Polycarp, and again at n. 551, Saint Martin I, the Ordo prints
+against Alleluia the bare cross-reference `n. 717,6` and no scriptural citation
+at all, so neither Mass carries a Gospel Acclamation. Both were left absent
+rather than resolved into the Common they point at, on the same ground as every
+other Common pointer here. This is the sanctoral's instance of the shape the
+seasonal collation already recorded at the Second Sunday of Lent, where the Ordo
+prints the verse before the Gospel with no reference either. That the same
+cross-reference appears at both loci is worth recording: the two Masses are not
+independent instances of a scanning problem but one Common entry the book twice
+declines to spell out.
 """
 what_the_book_prints_that_the_grammar_cannot_hold = """
 Three transcription decisions in the second wave, each recorded on the Mass that
@@ -806,6 +878,21 @@ At Saint Joseph the pre-Gospel slot is printed `V/ ante Ev. vel Alleluia`,
 because 19 March falls in Lent. It is carried under the file's existing
 `Verse Before the Gospel` name, and its psalm number is converted like any
 other.
+
+The third wave met four more of the same kind and made the same choices. The
+Annunciation is a second Lenten pre-Gospel slot, `V/ ante Ev. vel Allel.` at
+n. 545, carried under the same name. Saint Joseph the Worker and the Visitation
+each print a `Vel` alternative FIRST reading, carried under the file's existing
+`First Reading (alternative)` name rather than as cycle entries. Saint Joseph
+the Worker's Alleluia is itself a psalm, `Ps 67, 20`, so it converts out of the
+Ordo's Vulgate numbering exactly as a responsorial does; the file's per-proper
+numbering inheritance already allowed this and nothing new was needed. And the
+Ordo's stanza punctuation varies within one Common: at n. 575 it separates the
+selections of `n. 715,3` with points and at n. 576 with a point and then commas,
+and at n. 580 it uses commas throughout. The verses named are identical, and
+this file carries an ordered list of ranges and no stanza punctuation at all, so
+the difference is not a thing the grammar can hold and is recorded in prose on
+the Masses instead.
 """
 a_divergence_inside_the_book = """
 Recorded rather than harmonized, under the second invariant of
@@ -818,24 +905,70 @@ sure the difference was not the scan. Each is recorded exactly as printed and
 each Mass's notes name the other. This is the same class as the
 `part-verse letters` item already open in the calendar's own
 `open_collation_items`, now attested inside one book on one page-spread.
+
+The third wave found a THIRD printing of that same selection under that same
+cross-reference, at n. 571 (Saint Augustine of Canterbury, artifact page 343),
+and it prints `7-8a`. So the book stands two to one against itself and the
+question is not which reading is a scanning error but that the edition is not
+uniform. All three are carried as printed.
+
+It found two further divergences of the same family, and both are worth more
+than the first because they are not about a letter.
+
+At n. 552 (Saint Anselm) and n. 567 (Saint Bede) the Ordo prints ONE Alleluia -
+the Common of Doctors, `n. 729,3` - in TWO NUMBERING SYSTEMS: `Io 6, 64b et 69b`
+at the first, which is the Vulgate's numbering of John 6, and `Io 6, 63c. 68c`
+at the second, which is the Greek's, with the part letters differing as well.
+Both were read at 400 dpi on artifact pages 338 and 342. This is the same defect
+the calendar already records for John 6 in `citation_divergences`, and it is now
+attested inside the witness rather than only between the witness and this file.
+n. 552 is landed and carries what its own page prints; n. 567 belongs to a
+joined key and is not landed. A resolution row was added to the calendar's John
+locus so that a Vulgate-numbered edition resolves `John 6:64b, 69b` to itself
+and a Hebrew-numbered one refuses rather than guesses; that behaviour was
+exercised directly against `tools/index-bible`'s own `Divergences` class rather
+than assumed.
+
+At n. 557 (Saint Catherine of Siena) the Ordo prints a responsorial selection
+with its second endpoint ELIDED - `Ps 102, ... 17-8a` - and prints the same
+selection under the same cross-reference `n. 739,6` at n. 563 in full, as
+`17-18a`. Both were read at 400 dpi. `17-8a` descends, so it is not a reference
+this file's grammar can hold at all; the full form the book itself supplies two
+pages later is carried, and the elision is recorded on the Mass and in
+`open_collation_items` rather than harmonized away. This is the one place in the
+three waves where what is stored is not the exact string the celebration's own
+page prints, and it is stated here so that a reader is not left to discover it.
 """
 not_landed_from_the_same_pages = """
-Seven celebrations have now been read on these pages and NOT landed, and all
-seven fail the same way. This calendar joins several optional memorials of one
-date under a single key, so writing one saint's readings onto a key that stands
-for several would attribute them to all of them:
+Fourteen numbered entries have now been read on these pages and NOT landed, and
+all fourteen fail the same way. This calendar joins several optional memorials
+of one date under a single key, so writing one saint's readings onto a key that
+stands for several would attribute them to all of them:
 
   n. 514 Saint Fabian and n. 515 Saint Sebastian      `saint-fabian-pope-martyr`
   n. 525 Saint Blaise and n. 526 Saint Ansgar         `saint-blaise-bishop-martyr`
   n. 529 Saint Jerome Emiliani                        `saint-jerome-emiliani`
+  n. 553 Saint George                                 `saint-george-martyr`
+  n. 556 Saint Peter Chanel                           `saint-peter-chanel-priest-martyr`
+  n. 562 Saints Nereus and Achilleus, and
+  n. 563 Saint Pancras                                `saints-nereus-achilleus-martyrs`
+  n. 567 Saint Bede, n. 568 Saint Gregory VII and
+  n. 569 Saint Mary Magdalene de' Pazzi               `saint-bede-venerable-priest-doctor-church`
   n. 584 Saint Paulinus and n. 585 Fisher and More    `saint-paulinus-nola-bishop`
 
-Each of the six formularies at nn. 514, 515, 525, 526, 584 and 585 is its own
-Mass in the Ordo. n. 529 is a seventh case of a different shape: the Ordo prints
-one formulary there, for Saint Jerome Emiliani alone, because Saint Josephine
-Bakhita was inscribed in the General Roman Calendar long after 1981 - so what
-blocks it is not two formularies but the joined key's name, which would claim
-the readings for a saint the 1981 book never appointed them to.
+Most of these are several Ordo formularies to one key: nn. 514, 515, 525, 526,
+562, 563, 567, 568, 569, 584 and 585 are eleven Masses over five keys. Three are
+a case of a different shape - nn. 529, 553 and 556 - where the Ordo prints ONE
+formulary and the key still cannot take it, because the key's name joins that
+saint with another the 1981 book does not appoint those readings to: Saint
+Josephine Bakhita with Saint Jerome Emiliani, Saint Adalbert with Saint George,
+Saint Louis Grignion de Montfort with Saint Peter Chanel. Landing the single
+formulary on the joined key would claim it for both.
+
+Eight of this calendar's eighteen joined keys are now blocked by read evidence
+rather than by the absence of it: 20 January, 3 February, 8 February, 23 April,
+28 April, 12 May, 25 May and 22 June. The other ten lie beyond artifact page
+348 and will block the same way when the book is read that far.
 
 The joined-key problem is recorded in rubrics.yaml under `unsettled`. It is
 still the cheapest unblocking left in terms of acquisition - none is needed -
@@ -909,25 +1042,43 @@ on anybody's grant.
 """
 
 placeholder_masses_before = 205
-placeholder_masses_after = 173
+placeholder_masses_after = 142
 placeholder_propers_before = 210
-placeholder_propers_after = 176
+placeholder_propers_after = 145
 placeholder_note = """
 `before` is the state on 2026-08-01 ahead of the first wave; `after` is the
-state once the second wave landed, measured by `tools/tpt mass-propers census`
-and not counted by hand. The intermediate reading, after the first wave and
-before the second, was 193 Masses and 196 propers. The second wave also raised
-the postconciliar encoded-passage count from 1149 to 1232 and its distinct-book
-count from 61 to 63, Judith and the Song of Songs being cited here for the first
-time in this calendar.
+state once the third wave landed, measured by `tools/tpt mass-propers census`
+and not counted by hand. The readings between the waves were 193 Masses and 196
+propers after the first, and 173 and 176 after the second. The third wave moved
+173 to 142 and 176 to 145, one placeholder proper retired per Mass landed, and
+raised the postconciliar encoded-passage count from 1232 to 1358. Its
+distinct-book count did not move: all 63 books it cites were already cited
+somewhere in this calendar. By section it took the sanctoral's
+placeholder-holding Masses from 151 to 123, the marian's from 13 to 12, the
+christological's from 6 to 5 and the seasonal's from 3 to 2 - the last three
+being the Visitation, the Annunciation and the Immaculate Heart, which are
+dated or rule-inscribed celebrations this file happens to file outside the
+sanctoral section.
+
+These counters are this record's own and are NOT the census. The census block in
+guidance/propers-for-agents.md and docs/the-mass.md is written by
+`tools/tpt mass-propers census --write` and by nothing else; the third wave did
+not run it, because other lanes were moving the 1962 numbers in the same working
+tree at the same time and a partial rewrite would have published one lane's
+figures over another's.
 """
 scan_rate = """
-Six artifact pages carried twenty-three formularies, of which twenty landed.
-That is close to the first wave's measured rate of one page per two
-celebrations and well below the temporal's density, which the seasonal record
-puts at 79 pages for 63 Sundays. At this rate the rest of the Proprium de
-Sanctis - artifact pages 336 to 345 and 349 onward - is a bounded job and not an
-open-ended one.
+The third wave's ten artifact pages carried thirty-eight numbered entries, of
+which thirty-one landed - about 3.8 formularies a page, against the second
+wave's 3.8 and the first wave's 3.0. The rate is steady and it is roughly twice
+what the first wave's estimate of "one page per two celebrations" assumed, so
+the sanctoral is cheaper per page than this record first thought. The temporal
+is far denser per celebration, which the seasonal record puts at 79 pages for 63
+Sundays, because three cycles share a page there.
+
+What is left of the Proprium de Sanctis is artifact page 349 onward, nn. 593 to
+707: pages 328 to 348 are now read end to end. On the measured rate that is
+roughly thirty further pages.
 """
 
 [open_items]
@@ -969,19 +1120,23 @@ celebrations and the seasonal's 66.
 the_next_lane = """
 Three things, and the one that needs no decision first.
 
-Keep reading the book. The second wave stopped after artifact page 335, printed
-page 281, n. 544, having read 28 January to 23 March without a break. The next
-contiguous run is artifact page 336 onward. Every one of those Masses is a
-placeholder today, the method is settled, and no decision blocks it.
+Keep reading the book. The third wave stopped after artifact page 345, printed
+page 291, n. 582, having read 25 March to 19 June without a break and closed the
+gap to the first wave's stretch at 346-348. The next contiguous run is artifact
+page 349 onward, n. 593, 24 June. Nearly every Mass from there to the end of the
+year is a placeholder today, the method is settled, and no decision blocks it.
 
 Split the joined optional-memorial keys - but as one change, not two entries.
-Seven formularies collated across the two waves cannot land because 20 January,
-3 February, 8 February and 22 June each hold more than one optional memorial
-under one key. This was called the cheapest unblocking left, and in acquisition
-terms it still is: none is needed. It is not, however, a four-line edit, and the
-lane that measured it wrote down why under `landed.why_the_split_was_not_done`.
-Settle the registry id rule first, then split all eighteen joined keys in one
-change with rubrics.yaml and the three generated layers.
+Fourteen numbered entries collated across the three waves cannot land because 20
+January, 3 February, 8 February, 23 April, 28 April, 12 May, 25 May and 22 June
+each hold more than one celebration under one key. This was called the cheapest
+unblocking left, and in acquisition terms it still is: none is needed. It is
+not, however, a four-line edit, and the lane that measured it wrote down why
+under `landed.why_the_split_was_not_done`. Settle the registry id rule first,
+then split all eighteen joined keys in one change with rubrics.yaml and the
+three generated layers. Its value now compounds: every further wave adds more
+read-but-unlandable formularies to the pile, and the ten joined keys past
+artifact page 348 will each block the same way.
 
 Then widen the Tamil collation. The first wave took it to fifteen formularies
 with no divergence in any reading or any Common pointer; the next should take it

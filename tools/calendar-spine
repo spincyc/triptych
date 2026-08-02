@@ -14,6 +14,10 @@ Classification follows the edition's own printed title. The 1962 books title
 February 2 and March 25 as feasts of Our Lady (In Purificatione, Annuntiatio
 Beatae Mariae Virginis) while the postconciliar books title them of the Lord,
 and this tool reproduces that difference rather than harmonizing it.
+
+`--calendar` offers every calendar the repository holds, including ones this
+tool derives no spine for, so that asking gets the REASON instead of an invalid
+choice. A recension has no spine of its own -- see the note on SOURCES.
 """
 from __future__ import annotations
 
@@ -21,11 +25,13 @@ import argparse
 import re
 import sys
 import unicodedata
+from functools import lru_cache
 from pathlib import Path
 # Shared CLI helpers live outside tools/ so that tmt's registry scan,
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+import _calendars
 from _tooling import (
     Example,
     examples_live_on_the_verbs,
@@ -57,6 +63,29 @@ EXAMPLES = {
 }
 
 ROOT = Path(__file__).resolve().parents[1]
+CALENDAR_ROOT = ROOT / "src" / "sources" / "calendars"
+
+# A spine is derived from a calendar's own REFERENCE PUBLICATION -- the verified
+# TeX sections below -- and from nothing else. This dict is therefore closed on
+# purpose, and its being closed is a statement rather than an oversight; a
+# refusal nobody explained is indistinguishable from one, so `no_spine` gives
+# the reason and `--calendar` accepts every calendar the repository holds in
+# order that the reason can be reached at all.
+#
+# THE PRE-1955 RECENSION IS THE CASE THIS WAS WRITTEN FOR, and its absence here
+# is correct. A recension is held as its DEPARTURES from a base and never as a
+# second copy of it (guidance/recensions.md Rule 2). `roman-pre-1955` states six
+# departures, every one of them in Holy Week, and states NO SANCTORAL AT ALL:
+# its sanctoral is its base's, and its base's is already derived under the
+# base's name. Deriving it again under the recension's name would write exactly
+# the second copy Rule 2 refuses -- and would key and number it as though it had
+# been read from a pre-1955 book, which nobody here has read. There is also no
+# such publication to read: src/gpt/liturgy/roman-rite holds 1962, postconciliar
+# and comparative, and nothing standing before 1955.
+#
+# So a recension gets no row here even once it grows a sanctoral departure. What
+# it would want then is the base's spine with its departures applied, which is
+# `_calendars.load_document`'s job and not a second parse of a TeX file.
 SOURCES = {
     "roman-1962": (
         ROOT / "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections",
@@ -255,9 +284,55 @@ def spine(calendar: str) -> list[dict]:
     return entries
 
 
+@lru_cache(maxsize=1)
+def held_calendars() -> tuple[str, ...]:
+    """Every calendar this repository holds a mass index for.
+
+    Walked rather than typed, and walked with the shared walker: nothing about
+    the calendar directory is fixed at two here, so a calendar this tool has no
+    spine for can still be told apart from a name nobody holds.
+    """
+    try:
+        indexes, _, _ = _calendars.partition(CALENDAR_ROOT)
+    except ValueError:
+        return ()
+    return tuple(sorted({path.parent.name for path in indexes}))
+
+
+def no_spine(calendar: str) -> str:
+    """Why this tool derives no spine for a calendar it holds no source for.
+
+    Three different facts, and answering `unknown calendar` to all three is how
+    a considered refusal reads as a gap. The recension case is the one the note
+    on SOURCES sets out, and it is READ -- `base_of` is the calendar's own
+    `text_from` header -- rather than inferred from the name.
+    """
+    held = held_calendars()
+    if calendar not in held:
+        return (
+            f"unknown calendar: {calendar}. This repository holds "
+            f"{', '.join(held) or 'no calendar sources'}."
+        )
+    base = _calendars.base_of(CALENDAR_ROOT, calendar)
+    if base:
+        return (
+            f"{calendar} is a recension of {base} and has no spine of its own. "
+            "It is held as its departures from that calendar and states no "
+            f"sanctoral, so its sanctoral is {base}'s, already derived under "
+            f"that name: ask for --calendar {base}. Deriving it again here "
+            "would write a second copy of the base's spine under the "
+            "recension's name, which guidance/recensions.md Rule 2 refuses."
+        )
+    return (
+        f"{calendar} states a calendar of its own, but this repository holds no "
+        "verified reference publication for it to be derived from. Land one "
+        "under src/gpt and name its sections in SOURCES."
+    )
+
+
 def run(calendar: str | None, kind: str | None) -> dict[str, object]:
     if calendar is not None and calendar not in SOURCES:
-        raise ValueError(f"unknown calendar: {calendar}")
+        raise ValueError(no_spine(calendar))
     if kind is not None and kind not in KINDS:
         raise ValueError(f"unknown kind: {kind}")
     calendars = [calendar] if calendar else sorted(SOURCES)
@@ -277,7 +352,10 @@ def run(calendar: str | None, kind: str | None) -> dict[str, object]:
 
 def main(argv: list[str] | None = None) -> int:
     shared = argparse.ArgumentParser(add_help=False)
-    shared.add_argument("--calendar", choices=sorted(SOURCES))
+    # Every calendar the repository holds, not only the ones with a spine: a
+    # calendar refused by argparse as an invalid choice never reaches the
+    # sentence that says why it has none.
+    shared.add_argument("--calendar", choices=sorted(set(SOURCES) | set(held_calendars())))
     shared.add_argument("--kind", choices=KINDS)
     shared.add_argument(
         "--json",
