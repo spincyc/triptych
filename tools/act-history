@@ -65,6 +65,7 @@ import json
 import re
 import subprocess
 import sys
+import textwrap
 import tomllib
 from pathlib import Path
 
@@ -1218,7 +1219,277 @@ def render_witness(witness: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
+# --- What a reader of a CLONE has to be told ---------------------------------
+#
+# Four things about a published slice cannot be read off its objects, and three
+# of them cannot be fixed for the reader from this end at all.
+#
+#   Which words are absent ON PURPOSE, as against which are simply not held. A
+#   banner saying the words exist and are withheld for a stated rights reason is
+#   a different claim from an empty line, and the whole value of the marker is
+#   that the two can be told apart. Nobody who clones this learns that anywhere
+#   but here.
+#
+#   What rights the readings behind those words carry, and that none of it is a
+#   clearance for the reader.
+#
+#   That `git gc` -- routine maintenance, run without a thought -- turns this
+#   into a repository the reader's own tools call corrupt. `emit` sets
+#   `gc.writeCommitGraph=false` in the repository it writes, and LOCAL CONFIG
+#   DOES NOT TRAVEL WITH A CLONE, so that setting protects nobody downstream.
+#
+#   That no content may move between this repository and another by any
+#   git-level operation, in either direction.
+#
+# The README is the only file every clone has and the first one anybody opens,
+# so each is stated on the artifact rather than in a record the reader does not
+# have. Every count below is COUNTED FROM THE ROWS rather than typed beside
+# them: a README describing a rights position the slice does not hold would be
+# the defect guidance/the-shape.md section 1 names, a reference that resolves
+# successfully and wrongly, and it would be doing it about rights.
+#
+# The two records named below are records in the Triptych repository and not
+# files of this one, so the README gives their paths: a reader of a clone is
+# told where to go, not merely that somewhere a record exists.
+
+PUBLICATION_RECORD = "act-history-repository-publication-v1.toml"
+LT_HIST_AUDIT = "lt-hist-rights-audit-v1.toml"
+SOURCE_TOOL = "tools/act-history"
+
+
+def withheld_tally(data: dict) -> list[tuple[str, int, int]]:
+    """Per row table: how many rows withhold their words, and how many there are."""
+    return [
+        (
+            table,
+            sum(1 for row in data.get(table, []) if str(row.get("withheld") or "").strip()),
+            len(data.get(table, [])),
+        )
+        for table in WITHHELD_WORDS
+    ]
+
+
+def withheld_reasons(data: dict) -> list[str]:
+    """The distinct reasons this slice's rows give, each printed once.
+
+    A reason arrives here already expanded from the `[withheld]` table by
+    `resolve_withholdings`, on the lines it was written on, so the README can
+    quote it whole instead of summarising a rights position in its own words.
+    """
+    return sorted(
+        {
+            str(row.get("withheld") or "").strip()
+            for table in WITHHELD_WORDS
+            for row in data.get(table, [])
+            if str(row.get("withheld") or "").strip()
+        }
+    )
+
+
+def acts_withholding(data: dict) -> list[str]:
+    """The acts at which something is withheld, in the order the history runs."""
+    order = topological(indexed(data.get("acts", []), "id", "acts"))
+    named: set[str] = set()
+    for row in data.get("units", []):
+        if str(row.get("withheld") or "").strip():
+            named.add(row.get("at") or order[0])
+    for table in ("departures", "interpretations"):
+        for row in data.get(table, []):
+            if str(row.get("withheld") or "").strip():
+                named.add(str(row.get("act") or ""))
+    return [act for act in order if act in named]
+
+
+def rights_recorded(data: dict) -> list[tuple[str, list[dict]]]:
+    """Witnesses grouped by the `rights` value each records, in value order."""
+    grouped: dict[str, list[dict]] = {}
+    for witness in data.get("witnesses", []):
+        grouped.setdefault(str(witness.get("rights") or "unstated"), []).append(witness)
+    return [
+        (value, sorted(rows, key=lambda row: str(row.get("id"))))
+        for value, rows in sorted(grouped.items())
+    ]
+
+
+def quoted_block(text: str, indent: str = "    ") -> str:
+    """A stated reason, quoted whole and indented under the paragraph.
+
+    Rewrapped rather than reprinted on the lines it arrived on: the reason comes
+    from a TOML multi-line string wrapped for a source file, and indenting those
+    lines here would push a README past the width every other paragraph in it
+    keeps. The words are not touched, only the line breaks.
+    """
+    return textwrap.fill(
+        " ".join(text.split()), width=78, initial_indent=indent, subsequent_indent=indent
+    ) + "\n"
+
+
+def readme_withholding(data: dict, vocab: Vocabulary) -> str:
+    """What a `[... withheld: ...]` banner means, and how many there are."""
+    words = {"units": vocab.unit_word, "departures": "departure",
+             "interpretations": "interpretation"}
+    tally = [row for row in withheld_tally(data) if row[2]]
+    stated = "".join(
+        f"    {held} of {counted(total, words[table])}\n" for table, held, total in tally
+    )
+    withholds = {table: held for table, held, _ in tally}
+
+    if not sum(withholds.values()):
+        return (
+            "NOTHING IN THIS SLICE IS WITHHELD, AND AN EMPTY LINE IS NOT A WITHHOLDING.\n"
+            "Counted from the rows, the rows that withhold their words:\n\n"
+            + stated
+            + f"\nEvery {vocab.unit_word} file here carries whatever words the record holds for it,\n"
+            "so where a file shows none, the record holds none: nobody has read them, or\n"
+            "there are none to read.\n\n"
+            "Other slices this tool emits DO withhold, and where they do, the line that\n"
+            f"would carry the words reads `[{vocab.withheld_label}: <the reason>]` instead.\n"
+            "No file in this repository carries that banner, and its absence is a fact\n"
+            "about this slice rather than a silence of the generator.\n"
+        )
+
+    reasons = withheld_reasons(data)
+    acts = acts_withholding(data)
+    return (
+        "WORDS ARE MISSING FROM THIS HISTORY ON PURPOSE, AND EVERY PLACE SAYS SO.\n"
+        "Counted from the rows, the rows that withhold their words:\n\n"
+        + stated
+        + "\nWhere they are withheld, the line that would carry them reads\n\n"
+        f"    [{vocab.withheld_label}: <the reason>]\n\n"
+        + ("and a withheld interpretation carries `[words withheld: <the reason>]` above\n"
+           "its entry.\n\n" if withholds.get("interpretations") else "")
+        + "A BANNER IS NOT A GAP IN THE RESEARCH, AND TELLING THOSE TWO APART IS THE WHOLE\n"
+        "POINT OF IT. It says the words EXIST, were READ from the witness the record\n"
+        "names, and are not reproduced here for the reason printed with them. Where\n"
+        f"nobody has read a {vocab.unit_word}, its file carries no banner and no words; where the\n"
+        "words are withheld, the file carries the banner and no words. Those are\n"
+        "different states of the record, and this history keeps them apart, so that an\n"
+        "absence is never read as ignorance nor ignorance taken for a rights position.\n\n"
+        + (f"A withheld {vocab.unit_word} also carries `text established by: <act>`, and that is what\n"
+           "makes a withholding legible AS A HISTORY: a station that substituted twenty-one\n"
+           "canons shows twenty-one changed files rather than an empty diff, so what the act\n"
+           "did is visible without the words it did it to.\n\n"
+           if vocab.unit_carries_establishing_act else "")
+        + ("The reason the rows give, in full:\n\n" if len(reasons) == 1
+           else "The reasons the rows give, in full:\n\n")
+        + "\n".join(quoted_block(reason) for reason in reasons)
+        + f"\n{len(acts)} of the {counted(len(data.get('acts', [])), 'act')} here"
+        + (" carries" if len(acts) == 1 else " carry")
+        + " at least one withheld row:\n\n"
+        + "".join(f"    {act}\n" for act in acts)
+    )
+
+
+def readme_rights(data: dict) -> str:
+    """The rights position of the slice, from the values its witnesses record."""
+    recorded = rights_recorded(data)
+    total = sum(len(rows) for _, rows in recorded)
+    width = max((len(value) for value, _ in recorded), default=0)
+    unresolved = [(value, rows) for value, rows in recorded if value != "public-domain"]
+    named = "".join(
+        f"\nRecorded `{value}`, each with the act it attests:\n\n"
+        + "".join(
+            f"    {row['id']:<{max(len(str(other['id'])) for other in rows)}}  "
+            f"{row.get('attests') or 'unestablished'}\n"
+            for row in rows
+        )
+        for value, rows in unresolved
+    )
+    return (
+        "THE RIGHTS THIS SLICE RECORDS, AND WHAT THEY ARE NOT.\n"
+        "Rights are recorded on WITNESSES -- the printings and editions the readings were\n"
+        "taken from -- and not on acts: an act is an event and carries no rights of its\n"
+        f"own. Counted from the rows, of {total} witness{'' if total == 1 else 'es'} here:\n\n"
+        + "".join(f"    {value:<{width}}  {len(rows)}\n" for value, rows in recorded)
+        + (
+            "\nThe readings this project has NOT established a right to redistribute are\n"
+            "named rather than left to be counted:\n"
+            + named
+            if named else
+            "\nNo witness here records anything but `public-domain`.\n"
+        )
+        + "\nREAD THE BASIS, NOT THE LABEL. Every file under witnesses/ carries the\n"
+        "`rights basis` on which this project recorded that value. The value is this\n"
+        "project's own conclusion about its own use, under the law of the United States.\n"
+        "It is not a licence issued to you, not a determination for your jurisdiction,\n"
+        "and not a warranty that the conclusion is right; some of these bases are weaker\n"
+        "than others, and doubts this project holds about its own are recorded in the\n"
+        "decision record named below rather than settled here.\n\n"
+        "SO THIS REPOSITORY IS NOT A PUBLICATION CLEARANCE FOR ANYTHING IN IT"
+        + (", and least\nof all for the works behind the witnesses recorded "
+           + " and ".join(f"`{value}`" for value, _ in unresolved) + ".\n\n"
+           if unresolved else ".\n\n")
+        + f"Whether a slice emitted by {SOURCE_TOOL} may be published at all is decided\n"
+        "in the Triptych repository, at\n\n"
+        f"    src/sources/inventories/{PUBLICATION_RECORD}\n\n"
+        "on that record's terms and not on this file's. Making a copy of it private does\n"
+        "not change that answer: the rule that record applies asks whether the bytes\n"
+        "entered a repository and a build product, not who may read them afterwards.\n"
+    )
+
+
+def readme_commit_graph() -> str:
+    """The hazard a reader meets by running routine maintenance on their clone."""
+    return (
+        "BEFORE YOU RUN `git gc` ON A CLONE OF THIS, TURN THE COMMIT-GRAPH OFF:\n\n"
+        "    git config gc.writeCommitGraph false\n\n"
+        "The repository this tool writes carries that setting, and LOCAL CONFIG DOES NOT\n"
+        "TRAVEL WITH A CLONE, so yours does not. This is the one hazard here that cannot\n"
+        "be fixed for you from this end, which is why it is written on the artifact.\n\n"
+        "`git gc` writes a commit-graph by default. A commit-graph stores a commit date\n"
+        "in 34 bits -- a ceiling near the year 2514 -- and every stamp here is its act's\n"
+        f"date plus {YEAR_SHIFT} years, some eighteen times past that ceiling, so every one of\n"
+        "them wraps. What you get afterwards:\n\n"
+        "    git fsck --strict            exits non-zero and reports EVERY commit, as\n"
+        "                                 `commit date for commit <oid> in commit-graph\n"
+        "                                 is <wrapped> != <stamp>`\n"
+        "    git rev-list --date-order    reads the wrapped dates, and puts a commit of\n"
+        "                                 1570 ahead of one of 1962\n\n"
+        "No object is damaged and nothing is lost -- a commit-graph is a cache. Deleting\n"
+        "objects/info/commit-graph and objects/info/commit-graphs/ from the git directory\n"
+        "(under .git/ in an ordinary clone) restores both the fsck and the ordering, and\n"
+        "gc with the setting above leaves them alone. But a reader who runs ordinary\n"
+        "maintenance and then reads the output gets a repository their own tools call\n"
+        "corrupt and a date order that is wrong, with no warning from git.\n"
+    )
+
+
+def readme_no_git_level_movement() -> str:
+    """Why nothing may be fetched, merged or cherry-picked in either direction."""
+    return (
+        "NOTHING MOVES BETWEEN THIS REPOSITORY AND ANOTHER BY A GIT OPERATION.\n\n"
+        "Not into it and not out of it. Do not fetch, pull, merge, rebase, cherry-pick,\n"
+        "submodule or subtree-merge between this repository and the Triptych repository\n"
+        "that generated it, in EITHER direction, and do not do it between this repository\n"
+        "and ~/git/lt-hist or anything under it. THE ONLY ADMISSIBLE MOVEMENT OF CONTENT\n"
+        "IS EXTRACTION OF NAMED FILES FROM A WORKING TREE, one file at a time, chosen\n"
+        "deliberately.\n\n"
+        "The reason is not tidiness and it is specific. ~/git/lt-hist/build/roman-\n"
+        "liturgy-history is itself a git repository -- 25 commits narrating a text corpus\n"
+        "version by version -- and it carries versions this project has EXCLUDED on\n"
+        "rights grounds, in commits whose messages assert that those versions were\n"
+        "implemented, under front matter a rights audit forbids from travelling at all.\n"
+        "One `git fetch`, `git merge`, `git cherry-pick` or subtree merge would import\n"
+        "those objects, and it would be IRREVERSIBLE: deleting a file in a later commit\n"
+        "does not remove it from the history, and every clone taken before a rewrite\n"
+        "keeps it.\n\n"
+        "That is why the prohibition runs both ways rather than only inward. A workflow\n"
+        "that operates repositories beside the main one is exactly the workflow in which\n"
+        "`git remote add` and `git fetch <path>` stop being deliberate acts and become\n"
+        "ordinary gestures, and the mistake an ordinary gesture makes here is the one\n"
+        "that cannot be taken back.\n\n"
+        "The audit that ruled on lt-hist is, in the Triptych repository,\n\n"
+        f"    src/sources/inventories/{LT_HIST_AUDIT}\n\n"
+        "and its words are: \"The generated repository must not be fetched, merged,\n"
+        "cherry-picked, submoduled, or subtree-merged. Any fold-in extracts named files\n"
+        "from the working tree.\"\n\n"
+        "That ruling stands unchanged and is narrowed by nothing written here. This\n"
+        "paragraph restates it, in its own terms, for the repository you are holding.\n"
+    )
+
+
 def render_readme(data: dict, line: dict) -> str:
+    vocab = vocabulary_of(data)
     return (
         f"# {data['slice']}: {line['label']}\n\n"
         "A generated repository. It is a build artifact like a PDF: regenerate it and\n"
@@ -1248,7 +1519,11 @@ def render_readme(data: dict, line: dict) -> str:
         "about four hundred years, which would date Quo primum to 1970 and the 1962\n"
         "edition to 2362 -- plausible enough to be mistaken for a real date, which is\n"
         "worse than a stamp no one can misread. 11570 cannot be mistaken for anything.\n\n"
-        f"{line['note'].strip()}\n"
+        + readme_commit_graph()
+        + "\n" + readme_withholding(data, vocab)
+        + "\n" + readme_rights(data)
+        + "\n" + readme_no_git_level_movement()
+        + f"\n{line['note'].strip()}\n"
     )
 
 

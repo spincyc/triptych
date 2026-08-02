@@ -789,6 +789,12 @@ The generator says it once elsewhere, in the apparatus of the printed plate:
 (tools/act-history:3042). The README, which is the first file a reader of a
 published repository opens, does not.
 """
+now = """
+FIXED. `render_readme` writes both, counted from the rows; see [[conditions]]
+`the-readme-states-rights-and-the-gc-hazard` `met_how` (a) and (b). The
+statement above describes the README as it stood on 2026-08-02 before that
+change and is left as the record of what was measured.
+"""
 
 [[findings]]
 id = "the-emitted-readme-does-not-warn-about-gc"
@@ -801,6 +807,13 @@ date-ordered traversal then returns a wrong order. A reader who clones a
 published repository and runs routine maintenance produces a repository their
 own tools call corrupt, with no warning from the artifact. See
 [dates.commit_graph_overflow] for the measurement.
+"""
+now = """
+FIXED. The README states the ceiling, the overflow, what `fsck --strict` then
+reports, the wrong date order, the `gc.writeCommitGraph=false` mitigation and
+the fact that local config does not travel with a clone; see [[conditions]]
+`the-readme-states-rights-and-the-gc-hazard` `met_how` (c). Left standing as the
+record of what was measured.
 """
 
 # --- The decision, slice by slice ---------------------------------------------
@@ -889,6 +902,23 @@ Re-running the probe in [[findings]] `nothing-enforces-withheld`: a patched copy
 of the canon-law inventory carrying both fields must make `check` exit non-zero
 and name the row.
 """
+met = "yes, in commit 606327ea5"
+met_how = """
+`withheld_and_carried` (tools/act-history) reports every field a row carries
+beside its marker, and `check` calls it for `units`, `departures` and
+`interpretations` alike. The refusal is not the CLI's ordering: `build` refuses
+at the one function `emit`, `structure`, `plate`, `graph` and `commonality` all
+take their bytes from, and refuses on the STATE as well as on the rows, so a
+`replaced` departure that marks a unit withheld while leaving inherited words
+standing is refused too -- a combination no reading of the rows can see.
+
+The probe is run rather than described, in both tests:
+`tests/tools/act-history.test` patches the tracked canon-law inventory and
+requires `check` and `emit` to refuse it and to leave no repository behind, and
+`tools/tests/test_act_history_withheld.py` carries the other row kinds, the
+state-only case, and the case a blunt guard would break -- an act that withholds
+words it once published and CLEARS them, which must still be allowed.
+"""
 
 [[conditions]]
 id = "written-replaceability-authority"
@@ -924,6 +954,86 @@ Both are one paragraph each in one function. The date paragraphs already there
 are the model: this artifact's convention is that a hazard a reader will meet is
 stated on the artifact rather than in a record the reader does not have.
 """
+met = "yes"
+met_how = """
+`render_readme` now writes four sections a clone could not otherwise learn, and
+EVERY NUMBER IN THEM IS COUNTED FROM THE ROWS at render time rather than typed
+beside them. A README that named a rights position the slice does not hold would
+be `guidance/the-shape.md` section 1's defect -- a reference that resolves
+successfully and wrongly -- committed about rights, in an object that cannot be
+withdrawn.
+
+  (a) WHAT THE BANNER MEANS. `readme_withholding` counts the withholding rows of
+      each table against its total, prints the banner form the slice's own
+      vocabulary uses (`[text withheld: ...]` for a code, `[incipit withheld:
+      ...]` for liturgy, `[words withheld: ...]` for an interpretation), quotes
+      every distinct reason WHOLE out of the rows rather than summarising it,
+      and names the acts at which something is withheld. The paragraph beside it
+      states the distinction the field exists for: the banner says the words
+      EXIST and were READ and are not reproduced for the stated reason, whereas
+      a unit nobody has read carries no banner and no words.
+
+      THE TWO DIRECTIONS DIFFER, which is the half a careless renderer gets
+      wrong. A slice that withholds nothing prints no withholding paragraph at
+      all: roman-holy-week's README says instead that 0 of 38 units and 0 of 42
+      departures withhold, that an empty line therefore means the record holds
+      nothing rather than that something was held back, and that no file in the
+      repository carries the banner. Both directions are asserted, in
+      `tests/tools/act-history.test` and in `EmittedReadmeTests`.
+
+  (b) THE RIGHTS POSITION. `readme_rights` tallies the `rights` value every
+      witness records, names every witness NOT recorded `public-domain` with the
+      act it attests, and says in terms that a value is this project's own
+      conclusion about its own use under United States law -- not a licence
+      issued to the reader, not a determination for the reader's jurisdiction,
+      and not a warranty. It states that rights are recorded on witnesses and
+      not on acts, because an act carries no `rights` field and a README that
+      implied otherwise would be describing a record this project does not keep.
+      It then says the repository is NOT A PUBLICATION CLEARANCE for anything in
+      it, least of all the works behind the witnesses recorded otherwise than
+      public-domain, that publication is decided in THIS file and not in the
+      README, and that a private copy does not change the answer because the
+      rule asks whether the bytes entered rather than who may read them.
+
+  (c) THE GC HAZARD, which is the reader's and cannot be fixed for them.
+      `readme_commit_graph` gives the setting first -- `git config
+      gc.writeCommitGraph false` -- and then says why the emitter's own copy of
+      it protects nobody: LOCAL CONFIG DOES NOT TRAVEL WITH A CLONE. It states
+      the 34-bit date field, the ceiling near 2514, the shift that overruns it,
+      what `fsck --strict` then reports, and that a date-ordered walk puts 1570
+      ahead of 1962. It also states the repair, which was measured rather than
+      assumed: deleting `objects/info/commit-graph` and `objects/info/
+      commit-graphs/` restores both the fsck and the ordering [verified].
+
+      `EmittedRepositoryGcTests` reads the setting the README names back OFF THE
+      EMITTED REPOSITORY instead of typing it twice, and runs the date-ordered
+      walk in both states to check that the order the README warns about is the
+      order that happens.
+"""
+determinism = """
+THE README IS IN EVERY COMMIT'S TREE, so a nondeterministic one would change
+every commit id on every run. Nothing here reads a clock, an environment or a
+hash-ordered iteration: the counts come from the rows, every list is sorted, and
+the one reason-quoting helper rewraps a fixed string at a fixed width.
+`tests/tools/act-history.test` emits roman-holy-week three times -- twice
+plainly, once under TZ=Pacific/Kiritimati LANG=tr_TR.UTF-8 LC_ALL=C
+PYTHONHASHSEED=random -- and requires every ref, and the README bytes, to be
+identical across all three [verified].
+"""
+commit_ids_changed = """
+EXPECTED, AND CONFINED. Every commit id in all three slices changed, because the
+README is a blob in every tree; roman-holy-week's tip moved from f1dc7328 to
+f7b81dfa, latin-missal's from f948b89b to 0af96b22 and code-of-canon-law's from
+98785a12 to 2eb5c3f8. The change was checked to be nothing else: across all
+three slices, comparing every commit before and after, the only tree entry that
+differs anywhere is `README.md`, and every subject, author, raw date and message
+body is byte-identical [verified 2026-08-02, emitted under build/ and outside
+this tree; nothing was created, registered or pushed].
+
+This is [replaceability] `blast_radius` happening on purpose and for the reason
+it names: `render_readme` is in every tree, so a change to it rewrites the whole
+history. It is also why the condition below is still open.
+"""
 
 [[conditions]]
 id = "the-parallel-repo-workflow-restates-the-lt-hist-ruling"
@@ -935,6 +1045,50 @@ cherry-pick, submodule or subtree source in either direction, that the only
 admissible movement of content is extraction of named files from a working tree,
 and that `~/git/lt-hist/build/roman-liturgy-history` remains under its existing
 prohibition unchanged. See [lt_hist] `why_it_binds_this_decision`.
+"""
+met = "yes"
+met_how = """
+STATED ON THE ARTIFACT ITSELF, WHICH IS THE ONE DOCUMENT EVERY CLONE HAS. The
+condition asks for "whatever document describes the publishing workflow"; the
+README of the emitted repository is that document for the person actually
+holding a copy, and it is the only one that reaches them.
+
+`readme_no_git_level_movement` states, in its own words and not by reference:
+
+  - that nothing moves between the emitted repository and any other by a git
+    operation, NOT INTO IT AND NOT OUT OF IT, naming fetch, pull, merge, rebase,
+    cherry-pick, submodule and subtree-merge, and naming both the Triptych
+    repository that generated it and `~/git/lt-hist`;
+  - that the ONLY admissible movement of content is extraction of named files
+    from a working tree, one file at a time, chosen deliberately;
+  - why: `~/git/lt-hist/build/roman-liturgy-history` is itself a git repository
+    of 25 commits carrying versions this project excluded on rights grounds,
+    under commit messages asserting they were implemented and front matter an
+    audit forbids from travelling, so one fetch imports them IRREVERSIBLY --
+    deleting a file in a later commit does not remove it from history, and every
+    clone taken before a rewrite keeps it;
+  - why the prohibition runs BOTH WAYS rather than only inward, which is
+    [lt_hist] `why_it_binds_this_decision`'s point: a workflow that operates
+    repositories beside the main one is the workflow in which `git remote add`
+    and `git fetch <path>` stop being deliberate acts; and
+  - that the audit's own ruling stands unchanged and is narrowed by nothing in
+    the README, quoted verbatim from
+    `src/sources/inventories/lt-hist-rights-audit-v1.toml`, which is named by
+    path so a reader can go and check the quotation.
+
+The quotation was read out of that file for this lane. NO GIT COMMAND WAS RUN
+AGAINST /home/ksh/git/lt-hist to write any of it, and the audit's own measured
+figures are cited as [recorded] there rather than re-derived here.
+
+The clause is on all three slices because it turns on no rights position of any
+of them, and it is asserted for all three in `EmittedReadmeTests`.
+"""
+what_is_still_not_covered = """
+This satisfies the condition for the artifact. It does NOT amount to a workflow
+document in this repository: if a later lane writes one -- a runbook for
+publishing a slice -- the same three propositions belong in it in its own words,
+because a person about to configure a remote is reading that, not a README of a
+repository they have not created yet.
 """
 
 # --- Open questions -----------------------------------------------------------

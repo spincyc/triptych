@@ -300,6 +300,145 @@ class EmittedRepositoryGcTests(unittest.TestCase):
         self.assertNotEqual(0, strict.returncode, "the commit-graph overflow no longer bites")
         self.assertIn("commit-graph", strict.stdout + strict.stderr)
 
+    # --- and what the reader is TOLD about all of that ------------------------
+
+    def test_the_readme_names_the_setting_the_emitter_actually_sets(self):
+        """The switch above protects nobody downstream, and the README says so.
+
+        `emit` sets `gc.writeCommitGraph` in the repository it writes, and LOCAL
+        CONFIG DOES NOT TRAVEL WITH A CLONE. So the only thing that reaches a
+        reader is the sentence in the README, and the setting it names is read
+        back off the repository here rather than typed a second time.
+        """
+        readme = self.git(self.repo, "show", "typica:README.md").stdout
+        setting = self.git(self.repo, "config", "--get", "gc.writeCommitGraph").stdout.strip()
+        self.assertIn(f"git config gc.writeCommitGraph {setting}", readme)
+        for phrase in ("LOCAL CONFIG DOES NOT", "git fsck --strict", "34 bits",
+                       "1570 ahead of one of 1962"):
+            self.assertIn(phrase, readme, phrase)
+
+    def test_the_wrong_date_order_the_readme_warns_about_is_the_one_that_happens(self):
+        """The README's second claim, checked rather than repeated.
+
+        A wrapped date is not cosmetic: it changes what a date-ordered walk
+        returns, and the README tells a reader it will put 1570 ahead of 1962.
+        Both halves are read here off the same repository.
+        """
+        def first_subject(repo):
+            return self.git(
+                repo, "log", "--all", "--date-order", "--max-count=1", "--format=%s"
+            ).stdout.strip()
+
+        copy = self.sandbox / "gc-order"
+        shutil.rmtree(copy, ignore_errors=True)
+        shutil.copytree(self.repo, copy)
+        self.assertEqual(0, self.git(copy, "-c", "gc.writeCommitGraph=true", "gc").returncode)
+        self.assertTrue(first_subject(self.repo).startswith("1962"), first_subject(self.repo))
+        self.assertTrue(first_subject(copy).startswith("1570"), first_subject(copy))
+
+
+class EmittedReadmeTests(unittest.TestCase):
+    """The README is where a cloner learns that a banner is a rights position.
+
+    A `[text withheld: ...]` line says the words EXIST, were READ, and are not
+    reproduced for a stated reason. That is a different claim from an empty line,
+    and the difference is the entire value of the marker the guard above defends
+    -- but nothing in the objects explains it, so a reader who clones a published
+    slice learns it in the README or nowhere.
+
+    Counted from the rows here rather than compared against a typed paragraph. A
+    renderer that quietly stopped counting would be the same defect as a guard
+    that quietly stopped refusing, and it belongs in the same file.
+    """
+
+    def setUp(self):
+        self.tool = load_tool()
+
+    def readme(self, source):
+        """The README of the slice's first line, as `emit` writes it into a tree."""
+        data = self.tool.load(source)
+        acts = self.tool.indexed(data["acts"], "id", "acts")
+        first = acts[self.tool.topological(acts)[0]]
+        lines = self.tool.indexed(data["lines"], "id", "lines")
+        return data, self.tool.render_readme(data, lines[first["line"]])
+
+    def test_every_slice_states_the_gc_hazard_and_the_lt_hist_prohibition(self):
+        """Neither turns on the rights position, so neither may turn on the slice."""
+        for source in (HOLY_WEEK, MISSAL, LAW):
+            _, readme = self.readme(source)
+            with self.subTest(source=source.name):
+                for phrase in ("git config gc.writeCommitGraph false",
+                               "LOCAL CONFIG DOES NOT",
+                               "NOTHING MOVES BETWEEN THIS REPOSITORY AND ANOTHER",
+                               "in EITHER direction",
+                               "~/git/lt-hist/build/roman-",
+                               "EXTRACTION OF NAMED FILES FROM A WORKING TREE",
+                               "Any fold-in extracts named files",
+                               "NOT A PUBLICATION CLEARANCE"):
+                    self.assertIn(phrase, readme, phrase)
+
+    def test_the_counts_in_the_readme_are_the_counts_in_the_rows(self):
+        for source in (HOLY_WEEK, MISSAL, LAW):
+            data, readme = self.readme(source)
+            vocab = self.tool.vocabulary_of(data)
+            words = {"units": vocab.unit_word, "departures": "departure",
+                     "interpretations": "interpretation"}
+            for table, word in words.items():
+                rows = data.get(table, [])
+                if not rows:
+                    continue
+                held = sum(1 for row in rows if str(row.get("withheld") or "").strip())
+                with self.subTest(source=source.name, table=table):
+                    self.assertIn(f"{held} of {len(rows)} {word}s", readme)
+
+    def test_a_slice_that_withholds_says_what_the_banner_means(self):
+        for source in (MISSAL, LAW):
+            data, readme = self.readme(source)
+            vocab = self.tool.vocabulary_of(data)
+            with self.subTest(source=source.name):
+                self.assertIn("WORDS ARE MISSING FROM THIS HISTORY ON PURPOSE", readme)
+                self.assertIn(f"[{vocab.withheld_label}: <the reason>]", readme)
+                self.assertIn("It says the words EXIST, were READ", readme)
+                # And the reason is quoted whole out of the rows, never summarised.
+                for reason in self.tool.withheld_reasons(data):
+                    self.assertIn(" ".join(reason.split()[:6]), " ".join(readme.split()))
+
+    def test_a_slice_that_withholds_nothing_prints_no_withholding_paragraph(self):
+        """The other direction, and the one a careless renderer gets wrong.
+
+        roman-holy-week declares no `[withheld]` table at all. Telling its reader
+        that words are missing on purpose would assert a rights position the
+        slice does not hold, which is worse than saying nothing -- so the README
+        must say instead that the silence IS a silence.
+        """
+        data, readme = self.readme(HOLY_WEEK)
+        self.assertFalse(any(row.get("withheld")
+                             for table in ("units", "departures", "interpretations")
+                             for row in data.get(table, [])))
+        self.assertIn("NOTHING IN THIS SLICE IS WITHHELD", readme)
+        self.assertIn("No file in this repository carries that banner", readme)
+        self.assertNotIn("WORDS ARE MISSING FROM THIS HISTORY", readme)
+        self.assertNotIn("NOT established a right to redistribute", readme)
+
+    def test_the_rights_values_named_are_the_values_the_witnesses_record(self):
+        """Named, not counted in aggregate, and taken off the rows themselves."""
+        for source in (HOLY_WEEK, MISSAL, LAW):
+            data, readme = self.readme(source)
+            with self.subTest(source=source.name):
+                unresolved = sorted(
+                    {str(row.get("rights")) for row in data.get("witnesses", [])}
+                    - {"public-domain"}
+                )
+                for value in unresolved:
+                    self.assertIn(f"Recorded `{value}`", readme)
+                for row in data.get("witnesses", []):
+                    if str(row.get("rights")) != "public-domain":
+                        self.assertIn(row["id"], readme)
+                        self.assertIn(str(row.get("attests")), readme)
+                if not unresolved:
+                    self.assertIn("No witness here records anything but `public-domain`",
+                                  readme)
+
 
 if __name__ == "__main__":
     unittest.main()

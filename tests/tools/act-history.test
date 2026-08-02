@@ -556,6 +556,157 @@ for wanted in 'octi' 'transitmap' 'NOT run'; do
 	fi
 done
 
+# --- the README a reader of a CLONE gets --------------------------------------
+
+# The README is the only file every clone has, and three facts about a published
+# slice are legible nowhere else in it: which words are absent on purpose, what
+# rights the readings carry, and that `git gc` produces a repository the reader's
+# own tools call corrupt. A fourth is a rule rather than a fact -- nothing moves
+# between this repository and another by a git operation, in either direction.
+#
+# Asserted on the RENDERED text of a slice that withholds and one that does not,
+# because the two must differ: a withholding paragraph printed where nothing is
+# withheld would be a rights position the slice does not hold, which is worse
+# than saying nothing.
+python3 - "$repo" "$holy_week" "$law" <<'PY'
+import importlib.machinery
+import importlib.util
+import pathlib
+import sys
+
+repo, holy_week, law = sys.argv[1:4]
+loader = importlib.machinery.SourceFileLoader("under_test", f"{repo}/tools/act-history")
+tool = importlib.util.module_from_spec(importlib.util.spec_from_loader(loader.name, loader))
+loader.exec_module(tool)
+
+
+def readme(path):
+    """The README of the slice's first line, as `emit` writes it into the tree."""
+    data = tool.load(pathlib.Path(path))
+    acts = tool.indexed(data["acts"], "id", "acts")
+    first = acts[tool.topological(acts)[0]]
+    return data, tool.render_readme(data, tool.indexed(data["lines"], "id", "lines")[first["line"]])
+
+
+holy_data, open_slice = readme(holy_week)
+law_data, withholding_slice = readme(law)
+
+# BOTH, because neither hazard is about the rights position. The gc hazard is
+# reader-facing and cannot be fixed from this end -- `emit` sets
+# gc.writeCommitGraph in the repository it writes and local config does not
+# travel with a clone -- and the lt-hist prohibition binds every emitted slice.
+for name, text in (("roman-holy-week", open_slice), ("code-of-canon-law", withholding_slice)):
+    for phrase in (
+        "git config gc.writeCommitGraph false",
+        "LOCAL CONFIG DOES NOT",
+        "commit-graph stores a commit date",
+        "34 bits",
+        "git fsck --strict",
+        "1570 ahead of one of 1962",
+        "NOTHING MOVES BETWEEN THIS REPOSITORY AND ANOTHER BY A GIT OPERATION",
+        "in EITHER direction",
+        "~/git/lt-hist/build/roman-",
+        "cherry-pick",
+        "EXTRACTION OF NAMED FILES FROM A WORKING TREE",
+        "Any fold-in extracts named files",
+        "lt-hist-rights-audit-v1.toml",
+        "NOT A PUBLICATION CLEARANCE",
+        "act-history-repository-publication-v1.toml",
+    ):
+        assert phrase in text, f"{name}: the README does not say {phrase!r}"
+
+# THE COUNTS ARE COUNTED, and the assertion recounts them rather than trusting
+# the sentence. A README that named a number the rows do not hold would be the
+# defect this project keeps naming, doing it about rights.
+counted = {
+    table: (sum(1 for row in law_data.get(table, []) if row.get("withheld")), len(law_data[table]))
+    for table in ("units", "departures", "interpretations")
+}
+assert counted == {"units": (134, 159), "departures": (11, 131),
+                   "interpretations": (29, 29)}, counted
+for phrase in (
+    "WORDS ARE MISSING FROM THIS HISTORY ON PURPOSE",
+    "134 of 159 canons",
+    "11 of 131 departures",
+    "29 of 29 interpretations",
+    "[text withheld: <the reason>]",
+    "[words withheld: <the reason>]",
+    # The distinction the whole field exists for: read and withheld, as against
+    # never read. A cloner learns it here or nowhere.
+    "It says the words EXIST, were READ",
+    "nobody has read a canon, its file carries no banner and no words",
+    "text established by: <act>",
+    # The rights position, out of the rows and quoted whole rather than summarised.
+    "a work of the Holy See later than 1929",
+    "asserts copyright by name; this project holds",
+    "22 of the 47 acts here carry at least one withheld row",
+    "public-domain",
+    "unresolved",
+    "vatican-mitis-iudex",
+    "mitis-iudex-2015",
+    "recorded `unresolved`",
+):
+    assert phrase in withholding_slice, f"code-of-canon-law: the README does not say {phrase!r}"
+
+# AND THE SLICE THAT WITHHOLDS NOTHING SAYS SO, in the other direction. It has
+# no `[withheld]` table at all, so a reader must be told that the silence is a
+# silence and not a withholding -- and must not be handed a rights paragraph
+# about words that are all present.
+assert not any(row.get("withheld") for table in ("units", "departures", "interpretations")
+               for row in holy_data.get(table, []))
+for phrase in (
+    "NOTHING IN THIS SLICE IS WITHHELD",
+    "0 of 38 units",
+    "0 of 42 departures",
+    "the record holds none: nobody has read them",
+    "[incipit withheld: <the reason>]",
+    "No file in this repository carries that banner",
+    "No witness here records anything but `public-domain`",
+    "public-domain  9",
+):
+    assert phrase in open_slice, f"roman-holy-week: the README does not say {phrase!r}"
+for phrase in ("WORDS ARE MISSING FROM THIS HISTORY", "text established by",
+               "NOT established a right to redistribute"):
+    assert phrase not in open_slice, f"roman-holy-week: the README claims {phrase!r}"
+PY
+
+# It reaches the COMMIT OBJECT, and not only the renderer. A paragraph that never
+# entered a tree would satisfy every string test above and no reader at all.
+run_tool emit --source "$holy_week" --out emitted >/dev/null
+git --git-dir=emitted show typica:README.md >emitted-readme
+for phrase in 'gc.writeCommitGraph false' 'NOTHING MOVES BETWEEN THIS REPOSITORY' \
+	'NOTHING IN THIS SLICE IS WITHHELD' 'NOT A PUBLICATION CLEARANCE'; do
+	if ! grep -qF "$phrase" emitted-readme; then
+		echo "the emitted README does not carry: $phrase" >&2
+		exit 1
+	fi
+done
+
+# THE README IS PART OF EVERY COMMIT'S TREE, so a nondeterministic one would
+# change every commit id on every run. Asserted on the refs, which is every
+# commit this slice has.
+git --git-dir=emitted for-each-ref --format='%(refname) %(objectname)' >first-refs
+run_tool emit --source "$holy_week" --out again >/dev/null
+git --git-dir=again for-each-ref --format='%(refname) %(objectname)' >again-refs
+if ! cmp -s first-refs again-refs; then
+	echo "the emitted history is not byte-stable across runs" >&2
+	exit 1
+fi
+(
+	export TZ=Pacific/Kiritimati LANG=tr_TR.UTF-8 LC_ALL=C PYTHONHASHSEED=random
+	run_tool emit --source "$holy_week" --out hostile >/dev/null
+)
+git --git-dir=hostile for-each-ref --format='%(refname) %(objectname)' >hostile-refs
+if ! cmp -s first-refs hostile-refs; then
+	echo "the emitted history depends on the environment it was built in" >&2
+	exit 1
+fi
+git --git-dir=hostile show typica:README.md >hostile-readme
+if ! cmp -s emitted-readme hostile-readme; then
+	echo "the README depends on the environment it was built in" >&2
+	exit 1
+fi
+
 # --- refusals ----------------------------------------------------------------
 
 if run_tool check --source missing.toml >/dev/null 2>&1; then
