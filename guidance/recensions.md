@@ -254,13 +254,30 @@ re-derive it. Re-derived, against the tracked files [verified]:
 
 | Measure | Value |
 | --- | ---: |
-| `roman-1962` masses / propers | 490 / 2,312 |
+| `roman-1962` masses / propers | derived; see the census |
 | `roman-pre-1955` rows (departures stated) | 5 |
 | Departures as a share of the base's masses | **1.02 %** |
 | Masses the recension serves | 491 |
 | — stated by the recension | 1 |
 | — inherited, stamped `text_from: roman-1962` | 490 |
 | Dates in 2026 resolving to a mass | 316 of 365 |
+
+**The mass and proper counts are not printed here, and the reason is that they
+were.** This row read `490 / 2,312` when the section was measured on 2026-08-01.
+It was 2,345 at `ef1f122b5` on 2026-08-02 and 2,357 at `0afa02a74` thirty-four
+minutes later — three values inside two days, because the sanctoral and Sequence
+waves land propers faster than anyone rereads a document, and the third arrived
+while a proposal was being written about the second. Retyping the new figure
+would only restart the drift. The authoritative counts are the derived block in
+[`propers-for-agents.md`](propers-for-agents.md), written by `tools/tpt
+mass-propers census --write` and defended by `make check-propers-census`, which
+§2 above already names as the only place they are stated; this section restated
+them anyway, which is the same defect §2 confesses to, one section later. **The
+rows that remain were measured on 2026-08-01 and have not been re-derived
+since** — treat every one of them as indicative, and note that the three
+*Masses the recension serves* rows count masses and therefore move with the
+census as well. The percentage is 1.02 % at either mass count, which is the one
+figure the drift does not touch.
 
 **The old figure was not merely stale, it was measuring the wrong thing.** "A
 tenth of the book" is a claim about how far the two states of the rite stand
@@ -332,8 +349,11 @@ closed vocabulary.
 **Residence was not flipped.** The base is still where the text lives, and the
 text lives in `roman-1962`. Section 6 item 0 is the reason and it is unmet: no
 proper in this repository yet records which printings have been read for it, so
-moving 2,312 transcriptions under a 1920 heading would assert a provenance
-nobody established. The two relations are therefore carried as two fields that
+moving every transcribed proper of `roman-1962` under a 1920 heading would assert
+a provenance nobody established. (This sentence carried the count itself — 2,312
+— until 2026-08-02, by which date the derived census said 2,357. The count is
+[`propers-for-agents.md`](propers-for-agents.md)'s to state and the argument
+never needed it: it is the same for one proper as for two thousand.) The two relations are therefore carried as two fields that
 must never be collapsed — `text_from`, which says where text was transcribed in
 this repository, and `stands_before`, which says which act the recension stands
 before and is the only place descent is claimed.

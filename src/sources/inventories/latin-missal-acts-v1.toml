@@ -606,6 +606,41 @@ for `Cumque` and `Catecbismo` for `Catechismo`.
 # --- The Roman line after 1962 ----------------------------------------------
 
 [[acts]]
+id = "editio-typica-1962"
+amends = """
+`attested_in` NAMED ONLY A SUBSTITUTE. The base slice recorded this act as
+attested in `benziger-iuxta-typicam-1962` -- a New York printing declared to
+conform to the typical edition -- while the act's own `citation` field cited the
+Vatican typical edition itself, by artifact id, at page 2 of the CMAA facsimile.
+The corroborating witness was named and the controlling one was not, and the
+reason it was not is that until this slice registered
+`1962-missale-romanum-cmaa` above there was no row to name. That is the same
+defect `5420ea2e7` found for the English on 2026-08-01 and `0032bd735` closed for
+it on 2026-08-02; the Latin half of it stood until now.
+
+THE BENZIGER IS KEPT AND IS NOT DEMOTED. It attests the same act at one remove,
+through the conformity declaration its own row records, and it is the second scan
+every corroboration in this repository runs against. What changes is that the
+controlling witness now stands first and the record no longer names only the
+substitute.
+
+WHY THIS IS AN AMENDMENT HERE AND NOT AN EDIT THERE. The witness row belongs to
+this slice: the base slice's `evidence` states in terms that nothing in it has
+been read against a page image and that no row of it claims `page-image`, and
+that is still true of it. An act in the base naming a witness only this file
+carries would be a reference that resolves in the merged history and dangles in
+the narrower one, so the reference is made where both ends stand.
+
+NOTHING ELSE ABOUT THE ACT MOVES. `read_from` stays `ocr-only`, because the
+decree at page 2 was read in the facsimile's OCR text layer and not off the page
+-- the base slice quotes it with the recognition damage intact -- and the day,
+the authority, the parentage, the reception basis and the effect are as the base
+recorded them.
+"""
+attested_in = ["1962-missale-romanum-cmaa", "benziger-iuxta-typicam-1962"]
+locus = "1962-missale-romanum-cmaa at page 2 of the facsimile PDF, where the decree Novo rubricarum corpore is printed entire; benziger-iuxta-typicam-1962 OCR, Holy Week at lines 34462-43654."
+
+[[acts]]
 id = "sacrosanctum-concilium-1963"
 line = "typica"
 station_kind = "promulgated"
@@ -1225,6 +1260,124 @@ whole-file search of this text layer; the decree's heading is on the page, and
 the scan renders parts of it as `LEBR ATIONE` and the index entry as `de
 observandis et vitandis`. Both quotations in the acts above were found by
 searching for fragments and then reading the surrounding lines [verified].
+"""
+
+[[witnesses]]
+id = "1962-missale-romanum-cmaa"
+label = "Missale Romanum, editio typica, Vatican City: Typis Polyglottis Vaticanis, 1962, in the Church Music Association of America facsimile"
+language = "la"
+printed = "1962"
+attests = "editio-typica-1962"
+attests_kind = "decree-printed-in-book"
+attests_basis = """
+The book prints the act at its own page 2: the decree Novo rubricarum corpore of
+23 June 1962, whose operative clause is `hinc est quod praesens Vaticana Missalis
+romani editio uti << typica >> declaratur`, subscribed by Larraona and Dante and
+dated `Romae, ex aedibus Sacrae Rituum Congregationis, die 23 iunii 1962`. That
+is the same ground `missale-romanum-1920` stands on and it is the ground the
+Benziger CANNOT stand on: the Benziger is a New York printing declared to conform
+to this edition, carrying a diocesan approbation in place of the Roman decree,
+which is why its kind is `printing-conformed-to-a-typical-edition` and this one's
+is not. THIS BOOK IS THE TYPICAL EDITION, in facsimile, and the distinction is
+the whole reason this row had to exist.
+
+The decree was read at that page on 2026-08-01 and is quoted entire in the base
+slice, in `act_citation_note` on `editio-typica-1962` [recorded].
+
+The acquisition audit declares the same edge for the same book -- `attests_kind =
+"decree-printed-in-book"` on `missale-romanum-1962-typica` -- so this is a
+checked restatement and not a second opinion. ONE DISAGREEMENT IS FLAGGED AND NOT
+FIXED HERE: that row names the act `novo-rubricarum-corpore-1962`, by the
+decree's incipit, and this history keys the same act `editio-typica-1962`, by the
+book it declared typical. Two ids for one act is the restatement defect in its
+usual form, and the audit is not this lane's file [recorded,
+src/sources/inventories/missal-acquisition-audit-v1.toml].
+"""
+read_from = "page-image"
+read_from_note = """
+`page-image`, AND THIS IS THE FIRST ROW IN EITHER SLICE TO CLAIM IT. What the
+value rests on was not read by this history, and the two halves must not be run
+together:
+
+  - THE PAGE IMAGES HAVE BEEN READ, EXTENSIVELY AND UNDER A RULE. The seasonal
+    collation rasterized the pages holding 63 formularies at 200 dpi in greyscale
+    and compared all 490 citation loci against the printed page, expressly
+    refusing the PDF's own text layer as a reading because that layer "is the
+    very witness under audit". The Corpus Christi propers were read the same way
+    on 2026-08-01 at printed pp. 375-377, at 200 dpi for the page and again at
+    400 dpi for each prayer, and the All Souls formularies at pp. 705-710; the
+    Stabat Mater Mass followed on 2026-08-02 at pp. 499-501, and the Communia
+    were read end to end at pp. 375-398 [recorded,
+    src/sources/inventories/roman-1962-seasonal-citation-collation-v1.toml and
+    the commits that landed those propers].
+  - THIS HISTORY'S OWN READING OF IT WAS OF THE TEXT LAYER AND NOT OF THE PAGE.
+    The decree at page 2 was read in the same PDF's OCR, which is why the base
+    slice quotes it with its recognition damage intact (`rubricanim`, `i960`) and
+    why the act's own `read_from` stays `ocr-only`. A witness row says how a book
+    has been read; an act row says how that act was read; they are two facts and
+    here they differ.
+
+`not-read` would have been false, because the pages have been read. `ocr-only`
+would have understated the only sustained page-image reading programme in this
+repository besides the 1861 Cummiskey's.
+"""
+units_read = 0
+units_read_note = """
+NO UNIT OF THIS HISTORY WAS READ FROM THIS BOOK, and the zero is not a
+contradiction of `page-image` above. The fifteen Ordo Missae units entering at
+`editio-typica-1962` were read from the Benziger text layer and say so on every
+row; the base slice's thirty-eight Holy Week units were read from the 1862, 1920
+and Benziger text layers. What this book supplies instead is the Latin of
+`src/sources/calendars/roman-1962/propers.yaml`, whose count is derived by
+`mass-propers census` and is deliberately not restated here.
+"""
+digitisation = "https://media.churchmusicassociation.org/pdf/missale62.pdf -- 1,088 pages, 82,815,941 bytes, SHA-256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a, retrieved 2026-07-20 [recorded, the artifact record]. Two Internet Archive mirrors hold the identical sha1 255d3aef352b74f77f230601115af8e57328a4e8 at the same byte count under contradictory licence terms; see `rights_basis`."
+rights = "holy-see-post-1929"
+rights_basis = """
+A 1962 typical edition of the Holy See, the class the 1970 and 2002 rows carry,
+and SETTLED IN FULL on 2026-08-01 at
+src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml. That
+record holds three things this row must not soften:
+
+  1.  THE SCAN'S CC BY-NC-ND CONFERS NOTHING. It was applied by a private
+      re-uploader who is neither rights holder nor scanner, and the identical
+      bytes sit on the Internet Archive a second time under no licence at all. It
+      is adopted in neither direction -- not as a grant, not as a restriction.
+  2.  THE UNDERLYING EDITION IS PROBABLY PROTECTED IN THE UNITED STATES TO THE
+      END OF 2057, by restoration under 17 U.S.C. 104A. `rights_status =
+      "unresolved"` stands on the artifact and nothing here moves it;
+      `TRACKABLE_RIGHTS` excludes `unresolved`, so no payload may be installed.
+  3.  WHAT PUBLICATION RESTS ON IS 17 U.S.C. 103(b) PLUS A PUBLIC-DOMAIN
+      WITNESS, never this edition's age and never this scan. The 1962 edition's
+      own new matter -- the 1955 Holy Week, the 1960 Code of Rubrics, the
+      sanctoral added after 1920, and its front matter -- is what must not be
+      published from it, and `may_publish_text = "no"` stands on this book in the
+      acquisition audit [recorded].
+
+THIS ROW IS NOT A PUBLICATION DECISION AND MAKES NONE. A witness row says what a
+book attests and how it has been read. Whether a word read out of it may be
+published is answered per text, by the rights record and by the public-domain
+typical editions this repository tracks as second witnesses.
+"""
+related_record = """
+THIS IS THE BOOK EVERY LATIN WORD IN THIS REPOSITORY IS READ FROM, and until this
+row it was the one book the act history did not carry -- the same finding
+`5420ea2e7` recorded for the English 1861 and `0032bd735` closed the next day.
+The mass `notes` in `src/sources/calendars/roman-1962/propers.yaml` name it
+throughout, its `verification` header names it first, and 41 passage records
+under `src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962`
+cite it by locus and carry no transcription [recorded].
+
+The artifact is
+`artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf`,
+registered against `edition.catholic-church.missale-romanum.vatican-typica-1962`,
+`storage = "remote"`, with no payload installed.
+
+`benziger-iuxta-typicam-1962` is a DIFFERENT PRINTING attesting the SAME act, and
+the two must not be conflated: that row's `not_a_station` says why the Benziger
+is not the typical edition, and this row is the typical edition. Holding both is
+what lets a reading be checked in two independently produced witnesses, which is
+what the 28 masses corroborated against the Benziger scan on 2026-08-01 rest on.
 """
 
 [[witnesses]]
