@@ -5,10 +5,10 @@ inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:7e47ae0e09188109b2ccc0e0608304d72386224f0504a2c8c7105d94b7de9a2d"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
-canonical_catalog_snapshot = "sha256:c1aeba6826f4a01f04b52bd6329f2a34460d85bd0112321b095ab8579cf641ca"
+canonical_catalog_snapshot = "sha256:75ebd3211cd1ae7dce18fa6af37fafd87015248b47e5fed87ce2f87ca3a219af"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:4f14e9d24d2c2ebcd8c85d1f7e8ac4b82e8990ac8a51caa9f4f59537ffa4bc2a"
+snapshot = "sha256:a2a10488b8a02be4756930a2b4c65000fde2ffb2d69d1e2c5ec0a2b29a762dd4"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -2760,6 +2760,27 @@ trace_patterns = ["(?:Trait[eé] de l'amour de Dieu|Treatise on the Love of God|
 reviewed_on = "2026-07-31"
 membership_snapshot = "sha256:9145675dd1d7ee7f90eb8a17d8533a26c7048ce78e2b4fc4d8e70ddc982bb118"
 notes = "Francis de Sales's twelve-book treatise on the love of God, first published at Lyon in 1616 and addressed to Theotimus, owns its catalog-level work at book-and-chapter loci; books 8 and 9 carry the Salesian account of the signified will and the will of good pleasure and the distinction of resignation from holy indifference. It is a separate family from the Alba House composite volume and its two constituents, and from the Caussade treatise, per the ledger's per-work norm for independent intellectual works: nothing relates them beyond a shared subject, and no manifest records a relation. The witness read is Henry Benedict Mackey's complete public-domain English translation at the Christian Classics Ethereal Library, whose chapter divisions govern the loci cited; no collation against the French Annecy edition was performed, and neither that translation nor any French printing is registered as an edition, so evidence stops at the work and no exact artifact is registered. Section and paragraph divisions vary by edition and translation, so consumers cite book and chapter only."
+
+[[families]]
+id = "family.francis-xavier-lasance.the-new-roman-missal"
+label = "Lasance and Walsh, The New Roman Missal in Latin and English (Benziger Brothers)"
+kind = "work"
+source_categories = ["historical-primary", "liturgical", "prayer-devotional"]
+identity_confidence = "confirmed"
+identity_gaps = ["date"]
+artifact_availability = "canonicalized"
+storage_plan = ["remote", "tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-djvu-ocr-21f1bbf1", "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-deb5d167", "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945", "work.francis-xavier-lasance.the-new-roman-missal"]
+trace_patterns = ["Lasance", "francis\\-xavier\\-lasance\\.the\\-new\\-roman\\-missal"]
+reviewed_on = "2026-08-01"
+membership_snapshot = "sha256:8d91423f6bfc5b6e45aace3ade881d042a7a13c08a9b1d1ee50781c5e8b7dded"
+notes = "A commercial hand missal registered as its own work family, on the norm the three sibling hand-missal families already state: the Cummiskey, Husenbeth and Lefebvre books are independently authored works whose only common object is the Latin Missal that family.roman-missal.1962 owns, and this is a fourth. Its English is its compilers' and carries no authority; it must never be bound as a witness to a typical edition, and the identity gap recorded is `date` because the scanned copy is a printing of about 1955-56 whose year is inferred from its own contents and not established from a physical copy. Rights were reviewed for both artifacts and reviewed does not mean uniform. The book is in the United States public domain by failure to renew, established at registration-number level for A 110108 (1937) and A 192159 (1945) in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml, so the derivative is tracked; the retrieved Internet Archive bytes are remote and unresolved because they also carry the appendix at printed pages 1298a-1298n, post-1954 matter under no registration found, which is excluded from any publication basis and was removed from the tracked text rather than carried across and disclaimed. This is the first version folded in from the sibling ~/git/lt-hist corpus under src/sources/inventories/lt-hist-rights-audit-v1.toml, and nothing was inherited from it: the corpus's `text_status: public-domain-ocr-english` and its Internet-Archive-and-download grounds were re-derived rather than transcribed, and the bytes were fetched from the Internet Archive here and compared to the corpus copy rather than copied out of it. The ceiling is artifact-pin because nothing is addressed by liturgical identity yet: the text is landed as a plain OCR source artifact and deliberately not as structured liturgical records, so a later lane that wants this collect of this Mass writes passages with real loci over the tracked bytes."
 
 [[families]]
 id = "family.francis.angelus-2019-08-04"

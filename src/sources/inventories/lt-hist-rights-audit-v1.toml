@@ -54,6 +54,16 @@ The fourteen that may not come have a named claimant, no permission, and no
 expiry. Ten of them are sitting in lt-hist as downloaded OCR right now, and four
 of those ten carry the claimant's own copyright notice inside the very bytes
 lt-hist downloaded. See `[[notices]]`.
+
+ONE OF THE SEVEN HAS NOW BEEN FOLDED IN. The Lasance was folded in on
+2026-08-01, first and alone, to establish the pattern: a fresh acquisition
+through the source library, a rights basis rewritten from the renewal record,
+the excluded appendix removed from the tracked bytes rather than disclaimed
+beside them, the text landed as a plain OCR artifact and not as structured
+liturgical records, and nothing whatever inherited from the corpus -- which was
+not even the route the bytes came by. See the version row's `folded_in_note` and
+`[counts]`. Six remain, and two `[[corrections]]` added by that lane change what
+two of them will cost.
 """
 
 # --- What lt-hist actually is, measured rather than described ----------------
@@ -627,6 +637,54 @@ undiminished. lt-hist's `text_status: public-domain-ocr-english` must not cross,
 even though the conclusion it states is now established, because transcribing
 the field would import the conclusion and leave the reasoning behind -- and on
 this row the reasoning is the whole of what changed.
+"""
+folded_in = "2026-08-01"
+folded_in_records = [
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/work.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/edition.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-djvu-ocr-21f1bbf1/artifact.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/new-roman-missal-text-deb5d167/artifact.toml",
+  "src/sources/inventories/source-family-migration-v1.toml -- family.francis-xavier-lasance.the-new-roman-missal",
+]
+folded_in_note = """
+THE FIRST OF THE SEVEN, AND THE PATTERN THE OTHER SIX FOLLOW. Recorded here so
+this file does not go stale beside its own result.
+
+FOUR THINGS THE FOLD-IN DID NOT DO, each of which was available and each of
+which this file forbids.
+
+  It did not copy from lt-hist. The Internet Archive item lt-hist names,
+  fr-lasance-missal-1937, was fetched here on 2026-08-01 and hashed:
+  21f1bbf16df0e84156378923b265516c57e7683ac7666f2fcaf11ea087bfd365,
+  4,384,495 bytes, BYTE-IDENTICAL to the corpus copy. So the corpus copy is
+  confirmed as a faithful retrieval and no byte crossed out of it;
+  `bytes_moved_by_this_audit` stays 0 and stays true of the fold-in as well.
+
+  It did not inherit the rights basis. The tracked artifact rests on the two
+  unrenewed registrations, A 110108 and A 192159, and says in terms that
+  availability, successful download and any host mark are not relied on. The
+  Internet Archive item in fact carries no licence field at all, which is what
+  lt-hist itself recorded and what would have been the whole of its ground.
+
+  It did not carry `text_status` across, and it did not carry lt-hist's eleven
+  section files, its `metadata.json` or its `sources/manifest.json` across
+  either. Nothing of the corpus's front matter exists in this repository.
+
+  It did not land the appendix. Printed pages 1298a-1298n were removed from the
+  tracked bytes by a stated one-range deletion, rather than tracked and
+  disclaimed in prose. The retrieved whole file is registered separately as
+  `remote` and `unresolved` precisely because it still contains them.
+
+THE ENCODING DECISION, MADE THE OTHER WAY FROM lt-hist. The text is landed as a
+plain OCR source artifact and NOT as structured liturgical records. This file's
+`[corpus].structured_liturgical_objects_basis` is why: lt-hist's sections are
+line windows over a download, so a diff of them shows the scanner's
+disagreements rather than the liturgy's, and reproducing that shape here would
+reproduce the defect with better provenance attached. Addressability by
+identity -- this collect, of this Mass -- is left to `passage` records with real
+loci over the exact tracked bytes, which the source schema already supports and
+which requires reading pages rather than slicing a file. Until one exists the
+artifact is a finding aid, and its family's evidence ceiling says so.
 """
 evidence = "verified"
 
@@ -1314,8 +1372,12 @@ versions_audited = 25
 admissible = 7
 admissible_on_age = 6
 admissible_on_a_renewal_record = 1
+admissible_folded_in = 1
+admissible_awaiting_fold_in = 6
 excluded = 14
+excluded_folded_in = 0
 undecided = 4
+undecided_folded_in = 0
 admissible_bytes = 16653598
 admissible_size = "16.65 MB"
 excluded_bytes_present_in_lt_hist = 14851202
@@ -1334,12 +1396,29 @@ assumption_distinct_wordings = 15
 assumption_arguments_offered = 0
 section_files_with_a_public_domain_text_status = 134
 section_files_total = 140
+section_files_copied_into_this_repository = 0
 bytes_moved_by_this_audit = 0
+bytes_moved_out_of_lt_hist_by_the_fold_in = 0
 
 counts_note = """
 `bytes_moved_by_this_audit = 0` is written as a number so it cannot be read past.
 This file is a record about a corpus, produced without copying anything out of
 it. If a later edit makes that number nonzero it will have to say so.
+
+`bytes_moved_out_of_lt_hist_by_the_fold_in = 0` is the same number kept true
+through the act this file authorised. The first version was folded in on
+2026-08-01 and the corpus was not the route: the Internet Archive item was
+fetched again here and hashed identical to the corpus copy, so the corpus served
+as a control on the retrieval rather than as a source of bytes. That is the
+pattern for the remaining six, and it is cheap -- every one of them names a
+public Internet Archive item.
+
+`admissible_folded_in = 1` against `admissible = 7` is the state of the work, and
+`excluded_folded_in = 0` with `undecided_folded_in = 0` is the state of the
+discipline. `section_files_copied_into_this_repository = 0` is
+`[[structural_conditions]]` `text-status-may-not-travel` measured: the fold-in
+took OCR text and wrote fresh manifests, and no lt-hist front matter, metadata
+file or manifest exists here.
 
 `assumption_arguments_offered = 0` is the finding. Not "weak arguments" and not
 "arguments this project disagrees with" -- none. Fifty-six restatements of a
@@ -1404,6 +1483,75 @@ id = "only-substantial-pre-conciliar-english"
 claim = "The 1937 Lasance is the only substantial pre-conciliar ENGLISH text."
 finding = "The 1806 (1,463,916 bytes) and 1843 (1,721,622 bytes) are pre-conciliar, English, and admissible [verified]."
 effect = "Narrows the claim without weakening the priority. The 1937 is the only TWENTIETH-CENTURY English witness and is 2.5 times the size of the larger of the other two. It remains the highest-value open question."
+
+[[corrections]]
+id = "appendix-page-range-is-not-the-whole-of-the-post-1954-matter"
+found_by = "the fold-in of 2026-08-01"
+claim = "The Lasance printing's post-1954 new matter is the appendix at pages 1298a-1298n, and excluding that page range excludes it."
+finding = """
+The page range is right and it is not a complete account. Two further post-1954
+insertions sit in the BODY of the same printing, outside the excluded pages
+[verified in the retrieved artifact]:
+
+  The sanctoral prints '31 May - Feast of the Blessed Virgin Mary, Queen /
+  Page 1298g' with St Petronilla demoted to a commemoration -- a resetting that
+  cannot predate the feast's institution in October 1954.
+
+  The general index carries an 'Appendix' block naming the Queenship, St Isidore
+  the Farmer, St Frances Xavier Cabrini and St Pius X against their appendix
+  pages.
+
+So the printer did reset body pages for the new feasts, which slightly sharpens
+`[the_appendix_exclusion]`'s dating inference and slightly weakens the clean
+picture of an untouched pre-1955 body. The Holy Week finding is untouched: the
+twelve prophecies and the missing renewal of baptismal promises are still there.
+"""
+effect = """
+None on the rights verdict, which rests on two unrenewed registrations and not on
+the printing's date. The fold-in retained both sites in the tracked bytes and said
+so on the artifact: they are feast titles and page numbers, a pointer rather than
+the appendix's expression, and deleting body text the recorded exclusion does not
+name would put an undisclosed editorial hand into the bytes. Recorded here so the
+next reader is not surprised to find the words 'Pius X' in a text whose appendix
+was excluded, and so that anyone tempted to define the exclusion as 'every
+mention of the four feasts' knows the cost of that definition.
+"""
+
+[[corrections]]
+id = "the-1843-is-already-registered-in-this-repository"
+found_by = "the fold-in of 2026-08-01"
+claim = "The six admissible pre-1931 versions are things this repository does not have and would be acquiring."
+finding = """
+At least one of them it already has. lt-hist's `1843-roman-missal-english` is the
+Philadelphia printing whose title leaf reads 'PUBLISHED BY EUGENE CUMMISKEY, 130
+SOUTH SIXTH STREET. 1843.' with the historical explanation by Bishop England
+prefixed [verified]. That is
+`edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843`, already
+registered here with its own remote artifact from Internet Archive item
+romanmissaltran00englgoog, and already a member of
+`family.eugene-cummiskey.roman-missal-english-laity`.
+
+lt-hist holds a DIFFERENT SCAN of the same printing -- item TheRomanMissal1843,
+1,721,622 bytes against the registered scan's 1,060,143 -- so the two are
+distinct artifacts of one edition and not duplicates of each other.
+"""
+effect = """
+Changes what folding the 1843 means. It is not a new work and not a new edition:
+it is a second artifact under an existing edition, and it inherits that record's
+rights question rather than posing a fresh one. Note which question that is --
+the registered 1843 artifact stands `unresolved` and `remote` not because of the
+1843 book, which is plainly public domain on age, but because the exact bytes are
+a Google digitisation carrying Google's own front matter. lt-hist's scan is
+Google's too: its first line reads 'Digitized by Google'. So the age ground this
+file gives for the 1843 clears the BOOK and does not by itself clear those BYTES,
+and a fold-in must either land a derivative with the Google matter removed, as
+the Lasance fold-in did for the appendix, or leave the scan remote.
+
+The other five were checked against the library at the same time and none of them
+is registered: no 1570, 1604, 1862 or 1920 edition exists under
+`work.catholic-church.missale-romanum`, and no 1806 lay missal exists under any
+work [verified 2026-08-01].
+"""
 
 [[corrections]]
 id = "verification-command"
