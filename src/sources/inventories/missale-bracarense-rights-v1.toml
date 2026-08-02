@@ -292,6 +292,43 @@ one, and no image of this book may be published anywhere in this repository. The
 conflation of the two propositions is the error corrected on the 1920 artifact on
 2026-08-02, and it is written out here so the correction survives.
 """
+a_host_saying_domaine_public_is_not_a_grant = """
+WRITTEN HERE ON 2026-08-02 BECAUSE THE NEXT ATTEMPT ON BRAGA WILL PROBABLY BE AT
+GALLICA, and the shape of Gallica's rights statement is not the shape it looks
+like at a glance.
+
+Gallica holds the 1558 Braga missal (ark:/12148/bpt6k993722f, BnF Réserve
+B-1478, 554 views), and the acquisition audit records it as `domaine public by
+Gallica's own record`. That is accurate and it was verified at the item on
+2026-08-02. It is ALSO not a distribution basis, for a reason visible in
+Gallica's own metadata: the two statements live in different files and say
+different things.
+
+  THE OAI-PMH RECORD carries `<dc:rights xml:lang="fre">domaine public</dc:rights>`
+  and `<dc:rights xml:lang="eng">public domain</dc:rights>`. That is a statement
+  about THE BOOK -- a sixteenth-century printing, out of copyright everywhere by
+  age, which nobody disputes and which needs no host to certify it.
+
+  THE IIIF MANIFEST for the identical ark carries
+  `"license": "https://gallica.bnf.fr/html/und/conditions-dutilisation-des-contenus-de-gallica"`
+  and `"attribution": "Bibliothèque nationale de France"`. That is a statement
+  about THE IMAGE FILES the BnF delivers, and it is a conditions-of-use document,
+  not a public-domain mark and not a grant of redistribution.
+
+BOTH WERE READ AT THE BYTES ON 2026-08-02 [verified], for that ark and for four
+others. So the rule this repository already applies to an Internet Archive
+Public Domain Mark applies unchanged to a Gallica `domaine public`: it is
+evidence about the work's age, it is not an affirmative recorded distribution
+basis for the exact artifact, and NO ARTIFACT MAY BE PROMOTED TO `tracked` ON
+THE STRENGTH OF GALLICA HOSTING IT.
+
+The practical consequence for Braga specifically: a Gallica digitisation of a
+clean 1924 copy, if one ever appears, WOULD settle the accretion problem this
+record exists for -- it would prove the file is a 1924 book end to end -- and it
+would NOT by itself settle the disposition of the artifact. Those are the two
+questions this whole file is built to keep apart, and the host's rights field
+answers neither of them on its own.
+"""
 not_relied_on = """
 Expressly not links in this chain: that the Internet Archive item is available;
 that the download succeeded; that the item carries no rights or licence field.
@@ -354,6 +391,244 @@ this book is later than 1961:
   Any Arabic or Roman year later than 1961 outside the tables of movable feasts.
   The tables themselves run to 1983 and are not a dating signal: a 1924 book
   prints a long paschal table by design, and this one opens at 1923.
+"""
+
+# --- The hunt for a clean 1924, run 2026-08-02 ----------------------------------
+
+[the_clean_1924_hunt]
+why = """
+`[what_would_overturn_this]` item 1 says a digitisation of a clean 1924 copy
+makes this entire record moot for the artifact it names, and `[counts]` prints
+`clean_1924_digitisations_located = 0` as the weakest point of the position. On
+2026-08-02 that number was attacked directly, in a dedicated run, against the
+three places item 1 names and against every free aggregator and union catalogue
+worth the query.
+
+THE ANSWER IS NO. No digitisation of any 1924 Missale Bracarense was found
+anywhere. The number stays 0, and the leaf map is therefore STILL NEEDED.
+
+THIS NEGATIVE IS WRITTEN OUT AT LENGTH ON PURPOSE. A negative reported as
+`looked, found nothing` is worth almost nothing to the next lane and costs it
+the whole search again. What follows names every service, what it was asked, and
+-- the distinction that matters most and that item 1 got slightly wrong -- whether
+it ANSWERED AND HELD NOTHING or COULD NOT BE REACHED. Those are different
+results. Item 1 said the three named repositories were `not reachable as a
+digitisation from this run`, which ran the two together; they are separated here.
+"""
+
+answered_and_held_no_digitisation = """
+Each of these returned a real response and holds no digitisation of the 1924
+edition. Fourteen services.
+
+  INTERNET ARCHIVE. Seven queries at the advanced-search API -- `bracarense`,
+  `"missale bracarense"`, `title:(missale) AND (braga OR bracarense)`,
+  `"Vieira de Matos"`, `braga AND missal`, `"rito bracarense"`, and the entire
+  45-item upload history of the account that posted the known item. `bracarense`
+  returns 19 items and exactly one is a 1924 Braga missal. THE ONE BRAGA MISSAL
+  ON THE INTERNET ARCHIVE IS THE ACCRETED COPY this record already governs.
+  Searched independently by two lanes, agreeing.
+
+  GOOGLE BOOKS. Google holds exactly one Missale Bracarense record, the 1924
+  (volume id P9AxzwEACAAJ, `Typis polyglottis Vaticanis`, 828 pages), and it is
+  a METADATA-ONLY RECORD WITH NO SCAN BEHIND IT -- no full view, no snippet, no
+  preview. The `...AACAAJ` suffix is Google's own marker for a record with no
+  scanned pages. Google has never scanned this book. The only other Braga hit is
+  the Breviarium Bracarense, likewise metadata-only.
+
+  GALLICA. SRU on `dc.title all "Missale Bracarense"` returns 0; on `dc.title all
+  "bracarense"`, 3 records, all medieval manuscripts. GALLICA WAS FULLY REACHABLE
+  DURING THIS RUN -- four other arks were fetched and read from it the same hour
+  -- so this is a real negative and not a network one, which is worth saying
+  because the run immediately before this one could not reach Gallica at all.
+
+  THE BnF GENERAL CATALOGUE. `bib.anywhere all "missale bracarense"` returns 3:
+  the 1558 Braga missal and two copies of the 1975 Missal de Mateus. `bib.title
+  all "bracarense"` returns 17, of which the only missal is the 1558. THE 1924
+  EDITION IS NOT IN THE BnF CATALOGUE AT ALL, so there is nothing at the BnF for
+  Gallica to have digitised.
+
+  THE BIBLIOTECA NACIONAL DE PORTUGAL, which item 1 names first. Its catalogue
+  answered and IT HOLDS A COPY -- see `[the_clean_1924_hunt].copies_located`.
+  IT HAS NOT DIGITISED IT: the record carries no 856 link and no purl.pt
+  identifier [verified]. purl.pt itself is live and BNP has digitised Braga
+  liturgical books there -- the 1538 missal at purl.pt/14877, a thirteenth-century
+  pontifical -- but its Braga digitisations are medieval and early modern, and the
+  1924 is not among them.
+
+  EUROPEANA. `"Missale Bracarense"` returns 0; `bracarense` returns 63, all
+  enumerated, none a 1924 missal.
+
+  HISPANA, the Spanish aggregator. `missale bracarense` returns 1, an unrelated
+  2021 article; `bracarense` returns 32, all enumerated. A control query on
+  `missale` returned 334, so the interface was working.
+
+  THE BIBLIOTECA NACIONAL DE ESPAÑA. `missale bracarense` returns 0 in both the
+  institutional and the combined index; `bracarense` returns 14, none the missal.
+  THIS ALSO CLOSES THE BIBLIOTECA DIGITAL HISPÁNICA LOGICALLY, although BDH
+  itself refused the connection: BDH is a digitised subset of BNE holdings, and
+  BNE does not hold the book, so BDH cannot hold a scan of it.
+
+  BIBLIOTECA MUNICIPAL DE BARCELOS. Holds a copy; detail view, MARC view and
+  marcxml export all checked; NO 856 FIELD AND NO DIGITAL OBJECT. The catalogue
+  image is a cover thumbnail.
+
+  REPOSITORIUM, the Universidade do Minho repository, via its DSpace REST API:
+  scholarly articles only.
+
+  Library of Congress (JSON API), Harvard LibraryCloud (`items: null`), K10plus
+  -- the German, Austrian and Swiss union catalogue, three queries including a
+  scan of all 44 records whose title contains `bracarense`, not one of which
+  contains `missal` -- and OpenLibrary. All answered; all zero.
+"""
+
+could_not_be_searched = """
+Recorded as UNREACHABLE and expressly NOT as searched. Ten services. Nobody may
+report this hunt as closed while these stand, and two of them are the ones most
+likely to hold the answer.
+
+  BIBLIOTECA PÚBLICA DE BRAGA IS THE MOST SIGNIFICANT GAP IN THE WHOLE HUNT.
+  Its Koha catalogue at catalogo.bpb.uminho.pt serves its root and
+  `opac-main.pl` with HTTP 200 but returns Apache 403 on `opac-search.pl` and
+  `opac-detail.pl`, to a browser user agent, with cookies and a Referer, on GET
+  and on POST alike. Search engines index that catalogue, so the refusal is
+  specific to this network's egress and is not a robots policy. BPB HAS BEEN
+  BRAGA'S LEGAL-DEPOSIT LIBRARY SINCE 1931 AND IS THE LIKELIEST INSTITUTIONAL
+  HOLDER OF A CLEAN 1924 COPY. Retrying it from a different egress is the single
+  highest-value next action in this file.
+
+  PORBASE, the Portuguese union catalogue, 403 on every profile tried. It would
+  settle the question for ALL Portuguese libraries in one query, which makes it
+  the second highest-value retry.
+
+  THE ARQUIVO DISTRITAL DE BRAGA, which item 1 names second, is REACHABLE BUT
+  ITS SEARCH IS NOT DRIVABLE, and item 1's implied URL is wrong. Correction for
+  the next lane: `arquivo-uminho.adb.uminho.pt` DOES NOT RESOLVE (NXDOMAIN).
+  `www.adb.uminho.pt` resolves and serves over HTTP only (HTTPS fails). The real
+  search is an Archeevo instance at `pesquisa.adb.uminho.pt`, HTTP only, whose
+  keyword search is ASP.NET session and POST driven: GET parameters are ignored
+  and every query returns the full 484,564 records; a complete 39-field form
+  replay POSTed 200 without applying the text filter. There is no OAI endpoint.
+  A LOW PRIOR ANYWAY, and this is why item 1 overrated it: the ADB is a
+  DOCUMENTARY ARCHIVE, not a library of printed liturgical books.
+
+  HATHITRUST. Catalogue search, title search and babel full-text search all
+  return HTTP 403 behind a Cloudflare managed challenge, and two independent
+  server-side proxies were challenged as well. Two indirect signals point at
+  absence and neither is conclusive: a search-engine sweep restricted to
+  hathitrust.org surfaced no Bracarense record, and HathiTrust's corpus is drawn
+  largely from exactly the North American and German libraries that answered
+  zero above. THE ROUTE THAT WOULD CLOSE IT is HathiTrust's Bib API at
+  `catalog.hathitrust.org/api/volumes/brief/json/oclc:<n>`, WHICH IS REACHABLE
+  FROM HERE -- a control query returned HTTP 200. The only missing input is an
+  OCLC number for the edition, which WorldCat's wall prevented this run from
+  getting. Small, concrete and cheap.
+
+  WORLDCAT. The search page renders client-side only; the internal search API
+  returns `{"turnstile_required": true}`; the search-item API is disabled. This
+  is also what blocks the HathiTrust route above.
+
+  THE VATICAN LIBRARY. digi.vatlib.it answers at its root and refuses the search
+  path to non-browser clients; the OPAC is a client-side application with no
+  server-rendered results.
+
+  JISC LIBRARY HUB DISCOVER, the United Kingdom union catalogue: edge block on
+  both the SRU and the JSON routes.
+
+  THE BIBLIOTECA DIGITAL HISPÁNICA, 403 on every attempt. Logically closed by the
+  BNE negative above, and listed here anyway so the 403 is not rediscovered.
+
+  PORTAL CAMINHO (caminho.uminho.pt), which aggregates BPB, ADB and UMinho:
+  answers, but its record API returns 401 Unauthorized.
+
+  SCRIBD carries two items titled `Missale Bracarense` / `Missal Bracarense`
+  (documents 64458543 and 39810026) behind a client challenge. Recorded as
+  UNIDENTIFIED, not as finds. Scribd is a login service in any case, which puts
+  it outside what this repository will rest anything on.
+
+  THE SEMINARY AND CATHEDRAL LIBRARIES OF BRAGA, which item 1 names third,
+  PUBLISH NO ONLINE CATALOGUE THAT THIS RUN COULD FIND. That is not a negative
+  about their holdings; it is the absence of a queryable surface, and any claim
+  about what they hold would have to be made by correspondence.
+"""
+
+copies_located = """
+NO DIGITISATION, BUT TWO CATALOGUED PHYSICAL COPIES IN PUBLIC HANDS, neither
+previously recorded here, both verified at the holding library's own record.
+
+  BIBLIOTECA NACIONAL DE PORTUGAL, shelfmark `R. 7413 A.`, Fundo Geral
+  Monografias, status `Disponível`, no digital object [verified 2026-08-02 at
+  http://id.bnportugal.gov.pt/bib/catbnp/1844118, which redirects into the
+  catalogue's ipac20 interface]. Imprint `Romae : Typis Polyglottis Vaticanis,
+  1924`. COLLATION `[1159] p. a 2 colns ; 33 cm + canône da missa (p. 263-270)`.
+
+  BIBLIOTECA MUNICIPAL DE BARCELOS, shelfmark `A 264(469.12) IGR`, one copy,
+  available and unrestricted, no digital object [verified 2026-08-02 at
+  https://biblioteca.cm-barcelos.pt/cgi-bin/koha/opac-detail.pl?biblionumber=33359].
+  Same imprint. COLLATION `XCV, 828, [194] p. ; 34 cm`, with no note of
+  supplements, added leaves or inserted gatherings.
+
+  Also seen and NOT a lead: a copy sold at auction (annoleiloes.pt lot 60). A
+  private physical copy with no institution behind it.
+"""
+
+the_two_collations_disagree = """
+AND THE DISAGREEMENT IS THE MOST INTERESTING THING THE HUNT FOUND. It is also
+the thing most easily overread, so it is stated with its limits attached.
+
+  Barcelos:  XCV + 828 + [194]  =  1,117 printed pages
+  BNP:       [1159]             =  1,159 printed pages
+  Difference:                        42 pages, about 21 leaves
+
+IF the two cataloguers were counting the same way, that difference would be a
+supplement signal, and it would mean THE BNP COPY IS ITSELF AN ACCRETED COPY
+while the Barcelos copy is closer to the clean issue.
+
+THEY MAY WELL NOT BE COUNTING THE SAME WAY, AND NOTHING IS CONCLUDED HERE.
+Barcelos gives a structured collation in three sequences, the ordinary
+description of an issue as printed. BNP gives a single bracketed total, which is
+the convention for a count the cataloguer made rather than read off the book, and
+its `+ canône da missa (p. 263-270)` records a separately paginated Canon insert
+that the Barcelos statement does not mention at all. A bracketed cataloguer's
+total and a structured collation are not strictly comparable, and 42 pages is
+well inside what different conventions about plates, inserts and unnumbered
+leaves can produce.
+
+WHAT IT IS GOOD FOR, stated as an instruction rather than a conclusion: THE
+BARCELOS COLLATION IS THE BETTER CONTROL of the two, because it is structured and
+carries no supplement note, and it is the one
+`[routes_examined_and_refused].what_would_make_a_carve_out_possible` was asking
+for when it required `a catalogue collation of the 1924 issue, so that the leaf
+list can be shown complete rather than asserted`. THE BNP COPY IS A WARNING that
+a second copy may be no cleaner than the first, and that `catalogued` does not
+mean `clean`. Whichever copy a later lane pursues, ITS CLEANNESS MUST BE
+ESTABLISHED FROM THE COPY AND NOT ASSUMED FROM THE CATALOGUE -- which is the
+whole lesson of this file, applied to itself.
+"""
+
+what_this_means_for_the_leaf_map = """
+STATED PLAINLY BECAUSE IT IS THE PRACTICAL QUESTION, AND THE ANSWER IS NOT THE
+CONVENIENT ONE.
+
+THE LEAF MAP IS STILL NEEDED. Route one failed: there is no clean 1924
+digitisation to be had, so route two is not made unnecessary and remains the
+only way to make this book readable.
+
+What changed is that it is better founded than when the carve-out was refused.
+That refusal rested on three objections and the third was `THE LIST COULD NOT BE
+PROVED COMPLETE ... no control`. A control now exists in the Barcelos collation,
+`XCV, 828, [194] p.`, so an arithmetic comparison against the scan's own
+published extents is available for the first time -- this record already holds
+`1,210 pages` in the PDF and `849 leaves carry a printed page number, the highest
+827` from the item's `_page_numbers.json`, and the catalogued issue is 1,117
+printed pages.
+
+THAT COMPARISON WAS DELIBERATELY NOT PERFORMED IN THIS RUN and no conclusion is
+drawn from it. Objection 1 -- that the text layer carries no page boundaries --
+is untouched by any of this and still stands entirely on its own, and it is the
+objection that actually blocks a carve-out. The numbers are set down beside each
+other so the next lane starts from them; the map itself must still be built from
+the item's per-leaf OCR, and the Barcelos figure is a check on the result, not a
+substitute for it.
 """
 
 # --- Routes examined and refused ------------------------------------------------
@@ -452,12 +727,31 @@ note = "Stated concretely, so a later reader can attack this record on its own t
 items = """
   1.  A DIGITISATION OF A CLEAN 1924 COPY. Any copy without the bound-in
       supplement makes the whole of this record moot for the artifact it names:
-      that file would be a 1924 book end to end, `tracked` and `public-domain`,
-      and Braga would become readable immediately. This is the single most
-      valuable thing a later lane could find, and the most likely places are the
-      Biblioteca Nacional de Portugal, the Arquivo Distrital de Braga, and the
-      seminary and cathedral libraries of Braga -- none of which was reachable as
-      a digitisation from this run.
+      that file would be a 1924 book end to end, and Braga would become readable
+      immediately -- SUBJECT TO ITS OWN DISPOSITION QUESTION, which the copy
+      being clean does not answer; see
+      `[the_scan_and_the_text_layer].a_host_saying_domaine_public_is_not_a_grant`.
+      The clause `tracked` and `public-domain` originally stood here without that
+      qualification and it was too fast.
+
+      SEARCHED ON 2026-08-02 AND NOT FOUND, over twenty-four services. The hunt
+      is recorded in full at `[the_clean_1924_hunt]`, with the services that
+      answered separated from the services that refused. A later lane must read
+      that section BEFORE repeating any of it. Three things it establishes that
+      this item stated wrongly or did not know:
+
+        the Biblioteca Nacional de Portugal ANSWERED and HOLDS A COPY, shelfmark
+        R. 7413 A., which it has not digitised -- it was never unreachable;
+        the Arquivo Distrital de Braga is a DOCUMENTARY ARCHIVE and a poor
+        prospect for a printed altar book, and the URL commonly cited for it does
+        not resolve;
+        the strongest untried holder is the BIBLIOTECA PÚBLICA DE BRAGA, legal
+        deposit for Braga since 1931, whose catalogue refused this network
+        specifically -- it is blocked, not empty, and it is the best next move.
+
+      A second catalogued copy stands at Barcelos, and its collation is the
+      control the carve-out route was missing. This condition therefore remains
+      UNSATISFIED, and it is now cheaper to attack than it was.
 
   2.  A LEAF MAP WITH A CONTROL, per `[routes_examined_and_refused]`. It would not
       overturn the finding; it would make the finding operational, splitting one
@@ -513,6 +807,11 @@ years_between_the_basis_and_the_latest_matter = 37
 class_rank_labels_in_132548_lines = 2
 copyright_notices_found = 0
 clean_1924_digitisations_located = 0
+clean_1924_copies_catalogued_in_public_hands = 2
+services_queried_in_the_clean_1924_hunt = 24
+services_that_answered_and_held_no_digitisation = 14
+services_that_could_not_be_searched = 10
+catalogued_collation_of_the_1924_issue = "XCV, 828, [194] p. ; 34 cm"
 braga_items_on_the_internet_archive = 1
 bytes_added_to_this_repository = 0
 counts_note = """
@@ -525,6 +824,22 @@ only by its hits proves that somebody searched, not that somebody looked.
 and is written as a number so it cannot be read past. Everything expensive about
 this record follows from it: with a clean copy there would be no carve-out
 question, no leaf map, and no unresolved artifact.
+
+IT WAS ATTACKED ON 2026-08-02 AND IT SURVIVED. Twenty-four services were put the
+question and none holds a digitisation of the 1924 edition, so the number is no
+longer merely unrefuted -- it is a searched negative with its method written down
+at `[the_clean_1924_hunt]`. THE THREE COUNTS BESIDE IT ARE WHAT MAKE IT ONE, and
+the split between them is the point: 14 answered and 10 refused, so the hunt is
+NOT closed, and the ten are named individually rather than summed away.
+
+`clean_1924_copies_catalogued_in_public_hands = 2` is the thing that moved. A
+clean copy is now known to exist, to be publicly held and to be unrestricted --
+which is not a digitisation and does not free anything, but does turn `find a
+clean copy` from a hope into a request addressed to a named library with a named
+shelfmark. `catalogued_collation_of_the_1924_issue` is the control the carve-out
+route said it lacked; read it with
+`[the_clean_1924_hunt].the_two_collations_disagree` before relying on it, because
+the second copy's collation does not match and the reason is not established.
 
 `bytes_added_to_this_repository = 0`: this is a record about a book, produced
 without redistributing any of it. Both files were fetched to a scratch directory

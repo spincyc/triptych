@@ -165,13 +165,24 @@ the answer was positive or negative.
                      six fetched and read [verified]. This is where the
                      Carthusian 1496 and the three Premonstratensian printings
                      are, and not one of them is on the Internet Archive.
-  GALLICA (BnF)      NOT REACHABLE FROM THIS RUN. Every request returned
-                     `Recv failure: Connection reset by peer`, including the
-                     IIIF manifest and including a request with a browser user
-                     agent [verified]. So every Gallica row below is [recorded]
-                     from the missal acquisition audit, which reached it on
-                     2026-08-01, and is NOT re-verified here. That is a bound on
-                     this run, not a statement about Gallica.
+  GALLICA (BnF)      NOT REACHABLE ON 2026-08-02 in the run that wrote this
+                     block. Every request returned `Recv failure: Connection
+                     reset by peer`, including the IIIF manifest and including a
+                     request with a browser user agent [verified then]. So every
+                     Gallica row below was written [recorded] from the missal
+                     acquisition audit, which reached it on 2026-08-01.
+
+                     SUPERSEDED ON 2026-08-02 BY A LATER RUN, WHICH REACHED IT.
+                     The four rows are now [verified] at the items themselves and
+                     the bound is lifted. What changed is the ACCESS SHAPE, not
+                     the network: Gallica's HTML site now answers a bot challenge
+                     page (`Vérification de sécurité`, ALTCHA) instead of the
+                     document, and `.texteBrut` redirects into it, while the IIIF
+                     presentation API, the IIIF image API and the BnF OAI-PMH
+                     endpoint all answer normally -- PROVIDED the request carries
+                     a browser user agent. The default curl agent gets HTTP 403
+                     from every one of them [verified]. See
+                     `[[corrections]]` `gallica-unreachable-in-this-run`.
 
 WHAT THE 215 ITEMS ACTUALLY ARE, because a count is not a corpus [verified]: a
 large share are single-leaf photographs of ONE manuscript, the Cleveland Museum
@@ -401,7 +412,7 @@ diocesan uses legislate for themselves is false.
 [[lines]]
 id = "lugdunense"
 label = "The Lyonnais use"
-note = "The use of the primatial church of Lyon. Its printings are at the Bibliotheque nationale de France, which was not reachable from this run."
+note = "The use of the primatial church of Lyon. Its printings are at the Bibliotheque nationale de France, Réserve B-28974 (1503, 452 canvases) and Réserve B-27670 (1530, 430 canvases). Both were reached on 2026-08-02 and neither rests on a network failure any longer. The 1503 was read in its page images and its station now rests on the book's own printed colophon [verified]; the 1530 was verified at Gallica's manifest and OAI record only, which is the strength the acquisition audit claimed for it and no more, and it is still carried as no station here."
 
 [[lines]]
 id = "aquileiense"
@@ -1657,7 +1668,29 @@ read_from = "not-read"
 rights = "public-domain"
 rights_basis = "A 1755 printing; the Internet Archive item is marked NOT_IN_COPYRIGHT, New York Public Library copy [verified]."
 digitisation = "https://archive.org/details/missalemixtumse00leslgoog -- 408 images, PDF 28,715,021 bytes, OCR 1,491,426 bytes [verified]"
-note = "The Cisneros editio princeps of 1500 is at the Bibliotheque nationale de France and is recorded in the acquisition audit; Gallica was not reachable from this run, so it is not carried as a station here."
+note = """
+The Cisneros editio princeps of 1500 is at the Bibliotheque nationale de France
+and is recorded in the acquisition audit. It was NOT carried as a station here
+because Gallica was unreachable when this row was written.
+
+THAT REASON IS GONE AND THE STATION IS STILL NOT ADDED. The item was reached and
+read on 2026-08-02: ark:/12148/bpt6k8728875t, 992 canvases, shelfmark
+`Bibliothèque nationale de France, département Arsenal, FOL-T-742`, dated 1500,
+imprint `Peter Hagenbach pour Melchior Gurrizo (Toledo)`, `domaine public` in
+Gallica's OAI record; and the title page at canvas f7 carries Cardinal
+Cisneros's arms with the motto `INDVI EVM VESTIMENTO SALVTIS ET INDVAM
+SACERDOTES EIVS SALVTARI` above the title in red gothic, `Missale mixtum
+secudum regulam beati Isidori dictum Mozarabes`, with the Arsenal stamp and the
+shelfmark `fol T 742` on the same leaf [all verified in the page image and the
+manifest].
+
+IT IS NOT ADDED HERE BECAUSE THE MOZARABIC RECORDS ARE ANOTHER LANE'S THIS
+ROUND, not because the evidence is short. The evidence is sufficient and it is
+written out above so that the lane which owns those records can add the station
+without refetching anything. Note that this is the ARSENAL copy: the acquisition
+audit also reports a second copy at the Biblioteca Nacional de España, INC/0015,
+which remains unverified.
+"""
 
 [[witnesses]]
 id = "1862-liturgia-mozarabica-migne"
@@ -1709,18 +1742,74 @@ language = "la"
 printed = "1503"
 attests = "lugdunense-1503"
 attests_kind = "the-printing-itself"
-attests_basis = "The station is this printing; its title declares the use of the church of Lyon."
+attests_basis = "The station is this printing; its title declares the use of the church of Lyon, and its colophon repeats the declaration and dates the printing."
 read_from = "not-read"
+read_from_note = "`not-read` and it stays `not-read`. Four leaves of this copy were read as page images on 2026-08-02 -- the title flyleaf, the colophon leaf, and two others -- which is enough to identify the book and date it and is NOT enough to make it a text witness. No unit of the Lyonnais use has been read, and `page-image` here would claim otherwise."
 rights = "public-domain"
-rights_basis = "Gallica states `domaine public / public domain` in its own record [recorded from the missal acquisition audit, verified there on 2026-08-01]."
-digitisation = "https://gallica.bnf.fr/ark:/12148/bpt6k8708528k -- 452 image views [recorded]"
-not_verified_here = """
-GALLICA WAS NOT REACHABLE FROM THIS RUN. Every request to gallica.bnf.fr,
-including the IIIF manifest and a request with a browser user agent, returned
-`Recv failure: Connection reset by peer` [verified]. So this row and the Lyon
-station resting on it are [recorded] and not [verified], and the difference is
-on the row rather than in a preface. The Internet Archive holds no Lyon missal
-under seven alias forms, which is why there is no fallback.
+rights_basis = "A 1503 printing, four centuries before any line this repository applies. Gallica's own OAI-PMH record for the item carries `<dc:rights xml:lang=\"fre\">domaine public</dc:rights>` and `<dc:rights xml:lang=\"eng\">public domain</dc:rights>` [verified 2026-08-02 at http://oai.bnf.fr/oai2/OAIHandler?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:bnf.fr:gallica/ark:/12148/bpt6k8708528k]. THAT STATEMENT IS ABOUT THE BOOK AND NOT ABOUT GALLICA'S IMAGE FILES; see `rights_shape_of_the_host` below."
+digitisation = "https://gallica.bnf.fr/ark:/12148/bpt6k8708528k -- 452 canvases in the IIIF manifest, matching the record's `Nombre total de vues : 452`; shelfmark `Bibliothèque nationale de France, département Réserve des livres rares, B-28974` [verified 2026-08-02 at https://gallica.bnf.fr/iiif/ark:/12148/bpt6k8708528k/manifest.json]"
+verified_here = """
+VERIFIED AT THE ITEM ON 2026-08-02, replacing the [recorded] carry this row was
+written with. Four things were checked and all four hold.
+
+  THE SHELFMARK IS ON THE LEAF. Canvas f5 is a flyleaf carrying the printed
+  title in red -- `Missale ad usum ecclesie Lugduñ.` -- with `Res B 28974`
+  written on it in pencil below [verified in the page image]. So the title's
+  declaration of the Lyon use and the shelfmark this row states were read from
+  the book, not taken from the catalogue.
+
+  THE COLOPHON SURVIVES IN THIS COPY, which the BnF record does not say: it
+  brackets the imprint as `[Lyon, Janon Carcan, 1503]`, the convention for an
+  imprint supplied from somewhere other than the title page. It is printed in
+  red in the right-hand column of canvas f439 [verified in the page image]:
+  `Missale secundum ritum et usum ecclesie lugdunen[sis] novissime impressum
+  quod ab omnibus retro impressoribus i[n]castigatum evasit maxima lucubratione
+  emendatum atque ordinatum ... impressum Lugdun. per Janonum Carcaneum. anno
+  dñi M.ccccc.iii die vero xxiiii mensis Xbris.`
+
+  Two things about that transcription are stated rather than smoothed. The
+  elision covers a list of what the edition prints at length (`Kyria`,
+  versicles, offertories, prefaces) which was not transcribed letter by letter.
+  And the `(1503.)` that stands beside `M.ccccc.iii` in the image is a LATER
+  HAND'S GLOSS in parentheses, not type; the printed year is the roman numeral
+  alone. The day was read at a 1718-pixel crop of the line to distinguish
+  `xxiiii` from `xxiii`, because the difference is a day and the earlier cursive
+  note on the flyleaf appears to give the shorter form.
+
+  SO THE DATE IS THE BOOK'S OWN AND IT IS PRECISE TO THE DAY: 24 December 1503,
+  at Lyon, by Janon Carcan. `printed` is kept at `1503` and `date_precision` on
+  the station is NOT tightened, because the station is dated by the year the
+  line reached and because tightening it is a change to the station rather than
+  to this row's evidence. The day is recorded here so a later lane need not
+  refetch the leaf to find it.
+
+  THE COLOPHON ALSO TESTIFIES TO EARLIER LYON PRINTINGS, in `ab omnibus retro
+  impressoribus` -- it presents itself as a corrected reprint, not a first
+  edition. A later hand has written on a flyleaf at f443 `c'est la seconde
+  édition du Missel lyonnais` and transcribed the colophon there in cursive
+  [verified]. THAT IS NOT ASSERTED AS FACT and no edge is drawn on it: it is an
+  undated manuscript note by an unnamed reader. It is recorded because the
+  station's `root_basis` says the record starts here, and a reader should know
+  the book itself says something stands behind it.
+"""
+rights_shape_of_the_host = """
+GALLICA'S PUBLIC-DOMAIN STATEMENT AND GALLICA'S IMAGE FILES ARE TWO DIFFERENT
+QUESTIONS, and this row states both so neither is read for the other.
+
+The OAI record says `domaine public` OF THE BOOK. The IIIF manifest for the same
+ark carries `"license":
+"https://gallica.bnf.fr/html/und/conditions-dutilisation-des-contenus-de-gallica"`
+and `"attribution": "Bibliothèque nationale de France"` [verified] -- the BnF's
+own conditions of use for its delivered images, which is not a public-domain
+mark and not a grant of redistribution.
+
+So NO ARTIFACT IS REGISTERED FROM THIS ITEM AND NONE MAY BE PROMOTED TO
+`tracked` ON THE STRENGTH OF GALLICA HOSTING IT. guidance/sources.md requires an
+affirmative recorded distribution basis for the exact artifact, and a host's
+statement that the underlying work is old is not one. The page images fetched to
+verify this row were fetched to a scratch directory outside the repository and
+no byte of them is in Git. This is the same distinction the lt-hist rights audit
+refused a host's mark on, and the same one the Braga 1924 record turns on.
 """
 
 [[witnesses]]
@@ -2326,10 +2415,28 @@ printing = "1503-missale-lugdunense"
 parents = []
 root_basis = """
 The earliest Lyon printing recorded here, and the record starts here. Nothing behind it is carried.
+
+THE BOOK ITSELF SAYS SOMETHING STANDS BEHIND IT, and that is now on the record
+rather than absent from it. Its colophon calls the printing `novissime
+impressum quod ab omnibus retro impressoribus i[n]castigatum evasit` -- newly
+printed, having come uncorrected from all the printers before it [verified
+2026-08-02 in the page image of canvas f439]. That is the book asserting earlier
+Lyon printings it does not name. No edge is drawn to any of them, because none
+has been located, and this stays a root: guidance/recensions.md Rule 4, silence
+because nothing was established. What changed is that the silence is now KNOWN
+to be a gap rather than possibly an origin.
 """
 act_citation = "none-claimed"
 distinct_edition_basis = """
-The 1503 printing, BnF Res. B-28974, 452 image views. RECORDED AND NOT VERIFIED IN THIS RUN: Gallica was unreachable, and the witness row says so at length. It is the only station in this file resting on a repository this run could not reach, and it is carried rather than dropped because the acquisition audit reached it eight hours earlier and because the alternative -- writing the Lyonnais use out of the record -- is the error that audit had already corrected once.
+The 1503 printing, BnF Réserve B-28974, 452 image views.
+
+VERIFIED AT THE ITEM ON 2026-08-02, superseding this field's earlier statement
+that Gallica was unreachable and that this was the only station in the file
+resting on a repository the run could not reach. That is no longer true of any
+station here. The shelfmark, the extent, the title and the imprint were all read
+from the manifest and the page images, and the imprint from the book's own
+printed colophon: Lyon, Janon Carcan, 24 December 1503. The witness row
+1503-missale-lugdunense carries the transcription and the loci.
 """
 citation = "See the witness record 1503-missale-lugdunense for the imprint, the extent and the repository."
 attested_in = ["1503-missale-lugdunense"]
@@ -2729,28 +2836,61 @@ parent_kind = "line-order"
 parent_basis = "Both stations are of the Carthusian use and this is their order; nothing in the 1679 book names the 1620 printing."
 act_citation = "cited-externally"
 citation = """
-Printed on the title page of the 1679 edition and transcribed in Gallica's own
-catalogue record for ark:/12148/bpt6k9127828m: `Missale Cartusiani ordinis ex
-ordinatione capituli Generalis. Anno Domini M. D. CLXXVII. Celebrati sub R. P.
-D. Innocentio le Masson Priore Cartusiae ac totius eiusdem odinis generali`
-(`odinis` is the catalogue's own typo, reproduced) [recorded from the missal
-acquisition audit, which read the record on 2026-08-01].
+Printed on the engraved title page of the 1679 edition, READ HERE IN THE PAGE
+IMAGE on 2026-08-02 and no longer taken from the catalogue: `MISSALE CARTVSIANI
+/ Ordinis ex ordinatione Capituli Generalis. / Anno Domini M.D.C.LXXVII. /
+Celebrati Sub R.P.D. Innocentio le Masson Priore / Cartusiæ ac totius eiusdem
+ordinis Generali` [verified, canvas f5 of ark:/12148/bpt6k9127828m].
+
+THE CATALOGUE'S TYPO IS THE CATALOGUE'S. Gallica's record transcribes the last
+words as `totius eiusdem odinis generali`; the engraved plate reads `ordinis`
+plainly. The earlier state of this row reproduced `odinis` and flagged it as the
+catalogue's own -- that flag was right, and it is now settled at the plate
+instead of being a guess about a transcription.
+
+THE ORDINANCE ITSELF IS PRINTED IN THE BOOK, which is better evidence than the
+title page and was not previously known to this file. Innocent Le Masson's
+prefatory letter at canvas f7, headed `FRATER INNOCENTIVS, Humilis Prior Majoris
+Cartusiæ, ac totius Ordinis Cartusiensis Minister Generalis`, recites it and
+then quotes its tenor [verified in the page image]: `... ordinationem in Capitulo
+Generali anni 1677. edidimus, cujus tenorem hic referre placet. [Quia Missalium
+penuria laboramus, ordinamus Missalia ad vsum Ordinis de novo imprimi, ac
+propterea monemus Visitatores Provinciarum & Priores Domorum, vt si quid in
+ipsis ... addendum` -- the sentence runs onto the following leaf, which was not
+fetched, and is therefore cut here at the catchword rather than completed from
+guesswork.
 """
 attested_in = []
 read_from = "not-read"
+read_from_note = "`not-read`: the title page and the prior general's letter were read as page images, which establishes the act. No unit of the Carthusian use has been read."
 locus = """
-NOT RE-VERIFIED HERE. Gallica was unreachable from this run, so this station
-rests on the acquisition audit's reading of the catalogue record and not on
-bytes this file fetched. The station is carried rather than dropped because it
-is the clearest promulgating instrument of any use in the file -- a general
-chapter, a year, a named prior general, and a book issued by its ordinance --
-and dropping it would lose that for the sake of a network failure.
+VERIFIED AT THE ITEM ON 2026-08-02, superseding this field's earlier statement
+that Gallica was unreachable and that the station rested on the acquisition
+audit's reading of a catalogue record. It now rests on two leaves of the book:
+the engraved title page at canvas f5 and the prior general's prefatory letter at
+canvas f7.
+
+TWO FACTS ABOUT THE COPY, recorded because neither was in this file. The
+digitised exemplar is NOT a BnF copy: the manifest labels it `Bibliothèque
+municipale de Grenoble, Vh.258 Rés.`, Gallica hosts it as part of the Grenoble
+documentary set `BnGren00`, and a `BIBLIOTHEQUE DE GRENOBLE` stamp is visible on
+the title plate itself [verified]. And the imprint, which the catalogue title
+does not carry, is engraved at the foot of that plate: `FAVRATII IN SABAVDIA /
+Typis Ludouici du Four Sereniss. Ducis Tipographi ordinary Sumptibus maioris
+Cartusiæ / 1679`, signed `L. Cossin Sculpsit` -- printed at Fourvoirie in Savoy
+at the charge of the Grande Chartreuse.
 """
 date_note = """
 TWO YEARS ARE IN PLAY AND THEY ARE NOT COLLAPSED. The chapter met in 1677; the
 book was printed in 1679. The station is dated by the PRINTING, 1679, because
 that is the state the line reached, and the chapter's year is in `authority` and
 in the citation rather than being averaged into the date.
+
+BOTH YEARS ARE NOW VERIFIED ON ONE LEAF, which is the cleanest possible warrant
+for keeping them apart: the engraved title plate at canvas f5 carries `Anno
+Domini M.D.C.LXXVII.` in its title and `1679` in its imprint at the foot of the
+same plate [verified 2026-08-02]. Le Masson's letter at f7 names the chapter
+year a third time, as `Capitulo Generali anni 1677`.
 """
 effect = "No departure. No unit of this use has been read."
 effect_established = false
@@ -2773,6 +2913,40 @@ so no edge is drawn into this station.
 
 That makes this line unusual and worth noticing: it is the ONLY use line in this
 file whose root is an act rather than a printing.
+
+THE 1558 PRINTING WAS REACHED AND READ ON 2026-08-02, and this root is kept
+anyway. It is BnF Réserve B-1478, 554 canvases, `Missale juxta usum & ordinem
+Almae Bracarensis Ecclesiae Hispaniarum Primatis`, dated 1558 by Gallica's own
+record, and its shelfmark is pencilled on the flyleaf at canvas f4 beside the
+reference `Weale 198` [verified]. Two things in it are worth a later lane's
+attention and NEITHER IS ASSERTED AS AN ACT HERE:
+
+  1.  IT CARRIES WHAT LOOKS LIKE ITS OWN PROMULGATING INSTRUMENT. Canvas f5 is a
+      letter headed `BALTHASAR LIMPVS ARCHIEPISCOPVS ET BRACARAE Dominus,
+      Hispaniarum Primas: Decano & Capitulo sanctae Bracarensis Ecclesiae, ac
+      totius eius prouinciae Clero sanctum exoptat spiritum & salutem in Domino
+      sempiternam`, in which Archbishop Baltasar Limpo describes finding the old
+      missal `corruptum illud certe vetustate` and having a corrected edition
+      made [verified in the page image]. That is an archbishop of Braga ordering
+      a Braga missal, four hundred years before the act this line is rooted on.
+      IT IS NOT ADDED AS A STATION IN THIS RUN: the letter was read but not
+      transcribed whole, it carries no date in the portion read, and adding a
+      root below an existing root is a change to the line's shape rather than an
+      evidence upgrade. It is the single most promising lead for extending this
+      line backwards and it is written down so it is not re-found.
+
+  2.  IT WAS PRINTED AT LYON, NOT AT BRAGA. Gallica's record gives the imprint
+      as `Lugduni sumptibus Jo. à Burgundia, bibliopolae regis Lusitanorum,
+      1558` [verified] -- at Lyon, at the charge of Jean de Bourgogne, bookseller
+      to the King of Portugal. Worth recording because this file carries a
+      Lyonnais line as well, and a reader meeting `Lugduni` on a Braga book
+      should not take it for a use.
+
+  3.  ONE CAUTION ON THE COPY. Its first printed leaf in the digitisation is the
+      Limpo letter; no printed title page was found in the leaves examined, and
+      the BnF describes the preliminaries as `[10]` leaves. Whether the title
+      leaf is absent from this copy was NOT established, and it is flagged
+      rather than resolved.
 """
 act_citation = "cited-externally"
 citation = """
@@ -3368,26 +3542,73 @@ severity = "low"
 target = "this file's own Lyon, Mozarabic editio princeps, Braga 1558 and Carthusian 1679 rows"
 target_says = "Nothing yet; this entry exists so that a bound is recorded before it is forgotten."
 finding = """
-GALLICA WAS NOT REACHABLE FROM THIS RUN. Every request to gallica.bnf.fr
-returned `Recv failure: Connection reset by peer`, including the IIIF manifest
-and a request carrying a browser user agent [verified]. The Bavarian State
-Library's IIIF API and the Internet Archive's APIs answered normally in the same
-minutes, so the failure is specific.
+GALLICA WAS NOT REACHABLE FROM THE RUN THAT WROTE THIS ENTRY. Every request to
+gallica.bnf.fr returned `Recv failure: Connection reset by peer`, including the
+IIIF manifest and a request carrying a browser user agent [verified then]. The
+Bavarian State Library's IIIF API and the Internet Archive's APIs answered
+normally in the same minutes, so the failure was specific.
 
-The consequence is that four things the missal acquisition audit verified at
-Gallica on this same day are carried here as [recorded] and not [verified]: the
+The consequence was that four things the missal acquisition audit verified at
+Gallica on this same day were carried here as [recorded] and not [verified]: the
 two Lyon printings, the Cisneros Mozarabic editio princeps of 1500, the Braga
 printing of 1558, and the Carthusian general chapter instrument of 1679.
 
-THE LYON LINE RESTS ENTIRELY ON THIS. It is the only line in the file whose
-single station could not be checked here, and it is carried rather than dropped
+THE LYON LINE RESTED ENTIRELY ON THIS. It was the only line in the file whose
+single station could not be checked, and it was carried rather than dropped
 because the alternative -- writing the Lyonnais use out of the record on a
 network failure -- is precisely the error the audit had already corrected once,
 when it wrote `not-located` for Lyon on the strength of an Internet Archive
 search while the books sat at the Bibliotheque nationale de France.
+
+CARRYING IT WAS THE RIGHT CALL AND THE LATER RUN PROVED IT. Every one of the
+four is now verified at the item, and each says what the audit said it said.
+Nothing had to be relocated and nothing was wrong.
 """
-consequences = "Recorded on each affected row, not only here. A bound named once in a preface is a bound a reader of a row will not see."
-status = "recorded"
+superseded_on = "2026-08-02"
+superseded_finding = """
+GALLICA IS REACHABLE. WHAT DEFEATED THE EARLIER RUN WAS THE USER AGENT, not the
+network, and the distinction matters because the wrong lesson here is `Gallica
+is flaky, try again later`.
+
+  WITH THE DEFAULT curl AGENT every endpoint returns HTTP 403 -- the item page,
+  the IIIF presentation manifest, the IIIF image API, all of them [verified].
+  A 403 and a connection reset are the same wall wearing different clothes.
+  WITH A BROWSER USER AGENT the IIIF presentation API, the IIIF image API and
+  the BnF OAI-PMH endpoint at oai.bnf.fr all answer normally and completely
+  [verified].
+  THE HTML SITE IS GATED REGARDLESS. gallica.bnf.fr/ark:/.../texteBrut redirects
+  to a page headed `Gallica | Vérification de sécurité` carrying an ALTCHA
+  challenge widget, so the human-facing pages and the plain-text OCR delivery
+  are NOT available to this repository even with a browser agent [verified].
+
+SO THE OPERATING RULE, written down because it is the reusable part: reach
+Gallica through IIIF and OAI-PMH with a browser user agent; do not expect the
+HTML pages or `.texteBrut`; and do not record a Gallica failure as a fact about
+Gallica until both the agent and the endpoint have been varied.
+
+WHAT WAS VERIFIED, each at the item, each recorded on its own row:
+  the Lyon 1503 printing, Réserve B-28974, 452 canvases -- and its printed
+  colophon, which the BnF record's bracketed imprint had implied was absent;
+  the Lyon 1530 printing, Réserve B-27670, 430 canvases;
+  the Braga 1558 printing, Réserve B-1478, 554 canvases, with Archbishop
+  Baltasar Limpo's prefatory letter;
+  the Carthusian 1679 edition, 619 canvases -- on a Grenoble municipal copy, not
+  a BnF one -- with Innocent Le Masson's letter reciting the 1677 ordinance;
+  the Cisneros Mozarabic editio princeps of 1500, Arsenal FOL-T-742, 992
+  canvases, handed to the lane that owns the Mozarabic records.
+
+AND ONE THING THAT DID NOT CHANGE, recorded here because the upgrade makes it
+easy to lose. Gallica saying `domaine public` in its OAI record is a statement
+ABOUT THE BOOK. The IIIF manifest for the same ark declares `license =
+https://gallica.bnf.fr/html/und/conditions-dutilisation-des-contenus-de-gallica`
+and `attribution = Bibliothèque nationale de France` -- the BnF's own conditions
+of use for the image files it delivers. A public-domain book and a freely
+redistributable image file are two questions, and NO ARTIFACT MAY BE PROMOTED TO
+`tracked` ON THE STRENGTH OF GALLICA HOSTING IT. No artifact was registered from
+any of these five items and no byte of any of them is in Git.
+"""
+consequences = "Recorded on each affected row, not only here. A bound named once in a preface is a bound a reader of a row will not see -- and so is its lifting, which is why every one of those rows was rewritten rather than left pointing at a superseded entry."
+status = "superseded on 2026-08-02; the bound is lifted and every affected row is verified"
 
 # --- Counts ------------------------------------------------------------------
 #
