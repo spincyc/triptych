@@ -80,15 +80,21 @@ expect_json '"unit_word":"canon"' "$law"
 
 # --- graph -------------------------------------------------------------------
 
-# Lines never rejoin. Asserted against the corpus rather than against a
-# fabricated act, because the rule is about what is recorded here. A single
-# cross-line parent is a FORK -- a line is born at an act on another line, and
-# that is how every line but the first begins. What may never happen is a MERGE
-# across lines: an act with two parents must find both on its own line, or the
-# drawing would join two lines that the record says never rejoined. The same
-# pass checks that the order is topological, which is the whole claim `graph`
-# makes and what lets a drawing place a station to the right of what it
-# descends from.
+# What may cross a line, and what a crossing has to say for itself. Asserted
+# against the corpus rather than against a fabricated act, because the rule is
+# about what is recorded here; the constructed cases live in
+# tools/tests/test_act_history_reception.py, where a rejoining is built and its
+# refusals are run.
+#
+# A single cross-line parent is a FORK -- a line is born at an act on another
+# line, and that is how every line but the first begins. A cross-line parent
+# among SEVERAL is a MERGE, which asserts that one tradition received from
+# another, and it may be drawn only where the act declares the reception and
+# cites the instrument that documents it. No tracked slice declares one, so
+# every crossing below must be a birth, and this pass says which rule each
+# crossing passes under rather than assuming there is only one. The same pass
+# checks that the order is topological, which is the whole claim `graph` makes
+# and what lets a drawing place a station to the right of what it descends from.
 for source in "$holy_week" "$missal" "$law"; do
 	run_tool graph --source "$source" --json >graph.json
 	python3 - "$source" <<'PY'
@@ -108,11 +114,19 @@ for row in rows:
         if line[parent] != line[row["act"]]:
             assert len(row["parents"]) == 1, (
                 f"{source}: {row['act']} on {line[row['act']]} merges a parent on"
-                f" {line[parent]}; lines never rejoin"
+                f" {line[parent]}; no tracked slice rejoins two lines"
+            )
+            assert parent not in row["receives"], (
+                f"{source}: {row['act']} calls its ONLY parent a reception; one parent"
+                " synthesises nothing, so a crossing with one parent is a birth"
             )
             forks += 1
     merges += len(row["parents"]) > 1
     seen.add(row["act"])
+assert not any(row["receives"] for row in rows), (
+    f"{source}: a tracked slice now records a rejoining, which is a claim about two"
+    " traditions and not a refactor; the assertions below assume none"
+)
 assert forks, f"{source}: no line is born at an act, so nothing here runs in parallel"
 if source.endswith("latin-missal-acts-v1.toml"):
     # The slice the page opens on is the one that exercises the shape, and a
@@ -298,10 +312,11 @@ for line in alone:
     only = next(name for name, node in nodes.items() if node["line"] == line)
     assert nodes[only].get("terminus") == "true", only
 
-# RULE 2, which is the part of this design with no prior art. Lines never
-# rejoin, so no edge may join two stations already standing on different lines
-# EXCEPT where a line is born -- and a birth is the child's first station, never
-# a rejoining. Everything else that crosses on the plate crosses without an
+# RULE 2, which is the part of this design with no prior art. A cross-lane edge
+# is one of exactly two things and says which on itself: a birth, which is the
+# child's first station, or a reception, which no tracked slice declares. So
+# every crossing here is a birth and carries `fork`, and none carries
+# `reception`. Everything else that crosses on the plate crosses without an
 # interchange, and that is what says coexistence without reception.
 opening = {}
 for name, node in nodes.items():
@@ -313,13 +328,19 @@ for parent, child, attributes in edges:
     assert attributes["line"] == nodes[child]["line"], (parent, child)
     if nodes[parent]["line"] != nodes[child]["line"]:
         assert attributes.get("fork") == "true", (parent, child)
+        assert "reception" not in attributes, (parent, child)
         assert opening[nodes[child]["line"]] == child, (parent, child)
         forks += 1
 assert forks == 2, forks
+assert not any("reception" in attributes for _, _, attributes in edges), (
+    "this slice draws a rejoining and the assertions here were written for one that"
+    " does not; tools/tests/test_act_history_reception.py holds the constructed case"
+)
 
 # An interchange is a documented reception and the only place a reader may
 # change trains. There is exactly one in this slice, and both its edges run on
-# its own line, because `check` refuses a merge across lines.
+# its own line: this slice's reception is between two descents of one tradition,
+# and the cross-line kind is the constructed case the unit tests carry.
 interchanges = [name for name, node in nodes.items() if node["role"] == "interchange"]
 assert len(interchanges) == 1, interchanges
 arriving = [edge for edge in edges if edge[1] == interchanges[0]]

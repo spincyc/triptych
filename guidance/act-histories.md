@@ -1308,3 +1308,151 @@ authority in `PROJECT-WORK.md` saying it is a build output replaced in full,
 because every correction to it is a force-push — one word changed in one act
 rewrote 10 of 12 commit ids, and renaming the source inventory rewrote all 12,
 since every commit's README names the file it was built from. [verified]
+
+## 19. Two lines rejoin at a reception, and only there
+
+Built 2026-08-02, TASK-141. `time-machine.md` Rule 2 permits a merge **wherever
+reception is documented, with the act cited**, and restricts it to no one line;
+§3 of the same file calls a translation drawing on a Latin typical edition an
+**interchange** in terms. `tools/act-history` refused every multi-parent edge
+whose parents stood on two lines — `merges across lines; lines never rejoin` —
+so the code refused the *claim* by refusing the *shape*, and two cases the
+maintainer's all-Latin-rites ruling makes real were unencodable: an official
+vernacular edition standing on its own predecessor **and** on the typical
+edition it implements, and a feast received from a particular proper into a
+wider calendar.
+
+The refusal is replaced by a demand. Nothing is loosened: every guard part one
+and part two describe still refuses exactly what it refused.
+
+### What a cross-line edge must now cite
+
+An act naming parents on two lines declares one `[[acts.receptions]]` table per
+foreign parent, and `check` and `build` both refuse it otherwise — the guard is
+one function, called from the writer as well as from the checker, so a rejoining
+nobody evidenced is **unwritable** and not merely unrecommended. Each row must
+carry:
+
+| field | what it must say |
+| --- | --- |
+| `from` | which parent is received. Declared, never inferred: a foreign parent nobody declared is refused, and a declared one on this act's own line is refused too |
+| `kind` | `translates-typical-edition` or `receives-into-wider-use`. **No catch-all**: a reception nobody can put in one of these is one nobody has agreed the meaning of |
+| `instrument` | the instrument whose text documents the reception |
+| `citation` | where that instrument is printed, and where it was read |
+| `basis` | what it says, and why this is a reception and not a resemblance |
+
+And four things about the station itself, which are where the bar sits **above**
+the one an ordinary edge is held to rather than level with it:
+
+- **the receiving station must be `promulgated`**, so a book claiming no act
+  cannot report that one tradition received from another;
+- **its own `act_citation` may not be `not-found`**. Rule 1 lets a station stand
+  on an instrument nobody has read; a rejoining may not, because the thing that
+  documents a reception is an act, and an act nobody has read documents nothing;
+- **it must have a parent on its own line.** A lone cross-line parent is a fork,
+  and is drawn by naming that parent and no reception at all;
+- **the received parent may not stand first**, so the first parent is the line's
+  own and `git log --first-parent` follows the tradition. A reception is also
+  refused if it is dated before the act it receives.
+
+`reception_basis` is still required of every multi-parent act, and is now the
+weaker of two claims rather than the only one: it says why the parents converge,
+and the reception row says what documents this line receiving from that one.
+
+### Why a fork was admissible where a merge was not, and what survives
+
+A fork has **one** parent, so nothing is synthesised: the child continues one
+state under a new line's name and the edge asserts descent and nothing more.
+That is why `exempt-uses` and `usus-antiquior` were always allowed to leave
+`typica` — the tool has never denied that lines touch. A merge has two, and a
+merge commit holds **one resolved tree**, so it asserts that a synthesis
+occurred; across lines it asserts more still, that one tradition received from
+another.
+
+**All of that survives.** What does not survive is the conclusion drawn from it.
+The answer to an unevidenced claim is to demand the evidence, not to make the
+claim unsayable — which is the same move `check` already makes for `printed`
+stations, for `not-found` instruments and for withheld words.
+
+### Why `same_instrument_as` does not serve
+
+The canon-law slice already splits **one instrument** into two stations on two
+lines: *Ad tuendam fidem* amends the Latin and the Eastern Codes in one
+document, and two bodies of law cannot fork through one commit. It is not a
+reception and cannot be made into one. It draws **no edge at all** between the
+two stations — each descends on its own line — and it *checks that the twins'
+`instrument`, `authority`, `date` and `citation` agree*, so it refuses precisely
+the case in hand: two different acts, of two different dates, one receiving the
+other at its own lag. It is an identity assertion about one document; a
+reception is a claim about two.
+
+### A reception carries ancestry, not text
+
+The received parent contributes its **ancestry** to the graph and **no state**
+to the tree. This is the substance of the model and not an implementation
+convenience, and two measurements force it:
+
+- union the trees and the 2011 English Missal's commit would carry the Latin
+  typical edition's own files — a book it does not contain — and `commonality`
+  would then report the two lines holding identical prayers **because this tool
+  copied them**, which is the one measurement the shape exists to make;
+- wherever both lines hold one unit id the three-way merge would refuse
+  outright, since a translation differs from its exemplar at every unit.
+
+So what an act **took** is written the way every other change to a book is
+written: as its own departures and units, each citing its own basis. The
+topological claim is carried by the reception, which cites its instrument; the
+textual claim is carried by rows a reader can check one at a time. The commit
+and the act record both say so at length, because a second parent whose tree is
+wholly different would otherwise read as this act having rewritten a book it
+never touched.
+
+### `commonality` still agrees with git, and it is proved rather than assumed
+
+A cross-line merge changes what `git merge-base` computes, so this had to be
+measured. `commonality` derives the shared base from the act graph, runs
+`git merge-base --all` on the emitted repository and **raises** if the two
+disagree. On a constructed slice carrying a rejoining, all three pairs of lines
+agree [verified]: the vernacular line and `typica` part at `editio-typica-1962`,
+and both still reach `exempt-uses` only through `quo-primum-1570`. The emitted
+repository passes `git fsck --strict`, the merge commit carries both parents
+with the line's own first, and two runs are byte-identical. The proof was itself
+checked: a graph withdrawn from under an emitted repository makes the verb raise
+[verified].
+
+The plate marks the two crossings apart — `fork="true"` where a line is born and
+`reception="true"` where one rejoins — because §9 measured that the same
+interchange drawn as a dot rather than as a link *changed which transfers
+passengers made*. A reception is drawn at the `stated` width, since it may not
+be drawn at all unless it cites an instrument.
+
+### What the two real cases look like in the data
+
+```toml
+[[acts]]
+id = "missale-anglicum-2011"
+line = "anglicum"
+station_kind = "promulgated"
+parents = ["missale-anglicum-1973", "editio-typica-2002"]   # own line first
+parent_kind = "act-states-it"
+parent_basis = "The decree recites the edition it replaces."
+reception_basis = "The book is this line's own; the norm it renders is the other line's."
+
+[[acts.receptions]]
+from = "editio-typica-2002"
+kind = "translates-typical-edition"
+instrument = "<the decree of confirmation, by name>"
+citation = "<where it is printed, and where it was read>"
+basis = "<what it says, and why this is a reception>"
+```
+
+A feast taken from a particular proper into the universal calendar is the same
+shape with `kind = "receives-into-wider-use"`, the received parent being the act
+that instituted the feast on the particular line, and the feast's own text
+entering as an `added` departure of the receiving act with its own basis.
+
+**No tracked slice records a rejoining**, and the tests assert that it does not:
+the mechanism is built and the two cases are not asserted from memory. The
+constructed case, its refusals and the `merge-base` proof are in
+`tools/tests/test_act_history_reception.py`; twelve of its twenty-two tests fail
+when the guard is stubbed out [verified].

@@ -36,9 +36,15 @@ the shape exists for:
   MULTIPLE PARENTS   an act may apply a decree to a text, and both are parents.
                      A merge is a claim that a reception happened, so `check`
                      refuses any act with two parents that does not cite one.
-  MULTIPLE BRANCHES  one ref per line. Lines never rejoin: no act may name
-                     parents on two different lines, and nothing here can draw
-                     a merge across them.
+  MULTIPLE BRANCHES  one ref per line. Two lines rejoin ONLY at a documented
+                     reception: an act naming parents on two lines must declare
+                     a `[[acts.receptions]]` row for each foreign parent, citing
+                     the instrument that documents the reception and where it
+                     was read, and the receiving station must itself be
+                     promulgated with its own instrument read. Everything else
+                     that crosses a line is a FORK -- one parent, a line born at
+                     another line's act -- and a fork is a birth, never a
+                     rejoining. See RECEPTION_KINDS.
   PARALLEL STAYS PARALLEL  a fork is born at an act. Where a line's other side
                      has no witness in the corpus, the branch is a root and
                      nothing more, and its emptiness is the record.
@@ -190,6 +196,55 @@ STATION_KINDS = ("promulgated", "printed")
 #                    nothing in either names the other. The weakest edge there
 #                    is: it says where a station sits, not what it inherited.
 PARENT_KINDS = ("act-states-it", "book-states-it", "attributed", "use-continuity", "line-order")
+
+# What a CROSS-LINE edge asserts, and why it is not a sixth `parent_kind`.
+#
+# guidance/time-machine.md Rule 2 permits a merge WHEREVER RECEPTION IS
+# DOCUMENTED WITH THE ACT CITED, and restricts it to no one line; section 3
+# names a crossing case in terms -- *a translation drawing on a Latin typical
+# edition is an interchange*. Until TASK-141 this tool refused every multi-parent
+# edge whose parents stood on two lines, which refused the CLAIM by refusing the
+# SHAPE. Two cases the maintainer's all-Latin-rites ruling makes real were
+# unencodable under that refusal: an official vernacular edition whose parents
+# are its own predecessor AND the typical edition it implements, and a feast
+# received from a particular proper into a wider calendar.
+#
+# WHY A FORK WAS ADMISSIBLE WHERE A MERGE WAS NOT, and whether that survives. A
+# fork has ONE parent, so nothing is synthesised: the child continues one state
+# under a new line's name, and the edge asserts descent and nothing more. A
+# merge has two, and a merge commit holds ONE RESOLVED TREE, so it asserts that
+# a synthesis occurred. Across lines it asserts more still -- that one tradition
+# RECEIVED from another. That reasoning survives intact; what does not survive
+# is the conclusion drawn from it, because the answer to an unevidenced claim is
+# to demand the evidence, not to make the claim unsayable.
+#
+# NOT A `parent_kind`, for two reasons. `parent_kind` is ONE field for ALL of an
+# act's parents, and a reception is a claim about ONE of them: the 2011 English
+# Missal descends from the 1973 English on its own line and RECEIVES the 2002
+# Latin, and one field cannot say both. And a reception must cite more than a
+# kind -- the instrument that documents it, and where that instrument was read
+# -- so it carries its own row, one per received parent, and a station receiving
+# from two traditions cannot cite one and stay silent about the other.
+#
+#   translates-typical-edition  an official vernacular edition implements a
+#                               typical edition of another line, at its own lag.
+#   receives-into-wider-use     a text, feast or observance kept in one use or
+#                               proper is taken into a wider one.
+#
+# Two values and NO CATCH-ALL. A reception nobody can put in one of these is a
+# reception nobody has agreed the meaning of, and the record says so by refusing
+# rather than by drawing an edge labelled `other`.
+RECEPTION_KINDS = ("translates-typical-edition", "receives-into-wider-use")
+
+# What a reception row must carry, beside its `kind`. Deliberately ABOVE the
+# standard a single-line edge is held to: an ordinary edge cites `parent_basis`
+# and may rest on nothing but order (`line-order`), and a station may stand with
+# its instrument `not-found`. A cross-line merge may do neither.
+RECEPTION_EVIDENCE = (
+    ("instrument", "the instrument whose text documents the reception"),
+    ("citation", "where that instrument is printed, and where it was read"),
+    ("basis", "what it says, and why this is a reception and not a resemblance"),
+)
 
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 UNIT_ID = re.compile(r"^[a-z0-9]+(?:[-.][a-z0-9]+)*$")
@@ -669,6 +724,154 @@ def topological(acts: dict[str, dict]) -> list[str]:
     return placed
 
 
+# --- A reception: the one thing that may join two lines -----------------------
+#
+# The rules are here, in one place, and both `check` and `build` read them. A
+# guard living only in `check` would be one call-ordering change away from an
+# `emit` that drew a rejoining nobody evidenced -- the shape TASK-130 found for
+# the withheld marker, and the same answer: the refusal belongs to the writer.
+
+
+def receptions_of(act: dict) -> list[dict]:
+    """The declared reception rows of one act, in the order they were written."""
+    rows = act.get("receptions") or []
+    return [row for row in rows if isinstance(row, dict)]
+
+
+def received_parents(act: dict) -> set[str]:
+    """The parents this act declares it RECEIVED FROM, rather than descends on."""
+    return {str(row.get("from")) for row in receptions_of(act) if row.get("from")}
+
+
+def carried_parents(act: dict) -> list[str]:
+    """The parents whose STATE this act inherits: every parent but a received one.
+
+    A RECEIVED PARENT CONTRIBUTES ITS ANCESTRY AND NOT ITS TEXT, and that is the
+    substance of the model rather than an implementation convenience.
+
+    Union the two trees instead and the 2011 English Missal's commit would carry
+    the Latin typical edition's own files -- a book it does not contain -- and
+    `commonality` would then report the two lines holding identical prayers
+    because this tool copied them, which is the one measurement the shape exists
+    to make. Worse, wherever both lines hold one unit id the merge would refuse
+    outright, since a translation differs from its exemplar at every unit.
+
+    So what an act TOOK is written the way every other change to a book is
+    written: as its own departures, each citing its own basis. The topological
+    claim is carried by the reception, which cites its instrument; the textual
+    claim is carried by rows a reader can check one at a time. Nothing is
+    imported by an algorithm, which is the same refusal `merge` already makes
+    when two parents disagree.
+    """
+    received = received_parents(act)
+    return [parent for parent in act.get("parents", []) if parent not in received]
+
+
+def precedes(earlier: str, later: str) -> bool:
+    """Is `earlier` strictly before `later`, at the coarser of the two precisions?
+
+    Dates here are written to the precision the record has -- `1497`, `1971-06`,
+    `2011-03-19` -- so a comparison must not read a year-only date as the first
+    of January and call it earlier than a day in the same year.
+    """
+    width = min(len(earlier), len(later))
+    return earlier[:width] < later[:width]
+
+
+def reception_problems(act_id: str, act: dict, acts: dict[str, dict]) -> list[str]:
+    """Everything wrong with how this act joins two lines, said in full.
+
+    A cross-line merge asserts MORE than a merge on one line -- not only that a
+    synthesis occurred but that one tradition received from another -- so it is
+    held to a higher standard and not merely the same one.
+    """
+    problems: list[str] = []
+    parents = list(act.get("parents", []))
+    rows = act.get("receptions")
+    if rows is not None and (not isinstance(rows, list)
+                             or any(not isinstance(row, dict) for row in rows)):
+        return [f"act {act_id}: [[acts.receptions]] must be one table per received parent"]
+    rows = receptions_of(act)
+    received = received_parents(act)
+    seen: set[str] = set()
+    for row in rows:
+        source = str(row.get("from") or "")
+        if not source:
+            problems.append(
+                f"act {act_id}: a reception must name the parent it receives, in `from`"
+            )
+            continue
+        where = f"act {act_id}: the reception from {source}"
+        if source in seen:
+            problems.append(f"{where} is declared twice")
+        seen.add(source)
+        if source not in parents:
+            problems.append(
+                f"{where} names no parent of this act; a reception IS an edge, and the edge "
+                "is drawn by `parents`"
+            )
+            continue
+        if source not in acts:
+            continue
+        if acts[source].get("line") == act.get("line"):
+            problems.append(
+                f"{where} stands on this act's own line; a reception is a crossing, and two "
+                "descents on one line converging is an ordinary merge with `reception_basis`"
+            )
+        if row.get("kind") not in RECEPTION_KINDS:
+            problems.append(f"{where} must state a kind, one of {RECEPTION_KINDS}")
+        for field, said in RECEPTION_EVIDENCE:
+            if not str(row.get(field) or "").strip():
+                problems.append(f"{where} must cite {said}, in `{field}`")
+        if precedes(str(act.get("date") or ""), str(acts[source].get("date") or "")):
+            problems.append(
+                f"{where} is dated {act.get('date')} and receives an act of "
+                f"{acts[source].get('date')}; a reception cannot precede what it receives"
+            )
+    if rows:
+        # THE RECEIVING STATION IS HELD ABOVE THE ORDINARY BAR. Rule 1 lets a
+        # station stand on a surviving printing with no act claimed, and lets a
+        # promulgated one stand with its instrument `not-found`. Neither may
+        # assert that one tradition received from another: a book that claims no
+        # act cannot report a reception, and an instrument nobody has read
+        # cannot be the thing that documents one.
+        if act.get("station_kind") != "promulgated":
+            problems.append(
+                f"act {act_id}: a {act.get('station_kind')} station receives across lines; a "
+                "reception is asserted by an act, and a station claiming no act cannot assert it"
+            )
+        if act.get("act_citation") not in ("cited-in-corpus", "cited-externally"):
+            problems.append(
+                f"act {act_id}: receives across lines with act_citation "
+                f"{act.get('act_citation')!r}; the instrument that documents a reception must "
+                "have been read, so a cross-line merge may not rest on one that was not"
+            )
+        if not carried_parents(act):
+            problems.append(
+                f"act {act_id}: every parent is a received one, so nothing on its own line "
+                "stands behind it. A SINGLE cross-line parent is a FORK -- a line born at "
+                "another line's act -- and is drawn by naming that parent and no reception"
+            )
+        elif parents and parents[0] in received:
+            problems.append(
+                f"act {act_id}: the received parent {parents[0]} stands first. The line's own "
+                "parent is the first parent, so that `git log --first-parent` follows the line"
+            )
+    # And the other direction, which is where the old blanket refusal stood: a
+    # merge that crosses a line and says nothing about why.
+    for parent in parents:
+        if parent not in acts or len(parents) < 2 or parent in received:
+            continue
+        if acts[parent].get("line") != act.get("line"):
+            problems.append(
+                f"act {act_id}: merges {parent}, which stands on line "
+                f"{acts[parent].get('line')}, and declares no reception from it. Lines rejoin "
+                "only where a reception is documented with the act cited, in "
+                "[[acts.receptions]]; where none is, draw parallel lines and no edge"
+            )
+    return problems
+
+
 # --- The state a station leaves ---------------------------------------------
 #
 # A state is a flat map from repository path to bytes. Keeping it flat is what
@@ -931,15 +1134,19 @@ def merge(parents: list[State], ancestor: State, act_id: str) -> State:
     return merged
 
 
-def common_ancestor(act_id: str, acts: dict[str, dict], states: dict[str, State], vocab: Vocabulary) -> State:
-    """The state every parent of ``act_id`` inherits from.
+def common_ancestor(parents: list[str], acts: dict[str, dict], states: dict[str, State], vocab: Vocabulary) -> State:
+    """The state the given parents all inherit from.
 
     Walks each parent's ancestry and takes the latest act all of them reach. A
     slice with no common ancestor merges against nothing, which is the right
     answer for two independent roots and would be a conflict machine for
     anything else -- so `check` refuses that case separately.
+
+    It is given the CARRIED parents and not the act's own list: a received
+    parent contributes ancestry to the graph and no state to the tree, so
+    letting it drag the base back to a common root the two traditions share
+    would rebase this line's own text on a state no act on it left.
     """
-    parents = acts[act_id].get("parents", [])
     reach: list[set[str]] = []
     for parent in parents:
         seen: set[str] = set()
@@ -956,6 +1163,21 @@ def common_ancestor(act_id: str, acts: dict[str, dict], states: dict[str, State]
         return State(vocab)
     latest = max(shared, key=lambda identifier: (acts[identifier].get("date", ""), identifier))
     return states[latest]
+
+
+def inherit(act_id: str, acts: dict[str, dict], states: dict[str, State], vocab: Vocabulary) -> State:
+    """The state an act starts from, before its own rows are applied.
+
+    One function, called by `build` where the history is written and by
+    `inherited` where the map's detail panel needs the same "before". Two
+    implementations of one merge would be two answers to what an act changed.
+    """
+    parents = carried_parents(acts[act_id])
+    return merge(
+        [states[parent] for parent in parents],
+        common_ancestor(parents, acts, states, vocab),
+        act_id,
+    )
 
 
 # --- Applying an act's departures --------------------------------------------
@@ -1149,8 +1371,38 @@ because an authority is known to have issued it. Nothing about the date, the
 authority or the reach of a change may be read off this station.
 """
 
+# What a reader of the emitted history must be told about a rejoining, in the
+# commit itself and in the act's own record. Two lines meeting is the strongest
+# claim this shape can make, and the second parent's diff would otherwise be
+# read as this act having rewritten a book it never touched.
+RECEPTION_NOTE = """\
+THIS STATION RECEIVES ACROSS LINES, and the parent it receives is a claim about
+DESCENT and not about these files. A reception carries the ANCESTRY of what it
+received and never its text: this tree is this line's own, and what the act took
+from the other tradition stands in its own departures, each citing its own
+basis. So `git diff` against the received parent shows two traditions, which is
+what they are, and not a change this act made.
+"""
 
-def render_act(act: dict) -> str:
+
+def reception_lines(act: dict, acts: dict[str, dict] | None = None) -> list[str]:
+    """One block per received parent: what it is, and what documents it."""
+    said: list[str] = []
+    for row in receptions_of(act):
+        source = str(row.get("from") or "")
+        where = f" on line {acts[source].get('line')}" if acts and source in acts else ""
+        said.extend([
+            "",
+            f"receives:   {source}{where} ({row.get('kind')})",
+            f"  instrument: {row.get('instrument')}",
+            f"  citation:   {row.get('citation')}",
+            "  basis:",
+            *(f"    {line}" for line in str(row.get("basis") or "").strip().splitlines()),
+        ])
+    return said
+
+
+def render_act(act: dict, acts: dict[str, dict] | None = None) -> str:
     printed = act.get("station_kind") == "printed"
     lines = [
         act["title"],
@@ -1173,6 +1425,10 @@ def render_act(act: dict) -> str:
     ])
     if act.get("parent_kind"):
         lines.append(f"edge:       {act['parent_kind']}")
+    if receptions_of(act):
+        lines.extend(["", RECEPTION_NOTE.strip()])
+        lines.extend(reception_lines(act, acts))
+        lines.append("")
     if act.get("same_instrument_as"):
         lines.append(f"also at:    {act['same_instrument_as']} (one instrument, two bodies of law)")
     if act.get("locus"):
@@ -1561,13 +1817,13 @@ def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]
         for parent in parents:
             if parent not in acts:
                 raise Problem(f"{act_id}: names parent {parent!r}, which is not an act")
-            if acts[parent]["line"] != act["line"] and len(parents) > 1:
-                raise Problem(f"{act_id}: merges across lines; lines never rejoin")
-        state = merge(
-            [states[parent] for parent in parents],
-            common_ancestor(act_id, acts, states, vocab),
-            act_id,
-        )
+        # Two lines rejoin only at a documented reception, and the evidence is
+        # demanded HERE, at the one function every verb gets its bytes from,
+        # rather than in `check` alone -- so a rejoining nobody evidenced is
+        # unwritable and not merely unrecommended.
+        for problem in reception_problems(act_id, act, acts):
+            raise Problem(problem)
+        state = inherit(act_id, acts, states, vocab)
         for mass in masses_by_act.get(act_id, []):
             state.masses[mass["id"]] = {
                 **{field: mass.get(field, "") for field in vocab.group_fields},
@@ -1594,7 +1850,7 @@ def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]
             carried = withheld_and_carried(unit, WITHHELD_WORDS["units"], f"unit {unit_id}")
             if carried:
                 raise Problem(f"{act_id}: {carried[0]}")
-        state.files[act_file(act)] = render_act(act)
+        state.files[act_file(act)] = render_act(act, acts)
         for witness in sorted(witnesses_by_act.get(act_id, []), key=lambda row: row["id"]):
             state.files[witness_file(witness)] = render_witness(witness)
         if act.get("via_unrepresented"):
@@ -1665,6 +1921,11 @@ def check(data: dict) -> dict:
             problems.append(
                 f"act {act_id}: more than one parent asserts a reception; cite it or draw no merge"
             )
+        # And where the parents stand on two lines, the merge asserts one
+        # tradition receiving from another, which is more than a synthesis. The
+        # rules are in `reception_problems`, so `build` refuses on the same
+        # words and nothing can be admitted by one and refused by the other.
+        problems.extend(reception_problems(act_id, act, acts))
         if "effect_established" not in act:
             problems.append(f"act {act_id}: must say whether its effect is established")
         if act.get("act_citation") not in ACT_CITATIONS:
@@ -1880,12 +2141,19 @@ def check(data: dict) -> dict:
             counted[kind] = counted.get(kind, 0) + 1
     stations: dict[str, int] = {}
     edges: dict[str, int] = {}
+    received: dict[str, int] = {}
     for act in acts.values():
         key = str(act.get("station_kind"))
         stations[key] = stations.get(key, 0) + 1
         if act.get("parents"):
             kind = str(act.get("parent_kind"))
-            edges[kind] = edges.get(kind, 0) + len(act["parents"])
+            # A received parent is not counted under the act's `parent_kind`:
+            # that field says how this act descends on ITS OWN line, and the
+            # cross-line edge rests on the reception's own instrument.
+            edges[kind] = edges.get(kind, 0) + len(carried_parents(act))
+        for row in receptions_of(act):
+            key = str(row.get("kind"))
+            received[key] = received.get(key, 0) + 1
     return {
         "acts": len(acts),
         "base_units": len(units),
@@ -1900,6 +2168,11 @@ def check(data: dict) -> dict:
         "lines": len(lines),
         "masses": len(masses),
         "order": order,
+        # The cross-line edges, counted apart from the rest. A rejoining is the
+        # strongest claim this record can make about two traditions, so it is
+        # reported as its own number and never folded into the edge tally.
+        "receptions": sum(len(receptions_of(act)) for act in acts.values()),
+        "reception_kinds": received,
         "roots": sorted(act_id for act_id, act in acts.items() if not act.get("parents")),
         "station_kinds": stations,
         "status": "ok",
@@ -1993,7 +2266,7 @@ def write_tree(repo: Path, files: dict[str, str]) -> str:
     return tree_of(nested)
 
 
-def commit_message(act: dict, kinds: list[str]) -> str:
+def commit_message(act: dict, kinds: list[str], acts: dict[str, dict] | None = None) -> str:
     # The act's true date leads the subject.
     #
     # It cannot lead the commit stamp. fast-import will write a negative
@@ -2017,6 +2290,8 @@ def commit_message(act: dict, kinds: list[str]) -> str:
     body = [f"{act['date']}  {mark}{act['title']}", ""]
     if printed:
         body.extend([PRINTED_WARNING.strip(), ""])
+    if receptions_of(act):
+        body.extend([RECEPTION_NOTE.strip(), ""])
     effect = act.get("effect", "").strip()
     if effect:
         body.extend([effect, ""])
@@ -2031,8 +2306,14 @@ def commit_message(act: dict, kinds: list[str]) -> str:
     body.append(f"Line: {act['line']}")
     body.append(f"Citation: {act['citation']}")
     if act.get("parents"):
-        body.append("Descends-from: " + ", ".join(act["parents"]))
+        body.append("Descends-from: " + ", ".join(carried_parents(act)))
         body.append("Descent-rests-on: " + str(act.get("parent_kind")))
+    for row in receptions_of(act):
+        source = str(row.get("from") or "")
+        line = f" on line {acts[source].get('line')}" if acts and source in acts else ""
+        body.append(f"Receives: {source}{line}")
+        body.append(f"Reception-kind: {row.get('kind')}")
+        body.append(f"Reception-rests-on: {row.get('instrument')}")
     if act.get("via_unrepresented"):
         body.append("Via-unrepresented: " + ", ".join(act["via_unrepresented"]))
     body.append("Effect-established: " + ("yes" if act.get("effect_established") else "not established"))
@@ -2070,11 +2351,18 @@ def emit(data: dict, out: Path) -> dict:
         act = acts[act_id]
         tree = write_tree(out, states[act_id].tree())
         header = [f"tree {tree}"]
+        # EVERY parent, received ones included, and in the order the record
+        # writes them. The tree above is this line's own -- a reception carries
+        # ancestry and not text -- but the commit's parent list is what
+        # `git merge-base` walks, so a rejoining that were left out of it would
+        # be a claim the graph makes and git cannot see. `check` refuses a
+        # received parent standing first, so the first parent is always the
+        # line's own and `git log --first-parent` follows the tradition.
         header.extend(f"parent {commits[parent]}" for parent in act.get("parents", []))
         timestamp = stamp(act["date"])
         identity = str(data.get("identity") or IDENTITY)
         header.extend([f"author {identity} {timestamp}", f"committer {identity} {timestamp}", ""])
-        raw = "\n".join(header) + "\n" + commit_message(act, kinds_used[act_id])
+        raw = "\n".join(header) + "\n" + commit_message(act, kinds_used[act_id], acts)
         # `git commit-tree` parses the date through git's own reader, which
         # rejects anything it cannot render; writing the object directly is the
         # only route for a shifted stamp, and is what the corpus this drew on does.
@@ -2117,6 +2405,10 @@ def graph(data: dict) -> dict:
             "parents": act.get("parents", []),
             "station_kind": act.get("station_kind"),
             "parent_kind": act.get("parent_kind"),
+            # Named, not counted. A reader of the graph must be able to tell a
+            # parent this act DESCENDS on from one it RECEIVED, because the two
+            # say different things about the same drawn edge.
+            "receives": sorted(received_parents(act)),
             "via_unrepresented": act.get("via_unrepresented", []),
         })
     return {"rows": rows, "status": "ok"}
@@ -2357,12 +2649,7 @@ def inherited(act_id: str, acts: dict[str, dict], states: dict[str, State]) -> S
     Not a reimplementation: it calls the two functions the build calls, in the
     same order, so a merge that refuses there refuses here.
     """
-    parents = acts[act_id].get("parents", [])
-    return merge(
-        [states[parent] for parent in parents],
-        common_ancestor(act_id, acts, states, states[act_id].vocab),
-        act_id,
-    )
+    return inherit(act_id, acts, states, states[act_id].vocab)
 
 
 def markers(state: State, prefix: str = UNESTABLISHED) -> dict[str, str]:
@@ -2620,6 +2907,15 @@ def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
                           "act_citation_scope")
             if act.get(field)
         }
+        if receptions_of(act):
+            # The prose of a rejoining, beside the diff a reader opened. The
+            # spine carries the instrument and the citation, which are short and
+            # every reader needs; the basis is long and belongs here.
+            edges["receptions"] = [
+                {field: str(row.get(field) or "").strip()
+                 for field in ("from", "kind", "instrument", "citation", "basis")}
+                for row in receptions_of(act)
+            ]
         write_json(root / slice_id / "station" / f"{name}.json", {**sets[act_id], "edges": edges})
         write_json(root / slice_id / "state" / f"{name}.json", standing(act_id, act, states[act_id]))
     for unit_id, history in sorted(histories.items()):
@@ -2787,6 +3083,30 @@ def structure(data: dict, out: Path) -> dict:
                 "authority": act.get("authority"),
                 "instrument": act.get("instrument"),
                 "parents": list(act.get("parents") or []),
+                # Which of those parents this act RECEIVED rather than descends
+                # on, with what documents each. The page draws a rejoining
+                # differently from a descent, and it may not have to guess which
+                # an edge is by comparing two stations' lines.
+                #
+                # Written only where there is one. This file is tracked and is
+                # rewritten by hand, so a key carrying an empty list on every
+                # station of every slice would restate three tracked artifacts
+                # to say that nothing rejoins -- which the absence of the key
+                # already says, in the same way the absence of an edge does.
+                **(
+                    {
+                        "receptions": [
+                            {
+                                "from": row.get("from"),
+                                "kind": row.get("kind"),
+                                "instrument": row.get("instrument"),
+                                "citation": row.get("citation"),
+                            }
+                            for row in receptions_of(act)
+                        ]
+                    }
+                    if receptions_of(act) else {}
+                ),
                 "via_unrepresented": list(act.get("via_unrepresented") or []),
                 "departures": row["departures"],
                 "changed": totals[act["id"]],
@@ -2958,12 +3278,18 @@ DISTINGUISHED = len(TEXTURES) * len(GREYS)
 
 # The width channel is the one section 9's constant band leaves free, and what
 # an edge here has left to say is what the descent rests on. Three tiers over
-# the five declared `parent_kind` values, because five widths inside one band
-# are not tellable apart in print and a grammar that claims five separates
-# three; the exact kind stays on the edge in `descent` for a reader who needs
-# it. Ordered strongest first, and the order is PARENT_KINDS' own.
+# the declared kinds, because that many widths inside one band are not tellable
+# apart in print and a grammar that claims them separates three; the exact kind
+# stays on the edge in `descent` for a reader who needs it. Ordered strongest
+# first, and the order is PARENT_KINDS' own.
+#
+# The RECEPTION kinds ride in the strongest tier, and not by courtesy: a
+# cross-line edge may not be drawn at all unless it cites the instrument that
+# documents the reception and where that instrument was read, which is the same
+# thing `act-states-it` asserts and is checked harder. A reception drawn thinner
+# than the descent beside it would say the opposite of what it must satisfy.
 DESCENT_TIERS = (
-    ("stated", "3", ("act-states-it", "book-states-it"),
+    ("stated", "3", ("act-states-it", "book-states-it", *RECEPTION_KINDS),
      "an instrument's own text, or the book's own title page, draws the edge"),
     ("attributed", "2", ("attributed",),
      "a scholarly attribution draws it, cited to its source"),
@@ -3286,8 +3612,10 @@ def apparatus(
     through_unrepresented = sum(1 for row in rows for _ in row.get("via_unrepresented") or [])
     kinds: dict[str, int] = {}
     for row in rows:
-        kind = str(acts[row["act"]].get("parent_kind") or "")
-        for _ in row["parents"]:
+        act = acts[row["act"]]
+        received = {str(item.get("from")): str(item.get("kind") or "") for item in receptions_of(act)}
+        for parent in row["parents"]:
+            kind = received.get(parent) or str(act.get("parent_kind") or "")
             kinds[kind] = kinds.get(kind, 0) + 1
 
     release = release_identity()
@@ -3413,9 +3741,17 @@ def apparatus(
             if counts["alone"] else ""
         ),
         f"station_kind: promulgated {counts['promulgated']}, printed {counts['printed']}.",
-        f"fork {counts['forks']}: a line is BORN at a station of another line. It is the"
-        " one edge that leaves a lane, and it is a birth and never a rejoining -- lines"
-        " here never rejoin.",
+        f"fork {counts['forks']}: a line is BORN at a station of another line. It leaves a"
+        " lane, and a birth is not a rejoining.",
+        (
+            f"reception {counts['receptions']}: a line REJOINS another, because an act says"
+            " it received from it and cites the instrument that says so. It is the only"
+            " edge that arrives in a lane from outside it, and it is the strongest claim"
+            " this sheet makes about two traditions."
+            if counts["receptions"] else
+            "No band here rejoins another: every cross-lane edge on this sheet is a birth,"
+            " and where two traditions merely coexist there is no edge at all."
+        ),
         "Descent carries no arrowhead. x is monotone in date, so direction is read off the"
         " axis, which is how stemmatology draws descent for the same reason.",
     ]
@@ -3443,8 +3779,10 @@ def apparatus(
             f"{name} {width} ({explanation}, {tiers.get(name, 0)} edges)"
             for name, width, _, explanation in DESCENT_TIERS
         )
-        + ". Three tiers over five declared kinds, because five widths inside one band are"
-        " not tellable apart; the exact kind stays on the edge in `descent`.",
+        + f". {len(DESCENT_TIERS)} tiers over "
+        + f"{sum(len(kinds) for _, _, kinds, _ in DESCENT_TIERS)} declared kinds, because that"
+        " many widths inside one band are not tellable apart; the exact kind stays on the"
+        " edge in `descent`.",
         "The three greys, as ink: "
         + ", ".join(f"{grey} {colour} at {black} per cent black" for grey, colour, black in GREYS)
         + f". Dash lengths are SVG stroke-dasharray values at the nominal band width of"
@@ -3512,11 +3850,12 @@ def plate(data: dict, out: Path) -> dict:
 
     The topology IS the content, so it is carried and not summarised. Parallel
     traditions are parallel lanes. An edge takes the line of the station it
-    arrives at, which makes a fork the one place a line touches another's
-    station -- the interchange of Rule 2 -- and leaves every other crossing
-    exactly what section 6 says no published metro map has a grammar for: two
-    lines that meet nowhere. There is no merge edge across lines to draw,
-    because `check` refuses one.
+    arrives at, so a cross-lane edge is one of exactly two things and says which
+    on itself: a FORK, where a line is born at another line's station, or a
+    RECEPTION, where a line rejoins another because an act documented the
+    receiving. Every other crossing on the sheet is what section 6 says no
+    published metro map has a grammar for -- two lines that meet nowhere -- and
+    that remains undrawn rather than invented.
 
     Undirected, with the parent always written on the left. Descent is read off
     the axis, since x is monotone in date, and stemmatology draws descent
@@ -3551,6 +3890,7 @@ def plate(data: dict, out: Path) -> dict:
     interchanges = 0
     termini = 0
     forks = 0
+    receptions = 0
     printed = 0
     tiers: dict[str, int] = {}
     for row in rows:
@@ -3610,14 +3950,27 @@ def plate(data: dict, out: Path) -> dict:
             )
             + ";"
         )
+        received = {str(item.get("from")): item for item in receptions_of(act)}
         for parent in parents:
             # The band is the line's identity and says nothing about strength;
             # the width says what the descent rests on and nothing about which
             # line it is. Two channels, one for each question, which is what
             # keeps the uncertainty grammar off the channel identity uses.
-            strength, width = descent_tier(str(act.get("parent_kind") or ""))
+            #
+            # A RECEIVED parent is drawn on the reception's own kind, because
+            # `parent_kind` says how this act descends on its own line and says
+            # nothing about the tradition it took from.
+            reception = received.get(parent)
+            crossing = acts[parent]["line"] != row["line"]
+            kind = str((reception or act).get("kind" if reception else "parent_kind") or "")
+            strength, width = descent_tier(kind)
             tiers[strength] = tiers.get(strength, 0) + 1
-            if acts[parent]["line"] != row["line"]:
+            if reception:
+                receptions += 1
+            elif crossing:
+                # A fork is a BIRTH: one parent, on another line, and the child
+                # is that line's first station. A rejoining is the other thing
+                # entirely and is counted as itself.
                 forks += 1
             edges.append(
                 "  "
@@ -3630,14 +3983,20 @@ def plate(data: dict, out: Path) -> dict:
                         ("line", row["line"]),
                         # What the edge rests on, carried so the plate can draw
                         # a weak descent as a weak one.
-                        ("descent", act.get("parent_kind") or ""),
+                        ("descent", kind),
                         ("strength", strength),
                         ("penwidth", width),
                         ("texture", key["texture"]),
                         ("dasharray", key["dasharray"]),
                         ("grey", key["grey"]),
                         ("color", key["colour"]),
-                        ("fork", "true" if acts[parent]["line"] != row["line"] else ""),
+                        ("fork", "true" if crossing and not reception else ""),
+                        # The one edge on the sheet where two traditions REJOIN,
+                        # marked as itself. A fork leaves a lane and a reception
+                        # arrives in one, and drawing them alike would be the
+                        # crossing-versus-interchange confusion section 6 says
+                        # no published metro map has a grammar for.
+                        ("reception", "true" if reception else ""),
                         (
                             "via_unrepresented",
                             ",".join(row.get("via_unrepresented") or []),
@@ -3657,6 +4016,7 @@ def plate(data: dict, out: Path) -> dict:
         "interchanges": interchanges,
         "termini": termini,
         "forks": forks,
+        "receptions": receptions,
         "printed": printed,
         "promulgated": len(rows) - printed,
         "alone": len(single),
@@ -3729,6 +4089,7 @@ def plate(data: dict, out: Path) -> dict:
         "interchanges": interchanges,
         "single_station_lines": single,
         "forks": forks,
+        "receptions": receptions,
         "descent_tiers": tiers,
         "apparatus": dict(block),
         # What the grammar separates, said in the report as well as on the
@@ -3767,10 +4128,20 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
               + f"; {len(payload['roots'])} roots")
         if payload["edge_kinds"]:
             print("edges rest on: " + ", ".join(f"{kind} {count}" for kind, count in sorted(payload["edge_kinds"].items())))
+        # Printed only where there are any, so a slice whose lines never rejoin
+        # says nothing about rejoining rather than reporting a zero.
+        if payload.get("receptions"):
+            print("lines rejoin at: " + ", ".join(
+                f"{kind} {count}" for kind, count in sorted(payload["reception_kinds"].items())))
         print("departure kinds used: " + (", ".join(f"{kind} {count}" for kind, count in sorted(kinds.items())) or "none"))
     elif verb == "graph":
         for row in payload["rows"]:
             edge = "root" if not row["parents"] else "<- " + ", ".join(row["parents"])
+            # Which of them it RECEIVED, said rather than left to a reader to
+            # work out by comparing two stations' lines. Printed only where
+            # there is one, so a slice whose lines never rejoin reads as it did.
+            if row.get("receives"):
+                edge += " (receives " + ", ".join(row["receives"]) + ")"
             if row["via_unrepresented"]:
                 edge += " (via unrepresented: " + ", ".join(row["via_unrepresented"]) + ")"
             marks = " [" + ",".join(row["departures"]) + "]" if row["departures"] else ""
@@ -3787,6 +4158,7 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             f"  roots {payload['roots']}, termini {payload['termini']}, "
             f"interchanges {payload['interchanges']}, "
             f"single-station lines {len(payload['single_station_lines'])}"
+            + (f", receptions {payload['receptions']}" if payload["receptions"] else "")
         )
         print(
             f"  monochrome: {payload['textures']} textures x {payload['greys']} greys "
