@@ -1,0 +1,241 @@
+#!/bin/sh
+# Test for `tools/tpt act-history`: exit 0 = pass (the stable gate).
+#
+# guidance/repository.md requires one of these beside every registered tool, and
+# this was the id that had none while the rule said it did. Nothing here writes
+# into the repository: every invocation reads the committed inventories, and the
+# one verb that writes is pointed at a sandbox.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="act-history"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+inventories="$repo/src/sources/inventories"
+holy_week="$inventories/roman-holy-week-acts-v1.toml"
+missal="$inventories/latin-missal-acts-v1.toml"
+law="$inventories/canon-law-acts-v1.toml"
+
+help="$(run_tool --help)"
+# The registry's usage line has gone stale on this tool before; the verbs the
+# tool actually accepts are the ones its own help names.
+for verb in check graph structure commonality emit; do
+	case "$help" in
+	*"$verb"*) ;;
+	*) echo "--help does not name the $verb verb" >&2; exit 1 ;;
+	esac
+done
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+
+# --- check -------------------------------------------------------------------
+
+# The default source is the Holy Week tracer.
+out="$(run_tool check)"
+case "$out" in
+*"ok: 12 acts, 2 lines"*) ;;
+*) echo "check on the default source: expected 12 acts on 2 lines, got: $out" >&2; exit 1 ;;
+esac
+
+expect_json() {
+	want="$1"
+	source="$2"
+	got="$(run_tool check --source "$source" --json)"
+	case "$got" in
+	*"$want"*) ;;
+	*) echo "check $source: expected $want in: $got" >&2; exit 1 ;;
+	esac
+}
+
+# The missal slice is the wide one: seventeen lines, and both station kinds, so
+# the weaker claim stands beside the stronger rather than replacing it.
+expect_json '"acts":59' "$missal"
+expect_json '"lines":17' "$missal"
+expect_json '"station_kinds":{"printed":26,"promulgated":33}' "$missal"
+# Fifteen of the seventeen lines stand as roots: where a line's other side has no
+# witness here, the branch is a root and its emptiness is the record.
+run_tool check --source "$missal" --json >missal-check.json
+python3 - <<'PY'
+import json
+
+document = json.load(open("missal-check.json"))
+assert len(document["roots"]) == 15, document["roots"]
+PY
+# A use kept in print with no act behind the continuity is still an edge, and it
+# declares what it rests on rather than passing as an act.
+expect_json '"use-continuity"' "$missal"
+# It extends the tracer rather than copying it, and says so.
+expect_json '"extends_chain":["roman-holy-week-acts-v1.toml","latin-missal-acts-v1.toml"]' "$missal"
+
+# The same shape reads a code, in the code's own words.
+expect_json '"acts":47' "$law"
+expect_json '"lines":4' "$law"
+expect_json '"unit_word":"canon"' "$law"
+
+# --- graph -------------------------------------------------------------------
+
+# Lines never rejoin. Asserted against the corpus rather than against a
+# fabricated act, because the rule is about what is recorded here. A single
+# cross-line parent is a FORK -- a line is born at an act on another line, and
+# that is how every line but the first begins. What may never happen is a MERGE
+# across lines: an act with two parents must find both on its own line, or the
+# drawing would join two lines that the record says never rejoined. The same
+# pass checks that the order is topological, which is the whole claim `graph`
+# makes and what lets a drawing place a station to the right of what it
+# descends from.
+for source in "$holy_week" "$missal" "$law"; do
+	run_tool graph --source "$source" --json >graph.json
+	python3 - "$source" <<'PY'
+import json
+import sys
+
+source = sys.argv[1]
+rows = json.load(open("graph.json"))["rows"]
+line = {row["act"]: row["line"] for row in rows}
+seen = set()
+forks = 0
+merges = 0
+for row in rows:
+    for parent in row["parents"]:
+        assert parent in line, f"{source}: {row['act']} descends from unknown {parent}"
+        assert parent in seen, f"{source}: {row['act']} stands before its parent {parent}"
+        if line[parent] != line[row["act"]]:
+            assert len(row["parents"]) == 1, (
+                f"{source}: {row['act']} on {line[row['act']]} merges a parent on"
+                f" {line[parent]}; lines never rejoin"
+            )
+            forks += 1
+    merges += len(row["parents"]) > 1
+    seen.add(row["act"])
+assert forks, f"{source}: no line is born at an act, so nothing here runs in parallel"
+if source.endswith("latin-missal-acts-v1.toml"):
+    # The slice the page opens on is the one that exercises the shape, and a
+    # merge is the part a straight track cannot show: it is a claim that a
+    # reception happened, and `check` refuses one that cites nothing.
+    assert merges, "the missal slice records no reception at all"
+PY
+done
+
+# A printed station reads as the weaker claim it is, in the graph as everywhere.
+case "$(run_tool graph --source "$missal")" in
+*"* praedicatorum"*) ;;
+*) echo "graph does not mark a printed station" >&2; exit 1 ;;
+esac
+
+# --- structure, and the manifest ---------------------------------------------
+
+# The manifest names what is THERE, not what the run built. A run into an empty
+# directory therefore names exactly the one slice it wrote.
+run_tool structure --source "$law" --out one >/dev/null
+python3 - <<'PY'
+import json
+
+document = json.load(open("one/structure/act-history/index.json"))
+assert [row["id"] for row in document["slices"]] == ["code-of-canon-law"], document
+assert document["default"] == "code-of-canon-law", document
+PY
+
+# A second slice into the same root joins it, and the landing slice is DECLARED
+# rather than sorted into: `code-of-canon-law` was written first and sorts first,
+# and the moment `latin-missal` is there the manifest opens on it.
+run_tool structure --source "$holy_week" --out one >/dev/null
+python3 - <<'PY'
+import json
+
+document = json.load(open("one/structure/act-history/index.json"))
+listed = [row["id"] for row in document["slices"]]
+assert listed == ["code-of-canon-law", "roman-holy-week"], document
+assert document["default"] == "code-of-canon-law", document
+PY
+
+run_tool structure --source "$missal" --out one >/dev/null
+python3 - <<'PY'
+import json
+import os
+
+document = json.load(open("one/structure/act-history/index.json"))
+root = "one/structure/act-history"
+
+# This run built one slice and the manifest names three: a file whose purpose is
+# to stop the page guessing a slice id must not go stale the moment somebody
+# rebuilds one of them.
+assert [row["id"] for row in document["slices"]] == [
+    "latin-missal", "code-of-canon-law", "roman-holy-week"], document
+
+# Declared, and read as a name. Row order alone would have kept the reader on
+# code-of-canon-law.
+assert document["default"] == "latin-missal", document
+
+held = {
+    "latin-missal": ("liturgy", 59, 17),
+    "code-of-canon-law": ("law", 47, 4),
+    "roman-holy-week": ("liturgy", 12, 2),
+}
+for row in document["slices"]:
+    # The row is the path the page composes, so the file must be at it: a
+    # manifest that advertised a 404 would be worse than the probe it replaced.
+    map_file = os.path.join(root, row["id"] + ".json")
+    assert os.path.isfile(map_file), map_file
+    payload = json.load(open(map_file))
+    assert payload["slice"] == row["id"], row
+    # And the counts are the file's own, never a second copy that can drift.
+    assert len(payload["stations"]) == row["stations"], row
+    assert len(payload["lines"]) == row["lines"], row
+    assert (row["vocabulary"], row["stations"], row["lines"]) == held[row["id"]], row
+PY
+
+# Byte-stable for unchanged inputs, manifest and map alike.
+cp one/structure/act-history/index.json first-index.json
+cp one/structure/act-history/latin-missal.json first-map.json
+run_tool structure --source "$missal" --out one >/dev/null
+if ! cmp -s first-index.json one/structure/act-history/index.json; then
+	echo "the manifest is not byte-stable across runs" >&2
+	exit 1
+fi
+if ! cmp -s first-map.json one/structure/act-history/latin-missal.json; then
+	echo "the map file is not byte-stable across runs" >&2
+	exit 1
+fi
+
+# A stray file beside the map files is not a slice and is not advertised as one.
+echo '{"schema":"something-else"}' >one/structure/act-history/notes.json
+# Nor is a copy filed under a name it does not answer to: the id is what the page
+# composes its fragment paths from, so a map naming some other slice is not
+# reachable there and listing it would be the 404 the manifest exists to stop.
+cp one/structure/act-history/latin-missal.json one/structure/act-history/alias.json
+run_tool structure --source "$holy_week" --out one >/dev/null
+for stray in '"notes"' '"alias"'; do
+	if grep -q "$stray" one/structure/act-history/index.json; then
+		echo "the manifest listed $stray, which is not a slice it can serve" >&2
+		exit 1
+	fi
+done
+
+# --- refusals ----------------------------------------------------------------
+
+if run_tool check --source missing.toml >/dev/null 2>&1; then
+	echo "expected a missing source to be refused" >&2
+	exit 1
+fi
+
+cat >wrong-schema.toml <<'TOML'
+acts_schema = 99
+record_type = "liturgical-act-history"
+slice = "wrong-schema"
+TOML
+if out="$(run_tool check --source wrong-schema.toml 2>&1)"; then
+	echo "expected an unknown acts_schema to be refused" >&2
+	exit 1
+fi
+case "$out" in
+*acts_schema*) ;;
+*) echo "expected the schema named in the complaint, got: $out" >&2; exit 1 ;;
+esac
+
+echo ok

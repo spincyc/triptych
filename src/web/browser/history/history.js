@@ -243,9 +243,10 @@
    * second slice should be reachable by asking for it rather than by editing a
    * page. Everything below reads the file the slice names; nothing here knows
    * what is in it. */
+  const MANIFEST = 'structure/act-history/index.json';
   const ASKED = new URLSearchParams(window.location.search).get('slice');
-  const SLICE = /^[a-z0-9][a-z0-9-]*$/.test(ASKED || '') ? ASKED : 'roman-holy-week';
-  const ROOT = 'structure/act-history/' + SLICE;
+  let SLICE = '';
+  let ROOT = '';
   const NS = 'http://www.w3.org/2000/svg';
 
   const COL = 190;   // horizontal distance between stations
@@ -1153,7 +1154,39 @@
     });
   }
 
-  T.loadJSON(ROOT + '.json').then(start).catch(function (error) {
+  /**
+   * Which slice this page opens on.
+   *
+   * `act-history structure` writes the manifest beside the map files it writes,
+   * naming exactly the slices that are THERE, and declaring which one to open.
+   * This page used to name one in its own source, which meant the landing slice
+   * was a fact about a browser file rather than about the record: it opened on
+   * the twelve-station tracer, two lines and one fork, which is the shape this
+   * drawing is least needed for.
+   *
+   * `default` is read, NEVER inferred from row order. The manifest does put the
+   * landing slice first, and relying on that would work today and break
+   * silently the day the rows were sorted for some unrelated reason.
+   *
+   * `?slice=` still overrides, and overrides without consulting the manifest —
+   * a slice built into a data root of one's own is reachable before anything
+   * lists it, which is what the parameter was for.
+   */
+  async function chosenSlice() {
+    if (/^[a-z0-9][a-z0-9-]*$/.test(ASKED || '')) return ASKED;
+    const file = await T.loadJSON(MANIFEST);
+    const slices = (file && file.slices) || [];
+    const declared = (file && file.default) || '';
+    if (slices.some(function (row) { return row && row.id === declared; })) return declared;
+    return (slices.length && slices[0] && slices[0].id) || '';
+  }
+
+  chosenSlice().then(function (slice) {
+    if (!slice) throw new Error(T.dataPath(MANIFEST) + ' names no slice to open');
+    SLICE = slice;
+    ROOT = 'structure/act-history/' + SLICE;
+    return T.loadJSON(ROOT + '.json').then(start);
+  }).catch(function (error) {
     T.clear(map);
     map.setAttribute('aria-busy', 'false');
     map.appendChild(T.el('p', 'placeholder',

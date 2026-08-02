@@ -162,9 +162,10 @@ or a `.md`/`.test` companion. Shared library code and tool data live in
 Python tests live in `tools/tests/`; `tests/tools/<id>.test` holds each tool's
 shell smoke test, and every registered id must have one. `tmt check` counts the
 registry and not the smoke tests, so the rule is enforced by
-`tools/tests/test_tool_registry.py`; one id is missing one as of 2026-08-01,
-`act-history`. A rule stated as enforced and checked by nothing is the
-apparatus committing the defect it exists to catch.
+`tools/tests/test_tool_registry.py`; every registered id has one as of
+2026-08-02, `act-history` having been the last without. A rule stated as
+enforced and checked by nothing is the apparatus committing the defect it
+exists to catch.
 
 Register a new tool with `tmt new <id>`. `make check` runs `tmt check`, which
 must stay green; it is skipped, not failed, where `tmt` is not installed.

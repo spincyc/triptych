@@ -9,7 +9,7 @@
       "purpose": "Build a liturgical slice's act-keyed history as a Git repository.",
       "requires": [],
       "stage": "draft",
-      "usage": "act-history {check,graph,emit} [--source PATH] [--out DIR] [--json]"
+      "usage": "act-history {check,graph,structure,commonality,emit} [--source PATH] [--out DIR] [--json]"
     },
     "artwork-library": {
       "idempotent": true,

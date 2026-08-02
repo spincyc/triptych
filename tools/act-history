@@ -82,6 +82,37 @@ DEFAULT_DATA = ROOT / "src" / "web" / "data"
 SCHEMA_KEY = "acts_schema"
 SCHEMA_VERSION = 1
 
+# What a map file declares itself to be. Written into every map file and read
+# back when the manifest is built, so a stray .json dropped beside them is not
+# advertised to the page as a slice.
+MAP_SCHEMA = "triptych-act-map/v1"
+
+# The manifest naming the slices that are there, beside the files it names.
+MAP_MANIFEST = "index.json"
+
+# The slice the history page opens on, DECLARED rather than fallen into.
+#
+# Sorted order would land a reader on `code-of-canon-law`, and alphabetical luck
+# is not a reason. The reason is that `latin-missal` is the only slice held here
+# that exercises the grammar this map was drawn for. Fifty-nine stations on
+# seventeen lines, of which fifteen are roots because the corpus holds no act
+# before them; five of those lines are ONE station and nothing more, which is a
+# use standing as a terminus and is the emptiness the record is making visible.
+# Lines cross without an interchange, because they never rejoin. Both station
+# kinds are on the drawing at once -- twenty-six printed against thirty-three
+# promulgated -- so the weaker claim is read beside the stronger rather than
+# wearing its clothes. And twelve edges rest on use-continuity, an edge kind no
+# other slice here uses.
+#
+# `roman-holy-week` is deeper in text per act and shows a reader a straight
+# track: twelve stations, two lines, one fork, one merge. A reader who opens the
+# page on it learns that this is a timeline, which is the one thing it is not.
+#
+# Revisable here and nowhere else. The page reads the name out of the manifest
+# and never infers it from row order, so changing this line moves the landing
+# slice and changing the order of the rows does not.
+LANDING_SLICE = "latin-missal"
+
 # guidance/recensions.md section 3. A departure that is not one of these is a
 # departure nobody agreed the meaning of.
 DEPARTURE_KINDS = ("absent", "added", "replaced", "renamed", "moved", "reslotted", "unrecorded")
@@ -2252,6 +2283,91 @@ def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
     return {act_id: sets[act_id]["totals"] for act_id in order}
 
 
+def held(root: Path) -> list[dict]:
+    """The slices that are THERE, read off the map files themselves.
+
+    Not the slices this run built. One `--source` run writes one map file, so a
+    manifest naming only what the run produced would drop every other slice the
+    reader can open the moment anybody rebuilt one of them -- and a file whose
+    whole purpose is to stop the page guessing a slice id must not itself
+    advertise a 404. Run into the site's data root it names all three; run into
+    an empty directory it names the one that was just written.
+
+    Each row is read out of the map file rather than out of the source, so the
+    manifest cannot disagree with the file the page will fetch. A map file is
+    admitted only if it says it is one and calls itself by the name it is filed
+    under: that is the name the page composes its fragment paths from, so a file
+    naming some other slice is not reachable at that path and is not listed.
+    """
+    listed = []
+    for path in sorted(root.glob("*.json")):
+        if path.name == MAP_MANIFEST:
+            continue
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        if not isinstance(payload, dict) or payload.get("schema") != MAP_SCHEMA:
+            continue
+        if payload.get("slice") != path.stem:
+            continue
+        listed.append(
+            {
+                "id": path.stem,
+                # Which words the slice keeps its fragments in. A page that
+                # cannot read this vocabulary is reading a slice it was not
+                # written for, and can say so before fetching anything.
+                "vocabulary": payload.get("vocabulary"),
+                "stations": len(payload.get("stations") or []),
+                "lines": len(payload.get("lines") or []),
+            }
+        )
+    # The landing slice first, then by id. The order is stable and states what
+    # it is; nothing reads the landing slice out of it.
+    listed.sort(key=lambda entry: (entry["id"] != LANDING_SLICE, entry["id"]))
+    return listed
+
+
+def landing_of(listed: list[dict]) -> str:
+    """The declared landing slice, or the first held one where it is not there.
+
+    Derived once and read twice -- into the manifest and into what `structure`
+    reports -- because a second copy of this rule is a prediction that the file
+    and the transcript will one day disagree about which slice the page opens.
+    """
+    if any(entry["id"] == LANDING_SLICE for entry in listed):
+        return LANDING_SLICE
+    return listed[0]["id"] if listed else ""
+
+
+def write_manifest(root: Path) -> tuple[Path, list[dict]]:
+    """Write the manifest naming the held slices and declaring the landing one."""
+    listed = held(root)
+    target = root / MAP_MANIFEST
+    if not listed:
+        return target, listed
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(
+        json.dumps(
+            {
+                # Named, and not merely first. A reader of this file should not
+                # have to infer the landing slice from row order, and a page
+                # that reads it must not trust that order: sorting is a fact
+                # about names and the landing slice is a judgement about which
+                # one shows a reader what this map is.
+                "default": landing_of(listed),
+                "slices": listed,
+            },
+            ensure_ascii=False,
+            sort_keys=True,
+            indent=1,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    return target, listed
+
+
 def structure(data: dict, out: Path) -> dict:
     """Write the browser's map file: the stations in order, whole.
 
@@ -2264,6 +2380,10 @@ def structure(data: dict, out: Path) -> dict:
     The spine holds no text. What each act changed, the state it left, and each
     unit's own history are written beside it as fragments and fetched only when
     a reader opens one.
+
+    The manifest is rewritten beside it, naming every slice that is there and
+    declaring which one the page opens on, so that no page has to guess a slice
+    id and none has to name one in its own source.
     """
     rows = graph(data)["rows"]
     known = {act["id"]: act for act in data["acts"]}
@@ -2307,7 +2427,7 @@ def structure(data: dict, out: Path) -> dict:
         )
     vocab = vocabulary_of(data)
     payload = {
-        "schema": "triptych-act-map/v1",
+        "schema": MAP_SCHEMA,
         "slice": slice_id,
         # Declared, so a page reads the fragments in the words the slice keeps
         # them in rather than assuming a missal. `group_key` is the key a state
@@ -2332,7 +2452,15 @@ def structure(data: dict, out: Path) -> dict:
         json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n",
         encoding="utf-8",
     )
-    return {"stations": len(stations), "lines": len(payload["lines"] or []), "written": str(target)}
+    manifest, listed = write_manifest(root)
+    return {
+        "stations": len(stations),
+        "lines": len(payload["lines"] or []),
+        "written": str(target),
+        "manifest": str(manifest),
+        "slices": [entry["id"] for entry in listed],
+        "default": landing_of(listed),
+    }
 
 
 # --- CLI ---------------------------------------------------------------------
@@ -2371,6 +2499,8 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
     elif verb == "structure":
         print(f"{payload['stations']} stations on {payload['lines']} lines")
         print(f"  -> {payload['written']}")
+        print(f"  -> {payload['manifest']}")
+        print(f"  slices there: {', '.join(payload['slices'])}; opens on {payload['default']}")
     elif verb == "commonality":
         for row in payload["pairs"]:
             base = ", ".join(row["shared_base"]) if row["shared_base"] else "NONE: no act stands behind both"
@@ -2400,7 +2530,7 @@ def main(argv: list[str] | None = None) -> int:
     for verb, help_text in (
         ("check", "validate the act history and its departures"),
         ("graph", "print the act graph in topological order"),
-        ("structure", "write the browser's map file"),
+        ("structure", "write the browser's map file and the manifest naming the slices"),
         ("commonality", "report what two lines share, by git merge-base"),
         ("emit", "write the Git repository"),
     ):
