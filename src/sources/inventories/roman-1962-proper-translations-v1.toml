@@ -12,7 +12,7 @@ translations_schema = 1
 record_type = "calendar-proper-translations"
 calendar = "roman-1962"
 target = "src/sources/calendars/roman-1962/propers.yaml"
-recorded_on = "2026-08-01"
+recorded_on = "2026-08-02"
 merge = """
 Each entry names one proper by mass key, form label and proper name. Set that
 proper's `translations` key to the entry's `translations` array verbatim: the
@@ -206,34 +206,92 @@ sha256 in its own `artifact.toml`, in the `artifact_sha256` of all 84 passage
 records, and in the prose of at least one tracked document, so correcting it is
 a co-ordinated change and not a lane-local one.
 
-The eight rows of the artifact that the page images contradict, with the
-printed reading, are:
+The rows of the artifact that the page images contradict were listed here as a
+table of eight, with their pages and leaves typed out beside them. That table is
+gone as of 2026-08-02, because the thing it described is now in the file: the
+artifact's wording is attached to every entry it reaches, and each contradicted
+locus carries a `disagreement` key on its own entry, beside the `printed_page`
+and `ia_leaf` the entry already held. A restatement is what this file keeps
+finding wrong in other people's records and it was carrying one of its own -- and
+the table was already short by one, because a ninth divergence appeared when
+`epiphany-2` was added on 2026-08-01 and nothing re-ran the comparison. See
+`second_witness` and `witness_disagreement`.
 
-  advent-4 collect (p. 69, n79)        `may hasten, what is delayed` - the
-                                       artifact drops the printed comma
-  quinquagesima collect (p. 111, n121) `all adversity Thro'.` - the artifact
-                                       adds a full stop the page does not print
-  quinquagesima postcommunion          `defended from all adversity.` - the
-    (p. 113, n123)                     artifact appends a `Thro'.` that the
-                                       page does not print at all
-  easter-sunday postcommunion          `Thro'-in the unity of the Holy Ghost.`
-    (p. 332, n340)                     - the artifact truncates it to `Thro'.`
-  easter-5 postcommunion               `Grant, O Lord by the power` - the
-    (p. 357, n365)                     artifact inserts a comma after `Lord`
-  pentecost collect (p. 375, n383)     `Thro'-in the unity of the same, &c.` -
-                                       the artifact truncates it to `Thro'.`
-  pentecost postcommunion              `Thro' our Lord-in the unity of the
-    (p. 378, n386)                     same, &c.` - the artifact truncates it
-  pentecost-6 collect (p. 407, n415)   `an increase of religion that thou
-                                       mayest improve` - the artifact inserts a
-                                       semicolon after `religion`
+Six of those eight are the artifact normalising the book's conclusions where the
+book is not uniform, which its own `transformation` note says it did not do. The
+ninth divergence is not of that kind: it is a comma.
 
-Six of the eight are the artifact normalising the book's conclusions where the
-book is not uniform, which its own `transformation` note says it did not do.
 Two transcriptions of one book will keep drifting; the standing rule is one
 derived table with no hand-typed restatement beside it, and this file is that
 restatement. It should end as `translations` inside propers.yaml derived from
 the artifact, not as a parallel reading of the same pages.
+"""
+
+second_witness = """
+Registered 2026-08-02. The artifact above is now a `[[sources]]` row of this
+file, `cummiskey-1861-transcription`, and its wording is attached to every entry
+it reaches as a second `[[entries.translations]]`. Nothing was translated, edited
+or chosen between: its rows are copied in as they stand, including the
+typographic apostrophe it uses and this file does not.
+
+What it reaches, measured and not assumed. The artifact carries 183 rows over 61
+temporal formularies. 153 of them answer an entry here and gained a second
+witness. The other 30 answer ten formularies this calendar cannot yet take:
+
+  9 formularies  the Vigil and the three Masses of Christmas, the Octave Day,
+                 the Epiphany, Ash Wednesday, the Ascension, and the Mass of the
+                 First Sunday after Pentecost -- every one of which propers.yaml
+                 still prints as a placeholder, so there is no Latin here for the
+                 English to answer and no entry to hang it on.
+  1 formulary    `corpus-christi`, whose Latin this calendar DOES print, and for
+                 which this file carries neither an entry nor an `untranslated`
+                 row. That is a hole in this file's own ledger, and it is
+                 recorded rather than closed: an oration taken from the artifact
+                 alone would be the first entry here resting on a reading nobody
+                 collated and nothing corroborates, which is not the standard the
+                 other 242 are held to. Three orations.
+
+Where it does not reach at all is Holy Week. The artifact's own `notes` exclude
+Palm Sunday, the rest of Holy Week and the Easter Vigil deliberately, so the
+seven orations this file once held with no evidence of any kind -- Palm Sunday's
+three, the Lord's Supper's Collect and Postcommunion, the Easter Vigil's Collect
+and Secret -- are all inside that exclusion, and the second witness was never
+going to reach them. It did not need to. The second collation pass of 2026-07-31
+read every one of the seven on the page image, and each carries `collated` and
+`collation_result` above. The count of entries here resting on no evidence of any
+kind was seven, is zero, and was closed by the page rather than by the sibling.
+"""
+
+witness_disagreement = """
+Derived on every run by `check-calendar-masses`, not recorded here: of the 153
+orations both transcriptions carry, they agree at 144 and disagree at 9, and the
+check prints both figures whether or not anything is wrong. Each of the 9 carries
+a `disagreement` key on its entry saying what the two read differently and which
+reading the page settled.
+
+The 45-in-153 rate under `sibling_transcription` is the rate BEFORE this file was
+corrected. 37 of those 45 were this file being wrong and have been fixed against
+the page; what remains is the 8 the artifact got wrong and has not been corrected
+for, plus one locus the 2026-07-31 comparison could not have seen, because this
+file then carried no entry for `epiphany-2` at all. That ninth is the argument for
+making the detector standing rather than running it once: it is a divergence that
+appeared after the hand comparison, and no hand was going to run it again.
+
+The check does not fail on a disagreement. It fails on an UNRECORDED one, and on
+a `disagreement` left at a locus where the two witnesses now agree. The line is
+drawn there and not at disagreement itself because the base rate is high -- 45 in
+153 before correction, and near a third of any future batch if it holds -- and a
+gate that is red on arrival gets silenced rather than answered, which is how a
+check stops meaning anything. A gate on the unrecorded case asks for one sentence
+per locus and cannot rot in either direction: a new divergence fails until
+somebody looks, and a note left behind by a correction fails until it is deleted.
+
+Agreement is checked too, in the one direction this file had already asserted it.
+50 entries carry `detector = "sibling-agrees"`, which until now was a claim typed
+beside the text and read by nothing; it is now held to the attached second witness
+and fails if the two differ or if there is no second witness to compare. All 50
+hold as recorded. That is worth having: of the 54 loci where the two
+transcriptions agreed before the collation, the reading was right at 54.
 """
 
 english_oration_census = """
@@ -413,6 +471,20 @@ unverified entry recorded as verified is a worse defect than the OCR error it
 hides. What it does not license is the inference that was drawn beside it. An
 absence recorded against a witness is a claim about a reader until someone has
 looked at the page.
+
+ADDENDUM, 2026-08-02. The `269` above has moved and this block cannot keep it.
+Resolving every `takes_from` in propers.yaml today gives 291 oration slots, not
+269: 242 covered here, 27 ledgered `untranslated`, and 22 accounted for by
+neither. Those 22 are the calendar lane's landings of the last two days -- the
+three Masses of All Souls, two Commons this file harvested only in part, four
+sanctoral Collects, and `corpus-christi`, whose three orations the sibling
+transcription does carry and which are discussed under `second_witness`. The
+figure will move again the next time a mass lands, and that is the real defect:
+NOTHING DERIVES IT. Every count in this block is a number somebody typed after
+running a query by hand, so each one is true on the day it was written and
+silently false afterwards. A `check-calendar-masses` verb that reports covered,
+ledgered and unaccounted per calendar would end the whole class, and is worth
+more than another dated correction to a paragraph.
 """
 
 untranslated_reach = """
@@ -472,20 +544,40 @@ label = "The Roman Missal translated into the English language for the use of th
 attests = "si-quid-est-1634"
 attests_kind = "date-bound"
 attests_basis = """
-The book names no Latin exemplar. It is a lay hand missal with no approbation,
-no imprimatur and no decree in its front matter, so nothing in it says which
-printing was on the translator's desk, and the edge rests on the date alone:
-1861 falls after Urban VIII's revision of 1634 and before Divino afflatu of
-1911, and the state it can be translating is the one si-quid-est-1634 left.
-That is a weak edge and is labelled as such, on the same footing as
-roman-missal-laity-1806 and cummiskey-1843 in roman-holy-week-acts-v1.toml; it
-is drawn only because a date bound is a real bound.
+The book names no Latin exemplar. It does carry an approbation: its title matter
+reads PUBLISHED WITH THE APPROBATION OF THE RIGHT REV. THE BISHOP OF
+PHILADELPHIA, which the edition record under
+src/sources/works/eugene-cummiskey/roman-missal-english-laity/ quotes in full.
+That is a diocesan leave to print, and it is the same kind of front matter the
+1962 Benziger witness carries under Francis Cardinal Spellman -- an ordinary
+approving a book for publication in his diocese, not a promulgation. It revises
+nothing and names no printing, so it makes this book no station in the descent
+of the rite and tells nobody which Latin printing was on the translator's desk.
 
-What it settles is the thing this file needed settled. 1861 stands ninety-four
-years before maxima-redemptionis-1955 and a century before editio-typica-1962,
-so every English word quoted from this book is pre-1955 English, whatever
-calendar serves it. The `caution` below has said so in prose since the file was
-written; this says it where a check can read it.
+The edge therefore rests on the date alone: 1861 falls after Urban VIII's
+revision of 1634 and before Divino afflatu of 1911, and the state it can be
+translating is the one si-quid-est-1634 left. That is a weak edge and is
+labelled as such, on the same footing as roman-missal-laity-1806 and
+cummiskey-1843 in roman-holy-week-acts-v1.toml; it is drawn only because a date
+bound is a real bound. The act history holds the same book on the same values,
+and check-calendar-masses refuses a disagreement between the two files, so this
+is a checked restatement rather than a second opinion.
+
+Corrected 2026-08-02. This paragraph said, from the day it was written, that the
+book carried "no approbation, no imprimatur and no decree in its front matter".
+Two records in this repository quote the approbation, so the claim was refutable
+without opening anything, and it was a claim about the strongest-looking front
+matter any of these witnesses has. The conclusion does not move -- an approbation
+is not a promulgation -- but the reason for it was wrong, and a right conclusion
+resting on a false premise is the kind of thing that survives by being agreed
+with. Nothing about the 1843 was carried over: that book's own record says no
+approbation was found in IT, and that is not evidence about this printing.
+
+What the edge settles is the thing this file needed settled. 1861 stands
+ninety-four years before maxima-redemptionis-1955 and a century before
+editio-typica-1962, so every English word quoted from this book is pre-1955
+English, whatever calendar serves it. The `caution` below has said so in prose
+since the file was written; this says it where a check can read it.
 """
 rights = "public-domain"
 rights_jurisdiction = "United States"
@@ -513,6 +605,60 @@ rights_basis = "Published in the United States in 1843, so in the public domain 
 role = "corroborating witness only. No entry in this file quotes the 1843 as its text: every `text` here is the 1861 printing's, and `witness` names cummiskey-1861 throughout. The 1843 is carried because it is an independent scan of an independent printing of the same translation, at the same page numbers, so a reading can be tested twice before a page image is opened. An entry marked `detector = \"second-printing-agrees\"` is one the two scans render alike; it has still never been seen on a page."
 caution = "The same caution as the 1861, and one more. Two printings of one translation are not one text: they differ in punctuation and in the conclusions they set, and this file has already recorded three places where they do. Agreement between them is evidence about the scans, not proof about the page."
 
+[[sources]]
+id = "cummiskey-1861-transcription"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+label = "The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861), in this project's transcription of its temporal orations"
+attests = "si-quid-est-1634"
+attests_kind = "date-bound"
+attests_basis = """
+The same book as cummiskey-1861 above and therefore the same edge, drawn on the
+same date bound and no stronger. A transcription attests what the printing it
+transcribes attests and not one thing more: this row exists because the reading
+is a second and independent one, not because the object read is a second book.
+
+One limit, stated rather than left to be discovered. The act history carries the
+witness under the id `cummiskey-1861`, and `check-calendar-masses` binds a source
+row to the act history by that id, so it is the row above and not this one that
+the cross-check actually holds. This row is given a distinct id because it names a
+different artifact of the same printing and a reader has to be able to tell the
+two rows apart; the values are copied from the row the check does hold, and if
+they ever drift the drift will be visible here rather than caught there.
+"""
+rights = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The 1861 printing's own English, on the same United States publication-date basis as the edition row above, and with the same caveat for a reader elsewhere. What differs is the bytes: this row's `artifact_id` names a file this repository TRACKS, a project-made tab-separated transcription carrying only the printing's own wording, where the edition row's names a remote Google-produced text layer whose rights the source library records as unresolved. A faithful transcription of a public-domain text originates no new copyright, so nothing here is the project's to license; the artifact record states the same and pins the file by sha256."
+role = """
+Second witness, and the only row in this file whose text is attached beside
+another's rather than instead of it. `witness` on every entry still names
+cummiskey-1861, because that is the reading this file collated and corrected; this
+row's wording is carried as a second `[[entries.translations]]` on each of the 153
+orations it reaches, keyed `(lang, source_id)` so the two stand side by side.
+
+It is NOT a corroborating-only witness in the way cummiskey-1843 is. The 1843 is a
+second printing consulted before a page is opened; this is a second reading of the
+same pages, made independently of the first out of the same text layer, and its
+disagreements with the first are the sharpest error detector this corpus has: at
+the 45 loci where the two once differed sat every one of the 38 errors the site was
+serving, and at the 54 where they agreed the reading was right 54 times out of 54.
+`check-calendar-masses` now derives that comparison on every run; see
+`witness_disagreement`.
+"""
+# One line, unlike the prose above it, because `mass-propers` copies `caution`
+# into the browser's witness manifest and a reader is shown it beside the offer.
+caution = "The same pre-1955 caution as the printing it transcribes, and one that belongs to this row alone: it is uncorrected. Nine of its readings are contradicted by the 1861 page images, each named in the `disagreement` key of the entry that holds it, and the artifact has not been amended because its bytes are pinned by sha256 in its own artifact record, in 84 passage records and in tracked document prose, so correcting it is a co-ordinated change and not a lane-local one. It is offered rather than served: the collated edition witness above reaches more of the missal and is the default at every proper."
+publication_decision = """
+Attaching 144 of this witness's readings and suppressing the 9 the page images
+contradict was considered and refused. It would make the row a curated blend of
+two transcriptions rather than a witness to either, which is the hand-typed
+restatement this repository keeps deleting; and the 9 are the evidence that the
+detector works, so hiding them would hide the reason for having it. What makes
+the refusal safe is the ordering `mass-propers` already applies -- witnesses are
+ranked by how much of the missal each reaches, and the collated edition witness
+covers 242 entries to this one's 153 -- so the corrected reading is the default
+at every proper and this one is an offered alternative under the `caution` above.
+"""
 
 [[entries]]
 mass = "advent-1"
@@ -526,6 +672,14 @@ detector = "sibling-agrees"
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Exert, we beseech thee, O Lord, thy power, and come: that by thy protection we may be freed from the imminent dangers of our sins, and be saved by thy mercy, who liveth and reigneth, &c.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
 text = """
 Exert, we beseech thee, O Lord, thy power, and come: that by thy protection we may be freed from the imminent dangers of our sins, and be saved by thy mercy, who liveth and reigneth, &c.
 """
@@ -549,6 +703,14 @@ text = """
 Grant, O Lord, that these sacred mysteries may cleanse us by their powerful virtue, and bring us with greater purity to him, who was the author and institutor of them. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, O Lord, that these sacred mysteries may cleanse us by their powerful virtue, and bring us with greater purity to him, who was the author and institutor of them. Thro’.
+"""
+
 [[entries]]
 mass = "advent-1"
 form = ""
@@ -568,6 +730,14 @@ text = """
 May we receive, O Lord, thy mercy in the midst of thy temple, that with due honour we may prepare for the approaching solemnity of our reparation. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May we receive, O Lord, thy mercy in the midst of thy temple, that with due honour we may prepare for the approaching solemnity of our reparation. Thro’.
+"""
+
 [[entries]]
 mass = "advent-2"
 form = ""
@@ -580,6 +750,14 @@ detector = "sibling-agrees"
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Stir up, O Lord, our hearts to prepare the ways of thy only begotten Son: that by his coming we may be enabled to serve thee with pure minds. Who livest.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
 text = """
 Stir up, O Lord, our hearts to prepare the ways of thy only begotten Son: that by his coming we may be enabled to serve thee with pure minds. Who livest.
 """
@@ -603,6 +781,14 @@ text = """
 Be appeased, O Lord, we beseech thee, by our humble prayers and sacrifices; and although we can allege no deserts on our part, grant us thy protection. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Be appeased, O Lord, we beseech thee, by our humble prayers and sacrifices; and although we can allege no deserts on our part, grant us thy protection. Thro’.
+"""
+
 [[entries]]
 mass = "advent-2"
 form = ""
@@ -618,6 +804,14 @@ collation_result = "corrected"
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being filled, O Lord, with this spiritual food, we humbly beseech thee, to teach us, by partaking of this mystery, to despise earthly things, and to love such as are heavenly.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
 text = """
 Being filled, O Lord, with this spiritual food, we humbly beseech thee, to teach us, by partaking of this mystery, to despise earthly things, and to love such as are heavenly.
 """
@@ -641,6 +835,14 @@ text = """
 Bend thine ear, O Lord, we beseech thee, to our prayers, and enlighten the darkness of our minds by the grace of thy visitation. Who livest.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Bend thine ear, O Lord, we beseech thee, to our prayers, and enlighten the darkness of our minds by the grace of thy visitation. Who livest.
+"""
+
 [[entries]]
 mass = "advent-3"
 form = ""
@@ -658,6 +860,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May we always, O Lord, offer thee this sacrifice of our devotion, both to comply with the institution of these sacred mysteries, and wonderfully to procure ourselves that salvation which thou designest us. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May we always, O Lord, offer thee this sacrifice of our devotion, both to comply with the institution of these sacred mysteries, and wonderfully to procure ourselves that salvation which thou designest us. Thro’.
 """
 
 [[entries]]
@@ -679,6 +889,14 @@ text = """
 We implore, O Lord, thy mercy, that these divine helps having cleansed us from sin, may prepare us for the ensuing solemnity.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We implore, O Lord, thy mercy, that these divine helps having cleansed us from sin, may prepare us for the ensuing solemnity.
+"""
+
 [[entries]]
 mass = "advent-4"
 form = ""
@@ -689,6 +907,7 @@ printed_page = "69"
 ia_leaf = 79
 collated = "page-image, 2026-07-31"
 collation_result = "corrected"
+disagreement = "the artifact drops the comma this file prints in `may hasten, what is delayed`; the page settles it for this file."
 
 [[entries.translations]]
 lang = "en"
@@ -696,6 +915,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Exert, we beseech thee, O Lord, thy power, and come: and succour us by thy great might: that by the assistance of thy grace, thy indulgent mercy may hasten, what is delayed by our sins. Who livest.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Exert, we beseech thee, O Lord, thy power, and come: and succour us by thy great might: that by the assistance of thy grace, thy indulgent mercy may hasten what is delayed by our sins. Who livest.
 """
 
 [[entries]]
@@ -714,6 +941,14 @@ text = """
 Hear us, O Lord, we beseech thee, and being appeased by these offerings, grant they may increase our devotion, and advance our salvation.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Hear us, O Lord, we beseech thee, and being appeased by these offerings, grant they may increase our devotion, and advance our salvation.
+"""
+
 [[entries]]
 mass = "advent-4"
 form = ""
@@ -726,6 +961,14 @@ detector = "sibling-agrees"
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Having received what has been offered to thee, O Lord, grant, we beseech thee, that the more frequently we partake of these sacred mysteries, the more our devotion may increase.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
 text = """
 Having received what has been offered to thee, O Lord, grant, we beseech thee, that the more frequently we partake of these sacred mysteries, the more our devotion may increase.
 """
@@ -749,6 +992,14 @@ text = """
 O almighty and eternal God, regulate our actions according to thy divine will, that, in the name of thy beloved Son, we may abound in good works. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O almighty and eternal God, regulate our actions according to thy divine will, that, in the name of thy beloved Son, we may abound in good works. Thro’.
+"""
+
 [[entries]]
 mass = "sunday-within-octave-of-nativity"
 form = ""
@@ -765,6 +1016,14 @@ text = """
 Grant, we beseech thee, O Almighty God, that this sacrifice offered to thy Divine Majesty, may obtain for us the grace of true devotion, and a happy eternity. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Almighty God, that this sacrifice offered to thy Divine Majesty, may obtain for us the grace of true devotion, and a happy eternity. Thro’.
+"""
+
 [[entries]]
 mass = "sunday-within-octave-of-nativity"
 form = ""
@@ -779,6 +1038,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May the efficacy of this sacrament, O Lord, cleanse us from our sins, and obtain for us the accomplishment of our just desires. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the efficacy of this sacrament, O Lord, cleanse us from our sins, and obtain for us the accomplishment of our just desires. Thro’.
 """
 
 [[entries]]
@@ -801,6 +1068,14 @@ text = """
 According to thy divine mercy, O Lord, receive the vows of thy people, who pour forth their prayers to thee; that they may know what their duty requireth of them, and be able to comply with what they know. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+According to thy divine mercy, O Lord, receive the vows of thy people, who pour forth their prayers to thee; that they may know what their duty requireth of them, and be able to comply with what they know. Thro’.
+"""
+
 [[entries]]
 mass = "mass-of-the-first-sunday-after-epiphany"
 form = ""
@@ -819,6 +1094,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May the sacrifice we have offered to thee, O Lord, always enliven and defend us. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the sacrifice we have offered to thee, O Lord, always enliven and defend us. Thro’.
 """
 
 [[entries]]
@@ -841,6 +1124,14 @@ text = """
 Grant we humbly beseech thee, O Almighty God, that those whom thou refreshest with thy sacraments, may, by a life well-pleasing to thee, worthily serve thee. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant we humbly beseech thee, O Almighty God, that those whom thou refreshest with thy sacraments, may, by a life well-pleasing to thee, worthily serve thee. Thro’.
+"""
+
 [[entries]]
 mass = "epiphany-2"
 form = ""
@@ -852,6 +1143,7 @@ ia_leaf = 105
 collated = "page-image, 2026-08-01"
 collation_result = "recorded from the page"
 witness_note = "This file recorded all three orations of this Sunday as untranslated, on the ground that the block the book prints for it could not be identified in the text layer. The block is there and is not hard to see once the witness's calendar is allowed for. The 1861 printing gives the Second Sunday after the Epiphany to the Feast of the Holy Name of Jesus, so the Sunday's own orations stand inside that Mass as commemorations, each headed `of the Sunday` -- COLLECT of the Sunday at p. 95, SECRET of the Sunday at p. 96, P. COMM. of the Sunday at p. 97. A matcher looking for a heading naming the Sunday finds a feast instead and reports the Sunday absent."
+disagreement = "the artifact drops the comma this file prints in `supreme Ruler, both of heaven and earth`. This locus was outside the 2026-07-31 comparison of the two transcriptions, because this file then carried no entry for `epiphany-2` at all; the wording here was read off the page image on 2026-08-01 and the artifact has never been collated at it. The page settles it for this file, and this is the divergence the hand comparison could not have found."
 
 [[entries.translations]]
 lang = "en"
@@ -859,6 +1151,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O almighty and eternal God, supreme Ruler, both of heaven and earth, mercifully give ear to the prayers of thy people, and grant us peace in our time. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O almighty and eternal God, supreme Ruler both of heaven and earth, mercifully give ear to the prayers of thy people, and grant us peace in our time. Thro’.
 """
 
 [[entries]]
@@ -881,6 +1181,14 @@ text = """
 Sanctify, O Lord, our offerings, and cleanse us from the stains of our sins. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Sanctify, O Lord, our offerings, and cleanse us from the stains of our sins. Thro’.
+"""
+
 [[entries]]
 mass = "epiphany-2"
 form = ""
@@ -899,6 +1207,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May the efficacy of thy power, O Lord, be increased in us, that being fed with thy divine sacraments, we may, thro' thy bounty, be prepared to receive what they promise. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the efficacy of thy power, O Lord, be increased in us, that being fed with thy divine sacraments, we may, thro’ thy bounty, be prepared to receive what they promise. Thro’.
 """
 
 [[entries]]
@@ -920,6 +1236,14 @@ text = """
 O almighty and eternal God, mercifully regard our weakness, and stretch forth the right hand of thy majesty to protect us. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O almighty and eternal God, mercifully regard our weakness, and stretch forth the right hand of thy majesty to protect us. Thro’.
+"""
+
 [[entries]]
 mass = "epiphany-3"
 form = ""
@@ -934,6 +1258,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May this offering, O Lord, we beseech thee, cleanse away our sins: and sanctify the bodies and souls of thy servants, to prepare them for worthily celebrating this sacrifice. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May this offering, O Lord, we beseech thee, cleanse away our sins: and sanctify the bodies and souls of thy servants, to prepare them for worthily celebrating this sacrifice. Thro’.
 """
 
 [[entries]]
@@ -952,6 +1284,14 @@ text = """
 We beseech thee, O Lord, that we, to whom thou vouchsafest the use of these great mysteries, may be made truly worthy to receive the benefits thereof. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We beseech thee, O Lord, that we, to whom thou vouchsafest the use of these great mysteries, may be made truly worthy to receive the benefits thereof. Thro’.
+"""
+
 [[entries]]
 mass = "epiphany-4"
 form = ""
@@ -966,6 +1306,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O God, who knowest that thro’ human frailty we are not able to subsist amidst so many dangers, grant us health of soul and body; that whatsoever we suffer for our sins, we may overcome by thy assistance. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who knowest that thro’ human frailty we are not able to subsist amidst so many dangers, grant us health of soul and body; that whatsoever we suffer for our sins, we may overcome by thy assistance. Thro’.
 """
 
 [[entries]]
@@ -987,6 +1335,14 @@ text = """
 Grant, we beseech thee, O Almighty God, that the offering of this sacrifice may always cleanse our frailty from all evil, and be a protection to us. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Almighty God, that the offering of this sacrifice may always cleanse our frailty from all evil, and be a protection to us. Thro’.
+"""
+
 [[entries]]
 mass = "epiphany-4"
 form = ""
@@ -1004,6 +1360,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May thy gifts, which we have partaken of, O God, detach us from all earthly pleasures, and ever refresh and strengthen us with heavenly food. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May thy gifts, which we have partaken of, O God, detach us from all earthly pleasures, and ever refresh and strengthen us with heavenly food. Thro’.
 """
 
 [[entries]]
@@ -1025,6 +1389,14 @@ text = """
 Preserve, we beseech thee, O Lord, thy family by thy constant mercy, that we, who confide solely in the support of thy heavenly grace, may be always defended by thy protection. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Preserve, we beseech thee, O Lord, thy family by thy constant mercy, that we, who confide solely in the support of thy heavenly grace, may be always defended by thy protection. Thro’.
+"""
+
 [[entries]]
 mass = "epiphany-5"
 form = ""
@@ -1042,6 +1414,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 We offer thee, O Lord, this sacrifice of propitiation: that thou wouldst mercifully forgive us our sins, and guide our tottering hearts. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We offer thee, O Lord, this sacrifice of propitiation: that thou wouldst mercifully forgive us our sins, and guide our tottering hearts. Thro’.
 """
 
 [[entries]]
@@ -1063,6 +1443,14 @@ text = """
 We beseech thee, O Almighty God, that we may one day receive the effects of that salvation, of which we have received the pledge in these mysteries. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We beseech thee, O Almighty God, that we may one day receive the effects of that salvation, of which we have received the pledge in these mysteries. Thro’.
+"""
+
 [[entries]]
 mass = "epiphany-6"
 form = ""
@@ -1082,6 +1470,14 @@ text = """
 Grant, we beseech thee, O Almighty God, that being always intent upon what is reasonable and just, we may, both in word and deed, perform what is acceptable to thee. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Almighty God, that being always intent upon what is reasonable and just, we may, both in word and deed, perform what is acceptable to thee. Thro’.
+"""
+
 [[entries]]
 mass = "epiphany-6"
 form = ""
@@ -1097,6 +1493,14 @@ collation_result = "confirmed"
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May this oblation, O God, we beseech thee, cleanse, renew, govern and protect us.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
 text = """
 May this oblation, O God, we beseech thee, cleanse, renew, govern and protect us.
 """
@@ -1121,6 +1525,14 @@ text = """
 Being fed, O Lord, with heavenly dainties, we beseech thee, that we may always hunger after them, as they preserve our life. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Being fed, O Lord, with heavenly dainties, we beseech thee, that we may always hunger after them, as they preserve our life. Thro’.
+"""
+
 [[entries]]
 mass = "septuagesima"
 form = ""
@@ -1140,6 +1552,14 @@ text = """
 Mercifully hear, we beseech thee, O Lord, the prayers of thy people: that we who are justly afflicted for our sins, may be mercifully delivered for the glory of thy name. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Mercifully hear, we beseech thee, O Lord, the prayers of thy people: that we who are justly afflicted for our sins, may be mercifully delivered for the glory of thy name. Thro’.
+"""
+
 [[entries]]
 mass = "septuagesima"
 form = ""
@@ -1153,6 +1573,14 @@ boundary_restored = true
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Having received, O Lord, our offerings and prayers, cleanse us, we beseech thee, by these heavenly mysteries, and mercifully hear us.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
 text = """
 Having received, O Lord, our offerings and prayers, cleanse us, we beseech thee, by these heavenly mysteries, and mercifully hear us.
 """
@@ -1176,6 +1604,14 @@ text = """
 May thy faithful, O God, be strengthened by these thy mysteries; that receiving them, they may still desire them; and desiring them may eternally receive them. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May thy faithful, O God, be strengthened by these thy mysteries; that receiving them, they may still desire them; and desiring them may eternally receive them. Thro’.
+"""
+
 [[entries]]
 mass = "sexagesima"
 form = ""
@@ -1193,6 +1629,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O God, who seest that we place no confidence in any thing we do: mercifully grant that, by the protection of the Doctor of the Gentiles, we may be defended against all adversity. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who seest that we place no confidence in any thing we do: mercifully grant that, by the protection of the Doctor of the Gentiles, we may be defended against all adversity. Thro’.
 """
 
 [[entries]]
@@ -1215,6 +1659,14 @@ text = """
 May the sacrifice we have offered to thee, O Lord, always enliven us and defend us. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the sacrifice we have offered to thee, O Lord, always enliven us and defend us. Thro’.
+"""
+
 [[entries]]
 mass = "sexagesima"
 form = ""
@@ -1235,6 +1687,14 @@ text = """
 Grant, we humbly beseech thee, O Almighty God, that those whom thou refreshest with thy sacraments, may, by a life well pleasing to thee, worthily serve thee. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we humbly beseech thee, O Almighty God, that those whom thou refreshest with thy sacraments, may, by a life well pleasing to thee, worthily serve thee. Thro’.
+"""
+
 [[entries]]
 mass = "quinquagesima"
 form = ""
@@ -1245,6 +1705,7 @@ printed_page = "111"
 ia_leaf = 121
 collated = "page-image, 2026-07-31"
 collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
+disagreement = "the artifact prints a full stop after `adversity` that the page does not; the page sets `all adversity Thro'.` as this file has it."
 
 [[entries.translations]]
 lang = "en"
@@ -1252,6 +1713,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Mercifully hear our prayers, we beseech thee, O Lord, and being freed from the chains of our sins, preserve us from all adversity Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Mercifully hear our prayers, we beseech thee, O Lord, and being freed from the chains of our sins, preserve us from all adversity. Thro’.
 """
 
 [[entries]]
@@ -1273,6 +1742,14 @@ text = """
 May this offering, we beseech thee, O Lord, cleanse away our sins: and sanctify the bodies and souls of thy servants, to prepare them for worthily celebrating this sacrifice. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May this offering, we beseech thee, O Lord, cleanse away our sins: and sanctify the bodies and souls of thy servants, to prepare them for worthily celebrating this sacrifice. Thro’.
+"""
+
 [[entries]]
 mass = "quinquagesima"
 form = ""
@@ -1284,6 +1761,7 @@ ia_leaf = 123
 collated = "page-image, 2026-07-31"
 collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
 boundary_restored = true
+disagreement = "the artifact appends a `Thro'.` the page does not print at all; the page ends the oration where this file ends it."
 
 [[entries.translations]]
 lang = "en"
@@ -1291,6 +1769,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 We beseech thee, O Almighty God, that we who have taken this heavenly food, may by it be defended from all adversity.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We beseech thee, O Almighty God, that we who have taken this heavenly food, may by it be defended from all adversity. Thro’.
 """
 
 [[entries]]
@@ -1312,6 +1798,14 @@ text = """
 O God, who purifiest thy Church by the yearly observation of Lent: grant, that what thy children endeavour to obtain of thee by abstinence, they may put in execution by good works. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who purifiest thy Church by the yearly observation of Lent: grant, that what thy children endeavour to obtain of thee by abstinence, they may put in execution by good works. Thro’.
+"""
+
 [[entries]]
 mass = "lent-1"
 form = ""
@@ -1328,6 +1822,14 @@ text = """
 We offer thee, O Lord, in the most solemn manner, this sacrifice at the beginning of Lent, humbly beseeching thee, that as we retrench from the food of our bodies, we may also refrain from all noxious pleasures. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We offer thee, O Lord, in the most solemn manner, this sacrifice at the beginning of Lent, humbly beseeching thee, that as we retrench from the food of our bodies, we may also refrain from all noxious pleasures. Thro’.
+"""
+
 [[entries]]
 mass = "lent-1"
 form = ""
@@ -1342,6 +1844,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May the holy oblation, O Lord, of thy sacrament, give us a new life, that, by laying aside the old man, it may bring us to the participation of this saving mystery. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the holy oblation, O Lord, of thy sacrament, give us a new life, that, by laying aside the old man, it may bring us to the participation of this saving mystery. Thro’.
 """
 
 [[entries]]
@@ -1363,6 +1873,14 @@ text = """
 O God, who seest how destitute we are of all strength, preserve us both within and without, that our bodies may be free from all adversity, and our souls purified from all evil thoughts. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who seest how destitute we are of all strength, preserve us both within and without, that our bodies may be free from all adversity, and our souls purified from all evil thoughts. Thro’.
+"""
+
 [[entries]]
 mass = "lent-2"
 form = ""
@@ -1380,6 +1898,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Look down, O Lord, we beseech thee, on this our sacrifice, that it may increase our devotion, and procure our salvation. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Look down, O Lord, we beseech thee, on this our sacrifice, that it may increase our devotion, and procure our salvation. Thro’.
 """
 
 [[entries]]
@@ -1401,6 +1927,14 @@ text = """
 Grant we humbly beseech thee, O Almighty God, that those, whom thou hast refreshed with thy sacraments, may worthily serve thee in the conduct of their lives. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant we humbly beseech thee, O Almighty God, that those, whom thou hast refreshed with thy sacraments, may worthily serve thee in the conduct of their lives. Thro’.
+"""
+
 [[entries]]
 mass = "lent-3"
 form = ""
@@ -1417,6 +1951,14 @@ text = """
 Be attentive, we beseech thee, O Almighty God, to the prayers of thy servants: and stretch forth the arm of thy divine majesty in our defence. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Be attentive, we beseech thee, O Almighty God, to the prayers of thy servants: and stretch forth the arm of thy divine majesty in our defence. Thro’.
+"""
+
 [[entries]]
 mass = "lent-3"
 form = ""
@@ -1431,6 +1973,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May this offering, O Lord, we beseech thee, cleanse us from our sins, and sanctify the bodies and souls of thy servants for the celebrating of this sacrifice. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May this offering, O Lord, we beseech thee, cleanse us from our sins, and sanctify the bodies and souls of thy servants for the celebrating of this sacrifice. Thro’.
 """
 
 [[entries]]
@@ -1452,6 +2002,14 @@ text = """
 Mercifully, O Lord, we beseech thee, deliver us from all guilt and from all danger, since thou admittest us to be partakers of this great mystery. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Mercifully, O Lord, we beseech thee, deliver us from all guilt and from all danger, since thou admittest us to be partakers of this great mystery. Thro’.
+"""
+
 [[entries]]
 mass = "lent-4"
 form = ""
@@ -1466,6 +2024,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Grant, we beseech thee, O Almighty God, that we, who are justly afflicted according to our demerits, may be relieved by thy comforting grace. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Almighty God, that we, who are justly afflicted according to our demerits, may be relieved by thy comforting grace. Thro’.
 """
 
 [[entries]]
@@ -1487,6 +2053,14 @@ text = """
 We beseech thee, O Lord, mercifully regard this present sacrifice, that it may both increase our devotion, and advance our salvation. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We beseech thee, O Lord, mercifully regard this present sacrifice, that it may both increase our devotion, and advance our salvation. Thro’.
+"""
+
 [[entries]]
 mass = "lent-4"
 form = ""
@@ -1506,6 +2080,14 @@ text = """
 Grant, we beseech thee, O merciful God, that we may sincerely respect, and receive with faith thy holy mysteries, with which thou daily feedest us.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O merciful God, that we may sincerely respect, and receive with faith thy holy mysteries, with which thou daily feedest us.
+"""
+
 [[entries]]
 mass = "passion-sunday"
 form = ""
@@ -1520,6 +2102,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Mercifully look down on thy people, we beseech thee, O Almighty God, that, by thy bounty and protection, they may be governed and guarded both in body and soul. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Mercifully look down on thy people, we beseech thee, O Almighty God, that, by thy bounty and protection, they may be governed and guarded both in body and soul. Thro’.
 """
 
 [[entries]]
@@ -1541,6 +2131,14 @@ text = """
 May these offerings, O Lord, both loosen the bonds of our wickedness, and obtain for us the gifts of thy mercy. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May these offerings, O Lord, both loosen the bonds of our wickedness, and obtain for us the gifts of thy mercy. Thro’.
+"""
+
 [[entries]]
 mass = "passion-sunday"
 form = ""
@@ -1558,6 +2156,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Help us, O Lord our God, and forever protect those whom thou hast refreshed with thy sacred mysteries. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Help us, O Lord our God, and forever protect those whom thou hast refreshed with thy sacred mysteries. Thro’.
 """
 
 [[entries]]
@@ -1769,6 +2375,14 @@ text = """
 O God, who, on this day, by thy only begotten Son's victory over death, didst open for us a passage to eternity; grant that our prayers, which thy preventing grace inspireth, may by thy help become effectual. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who, on this day, by thy only begotten Son’s victory over death, didst open for us a passage to eternity; grant that our prayers, which thy preventing grace inspireth, may by thy help become effectual. Thro’.
+"""
+
 [[entries]]
 mass = "easter-sunday"
 form = ""
@@ -1785,6 +2399,14 @@ text = """
 Receive, O Lord, we beseech thee, the prayers of thy people, together with the offerings of these hosts, that what is consecrated by these paschal mysteries, may by the help of thy grace, avail us to eternal life. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Receive, O Lord, we beseech thee, the prayers of thy people, together with the offerings of these hosts, that what is consecrated by these paschal mysteries, may by the help of thy grace, avail us to eternal life. Thro’.
+"""
+
 [[entries]]
 mass = "easter-sunday"
 form = ""
@@ -1795,6 +2417,7 @@ printed_page = "332"
 ia_leaf = 340
 collated = "page-image, 2026-07-31"
 collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
+disagreement = "the artifact truncates the conclusion to `Thro'.`; the page prints it out as `Thro'-in the unity of the Holy Ghost.`"
 
 [[entries.translations]]
 lang = "en"
@@ -1802,6 +2425,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Pour forth on us, O Lord, the spirit of thy love: that those whom thou hast filled with the paschal sacrament, may, by thy goodness, live in perfect concord. Thro’—in the unity of the Holy Ghost.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Pour forth on us, O Lord, the spirit of thy love: that those whom thou hast filled with the paschal sacrament, may, by thy goodness, live in perfect concord. Thro’.
 """
 
 [[entries]]
@@ -1820,6 +2451,14 @@ text = """
 Grant, we beseech thee, O Almighty God, that we, who have celebrated the solemnity of Easter, may, by the assistance of thy divine grace, ever make the effects thereof manifest in our lives and actions. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Almighty God, that we, who have celebrated the solemnity of Easter, may, by the assistance of thy divine grace, ever make the effects thereof manifest in our lives and actions. Thro’.
+"""
+
 [[entries]]
 mass = "low-sunday"
 form = ""
@@ -1836,6 +2475,14 @@ text = """
 Receive, we beseech thee, O Lord, the offerings of thy joyful Church: and as thou hast given occasion to this great joy, grant she may receive the fruits of that joy, which will never end. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Receive, we beseech thee, O Lord, the offerings of thy joyful Church: and as thou hast given occasion to this great joy, grant she may receive the fruits of that joy, which will never end. Thro’.
+"""
+
 [[entries]]
 mass = "low-sunday"
 form = ""
@@ -1850,6 +2497,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Grant, we beseech thee, O Lord our God, that the sacred mysteries thou hast given us to preserve the grace of our redemption, may be our present and future remedy. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Lord our God, that the sacred mysteries thou hast given us to preserve the grace of our redemption, may be our present and future remedy. Thro’.
 """
 
 [[entries]]
@@ -1871,6 +2526,14 @@ text = """
 O God, who, by the humiliation of thy Son, hast raised up the fallen world: grant to thy people perpetual joy: that they whom thou hast delivered from the danger of everlasting death, may arrive at eternal happiness. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who, by the humiliation of thy Son, hast raised up the fallen world: grant to thy people perpetual joy: that they whom thou hast delivered from the danger of everlasting death, may arrive at eternal happiness. Thro’.
+"""
+
 [[entries]]
 mass = "easter-2"
 form = ""
@@ -1888,6 +2551,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May this holy oblation, O Lord, draw down upon us thy saving blessing; and always produce in us the effect of what is represented in these sacred mysteries. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May this holy oblation, O Lord, draw down upon us thy saving blessing; and always produce in us the effect of what is represented in these sacred mysteries. Thro’.
 """
 
 [[entries]]
@@ -1909,6 +2580,14 @@ text = """
 Grant, we beseech thee, O Almighty God, that, receiving from thee the grace of life, we may always glory in thy gift. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Almighty God, that, receiving from thee the grace of life, we may always glory in thy gift. Thro’.
+"""
+
 [[entries]]
 mass = "easter-3"
 form = ""
@@ -1923,6 +2602,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O God, who shewest the light of thy truth to such as go astray, that they may return to the way of righteousness: grant that all, who profess the Christian name, may forsake whatever is contrary to that profession, and closely pursue what is agreeable to it. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who shewest the light of thy truth to such as go astray, that they may return to the way of righteousness: grant that all, who profess the Christian name, may forsake whatever is contrary to that profession, and closely pursue what is agreeable to it. Thro’.
 """
 
 [[entries]]
@@ -1944,6 +2631,14 @@ text = """
 May these sacred mysteries, O Lord, diminish in us the love of the things of this world, and increase the love of such as are eternal. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May these sacred mysteries, O Lord, diminish in us the love of the things of this world, and increase the love of such as are eternal. Thro’.
+"""
+
 [[entries]]
 mass = "easter-3"
 form = ""
@@ -1963,6 +2658,14 @@ text = """
 May the sacrament we have received, O Lord, supply us with the spiritual food of the soul, and all necessary helps of the body. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the sacrament we have received, O Lord, supply us with the spiritual food of the soul, and all necessary helps of the body. Thro’.
+"""
+
 [[entries]]
 mass = "easter-4"
 form = ""
@@ -1979,6 +2682,14 @@ text = """
 O God, who makest the faithful to be of one mind: grant that thy people may love what thou commandest, and desire what thou promisest: that, amidst the uncertainties of this world, we may place our affections where there are true joys. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who makest the faithful to be of one mind: grant that thy people may love what thou commandest, and desire what thou promisest: that, amidst the uncertainties of this world, we may place our affections where there are true joys. Thro’.
+"""
+
 [[entries]]
 mass = "easter-4"
 form = ""
@@ -1993,6 +2704,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O God, who madest us partakers of the one Supreme Divinity, by the frequent celebration and participation of this holy sacrifice: grant, we beseech thee, that as we know thy truth, so we may live up to it by a worthy conduct of life. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who madest us partakers of the one Supreme Divinity, by the frequent celebration and participation of this holy sacrifice: grant, we beseech thee, that as we know thy truth, so we may live up to it by a worthy conduct of life. Thro’.
 """
 
 [[entries]]
@@ -2014,6 +2733,14 @@ text = """
 Help us, O God, our Lord, that our sins may be forgiven, and that we may be delivered from all dangers by the sacrament, which we have received with faith. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Help us, O God, our Lord, that our sins may be forgiven, and that we may be delivered from all dangers by the sacrament, which we have received with faith. Thro’.
+"""
+
 [[entries]]
 mass = "easter-5"
 form = ""
@@ -2031,6 +2758,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O God, from whom all that is good proceeds: grant that thy people, by thy inspiration, may resolve on what is right, and by thy direction, put it in practice. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, from whom all that is good proceeds: grant that thy people, by thy inspiration, may resolve on what is right, and by thy direction, put it in practice. Thro’.
 """
 
 [[entries]]
@@ -2052,6 +2787,14 @@ text = """
 Receive, O Lord, we beseech thee, the prayers of the faithful, together with these oblations; that by these duties of piety we may obtain eternal life. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Receive, O Lord, we beseech thee, the prayers of the faithful, together with these oblations; that by these duties of piety we may obtain eternal life. Thro’.
+"""
+
 [[entries]]
 mass = "easter-5"
 form = ""
@@ -2062,6 +2805,7 @@ printed_page = "357"
 ia_leaf = 365
 collated = "page-image, 2026-07-31"
 collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
+disagreement = "the artifact inserts a comma after `Lord` that the page does not print."
 
 [[entries.translations]]
 lang = "en"
@@ -2069,6 +2813,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Grant, O Lord by the power of the heavenly nourishment we have received, that we desire what is right, and obtain our desire. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, O Lord, by the power of the heavenly nourishment we have received, that we desire what is right, and obtain our desire. Thro’.
 """
 
 [[entries]]
@@ -2090,6 +2842,14 @@ text = """
 O almighty and eternal God, inspire thy servants with true devotion, and grant that we may serve thy divine Majesty with sincere hearts. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O almighty and eternal God, inspire thy servants with true devotion, and grant that we may serve thy divine Majesty with sincere hearts. Thro’.
+"""
+
 [[entries]]
 mass = "sunday-after-ascension"
 form = ""
@@ -2107,6 +2867,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May these unspotted sacrifices purify us, O Lord! and strengthen our souls with heavenly grace. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May these unspotted sacrifices purify us, O Lord! and strengthen our souls with heavenly grace. Thro’.
 """
 
 [[entries]]
@@ -2128,6 +2896,14 @@ text = """
 Grant, we beseech thee, O Lord, that we may be always thankful for the sacred gifts with which we have been filled. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Lord, that we may be always thankful for the sacred gifts with which we have been filled. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost"
 form = ""
@@ -2138,6 +2914,7 @@ printed_page = "375"
 ia_leaf = 383
 collated = "page-image, 2026-07-31"
 collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
+disagreement = "the artifact truncates the conclusion to `Thro'.`; the page prints `Thro'-in the unity of the same, &c.`"
 
 [[entries.translations]]
 lang = "en"
@@ -2145,6 +2922,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O God, who, by the light of the Holy Ghost, didst this day instruct the hearts of the faithful: grant, by the direction of the same Holy Spirit, that we may relish what is right, and always enjoy his consolation. Thro’—in the unity of the same, &c.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who, by the light of the Holy Ghost, didst this day instruct the hearts of the faithful: grant, by the direction of the same Holy Spirit, that we may relish what is right, and always enjoy his consolation. Thro’.
 """
 
 [[entries]]
@@ -2166,6 +2951,14 @@ text = """
 Sanctify, we beseech thee, O Lord, these oblations, and purify our hearts by the light of the Holy Ghost. Thro’—in the unity of, &c.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Sanctify, we beseech thee, O Lord, these oblations, and purify our hearts by the light of the Holy Ghost. Thro’—in the unity of, &c.
+"""
+
 [[entries]]
 mass = "pentecost"
 form = ""
@@ -2176,6 +2969,7 @@ printed_page = "378"
 ia_leaf = 386
 collated = "page-image, 2026-07-31"
 collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
+disagreement = "the artifact truncates the conclusion to `Thro'.`; the page prints `Thro' our Lord-in the unity of the same, &c.`"
 
 [[entries.translations]]
 lang = "en"
@@ -2183,6 +2977,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May the pouring forth of the Holy Ghost into our hearts cleanse them, O Lord, and render them fruitful by the inward dew of his grace. Thro’ our Lord—in the unity of the same, &c.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the pouring forth of the Holy Ghost into our hearts cleanse them, O Lord, and render them fruitful by the inward dew of his grace. Thro’.
 """
 
 [[entries]]
@@ -2204,6 +3006,14 @@ text = """
 O almighty and everlasting God who has granted thy servants, in the confession of the true faith to acknowledge the glory of an Eternal Trinity, and in the power of majesty, to adore an Unity: we beseech thee that, by the strength of this faith, we may be defended from all adversity. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O almighty and everlasting God who has granted thy servants, in the confession of the true faith to acknowledge the glory of an Eternal Trinity, and in the power of majesty, to adore an Unity: we beseech thee that, by the strength of this faith, we may be defended from all adversity. Thro’.
+"""
+
 [[entries]]
 mass = "trinity"
 form = ""
@@ -2218,6 +3028,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Sanctify, we beseech thee, O Lord, our God, by the invocation of thy holy name, the victim of this oblation: and by it make us an eternal offering to thee. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Sanctify, we beseech thee, O Lord, our God, by the invocation of thy holy name, the victim of this oblation: and by it make us an eternal offering to thee. Thro’.
 """
 
 [[entries]]
@@ -2236,6 +3054,14 @@ text = """
 May the receiving of this sacrament, O Lord our God, avail us to the salvation of body and soul: together with the confession of an everlasting Holy Trinity, and of the undivided unity thereof. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the receiving of this sacrament, O Lord our God, avail us to the salvation of body and soul: together with the confession of an everlasting Holy Trinity, and of the undivided unity thereof. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-2"
 form = ""
@@ -2250,6 +3076,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Grant us, O Lord, both a constant love and fear of thy holy name: since thou never withdrawest thy protection from those, whom thou solidly groundest in thy love. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant us, O Lord, both a constant love and fear of thy holy name: since thou never withdrawest thy protection from those, whom thou solidly groundest in thy love. Thro’.
 """
 
 [[entries]]
@@ -2268,6 +3102,14 @@ text = """
 May this sacrifice offered to thy name purify us, O Lord: and make us every day advance towards a heavenly life. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May this sacrifice offered to thy name purify us, O Lord: and make us every day advance towards a heavenly life. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-2"
 form = ""
@@ -2280,6 +3122,14 @@ detector = "sibling-agrees"
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Having received, O Lord, this sacred oblation, grant, that by frequenting these mysteries we may hasten our salvation.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
 text = """
 Having received, O Lord, this sacred oblation, grant, that by frequenting these mysteries we may hasten our salvation.
 """
@@ -2304,6 +3154,14 @@ text = """
 O God, the protector of those who hope in thee, without whose aid nothing is strong, nothing holy: increase thy mercy towards us; that under thy direction and conduct, we may so pass through the blessings of this life, as not to lose those which are eternal. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, the protector of those who hope in thee, without whose aid nothing is strong, nothing holy: increase thy mercy towards us; that under thy direction and conduct, we may so pass through the blessings of this life, as not to lose those which are eternal. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-3"
 form = ""
@@ -2320,6 +3178,14 @@ text = """
 Look down, O Lord, on the offerings of thy suppliant Church; and grant that thy faithful may always worthily partake thereof in order to their salvation. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Look down, O Lord, on the offerings of thy suppliant Church; and grant that thy faithful may always worthily partake thereof in order to their salvation. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-3"
 form = ""
@@ -2334,6 +3200,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May thy sacred mysteries, O Lord, which we have received, give us life: and cleansing us from our sins, make us worthy of thy eternal mercy. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May thy sacred mysteries, O Lord, which we have received, give us life: and cleansing us from our sins, make us worthy of thy eternal mercy. Thro’.
 """
 
 [[entries]]
@@ -2355,6 +3229,14 @@ text = """
 Grant, we beseech thee, O Lord, that the world, with regard to us, may be governed in peace by thy providence, and thy Church pay her devotions to thee in tranquillity. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Lord, that the world, with regard to us, may be governed in peace by thy providence, and thy Church pay her devotions to thee in tranquillity. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-4"
 form = ""
@@ -2372,6 +3254,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Receive our offerings, we beseech thee, O Lord, and be appeased thereby: and mercifully compel our wills to yield to thee, even when they rebel. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Receive our offerings, we beseech thee, O Lord, and be appeased thereby: and mercifully compel our wills to yield to thee, even when they rebel. Thro’.
 """
 
 [[entries]]
@@ -2393,6 +3283,14 @@ text = """
 May the mysteries we have received, both purify and defend us, O Lord, by the efficacy of what they contain. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the mysteries we have received, both purify and defend us, O Lord, by the efficacy of what they contain. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-5"
 form = ""
@@ -2412,6 +3310,14 @@ text = """
 O God, who hast prepared invisible good things for those that love thee: pour forth into our hearts an affectionate love for thee: that loving thee in all things, and above all things, we may come to the enjoyment of thy promises, which are above whatever we can desire. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who hast prepared invisible good things for those that love thee: pour forth into our hearts an affectionate love for thee: that loving thee in all things, and above all things, we may come to the enjoyment of thy promises, which are above whatever we can desire. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-5"
 form = ""
@@ -2424,6 +3330,14 @@ detector = "sibling-agrees"
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Be appeased, O Lord, by our humble prayers, and mercifully receive these offerings of thy servants: that what each hath offered to the honour of thy name, may avail to the salvation of all.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
 text = """
 Be appeased, O Lord, by our humble prayers, and mercifully receive these offerings of thy servants: that what each hath offered to the honour of thy name, may avail to the salvation of all.
 """
@@ -2447,6 +3361,14 @@ text = """
 Grant, O Lord, we beseech thee: that we, whom thou hast fed with this heavenly sacrifice, may be cleansed from our hidden sins, and delivered from the snares of our enemies. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, O Lord, we beseech thee: that we, whom thou hast fed with this heavenly sacrifice, may be cleansed from our hidden sins, and delivered from the snares of our enemies. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-6"
 form = ""
@@ -2457,6 +3379,7 @@ printed_page = "407"
 ia_leaf = 415
 collated = "page-image, 2026-07-31"
 collation_result = "confirmed; the sibling temporal-orations-en transcription diverges here and is wrong"
+disagreement = "the artifact inserts a semicolon after `religion` that the page does not print."
 
 [[entries.translations]]
 lang = "en"
@@ -2464,6 +3387,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O God of all power, to whom entirely belongeth whatever is best: implant in our hearts the love of thy name, and grant us an increase of religion that thou mayest improve in us what is good, and preserve what thou thus improvest by the practice of piety. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God of all power, to whom entirely belongeth whatever is best: implant in our hearts the love of thy name, and grant us an increase of religion; that thou mayest improve in us what is good, and preserve what thou thus improvest by the practice of piety. Thro’.
 """
 
 [[entries]]
@@ -2486,6 +3417,14 @@ text = """
 Be appeased, O Lord, by our humble prayers, and mercifully receive the offerings of thy people: and that the vows and prayers of none may be in vain, grant we may effectually obtain what we ask. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Be appeased, O Lord, by our humble prayers, and mercifully receive the offerings of thy people: and that the vows and prayers of none may be in vain, grant we may effectually obtain what we ask. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-6"
 form = ""
@@ -2504,6 +3443,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 We are filled, O Lord, with thy gifts: grant, therefore, we beseech thee, that we may be cleansed by their efficacy, and strengthened by their aid. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We are filled, O Lord, with thy gifts: grant, therefore, we beseech thee, that we may be cleansed by their efficacy, and strengthened by their aid. Thro’.
 """
 
 [[entries]]
@@ -2526,6 +3473,14 @@ text = """
 O God, whose providence is never deceived in what it appointeth: we humbly beseech thee to remove whatever may be prejudicial to us: and grant us whatever may be to the advantage of our souls. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, whose providence is never deceived in what it appointeth: we humbly beseech thee to remove whatever may be prejudicial to us: and grant us whatever may be to the advantage of our souls. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-7"
 form = ""
@@ -2543,6 +3498,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O God, who in one perfect sacrifice hast united all the various sacrifices of the law, accept from thy devout servants this sacrifice, and sanctify it by the like blessing as thou didst the offering of Abel: that what each hath offered to thy divine Majesty, may avail to the salvation of all. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who in one perfect sacrifice hast united all the various sacrifices of the law, accept from thy devout servants this sacrifice, and sanctify it by the like blessing as thou didst the offering of Abel: that what each hath offered to thy divine Majesty, may avail to the salvation of all. Thro’.
 """
 
 [[entries]]
@@ -2564,6 +3527,14 @@ text = """
 Grant, O Lord, that the healing efficacy of these thy mysteries may, through thy mercy, free us from all our sins, and bring us to the practice of what is right. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, O Lord, that the healing efficacy of these thy mysteries may, through thy mercy, free us from all our sins, and bring us to the practice of what is right. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-8"
 form = ""
@@ -2583,6 +3554,14 @@ text = """
 Grant us, O Lord, we beseech thee, the spirit of thinking and doing what is right, that we, who cannot even subsist without thee, may live according to thee. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant us, O Lord, we beseech thee, the spirit of thinking and doing what is right, that we, who cannot even subsist without thee, may live according to thee. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-8"
 form = ""
@@ -2597,6 +3576,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Receive, we beseech thee, O Lord, the offerings we bring, which are the gifts of thine own bounty: that these most holy mysteries may, by the power of thy grace, make our conduct in this life holy, and bring us to those joys that will never end. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Receive, we beseech thee, O Lord, the offerings we bring, which are the gifts of thine own bounty: that these most holy mysteries may, by the power of thy grace, make our conduct in this life holy, and bring us to those joys that will never end. Thro’.
 """
 
 [[entries]]
@@ -2615,6 +3602,14 @@ text = """
 May this heavenly mystery, O Lord, renew us both in soul and body: that we may find in ourselves the effects of what we celebrate. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May this heavenly mystery, O Lord, renew us both in soul and body: that we may find in ourselves the effects of what we celebrate. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-9"
 form = ""
@@ -2629,6 +3624,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May the ears of thy mercy, O Lord, be open to the prayers of thy suppliants: and, that they may succeed in their desires, make them ask those things that are agreeable to thee. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the ears of thy mercy, O Lord, be open to the prayers of thy suppliants: and, that they may succeed in their desires, make them ask those things that are agreeable to thee. Thro’.
 """
 
 [[entries]]
@@ -2650,6 +3653,14 @@ text = """
 Grant us, O Lord, we beseech thee, frequently and worthily to celebrate these mysteries: for as many times as this commemorative sacrifice is celebrated, so often is the work of our redemption performed. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant us, O Lord, we beseech thee, frequently and worthily to celebrate these mysteries: for as many times as this commemorative sacrifice is celebrated, so often is the work of our redemption performed. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-9"
 form = ""
@@ -2669,6 +3680,14 @@ text = """
 May the participation of this thy sacrament, O Lord, we beseech thee, both purify us, and unite us. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the participation of this thy sacrament, O Lord, we beseech thee, both purify us, and unite us. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-10"
 form = ""
@@ -2685,6 +3704,14 @@ text = """
 O God, who chiefly manifestest thy Almighty power in pardoning and shewing mercy, increase thy goodness towards us: that having recourse to thy promises, we may be partakers of thy heavenly blessing. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who chiefly manifestest thy Almighty power in pardoning and shewing mercy, increase thy goodness towards us: that having recourse to thy promises, we may be partakers of thy heavenly blessing. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-10"
 form = ""
@@ -2699,6 +3726,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May the sacrifice, we offer, O Lord, be presented before thee: which thou hast appointed to be offered in honour of thy name; and at the same time become a remedy to us. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the sacrifice, we offer, O Lord, be presented before thee: which thou hast appointed to be offered in honour of thy name; and at the same time become a remedy to us. Thro’.
 """
 
 [[entries]]
@@ -2720,6 +3755,14 @@ text = """
 We beseech thee, O Lord our God, that in thy mercy thou wouldst never deprive those of thy help, whom thou continually strengthenest by these divine mysteries. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We beseech thee, O Lord our God, that in thy mercy thou wouldst never deprive those of thy help, whom thou continually strengthenest by these divine mysteries. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-11"
 form = ""
@@ -2737,6 +3780,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O Almighty and eternal God, who, in the abundance of thy goodness, exceedest both the merits and requests of thy suppliants; pour forth thy mercy upon us: and both pardon what our consciences dreadeth, and grant such blessings as we dare not presume to ask. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O Almighty and eternal God, who, in the abundance of thy goodness, exceedest both the merits and requests of thy suppliants; pour forth thy mercy upon us: and both pardon what our consciences dreadeth, and grant such blessings as we dare not presume to ask. Thro’.
 """
 
 [[entries]]
@@ -2758,6 +3809,14 @@ text = """
 Look down, O Lord, we beseech thee, on our homage: that the offerings we make may be acceptable to thee, and a help to our weakness. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Look down, O Lord, we beseech thee, on our homage: that the offerings we make may be acceptable to thee, and a help to our weakness. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-11"
 form = ""
@@ -2775,6 +3834,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May we receive, by the participation of these thy mysteries, we beseech thee, O Lord, help in body and mind: that in the salvation of both we may enjoy the full effect of this heavenly remedy. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May we receive, by the participation of these thy mysteries, we beseech thee, O Lord, help in body and mind: that in the salvation of both we may enjoy the full effect of this heavenly remedy. Thro’.
 """
 
 [[entries]]
@@ -2796,6 +3863,14 @@ text = """
 O Almighty and merciful God, from whose gift it proceedeth that thy people worthily serve thee; grant we beseech thee, that we may run on, without stumbling, to the obtaining the effects of thy promises. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O Almighty and merciful God, from whose gift it proceedeth that thy people worthily serve thee; grant we beseech thee, that we may run on, without stumbling, to the obtaining the effects of thy promises. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-12"
 form = ""
@@ -2810,6 +3885,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Mercifully look down, O Lord, on the offerings we lay on thy holy altar; that they may be to the honour of thy name, by obtaining pardon for us. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Mercifully look down, O Lord, on the offerings we lay on thy holy altar; that they may be to the honour of thy name, by obtaining pardon for us. Thro’.
 """
 
 [[entries]]
@@ -2828,6 +3911,14 @@ text = """
 May the sacred participation of these thy mysteries, O Lord, we beseech thee, give us life; and be to us both an expiation and protection. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the sacred participation of these thy mysteries, O Lord, we beseech thee, give us life; and be to us both an expiation and protection. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-13"
 form = ""
@@ -2842,6 +3933,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O Almighty and eternal God, grant us an increase of faith, hope, and charity; and, that we may deserve what thou promisest, make us love what thou commandest. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O Almighty and eternal God, grant us an increase of faith, hope, and charity; and, that we may deserve what thou promisest, make us love what thou commandest. Thro’.
 """
 
 [[entries]]
@@ -2863,6 +3962,14 @@ text = """
 Be thou propitious, O Lord, to thy people: and mercifully receive their offerings: that being appeased thereby, thou mayest grant us pardon, and hear our requests. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Be thou propitious, O Lord, to thy people: and mercifully receive their offerings: that being appeased thereby, thou mayest grant us pardon, and hear our requests. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-13"
 form = ""
@@ -2879,6 +3986,14 @@ text = """
 May these heavenly mysteries, O Lord, which we have received, advance our eternal redemption. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May these heavenly mysteries, O Lord, which we have received, advance our eternal redemption. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-14"
 form = ""
@@ -2893,6 +4008,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Preserve, O Lord, we beseech thee, thy Church by thy constant mercy: and since our weak mortality is continually falling without thy assistance, may thy grace withdraw it from what is hurtful, and direct it in the ways of salvation. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Preserve, O Lord, we beseech thee, thy Church by thy constant mercy: and since our weak mortality is continually falling without thy assistance, may thy grace withdraw it from what is hurtful, and direct it in the ways of salvation. Thro’.
 """
 
 [[entries]]
@@ -2914,6 +4037,14 @@ text = """
 Grant, we beseech thee, O Lord, that this victim of salvation may both cleanse us from our sins, and render thy Majesty propitious to us. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Lord, that this victim of salvation may both cleanse us from our sins, and render thy Majesty propitious to us. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-14"
 form = ""
@@ -2933,6 +4064,14 @@ text = """
 May these thy mysteries, O God, continually purify us and strengthen us: and procure us eternal salvation. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May these thy mysteries, O God, continually purify us and strengthen us: and procure us eternal salvation. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-15"
 form = ""
@@ -2947,6 +4086,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May thy continual mercy purify and defend thy church: and since without thee it cannot be safe, may it always be directed by the influence of thy grace. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May thy continual mercy purify and defend thy church: and since without thee it cannot be safe, may it always be directed by the influence of thy grace. Thro’.
 """
 
 [[entries]]
@@ -2964,6 +4111,14 @@ collation_result = "corrected"
 lang = "en"
 rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May thy mysteries, O Lord, preserve us, and always defend us against the attacks of the devil.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
 text = """
 May thy mysteries, O Lord, preserve us, and always defend us against the attacks of the devil.
 """
@@ -2987,6 +4142,14 @@ text = """
 May the efficacy of these divine mysteries, O Lord, possess both our souls and bodies: that their effects, not our own sensuality, may always take the lead in us. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the efficacy of these divine mysteries, O Lord, possess both our souls and bodies: that their effects, not our own sensuality, may always take the lead in us. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-16"
 form = ""
@@ -3006,6 +4169,14 @@ text = """
 May thy grace, O Lord, always prevent and follow us; and make us constantly zealous in the practice of good works. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May thy grace, O Lord, always prevent and follow us; and make us constantly zealous in the practice of good works. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-16"
 form = ""
@@ -3020,6 +4191,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Cleanse us, O Lord, we beseech thee, by the efficacy of this sacrifice: and by thy mercy make us worthy to partake thereof. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Cleanse us, O Lord, we beseech thee, by the efficacy of this sacrifice: and by thy mercy make us worthy to partake thereof. Thro’.
 """
 
 [[entries]]
@@ -3038,6 +4217,14 @@ text = """
 Mercifully, O Lord, we beseech thee, purify our souls, and renew them by these holy mysteries; that we may receive help thereby, both while we are in these mortal bodies and hereafter. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Mercifully, O Lord, we beseech thee, purify our souls, and renew them by these holy mysteries; that we may receive help thereby, both while we are in these mortal bodies and hereafter. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-17"
 form = ""
@@ -3052,6 +4239,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Grant, we beseech thee, O Lord, that thy people may avoid all contagion of the devil: and with a clean heart follow thee, the only true God. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Lord, that thy people may avoid all contagion of the devil: and with a clean heart follow thee, the only true God. Thro’.
 """
 
 [[entries]]
@@ -3073,6 +4268,14 @@ text = """
 We humbly beseech thy Majesty, O Lord, that the sacred mysteries we celebrate may cleanse us from all past offences, and from those we may hereafter be guilty of. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We humbly beseech thy Majesty, O Lord, that the sacred mysteries we celebrate may cleanse us from all past offences, and from those we may hereafter be guilty of. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-17"
 form = ""
@@ -3092,6 +4295,14 @@ text = """
 May our vices be cured, O Almighty God! and an eternal remedy procured for us by these sacred mysteries. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May our vices be cured, O Almighty God! and an eternal remedy procured for us by these sacred mysteries. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-18"
 form = ""
@@ -3106,6 +4317,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 May the influence of thy mercy, O Lord, direct our souls: for without thy help we can do nothing well pleasing to thee. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the influence of thy mercy, O Lord, direct our souls: for without thy help we can do nothing well pleasing to thee. Thro’.
 """
 
 [[entries]]
@@ -3127,6 +4346,14 @@ text = """
 O God, who by the participation of this august sacrifice makest us partakers of the one supreme divine nature: grant, we beseech thee, that as we know thy truth, so we may shew it by a worthy conduct of life. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who by the participation of this august sacrifice makest us partakers of the one supreme divine nature: grant, we beseech thee, that as we know thy truth, so we may shew it by a worthy conduct of life. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-18"
 form = ""
@@ -3144,6 +4371,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Being fed, O Lord, with this holy sacrifice: we give thee thanks, humbly beseeching thy mercy: that thou wouldst make us worthy of what we have received. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Being fed, O Lord, with this holy sacrifice: we give thee thanks, humbly beseeching thy mercy: that thou wouldst make us worthy of what we have received. Thro’.
 """
 
 [[entries]]
@@ -3165,6 +4400,14 @@ text = """
 O Almighty and merciful God, favourably defend us from all adversity: that being free both in soul and body, we may with security of mind perform thy service. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O Almighty and merciful God, favourably defend us from all adversity: that being free both in soul and body, we may with security of mind perform thy service. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-19"
 form = ""
@@ -3182,6 +4425,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Grant, we beseech thee, O Lord, that the offerings we bring before thy divine Majesty may avail to our salvation. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Lord, that the offerings we bring before thy divine Majesty may avail to our salvation. Thro’.
 """
 
 [[entries]]
@@ -3203,6 +4454,14 @@ text = """
 May the healing efficacy of these thy mysteries, O Lord, mercifully free us from our perverseness, and make us always obedient to thy commandments. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the healing efficacy of these thy mysteries, O Lord, mercifully free us from our perverseness, and make us always obedient to thy commandments. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-20"
 form = ""
@@ -3220,6 +4479,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Favourably grant, we beseech thee, O Lord, thy servants both pardon and peace; that, being cleansed from the guilt of all their offences, they may serve thee with secure minds. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Favourably grant, we beseech thee, O Lord, thy servants both pardon and peace; that, being cleansed from the guilt of all their offences, they may serve thee with secure minds. Thro’.
 """
 
 [[entries]]
@@ -3241,6 +4508,14 @@ text = """
 May these mysteries, O Lord, we beseech thee, procure us a heavenly remedy, and cleanse away the vices of our hearts. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May these mysteries, O Lord, we beseech thee, procure us a heavenly remedy, and cleanse away the vices of our hearts. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-20"
 form = ""
@@ -3260,6 +4535,14 @@ text = """
 That we may be worthy of thy sacred gifts, O Lord: grant, we beseech thee, we may always obey thy commandments. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+That we may be worthy of thy sacred gifts, O Lord: grant, we beseech thee, we may always obey thy commandments. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-21"
 form = ""
@@ -3274,6 +4557,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Preserve thy family, O Lord, we beseech thee, by thy constant mercy: that under thy protection, it may be freed from all adversity; and by the practice of good works, continue devoted to thy name. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Preserve thy family, O Lord, we beseech thee, by thy constant mercy: that under thy protection, it may be freed from all adversity; and by the practice of good works, continue devoted to thy name. Thro’.
 """
 
 [[entries]]
@@ -3295,6 +4586,14 @@ text = """
 Mercifully receive, O Lord, these offerings, by which thou art pleased to be appeased, and restore us to salvation by thy powerful goodness. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Mercifully receive, O Lord, these offerings, by which thou art pleased to be appeased, and restore us to salvation by thy powerful goodness. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-21"
 form = ""
@@ -3312,6 +4611,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Having received the food of immortality, we beseech thee, O Lord, that what we have taken with our mouths we may receive with pure souls. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Having received the food of immortality, we beseech thee, O Lord, that what we have taken with our mouths we may receive with pure souls. Thro’.
 """
 
 [[entries]]
@@ -3333,6 +4640,14 @@ text = """
 O God, our refuge and strength, fountain of all goodness, mercifully give ear to the fervent prayers of thy church, and grant, that what we ask with faith, we may effectually obtain. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, our refuge and strength, fountain of all goodness, mercifully give ear to the fervent prayers of thy church, and grant, that what we ask with faith, we may effectually obtain. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-22"
 form = ""
@@ -3350,6 +4665,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Grant, O merciful God, that this sacrifice of salvation may constantly both free us from our sins, and protect us from all adversity. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, O merciful God, that this sacrifice of salvation may constantly both free us from our sins, and protect us from all adversity. Thro’.
 """
 
 [[entries]]
@@ -3371,6 +4694,14 @@ text = """
 Having received, O Lord, the sacred mysteries, we humbly beseech thee, that what thou hast ordered us to do in remembrance of thee, may be a help to our weakness. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Having received, O Lord, the sacred mysteries, we humbly beseech thee, that what thou hast ordered us to do in remembrance of thee, may be a help to our weakness. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-23"
 form = ""
@@ -3388,6 +4719,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Pardon, O Lord, we beseech thee, the sins of thy people: that we may be delivered by thy goodness from the guilt we have contracted by our own weakness. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Pardon, O Lord, we beseech thee, the sins of thy people: that we may be delivered by thy goodness from the guilt we have contracted by our own weakness. Thro’.
 """
 
 [[entries]]
@@ -3409,6 +4748,14 @@ text = """
 We offer thee, O Lord, this sacrifice of praise, as a repeated token of our homage; that thou mayest accomplish in us what thou hast already granted beyond our deserts. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We offer thee, O Lord, this sacrifice of praise, as a repeated token of our homage; that thou mayest accomplish in us what thou hast already granted beyond our deserts. Thro’.
+"""
+
 [[entries]]
 mass = "pentecost-23"
 form = ""
@@ -3426,6 +4773,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 We beseech thee, O Almighty God, that thou wouldst not leave exposed to the dangers of this life, those whom thou hast joyfully made partakers of this divine food. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We beseech thee, O Almighty God, that thou wouldst not leave exposed to the dangers of this life, those whom thou hast joyfully made partakers of this divine food. Thro’.
 """
 
 [[entries]]
@@ -3447,6 +4802,14 @@ text = """
 Stir up, we beseech thee, O Lord, the hearts of thy faithful: that, becoming more zealous in the performance of good works, they may receive from thy goodness more effectual remedies for their disorders. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Stir up, we beseech thee, O Lord, the hearts of thy faithful: that, becoming more zealous in the performance of good works, they may receive from thy goodness more effectual remedies for their disorders. Thro’.
+"""
+
 [[entries]]
 mass = "last-sunday-after-pentecost"
 form = ""
@@ -3463,6 +4826,14 @@ text = """
 Mercifully receive, O Lord, the prayers and offerings of thy people: turn our hearts to thee; that being freed from earthly concupiscence, we may desire heavenly pleasures. Thro'.
 """
 
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Mercifully receive, O Lord, the prayers and offerings of thy people: turn our hearts to thee; that being freed from earthly concupiscence, we may desire heavenly pleasures. Thro’.
+"""
+
 [[entries]]
 mass = "last-sunday-after-pentecost"
 form = ""
@@ -3477,6 +4848,14 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Grant, we beseech thee, O Lord, that whatever vice our souls are subject to may be cured by the virtue of the sacrament we have received. Thro'.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Lord, that whatever vice our souls are subject to may be cured by the virtue of the sacrament we have received. Thro’.
 """
 
 [[entries]]

@@ -12,6 +12,7 @@ import json
 import re
 import subprocess
 import sys
+import unicodedata
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
@@ -56,7 +57,7 @@ EXAMPLES = {
         Example(
             "tools/check-calendar-masses check --json",
             (
-                "{\"excepted\":[\"src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance An... [+4466 chars]",
+                "{\"excepted\":[\"src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance An... [+4901 chars]",
             ),
         ),
     ),
@@ -105,6 +106,33 @@ ACTS_SOURCE = OVERLAY_DIR / "latin-missal-acts-v1.toml"
 # invented act edge is worse than a recorded gap. `attests_basis` is still
 # required, so the gap has to say why it is one.
 ACTS_UNESTABLISHED = "unestablished"
+# Two transcriptions of one book are a detector, and this repository has the
+# measurement rather than the intuition: the two independent readings of the 1861
+# Cummiskey missal disagreed at 45 of the 153 orations they share, every one of
+# the 38 errors the site was serving sat inside those 45, and at the 54 loci where
+# they agreed they were right 54 times. So a disagreement is a locus wanting a
+# human eye and an agreement is evidence, and both are worth deriving on every run
+# instead of once by hand -- the ninth disagreement now standing was invisible to
+# the hand comparison, because the entry it sits on did not exist when that ran.
+#
+# `disagreement` is where the eye's answer is written, on the entry that holds
+# both readings. The gate is drawn at an UNRECORDED disagreement, never at a
+# disagreement: at a base rate near one in three a gate failing on divergence
+# itself would be red on arrival and would be silenced rather than answered.
+OVERLAY_DISAGREEMENT = "disagreement"
+# The one agreement claim a sidecar already made in prose beside its text, now
+# held to the second witness it names. Nothing read it until the second witness
+# was attached, and a claim nothing reads is the defect this file keeps finding.
+OVERLAY_DETECTOR = "detector"
+SIBLING_AGREES = "sibling-agrees"
+# Differences that are transcription convention and not readings. The two 1861
+# transcriptions disagree on the apostrophe and the dash in every row that holds
+# one, so comparing raw bytes would report the convention 153 times and the
+# wording never. Nothing else is folded: a comma, a full stop and a truncated
+# conclusion are precisely the differences that turned out to matter.
+NOT_A_READING = str.maketrans(
+    {"‘": "'", "’": "'", "“": '"', "”": '"', "–": "-", "—": "-"}
+)
 # The companion beside a mass index that states which rubric governs what. A
 # text appointed across a span of days is stated there and carried here, and
 # `span_problems` is the only thing that joins the two halves.
@@ -619,7 +647,8 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
     # and Pentecost octaves showed no Sequence, and the only statement that one
     # was appointed there was an English sentence in a `notes` string.
     problems.extend(span_problems(paths))
-    problems.extend(overlay_problems(paths))
+    overlay, witnessed = overlay_problems(paths)
+    problems.extend(overlay)
     # The index names the book; a companion beside it must not name it again.
     # `edition` was hand-typed in both files of both calendar directories, four
     # copies of two strings, and nothing here compared them.
@@ -638,6 +667,11 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
         "held_by_other_tools": companions,
         "problems": problems,
         "status": "error" if problems else "ok",
+        # The detector's own reading, reported whether or not it found a fault.
+        # An agreement raises no problem and is the strongest evidence this
+        # corpus holds -- 54 of 54 agreeing loci were right -- so a channel that
+        # only carried faults would throw it away.
+        "witnesses": witnessed,
     }
 
 
@@ -1016,7 +1050,85 @@ def span_problems(paths: list[Path]) -> list[str]:
     return problems
 
 
-def overlay_problems(paths: list[Path]) -> list[str]:
+def collated_form(text: str) -> str:
+    """One witness's wording, with the differences that are not readings gone."""
+    return " ".join(unicodedata.normalize("NFC", text).translate(NOT_A_READING).split())
+
+
+def witness_verdict(payload: object) -> bool | None:
+    """Whether a proper's witnesses differ, or `None` where it has only one.
+
+    Keyed the way `check_translation_list` keys uniqueness: two translations in
+    one language from two `source_id`s are two witnesses to one prayer, and that
+    pair is the whole detector. A language heard once is not compared, and a
+    proper heard once in every language it carries returns `None` rather than
+    `False`, so "nobody read it twice" cannot be counted as agreement.
+    """
+    if not isinstance(payload, list):
+        return None
+    heard: dict[str, dict[str, str]] = {}
+    for entry in payload:
+        if not isinstance(entry, dict):
+            continue
+        lang, text = entry.get("lang"), entry.get("text")
+        if not isinstance(lang, str) or not isinstance(text, str):
+            continue
+        heard.setdefault(lang, {})[str(entry.get("source_id") or "")] = collated_form(text)
+    read_twice = [forms for forms in heard.values() if len(forms) > 1]
+    if not read_twice:
+        return None
+    return any(len(set(forms.values())) > 1 for forms in read_twice)
+
+
+def witness_problems(where: str, entry: dict, payload: object) -> tuple[list[str], bool | None]:
+    """Hold a twice-read proper to its own record of what the two readings do.
+
+    Self-cleaning in both directions, which is what keeps it from rotting into a
+    permission nobody remembers granting: a divergence nobody has answered fails
+    until someone does, and an answer left behind by a correction fails until it
+    is deleted. Neither failure is "the witnesses disagree" — that is the
+    finding, and the finding is reported whether or not anything is wrong.
+    """
+    problems: list[str] = []
+    verdict = witness_verdict(payload)
+    recorded = str(entry.get(OVERLAY_DISAGREEMENT) or "").strip()
+    claims = str(entry.get(OVERLAY_DETECTOR) or "").strip() == SIBLING_AGREES
+    if verdict is None:
+        if recorded:
+            problems.append(
+                f"{where}: records a {OVERLAY_DISAGREEMENT} and carries one witness. "
+                "Nothing disagrees with it; delete the note or attach the second "
+                "reading it answers."
+            )
+        if claims:
+            problems.append(
+                f"{where}: claims {OVERLAY_DETECTOR} = {SIBLING_AGREES!r} and carries "
+                "one witness. An agreement nothing can be compared against is an "
+                "assertion, which is what attaching the sibling was for."
+            )
+        return problems, verdict
+    if verdict:
+        if not recorded:
+            problems.append(
+                f"{where}: its witnesses read this prayer differently and no "
+                f"{OVERLAY_DISAGREEMENT} says which reading was settled or how. Every "
+                "error this corpus has found sat at a locus like this one; answer it "
+                "on the page and write the answer here."
+            )
+        if claims:
+            problems.append(
+                f"{where}: claims {OVERLAY_DETECTOR} = {SIBLING_AGREES!r} and its "
+                "witnesses differ."
+            )
+    elif recorded:
+        problems.append(
+            f"{where}: records a {OVERLAY_DISAGREEMENT} its witnesses no longer have. "
+            "The reading was corrected; delete the note."
+        )
+    return problems, verdict
+
+
+def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
     """Hold the translation sidecars to the same rules as an inline translation.
 
     A calendar's `translations` belong inside each proper and are recorded in
@@ -1034,11 +1146,16 @@ def overlay_problems(paths: list[Path]) -> list[str]:
     which is the sharper form of the same defect the docstring above describes:
     the rules applied to the translations and left the record of WHICH BOOK they
     came out of entirely unread.
+
+    Returns the problems and one report row per sidecar that holds a prayer read
+    by two witnesses, because the agreement half of the detector is a finding and
+    not a fault: it has no problem to raise and is worth printing anyway.
     """
     import tomllib
 
     root = Path(__file__).resolve().parents[1] / OVERLAY_DIR
     problems: list[str] = []
+    witnessed: list[dict] = []
     history: tuple | None = None
     for path in paths:
         sidecar = root / f"{path.parent.name}{OVERLAY_SUFFIX}"
@@ -1060,6 +1177,8 @@ def overlay_problems(paths: list[Path]) -> list[str]:
             problems.extend(
                 source_attestation_problems(f"{sidecar}: {named}", row, history)
             )
+        agree: list[str] = []
+        disagree: list[str] = []
         for index, entry in enumerate(document.get("entries") or []):
             where = f"{sidecar}: entries[{index}]"
             if not isinstance(entry, dict):
@@ -1070,13 +1189,34 @@ def overlay_problems(paths: list[Path]) -> list[str]:
                 for field in ("mass", "form", "proper")
                 if entry.get(field)
             )
-            where = f"{sidecar}: {named or f'entries[{index}]'}"
+            named = named or f"entries[{index}]"
+            where = f"{sidecar}: {named}"
             payload = entry.get("translations")
             if payload is None:
                 problems.append(f"{where}: entry records no translations")
                 continue
             check_translation_list(where, payload, problems)
-    return problems
+            found, verdict = witness_problems(where, entry, payload)
+            problems.extend(found)
+            if verdict is not None:
+                (disagree if verdict else agree).append(named)
+        if agree or disagree:
+            witnessed.append(
+                {
+                    # Named and not only counted: the count says the detector ran
+                    # and the names say where to look, and `--json` is where a
+                    # reader who wants the list rather than the figure goes.
+                    "agree": len(agree),
+                    "disagree": len(disagree),
+                    "loci": sorted(disagree),
+                    "read_twice": len(agree) + len(disagree),
+                    # Repository-relative, as `files` is: the absolute form the
+                    # problem messages carry would make this report differ
+                    # between two checkouts of the same tree.
+                    "source": (OVERLAY_DIR / sidecar.name).as_posix(),
+                }
+            )
+    return problems, sorted(witnessed, key=lambda row: row["source"])
 
 
 def citation_problems(root: Path, calendar: str | None) -> list[str]:
@@ -1241,6 +1381,11 @@ def main(argv: list[str] | None = None) -> int:
             print(f"calendar-mass error: {problem}", file=sys.stderr)
         for path, counts in payload.get("files", {}).items():
             print(f"{path}\t{counts['masses']} masses\t{counts['propers']} propers")
+        for row in payload.get("witnesses") or []:
+            print(
+                f"{row['source']}\t{row['read_twice']} read twice"
+                f"\t{row['agree']} agree\t{row['disagree']} disagree"
+            )
         return 1 if problems else 0
 
     return run_verb_cli(
