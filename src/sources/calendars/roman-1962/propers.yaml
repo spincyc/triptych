@@ -39,7 +39,18 @@ verification: four tiers; the seasonal Sundays, the Triduum and Palm Sunday carr
   Sorrows of the Friday after Passion Sunday, added 2026-08-02 with every proper
   read on the facsimile page images at 200 and 400 dpi. The Sequence of the
   15 September feast stands on the same witness, alone on an entry whose other
-  propers do not. Every remaining entry in those three sections is still a
+  propers do not. A sixth tier was opened on 2026-08-02 over the first run of the
+  Proprium Sanctorum, 14 to 29 January at printed pp. 442-461, digital pp.
+  523-542. Ten entries that held nothing but a placeholder now carry the Common
+  the Missal sends them to and the orations it prints under the day, every one
+  read on the facsimile page images at 200 dpi and again at 400 dpi with no OCR
+  text layer allowed to supply a reading, every P or C mark read off the page
+  rather than inferred, and every landed prayer corroborated word for word in the
+  tracked public-domain Pustet Ratisbon 1862 before it was published, so that the
+  Latin rests on 17 U.S.C. 103(b) and on a public-domain witness and not on any
+  property of the 1962 edition. None of those ten prints a scripture-bearing
+  proper of its own; all take Introit, readings, chants and Communion antiphon
+  from the Common. Every remaining entry in those three sections is still a
   placeholder skeleton
 conventions:
 - every Introit concludes with the Gloria Patri and the repeated antiphon; the
@@ -212,6 +223,35 @@ open_collation_items:
   seasonal condition this schema cannot express, 2 because the day could not be
   attached to an entry, and 36 for no reason but that nobody has yet read the
   page image
+- that paragraph describes the state on the morning of 2026-08-01 and has since
+  been overtaken twice, and the count in it is the one to distrust. The same day a
+  second image pass landed the 36 that were blocked on nothing but an unread page,
+  and one of the 85, so 50 pointers were landed and 84 held. Then on 2026-08-02
+  this file's first sanctoral run landed eight of those 84 - 01-14, 01-16, 01-18,
+  01-19, 01-22, 01-23, 01-28 and 01-29 - which leaves 76 held on the same ground,
+  and landed a ninth day, 01-15, for which the inventory held no row at all until
+  that run read the page and wrote one. The tenth entry of that run, 01-25 Comm.
+  S. Petri Apostoli, has no pointer in the inventory at all and cannot have one,
+  because the Missal gives that
+  commemoration no formulary and no Common, only three orations printed inside In
+  Conversione S. Pauli, so it carries propers and no takes_from. That shape - a
+  commemoration with orations and no Mass - is not in the inventory's schema and
+  is the reason a placeholder-only entry can be landable while no pointer exists
+  for it
+- what unblocked those 84 was never the Common, which was never in doubt, but the
+  day's own orations and whether they may be published. Both are answered on the
+  page, where the Missal prints a letter beside each oration heading, P for proper to
+  the day and C with a numeral for the Common's set N, and the letter is decisive
+  where the bracket is not. Twice in the January run the letter overturned what
+  the text would have suggested - at 01-19 and at 01-28 the day prints orations
+  marked P whose words are another Mass of the same Common, the fourth where the
+  day takes the third and the first where the day takes the second, so they are
+  genuinely proper relative to the Common appointed and landing the Common's own
+  in their place would have served the wrong prayer. The rights question is
+  answered separately and before publication, by finding the same prayer in a
+  typical edition this repository tracks as public domain; for the January run
+  that witness was the Pustet Ratisbon 1862 throughout, and it carried every one
+  of the twenty-one orations landed
 - the two forms of a Common are two masses here, the second taking the first and
   replacing only the propers that differ, because a mass printed in forms cannot
   carry takes_from and a form cannot reference its sibling. Where a Common prints
@@ -16065,12 +16105,50 @@ sections:
       date: 01-14
       rank: Comm.
       kind: sanctoral
+      notes: 'The Missal gives this day the fourth Mass of the Common of one Martyr
+        and prints three orations under it, each marked P and each different from
+        that Common''s own; they are proper to the day and are transcribed below.
+        Nothing else is absent by omission: the day prints no Introit, reading, chant
+        or Communion antiphon, because it takes them all from the Common. Read on
+        2026-08-02 from the page image of the CMAA facsimile of the controlling
+        edition at printed p. 443 (digital p. 524), rendered at 200 dpi and again at
+        400 dpi for each prayer from the tracked PDF whose sha256 is 648fdb8f; no OCR
+        text layer supplied a reading. The orations stand at marginal nos. 1921, 1922
+        and 1923. They are published as preexisting material under 17 U.S.C. 103(b)
+        and not on any property of the 1962 edition: the tracked public-domain Pustet
+        Ratisbon 1862 prints all three under 14 January, headed Secunda Oratio S.
+        Felicis Presbyteri et Martyris, Secreta pro S. Felice and Postcommunio de S.
+        Felice, word for word. The orthography is this file''s, not the typica''s.'
+      takes_from:
+        mass: commune-unius-martyris-4
+        citation: Missa Laetabitur, de Communi unius Martyris IV loco [8], cum orationibus
+          ut infra
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Concede, quaesumus, omnipotens
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 443, no. 1921, marked P.
+        text: |
+          Concede, quaesumus, omnipotens Deus: ut ad meliorem vitam Sanctorum
+          tuorum exempla nos provocent; quatenus, quorum solemnia agimus, etiam
+          actus imitemur. Per Dominum nostrum.
+      - name: Secret
+        incipit: Hostias tibi, Domine
+        source: composed
+        notes: Printed p. 443, no. 1922, marked P.
+        text: |
+          Hostias tibi, Domine, beati Felicis Martyris tui dicatas meritis,
+          benignus assume: et ad perpetuum nobis tribue provenire subsidium. Per
+          Dominum nostrum.
+      - name: Postcommunion
+        incipit: Quaesumus, Domine, salutaribus
+        source: composed
+        notes: Printed p. 443, no. 1923, marked P.
+        text: |
+          Quaesumus, Domine, salutaribus repleti mysteriis: ut, beati Felicis
+          Martyris tui, cujus solemnia celebramus, orationibus adjuvemur. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
     - key: s-pauli-primi-eremitae-confessoris
       name: S. Pauli primi Eremitae, Confessoris
       registry: '1962-01-15'
@@ -16177,24 +16255,56 @@ sections:
       date: 01-15
       rank: Comm.
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: 'A commemoration whose entry appoints the Mass of the Common and nothing
+        else; the pointer carries no qualifier and ends at the bracket with a full
+        stop. Its three orations the Missal prints inside the Mass of S. Pauli primi
+        Eremitae on the opening before, the Collect headed Et fit commemoratio S.
+        Mauri Abbatis at marginal no. 1926 and the other two Pro S. Mauro at nos.
+        1933 and 1936, and they are not transcribed here because all three are the
+        Commune Abbatum''s own with the saint''s name supplied - the same three the
+        Missal prints two days later for S. Antonii Abbatis at nos. 1941, 1947 and
+        1949 with Antonius for Maurus. Read on 2026-08-02 from the page images of the
+        CMAA facsimile of the controlling edition at printed pp. 443-444 (digital pp.
+        524-525), rendered at 200 dpi and again at 400 dpi from the tracked PDF whose
+        sha256 is 648fdb8f; no OCR text layer supplied a reading. The tracked
+        public-domain Pustet Ratisbon 1862 prints the same pointer under 15 January,
+        Missa Os iusti de Communi Abbatum, and the same three orations.'
+      takes_from:
+        mass: commune-abbatum
+        citation: Missa Os iusti, de Communi Abbatum [27]
     - key: s-marcelli-i-papae-martyris
       name: S. Marcelli I Papae et Martyris
       registry: '1962-01-16'
       date: 01-16
       rank: III
       kind: sanctoral
+      notes: 'The Missal gives this day the Mass of the Common named below except for
+        its Collect, which the pointer says in terms - praeter orationem sequentem -
+        and which stands under the day at marginal no. 1937 marked P. It also prints
+        the Secret and the Postcommunion in full, at nos. 1938 and 1939, and marks
+        each C 1; both are the Commune unius aut plurium Summorum Pontificum''s own
+        first set word for word, so neither is transcribed here and neither is
+        absent. The page prints gragis for gregis in that Secret, which is a defect of
+        this impression and not of the Common. Read on 2026-08-02 from the page
+        images of the CMAA facsimile of the controlling edition at printed pp.
+        444-445 (digital pp. 525-526), rendered at 200 dpi and again at 400 dpi from
+        the tracked PDF whose sha256 is 648fdb8f; no OCR text layer supplied a
+        reading. The Collect is published as preexisting material under 17 U.S.C.
+        103(b): the tracked public-domain Pustet Ratisbon 1862 prints it under 16
+        January word for word.'
+      takes_from:
+        mass: commune-summorum-pontificum
+        citation: Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum
+          [1], praeter orationem sequentem
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Preces populi tui
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 445, no. 1937, marked P.
+        text: |
+          Preces populi tui, quaesumus, Domine, clementer exaudi: ut beati Marcelli
+          Martyris tui atque Pontificis meritis adjuvemur, cujus passione laetamur.
+          Per Dominum.
     - key: s-antonii-abbatis
       name: S. Antonii Abbatis
       registry: '1962-01-17'
@@ -16295,12 +16405,50 @@ sections:
       date: 01-18
       rank: Comm.
       kind: sanctoral
+      notes: 'The Missal gives this day the second Mass of the Common of Virgins and
+        prints three orations under it, each marked P and each different from that
+        Common''s own; they are proper to the day and are transcribed below. The day
+        prints no Introit, reading, chant or Communion antiphon, because it takes
+        them all from the Common. Read on 2026-08-02 from the page image of the CMAA
+        facsimile of the controlling edition at printed p. 446 (digital p. 527),
+        rendered at 200 dpi and again at 400 dpi for each prayer from the tracked PDF
+        whose sha256 is 648fdb8f; no OCR text layer supplied a reading. The pointer
+        stands at marginal no. 1949A and the orations at nos. 1950, 1951 and 1952.
+        They are published as preexisting material under 17 U.S.C. 103(b): the
+        tracked public-domain Pustet Ratisbon 1862 prints all three under 18 January
+        inside the Mass of the Cathedra S. Petri, as the commemoration Collect and
+        Pro S. Prisca Secreta and Postcommunio, word for word but for natalitia where
+        1962 prints natalicia.'
+      takes_from:
+        mass: commune-virginum-2
+        citation: Missa Me exspectaverunt, de Communi Virginum II loco [30], cum orationibus
+          ut infra
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Da, quaesumus, omnipotens Deus
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 446, no. 1950, marked P.
+        text: |
+          Da, quaesumus, omnipotens Deus: ut, qui beatae Priscae Virginis et
+          Martyris tuae natalicia colimus; et annua solemnitate laetemur, et tantae
+          fidei proficiamus exemplo. Per Dominum nostrum.
+      - name: Secret
+        incipit: Haec hostia, quaesumus
+        source: composed
+        notes: Printed p. 446, no. 1951, marked P.
+        text: |
+          Haec hostia, quaesumus, Domine, quam Sanctorum tuorum natalicia
+          recensentes offerimus, et vincula nostrae pravitatis absolvat, et tuae
+          nobis misericordiae dona conciliet. Per Dominum nostrum Jesum Christum,
+          Filium tuum: Qui tecum.
+      - name: Postcommunion
+        incipit: Quaesumus, Domine, salutaribus
+        source: composed
+        notes: Printed p. 446, no. 1952, marked P.
+        text: |
+          Quaesumus, Domine, salutaribus repleti mysteriis: ut, cujus solemnia
+          celebramus, ejus orationibus adjuvemur. Per Dominum nostrum Jesum
+          Christum, Filium tuum: Qui tecum.
     - key: comm-ss-marii-marthae-audifacis-abachum
       name: Comm. Ss. Marii, Marthae, Audifacis et Abachum Martyrum
       registry: '1962-01-19'
@@ -16425,12 +16573,54 @@ sections:
       date: 01-19
       rank: Comm.
       kind: sanctoral
+      notes: 'The Missal gives this day the third Mass of the Common of one Martyr
+        and prints three orations under it, each marked P; the mark is right and the
+        page proves it, because the Secret and the Postcommunion printed here are the
+        FOURTH Mass''s, Accepta sit and Refecti participatione, and not the third
+        Mass''s Muneribus nostris and Da quaesumus. So all three are proper to the day
+        relative to the Common it takes, and all three are transcribed below. The day
+        prints no Introit, reading, chant or Communion antiphon, because it takes
+        them from the Common. Read on 2026-08-02 from the page image of the CMAA
+        facsimile of the controlling edition at printed p. 448 (digital p. 529),
+        rendered at 200 dpi and again at 400 dpi for each prayer from the tracked PDF
+        whose sha256 is 648fdb8f; no OCR text layer supplied a reading. The orations
+        stand at marginal nos. 1967, 1968 and 1969, and the same two are printed a
+        second time on the same opening at nos. 1963 and 1966 as the commemoration
+        inside the Mass of Ss. Marii et Sociorum. They are published as preexisting
+        material under 17 U.S.C. 103(b): the tracked public-domain Pustet Ratisbon
+        1862 prints the Collect under 19 January word for word, and the Secret and
+        Postcommunion in its Commune unius Martyris with beato N. where 1962 supplies
+        Canuto.'
+      takes_from:
+        mass: commune-unius-martyris-3
+        citation: Missa In virtute, de Communi unius Martyris III loco [6], cum orationibus
+          ut infra
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui ad illustrandam
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 448, no. 1967, marked P.
+        text: |
+          Deus, qui ad illustrandam Ecclesiam tuam beatum Canutum regem martyrii
+          palma et gloriosis miraculis decorare dignatus es: concede propitius; ut,
+          sicut ipse dominicae passionis imitator fuit, ita nos, per ejus vestigia
+          gradientes, ad gaudia sempiterna pervenire mereamur. Per eundem Dominum.
+      - name: Secret
+        incipit: Accepta sit in conspectu
+        source: composed
+        notes: Printed p. 448, no. 1968, marked P.
+        text: |
+          Accepta sit in conspectu tuo, Domine, nostra devotio: et ejus nobis fiat
+          supplicatione salutaris, pro cujus solemnitate defertur. Per Dominum
+          nostrum.
+      - name: Postcommunion
+        incipit: Refecti participatione muneris
+        source: composed
+        notes: Printed p. 448, no. 1969, marked P.
+        text: |
+          Refecti participatione muneris sacri, quaesumus, Domine Deus noster: ut,
+          cujus exsequimur cultum, intercedente beato Canuto Martyre tuo, sentiamus
+          effectum. Per Dominum.
     - key: ss-fabiani-papae-sebastiani-martyrum
       name: Ss. Fabiani Papae et Sebastiani Martyrum
       registry: '1962-01-20'
@@ -16682,24 +16872,82 @@ sections:
       date: 01-22
       rank: III
       kind: sanctoral
+      notes: 'The Missal gives this day the first Mass of the Common of several
+        Martyrs and prints three orations under it, each marked P and each different
+        from that Common''s own; they are proper to the day and are transcribed
+        below. The day prints no Introit, reading, chant or Communion antiphon,
+        because it takes them all from the Common. Read on 2026-08-02 from the page
+        image of the CMAA facsimile of the controlling edition at printed p. 451
+        (digital p. 532), rendered at 200 dpi and again at 400 dpi for each prayer
+        from the tracked PDF whose sha256 is 648fdb8f; no OCR text layer supplied a
+        reading. The orations stand at marginal nos. 1992, 1993 and 1994. They are
+        published as preexisting material under 17 U.S.C. 103(b): the tracked
+        public-domain Pustet Ratisbon 1862 prints all three under 22 January word for
+        word, under a pointer that likewise excepts the orations from the Common.'
+      takes_from:
+        mass: commune-plurimorum-martyrum-1
+        citation: Missa Intret, de Communi plurimorum Martyrum I loco [10], cum orationibus
+          ut infra
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Adesto, Domine, supplicationibus
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 451, no. 1992, marked P.
+        text: |
+          Adesto, Domine, supplicationibus nostris: ut, qui ex iniquitate nostra
+          reos nos esse cognoscimus, beatorum Martyrum tuorum Vincentii et Anastasii
+          intercessione liberemur. Per Dominum nostrum Jesum Christum, Filium tuum:
+          Qui tecum vivit et regnat in unitate.
+      - name: Secret
+        incipit: Munera tibi, Domine
+        source: composed
+        notes: Printed p. 451, no. 1993, marked P.
+        text: |
+          Munera tibi, Domine, nostrae devotionis offerimus: quae et pro tuorum tibi
+          grata sint honore justorum, et nobis salutaria, te miserante, reddantur.
+          Per Dominum.
+      - name: Postcommunion
+        incipit: Quaesumus, omnipotens Deus
+        source: composed
+        notes: Printed p. 451, no. 1994, marked P.
+        text: |
+          Quaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus,
+          intercedentibus beatis Martyribus tuis Vincentio et Anastasio, per haec
+          contra omnia adversa muniamur. Per Dominum.
     - key: s-raymundi-penafort-confessoris
       name: S. Raymundi de Penafort Confessoris
       registry: '1962-01-23'
       date: 01-23
       rank: III
       kind: sanctoral
+      notes: 'The Missal gives this day the first Mass of the Common of a Confessor
+        not a Bishop except for its Collect, which the pointer says in terms - praeter
+        orationem sequentem - and which stands under the day at marginal no. 1995
+        marked P. The Secret and the Postcommunion it prints at nos. 1997 and 1999
+        are marked C and are that Common''s own, Laudis tibi and Refecti cibo potuque,
+        so neither is transcribed here and neither is absent. The commemoration of S.
+        Emerentiana printed inside this Mass belongs to the entry beside it and is
+        not carried here. Read on 2026-08-02 from the page image of the CMAA
+        facsimile of the controlling edition at printed p. 452 (digital p. 533),
+        rendered at 200 dpi and again at 400 dpi from the tracked PDF whose sha256 is
+        648fdb8f; no OCR text layer supplied a reading. The Collect is published as
+        preexisting material under 17 U.S.C. 103(b): the tracked public-domain Pustet
+        Ratisbon 1862 prints it under 23 January word for word, spelling poenitentiae
+        where 1962 prints paenitentiae.'
+      takes_from:
+        mass: commune-confessoris-non-pontificis-1
+        citation: Missa Os iusti, de Communi Confessoris non Pontificis I loco [24],
+          praeter orationem sequentem
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui beatum Raymundum
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 452, no. 1995, marked P.
+        text: |
+          Deus, qui beatum Raymundum paenitentiae sacramenti insignem ministrum
+          elegisti, et per maris undas mirabiliter traduxisti: concede; ut ejus
+          intercessione dignos paenitentiae fructus facere, et ad aeternae salutis
+          portum pervenire valeamus. Per Dominum.
     - key: comm-s-emerentianae-virginis-martyris
       name: Comm. S. Emerentianae Virginis et Martyris
       registry: '1962-01-23-comm'
@@ -16935,12 +17183,50 @@ sections:
       date: 01-25
       rank: Comm.
       kind: sanctoral
+      notes: 'A commemoration with no Mass of its own and therefore no takes_from:
+        the Missal appoints it no formulary and no Common, and prints only its three
+        orations, inside the Mass In Conversione S. Pauli Apostoli. The Collect
+        stands under the rubric Et fit commemoratio S. Petri Ap. sub unica
+        conclusione, the other two under the heading Pro S. Petro. No Introit,
+        reading, chant or Communion antiphon is absent by omission; a commemoration
+        consists of these three prayers and of nothing else. Read on 2026-08-02 from
+        the page images of the CMAA facsimile of the controlling edition at printed
+        pp. 454, 455 and 456 (digital pp. 535, 536 and 537), rendered at 200 dpi and
+        again at 400 dpi for each prayer from the tracked PDF whose sha256 is
+        648fdb8f; no OCR text layer supplied a reading. The orations stand at marginal
+        nos. 2014, 2022 and 2025. They are published as preexisting material under 17
+        U.S.C. 103(b): the tracked public-domain Pustet Ratisbon 1862 prints all
+        three under 18 January, in the Mass In Festo Cathedrae S. Petri qua Romae
+        primum sedit, word for word.'
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui beato Petro Apostolo
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 454, no. 2014, under Et fit commemoratio S. Petri Ap. sub
+          unica conclusione.
+        text: |
+          Deus, qui beato Petro Apostolo tuo, collatis clavibus regni caelestis,
+          ligandi atque solvendi pontificium tradidisti: concede; ut, intercessionis
+          ejus auxilio, a peccatorum nostrorum nexibus liberemur: Qui vivis et
+          regnas cum Deo Patre in unitate.
+      - name: Secret
+        incipit: Ecclesiae tuae, quaesumus
+        source: composed
+        notes: Printed p. 455, no. 2022, under Pro S. Petro.
+        text: |
+          Ecclesiae tuae, quaesumus, Domine, preces et hostias beati Petri Apostoli
+          commendet oratio: ut, quod pro illius gloria celebramus, nobis prosit ad
+          veniam. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit
+          et regnat in unitate.
+      - name: Postcommunion
+        incipit: Laetificet nos, Domine
+        source: composed
+        notes: Printed p. 456, no. 2025, under Pro S. Petro.
+        text: |
+          Laetificet nos, Domine, munus oblatum: ut, sicut in Apostolo tuo Petro te
+          mirabilem praedicamus; sic per illum tuae sumamus indulgentiae
+          largitatem. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum
+          vivit et regnat in unitate.
     - key: s-polycarpi-episcopi-martyris
       name: S. Polycarpi Episcopi et Martyris
       registry: '1962-01-26'
@@ -17147,12 +17433,57 @@ sections:
       date: 01-28
       rank: III
       kind: sanctoral
+      notes: 'The Missal gives this day the second Mass of the Common of a Confessor
+        not a Bishop and prints three orations under it, each marked P; the mark is
+        right and the page proves it, because the Secret and the Postcommunion
+        printed here are the FIRST Mass''s, Laudis tibi and Refecti cibo potuque, and
+        not the second Mass''s Praesta nobis and Quaesumus omnipotens Deus. So all
+        three are proper to the day relative to the Common it takes, and all three
+        are transcribed below. The day prints no Introit, reading, chant or Communion
+        antiphon, because it takes them from the Common; the commemoration of S.
+        Agnetis secundo printed beside them belongs to the entry after this one. Read
+        on 2026-08-02 from the page images of the CMAA facsimile of the controlling
+        edition at printed pp. 458-459 (digital pp. 539-540), rendered at 200 dpi and
+        again at 400 dpi for each prayer from the tracked PDF whose sha256 is
+        648fdb8f; no OCR text layer supplied a reading. The orations stand at marginal
+        nos. 2048, 2050 and 2052. They are published as preexisting material under 17
+        U.S.C. 103(b): the tracked public-domain Pustet Ratisbon 1862 prints the
+        Collect under 31 January, the day it then kept his feast, word for word but
+        for foecundare where 1962 prints fecundare, and prints the other two in its
+        Commune Confessoris non Pontificis.'
+      takes_from:
+        mass: commune-confessoris-non-pontificis-2
+        citation: Missa Iustus, de Communi Confessoris non Pontificis II loco [25],
+          cum orationibus ut infra
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui in tuae caritatis
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 458, no. 2048, marked P.
+        text: |
+          Deus, qui in tuae caritatis exemplum ad fidelium redemptionem sanctum
+          Petrum Ecclesiam tuam nova prole fecundare divinitus docuisti: ipsius
+          nobis intercessione concede; a peccati servitute solutis, in caelesti
+          patria perpetua libertate gaudere: Qui vivis et regnas cum Deo Patre in
+          unitate.
+      - name: Secret
+        incipit: Laudis tibi, Domine
+        source: composed
+        notes: Printed p. 459, no. 2050, marked P.
+        text: |
+          Laudis tibi, Domine, hostias immolamus in tuorum commemoratione
+          Sanctorum: quibus nos et praesentibus exui malis confidimus, et futuris.
+          Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
+      - name: Postcommunion
+        incipit: Refecti cibo potuque
+        source: composed
+        notes: Printed p. 459, no. 2052, marked P.
+        text: |
+          Refecti cibo potuque caelesti, Deus noster, te supplices exoramus: ut, in
+          cujus haec commemoratione percepimus, ejus muniamur et precibus. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
     - key: comm-s-agnetis-virginis-martyris-secundo
       name: Comm. S. Agnetis Virginis et Martyris, secundo
       registry: '1962-01-28-comm'
@@ -17271,12 +17602,35 @@ sections:
       date: 01-29
       rank: III
       kind: sanctoral
+      notes: 'The Missal gives this day the Mass of the Common of Doctors except for
+        its Collect, which the pointer says in terms - praeter orationem sequentem -
+        and which stands under the day at marginal no. 2065 marked P. It prints no
+        other oration under the day, so no numeral says which of the Common''s two
+        sets is meant; the day is taken as pro Doctore Pontifice because he is
+        inscribed Ep., Conf. et Eccl. Doct. and the second set is pro Doctore non
+        Pontifice, which is the distinction that gave S. Bedae the wrong Secret
+        before anyone read his page. Read on 2026-08-02 from the page image of the
+        CMAA facsimile of the controlling edition at printed p. 460 (digital p. 541),
+        rendered at 200 dpi and again at 400 dpi from the tracked PDF whose sha256 is
+        648fdb8f; no OCR text layer supplied a reading. The Collect is published as
+        preexisting material under 17 U.S.C. 103(b): the tracked public-domain Pustet
+        Ratisbon 1862 prints it under 29 January word for word. That witness sends
+        the day to the Commune Confessoris Pontificis instead, because he was not
+        declared a Doctor of the Church until 1877; the prayer is the same and only
+        the Common it stands beside has moved.'
+      takes_from:
+        mass: commune-doctorum-pontificis
+        citation: Missa In medio, de Communi Doctorum [22], praeter orationem sequentem
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui ad animarum salutem
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 460, no. 2065, marked P.
+        text: |
+          Deus, qui ad animarum salutem beatum Franciscum Confessorem tuum atque
+          Pontificem omnibus omnia factum esse voluisti: concede propitius; ut,
+          caritatis tuae dulcedine perfusi, ejus dirigentibus monitis ac
+          suffragantibus meritis, aeterna gaudia consequamur. Per Dominum.
     - key: s-martinae-virginis-martyris
       name: S. Martinae Virginis et Martyris
       registry: '1962-01-30'

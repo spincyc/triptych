@@ -8031,18 +8031,45 @@
      "citations": [],
      "cycles": {},
      "form": "",
-     "incipit": null,
-     "name": "Placeholder",
+     "incipit": "Concede, quaesumus, omnipotens",
+     "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
+     "text": "Concede, quaesumus, omnipotens Deus: ut ad meliorem vitam Sanctorum\ntuorum exempla nos provocent; quatenus, quorum solemnia agimus, etiam\nactus imitemur. Per Dominum nostrum.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Hostias tibi, Domine",
+     "name": "Secret",
+     "source": "composed",
+     "taken_from": null,
+     "text": "Hostias tibi, Domine, beati Felicis Martyris tui dicatas meritis,\nbenignus assume: et ad perpetuum nobis tribue provenire subsidium. Per\nDominum nostrum.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Quaesumus, Domine, salutaribus",
+     "name": "Postcommunion",
+     "source": "composed",
+     "taken_from": null,
+     "text": "Quaesumus, Domine, salutaribus repleti mysteriis: ut, beati Felicis\nMartyris tui, cujus solemnia celebramus, orationibus adjuvemur. Per\nDominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in\nunitate.\n",
      "translations": null,
      "untranslated": null
     }
    ],
    "registry": "1962-01-14-comm",
    "season": null,
-   "takes_from": null
+   "takes_from": {
+    "citation": "Missa Laetabitur, de Communi unius Martyris IV loco [8], cum orationibus ut infra",
+    "mass": "commune-unius-martyris-4"
+   }
   },
   {
    "date": "01-15",
@@ -8307,18 +8334,81 @@
      "citations": [],
      "cycles": {},
      "form": "",
-     "incipit": null,
-     "name": "Placeholder",
+     "incipit": "Intercessio nos, quaesumus",
+     "name": "Collect",
      "source": "composed",
-     "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
-     "translations": null,
+     "taken_from": {
+      "citation": "Missa Os iusti, de Communi Abbatum [27]",
+      "form": "",
+      "mass": "commune-abbatum",
+      "proper": "Collect"
+     },
+     "text": "Intercessio nos, quaesumus, Domine, beati N. Abbatis commendet: ut, quod\nnostris meritis non valemus, ejus patrocinio assequamur. Per Dominum\nnostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in\nunitate.\n",
+     "translations": [
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+       "text": "May the intercession, O Lord, of the blessed Abbot N, recommend us to thee: that what we cannot hope for through our own merits, we may obtain by his prayers. Thro'.\n"
+      }
+     ],
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Sacris altaribus, Domine",
+     "name": "Secret",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Os iusti, de Communi Abbatum [27]",
+      "form": "",
+      "mass": "commune-abbatum",
+      "proper": "Secret"
+     },
+     "text": "Sacris altaribus, Domine, hostias superpositas sanctus N. Abbas,\nquaesumus, in salutem nobis provenire deposcat. Per Dominum nostrum\nJesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.\n",
+     "translations": [
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+       "text": "May blessed N. the Abbot intercede for us, O Lord, that the offerings we have laid on thy altars, may avail us unto salvation. Thro'.\n"
+      }
+     ],
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Protegat nos, Domine",
+     "name": "Postcommunion",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Os iusti, de Communi Abbatum [27]",
+      "form": "",
+      "mass": "commune-abbatum",
+      "proper": "Postcommunion"
+     },
+     "text": "Protegat nos, Domine, cum tui perceptione sacramenti beatus N. Abbas,\npro nobis intercedendo: ut et conversationis ejus experiamur insignia,\net intercessionis percipiamus suffragia. Per Dominum.\n",
+     "translations": [
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+       "text": "May the receiving of this sacrament, and the intercession of blessed N. the Abbot, protect us, O Lord; that we may both copy after the virtues of his life, and experience the help of his intercession. Thro'.\n"
+      }
+     ],
      "untranslated": null
     }
    ],
    "registry": "1962-01-15-comm",
    "season": null,
-   "takes_from": null
+   "takes_from": {
+    "citation": "Missa Os iusti, de Communi Abbatum [27]",
+    "mass": "commune-abbatum"
+   }
   },
   {
    "date": "01-16",
@@ -8330,18 +8420,157 @@
      "citations": [],
      "cycles": {},
      "form": "",
-     "incipit": null,
-     "name": "Placeholder",
+     "incipit": "Preces populi tui",
+     "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
+     "text": "Preces populi tui, quaesumus, Domine, clementer exaudi: ut beati Marcelli\nMartyris tui atque Pontificis meritis adjuvemur, cujus passione laetamur.\nPer Dominum.\n",
      "translations": null,
      "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Gregem tuum, Pastor",
+     "name": "Collect (in plurali)",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-summorum-pontificum",
+      "proper": "Collect (in plurali)"
+     },
+     "text": "Gregem tuum, Pastor aeterne, placatus intende: et per beatos N. et N.\n(Martyres tuos atque) Summos Pontifices perpetua protectione custodi;\nquos totius Ecclesiae praestitisti esse pastores. Per Dominum.\n",
+     "translations": null,
+     "untranslated": true
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Deus, qui Ecclesiam",
+     "name": "Collect (Altera oratio)",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-summorum-pontificum",
+      "proper": "Collect (Altera oratio)"
+     },
+     "text": "Deus, qui Ecclesiam tuam, in apostolicae petrae soliditate fundatam, ab\ninfernarum eruis terrore portarum: praesta, quaesumus; ut, intercedente\nbeato N. (Martyre tuo atque) Summo Pontifice, in tua veritate\npersistens, continua securitate muniatur. Per Dominum.\n",
+     "translations": null,
+     "untranslated": true
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Deus, qui Ecclesiam",
+     "name": "Collect (Altera oratio, in plurali)",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-summorum-pontificum",
+      "proper": "Collect (Altera oratio, in plurali)"
+     },
+     "text": "Deus, qui Ecclesiam tuam, in apostolicae petrae soliditate fundatam, ab\ninfernarum eruis terrore portarum: praesta, quaesumus; ut,\nintercedentibus beatis N. et N. (Martyribus tuis atque) Summis\nPontificibus, in tua veritate persistens, continua securitate muniatur.\nPer Dominum.\n",
+     "translations": null,
+     "untranslated": true
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Oblatis muneribus, quaesumus",
+     "name": "Secret",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-summorum-pontificum",
+      "proper": "Secret"
+     },
+     "text": "Oblatis muneribus, quaesumus, Domine, Ecclesiam tuam benignus illumina:\nut et gregis tui proficiat ubique successus, et grati fiant nomini tuo,\nte gubernante, pastores. Per Dominum nostrum.\n",
+     "translations": null,
+     "untranslated": true
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Munera, quae tibi",
+     "name": "Secret (Altera secreta)",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-summorum-pontificum",
+      "proper": "Secret (Altera secreta)"
+     },
+     "text": "Munera, quae tibi, Domine, laetantes offerimus, suscipe benignus, et\npraesta: ut, intercedente beato N. (intercedentibus beatis N. et N.),\nEcclesia tua et fidei integritate laetetur, et temporum tranquillitate\nsemper exsultet. Per Dominum nostrum Jesum Christum, Filium tuum: Qui\ntecum vivit et regnat in unitate.\n",
+     "translations": null,
+     "untranslated": true
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Refectione sancta enutritam",
+     "name": "Postcommunion",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-summorum-pontificum",
+      "proper": "Postcommunion"
+     },
+     "text": "Refectione sancta enutritam guberna, quaesumus, Domine, tuam placatus\nEcclesiam: ut, potenti moderatione directa, et incrementa libertatis\naccipiat et in religionis integritate persistat. Per Dominum.\n",
+     "translations": null,
+     "untranslated": true
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Multiplica, quaesumus, Domine",
+     "name": "Postcommunion (Altera postcommunio)",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-summorum-pontificum",
+      "proper": "Postcommunion (Altera postcommunio)"
+     },
+     "text": "Multiplica, quaesumus, Domine, in Ecclesia tua spiritum gratiae, quem\ndedisti: ut, beati N. (Martyris tui atque) Summi Pontificis\ndeprecatione, nec pastori oboedientia gregis nec gregi desit cura\npastoris. Per Dominum.\n",
+     "translations": null,
+     "untranslated": true
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Multiplica, quaesumus, Domine",
+     "name": "Postcommunion (in plurali)",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-summorum-pontificum",
+      "proper": "Postcommunion (in plurali)"
+     },
+     "text": "Multiplica, quaesumus, Domine, in Ecclesia tua spiritum gratiae, quem\ndedisti: ut, beatorum N. et N. (Martyrum tuorum atque) Summorum\nPontificum deprecatione, nec pastori oboedientia gregis nec gregi desit\ncura pastoris. Per Dominum.\n",
+     "translations": null,
+     "untranslated": true
     }
    ],
    "registry": "1962-01-16",
    "season": null,
-   "takes_from": null
+   "takes_from": {
+    "citation": "Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1], praeter orationem sequentem",
+    "mass": "commune-summorum-pontificum"
+   }
   },
   {
    "date": "01-17",
@@ -8596,18 +8825,117 @@
      "citations": [],
      "cycles": {},
      "form": "",
-     "incipit": null,
-     "name": "Placeholder",
+     "incipit": "Da, quaesumus, omnipotens Deus",
+     "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
+     "text": "Da, quaesumus, omnipotens Deus: ut, qui beatae Priscae Virginis et\nMartyris tuae natalicia colimus; et annua solemnitate laetemur, et tantae\nfidei proficiamus exemplo. Per Dominum nostrum.\n",
      "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Haec hostia, quaesumus",
+     "name": "Secret",
+     "source": "composed",
+     "taken_from": null,
+     "text": "Haec hostia, quaesumus, Domine, quam Sanctorum tuorum natalicia\nrecensentes offerimus, et vincula nostrae pravitatis absolvat, et tuae\nnobis misericordiae dona conciliet. Per Dominum nostrum Jesum Christum,\nFilium tuum: Qui tecum.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Quaesumus, Domine, salutaribus",
+     "name": "Postcommunion",
+     "source": "composed",
+     "taken_from": null,
+     "text": "Quaesumus, Domine, salutaribus repleti mysteriis: ut, cujus solemnia\ncelebramus, ejus orationibus adjuvemur. Per Dominum nostrum Jesum\nChristum, Filium tuum: Qui tecum.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Da nobis, quaesumus",
+     "name": "Collect (Pro pluribus Virginibus Martyribus)",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Me exspectaverunt, de Communi Virginum II loco [30], cum orationibus ut infra",
+      "form": "",
+      "mass": "commune-virginum-2",
+      "proper": "Collect (Pro pluribus Virginibus Martyribus)"
+     },
+     "text": "Da nobis, quaesumus, Domine Deus noster, sanctarum Virginum et Martyrum\ntuarum N. et N. palmas incessabili devotione venerari: ut, quas digna\nmente non possumus celebrare, humilibus saltem frequentemus obsequiis.\nPer Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et\nregnat in unitate.\n",
+     "translations": [
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+       "text": "Grant, we beseech thee, O Lord our God, that with a constant devotion, we may celebrate the victories of thy holy Virgins and Martyrs N. and N. that though we cannot solemnize them as we ought, we may seek their prayers with all due humility. Thro'.\n"
+      }
+     ],
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Intende, quaesumus, Domine",
+     "name": "Secret (Pro pluribus Virginibus Martyribus)",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Me exspectaverunt, de Communi Virginum II loco [30], cum orationibus ut infra",
+      "form": "",
+      "mass": "commune-virginum-2",
+      "proper": "Secret (Pro pluribus Virginibus Martyribus)"
+     },
+     "text": "Intende, quaesumus, Domine, munera altaribus tuis pro sanctarum Virginum\net Martyrum tuarum N. et N. festivitate proposita: ut, sicut per haec\nbeata mysteria illis gloriam contulisti; ita nobis indulgentiam\nlargiaris. Per Dominum nostrum.\n",
+     "translations": [
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+       "text": "Look down, we beseech thee, O Lord, on the offerings laid on thy altar, on this feast of thy holy Virgins and Martyrs N. and N. that as thou hast bestowed glory on them so by the sacred mysteries, thou mayest grant us pardon. Thro'.\n"
+      }
+     ],
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Praesta nobis, quaesumus",
+     "name": "Postcommunion (Pro pluribus Virginibus Martyribus)",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Me exspectaverunt, de Communi Virginum II loco [30], cum orationibus ut infra",
+      "form": "",
+      "mass": "commune-virginum-2",
+      "proper": "Postcommunion (Pro pluribus Virginibus Martyribus)"
+     },
+     "text": "Praesta nobis, quaesumus, Domine: intercedentibus sanctis Virginibus et\nMartyribus tuis N. et N.; ut, quod ore contingimus, pura mente capiamus.\nPer Dominum.\n",
+     "translations": [
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+       "text": "Grant, we beseech thee, O Lord, by the intercession of thy Virgins and Martyrs, to receive with a pure mind what we receive with our mouths. Thro'.\n"
+      }
+     ],
      "untranslated": null
     }
    ],
    "registry": "1962-01-18",
    "season": null,
-   "takes_from": null
+   "takes_from": {
+    "citation": "Missa Me exspectaverunt, de Communi Virginum II loco [30], cum orationibus ut infra",
+    "mass": "commune-virginum-2"
+   }
   },
   {
    "date": "01-19",
@@ -8917,18 +9245,45 @@
      "citations": [],
      "cycles": {},
      "form": "",
-     "incipit": null,
-     "name": "Placeholder",
+     "incipit": "Deus, qui ad illustrandam",
+     "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
+     "text": "Deus, qui ad illustrandam Ecclesiam tuam beatum Canutum regem martyrii\npalma et gloriosis miraculis decorare dignatus es: concede propitius; ut,\nsicut ipse dominicae passionis imitator fuit, ita nos, per ejus vestigia\ngradientes, ad gaudia sempiterna pervenire mereamur. Per eundem Dominum.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Accepta sit in conspectu",
+     "name": "Secret",
+     "source": "composed",
+     "taken_from": null,
+     "text": "Accepta sit in conspectu tuo, Domine, nostra devotio: et ejus nobis fiat\nsupplicatione salutaris, pro cujus solemnitate defertur. Per Dominum\nnostrum.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Refecti participatione muneris",
+     "name": "Postcommunion",
+     "source": "composed",
+     "taken_from": null,
+     "text": "Refecti participatione muneris sacri, quaesumus, Domine Deus noster: ut,\ncujus exsequimur cultum, intercedente beato Canuto Martyre tuo, sentiamus\neffectum. Per Dominum.\n",
      "translations": null,
      "untranslated": null
     }
    ],
    "registry": "1962-01-19-comm",
    "season": null,
-   "takes_from": null
+   "takes_from": {
+    "citation": "Missa In virtute, de Communi unius Martyris III loco [6], cum orationibus ut infra",
+    "mass": "commune-unius-martyris-3"
+   }
   },
   {
    "date": "01-20",
@@ -9544,18 +9899,45 @@
      "citations": [],
      "cycles": {},
      "form": "",
-     "incipit": null,
-     "name": "Placeholder",
+     "incipit": "Adesto, Domine, supplicationibus",
+     "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
+     "text": "Adesto, Domine, supplicationibus nostris: ut, qui ex iniquitate nostra\nreos nos esse cognoscimus, beatorum Martyrum tuorum Vincentii et Anastasii\nintercessione liberemur. Per Dominum nostrum Jesum Christum, Filium tuum:\nQui tecum vivit et regnat in unitate.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Munera tibi, Domine",
+     "name": "Secret",
+     "source": "composed",
+     "taken_from": null,
+     "text": "Munera tibi, Domine, nostrae devotionis offerimus: quae et pro tuorum tibi\ngrata sint honore justorum, et nobis salutaria, te miserante, reddantur.\nPer Dominum.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Quaesumus, omnipotens Deus",
+     "name": "Postcommunion",
+     "source": "composed",
+     "taken_from": null,
+     "text": "Quaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus,\nintercedentibus beatis Martyribus tuis Vincentio et Anastasio, per haec\ncontra omnia adversa muniamur. Per Dominum.\n",
      "translations": null,
      "untranslated": null
     }
    ],
    "registry": "1962-01-22",
    "season": null,
-   "takes_from": null
+   "takes_from": {
+    "citation": "Missa Intret, de Communi plurimorum Martyrum I loco [10], cum orationibus ut infra",
+    "mass": "commune-plurimorum-martyrum-1"
+   }
   },
   {
    "date": "01-23",
@@ -9567,18 +9949,69 @@
      "citations": [],
      "cycles": {},
      "form": "",
-     "incipit": null,
-     "name": "Placeholder",
+     "incipit": "Deus, qui beatum Raymundum",
+     "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
+     "text": "Deus, qui beatum Raymundum paenitentiae sacramenti insignem ministrum\nelegisti, et per maris undas mirabiliter traduxisti: concede; ut ejus\nintercessione dignos paenitentiae fructus facere, et ad aeternae salutis\nportum pervenire valeamus. Per Dominum.\n",
      "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Laudis tibi, Domine",
+     "name": "Secret",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Os iusti, de Communi Confessoris non Pontificis I loco [24], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-confessoris-non-pontificis-1",
+      "proper": "Secret"
+     },
+     "text": "Laudis tibi, Domine, hostias immolamus in tuorum commemoratione\nSanctorum: quibus nos et praesentibus exui malis confidimus, et futuris.\nPer Dominum nostrum.\n",
+     "translations": [
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+       "text": "We offer thee, O Lord, in honour of thy saints, a sacrifice of praise, by which we hope to be delivered from all present and future evils. Thro'.\n"
+      }
+     ],
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Refecti cibo potuque",
+     "name": "Postcommunion",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa Os iusti, de Communi Confessoris non Pontificis I loco [24], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-confessoris-non-pontificis-1",
+      "proper": "Postcommunion"
+     },
+     "text": "Refecti cibo potuque caelesti, Deus noster, te supplices exoramus: ut,\nin cujus haec commemoratione percepimus, ejus muniamur et precibus. Per\nDominum.\n",
+     "translations": [
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+       "text": "Being refreshed, O Lord, with this heavenly meat and drink, we humbly beseech thee, that we may be assisted by his prayers, on whose feast we have received these sacred mysteries. Thro'.\n"
+      }
+     ],
      "untranslated": null
     }
    ],
    "registry": "1962-01-23",
    "season": null,
-   "takes_from": null
+   "takes_from": {
+    "citation": "Missa Os iusti, de Communi Confessoris non Pontificis I loco [24], praeter orationem sequentem",
+    "mass": "commune-confessoris-non-pontificis-1"
+   }
   },
   {
    "date": "01-23",
@@ -10289,11 +10722,35 @@
      "citations": [],
      "cycles": {},
      "form": "",
-     "incipit": null,
-     "name": "Placeholder",
+     "incipit": "Deus, qui beato Petro Apostolo",
+     "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
+     "text": "Deus, qui beato Petro Apostolo tuo, collatis clavibus regni caelestis,\nligandi atque solvendi pontificium tradidisti: concede; ut, intercessionis\nejus auxilio, a peccatorum nostrorum nexibus liberemur: Qui vivis et\nregnas cum Deo Patre in unitate.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Ecclesiae tuae, quaesumus",
+     "name": "Secret",
+     "source": "composed",
+     "taken_from": null,
+     "text": "Ecclesiae tuae, quaesumus, Domine, preces et hostias beati Petri Apostoli\ncommendet oratio: ut, quod pro illius gloria celebramus, nobis prosit ad\nveniam. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit\net regnat in unitate.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Laetificet nos, Domine",
+     "name": "Postcommunion",
+     "source": "composed",
+     "taken_from": null,
+     "text": "Laetificet nos, Domine, munus oblatum: ut, sicut in Apostolo tuo Petro te\nmirabilem praedicamus; sic per illum tuae sumamus indulgentiae\nlargitatem. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum\nvivit et regnat in unitate.\n",
      "translations": null,
      "untranslated": null
     }
@@ -10834,18 +11291,45 @@
      "citations": [],
      "cycles": {},
      "form": "",
-     "incipit": null,
-     "name": "Placeholder",
+     "incipit": "Deus, qui in tuae caritatis",
+     "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
+     "text": "Deus, qui in tuae caritatis exemplum ad fidelium redemptionem sanctum\nPetrum Ecclesiam tuam nova prole fecundare divinitus docuisti: ipsius\nnobis intercessione concede; a peccati servitute solutis, in caelesti\npatria perpetua libertate gaudere: Qui vivis et regnas cum Deo Patre in\nunitate.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Laudis tibi, Domine",
+     "name": "Secret",
+     "source": "composed",
+     "taken_from": null,
+     "text": "Laudis tibi, Domine, hostias immolamus in tuorum commemoratione\nSanctorum: quibus nos et praesentibus exui malis confidimus, et futuris.\nPer Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat\nin unitate.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Refecti cibo potuque",
+     "name": "Postcommunion",
+     "source": "composed",
+     "taken_from": null,
+     "text": "Refecti cibo potuque caelesti, Deus noster, te supplices exoramus: ut, in\ncujus haec commemoratione percepimus, ejus muniamur et precibus. Per\nDominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in\nunitate.\n",
      "translations": null,
      "untranslated": null
     }
    ],
    "registry": "1962-01-28",
    "season": null,
-   "takes_from": null
+   "takes_from": {
+    "citation": "Missa Iustus, de Communi Confessoris non Pontificis II loco [25], cum orationibus ut infra",
+    "mass": "commune-confessoris-non-pontificis-2"
+   }
   },
   {
    "date": "01-28",
@@ -11127,21 +11611,502 @@
    "name": "S. Francisci Salesii Episcopi, Confessoris et Ecclesiae Doctoris",
    "propers": [
     {
+     "citations": [
+      {
+       "book": "Sirach",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 15,
+          "first": 5,
+          "last": 5
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 15,
+          "first": 5,
+          "last": 5
+         }
+        ]
+       },
+       "ref": "Sirach 15:5",
+       "token": "Ecclus",
+       "unresolved": null
+      },
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 92,
+          "first": 1,
+          "last": 1
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 91,
+          "first": 1,
+          "last": 1
+         }
+        ]
+       },
+       "ref": "Psalm 91:1",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "In medio Ecclesiae",
+     "name": "Introit",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-doctorum-pontificis",
+      "proper": "Introit"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
      "citations": [],
      "cycles": {},
      "form": "",
-     "incipit": null,
-     "name": "Placeholder",
+     "incipit": "Deus, qui ad animarum salutem",
+     "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
+     "text": "Deus, qui ad animarum salutem beatum Franciscum Confessorem tuum atque\nPontificem omnibus omnia factum esse voluisti: concede propitius; ut,\ncaritatis tuae dulcedine perfusi, ejus dirigentibus monitis ac\nsuffragantibus meritis, aeterna gaudia consequamur. Per Dominum.\n",
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "2 Timothy",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 4,
+          "first": 1,
+          "last": 8
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 4,
+          "first": 1,
+          "last": 8
+         }
+        ]
+       },
+       "ref": "2 Timothy 4:1-8",
+       "token": "2Tim",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Epistle",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-doctorum-pontificis",
+      "proper": "Epistle"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 37,
+          "first": 30,
+          "last": 31
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 36,
+          "first": 30,
+          "last": 31
+         }
+        ]
+       },
+       "ref": "Psalm 36:30-31",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Os justi meditabitur",
+     "name": "Gradual",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-doctorum-pontificis",
+      "proper": "Gradual"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Sirach",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 45,
+          "first": 9,
+          "last": 9
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 45,
+          "first": 9,
+          "last": 9
+         }
+        ]
+       },
+       "ref": "Sirach 45:9",
+       "token": "Ecclus",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Amavit eum Dominus",
+     "name": "Alleluia",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-doctorum-pontificis",
+      "proper": "Alleluia"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 112,
+          "first": 1,
+          "last": 3
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 111,
+          "first": 1,
+          "last": 3
+         }
+        ]
+       },
+       "ref": "Psalm 111:1-3",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Beatus vir, qui timet Dominum",
+     "name": "Tract",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-doctorum-pontificis",
+      "proper": "Tract"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Sirach",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 45,
+          "first": 9,
+          "last": 9
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 45,
+          "first": 9,
+          "last": 9
+         }
+        ]
+       },
+       "ref": "Sirach 45:9",
+       "token": "Ecclus",
+       "unresolved": null
+      },
+      {
+       "book": "Hosea",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 14,
+          "first": 6,
+          "last": 6
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 14,
+          "first": 6,
+          "last": 6
+         }
+        ]
+       },
+       "ref": "Hosea 14:6",
+       "token": "Os",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Amavit eum Dominus",
+     "name": "Alleluia (Tempore paschali)",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-doctorum-pontificis",
+      "proper": "Alleluia (Tempore paschali)"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Matthew",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 5,
+          "first": 13,
+          "last": 19
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 5,
+          "first": 13,
+          "last": 19
+         }
+        ]
+       },
+       "ref": "Matthew 5:13-19",
+       "token": "Matt",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Gospel",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-doctorum-pontificis",
+      "proper": "Gospel"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 92,
+          "first": 13,
+          "last": 13
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 91,
+          "first": 13,
+          "last": 13
+         }
+        ]
+       },
+       "ref": "Psalm 91:13",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Justus ut palma florebit",
+     "name": "Offertory",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-doctorum-pontificis",
+      "proper": "Offertory"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Sancti N. Pontificis",
+     "name": "Secret",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-doctorum-pontificis",
+      "proper": "Secret"
+     },
+     "text": "Sancti N. Pontificis tui atque Doctoris nobis, Domine, pia non desit\noratio: quae et munera nostra conciliet; et tuam nobis indulgentiam\nsemper obtineat. Per Dominum...\n",
+     "translations": null,
+     "untranslated": true
+    },
+    {
+     "citations": [
+      {
+       "book": "Luke",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 12,
+          "first": 42,
+          "last": 42
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 12,
+          "first": 42,
+          "last": 42
+         }
+        ]
+       },
+       "ref": "Luke 12:42",
+       "token": "Luke",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": "Fidelis servus et prudens",
+     "name": "Communion",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-doctorum-pontificis",
+      "proper": "Communion"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "incipit": "Ut nobis, Domine",
+     "name": "Postcommunion",
+     "source": "composed",
+     "taken_from": {
+      "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-doctorum-pontificis",
+      "proper": "Postcommunion"
+     },
+     "text": "Ut nobis, Domine, tua sacrificia dent salutem: beatus N. Pontifex tuus\net Doctor egregius, quaesumus, precator accedat. Per Dominum...\n",
+     "translations": null,
+     "untranslated": true
+    },
+    {
+     "citations": [
+      {
+       "book": "Sirach",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 39,
+          "first": 6,
+          "last": 14
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 39,
+          "first": 6,
+          "last": 14
+         }
+        ]
+       },
+       "ref": "Sirach 39:6-14",
+       "token": "Ecclus",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Epistle (altera pro Doctoribus)",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+      "form": "",
+      "mass": "commune-doctorum-pontificis",
+      "proper": "Epistle (altera pro Doctoribus)"
+     },
+     "text": null,
      "translations": null,
      "untranslated": null
     }
    ],
    "registry": "1962-01-29",
    "season": null,
-   "takes_from": null
+   "takes_from": {
+    "citation": "Missa In medio, de Communi Doctorum [22], praeter orationem sequentem",
+    "mass": "commune-doctorum-pontificis"
+   }
   },
   {
    "date": "01-30",
@@ -84338,7 +85303,20 @@
      "source": "composed",
      "taken_from": null,
      "text": "Deus, qui nobis sub Sacramento mirabili passionis tuae memoriam\nreliquisti: tribue, quaesumus, ita nos Corporis et Sanguinis tui sacra\nmysteria venerari; ut redemptionis tuae fructum in nobis jugiter\nsentiamus: Qui vivis et regnas cum Deo Patre in unitate.\n",
-     "translations": null,
+     "translations": [
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+       "text": "O God, who in this wonderful sacrament, has left us a perpetual memorial of thy Passion; grant us, we beseech thee, so to reverence the sacred mysteries of thy body and blood, that in our souls we may always be sensible of the fruit of the redemption thou hast purchased for us. Who livest.\n"
+      },
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en",
+       "text": "O God, who in this wonderful sacrament, has left us a perpetual memorial of thy Passion; grant us, we beseech thee, so to reverence the sacred mysteries of thy body and blood, that in our souls we may always be sensible of the fruit of the redemption thou hast purchased for us. Who livest.\n"
+      }
+     ],
      "untranslated": null
     },
     {
@@ -84537,7 +85515,20 @@
      "source": "composed",
      "taken_from": null,
      "text": "Ecclesiae tuae, quaesumus, Domine, unitatis et pacis propitius dona\nconcede: quae sub oblatis muneribus mystice designantur. Per Dominum.\n",
-     "translations": null,
+     "translations": [
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+       "text": "Mercifully grant thy Church, O Lord, we beseech thee, the gifts of Unity and Peace, which are mystically represented in these offerings. Thro'\n"
+      },
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en",
+       "text": "Mercifully grant thy Church, O Lord, we beseech thee, the gifts of Unity and Peace, which are mystically represented in these offerings. Thro’.\n"
+      }
+     ],
      "untranslated": null
     },
     {
@@ -84584,7 +85575,20 @@
      "source": "composed",
      "taken_from": null,
      "text": "Fac nos, quaesumus, Domine, divinitatis tuae sempiterna fruitione\nrepleri: quam pretiosi Corporis et Sanguinis tui temporalis perceptio\npraefigurat: Qui vivis et regnas cum Deo Patre in unitate.\n",
-     "translations": null,
+     "translations": [
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+       "text": "Grant us, O Lord, we beseech thee, the everlasting possession of thyself, as a pledge of which we have received thy body and blood. Who livest.\n"
+      },
+      {
+       "lang": "en",
+       "rights": "public-domain",
+       "source_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en",
+       "text": "Grant us, O Lord, we beseech thee, the everlasting possession of thyself, as a pledge of which we have received thy body and blood. Who livest.\n"
+      }
+     ],
      "untranslated": null
     }
    ],
@@ -96821,17 +97825,17 @@
  "translations": [
   {
    "caution": "A pre-1955 lay hand missal, not an approved liturgical translation and never an altar book. Its rubrics, its seasonal second and third orations, its Holy Week and its sanctoral are not those of 1962. It is carried only where a 1962 formulary is the same prayer, and nothing here may be used for recitation.",
-   "composed": 782,
-   "held": 383,
+   "composed": 811,
+   "held": 394,
    "label": "The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
    "lang": "en",
    "rights": "public-domain",
    "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
   },
   {
-   "caution": "The same pre-1955 caution as the printing it transcribes, and one that belongs to this row alone: it is uncorrected. Nine of its readings are contradicted by the 1861 page images, each named in the `disagreement` key of the entry that holds it, and the artifact has not been amended because its bytes are pinned by sha256 in its own artifact record, in 84 passage records and in tracked document prose, so correcting it is a co-ordinated change and not a lane-local one. It is offered rather than served: the collated edition witness above reaches more of the missal and is the default at every proper.",
-   "composed": 782,
-   "held": 165,
+   "caution": "The same pre-1955 caution as the printing it transcribes, and one that belongs to this row alone: it is uncorrected. Ten of its readings are contradicted by the 1861 page images, each named in the `disagreement` key of the entry that holds it, and the artifact has not been amended because its bytes are pinned by sha256 in its own artifact record, in 84 passage records and in tracked document prose, so correcting it is a co-ordinated change and not a lane-local one. It is offered rather than served: the collated edition witness above reaches more of the missal and is the default at every proper.",
+   "composed": 811,
+   "held": 168,
    "label": "The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861), in this project's transcription of its temporal orations",
    "lang": "en",
    "rights": "public-domain",

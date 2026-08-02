@@ -186,6 +186,115 @@ pass gave citations to, and the 29-date shape is not by itself a detector: it
 was right twice in eleven tries.
 """
 
+january_run = """
+ADDED 2026-08-02. The 84 rows `what_blocks_the_rest` leaves held are blocked on
+one thing, that the day prints orations of its own and nobody has transcribed
+them. This pass took the first contiguous run of them and did exactly that.
+
+THE RUN. The whole opening of the Proprium Sanctorum, from its first day to the
+end of January: printed pp. 442-461, digital pp. 523-542, `FESTA IANUARII POST
+TEMPUS EPIPHANIAE OCCURRENTIA` to `Die 29 ianuarii`. Read end to end rather than
+picked over, twenty page images at 200 dpi and eleven column crops at 400 dpi,
+against the tracked PDF hashed to 648fdb8f before a page was opened. No OCR text
+layer supplied a reading; the text layer was used only to find which pages held
+which day. Nine of this file's pointers fall inside that run and all nine are
+landed, eight of them flipped from `held` and the ninth, 01-15, added above
+because the mechanical pass never produced it.
+
+WHAT WAS LANDED, AND WHERE. In `src/sources/calendars/roman-1962/propers.yaml`,
+ten entries that held nothing but a placeholder:
+
+  01-14  comm-s-felicis-presbyteri-martyris   Common + 3 orations, nos. 1921-1923
+  01-15  comm-s-mauri-abbatis                 Common only; nothing proper
+  01-16  s-marcelli-i-papae-martyris          Common + Collect,      no. 1937
+  01-18  comm-s-priscae-virginis-martyris     Common + 3 orations, nos. 1950-1952
+  01-19  comm-s-canuti-regis-martyris         Common + 3 orations, nos. 1967-1969
+  01-22  ss-vincentii-anastasii-martyrum      Common + 3 orations, nos. 1992-1994
+  01-23  s-raymundi-penafort-confessoris      Common + Collect,      no. 1995
+  01-25  comm-s-petri-apostoli                3 orations, nos. 2014, 2022, 2025
+  01-28  s-petri-nolasci-confessoris          Common + 3 orations, nos. 2048,
+                                              2050, 2052
+  01-29  s-francisci-salesii-...-ecclesiae    Common + Collect,      no. 2065
+
+Twenty-one orations. 01-25 is the entry with no row in this file and none
+possible: the Missal gives that commemoration no formulary and no Common, only
+three prayers printed inside In Conversione S. Pauli, so it landed with propers
+and no `takes_from`. A placeholder-only entry can therefore be landable while
+this file holds no pointer for it, which is worth saying because the pointer
+count is otherwise read as the size of the remaining work.
+
+THE LETTER DECIDED TWO ROWS AGAINST THE TEXT, which is the finding of the pass.
+`second_image_pass` records that the C or P beside each oration heading survives
+OCR in about a quarter of cases and is a reason to read the image. Twice here it
+was the only thing that could have got the row right. At 01-19 the day takes the
+THIRD Mass of the Commune unius Martyris and prints under it, marked P, the
+FOURTH Mass's Secret and Postcommunion, `Accepta sit` and `Refecti
+participatione`, not the third's `Muneribus nostris` and `Da quaesumus`. At 01-28
+the day takes the SECOND Mass of the Commune Confessoris non Pontificis and
+prints under it, marked P, the FIRST Mass's `Laudis tibi` and `Refecti cibo
+potuque`. Both look generic on the page and read like the Common's; both are
+proper relative to the Common the day is sent to, and both would have been
+dropped as redundant by anyone reading the words instead of the letter. The
+contrary case is 01-16 and 01-23, where the Secret and Postcommunion printed
+under the day are marked C or C 1 and are that Common's own to the letter, so
+neither was transcribed and neither is absent.
+
+THE RIGHTS QUESTION WAS ANSWERED BEFORE PUBLICATION AND SEPARATELY FROM THE
+READING. `src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`
+holds that the 1962 typical edition is probably in copyright in the United States
+to the end of 2057 and that what permits this project to quote it is 17 U.S.C.
+103(b), which reaches only the 1962 edition's own contribution. So the facsimile
+establishes WHAT THE 1962 BOOK PRINTS and cannot establish that the words may be
+published. Every one of the twenty-one orations was therefore found in the
+tracked public-domain Pustet Ratisbon 1862 before it was written into
+`propers.yaml`, and all twenty-one were found: at 14, 16, 18, 19, 22, 23, 29 and
+31 January, and in that book's own Commons where the 1962 supplies a name for its
+`beati N.`. Three orthographic divergences and no textual one - 1862 prints
+`natalitia` for `natalicia` at 01-18, `poenitentiae` for `paenitentiae` at 01-23,
+and `foecundare` for `fecundare` at 01-28 - and one calendrical: 1862 keeps
+S. Petrus Nolascus on 31 January, and sends S. Franciscus Salesius to the Commune
+Confessoris Pontificis rather than the Commune Doctorum, because he was not
+declared a Doctor of the Church until 1877. The prayer is the same in every case
+and only the day or the Common beside it has moved.
+
+NOTHING POST-1920 WAS TOUCHED, and the run was chosen so that nothing would be.
+Every saint in it has a formulary older than the 1920 typical edition, the latest
+being S. Petrus Nolascus, canonized 1628. The rights record names the 1962
+edition's own new matter as the 1955 Holy Week, the 1960 Code of Rubrics, the
+sanctoral added after 1920 and the front matter; a saint canonized after 1920 has
+no preexisting stratum to fall back on and his formulary's composed texts are the
+edition's contribution, so for such a day only the scripture citations may be
+carried. No day of this run is of that kind. It follows, and is worth recording,
+that this run landed NO citation at all: all ten days take Introit, readings,
+chants and Communion antiphon from a Common, so there was no scripture printed
+under any of them to encode.
+
+WHAT THE RUN LEAVES, COUNTED RATHER THAN ESTIMATED. 84 rows were held on the
+day's own orations; EIGHT of them are landed, not nine, because 01-15 was never
+among the 84 - it had no row at all until this pass wrote one. So 76 remain on
+that ground, and the file now carries 149 pointer rows of which 148 came from the
+extraction `method` describes and one did not. The state count over the whole file
+is 59 landed and 90 held: 76 on the day's own orations, 12 on several pointers or
+a seasonal condition, 1 on an unrecognised rubric, 1 not attached to an entry.
+The next contiguous run is February - 02-04, 02-09,
+02-10, 02-14, 02-15 and 02-23, with 02-22 Comm. S. Pauli Apostoli standing in the
+same shape as 01-25 and needing no pointer. The method is the one above and the
+cost is the same: one page image per day, the letter read off the page, and the
+oration found in a tracked public-domain witness before it is published.
+
+ONE THING THE FEBRUARY RUN MUST CHECK THAT THE JANUARY RUN DID NOT HAVE TO. The
+1862 carried every saint of January because every one of them was already in the
+Missal in 1862. February is not uniformly so - S. Cyrillus Alexandrinus at 02-09
+was extended to the universal calendar in 1882, twenty years after that printing
+- so the witness has to be looked for and found, day by day, and where the 1862
+does not carry a day the 1604 and the 1570 will carry it still less. A day of
+that kind is not blocked on rights in general, only on this repository's present
+witnesses; the honest disposition for it is to land nothing and say which
+witness was looked in and did not have it, rather than to publish the Latin on
+the strength of the prayer being old. That is the inference the rights record
+refuses at `[the_underlying_edition.routes_examined_and_refused]`.
+"""
+
 [[divergences]]
 date = "06-17"
 printed = "Missa Statuit, de Communi Confessoris Pontificis I loco [4]"
@@ -221,8 +330,38 @@ printed_common = "unius Martyris IV loco"
 printed_bracket = 8
 common_mass = "commune-unius-martyris-4"
 mass = "comm-s-felicis-presbyteri-martyris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
+
+[[pointers]]
+date = "01-15"
+printed_page = 444
+digital_page = 525
+column = "R"
+printed_name = "S. Mauri Abbatis"
+printed_rank = "Commemoratio"
+printed_incipit = "Os iusti"
+printed_common = "Abbatum"
+printed_bracket = 27
+common_mass = "commune-abbatum"
+mass = "comm-s-mauri-abbatis"
+state = "landed"
+recovered_by = "page image, 2026-08-02"
+note = """
+NOT PRODUCED BY THE MECHANICAL PASS THAT BUILT THIS FILE, and read off the page
+image instead. The extraction returned 148 pointers over the Proprium Sanctorum
+and this was not one of them; the reason is visible on the leaf. The pointer
+stands under an `Eodem die` heading that follows the whole Mass of S. Pauli primi
+Eremitae in the same column, four lines of small type between a Postcommunio and
+the next `Die N ianuarii`, and it prints its Common and bracket and then stops -
+no oration follows it, so the rule that takes a pointer only from the lines
+before the day's first oration had no terminator to work against. Read at 200 dpi
+and again at 400 dpi on 2026-08-02: `Missa Os iusti, de Communi Abbatum [27].`
+at marginal no. 1936A, ending at the bracket with a full stop and no qualifier.
+The bracket test passes, and the day's three orations - printed inside S. Pauli's
+Mass at nos. 1926, 1933 and 1936 - are the Commune Abbatum's own with the saint's
+name supplied, which is settled by the Missal printing the identical three two
+days later for S. Antonii Abbatis with Antonius for Maurus.
+"""
 
 [[pointers]]
 date = "01-16"
@@ -236,8 +375,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "s-marcelli-i-papae-martyris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "01-18"
@@ -251,8 +389,7 @@ printed_common = "Virginum II loco"
 printed_bracket = 30
 common_mass = "commune-virginum-2"
 mass = "comm-s-priscae-virginis-martyris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "01-19"
@@ -266,8 +403,7 @@ printed_common = "unius Martyris III loco"
 printed_bracket = 6
 common_mass = "commune-unius-martyris-3"
 mass = "comm-s-canuti-regis-martyris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "01-22"
@@ -281,8 +417,7 @@ printed_common = "plurimorum Martyrum I loco"
 printed_bracket = 10
 common_mass = "commune-plurimorum-martyrum-1"
 mass = "ss-vincentii-anastasii-martyrum"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "01-23"
@@ -296,8 +431,7 @@ printed_common = "Confessoris non Pontificis I loco"
 printed_bracket = 24
 common_mass = "commune-confessoris-non-pontificis-1"
 mass = "s-raymundi-penafort-confessoris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "01-23"
@@ -325,8 +459,7 @@ printed_common = "Confessoris non Pontificis II loco"
 printed_bracket = 25
 common_mass = "commune-confessoris-non-pontificis-2"
 mass = "s-petri-nolasci-confessoris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "01-29"
@@ -340,8 +473,7 @@ printed_common = "Doctorum"
 printed_bracket = 22
 common_mass = "commune-doctorum-pontificis"
 mass = "s-francisci-salesii-episcopi-confessoris-ecclesiae"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "01-30"
