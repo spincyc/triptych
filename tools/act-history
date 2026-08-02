@@ -58,6 +58,9 @@ commit message, and in an `Act-date` trailer, so nothing depends on the stamp.
 from __future__ import annotations
 
 import argparse
+import hashlib
+import importlib.machinery
+import importlib.util
 import json
 import re
 import subprocess
@@ -296,9 +299,10 @@ EXAMPLES = {
             (
                 "59 stations on 17 lines, 45 edges",
                 "  roots 15, termini 17, interchanges 1, single-station lines 5",
+                "  monochrome: 6 textures x 3 greys separates 18 lines",
+                "  apparatus: edition, provenance, exceptions, epistemic, legend, grammar, url, cite, unmarked",
                 "  -> build/act-history/plate/latin-missal.dot",
-                "  octilinearise: octi < build/act-history/plate/latin-missal.dot | transitmap"
-                " > latin-missal.svg",
+                "  octilinearise: octi < build/act-history/plate/latin-missal.dot | transitmap > latin-missal.svg",
             ),
             note=(
                 "writes an untracked DOT under build/; the SVG step needs LOOM's `octi`,"
@@ -310,9 +314,10 @@ EXAMPLES = {
             (
                 "12 stations on 2 lines, 12 edges",
                 "  roots 1, termini 2, interchanges 1, single-station lines 1",
+                "  monochrome: 6 textures x 3 greys separates 18 lines",
+                "  apparatus: edition, provenance, exceptions, epistemic, legend, grammar, url, cite, unmarked",
                 "  -> build/act-history/plate/roman-holy-week.dot",
-                "  octilinearise: octi < build/act-history/plate/roman-holy-week.dot | transitmap"
-                " > roman-holy-week.svg",
+                "  octilinearise: octi < build/act-history/plate/roman-holy-week.dot | transitmap > roman-holy-week.svg",
             ),
             note="the default source is the Holy Week tracer: one fork, one reception, one terminus",
         ),
@@ -321,7 +326,9 @@ EXAMPLES = {
         Example(
             "tools/act-history check",
             (
-                "ok: 12 acts, 2 lines, 8 witnesses, 4 masses, 38 base units, 42 departures",
+                "ok: 12 acts, 2 lines, 9 witnesses, 4 masses, 38 base units, 42 departures",
+                "stations: promulgated 12; 1 roots",
+                "edges rest on: act-states-it 9, line-order 3",
                 "departure kinds used: absent 20, added 1, moved 3, renamed 5, replaced 2, reslotted 8, unrecorded 3",
             ),
         ),
@@ -330,18 +337,18 @@ EXAMPLES = {
         Example(
             "tools/act-history graph",
             (
-                "typica            quo-primum-1570                 1570-07-14  root",
-                "exempt-uses       quo-primum-exemption-1570       1570-07-14  <- quo-primum-1570",
-                "typica            cum-sanctissimum-1604           1604-07-07  <- quo-primum-1570",
-                "typica            si-quid-est-1634                1634-09-02  <- cum-sanctissimum-1604",
-                "typica            divino-afflatu-1911             1911-11-01  <- si-quid-est-1634",
-                "typica            abhinc-duos-annos-1913          1913-10-23  <- divino-afflatu-1911",
-                "typica            editio-typica-1920              1920-07-25  <- abhinc-duos-annos-1913 (via unre... [+35 chars]",
-                "typica            de-rubricis-simpliciorem-1955   1955-03-23  <- editio-typica-1920",
-                "typica            maxima-redemptionis-1955        1955-11-16  <- editio-typica-1920 [absent,moved,... [+27 chars]",
-                "typica            rubricarum-instructum-1960      1960-07-25  <- de-rubricis-simpliciorem-1955",
-                "typica            codex-rubricarum-1960           1960-07-26  <- rubricarum-instructum-1960 [renamed]",
-                "typica            editio-typica-1962              1962-06-23  <- maxima-redemptionis-1955, codex-r... [+33 chars]",
+                "  typica            quo-primum-1570                        1570-07-14  root",
+                "  exempt-uses       quo-primum-exemption-1570              1570-07-14  <- quo-primum-1570",
+                "  typica            cum-sanctissimum-1604                  1604-07-07  <- quo-primum-1570",
+                "  typica            si-quid-est-1634                       1634-09-02  <- cum-sanctissimum-1604",
+                "  typica            divino-afflatu-1911                    1911-11-01  <- si-quid-est-1634",
+                "  typica            abhinc-duos-annos-1913                 1913-10-23  <- divino-afflatu-1911",
+                "  typica            editio-typica-1920                     1920-07-25  <- abhinc-duos-annos-1913 ... [+44 chars]",
+                "  typica            de-rubricis-simpliciorem-1955          1955-03-23  <- editio-typica-1920",
+                "  typica            maxima-redemptionis-1955               1955-11-16  <- editio-typica-1920 [abse... [+36 chars]",
+                "  typica            rubricarum-instructum-1960             1960-07-25  <- de-rubricis-simpliciorem-1955",
+                "  typica            codex-rubricarum-1960                  1960-07-26  <- rubricarum-instructum-1960 [renamed]",
+                "  typica            editio-typica-1962                     1962-06-23  <- maxima-redemptionis-1955... [+42 chars]",
             ),
         ),
     ),
@@ -403,10 +410,20 @@ def _load(source: Path, seen: list[Path]) -> dict:
     resolve_withholdings(data, source)
     extends = data.pop("extends", None)
     if not extends:
-        data["extends_chain"] = [source.name]
+        data.update(chained([str(source)]))
         return data
     base = _load(source.parent / extends, [*seen, source])
     return overlay(base, data, source)
+
+
+def chained(paths: list[str]) -> dict:
+    """The files a slice was read from, and the names derived from them.
+
+    One fact and not two. `plate` hashes the files to pin the edition it drew
+    and everything else names them, and a hand-kept list of names beside a list
+    of paths is the restatement guidance/the-shape.md section 2 is about.
+    """
+    return {"source_files": paths, "extends_chain": [Path(path).name for path in paths]}
 
 
 # --- One number, typed once ---------------------------------------------------
@@ -578,7 +595,7 @@ def overlay(base: dict, extension: dict, source: Path) -> dict:
                     )
                 rows.append(dict(row))
         merged[table] = rows
-    merged["extends_chain"] = [*base.get("extends_chain", []), source.name]
+    merged.update(chained([*base.get("source_files", []), str(source)]))
     return merged
 
 
@@ -2557,6 +2574,224 @@ PLATE_SCHEMA = "triptych-act-plate/v1"
 # line is three chances to document a pipeline nobody can run.
 OCTILINEARISE = "octi < {path} | transitmap > {stem}.svg"
 
+# The release this record stands in, and the page this sheet is the printed twin
+# of. Both are read rather than typed: the release identity is the release
+# record's own, and the origin belongs to the tool that publishes to it, which
+# the release-binding checker loads for the same reason.
+RELEASE_RECORD = ROOT / "release" / "public-alpha.json"
+PUBLIC_ALPHA = ROOT / "tools" / "public-alpha"
+WEB_BROWSER = ROOT / "src" / "web" / "browser"
+TWIN_PAGE = WEB_BROWSER / "history" / "index.html"
+
+
+# --- The monochrome grammar ---------------------------------------------------
+#
+# guidance/time-machine.md section 9, measured from the plate: Transport for
+# London publishes an official black-and-white Tube map distinguishing
+# TWENTY-TWO services with no colour at all, and the grammar is copyable --
+# constant band width for every line, so weight stays free for another
+# dimension; the differentiation is the band's INTERNAL TEXTURE plus THREE GREY
+# VALUES; and it is paid for with 2.4 times more repeated inline naming.
+#
+# WHAT THIS SEPARATES, AND IT IS NOT SEVENTEEN BY DASHES. Six textures times
+# three greys is EIGHTEEN lines, which is where `latin-missal`'s seventeen fit.
+# The DASH CHANNEL ALONE SEPARATES SIX, and it is the channel that survives a
+# photocopy; the grey channel is the rest of the way to eighteen and needs the
+# sheet printed rather than copied. Past eighteen the pairs repeat, and the file
+# names which lines share one rather than claiming a distinction it does not
+# draw.
+#
+# Six is the engineering draughtsman's own set and is chosen for that: it is the
+# largest set of dash patterns with a name apiece that a reader can hold.
+#
+# The dash lengths are SVG `stroke-dasharray` values at the nominal band width
+# below; a renderer that scales the band scales them with it.
+NOMINAL_BAND = "2"
+TEXTURES = (
+    ("solid", ""),
+    ("long-dash", "8 3"),
+    ("short-dash", "3 3"),
+    ("dotted", "0.5 2.5"),
+    ("dash-dot", "8 2.5 0.5 2.5"),
+    ("dash-dot-dot", "8 2.5 0.5 2.5 0.5 2.5"),
+)
+GREYS = (
+    ("black", "#000000", "100"),
+    ("mid-grey", "#595959", "65"),
+    ("light-grey", "#8c8c8c", "45"),
+)
+DISTINGUISHED = len(TEXTURES) * len(GREYS)
+
+# The width channel is the one section 9's constant band leaves free, and what
+# an edge here has left to say is what the descent rests on. Three tiers over
+# the five declared `parent_kind` values, because five widths inside one band
+# are not tellable apart in print and a grammar that claims five separates
+# three; the exact kind stays on the edge in `descent` for a reader who needs
+# it. Ordered strongest first, and the order is PARENT_KINDS' own.
+DESCENT_TIERS = (
+    ("stated", "3", ("act-states-it", "book-states-it"),
+     "an instrument's own text, or the book's own title page, draws the edge"),
+    ("attributed", "2", ("attributed",),
+     "a scholarly attribution draws it, cited to its source"),
+    ("sequence", "1", ("use-continuity", "line-order"),
+     "nothing draws it: two books declare one use, or two acts stand in this order"),
+)
+
+
+def monochrome(lanes: dict[str, int]) -> dict[str, dict[str, str]]:
+    """A texture and a grey for every line, keyed to the lane and to nothing else.
+
+    The texture turns over fastest, so two lines sharing a texture stand at
+    least six lanes apart -- and lanes are adjacent exactly where the traditions
+    were drawn adjacent, which is where a reader has to tell two bands apart
+    while following one across a crossing.
+
+    Keyed to the derived lane rather than to the line's name, so the grammar
+    moves with the drawing and an editorial rename does not restripe the sheet.
+    """
+    keyed: dict[str, dict[str, str]] = {}
+    for line, lane in sorted(lanes.items(), key=lambda pair: pair[1]):
+        texture, dasharray = TEXTURES[lane % len(TEXTURES)]
+        grey, colour, _ = GREYS[(lane // len(TEXTURES)) % len(GREYS)]
+        keyed[line] = {
+            "texture": texture,
+            "dasharray": dasharray,
+            "grey": grey,
+            "colour": colour,
+        }
+    return keyed
+
+
+def sharing_a_key(keyed: dict[str, dict[str, str]]) -> list[str]:
+    """The lines that share another line's texture and grey, named.
+
+    Empty below eighteen lines. Above it the pairs repeat, and a plate that said
+    nothing would be claiming to separate what it draws identically.
+    """
+    seen: dict[tuple[str, str], str] = {}
+    shared: list[str] = []
+    for line, key in keyed.items():
+        pair = (key["texture"], key["grey"])
+        if pair in seen:
+            shared.append(f"{line} = {seen[pair]}")
+        else:
+            seen[pair] = line
+    return shared
+
+
+def descent_tier(kind: str) -> tuple[str, str]:
+    """A `parent_kind` to the width tier that draws it, or nothing."""
+    for name, width, kinds, _ in DESCENT_TIERS:
+        if kind in kinds:
+            return name, width
+    return "", ""
+
+
+# --- The apparatus ------------------------------------------------------------
+#
+# Section 9: the ICS chronostratigraphic chart carries ON THE PLATE a notation
+# legend, an epistemic marker defined, a status disclaimer, the provenance of
+# the data WITH ITS EXCEPTIONS NAMED, an edition stamp, a version-pinned URL and
+# a "To cite:" line -- and for a derived artifact that must match its
+# interactive twin at a stated moment, the pinned URL and the edition stamp are
+# the highest-value lines on the sheet.
+#
+# What to reject is Priestley: he refused per-item citation as "endless" and
+# gave a global bibliography instead, and that refusal is precisely what
+# separates an infographic from scholarship. Rule 1 already gives every station
+# an instrument, so the stations cite themselves and the sheet cites the sheet.
+#
+# ALL OF IT IS COMPUTED. A legend typed beside the emitter would drift from it
+# the first time a texture moved, and every count here is the count the file
+# itself carries.
+
+
+def release_identity() -> str:
+    """The release this record stands in, from the release record's own id.
+
+    The edition stamp is the RELEASE's and never the build machine's. Nothing
+    here reads a clock: a `Date.now()` in this file would put a different byte
+    in the artifact every run and destroy the reproducibility Rule 5 asks for.
+    Absent or unreadable, the stamp says so rather than inventing a date.
+    """
+    try:
+        payload = json.loads(RELEASE_RECORD.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return ""
+    identity = payload.get("release_id") if isinstance(payload, dict) else None
+    return identity if isinstance(identity, str) else ""
+
+
+def site() -> tuple[str, str]:
+    """The published origin and the site's name, asked of the tool that owns them.
+
+    tools/public-alpha declares the one origin the site is reached at, and
+    the release-binding checker already loads it rather than copying it. A second
+    copy of an origin is a second chance to print a URL nobody can follow.
+    """
+    loader = importlib.machinery.SourceFileLoader("triptych_public_alpha", str(PUBLIC_ALPHA))
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    if spec is None or spec.loader is None:
+        return "", ""
+    module = importlib.util.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(module)
+        origin = module.SITE_ORIGIN
+        name = module.SITE_NAME
+    except Exception:  # the renderer owns the origin; an unreadable one is no origin
+        return "", ""
+    return (origin if isinstance(origin, str) else ""), (name if isinstance(name, str) else "")
+
+
+def twin_url(origin: str, slice_id: str) -> str:
+    """Where the interactive twin of this sheet is published, or nothing.
+
+    Derived from the page that is actually there: the site serves a reading
+    directory's pages at `<directory>/<page>`, and a URL composed for a page
+    this repository does not hold would be an apparatus line that 404s.
+    """
+    if not origin or not TWIN_PAGE.is_file():
+        return ""
+    return f"{origin}/{TWIN_PAGE.relative_to(WEB_BROWSER).as_posix()}?slice={slice_id}"
+
+
+def digests(data: dict) -> list[tuple[str, str]]:
+    """Every file the slice was read from, with its SHA-256. This is the pin.
+
+    A version-pinned URL is what section 9 asks for and what a one-edition site
+    cannot give: the origin serves whatever was published last. So the pin is
+    the record's own, and it is checkable with `sha256sum` against the files
+    named -- which is a stronger pin than a URL, because it names the bytes.
+    """
+    pinned: list[tuple[str, str]] = []
+    for path in (Path(name) for name in data.get("source_files") or []):
+        try:
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        except OSError:
+            digest = "unreadable"
+        try:
+            shown = path.resolve().relative_to(ROOT).as_posix()
+        except ValueError:
+            shown = path.name
+        pinned.append((shown, digest))
+    return pinned
+
+
+def tallied(counts: dict[str, int], order: tuple[str, ...]) -> str:
+    """`kind N, kind N` in a declared order, and only what is there."""
+    return ", ".join(f"{kind} {counts[kind]}" for kind in order if counts.get(kind))
+
+
+def counted(number: int, singular: str) -> str:
+    """`1 station`, `26 stations`. An apparatus reading "1 stations" was typed."""
+    return f"{number} {singular}" + ("" if number == 1 else "s")
+
+
+# The marker section 9 asks to be DEFINED on the plate, and the ICS chart's own.
+# It rides on the station rather than being left for the labeller to re-derive,
+# so the sheet and the file cannot disagree about which dates are approximate.
+APPROXIMATE = "~"
+
 
 def day_number(date: str) -> int:
     """The date as a day count, at the precision the record actually has.
@@ -2679,6 +2914,265 @@ def attributes(pairs: list[tuple[str, object]]) -> str:
     return "[" + ", ".join(f"{name}={dot_string(value)}" for name, value in pairs if value != "") + "]"
 
 
+def apparatus(
+    data: dict,
+    slice_id: str,
+    rows: list[dict],
+    acts: dict[str, dict],
+    keyed: dict[str, dict[str, str]],
+    counts: dict[str, int],
+    tiers: dict[str, int],
+) -> list[tuple[str, list[str]]]:
+    """Section 9's apparatus, computed from the slice and never typed.
+
+    Returned as (key, lines) so that one computation is written twice and
+    restated never: into the file's header, where a person reads it, and into
+    the graph's own attributes, where the labelling pass that places it on the
+    sheet will read it off the graph it is labelling.
+    """
+    witnesses = data.get("witnesses") or []
+    units = data.get("units") or []
+    readings: dict[str, dict[str, int]] = {}
+    for what, holders in (("acts", acts.values()), ("witnesses", witnesses), ("units", units)):
+        held: dict[str, int] = {}
+        for row in holders:
+            held[str(row.get("read_from"))] = held.get(str(row.get("read_from")), 0) + 1
+        readings[what] = held
+
+    citation_kinds: dict[str, int] = {}
+    approximate = 0
+    unestablished = 0
+    for act in acts.values():
+        kind = str(act.get("act_citation"))
+        citation_kinds[kind] = citation_kinds.get(kind, 0) + 1
+        if precision_of(str(act.get("date"))) != "day":
+            approximate += 1
+        if not act.get("effect_established"):
+            unestablished += 1
+    through_unrepresented = sum(1 for row in rows for _ in row.get("via_unrepresented") or [])
+    kinds: dict[str, int] = {}
+    for row in rows:
+        kind = str(acts[row["act"]].get("parent_kind") or "")
+        for _ in row["parents"]:
+            kinds[kind] = kinds.get(kind, 0) + 1
+
+    release = release_identity()
+    origin, site_name = site()
+    url = twin_url(origin, slice_id)
+    recorded = str(data.get("recorded_on") or "")
+    pinned = digests(data)
+    stations = counts["stations"]
+    lines = counts["lines"]
+
+    edition = [
+        f"Release {release}." if release
+        else f"No release identity: {RELEASE_RECORD.relative_to(ROOT).as_posix()} could not be read.",
+        f"Slice {slice_id}, recorded {recorded} by the record itself." if recorded
+        else f"Slice {slice_id}, which declares no `recorded_on`; the digests below are the whole pin.",
+        f"acts_schema {SCHEMA_VERSION}; {PLATE_SCHEMA}.",
+        "No clock was read to write this: the stamp is the release's, and the same"
+        " source gives the same bytes.",
+    ]
+
+    vocab = vocabulary_of(data)
+    provenance = [
+        f"A {data.get('record_type') or 'record of acts'} in the {vocab.name} vocabulary,"
+        f" read from these files and pinned by their SHA-256:",
+        *(f"{path}  sha256 {digest}" for path, digest in pinned),
+        f"{stations} stations on {lines} lines, {counts['edges']} edges,"
+        f" {len(witnesses)} witnesses, {len(units)} base {vocab.unit_plural}.",
+        *(
+            [f"Acts read from: {tallied(readings['acts'], READINGS)}."]
+            if any(readings["acts"].get(kind) for kind in READINGS) else []
+        ),
+        *(
+            [f"Witnesses read from: {tallied(readings['witnesses'], READINGS)}."]
+            if any(readings["witnesses"].get(kind) for kind in READINGS) else []
+        ),
+    ]
+
+    # Named, and counted, and only where there are any. An exception nobody
+    # states is a claim the sheet makes silently.
+    exceptions = []
+    if counts["printed"]:
+        exceptions.append(
+            f"{counts['printed']} of {stations} stations claim NO ACT AT ALL"
+            " (station_kind=printed): a book survives, no instrument is claimed, and the"
+            " station is the weaker claim wherever it appears."
+        )
+    if citation_kinds.get("not-found"):
+        exceptions.append(
+            counted(citation_kinds["not-found"], "station")
+            + " whose instrument is believed to exist and was not found in the corpus"
+            " searched; each names what was searched."
+        )
+    if counts["roots"]:
+        exceptions.append(
+            f"Stations beginning a line with NO RECORDED DESCENT: {counts['roots']}."
+            " Where the corpus holds no earlier act the branch is a root, and the"
+            " emptiness is the record rather than a gap in it."
+        )
+    if tiers.get("sequence"):
+        exceptions.append(
+            counted(tiers["sequence"], "edge")
+            + " rest on NOTHING BUT ORDER ("
+            + tallied(kinds, ("use-continuity", "line-order"))
+            + "): two books declare one use, or two acts stand on one line in this order"
+            " and neither names the other. They are drawn at the lightest width."
+        )
+    if tiers.get("attributed"):
+        exceptions.append(
+            counted(tiers["attributed"], "edge")
+            + " rest on a scholarly attribution rather than on an act's own words."
+        )
+    if through_unrepresented:
+        exceptions.append(
+            "Descents passing through acts this record does not carry:"
+            f" {through_unrepresented}. The edge names them in `via_unrepresented` and is"
+            " drawn straight, because a station this record cannot cite is not a station."
+        )
+    for what, word in (("acts", "acts"), ("witnesses", "witnesses"), ("units", vocab.unit_plural)):
+        weak = tallied(readings[what], ("ocr-only", "not-read"))
+        if weak:
+            exceptions.append(f"Read no better than this: {word} {weak}.")
+    withheld = sum(1 for unit in units if unit.get("withheld"))
+    if withheld:
+        exceptions.append(
+            counted(withheld, vocab.unit_word)
+            + " whose text is withheld here. That is a rights position and not ignorance."
+        )
+    if unestablished:
+        exceptions.append(
+            counted(unestablished, "act")
+            + " whose effect this record does not claim was established. What an act"
+            " CHANGED is a historical judgement and is contested for some of them; the"
+            " station stands on the act and never on the judgement."
+        )
+    if not exceptions:
+        exceptions.append("None: every station cites an instrument and every edge cites its basis.")
+
+    epistemic = [
+        f"{APPROXIMATE} before a date means the record holds only the year or the month."
+        " The station carries the mark itself, in `approximate`, rather than leaving a"
+        " labeller to work out again which dates are approximate.",
+        (
+            f"{approximate} of {stations} stations carry it. Such a station is PLACED on"
+            " the first day it could be, and the true string rides on the node as `date`"
+            " with `date_precision` beside it, so a label reads 1497 and never 1497-01-01."
+            if approximate else
+            f"No station here carries it: all {stations} dates are days."
+        ),
+        "Nothing else on this sheet is an uncertainty mark. What a descent rests on is the"
+        " width channel, defined under GRAMMAR.",
+    ]
+
+    legend = [
+        "A station is an act. A band is a line, and a line is a tradition.",
+        f"role: root {counts['roots']}, through {counts['through']},"
+        f" interchange {counts['interchanges']}. An interchange is a DOCUMENTED RECEPTION"
+        " -- two edges of one line arriving at one station -- and is the only place a"
+        " reader may change trains.",
+        f"terminus {counts['termini']}: nothing in this record descends from it."
+        + (
+            f" Lines that are one station and nothing more: {counts['alone']}, each a"
+            " tradition that begins and ends inside this record."
+            if counts["alone"] else ""
+        ),
+        f"station_kind: promulgated {counts['promulgated']}, printed {counts['printed']}.",
+        f"fork {counts['forks']}: a line is BORN at a station of another line. It is the"
+        " one edge that leaves a lane, and it is a birth and never a rejoining -- lines"
+        " here never rejoin.",
+        "Descent carries no arrowhead. x is monotone in date, so direction is read off the"
+        " axis, which is how stemmatology draws descent for the same reason.",
+    ]
+
+    shared = sharing_a_key(keyed)
+    grammar = [
+        "Monochrome, after Transport for London's black-and-white plate, which separates"
+        " 22 services with no colour at all: constant band width for identity,"
+        " differentiation by the band's internal texture and three grey values.",
+        f"{len(TEXTURES)} textures x {len(GREYS)} greys = {DISTINGUISHED} lines separated."
+        f" This slice has {lines}.",
+        f"THE DASH CHANNEL ALONE SEPARATES {len(TEXTURES)}, and it is the channel that"
+        " survives a photocopy. The greys carry the rest of the way and need the sheet"
+        " printed rather than copied. The texture turns over fastest, so two lines sharing"
+        f" one stand at least {len(TEXTURES)} lanes apart.",
+        (
+            "Past that the pairs repeat, and these lines are drawn identically: "
+            + "; ".join(shared) + "."
+        ) if shared else
+        f"No two lines here are drawn alike; above {DISTINGUISHED} lines the pairs would"
+        " repeat and this line would name which.",
+        "Width is the channel the constant band leaves free, and it carries what the"
+        " descent rests on: "
+        + "; ".join(
+            f"{name} {width} ({explanation}, {tiers.get(name, 0)} edges)"
+            for name, width, _, explanation in DESCENT_TIERS
+        )
+        + ". Three tiers over five declared kinds, because five widths inside one band are"
+        " not tellable apart; the exact kind stays on the edge in `descent`.",
+        "The three greys, as ink: "
+        + ", ".join(f"{grey} {colour} at {black} per cent black" for grey, colour, black in GREYS)
+        + f". Dash lengths are SVG stroke-dasharray values at the nominal band width of"
+        f" {NOMINAL_BAND}; a renderer that scales the band scales them with it.",
+    ]
+
+    citation = [
+        "To cite: "
+        + ", ".join(
+            part for part in (
+                site_name,
+                f"act history of the {slice_id} slice",
+                f"{release} edition" if release else "",
+                f"recorded {recorded}" if recorded else "",
+            ) if part
+        )
+        + ". " + (url or "Unpublished; cite the files and digests under PROVENANCE."),
+        "PER STATION, cite the act. Every station carries its own `instrument`,"
+        " `authority`, `citation` and `act_citation`, so no reader is sent to a global"
+        " bibliography for a single claim -- which is the one thing to reject in"
+        " Priestley, who called per-item citation endless and gave one instead.",
+    ]
+
+    twin = [
+        (f"{url} is the interactive twin, drawn from the same generator and the same slice.")
+        if url else
+        "The interactive twin is not published from this checkout, so no URL is given"
+        " rather than one that cannot be followed.",
+        "The site serves ONE edition at a time, so the pin is not in the URL: it is the"
+        " digests under PROVENANCE, which `sha256sum` checks against the files named. A"
+        " reader who follows the URL later and finds other digests is reading a later"
+        " edition, and that is what the pin is for.",
+    ]
+
+    unmarked = [
+        "This file is the SOURCE of a printed map and not the map. `octi` was not run"
+        " here; the command that runs it is above.",
+        "NO LABEL IS PLACED. Labelling, not layout, is where automation still fails, and"
+        " neither octi nor TikZ will do it. Every node carries what a label must say and"
+        " nothing here places one.",
+        "A CROSSING IS NOT MARKED. Two bands crossing with no station between them means"
+        " the lines meet nowhere, and no published metro map has a grammar separating that"
+        " from an interchange. This sheet does not invent one and claims no"
+        " conventionality for the one it will need.",
+        f"NO SHEET SIZE IS SET. This is {stations} stations, and the measurement is 40 on"
+        " A3, 100 on A2, 200 on A1, with 15 to 25 per cent of the sheet reserved for the"
+        " key. Which one to print is a layout decision and not a generator's.",
+    ]
+
+    return [
+        ("edition", edition),
+        ("provenance", provenance),
+        ("exceptions", exceptions),
+        ("epistemic", epistemic),
+        ("legend", legend),
+        ("grammar", grammar),
+        ("url", twin),
+        ("cite", citation),
+        ("unmarked", unmarked),
+    ]
+
+
 def plate(data: dict, out: Path) -> dict:
     """Write the printed map's DOT: stations at (date, lane), edges by line.
 
@@ -2715,11 +3209,16 @@ def plate(data: dict, out: Path) -> dict:
     for row in rows:
         on_line[row["line"]] = on_line.get(row["line"], 0) + 1
 
+    keyed = monochrome(lanes)
+
     nodes: list[str] = []
     edges: list[str] = []
     roots = 0
     interchanges = 0
     termini = 0
+    forks = 0
+    printed = 0
+    tiers: dict[str, int] = {}
     for row in rows:
         act = acts[row["act"]]
         date = str(row["date"])
@@ -2737,6 +3236,9 @@ def plate(data: dict, out: Path) -> dict:
             interchanges += 1
         if terminus:
             termini += 1
+        if (act.get("station_kind") or "promulgated") == "printed":
+            printed += 1
+        key = keyed[row["line"]]
         nodes.append(
             "  "
             + dot_string(row["act"])
@@ -2753,6 +3255,10 @@ def plate(data: dict, out: Path) -> dict:
                     ("lane", lanes[row["line"]]),
                     ("date", date),
                     ("date_precision", precision_of(date)),
+                    # Section 9's epistemic marker, ON the station. A date the
+                    # record holds only to the year is placed on the first day
+                    # it could be, and this is what says so.
+                    ("approximate", APPROXIMATE if precision_of(date) != "day" else ""),
                     ("station_kind", act.get("station_kind") or "promulgated"),
                     ("role", role),
                     ("terminus", "true" if terminus else ""),
@@ -2760,11 +3266,25 @@ def plate(data: dict, out: Path) -> dict:
                     ("title", act.get("title") or ""),
                     ("authority", act.get("authority") or ""),
                     ("instrument", act.get("instrument") or ""),
+                    # The line's own key, carried on the station too. Five lines
+                    # here are one station and have no band at all, and a key
+                    # that lived only on the edges would leave them unkeyed.
+                    ("texture", key["texture"]),
+                    ("grey", key["grey"]),
+                    ("color", key["colour"]),
                 ]
             )
             + ";"
         )
         for parent in parents:
+            # The band is the line's identity and says nothing about strength;
+            # the width says what the descent rests on and nothing about which
+            # line it is. Two channels, one for each question, which is what
+            # keeps the uncertainty grammar off the channel identity uses.
+            strength, width = descent_tier(str(act.get("parent_kind") or ""))
+            tiers[strength] = tiers.get(strength, 0) + 1
+            if acts[parent]["line"] != row["line"]:
+                forks += 1
             edges.append(
                 "  "
                 + dot_string(parent)
@@ -2775,9 +3295,14 @@ def plate(data: dict, out: Path) -> dict:
                     [
                         ("line", row["line"]),
                         # What the edge rests on, carried so the plate can draw
-                        # a weak descent as a weak one. Section 9's uncertainty
-                        # grammar is the dash channel and this is what keys it.
+                        # a weak descent as a weak one.
                         ("descent", act.get("parent_kind") or ""),
+                        ("strength", strength),
+                        ("penwidth", width),
+                        ("texture", key["texture"]),
+                        ("dasharray", key["dasharray"]),
+                        ("grey", key["grey"]),
+                        ("color", key["colour"]),
                         ("fork", "true" if acts[parent]["line"] != row["line"] else ""),
                         (
                             "via_unrepresented",
@@ -2789,6 +3314,20 @@ def plate(data: dict, out: Path) -> dict:
             )
 
     single = sorted(line for line, count in on_line.items() if count == 1)
+    counts = {
+        "stations": len(rows),
+        "lines": len(lanes),
+        "edges": len(edges),
+        "roots": roots,
+        "through": len(rows) - roots - interchanges,
+        "interchanges": interchanges,
+        "termini": termini,
+        "forks": forks,
+        "printed": printed,
+        "promulgated": len(rows) - printed,
+        "alone": len(single),
+    }
+    block = apparatus(data, slice_id, rows, acts, keyed, counts, tiers)
     target = out / f"{slice_id}.dot"
     labels = {str(line.get("id")): str(line.get("label") or "") for line in (data.get("lines") or [])}
     header = [
@@ -2810,13 +3349,40 @@ def plate(data: dict, out: Path) -> dict:
         "// It was NOT run to produce this file: octi is not installed here and this",
         "// repository neither ships nor vendors it.",
         "//",
-        "// lane  stations  line              carries",
+        "// THE APPARATUS, guidance/time-machine.md section 9. Every line of it is",
+        "// computed from the slice, and the graph carries the same text in its own",
+        "// attributes so that the pass which places it reads the graph it is placing.",
     ]
+    for name, said in block:
+        header.append("//")
+        header.append(f"// {name.upper()}")
+        header.extend(f"//   {text}" for text in said)
+    header.extend([
+        "//",
+        "// THE KEY. A band's texture and grey are its line's, and both are on every",
+        "// station and every edge of it.",
+        "//",
+        "// lane  stations  texture       grey        line              carries",
+    ])
     for line, lane in sorted(lanes.items(), key=lambda pair: pair[1]):
+        key = keyed[line]
         header.append(
-            f"// {lane:>4}  {on_line.get(line, 0):>8}  {line:<16}  {labels.get(line, '')}".rstrip()
+            f"// {lane:>4}  {on_line.get(line, 0):>8}  {key['texture']:<12}  "
+            f"{key['grey']:<10}  {line:<16}  {labels.get(line, '')}".rstrip()
         )
-    body = [f"graph {dot_string(slice_id)} {{", *nodes, "", *edges, "}"]
+    body = [
+        f"graph {dot_string(slice_id)} {{",
+        "  graph " + attributes([
+            ("schema", PLATE_SCHEMA),
+            ("slice", slice_id),
+            *((name, " ".join(said)) for name, said in block),
+        ]) + ";",
+        "",
+        *nodes,
+        "",
+        *edges,
+        "}",
+    ]
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text("\n".join([*header, "", *body]) + "\n", encoding="utf-8")
     return {
@@ -2828,6 +3394,16 @@ def plate(data: dict, out: Path) -> dict:
         "termini": termini,
         "interchanges": interchanges,
         "single_station_lines": single,
+        "forks": forks,
+        "descent_tiers": tiers,
+        "apparatus": dict(block),
+        # What the grammar separates, said in the report as well as on the
+        # plate, because a claim of seventeen where six are distinguishable is
+        # the failure this is measured to avoid.
+        "textures": len(TEXTURES),
+        "greys": len(GREYS),
+        "distinguished": DISTINGUISHED,
+        "sharing_a_key": sharing_a_key(keyed),
         "written": str(target),
         "octilinearise": OCTILINEARISE.format(path=str(target), stem=slice_id),
     }
@@ -2878,6 +3454,20 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             f"interchanges {payload['interchanges']}, "
             f"single-station lines {len(payload['single_station_lines'])}"
         )
+        print(
+            f"  monochrome: {payload['textures']} textures x {payload['greys']} greys "
+            f"separates {payload['distinguished']} lines"
+            + (
+                "; drawn alike here: " + ", ".join(payload["sharing_a_key"])
+                if payload["sharing_a_key"] else ""
+            )
+        )
+        # What the apparatus carries, and not what it says. The edition stamp
+        # names the release, and a release id printed in a captured transcript
+        # is a bare sibling tool id in this file, which `tmt check` reads as an
+        # undeclared dependency. The stamp belongs on the sheet; the report says
+        # the sheet has one.
+        print("  apparatus: " + ", ".join(payload["apparatus"]))
         print(f"  -> {payload['written']}")
         print(f"  octilinearise: {payload['octilinearise']}")
     elif verb == "commonality":

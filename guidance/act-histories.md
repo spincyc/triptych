@@ -44,7 +44,7 @@ in the document that asked it.
 | generator | `tools/act-history` (`check`, `graph`, `structure`, `plate`, `commonality`, `emit`) |
 | generated repository | `build/act-history/roman-holy-week`, untracked |
 | corpus read | seven Internet Archive OCR text layers at `~/git/lt-hist` |
-| size | 12 acts, 2 lines, 8 witnesses, 4 masses, 38 base units, 42 departures |
+| size | 12 acts, 2 lines, 9 witnesses, 4 masses, 38 base units, 42 departures |
 
 The generated repository is a build artifact, like a PDF. Regenerating it
 rewrites every hash and that is expected. The record is the source encoding.
@@ -1042,8 +1042,9 @@ station is a root.
 
 ## 17. The printed map's source, and the step this machine cannot run
 
-Built 2026-08-01, on `time-machine.md` §9. That section settled the route and
-this records only what was built to it and what it does not do.
+Built 2026-08-01 and extended 2026-08-02 with the apparatus and the monochrome
+grammar, on `time-machine.md` §9. That section settled the route and this records
+only what was built to it and what it does not do.
 
 **`tools/act-history plate` writes the plate's DOT, and nothing else.**
 
@@ -1068,16 +1069,21 @@ an abstract graph needs no geography [sourced, §9].
 
 - **x is the date, y is the tradition lane.** Both are written into `pos`.
 - **A node is a station.** It carries `date` at the record's own precision with
-  `date_precision` beside it, `line`, `lane`, `station_kind`, `act_citation`,
-  `title`, `authority`, `instrument`, and a `role` of `root`, `through` or
-  `interchange`, plus `terminus="true"` where nothing descends from it.
+  `date_precision` beside it, `approximate="~"` where that precision is not a
+  day, `line`, `lane`, `station_kind`, `act_citation`, `title`, `authority`,
+  `instrument`, its line's `texture`, `grey` and `color`, and a `role` of `root`,
+  `through` or `interchange`, plus `terminus="true"` where nothing descends
+  from it.
 - **An edge is a descent**, written `parent -- child`, undirected. It carries
   `line` — always the child's line — `descent`, which is the `parent_kind` an
-  edge already declares it rests on, and `fork="true"` where it crosses from one
-  line to another. Stemmatology draws descent without arrowheads for the same
-  reason this does: the direction is read off the axis.
-- **The header carries the lane register and the counts**, so the file says what
-  it is without a second document.
+  edge already declares it rests on, the band's `texture`, `dasharray`, `grey`
+  and `color`, the `strength` and `penwidth` that width channel gives that
+  `descent`, and `fork="true"` where it crosses from one line to another.
+  Stemmatology draws descent without arrowheads for the same reason this does:
+  the direction is read off the axis.
+- **The graph itself carries the apparatus**, in nine attributes, and the header
+  carries the same nine blocks, the lane register with each line's texture and
+  grey, and the counts — so the file says what it is without a second document.
 
 **An edge takes the line of the station it arrives at.** That is what makes the
 Rule 2 grammar fall out rather than be drawn: a fork is the one place a line
@@ -1104,16 +1110,83 @@ editorial arrangement Rule 3 will not let decide a drawing: roots enter in the
 order they enter the record, and a line born at a fork follows the line it was
 born from.
 
+### The apparatus, and where every line of it comes from
+
+§9 lists what the ICS chronostratigraphic chart carries **on the plate**, and the
+DOT now carries the same nine blocks — in the graph's own attributes, where the
+labelling pass will read them off the graph it is labelling, and in the header,
+where a person reading the file reads them. Every number in them is a count of
+what the file itself carries, because a legend typed beside the emitter drifts
+from it the first time a texture moves.
+
+| block | what it says | read from |
+| --- | --- | --- |
+| `edition` | the release, the slice, its `recorded_on`, the schema | `release/public-alpha.json` and the slice's own header |
+| `provenance` | the record type, the vocabulary, every file read, each file's SHA-256, the counts, and what each class of record was read from | the loaded slice |
+| `exceptions` | printed stations, not-found instruments, roots, edges resting on order alone, descents through unrepresented acts, OCR-only and unread records, withheld text, unestablished effects | counted, and printed only where there are any |
+| `epistemic` | `~`, defined: the record holds only the year or the month | `date_precision`, and the mark rides on the station in `approximate` |
+| `legend` | station roles, terminus, station kinds, forks, and why descent has no arrowhead | counted off the graph |
+| `grammar` | the monochrome key, below | the texture table |
+| `url` | the interactive twin, and why the pin is not in it | the page that is actually there, and the origin |
+| `cite` | the "To cite:" line, and the refusal of Priestley's refusal | the release and the slice |
+| `unmarked` | what this sheet does **not** mark | §9's own list of what nobody automates |
+
+**The edition stamp is the release's and never the build machine's.** Nothing in
+the emitter reads a clock: a build timestamp would put a different byte in the
+artifact every run and destroy the reproducibility Rule 5 asks for. `release_id`
+is read from the release record and `recorded_on` from the slice; a slice that
+declares no `recorded_on` — `code-of-canon-law` is one — **says so** rather than
+being given a date. [verified]
+
+**The version-pinned URL is two things, because a one-edition site cannot be
+one.** §9 wants a URL pinned to a version; the published site serves whatever
+was published last, so the URL names the twin and the **pin is the SHA-256 of
+every file the slice was read from**, which `sha256sum` checks against the files
+named. That is a stronger pin than a URL would have been: it names the bytes.
+The origin is not typed here — it is read from the tool that publishes to it,
+which is why `act-history` now declares `public-alpha` in its `requires`.
+
 ### Byte-identical, and nothing here reads a clock
 
 Two runs produce identical bytes, and so do runs under a changed `TZ`, `LANG`,
-`LC_ALL` and `PYTHONHASHSEED=random`. The abscissa is integer arithmetic
-throughout for that reason. [verified, and asserted in
+`LC_ALL` and several `PYTHONHASHSEED` values including `random`. The abscissa is
+integer arithmetic throughout for that reason, and the apparatus reads two files
+and a release id rather than a date. [verified, and asserted in
 `tests/tools/act-history.test`]
 
-§9 wants an edition stamp on the plate. **It must be the release's and never the
-build machine's**: a build timestamp would put a different byte in the artifact
-every run and destroy the reproducibility Rule 5 asks for.
+### The monochrome grammar separates eighteen, and six by dash alone
+
+§9 measured TfL's black-and-white plate: **constant band width** for every line
+so weight stays free for another dimension, differentiation by the band's
+**internal texture** plus **three grey values**, 22 services with no colour at
+all. This copies that and states its ceiling rather than implying one.
+
+- **Six textures × three greys = eighteen lines separated.** `latin-missal` has
+  seventeen, so no two lines on it are drawn alike. [verified]
+- **The dash channel alone separates six**, and it is the channel that survives
+  a photocopy. The greys carry the rest of the way and want the sheet printed
+  rather than copied. A grammar claiming to separate seventeen by dashes would
+  separate six.
+- **Past eighteen the pairs repeat, and the file names which lines share one.**
+  It does not claim a distinction it does not draw.
+- **The key is on the lane, not the name.** The texture turns over fastest, so
+  two lines sharing one stand at least six lanes apart — and lanes are adjacent
+  exactly where the traditions were drawn adjacent, which is where a reader has
+  to tell two bands apart while following one across a crossing. [verified in
+  the test]
+
+**Width is the second channel, and it is the one §9's constant band leaves
+free.** The band says which line; the width says what the descent rests on:
+`stated` where an instrument or the book itself draws the edge, `attributed`
+where a cited scholar does, `sequence` where nothing does and two acts merely
+stand in this order. **Three tiers over five declared `parent_kind` values**,
+because five widths inside one band are not tellable apart and the exact kind
+stays on the edge in `descent`.
+
+That split is deliberate. Priestley put uncertainty in the dash channel because
+he had one line per item; here the dash channel is spent on identity, so the
+uncertainty grammar moved to width. One channel for *which*, one for *how well
+attested*, and neither reading the other's mark.
 
 ### What this machine did not do
 
@@ -1130,26 +1203,38 @@ DOT is §9's finding [sourced]; the exact flag set of that pipeline is **not
 every emitted file's header, from one string in the tool, so there is no second
 copy to drift.
 
-### What remains of the printed map
+### What remains of the printed map, and why none of it is the generator's alone
+
+Three things remain, and the sheet **says so on itself**, under `unmarked`. A
+reader is told what this drawing does not mark rather than left to assume it
+does — which is §9's status disclaimer, discharged by naming the three.
 
 1. **Labelling.** §9 found that labelling, not layout, is where automation still
-   fails, and that neither `octi` nor TikZ will do it — so it is the generator's
-   job and it is not done. The nodes carry everything a label must say; nothing
-   yet places one. This is the next unit and the largest.
-2. **The apparatus.** §9 requires a notation legend, an epistemic marker
-   defined, the provenance with its exceptions named, an edition stamp, a
-   version-pinned URL and a "To cite:" line. None of it is emitted. Priestley's
-   refusal of per-item citation is the thing to avoid, and Rule 1 already gives
-   every station an instrument to cite.
-3. **The monochrome grammar.** §9 measured TfL's black-and-white plate:
-   constant band width, differentiation by internal texture and three grey
-   values, at 2.4× the inline naming. Seventeen lines is inside that ceiling and
-   nothing in the DOT yet keys a texture to a line.
-4. **The mark for a refusal, and for a crossing that is not an interchange.**
-   §6 records that no published metro map has a grammar separating "these lines
-   meet" from "these lines merely cross", and that this project invents it. The
-   DOT distinguishes them structurally; the plate must distinguish them
-   visually, in a legend, without claiming conventionality.
-5. **Sizing.** §9's measurement puts 40 nodes on A3 and 100 on A2, so
-   `latin-missal` at 59 is an A2 sheet with the apparatus. Nothing yet emits a
-   sheet size or reserves the 15–25 per cent the key needs.
+   fails, and that neither `octi` nor TikZ will do it. The nodes carry
+   everything a label must say and nothing places one. This is the next unit and
+   the largest, and it is the one of the three that is squarely the generator's.
+2. **The mark for a crossing that is not an interchange.** §6 records that no
+   published metro map has a grammar separating "these lines meet" from "these
+   lines merely cross", and §9 measured that the same interchange drawn as a dot
+   rather than as a long link *changed which transfers passengers made*. The DOT
+   distinguishes the two structurally; drawing them apart means **inventing
+   notation**, and §9 is explicit that invented notation must be defined in a
+   legend and **not claimed as conventional**. That is a human ruling, not a
+   generator's, and nothing here invents one on its own authority.
+3. **Sheet size.** §9's measurement puts 40 nodes on A3, 100 on A2 and 200 on
+   A1, with 15–25 per cent reserved for the key, so `latin-missal` at 59 is an
+   A2 sheet. Which sheet to print is a layout decision; the plate states the
+   measurement and sets nothing.
+
+### One more restatement, found while landing this
+
+This document's own "What was built" table, at the top, carries a hand-typed
+`size` row — *12 acts, 2 lines, N witnesses…* — beside a `check` that computes
+exactly those numbers, with nothing comparing the two. A concurrent lane added a
+witness and the row went stale the moment it landed; it has been corrected here,
+**by hand, which is the defect repeating rather than being fixed.** It is the
+same shape as the lookup table this repository already had to delete: a
+hand-typed restatement sitting beside a derived value with no check between
+them. The general fix — the row read out of `check --json`, or a test that
+compares the two — is not attempted in this unit, and this note exists so the
+next one does not think the digit was the problem.

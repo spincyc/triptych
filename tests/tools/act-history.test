@@ -342,6 +342,188 @@ for name, expected in (("code-of-canon-law", 47), ("roman-holy-week", 12)):
         assert attributes["line"] == other_nodes[child]["line"], (name, parent, child)
 PY
 
+# --- the monochrome grammar, and what it honestly separates -------------------
+
+python3 - <<'PY'
+import re
+
+NODE = re.compile(r'^  "([^"]+)" \[(.*)\];$')
+EDGE = re.compile(r'^  "([^"]+)" -- "([^"]+)" \[(.*)\];$')
+PAIR = re.compile(r'(\w+)="((?:[^"\\]|\\.)*)"')
+
+
+def read(name):
+    nodes, edges = {}, []
+    for line in open(f"plates/{name}.dot", encoding="utf-8").read().splitlines():
+        found = EDGE.match(line)
+        if found:
+            edges.append((found.group(1), found.group(2), dict(PAIR.findall(found.group(3)))))
+            continue
+        found = NODE.match(line)
+        if found:
+            nodes[found.group(1)] = dict(PAIR.findall(found.group(2)))
+    return nodes, edges
+
+
+nodes, edges = read("latin-missal")
+
+# ONE KEY PER LINE, and the same key on the station and on the band. A texture
+# that moved between a line's stations would be two traditions on the plate.
+key = {}
+for node in nodes.values():
+    key.setdefault(node["line"], set()).add((node["texture"], node["grey"]))
+for line, held in key.items():
+    assert len(held) == 1, (line, held)
+keys = {line: next(iter(held)) for line, held in key.items()}
+lane = {node["line"]: int(node["lane"]) for node in nodes.values()}
+
+# Seventeen lines, and seventeen keys, because six textures times three greys is
+# eighteen. This is the honest claim and the file makes it in as many words: the
+# DASH CHANNEL ALONE separates six, and past eighteen the pairs repeat.
+assert len(keys) == 17, keys
+assert len(set(keys.values())) == 17, "two lines are drawn identically"
+textures = {texture for texture, _ in keys.values()}
+greys = {grey for _, grey in keys.values()}
+assert len(textures) == 6, textures
+assert len(greys) == 3, greys
+
+# The texture turns over fastest, so two lines sharing one are six lanes apart.
+# That is what lets a reader follow a tradition across a crossing: the lines
+# drawn adjacent, which is where the confusion would be, never share a texture.
+for line, (texture, _) in keys.items():
+    for other, (other_texture, _) in keys.items():
+        if other != line and other_texture == texture:
+            assert abs(lane[line] - lane[other]) >= 6, (line, other, texture)
+
+# The band says which line; the WIDTH says what the descent rests on. Two
+# channels, and section 9's constant band width is what leaves the second free.
+WIDTHS = {
+    "act-states-it": ("stated", "3"),
+    "book-states-it": ("stated", "3"),
+    "attributed": ("attributed", "2"),
+    "use-continuity": ("sequence", "1"),
+    "line-order": ("sequence", "1"),
+}
+seen = set()
+for parent, child, attributes in edges:
+    assert (attributes["texture"], attributes["grey"]) == keys[nodes[child]["line"]], child
+    strength, width = WIDTHS[attributes["descent"]]
+    assert attributes["strength"] == strength, (child, attributes)
+    assert attributes["penwidth"] == width, (child, attributes)
+    seen.add(strength)
+# Both tiers this slice has, so the width channel is doing work rather than
+# standing at one value on every edge.
+assert seen == {"stated", "sequence"}, seen
+
+# A solid line carries no dasharray at all: absence is the negative here, as it
+# is everywhere else in the file.
+for _, _, attributes in edges:
+    assert ("dasharray" in attributes) == (attributes["texture"] != "solid"), attributes
+PY
+
+# WHAT HAPPENS PAST THE CEILING, which no slice here reaches. Eighteen keys is
+# the honest ceiling and a nineteenth line has to be drawn like one already on
+# the sheet; the emitter NAMES the pairs rather than claiming a distinction it
+# does not draw. Asserted against the keying itself, since building a
+# nineteen-line slice to prove it would be building a fiction.
+python3 - "$repo" <<'PY'
+import importlib.machinery
+import importlib.util
+import sys
+
+loader = importlib.machinery.SourceFileLoader("act_history", f"{sys.argv[1]}/tools/act-history")
+spec = importlib.util.spec_from_loader(loader.name, loader)
+tool = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(tool)
+
+assert tool.DISTINGUISHED == len(tool.TEXTURES) * len(tool.GREYS) == 18, tool.DISTINGUISHED
+
+# Exactly at the ceiling: eighteen lines, eighteen keys, nothing shared.
+keyed = tool.monochrome({f"line-{index:02d}": index for index in range(18)})
+assert len({(key["texture"], key["grey"]) for key in keyed.values()}) == 18
+assert tool.sharing_a_key(keyed) == []
+
+# One past it: the nineteenth repeats the first, and the file says which.
+keyed = tool.monochrome({f"line-{index:02d}": index for index in range(20)})
+assert tool.sharing_a_key(keyed) == ["line-18 = line-00", "line-19 = line-01"], \
+    tool.sharing_a_key(keyed)
+PY
+
+# --- the apparatus: section 9's, computed, and stamped from the release --------
+
+python3 - "$repo" <<'PY'
+import hashlib
+import json
+import re
+import sys
+
+repo = sys.argv[1]
+PAIR = re.compile(r'(\w+)="((?:[^"\\]|\\.)*)"')
+WANTED = ("edition", "provenance", "exceptions", "epistemic", "legend", "grammar",
+          "url", "cite", "unmarked")
+
+text = open("plates/latin-missal.dot", encoding="utf-8").read()
+declared = next(line for line in text.splitlines() if line.startswith("  graph ["))
+carried = dict(PAIR.findall(declared))
+
+# Section 9 wants each of these ON THE PLATE. They are in the graph's own
+# attributes, where the pass that places them reads the graph it is placing, and
+# in the header, where a person reading the file reads them.
+for name in WANTED:
+    assert name in carried, name
+    assert f"// {name.upper()}" in text, name
+
+# THE EDITION STAMP IS THE RELEASE'S AND NEVER A BUILD CLOCK. Proved against the
+# two records it is composed from rather than against a string typed here.
+release = json.load(open(f"{repo}/release/public-alpha.json"))["release_id"]
+assert f"Release {release}." in carried["edition"], carried["edition"]
+recorded = re.search(r'^recorded_on = "([\d-]+)"$',
+                     open(f"{repo}/src/sources/inventories/latin-missal-acts-v1.toml",
+                          encoding="utf-8").read(), re.M).group(1)
+assert f"recorded {recorded}" in carried["edition"], carried["edition"]
+
+# The version pin is the digest of every file the slice was read from, and it is
+# checkable with sha256sum. A one-edition site cannot pin a URL; this can.
+for relative in ("src/sources/inventories/roman-holy-week-acts-v1.toml",
+                 "src/sources/inventories/latin-missal-acts-v1.toml"):
+    digest = hashlib.sha256(open(f"{repo}/{relative}", "rb").read()).hexdigest()
+    assert f"{relative} sha256 {digest}" in carried["provenance"], relative
+
+# COMPUTED, NOT TYPED. Every count in the apparatus is a count of what the file
+# itself carries, so a legend cannot drift from the drawing it describes.
+nodes = re.findall(r'^  "[^"]+" \[(.*)\];$', text, re.M)
+held = [dict(PAIR.findall(node)) for node in nodes if " -- " not in node]
+approximate = sum(1 for node in held if node.get("approximate") == "~")
+printed = sum(1 for node in held if node["station_kind"] == "printed")
+assert approximate and printed, (approximate, printed)
+assert f"{approximate} of {len(held)} stations carry it" in carried["epistemic"]
+assert f"{printed} of {len(held)} stations claim NO ACT AT ALL" in carried["exceptions"]
+assert all((node.get("approximate") == "~") == (node["date_precision"] != "day")
+           for node in held)
+
+# The exceptions are NAMED, not counted in aggregate: section 9 asks for the
+# provenance with its exceptions named, and Rule 1 already gives every station
+# an instrument, so nothing here is sent to a global bibliography.
+for phrase in ("NO RECORDED DESCENT", "NOTHING BUT ORDER", "Read no better than this"):
+    assert phrase in carried["exceptions"], phrase
+assert "PER STATION, cite the act" in carried["cite"], carried["cite"]
+
+# And the sheet says what it does NOT mark, rather than letting a reader assume
+# it does: no label is placed, a crossing is not marked, no sheet size is set.
+for phrase in ("NO LABEL IS PLACED", "A CROSSING IS NOT MARKED", "NO SHEET SIZE IS SET"):
+    assert phrase in carried["unmarked"], phrase
+
+# The slice that declares no `recorded_on` says so instead of inventing a date,
+# which is the whole reason nothing here reads a clock.
+other = open("plates/code-of-canon-law.dot", encoding="utf-8").read()
+other_graph = next(line for line in other.splitlines() if line.startswith("  graph ["))
+elsewhere = dict(PAIR.findall(other_graph))
+assert "declares no `recorded_on`" in elsewhere["edition"], elsewhere["edition"]
+# And an exception this slice has and the missal does not: a rights position is
+# named on the plate rather than left to look like ignorance.
+assert "whose text is withheld here" in elsewhere["exceptions"], elsewhere["exceptions"]
+PY
+
 # Byte-identical for unchanged input. The plate is a build artifact and Rule 5
 # asks it to be reproducible, so a rerun that moved a station would mean the
 # drawing carried a fact the source does not.

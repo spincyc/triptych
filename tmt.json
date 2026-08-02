@@ -7,7 +7,9 @@
       "mutates": true,
       "origin": "local",
       "purpose": "Build a liturgical slice's act-keyed history as a Git repository.",
-      "requires": [],
+      "requires": [
+        "public-alpha"
+      ],
       "stage": "draft",
       "usage": "act-history {check,graph,structure,plate,commonality,emit} [--source PATH] [--out DIR] [--json]"
     },
