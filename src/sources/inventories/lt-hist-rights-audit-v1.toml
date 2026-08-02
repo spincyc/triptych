@@ -31,11 +31,28 @@ recorded_on = "2026-08-01"
 jurisdiction = "United States"
 
 holding = """
-Seven of the twenty-five versions in lt-hist may be folded in. Fourteen may not,
-and their bytes must not enter Git under any disposition. Four need the
-maintainer and are recorded as open questions rather than resolved by default.
+Six of the twenty-five versions in lt-hist may be folded in. One was folded in
+and then withdrawn. Fourteen may not, and their bytes must not enter Git under
+any disposition. Four need the maintainer and are recorded as open questions
+rather than resolved by default.
 
-AS FIRST WRITTEN THIS SAID SIX AND FIVE. The seventh is the 1937 Lasance, whose
+THE WITHDRAWN ONE IS THE 1920, AND IT IS THE SHARPEST THING IN THIS FILE. It was
+folded in on 2026-08-01 as `tracked` and `public-domain` on the ground of
+publication before the pre-1931 line, "and on that ground alone", and the ground
+was withdrawn on 2026-08-02 by the lane that had laid it: the scanned book is not
+a 1920 printing. It carries nine feasts instituted between 1925 and 1955 as full
+formularies with their ranks, and its appendix carries a Mass of St Pius X whose
+rubric grants the Fraternitas sacerdotalis S. Pii X -- a body erected on
+1 November 1970 -- a rank and a privileged octave, so the printing is 1970 or
+later. THIS AUDIT REJECTED lt-hist's BASIS FOR THAT ROW AND INHERITED ITS FACT,
+which is the failure worth taking from this file: refusing a bad ground is not
+the same act as checking the assertion it was offered for. The text of the 1920
+typical edition is public domain and nothing here disturbs it; the bytes are not
+that edition alone. See the row and `[[corrections]]`
+`the-1920-printing-is-post-1970`.
+
+AS FIRST WRITTEN THE ADMISSIBLE COUNT SAID SIX AND FIVE, AND IT IS SIX AGAIN BY A
+DIFFERENT ROUTE. The seventh was the 1937 Lasance, whose
 open question `lasance-renewal` was closed on 2026-08-01 by
 `src/sources/inventories/lasance-new-roman-missal-rights-v1.toml`: neither
 registered edition was renewed, so the text is public domain in the United
@@ -55,7 +72,7 @@ expiry. Ten of them are sitting in lt-hist as downloaded OCR right now, and four
 of those ten carry the claimant's own copyright notice inside the very bytes
 lt-hist downloaded. See `[[notices]]`.
 
-ALL SEVEN HAVE NOW BEEN FOLDED IN, AND THE FOLD-IN IS COMPLETE. What follows
+ALL SEVEN WERE FOLDED IN AND SIX REMAIN FOLDED IN. What follows
 records how, in the order it happened. The Lasance went first and alone on
 2026-08-01, to establish the pattern: a fresh acquisition through the source
 library, a rights basis rewritten from the renewal record, the excluded appendix
@@ -70,7 +87,21 @@ derived for calendar year 2026 and recorded as derived for it, because that line
 moves every January. All three were fetched again from the Internet Archive here
 and hashed BYTE-IDENTICAL to the corpus copies, so three more retrievals were
 controlled and no byte has yet crossed out of lt-hist. See their
-`folded_in_note`s and `[counts]`.
+`folded_in_note`s and `[counts]`. THE 1920 DID NOT SURVIVE THE NEXT DAY, and the
+sentence above is exactly the sentence that failed: "publication before the
+pre-1931 line" is a proposition about a date, and the fold-in never established
+that the date belonged to these bytes. THE OTHER TWO WERE SPOT-CHECKED FOR THE
+SAME FAILURE ON 2026-08-02 AND NEITHER SHOWS IT [verified]. The 1570 payload
+returns zero for every post-Tridentine canonization tried -- Teresa of Avila,
+Charles Borromeo, Francis Xavier, Philip Neri, Ignatius Loyola, Pius V -- and
+zero for the Rosary and the Immaculate Conception; the 180 raw hits for "Neri"
+are `venerit`, `digneris`, `muneribus` and their kind, which is the same
+substring trap this file warns about elsewhere. The 1806 payload returns zero for
+Christ the King, Lisieux, Bosco, the Immaculate Conception, the Immaculate Heart,
+Lourdes, Bernadette, Pius IX and Pius X. These are spot-checks against named
+later matter, not a page-by-page reading, and they are recorded as what they are:
+enough to say the 1920's defect was not found in the other two, not enough to say
+those two were audited the way the 1920 has now been.
 
 THE LAST THREE FOLLOWED ON THE SAME DAY, and they were the three this file knew
 were awkward: the 1604, the 1862 and the 1843 are all Google digitisations, and
@@ -845,22 +876,67 @@ label = "Missale Romanum revised under Benedict XV"
 publisher_or_edition = "Typical edition of Benedict XV"
 sections = 12
 bytes = 2918085
-verdict = "admissible"
-verdict_basis = "Published 1920, pre-1931. This is the closest of the six to the line and the only one where the line matters at all."
+verdict = "withdrawn"
+verdict_was = "admissible, from this file's first writing until 2026-08-02"
+verdict_basis = """
+WITHDRAWN ON 2026-08-02, ONE DAY AFTER THE FOLD-IN, BY THE LANE THAT DID IT.
+`withdrawn` is a fourth verdict this file did not have and now needs: not
+`admissible`, because the ground has failed; not `excluded`, because no claimant
+is named and the underlying text is genuinely old; not `undecided`, because
+nothing here awaits the maintainer. It means a verdict this audit reached and
+then took back on its own evidence.
+
+THE GROUND WAS "Published 1920, pre-1931", AND THE BYTES ARE NOT A 1920
+PUBLICATION. The scanned book carries, as full formularies with their ranks,
+nine feasts instituted between 1925 and 1955 -- Peter Canisius, Christ the King,
+the Curé of Ars, John Eudes, Therese of Lisieux, Robert Bellarmine, John Bosco,
+the Immaculate Heart at its 1944 grade, and the Assumption in the Mass Signum
+magnum of 1950 -- and, in the appendix, a Mass of St Pius X whose rubric grants
+the Fraternitas sacerdotalis S. Pii X, a body erected on 1 November 1970, a rank
+of duplex I classis with a privileged octave. Every locus is a physical line of
+the hashed file and every one was re-read on 2026-08-02; they are set out on the
+artifact record and summarised at `[[corrections]]`
+`the-1920-printing-is-post-1970`. A line drawn at 1931 does not reach a page
+first published in 1944.
+
+WHAT SURVIVES, AND IT IS THE TEXT RATHER THAN THE FILE. The typical edition of
+Benedict XV was published in 1920 and is out of United States copyright; under
+17 U.S.C. 103(b) a later printing's copyright "extends only to the material
+contributed by the author of such work" and enlarges nothing in the preexisting
+Missal. So the Canon, the Ordo Missae, the Ritus servandus, the temporal and the
+Commons remain publishable, and this repository's existing quotations from them
+stand. What does not survive is the DISPOSITION: `tracked` means the exact
+artifact is lawful to distribute, and the exact artifact also contains the
+post-1920 matter. The artifact is now `remote` and `unresolved`, holding no
+bytes, on the same pattern as
+`artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.
+ia-djvu-ocr`.
+"""
 lt_hist_basis_rejected = """
 "1920 publication treated as public domain in the United States. Internet
-Archive metadata does not provide a license field" [verified]. Note that this
-row's basis is bare assertion -- there is not even an IA mark behind it -- and it
-happens to be right. That is the strongest single illustration of why the
-corpus's method cannot be inherited: it produced a correct verdict here and the
-2011 Roman Missal verdict by the same means.
+Archive metadata does not provide a license field" [verified]. This row once said
+that the corpus's bare assertion "happens to be right", and called it the
+strongest single illustration of why the corpus's method cannot be inherited: a
+correct verdict produced by the same means that produced the 2011 Roman Missal
+verdict.
+
+THAT SENTENCE IS NOW WORSE THAN IT READ, AND BETTER AS AN ILLUSTRATION. The
+assertion was not even right. lt-hist wrote "1920 publication" over a book
+printed after 1970, and could not have known otherwise, because knowing would
+have required reading the appendix -- which is exactly the check its method never
+runs. THIS AUDIT THEN INHERITED THE CONCLUSION WHILE REJECTING THE GROUND, and
+that is the failure worth recording: refusing a bad basis is not the same act as
+checking the fact it asserted, and this file did the first and not the second.
 """
 caveat = """
-THE PRE-1931 LINE GOES STALE EVERY JANUARY. guidance/missals.md:257 states it in
-terms: "It also means **this file goes stale every January**" [recorded]. On
-1 January 2027 the line moves to 1932, which does not disturb this row; but no
-reader should take "pre-1931" from this file as a standing rule, and any later
-version added to this audit must re-derive the line for its own date.
+THE PRE-1931 LINE GOES STALE EVERY JANUARY, AND THAT WAS NEVER THIS ROW'S
+PROBLEM. guidance/missals.md:257 states it in terms: "It also means **this file
+goes stale every January**" [recorded]. The caveat was written for a book with an
+eleven-year margin against a line that moves one year a January, and the margin
+was real and is irrelevant. The row failed on the other side entirely: not
+whether 1920 clears 1931, but whether these bytes are 1920. A date check that
+only ever asks whether the recorded year clears the line will never find a
+misrecorded year.
 """
 folded_in = "2026-08-01"
 folded_in_records = [
@@ -902,6 +978,57 @@ on this date, measured `prose-latin`, and it carries the approbation decree of
 imprint, colophon or copyright leaf, so the printing is not identified -- see
 `[[corrections]]` `the-1920-printing-is-not-identified`. The edition record
 therefore names the typical edition and not the printing.
+
+WHAT THE FOLD-IN DID NOT FIND, ADDED 2026-08-02. It read the front of the book
+and not the rest of it. The approbation decree, Quo primum, the Ritus servandus
+and the Canon are all in the first forty per cent of the file, and the sentence
+above lists them as if listing what the book contains. The kalendarium is at
+lines 5029-8500 and eight of the nine post-1920 feasts are ranked in it; the
+appendix the note names as present is where the Mass of St Pius X stands. The
+fold-in confirmed that the announced contents were there and never asked what
+else was.
+"""
+withdrawn = "2026-08-02"
+withdrawn_records = [
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1920/edition.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1920/artifacts/missale-romanum-1920-text-aa646196/artifact.toml",
+  "src/sources/inventories/source-family-migration-v1.toml -- family.roman-missal.typical-editions-1570-and-1920",
+]
+withdrawn_note = """
+THE ARTIFACT MOVED FROM `tracked`/`public-domain` TO `remote`/`unresolved` AND
+THE 2,918,085 BYTES CAME OUT OF GIT. The id, the hash, the retrieval URL and
+every line number in the record are unchanged, so the file is recoverable in full
+from the Internet Archive and authenticated by the sha256 already recorded; what
+is gone is the repository's distribution of it and the claim that it was lawful.
+
+ROUTE (a) WAS EXAMINED AND IS NOT AVAILABLE. The Lasance pattern -- one stated
+replayable deletion of one contiguous range, `sed '140854,141805d' SOURCE > OUT`
+-- fits an appendix on printed-page boundaries and does not fit this book. The
+post-1920 matter sits in five different parts of it at once: eight interleaved
+day-entries in the kalendarium table, a Praefatio indexed in three places,
+occurrence and transfer rubrics in the general rubrics, nine formularies through
+the temporal and sanctoral, and the appendix Mass. AND TWO OF THE NINE ARE
+REPLACEMENTS RATHER THAN ADDITIONS, which is what makes the route impossible
+rather than merely laborious. The 1950 Assumption displaced the older Mass, so
+deleting it leaves 15 August with no Mass at all rather than with its 1920 one.
+The Immaculate Heart took 22 August from Ss. Timothy, Hippolytus and Symphorian,
+who survive here only as the commemoration attached to it at kalendarium
+7421-7422, and its rubric at 87803-87804 suppresses what would otherwise be said
+of the Assumption octave that day -- so deleting it leaves a commemoration with
+no feast to hang on. A deletion cannot put back a text that was displaced; it can
+only take away the thing that displaced it. AND NO LIST COULD BE PROVED
+COMPLETE, because there is no 1920 typical edition in this repository to diff
+against -- the tracked 1570 and 1604 witness the ancient stratum, not what Divino
+afflatu changed in 1920. That is a hand-picked deletion list with no control,
+which `[[corrections]]` `the-google-scans-carry-a-stamp-and-not-the-boilerplate`
+refused in its own words, with the added defect that nobody could check it.
+
+17 U.S.C. 103(b) WAS EXAMINED AND DOES A DIFFERENT JOB. It is sound and it is
+load-bearing: it is why every prayer this repository has published off these
+bytes is still publishable, and why the 1962 facsimile rights record's holding
+survives. It is not a permission to redistribute the added matter. A basis that
+STATED the distinction would be right about the passages and would still be
+false about the file, because the file is the thing `tracked` speaks about.
 """
 evidence = "verified"
 
@@ -1733,25 +1860,45 @@ default_taken = "none"
 
 [counts]
 versions_audited = 25
-admissible = 7
-admissible_on_age = 6
+admissible = 6
+admissible_on_age = 5
 admissible_on_a_renewal_record = 1
-admissible_folded_in = 7
+admissible_folded_in = 6
 admissible_awaiting_fold_in = 0
+withdrawn_after_fold_in = 1
+withdrawn_after_fold_in_note = """
+The 1920. Admissible from this file's first writing until 2026-08-02, folded in
+on 2026-08-01, and withdrawn the next day when the printing was dated at 1970 or
+later. `withdrawn` is a fourth verdict, defined on the row: a verdict this audit
+reached and then took back on its own evidence. It is counted separately rather
+than folded into `excluded` because nothing about it resembles the fourteen --
+there is no claimant, no notice and no permission at issue, and the underlying
+text really is public domain -- and separately rather than into `undecided`
+because nothing awaits the maintainer. 6 + 1 + 14 + 4 = 25.
+"""
 excluded = 14
 excluded_folded_in = 0
 undecided = 4
 undecided_folded_in = 0
-admissible_bytes = 16653598
-admissible_size = "16.65 MB"
-admissible_bytes_now_tracked_here = 16628734
+admissible_bytes = 13735513
+admissible_size = "13.74 MB"
+admissible_bytes_now_tracked_here = 13710649
 admissible_bytes_now_tracked_here_note = """
-All seven, less the 24,864 bytes of the Lasance appendix that
+All six, less the 24,864 bytes of the Lasance appendix that
 `[the_appendix_exclusion]` removed. That is the whole of what this audit's
-`admissible` verdict eventually put into Git, and it is the number to compare
-against `excluded_bytes_present_in_lt_hist = 14851202`, which is what it kept out.
+`admissible` verdict eventually put into Git and left there, and it is the number
+to compare against `excluded_bytes_present_in_lt_hist = 14851202`, which is what
+it kept out.
+
+BOTH FIGURES FELL BY 2,918,085 ON 2026-08-02, when the 1920 payload came out of
+Git. They read 16653598 and 16628734 for one day. The withdrawn bytes are not
+added to `excluded_bytes_present_in_lt_hist`, which counts the fourteen excluded
+rows and is a statement about lt-hist rather than about this repository.
 """
-google_digitisations_among_the_seven = 3
+withdrawn_bytes = 2918085
+post_1920_formularies_found_in_the_withdrawn_1920_payload = 9
+earliest_possible_year_of_the_withdrawn_1920_printing = 1970
+google_digitisations_among_the_folded_in = 3
 google_digitisations_carrying_googles_front_matter = 0
 google_digitisations_note = """
 The 1604, the 1862 and the 1843 are Google scans and NONE of the three carries
@@ -1807,10 +1954,15 @@ copying that could not be had by fetching -- which is why
 `bytes_moved_out_of_lt_hist_by_the_fold_in` can stay 0 without anyone having
 sacrificed anything for it.
 
-`admissible_folded_in = 7` against `admissible = 7` closes the work this file
-opened, and `excluded_folded_in = 0` with `undecided_folded_in = 0` is the state
-of the discipline: nineteen versions were looked at seven times over and not one
-of them came. `section_files_copied_into_this_repository = 0` is
+`admissible_folded_in = 6` against `admissible = 6`, with
+`withdrawn_after_fold_in = 1`, closes the work this file opened and records what
+it cost. `excluded_folded_in = 0` with `undecided_folded_in = 0` is the state of
+the discipline: nineteen versions were looked at seven times over and not one of
+them came. THE WITHDRAWAL IS NOT A BREACH OF THAT DISCIPLINE BUT ITS ONLY REAL
+TEST. Nothing kept the fourteen out that had not already been kept out by
+reading a notice; the 1920 is the one row where an admissible verdict had to be
+taken back, and it was taken back one day later by the lane that had made it,
+from the same bytes it had already had in hand. `section_files_copied_into_this_repository = 0` is
 `[[structural_conditions]]` `text-status-may-not-travel` measured: the fold-in
 took OCR text and wrote fresh manifests, and no lt-hist front matter, metadata
 file or manifest exists here.
@@ -1823,11 +1975,15 @@ record, or policy cited for it anywhere in the corpus.
 `lt_hist_versions_marked_public_domain_that_this_audit_excludes = 10` is the
 disagreement measured. Add the two still undecided and the corpus's rights
 verdict is rejected or suspended on twelve of the nineteen versions where it
-made one. It reached the right conclusion on seven, and on every one of the
-seven by a method that would have been equally confident had it been wrong --
-the 1920 row's basis is bare assertion with not even an Internet Archive mark
-behind it, the 1937 Lasance row rested on a negative OCR search of the wrong
-headings, and the 2011 row was reasoned identically to both.
+made one. It reached the right conclusion on six, AND ON THE SEVENTH IT WAS
+SIMPLY WRONG. Every one of the six was reached by a method that would have been
+equally confident had it been wrong -- the 1937 Lasance row rested on a negative
+OCR search of the wrong headings, and the 2011 row was reasoned identically -- and
+the 1920 is what that method looks like when the confidence is misplaced: a bare
+assertion, with not even an Internet Archive mark behind it, that a book printed
+after 1970 was published in 1920. THE AUDIT INHERITED THAT FACT WHILE REFUSING
+ITS GROUND, which is why the number above moved a day after this file was
+written and not before.
 
 The Lasance row is the sharpest illustration in the file, now that its answer is
 known. The corpus was RIGHT. It was right on evidence that could not have told
@@ -2010,12 +2166,140 @@ editio IV iuxta typicam Vaticanam that reprints the same 25 July 1920 decree
 [recorded].
 """
 effect = """
-None on the verdict; a conformed printing of a 1920 edition is pre-1931 either
-way. The registered edition names the TYPICAL EDITION, and the artifact record
-says the printing is unestablished and that if a later reading identifies a
-publisher the artifact moves to a new edition for that printing. Recorded so that
-nobody cites these bytes as the Vatican Polyglot printing on the strength of a
-decree that every conformed edition also carries.
+SUPERSEDED ON 2026-08-02. As written this said: "None on the verdict; a conformed
+printing of a 1920 edition is pre-1931 either way." That sentence is the error
+this whole file exists to catch, committed by this file, and it is left standing
+above rather than deleted so that the shape of it is legible. It assumed that the
+only thing an unidentified printing could vary was its PUBLISHER. It could also
+vary its DATE and its CONTENTS, and it did both: the printing is post-1970 and
+carries thirty-five years of feasts the typical edition never had. See
+`[[corrections]]` `the-1920-printing-is-post-1970`.
+
+What survives of this correction is its narrower point, and it was right: the
+approbation decree does not identify the printing, because every conformed
+edition reprints it. The finding "the printing is not identified" was correct.
+The inference "and therefore it does not matter" was not, and nothing in the
+evidence supported it -- it was supplied to close the gap rather than derived
+from anything.
+"""
+
+[[corrections]]
+id = "the-1920-printing-is-post-1970"
+found_by = "the correction lane of 2026-08-02, on the artifact it had landed the day before"
+claim = """
+That the artifact
+`artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196`
+is `tracked` and `public-domain` because the book was first published outside the
+United States before the pre-1931 line, "and on that ground alone"; and, from the
+sibling record that first flagged the problem, that the post-1920 matter in it
+"bounds the printing at roughly 1944-1954"
+[recorded, missale-romanum-1962-facsimile-rights-v1.toml
+`[the_1920_substitution.a_defect_in_the_1920_artifact_itself]`].
+"""
+finding = """
+THE FIRST CLAIM IS FALSE AND THE SECOND IS TOO EARLY BY AT LEAST SIXTEEN YEARS.
+Every locus below is a physical line of the file named by sha256
+aa6461961702b5cbae51460a7385f7a982c6f5a2649822d0bb8d5f13b6b387e0, and every one
+was re-read in those bytes on 2026-08-02 [verified].
+
+  FOUR MARKERS WERE PUT TO THIS LANE AND ALL FOUR HOLD.
+
+  D. N. Jesu Christi Regis, instituted by Quas primas, 11 December 1925
+      kalendarium 8133 "Christi Regis, duplex I classis."
+      formulary 94367 "Dominica ultima Octobris / IN FESTO / D. N. JESU
+          CHRISTI REGIS / Duplex I classis"
+      also: its Praefatio indexed at 43750, 43801, 46562; its occurrence and
+          transfer rubrics at 48595-48607; a further rubric at 11241
+  S. Teresiae a Jesu Infante, canonized 1925, universal calendar 1927
+      kalendarium 7856; formulary 92091 "Die 3 Octobris ... Duplex"
+  S. Joannis Bosco, canonized 1934
+      kalendarium 5372; formulary 66667 "Die 31 Januarii ... Duplex"
+  Immaculati Cordis B. M. V., instituted 1944, at the 1944 grade twice over
+      kalendarium 7420 "Immaculati Cordis B. Mariae Virg., duplex II classis."
+      formulary 87798 "In Festo / Immaculati Cordis B. M. V. / Duplex II classis"
+
+  FIVE MORE WERE FOUND HERE THAT NOBODY HAD NAMED.
+
+  S. Petri Canisii, canonized and Doctor 1925   kalendarium 6195, formulary 72586
+  S. Joannis Mariae Vianney, canonized 1925,
+      universal 1928                            kalendarium 7284, formulary 86104
+  S. Joannis Eudes, canonized 1925              kalendarium 7388, formulary 87420
+  S. Roberti Bellarmino, canonized 1930,
+      Doctor 1931, feast 1932                   kalendarium 6378, formulary 74820
+  In Assumptione B. M. V. printed with the Mass SIGNUM MAGNUM of 1950, formulary
+      at 86897, Introit at 86903
+
+THE ASSUMPTION IS THE ONE THAT WAS HIDDEN, AND IT WAS HIDDEN BY A DEFECT THIS
+REPOSITORY HAD ALREADY WRITTEN DOWN. Line 86903 reads "ignum magnum apparuit in
+coelo": the ornamental S is dropped, as every large initial in this scan is
+dropped, so a literal search for "Signum magnum" returns the Apocalypse pericope
+at 68260 and a pro aliquibus locis Mass at 122030 and misses the Assumption
+entirely. The artifact record had warned in terms that "an absence here is
+evidence about the text layer and not about the book", using Te igitur and Quo
+primum as its examples. The warning was correct, was published, and was then
+walked into.
+
+AND THE DECISIVE ONE IS IN THE APPENDIX. At appendix pages [223]-[224] -- running
+heads at lines 120199 and 120295, in the unbroken sequence [221] at 120048, [223]
+at 120199, [224] at 120298, [225] at 120394 -- the Missae pro aliquibus locis
+carry a whole formulary "Eodem die 3 Septembris / S. Pii X. / Papae et Conf."
+(heading 120221), with this rubric at lines 120225-120228:
+
+    Hoc Festum in Ecclesia universali ritu duplici celebratur, sed pro
+    Fraternitate sacerdotali S. Pii X ritu duplici I classis cum Octava
+    privilegiata III ordinis.
+
+Pius X was canonized on 29 May 1954 and given a universal feast in 1955. The
+FRATERNITAS SACERDOTALIS SANCTI PII X was erected on 1 November 1970. A rubric
+assigning that body a rank and a privileged octave cannot have been composed
+before it existed. The scanned book is therefore a printing of 1970 or later, and
+in no case earlier than 1954.
+
+THE BODY AND THE APPENDIX DATE DIFFERENTLY AND BOTH BOUNDS WERE TAKEN. The body
+is 1951-1954: Signum magnum of 1950 is in it, the Assumption still carries its
+common octave (kalendarium 7346), and the Queenship of the Blessed Virgin Mary of
+1954, St Joseph the Worker of 1955 and St Pius X in the sanctoral for 3 September
+are all absent -- `Opific` returns 0, `Reginae` returns only the old pro aliquibus
+locis indults at 117131 and 117423, and all four occurrences of `Pii X` are in the
+appendix [verified]. So a pre-1955 body is bound with post-1970 appendix matter.
+Whether the whole was reset or leaves were substituted cannot be read off a text
+layer, and it changes nothing: the matter is in the bytes either way.
+
+ONE FURTHER CORRECTION, TO A FILE THIS LANE DOES NOT OWN. The sibling record
+states at `[the_1920_substitution.where_it_cannot]` that "the Queenship of the
+Blessed Virgin Mary (1954), St Pius X (1954) and St Joseph the Worker (1955) all
+return 0 hits [verified]". Two of the three are right. ST PIUS X IS NOT: he
+stands at lines 120199, 120221, 120227 and 120295. The search that produced the
+zero was almost certainly run against single-spaced text, and this OCR emits
+double spaces between words -- the same caveat that record itself writes out two
+sections earlier. See `[[open_items]]` `the-1962-rights-record-needs-amending`.
+"""
+effect = """
+DECISIVE ON THE VERDICT, WHICH IS WITHDRAWN, AND NARROW ON WHAT MAY BE QUOTED.
+
+The artifact is now `remote` and `unresolved` and its 2,918,085 bytes are out of
+Git. Route (a), a carve-out by one stated replayable transformation, was examined
+and is unavailable; 17 U.S.C. 103(b) was examined and answers a different
+question. Both are set out at the row's `withdrawn_note`.
+
+WHAT MAY STILL BE QUOTED IS EVERYTHING THIS REPOSITORY HAS ACTUALLY QUOTED. Under
+103(b) the later printing's copyright reaches only its own contribution and
+"does not imply any exclusive right in the preexisting material", so the Canon at
+line 49251, the Corpus Christi propers at 56316-56590, the All Souls formularies
+at 95538-96280, the Ordo Missae, the Ritus servandus, De defectibus, the Commons
+and the temporal outside Holy Week are exactly where they were. None of them is
+near any of the loci above, and all are separately witnessed by the tracked
+venice-1570 and vatican-typica-1604 texts. What must not be quoted from these
+bytes is the nine post-1920 formularies and the Praefatio de D. N. J. C. Rege.
+
+THE RIGHTS RECORD THAT LANDED ON 2026-08-01 STANDS. `missale-romanum-1962-
+facsimile-rights-v1.toml` uses the 1920 as the rights basis that makes the Corpus
+Christi and All Souls transcriptions defensible, and that basis is 103(b) plus a
+public-domain witness. Both halves survive: the 1920 typical edition is public
+domain, and the passages relied on are its text. What has changed is that the
+witness is now `remote` rather than `tracked` -- re-fetchable by URL and
+authenticated by hash, not held in Git -- and that record describes it as tracked
+in two places. Those are corrections of description, not of holding.
 """
 
 [[corrections]]
@@ -2185,3 +2469,91 @@ has a tracked, searchable text from the other scan, so the value of deriving thi
 one is a second searchable witness rather than a first.
 """
 who = "any lane that owns the Cummiskey records"
+
+[[open_items]]
+id = "the-1962-rights-record-needs-amending"
+what = """
+`src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml` describes
+the 1920 artifact three times in terms that stopped being true on 2026-08-02, and
+carries one search result that was never true.
+
+  1.  `[the_1920_substitution].the_artifact` reads `storage = "tracked"`,
+      `rights_status = "public-domain"`, "on disk". It is now `remote` and
+      `unresolved` and holds no bytes. Same id, same sha256, same URL.
+  2.  `[the_1920_substitution.a_defect_in_the_1920_artifact_itself]` -- which is
+      the section that FOUND this defect and is owed the credit for it -- bounds
+      the printing "at roughly 1944-1954". The upper bound is wrong by at least
+      sixteen years: the appendix carries a Mass of St Pius X whose rubric names
+      the Fraternitas sacerdotalis S. Pii X, erected 1970.
+  3.  The same section says the fix is "the same shape as the Lasance appendix
+      problem, which was resolved by removing the excluded pages from the tracked
+      text". It is not that shape. The Lasance appendix was one contiguous range
+      on printed-page boundaries; this matter is in five parts of the book at
+      once, includes a REPLACEMENT rather than an addition at 15 August, and
+      could not be proved complete against any witness this repository holds. The
+      lane that owned the artifact examined that route and refused it.
+  4.  `[the_1920_substitution.where_it_cannot]` item 3 states that "the Queenship
+      of the Blessed Virgin Mary (1954), St Pius X (1954) and St Joseph the
+      Worker (1955) all return 0 hits [verified]". THE QUEENSHIP AND ST JOSEPH
+      THE WORKER ARE RIGHT AND ST PIUS X IS NOT: he stands at lines 120199,
+      120221, 120227 and 120295 of the same payload, and 120227 is the rubric
+      that dates the whole book. Re-verified 2026-08-02. The likely cause is a
+      single-spaced search pattern against an OCR that emits double spaces --
+      the caveat that record itself writes out at
+      `[the_1920_substitution.where_it_substitutes].verified_coverage`.
+"""
+why_it_matters = """
+THE HOLDING OF THAT RECORD IS NOT DISTURBED AND MUST NOT BE READ AS DISTURBED.
+Its argument is 17 U.S.C. 103(b) plus a public-domain witness, and both halves
+survive: the 1920 typical edition is public domain, the Corpus Christi and All
+Souls propers it corroborates are that edition's text and older, and the later
+printing's copyright reaches only the later printing's contribution. What changed
+is the WITNESS'S DISPOSITION -- re-fetchable by URL and authenticated by hash
+rather than held in Git -- and one search result inside a supporting section.
+
+Item 4 is the one that matters beyond bookkeeping, because that record uses the
+absence of St Pius X as evidence about what the 1920 payload can and cannot
+substitute for. He is present, in the appendix, in a form that makes the payload
+LESS useful rather than more.
+"""
+who = "any lane that owns src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml"
+
+[[open_items]]
+id = "two-calendar-notes-call-the-1920-tracked"
+what = """
+`src/sources/calendars/roman-1962/propers.yaml` cites the 1920 artifact twice as
+"the tracked 1920 Vatican typical edition" -- at the `corpus-christi` entry,
+corroborating at lines 56316-56590, and at the All Souls entry, corroborating at
+lines 95538-96280. Both citations are otherwise correct and both corroborations
+stand: those loci are preexisting 1920 matter, nowhere near any of the post-1920
+formularies, and 17 U.S.C. 103(b) leaves them publishable. Only the word
+"tracked" is now wrong, and the sentence should say that the witness is `remote`,
+recoverable from the recorded Internet Archive URL and authenticated by the
+recorded sha256.
+"""
+why_it_matters = """
+A reader who goes looking for the file will not find it, and a reader who reads
+"tracked" will believe this repository distributes it. Neither is true, and the
+second is the claim that was withdrawn.
+"""
+who = "any lane that owns src/sources/calendars/roman-1962/"
+
+[[open_items]]
+id = "a-genuine-1920-impression-is-still-wanted"
+what = """
+This repository now has NO public-domain full text of the Missale Romanum between
+1604 and 1962. That is what the withdrawal cost, and it is worth stating as a gap
+rather than leaving as an absence. What would close it is a scan of an impression
+that can be shown to be 1920-1924 -- a title page, an imprint, or a colophon in
+the bytes, or a sanctoral that stops before Quas primas of December 1925, which
+is the earliest of the nine markers and therefore the cheapest test.
+"""
+why_it_matters = """
+The 1962 facsimile rights record leans on a 1920 witness for the propers this
+project publishes. It can still lean on this one -- the bytes are re-fetchable and
+hash-authenticated, and 103(b) is what does the legal work either way -- but a
+witness the repository can grep is worth more than one it must download, and a
+witness whose own printing is dated is worth more than one whose printing had to
+be argued about twice.
+"""
+who = "any lane that owns the missale-romanum acquisition queue"

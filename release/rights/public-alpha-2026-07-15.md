@@ -1982,8 +1982,8 @@ release attachment, announcement, or promotion.
 | `web/claude/history/traditional-priestly-institutes/01-sspx.md` | `cc1017bf4f1ca73f79dc72e013ce0b007592377e141358cb544b473a6ff6b4ab` |
 | `web/claude/history/traditional-priestly-institutes/02-fssp.md` | `ef2a8a5a94a0f153b4736d5b9830064bfcf1b3795c59dd8fa1d98dcc7e7e0660` |
 | `web/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md` | `b586b083e931d78dac7bc5adf0e5d9d7d0fc7181fad554f5d81328826875f6bc` |
-| `web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.md` | `486558e47b0f4855b7ed0a0a45d67da908d5117ba01936a4ed9a8c1acdb89210` |
-| `web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md` | `5196a6b75cbbf5b479b45382a9161c687bf39850cca1c57debeaad7d4e714b6c` |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.md` | `6c1efbd6e06e7f4e08ce7d08aacc305ab1db590cf0abd77cb6c1ac37b6bcf1b9` |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md` | `0a6039f207638018465746de2beea334f356f1c5e6345802f7d5fd546422db3c` |
 | `web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.md` | `30a0738b3acd762bdfef7b4c1678aafd7dc6938a9227ec4add93c6c639d9484c` |
 | `web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md` | `9d82ca97f14352b548105236905ed617cefa56b394f226fc52c1c457bf4fe5c6` |
 | `web/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.md` | `1a4b163652cde5bec2efb611e1073d1dd8152e80617a804c7ae45978ba28dd85` |

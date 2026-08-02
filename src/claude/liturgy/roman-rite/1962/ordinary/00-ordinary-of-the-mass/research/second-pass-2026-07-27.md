@@ -57,3 +57,43 @@ below raises a source above its recorded evidence ceiling.
 
 These leads are not publication evidence until normalized and checked under the
 repository source standard.
+
+## Correction, 2026-08-02 — the rights row is superseded
+
+The last row of the results table above is a record of the position held on
+27 July 2026 and is left as written. Its finding that a 1962 date does not
+support a public-domain rationale stands; the substitute it names —
+"bounded analytical quotation and the repository's recorded publication
+authorization while keeping scan rights unresolved" — has been superseded by a
+worked rights record.
+
+`src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`,
+recorded 2026-08-01, holds that:
+
+- the 1962 typical edition's own copyright status is unresolved and more likely
+  than not restored in the United States under 17 U.S.C. §104A to the end of
+  2057, so no public-domain conclusion may be drawn for the edition as such;
+- the CC BY-NC-ND 3.0 tag on the Internet Archive copy of the CMAA facsimile
+  confers nothing, because the uploader granted nothing and identical bytes are
+  hosted a second time under no licence at all; the artifact's
+  `rights_status = "unresolved"` stands and is correct;
+- what permits quoting the ancient Latin is 17 U.S.C. §103(b): a revised
+  edition's copyright "extends only to the material contributed by the author
+  of such work" and "does not affect or enlarge the scope, duration, ownership,
+  or subsistence of" any copyright in the preexisting material. The prayers this
+  publication quotes are preexisting material of the 1962 edition, so that
+  edition's copyright does not reach them;
+- the edition's own new matter — the 1955 Holy Week, the 1960 Code of Rubrics,
+  the sanctoral added after 1920, and its front matter, including the Decretum
+  of 23 June 1962 — is not freed by §103(b) and is the material this project
+  must not publish from the facsimile; and
+- no page image of the facsimile is published anywhere in the repository, and
+  that must remain so.
+
+That reading is the project's own, not a clearance anyone granted, and it is not
+legal advice. This publication's rendered rights prose is not contradicted by
+it: the scope appendix already declines any public-domain conclusion drawn from
+the edition's date. What changes is the strength of the basis behind that
+prose, which is now recorded rather than merely withheld. No rendered byte of
+this publication changes on account of this correction, and none was rebuilt
+for it.

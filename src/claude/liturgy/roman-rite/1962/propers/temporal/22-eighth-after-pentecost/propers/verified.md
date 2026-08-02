@@ -73,10 +73,58 @@ was used only to find the leaf.
 
 ## Rights note
 
-The 1962 Latin liturgical text reproduced below is public domain. The
-repository asserts no rights in it, nor in the 1861 English translation
-quoted as a historical witness, nor in Scripture. The Triptych licence
-covers only project-created commentary and design.
+**Corrected 2026-08-02.** This note previously read that the 1962 Latin
+liturgical text reproduced below is public domain. That conclusion is
+withdrawn. `src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`,
+recorded 2026-08-01, finds the 1962 typical edition's own copyright status
+unresolved and more likely than not restored in the United States under
+17 U.S.C. §104A to the end of 2057, and finds that the CC BY-NC-ND tag on the
+Internet Archive copy of the facsimile confers nothing.
+
+The basis for reproducing the Latin below is 17 U.S.C. §103(b): the copyright
+in a revised edition extends only to the material that edition contributed and
+"does not affect or enlarge the scope, duration, ownership, or subsistence of"
+any copyright in the preexisting material. This formulary is preexisting
+material of the 1962 edition, so the 1962 edition's copyright does not reach
+it. This is the project's own reading of the statute and of the evidence, not a
+clearance anyone granted, and it is not legal advice.
+
+**Preexisting-material check, 2026-08-02.** All ten appointed elements below
+are printed, in the same order and at the same scriptural references, in two
+Missals this repository tracks as public-domain text:
+
+- **Pustet, Ratisbon, 1862** — artifact
+  `artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf`,
+  `storage = "tracked"`, `rights_status = "public-domain"`. Under the heading
+  `Dominica VIII. post Pentecosten` at printed pp. 328–329 (text-layer lines
+  49104–49269): Introit `Uscepimus Deus` (the dropped ornamental `S`) at Ps.
+  47 with the verse at Ps. ibid.; Collect `Largire nobis`; Rom. c. 8; Gradual
+  Ps. 30 with the verse from Ps. 70; Alleluia Ps. 47; Gospel Luc. c. 16 with
+  `Credo`; Offertory Ps. 17; Secret `Suscipe, quaesumus`; Communion Ps. 33;
+  Postcommunion `Sit nobis`. This printing is a commercial hand-format Missal
+  conformed to the Roman text and **not** a typical edition; nothing about the
+  history of the rite is inferred from it here, only that these texts were in
+  print in 1862.
+- **Venice, 1570** — artifact
+  `artifact.catholic-church.missale-romanum.venice-1570.missale-romanum-1570-text-563f4dd2`,
+  `storage = "tracked"`, `rights_status = "public-domain"`. Under the heading
+  `Dominica octaua post Pentecosten` (text-layer lines 52215–52400), the same
+  ten elements in the same order, in the printing's own contracted
+  orthography.
+
+**Bounds of this check.** It was made at the level of element, printed
+reference and incipit against uncorrected OCR text layers, and it is not a
+word-level collation. Both witnesses print the older orthography (`justitia`,
+`ae` for `æ`) and the older element headings (`Introitus`, `Oratio`,
+`Offertorium`, `Communio`) rather than the 1962 book's `Ant. ad Introitum`,
+`Ant. ad Offertorium` and `Ant. ad Communionem`, and neither carries the 1962
+rank or marginal numbering: those are edition-specific matter and are no part
+of this finding. Nothing here is quoted from either witness; they are read as
+finding aids for the presence of the texts.
+
+The repository asserts no rights in the Latin, nor in the 1861 English
+translation quoted as a historical witness, nor in Scripture. The Triptych
+licence covers only project-created commentary and design.
 
 ---
 

@@ -289,6 +289,26 @@ These are published in the guide, not buried here.
 
 ## 6. Rights and translation control
 
+> **Correction, 2026-08-02 — the first bullet below is superseded.** It states
+> that the 1962 Latin propers are "received liturgical text in the public
+> domain." No public-domain conclusion is claimed for the 1962 typical edition
+> any longer. `src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`,
+> recorded 2026-08-01, finds that edition's own status unresolved and more
+> likely than not restored in the United States under 17 U.S.C. §104A to the end
+> of 2057, and finds that the CC BY-NC-ND tag on the Internet Archive copy of
+> the facsimile confers nothing. The basis on which this guide publishes the
+> Latin is now 17 U.S.C. §103(b): a revised edition's copyright reaches only
+> that edition's own contribution and does not "affect or enlarge the scope,
+> duration, ownership, or subsistence of" any copyright in the preexisting
+> material, and this formulary is preexisting material: all ten of its
+> appointed elements are printed in the Pustet Missal of Ratisbon, 1862, which
+> this repository tracks as public-domain text, and six of the ten in the
+> tracked Venice Missal of 1570. The element-by-element check, its witnesses and
+> its bounds are recorded in `propers/verified.md`. This is the project's own reading of the statute and
+> of the evidence, not a clearance anyone granted, and it is not legal advice.
+> The bullet is left as written because it records the position held when this
+> research was done.
+
 - The 1962 Latin propers are received liturgical text in the public domain;
   the project has composed, translated, paraphrased, modernised, conflated and
   adapted nothing.

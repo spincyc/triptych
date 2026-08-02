@@ -526,7 +526,7 @@ licence and within copyright?
 [the_1920_substitution]
 question = "Now that a tracked public-domain full text of the 1920 typical edition is in the source library, how far does it remove the need for the 1962 facsimile?"
 answer = "IT DOES NOT REDUCE THE DEPENDENCY. IT CHANGES ITS KIND -- from the source of published Latin to the verification of it -- and that is worth more than a reduction."
-the_artifact = "artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196, `storage = \"tracked\"`, `rights_status = \"public-domain\"`, 2,918,085 bytes, 123,278 lines, on disk [recorded]."
+the_artifact = "artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196. CORRECTED 2026-08-02: it is now `storage = \"remote\"`, `rights_status = \"unresolved\"`, and its 2,918,085 bytes are NOT on disk. It was tracked and public-domain when this record was written, on a pre-1931 basis that its own pages disprove; the payload was withdrawn from Git the same day and stays re-fetchable and hash-authenticated. The substitution argument below is unaffected, because it rests on 17 U.S.C. 103(b) and on what the 1920 text WITNESSES, not on where its bytes are kept [recorded]."
 
 [the_1920_substitution.the_distinction]
 text = """
@@ -597,9 +597,17 @@ witness AND no public-domain basis is available from it:
       were abolished by the 1960 code. There is no correspondence to fall back
       on; it is a different system, not a variant reading.
 
-  3.  THE POST-1954 SANCTORAL. Verified absent from the tracked 1920 text:
-      the Queenship of the Blessed Virgin Mary (1954), St Pius X (1954) and
-      St Joseph the Worker (1955) all return 0 hits [verified].
+  3.  THE POST-1954 SANCTORAL. The Queenship of the Blessed Virgin Mary (1954)
+      and St Joseph the Worker (1955) are absent from the 1920 text [verified].
+      CORRECTED 2026-08-02: this item also claimed St Pius X returns 0 hits
+      "[verified]", and that was FALSE. He stands in the appendix Missae pro
+      aliquibus locis at lines 120199, 120221, 120227 and 120295, and the
+      rubric at 120227 is the line that dates the whole book -- it grants the
+      feast to the Fraternitas sacerdotalis Sancti Pii X, erected 1 November
+      1970. The likely cause of the false negative is the one this record warns
+      about two sections earlier: a single-spaced search pattern against
+      double-spaced OCR. A claim marked [verified] was not, and the check that
+      would have caught it is the one this record already prescribes.
 
   4.  THE 1962 FRONT MATTER, above all the Decretum of 23 June 1962. Unique to
       this edition by definition.
@@ -639,8 +647,21 @@ with ranks in the sanctoral, feasts instituted well after 1920 [verified,
   S. Joannis Bosco, Conf., Duplex line 66667, under "Die 31 Januarii"
       -- canonized 1934, universal calendar 1936
 
-and does NOT carry the Queenship of the BVM, St Pius X or St Joseph the Worker
-[verified], which bounds the printing at roughly 1944-1954.
+and does NOT carry the Queenship of the BVM or St Joseph the Worker [verified].
+
+CORRECTED 2026-08-02, and the correction is large. This block first read that
+the printing was bounded "at roughly 1944-1954". It is bounded at 1970 OR
+LATER. The appendix Missae pro aliquibus locis carries a whole Mass of St Pius
+X at pages [223]-[224], whose rubric grants it to the Fraternitas sacerdotalis
+Sancti Pii X -- a society erected 1 November 1970 -- and the appendix
+pagination runs unbroken through those leaves, so they are set pages and not a
+bound-in slip. Five further post-1920 feasts nobody had named are also present:
+Peter Canisius, the Cure of Ars, John Eudes, Robert Bellarmine, and the
+Assumption printed with the Mass Signum magnum of 1950, which a literal search
+misses because this scan drops ornamental initials and stores it as
+"ignum magnum". The body is separately 1951-1954. So the artifact's basis was
+wrong by about fifty years, not fifteen, and it is now remote and unresolved
+with its bytes untracked rather than carved.
 """
 why_it_matters = """
 The 1920 artifact's rights basis is "first published outside the United States
