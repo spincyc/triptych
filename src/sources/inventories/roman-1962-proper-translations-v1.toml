@@ -30,18 +30,19 @@ distinguished from one nobody looked at, and so that a page can say that no
 English is recorded rather than showing Latin as though it were the answer.
 """
 verification = """
-Partly collated. Of the 242 entries, 176 carry `printed_page`,
+Partly collated. Of the 245 entries, 179 carry `printed_page`,
 `collated` and `collation_result`: those were read against the page images of
 Internet Archive item romanmissaltran00churgoog, the same 1861 printing this
 file quotes, at
 `https://archive.org/download/romanmissaltran00churgoog/page/n<leaf>_w1400.jpg`
-on 2026-07-31 and 2026-08-01. 59 were confirmed as printed, 39 were corrected
-against the page, and 14 were recorded from the page in propers this file had
-declared the witness does not print. One further entry had its wording
-confirmed and its page corrected: see `sexagesima`'s Secret. The remaining 52
+on 2026-07-31, 2026-08-01 and 2026-08-02. 59 were confirmed as printed, 39 were
+corrected against the page, and 80 were recorded from the page in propers this
+file had no entry for or had declared the witness does not print. One further
+entry had its wording confirmed and its page corrected: see `sexagesima`'s
+Secret. The remaining 66
 entries carry no such keys: they have still been read out of an
 optical-character-recognition text layer and collated against nothing, and must
-be treated as unverified. All 50 are matched by the sibling
+be treated as unverified. 50 of them are matched by the sibling
 transcription of the same printing. A further 16 entries carry
 `detector = "second-printing-agrees"`: those have never been seen on a page
 either, but the 1861 and 1843 scans render them alike, which is two independent
@@ -93,7 +94,27 @@ someone opening the page.** The six untranslated rows that remain rest on a
 Latin comparison rather than on a failure to find, and the three added for
 `s-hilarii` rest on a refusal to write a name the witness does not print.
 
-The same pass corrected one entry's provenance without touching its wording.
+A fourth pass ran on 2026-08-02 over one formulary, `corpus-christi`, and the
+stratum it took is a new one: not an absence this file had recorded but a hole
+where this file had recorded nothing at all. Registering the sibling
+transcription on the same day found it -- three of the sibling's rows answered a
+mass carrying neither an entry here nor an `untranslated` row -- and the lane
+that found it left it, on the ground that an entry resting on the artifact alone
+would be the first here resting on one uncollated, uncorroborated reading. That
+reasoning was right and it was answerable, and the answer is the same one this
+file has used nine times now: open the page. All three orations were read at
+printed p. 395 = leaf n403 and printed p. 398 = leaf n406, at 200 dpi and again
+at 400. Nothing was refused. The two readings agree at the Collect and the
+Postcommunion and differ at the Secret's conclusion, which is recorded in that
+entry's `disagreement`; that is a tenth open divergence where there were nine,
+and it is the second to appear at a locus the 2026-07-31 hand comparison could
+not have seen, because this file then carried no entry for the mass. Note what
+the shape of the find says about the ledger: an absence this file records gets
+retested, and a formulary it never mentioned gets nothing, because there is no
+row to retest. `english_oration_census` already asks for the verb that would
+have reported it.
+
+The same third pass corrected one entry's provenance without touching its wording.
 `sexagesima`'s Secret cited printed p. 94, and p. 94 prints a different setting
 of the same prayer. The witness sets it twice and not identically, and the page
 that was cited was the wrong one of the two.
@@ -221,6 +242,16 @@ Six of those eight are the artifact normalising the book's conclusions where the
 book is not uniform, which its own `transformation` note says it did not do. The
 ninth divergence is not of that kind: it is a comma.
 
+A tenth was added on 2026-08-02 with the three `corpus-christi` entries, and it
+is of the sixfold kind: the book ends that mass's Secret `offerings. Thro`, with
+neither apostrophe nor stop, and the artifact prints `Thro’.`. It is the second
+divergence in two days to appear at a locus the hand comparison of 2026-07-31
+could not have reached, and for the same reason both times -- this file carried
+no entry there, so there was nothing for the artifact to differ from. Ten now
+stand, all of them the artifact's, none of them corrected in it, and every one
+found by attaching the two readings side by side rather than by comparing two
+files by hand.
+
 Two transcriptions of one book will keep drifting; the standing rule is one
 derived table with no hand-typed restatement beside it, and this file is that
 restatement. It should end as `translations` inside propers.yaml derived from
@@ -235,21 +266,30 @@ or chosen between: its rows are copied in as they stand, including the
 typographic apostrophe it uses and this file does not.
 
 What it reaches, measured and not assumed. The artifact carries 183 rows over 61
-temporal formularies. 153 of them answer an entry here and gained a second
-witness. The other 30 answer ten formularies this calendar cannot yet take:
+temporal formularies. 153 of them answered an entry here on the day of
+registration and gained a second witness; three more do now, and the figure is
+156. The other 27 answer nine formularies this calendar cannot yet take:
 
   9 formularies  the Vigil and the three Masses of Christmas, the Octave Day,
                  the Epiphany, Ash Wednesday, the Ascension, and the Mass of the
                  First Sunday after Pentecost -- every one of which propers.yaml
                  still prints as a placeholder, so there is no Latin here for the
                  English to answer and no entry to hang it on.
-  1 formulary    `corpus-christi`, whose Latin this calendar DOES print, and for
-                 which this file carries neither an entry nor an `untranslated`
-                 row. That is a hole in this file's own ledger, and it is
-                 recorded rather than closed: an oration taken from the artifact
-                 alone would be the first entry here resting on a reading nobody
-                 collated and nothing corroborates, which is not the standard the
-                 other 242 are held to. Three orations.
+
+Closed 2026-08-02, the same day it was opened. A tenth formulary stood here,
+`corpus-christi`, whose Latin this calendar does print and for which this file
+carried neither an entry nor an `untranslated` row -- a hole in this file's own
+ledger rather than a decision. It was recorded rather than closed, on the ground
+that an oration taken from the artifact alone would be the first entry here
+resting on a reading nobody collated and nothing corroborates, which is not the
+standard the rest are held to. That ground was right and it was not permanent:
+the way to answer it is to collate, and the page images settle it as they have
+settled everything else in this file. All three orations were read at printed
+pp. 395 and 398 on 2026-08-02 and now stand as entries, with the artifact's rows
+attached beside them as the second witness. The reasoning is left standing above
+because the refusal was correct at the time and the record of why a thing was
+left is worth as much as the record of its being done. See the fourth pass under
+`verification`.
 
 Where it does not reach at all is Holy Week. The artifact's own `notes` exclude
 Palm Sunday, the rest of Holy Week and the Easter Vigil deliberately, so the
@@ -263,19 +303,26 @@ kind was seven, is zero, and was closed by the page rather than by the sibling.
 """
 
 witness_disagreement = """
-Derived on every run by `check-calendar-masses`, not recorded here: of the 153
-orations both transcriptions carry, they agree at 144 and disagree at 9, and the
-check prints both figures whether or not anything is wrong. Each of the 9 carries
+Derived on every run by `check-calendar-masses`, not recorded here: of the 156
+orations both transcriptions carry, they agree at 146 and disagree at 10, and the
+check prints both figures whether or not anything is wrong. Each of the 10 carries
 a `disagreement` key on its entry saying what the two read differently and which
-reading the page settled.
+reading the page settled. The figures moved from 153/144/9 on 2026-08-02, when
+`corpus-christi` landed three entries and the artifact's three rows attached to
+them; two agreed and one did not.
 
 The 45-in-153 rate under `sibling_transcription` is the rate BEFORE this file was
 corrected. 37 of those 45 were this file being wrong and have been fixed against
 the page; what remains is the 8 the artifact got wrong and has not been corrected
-for, plus one locus the 2026-07-31 comparison could not have seen, because this
-file then carried no entry for `epiphany-2` at all. That ninth is the argument for
-making the detector standing rather than running it once: it is a divergence that
-appeared after the hand comparison, and no hand was going to run it again.
+for, plus two loci the 2026-07-31 comparison could not have seen, because this
+file then carried no entry for `epiphany-2` or for `corpus-christi` at all. Those
+two are the argument for making the detector standing rather than running it once:
+each is a divergence that appeared after the hand comparison, and no hand was
+going to run it again. The second of them says more than the first, because it
+did not appear when an absence was refuted -- it appeared when a mass this file
+had never mentioned was entered for the first time, which is a source of new
+divergences that will keep producing them for as long as the calendar keeps
+landing formularies.
 
 The check does not fail on a disagreement. It fails on an UNRECORDED one, and on
 a `disagreement` left at a locus where the two witnesses now agree. The line is
@@ -301,8 +348,8 @@ repository carries. The honest total is small and worth stating plainly,
 because it is easy to read the corrections above as the end of the problem
 rather than as the result of having looked at two thirds of one file.
 
-The repository serves English for 242 non-scriptural propers, all of them
-here - 82 collects, 78 secrets, 82 postcommunions. Every one comes from this
+The repository serves English for 245 non-scriptural propers, all of them
+here - 83 collects, 79 secrets, 83 postcommunions. Every one comes from this
 file: `tools/mass-propers` builds the browser's data by overlaying this
 inventory onto propers.yaml and reads no other translation source. The
 browser's data serves each of them at every mass that takes it, which is
@@ -313,13 +360,13 @@ served there. Outside the two calendars the only other English orations in the
 tree are quotations of the sibling artifact through passage records, not an
 independent rendering.
 
-Of the 242, revised 2026-08-01:
+Of the 245, revised 2026-08-02:
 
-  176  read against the 1861 page images on 2026-07-31 and 2026-08-01 - 59
-       confirmed, 39 corrected, 77 recorded from the page in propers this file
-       had no entry for or had declared the witness does not print, and 1 whose
-       wording was confirmed and whose cited page was corrected. These carry
-       `collated` and `collation_result`.
+  179  read against the 1861 page images on 2026-07-31, 2026-08-01 and
+       2026-08-02 - 59 confirmed, 39 corrected, 80 recorded from the page in
+       propers this file had no entry for or had declared the witness does not
+       print, and 1 whose wording was confirmed and whose cited page was
+       corrected. These carry `collated` and `collation_result`.
    16  never seen on a page, but matched word for word against a second
        Philadelphia printing of the same translation, the 1843 of Internet
        Archive item romanmissaltran00englgoog, now registered as the source
@@ -332,7 +379,9 @@ Of the 242, revised 2026-08-01:
 
 The roman-1962 calendar appoints 269 distinct orations once every `takes_from`
 is resolved, so 242 served leaves 27 without English, and all 27 carry an
-`untranslated` row saying why. Nothing in that calendar's oration slots is
+`untranslated` row saying why -- both figures superseded by the ADDENDUM at the
+end of this block, which is why nothing here should be read without it. Nothing
+in that calendar's oration slots is
 unaccounted for: there is no longer a proper that has neither English nor a
 recorded reason for having none. **No oration in this file is a project-created
 translation, and the count is still zero.**
@@ -473,10 +522,10 @@ absence recorded against a witness is a claim about a reader until someone has
 looked at the page.
 
 ADDENDUM, 2026-08-02. The `269` above has moved and this block cannot keep it.
-Resolving every `takes_from` in propers.yaml today gives 291 oration slots, not
-269: 242 covered here, 27 ledgered `untranslated`, and 22 accounted for by
-neither. Those 22 are the calendar lane's landings of the last two days -- the
-three Masses of All Souls, two Commons this file harvested only in part, four
+Resolving every `takes_from` in propers.yaml that morning gave 291 oration slots,
+not 269: 242 covered here, 27 ledgered `untranslated`, and 22 accounted for by
+neither. Those 22 were the calendar lane's landings of the previous two days --
+the three Masses of All Souls, two Commons this file harvested only in part, four
 sanctoral Collects, and `corpus-christi`, whose three orations the sibling
 transcription does carry and which are discussed under `second_witness`. The
 figure will move again the next time a mass lands, and that is the real defect:
@@ -485,6 +534,21 @@ running a query by hand, so each one is true on the day it was written and
 silently false afterwards. A `check-calendar-masses` verb that reports covered,
 ledgered and unaccounted per calendar would end the whole class, and is worth
 more than another dated correction to a paragraph.
+
+SECOND ADDENDUM, later on 2026-08-02, and it is the demonstration rather than
+another correction. The same derivation re-run after `corpus-christi` landed
+gives 294 slots, not 291: 245 covered, 27 ledgered, and 22 accounted for by
+neither. Three orations were closed and the unaccounted figure did not move,
+because the calendar lane landed three more in the same hours -- the Commemoratio
+septem Dolorum's three, now standing where `corpus-christi`'s three stood. The
+paragraph above predicted the figure would move; what it did instead was hold
+still while both of its terms changed, which is worse, because a number that
+stays the same reads as a number nobody needs to re-run. The 22 now standing are
+the three Masses of All Souls (9), the Commemoratio septem Dolorum (3),
+`comm-s-romani-martyris`, `commune-non-virginum-2` and `commune-virginum-4` (2
+each), and four sanctoral Collects -- Bede, Bibiana, Elizabeth and John of Matha.
+Nothing in this addendum should be trusted after today either. The verb is still
+the answer.
 """
 
 untranslated_reach = """
@@ -633,7 +697,7 @@ role = """
 Second witness, and the only row in this file whose text is attached beside
 another's rather than instead of it. `witness` on every entry still names
 cummiskey-1861, because that is the reading this file collated and corrected; this
-row's wording is carried as a second `[[entries.translations]]` on each of the 153
+row's wording is carried as a second `[[entries.translations]]` on each of the 156
 orations it reaches, keyed `(lang, source_id)` so the two stand side by side.
 
 It is NOT a corroborating-only witness in the way cummiskey-1843 is. The 1843 is a
@@ -647,16 +711,16 @@ serving, and at the 54 where they agreed the reading was right 54 times out of 5
 """
 # One line, unlike the prose above it, because `mass-propers` copies `caution`
 # into the browser's witness manifest and a reader is shown it beside the offer.
-caution = "The same pre-1955 caution as the printing it transcribes, and one that belongs to this row alone: it is uncorrected. Nine of its readings are contradicted by the 1861 page images, each named in the `disagreement` key of the entry that holds it, and the artifact has not been amended because its bytes are pinned by sha256 in its own artifact record, in 84 passage records and in tracked document prose, so correcting it is a co-ordinated change and not a lane-local one. It is offered rather than served: the collated edition witness above reaches more of the missal and is the default at every proper."
+caution = "The same pre-1955 caution as the printing it transcribes, and one that belongs to this row alone: it is uncorrected. Ten of its readings are contradicted by the 1861 page images, each named in the `disagreement` key of the entry that holds it, and the artifact has not been amended because its bytes are pinned by sha256 in its own artifact record, in 84 passage records and in tracked document prose, so correcting it is a co-ordinated change and not a lane-local one. It is offered rather than served: the collated edition witness above reaches more of the missal and is the default at every proper."
 publication_decision = """
-Attaching 144 of this witness's readings and suppressing the 9 the page images
+Attaching 146 of this witness's readings and suppressing the 10 the page images
 contradict was considered and refused. It would make the row a curated blend of
 two transcriptions rather than a witness to either, which is the hand-typed
-restatement this repository keeps deleting; and the 9 are the evidence that the
+restatement this repository keeps deleting; and the 10 are the evidence that the
 detector works, so hiding them would hide the reason for having it. What makes
 the refusal safe is the ordering `mass-propers` already applies -- witnesses are
 ranked by how much of the missal each reaches, and the collated edition witness
-covers 242 entries to this one's 153 -- so the corrected reading is the default
+covers 245 entries to this one's 156 -- so the corrected reading is the default
 at every proper and this one is an offered alternative under the `caution` above.
 """
 
@@ -3060,6 +3124,91 @@ rights = "public-domain"
 source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
 text = """
 May the receiving of this sacrament, O Lord our God, avail us to the salvation of body and soul: together with the confession of an everlasting Holy Trinity, and of the undivided unity thereof. Thro’.
+"""
+
+[[entries]]
+mass = "corpus-christi"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui nobis sub Sacramento mirabili"
+witness = "cummiskey-1861"
+printed_page = "395"
+ia_leaf = 403
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "First entry in this file for this mass. The calendar's Latin for the three orations landed on 2026-08-01 off the 1962 CMAA facsimile; until then there was no Latin here for an English to answer, and this file carried neither an entry nor an `untranslated` row for the formulary -- a hole in its own ledger rather than a decision, which is what the `second_witness` block recorded when it registered the sibling transcription and found three of its rows with nothing to attach to. The hole is closed the way this file closes them, by opening the page. The witness prints the Mass at CORPUS CHRISTI, printed p. 395 = leaf n403, and sets the Latin cue `Deus, qui.` before the English, which with the running head is the alignment argument for this oration; the 1962 Latin is Deus, qui nobis sub Sacramento mirabili. Read at 200 dpi and again at 400 dpi. What the book prints around these three prayers is not 1962 and is not carried: its Corpus Christi has the Octave that 1962 abolished, and the rubric under its Secret directs the Preface Quia per Incarnati on the day and through the Octave. The three orations themselves are the same three prayers, which is the only ground on which a pre-1955 hand missal's English is attached here at all; see the `caution` on the source row."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who in this wonderful sacrament, has left us a perpetual memorial of thy Passion; grant us, we beseech thee, so to reverence the sacred mysteries of thy body and blood, that in our souls we may always be sensible of the fruit of the redemption thou hast purchased for us. Who livest.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+O God, who in this wonderful sacrament, has left us a perpetual memorial of thy Passion; grant us, we beseech thee, so to reverence the sacred mysteries of thy body and blood, that in our souls we may always be sensible of the fruit of the redemption thou hast purchased for us. Who livest.
+"""
+
+[[entries]]
+mass = "corpus-christi"
+form = ""
+proper = "Secret"
+incipit = "Ecclesiae tuae, quaesumus, Domine, unitatis et pacis"
+witness = "cummiskey-1861"
+printed_page = "398"
+ia_leaf = 406
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page; the page ends the oration `in these offerings. Thro` and prints neither the apostrophe nor the full stop"
+witness_note = "The same Mass as the Collect above, running on to printed p. 398 = leaf n406, where the Secret, the Communion and the P. Comm. of Corpus Christi stand above the rule that opens the Second Sunday after Pentecost. The running head of that page already reads II. SUNDAY AFTER PENTECOST while the Corpus Christi Mass is still being printed under it, which is one more way a matcher keyed on a heading reports a false absence -- the same class of fault this file has now recorded at Maundy Thursday, Good Friday, the Easter Vigil and the Second Sunday after the Epiphany. This is the one of the three orations the book sets with no Latin cue before it: the alignment rests on its place in the Mass and on the English rendering unitatis et pacis propitius dona concede: quae sub oblatis muneribus mystice designantur word for word. Read at 200 dpi and again at 400 dpi, and the conclusion at 800 per cent, because the reading turned on whether anything followed `Thro`."
+disagreement = "the artifact ends the oration `offerings. Thro’.` and the page prints `offerings. Thro` with neither apostrophe nor full stop; the word ends well short of the right margin, so nothing was cropped, and the same page prints `Thro’.` in full at the Second Sunday after Pentecost's Collect, which makes the omission the book's and not the scan's. The apostrophe is supplied here under the normalisation `corrections` declares for the abbreviated conclusion and the stop is not, under the same block's rule that where the page prints `Thro'` and stops, so does this file; seven entries above already stand that way. The page settles it for this file. It is the same class as the eight divergences under `sibling_transcription` -- the artifact regularising a conclusion the book does not set uniformly -- found this time on a locus the artifact had never been compared against, because this file had no entry here to compare it with."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Mercifully grant thy Church, O Lord, we beseech thee, the gifts of Unity and Peace, which are mystically represented in these offerings. Thro'
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Mercifully grant thy Church, O Lord, we beseech thee, the gifts of Unity and Peace, which are mystically represented in these offerings. Thro’.
+"""
+
+[[entries]]
+mass = "corpus-christi"
+form = ""
+proper = "Postcommunion"
+incipit = "Fac nos, quaesumus, Domine, divinitatis tuae sempiterna fruitione repleri"
+witness = "cummiskey-1861"
+printed_page = "398"
+ia_leaf = 406
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "The last of the three, on the same page and leaf as the Secret above, headed P. COMM. and cued `Fac nos.` before the English; the 1962 Latin is Fac nos, quaesumus, Domine, divinitatis tuae sempiterna fruitione repleri. Read at 200 dpi and again at 400 dpi."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant us, O Lord, we beseech thee, the everlasting possession of thyself, as a pledge of which we have received thy body and blood. Who livest.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant us, O Lord, we beseech thee, the everlasting possession of thyself, as a pledge of which we have received thy body and blood. Who livest.
 """
 
 [[entries]]
