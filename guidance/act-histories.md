@@ -41,7 +41,7 @@ in the document that asked it.
 | | |
 | --- | --- |
 | source encoding | `src/sources/inventories/roman-holy-week-acts-v1.toml` |
-| generator | `tools/act-history` (`check`, `graph`, `structure`, `commonality`, `emit`) |
+| generator | `tools/act-history` (`check`, `graph`, `structure`, `plate`, `commonality`, `emit`) |
 | generated repository | `build/act-history/roman-holy-week`, untracked |
 | corpus read | seven Internet Archive OCR text layers at `~/git/lt-hist` |
 | size | 12 acts, 2 lines, 8 witnesses, 4 masses, 38 base units, 42 departures |
@@ -1037,3 +1037,119 @@ the books were cheap and the edges cost the whole of the work. Every one of the
 fifty-nine stations took a search; every one of the thirty-three edges took a
 sentence somebody had written down, and where no such sentence existed the
 station is a root.
+
+---
+
+## 17. The printed map's source, and the step this machine cannot run
+
+Built 2026-08-01, on `time-machine.md` §9. That section settled the route and
+this records only what was built to it and what it does not do.
+
+**`tools/act-history plate` writes the plate's DOT, and nothing else.**
+
+```
+tools/act-history plate --source src/sources/inventories/latin-missal-acts-v1.toml \
+    --out build/act-history/plate
+```
+
+writes `build/act-history/plate/<slice>.dot` — untracked, like the generated
+repository, because it is derived from the inventory in one pass. It runs on all
+three slices. [verified]
+
+**It is a verb and not a tool, because Rule 5 says so.** The interactive map,
+the git repository and the plate come off one generator. A second program
+reading the same inventory would be a restatement, and this repository's
+standing finding is that restatements drift.
+
+### What is in the file
+
+`octi` reads a DOT whose nodes carry `pos="x,y"` as plain Cartesian doubles, so
+an abstract graph needs no geography [sourced, §9].
+
+- **x is the date, y is the tradition lane.** Both are written into `pos`.
+- **A node is a station.** It carries `date` at the record's own precision with
+  `date_precision` beside it, `line`, `lane`, `station_kind`, `act_citation`,
+  `title`, `authority`, `instrument`, and a `role` of `root`, `through` or
+  `interchange`, plus `terminus="true"` where nothing descends from it.
+- **An edge is a descent**, written `parent -- child`, undirected. It carries
+  `line` — always the child's line — `descent`, which is the `parent_kind` an
+  edge already declares it rests on, and `fork="true"` where it crosses from one
+  line to another. Stemmatology draws descent without arrowheads for the same
+  reason this does: the direction is read off the axis.
+- **The header carries the lane register and the counts**, so the file says what
+  it is without a second document.
+
+**An edge takes the line of the station it arrives at.** That is what makes the
+Rule 2 grammar fall out rather than be drawn: a fork is the one place a line
+touches another line's station, an interchange is a station two edges of one
+line arrive at — a documented reception, and `check` refuses one that cites
+nothing — and every other crossing on the plate is two lines that meet nowhere.
+`latin-missal` has 59 stations on 17 lines, 45 edges, 15 roots, 17 termini, two
+forks, one interchange and five lines that are a single station and nothing
+more. [verified]
+
+### The one choice §9 said must be made explicitly
+
+Strict octilinearity and strictly time-proportional edge length cannot both
+hold, and no published diagram is both. **This picks monotone over
+proportional.** Between consecutive distinct dates the abscissa advances by four
+units a year, clamped to `[25, 400]`; lanes are 100 apart. So the widest gap on
+the plate is sixteen times the narrowest and not thirty-eight thousand times it,
+which is what makes §3's requirement — four centuries and four years must both
+read — a property of the file rather than a hope about the renderer. `octi` will
+move everything; what the positions usefully tell it is the order.
+
+The lane order is **derived and not the `lines` table's order**, which is an
+editorial arrangement Rule 3 will not let decide a drawing: roots enter in the
+order they enter the record, and a line born at a fork follows the line it was
+born from.
+
+### Byte-identical, and nothing here reads a clock
+
+Two runs produce identical bytes, and so do runs under a changed `TZ`, `LANG`,
+`LC_ALL` and `PYTHONHASHSEED=random`. The abscissa is integer arithmetic
+throughout for that reason. [verified, and asserted in
+`tests/tools/act-history.test`]
+
+§9 wants an edition stamp on the plate. **It must be the release's and never the
+build machine's**: a build timestamp would put a different byte in the artifact
+every run and destroy the reproducibility Rule 5 asks for.
+
+### What this machine did not do
+
+**`octi` is not installed here, and this repository neither ships nor vendors
+it.** So the SVG was not produced and no step silently pretended to. To render:
+
+```
+octi < build/act-history/plate/latin-missal.dot | transitmap > latin-missal.svg
+```
+
+LOOM, GPL-3.0, <https://github.com/ad-freiburg/loom>. That `octi` accepts the
+DOT is §9's finding [sourced]; the exact flag set of that pipeline is **not
+[verified] here**, because nothing here could run it. The same command is in
+every emitted file's header, from one string in the tool, so there is no second
+copy to drift.
+
+### What remains of the printed map
+
+1. **Labelling.** §9 found that labelling, not layout, is where automation still
+   fails, and that neither `octi` nor TikZ will do it — so it is the generator's
+   job and it is not done. The nodes carry everything a label must say; nothing
+   yet places one. This is the next unit and the largest.
+2. **The apparatus.** §9 requires a notation legend, an epistemic marker
+   defined, the provenance with its exceptions named, an edition stamp, a
+   version-pinned URL and a "To cite:" line. None of it is emitted. Priestley's
+   refusal of per-item citation is the thing to avoid, and Rule 1 already gives
+   every station an instrument to cite.
+3. **The monochrome grammar.** §9 measured TfL's black-and-white plate:
+   constant band width, differentiation by internal texture and three grey
+   values, at 2.4× the inline naming. Seventeen lines is inside that ceiling and
+   nothing in the DOT yet keys a texture to a line.
+4. **The mark for a refusal, and for a crossing that is not an interchange.**
+   §6 records that no published metro map has a grammar separating "these lines
+   meet" from "these lines merely cross", and that this project invents it. The
+   DOT distinguishes them structurally; the plate must distinguish them
+   visually, in a legend, without claiming conventionality.
+5. **Sizing.** §9's measurement puts 40 nodes on A3 and 100 on A2, so
+   `latin-missal` at 59 is an A2 sheet with the apparatus. Nothing yet emits a
+   sheet size or reserves the 15–25 per cent the key needs.

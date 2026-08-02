@@ -23,7 +23,7 @@ law="$inventories/canon-law-acts-v1.toml"
 help="$(run_tool --help)"
 # The registry's usage line has gone stale on this tool before; the verbs the
 # tool actually accepts are the ones its own help names.
-for verb in check graph structure commonality emit; do
+for verb in check graph structure plate commonality emit; do
 	case "$help" in
 	*"$verb"*) ;;
 	*) echo "--help does not name the $verb verb" >&2; exit 1 ;;
@@ -213,6 +213,163 @@ run_tool structure --source "$holy_week" --out one >/dev/null
 for stray in '"notes"' '"alias"'; do
 	if grep -q "$stray" one/structure/act-history/index.json; then
 		echo "the manifest listed $stray, which is not a slice it can serve" >&2
+		exit 1
+	fi
+done
+
+# --- plate: the printed map's source ------------------------------------------
+
+# The topology IS the content, so it is the topology that is asserted. The DOT
+# is the only artifact this repository can produce: LOOM's `octi` turns it into
+# an octilinear drawing and is not installed here, so nothing below runs it and
+# nothing below pretends to.
+for source in "$holy_week" "$missal" "$law"; do
+	run_tool plate --source "$source" --out plates >/dev/null
+done
+
+python3 - <<'PY'
+import re
+
+# A parse of the emitted DOT rather than of the tool's own JSON: the file is
+# what a reader hands to octi, so a property that held only in the report and
+# not in the file would be a property of nothing.
+NODE = re.compile(r'^  "([^"]+)" \[(.*)\];$')
+EDGE = re.compile(r'^  "([^"]+)" -- "([^"]+)" \[(.*)\];$')
+
+
+def read(name):
+    nodes, edges = {}, []
+    for line in open(f"plates/{name}.dot", encoding="utf-8").read().splitlines():
+        found = EDGE.match(line)
+        if found:
+            edges.append((found.group(1), found.group(2), dict(re.findall(r'(\w+)="([^"]*)"', found.group(3)))))
+            continue
+        found = NODE.match(line)
+        if found:
+            nodes[found.group(1)] = dict(re.findall(r'(\w+)="([^"]*)"', found.group(2)))
+    return nodes, edges
+
+
+nodes, edges = read("latin-missal")
+
+# The slice that exercises the whole grammar, and the counts guidance/act-
+# histories.md states for it.
+assert len(nodes) == 59, len(nodes)
+assert len({node["line"] for node in nodes.values()}) == 17
+
+# A lane is a tradition, and one tradition is one lane. A line drawn on two
+# lanes would be two traditions on the plate whatever the data says.
+lanes = {}
+for node in nodes.values():
+    lanes.setdefault(node["line"], set()).add(node["lane"])
+for line, held in lanes.items():
+    assert len(held) == 1, (line, held)
+assert len({next(iter(held)) for held in lanes.values()}) == 17, "two lines share a lane"
+
+# Every node stands where its `pos` says, and the x of that position is monotone
+# in the date: descent is read off the axis, which is why the edges carry no
+# arrowheads, so a station standing left of an act it descends from would be a
+# lie the drawing tells with no caption to correct it.
+placed = {}
+for name, node in nodes.items():
+    x, y = node["pos"].split(",")
+    assert y == str(int(node["lane"]) * 100), node
+    placed[name] = int(x)
+by_date = sorted(nodes, key=lambda name: (nodes[name]["date"], name))
+for earlier, later in zip(by_date, by_date[1:]):
+    if nodes[earlier]["date"] == nodes[later]["date"]:
+        assert placed[earlier] == placed[later], (earlier, later)
+    else:
+        assert placed[earlier] < placed[later], (earlier, later)
+
+# Fifteen roots: where a line's other side has no witness here, the branch is a
+# root and its emptiness is the record.
+assert sum(node["role"] == "root" for node in nodes.values()) == 15
+
+# Five lines are ONE station and nothing more -- a use that ended, standing as a
+# terminus. It is the thing the map exists to make visible and the thing a
+# timeline cannot show.
+stations = {}
+for node in nodes.values():
+    stations[node["line"]] = stations.get(node["line"], 0) + 1
+alone = sorted(line for line, count in stations.items() if count == 1)
+assert len(alone) == 5, alone
+for line in alone:
+    only = next(name for name, node in nodes.items() if node["line"] == line)
+    assert nodes[only].get("terminus") == "true", only
+
+# RULE 2, which is the part of this design with no prior art. Lines never
+# rejoin, so no edge may join two stations already standing on different lines
+# EXCEPT where a line is born -- and a birth is the child's first station, never
+# a rejoining. Everything else that crosses on the plate crosses without an
+# interchange, and that is what says coexistence without reception.
+opening = {}
+for name, node in nodes.items():
+    line = node["line"]
+    if line not in opening or (nodes[name]["date"], name) < (nodes[opening[line]]["date"], opening[line]):
+        opening[line] = name
+forks = 0
+for parent, child, attributes in edges:
+    assert attributes["line"] == nodes[child]["line"], (parent, child)
+    if nodes[parent]["line"] != nodes[child]["line"]:
+        assert attributes.get("fork") == "true", (parent, child)
+        assert opening[nodes[child]["line"]] == child, (parent, child)
+        forks += 1
+assert forks == 2, forks
+
+# An interchange is a documented reception and the only place a reader may
+# change trains. There is exactly one in this slice, and both its edges run on
+# its own line, because `check` refuses a merge across lines.
+interchanges = [name for name, node in nodes.items() if node["role"] == "interchange"]
+assert len(interchanges) == 1, interchanges
+arriving = [edge for edge in edges if edge[1] == interchanges[0]]
+assert len(arriving) == 2, arriving
+assert all(nodes[parent]["line"] == nodes[interchanges[0]]["line"] for parent, _, _ in arriving)
+
+# Both station kinds are on the drawing at once, so the weaker claim is read
+# beside the stronger rather than wearing its clothes.
+kinds = {}
+for node in nodes.values():
+    kinds[node["station_kind"]] = kinds.get(node["station_kind"], 0) + 1
+assert kinds == {"printed": 26, "promulgated": 33}, kinds
+
+# The same shape reads a code, with no lane sharing and no cross-line edge that
+# is not a birth.
+for name, expected in (("code-of-canon-law", 47), ("roman-holy-week", 12)):
+    other_nodes, other_edges = read(name)
+    assert len(other_nodes) == expected, (name, len(other_nodes))
+    for parent, child, attributes in other_edges:
+        assert attributes["line"] == other_nodes[child]["line"], (name, parent, child)
+PY
+
+# Byte-identical for unchanged input. The plate is a build artifact and Rule 5
+# asks it to be reproducible, so a rerun that moved a station would mean the
+# drawing carried a fact the source does not.
+cp plates/latin-missal.dot first-plate.dot
+run_tool plate --source "$missal" --out plates >/dev/null
+if ! cmp -s first-plate.dot plates/latin-missal.dot; then
+	echo "the plate is not byte-stable across runs" >&2
+	exit 1
+fi
+# And under an environment that would expose a clock, a locale collation or a
+# hash-ordered dict, which is where a generator usually stops being reproducible.
+# In a subshell: assignments before a shell FUNCTION persist in POSIX sh, and a
+# locale leaking into the rest of this file would be a test that passes here for
+# a reason nobody wrote down.
+(
+	export TZ=Pacific/Kiritimati LANG=tr_TR.UTF-8 LC_ALL=C PYTHONHASHSEED=random
+	run_tool plate --source "$missal" --out elsewhere >/dev/null
+)
+if ! cmp -s first-plate.dot elsewhere/latin-missal.dot; then
+	echo "the plate depends on the environment it was built in" >&2
+	exit 1
+fi
+
+# It says how it is rendered and does not pretend to have rendered it. octi is
+# not installed here, and a silently skipped step is worse than a named one.
+for wanted in 'octi' 'transitmap' 'NOT run'; do
+	if ! grep -q "$wanted" plates/latin-missal.dot; then
+		echo "the plate does not say how a reader gets the SVG: missing $wanted" >&2
 		exit 1
 	fi
 done

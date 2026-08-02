@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build a slice's act-keyed history as a Git repository.
 
-Usage: act-history {check,graph,structure,commonality,emit} [--source PATH]
+Usage: act-history {check,graph,structure,plate,commonality,emit} [--source PATH]
 
 Two kinds of slice, one shape. A missal's units are prayers standing in a Mass;
 a code's units are canons standing in a division of the code. Everything else --
@@ -78,6 +78,10 @@ from _tooling import (
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = ROOT / "src/sources/inventories/roman-holy-week-acts-v1.toml"
 DEFAULT_OUT = ROOT / "build/act-history/roman-holy-week"
+# The plate's DOT is a build artifact like the repository and the PDFs, and
+# build/ is gitignored. Nothing is tracked: it is derived from the inventory in
+# one pass and regenerating it is cheaper than reviewing a diff of it.
+DEFAULT_PLATE = ROOT / "build/act-history/plate"
 DEFAULT_DATA = ROOT / "src" / "web" / "data"
 SCHEMA_KEY = "acts_schema"
 SCHEMA_VERSION = 1
@@ -285,6 +289,34 @@ YEAR_SHIFT = 10000
 EXAMPLES = {
     "structure": (),
     "commonality": (),
+    "plate": (
+        Example(
+            "tools/act-history plate --source src/sources/inventories/latin-missal-acts-v1.toml"
+            " --out build/act-history/plate",
+            (
+                "59 stations on 17 lines, 45 edges",
+                "  roots 15, termini 17, interchanges 1, single-station lines 5",
+                "  -> build/act-history/plate/latin-missal.dot",
+                "  octilinearise: octi < build/act-history/plate/latin-missal.dot | transitmap"
+                " > latin-missal.svg",
+            ),
+            note=(
+                "writes an untracked DOT under build/; the SVG step needs LOOM's `octi`,"
+                " which this repository does not ship and did not run"
+            ),
+        ),
+        Example(
+            "tools/act-history plate --out build/act-history/plate",
+            (
+                "12 stations on 2 lines, 12 edges",
+                "  roots 1, termini 2, interchanges 1, single-station lines 1",
+                "  -> build/act-history/plate/roman-holy-week.dot",
+                "  octilinearise: octi < build/act-history/plate/roman-holy-week.dot | transitmap"
+                " > roman-holy-week.svg",
+            ),
+            note="the default source is the Holy Week tracer: one fork, one reception, one terminus",
+        ),
+    ),
     "check": (
         Example(
             "tools/act-history check",
@@ -2463,6 +2495,344 @@ def structure(data: dict, out: Path) -> dict:
     }
 
 
+# --- The printed map's source ------------------------------------------------
+#
+# guidance/time-machine.md section 9 settled the route and this verb only walks
+# it. Octilinear layout is NP-complete (Nollenburg 2005, from Planar 3-SAT) and
+# the 2011 exact formulation takes ten hours on London, so nothing here writes a
+# layout algorithm. LOOM's `octi` implements the 2020 grid-routing
+# approximation -- London in 2.7 seconds, within 7.3 per cent of optimal -- and
+# it reads a DOT file whose nodes carry `pos="x,y"` as plain Cartesian doubles.
+# So an abstract graph needs no geography at all: emit x = date and y =
+# tradition lane, and let `octi` octilinearise it.
+#
+# What this verb emits is therefore the SOURCE of the printed map and not the
+# map. `octi` is not installed on this machine and is neither installed nor
+# vendored by this repository, so the SVG step is not run here; the command a
+# reader runs is in the file's own header and in guidance/act-histories.md. A
+# DOT a reader can render is a deliverable. A step that silently did nothing
+# would not be.
+#
+# Rule 5 is why this is a verb here rather than a second tool: the interactive
+# map, the git repository and the plate come off one generator, because a second
+# generator is a restatement and restatements drift.
+#
+# THE ONE CHOICE section 9 SAYS MUST BE MADE EXPLICITLY. Strict octilinearity
+# and strictly time-proportional edge length cannot both hold -- a 45-degree
+# edge's x-extent is length over root two -- and no published diagram is both.
+# This picks: the x axis is monotone in date and NOT proportional to it. Between
+# consecutive distinct dates the abscissa advances by the elapsed time, clamped
+# to a floor and a ceiling. That is Beck's own distortion, stated rather than
+# stumbled into, and it is what makes section 3's requirement readable: four
+# centuries and four years must both read, so the widest gap on the plate is
+# sixteen times the narrowest and not thirty-eight thousand times it.
+#
+# NOTHING HERE READS A CLOCK. Section 9 wants an edition stamp on the plate, and
+# an edition stamp is the release's, never the build machine's: a `Date.now()`
+# in this file would put a different byte in the artifact every run and destroy
+# the reproducibility Rule 5 asks for.
+
+# Units of the abscissa per elapsed year, and the floor and ceiling it is
+# clamped between. The floor keeps two acts a day apart -- 1960-07-25 and
+# 1960-07-26 are both here -- from landing on one point; the ceiling keeps the
+# 268 years between 1634 and 1902 from pushing everything else off the sheet.
+YEAR_UNIT = 4
+MIN_STEP = 25
+MAX_STEP = 400
+
+# Between one tradition's lane and the next. Four times the floor, so a station
+# is nearer the one before it on its own line than the line beside it.
+LANE_SEPARATION = 100
+
+# Days in the mean Gregorian year, as an exact ratio. The abscissa is computed
+# in integers throughout so that the same input gives the same bytes on any
+# machine, rather than the same bytes on this one.
+GREGORIAN_YEAR_DAYS = 3652425
+GREGORIAN_YEAR_SCALE = 10000
+
+PLATE_SCHEMA = "triptych-act-plate/v1"
+
+# What a reader runs on the emitted file. Recorded as ONE string read into the
+# header, the transcript and the guidance, because three copies of a command
+# line is three chances to document a pipeline nobody can run.
+OCTILINEARISE = "octi < {path} | transitmap > {stem}.svg"
+
+
+def day_number(date: str) -> int:
+    """The date as a day count, at the precision the record actually has.
+
+    A year-only date is its first day. That is a reading of an imprecise date
+    and not an invented one: it fixes where the station sits on the axis, and
+    the true string rides on the node as `date` with its `date_precision` so
+    the labeller prints `1497` and never `1497-01-01`.
+    """
+    year, month, day = date_parts(date)
+    return days_from_civil(year, month, day)
+
+
+def abscissa(dates: list[str]) -> dict[str, int]:
+    """Distinct dates to x, monotone in time and clamped at both ends.
+
+    Every distinct date gets a distinct x, so two acts of one week are two
+    stations rather than one blot; and the clamp is the explicit answer to
+    section 9's "strict octilinearity and strict proportionality cannot both
+    hold". Driven only by the sorted set of dates, so it is the same map of
+    dates to positions whatever order the acts arrive in.
+    """
+    positions: dict[str, int] = {}
+    x = 0
+    previous: str | None = None
+    for date in sorted(set(dates), key=lambda value: (day_number(value), value)):
+        if previous is not None:
+            elapsed = day_number(date) - day_number(previous)
+            step = elapsed * YEAR_UNIT * GREGORIAN_YEAR_SCALE // GREGORIAN_YEAR_DAYS
+            x += min(MAX_STEP, max(MIN_STEP, step))
+        positions[date] = x
+        previous = date
+    return positions
+
+
+def line_openings(acts: dict[str, dict]) -> dict[str, str]:
+    """Each line's earliest station, by date and then by id.
+
+    The line's opening, never a declared first act: a line whose own descent is
+    broken has several heads and no single beginning, which is the honest
+    pre-Tridentine shape, and picking the earliest station states only when the
+    tradition enters this record.
+    """
+    openings: dict[str, str] = {}
+    for act_id in sorted(acts):
+        line = acts[act_id]["line"]
+        standing = openings.get(line)
+        if standing is None or (str(acts[act_id]["date"]), act_id) < (
+            str(acts[standing]["date"]),
+            standing,
+        ):
+            openings[line] = act_id
+    return openings
+
+
+def tradition_lanes(acts: dict[str, dict]) -> dict[str, int]:
+    """Each line to its lane on the y axis, DERIVED and never curated.
+
+    The declared order of the `lines` table is an editorial arrangement and
+    Rule 3 will not have one deciding a drawing. So the order is walked out of
+    the graph: a line's lane follows the line it was born from, because the
+    fork edge is the one edge that leaves a lane and a long one would read as
+    a relation rather than as an accident of ordering. Roots come in the order
+    they enter the record, and so do a line's children.
+
+    Only an ordering. `octi` moves everything; what this fixes is which
+    traditions start adjacent, which is what it can usefully be told.
+    """
+    openings = line_openings(acts)
+    born_from: dict[str, str | None] = {}
+    for line, opening in openings.items():
+        elsewhere = sorted(
+            (parent for parent in acts[opening].get("parents", []) if acts[parent]["line"] != line),
+            key=lambda parent: (str(acts[parent]["date"]), parent),
+        )
+        born_from[line] = acts[elsewhere[0]]["line"] if elsewhere else None
+    children: dict[str, list[str]] = {}
+    for line, parent_line in born_from.items():
+        if parent_line is not None and parent_line != line:
+            children.setdefault(parent_line, []).append(line)
+
+    def entered(line: str) -> tuple[str, str]:
+        return (str(acts[openings[line]]["date"]), line)
+
+    walked: list[str] = []
+    seen: set[str] = set()
+
+    def walk(line: str) -> None:
+        if line in seen:
+            return
+        seen.add(line)
+        walked.append(line)
+        for child in sorted(children.get(line, []), key=entered):
+            walk(child)
+
+    for line in sorted((name for name, parent in born_from.items() if parent is None), key=entered):
+        walk(line)
+    # Anything a cycle in the birth relation left unwalked. It cannot arise from
+    # a valid slice, since a line is born at an earlier act, but a lane map that
+    # silently dropped a tradition would drop it from the plate.
+    for line in sorted(born_from, key=entered):
+        walk(line)
+    return {line: index for index, line in enumerate(walked)}
+
+
+def dot_string(value: object) -> str:
+    """A DOT quoted string. Whitespace is collapsed: TOML prose arrives wrapped."""
+    text = " ".join(str(value).split())
+    return '"' + text.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+
+def attributes(pairs: list[tuple[str, object]]) -> str:
+    """A DOT attribute list. An empty value writes no attribute at all.
+
+    So `terminus` stands on the stations that are one and is absent from the
+    rest, rather than every node carrying a `terminus="false"` a reader has to
+    filter. Absence is the negative here, and it is the same convention the
+    fragments use.
+    """
+    return "[" + ", ".join(f"{name}={dot_string(value)}" for name, value in pairs if value != "") + "]"
+
+
+def plate(data: dict, out: Path) -> dict:
+    """Write the printed map's DOT: stations at (date, lane), edges by line.
+
+    The topology IS the content, so it is carried and not summarised. Parallel
+    traditions are parallel lanes. An edge takes the line of the station it
+    arrives at, which makes a fork the one place a line touches another's
+    station -- the interchange of Rule 2 -- and leaves every other crossing
+    exactly what section 6 says no published metro map has a grammar for: two
+    lines that meet nowhere. There is no merge edge across lines to draw,
+    because `check` refuses one.
+
+    Undirected, with the parent always written on the left. Descent is read off
+    the axis, since x is monotone in date, and stemmatology draws descent
+    without arrowheads for the same reason. It also keeps the file the shape a
+    transit layouter expects.
+
+    Labelling is not done here and cannot be: section 9 found that labelling,
+    not layout, is where automation still fails, and neither `octi` nor TikZ
+    will do it. Every node therefore carries what a label must say -- the title,
+    the authority, the instrument, the date at its true precision -- so the
+    labelling pass reads the graph it is labelling rather than a second copy of
+    the slice.
+    """
+    rows = graph(data)["rows"]
+    acts = indexed(data.get("acts", []), "id", "acts")
+    slice_id = str(data.get("slice"))
+    lanes = tradition_lanes(acts)
+    positions = abscissa([str(row["date"]) for row in rows])
+    descended_from: dict[str, int] = {}
+    for row in rows:
+        for parent in row["parents"]:
+            descended_from[parent] = descended_from.get(parent, 0) + 1
+    on_line: dict[str, int] = {}
+    for row in rows:
+        on_line[row["line"]] = on_line.get(row["line"], 0) + 1
+
+    nodes: list[str] = []
+    edges: list[str] = []
+    roots = 0
+    interchanges = 0
+    termini = 0
+    for row in rows:
+        act = acts[row["act"]]
+        date = str(row["date"])
+        parents = list(row["parents"])
+        # A station with two parents is a documented reception, which is the one
+        # thing Rule 2 lets a line join at, and `check` refuses one that cites
+        # nothing. A station nothing descends from is a terminus: a use that
+        # ended, and on five lines here a use that is a terminus and a root at
+        # once, which is the emptiness the record is making visible.
+        terminus = row["act"] not in descended_from
+        role = "interchange" if len(parents) > 1 else "root" if not parents else "through"
+        if not parents:
+            roots += 1
+        if len(parents) > 1:
+            interchanges += 1
+        if terminus:
+            termini += 1
+        nodes.append(
+            "  "
+            + dot_string(row["act"])
+            + " "
+            + attributes(
+                [
+                    ("pos", f"{positions[date]},{lanes[row['line']] * LANE_SEPARATION}"),
+                    # The act's id, written out rather than left to DOT's
+                    # default, because a layouter that carries the label
+                    # through must find one to carry. What a reader is shown
+                    # is composed by the labelling pass from the fields below.
+                    ("label", row["act"]),
+                    ("line", row["line"]),
+                    ("lane", lanes[row["line"]]),
+                    ("date", date),
+                    ("date_precision", precision_of(date)),
+                    ("station_kind", act.get("station_kind") or "promulgated"),
+                    ("role", role),
+                    ("terminus", "true" if terminus else ""),
+                    ("act_citation", act.get("act_citation") or ""),
+                    ("title", act.get("title") or ""),
+                    ("authority", act.get("authority") or ""),
+                    ("instrument", act.get("instrument") or ""),
+                ]
+            )
+            + ";"
+        )
+        for parent in parents:
+            edges.append(
+                "  "
+                + dot_string(parent)
+                + " -- "
+                + dot_string(row["act"])
+                + " "
+                + attributes(
+                    [
+                        ("line", row["line"]),
+                        # What the edge rests on, carried so the plate can draw
+                        # a weak descent as a weak one. Section 9's uncertainty
+                        # grammar is the dash channel and this is what keys it.
+                        ("descent", act.get("parent_kind") or ""),
+                        ("fork", "true" if acts[parent]["line"] != row["line"] else ""),
+                        (
+                            "via_unrepresented",
+                            ",".join(row.get("via_unrepresented") or []),
+                        ),
+                    ]
+                )
+                + ";"
+            )
+
+    single = sorted(line for line, count in on_line.items() if count == 1)
+    target = out / f"{slice_id}.dot"
+    labels = {str(line.get("id")): str(line.get("label") or "") for line in (data.get("lines") or [])}
+    header = [
+        f"// {PLATE_SCHEMA}",
+        f"// Written by tools/act-history plate from {slice_id}. Do not edit: Rule 5 of",
+        "// guidance/time-machine.md forbids a hand-tweak, because a tweak is a",
+        "// restatement and restatements drift.",
+        "//",
+        f"// stations {len(rows)}, lines {len(lanes)}, roots {roots}, termini {termini},",
+        f"// interchanges {interchanges}, single-station lines {len(single)}.",
+        "//",
+        "// x is monotone in date and NOT proportional to it: the step between",
+        f"// consecutive dates is {YEAR_UNIT} units a year clamped to [{MIN_STEP}, {MAX_STEP}].",
+        f"// y is the tradition lane, {LANE_SEPARATION} apart, ordered by descent from the",
+        "// line each was born from.",
+        "//",
+        "// To octilinearise, with LOOM (https://github.com/ad-freiburg/loom), GPL-3.0:",
+        f"//   {OCTILINEARISE.format(path=target.name, stem=slice_id)}",
+        "// It was NOT run to produce this file: octi is not installed here and this",
+        "// repository neither ships nor vendors it.",
+        "//",
+        "// lane  stations  line              carries",
+    ]
+    for line, lane in sorted(lanes.items(), key=lambda pair: pair[1]):
+        header.append(
+            f"// {lane:>4}  {on_line.get(line, 0):>8}  {line:<16}  {labels.get(line, '')}".rstrip()
+        )
+    body = [f"graph {dot_string(slice_id)} {{", *nodes, "", *edges, "}"]
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text("\n".join([*header, "", *body]) + "\n", encoding="utf-8")
+    return {
+        "slice": slice_id,
+        "stations": len(rows),
+        "lines": len(lanes),
+        "edges": len(edges),
+        "roots": roots,
+        "termini": termini,
+        "interchanges": interchanges,
+        "single_station_lines": single,
+        "written": str(target),
+        "octilinearise": OCTILINEARISE.format(path=str(target), stem=slice_id),
+    }
+
+
 # --- CLI ---------------------------------------------------------------------
 
 
@@ -2501,6 +2871,15 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         print(f"  -> {payload['written']}")
         print(f"  -> {payload['manifest']}")
         print(f"  slices there: {', '.join(payload['slices'])}; opens on {payload['default']}")
+    elif verb == "plate":
+        print(f"{payload['stations']} stations on {payload['lines']} lines, {payload['edges']} edges")
+        print(
+            f"  roots {payload['roots']}, termini {payload['termini']}, "
+            f"interchanges {payload['interchanges']}, "
+            f"single-station lines {len(payload['single_station_lines'])}"
+        )
+        print(f"  -> {payload['written']}")
+        print(f"  octilinearise: {payload['octilinearise']}")
     elif verb == "commonality":
         for row in payload["pairs"]:
             base = ", ".join(row["shared_base"]) if row["shared_base"] else "NONE: no act stands behind both"
@@ -2531,6 +2910,7 @@ def main(argv: list[str] | None = None) -> int:
         ("check", "validate the act history and its departures"),
         ("graph", "print the act graph in topological order"),
         ("structure", "write the browser's map file and the manifest naming the slices"),
+        ("plate", "write the printed map's DOT, for octi to octilinearise"),
         ("commonality", "report what two lines share, by git merge-base"),
         ("emit", "write the Git repository"),
     ):
@@ -2539,6 +2919,8 @@ def main(argv: list[str] | None = None) -> int:
             sub.add_argument("--out", type=Path, default=DEFAULT_OUT)
         if verb == "structure":
             sub.add_argument("--out", type=Path, default=DEFAULT_DATA)
+        if verb == "plate":
+            sub.add_argument("--out", type=Path, default=DEFAULT_PLATE)
         if verb == "commonality":
             sub.add_argument("lines", nargs="*", metavar="LINE",
                              help="two line ids; omit for every pair")
@@ -2555,6 +2937,8 @@ def main(argv: list[str] | None = None) -> int:
         check(data)
         if arguments.command == "structure":
             return structure(data, arguments.out)
+        if arguments.command == "plate":
+            return plate(data, arguments.out)
         if arguments.command == "commonality":
             wanted = getattr(arguments, "lines", []) or []
             if len(wanted) not in (0, 2):
@@ -2564,7 +2948,7 @@ def main(argv: list[str] | None = None) -> int:
 
     return run_verb_cli(
         parser=parser,
-        handlers={verb: run for verb in ("check", "graph", "structure", "commonality", "emit")},
+        handlers={verb: run for verb in ("check", "graph", "structure", "plate", "commonality", "emit")},
         renderer=render,
         prefix="act-history",
         argv=argv,
