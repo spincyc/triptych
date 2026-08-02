@@ -881,13 +881,44 @@ attests_act = "editio-typica-1920"
 attests_kind = "conformity-declaration"
 aliases_tried = ["Missale Romanum 1947", "Missale Romanum Benziger", "missale romanum iuxta typicam"]
 aliases_that_hit = ["Missale Romanum 1947"]
-rights = "unresolved"
-rights_basis = "Its own copyright line reads 1942 and 1944 [recorded]. A 1942 US copyright is not cleared by the pre-1931 rule, and no renewal search is recorded. Already registered in this repository with the printing year of the scanned copy unestablished."
-may_publish_text = "unresolved"
+rights = "public-domain-us-not-renewed"
+rights_basis = """
+MOVED FROM `unresolved` ON 2026-08-01, SUBJECT TO CONFIRMATION FROM THE
+ARTIFACT'S OWN TITLE PAGE, and those words are the disposition rather than a
+hedge around it.
+
+The renewal search this row said was missing has been run. Benziger's Missale
+Romanum registrations of the period are all unrenewed, and none is cited by any
+renewal in either of the two renewal corpora searched [recorded,
+src/sources/inventories/lasance-new-roman-missal-rights-v1.toml
+`[the_1942_benziger]`, which carries the CCE citations and the collisions]:
+
+  A 165097   29 May 1942   CCE NS 39 (1942) p. 179
+  A 169238   13 Oct 1942   CCE NS 39 (1942) p. 301, "[Small quarto [ed. no. 4]"
+  A 174919   1943
+  A 180761   1944
+  A 186310   22 Aug 1944   CCE NS 42 (1945) p. 45, "Editio III"
+  A 5373     20 Oct 1945   CCE NS 43 (1946) p. 109, "Editio IV ... amplificata II"
+
+This row's own copyright line of "1942 and 1944" corresponds to A 169238 and
+A 186310.
+
+TWO CAVEATS, BOTH RECORDED RATHER THAN OMITTED. First, the apparent renewal hit
+on A 169238 is a class-AA collision -- Rossini, Canticum novum, renewed R298828
+-- and not this work; A 5373 has a class-A collision of its own with a 1929
+Harper registration renewed as R172595, so the spreadsheet leaves it "possibly
+renewed" and it is disambiguated by hand rather than by lookup. Second, NOBODY
+HAS OPENED THIS ARTIFACT'S TITLE PAGE to confirm which registration it
+corresponds to, and the label "editio IV" and the copyright line "1942 and 1944"
+point at different ones. Since all six registrations are unrenewed the verdict
+is the same on every branch, which is why the basis may move now; the
+identification is unsettled and is recorded as unsettled.
+"""
+may_publish_text = "yes, subject to the title-page confirmation named in rights_basis"
 digitisation = "Internet Archive item missale-romanum-1947; registered at edition.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947 [recorded]"
 retrievable = "whole"
 priority = 4
-priority_basis = "Already registered. Its value is as a pre-1955 rubrics witness, which the existing record documents; its rights are unresolved and it should not be published from."
+priority_basis = "Already registered. Its value is as a pre-1955 rubrics witness, which the existing record documents. Its rights are now settled on a renewal basis; confirming which registration the scanned copy corresponds to, from its own title page, is the remaining work and is cheap."
 evidence = "recorded"
 
 [[books]]

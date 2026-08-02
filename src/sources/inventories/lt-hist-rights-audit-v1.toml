@@ -1,0 +1,1412 @@
+# Whether the lt-hist corpus may be folded in, decided version by version.
+#
+# A RIGHTS AUDIT, not an acquisition and not a migration. Nothing from
+# `~/git/lt-hist` was copied into this repository to write this file, and
+# nothing below authorizes copying anything. Every row is an identification, a
+# rights position and a verdict, so that a later lane can move six texts
+# deliberately instead of moving twenty-five by default.
+#
+# It exists because the audit itself is the deliverable. The question "may
+# lt-hist be folded in?" had an answer that lived only in a conversation, and an
+# answer with no record is an answer that gets re-derived -- which is precisely
+# the failure the corpus being audited exhibits. See `[[structural_conditions]]`
+# `settle-the-holy-see-question-once`.
+#
+# It sits in inventories/ for the reason its siblings
+# `missal-acquisition-audit-v1.toml` and `pre-1955-rubrics-sources-v1.toml`
+# give: `source-library validate` rejects any file under src/sources outside its
+# own schema except .md and .toml under inventories/, and none of this is ready
+# to be a work in the library. Nothing here is a source manifest, an evidence
+# state, or a binding target.
+#
+# It is not legal advice and it binds nobody outside this repository. Where it
+# states a proposition of law it states the jurisdiction, and the jurisdiction
+# throughout is the United States.
+
+audit_schema = 1
+record_type = "external-corpus-rights-audit"
+slice = "lt-hist"
+corpus_path = "/home/ksh/git/lt-hist"
+recorded_on = "2026-08-01"
+jurisdiction = "United States"
+
+holding = """
+Seven of the twenty-five versions in lt-hist may be folded in. Fourteen may not,
+and their bytes must not enter Git under any disposition. Four need the
+maintainer and are recorded as open questions rather than resolved by default.
+
+AS FIRST WRITTEN THIS SAID SIX AND FIVE. The seventh is the 1937 Lasance, whose
+open question `lasance-renewal` was closed on 2026-08-01 by
+`src/sources/inventories/lasance-new-roman-missal-rights-v1.toml`: neither
+registered edition was renewed, so the text is public domain in the United
+States by failure to renew. It is admissible on THAT ground, not on age and not
+on lt-hist's. One exclusion travels with it -- the appendix at pages 1298a-1298n
+-- and the artifact is a printing of about 1955-56, not of 1937. See its row.
+
+The six that may come on age are admissible because they were published before
+1931, and on that ground alone. They are NOT admissible on the ground lt-hist gives
+for them, which is that the Internet Archive marks the scan public domain. That
+ground is insufficient here by rule -- guidance/sources.md is explicit that
+online availability and successful download are not a distribution basis -- and
+it is the same ground lt-hist used to import the 2011 Roman Missal.
+
+The fourteen that may not come have a named claimant, no permission, and no
+expiry. Ten of them are sitting in lt-hist as downloaded OCR right now, and four
+of those ten carry the claimant's own copyright notice inside the very bytes
+lt-hist downloaded. See `[[notices]]`.
+"""
+
+# --- What lt-hist actually is, measured rather than described ----------------
+
+[corpus]
+versions = 25
+total_bytes = 99733911
+total_size = "99.7 MB (95.1 MiB)"
+is_a_git_repository = false
+is_a_git_repository_basis = """
+No `.git` directory exists at `/home/ksh/git/lt-hist` [verified]. There is no
+history to merge for the corpus itself, no commit to cite, and no way to record
+that a byte moved except by writing it down. That is a reason this file exists
+and not an incidental detail: a corpus without history cannot be blamed later
+for what it contributed.
+"""
+but_the_generated_output_is_a_git_repository = """
+QUALIFYING THE LINE ABOVE, AND THIS IS THE MOST DANGEROUS FACT IN THE FILE.
+`build/roman-liturgy-history/` IS a git repository: 25 commits, 78 tracked
+files, a 16,505,844-byte `.git`, no remote configured [verified]. Its commits
+narrate the corpus version by version -- the tip is "The Roman Missal English
+translation implemented", and its parents are "Missale Romanum emended reprint
+recorded" and "Missale Romanum editio typica tertia source located" [verified].
+
+So a fold-in has a route nobody would have to choose deliberately: fetch or merge
+that history. It would bring in every excluded byte -- the 2011 Roman Missal, the
+1998 ICEL Sacramentary, the 2002 typical edition -- together with commit messages
+asserting they were "implemented", and it would do so IRREVERSIBLY, because
+deleting a file in a later commit does not remove it from history. Every section
+file in those commits carries the `text_status: public-domain-*` front matter
+that `[[structural_conditions]]` `text-status-may-not-travel` forbids.
+
+The generated repository must not be fetched, merged, cherry-picked, submoduled,
+or subtree-merged. Any fold-in extracts named files from the working tree.
+"""
+payload_kind = "OCR plain text, plus one source PDF"
+payload_kind_basis = """
+Outside `build/`, the file census is 175 .md, 29 .txt, 26 .json, 11 .woff2,
+10 .py, 8 .js, 8 .css, 7 .html, 1 .toml, 1 .svg, 1 .png, 1 .pdf [verified].
+
+CORRECTING "OCR PLAIN TEXT ONLY, NO IMAGES". The .svg and .png are the mdBook
+theme's favicons under `book/` and carry no liturgical content [verified]. But
+`sources/downloads/latin_missal2002.pdf` is a real 3,333,382-byte source PDF of
+the 2002 editio typica tertia, and that book is on the EXCLUDED list. A mover
+told "text only" would not go looking for a binary. It is named here so that it
+cannot be missed.
+"""
+structured_liturgical_objects = false
+structured_liturgical_objects_basis = """
+There are none, and this bears on how little is actually being offered. The 140
+section files under `versions/*/sections/` are markdown with five front-matter
+keys -- `section`, `source`, `text_status`, `language`, `source_lines` -- over a
+slice of raw OCR. `source_lines: 20001-30324` on the 1570 Proprium de Tempore is
+a LINE RANGE OF THE DOWNLOADED TEXT FILE, not a structural boundary read from
+the book [verified]. No propers, no formularies, no calendar, no rubrics, no
+identified orations. What is on offer is bytes with an offset, which is worth
+having for the six admissible witnesses and worth nothing that would justify
+taking a rights risk for the other nineteen.
+"""
+section_files = 140
+downloads = 29
+downloads_without_a_version = """
+`sources/downloads/` holds 29 files and `versions/` holds 25 directories;
+`sources/manifest.json` lists 31 sources. The framing "25 versions" is therefore
+not a complete account of what is on disk, and two of the extras matter:
+
+  MissaleRomanum1894_djvu.txt, 2,441,281 bytes -- a Pustet 1894 printing,
+    downloaded and deliberately NOT imported ("low page confidence"; "Recorded,
+    not imported") [verified, PROVENANCE.md:12]. Pre-1931 and so admissible on
+    the same ground as the six, if anyone wanted it; it has no version row and
+    no verdict below because it is not one of the twenty-five. Named so it is
+    not mistaken for excluded material.
+  RomanMissal1970GeneralInstructionOrderMassEnglish_djvu.txt, 1,518,633 bytes --
+    misidentified; see the 1970 English row.
+
+Neither is audited below. A fold-in that walks `sources/downloads/` rather than
+the version list will meet both.
+"""
+build_directory_note = """
+`build/` holds a 26,958,306-byte generated copy of the same text. It doubles the
+corpus and doubles the exposure: the excluded OCR is present twice on disk, and
+the second copy is committed to a git history -- see
+`but_the_generated_output_is_a_git_repository`. Any future fold-in that copies
+directories rather than named files will move both copies.
+"""
+
+# --- The rule this audit is applying -----------------------------------------
+
+[the_governing_rule]
+anchor = "guidance/sources.md:395-400"
+text = """
+Record rights per artifact, not merely per abstract work. Distinguish the
+underlying public-domain text from a host's markup, annotations, typography,
+database, or newly created transcription. Record the known public-domain
+jurisdiction and basis, license, permission, legal exception, restriction, or
+unresolved status. `tracked` requires an affirmative recorded distribution
+basis; online availability and successful download are insufficient.
+"""
+why_it_decides_this = """
+The last sentence decides nineteen of the twenty-five rows on its own. lt-hist's
+rights basis for every postconciliar import is availability plus a successful
+download, restated as an assumption. That is the exact pair the rule names as
+insufficient, and it is insufficient whether or not the download succeeded,
+whether or not the Internet Archive item is open, and whether or not the text is
+an official act of the Church.
+
+The first sentence decides the shape of this file. Rights are recorded PER
+ARTIFACT, so a single verdict over "lt-hist" would be wrong in both directions:
+it would either import the 2011 Roman Missal or refuse the 1570 Missale
+Romanum. Twenty-five rows is the minimum honest granularity.
+"""
+
+[the_disposition_vocabulary]
+anchor = "guidance/sources.md:375-386"
+tracked = "the exact artifact is lawful to distribute from the repository, reasonably sized, and materially improves reproducibility or reuse"
+remote = "the exact artifact is not retained because of demonstrated size, duplication, or a stable authoritative/public delivery route, but its retrieval location, acquired hash when known, and rights status are recorded"
+restricted = "lawful project access does not include repository redistribution; tracked metadata may identify the artifact, but its bytes must not enter Git, build products, tests, fixtures, or public artifacts"
+unavailable = "the record identifies an expected or previously consulted object whose exact bytes cannot presently be obtained or authenticated"
+how_used_here = """
+`verdict = "admissible"` is a proposal that the artifact could be `tracked` once
+acquired properly through the source library, with a rights basis recorded on
+its own manifest. It is not itself that basis and it does not create one.
+
+`verdict = "excluded"` means `restricted` at best: metadata may be recorded, and
+the bytes may not enter Git, build products, tests, fixtures, or public
+artifacts. Several of these are additionally `remote` candidates -- an Internet
+Archive identifier is a stable retrieval route -- and nothing here objects to
+recording the route. The objection is to the bytes.
+
+`verdict = "undecided"` maps to nothing in the vocabulary on purpose. It is not
+`unavailable`: the bytes are obtainable and in several cases already obtained.
+It is a question addressed to the maintainer, and writing it as a disposition
+would be answering it.
+"""
+
+# --- Evidence levels ----------------------------------------------------------
+
+[evidence_levels]
+levels = """
+The classes `missal-acquisition-audit-v1.toml` fixed, used identically here.
+
+  [verified]  Read on 2026-08-01 from the bytes on this machine, at the path
+              and line given. Reproducible by anyone with both checkouts.
+  [sourced]   Read from a document cited by path or URL, not independently
+              re-derived here.
+  [recorded]  Taken from a record already in this repository, cited by path and
+              line. Not re-verified here unless the row says so.
+
+Nothing below is asserted from recall. Where the audit brief this record was
+written from stated something the bytes did not support, the row says so; see
+`[[corrections]]`.
+"""
+
+# --- lt-hist's own rights basis, counted --------------------------------------
+
+[the_assumption]
+what_it_is = """
+lt-hist has exactly one rights argument, and it is not an argument. It is a
+premise:
+
+  "Post-1962 OCR imports are included under the project assumption that the
+  underlying official liturgical texts are public domain."
+  -- /home/ksh/git/lt-hist/STATUS.md:3 [verified]
+
+The same premise, differently worded, at POST_1962_SOURCES.md:3 and in
+sources/manifest.json:2 `scope_note` [verified]. Nothing anywhere in the corpus
+supports it. No statute, no case, no treaty, no Copyright Office record, no
+policy of any conference or of the Holy See is cited for it in any of the
+fourteen files that restate it. It is asserted and then relied on.
+"""
+occurrences = 56
+files = 14
+occurrences_basis = """
+56 occurrences of the phrase `project assumption` or `project public-domain
+assumption`, case-insensitive, across 14 files [verified]: STATUS.md (11),
+POST_1962_SOURCES.md (11), PROVENANCE.md (10), sources/manifest.json (11), and
+one each in the ten `versions/*/metadata.json` files listed under
+`applied_to_exactly`.
+
+The audit brief said "12+ times across 5 files in 5 wordings". The floor holds
+and is comfortably exceeded; the true figure is more than four times larger.
+"""
+distinct_wordings = 15
+distinct_wordings_basis = """
+Fifteen distinct surface forms, extracted mechanically [verified]. Among them:
+`under the project assumption`; `under the project public-domain assumption`;
+`under project public-domain assumption`; `under project public-domain
+assumption despite ICEL copyright listing`; `under source-texts using the
+project public-domain assumption, despite the booklet copyright notice`; `under
+the project assumption that the underlying official liturgical texts are public
+domain`; `under the project assumption and not treated as the implemented 2011
+missal`.
+
+guidance/sources.md:402-413 states the rule that this violates: "A rights
+position stated only in prose, in three places, in three wordings, is three
+positions." Fifteen wordings is fifteen positions, and the corpus cannot say
+which of them it holds.
+"""
+applied_to_exactly = [
+  "1969-ordo-lectionum-missae-latin",
+  "1970-general-instruction-order-of-mass-english",
+  "1970-missale-romanum-source-located",
+  "1972-nlc-interim-roman-missal-english",
+  "1975-missale-romanum-editio-typica-altera-source-located",
+  "1981-ordo-lectionum-missae-editio-typica-altera-latin",
+  "1988-ordo-cantus-missae-editio-typica-altera-latin",
+  "1998-icel-revised-sacramentary-source-located",
+  "2002-missale-romanum-editio-typica-tertia-source-located",
+  "2011-roman-missal-third-edition-english-source-located",
+]
+applied_to_exactly_note = """
+This list is the assumption's exact reach, and it is worth reading as a list:
+these ten are precisely the ten EXCLUDED versions whose bytes are present. The
+assumption was not a general disposition of the corpus. It was invented for, and
+applied only to, the ten items that could not otherwise have been imported.
+"""
+the_two_it_knew_about = """
+Twice the corpus records that it is overriding a live copyright claim, in terms,
+in the same sentence as the import:
+
+  STATUS.md:28  1998 Revised Sacramentary -- "imported under project
+                public-domain assumption despite ICEL copyright listing"
+  STATUS.md:31  2011 Roman Missal -- "Full IA OCR scan imported under project
+                public-domain assumption despite ICEL copyright listing"
+
+Both [verified]. The word is `despite`. Whatever else is true of this corpus, it
+did not import those two in ignorance, and no fold-in of them could be.
+"""
+
+# --- The claimants' own notices, inside lt-hist's own downloaded bytes ---------
+#
+# Four of the ten excluded-with-bytes items carry a copyright notice in the OCR
+# lt-hist itself downloaded. Nobody had to leave the corpus to find these.
+
+[[notices]]
+version = "1937-lasance-new-roman-missal-english"
+path = "/home/ksh/git/lt-hist/sources/downloads/LasanceNewRomanMissal1937_djvu.txt"
+line = 70
+quoted = "Copyright, 1936, by Benriger Brothers"
+reading = """
+OCR of "Benziger Brothers". A United States copyright notice with a 1936 date,
+in a book the corpus dates 1937 and marks `text_status: public-domain-ocr-english`
+[verified]. lt-hist knows: its own `copyright_note` opens "The OCR title pages
+include a 1936 copyright notice by Benziger Brothers" [verified].
+
+SINCE ANSWERED. The notice is real and it is not the end of the question: a
+United States copyright of that period ran twenty-eight years and then had to be
+renewed. It was not. See
+`src/sources/inventories/lasance-new-roman-missal-rights-v1.toml`, which
+establishes non-renewal at registration-number level for both registered
+editions, with positive controls. A notice establishes that a term began; that
+record establishes that it ended.
+
+This is the one notice of the four that does not carry its verdict on its face,
+and it is worth saying why the other three still do. The 1972, 1998 and 2011
+notices are all post-1963, so renewal was automatic and no lapse is available to
+them. Only this one sat on the far side of a checkable fact.
+"""
+verdict_of_this_version = "admissible"
+evidence = "verified"
+
+[[notices]]
+version = "1972-nlc-interim-roman-missal-english"
+path = "/home/ksh/git/lt-hist/sources/downloads/MissalNLC1972_Book1_djvu.txt"
+line = 15
+quoted = "Copyright © 1972 All rights reserved"
+claimant_named_two_lines_above = "NATIONAL LITURGICAL COMMISSION FOR ENGLAND & WALES (lines 13-14)"
+reading = """
+A 1972 United States-form notice with an identified claimant on the immediately
+preceding lines. The audit brief rendered the symbol as "(c)"; the bytes carry
+"©" [verified]. Renewal is irrelevant -- it became automatic for works first
+published from 1964 -- so a 1972 notice runs to the end of 2067 on the ordinary
+95-year term.
+"""
+verdict_of_this_version = "excluded"
+evidence = "verified"
+
+[[notices]]
+version = "1998-icel-revised-sacramentary-source-located"
+path = "/home/ksh/git/lt-hist/sources/downloads/ICELRomanMissal1998_Volume1A_djvu.txt"
+lines = "41-52, under the heading ACKNOWLEDGMENTS at line 38"
+quoted = """
+41-43  The English translation, original texts, music, pastoral introductions,
+       introductory notes for feasts and saints, arrangement, and design of The
+       Sacramentary, Volume One -- Sundays and Feasts (c) 1997, International
+       Committee on English in the Liturgy, Inc. All rights reserved.
+46-48  The English translation of the Kyrie, Gloria in excelsis, Nicene Creed,
+       Apostles' Creed, preface dialogue, Sanctus and Benedictus, the Lord's
+       Prayer, and the Agnus Dei (c) 1988, English Language Liturgical
+       Consultation. All rights reserved.
+51-52  Music and text of response for Good Friday General Intercessions from
+       Catholic Book of Worship III (c) Concanan Inc., 1994. All rights
+       reserved.
+"""
+reading = """
+Three separate claimants, three dates. The brief gave the range as 42-52; the
+first sentence begins at 41 [verified]. The OCR reads "International Committee
+on English in the Liturgy" -- Committee, not Commission -- and "Concanan" for
+Concacan; both are scanning artefacts and neither weakens the notice.
+
+The ELLC line at 46-48 is the one grant this repository already relies on, and
+it does not help. `liturgical-english-rights-v1.toml` `[the_ellc_grant]` records
+its bound: the ecumenical common texts of the Ordinary and nothing else. It
+covers three sentences of a volume whose remainder is ICEL's [recorded].
+"""
+verdict_of_this_version = "excluded"
+evidence = "verified"
+
+[[notices]]
+version = "2011-roman-missal-third-edition-english-source-located"
+path = "/home/ksh/git/lt-hist/sources/downloads/RomanMissal2011ThirdEdition_djvu.txt"
+lines = "35, 38-39, 44-46, 49-50, 53-56"
+quoted = """
+35     Latin text (c) Libreria Editrice Vaticana, Vatican City State, 2008.
+38-39  The English translation and chants of The Roman Missal (c) 2010
+       International Commission on English in the Liturgy Corporation. All
+       rights reserved.
+44-46  ... Lectionary for Mass ... second typical edition (c) 2001, 1998, 1997,
+       1986, 1970 Confraternity of Christian Doctrine, Inc., Washington, DC.
+       Used with permission. All rights reserved. No portion of this text may be
+       reproduced by any means without permission in writing from the copyright
+       owner.
+49-50  The English translation of Psalms 23[24], 46[47], and 116[115] from The
+       Revised Grail Psalms (c) 2010 Conception Abbey/The Grail, admin. by GIA
+       Publications, Inc.
+53-56  Particular adaptations and proper texts for the Dioceses of the United
+       States of America (c) 2010 United States Conference of Catholic Bishops
+       ... No part of this work may be reproduced or transmitted in any form or
+       by any means, electronic or mechanical ... without permission in writing
+       from the copyright holders.
+"""
+reading = """
+Six claimants over one book: LEV for the Latin, ICEL for the English translation
+and chants, the CCD for the lectionary readings, Conception Abbey/The Grail for
+three psalms, the USCCB for the US adaptations, and Robert Snow for a musical
+setting at line 59 [verified].
+
+TWO CORRECTIONS TO THE BRIEF, both narrowing the claim in the project's own
+disfavour. The Latin/LEV line is at 35, not 34. And the sentence "no portion of
+this text may be reproduced by any means without permission in writing" is not a
+global reservation over the book: it is the tail of the CCD's lectionary notice
+at 44-46 and governs the readings [verified]. The USCCB's separate and equally
+explicit prohibition at 53-56 governs the US propers. The book is not less
+encumbered for the distinction -- it is encumbered by two prohibitions instead of
+one, held by different bodies -- but the record should say what the page says.
+
+Note line 35: even the LATIN of this book is claimed, by LEV, in the same
+front matter. That is the fact `liturgical-english-rights-v1.toml` `[the_latin]`
+already establishes from Liturgiam authenticam n. 111, met here as a printed
+notice in bytes lt-hist downloaded [recorded, and verified independently here].
+"""
+verdict_of_this_version = "excluded"
+evidence = "verified"
+
+# --- The twenty-five versions -------------------------------------------------
+#
+# `id` is lt-hist's own directory name so every row is checkable against the
+# corpus. `bytes` is the downloaded OCR file where one exists; a version with no
+# bytes has none in lt-hist either.
+
+[[versions]]
+id = "1570-missale-romanum-latin"
+year = 1570
+language = "Latin"
+label = "Missale Romanum of Pope Pius V"
+publisher_or_edition = "Typical edition of Pius V, per Quo primum"
+sections = 8
+bytes = 1636559
+verdict = "admissible"
+verdict_basis = "Published 1570. Public domain in the United States on age: any work first published abroad before 1931 is out of copyright there, and 1570 is not a close case."
+lt_hist_basis_rejected = "Internet Archive Public Domain Mark 1.0 [verified in metadata.json]. Insufficient under guidance/sources.md:395-400; the correct ground is the publication date and this row rests on that."
+evidence = "verified"
+
+[[versions]]
+id = "1604-missale-romanum-latin"
+year = 1604
+language = "Latin"
+label = "Missale Romanum revised under Clement VIII"
+publisher_or_edition = "Typical edition of Clement VIII"
+sections = 3
+bytes = 2025007
+verdict = "admissible"
+verdict_basis = "Published 1604, pre-1931."
+lt_hist_basis_rejected = "Internet Archive Public Domain Mark 1.0 [verified]. Not the ground relied on here."
+evidence = "verified"
+
+[[versions]]
+id = "1806-roman-missal-english"
+year = 1806
+language = "English"
+label = "The Roman Missal for the Use of the Laity"
+publisher_or_edition = "P. Keating, Brown, London -- a commercial LAY missal"
+sections = 6
+bytes = 1463916
+verdict = "admissible"
+verdict_basis = "Published 1806, pre-1931."
+lt_hist_basis_rejected = "Internet Archive public-domain licence URL [verified]. Not the ground relied on here."
+caveat = """
+NOT A WITNESS TO THE 1570 RECENSION, and this caveat must travel with the text
+wherever it goes. lt-hist says so itself: "This is an early English lay missal,
+not an official English edition of the 1570 typical Latin text" [verified].
+A lay missal is a devotional book whose English is its compiler's, arranged for
+a congregation following along; it is evidence of what an English Catholic read
+in 1806 and not evidence of what the altar book said. Binding it as a witness to
+the Tridentine text would be an accuracy error that the rights verdict does
+nothing to prevent.
+"""
+evidence = "verified"
+
+[[versions]]
+id = "1843-roman-missal-english"
+year = 1843
+language = "English"
+label = "The Roman Missal translated into English for the use of the laity"
+publisher_or_edition = "English translation with material by John England -- a LAY missal, per its own title"
+sections = 8
+bytes = 1721622
+verdict = "admissible"
+verdict_basis = "Published 1843, pre-1931."
+lt_hist_basis_rejected = "Internet Archive Public Domain Mark 1.0 [verified]. Not the ground relied on here."
+caveat = """
+The same caveat as the 1806, and here lt-hist does NOT record it: its
+`copyright_note` says only "Public Domain Mark 1.0. OCR quality is imperfect"
+[verified]. The words "for the use of the laity" are in the title, so the fact is
+on the book's face and nowhere in the corpus's metadata. Recorded here because
+the fold-in would otherwise carry a lay missal in as an official English edition
+on the strength of a metadata file that never mentions the problem.
+"""
+evidence = "verified"
+
+[[versions]]
+id = "1862-missale-romanum-latin"
+year = 1862
+language = "Latin"
+label = "Missale Romanum, Ratisbon Pustet edition"
+publisher_or_edition = "Frederick Pustet, Ratisbon -- a PRINTING of the Clement VIII/Urban VIII text with later additions, not a typical edition"
+sections = 8
+bytes = 2503914
+verdict = "admissible"
+verdict_basis = "Published 1862, pre-1931."
+lt_hist_basis_rejected = "Internet Archive Public Domain Mark 1.0 on a Google scan [verified]. Not the ground relied on here."
+caveat = """
+A commercial printing, and this repository has already been caught by exactly
+this book once: `missal-acquisition-audit-v1.toml` names "the 1862 Pustet
+printing" as one of two occasions when a generator chained books by date and
+thereby asserted that a rite descends through a publisher [recorded]. Fold it in
+as a printing with `is_typical_edition = false` or do not fold it in.
+"""
+evidence = "verified"
+
+[[versions]]
+id = "1920-missale-romanum-latin"
+year = 1920
+language = "Latin"
+label = "Missale Romanum revised under Benedict XV"
+publisher_or_edition = "Typical edition of Benedict XV"
+sections = 12
+bytes = 2918085
+verdict = "admissible"
+verdict_basis = "Published 1920, pre-1931. This is the closest of the six to the line and the only one where the line matters at all."
+lt_hist_basis_rejected = """
+"1920 publication treated as public domain in the United States. Internet
+Archive metadata does not provide a license field" [verified]. Note that this
+row's basis is bare assertion -- there is not even an IA mark behind it -- and it
+happens to be right. That is the strongest single illustration of why the
+corpus's method cannot be inherited: it produced a correct verdict here and the
+2011 Roman Missal verdict by the same means.
+"""
+caveat = """
+THE PRE-1931 LINE GOES STALE EVERY JANUARY. guidance/missals.md:257 states it in
+terms: "It also means **this file goes stale every January**" [recorded]. On
+1 January 2027 the line moves to 1932, which does not disturb this row; but no
+reader should take "pre-1931" from this file as a standing rule, and any later
+version added to this audit must re-derive the line for its own date.
+"""
+evidence = "verified"
+
+[[versions]]
+id = "1937-lasance-new-roman-missal-english"
+year = 1937
+year_is_wrong = "The directory name and lt-hist's own dating are both wrong; see `identification_corrected`. The id is kept verbatim so every row remains checkable against the corpus."
+language = "English"
+label = "The New Roman Missal (Lasance/Walsh)"
+publisher_or_edition = "Benziger Brothers -- a commercial hand missal"
+sections = 11
+bytes = 4384495
+verdict = "admissible"
+settled_by = "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml"
+verdict_basis = """
+PUBLIC DOMAIN IN THE UNITED STATES BY FAILURE TO RENEW, on an affirmative
+record, and not on the ground lt-hist gives.
+
+Both registered editions were checked at registration-number level in the
+Copyright Office's published record and neither was renewed in its
+twenty-eighth year: A 110108, copyright 15 July 1937, window closed 15 July
+1965; A 192159, copyright 1 November 1945, window closed 1 November 1973
+[recorded, lasance-new-roman-missal-rights-v1.toml, which carries the CCE
+citations, the five corpora searched, the positive controls, the caveats and
+what would overturn it].
+
+The 1936 notice at line 70 of the OCR (`[[notices]]`) is not disturbed and does
+not need to be. It records that a term began. The renewal record records that it
+ended.
+"""
+identification_corrected = """
+IT IS NOT A 1937 PRINTING, AND ANYTHING CITING IT AS ONE IS CITING IT WRONGLY.
+At line 140,861 the file carries an appendix, pages 1298a-1298n, stating that
+its feasts are "additions to the 1945 Copyright edition"; the appendix prints
+St Pius X (canonised 1954) and the Queenship of the Blessed Virgin Mary
+(instituted October 1954), while the body still carries the PRE-1955 Holy Week
+-- twelve prophecies on Holy Saturday, and no renewal of baptismal promises
+anywhere in the file [verified].
+
+So it is a printing of about 1955-56 of the 1945 edition (A 192159) with a
+post-1954 appendix, mislabelled by the uploader and inherited unexamined by
+lt-hist. The rights verdict is unaffected because both editions are unrenewed.
+
+ONE EXCLUSION TRAVELS WITH THE TEXT. Pages 1298a-1298n are new matter first
+published after October 1954 under no registration found, and they are EXCLUDED
+from any publication basis until the printing is dated from a physical copy
+[recorded, lasance-new-roman-missal-rights-v1.toml `[the_appendix_exclusion]`].
+"""
+why_lt_hist_did_not_settle_it = """
+KEPT AS A METHOD NOTE, BECAUSE THE CORPUS REACHED THE RIGHT ANSWER BY A METHOD
+THAT COULD NOT HAVE TOLD IT FROM THE WRONG ONE. lt-hist attempted the check and
+its own note describes the method: "OCR searches of the 1964, 1965, and 1966
+Catalog of Copyright Entries book-renewal volumes found no hit for 'Lasance' or
+'New Roman Missal'" [verified].
+
+That is a text search of three scanned volumes, not a search of the Copyright
+Office record, and its failure mode is silent. The Catalog of Copyright Entries
+is dense small-type multi-column print; an OCR miss on a surname returns exactly
+what a genuine absence returns. And lt-hist then wrote `text_status:
+public-domain-ocr-english` on all eleven section files on the strength of it
+[verified], which converts a negative search into an affirmative claim.
+
+Two things now known make the point sharper rather than softer. The 1937
+registration is filed in the Catalog under the corporate heading "Catholic
+church. Liturgy and ritual.", so a search on the words "Lasance" or "New Roman
+Missal" as a title cannot reach it; and "Lasance" does in fact return zero hits
+in all four of the volumes covering the window, which is the same result a
+renewal's presence under that heading would have produced [recorded,
+lasance-new-roman-missal-rights-v1.toml]. The corpus searched on the two strings
+the catalogue does not file this book under, found nothing, and asserted the
+conclusion. The settled record reaches the same conclusion by registration
+number, with three positive controls drawn from the same OCR layer.
+"""
+why_it_mattered_most = """
+THIS WAS THE HIGHEST-VALUE DECISION IN THE FILE and it is now made. It is the
+largest English text in the corpus at 4,384,495 bytes, larger than the 1806 and
+1843 together, and it is the only twentieth-century English witness below the
+postconciliar line -- the only one that renders the recension the 1962 books
+belong to in the English of the century that used them. Everything else English
+is either an 1806/1843 lay missal of the older recension or an ICEL text nobody
+may publish.
+
+CORRECTING THE BRIEF: it called this "the only substantial pre-conciliar ENGLISH
+text". The 1806 and 1843 are pre-conciliar and English, and both are admissible.
+The true claim is narrower and still decisive: the only twentieth-century one,
+and the largest by a factor of two and a half.
+"""
+lt_hist_basis_rejected = """
+The corpus's ground was its own assumption plus an unsound negative search, and
+neither is the ground relied on here. `admissible` on this row rests on the
+renewal record, exactly as the six pre-1931 rows rest on their publication
+dates.
+"""
+carries_forward = """
+`[[structural_conditions]]` `text-status-may-not-travel` applies to this row
+undiminished. lt-hist's `text_status: public-domain-ocr-english` must not cross,
+even though the conclusion it states is now established, because transcribing
+the field would import the conclusion and leave the reasoning behind -- and on
+this row the reasoning is the whole of what changed.
+"""
+evidence = "verified"
+
+[[versions]]
+id = "1955-holy-week-reform-source-needed"
+year = 1955
+language = "Latin"
+label = "Restored Order of Holy Week -- the AAS 47 (1955) promulgation text only"
+publisher_or_edition = "Acta Apostolicae Sedis 47 (1955), pp. 838-847: the decree Maxima redemptionis nostrae mysteria and its attached instruction"
+sections = 2
+bytes = 2200324
+bytes_note = "AAS-47-1955_djvu.txt is the whole 1955 AAS volume, not the ten pages used."
+verdict = "undecided"
+open_question = "aas-1955"
+verdict_basis = """
+An official gazette of the Holy See published in 1955: post-1931, so age does
+not clear it, and guidance/missals.md records the mechanism that reaches it --
+URAA restoration under 17 U.S.C. 104A, effective 1 January 1996 for Berne
+members, running generally 95 years from publication [recorded]. Vatican Law
+N. CXCVII (2017) art. 2 extends copyright to the texts of the laws and official
+acts published by the Holy See, with a seventy-year term under art. 5
+[recorded]. So "it is an official act, therefore free" fails here, and that is
+this repository's recorded position, not a new one.
+
+Against that: `pre-1955-rubrics-sources-v1.toml` holds and publishes the
+precedence rule from the AAS of 1911, "open and publishable" [recorded] -- but
+1911 is pre-1931 and the age ground does the work there. It is not a precedent
+for 1955.
+"""
+why_not_simply_excluded = """
+Recorded undecided rather than excluded because the answer plausibly falls out
+of `[[structural_conditions]]` `settle-the-holy-see-question-once` and should be
+taken from there rather than guessed at here. If that record answers the Holy
+See Latin question for the postconciliar books, the same answer at a 1955 date
+disposes of this row without further work. Deciding it separately now would
+manufacture the sixteenth wording.
+"""
+note = """
+The full liturgical book -- Ordo Hebdomadae Sanctae instauratus, 108 pages -- is
+NOT in lt-hist. lt-hist located it at Internet Archive item
+`ordohebdomadaesa0000cath` and records it as access-restricted/printdisabled
+with private OCR derivatives [verified]. `missal-acquisition-audit-v1.toml`
+makes acquiring that book its step 1 [recorded]. lt-hist has nothing to
+contribute to it.
+"""
+evidence = "verified"
+
+[[versions]]
+id = "1962-missale-romanum-latin"
+year = 1962
+language = "Latin"
+label = "Missale Romanum 1962"
+publisher_or_edition = "Typical edition of John XXIII"
+sections = 15
+bytes = 2788999
+verdict = "undecided"
+open_question = "the-1962-contradiction"
+verdict_basis = """
+RECORDED AS A CONTRADICTION, NOT RESOLVED. The task text that commissioned this
+audit calls the 1962 Missale Romanum public domain. This repository's own
+guidance says otherwise about the artifact in hand: guidance/missals.md:325-344
+works through the CMAA facsimile at length and concludes that `unresolved` on
+the artifact "**stands and is correct**" because it records the absence of
+affirmative permission [recorded].
+
+Those cannot both govern. This row does not choose between them, because
+choosing would be resolving a rights question by preference for the more
+convenient answer, which is the precise defect this whole file is about.
+"""
+what_missals_md_actually_established = """
+Four things, and they are worth restating because they close a sub-question
+without closing the main one [recorded, guidance/missals.md:325-344]. The CMAA
+hosting page carries no rights notice at all (54,516 bytes searched for
+`copyright`, `©`, `creative commons`, `public domain`, `all rights` -- every one
+returns zero). The facsimile itself carries no copyright notice across all
+54,807 extracted lines. The CC BY-NC-ND that appears on one Internet Archive
+copy was applied by a private individual who is neither rights holder nor
+scanner. And at least nine Internet Archive items of this book contradict each
+other: two CC BY-NC-ND, two public-domain mark, five no licence.
+
+The conclusion there was that the licence "confers nothing" -- which disposes of
+the licence and leaves the underlying question exactly where it was. Absence of
+a notice is not a grant, and `unresolved` means unresolved.
+"""
+lt_hist_basis_rejected = """
+"Internet Archive marks this Latin 1962 Missale Romanum item with Public Domain
+Mark 1.0" [verified] -- and missals.md establishes that at least nine IA items of
+this book carry mutually contradictory marks [recorded], so the mark lt-hist
+relied on is one of nine votes and not a finding.
+"""
+note = """
+Note which item lt-hist actually holds: `MissaleRomanum1962RomanMissalColorLatin`
+[verified], not the CMAA facsimile missals.md analysed. Whether the two are the
+same bytes is not established here, and a fold-in must not assume it.
+"""
+evidence = "verified"
+
+[[versions]]
+id = "1963-sacrosanctum-concilium"
+year = 1963
+language = "Latin/English"
+label = "Sacrosanctum Concilium"
+publisher_or_edition = "Second Vatican Council; consulted at vatican.va"
+sections = 1
+bytes = 0
+verdict = "undecided"
+open_question = "vatican-va-conciliar-and-papal-texts"
+verdict_basis = """
+lt-hist holds NO TEXT: `text_status: metadata-only`, one announcement note, and
+a vatican.va URL [verified]. Its own note is the honest one in the corpus:
+"Announcement text is summarized; verify reuse terms before storing the full
+Vatican document" [verified] -- the only place lt-hist declines to assume.
+
+So nothing can be folded in from lt-hist for this row, and the open question is
+not about lt-hist at all. It is whether this project may hold vatican.va's text
+of a conciliar constitution, which is a question this repository must answer for
+itself and has partly answered elsewhere: an `aas-reuse-proof` record exists in
+this directory for Sacrosanctum Concilium [recorded,
+src/sources/inventories/sacrosanctum-concilium-aas-reuse-proof-2026-07-23.md].
+"""
+note = "Verdict `undecided` here means the QUESTION is open. The fold-in decision is not: there is nothing to fold."
+evidence = "verified"
+
+[[versions]]
+id = "1969-missale-romanum"
+year = 1969
+language = "Latin/English"
+label = "Missale Romanum -- apostolic constitution of Paul VI, 3 April 1969"
+publisher_or_edition = "Paul VI; consulted at vatican.va"
+sections = 1
+bytes = 0
+verdict = "undecided"
+open_question = "vatican-va-conciliar-and-papal-texts"
+verdict_basis = """
+`text_status: metadata-only`, no text, one vatican.va URL, and the same honest
+note: "verify reuse terms before storing the full Vatican document or liturgical
+text" [verified]. Nothing to fold in; the question of whether this project may
+hold the constitution is real and is not lt-hist's to answer.
+"""
+evidence = "verified"
+
+[[versions]]
+id = "1969-ordo-lectionum-missae-latin"
+year = 1969
+language = "Latin"
+label = "Ordo lectionum Missae, editio typica"
+publisher_or_edition = "Sacred Congregation for Divine Worship; Internet Archive item OLM1969"
+sections = 5
+bytes = 637216
+verdict = "excluded"
+verdict_basis = "A 1969 Latin liturgical book of the Holy See. Named claimant, no permission, no expiry. Governed by `[[structural_conditions]]` `settle-the-holy-see-question-once`."
+lt_hist_basis_rejected = "The assumption, verbatim [verified]. No notice was found in these particular bytes, which changes nothing: absence of a printed notice in an OCR text layer is not a grant, and post-1989 US law requires no notice at all."
+disposition_permitted = "metadata and Internet Archive route may be recorded as `remote` or `restricted`; bytes may not enter Git."
+evidence = "verified"
+
+[[versions]]
+id = "1970-general-instruction-order-of-mass-english"
+year = 1970
+language = "English"
+label = "The Roman Missal: Order of Mass and General Instruction"
+publisher_or_edition = "English GIRM/Order of Mass; Internet Archive item girm-1970"
+sections = 3
+bytes = 146613
+verdict = "excluded"
+verdict_basis = """
+A 1970 ENGLISH liturgical translation. `liturgical-english-rights-v1.toml`
+already governs this: the rights in translations of liturgical books remain with
+the conferences or their commissions under Liturgiam authenticam n. 117, and
+ICEL's own acknowledgement table claims its translations by year [recorded]. No
+permission, no expiry -- a 1970 work is protected to the end of 2065 on the
+95-year term.
+"""
+lt_hist_basis_rejected = "The assumption [verified], plus an authority field naming the Sacred Congregation of Rites -- which is the authority for the LATIN, not for whoever made the English. The corpus does not name the translator or the claimant anywhere."
+disposition_permitted = "metadata/route only."
+note = """
+lt-hist separately records that a different item it pulled for this slot,
+`romanmissal00churgoog`, turned out on recheck to be "an older English Roman
+Missal scan, not the 1970 booklet expected from the listing"
+[verified, POST_1962_SOURCES.md:11]. That file is still in `sources/downloads/`
+at 1,518,633 bytes under a name asserting it is the 1970 book. A directory-level
+fold-in would carry a misidentified text in under a confident filename.
+"""
+evidence = "verified"
+
+[[versions]]
+id = "1970-missale-romanum-source-located"
+year = 1970
+language = "Latin"
+label = "Missale Romanum, editio typica (Paul VI)"
+publisher_or_edition = "First postconciliar typical edition"
+sections = 11
+bytes = 1130868
+verdict = "excluded"
+verdict_basis = "The first postconciliar Latin typical edition. Governed by `settle-the-holy-see-question-once`. `liturgical-english-rights-v1.toml` `[the_latin]` already holds that the Latin is claimed in terms by Liturgiam authenticam n. 111, and n. 110 names the Missale Romanum first [recorded]."
+lt_hist_basis_rejected = "The assumption [verified]."
+disposition_permitted = "metadata/route only."
+note = """
+`missal-acquisition-audit-v1.toml` already carries this exact book at priority 2
+with `may_publish_text = \"no\"`, and already carries the warning: "The prior
+lt-hist ledger imported this text `using the project public-domain assumption`
+... Any reuse of lt-hist material must re-derive rights rather than inherit that
+assumption" [recorded]. This row is that re-derivation, and it agrees.
+"""
+evidence = "verified"
+
+[[versions]]
+id = "1972-nlc-interim-roman-missal-english"
+year = 1972
+language = "English"
+label = "Interim Translations of the Masses of the New Roman Missal"
+publisher_or_edition = "National Liturgical Commission for England and Wales; Internet Archive items MissalNLC1-MissalNLC4"
+sections = 4
+bytes = 642224
+bytes_note = "four booklets: 121,042 + 146,247 + 181,940 + 192,995"
+verdict = "excluded"
+verdict_basis = "A printed copyright notice with an identified claimant, inside the downloaded bytes: `[[notices]]`, Book 1 line 15. Renewal automatic for 1964-onward publication; protected to the end of 2067."
+lt_hist_basis_rejected = "The assumption, applied in the same sentence that quotes the notice: \"The booklet front matter says Copyright 1972 All rights reserved; this corpus imports only under the project assumption\" [verified]."
+disposition_permitted = "metadata/route only."
+evidence = "verified"
+
+[[versions]]
+id = "1975-missale-romanum-editio-typica-altera-source-located"
+year = 1975
+language = "Latin"
+label = "Missale Romanum, editio typica altera -- Ordo Missae excerpt only"
+publisher_or_edition = "Second postconciliar typical edition; partial"
+sections = 1
+bytes = 21768
+verdict = "excluded"
+verdict_basis = "Second postconciliar Latin typical edition. Governed by `settle-the-holy-see-question-once`."
+lt_hist_basis_rejected = "The assumption [verified]."
+disposition_permitted = "metadata/route only."
+note = """
+21,768 bytes against the 1970 edition's 1,130,868 -- roughly two per cent, and
+lt-hist says so: "It is not a full 1975 missal" [verified].
+`missal-acquisition-audit-v1.toml` makes acquiring a whole 1975 witness its
+step 4, noting that what exists is "the Ordo Missae alone, three orders of
+magnitude too small" [recorded]. Even if the rights question resolved
+favourably, this fragment would not close that gap.
+"""
+evidence = "verified"
+
+[[versions]]
+id = "1981-ordo-lectionum-missae-editio-typica-altera-latin"
+year = 1981
+language = "Latin"
+label = "Ordo lectionum Missae, editio typica altera"
+publisher_or_edition = "Congregation for the Sacraments and Divine Worship; Internet Archive item OLM1981"
+sections = 6
+bytes = 847013
+verdict = "excluded"
+verdict_basis = "A 1981 Latin liturgical book of the Holy See. Governed by `settle-the-holy-see-question-once`."
+lt_hist_basis_rejected = "The assumption [verified]."
+disposition_permitted = "metadata/route only."
+evidence = "verified"
+
+[[versions]]
+id = "1988-ordo-cantus-missae-editio-typica-altera-latin"
+year = 1988
+language = "Latin"
+label = "Ordo cantus Missae, editio typica altera"
+publisher_or_edition = "Congregation for Divine Worship; Internet Archive item OCMissae"
+sections = 7
+bytes = 301517
+verdict = "excluded"
+verdict_basis = "A Latin chant-order book of the Holy See. Governed by `settle-the-holy-see-question-once`."
+lt_hist_basis_rejected = "The assumption [verified]."
+disposition_permitted = "metadata/route only."
+date_discrepancy = """
+lt-hist dates this three ways at once: the directory and STATUS.md heading say
+1988, `metadata.json` gives `promulgated: 1986-11-22`, and STATUS.md:26 says
+"printed edition records 1988" [verified]. The decree is of 1987 in some
+references. Nothing here resolves it; a fold-in must not silently adopt one of
+the three.
+"""
+evidence = "verified"
+
+[[versions]]
+id = "1998-icel-revised-sacramentary-source-located"
+year = 1998
+language = "English"
+label = "The Sacramentary, Revised Edition"
+publisher_or_edition = "International Commission on English in the Liturgy; four OCR volume files"
+sections = 4
+bytes = 4479319
+bytes_note = "2,649,036 + 420,581 + 761,567 + 648,135"
+verdict = "excluded"
+verdict_basis = """
+Three printed claimants inside the downloaded bytes: `[[notices]]`, Volume 1A
+lines 41-52. ICEL Inc. 1997, ELLC 1988, Concacan Inc. 1994. lt-hist knew: its
+STATUS.md:28 imports it "despite ICEL copyright listing" [verified].
+`liturgical-english-rights-v1.toml` disposes of the English of the postconciliar
+Missal in full and this is squarely inside it [recorded].
+"""
+lt_hist_basis_rejected = "The assumption, expressly overriding a known claim [verified]."
+disposition_permitted = "metadata/route only."
+note = "This book was never promulgated -- the Holy See declined to confirm it. That makes it historically interesting and does nothing whatever to its copyright."
+evidence = "verified"
+
+[[versions]]
+id = "2002-missale-romanum-editio-typica-tertia-source-located"
+year = 2002
+language = "Latin"
+label = "Missale Romanum, editio typica tertia"
+publisher_or_edition = "Third postconciliar typical edition; MusicaSacra PDF converted locally with pdftotext"
+sections = 11
+bytes = 4652187
+bytes_note = "PDF 3,333,382 plus derived text 1,318,805 -- the PDF is the binary named in [corpus].payload_kind_basis"
+verdict = "excluded"
+verdict_basis = """
+The 2002 typical edition. guidance/missals.md reads its printed copyright leaf
+directly: "« Copyright » apud Administrationem Patrimonii Sedis Apostolicae in
+Civitate Vaticana", holder of record APSA with LEV as sales agent [recorded].
+This repository already registers the 2002 artifact `storage = restricted`
+[recorded, guidance/missals.md:389]. A fold-in that imported it would contradict
+a disposition this project has already made on its own manifest.
+"""
+lt_hist_basis_rejected = "The assumption [verified]."
+disposition_permitted = "metadata/route only, and the existing restricted registration already covers it."
+evidence = "verified"
+
+[[versions]]
+id = "2011-roman-missal-third-edition-english-source-located"
+year = 2011
+language = "English"
+label = "The Roman Missal, Third Typical Edition, English translation"
+publisher_or_edition = "USCCB/ICEL, for the dioceses of the United States"
+sections = 9
+bytes = 1992477
+verdict = "excluded"
+verdict_basis = """
+Six printed claimants and two express prohibitions on reproduction, inside the
+downloaded bytes: `[[notices]]`, lines 35-59. lt-hist imported it "despite ICEL
+copyright listing" [verified, STATUS.md:31].
+
+This is the single clearest case in the corpus and it is worth stating without
+hedging: the current approved English of the Roman Missal, in copyright, with
+the claimant's notice on the page, imported under an assumption invented for the
+purpose. `liturgical-english-rights-v1.toml` settles it: not without a licence,
+which this project does not have, and the one royalty-free class in ICEL's
+policy does not reach a permanently published corpus [recorded].
+"""
+lt_hist_basis_rejected = "The assumption, expressly overriding a known claim [verified]."
+disposition_permitted = "metadata/route only."
+evidence = "verified"
+
+[[versions]]
+id = "1974-sacramentary-english-source-located"
+year = 1974
+language = "English"
+label = "Sacramentary"
+publisher_or_edition = "US publication context; Internet Archive access-restricted"
+sections = 1
+bytes = 0
+verdict = "excluded"
+verdict_basis = "An in-copyright ICEL-era English sacramentary. Already excluded by lt-hist itself: `text_status: restricted-source-not-included`, item access-restricted/printdisabled, OCR derivatives private [verified]."
+disposition_permitted = "metadata/route only."
+note = "One of the four rows where lt-hist's own vocabulary is correct, and it is correct for the wrong reason -- the bar was IA's access control, not a rights finding. Had the OCR been open, the assumption would have carried it in like the other ten."
+evidence = "verified"
+
+[[versions]]
+id = "1985-sacramentary-english-source-located"
+year = 1985
+language = "English"
+label = "The Sacramentary"
+publisher_or_edition = "Catholic Book Publishing Co.; Internet Archive access-restricted"
+sections = 1
+bytes = 0
+verdict = "excluded"
+verdict_basis = "`text_status: restricted-source-not-included`; access-restricted, OCR private [verified]. A named commercial publisher, 1985."
+disposition_permitted = "metadata/route only."
+evidence = "verified"
+
+[[versions]]
+id = "1994-sacramentary-supplement-source-located"
+year = 1994
+language = "English"
+label = "Sacramentary Supplement"
+publisher_or_edition = "NCCB Committee on the Liturgy; Internet Archive access-restricted"
+sections = 1
+bytes = 0
+verdict = "excluded"
+verdict_basis = "`text_status: restricted-source-not-included`; access-restricted [verified]. A conference's own text, 1994."
+disposition_permitted = "metadata/route only."
+evidence = "verified"
+
+[[versions]]
+id = "2008-missale-romanum-reimpressio-emendata-source-located"
+year = 2008
+language = "Latin"
+label = "Missale Romanum, editio typica tertia emended reprint"
+publisher_or_edition = "Emended reprint of the third typical edition"
+sections = 1
+bytes = 0
+verdict = "excluded"
+verdict_basis = "`text_status: copyrighted-source-located-not-included` -- the ONE place in 140 section files where lt-hist writes the word copyrighted [verified]. No full text with a reuse licence was located."
+disposition_permitted = "metadata/route only."
+note = """
+The 2011 Roman Missal's own front matter attributes its Latin to "Libreria
+Editrice Vaticana, Vatican City State, 2008" at line 35 [verified] -- that is
+this book, claimed by name in bytes lt-hist downloaded and imported.
+"""
+evidence = "verified"
+
+# --- The two structural conditions --------------------------------------------
+
+[[structural_conditions]]
+id = "settle-the-holy-see-question-once"
+anchor = "guidance/sources.md:402-413"
+rule = """
+"Settle a recurring rights question once, in a rights record. Where the same
+question governs a whole body of material and keeps being reopened, the answer
+belongs in one file under `src/sources/inventories/`, with its citations, the
+routes examined and refused, and what would change if the position changed. A
+rights position stated only in prose, in three places, in three wordings, is
+three positions." `liturgical-english-rights-v1.toml` is the named precedent.
+"""
+the_question = """
+MAY THIS PROJECT PUBLISH THE LATIN OF A POSTCONCILIAR LITURGICAL BOOK OF THE
+HOLY SEE? One question, and it governs six of the fourteen excluded rows:
+1969 Ordo lectionum Missae, 1970 Missale Romanum, 1975 editio typica altera,
+1981 OLM altera, 1988 Ordo cantus Missae, 2002 editio typica tertia. It very
+likely governs a seventh at a different date -- the 1955 AAS row -- and the
+answer there should be taken from the settled record rather than derived
+separately.
+"""
+requirement = """
+It must be settled in ONE record, not as six prose notes in six version rows and
+not as a sentence repeated in six artifact manifests. The material for it
+already exists and is currently scattered across at least four places:
+
+  liturgical-english-rights-v1.toml `[the_latin]` -- Liturgiam authenticam
+    n. 111 and n. 110, Berne accession of the Holy See 12 September 1935,
+    derivative-work analysis.
+  guidance/missals.md -- the 2002 copyright leaf naming APSA with LEV as sales
+    agent; the Secretariat of State decree of 31 May 2005 vesting in LEV, and
+    the unreconciled tension between them; Vatican Law N. CXCVII (2017) art. 2
+    and the seventy-year term at art. 5; URAA restoration under 17 U.S.C. 104A;
+    the correction that 1935 and not 1929 is the US watershed.
+  missal-acquisition-audit-v1.toml -- `rights = "holy-see-post-1929"` on seven
+    book rows, a label whose own year missals.md has since corrected.
+  this file -- six rows pointing at the question.
+
+Note the defect visible in that list: the acquisition audit's rights label still
+says 1929 while missals.md has established that the date is 1935 and that the
+1929 boundary is unrecorded. That is what a scattered position costs -- a stale
+label survives in a machine-readable field because the correction landed in
+prose somewhere else.
+"""
+why_it_is_stated_here = """
+Because this file must not become the seventh place. Six version rows above each
+say "governed by `settle-the-holy-see-question-once`" and none of them argues the
+question. That is deliberate: a pointer to an unwritten record is an honest debt,
+and six restatements of a position would be six positions.
+
+lt-hist's failure mode was exactly this and at scale: one position, restated 56
+times in 15 wordings across 14 files, argued zero times. The count is in
+`[the_assumption]`. Do not reproduce it in the other direction -- a correct
+conclusion repeated 56 times without a reason is the same artifact as a wrong
+one.
+"""
+blocking = false
+blocking_note = "This audit's verdicts do not wait on it. All six rows are `excluded` either way; the settled record would supply the REASON in one citable place and would additionally dispose of the 1955 row."
+
+[[structural_conditions]]
+id = "text-status-may-not-travel"
+rule = "lt-hist's `text_status` vocabulary must not cross into this repository, for any version, including the six admissible ones."
+the_facts = """
+134 of the 140 section files carry a `text_status` beginning `public-domain-`
+[verified]. The full census:
+
+  68  public-domain-ocr-latin
+  26  public-domain-ocr-english
+  18  public-domain-promulgation-ocr-latin
+  11  public-domain-promulgation-ocr-english
+   8  public-domain-ocr
+   3  restricted-source-not-included
+   2  public-domain-aas-ocr-latin
+   2  metadata-only
+   1  public-domain-ocr-latin-partial
+   1  copyrighted-source-located-not-included
+
+CORRECTING THE BRIEF, which said all 140. Six do not: the three
+`restricted-source-not-included` (1974, 1985, 1994), the one
+`copyrighted-source-located-not-included` (2008), and the two `metadata-only`
+(1963, 1969 constitution).
+
+The substantive claim survives the correction intact and is if anything sharper.
+ALL TEN of the excluded-with-bytes versions carry `public-domain-*`, verified
+version by version [verified]: 1969 OLM, 1970 GIRM English, 1970 Missale
+Romanum, 1972 NLC, 1975, 1981, 1988, 1998 ICEL, 2002, 2011. The six that do not
+are exactly the six with no bytes to mislabel. The vocabulary is wrong wherever
+it had the opportunity to be wrong.
+"""
+the_danger = """
+`text_status` sits in YAML front matter at the top of every section file. Copying
+a section file copies the front matter, and copying the front matter copies a
+false rights claim into this repository's own tracked text -- where it would then
+be read by tooling, indexed, and inherited by anything built on it. The 2011
+Roman Missal's section files say `public-domain-ocr-english`. That single string,
+moved once, asserts on this project's behalf that the current approved English of
+the Roman Missal is in the public domain.
+"""
+and_for_the_admissible_six = """
+The field must be RE-DERIVED, not transcribed, even where the conclusion will
+match. Two reasons, and the second is the one that binds.
+
+First, the strings are wrong on their own terms: `public-domain-ocr` is one token
+doing three jobs -- a rights conclusion, a jurisdiction that is never stated, and
+a note about how the bytes were made. This repository separates all three, and
+`sources.md:395-400` requires the basis to be recorded, which this vocabulary has
+no slot for.
+
+Second and decisively: transcribing the field would import the CONCLUSION while
+leaving the REASONING behind, and the reasoning is the whole difference between
+the six rows that may come and the ten that may not. lt-hist wrote
+`public-domain-ocr-latin` on the 1570 Missale Romanum and `public-domain-ocr-latin`
+on the 2002 editio typica tertia. The strings are identical. Only the reason
+differs, and only one of the two reasons exists.
+"""
+required_action = """
+Any fold-in extracts the OCR TEXT ONLY, discards lt-hist's front matter entirely,
+and writes a fresh source manifest whose rights fields are derived from this
+record's `verdict_basis` for that version. Do not copy a section file. Do not
+copy `versions/*/metadata.json`. Do not copy `sources/manifest.json`.
+"""
+
+# --- The five questions this audit does not answer ----------------------------
+#
+# Written as questions, addressed to the maintainer, with the fact that would
+# settle each. None has a default: an audit that defaulted its open questions
+# would be doing what lt-hist did.
+
+[[open_questions]]
+id = "lasance-renewal"
+version = "1937-lasance-new-roman-missal-english"
+status = "CLOSED 2026-08-01"
+question = "Was the copyright in Lasance's The New Roman Missal (Benziger Brothers, notice dated 1936) renewed in its 28th year?"
+answer = "No, for either registered edition. The text is in the public domain in the United States by failure to renew."
+settled_in = "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml"
+what_settled_it = """
+What this row asked for, and more of it. Not an OCR search of scanned volumes
+but a search at REGISTRATION-NUMBER level across five independent bodies of
+record: the Catalog of Copyright Entries registration volumes for 1936, 1937,
+1942, 1945 and 1946; the Stanford Copyright Renewal Database dump of 27 April
+2017 (246,448 rows); NYPL's `cce-renewals` (445,386 rows, 1950-2001);
+`leonardr/cce-spreadsheets`, which places both registrations in
+FINAL-not-renewed; and the raw OCR of the four Catalog volumes covering the
+window, searched with three positive controls so that the negative could be
+distinguished from a failed search.
+
+  A 110108, copyright 15 July 1937, Benziger Brothers, CCE NS 34 (1937) p. 1396,
+  LCCN 37-23958. Window 15 Jul 1964 - 15 Jul 1965. No renewal.
+
+  A 192159, copyright 1 November 1945, Benziger bros., inc., CCE NS 42 (1945)
+  p. 307. Window 1 Nov 1972 - 1 Nov 1973. No renewal.
+
+Two corrections this row itself needs. Its window arithmetic was drawn from the
+1936 NOTICE and gave 1963-1966; the registration dates are 15 July 1937 and
+1 November 1945, so the windows are 1964-65 and 1972-73, and the second edition
+-- which this row did not know about -- needed a search eight years later than
+anything contemplated here. And "public domain from 1966" is wrong twice over:
+the term expired at the close of the twenty-eighth year, in 1965, and the 1945
+edition's did not expire until 1973.
+"""
+what_did_not_come_free = """
+The settled record is not a blanket. Two things it excludes belong in this file
+because a fold-in would meet them:
+
+  The appendix at pages 1298a-1298n of lt-hist's own downloaded OCR is new
+  matter first published after October 1954 under no registration found, and is
+  EXCLUDED until the printing is dated from a physical copy.
+
+  Other Lasance titles WERE renewed. The New Missal for Every Day -- one word
+  from this title, same author, same publisher, same William R. Kelly -- carries
+  three renewals: R85220, R247840 and R101887. It is not free and must not be
+  conflated with this one.
+"""
+and_the_artifact_is_misidentified = "See the version row's `identification_corrected`. The file lt-hist holds is a printing of about 1955-56 of the 1945 edition, not a 1937 printing. The verdict is unaffected; the citation is not."
+default_taken = "none -- the question was answered, not defaulted"
+
+[[open_questions]]
+id = "the-1962-contradiction"
+version = "1962-missale-romanum-latin"
+question = "The commissioning task text calls the 1962 Missale Romanum public domain; guidance/missals.md:325-344 leaves the CMAA facsimile `unresolved` and says that `stands and is correct`. Which governs, and does the answer reach the different Internet Archive item lt-hist actually holds?"
+what_would_settle_it = """
+A maintainer decision, because this is not a question of fact. The facts are
+already established at missals.md:325-344 and are recited in the version row: no
+notice on the hosting page, no notice in the facsimile, a CC BY-NC-ND applied by
+someone who is neither rights holder nor scanner, and nine mutually contradictory
+Internet Archive items. What is missing is not evidence but a ruling on whether
+absence of any affirmative permission is a bar for this project's purposes.
+
+A second and separable fact WOULD help and could be established without a ruling:
+whether `MissaleRomanum1962RomanMissalColorLatin`, which is what lt-hist holds, is
+the same scan as the CMAA facsimile missals.md analysed. If it is a different
+scan the missals.md analysis may not transfer at all.
+"""
+why_not_defaulted = """
+Deliberately not resolved by preference. The convenient answer is available --
+the brief supplies it -- and taking it would be resolving a rights question by
+choosing the more useful of two records, which is structurally the same act as
+lt-hist's assumption. The contradiction is recorded so the next reader inherits
+both sides.
+"""
+default_taken = "none"
+
+[[open_questions]]
+id = "aas-1955"
+version = "1955-holy-week-reform-source-needed"
+question = "May this project publish the text of a Holy See decree and instruction from Acta Apostolicae Sedis 47 (1955), pp. 838-847?"
+what_would_settle_it = """
+The record contemplated by `settle-the-holy-see-question-once`, applied at a 1955
+date. The inputs are already held: URAA restoration under 17 U.S.C. 104A, Vatican
+Law N. CXCVII (2017) art. 2 and its seventy-year term, and the Holy See's Berne
+accession of 12 September 1935, all recorded in guidance/missals.md. The
+countervailing consideration is that `pre-1955-rubrics-sources-v1.toml` publishes
+the 1911 AAS rule as "open and publishable" -- but that rests on the pre-1931 age
+ground, which 1955 does not have.
+
+Ask it as part of the one record rather than separately, and the answer here
+falls out.
+"""
+what_lt_hist_can_contribute = "The whole AAS 47 volume as a 2,200,324-byte OCR text file. Not the reformed rite's own book: the Ordo Hebdomadae Sanctae instauratus is access-restricted at the only host lt-hist found, and remains step 1 of the missal acquisition audit."
+default_taken = "none"
+
+[[open_questions]]
+id = "vatican-va-conciliar-and-papal-texts"
+versions = ["1963-sacrosanctum-concilium", "1969-missale-romanum"]
+question = "May this project hold and publish vatican.va's text of Sacrosanctum Concilium (1963) and of the apostolic constitution Missale Romanum (1969)?"
+what_would_settle_it = """
+Vatican Law N. CXCVII (2017) art. 2 is directly on point -- it extends copyright
+to "the texts of the laws and official acts published, in whatever form, by the
+Holy See" -- and cuts against a free reading; the seventy-year term at art. 5
+does not run out for either document. Against that, this directory already holds
+`aas-reuse-proof` records for a run of conciliar constitutions including
+Sacrosanctum Concilium, worked out on their AAS printings rather than on
+vatican.va. Whether the vatican.va HTML is a separate artifact with separate
+rights from the AAS printing is the sub-question, and `sources.md:395-400`
+requires exactly that distinction: the underlying text is not the host's markup.
+
+Recorded as a question because lt-hist itself declined to answer it -- the only
+two rows in the corpus where it did.
+"""
+bearing_on_the_fold_in = "None. Both rows are `metadata-only` in lt-hist and there is nothing to fold in either way. The question is this repository's own and survives the fold-in decision entirely."
+default_taken = "none"
+
+[[open_questions]]
+id = "the-holy-see-latin-record"
+versions = [
+  "1969-ordo-lectionum-missae-latin",
+  "1970-missale-romanum-source-located",
+  "1975-missale-romanum-editio-typica-altera-source-located",
+  "1981-ordo-lectionum-missae-editio-typica-altera-latin",
+  "1988-ordo-cantus-missae-editio-typica-altera-latin",
+  "2002-missale-romanum-editio-typica-tertia-source-located",
+]
+question = "Will a single rights record be written for the Latin of postconciliar liturgical books of the Holy See, per sources.md:402-413, and who writes it?"
+what_would_settle_it = """
+Writing it. The material is enumerated in `[[structural_conditions]]`
+`settle-the-holy-see-question-once` and is already held across four artifacts;
+what is missing is the one file. `liturgical-english-rights-v1.toml` is the
+template and the sibling: that file settles the ENGLISH of the same books, and
+the Latin question is its exact counterpart, currently answered in prose in at
+least four places.
+
+Its first task on being written would be to correct
+`missal-acquisition-audit-v1.toml`, whose seven book rows still carry
+`rights = "holy-see-post-1929"` after missals.md established that 1929 is not the
+US watershed and that 1935 is.
+"""
+why_it_is_a_question_and_not_a_task = """
+Because this lane may not write it. It is a rights position over material this
+audit only touches at the edge, its inputs live in files this lane does not own,
+and a rights record written as a side effect of an audit of somebody else's
+corpus would be exactly the kind of unargued position this file criticises.
+Recorded as an open question so it is inherited rather than re-derived.
+"""
+default_taken = "none"
+
+# --- Counts -------------------------------------------------------------------
+
+[counts]
+versions_audited = 25
+admissible = 7
+admissible_on_age = 6
+admissible_on_a_renewal_record = 1
+excluded = 14
+undecided = 4
+admissible_bytes = 16653598
+admissible_size = "16.65 MB"
+excluded_bytes_present_in_lt_hist = 14851202
+excluded_bytes_size = "14.85 MB"
+excluded_bytes_note = "Sum of the `bytes` field on the fourteen excluded rows, which is the imported payload. `sources/downloads/` holds 1,518,633 further bytes of excluded-adjacent material in the misidentified RomanMissal1970GeneralInstructionOrderMassEnglish_djvu.txt, bringing the on-disk figure to 16,369,835."
+undecided_bytes = 4989323
+excluded_with_bytes_present = 10
+excluded_with_no_bytes = 4
+versions_with_a_printed_notice_in_lt_hists_own_downloads = 4
+lt_hist_versions_marked_public_domain_that_this_audit_excludes = 10
+lt_hist_versions_marked_public_domain_that_this_audit_leaves_undecided = 2
+open_questions_closed_since_this_file_was_written = 1
+assumption_occurrences = 56
+assumption_files = 14
+assumption_distinct_wordings = 15
+assumption_arguments_offered = 0
+section_files_with_a_public_domain_text_status = 134
+section_files_total = 140
+bytes_moved_by_this_audit = 0
+
+counts_note = """
+`bytes_moved_by_this_audit = 0` is written as a number so it cannot be read past.
+This file is a record about a corpus, produced without copying anything out of
+it. If a later edit makes that number nonzero it will have to say so.
+
+`assumption_arguments_offered = 0` is the finding. Not "weak arguments" and not
+"arguments this project disagrees with" -- none. Fifty-six restatements of a
+premise across fourteen files, with no statute, case, treaty, Copyright Office
+record, or policy cited for it anywhere in the corpus.
+
+`lt_hist_versions_marked_public_domain_that_this_audit_excludes = 10` is the
+disagreement measured. Add the two still undecided and the corpus's rights
+verdict is rejected or suspended on twelve of the nineteen versions where it
+made one. It reached the right conclusion on seven, and on every one of the
+seven by a method that would have been equally confident had it been wrong --
+the 1920 row's basis is bare assertion with not even an Internet Archive mark
+behind it, the 1937 Lasance row rested on a negative OCR search of the wrong
+headings, and the 2011 row was reasoned identically to both.
+
+The Lasance row is the sharpest illustration in the file, now that its answer is
+known. The corpus was RIGHT. It was right on evidence that could not have told
+it from wrong, about a book it had also misdated by eighteen years. A correct
+conclusion held for no reason is not knowledge, and this is what it looks like
+when it happens to survive checking.
+
+`versions_with_a_printed_notice_in_lt_hists_own_downloads = 4` is the cheapest
+check nobody ran. Four claimants' notices sat in files the corpus had already
+downloaded, at lines 15, 70, 41 and 35 of their respective texts. Finding them
+required opening the front matter.
+"""
+
+# --- Corrections to the brief this record was written from ---------------------
+
+[[corrections]]
+id = "text-status-140-vs-134"
+claim = "All 140 of lt-hist's section files carry `text_status: public-domain-*`."
+finding = "134 of 140. Six do not: three `restricted-source-not-included`, one `copyrighted-source-located-not-included`, two `metadata-only` [verified]."
+effect = "None on the conclusion. The six exceptions are exactly the six versions with no bytes; all ten excluded-with-bytes versions do carry `public-domain-*`. See `[[structural_conditions]]` `text-status-may-not-travel`."
+
+[[corrections]]
+id = "assumption-count-understated"
+claim = "Stated 12+ times across 5 files in 5 wordings."
+finding = "56 occurrences across 14 files in 15 distinct surface wordings [verified]."
+effect = "Strengthens the finding. The stated floor holds."
+
+[[corrections]]
+id = "notice-line-numbers"
+claim = "ICELRomanMissal1998_Volume1A_djvu.txt:42-52; RomanMissal2011ThirdEdition_djvu.txt:34,38-39."
+finding = "1998 notice begins at line 41, not 42. 2011 LEV Latin line is 35, not 34 [verified]. The 1937 line 70 and 1972 line 15 are exact."
+effect = "None substantive; the quoted content is as described. Line numbers corrected so the citations replay."
+
+[[corrections]]
+id = "no-portion-clause-scope"
+claim = "The 2011 Missal carries \"no portion of this text may be reproduced by any means without permission in writing\"."
+finding = "It does, at lines 45-46, but as the tail of the Confraternity of Christian Doctrine's lectionary notice, governing the readings -- not as a global reservation over the book. The USCCB's separate prohibition at lines 53-56 governs the US propers [verified]."
+effect = "None on the verdict; the book carries two express prohibitions held by different bodies rather than one covering everything. Recorded precisely because a rights record that overstates its evidence is the thing this file objects to."
+
+[[corrections]]
+id = "ocr-text-only"
+claim = "OCR plain text only (no images)."
+finding = "True of the liturgical payload -- the only .svg and .png are mdBook favicons -- but `sources/downloads/latin_missal2002.pdf` is a 3,333,382-byte source PDF of the 2002 typical edition, which is on the excluded list [verified]."
+effect = "A mover told \"text only\" would not look for a binary. Named in `[corpus]`."
+
+[[corrections]]
+id = "only-substantial-pre-conciliar-english"
+claim = "The 1937 Lasance is the only substantial pre-conciliar ENGLISH text."
+finding = "The 1806 (1,463,916 bytes) and 1843 (1,721,622 bytes) are pre-conciliar, English, and admissible [verified]."
+effect = "Narrows the claim without weakening the priority. The 1937 is the only TWENTIETH-CENTURY English witness and is 2.5 times the size of the larger of the other two. It remains the highest-value open question."
+
+[[corrections]]
+id = "verification-command"
+claim = "Verify with `tools/tpt check-sources`."
+finding = "No such tool. `tpt` reports `unknown tool: check-sources`. The target is `make check-sources`, which runs `source-library validate`, two `source-inventory` checks and `source-family-migration check` [verified]."
+effect = "Verification was run as `make check-sources`. Baseline before this record: exit 0, source-library artifact=1451 corpus=5 edition=643 passage=2751 segment=62 work=486 bindings=1854."

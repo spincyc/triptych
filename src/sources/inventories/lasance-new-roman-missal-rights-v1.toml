@@ -1,0 +1,793 @@
+# Whether Lasance and Walsh's The New Roman Missal may be published here,
+# settled once so that it is not settled again.
+#
+# This file exists because the question was live in three places at once and
+# answered in none of them: `lt-hist-rights-audit-v1.toml` recorded it as the
+# open question `lasance-renewal` and called it "THE HIGHEST-VALUE DECISION IN
+# THE FILE"; the sibling corpus at ~/git/lt-hist asserted the answer 56 times in
+# 15 wordings without arguing it once; and this repository's own guidance had
+# nothing. guidance/sources.md is explicit that a rights position stated only in
+# prose, in three places, in three wordings, is three positions. What follows is
+# the position, the record it rests on, the controls that make a negative
+# meaningful, what is NOT freed, and what would overturn it.
+#
+# It is not legal advice, it is not an opinion of counsel, and it binds nobody
+# outside this repository. It is the project's own reading, held to the same
+# standard as any other claim here. Where it states a proposition of law it
+# states the jurisdiction, and the jurisdiction throughout is the United States.
+
+rights_schema = 1
+record_type = "lasance-new-roman-missal-rights"
+recorded_on = "2026-08-01"
+jurisdiction = "United States"
+closes_open_question = "lasance-renewal, src/sources/inventories/lt-hist-rights-audit-v1.toml"
+
+holding = """
+The New Roman Missal of F. X. Lasance and Francis Augustine Walsh is in the
+public domain in the United States, in both of its registered editions, because
+the copyright in neither was renewed in its twenty-eighth year. The 1937 first
+edition was registered A 110108 on 15 July 1937 and its renewal window closed on
+15 July 1965 unused. The 1945 revised edition was registered A 192159 on
+1 November 1945 and its renewal window closed on 1 November 1973 unused.
+
+The finding is established at REGISTRATION-NUMBER level in the Copyright
+Office's own published record, not by a title search, and it carries positive
+controls: the same mechanical search that returns nothing for these two numbers
+returns renewals of registrations made on the identical day and at adjacent
+numbers. A negative without controls is indistinguishable from a bad search,
+which is the exact failure mode of the earlier attempt this record supersedes.
+
+Two things are NOT freed and must travel with any use of this text. The appendix
+at pages 1298a-1298n of the local artifact is later matter, first published about
+1955 under no registration this record could find, and is EXCLUDED. And other
+Lasance titles WERE renewed -- The New Missal for Every Day is a different book
+and is not free. See `[not_freed]`.
+"""
+
+# --- Evidence levels ----------------------------------------------------------
+
+[evidence_levels]
+levels = """
+The classes `missal-acquisition-audit-v1.toml` fixed, used identically here.
+
+  [verified]  Read here, on 2026-08-01, from the bytes named -- a corpus file
+              downloaded to a scratch directory at the URL given, or a file on
+              this machine at the path and line given. Reproducible.
+  [sourced]   Read from an external document cited by URL, not independently
+              re-derived here.
+  [recorded]  Taken from a record already in this repository, cited by path and
+              line. Not re-verified here unless the row says so.
+
+Nothing below is asserted from recall, and nothing carries an evidence level
+this lane did not personally reach. Where the research brief that commissioned
+this record stated something the corpora did not support, the brief is corrected
+and the correction is in `[[corrections]]` rather than quietly dropped. Three
+corrections were needed and one of them reverses a stated disposition.
+"""
+
+# --- What was searched, and where it came from --------------------------------
+
+[corpora]
+note = """
+Four independent bodies of record were used. Every count below was taken from
+the bytes on this machine on 2026-08-01, not from any corpus's own description
+of itself. The corpora were fetched into a scratch directory; NOTHING was added
+to this repository, and no byte was moved out of ~/git/lt-hist.
+"""
+
+[corpora.cce_registrations]
+what = "The Copyright Office's Catalog of Copyright Entries, registration side, as marked-up XML derived from the Internet Archive scans."
+volumes_used = [
+  "New Series vol. 33 (1936), Part 1 Group 1, Books",
+  "New Series vol. 34 (1937), Part 1 Group 1, Books -- source archive.org/stream/catalogofcopyrig341lib",
+  "New Series vol. 39 (1942), Part 1 Group 1, Books",
+  "New Series vol. 42 (1945), Part 1 Group 1, Books -- source archive.org/stream/catalogofcopyrig42libr",
+  "New Series vol. 43 (1946), Part 1 Group 1, Books",
+]
+role = "Establishes what was registered, by whom, on what date, at what page. This is the affirmative half; the renewal corpora supply the negative half."
+evidence = "verified"
+
+[corpora.stanford]
+what = "The Stanford Copyright Renewal Database, dump of 27 April 2017 (20170427-copyright-renewals-records.csv)."
+records = 246448
+records_basis = "Counted here: 246,448 data rows [verified]."
+filing_years = "246,437 of the 246,448 carry a renewal year in 1950-1992, and the bulk sits in 1950-1991. Eleven rows fall outside: one 1935, three 1943, five 1993, two 1995 [verified]."
+publication_years = "Original-registration dates carry two-digit years 23 through 63 continuously, plus two strays at 67 and 77 [verified]."
+role = "Book renewals of the period in which a 1937 registration had to be renewed."
+caveat = """
+Stanford's own web interface could not be used: exhibits.stanford.edu returns a
+CAPTCHA challenge to a programmatic fetch [verified, 2026-08-01]. The dump was
+searched instead, which is the stronger route anyway -- a full-file search cannot
+be defeated by a query form's matching rules.
+"""
+evidence = "verified"
+
+[corpora.nypl]
+what = "NYPL's `cce-renewals`, tab-delimited renewal records: 1950-1977 from the Project Gutenberg CCE transcriptions and 1978-2001 from the Copyright Office database."
+url = "https://github.com/NYPL/cce-renewals"
+records = 445386
+records_basis = "Counted here across 47 data files: 445,386 rows [verified]. The brief said about 445,000."
+coverage = "1950-1977 annually, then 1978-1993, 1995, 1996 and 2001 from the Copyright Office database [verified, file listing]."
+role = "All classes, not only books, and it reaches past 1977 -- which is what lets this record also dispose of the appendix's hypothetical 1983-1991 window."
+evidence = "verified"
+
+[corpora.cce_spreadsheets]
+what = "`leonardr/cce-spreadsheets`, the simplified output of the cce-python matching project: FINAL-not-renewed.tsv and FINAL-renewed.tsv."
+url = "https://github.com/leonardr/cce-spreadsheets"
+role = "A pre-computed registration-to-renewal join. Used as corroboration, never as the primary evidence, because its own README warns that registration IDs were reused and that a match may be a collision. That warning turned out to matter twice -- see `[[corrections]]` `a5373-disposition` and `[the_1942_benziger]`."
+evidence = "verified"
+
+[corpora.cce_renewal_ocr]
+what = "Raw OCR of the four Catalog of Copyright Entries volumes that cover the 1937 registration's renewal window."
+volumes = [
+  "Third Series vol. 18, Part 1, Number 1 -- Books and Pamphlets, January-June 1964 (archive.org catalogofcopyrig31811libr)",
+  "Third Series vol. 18, Part 1, Number 2 -- Books and Pamphlets, July-December 1964 (archive.org catalogofcopyrig31812libr)",
+  "Third Series vol. 19, Part 1, Number 1 -- Books and Pamphlets, January-June 1965 (archive.org catalogofcopy19653191lib)",
+  "Third Series vol. 19, Part 1, Number 2 -- Books and Pamphlets, July-December 1965 (archive.org catalogofcopy19653191libr)",
+]
+volumes_basis = "Each volume's series, volume, part, number and covered months were read from its own title pages in the OCR, not assumed from the Internet Archive identifier [verified]."
+role = "The unindexed original. It is what the positive controls are drawn from, and it is the layer at which an OCR miss would hide -- so the controls are drawn from the same layer as the negative."
+evidence = "verified"
+
+# --- The two registrations ----------------------------------------------------
+
+[[registrations]]
+id = "first-edition-1937"
+regnum = "A 110108"
+copyright_date = "1937-07-15"
+claimant = "Benziger brothers, New York, Cincinnati [etc.]"
+lccn = "37-23958"
+citation = "CCE New Series vol. 34 (1937), Part 1 Group 1 (Books), p. 1396"
+entry_as_printed = """
+Catholic church. Liturgy and ritual. Missal. English. The new Roman missal in
+Latin and English, by Rev. F. X. Lasance ... and Rev. Francis Augustine Walsh
+... with an illustrated study plan, "Read mass with the priest", by Rev. William
+R. Kelly ... to which is added a supplement comprising an explanation of; "The
+ecclesiastical year and the sacred liturgy"; "Short accounts of certain feasts
+and brief lives of the saints" contained in this missal, a "Glossary of
+liturgical terms," with a "Description of the symbolic representations" and a
+collection of "Communion and other prayers for private devotion". New York,
+Cincinnati [etc.] Benziger brothers, 1937. (c) July 15, 1937; 2c. Sept. 27; aff.
+Oct. 2; A 110108; Benziger bros. (37-23958)
+"""
+renewal_window = "15 July 1964 to 15 July 1965, being the twenty-eighth year of the original term under the 1909 Act."
+renewal_found = false
+evidence = "verified"
+note = """
+READ THE HEADING, BECAUSE IT IS WHY THE EARLIER SEARCH FAILED. This entry is
+filed under the corporate heading "Catholic church. Liturgy and ritual.", not
+under Lasance. The derived spreadsheet carries it with the title field "Liturgy
+and ritual" and Lasance only in the author field [verified]. A search on the
+words "New Roman Missal" as a TITLE misses it outright. lt-hist's attempt --
+"OCR searches of the 1964, 1965, and 1966 Catalog of Copyright Entries
+book-renewal volumes found no hit for 'Lasance' or 'New Roman Missal'"
+[recorded, lt-hist-rights-audit-v1.toml] -- searched on exactly the two strings
+the catalogue does not file this book under. It reached the right answer by a
+method that could not have distinguished it from the wrong one.
+
+Note also that Kelly's study plan is INSIDE this registration, named in the
+entry. That matters to `[layers_freed]`.
+"""
+
+[[registrations]]
+id = "revised-edition-1945"
+regnum = "A 192159"
+copyright_date = "1945-11-01"
+claimant = "Benziger bros., inc., New York"
+citation = "CCE New Series vol. 42 (1945), Part 1 Group 1 (Books), p. 307"
+entry_as_printed = """
+Lasance, F. X. The new Roman missal in Latin and English, by F. X. Lasance and
+Francis Augustine Walsh. (c) Nov. 1, 1945; A 192159; Benziger bros., inc., New
+York.
+"""
+renewal_window = "1 November 1972 to 1 November 1973."
+renewal_found = false
+evidence = "verified"
+note = """
+Filed under Lasance this time, and with no LCCN and no collation in the entry.
+The two editions are catalogued differently in the same publication, eight years
+apart, which is a second reason a single search strategy over this title was
+never going to be sound.
+
+A new registration on a revised edition would in any event have protected only
+the new matter in the revision; the 1937 text's own term ran from 1937. Both
+terms lapsed, so the point does not have to be worked out.
+"""
+
+# --- The search, and its result -----------------------------------------------
+
+[the_renewal_search]
+question = "Was the copyright in either edition renewed?"
+answer = "No. Four corpora, searched by registration number, by author, by title and by claimant, return nothing."
+by_registration_number = """
+The decisive search, because it is the one a cataloguing heading cannot defeat.
+The bare strings "110108" and "192159" were searched, not "A 110108" -- so a
+spacing or class-prefix variation could not produce a false negative.
+
+  Stanford dump, 246,448 rows            0 hits for either string [verified]
+  NYPL cce-renewals, 445,386 rows        0 hits for either string [verified]
+  CCE OCR, four volumes 1964-1965        0 hits for either string [verified]
+
+`leonardr/cce-spreadsheets` places BOTH registrations in FINAL-not-renewed.tsv
+with disposition "Not renewed." and neither appears anywhere in
+FINAL-renewed.tsv [verified]:
+
+  line 227262  Liturgy and ritual | Catholic church, Rev. F. X. Lasance, Rev.
+               Francis Augustine Walsh | A110108 | Benziger brothers, Benziger
+               bros. | New York, Cincinnati | Not renewed.
+  line 504686  The new Roman missal in Latin and English | Lasance, F. X.,
+               F. X. Lasance, Francis Augustine Walsh | A192159 | Benziger
+               bros., inc. | New York | Not renewed.
+"""
+by_author_and_title = """
+Corroborating, and useful because it shows the search was capable of finding
+Lasance material when Lasance material existed.
+
+  Stanford: 15 rows match "Lasance" case-insensitively, of which 14 are
+  distinct renewal records. NYPL: 15 renewal records naming Lasance. NOT ONE of
+  them is The New Roman Missal, and the string "new Roman missal" returns zero
+  rows across the whole NYPL corpus, 1950-2001 [verified].
+
+  The string "Francis Augustine Walsh" returns zero rows across the whole NYPL
+  corpus [verified]. Walsh's own name never appears in a renewal.
+
+  In the four CCE renewal volumes covering the window, "Lasance" returns zero
+  hits case-insensitively in all four [verified] -- which reproduces lt-hist's
+  result on lt-hist's own method, and is the reason that method proves nothing
+  by itself.
+"""
+by_claimant = """
+171 renewal records in the NYPL corpus name Benziger as claimant [verified].
+Their distribution by filing year is set out in `[the_publishers_programme]`,
+and it is the honest weakness in this record rather than a support for it.
+"""
+
+# --- The controls that make the negative mean something -----------------------
+
+[positive_controls]
+why = """
+THIS IS THE PART THAT DISTINGUISHES THIS RECORD FROM THE ONE IT SUPERSEDES. An
+OCR search of dense small-type multi-column print fails silently: a miss on a
+number returns exactly what a genuine absence returns. So the same search, run
+the same way, over the same bytes, was pointed at registrations that ARE known
+to have been renewed. If it finds those and not this one, the negative is
+evidence. If it found nothing at all, it would be noise.
+
+All three controls were retrieved from Third Series vol. 18, Part 1, Number 2 --
+Books and Pamphlets, July-December 1964 -- which is precisely the volume in
+which a renewal of A 110108 filed at the earliest opportunity would have been
+printed.
+"""
+
+[[positive_controls.control]]
+kind = "same registration day"
+registration = "A 108209, 15 July 1937"
+renewal = "R341887, 22 July 1964"
+as_printed = "DAVIS, CLYDE BRION. The anointed. (c) 15Jul37; A108209. David B. Davis (C); 22Jul64; R341887."
+located = "catalogofcopyrig31812libr.txt line 387194-387196"
+evidence = "verified"
+
+[[positive_controls.control]]
+kind = "same registration day"
+registration = "A 109027, 15 July 1937"
+renewal = "R344660, 11 September 1964"
+as_printed = "MONTGOMERY, RUTHERFORD. Yellow Eyes. Illustrated by L. D. Cram. (c) 15Jul37; A109027. Rutherford Montgomery (A); 11Sep64; R344660."
+located = "catalogofcopyrig31812libr.txt line 400866-400868"
+evidence = "verified"
+
+[[positive_controls.control]]
+kind = "adjacent registration number, different day"
+registration = "A 110619, 16 September 1937"
+renewal = "R346639, 15 October 1964"
+as_printed = "AIGLER, RALPH W. Cases on the law of negotiable paper and banking. (American casebook series, Warren A. Seavey, general editor) (c) 16Sep37; A110619. West Pub. Co. (PWH); 15Oct64; R346639."
+located = "catalogofcopyrig31812libr.txt line 379190-379193"
+note = "Adjacent in number to A 110108, five hundred and eleven registrations away, but registered two months later. It controls for the number range, not for the day; the first two control for the day."
+evidence = "verified"
+
+[positive_controls.reading]
+text = """
+Two registrations made on the very day A 110108 was made, and one made 511
+numbers above it, are all retrievable from the OCR by number. A 110108 is not.
+That is what makes "no renewal" a finding rather than a failed search.
+"""
+
+# --- The honest caveat, which is not omitted ----------------------------------
+
+[the_publishers_programme]
+what_it_would_have_shown = """
+The strongest form of a non-renewal argument is a publisher who plainly was
+renewing, title by title, in the relevant years, and who visibly did not renew
+this one. Benziger renewed Lasance titles systematically. Among 15 Lasance
+renewals in the NYPL corpus [verified]:
+
+  R63317   1950-06-19  Holy souls book                 A677977, 1922
+  R74070   1951-02-09  My God and my all               A698801, 1923
+  R83896   1951-10-01  Our Lady book                   A792096, 1924
+  R85220   1951-10-29  The new missal for every day     A792943, 1924
+  R101887  1952-10-31  New missal for every day, rev.   A822299, 1925
+  R101895  1952-10-31  Let us pray                      A829379, 1925
+  R129414  1954-04-28  Lift up your hearts              A958277, 1926
+  R188970  1957-04-02  Come Holy Spirit                 AA32477, 1929
+  R211842  1958-03-31  Sweet Sacrament, we Thee adore   A36356, 1930
+  R224775  1958-11-07  Let us go to Jesus               A46349, 1951
+  R247840  1959-12-23  The new missal for every day     A58107, 1932
+  R257384  1960-05-23  Road to happiness                A62537, 1933
+  R283542  1961-10-17  Novenas ... Holy Ghost           AA159718, 1934
+  R285774  1961-11-27  Holiness and happiness           A78223, 1934
+  R311234  1963-02-27  Self conquest                    A121510, 1936
+
+Self conquest is the closest analogue: a 1936 Lasance registration, renewed by
+Benziger as proprietor on 27 February 1963 [verified, NYPL 1963-1.tsv line 1648,
+CCE Third Series vol. 17 Part 1 no. 1 p. 959]. A 1936 registration renewed and a
+1937 registration not renewed, by the same publisher, on the same author, would
+be a visible choice.
+"""
+but = """
+IT IS NOT A VISIBLE CHOICE, AND THIS RECORD SAYS SO RATHER THAN LEAVING IT OUT.
+Benziger's renewal filings, counted by year over the whole NYPL corpus
+[verified], are:
+
+  1950  10    1955  16    1960  11    1965   0    1970   0    1975   2
+  1951  17    1956   2    1961  12    1966   0    1971   0    1976   1
+  1952  19    1957   9    1962   2    1967   0    1972   0    1977   0
+  1953   0    1958  28    1963   4    1968   0    1973   0
+  1954  23    1959  10    1964   0    1969   4    1974   0
+
+Benziger filed ZERO renewals in 1964 through 1968. The 1937 edition's window
+falls entirely inside that gap. So this title's absence sits inside a hole in
+the publisher's own programme rather than beside a decision to renew its
+neighbours, and the batch inference is correspondingly weak.
+
+The legal conclusion is untouched. A lapsed renewal programme produces
+public-domain works exactly as surely as a decision does; the Copyright Act
+attached the consequence to the absence of a filing, not to the state of mind
+behind it. What is weakened is the rhetorical support, and this record does not
+help itself to support it does not have.
+"""
+and_the_second_window = """
+The 1945 edition had a wholly separate window, 1 November 1972 to 1 November
+1973, and it was missed too. That is a second independent failure to renew, at a
+different date, on a different registration.
+
+CORRECTING THE BRIEF, AGAINST THIS RECORD'S OWN INTEREST. The brief said the
+1972-73 window fell "in a period when Benziger WAS filing again". It did not.
+Benziger's four 1969 filings were all made on a single day, 14 May 1969, all on
+1941 registrations; the corpus then records nothing from Benziger in 1970, 1971,
+1972, 1973 or 1974, and only three more ever -- the Summa theologica volumes in
+1975 and 1976 [verified]. Both windows therefore fall in quiet stretches. The
+two failures remain independent of one another and remain dispositive; they are
+not two instances of a publisher choosing.
+"""
+evidence = "verified"
+
+# --- What is deliberately NOT relied on ---------------------------------------
+
+[the_online_catalog_is_not_relied_on]
+why = """
+A negative result in the Copyright Office's online catalog would prove almost
+nothing about a 1964-65 renewal, and this record does not use one. The Office
+publishes its own digitisation progress, and the two figures that matter are
+[sourced, https://www.copyright.gov/historic-records/, fetched 2026-08-01]:
+
+  Card Catalog (1870-1977)          99% digitally available online,
+                                    22.1% SEARCHABLE IN CPRS
+  Catalog of Copyright Entries      100% digitally available online,
+                                    0% SEARCHABLE IN CPRS
+
+Zero per cent. The Catalog of Copyright Entries -- which is the publication in
+which a 1964 or 1965 book renewal was printed, and the publication this record's
+whole negative rests on -- is not searchable in the online system at all, and
+just over a fifth of the card catalog is. Anyone who searches the online catalog
+for this title, finds nothing, and reports the work free has produced no
+evidence whatever. That is recorded here so the negative in this file is not
+mistaken for that one.
+"""
+what_this_record_did_instead = "Searched the printed record itself, in four independent transcriptions and one raw OCR layer, at the level of the registration number, with positive controls drawn from the same layer."
+the_residual_repository = """
+The Virtual Card Catalog is the one repository this record could not search
+exhaustively. It is an image browse over roughly 41.5 million scanned cards with
+no programmatic query interface, so it cannot be swept the way the corpora above
+were swept [sourced]. If a renewal exists that every transcription above missed,
+that is where it would be. This record does not claim to have excluded it; it
+claims that five independent routes through the published record found nothing
+while demonstrably being able to find its neighbours.
+"""
+
+# --- The local artifact is misidentified --------------------------------------
+
+[the_local_artifact]
+path = "/home/ksh/git/lt-hist/sources/downloads/LasanceNewRomanMissal1937_djvu.txt"
+size_bytes = 4384495
+lines = 199051
+claim_on_its_face = "The filename, and lt-hist's version id `1937-lasance-new-roman-missal-english`, assert a 1937 printing."
+finding = "IT IS NOT A 1937 PRINTING. It is a printing of about 1955-56 of the 1945 edition, carrying a post-1954 appendix, mislabelled by the uploader."
+the_evidence = """
+Four facts, all read from the bytes on this machine [verified]. No byte was
+moved out of ~/git/lt-hist to establish them.
+
+  1.  Line 140,861 carries, under the heading "Appendix" at line 140,857:
+      "These feasts, promulgated by His Holiness Pope Pius XII, are additions to
+      the 1945 Copyright edition of the Fr. LasaNcE New Roman Missat taken
+      directly from the Fr. LAsaNcE New ROMAN Missats published subsequently to
+      the 1945 edition."
+      The book identifies its own base text as the 1945 edition, in terms.
+
+  2.  The appendix runs pages 1298a through 1298n, page marks at lines 140854
+      to 141776, and its contents are St Frances Xavier Cabrini (Dec. 22),
+      St Isidore the Farmer (Mar. 22), the Blessed Virgin Mary Queen (May 31)
+      and St Pius X (Sept. 3).
+
+  3.  Two of those four are post-1954. Pius X was canonised in 1954, and the
+      feast of the Queenship of the Blessed Virgin Mary was instituted in
+      October 1954 with 31 May as its day -- which is the day the appendix
+      prints. The appendix therefore cannot have been set before late 1954.
+
+  4.  The BODY is pre-1955. Holy Saturday carries TWELVE prophecies -- "ing
+      twelve prophecies in a low voice" at line 52179, Prophecy 1 through
+      Prophecy 12 at lines 52185 to 54629 -- and the renewal of baptismal
+      promises, introduced by the 1955 restored Vigil, does not occur anywhere
+      in the file. The 1955 reform cut the prophecies to four and added the
+      renewal. So the body was not reset after 1955.
+
+  Front matter at line 70 reads "Copyright, 1936, by Benriger Brothers" -- OCR
+  of Benziger -- which is what lt-hist read and is the notice of an earlier
+  copyright leaf carried forward, not a date for this printing.
+"""
+effect_on_the_rights_conclusion = "None. Both registered editions are unrenewed, so it does not matter which of them a given printing descends from. The misidentification matters for citation and for the appendix exclusion, not for the verdict."
+effect_on_anything_that_cites_it = """
+CONSEQUENTIAL AND SEPARATE. Anything in this repository or in lt-hist that cites
+this file as a 1937 witness is citing it wrongly. It is a witness to the 1945
+edition as reprinted about 1955-56. lt-hist additionally wrote
+`text_status: public-domain-ocr-english` across all eleven of its section files
+on the strength of a search that could not have been sound [recorded,
+lt-hist-rights-audit-v1.toml]; the conclusion happens to be right and the ground
+was not, and `text-status-may-not-travel` in that file forbids the field
+crossing into this repository even now that the conclusion is established.
+"""
+evidence = "verified"
+
+# --- The residual gap, recorded as an exclusion -------------------------------
+
+[the_appendix_exclusion]
+what = "Pages 1298a-1298n of the local artifact: the four post-1954 feasts, their propers and their notes."
+disposition = "EXCLUDED from any publication basis until the printing is dated from a physical copy."
+why = """
+This is new matter, first published after October 1954, and no registration for
+it was found. Searching the 1923-63 registration corpus and the whole renewal
+corpus turns up no Benziger or Lasance registration of The New Roman Missal
+after A 192159, and no renewal naming Lasance anywhere in the 1978-2001 files
+[verified].
+
+That leaves two branches and this record cannot choose between them from the
+text:
+
+  If first published 1955-1963, its own renewal window fell in 1983-1991. The
+  NYPL corpus covers those years from the Copyright Office database, and it
+  contains no Lasance renewal at all after 1963 [verified]. On that branch the
+  appendix is public domain too.
+
+  If first published 1964 or later, renewal became automatic and it would be
+  protected for 95 years from publication -- to the end of 2059 at the earliest.
+
+Internal evidence puts it at 1955-56: it prints two feasts of late 1954 and its
+body was not reset for the 1955 Holy Week reform. That is an inference from the
+text, not a record, and this project does not convert an inference into a rights
+basis. The whole point of this file is that a conclusion without a record is the
+thing being corrected.
+"""
+what_would_close_it = "A physical copy, or a scan of a title page or copyright leaf, giving the printing's own date. Fourteen pages of a 1,298-page book are at stake; the exclusion costs almost nothing and closing it is not urgent."
+evidence = "verified"
+
+# --- What is freed ------------------------------------------------------------
+
+[layers_freed]
+note = "Rights are recorded per layer, as guidance/sources.md requires, because a book like this is four or five works bound together and they do not all have the same history."
+
+[[layers_freed.layer]]
+id = "english-translation"
+what = "The English of the Mass and of the propers -- the valuable layer, and the reason this decision was worth making."
+basis = "Inside A 110108 and A 192159, both unrenewed. Public domain in the United States."
+why_it_matters = "It is the only twentieth-century English witness this project has below the postconciliar line: the only English rendering of the recension the 1962 books belong to, in the English of the century that used them [recorded, lt-hist-rights-audit-v1.toml]. Everything else English in that corpus is an 1806 or 1843 lay missal of the older recension, or an ICEL text nobody may publish."
+
+[[layers_freed.layer]]
+id = "devotional-and-instructional-matter"
+what = "Lasance's and Walsh's own prefaces, instructions, meditations, glossary of liturgical terms, saints' lives and prayers for private devotion -- the material the 1937 registration entry itemises at length."
+basis = "Inside the same two unrenewed registrations."
+
+[[layers_freed.layer]]
+id = "kelly-study-plan-and-plates"
+what = "William R. Kelly's illustrated study plan 'Read Mass with the Priest', and the illustration plates."
+basis = """
+Named inside A 110108 itself, so it falls with the missal. It is ALSO
+independently unrenewed on its own registrations: A 101487, The Sunday Missal,
+whose CCE title itemises the Kelly supplement and the mass pictures, and
+A 222599, "The Sunday missal. With supplement 'Read Mass with the priest'",
+authors LASANCE, F. X., W. R. Kelly. Both carry disposition "Not renewed." and
+neither appears in FINAL-renewed.tsv [verified].
+"""
+not_verified_here = "The brief dated A 101487 to 16 September 1936. This lane did not confirm that date: the spreadsheet rows carry no registration date and the 1936 registration volume was not opened for it. The date is unrecorded here rather than restated."
+
+[[layers_freed.layer]]
+id = "latin-missale-romanum"
+what = "The Latin of the Missale Romanum printed opposite the English."
+basis = "Clear on its own age, independently of any renewal question: the text is that of the Tridentine recension as revised through Benedict XV, and this repository's line for works first published abroad is before 1931 [recorded, guidance/missals.md]. Nothing in this record is needed for it, and nothing in this record disturbs it."
+caveat = "THAT LINE GOES STALE EVERY JANUARY [recorded, guidance/missals.md:257]. Do not take 'pre-1931' from this file as a standing rule."
+
+[authors]
+lasance = "Francis Xavier Lasance, 1860 - 11 December 1946 [sourced]."
+walsh = "Francis Augustine Walsh, 1884 - 1938 [sourced, the Library of Congress name-authority form 'Walsh, Francis Augustine, 1884-1938']. The brief gave 12 August 1938; this lane could not confirm the day and records only the year."
+why_it_is_here = """
+Both authors were dead before the 1964 window opened, so the renewal right did
+not lie with them or fall to be exercised by them. On a composite work made for
+or acquired by a publisher, and on this record's face, the renewal fell to
+Benziger Brothers as proprietor -- which is how Benziger is recorded as claimant
+(PWH) on every one of the fifteen Lasance renewals it did file. Benziger did not
+file for this one. There is no surviving author or heir whose separate right
+might have been exercised and gone unrecorded under a different heading.
+"""
+
+# --- What is NOT freed --------------------------------------------------------
+
+[not_freed]
+warning = """
+RECORDED EXPLICITLY SO A DOWNSTREAM EDITOR DOES NOT CONFLATE THE TITLES. Lasance
+wrote thirty-nine books and Benziger renewed a good many of them. "A Lasance
+missal is public domain" is FALSE as a general proposition and this record must
+not be read as establishing it.
+"""
+
+[[not_freed.item]]
+what = "The New Missal for Every Day -- a DIFFERENT book, and it was renewed."
+renewals = """
+Three of them, all verified in the NYPL corpus [verified]:
+
+  R85220   29 Oct 1951  registration A792943, 7 Jun 1924, Benziger Bros., inc.
+                        (PWH) -- "The new missal for every day; with introd.,
+                        notes, and a book of prayer, by F. X. Lasance"
+  R101887  31 Oct 1952  registration A822299, 2 Mar 1925, on NEW MATTER --
+                        "The new missal for every day. Rev. student's ed. by
+                        William R. Kelly"
+  R247840  23 Dec 1959  registration A58107, 4 Nov 1932 -- "The new missal for
+                        every day; a complete missal in English. Rev."
+"""
+the_trap = """
+The titles are one word apart. Both are Lasance, both are Benziger, both are
+hand missals, and the 1925 revision even carries the same William R. Kelly whose
+study plan is free inside The NEW ROMAN Missal. Anyone matching on 'Lasance
+missal' will collide with these three, and they run in the opposite direction.
+"""
+
+[[not_freed.item]]
+what = "The appendix at pages 1298a-1298n."
+reason = "See `[the_appendix_exclusion]`. Undated new matter, no registration found, one branch of which would be protected to 2059 or later."
+
+[[not_freed.item]]
+what = "Any other Lasance or Benziger title, on the strength of this record."
+reason = "Rights are recorded per artifact. This record covers A 110108 and A 192159 and, separately, the 1942 Benziger Missale Romanum at `[the_1942_benziger]`. It covers nothing else. Fifteen Benziger-filed Lasance renewals are listed above precisely so that the boundary is visible."
+
+# --- The scan and its OCR text layer ------------------------------------------
+
+[the_ocr_text_layer]
+question = "Does the scan, or its machine-generated text layer, carry a copyright of its own?"
+answer = "No."
+reasoning = """
+A faithful mechanical reproduction of a public-domain work is not original
+authorship: Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y.
+1999). Machine OCR adds no human authorship on top of that -- it is a
+transcription performed by a program, and there is no author to hold a right.
+So there is no new layer between the reader and the underlying text.
+"""
+the_repository_already_reasons_this_way = """
+This is the SAME reasoning already applied here to the CMAA 1962 facsimile
+[recorded, guidance/missals.md:325-346], and the comparison is worth drawing
+because the two cases end differently.
+
+There, the scan argument stood ALONE. It disposed of a licence somebody had
+applied to the bytes -- "it confers nothing" -- and left the underlying question
+exactly where it was, which is why `unresolved` on that artifact stands and is
+correct: absence of a notice is not a grant.
+
+Here the underlying work has an affirmative basis of its own. The scan argument
+therefore completes a case instead of substituting for one. That difference is
+the whole difference, and it is why this record exists at all.
+"""
+what_it_does_not_do = """
+It does not make availability a basis. guidance/sources.md is explicit that
+online availability and successful download are insufficient, and this record
+relies on neither: it relies on two registration numbers and five searched
+corpora. An Internet Archive public-domain mark on this item would add nothing
+to this file and its absence would subtract nothing.
+"""
+
+# --- The 1942 Benziger, settled by the same method ----------------------------
+
+[the_1942_benziger]
+book = "missale-romanum-1942-benziger, Missale Romanum editio IV iuxta typicam Vaticanam, New York: Benziger Brothers"
+prior_state = """
+`unresolved` in both places that record it, for one stated reason: "Its own
+copyright line reads 1942 and 1944. A 1942 US copyright is not cleared by the
+pre-1931 rule, and no renewal search is recorded" [recorded,
+missal-acquisition-audit-v1.toml:885]; and, in prose, "The 1942 Benziger carries
+its own US copyright line and no renewal search is recorded" [recorded,
+guidance/missals.md:345].
+"""
+the_search_that_was_missing = """
+It has now been run, by the same method and over the same corpora. Benziger's
+Missale Romanum registrations of the period, with their CCE entries read here
+[verified]:
+
+  A 165097   29 May 1942   "Missale ro-manum. Editio juxta vaticanam. U. S. A.
+                           Liturgical ed."          CCE NS 39 (1942) p. 179
+  A 169238   13 Oct 1942   "Editio juxta typicam vaticanam. [Small quarto
+                           [ed. no. 4]"             CCE NS 39 (1942) p. 301
+  A 174919   1943          "Editio juxta typicam Vaticanam"   [date unverified]
+  A 180761   1944          registration entry not opened here [date unverified]
+  A 186310   22 Aug 1944   "Editio III juxta typicam Vaticanam."
+                                                    CCE NS 42 (1945) p. 45
+  A 5373     20 Oct 1945   "Editio IV juxta typicam vaticanam amplificata II
+                           ... Neo Eboraci, Bostonioe [etc.] Benziger brothers,
+                           inc. [1945]"             CCE NS 43 (1946) p. 109
+
+Five of the six -- A 165097, A 169238, A 174919, A 180761, A 186310 -- stand in
+FINAL-not-renewed.tsv with disposition "Not renewed." [verified]. None of the
+six is cited by any renewal in the Stanford dump or in the NYPL corpus
+[verified]. Benziger filed no renewal at all in 1970-1974, which is where the
+windows of the 1942 and 1943 registrations fall.
+"""
+the_sixth_registration = """
+A 5373 IS DIFFERENT AND THE BRIEF WAS WRONG ABOUT IT. It is NOT in
+FINAL-not-renewed. It sits in FINAL-renewed.tsv with disposition "Possibly
+renewed, but none of these renewals seem like a good match." [verified].
+
+The apparent match is a registration-number collision within class A: A 5373 was
+also the number of a 1929 Harper registration, renewed as R172595 on 13 June
+1956 -- "ODENCRANTZ, LOUISE C. The social worker in family, medical and
+psychiatric social work. (c) 15Feb29; A5373. Louise C. Odencrantz (A); 13Jun56;
+R172595." [verified, NYPL 1956-1.tsv line 1489]. That renewal is a different
+work by a different claimant on a registration made sixteen years earlier. It is
+not a renewal of the Benziger missal, and the spreadsheet's own README warns
+that exactly this happens.
+
+So A 5373 is unrenewed on the evidence, but it reaches that state through a
+disambiguation rather than through a clean lookup, and this record says which.
+"""
+the_other_collision = """
+A 169238 has a collision too, and the brief named it correctly: AA 169238 is
+Rossini's Canticum novum, renewed R298828 on 20 July 1962 [verified, NYPL
+1962-1.tsv line 4754]. Class AA, not class A -- a different registration series.
+
+There is a SECOND false-positive route the brief did not name: R169238 is itself
+a renewal number, belonging to King's Trends in Philanthropy [verified, NYPL
+1956-1.tsv line 1123]. A bare string search for "169238" therefore returns two
+irrelevant hits before it returns none that matter. Recorded so the next reader
+does not mistake either for a renewal of the missal.
+"""
+verdict = """
+MOVED FROM `unresolved` TO A RENEWAL-BASED BASIS, SUBJECT TO CONFIRMATION FROM
+THE ARTIFACT'S OWN TITLE PAGE. Those words are the disposition, not a hedge
+around it.
+
+The renewal question is answered: every Benziger Missale Romanum registration of
+1942-1945 is unrenewed, and the artifact's recorded copyright line of "1942 and
+1944" corresponds to A 169238 and A 186310. What has NOT been done is opening
+the artifact's own title page and copyright leaf to confirm WHICH registration
+this scan corresponds to. Nobody has done it, this lane did not do it, and the
+identification therefore rests on a copyright line recorded elsewhere in this
+repository rather than on the book.
+
+There is a live tension in that identification which is a further reason to
+confirm it: the artifact is LABELLED "editio IV iuxta typicam Vaticanam", and
+"Editio IV ... amplificata II" is A 5373 of 1945 -- the one registration of the
+six with a collision to disambiguate -- while the recorded copyright line of
+1942 and 1944 points instead at A 169238 and A 186310. The label and the
+copyright line do not point at the same registration. Since all six are
+unrenewed the verdict is the same on every branch, which is why the basis may
+move now; but the identification is unsettled and is recorded as unsettled.
+"""
+evidence = "verified"
+
+# --- What would overturn this -------------------------------------------------
+
+[what_would_overturn_this]
+note = "Stated concretely, so that a later reader can attack this record on its own terms rather than re-deriving it."
+items = """
+  1.  A RENEWAL REGISTRATION citing A 110108 or A 192159. Any single one
+      overturns the finding for the edition it names. The most likely place for
+      one to be hiding is the Virtual Card Catalog, which could not be swept --
+      see `[the_online_catalog_is_not_relied_on]`. A renewal filed under a
+      heading none of the five routes above would reach is the only failure mode
+      this record cannot exclude, and the corporate heading "Catholic church.
+      Liturgy and ritual." is precisely the kind of heading that would do it.
+
+  2.  A THIRD REGISTRATION, later than A 192159, on a further revised edition
+      whose window fell in or after 1964, where renewal was automatic. None was
+      found in the 1923-63 corpus, but that corpus stops in 1963 and the
+      appendix proves that printings continued.
+
+  3.  EVIDENCE THAT THE APPENDIX IS 1964 OR LATER, which would not disturb the
+      two editions but would harden the exclusion at `[the_appendix_exclusion]`
+      from a precaution into a finding.
+
+  4.  A DEMONSTRATION THAT THE CONTROLS DO NOT CONTROL -- for instance, that the
+      volume in which A 108209 and A 109027 were found was indexed by a
+      different process from the pages where A 110108 would have appeared. The
+      controls were taken from the same volume and the same OCR file for exactly
+      this reason, but the argument is available and would bite if it held.
+
+  5.  A CHANGE IN LAW restoring or extending terms for unrenewed 1937 and 1945
+      United States works. Nothing of the kind is pending; recorded because a
+      rights record that lists no such condition is claiming a permanence it
+      does not have.
+
+Note what does NOT overturn it: absence from the Copyright Office online
+catalog, absence of an Internet Archive public-domain mark, presence of an
+Internet Archive mark of any kind, or the "Copyright, 1936, by Benziger
+Brothers" notice at line 70 of the local artifact. A notice establishes that a
+term began. This record establishes that it ended.
+"""
+
+# --- Corrections to the brief this record was written from ---------------------
+
+[[corrections]]
+id = "a5373-disposition"
+claim = "A 5373 (20 Oct 1945, Editio IV amplificata II) is in FINAL-not-renewed with disposition 'Not renewed.'"
+finding = "It is in FINAL-renewed.tsv with disposition 'Possibly renewed, but none of these renewals seem like a good match.' The collision is within class A -- Odencrantz, renewed R172595 -- not class AA [verified]."
+effect = "None on the 1942 Benziger verdict, which does not depend on A 5373 and which reaches the same result on every branch. Material to how the verdict is stated: five of six registrations are clean lookups and the sixth is a disambiguation. Recorded because a rights record that overstates its evidence is the defect this whole family of files exists to correct."
+
+[[corrections]]
+id = "benziger-was-filing-again"
+claim = "The 1945 edition's 1972-73 window was missed 'in a period when Benziger WAS filing again'."
+finding = "Benziger filed nothing in 1970-1974. Its four 1969 filings were all made on 14 May 1969, and only three further filings appear ever, in 1975 and 1976 [verified]."
+effect = "Weakens a rhetorical support and changes no conclusion. Both renewal windows fall in quiet stretches of the publisher's programme; the two failures to renew remain independent and remain dispositive. Corrected against this record's own interest."
+
+[[corrections]]
+id = "a169238-collision-incomplete"
+claim = "The apparent hit for A169238 is a class-AA collision (Rossini, Canticum novum)."
+finding = "True, and incomplete. R169238 is also a renewal number in its own right, for King's Trends in Philanthropy [verified]. A string search for '169238' returns two irrelevant hits, not one."
+effect = "None on the verdict. Recorded so the search replays honestly."
+
+[[corrections]]
+id = "stanford-scope"
+claim = "246,448 Class A renewal records; filings 1950-1992, publications 1923-1963."
+finding = "246,448 rows [verified]. 246,437 carry a filing year in 1950-1992 with eleven outliers -- one 1935, three 1943, five 1993, two 1995. Original-registration years run 23 through 63 with strays at 67 and 77. The OCLS column is the claimant's capacity (A, PWH, W, C, E), not the registration class, so 'Class A records' is the database's scope description rather than a field this lane could count [verified]."
+effect = "None. The stated scope holds to within eleven rows out of 246,448."
+
+[[corrections]]
+id = "walsh-death-date"
+claim = "Walsh d. 12 Aug 1938."
+finding = "The year 1938 is confirmed by the Library of Congress name-authority form 'Walsh, Francis Augustine, 1884-1938' [sourced]. The day could not be confirmed."
+effect = "None. Any date in 1938 is more than twenty-five years before the 1964 window, which is all the argument needs."
+
+# --- Counts -------------------------------------------------------------------
+
+[counts]
+registrations_established = 2
+renewals_found = 0
+corpora_searched = 5
+corpus_records_searched = 691834
+corpus_records_searched_basis = "246,448 Stanford rows plus 445,386 NYPL rows. The four CCE OCR volumes and the five registration volumes are not row-countable and are not included in the figure."
+positive_controls_retrieved = 3
+lasance_renewals_that_do_exist = 15
+benziger_renewals_in_the_corpus = 171
+benziger_renewals_filed_1964_to_1968 = 0
+benziger_renewals_filed_1970_to_1974 = 0
+benziger_missale_romanum_registrations_checked = 6
+corrections_to_the_brief = 5
+bytes_moved_from_lt_hist = 0
+bytes_added_to_this_repository_from_any_corpus = 0
+
+counts_note = """
+`renewals_found = 0` is the finding, and `positive_controls_retrieved = 3` is
+what makes it one. The two numbers have to be read together: the first alone is
+what lt-hist had, and it was worth nothing.
+
+`benziger_renewals_filed_1964_to_1968 = 0` is the caveat, written as a number so
+it cannot be read past. It is the weakest part of this record and it is recorded
+in the same place as the strongest.
+
+`bytes_moved_from_lt_hist = 0` and
+`bytes_added_to_this_repository_from_any_corpus = 0`: this is a record about
+texts, produced without copying any of them. The corpora were fetched to a
+scratch directory outside the repository and are not tracked. If a later edit
+makes either number nonzero it will have to say so.
+"""

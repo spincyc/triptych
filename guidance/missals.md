@@ -239,10 +239,12 @@ normam, et consuetudinem Hierosolymitanae Ecclesiae* [verified].
 
 ## 5. Rights: two thirds readable, fewer than half printable
 
-Twenty-three of thirty-one books are retrievable whole; fourteen may be published
+Twenty-three of thirty-one books are retrievable whole; fifteen may be published
 from. The gap is almost entirely the twentieth century. (That first figure rose
 from 22 during the audit — not because anything was published, but because two
-`not-located` verdicts were wrong. See §3.)
+`not-located` verdicts were wrong. See §3. The second rose from 14 on
+2026-08-01, when the 1942 Benziger's renewal question was answered; that
+fifteenth is conditional on a title-page confirmation named below.)
 
 **The frame this audit began with was wrong in two places, and both came in with
 the brief rather than from a source.** A dedicated rights pass could source
@@ -342,11 +344,88 @@ Three rights positions were left explicitly open rather than resolved:
   reason**: it is an assertion by someone who is neither rights holder nor
   scanner, over bytes carrying no new copyright, hosted by a body that publishes
   no notice. It confers nothing.
-- **The 1942 Benziger** carries its own US copyright line and no renewal search
-  is recorded.
+- **The 1942 Benziger — now answered, subject to one confirmation.** The renewal
+  search this entry said was missing has been run. Benziger's Missale Romanum
+  registrations of the period — **A 165097** (29 May 1942), **A 169238**
+  (13 Oct 1942, *ed. no. 4*), **A 174919** (1943), **A 180761** (1944),
+  **A 186310** (22 Aug 1944, *Editio III*) and **A 5373** (20 Oct 1945,
+  *Editio IV … amplificata II*) — are **all unrenewed**, and none is cited by any
+  renewal in either corpus searched [verified]. The artifact's own copyright line
+  of *1942 and 1944* corresponds to A 169238 and A 186310. Two caveats travel
+  with it: the apparent renewal hit on A169238 is a **class-AA collision**
+  (Rossini, *Canticum novum*) and A5373 has a class-A collision of its own
+  (Odencrantz, renewed R172595), so both are disambiguated by hand; and **nobody
+  has opened the artifact's own title page** to confirm which registration it
+  corresponds to — the label *editio IV* and the copyright line point at
+  different ones. The basis moves from `unresolved` to non-renewal **subject to
+  that confirmation**, because all six branches reach the same verdict. See
+  `src/sources/inventories/lasance-new-roman-missal-rights-v1.toml`.
 - **The 1936 Premonstratensian** has Internet Archive metadata with no publisher,
   no date field and no copyright statement [verified] — nothing established in
   either direction, which is a different thing from being free.
+
+### The Lasance missal is free, and the scan argument now completes a case
+
+The one open rights question the lt-hist audit called *the highest-value decision
+in the file* is closed, and it is closed **affirmatively**:
+`src/sources/inventories/lasance-new-roman-missal-rights-v1.toml`.
+
+Lasance and Walsh's *The New Roman Missal* is **public domain in the United
+States by failure to renew**, established at registration-number level in the
+Copyright Office's own published record. Registration **A 110108**, copyright
+15 July 1937, Benziger Brothers, *CCE* New Series vol. 34 (1937) p. 1396, LCCN
+37-23958 — renewal window closed 15 July 1965 unused. Registration **A 192159**,
+copyright 1 November 1945 — window closed 1 November 1973 unused. Five bodies of
+record were searched by registration number, author, title and claimant, and all
+return nothing.
+
+**The controls are what make the negative mean anything**, and this is the part
+that separates the finding from the one it replaces. The same search over the
+same OCR retrieves renewals of registrations made on the *identical day*
+(A 108209 → R341887; A 109027 → R344660) and at an adjacent number
+(A 110619 → R346639) [verified]. lt-hist's earlier attempt searched the strings
+*Lasance* and *New Roman Missal* — and the 1937 registration is filed under the
+corporate heading *Catholic church. Liturgy and ritual.*, which neither string
+reaches. It got the right answer by a method that could not have distinguished it
+from the wrong one.
+
+Three things must be recorded beside the verdict rather than dropped:
+
+- **An honest weakness.** Benziger filed **zero** renewals in 1964–1968, so this
+  title's absence sits inside a hole in the publisher's own programme rather than
+  beside a visible decision to renew its neighbours [verified]. A lapsed
+  programme produces public-domain works as surely as a decision does — the
+  legal conclusion is untouched — but the batch inference is weak and is not
+  leaned on. The 1945 edition's separate 1972–73 window was missed too, in
+  another quiet stretch.
+- **A misidentified artifact.** The local OCR labelled 1937 is **not a 1937
+  printing**: at line 140,861 it carries an appendix (pp. 1298a–1298n) declaring
+  its feasts *additions to the 1945 Copyright edition*, printing St Pius X
+  (canonised 1954) and the Queenship of the BVM (instituted October 1954), while
+  the body still has the **pre-1955** Holy Week — twelve prophecies, no renewal
+  of baptismal promises [verified]. It is a printing of c. 1955–56 of the 1945
+  edition. The verdict is unaffected; anything citing it as a 1937 witness is
+  wrong.
+- **One exclusion and one trap.** Pages 1298a–1298n are undated new matter under
+  no registration found and are **excluded** until the printing is dated from a
+  physical copy. And *The New Missal for Every Day* — one word from this title,
+  same author, same publisher — **was renewed** three times (R85220, R247840,
+  R101887) and must not be conflated with it.
+
+**A negative in the Copyright Office online catalog is expressly not relied on.**
+The Office's own progress figures are decisive against it: the *Catalog of
+Copyright Entries* is **0% searchable in CPRS** and the 1870–1977 card catalog
+**22.1%** [sourced]. Anyone who searches the online catalog, finds nothing and
+reports a work free has produced no evidence. The Virtual Card Catalog — image
+browse, no programmatic query — is the one residual repository this record could
+not sweep, and it says so.
+
+Note the relation to the CMAA facsimile above. The *Bridgeman* reasoning is the
+same: a faithful mechanical reproduction of a public-domain work carries no new
+copyright, and machine OCR adds no human authorship. The difference is that there
+the scan argument **stood alone** and left `unresolved` correctly standing, while
+here the underlying work has an affirmative basis — so the scan argument
+**completes a case** instead of substituting for one.
 
 ### `absent: icel` is right, and its stated reason is not quite
 
@@ -390,6 +469,24 @@ English `absent: icel` and registers the 2002 artifact `storage = restricted`.
 The door between the two repositories is already open — seven text layers have
 come through it. **Any future reuse of lt-hist material must re-derive rights
 rather than inherit them.**
+
+**That re-derivation has now been done, version by version, and is recorded** in
+`src/sources/inventories/lt-hist-rights-audit-v1.toml`. Of the corpus's 25
+versions, 7 are admissible — 6 on pre-1931 publication and the 1937 Lasance on
+its own renewal record, never on lt-hist's *the Internet Archive marks it public
+domain* — 14 are excluded with a named claimant and no permission, and 4 are
+held open for the maintainer. (Those figures were 6 and 5 until 2026-08-01, when
+the Lasance renewal question was closed affirmatively; see above.) Four of the
+excluded carry the claimant's own copyright notice inside the OCR lt-hist itself
+downloaded. The assumption above is restated 56 times in 15 wordings across 14
+files and argued nowhere. Two things in that record bind any later fold-in: the
+`text_status: public-domain-*` front matter on 134 of 140 section files must not
+travel, not even for the admissible seven, and the postconciliar Holy See Latin
+question — which governs six of the exclusions and is currently answered in prose
+in at least four places, including the stale `holy-see-post-1929` label in
+`missal-acquisition-audit-v1.toml` — belongs in one record under
+`src/sources/inventories/`, per `sources.md` §"Settle a recurring rights question
+once".
 
 ## 6. What to acquire, in order
 
