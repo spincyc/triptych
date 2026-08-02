@@ -5,10 +5,10 @@ inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:7e47ae0e09188109b2ccc0e0608304d72386224f0504a2c8c7105d94b7de9a2d"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
-canonical_catalog_snapshot = "sha256:cdc2ffedb8bd27d75ead921a583c96c6813ba0308c1d42886147b169a6bbdf5f"
+canonical_catalog_snapshot = "sha256:35e5f36990be4cac373fb94274376d6e9d99f7bfe299a6ea0d2a3837fa61c231"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:1f5cf7cb691141509185aa285489430770fc7a11e394b451b4145856f88c5c63"
+snapshot = "sha256:493e992a5326602929e7db9f4b22f111496e4a7cac2efd37368632287466e8f8"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -5721,6 +5721,27 @@ trace_patterns = ["mishnah\\.sanhedrin"]
 reviewed_on = "2026-07-31"
 membership_snapshot = "sha256:d853118f0cc8f0b2873de388fac12d9581541fba13a82792f004f65327aeb968"
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
+
+[[families]]
+id = "family.missale-bracarense.vatican-typica-1924"
+label = "Missale Bracarense, the typical edition of 1924 (the Rite of Braga)"
+kind = "work"
+source_categories = ["historical-primary", "liturgical"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact"]
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.archdiocese-of-braga.missale-bracarense.vatican-typica-1924.missale-bracarense-1924-scan-2be6474d", "artifact.archdiocese-of-braga.missale-bracarense.vatican-typica-1924.missale-bracarense-1924-text-88d4a147", "edition.archdiocese-of-braga.missale-bracarense.vatican-typica-1924", "work.archdiocese-of-braga.missale-bracarense"]
+trace_patterns = ["(?:Missale\\s+Bracarense|Missal\\s+(?:de\\s+)?Braga|Braga\\s+[Mm]issal|rito\\s+bracarense|Rite\\s+of\\s+Braga)", "archdiocese\\-of\\-braga\\.missale\\-bracarense"]
+reviewed_on = "2026-08-02"
+membership_snapshot = "sha256:219ae0093b4ebedb56baa8c0c17f7d7cc9faf2b3b52ce123f19949688146a7d7"
+notes = "THE FIRST NON-ROMAN LATIN RITE IN THIS LIBRARY, admitted on the maintainer's ruling of 2026-08-02 that the act-history scope is all Latin rites and not the Roman rite with its uses. It is a family of the WORK and not of an edition, because the work is new here: nothing of the Rite of Braga was registered before, and work.catholic-church.missale-romanum must not absorb it. `identity_gaps = [\"artifact\"]` is the whole finding of the acquisition: the 1924 edition is out of United States copyright and the only digitisation of it is a scan of a working altar book carrying at least fifteen supplement leaves dated 1925 to 21 November 1961, so both artifacts stand remote and unresolved, holding no bytes, and the stratum any given page belongs to is not yet established. src/sources/inventories/missale-bracarense-rights-v1.toml settles the rights question with its loci, the routes refused, and what would overturn it. Priority p1 because the audit ranks Braga highest of the uses and it remains the cheapest use to read -- once a leaf map separates 1924 from supplement."
 
 [[families]]
 id = "family.monumenta-germaniae-historica.clavis-canonum-statuta-ecclesiae-antiqua"

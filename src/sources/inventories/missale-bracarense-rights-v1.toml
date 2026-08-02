@@ -1,0 +1,533 @@
+# Whether the 1924 Missale Bracarense may be published here, settled once so that
+# it is not settled again -- and in particular so that the difference between the
+# EDITION and the COPY THAT WAS SCANNED is not collapsed a second time.
+#
+# This file exists because the question was about to be answered by inheritance.
+# Three records in this repository already said the Braga missal was publishable
+# on the pre-1931 United States line -- src/sources/inventories/latin-missal-acts-v1.toml
+# at the witness row 1924-missale-bracarense, src/sources/inventories/missal-acquisition-audit-v1.toml
+# at the book row missale-bracarense with `may_publish_text = "yes"`, and
+# guidance/act-histories.md at section 16, which names Braga as the first use to
+# read -- and all three were reasoning about a book published in 1924. They were
+# right about the book. The acquisition lane fetched the only digitisation any of
+# them names, read it, and found the scanned volume is that book plus at least
+# fifteen supplement leaves printed between 1925 and 21 November 1961.
+#
+# The immediate cause of this file is that the identical failure was caught the
+# same day one door down. The 1920 Missale Romanum was folded in on 2026-08-01 on
+# the pre-1931 line and withdrawn on 2026-08-02 when its appendix proved to print
+# a Mass granted to a society erected in 1970. guidance/sources.md is explicit
+# that `tracked` requires an affirmative recorded distribution basis and that
+# availability and a successful download are insufficient. What follows is the
+# position, the evidence it rests on, what was searched for and did NOT appear,
+# what is NOT freed, and what would overturn it.
+#
+# It is not legal advice, it is not an opinion of counsel, and it binds nobody
+# outside this repository. It is the project's own reading, held to the same
+# standard as any other claim here. The jurisdiction throughout is the United
+# States.
+
+rights_schema = 1
+record_type = "missale-bracarense-rights"
+recorded_on = "2026-08-02"
+jurisdiction = "United States"
+governs = [
+  "artifact.archdiocese-of-braga.missale-bracarense.vatican-typica-1924.missale-bracarense-1924-scan-2be6474d",
+  "artifact.archdiocese-of-braga.missale-bracarense.vatican-typica-1924.missale-bracarense-1924-text-88d4a147",
+  "edition.archdiocese-of-braga.missale-bracarense.vatican-typica-1924",
+]
+
+holding = """
+THE 1924 EDITION IS FREE. THE ONLY DIGITISATION OF IT IS NOT, AND THE TWO
+SENTENCES ARE BOTH TRUE AT ONCE.
+
+The Missale Bracarense promulgated by the bull Inter multiplices gravesque curas
+of 8 December 1924 and declared typical by the Sacred Congregation of Rites on
+9 December 1924 was first published at Rome in 1924. It is out of United States
+copyright: any work first published outside the United States before 1931 is,
+and 1924 clears that line by seven years. Nothing can restore it -- URAA
+restoration runs at most 95 years from publication, which for 1924 ended in 2019.
+This holds however the line moves, since the line moves later each January and
+this book only recedes from it.
+
+The one copy that has been digitised is a working altar book of a living rite. At
+least fifteen supplement leaves and gatherings are bound into it, each with its
+own approbation of the Sacred Congregation of Rites and its own Braga imprimatur,
+dated from 17 May 1925 to 21 November 1961, printing twelve feasts that did not
+exist when the Missal was promulgated -- Christ the King of 1925, St John
+Leonardi of 1938, St John de Brito of 1947, the Assumption in the Mass Signum
+magnum of 1950, St Anthony Mary Claret of 1950, the Queenship of the Blessed
+Virgin Mary and St Pius X of 1954, St Joseph the Worker of 1955, St Gregory
+Barbarigo of 1960, and three canonisations of 1925. Two of them are headed
+`3. classis`, the vocabulary of the 1960 Code of Rubrics, which appears nowhere
+else in the book. So the file is a photograph of the 1924 edition AND of matter
+first published up to thirty-seven years later, and the pre-1931 line reaches
+only the first.
+
+DISPOSITION. Both artifacts stand `remote` and `unresolved`; no byte of either is
+in Git; the bytes are recoverable from the Internet Archive and authenticated by
+sha256. Nothing of this book may be published from these files -- not the 1924
+text either, until a leaf map exists that can prove which page a given passage
+came from. That last clause is the whole practical effect of this record, and it
+is a bound on method rather than a doubt about 1924.
+"""
+
+# --- Evidence levels ----------------------------------------------------------
+
+[evidence_levels]
+levels = """
+The classes missal-acquisition-audit-v1.toml fixed, used identically here.
+
+  [verified]  Read here, on 2026-08-02, from the bytes named -- a file fetched to
+              a scratch directory at the URL given, at the line given, one-based
+              as `grep -n` counts. Reproducible.
+  [sourced]   Read from an external document cited by URL, not independently
+              re-derived here.
+  [recorded]  Taken from a record already in this repository, cited by path.
+              Not re-verified here unless the row says so.
+
+Nothing below is asserted from recall. Where a record already in this repository
+said something the bytes do not support, it is corrected in `[[corrections]]`
+rather than quietly dropped; two corrections were needed and one of them reverses
+a stated disposition.
+"""
+
+# --- What was acquired --------------------------------------------------------
+
+[the_acquisition]
+item = "https://archive.org/details/missale-bracarense-1924 -- the only Braga missal on the Internet Archive; a title-and-description search of the whole archive returns this one item and nothing else [verified]."
+recorded_url_state = "THE URL THE WITNESS ROW RECORDS IS ALIVE AND THE ITEM HAS NOT CHANGED. src/sources/inventories/latin-missal-acts-v1.toml records `PDF 176,021,172 bytes, OCR text layer 3,210,801 bytes`; the metadata API returns exactly those two sizes today, and the fetched files match the item's own sha1 digests -- a5944e3ff2039ae070bae5948e1d240a56a9949e for the text layer, 5d782a7de0df09bde3f3c99a01f44e136ec8390b for the PDF [verified]. Nothing had to be re-located and nothing is guessed."
+text_layer = "sha256 88d4a147c34ed692d9e6400abf0f1e889fe5c8606971980b7758e3f25ec1d811, 3,210,801 bytes, 132,548 LF-terminated lines, valid UTF-8, no CR bytes, no form feeds [verified]."
+page_images = "sha256 2be6474d75f495f79a74eac962355aa880d08b326915c3a3547ae7be82930841, 176,021,172 bytes, 1,210 pages at 600.9 x 925.57 points, PDF 1.7 [verified with pdfinfo]. 849 leaves carry a printed page number, the highest 827 [verified in the item's _page_numbers.json]."
+ocr_engine = "tesseract 5.3.0-6-g76ae, parameters `-l lat`, 300 ppi, detected language la at confidence 1.0000, detected script Latin at 0.9364, page_number_confidence 81 [verified at the item's metadata API]. Quality measured here by scripts/_ocr_quality.py: Latin function-word share 0.191 over 449,452 tokens, English 0.0298, classified `prose-latin` [verified]."
+container_provenance = "The PDF's own metadata names PDF24 as creator and iLovePDF as producer, created 31 January 2026, the day before the item was posted; the item credits the `Alma Bracarense` website, whose missal page publishes the same book in sections and says nothing about supplements or added Masses [sourced, https://almabracarense.wordpress.com/missale/]. So this is an uploader-assembled container over a blog's sectional scans of one physical copy, not a library facsimile, and NOBODY UPSTREAM FLAGGED THE ACCRETION."
+
+# --- The 1924 edition, which is free -------------------------------------------
+
+[the_1924_edition]
+holding = """
+Public domain in the United States, on first publication abroad before the
+pre-1931 line, and on that ground alone.
+"""
+the_line = """
+Any work first published outside the United States before 1931 is out of United
+States copyright. That is the line guidance/missals.md records from Cornell's
+public-domain chart as current on 1 January 2026 [recorded]. THE LINE MOVES EVERY
+JANUARY -- guidance/missals.md:249 says so in terms -- so it is stated here as
+DERIVED FOR CALENDAR YEAR 2026 and not as a standing rule: on 1 January 2027 it
+becomes before 1932, and a later reader must re-derive it rather than quote this
+sentence. The movement is always in this book's favour: 1924 clears the 2026 line
+by seven years and every later line by more.
+"""
+uraa_is_closed = """
+Restoration under 17 U.S.C. 104A cannot reach it. A restored copyright subsists
+for the remainder of the term the work would have had with United States
+formalities complied with, which for a work published in 1924 is 95 years from
+publication -- expired at the end of 2019. This is the same closure the 1920
+Missale Romanum record states for 1920, and it is what makes a pre-1931 date a
+conclusion rather than a presumption.
+"""
+publication_evidence = """
+The book states its own date and place. Title page, lines 33-36 of the text
+layer: `ROME` (for ROMAE), `TYPIS POLYGLOTTIS VATICANIS`, `MDCCCCXXIV`
+[verified]. Its two promulgating instruments are printed in it and both are of
+1924: the bull opening at line 43 as `nter multiplices gravesque curas` with the
+ornamental I dropped, dated at its close `sexto Idus Decembris` in the third year
+of the pontificate, and the decree headed `DECRETUM` at line 297 and dated
+`Die 9 Decembris 1924.` at line 341 [verified; the same two instruments were read
+independently by the acquisition audit on 2026-08-01, recorded].
+"""
+the_imprint_limb_is_wrong_and_it_does_not_matter = """
+Two records in this repository give a second limb: that this is `an ARCHDIOCESAN
+book rather than a Holy See imprint, so the post-1929 Holy See class does not
+reach it` [recorded, latin-missal-acts-v1.toml witness row; missal-acquisition-audit-v1.toml
+book row]. THE BOOK'S TITLE PAGE CONTRADICTS IT. It was printed at Rome by the
+Vatican Polyglot Press, and the Congregation's decree calls the edition Vaticana
+in terms -- `Vaticana hujus Missalis editio pro typica habenda est`. What is
+archdiocesan is the sollicitudo: Archbishop Manuel Vieira de Mattos procured the
+printing, and the rite is his church's. The limb is struck; see `[[corrections]]`.
+The holding does not move, because the operative limb was never the imprint but
+the year, and 1924 precedes both the pre-1931 line and the 1929 Lateran Treaty
+that the Holy See class turns on.
+"""
+
+# --- The supplement, which is not free -----------------------------------------
+
+[the_supplement]
+what_it_is = """
+The scanned volume is a 1924 book that stayed in use. Bound into it are leaves
+and gatherings issued over the following thirty-seven years, each carrying its
+own approbation and imprimatur, printing feasts instituted or canonisations made
+after the Missal was promulgated. This is the ordinary life of an altar book of a
+LIVING use, and it is exactly what makes a living use a harder acquisition than a
+dead one: nothing about the Sarum or the Mozarabic printings this project has
+looked at accretes, because nobody has added a Mass to them in four centuries.
+"""
+the_body_is_still_1924 = """
+Stated so the finding is not overread. The kalendar at lines 1400-2400 lists none
+of the later feasts; the table of movable feasts opens at 1923; the ranks in the
+body are duplex, semiduplex and simplex throughout, and `3. classis` occurs
+exactly twice in 132,548 lines, both on inserted leaves [verified]. This is not a
+late reprint wearing an old date. It is the 1924 impression with additions bound
+in, and the two strata are physically distinguishable in the book even though
+they are not distinguishable in the text layer.
+"""
+formularies = """
+Twelve, every locus a physical line of the file named by sha256 above [verified]:
+
+  106042  D. N. Jesu Christi Regis, `DOMINICA ULTIMA OCTOBRIS`  -- Quas primas,
+          11 December 1925, a year and three days after the decree that made this
+          edition typical
+  131563  S. Pii Papae X, `DIE 3 SEPTEMBRIS`, with the collect `Deus, qui ad
+          tuendam catholicam fidem, et universa in Christo instauranda sanctum
+          Pium, Summum Pontificem`  -- canonized 29 May 1954
+  131332  Beatae Mariae Virginis Reginae, `DIE 31 MAJI`  -- Ad caeli Reginam,
+          11 October 1954
+   77511  S. Joseph Opificis, `DIE I MAJI / IN SOLEMNITATE`, `OPIFICUM PATRONI`
+          -- instituted 1955
+   84178  S. Gregorii Barbadici, `3. classis` at 84181  -- canonized 26 May 1960
+   84234  S. Antonii Mariae Claret, `3. classis` at 84240  -- canonized 7 May 1950
+  102965  S. Joannis Leonardi  -- canonized 17 April 1938
+   69880  S. Joannis de Brito, `DIE 4 FEBRUARII`  -- canonized 22 June 1947
+   95438  S. Joannis Mariae Vianney, `Die 9 Augusti`  -- canonized 1925, feast
+          fixed at 9 August 1928
+   97219  S. Joannis Eudes, `Die 19 Augusti`  -- canonized 31 May 1925, and the
+          leaf carries the Congregation's approbation of 31 May 1928 at 97346
+   76592  S. Petri Canisii, `Die 27 Aprilis`  -- canonized 21 May 1925
+   96689  In Assumptione B. Mariae V. in the Mass Signum magnum of 1950, stored
+          as `"ignum magnum appáruit in caelo` with the ornamental S dropped
+
+TWO OF THE TWELVE ARE VISIBLE ONLY BY THEIR RANK LABEL AND ONE ONLY BY A DROPPED
+INITIAL. `3. classis` is 1960 vocabulary in a book that otherwise never uses it,
+and `Signum magnum` is the string that hid the 1920's true date for a day. Both
+traps were walked into deliberately here because both had been documented.
+"""
+subscriptions = """
+Twenty-five dated approbations and imprimaturs, which is what makes the leaves
+datable rather than merely suspicious [verified]:
+
+  Sacred Congregation of Rites, `Concordat cum originali approbato`:
+    102248  17 May 1925, subscribed Alexander Verde  |  106395  7 April 1927
+     97346  31 May 1928  |  82136  2 April 1929  |  104265  14 October 1929
+     79629  2 February 1932, subscribed A. Carinci  |  119334 and 121826
+     24 December 1935  |  110294  9 January 1942, with `Acta Apostolice Sedis,
+     13 Aprilis 1942` at 110298
+
+  Braga, `IMPRIMATUR`, subscribed by Archbishops Emmanuel and Antonius:
+     76671  24 November 1926  |  97361  19 August 1928  |  102257  3 October 1928
+     79634 and 109091  2 October 1932  |  71812  5 September 1933
+     68602  Turin 6 May 1936 and Braga 5 August 1936  |  119346 and 121841
+     3 April 1936  |  103203  9 October 1940  |  110366  24 May 1947
+     69954  5 November 1953  |  131516  15 March 1955  |  131724  5 July 1955
+     91332  November 1958  |  84293  21 NOVEMBER 1961, the latest dated matter in
+     the book
+
+  And two further marks of a later printing: a Braga printer's imprint
+  `BRACARJE — Sumpibus ex Typis Universalis` at 119353, which is not the Vatican
+  Polyglot Press of the title page; and a Portuguese-language note at 125962
+  citing `A S. C. dos Ritos (Decreto de 27 de Novembro de 1957)` on the peroration
+  Et famulos -- the only vernacular in the volume, and post-conciliar nothing, but
+  1957.
+"""
+the_rights_position_on_it = """
+UNRESOLVED, AND NOT BY DEFAULT. The leaves fall in two classes and the boundary
+is the same line the edition clears.
+
+  1925-1930. Leaves first published before 1931 are out of United States
+  copyright on the same ground as the edition. The Christ the King leaf of 1925,
+  the 1926, 1927, 1928 and 1929 leaves are in this class. THIS IS A REAL
+  DISTINCTION AND IT IS NOT USEFUL YET, because nothing in the text layer says
+  which lines came off which leaf.
+
+  1932-1961. Leaves first published in or after 1931 are squarely inside the URAA
+  analysis. Published abroad without United States formalities, protected in the
+  source country on 1 January 1996 -- Portugal and Italy both ran terms well past
+  that for works of this age -- they were restored under 17 U.S.C. 104A for 95
+  years from publication. On that reading the 1932 leaves run to the end of 2027,
+  the 1936 leaves to 2031, the 1955 leaves to 2050, and the 1961 leaf to 2056.
+  This repository has already worked that analysis once, for a different book,
+  at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml
+  `[the_underlying_edition.uraa_conditions]` [recorded], and nothing here
+  distinguishes it.
+
+WHO WOULD HOLD IT IS GENUINELY UNRECORDED and settling it is not this lane's
+work. The candidates are visible on the leaves themselves: the Archdiocese of
+Braga, whose imprimatur they carry, and the Holy See, whose Congregation approved
+them and in whose name the new Masses were composed. NO COPYRIGHT NOTICE OF ANY
+KIND APPEARS ANYWHERE IN THE VOLUME, in Latin, Portuguese, Italian or English
+[verified, searched]. That fact is recorded and expressly NOT relied on in either
+direction: after the URAA a foreign work needs no notice to be protected, so the
+absence proves nothing, and it would be the same error as leaning on the host's
+licence field.
+
+WHAT SOFTENS IT, RECORDED SO A LATER LANE DOES NOT START FROM ZERO. Much of what
+these leaves print is not new composition at all but direction to older text --
+`Missa Os justi, de Communi Confessoris`, `Missa Sacerdotes tui, de Communi
+Confessoris Pontificis 2. loco [26]`. What is new is usually one collect and a
+heading. A rights analysis that separated new composition from cross-reference
+might free most of the supplement's words while leaving its pages protected. That
+is an argument about the TEXT and not about the FILE, and the distinction is the
+one the 1920 record was corrected to make.
+"""
+
+# --- The scan and the text layer -----------------------------------------------
+
+[the_scan_and_the_text_layer]
+bridgeman = """
+A faithful mechanical reproduction of a public-domain work is not original
+authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y.
+1999)), and machine optical character recognition adds no human authorship on top
+of it. This text layer was produced autonomously by tesseract 5.3.0-6-g76ae with
+`-l lat`, per the item's own metadata fields, and there is no author to hold a
+right in it. So NO SEPARATE LAYER of rights was created by the scanning or by the
+recognition, and neither the uploader nor the Alma Bracarense blog nor the
+Internet Archive acquired anything to grant.
+"""
+what_bridgeman_does_not_do = """
+IT DOES NOT MAKE A PHOTOGRAPH OF A 1955 PAGE FREE. Bridgeman is a proposition
+about originality in the copy, not a permission covering what was copied: a
+faithful reproduction of protected matter is a reproduction of protected matter.
+The page-image artifact is therefore the worse of the two cases, not the better
+one, and no image of this book may be published anywhere in this repository. The
+conflation of the two propositions is the error corrected on the 1920 artifact on
+2026-08-02, and it is written out here so the correction survives.
+"""
+not_relied_on = """
+Expressly not links in this chain: that the Internet Archive item is available;
+that the download succeeded; that the item carries no rights or licence field.
+guidance/sources.md:395-400 holds the first two insufficient for `tracked`, and
+the third is a fact about an item's metadata, not about a book. This item happens
+to carry no `licenseurl` at all. Had it carried a Public Domain Mark, this record
+would read exactly as it does -- which is the standing position of
+src/sources/inventories/lt-hist-rights-audit-v1.toml, where a host's mark was the
+whole of a prior corpus's ground and was refused.
+"""
+
+# --- What was searched for, including what was not found ------------------------
+
+[what_was_searched]
+method = """
+Thirty-two probes over the whole text layer, case-folded and accent-stripped, so
+that `Teresiæ` and `TERESIAE` and `teresiae` all match one pattern. Every probe is
+named below with its outcome, INCLUDING THE ONES THAT FOUND NOTHING, because a
+sweep reported only by its hits is indistinguishable from a lucky one. Positive
+controls are built in: the probes that found nothing are the same shape as the
+probes that found Christ the King and St Pius X.
+"""
+found = """
+Present, and each dates the printing later than 1924: Christ the King (1925);
+St Peter Canisius (1925); St John Vianney (1925/1928); St John Eudes (1925);
+St John Leonardi (1938); St John de Brito (1947); the Assumption in Signum magnum
+(1950); St Anthony Mary Claret (1950); the Queenship of the Blessed Virgin Mary
+(1954); St Pius X (1954); St Joseph the Worker (1955); St Gregory Barbarigo
+(1960); the class-rank vocabulary of the 1960 Code of Rubrics; twenty-five dated
+approbations and imprimaturs running to 21 November 1961; a Portuguese note on a
+Congregation decree of 27 November 1957; a Braga printer's imprint that is not
+the Vatican Polyglot Press.
+"""
+searched_and_absent = """
+Absent, and each absence bounds the printing from the other side -- nothing in
+this book is later than 1961:
+
+  St Therese of Lisieux, canonized 1925 and universal 1927 -- 0 hits on
+  `Teresia a/ab Jesu Infante` and `Infante Jesu`. Notable: her Braga leaf either
+  was never issued or is not in this copy, while three other 1925 canonisations
+  are.
+  St Madeleine Sophie Barat (1925), St Bernadette Soubirous (1933), St John Bosco
+  (1934), Thomas More and John Fisher (1935), St Andrew Bobola (1938), St Gemma
+  Galgani (1940), St Louis Marie de Montfort (1947), St Maria Goretti (1950) --
+  0 hits each.
+  The feast of the Immaculate Heart of Mary (1944) -- 0 hits on `Immaculati
+  Cordis`.
+  Our Lady of Fatima -- 0 hits, in a Portuguese book, which is worth knowing on
+  its own.
+  The 1929 Mass of the Sacred Heart (`Cogitationes cordis` as an Introit) -- the
+  only hit is the phrase inside an unrelated collect.
+  The restored Holy Week of 1955 -- 0 hits on `Vigilia paschalis`, `Ordo
+  Hebdomadae Sanctae`, `instauratus ordo`.
+  St Joseph in the Canon, inserted 1962 -- 0 hits on `ejusdem Virginis Sponsi`.
+  Rubricarum instructum, John XXIII, the Second Vatican Council, any
+  post-conciliar matter -- 0 hits.
+  Any copyright notice or reservation, in any of four languages -- 0 hits on
+  `copyright`, `all rights reserved`, `tutti i diritti`, `todos os direitos`,
+  `proprieta letteraria`.
+  Any Arabic or Roman year later than 1961 outside the tables of movable feasts.
+  The tables themselves run to 1983 and are not a dating signal: a 1924 book
+  prints a long paschal table by design, and this one opens at 1923.
+"""
+
+# --- Routes examined and refused ------------------------------------------------
+
+[routes_examined_and_refused]
+carve_out = """
+REFUSED, AND NOT FOR EFFORT. The pattern this repository uses when a tracked text
+carries matter its basis does not cover is a single stated replayable
+transformation on printed-page boundaries -- `sed '140854,141805d' SOURCE > OUT`
+on the Lasance artifact, one contiguous appendix, no program, no judgement
+[recorded]. Three things stop it here.
+
+  1. THERE ARE NO PAGE BOUNDARIES IN THE FILE. The djvu text layer carries no form
+     feeds and no leaf markers, so no line range over it is a printed-page range.
+     A line-range deletion would be exactly the `source_lines: 20001-30324` shape
+     that the venice-1570 artifact record refuses in terms.
+
+  2. THE INSERTIONS ARE SCATTERED, not appended. They stand at twelve places
+     through the sanctoral and after the Mass tones at the end of the volume, out
+     of date order where the binder put them -- St John Eudes for 19 August sits
+     AFTER St Bernard of 20 August; the Queenship for 31 May and St Pius X for
+     3 September stand after the appendix pagination [176]-[188] has closed.
+
+  3. THE LIST COULD NOT BE PROVED COMPLETE. There is no clean 1924 Braga missal
+     anywhere this lane could reach to diff against: the Internet Archive holds
+     exactly one Braga item, which is this one; the Alma Bracarense scans are its
+     upstream, the same copy; and the 1558, 1538 and 1498 printings are different
+     books of an earlier state of the use. A hand-picked deletion list presented
+     as exhaustive, with no control, is the undisclosed editorial hand that
+     src/sources/inventories/lt-hist-rights-audit-v1.toml refused in its own
+     words.
+
+ONE THING IS BETTER HERE THAN ON THE 1920, and it is recorded so a later lane does
+not inherit the wrong reasoning. The 1920's route died partly because two
+insertions REPLACED older Masses, so a deletion could only leave a hole. In this
+book the 1924 Assumption `[G]audeamus omnes in Domino` survives at lines
+96594-96600 BESIDE the 1950 `Signum magnum` at 96685-96689 [verified]. The later
+leaf sits next to what it displaced in use rather than in place of it. So the
+severability objection does not bite here; objections 1 and 3 do, and either is
+enough.
+"""
+what_would_make_a_carve_out_possible = """
+Concretely, so that it can be attempted rather than re-argued:
+
+  a leaf map built from the item's per-leaf OCR -- `_djvu.xml`, `_hocr.html`,
+  `_hocr_pageindex.json.gz`, `_page_numbers.json` are all published and were
+  fetched or listed here -- assigning every line of text to a leaf of the 1,210,
+  so that a deletion can be stated on leaves;
+  a rule for classifying a leaf as 1924 or supplement that a reader can check --
+  the approbation subscriptions, the printed pagination sequence, and the rank
+  vocabulary are three independent signals and they agree wherever they overlap;
+  and a control: a second copy, or a catalogue collation of the 1924 issue, so
+  that the leaf list can be shown complete rather than asserted.
+
+None of the three is out of reach. All three are a reading lane's work, not an
+acquisition lane's.
+"""
+quoting_under_103b = """
+EXAMINED AND NOT USED HERE. 17 U.S.C. 103(b) -- a revised edition's copyright
+extends only to what that edition contributed and does not enlarge protection in
+preexisting material -- is what this repository relies on to quote ancient Latin
+out of the 1962 facsimile [recorded, missale-romanum-1962-facsimile-rights-v1.toml].
+It would support quoting the 1924 text from these bytes. It is not invoked as a
+disposition because 103(b) is a statement about what a copyright does NOT reach,
+not a permission to redistribute what it does, and the disposition question here
+is whether 3.2 MB of mixed bytes may sit in Git. They may not. When a reading lane
+quotes a Braga collect off a leaf it has shown to be 1924, it will not need 103(b)
+either: the 1924 edition is free outright.
+"""
+
+# --- What may and may not be done ----------------------------------------------
+
+[the_practical_answer]
+may = """
+  Fetch the item and read it, as this lane did. Making a copy to read is not the
+  act this record governs.
+  Cite the 1924 edition by identity, quote its promulgating instruments, and
+  describe what the book contains.
+  Register, hash and describe both artifacts, which is what has been done.
+"""
+may_not = """
+  Place either file, or any part of either, in Git, in build products, in tests,
+  in fixtures, or in any published artifact.
+  Publish any page image of this book on any basis.
+  Publish any formulary listed in `[the_supplement].formularies`, or any text off
+  a leaf whose stratum has not been established, on any basis this repository
+  currently holds.
+  Treat `read_from = "not-read"` on the witness row as changed. It is not, and
+  this lane did not touch it.
+"""
+
+# --- What would overturn this ---------------------------------------------------
+
+[what_would_overturn_this]
+note = "Stated concretely, so a later reader can attack this record on its own terms rather than re-deriving it."
+items = """
+  1.  A DIGITISATION OF A CLEAN 1924 COPY. Any copy without the bound-in
+      supplement makes the whole of this record moot for the artifact it names:
+      that file would be a 1924 book end to end, `tracked` and `public-domain`,
+      and Braga would become readable immediately. This is the single most
+      valuable thing a later lane could find, and the most likely places are the
+      Biblioteca Nacional de Portugal, the Arquivo Distrital de Braga, and the
+      seminary and cathedral libraries of Braga -- none of which was reachable as
+      a digitisation from this run.
+
+  2.  A LEAF MAP WITH A CONTROL, per `[routes_examined_and_refused]`. It would not
+      overturn the finding; it would make the finding operational, splitting one
+      unresolved artifact into a free 1924 stratum and a protected supplement.
+
+  3.  EVIDENCE THAT A LEAF DATED HERE IS NOT WHAT IT SAYS. Every date above is an
+      approbation or imprimatur READ IN THE SCAN. If any of the datable
+      subscriptions belongs to a facing page rather than to the leaf it appears
+      to date, the count of supplement leaves moves. The latest date would have to
+      move by thirty years to disturb the holding.
+
+  4.  A DEMONSTRATION THAT THE SUPPLEMENT IS OUT OF COPYRIGHT ANYWAY -- for
+      instance, that these leaves were published simultaneously in the United
+      States, or that the Archdiocese of Braga has placed them in the public
+      domain, or that the source-country term had run before 1 January 1996 for a
+      given leaf. Any of these frees the leaf it covers and none of them frees the
+      others.
+
+  5.  A CHANGE IN LAW shortening restored terms. Nothing of the kind is pending;
+      recorded because a rights record that lists no such condition claims a
+      permanence it does not have.
+
+Note what does NOT overturn it: an Internet Archive public-domain mark, the
+absence of any rights field on the item, the absence of a copyright notice in the
+book, the fact that the download succeeded, or the three records in this
+repository that already called this book publishable. The last of those is the
+reason this file exists.
+"""
+
+# --- Corrections to records already in this repository --------------------------
+
+[[corrections]]
+id = "archdiocesan-not-holy-see-imprint"
+claim = "The 1924 Missale Bracarense is `an ARCHDIOCESAN book rather than a Holy See imprint, so the post-1929 Holy See class does not reach it`, given as the second limb of its rights basis [recorded, latin-missal-acts-v1.toml witness row 1924-missale-bracarense; missal-acquisition-audit-v1.toml book row missale-bracarense]."
+finding = "The title page reads ROMAE / TYPIS POLYGLOTTIS VATICANIS / MDCCCCXXIV at lines 33-36, and the Congregation's decree calls the edition Vaticana [verified]. It was printed at the Vatican Polyglot Press. What is archdiocesan is the Archbishop of Braga's sollicitudo in procuring it, and the rite."
+effect = "The limb is struck and the holding is unchanged: the operative limb was always the year, and 1924 precedes both the pre-1931 line and the 1929 Lateran Treaty. Recorded because a rights basis carrying a false limb cannot be checked by the next reader, and because the corrected fact is the reason the edition slug is vatican-typica-1924. THE ROWS THEMSELVES WERE NOT EDITED: the act-history inventories were outside this lane's ownership."
+
+[[corrections]]
+id = "may-publish-text-yes"
+claim = "`may_publish_text = \"yes\"` for the Braga missal [recorded, missal-acquisition-audit-v1.toml book row missale-bracarense], and `rights = \"public-domain\"` with `digitisation` naming this item on the witness row [recorded, latin-missal-acts-v1.toml]."
+finding = "True of the 1924 EDITION and false of THIS DIGITISATION. The item carries at least fifteen supplement leaves dated 1925 to 1961 and twelve post-1924 formularies, at the loci in `[the_supplement]` [verified]. The audit's own evidence class was `verified`, and it was verified -- for the instruments in the front matter, which is what it read. Nobody read the sanctoral."
+effect = "Reverses the stated disposition for the artifacts: `remote` and `unresolved`, no bytes in Git, instead of `tracked` and `public-domain`. The edition's own status is unchanged, and so is the audit's priority ranking -- Braga is still the cheapest use to reach, because the book is still whole, still fetchable, and still out of copyright as an edition. What changed is that reaching it now needs a leaf map first."
+
+# --- Counts ---------------------------------------------------------------------
+
+[counts]
+probes_run = 32
+post_1924_formularies_found = 12
+dated_subscriptions_found = 25
+earliest_supplement_date = "1925-05-17"
+latest_supplement_date = "1961-11-21"
+years_between_the_basis_and_the_latest_matter = 37
+class_rank_labels_in_132548_lines = 2
+copyright_notices_found = 0
+clean_1924_digitisations_located = 0
+braga_items_on_the_internet_archive = 1
+bytes_added_to_this_repository = 0
+counts_note = """
+`post_1924_formularies_found = 12` is the finding and `probes_run = 32` is what
+makes it one: sixteen of the thirty-two probes found nothing, and they are named
+in `[what_was_searched].searched_and_absent` rather than dropped. A sweep reported
+only by its hits proves that somebody searched, not that somebody looked.
+
+`clean_1924_digitisations_located = 0` is the weakest point of the whole position
+and is written as a number so it cannot be read past. Everything expensive about
+this record follows from it: with a clean copy there would be no carve-out
+question, no leaf map, and no unresolved artifact.
+
+`bytes_added_to_this_repository = 0`: this is a record about a book, produced
+without redistributing any of it. Both files were fetched to a scratch directory
+outside the repository and are authenticated by sha256 here. If a later edit makes
+that number nonzero it will have to say why.
+"""

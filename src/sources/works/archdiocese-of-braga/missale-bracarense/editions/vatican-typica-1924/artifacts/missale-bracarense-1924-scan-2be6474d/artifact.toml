@@ -1,0 +1,42 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.archdiocese-of-braga.missale-bracarense.vatican-typica-1924.missale-bracarense-1924-scan-2be6474d"
+edition_id = "edition.archdiocese-of-braga.missale-bracarense.vatican-typica-1924"
+artifact_type = "scan-pdf"
+media_type = "application/pdf"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = """
+The page images this text layer was made from, and the same finding governs
+them. Unresolved for the reason set out in full on the sibling text artifact
+artifact.archdiocese-of-braga.missale-bracarense.vatican-typica-1924.missale-bracarense-1924-text-88d4a147:
+the 1924 typical edition clears the pre-1931 United States line as derived for
+calendar year 2026, and the scanned volume also carries at least fifteen
+supplement leaves and gatherings printed between 1925 and 21 November 1961, which
+that line does not reach. A PAGE IMAGE IS THE WORSE OF THE TWO CASES, not the
+better one: the Bridgeman argument that a faithful reproduction of a public-domain
+page adds no new authorship leaves the reproduction of a 1955 page exactly as
+protected as the page. No image of this book is published anywhere in this
+repository and none may be. See src/sources/inventories/missale-bracarense-rights-v1.toml.
+"""
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/missale-bracarense-1924/Missale%20Bracarense%20(1924).pdf"
+provenance = "Fetched with curl from the URL above on 2026-08-02 into a scratch directory outside this repository, hashed and paged there, and never placed in the repository. Identity cross-checked against the item's metadata API: the recorded sha1 5d782a7de0df09bde3f3c99a01f44e136ec8390b and size 176,021,172 bytes match the fetched file. The PDF's own metadata names PDF24 as creator and iLovePDF as producer, with a creation date of 31 January 2026 -- it is an uploader-assembled container built the day before the item was posted, not a library-produced facsimile, which is why its page count is recorded here from the file rather than taken from any catalogue."
+retrieved = "2026-08-02"
+sha256 = "2be6474d75f495f79a74eac962355aa880d08b326915c3a3547ae7be82930841"
+byte_size = 176021172
+page_count = 1210
+notes = """
+1,210 leaves at 600.9 x 925.57 points, PDF 1.7, read with pdfinfo. The item's
+`_page_numbers.json` assigns a printed page number to 849 of them, the highest
+being 827; the gap between 1,210 leaves and 827 printed pages is the book's
+several pagination sequences -- the front matter, the main arabic run, and the
+bracketed appendix run [176]-[188] -- plus the unnumbered inserted leaves, and is
+not evidence of a second book.
+
+WHY IT IS REGISTERED AT ALL, HOLDING NO BYTES. It fixes the page count that the
+acquisition brief asked for, it authenticates the images independently of the
+derived text, and it is the artifact a leaf-level carve-out would have to be
+built over if a later lane attempts one. 176 MB is also, on its own, a reason not
+to track a file this repository has no affirmative basis to distribute.
+"""

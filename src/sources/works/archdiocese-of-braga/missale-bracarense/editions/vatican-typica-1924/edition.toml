@@ -1,0 +1,61 @@
+schema = 1
+record_type = "edition"
+id = "edition.archdiocese-of-braga.missale-bracarense.vatican-typica-1924"
+work_id = "work.archdiocese-of-braga.missale-bracarense"
+title = "Missale Bracarense, the typical edition of 1924"
+language = "la"
+publication = "Missale Bracarense, jussu et auctoritate Summi Pontificis Pii XI recognitum et reformatum, et Illmi. ac Revmi. Domini Emmanuelis Vieira de Mattos, Archipraesulis Bracarensis et Hispaniarum Primatis, sollicitudine impressum. The title page of the scanned copy reads ROMAE / TYPIS POLYGLOTTIS VATICANIS / MDCCCCXXIV. Internet Archive item missale-bracarense-1924."
+date = "1924"
+authority = "Pius XI, bull Inter multiplices gravesque curas of 8 December 1924, printed at the head of the book and subscribed A. Card. VICO, Ep. Portuen. et S. Rufinae and Maurus Rigal, Canc. Ap. Tabularii Praefectus; executed the next day by the Sacred Congregation of Rites, decree of 9 December 1924, operative clause Vaticana hujus Missalis editio pro typica habenda est, with later printings omnino conformandae erunt, ita ut in iis nihil immutare fas sit, subscribed A. Card. VICO, S. R. C. Praefectus and Alexander Verde, S. R. C. Secretarius"
+jurisdiction = "Rite of Braga, archdiocese of Braga"
+notes = """
+THE ONLY TWENTIETH-CENTURY TYPICAL EDITION OF A LATIN USE THIS PROJECT CAN
+REACH WHOLE, and the reason the Braga line is where the all-Latin-rites scope
+starts: the book and both its promulgating instruments are in hand, and the
+instruments are printed in the book's own front matter rather than reconstructed
+from a gazette. Both were read in the bytes -- the bull opening at line 43 of the
+text layer named on the artifact record, with its ornamental I dropped, as
+`nter multiplices gravesque curas`, and the decree headed `DECRETUM` at line 297
+and dated `Die 9 Decembris 1924.` at line 341.
+
+THE IMPRINT IS THE VATICAN POLYGLOT PRESS AT ROME, WHICH CORRECTS A RECORDED
+REASON. src/sources/inventories/latin-missal-acts-v1.toml and
+src/sources/inventories/missal-acquisition-audit-v1.toml both describe this book
+as `an ARCHDIOCESAN book rather than a Holy See imprint`, and give that as the
+second limb of its rights basis. The book's own title page says otherwise: lines
+33 to 36 read `ROME` (for ROMAE), `TYPIS POLYGLOTTIS VATICANIS`, `MDCCCCXXIV`,
+and the Congregation's decree calls the edition Vaticana in terms. What is
+archdiocesan is the SOLLICITUDO -- the Archbishop of Braga procured the printing
+and the rite is his church's -- and what is Vatican is the press. The correction
+costs the rights position nothing, because the operative limb was never the
+imprint but the year, and 1924 is before the pre-1931 United States line
+whoever set the type. It is recorded because a rights basis with a false limb in
+it is a basis nobody can check. The edition slug follows the imprint and the
+decree, on the pattern of missale-romanum.vatican-typica-1920.
+
+THIS RECORD NAMES THE TYPICAL EDITION. THE ONE COPY SCANNED IS THAT EDITION PLUS
+THIRTY-SEVEN YEARS OF BOUND-IN SUPPLEMENT, and the artifact record is where that
+is measured. The body of the scanned volume is consistent throughout with a 1924
+impression: the kalendar at lines 1400-2400 carries no feast instituted after
+1924, the ranks are the pre-1960 duplex, semiduplex and simplex, and the table of
+movable feasts opens at 1923. Bound into it are at least fifteen later leaves and
+gatherings, each carrying its own approbation of the Sacred Congregation of Rites
+and its own Braga imprimatur, dated from 1925 to 21 November 1961, and printing
+feasts that did not exist in 1924 -- Christ the King of 1925, St John de Brito of
+1947, St Joseph the Worker of 1955, the Queenship of the Blessed Virgin Mary of
+1954, St Pius X of 1954, and more. They are additions to a Missal of a living use
+made in the ordinary way, by the archdiocese, over the working life of the book;
+they are also matter first published well after the line this edition clears, so
+the artifacts stand `remote` and `unresolved` and no byte of them is in Git. The
+1924 edition ITSELF is untouched by that: published in 1924, out of United States
+copyright, and under 17 U.S.C. 103(b) no later supplement's copyright enlarges
+anything in it. See src/sources/inventories/missale-bracarense-rights-v1.toml.
+
+WHAT NO EDGE IS DRAWN FROM. The Braga use is far older than this edition -- a
+1558 printing is at the Bibliotheque nationale de France, a 1538 at the
+Biblioteca Nacional de Portugal, and the 1498 editio princeps has four recorded
+copies and no located facsimile -- and none of them is held here, so this record
+claims no descent from them. The act history carries the same silence as a root
+station with reasons: src/sources/inventories/latin-missal-acts-v1.toml, act
+inter-multiplices-gravesque-curas-1924.
+"""
