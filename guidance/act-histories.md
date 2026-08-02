@@ -1238,3 +1238,73 @@ hand-typed restatement sitting beside a derived value with no check between
 them. The general fix — the row read out of `check --json`, or a test that
 compares the two — is not attempted in this unit, and this note exists so the
 next one does not think the digit was the problem.
+
+## 18. Whether these repositories may be published: the decision record
+
+Measured 2026-08-02. `guidance/sources.md:389` forbids a dedicated data
+repository "until measured source size or rights constraints justify the
+contribution and distribution cost", and until this measurement no one had
+measured either. The record is
+**`src/sources/inventories/act-history-repository-publication-v1.toml`**, and
+it is the file to read before anything is published. This section records that
+it exists and what it decided; it does not restate it, because a restatement
+beside a record is a prediction that the two will disagree.
+
+**It authorizes nothing.** No repository was created, no remote configured and
+nothing pushed to write it. Registering a repository is the maintainer's act.
+
+Four things in it change what this document says elsewhere.
+
+1. **Size justifies nothing, and measuring it argues the other way.** The three
+   emitted repositories pack to 42 KB, 136 KB and 175 KB. The tracked browser
+   data this repository already serves for the same three slices is 211 KB,
+   503 KB and 3.0 MB. The emitted repository is the *smaller* artifact in every
+   case. §9's "1.3 MB" was `du -sh` over 148 loose objects — a measurement of
+   filesystem block rounding, not of the artifact, which is 78,602 content
+   bytes. [verified]
+2. **The justification that survives is consumability, and the claim it rests on
+   had to be corrected before it could be used.** A bare repository's files
+   *can* be committed into this one, and `git log` inside that directory *does*
+   work — until someone clones. In a clone, `refs/` is absent because git does
+   not track empty directories, discovery fails, and `git log` silently answers
+   with *this* repository's history instead. `mkdir refs` repairs it completely.
+   The in-tree route is therefore either refused by git (a non-bare repository
+   becomes a gitlink) or silently wrong for every reader who clones. [verified]
+3. **`withheld` survives into the commit objects — and nothing enforces it.**
+   237 of 237 post-1929 canon blobs across all 47 commits carry the
+   `[text withheld: …]` banner and none carries words. But `check` has no guard
+   against a row carrying both `withheld` and `text`: a probe adding one such
+   line passed `check` with zero problems and emitted the protected words into a
+   commit object *underneath the banner saying they were not there*. The
+   `interpretations` table has that guard; `units` and `departures` do not.
+   [verified]
+4. **§8 kept the ten-thousand-year shift on a hazard analysis that was half
+   written down.** A fresh emit passes `git fsck --strict`. Run `git gc` — which
+   writes a commit-graph by default — and `fsck --strict` exits 16 and reports
+   every commit, because the commit-graph stores a date in 34 bits and the
+   shifted stamps are eighteen times too large. It is not cosmetic:
+   `rev-list --date-order` then puts a 1570 commit ahead of a 1962 one.
+   `gc.writeCommitGraph=false` leaves it clean locally, and what a hosting
+   service does is recorded as an open question rather than guessed. [verified]
+
+**The decision, per slice.** `roman-holy-week` may be published, private or
+public, once three written conditions are met; it carries no withheld row at
+all, so the missing guard is not load-bearing for it. `latin-missal` and
+`code-of-canon-law` may not be published in *any* visibility until the guard
+lands — 2 rows and 174 rows respectively rest on a withholding the tool does not
+enforce, and a git history is the one artifact here from which a mistake cannot
+be withdrawn.
+
+**Private answers three of the four hazards and not the fourth.** Consumability,
+date presentation and replaceability are all satisfied by a private repository
+plus a written authority. Rights are not: `guidance/sources.md:382-384` draws
+its line at whether restricted bytes *entered* Git and a build product, and a
+private repository is Git and an emitted repository is a build product. Privacy
+changes who can read a leak, not whether it happened.
+
+The conditions, the open questions and the corrections are in the record. The
+one that reaches beyond it: a published derived repository needs its own written
+authority in `PROJECT-WORK.md` saying it is a build output replaced in full,
+because every correction to it is a force-push — one word changed in one act
+rewrote 10 of 12 commit ids, and renaming the source inventory rewrote all 12,
+since every commit's README names the file it was built from. [verified]

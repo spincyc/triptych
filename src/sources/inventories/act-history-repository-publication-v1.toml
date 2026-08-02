@@ -1,0 +1,1065 @@
+# Whether the emitted act-history slices may be published as repositories.
+#
+# A DECISION RECORD, not a publication and not an authorization to publish.
+# Nothing below registers a repository, configures a remote or pushes anything.
+# Every number here was measured on 2026-08-02 by running `tools/act-history`
+# against the tracked inventories and reading the emitted objects; nothing is
+# taken from an estimate, a brief or a recollection.
+#
+# It exists because `guidance/sources.md:389` forbids a dedicated data
+# repository "until measured source size or rights constraints justify the
+# contribution and distribution cost", and the justification offered for these
+# slices had never been measured. It is written so that the maintainer can act
+# on a measurement rather than on an argument, and so that a later lane does not
+# re-derive the answer from the same unmeasured premises.
+#
+# THE MEASUREMENT REVERSED THE ARGUMENT IT WAS ASKED TO CHECK. Size does not
+# justify a separate repository for any slice. It justifies the opposite: every
+# emitted repository is SMALLER than the browser data this repository already
+# tracks and serves for the same slice, by factors of five, four and nineteen.
+# The justification that survives is a different one, and it is recorded here
+# with the measurement that establishes it.
+#
+# It sits in inventories/ for the reason its siblings `lt-hist-rights-audit-v1
+# .toml` and `missal-acquisition-audit-v1.toml` give: `source-library validate`
+# rejects any file under src/sources outside its own schema except .md and .toml
+# under inventories/, and none of this is a source manifest, an evidence state
+# or a binding target.
+#
+# It is not legal advice and it binds nobody outside this repository. Where it
+# states a proposition of law it states the jurisdiction, and the jurisdiction
+# throughout is the United States.
+
+decision_schema = 1
+record_type = "derived-repository-publication-decision"
+subject = "act-history emitted slices"
+slices = ["roman-holy-week", "latin-missal", "code-of-canon-law"]
+generator = "tools/act-history"
+recorded_on = "2026-08-02"
+jurisdiction = "United States"
+task = "TASK-130"
+
+authorizes_nothing = """
+NO REPOSITORY WAS CREATED, NO REMOTE WAS CONFIGURED AND NOTHING WAS PUSHED TO
+WRITE THIS FILE. Registering a repository is the maintainer's act. Every emitted
+repository read here was written under `build/`, which `.gitignore` excludes at
+line 1 (`/build/`), and none of it appears in `git status`. This record states
+what may be published, on what ground, and what must be true first; it is the
+predicate for that act and not the act.
+"""
+
+governing_rule = """
+`guidance/sources.md:389`, in full and with its anchor:
+
+"Default to `tracked` for lawful, reasonably sized plain text and other reusable
+artifacts. Do not introduce a separate object service, credential requirement,
+large-file extension, or dedicated data repository until measured source size
+or rights constraints justify the contribution and distribution cost."
+
+Two grounds are admitted and no third: MEASURED SOURCE SIZE, or RIGHTS
+CONSTRAINTS. Section 1 below measures the first and finds it absent. Section 3
+measures the second and finds that it cuts AGAINST publication rather than for
+it. The ground the artifact actually stands on is neither, and section 2 records
+what it is and why the rule should be read as reaching it.
+
+The second rule this record answers to is `guidance/sources.md:382-384`, the
+`restricted` disposition: "lawful project access does not include repository
+redistribution; tracked metadata may identify the artifact, but its bytes must
+not enter Git, build products, tests, fixtures, or public artifacts". A private
+repository is still Git. An emitted repository is still a build product. That
+sentence is why `private` is not an answer to the rights hazard, and section 3
+is the measurement of how close the current emit runs to it.
+"""
+
+evidence = """
+Three evidence levels are used, and no row claims one it did not reach.
+
+  [verified]  Measured here on 2026-08-02 by running the tool or reading the
+              objects it wrote. The command is given and is reproducible.
+  [recorded]  Taken from a record already in this repository, cited by path and
+              line. Not independently re-derived here unless the row says so.
+  [inferred]  Reasoned from the two above, flagged wherever it matters.
+
+Nothing below is asserted from recall. Two propositions that would ordinarily be
+asserted -- that GitHub renders a shifted date a particular way, and that GitHub
+runs its own commit-graph maintenance -- are NOT verified here, because nothing
+in this lane could reach GitHub without doing the thing this lane is forbidden
+to do. They are recorded as open questions rather than smuggled in as findings.
+"""
+
+holding = """
+ONE SLICE MAY BE PUBLISHED NOW. TWO MAY NOT, AND NOT BECAUSE THEY ARE PRIVATE OR
+PUBLIC BUT BECAUSE OF A MISSING GUARD IN THE GENERATOR.
+
+  roman-holy-week    MAY be published, private or public, on the consumability
+                     ground, once the three conditions in [[conditions]] are
+                     met. It carries no withheld row anywhere -- 0 of 38 units,
+                     0 of 42 departures -- so the guard below is not
+                     load-bearing for it [verified].
+
+  latin-missal       MAY NOT be published, public or private, until the guard
+                     lands. Two of its thirteen departures rest on a withholding
+                     for a `holy-see-post-1929` position [verified].
+
+  code-of-canon-law  MAY NOT be published, public or private, until the guard
+                     lands. One hundred and seventy-four of its rows rest on a
+                     withholding: 134 of 159 units, 11 of 131 departures, and 29
+                     of 29 interpretations [verified].
+
+THE GUARD. `tools/act-history check` must refuse a unit or a departure that
+carries both `withheld` and `text` or `incipit`. It does not today. A row
+carrying both passes `check` with zero problems and `emit` writes the protected
+words into a commit object, underneath the withheld banner, where a reader of
+the banner would not think to look. This was not reasoned from the source; it
+was PROVED by emitting a probe (see [[findings]] `nothing-enforces-withheld`).
+
+Everything the three emitted repositories contain today is admissible. That is a
+fact about the current inventories and not about the tool. A git history is the
+one artifact this project produces from which a mistake cannot be withdrawn: a
+later commit does not remove an object from history, and a published object
+survives in every clone and in the hosting service's dangling-object views after
+any rewrite. Publishing a slice whose rights position rests on 174 unenforced
+rows is accepting an irreversible consequence for a reversible defect.
+
+PRIVATE RESOLVES THREE OF THE FOUR HAZARDS AND NOT THE FOURTH, and the fourth is
+this one. See [[hazards]]: consumability, date presentation and replaceability
+are all answered by a private repository plus a written authority; rights are
+not, because `guidance/sources.md:382-384` puts the line at whether the bytes
+ENTERED Git and a build product, not at who may read them afterwards.
+"""
+
+# --- 1. Size ------------------------------------------------------------------
+#
+# The command, run once per slice, and the whole basis of the rows below:
+#
+#     tools/act-history emit --source src/sources/inventories/<slice>.toml \
+#         --out build/act-history/measure/<slice>
+#
+# `--out` defaults to `build/act-history/roman-holy-week` (tools/act-history:83),
+# so the default target is already inside the ignored tree; the explicit paths
+# above were used only so that three slices could stand side by side.
+
+[size]
+finding = "size-does-not-justify-a-separate-repository"
+verdict = """
+SIZE JUSTIFIES NOTHING HERE, AND MEASURING IT ARGUES THE OTHER WAY. The largest
+emitted repository packs to 175 kilobytes. The tracked browser data for the same
+slice is 3.0 megabytes and is already in this repository, already in Git, and
+already served by GitHub Pages. On the rule's own terms -- "measured source
+size" -- the emitted repository is not the large object; the thing it would be
+separated FROM is nineteen times its size.
+
+A repository this small is precisely the case `guidance/sources.md:388` calls
+`tracked` by default: lawful, reasonably sized plain text. Nothing in the size
+measurement supports a dedicated repository, an object service, a credential
+requirement or a large-file extension, and this record does not claim it does.
+"""
+where_the_1_3_mb_estimate_came_from = """
+CORRECTING THE PRIOR ESTIMATE, WHICH WAS RIGHT ABOUT THE NUMBER AND WRONG ABOUT
+WHAT IT MEASURED. `du -sh` on a freshly emitted roman-holy-week reports 728K
+here, and reported 1.3M on the run that produced the earlier figure; `du -sb` on
+the same directory reports 78,602 bytes. The gap is block allocation. An emitted
+repository is a bare repository full of LOOSE objects -- 148 of them for
+roman-holy-week -- and a loose object of forty bytes still occupies a filesystem
+block. The earlier estimate measured the filesystem's rounding, not the artifact.
+Packed, roman-holy-week is 42,409 bytes [verified].
+
+The lesson is not that the estimate was careless. It is that a size figure for a
+git repository has to say which of three numbers it is -- content bytes, packed
+bytes, allocated bytes -- and the three differ here by a factor of seventeen.
+"""
+
+[[size.slices]]
+slice = "roman-holy-week"
+source = "src/sources/inventories/roman-holy-week-acts-v1.toml"
+commits = 12
+branches = 2
+tags = 12
+objects = 148
+object_breakdown = "87 blob, 12 commit, 49 tree"
+loose_content_bytes = 78602
+allocated_bytes_reported_by_du_sh = "728K"
+packed_bytes = 42409
+head_branch = "typica"
+head_files = 49
+head_tip = "1962-06-23  The 1962 typical edition carries the reform and the new code"
+tracked_browser_data_bytes = 210936
+tracked_browser_data_files = 65
+ratio = "the emitted repository packs to 20 per cent of the browser data it duplicates"
+basis = "[verified] emit run 2026-08-02; git count-objects, cat-file --batch-all-objects, du -sb, and gc with gc.writeCommitGraph=false for the packed figure."
+
+[[size.slices]]
+slice = "latin-missal"
+source = "src/sources/inventories/latin-missal-acts-v1.toml"
+commits = 59
+branches = 17
+tags = 59
+objects = 441
+object_breakdown = "202 blob, 59 commit, 180 tree"
+loose_content_bytes = 244588
+allocated_bytes_reported_by_du_sh = "2.1M"
+packed_bytes = 135526
+head_branch = "praedicatorum"
+head_files = 7
+head_tip = "1604  The Master General issues the revised Dominican missal"
+tracked_browser_data_bytes = 503379
+tracked_browser_data_files = 174
+ratio = "the emitted repository packs to 27 per cent of the browser data it duplicates"
+note = """
+HEAD OPENS ON THE DOMINICAN LINE WITH SEVEN FILES, AND A READER WOULD TAKE THAT
+FOR THE REPOSITORY. `emit` points HEAD at the line of the FIRST act in
+topological order (tools/act-history:1765), which for this slice is a
+pre-Tridentine printing, not the Roman line. A clone therefore checks out seven
+files and a 1604 tip, and the Roman line -- the reason anyone would clone it --
+is on a branch the reader has to know to ask for. That is not a rights or a size
+finding and it does not block anything, but a published repository whose default
+view misrepresents its own contents is the same failure class this project keeps
+naming: an answer that resolves successfully and wrongly. Recorded in
+[[open_questions]] `head-opens-on-the-wrong-line`.
+"""
+basis = "[verified] emit run 2026-08-02, same commands as above."
+
+[[size.slices]]
+slice = "code-of-canon-law"
+source = "src/sources/inventories/canon-law-acts-v1.toml"
+commits = 47
+branches = 7
+tags = 47
+objects = 755
+object_breakdown = "474 blob, 47 commit, 234 tree"
+loose_content_bytes = 322403
+allocated_bytes_reported_by_du_sh = "3.3M"
+packed_bytes = 174833
+head_branch = "ius-antiquum"
+head_files = 8
+head_tip = "1582-06-02  The corrected Decretum is ordered kept as it stands"
+tracked_browser_data_bytes = 3046264
+tracked_browser_data_files = 265
+ratio = "the emitted repository packs to 5.7 per cent of the browser data it duplicates"
+basis = "[verified] emit run 2026-08-02, same commands as above."
+
+[size.for_scale]
+this_repository_pack = "887.28 MiB"
+all_three_emitted_repositories_packed = 352768
+statement = """
+The three emitted repositories together pack to 353 kilobytes, against this
+repository's 887-megabyte pack. Adding all three to this repository as ordinary
+files would grow it by four hundredths of one per cent. Whatever the reason for
+a separate repository is, it is not the cost of carrying the bytes [verified].
+"""
+
+# --- 2. Consumability ---------------------------------------------------------
+
+[consumability]
+finding = "the-operative-justification"
+claim_as_put = """
+THE CLAIM UNDER TEST: "a git repository cannot be consumed from inside another
+git repository -- `git log`, `git diff` and `merge-base` are the whole point of
+the artifact and none of them can be run against a subdirectory of this repo."
+
+AS PUT, IT IS TOO STRONG, AND THE TRUE VERSION IS WORSE. `git log` CAN be run
+against a subdirectory of another repository, if that subdirectory is a bare
+repository whose files were committed. It was run, and it worked. What then
+happens on a CLONE is the finding, and it is sharper than the claim it replaces.
+"""
+route_a_non_bare = """
+ROUTE A -- COMMIT THE EMITTED REPOSITORY AS AN ORDINARY (NON-BARE) REPOSITORY.
+Git refuses. `git add` writes a gitlink and warns:
+
+    warning: adding embedded git repository: slice
+    hint: Clones of the outer repository will not contain the contents of
+    hint: the embedded repository and will not know how to obtain it.
+
+and the index entry is `160000 <sha> 0 slice` -- a submodule pointer with no
+URL. The objects are not stored. Resolving it means declaring a submodule, and a
+submodule needs a repository at a URL, which is the thing being avoided. Route A
+does not fail because it is inconvenient; it terminates in the same requirement
+[verified, scratch repositories outside this tree].
+"""
+route_b_bare = """
+ROUTE B -- COMMIT THE EMITTED REPOSITORY'S BARE FILES. This is the route that
+appears to work, and it is the dangerous one.
+
+Committing a packed bare repository stores 26 files: HEAD, config, description,
+info/, packed-refs, the hook samples, and objects/pack/*. `git add` takes all of
+them without complaint and nothing is left untracked. In the working tree where
+they were committed, `cd slice && git log --oneline` prints the SLICE's history
+-- 12 commits, 1570 to 1962 -- because git's repository discovery recognises the
+directory itself as a bare git directory before it walks up to the parent.
+
+THEN CLONE THE PARENT. In the clone, the same `git log --oneline` in the same
+directory prints the PARENT's two commits instead. It does not error. It does
+not warn. It answers a question about the Roman missal with a log of the outer
+repository.
+
+The mechanism is one sentence: git does not track empty directories, `refs/` is
+empty once the refs are packed, so `refs/` does not exist in the clone,
+`is_git_directory()` fails on the missing `refs`, discovery walks up, and the
+parent answers. `mkdir refs` inside the clone repairs it completely --
+`git log`, `git merge-base typica exempt-uses` and `git rev-list --all --count`
+all then work and return 12 [verified].
+
+So the honest form of the claim is not that the in-tree route is impossible. It
+is that the in-tree route is EITHER REFUSED BY GIT (route A) OR SILENTLY WRONG
+FOR EVERY READER WHO CLONES (route B), and that the second failure produces a
+confident wrong answer with no diagnostic. That is `guidance/the-shape.md`
+section 1's defect exactly -- a reference that resolves successfully and wrongly
+-- and this repository has already ruled that class worse than an error.
+"""
+verdict = """
+CONSUMABILITY IS THE OPERATIVE JUSTIFICATION, AND SIZE IS NOT.
+
+`git log`, `git diff`, `git merge-base` and `git log --graph` are not
+presentations of the artifact; they ARE the artifact. `guidance/act-histories.md`
+is built on that: the diff of a station is the acceptance test, commonality is
+computed by merge-base, and `reslotted` is carried by git's own rename
+detection. A form of the artifact that cannot answer those commands to a reader
+who did not build it is not a smaller version of it. It is a different thing.
+
+The two in-tree routes are the only two there are, and both fail. A repository
+of its own is therefore not a storage optimisation and cannot be justified on
+storage grounds -- the measurements in [size] show it would be a storage
+PESSIMISATION. It is the only form in which the artifact is what it claims to be.
+
+WHETHER `guidance/sources.md:389` REACHES THIS IS A QUESTION FOR THE MAINTAINER
+AND NOT FOR THIS RECORD. The rule admits two grounds, measured size and rights
+constraints, and this is neither. It is a consumability constraint. This record
+does not read a third ground into the rule on its own authority; it states the
+measurement, states that the two admitted grounds fail, and leaves the amendment
+to whoever owns `guidance/sources.md`. See [[open_questions]]
+`the-rule-admits-two-grounds-and-this-is-a-third`.
+"""
+basis = "[verified] 2026-08-02, in scratch repositories outside this tree; no git write command was run against this repository."
+
+# --- 3. Rights ----------------------------------------------------------------
+
+[rights]
+finding = "private-does-not-resolve-this"
+the_rule = """
+`guidance/sources.md:382-384`: a `restricted` artifact's "bytes must not enter
+Git, build products, tests, fixtures, or public artifacts."
+
+A PRIVATE REPOSITORY IS STILL GIT. AN EMITTED REPOSITORY IS STILL A BUILD
+PRODUCT. The rule's line is drawn at whether the bytes entered, not at who may
+read them. Making a repository private changes the size of the audience for a
+leak; it does not convert a leak into a non-leak, and it does not make the bytes
+not have entered. This is the hazard `private` does not resolve, and it is the
+whole reason this section is a measurement rather than a paragraph.
+"""
+
+[rights.what_would_enter]
+question = "Which stations' text would enter an emitted repository, and what rights does each carry?"
+roman_holy_week = """
+NO WITHHELD ROW EXISTS IN THIS SLICE AND NONE IS NEEDED. 0 of 38 units and 0 of
+42 departures carry `withheld`; the file declares no `[withheld]` table at all
+[verified]. Its nine witnesses are recorded `public-domain` without exception,
+seven of them pre-1925 printings.
+
+Two of the nine are post-1929 and their basis is the weak one: `benziger-iuxta
+-typicam-1962` rests on "the Internet Archive item is marked with the Public
+Domain Mark" and `aas-47-1955` on "recorded in the corpus this came from as a
+public-domain Internet Archive item". `guidance/sources.md` is explicit that
+online availability and successful download are not a distribution basis, and
+`lt-hist-rights-audit-v1.toml` refused six rows on exactly that ground. So the
+basis is insufficient as stated.
+
+IT IS NOT A BLOCKER HERE, AND THE REASON MATTERS. Only three departures in the
+slice introduce text under a post-1929 act, and all three were read: two are
+Scripture in the Vulgate (Isaiah 4:2 and Mark 16:2, as an antiphon incipit) and
+the third is a rubrical heading, `8. PRO CONVERSIONE IUDAEORUM`. The body of the
+slice's text is the 1570 text. The weak basis is a pre-existing exposure in the
+browser data this repository already publishes, and this record neither creates
+it nor clears it. Recorded in [[open_questions]] `two-post-1929-witnesses`.
+"""
+latin_missal = """
+TWO DEPARTURES OF THIRTEEN CARRY `withheld`, both for the same position: "a text
+of the 1970 typical edition, which this project may read and may not publish"
+[verified]. They are `ordo.offertorium.lavabo` (Psalmus 50, 4) and
+`ordo.praeparatio.confiteor`. Two of its 33 witnesses are recorded
+`holy-see-post-1929` -- the 1970 typical edition and the 2002 editio typica
+tertia -- and the remaining 31 are `public-domain`, ranging from 1484 to 1924.
+"""
+code_of_canon_law = """
+THE SLICE IS MOSTLY WITHHOLDING. 134 of 159 units, 11 of 131 departures and 29
+of 29 interpretations carry `withheld`, all naming one reason key,
+`holy-see-post-1929`, whose single stated sentence is "a work of the Holy See
+later than 1929, over whose text Vatican City State Law N. CXCVII of 2017 art. 2
+asserts copyright by name; this project holds no licence" [verified].
+
+The 25 units that DO carry words are all 1917 Code -- `cic-1917/...` paths --
+first published at Rome in 1918 and recorded `public-domain` on that ground. Of
+20 witnesses, 5 are `public-domain` (1582, 1879, 1881, 1918) and 15 are recorded
+`unresolved`, every one of them a post-1929 work of the Holy See read and not
+reproduced [verified].
+"""
+
+[rights.withheld_survives_into_commit_objects]
+question = "Does `withheld` survive into the emitted COMMIT OBJECTS, or only into the browser tree?"
+answer = "IT SURVIVES INTO THE COMMIT OBJECTS. Verified exhaustively, not sampled."
+measurement = """
+Every distinct (blob, path) pair under `cic-1983/` and `cceo/` across all 47
+commits of the code-of-canon-law slice was read and its second line inspected:
+237 canon blobs, and 237 of 237 begin their second line with `[text withheld:`.
+Zero lack the marker. A representative blob reads in full:
+
+    can. 87 s1
+    [text withheld: a work of the Holy See later than 1929, over whose text
+    Vatican City State Law N. CXCVII of 2017 art. 2 asserts copyright by name;
+    this project holds no licence]
+    text established by: sacrae-disciplinae-leges-1983
+
+The latin-missal slice's two withheld rows likewise appear as
+`[incipit withheld: a text of the 1970 typical edition, which this project may
+read and may not publish]`, and a scan of every blob in that repository finds
+exactly two carrying the word `withheld` -- the two expected [verified].
+
+The mechanism is `unit_body` at tools/act-history:754-756: where the incipit is
+empty and a withholding is named, the line the incipit would occupy carries the
+banner instead, and a law unit additionally carries `text established by: <act>`
+so that a station which substituted twenty-one canons does not show an empty
+diff. That last part is why the withholding is legible AS A HISTORY and not only
+as an absence: the file changes when the law changes, without printing the law.
+
+THIS IS THE LOAD-BEARING QUESTION AND IT HAD NOT BEEN CHECKED. It is now
+checked, and the answer is the good one.
+"""
+
+[rights.no_new_exposure]
+question = "Would publishing an emitted repository publish any text this repository does not already publish?"
+answer = "NO -- for all three slices, measured line by line."
+measurement = """
+Every text line in every UNIT FILE, in every commit, in all three emitted
+repositories was compared against the tracked browser data under
+`src/web/data/structure/act-history/<slice>/`, which this repository tracks and
+GitHub Pages already serves:
+
+  roman-holy-week      84 text lines,   0 absent from the tracked data
+  latin-missal        114 text lines,   0 absent from the tracked data
+  code-of-canon-law   309 text lines,   0 absent from the tracked data
+
+Four lines initially reported absent in the first two slices were re-read and
+found present, differing only by where the JSON wraps them -- the emitted files
+break at clause boundaries by `ventilate`, the JSON does not. They were verified
+individually against the tracked fragments [verified].
+
+SO THE RIGHTS QUESTION FOR PUBLICATION TODAY IS NOT "MAY THESE WORDS BE
+PUBLISHED". They are published. It is whether a second, permanent, force-pushed
+copy of them, in a form from which nothing can be withdrawn, is a step this
+project can take back. Section [rights.irreversibility] is the answer.
+"""
+
+[rights.irreversibility]
+statement = """
+A GIT HISTORY IS THE ONE ARTIFACT THIS PROJECT PRODUCES THAT CANNOT BE
+CORRECTED, ONLY REPLACED. Deleting a file in a later commit does not remove it
+from history -- `lt-hist-rights-audit-v1.toml` says exactly this about the
+lt-hist build repository, and it is equally true of ours. A published object
+survives in every clone taken before the rewrite and, on a hosting service, in
+the dangling-object views for as long as that service keeps them.
+
+The browser data does not have this property. A wrong byte in
+`src/web/data/structure/act-history/` is corrected by a commit, and the
+correction is the whole remedy for every future reader.
+
+That asymmetry is why the guard below is a precondition and not a suggestion.
+"""
+
+# --- 4. The date problem ------------------------------------------------------
+
+[dates]
+finding = "what-a-reader-of-a-published-repository-would-actually-see"
+the_shift = """
+Every commit stamp is the act's true date shifted forward ten thousand years
+(`YEAR_SHIFT = 10000`, tools/act-history:284). Git rejects a pre-1970 date:
+`fsck --strict` calls a negative timestamp `badDate` and a hosting service that
+runs fsck on receive refuses the push. The shift is the workaround, and
+`emit` writes the commit object directly with `hash-object --literally` because
+`commit-tree` parses the date through git's own reader (tools/act-history:1755).
+"""
+what_the_date_column_shows = """
+MEASURED, ON THE EMITTED code-of-canon-law REPOSITORY, FOR ONE COMMIT WHOSE TRUE
+DATE IS 2022-04-26:
+
+    git log -1 --format=%ad --date=default    Tue Apr 26 12:00:00 12022 +0000
+    git log -1 --format=%ad --date=short      12022-04-26
+    git log -1 --format=%ad --date=iso        12022-04-26 12:00:00 +0000
+    git log -1 --format=%ad --date=relative   in the future
+    git log -1 --format=%ad --date=rfc        Tue, 26 Apr 12022 12:00:00 +0000
+    git log -1 --format=%ad --date=human      Apr 26 12022
+
+and the raw object carries `author ... 317220494400 +0000` [verified].
+
+A reader who sorts or filters by date is reading five-digit years. A reader of a
+relative date is told "in the future" and nothing else. Neither is wrong -- the
+stamp is honestly unusable and was chosen to be unmistakable -- but a published
+repository is read by people who did not choose it.
+"""
+where_the_true_date_rides = """
+IN THE SUBJECT LINE AND IN AN `Act-date:` TRAILER, BOTH [verified]:
+
+    e70bc26 2022-04-26  Recognitum Librum VI repairs a cross-reference ...
+    ...
+    Act-date: 2022-04-26
+
+`git log --oneline` and `--graph` therefore read correctly, because the subject
+is the only part of a commit those views show. The trailer is the machine-
+readable copy, and `acts/<date>-<id>.txt` in the tree is the third. The emitted
+README states all of this already, at length, including why a smaller shift was
+rejected: the least shift clearing 1970 is about four hundred years, which would
+date Quo primum to 1970 -- plausible enough to be mistaken for a real date
+[verified, read out of the emitted README].
+"""
+
+[dates.commit_graph_overflow]
+finding = "NEW HERE, AND NOT RECORDED ANYWHERE ELSE IN THIS REPOSITORY"
+statement = """
+`git gc` BREAKS THE EMITTED REPOSITORY, AND `fsck --strict` THEN CALLS IT
+CORRUPT. This was not known before this measurement.
+
+A freshly emitted repository passes `git fsck --strict` with exit 0. Run
+`git gc` on it -- which writes a commit-graph by default -- and `fsck --strict`
+exits 16 and reports every single commit:
+
+    commit date for commit 0ab7009... in commit-graph is 4558644288
+        != 313796289600
+
+Twelve commits, twelve reports, for roman-holy-week. The commit-graph format
+stores a commit date in 34 bits, so the largest date it can hold is 2^34-1 =
+17,179,869,183 -- about the year 2514. The shifted stamps are near 3.15e11, some
+eighteen times too large, and every one of them wraps.
+
+IT IS NOT COSMETIC. It changes what git prints. `rev-list --all --date-order` on
+the packed repository puts a 1570 commit FIRST, ahead of 1962; on the same
+repository packed with `gc.writeCommitGraph=false` the same command returns
+strict descending order from 1962. The truncated dates are what the date-ordered
+traversal reads [verified, both directions, 2026-08-02].
+
+    clean:            11962-06-23, 11960-07-26, 11960-07-25, 11955-11-16, ...
+    with commit-graph: 11570-07-14, 11962-06-23, 11960-07-26, 11960-07-25, ...
+
+MITIGATION, AND ITS LIMIT. `git -c gc.writeCommitGraph=false gc` leaves the
+repository clean, and `objects/info/` then contains only `packs`. That is under
+this project's control for a local emit and NOT under its control on a hosting
+service, which runs its own maintenance. Whether a given service writes a
+commit-graph, and whether its own commit list is date-ordered from one, could
+not be verified from this lane. See [[open_questions]]
+`does-the-host-write-a-commit-graph`.
+"""
+
+# --- 5. Replaceability --------------------------------------------------------
+
+[replaceability]
+finding = "a-published-derived-repository-needs-its-own-written-authority"
+determinism = """
+THE EMIT IS DETERMINISTIC. Emitting roman-holy-week twice from the same source
+produces the identical set of 12 commit ids [verified]. So a re-emit that
+changes nothing changes nothing, and the artifact is reproducible.
+"""
+blast_radius = """
+BUT A CORRECTION IS NOT A COMMIT; IT IS A NEW HISTORY. Correcting one word in
+one act's title -- `Clement VIII issues the emended Missal`, the 1604 station --
+and re-emitting from a source file of the same name changed 10 of the 12 commit
+ids. The two commits that survived are the two 1570 roots, which precede it. A
+correction rewrites the corrected station and every descendant [verified].
+
+AND A PURELY ADMINISTRATIVE MOVE REWRITES ALL OF THEM. The first attempt at the
+measurement above emitted from a source file with a different NAME and changed
+12 of 12. The reason is `render_readme` (tools/act-history:1188): every commit's
+tree carries a README naming the source file it was built from, so renaming or
+relocating the inventory changes a blob in every tree and therefore every commit
+id. Moving a file in `src/sources/inventories/` would force-push the whole
+published history [verified, both runs].
+"""
+the_governing_prohibition = """
+`PROJECT-WORK.md:27`: the standing authority "does not authorize force-pushing,
+amending or otherwise rewriting published history, changing remotes, integrating
+a retained worker, or triggering another deployment mechanism."
+`PROJECT-WORK.md:177`: "Retained-worker integration, non-Pages deployment,
+remote changes, force-pushing, and all other history rewriting remain separately
+authorized operations." `PROJECT-WORK.md:482` records the same boundary again in
+the ledger.
+
+THE PROHIBITION IS ADDRESSED TO A HISTORY THAT IS A RECORD OF WORK. A derived
+repository is not that. It is a build output, like a PDF, and the emitted README
+says so in its first paragraph. Every correction to it is a force-push, and
+force-push is not an exception to its normal operation -- it IS its normal
+operation. Published under the existing authority, it would be governed by a
+rule it structurally cannot obey, and the first correction would either violate
+the rule or freeze the artifact at its first error.
+"""
+requirement = """
+A PUBLISHED DERIVED REPOSITORY NEEDS ITS OWN WRITTEN AUTHORITY, in
+`PROJECT-WORK.md`, saying in terms that:
+
+  - a repository emitted by `tools/act-history` is a BUILD OUTPUT and not a
+    record of work;
+  - it is REPLACED IN FULL on every publication, by force-push, and that
+    replacement is ordinary rather than an exception;
+  - the record it derives from is the tracked inventory under
+    `src/sources/inventories/`, which is where the history-rewriting prohibition
+    continues to apply undiminished; and
+  - no other repository, and no branch of this one, may be force-pushed under
+    that authority.
+
+Without it, the answer to "may this be published" is no, whatever the
+measurements say, because publishing it would create an obligation this project
+has already decided it will not take on.
+"""
+
+# --- 6. The lt-hist hazard ----------------------------------------------------
+
+[lt_hist]
+finding = "extraction-of-named-files-from-a-working-tree-is-the-only-admissible-route"
+recorded_at = "src/sources/inventories/lt-hist-rights-audit-v1.toml:147-163"
+what_it_records = """
+[recorded, and not re-verified here -- this lane ran no git command against
+/home/ksh/git/lt-hist]
+
+`/home/ksh/git/lt-hist` itself has no `.git`. But `~/git/lt-hist/build/roman-
+liturgy-history` IS a git repository: 25 commits, 78 tracked files, a
+16,505,844-byte `.git`, no remote configured. Its commits narrate the corpus
+version by version; the tip is "The Roman Missal English translation
+implemented".
+
+The audit calls this "the most dangerous fact in the file", because a fold-in
+has a route nobody would have to choose deliberately: fetch or merge that
+history. It would bring in every excluded byte -- the 2011 Roman Missal, the
+1998 ICEL Sacramentary, the 2002 typical edition -- together with commit
+messages asserting they were implemented, and it would do so IRREVERSIBLY,
+because deleting a file in a later commit does not remove it from history. Every
+section file in those commits also carries `text_status:` front matter that the
+audit's `text-status-may-not-travel` condition forbids from travelling.
+
+Its ruling, quoted: "The generated repository must not be fetched, merged,
+cherry-picked, submoduled, or subtree-merged. Any fold-in extracts named files
+from the working tree."
+"""
+why_it_binds_this_decision = """
+BECAUSE A PARALLEL-REPO WORKFLOW IS EXACTLY THE WORKFLOW THAT MAKES THAT ROUTE
+EASY. Once this project routinely operates git repositories beside the main one
+-- cloning them, fetching them, pointing remotes at them -- `git fetch <path>`
+and `git remote add` become ordinary gestures rather than deliberate ones. The
+audit's ruling was written for a fold-in; it has to be restated for a workflow.
+
+ANY WORKFLOW AROUND PUBLISHED ACT-HISTORY REPOSITORIES MUST STATE, IN ITS OWN
+WORDS AND NOT BY REFERENCE:
+
+  - no emitted or published act-history repository is ever a fetch, merge,
+    cherry-pick, submodule or subtree source FOR THIS REPOSITORY, in either
+    direction, for the same reason lt-hist's is not: history is not withdrawable
+    and a mistaken import is permanent;
+  - the only admissible movement of content is extraction of NAMED FILES from a
+    WORKING TREE, deliberately, one at a time; and
+  - `~/git/lt-hist/build/roman-liturgy-history` remains under the audit's
+    existing prohibition, unchanged and not narrowed by anything here.
+"""
+
+# --- The four hazards, and which of them `private` answers --------------------
+
+[[hazards]]
+id = "consumability"
+hazard = "The artifact's whole content is git operations, and no in-tree form serves them."
+does_private_resolve_it = "YES, COMPLETELY."
+reasoning = """
+Visibility is orthogonal to consumability. A private repository is a real
+repository: clone, `git log`, `git diff`, `git merge-base` and `--graph` all
+work for anyone with access, exactly as they would in a public one. Everything
+in [consumability] is satisfied by a private repository. This hazard is the
+argument FOR a repository, and privacy costs it nothing.
+"""
+
+[[hazards]]
+id = "date-presentation"
+hazard = "The date column reads 12022, and `--date=relative` reads 'in the future'."
+does_private_resolve_it = "SUBSTANTIALLY YES, BUT PRIVACY IS NOT THE MITIGATION."
+reasoning = """
+Private narrows the readership to people who can be told, which removes the
+public-misreading case. It does not make the dates readable, and the maintainer
+still reads them. The actual mitigation is the one already in place -- the true
+date leads every subject line, rides in an `Act-date:` trailer and is written
+into `acts/` -- plus the README notice, which exists. What the README does NOT
+yet say is [dates.commit_graph_overflow], and that gap is a condition below.
+"""
+
+[[hazards]]
+id = "replaceability"
+hazard = "Every correction is a force-push, which the standing authority excludes."
+does_private_resolve_it = "YES, CONDITIONALLY."
+reasoning = """
+`PROJECT-WORK.md`'s prohibition is on rewriting PUBLISHED history. A private
+repository holding a build output, published under an authority that says in
+terms that it is a build output replaced in full, is not the thing the
+prohibition is about. But the authority has to be WRITTEN. Private without it
+does not resolve the hazard; it only makes the violation less visible, which is
+worse. See [replaceability] `requirement`.
+"""
+
+[[hazards]]
+id = "rights"
+hazard = "Restricted bytes must not enter Git, build products, tests, fixtures, or public artifacts."
+does_private_resolve_it = "NO. THIS IS THE ONE."
+reasoning = """
+`guidance/sources.md:382-384` draws its line at whether the bytes ENTERED Git
+and a build product. A private repository is Git. An emitted repository is a
+build product. Both halves of the sentence are satisfied by a private repository
+just as they are by a public one, so privacy cannot be the answer to this
+hazard; the answer has to be that the bytes do not enter.
+
+Today they do not enter -- 237 of 237 post-1929 canon blobs carry the withheld
+banner and none carries words, and 0 of 507 unit text lines across all three
+slices are absent from the browser data this repository already serves. That is
+a fact about the current inventories. Nothing in the tool makes it a fact about
+the tool, and [[findings]] `nothing-enforces-withheld` is the proof. Privacy
+reduces the audience for a future leak; it does not prevent one, and it does not
+make one withdrawable.
+"""
+
+# --- Findings -----------------------------------------------------------------
+
+[[findings]]
+id = "nothing-enforces-withheld"
+severity = "blocking, for the two slices that depend on withholding"
+statement = """
+`tools/act-history check` DOES NOT REFUSE A UNIT OR DEPARTURE THAT CARRIES BOTH
+`withheld` AND `text`. `unit_body` (tools/act-history:734-762) writes the
+withheld banner in place of an empty incipit and then appends `text`
+unconditionally, so a row carrying both emits the banner AND the words -- the
+words underneath the notice that says they are not there.
+
+The `interpretations` table HAS the guard: an interpretation carrying `withheld`
+must supply `question` and `answer` in this project's own words and is refused
+if it also carries `dubium` or `responsum` (tools/act-history:1514-1524). The
+`units` and `departures` tables have no equivalent. The units loop in `check`
+validates `mass`, `slot`, `name`, `order`, the slug forms, `read_from` and the
+page-image collation date, and says nothing about `withheld`.
+"""
+proof = """
+NOT REASONED FROM THE SOURCE -- PROVED BY EMITTING A PROBE, in the scratch tree,
+outside this repository. A copy of `canon-law-acts-v1.toml` was patched to add
+one line to the CCEO can. 1 unit, which already carried
+`withheld = "holy-see-post-1929"`:
+
+    text = "PROTECTED WORDS PASTED HERE BY MISTAKE, canon 1 of the CCEO."
+
+`tools/act-history check` on the patched file reported ZERO problems and the
+same 47 acts, 159 base units, 131 departures and 29 interpretations as the
+tracked file. `emit` then wrote this blob into a commit object:
+
+    can. 1
+    [text withheld: a work of the Holy See later than 1929, over whose text
+    Vatican City State Law N. CXCVII of 2017 art. 2 asserts copyright by name;
+    this project holds no licence]
+    text established by: sacri-canones-1990
+
+    PROTECTED WORDS PASTED HERE BY MISTAKE, canon 1 of the CCEO.
+
+[verified 2026-08-02]. The banner and the words in one file, and no check
+between them.
+"""
+why_it_blocks = """
+Because the artifact is irreversible and the defect is not. 174 rows in the
+canon-law slice and 2 in the missal slice rest on a withholding that the tool
+does not enforce; one lane pasting a canon's Latin into the wrong field would
+pass every check this repository runs and land protected text in a permanent
+history. Fixing `check` is a small change to one file. Un-publishing a commit
+object is not a change anyone can make.
+"""
+the_fix = """
+`check` must append a problem where a `units` or `departures` row carries
+`withheld` together with a non-empty `text` or `incipit`, in the same shape as
+the interpretations guard already there: "carries `text` and also withholds its
+words; one or the other". That fix is NOT attempted in this lane, which owns
+only this file and one guidance section.
+"""
+
+[[findings]]
+id = "the-emitted-readme-does-not-state-a-rights-position"
+severity = "condition on publication"
+statement = """
+`render_readme` (tools/act-history:1188-1219) writes the slice's title, the
+build-artifact notice, the source encoding it came from, the act/witness
+distinction, the `[printed]` exception, and four paragraphs on the date shift.
+It says NOTHING about rights: not what the withheld banner means, not what a
+reader may do with the text that is there, not that the withholdings are a
+rights position rather than a gap in the research [verified, read out of the
+emitted README of all three slices].
+
+The generator says it once elsewhere, in the apparatus of the printed plate:
+"whose text is withheld here. That is a rights position and not ignorance"
+(tools/act-history:3042). The README, which is the first file a reader of a
+published repository opens, does not.
+"""
+
+[[findings]]
+id = "the-emitted-readme-does-not-warn-about-gc"
+severity = "condition on publication"
+statement = """
+The README explains the ten-thousand-year shift thoroughly and does not mention
+that `git gc` writes a commit-graph whose 34-bit date field cannot hold the
+shifted stamp, that `fsck --strict` then exits 16 on every commit, and that
+date-ordered traversal then returns a wrong order. A reader who clones a
+published repository and runs routine maintenance produces a repository their
+own tools call corrupt, with no warning from the artifact. See
+[dates.commit_graph_overflow] for the measurement.
+"""
+
+# --- The decision, slice by slice ---------------------------------------------
+
+[[decision]]
+slice = "roman-holy-week"
+verdict = "MAY BE PUBLISHED -- private or public -- once [[conditions]] 1, 2 and 3 are met."
+ground = "consumability, not size and not rights"
+reasoning = """
+It carries no withheld row: 0 of 38 units, 0 of 42 departures, no `[withheld]`
+table [verified]. So the unenforced guard is not load-bearing for it -- there is
+no withholding for a missing check to fail to protect. Every text line in its
+emitted repository is already in the tracked browser data this repository serves
+[verified, 84 of 84]. It packs to 42 kilobytes.
+
+Private or public makes no difference to its admissibility, because none of the
+four hazards turns on visibility for this slice. Public is the more useful form
+and this record does not prefer private for it. The conditions below are about
+the artifact's own honesty, not about who reads it.
+"""
+what_remains_open_and_does_not_block = """
+Two of its nine witnesses are post-1929 and rest on an Internet Archive marking,
+which `guidance/sources.md` refuses as a distribution basis. That exposure
+already exists in the published browser data, is not created by this decision,
+and is not cleared by it. See [[open_questions]] `two-post-1929-witnesses`. If
+the maintainer wants that settled before anything is published, it settles
+first; this record does not decide it either way.
+"""
+
+[[decision]]
+slice = "latin-missal"
+verdict = "MAY NOT BE PUBLISHED -- public OR private -- until the withheld guard lands."
+ground = "rights, unenforced"
+reasoning = """
+Two of thirteen departures rest on a withholding for the 1970 typical edition
+[verified]. The count is small and the current emit is clean -- exactly two
+blobs carry the banner and no blob carries the withheld words -- but the
+smallness cuts the wrong way: two rows in a file of 3,265 lines is a withholding
+a later lane can lose without noticing, in a slice whose other 31 witnesses are
+public domain and invite exactly that inattention.
+
+The guard is one condition in one function and it protects this slice and the
+next one together. Publishing before it means accepting a permanent artifact
+whose rights position is maintained by care alone.
+
+PRIVATE DOES NOT CHANGE THIS. See [[hazards]] `rights`.
+"""
+
+[[decision]]
+slice = "code-of-canon-law"
+verdict = "MAY NOT BE PUBLISHED -- public OR private -- until the withheld guard lands."
+ground = "rights, unenforced, at scale"
+reasoning = """
+174 rows rest on a withholding: 134 of 159 units, 11 of 131 departures, 29 of 29
+interpretations [verified]. The emit is clean today -- 237 of 237 post-1929
+canon blobs across all 47 commits carry the banner and none carries words
+[verified] -- and that cleanliness is a property of the inventory, not of the
+tool, and the probe in [[findings]] `nothing-enforces-withheld` shows precisely
+how it would stop being true.
+
+This is the slice where the mistake is most likely, because it is the slice
+where withholding is the norm rather than the exception, and where the words
+being withheld are the words a contributor most naturally reaches for. It is
+also the slice where a leak would be most consequential: a named claimant, a
+copyright asserted by name in Vatican City State Law N. CXCVII of 2017 art. 2,
+and no licence held.
+
+PRIVATE DOES NOT CHANGE THIS EITHER, AND HERE IS WHERE THAT MATTERS MOST. A
+private repository still puts the bytes into Git and into a build product, which
+is what `guidance/sources.md:382-384` forbids, and a private history is exactly
+as unwithdrawable as a public one.
+"""
+
+# --- What must be true first --------------------------------------------------
+
+[[conditions]]
+id = "the-withheld-guard"
+applies_to = ["latin-missal", "code-of-canon-law"]
+requirement = """
+`tools/act-history check` refuses a `units` or `departures` row that carries
+`withheld` together with a non-empty `text` or `incipit`, and a test covers it.
+Until then those two slices are not publishable in any visibility.
+"""
+verifiable_by = """
+Re-running the probe in [[findings]] `nothing-enforces-withheld`: a patched copy
+of the canon-law inventory carrying both fields must make `check` exit non-zero
+and name the row.
+"""
+
+[[conditions]]
+id = "written-replaceability-authority"
+applies_to = ["roman-holy-week", "latin-missal", "code-of-canon-law"]
+requirement = """
+`PROJECT-WORK.md` states that a repository emitted by `tools/act-history` is a
+build output, replaced in full on every publication by force-push, that the
+replacement is ordinary rather than an exception, that the record it derives
+from is the tracked inventory where the history-rewriting prohibition continues
+to apply undiminished, and that no other repository and no branch of this one is
+force-pushable under that authority. The exact text is [replaceability]
+`requirement`.
+"""
+why_first = """
+Because the first correction to a published slice is a force-push, and 10 of 12
+commit ids change for a one-word fix to one act [verified]. Publishing before
+the authority exists means the artifact is governed on day two by a rule it
+cannot obey.
+"""
+
+[[conditions]]
+id = "the-readme-states-rights-and-the-gc-hazard"
+applies_to = ["roman-holy-week", "latin-missal", "code-of-canon-law"]
+requirement = """
+`render_readme` states, for every slice: (a) what the withheld banner means and
+that it is a rights position and not ignorance -- for roman-holy-week, that no
+text in the slice is withheld, so a reader does not infer a withholding from
+silence; and (b) that `git gc` writes a commit-graph that cannot hold the
+shifted stamp, that `fsck --strict` will then report every commit, and that
+`gc.writeCommitGraph=false` is the local mitigation.
+
+Both are one paragraph each in one function. The date paragraphs already there
+are the model: this artifact's convention is that a hazard a reader will meet is
+stated on the artifact rather than in a record the reader does not have.
+"""
+
+[[conditions]]
+id = "the-parallel-repo-workflow-restates-the-lt-hist-ruling"
+applies_to = ["any published act-history repository"]
+requirement = """
+Whatever document describes the publishing workflow states, in its own words,
+that no emitted or published act-history repository is a fetch, merge,
+cherry-pick, submodule or subtree source in either direction, that the only
+admissible movement of content is extraction of named files from a working tree,
+and that `~/git/lt-hist/build/roman-liturgy-history` remains under its existing
+prohibition unchanged. See [lt_hist] `why_it_binds_this_decision`.
+"""
+
+# --- Open questions -----------------------------------------------------------
+
+[[open_questions]]
+id = "the-rule-admits-two-grounds-and-this-is-a-third"
+question = """
+`guidance/sources.md:389` admits measured source size or rights constraints. The
+justification that survives measurement is neither: it is that git operations
+are the artifact and no in-tree form serves them. Should the rule be amended to
+admit a consumability ground, or should a derived repository be governed
+somewhere else entirely?
+"""
+why_it_is_open = """
+This lane owns this file and one section of `guidance/act-histories.md`. It does
+not own `guidance/sources.md` and will not read a third ground into a rule from
+outside it. The measurement is complete; the amendment is a ruling.
+"""
+what_would_settle_it = """
+A sentence in `guidance/sources.md` beside the existing two grounds, or an
+explicit ruling that a derived build output is not a "dedicated data repository"
+within the meaning of that rule at all -- which is arguable, since the rule's
+subject is where SOURCES live and this artifact holds no source.
+"""
+
+[[open_questions]]
+id = "two-post-1929-witnesses"
+question = """
+`benziger-iuxta-typicam-1962` and `aas-47-1955` in the roman-holy-week slice are
+recorded `public-domain` on the strength of an Internet Archive marking, which
+`guidance/sources.md` refuses as a distribution basis and which
+`lt-hist-rights-audit-v1.toml` refused for six other rows. What is their actual
+basis?
+"""
+why_it_is_open = """
+The exposure predates this decision: the text is already tracked in
+`src/web/data/structure/act-history/` and already served. Only three departures
+in the slice introduce text under a post-1929 act, and all three were read and
+are Vulgate Scripture or a rubrical heading. So it does not block publication of
+a repository that adds no byte to what is already published -- but it is a
+weakness in a rights record, it is exactly the weakness this project has already
+ruled against twice, and it should not survive because it was found in the wrong
+lane.
+"""
+what_would_settle_it = """
+The route `lt-hist-rights-audit-v1.toml` used for its own equivalent: a stated
+jurisdiction, a stated basis, and a refusal to rest on a host's marking. It very
+likely belongs to the same single question that audit's
+`settle-the-holy-see-question-once` condition raises about postconciliar Holy See
+material, and the 1955 AAS row is named in that condition already.
+"""
+
+[[open_questions]]
+id = "does-the-host-write-a-commit-graph"
+question = """
+Does a hosting service write a commit-graph for a pushed repository, and is its
+own commit list date-ordered from one? If both, [dates.commit_graph_overflow]
+reaches the published view and not only a local clone.
+"""
+why_it_is_open = """
+NOTHING IN THIS LANE COULD ANSWER IT WITHOUT PUSHING, AND PUSHING IS THE ACT
+THIS LANE IS FORBIDDEN TO PERFORM. It is recorded as unverified rather than
+asserted, because an assertion about a service's internals from a lane that
+never touched the service is exactly the kind of confident wrong answer this
+whole record is about.
+"""
+what_would_settle_it = """
+One private push of the smallest slice by the maintainer, followed by fetching
+the repository back and running `fsck --strict` on the fetched copy, and reading
+the commit list's ordering. That is a five-minute check and it should be the
+FIRST thing done after the first publication, before anyone relies on the view.
+"""
+
+[[open_questions]]
+id = "head-opens-on-the-wrong-line"
+question = """
+`emit` points HEAD at the line of the first act in topological order
+(tools/act-history:1765). For latin-missal that is `praedicatorum`, so a clone
+checks out 7 files and a 1604 Dominican tip; the Roman line is a branch the
+reader must know to ask for. For code-of-canon-law it is `ius-antiquum`, 8 files,
+a 1582 tip. Should a slice be able to declare its landing branch?
+"""
+why_it_is_open = """
+It is not a rights or a size question and blocks nothing. It is a
+misrepresentation question: the default view of a published repository is the
+view most readers will take for the whole of it. This repository already made
+the equivalent ruling for the browser -- a manifest that declares which slice
+the page opens on -- and the same reasoning applies to HEAD.
+"""
+
+# --- Corrections this record makes to things already written -------------------
+
+[[corrections]]
+id = "the-1-3-mb-figure-measured-the-filesystem"
+corrects = "the prior estimate that the only emitted slice was 1.3 MB"
+correction = """
+`du -sh` on a freshly emitted roman-holy-week reports 728K here and 1.3M on the
+run that produced the figure; `du -sb` reports 78,602 bytes and the packed
+repository is 42,409 bytes. The difference is block allocation over 148 loose
+objects. The estimate was not wrong about what `du -sh` printed; it was a
+measurement of filesystem rounding presented as a measurement of the artifact
+[verified].
+"""
+
+[[corrections]]
+id = "a-repository-can-be-consumed-from-inside-a-repository"
+corrects = "the claim that git log, git diff and merge-base cannot be run against a subdirectory of this repository"
+correction = """
+They can, if the subdirectory is a bare repository whose files were committed:
+git's discovery recognises the directory as a git directory before walking up.
+It was run and it worked. The finding that replaces the claim is worse, not
+better -- in a CLONE the same commands silently answer with the OUTER
+repository's history, because `refs/` is empty, git does not track empty
+directories, and discovery therefore fails and walks up. `mkdir refs` in the
+clone repairs it entirely [verified]. See [consumability] `route_b_bare`.
+"""
+
+[[corrections]]
+id = "fsck-is-not-the-only-date-hazard"
+corrects = "the standing account that the date hazard is `fsck --strict` calling a negative timestamp badDate"
+correction = """
+That account is correct and incomplete. A POSITIVE shifted stamp passes `fsck
+--strict` on a fresh emit, and then FAILS it, exit 16 on every commit, as soon
+as anything writes a commit-graph -- because the commit-graph stores a date in
+34 bits and the shifted stamps are eighteen times too large. `git gc` writes one
+by default. The date hazard is therefore in two halves, and only the first half
+was written down [verified]. See [dates.commit_graph_overflow].
+"""
