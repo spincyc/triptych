@@ -741,6 +741,66 @@ nothing collated for the 1861 is transferred here.
 """
 
 [[witnesses]]
+id = "cummiskey-1861"
+label = "The Roman Missal translated into the English language for the use of the laity, first revised edition, Philadelphia: Eugene Cummiskey, 1861"
+language = "en"
+printed = "1861"
+attests = "si-quid-est-1634"
+attests_kind = "date-bound"
+attests_basis = """
+As for the 1806 and the 1843 above: the book names no Latin exemplar, so the
+edge is a date bound and nothing more. 1861 falls after Urban VIII's revision of
+1634 and before Divino afflatu of 1911, and the state it can be translating is
+the one si-quid-est-1634 left.
+
+What that bound settles is the thing this file needed settled about it. The
+printing stands ninety-four years before maxima-redemptionis-1955, so no English
+read out of it witnesses the restored Holy Week, whatever calendar serves the
+words. src/sources/inventories/roman-1962-proper-translations-v1.toml states the
+same edge for the same book on the same reasoning, and check-calendar-masses
+holds the two records to agree, so this is a checked restatement rather than a
+second opinion.
+"""
+not_a_station = """
+A lay translation is not an act. This one carries the strongest-looking front
+matter of the three English books here -- its title matter reads PUBLISHED WITH
+THE APPROBATION OF THE RIGHT REV. THE BISHOP OF PHILADELPHIA -- and that is a
+diocesan approbation to print, the same kind of thing the 1962 Benziger witness
+below carries and for the same reason not a promulgation. It revises nothing,
+names no Latin exemplar, and leaves the date bound above exactly as weak as it
+was. A hand missal attests what its translation printed, not what Rome
+promulgated, and the history draws no English line.
+"""
+read_from = "not-read"
+units_read = 0
+units_read_note = """
+No unit of this tracer was read from this printing. The one place this file
+leans on it -- the `corroboration` on sabbato.vesperae.oratio, where the Vespers
+oration stands on printed p. 329 -- cites a reading recorded in the translations
+sidecar and not one made here. The book itself is read at page-image level, in
+that sidecar; this slice has opened neither its pages nor its text layer.
+"""
+rights = "public-domain"
+rights_basis = "An 1861 printing, published in the United States and long out of copyright there by publication date. The Internet Archive item is a Google digitisation of that public-domain book, and the source library records the exact digitisation bytes as rights-unresolved -- a Google-produced derivative for which no distribution grant was established -- and retains none of them. The book's own printed English is public domain independently of the scan, which is what the sidecar carries."
+related_record = """
+This is the book every English word in
+src/sources/inventories/roman-1962-proper-translations-v1.toml is read from: 242
+entries, of which 176 were collated against its page images on 2026-07-31 and
+2026-08-01. It is registered in the source library as
+edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861, with the
+Internet Archive item romanmissaltran00churgoog behind it -- an 801-page image
+PDF and a 45,915-line DjVu text layer, both remote and unretained.
+
+The cummiskey-1843 witness above is a DIFFERENT PRINTING of the same anonymous
+translation, and the two must not be conflated: the 1861 is the edition this
+project quotes, the 1843 the corroborating printing whose Common and Proper of
+Saints stand at the same printed pages, so a reading can be checked in two
+independently scanned printings. Their scans are independent items --
+romanmissaltran00englgoog for the 1843 -- so a word both render alike is two
+optical readings and not one.
+"""
+
+[[witnesses]]
 id = "missale-romanum-1920"
 label = "Missale Romanum, editio typica vaticana, 1920"
 language = "la"
