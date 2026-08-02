@@ -119,6 +119,38 @@ citation from the second. Both readings are as printed, but the pairing is the
 file's and not the book's.
 """
 
+orations_read_later = """
+ADDED 2026-08-01, AND IT IS NOT PART OF THE COLLATION ABOVE. The scope statement
+says each of the 63 entries carries only its scripture-bearing propers, so
+nothing here collates an oration. That is still true of 62 of them. It stopped
+being true of `corpus-christi`, whose Collect, Secret, Postcommunion and
+Sequence Lauda Sion Salvatorem were transcribed into `propers.yaml` on
+2026-08-01 - the entry had been rendering as a finished I classis feast with not
+one prayer in it, which is the defect guidance/the-shape.md:98-100 names.
+
+THE METHOD RULE ABOVE GOVERNED THAT READING AND WAS FOLLOWED. The four propers
+were read from the same facsimile's page images at printed pp. 375-377 (pdf pp.
+456-458), rasterized at 200 dpi for the page and again at 400 dpi for each
+prayer, and no OCR text layer supplied a reading. The occasion for the reading
+was that a full Latin text layer of the 1920 Vatican typical edition entered the
+source library as tracked, publishable text at commit 50bb95e5
+(artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196).
+That artifact is text-only, so under the rule stated above it cannot supply a
+reading for this calendar; it was used as a second witness after the fact, at
+lines 56316-56590, and it corroborated all four. Where the two differ the page
+governed and the 1920 reading is recorded on the proper - 1920 prints
+`sollemnis` for `solemnis` and `coena` for `cena` in the Sequence, and shorter
+oration conclusions throughout.
+
+The same reading was taken the same day for the sanctoral entry
+`commemoratione-omnium-fidelium-defunctorum` at printed pp. 705-710 (pdf pp.
+786-791), which is outside this collation's scope entirely and is recorded here
+only because it rests on the same rule and the same two witnesses. It brought in
+the Sequence Dies irae and all three Masses of 2 November. The third of the five
+1962 Sequences that this calendar lacked, Stabat Mater dolorosa, was not
+attempted, because its Mass has no entry to attach it to.
+"""
+
 applying = """
 Nothing here has been applied. The 22 corrections belong in
 `src/sources/calendars/roman-1962/propers.yaml`, which another lane held open

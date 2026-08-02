@@ -28,7 +28,13 @@ verification: four tiers; the seasonal Sundays, the Triduum and Palm Sunday carr
   read from the same facsimile's text layer in column order on 2026-08-01, each
   attached to its day by the printed saint's name rather than by position, and
   each then measured against the text it points to in the tracked Clementine.
-  No image was read for any of them. Every remaining entry in those three
+  No image was read for any of them, with one exception now - the sanctoral entry
+  In Commemoratione Omnium Fidelium Defunctorum carries all three of the Masses
+  the Missal prints for 2 November, whole, read on the facsimile page images at
+  200 and 400 dpi and corroborated against the tracked 1920 Vatican typical
+  edition, which is a fifth tier and the only entry outside the Commune that
+  stands on a page reading of its every proper. Corpus Christi is now in the same
+  state within the seasonal section. Every remaining entry in those three
   sections is still a placeholder skeleton
 conventions:
 - every Introit concludes with the Gloria Patri and the repeated antiphon; the
@@ -378,6 +384,33 @@ open_collation_items:
   Gallican psalter numbers that psalm continuously with 113B. Both are
   divergences between witnesses, not misreadings, and settling them needs a
   citation_divergences ruling this file does not yet carry
+- the 1962 books appoint five Sequences and this file carried two of them,
+  Victimae paschali laudes at easter-sunday and Veni Sancte Spiritus at pentecost.
+  On 2026-08-01 two more were landed off page images - Lauda Sion Salvatorem at
+  corpus-christi and Dies irae at commemoratione-omnium-fidelium-defunctorum,
+  each with the whole formulary around it. The fifth, Stabat Mater dolorosa, is
+  still absent, and it is blocked on an entry and not on a text - its Mass is the
+  Commemoratio septem Dolorum B. Mariae Virg. of the Friday after Passion Sunday,
+  printed pp. 499-501, which has no entry here at all for the two reasons the item
+  above records - no registry scheme for a movable commemoration, and no ruling on
+  whether a Comm. carrying its own printed Mass files as a commemoration or as a
+  mass. Neither was settled here and nothing was invented to get past them
+- corpus-christi rendered as a finished first-class feast with no Collect, Secret,
+  Postcommunion or Sequence in it until 2026-08-01, while its own notes said the
+  orations were appointed but not transcribed. Nothing reads notes. That is the
+  defect guidance/the-shape.md names - a page that shows nothing where a prayer
+  belongs has told the reader that the Mass omits it - and the convention two
+  lists above, that a mass whose propers cover only the scripture-bearing slots
+  says so in its own notes, is not an answer to it. 128 seasonal masses still
+  carry that note and most of them are in the same state; the note is a record of
+  the gap and not a rendering of it
+- a proper cannot take its text from a sibling form of its own mass. resolve_propers
+  refuses a takes_from whose target key is the referring mass as a cycle, so where
+  the Missal itself prints a text once and refers a later form of the same Mass back
+  to it - Sequentia Dies irae, ut supra 706, at the second and third Masses of 2
+  November - the schema can neither repeat it nor point at it. The entry prints it
+  once, as the book does, and says so in its notes; settle whether a reference
+  should be allowed to name a form of its own mass
 sections:
   seasonal:
     kind: seasonal
@@ -9575,9 +9608,24 @@ sections:
       registry: '1962-T-corpus-christi'
       season: after-pentecost
       rank: I
-      notes: Only the scripture-bearing propers are recorded; the day's orations and other
-        composed chants are appointed but not yet transcribed. The Sequence Lauda Sion Salvatorem
-        is appointed between the Alleluia and the Gospel and is not recorded here.
+      notes: 'Every proper the Missal prints for this Mass is now carried. Until 2026-08-01
+        this entry held its seven scripture-bearing propers and no Collect, Secret,
+        Postcommunion or Sequence, and said so in this note; but nothing reads a note, so
+        the page rendered a first-class feast with not one prayer in it. The four composed
+        propers were read from the page images of the CMAA facsimile of the 1962 typica,
+        artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        (sha256 648fdb8f...3518a, matched on the copy read), printed pp. 375-377 = digital
+        pp. 456-458, rasterized at 200 dpi for the page and 400 dpi for each prayer. That is
+        the witness the seasonal collation of 2026-07-31 requires: no OCR text layer may
+        supply a reading here, because the text layer is the witness that collation audits.
+        Each was then corroborated against the tracked 1920 Vatican typical edition,
+        artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196,
+        at lines 56316-56590 of its text layer. The 1920 corroborates every word and settles
+        nothing on its own. What is still not carried: the Preface, which this file records
+        for no entry - the page prints Praefatio communis here, where 1920 printed Praefatio
+        de Nativitate for the octave 1962 abolished - and the rubric after the Postcommunion
+        that for the seven following days, where a procession is held, two Masses de Ssma
+        Eucharistia [58] are permitted ad modum Missae votivae II classis.'
       propers:
       - name: Introit
         incipit: Cibavit eos ex adipe frumenti
@@ -9593,6 +9641,20 @@ sections:
           - begin: {chapter: 80, verse: 2}
             end: {chapter: 80, verse: 2}
           ref: Psalm 80:2
+      - name: Collect
+        incipit: Deus, qui nobis sub Sacramento mirabili
+        source: composed
+        text: |
+          Deus, qui nobis sub Sacramento mirabili passionis tuae memoriam
+          reliquisti: tribue, quaesumus, ita nos Corporis et Sanguinis tui sacra
+          mysteria venerari; ut redemptionis tuae fructum in nobis jugiter
+          sentiamus: Qui vivis et regnas cum Deo Patre in unitate.
+        notes: Read from the 1962 CMAA facsimile page image, printed p. 375 = digital p. 456,
+          under the heading Oratio; corroborated at 1920 lines 56332-56341, which prints the
+          same words and the shorter conclusion Qui vivis et regnas. The printed conclusion
+          is carried as the page abbreviates it and is not expanded here, which is the open
+          collation item this file records about oration conclusions. The typica prints
+          iugiter; it is normalised to jugiter under this file's declared j convention.
       - name: Epistle
         source: scripture
         verses:
@@ -9619,6 +9681,56 @@ sections:
           - begin: {chapter: 6, verse: 56}
             end: {chapter: 6, verse: 57}
           ref: John 6:56-57
+      - name: Sequence
+        incipit: Lauda, Sion, Salvatorem
+        source: composed
+        text: |
+          Lauda, Sion, Salvatorem, lauda ducem et pastorem in hymnis et canticis.
+          Quantum potes, tantum aude: quia major omni laude, nec laudare sufficis.
+          Laudis thema specialis, panis vivus et vitalis hodie proponitur.
+          Quem in sacrae mensa cenae, turbae fratrum duodenae datum non ambigitur.
+          Sit laus plena, sit sonora, sit jucunda, sit decora mentis jubilatio.
+          Dies enim solemnis agitur, in qua mensae prima recolitur hujus institutio.
+          In hac mensa novi Regis, novum Pascha novae legis Phase vetus terminat.
+          Vetustatem novitas, umbram fugat veritas, noctem lux eliminat.
+          Quod in cena Christus gessit, faciendum hoc expressit in sui memoriam.
+          Docti sacris institutis, panem, vinum in salutis consecramus hostiam.
+          Dogma datur Christianis, quod in carnem transit panis, et vinum in
+          sanguinem.
+          Quod non capis, quod non vides, animosa firmat fides, praeter rerum
+          ordinem.
+          Sub diversis speciebus, signis tantum, et non rebus, latent res eximiae.
+          Caro cibus, sanguis potus: manet tamen Christus totus, sub utraque specie.
+          A sumente non concisus, non confractus, non divisus: integer accipitur.
+          Sumit unus, sumunt mille: quantum isti, tantum ille: nec sumptus
+          consumitur.
+          Sumunt boni, sumunt mali: sorte tamen inaequali, vitae vel interitus.
+          Mors est malis, vita bonis: vide paris sumptionis quam sit dispar exitus.
+          Fracto demum sacramento, ne vacilles, sed memento, tantum esse sub
+          fragmento, quantum toto tegitur.
+          Nulla rei fit scissura: signi tantum fit fractura: qua nec status nec
+          statura signati minuitur.
+          Ecce panis Angelorum, factus cibus viatorum: vere panis filiorum, non
+          mittendus canibus.
+          In figuris praesignatur, cum Isaac immolatur: agnus paschae deputatur:
+          datur manna patribus.
+          Bone Pastor, panis vere, Jesu, nostri miserere: tu nos pasce, nos tuere:
+          tu nos bona fac videre in terra viventium.
+          Tu, qui cuncta scis et vales: qui nos pascis hic mortales: tuos ibi
+          commensales, coheredes et sodales fac sanctorum civium. Amen.
+          Alleluja.
+        notes: Read from the 1962 CMAA facsimile page image, printed p. 376 = digital p. 457,
+          under the heading Sequentia, both columns rendered again at 400 dpi because the
+          strophe punctuation carries the sense; corroborated at 1920 lines 56403-56528,
+          which heads it Sequentia. Thomae de Aquino. The 24 strophes are the full form the
+          typica prints, and the final Alleluja stands as its own line as the page prints it.
+          NOT TAKEN FROM THE POSTCONCILIAR FILE, which carries a Lauda Sion of its own -
+          takes_from never crosses calendars, the two books punctuate differently, and that
+          file's declared orthography is i where this one's is j. The four readings this
+          entry normalises to j are maior, iucunda, iubilatio and huius; Isaac keeps its
+          vowel i. Where the two witnesses differ the 1962 page governs and the 1920 is
+          recorded here as the loser - 1920 prints sollemnis for solemnis, coena for cena,
+          and no comma after cenae or after totus.
       - name: Gospel
         source: scripture
         verses:
@@ -9636,6 +9748,17 @@ sections:
           - begin: {chapter: 21, verse: 6}
             end: {chapter: 21, verse: 6}
           ref: Leviticus 21:6
+      - name: Secret
+        incipit: Ecclesiae tuae, quaesumus, Domine, unitatis et pacis
+        source: composed
+        text: |
+          Ecclesiae tuae, quaesumus, Domine, unitatis et pacis propitius dona
+          concede: quae sub oblatis muneribus mystice designantur. Per Dominum.
+        notes: Read from the 1962 CMAA facsimile page image, printed p. 377 = digital p. 458,
+          under the heading Secreta; corroborated at 1920 lines 56539-56550, which prints the
+          same words and the longer conclusion Per Dominum nostrum. The printed conclusion is
+          carried as the page abbreviates it. The rubric Praefatio communis stands under this
+          Secret on the page and is not recorded, because this file records no preface.
       - name: Communion
         incipit: Quotiescumque manducabitis panem hunc
         source: scripture
@@ -9645,6 +9768,17 @@ sections:
           - begin: {chapter: 11, verse: 26}
             end: {chapter: 11, verse: 27}
           ref: 1 Corinthians 11:26-27
+      - name: Postcommunion
+        incipit: Fac nos, quaesumus, Domine, divinitatis tuae sempiterna fruitione repleri
+        source: composed
+        text: |
+          Fac nos, quaesumus, Domine, divinitatis tuae sempiterna fruitione
+          repleri: quam pretiosi Corporis et Sanguinis tui temporalis perceptio
+          praefigurat: Qui vivis et regnas cum Deo Patre in unitate.
+        notes: Read from the 1962 CMAA facsimile page image, printed p. 377 = digital p. 458,
+          under the heading Postcommunio; corroborated at 1920 lines 56564-56576, which prints
+          the same words and the shorter conclusion Qui vivis. The printed conclusion is
+          carried as the page abbreviates it.
     - key: pentecost-2
       name: Second Sunday after Pentecost
       registry: '16'
@@ -29356,12 +29490,475 @@ sections:
       date: 11-02
       rank: I
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: 'Transcribed 2026-08-01; until then this entry was one Placeholder, and the
+        Sequence Dies irae was one of the three sequences the 1962 books appoint that this
+        calendar did not carry. THE THREE MASSES ARE THREE FORMS. The Missal prints under
+        this one heading three whole formularies, Ad primam, Ad secundam and Ad tertiam
+        Missam, because any priest may celebrate three Masses on this day; they are not two
+        alternatives but three celebrations, and `forms` is the only shape this schema has
+        for more than one formulary under one key. WITNESS AND LOCUS. Read from the page
+        images of the CMAA facsimile of the 1962 typica,
+        artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        (sha256 648fdb8f...3518a, matched on the copy read), printed pp. 705-710 = digital
+        pp. 786-791, rasterized at 200 dpi for the pages and at 400 dpi for every prayer.
+        No OCR text layer supplied a reading, which is the standing rule of the seasonal
+        collation of 2026-07-31 and the reason this entry is not read off a text layer even
+        though a text layer of this book exists. Each proper was then corroborated against
+        the tracked 1920 Vatican typical edition,
+        artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196,
+        at lines 95538-96280 of its text layer, where the same three Masses stand under the
+        same heading. THE TWO WITNESSES DISAGREE AT THE THIRD MASS, and the disagreement is
+        substantive rather than orthographic: 1920 prays for `nostrae congregationis fratres,
+        propinquos et benefactores` in the Collect and for `fratrum, propinquorum et
+        benefactorum nostrorum` in the Secret and the Postcommunion, where 1962 prays for
+        `animas famulorum famularumque tuarum` and `omnium fidelium defunctorum`. The 1962
+        reading is carried at all three places and the 1920 reading is recorded on each
+        proper, because a reader who checked the older book would otherwise think the
+        transcription wrong. THE SEQUENCE IS PRINTED ONCE. At the second and third Masses
+        the page prints only `Sequentia Dies irae, ut supra 706`, so this entry prints it
+        once too, in the first form, and the second and third forms carry no Sequence proper.
+        That is what the book does; it is not a claim that those Masses have no Sequence.
+        The schema cannot say it any other way - a proper''s takes_from names a mass, and
+        resolve_propers refuses a reference whose target is the referring mass itself as a
+        cycle, so a form cannot take from its sibling form. Everything else the second and
+        third Masses share with the first - the Tract, the Offertory responsory, the
+        Communion responsory - the Missal does print out in full at each Mass, and so does
+        this entry. WHAT IS STILL ABSENT: the Preface, which this file records for no entry
+        (the page prints Praefatio defunctorum at each of the three); the rubrics on the
+        chalice between Masses, on the confession before the following Masses, and on the
+        Requiescant in pace ending without a blessing, which are ritual directions and not
+        propers; and the rubric governing how many Masses may be said and in what order,
+        which stands under the heading and is summarised here rather than transcribed.'
+      forms:
+      - name: First Mass (Ad primam Missam)
+        propers:
+        - name: Introit
+          incipit: Requiem aeternam dona eis, Domine
+          source: scripture
+          verses:
+          - book: 4 Esdras
+            ranges:
+            - begin: {chapter: 2, verse: 34}
+              end: {chapter: 2, verse: 35}
+            ref: 4 Esdras 2:34-35
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 64, verse: 2}
+              end: {chapter: 64, verse: 3}
+            ref: Psalm 64:2-3
+          notes: Printed p. 705 = digital p. 786, headed Ant. ad Introitum, with the printed
+            references 4 Esdrae 2, 34 et 35 and Ps. 64, 2-3. The page prints no Gloria Patri
+            here, so this file's general convention that every Introit concludes with the
+            doxology does not hold for this Mass; the rubric printed instead reads Deinde
+            absolute repetitur Requiem aeternam usque ad psalmum. At the second and third
+            Masses the same rubric is abbreviated to the cue Requiem aeternam.
+        - name: Collect
+          incipit: Fidelium, Deus, omnium conditor et redemptor
+          source: composed
+          text: |
+            Fidelium, Deus, omnium conditor et redemptor: animabus famulorum
+            famularumque tuarum remissionem cunctorum tribue peccatorum; ut
+            indulgentiam, quam semper optaverunt, piis supplicationibus
+            consequantur: Qui vivis et regnas cum Deo Patre in unitate.
+          notes: Printed pp. 705-706 = digital pp. 786-787, headed Oratio; corroborated at
+            1920 lines 95566-95580, which prints the same words and the shorter conclusion
+            Qui vivis.
+        - name: Epistle
+          source: scripture
+          verses:
+          - book: 1 Corinthians
+            ranges:
+            - begin: {chapter: 15, verse: 51}
+              end: {chapter: 15, verse: 57}
+            ref: 1 Corinthians 15:51-57
+          notes: Printed p. 706 = digital p. 787, printed reference 1 Cor. 15, 51-57.
+        - name: Gradual
+          incipit: Requiem aeternam dona eis, Domine
+          source: scripture
+          verses:
+          - book: 4 Esdras
+            ranges:
+            - begin: {chapter: 2, verse: 34}
+              end: {chapter: 2, verse: 35}
+            ref: 4 Esdras 2:34-35
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 111, verse: 7}
+              end: {chapter: 111, verse: 7}
+            ref: Psalm 111:7
+          notes: Printed p. 706 = digital p. 787, printed references 4 Esdrae 2, 34 et 35 and,
+            on the verse, Ps. 111, 7.
+        - name: Tract
+          incipit: Absolve, Domine, animas omnium fidelium defunctorum
+          source: composed
+          text: |
+            Absolve, Domine, animas omnium fidelium defunctorum ab omni vinculo
+            delictorum. V. Et gratia tua illis succurrente, mereantur evadere
+            judicium ultionis. V. Et lucis aeternae beatitudine perfrui.
+          notes: Printed p. 706 = digital p. 787, headed Tractus; corroborated at 1920 lines
+            95620-95630. The Missal prints no scriptural reference for it, so it is recorded
+            as composed rather than as an uncited scripture citation. The typica prints
+            iudicium; normalised to judicium under this file's declared j convention. The
+            Missal prints this Tract out in full at all three Masses, and so does this entry.
+        - name: Sequence
+          incipit: Dies irae, dies illa
+          source: composed
+          text: |
+            Dies irae, dies illa, Solvet saeclum in favilla: Teste David cum Sibylla.
+            Quantus tremor est futurus, Quando Judex est venturus, Cuncta stricte
+            discussurus!
+            Tuba, mirum spargens sonum Per sepulcra regionum, Coget omnes ante
+            thronum.
+            Mors stupebit, et natura, Cum resurget creatura, Judicanti responsura.
+            Liber scriptus proferetur, In quo totum continetur, Unde mundus judicetur.
+            Judex ergo cum sedebit, Quidquid latet, apparebit: Nil inultum remanebit.
+            Quid sum miser tunc dicturus? Quem patronum rogaturus, Cum vix justus sit
+            securus?
+            Rex tremendae majestatis, Qui salvandos salvas gratis, Salva me, fons
+            pietatis.
+            Recordare, Jesu pie, Quod sum causa tuae viae: Ne me perdas illa die.
+            Quaerens me, sedisti lassus: Redemisti Crucem passus: Tantus labor non sit
+            cassus.
+            Juste Judex ultionis, Donum fac remissionis Ante diem rationis.
+            Ingemisco, tamquam reus: Culpa rubet vultus meus: Supplicanti parce, Deus.
+            Qui Mariam absolvisti, Et latronem exaudisti, Mihi quoque spem dedisti.
+            Preces meae non sunt dignae: Sed tu bonus fac benigne, Ne perenni cremer
+            igne.
+            Inter oves locum praesta, Et ab haedis me sequestra, Statuens in parte
+            dextra.
+            Confutatis maledictis, Flammis acribus addictis, Voca me cum benedictis.
+            Oro supplex et acclinis, Cor contritum quasi cinis: Gere curam mei finis.
+            Lacrimosa dies illa, Qua resurget ex favilla Judicandus homo reus:
+            Huic ergo parce, Deus. Pie Jesu Domine, Dona eis requiem.
+            Amen.
+          notes: 'Printed p. 706 = digital p. 787, headed Sequentia, both columns rendered
+            again at 400 dpi; one line here is one printed strophe, and the last two strophes
+            of three lines with the closing Amen stand as the page sets them. Corroborated at
+            1920 lines 95631-95733, whose text layer is damaged exactly where a reading would
+            have been decided from it: it reads `Nil multum` for `Nil inultum`, `Flammis
+            actibus` for `Flammis acribus`, `hoedis` for `haedis`, and turns most of the
+            line-final commas into full stops. That damage is why the page image supplies the
+            reading and the 1920 only corroborates. The typica prints Iudex, Iudicanti,
+            iudicetur, iustus, Iuste, Iudicandus and Iesu; all are normalised to j under this
+            file''s declared convention. Printed once for the day: the second and third
+            Masses direct the reader here with `Sequentia Dies irae, ut supra 706`.'
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 5, verse: 25}
+              end: {chapter: 5, verse: 29}
+            ref: John 5:25-29
+          notes: Printed p. 707 = digital p. 788, printed reference Io. 5, 25-29.
+        - name: Offertory
+          incipit: Domine Jesu Christe, Rex gloriae
+          source: composed
+          text: |
+            Domine Jesu Christe, Rex gloriae, libera animas omnium fidelium
+            defunctorum de poenis inferni et de profundo lacu: libera eas de ore
+            leonis, ne absorbeat eas tartarus, ne cadant in obscurum: sed signifer
+            sanctus Michael repraesentet eas in lucem sanctam: * Quam olim Abrahae
+            promisisti et semini ejus. V. Hostias et preces tibi, Domine, laudis
+            offerimus: tu suscipe pro animabus illis, quarum hodie memoriam facimus:
+            fac eas, Domine, de morte transire ad vitam. Quam olim Abrahae promisisti
+            et semini ejus.
+          notes: Printed p. 707 = digital p. 788, headed Responsorium ad Offertorium and
+            carrying no scriptural reference, which is why it is recorded as composed;
+            corroborated at 1920 lines 96202-96223. The asterisk is the page's own, marking
+            where the repeat after the verse begins. The typica prints Iesu, eius and Michael
+            with a diaeresis; the first two are normalised to j and the third is written
+            Michael, as this file already writes it elsewhere.
+        - name: Secret
+          incipit: Hostias, quaesumus, Domine, quas tibi pro animabus famulorum
+          source: composed
+          text: |
+            Hostias, quaesumus, Domine, quas tibi pro animabus famulorum
+            famularumque tuarum offerimus, propitiatus intende: ut, quibus fidei
+            christianae meritum contulisti, dones et praemium. Per Dominum nostrum
+            Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
+          notes: Printed p. 707 = digital p. 788, headed Secreta; corroborated at 1920 lines
+            95781-95793, which prints Christianae with a capital and the shorter conclusion
+            Per Dominum. The 1962 lower-case christianae is carried.
+        - name: Communion
+          incipit: Lux aeterna luceat eis, Domine
+          source: scripture
+          verses:
+          - book: 4 Esdras
+            ranges:
+            - begin: {chapter: 2, verse: 35}
+              end: {chapter: 2, verse: 35}
+            - begin: {chapter: 2, verse: 34}
+              end: {chapter: 2, verse: 34}
+            ref: 4 Esdras 2:35, 34
+          notes: Printed p. 707 = digital p. 788, headed Responsorium ad Communionem, printed
+            reference 4 Esdrae 2, 35 et 34 - the two verses in that order, which the recorded
+            range list keeps.
+        - name: Postcommunion
+          incipit: Animabus, quaesumus, Domine, famulorum famularumque tuarum
+          source: composed
+          text: |
+            Animabus, quaesumus, Domine, famulorum famularumque tuarum oratio
+            proficiat supplicantium: ut eas et a peccatis omnibus exuas, et tuae
+            redemptionis facias esse participes: Qui vivis et regnas cum Deo Patre in
+            unitate.
+          notes: Printed p. 707 = digital p. 788, headed Postcommunio; corroborated at 1920
+            lines 95823-95833, which prints the same words and the shorter conclusion Qui
+            vivis.
+      - name: Second Mass (Ad secundam Missam)
+        propers:
+        - name: Introit
+          incipit: Requiem aeternam dona eis, Domine
+          source: scripture
+          verses:
+          - book: 4 Esdras
+            ranges:
+            - begin: {chapter: 2, verse: 34}
+              end: {chapter: 2, verse: 35}
+            ref: 4 Esdras 2:34-35
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 64, verse: 2}
+              end: {chapter: 64, verse: 3}
+            ref: Psalm 64:2-3
+          notes: Printed p. 707 = digital p. 788. The Missal prints the same Introit out in
+            full at each of the three Masses, and so does this entry.
+        - name: Collect
+          incipit: 'Deus, indulgentiarum Domine: da animabus famulorum'
+          source: composed
+          text: |
+            Deus, indulgentiarum Domine: da animabus famulorum famularumque tuarum
+            refrigerii sedem, quietis beatitudinem, et luminis claritatem. Per
+            Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+            unitate.
+          notes: Printed p. 707 = digital p. 788, headed Oratio; corroborated at 1920 lines
+            95864-95874, which prints quietis beatitudinem without the comma before et
+            luminis and the shorter conclusion Per Dominum.
+        - name: Lesson
+          source: scripture
+          verses:
+          - book: 2 Maccabees
+            ranges:
+            - begin: {chapter: 12, verse: 43}
+              end: {chapter: 12, verse: 46}
+            ref: 2 Maccabees 12:43-46
+          notes: Printed p. 708 = digital p. 789, headed Lectio libri Machabaeorum, printed
+            reference 2 Mach. 12, 43-46.
+        - name: Gradual
+          incipit: Requiem aeternam dona eis, Domine
+          source: scripture
+          verses:
+          - book: 4 Esdras
+            ranges:
+            - begin: {chapter: 2, verse: 34}
+              end: {chapter: 2, verse: 35}
+            ref: 4 Esdras 2:34-35
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 111, verse: 7}
+              end: {chapter: 111, verse: 7}
+            ref: Psalm 111:7
+          notes: Printed p. 708 = digital p. 789, printed out in full as at the first Mass.
+        - name: Tract
+          incipit: Absolve, Domine, animas omnium fidelium defunctorum
+          source: composed
+          text: |
+            Absolve, Domine, animas omnium fidelium defunctorum ab omni vinculo
+            delictorum. V. Et gratia tua illis succurrente, mereantur evadere
+            judicium ultionis. V. Et lucis aeternae beatitudine perfrui.
+          notes: Printed p. 708 = digital p. 789, headed Tractus and printed out in full, as
+            the Missal does at each of the three Masses. Immediately after it the page prints
+            `Sequentia Dies irae, ut supra 706`; the text stands in the first form of this
+            entry and is not repeated here, because the book does not repeat it.
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 6, verse: 37}
+              end: {chapter: 6, verse: 40}
+            ref: John 6:37-40
+          notes: Printed p. 708 = digital p. 789, printed reference Io. 6, 37-40.
+        - name: Offertory
+          incipit: Domine Jesu Christe, Rex gloriae
+          source: composed
+          text: |
+            Domine Jesu Christe, Rex gloriae, libera animas omnium fidelium
+            defunctorum de poenis inferni et de profundo lacu: libera eas de ore
+            leonis, ne absorbeat eas tartarus, ne cadant in obscurum: sed signifer
+            sanctus Michael repraesentet eas in lucem sanctam: * Quam olim Abrahae
+            promisisti et semini ejus. V. Hostias et preces tibi, Domine, laudis
+            offerimus: tu suscipe pro animabus illis, quarum hodie memoriam facimus:
+            fac eas, Domine, de morte transire ad vitam. Quam olim Abrahae promisisti
+            et semini ejus.
+          notes: Printed p. 708 = digital p. 789, headed Responsorium ad Offertorium and
+            printed out in full, as the Missal does at each of the three Masses.
+        - name: Secret
+          incipit: Propitiare, Domine, supplicationibus nostris
+          source: composed
+          text: |
+            Propitiare, Domine, supplicationibus nostris, pro animabus famulorum
+            famularumque tuarum, pro quibus tibi offerimus sacrificium laudis: ut eas
+            Sanctorum tuorum consortio sociare digneris. Per Dominum.
+          notes: Printed p. 708 = digital p. 789, headed Secreta; corroborated at 1920 lines
+            95976-95986, which prints a semicolon after sacrificium laudis where 1962 prints
+            a colon.
+        - name: Communion
+          incipit: Lux aeterna luceat eis, Domine
+          source: scripture
+          verses:
+          - book: 4 Esdras
+            ranges:
+            - begin: {chapter: 2, verse: 35}
+              end: {chapter: 2, verse: 35}
+            - begin: {chapter: 2, verse: 34}
+              end: {chapter: 2, verse: 34}
+            ref: 4 Esdras 2:35, 34
+          notes: Printed p. 708 = digital p. 789, headed Responsorium ad Communionem and
+            printed out in full, as the Missal does at each of the three Masses.
+        - name: Postcommunion
+          incipit: 'Praesta, quaesumus, Domine: ut animae famulorum famularumque tuarum'
+          source: composed
+          text: |
+            Praesta, quaesumus, Domine: ut animae famulorum famularumque tuarum, his
+            purgatae sacrificiis, indulgentiam pariter et requiem capiant
+            sempiternam. Per Dominum.
+          notes: Printed p. 708 = digital p. 789, headed Postcommunio; corroborated at 1920
+            lines 95999-96008.
+      - name: Third Mass (Ad tertiam Missam)
+        propers:
+        - name: Introit
+          incipit: Requiem aeternam dona eis, Domine
+          source: scripture
+          verses:
+          - book: 4 Esdras
+            ranges:
+            - begin: {chapter: 2, verse: 34}
+              end: {chapter: 2, verse: 35}
+            ref: 4 Esdras 2:34-35
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 64, verse: 2}
+              end: {chapter: 64, verse: 3}
+            ref: Psalm 64:2-3
+          notes: Printed p. 709 = digital p. 790. The Missal prints the same Introit out in
+            full at each of the three Masses, and so does this entry.
+        - name: Collect
+          incipit: Deus, veniae largitor et humanae salutis amator
+          source: composed
+          text: |
+            Deus, veniae largitor et humanae salutis amator: quaesumus clementiam
+            tuam; ut animas famulorum famularumque tuarum, quae ex hoc saeculo
+            transierunt, beata Maria semper Virgine intercedente cum omnibus Sanctis
+            tuis, ad perpetuae beatitudinis consortium pervenire concedas. Per
+            Dominum nostrum.
+          notes: 'Printed p. 709 = digital p. 790, headed Oratio. THE TWO WITNESSES DIFFER
+            HERE, and not over spelling: at 1920 lines 96027-96039 the prayer asks the same
+            thing for `nostrae congregationis fratres, propinquos et benefactores, qui ex hoc
+            saeculo transierunt`, where the 1962 page reads `animas famulorum famularumque
+            tuarum, quae ex hoc saeculo transierunt`. The 1962 reading is carried, because
+            this is the 1962 calendar; the 1920 reading is recorded so that a reader checking
+            the older book does not take the difference for an error here.'
+        - name: Lesson
+          source: scripture
+          verses:
+          - book: Revelation
+            ranges:
+            - begin: {chapter: 14, verse: 13}
+              end: {chapter: 14, verse: 13}
+            ref: Revelation 14:13
+          notes: Printed p. 709 = digital p. 790, headed Lectio libri Apocalypsis beati
+            Ioannis Apostoli, printed reference Apoc. 14, 13; the printed Apoc. is normalised
+            to this file's English book name Revelation, as its citation convention requires.
+        - name: Gradual
+          incipit: Requiem aeternam dona eis, Domine
+          source: scripture
+          verses:
+          - book: 4 Esdras
+            ranges:
+            - begin: {chapter: 2, verse: 34}
+              end: {chapter: 2, verse: 35}
+            ref: 4 Esdras 2:34-35
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 111, verse: 7}
+              end: {chapter: 111, verse: 7}
+            ref: Psalm 111:7
+          notes: Printed p. 709 = digital p. 790, printed out in full as at the first Mass.
+        - name: Tract
+          incipit: Absolve, Domine, animas omnium fidelium defunctorum
+          source: composed
+          text: |
+            Absolve, Domine, animas omnium fidelium defunctorum ab omni vinculo
+            delictorum. V. Et gratia tua illis succurrente, mereantur evadere
+            judicium ultionis. V. Et lucis aeternae beatitudine perfrui.
+          notes: Printed p. 709 = digital p. 790, headed Tractus and printed out in full, as
+            the Missal does at each of the three Masses. Immediately after it the page prints
+            `Sequentia Dies irae, ut supra 706`; the text stands in the first form of this
+            entry and is not repeated here, because the book does not repeat it.
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 6, verse: 51}
+              end: {chapter: 6, verse: 55}
+            ref: John 6:51-55
+          notes: Printed p. 709 = digital p. 790, printed reference Io. 6, 51-55.
+        - name: Offertory
+          incipit: Domine Jesu Christe, Rex gloriae
+          source: composed
+          text: |
+            Domine Jesu Christe, Rex gloriae, libera animas omnium fidelium
+            defunctorum de poenis inferni et de profundo lacu: libera eas de ore
+            leonis, ne absorbeat eas tartarus, ne cadant in obscurum: sed signifer
+            sanctus Michael repraesentet eas in lucem sanctam: * Quam olim Abrahae
+            promisisti et semini ejus. V. Hostias et preces tibi, Domine, laudis
+            offerimus: tu suscipe pro animabus illis, quarum hodie memoriam facimus:
+            fac eas, Domine, de morte transire ad vitam. Quam olim Abrahae promisisti
+            et semini ejus.
+          notes: Printed p. 709 = digital p. 790, headed Responsorium ad Offertorium and
+            printed out in full, as the Missal does at each of the three Masses.
+        - name: Secret
+          incipit: Deus, cujus misericordiae non est numerus
+          source: composed
+          text: |
+            Deus, cujus misericordiae non est numerus, suscipe propitius preces
+            humilitatis nostrae: et animabus omnium fidelium defunctorum, quibus tui
+            nominis dedisti confessionem, per haec sacramenta salutis nostrae,
+            cunctorum remissionem tribue peccatorum. Per Dominum.
+          notes: 'Printed p. 709 = digital p. 790, headed Secreta, and concluding with the
+            page''s own contraction Per Dnum., expanded here to Per Dominum. THE TWO
+            WITNESSES DIFFER: at 1920 lines 96222-96233 the prayer reads `et animabus fratrum,
+            propinquorum et benefactorum nostrorum`, where 1962 reads `et animabus omnium
+            fidelium defunctorum` - the same substitution the Collect and the Postcommunion of
+            this Mass carry. The typica prints cuius; normalised to cujus.'
+        - name: Communion
+          incipit: Lux aeterna luceat eis, Domine
+          source: scripture
+          verses:
+          - book: 4 Esdras
+            ranges:
+            - begin: {chapter: 2, verse: 35}
+              end: {chapter: 2, verse: 35}
+            - begin: {chapter: 2, verse: 34}
+              end: {chapter: 2, verse: 34}
+            ref: 4 Esdras 2:35, 34
+          notes: Printed p. 710 = digital p. 791, headed Responsorium ad Communionem and
+            printed out in full, as the Missal does at each of the three Masses.
+        - name: Postcommunion
+          incipit: Praesta, quaesumus, omnipotens et misericors Deus
+          source: composed
+          text: |
+            Praesta, quaesumus, omnipotens et misericors Deus: ut animae famulorum
+            famularumque tuarum, pro quibus hoc sacrificium laudis tuae obtulimus
+            majestati; per hujus virtutem sacramenti a peccatis omnibus expiatae,
+            lucis perpetuae, te miserante, recipiant beatitudinem. Per Dominum.
+          notes: 'Printed p. 710 = digital p. 791, headed Postcommunio. THE TWO WITNESSES
+            DIFFER: at 1920 lines 96253-96265 the prayer reads `ut animae fratrum,
+            propinquorum et benefactorum nostrorum`, where 1962 reads `ut animae famulorum
+            famularumque tuarum`, and 1920 concludes Per Dominum nostrum where 1962 concludes
+            Per Dominum. The typica prints maiestati and huius; both normalised to j.'
     - key: s-caroli-episcopi-confessoris
       name: S. Caroli Episcopi et Confessoris
       registry: '1962-11-04'
