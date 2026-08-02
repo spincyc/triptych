@@ -5,10 +5,10 @@ inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:7e47ae0e09188109b2ccc0e0608304d72386224f0504a2c8c7105d94b7de9a2d"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
-canonical_catalog_snapshot = "sha256:75ebd3211cd1ae7dce18fa6af37fafd87015248b47e5fed87ce2f87ca3a219af"
+canonical_catalog_snapshot = "sha256:9dd9952e55efedd72701feed9bde1536429876850e3757071f836a91b84ed7f8"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:a2a10488b8a02be4756930a2b4c65000fde2ffb2d69d1e2c5ec0a2b29a762dd4"
+snapshot = "sha256:6127fdbd40e250f9da2ee926c39bac1ff94551df2975ba83befc858ec614bca4"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -5996,6 +5996,27 @@ membership_snapshot = "sha256:73a97f2c37d189e966362ff5947cc4cfb4e3f04762025cbef6
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
 
 [[families]]
+id = "family.p-keating.roman-missal-for-the-use-of-the-laity"
+label = "The Roman Missal for the use of the laity (London: P. Keating, 1806)"
+kind = "work"
+source_categories = ["historical-primary", "liturgical", "prayer-devotional"]
+identity_confidence = "confirmed"
+identity_gaps = ["date", "relation"]
+artifact_availability = "canonicalized"
+storage_plan = ["tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["artifact.p-keating.roman-missal-for-the-use-of-the-laity.london-1806.roman-missal-laity-1806-text-e9f54379", "edition.p-keating.roman-missal-for-the-use-of-the-laity.london-1806", "work.p-keating.roman-missal-for-the-use-of-the-laity"]
+trace_patterns = ["Keating", "p\\-keating\\.roman\\-missal\\-for\\-the\\-use\\-of\\-the\\-laity"]
+reviewed_on = "2026-08-01"
+membership_snapshot = "sha256:717fd0c26b33f28ef35a9ab0d7c55b7a2a8ef8fce8d175c7a891decc5dc0e1e1"
+notes = "An English lay hand missal of the English mission registered as its own work family, on the norm the three sibling hand-missal families already state: the Cummiskey, Husenbeth and Lefebvre books are independently authored works whose only common object is the Latin Missal that family.roman-missal.1962 owns, and this is a fourth alongside the Lasance. IT IS NOT A WITNESS TO THE 1570 RECENSION and must never be bound as one -- its English is its compiler's and carries no authority -- which the audit requires be said in the edition record and is said there. Folded in from the sibling ~/git/lt-hist corpus on 2026-08-01 under src/sources/inventories/lt-hist-rights-audit-v1.toml, and nothing was inherited from it: its Internet Archive licence-URL ground was refused and its text_status public-domain-ocr-english re-derived, while the bytes were fetched from the Internet Archive here and hashed byte-identical to the corpus copy rather than copied out of it. The rights basis is publication abroad before the pre-1931 line, derived for calendar year 2026 and recorded with the note that the line moves every January. Unlike its 1843 sibling this scan raises no third-party digitisation question: it was made by the Internet Archive itself on a Scribe station in 2006 and carries no Google front matter, so the age ground that clears the book clears these bytes as well and the artifact is tracked rather than remote. TWO IDENTITY GAPS. The date is the cataloguer's: the book's printed year is not legible in the only text layer held, and 1806 comes from the Internet Archive record rather than from the bytes, which does not disturb a rights basis with a hundred-and-twenty-five-year margin. The relation is unstated in the same way it is for the Cummiskey and Husenbeth books: whether its English of the orations is the anonymous Philadelphia translation has not been collated and must not be assumed from the shared title formula. The ceiling is artifact-pin because nothing is addressed by liturgical identity yet; the text is landed as a plain OCR source artifact and deliberately not as structured liturgical records."
+
+[[families]]
 id = "family.parlement-of-paris.arest-grandier-1634"
 label = "Arest de condemnation de mort contre maistre Urbain Grandier"
 kind = "work"
@@ -6771,6 +6792,27 @@ trace_patterns = ["(?:Apostolic Constitution.{0,40}Missale Romanum|Missale Roman
 reviewed_on = "2026-07-31"
 membership_snapshot = "sha256:e0c67ce524bd014bd524afe60c14d0d30aad9bd5cecc77fa09c09c1fb4a6f312"
 notes = "The canonical membership covers two bounded slices without conflating them: the current United States GIRM controls already recorded, and a Latin third-edition slice comprising the exact restricted 2002 secondary digital reproduction, genuine Missal formularies and proper headings, separately owned constituent acts and calendar works, the metadata-only 2008 altar-book identity, and the exact official Notitiae container, status notice, and variation-list passages. The variation list is not treated as the complete 2008 altar book. The complete split-HTML GIRM presentation, the 2011 U.S. altar book, direct 2008 reprint-page collation, later variations, and other territorial expressions remain separate migration work. The Latin slice now also owns the promulgation layer of the postconciliar Missal line reproduced in the same restricted 2002 artifact: Paul VI's apostolic constitution Missale Romanum of 3 April 1969, with its dated official English web state, exact restricted artifact, and verified complete-text passages in both expressions; the 26 March 1970 decree Celebrationis eucharisticae declaring the first typical edition; and the 27 March 1975 act De editione typica altera declaring the second. Each is a separately owned constituent work pinned to physical pages of the reproduction, exactly as Mysterii Paschalis and the 2000 third-edition decree already are, so the constitution joins this family rather than a per-work family: it promulgates the Missal line this family owns and is printed as a constituent of the registered container. The preconciliar Missal it superseded stays owned by family.roman-missal.1962, and the discipline acts on the older Missal's continued use form the separate family.roman-missal.older-use-discipline-acts."
+
+[[families]]
+id = "family.roman-missal.typical-editions-1570-and-1920"
+label = "Missale Romanum, the typical editions of 1570 and 1920"
+kind = "edition"
+source_categories = ["historical-primary", "liturgical"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact"]
+artifact_availability = "canonicalized"
+storage_plan = ["tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196", "artifact.catholic-church.missale-romanum.venice-1570.missale-romanum-1570-text-563f4dd2", "edition.catholic-church.missale-romanum.vatican-typica-1920", "edition.catholic-church.missale-romanum.venice-1570"]
+trace_patterns = ["(?:Missale Romanum.{0,60}(?:1570|1920)|(?:1570|1920).{0,30}(?:Missale Romanum|typical edition))", "missale\\-romanum\\.(?:venice\\-1570|vatican\\-typica\\-1920)"]
+reviewed_on = "2026-08-01"
+membership_snapshot = "sha256:036a65300e67ad887563cc730592d034e62fd29ba4ee97c2597551718b7979f9"
+notes = "The two pre-conciliar typical editions of the Missale Romanum folded in from the sibling ~/git/lt-hist corpus on 2026-08-01 under src/sources/inventories/lt-hist-rights-audit-v1.toml: the 1570 of Pius V, which Quo primum promulgated, and the 1920 of Benedict XV, the last typical edition before the 1955 simplification and the 1960 code. They are registered as a family of EDITIONS and not of the work, on the precedent family.roman-missal.third-edition-latin-us-english already sets: work.catholic-church.missale-romanum stays with family.roman-missal.1962, which owns it, and neither that family's label nor its remote-only storage plan is stretched to cover two tracked public-domain texts three and a half centuries older than its subject. WHY THEY ARE ONE FAMILY AND NOT TWO. They share a work, a rights basis, a retrieval route, an encoding decision and a single review; splitting them would be two rows saying the same thing twice. RIGHTS, RE-DERIVED AND NOT INHERITED. Both are public domain in the United States because published abroad before the pre-1931 line, derived for calendar year 2026 and recorded on each artifact with the note that the line moves every January; the 1920 additionally carries the arithmetic showing that restoration under 17 U.S.C. 104A cannot reach a 1920 publication. Nothing was taken from the corpus: it grounded the 1570 on an Internet Archive Public Domain Mark and the 1920 on bare assertion, both refused, and its text_status public-domain-ocr-latin was re-derived rather than transcribed. NOR WERE THE BYTES TAKEN FROM IT. Both files were fetched from the Internet Archive here and hashed byte-identical to the corpus copies, so the corpus served as a control on the retrieval and the audit's count of bytes moved out of it stays 0. IDENTITY GAP, AND IT IS AT THE ARTIFACT. The 1570 scan's colophon reads VENETIIS, so it is a Venice issue and must not be cited as the Rome editio princeps; the 1920 scan carries no title page, imprint or colophon at all, so whether it is the Vatican Polyglot printing or a licensed editio iuxta typicam is not established, and the edition record names the typical edition rather than the printing. The ceiling is artifact-pin because nothing is addressed by liturgical identity yet: both texts are landed as plain OCR source artifacts and deliberately not as structured liturgical records, so a later lane that wants this collect of this Mass writes passages with real loci over the tracked bytes. The 1570's text layer is classified degraded-latin and its ornamental initials are lost, so a negative search over it is evidence about the scan and not about the book; its artifact record says so in terms."
 
 [[families]]
 id = "family.royal-commission-for-grandier-proceeding.extraict-des-registres-1634"

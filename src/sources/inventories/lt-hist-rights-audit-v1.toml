@@ -55,15 +55,28 @@ expiry. Ten of them are sitting in lt-hist as downloaded OCR right now, and four
 of those ten carry the claimant's own copyright notice inside the very bytes
 lt-hist downloaded. See `[[notices]]`.
 
-ONE OF THE SEVEN HAS NOW BEEN FOLDED IN. The Lasance was folded in on
-2026-08-01, first and alone, to establish the pattern: a fresh acquisition
-through the source library, a rights basis rewritten from the renewal record,
-the excluded appendix removed from the tracked bytes rather than disclaimed
-beside them, the text landed as a plain OCR artifact and not as structured
-liturgical records, and nothing whatever inherited from the corpus -- which was
-not even the route the bytes came by. See the version row's `folded_in_note` and
-`[counts]`. Six remain, and two `[[corrections]]` added by that lane change what
-two of them will cost.
+FOUR OF THE SEVEN HAVE NOW BEEN FOLDED IN. The Lasance went first and alone on
+2026-08-01, to establish the pattern: a fresh acquisition through the source
+library, a rights basis rewritten from the renewal record, the excluded appendix
+removed from the tracked bytes rather than disclaimed beside them, the text
+landed as a plain OCR artifact and not as structured liturgical records, and
+nothing whatever inherited from the corpus -- which was not even the route the
+bytes came by.
+
+The 1570, the 1806 and the 1920 followed the same day, on the SAME pattern and
+on a DIFFERENT ground: all three rest on publication before the pre-1931 line,
+derived for calendar year 2026 and recorded as derived for it, because that line
+moves every January. All three were fetched again from the Internet Archive here
+and hashed BYTE-IDENTICAL to the corpus copies, so three more retrievals were
+controlled and no byte has yet crossed out of lt-hist. See their
+`folded_in_note`s and `[counts]`.
+
+Three remain, and they are the three this file already knew were awkward: the
+1604 and the 1862 are Google digitisations, and the 1843 is already registered
+here as an edition of the Cummiskey work, so folding it means adding an artifact
+to an existing edition rather than making a new one. Two `[[corrections]]` from
+the Lasance lane and three from the 1570/1806/1920 lane record what that will
+cost.
 """
 
 # --- What lt-hist actually is, measured rather than described ----------------
@@ -435,6 +448,45 @@ bytes = 1636559
 verdict = "admissible"
 verdict_basis = "Published 1570. Public domain in the United States on age: any work first published abroad before 1931 is out of copyright there, and 1570 is not a close case."
 lt_hist_basis_rejected = "Internet Archive Public Domain Mark 1.0 [verified in metadata.json]. Insufficient under guidance/sources.md:395-400; the correct ground is the publication date and this row rests on that."
+folded_in = "2026-08-01"
+folded_in_records = [
+  "src/sources/works/catholic-church/missale-romanum/editions/venice-1570/edition.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/venice-1570/artifacts/missale-romanum-1570-text-563f4dd2/artifact.toml",
+  "src/sources/inventories/source-family-migration-v1.toml -- family.roman-missal.typical-editions-1570-and-1920",
+]
+folded_in_note = """
+A NEW EDITION UNDER THE EXISTING `work.catholic-church.missale-romanum`, which
+this file's `[[corrections]]` `the-1843-is-already-registered-in-this-repository`
+had already established was not registered here.
+
+The bytes came by fresh acquisition, not out of the corpus. The Internet Archive
+item lt-hist names, messale-tridentino-di-san-pio-v-1570, was fetched here on
+2026-08-01 and hashed:
+563f4dd2c8c8c2fea9d3041475d7b8adf96e76843c0d67330e24ce3782d9aaec, 1,636,559
+bytes, BYTE-IDENTICAL to sources/downloads/MissaleRomanum1570_djvu.txt. So the
+corpus copy is confirmed a faithful retrieval and no byte crossed out of it.
+
+The rights basis was rewritten and rests on publication in 1570 against the
+pre-1931 line, stated as derived for calendar year 2026 because guidance/
+missals.md:249 says the line moves every January. The item's Public Domain Mark
+1.0 -- lt-hist's whole ground -- is recorded as a fact about the item and
+expressly not relied on, and neither is availability or a successful download.
+`text_status: public-domain-ocr-latin` did not cross; no section file,
+metadata.json or manifest of the corpus exists in this repository.
+
+The text is landed as ONE tracked plain OCR artifact and not as structured
+liturgical records, following the Lasance decision and for the reason
+`[corpus].structured_liturgical_objects_basis` gives. No exclusion had to be
+carved out of these bytes, so unlike the Lasance there is no second remote
+artifact: the retrieved file and the tracked file are the same bytes.
+
+TWO THINGS THE FOLD-IN FOUND THAT THIS ROW DID NOT KNOW. The scanned copy is a
+VENICE issue, not the Rome editio princeps -- see `[[corrections]]`
+`the-1570-scan-is-a-venice-issue` -- and its text layer is the worst of the
+seven, measured `degraded-latin`, with every ornamental initial destroyed. Both
+are recorded on the source records; neither disturbs this verdict, which rests
+on the year and not on the imprint or the scan.
+"""
 evidence = "verified"
 
 [[versions]]
@@ -470,6 +522,50 @@ a congregation following along; it is evidence of what an English Catholic read
 in 1806 and not evidence of what the altar book said. Binding it as a witness to
 the Tridentine text would be an accuracy error that the rights verdict does
 nothing to prevent.
+"""
+folded_in = "2026-08-01"
+folded_in_records = [
+  "src/sources/works/p-keating/roman-missal-for-the-use-of-the-laity/work.toml",
+  "src/sources/works/p-keating/roman-missal-for-the-use-of-the-laity/editions/london-1806/edition.toml",
+  "src/sources/works/p-keating/roman-missal-for-the-use-of-the-laity/editions/london-1806/artifacts/roman-missal-laity-1806-text-e9f54379/artifact.toml",
+  "src/sources/inventories/source-family-migration-v1.toml -- family.p-keating.roman-missal-for-the-use-of-the-laity",
+]
+folded_in_note = """
+ITS OWN WORK, NOT AN EDITION OF ANYTHING ALREADY HERE. Registered as
+`work.p-keating.roman-missal-for-the-use-of-the-laity`, a fourth hand-missal work
+family beside the Cummiskey, Husenbeth and Lefebvre books and the Lasance, on the
+norm those families already state: independently authored books whose only common
+object is the Latin Missal.
+
+THE CAVEAT ABOVE IS IN THE EDITION RECORD, IN TERMS, as this row requires. It is
+not a witness to the 1570 recension and must never be bound as one. The record
+goes further than this row asked, because the book's parts are not all of one
+standing: its Epistles and Gospels are Challoner's revision of the Rheims-Douay
+by its own introduction at lines 109-113 of the text layer and may be cited as
+that; its Ordinary and Canon print the Latin beside the English, so those Latin
+columns are an ordinary printing witness; and its English orations are an
+anonymous rendering of no authority whatever. A consumer that treats the three
+alike will be wrong about two of them.
+
+The bytes came by fresh acquisition. Internet Archive item a550137400unknuoft was
+fetched here on 2026-08-01 and hashed:
+e9f543799784249c0f54b20eeda66f68c66344b23f232e49786798b8f8cf91fa, 1,463,916
+bytes, BYTE-IDENTICAL to sources/downloads/RomanMissal1806_djvu.txt.
+
+The rights basis rests on publication before the pre-1931 line, derived for
+calendar year 2026 and recorded as derived for it. The item's public-domain
+licence URL -- lt-hist's whole ground -- is recorded and expressly not relied on.
+`text_status: public-domain-ocr-english` did not cross.
+
+AND IT IS CLEAN WHERE ITS 1843 SIBLING IS NOT. `[[corrections]]`
+`the-1843-is-already-registered-in-this-repository` establishes that the 1843's
+scan is a Google digitisation whose front matter the age ground does not clear.
+This one is not: it was scanned by the Internet Archive itself on a Scribe
+station in 2006, sponsored by the National Institute for Newman Studies from a
+copy of Saint Mary's College of California, and a search of the whole file for
+`google`, `copyright`, `all rights reserved` and `creative commons` returns
+nothing [verified]. So these bytes could be tracked outright, where the 1843's
+must be derived from or left remote.
 """
 evidence = "verified"
 
@@ -538,6 +634,47 @@ terms: "It also means **this file goes stale every January**" [recorded]. On
 1 January 2027 the line moves to 1932, which does not disturb this row; but no
 reader should take "pre-1931" from this file as a standing rule, and any later
 version added to this audit must re-derive the line for its own date.
+"""
+folded_in = "2026-08-01"
+folded_in_records = [
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1920/edition.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1920/artifacts/missale-romanum-1920-text-aa646196/artifact.toml",
+  "src/sources/inventories/source-family-migration-v1.toml -- family.roman-missal.typical-editions-1570-and-1920",
+]
+folded_in_note = """
+A NEW EDITION UNDER THE EXISTING `work.catholic-church.missale-romanum`, sharing
+a family with the 1570 because they share a work, a rights basis, a retrieval
+route, an encoding decision and one review.
+
+The bytes came by fresh acquisition. Internet Archive item
+MissaleRomanumBenedettoXV was fetched here on 2026-08-01 and hashed:
+aa6461961702b5cbae51460a7385f7a982c6f5a2649822d0bb8d5f13b6b387e0, 2,918,085
+bytes, BYTE-IDENTICAL to sources/downloads/MissaleRomanum1920_djvu.txt.
+
+THE LINE WAS RE-DERIVED FOR THIS DATE, WHICH IS WHAT THE `caveat` ABOVE ASKED
+FOR. The artifact record states the line as derived for calendar year 2026,
+writes out the eleven-year margin, and notes that the line would have to reach
+1921 -- not before 2032 at one year a January -- before this book is touched. It
+then closes the one mechanism that could otherwise reach a foreign publication
+of this date: restoration under 17 U.S.C. 104A grants the remainder of a
+ninety-five-year term from publication, which for 1920 expired at the close of
+2015, so there was nothing left for the Holy See's Berne accession of 12
+September 1935 to restore on 1 January 1996.
+
+There was no host mark to refuse here -- the item carries no licence, rights,
+publisher, creator or date field at all, which is what this row's
+`lt_hist_basis_rejected` already recorded. The corpus's bare assertion is
+recorded and expressly not relied on. `text_status: public-domain-ocr-latin` did
+not cross. The text is landed as one tracked plain OCR artifact and not as
+structured liturgical records.
+
+WHAT THE FOLD-IN FOUND. The scan's text layer is the best of the three folded in
+on this date, measured `prose-latin`, and it carries the approbation decree of
+25 July 1920, Quo primum, the Ritus servandus, the Canon entire and the appendix
+`PRO ALIQUIBUS LOCIS` the decree announces. But it carries NO title page,
+imprint, colophon or copyright leaf, so the printing is not identified -- see
+`[[corrections]]` `the-1920-printing-is-not-identified`. The edition record
+therefore names the typical edition and not the printing.
 """
 evidence = "verified"
 
@@ -1372,8 +1509,8 @@ versions_audited = 25
 admissible = 7
 admissible_on_age = 6
 admissible_on_a_renewal_record = 1
-admissible_folded_in = 1
-admissible_awaiting_fold_in = 6
+admissible_folded_in = 4
+admissible_awaiting_fold_in = 3
 excluded = 14
 excluded_folded_in = 0
 undecided = 4
@@ -1406,14 +1543,22 @@ This file is a record about a corpus, produced without copying anything out of
 it. If a later edit makes that number nonzero it will have to say so.
 
 `bytes_moved_out_of_lt_hist_by_the_fold_in = 0` is the same number kept true
-through the act this file authorised. The first version was folded in on
-2026-08-01 and the corpus was not the route: the Internet Archive item was
-fetched again here and hashed identical to the corpus copy, so the corpus served
-as a control on the retrieval rather than as a source of bytes. That is the
-pattern for the remaining six, and it is cheap -- every one of them names a
-public Internet Archive item.
+through the act this file authorised, now across FOUR fold-ins and not one. Every
+time, the corpus was not the route: the Internet Archive item was fetched again
+here and hashed, and every time the hash was IDENTICAL to the corpus copy --
+21f1bbf1 for the Lasance, 563f4dd2 for the 1570, e9f54379 for the 1806, aa646196
+for the 1920. So the corpus has served four times as a control on a retrieval and
+never as a source of bytes.
 
-`admissible_folded_in = 1` against `admissible = 7` is the state of the work, and
+THAT REPETITION IS NOW ITSELF A FINDING, and it cuts both ways. Four for four
+means the corpus's downloads are faithful copies of what the Internet Archive
+serves; whatever is wrong with lt-hist, its retrieval is not. It also means the
+cheapest possible fold-in route was available for all four and would have been
+available for the other three, so nothing was gained by copying that could not be
+had by fetching -- which is why `bytes_moved_out_of_lt_hist_by_the_fold_in` can
+stay 0 without anyone having sacrificed anything for it.
+
+`admissible_folded_in = 4` against `admissible = 7` is the state of the work, and
 `excluded_folded_in = 0` with `undecided_folded_in = 0` is the state of the
 discipline. `section_files_copied_into_this_repository = 0` is
 `[[structural_conditions]]` `text-status-may-not-travel` measured: the fold-in
@@ -1551,6 +1696,13 @@ The other five were checked against the library at the same time and none of the
 is registered: no 1570, 1604, 1862 or 1920 edition exists under
 `work.catholic-church.missale-romanum`, and no 1806 lay missal exists under any
 work [verified 2026-08-01].
+
+SUPERSEDED FOR THREE OF THOSE FIVE, LATER THE SAME DAY. The 1570 and the 1920
+were registered as editions under `work.catholic-church.missale-romanum`, and the
+1806 as its own work `work.p-keating.roman-missal-for-the-use-of-the-laity`; see
+their `folded_in_records`. The sentence above is left standing because it is what
+the library held when the 1843's cost was worked out, and because it is still
+true of the 1604 and the 1862.
 """
 
 [[corrections]]
@@ -1558,3 +1710,86 @@ id = "verification-command"
 claim = "Verify with `tools/tpt check-sources`."
 finding = "No such tool. `tpt` reports `unknown tool: check-sources`. The target is `make check-sources`, which runs `source-library validate`, two `source-inventory` checks and `source-family-migration check` [verified]."
 effect = "Verification was run as `make check-sources`. Baseline before this record: exit 0, source-library artifact=1451 corpus=5 edition=643 passage=2751 segment=62 work=486 bindings=1854."
+
+[[corrections]]
+id = "the-1570-scan-is-a-venice-issue"
+found_by = "the fold-in of 2026-08-01"
+claim = "The 1570 version is the Missale Romanum of Pius V, the editio princeps promulgated by Quo primum."
+finding = """
+The text is, the SCANNED COPY IS NOT NECESSARILY, and this row and the brief that
+commissioned the fold-in both called it the editio princeps without reading the
+book. At the end of the file, after the register of gatherings (`Series
+chartarum`), the colophon reads [verified]:
+
+  VENETIIS / apud Ioannem Variscum, et Heredes /
+  Bartholomaei Faletti, et Socios. / [Anno D]omini. / M.D.LXX.
+
+The Rome first printing of the same year names the same consortium in the other
+order and at Rome. So this is a 1570 issue of the 1570 typical edition with a
+Venice imprint, and it has not been collated here against a Rome issue.
+"""
+effect = """
+None on the verdict, which rests on the year and not on the imprint. The
+registered edition is therefore
+`edition.catholic-church.missale-romanum.venice-1570` and its record refuses the
+description `editio princeps` in terms. Recorded because a Missal is exactly the
+kind of book whose printings get chained by date, and this file already names
+that failure once: `[[versions]]` `1862-missale-romanum-latin` cites
+`missal-acquisition-audit-v1.toml` on a generator that asserted a rite descends
+through a publisher. An unread colophon is how that starts.
+"""
+
+[[corrections]]
+id = "the-1920-printing-is-not-identified"
+found_by = "the fold-in of 2026-08-01"
+claim = "The 1920 version is the typical edition of Benedict XV."
+finding = """
+The TEXT is that edition and the row is right about it: the scan reprints the
+Sacred Congregation of Rites' Decretum approbationis editionis typicae Vaticanae
+of 25 July 1920, subscribed by A. Card. Vico and Alexander Verde, at lines 7 to
+64 of the text layer [verified]. But the PRINTING is not identified. The text
+layer carries no title page, no imprint, no colophon and no copyright leaf
+anywhere, and the Internet Archive item supplies no publisher, creator, date or
+rights field -- only an uploader-supplied title. A licensed publisher's edition
+conformed to a typical edition reprints the approbation decree as well, so the
+decree does not distinguish the two.
+
+This repository already holds the demonstration: `edition.catholic-church.
+missale-romanum.unidentified-pre-1955-witness-ia-1947` is a Benziger Brothers
+editio IV iuxta typicam Vaticanam that reprints the same 25 July 1920 decree
+[recorded].
+"""
+effect = """
+None on the verdict; a conformed printing of a 1920 edition is pre-1931 either
+way. The registered edition names the TYPICAL EDITION, and the artifact record
+says the printing is unestablished and that if a later reading identifies a
+publisher the artifact moves to a new edition for that printing. Recorded so that
+nobody cites these bytes as the Vatican Polyglot printing on the strength of a
+decree that every conformed edition also carries.
+"""
+
+[[corrections]]
+id = "the-1806-date-is-the-cataloguers"
+found_by = "the fold-in of 2026-08-01"
+claim = "The 1806 lay missal was published in 1806, as this file's row and lt-hist both state."
+finding = """
+Probably, and not from the bytes. The string `1806` returns ZERO hits in the
+whole 1,463,916-byte text layer, and so does `Keating` [verified]: the title-page
+imprint is optically destroyed -- it OCRs as `C 1'iiMi/hftl l>\\- /'. Kc,ititt<i\\
+Jli- / Duke Stivt-l . tVrosvT S<|uai` -- and the printed year was not captured at
+all. The 1806 comes from the Internet Archive item's catalogue record, which also
+supplies the publisher as `London : P. Keating, Brown`. That catalogue line is
+itself a conflation: the book keeps the two names apart, P. Keating publishing on
+the title page and `[B]r[o]wn, and Co. Printers, 37, [Duke Street] Grosvenor
+Square` printing on the final leaf [verified].
+"""
+effect = """
+None on the verdict, which has a hundred-and-twenty-five-year margin against the
+pre-1931 line and survives any reading of the year the evidence permits: the
+publisher, the street, the Challoner scriptures and the pre-1911 feast grading
+all place the book in the English mission of the early nineteenth century. The
+edition record says the year is the cataloguer's and not the book's, and the
+artifact record names both zero-hit searches as artefacts rather than findings.
+Recorded because an OCR text that cannot produce its own date will silently
+launder a catalogue guess into a printed fact.
+"""
