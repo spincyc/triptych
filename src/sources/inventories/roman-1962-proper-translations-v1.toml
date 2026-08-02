@@ -30,13 +30,13 @@ distinguished from one nobody looked at, and so that a page can say that no
 English is recorded rather than showing Latin as though it were the answer.
 """
 verification = """
-Partly collated. Of the 245 entries, 179 carry `printed_page`,
+Partly collated. Of the 261 entries, 195 carry `printed_page`,
 `collated` and `collation_result`: those were read against the page images of
 Internet Archive item romanmissaltran00churgoog, the same 1861 printing this
 file quotes, at
 `https://archive.org/download/romanmissaltran00churgoog/page/n<leaf>_w1400.jpg`
 on 2026-07-31, 2026-08-01 and 2026-08-02. 59 were confirmed as printed, 39 were
-corrected against the page, and 80 were recorded from the page in propers this
+corrected against the page, and 96 were recorded from the page in propers this
 file had no entry for or had declared the witness does not print. One further
 entry had its wording confirmed and its page corrected: see `sexagesima`'s
 Secret. The remaining 66
@@ -89,8 +89,11 @@ this file had already cited for a neighbouring oration; and the three orations
 of `mass-of-the-first-sunday-after-epiphany`, a formulary this file had never
 carried at all. That is now twenty-one absences refuted against this witness
 across three passes and none confirmed, which is a rate worth stating plainly:
-**this file has never yet recorded an absence in the 1861 witness that survived
-someone opening the page.** The six untranslated rows that remain rest on a
+**as of 2026-08-01 this file had never recorded an absence in the 1861 witness
+that survived someone opening the page.** That held for one more day and then
+stopped holding; the fifth pass below records the first absence that survived,
+and the claim is left standing rather than deleted because the run of twenty-one
+is the reason the twenty-second was worth testing. The six untranslated rows that remain rest on a
 Latin comparison rather than on a failure to find, and the three added for
 `s-hilarii` rest on a refusal to write a name the witness does not print.
 
@@ -113,6 +116,37 @@ the shape of the find says about the ledger: an absence this file records gets
 retested, and a formulary it never mentioned gets nothing, because there is no
 row to retest. `english_oration_census` already asks for the verb that would
 have reported it.
+
+A fifth pass ran later on 2026-08-02 over the 1861 Proper of Saints, at the ten
+January masses the calendar lane had just landed -- 14, 15, 16, 18, 19, 22, 23,
+25, 28 and 29 January, twenty-one oration slots between them. It is the first
+pass over a day of this book's sanctoral, and it is also the first that found
+the witness short. Nine of the ten days the witness keeps, and sixteen of the
+twenty-one orations are now entries read on the page: printed pp. 479, 535, 536,
+537, 538, 539, 540, 542, 543 and 548, leaves n487, n543, n544, n545, n546, n547,
+n548, n550, n551 and n556, each at 200 dpi and again at 400, with pp. 489, 544,
+546 and 766 read as well to settle a cross-reference or a heading. Five slots are
+ledgered `untranslated` and the two grounds are different in kind. Three are
+`comm-s-canuti-regis-martyris`, and there the day itself is not in the book: the
+1861 gives 19 January to St Wolstan of Worcester at p. 540, and its own Kalendar
+at p. 766 gives the same date the same saint. Both pages were read, which is what
+distinguishes this from the twenty-one absences that fell. **That is this file's first
+recorded absence that survived someone opening the page, and the sentence above
+about never having recorded one has to be read with it.** The other two are the
+Secret and Postcommunion of `s-petri-nolasci-confessoris`, where the day IS in
+the book and the appointment differs: the 1861 sends it to Mass XIV entire except
+the Collect, and the two prayers the 1962 appoints stand in its Mass XIII, which
+it never sends this day to. Nothing was stretched over either. Each of the five
+rows names the page that would reverse it.
+
+Four of the sixteen were reached by following a cross-reference rather than by
+finding a heading -- the same move that already settled the Collect of
+`good-friday`, the Advent Mass of the Blessed Virgin and the
+Christmas-to-Candlemas Mass in the Common. They are the Secret of
+`ss-vincentii-anastasii-martyrum`, which the 1861 sets at its Mass VIII on p. 479
+and cites from 22 January, and all three orations of `comm-s-petri-apostoli`,
+which it prints at its own 18 January and cites from 25. A matcher keyed on the
+day would report four false absences here.
 
 The same third pass corrected one entry's provenance without touching its wording.
 `sexagesima`'s Secret cited printed p. 94, and p. 94 prints a different setting
@@ -300,6 +334,20 @@ going to reach them. It did not need to. The second collation pass of 2026-07-31
 read every one of the seven on the page image, and each carries `collated` and
 `collation_result` above. The count of entries here resting on no evidence of any
 kind was seven, is zero, and was closed by the page rather than by the sibling.
+
+The other place it does not reach is the sanctoral, and that was checked rather
+than assumed before the fifth pass opened a page. The artifact's own `notes` say
+in terms that "Ferias, Ember days, Rogation days, vigils, octave days other than
+those listed, Palm Sunday, the rest of Holy Week, and the whole sanctoral cycle
+are deliberately excluded", and its 183 rows carry 61 formulary keys, every one of
+them temporal -- `adv-01` through `post-pentecosten-ultima`, with no sanctoral key
+among them. So none of the sixteen entries added from the Proper of Saints on
+2026-08-02 gained a second witness, none carries a `detector`, and the figures in
+`witness_disagreement` did not move when they landed. This is the shape the
+sanctoral will keep having: the second witness reaches the temporal and the 1843
+printing is the only corroboration available for the Commons and the Proper of
+Saints before a page is opened, which is why every sanctoral entry here is read on
+the page instead.
 """
 
 witness_disagreement = """
@@ -310,6 +358,15 @@ a `disagreement` key on its entry saying what the two read differently and which
 reading the page settled. The figures moved from 153/144/9 on 2026-08-02, when
 `corpus-christi` landed three entries and the artifact's three rows attached to
 them; two agreed and one did not.
+
+They did not move again when sixteen sanctoral entries landed later the same day,
+and that is worth saying rather than leaving to be inferred from an unchanged
+number. The artifact carries no sanctoral row at all, so the detector had nothing
+to compare and 156/146/10 is the whole of what it can see. A file whose growth is
+now in the sanctoral will keep this line still while the entry count rises, and a
+still line here is not evidence that the file stopped changing; the coverage
+figures under `english_oration_census`, which are derived and not typed, are what
+moves.
 
 The 45-in-153 rate under `sibling_transcription` is the rate BEFORE this file was
 corrected. 37 of those 45 were this file being wrong and have been fixed against
@@ -348,8 +405,8 @@ repository carries. The honest total is small and worth stating plainly,
 because it is easy to read the corrections above as the end of the problem
 rather than as the result of having looked at two thirds of one file.
 
-The repository serves English for 245 non-scriptural propers, all of them
-here - 83 collects, 79 secrets, 83 postcommunions. Every one comes from this
+The repository serves English for 261 non-scriptural propers, all of them
+here - 91 collects, 83 secrets, 87 postcommunions. Every one comes from this
 file: `tools/mass-propers` builds the browser's data by overlaying this
 inventory onto propers.yaml and reads no other translation source. The
 browser's data serves each of them at every mass that takes it, which is
@@ -360,10 +417,10 @@ served there. Outside the two calendars the only other English orations in the
 tree are quotations of the sibling artifact through passage records, not an
 independent rendering.
 
-Of the 245, revised 2026-08-02:
+Of the 261, revised 2026-08-02:
 
-  179  read against the 1861 page images on 2026-07-31, 2026-08-01 and
-       2026-08-02 - 59 confirmed, 39 corrected, 80 recorded from the page in
+  195  read against the 1861 page images on 2026-07-31, 2026-08-01 and
+       2026-08-02 - 59 confirmed, 39 corrected, 96 recorded from the page in
        propers this file had no entry for or had declared the witness does not
        print, and 1 whose wording was confirmed and whose cited page was
        corrected. These carry `collated` and `collation_result`.
@@ -379,11 +436,13 @@ Of the 245, revised 2026-08-02:
 
 The roman-1962 calendar appoints 269 distinct orations once every `takes_from`
 is resolved, so 242 served leaves 27 without English, and all 27 carry an
-`untranslated` row saying why -- both figures superseded by the ADDENDUM at the
-end of this block, which is why nothing here should be read without it. Nothing
-in that calendar's oration slots is
-unaccounted for: there is no longer a proper that has neither English nor a
-recorded reason for having none. **No oration in this file is a project-created
+`untranslated` row saying why -- every figure in this sentence superseded by the
+three ADDENDA at the end of this block, which is why nothing here should be read
+without them. The sentence that stood next to it, that nothing in that calendar's
+oration slots was unaccounted for, was true on the day it was written and has
+been false on every day since: the calendar has kept landing masses this file has
+no entry and no row for, and the derived count in the THIRD ADDENDUM is where the
+current figure lives. **No oration in this file is a project-created
 translation, and the count is still zero.**
 
 **The witness's Common of Saints was harvested whole on 2026-08-01**, and it
@@ -429,6 +488,23 @@ Three propers of the Commune Doctorum are recorded `untranslated` for exactly
 that reason, and the reason is written into each row. The second is that the
 1861 Proper of Saints does not print every day the 1962 calendar keeps, and
 how much of it the witness does reach has not been counted.
+
+**Counted for the first ten days of it, 2026-08-02.** Ten January masses were
+tested against the Proper of Saints -- 14, 15, 16, 18, 19, 22, 23, 25, 28 and 29
+January -- and the witness keeps nine of the ten. What it does not keep is 19
+January as a day of St Canute: it gives that date to St Wolstan of Worcester,
+which is an English proper the Roman calendar of 1962 does not carry, and its own
+Kalendar at p. 766 says the same. Two more of the nine it keeps under a different
+Mass from the one the 1962 appoints, and for reasons that are datable rather than
+arbitrary: it has no Common of Supreme Pontiffs, so S. Marcellus goes to its Mass
+of a Martyr and Bishop; and Francis de Sales was not declared a Doctor until 1877,
+sixteen years after this printing, so it files him among Confessor Bishops and not
+among Doctors. In every one of those cases the day's own proper oration is the
+same prayer in both books and is recorded. Of the twenty-one oration slots those
+ten masses appoint, sixteen are entries read on the page and five are
+`untranslated`. That is one sample of ten days out of a sanctoral of some two
+hundred and forty, and nothing about the rest follows from it except that the
+work is worth doing day by day.
 
 **Corrected 2026-08-01.** This paragraph used to name S. Hilarii at 14 January
 as the instance of that second limit, and said the witness has no entry for
@@ -549,12 +625,48 @@ the three Masses of All Souls (9), the Commemoratio septem Dolorum (3),
 each), and four sanctoral Collects -- Bede, Bibiana, Elizabeth and John of Matha.
 Nothing in this addendum should be trusted after today either. The verb is still
 the answer.
+
+THIRD ADDENDUM, later still on 2026-08-02, and the verb now exists: `tools/tpt
+mass-propers census` derives these figures and prints them on stderr on every
+run. It reports **326 slots appointed, 261 with English, 32 ledgered
+untranslated, 33 unaccounted** for roman-1962 at the moment this paragraph was
+written. Read that as a timestamp and not as a fact. Between the run that opened
+this lane and the run that closed it the slot total moved twice without anything
+in this file causing either move: 294 to 315 when ten January sanctoral masses
+landed with twenty-one orations, and 315 to 326 when a further six February
+masses landed with eleven more, both while the English was being read off the
+page. The 21 this lane answered are gone from the unaccounted list -- 16 as
+entries and 5 as `untranslated` rows -- and the unaccounted figure still went up,
+from 22 to 33, because the calendar outran the ledger by eleven in the same
+hours.
+
+Which is the point the first addendum was making and this one can now make with
+evidence rather than prediction: a typed count in this block was never going to
+survive a day on which two lanes are writing. The derived line is the only
+statement of coverage here that is true when it is read. The 33 now standing are
+the three Masses of All Souls (9), the Commemoratio septem Dolorum (3),
+`comm-s-pauli-apostoli` and `comm-s-valentini-presbyteri-martyris` (3 each),
+`comm-s-romani-martyris`, `comm-ss-faustini-iovitae-martyrum`,
+`commune-non-virginum-2` and `commune-virginum-4` (2 each), and seven sanctoral
+Collects -- Andrew Corsini, Bede, Bibiana, Elizabeth, John of Matha, Peter Damian
+and Scholastica. That list is a snapshot too, and the verb is where to get the
+next one.
 """
 
 untranslated_reach = """
-Measured 2026-08-01. The 27 `untranslated` rows are 27 propers, but they are not
-27 days: a Common's oration is served at every day that takes that Common, so the
-cost of a missing English is recorded once per row and felt once per day.
+Measured 2026-08-01, and extended 2026-08-02. There are now 32 `untranslated`
+rows and they are 32 propers, but they are not 32 days: a Common's oration is
+served at every day that takes that Common, so the cost of a missing English is
+recorded once per row and felt once per day.
+
+The five rows added on 2026-08-02 are the other case and reach exactly one day
+each. Three are the orations of `comm-s-canuti-regis-martyris` at 19 January, a
+commemoration the 1861 does not keep; two are the Secret and Postcommunion of
+`s-petri-nolasci-confessoris` at 28 January, a day the 1861 does keep and sends to
+a different Common than the 1962 does. A day-level row costs one day and a
+Common-level row costs every day that takes the Common, and mixing the two in one
+total would understate the second and overstate the first, so the count above says
+propers and the paragraphs below say days.
 
 On 2026-08-01 a sibling pass landed 36 sanctoral pointers into the Commune
 Sanctorum, and that multiplied the reach without adding a row. 20 entries of the
@@ -720,7 +832,7 @@ restatement this repository keeps deleting; and the 10 are the evidence that the
 detector works, so hiding them would hide the reason for having it. What makes
 the refusal safe is the ordering `mass-propers` already applies -- witnesses are
 ranked by how much of the missal each reaches, and the collated edition witness
-covers 245 entries to this one's 156 -- so the corrected reading is the default
+covers 261 entries to this one's 156 -- so the corrected reading is the default
 at every proper and this one is an offered alternative under the `caution` above.
 """
 
@@ -6495,6 +6607,326 @@ text = """
 Let blessed N. O Lord, thy Confessor and great Doctor, become our advocate, that this thy holy sacrifice may procure our salvation. Thro'
 """
 
+[[entries]]
+mass = "comm-s-felicis-presbyteri-martyris"
+form = ""
+proper = "Collect"
+incipit = "Concede, quaesumus, omnipotens"
+witness = "cummiskey-1861"
+printed_page = "535"
+ia_leaf = 543
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "First entry in this file for this mass, and the first for any day of the 1861 Proper of Saints: everything above renders a temporal oration or one of the Common of Saints. The witness reaches 14 January and reaches the commemoration by name. At `XIV. St. HILARY, bp. c.` it prints `All as in Mass XII. p. 485, with a Commem. of St. Felix, by the following Collect, &c.` and then sets the three commemoration orations under the day, this one cued `Concede.` before the English; the 1962 Latin is Concede, quaesumus, omnipotens Deus, and neither book writes a saint's name into it. That heading and that cue are the two books' own alignment and not a reader's. What the books do NOT agree on is the Mass: the 1962 gives this commemoration Missa Laetabitur, de Communi unius Martyris IV loco, and the 1861 has the day at its Mass XII of Doctors, because its 14 January is St Hilary's and it keeps Felix under him. Only the three orations are carried; see the `caution` on the source row. Read at 200 dpi and again at 400 dpi from `https://archive.org/download/romanmissaltran00churgoog/page/n543_w1400.jpg`; no OCR text layer supplied a reading. The sibling temporal-orations-en transcription reaches nothing in this batch -- its own `notes` exclude the whole sanctoral cycle -- so this entry and the fifteen after it carry one witness and no detector."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that the examples of thy saints may excite us to the amendment of our lives: that as we celebrate their festivals, so we may imitate their virtues. Thro'.
+"""
+
+[[entries]]
+mass = "comm-s-felicis-presbyteri-martyris"
+form = ""
+proper = "Secret"
+incipit = "Hostias tibi, Domine"
+witness = "cummiskey-1861"
+printed_page = "535"
+ia_leaf = 543
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page; the page prints no comma after `O Lord`"
+witness_note = "Headed `SECRET of the same.` under the Commem. of St. Felix and straddling the page break: printed p. 535 = leaf n543 ends `by the merits` and printed p. 536 = leaf n544 opens `of blessed Felix thy Martyr`. Filed at the page where it begins, and the following leaf was read as well, which is the rule this file already applies at Maundy Thursday. The book names Felix in the prayer, as the 1962 Latin does -- beati Felicis Martyris tui -- so nothing is supplied and no `N.` stands in the way here as it does at s-hilarii. The witness sets this same prayer twice more with the placeholder, at MASS I p. 463 (`the offerings dedicated to thee ... of blessed N. thy Martyr and Bishop`) and at MASS XVII p. 497 (`by the merits of blessed N. thy Virgin and Martyr ... to us a continual support`); this is a third and distinct setting and is taken from the day, not from either Common. The page prints `Mercifully receive, O Lord the offerings` with no comma after `Lord`, on a line where `Lord` stands mid-line with the comma's place plainly empty; it is reproduced as printed. Read at 200 dpi and again at 400 dpi; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Mercifully receive, O Lord the offerings consecrated to thee by the merits of blessed Felix thy Martyr, and grant they may be a continual support to us. Thro'.
+"""
+
+[[entries]]
+mass = "comm-s-felicis-presbyteri-martyris"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, Domine, salutaribus"
+witness = "cummiskey-1861"
+printed_page = "536"
+ia_leaf = 544
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "The last of the three, headed `P. COMM. Quaesumus. Of the same.` at the head of printed p. 536 = leaf n544, above the rule that opens the Mass of St Paul the first Hermit. The Latin cue `Quaesumus.` and the named saint join it to the 1962 Quaesumus, Domine, salutaribus repleti mysteriis: ut, beati Felicis Martyris tui, cujus solemnia celebramus, orationibus adjuvemur. The Common's setting of the same prayer, at MASS VII p. 477, renders the clause in the plural and without a name, so the two are distinguishable and this is the day's. Read at 200 dpi and again at 400 dpi; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We beseech thee, O Lord, that, being fed by these holy mysteries of our salvation, we may be helped by the prayers of blessed Felix, thy Martyr, whose festival we celebrate. Thro'.
+"""
+
+[[entries]]
+mass = "s-marcelli-i-papae-martyris"
+form = ""
+proper = "Collect"
+incipit = "Preces populi tui"
+witness = "cummiskey-1861"
+printed_page = "537"
+ia_leaf = 545
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "The witness prints 16 January as `XVI. S. MARCELLUS, p. m.` at printed p. 537 = leaf n545 and sets this Collect proper to the day, cued `Preces.` before the English; the 1962 Latin is Preces populi tui, quaesumus, Domine, clementer exaudi. Both books make the Collect and only the Collect proper here -- the 1962 pointer says praeter orationem sequentem -- so this is the single slot the day appoints and the one entry it needs. The two books differ on the Mass, and the difference is the one this file has already had to record: the 1861 has no Common of Supreme Pontiffs at all, so it sends the day to its MASS I, Statuit, of a Martyr and Bishop, where the 1962 sends it to Missa Si diligis me de Communi Summorum Pontificum. That Common's nine orations remain `untranslated` below for want of any counterpart in this book; the day's own Collect is not affected by it, because the witness prints the prayer itself. Read at 200 dpi and again at 400 dpi; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Mercifully hear, O Lord, we beseech thee, the prayers of thy people, that we may be assisted by the merits of blessed Marcellus, thy Martyr and Bishop, the feast of whose sufferings we celebrate with joy. Thro'.
+"""
+
+[[entries]]
+mass = "comm-s-priscae-virginis-martyris"
+form = ""
+proper = "Collect"
+incipit = "Da, quaesumus, omnipotens Deus"
+witness = "cummiskey-1861"
+printed_page = "538"
+ia_leaf = 546
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "Slot displacement of the kind this file has recorded four times, and this time it did not hide anything, because the book flags it. The witness has no Mass of St Prisca. It prints 18 January as `XVIII. St. PETER's CHAIR at ROME, &c.` and sets her three orations inside that Mass as commemorations, each marked with a dagger and headed `Of St. Prisca`, the rubric under the title saying that by omitting the commemoration of St Prisca the same Mass serves for the Chair at Antioch on 22 February. The Collect stands at printed p. 538 = leaf n546, cued `Da quaesumus.`; the 1962 Latin is Da, quaesumus, omnipotens Deus: ut, qui beatae Priscae Virginis et Martyris tuae natalicia colimus, and the book names her. The 1962 gives the commemoration Missa Me exspectaverunt de Communi Virginum II loco cum orationibus ut infra, so both books make these three proper to the day and differ only on where they print them. Read at 200 dpi and again at 400 dpi; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that we who celebrate the memory of blessed Prisca, thy Virgin and Martyr, may find comfort on her yearly festival and improve by the example of her great faith. Thro'.
+"""
+
+[[entries]]
+mass = "comm-s-priscae-virginis-martyris"
+form = ""
+proper = "Secret"
+incipit = "Haec hostia, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "540"
+ia_leaf = 548
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page; the page prints no comma after `O Lord`"
+witness_note = "The second of the three commemoration prayers, at the head of printed p. 540 = leaf n548, marked with the same dagger and headed `Of St. Prisca` -- two pages after her Collect, because the book prints the Mass's own Secret and St Paul's commemoration between them. This is the one of the three the book sets with no Latin cue before it: the alignment rests on its place in the sequence of daggered commemorations and on the English rendering Haec hostia ... quam Sanctorum tuorum natalicia recensentes offerimus, et vincula nostrae pravitatis absolvat, et tuae nobis misericordiae dona conciliet clause for clause. The page prints `We beseech thee, O Lord that the sacrifice` with no comma after `Lord`; `Lord` ends the line but well short of where the line below reaches, so nothing was cropped, and it is reproduced as printed under the same rule as the Felix Secret above. Read at 200 dpi and again at 400 dpi, and the line at 400 again to settle the comma; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We beseech thee, O Lord that the sacrifice we offer in honour of the martyrdom of thy saints, may loose the bonds of our sins, and procure for us the gifts of thy mercy. Thro'.
+"""
+
+[[entries]]
+mass = "comm-s-priscae-virginis-martyris"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, Domine, salutaribus"
+witness = "cummiskey-1861"
+printed_page = "540"
+ia_leaf = 548
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "The last of the three, on the same page and leaf as the Secret above, daggered and headed `Of St. Prisca` and cued `Quaesumus.`; the 1962 Latin is Quaesumus, Domine, salutaribus repleti mysteriis: ut, cujus solemnia celebramus, ejus orationibus adjuvemur. The 1962 prints that prayer without a name and refers to the saint only as cujus, and the witness answers it with `her whose festival we keep`, which is the same prayer said of a woman and is why this reading is hers and not the Common's. Read at 200 dpi and again at 400 dpi; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being filled with these saving mysteries, we beseech thee, O Lord, that we may be assisted by the prayers of her whose festival we keep. Thro'.
+"""
+
+[[entries]]
+mass = "ss-vincentii-anastasii-martyrum"
+form = ""
+proper = "Collect"
+incipit = "Adesto, Domine, supplicationibus"
+witness = "cummiskey-1861"
+printed_page = "542"
+ia_leaf = 550
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "The witness prints 22 January as `XXII. SS. VINCENT and ANASTASIUS, mm.` at the foot of printed p. 542 = leaf n550, under the direction `All as in Mass VII. p. 475, except`, and Mass VII is the Common the 1962 sends the day to as well -- Missa Intret, de Communi plurimorum Martyrum I loco. The two books agree on the Mass. This Collect is cued `Adesto.` and names both saints, as the 1962 Adesto, Domine, supplicationibus nostris ... beatorum Martyrum tuorum Vincentii et Anastasii intercessione liberemur does. The page prints the conclusion on its own line below `Anastasius.`; both were read. Read at 200 dpi and again at 400 dpi; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Hear, O Lord, our earnest prayers, that we who are sensible of the guilt of our crimes, may be delivered therefrom by the prayers of thy blessed Martyrs Vincent and Anastasius. Thro'.
+"""
+
+[[entries]]
+mass = "ss-vincentii-anastasii-martyrum"
+form = ""
+proper = "Secret"
+incipit = "Munera tibi, Domine"
+witness = "cummiskey-1861"
+printed_page = "479"
+ia_leaf = 487
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "A cross-reference followed, the move that already settled the Collect of good-friday, the Advent Mass of the Blessed Virgin and the Christmas-to-Candlemas Mass. At 22 January the witness prints `SECRET.--We bring, as in Mass VIII. p. 479.` and prints no text there; p. 479 = leaf n487 is where it sets the prayer whole, and that is the book saying where its own text is, not an absence. The oration read at p. 479 is the last of Mass VIII before the rule that opens `MASS IX. Salus autem, of the same`, and the running head of that page already reads MASS IX while Mass VIII is still being printed under it -- the same trap recorded at corpus-christi. The English answers the 1962 Munera tibi, Domine, nostrae devotionis offerimus: quae et pro tuorum tibi grata sint honore justorum, et nobis salutaria, te miserante, reddantur clause for clause, and the 1962 sets the same prayer as this day's proper Secret while giving the day the FIRST Mass of the Common; the witness reaches it through the second. Two 1962 slots are therefore served from one printed English, this one and commune-plurimorum-martyrum-2's Secret above, and neither is a copy of the other. The page sets `of our devotion ; and` with a space before the semicolon, closed up here under the rule `corrections` declares. Read at 200 dpi and again at 400 dpi; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We bring thee, O Lord, the offerings of our devotion; and may they be acceptable to thee in honour of thy saints, and, by thy mercy, available to our salvation. Thro'.
+"""
+
+[[entries]]
+mass = "ss-vincentii-anastasii-martyrum"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, omnipotens Deus"
+witness = "cummiskey-1861"
+printed_page = "543"
+ia_leaf = 551
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "At the head of printed p. 543 = leaf n551, headed `P. COMM. Quaesumus.` immediately under the Secret's cross-reference, and naming both saints as the 1962 Quaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus, intercedentibus beatis Martyribus tuis Vincentio et Anastasio does. The witness sets a placeholder form of the same prayer at MASS XIV p. 491, `by the intercession of thy holy confessor N.`; this is the day's, with the names written by the book and not by this file. Read at 200 dpi and again at 400 dpi; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We beseech thee, O Almighty God, that by the intercession of thy blessed Martyrs Vincent and Anastasius, the heavenly food we have received may defend us from all adversity. Thro'.
+"""
+
+[[entries]]
+mass = "s-raymundi-penafort-confessoris"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui beatum Raymundum"
+witness = "cummiskey-1861"
+printed_page = "543"
+ia_leaf = 551
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page; the page prints `Thro'` with no full stop"
+witness_note = "The witness prints `XXIII. St. RAYMOND of PENNAFORT, c.` at printed p. 543 = leaf n551 under the direction `All as in Mass XIII. p. 488, except`, and its MASS XIII is `Os justi, of a CONFESSOR not a BP` -- the same Common the 1962 sends the day to, Missa Os iusti de Communi Confessoris non Pontificis I loco, and the same single exception, praeter orationem sequentem. The two books agree on the Mass, on the one proper oration, and on its text: the Collect is cued `Deus, qui beatum` and names Raymond, as Deus, qui beatum Raymundum paenitentiae sacramenti insignem ministrum elegisti does. One divergence between the books is worth recording and does not touch the text: the 1861's own Roman Calendar for the United States, at printed p. 766 = leaf n774, keeps Raymond on 28 January and gives 23 January to the Espousals of the Blessed Virgin, while its Proper of Saints prints him under the heading XXIII. The page prints `port of eternal salvation. Thro'` and stops, with no full stop after the abbreviation and the next line beginning the commemoration of St Emerentiana; that is reproduced as printed, under the rule in `corrections` that a missing stop is not supplied. Read at 200 dpi and again at 400 dpi, and the conclusion at 400 again; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who didst make blessed Raymond an excellent minister of the sacrament of penance, and didst miraculously conduct him through the waves of the sea; grant, by his intercession, that we may bring forth worthy fruits of penance, and be enabled to arrive at the port of eternal salvation. Thro'
+"""
+
+[[entries]]
+mass = "comm-s-petri-apostoli"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui beato Petro Apostolo"
+witness = "cummiskey-1861"
+printed_page = "538"
+ia_leaf = 546
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "A cross-reference followed, as at the Vincent Secret above, and this time for all three orations of the mass. At 25 January the witness prints the Conversion of St Paul and sets the commemoration of St Peter by reference: at printed p. 544 = leaf n552 it prints `Of St. PETER, Deus, qui beato, as on the Feast of his Chair at Rome, the 18th of January, p. 538.` Printed p. 538 = leaf n546 is where it sets the prayer whole, as the Collect of its own 18 January Mass, cued `Deus, qui beato.`; the 1962 Latin is Deus, qui beato Petro Apostolo, collatis clavibus regni caelestis. The 1962 books print the same prayer twice in full, once at the Cathedra and once as this commemoration, so the reference is the 1861 economising where the typica repeats, and the prayer is the same prayer. Read at 200 dpi and again at 400 dpi, on both leaves -- the one that makes the reference and the one that prints the text; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who by delivering to the blessed apostle Peter the keys of the kingdom of heaven, didst give him the power of binding and loosing: grant that, by his intercession, we may be freed from the bonds of our sins. Who livest.
+"""
+
+[[entries]]
+mass = "comm-s-petri-apostoli"
+form = ""
+proper = "Secret"
+incipit = "Ecclesiae tuae, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "539"
+ia_leaf = 547
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "The same reference in the second place: at printed p. 546 = leaf n554 the witness prints `SECRET.--Sanctify, &c. as p. 539. Of St. PETER, May the intercession, &c. ib.`, and `ib.` is printed p. 539 = leaf n547, where the prayer stands whole under the Mass of the Chair at Rome. It answers the 1962 Ecclesiae tuae, quaesumus, Domine, preces et hostias beati Petri Apostoli commendet oratio clause for clause. One reading in it was checked twice and stands as printed: the book renders beati Petri Apostoli as `of Bishop Peter thy apostle`, which is not what the 1962 Latin says and is not an optical error -- the word was read at 400 dpi and is unambiguous. It is the witness's own rendering and is reproduced, not corrected against the Latin, under the rule in `corrections` that no wording is supplied. Read at 200 dpi and again at 400 dpi; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the intercession, we beseech thee, O Lord, of Bishop Peter thy apostle, render the prayers and offerings of thy church acceptable to thee: that the mysteries we celebrate in his honour, may obtain for us the pardon of our sins. Thro'.
+"""
+
+[[entries]]
+mass = "comm-s-petri-apostoli"
+form = ""
+proper = "Postcommunion"
+incipit = "Laetificet nos, Domine"
+witness = "cummiskey-1861"
+printed_page = "540"
+ia_leaf = 548
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "The third of the same set of references: at printed p. 546 = leaf n554 the witness prints `P. COMM. Of St. PETER, May, &c. as on the 18th instant, p. 540.`, and printed p. 540 = leaf n548 sets it whole, headed `P. COMM.` in the Mass of the Chair at Rome, immediately above St Paul's and St Prisca's commemorations on the same page. It answers the 1962 Laetificet nos, Domine, munus oblatum: ut, sicut in Apostolo tuo Petro te mirabilem praedicamus. The page prints `so we may, through his prayers receive` with no comma after `prayers`, and it is reproduced as printed. Read at 200 dpi and again at 400 dpi; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the sacrifice we have offered, O Lord, fill us with holy joy: that as we publish the miracles thou hast wrought in the person of thy Apostle Peter, so we may, through his prayers receive the abundant effects of thy mercy. Thro'.
+"""
+
+[[entries]]
+mass = "s-petri-nolasci-confessoris"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui in tuae caritatis"
+witness = "cummiskey-1861"
+printed_page = "548"
+ia_leaf = 556
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "The witness prints `XXX. St. PETER NOLASCUS, c.` at printed p. 548 = leaf n556 under the direction `All as in Mass XIV. p. 489, except`, and its MASS XIV is `Justus ut palma, of the same`, which is the Common the 1962 sends the day to -- Missa Iustus de Communi Confessoris non Pontificis II loco. The two books agree on the Mass and on this Collect, cued `Deus, qui.` and answering Deus, qui in tuae caritatis exemplum ad fidelium redemptionem sanctum Petrum Ecclesiam tuam nova prole fecundare divinitus docuisti. They do not agree on what else is proper: the 1962 sets a Secret and a Postcommunion of its own where the 1861 takes Mass XIV's, so those two slots stand `untranslated` below with the reason on each. The 1861's own Roman Calendar keeps this saint on 31 January and its Proper of Saints prints him under the heading XXX, where the 1962 keeps 28 January; the Collect is the same prayer either way. Read at 200 dpi and again at 400 dpi; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who, in imitation of thy charity, didst inspire blessed Peter to institute a new order in the Church for the redemption of captives; grant, by his intercession, that being delivered from the slavery of sin, we may enjoy everlasting liberty in our heavenly country. Thro'.
+"""
+
+[[entries]]
+mass = "s-francisci-salesii-episcopi-confessoris-ecclesiae"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui ad animarum salutem"
+witness = "cummiskey-1861"
+printed_page = "548"
+ia_leaf = 556
+collated = "page-image, 2026-08-02"
+collation_result = "recorded from the page"
+witness_note = "The witness prints `XXIX. St. FRANCIS de SALES.` at printed p. 548 = leaf n556, on the same leaf as Peter Nolascus, and sets this Collect proper to the day, cued `Deus, qui.` and answering Deus, qui ad animarum salutem beatum Franciscum Confessorem tuum atque Pontificem omnibus omnia factum esse voluisti word for word, down to `should become all to all` for omnibus omnia factum. Where the books part is the Mass, and the reason is datable: the 1861 directs `All as in Mass X. * p. 482`, which is its Common of a Confessor and Bishop, while the 1962 directs Missa In medio, de Communi Doctorum -- the witness's own MASS XII at p. 485. Francis de Sales was not declared a Doctor of the Church until 1877, sixteen years after this printing, so the 1861 could not have filed him among the Doctors and did not. The day's one proper Collect is unaffected: it names him Confessor and Bishop in both books, and the pointer is what moved. This is the third divergence of Mass in this batch and the second where the witness is simply older than the 1962 arrangement; see the `caution` on the source row. Read at 200 dpi and again at 400 dpi; no OCR text layer supplied a reading."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who for the salvation of souls wast pleased that blessed Francis, thy Confessor and Bishop, should become all to all: mercifully grant, that, being plentifully enriched with the sweetness of thy charity, by following his directions, and by the help of his merits, we may obtain life everlasting. Thro'.
+"""
+
 [[untranslated]]
 mass = "commune-doctorum-pontificis"
 form = ""
@@ -6548,6 +6980,36 @@ mass = "s-hilarii-episcopi-confessoris-ecclesiae-doctoris"
 form = ""
 proper = "Postcommunion"
 reason = "the same reference and the same refusal, and again a second reason: the witness's one Postcommunion for Doctors names a Confessor, `thy Confessor and great Doctor`, where this day's Latin reads beatus Hilarius Pontifex tuus et Doctor egregius. It answers the non Pontifice form of the Common, not this one"
+
+[[untranslated]]
+mass = "comm-s-canuti-regis-martyris"
+form = ""
+proper = "Collect"
+reason = "the witness does not keep this day. Its 19 January is XIX. St. WOLSTAN, Bishop of Worcester, printed at p. 540 = leaf n548 with a commemoration of St Marius, and its own Roman Calendar for the United States says the same at p. 766 = leaf n774 -- `S. Wolstan, c. bp. d. Com. of SS. Marius`, referred to p. 540. Both pages were read at 200 dpi and again at 400 on 2026-08-02, and neither carries a Mass, a commemoration or a calendar line for St Canute. A search of the item's text layer over the whole volume returns the name nowhere either; that is a lead and not a reading, and it is recorded as the weaker half of this row, but the two pages that would have to carry him are the two that were opened. This Collect is proper to the day and names him -- Deus, qui ad illustrandam Ecclesiam tuam beatum Canutum regem martyrii palma -- so there is nothing here that could answer it under any alignment. This is an absence established by reading the day and the book's own calendar, not by failing to find a match"
+
+[[untranslated]]
+mass = "comm-s-canuti-regis-martyris"
+form = ""
+proper = "Secret"
+reason = "the same absence of the day as the Collect above, and one thing more that has to be said plainly so this row is not read as a false absence of the text. The prayer the 1962 appoints here the witness does print: Accepta sit in conspectu tuo, Domine, nostra devotio is the Secret of its MASS IV, Laetabitur, at p. 469, it names no saint there any more than the 1962 does here, and its English is recorded in this file at commune-unius-martyris-4. So no name would have to be supplied and no wording composed. What is missing is the day. The 1962 appoints that prayer at a Mass of St Canute; the witness keeps no such Mass and never sends its MASS IV to 19 January, so attaching its English here would make this pre-1955 book a witness to a formulary it does not celebrate. That is a reader's alignment and not the books', and every other sanctoral row in this file rests on a join the two books make themselves -- a heading, a Latin cue, or a cross-reference the 1861 prints. Recorded as a decision, with the evidence for reversing it named in it"
+
+[[untranslated]]
+mass = "comm-s-canuti-regis-martyris"
+form = ""
+proper = "Postcommunion"
+reason = "the same absence of the day, and the placeholder on top of it. The witness's setting of Refecti participatione muneris, again at its MASS IV p. 469, reads `by the intercession of blessed N. thy Martyr, whose feast we celebrate` where this day's Latin reads intercedente beato Canuto Martyre tuo. So even if the day were reached, attaching this English would mean writing the saint's name into a prayer the witness does not write it into, which is the refusal already recorded three times at s-hilarii. Two reasons, either sufficient"
+
+[[untranslated]]
+mass = "s-petri-nolasci-confessoris"
+form = ""
+proper = "Secret"
+reason = "the witness keeps this day and prints it -- XXX. St. PETER NOLASCUS, c. at p. 548 = leaf n556, whose Collect is recorded above from that page -- but it does not appoint this Secret there. It directs `All as in Mass XIV. p. 489, except` the Collect, and its MASS XIV, Justus ut palma, sets a different Secret at p. 491, Praesta nobis, quaesumus, rendered `Grant, we beseech thee, O Almighty God, that our humble offerings may be acceptable to thee`, where the 1962 sets Laudis tibi, Domine, hostias immolamus in tuorum commemoratione Sanctorum. The prayer the 1962 does appoint the witness prints whole and with no name to supply, at its MASS XIII, Os justi, p. 489 = leaf n497, read there on 2026-08-02; its English is recorded in this file at commune-confessoris-non-pontificis-1. Attaching it here would be this file deciding that a Common the witness never sends this day to answers this day. That is a reader's alignment and not the books', and it is refused on the same ground as the comm-s-canuti rows above. This is a difference of appointment between a pre-1955 book and the 1962, not a gap in the witness's English, and it is recorded as a decision so that reversing it needs only a judgement and not another search"
+
+[[untranslated]]
+mass = "s-petri-nolasci-confessoris"
+form = ""
+proper = "Postcommunion"
+reason = "the same appointment and the same refusal as the Secret above. The witness's MASS XIV sets Quaesumus, omnipotens Deus at p. 491, rendered `by the intercession of thy holy confessor N. the heavenly food we have received may defend us from all adversity`, where the 1962 sets Refecti cibo potuque caelesti, Deus noster. The 1962's prayer stands at the witness's MASS XIII, p. 489 = leaf n497, and its English is recorded at commune-confessoris-non-pontificis-1; it is not attached here for the reason given on the Secret"
 
 [[untranslated]]
 mass = "commune-summorum-pontificum"

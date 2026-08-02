@@ -295,6 +295,144 @@ the strength of the prayer being old. That is the inference the rights record
 refuses at `[the_underlying_edition.routes_examined_and_refused]`.
 """
 
+february_run = """
+ADDED 2026-08-02, the second contiguous run, taken by the method `january_run`
+established and against the question that record told it to answer.
+
+THE RUN. The whole of February in the Proprium Sanctorum, from `Die 1 februarii`
+to `Die 27 vel 28 februarii`, printed pp. 462-481, digital pp. 543-562, read end
+to end rather than picked over. Twenty page images at 200 dpi and seven column
+crops at 400 dpi, against the tracked PDF hashed to
+648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a before a page
+was opened. No OCR text layer supplied a reading; the text layer was used only to
+find which pages held which day. Twelve of this file's pointers fall inside the
+run. Six were already landed and stay landed, five are flipped from `held`, and
+one is held on a ground no other row in this file carries.
+
+WHAT WAS LANDED, AND WHERE. In `src/sources/calendars/roman-1962/propers.yaml`,
+six entries that held nothing but a placeholder:
+
+  02-04  s-andreae-corsini-episcopi-confessoris   Common + Collect,      no. 2121
+  02-10  s-scholasticae-virginis                  Common + Collect,      no. 2161
+  02-14  comm-s-valentini-presbyteri-martyris     Common + 3 orations, nos. 2188-2190
+  02-15  comm-ss-faustini-iovitae-martyrum        Common + 2 orations, nos. 2192, 2193
+  02-22  comm-s-pauli-apostoli                    3 orations, nos. 2199, 2208, 2211
+  02-23  s-petri-damiani-episcopi-confessoris-... Common + Collect,      no. 2212
+
+Eleven orations. 02-22 is this run's counterpart of 01-25 and has no row in this
+file for the same reason: the Missal gives that commemoration no formulary and no
+Common, only three prayers printed inside the Mass of the Cathedra S. Petri.
+Nothing in this run prints a scripture-bearing proper of its own, so this run,
+like the last, landed no citation at all.
+
+THE ONE DAY THAT WAS READ AND NOT LANDED. 02-09 S. Cyrilli Alexandrini prints
+three orations, all marked P, and no witness this repository tracks prints any of
+them. `january_run` predicted exactly this case - "the witness has to be looked
+for and found, day by day" - and the disposition it named is the one taken: land
+nothing, say which witness was looked in and did not have it. The row's own
+`note` records the search. Its `blocked_by` is rewritten, because the other 84
+held rows are blocked on transcription and this one is not, and a reader counting
+the remaining work off `blocked_by` would otherwise price this row at one page
+image it has already had.
+
+THE LETTER DECIDED THIS RUN TOO, AND IN BOTH DIRECTIONS AT ONCE. 02-15 is the
+specimen. Its Collect names Faustinus and Iovita outright, reads wholly proper,
+and is marked C - it is the Commune plurimorum Martyrum III loco's own with the
+names supplied for `N. et N.`, and transcribing it would have put the Common's
+own words under the day as though they were the day's. Its Secret and
+Postcommunion name nobody, read wholly generic, and are marked P - they are the
+FIRST Mass's `Adesto, Domine` and `Quaesumus, Domine, salutaribus repleti`, not
+the third's `Oblatis, quaesumus, Domine` and `Praesta nobis, quaesumus`, and
+dropping them as redundant would have lost the two prayers the day actually has.
+A reader going by the words alone would have got all three wrong, in opposite
+directions, on one day. This file's own Commons settle it: both landed prayers
+stand at `commune-plurimorum-martyrum-1` word for word. The contrary cases are
+02-04, 02-10 and 02-23, where the Secret and Postcommunion under the day are
+marked C or C 1 and are that Common's own, so none was transcribed and none is
+absent. 02-23 is the one that needed the numeral rather than the letter: its C 1
+is the Commune Doctorum set pro Doctore Pontifice, the same distinction that gave
+S. Bedae the wrong Secret before anyone read his page.
+
+TWO ROWS ALREADY LANDED WERE CONFIRMED RATHER THAN TOUCHED. 02-06 and 02-09
+S. Apolloniae each print their three orations in full inside a neighbouring
+feast's Mass, headed `Pro S. Dorothea` and `Pro S. Apollonia`, and carry no C or
+P at all - the letter belongs to the day's own column, not to a commemoration
+printed inside another day. All six are their Common's own word for word with the
+saint's name supplied, which is what a reference-only landing asserts, so both
+rows stand. 02-08 confirms the January reading of 01-28 from the other side: it
+takes the FIRST Mass of the Commune Confessoris non Pontificis and prints `Laudis
+tibi` and `Refecti cibo potuque` marked C, where 01-28 takes the SECOND and
+prints the same two marked P.
+
+THE WITNESS, AND WHERE IT DIVERGED. Every one of the eleven landed orations was
+found in the tracked public-domain Pustet Ratisbon 1862 before it was written,
+and the 1862 does not print all eleven where the 1962 does:
+
+  02-04, 02-10, 02-23  under the same day, beneath the same pointer, word for word.
+  02-14 Collect and Postcommunion  under 14 February, word for word.
+  02-14 Secret  NOT under that day. The 1862 gives S. Valentinus the Secret
+        `Oblatis, quaesumus, Domine, placare muneribus`, and prints the Secret the
+        1962 gives him at 16 January under S. Marcelli, word for word with
+        Marcelli for Valentini and with `atque Pontificis`, which a priest's Mass
+        drops.
+  02-15 Secret and Postcommunion  in the 1862's Commune Martyrum tempore paschali,
+        under `Pro pluribus Martyribus Pontificibus`. That book gives 15 February
+        no proper oration at all.
+  02-22 Collect  at 1 August, in the Mass of S. Petri ad Vincula, under `Et fit
+        commem. S. Pauli`. Secret and Postcommunion at 25 January, as the Mass In
+        Conversione S. Pauli's OWN, not as a commemoration. The 1862 keeps two
+        Cathedrae, Rome on 18 January and Antioch on 22 February, and sends the
+        February one back to the January Mass.
+
+Three orthographic divergences and no textual one: 1862 prints `natalitia` for
+`natalicia` and `exequimur` for `exsequimur` at 02-14 and `coelum` for `caelum`
+at 02-10. What moves between the two books is which day a prayer stands on and
+which Mass of a Common it is borrowed from. The prayer is the same in every case,
+which is the whole of what 17 U.S.C. 103(b) needs.
+
+NOTHING POST-1920 WAS PUBLISHED. February carries three feasts younger than the
+1862 - 02-11 the Apparition of Lourdes (1907), 02-12 the Seven Founders (1888)
+and 02-27 S. Gabriel a Virgine Perdolente (universal 1932) - and all three
+entries already hold scripture citations only and no oration, so none was
+touched and none needed to be. 02-09 is the only day of the run whose composed
+Latin this repository cannot presently witness, and it is the only day held.
+
+A DEFECT FOUND IN OTHER WORK, RECORDED AND NOT FIXED. Reading the run end to end
+put nine scripture-bearing propers on the page that the entries beside them do
+not carry, all of them printed with a citation and all of them missing from
+entries the 2026-08-01 text-layer pass filled: 02-02 Lesson `Malach. 3, 1-4` and
+Gradual `Ps. 47, 10-11 et 9`; 02-05 Offertory `Ps. 44, 15`; 02-06 Alleluia
+`Ps. 109, 4`; 02-11 Lesson `Apoc. 11, 19; 12, 1 et 10`; 02-12 Lesson `Eccli. 44,
+1-15`, Gradual `Isai. 65, 23` with `Eccli. 44, 14` and Alleluia `Eccli. 44, 15`;
+02-22 Gradual `Ps. 106, 32 et 31` and Gospel `Matth. 16, 13-19`. A missing Gospel
+is the loudest of them. This is not a rights question - citations are facts and
+may be carried - and it is not this lane's landing, because those entries are not
+placeholders and their notes state a tier that a page reading would falsify.
+Recorded here so the next pass over February can land them off pages this file
+already names, and recorded as a rate: six of the twelve entries the text-layer
+pass filled in this run are short by at least one slot.
+
+WHAT THE RUN LEAVES, COUNTED RATHER THAN ESTIMATED. `january_run` left 76 rows
+held on the day's own orations. Five of them are landed here and a sixth, 02-09,
+is moved to a ground of its own, so 70 remain on transcription and 1 on the
+witness. The state count over the whole file is 64 landed and 85 held: 70 on the
+day's own orations, 1 on the absence of a public-domain witness, 12 on several
+pointers or a seasonal condition, 1 on an unrecognised rubric, 1 not attached to
+an entry.
+
+The next contiguous run is March, beginning at `Die 4 martii` S. Casimiri,
+printed p. 482 = digital p. 563. Only five of its rows are held - 03-04, 03-06,
+03-09, 03-12 and 03-17 - so March is a thinner run than February by this file's
+reckoning, and 02-22 is the standing warning that the pointer count is not the
+size of the remaining work. March needs the same witness check February needed,
+and the 1862's March was read to find out where it will bite: that book's
+sanctorale runs 4, 7, 8, 9, 10, 12, 17, 19, 21 and 25 March and stops there, so
+it carries none of 18 March S. Cyrillus Hierosolymitanus (inscribed 1882),
+24 March S. Gabriel Archangelus (1883) or 27 March S. Ioannes Damascenus (made a
+Doctor in 1890). Whatever the 1962 prints under those three days is in the same
+position as 02-09 until a witness between 1862 and 1920 is tracked here.
+"""
+
 [[divergences]]
 date = "06-17"
 printed = "Missa Statuit, de Communi Confessoris Pontificis I loco [4]"
@@ -515,8 +653,7 @@ printed_common = "Confessoris Pontificis I loco"
 printed_bracket = 19
 common_mass = "commune-confessoris-pontificis-1"
 mass = "s-andreae-corsini-episcopi-confessoris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "02-06"
@@ -573,7 +710,25 @@ printed_bracket = 22
 common_mass = "commune-doctorum-pontificis"
 mass = "s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae"
 state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+blocked_by = "no tracked public-domain witness prints this day's orations"
+note = """
+READ AND HELD, WHICH IS NOT THE SAME BLOCK AS THE OTHER 84. The page was read on
+2026-08-02 at 200 and again at 400 dpi with the rest of the February run. The
+pointer reads `Missa In medio, de Communi Doctorum [22], cum orationibus ut
+infra:` and the day prints three orations, nos. 2155, 2157 and 2159, every one
+marked P. So the transcription is not the obstacle; the witness is. S. Cyrillus
+Alexandrinus was extended to the universal calendar in 1882, twenty years after
+the Pustet Ratisbon 1862 was printed, and that book runs Die viii S. Joannis de
+Matha, Die ix S. Appoloniae, Die x S. Scholasticae with no Cyril between them and
+carries him nowhere else; its calendar index knows only Cyril and Methodius at 9
+March. The Vatican 1604 and the Venice 1570 are older and carry him not at all.
+`january_run` set the standard that a landed prayer is found in a tracked
+public-domain witness BEFORE it is written, and this one cannot be, so nothing is
+landed here - not even the pointer alone, which would serve the Common's `beati
+N.` in place of the prayer the book prints for him. This is the case
+`january_run` predicted the February run would meet, and the disposition it named
+is the one taken.
+"""
 
 [[pointers]]
 date = "02-09"
@@ -601,8 +756,7 @@ printed_common = "Virginum III loco"
 printed_bracket = 32
 common_mass = "commune-virginum-3"
 mass = "s-scholasticae-virginis"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "02-14"
@@ -616,8 +770,7 @@ printed_common = "unius Martyr is III loco"
 printed_bracket = 6
 common_mass = "commune-unius-martyris-3"
 mass = "comm-s-valentini-presbyteri-martyris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "02-15"
@@ -631,8 +784,7 @@ printed_common = "plurimorum Martyrum III loco"
 printed_bracket = 12
 common_mass = "commune-plurimorum-martyrum-3"
 mass = "comm-ss-faustini-iovitae-martyrum"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "02-18"
@@ -660,8 +812,7 @@ printed_common = "Doctorum"
 printed_bracket = 22
 common_mass = "commune-doctorum-pontificis"
 mass = "s-petri-damiani-episcopi-confessoris-ecclesiae"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "03-04"
