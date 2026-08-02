@@ -23,7 +23,15 @@ verification: 'a citation carrying a mass-level notes line naming an artifact pa
   Communion psalm - which the Missal prints and the Ordo does not, plus 15 on the
   Epiphany and Ascension Vigils, for which the Ordo prints no distinct formulary,
   and the Second Sunday of Lent verse before the Gospel, which the Ordo prints
-  with no reference at all. The sanctoral''s twelve read masses are unchanged. The
+  with no reference at all. One seasonal Mass has been added since that
+  measurement and is not inside it: the Chrism Mass, admitted on 2026-08-01 by
+  the ruling recorded in the rubrics file, read at one further artifact page, 195.
+  Its five Lectionary references were all read and none of them corrected a lead,
+  because it had none; nothing about it is unread, and the 213 unread above is
+  therefore unchanged. It is also the one Mass in this section whose euchology and
+  antiphons are absent rather than placeholder: the Missal prints them, this
+  repository holds no witness to the Missal''s words, and none was invented. The
+  sanctoral''s twelve read masses are unchanged. The
   marian, the christological and the rest of the sanctoral remain a placeholder
   skeleton pending formula migration. See
   src/sources/inventories/postconciliar-seasonal-collation-v1.toml'
@@ -80,34 +88,39 @@ open_collation_items:
   must choose. Each
   therefore carries a synthetic pc-T-<key> id formed on the 1962 index's own
   1962-T-<key> pattern, and none of the three should be read as claiming a
-  registry identity; settle the scheme with the registry's owner
-- the Chrism Mass is still absent, and src/sources/calendars/postconciliar/rubrics.yaml
-  still declares that absence. Nothing tracked here settles whether a Mass that
-  is neither a Sunday nor a solemnity nor a day of the Triduum belongs in this
-  index, and the 1962 index in this repository carries one while this one does
-  not; it was left rather than resolved by preference. What did change on
-  2026-07-31 is that the ground given for the absence stopped being true. The
-  seasonal section now holds blessed-virgin-mary-mother-church and
-  immaculate-heart-blessed-virgin-mary, both of rank Memorial, so the index is no
-  longer scoped to the Sundays, the solemnities and the days of the Triduum, and
-  that sentence cannot carry the Chrism Mass's absence any longer. The scope
-  itself is what needs deciding, and either answer costs something - admitting
-  every Mass the Missal prints in the Proper of Time means adding the Chrism Mass
-  and rewriting the scope sentence, while holding the narrow scope means the two
-  memorials leave or the sentence names them as exceptions
+  registry identity; settle the scheme with the registry's owner. The Chrism Mass
+  admitted on 2026-08-01 is a fourth of the same kind and carries pc-T-chrism-mass
+  on the same footing, because the registry has no id for it either and it is not
+  a fixed-date replacement of a Sunday, so the PC-R series does not reach it
+- 'SETTLED on 2026-08-01: the Chrism Mass is carried. It had been absent on the
+  ground that this index is scoped to the Sundays, the solemnities and the days
+  of the Triduum. That ground was measured against the file and found false of
+  193 of its entries - 82 optional memorials, 69 memorials, 24 feasts and 18 keys
+  joining several optional memorials, none of them a Sunday, a solemnity or a day
+  of the Triduum - so the alternative to admitting the Mass was not holding a
+  narrow scope but deleting 193 entries. The ruling admitted the Mass and struck
+  the sentence. It is filed season holy-week rather than triduum because NUALC 19
+  begins the Triduum at the evening Mass and the Ordo lectionum prints this one
+  among the Lenten ferias, at feria V Hebdomadae sanctae. What is NOT settled by
+  it, and is the remaining part of the same question, is the rest of the ferial
+  Proper of Time: the Missal prints a proper Mass on most weekdays of Advent,
+  Lent, the Octaves and Eastertide, and this index still carries none of them.
+  rubrics.yaml mass_category.constituted_days holds that census'
 - whether the three celebrations inscribed by rule belong under seasonal, as
   they are filed, or under christological and marian, is the same question the
   1962 index records for its own movable feasts of the Lord
 - 'the line that stood here read ''all entries in this file are placeholders
   pending source-backed completion'', and it was not true when it was written and
-  is less true now. Measured on 2026-08-01, of 268 masses, 193 hold nothing but a
-  placeholder proper, 63 hold seasonal text that is a model-generated lead, and 12
-  hold sanctoral Lectionary citations read at page images. Three states, not one,
-  and a reader told they are all the same state cannot tell the read twelve from
-  the unread sixty-three. The counts are derived and move; what is fixed is that this
-  file holds three kinds of entry and each says which it is - a placeholder by its
-  proper''s name, a read citation by its mass''s notes, and a lead by carrying
-  neither'
+  is less true now. Measured on 2026-08-01, of 269 masses, 193 hold nothing but a
+  placeholder proper, 63 hold seasonal text of which the Lectionary slots were read
+  and the antiphons are still a model-generated lead, 12 hold sanctoral Lectionary
+  citations read at page images, and 1 - the Chrism Mass - holds read citations and
+  nothing else at all, its euchology being neither placeheld nor guessed but simply
+  absent for want of a witness to the Missal''s words. Four states, not one, and a
+  reader told they are all the same state cannot tell the read from the unread. The
+  counts are derived and move; what is fixed is that each entry says which it is -
+  a placeholder by its proper''s name, a read citation by its mass''s notes, and a
+  lead by carrying neither'
 - the antiphons and orations of the sanctoral are absent, and the reason is
   recorded once in src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml
   rather than repeated on 199 masses. Fourteen witnesses were named and twelve
@@ -3703,6 +3716,77 @@ sections:
           noster Iesus Christus non dubitavit manibus tradi nocentium, et crucis
           subire tormentum. Qui vivit et regnat in saecula saeculorum.
         notes: Given for this day and used at the Priest's discretion.
+    - key: chrism-mass
+      name: Chrism Mass
+      registry: pc-T-chrism-mass
+      season: holy-week
+      notes: 'The Lectionary citations were read at 200 dpi in a page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 195, printed page 141,
+        n. 260. The book files this Mass among the Lenten ferias - the running head is
+        FERIAE QUADRAGESIMAE and the section head HEBDOMADA SANCTA, at Feria 5 - and the
+        Mass of the Lord''s Supper at n. 39 is printed apart from it, at artifact page 83.
+        That is why this entry carries season holy-week and not triduum: NUALC 19 runs
+        the Triduum from the evening Mass, and this Mass is said in the morning. The
+        Ordo prints its responsorial psalms in Vulgate numbering; Ps 88, 21-22. 25 et 27
+        is converted here by scripts/_psalms from the tracked verse concordance, because
+        this file declares psalm_numbering hebrew. The verse before the Gospel is printed
+        Is 61, 1 (cit. in Lc 4, 18); the citation carried is the one the book gives, Isaiah
+        61:1. NOTHING ELSE OF THIS MASS IS HELD. The Missal prints an Entrance Antiphon,
+        a Collect, a Prayer over the Offerings, a Communion Antiphon, a Prayer after
+        Communion and the two blessings of oils, and this repository holds no witness to
+        the Missale Romanum 2002''s words; none of them is transcribed here and none is
+        guessed. See src/sources/inventories/postconciliar-seasonal-collation-v1.toml for
+        the method and the citation ruling it stays inside.'
+      propers:
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 61, verse: 1}
+            end: {chapter: 61, verse: 3, part: a}
+          - begin: {chapter: 61, verse: 6, part: a}
+            end: {chapter: 61, verse: 6, part: a}
+          - begin: {chapter: 61, verse: 8, part: b}
+            end: {chapter: 61, verse: 9}
+          ref: "Isaiah 61:1-3a, 6a, 8b-9"
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 89, verse: 21}
+            end: {chapter: 89, verse: 22}
+          - begin: {chapter: 89, verse: 25}
+            end: {chapter: 89, verse: 25}
+          - begin: {chapter: 89, verse: 27}
+            end: {chapter: 89, verse: 27}
+          ref: "Psalm 89:21-22, 25, 27"
+      - name: Second Reading
+        source: scripture
+        verses:
+        - book: Revelation
+          ranges:
+          - begin: {chapter: 1, verse: 5}
+            end: {chapter: 1, verse: 8}
+          ref: Revelation 1:5-8
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 61, verse: 1}
+            end: {chapter: 61, verse: 1}
+          ref: Isaiah 61:1
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 4, verse: 16}
+            end: {chapter: 4, verse: 21}
+          ref: Luke 4:16-21
     - key: mass-of-the-lords-supper
       name: Evening Mass of the Lord's Supper
       registry: pc-t01

@@ -1072,6 +1072,7 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
         sunday = easter - timedelta(days=42 - 7 * (week - 1))
         year.put(sunday, f"lent-{week}", f"Easter -{(easter - sunday).days}")
     year.put(easter - timedelta(days=7), "palm-sunday", "Easter -7")
+    year.put(easter - timedelta(days=3), "chrism-mass", "Easter -3")
     year.put(easter - timedelta(days=3), "mass-of-the-lords-supper", "Easter -3")
     year.put(easter - timedelta(days=2), "good-friday", "Easter -2")
     year.put(easter - timedelta(days=1), "easter-vigil", "Easter -1")

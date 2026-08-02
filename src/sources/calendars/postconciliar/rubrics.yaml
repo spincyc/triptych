@@ -222,6 +222,20 @@ bases:
   why: an ordinary weekday, which yields to everything above a memorial and is combined
     with a memorial rather than displaced by it
   locus: NUALC 16 c; NUALC 59 table 13
+- id: additional-mass
+  label: a further Mass appointed on this day
+  row: null
+  nature: additional-mass
+  commemoration: none
+  competes: false
+  why: a further Mass the books appoint on a day whose identity is settled by
+    something else. It occupies no row of the table, so it can neither take the day
+    nor be displaced by it; it is offered beside the day's own Mass and is never
+    ranked against it
+  locus: NUALC 19, which runs the Paschal Triduum from the evening Mass of the Lord's
+    Supper, so a Mass said that morning is not one of the days table 1 ranks; Ordo
+    lectionum Missae 1981 nn. 39 and 260, which print two formularies for feria V
+    Hebdomadae sanctae and file the second among the Lenten ferias
 - id: not-classified
   label: not classified here
   row: null
@@ -249,6 +263,12 @@ assignment:
       easter-sunday], note: 'NUALC 19 runs the Triduum from the evening Mass of the
     Lord''s Supper to Evening Prayer on Easter Sunday, so Easter Sunday is in place
     1 and not in place 2.'}
+- {basis: additional-mass, keys: [chrism-mass], note: 'The Chrism Mass is a second
+    Mass of Thursday of Holy Week, said in the cathedral that morning, and it is never
+    ranked against the Mass of the Lord''s Supper: it competes for nothing and is
+    displaced by nothing. It is filed here rather than in place 1 because NUALC 19
+    begins the Triduum at the evening Mass, and the Ordo lectionum agrees, printing
+    it among the Lenten ferias at feria V Hebdomadae sanctae.'}
 - {basis: place-2-great-day, keys: [nativity, nativity-lord, epiphany, epiphany-lord,
       ascension, pentecost, palm-sunday]}
 - {basis: place-2-great-day, key_matches: '^(advent-[1-4]|lent-[1-5]|easter-[2-7])$'}
@@ -279,10 +299,22 @@ assignment:
     NUALC 14 permits one.'}
 
 # ---------------------------------------------------------------------------
-# Implied days. The index carries a formulary only for the Sundays, the
-# solemnities and the days of the Triduum, so on most weekdays the day that a
-# memorial is measured against has no key at all. These rules constitute it from
-# the season the year file already computed.
+# Implied days. What the index carries, stated as it is rather than as it was
+# once summarized: 269 entries, of which 64 are the seasonal days with no rank -
+# the Sundays, the Triduum and the other days of the Proper of Time it holds -
+# and 205 carry a printed rank. Only 11 of those are solemnities. The rest are
+# 82 optional memorials, 69 memorials, 24 feasts, 18 keys joining several
+# optional memorials, and the Commemoration of All the Faithful Departed. What
+# the index does NOT carry is the ferial Proper of Time: the ordinary weekdays
+# have no key at all, so on most weekdays the day that a memorial is measured
+# against is unnamed. These rules constitute it from the season the year file
+# already computed.
+#
+# The earlier sentence here said the index was scoped to the Sundays, the
+# solemnities and the days of the Triduum. That was never a scope; it was a
+# description of an early state of the file, and by 2026-08-01 it was false of
+# 193 of its 269 entries. It is corrected rather than repaired because a false
+# sentence about scope had begun to be cited as a ground for refusing entries.
 #
 # Constituting a day and appointing its Mass are two different acts, and the
 # distance between them was invisible until it was measured: over 2026 these
@@ -703,47 +735,21 @@ not_decided_here:
 # from memory; each is movable, which is why nothing else here reports them —
 # the spine derives fixed dates and every gate below it agrees with the spine.
 #
-# Three entries have gone: the Most Sacred Heart of Jesus, the Immaculate Heart
-# of the Blessed Virgin Mary and the Blessed Virgin Mary, Mother of the Church
-# are now masses in the calendar index and are classified in `assignment` above.
-# A declared absence that is no longer absent is as false as an undeclared one,
-# so an entry here is deleted in the same change that adds the mass. Only the
-# Chrism Mass remains, because whether it belongs in this index at all is
-# unsettled below and was not resolved by preference.
-known_absences:
-- what: Missa Chrismatis
-  when: the morning of Holy Thursday, Easter - 3 days, subject to the book's
-    pastoral provision for another nearby day
-  match: {from: 03-22, to: 04-22, weekday: thursday}
-  locus: Missale Romanum, feria V hebdomadae sanctae
-  blocks_result: false
-  effect: >-
-    Absent here, and it is not settled that it belongs: this index is scoped to
-    the Sundays, the solemnities and the days of the Triduum, and the Chrism Mass
-    is none of the three, while the 1962 index in this repository does carry one.
-    It does not displace the day, so the winner shown below stands; what is
-    missing is a second Mass on it.
+# There are none left. Four entries have gone: the Most Sacred Heart of Jesus,
+# the Immaculate Heart of the Blessed Virgin Mary, the Blessed Virgin Mary,
+# Mother of the Church, and now the Chrism Mass are masses in the calendar index
+# and are classified in `assignment` above. A declared absence that is no longer
+# absent is as false as an undeclared one, so an entry here is deleted in the
+# same change that adds the mass, and the section is deleted with its last
+# entry. The Chrism Mass's absence was held on the ground that this index is
+# scoped to the Sundays, the solemnities and the days of the Triduum. That
+# ground was false of 193 of the index's 269 entries when it was written down,
+# so the ruling of 2026-08-01 admitted the Mass and corrected the sentence
+# instead of narrowing the index to fit it: see the assignment rule for
+# `chrism-mass`, the `additional-mass` basis it names, and the worked case
+# below, which now asserts the Mass is offered and never ranked.
 
 unsettled:
-- what: whether the Chrism Mass belongs in an index scoped to Sundays, solemnities
-    and the Triduum
-  why: >-
-    The 1962 index in this repository carries one and this one does not, and
-    nothing here decides which scope is right. Recorded as an absence above with
-    blocks_result false, because it adds a Mass to the day rather than taking the
-    day from anything. The absence's stated ground has since failed: the seasonal
-    section of the calendar index now carries
-    blessed-virgin-mary-mother-church and
-    immaculate-heart-blessed-virgin-mary, both of rank Memorial, so the index is
-    not in fact scoped to the Sundays, the solemnities and the days of the
-    Triduum, and the scope sentence in known_absences above no longer describes
-    it. This needs a maintainer ruling on the scope itself, not a further
-    witness. Admitting every Mass the Missal prints in the Proper of Time costs
-    one mass entry, one assignment row - the 1962 file classifies its own Chrism
-    Mass as an additional-mass on Maundy Thursday - and the deletion of the
-    absence above. Holding the narrow scope costs either the removal of two
-    masses added on 2026-07-31 or an honest restatement naming them as
-    exceptions. Either way the sentence above must change.
 - what: an entry that carries several optional memorials under one key
   why: the calendar index in this repository joins them, so the page can say that more
     than one falls on the day but cannot list them separately or say which is which.
@@ -842,11 +848,15 @@ worked_cases:
 # the day's. Easter 2026 is 5 April. A third missal added to this repository
 # should carry these five days too.
 #
-# One difference from the 1962 source is worth recording rather than leaving to
-# be noticed: there is no Chrism Mass here to offer. This index is scoped to the
-# Sundays, the solemnities and the days of the Triduum, and the Chrism Mass is
-# declared absent on that ground. Whether that scope still holds is an open
-# ruling and not a question a witness settles, so nothing is added here.
+# The Chrism Mass is now offered on the Thursday, as it is in the 1962 source,
+# and the case below asserts it under `additional` and never under `said`. It
+# was previously absent on the ground that this index is scoped to the Sundays,
+# the solemnities and the days of the Triduum; that sentence was false of 193 of
+# the index's 269 entries, and the ruling of 2026-08-01 admitted the Mass and
+# struck the sentence rather than shrinking the index to make it true. The one
+# thing that does differ from 1962 is where the Mass is filed: `holy-week`, not
+# `triduum`, because NUALC 19 begins the Triduum at the evening Mass and this one
+# is said in the morning.
 - id: triduum-2026-palm-sunday
   source: NUALC 16, 18-19; the table of liturgical days
   date: '2026-03-29'
@@ -857,19 +867,25 @@ worked_cases:
     settled: true
     readable: {said: [palm-sunday]}
 - id: triduum-2026-holy-thursday
-  source: NUALC 19; the table of liturgical days
+  source: NUALC 19; the table of liturgical days; Ordo lectionum Missae 1981 nn. 39
+    and 260
   date: '2026-04-02'
   why: >-
     NUALC 19 runs the Triduum from this evening Mass, which is why it stands at
     place 1 here and at row 2 under the 1960 code - the two calendars band the
     same day differently and each is read from its own table. St Francis of
-    Paola is displaced and may be read, not celebrated.
+    Paola is displaced and may be read, not celebrated. The Chrism Mass is the
+    second assertion of this case and the reason it exists in this form: it is
+    not a competitor and must never be ranked against the Mass of the Lord's
+    Supper, so it appears under `additional` and never under `said`. It is
+    classified `additional-mass`, which carries no row at all.
   expect:
     winner: mass-of-the-lords-supper
     winner_row: 1
     settled: true
     readable:
       said: [mass-of-the-lords-supper]
+      additional: [chrism-mass]
       displaced: [saint-francis-paola-hermit]
 - id: triduum-2026-good-friday
   source: NUALC 19; the table of liturgical days
