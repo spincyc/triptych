@@ -34,8 +34,13 @@ verification: four tiers; the seasonal Sundays, the Triduum and Palm Sunday carr
   200 and 400 dpi and corroborated against the tracked 1920 Vatican typical
   edition, which is a fifth tier and the only entry outside the Commune that
   stands on a page reading of its every proper. Corpus Christi is now in the same
-  state within the seasonal section. Every remaining entry in those three
-  sections is still a placeholder skeleton
+  state within the seasonal section, and so is the marian entry
+  comm-septem-dolorum-beatae-mariae-virginis, the Commemoration of the Seven
+  Sorrows of the Friday after Passion Sunday, added 2026-08-02 with every proper
+  read on the facsimile page images at 200 and 400 dpi. The Sequence of the
+  15 September feast stands on the same witness, alone on an entry whose other
+  propers do not. Every remaining entry in those three sections is still a
+  placeholder skeleton
 conventions:
 - every Introit concludes with the Gloria Patri and the repeated antiphon; the
   doxology is not repeated per entry
@@ -316,37 +321,38 @@ open_collation_items:
   sacrificium, vivificet where the facsimile prints sacrificium vivificet at printed
   p. 41. One comma, and the entry outside this collation was not touched; settle
   which is right when the Sunday leads are collated
-- the Commemoratio septem Dolorum B. Mariae Virg. on the Friday after Passion
-  Sunday has no entry, and the commemoration model landed on 2026-07-31 does not
-  reach it. That model is dated - each of the 104 entries of rank Comm. carries a
-  civil date and a 1962-<date>-comm registry id, and this celebration is movable,
-  so it has neither. The Missal is not silent about it. At printed pp. 499-501,
-  between the March and April feasts of the Proprium Sanctorum, it prints the
-  heading Feria VI post dominicam I Passionis / Septem Dolorum beatae Mariae
-  Virginis / Commemoratio, then the rubric Hodie, ubi peculiaria pietatis
-  exercitia in honorem beatae Mariae Virg. Matris dolorosae peraguntur,
-  permittuntur duae Missae festivae de septem Doloribus beatae Mariae Virginis,
-  then a complete formulary - Introit Stabant iuxta Crucem Iesu mater (Io. 19,
-  25), Lesson Iudith 13, 22 et 23-25, Sequence Stabat Mater dolorosa, and the
-  rest, with a commemoration of the feria at each oration. So an entry of rank
-  Comm. holding only a placeholder would understate what the Missal prints here,
-  which the sixty unfolded commemorations do not. Two things must be settled
-  before it can be written - a registry scheme for a movable commemoration, which
-  is the same open item recorded above for the ferias, and whether a Comm. that
-  carries its own printed Mass is filed as a commemoration or as a mass
+- the Commemoratio septem Dolorum B. Mariae Virg. of the Friday after Passion
+  Sunday is now the entry comm-septem-dolorum-beatae-mariae-virginis in the
+  marian section, landed on 2026-08-02 with its whole formulary read off the page
+  images. The two things this item said had to be settled first were settled by
+  guidance/liturgy/movable-commemoration-proposal.md, which argued that neither
+  needed a schema change and that this file's own note had the model wrong. It
+  does. The commemoration model is not dated; rank carries commemoration-ness,
+  not the id, and of the 104 entries of rank Comm. only 60 carry a
+  1962-<date>-comm id, the 44 the calendar inscribes outright carrying a plain
+  1962-<MM-DD>. What the schema asks of an undated entry is a season and no more -
+  check_entry validates date, kind and rank only inside if has_date - so the day
+  is an ordinary undated entry with the synthetic 1962-T-<key> id this file
+  already uses 66 times, and no sixth registry shape was minted. Whether a Comm.
+  carrying its own printed Mass files as a commemoration or as a mass was a false
+  alternative this file had already refused once - mass_choices carmel-on-a-saturday
+  keeps the Commemoration of Our Lady of Mount Carmel a commemoration and writes
+  the permission to say its own Mass where permissions go. The Friday is filed the
+  same way. What remains open is only the 1962-T- scheme itself, which is the item
+  recorded above for the ferias and is not enlarged by a 67th member
 - ascension, corpus-christi, sacred-heart and chrism-mass are filed seasonal
   because the Missal prints them in the Proprium de Tempore and each is placed by
   the liturgical year rather than a civil date; by kind they are christological,
   and which section should hold them is open
-- four formularies the Missal carries are still absent from this file, namely
-  D. N. Iesu Christi Regis (last Sunday of October, I classis), Sanctissimi
-  Nominis Iesu, the
-  Mass for the days within the Octave of the Nativity that 12-29, 12-30 and 12-31
-  use, which the collation above identifies as Diebus infra octavam Nativitatis
-  Domini, II classis, printed pp. 28-29, and the Commemoratio septem Dolorum
-  B. Mariae Virg. of printed pp. 499-501. The fifth, the Missa dominicae primae
-  post Epiphaniam of printed p. 40, is now carried. All four are movable or shared
-  and none is in the fixed-date spine, which is why nothing reports them
+- one formulary the Missal carries is still absent from this file, the Mass for
+  the days within the Octave of the Nativity that 12-29, 12-30 and 12-31 use,
+  which the collation above identifies as Diebus infra octavam Nativitatis
+  Domini, II classis, printed pp. 28-29. Of the five this item once listed, the
+  Missa dominicae primae post Epiphaniam of printed p. 40 is now carried, D. N.
+  Iesu Christi Regis and Sanctissimi Nominis Iesu are now entries in this file,
+  and the Commemoratio septem Dolorum B. Mariae Virg. of printed pp. 499-501
+  landed on 2026-08-02. The one remaining is movable or shared and is not in the
+  fixed-date spine, which is why nothing reports it
 - the sanctoral, marian and christological scripture citations added on
   2026-08-01 were recovered mechanically from the CMAA facsimile's own text
   layer, read in column order and in bands delimited by the full-width lines,
@@ -388,13 +394,17 @@ open_collation_items:
   Victimae paschali laudes at easter-sunday and Veni Sancte Spiritus at pentecost.
   On 2026-08-01 two more were landed off page images - Lauda Sion Salvatorem at
   corpus-christi and Dies irae at commemoratione-omnium-fidelium-defunctorum,
-  each with the whole formulary around it. The fifth, Stabat Mater dolorosa, is
-  still absent, and it is blocked on an entry and not on a text - its Mass is the
-  Commemoratio septem Dolorum B. Mariae Virg. of the Friday after Passion Sunday,
-  printed pp. 499-501, which has no entry here at all for the two reasons the item
-  above records - no registry scheme for a movable commemoration, and no ruling on
-  whether a Comm. carrying its own printed Mass files as a commemoration or as a
-  mass. Neither was settled here and nothing was invented to get past them
+  each with the whole formulary around it. On 2026-08-02 the fifth landed, and it
+  landed twice, because the Missal prints Stabat Mater dolorosa twice in full and
+  the two printings are not the same text. The first is at the Commemoratio septem
+  Dolorum B. Mariae Virg. of the Friday after Passion Sunday, printed pp. 500-501
+  n. 2364, unconditional, ending Paradisi gloria. Amen. with the Amen on a line of
+  its own; that Mass had no entry here at all until the same day, and now does. The
+  second is at the feast of 15 September, printed pp. 657-658 n. 3624, headed (in
+  Missis votivis omittenda) and ending Amen. Alleluia.; it stands on the entry that
+  already existed. The two also punctuate two strophes differently. Both were read
+  side by side off the page images at 400 dpi, and neither was written from the
+  other. So five of five, on two entries and in two forms
 - corpus-christi rendered as a finished first-class feast with no Collect, Secret,
   Postcommunion or Sequence in it until 2026-08-01, while its own notes said the
   orations were appointed but not transcribed. Nothing reads notes. That is the
@@ -14730,6 +14740,261 @@ sections:
               chapter: 7
               verse: 14
           ref: Isaiah 7:14
+    - key: comm-septem-dolorum-beatae-mariae-virginis
+      name: Comm. Septem Dolorum Beatae Mariae Virginis
+      registry: '1962-T-septem-dolorum'
+      season: passiontide
+      kind: marian
+      notes: >-
+        The Commemoration of the Seven Sorrows of the Blessed Virgin Mary on the Friday
+        after Passion Sunday, printed pp. 499-501 = digital pp. 580-582, marginal nn.
+        2358-2371. Every proper the Missal prints for this Mass is carried, read from
+        the page images of the CMAA facsimile of the 1962 typica,
+        artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        (sha256 648fdb8f...3518a, 82815941 bytes, matched on the copy read before any
+        reading was taken from it), rasterized at 200 dpi for the page and 400 dpi for
+        every prayer, chant and strophe. No OCR text layer supplied a reading here.
+        The entry is UNDATED and carries no rank, because the day is movable and the
+        Missal prints no class at the formulary, only the word Commemoratio; the calendar
+        reference's own Temporale table inscribes it comm. Its registry id is the
+        synthetic 1962-T-<key> shape this file already uses for its undated temporal
+        days, which is recorded as an open collation item below and is not enlarged by a
+        sixth shape here. tools/calendar-days places it at Passion Sunday +5 and
+        src/sources/calendars/roman-1962/rubrics.yaml classifies it calendar-commemoration
+        and carries the day's own rubric as the mass choice
+        seven-sorrows-where-devotions-are-held.
+        THIS IS NOT THE MASS OF 15 SEPTEMBER, and nothing here is copied from it. Both
+        settings were read on the page images on 2026-08-02. Seven propers agree word for
+        word - Introit, Lesson, Gradual, Offertory, Secret, Communion and Postcommunion -
+        and four do not. The Collect differs through its whole middle clause: this day
+        reads qui transfixionem ejus et passionem venerando recolimus, gloriosis meritis
+        et precibus omnium Sanctorum Cruci fideliter astantium intercedentibus, where 15
+        September reads only qui dolores ejus venerando recolimus. This day is in
+        Passiontide and prints a Tract and no Alleluia, where September prints an Alleluia
+        without the Threni verse and three seasonal conditions on it. The Sequence ends
+        Paradisi gloria. Amen., where September's ends Amen. Alleluia. and is marked in
+        Missis votivis omittenda; the two also punctuate two strophes differently. And the
+        Gospel is followed by the Credo in September and not here. So no takes_from was
+        written in either direction, which is also what the book does: neither setting
+        refers to the other and each prints the whole Mass.
+        What is not carried. The three orations of the feria's commemoration that this
+        formulary prints - Et fit commemoratio feriae, then Cordibus nostris (n. 2360),
+        Praesta nobis, misericors Deus (n. 2368) and Sumpti sacrificii (n. 2371) - are the
+        Mass of the Friday of Passion Week and belong to passion-friday, which still
+        records that its orations are appointed and not transcribed. They are recorded
+        there and not repeated here, on the precedent of comm-s-emerentianae-virginis-martyris,
+        whose own orations are printed under another day's Mass and are not transcribed
+        under it. Also not carried: the Preface, which this file records for no entry -
+        the page prints Praefatio de B. Maria Virg. Et te in Transfixione.
+      propers:
+      - name: Introit
+        incipit: Stabant juxta Crucem Jesu mater ejus
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin:
+              chapter: 19
+              verse: 25
+            end:
+              chapter: 19
+              verse: 25
+          ref: John 19:25
+        - book: John
+          ranges:
+          - begin:
+              chapter: 19
+              verse: 26
+            end:
+              chapter: 19
+              verse: 27
+          ref: John 19:26-27
+        notes: Printed p. 499 = digital p. 580, n. 2358, headed Ant. ad Introitum, printed
+          reference Io. 19, 25 with the psalm-place verse cited Ibid., 26-27 - the Gospel
+          continued, not a psalm - and closing V. Gloria Patri. The typica prints iuxta,
+          Iesu and eius; all three are normalised to j under this file's declared
+          convention.
+      - name: Collect
+        incipit: Deus, in cujus passione, secundum Simeonis prophetiam
+        source: composed
+        text: |
+          Deus, in cujus passione, secundum Simeonis prophetiam, dulcissimam
+          animam gloriosae Virginis et Matris Mariae doloris gladius pertransivit:
+          concede propitius; ut, qui transfixionem ejus et passionem venerando
+          recolimus, gloriosis meritis et precibus omnium Sanctorum Cruci fideliter
+          astantium intercedentibus, passionis tuae effectum felicem consequamur:
+          Qui vivis et regnas cum Deo Patre in unitate.
+        notes: Printed p. 499 = digital p. 580, n. 2359, headed Oratio, rendered again at
+          400 dpi. This is the proper of the two settings and the reason the day cannot
+          take its formulary from 15 September - the September Collect (n. 3616) prints
+          concede propitius; ut, qui dolores ejus venerando recolimus, passionis tuae
+          effectum, and the whole clause between recolimus and passionis is proper to this
+          day. The printed conclusion is carried as the page abbreviates it. The typica
+          prints cuius and eius; both are normalised to j.
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Judith
+          ranges:
+          - begin:
+              chapter: 13
+              verse: 22
+            end:
+              chapter: 13
+              verse: 22
+          - begin:
+              chapter: 13
+              verse: 23
+            end:
+              chapter: 13
+              verse: 25
+          ref: Judith 13:22, 23-25
+        notes: Printed p. 500 = digital p. 581, n. 2361, headed Lectio libri Iudith, printed
+          reference Iudith 13, 22 et 23-25. The same reading and the same printed reference
+          stand at 15 September, n. 3619.
+      - name: Gradual
+        incipit: Dolorosa et lacrimabilis es, Virgo Maria
+        source: composed
+        text: |
+          Dolorosa et lacrimabilis es, Virgo Maria, stans juxta Crucem Domini Jesu
+          Filii tui Redemptoris. V. Virgo Dei Genetrix, quem totus non capit orbis,
+          hoc crucis fert supplicium, auctor vitae factus homo.
+        notes: Printed p. 500 = digital p. 581, n. 2362, headed Graduale, rendered again at
+          400 dpi. The Missal prints no scriptural reference for it, so it is recorded as
+          composed rather than as an uncited citation, on the rule this file already applies
+          to the Tract Absolve, Domine. September's setting (n. 3620) is the same words and
+          differs only in printing Iesu, Filii with a comma. The typica prints iuxta and
+          Iesu; both are normalised to j.
+      - name: Tract
+        incipit: Stabat sancta Maria, caeli Regina et mundi Domina
+        source: mixed
+        verses:
+        - book: Lamentations
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 12
+            end:
+              chapter: 1
+              verse: 12
+          ref: Lamentations 1:12
+        text: |
+          Stabat sancta Maria, caeli Regina et mundi Domina, juxta Crucem Domini
+          nostri Jesu Christi dolorosa. V. O vos omnes, qui transitis per viam,
+          attendite et videte, si est dolor sicut dolor meus.
+        notes: Printed p. 500 = digital p. 581, n. 2363, headed Tractus, rendered again at
+          400 dpi. Recorded mixed because the Missal cites the verse and not the antiphon -
+          the antiphon carries no reference and the verse is printed V. Thren. 1, 12, which
+          this file's citation convention renders Lamentations 1:12. It is unconditional
+          here. At 15 September the same words stand as an Alleluia (n. 3621) WITHOUT the
+          Threni verse, and the Tract (n. 3622) is printed only for use after Septuagesima,
+          with a further Alleluia (n. 3623) replacing the Gradual in paschaltide. This day
+          is in Passiontide and has no Alleluia at all, which is the second reason no
+          takes_from could serve - _apply_overrides can add a proper and cannot remove one.
+          The typica prints iuxta and Iesu; both are normalised to j.
+      - name: Sequence
+        incipit: Stabat Mater dolorosa
+        source: composed
+        text: |
+          Stabat Mater dolorosa Juxta Crucem lacrimosa, Dum pendebat Filius.
+          Cujus animam gementem, Contristatam et dolentem, Pertransivit gladius.
+          O quam tristis et afflicta Fuit illa benedicta Mater Unigeniti!
+          Quae maerebat, et dolebat, Pia Mater, dum videbat Nati poenas incliti.
+          Quis est homo, qui non fleret Matrem Christi si videret In tanto supplicio?
+          Quis non posset contristari, Christi Matrem contemplari Dolentem cum Filio?
+          Pro peccatis suae gentis Vidit Jesum in tormentis, Et flagellis subditum.
+          Vidit suum dulcem Natum Moriendo desolatum, Dum emisit spiritum.
+          Eia, Mater, fons amoris, Me sentire vim doloris Fac, ut tecum lugeam.
+          Fac, ut ardeat cor meum In amando Christum Deum, Ut sibi complaceam.
+          Sancta Mater, istud agas, Crucifixi fige plagas Cordi meo valide.
+          Tui Nati vulnerati, Tam dignati pro me pati, Poenas mecum divide.
+          Fac me tecum pie flere, Crucifixo condolere, Donec ego vixero.
+          Juxta Crucem tecum stare Et me tibi sociare In planctu desidero.
+          Virgo virginum praeclara, Mihi jam non sis amara: Fac me tecum plangere.
+          Fac, ut portem Christi mortem, Passionis fac consortem, Et plagas recolere.
+          Fac me plagis vulnerari, Fac me Cruce inebriari, Et cruore Filii.
+          Flammis ne urar succensus, Per te, Virgo, sim defensus In die judicii.
+          Christe, cum sit hinc exire, Da per Matrem me venire Ad palmam victoriae.
+          Quando corpus morietur, Fac, ut animae donetur Paradisi gloria.
+          Amen.
+        notes: >-
+          The fifth and last of the five Sequences the 1962 books appoint, and the one this
+          file has never carried. Printed pp. 500-501 = digital pp. 581-582, n. 2364, headed
+          Sequentia, both columns rendered again at 400 dpi because the strophe punctuation
+          carries the sense. One line here is one printed strophe, and the closing Amen
+          stands on its own line as the page sets it, which is the convention this file
+          already uses at Dies irae. Twenty strophes.
+          It is NOT the September printing and it is not copied from it. The Missal prints
+          this Sequence twice in full, here and at 15 September n. 3624, and the two
+          settings differ. This one is unconditional; September's is headed (in Missis
+          votivis omittenda). This one ends Paradisi gloria. Amen.; September's ends
+          Paradisi gloria. Amen. Alleluia. on one line. September also prints a comma after
+          fleret in the fifth strophe and after stare in the fourteenth, where this setting
+          prints none. Both were read at 400 dpi on 2026-08-02 and the difference is in the
+          type, not in the scan. The typica prints Iuxta, Cuius, Iesum, iam and iudicii;
+          all are normalised to j under this file's declared convention.
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin:
+              chapter: 19
+              verse: 25
+            end:
+              chapter: 19
+              verse: 27
+          ref: John 19:25-27
+        notes: Printed p. 501 = digital p. 582, n. 2365, printed reference Io. 19, 25-27.
+          September prints the same Gospel and then Credo; this day does not.
+      - name: Offertory
+        incipit: Recordare, Virgo Mater Dei, dum steteris in conspectu Domini
+        source: scripture
+        verses:
+        - book: Jeremiah
+          ranges:
+          - begin:
+              chapter: 18
+              verse: 20
+            end:
+              chapter: 18
+              verse: 20
+          ref: Jeremiah 18:20
+        notes: Printed p. 501 = digital p. 582, n. 2366, headed Ant. ad Offertorium, printed
+          reference Ierem. 18, 20.
+      - name: Secret
+        incipit: Offerimus tibi preces et hostias, Domine Jesu Christe
+        source: composed
+        text: |
+          Offerimus tibi preces et hostias, Domine Jesu Christe, humiliter
+          supplicantes: ut, qui Transfixionem dulcissimi spiritus beatae Mariae
+          Matris tuae precibus recensemus; suo suorumque sub Cruce Sanctorum
+          consortium multiplicato piissimo interventu, meritis mortis tuae, meritum
+          cum beatis habeamus: Qui vivis et regnas cum Deo Patre in unitate.
+        notes: Printed p. 501 = digital p. 582, n. 2367, headed Secreta, rendered again at
+          400 dpi. The printed conclusion is carried as the page abbreviates it. The rubric
+          Praefatio de B. Maria Virg. Et te in Transfixione stands under the feria's Secret
+          on the same page and is not recorded, because this file records no Preface. The
+          typica prints Iesu; normalised to j.
+      - name: Communion
+        incipit: Felices sensus beatae Mariae Virginis
+        source: composed
+        text: |
+          Felices sensus beatae Mariae Virginis, qui sine morte meruerunt martyrii
+          palmam sub Cruce Domini.
+        notes: Printed p. 501 = digital p. 582, n. 2369, headed Antiphona ad Communionem
+          and carrying no scriptural reference, which is why it is recorded as composed.
+      - name: Postcommunion
+        incipit: Sacrificia, quae sumpsimus, Domine Jesu Christe
+        source: composed
+        text: |
+          Sacrificia, quae sumpsimus, Domine Jesu Christe, Transfixionem Matris
+          tuae et Virginis devote celebrantes: nobis impetrent apud clementiam
+          tuam omnis boni salutaris effectum: Qui vivis et regnas cum Deo Patre
+          in unitate.
+        notes: Printed p. 501 = digital p. 582, n. 2370, headed Postcommunio, rendered again
+          at 400 dpi. The printed conclusion is carried as the page abbreviates it. The
+          typica prints Iesu; normalised to j.
     - key: beatae-mariae-virginis-reginae
       name: Beatae Mariae Virginis Reginae
       registry: '1962-05-31'
@@ -15259,12 +15524,19 @@ sections:
       date: 09-15
       rank: II
       kind: marian
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 656 (digital p.
-        737), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: >-
+        Only the scripture-bearing propers and the Sequence are recorded; the orations the
+        Missal prints for this day are appointed and not transcribed here. Identity, rank
+        and the printed citations were read on 2026-08-01 from the embedded text layer of
+        the CMAA facsimile of the controlling edition at printed p. 656 (digital p. 737),
+        not from the facsimile images, and nothing but the Sequence has been visually
+        collated. The Sequence was added on 2026-08-02 off the page images and carries its
+        own witness note.
+        This is not the Mass of the Friday after Passion Sunday, which the Missal prints
+        whole and separately at pp. 499-501 and which this file carries as
+        comm-septem-dolorum-beatae-mariae-virginis. Seven of the two days' propers agree
+        word for word; the Collect, the chant after the Lesson, the Sequence and the Credo
+        do not, and that entry's notes set out the differences.
       propers:
       - name: Lesson
         source: scripture
@@ -15284,6 +15556,53 @@ sections:
               chapter: 13
               verse: 25
           ref: Judith 13:22, 23-25
+      - name: Sequence
+        incipit: Stabat Mater dolorosa
+        source: composed
+        text: |
+          Stabat Mater dolorosa Juxta Crucem lacrimosa, Dum pendebat Filius.
+          Cujus animam gementem, Contristatam et dolentem, Pertransivit gladius.
+          O quam tristis et afflicta Fuit illa benedicta Mater Unigeniti!
+          Quae maerebat, et dolebat, Pia Mater, dum videbat Nati poenas incliti.
+          Quis est homo, qui non fleret, Matrem Christi si videret In tanto supplicio?
+          Quis non posset contristari, Christi Matrem contemplari Dolentem cum Filio?
+          Pro peccatis suae gentis Vidit Jesum in tormentis, Et flagellis subditum.
+          Vidit suum dulcem Natum Moriendo desolatum, Dum emisit spiritum.
+          Eia, Mater, fons amoris, Me sentire vim doloris Fac, ut tecum lugeam.
+          Fac, ut ardeat cor meum In amando Christum Deum, Ut sibi complaceam.
+          Sancta Mater, istud agas, Crucifixi fige plagas Cordi meo valide.
+          Tui Nati vulnerati, Tam dignati pro me pati, Poenas mecum divide.
+          Fac me tecum pie flere, Crucifixo condolere, Donec ego vixero.
+          Juxta Crucem tecum stare, Et me tibi sociare In planctu desidero.
+          Virgo virginum praeclara, Mihi jam non sis amara: Fac me tecum plangere.
+          Fac, ut portem Christi mortem, Passionis fac consortem, Et plagas recolere.
+          Fac me plagis vulnerari, Fac me Cruce inebriari, Et cruore Filii.
+          Flammis ne urar succensus, Per te, Virgo, sim defensus In die judicii.
+          Christe, cum sit hinc exire, Da per Matrem me venire Ad palmam victoriae.
+          Quando corpus morietur, Fac, ut animae donetur Paradisi gloria. Amen. Alleluja.
+        notes: >-
+          The 1962 books appoint five Sequences and this file now carries all five. Printed
+          pp. 657-658 = digital pp. 738-739, n. 3624, headed Sequentia and, on its own line
+          beneath, the rubric (in Missis votivis omittenda) - so it is omitted when this
+          Mass is said as a votive Mass. Read on 2026-08-02 from the page images of the CMAA
+          facsimile of the 1962 typica,
+          artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+          (sha256 648fdb8f...3518a, 82815941 bytes, matched on the copy read before any
+          reading was taken from it), at 200 dpi for the page and 400 dpi for both columns,
+          because the strophe punctuation carries the sense. No OCR text layer supplied a
+          reading. One line here is one printed strophe, which is the convention this file
+          uses at Lauda Sion and at Dies irae; twenty strophes, and the closing Amen.
+          Alleluia. stands on the last strophe's third line as the page sets it rather than
+          on a line of its own.
+          This is the second of the Missal's two full printings and it was NOT copied from
+          the first. The Friday after Passion Sunday prints the whole Sequence at n. 2364
+          with no votive rubric over it, ends Paradisi gloria. Amen. with the Amen on a line
+          of its own and no Alleluia, and prints no comma after fleret in the fifth strophe
+          or after stare in the fourteenth, where this setting prints both. The two were
+          read side by side at 400 dpi and the three differences are in the type, not in the
+          scan. The typica prints Iuxta twice, Cuius, Iesum, iam and iudicii; all are
+          normalised to j under this file's declared convention, and the final Alleluja
+          carries the same normalisation this file already applies at Lauda Sion.
       - name: Gospel
         source: scripture
         verses:

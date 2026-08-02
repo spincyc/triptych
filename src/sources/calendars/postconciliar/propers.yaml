@@ -17,69 +17,89 @@ verification: 'a citation carrying a mass-level notes line naming an artifact pa
   in this file has NOT been read, and the difference is the whole of what verification
   means here. Measured on 2026-08-01, after the seasonal collation: the seasonal section
   holds 1058 book-references, of which 845 were read in the Ordo lectionum Missae 1981
-  over 79 artifact pages, 731 of them confirming the lead already in place and 114 correcting
-  it. The 213 that remain unread are 188 antiphons - Entrance, Communion, the Washing
-  of Feet, the Communion psalm - which the Missal prints and the Ordo does not, plus
-  15 on the Epiphany and Ascension Vigils, for which the Ordo prints no distinct formulary,
-  and the Second Sunday of Lent verse before the Gospel, which the Ordo prints with
-  no reference at all. One seasonal Mass has been added since that measurement and is
-  not inside it: the Chrism Mass, admitted on 2026-08-01 by the ruling recorded in the
-  rubrics file, read at one further artifact page, 195. Its five Lectionary references
-  were all read and none of them corrected a lead, because it had none; nothing about
-  it is unread, and the 213 unread above is therefore unchanged. It is also the one
-  Mass in this section whose euchology and antiphons are absent rather than placeholder:
-  the Missal prints them, this repository holds no witness to the Missal''s words, and
-  none was invented. The sanctoral''s read masses have grown from twelve to thirty,
-  and two dated masses outside the sanctoral section - the Presentation of the Lord
-  and Our Lady of Lourdes - were read with them, so thirty-two dated masses in this
-  file now carry Lectionary citations read in page images. They were read in one contiguous
-  run of the Ordo lectionum, artifact pages 330 to 335, printed pages 276 to 281, nn.
-  522 to 544, continuing the book from the page the earlier sanctoral lane stopped before;
-  83 citations, every one of them read, none of them correcting a lead because none
-  of those masses had one. A third wave continued the same run on 2026-08-01, from artifact
-  page 336 - the page the second wave stopped before - to artifact page 345, printed
-  pages 282 to 291, nn. 545 to 582, 25 March through 19 June: 31 further masses and
-  126 further citations, again every one of them read and none of them correcting a
-  lead. The sanctoral''s read masses are now fifty-eight; the Annunciation of the Lord
-  and the Visitation of the Blessed Virgin Mary were read with them, so sixty-two dated
-  masses in this file now carry Lectionary citations read in page images, and the Immaculate
-  Heart of the Blessed Virgin Mary, which the General Roman Calendar inscribes by rule
-  and not by date, carries them too. Seven formularies on those pages were read and
-  NOT landed - nn. 553, 556, 562, 563, 567, 568 and 569 - because this file joins the
-  optional memorials of 23 April, 28 April, 12 May and 25 May under one key each, and
-  writing one saint''s readings onto a key that stands for several would attribute them
-  to all of them. Five celebrations this calendar carries in that span are not in the
-  1981 book at all and stay placeholders, having been inscribed after it: Our Lady of
-  Fatima, Saint John of Avila, Saints Christopher Magallanes and Companions, Saint Rita
-  of Cascia and Saint Paul VI. One slot is absent for a third reason: at n. 551, Saint
-  Martin I, the Ordo prints against Alleluia the bare cross-reference n. 717,6 and no
-  scriptural citation, so that Mass carries no Gospel Acclamation, as at n. 536. Their
-  euchology and antiphons are absent rather than placeholder, on the Chrism Mass''s
-  footing. A fourth wave continued the same run on 2026-08-01, from artifact page 349
-  - the page the third wave stopped before - to artifact page 358, printed pages 295
-  to 304, nn. 593 to 634, 3 July through 29 August: 36 further masses and 153 further
-  citations, again every one of them read and none of them correcting a lead. Artifact
-  pages 328 to 358 have now been read end to end. The sanctoral''s read masses are now
-  ninety, and ninety-eight dated masses in this file carry Lectionary citations read
-  in page images, the Assumption of the Blessed Virgin Mary among them in both of its
-  forms. Five formularies on those pages were read and NOT landed - nn. 611, 615, 616,
-  630 and 631 - because this file joins the optional memorials of 2 August, 7 August
-  and 25 August under one key each, and writing one saint''s readings onto a key that
-  stands for several would attribute them to all of them. Six celebrations this calendar
-  carries in that span the 1981 book does not print on their date and they stay placeholders:
-  Saints Augustine Zhao Rong and Companions, Saint Apollinaris, Saint Sharbel Makhluf,
-  Saint Teresa Benedicta of the Cross and Saint Maximilian Mary Kolbe, all inscribed
-  or restored after it, and Saint Jane Frances de Chantal, whom that book prints on
-  12 December, the date she was kept on until 2001, which lies beyond the pages read.
-  Four slots are absent for the third reason: at n. 602, Saint Lawrence of Brindisi,
-  the Ordo prints against Alleluia the bare cross-reference n. 729,8 and no citation,
-  and at n. 620, Saints Pontian and Hippolytus, the same n. 717,6 it declines to spell
-  out at nn. 536 and 551; at n. 603, Saint Mary Magdalene, and at n. 622, the Assumption''s
-  Mass during the Day, it prints a chant text against Alleluia with no scriptural citation
-  at all. Every one of the four is left absent rather than filled from elsewhere. The
-  rest of the marian, the christological and the sanctoral remain a placeholder skeleton
-  pending formula migration. See src/sources/inventories/postconciliar-seasonal-collation-v1.toml
-  and src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml'
+  over 79 artifact pages, 731 of them confirming the lead already in place and 114
+  correcting it. The 213 that remain unread are 188 antiphons - Entrance, Communion, the
+  Washing of Feet, the Communion psalm - which the Missal prints and the Ordo does not,
+  plus 15 on the Epiphany and Ascension Vigils, for which the Ordo prints no distinct
+  formulary, and the Second Sunday of Lent verse before the Gospel, which the Ordo
+  prints with no reference at all. One seasonal Mass has been added since that
+  measurement and is not inside it: the Chrism Mass, admitted on 2026-08-01 by the
+  ruling recorded in the rubrics file, read at one further artifact page, 195. Its five
+  Lectionary references were all read and none of them corrected a lead, because it had
+  none; nothing about it is unread, and the 213 unread above is therefore unchanged. It
+  is also the one Mass in this section whose euchology and antiphons are absent rather
+  than placeholder: the Missal prints them, this repository holds no witness to the
+  Missal''s words, and none was invented. The sanctoral''s read masses have grown from
+  twelve to thirty, and two dated masses outside the sanctoral section - the
+  Presentation of the Lord and Our Lady of Lourdes - were read with them, so thirty-two
+  dated masses in this file now carry Lectionary citations read in page images. They
+  were read in one contiguous run of the Ordo lectionum, artifact pages 330 to 335,
+  printed pages 276 to 281, nn. 522 to 544, continuing the book from the page the
+  earlier sanctoral lane stopped before; 83 citations, every one of them read, none of
+  them correcting a lead because none of those masses had one. A third wave continued
+  the same run on 2026-08-01, from artifact page 336 - the page the second wave stopped
+  before - to artifact page 345, printed pages 282 to 291, nn. 545 to 582, 25 March
+  through 19 June: 31 further masses and 126 further citations, again every one of them
+  read and none of them correcting a lead. The sanctoral''s read masses are now
+  fifty-eight; the Annunciation of the Lord and the Visitation of the Blessed Virgin
+  Mary were read with them, so sixty-two dated masses in this file now carry Lectionary
+  citations read in page images, and the Immaculate Heart of the Blessed Virgin Mary,
+  which the General Roman Calendar inscribes by rule and not by date, carries them too.
+  Seven formularies on those pages were read and NOT landed - nn. 553, 556, 562, 563,
+  567, 568 and 569 - because this file joins the optional memorials of 23 April, 28
+  April, 12 May and 25 May under one key each, and writing one saint''s readings onto a
+  key that stands for several would attribute them to all of them. Five celebrations
+  this calendar carries in that span are not in the 1981 book at all and stay
+  placeholders, having been inscribed after it: Our Lady of Fatima, Saint John of Avila,
+  Saints Christopher Magallanes and Companions, Saint Rita of Cascia and Saint Paul VI.
+  One slot is absent for a third reason: at n. 551, Saint Martin I, the Ordo prints
+  against Alleluia the bare cross-reference n. 717,6 and no scriptural citation, so that
+  Mass carries no Gospel Acclamation, as at n. 536. Their euchology and antiphons are
+  absent rather than placeholder, on the Chrism Mass''s footing. A fourth wave continued
+  the same run on 2026-08-01, from artifact page 349 - the page the third wave stopped
+  before - to artifact page 358, printed pages 295 to 304, nn. 593 to 634, 3 July
+  through 29 August: 36 further masses and 153 further citations, again every one of
+  them read and none of them correcting a lead. Artifact pages 328 to 358 have now been
+  read end to end. The sanctoral''s read masses are now ninety, and ninety-eight dated
+  masses in this file carry Lectionary citations read in page images, the Assumption of
+  the Blessed Virgin Mary among them in both of its forms. Five formularies on those
+  pages were read and NOT landed - nn. 611, 615, 616, 630 and 631 - because this file
+  joins the optional memorials of 2 August, 7 August and 25 August under one key each,
+  and writing one saint''s readings onto a key that stands for several would attribute
+  them to all of them. Six celebrations this calendar carries in that span the 1981 book
+  does not print on their date and they stay placeholders: Saints Augustine Zhao Rong
+  and Companions, Saint Apollinaris, Saint Sharbel Makhluf, Saint Teresa Benedicta of
+  the Cross and Saint Maximilian Mary Kolbe, all inscribed or restored after it, and
+  Saint Jane Frances de Chantal, whom that book prints on 12 December, the date she was
+  kept on until 2001, which lies beyond the pages read. Four slots are absent for the
+  third reason: at n. 602, Saint Lawrence of Brindisi, the Ordo prints against Alleluia
+  the bare cross-reference n. 729,8 and no citation, and at n. 620, Saints Pontian and
+  Hippolytus, the same n. 717,6 it declines to spell out at nn. 536 and 551; at n. 603,
+  Saint Mary Magdalene, and at n. 622, the Assumption''s Mass during the Day, it prints
+  a chant text against Alleluia with no scriptural citation at all. Every one of the
+  four is left absent rather than filled from elsewhere. A fifth wave continued the same
+  run from artifact page 359 to artifact page 374, printed pages 305 to 320, nn. 635 to
+  700, 3 September through 31 December: 53 further masses and 210 further citations.
+  That finished the Proprium de Sanctis, which ends at n. 700 and not at n. 707;
+  artifact page 375 is the COMMUNIA divider, and artifact pages 328 to 374 have now been
+  read end to end. A sixth wave read the Communia themselves on 2026-08-02, artifact
+  pages 375 to 398, printed pages 321 to 344, nn. 701 to 742, and landed no citation at
+  all. It could not: the Communia are lists of options and not formularies - 289
+  numbered readings over 42 entries and seven Commons, several dozen to a slot - so no
+  entry of them names the one reading a takes_from would have to resolve to, and
+  transcribing the list entire is the one thing the citation ruling in the sanctoral
+  acquisition record expressly declines to claim a right to do. What that reading did
+  settle is every cross-reference this file had left standing. Six of the 289 options
+  carry no scriptural citation, all six are Alleluia verses, and all seven bare
+  cross-references in the Proprium de Sanctis point at one of them: n. 717,6 at nn. 536,
+  551 and 620, n. 729,8 at nn. 602 and 637, and n. 735,2 at nn. 681 and 692. Those seven
+  Gospel Acclamations are therefore absent on read evidence rather than on a declined
+  pointer, and no citation anywhere in the sanctoral is now unread for want of following
+  a pointer. Measured on 2026-08-02, 216 masses in this file carry a notes line naming
+  an artifact page, 151 of them dated, and 53 hold nothing but a placeholder - 44
+  sanctoral, 4 marian, 3 christological and 2 seasonal. See
+  src/sources/inventories/postconciliar-seasonal-collation-v1.toml and
+  src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml'
 conventions:
 - cycle-varying elements carry a cycles mapping keyed A, B, C
 - celebrations with several Mass formularies use forms instead of propers
@@ -98,22 +118,26 @@ open_collation_items:
   the book: the Ordo prints one and the same responsorial selection at n. 541 and n.
   544, gives both the cross-reference n. 721,5, and prints the part letters differently
   - Ps 95, 1-2a. 2b-3. 7-8. 10 at Saint Patrick and Ps 95, 1-2a. 2b-3. 7-8a. 10 at Saint
-  Turibius of Mogrovejo. Both were read at 400 dpi to rule out the scan. Each is recorded
-  as printed and neither is harmonized, because the divergence is the edition''s own.
-  A third printing of the same selection under the same cross-reference was read on
-  2026-08-01 at n. 571, Saint Augustine of Canterbury, artifact page 343: it prints
-  7-8a, with n. 544 and against n. 541. A fourth was read on the same day at n. 617,
-  Saint Dominic, artifact page 354, and it too prints 7-8a, so the book stands three
-  to one against itself and the question is not which reading is a scanning error but
-  that the edition is not uniform. Two further instances were read in the same run and
-  are recorded on the Masses that carry them. At n. 552 and n. 567 the Ordo prints one
-  Alleluia, n. 729,3, in two numbering systems and with different part letters - Io
-  6, 64b et 69b against Io 6, 63c. 68c - which is recorded under citation_divergences
-  as well. And at n. 557 it prints a responsorial selection with its second endpoint
-  elided, Ps 102, 17-8a, where at n. 563 under the same cross-reference n. 739,6 it
-  prints 17-18a in full; the full form is carried, because a range descending from 17
-  to 8a is not a reference this grammar can hold, and the elision is recorded rather
-  than harmonized away'
+  Turibius of Mogrovejo. Both were read at 400 dpi to rule out the scan. Each is
+  recorded as printed and neither is harmonized, because the divergence is the
+  edition''s own. A third printing of the same selection under the same cross-reference
+  was read on 2026-08-01 at n. 571, Saint Augustine of Canterbury, artifact page 343: it
+  prints 7-8a, with n. 544 and against n. 541. A fourth was read on the same day at n.
+  617, Saint Dominic, artifact page 354, and it too prints 7-8a. Four more were read on
+  2026-08-01 at nn. 635, 655, 665 and 683, all printing 7-8a, and on 2026-08-02 the
+  Communia entry all of them cite was read at last: n. 721,5, artifact page 386, printed
+  page 332, prints 7-8a. So the selection is printed nine times in one book, eight of
+  them 7-8a and one - n. 541, Saint Patrick - 7-8, and the odd one out disagrees with
+  the very entry it cross-references. The question was never which reading is a scanning
+  error but whether the edition is uniform, and it is not. Two further instances were
+  read in the same run and are recorded on the Masses that carry them. At n. 552 and n.
+  567 the Ordo prints one Alleluia, n. 729,3, in two numbering systems and with
+  different part letters - Io 6, 64b et 69b against Io 6, 63c. 68c - which is recorded
+  under citation_divergences as well. And at n. 557 it prints a responsorial selection
+  with its second endpoint elided, Ps 102, 17-8a, where at n. 563 under the same
+  cross-reference n. 739,6 it prints 17-18a in full; the full form is carried, because a
+  range descending from 17 to 8a is not a reference this grammar can hold, and the
+  elision is recorded rather than harmonized away'
 - 'oration conclusions are rendered both as the terse printed cue and in expanded form;
   settle one rendering at collation'
 - 'where the 1998 US Lectionary and the Ordo Lectionum diverge, the Ordo reading was
@@ -184,8 +208,10 @@ open_collation_items:
   surveyed; the two that may lawfully be republished carry none of the three things
   wanted. A Lectionary or antiphon CITATION may be published where the words may not,
   which is the ruling that ought to be applied to the rest of this file and has so far
-  been applied to ninety-eight dated masses, over four readings of the Ordo lectionum
-  covering artifact pages 328 to 358 without a break'
+  been applied to 151 dated masses, over five readings of the Ordo lectionum covering
+  artifact pages 328 to 374 without a break - the whole Proprium de Sanctis - and a
+  sixth reading of the Communia at artifact pages 375 to 398, which landed no citation
+  and is explained there'
 - 'the Ordo lectionum Missae 1981 prints its responsorial psalms in Vulgate numbering,
   read in its own page images on 2026-08-01. SETTLED. Artifact page 100, printed page
   46, carries the Third Sunday in Ordinary Time and shows both systems in adjacent lines
@@ -16634,11 +16660,17 @@ sections:
         grouping, so each selection is recorded separately and the ranges are unchanged.
         This Mass carries no Gospel Acclamation because the Ordo prints none: against
         Alleluia it prints the bare cross-reference n. 717,6 and no scriptural citation
-        at all. The slot is absent rather than filled from the Common it points into,
-        which this repository does not carry. Nothing else of this Mass has been read -
-        the Entrance and Communion Antiphons and the three orations are printed in the
-        Missal, not in the Ordo, and are absent because no witness to them is on disk
-        that this project may publish. See
+        at all. The Communia were read on 2026-08-02, artifact pages 375 to 398, and
+        that pointer was followed to its entry. n. 717,6, at artifact page 383, printed
+        page 329, is the Te Deum laudamus couplet with a second line proper to martyrs,
+        a chant text carrying no scriptural citation, read at 400 dpi. The slot
+        therefore stays absent because the book gives no reference for it anywhere, not
+        because a Common pointer was declined. The Ordo prints this same bare
+        cross-reference at n. 536, n. 551 and n. 620, and n. 717,6 is one of only six
+        items in the whole Communia that carry no citation. Nothing else of this Mass
+        has been read - the Entrance and Communion Antiphons and the three orations are
+        printed in the Missal, not in the Ordo, and are absent because no witness to
+        them is on disk that this project may publish. See
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
@@ -16923,22 +16955,27 @@ sections:
       date: 03-17
       rank: Optional memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 335, printed page 281, n. 541. The Ordo heads it De Communi pastorum
-        [pro missionariis], and this repository carries no Common, so the heading is recorded
-        and not resolved. The Ordo prints its responsorial psalms in Vulgate numbering;
-        they are converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Ordo prints this psalm selection
-        under the cross-reference n. 721,5 in eight places - nn. 541, 544, 571, 617, 635,
-        655, 665 and 683, the whole Proprium de Sanctis - and does not print the part letters
-        alike in them: 7-8 at n. 541 and 7-8a at the other seven. All eight were read in
-        the page images, four of them at 400 dpi. Each is recorded as printed rather than
-        harmonized; the divergence is the book''s own. Two of the eight, nn. 655 and 683,
-        are not landed anywhere in this file because their days join two celebrations under
-        one key. Nothing else of this Mass has been read - the Entrance and Communion Antiphons
-        and the three orations are printed in the Missal, not in the Ordo, and are absent
-        because no witness to them is on disk that this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 335, printed page 281, n.
+        541. The Ordo heads it De Communi pastorum [pro missionariis], and this
+        repository carries no Common, so the heading is recorded and not resolved. The
+        Ordo prints its responsorial psalms in Vulgate numbering; they are converted
+        here by scripts/_psalms from the tracked verse concordance, because this file
+        declares psalm_numbering hebrew. The Ordo prints this psalm selection in nine
+        places - nn. 541, 544, 571, 617, 635, 655, 665 and 683 across the whole Proprium
+        de Sanctis, and the entry all eight cite, n. 721,5 itself, in the Communia at
+        artifact page 386, printed page 332 - and does not print the part letters alike
+        in them: 7-8 at n. 541 and 7-8a at the other eight. All nine were read in the
+        page images, five of them at 400 dpi. Each is recorded as printed rather than
+        harmonized; the divergence is the book''s own. The Communia entry the
+        cross-reference names reads 7-8a, so n. 541 stands alone against the very entry
+        it cites. Two of the eight sanctoral printings, nn. 655 and 683, are not landed
+        anywhere in this file because their days join two celebrations under one key.
+        Nothing else of this Mass has been read - the Entrance and Communion Antiphons
+        and the three orations are printed in the Missal, not in the Ordo, and are
+        absent because no witness to them is on disk that this project may publish. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -17138,22 +17175,27 @@ sections:
       date: 03-23
       rank: Optional memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 335, printed page 281, n. 544. The Ordo heads it De Communi pastorum,
-        and this repository carries no Common, so the heading is recorded and not resolved.
-        The Ordo prints its responsorial psalms in Vulgate numbering; they are converted
-        here by scripts/_psalms from the tracked verse concordance, because this file declares
-        psalm_numbering hebrew. The Ordo prints this psalm selection under the cross-reference
-        n. 721,5 in eight places - nn. 541, 544, 571, 617, 635, 655, 665 and 683, the whole
-        Proprium de Sanctis - and does not print the part letters alike in them: 7-8 at
-        n. 541 and 7-8a at the other seven. All eight were read in the page images, four
-        of them at 400 dpi. Each is recorded as printed rather than harmonized; the divergence
-        is the book''s own. Two of the eight, nn. 655 and 683, are not landed anywhere in
-        this file because their days join two celebrations under one key. Nothing else of
-        this Mass has been read - the Entrance and Communion Antiphons and the three orations
-        are printed in the Missal, not in the Ordo, and are absent because no witness to
-        them is on disk that this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 335, printed page 281, n.
+        544. The Ordo heads it De Communi pastorum, and this repository carries no
+        Common, so the heading is recorded and not resolved. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by
+        scripts/_psalms from the tracked verse concordance, because this file declares
+        psalm_numbering hebrew. The Ordo prints this psalm selection in nine places -
+        nn. 541, 544, 571, 617, 635, 655, 665 and 683 across the whole Proprium de
+        Sanctis, and the entry all eight cite, n. 721,5 itself, in the Communia at
+        artifact page 386, printed page 332 - and does not print the part letters alike
+        in them: 7-8 at n. 541 and 7-8a at the other eight. All nine were read in the
+        page images, five of them at 400 dpi. Each is recorded as printed rather than
+        harmonized; the divergence is the book''s own. The Communia entry the
+        cross-reference names reads 7-8a, so n. 541 stands alone against the very entry
+        it cites. Two of the eight sanctoral printings, nn. 655 and 683, are not landed
+        anywhere in this file because their days join two celebrations under one key.
+        Nothing else of this Mass has been read - the Entrance and Communion Antiphons
+        and the three orations are printed in the Missal, not in the Ordo, and are
+        absent because no witness to them is on disk that this project may publish. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -17507,12 +17549,17 @@ sections:
         here by scripts/_psalms from the tracked verse concordance, because this file
         declares psalm_numbering hebrew. Against Alleluia the Ordo prints the bare
         cross-reference n. 717,6 and no scriptural citation at all, so this Mass carries
-        no Gospel Acclamation. The slot is left absent rather than resolved into the
-        Common it points at, on the same ground as every other Common pointer here and
-        on the precedent of n. 536, Saint Polycarp. Nothing else of this Mass has been
-        read - the Entrance and Communion Antiphons and the three orations are printed
-        in the Missal, not in the Ordo, and are absent because no witness to them is on
-        disk that this project may publish. See
+        no Gospel Acclamation. The Communia were read on 2026-08-02, artifact pages 375
+        to 398, and that pointer was followed to its entry. n. 717,6, at artifact page
+        383, printed page 329, is the Te Deum laudamus couplet with a second line proper
+        to martyrs, a chant text carrying no scriptural citation, read at 400 dpi. The
+        slot therefore stays absent because the book gives no reference for it anywhere,
+        not because a Common pointer was declined. The Ordo prints this same bare
+        cross-reference at n. 536, n. 551 and n. 620, and n. 717,6 is one of only six
+        items in the whole Communia that carry no citation. Nothing else of this Mass
+        has been read - the Entrance and Communion Antiphons and the three orations are
+        printed in the Missal, not in the Ordo, and are absent because no witness to
+        them is on disk that this project may publish. See
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
@@ -17565,14 +17612,17 @@ sections:
         Alleluia at n. 567 under the same cross-reference, n. 729,3, in the Greek
         numbering and with different part letters, as Io 6, 63c. 68c. Both were read at
         400 dpi to rule out the scan. What this Mass carries is what its own page
-        prints; the divergence is the book''s own and is not harmonized. It is recorded
-        under citation_divergences so that a Vulgate-numbered edition resolves it and a
-        Hebrew-numbered one refuses rather than guesses. The Ordo joins the two
-        selections with et; the citation grammar here carries no stanza grouping, so
-        each is recorded separately. Nothing else of this Mass has been read - the
-        Entrance and Communion Antiphons and the three orations are printed in the
-        Missal, not in the Ordo, and are absent because no witness to them is on disk
-        that this project may publish. See
+        prints; the divergence is the book''s own and is not harmonized. The Communia
+        were read on 2026-08-02, and the entry both loci cite, n. 729,3 at artifact page
+        390, printed page 336, prints the Greek form, Io 6, 63c. 68c. So this Mass''s
+        printing stands alone against the entry it cites, and n. 567 and n. 641 agree
+        with that entry. It is recorded under citation_divergences so that a
+        Vulgate-numbered edition resolves it and a Hebrew-numbered one refuses rather
+        than guesses. The Ordo joins the two selections with et; the citation grammar
+        here carries no stanza grouping, so each is recorded separately. Nothing else of
+        this Mass has been read - the Entrance and Communion Antiphons and the three
+        orations are printed in the Missal, not in the Ordo, and are absent because no
+        witness to them is on disk that this project may publish. See
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
@@ -17771,9 +17821,12 @@ sections:
         the same cross-reference, n. 739,6, at n. 563 in full, as 17-18a. Both were read
         at 400 dpi. The full form is carried, because a range descending from 17 to 8a
         is not a reference this file''s grammar can hold, and the elision is recorded
-        here rather than harmonized away. The Ordo prints the Alleluia verse as Cf. Mt
-        11, 25; the reference is recorded and the Cf. is not, this file''s citation
-        grammar carrying no marker for it. Nothing else of this Mass has been read - the
+        here rather than harmonized away. The Communia were read on 2026-08-02, and n.
+        739,6 itself, at artifact page 394, printed page 340, prints the selection in
+        full as 17-18a, which corroborates the carried form from the entry the
+        cross-reference actually names. The Ordo prints the Alleluia verse as Cf. Mt 11,
+        25; the reference is recorded and the Cf. is not, this file''s citation grammar
+        carrying no marker for it. Nothing else of this Mass has been read - the
         Entrance and Communion Antiphons and the three orations are printed in the
         Missal, not in the Ordo, and are absent because no witness to them is on disk
         that this project may publish. See
@@ -18370,22 +18423,27 @@ sections:
       date: 05-27
       rank: Optional memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 343, printed page 289, n. 571. The Ordo heads it De Communi pastorum
-        [pro missionariis], and this repository carries no Common, so the heading is recorded
-        and not resolved. The Ordo prints its responsorial psalms in Vulgate numbering;
-        they are converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. The Ordo prints this psalm selection
-        under the cross-reference n. 721,5 in eight places - nn. 541, 544, 571, 617, 635,
-        655, 665 and 683, the whole Proprium de Sanctis - and does not print the part letters
-        alike in them: 7-8 at n. 541 and 7-8a at the other seven. All eight were read in
-        the page images, four of them at 400 dpi. Each is recorded as printed rather than
-        harmonized; the divergence is the book''s own. Two of the eight, nn. 655 and 683,
-        are not landed anywhere in this file because their days join two celebrations under
-        one key. Nothing else of this Mass has been read - the Entrance and Communion Antiphons
-        and the three orations are printed in the Missal, not in the Ordo, and are absent
-        because no witness to them is on disk that this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 343, printed page 289, n.
+        571. The Ordo heads it De Communi pastorum [pro missionariis], and this
+        repository carries no Common, so the heading is recorded and not resolved. The
+        Ordo prints its responsorial psalms in Vulgate numbering; they are converted
+        here by scripts/_psalms from the tracked verse concordance, because this file
+        declares psalm_numbering hebrew. The Ordo prints this psalm selection in nine
+        places - nn. 541, 544, 571, 617, 635, 655, 665 and 683 across the whole Proprium
+        de Sanctis, and the entry all eight cite, n. 721,5 itself, in the Communia at
+        artifact page 386, printed page 332 - and does not print the part letters alike
+        in them: 7-8 at n. 541 and 7-8a at the other eight. All nine were read in the
+        page images, five of them at 400 dpi. Each is recorded as printed rather than
+        harmonized; the divergence is the book''s own. The Communia entry the
+        cross-reference names reads 7-8a, so n. 541 stands alone against the very entry
+        it cites. Two of the eight sanctoral printings, nn. 655 and 683, are not landed
+        anywhere in this file because their days join two celebrations under one key.
+        Nothing else of this Mass has been read - the Entrance and Communion Antiphons
+        and the three orations are printed in the Missal, not in the Ordo, and are
+        absent because no witness to them is on disk that this project may publish. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -18567,10 +18625,12 @@ sections:
         cross-reference, n. 715,3, it prints 2-3. 4-5. 7b-8. The verses named are
         identical; this file''s citation grammar carries an ordered list of ranges and
         no stanza punctuation, so what the two pages differ in is not a thing this file
-        can hold and the two records are the same. Nothing else of this Mass has been
-        read - the Entrance and Communion Antiphons and the three orations are printed
-        in the Missal, not in the Ordo, and are absent because no witness to them is on
-        disk that this project may publish. See
+        can hold and the two records are the same. The Communia were read on 2026-08-02,
+        and n. 715,3 itself, at artifact page 382, printed page 328, separates its
+        selections with points throughout, as n. 575 does and this page does not.
+        Nothing else of this Mass has been read - the Entrance and Communion Antiphons
+        and the three orations are printed in the Missal, not in the Ordo, and are
+        absent because no witness to them is on disk that this project may publish. See
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
@@ -19929,23 +19989,30 @@ sections:
       date: 07-21
       rank: Optional memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 351, printed page 297, n. 602. The Ordo heads it De Communi pastorum
-        vel doctorum Ecclesiae, and this repository carries no Common, so the heading is
-        recorded and not resolved. The Ordo groups the psalm''s second and fourth verses
-        - 2 et 4ab - into one stanza with et; this file''s citation grammar has an ordered
-        list of ranges and no stanza grouping, so each grouped stanza is recorded as two
-        selections naming the same verses. Against Alleluia the Ordo prints the bare cross-reference
-        n. 729,8 and no scriptural citation at all, so this Mass carries no Gospel Acclamation.
-        The slot is left absent rather than resolved into the Common it points at, on the
-        same ground as every other Common pointer here and on the precedent of n. 536, Saint
-        Polycarp, and n. 551, Saint Martin I. The Ordo prints its responsorial psalms in
-        Vulgate numbering; they are converted here by scripts/_psalms from the tracked verse
-        concordance, because this file declares psalm_numbering hebrew. Nothing else of
-        this Mass has been read - the Entrance and Communion Antiphons and the three orations
-        are printed in the Missal, not in the Ordo, and are absent because no witness to
-        them is on disk that this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 351, printed page 297, n.
+        602. The Ordo heads it De Communi pastorum vel doctorum Ecclesiae, and this
+        repository carries no Common, so the heading is recorded and not resolved. The
+        Ordo groups the psalm''s second and fourth verses - 2 et 4ab - into one stanza
+        with et; this file''s citation grammar has an ordered list of ranges and no
+        stanza grouping, so each grouped stanza is recorded as two selections naming the
+        same verses. Against Alleluia the Ordo prints the bare cross-reference n. 729,8
+        and no scriptural citation at all, so this Mass carries no Gospel Acclamation.
+        The Communia were read on 2026-08-02, artifact pages 375 to 398, and that
+        pointer was followed to its entry. n. 729,8, at artifact page 390, printed page
+        336, is the couplet Semen est verbum Dei, a chant text carrying no scriptural
+        citation, read at 400 dpi. The slot therefore stays absent because the book
+        gives no reference for it anywhere, not because a Common pointer was declined.
+        The Ordo prints this same bare cross-reference at n. 602 and n. 637, and n.
+        729,8 is one of only six items in the whole Communia that carry no citation. The
+        Ordo prints its responsorial psalms in Vulgate numbering; they are converted
+        here by scripts/_psalms from the tracked verse concordance, because this file
+        declares psalm_numbering hebrew. Nothing else of this Mass has been read - the
+        Entrance and Communion Antiphons and the three orations are printed in the
+        Missal, not in the Ordo, and are absent because no witness to them is on disk
+        that this project may publish. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -20597,23 +20664,28 @@ sections:
       date: 08-08
       rank: Memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 354, printed page 300, n. 617. The Ordo heads it De Communi pastorum
-        [pro missionariis] vel sanctorum [pro religiosis], and this repository carries no
-        Common, so the heading is recorded and not resolved. The Ordo prints this psalm
-        selection under the cross-reference n. 721,5 in eight places - nn. 541, 544, 571,
-        617, 635, 655, 665 and 683, the whole Proprium de Sanctis - and does not print the
-        part letters alike in them: 7-8 at n. 541 and 7-8a at the other seven. All eight
-        were read in the page images, four of them at 400 dpi. Each is recorded as printed
-        rather than harmonized; the divergence is the book''s own. Two of the eight, nn.
-        655 and 683, are not landed anywhere in this file because their days join two celebrations
-        under one key. The Ordo prints its responsorial psalms in Vulgate numbering; they
-        are converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. Nothing else of this Mass has been read
-        - the Entrance and Communion Antiphons and the three orations are printed in the
-        Missal, not in the Ordo, and are absent because no witness to them is on disk that
-        this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 354, printed page 300, n.
+        617. The Ordo heads it De Communi pastorum [pro missionariis] vel sanctorum [pro
+        religiosis], and this repository carries no Common, so the heading is recorded
+        and not resolved. The Ordo prints this psalm selection in nine places - nn. 541,
+        544, 571, 617, 635, 655, 665 and 683 across the whole Proprium de Sanctis, and
+        the entry all eight cite, n. 721,5 itself, in the Communia at artifact page 386,
+        printed page 332 - and does not print the part letters alike in them: 7-8 at n.
+        541 and 7-8a at the other eight. All nine were read in the page images, five of
+        them at 400 dpi. Each is recorded as printed rather than harmonized; the
+        divergence is the book''s own. The Communia entry the cross-reference names
+        reads 7-8a, so n. 541 stands alone against the very entry it cites. Two of the
+        eight sanctoral printings, nn. 655 and 683, are not landed anywhere in this file
+        because their days join two celebrations under one key. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by
+        scripts/_psalms from the tracked verse concordance, because this file declares
+        psalm_numbering hebrew. Nothing else of this Mass has been read - the Entrance
+        and Communion Antiphons and the three orations are printed in the Missal, not in
+        the Ordo, and are absent because no witness to them is on disk that this project
+        may publish. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -20843,21 +20915,27 @@ sections:
       date: 08-13
       rank: Optional memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 355, printed page 301, n. 620. The Ordo heads it De Communi martyrum
-        vel pastorum, and this repository carries no Common, so the heading is recorded
-        and not resolved. Against Alleluia the Ordo prints the bare cross-reference n. 717,6
-        and no scriptural citation at all, so this Mass carries no Gospel Acclamation. The
-        slot is left absent rather than resolved into the Common it points at, on the same
-        ground as every other Common pointer here. This is the third place the book declines
-        to spell out that same cross-reference; the others are n. 536, Saint Polycarp, and
-        n. 551, Saint Martin I. The Ordo prints its responsorial psalms in Vulgate numbering;
-        they are converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. Nothing else of this Mass has been read
-        - the Entrance and Communion Antiphons and the three orations are printed in the
-        Missal, not in the Ordo, and are absent because no witness to them is on disk that
-        this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 355, printed page 301, n.
+        620. The Ordo heads it De Communi martyrum vel pastorum, and this repository
+        carries no Common, so the heading is recorded and not resolved. Against Alleluia
+        the Ordo prints the bare cross-reference n. 717,6 and no scriptural citation at
+        all, so this Mass carries no Gospel Acclamation. The Communia were read on
+        2026-08-02, artifact pages 375 to 398, and that pointer was followed to its
+        entry. n. 717,6, at artifact page 383, printed page 329, is the Te Deum laudamus
+        couplet with a second line proper to martyrs, a chant text carrying no
+        scriptural citation, read at 400 dpi. The slot therefore stays absent because
+        the book gives no reference for it anywhere, not because a Common pointer was
+        declined. The Ordo prints this same bare cross-reference at n. 536, n. 551 and
+        n. 620, and n. 717,6 is one of only six items in the whole Communia that carry
+        no citation. The Ordo prints its responsorial psalms in Vulgate numbering; they
+        are converted here by scripts/_psalms from the tracked verse concordance,
+        because this file declares psalm_numbering hebrew. Nothing else of this Mass has
+        been read - the Entrance and Communion Antiphons and the three orations are
+        printed in the Missal, not in the Ordo, and are absent because no witness to
+        them is on disk that this project may publish. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -21445,23 +21523,28 @@ sections:
       date: 09-03
       rank: Memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 359, printed page 305, n. 635. The Ordo heads it De Communi pastorum
-        [pro papa] vel doctorum Ecclesiae, and this repository carries no Common, so the
-        heading is recorded and not resolved. The Ordo prints this psalm selection under
-        the cross-reference n. 721,5 in eight places - nn. 541, 544, 571, 617, 635, 655,
-        665 and 683, the whole Proprium de Sanctis - and does not print the part letters
-        alike in them: 7-8 at n. 541 and 7-8a at the other seven. All eight were read in
-        the page images, four of them at 400 dpi. Each is recorded as printed rather than
-        harmonized; the divergence is the book''s own. Two of the eight, nn. 655 and 683,
-        are not landed anywhere in this file because their days join two celebrations under
-        one key. The Ordo prints its responsorial psalms in Vulgate numbering; they are
-        converted here by scripts/_psalms from the tracked verse concordance, because this
-        file declares psalm_numbering hebrew. Nothing else of this Mass has been read -
-        the Entrance and Communion Antiphons and the three orations are printed in the Missal,
-        not in the Ordo, and are absent because no witness to them is on disk that this
-        project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 359, printed page 305, n.
+        635. The Ordo heads it De Communi pastorum [pro papa] vel doctorum Ecclesiae,
+        and this repository carries no Common, so the heading is recorded and not
+        resolved. The Ordo prints this psalm selection in nine places - nn. 541, 544,
+        571, 617, 635, 655, 665 and 683 across the whole Proprium de Sanctis, and the
+        entry all eight cite, n. 721,5 itself, in the Communia at artifact page 386,
+        printed page 332 - and does not print the part letters alike in them: 7-8 at n.
+        541 and 7-8a at the other eight. All nine were read in the page images, five of
+        them at 400 dpi. Each is recorded as printed rather than harmonized; the
+        divergence is the book''s own. The Communia entry the cross-reference names
+        reads 7-8a, so n. 541 stands alone against the very entry it cites. Two of the
+        eight sanctoral printings, nn. 655 and 683, are not landed anywhere in this file
+        because their days join two celebrations under one key. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by
+        scripts/_psalms from the tracked verse concordance, because this file declares
+        psalm_numbering hebrew. Nothing else of this Mass has been read - the Entrance
+        and Communion Antiphons and the three orations are printed in the Missal, not in
+        the Ordo, and are absent because no witness to them is on disk that this project
+        may publish. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -21545,25 +21628,31 @@ sections:
       date: 09-13
       rank: Memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 359, printed page 305, n. 637. The Ordo heads it De Communi pastorum
-        vel doctorum Ecclesiae, and this repository carries no Common, so the heading is
-        recorded and not resolved. The Ordo groups two selections into one stanza with et
-        - 2 et 4ab - and this file''s citation grammar has an ordered list of ranges and
-        no stanza grouping, so each grouped stanza is recorded as two selections naming
-        the same verses. It prints the Gospel in a longer form (longior) and a shorter one
-        (brevior), carried here as two propers under this file''s convention for a printed
-        alternative. Against Alleluia the Ordo prints the bare cross-reference n. 729,8
-        and no scriptural citation at all, so this Mass carries no Gospel Acclamation. The
-        slot is left absent rather than resolved into the Common it points at, on the same
-        ground as every other Common pointer here and on the precedent of n. 536, Saint
-        Polycarp, n. 551, Saint Martin I, n. 602 and n. 620. The Ordo prints its responsorial
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 359, printed page 305, n.
+        637. The Ordo heads it De Communi pastorum vel doctorum Ecclesiae, and this
+        repository carries no Common, so the heading is recorded and not resolved. The
+        Ordo groups two selections into one stanza with et - 2 et 4ab - and this file''s
+        citation grammar has an ordered list of ranges and no stanza grouping, so each
+        grouped stanza is recorded as two selections naming the same verses. It prints
+        the Gospel in a longer form (longior) and a shorter one (brevior), carried here
+        as two propers under this file''s convention for a printed alternative. Against
+        Alleluia the Ordo prints the bare cross-reference n. 729,8 and no scriptural
+        citation at all, so this Mass carries no Gospel Acclamation. The Communia were
+        read on 2026-08-02, artifact pages 375 to 398, and that pointer was followed to
+        its entry. n. 729,8, at artifact page 390, printed page 336, is the couplet
+        Semen est verbum Dei, a chant text carrying no scriptural citation, read at 400
+        dpi. The slot therefore stays absent because the book gives no reference for it
+        anywhere, not because a Common pointer was declined. The Ordo prints this same
+        bare cross-reference at n. 602 and n. 637, and n. 729,8 is one of only six items
+        in the whole Communia that carry no citation. The Ordo prints its responsorial
         psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
-        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing
-        else of this Mass has been read - the Entrance and Communion Antiphons and the three
-        orations are printed in the Missal, not in the Ordo, and are absent because no witness
-        to them is on disk that this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+        tracked verse concordance, because this file declares psalm_numbering hebrew.
+        Nothing else of this Mass has been read - the Entrance and Communion Antiphons
+        and the three orations are printed in the Missal, not in the Ordo, and are
+        absent because no witness to them is on disk that this project may publish. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -22655,22 +22744,27 @@ sections:
       date: 10-24
       rank: Optional memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 366, printed page 312, n. 665. The Ordo heads it De Communi pastorum
-        [pro missionariis], and this repository carries no Common, so the heading is recorded
-        and not resolved. The Ordo prints this psalm selection under the cross-reference
-        n. 721,5 in eight places - nn. 541, 544, 571, 617, 635, 655, 665 and 683, the whole
-        Proprium de Sanctis - and does not print the part letters alike in them: 7-8 at
-        n. 541 and 7-8a at the other seven. All eight were read in the page images, four
-        of them at 400 dpi. Each is recorded as printed rather than harmonized; the divergence
-        is the book''s own. Two of the eight, nn. 655 and 683, are not landed anywhere in
-        this file because their days join two celebrations under one key. The Ordo prints
-        its responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms
-        from the tracked verse concordance, because this file declares psalm_numbering hebrew.
-        Nothing else of this Mass has been read - the Entrance and Communion Antiphons and
-        the three orations are printed in the Missal, not in the Ordo, and are absent because
-        no witness to them is on disk that this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 366, printed page 312, n.
+        665. The Ordo heads it De Communi pastorum [pro missionariis], and this
+        repository carries no Common, so the heading is recorded and not resolved. The
+        Ordo prints this psalm selection in nine places - nn. 541, 544, 571, 617, 635,
+        655, 665 and 683 across the whole Proprium de Sanctis, and the entry all eight
+        cite, n. 721,5 itself, in the Communia at artifact page 386, printed page 332 -
+        and does not print the part letters alike in them: 7-8 at n. 541 and 7-8a at the
+        other eight. All nine were read in the page images, five of them at 400 dpi.
+        Each is recorded as printed rather than harmonized; the divergence is the
+        book''s own. The Communia entry the cross-reference names reads 7-8a, so n. 541
+        stands alone against the very entry it cites. Two of the eight sanctoral
+        printings, nn. 655 and 683, are not landed anywhere in this file because their
+        days join two celebrations under one key. The Ordo prints its responsorial
+        psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew.
+        Nothing else of this Mass has been read - the Entrance and Communion Antiphons
+        and the three orations are printed in the Missal, not in the Ordo, and are
+        absent because no witness to them is on disk that this project may publish. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -23288,23 +23382,26 @@ sections:
       date: 11-17
       rank: Memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 369, printed page 315, n. 678. The Ordo heads it De Communi sanctarum
-        [pro iis qui opera misericordiae exercuerunt vel pro religiosis], and this repository
-        carries no Common, so the heading is recorded and not resolved. This Mass''s page
-        prints the first reading as 1 Io 3, 3,14-18, with a comma where the book''s own
-        grammar puts a chapter, and that is not a reference this file can hold. The same
-        reading under the same cross-reference, n. 740,16, is printed in full in the Communia
-        at artifact page 395, printed page 341, as 1 Io 3, 14-18. Both were read at 400
-        dpi. The full form the book itself supplies is carried and the celebration''s own
-        printing is recorded here rather than harmonized away, on the precedent of n. 557
-        and n. 563. The Ordo prints its responsorial psalms in Vulgate numbering; they are
-        converted here by scripts/_psalms from the tracked verse concordance, because this
-        file declares psalm_numbering hebrew. Nothing else of this Mass has been read -
-        the Entrance and Communion Antiphons and the three orations are printed in the Missal,
-        not in the Ordo, and are absent because no witness to them is on disk that this
-        project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 369, printed page 315, n.
+        678. The Ordo heads it De Communi sanctarum [pro iis qui opera misericordiae
+        exercuerunt vel pro religiosis], and this repository carries no Common, so the
+        heading is recorded and not resolved. This Mass''s page prints the first reading
+        as 1 Io 3, 3,14-18, with a comma where the book''s own grammar puts a chapter,
+        and that is not a reference this file can hold. The same reading under the same
+        cross-reference, n. 740,16, is printed in full in the Communia at artifact page
+        395, printed page 341, as 1 Io 3, 14-18. Both were read at 400 dpi, and n.
+        740,16 was read again on 2026-08-02 in the continuous run of the Communia,
+        artifact pages 375 to 398. The full form the book itself supplies is carried and
+        the celebration''s own printing is recorded here rather than harmonized away, on
+        the precedent of n. 557 and n. 563. The Ordo prints its responsorial psalms in
+        Vulgate numbering; they are converted here by scripts/_psalms from the tracked
+        verse concordance, because this file declares psalm_numbering hebrew. Nothing
+        else of this Mass has been read - the Entrance and Communion Antiphons and the
+        three orations are printed in the Missal, not in the Ordo, and are absent
+        because no witness to them is on disk that this project may publish. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -23403,20 +23500,26 @@ sections:
       date: 11-22
       rank: Memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 370, printed page 316, n. 681. The Ordo heads it De Communi martyrum
-        vel virginum, and this repository carries no Common, so the heading is recorded
-        and not resolved. Against Alleluia the Ordo prints the bare cross-reference n. 735,2
-        and no scriptural citation at all, so this Mass carries no Gospel Acclamation. The
-        slot is left absent rather than resolved into the Common it points at, on the same
-        ground as every other Common pointer here and on the precedent of n. 536, Saint
-        Polycarp, n. 551, Saint Martin I, n. 602 and n. 620. The Ordo prints its responsorial
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 370, printed page 316, n.
+        681. The Ordo heads it De Communi martyrum vel virginum, and this repository
+        carries no Common, so the heading is recorded and not resolved. Against Alleluia
+        the Ordo prints the bare cross-reference n. 735,2 and no scriptural citation at
+        all, so this Mass carries no Gospel Acclamation. The Communia were read on
+        2026-08-02, artifact pages 375 to 398, and that pointer was followed to its
+        entry. n. 735,2, at artifact page 391, printed page 337, is the couplet Haec est
+        virgo sapiens, a chant text carrying no scriptural citation, read at 400 dpi.
+        The slot therefore stays absent because the book gives no reference for it
+        anywhere, not because a Common pointer was declined. The Ordo prints this same
+        bare cross-reference at n. 681 and n. 692, and n. 735,2 is one of only six items
+        in the whole Communia that carry no citation. The Ordo prints its responsorial
         psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
-        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing
-        else of this Mass has been read - the Entrance and Communion Antiphons and the three
-        orations are printed in the Missal, not in the Ordo, and are absent because no witness
-        to them is on disk that this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+        tracked verse concordance, because this file declares psalm_numbering hebrew.
+        Nothing else of this Mass has been read - the Entrance and Communion Antiphons
+        and the three orations are printed in the Missal, not in the Ordo, and are
+        absent because no witness to them is on disk that this project may publish. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -23844,23 +23947,29 @@ sections:
       date: 12-13
       rank: Memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 372, printed page 318, n. 692. The Ordo heads it De Communi martyrum
-        vel virginum, and this repository carries no Common, so the heading is recorded
-        and not resolved. The Ordo groups two selections into one stanza with et - 6 et
-        8ab, 16bc et 17 - and this file''s citation grammar has an ordered list of ranges
-        and no stanza grouping, so each grouped stanza is recorded as two selections naming
-        the same verses. Against Alleluia the Ordo prints the bare cross-reference n. 735,2
-        and no scriptural citation at all, so this Mass carries no Gospel Acclamation. The
-        slot is left absent rather than resolved into the Common it points at, on the same
-        ground as every other Common pointer here and on the precedent of n. 536, Saint
-        Polycarp, n. 551, Saint Martin I, n. 602 and n. 620. The Ordo prints its responsorial
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
+        Ordo lectionum Missae, editio typica altera 1981, artifact
+        internet-archive-scan-pdf-ed4bc14e, at artifact page 372, printed page 318, n.
+        692. The Ordo heads it De Communi martyrum vel virginum, and this repository
+        carries no Common, so the heading is recorded and not resolved. The Ordo groups
+        two selections into one stanza with et - 6 et 8ab, 16bc et 17 - and this file''s
+        citation grammar has an ordered list of ranges and no stanza grouping, so each
+        grouped stanza is recorded as two selections naming the same verses. Against
+        Alleluia the Ordo prints the bare cross-reference n. 735,2 and no scriptural
+        citation at all, so this Mass carries no Gospel Acclamation. The Communia were
+        read on 2026-08-02, artifact pages 375 to 398, and that pointer was followed to
+        its entry. n. 735,2, at artifact page 391, printed page 337, is the couplet Haec
+        est virgo sapiens, a chant text carrying no scriptural citation, read at 400
+        dpi. The slot therefore stays absent because the book gives no reference for it
+        anywhere, not because a Common pointer was declined. The Ordo prints this same
+        bare cross-reference at n. 681 and n. 692, and n. 735,2 is one of only six items
+        in the whole Communia that carry no citation. The Ordo prints its responsorial
         psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
-        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing
-        else of this Mass has been read - the Entrance and Communion Antiphons and the three
-        orations are printed in the Missal, not in the Ordo, and are absent because no witness
-        to them is on disk that this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+        tracked verse concordance, because this file declares psalm_numbering hebrew.
+        Nothing else of this Mass has been read - the Entrance and Communion Antiphons
+        and the three orations are printed in the Missal, not in the Ordo, and are
+        absent because no witness to them is on disk that this project may publish. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture

@@ -749,6 +749,18 @@ def build_1962(ending: int, known: set[str]) -> Year:
     year.put(passion, "passion-sunday", "Easter -14")
     for step, name in enumerate(WEEKDAYS, start=1):
         year.put(passion + timedelta(days=step), f"passion-{name}", f"Passion Sunday +{step}")
+    # The one commemoration this calendar inscribes on a movable day. The Missal
+    # prints it in the Proprium Sanctorum between the March and April feasts, but
+    # the day it names is a temporal one, so nothing derived from a civil date can
+    # reach it. It never takes the Friday; it stands beside it as an ordinary
+    # commemoration, and `rubrics.yaml` carries the day's own permission for the
+    # festive Masses as a mass choice.
+    year.put(
+        passion + timedelta(days=5),
+        "comm-septem-dolorum-beatae-mariae-virginis",
+        "Passion Sunday +5: the Commemoration of the Seven Sorrows of the Blessed "
+        "Virgin Mary, printed pp. 499-501",
+    )
 
     palm = easter - timedelta(days=7)
     year.put(palm, "palm-sunday", "Easter -7")

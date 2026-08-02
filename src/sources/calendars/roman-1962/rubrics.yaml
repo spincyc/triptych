@@ -532,6 +532,18 @@ assignment:
 - {basis: row-22-lenten-feria, key_matches: '^(thursday|friday|saturday)-after-ash-wednesday$'}
 - {basis: row-22-lenten-feria, key_matches: '^(lent-\d+|passion)-(monday|tuesday|wednesday|thursday|friday|saturday)$'}
 - {basis: row-26-third-class-vigil, keys: [vigil-saint-lawrence]}
+- {basis: calendar-commemoration, keys: [comm-septem-dolorum-beatae-mariae-virginis],
+  note: 'the one commemoration this calendar inscribes on a movable day. The Missal prints
+    it at pp. 499-501 headed Feria VI post dominicam I Passionis / Septem Dolorum beatae
+    Mariae Virginis / Commemoratio, with no class, and the calendar reference''s Temporale
+    table gives it comm.; so it is a commemoration and not a feast, exactly as the 104
+    dated ones below are. It is named rather than swept in by relaxing dated, because
+    calendar-rubrics reports an unmatched mass as a hard failure and a rule that admitted
+    every undated rankless mass would silently take in a future entry that meant something
+    else. If a second movable commemoration is ever found, the rule that admits it should
+    be written then, against that day. The full Mass the Missal prints here does not make
+    it a mass rather than a commemoration - see mass_choices seven-sorrows-where-devotions-are-held,
+    which is where that permission goes, on the model this file already set at 16 July.'}
 - {basis: calendar-commemoration, dated: true, rank: Comm.}
 - {basis: row-11-universal-first-class-feast, dated: true, rank: I}
 - {basis: row-14-second-class-feast-of-the-lord, dated: true, rank: II, kind: christological}
@@ -787,6 +799,65 @@ mass_choices:
     why: >-
       The Missal prints a full formulary for this commemoration, and the rubric
       at the day permits it to be said as the Mass when 16 July is a Saturday.
+- id: seven-sorrows-where-devotions-are-held
+  what: The Mass of the Friday of Passion Week, or one of the two festive Masses of
+    the Seven Sorrows
+  locus: the Missal's own rubric at the Friday after Passion Sunday, printed p. 499
+  latin: >-
+    Hodie, ubi peculiaria pietatis exercitia in honorem beatae Mariae Virg.
+    Matris dolorosae peraguntur, permittuntur duae Missae festivae de septem
+    Doloribus beatae Mariae Virginis.
+  why: >-
+    Read off the controlling facsimile on 2026-08-02 at printed p. 499, digital
+    p. 580, at 400 dpi. This is the second instance of the shape 16 July already
+    has, and it is filed the same way. The Commemoration of the Seven Sorrows is
+    a commemoration and not a feast - the Missal prints no class over it, only
+    the word Commemoratio, and the calendar reference inscribes it comm. - so it
+    never takes the day, and every year the Friday of Passion Week is said with
+    the Seven Sorrows commemorated in it. This rubric adds that where the
+    devotions of the day are actually held, two festive Masses of the Seven
+    Sorrows are permitted. That is a permission about the Mass, not a claim about
+    the day, which is why it lives here and not in a precedence rule.
+  when:
+    with_candidate: comm-septem-dolorum-beatae-mariae-virginis
+  default: null
+  open_because: >-
+    The rubric conditions the permission on ubi ... peraguntur - where the
+    special devotions in honour of the Blessed Virgin Mother of Sorrows are in
+    fact held - and that is a local fact this repository does not decide and
+    cannot compute, exactly as it decides no particular calendar. So the page
+    names both and prefers neither, and the reason is the condition itself and
+    not a silence in the book. The rubric also does not say which two of the
+    Masses of the Seven Sorrows the permitted pair are, and this file does not
+    supply them. `when` gates only on the day - the Seven Sorrows standing as a
+    candidate is what the Friday after Passion Sunday is - and states nothing
+    about the devotions.
+  among:
+  - id: missa-feriae
+    label: The Mass of the Friday of Passion Week
+    takes: mass
+    mass: passion-friday
+    locus: RG 91 row 22; RGMR 270
+    why: >-
+      The Mass of the day, which the Friday of Passion Week holds as a
+      third-class feria of Passiontide at row 22, with the Seven Sorrows
+      commemorated in it. This is what is said if the devotions are not held.
+      It is named as a mass and not as `takes: office_mass`, because that value
+      means the Saturday Office of Our Lady's own Mass and nothing else - the
+      only winner that carries a formulary of kind own is the implied Saturday
+      day, and an index candidate like this feria carries none, so an
+      office_mass arm here would resolve to null, leave the choice with one
+      option, and be dropped by assembly-model.js without a word.
+  - id: missae-festivae-de-septem-doloribus
+    label: A festive Mass of the Seven Sorrows
+    takes: mass
+    mass: comm-septem-dolorum-beatae-mariae-virginis
+    locus: the Missal's own rubric at the Friday after Passion Sunday
+    why: >-
+      The Missal prints a full formulary for this commemoration at pp. 499-501,
+      and the rubric at the head of the day permits two festive Masses of the
+      Seven Sorrows where the devotions are held. That formulary is the entry
+      comm-septem-dolorum-beatae-mariae-virginis.
 
 # ---------------------------------------------------------------------------
 # Decision three. What becomes of the day that lost.
@@ -1185,38 +1256,24 @@ divergences:
   reported: true
 
 unsettled:
-- what: five formularies the Missal carries and this calendar index does not
+- what: one formulary the Missal carries and this calendar index does not
   why: >-
-    The index's own notes record them: D. N. Iesu Christi Regis on the last
-    Sunday of October, Sanctissimi Nominis Iesu on the Sunday between 2 and 5
-    January, the Mass for the days within the octave of the Nativity used on
-    29, 30 and 31 December, the Missa dominicae primae post Epiphaniam that the
-    Missal prints for the ferias of the week the Holy Family occupies, and the
-    Commemoratio septem Dolorum B. Mariae Virg. on the Friday after Passion
-    Sunday. None is in the fixed-date spine, so nothing places them. The third
-    was identified against the controlling facsimile on 2026-07-31 and is
-    Diebus infra octavam Nativitatis Domini, II classis, printed pp. 28-29; the
-    fourth stands at printed p. 40 and the fifth at printed pp. 499-501.
+    The index's own notes record it - the Mass for the days within the octave of
+    the Nativity used on 29, 30 and 31 December, identified against the
+    controlling facsimile on 2026-07-31 as Diebus infra octavam Nativitatis
+    Domini, II classis, printed pp. 28-29. It is not in the fixed-date spine, so
+    nothing places it. This row held five. D. N. Iesu Christi Regis and
+    Sanctissimi Nominis Iesu are now masses in the index and are classified in
+    `assignment`; the Missa dominicae primae post Epiphaniam of printed p. 40 is
+    carried and classified `alternative-formulary`; and the Commemoratio septem
+    Dolorum B. Mariae Virg. of printed pp. 499-501 landed on 2026-08-02 as the
+    undated marian entry comm-septem-dolorum-beatae-mariae-virginis, classified
+    `calendar-commemoration` and carrying the mass choice
+    seven-sorrows-where-devotions-are-held.
   effect: >-
-    Row 3 of the table has no mass for Christ the King in this repository, and a
-    Sunday falling between 2 and 5 January carries no day at all. The page says
-    it cannot constitute the day rather than handing it to whatever else the
-    date carries. A Friday after Passion Sunday shows the feria alone, with no
-    commemoration of the Seven Sorrows beside it.
-- what: whether a movable commemoration can be written at all under the model that
-    landed on 2026-07-31
-  why: >-
-    That model is dated. Each of the 104 entries of rank Comm. carries a civil
-    date and a synthetic 1962-<date>-comm registry id, and the Commemoratio
-    septem Dolorum B. Mariae Virg. falls on the Friday after Passion Sunday, so
-    it has neither. The Missal also prints a complete Mass for it, which the
-    sixty commemorations unfolded from feast names do not have, so a
-    placeholder-only Comm. entry would understate what is printed. The registry
-    scheme is the same open item the index already records for its ferias.
-  effect: >-
-    The Seven Sorrows cannot be added without deciding the id scheme and whether
-    a Comm. carrying its own printed Mass is filed as a commemoration or as a
-    mass. Nothing was added.
+    29, 30 and 31 December are ranked and placed - each is a dated entry of rank
+    II - but each holds a placeholder in place of the one formulary the Missal
+    prints for all three, so the page can name the day and cannot show its Mass.
 - what: two entries that are the same celebration under different keys
   why: >-
     A year with exactly twenty-three Sundays after Pentecost puts the numbered
@@ -1383,6 +1440,36 @@ worked_cases:
     commemorated: [comm-s-pantaleonis-martyris]
     orations_low_mass: 2
     settled: true
+- id: the-seven-sorrows-on-the-friday-after-passion-sunday
+  source: RG 91 row 22; RG 107-108; the Missal's own rubric at printed p. 499
+  date: '2026-03-27'
+  why: >-
+    The one commemoration this calendar inscribes on a movable day, and the case
+    that holds its classification. Easter 2026 is 5 April, Passion Sunday is
+    Easter -14 and so 22 March, and the Friday after it is 27 March; the date is
+    read off the book's own rule and not off the model. What must hold is that the
+    day is the feria and not the commemoration - the Missal prints no class over
+    the Seven Sorrows, only the word Commemoratio, so it occupies no row of RG 91
+    and can never take the day - while the Seven Sorrows is nonetheless
+    commemorated in the feria's Mass, which is what happens every year everywhere.
+    Filed `additional-mass` instead it would carry `commemoration: none` and be
+    dropped from the commemorations altogether, which would invert the book.
+    The `mass_choices` assertion is the other half and is the reason this case
+    names its option ids. The Missal permits two festive Masses of the Seven
+    Sorrows where the devotions are held, and that permission renders as a choice
+    of two arms. An arm that stopped resolving would leave a one-armed choice that
+    assembly-model.js drops in silence, so the day would lose the permission
+    without anything going red. `takes: office_mass` does exactly that here - it
+    means the Saturday Office of Our Lady's Mass and nothing else - which is why
+    the feria's arm names the feria's own formulary.
+  expect:
+    winner: passion-friday
+    winner_row: 22
+    commemorated: [comm-septem-dolorum-beatae-mariae-virginis, s-ioannis-damasceni-confessoris-ecclesiae-doctoris]
+    orations_low_mass: 3
+    settled: true
+    mass_choices:
+      seven-sorrows-where-devotions-are-held: [missa-feriae, missae-festivae-de-septem-doloribus]
 # --- The Triduum of 2026, end to end -------------------------------------
 # Five consecutive days, asserted on `readable` as well as on the winner,
 # because the winner alone would pass a page that offered a displaced Mass as
