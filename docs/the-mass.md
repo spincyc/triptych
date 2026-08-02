@@ -312,31 +312,31 @@ the calendars, and nothing else on this page states a figure it gives.
 | Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
 | roman-pre-1955 | seasonal | 6 | 6 | 6 |
-| roman-1962 | seasonal | 128 | 1121 | 5 |
+| roman-1962 | seasonal | 128 | 1134 | 5 |
 | roman-1962 | christological | 8 | 12 | 7 |
 | roman-1962 | marian | 17 | 62 | 4 |
 | roman-1962 | sanctoral | 307 | 951 | 122 |
 | roman-1962 | common | 30 | 152 | 0 |
 | postconciliar | seasonal | 67 | 829 | 3 |
-| postconciliar | christological | 7 | 7 | 7 |
-| postconciliar | marian | 14 | 15 | 14 |
-| postconciliar | sanctoral | 181 | 233 | 169 |
+| postconciliar | christological | 7 | 12 | 6 |
+| postconciliar | marian | 14 | 18 | 13 |
+| postconciliar | sanctoral | 181 | 288 | 151 |
 
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 6 | 490 | 269 |
-| Propers | 6 | 2298 | 1084 |
-| — named `Placeholder` | 6 | 140 | 196 |
-| — inside a `forms` block | 0 | 97 | 133 |
+| Propers | 6 | 2311 | 1147 |
+| — named `Placeholder` | 6 | 140 | 176 |
+| — inside a `forms` block | 0 | 99 | 133 |
 | — carrying a `cycles` mapping | 0 | 0 | 252 |
-| Masses holding only placeholders | 6 | 138 | 193 |
+| Masses holding only placeholders | 6 | 138 | 173 |
 | Masses taking a formulary from another entry | 0 | 56 | 0 |
-| Propers taking their text from another entry | 0 | 40 | 0 |
-| Propers that are not placeholders | 0 | 2158 | 888 |
-| — of those, scripture-bearing | 0 | 1807 | 615 |
-| Encoded passages | 0 | 2102 | 1149 |
-| Distinct books cited | 0 | 55 | 61 |
-| Distinct slot names | 1 | 119 | 87 |
+| Propers taking their text from another entry | 0 | 53 | 0 |
+| Propers that are not placeholders | 0 | 2171 | 971 |
+| — of those, scripture-bearing | 0 | 1807 | 698 |
+| Encoded passages | 0 | 2102 | 1232 |
+| Distinct books cited | 0 | 55 | 63 |
+| Distinct slot names | 1 | 119 | 89 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the
