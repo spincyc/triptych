@@ -5,7 +5,7 @@ render a proper's appointed passages instead of bare references.
 
 ## Layout
 
-One directory per edition, each with an `index.yaml`:
+One directory per edition, each with an `index.yaml` and a `projection.tsv`:
 
 ```yaml
 schema: triptych-bible-index/v1
@@ -37,6 +37,31 @@ bible: `Psalm 24:1-3` and `Psalm 24:4` are separate keys and the key space is
 open. An index therefore covers the references the tracked calendars actually
 cite, and `coverage` in each index says so. A calendar that gains a reference
 needs a rebuild, and `check` fails until it gets one.
+
+## `projection.tsv` — where this edition departs from the canon
+
+Beside each index sits the edition's projection into the canonical (Vulgate)
+numbering, in the four columns the verse-alias tables already use:
+`cited_locus`, `resolves_to`, `kind`, `note`. Identity writes no row, so the
+file's length is the edition's distance from the canon and not its size, and a
+refusing kind — `absent`, `unrecorded`, `displaced`, `split` — resolves to
+nothing and carries its reason, which is what makes a refusal countable from a
+diff instead of from a console. `guidance/versification.md` §8.0 settles the
+shape; `tools/tpt index-bible projection` derives it and refuses with exit 2 on
+any drift, `--write` rewrites it, and `tools/tests/test_projection.py` asserts
+the tracked bytes are a fresh derivation.
+
+**The file holds only what this edition can say.** Two of the four derivations
+behind a projection do not depend on the edition at all: the Hebrew-to-Vulgate
+psalm rows come from the system pair, so all three Hebrew-numbered editions
+derive the same 2 380 of them, and the sixteen `displaced` psalms come from the
+concordance's own flag column, so all seven editions derive the same rows.
+Writing those out per edition would put a second, third and seventh copy of the
+psalm concordance in this repository — the exact fault it exists to prevent, and
+against this repository's standing rule of one derived table with no restatement
+beside it. They stay derived from the concordance at read time; the whole
+projection is this file plus those rows, which the verb reports on both sides of
+the split and a test asserts adds back up.
 
 Book names are mapped through the edition's own book index rather than a table
 kept here. The Douay-Rheims prints Vulgate names, and the trap is not the

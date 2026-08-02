@@ -202,7 +202,7 @@
         "mass-propers"
       ],
       "stage": "draft",
-      "usage": "index-bible {check,build,manifest} [--bible ID] [--root DIR] [--bible-root DIR] [--out DIR] [--verbose]"
+      "usage": "index-bible {check,build,manifest,projection} [--bible ID] [--root DIR] [--bible-root DIR] [--out DIR] [--verbose] [--write]"
     },
     "knox-bible": {
       "idempotent": true,

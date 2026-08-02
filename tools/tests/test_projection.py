@@ -12,6 +12,9 @@ prevent, and a test carrying one would go green against the wrong file.
 """
 from __future__ import annotations
 
+import argparse
+import csv
+import io
 import sys
 import unittest
 from importlib.machinery import SourceFileLoader
@@ -57,8 +60,21 @@ def tracked() -> list[str]:
     )
 
 
+def emitting() -> list[str]:
+    """The editions a tracked projection is written for, asked of the tool.
+
+    `index-bible projection` decides this, so it is read from the same function
+    the verb calls rather than restated with a second rule about rights: a list
+    here would be the third statement of which editions this repository may hold
+    a file for, and the one nobody would update.
+    """
+    arguments = argparse.Namespace(bible=None, source_root=str(WORKS))
+    return index_bible.projection_editions(arguments)
+
+
 DOUAY = edition_root("douay-rheims")
 CLEMENTINE = edition_root("clementine-vulgate")
+BIBLES = REPOSITORY_ROOT / "src/sources/bibles"
 
 
 class ProjectionTest(unittest.TestCase):
@@ -194,6 +210,110 @@ class EveryEditionProjectsTest(unittest.TestCase):
         """An absent departure table and a forgotten one read exactly alike."""
         with self.assertRaises(_projection.ProjectionError):
             _projection.alias_table(REPOSITORY_ROOT / "src/sources/works")
+
+
+class TrackedProjectionTest(unittest.TestCase):
+    """The projection is a file, and the file is a derivation nobody edited.
+
+    `guidance/versification.md` §8.0 asks for the projection as a tracked
+    artifact so that refusals are countable as data rather than as console
+    output. A file only carries that weight while it is provably the derivation:
+    the moment a hand-edited row can sit in it unnoticed, counting it says
+    nothing about the editions. So byte-identity is asserted here as well as by
+    `index-bible projection`, which is the pattern §8.0 takes from `biblelib` —
+    generate, commit, and assert byte-identical in a test.
+    """
+
+    def tracked_text(self, name: str) -> str:
+        return (BIBLES / name / index_bible.PROJECTION_FILE).read_text(encoding="utf-8")
+
+    def parts(self, name: str) -> tuple[list, list]:
+        return index_bible.projection_parts(name, edition_root(name) / "artifacts")
+
+    def rows_of(self, name: str) -> list[_projection.Row]:
+        """The tracked file read back as rules, through the header it declares."""
+        reader = csv.DictReader(io.StringIO(self.tracked_text(name)), delimiter="\t")
+        self.assertEqual(tuple(reader.fieldnames or ()), _projection.ALIAS_COLUMNS, name)
+        return [_projection.Row(*(record[column] for column in reader.fieldnames))
+                for record in reader]
+
+    def test_every_emitting_edition_has_a_tracked_projection(self) -> None:
+        """Guards the rest against passing on an empty sweep."""
+        self.assertEqual(emitting(), sorted(emitting()))
+        self.assertGreater(len(emitting()), 1)
+        for name in emitting():
+            with self.subTest(edition=name):
+                self.assertTrue((BIBLES / name / index_bible.PROJECTION_FILE).is_file())
+
+    def test_the_tracked_file_is_byte_for_byte_a_fresh_derivation(self) -> None:
+        for name in emitting():
+            with self.subTest(edition=name):
+                recorded, _ = self.parts(name)
+                self.assertEqual(
+                    self.tracked_text(name), index_bible.projection_text(recorded)
+                )
+
+    def test_the_file_and_the_concordance_together_are_the_whole_projection(self) -> None:
+        """Nothing is dropped by writing only the edition's own half."""
+        for name in emitting():
+            numbering = str(index_bible.EDITIONS[name]["numbering"])
+            with self.subTest(edition=name):
+                recorded, concordance = self.parts(name)
+                self.assertEqual(
+                    sorted(self.rows_of(name) + concordance),
+                    _projection.project(edition_root(name), numbering),
+                )
+                self.assertEqual(self.rows_of(name), recorded)
+
+    def test_no_tracked_file_carries_a_row_the_concordance_already_holds(self) -> None:
+        """The design decision, asserted rather than described.
+
+        `psalm_rows` depends on the numbering alone and `displaced_psalms` on
+        nothing but the concordance, so the three Hebrew-numbered editions derive
+        one identical set of 2396 rows and the four Vulgate-numbered ones an
+        identical 16. Writing those out per edition would put a second, third and
+        seventh copy of the psalm concordance in this repository, which is the
+        fault the concordance itself exists to prevent. They stay derived, and
+        this test is what stops the next `--write` from quietly including them.
+        """
+        shared: dict[str, set] = {}
+        for name in emitting():
+            numbering = str(index_bible.EDITIONS[name]["numbering"])
+            with self.subTest(edition=name):
+                recorded, concordance = self.parts(name)
+                self.assertEqual(set(recorded) & set(concordance), set())
+                shared.setdefault(numbering, set(concordance))
+                # Every edition in a numbering derives the same rows, which is
+                # the whole reason they are not written down seven times.
+                self.assertEqual(shared[numbering], set(concordance))
+        self.assertEqual({numbering: len(rows) for numbering, rows in shared.items()},
+                         {"vulgate": 16, "hebrew": 2396})
+
+    def test_a_refusal_stays_countable_from_the_file_alone(self) -> None:
+        """A refusal is a row with a reason and no target, and can be counted."""
+        for name in emitting():
+            rows = self.rows_of(name)
+            with self.subTest(edition=name):
+                counts = _projection.divergence(rows)
+                self.assertEqual(counts["total"], len(rows))
+                for row in rows:
+                    self.assertIn(row.kind, _projection.OVERRIDES, row)
+                    if row.kind in _projection.REFUSING:
+                        self.assertEqual(row.resolves_to, "", row)
+                    self.assertNotEqual(row.note, "", row)
+
+    def test_an_edition_this_repository_may_not_hold_gets_no_file(self) -> None:
+        """A licensed edition's index stays outside; so does its projection."""
+        withheld = sorted(
+            name
+            for name, edition in index_bible.EDITIONS.items()
+            if not edition["publishable"]
+        )
+        self.assertTrue(withheld)
+        for name in withheld:
+            with self.subTest(edition=name):
+                self.assertNotIn(name, emitting())
+                self.assertFalse((BIBLES / name / index_bible.PROJECTION_FILE).exists())
 
 
 if __name__ == "__main__":

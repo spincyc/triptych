@@ -1928,16 +1928,25 @@ def _validate_source_tree(library: Library) -> None:
         # bibliographic schema owns neither their contents nor their formats.
         # The chapter fragments index-bible derives are .json and are checked
         # for staleness and for orphans by the tool that writes them.
+        # The suffixes are here to keep an opaque unowned file — a pdf, an
+        # archive — from sitting in a tree this schema does not read, not to
+        # choose these trees' formats; the sentence above says as much.
+        # `src/sources/bibles/<edition>/projection.tsv` is the third thing
+        # index-bible writes into this tree and gates: `projection` refuses on a
+        # stale row, a missing file or an orphan exactly as `check` does for
+        # the index and the fragments, and the tabular form is the shape of the
+        # alias tables it is derived from. Admitted under `bibles` alone,
+        # because that is the only one of these trees whose own validator
+        # writes a table; the next tree that needs it can say so here.
         if relative.parts[0] in {
             "bibles",
             "calendars",
             "commentary",
             "reading-plans",
-        } and entry.suffix in {
-            ".json",
-            ".md",
-            ".yaml",
-        }:
+        } and (
+            entry.suffix in {".json", ".md", ".yaml"}
+            or (relative.parts[0] == "bibles" and entry.suffix == ".tsv")
+        ):
             continue
         if entry.resolve() in library.payload_paths:
             continue

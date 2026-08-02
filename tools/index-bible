@@ -27,11 +27,17 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from _projection import (  # noqa: E402
+    ALIAS_COLUMNS,
     OVERRIDES,
     ProjectionError,
+    Row,
+    alias_rows,
     alias_table,
+    displaced_psalms,
     divergence,
     project,
+    psalm_rows,
+    psalter_rows,
 )
 from _psalms import (  # noqa: E402
     PSALMS,
@@ -107,6 +113,38 @@ EXAMPLES = {
             "no correspondence has been established",
         ),
     ),
+    "projection": (
+        Example(
+            "tools/index-bible projection",
+            (
+                "catholic-public-domain-version: 538 recorded, 16 derived from the concordance -> src/sources/bibles/catholic-public-domain-version/projection.tsv (current)",
+                "  recorded: renumber 27, merge 2, split 3, absent 504, unrecorded 2; concordance: displaced 16",
+                "... 12 more lines",
+            ),
+            "exit 0 and nothing written: every tracked projection.tsv is byte for byte what a "
+            "fresh derivation makes. `recorded` is what only this edition can say and is in "
+            "the file; `concordance` is the same rows for every edition in this numbering and "
+            "stays derived, so no edition carries a second copy of the psalm concordance",
+        ),
+        Example(
+            "tools/index-bible projection --bible clementine-vulgate --json",
+            (
+                "{\"bible\":\"projection\",\"editions\":[{\"bible\":\"clementine-vulgate\",\"concordance\":{\"absent\":0,\"displaced... [+276 chars]",
+            ),
+            "one key-sorted object, a count per override kind on each side of the split, so a "
+            "rising refusal count is a diff and not a console line",
+        ),
+        Example(
+            "tools/index-bible projection --bible douay-rheims --bible-root build/example-bibles --write",
+            (
+                "douay-rheims: 7 recorded, 16 derived from the concordance -> build/example-bibles/douay-rheims/projection.tsv (written)",
+                "  recorded: merge 7; concordance: displaced 16",
+            ),
+            "WRITES projection.tsv. --bible-root here is untracked; the default writes tracked "
+            "src/sources/bibles, and without --write the same invocation refuses on any drift "
+            "with exit 2",
+        ),
+    ),
     "build": (
         Example(
             "tools/index-bible check --bible douay-rheims",
@@ -135,6 +173,10 @@ EXAMPLES = {
     ),
 }
 
+# The edition every verb but `projection` acts on when none is named. It is a
+# fallback rather than an argparse default so that `projection` can tell "no
+# edition named" — its cue to sweep them all — from a reader naming this one.
+DEFAULT_BIBLE = "douay-rheims"
 DEFAULT_CALENDAR_ROOT = ROOT / "src" / "sources" / "calendars"
 DEFAULT_BIBLE_ROOT = ROOT / "src" / "sources" / "bibles"
 SOURCE_ROOT = ROOT / "src" / "sources" / "works"
@@ -1109,6 +1151,138 @@ def projection_of(name: str, artifacts: Path) -> dict:
     }
 
 
+# The tracked projection: one file an edition, one row a divergence, and the
+# four columns the alias tables already carry, read from them rather than
+# respelled here.
+PROJECTION_FILE = "projection.tsv"
+
+
+def projection_parts(name: str, artifacts: Path) -> tuple[list[Row], list[Row]]:
+    """This edition's own divergences, and the ones the concordance already holds.
+
+    The split is the whole design of the tracked file, and the reason is the
+    repository's standing rule: one derived table, and no hand-made restatement
+    left beside it. Two of the four derivations behind a projection do not depend
+    on the edition at all — `psalm_rows` reads the system pair alone, so all three
+    Hebrew-numbered editions produce the same 2380 `renumber` rows, and
+    `displaced_psalms` reads the concordance's own flag column, so all seven
+    editions produce the same 16 `displaced` rows. Writing those out per edition
+    would copy the psalm concordance three times and its flagged column seven,
+    which is the exact fault the concordance exists to prevent. So the tracked
+    file holds what only this edition can say — its own alias table and its own
+    printed psalter — and the concordance half stays derived at read time from
+    the one table that already holds it and is already gated.
+
+    The whole projection is therefore the file plus `psalm_rows` and
+    `displaced_psalms` for the numbering the edition declares, which is what the
+    partition check below asserts: a fifth derivation added to `project` falls on
+    neither side and stops the verb, rather than quietly going unwritten.
+    """
+    root = artifacts.parent
+    numbering = str(EDITIONS[name]["numbering"])
+    recorded = sorted(alias_rows(root) + psalter_rows(root, numbering))
+    concordance = sorted(psalm_rows(numbering) + displaced_psalms())
+    whole = project(root, numbering)
+    if sorted(recorded + concordance) != whole:
+        raise ProjectionError(
+            f"{name}: the projection derives {len(whole)} rules and this table "
+            f"partitions {len(recorded) + len(concordance)}; a derivation was added "
+            f"to _projection.project without saying whether the edition or the "
+            f"concordance holds it, and the tracked file would drop it silently"
+        )
+    return recorded, concordance
+
+
+def projection_text(rows: list[Row]) -> str:
+    """The tracked table, byte-stable, refusing what its columns cannot hold."""
+    lines = ["\t".join(ALIAS_COLUMNS)]
+    for row in rows:
+        fields = (row.cited_locus, row.resolves_to, row.kind, row.note)
+        for field in fields:
+            if "\t" in field or "\n" in field:
+                raise ProjectionError(
+                    f"{row.cited_locus}: this {row.kind} row carries a tab or a "
+                    f"newline, which a tab-separated table cannot hold"
+                )
+        lines.append("\t".join(fields))
+    return "\n".join(lines) + "\n"
+
+
+def projection_editions(arguments: argparse.Namespace) -> list[str]:
+    """Every edition a tracked projection is written for, or the one named.
+
+    A projection is written beside the index, so it is written only where an
+    index may be tracked: an unpublishable edition keeps both outside this
+    repository, and `--bible knox --bible-root <path>` is how it gets one. An
+    edition registered but not present here has no artifacts to derive from.
+    """
+    if arguments.bible:
+        return [arguments.bible]
+    return sorted(
+        name
+        for name, edition in EDITIONS.items()
+        if edition["publishable"]
+        and (Path(arguments.source_root) / str(edition["artifacts"])).is_dir()
+    )
+
+
+def run_projection(arguments: argparse.Namespace) -> dict:
+    """Derive each edition's projection and compare it with the tracked file.
+
+    Without `--write` this refuses on any drift, exactly as `check` refuses a
+    stale index: a projection that has moved and a file that has not is a
+    divergence nobody would otherwise see, and the counting the whole apparatus
+    exists for would be counting yesterday's rules.
+    """
+    editions: list[dict] = []
+    problems: list[str] = []
+    for name in projection_editions(arguments):
+        artifacts = artifacts_for(name, arguments)
+        recorded, concordance = projection_parts(name, artifacts)
+        text = projection_text(recorded)
+        path = Path(arguments.bible_root) / name / PROJECTION_FILE
+        shown = str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
+        if arguments.write:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(text, encoding="utf-8")
+            state = "written"
+        elif not path.is_file():
+            state = "missing"
+            problems.append(f"missing projection {shown}")
+        elif path.read_text(encoding="utf-8") != text:
+            state = "stale"
+            problems.append(f"stale projection {shown}")
+        else:
+            state = "current"
+        editions.append(
+            {
+                "bible": name,
+                "path": shown,
+                "state": state,
+                # Counted on both sides of the split, so a reader can see at once
+                # what this file holds and what it deliberately does not.
+                "recorded": divergence(recorded),
+                "concordance": divergence(concordance),
+                "rules": [row._asdict() for row in recorded] if arguments.verbose else [],
+            }
+        )
+    if not arguments.bible:
+        # A projection for an edition no longer derived here is as wrong as a
+        # stale one, and it is the failure a per-edition loop cannot see.
+        derived = {row["bible"] for row in editions}
+        root = Path(arguments.bible_root)
+        for orphan in sorted(root.glob(f"*/{PROJECTION_FILE}")):
+            if orphan.parent.name not in derived:
+                problems.append(
+                    f"projection no longer derived: {orphan.parent.name}/{PROJECTION_FILE}"
+                )
+    if problems:
+        named = "; ".join(problems[:3])
+        more = f" (and {len(problems) - 3} more)" if len(problems) > 3 else ""
+        raise ValueError(f"{named}{more}; run `index-bible projection --write`")
+    return {"bible": "projection", "editions": editions, "status": "ok"}
+
+
 def build(name: str, calendar_root: Path, artifacts: Path) -> dict:
     bible = Bible(artifacts)
     tool = sibling("mass-propers")
@@ -1213,7 +1387,7 @@ def run_manifest(arguments: argparse.Namespace) -> dict:
 
 
 def run_build(arguments: argparse.Namespace) -> dict:
-    name = arguments.bible
+    name = arguments.bible or DEFAULT_BIBLE
     built = build(name, Path(arguments.root), artifacts_for(name, arguments))
     path = Path(arguments.bible_root) / name / "index.yaml"
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -1223,7 +1397,7 @@ def run_build(arguments: argparse.Namespace) -> dict:
 
 
 def run_check(arguments: argparse.Namespace) -> dict:
-    name = arguments.bible
+    name = arguments.bible or DEFAULT_BIBLE
     built = build(name, Path(arguments.root), artifacts_for(name, arguments))
     path = Path(arguments.bible_root) / name / "index.yaml"
     if not path.is_file():
@@ -1237,6 +1411,15 @@ def run_check(arguments: argparse.Namespace) -> dict:
         more = f" (and {len(drift) - 3} more)" if len(drift) > 3 else ""
         raise ValueError(f"{shown}{more}; run `index-bible build`")
     return summary(name, built, path, arguments)
+
+
+def counted(counts: dict) -> str:
+    """The kinds that fired, named; the ones that did not, left out.
+
+    Identity writes no rule, so a total is the distance from the canon and not
+    the size of the edition, and a column of zeros would read as the opposite.
+    """
+    return ", ".join(f"{kind} {counts[kind]}" for kind in OVERRIDES if counts[kind]) or "none"
 
 
 def render(payload: object, arguments: argparse.Namespace) -> int:
@@ -1253,17 +1436,26 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         if payload.get("unservable"):
             print(f"not offered, no fragments here: {', '.join(payload['unservable'])}")
         return 0
+    if "editions" in payload:
+        for edition in payload["editions"]:
+            recorded, concordance = edition["recorded"], edition["concordance"]
+            print(
+                f"{edition['bible']}: {recorded['total']} recorded, "
+                f"{concordance['total']} derived from the concordance -> "
+                f"{edition['path']} ({edition['state']})"
+            )
+            print(f"  recorded: {counted(recorded)}; concordance: {counted(concordance)}")
+            for rule in edition["rules"]:
+                target = rule["resolves_to"] or "(refused)"
+                print(f"  rule {rule['kind']} {rule['cited_locus']} -> {target}")
+        return 0
     print(f"{payload['bible']}: {payload['passages']} passages -> {payload['path']}")
     for calendar, counts in payload["calendars"].items():
         resolved, cited = counts["resolved"], counts["cited"]
         share = 100.0 * resolved / cited if cited else 0.0
         print(f"  {calendar}: {resolved}/{cited} references resolved ({share:.1f}%)")
     projection = payload["projection"]
-    # Identity writes no rule, so the total is the distance from the canon and
-    # not the size of the edition. Kinds that fired are named; kinds that did
-    # not are left out rather than printed as zeros.
-    kinds = ", ".join(f"{kind} {projection[kind]}" for kind in OVERRIDES if projection[kind])
-    print(f"  projection: {projection['total']} rules ({kinds or 'none'})")
+    print(f"  projection: {projection['total']} rules ({counted(projection)})")
     for rule in projection.get("rules", ()):
         target = rule["resolves_to"] or "(refused)"
         print(f"  rule {rule['kind']} {rule['cited_locus']} -> {target}")
@@ -1279,7 +1471,10 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
 def main(argv: list[str] | None = None) -> int:
     shared = argparse.ArgumentParser(add_help=False)
     shared.add_argument(
-        "--bible", default="douay-rheims", help="edition id, e.g. douay-rheims"
+        "--bible",
+        default=None,
+        help=f"edition id; check and build default to {DEFAULT_BIBLE}, "
+        f"projection sweeps every tracked edition",
     )
     shared.add_argument("--root", default=str(DEFAULT_CALENDAR_ROOT), help="calendar root")
     shared.add_argument(
@@ -1323,10 +1518,29 @@ def main(argv: list[str] | None = None) -> int:
         ),
         EXAMPLES["manifest"],
     )
+    # The one verb that acts on every edition when none is named: a projection
+    # is cheap — it reads the edition's own tables and the concordance, never
+    # the calendars — so the useful sweep is all of them at once, and `--bible`
+    # narrows it. That is what `--bible` defaulting to nothing buys; a shared
+    # default of `douay-rheims` would make a sweep unaskable.
+    projection = sub.add_parser(
+        "projection",
+        help="derive each edition's projection and check the tracked file",
+        parents=[shared],
+    )
+    projection.add_argument(
+        "--write", action="store_true", help="write the tracked projection.tsv files"
+    )
+    with_examples(projection, EXAMPLES["projection"])
 
     return run_verb_cli(
         parser=parser,
-        handlers={"build": run_build, "check": run_check, "manifest": run_manifest},
+        handlers={
+            "build": run_build,
+            "check": run_check,
+            "manifest": run_manifest,
+            "projection": run_projection,
+        },
         renderer=render,
         prefix="index-bible",
         argv=argv,

@@ -1559,6 +1559,28 @@ class SourceLibraryTests(unittest.TestCase):
             )
         self.assertNotIn("inventories/audit.toml", joined)
 
+    def test_a_table_the_bible_tool_writes_and_gates_is_owned(self) -> None:
+        """The derived trees keep their own formats; the suffix guard keeps out blobs.
+
+        `index-bible projection` writes one table an edition and refuses on a
+        stale, missing or orphaned one, so nothing about it is unowned. The
+        admission is scoped to `bibles/` because that is the only one of these
+        trees whose validator writes a table, and a table anywhere else has
+        nothing checking it — which is what the second half of this asserts.
+        """
+        self.add_valid_vertical_fixture()
+        self.write(
+            "src/sources/bibles/douay-rheims/projection.tsv",
+            "cited_locus\tresolves_to\tkind\tnote\n",
+        )
+        rogue = "src/sources/calendars/roman-1962/rogue.tsv"
+        self.write(rogue, "unowned\n")
+        library = SOURCE_LIBRARY.load_library(self.root)
+        joined = "\n".join(library.errors)
+
+        self.assertNotIn("projection.tsv", joined)
+        self.assertIn(f"{rogue}: file is outside the source-library schema", joined)
+
     def test_invalid_and_duplicate_ids_are_rejected_deterministically(self) -> None:
         work = '''
             schema = 1
