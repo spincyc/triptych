@@ -562,6 +562,58 @@ def mass_index(document: dict) -> dict[str, dict]:
     return out
 
 
+# ------------------------------------------------- appointed across a span
+#
+# The books appoint a text on a RANGE of days as readily as on one: the Sequence
+# Victimae paschali laudes is said at every Mass from Easter Sunday to Saturday
+# in albis, and Veni Sancte Spiritus at every Mass of the octave of Pentecost.
+# `takes_from` already carries such a text without copying it, one proper at a
+# time. What no file could say was that the twelve days are ONE appointment: the
+# Easter span survived as an English sentence in a `notes` string that nothing
+# reads and nothing checks, and the Pentecost span was written nowhere at all.
+#
+# So the span is stated once, in the calendar's `rubrics.yaml`, and the masses
+# reference the text as they reference any other. This is the reader, and it is
+# the only one: the gate joins these rows to the masses, and a renderer that
+# wants to print "appointed daily within the octave" beside a Sequence reads the
+# same rows rather than re-deriving the day list from twelve separate entries.
+#
+# A span states where the text is PRINTED and which masses it is appointed on;
+# it never carries the text. The entries are held to their own closed field list
+# for the reason `PROPER_FIELDS` is closed in `check-calendar-masses`: a schema
+# silent about unrecognised keys turns a typo into a rule nobody applies.
+APPOINTED_ACROSS = "appointed_across"
+SPAN_FIELDS = frozenset(
+    {"id", "label", "prints", "keys", "before", "stated", "locus", "latin", "note"}
+)
+# Where the text is written out, once: a mass key in the same file and the name
+# of one of its propers. Every mass in `keys` takes that proper by reference.
+SPAN_PRINTS = "prints"
+SPAN_PRINTS_FIELDS = frozenset({"mass", "proper"})
+# `stated` is whether this repository has READ the rubric that appoints the
+# span, and `locus` is where it read it. They are two fields rather than one
+# because a span whose day list this repository is confident of, and whose
+# printed rubric it has never seen, is the ordinary case here and must be able
+# to say so: `stated: false` with `locus: null` is that sentence. Inventing a
+# plausible citation instead would put a fabricated authority behind a real
+# reading, which is worse than the missing one.
+SPAN_STATED = "stated"
+SPAN_LOCUS = "locus"
+
+
+def spans_of(document: dict) -> list[dict]:
+    """Every span a calendar's rubrics state, as written.
+
+    Raw rows, as `departures_of` returns raw masses: the shape is validated by
+    the gate that reports on it, so a malformed row is a complaint and not an
+    exception thrown out of a reader.
+    """
+    found = document.get(APPOINTED_ACROSS)
+    if not isinstance(found, list):
+        return []
+    return [row for row in found if isinstance(row, dict)]
+
+
 def reference_of(node: object) -> dict | None:
     """The `takes_from` mapping a mass or proper carries, if it carries one."""
     if not isinstance(node, dict):

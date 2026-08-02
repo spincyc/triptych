@@ -20,13 +20,21 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _calendars import (
+    APPOINTED_ACROSS,
     REFERENCE_EXCLUDES,
     REFERENCE_FIELDS,
+    SPAN_FIELDS,
+    SPAN_LOCUS,
+    SPAN_PRINTS,
+    SPAN_PRINTS_FIELDS,
+    SPAN_STATED,
     TAKES_FROM,
+    mass_index,
     partition,
     recension_problems,
     resolve_propers,
     restated_identity,
+    spans_of,
 )
 from _tooling import (
     Example,
@@ -73,6 +81,10 @@ EXCEPTIONS = "psalm_numbering_exceptions"
 # yet uses while the file the site actually serves went unvalidated.
 OVERLAY_DIR = Path("src/sources/inventories")
 OVERLAY_SUFFIX = "-proper-translations-v1.toml"
+# The companion beside a mass index that states which rubric governs what. A
+# text appointed across a span of days is stated there and carried here, and
+# `span_problems` is the only thing that joins the two halves.
+SPANS_SOURCE = "rubrics.yaml"
 # Every psalm-bound complaint opens on the locus it refused (see
 # `_psalms.validate_psalm`), which is what the ledger is keyed by. Matching the
 # locus rather than the whole sentence keeps the ledger readable and survives a
@@ -577,6 +589,12 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
         problems.extend(recension_problems(root, path.parent.name))
     problems.extend(citation_problems(root, calendar))
     problems.extend(spine_problems(paths))
+    # A rubric appointing one text across a range of days is stated in the
+    # calendar's rubrics and carried by its masses, and nothing joined the two.
+    # Both halves failed silently: eleven of the twelve days inside the Easter
+    # and Pentecost octaves showed no Sequence, and the only statement that one
+    # was appointed there was an English sentence in a `notes` string.
+    problems.extend(span_problems(paths))
     problems.extend(overlay_problems(paths))
     # The index names the book; a companion beside it must not name it again.
     # `edition` was hand-typed in both files of both calendar directories, four
@@ -682,6 +700,202 @@ def spine_problems(paths: list[Path]) -> list[str]:
                     f"{path}: {registry} ({entry['title']}) is filed "
                     f"{filed[registry]} but the spine classifies it {entry['kind']}"
                 )
+    return problems
+
+
+def _span_shape(where: str, span: dict, problems: list[str]) -> bool:
+    """The row itself, before anything is looked up. True if it is worth joining."""
+    unknown = sorted(set(span) - SPAN_FIELDS)
+    if unknown:
+        problems.append(
+            f"{where}: unrecognised field(s) {', '.join(repr(k) for k in unknown)}; "
+            f"a span carries {', '.join(sorted(SPAN_FIELDS))}"
+        )
+    # `before` is the only one of the three the join cannot proceed without; a
+    # row missing its label or its note is still a row that can be checked.
+    sound = True
+    for field in ("label", "before", "note"):
+        if not str(span.get(field) or "").strip():
+            problems.append(f"{where}: a span states its {field}")
+            if field == "before":
+                sound = False
+    prints = span.get(SPAN_PRINTS)
+    if not isinstance(prints, dict):
+        problems.append(f"{where}: {SPAN_PRINTS} names the mass and proper the text is written at")
+        sound = False
+    else:
+        strange = sorted(set(prints) - SPAN_PRINTS_FIELDS)
+        if strange:
+            problems.append(
+                f"{where}: {SPAN_PRINTS} carries unknown field(s) {', '.join(strange)}; "
+                f"it takes {', '.join(sorted(SPAN_PRINTS_FIELDS))}"
+            )
+        for field in sorted(SPAN_PRINTS_FIELDS):
+            if not isinstance(prints.get(field), str) or not prints[field]:
+                problems.append(f"{where}: {SPAN_PRINTS} needs a {field}")
+                sound = False
+    keys = span.get("keys")
+    if not isinstance(keys, list) or not keys or not all(
+        isinstance(key, str) and key for key in keys
+    ):
+        problems.append(f"{where}: keys is the nonempty list of masses the text is appointed on")
+        sound = False
+    elif len(set(keys)) != len(keys):
+        problems.append(f"{where}: keys names a mass twice; a mass is appointed the text once")
+    # A span's authority and its evidence are checked together, because the one
+    # failure this file cannot tolerate is a citation nobody read. `stated` says
+    # the rubric was read; `locus` says where. Neither may stand without the
+    # other, and the rubric's own words may not be quoted from nowhere.
+    stated = span.get(SPAN_STATED)
+    locus = span.get(SPAN_LOCUS)
+    if not isinstance(stated, bool):
+        problems.append(f"{where}: {SPAN_STATED} is true or false; a span says whether the rubric was read")
+    elif stated and not str(locus or "").strip():
+        problems.append(
+            f"{where}: {SPAN_STATED} is true and {SPAN_LOCUS} is empty; a rubric read "
+            "from a witness says where it was read"
+        )
+    elif not stated:
+        if locus is not None:
+            problems.append(
+                f"{where}: {SPAN_STATED} is false and {SPAN_LOCUS} is {locus!r}; a span "
+                f"nobody has read carries {SPAN_LOCUS}: null and says so in its note"
+            )
+        if "latin" in span:
+            problems.append(
+                f"{where}: {SPAN_STATED} is false and the row quotes the rubric's own "
+                "words; a quotation with no locus is a quotation from nowhere"
+            )
+    if "latin" in span and not str(span.get("latin") or "").strip():
+        problems.append(f"{where}: latin is the rubric's own words, or is absent")
+    return sound
+
+
+def _by_form(entries: list[tuple[str, dict, dict | None]]) -> dict[str, list[tuple[dict, dict | None]]]:
+    """Resolved propers grouped by the form they stand in, in printed order.
+
+    A Mass printed in two forms says the day twice, so a text appointed on the
+    day is appointed in each of them. Grouping is what lets the join say that:
+    the Ember Saturday of the Pentecost octave prints a longer and a shorter
+    Mass, and a Sequence supplied to only one of them is missing from the Mass
+    that is actually said whenever the other is chosen.
+    """
+    grouped: dict[str, list[tuple[dict, dict | None]]] = {}
+    for label, proper, provenance in entries:
+        grouped.setdefault(label, []).append((proper, provenance))
+    return grouped
+
+
+def _span_join(
+    where: str,
+    span: dict,
+    document: dict,
+    index: dict[str, dict],
+    problems: list[str],
+) -> None:
+    prints = span[SPAN_PRINTS]
+    home, wanted, before = prints["mass"], prints["proper"], str(span["before"])
+    label = str(span.get("label") or span.get("id") or "")
+    keys = [str(key) for key in span["keys"]]
+    if home in keys:
+        problems.append(
+            f"{where}: keys names {home!r}, which is where the text is written; "
+            "keys lists the masses that take it"
+        )
+    for key in (home, *keys):
+        mass = index.get(key)
+        if mass is None:
+            problems.append(f"{where}: names mass {key!r}, which this calendar has no entry for")
+            continue
+        # Trouble from the reference itself is `check_file`'s to report; this
+        # join reads the same resolution and says only what the span asks of it.
+        entries, _ = resolve_propers(document, mass)
+        for form, resolved in sorted(_by_form(entries).items()):
+            at = f"{where}: {key}" + (f"/{form}" if form else "")
+            names = [str(proper.get("name")) for proper, _ in resolved]
+            found = [n for n, name in enumerate(names) if name == wanted]
+            if not found:
+                problems.append(
+                    f"{at}: appoints no {wanted!r}, and {label} appoints it there. "
+                    f"Take it by {TAKES_FROM} from {home!r}; do not write the text again."
+                )
+                continue
+            for position in found:
+                # An empty provenance is a proper the mass prints itself, which
+                # is right at `home` and is the forbidden copy anywhere else.
+                taken = str((resolved[position][1] or {}).get("mass") or "")
+                if key != home and not taken:
+                    problems.append(
+                        f"{at}: prints its own {wanted!r}, and {label} appoints the one "
+                        f"{home!r} prints. One text appointed across a span is written "
+                        f"once and taken by {TAKES_FROM}; a second copy is a second "
+                        "reading waiting to disagree."
+                    )
+                elif key != home and taken != home:
+                    problems.append(
+                        f"{at}: takes its {wanted!r} from {taken!r}, and {label} appoints "
+                        f"the one {home!r} prints"
+                    )
+                if before not in names:
+                    problems.append(
+                        f"{at}: appoints no {before!r} for {wanted!r} to stand before"
+                    )
+                elif names.index(before) != position + 1:
+                    problems.append(
+                        f"{at}: prints {wanted!r} at position {position + 1} of "
+                        f"{len(names)}, and {label} stands immediately before {before!r}"
+                    )
+
+
+def span_problems(paths: list[Path]) -> list[str]:
+    """Every way a text appointed across a span of days fails to reach one.
+
+    A rubric that appoints one text on a range of days is stated in the
+    calendar's `rubrics.yaml` and carried by the masses through `takes_from`.
+    Nothing joined the two, so both halves could fail silently and both did: the
+    Easter span existed only as an English sentence in a `notes` string, which
+    no tool reads and no check tests, and eleven of the twelve days inside the
+    two octaves showed no Sequence at all while claiming to show the Mass.
+
+    Two failures this reports have never been reportable here. A mass the span
+    names that appoints no proper of that name is the hole. A mass that PRINTS
+    the text instead of referencing it is the copy the rule forbids, and it was
+    undetectable: `check_entry` enumerates no unknown fields on a mass, so a key
+    invented to say this would have been ignored by every tool in the
+    repository, and a retyped Sequence would simply have looked like a mass with
+    one more proper.
+
+    Only calendars that state spans are checked. A calendar with no
+    `rubrics.yaml`, or one whose rubrics state none, is outside this rule rather
+    than in breach of it.
+    """
+    import yaml
+
+    problems: list[str] = []
+    for path in paths:
+        source = path.parent / SPANS_SOURCE
+        if not source.is_file():
+            continue
+        try:
+            rubrics = yaml.safe_load(source.read_text(encoding="utf-8"))
+            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        except (OSError, yaml.YAMLError) as error:
+            problems.append(f"{source}: unreadable: {error}")
+            continue
+        if not isinstance(rubrics, dict) or not isinstance(document, dict):
+            continue
+        index = mass_index(document)
+        seen: set[str] = set()
+        for position, span in enumerate(spans_of(rubrics)):
+            identifier = str(span.get("id") or "")
+            where = f"{source}: {APPOINTED_ACROSS}[{identifier or position}]"
+            if not identifier:
+                problems.append(f"{where}: a span states its id")
+            elif identifier in seen:
+                problems.append(f"{where}: stated twice; a span has one row")
+            seen.add(identifier)
+            if _span_shape(where, span, problems):
+                _span_join(where, span, document, index, problems)
     return problems
 
 

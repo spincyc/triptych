@@ -20,12 +20,22 @@ advisory: >-
 # ---------------------------------------------------------------------------
 # Where every rule below came from
 #
-# Not one rubric here was read for this file. Every one of them is transcribed
-# from the repository's own collated publication, which read them as 260 dpi
-# page images of a tracked facsimile and recorded the reading in a rubric index
-# with an evidence class against each rule. This file adds no rule that
-# publication does not carry, and where this file departs from it, it says so
-# in `divergences` below and does not silently choose.
+# Almost no rubric here was read for this file. Every rule of the code below is
+# transcribed from the repository's own collated publication, which read them as
+# 260 dpi page images of a tracked facsimile and recorded the reading in a
+# rubric index with an evidence class against each rule. This file adds no rule
+# of the code that publication does not carry, and where this file departs from
+# it, it says so in `divergences` below and does not silently choose.
+#
+# The two rows of `appointed_across` are the exception, and they are named here
+# rather than left for a reader to notice. They are not rules of the code at
+# all: the daily appointment of a Sequence is printed in the Proprium de tempore
+# under the Sequence itself, which that publication does not cover and its
+# rubric index does not carry. Both were read for this file on 2026-08-01, at
+# page images of the same controlling facsimile, and each row records its own
+# page, its resolution and the digest the bytes were matched against. The
+# `derived_from` block below is unchanged because it states where the CODE came
+# from and that is still true of every rule it introduces.
 # ---------------------------------------------------------------------------
 derived_from:
   publication: liturgy/roman-rite/1962/reference/assembling-the-mass
@@ -1027,6 +1037,99 @@ orations:
     what: Any priest may add one at his discretion in read non-conventual Masses on
       fourth-class days, placed last. It is a choice, not a rule, so this page never
       adds one.
+
+# ---------------------------------------------------------------------------
+# Texts appointed across a span of days.
+#
+# The books appoint a text on a range of days as readily as on one, and until
+# now nothing here could say so. The Sequence of Easter survived as an English
+# sentence inside a `notes` string on one proper of one mass - a free field no
+# tool reads and no check tests - and the Sequence of Pentecost was written
+# nowhere at all. The effect was not cosmetic: on eleven of the twelve days
+# within the two octaves the page showed no Sequence and said nothing about the
+# omission. guidance/the-shape.md section 4 names that failure exactly - "a page
+# that shows nothing where a prayer belongs has told the reader that the Mass
+# omits it" - and section 3 is why the remedy is a reference and not a copy.
+#
+# A span says where the text is printed and which masses it is appointed on. It
+# never carries the text. The masses take it through `takes_from`, which
+# resolves in place, so the text is written once and correcting it corrects
+# every day the rubric appoints it on. `span_problems` in check-calendar-masses
+# joins the two halves and fails when a mass in `keys` appoints no proper of
+# that name, when it prints the text instead of referencing it - the copy this
+# row exists to forbid - and when the text does not stand immediately before the
+# slot `before` names.
+#
+# `stated` and `locus` are two fields and not one, so that a day list this
+# repository is confident of and a printed rubric it has never seen can be told
+# apart: `stated: false` with `locus: null` is that sentence, and inventing a
+# plausible citation to fill the gap would put a fabricated authority behind a
+# real reading. Both rows below carry a locus, and both were read for this file
+# rather than taken from the publication - see the note on each, and the
+# amendment to the provenance block at the head of this file.
+#
+# Neither rubric is a Rubricae generales number, and a reader looking for one
+# will not find it. RGMR 470 says where a Sequence stands and that it is omitted
+# in every votive Mass; RG 63-70 constitutes the three surviving octaves. Which
+# days a given Sequence is sung on is stated only in the Proprium de tempore,
+# under the Sequence itself, so these two loci are printed pages and marginal
+# numbers and not code numbers.
+# ---------------------------------------------------------------------------
+appointed_across:
+- id: victimae-paschali-laudes-within-the-octave-of-easter
+  label: the Sequence Victimae paschali laudes, at every Mass of the octave of Easter
+  prints: {mass: easter-sunday, proper: Sequence}
+  keys: [easter-monday, easter-tuesday, easter-wednesday, easter-thursday, easter-friday,
+    easter-saturday]
+  before: Gospel
+  stated: true
+  locus: Proprium de tempore, Dominica Resurrectionis, the rubric printed under the
+    Sequence at marginal n. 1145, printed p. 330
+  latin: Sequentia dicitur usque ad sabbatum in albis inclusive.
+  note: >-
+    The day list was already in the mass index as prose - the Sequence at
+    easter-sunday carried "The rubric appoints the Sequence daily through
+    Saturday in albis inclusive" in a `notes` string nothing reads - with no
+    locus and no witness behind it. That sentence is now this row, and it was
+    deleted there so the two cannot disagree. The rubric was read for this file
+    on 2026-08-01 at a 200 dpi greyscale page image of artifact PDF p. 411 of
+    artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf,
+    whose payload the artifact record declares remote: a copy already present
+    under untracked `build/` was hashed and matched the pinned digest
+    648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a before any
+    reading was taken from it, which is the route
+    src/sources/inventories/roman-1962-seasonal-citation-collation-v1.toml
+    already establishes for this edition, at the same resolution and under the
+    same rule that no OCR text layer may supply a reading. The text layer was
+    used only to find the page. The printed offset there, pdf_page =
+    printed_page + 81, holds at this page and was checked against the printed
+    folio. The Sequence is reprinted in the formulary of each day within the
+    octave, which corroborates the span from the other side.
+- id: veni-sancte-spiritus-within-the-octave-of-pentecost
+  label: the Sequence Veni Sancte Spiritus, at every Mass of the octave of Pentecost
+  prints: {mass: pentecost, proper: Sequence}
+  keys: [pentecost-monday, pentecost-tuesday, pentecost-ember-wednesday, pentecost-thursday,
+    pentecost-ember-friday, pentecost-ember-saturday]
+  before: Gospel
+  stated: true
+  locus: Proprium de tempore, Dominica Pentecostes, the rubric printed under the Sequence
+    at marginal n. 1314, printed p. 357
+  latin: Et dicitur cotidie usque ad sequens sabbatum inclusive.
+  note: >-
+    Stated nowhere in this repository before this row. Read for this file on
+    2026-08-01 at a 200 dpi greyscale page image of artifact PDF p. 438 of the
+    same facsimile and under the same discipline as the row above. The wording
+    is deliberately not parallel to the Easter rubric and is quoted as printed:
+    the Missal says cotidie usque ad sequens sabbatum inclusive, which carries
+    the Sequence to the Ember Saturday of the octave and so to all six days. The
+    edition already holds a verified passage record for the Sequence itself,
+    passage.catholic-church.missale-romanum.vatican-typica-1962.pentecost-sequence
+    at the same printed p. 357, but its inspection covered the text and its
+    printed beginning and ending and not the rubric beneath it; that record
+    could be extended to this locus without moving pages. These twelve days are
+    already one group in `assignment` at row 10, which is a statement about
+    precedence and says nothing about what is sung; the two facts agree here by
+    coincidence of extent, not by derivation.
 
 # ---------------------------------------------------------------------------
 # Decision four is not taken here at all, and saying which rubrics would take it

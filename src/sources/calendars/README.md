@@ -201,6 +201,61 @@ is the evidence that the reference is the book's and not the reader's.
   lowers the proper count. Its two `taking` rows count what the calendar
   *appoints* from elsewhere. Neither shape is a placeholder.
 
+## A rubric may appoint one text across a span of days
+
+The Missal appoints a text on a range of days as readily as on one. Under the
+Sequence at Easter it prints *Sequentia dicitur usque ad sabbatum in albis
+inclusive*, and under the Sequence at Pentecost *Et dicitur cotidie usque ad
+sequens sabbatum inclusive*: twelve further Masses, one appointment each.
+
+`takes_from` already carries such a text without copying it, one proper at a
+time. What no file could say was that the twelve days are **one** appointment,
+and the cost of not saying it was not documentary. The Easter span survived as
+an English sentence in a `notes` string — a free field no tool reads and no
+check tests — the Pentecost span was written nowhere at all, and eleven of the
+twelve days rendered as a finished Mass with no Sequence in it.
+
+So the span is stated once, in the calendar's `rubrics.yaml`, under a top-level
+`appointed_across` list, and the masses reference the text as they reference
+any other:
+
+```yaml
+appointed_across:
+- id: victimae-paschali-laudes-within-the-octave-of-easter
+  label: the Sequence Victimae paschali laudes, at every Mass of the octave of Easter
+  prints: {mass: easter-sunday, proper: Sequence}   # where the text is written, once
+  keys: [easter-monday, easter-tuesday, ...]        # the masses it is appointed on
+  before: Gospel                                    # where it stands in each
+  stated: true                                      # the rubric was read from a witness
+  locus: Proprium de tempore, Dominica Resurrectionis, ... printed p. 330
+  latin: Sequentia dicitur usque ad sabbatum in albis inclusive.
+  note: ...
+```
+
+- The span **never carries the text**. Each mass in `keys` takes it with an
+  ordinary proper-level `takes_from`, placed where the Missal prints it, and
+  `resolve_propers` swaps it in position. Correcting the one printing corrects
+  every day the rubric appoints it on.
+- The reference stays bare — `takes_from: {mass: easter-sunday}` — and carries
+  no `citation`. The printed pointer is the span's `locus`, written once;
+  thirteen copies of it beside thirteen references would be the restatement
+  `takes_from` exists to remove.
+- `stated` and `locus` are two fields so that a day list this repository is
+  confident of can be told from a printed rubric it has never seen.
+  `stated: false` with `locus: null` is that sentence, and it is enforced: a
+  `stated: false` row may carry neither a locus nor the rubric's Latin, because
+  a quotation with no locus is a quotation from nowhere.
+- `scripts/_calendars.py` holds the reader, `spans_of`, so the gate and any
+  renderer read one derivation rather than two.
+- `check-calendar-masses span_problems` joins the halves and reports four
+  things nothing reported before: a mass in `keys` that appoints no proper of
+  that name, a mass that **prints** the text instead of referencing it, a text
+  that does not stand immediately before the slot `before` names, and a span
+  whose authority and evidence disagree. A mass printed in `forms` is held to
+  the rule in **each** form: the Ember Saturday of the Pentecost octave prints
+  a longer and a shorter Mass, and a Sequence supplied to only one of them is
+  missing from whichever Mass is actually said.
+
 Propers stand in the order the edition appoints them, not in a fixed template,
 so Tracts, Sequences, palm-rite antiphons, the Improperia, the Exsultet, the
 prophecies, and the litanies appear only where they are actually appointed. The
