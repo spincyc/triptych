@@ -81,6 +81,30 @@ EXCEPTIONS = "psalm_numbering_exceptions"
 # yet uses while the file the site actually serves went unvalidated.
 OVERLAY_DIR = Path("src/sources/inventories")
 OVERLAY_SUFFIX = "-proper-translations-v1.toml"
+# Which state of the rite each of a sidecar's witnesses attests. The vocabulary
+# is the act history's own -- `attests` names an act, `attests_kind` says on what
+# strength the edge is drawn, `attests_basis` says why -- and it is READ from
+# that history rather than transcribed here, because the ten kinds its witnesses
+# use are more than the six the Holy Week slice alone shows, and a hand-typed
+# list beside a longer one is the restatement this repository keeps deleting.
+#
+# A sidecar recorded prose saying its books were pre-1955 and nothing read it.
+# That is the whole defect: the pre-1955 recension exists to carry exactly that
+# fact, and the only English this repository holds is a pre-1955 hand missal's,
+# served under a 1962 heading because `roman-pre-1955` has no sidecar.
+OVERLAY_ATTESTS = "attests"
+OVERLAY_ATTESTS_KIND = "attests_kind"
+OVERLAY_ATTESTS_BASIS = "attests_basis"
+OVERLAY_ATTESTS_FIELDS = (OVERLAY_ATTESTS, OVERLAY_ATTESTS_KIND, OVERLAY_ATTESTS_BASIS)
+# The act history, whose widest slice extends the narrower ones rather than
+# copying them, so this one file resolves every act and witness either carries.
+ACTS_SOURCE = OVERLAY_DIR / "latin-missal-acts-v1.toml"
+# Where a state cannot be established the act history leaves the edge undrawn and
+# says so. Admitted here for the same reason it exists there: refusing it would
+# leave a witness of unestablished descent no honest value to write, and an
+# invented act edge is worse than a recorded gap. `attests_basis` is still
+# required, so the gap has to say why it is one.
+ACTS_UNESTABLISHED = "unestablished"
 # The companion beside a mass index that states which rubric governs what. A
 # text appointed across a span of days is stated there and carried here, and
 # `span_problems` is the only thing that joins the two halves.
@@ -636,6 +660,99 @@ def sibling(name: str):
     return module
 
 
+def act_history() -> tuple[dict, dict, set, str]:
+    """The acts and witnesses the act history carries, and the kinds it uses.
+
+    Read through `act-history`'s own loader, which resolves `extends` so the
+    wider slice is read on top of the narrower one instead of beside it. Parsing
+    the two files here would be the second copy that file's own header refuses.
+
+    Returns the acts by id, the witnesses by id, the `attests_kind` values its
+    witnesses actually use, and an empty string, or four empty values and the
+    reason the history could not be read.
+    """
+    path = Path(__file__).resolve().parents[1] / ACTS_SOURCE
+    if not path.is_file():
+        return {}, {}, set(), f"{path} is missing; no source can be held to it"
+    try:
+        history = sibling("act-history").load(path)
+    except Exception as error:  # the loader raises its own Problem type
+        return {}, {}, set(), f"{path}: cannot read the act history: {error}"
+    acts = {
+        str(row.get("id") or ""): row
+        for row in history.get("acts") or []
+        if isinstance(row, dict)
+    }
+    witnesses = {
+        str(row.get("id") or ""): row
+        for row in history.get("witnesses") or []
+        if isinstance(row, dict)
+    }
+    kinds = {
+        str(row.get(OVERLAY_ATTESTS_KIND))
+        for row in witnesses.values()
+        if row.get(OVERLAY_ATTESTS_KIND)
+    }
+    return acts, witnesses, kinds, ""
+
+
+def source_attestation_problems(where: str, row: dict, history: tuple) -> list[str]:
+    """Every way a sidecar's witness fails to say which rite it witnesses.
+
+    A `[[sources]]` row is a BOOK, and the one thing a reader needs to know about
+    a book quoted into a calendar is which state of the rite it prints. Both
+    books in the 1962 sidecar are pre-1955 hand missals and said so only in
+    `caution` prose; a page serving their English under a 1962 heading had
+    nothing machine-readable to say otherwise, and 176 collations were run
+    against one of them under that heading.
+
+    The project's own composed English is exempt and named as such. A row with no
+    `source_id` is the project as its own witness -- the case `mass-propers`
+    already admits by presence rather than truth -- and it witnesses no printing,
+    so an act edge for it would be an invention rather than a record.
+    """
+    acts, witnesses, kinds, trouble = history
+    if "source_id" in row and not str(row.get("source_id") or "").strip():
+        return []
+    problems = [
+        f"{where}: states no {field}. A witness quoted into a calendar says which "
+        "state of the rite it prints, in the act history's vocabulary, or the "
+        "claim lives in prose nothing reads."
+        for field in OVERLAY_ATTESTS_FIELDS
+        if not str(row.get(field) or "").strip()
+    ]
+    if problems:
+        return problems
+    if trouble:
+        return [f"{where}: {trouble}"]
+    attests = str(row[OVERLAY_ATTESTS]).strip()
+    kind = str(row[OVERLAY_ATTESTS_KIND]).strip()
+    if attests != ACTS_UNESTABLISHED and attests not in acts:
+        problems.append(
+            f"{where}: {OVERLAY_ATTESTS} names {attests!r}, which the act history "
+            f"does not carry. An edge to an act nobody recorded resolves to nothing; "
+            f"say {ACTS_UNESTABLISHED!r} where the state cannot be established."
+        )
+    if kind not in kinds:
+        problems.append(
+            f"{where}: {OVERLAY_ATTESTS_KIND} is {kind!r}, which no witness in the "
+            f"act history uses. It is one of: {', '.join(sorted(kinds))}."
+        )
+    # The same book in two files is a prediction that the two will differ. Held
+    # to agree, it is a checked restatement instead.
+    held = witnesses.get(str(row.get("id") or ""))
+    if held:
+        for field in (OVERLAY_ATTESTS, OVERLAY_ATTESTS_KIND):
+            theirs = str(held.get(field) or "").strip()
+            if theirs and theirs != str(row.get(field) or "").strip():
+                problems.append(
+                    f"{where}: {field} is {str(row.get(field))!r} and the act "
+                    f"history records {theirs!r} for the same witness; one book "
+                    "does not attest two states."
+                )
+    return problems
+
+
 def calendar_spine():
     """The tool that owns the spine, rather than a second parse of it.
 
@@ -912,11 +1029,17 @@ def overlay_problems(paths: list[Path]) -> list[str]:
     Keyed off the calendar directories actually being checked, so a temporary
     root with no sidecar beside it validates nothing rather than reaching into
     the repository behind the caller's back.
+
+    `[[sources]]` was checked by nothing at all until the attestation gate below,
+    which is the sharper form of the same defect the docstring above describes:
+    the rules applied to the translations and left the record of WHICH BOOK they
+    came out of entirely unread.
     """
     import tomllib
 
     root = Path(__file__).resolve().parents[1] / OVERLAY_DIR
     problems: list[str] = []
+    history: tuple | None = None
     for path in paths:
         sidecar = root / f"{path.parent.name}{OVERLAY_SUFFIX}"
         if not sidecar.is_file():
@@ -926,6 +1049,17 @@ def overlay_problems(paths: list[Path]) -> list[str]:
         except (OSError, tomllib.TOMLDecodeError) as error:
             problems.append(f"{sidecar}: unreadable: {error}")
             continue
+        # Loaded once, and only where a sidecar was actually found.
+        if history is None:
+            history = act_history()
+        for index, row in enumerate(document.get("sources") or []):
+            if not isinstance(row, dict):
+                problems.append(f"{sidecar}: sources[{index}] is not a table")
+                continue
+            named = str(row.get("id") or "") or f"sources[{index}]"
+            problems.extend(
+                source_attestation_problems(f"{sidecar}: {named}", row, history)
+            )
         for index, entry in enumerate(document.get("entries") or []):
             where = f"{sidecar}: entries[{index}]"
             if not isinstance(entry, dict):

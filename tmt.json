@@ -65,6 +65,7 @@
       "origin": "local",
       "purpose": "Validate the normalized YAML mass-proper indexes under src/sources/calendars.",
       "requires": [
+        "act-history",
         "calendar-spine",
         "citations",
         "mass-propers",

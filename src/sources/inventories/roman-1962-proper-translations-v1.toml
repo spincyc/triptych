@@ -444,11 +444,49 @@ the designed behaviour and not a defect; it is recorded here so that the number
 of days it reaches is known rather than guessed.
 """
 
+# --- what state of the rite each witness attests -----------------------------
+#
+# Every source below says which state of the Roman rite its printing witnesses,
+# in the vocabulary `roman-holy-week-acts-v1.toml` already uses for its
+# `[[witnesses]]`: `attests` names an act in the act history, `attests_kind`
+# says on what strength the edge is drawn, and `attests_basis` says why. That
+# vocabulary is not restated here and no second one is invented; the admitted
+# values are read out of the act history itself, and
+# `check-calendar-masses` refuses a source that states none, states one the act
+# history does not carry, or disagrees with the act history about a witness both
+# files hold.
+#
+# It is recorded because both books below are PRE-1955 books, and until now this
+# file said so only in the `caution` prose -- which no tool reads. Every English
+# word in this file is a pre-1955 hand missal's, served today under a 1962
+# heading and nowhere else, because `roman-pre-1955` has no sidecar of its own.
+# `text_from` in `src/sources/calendars/roman-pre-1955/propers.yaml` records the
+# same asymmetry from the other side, and this is the field that lets the two be
+# compared by something other than a reader.
+
 [[sources]]
 id = "cummiskey-1861"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-djvu-ocr"
 label = "The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)"
+attests = "si-quid-est-1634"
+attests_kind = "date-bound"
+attests_basis = """
+The book names no Latin exemplar. It is a lay hand missal with no approbation,
+no imprimatur and no decree in its front matter, so nothing in it says which
+printing was on the translator's desk, and the edge rests on the date alone:
+1861 falls after Urban VIII's revision of 1634 and before Divino afflatu of
+1911, and the state it can be translating is the one si-quid-est-1634 left.
+That is a weak edge and is labelled as such, on the same footing as
+roman-missal-laity-1806 and cummiskey-1843 in roman-holy-week-acts-v1.toml; it
+is drawn only because a date bound is a real bound.
+
+What it settles is the thing this file needed settled. 1861 stands ninety-four
+years before maxima-redemptionis-1955 and a century before editio-typica-1962,
+so every English word quoted from this book is pre-1955 English, whatever
+calendar serves it. The `caution` below has said so in prose since the file was
+written; this says it where a check can read it.
+"""
 rights = "public-domain"
 rights_jurisdiction = "United States"
 rights_basis = "Published in the United States in 1861, so in the public domain there by publication date: every United States work published before 1930 has entered the public domain and no renewal question arises for an 1861 imprint. The translator is unnamed and no proprietor survives. The basis is a United States one and is recorded as such, as the King James Version and Revised Version records here are, because a public-domain claim does not travel of itself; a reader outside the United States must establish the position in their own jurisdiction. That basis covers the 1861 book's own English, which is what this file carries. It does not cover the Internet Archive text layer the English was read out of: `artifact_id` names a remote, unretained artifact whose own rights the source library records as unresolved, because those exact bytes are a Google-produced derivative carrying Google's front matter and no distribution grant for it was established. The artifact record pins the bytes by sha256 and byte count and gives the URL, so a reader can fetch the same file and check any entry here against it; this repository does not redistribute them."
@@ -459,6 +497,16 @@ id = "cummiskey-1843"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843"
 artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.ia-djvu-ocr"
 label = "The Roman Missal translated into the English language for the use of the laity (Philadelphia: Eugene Cummiskey, 1843)"
+attests = "si-quid-est-1634"
+attests_kind = "date-bound"
+attests_basis = """
+As for the 1861 above, and the act history says the same of this printing
+already: roman-holy-week-acts-v1.toml carries cummiskey-1843 as a witness
+attesting si-quid-est-1634 on a date bound, because the book states no Latin
+exemplar. The two records are held to agree by `check-calendar-masses`, which
+refuses a source row that contradicts the act history about a witness both
+files hold, so this is a checked restatement and not a second opinion.
+"""
 rights = "public-domain"
 rights_jurisdiction = "United States"
 rights_basis = "Published in the United States in 1843, so in the public domain there by publication date, on the same basis as the 1861 printing above and with the same caveat that a reader outside the United States must establish the position in their own jurisdiction."

@@ -164,6 +164,10 @@ LANDING_MISSAL = "roman-1962"
 # order below is the declared landing missal first and the rest as the
 # directory yields them, which is stable and states what it is.
 MISSAL_MANIFEST = ("structure", "propers", "index.json")
+# The key `_calendars._stamp` marks every entry of a recension with. It is
+# written there as a literal and named here for want of a constant to import;
+# the stamp's shape is that module's to change and this only carries it through.
+RECENSION = "recension"
 # The chapter of a reference is its first number: "Psalm 25:1-3" is chapter 25.
 CHAPTER = re.compile(r"^(\D*?)(\d+)")
 
@@ -690,29 +694,40 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                     "taken_from": taken_from or None,
                 }
             )
-        masses.append(
-            {
-                "key": mass.get("key"),
-                "name": mass.get("name"),
-                "season": mass.get("season"),
-                "kind": kind,
-                # The calendar date the mass is kept on, "MM-DD", exactly as the
-                # source records it, and absent where the source records none.
-                # It is carried rather than left to be read back out of the
-                # registry id: the registry conventions are the calendar's, a
-                # date-shaped id is not always a date ("1962-12-29" is a day of
-                # the temporal cycle) and a dated entry does not always end in
-                # one ("1962-03-07-comm"), so a reader that parses ids is a
-                # second derivation standing beside this one, free to disagree.
-                "date": mass.get("date"),
-                "registry": mass.get("registry"),
-                # The formulary this mass takes whole, where it takes one. The
-                # per-proper `taken_from` says the same thing slot by slot; this
-                # says it once, which is what a heading needs.
-                "takes_from": mass.get(_calendars.TAKES_FROM) or None,
-                "propers": propers,
-            }
-        )
+        built = {
+            "key": mass.get("key"),
+            "name": mass.get("name"),
+            "season": mass.get("season"),
+            "kind": kind,
+            # The calendar date the mass is kept on, "MM-DD", exactly as the
+            # source records it, and absent where the source records none.
+            # It is carried rather than left to be read back out of the
+            # registry id: the registry conventions are the calendar's, a
+            # date-shaped id is not always a date ("1962-12-29" is a day of
+            # the temporal cycle) and a dated entry does not always end in
+            # one ("1962-03-07-comm"), so a reader that parses ids is a
+            # second derivation standing beside this one, free to disagree.
+            "date": mass.get("date"),
+            "registry": mass.get("registry"),
+            # The formulary this mass takes whole, where it takes one. The
+            # per-proper `taken_from` says the same thing slot by slot; this
+            # says it once, which is what a heading needs.
+            "takes_from": mass.get(_calendars.TAKES_FROM) or None,
+            "propers": propers,
+        }
+        # How the recension reached this mass, where the calendar is one.
+        # `_calendars._stamp` puts this on every entry of a recension precisely
+        # so a page can say so, and rebuilding the mass from the whitelist above
+        # dropped it: the pre-1955 structure file carried 490 masses, no
+        # `text_from` anywhere in it, and a heading naming the 1920 typical
+        # edition over text every word of which was transcribed from a 1962
+        # printing. Absent rather than null on the other two calendars, because
+        # that stamp's own rule is that a renderer finding no stamp is reading a
+        # calendar that is nobody's recension -- a null would be a third state to
+        # interpret.
+        if isinstance(mass.get(RECENSION), dict):
+            built[RECENSION] = mass[RECENSION]
+        masses.append(built)
     manifest = translation_manifest(masses, witnesses)
     # Every proper's list is put into the manifest's order, so that the choice
     # of which English a reader sees is made once, here, and is the same choice
