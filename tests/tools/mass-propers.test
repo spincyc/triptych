@@ -358,12 +358,52 @@ if ! cmp -s census-one.md census-two.md; then
 	echo "census output is not byte-stable across runs" >&2
 	exit 1
 fi
-for want in "census:begin" "| Calendar | Section | Masses |" "| Measure |" "census:end"; do
+for want in "census:begin" "| Calendar | Section | Masses |" \
+	"| Calendar | Rank | Entries | Celebrations |" "| (no rank) |" "| Measure |" "census:end"; do
 	if ! grep -q -- "$want" census-one.md; then
 		echo "census output is missing $want" >&2
 		exit 1
 	fi
 done
+
+# The rank rows sum to the calendar's own `Masses`, so the table can be read as
+# one book rather than as two counts that happen to sit together. Summed here
+# from the emitted block rather than from the tool's own dict, because the block
+# is what a reader adds up.
+for calendar in roman-pre-1955 roman-1962 postconciliar; do
+	# A rank row has four cells and a section row five, so the field count
+	# tells the two tables apart without either of them being numbered.
+	entries="$(awk -F'|' -v c=" $calendar " \
+		'NF == 6 && $2 == c { total += $4 } END { print total + 0 }' census-one.md)"
+	masses="$(awk -F'|' -v c=" $calendar " \
+		'NF == 7 && $2 == c { total += $4 } END { print total + 0 }' census-one.md)"
+	if [ "$entries" != "$masses" ]; then
+		echo "$calendar rank entries ($entries) do not sum to its masses ($masses)" >&2
+		exit 1
+	fi
+done
+
+# The English coverage is REPORTED and never written: stdout is the block, so a
+# document rewritten from it cannot pick the figures up, and the operator still
+# sees them. The hand-typed copy of these numbers lives in a file this tool does
+# not own; see the comment on `english_coverage`.
+run_tool census 2>coverage.txt >/dev/null
+if ! grep -q 'English orations:' coverage.txt; then
+	echo "census did not report the English coverage on stderr" >&2
+	exit 1
+fi
+if grep -q 'English orations:' census-one.md; then
+	echo "the English coverage must not reach the block" >&2
+	exit 1
+fi
+
+# `--check` stays a gate and says only whether the documents are current. A gate
+# printing figures it does not gate teaches its operators to skim past it.
+run_tool census --check 2>check-noise.txt >/dev/null
+if grep -q 'English orations:' check-noise.txt; then
+	echo "--check must not print the coverage it does not gate" >&2
+	exit 1
+fi
 
 # The tracked documents are current, and `--check` writes nothing.
 run_tool census --check >/dev/null
@@ -392,6 +432,24 @@ for kept in '^before$' '^after$'; do
 		exit 1
 	fi
 done
+
+# `--check` gates the rank rows exactly as it gates the older ones. Proved by
+# altering one rank count in an otherwise current copy: a document whose rank
+# table alone has drifted is refused, so the new rows cannot rot quietly behind
+# a table that still looks right.
+sed 's/^| \(.*\) | (no rank) | \([0-9]*\) |/| \1 | (no rank) | 999 |/' \
+	census-one.md >docroot/docs/the-mass.md
+cp docroot/docs/the-mass.md docroot/guidance/propers-for-agents.md
+if cmp -s census-one.md docroot/docs/the-mass.md; then
+	echo "the rank drift fixture changed nothing; the row shape moved" >&2
+	exit 1
+fi
+if run_tool census --check --doc-root docroot >/dev/null 2>&1; then
+	echo "a drifted rank row should be refused" >&2
+	exit 1
+fi
+run_tool census --write --doc-root docroot >/dev/null
+run_tool census --check --doc-root docroot >/dev/null
 
 # A document carrying no markers is refused rather than appended to.
 printf 'no markers here\n' >docroot/docs/the-mass.md

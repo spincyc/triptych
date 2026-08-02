@@ -322,6 +322,22 @@ the calendars, and nothing else on this page states a figure it gives.
 | postconciliar | marian | 14 | 52 | 4 |
 | postconciliar | sanctoral | 181 | 606 | 44 |
 
+| Calendar | Rank | Entries | Celebrations |
+| --- | --- | ---: | ---: |
+| roman-pre-1955 | (no rank) | 6 | 6 |
+| roman-1962 | (no rank) | 93 | 93 |
+| roman-1962 | Comm. | 104 | 104 |
+| roman-1962 | I | 37 | 37 |
+| roman-1962 | II | 46 | 47 |
+| roman-1962 | III | 211 | 211 |
+| postconciliar | (no rank) | 64 | 64 |
+| postconciliar | All Souls commemoration | 1 | 1 |
+| postconciliar | Feast | 24 | 24 |
+| postconciliar | Memorial | 69 | 69 |
+| postconciliar | Optional memorial | 82 | 82 |
+| postconciliar | Optional memorials | 18 | 38 |
+| postconciliar | Solemnity | 11 | 11 |
+
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 6 | 491 | 269 |
@@ -360,6 +376,27 @@ preceding Sunday, a saint taking a Mass of the Common. Such an entry holds few
 propers or none, so it lowers the proper count while raising what the calendar
 can actually show: every row above counts what a file **carries**, and these
 two count what it **appoints** from elsewhere. Neither is a placeholder.
+
+The rank rows count **entries**, and a calendar's rank rows sum to its
+`Masses` above. `(no rank)` is a row and not an omission: the temporal cycle
+prints no rank at all, so unranked entries are a large group in both indexes,
+and a table that dropped them would invite the ranks it does show to be read
+as the whole book. **Celebrations** counts what those entries name. One entry
+can print more than one celebration — a pair of optional memorials falling on
+the same day, or the Greater Litanies kept with Saint Mark — and the index
+records the join only in the entry's `name`, joined with `;`, so that is where
+it is read from; the plural rank word marks some such entries and not others,
+and it never says how many. Where the two columns differ the index is keeping
+more celebrations than it holds entries: reading the entry count as a count of
+celebrations understates the calendar, and folding the celebrations into the
+entry count would break the sum against `Masses`, so both are given and
+neither replaces the other. A **rank** is reproduced exactly as the file
+prints it. `Optional memorial` and `Optional memorials` are two rows because
+they are two different words in the index, and the two Missals' rank
+vocabularies are not one scale — no row of this table is comparable across
+calendars, which is why rank is tabulated down the page and not across it.
+This table answers what an index is scoped to; it does not answer which
+entries are Sundays, because no entry states that and it is not derived here.
 
 <!-- census:end -->
 

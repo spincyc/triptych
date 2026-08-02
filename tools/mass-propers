@@ -606,6 +606,27 @@ def translation_overlay(calendar: str) -> tuple[dict, set, list]:
     return overlay, untranslated, stale, witnesses
 
 
+def overlay_key(
+    mass: dict, form: str, proper: dict, taken_from: dict | None
+) -> tuple[str, str, str]:
+    """Where a proper's recorded translation is filed.
+
+    A borrowed proper is filed under the mass that PRINTS it. The English of a
+    Collect belongs to the Collect, not to each day the Missal appoints it on,
+    so keying on the borrowing day would want the same oration recorded once per
+    day — the hand-typed restatement `takes_from` exists to remove.
+
+    It is a function because two callers need the same answer: the structure
+    pass, which merges the translation, and the coverage census, which counts
+    how many slots one was found for. Keyed differently they would disagree
+    about which propers are covered, and the census would be measuring a
+    resolution the browser does not perform.
+    """
+    if taken_from:
+        return (taken_from["mass"], taken_from["form"] or "", taken_from["proper"])
+    return (mass.get("key"), form or "", proper.get("name"))
+
+
 def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dict:
     document = load_calendar(root, calendar)
     overlay, untranslated, stale, witnesses = translation_overlay(calendar)
@@ -616,18 +637,11 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
     for kind, mass in masses_of(document):
         propers = []
         for form, proper, taken_from in appointed_propers(document, mass):
-            # A borrowed proper is looked up under the mass that prints it. The
-            # English of a Collect belongs to the Collect, not to each day the
-            # Missal appoints it on, and keying on the borrowing day would want
-            # the same oration recorded once per day - which is the hand-typed
-            # restatement this reference exists to remove. Twelve such rows sat
-            # in the 1962 sidecar for the four resumed Sundays after the
-            # Epiphany, and one of them had already drifted from its twin.
-            key = (
-                (taken_from["mass"], taken_from["form"] or "", taken_from["proper"])
-                if taken_from
-                else (mass.get("key"), form or "", proper.get("name"))
-            )
+            # A borrowed proper is looked up under the mass that prints it; the
+            # rule and its reason live on `overlay_key`. Twelve such rows sat in
+            # the 1962 sidecar for the four resumed Sundays after the Epiphany,
+            # and one of them had already drifted from its twin.
+            key = overlay_key(mass, form, proper, taken_from)
             recorded = overlay.get(key)
             # An entry whose proper no longer opens with the incipit it was
             # derived against is stale, and merging it on the strength of the
@@ -927,6 +941,37 @@ CENSUS_KEYS = (
     "Neither is a placeholder."
 )
 
+# The rank table's own keys. Kept a separate paragraph so that adding it did not
+# re-wrap a word of the paragraph above; see `render_census`.
+#
+# It states keys and names no figure, exactly as CENSUS_KEYS does. A sentence
+# here saying how many joined entries there are would be a hand-typed count
+# sitting inside the derived block — the defect the block exists to end, smuggled
+# back in as prose.
+CENSUS_RANK_KEYS = (
+    "The rank rows count **entries**, and a calendar's rank rows sum to its "
+    "`Masses` above. `(no rank)` is a row and not an omission: the temporal "
+    "cycle prints no rank at all, so unranked entries are a large group in both "
+    "indexes, and a table that dropped them would invite the ranks it does show "
+    "to be read as the whole book. **Celebrations** counts what those "
+    "entries name. One entry can print more than one celebration — a pair of "
+    "optional memorials falling on the same day, or the Greater Litanies kept "
+    "with Saint Mark — and the index records the join only in the entry's "
+    "`name`, joined with `;`, so that is where it is read from; the plural rank "
+    "word marks some such entries and not others, and it never says how many. "
+    "Where the two columns differ the index is keeping more celebrations than it "
+    "holds entries: reading the entry count as a count of celebrations "
+    "understates the calendar, and folding the celebrations into the entry "
+    "count would break the sum against `Masses`, so both are given and neither "
+    "replaces the other. A **rank** is reproduced exactly as the file prints it. "
+    "`Optional memorial` and `Optional memorials` are two rows because they are "
+    "two different words in the index, and the two Missals' rank vocabularies "
+    "are not one scale — no row of this table is comparable across calendars, "
+    "which is why rank is tabulated down the page and not across it. This table "
+    "answers what an index is scoped to; it does not answer which entries are "
+    "Sundays, because no entry states that and it is not derived here."
+)
+
 
 def ordered(names: list[str], preferred: tuple[str, ...]) -> list[str]:
     """Declared order first, then anything else sorted. Deterministic either way."""
@@ -944,6 +989,54 @@ def proper_sources(proper: dict) -> set[str]:
         for cycle in (proper.get("cycles") or {}).values()
         if isinstance(cycle, dict) and cycle.get("source")
     }
+
+
+# The label a rank row carries when the entry printed no rank. It is a row and
+# not an omission: the temporal cycle prints no rank at all, so unranked entries
+# are a large group in both indexes, and a rank table that simply left them out
+# would invite the reader to take the ranks it does show as the whole book.
+NO_RANK = "(no rank)"
+# One entry can print more than one celebration, and the index joins them in the
+# entry's own `name` with a semicolon: a pair of optional memorials falling on
+# the same day, or the Greater Litanies kept with Saint Mark. Splitting the name
+# is a reading of prose and is stated as such in CENSUS_RANK_KEYS, but it is the
+# only place the file records the join at all — the plural rank word marks some
+# of these entries and not others, and it does not say how many.
+CELEBRATION_JOIN = ";"
+
+
+def celebrations_in(mass: dict) -> int:
+    """How many celebrations one entry prints, read from its own name.
+
+    An entry with no name at all still keeps one Mass, so the floor is one and
+    never zero: a nameless entry is a naming defect, not an empty day.
+    """
+    named = [part for part in str(mass.get("name") or "").split(CELEBRATION_JOIN) if part.strip()]
+    return len(named) or 1
+
+
+def rank_census(document: dict) -> list[dict]:
+    """Entries and celebrations per printed rank, unranked entries first.
+
+    Counted by the rank string EXACTLY as the file prints it. Normalising here
+    would be this tool inventing a rank vocabulary: `Optional memorial` and
+    `Optional memorials` are two different words in the postconciliar index and
+    mean two different things, and the 1962 index's `I`/`II`/`III`/`Comm.` are
+    not the same scale as the postconciliar's names at all.
+
+    Ordered by the rank string rather than by count, so that a row moves only
+    when a rank appears or disappears. Ordering by size would reshuffle the
+    table every time a mass landed, which is the reflow the block exists to
+    avoid.
+    """
+    counted: dict[str, dict] = {}
+    for _, mass in masses_of(document):
+        rank = mass.get("rank")
+        label = NO_RANK if rank is None or str(rank) == "" else str(rank)
+        row = counted.setdefault(label, {"rank": label, "entries": 0, "celebrations": 0})
+        row["entries"] += 1
+        row["celebrations"] += celebrations_in(mass)
+    return sorted(counted.values(), key=lambda row: (row["rank"] != NO_RANK, row["rank"]))
 
 
 def census_of(document: dict) -> dict:
@@ -979,6 +1072,7 @@ def census_of(document: dict) -> dict:
     substantive = [proper for _, proper in every if proper.get("name") != PLACEHOLDER]
     return {
         "sections": rows,
+        "ranks": rank_census(document),
         "masses": sum(row["masses"] for row in rows),
         "propers": len(every),
         "placeholder_propers": sum(
@@ -1038,6 +1132,127 @@ def passage_counts(root: Path) -> dict[str, dict[str, int]]:
     }
 
 
+# --- The English coverage census, derived and reported, written nowhere ------
+#
+# `english_oration_census` in `src/sources/inventories/roman-1962-proper-
+# translations-v1.toml` states this coverage in hand-typed prose, and it is the
+# same defect the census above exists to end, one layer over: a slot total, a
+# covered total and a ledgered total, all retyped, all beside a corpus that
+# moves every day. That block is not this tool's to write — it is prose with an
+# argument in it, and only its owner can rewrite it — so these figures are
+# DERIVED AND REPORTED and nothing here writes them anywhere.
+#
+# Reporting them without being asked is the point. Behind a flag they would be
+# seen only by someone who already suspected drift; printed by the verb an
+# operator runs after every wave, the drift announces itself. They go to stderr
+# because stdout is the block, and the block has to stay byte-identical to what
+# `--write` puts in the documents — and not under `--check`, for the reason
+# given where they are printed.
+
+# A slot name without its rubrical qualifier: `Secret (Pro Martyre tantum)` is a
+# Secret. The ledger records the qualified name, the calendar prints it, and the
+# family is what says whether a slot is the KIND of thing the ledger addresses.
+SLOT_QUALIFIER = " ("
+
+
+def slot_family(name: object) -> str:
+    return str(name or "").split(SLOT_QUALIFIER)[0]
+
+
+def english_coverage(root: Path, calendar: str) -> dict | None:
+    """How far a calendar's recorded English reaches, once `takes_from` resolves.
+
+    Returns None for a calendar with no translation ledger; there is nothing to
+    be covered or uncovered against.
+
+    Three decisions, because two honest counts differ here as sharply as they do
+    over "propers":
+
+    * A slot is counted ONCE however many days appoint it, keyed by
+      `overlay_key` — the same key the structure pass merges on, so this counts
+      what the browser would actually serve rather than a second resolution.
+    * The denominator is the ledger's OWN slot vocabulary: the families it has
+      an opinion about, whether that opinion is a translation or a recorded
+      reason for having none. A ledger that has never addressed Sequences is not
+      silently failing to translate them. What that leaves out is counted too,
+      as `outside_the_ledger`, so the narrower denominator cannot hide behind
+      itself.
+    * Scriptural propers are excluded. Their English is a bible's, not a
+      ledger's.
+
+    `unmatched_records` is the ledger's own rot: rows keyed to a slot no mass
+    appoints any more. It is reported because such a row is invisible from the
+    other side — it translates nothing and it lowers nothing.
+    """
+    overlay, untranslated, _, _ = translation_overlay(calendar)
+    if not overlay and not untranslated:
+        return None
+    document = load_calendar(root, calendar)
+    families = {slot_family(key[2]) for key in overlay} | {
+        slot_family(key[2]) for key in untranslated
+    }
+    slots: set[tuple] = set()
+    composed: set[tuple] = set()
+    for _, mass in masses_of(document):
+        for form, proper, taken_from in appointed_propers(document, mass):
+            if proper.get("name") == PLACEHOLDER:
+                continue
+            if proper_sources(proper) & SCRIPTURE_BEARING:
+                continue
+            key = overlay_key(mass, form, proper, taken_from)
+            composed.add(key)
+            if slot_family(proper.get("name")) in families:
+                slots.add(key)
+    covered = {key for key in slots if (overlay.get(key) or {}).get("translations")}
+    ledgered = (slots & untranslated) - covered
+    return {
+        "calendar": calendar,
+        "slots": len(slots),
+        "with_english": len(covered),
+        "ledgered_untranslated": len(ledgered),
+        "unaccounted": len(slots) - len(covered) - len(ledgered),
+        "outside_the_ledger": len(composed - slots),
+        "unmatched_records": len((set(overlay) | untranslated) - slots),
+    }
+
+
+def coverage(root: Path) -> list[dict]:
+    """Every calendar's coverage row, in the census's order.
+
+    A calendar whose references do not resolve is REPORTED, not raised: the
+    census is gated by `make check-propers-census`, and a broken reference
+    turning that gate red would be this addition failing a check about something
+    else entirely.
+    """
+    rows = []
+    for name in ordered(calendars(root), CALENDAR_ORDER):
+        try:
+            row = english_coverage(root, name)
+        except (ValueError, KeyError) as error:
+            rows.append({"calendar": name, "error": str(error)})
+            continue
+        if row:
+            rows.append(row)
+    return rows
+
+
+def render_coverage(rows: list[dict]) -> list[str]:
+    """One line a calendar, for stderr. Never part of the block."""
+    lines = []
+    for row in rows:
+        if "error" in row:
+            lines.append(f"# {row['calendar']} English: not derived: {row['error']}")
+            continue
+        lines.append(
+            f"# {row['calendar']} English orations: {row['slots']} slots appointed, "
+            f"{row['with_english']} with English, {row['ledgered_untranslated']} "
+            f"ledgered untranslated, {row['unaccounted']} unaccounted; "
+            f"{row['outside_the_ledger']} composed propers outside the ledger's "
+            f"slots, {row['unmatched_records']} ledger rows matching no slot"
+        )
+    return lines
+
+
 def census(root: Path) -> dict[str, dict]:
     cited = passage_counts(root)
     found = {}
@@ -1081,6 +1296,14 @@ def render_census(counted: dict[str, dict]) -> str:
                 f"{row['propers']} | {row['placeholder_only_masses']} |"
             )
     lines.append("")
+    lines.append("| Calendar | Rank | Entries | Celebrations |")
+    lines.append("| --- | --- | ---: | ---: |")
+    for name in names:
+        for row in counted[name]["ranks"]:
+            lines.append(
+                f"| {name} | {row['rank']} | {row['entries']} | {row['celebrations']} |"
+            )
+    lines.append("")
     lines.append("| Measure | " + " | ".join(names) + " |")
     lines.append("| --- |" + " ---: |" * len(names))
     for label, key in CENSUS_MEASURES:
@@ -1089,6 +1312,11 @@ def render_census(counted: dict[str, dict]) -> str:
         )
     lines.append("")
     lines.extend(textwrap.wrap(CENSUS_KEYS, WIDTH))
+    # Wrapped as its own paragraph rather than appended to CENSUS_KEYS. Appending
+    # would re-flow every line of a paragraph that has not changed, and the whole
+    # value of a derived block is that a diff of it shows only what moved.
+    lines.append("")
+    lines.extend(textwrap.wrap(CENSUS_RANK_KEYS, WIDTH))
     lines.append("")
     lines.append(CENSUS_END)
     return "\n".join(lines) + "\n"
@@ -1108,7 +1336,14 @@ def run_census(arguments: argparse.Namespace) -> dict:
     """Derive the census; optionally rewrite or check the documents carrying it."""
     counted = census(Path(arguments.root))
     block = render_census(counted)
-    payload: dict[str, object] = {"calendars": counted, "block": block, "status": "ok"}
+    payload: dict[str, object] = {
+        "calendars": counted,
+        "block": block,
+        # Derived every run and written into no document; see the comment above
+        # `english_coverage` for why it is reported rather than written.
+        "english_coverage": coverage(Path(arguments.root)),
+        "status": "ok",
+    }
     if not (arguments.write or arguments.check):
         return payload
     documents, stale = [], False
@@ -1393,6 +1628,18 @@ def main(argv: list[str] | None = None) -> int:
             print(yaml.safe_dump(payload, sort_keys=False, allow_unicode=True).rstrip())
             return 0
         if "block" in payload:
+            # To stderr, so that redirecting the block to a file still leaves the
+            # block alone and still shows the operator the coverage. The
+            # hand-typed copy of these figures lives in a file this tool does not
+            # own, so reporting them is the whole of what can be done from here.
+            #
+            # Not under `--check`. That verb answers one yes/no question for
+            # `make check-propers-census`, and a gate that prints figures it does
+            # not gate teaches its operators to skim past its output.
+            if not arguments.check:
+                reported = payload.get("english_coverage") or []
+                for line in render_coverage(reported):  # type: ignore[arg-type]
+                    print(line, file=sys.stderr)
             rows = payload.get("documents")
             if rows is None:
                 print(str(payload["block"]), end="")
