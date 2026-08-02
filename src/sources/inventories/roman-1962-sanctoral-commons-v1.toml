@@ -397,8 +397,8 @@ entries already hold scripture citations only and no oration, so none was
 touched and none needed to be. 02-09 is the only day of the run whose composed
 Latin this repository cannot presently witness, and it is the only day held.
 
-A DEFECT FOUND IN OTHER WORK, RECORDED AND NOT FIXED. Reading the run end to end
-put nine scripture-bearing propers on the page that the entries beside them do
+A DEFECT FOUND IN OTHER WORK, RECORDED AND NOT FIXED HERE. Reading the run end to
+end put nine scripture-bearing propers on the page that the entries beside them do
 not carry, all of them printed with a citation and all of them missing from
 entries the 2026-08-01 text-layer pass filled: 02-02 Lesson `Malach. 3, 1-4` and
 Gradual `Ps. 47, 10-11 et 9`; 02-05 Offertory `Ps. 44, 15`; 02-06 Alleluia
@@ -411,6 +411,23 @@ placeholders and their notes state a tier that a page reading would falsify.
 Recorded here so the next pass over February can land them off pages this file
 already names, and recorded as a rate: six of the twelve entries the text-layer
 pass filled in this run are short by at least one slot.
+
+ADDENDUM 2026-08-02, WRITTEN BY `march_april_run`, WHICH LANDED THEM AND FOUND THE
+COUNT SHORT. They are ten and not nine: 02-02 is short by two, the Lesson and the
+Gradual, and both are counted in the list above but the total under it was not.
+All ten are now in propers.yaml, each read on the page image of the printed page
+this record names, at 200 dpi from the tracked PDF, and each of the six entries'
+`notes` rewritten from the text-layer tier to the page-reading tier it now stands
+on - which is why the landing had to wait for a run that would open those pages
+anyway. Two further printed things on the same pages were read and deliberately
+not carried, both named in the entries that hold them. First, the Alleluias at
+02-02 no. 2111, 02-05's Communion antiphon at no. 2133 and 02-11's Alleluia at
+no. 2168 print no citation at all, so there is nothing to encode for them and
+their absence is not a gap. Second, 02-22 prints a second, paschal Alleluia at
+no. 2204 beginning `Ps. 106, 15`; carrying it needs a second proper named Alleluia
+or a variant name, and the same choice falls at every day in this index that prints
+a paschal alternative, so it is left for one pass over all of them rather than
+settled at one day.
 
 WHAT THE RUN LEAVES, COUNTED RATHER THAN ESTIMATED. `january_run` left 76 rows
 held on the day's own orations. Five of them are landed here and a sixth, 02-09,
@@ -431,6 +448,191 @@ it carries none of 18 March S. Cyrillus Hierosolymitanus (inscribed 1882),
 24 March S. Gabriel Archangelus (1883) or 27 March S. Ioannes Damascenus (made a
 Doctor in 1890). Whatever the 1962 prints under those three days is in the same
 position as 02-09 until a witness between 1862 and 1920 is tracked here.
+"""
+
+march_april_run = """
+ADDED 2026-08-02, the third contiguous run, taken by the method `january_run`
+established. It was scoped by `february_run`'s own warning that March is thin by
+pointer count, and the warning was right about the count and wrong about the work:
+five March rows were held and the run landed ten entries, because pointer rows are
+not the unit the remaining work comes in.
+
+THE RUN. `Die 4 martii` S. Casimiri to `Die 30 aprilis` S. Catharinae Senensis,
+printed pp. 482-515, digital pp. 563-596, read end to end rather than picked over,
+and then two leaves further, to printed p. 517 (digital p. 598), to settle a defect
+the run found on its last day. Thirty-six page images at 200 dpi and thirteen
+column crops at 400 dpi, one of them on the Commune's own page at printed p. [36]
+(digital p. 844), against the tracked PDF hashed to
+648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a before a page was
+opened. No OCR text layer supplied a reading; the text layer was used only to find
+which pages held which day. The run stopped at the FESTA MAII heading, so May is
+where the next one starts.
+
+WHAT WAS LANDED, AND WHERE. In `src/sources/calendars/roman-1962/propers.yaml`,
+ten entries that held nothing but a placeholder:
+
+  03-04  s-casimiri-confessoris                   Common + Collect,      no. 2238
+  03-06  ss-perpetuae-felicitatis-martyrum        Common + Postcommunion, no. 2246
+  03-09  s-franciscae-romanae-viduae              Common + Collect,      no. 2267
+  03-12  s-gregorii-i-papae-confessoris-ecclesiae Common + 3 orations, nos. 2280-2282
+  03-17  s-patricii-episcopi-confessoris          Common + Collect,      no. 2283
+  04-05  s-vincentii-ferrerii-confessoris         Common + Collect,      no. 2386
+  04-11  s-leonis-i-papae-confessoris-ecclesiae   Common only; nothing proper
+  04-14  comm-ss-tiburtii-...-martyrum            3 orations, nos. 2416-2418; no pointer
+  04-17  comm-s-aniceti-papae-martyris            Common only; nothing proper
+  04-24  s-fidelis-sigmaringa-martyris            Common + Collect,      no. 2437
+
+and an eleventh entry, 04-30 s-catharinae-senensis-virginis, which was not a
+placeholder and was wrong; see THE DEFECT below. Eleven orations transcribed in
+all. Two of the ten had no row in this file before the run, 04-11 and 04-17, as
+01-15 had none before the January one, so the pointer count has now under-reported
+the landable work in every run that has been taken.
+
+THE NUMERAL DECIDED THIS RUN, WHERE THE LETTER DECIDED THE LAST TWO. `january_run`
+found days where the C or P overturned the words; here the letter agreed with the
+words nearly everywhere and it was the NUMERAL AFTER IT that carried the reading.
+03-06 is marked C 2 on its Collect and Secret: those are the Commune non Virginum
+I loco's SECOND set, `Pro pluribus Martyribus quae non sint Virgines`, and the
+first set is singular, so a reader taking the Common's first Collect would have
+given two martyrs the prayers of one. 04-24 is marked C 3 on its Secret and
+Postcommunion: the third set of the paschal Common is `Pro Martyre tantum`, and
+the first is the Pontifex set, so the first would have given a Capuchin priest a
+bishop's prayers - the S. Bedae defect exactly. 04-27 is marked C 2 under a bracket
+that names only `de Communi Doctorum [22]`, and that row's `common_mass` is
+corrected here from commune-doctorum-pontificis to commune-doctorum-non-pontificis
+on the strength of the numeral, before any landing rather than after one. 04-11,
+04-17, 04-22 and 04-26 are all marked C 1 at the Commune Summorum Pontificum,
+whose first Collect, Secret and Postcommunion are each the first of two
+alternatives.
+
+AND THE NUMERAL HAS NOWHERE TO LIVE. A pointer can name a Common; it cannot name
+one of a Common's sets, because the calendar schema carries `takes_from` to a mass
+and the sets live inside one mass entry wherever the Missal prints them together.
+Where they live in two entries the pointer carries it, as commune-doctorum-
+pontificis and commune-doctorum-non-pontificis do. Where they live in one it does
+not, so 03-06 and 04-24 resolve with every set of their Common under them and the
+numeral survives only in each entry's notes. That gap is now written into
+propers.yaml's `open_collation_items`, because a distinction that decided three
+rows of this run and one of a previous one should not rest on prose alone.
+
+A CROSS-CHECK THE 1862 DID NOT HAVE TO PASS. 04-24's C 3 says the Secret and
+Postcommunion come from the third set of the paschal Common, which the Missal
+prints there as a reprint of the Commune unius Martyris III loco, Missa In virtute.
+The Pustet Ratisbon 1862 sends the same day to its own paschal Common and then
+says in terms `Secreta et Postcommunio ex Missa In virtute, de Communi unius
+Martyris extra temp. Pasch.` Two books, two routes, one Mass. A numeral read wrong
+would not have produced that agreement.
+
+THE DEFECT, WHICH IS THE THIRD OF ITS CLASS AND THE FIRST FOUND INSIDE A RUN.
+04-30 S. Catharinae Senensis was not a placeholder: it carried six scripture-
+bearing propers, Introit `Sap. 10, 17` with `Ps. 126, 1`, Epistle `Col. 3, 14-15,
+17, 23-24`, Gradual `Ps. 127, 1-2`, Gospel `Mt. 13, 54-58`, Offertory `Ps. 89, 17`
+and Communion `Mt. 13, 54, 55`. Not one of them is that day's. The page prints no
+scripture-bearing proper for 30 April at all - it takes the whole Mass from the
+Commune Virginum III loco and prints three orations, all marked P - and the six
+are the Mass of S. Ioseph Opificis at 1 May, on the next leaf. They came from the
+2026-08-01 text-layer pass, and they failed the way `second_image_pass` records
+09-01 and 11-26 failing: the pass matched a day heading and then took the propers
+printed after it, without stopping at the heading between, which here is the
+FESTA MAII / `Die 1 maii` title set across the page. They are moved to 05-01, where
+the book prints them, with a Tract `Ps. 111, 1-3` added from the same reading and
+with the two Alleluia verses left alone because neither prints a citation to
+encode. 05-01 is a 1955 feast, so it carries citations and no oration, and its
+notes say so. 04-30 now carries the Common it is sent to and its own three
+orations. Both entries were read on printed pp. 515-517.
+
+THE ONE DAY THAT WAS READ AND NOT LANDED. 04-27 S. Petri Canisii, and it is a
+different refusal from 02-09's. Cyril of Alexandria is in no tracked witness at
+all. Peter Canisius is in one, and only half of him: the 1862 carries him in its
+FESTA NOVISSIMA appendix at 27 April as `B. Petri Canisii, S. J., Confessoris`,
+and that Collect opens with the same clause the 1962 prints and then petitions
+differently. Half a prayer corroborated is not a prayer corroborated. His row's
+own `note` records both texts so the next reader does not have to find them again.
+Nor is the pointer landed without the prayer, though here it could have been
+landed cleanly - commune-doctorum-non-pontificis carries a Secret and a
+Postcommunion and no Collect, so the day would have resolved with a hole rather
+than with a wrong prayer in it. A hole reads as an unfinished transcription, and
+the refusal is the finding, so the pointer is held with the prayer.
+
+THE WITNESS, AND WHERE IT DIVERGED. Every one of the eleven landed orations was
+found in the tracked public-domain Pustet Ratisbon 1862 before it was written.
+Nine stand under the same day: 03-04, 03-09, 03-12 (all three), 03-17, 04-05,
+04-14 (all three), 04-24 and 04-30 (all three). The tenth and eleventh had to be
+looked for elsewhere, and where they were found is the finding:
+
+  03-06 Postcommunion  NOT under 6 March, because the 1862 gives 6 March no Mass:
+        it keeps Perpetua and Felicitas as a commemoration inside S. Thomas
+        Aquinas's Mass on 7 March and gives them `Praesta nobis, quaesumus Domine,
+        intercedentibus sanctis Martyribus tuis Perpetua et Felicitate`. The
+        prayer the 1962 prints stands in the 1862 at 25 October, under
+        Ss. Chrysanthi et Dariae, word for word with the names and their gender
+        changed.
+
+Orthographic divergences, all of them ones earlier runs have already met: 1862
+prints `natalitia` for `natalicia` at 04-14 and 04-30, `coelestia` for `caelestia`
+at 03-04 and `coelestis` for `caelestis` at 04-30, and `Patritium` for `Patricium`
+at 03-17. Punctuation differs at 03-04, 03-09, 04-05, 04-24 and 04-30, and the
+conclusion cue is abbreviated in the 1862 at five loci where the 1962 prints it
+out. What moves between the two books is which day a prayer stands on, which Mass
+of a Common it is borrowed from, and how the Commune is paginated - the 1862
+numbers the Commune Confessoris non Pontificis [22] where this edition numbers it
+[24], and calls the Commune non Virginum II loco `nec Virg. nec Mart. [35]`. One
+calendrical divergence beyond that: the 1862 gives S. Gregory a proper Mass of his
+own, Introit Sacerdotes Dei, where the 1962 sends him to the Commune Summorum
+Pontificum.
+
+NOTHING POST-1920 WAS PUBLISHED, AND THE RUN CROSSED FOUR DAYS WHERE IT COULD HAVE
+BEEN. `february_run` predicted three - 18 March S. Cyrillus Hierosolymitanus,
+24 March S. Gabriel Archangelus, 27 March S. Ioannes Damascenus - and all three
+carry scripture citations only and no oration already, so none was touched. The
+fourth is 04-27, and 05-01 S. Ioseph Opificis is a fifth, both handled above.
+
+A SECOND DEFECT CLASS, COUNTED AND NOT FIXED. Reading the run end to end put
+twenty-three scripture-bearing propers on the page that the entries beside them do
+not carry, every one printed with a citation and every one missing from an entry
+the 2026-08-01 text-layer pass filled: 03-07 Offertory; 03-08 Tract; 03-10
+Epistle; 03-18 Communion; 03-19 paschal Alleluia, Gospel and Offertory; 03-24
+Lesson, two Alleluias and Gospel; 03-25 Lesson and Tract; 03-27 Tract, two
+Alleluias and Offertory; 04-02 Alleluia and Tract; 04-13 Alleluia and Gospel;
+04-23 Alleluia; 04-25 Lesson and Alleluia; 04-29 Epistle and Alleluia. Thirteen of
+the run's entries are short by at least one slot, and a Gospel is missing at two
+of them. This is the same class `february_run` counted at nine over six February
+entries, and the rate is now measured over two months rather than one. It is not a
+rights question - citations are facts and may be carried - and it was not landed
+here. What WAS landed is `february_run`'s own list, which this run opened those
+six February pages to read and which turns out to be ten propers and not the nine
+it counted; see the addendum written into that record. The twenty-three are left
+because each needs its notes rewritten from the text-layer tier as well as its
+slots filled, and because the class is now measured over two months rather than
+guessed at from one, so it deserves one pass over January to April rather than a
+third partial sweep. One further finding for whoever takes it: at 03-24
+the Missal prints the Gospel citation as `Luc. 2, 26-38` where the text is the
+Annunciation, Luke 1:26-38, so encoding what is printed would resolve to the wrong
+words and that locus needs a `citation_divergences` row and not a plain encoding.
+
+WHAT THE RUN LEAVES, COUNTED RATHER THAN ESTIMATED. `february_run` left 70 rows
+held on the day's own orations and 1 on the witness. Seven of the 70 are landed
+here and one more, 04-27, is moved to the witness ground, so 62 remain on
+transcription and 2 on the witness. 04-24 came off the seasonal-condition ground,
+which had 12 and now has 11. Two rows were added that the extraction never
+produced, so the file now carries 151 pointer rows, of which 148 came from the
+extraction `method` describes and three did not. The state count over the whole
+file is 74 landed and 77 held: 62 on the day's own orations, 2 on the absence of a
+public-domain witness, 11 on several pointers or a seasonal condition, 1 on an
+unrecognised rubric, 1 not attached to an entry. In propers.yaml the 1962
+placeholder-only mass count falls from 121 to 110.
+
+The next contiguous run is May, beginning at `Die 2 maii` S. Athanasii, printed
+p. 517 = digital p. 598 - 05-01 having been read and landed already by this run,
+out of order, as the tail of the 04-30 defect. Fourteen of its rows are held -
+05-03, 05-05, 05-07, 05-10, 05-14 twice, 05-16, 05-17, 05-18 twice, 05-19, 05-25
+twice and 05-29 - which is more than March and April held between them, and this
+run's own arithmetic says not to read that as the size of the month. Its eleven
+landings answered eight held rows - five in March, three in April - while two more
+entries had no row here at all and an eleventh, 04-14, was landed on its orations
+while its three rows stay held on their pointers. The 1862's May must be read for its gaps before the
+run starts, the way this run read its April and found Peter Canisius only in an
+appendix, and half a prayer at that.
 """
 
 [[divergences]]
@@ -826,8 +1028,7 @@ printed_common = "Confessoris non Pontificis I loco"
 printed_bracket = 24
 common_mass = "commune-confessoris-non-pontificis-1"
 mass = "s-casimiri-confessoris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "03-04"
@@ -855,8 +1056,7 @@ printed_common = "non Virginum I loco"
 printed_bracket = 35
 common_mass = "commune-non-virginum-1"
 mass = "ss-perpetuae-felicitatis-martyrum"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "03-09"
@@ -870,8 +1070,7 @@ printed_common = "non Virginum II loco"
 printed_bracket = 37
 common_mass = "commune-non-virginum-2"
 mass = "s-franciscae-romanae-viduae"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "03-12"
@@ -885,8 +1084,7 @@ printed_common = "unius aut plurium Summorum Pontificum"
 printed_bracket = 1
 common_mass = "commune-summorum-pontificum"
 mass = "s-gregorii-i-papae-confessoris-ecclesiae"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "03-17"
@@ -900,8 +1098,7 @@ printed_common = "Confessoris Pontificis I loco"
 printed_bracket = 19
 common_mass = "commune-confessoris-pontificis-1"
 mass = "s-patricii-episcopi-confessoris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "03-21"
@@ -943,8 +1140,32 @@ printed_common = "Confessoris non Pontificis I loco"
 printed_bracket = 24
 common_mass = "commune-confessoris-non-pontificis-1"
 mass = "s-vincentii-ferrerii-confessoris"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
+
+[[pointers]]
+date = "04-11"
+printed_page = 503
+digital_page = 584
+column = "R"
+printed_name = "S. Leonis I Papae, Conf. et Eccl. Doct."
+printed_rank = "III classis"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "s-leonis-i-papae-confessoris-ecclesiae"
+state = "landed"
+note = """
+ADDED 2026-08-02 BY THE MARCH-APRIL RUN, NOT BY THE EXTRACTION `method` DESCRIBES.
+The mechanical pass produced no row here, as it produced none for 01-15 or 04-17,
+so this row's fields are read off the page images at printed pp. 503-504 (digital
+pp. 584-585) rather than off the text layer, which is why its `printed_name` and
+`printed_rank` are not mangled the way the extracted rows' are. The day prints all
+three orations out under it, nos. 2389, 2390 and 2391, each marked C 1, so all
+three are the Common's own with Leonem for beati N. and with `Martyrem tuum atque`
+dropped, Leo not having been a martyr. Nothing is proper, so the row lands as a
+reference and nothing else, and no Latin of the day is published.
+"""
 
 [[pointers]]
 date = "04-14"
@@ -960,6 +1181,23 @@ common_mass = "commune-martyrum-tempore-paschali-2"
 mass = "comm-ss-tiburtii-valeriani-maximi-martyrum"
 state = "held"
 blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+note = """
+STILL HELD, AND THE ENTRY IS NEVERTHELESS NO LONGER A PLACEHOLDER. Read on
+2026-08-02 with the March-April run at printed pp. 505-507. The rubric is
+`Tempore paschali, Missa Sancti tui, de Communi Martyrum II loco [17], cum
+Epistola et Evangelio ex Missa Protexisti, de Communi Martyrum I loco [15], et cum
+orationibus ut infra. Extra tempus paschale, Missa Sapientiam, de Communi
+plurimorum Martyrum II loco [11], cum orationibus pariter ut infra.` - three
+pointers, one of them splitting one Common's chants from another's readings, and
+the calendar schema carries one takes_from per mass. So no pointer is landed and
+all three rows stay held on that ground. But the orations are the same under
+either rubric, all three are marked P, and all three are now on
+`comm-ss-tiburtii-valeriani-maximi-martyrum` in propers.yaml with no takes_from
+beside them, in the shape 01-25 and 02-22 already use. This is the first row in
+this file that is held on the pointer while the day is landed on the orations, and
+it is worth saying because the held count is otherwise read as a count of
+placeholder entries.
+"""
 
 [[pointers]]
 date = "04-14"
@@ -990,6 +1228,27 @@ common_mass = "commune-plurimorum-martyrum-2"
 mass = "comm-ss-tiburtii-valeriani-maximi-martyrum"
 state = "held"
 blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+
+[[pointers]]
+date = "04-17"
+printed_page = 507
+digital_page = 588
+column = "R"
+printed_name = "S. Aniceti Papae et Mart."
+printed_rank = "Commemoratio"
+printed_incipit = "Si diligis me"
+printed_common = "unius aut plurium Summorum Pontificum"
+printed_bracket = 1
+common_mass = "commune-summorum-pontificum"
+mass = "comm-s-aniceti-papae-martyris"
+state = "landed"
+note = """
+ADDED 2026-08-02 BY THE MARCH-APRIL RUN, NOT BY THE EXTRACTION `method` DESCRIBES,
+and read off the page images at printed pp. 507-508 (digital pp. 588-589). The day
+prints all three orations out under it, nos. 2419, 2420 and 2421, each marked C 1,
+so all three are the Common's own with Anicetum for beati N. Nothing is proper, so
+the row lands as a reference and nothing else.
+"""
 
 [[pointers]]
 date = "04-21"
@@ -1031,8 +1290,7 @@ printed_common = "Martyrum tempore paschali I loco"
 printed_bracket = 15
 common_mass = "commune-martyrum-tempore-paschali-1"
 mass = "s-fidelis-sigmaringa-martyris"
-state = "held"
-blocked_by = "the day carries more than one pointer, or one under a seasonal condition"
+state = "landed"
 
 [[pointers]]
 date = "04-26"
@@ -1058,10 +1316,49 @@ printed_rank = "Ill classis"
 printed_incipit = "In medio"
 printed_common = "Doctorum"
 printed_bracket = 22
-common_mass = "commune-doctorum-pontificis"
+common_mass = "commune-doctorum-non-pontificis"
 mass = "s-petri-canisii-confessoris-ecclesiae-doctoris"
 state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+blocked_by = "no tracked public-domain witness prints this day's oration whole"
+note = """
+READ AND HELD, AND THE COMMON CORRECTED WHILE THE ROW STAYED SHUT. The page was
+read on 2026-08-02 at 200 and again at 400 dpi with the rest of the March-April
+run. Two things came off it.
+
+FIRST, THE NUMERAL. The pointer reads `Missa In medio, de Communi Doctorum [22],
+praeter orationem sequentem:` and the extraction wrote `common_mass =
+"commune-doctorum-pontificis"` from the bracket alone. The Secret and the
+Postcommunion printed under the day, nos. 2456 and 2457, are marked C 2, and C 2
+is the set pro Doctore non Pontifice; Peter Canisius was not a bishop.
+`common_mass` is corrected to commune-doctorum-non-pontificis, which is the same
+correction `corroboration` records for S. Bedae, made here before any landing
+rather than after one.
+
+SECOND, THE ORATION, WHICH IS WHY THE ROW IS STILL SHUT. The Collect, no. 2455, is
+marked P, and it is half-corroborated and no more. The Vatican 1604 and the Venice
+1570 carry no Peter Canisius at all - he was beatified in 1864 and canonized and
+declared a Doctor only in 1925. The Pustet Ratisbon 1862 does carry him, at 27
+April, but in its FESTA NOVISSIMA appendix, which that edition's own record warns
+is the publisher's compilation and not the Roman book's contents, and as B. Petri
+Canisii, S. J., Confessoris, with a proper Mass. Its Collect opens with the same
+clause the 1962 prints, `Deus, qui ad tuendam catholicam fidem beatum Petrum
+Confessorem tuum virtute ac doctrina roborasti`, and then petitions differently:
+`ejus, quaesumus, intercessione concede; ut depulsis erroribus Ecclesia tua fiat
+unum ovile et unus pastor`. The 1962's petition, `concede propitius; ut, ejus
+exemplis et monitis, errantes ad salutem resipiscant, et fideles in veritatis
+confessione perseverent`, stands in no witness tracked here. Half a prayer
+corroborated is not a prayer corroborated.
+
+AND THE POINTER IS HELD WITH THE PRAYER, WHICH IS A DIFFERENT DECISION FROM
+02-09'S AND HAS TO BE. At 02-09 landing the pointer alone would have served the
+Common's `beati N.` in place of the day's own prayer. Here it would not:
+commune-doctorum-non-pontificis carries a Secret and a Postcommunion and no
+Collect at all, so the pointer would land cleanly and leave the day with two
+orations and a hole where the third is. That reads as an unfinished transcription
+rather than a refusal, and the refusal is the finding. So the row stays held, on
+the witness and not on the transcription, and a reader counting the remaining work
+off `blocked_by` should not price it at one page image it has already had.
+"""
 
 [[pointers]]
 date = "04-30"
@@ -1075,8 +1372,7 @@ printed_common = "Virginum III loco"
 printed_bracket = 32
 common_mass = "commune-virginum-3"
 mass = "s-catharinae-senensis-virginis"
-state = "held"
-blocked_by = "the day prints orations of its own, which are not transcribed"
+state = "landed"
 
 [[pointers]]
 date = "05-03"

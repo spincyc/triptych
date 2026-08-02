@@ -59,8 +59,29 @@ verification: four tiers; the seasonal Sundays, the Triduum and Palm Sunday carr
   the universal calendar in 1882 and the tracked witnesses stop at 1862, 1604 and
   1570. Its entry stays a placeholder and says so in its own notes, which is what
   the rights record requires where a formulary cannot be shown to be preexisting
-  material. Every remaining entry in those three sections is still a
-  placeholder skeleton
+  material. The same tier was carried through March and April on 2026-08-02, over
+  the third run, 4 March to 30 April at printed pp. 482-515, digital pp. 563-596,
+  read end to end on the page images by the same method and continued two leaves
+  further, to printed p. 517, to settle one defect it found. Ten more entries that
+  held nothing but a placeholder now carry the Common the Missal sends them to,
+  eleven orations transcribed and four proper-level references to the set of a
+  Common that the marginal numeral names rather than the pointer; an eleventh,
+  04-27 S. Petri Canisii, does not, its Collect being half-corroborated and no
+  more - the tracked 1862 prints its opening clause in that edition's own Festa
+  novissima appendix and a different petition after it, and half a prayer
+  corroborated is not a prayer corroborated. That run also found a misattribution
+  of the class recorded at 09-01 and 11-26 - six scripture-bearing propers of
+  S. Ioseph Opificis, 1 May, sat on 04-30 S. Catharinae Senensis, put there by the
+  2026-08-01 text-layer pass running past the FESTA MAII heading. They are moved
+  to 05-01, where the book prints them, with a Tract added from the same page
+  reading; 05-01 is a 1955 feast and carries citations only, its composed texts
+  being new matter no tracked witness reaches. The same run also closed the ten
+  scripture-bearing propers the February run had recorded as missing from entries
+  that pass had filled off the text layer - at 02-02, 02-05, 02-06, 02-11, 02-12
+  and 02-22 - by reading printed pp. 467, 470-471, 474, 475 and 478 on the page
+  images; those six entries now stand on a page reading and their notes say so, and
+  they are the only entries of the text-layer tier that do. Every remaining entry in
+  those three sections is still a placeholder skeleton
 conventions:
 - every Introit concludes with the Gloria Patri and the repeated antiphon; the
   doxology is not repeated per entry
@@ -75,6 +96,20 @@ open_collation_items:
   Per Dominum.); settle one rendering at collation
 - some chant citations were collapsed from the source's discrete verse list to
   a contiguous range; confirm each against the facsimile
+- a day sent to a Common whose entry prints more than one set of orations has no
+  way to say WHICH set it takes. The Missal says it with a numeral beside the C -
+  C 1, C 2, C 3 - and this schema can point a mass at a Common but not at one of a
+  Common's sets, so the numeral survives only in each such entry's notes, which no
+  tool reads. Where the sets live in two mass entries the pointer can carry it, and
+  does, as at 05-27 S. Bedae, sent to commune-doctorum-non-pontificis by a C 2 the
+  bracket does not name; where they live in one entry it cannot. Read on the page
+  images and recorded so far at 03-06
+  (C 2 of commune-non-virginum-1, the plural set), 04-24 (C 3 of
+  commune-martyrum-tempore-paschali-1, the set pro Martyre tantum), and at every
+  entry pointing at commune-summorum-pontificum, whose C 1 is that Common's first
+  of two alternatives. The consequence is that such a mass resolves with all of its
+  Common's sets under it and the reader must take the notes' word for which is
+  appointed. Settle a schema for the set at collation
 - pre-1960 commemorations, suffrages, and suppressed octave texts were omitted
   as not appointed in 1962; confirm against the controlling edition's rubrics
 - 60 commemorations stood inside another celebration's name, in the shape the
@@ -14513,12 +14548,19 @@ sections:
       date: 02-02
       rank: II
       kind: marian
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 464 (digital p.
-        545), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: 'Only the scripture-bearing propers are recorded; the orations the Missal
+        prints for this day are appointed and not transcribed here. The Mass''s six
+        scripture-bearing slots are now complete and read from the page images. Identity,
+        rank and the printed citations were read on 2026-08-01 from the embedded text layer
+        of the CMAA facsimile of the controlling edition, and that pass returned this day
+        short by two slots; the Lesson and the Gradual below were read on 2026-08-02 from
+        the page image at printed p. 467 (digital p. 548), rendered at 200 dpi from the
+        tracked PDF whose sha256 is 648fdb8f, and every other citation on this entry was
+        measured against the same image at the same time and agreed. So this entry no
+        longer stands on a text layer alone. The Alleluia at no. 2111 prints no citation -
+        its verse is Senex Puerum portabat - so there is nothing to encode for it and it is
+        not among the absent. The blessing of candles and the procession that precede the
+        Mass, nos. 2090-2106, are ritual texts and are out of this index''s scope.'
       propers:
       - name: Introit
         source: scripture
@@ -14541,6 +14583,36 @@ sections:
               chapter: 47
               verse: 2
           ref: Psalms 47:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Malachi
+          ranges:
+          - begin:
+              chapter: 3
+              verse: 1
+            end:
+              chapter: 3
+              verse: 4
+          ref: Malachi 3:1-4
+      - name: Gradual
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 47
+              verse: 10
+            end:
+              chapter: 47
+              verse: 11
+          - begin:
+              chapter: 47
+              verse: 9
+            end:
+              chapter: 47
+              verse: 9
+          ref: Psalms 47:10-11, 9
       - name: Tract
         source: scripture
         verses:
@@ -14595,12 +14667,19 @@ sections:
       date: 02-11
       rank: III
       kind: marian
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 473 (digital p.
-        554), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: 'Only the scripture-bearing propers are recorded; the orations the Missal
+        prints for this day are appointed and not transcribed here, and for this day they
+        may not be - the Apparition of Lourdes was extended to the universal calendar in
+        1907 and no witness this repository tracks carries its formulary, so its composed
+        texts stay unpublished under the rule the rights record states. Citations are facts
+        and are carried. Identity, rank and the printed citations were read on 2026-08-01
+        from the embedded text layer of the CMAA facsimile of the controlling edition, and
+        that pass returned this day short by one slot; the Lesson below was read on
+        2026-08-02 from the page image at printed p. 474 (digital p. 555), rendered at 200
+        dpi from the tracked PDF whose sha256 is 648fdb8f, and every other citation on this
+        entry was measured against the page images of printed pp. 473-474 at the same time
+        and agreed. So this entry no longer stands on a text layer alone. The Alleluia at
+        no. 2168 prints no citation, so there is nothing to encode for it.'
       propers:
       - name: Introit
         source: scripture
@@ -14623,6 +14702,30 @@ sections:
               chapter: 44
               verse: 2
           ref: Psalms 44:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Revelation
+          ranges:
+          - begin:
+              chapter: 11
+              verse: 19
+            end:
+              chapter: 11
+              verse: 19
+          - begin:
+              chapter: 12
+              verse: 1
+            end:
+              chapter: 12
+              verse: 1
+          - begin:
+              chapter: 12
+              verse: 10
+            end:
+              chapter: 12
+              verse: 10
+          ref: Revelation 11:19; 12:1, 10
       - name: Gradual
         source: scripture
         verses:
@@ -17927,12 +18030,17 @@ sections:
       date: 02-05
       rank: III
       kind: sanctoral
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 469 (digital p.
-        550), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: 'Only the scripture-bearing propers are recorded; the orations the Missal
+        prints for this day are appointed and not transcribed here. Identity, rank and the
+        printed citations were read on 2026-08-01 from the embedded text layer of the CMAA
+        facsimile of the controlling edition, and that pass returned this day short by one
+        slot; the Offertory below was read on 2026-08-02 from the page image at printed
+        p. 470 (digital p. 551), rendered at 200 dpi from the tracked PDF whose sha256 is
+        648fdb8f, and every other citation on this entry was measured against the page
+        images of printed pp. 469-470 at the same time and agreed. So this entry no longer
+        stands on a text layer alone. The Communion antiphon at no. 2133 prints no
+        citation - Qui me dignatus est ab omni plaga curare - so there is nothing to encode
+        for it and it is not among the absent.'
       propers:
       - name: Introit
         source: scripture
@@ -18006,18 +18114,33 @@ sections:
               chapter: 19
               verse: 12
           ref: Matthew 19:3-12
+      - name: Offertory
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 15
+            end:
+              chapter: 44
+              verse: 15
+          ref: Psalms 44:15
     - key: s-titi-episcopi-confessoris
       name: S. Titi Episcopi et Confessoris
       registry: '1962-02-06'
       date: 02-06
       rank: III
       kind: sanctoral
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 470 (digital p.
-        551), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: 'Only the scripture-bearing propers are recorded; the orations the Missal
+        prints for this day are appointed and not transcribed here. Identity, rank and the
+        printed citations were read on 2026-08-01 from the embedded text layer of the CMAA
+        facsimile of the controlling edition, and that pass returned this day short by one
+        slot; the Alleluia below was read on 2026-08-02 from the page image at printed
+        p. 471 (digital p. 552), rendered at 200 dpi from the tracked PDF whose sha256 is
+        648fdb8f, and every other citation on this entry was measured against the page
+        images of printed pp. 470-471 at the same time and agreed. So this entry no longer
+        stands on a text layer alone.'
       propers:
       - name: Introit
         source: scripture
@@ -18070,6 +18193,18 @@ sections:
               chapter: 44
               verse: 16
           ref: Sirach 44:16
+      - name: Alleluia
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 109
+              verse: 4
+            end:
+              chapter: 109
+              verse: 4
+          ref: Psalms 109:4
       - name: Tract
         source: scripture
         verses:
@@ -18258,12 +18393,21 @@ sections:
       date: 02-12
       rank: III
       kind: sanctoral
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 475 (digital p.
-        556), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: 'Only the scripture-bearing propers are recorded; the orations the Missal
+        prints for this day are appointed and not transcribed here, and for this day they
+        may not be - the Seven Holy Founders were canonized in 1888 and no witness this
+        repository tracks carries their formulary, so its composed texts stay unpublished
+        under the rule the rights record states. Citations are facts and are carried.
+        Identity, rank and the printed citations were read on 2026-08-01 from the embedded
+        text layer of the CMAA facsimile of the controlling edition, and that pass returned
+        this day short by three slots; the Lesson, the Gradual and the Alleluia below were
+        read on 2026-08-02 from the page image at printed p. 475 (digital p. 556), rendered
+        at 200 dpi from the tracked PDF whose sha256 is 648fdb8f, and every other citation
+        on this entry was measured against the same image at the same time and agreed. So
+        this entry no longer stands on a text layer alone. The Gradual prints two
+        citations, Isai. 65, 23 for the respond and Eccli. 44, 14 for its verse, and both
+        are carried; the Alleluia prints Ibid., 15, which is Eccli. 44, 15, and is encoded
+        under the book its Ibid. resolves to rather than under the abbreviation.'
       propers:
       - name: Introit
         source: scripture
@@ -18286,6 +18430,51 @@ sections:
               chapter: 8
               verse: 2
           ref: Psalms 8:2
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Sirach
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 1
+            end:
+              chapter: 44
+              verse: 15
+          ref: Sirach 44:1-15
+      - name: Gradual
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin:
+              chapter: 65
+              verse: 23
+            end:
+              chapter: 65
+              verse: 23
+          ref: Isaiah 65:23
+        - book: Sirach
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 14
+            end:
+              chapter: 44
+              verse: 14
+          ref: Sirach 44:14
+      - name: Alleluia
+        source: scripture
+        verses:
+        - book: Sirach
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 15
+            end:
+              chapter: 44
+              verse: 15
+          ref: Sirach 44:15
       - name: Tract
         source: scripture
         verses:
@@ -18465,12 +18654,21 @@ sections:
       date: 02-22
       rank: II
       kind: sanctoral
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 477 (digital p.
-        558), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: 'Only the scripture-bearing propers are recorded; the orations the Missal
+        prints for this day are appointed and not transcribed here. Identity, rank and the
+        printed citations were read on 2026-08-01 from the embedded text layer of the CMAA
+        facsimile of the controlling edition, and that pass returned this day short by two
+        slots, one of them the Gospel; the Gradual and the Gospel below were read on
+        2026-08-02 from the page image at printed p. 478 (digital p. 559), rendered at 200
+        dpi from the tracked PDF whose sha256 is 648fdb8f, and every other citation on this
+        entry was measured against the page images of printed pp. 477-479 at the same time
+        and agreed. So this entry no longer stands on a text layer alone. One printed
+        citation is read and not carried: the Missal gives two Alleluias, the votive one at
+        no. 2203 which this entry holds, Matth. 16, 18, and a paschal one at no. 2204 whose
+        first verse is Ps. 106, 15. Carrying it would need a second proper named Alleluia or
+        a variant name, and the same choice falls at every day in this index that prints a
+        paschal alternative, so it is recorded here and settled nowhere yet rather than
+        settled here alone.'
       propers:
       - name: Introit
         source: scripture
@@ -18505,6 +18703,24 @@ sections:
               chapter: 1
               verse: 7
           ref: 1 Peter 1:1-7
+      - name: Gradual
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 106
+              verse: 32
+            end:
+              chapter: 106
+              verse: 32
+          - begin:
+              chapter: 106
+              verse: 31
+            end:
+              chapter: 106
+              verse: 31
+          ref: Psalms 106:32, 31
       - name: Tract
         source: scripture
         verses:
@@ -18529,6 +18745,18 @@ sections:
               chapter: 16
               verse: 18
           ref: Matthew 16:18
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 16
+              verse: 13
+            end:
+              chapter: 16
+              verse: 19
+          ref: Matthew 16:13-19
       - name: Offertory
         source: scripture
         verses:
@@ -18891,12 +19119,37 @@ sections:
       date: 03-04
       rank: III
       kind: sanctoral
+      notes: 'The Missal gives this day the Mass of the Common named below except for its
+        Collect, which the pointer says in terms - praeter orationem sequentem - and which
+        stands under the day at marginal no. 2238 marked P. It also prints the Secret and
+        the Postcommunion in full, at nos. 2240 and 2242, and marks each C; both are the
+        Commune Confessoris non Pontificis I loco''s own word for word, so neither is
+        transcribed here and neither is absent. That reading is the mirror of 01-28, where
+        the same two prayers are printed marked P because that day is sent to the SECOND
+        Mass of the same Common and these are the first Mass''s. Nothing else is absent by
+        omission: the day prints no Introit, reading, chant or Communion antiphon, because
+        it takes them all from the Common. Read on 2026-08-02 from the page images of the
+        CMAA facsimile of the controlling edition at printed pp. 482-483 (digital pp.
+        563-564), rendered at 200 dpi and again at 400 dpi from the tracked PDF whose
+        sha256 is 648fdb8f; no OCR text layer supplied a reading. The Collect is published
+        as preexisting material under 17 U.S.C. 103(b) and not on any property of the 1962
+        edition: the tracked public-domain Pustet Ratisbon 1862 prints it under 4 March,
+        beneath the same rubric praeter Orationem sequentem, word for word, diverging only
+        in printing coelestia for caelestia and a comma after delicias. The orthography is
+        this file''s, not the typica''s.'
+      takes_from:
+        mass: commune-confessoris-non-pontificis-1
+        citation: Missa Os justi, de Communi Confessoris non Pontificis I loco [24], praeter
+          orationem sequentem
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui inter regales
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 483, no. 2238, marked P.
+        text: |
+          Deus, qui inter regales delicias et mundi illecebras sanctum Casimirum
+          virtute constantiae roborasti: quaesumus; ut ejus intercessione fideles
+          tui terrena despiciant, et ad caelestia semper aspirent. Per Dominum.
     - key: comm-s-lucii-i-papae-martyris
       name: Comm. S. Lucii I Papae et Martyris
       registry: '1962-03-04-comm'
@@ -18920,12 +19173,56 @@ sections:
       date: 03-06
       rank: III
       kind: sanctoral
+      notes: 'THE NUMERAL DECIDES THIS DAY, NOT THE POINTER. The Missal sends it to Missa
+        Me exspectaverunt, de Communi non Virginum I loco [35], cum orationibus ut infra,
+        and prints three orations under it. The Collect and the Secret name Perpetua and
+        Felicitas outright and read proper, and each is marked C 2: they are that Common''s
+        SECOND set, the one headed Pro pluribus Martyribus quae non sint Virgines, with the
+        names supplied for N. et N., so neither is transcribed here and neither is absent.
+        The two printings of the Collect diverge by one letter, and the divergence is
+        recorded rather than resolved - the Commune at printed p. [36], no. 4444, prints
+        sanctarum Martyrum tuarum N. et N. palmas, and the day at printed p. 483, no. 2244,
+        prints Perpetuae et Felicitatis palmam; both were read on the page image at 400 dpi
+        and the 1862 witness prints palmas. WHICH SET, AND WHERE THAT IS
+        RECORDED. The Common''s first set is singular - beatae N. Martyris tuae - and would
+        have given two martyrs the prayers of one, which is the S. Bedae distinction over
+        again, on a Common whose two sets live in one entry rather than in two. This schema
+        can point a mass at a Common but not at one of a Common''s sets, so the reference
+        below is to the Common entire, both its sets resolve under this day, and the numeral
+        that chooses between them is recorded here and nowhere a tool reads. The gap is
+        entered in this file''s open_collation_items. The Postcommunion names them too but is
+        marked P, so it is proper to the day and is transcribed. The day prints no Introit,
+        reading, chant or Communion antiphon,
+        because it takes them all from the Common. Read on 2026-08-02 from the page image of
+        the CMAA facsimile of the controlling edition at printed p. 483 (digital p. 564),
+        rendered at 200 dpi and again at 400 dpi from the tracked PDF whose sha256 is
+        648fdb8f; no OCR text layer supplied a reading, and the Commune''s own page, printed
+        p. [36] (digital p. 844), was read at 400 dpi beside it. The Postcommunion is
+        published as preexisting material under 17 U.S.C. 103(b) and not on any property of
+        the 1962 edition, and the witness diverges in which day it stands on, which is
+        recorded rather than harmonised. The tracked public-domain Pustet Ratisbon 1862
+        gives 6 March no Mass at all: it keeps Perpetua and Felicitas as a commemoration
+        inside S. Thomas Aquinas''s Mass on 7 March, prints their Collect and Secret there
+        word for word, and gives them the Postcommunion Praesta nobis, quaesumus Domine,
+        intercedentibus sanctis Martyribus tuis Perpetua et Felicitate, not this one. The
+        prayer the 1962 prints here stands in the 1862 at 25 October, under Ss. Chrysanthi
+        et Dariae, word for word with sanctorum Martyrum tuorum Chrysanthi et Dariae for
+        sanctarum Martyrum tuarum Perpetuae et Felicitatis and a comma after ut. So the
+        formula is preexisting and what has moved is the day it stands on and the gender of
+        the names in it. The orthography is this file''s, not the typica''s.'
+      takes_from:
+        mass: commune-non-virginum-1
+        citation: Missa Me exspectaverunt, de Communi non Virginum I loco [35], cum orationibus
+          ut infra
       propers:
-      - name: Placeholder
+      - name: Postcommunion
+        incipit: Mysticis, Domine, repleti
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 483, no. 2246, marked P.
+        text: |
+          Mysticis, Domine, repleti sumus votis et gaudiis: praesta, quaesumus; ut
+          intercessionibus sanctarum Martyrum tuarum Perpetuae et Felicitatis, quae
+          temporaliter agimus, spiritualiter consequamur. Per Dominum.
     - key: s-thomae-aquino-confessoris-ecclesiae-doctoris
       name: S. Thomae de Aquino Confessoris et Ecclesiae Doctoris
       registry: '1962-03-07'
@@ -19126,12 +19423,41 @@ sections:
       date: 03-09
       rank: III
       kind: sanctoral
+      notes: 'The Missal gives this day the Mass of the Common named below except for its
+        Collect, which the pointer says in terms - praeter orationem sequentem - and which
+        stands under the day at marginal no. 2267 marked P. It also prints the Secret and
+        the Postcommunion in full, at nos. 2268 and 2269, and marks each C; both are the
+        Commune non Virginum II loco''s own word for word, which that Common carries by
+        reference to the Commune Virginum III loco where the Missal first prints them, so
+        neither is transcribed here and neither is absent. Nothing else is absent by
+        omission: the day prints no Introit, reading, chant or Communion antiphon, because
+        it takes them all from the Common. Read on 2026-08-02 from the page image of the
+        CMAA facsimile of the controlling edition at printed p. 486 (digital p. 567),
+        rendered at 200 dpi and again at 400 dpi from the tracked PDF whose sha256 is
+        648fdb8f; no OCR text layer supplied a reading. The Collect is published as
+        preexisting material under 17 U.S.C. 103(b) and not on any property of the 1962
+        edition: the tracked public-domain Pustet Ratisbon 1862 prints it under 9 March,
+        beneath the same rubric praeter Orationem sequentem, word for word, diverging only
+        in punctuating dona with a semicolon and in ending at the short cue Per Dominum
+        where the 1962 prints the conclusion out. That book names the same Mass by a
+        different rubric, de Comm. nec Virg. nec Mart. [35], which is its own name and
+        pagination for the Commune this edition calls non Virginum II loco [37]. The
+        orthography is this file''s, not the typica''s.'
+      takes_from:
+        mass: commune-non-virginum-2
+        citation: Missa Cognovi, de Communi non Virginum II loco [37], praeter orationem
+          sequentem
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui beatam Franciscam
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 486, no. 2267, marked P.
+        text: |
+          Deus, qui beatam Franciscam famulam tuam, inter cetera gratiae tuae dona,
+          familiari Angeli consuetudine decorasti: concede, quaesumus; ut,
+          intercessionis ejus auxilio, Angelorum consortium consequi mereamur. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
     - key: ss-quadraginta-martyrum
       name: Ss. Quadraginta Martyrum
       registry: '1962-03-10'
@@ -19232,24 +19558,91 @@ sections:
       date: 03-12
       rank: III
       kind: sanctoral
+      notes: 'The Missal gives this day the Mass of the Common named below and prints three
+        orations under it, each marked P and each different from that Common''s own; they
+        are proper to the day and are transcribed below. Nothing else is absent by
+        omission: the day prints no Introit, reading, chant or Communion antiphon, because
+        it takes them all from the Common. Read on 2026-08-02 from the page image of the
+        CMAA facsimile of the controlling edition at printed p. 488 (digital p. 569),
+        rendered at 200 dpi and again at 400 dpi for each prayer from the tracked PDF whose
+        sha256 is 648fdb8f; no OCR text layer supplied a reading. The orations stand at
+        marginal nos. 2280, 2281 and 2282. They are published as preexisting material under
+        17 U.S.C. 103(b) and not on any property of the 1962 edition: the tracked
+        public-domain Pustet Ratisbon 1862 prints all three under 12 March, word for word,
+        diverging only in dropping the comma after ut in the Collect, in printing quaesumus
+        Domine without a comma in the Secret, in setting a comma after Pontificem in the
+        Postcommunion, and in ending each at the short cue Per Dominum where the 1962 prints
+        two of the conclusions out. What has moved between the two books is not the prayers
+        but the Mass around them: the 1862 gives Gregory a proper Mass of his own, Introit
+        Sacerdotes Dei, where the 1962 sends him to the Commune Summorum Pontificum. The
+        orthography is this file''s, not the typica''s.'
+      takes_from:
+        mass: commune-summorum-pontificum
+        citation: Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1],
+          cum orationibus ut infra
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui animae famuli
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 488, no. 2280, marked P.
+        text: |
+          Deus, qui animae famuli tui Gregorii aeternae beatitudinis praemia
+          contulisti: concede propitius; ut, qui peccatorum nostrorum pondere
+          premimur, ejus apud te precibus sublevemur. Per Dominum nostrum Jesum
+          Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
+      - name: Secret
+        incipit: Annue nobis, quaesumus
+        source: composed
+        notes: Printed p. 488, no. 2281, marked P.
+        text: |
+          Annue nobis, quaesumus, Domine: ut intercessione beati Gregorii haec nobis
+          prosit oblatio, quam immolando totius mundi tribuisti relaxari delicta. Per
+          Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
+          unitate.
+      - name: Postcommunion
+        incipit: Deus, qui beatum Gregorium
+        source: composed
+        notes: Printed p. 488, no. 2282, marked P.
+        text: |
+          Deus, qui beatum Gregorium Pontificem Sanctorum tuorum meritis coaequasti:
+          concede propitius; ut, qui commemorationis ejus festa percolimus, vitae
+          quoque imitemur exempla. Per Dominum.
     - key: s-patricii-episcopi-confessoris
       name: S. Patricii Episcopi et Confessoris
       registry: '1962-03-17'
       date: 03-17
       rank: III
       kind: sanctoral
+      notes: 'The Missal gives this day the Mass of the Common named below except for its
+        Collect, which the pointer says in terms - praeter orationem sequentem - and which
+        stands under the day at marginal no. 2283 marked P. It also prints the Secret and
+        the Postcommunion in full, at nos. 2284 and 2285, and marks each C; both are the
+        Commune Confessoris Pontificis I loco''s own word for word once Patricio is read for
+        beati N., so neither is transcribed here and neither is absent. Nothing else is
+        absent by omission: the day prints no Introit, reading, chant or Communion antiphon,
+        because it takes them all from the Common. Read on 2026-08-02 from the page image of
+        the CMAA facsimile of the controlling edition at printed p. 488 (digital p. 569),
+        rendered at 200 dpi and again at 400 dpi from the tracked PDF whose sha256 is
+        648fdb8f; no OCR text layer supplied a reading. The Collect is published as
+        preexisting material under 17 U.S.C. 103(b) and not on any property of the 1962
+        edition: the tracked public-domain Pustet Ratisbon 1862 prints it under 17 March,
+        beneath the same rubric praeter Orationem seq., word for word, diverging only in
+        spelling the saint Patritium for Patricium and in setting commas after Confessorem
+        and Pontificem. The orthography is this file''s, not the typica''s.'
+      takes_from:
+        mass: commune-confessoris-pontificis-1
+        citation: Missa Statuit, de Communi Confessoris Pontificis I loco [19], praeter orationem
+          sequentem
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui ad praedicandam
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 488, no. 2283, marked P.
+        text: |
+          Deus, qui ad praedicandam gentibus gloriam tuam beatum Patricium
+          Confessorem atque Pontificem mittere dignatus es: ejus meritis et
+          intercessione concede; ut, quae nobis agenda praecipis, te miserante
+          adimplere possimus. Per Dominum.
     - key: s-cyrilli-episcopi-hierosolymitani-confessoris-ecclesiae
       name: S. Cyrilli Episcopi Hierosolymitani, Confessoris et Ecclesiae Doctoris
       registry: '1962-03-18'
@@ -19869,24 +20262,60 @@ sections:
       date: 04-05
       rank: III
       kind: sanctoral
+      notes: 'The Missal gives this day the Mass of the Common named below except for its
+        Collect, which the pointer says in terms - praeter orationem sequentem - and which
+        stands under the day at marginal no. 2386 marked P. It also prints the Secret and
+        the Postcommunion in full, at nos. 2387 and 2388, and marks each C; both are the
+        Commune Confessoris non Pontificis I loco''s own word for word, so neither is
+        transcribed here and neither is absent. Nothing else is absent by omission: the day
+        prints no Introit, reading, chant or Communion antiphon, because it takes them all
+        from the Common. Read on 2026-08-02 from the page image of the CMAA facsimile of the
+        controlling edition at printed p. 503 (digital p. 584), rendered at 200 dpi and
+        again at 400 dpi from the tracked PDF whose sha256 is 648fdb8f; no OCR text layer
+        supplied a reading. The Collect is published as preexisting material under 17 U.S.C.
+        103(b) and not on any property of the 1962 edition: the tracked public-domain Pustet
+        Ratisbon 1862 prints it under 5 April, beneath the same rubric praeter Orationem
+        sequentem, word for word, diverging only in punctuation - a comma after meritis and
+        two more around eius patrocinio - and in numbering the same Common [22] where this
+        edition numbers it [24]. The orthography is this file''s, not the typica''s.'
+      takes_from:
+        mass: commune-confessoris-non-pontificis-1
+        citation: Missa Os justi, de Communi Confessoris non Pontificis I loco [24], praeter
+          orationem sequentem
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui Ecclesiam tuam
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 503, no. 2386, marked P.
+        text: |
+          Deus, qui Ecclesiam tuam beati Vincentii Confessoris tui meritis et
+          praedicatione illustrare dignatus es: concede nobis famulis tuis; ut et
+          ipsius instruamur exemplis, et ab omnibus ejus patrocinio liberemur
+          adversis. Per Dominum nostrum.
     - key: s-leonis-i-papae-confessoris-ecclesiae
       name: S. Leonis I Papae, Confessoris et Ecclesiae Doctoris
       registry: '1962-04-11'
       date: 04-11
       rank: III
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: 'The Missal gives this day the whole Mass of the Common named below; the pointer
+        carries no qualifier and ends at the bracket. It nevertheless prints all three
+        orations out under the day, at marginal nos. 2389, 2390 and 2391, and marks each
+        C 1 - of the Common, first set - so all three are that Common''s own with Leonem
+        supplied for beati N. and with Martyrem tuum atque dropped, Leo not having been a
+        martyr. None is transcribed here and none is absent, and nothing else is absent by
+        omission: the day prints no Introit, reading, chant or Communion antiphon either.
+        This entry had no pointer row in
+        src/sources/inventories/roman-1962-sanctoral-commons-v1.toml before this run, so a
+        placeholder-only entry can be landable while that file holds no pointer for it. Read
+        on 2026-08-02 from the page images of the CMAA facsimile of the controlling edition
+        at printed pp. 503-504 (digital pp. 584-585), rendered at 200 dpi from the tracked
+        PDF whose sha256 is 648fdb8f; no OCR text layer supplied a reading. No Latin of this
+        day is published here, so no public-domain witness is required for it; the tracked
+        Pustet Ratisbon 1862 keeps the day at 11 April all the same.'
+      takes_from:
+        mass: commune-summorum-pontificum
+        citation: Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1]
     - key: s-hermenegildi-martyris
       name: S. Hermenegildi Martyris
       registry: '1962-04-13'
@@ -20075,24 +20504,76 @@ sections:
       date: 04-14
       rank: Comm.
       kind: sanctoral
+      notes: 'THIS ENTRY CARRIES ORATIONS AND NO POINTER, AND THE ABSENCE IS THE READING.
+        The Missal gives the day two Masses under a seasonal condition and takes one of them
+        apart: Tempore paschali, Missa Sancti tui, de Communi Martyrum II loco [17], cum
+        Epistola et Evangelio ex Missa Protexisti, de Communi Martyrum I loco [15], et cum
+        orationibus ut infra; Extra tempus paschale, Missa Sapientiam, de Communi plurimorum
+        Martyrum II loco [11], cum orationibus pariter ut infra. Three pointers, one of them
+        splitting the chants of one Common from the readings of another, and this schema
+        carries one takes_from per mass, so none is written and all three are quoted here
+        instead. The orations are the same under either rubric - cum orationibus pariter ut
+        infra says so - and all three are marked P, so all three are transcribed below. The
+        Missal prints them twice: once under this heading at nos. 2416, 2417 and 2418, and
+        once inside the Mass of S. Iustini on the facing column at nos. 2403, 2412 and 2415,
+        the last two headed Pro Ss. Martyribus. The two printings agree word for word and
+        differ only in the conclusion cue, which the second prints out and the first
+        abbreviates; the text carried here is the day''s own heading, at the marginal numbers
+        named on each proper. Read on 2026-08-02 from the page images of the CMAA facsimile
+        of the controlling edition at printed pp. 505-507 (digital pp. 586-588), rendered at
+        200 dpi and again at 400 dpi for each prayer from the tracked PDF whose sha256 is
+        648fdb8f; no OCR text layer supplied a reading. The orations are published as
+        preexisting material under 17 U.S.C. 103(b) and not on any property of the 1962
+        edition: the tracked public-domain Pustet Ratisbon 1862 prints all three under 14
+        April, word for word, printing natalitia for natalicia in the Secret and setting
+        commas where this edition sets none. The orthography is this file''s, not the
+        typica''s.'
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Praesta, quaesumus, omnipotens
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 507, no. 2416, marked P.
+        text: |
+          Praesta, quaesumus, omnipotens Deus: ut, qui sanctorum Martyrum tuorum
+          Tiburtii, Valeriani et Maximi solemnia colimus; eorum etiam virtutes
+          imitemur. Per Dominum.
+      - name: Secret
+        incipit: Haec hostia, quaesumus
+        source: composed
+        notes: Printed p. 507, no. 2417, marked P.
+        text: |
+          Haec hostia, quaesumus, Domine, quam sanctorum Martyrum tuorum natalicia
+          recensentes offerimus: et vincula nostrae pravitatis absolvat, et tuae nobis
+          misericordiae dona conciliet. Per Dominum.
+      - name: Postcommunion
+        incipit: Sacro munere satiati
+        source: composed
+        notes: Printed p. 507, no. 2418, marked P.
+        text: |
+          Sacro munere satiati, supplices te, Domine, deprecamur: ut, quod debitae
+          servitutis celebramus officio, salvationis tuae sentiamus augmentum. Per
+          Dominum.
     - key: comm-s-aniceti-papae-martyris
       name: Comm. S. Aniceti Papae et Martyris
       registry: '1962-04-17'
       date: 04-17
       rank: Comm.
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      notes: 'The Missal gives this day the whole Mass of the Common named below; the pointer
+        carries no qualifier and ends at the bracket. It nevertheless prints all three
+        orations out under the day, at marginal nos. 2419, 2420 and 2421, and marks each
+        C 1 - of the Common, first set - so all three are that Common''s own with Anicetum
+        supplied for beati N. None is transcribed here and none is absent, and the day prints
+        no Introit, reading, chant or Communion antiphon either. This entry had no pointer
+        row in src/sources/inventories/roman-1962-sanctoral-commons-v1.toml before this run.
+        Read on 2026-08-02 from the page images of the CMAA facsimile of the controlling
+        edition at printed pp. 507-508 (digital pp. 588-589), rendered at 200 dpi from the
+        tracked PDF whose sha256 is 648fdb8f; no OCR text layer supplied a reading. No Latin
+        of this day is published here, so no public-domain witness is required for it; the
+        tracked Pustet Ratisbon 1862 keeps the day at 17 April all the same.'
+      takes_from:
+        mass: commune-summorum-pontificum
+        citation: Missa Si diligis me, de Communi unius aut plurium Summorum Pontificum [1]
     - key: s-anselmi-episcopi-confessoris-ecclesiae-doctoris
       name: S. Anselmi Episcopi, Confessoris et Ecclesiae Doctoris
       registry: '1962-04-21'
@@ -20207,12 +20688,52 @@ sections:
       date: 04-24
       rank: III
       kind: sanctoral
+      notes: 'THE NUMERAL DECIDES THIS DAY. The Missal sends it to Missa Protexisti, de
+        Communi Martyrum tempore paschali I loco [15], cum orationibus ut infra, and prints
+        three orations under it. The Collect, at marginal no. 2437, is marked P and is
+        transcribed below. The Secret and the Postcommunion, at nos. 2438 and 2439, are
+        marked C 3 - of the Common, third set - and the third set of that Common is the one
+        headed Pro Martyre tantum at nos. 4283 and 4288, which is what a priest''s Mass takes
+        and not the Pontifex set the Common prints first. Neither is transcribed here and
+        neither is absent. This schema can point a mass at a Common but not at one of a
+        Common''s four sets, so the reference below is to the Common entire, all four sets
+        resolve under this day, and the numeral that chooses among them is recorded here and
+        nowhere a tool reads; the gap is entered in this file''s open_collation_items. A
+        reader taking the Common''s first set would give a Capuchin priest a bishop''s Secret
+        and Postcommunion. The tracked witness settles the same point from the other side:
+        the Pustet Ratisbon 1862 sends this day to the Commune unius Martyris tempore
+        paschali and then says in terms Secreta et Postcommunio ex Missa In virtute, de
+        Communi unius Martyris extra temp. Pasch., which is the Mass this file carries as
+        commune-unius-martyris-3 and is exactly where the 1962''s third set is printed from.
+        The Missal adds a votive rubric after the orations - Pro votiva extra tempus
+        paschale, Missa In virtute, de Communi unius Martyris III loco [6], cum oratione ut
+        supra - which governs votive use and not the day, so it is quoted here and not
+        carried as a second pointer. Nothing else is absent by omission: the day prints no
+        Introit, reading, chant or Communion antiphon, because it takes them all from the
+        Common. Read on 2026-08-02 from the page images of the CMAA facsimile of the
+        controlling edition at printed pp. 509-510 (digital pp. 590-591), rendered at 200
+        dpi and again at 400 dpi from the tracked PDF whose sha256 is 648fdb8f; no OCR text
+        layer supplied a reading. The Collect is published as preexisting material under 17
+        U.S.C. 103(b) and not on any property of the 1962 edition: the 1862 prints it under
+        24 April word for word, diverging only in setting a comma after palma and in ending
+        at the short cue Per Dominum where the 1962 prints the conclusion out. The
+        orthography is this file''s, not the typica''s.'
+      takes_from:
+        mass: commune-martyrum-tempore-paschali-1
+        citation: Missa Protexisti, de Communi Martyrum tempore paschali I loco [15], cum
+          orationibus ut infra
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui beatum Fidelem
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        notes: Printed p. 510, no. 2437, marked P.
+        text: |
+          Deus, qui beatum Fidelem, seraphico spiritus ardore succensum, in verae fidei
+          propagatione martyrii palma et gloriosis miraculis decorare dignatus es:
+          ejus, quaesumus, meritis et intercessione, ita nos per gratiam tuam in fide
+          et caritate confirma; ut in servitio tuo fideles usque ad mortem inveniri
+          mereamur. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et
+          regnat in unitate.
     - key: litania-maior
       name: Litania maior; S. Marci Evangelistae
       registry: '1962-04-25'
@@ -20296,6 +20817,38 @@ sections:
       date: 04-27
       rank: III
       kind: sanctoral
+      notes: 'HELD DELIBERATELY, AND NOT FOR WANT OF READING. The page was read on 2026-08-02
+        with the rest of the March-April run, at printed p. 512 (digital p. 593) of the CMAA
+        facsimile of the controlling edition, at 200 dpi and again at 400 dpi. The Missal
+        sends this day to Missa In medio, de Communi Doctorum [22], praeter orationem
+        sequentem, and marks the Secret and the Postcommunion it prints under the day, at
+        nos. 2456 and 2457, C 2 - which is the Commune Doctorum set pro Doctore non
+        Pontifice, Peter Canisius not having been a bishop, the same distinction that would
+        have given S. Bedae the wrong Secret. The Collect, no. 2455, is marked P, and it is
+        the Collect that cannot be published. This repository''s tracked witnesses were
+        searched for it and the result is a partial match, which is worth recording exactly
+        because it is more informative than an absence. The Vatican 1604 and the Venice 1570
+        carry no Peter Canisius at all: he was beatified in 1864 and canonized and declared
+        a Doctor of the Church only in 1925. The Pustet Ratisbon 1862 does carry him, but in
+        its FESTA NOVISSIMA appendix, which that edition''s own record warns is the
+        publisher''s compilation and not the Roman book''s contents, and there he is B. Petri
+        Canisii, S. J., Confessoris, at 27 April, with a proper Mass of his own. Its Collect
+        opens with the same clause the 1962 prints - Deus, qui ad tuendam catholicam fidem
+        beatum Petrum Confessorem tuum virtute ac doctrina roborasti - and then petitions
+        differently: ejus, quaesumus, intercessione concede; ut depulsis erroribus Ecclesia
+        tua fiat unum ovile et unus pastor. The 1962''s petition, concede propitius; ut, ejus
+        exemplis et monitis, errantes ad salutem resipiscant, et fideles in veritatis
+        confessione perseverent, stands in no witness this repository tracks. Half a prayer
+        corroborated is not a prayer corroborated, and publishing it would publish the half
+        that is not, so nothing of it is written here. Landing the pointer alone would leave
+        the day with a Secret and a Postcommunion and no Collect at all, which reads as an
+        unfinished transcription rather than a refusal, so the pointer is held with the
+        prayer. Under 17 U.S.C. 103(b) what may be published is what the 1962 edition did
+        not contribute, and a petition this repository cannot find in any witness it tracks
+        is not shown to be preexisting. The day prints no scripture-bearing proper of its
+        own, so there is nothing to carry as fact either, and this entry stays a placeholder
+        until a witness between 1862 and 1920 that prints it is tracked here. This is the
+        March-April run''s counterpart of 02-09 S. Cyrilli Alexandrini.'
       propers:
       - name: Placeholder
         source: composed
@@ -20487,12 +21040,79 @@ sections:
       date: 04-30
       rank: III
       kind: sanctoral
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 515 (digital p.
-        596), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: 'A MISATTRIBUTION FOUND AND CORRECTED, AND THEN THE DAY READ. Until 2026-08-02
+        this entry carried six scripture-bearing propers - Introit Sap. 10, 17 with Ps. 126,
+        1, Epistle Col. 3, 14-15, 17, 23-24, Gradual Ps. 127, 1-2, Gospel Mt. 13, 54-58,
+        Offertory Ps. 89, 17 and Communion Mt. 13, 54, 55 - and none of them is this day''s.
+        They are the Mass of S. Ioseph Opificis at 1 May, printed on the leaf after this one,
+        and they are now on that entry, where the Missal prints them. They came from the
+        2026-08-01 pass that gave 149 saints'' Masses their citations off this book''s text
+        layer, and they failed the way 09-01 and 11-26 failed: the pass matched the day
+        heading and then took the propers printed after it, without stopping at the FESTA
+        MAII / Die 1 maii heading that stands between. That is the third instance of the
+        class and the first found inside a March-April run. What this day actually prints is
+        no scripture-bearing proper at all: it takes Introit, readings, chants and Communion
+        antiphon from the Common named below, and prints under it three orations, at marginal
+        nos. 2479, 2480 and 2481, each marked P and so proper to the day. All three are
+        transcribed here. Read on 2026-08-02 from the page images of the CMAA facsimile of
+        the controlling edition at printed pp. 515-517 (digital pp. 596-598), rendered at 200
+        dpi and again at 400 dpi for each prayer from the tracked PDF whose sha256 is
+        648fdb8f; no OCR text layer supplied a reading. The orations are published as
+        preexisting material under 17 U.S.C. 103(b) and not on any property of the 1962
+        edition: the tracked public-domain Pustet Ratisbon 1862 prints all three under 30
+        April, word for word, printing natalitia for natalicia and coelestis for caelestis
+        and punctuating the Secret''s preces with a semicolon. That book names the same Mass
+        Dilexisti by a different rubric, de Communi Virg. [30], ritu Paschali, cum Orationibus
+        seq. The orthography is this file''s, not the typica''s.'
+      takes_from:
+        mass: commune-virginum-3
+        citation: Missa Dilexisti, de Communi Virginum III loco [32], cum orationibus ut infra
+      propers:
+      - name: Collect
+        incipit: Da, quaesumus, omnipotens
+        source: composed
+        notes: Printed p. 515, no. 2479, marked P.
+        text: |
+          Da, quaesumus, omnipotens Deus: ut, qui beatae Catharinae Virginis tuae
+          natalicia colimus; et annua solemnitate laetemur, et tantae virtutis
+          proficiamus exemplo. Per Dominum.
+      - name: Secret
+        incipit: Ascendant ad te, Domine
+        source: composed
+        notes: Printed p. 515, no. 2480, marked P.
+        text: |
+          Ascendant ad te, Domine, quas in beatae Catharinae solemnitate offerimus,
+          preces, et hostia salutaris, virgineo fragrans odore. Per Dominum.
+      - name: Postcommunion
+        incipit: Aeternitatem nobis, Domine
+        source: composed
+        notes: Printed p. 515, no. 2481, marked P.
+        text: |
+          Aeternitatem nobis, Domine, conferat, qua pasti sumus, mensa caelestis: quae
+          beatae Catharinae Virginis vitam etiam aluit temporalem. Per Dominum
+          nostrum.
+    - key: s-ioseph-opificis-sponsi-beatae-mariae
+      name: S. Ioseph Opificis, Sponsi Beatae Mariae Virginis, Confessoris
+      registry: '1962-05-01'
+      date: 05-01
+      rank: I
+      kind: sanctoral
+      notes: 'Only the scripture-bearing propers are recorded, and for this day only they may
+        be: the feast was instituted in 1955 and its composed texts are therefore the 1962
+        edition''s own stratum, which 17 U.S.C. 103(b) does not reach and no witness this
+        repository tracks carries, so the Collect at no. 2483, the Secret at no. 2491 and the
+        Postcommunion at no. 2493 are read and not transcribed. Citations are facts and are
+        carried. These six propers were on 04-30 S. Catharinae Senensis until 2026-08-02,
+        put there by the 2026-08-01 text-layer pass that ran past the FESTA MAII heading;
+        they are moved here, where the Missal prints them, and the move is recorded in that
+        entry''s own notes. Read on 2026-08-02 from the page images of the CMAA facsimile of
+        the controlling edition at printed pp. 516-517 (digital pp. 597-598), rendered at 200
+        dpi from the tracked PDF whose sha256 is 648fdb8f, which is a page reading and not
+        the text-layer tier the moved propers carried before. The Tract at no. 2488 is added
+        from the same reading. Two Alleluia verses are printed and are not carried: the
+        paschal one at no. 2485 and the votive one at no. 2487 print no citation at all, the
+        second being the hymn stanza Fac nos innocuam, Ioseph, decurrere vitam, so there is
+        nothing to encode. The orations are appointed and not absent.'
       propers:
       - name: Introit
         source: scripture
@@ -20551,6 +21171,18 @@ sections:
               chapter: 127
               verse: 2
           ref: Psalms 127:1-2
+      - name: Tract
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 111
+              verse: 1
+            end:
+              chapter: 111
+              verse: 3
+          ref: Psalms 111:1-3
       - name: Gospel
         source: scripture
         verses:
@@ -20593,18 +21225,6 @@ sections:
               chapter: 13
               verse: 55
           ref: Matthew 13:54, 55
-    - key: s-ioseph-opificis-sponsi-beatae-mariae
-      name: S. Ioseph Opificis, Sponsi Beatae Mariae Virginis, Confessoris
-      registry: '1962-05-01'
-      date: 05-01
-      rank: I
-      kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
     - key: s-athanasii-episcopi-confessoris-ecclesiae-doctoris
       name: S. Athanasii Episcopi, Confessoris et Ecclesiae Doctoris
       registry: '1962-05-02'
