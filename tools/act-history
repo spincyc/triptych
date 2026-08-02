@@ -566,6 +566,39 @@ def resolve_withholdings(data: dict, source: Path) -> None:
                 )
 
 
+# What a row would be carrying BESIDE the marker that says it carries nothing.
+# Named per table because the words of a canon and the words of a responsum live
+# under different keys; the leak is the same one either way.
+WITHHELD_WORDS = {
+    "units": ("incipit", "text"),
+    "departures": ("incipit", "text"),
+    "interpretations": ("dubium", "responsum"),
+}
+
+
+def withheld_and_carried(row: dict, fields: tuple[str, ...], where: str) -> list[str]:
+    """Every way one row both withholds its words and carries them.
+
+    `withheld` is a rights position, and the renderers act on it: `unit_body`
+    writes `[text withheld: ...]` where the incipit would stand and
+    `interpretation_block` writes `[words withheld: ...]` above the entry. Both
+    then write whatever words the row does hold, underneath the notice saying
+    there are none. A marker nothing enforces is worth less than no marker,
+    because a reader who has seen it hold once relies on it holding.
+
+    An EMPTY field is not "carried". Clearing `text` is exactly how an act
+    withdraws words the record once held, and refusing that would leave a slice
+    unable to say that a published text became unpublishable.
+    """
+    if not str(row.get("withheld") or "").strip():
+        return []
+    return [
+        f"{where}: carries `{field}` and also withholds its words; one or the other"
+        for field in fields
+        if str(row.get(field) or "").strip()
+    ]
+
+
 def overlay(base: dict, extension: dict, source: Path) -> dict:
     """Read one slice on top of another. Additive, or amended in writing."""
     merged = dict(base)
@@ -1274,6 +1307,18 @@ def build(data: dict) -> tuple[list[str], dict[str, State], dict[str, list[str]]
             established(state, unit["id"], act_id)
         kinds_used[act_id] = apply_departures(state, act_id, departures_by_act.get(act_id, []))
         apply_interpretations(state, acts, act_id, interpretations_by_act.get(act_id, []))
+        # THE STATE, and not only the rows that made it. A `replaced` departure
+        # may set `withheld` on a unit that already carries inherited words and
+        # clear nothing, and no reading of the rows can see that combination --
+        # it is made here. `check` reports the row-level case in its own list;
+        # this refuses at the one function `emit`, `structure`, `plate`, `graph`
+        # and `commonality` all get their bytes from, before any of them has
+        # written or removed anything, so the words are unwritable rather than
+        # merely unrecommended.
+        for unit_id, unit in sorted(state.units.items()):
+            carried = withheld_and_carried(unit, WITHHELD_WORDS["units"], f"unit {unit_id}")
+            if carried:
+                raise Problem(f"{act_id}: {carried[0]}")
         state.files[act_file(act)] = render_act(act)
         for witness in sorted(witnesses_by_act.get(act_id, []), key=lambda row: row["id"]):
             state.files[witness_file(witness)] = render_witness(witness)
@@ -1475,6 +1520,7 @@ def check(data: dict) -> dict:
             problems.append(f"unit {unit_id}: read_from must be one of {READINGS}")
         if unit.get("read_from") == "page-image" and not unit.get("collated"):
             problems.append(f"unit {unit_id}: claims a page image without a collation date")
+        problems.extend(withheld_and_carried(unit, WITHHELD_WORDS["units"], f"unit {unit_id}"))
 
     departures = data.get("departures", [])
     for index, departure in enumerate(departures):
@@ -1489,6 +1535,11 @@ def check(data: dict) -> dict:
             problems.append(f"{where}: unrecorded must say what is not established")
         if departure.get("kind") == "reslotted" and not (departure.get("to_mass") or departure.get("to_slot")):
             problems.append(f"{where}: reslotted must say where to")
+        # An `added` or `replaced` departure carries the words it puts into the
+        # unit, so it can withhold and carry in one row exactly as a base unit
+        # can. TASK-130 counted 11 withheld departures of 131 in the Code slice
+        # and 2 of 13 in the missal, so this is not the rarer half of the hole.
+        problems.extend(withheld_and_carried(departure, WITHHELD_WORDS["departures"], where))
 
     # An interpretation asserts that an authority answered a doubt about a
     # named canon. Each half of that has to be there: the act, the canon, the
@@ -1518,11 +1569,9 @@ def check(data: dict) -> dict:
                         f"{where}: its words are withheld, so it must say in `{field}` what was "
                         "asked and what was answered, in this project's own words"
                     )
-            for field in ("dubium", "responsum"):
-                if row.get(field):
-                    problems.append(
-                        f"{where}: carries `{field}` and also withholds its words; one or the other"
-                    )
+            problems.extend(
+                withheld_and_carried(row, WITHHELD_WORDS["interpretations"], where)
+            )
         else:
             for field in ("dubium", "responsum"):
                 if not row.get(field):
@@ -1730,6 +1779,16 @@ def emit(data: dict, out: Path) -> dict:
         subprocess.run(["rm", "-rf", str(out)], check=True)
     out.mkdir(parents=True)
     git(out, "init", "--quiet", "--bare")
+    # `git gc` WOULD BREAK THIS REPOSITORY, so it is emitted with the switch
+    # already thrown. The commit-graph stores a commit date in 34 bits -- a
+    # ceiling near the year 2514 -- and the ten-thousand-year shift puts every
+    # stamp here about eighteen times past it. `gc` writes a commit-graph by
+    # default; `fsck --strict` then exits 16 reporting every commit, and a
+    # date-ordered walk reads the truncated dates and puts a 1570 station ahead
+    # of a 1962 one. This is local config and does not travel with a clone, so
+    # it protects the repository this tool creates and not one somebody else
+    # copies -- which is why the hazard also has to be stated on the artifact.
+    git(out, "config", "gc.writeCommitGraph", "false")
 
     commits: dict[str, str] = {}
     for act_id in order:

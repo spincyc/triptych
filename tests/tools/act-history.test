@@ -577,4 +577,31 @@ case "$out" in
 *) echo "expected the schema named in the complaint, got: $out" >&2; exit 1 ;;
 esac
 
+# THE RIGHTS MARKER IS ENFORCED, and the probe that found it was not is run here
+# rather than described. A canon of the Code slice already declaring `withheld`
+# is given a `text`; before the guard landed, `check` reported zero problems and
+# `emit` wrote the words into a commit object underneath the banner saying they
+# are absent. tools/tests/test_act_history_withheld.py carries the other row
+# kinds and the case the rows cannot show; this is the gate's own copy.
+sed 's/^withheld = "holy-see-post-1929"$/&\ntext = "PASTED BY MISTAKE."/' "$law" \
+	>leaking.toml
+if out="$(run_tool check --source leaking.toml 2>&1)"; then
+	echo "expected a canon that withholds its words and carries them to be refused" >&2
+	exit 1
+fi
+case "$out" in
+*"withholds its words"*) ;;
+*) echo "expected the withholding named in the complaint, got: $out" >&2; exit 1 ;;
+esac
+# And the words must be unwritable, not merely unrecommended: `check` running
+# first is a property of the CLI's ordering, and the refusal has to outlive it.
+if run_tool emit --source leaking.toml --out leaked >/dev/null 2>&1; then
+	echo "emit wrote a repository for a slice that carries withheld words" >&2
+	exit 1
+fi
+if [ -e leaked ]; then
+	echo "emit left a repository behind for a refused slice" >&2
+	exit 1
+fi
+
 echo ok
