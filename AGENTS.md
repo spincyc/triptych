@@ -30,6 +30,7 @@ largely a register of how that data has already gone wrong:
 | --- | --- |
 | a mass, proper, or rubric in `src/sources/calendars/` | `guidance/propers-for-agents.md` |
 | anything the browser fetches from `src/web/data/` | `guidance/web-data.md` |
+| liturgy browser HTML, CSS, or JavaScript; Day or Propers routes; shared liturgical rendering; modes or navigation; responsive or print presentation; calendar or source apparatus; comparison views; or browser-visible recension coverage | `guidance/liturgy-browser-vision.md`, `guidance/liturgy-browser-roadmap.md` |
 | a bible edition, its index, or its chapter fragments | `guidance/bibles-for-agents.md` |
 | a verse or chapter numbering question across editions | `guidance/versification.md` |
 | commentary fragments, the harvest, or the catena page | `guidance/catena.md`, `guidance/reading-plan-for-agents.md` |
