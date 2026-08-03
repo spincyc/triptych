@@ -151,6 +151,17 @@ cycles, or authorized alternatives. Each side names its edition, branch,
 source, rights, and coverage state. A unit that exists on only one side remains
 an explicit absence on the other; it is not shifted into a neighboring match.
 
+Day Compare holds the civil date and explicitly selected territorial context
+fixed. Each side resolves that date independently under its own recension and
+applicable calendar. The reader sees calendar-result differences first,
+including when the sides legitimately appoint different celebrations or
+formularies, and then compares corresponding semantic liturgical units.
+
+Propers Compare is date-independent. It compares edition-qualified
+corresponding formularies; known calendar uses may be linked as context but do
+not become part of formulary identity or force both sides through one date's
+calendar result.
+
 Wide screens may use parallel columns when that improves correspondence.
 Mobile stacks each matched unit as a pair before moving to the next unit.
 Compare links material changes to How the Missal Changed and the source acts;
@@ -183,6 +194,12 @@ These defaults apply unless a valid URL or preference overrides them:
 10. No unsupported state silently falls back to another recension, locality,
     translation, cycle, alternative, formulary, or Ordinary.
 
+When source and context leave several coequal authorized choices, Triptych does
+not select one by manifest, array, or incidental source order. It presents the
+choice at the actual semantic point. A source-defined principal formulary,
+required cycle, or otherwise deterministically resolved option may be selected
+automatically; an unresolved coequal choice may not.
+
 Remembered preferences may include stable choices such as missal, territorial
 calendar, Bible, display language, or mode. They may not override an explicit
 URL, convert an unsupported state into a supported one, or turn a transient
@@ -205,6 +222,8 @@ available space and content behavior rather than named devices.
 - The navigation rail reports current location as well as destinations.
 - Study material follows the liturgical unit in view and does not shift the
   reading column when opened.
+- Date or browse, Contents, mode, and Study remain reliably revealable at every
+  reading position without requiring a return to the document beginning.
 - Compare may use parallel semantic columns, with synchronized correspondence
   that does not require synchronized pixel scrolling.
 
@@ -214,13 +233,16 @@ available space and content behavior rather than named devices.
 - At most one auxiliary panel is open at a time.
 - Navigation and Study use accessible drawers or overlays and do not
   permanently compress the text.
+- The four primary reader actions remain reliably revealable while the reader
+  is deep in the document; their resting state does not compress the reading
+  surface.
 - Opening and closing an auxiliary panel preserves the current reading
   location and returns focus appropriately.
 
 ### Mobile
 
 - The page has one reading column and compact access to date or browse,
-  Contents, mode, and Study functions.
+  Contents, mode, and Study functions at every reading position.
 - Large forms and apparatus use accessible sheets or full-screen dialogs, not
   expanding blocks placed above the text.
 - Controls do not obscure a focused element or the current reading location.
@@ -262,6 +284,13 @@ They use the same names and positions on Day and Propers. Settings holds
 infrequent configuration, not common navigation. Share and Print are available
 without entering Study.
 
+At every reading position, the four primary actions remain reachable without
+traversing back through the document or losing the current semantic location.
+The shell may be persistent, auto-hiding, or otherwise reliably revealable. It
+must not obscure focused content, consume the reading surface, or become
+permanent dashboard chrome. The exact reveal interaction is an M2 prototype
+decision; persistent reachability is not optional.
+
 Contents is generated from semantic liturgical units, not translated heading
 strings. It is location-aware, marks the current unit, follows rerendered
 branches, and does not list nonexistent or hidden material. Opening or closing
@@ -290,10 +319,13 @@ URLs reproduce all state needed to identify and cite what is shown: entrance,
 date or stable formulary key, missal/recension, locality or territorial
 calendar, Bible and numbering where selected, text and Ordinary languages,
 cycle, authorized alternative or variant, chosen readable formulary, and mode.
-Compare URLs identify both sides and the comparison dimension. Temporary panel
-openness and scroll pixels need not be canonical URL state, but semantic
-location anchors must be stable. Existing valid Day and Propers URLs remain
-resolvable through additive parsing, canonicalization, or documented redirects.
+Compare URLs identify both sides, the comparison dimension, and the
+entrance-specific anchor: civil date and explicitly selected territorial
+context for Day, or corresponding edition-qualified formularies for Propers.
+Temporary panel openness and scroll pixels need not be canonical URL state, but
+semantic location anchors must be stable. Existing valid Day and Propers URLs
+remain resolvable through additive parsing, canonicalization, or documented
+redirects.
 
 ## Capability map
 
@@ -460,23 +492,29 @@ An implementation may not violate these rules:
 1. Day and Propers remain distinct entrances to one shared reader.
 2. Read is the calm, reading-first default; every advanced mode is one clear
    action away.
-3. Text remains visually dominant, and the first useful viewport contains real
+3. At every reading position, Date or Browse, Contents, Mode, and Study remain
+   reachable without returning to the document beginning or losing semantic
+   location; their shell never becomes permanent dashboard chrome or consumes
+   the reading surface.
+4. Text remains visually dominant, and the first useful viewport contains real
    liturgical content on representative desktop and mobile screens.
-4. Semantic liturgical order and slots control rendering, navigation,
+5. Semantic liturgical order and slots control rendering, navigation,
    comparison, CLI parity, and tests.
-5. URL state outranks remembered preferences, which outrank repository-declared
+6. URL state outranks remembered preferences, which outrank repository-declared
    first-visit defaults.
-6. No territorial calendar is inferred from geolocation.
-7. No unsupported state silently borrows from another recension, locality,
+7. No territorial calendar is inferred from geolocation.
+8. No unsupported state silently borrows from another recension, locality,
    translation, cycle, alternative, formulary, or Ordinary.
-8. Every displayed decision can reach its source and reasoning; every
+9. No unresolved coequal authorized choice is selected by manifest, array, or
+   incidental source order.
+10. Every displayed decision can reach its source and reasoning; every
    unavailable or partial result remains explicit.
-9. Mobile uses single-column reading, accessible auxiliary surfaces, stacked
+11. Mobile uses single-column reading, accessible auxiliary surfaces, stacked
    correspondence, useful targets, and preserved position.
-10. Screen reading scrolls vertically; print and PDF paginate.
-11. Core workflows work with keyboard, touch, screen readers, zoom, text
+12. Screen reading scrolls vertically; print and PDF paginate.
+13. Core workflows work with keyboard, touch, screen readers, zoom, text
     enlargement, forced colors, and reduced motion.
-12. Browser, generated data, CLI, and tests may not disagree about identity,
+14. Browser, generated data, CLI, and tests may not disagree about identity,
     selection, order, text, source, or coverage.
 
 ## Definition of world-class completion
@@ -490,12 +528,19 @@ versioned regression fixtures and real browsers:
   relevant position or focus, and an explicit URL always wins over memory.
 - Every advanced feature is discoverable within one clear interaction while
   the default page remains a reading surface rather than a dashboard.
+- From any semantic location in a long reading, Date or Browse, Contents, Mode,
+  and Study are each reachable without scrolling back to the document beginning
+  or losing that location; revealing and dismissing them preserves focus and
+  does not obscure the focused content or permanently compress the text.
 - Day and Propers render the same liturgical object, ordering, option, source,
   and coverage state consistently.
 - Every displayed decision exposes its source and reasoning; incomplete
   material is unmistakable but does not overwhelm the liturgical hierarchy.
-- Compare aligns semantic liturgical units and preserves explicit one-sided
-  additions, omissions, and unavailable text.
+- Day Compare holds date and territorial context fixed, exposes independently
+  resolved calendar differences, and then aligns semantic units. Propers
+  Compare aligns corresponding edition-qualified formularies without inventing
+  a date. Both preserve explicit one-sided additions, omissions, and unavailable
+  text.
 - All core workflows pass keyboard, touch, 200% text enlargement, 400% zoom,
   representative screen-reader, forced-color, and reduced-motion review.
 - There is no horizontal page scroll or lost function at 320 CSS pixels.
@@ -509,19 +554,23 @@ versioned regression fixtures and real browsers:
 - Regression fixtures cover representative Roman 1962, postconciliar,
   pre-1955, partial-recension, local-calendar, territorial-branch, cycle,
   alternative, competing-celebration, commemoration, and unavailable-text
-  states. A fixture may be nonpublic where its source or coverage is not ready;
-  it may not fabricate liturgical data.
+  states, plus a Day comparison whose recensions resolve differently, a
+  date-independent Propers comparison, and a coequal unresolved option that
+  requires user choice. A fixture may be nonpublic where its source or coverage
+  is not ready; it may not fabricate liturgical data.
 
 ## Bounded prototype decisions
 
 The following choices are deliberately left to measured prototypes: exact
 breakpoints; whether wide navigation is left or right; the visual form of the
 mode control; whether an auxiliary mobile surface is a bottom sheet or
-full-screen dialog in a given state; the compact representation of repeated
-coverage warnings; and exact resource budgets derived from the measured
-baseline. Each prototype must satisfy the defaults, accessibility behavior,
-source honesty, first-viewport, URL, and parity invariants above. None may
-reopen the one-reader/two-entrances model or the four modes.
+full-screen dialog in a given state; whether persistent reader actions rest in
+view, auto-hide, or use another reliably revealable interaction; the compact
+representation of repeated coverage warnings; and exact resource budgets
+derived from the measured baseline. Each prototype must satisfy the defaults,
+accessibility behavior, persistent-reachability, source honesty,
+first-viewport, URL, and parity invariants above. None may reopen the
+one-reader/two-entrances model or the four modes.
 
 ## Change control
 

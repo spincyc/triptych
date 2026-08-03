@@ -14,9 +14,11 @@ to the guidance that owns its data and artifacts.
 
 ## Current deployed baseline
 
-Baseline date: **2026-08-03**. Repository and deployed review baseline:
-`18256c51e72099b64bb1b9a6b17db9b6257e7ebf` (`Add Proper placement
-notes`).
+Baseline date: **2026-08-03**. The unchanged production-browser and deployed
+review baseline is `18256c51e72099b64bb1b9a6b17db9b6257e7ebf` (`Add Proper
+placement notes`). The governing documents were committed at `bc7de4114`, the
+external-review protocol at `4236f21bf`, and this execution record includes the
+subsequent five-blocker correction disposition recorded in the progress ledger.
 
 The current product has two public routes:
 
@@ -63,23 +65,22 @@ are those in the vision.
 
 ## Deployed review, 2026-08-03
 
-The public Day and Propers links named for this review were inspected in
-Firefox at 1440×900, 1024×768, 768×1024, 393×852, and an exact 320×852 CSS-pixel
-viewport. States included Settings closed and open, Contents closed and open,
-Propers only, Ordinary enabled, Why and rubrics enabled, Roman 1962,
-postconciliar, a populated Notices and unavailable-text state, and Letter
-print. The locally retained Phase 4–9 reports and screenshots were reviewed as
-historical evidence as well.
+The retained Phase 4–9 reports, measurements, screenshots, and print artifacts
+support review at 1440×900, 1024×768, 768×1024, and 393×852 across Settings,
+Notices, Contents, Propers-only, Ordinary, Why, Roman 1962, postconciliar, and
+print states. The retrospective external-review package contains no matching
+320-pixel capture or measurement report and no artifact supporting the former
+34-page current-print claim. Those exact figures are not treated as retained
+baseline evidence; 320-pixel reflow remains a future acceptance gate.
 
-Measured findings:
+Evidence-backed findings:
 
 - The closed default reflowed at every width with no horizontal page scrolling.
-- At 393×852 the Roman 1962 celebration title began at 69 CSS pixels and the
-  first Proper began at about 266 pixels. At 320×852 the first Proper began at
-  about 278 pixels. Both first views contained real liturgical text.
-- Opening Day Settings at 393×852 moved the first Proper to about 692 pixels;
-  the form consumes most of the initial screen and makes common date movement
-  part of a large configuration task.
+- At 393×852 the Roman 1962 first view contained the celebration identity and
+  real liturgical content.
+- Opening Day Settings at 393×852 made the form consume most of the initial
+  screen and turned common date movement into part of a large configuration
+  task.
 - Day Contents in Propers-only output contained one item, `Beginning`; it is not
   yet useful navigation for the default mode.
 - Propers Contents correctly listed its eleven rendered semantic destinations,
@@ -88,10 +89,9 @@ Measured findings:
   repeated unavailable-text messages became more visually prominent than the
   liturgical hierarchy. The postconciliar populated Notices state also placed a
   large availability message before the reading.
-- Current Letter print was mechanically usable and removed chrome, but a Roman
-  1962 Ordinary/Why state produced 34 pages containing repeated withheld-text
-  and source-detail material. Print needs a mode-aware information hierarchy,
-  not only print CSS hiding controls.
+- Retained Letter print was mechanically usable and removed chrome, but the
+  screen DOM's repeated withheld-text and source-detail material still needs a
+  mode-aware print hierarchy, not only print CSS hiding controls.
 
 ## Critical assessment
 
@@ -211,6 +211,8 @@ are not new historical phase numbers.
   status handling, and event traversal without changing liturgical resolution.
 - Prove that current Day, Propers, and `mass-today --expanded` fixtures produce
   the same identity, order, text, variants, provenance keys, and absences.
+- Encode entrance-specific Compare anchors and an explicit unresolved-choice
+  result that cannot collapse to manifest or array order.
 - Preserve additive generated data and lazy loading.
 
 Dependencies: vision committed; existing assembly, seating, browser-core, and
@@ -224,6 +226,9 @@ but shell prototypes may use adapters before extraction is complete.
 - Move common Day navigation out of full Settings.
 - Implement location-aware semantic Contents, optional wide navigation and
   Study rails, single-panel intermediate behavior, and mobile sheets/dialogs.
+- Keep Date or Browse, Contents, Mode, and Study reliably revealable from a
+  deeply scrolled semantic location without permanent dashboard chrome,
+  reading-surface compression, or an obscured focused element.
 - Preserve reading location and focus through open, close, rerender, route, and
   mode changes.
 
@@ -274,6 +279,11 @@ research can proceed in parallel with shell work.
 
 - Define correspondence keys for Ordinary divisions/elements, Proper slots,
   cycles, alternatives, and exceptional units.
+- Define Day comparison around a fixed civil date and explicitly selected
+  territorial context, with each recension resolving independently and
+  calendar-result differences shown before semantic-unit correspondence.
+- Define Propers comparison around corresponding edition-qualified formularies
+  independently of a date; known calendar uses remain contextual links.
 - Distinguish absence, unavailable text, differently seated material, and a
   genuine act-backed change.
 - Link corresponding changes to How the Missal Changed and their source acts.
@@ -297,14 +307,37 @@ not completion of the visual redesign.
 
 **Historical Phase 10 placement.** Existing Phase 10 work on the Pius XII/1956
 recension belongs in W7. Documentation stabilization through the vision and
-this roadmap precedes further Phase 10 implementation. Once these documents
-are committed, Phase 10.2 source acquisition may proceed in parallel with W1
-and W2 reader redesign. The whole visual redesign is not a prerequisite for
-adding source-grounded recension coverage. Recension work must nevertheless
-obey the vision's partial-coverage, fail-closed source honesty, stable identity,
-and shared-rendering rules. The selected 1956 Benziger printing remains
-verified but inaccessible; no calendar key or data implementation proceeds
-until the required pages are acquired and inspected.
+this roadmap precedes further Phase 10 implementation; M0 and this correction
+complete that documentation prerequisite once externally accepted. The
+universal source model is:
+
+```text
+verified pre-1955 base text and structures
+  + the official 1955 decree
+  + applicable subsequent official decrees and authentic responses
+  = a source-grounded 1956–1960 recension state
+```
+
+The Sacred Congregation of Rites' [*De rubricis ad simpliciorem formam
+redigendis*](https://www.vatican.va/archive/aas/documents/AAS-47-1955-ocr.pdf),
+23 March 1955, AAS 47 (1955), pp. 218–224, directs use of the liturgical books
+as they then existed, applies its enumerated changes, leaves matters not
+expressly named unchanged, takes effect 1 January 1956, and forbids publishers
+to innovate meanwhile. [*Rubricarum
+instructum*](https://www.vatican.va/content/john-xxiii/la/motu_proprio/documents/hf_j-xxiii_motu-proprio_19600725_rubricarum-instructum.html),
+AAS 52 (1960), pp. 593–595, makes the new code obligatory on 1 January 1961 and
+ends the 1955 decree's force that day.
+
+After the official acts and inherited base material for a narrow slice are
+verified, W7 may build an internal, typed-partial-coverage vertical slice in
+parallel with W1 and W2. The verified but inaccessible 1956 Benziger printing
+remains a valuable validation witness for publisher arrangement and American
+or local supplements; it is not a universal implementation prerequisite. The
+whole visual redesign is likewise not a prerequisite. Recension work must obey
+the vision's partial-coverage, fail-closed source honesty, stable identity, and
+shared-rendering rules, and the state remains absent from the ordinary public
+selector until advertised coverage, Ordinary extent, locality, rights, and
+tests are honest.
 
 ### W8 — Accessibility, performance, and print
 
@@ -340,9 +373,16 @@ from the other workstreams; it does not wait for unrelated coverage expansion.
 Milestones are cross-workstream checkpoints, not sequential development lanes
 and not replacements for historical phases.
 
+M1–M5 are internal integration milestones. They may be privately previewed and
+externally reviewed, but they are not public releases and may not advertise an
+incomplete mode set. The existing public reader and every currently supported
+function remain intact while those milestones develop behind fixtures or a
+reversible preview boundary. M6 is the first public reader release governed by
+the complete four-mode product contract and all world-class gates.
+
 | Milestone | Integrated result | Required inputs |
 | --- | --- | --- |
-| M0 — Governing contract | Vision, roadmap, routing, baseline evidence, and no production change | This documentation task |
+| M0 — Governing contract | Vision, roadmap, routing, baseline evidence, correction disposition, and no production change | `bc7de4114`, `4236f21bf`, retrospective review, this correction commit, and its external acceptance |
 | M1 — Semantic parity contract | Versioned fixture schema and shared identity/event/source/coverage assertions for existing Day, Propers, and CLI | W1, W4, W9 |
 | M2 — Shell prototype decision | Tested wide/intermediate/mobile/zoom/print prototypes; bounded choices resolved; no liturgical data change | W2, W8, representative W9 fixtures |
 | M3 — Shared Read and Missal slice | Both entrances use shared state, semantic renderer, navigation, and Read/Missal modes for Roman 1962 and postconciliar fixtures | W1, W2, first half of W3, W8, W9 |
@@ -350,10 +390,12 @@ and not replacements for historical phases.
 | M5 — Compare slice | Semantic recension/translation/cycle/alternative comparison in parallel and stacked forms | W3, W4, W6, qualifying W7 fixtures, W8, W9 |
 | M6 — Release-quality reader | All world-class gates pass for the advertised coverage; compatible URLs and independently usable print ship | All applicable workstreams |
 
-Phase 10.2 may advance source acquisition after M0 and may produce internal
-coverage fixtures after its own source gates. It does not depend on M2–M6. A
-public 1956-recension selector depends on its complete advertised coverage and
-release gates, not merely on the first reader redesign release.
+Phase 10 may advance official-act collation, inherited-base verification, and
+exact-printing validation after the corrected M0 contract is externally
+accepted. It may produce a narrow internal typed-partial-coverage fixture after
+its own source gates and does not depend on M2–M6. A public 1956–1960 recension
+selector depends on its complete advertised coverage and release gates, not on
+an inaccessible printing alone or merely on the first reader redesign release.
 
 ## External-review handoff gate
 
@@ -368,8 +410,12 @@ does not satisfy the gate.
 
 ## Acceptance gates
 
-Every production slice passes the gates it affects. “No change” to liturgical
-data is proved by semantic fixture parity, not assumed from a visual diff.
+Every implementation slice passes the gates for the capabilities it affects.
+M1–M5 remain internal and do not fail merely because a later mode is not yet
+integrated; they preserve every current public function and do not advertise
+the incomplete product. M6 passes the complete product contract and all gates
+before public release. “No change” to liturgical data is proved by semantic
+fixture parity, not assumed from a visual diff.
 
 ### Product and semantic gates
 
@@ -377,6 +423,9 @@ data is proved by semantic fixture parity, not assumed from a visual diff.
   semantic units consistently.
 - Read, Missal, Study, and Compare are each one clear action away on both
   entrances, with Read initially active and visually dominant.
+- At every semantic reading location, Date or Browse, Contents, Mode, and Study
+  are reachable without returning to the document beginning or losing that
+  location.
 - Today and real text appear immediately in a first Day visit; a valid Propers
   deep link renders immediately; a new Propers visit opens browse/search.
 - Date navigation is available outside full Settings.
@@ -385,6 +434,8 @@ data is proved by semantic fixture parity, not assumed from a visual diff.
   mode transitions according to a documented rule.
 - No unsupported selection falls through to another recension, locality,
   translation, cycle, alternative, formulary, or Ordinary.
+- No coequal unresolved authorized option is selected by manifest or array
+  order; the choice appears at its semantic point.
 
 ### Source, data, and parity gates
 
@@ -394,7 +445,11 @@ data is proved by semantic fixture parity, not assumed from a visual diff.
   event order, text, sources, rights state, and explicit absence.
 - Search results and deep links resolve the same stable formulary identities as
   the generator.
-- Comparison aligns semantic units and leaves one-sided units explicit.
+- Day comparison holds date and territorial context fixed, resolves each
+  recension independently, exposes calendar-result differences first, and then
+  aligns semantic units. Propers comparison aligns corresponding
+  edition-qualified formularies without introducing a date. Both leave
+  one-sided units explicit.
 - Source, calendar, recension, versification, rights, and release checks owned
   by affected guidance pass.
 
@@ -406,6 +461,9 @@ data is proved by semantic fixture parity, not assumed from a visual diff.
   400% zoom, or 200% text enlargement.
 - Wide rails never compress the reading below its usable measure and are absent
   or empty when irrelevant.
+- Deep-scroll access to the four primary actions is reliably revealable without
+  permanent dashboard chrome, reading-surface compression, or covered focused
+  content at every supported width.
 - Mobile sheets/dialogs preserve safe areas, focused controls, and reading
   location. Compare and bilingual fragments stack by corresponding unit.
 - Missing-text treatment is unmistakable but subordinate to the celebration
@@ -417,6 +475,9 @@ data is proved by semantic fixture parity, not assumed from a visual diff.
   manual review of structure, language changes, contrast, focus order,
   focus-not-obscured, names/roles/states, status announcements, and reflow.
 - Every core path is complete with keyboard alone and with touch alone.
+- Keyboard, touch, and screen-reader runs prove that the four primary actions
+  can be revealed and dismissed from a deeply scrolled location with focus and
+  semantic location preserved.
 - Disclosures, sheets, and dialogs follow the applicable WAI pattern, including
   expanded state, Escape behavior, focus containment where modal, and focus
   restoration.
@@ -461,10 +522,15 @@ Every release candidate captures at least:
 
 - 1440×900, 1024×768, 768×1024, 393×852, and exact 320 CSS-pixel reflow;
 - Day and Propers with the reader shell closed;
+- each route deeply scrolled, with the four primary actions revealed and
+  dismissed while asserting semantic location, focus, and unobscured content;
 - each auxiliary surface open, one at a time, with focus and scroll assertions;
 - Read, Missal, Study, and Compare;
 - Roman 1962 and postconciliar;
 - a pre-1955 or other qualifying comparison state;
+- a Day comparison whose recensions resolve the fixed date to different
+  celebrations, a date-independent Propers comparison of corresponding
+  formularies, and a coequal unresolved option that requires user choice;
 - Ordinary off and on; Why/rubrics closed and open;
 - bilingual paired and stacked text;
 - populated routine Notice, immediate-reliance warning, partial recension,
@@ -550,31 +616,44 @@ available, territorial/local overlays, cycles, alternatives, commemorations,
 competing celebrations, resumed Sundays, partial recensions, unsupported dates,
 and exceptional rites that do not fit an ordinary Mass frame.
 
-The Phase 10.1 proposed ordinary-Sunday vertical slice remains a useful internal
-parity target only after its exact source is available. Phase 10.2's current
-action is to obtain and inspect the specified pages of the 1956 Benziger
-printing. Until then the state has no product key, no source registration, no
-transcription, no generated data, and no selector. When it does proceed, it
-uses the shared renderer and typed partial-coverage contract rather than
-edition-specific UI.
+The Phase 10.1 ordinary-Sunday vertical slice remains a useful internal parity
+target after the official acts and the inherited pre-1955 base text and
+structures required for that slice are verified. Applicable later official
+decrees and authentic responses must also be collated. The slice may then use
+an internal stable identity, source registration, and typed partial-coverage
+boundary without claiming a complete printed edition. It uses the shared
+renderer rather than edition-specific UI.
+
+Inspection of the selected 1956 Benziger printing proceeds in parallel as
+validation of arrangement, local supplements, Ordinary loci, and witness-level
+text. It remains necessary for claims about that printing and any American or
+local coverage, but not for universal changes already established by the
+official acts and inherited base. No ordinary public selector appears until the
+advertised calendar span, formularies, Ordinary extent, locality, rights, and
+tests are complete and explicit.
 
 ## Current next action
 
-Commit the vision, this roadmap, and the AGENTS routing as one documentation
-checkpoint after all documentation and policy checks pass. No reader or
-recension implementation belongs in that commit.
+The immediate gate is external acceptance of the five-blocker correction
+commit recorded in the 2026-08-03 retrospective disposition. No reader or
+recension implementation belongs in that correction.
 
-Immediately after that checkpoint, start two independent actions in parallel:
+After the correction handoff is accepted, start these independent actions in
+parallel:
 
-1. W1/W9 define the smallest shared semantic fixture and URL-state contract
-   that proves one Roman 1962 and one postconciliar object identical across Day,
-   Propers, generated data, and CLI, without changing presentation.
-2. W7 continues Phase 10.2 by contacting the named institutional holder for the
-   exact 1956 Benziger page set. It remains acquisition/research work until the
-   witness and rights gates pass.
+1. W1/W9 define the shared semantic fixture and URL-state contract, including
+   existing Roman 1962/postconciliar parity, a Day comparison whose recensions
+   resolve differently, a corresponding-formulary Propers comparison, and a
+   coequal unresolved option that requires user choice.
+2. W2 prototypes persistent reachability for Date or Browse, Contents, Mode,
+   and Study at deep scroll across wide, intermediate, mobile, zoom, and print
+   states without choosing sticky versus auto-hide behavior in advance.
+3. W7 verifies the pre-1955 base and official acts for the narrow Phase 10
+   slice, while exact-printing acquisition continues in parallel as validation
+   rather than a universal prerequisite.
 
-W2 may prototype the reader shell against existing fixtures at the same time.
-No prototype chooses liturgical defaults or creates data to fill a review state.
+No prototype chooses liturgical defaults or creates data to fill a review
+state. M1–M5 remain internal; M6 is the first public redesigned reader release.
 
 ## Progress ledger
 
@@ -590,9 +669,12 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-03 | Phase 7, Step 1 — reading-first formulary page | Brought Propers into the Reading Missal visual language without merging route purposes. | `fdd88fb67` |
 | 2026-08-03 | Phase 8, Step 1 — generated Mass Contents | Added shared DOM-derived Contents and completed its route integrations and tests. | `febaa92d0`, `719e975d1` |
 | 2026-08-03 | Phase 9, Step 1 — Proper placement notes | Added source-bounded mechanical placement notes to supported seated Propers on Day. | `18256c51e` |
-| 2026-08-03 | Phase 10, Step 1 — Roman 1955 vertical-slice assessment | Recommended an exact-edition, source-bounded 1956–1960 slice; found source and precedence blockers. | No tracked change; review baseline `18256c51e` |
-| 2026-08-03 | Phase 10, Step 2 — source acquisition | Identified the 1956 Benziger edition and institutional copies, but classified the witness verified and inaccessible; implementation remains blocked on page inspection and rights. | No tracked change; review baseline `18256c51e` |
-| 2026-08-03 | M0 — browser vision and roadmap stabilization | Establishes the governing destination, parallel workstreams, gates, and routing without production changes. | The commit containing this document; record the exact SHA in the task completion report |
+| 2026-08-03 | Phase 10, Step 1 — Roman 1955 vertical-slice assessment | At that step, recommended an exact-edition, source-bounded 1956–1960 slice and found source and precedence blockers; later external review corrected the exact-printing prerequisite. | No tracked change; review baseline `18256c51e` |
+| 2026-08-03 | Phase 10, Step 2 — source acquisition | Identified the 1956 Benziger edition and institutional copies as a verified but inaccessible validation witness; later external review removed it as a universal prerequisite while preserving its witness/locality value. | No tracked change; review baseline `18256c51e` |
+| 2026-08-03 | M0 — browser vision and roadmap stabilization | Established the governing destination, parallel workstreams, gates, and routing without production changes. | `bc7de4114a279ea780d5b15bdaee0a7414e07078` |
+| 2026-08-03 | External-review handoff protocol | Established the immutable ignored review-package contract and major-visual-milestone gate. | `4236f21bfe5aa6f3dde76ee0b9398823373f22e3` |
+| 2026-08-03 | M0 retrospective external review | Accepted the governing foundation and requested five narrow corrections: persistent action reachability, entrance-specific Compare anchors and coequal choice handling, the official-act Phase 10 model, a current execution record, and internal-versus-public milestone scope. | Handoff `20260803T155820Z-liturgy-browser-vision-retrospective`; reviewed through `4236f21bfe5aa6f3dde76ee0b9398823373f22e3` |
+| 2026-08-03 | M0 external-review corrections | Resolves the five blockers without production or recension implementation; the exact SHA is recorded in the completion report and correction handoff because a commit cannot contain its own hash. | This correction commit |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).
