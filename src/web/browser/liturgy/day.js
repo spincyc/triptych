@@ -150,6 +150,7 @@
   const formularyControls = document.getElementById('formulary-controls');
   const reading = document.getElementById('reading');
   const controls = document.getElementById('controls');
+  let placementNoteOrdinal = 0;
 
   function rebuildContents() {
     ReadingContents.rebuild({
@@ -159,6 +160,16 @@
       nav: contentsNav,
       selector: '.ordinary-division, ' +
         '.ordinary-frame > .annotated > .annotated-text > .proper > .proper-name'
+    });
+  }
+
+  function addPlacementNote(body, event) {
+    if (!ProperPlacementNotes.facts(event)) return;
+    placementNoteOrdinal += 1;
+    ProperPlacementNotes.add({
+      body: body,
+      event: event,
+      noteId: 'proper-placement-note-' + String(placementNoteOrdinal).padStart(2, '0')
     });
   }
 
@@ -847,7 +858,7 @@
      * `level` is the heading it sets at: h3 standing alone, and h5 inside the
      * Ordinary, where the divisions of the rite stand above it.
      */
-    function renderMassProper(proper, seat, level) {
+    function renderMassProper(proper, seat, level, event) {
       const body = T.renderProper(proper, bible, fragments, {
         numbering: (structure && structure.numbering) || null,
         orations: state.orations,
@@ -855,6 +866,7 @@
         cycle: cycleKeyFor(
           proper, (derived.liturgicalYear && derived.liturgicalYear.lectionary) || null)
       });
+      if (event) addPlacementNote(body, event);
       // The rubric that seats this proper in the frame, shown with the rest of
       // the reasoning rather than in the body: a reader following the Mass
       // wants the prayer, and a reader checking the page wants the citation.
@@ -1354,7 +1366,7 @@
         // Inside the frame a proper is a part of the Mass beside the parts that
         // never change, so both set at the same heading level.
         wrapper.appendChild(
-          renderMassProper(event.proper, event.seat, PART_HEADING));
+          renderMassProper(event.proper, event.seat, PART_HEADING, event));
       }
     }
     return wrapper;
@@ -1580,6 +1592,7 @@
     T.clear(reading);
     T.clear(renderedNotices);
     T.clear(formularyControls);
+    placementNoteOrdinal = 0;
     renderHead(derived, bible);
 
     // The frame is settled before a word of any Mass is drawn, because each

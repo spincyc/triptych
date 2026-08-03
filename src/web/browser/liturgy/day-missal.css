@@ -380,6 +380,87 @@ body > .site-header nav {
   text-align: left;
 }
 
+/* Placement notes read only the seat already carried by a rendered Proper.
+   Their closed control sits with the heading; an open note uses spare page
+   space without reserving a permanent margin. */
+.page-browser .reading-annotated .proper {
+  position: relative;
+}
+
+.page-browser .reading-annotated .proper-placement-toggle {
+  appearance: none;
+  width: auto;
+  min-width: 0;
+  min-height: 0;
+  margin: 0 0 0 0.55rem;
+  padding: 0.08rem 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: color-mix(in srgb, var(--missal-rubric) 66%, var(--ink-faint));
+  font-family: var(--serif);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+  vertical-align: 0.08em;
+  cursor: pointer;
+}
+
+.page-browser .reading-annotated .proper-placement-toggle::after {
+  content: "Why here?";
+}
+
+.page-browser .reading-annotated .proper-placement-toggle:hover {
+  border-bottom-color: currentColor;
+  color: var(--missal-rubric);
+}
+
+.page-browser .reading-annotated .proper-placement-toggle:focus-visible {
+  outline: 2px solid var(--missal-rubric);
+  outline-offset: 0.18rem;
+}
+
+.page-browser .reading-annotated .proper-placement-note[hidden] {
+  display: none;
+}
+
+.page-browser .reading-annotated .proper-placement-note:not([hidden]) {
+  position: absolute;
+  z-index: 2;
+  top: 0.7rem;
+  left: calc(100% + 0.8rem);
+  width: 11rem;
+  padding: 0.45rem 0.6rem;
+  border-left: 1px solid var(--section-line);
+  background: var(--surface, #fff);
+  box-shadow: 0 0.3rem 1rem rgb(40 30 20 / 8%);
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: 0.74rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: none;
+}
+
+@media (min-width: 40.001rem) and (max-width: 72rem) {
+  .page-browser .reading-annotated .proper-placement-note:not([hidden]) {
+    position: static;
+    display: block;
+    width: auto;
+    margin: 0.45rem 0 0;
+    padding: 0.35rem 0 0.35rem 0.65rem;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
 .page-browser .proper-form {
   display: block;
   margin: 0.2rem 0 0;
@@ -605,6 +686,24 @@ body > .site-header nav {
     width: 100%;
   }
 
+  .page-browser .reading-annotated .proper-placement-toggle {
+    min-width: 2rem;
+    min-height: 2rem;
+    margin-left: 0.3rem;
+    padding: 0.35rem 0.15rem;
+  }
+
+  .page-browser .reading-annotated .proper-placement-note:not([hidden]) {
+    position: static;
+    display: block;
+    width: auto;
+    margin: 0.35rem 0 0;
+    padding: 0.35rem 0 0.35rem 0.65rem;
+    border-left: 1px solid var(--section-line);
+    background: transparent;
+    box-shadow: none;
+  }
+
   .page-browser .mass-head {
     margin-top: 2rem;
   }
@@ -653,6 +752,11 @@ body > .site-header nav {
   }
 
   .page-browser > .contents-disclosure {
+    display: none !important;
+  }
+
+  .page-browser .proper-placement-toggle,
+  .page-browser .proper-placement-note {
     display: none !important;
   }
 

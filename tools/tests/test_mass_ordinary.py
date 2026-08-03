@@ -36,6 +36,10 @@ FORMULARY_HTML = ROOT / "src" / "web" / "browser" / "liturgy" / "index.html"
 READING_CONTENTS_JS = (
     ROOT / "src" / "web" / "browser" / "liturgy" / "reading-contents.js"
 )
+PLACEMENT_NOTES_JS = (
+    ROOT / "src" / "web" / "browser" / "liturgy" / "proper-placement-notes.js"
+)
+DAY_MISSAL_CSS = ROOT / "src" / "web" / "browser" / "liturgy" / "day-missal.css"
 TOOL = ROOT / "tools" / "mass-ordinary"
 
 PUBLISHABLE = {"public-domain", "project-created", "licensed-free"}
@@ -690,6 +694,101 @@ class ReadingContentsPage(unittest.TestCase):
         return source[start:source.index("});", start) + 3]
 
 
+class ProperPlacementNotesPage(unittest.TestCase):
+    """Placement notes report only facts carried by seated Proper events."""
+
+    def setUp(self) -> None:
+        if shutil.which("node") is None:
+            self.skipTest("node is not installed")
+
+    def test_day_alone_loads_placement_notes_before_its_renderer(self) -> None:
+        day = DAY_HTML.read_text(encoding="utf-8")
+        module = '<script src="proper-placement-notes.js"></script>'
+        self.assertLess(day.index(module), day.index('<script src="day.js"></script>'))
+
+        formulary = FORMULARY_HTML.read_text(encoding="utf-8")
+        self.assertNotIn("proper-placement-notes", formulary)
+        self.assertEqual(
+            hashlib.sha256(FORMULARY_HTML.read_bytes()).hexdigest(),
+            "f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65",
+        )
+        self.assertEqual(
+            hashlib.sha256(FORMULARY_JS.read_bytes()).hexdigest(),
+            "7e1def40d8ed150d181926e312b2faa24aa4bf85f24bfe14dd9edf832150f73d",
+        )
+
+    def test_real_seats_supply_exact_factual_notes_and_no_placeholder(self) -> None:
+        run = subprocess.run(
+            ["node", "-e", PLACEMENT_NOTES_HARNESS],
+            capture_output=True,
+            text=True,
+            cwd=ROOT,
+            check=False,
+        )
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+        report = json.loads(run.stdout)
+
+        self.assertEqual(
+            report["roman_note"],
+            "Within the Ordinary, this Proper is seated after its declared anchor. "
+            "Seat citation: Ritus servandus IV, 2.",
+        )
+        self.assertEqual(
+            report["postconciliar_note"],
+            "Within the Ordinary, this Proper is seated after its declared anchor. "
+            "Seat citation: Ordo Missae nn. 14-16.",
+        )
+        self.assertIsNone(report["unseated"])
+        self.assertIsNone(report["missing_locus"])
+        self.assertTrue(report["events_unchanged"])
+        self.assertNotIn("Annotation placeholder.", report["all_text"])
+
+    def test_controls_are_idempotent_independent_and_keyboard_accessible(self) -> None:
+        run = subprocess.run(
+            ["node", "-e", PLACEMENT_NOTES_DOM_HARNESS],
+            capture_output=True,
+            text=True,
+            cwd=ROOT,
+            check=False,
+        )
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+        report = json.loads(run.stdout)
+
+        self.assertEqual(report["control_count"], 2)
+        self.assertEqual(report["note_ids"], [
+            "proper-placement-note-01", "proper-placement-note-02"
+        ])
+        self.assertEqual(report["controls"], report["note_ids"])
+        self.assertTrue(report["both_open"])
+        self.assertFalse(report["first_open_after_escape"])
+        self.assertTrue(report["second_still_open"])
+        self.assertTrue(report["focus_restored"])
+        self.assertEqual(report["hash_before"], report["hash_after"])
+        self.assertEqual(report["heading_text"], "Introit")
+        self.assertTrue(report["notes_are_siblings"])
+        self.assertEqual(report["first_role"], "note")
+        self.assertEqual(report["first_label"], "Show placement note for Introit")
+
+    def test_notes_are_url_free_and_hidden_in_print(self) -> None:
+        source = PLACEMENT_NOTES_JS.read_text(encoding="utf-8")
+        self.assertNotIn("location", source)
+        self.assertNotIn("history", source)
+        self.assertNotIn("Annotation placeholder.", source)
+
+        css = DAY_MISSAL_CSS.read_text(encoding="utf-8")
+        self.assertIn('content: "Why here?"', css)
+        print_at = css.index("@media print")
+        print_css = css[print_at:]
+        self.assertIn(".proper-placement-toggle", print_css)
+        self.assertIn(".proper-placement-note", print_css)
+        self.assertIn("display: none !important", print_css)
+
+        self.assertEqual(
+            hashlib.sha256(READING_CONTENTS_JS.read_bytes()).hexdigest(),
+            "01067b1208dc6468aecd278328043acc83d3c2de31bd149b66f1ac0383340f3d",
+        )
+
+
 # A DOM small enough to write here and faithful enough to prove the join.
 #
 # The shared machinery is the REAL browser-core.js and not a second stub of it.
@@ -960,6 +1059,202 @@ window.ReadingContents.clear(options);
 report.hidden_after_clear = disclosure.hidden;
 report.count_after_clear = nav.children.length;
 process.stdout.write(JSON.stringify(report));
+"""
+
+
+PLACEMENT_NOTES_HARNESS = r"""
+const fs = require('fs');
+const Seating = require('./src/web/browser/liturgy/ordinary-seating.js');
+global.window = {};
+eval(fs.readFileSync(
+  'src/web/browser/liturgy/proper-placement-notes.js', 'utf8'));
+
+function events(calendar, massKey) {
+  const ordinary = JSON.parse(fs.readFileSync(
+    'src/web/data/structure/ordinary/' + calendar + '.json', 'utf8'));
+  const structure = JSON.parse(fs.readFileSync(
+    'src/web/data/structure/propers/' + calendar + '.json', 'utf8'));
+  const mass = structure.masses.find((one) => one.key === massKey);
+  const shown = Seating.shownElements(ordinary);
+  const placed = Seating.seatPropers(mass.propers, Seating.seats(ordinary, shown));
+  return Seating.massEvents(shown, placed);
+}
+
+const roman = events('roman-1962', 'pentecost-10');
+const postconciliar = events('postconciliar', 'ot-18');
+const romanIntroit = roman.find(
+  (event) => event.kind === 'proper' && event.proper.name === 'Introit');
+const postconciliarGospel = postconciliar.find(
+  (event) => event.kind === 'proper' && event.proper.name === 'Gospel');
+const before = JSON.stringify({romanIntroit, postconciliarGospel});
+
+const romanFacts = window.ProperPlacementNotes.facts(romanIntroit);
+const postconciliarFacts = window.ProperPlacementNotes.facts(postconciliarGospel);
+const unseated = window.ProperPlacementNotes.facts({
+  kind: 'proper', proper: {name: 'Unseated'}, placement: 'before', seat: null
+});
+const missingLocus = window.ProperPlacementNotes.facts({
+  kind: 'proper', proper: {name: 'Uncited'}, placement: 'seated',
+  seat: {where: 'after', locus: ''}
+});
+
+process.stdout.write(JSON.stringify({
+  roman_note: romanFacts && romanFacts.text,
+  postconciliar_note: postconciliarFacts && postconciliarFacts.text,
+  unseated,
+  missing_locus: missingLocus,
+  events_unchanged: before === JSON.stringify({romanIntroit, postconciliarGospel}),
+  all_text: [romanFacts && romanFacts.text, postconciliarFacts && postconciliarFacts.text]
+    .filter(Boolean).join('\n')
+}));
+"""
+
+
+PLACEMENT_NOTES_DOM_HARNESS = r"""
+const fs = require('fs');
+
+class Element {
+  constructor(tag, text) {
+    this.tagName = tag.toUpperCase();
+    this._text = text || '';
+    this.children = [];
+    this.attrs = {};
+    this.listeners = {};
+    this.className = '';
+    this.hidden = false;
+    this.ownerDocument = null;
+    this.parentElement = null;
+  }
+  get textContent() {
+    return this._text + this.children.map((child) => child.textContent || '').join('');
+  }
+  set textContent(value) { this._text = String(value); this.children = []; }
+  get id() { return this.getAttribute('id') || ''; }
+  set id(value) { this.setAttribute('id', value); }
+  get nextSibling() {
+    if (!this.parentElement) return null;
+    const at = this.parentElement.children.indexOf(this);
+    return this.parentElement.children[at + 1] || null;
+  }
+  appendChild(child) {
+    child.parentElement = this;
+    child.ownerDocument = this.ownerDocument;
+    this.children.push(child);
+    return child;
+  }
+  insertBefore(child, before) {
+    child.parentElement = this;
+    child.ownerDocument = this.ownerDocument;
+    const at = before ? this.children.indexOf(before) : -1;
+    if (at < 0) this.children.push(child); else this.children.splice(at, 0, child);
+    return child;
+  }
+  setAttribute(name, value) { this.attrs[name] = String(value); }
+  getAttribute(name) {
+    return Object.hasOwn(this.attrs, name) ? this.attrs[name] : null;
+  }
+  hasAttribute(name) { return Object.hasOwn(this.attrs, name); }
+  addEventListener(kind, listener) { this.listeners[kind] = listener; }
+  click() { this.listeners.click({currentTarget: this}); }
+  keydown(key) {
+    let prevented = false;
+    this.listeners.keydown({
+      key,
+      currentTarget: this,
+      preventDefault() { prevented = true; }
+    });
+    return prevented;
+  }
+  focus() { this.focused = true; this.ownerDocument.activeElement = this; }
+  matches(selector) {
+    const classMatch = selector.match(/^\.([a-z0-9-]+)$/);
+    return Boolean(classMatch && this.className.split(/\s+/).includes(classMatch[1]));
+  }
+  querySelector(selector) { return this.querySelectorAll(selector)[0] || null; }
+  querySelectorAll(selector) {
+    const selectors = selector.split(',').map((one) => one.trim());
+    const found = [];
+    function visit(node) {
+      for (const child of node.children) {
+        if (selectors.some((one) => child.matches && child.matches(one))) found.push(child);
+        visit(child);
+      }
+    }
+    visit(this);
+    return found;
+  }
+}
+
+const all = [];
+const document = {
+  activeElement: null,
+  createElement(tag) {
+    const node = new Element(tag);
+    node.ownerDocument = document;
+    all.push(node);
+    return node;
+  }
+};
+global.document = document;
+global.window = {location: {hash: '#date=2026-08-02&missal=roman-1962'}};
+eval(fs.readFileSync(
+  'src/web/browser/liturgy/proper-placement-notes.js', 'utf8'));
+
+function proper(name) {
+  const body = document.createElement('section');
+  body.className = 'proper';
+  const heading = document.createElement('h5');
+  heading.className = 'proper-name';
+  heading.textContent = name;
+  body.appendChild(heading);
+  return {body, heading};
+}
+
+const introit = proper('Introit');
+const gospel = proper('Gospel');
+const introitEvent = {
+  kind: 'proper', proper: {name: 'Introit'}, placement: 'seated',
+  seat: {where: 'after', locus: 'Ritus servandus IV, 2'}
+};
+const gospelEvent = {
+  kind: 'proper', proper: {name: 'Gospel'}, placement: 'seated',
+  seat: {where: 'after', locus: 'Ritus servandus VI, 2'}
+};
+
+window.ProperPlacementNotes.add({
+  body: introit.body, event: introitEvent, noteId: 'proper-placement-note-01'
+});
+window.ProperPlacementNotes.add({
+  body: introit.body, event: introitEvent, noteId: 'proper-placement-note-01'
+});
+window.ProperPlacementNotes.add({
+  body: gospel.body, event: gospelEvent, noteId: 'proper-placement-note-02'
+});
+
+const controls = all.filter((node) => node.className === 'proper-placement-toggle');
+const notes = all.filter((node) => node.className === 'proper-placement-note');
+const hashBefore = window.location.hash;
+controls[0].click();
+controls[1].click();
+const bothOpen = controls.every((one) => one.getAttribute('aria-expanded') === 'true');
+controls[0].keydown('Escape');
+
+process.stdout.write(JSON.stringify({
+  control_count: controls.length,
+  note_ids: notes.map((one) => one.id),
+  controls: controls.map((one) => one.getAttribute('aria-controls')),
+  both_open: bothOpen,
+  first_open_after_escape: controls[0].getAttribute('aria-expanded') === 'true',
+  second_still_open: controls[1].getAttribute('aria-expanded') === 'true',
+  focus_restored: controls[0].focused === true && document.activeElement === controls[0],
+  hash_before: hashBefore,
+  hash_after: window.location.hash,
+  heading_text: introit.heading.textContent,
+  notes_are_siblings: notes[0].parentElement === introit.body &&
+    notes[1].parentElement === gospel.body,
+  first_role: notes[0].getAttribute('role'),
+  first_label: controls[0].getAttribute('aria-label')
+}));
 """
 
 
