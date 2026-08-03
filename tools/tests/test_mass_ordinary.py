@@ -291,6 +291,9 @@ class OrdinaryPage(unittest.TestCase):
             "Postcommunion",
             "conclusio/dominus-vobiscum-ite-missa-est",
         ])
+        self.assertEqual(
+            report["event_kinds"], ["begin_section", "ordinary_element", "proper"]
+        )
 
     def test_a_day_the_frame_does_not_fit_is_said_so_and_not_rearranged(self) -> None:
         """Christmas carries four Masses; one Ordinary cannot hold them.
@@ -453,7 +456,7 @@ global.window.Triptych = Object.assign({}, global.window.Triptych, {
 let src = fs.readFileSync('src/web/browser/liturgy/day.js', 'utf8');
 src = src.replace('  start();',
   '  global.__probe = { renderElement, elementShows, state, ordinaryPreamble, ' +
-  'seats, seatPropers, shownElements };');
+  'seats, seatPropers, shownElements, massEvents };');
 eval(src);
 const P = global.__probe;
 const read = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -475,17 +478,17 @@ function pour(file, calendar, key) {
     .masses.find((m) => m.key === key);
   const frame = P.shownElements(file);
   const placed = P.seatPropers(mass.propers || [], P.seats(file, frame));
+  const events = P.massEvents(frame, placed);
   const out = [];
-  for (const row of placed.before) out.push(row.proper.name);
-  for (let i = 0; i < frame.length; i += 1) {
-    for (const row of placed.buckets.get(i) || []) out.push(row.proper.name);
-    out.push(frame[i].element.key);
+  for (const event of events) {
+    if (event.kind === 'proper') out.push(event.proper.name);
+    if (event.kind === 'ordinary_element') out.push(event.element.key);
   }
-  for (const row of placed.buckets.get(frame.length) || []) out.push(row.proper.name);
-  const seated = out.length - placed.before.length - frame.length;
-  for (const row of placed.after) out.push(row.proper.name);
-  return { order: out, broke: placed.broke, seated: seated,
-    before: placed.before.length, after: placed.after.length };
+  const count = (placement) => events.filter(
+    (event) => event.kind === 'proper' && event.placement === placement).length;
+  return { order: out, broke: placed.broke, seated: count('seated'),
+    before: count('before'), after: count('after'),
+    kinds: Array.from(new Set(events.map((event) => event.kind))).sort() };
 }
 
 // Landmarks of the frame, one per position the reading order names. Anything
@@ -533,7 +536,8 @@ process.stdout.write(JSON.stringify({
   nativity_seated: nativity.seated,
   nativity_after: nativity.after,
   nativity_total: nativity.seated + nativity.before + nativity.after,
-  postconciliar_collect: collect.slice(seat, seat + 2)
+  postconciliar_collect: collect.slice(seat, seat + 2),
+  event_kinds: easter.kinds
 }));
 """
 

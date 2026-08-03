@@ -489,13 +489,11 @@ def render_ordinary(one: dict, lang: str, style: Style, show_rubrics: bool) -> N
 # ---------------------------------------------------------------- the seating
 #
 # The browser and terminal both run `ordinary-seating.js`. This adapter carries
-# plain JSON across the Python/node boundary and restores the tuple-and-dict
-# containers the terminal renderer already consumes; it states no seating rule.
+# its semantic event stream across the Python/node boundary; it states no
+# seating or traversal rule.
 
 
-def ordinary_seating(
-    ordinary: dict, propers: list[dict], wanted: str | None
-) -> tuple[list[tuple[dict, dict]], dict]:
+def mass_events(ordinary: dict, propers: list[dict], wanted: str | None) -> list[dict]:
     harness = (
         "const model = require(process.argv[1]);\n"
         "let raw = '';\n"
@@ -505,17 +503,8 @@ def ordinary_seating(
         "  const shown = model.shownElements(input.ordinary, input.wanted);\n"
         "  const placed = model.seatPropers(\n"
         "    input.propers, model.seats(input.ordinary, shown));\n"
-        "  process.stdout.write(JSON.stringify({\n"
-        "    shown: shown.map((row) => {\n"
-        "      const section = input.ordinary.sections.indexOf(row.section);\n"
-        "      return [section, row.section.elements.indexOf(row.element)];\n"
-        "    }),\n"
-        "    before: placed.before.map((row) => [row.proper, row.seat]),\n"
-        "    buckets: Array.from(placed.buckets, ([at, rows]) =>\n"
-        "      [at, rows.map((row) => [row.proper, row.seat])]),\n"
-        "    after: placed.after.map((row) => [row.proper, row.seat]),\n"
-        "    broke: placed.broke\n"
-        "  }));\n"
+        "  const events = model.massEvents(shown, placed);\n"
+        "  process.stdout.write(JSON.stringify({ events: events }));\n"
         "});\n"
     )
     try:
@@ -536,21 +525,7 @@ def ordinary_seating(
     except json.JSONDecodeError as error:
         raise Refused(f"the Ordinary seating model returned invalid JSON: {error}") from error
 
-    sections = ordinary.get("sections") or []
-    shown = [
-        (sections[section], (sections[section].get("elements") or [])[element])
-        for section, element in result["shown"]
-    ]
-    placed = {
-        "before": [(row[0], row[1]) for row in result["before"]],
-        "buckets": {
-            int(index): [(row[0], row[1]) for row in rows]
-            for index, rows in result["buckets"]
-        },
-        "after": [(row[0], row[1]) for row in result["after"]],
-        "broke": result["broke"],
-    }
-    return shown, placed
+    return result["events"]
 
 
 def proper_head(proper: dict) -> str:
@@ -666,38 +641,37 @@ def render_expanded_mass(
         pour([(proper, None) for proper in propers])
         return
 
-    shown, placed = ordinary_seating(ordinary, propers, arguments.ordinary_variant)
-
-    if placed["before"]:
-        aside(
-            "this Mass opens with propers the Ordinary appoints no place for; "
-            "they are shown first, in the missal's own order."
-        )
-        pour(placed["before"])
-
-    current = None
-    for index, (section, element) in enumerate(shown):
-        if section is not current:
-            current = section
+    announced: set[str] = set()
+    for event in mass_events(ordinary, propers, arguments.ordinary_variant):
+        kind = event.get("kind")
+        if kind == "begin_section":
+            section = event["section"]
             print("")
             for line in style.heading(str(section.get("name") or ""), rule="-"):
                 print(f"    {line}")
-        pour(placed["buckets"].get(index) or [])
-        for line in element_lines(
-            element, arguments.lang or "en", style,
-            indent=indent, show_rubrics=arguments.rubrics, why=arguments.why,
-        ):
-            print(line)
-    pour(placed["buckets"].get(len(shown)) or [])
-
-    if placed["after"]:
-        aside(
-            "from here the day's propers no longer run forward through the "
-            "Ordinary: this day carries more than one formulary, or its rite "
-            "departs from the frame. The rest is shown in the missal's own "
-            "order, unseated and unreordered."
-        )
-        pour(placed["after"])
+        elif kind == "ordinary_element":
+            for line in element_lines(
+                event["element"], arguments.lang or "en", style,
+                indent=indent, show_rubrics=arguments.rubrics, why=arguments.why,
+            ):
+                print(line)
+        elif kind == "proper":
+            placement = event.get("placement")
+            if placement == "before" and placement not in announced:
+                announced.add(placement)
+                aside(
+                    "this Mass opens with propers the Ordinary appoints no place for; "
+                    "they are shown first, in the missal's own order."
+                )
+            elif placement == "after" and placement not in announced:
+                announced.add(placement)
+                aside(
+                    "from here the day's propers no longer run forward through the "
+                    "Ordinary: this day carries more than one formulary, or its rite "
+                    "departs from the frame. The rest is shown in the missal's own "
+                    "order, unseated and unreordered."
+                )
+            pour([(event["proper"], event.get("seat"))])
 
 
 def render(payload: object, arguments: argparse.Namespace) -> int:

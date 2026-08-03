@@ -1302,48 +1302,40 @@
     return Seating.seatPropers(propers, seating, T.isPlaceholder);
   }
 
+  const massEvents = Seating.massEvents;
+
   /** The frame, with the day's propers set into it. */
   function renderFrame(file, propers, renderMassProper) {
     const wrapper = T.el('section', 'ordinary-frame');
     const shown = shownElements(file);
     const placed = seatPropers(propers, seats(file, shown));
 
-    // Inside the frame a proper of the day is a part of the Mass beside the
-    // parts that never change, so it sets at the same level as they do. It
-    // needs no class of its own to be found: inside this frame an annotated
-    // block IS a proper of the day, the elements being sections beside it.
-    const pour = (held) => {
-      for (const row of held) {
-        wrapper.appendChild(renderMassProper(row.proper, row.seat, PART_HEADING));
-      }
-    };
-
-    if (placed.before.length) {
-      wrapper.appendChild(T.el('p', 'row-meta ordinary-aside',
-        'This Mass opens with propers the Ordinary appoints no place for. They ' +
-        'are shown first, in the missal’s own order.'));
-      pour(placed.before);
-    }
-
-    let current = null;
-    for (let index = 0; index < shown.length; index += 1) {
-      if (shown[index].section !== current) {
-        current = shown[index].section;
+    const announced = { before: false, after: false };
+    for (const event of massEvents(shown, placed)) {
+      if (event.kind === 'begin_section') {
         wrapper.appendChild(T.el(DIVISION_HEADING, 'mass-subheading ordinary-division',
-          current.name));
+          event.section.name));
+      } else if (event.kind === 'ordinary_element') {
+        wrapper.appendChild(renderElement(event.element, file));
+      } else if (event.kind === 'proper') {
+        if (event.placement === 'before' && !announced.before) {
+          announced.before = true;
+          wrapper.appendChild(T.el('p', 'row-meta ordinary-aside',
+            'This Mass opens with propers the Ordinary appoints no place for. They ' +
+            'are shown first, in the missal’s own order.'));
+        } else if (event.placement === 'after' && !announced.after) {
+          announced.after = true;
+          wrapper.appendChild(T.el('p', 'row-meta ordinary-aside',
+            'From here the day’s propers no longer run forward through the Ordinary: ' +
+            'this day carries more than one formulary, or its rite departs from the ' +
+            'frame. The rest is shown in the missal’s own order, unseated and ' +
+            'unreordered.'));
+        }
+        // Inside the frame a proper is a part of the Mass beside the parts that
+        // never change, so both set at the same heading level.
+        wrapper.appendChild(
+          renderMassProper(event.proper, event.seat, PART_HEADING));
       }
-      pour(placed.buckets.get(index) || []);
-      wrapper.appendChild(renderElement(shown[index].element, file));
-    }
-    pour(placed.buckets.get(shown.length) || []);
-
-    if (placed.after.length) {
-      wrapper.appendChild(T.el('p', 'row-meta ordinary-aside',
-        'From here the day’s propers no longer run forward through the Ordinary: ' +
-        'this day carries more than one formulary, or its rite departs from the ' +
-        'frame. The rest is shown in the missal’s own order, unseated and ' +
-        'unreordered.'));
-      pour(placed.after);
     }
     return wrapper;
   }

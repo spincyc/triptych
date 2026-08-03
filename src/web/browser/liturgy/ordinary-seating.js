@@ -4,10 +4,10 @@
  *
  * THIS FILE IS NOT A PAGE. It selects the elements shown for an Ordinary,
  * resolves the Ordinary's declared slots against those elements, and seats a
- * Mass's propers without reordering them. It touches no DOM, fetches nothing,
- * and knows nothing about either renderer. `day.js` uses it in the browser;
- * `mass-today` runs it under node. One implementation, so the two renderers
- * cannot drift.
+ * Mass's propers without reordering them, then walks the seated frame as
+ * semantic events. It touches no DOM, emits no text, fetches nothing, and knows
+ * nothing about either renderer. `day.js` uses it in the browser; `mass-today`
+ * runs it under node. One implementation, so the two renderers cannot drift.
  * ======================================================================== */
 
 'use strict';
@@ -84,12 +84,38 @@
     return { before: before, buckets: buckets, after: after, broke: broke };
   }
 
+  /** The seated frame in reading order, before either renderer presents it. */
+  function massEvents(shown, placed) {
+    const events = [];
+    const proper = function (row, placement) {
+      events.push({
+        kind: 'proper', proper: row.proper, seat: row.seat, placement: placement
+      });
+    };
+
+    for (const row of placed.before) proper(row, 'before');
+
+    let current = null;
+    for (let index = 0; index < shown.length; index += 1) {
+      if (shown[index].section !== current) {
+        current = shown[index].section;
+        events.push({ kind: 'begin_section', section: current });
+      }
+      for (const row of placed.buckets.get(index) || []) proper(row, 'seated');
+      events.push({ kind: 'ordinary_element', element: shown[index].element });
+    }
+    for (const row of placed.buckets.get(shown.length) || []) proper(row, 'seated');
+    for (const row of placed.after) proper(row, 'after');
+    return events;
+  }
+
   return {
     variantGroupOf: variantGroupOf,
     chosenOption: chosenOption,
     elementShows: elementShows,
     shownElements: shownElements,
     seats: seats,
-    seatPropers: seatPropers
+    seatPropers: seatPropers,
+    massEvents: massEvents
   };
 }));
