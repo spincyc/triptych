@@ -172,6 +172,31 @@ body > .site-header nav {
   max-width: var(--missal-measure);
 }
 
+/* The direct-formulary entrance uses the same book page and type system, but
+   its Proper headings are the top-level landmarks rather than elements seated
+   inside an Ordinary frame. */
+.page-browser .reading-formulary {
+  max-width: var(--missal-measure);
+  padding-top: 1.25rem;
+}
+
+.page-browser .reading-formulary .proper-name {
+  margin-bottom: 1rem;
+  padding: 0.7rem 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--section-line) 54%, transparent);
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.page-browser .reading-formulary .proper-ref {
+  margin-top: 0.24rem;
+  font-size: 0.72em;
+  line-height: 1.4;
+  text-align: left;
+}
+
 .page-browser .annotated {
   display: block;
   margin-bottom: 0;

@@ -8,20 +8,21 @@
      the page makes no external request of any kind. -->
 <link rel="stylesheet" href="../shared/browser-core.css">
 <link rel="stylesheet" href="liturgy.css">
+<link rel="stylesheet" href="day-missal.css">
 </head>
 <body>
 <a class="skip-link" href="#reading">Skip to the propers</a>
 
-<!-- The title, and then straight to the controls. What this page is, and what
-     the companion page is for, are true but they are not what the reader came
-     for; they wait below the propers. -->
-<header class="page-header">
-  <h1><span class="page-mark" aria-hidden="true">℣</span>The Propers of the Mass</h1>
+<!-- The selected formulary is the page's title. Its settings and any notices
+     follow as closed disclosures; only then does the ordered Proper begin. -->
+<header id="celebration-head" class="celebration-head">
+  <h1 id="formulary-title" class="celebration-title">Loading a Mass…</h1>
+  <p id="formulary-meta" class="entry-meta"></p>
 </header>
 
-<div id="banner" class="banner" role="status" hidden></div>
-
-<form id="controls" class="controls" aria-labelledby="controls-heading">
+<details id="settings-disclosure" class="utility-disclosure settings-disclosure">
+  <summary>Settings</summary>
+  <form id="controls" class="controls" aria-labelledby="controls-heading">
   <h2 id="controls-heading" class="visually-hidden">Choose a Mass</h2>
 
   <!-- The missal comes first and everything below it is downstream: the type
@@ -77,12 +78,18 @@
       </button>
     </div>
   </div>
-</form>
+  </form>
+</details>
+
+<details id="notices-disclosure" class="utility-disclosure notices-disclosure" hidden>
+  <summary>Notices</summary>
+  <div id="banner" class="banner" role="status" hidden></div>
+</details>
 
 <!-- The propers are not themselves a live region: replacing them would read a
      whole Mass aloud on every change. The shared script announces a one-line
      summary through #reading-status instead. -->
-<main id="reading" class="reading" tabindex="-1" aria-busy="false">
+<main id="reading" class="reading reading-formulary" tabindex="-1" aria-busy="false">
   <p class="placeholder">Loading the missals…</p>
 </main>
 

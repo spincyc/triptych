@@ -31,6 +31,8 @@ DATA = ROOT / "src" / "web" / "data" / "structure" / "ordinary"
 PROPERS = ROOT / "src" / "web" / "data" / "structure" / "propers"
 DAY_JS = ROOT / "src" / "web" / "browser" / "liturgy" / "day.js"
 DAY_HTML = ROOT / "src" / "web" / "browser" / "liturgy" / "day.html"
+FORMULARY_JS = ROOT / "src" / "web" / "browser" / "liturgy" / "liturgy.js"
+FORMULARY_HTML = ROOT / "src" / "web" / "browser" / "liturgy" / "index.html"
 TOOL = ROOT / "tools" / "mass-ordinary"
 
 PUBLISHABLE = {"public-domain", "project-created", "licensed-free"}
@@ -448,6 +450,81 @@ class OrdinaryPage(unittest.TestCase):
             capture_output=True, text=True, cwd=ROOT, check=False)
         self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
         return json.loads(run.stdout)
+
+
+class FormularyPage(unittest.TestCase):
+    """The direct-formulary entrance shares the reading-first page hierarchy."""
+
+    def test_title_first_hierarchy_and_closed_utility_disclosures(self) -> None:
+        page = FORMULARY_HTML.read_text(encoding="utf-8")
+        title = page.index('id="formulary-title"')
+        settings = page.index('id="settings-disclosure"')
+        notices = page.index('id="notices-disclosure"')
+        proper = page.index('id="reading"')
+        self.assertLess(title, settings)
+        self.assertLess(settings, notices)
+        self.assertLess(notices, proper)
+
+        for position in (settings, notices):
+            opening = page[page.rfind("<details", 0, position):page.index(">", position) + 1]
+            self.assertNotIn(" open", opening)
+
+        settings_end = page.index("</details>", settings)
+        notices_end = page.index("</details>", notices)
+        self.assertLess(settings, page.index('id="controls"'))
+        self.assertLess(page.index('id="controls"'), settings_end)
+        self.assertLess(notices, page.index('id="banner"'))
+        self.assertLess(page.index('id="banner"'), notices_end)
+        self.assertLess(
+            page.index('<link rel="stylesheet" href="liturgy.css">'),
+            page.index('<link rel="stylesheet" href="day-missal.css">'),
+        )
+
+        source = FORMULARY_JS.read_text(encoding="utf-8")
+        self.assertIn("noticesDisclosure.hidden = !shown", source)
+        self.assertNotIn("noticesDisclosure.open = true", source)
+
+    def test_renderer_keeps_each_missals_propers_in_source_order(self) -> None:
+        expected = {
+            "roman-1962": (
+                "advent-1",
+                10,
+                "9b8a7c8c853d9363ebeb2c5aa9c19292f3af0dc3e240c209c49a892c06941ee6",
+            ),
+            "postconciliar": (
+                "ot-18",
+                11,
+                "3747fa005cf696dca44389aae29904967e4960187a866ac72928b8963846b4fd",
+            ),
+        }
+        for missal, (key, count, wanted_digest) in expected.items():
+            file = json.loads((PROPERS / f"{missal}.json").read_text(encoding="utf-8"))
+            mass = next(one for one in file["masses"] if one["key"] == key)
+            names = [proper["name"] for proper in mass["propers"]]
+            digest = hashlib.sha256(
+                json.dumps(names, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+            ).hexdigest()
+            self.assertEqual(len(names), count, missal)
+            self.assertEqual(digest, wanted_digest, missal)
+
+        source = FORMULARY_JS.read_text(encoding="utf-8")
+        traversal = source.index("for (const proper of propers)")
+        self.assertLess(source.index("formularyTitle.textContent"), traversal)
+        self.assertLess(source.index("formularyMeta.textContent"), traversal)
+        self.assertIn("reading.appendChild(T.renderProper(proper", source[traversal:])
+
+    def test_day_reading_missal_source_and_event_contract_remain_fixed(self) -> None:
+        self.assertEqual(
+            hashlib.sha256(DAY_HTML.read_bytes()).hexdigest(),
+            "a6b8b827c7e91cb8817e44686baff355b11bd99f12ecf83c5513e375d5605edb",
+        )
+        self.assertEqual(
+            hashlib.sha256(DAY_JS.read_bytes()).hexdigest(),
+            "0804a64c85c6fca9226468766c0d012d918875ec71c2cd902bf333bc60387263",
+        )
+        page = DAY_HTML.read_text(encoding="utf-8")
+        self.assertNotIn("annotation-control", page)
+        self.assertNotIn("Annotation placeholder.", page)
 
 
 # A DOM small enough to write here and faithful enough to prove the join.

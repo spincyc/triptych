@@ -170,6 +170,25 @@
   const nextButton = document.getElementById('next-button');
   const reading = document.getElementById('reading');
   const controls = document.getElementById('controls');
+  const formularyTitle = document.getElementById('formulary-title');
+  const formularyMeta = document.getElementById('formulary-meta');
+  const noticesDisclosure = document.getElementById('notices-disclosure');
+  const banner = document.getElementById('banner');
+
+  function syncNoticesDisclosure() {
+    const shown = banner && !banner.hidden && banner.textContent.trim();
+    noticesDisclosure.hidden = !shown;
+    if (!shown) noticesDisclosure.open = false;
+  }
+
+  if (banner) {
+    new MutationObserver(syncNoticesDisclosure).observe(banner, {
+      attributes: true,
+      childList: true,
+      characterData: true
+    });
+    syncNoticesDisclosure();
+  }
 
   /* ------------------------------------------------------------------------
    * Discovery
@@ -362,7 +381,7 @@
    * --------------------------------------------------------------------- */
 
   function renderMass(mass, bible, fragments, chapterCount) {
-    reading.appendChild(T.el('h2', 'entry-title', mass.name || mass.key));
+    formularyTitle.textContent = mass.name || mass.key;
 
     const missal = currentMissal();
     const meta = [];
@@ -372,9 +391,7 @@
     if (mass.season) meta.push('Season: ' + T.titleCase(mass.season));
     const date = massDate(mass);
     if (date) meta.push(MONTHS[date[0] - 1] + ' ' + date[1]);
-    reading.appendChild(
-      T.el('p', 'entry-meta', meta.concat(T.bibleMeta(bible)).join(' · '))
-    );
+    formularyMeta.textContent = meta.concat(T.bibleMeta(bible)).join(' · ');
 
     const propers = mass.propers || [];
     const empty = !T.massHasContent(mass);
@@ -386,7 +403,8 @@
       for (const proper of propers) {
         reading.appendChild(T.renderProper(proper, bible, fragments, {
           numbering: (state.structure && state.structure.numbering) || null,
-          orations: state.orations
+          orations: state.orations,
+          heading: 'h2'
         }));
       }
     }
