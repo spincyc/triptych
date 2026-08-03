@@ -634,11 +634,8 @@ tests are complete and explicit.
 
 ## Current next action
 
-The immediate gate is external acceptance of the five-blocker correction
-commit recorded in the 2026-08-03 retrospective disposition. No reader or
-recension implementation belongs in that correction.
-
-After the correction handoff is accepted, start these independent actions in
+The M0 documentation and correction gate passed external review on 2026-08-03.
+The accepted implementation boundary now starts these independent actions in
 parallel:
 
 1. W1/W9 define the shared semantic fixture and URL-state contract, including
@@ -675,6 +672,7 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-03 | External-review handoff protocol | Established the immutable ignored review-package contract and major-visual-milestone gate. | `4236f21bfe5aa6f3dde76ee0b9398823373f22e3` |
 | 2026-08-03 | M0 retrospective external review | Accepted the governing foundation and requested five narrow corrections: persistent action reachability, entrance-specific Compare anchors and coequal choice handling, the official-act Phase 10 model, a current execution record, and internal-versus-public milestone scope. | Handoff `20260803T155820Z-liturgy-browser-vision-retrospective`; reviewed through `4236f21bfe5aa6f3dde76ee0b9398823373f22e3` |
 | 2026-08-03 | M0 external-review corrections | Resolves the five blockers without production or recension implementation; the exact SHA is recorded in the completion report and correction handoff because a commit cannot contain its own hash. | This correction commit |
+| 2026-08-03 | M0 correction external acceptance | Accepted — all five blockers resolved. The governing contract is stable, and W1/W9, W2, and W7 may begin in parallel at their recorded boundaries. | Reviewed commit `aad3691ee67106f6ff2cdb639463248ff35e3594`; handoff `20260803T164600Z-liturgy-browser-vision-corrections`; review result `20260803T171758Z-liturgy-browser-vision-corrections-review-result.md` |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).
