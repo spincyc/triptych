@@ -232,7 +232,9 @@ def default_bible(lang: str) -> dict | None:
     return None
 
 
-def propers_of(calendar: str, key: str, arguments: argparse.Namespace) -> dict:
+def propers_of(
+    calendar: str, key: str, arguments: argparse.Namespace, lectionary: dict | None = None
+) -> dict:
     """One Mass's propers as APPOINTED, with placeholders separated out.
 
     `mass.propers` is what the entry carries; `appointed` is what the day says.
@@ -259,6 +261,15 @@ def propers_of(calendar: str, key: str, arguments: argparse.Namespace) -> dict:
         if not isinstance(row, dict) or not isinstance(row.get("proper"), dict):
             continue
         proper = dict(row["proper"])
+        cycles = proper.get("cycles") or {}
+        for cycle in (
+            (lectionary or {}).get("sunday"),
+            (lectionary or {}).get("weekday"),
+        ):
+            selected = cycles.get(cycle) if cycle else None
+            if isinstance(selected, dict):
+                proper.update(selected)
+                break
         proper["form"] = row.get("form")
         proper["taken_from"] = row.get("taken_from")
         # The words behind each citation, from the resolution `mass-propers`
@@ -351,8 +362,10 @@ def run_show(arguments: argparse.Namespace) -> dict:
         # asking a second tool for the season would be the second derivation
         # this tool exists not to have.
         if branch is not None:
+            liturgical_year = held.get("liturgicalYear") or {}
             day = dict(day, season=held.get("season"), week=held.get("week"),
-                       unresolved=(held.get("liturgicalYear") or {}).get("unresolved") or [])
+                       lectionary=liturgical_year.get("lectionary"),
+                       unresolved=liturgical_year.get("unresolved") or [])
 
         if branch is not None:
             # One entry per formulary the date carries, each with its standing.
@@ -365,7 +378,9 @@ def run_show(arguments: argparse.Namespace) -> dict:
                     "rule": found.get("why"),
                     "locus": found.get("locus"),
                 }
-                entry.update(propers_of(day["calendar"], str(found.get("key")), arguments))
+                entry.update(propers_of(
+                    day["calendar"], str(found.get("key")), arguments, day.get("lectionary")
+                ))
                 masses.append(entry)
         else:
             candidates = [c for c in (day.get("candidates") or []) if isinstance(c, dict)]
@@ -378,7 +393,9 @@ def run_show(arguments: argparse.Namespace) -> dict:
             masses = []
             for candidate in candidates:
                 entry = dict(candidate)
-                entry.update(propers_of(day["calendar"], candidate["key"], arguments))
+                entry.update(propers_of(
+                    day["calendar"], candidate["key"], arguments, day.get("lectionary")
+                ))
                 masses.append(entry)
 
         row = {
