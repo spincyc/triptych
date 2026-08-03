@@ -58,6 +58,7 @@
 (function () {
   const T = window.Triptych;
   const Model = window.MassAssembly;
+  const Seating = window.OrdinarySeating;
 
   const RUBRICS_INDEX = 'structure/rubrics/index.json';
   const ORDINARY_INDEX = 'structure/ordinary/index.json';
@@ -916,15 +917,11 @@
    * one rather than in its stead.
    * --------------------------------------------------------------------- */
 
-  function variantGroupOf(file) {
-    return (file.variants || [])[0] || null;
-  }
+  const variantGroupOf = Seating.variantGroupOf;
 
   /** The option chosen in each group, defaulting to the one the source marks. */
   function chosenOption(file, group) {
-    const wanted = state.variants[group.group];
-    const found = (group.options || []).find((one) => one.id === wanted);
-    return found || (group.options || []).find((one) => one.default) || null;
+    return Seating.chosenOption(group, state.variants[group.group]);
   }
 
   /**
@@ -935,10 +932,10 @@
    * control a choice between prayers rather than a filter over a list of them.
    */
   function elementShows(element, file) {
-    if (!element.variant) return true;
     const group = variantGroupOf(file);
-    const chosen = group && chosenOption(file, group);
-    return Boolean(chosen && chosen.id === element.variant);
+    return Seating.elementShows(
+      element, file, group && state.variants[group.group]
+    );
   }
 
   /** A witness's acknowledgement, printed where its words are, never in a footer. */
@@ -1269,13 +1266,8 @@
    * is why a seat is resolved against this list and not against the file.
    */
   function shownElements(file) {
-    const held = [];
-    for (const section of file.sections || []) {
-      for (const element of section.elements || []) {
-        if (elementShows(element, file)) held.push({ section: section, element: element });
-      }
-    }
-    return held;
+    const group = variantGroupOf(file);
+    return Seating.shownElements(file, group && state.variants[group.group]);
   }
 
   /**
@@ -1286,22 +1278,7 @@
    * how two slots on neighbouring elements land in one position without either
    * being ambiguous about which element it named.
    */
-  function seats(file, shown) {
-    const where = new Map();
-    shown.forEach((row, index) => where.set(row.element.key, index));
-    const slots = file.slots || [];
-    const at = [];
-    const byName = new Map();
-    slots.forEach((slot, ordinal) => {
-      const anchor = where.get(slot.anchor);
-      // A file the generator accepted cannot get here; a file from somewhere
-      // else can, and an unresolvable anchor must lose the seat, not the proper.
-      if (anchor === undefined) return;
-      at[ordinal] = anchor + (slot.where === 'after' ? 1 : 0);
-      for (const name of slot.propers || []) byName.set(name, ordinal);
-    });
-    return { slots: slots, at: at, byName: byName };
-  }
+  const seats = Seating.seats;
 
   /**
    * Which propers go where, without ever reordering the missal.
@@ -1322,25 +1299,7 @@
    * Nothing is dropped, nothing is reordered, and the break is stated.
    */
   function seatPropers(propers, seating) {
-    const before = [];
-    const buckets = new Map();
-    const after = [];
-    let reached = -1;
-    let riding = null;
-    let broke = false;
-    for (const proper of propers) {
-      if (T.isPlaceholder(proper)) continue;
-      if (broke) { after.push({ proper: proper, seat: null }); continue; }
-      const ordinal = seating.byName.has(proper.name) ? seating.byName.get(proper.name) : -1;
-      if (ordinal < 0) { (riding || before).push({ proper: proper, seat: null }); continue; }
-      if (ordinal < reached) { broke = true; after.push({ proper: proper, seat: null }); continue; }
-      reached = ordinal;
-      const index = seating.at[ordinal];
-      riding = buckets.get(index) || [];
-      buckets.set(index, riding);
-      riding.push({ proper: proper, seat: seating.slots[ordinal] });
-    }
-    return { before: before, buckets: buckets, after: after, broke: broke };
+    return Seating.seatPropers(propers, seating, T.isPlaceholder);
   }
 
   /** The frame, with the day's propers set into it. */

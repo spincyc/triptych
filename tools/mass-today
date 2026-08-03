@@ -19,14 +19,13 @@ the day's propers set INTO the Ordinary at the places the missal appoints
 them, rather than appended after it. Where each proper sits is not worked out
 here — the ordo-missae inventories declare it, each slot naming the element it
 attaches to, the propers it receives and the rubric that puts it there, and
-`src/web/browser/liturgy/day.js` renders the page from those same
-declarations. This reads them. The seating RULE is stated in day.js and
-followed here to the letter, including the one clause that matters most: a
-proper that would send the reading backwards ends the interleaving, so a day
-carrying four formularies (Christmas), a second formulary (the Ember
+`src/web/browser/liturgy/ordinary-seating.js` reads those declarations for both
+this tool and the browser. Its one seating rule includes the clause that matters
+most: a proper that would send the reading backwards ends the interleaving, so a
+day carrying four formularies (Christmas), a second formulary (the Ember
 Saturdays), or a rite that departs from the frame (Good Friday, the paschal
-Vigil) breaks out of it and says so instead of being poured into a Mass that
-was never said.
+Vigil) breaks out of it and says so instead of being poured into a Mass that was
+never said.
 
 Two refusals are load-bearing, and both are inherited rather than invented.
 
@@ -72,6 +71,7 @@ TOOLS = ROOT / "tools"
 WIDTH = 88
 # The manifest `index-bible` writes, and the only list of what is indexed here.
 BIBLES = ROOT / "src" / "web" / "data" / "bibles.json"
+SEATING_MODEL = ROOT / "src" / "web" / "browser" / "liturgy" / "ordinary-seating.js"
 
 # The text every placeholder entry carries; matched on its opening rather than
 # in full so that a reworded placeholder is still recognised as one.
@@ -488,97 +488,69 @@ def render_ordinary(one: dict, lang: str, style: Style, show_rubrics: bool) -> N
 
 # ---------------------------------------------------------------- the seating
 #
-# The rule below is `seatPropers` in src/web/browser/liturgy/day.js, followed
-# to the letter and not reinvented; the SLOTS it works over are read from the
-# ordo-missae inventories through `mass-ordinary show`, which is where they are
-# declared and where the page reads them too. Two implementations of one
-# ordering is exactly the restatement guidance/the-shape.md section 2 is about,
-# and the reason this one is written out rather than shared is that day.js is a
-# DOM renderer: it cannot be imported here, and the alternative — inventing a
-# plausible order for the terminal — is the failure that section describes.
+# The browser and terminal both run `ordinary-seating.js`. This adapter carries
+# plain JSON across the Python/node boundary and restores the tuple-and-dict
+# containers the terminal renderer already consumes; it states no seating rule.
 
 
-def shown_elements(ordinary: dict, wanted: str | None = None) -> list[tuple[dict, dict]]:
-    """(section, element) for every element this frame is actually showing.
-
-    An element that names a variant shows only under the chosen option, which
-    is what makes the postconciliar control a choice between Eucharistic
-    Prayers rather than a list of all four printed one after another.
-    """
-    group = (ordinary.get("variants") or [None])[0]
-    options = (group or {}).get("options") or []
-    chosen = next((one for one in options if one.get("id") == wanted), None)
-    chosen = chosen or next(
-        (one for one in options if one.get("default")), options[0] if options else None
+def ordinary_seating(
+    ordinary: dict, propers: list[dict], wanted: str | None
+) -> tuple[list[tuple[dict, dict]], dict]:
+    harness = (
+        "const model = require(process.argv[1]);\n"
+        "let raw = '';\n"
+        "process.stdin.on('data', (chunk) => { raw += chunk; });\n"
+        "process.stdin.on('end', () => {\n"
+        "  const input = JSON.parse(raw);\n"
+        "  const shown = model.shownElements(input.ordinary, input.wanted);\n"
+        "  const placed = model.seatPropers(\n"
+        "    input.propers, model.seats(input.ordinary, shown));\n"
+        "  process.stdout.write(JSON.stringify({\n"
+        "    shown: shown.map((row) => {\n"
+        "      const section = input.ordinary.sections.indexOf(row.section);\n"
+        "      return [section, row.section.elements.indexOf(row.element)];\n"
+        "    }),\n"
+        "    before: placed.before.map((row) => [row.proper, row.seat]),\n"
+        "    buckets: Array.from(placed.buckets, ([at, rows]) =>\n"
+        "      [at, rows.map((row) => [row.proper, row.seat])]),\n"
+        "    after: placed.after.map((row) => [row.proper, row.seat]),\n"
+        "    broke: placed.broke\n"
+        "  }));\n"
+        "});\n"
     )
-    held = []
-    for section in ordinary.get("sections") or []:
-        for element in section.get("elements") or []:
-            variant = element.get("variant")
-            if variant and (not chosen or chosen.get("id") != variant):
-                continue
-            held.append((section, element))
-    return held
+    try:
+        finished = subprocess.run(
+            ["node", "-e", harness, str(SEATING_MODEL)],
+            input=json.dumps({"ordinary": ordinary, "propers": propers, "wanted": wanted}),
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except FileNotFoundError as error:
+        raise Refused("node is not installed, so the Ordinary cannot be seated") from error
+    if finished.returncode != 0:
+        detail = (finished.stderr or finished.stdout or "").strip()
+        raise Refused(f"the Ordinary seating model failed under node: {detail[:800]}")
+    try:
+        result = json.loads(finished.stdout)
+    except json.JSONDecodeError as error:
+        raise Refused(f"the Ordinary seating model returned invalid JSON: {error}") from error
 
-
-def seats(ordinary: dict, shown: list[tuple[dict, dict]]) -> tuple[list, dict, dict]:
-    """The declared seats, resolved to positions among the elements shown.
-
-    `at[n]` is the index a proper seated by slot `n` is inserted at: an `after`
-    puts it one place further on than a `before` on the same element.
-    """
-    where = {str(element.get("key")): index for index, (_, element) in enumerate(shown)}
-    slots = ordinary.get("slots") or []
-    at: dict[int, int] = {}
-    by_name: dict[str, int] = {}
-    for ordinal, slot in enumerate(slots):
-        anchor = where.get(str(slot.get("anchor")))
-        # An unresolvable anchor loses the seat, never the proper.
-        if anchor is None:
-            continue
-        at[ordinal] = anchor + (1 if slot.get("where") == "after" else 0)
-        for name in slot.get("propers") or []:
-            by_name[str(name)] = ordinal
-    return slots, at, by_name
-
-
-def seat_propers(propers: list[dict], slots: list, at: dict, by_name: dict) -> dict:
-    """Which propers go where, without ever reordering the missal.
-
-    Walk the day's propers in the order the missal prints them. A proper whose
-    name a slot claims is seated there, PROVIDED that seat is not behind the
-    last one used. A proper no slot claims rides with the one before it, which
-    is where the missal put it. And the first proper that would send the
-    reading backwards ends the interleaving: it and everything after it are
-    shown after the frame, in the missal's own order.
-
-    That last clause is the whole of the honesty here, and it is what makes
-    Christmas's four formularies, an Ember Saturday's second, Good Friday and
-    the paschal Vigil break out of the frame rather than be interleaved into
-    one Mass that was never said.
-    """
-    before: list[tuple[dict, dict | None]] = []
-    buckets: dict[int, list[tuple[dict, dict | None]]] = {}
-    after: list[tuple[dict, dict | None]] = []
-    reached = -1
-    riding: list | None = None
-    broke = False
-    for proper in propers:
-        if broke:
-            after.append((proper, None))
-            continue
-        ordinal = by_name.get(str(proper.get("name")), -1)
-        if ordinal < 0 or ordinal not in at:
-            (riding if riding is not None else before).append((proper, None))
-            continue
-        if ordinal < reached:
-            broke = True
-            after.append((proper, None))
-            continue
-        reached = ordinal
-        riding = buckets.setdefault(at[ordinal], [])
-        riding.append((proper, slots[ordinal]))
-    return {"before": before, "buckets": buckets, "after": after, "broke": broke}
+    sections = ordinary.get("sections") or []
+    shown = [
+        (sections[section], (sections[section].get("elements") or [])[element])
+        for section, element in result["shown"]
+    ]
+    placed = {
+        "before": [(row[0], row[1]) for row in result["before"]],
+        "buckets": {
+            int(index): [(row[0], row[1]) for row in rows]
+            for index, rows in result["buckets"]
+        },
+        "after": [(row[0], row[1]) for row in result["after"]],
+        "broke": result["broke"],
+    }
+    return shown, placed
 
 
 def proper_head(proper: dict) -> str:
@@ -694,9 +666,7 @@ def render_expanded_mass(
         pour([(proper, None) for proper in propers])
         return
 
-    shown = shown_elements(ordinary, arguments.ordinary_variant)
-    slots, at, by_name = seats(ordinary, shown)
-    placed = seat_propers(propers, slots, at, by_name)
+    shown, placed = ordinary_seating(ordinary, propers, arguments.ordinary_variant)
 
     if placed["before"]:
         aside(

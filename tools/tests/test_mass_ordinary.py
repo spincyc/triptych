@@ -13,9 +13,10 @@ _the_1861_canon` holds that boundary. And the ELLC common texts are free only on
 a stated condition, so `test_a_licensed_text_carries_its_acknowledgement` holds
 the acknowledgement beside the words rather than in a footer.
 
-The browser half runs the real `day.js` under node against the real generated
-files, for the reason `calendar-rubrics check` runs `assembly-model.js` that
-way: a Python re-implementation of the page would drift from the page.
+The browser half runs the real `day.js` and `ordinary-seating.js` under node
+against the real generated files, for the reason `calendar-rubrics check` runs
+`assembly-model.js` that way: a Python re-implementation would drift from the
+page.
 """
 
 import json
@@ -28,6 +29,7 @@ ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "src" / "web" / "data" / "structure" / "ordinary"
 PROPERS = ROOT / "src" / "web" / "data" / "structure" / "propers"
 DAY_JS = ROOT / "src" / "web" / "browser" / "liturgy" / "day.js"
+DAY_HTML = ROOT / "src" / "web" / "browser" / "liturgy" / "day.html"
 TOOL = ROOT / "tools" / "mass-ordinary"
 
 PUBLISHABLE = {"public-domain", "project-created", "licensed-free"}
@@ -239,6 +241,13 @@ class OrdinaryPage(unittest.TestCase):
         if not DATA.is_dir():
             self.skipTest("no ordinary layer written")
 
+    def test_the_page_loads_the_shared_seating_before_its_renderer(self) -> None:
+        page = DAY_HTML.read_text(encoding="utf-8")
+        self.assertLess(
+            page.index('<script src="ordinary-seating.js"></script>'),
+            page.index('<script src="day.js"></script>'),
+        )
+
     def test_the_page_shows_one_prayer_and_states_what_it_withholds(self) -> None:
         report = self.run_harness()
         self.assertEqual(report["shown_by_default"], ["ep-i"])
@@ -431,6 +440,8 @@ global.document = { createElement: node, createTextNode: (t) => ({ data: t, text
   body: { classList: { toggle() {} }, appendChild() {} }, addEventListener() {} };
 global.window = { location: { search: '' }, addEventListener() {},
   MassAssembly: { derive: () => ({}) }, matchMedia: null };
+global.window.OrdinarySeating = require(
+  './src/web/browser/liturgy/ordinary-seating.js');
 
 eval(fs.readFileSync('src/web/browser/shared/browser-core.js', 'utf8'));
 global.window.Triptych = Object.assign({}, global.window.Triptych, {
