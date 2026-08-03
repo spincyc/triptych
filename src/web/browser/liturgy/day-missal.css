@@ -1,0 +1,563 @@
+/* ===========================================================================
+ * Today’s Missal — continuous reading presentation
+ * ===========================================================================
+ *
+ * Loaded after day.css so this presentation can be reviewed independently.
+ * It changes no structure: the existing event stream, elements, ids, classes,
+ * controls, annotations, and print content remain in place.
+ * ======================================================================== */
+
+.page-shell.page-browser {
+  --missal-measure: 40.5rem;
+  --missal-rubric: color-mix(in srgb, var(--section-ink) 78%, var(--ink));
+  max-width: 52rem;
+  margin-block: 1.5rem 4rem;
+  padding: clamp(1.5rem, 3.5vw, 2.75rem) clamp(1.25rem, 5vw, 4rem) 4rem;
+  border: 1px solid color-mix(in srgb, var(--section-pale) 64%, transparent);
+  border-radius: 0;
+  box-shadow: 0 1.25rem 3rem rgb(40 30 20 / 5%);
+  background: color-mix(in srgb, var(--surface, #fff) 96%, var(--section-pale));
+}
+
+.page-browser > .page-header,
+.page-browser > .banner,
+.page-browser > .controls,
+.page-browser > .reading,
+.page-browser > .page-footer {
+  width: min(100%, var(--missal-measure));
+  margin-inline: auto;
+}
+
+.page-browser .page-header,
+.page-browser .reading,
+.page-browser .page-footer {
+  font-family: var(--serif);
+}
+
+.page-browser .page-header {
+  margin-bottom: 0.85rem;
+  text-align: center;
+}
+
+.page-browser .page-header h1 {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-browser .page-mark {
+  color: var(--missal-rubric);
+}
+
+/* Application controls remain sans-serif, but cease to form a card inside the
+   reading surface. The two quiet rules separate choosing from reading. */
+.page-browser .controls,
+.page-browser .controls button,
+.page-browser .controls input,
+.page-browser .controls select,
+.page-browser .controls summary,
+.page-browser .mass-choice,
+.page-browser .mass-choice select {
+  font-family: var(--sans);
+}
+
+.page-browser .controls {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem 0.75rem;
+  margin-bottom: 2.1rem;
+  padding: 0.7rem 0 0.8rem;
+  border: 0;
+  border-block: 1px solid var(--section-pale);
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.78rem;
+}
+
+.page-browser .controls .field {
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.page-browser .controls .field-steps {
+  grid-column: span 2;
+}
+
+.page-browser .controls .field label,
+.page-browser .controls .field-legend,
+.page-browser .controls .field-options > summary {
+  font-size: 0.72rem;
+  line-height: 1.2;
+}
+
+.page-browser .controls select,
+.page-browser .controls input,
+.page-browser .controls button,
+.page-browser .controls .field-options > summary {
+  min-height: 2rem;
+  padding-block: 0.2rem;
+}
+
+.page-browser .field label,
+.page-browser .field-legend,
+.page-browser .mass-choice-label {
+  color: var(--missal-rubric);
+}
+
+.page-browser .field select,
+.page-browser .field input,
+.page-browser .steps button,
+.page-browser .field-options > summary {
+  background: color-mix(in srgb, var(--surface, #fff) 86%, transparent);
+  border-color: var(--section-pale);
+  border-radius: 0.15rem;
+}
+
+/* One measure throughout. Annotations remain in the DOM and, when requested,
+   follow the passage they explain instead of opening a second reading column. */
+.page-browser .reading-annotated {
+  max-width: var(--missal-measure);
+}
+
+.page-browser .annotated {
+  display: block;
+  margin-bottom: 0;
+}
+
+.page-browser .annotated > .margin {
+  margin: 1rem 0 2rem;
+}
+
+.page-browser .reading {
+  color: var(--ink);
+  font-size: 1.03rem;
+  line-height: 1.7;
+}
+
+.page-browser .entry-title {
+  margin-bottom: 0.2rem;
+  color: var(--ink-soft);
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  font-weight: 400;
+  text-align: center;
+}
+
+.page-browser .entry-meta {
+  margin-bottom: 1.55rem;
+  font-family: var(--serif);
+  font-size: 0.76rem;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--ink-faint);
+}
+
+.page-browser .mass-head {
+  margin: 2.35rem 0 2.15rem;
+  text-align: center;
+}
+
+.page-browser .mass-name {
+  color: var(--missal-rubric);
+  font-size: clamp(1.35rem, 3vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.page-browser .branch > .annotated > .annotated-text > .mass-head > .mass-name {
+  font-size: clamp(2rem, 5vw, 2.45rem);
+  line-height: 1.15;
+}
+
+.page-browser .mass-choice {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.page-browser .mass-choice-field {
+  justify-content: center;
+}
+
+/* Notices retain their meaning but no longer read as rounded cards. */
+.page-browser .notice,
+.page-browser .day-warning {
+  border: 0;
+  border-left: 1px solid color-mix(in srgb, var(--section-line) 68%, transparent);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--section-pale) 14%, transparent);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.page-browser .notice {
+  margin-block: 0.6rem;
+  padding: 0.3rem 0.65rem;
+  color: color-mix(in srgb, var(--notice) 58%, var(--ink-soft));
+}
+
+.page-browser .day-warning {
+  margin-block: 1rem;
+  padding: 0.4rem 0.7rem;
+}
+
+.page-browser .branch + .branch {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top-color: var(--section-pale);
+}
+
+/* Every Proper is part of one continuous book. Ordinary titles remain centered
+   like the hand missal that supplies them; the day's seated Propers become the
+   left-edge apparatus by which a reader scans this particular celebration. */
+.page-browser .proper {
+  margin: 0 0 3.25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.page-browser .proper-name {
+  display: block;
+  margin: 0 0 0.65rem;
+  font-family: var(--serif);
+  font-size: 0.86rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.45;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--missal-rubric);
+}
+
+.page-browser .proper-ref {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--serif);
+  font-size: 0.82em;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-faint);
+}
+
+/* The day's seated Propers are the major landmarks in the continuous rite.
+   Their existing structure is sufficient to distinguish them from the
+   smaller, centered prayer and dialogue titles inside the Ordinary. The rule
+   precedes the complete heading so its reference remains directly beneath the
+   name rather than being divided from it. */
+.page-browser .ordinary-frame > .annotated > .annotated-text > .proper > .proper-name {
+  margin-bottom: 1rem;
+  padding: 0.7rem 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--section-line) 54%, transparent);
+  border-bottom: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-align: left;
+}
+
+.page-browser .ordinary-frame > .annotated > .annotated-text > .proper > .proper-name > .proper-ref {
+  margin-top: 0.24rem;
+  font-size: 0.72em;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.page-browser .proper-form {
+  display: block;
+  margin: 0.2rem 0 0;
+}
+
+.page-browser .citation-ref,
+.page-browser .chapter-mark,
+.page-browser .cycle-name,
+.page-browser .composed-label,
+.page-browser .speaker-tag,
+.page-browser .ordinary-locus,
+.page-browser .row-meta,
+.page-browser .margin,
+.page-browser .margin-heading,
+.page-browser .margin-name,
+.page-browser .locus {
+  font-family: var(--serif);
+}
+
+.page-browser .passage,
+.page-browser .composed {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 1.72;
+}
+
+.page-browser .citation {
+  margin-top: 1.2rem;
+}
+
+.page-browser .citation-ref {
+  text-align: center;
+}
+
+.page-browser .speaker-tag {
+  margin-right: 0.28rem;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: color-mix(in srgb, var(--missal-rubric) 48%, var(--ink-faint));
+}
+
+.page-browser .speaker-tag + .speaker-tag,
+.page-browser .composed .speaker-tag:not(:first-child) {
+  margin-left: 0.25rem;
+}
+
+.page-browser .ordinary-locus {
+  margin-right: 0.4em;
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--ink-faint);
+}
+
+.page-browser .locus {
+  padding-inline: 0.1rem;
+  background: transparent;
+  font-size: 0.76em;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--ink-faint);
+}
+
+/* Divisions are navigation landmarks, not cards or chapter banners. */
+.page-browser .ordinary-division {
+  margin: 5rem 0 2.15rem;
+  padding: 1rem 0 0;
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, var(--section-line) 48%, transparent);
+  font-family: var(--serif);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.page-browser .ordinary-frame > .ordinary-division:first-child {
+  margin-top: 1.8rem;
+}
+
+.page-browser .ordinary-frame > .ordinary-element {
+  margin-bottom: 1.35rem;
+  padding: 0;
+  border: 0;
+}
+
+.page-browser .ordinary-frame > .annotated {
+  margin: 4.6rem 0 3.25rem;
+}
+
+.page-browser .ordinary-frame > .annotated .annotated-text > .proper {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.page-browser .ordinary-head {
+  margin: 2.2rem 0 0.8rem;
+  font-family: var(--serif);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--missal-rubric);
+}
+
+.page-browser .ordinary-element.is-rubric .composed {
+  color: color-mix(in srgb, var(--missal-rubric) 52%, var(--ink-soft));
+  font-size: 0.94rem;
+  font-style: italic;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.page-browser .ordinary-preamble {
+  margin: 4rem 0 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--section-pale);
+}
+
+.page-browser .ordinary-aside {
+  border-left-color: var(--section-pale);
+}
+
+.page-browser .tag,
+.page-browser .locus,
+.page-browser .ordinary-absence-key {
+  border-radius: 0;
+}
+
+.page-browser .page-footer {
+  margin-top: 5rem;
+  font-family: var(--serif);
+}
+
+@media (max-width: 40rem) {
+  .page-shell.page-browser {
+    margin-top: 0.75rem;
+    padding: 1.25rem 1rem 3rem;
+  }
+
+  .page-browser .page-header {
+    text-align: left;
+  }
+
+  .page-browser .controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem 0.65rem;
+    margin-bottom: 1.8rem;
+    padding-block: 0.65rem 0.75rem;
+  }
+
+  .page-browser .field,
+  .page-browser .field-narrow,
+  .page-browser .field-steps {
+    width: 100%;
+  }
+
+  .page-browser .field-steps {
+    grid-column: 1 / -1;
+  }
+
+  .page-browser .steps {
+    width: 100%;
+  }
+
+  .page-browser .steps button {
+    flex: 1 1 0;
+    padding-inline: 0.4rem;
+  }
+
+  .page-browser .entry-title {
+    font-size: 1.05rem;
+  }
+
+  .page-browser .entry-meta {
+    margin-bottom: 1.35rem;
+  }
+
+  .page-browser .mass-head {
+    margin-top: 2rem;
+  }
+
+  .page-browser .proper {
+    margin-bottom: 2.6rem;
+  }
+
+  .page-browser .ordinary-frame > .annotated {
+    margin-top: 4.1rem;
+  }
+
+  .page-browser .ordinary-division {
+    margin-top: 4rem;
+  }
+}
+
+@media print {
+  body > .site-header {
+    display: none;
+  }
+
+  @page {
+    size: letter;
+    margin: 0.7in 0.75in;
+  }
+
+  .page-shell.page-browser {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: #fff;
+  }
+
+  .page-browser > .page-header,
+  .page-browser > .banner,
+  .page-browser > .controls,
+  .page-browser > .page-footer,
+  .page-browser .mass-choice {
+    display: none;
+  }
+
+  .page-browser > .reading {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    font-size: 10.5pt;
+    line-height: 1.5;
+  }
+
+  .page-browser .entry-title {
+    margin-top: 0;
+    font-size: 12pt;
+  }
+
+  .page-browser .entry-meta {
+    margin-bottom: 1.6rem;
+  }
+
+  .page-browser .mass-head {
+    margin: 2rem 0 1.2rem;
+  }
+
+  .page-browser .branch > .annotated > .annotated-text > .mass-head > .mass-name {
+    font-size: 20pt;
+  }
+
+  .page-browser .notice,
+  .page-browser .day-warning {
+    break-inside: avoid;
+  }
+
+  .page-browser .proper-name,
+  .page-browser .ordinary-division,
+  .page-browser .ordinary-head {
+    break-after: avoid;
+  }
+
+  .page-browser .ordinary-frame > .annotated {
+    margin: 2.5rem 0 2rem;
+  }
+
+  .page-browser .ordinary-frame > .annotated > .annotated-text > .proper > .proper-name {
+    padding-top: 0.55rem;
+    text-align: left;
+    break-after: avoid-page;
+  }
+
+  .page-browser .ordinary-frame > .annotated > .annotated-text > .proper > .proper-name + * {
+    break-before: avoid-page;
+  }
+
+  .page-browser .ordinary-frame > .annotated > .annotated-text > .proper > .proper-name > .proper-ref {
+    text-align: left;
+  }
+
+  .page-browser .ordinary-division {
+    margin-top: 2.4rem;
+  }
+
+  .page-browser .proper {
+    margin-bottom: 2rem;
+  }
+
+  .page-browser .passage,
+  .page-browser .composed {
+    font-size: 10.5pt;
+    line-height: 1.55;
+  }
+}
