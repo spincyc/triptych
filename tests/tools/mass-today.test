@@ -117,6 +117,38 @@ case "$cycled" in
 	;;
 esac
 
+# With no Ordinary variant named, the CLI keeps the same default the browser
+# reads from the file: Eucharistic Prayer I, the Roman Canon.
+case "$cycled" in
+*"Eucharistic Prayer I, the Roman Canon (priest)"*) ;;
+*)
+	echo "postconciliar default Ordinary lost Eucharistic Prayer I" >&2
+	exit 1
+	;;
+esac
+
+# The browser can select a non-default option from the Ordinary's declared
+# variant group. The terminal must select the same one, and only that one.
+third="$(run_tool show --date 2026-11-29 --calendar postconciliar \
+	--bible douay-rheims --expanded --plain --ordinary-variant ep-iii)"
+for want in \
+	"Eucharistic Prayer III (priest)" \
+	"opens Vere Sanctus es, Domine, et merito te laudat"; do
+	case "$third" in
+	*"$want"*) ;;
+	*)
+		echo "postconciliar ep-iii output is missing: $want" >&2
+		exit 1
+		;;
+	esac
+done
+case "$third" in
+*"Eucharistic Prayer I, the Roman Canon (priest)"*|*"Eucharistic Prayer II (priest)"*|*"Eucharistic Prayer IV (priest)"*)
+	echo "postconciliar ep-iii output includes another Eucharistic Prayer" >&2
+	exit 1
+	;;
+esac
+
 # The Ordinary is INTERLEAVED, not appended: each proper stands where the
 # missal's own slot declaration puts it. Checked by order rather than by
 # presence, because an appended Ordinary contains all the same words.

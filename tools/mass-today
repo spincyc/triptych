@@ -498,7 +498,7 @@ def render_ordinary(one: dict, lang: str, style: Style, show_rubrics: bool) -> N
 # plausible order for the terminal — is the failure that section describes.
 
 
-def shown_elements(ordinary: dict) -> list[tuple[dict, dict]]:
+def shown_elements(ordinary: dict, wanted: str | None = None) -> list[tuple[dict, dict]]:
     """(section, element) for every element this frame is actually showing.
 
     An element that names a variant shows only under the chosen option, which
@@ -507,7 +507,10 @@ def shown_elements(ordinary: dict) -> list[tuple[dict, dict]]:
     """
     group = (ordinary.get("variants") or [None])[0]
     options = (group or {}).get("options") or []
-    chosen = next((one for one in options if one.get("default")), options[0] if options else None)
+    chosen = next((one for one in options if one.get("id") == wanted), None)
+    chosen = chosen or next(
+        (one for one in options if one.get("default")), options[0] if options else None
+    )
     held = []
     for section in ordinary.get("sections") or []:
         for element in section.get("elements") or []:
@@ -691,7 +694,7 @@ def render_expanded_mass(
         pour([(proper, None) for proper in propers])
         return
 
-    shown = shown_elements(ordinary)
+    shown = shown_elements(ordinary, arguments.ordinary_variant)
     slots, at, by_name = seats(ordinary, shown)
     placed = seat_propers(propers, slots, at, by_name)
 
@@ -883,6 +886,10 @@ def main(argv: list[str] | None = None) -> int:
         "--expanded",
         action="store_true",
         help="the whole Mass: scripture in words, propers set into the Ordinary",
+    )
+    shared.add_argument(
+        "--ordinary-variant",
+        help="select an Ordinary variant option by id (default: the file's default)",
     )
     shared.add_argument(
         "--no-rubrics",
