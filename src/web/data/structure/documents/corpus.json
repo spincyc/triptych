@@ -4542,6 +4542,11 @@
        "model": "claude-opus-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (rights correction: the public-domain claim for the 1962 typical edition withdrawn and replaced with the 17 U.S.C. 103(b) basis recorded in the repository's facsimile rights record, preexisting-material check against the tracked 1920 typical edition text, rebuild and page review); Claude Code CLI 2.1.220; unexposed: server revision"
       }
      ],
      "eligibility": "eligible",
@@ -4552,7 +4557,7 @@
      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf",
      "provider": "claude",
      "reviewed": "2026-07-25",
-     "revised": "2026-07-26T02:03:00Z",
+     "revised": "2026-08-02T05:22:00Z",
      "status": "alpha",
      "subject": "A source-first companion to the propers of the Eighth Sunday after Pentecost in the 1962 Missale Romanum: the appointed Latin collated against the Vatican typical edition, the formulary's place in the temporal cycle, its themes and movement, detailed commentary on Romans 8:12-17 and the parable of the unjust steward (Luke 16:1-9) with the interpretive tradition's disagreements preserved, documented cultural afterlives, bounded editorial proposals, and terminal scope apparatus",
      "title": "Eighth Sunday after Pentecost: Dominica Octava post Pentecosten",
@@ -4659,6 +4664,11 @@
        "runtime": "Anthropic Claude Code agent (rebuild under the published-text-and-English policy: English sourced from the registered Douay-Rheims and Cummiskey corpora, appointed Latin withdrawn from the page except where an argument turns on it, collation and attribution findings consolidated, typesetting; audit of every English quotation against the registered Douay-Rheims and Cummiskey records, psalm-numbering and American-edition corrections, cross-leaf build-dependency registration, and page-by-page review); Claude Code CLI 2.1.219; unexposed: server revision"
       },
       {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (rights correction: the public-domain claim for the 1962 typical edition withdrawn and replaced with the 17 U.S.C. 103(b) basis recorded in the repository's facsimile rights record, preexisting-material check against the tracked 1920 typical edition text, rebuild and page review); Claude Code CLI 2.1.220; unexposed: server revision"
+      },
+      {
        "model": "gpt-5.6-sol",
        "qualifiers": "effort=ultra",
        "runtime": "OpenAI Codex agent (component architecture, source-grounded synthesis, full and synthesis edition restructuring, and internal validation of the Claude-authored work); Codex CLI 0.144.6; API workspace; unexposed: server revision"
@@ -4679,7 +4689,7 @@
      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf",
      "provider": "claude",
      "reviewed": "2026-07-25",
-     "revised": "2026-07-26T20:01:14Z",
+     "revised": "2026-08-02T05:22:00Z",
      "status": "alpha",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "title": "Ninth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
