@@ -179,6 +179,21 @@ operations.
 
 ## Promised work
 
+### Liturgy reader-state M1 candidate
+
+<!-- promised-deliverable: liturgy-reader-state-m1-2026-08-03 -->
+
+The first W1/W9 integration slice defines one versioned, DOM-free semantic
+reader-state and legacy-URL contract for the distinct Day and Propers
+entrances. Production-backed and explicitly non-public synthetic fixtures hold
+identity, calendar result, semantic event order, Proper and Ordinary seating,
+text selection, provenance, typed coverage and absence, unresolved choices,
+and Compare anchors across Day, Propers, and `mass-today --expanded` without a
+second liturgical engine or a visible production change.
+
+The implementation and tests are an M1 candidate. External acceptance remains
+open; this record does not mark M1 accepted or begin W2, W3, or W7.
+
 ### GPT deep-research redevelopment
 
 <!-- promised-deliverable: project-gpt-deep-research-redevelopment-2026-07-29 -->

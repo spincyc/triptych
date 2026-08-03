@@ -1,6 +1,53 @@
 schema_version = 1
 
 [[deliverables]]
+id = "liturgy-reader-state-m1-2026-08-03"
+owner = "src/web/browser/liturgy/reader-state.js"
+promise = "Define the first W1/W9 shared semantic reader-state, URL, fixture, and Day/Propers/CLI parity contract without changing production reader behavior."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "shared-contract"
+  criterion = "A versioned DOM-free contract distinguishes Day and Propers, typed coverage and absence, unresolved authorized choices, and entrance-specific Compare anchors."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/reader-state.js",
+    "src/web/browser/liturgy/reader-state-adapters.js",
+    "guidance/liturgy-reader-state.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "url-compatibility"
+  criterion = "Every current Day and Propers URL key is inventoried and tested for manifest validation, precedence, storage-free operation, fail-closed explicit values, safe unknown-key handling, and canonical round trips."
+  status = "pass"
+  evidence = ["tools/tests/test_liturgy_reader_state.py"]
+
+  [[deliverables.requirements]]
+  id = "semantic-fixtures-and-parity"
+  criterion = "Versioned production-backed and non-public synthetic fixtures prove semantic parity across Day, Propers, and mass-today --expanded without duplicating calendar or seating logic."
+  status = "pass"
+  evidence = [
+    "tools/tests/fixtures/liturgy-reader-state/v1",
+    "tools/tests/test_liturgy_reader_state.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "production-behavior-boundary"
+  criterion = "Current route HTML, CSS, JavaScript, liturgical/generated data, selector contents, and supported URL meanings remain unchanged; the candidate modules are not loaded by either route."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day.html",
+    "src/web/browser/liturgy/index.html",
+    "tools/tests/test_liturgy_reader_state.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-acceptance"
+  criterion = "The immutable M1 handoff receives external review and every blocking finding is resolved before M1 is marked accepted."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+[[deliverables]]
 id = "project-gpt-deep-research-redevelopment-2026-07-29"
 owner = "src/gpt"
 promise = "Substantively redevelop the GPT Tenth Sunday after Pentecost, all three GPT Eighteenth Sunday in Ordinary Time cycles, and the GPT Catholic exorcism study through broad and deep source-first research without materially changing Claude publications."

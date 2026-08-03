@@ -1,0 +1,58 @@
+{
+  "schema": "triptych-liturgy-reader-fixture/v1",
+  "id": "compare-day-2026-08-02",
+  "visibility": "public-data",
+  "basis": {
+    "kind": "tracked-production-data",
+    "paths": [
+      "src/web/data/structure/calendar/roman-1962/2026.json",
+      "src/web/data/structure/calendar/postconciliar/2026.json",
+      "src/web/data/structure/rubrics/roman-1962.json",
+      "src/web/data/structure/rubrics/postconciliar.json"
+    ]
+  },
+  "consumers": ["contract-compare-day"],
+  "requested": {
+    "schema": "triptych-liturgy-reader-state/v1",
+    "entrance": "day",
+    "civilDate": "2026-08-02",
+    "edition": {"id": "roman-1962"},
+    "calendar": {"id": "roman-1962"},
+    "requestedMode": "compare",
+    "coverage": [],
+    "unresolvedChoices": [],
+    "sourceHooks": [],
+    "comparison": {
+      "dimension": "recension",
+      "anchor": {"civilDate": "2026-08-02", "territorialContext": "universal"},
+      "sides": [
+        {"id": "roman-1962", "edition": {"id": "roman-1962"}, "calendar": {"id": "roman-1962"}},
+        {"id": "postconciliar", "edition": {"id": "postconciliar"}, "calendar": {"id": "postconciliar"}}
+      ]
+    }
+  },
+  "expected": {
+    "resolved": {
+      "dimension": "recension",
+      "sides": [
+        {"id": "roman-1962", "edition": "roman-1962", "calendar": "roman-1962", "calendarResult": "pentecost-10", "formulary": "pentecost-10"},
+        {"id": "postconciliar", "edition": "postconciliar", "calendar": "postconciliar", "calendarResult": "ot-18", "formulary": "ot-18"}
+      ]
+    },
+    "calendarResult": {
+      "date": "2026-08-02",
+      "territorialContext": "universal",
+      "resolveEachSideIndependently": true,
+      "showCalendarDifferencesFirst": true
+    },
+    "events": [],
+    "coverage": [
+      {"state": "supported", "scope": "calendar-resolution-side:roman-1962", "completeness": "complete", "reasons": []},
+      {"state": "supported", "scope": "calendar-resolution-side:postconciliar", "completeness": "complete", "reasons": []}
+    ],
+    "explicitAbsences": [],
+    "unresolvedChoices": [],
+    "url": null,
+    "semanticHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "triptych-liturgy-reader-fixture/v1",
+  "id": "compare-propers-synthetic-correspondence",
+  "visibility": "synthetic-non-public",
+  "synthetic": {"contractOnly": true, "liturgicalText": false, "historicalClaims": false},
+  "basis": {"kind": "synthetic-contract", "nonPublic": true},
+  "consumers": ["contract-compare-propers"],
+  "requested": {
+    "schema": "triptych-liturgy-reader-state/v1",
+    "entrance": "propers",
+    "civilDate": null,
+    "edition": {"id": "synthetic-edition-a"},
+    "formulary": {"id": "synthetic-formulary-a"},
+    "requestedMode": "compare",
+    "coverage": [],
+    "unresolvedChoices": [],
+    "sourceHooks": [],
+    "comparison": {
+      "dimension": "recension",
+      "anchor": {"correspondingFormulary": "synthetic-correspondence-1"},
+      "sides": [
+        {"id": "a", "edition": {"id": "synthetic-edition-a"}, "formulary": {"id": "synthetic-formulary-a"}},
+        {"id": "b", "edition": {"id": "synthetic-edition-b"}, "formulary": {"id": "synthetic-formulary-b"}}
+      ]
+    }
+  },
+  "expected": {
+    "resolved": {"correspondence": "synthetic-correspondence-1", "dateIndependent": true},
+    "calendarResult": null,
+    "events": [],
+    "coverage": [
+      {"state": "supported", "scope": "synthetic-contract", "completeness": "complete", "reasons": []}
+    ],
+    "explicitAbsences": [
+      {"kind": "explicit-semantic-absence", "scope": "civil-date-and-calendar-result", "repositoryTerm": "semantic-absence", "reason": "propers-compare-is-date-independent"}
+    ],
+    "unresolvedChoices": [],
+    "url": null,
+    "semanticHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

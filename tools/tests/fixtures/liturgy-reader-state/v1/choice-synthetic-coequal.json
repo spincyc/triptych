@@ -1,0 +1,55 @@
+{
+  "schema": "triptych-liturgy-reader-fixture/v1",
+  "id": "choice-synthetic-coequal",
+  "visibility": "synthetic-non-public",
+  "synthetic": {"contractOnly": true, "liturgicalText": false, "historicalClaims": false},
+  "basis": {"kind": "synthetic-contract", "nonPublic": true},
+  "consumers": ["contract-unresolved-choice"],
+  "requested": {
+    "schema": "triptych-liturgy-reader-state/v1",
+    "entrance": "day",
+    "civilDate": "2000-01-01",
+    "edition": {"id": "synthetic-edition"},
+    "calendar": {"id": "synthetic-calendar"},
+    "requestedMode": "read",
+    "coverage": [],
+    "sourceHooks": [],
+    "unresolvedChoices": [
+      {
+        "kind": "unresolved-authorized-choice",
+        "id": "synthetic-coequal-choice",
+        "reason": "the synthetic contract context declares two coequal authorized options",
+        "options": [
+          {"id": "synthetic-option-a", "identity": {"id": "synthetic-option-a"}, "sourceHooks": []},
+          {"id": "synthetic-option-b", "identity": {"id": "synthetic-option-b"}, "sourceHooks": []}
+        ],
+        "sourceHooks": []
+      }
+    ]
+  },
+  "expected": {
+    "resolved": null,
+    "calendarResult": {"date": "2000-01-01", "result": "choice-required"},
+    "events": [],
+    "coverage": [
+      {"state": "absent", "scope": "resolved-formulary", "reasons": [{"kind": "semantic-absence", "repositoryTerm": "unresolved"}]}
+    ],
+    "explicitAbsences": [
+      {"kind": "explicit-semantic-absence", "scope": "resolved-formulary", "repositoryTerm": "semantic-absence", "reason": "authorized-choice-unresolved"}
+    ],
+    "unresolvedChoices": [
+      {
+        "kind": "unresolved-authorized-choice",
+        "id": "synthetic-coequal-choice",
+        "reason": "the synthetic contract context declares two coequal authorized options",
+        "options": [
+          {"id": "synthetic-option-a", "identity": {"id": "synthetic-option-a"}, "sourceHooks": []},
+          {"id": "synthetic-option-b", "identity": {"id": "synthetic-option-b"}, "sourceHooks": []}
+        ],
+        "sourceHooks": []
+      }
+    ],
+    "url": null,
+    "semanticHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

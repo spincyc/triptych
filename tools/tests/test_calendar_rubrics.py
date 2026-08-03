@@ -296,6 +296,8 @@ class ExpectedFieldTests(unittest.TestCase):
         "settled": True,
         "losers": [{"id": "s-patricii-episcopi-confessoris", "disposition": "commemorated"}],
         "orations": {"low_mass": [{}, {}], "sung_non_conventual": [{}]},
+        "massChoices": [],
+        "readable": [{"key": "passion-wednesday", "state": "said"}],
         "conditions": [],
     }
 
