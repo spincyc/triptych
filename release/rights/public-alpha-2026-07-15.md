@@ -1929,10 +1929,10 @@ release attachment, announcement, or promotion.
 | `src/web/browser/law/law.css` | `57a2a758f4c3b01d73415c0f5ad1dc35e0ed3cbac03b607f43460a81cec0d9bc` |
 | `src/web/browser/law/law.js` | `9f4f50e40b005393f0790039f735c87df318a15e890cb3efe027d8eef83f6ca5` |
 | `src/web/browser/liturgy/assembly-model.js` | `de239c0c7efddbfbaeba2d3ee5a9439630abc8965e61765dfd7205e4b9181789` |
-| `src/web/browser/liturgy/day-missal.css` | `8de4c7058fce3b310cebaf7b61b957fa385ec5c7232b80edac8b85742bb777cc` |
+| `src/web/browser/liturgy/day-missal.css` | `3b496c3aa67fd0cedb85a3cb20717c99db9e8d3c52bab91a4eff46f92e16affd` |
 | `src/web/browser/liturgy/day.css` | `93ef9f44ee5d6488cb95a1587e856bd75488ea6b34b6ff723a01a437a75b6ed1` |
-| `src/web/browser/liturgy/day.html` | `20b6b7a46c077924b93501dc5c33fdb54eda218c81a04af6ff4ea8a87fed1ff1` |
-| `src/web/browser/liturgy/day.js` | `e57ad5b8a59e212c648b52f2d84d6c4a363252b5e87a3c5151be42849ea64bbc` |
+| `src/web/browser/liturgy/day.html` | `a6b8b827c7e91cb8817e44686baff355b11bd99f12ecf83c5513e375d5605edb` |
+| `src/web/browser/liturgy/day.js` | `0804a64c85c6fca9226468766c0d012d918875ec71c2cd902bf333bc60387263` |
 | `src/web/browser/liturgy/index.html` | `de4a08cdc27f86f8f0bb7d3c3def6b8a012ea9f9cb9d0ce7370b37812e098dcc` |
 | `src/web/browser/liturgy/liturgy.css` | `5333873c3fbcdabb5cd10b1d92897feaa27fad7d532e70c17fd2130088f936b6` |
 | `src/web/browser/liturgy/liturgy.js` | `234a001de9b8829efa0efde6394affcdfae54c60ba39f432a7f93ed720dfd23c` |

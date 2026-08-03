@@ -17,17 +17,17 @@
 <body>
 <a class="skip-link" href="#reading">Skip to the Mass</a>
 
-<!-- The title, then the controls, then the Mass. This page shows the same thing
-     the propers page shows — the text of a Mass — and differs only in how the
-     Mass is reached, and in what it says in the margin about why this one.
-     Everything else waits below it. -->
-<header class="page-header">
-  <h1><span class="page-mark" aria-hidden="true">℣</span>Today’s Missal</h1>
+<!-- The celebration is the page's title. Utility controls and notices follow
+     as native, closed disclosures; only then does the ordered Mass begin. -->
+<header id="celebration-head" class="celebration-head">
+  <h1 id="celebration-title" class="celebration-title">Loading the Mass…</h1>
+  <p id="celebration-date" class="entry-title"></p>
+  <p id="celebration-meta" class="entry-meta"></p>
 </header>
 
-<div id="banner" class="banner" role="status" hidden></div>
-
-<form id="controls" class="controls" aria-labelledby="controls-heading">
+<details id="settings-disclosure" class="utility-disclosure settings-disclosure">
+  <summary>Settings</summary>
+  <form id="controls" class="controls" aria-labelledby="controls-heading">
   <h2 id="controls-heading" class="visually-hidden">Choose a day</h2>
 
   <div class="field field-narrow">
@@ -73,8 +73,8 @@
        and it is fetched only when asked for. `rubrics` is ON, because a missal
        prints what the priest does and a page opening without them would open
        showing less than the book. -->
-  <details class="field field-options" id="options-field">
-    <summary>Configuration</summary>
+  <div class="field field-options" id="options-field">
+    <p class="field-legend">Configuration</p>
     <div class="options-list">
       <label for="why-toggle">
         <input type="checkbox" id="why-toggle" name="why">
@@ -89,7 +89,7 @@
         Rubrics
       </label>
     </div>
-  </details>
+  </div>
 
   <!-- The Ordinary's own language, hidden until the Ordinary is showing. It is
        a third text control beside Scripture and Orations, and a separate one,
@@ -113,6 +113,11 @@
     <select id="variant-select" name="variant"></select>
   </div>
 
+  <!-- Some dates carry more than one readable formulary. The selector is
+       rendered here by day.js so it remains a setting rather than interrupting
+       the Mass whose text it changes. -->
+  <div id="formulary-controls"></div>
+
   <div class="field field-steps">
     <span class="field-legend" id="step-legend">Day</span>
     <div class="steps" role="group" aria-labelledby="step-legend">
@@ -125,7 +130,14 @@
       </button>
     </div>
   </div>
-</form>
+  </form>
+</details>
+
+<details id="notices-disclosure" class="utility-disclosure notices-disclosure" hidden>
+  <summary>Notices</summary>
+  <div id="banner" class="banner" role="status" hidden></div>
+  <div id="rendered-notices"></div>
+</details>
 
 <main id="reading" class="reading reading-annotated" tabindex="-1" aria-busy="false">
   <p class="placeholder">Loading the calendar…</p>

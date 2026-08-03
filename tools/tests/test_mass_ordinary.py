@@ -19,6 +19,7 @@ against the real generated files, for the reason `calendar-rubrics check` runs
 page.
 """
 
+import hashlib
 import json
 import shutil
 import subprocess
@@ -246,6 +247,37 @@ class OrdinaryPage(unittest.TestCase):
         self.assertLess(
             page.index('<script src="ordinary-seating.js"></script>'),
             page.index('<script src="day.js"></script>'),
+        )
+
+    def test_reading_first_hierarchy_and_event_sequence(self) -> None:
+        """Utility disclosures follow the title; the Mass itself is unchanged."""
+        page = DAY_HTML.read_text(encoding="utf-8")
+        title = page.index('id="celebration-title"')
+        settings = page.index('id="settings-disclosure"')
+        notices = page.index('id="notices-disclosure"')
+        mass = page.index('id="reading"')
+        self.assertLess(title, settings)
+        self.assertLess(settings, notices)
+        self.assertLess(notices, mass)
+
+        for position in (settings, notices):
+            opening = page[page.rfind("<details", 0, position):page.index(">", position) + 1]
+            self.assertNotIn(" open", opening)
+
+        settings_end = page.index("</details>", settings)
+        self.assertLess(settings, page.index('id="controls"'))
+        self.assertLess(page.index('id="controls"'), settings_end)
+        self.assertLess(page.index('id="formulary-controls"'), settings_end)
+
+        report = self.run_harness()
+        sequence = report["pentecost_10_sequence"]
+        digest = hashlib.sha256(
+            json.dumps(sequence, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+        ).hexdigest()
+        self.assertEqual(len(sequence), 211)
+        self.assertEqual(
+            digest,
+            "c1fe93220057c722c753d3af29c9fb111c162a2572304780c018a6fed2591c08",
         )
 
     def test_the_page_shows_one_prayer_and_states_what_it_withholds(self) -> None:
@@ -486,9 +518,19 @@ function pour(file, calendar, key) {
   }
   const count = (placement) => events.filter(
     (event) => event.kind === 'proper' && event.placement === placement).length;
+  const sequence = events.map((event) => {
+    if (event.kind === 'begin_section') {
+      return 'begin_section:' + event.section.key;
+    }
+    if (event.kind === 'ordinary_element') {
+      return 'ordinary_element:' + event.element.key;
+    }
+    return 'proper:' + event.placement + ':' + event.proper.name;
+  });
   return { order: out, broke: placed.broke, seated: count('seated'),
     before: count('before'), after: count('after'),
-    kinds: Array.from(new Set(events.map((event) => event.kind))).sort() };
+    kinds: Array.from(new Set(events.map((event) => event.kind))).sort(),
+    sequence: sequence };
 }
 
 // Landmarks of the frame, one per position the reading order names. Anything
@@ -499,6 +541,7 @@ const MARKS = new Set(['praeparatio/kyrie-eleison', 'praeparatio/gloria-in-excel
   'communio/pater-noster', 'communio/agnus-dei',
   'conclusio/dominus-vobiscum-ite-missa-est']);
 const easter = pour(tlm, 'roman-1962', 'easter-sunday');
+const pentecost10 = pour(tlm, 'roman-1962', 'pentecost-10');
 const nativity = pour(pc, 'postconciliar', 'nativity');
 const collect = pour(pc, 'postconciliar', 'easter-sunday').order;
 const seat = collect.indexOf('ritus-initiales/collecta');
@@ -537,7 +580,8 @@ process.stdout.write(JSON.stringify({
   nativity_after: nativity.after,
   nativity_total: nativity.seated + nativity.before + nativity.after,
   postconciliar_collect: collect.slice(seat, seat + 2),
-  event_kinds: easter.kinds
+  event_kinds: easter.kinds,
+  pentecost_10_sequence: pentecost10.sequence
 }));
 """
 

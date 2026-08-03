@@ -77,19 +77,13 @@
     thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday'
   };
 
-  // Above this the margin is a margin. Below it there is no room for one, and
-  // what it becomes is decided in `openMargins` rather than left to reflow.
-  const WIDE = '(min-width: 60rem)';
-
-  // The Mass reads as one document, so its headings run as one ladder. The date
-  // is h2, a Mass is h3, a division of the Ordinary — "The Priest at the Foot
-  // of the Altar" — is h4, and every part said is h5, whether it is an element
-  // of the frame or a proper of the day. Those two are the same kind of thing
-  // to a reader moving by headings; set at h4 and h3 respectively, which is
-  // what they were, the page said the Introit outranked the division it stands
-  // in and that the Introit and the division were peers.
-  const DIVISION_HEADING = 'h4';
-  const PART_HEADING = 'h5';
+  // The celebration is the page's h1. A major division of its Ordinary is h2,
+  // and every part said is h3, whether it is an element of the frame or a
+  // proper of the day. Those two are the same kind of thing to a reader moving
+  // by headings; making a Proper outrank the division it stands in would state
+  // a hierarchy the Mass does not have.
+  const DIVISION_HEADING = 'h2';
+  const PART_HEADING = 'h3';
 
   const state = {
     missals: [],
@@ -145,6 +139,13 @@
   const prevButton = document.getElementById('prev-button');
   const nextButton = document.getElementById('next-button');
   const todayButton = document.getElementById('today-button');
+  const celebrationTitle = document.getElementById('celebration-title');
+  const celebrationDate = document.getElementById('celebration-date');
+  const celebrationMeta = document.getElementById('celebration-meta');
+  const noticesDisclosure = document.getElementById('notices-disclosure');
+  const banner = document.getElementById('banner');
+  const renderedNotices = document.getElementById('rendered-notices');
+  const formularyControls = document.getElementById('formulary-controls');
   const reading = document.getElementById('reading');
   const controls = document.getElementById('controls');
 
@@ -208,12 +209,6 @@
     return node;
   }
 
-  function openMargins(root) {
-    const wide = window.matchMedia ? window.matchMedia(WIDE).matches : true;
-    const found = root.querySelectorAll ? root.querySelectorAll('details.margin') : [];
-    for (const one of found) one.open = wide;
-  }
-
   /* ------------------------------------------------------------------------
    * Discovery
    * --------------------------------------------------------------------- */
@@ -267,7 +262,11 @@
    * --------------------------------------------------------------------- */
 
   function renderHead(derived, bible) {
-    reading.appendChild(T.el('h2', 'entry-title', longDate(derived.date, derived.weekday)));
+    const first = derived.options[0];
+    celebrationTitle.textContent = first && first.winner
+      ? first.winner.name
+      : 'No day is settled here';
+    celebrationDate.textContent = longDate(derived.date, derived.weekday);
 
     const missal = currentMissal();
     const meta = [];
@@ -276,17 +275,19 @@
     if (derived.week) meta.push('Week ' + derived.week);
     const cycle = derived.liturgicalYear && derived.liturgicalYear.lectionary;
     if (cycle) meta.push('Lectionary ' + cycle.sunday + '/' + cycle.weekday);
-    reading.appendChild(
-      T.el('p', 'entry-meta', meta.concat(T.bibleMeta(bible)).join(' · '))
-    );
+    celebrationMeta.textContent = meta.concat(T.bibleMeta(bible)).join(' · ');
 
     // A year the calendar computation itself refused to resolve is a fact about
     // this whole year, not about one proper, so it is said once here.
     const unresolved = (derived.liturgicalYear && derived.liturgicalYear.unresolved) || [];
     for (const row of unresolved) {
-      reading.appendChild(
+      renderedNotices.appendChild(
         T.notice('unresolved this year: ' + row.what + ' — ' + row.why));
     }
+  }
+
+  function updateNoticesDisclosure() {
+    noticesDisclosure.hidden = banner.hidden && renderedNotices.children.length === 0;
   }
 
   /* ------------------------------------------------------------------------
@@ -786,10 +787,9 @@
     const warning = renderVerdictNotice(branch);
     if (warning) section.appendChild(warning);
 
-    // The Mass's own heading carries the margin that says why it is this Mass.
+    // The celebration name is the page title. This block now carries only the
+    // source and resolution apparatus, which follows the Mass below.
     const head = T.el('div', 'mass-head');
-    head.appendChild(T.el('h3', 'mass-name',
-      branch.winner ? branch.winner.name : 'No day is settled here'));
     // The formulary said on the day, where it is not the day's own name. The
     // heading stays the DAY — "the Office of Our Lady on Saturday" — because
     // that is what the day is; the Mass is named under it.
@@ -804,15 +804,21 @@
     }
     recensionRows(head, mass);
     // One control for everything the date carries, grouped by standing; the
-    // reasoning goes to the margin with every other rubrical decision.
+    // reasoning goes to the margin with every other rubrical decision. The
+    // control itself belongs in Settings, not in the ordered Mass.
     const selector = formularySelector(branch, () => render({ moveFocus: false }));
-    if (selector) head.appendChild(selector);
-    section.appendChild(annotated(head, massMargin(branch, rubrics, derived)));
-    // After the head, so it sits immediately above the words it qualifies.
+    if (selector) formularyControls.appendChild(selector);
+    const apparatus = annotated(head, massMargin(branch, rubrics, derived));
+
+    // A selected displaced or optional formulary must still qualify the words
+    // immediately. This is a safety notice, not a generic "Not shown" notice.
     const standing = standingNotice(branch);
     if (standing) section.appendChild(standing);
 
-    if (!branch.winner) return section;
+    if (!branch.winner) {
+      section.appendChild(apparatus);
+      return section;
+    }
 
     const series = branch.orations.all || branch.orations.low_mass || [];
     const subordinate = series.filter((one) => one.position > 1);
@@ -892,6 +898,7 @@
       section.appendChild(annotated(held,
         properMargin(orationSlots[0] || { slot: 'Collect' }, subordinate, branch, structure)));
     }
+    section.appendChild(apparatus);
     return section;
   }
 
@@ -1558,6 +1565,8 @@
     }
 
     T.clear(reading);
+    T.clear(renderedNotices);
+    T.clear(formularyControls);
     renderHead(derived, bible);
 
     // The frame is settled before a word of any Mass is drawn, because each
@@ -1569,10 +1578,10 @@
     // The rubrics belong to the frame, so the control for them appears with it.
     rubricsField.hidden = !frame;
     if (!frame && ordinary) {
-      reading.appendChild(T.notice(
+      renderedNotices.appendChild(T.notice(
         'the Ordinary of this missal. It could not be loaded: ' + ordinary.message));
     } else if (state.ordinary) {
-      reading.appendChild(T.notice(
+      renderedNotices.appendChild(T.notice(
         'the Ordinary of this missal. This corpus carries none for “' +
         state.missalId + '”.'));
     }
@@ -1587,7 +1596,7 @@
     // to be usable at Mass, and three thousand characters of provenance before
     // the first prayer is a page you cannot use at Mass. Facts first.
     if (frame) reading.appendChild(ordinaryPreamble(frame));
-    openMargins(reading);
+    updateNoticesDisclosure();
     reading.setAttribute('aria-busy', 'false');
 
     const first = derived.options[0];
@@ -1777,17 +1786,6 @@
   controls.addEventListener('submit', (event) => event.preventDefault());
 
   T.onArrowStep((delta) => step_(delta, { moveFocus: false }));
-
-  // A margin is a margin only while there is room for one. Re-deciding on the
-  // breakpoint rather than on every resize keeps a reader's own disclosure
-  // choices intact while they are reading at one width.
-  if (window.matchMedia) {
-    const wide = window.matchMedia(WIDE);
-    const listen = wide.addEventListener
-      ? wide.addEventListener.bind(wide, 'change')
-      : wide.addListener.bind(wide);
-    listen(() => openMargins(reading));
-  }
 
   T.onHashChange((hash) => {
     const wantedMissal = hash.get('missal');

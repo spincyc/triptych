@@ -1,63 +1,105 @@
 /* ===========================================================================
- * Today’s Missal — continuous reading presentation
+ * Reading Missal v1
  * ===========================================================================
  *
- * Loaded after day.css so this presentation can be reviewed independently.
- * It changes no structure: the existing event stream, elements, ids, classes,
- * controls, annotations, and print content remain in place.
+ * Loaded after day.css. The page is one reading surface: compact site chrome,
+ * the celebration, closed utility disclosures, then the ordered Mass.
  * ======================================================================== */
 
 .page-shell.page-browser {
   --missal-measure: 40.5rem;
   --missal-rubric: color-mix(in srgb, var(--section-ink) 78%, var(--ink));
   max-width: 52rem;
-  margin-block: 1.5rem 4rem;
-  padding: clamp(1.5rem, 3.5vw, 2.75rem) clamp(1.25rem, 5vw, 4rem) 4rem;
+  margin-block: 0.6rem 4rem;
+  padding: clamp(1.25rem, 3vw, 2.25rem) clamp(1.25rem, 5vw, 4rem) 4rem;
   border: 1px solid color-mix(in srgb, var(--section-pale) 64%, transparent);
   border-radius: 0;
   box-shadow: 0 1.25rem 3rem rgb(40 30 20 / 5%);
   background: color-mix(in srgb, var(--surface, #fff) 96%, var(--section-pale));
 }
 
-.page-browser > .page-header,
-.page-browser > .banner,
-.page-browser > .controls,
+.page-browser > .celebration-head,
+.page-browser > .utility-disclosure,
 .page-browser > .reading,
 .page-browser > .page-footer {
   width: min(100%, var(--missal-measure));
   margin-inline: auto;
 }
 
-.page-browser .page-header,
+.page-browser .celebration-head,
 .page-browser .reading,
 .page-browser .page-footer {
   font-family: var(--serif);
 }
 
-.page-browser .page-header {
-  margin-bottom: 0.85rem;
+.page-browser .celebration-head {
+  margin-bottom: 0.8rem;
   text-align: center;
 }
 
-.page-browser .page-header h1 {
-  font-family: var(--sans);
-  font-size: 0.92rem;
+.page-browser .celebration-title {
+  margin: 0;
+  color: var(--missal-rubric);
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4.5vw, 2.5rem);
   font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  line-height: 1.12;
 }
 
-.page-browser .page-mark {
+/* This page keeps the shared links but makes the repository chrome one quiet
+   band above the book. */
+body > .site-header {
+  grid-template-columns: auto auto minmax(0, 1fr);
+  gap: 0.65rem;
+  min-height: 3.35rem;
+  padding: 0.4rem clamp(0.85rem, 3vw, 1.75rem);
+}
+
+body > .site-header .triptych-mark {
+  grid-template-columns: repeat(3, 0.34rem);
+  min-width: 1.8rem;
+  height: 1.45rem;
+}
+
+body > .site-header .triptych-mark i { height: 1rem; }
+body > .site-header .triptych-mark i:nth-child(2) { height: 1.35rem; }
+body > .site-header .brand a { font-size: 1.18rem; }
+body > .site-header .brand span { font-size: 0.62rem; }
+body > .site-header nav {
+  justify-self: end;
+  gap: 0.85rem;
+  font-size: 0.78rem;
+}
+
+/* Settings and Notices are compact native disclosures. Their contents exist
+   in the document but do not occupy the reading face while closed. */
+.page-browser .utility-disclosure {
+  border-top: 1px solid var(--section-pale);
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+}
+
+.page-browser .utility-disclosure:last-of-type {
+  border-bottom: 1px solid var(--section-pale);
+}
+
+.page-browser .utility-disclosure > summary {
+  min-height: 2.05rem;
+  padding: 0.45rem 0.15rem;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.page-browser .utility-disclosure[open] > summary {
   color: var(--missal-rubric);
 }
 
-/* Application controls remain sans-serif, but cease to form a card inside the
-   reading surface. The two quiet rules separate choosing from reading. */
 .page-browser .controls,
 .page-browser .controls button,
 .page-browser .controls input,
 .page-browser .controls select,
-.page-browser .controls summary,
 .page-browser .mass-choice,
 .page-browser .mass-choice select {
   font-family: var(--sans);
@@ -67,10 +109,9 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.55rem 0.75rem;
-  margin-bottom: 2.1rem;
-  padding: 0.7rem 0 0.8rem;
+  margin: 0;
+  padding: 0.65rem 0 0.8rem;
   border: 0;
-  border-block: 1px solid var(--section-pale);
   border-radius: 0;
   background: transparent;
   font-size: 0.78rem;
@@ -85,17 +126,19 @@
   grid-column: span 2;
 }
 
+.page-browser #formulary-controls:not(:empty) {
+  grid-column: 1 / -1;
+}
+
 .page-browser .controls .field label,
-.page-browser .controls .field-legend,
-.page-browser .controls .field-options > summary {
+.page-browser .controls .field-legend {
   font-size: 0.72rem;
   line-height: 1.2;
 }
 
 .page-browser .controls select,
 .page-browser .controls input,
-.page-browser .controls button,
-.page-browser .controls .field-options > summary {
+.page-browser .controls button {
   min-height: 2rem;
   padding-block: 0.2rem;
 }
@@ -108,15 +151,23 @@
 
 .page-browser .field select,
 .page-browser .field input,
-.page-browser .steps button,
-.page-browser .field-options > summary {
+.page-browser .steps button {
   background: color-mix(in srgb, var(--surface, #fff) 86%, transparent);
   border-color: var(--section-pale);
   border-radius: 0.15rem;
 }
 
-/* One measure throughout. Annotations remain in the DOM and, when requested,
-   follow the passage they explain instead of opening a second reading column. */
+.page-browser .field-options .field-legend {
+  margin: 0;
+}
+
+.page-browser .notices-disclosure .banner,
+.page-browser #rendered-notices {
+  margin: 0;
+}
+
+/* One measure throughout. Existing resolution details remain closed and, when
+   requested, follow the passage they explain instead of opening a column. */
 .page-browser .reading-annotated {
   max-width: var(--missal-measure);
 }
@@ -130,6 +181,10 @@
   margin: 1rem 0 2rem;
 }
 
+.page-browser .margin-summary {
+  display: list-item;
+}
+
 .page-browser .reading {
   color: var(--ink);
   font-size: 1.03rem;
@@ -137,7 +192,7 @@
 }
 
 .page-browser .entry-title {
-  margin-bottom: 0.2rem;
+  margin: 0.4rem 0 0.1rem;
   color: var(--ink-soft);
   font-size: clamp(1.05rem, 2.5vw, 1.25rem);
   font-weight: 400;
@@ -145,7 +200,7 @@
 }
 
 .page-browser .entry-meta {
-  margin-bottom: 1.55rem;
+  margin: 0;
   font-family: var(--serif);
   font-size: 0.76rem;
   line-height: 1.4;
@@ -154,9 +209,11 @@
 }
 
 .page-browser .mass-head {
-  margin: 2.35rem 0 2.15rem;
+  margin: 2rem 0 0;
   text-align: center;
 }
+
+.page-browser .mass-head:empty { display: none; }
 
 .page-browser .mass-name {
   color: var(--missal-rubric);
@@ -171,12 +228,12 @@
 }
 
 .page-browser .mass-choice {
-  margin-top: 1rem;
+  margin: 0;
   text-align: left;
 }
 
 .page-browser .mass-choice-field {
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* Notices retain their meaning but no longer read as rounded cards. */
@@ -347,7 +404,7 @@
 }
 
 .page-browser .ordinary-frame > .ordinary-division:first-child {
-  margin-top: 1.8rem;
+  margin-top: 1.25rem;
 }
 
 .page-browser .ordinary-frame > .ordinary-element {
@@ -404,21 +461,46 @@
   font-family: var(--serif);
 }
 
-@media (max-width: 40rem) {
-  .page-shell.page-browser {
-    margin-top: 0.75rem;
-    padding: 1.25rem 1rem 3rem;
+@media (max-width: 47.5rem) {
+  body > .site-header {
+    grid-template-columns: auto auto minmax(0, 1fr);
+    padding-block: 0.3rem;
   }
 
-  .page-browser .page-header {
-    text-align: left;
+  body > .site-header .brand span {
+    display: none;
+  }
+
+  body > .site-header nav {
+    grid-column: auto;
+    flex-wrap: nowrap;
+    align-self: stretch;
+    border-top: 0;
+  }
+
+  body > .site-header nav a {
+    min-height: 2.75rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .page-shell.page-browser {
+    margin-top: 0;
+    padding: 0.9rem 1rem 3rem;
+  }
+
+  .page-browser .celebration-title {
+    font-size: clamp(1.55rem, 7vw, 1.85rem);
+  }
+
+  .page-browser .celebration-head {
+    margin-bottom: 0.55rem;
   }
 
   .page-browser .controls {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.55rem 0.65rem;
-    margin-bottom: 1.8rem;
     padding-block: 0.65rem 0.75rem;
   }
 
@@ -442,11 +524,17 @@
   }
 
   .page-browser .entry-title {
-    font-size: 1.05rem;
+    margin-top: 0.3rem;
+    font-size: 0.98rem;
   }
 
   .page-browser .entry-meta {
-    margin-bottom: 1.35rem;
+    font-size: 0.69rem;
+  }
+
+  .page-browser .utility-disclosure > summary {
+    min-height: 1.85rem;
+    padding-block: 0.35rem;
   }
 
   .page-browser .mass-head {
@@ -458,11 +546,16 @@
   }
 
   .page-browser .ordinary-frame > .annotated {
-    margin-top: 4.1rem;
+    margin-top: 3.5rem;
   }
 
   .page-browser .ordinary-division {
-    margin-top: 4rem;
+    margin-top: 3.5rem;
+  }
+
+  .page-browser .ordinary-frame > .ordinary-division:first-child {
+    margin-top: 0.9rem;
+    margin-bottom: 1.35rem;
   }
 }
 
@@ -485,12 +578,19 @@
     background: #fff;
   }
 
-  .page-browser > .page-header,
-  .page-browser > .banner,
-  .page-browser > .controls,
+  .page-browser > .utility-disclosure,
   .page-browser > .page-footer,
   .page-browser .mass-choice {
     display: none;
+  }
+
+  .page-browser > .celebration-head {
+    width: auto;
+    margin: 0 0 1.4rem;
+  }
+
+  .page-browser .celebration-title {
+    font-size: 20pt;
   }
 
   .page-browser > .reading {
