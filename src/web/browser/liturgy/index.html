@@ -86,6 +86,13 @@
   <div id="banner" class="banner" role="status" hidden></div>
 </details>
 
+<details id="contents-disclosure"
+         class="utility-disclosure contents-disclosure"
+         hidden>
+  <summary>Contents</summary>
+  <nav id="contents-nav" aria-label="Mass contents"></nav>
+</details>
+
 <!-- The propers are not themselves a live region: replacing them would read a
      whole Mass aloud on every change. The shared script announces a one-line
      summary through #reading-status instead. -->
@@ -121,6 +128,7 @@
 </footer>
 
 <script src="../shared/browser-core.js"></script>
+<script src="reading-contents.js"></script>
 <script src="liturgy.js"></script>
 </body>
 </html>

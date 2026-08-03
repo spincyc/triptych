@@ -174,6 +174,18 @@
   const formularyMeta = document.getElementById('formulary-meta');
   const noticesDisclosure = document.getElementById('notices-disclosure');
   const banner = document.getElementById('banner');
+  const contentsDisclosure = document.getElementById('contents-disclosure');
+  const contentsNav = document.getElementById('contents-nav');
+
+  function rebuildContents() {
+    ReadingContents.rebuild({
+      beginning: formularyTitle,
+      reading: reading,
+      disclosure: contentsDisclosure,
+      nav: contentsNav,
+      selector: '.proper > .proper-name'
+    });
+  }
 
   function syncNoticesDisclosure() {
     const shown = banner && !banner.hidden && banner.textContent.trim();
@@ -434,6 +446,7 @@
 
     T.clear(reading);
     renderMass(mass, bible, held.fragments, held.chapters.length);
+    rebuildContents();
     reading.setAttribute('aria-busy', 'false');
 
     if (options && options.moveFocus) reading.focus();

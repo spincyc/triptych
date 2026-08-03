@@ -33,6 +33,9 @@ DAY_JS = ROOT / "src" / "web" / "browser" / "liturgy" / "day.js"
 DAY_HTML = ROOT / "src" / "web" / "browser" / "liturgy" / "day.html"
 FORMULARY_JS = ROOT / "src" / "web" / "browser" / "liturgy" / "liturgy.js"
 FORMULARY_HTML = ROOT / "src" / "web" / "browser" / "liturgy" / "index.html"
+READING_CONTENTS_JS = (
+    ROOT / "src" / "web" / "browser" / "liturgy" / "reading-contents.js"
+)
 TOOL = ROOT / "tools" / "mass-ordinary"
 
 PUBLISHABLE = {"public-domain", "project-created", "licensed-free"}
@@ -282,6 +285,37 @@ class OrdinaryPage(unittest.TestCase):
             "c1fe93220057c722c753d3af29c9fb111c162a2572304780c018a6fed2591c08",
         )
 
+        sequence = report["ot_18_sequence"]
+        digest = hashlib.sha256(
+            json.dumps(sequence, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+        ).hexdigest()
+        self.assertEqual(len(sequence), 63)
+        self.assertEqual(
+            digest,
+            "0aa4fc7139443a2bd9a53df16a737485d64cc8bf686fbde8e8e976981f158f2e",
+        )
+
+    def test_ordered_mass_text_contract_for_both_missals(self) -> None:
+        """Navigation must not alter the text-bearing event stream."""
+        report = self.run_harness()
+        expected = {
+            "pentecost_10_text": (
+                211,
+                "b18b9e4c33019380fa11baeb7ed8e386848fdb530b8bd1a396afff601c6d2666",
+            ),
+            "ot_18_text": (
+                63,
+                "da08c368ba61ce86467892eaa4833b7659ae8939c4bd73cc1eb4fcec726d1988",
+            ),
+        }
+        for key, (count, wanted_digest) in expected.items():
+            rows = report[key]
+            digest = hashlib.sha256(
+                json.dumps(rows, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+            ).hexdigest()
+            self.assertEqual(len(rows), count, key)
+            self.assertEqual(digest, wanted_digest, key)
+
     def test_the_page_shows_one_prayer_and_states_what_it_withholds(self) -> None:
         report = self.run_harness()
         self.assertEqual(report["shown_by_default"], ["ep-i"])
@@ -513,18 +547,147 @@ class FormularyPage(unittest.TestCase):
         self.assertLess(source.index("formularyMeta.textContent"), traversal)
         self.assertIn("reading.appendChild(T.renderProper(proper", source[traversal:])
 
-    def test_day_reading_missal_source_and_event_contract_remain_fixed(self) -> None:
-        self.assertEqual(
-            hashlib.sha256(DAY_HTML.read_bytes()).hexdigest(),
-            "a6b8b827c7e91cb8817e44686baff355b11bd99f12ecf83c5513e375d5605edb",
+    def test_text_bearing_proper_structures_remain_fixed(self) -> None:
+        expected = {
+            "roman-1962": (
+                "advent-1",
+                10,
+                "c7e2c7432efc8383a6aa253a25cb27b57f583d7ce2bbc3fba9011bb0df97220c",
+            ),
+            "postconciliar": (
+                "ot-18",
+                11,
+                "0e177a7008ef4b3ba4863724848b185257164cacd383d334378b03d55c2b81e2",
+            ),
+        }
+        keys = (
+            "name", "form", "incipit", "text", "translations", "untranslated", "citations"
         )
-        self.assertEqual(
-            hashlib.sha256(DAY_JS.read_bytes()).hexdigest(),
-            "0804a64c85c6fca9226468766c0d012d918875ec71c2cd902bf333bc60387263",
-        )
+        for missal, (key, count, wanted_digest) in expected.items():
+            file = json.loads((PROPERS / f"{missal}.json").read_text(encoding="utf-8"))
+            mass = next(one for one in file["masses"] if one["key"] == key)
+            rows = [{field: proper.get(field) for field in keys} for proper in mass["propers"]]
+            digest = hashlib.sha256(
+                json.dumps(
+                    rows,
+                    ensure_ascii=False,
+                    separators=(",", ":"),
+                    sort_keys=True,
+                ).encode("utf-8")
+            ).hexdigest()
+            self.assertEqual(len(rows), count, missal)
+            self.assertEqual(digest, wanted_digest, missal)
+
+    def test_day_reading_missal_hierarchy_and_event_contract_remain_fixed(self) -> None:
         page = DAY_HTML.read_text(encoding="utf-8")
+        self.assertLess(
+            page.index('id="celebration-title"'), page.index('id="settings-disclosure"')
+        )
+        self.assertLess(
+            page.index('id="settings-disclosure"'), page.index('id="notices-disclosure"')
+        )
+        self.assertLess(
+            page.index('id="notices-disclosure"'), page.index('id="contents-disclosure"')
+        )
+        self.assertLess(page.index('id="contents-disclosure"'), page.index('id="reading"'))
         self.assertNotIn("annotation-control", page)
         self.assertNotIn("Annotation placeholder.", page)
+        self.assertNotIn("annotation-control", DAY_JS.read_text(encoding="utf-8"))
+
+
+class ReadingContentsPage(unittest.TestCase):
+    """Generated navigation stays a DOM-only view of the rendered Mass."""
+
+    def setUp(self) -> None:
+        if shutil.which("node") is None:
+            self.skipTest("node is not installed")
+
+    def test_both_pages_load_a_closed_empty_contents_before_the_reading(self) -> None:
+        cases = (
+            (DAY_HTML, '<script src="day.js"></script>'),
+            (FORMULARY_HTML, '<script src="liturgy.js"></script>'),
+        )
+        for path, page_script in cases:
+            page = path.read_text(encoding="utf-8")
+            notices = page.index('id="notices-disclosure"')
+            contents = page.index('id="contents-disclosure"')
+            reading = page.index('id="reading"')
+            self.assertLess(notices, contents, path.name)
+            self.assertLess(contents, reading, path.name)
+
+            opening = page[
+                page.rfind("<details", 0, contents):page.index(">", contents) + 1
+            ]
+            self.assertIn(" hidden", opening, path.name)
+            self.assertNotIn(" open", opening, path.name)
+            end = page.index("</details>", contents)
+            self.assertLess(
+                contents, page.index("<summary>Contents</summary>", contents), path.name
+            )
+            nav = page.index('id="contents-nav"', contents)
+            self.assertLess(nav, end, path.name)
+            self.assertIn(
+                'aria-label="Mass contents"', page[nav:page.index(">", nav)], path.name
+            )
+
+            shared = '<script src="reading-contents.js"></script>'
+            self.assertLess(page.index(shared), page.index(page_script), path.name)
+
+    def test_each_page_supplies_only_its_rendered_semantic_landmarks(self) -> None:
+        day = DAY_JS.read_text(encoding="utf-8")
+        self.assertIn("ReadingContents.rebuild({", day)
+        self.assertIn(".ordinary-division", day)
+        call = self._contents_call(day)
+        self.assertIn(
+            ".ordinary-frame > .annotated > .annotated-text > .proper > .proper-name",
+            call,
+        )
+        self.assertNotIn(".ordinary-head", call)
+
+        formulary = FORMULARY_JS.read_text(encoding="utf-8")
+        call = self._contents_call(formulary)
+        self.assertIn(".proper > .proper-name", call)
+        self.assertNotIn(".ordinary-division", call)
+        rendered = formulary.index("renderMass(mass, bible")
+        self.assertLess(rendered, formulary.index("rebuildContents();", rendered))
+
+    def test_rebuild_follows_dom_order_and_is_idempotent_without_hash_links(self) -> None:
+        run = subprocess.run(
+            ["node", "-e", CONTENTS_HARNESS],
+            capture_output=True,
+            text=True,
+            cwd=ROOT,
+            check=False,
+        )
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+        report = json.loads(run.stdout)
+        self.assertEqual(report["first_labels"], ["Beginning", "The Canon", "Gospel"])
+        self.assertEqual(
+            report["first_ids"],
+            ["celebration-title", "reading-destination-02", "reading-destination-03"],
+        )
+        self.assertEqual(report["first_tabindexes"], ["-1", "-1", "-1"])
+        self.assertEqual(report["hash_before"], report["hash_after"])
+        self.assertTrue(report["scrolled"])
+        self.assertTrue(report["focused"])
+
+        self.assertEqual(report["second_labels"], ["Beginning", "Collect"])
+        self.assertEqual(report["second_count"], 2)
+        self.assertEqual(report["second_ids"], ["celebration-title", "reading-destination-02"])
+        self.assertEqual(report["obsolete_id"], "")
+        self.assertIsNone(report["obsolete_tabindex"])
+        self.assertFalse(report["hidden_after_rebuild"])
+        self.assertTrue(report["hidden_after_clear"])
+        self.assertEqual(report["count_after_clear"], 0)
+
+        source = READING_CONTENTS_JS.read_text(encoding="utf-8")
+        self.assertNotIn("location.hash", source)
+        self.assertNotIn("href", source)
+
+    @staticmethod
+    def _contents_call(source: str) -> str:
+        start = source.index("ReadingContents.rebuild({")
+        return source[start:source.index("});", start) + 3]
 
 
 # A DOM small enough to write here and faithful enough to prove the join.
@@ -604,10 +767,20 @@ function pour(file, calendar, key) {
     }
     return 'proper:' + event.placement + ':' + event.proper.name;
   });
+  const text = events.map((event) => {
+    if (event.kind === 'begin_section') return event.section.name;
+    if (event.kind === 'ordinary_element') return P.renderElement(event.element, file).text();
+    const proper = event.proper;
+    return JSON.stringify({
+      name: proper.name, form: proper.form, incipit: proper.incipit,
+      text: proper.text, translations: proper.translations,
+      untranslated: proper.untranslated, citations: proper.citations
+    });
+  });
   return { order: out, broke: placed.broke, seated: count('seated'),
     before: count('before'), after: count('after'),
     kinds: Array.from(new Set(events.map((event) => event.kind))).sort(),
-    sequence: sequence };
+    sequence: sequence, text: text };
 }
 
 // Landmarks of the frame, one per position the reading order names. Anything
@@ -619,6 +792,7 @@ const MARKS = new Set(['praeparatio/kyrie-eleison', 'praeparatio/gloria-in-excel
   'conclusio/dominus-vobiscum-ite-missa-est']);
 const easter = pour(tlm, 'roman-1962', 'easter-sunday');
 const pentecost10 = pour(tlm, 'roman-1962', 'pentecost-10');
+const ot18 = pour(pc, 'postconciliar', 'ot-18');
 const nativity = pour(pc, 'postconciliar', 'nativity');
 const collect = pour(pc, 'postconciliar', 'easter-sunday').order;
 const seat = collect.indexOf('ritus-initiales/collecta');
@@ -658,8 +832,134 @@ process.stdout.write(JSON.stringify({
   nativity_total: nativity.seated + nativity.before + nativity.after,
   postconciliar_collect: collect.slice(seat, seat + 2),
   event_kinds: easter.kinds,
-  pentecost_10_sequence: pentecost10.sequence
+  pentecost_10_sequence: pentecost10.sequence,
+  pentecost_10_text: pentecost10.text,
+  ot_18_sequence: ot18.sequence,
+  ot_18_text: ot18.text
 }));
+"""
+
+
+CONTENTS_HARNESS = r"""
+const fs = require('fs');
+
+class Element {
+  constructor(tag, text) {
+    this.tagName = tag;
+    this._text = text || '';
+    this.children = [];
+    this.attrs = {};
+    this.listeners = {};
+    this.hidden = false;
+    this.ownerDocument = null;
+    this.parent = null;
+    this.removed = false;
+    this.candidates = [];
+  }
+  get id() { return this.attrs.id || ''; }
+  set id(value) { if (value) this.attrs.id = value; else delete this.attrs.id; }
+  get textContent() {
+    return this._text + this.children.filter((one) => !one.removed)
+      .map((one) => one.textContent).join('');
+  }
+  set textContent(value) { this._text = value; this.children = []; }
+  appendChild(child) {
+    child.parent = this;
+    child.ownerDocument = this.ownerDocument;
+    this.children.push(child);
+    return child;
+  }
+  replaceChildren(...children) {
+    this.children = [];
+    for (const child of children) this.appendChild(child);
+  }
+  setAttribute(name, value) { this.attrs[name] = String(value); }
+  getAttribute(name) { return Object.hasOwn(this.attrs, name) ? this.attrs[name] : null; }
+  hasAttribute(name) { return Object.hasOwn(this.attrs, name); }
+  removeAttribute(name) { delete this.attrs[name]; }
+  addEventListener(kind, listener) { this.listeners[kind] = listener; }
+  click() { this.listeners.click(); }
+  scrollIntoView() { this.scrolled = true; }
+  focus() { this.focused = true; }
+  remove() { this.removed = true; }
+  querySelectorAll(selector) {
+    if (selector === '.proper-ref') {
+      return this.children.filter((one) => one.attrs.class === 'proper-ref' && !one.removed);
+    }
+    return this.candidates;
+  }
+  cloneNode(deep) {
+    const copy = new Element(this.tagName, this._text);
+    copy.attrs = Object.assign({}, this.attrs);
+    if (deep) for (const child of this.children) copy.appendChild(child.cloneNode(true));
+    return copy;
+  }
+}
+
+const all = [];
+const doc = {
+  createElement(tag) { return register(new Element(tag)); },
+  querySelectorAll(selector) {
+    if (selector === '[id]') return all.filter((one) => one.id);
+    const match = selector.match(/^\[([^\]]+)\]$/);
+    return match ? all.filter((one) => one.hasAttribute(match[1])) : [];
+  }
+};
+function register(node) { node.ownerDocument = doc; all.push(node); return node; }
+function heading(label, reference) {
+  const node = register(new Element('h2', label));
+  if (reference) {
+    const ref = register(new Element('span', reference));
+    ref.setAttribute('class', 'proper-ref');
+    node.appendChild(ref);
+  }
+  return node;
+}
+
+global.document = doc;
+global.window = { location: { hash: '#date=2026-08-02&missal=roman-1962' } };
+eval(fs.readFileSync('src/web/browser/liturgy/reading-contents.js', 'utf8'));
+
+const beginning = heading('Tenth Sunday after Pentecost');
+beginning.id = 'celebration-title';
+const division = heading('The Canon');
+const gospel = heading('Gospel', 'Matthew 1:1');
+const collect = heading('Collect');
+const reading = register(new Element('main'));
+reading.candidates = [division, gospel];
+const disclosure = register(new Element('details'));
+disclosure.hidden = true;
+const nav = register(new Element('nav'));
+const options = { beginning, reading, disclosure, nav, selector: '.semantic-landmark' };
+
+const first = window.ReadingContents.rebuild(options);
+const hashBefore = window.location.hash;
+nav.children[2].click();
+const hashAfter = window.location.hash;
+const report = {
+  first_labels: nav.children.map((one) => one.textContent),
+  first_ids: first.map((one) => one.id),
+  first_tabindexes: first.map((one) => one.getAttribute('tabindex')),
+  hash_before: hashBefore,
+  hash_after: hashAfter,
+  scrolled: gospel.scrolled === true,
+  focused: gospel.focused === true
+};
+
+reading.candidates = [collect];
+const second = window.ReadingContents.rebuild(options);
+Object.assign(report, {
+  second_labels: nav.children.map((one) => one.textContent),
+  second_count: nav.children.length,
+  second_ids: second.map((one) => one.id),
+  obsolete_id: gospel.id,
+  obsolete_tabindex: gospel.getAttribute('tabindex'),
+  hidden_after_rebuild: disclosure.hidden
+});
+window.ReadingContents.clear(options);
+report.hidden_after_clear = disclosure.hidden;
+report.count_after_clear = nav.children.length;
+process.stdout.write(JSON.stringify(report));
 """
 
 

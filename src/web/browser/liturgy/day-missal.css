@@ -166,6 +166,39 @@ body > .site-header nav {
   margin: 0;
 }
 
+/* Contents is generated from the reading already on the page. It stays a
+   compact utility rather than becoming a second reading surface. */
+.page-browser .contents-disclosure > nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.85rem;
+  padding: 0.25rem 0 0.8rem;
+}
+
+.page-browser .contents-disclosure button {
+  width: auto;
+  padding: 0.22rem 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+}
+
+.page-browser .contents-disclosure button:hover {
+  border-bottom-color: var(--section-line);
+  color: var(--missal-rubric);
+}
+
+.page-browser .contents-disclosure button:focus-visible {
+  outline: 2px solid var(--missal-rubric);
+  outline-offset: 0.18rem;
+}
+
 /* One measure throughout. Existing resolution details remain closed and, when
    requested, follow the passage they explain instead of opening a column. */
 .page-browser .reading-annotated {
@@ -562,6 +595,16 @@ body > .site-header nav {
     padding-block: 0.35rem;
   }
 
+  .page-browser .contents-disclosure > nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.15rem;
+  }
+
+  .page-browser .contents-disclosure button {
+    width: 100%;
+  }
+
   .page-browser .mass-head {
     margin-top: 2rem;
   }
@@ -607,6 +650,10 @@ body > .site-header nav {
   .page-browser > .page-footer,
   .page-browser .mass-choice {
     display: none;
+  }
+
+  .page-browser > .contents-disclosure {
+    display: none !important;
   }
 
   .page-browser > .celebration-head {

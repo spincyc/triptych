@@ -145,9 +145,22 @@
   const noticesDisclosure = document.getElementById('notices-disclosure');
   const banner = document.getElementById('banner');
   const renderedNotices = document.getElementById('rendered-notices');
+  const contentsDisclosure = document.getElementById('contents-disclosure');
+  const contentsNav = document.getElementById('contents-nav');
   const formularyControls = document.getElementById('formulary-controls');
   const reading = document.getElementById('reading');
   const controls = document.getElementById('controls');
+
+  function rebuildContents() {
+    ReadingContents.rebuild({
+      beginning: celebrationTitle,
+      reading: reading,
+      disclosure: contentsDisclosure,
+      nav: contentsNav,
+      selector: '.ordinary-division, ' +
+        '.ordinary-frame > .annotated > .annotated-text > .proper > .proper-name'
+    });
+  }
 
   /* ------------------------------------------------------------------------
    * Small helpers
@@ -1597,6 +1610,7 @@
     // the first prayer is a page you cannot use at Mass. Facts first.
     if (frame) reading.appendChild(ordinaryPreamble(frame));
     updateNoticesDisclosure();
+    rebuildContents();
     reading.setAttribute('aria-busy', 'false');
 
     const first = derived.options[0];
@@ -1750,6 +1764,7 @@
   rubricsToggle.addEventListener('change', () => {
     state.showRubrics = rubricsToggle.checked;
     applyRubrics();
+    rebuildContents();
     writeHash();
   });
 
