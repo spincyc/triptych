@@ -15,6 +15,11 @@ guidance. If this document and an implementation phase report differ, this
 document controls future product work; the report remains evidence of what that
 phase actually attempted and proved.
 
+Any external visual, product, source, architectural, or acceptance review under
+this vision uses the repository's
+[external-review handoff protocol](external-review-handoffs.md). A handoff
+transfers evidence; it does not amend this vision or prove acceptance.
+
 Reading Missal v1 is a successful baseline, not the final product. Its
 phase-specific exclusions of modes, navigation rails, annotations, and new
 interactions do not constrain later phases. Its successful principles do:

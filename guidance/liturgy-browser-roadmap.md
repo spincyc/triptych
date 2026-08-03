@@ -325,6 +325,8 @@ must meet its gates continuously rather than defer them to release.
   shared state.
 - Maintain versioned fixtures, screenshot baselines, semantic parity hashes,
   console/network checks, and release bindings.
+- Prepare and record the external-review package required for each major visual
+  milestone before acceptance.
 - Verify public-preview and public-site artifacts, links, source bindings,
   rights, and exact deployed SHA before release.
 - Stage rollouts so a new shell or mode can be disabled without changing
@@ -352,6 +354,17 @@ Phase 10.2 may advance source acquisition after M0 and may produce internal
 coverage fixtures after its own source gates. It does not depend on M2–M6. A
 public 1956-recension selector depends on its complete advertised coverage and
 release gates, not merely on the first reader redesign release.
+
+## External-review handoff gate
+
+Before M2, or any M3–M6 checkpoint containing browser-visible change, is marked
+accepted, create and externally review the unique package required by the
+[external-review handoff protocol](external-review-handoffs.md). Its screenshot
+set follows this roadmap's required routes, states, and viewports; its review
+request identifies the precise blocking acceptance judgments. Record the
+handoff basename, reviewer disposition, and resolution of every blocker in the
+progress ledger or owning tracked acceptance record. Creating the package alone
+does not satisfy the gate.
 
 ## Acceptance gates
 

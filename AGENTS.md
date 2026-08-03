@@ -28,6 +28,7 @@ largely a register of how that data has already gone wrong:
 
 | Before you touch | Read |
 | --- | --- |
+| a task requiring external visual, product, source, architectural, or acceptance review | `guidance/external-review-handoffs.md` |
 | a mass, proper, or rubric in `src/sources/calendars/` | `guidance/propers-for-agents.md` |
 | anything the browser fetches from `src/web/data/` | `guidance/web-data.md` |
 | liturgy browser HTML, CSS, or JavaScript; Day or Propers routes; shared liturgical rendering; modes or navigation; responsive or print presentation; calendar or source apparatus; comparison views; or browser-visible recension coverage | `guidance/liturgy-browser-vision.md`, `guidance/liturgy-browser-roadmap.md` |

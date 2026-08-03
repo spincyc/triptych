@@ -262,6 +262,14 @@ completion audit. These research gates are deliberately not prerequisites of `al
 `pdf`, or an individual PDF build. Rendered source changes still require every
 profile-specific build, page review, and installation gate above.
 
+## External-review handoffs
+
+When a task or governing record requires external visual, product, source,
+architectural, or acceptance review, prepare the unique ignored review package
+and sibling ZIP governed by
+[external-review handoffs](external-review-handoffs.md). The package transfers
+evidence; the owning tracked record retains any durable review disposition.
+
 ## Direct Codex sessions
 
 The ordinary Codex workflow runs directly in the current checkout. A direct
