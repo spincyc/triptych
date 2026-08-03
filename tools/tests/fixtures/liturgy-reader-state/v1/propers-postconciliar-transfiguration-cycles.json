@@ -1,0 +1,283 @@
+{
+  "schema": "triptych-liturgy-reader-fixture/v1",
+  "id": "propers-postconciliar-transfiguration-cycles",
+  "visibility": "public-data",
+  "basis": {
+    "kind": "tracked-production-data",
+    "paths": [
+      "src/web/data/structure/propers/postconciliar.json"
+    ]
+  },
+  "consumers": [
+    "propers-formulary-input",
+    "semantic-cycle-selection"
+  ],
+  "requested": {
+    "schema": "triptych-liturgy-reader-state/v1",
+    "entrance": "propers",
+    "civilDate": null,
+    "edition": {
+      "id": "postconciliar"
+    },
+    "formulary": {
+      "id": "transfiguration-lord",
+      "type": "christological"
+    },
+    "bible": {
+      "id": "douay-rheims",
+      "numbering": "vulgate"
+    },
+    "languages": {
+      "orations": "la"
+    },
+    "requestedMode": "read",
+    "options": {
+      "ordinary": false,
+      "legitimate": {}
+    },
+    "coverage": [],
+    "unresolvedChoices": [],
+    "sourceHooks": []
+  },
+  "expected": {
+    "resolved": {
+      "edition": "postconciliar",
+      "formulary": "transfiguration-lord",
+      "type": "christological"
+    },
+    "calendarResult": null,
+    "events": [
+      {
+        "id": "proper/postconciliar/transfiguration-lord/001",
+        "kind": "proper",
+        "semanticSlot": {
+          "state": "mapped",
+          "identity": {
+            "id": "reading-1"
+          }
+        },
+        "editionSlotLabel": "First Reading",
+        "selected": {
+          "kind": "scripture",
+          "bible": "douay-rheims",
+          "numbering": "vulgate",
+          "cycle": null,
+          "references": [
+            "Daniel 7:9-10, 13-14"
+          ],
+          "availability": "held",
+          "rights": null
+        },
+        "sourceHooks": [
+          {
+            "kind": "proper-structure",
+            "id": "postconciliar/transfiguration-lord/001"
+          }
+        ]
+      },
+      {
+        "id": "proper/postconciliar/transfiguration-lord/002",
+        "kind": "proper",
+        "semanticSlot": {
+          "state": "mapped",
+          "identity": {
+            "id": "responsorial-psalm"
+          }
+        },
+        "editionSlotLabel": "Responsorial Psalm",
+        "selected": {
+          "kind": "scripture",
+          "bible": "douay-rheims",
+          "numbering": "vulgate",
+          "cycle": null,
+          "references": [
+            "Psalm 97:1-2, 5-6, 9"
+          ],
+          "availability": "held",
+          "rights": null
+        },
+        "sourceHooks": [
+          {
+            "kind": "proper-structure",
+            "id": "postconciliar/transfiguration-lord/002"
+          }
+        ]
+      },
+      {
+        "id": "proper/postconciliar/transfiguration-lord/003",
+        "kind": "proper",
+        "semanticSlot": {
+          "state": "mapped",
+          "identity": {
+            "id": "reading-2"
+          }
+        },
+        "editionSlotLabel": "Second Reading",
+        "selected": {
+          "kind": "scripture",
+          "bible": "douay-rheims",
+          "numbering": "vulgate",
+          "cycle": null,
+          "references": [
+            "2 Peter 1:16-19"
+          ],
+          "availability": "held",
+          "rights": null
+        },
+        "sourceHooks": [
+          {
+            "kind": "proper-structure",
+            "id": "postconciliar/transfiguration-lord/003"
+          }
+        ]
+      },
+      {
+        "id": "proper/postconciliar/transfiguration-lord/004",
+        "kind": "proper",
+        "semanticSlot": {
+          "state": "mapped",
+          "identity": {
+            "id": "gospel-acclamation"
+          }
+        },
+        "editionSlotLabel": "Gospel Acclamation",
+        "selected": {
+          "kind": "scripture",
+          "bible": "douay-rheims",
+          "numbering": "vulgate",
+          "cycle": null,
+          "references": [
+            "Matthew 17:5c"
+          ],
+          "availability": "held",
+          "rights": null
+        },
+        "sourceHooks": [
+          {
+            "kind": "proper-structure",
+            "id": "postconciliar/transfiguration-lord/004"
+          }
+        ]
+      },
+      {
+        "id": "proper/postconciliar/transfiguration-lord/005",
+        "kind": "proper",
+        "semanticSlot": {
+          "state": "mapped",
+          "identity": {
+            "id": "gospel"
+          }
+        },
+        "editionSlotLabel": "Gospel",
+        "selected": {
+          "kind": "cycle-alternatives",
+          "cycle": null,
+          "availability": "choice-required",
+          "rights": null,
+          "alternatives": [
+            {
+              "id": "A",
+              "cycle": "A",
+              "material": {
+                "kind": "scripture",
+                "bible": "douay-rheims",
+                "numbering": "vulgate",
+                "cycle": "A",
+                "references": [
+                  "Matthew 17:1-9"
+                ],
+                "availability": "held",
+                "rights": null
+              },
+              "sourceHooks": [
+                {
+                  "kind": "proper-structure",
+                  "id": "postconciliar/transfiguration-lord/005"
+                },
+                {
+                  "kind": "proper-cycle",
+                  "id": "postconciliar/transfiguration-lord/005/A"
+                }
+              ]
+            },
+            {
+              "id": "B",
+              "cycle": "B",
+              "material": {
+                "kind": "scripture",
+                "bible": "douay-rheims",
+                "numbering": "vulgate",
+                "cycle": "B",
+                "references": [
+                  "Mark 9:2-10"
+                ],
+                "availability": "held",
+                "rights": null
+              },
+              "sourceHooks": [
+                {
+                  "kind": "proper-structure",
+                  "id": "postconciliar/transfiguration-lord/005"
+                },
+                {
+                  "kind": "proper-cycle",
+                  "id": "postconciliar/transfiguration-lord/005/B"
+                }
+              ]
+            },
+            {
+              "id": "C",
+              "cycle": "C",
+              "material": {
+                "kind": "scripture",
+                "bible": "douay-rheims",
+                "numbering": "vulgate",
+                "cycle": "C",
+                "references": [
+                  "Luke 9:28b-36"
+                ],
+                "availability": "held",
+                "rights": null
+              },
+              "sourceHooks": [
+                {
+                  "kind": "proper-structure",
+                  "id": "postconciliar/transfiguration-lord/005"
+                },
+                {
+                  "kind": "proper-cycle",
+                  "id": "postconciliar/transfiguration-lord/005/C"
+                }
+              ]
+            }
+          ]
+        },
+        "sourceHooks": [
+          {
+            "kind": "proper-structure",
+            "id": "postconciliar/transfiguration-lord/005"
+          }
+        ]
+      }
+    ],
+    "coverage": [
+      {
+        "state": "supported",
+        "scope": "formulary:transfiguration-lord",
+        "reasons": [],
+        "completeness": "complete"
+      }
+    ],
+    "explicitAbsences": [
+      {
+        "kind": "explicit-semantic-absence",
+        "scope": "civil-date-and-calendar-result",
+        "repositoryTerm": "semantic-absence",
+        "reason": "propers-entrance-is-date-independent"
+      }
+    ],
+    "unresolvedChoices": [],
+    "url": null,
+    "semanticHash": "4660c0653678344dc227600e67f5b84a748bddbcd98713f37224f9fa4947fedd"
+  }
+}

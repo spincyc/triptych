@@ -79,11 +79,8 @@
     return null;
   }
 
-  function selectedMaterial(proper, request, structure, cycleMode) {
-    const cycle = cycleMode === 'day'
-      ? dayCycle(proper, request.lectionary)
-      : (request.cycle || null);
-    const cycleRows = cycle ? [cycle] : (cycleMode === 'all' ? cycleKeys(proper) : []);
+  function materialForCycle(proper, request, structure, cycle) {
+    const cycleRows = cycle ? [cycle] : [];
     const citations = (proper.citations || []).slice();
     let cycleText = null;
     for (const key of cycleRows) {
@@ -169,6 +166,36 @@
     };
   }
 
+  function selectedMaterial(proper, request, structure, cycleMode) {
+    const keys = cycleKeys(proper);
+    if (cycleMode === 'day') {
+      return materialForCycle(proper, request, structure, dayCycle(proper, request.lectionary));
+    }
+    const explicitCycle = hasOwn(request, 'cycle') && request.cycle !== null;
+    if (explicitCycle) {
+      if (keys.length && keys.indexOf(request.cycle) < 0) {
+        throw new Error('explicit cycle is not held for this Proper');
+      }
+      return materialForCycle(proper, request, structure, keys.length ? request.cycle : null);
+    }
+    if (keys.length === 0) return materialForCycle(proper, request, structure, null);
+    if (keys.length === 1) return materialForCycle(proper, request, structure, keys[0]);
+    return {
+      kind: 'cycle-alternatives',
+      cycle: null,
+      availability: 'choice-required',
+      rights: null,
+      alternatives: keys.map(function (cycle) {
+        return {
+          id: cycle,
+          cycle: cycle,
+          material: materialForCycle(proper, request, structure, cycle),
+          sourceHooks: []
+        };
+      })
+    };
+  }
+
   function sourceHooks(proper, selected, editionId, formularyId, index) {
     const hooks = [{
       kind: 'proper-structure',
@@ -187,6 +214,16 @@
 
   function projectProper(proper, index, mass, request, structure, cycleMode, seat) {
     const selected = selectedMaterial(proper, request, structure, cycleMode);
+    if (selected.kind === 'cycle-alternatives') {
+      selected.alternatives.forEach(function (alternative) {
+        alternative.sourceHooks = sourceHooks(
+          proper, alternative.material, request.edition.id, mass.key, index
+        ).concat([{
+          kind: 'proper-cycle',
+          id: request.edition.id + '/' + mass.key + '/' + pad(index) + '/' + alternative.cycle
+        }]);
+      });
+    }
     return {
       id: properEventId(request.edition.id, mass.key, index),
       kind: 'proper',
@@ -322,8 +359,9 @@
     } else {
       rows.push(Contract.coverage('supported', 'formulary:' + mass.key, 'complete', []));
     }
-    const missingTranslations = events.filter(function (event) {
-      return event.kind === 'proper' && event.selected && event.selected.missing;
+    const selections = selectedRows(events);
+    const missingTranslations = selections.filter(function (row) {
+      return row.selected.missing;
     });
     if (missingTranslations.length) {
       rows.push(Contract.coverage(
@@ -331,9 +369,8 @@
         [{ kind: 'translation-missing', count: missingTranslations.length }]
       ));
     }
-    const unresolvedCitations = events.filter(function (event) {
-      return event.kind === 'proper' && event.selected &&
-        (event.selected.unresolved || []).length;
+    const unresolvedCitations = selections.filter(function (row) {
+      return (row.selected.unresolved || []).length;
     });
     if (unresolvedCitations.length) {
       rows.push(Contract.coverage(
@@ -438,23 +475,45 @@
   }
 
   function translationChoices(events) {
-    return (events || []).filter(function (event) {
-      return event.selected && event.selected.availability === 'choice-required' &&
-        (event.selected.unresolvedWitnesses || []).length > 1;
-    }).map(function (event) {
+    return selectedRows(events).filter(function (row) {
+      return row.selected.availability === 'choice-required' &&
+        (row.selected.unresolvedWitnesses || []).length > 1;
+    }).map(function (row) {
+      const event = row.event;
       return Contract.unresolvedChoice(
-        'translation-witness:' + event.id,
+        'translation-witness:' + event.id + (row.cycle ? ':' + row.cycle : ''),
         'more than one held witness supplies the requested translation language',
-        event.selected.unresolvedWitnesses.map(function (id) {
+        row.selected.unresolvedWitnesses.map(function (id) {
           return {
             id: id,
             identity: { id: id },
             sourceHooks: [{ kind: 'translation', id: id }]
           };
         }),
-        event.sourceHooks
+        row.sourceHooks
       );
     });
+  }
+
+  function selectedRows(events) {
+    const rows = [];
+    (events || []).forEach(function (event) {
+      if (event.kind !== 'proper' || !event.selected) return;
+      if (event.selected.kind !== 'cycle-alternatives') {
+        rows.push({
+          event: event, selected: event.selected, cycle: null,
+          sourceHooks: event.sourceHooks || []
+        });
+        return;
+      }
+      event.selected.alternatives.forEach(function (alternative) {
+        rows.push({
+          event: event, selected: alternative.material, cycle: alternative.cycle,
+          sourceHooks: alternative.sourceHooks || []
+        });
+      });
+    });
+    return rows;
   }
 
   function explicitAbsencesFor(branch, lectionary) {
@@ -542,7 +601,17 @@
     if (request.formulary.type && request.formulary.type !== (mass.kind || null)) {
       throw new Error('requested Propers formulary type does not match the held object');
     }
-    const events = seatedEvents(mass, request, input.structure, null, 'all');
+    if (hasOwn(request, 'alternative')) {
+      throw new Error('explicit Propers alternative has no held stable generated identity');
+    }
+    const heldCycles = new Set();
+    (mass.propers || []).forEach(function (proper) {
+      cycleKeys(proper).forEach(function (cycle) { heldCycles.add(cycle); });
+    });
+    if (hasOwn(request, 'cycle') && request.cycle !== null && !heldCycles.has(request.cycle)) {
+      throw new Error('explicit cycle is not held by this Propers formulary');
+    }
+    const events = seatedEvents(mass, request, input.structure, null, 'propers');
     return {
       entrance: 'propers',
       request: request,

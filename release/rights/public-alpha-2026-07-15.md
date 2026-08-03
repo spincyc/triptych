@@ -1938,8 +1938,8 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/liturgy.js` | `7e1def40d8ed150d181926e312b2faa24aa4bf85f24bfe14dd9edf832150f73d` |
 | `src/web/browser/liturgy/ordinary-seating.js` | `67917f4888764f1aac097d291df5e655fb485d89219fda56ffba9a25aee993ba` |
 | `src/web/browser/liturgy/proper-placement-notes.js` | `dd02a28ab4a922adbac69b26e53566e0dde23610f09359cd4377893b37f5fe6b` |
-| `src/web/browser/liturgy/reader-state-adapters.js` | `4019d01b3198dca42fece939b46c5a84d174f98f97208d393e742a836f8b97de` |
-| `src/web/browser/liturgy/reader-state.js` | `1fafa1af320070caf3e6a9abe13526cfc47c0b408c85666ef3bc162b065d83fe` |
+| `src/web/browser/liturgy/reader-state-adapters.js` | `ec655b52e850152a1a3034b09fbc36b828000a5edc9d01b7b8d98dfaeea96bcb` |
+| `src/web/browser/liturgy/reader-state.js` | `9fa231bfb0d7c92d57483900048a682a869e4f9ee92cdcd67aa1c804773348df` |
 | `src/web/browser/liturgy/reading-contents.js` | `01067b1208dc6468aecd278328043acc83d3c2de31bd149b66f1ac0383340f3d` |
 | `src/web/browser/scripture/index.html` | `1cd10d77d7f257c1ad6b3e5e9d7afd61942922b9913fdef1417fa1951e133edd` |
 | `src/web/browser/scripture/plan-model.js` | `c0c7a6635844f2e88e2d8d2e290790fa05f73ba1153f59e380812e3b8775ee51` |

@@ -8,7 +8,7 @@ state = "candidate"
 
   [[deliverables.requirements]]
   id = "shared-contract"
-  criterion = "A versioned DOM-free contract distinguishes Day and Propers, typed coverage and absence, unresolved authorized choices, and entrance-specific Compare anchors."
+  criterion = "A versioned DOM-free, fail-closed contract distinguishes Day and Propers, rejects malformed or unknown v1 state, enforces mode and entrance consistency, and represents typed coverage, absence, unresolved authorized choices, and entrance-specific Compare anchors."
   status = "pass"
   evidence = [
     "src/web/browser/liturgy/reader-state.js",
@@ -24,7 +24,7 @@ state = "candidate"
 
   [[deliverables.requirements]]
   id = "semantic-fixtures-and-parity"
-  criterion = "Versioned production-backed and non-public synthetic fixtures prove semantic parity across Day, Propers, and mass-today --expanded without duplicating calendar or seating logic."
+  criterion = "Versioned production-backed and non-public synthetic fixtures prove semantic parity across Day, Propers, and mass-today --expanded without duplicating calendar or seating logic, including structured cycle alternatives that cannot be merged or selected by order."
   status = "pass"
   evidence = [
     "tools/tests/fixtures/liturgy-reader-state/v1",

@@ -24,6 +24,12 @@
   const URL_SCHEMA = 'triptych-liturgy-url-state/v1';
   const ENTRANCES = Object.freeze(['day', 'propers']);
   const MODES = Object.freeze(['read', 'missal', 'study', 'compare']);
+  const STATE_FIELDS = Object.freeze([
+    'schema', 'entrance', 'civilDate', 'edition', 'calendar', 'formulary', 'browse',
+    'bible', 'languages', 'selectedReadableFormulary', 'requestedMode', 'options',
+    'apparatus', 'cycle', 'alternative', 'semanticLocation', 'sourceHooks',
+    'coverage', 'unresolvedChoices', 'explicitAbsences', 'comparison'
+  ]);
 
   const COVERAGE_STATES = Object.freeze(['supported', 'unsupported', 'unavailable', 'absent']);
   const COVERAGE_COMPLETENESS = Object.freeze(['complete', 'partial']);
@@ -199,7 +205,74 @@
     } else if (value.rights !== null && !nonempty(value.rights)) {
       errors.push(issue('selected-rights-id', at + '.rights', 'rights identity must be stable'));
     }
-    if (value.kind === 'scripture') {
+    if (value.kind === 'cycle-alternatives') {
+      if (value.availability !== 'choice-required' || value.cycle !== null) {
+        errors.push(issue(
+          'selected-cycle-choice', at,
+          'cycle alternatives must remain an unselected choice-required result'
+        ));
+      }
+      if (has(value, 'selected') || has(value, 'default')) {
+        errors.push(issue(
+          'selected-cycle-order-default', at,
+          'cycle alternatives may not carry an incidental selection or default'
+        ));
+      }
+      if (!Array.isArray(value.alternatives) || value.alternatives.length < 2) {
+        errors.push(issue(
+          'selected-cycle-alternatives', at + '.alternatives',
+          'multiple held cycles require at least two structured alternatives'
+        ));
+      } else {
+        const ids = [];
+        value.alternatives.forEach(function (alternative, index) {
+          const alternativePath = at + '.alternatives[' + index + ']';
+          if (!object(alternative) || !nonempty(alternative.id) ||
+              !nonempty(alternative.cycle) || alternative.id !== alternative.cycle) {
+            errors.push(issue(
+              'selected-cycle-alternative-id', alternativePath,
+              'each cycle alternative needs one matching stable id and cycle code'
+            ));
+          } else ids.push(alternative.id);
+          if (object(alternative) &&
+              (has(alternative, 'selected') || has(alternative, 'default'))) {
+            errors.push(issue(
+              'selected-cycle-alternative-default', alternativePath,
+              'a cycle alternative may not carry an incidental selection or default'
+            ));
+          }
+          if (!object(alternative) || !object(alternative.material) ||
+              alternative.material.kind === 'cycle-alternatives') {
+            errors.push(issue(
+              'selected-cycle-alternative-material', alternativePath + '.material',
+              'each cycle alternative must retain one concrete selected material result'
+            ));
+          } else {
+            errors.push.apply(
+              errors,
+              validateSelectedMaterial(alternative.material, alternativePath + '.material')
+            );
+            if (alternative.material.cycle !== alternative.cycle) {
+              errors.push(issue(
+                'selected-cycle-alternative-cycle', alternativePath + '.material.cycle',
+                'the concrete material must retain its alternative cycle code'
+              ));
+            }
+          }
+          if (object(alternative)) {
+            errors.push.apply(errors, validateSourceHooks(
+              alternative.sourceHooks, alternativePath + '.sourceHooks', true
+            ));
+          }
+        });
+        if (new Set(ids).size !== ids.length) {
+          errors.push(issue(
+            'selected-cycle-alternative-duplicate', at + '.alternatives',
+            'cycle alternative ids must be unique'
+          ));
+        }
+      }
+    } else if (value.kind === 'scripture') {
       if (!nonempty(value.bible)) {
         errors.push(issue('selected-bible', at + '.bible', 'scripture selection needs a Bible id'));
       }
@@ -475,6 +548,14 @@
   function validateReaderState(value) {
     const errors = [];
     if (!object(value)) return { ok: false, errors: [issue('state-object', '', 'state must be an object')] };
+    Object.keys(value).forEach(function (key) {
+      if (STATE_FIELDS.indexOf(key) < 0) {
+        errors.push(issue(
+          'state-field', key,
+          'unknown v1 reader-state fields are not an extension mechanism'
+        ));
+      }
+    });
     if (value.schema !== STATE_SCHEMA) {
       errors.push(issue('state-schema', 'schema', 'reader state must use ' + STATE_SCHEMA));
     }
@@ -483,10 +564,11 @@
       return { ok: false, errors: errors };
     }
     assertIdentity(errors, value.edition, 'edition');
-    if (value.requestedMode && MODES.indexOf(value.requestedMode) < 0) {
+    if (has(value, 'requestedMode') && value.requestedMode !== null &&
+        MODES.indexOf(value.requestedMode) < 0) {
       errors.push(issue('mode', 'requestedMode', 'unknown reader mode'));
     }
-    if (value.bible) assertIdentity(errors, value.bible, 'bible');
+    if (has(value, 'bible')) assertIdentity(errors, value.bible, 'bible');
     if (object(value.bible) && has(value.bible, 'numbering') &&
         value.bible.numbering !== null && !nonempty(value.bible.numbering)) {
       errors.push(issue(
@@ -508,7 +590,7 @@
             'unknown language or witness selection field'
           ));
         }
-        if (value.languages[key] !== null && !nonempty(value.languages[key])) {
+        if (!nonempty(value.languages[key])) {
           errors.push(issue(
             'language-selection', 'languages.' + key,
             'language and witness selections must be stable nonempty codes'
@@ -543,16 +625,40 @@
     }
     if (has(value, 'alternative') && value.alternative !== null) {
       assertIdentity(errors, value.alternative, 'alternative');
+    } else if (has(value, 'alternative')) {
+      errors.push(issue(
+        'alternative-identity', 'alternative',
+        'an explicitly present alternative must carry a stable identity'
+      ));
     }
-    if (value.selectedReadableFormulary) {
+    if (has(value, 'selectedReadableFormulary')) {
       assertIdentity(errors, value.selectedReadableFormulary, 'selectedReadableFormulary');
     }
-    if (value.semanticLocation &&
+    if (has(value, 'semanticLocation') &&
         (!object(value.semanticLocation) || !nonempty(value.semanticLocation.eventId))) {
       errors.push(issue(
         'semantic-location', 'semanticLocation',
         'semantic location must name a stable event id'
       ));
+    }
+    if (has(value, 'apparatus')) {
+      if (!object(value.apparatus)) {
+        errors.push(issue('apparatus-object', 'apparatus', 'apparatus must be an object'));
+      } else {
+        Object.keys(value.apparatus).forEach(function (key) {
+          if (key !== 'why' && key !== 'rubrics') {
+            errors.push(issue(
+              'apparatus-field', 'apparatus.' + key,
+              'unknown v1 apparatus field'
+            ));
+          } else if (typeof value.apparatus[key] !== 'boolean') {
+            errors.push(issue(
+              'apparatus-boolean', 'apparatus.' + key,
+              'apparatus disclosure selections must be booleans'
+            ));
+          }
+        });
+      }
     }
     errors.push.apply(errors, validateSourceHooks(value.sourceHooks, 'sourceHooks', false));
     if (value.entrance === 'day') {
@@ -571,6 +677,12 @@
       if (has(value, 'browse')) {
         errors.push(issue('day-browse', 'browse', 'Day state is date-resolved, not a browse entry'));
       }
+      if (has(value, 'formulary')) {
+        errors.push(issue(
+          'day-formulary', 'formulary',
+          'Day may select only a resolved readable formulary, not a Propers formulary identity'
+        ));
+      }
     } else {
       if (has(value, 'civilDate') && value.civilDate !== null) {
         errors.push(issue('propers-date', 'civilDate', 'Propers state is calendar-independent'));
@@ -580,6 +692,24 @@
         errors.push(issue(
           'propers-browse', 'browse',
           'Propers browse state must be the explicit browse-entry sentinel'
+        ));
+      }
+      if (has(value, 'browse') && has(value, 'formulary')) {
+        errors.push(issue(
+          'propers-entry-exclusive', 'browse',
+          'Propers browse and formulary entries are mutually exclusive'
+        ));
+      }
+      if (has(value, 'calendar')) {
+        errors.push(issue(
+          'propers-calendar', 'calendar',
+          'Propers state is independent of a calendar result'
+        ));
+      }
+      if (has(value, 'selectedReadableFormulary')) {
+        errors.push(issue(
+          'propers-readable-formulary', 'selectedReadableFormulary',
+          'a selected readable Day formulary is not Propers entrance state'
         ));
       }
       if (!has(value, 'browse') && (!object(value.formulary) || !nonempty(value.formulary.id))) {
@@ -626,7 +756,7 @@
         );
       });
     }
-    if (value.comparison) {
+    if (has(value, 'comparison') && value.comparison !== null) {
       errors.push.apply(errors, validateComparison(value.comparison, value.entrance));
       if (value.entrance === 'day' && object(value.comparison.anchor) &&
           value.comparison.anchor.civilDate !== value.civilDate) {
@@ -635,6 +765,20 @@
           'Day Compare anchor must equal the reader state civil date'
         ));
       }
+    }
+    if (value.requestedMode === 'compare' &&
+        (!has(value, 'comparison') || value.comparison === null)) {
+      errors.push(issue(
+        'compare-mode-state', 'comparison',
+        'Compare mode requires a valid comparison request'
+      ));
+    }
+    if (has(value, 'comparison') && value.comparison !== null &&
+        value.requestedMode !== 'compare') {
+      errors.push(issue(
+        'comparison-mode-state', 'requestedMode',
+        'a comparison request requires Compare mode'
+      ));
     }
     return { ok: errors.length === 0, errors: errors };
   }
@@ -791,9 +935,10 @@
     if (parsed.entrance === 'day') {
       state.civilDate = validOrDefault('date', strictDate, true);
       state.calendar = missal ? { id: missalContext.calendar || missal } : null;
-      state.languages.ordinary = validOrDefault('ordinary-lang', function (lang) {
+      const ordinaryLanguage = validOrDefault('ordinary-lang', function (lang) {
         return valuesOf(missalContext.ordinaryLanguages).indexOf(lang) >= 0;
       }, false);
+      if (ordinaryLanguage !== null) state.languages.ordinary = ordinaryLanguage;
       const why = validOrDefault('why', function (value) {
         return value === '0' || value === '1';
       }, false);
@@ -1106,6 +1251,7 @@
     URL_SCHEMA: URL_SCHEMA,
     ENTRANCES: ENTRANCES,
     MODES: MODES,
+    STATE_FIELDS: STATE_FIELDS,
     COVERAGE_STATES: COVERAGE_STATES,
     COVERAGE_COMPLETENESS: COVERAGE_COMPLETENESS,
     COVERAGE_REASONS: COVERAGE_REASONS,

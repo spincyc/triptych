@@ -67,6 +67,7 @@ function selectedProjection(selected) {
     kind: selected.kind || null,
     language: selected.language || null,
     cycle: selected.cycle || null,
+    cycles: selected.cycles || [],
     references: selected.references || [],
     bible: selected.bible || null,
     numbering: selected.numbering || null,
@@ -76,7 +77,13 @@ function selectedProjection(selected) {
     availability: selected.availability || null,
     absenceKey: selected.absenceKey || null,
     unresolvedWitnesses: selected.unresolvedWitnesses || [],
-    text: Object.prototype.hasOwnProperty.call(selected, 'text') ? selected.text : null
+    text: Object.prototype.hasOwnProperty.call(selected, 'text') ? selected.text : null,
+    alternatives: (selected.alternatives || []).map((alternative) => ({
+      id: alternative.id,
+      cycle: alternative.cycle,
+      material: selectedProjection(alternative.material),
+      sourceHooks: alternative.sourceHooks || []
+    }))
   };
 }
 
@@ -111,6 +118,8 @@ function resultProjection(result) {
 let output;
 if (input.op === 'fixture-validate') {
   output = input.fixtures.map((fixture) => C.validateFixture(fixture));
+} else if (input.op === 'validate-states') {
+  output = input.states.map((state) => C.validateReaderState(state));
 } else if (input.op === 'context') {
   output = context(input.entrance, input.id, input.date || null, Boolean(input.includeOrdinary));
 } else if (input.op === 'context-trace') {
@@ -225,6 +234,53 @@ if (input.op === 'fixture-validate') {
       structure: read(base + 'propers/' + request.edition.id + '.json')
     }));
   }
+} else if (input.op === 'adapt-cycle-fixture') {
+  const fixture = input.fixture;
+  const request = JSON.parse(JSON.stringify(fixture.requested));
+  if (Object.prototype.hasOwnProperty.call(input, 'cycle')) request.cycle = input.cycle;
+  if (Object.prototype.hasOwnProperty.call(input, 'alternative')) {
+    request.alternative = input.alternative;
+  }
+  const structure = read(base + 'propers/' + request.edition.id + '.json');
+  if (input.reverseCycles || input.onlyCycles) {
+    for (const mass of structure.masses || []) {
+      if (mass.key !== request.formulary.id) continue;
+      for (const proper of mass.propers || []) {
+        let entries = Object.entries(proper.cycles || {});
+        if (input.onlyCycles) {
+          entries = entries.filter(([cycle]) => input.onlyCycles.includes(cycle));
+        }
+        if (input.reverseCycles) entries.reverse();
+        proper.cycles = Object.fromEntries(entries);
+      }
+    }
+  }
+  output = resultProjection(A.adaptPropers({request, structure}));
+} else if (input.op === 'synthetic-composed-cycles') {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'propers', civilDate: null,
+    edition: {id: 'synthetic-cycle-edition'},
+    formulary: {id: 'synthetic-cycle-formulary', type: 'contract'},
+    languages: {orations: 'la'}, requestedMode: 'read',
+    options: {ordinary: false, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  if (Object.prototype.hasOwnProperty.call(input, 'cycle')) request.cycle = input.cycle;
+  const order = input.reverseCycles ? ['C', 'B', 'A'] : ['A', 'B', 'C'];
+  const cycles = {};
+  for (const cycle of order) {
+    cycles[cycle] = {citations: [], text: 'contract-material-' + cycle};
+  }
+  output = resultProjection(A.adaptPropers({
+    request,
+    structure: {
+      calendar: 'synthetic-cycle-edition', translations: [],
+      masses: [{
+        key: 'synthetic-cycle-formulary', kind: 'contract',
+        propers: [{name: 'Collect', source: 'composed', text: null, citations: [], cycles}]
+      }]
+    }
+  }));
 } else if (input.op === 'full-parity') {
   const request = input.request;
   const id = request.edition.id;
@@ -411,6 +467,97 @@ class ContractTests(unittest.TestCase):
         self.assertTrue(all(self.probe["contradictoryCoverage"]))
         self.assertTrue(all(not one["ok"] for one in self.probe["invalidConditional"]))
 
+    def test_every_explicitly_present_malformed_v1_field_fails_closed(self) -> None:
+        day = {
+            "schema": "triptych-liturgy-reader-state/v1",
+            "entrance": "day",
+            "civilDate": "2026-08-02",
+            "edition": {"id": "x"},
+            "calendar": {"id": "x"},
+            "requestedMode": "read",
+        }
+        states = []
+        for field, values in {
+            "bible": [None, False, "", []],
+            "selectedReadableFormulary": [None, False, "", []],
+            "semanticLocation": [None, False, "", []],
+            "apparatus": [None, False, "", []],
+        }.items():
+            for value in values:
+                state = copy.deepcopy(day)
+                state[field] = value
+                states.append(state)
+        for requested_mode in ("", False, [], "invented"):
+            state = copy.deepcopy(day)
+            state["requestedMode"] = requested_mode
+            states.append(state)
+        for apparatus in (
+            {"why": "yes", "rubrics": 9},
+            {"why": False, "rubrics": True, "invented": False},
+        ):
+            state = copy.deepcopy(day)
+            state["apparatus"] = apparatus
+            states.append(state)
+        state = copy.deepcopy(day)
+        state["madeUp"] = {"anything": True}
+        states.append(state)
+        state = copy.deepcopy(day)
+        state["comparison"] = False
+        states.append(state)
+        results = node_call({"op": "validate-states", "states": states})
+        self.assertTrue(all(not result["ok"] for result in results))
+
+    def test_entrance_fields_and_mode_comparison_are_mutually_consistent(self) -> None:
+        day = {
+            "schema": "triptych-liturgy-reader-state/v1",
+            "entrance": "day",
+            "civilDate": "2026-08-02",
+            "edition": {"id": "roman-1962"},
+            "calendar": {"id": "roman-1962"},
+            "requestedMode": "read",
+        }
+        propers = {
+            "schema": "triptych-liturgy-reader-state/v1",
+            "entrance": "propers",
+            "civilDate": None,
+            "edition": {"id": "roman-1962"},
+            "formulary": {"id": "advent-1"},
+            "requestedMode": "read",
+        }
+        invalid = []
+        for field, value in (
+            ("formulary", {"id": "advent-1"}),
+            ("browse", {"kind": "browse-entry"}),
+        ):
+            state = copy.deepcopy(day)
+            state[field] = value
+            invalid.append(state)
+        for field, value in (
+            ("calendar", {"id": "roman-1962"}),
+            ("selectedReadableFormulary", {"id": "advent-1"}),
+        ):
+            state = copy.deepcopy(propers)
+            state[field] = value
+            invalid.append(state)
+        state = copy.deepcopy(propers)
+        state["browse"] = {"kind": "browse-entry"}
+        invalid.append(state)
+        comparison = fixture_named("compare-day-2026-08-02")["requested"]["comparison"]
+        state = copy.deepcopy(day)
+        state["requestedMode"] = "compare"
+        invalid.append(state)
+        state = copy.deepcopy(day)
+        state["comparison"] = comparison
+        invalid.append(state)
+        results = node_call({"op": "validate-states", "states": invalid})
+        self.assertTrue(all(not result["ok"] for result in results))
+
+        nullable = copy.deepcopy(day)
+        nullable["requestedMode"] = None
+        nullable["cycle"] = None
+        nullable["comparison"] = None
+        self.assertTrue(node_call({"op": "validate-states", "states": [nullable]})[0]["ok"])
+
     def test_unresolved_choices_never_select_by_order(self) -> None:
         self.assertIsNone(self.probe["unresolved"]["selected"])
         self.assertIsNone(self.probe["reversed"]["selected"])
@@ -445,7 +592,7 @@ class FixtureTests(unittest.TestCase):
     def test_all_versioned_fixtures_validate(self) -> None:
         fixtures = load_fixtures()
         results = node_call({"op": "fixture-validate", "fixtures": fixtures})
-        self.assertEqual(len(results), 6)
+        self.assertEqual(len(results), 7)
         for fixture, result in zip(fixtures, results):
             self.assertTrue(result["ok"], f"{fixture['id']}: {result['errors']}")
 
@@ -464,6 +611,28 @@ class FixtureTests(unittest.TestCase):
                 fixture["expected"]["explicitAbsences"][0].pop("kind")
             else:
                 fixture["expected"]["url"] = {"legacy": "not-a-hash", "canonical": "#ok=1"}
+            mutations.append(fixture)
+        results = node_call({"op": "fixture-validate", "fixtures": mutations})
+        self.assertTrue(all(not result["ok"] for result in results))
+
+    def test_fixture_validator_rejects_malformed_cycle_alternatives(self) -> None:
+        base = fixture_named("propers-postconciliar-transfiguration-cycles")
+        mutations = []
+        for mutate in ("duplicate", "mismatch", "material", "hooks", "default"):
+            fixture = copy.deepcopy(base)
+            selected = fixture["expected"]["events"][-1]["selected"]
+            if mutate == "duplicate":
+                selected["alternatives"][1]["id"] = "A"
+                selected["alternatives"][1]["cycle"] = "A"
+                selected["alternatives"][1]["material"]["cycle"] = "A"
+            elif mutate == "mismatch":
+                selected["alternatives"][0]["material"]["cycle"] = "B"
+            elif mutate == "material":
+                selected["alternatives"][0]["material"] = None
+            elif mutate == "hooks":
+                selected["alternatives"][0]["sourceHooks"] = None
+            else:
+                selected["alternatives"][0]["default"] = True
             mutations.append(fixture)
         results = node_call({"op": "fixture-validate", "fixtures": mutations})
         self.assertTrue(all(not result["ok"] for result in results))
@@ -790,6 +959,7 @@ class ParityTests(unittest.TestCase):
             "day-roman-1962-2026-08-02",
             "day-postconciliar-2026-11-29",
             "propers-roman-1962-advent-1",
+            "propers-postconciliar-transfiguration-cycles",
         ):
             fixture = fixture_named(name)
             actual = node_call({"op": "adapt-fixture", "fixture": fixture})
@@ -799,6 +969,64 @@ class ParityTests(unittest.TestCase):
             assert_subset(self, expected["events"], actual["events"], name + ".events")
             self.assertEqual(actual["coverage"], expected["coverage"], name)
             self.assertEqual(actual["explicitAbsences"], expected["explicitAbsences"], name)
+
+    def test_propers_cycles_are_structured_not_merged_or_order_selected(self) -> None:
+        fixture = fixture_named("propers-postconciliar-transfiguration-cycles")
+        forward = node_call({"op": "adapt-cycle-fixture", "fixture": fixture})
+        reversed_result = node_call({
+            "op": "adapt-cycle-fixture", "fixture": fixture, "reverseCycles": True,
+        })
+        self.assertEqual(forward, reversed_result)
+        gospel = next(one for one in forward["events"] if one["editionSlotLabel"] == "Gospel")
+        self.assertEqual(gospel["selected"]["kind"], "cycle-alternatives")
+        self.assertEqual(gospel["selected"]["availability"], "choice-required")
+        alternatives = gospel["selected"]["alternatives"]
+        self.assertEqual([one["id"] for one in alternatives], ["A", "B", "C"])
+        self.assertEqual(
+            [one["material"]["references"] for one in alternatives],
+            [["Matthew 17:1-9"], ["Mark 9:2-10"], ["Luke 9:28b-36"]],
+        )
+        self.assertTrue(all(one["material"]["availability"] == "held" for one in alternatives))
+        self.assertTrue(all(one["sourceHooks"] for one in alternatives))
+
+    def test_explicit_and_sole_propers_cycles_are_deterministic_and_invalid_fails(self) -> None:
+        fixture = fixture_named("propers-postconciliar-transfiguration-cycles")
+        selected = node_call({"op": "adapt-cycle-fixture", "fixture": fixture, "cycle": "B"})
+        gospel = next(one for one in selected["events"] if one["editionSlotLabel"] == "Gospel")
+        self.assertEqual(gospel["selected"]["kind"], "scripture")
+        self.assertEqual(gospel["selected"]["cycle"], "B")
+        self.assertEqual(gospel["selected"]["cycles"], ["B"])
+        self.assertEqual(gospel["selected"]["references"], ["Mark 9:2-10"])
+        self.assertEqual(gospel["selected"]["alternatives"], [])
+
+        sole = node_call({
+            "op": "adapt-cycle-fixture", "fixture": fixture, "onlyCycles": ["C"],
+        })
+        gospel = next(one for one in sole["events"] if one["editionSlotLabel"] == "Gospel")
+        self.assertEqual(gospel["selected"]["cycle"], "C")
+        self.assertEqual(gospel["selected"]["references"], ["Luke 9:28b-36"])
+
+        with self.assertRaises(AssertionError):
+            node_call({"op": "adapt-cycle-fixture", "fixture": fixture, "cycle": "Z"})
+        with self.assertRaises(AssertionError):
+            node_call({
+                "op": "adapt-cycle-fixture", "fixture": fixture,
+                "alternative": {"id": "not-held"},
+            })
+
+    def test_composed_cycle_material_keeps_each_alternative_text(self) -> None:
+        forward = node_call({"op": "synthetic-composed-cycles"})
+        reversed_result = node_call({"op": "synthetic-composed-cycles", "reverseCycles": True})
+        self.assertEqual(forward, reversed_result)
+        selected = forward["events"][0]["selected"]
+        self.assertEqual(selected["kind"], "cycle-alternatives")
+        self.assertEqual(
+            [(one["cycle"], one["material"]["text"]) for one in selected["alternatives"]],
+            [("A", "contract-material-A"), ("B", "contract-material-B"),
+             ("C", "contract-material-C")],
+        )
+        explicit = node_call({"op": "synthetic-composed-cycles", "cycle": "B"})
+        self.assertEqual(explicit["events"][0]["selected"]["text"], "contract-material-B")
 
     def test_propers_adapter_rejects_a_mismatched_formulary_type(self) -> None:
         fixture = fixture_named("propers-roman-1962-advent-1")

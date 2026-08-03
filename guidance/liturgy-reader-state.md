@@ -21,10 +21,12 @@ Reader states use `triptych-liturgy-reader-state/v1`; fixtures use
 `triptych-liturgy-reader-fixture/v1`; parsed URL envelopes use
 `triptych-liturgy-url-state/v1`.
 
-The meaning of a version is frozen. An optional field may be added to v1 only
-when absence remains valid and every consumer preserves it safely. Rename a
-field, narrow or broaden an identity, reinterpret a state, or make an optional
-field required only in a new version. Validators reject an unknown version.
+The meaning of a version is frozen after acceptance. This still-unaccepted M1
+candidate may be tightened in response to review before that boundary is
+accepted. After acceptance, an optional field may be added to v1 only when
+absence remains valid and every consumer preserves it safely. Rename a field,
+narrow or broaden an identity, reinterpret a state, or make an optional field
+required only in a new version. Validators reject an unknown version.
 
 ## Reader-state boundary
 
@@ -36,18 +38,37 @@ date.
   identities, never labels. Readable formulary, Bible and numbering,
   language selections, Ordinary options, cycle, alternative, semantic
   location, apparatus hooks, coverage, choices, and comparison are conditional
-  fields.
+  fields. It may not carry the Propers `formulary` or `browse` fields.
 - `propers` requires a stable edition identity and an edition-qualified
   formulary identity. A future unselected landing state uses the explicit
-  `browse: {"kind": "browse-entry"}` sentinel. Civil date and calendar result
-  are semantically absent, not inferred. Known calendar uses never become part
-  of formulary identity.
+  `browse: {"kind": "browse-entry"}` sentinel instead; `formulary` and
+  `browse` are mutually exclusive. Civil date may be stated only as explicit
+  `null` to record date independence. Calendar and selected-readable-Day fields
+  are forbidden. Known calendar uses never become part of formulary identity.
 
 Optional cycle codes are strings; an alternative is a stable identity;
 original, translation, oration, and Ordinary language/witness selections use
 the contract's closed language-field names; and legitimate option groups map a
 stable group ID to a stable option ID. Invalid shapes fail validation rather
 than surviving as arbitrary extension data.
+
+The v1 top-level field vocabulary is closed in code. Unknown fields fail; v1
+has no implicit extension data. `apparatus`, when present, is an object whose
+only fields are optional Boolean `why` and `rubrics` selections. Every
+conditional field is validated by property presence, so `false`, an empty
+string, an array, or a wrong object cannot bypass validation. `null` is not a
+generic absence spelling. Its documented state-level meanings are: a Propers
+`civilDate` asserts calendar independence; `requestedMode: null` states that no
+mode was requested; `cycle: null` states that no cycle was selected; and
+`comparison: null` states that no comparison was requested. Bible numbering
+may be `null` when an edition declares no separate numbering identity, and Day
+territory or locality may be `null` for the universal or non-local branch.
+Other inapplicable fields are omitted.
+
+`requestedMode`, when present, is `null` or one of `read`, `missal`, `study`,
+and `compare`. A non-null comparison requires Compare mode, and Compare mode
+requires a valid non-null comparison. Comparison anchors remain entrance
+specific as described below.
 
 Stable IDs carry identity. Edition names, celebration titles, translated
 headings, control labels, DOM IDs, CSS classes, notice prose, and current
@@ -116,6 +137,18 @@ carry a selected or default option. The resolver accepts only an explicit
 answer or a separately supplied deterministic source result; it has no first
 array, manifest, DOM, or incidental-source-order path. Multiple translation
 witnesses likewise remain unresolved unless the request identifies a witness.
+
+Cycle-bearing material on the calendar-independent Propers entrance follows
+the same rule. An explicitly requested held cycle selects only that cycle; an
+invalid explicit cycle fails closed; and a single held cycle is deterministic.
+When two or more cycles remain held with no request, selected semantic material
+is a `cycle-alternatives` result with `choice-required` availability. Each
+alternative retains its own stable cycle identity, citations or composed
+material, rights, availability, and source hooks. Stable-key sorting may make
+the representation canonical, but may never choose an alternative. The adapter
+neither concatenates mutually exclusive readings nor overwrites one cycle's
+composed text with another. The future public URL spelling of cycle selection
+remains provisional.
 
 Day Compare fixes the state's civil date and a named territorial context, then
 resolves each edition side independently before comparing semantic units.

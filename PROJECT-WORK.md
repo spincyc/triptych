@@ -191,8 +191,10 @@ text selection, provenance, typed coverage and absence, unresolved choices,
 and Compare anchors across Day, Propers, and `mass-today --expanded` without a
 second liturgical engine or a visible production change.
 
-The implementation and tests are an M1 candidate. External acceptance remains
-open; this record does not mark M1 accepted or begin W2, W3, or W7.
+The implementation and tests are an M1 candidate. A focused correction closes
+review findings on fail-closed v1 validation and Propers cycle alternatives;
+external acceptance of that correction remains open. This record does not mark
+M1 accepted or begin W2, W3, or W7.
 
 ### GPT deep-research redevelopment
 
