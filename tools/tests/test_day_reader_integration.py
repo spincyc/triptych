@@ -127,6 +127,19 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertIn("No validated selection is available for the current candidate outcome", source)
         self.assertIn("'Choice required'", source)
 
+    def test_superseded_async_renders_cannot_mutate_current_output(self) -> None:
+        source = text(DAY_JS)
+        self.assertIn(
+            "async function renderResult(result, structure, derived, branch, isCurrent)",
+            source,
+        )
+        self.assertIn("if (!isCurrent()) return false", source)
+        self.assertIn("function () { return serial === runtime.serial; }", source)
+        self.assertIn("if (!rendered || serial !== runtime.serial) return", source)
+        catch = source.index("} catch (error) {", source.index("async function renderCandidate"))
+        failure = source.index("renderFailure([{ code: 'candidate-load'", catch)
+        self.assertIn("if (serial !== runtime.serial) return", source[catch:failure])
+
     def test_weekday_and_details_are_human_facing(self) -> None:
         source = text(DAY_JS)
         self.assertIn("sunday: 'Sunday'", source)

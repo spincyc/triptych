@@ -22,6 +22,45 @@ const assertions = [];
 const consoleProblems = [];
 const failedRequests = [];
 const httpProblems = [];
+let activeResponseGate = null;
+let gatedNavigationSequence = 0;
+
+function armResponseGate(matches) {
+  assert.equal(activeResponseGate, null, 'a response gate is already armed');
+  let markStarted;
+  let releaseResponse;
+  let markServed;
+  const gate = {
+    matches,
+    relative: null,
+    released: false,
+    started: new Promise((accept) => { markStarted = accept; }),
+    releasedSignal: new Promise((accept) => { releaseResponse = accept; }),
+    served: new Promise((accept) => { markServed = accept; }),
+    claim(relative) {
+      this.relative = relative;
+      activeResponseGate = null;
+      markStarted(relative);
+    },
+    release() {
+      if (this.released) return;
+      this.released = true;
+      releaseResponse();
+    },
+    finish() { markServed(); }
+  };
+  activeResponseGate = gate;
+  return gate;
+}
+
+async function waitForGate(gate, label) {
+  await Promise.race([
+    gate.started,
+    new Promise((_accept, reject) => setTimeout(
+      () => reject(new Error('Timed out waiting for response gate: ' + label)), 8000
+    ))
+  ]);
+}
 
 function mime(path) {
   return ({
@@ -41,6 +80,7 @@ async function listen(server) {
 
 function staticServer() {
   return createServer(async (request, response) => {
+    let claimedGate = null;
     try {
       const url = new URL(request.url, 'http://127.0.0.1');
       const relative = decodeURIComponent(url.pathname).replace(/^\/+/, '');
@@ -48,6 +88,11 @@ function staticServer() {
         response.writeHead(204, { 'cache-control': 'no-store' });
         response.end();
         return;
+      }
+      if (activeResponseGate && activeResponseGate.matches(relative)) {
+        claimedGate = activeResponseGate;
+        claimedGate.claim(relative);
+        await claimedGate.releasedSignal;
       }
       if (relative.endsWith('/structure/calendar/roman-1962/2121.json')) {
         response.writeHead(200, {
@@ -67,6 +112,8 @@ function staticServer() {
     } catch (_error) {
       response.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
       response.end('not found');
+    } finally {
+      if (claimedGate) claimedGate.finish();
     }
   });
 }
@@ -174,7 +221,9 @@ const STATES = Object.freeze({
   currentStyleLatent: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'en', rubrics: '0', 'eucharistic-prayer': 'ep-ii' }),
   ordinaryLatent: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', ordinary: '0', 'ordinary-lang': 'en', 'eucharistic-prayer': 'ep-ii' }),
   territorial: hash({ date: '2026-01-04', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la' }),
-  loadFailure: hash({ date: '2121-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' })
+  loadFailure: hash({ date: '2121-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' }),
+  fastValid: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'clementine-vulgate', orations: 'la', mass: 'advent-1' }),
+  slowYear: hash({ date: '2027-08-01', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' })
 });
 
 function candidateUrl(base, state = STATES.roman) {
@@ -202,6 +251,24 @@ async function navigateCandidate(cdp, base, state = STATES.roman) {
   await new Promise((accept) => setTimeout(accept, 80));
 }
 
+async function beginGatedCandidate(cdp, base, state, matches, label) {
+  const gate = armResponseGate(matches);
+  gatedNavigationSequence += 1;
+  const target = `${base}${ROUTE}?data=${DATA}&race=${gatedNavigationSequence}${state}`;
+  try {
+    await cdp.send('Page.navigate', { url: target });
+    await waitForGate(gate, label);
+    await waitFor(cdp,
+      `location.href === ${JSON.stringify(target)} && window.dayReaderReady === false`,
+      label + ' loading state');
+    return gate;
+  } catch (error) {
+    if (activeResponseGate === gate) activeResponseGate = null;
+    gate.release();
+    throw error;
+  }
+}
+
 async function transitionHash(cdp, state) {
   const before = await evaluate(cdp, 'window.dayReaderDebug.renders');
   await evaluate(cdp, `location.hash = ${JSON.stringify(state.replace(/^#/, ''))}`);
@@ -220,6 +287,55 @@ async function historyMove(cdp, direction, expected) {
       `window.dayReaderDebug.renders > ${before}`,
     `history ${direction}`);
   await new Promise((accept) => setTimeout(accept, 80));
+}
+
+async function settleResponseGate(cdp, gate) {
+  gate.release();
+  await gate.served;
+  const suffix = '/' + gate.relative;
+  await waitFor(cdp,
+    `performance.getEntriesByType('resource').some(row => row.name.endsWith(${JSON.stringify(suffix)}))`,
+    'released gated response');
+  await evaluate(cdp,
+    'new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
+}
+
+async function candidateOutcomeSnapshot(cdp) {
+  const open = await evaluate(cdp, `document.querySelector('[data-reader-surface="details"]').open`);
+  if (!open) await click(cdp, '[data-reader-action="details"]');
+  const value = await evaluate(cdp, `(() => ({
+    title: document.querySelector('#celebration-title').textContent,
+    date: document.querySelector('#celebration-date').textContent,
+    metadata: document.querySelector('#celebration-meta').textContent,
+    notice: document.querySelector('#coverage-notice').textContent,
+    noticeHidden: document.querySelector('#coverage-notice').hidden,
+    reading: document.querySelector('#reader-document').innerText,
+    properText: [...document.querySelectorAll('#reader-document .proper')].map(row =>
+      row.textContent.replace(/\\s+/g, ' ').trim()),
+    contents: [...document.querySelectorAll('[data-reader-contents] button')].map(row => ({
+      location: row.dataset.readerLocation, text: row.textContent.trim()
+    })),
+    dateSurface: {
+      date: document.querySelector('#reader-date').value,
+      missal: document.querySelector('#reader-missal').value,
+      bible: document.querySelector('#reader-bible').value,
+      orations: document.querySelector('#reader-orations').value,
+      formulary: document.querySelector('#reader-formulary').value,
+      disabled: [...document.querySelectorAll('#date-form input, #date-form select, #date-form button, #date-surface .date-steps button')]
+        .every(row => row.disabled)
+    },
+    details: document.querySelector('[data-reader-details]').innerText,
+    state: dayReaderDebug.state,
+    semantic: dayReaderDebug.semantic,
+    legacy: dayReaderDebug.legacy,
+    deferred: dayReaderDebug.deferred,
+    outcome: dayReaderDebug.outcome,
+    error: dayReaderDebug.error,
+    ready: dayReaderDebug.ready,
+    renders: dayReaderDebug.renders
+  }))()`);
+  if (!open) await escape(cdp);
+  return value;
 }
 
 async function navigateCurrent(cdp, base, state = STATES.roman) {
@@ -593,6 +709,94 @@ async function runAssertions(cdp, base) {
     await historyMove(cdp, 'forward', STATES.deferred);
     assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'deferred');
     assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
+  });
+
+  await test('a superseded slow valid render cannot overwrite a newer valid result', async () => {
+    const gate = await beginGatedCandidate(
+      cdp, base, STATES.roman,
+      (relative) => relative.endsWith('/douay-rheims/chapters/Ps/54.json'),
+      'slow valid scripture fragment'
+    );
+    try {
+      await transitionHash(cdp, STATES.fastValid);
+      const before = await candidateOutcomeSnapshot(cdp);
+      assert.equal(before.outcome, 'ready');
+      assert.equal(before.title, 'First Sunday of Advent');
+      assert.equal(before.state.edition.id, 'postconciliar');
+      assert.equal(before.semantic.resolved.formulary, 'advent-1');
+      assert.ok(before.properText.length > 0);
+      await settleResponseGate(cdp, gate);
+      const after = await candidateOutcomeSnapshot(cdp);
+      assert.deepEqual(after, before);
+    } finally {
+      gate.release();
+    }
+  });
+
+  await test('a superseded slow failure cannot replace a newer valid result', async () => {
+    const gate = await beginGatedCandidate(
+      cdp, base, STATES.loadFailure,
+      (relative) => relative.endsWith('/structure/calendar/roman-1962/2121.json'),
+      'slow malformed calendar response'
+    );
+    try {
+      await transitionHash(cdp, STATES.fastValid);
+      const before = await candidateOutcomeSnapshot(cdp);
+      assert.equal(before.outcome, 'ready');
+      assert.equal(before.title, 'First Sunday of Advent');
+      assert.equal(before.dateSurface.disabled, false);
+      await settleResponseGate(cdp, gate);
+      const after = await candidateOutcomeSnapshot(cdp);
+      assert.deepEqual(after, before);
+      assert.doesNotMatch(after.reading, /could not load|invalid JSON|Selection unavailable/i);
+    } finally {
+      gate.release();
+    }
+  });
+
+  await test('a superseded slow valid render cannot overwrite a newer invalid result', async () => {
+    const gate = await beginGatedCandidate(
+      cdp, base, STATES.roman,
+      (relative) => relative.endsWith('/douay-rheims/chapters/Ps/54.json'),
+      'slow valid before invalid state'
+    );
+    try {
+      await transitionHash(cdp, STATES.invalid);
+      const before = await candidateOutcomeSnapshot(cdp);
+      assert.equal(before.outcome, 'invalid');
+      assert.equal(before.semantic, null);
+      assert.equal(before.dateSurface.disabled, true);
+      assert.deepEqual(before.contents, []);
+      await settleResponseGate(cdp, gate);
+      const after = await candidateOutcomeSnapshot(cdp);
+      assert.deepEqual(after, before);
+      assert.doesNotMatch(after.reading, /But I have cried to God|Tenth Sunday after Pentecost/i);
+    } finally {
+      gate.release();
+    }
+  });
+
+  await test('history navigation owns the final state while an older render is loading', async () => {
+    await navigateCandidate(cdp, base, STATES.roman);
+    const gate = armResponseGate(
+      (relative) => relative.endsWith('/structure/calendar/roman-1962/2027.json')
+    );
+    try {
+      await evaluate(cdp, `location.hash = ${JSON.stringify(STATES.slowYear.replace(/^#/, ''))}`);
+      await waitForGate(gate, 'slow history calendar response');
+      await historyMove(cdp, 'back', STATES.roman);
+      const before = await candidateOutcomeSnapshot(cdp);
+      assert.equal(before.outcome, 'ready');
+      assert.equal(before.state.civilDate, '2026-08-02');
+      assert.equal(before.semantic.resolved.formulary, 'pentecost-10');
+      await settleResponseGate(cdp, gate);
+      const after = await candidateOutcomeSnapshot(cdp);
+      assert.deepEqual(after, before);
+      assert.equal(await evaluate(cdp, 'location.hash'), STATES.roman);
+    } finally {
+      if (activeResponseGate === gate) activeResponseGate = null;
+      gate.release();
+    }
   });
 
   await test('all actions preserve deep scroll, modal focus, Escape, and focus return', async () => {

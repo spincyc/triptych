@@ -509,7 +509,7 @@
     return 'This selection has a material coverage limitation.';
   }
 
-  async function renderResult(result, structure, derived, branch) {
+  async function renderResult(result, structure, derived, branch, isCurrent) {
     const state = runtime.normalized.state;
     const mass = (structure.masses || []).find(function (row) {
       return result.resolved && row.key === result.resolved.formulary;
@@ -517,6 +517,7 @@
     if (!mass) throw new Error('the validated resolved formulary is absent from production Proper data');
     const bible = bibleRow(state.bible.id);
     const fragments = await T.fetchFragments(bible, T.citationsOf(mass));
+    if (!isCurrent()) return false;
     const documentFragment = document.createDocumentFragment();
     const contents = [];
 
@@ -559,6 +560,7 @@
     const notice = coverageMessage(result);
     coverageNotice.textContent = notice || '';
     coverageNotice.hidden = !notice;
+    return true;
   }
 
   async function renderCandidate() {
@@ -701,10 +703,14 @@
       runtime.outcome = 'ready';
       window.dayReaderDebug.outcome = runtime.outcome;
       populateDateSurface();
-      await renderResult(result, assembled.structure, assembled.derived, runtime.branch);
-      if (serial !== runtime.serial) return;
+      const rendered = await renderResult(
+        result, assembled.structure, assembled.derived, runtime.branch,
+        function () { return serial === runtime.serial; }
+      );
+      if (!rendered || serial !== runtime.serial) return;
       window.dayReaderDebug.semantic = semanticProjection(result);
     } catch (error) {
+      if (serial !== runtime.serial) return;
       renderFailure([{ code: 'candidate-load', path: '', message: String(error.message || error) }],
         'The Day candidate could not load this selection');
     } finally {
