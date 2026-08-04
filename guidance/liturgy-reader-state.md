@@ -2,7 +2,7 @@
 
 ## Status and scope
 
-This is the implementation guide for the M1 candidate named in
+This is the implementation guide for the accepted M1 contract named in
 [`liturgy-browser-roadmap.md`](liturgy-browser-roadmap.md). The governing
 product contract remains [`liturgy-browser-vision.md`](liturgy-browser-vision.md).
 This guide explains the shared state and regression artifacts without
@@ -11,9 +11,9 @@ repeating either document.
 The DOM-free contract is
 `src/web/browser/liturgy/reader-state.js`. Consumer projections are in
 `src/web/browser/liturgy/reader-state-adapters.js`. Both use the existing
-browser-global/CommonJS pattern. Neither production route loads them during
-this candidate, so current Day and Propers behavior is unchanged while the
-integration boundary is externally reviewed.
+browser-global/CommonJS pattern. Neither production route loads them at this
+accepted M1 boundary, so current Day and Propers behavior remains unchanged
+until a separately scoped integration.
 
 ## Versioning
 
@@ -21,12 +21,12 @@ Reader states use `triptych-liturgy-reader-state/v1`; fixtures use
 `triptych-liturgy-reader-fixture/v1`; parsed URL envelopes use
 `triptych-liturgy-url-state/v1`.
 
-The meaning of a version is frozen after acceptance. This still-unaccepted M1
-candidate may be tightened in response to review before that boundary is
-accepted. After acceptance, an optional field may be added to v1 only when
-absence remains valid and every consumer preserves it safely. Rename a field,
-narrow or broaden an identity, reinterpret a state, or make an optional field
-required only in a new version. Validators reject an unknown version.
+The meaning of v1 is frozen at the accepted snapshot
+`c1a590f5854215d68d167d9040e188f41762663e`. An optional field may be added to
+v1 only when absence remains valid and every consumer preserves it safely.
+Rename a field, narrow or broaden an identity, reinterpret a state, or make an
+optional field required only in a new version. Validators reject an unknown
+version.
 
 ## Reader-state boundary
 
@@ -180,14 +180,14 @@ repository-declared defaults. A throwing or absent storage adapter yields no
 remembered preferences and does not fail the reader. The contract has no
 storage or geolocation dependency and never infers territory. Because it is
 not yet wired to the pages, current legacy behavior remains deployed exactly
-as it was; the candidate tests establish the stricter integration rule rather
-than silently changing public URLs.
+as it was; the accepted contract tests establish the stricter integration rule
+rather than silently changing public URLs.
 
 The inventory also records current defects for later scoped integration: the
 pages presently coerce some invalid explicit values, Day history navigation
 does not fully restore `why` or clear an absent Ordinary variant, and the
 shared self-written-hash marker can mistake a later Forward navigation for its
-old event. This M1 candidate does not change those behaviors.
+old event. This accepted M1 contract does not change those behaviors.
 
 ## Adding a fixture
 
@@ -215,8 +215,12 @@ Synthetic catalogs exercise the same validator as tracked data. Tests prove
 their sentinel identities occur nowhere in generated public data and that the
 release map contains the contract modules but no fixture path.
 
-## Candidate boundary
+## Accepted M1 boundary
 
-This work is an M1 candidate pending external review. It does not accept M1,
-integrate a visible mode, redesign the reader shell, add Propers search or
-comparison UI, change calendar or liturgical data, or begin recension work.
+External review accepted the cycle-alternative and v1 property-presence model
+after correction `c6b8070ae76e75153448895a19a0b916c18806ea` and final micro-fix
+`c1a590f5854215d68d167d9040e188f41762663e`; the focused suite passed all 38
+tests. Acceptance does not integrate a visible mode, redesign the reader shell,
+add Propers search or comparison UI, change calendar or liturgical data, or
+begin recension work. The deployed Day and Propers routes still load neither
+M1 module.

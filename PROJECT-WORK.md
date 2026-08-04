@@ -179,7 +179,7 @@ operations.
 
 ## Promised work
 
-### Liturgy reader-state M1 candidate
+### Liturgy reader-state M1 accepted
 
 <!-- promised-deliverable: liturgy-reader-state-m1-2026-08-03 -->
 
@@ -191,10 +191,20 @@ text selection, provenance, typed coverage and absence, unresolved choices,
 and Compare anchors across Day, Propers, and `mass-today --expanded` without a
 second liturgical engine or a visible production change.
 
-The implementation and tests are an M1 candidate. A focused correction closes
-review findings on fail-closed v1 validation and Propers cycle alternatives;
-external acceptance of that correction remains open. This record does not mark
-M1 accepted or begin W2, W3, or W7.
+Accepted on 3 August 2026. The implementation at
+`259573d393cd6a6bac09fc751ac1d14ec9477853`, the reviewed cycle and validation
+correction at `c6b8070ae76e75153448895a19a0b916c18806ea`, and the final
+property-presence micro-fix at `c1a590f5854215d68d167d9040e188f41762663e`
+preserve Propers cycle alternatives and make explicit `sourceHooks` fail
+closed unless they are arrays. The external review dispositions *M1 liturgy
+reader-state contract*, *M1 reader-state corrections*, and *M1 acceptance
+closeout count delta* accepted the resulting contract; the focused suite
+passed all 38 tests. The full repository gate remains red only at the approved
+23-entry example baseline and the same two promised-deliverable captures, whose
+sole authorized closeout change is `15 tracked, 9 complete` to
+`15 tracked, 10 complete`. No transcript was recaptured. The deployed Day and
+Propers routes still do not load either M1 module, and this acceptance does not
+begin W2, W3, or W7 or integrate visible reader behavior.
 
 ### GPT deep-research redevelopment
 

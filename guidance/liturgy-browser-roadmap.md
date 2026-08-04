@@ -638,10 +638,10 @@ The M0 documentation and correction gate passed external review on 2026-08-03.
 The accepted implementation boundary now starts these independent actions in
 parallel:
 
-1. W1/W9 define the shared semantic fixture and URL-state contract, including
-   existing Roman 1962/postconciliar parity, a Day comparison whose recensions
-   resolve differently, a corresponding-formulary Propers comparison, and a
-   coequal unresolved option that requires user choice.
+1. M1's W1/W9 shared semantic fixture and URL-state contract is accepted at
+   correction `c6b8070ae76e75153448895a19a0b916c18806ea` plus final micro-fix
+   `c1a590f5854215d68d167d9040e188f41762663e`. Any production integration or
+   further W1/W9 slice requires separate scope.
 2. W2 prototypes persistent reachability for Date or Browse, Contents, Mode,
    and Study at deep scroll across wide, intermediate, mobile, zoom, and print
    states without choosing sticky versus auto-hide behavior in advance.
@@ -673,6 +673,7 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-03 | M0 retrospective external review | Accepted the governing foundation and requested five narrow corrections: persistent action reachability, entrance-specific Compare anchors and coequal choice handling, the official-act Phase 10 model, a current execution record, and internal-versus-public milestone scope. | Handoff `20260803T155820Z-liturgy-browser-vision-retrospective`; reviewed through `4236f21bfe5aa6f3dde76ee0b9398823373f22e3` |
 | 2026-08-03 | M0 external-review corrections | Resolves the five blockers without production or recension implementation; the exact SHA is recorded in the completion report and correction handoff because a commit cannot contain its own hash. | This correction commit |
 | 2026-08-03 | M0 correction external acceptance | Accepted — all five blockers resolved. The governing contract is stable, and W1/W9, W2, and W7 may begin in parallel at their recorded boundaries. | Reviewed commit `aad3691ee67106f6ff2cdb639463248ff35e3594`; handoff `20260803T164600Z-liturgy-browser-vision-corrections`; review result `20260803T171758Z-liturgy-browser-vision-corrections-review-result.md` |
+| 2026-08-03 | M1 — semantic parity contract external acceptance | Accepted — cycle alternatives are preserved, v1 property-presence validation is complete, the focused suite passed all 38 tests, and the deployed Day and Propers routes still load neither M1 module. The full gate remains red only at the separately approved example baseline and its authorized completion-count update. | Implementation `259573d393cd6a6bac09fc751ac1d14ec9477853`; reviewed correction `c6b8070ae76e75153448895a19a0b916c18806ea`; final micro-fix `c1a590f5854215d68d167d9040e188f41762663e`; handoffs `20260803T223346Z-liturgy-reader-state-contract` and `20260803T235342Z-liturgy-reader-state-contract-corrections`; external review dispositions *M1 liturgy reader-state contract*, *M1 reader-state corrections*, and *M1 acceptance closeout count delta* |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).

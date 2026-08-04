@@ -4,7 +4,7 @@ schema_version = 1
 id = "liturgy-reader-state-m1-2026-08-03"
 owner = "src/web/browser/liturgy/reader-state.js"
 promise = "Define the first W1/W9 shared semantic reader-state, URL, fixture, and Day/Propers/CLI parity contract without changing production reader behavior."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "shared-contract"
@@ -33,7 +33,7 @@ state = "candidate"
 
   [[deliverables.requirements]]
   id = "production-behavior-boundary"
-  criterion = "Current route HTML, CSS, JavaScript, liturgical/generated data, selector contents, and supported URL meanings remain unchanged; the candidate modules are not loaded by either route."
+  criterion = "Current route HTML, CSS, JavaScript, liturgical/generated data, selector contents, and supported URL meanings remain unchanged; the M1 modules are not loaded by either route."
   status = "pass"
   evidence = [
     "src/web/browser/liturgy/day.html",
@@ -44,8 +44,14 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "external-acceptance"
   criterion = "The immutable M1 handoff receives external review and every blocking finding is resolved before M1 is marked accepted."
-  status = "open"
-  evidence = ["guidance/external-review-handoffs.md"]
+  status = "pass"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+  check = "contains"
+  path = "guidance/liturgy-browser-roadmap.md"
+  needle = "c1a590f5854215d68d167d9040e188f41762663e"
 
 [[deliverables]]
 id = "project-gpt-deep-research-redevelopment-2026-07-29"
