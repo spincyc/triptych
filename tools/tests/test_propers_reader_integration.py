@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Focused static, contract, and isolation gates for the M3 Propers candidate."""
+"""Focused static, contract, and isolation gates for the W3 Propers candidate."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = "98d4b3a90e8d06c700c52b1cda9d327b5f9d69f6"
+BASE = "b0b1e5b63ba4a1d389b53276fa0bf9944c0ee909"
 LITURGY = ROOT / "src/web/browser/liturgy"
 HTML = LITURGY / "propers-reader.html"
 JS = LITURGY / "propers-reader.js"
@@ -39,7 +39,8 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         self.assertIn('data-entrance="propers"', html)
         self.assertIn("meta[name=\"robots\"]", script)
         self.assertIn("noindex, nofollow, noarchive", script)
-        self.assertIn("Internal M3 candidate", html)
+        self.assertIn("Internal Propers Read candidate", html)
+        self.assertNotIn("M3 candidate", html)
         self.assertNotIn("prototypes/reader-shell", html)
         for asset in (
             "reader-shell.js", "reader-shell.css", "reader-state.js",
@@ -175,6 +176,27 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             self.assertIn(assignment, source)
         self.assertGreaterEqual(source.count("serial !== runtime.serial"), 6)
         self.assertIn("if (!rendered || serial !== runtime.serial) return", source)
+        self.assertIn("runtime.browseSerial += 1", source)
+        self.assertIn("onClose: function (name)", source)
+        self.assertIn("if (name === 'browse')", source)
+
+    def test_witness_choice_is_formulary_and_translation_specific(self) -> None:
+        source = text(JS)
+        for token in (
+            "function formularyWitnessState(structure, mass, language)",
+            "language === T.SOURCE_LANGUAGE || !mass",
+            "mass.propers || []",
+            "proper.translations || []",
+            "translationIdentity(row)",
+            "witnessState.choices.length > 1",
+            "witnessState.deterministic",
+            "selectedBrowseMass(groups)",
+        ):
+            self.assertIn(token, source)
+        self.assertNotIn("function translationRows(structure, language)", source)
+        self.assertIn("witnessSelect.replaceChildren();\n    witnessField.hidden = true;", source)
+        self.assertIn("updates[INTERNAL_WITNESS_KEY] = witnessField.hidden ? null", source)
+        self.assertIn(".surface-field[hidden] { display: none; }", text(CSS))
 
     def test_complete_notice_details_and_print_boundaries_are_encoded(self) -> None:
         source = text(JS)
@@ -257,12 +279,13 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             ledger = tomllib.load(handle)
         rows = [
             row for row in ledger["deliverables"]
-            if row["id"] == "liturgy-propers-reader-shell-m3-candidate-2026-08-04"
+            if row["id"] == "liturgy-propers-read-w3-candidate-2026-08-04"
         ]
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["state"], "candidate")
         self.assertEqual(rows[0]["owner"], "src/web/browser/liturgy/propers-reader.html")
         self.assertNotIn("complete", [requirement["status"] for requirement in rows[0]["requirements"]])
+        self.assertEqual(len(ledger["deliverables"]), 18)
 
     def test_candidate_sizes_are_bounded_and_shell_is_not_copied(self) -> None:
         prototype = LITURGY / "prototypes/reader-shell/reader-shell.js"

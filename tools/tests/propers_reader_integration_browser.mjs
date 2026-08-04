@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-/* Real-Chromium interaction, race, reflow, parity, and review gates for M3. */
+/* Real-Chromium interaction, race, reflow, parity, and review gates for W3. */
 
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
@@ -38,7 +38,7 @@ function armGate(match) {
   let release;
   let served;
   const gate = {
-    match, started: new Promise((done) => { started = done; }),
+    match, seen: [], started: new Promise((done) => { started = done; }),
     releaseSignal: new Promise((done) => { release = done; }),
     served: new Promise((done) => { served = done; }),
     claim(path) { responseGate = null; started(path); },
@@ -51,7 +51,9 @@ function armGate(match) {
 async function waitGate(gate) {
   await Promise.race([
     gate.started,
-    new Promise((_done, reject) => setTimeout(() => reject(new Error('response gate timeout')), 8000))
+    new Promise((_done, reject) => setTimeout(() => reject(new Error(
+      'response gate timeout; requests after arming: ' + gate.seen.join(', ')
+    )), 8000))
   ]);
 }
 
@@ -64,6 +66,7 @@ function server() {
       if (relative === 'favicon.ico') {
         response.writeHead(204); response.end(); return;
       }
+      if (responseGate) responseGate.seen.push(relative);
       if (responseGate && responseGate.match(relative)) {
         gate = responseGate; gate.claim(relative); await gate.releaseSignal;
       }
@@ -175,9 +178,13 @@ const STATES = Object.freeze({
   alternative: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' }),
   partial: hash({ missal: 'roman-1962', type: 'christological', mass: 'octava-nativitatis-domini', bible: 'douay-rheims', orations: 'la' }),
   missing: hash({ missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' }),
+  postMissing: hash({ missal: 'postconciliar', bible: 'douay-rheims', orations: 'la' }),
   invalid: hash({ missal: 'not-a-missal', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
   invalidMass: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'not-a-mass', bible: 'douay-rheims', orations: 'la' }),
-  fast: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' })
+  fast: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' }),
+  romanEnglishMultiple: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'en' }),
+  romanEnglishOne: hash({ missal: 'roman-1962', type: 'common', mass: 'commune-unius-martyris-1', bible: 'douay-rheims', orations: 'en' }),
+  romanEnglishNone: hash({ missal: 'roman-1962', type: 'christological', mass: 'octava-nativitatis-domini', bible: 'douay-rheims', orations: 'en' })
 });
 
 function candidateUrl(base, state = STATES.roman, data = DATA) {
@@ -193,6 +200,11 @@ async function navigate(cdp, url, ready = 'window.propersReaderReady === true') 
 
 async function candidate(cdp, base, state = STATES.roman, data = DATA) {
   await navigate(cdp, candidateUrl(base, state, data));
+}
+
+async function freshCandidate(cdp, base, state = STATES.roman, data = DATA) {
+  await navigate(cdp,
+    `${base}${CANDIDATE}?data=${data}&browse-race=${Math.random()}${state}`);
 }
 
 async function current(cdp, base, state = STATES.roman) {
@@ -214,6 +226,37 @@ async function current(cdp, base, state = STATES.roman) {
 async function click(cdp, selector) {
   await evaluate(cdp, `(() => { const node = document.querySelector(${JSON.stringify(selector)}); if (!node) throw new Error('missing ${selector}'); node.click(); })()`);
   await new Promise((done) => setTimeout(done, 50));
+}
+
+async function select(cdp, selector, value) {
+  await evaluate(cdp, `(() => {
+    const node = document.querySelector(${JSON.stringify(selector)});
+    if (!node) throw new Error('missing ${selector}');
+    node.value = ${JSON.stringify(value)};
+    node.dispatchEvent(new Event('change', {bubbles:true}));
+  })()`);
+  await new Promise((done) => setTimeout(done, 30));
+}
+
+async function browseSnapshot(cdp) {
+  return evaluate(cdp, `(() => ({
+    open: document.querySelector('#browse-surface').open,
+    missal: document.querySelector('#reader-missal').value,
+    types: [...document.querySelector('#reader-type').options].map(row => row.value),
+    type: document.querySelector('#reader-type').value,
+    formularies: [...document.querySelector('#reader-formulary').options].map(row => row.value),
+    formulary: document.querySelector('#reader-formulary').value,
+    bible: document.querySelector('#reader-bible').value,
+    orations: document.querySelector('#reader-orations').value,
+    witnessHidden: document.querySelector('#reader-witness-field').hidden,
+    witnessDisplay: getComputedStyle(document.querySelector('#reader-witness-field')).display,
+    witnesses: [...document.querySelector('#reader-witness').options].map(row => row.value),
+    witness: document.querySelector('#reader-witness').value,
+    status: document.querySelector('#browse-status').textContent,
+    applyDisabled: document.querySelector('#browse-form .surface-apply').disabled,
+    semantic: propersReaderDebug.semantic,
+    outcome: propersReaderDebug.outcome
+  }))()`);
 }
 
 async function escape(cdp) {
@@ -376,12 +419,181 @@ async function assertions(cdp, base) {
     assert.equal(await evaluate(cdp, `document.querySelectorAll('#coverage-notice').length`), 1);
   });
 
+  await check('Latin Browse never asks for a translation witness in either missal', async () => {
+    for (const state of [STATES.roman, STATES.post]) {
+      await candidate(cdp, base, state); await click(cdp, '[data-reader-action="browse"]');
+      const form = await browseSnapshot(cdp);
+      assert.equal(form.orations, 'la'); assert.equal(form.witnessHidden, true);
+      assert.equal(form.witnessDisplay, 'none');
+      assert.deepEqual(form.witnesses, []); assert.equal(form.applyDisabled, false);
+      await escape(cdp);
+    }
+  });
+
+  await check('one formulary-relevant witness resolves deterministically without a control', async () => {
+    await candidate(cdp, base, STATES.romanEnglishOne);
+    const state = await evaluate(cdp, 'propersReaderDebug.state');
+    assert.equal(state.languages.translationWitness,
+      'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861');
+    await click(cdp, '[data-reader-action="browse"]');
+    const form = await browseSnapshot(cdp);
+    assert.equal(form.witnessHidden, true); assert.equal(form.witnessDisplay, 'none');
+    assert.deepEqual(form.witnesses, []);
+    await escape(cdp);
+  });
+
+  await check('multiple relevant witnesses require an explicit formulary-specific choice', async () => {
+    await candidate(cdp, base, STATES.romanEnglishMultiple);
+    assert.ok((await snapshot(cdp)).semantic.unresolvedChoices.some(row =>
+      row.id.startsWith('translation-witness:')));
+    await click(cdp, '[data-reader-action="browse"]');
+    const form = await browseSnapshot(cdp);
+    assert.equal(form.witnessHidden, false); assert.notEqual(form.witnessDisplay, 'none');
+    assert.equal(form.witnesses.length, 3);
+    assert.equal(form.witnesses[0], '');
+    const witness = form.witnesses[1];
+    await select(cdp, '#reader-witness', witness);
+    await click(cdp, '#browse-form .surface-apply');
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.state.languages.translationWitness === ${JSON.stringify(witness)}`,
+      'explicit translation witness');
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).get('_candidate-translation-witness')`), witness);
+  });
+
+  await check('no held witness remains an explicit unavailable or partial result', async () => {
+    await candidate(cdp, base, STATES.romanEnglishNone);
+    const value = await snapshot(cdp);
+    assert.equal(value.outcome, 'ready'); assert.equal(value.noticeHidden, false);
+    assert.match(value.notice, /not held|unavailable|coverage/i);
+    await click(cdp, '[data-reader-action="browse"]');
+    const form = await browseSnapshot(cdp);
+    assert.equal(form.witnessHidden, true); assert.equal(form.witnessDisplay, 'none');
+    await escape(cdp);
+  });
+
+  await check('switching a chosen translation witness to Latin removes private witness state', async () => {
+    await candidate(cdp, base, STATES.romanEnglishMultiple);
+    await click(cdp, '[data-reader-action="browse"]');
+    const witness = await evaluate(cdp,
+      `document.querySelector('#reader-witness').options[1].value`);
+    await select(cdp, '#reader-witness', witness);
+    await select(cdp, '#reader-orations', 'la');
+    const form = await browseSnapshot(cdp);
+    assert.equal(form.witnessHidden, true); assert.equal(form.witnessDisplay, 'none');
+    assert.deepEqual(form.witnesses, []);
+    await click(cdp, '#browse-form .surface-apply');
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state.languages.orations === 'la'`,
+      'Latin submission');
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).has('_candidate-translation-witness')`), false);
+    assert.equal(await evaluate(cdp,
+      `'translationWitness' in propersReaderDebug.state.languages`), false);
+  });
+
+  await check('edition witnesses irrelevant to the formulary are neither required nor accepted', async () => {
+    await candidate(cdp, base, STATES.romanEnglishOne);
+    await click(cdp, '[data-reader-action="browse"]');
+    const form = await browseSnapshot(cdp);
+    assert.equal(form.witnessHidden, true); assert.equal(form.witnessDisplay, 'none');
+    await escape(cdp);
+    const invalidWitness = STATES.romanEnglishOne +
+      '&_candidate-translation-witness=' + encodeURIComponent(
+        'artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en');
+    await candidate(cdp, base, invalidWitness);
+    assert.equal((await snapshot(cdp)).outcome, 'invalid');
+  });
+
   await check('changing missal clears formulary and requires a new choice', async () => {
     await candidate(cdp, base, STATES.roman); await click(cdp, '[data-reader-action="browse"]');
     await evaluate(cdp, `(() => { const row=document.querySelector('#reader-missal'); row.value='postconciliar'; row.dispatchEvent(new Event('change',{bubbles:true})); })()`);
     await waitFor(cdp, `document.querySelector('#reader-formulary').disabled === false`, 'draft missal');
     assert.equal(await evaluate(cdp, `document.querySelector('#reader-formulary').value`), '');
     assert.match(await evaluate(cdp, `document.querySelector('#browse-status').textContent`), /cleared/);
+    await escape(cdp);
+  });
+
+  await check('superseded Browse missal load cannot overwrite a newer valid route form', async () => {
+    await freshCandidate(cdp, base, STATES.post); await click(cdp, '[data-reader-action="browse"]');
+    const gate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));
+    await select(cdp, '#reader-missal', 'roman-1962'); await waitGate(gate);
+    await evaluate(cdp, `location.hash=${JSON.stringify(STATES.fast.slice(1))}`);
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state.formulary.id === 'visitation-blessed-virgin-mary'`, 'new valid route');
+    await click(cdp, '[data-reader-action="browse"]');
+    const before = await browseSnapshot(cdp); gate.release(); await gate.served;
+    await new Promise((done) => setTimeout(done, 120));
+    assert.deepEqual(await browseSnapshot(cdp), before);
+    assert.equal(before.missal, 'postconciliar'); assert.equal(before.formulary, 'visitation-blessed-virgin-mary');
+    await escape(cdp);
+  });
+
+  await check('superseded Browse load cannot overwrite an invalid route form', async () => {
+    await freshCandidate(cdp, base, STATES.post); await click(cdp, '[data-reader-action="browse"]');
+    const gate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));
+    await select(cdp, '#reader-missal', 'roman-1962'); await waitGate(gate);
+    await evaluate(cdp, `location.hash=${JSON.stringify(STATES.invalid.slice(1))}`);
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.outcome === 'invalid'`, 'invalid route');
+    await click(cdp, '[data-reader-action="browse"]');
+    await select(cdp, '#reader-missal', 'postconciliar');
+    await waitFor(cdp, `document.querySelector('#reader-type').disabled === false`, 'current invalid recovery form');
+    const before = await browseSnapshot(cdp); gate.release(); await gate.served;
+    await new Promise((done) => setTimeout(done, 120));
+    assert.deepEqual(await browseSnapshot(cdp), before); assert.equal(before.missal, 'postconciliar');
+    assert.equal(before.outcome, 'invalid'); await escape(cdp);
+  });
+
+  await check('superseded Browse load cannot overwrite missing-formulary Browse state', async () => {
+    await freshCandidate(cdp, base, STATES.post); await click(cdp, '[data-reader-action="browse"]');
+    const gate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));
+    await select(cdp, '#reader-missal', 'roman-1962'); await waitGate(gate);
+    await evaluate(cdp, `location.hash=${JSON.stringify(STATES.postMissing.slice(1))}`);
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.outcome === 'browse'`, 'missing formulary Browse state');
+    const before = await browseSnapshot(cdp); gate.release(); await gate.served;
+    await new Promise((done) => setTimeout(done, 120));
+    assert.deepEqual(await browseSnapshot(cdp), before); assert.equal(before.missal, 'postconciliar');
+    assert.equal(before.formulary, ''); assert.equal(before.outcome, 'browse'); await escape(cdp);
+  });
+
+  await check('superseded Browse failure cannot overwrite a current valid form', async () => {
+    await freshCandidate(cdp, base, STATES.post, DATA + '-failure');
+    await click(cdp, '[data-reader-action="browse"]');
+    const gate = armGate((path) => path.endsWith('/browse-failure/structure/propers/roman-1962.json'));
+    await select(cdp, '#reader-missal', 'roman-1962'); await waitGate(gate);
+    await evaluate(cdp, `location.hash=${JSON.stringify(STATES.fast.slice(1))}`);
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.outcome === 'ready'`, 'valid after Browse failure');
+    await click(cdp, '[data-reader-action="browse"]');
+    const before = await browseSnapshot(cdp); gate.release(); await gate.served;
+    await new Promise((done) => setTimeout(done, 120));
+    assert.deepEqual(await browseSnapshot(cdp), before); assert.equal(before.missal, 'postconciliar');
+    await escape(cdp);
+  });
+
+  await check('rapid Browse Missal A to Missal B keeps the latest form', async () => {
+    await freshCandidate(cdp, base, STATES.post); await click(cdp, '[data-reader-action="browse"]');
+    const gate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));
+    await select(cdp, '#reader-missal', 'roman-1962'); await waitGate(gate);
+    await select(cdp, '#reader-missal', 'postconciliar');
+    await waitFor(cdp, `document.querySelector('#reader-type').disabled === false`, 'latest Browse missal');
+    const before = await browseSnapshot(cdp); gate.release(); await gate.served;
+    await new Promise((done) => setTimeout(done, 120));
+    assert.deepEqual(await browseSnapshot(cdp), before); assert.equal(before.missal, 'postconciliar');
+    await escape(cdp);
+  });
+
+  await check('Back and Forward invalidate an older pending Browse request', async () => {
+    await freshCandidate(cdp, base, STATES.post); await click(cdp, '[data-reader-action="browse"]');
+    const gate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));
+    await select(cdp, '#reader-missal', 'roman-1962'); await waitGate(gate);
+    await evaluate(cdp, `location.hash=${JSON.stringify(STATES.fast.slice(1))}`);
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state.formulary.id === 'visitation-blessed-virgin-mary'`, 'forward Browse state');
+    await evaluate(cdp, 'history.back()');
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state.formulary.id === 'advent-1'`, 'Browse history back');
+    await evaluate(cdp, 'history.forward()');
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state.formulary.id === 'visitation-blessed-virgin-mary'`, 'Browse history forward');
+    await click(cdp, '[data-reader-action="browse"]');
+    const before = await browseSnapshot(cdp); gate.release(); await gate.served;
+    await new Promise((done) => setTimeout(done, 120));
+    assert.deepEqual(await browseSnapshot(cdp), before); assert.equal(before.missal, 'postconciliar');
     await escape(cdp);
   });
 
@@ -516,6 +728,24 @@ async function captures(cdp, base) {
   for (const [label, state] of states) {
     await candidate(cdp, base, state); await shot(cdp, resolve(captureDir, `propers-reader-${label}-393x852.png`));
   }
+  await candidate(cdp, base, STATES.roman); await click(cdp, '[data-reader-action="browse"]');
+  await shot(cdp, resolve(captureDir, 'propers-reader-roman-1962-latin-browse-393x852.png')); await escape(cdp);
+  await candidate(cdp, base, STATES.post); await click(cdp, '[data-reader-action="browse"]');
+  await shot(cdp, resolve(captureDir, 'propers-reader-postconciliar-latin-browse-393x852.png')); await escape(cdp);
+  await candidate(cdp, base, STATES.romanEnglishMultiple); await click(cdp, '[data-reader-action="browse"]');
+  await shot(cdp, resolve(captureDir, 'propers-reader-translation-multiple-witness-393x852.png')); await escape(cdp);
+  await candidate(cdp, base, STATES.romanEnglishNone); await click(cdp, '[data-reader-action="browse"]');
+  await shot(cdp, resolve(captureDir, 'propers-reader-translation-no-witness-393x852.png')); await escape(cdp);
+  await freshCandidate(cdp, base, STATES.post); await click(cdp, '[data-reader-action="browse"]');
+  const raceGate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));
+  await select(cdp, '#reader-missal', 'roman-1962'); await waitGate(raceGate);
+  await evaluate(cdp, `location.hash=${JSON.stringify(STATES.fast.slice(1))}`);
+  await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state.formulary.id === 'visitation-blessed-virgin-mary'`, 'capture race outcome');
+  await click(cdp, '[data-reader-action="browse"]'); raceGate.release(); await raceGate.served;
+  await new Promise((done) => setTimeout(done, 120));
+  await shot(cdp, resolve(captureDir, 'propers-reader-browse-race-settled-393x852.png')); await escape(cdp);
+  await candidate(cdp, base, STATES.roman);
+  await shot(cdp, resolve(captureDir, 'propers-reader-corrected-candidate-banner-393x852.png'));
   await candidate(cdp, base, STATES.post); await evaluate(cdp, 'scrollTo(0, document.documentElement.scrollHeight)');
   await shot(cdp, resolve(captureDir, 'propers-reader-deep-scroll-393x852.png'));
   for (const action of ['browse', 'contents', 'mode', 'details']) {
@@ -523,6 +753,8 @@ async function captures(cdp, base) {
     await shot(cdp, resolve(captureDir, `propers-reader-${action}-open-393x852.png`)); await escape(cdp);
   }
   await viewport(cdp, 1440, 900); await candidate(cdp, base, STATES.roman);
+  await click(cdp, '[data-reader-action="browse"]');
+  await shot(cdp, resolve(captureDir, 'propers-reader-browse-open-1440x900.png')); await escape(cdp);
   await shot(cdp, resolve(captureDir, 'propers-reader-valid-1440x900-paired.png'));
   await current(cdp, base, STATES.roman); await shot(cdp, resolve(captureDir, 'propers-current-valid-1440x900.png'));
   await viewport(cdp, 393, 852); await candidate(cdp, base, STATES.cycles);

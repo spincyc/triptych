@@ -179,17 +179,18 @@ operations.
 
 ## Promised work
 
-### Liturgy Propers reader-shell M3 candidate
+### Liturgy Propers Read W3 integration candidate
 
-<!-- promised-deliverable: liturgy-propers-reader-shell-m3-candidate-2026-08-04 -->
+<!-- promised-deliverable: liturgy-propers-read-w3-candidate-2026-08-04 -->
 
-The second M3 production-integration entrance connects an unlinked, noindex
+The second W3 production-integration entrance connects an unlinked, noindex
 Propers Read candidate to the accepted persistent reader shell and the accepted
 M1 Propers state adapter. It must render existing production formularies
 without replacing the public Propers route, choosing an arbitrary formulary,
 or merging coequal cycles or alternatives.
 
-This work remains an **M3 candidate pending external review**. The live Day and
+This work remains a **W3 Propers candidate pending external review**. The
+accepted and closed M3 Day integration is not reopened. The live Day and
 Propers routes, the accepted Day candidate, public navigation and selectors,
 M1 contract meaning, liturgical and generated production data, later modes,
 search, public cutover, and recension expansion remain outside its boundary.

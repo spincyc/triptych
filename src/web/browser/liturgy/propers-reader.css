@@ -24,6 +24,7 @@ body.propers-reader-candidate,
   text-align: center;
 }
 .candidate-flag strong { color: var(--section-ink); letter-spacing: 0.06em; text-transform: uppercase; }
+.surface-field[hidden] { display: none; }
 
 .reader-identity {
   width: min(calc(100% - 2rem), 48rem);

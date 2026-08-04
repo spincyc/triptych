@@ -1,4 +1,4 @@
-/* Internal M3 Propers Read candidate over production state and renderer paths. */
+/* Internal W3 Propers Read candidate over production state and renderer paths. */
 'use strict';
 
 (function () {
@@ -355,18 +355,25 @@
     const witness = candidateValue(INTERNAL_WITNESS_KEY, errors);
     if (cycle) normalized.state.cycle = cycle;
     if (alternative) normalized.state.alternative = { id: alternative };
+    const mass = (prepared.structure.masses || []).find(function (row) {
+      return row.key === normalized.state.formulary.id;
+    });
+    const witnessState = formularyWitnessState(
+      prepared.structure, mass, normalized.state.languages.orations
+    );
     if (witness) {
-      const held = (prepared.structure.translations || []).some(function (row) {
-        return row.lang === normalized.state.languages.orations && row.source_id === witness;
-      });
-      if (!held) {
+      const held = witnessState.deterministic === witness ||
+        witnessState.choices.some(function (row) { return row.id === witness; });
+      if (!held || normalized.state.languages.orations === T.SOURCE_LANGUAGE) {
         errors.push({
           code: 'invalid-explicit-value', path: INTERNAL_WITNESS_KEY,
-          message: 'the explicit translation witness is not held for this edition and language'
+          message: 'the explicit translation witness cannot faithfully supply this formulary and language'
         });
       } else {
         normalized.state.languages.translationWitness = witness;
       }
+    } else if (witnessState.deterministic) {
+      normalized.state.languages.translationWitness = witnessState.deterministic;
     }
     const checked = Contract.validateReaderState(normalized.state);
     errors.push.apply(errors, checked.errors);
@@ -667,32 +674,71 @@
     if (value && masses.some(function (mass) { return mass.key === value; })) formularySelect.value = value;
   }
 
-  function translationRows(structure, language) {
-    return (structure.translations || []).filter(function (row) {
-      return row.lang === language && row.source_id;
-    });
+  function translationIdentity(row) {
+    return row && (row.source_id || row.source || null);
   }
 
-  function fillOrations(structure, language, witness) {
+  function formularyWitnessState(structure, mass, language) {
+    if (language === T.SOURCE_LANGUAGE || !mass) {
+      return { deterministic: null, choices: [] };
+    }
+    const heldRows = (mass.propers || []).filter(function (proper) {
+      return proper && proper.text && !T.isPlaceholder(proper);
+    }).map(function (proper) {
+      return (proper.translations || []).filter(function (row) {
+        return row && row.lang === language && row.text;
+      });
+    }).filter(function (rows) { return rows.length; });
+    if (!heldRows.length || heldRows.some(function (rows) {
+      return rows.some(function (row) { return !translationIdentity(row); });
+    })) return { deterministic: null, choices: [] };
+    const heldByProper = heldRows.map(function (rows) {
+      return Array.from(new Set(rows.map(translationIdentity)));
+    });
+
+    const common = heldByProper.reduce(function (intersection, ids) {
+      return intersection.filter(function (id) { return ids.indexOf(id) >= 0; });
+    }, heldByProper[0].slice());
+    const labels = new Map((structure.translations || []).map(function (row) {
+      return [translationIdentity(row), row.label || translationIdentity(row)];
+    }));
+    const choices = common.map(function (id) {
+      return { id: id, label: labels.get(id) || id };
+    });
+    return {
+      deterministic: choices.length === 1 ? choices[0].id : null,
+      choices: choices.length > 1 ? choices : []
+    };
+  }
+
+  function selectedBrowseMass(groups) {
+    const group = (groups || []).find(function (row) { return row.kind === typeSelect.value; });
+    return group && group.masses.find(function (mass) {
+      return mass.key === formularySelect.value;
+    }) || null;
+  }
+
+  function fillOrations(structure, mass, language, witness) {
     const languages = T.orationLanguagesOf(structure);
     T.fillSelect(orationsSelect, languages.map(function (row) {
       return { value: row.lang, label: T.orationLanguageLabel(row), title: row.lang };
     }));
     orationsSelect.value = languages.some(function (row) { return row.lang === language; })
       ? language : T.SOURCE_LANGUAGE;
-    const witnesses = translationRows(structure, orationsSelect.value);
-    if (witnesses.length > 1) {
-      T.fillSelect(witnessSelect, witnesses.map(function (row) {
-        return { value: row.source_id, label: row.label, title: row.source_id };
+    witnessSelect.replaceChildren();
+    witnessField.hidden = true;
+    if (orationsSelect.value === T.SOURCE_LANGUAGE) return;
+
+    const witnessState = formularyWitnessState(structure, mass, orationsSelect.value);
+    if (witnessState.choices.length > 1) {
+      T.fillSelect(witnessSelect, witnessState.choices.map(function (row) {
+        return { value: row.id, label: row.label, title: row.id };
       }));
       placeholder(witnessSelect, 'Choose a translation witness…');
-      if (witness && witnesses.some(function (row) { return row.source_id === witness; })) {
+      if (witness && witnessState.choices.some(function (row) { return row.id === witness; })) {
         witnessSelect.value = witness;
       }
       witnessField.hidden = false;
-    } else {
-      witnessSelect.replaceChildren();
-      witnessField.hidden = true;
     }
   }
 
@@ -729,7 +775,11 @@
     fillBibles(state.bible.id);
     fillTypes(runtime.groups, currentType);
     fillFormularies(runtime.groups, typeSelect.value, currentMass);
-    fillOrations(runtime.structure, state.languages.orations, state.languages.translationWitness || null);
+    const mass = currentMass && (runtime.structure.masses || []).find(function (row) {
+      return row.key === currentMass;
+    });
+    fillOrations(runtime.structure, mass, state.languages.orations,
+      state.languages.translationWitness || null);
     browseStatus.textContent = currentMass
       ? 'Changing missal or type revalidates the formulary and requires another choice when it is not held.'
       : 'A formulary must be selected. Nothing is chosen by manifest order.';
@@ -762,7 +812,7 @@
     runtime.draftGroups = groups;
     fillTypes(groups, groups[0] && groups[0].kind);
     fillFormularies(groups, typeSelect.value, null);
-    fillOrations(structure, T.SOURCE_LANGUAGE, null);
+    fillOrations(structure, null, T.SOURCE_LANGUAGE, null);
     browseStatus.textContent = 'The prior formulary was cleared. Choose one held by this missal.';
     setBrowseEnabled(true);
   }
@@ -836,11 +886,19 @@
           draftMissal(missalSelect.value);
         }
       }
+    },
+    onClose: function (name) {
+      if (name === 'browse') {
+        runtime.browseSerial += 1;
+        runtime.draftStructure = null;
+        runtime.draftGroups = [];
+      }
     }
   });
 
   async function renderCandidate() {
     const serial = ++runtime.serial;
+    runtime.browseSerial += 1;
     if (readerShell.openSurface()) readerShell.close({ restoreFocus: false });
     clearSelectionState('loading');
     window.propersReaderReady = false;
@@ -949,14 +1007,28 @@
     const available = runtime.draftStructure && runtime.draftStructure.calendar === missalSelect.value
       ? runtime.draftGroups : runtime.groups;
     fillFormularies(available, typeSelect.value, null);
+    const structure = runtime.draftStructure && runtime.draftStructure.calendar === missalSelect.value
+      ? runtime.draftStructure : runtime.structure;
+    if (structure) fillOrations(structure, null, orationsSelect.value, null);
     browseStatus.textContent = 'Choose a formulary of this type; none was selected automatically.';
   });
+  formularySelect.addEventListener('change', function () {
+    const draft = runtime.draftStructure && runtime.draftStructure.calendar === missalSelect.value;
+    const structure = draft ? runtime.draftStructure : runtime.structure;
+    const groups = draft ? runtime.draftGroups : runtime.groups;
+    if (structure) {
+      fillOrations(structure, selectedBrowseMass(groups), orationsSelect.value, null);
+    }
+  });
   orationsSelect.addEventListener('change', function () {
-    const structure = runtime.draftStructure && runtime.draftStructure.calendar === missalSelect.value
-      ? runtime.draftStructure
+    const draft = runtime.draftStructure && runtime.draftStructure.calendar === missalSelect.value;
+    const structure = draft ? runtime.draftStructure
       : (runtime.structure && runtime.structure.calendar === missalSelect.value
         ? runtime.structure : null);
-    if (structure) fillOrations(structure, orationsSelect.value, null);
+    const groups = draft ? runtime.draftGroups : runtime.groups;
+    if (structure) {
+      fillOrations(structure, selectedBrowseMass(groups), orationsSelect.value, null);
+    }
   });
 
   browseForm.addEventListener('submit', function (event) {
