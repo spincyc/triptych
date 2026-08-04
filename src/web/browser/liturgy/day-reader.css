@@ -1,0 +1,97 @@
+/* Internal production Day Read candidate; the live Day route does not load it. */
+body.day-reader-candidate,
+.page-shell:has(> .day-reader-candidate-frame) {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  background: color-mix(in srgb, var(--page) 95%, var(--section-wash));
+  color: var(--ink);
+}
+
+.day-reader-candidate-frame { min-width: 0; }
+
+.candidate-flag {
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+  margin: 0;
+  padding: calc(0.35rem + var(--reader-safe-top)) max(1rem, var(--reader-safe-right)) 0.4rem max(1rem, var(--reader-safe-left));
+  border-bottom: 1px solid var(--section-pale);
+  background: var(--section-row);
+  color: var(--ink-soft);
+  font: 0.72rem/1.35 var(--sans);
+  text-align: center;
+}
+.candidate-flag strong { color: var(--section-ink); letter-spacing: 0.06em; text-transform: uppercase; }
+
+.reader-identity {
+  width: min(calc(100% - 2rem), 48rem);
+  margin: 0 auto;
+  padding: clamp(1.2rem, 4vw, 2.5rem) 0 0.9rem;
+  text-align: center;
+}
+.reader-context { margin: 0 0 0.3rem; color: var(--ink-faint); font: 700 0.68rem/1.3 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; }
+.reader-identity .celebration-title { max-width: 25ch; margin: 0 auto; color: var(--section-ink); font: 500 clamp(1.85rem, 5vw, 3rem)/1.08 var(--serif); }
+.reader-identity .entry-title { margin: 0.5rem 0 0; color: var(--ink-soft); font: 400 clamp(1rem, 2vw, 1.2rem)/1.35 var(--serif); }
+.reader-identity .entry-meta { max-width: 60ch; margin: 0.22rem auto 0; color: var(--ink-faint); font: 0.8rem/1.45 var(--serif); }
+.coverage-notice { max-width: 56ch; margin: 0.65rem auto 0; padding: 0.55rem 0.7rem; border-left: 0.2rem solid var(--notice); background: var(--notice-bg); color: var(--notice); font: 0.78rem/1.45 var(--sans); text-align: left; }
+
+.reader-document {
+  width: min(calc(100% - 2rem), 54rem);
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 6vw, 4rem) 5rem;
+  border: 1px solid color-mix(in srgb, var(--section-pale) 72%, transparent);
+  background: var(--panel);
+  box-shadow: 0 1.5rem 4rem rgb(40 30 20 / 7%);
+  font-family: var(--serif);
+}
+.reader-document > * { width: min(100%, 68ch); margin-inline: auto; }
+.reader-document:focus-visible { outline: 2px solid var(--focus); outline-offset: 0.35rem; }
+.reader-document .proper {
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  padding: 0;
+  border: 0;
+  scroll-margin-block: 1rem calc(var(--reader-shell-height) + var(--reader-safe-bottom) + 1rem);
+}
+.reader-document .proper:focus-visible { outline: 2px solid var(--focus); outline-offset: 0.4rem; }
+.reader-document .proper-name { justify-content: flex-start; margin: 0 0 0.8rem; padding-top: 0.8rem; border-top: 1px solid var(--section-pale); color: var(--section-ink); font: 600 0.9rem/1.45 var(--serif); letter-spacing: 0.09em; text-align: left; }
+.reader-document .proper-ref { color: var(--ink-faint); font-size: 0.78em; }
+.reader-document .passage, .reader-document .composed { grid-template-columns: minmax(0, 1fr); gap: 0.85rem; font-size: 1.05rem; line-height: 1.72; }
+.reader-document .placeholder { color: var(--ink-faint); text-align: center; }
+
+.candidate-limitation, .candidate-failure {
+  max-width: 42rem;
+  padding: 1rem;
+  border-left: 0.25rem solid var(--notice);
+  background: var(--notice-bg);
+  color: var(--ink-soft);
+  font: 0.95rem/1.55 var(--sans);
+}
+.candidate-limitation h2, .candidate-failure h2 { margin: 0 0 0.45rem; color: var(--notice); font: 600 1.25rem/1.3 var(--serif); }
+.candidate-limitation a, .candidate-failure a { overflow-wrap: anywhere; }
+
+@media (max-width: 52rem) {
+  .candidate-flag span { display: none; }
+  .reader-identity { width: min(calc(100% - 1.5rem), 44rem); padding-top: 0.95rem; }
+  .reader-document { width: 100%; padding-right: max(clamp(1rem, 5vw, 2.5rem), var(--reader-safe-right)); padding-left: max(clamp(1rem, 5vw, 2.5rem), var(--reader-safe-left)); border-inline: 0; box-shadow: none; }
+}
+
+@media (max-width: 25rem) {
+  .reader-identity .celebration-title { font-size: 1.7rem; }
+  .reader-document { padding-inline: 1rem; }
+  .reader-document .passage, .reader-document .composed { font-size: 1rem; }
+}
+
+@media print {
+  @page { size: letter; margin: 0.7in 0.72in; }
+  body.day-reader-candidate { background: #fff; }
+  .candidate-flag { display: none !important; }
+  .reader-identity { width: auto; padding: 0 0 0.25in; }
+  .reader-identity .celebration-title { font-size: 22pt; }
+  .reader-document { width: auto; padding: 0; border: 0; box-shadow: none; }
+  .reader-document > * { width: auto; max-width: none; }
+  .reader-document .proper { break-inside: avoid; margin-bottom: 0.25in; }
+  .reader-document .proper-name { break-after: avoid; }
+  .candidate-limitation, .candidate-failure { border: 0; background: transparent; }
+}

@@ -179,6 +179,43 @@ operations.
 
 ## Promised work
 
+### Liturgy Day reader-shell M3 candidate
+
+<!-- promised-deliverable: liturgy-day-reader-shell-m3-candidate-2026-08-04 -->
+
+The first W3 integration slice extracts the accepted quiet persistent reader
+shell into a reusable production foundation and connects an unlinked, noindex
+Day Read-mode candidate to the existing production assembly and rendering path
+through the accepted M1 reader-state boundary. The candidate preserves
+Read-compatible legacy URL meaning, fails closed on invalid explicit state,
+and discloses later-mode state with an equivalent link to the unchanged live
+Day route rather than silently dropping or partially rendering it.
+
+This is an **M3 candidate pending external review**, not a production cutover.
+The live Day and Propers routes, public navigation and selectors, M1 semantics,
+liturgical and calendar data, and generated public data remain outside the
+implementation boundary. Missal, Study, Compare, Propers integration, search,
+and public release remain deferred.
+
+The candidate is implemented at the unlinked `liturgy/day-reader.html` build
+route. `reader-shell.js` and `reader-shell.css` contain only the accepted
+persistent action bar, modal lifecycle, focus and scroll restoration, semantic
+Contents tracking, responsive sheets, safe-area behavior, and print removal.
+The separate Day adapter parses and validates M1 state, calls the existing
+calendar assembly and M1 Day adapter, and renders the selected real production
+Proper with the existing shared renderer. It supports date, missal, Bible,
+oration language, and readable-formulary state; it preserves later-mode state
+and links it intact to `day.html`, and it fails closed on invalid explicit
+values.
+
+Focused static, M1, current-route, Ordinary, public-alpha, and real-Chromium
+checks cover both production-backed M1 Day fixtures, a readable displaced
+formulary, typed partial coverage, invalid and deferred state, all four modal
+surfaces, 320-pixel and 200% reflow, accessibility, deep-scroll reachability,
+Back, lazy Details, print, and live-route parity. The immutable external-review
+handoff is `20260804T154620Z-day-reader-shell-integration`. M3 remains a
+candidate until external review accepts it.
+
 ### Liturgy reader-shell M2 accepted
 
 <!-- promised-deliverable: liturgy-reader-shell-m2-candidate-2026-08-03 -->

@@ -651,8 +651,13 @@ parallel:
    internal noindex prototype remains evidence, including its non-preferred
    scroll-reveal variant. The measured decision record is
    [the reader-shell prototype record](liturgy-reader-shell-prototype.md).
-   Production integration has not begun; W3 is the next visible workstream and
-   requires its own reversible, browser-reviewed implementation task.
+   W3 now has one reversible, unlinked Day Read-mode integration candidate at
+   `liturgy/day-reader.html`. The reusable shell owns interaction only; the Day
+   adapter crosses the accepted M1 boundary and reuses production assembly,
+   fragment fetching, and Proper rendering. Supported legacy state retains its
+   meaning, later-mode state is handed intact to the unchanged live route, and
+   invalid explicit state fails closed. It does not replace or alter the live
+   Day route, and M3 remains pending external review.
 3. W7 verifies the pre-1955 base and official acts for the narrow Phase 10
    slice, while exact-printing acquisition continues in parallel as validation
    rather than a universal prerequisite.
@@ -685,6 +690,7 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-04 | M2 candidate — responsive reader-shell prototype | Candidate pending external review. One internal noindex shell serves Day and Propers, reuses the Proper renderer and validated M1 fixtures, and tests persistent/reveal reachability, semantic Contents, coherent Study, representative mode shells, responsive sheets/rails, and print without production-route or liturgical-data integration. | This candidate commit; decision record `guidance/liturgy-reader-shell-prototype.md`; handoff `20260804T101952Z-liturgy-reader-shell-prototype` |
 | 2026-08-04 | M2 candidate external-review corrections | External review accepted persistent reachability and requested three bounded corrections. The corrected candidate removes complete-state diagnostic noise, directly proves every auxiliary surface has no internal horizontal overflow including at 200% text, renames temporary Study access to Details, and gives Study mode a nonmodal pinned wide-desktop rail while retaining a reversible mobile sheet. M2 remains pending correction re-review. | This correction commit; compact correction handoff recorded in the completion report |
 | 2026-08-04 | M2 — responsive reader-shell external acceptance | Accepted — the quiet persistent reader shell is the M2 direction. Complete Read states are free of diagnostic noise, all auxiliary surfaces reflow without internal horizontal scrolling, and temporary Details is distinct from wide-desktop pinned Study and mobile Study sheets. Production Day and Propers routes remain unchanged. | Candidate `68becc59b396aca830c233b88ec74991563603d1`; correction `75234e72c402f0b25a681fbe074da70d895f7274`; handoffs `20260804T101952Z-liturgy-reader-shell-prototype` and `20260804T142747Z-liturgy-reader-shell-corrections`; external review results *M2 prototype changes-requested disposition* and *M2 responsive reader-shell acceptance and closeout disposition* |
+| 2026-08-04 | M3 candidate — production reader-shell foundation and Day Read integration | Candidate pending external review. The bounded noindex route extracts only the accepted persistent shell; integrates real Day Read output through production assembly, the accepted M1 adapter, shared fragment fetching, and the shared Proper renderer; preserves supported and deferred legacy state without fallback; and passes measured desktop, tablet, mobile, zoom, accessibility, print, and live-route isolation checks. | This candidate commit; handoff `20260804T154620Z-day-reader-shell-integration` |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).

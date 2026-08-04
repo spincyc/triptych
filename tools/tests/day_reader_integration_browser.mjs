@@ -1,0 +1,767 @@
+#!/usr/bin/env node
+
+/* Real-Chromium assertions and review captures for the W3 Day reader candidate. */
+
+import assert from 'node:assert/strict';
+import { spawn } from 'node:child_process';
+import { createServer } from 'node:http';
+import { mkdtemp, mkdir, readFile, stat, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { extname, join, resolve, sep } from 'node:path';
+import process from 'node:process';
+
+const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dirname, '../..'));
+const ROUTE = '/src/web/browser/liturgy/day-reader.html';
+const CURRENT = '/src/web/browser/liturgy/day.html';
+const DATA = '/build/public-alpha/preview/browse';
+const captureAt = process.argv.indexOf('--capture-dir');
+const captureDir = captureAt >= 0 ? resolve(process.argv[captureAt + 1]) : null;
+const chromeBinary = process.env.TRIPTYCH_CHROME || '/usr/bin/google-chrome-stable';
+const failures = [];
+const assertions = [];
+const consoleProblems = [];
+const failedRequests = [];
+const httpProblems = [];
+
+function mime(path) {
+  return ({
+    '.css': 'text/css; charset=utf-8', '.html': 'text/html; charset=utf-8',
+    '.js': 'text/javascript; charset=utf-8', '.json': 'application/json',
+    '.png': 'image/png', '.svg': 'image/svg+xml'
+  })[extname(path)] || 'application/octet-stream';
+}
+
+async function listen(server) {
+  await new Promise((accept, reject) => {
+    server.once('error', reject);
+    server.listen(0, '127.0.0.1', accept);
+  });
+  return server.address().port;
+}
+
+function staticServer() {
+  return createServer(async (request, response) => {
+    try {
+      const url = new URL(request.url, 'http://127.0.0.1');
+      const relative = decodeURIComponent(url.pathname).replace(/^\/+/, '');
+      if (relative === 'favicon.ico') {
+        response.writeHead(204, { 'cache-control': 'no-store' });
+        response.end();
+        return;
+      }
+      const file = resolve(ROOT, relative || 'README.md');
+      if (file !== ROOT && !file.startsWith(ROOT + sep)) throw new Error('outside root');
+      const body = await readFile(file);
+      response.writeHead(200, {
+        'content-type': mime(file), 'cache-control': 'no-store',
+        'x-robots-tag': 'noindex, nofollow'
+      });
+      response.end(body);
+    } catch (_error) {
+      response.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
+      response.end('not found');
+    }
+  });
+}
+
+async function freePort() {
+  const server = createServer();
+  const port = await listen(server);
+  await new Promise((accept) => server.close(accept));
+  return port;
+}
+
+async function waitForJson(url, attempts = 100) {
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    try {
+      const response = await fetch(url);
+      if (response.ok) return await response.json();
+    } catch (_error) {
+      // Chromium is still starting.
+    }
+    await new Promise((accept) => setTimeout(accept, 50));
+  }
+  throw new Error('Chromium debugging endpoint did not become ready: ' + url);
+}
+
+class CDP {
+  constructor(url) {
+    this.socket = new WebSocket(url);
+    this.next = 0;
+    this.pending = new Map();
+    this.events = new Map();
+  }
+  async ready() {
+    await new Promise((accept, reject) => {
+      this.socket.addEventListener('open', accept, { once: true });
+      this.socket.addEventListener('error', reject, { once: true });
+    });
+    this.socket.addEventListener('message', (event) => {
+      const message = JSON.parse(event.data);
+      if (message.id) {
+        const pending = this.pending.get(message.id);
+        if (!pending) return;
+        this.pending.delete(message.id);
+        clearTimeout(pending.timer);
+        if (message.error) pending.reject(new Error(message.error.message));
+        else pending.accept(message.result);
+        return;
+      }
+      (this.events.get(message.method) || []).forEach((listener) => listener(message.params || {}));
+    });
+  }
+  on(name, listener) {
+    if (!this.events.has(name)) this.events.set(name, []);
+    this.events.get(name).push(listener);
+  }
+  send(method, params = {}) {
+    const id = ++this.next;
+    return new Promise((accept, reject) => {
+      const timer = setTimeout(() => {
+        this.pending.delete(id);
+        reject(new Error('CDP command timed out: ' + method));
+      }, 20000);
+      this.pending.set(id, { accept, reject, timer });
+      this.socket.send(JSON.stringify({ id, method, params }));
+    });
+  }
+  close() { this.socket.close(); }
+}
+
+async function evaluate(cdp, expression, awaitPromise = true) {
+  const result = await cdp.send('Runtime.evaluate', {
+    expression, awaitPromise, returnByValue: true, userGesture: true
+  });
+  if (result.exceptionDetails) {
+    throw new Error(result.exceptionDetails.exception?.description || result.exceptionDetails.text);
+  }
+  return result.result.value;
+}
+
+async function waitFor(cdp, expression, label, attempts = 180) {
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    if (await evaluate(cdp, `Boolean(${expression})`)) return;
+    await new Promise((accept) => setTimeout(accept, 50));
+  }
+  throw new Error('Timed out waiting for ' + label);
+}
+
+async function viewport(cdp, width, height) {
+  await cdp.send('Emulation.setDeviceMetricsOverride', {
+    width, height, deviceScaleFactor: 1, mobile: width <= 768,
+    screenWidth: width, screenHeight: height
+  });
+}
+
+function hash(rows) {
+  return '#' + new URLSearchParams(rows).toString();
+}
+
+const STATES = Object.freeze({
+  roman: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10' }),
+  postconciliar: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1' }),
+  multiple: hash({ date: '2026-01-11', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'comm-s-hygini-papae-martyris' }),
+  partial: hash({ date: '2026-01-01', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'octava-nativitatis-domini' }),
+  deferred: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', ordinary: '1', 'ordinary-lang': 'en' }),
+  invalid: hash({ date: '2026-08-02', missal: 'not-a-missal', bible: 'douay-rheims', orations: 'la' })
+});
+
+function candidateUrl(base, state = STATES.roman) {
+  return `${base}${ROUTE}?data=${DATA}${state}`;
+}
+
+function currentUrl(base, state = STATES.roman) {
+  return `${base}${CURRENT}?data=${DATA}${state}`;
+}
+
+function builtCandidateUrl(base, state = STATES.roman) {
+  return `${base}/build/public-alpha/preview/liturgy/day-reader.html${state}`;
+}
+
+function builtCurrentUrl(base, state = STATES.roman) {
+  return `${base}/build/public-alpha/preview/liturgy/day.html${state}`;
+}
+
+async function navigateCandidate(cdp, base, state = STATES.roman) {
+  const target = candidateUrl(base, state);
+  await cdp.send('Page.navigate', { url: target });
+  await waitFor(cdp,
+    `location.href === ${JSON.stringify(target)} && window.dayReaderReady === true`,
+    'Day reader candidate');
+  await new Promise((accept) => setTimeout(accept, 80));
+}
+
+async function navigateCurrent(cdp, base, state = STATES.roman) {
+  const target = currentUrl(base, state);
+  await cdp.send('Page.navigate', { url: target });
+  await waitFor(cdp,
+    `document.querySelector('#reading[aria-busy="false"] .proper')`,
+    'current Day route');
+  await new Promise((accept) => setTimeout(accept, 80));
+}
+
+async function navigateBuiltCandidate(cdp, base, state = STATES.roman) {
+  const target = builtCandidateUrl(base, state);
+  await cdp.send('Page.navigate', { url: target });
+  await waitFor(cdp, 'window.dayReaderReady === true', 'built Day reader candidate');
+  await new Promise((accept) => setTimeout(accept, 80));
+}
+
+async function navigateBuiltCurrent(cdp, base, state = STATES.roman) {
+  await cdp.send('Page.navigate', { url: builtCurrentUrl(base, state) });
+  await waitFor(cdp,
+    `document.querySelector('#reading[aria-busy="false"] .proper')`, 'built current Day route');
+  await new Promise((accept) => setTimeout(accept, 80));
+}
+
+async function click(cdp, selector) {
+  await evaluate(cdp, `(() => {
+    const element = document.querySelector(${JSON.stringify(selector)});
+    if (!element) throw new Error('missing selector: ' + ${JSON.stringify(selector)});
+    element.click(); return true;
+  })()`);
+  await new Promise((accept) => setTimeout(accept, 40));
+}
+
+async function escape(cdp) {
+  await cdp.send('Input.dispatchKeyEvent', {
+    type: 'keyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27
+  });
+  await cdp.send('Input.dispatchKeyEvent', {
+    type: 'keyUp', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27
+  });
+  await new Promise((accept) => setTimeout(accept, 50));
+}
+
+async function shot(cdp, path) {
+  const result = await cdp.send('Page.captureScreenshot', {
+    format: 'png', captureBeyondViewport: false, fromSurface: true
+  });
+  await writeFile(path, Buffer.from(result.data, 'base64'));
+}
+
+async function test(name, callback) {
+  try {
+    await callback();
+    assertions.push({ name, status: 'pass' });
+  } catch (error) {
+    failures.push({ name, message: error.stack || String(error) });
+    assertions.push({ name, status: 'fail', detail: error.message });
+  }
+}
+
+async function surfaceOverflow(cdp, name) {
+  return evaluate(cdp, `(() => {
+    const root = document.querySelector('[data-reader-surface="${name}"]');
+    return [root, ...root.querySelectorAll('*')].map(element => ({
+      name: element.id || element.className || element.tagName,
+      scrollWidth: element.scrollWidth, clientWidth: element.clientWidth
+    })).filter(row => row.clientWidth > 0 && row.scrollWidth > row.clientWidth + 1);
+  })()`);
+}
+
+async function metrics(cdp) {
+  return evaluate(cdp, `(() => {
+    const action = document.querySelector('.reader-actions');
+    const documentBox = document.querySelector('#reader-document').getBoundingClientRect();
+    const first = document.querySelector('#reader-document .proper, #reader-document section');
+    const firstBox = first && first.getBoundingClientRect();
+    const targetBoxes = [...action.querySelectorAll('button')].map(button => {
+      const box = button.getBoundingClientRect();
+      return { width: box.width, height: box.height };
+    });
+    const paragraph = document.querySelector('#reader-document .passage, #reader-document .composed');
+    const style = paragraph && getComputedStyle(paragraph);
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    if (style) context.font = style.font;
+    const zeroWidth = context.measureText('0').width || 8;
+    const readingWidth = firstBox ? firstBox.width : documentBox.width;
+    return {
+      shellHeight: action.getBoundingClientRect().height,
+      readingWidth,
+      approximateCharactersPerLine: Math.round(readingWidth / zeroWidth),
+      firstContentPosition: firstBox ? firstBox.top + scrollY : null,
+      pageOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      surfaceOverflow: [...document.querySelectorAll('dialog[open]')].map(dialog => ({
+        id: dialog.id, overflow: dialog.scrollWidth - dialog.clientWidth
+      })),
+      targets: targetBoxes,
+      layoutShift: performance.getEntriesByType('layout-shift').reduce((sum, entry) =>
+        sum + (entry.hadRecentInput ? 0 : entry.value), 0),
+      resources: performance.getEntriesByType('resource').map(row => row.name),
+      scrollY
+    };
+  })()`);
+}
+
+async function runAssertions(cdp, base) {
+  await viewport(cdp, 393, 852);
+  await navigateCandidate(cdp, base);
+
+  await test('default candidate is calm Read with real content and four persistent actions', async () => {
+    const value = await evaluate(cdp, `(() => ({
+      title: document.querySelector('#celebration-title').textContent,
+      meta: document.querySelector('#celebration-meta').textContent,
+      noticeHidden: document.querySelector('#coverage-notice').hidden,
+      events: [...document.querySelectorAll('[data-semantic-event-id]')].map(row => row.dataset.semanticEventId),
+      actions: [...document.querySelectorAll('[data-reader-action]')].map(row => row.textContent.trim()),
+      shell: getComputedStyle(document.querySelector('.reader-actions')).position,
+      first: document.querySelector('#reader-document .proper').getBoundingClientRect().top,
+      viewport: innerHeight
+    }))()`);
+    assert.equal(value.title, 'Tenth Sunday after Pentecost');
+    assert.match(value.meta, /Missale Romanum, editio typica 1962/);
+    assert.doesNotMatch(value.meta, /explicit|bound M1|fixture|contract/i);
+    assert.equal(value.noticeHidden, true);
+    assert.equal(value.events.length, 10);
+    assert.deepEqual(value.actions.map(row => row.replace(/\s+/g, ' ')),
+      ['▣ Date & edition', '≡ Contents', 'R Mode Read', 'i Details']);
+    assert.equal(value.shell, 'fixed');
+    assert.ok(value.first < value.viewport, JSON.stringify(value));
+  });
+
+  await test('candidate semantic projection matches accepted Roman and postconciliar fixtures', async () => {
+    for (const [state, file] of [
+      [STATES.roman, 'day-roman-1962-2026-08-02.json'],
+      [STATES.postconciliar, 'day-postconciliar-2026-11-29.json']
+    ]) {
+      await navigateCandidate(cdp, base, state);
+      const actual = await evaluate(cdp, 'window.dayReaderDebug.semantic');
+      const fixture = JSON.parse(await readFile(join(
+        ROOT, 'tools/tests/fixtures/liturgy-reader-state/v1', file), 'utf8'));
+      const expected = fixture.expected;
+      assert.deepEqual(actual.resolved, expected.resolved);
+      assert.deepEqual({
+        ...actual.calendarResult,
+        lectionary: actual.calendarResult.lectionary ? {
+          sunday: actual.calendarResult.lectionary.sunday,
+          weekday: actual.calendarResult.lectionary.weekday
+        } : null
+      }, expected.calendarResult);
+      assert.deepEqual(actual.events.map(row => row.id), expected.events.map(row => row.id));
+      assert.deepEqual(actual.events.map(row => row.editionSlotLabel),
+        expected.events.map(row => row.editionSlotLabel));
+      assert.deepEqual(actual.events.map(row => row.selected.references || []),
+        expected.events.map(row => row.selected.references || []));
+      assert.deepEqual(actual.coverage, expected.coverage);
+      assert.deepEqual(actual.explicitAbsences, expected.explicitAbsences);
+    }
+  });
+
+  await test('explicit readable formulary and material coverage remain explicit', async () => {
+    await navigateCandidate(cdp, base, STATES.multiple);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic.resolved.formulary'),
+      'comm-s-hygini-papae-martyris');
+    assert.match(await evaluate(cdp, 'document.querySelector("#celebration-meta").textContent'), /1962/);
+    await navigateCandidate(cdp, base, STATES.partial);
+    const value = await evaluate(cdp, `({
+      notice: document.querySelector('#coverage-notice').textContent,
+      hidden: document.querySelector('#coverage-notice').hidden,
+      completeness: dayReaderDebug.semantic.coverage.map(row => row.completeness)
+    })`);
+    assert.equal(value.hidden, false);
+    assert.match(value.notice, /not held/);
+    assert.ok(value.completeness.includes('partial'));
+  });
+
+  await test('invalid and deferred explicit state fail closed without silent loss', async () => {
+    await navigateCandidate(cdp, base, STATES.invalid);
+    assert.match(await evaluate(cdp, 'document.querySelector("#reader-document").innerText'), /did not substitute/);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
+    await navigateCandidate(cdp, base, STATES.deferred);
+    const value = await evaluate(cdp, `(() => {
+      const link = document.querySelector('.candidate-limitation a');
+      return { text: document.querySelector('#reader-document').innerText,
+        href: link.href, deferred: dayReaderDebug.deferred, events: document.querySelectorAll('[data-semantic-event-id]').length };
+    })()`);
+    assert.match(value.text, /preserved/);
+    assert.match(value.href, /day\.html/);
+    assert.match(value.href, /ordinary=1/);
+    assert.match(value.href, /ordinary-lang=en/);
+    assert.equal(value.events, 0);
+  });
+
+  await test('legacy Read keys, later-mode keys, and invalid explicit values keep distinct outcomes', async () => {
+    const supported = [
+      STATES.roman,
+      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'clementine-vulgate', orations: 'la', mass: 'pentecost-10' }),
+      hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '0', why: '0' })
+    ];
+    for (const state of supported) {
+      await navigateCandidate(cdp, base, state);
+      assert.ok(await evaluate(cdp, 'Boolean(dayReaderDebug.semantic && dayReaderDebug.semantic.resolved)'));
+      assert.deepEqual(await evaluate(cdp, 'dayReaderDebug.deferred'), []);
+    }
+    const deferred = [
+      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
+      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', rubrics: '0' }),
+      hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', 'eucharistic-prayer': 'ep-ii' })
+    ];
+    for (const state of deferred) {
+      await navigateCandidate(cdp, base, state);
+      assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
+      assert.ok((await evaluate(cdp, 'dayReaderDebug.deferred.length')) > 0);
+      assert.match(await evaluate(cdp, 'document.querySelector(".candidate-limitation a").href'), /day\.html/);
+    }
+    const invalid = [
+      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'not-a-bible', orations: 'la' }),
+      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'xx' }),
+      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'not-a-formulary' }),
+      hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', 'eucharistic-prayer': 'ep-99' })
+    ];
+    for (const state of invalid) {
+      await navigateCandidate(cdp, base, state);
+      assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
+      assert.ok((await evaluate(cdp, 'dayReaderDebug.error.length')) > 0);
+    }
+  });
+
+  await test('first visit uses repository defaults without remembered or geographic state', async () => {
+    await navigateCandidate(cdp, base, '');
+    const state = await evaluate(cdp, 'dayReaderDebug.state');
+    assert.equal(state.edition.id, 'roman-1962');
+    assert.equal(state.bible.id, 'douay-rheims');
+    assert.equal(state.languages.orations, 'la');
+    assert.equal(state.options.ordinary, false);
+    assert.equal(state.requestedMode, 'read');
+    assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), true);
+  });
+
+  await test('URL state outranks storage and locality is never inferred', async () => {
+    await evaluate(cdp, `localStorage.setItem('triptych:liturgy:day', JSON.stringify({
+      missal: 'postconciliar', bible: 'king-james-version', date: '2026-11-29'
+    }))`);
+    await navigateCandidate(cdp, base, STATES.roman);
+    const state = await evaluate(cdp, 'dayReaderDebug.state');
+    assert.equal(state.edition.id, 'roman-1962');
+    assert.equal(state.bible.id, 'douay-rheims');
+    assert.equal(state.civilDate, '2026-08-02');
+    assert.equal(await evaluate(cdp, `'geolocation' in dayReaderDebug`), false);
+  });
+
+  await test('all actions preserve deep scroll, modal focus, Escape, and focus return', async () => {
+    await navigateCandidate(cdp, base);
+    await evaluate(cdp, 'window.scrollTo(0, document.documentElement.scrollHeight - innerHeight - 80)');
+    const start = await evaluate(cdp, 'window.scrollY');
+    assert.ok(start > 500);
+    for (const name of ['date', 'contents', 'mode', 'details']) {
+      await click(cdp, `[data-reader-action="${name}"]`);
+      const open = await evaluate(cdp, `(() => ({
+        modal: document.querySelector('[data-reader-surface="${name}"]').matches(':modal'),
+        focus: document.activeElement.hasAttribute('data-reader-close'),
+        expanded: document.querySelector('[data-reader-action="${name}"]').getAttribute('aria-expanded')
+      }))()`);
+      assert.deepEqual(open, { modal: true, focus: true, expanded: 'true' });
+      await escape(cdp);
+      const closed = await evaluate(cdp, `(() => ({
+        focus: document.activeElement.dataset.readerAction,
+        expanded: document.querySelector('[data-reader-action="${name}"]').getAttribute('aria-expanded'),
+        scroll: window.scrollY
+      }))()`);
+      assert.equal(closed.focus, name);
+      assert.equal(closed.expanded, 'false');
+      assert.ok(Math.abs(closed.scroll - start) <= 2, JSON.stringify(closed));
+    }
+  });
+
+  await test('Contents follows real semantic sections and moves focus to the selected text', async () => {
+    await navigateCandidate(cdp, base);
+    await evaluate(cdp, `document.querySelectorAll('[data-semantic-event-id]')[5].scrollIntoView()`);
+    await new Promise((accept) => setTimeout(accept, 80));
+    await click(cdp, '[data-reader-action="contents"]');
+    const current = await evaluate(cdp,
+      `document.querySelector('[data-reader-contents] [aria-current="location"]').dataset.readerLocation`);
+    assert.match(current, /^proper\/roman-1962\/pentecost-10\//);
+    await click(cdp, '[data-reader-contents] button:last-child');
+    assert.equal(await evaluate(cdp,
+      'document.activeElement.dataset.semanticEventId'), 'proper/roman-1962/pentecost-10/010');
+  });
+
+  await test('only Read is selectable and Details stays lazy and human-facing', async () => {
+    await navigateCandidate(cdp, base);
+    const buildsBefore = await evaluate(cdp, 'dayReaderDebug.detailsBuilds');
+    assert.match(await evaluate(cdp, 'document.querySelector("[data-reader-details]").innerText'),
+      /load when this surface is opened/i);
+    await click(cdp, '[data-reader-action="mode"]');
+    const before = await evaluate(cdp, 'JSON.stringify(dayReaderDebug.state)');
+    const modes = await evaluate(cdp, `[...document.querySelectorAll('.mode-options button')].map(row => ({
+      name: row.querySelector('strong').textContent, disabled: row.disabled, checked: row.getAttribute('aria-checked')
+    }))`);
+    assert.deepEqual(modes, [
+      { name: 'Read', disabled: false, checked: 'true' },
+      { name: 'Missal', disabled: true, checked: 'false' },
+      { name: 'Study', disabled: true, checked: 'false' },
+      { name: 'Compare', disabled: true, checked: 'false' }
+    ]);
+    await escape(cdp);
+    await click(cdp, '[data-reader-action="details"]');
+    const details = await evaluate(cdp, `({
+      builds: dayReaderDebug.detailsBuilds,
+      text: document.querySelector('[data-reader-details]').innerText,
+      state: JSON.stringify(dayReaderDebug.state)
+    })`);
+    assert.equal(details.builds, buildsBefore + 1);
+    assert.doesNotMatch(details.text, /triptych-liturgy-reader-state|\{|\}|bound M1|machine envelope/i);
+    assert.equal(details.state, before);
+  });
+
+  await test('every auxiliary surface reflows at required widths and 200-percent text', async () => {
+    const sizes = [[1440, 900], [1024, 768], [768, 1024], [393, 852], [320, 852]];
+    for (const [width, height] of sizes) {
+      await viewport(cdp, width, height);
+      await navigateCandidate(cdp, base);
+      for (const name of ['date', 'contents', 'mode', 'details']) {
+        await click(cdp, `[data-reader-action="${name}"]`);
+        assert.deepEqual(await surfaceOverflow(cdp, name), [], `${name} ${width}x${height}`);
+        await escape(cdp);
+      }
+      const page = await evaluate(cdp,
+        'document.documentElement.scrollWidth - document.documentElement.clientWidth');
+      assert.ok(page <= 0, `${width}x${height} page overflow ${page}`);
+    }
+    await viewport(cdp, 393, 852);
+    await navigateCandidate(cdp, base, STATES.multiple);
+    await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
+    for (const name of ['date', 'contents', 'mode', 'details']) {
+      await click(cdp, `[data-reader-action="${name}"]`);
+      assert.deepEqual(await surfaceOverflow(cdp, name), [], `${name} at 200%`);
+      await escape(cdp);
+    }
+    assert.ok(await evaluate(cdp,
+      'document.documentElement.scrollWidth - document.documentElement.clientWidth') <= 0);
+    await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
+  });
+
+  await test('Back restores the prior semantic selection and data files load once', async () => {
+    await viewport(cdp, 393, 852);
+    await navigateCandidate(cdp, base);
+    await click(cdp, '[data-reader-action="date"]');
+    await click(cdp, '#next-date');
+    await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.civilDate === "2026-08-03"', 'next date');
+    await evaluate(cdp, 'history.back()');
+    await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.civilDate === "2026-08-02"', 'Back date');
+    const loads = await evaluate(cdp, 'dayReaderDebug.loads');
+    assert.ok(Object.values(loads).every(count => count === 1), JSON.stringify(loads));
+  });
+
+  await test('candidate and current Day select the same visible identity and Proper order', async () => {
+    await viewport(cdp, 1024, 768);
+    await navigateCandidate(cdp, base);
+    const candidate = await evaluate(cdp, `({
+      title: document.querySelector('#celebration-title').textContent,
+      names: [...document.querySelectorAll('#reader-document .proper-name')].map(row => row.childNodes[0].textContent.trim())
+    })`);
+    await navigateCurrent(cdp, base);
+    const current = await evaluate(cdp, `({
+      title: document.querySelector('#celebration-title').textContent,
+      names: [...document.querySelectorAll('#reading .proper-name')].map(row => row.childNodes[0].textContent.trim())
+    })`);
+    assert.equal(candidate.title, current.title);
+    assert.deepEqual(candidate.names, current.names);
+    assert.equal(await evaluate(cdp, 'document.querySelectorAll("[data-reader-shell]").length'), 0);
+  });
+
+  await test('normal preview build contains a noindex candidate but no candidate navigation link', async () => {
+    const target = `${base}/build/public-alpha/preview/liturgy/day-reader.html${STATES.roman}`;
+    await cdp.send('Page.navigate', { url: target });
+    await waitFor(cdp, 'window.dayReaderReady === true', 'built candidate route');
+    const value = await evaluate(cdp, `({
+      robots: document.querySelector('meta[name="robots"]').content,
+      title: document.querySelector('#celebration-title').textContent,
+      pageClass: document.querySelector('#main-content').className,
+      navLinks: [...document.querySelectorAll('header a, footer a')].filter(row => /day-reader/.test(row.href)).length
+    })`);
+    assert.match(value.robots, /noindex/);
+    assert.equal(value.title, 'Tenth Sunday after Pentecost');
+    assert.match(value.pageClass, /day-reader-candidate/);
+    assert.equal(value.navLinks, 0);
+  });
+
+  await test('print removes candidate and shell chrome while retaining identity and context', async () => {
+    await navigateCandidate(cdp, base);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+    const value = await evaluate(cdp, `({
+      actions: getComputedStyle(document.querySelector('.reader-actions')).display,
+      flag: getComputedStyle(document.querySelector('.candidate-flag')).display,
+      title: document.querySelector('#celebration-title').textContent,
+      meta: document.querySelector('#celebration-meta').textContent,
+      properCount: document.querySelectorAll('#reader-document .proper').length
+    })`);
+    assert.equal(value.actions, 'none');
+    assert.equal(value.flag, 'none');
+    assert.equal(value.title, 'Tenth Sunday after Pentecost');
+    assert.match(value.meta, /Universal/);
+    assert.equal(value.properCount, 10);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+  });
+
+  await test('reduced motion and final focused content retain accepted boundaries', async () => {
+    await cdp.send('Emulation.setEmulatedMedia', {
+      media: 'screen', features: [{ name: 'prefers-reduced-motion', value: 'reduce' }]
+    });
+    await navigateCandidate(cdp, base);
+    const behavior = await evaluate(cdp, 'getComputedStyle(document.documentElement).scrollBehavior');
+    assert.notEqual(behavior, 'smooth');
+    await evaluate(cdp, `(() => {
+      const last = document.querySelector('#reader-document .proper:last-child');
+      last.scrollIntoView({block: 'end'}); last.focus({preventScroll: true});
+    })()`);
+    const boxes = await evaluate(cdp, `(() => ({
+      last: document.querySelector('#reader-document .proper:last-child').getBoundingClientRect().bottom,
+      shell: document.querySelector('.reader-actions').getBoundingClientRect().top
+    }))()`);
+    assert.ok(boxes.last <= boxes.shell + 1, JSON.stringify(boxes));
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+  });
+}
+
+async function captureCandidate(cdp, base, state, kind) {
+  await navigateBuiltCandidate(cdp, base, state);
+  await evaluate(cdp, 'window.scrollTo(0, 0)');
+  if (kind === 'deep') {
+    await evaluate(cdp, 'window.scrollTo(0, document.documentElement.scrollHeight - innerHeight - 8)');
+  } else if (['date', 'contents', 'mode', 'details'].includes(kind)) {
+    await click(cdp, `[data-reader-action="${kind}"]`);
+  }
+  await new Promise((accept) => setTimeout(accept, 80));
+}
+
+async function captureMatrix(cdp, base, directory) {
+  await mkdir(directory, { recursive: true });
+  const sizes = [[1440, 900], [1024, 768], [768, 1024], [393, 852], [320, 852]];
+  const cases = [
+    ['default', STATES.roman, 'top'], ['deep', STATES.roman, 'deep'],
+    ['date', STATES.roman, 'date'], ['contents', STATES.roman, 'contents'],
+    ['mode', STATES.roman, 'mode'], ['details', STATES.roman, 'details'],
+    ['deferred-ordinary', STATES.deferred, 'top'], ['partial', STATES.partial, 'top'],
+    ['invalid', STATES.invalid, 'top']
+  ];
+  const measures = [];
+  for (const [width, height] of sizes) {
+    await viewport(cdp, width, height);
+    for (const [name, state, kind] of cases) {
+      await captureCandidate(cdp, base, state, kind);
+      const file = `day-reader-${name}-${width}x${height}.png`;
+      await shot(cdp, join(directory, file));
+      measures.push({ file, viewport: `${width}x${height}`, state: name, metrics: await metrics(cdp) });
+      if (await evaluate(cdp, 'Boolean(document.querySelector("dialog[open]"))')) await escape(cdp);
+    }
+    await navigateBuiltCurrent(cdp, base);
+    const currentFile = `day-current-default-${width}x${height}.png`;
+    await shot(cdp, join(directory, currentFile));
+  }
+
+  await viewport(cdp, 393, 852);
+  await navigateBuiltCandidate(cdp, base, STATES.multiple);
+  await evaluate(cdp, 'window.scrollTo(0, 0)');
+  await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
+  await click(cdp, '[data-reader-action="date"]');
+  await shot(cdp, join(directory, 'day-reader-date-200-percent-393x852.png'));
+  measures.push({ file: 'day-reader-date-200-percent-393x852.png', viewport: '393x852',
+    state: 'date-200-percent', metrics: await metrics(cdp) });
+  await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
+  await escape(cdp);
+
+  await viewport(cdp, 1024, 768);
+  await navigateBuiltCandidate(cdp, base);
+  await evaluate(cdp, 'window.scrollTo(0, 0)');
+  await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+  const pdf = await cdp.send('Page.printToPDF', {
+    printBackground: true, preferCSSPageSize: true, paperWidth: 8.5, paperHeight: 11,
+    marginTop: 0.4, marginBottom: 0.4, marginLeft: 0.45, marginRight: 0.45
+  });
+  await writeFile(join(directory, 'day-reader-print.pdf'), Buffer.from(pdf.data, 'base64'));
+  await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+  await writeFile(join(directory, 'measurements.json'), JSON.stringify(measures, null, 2) + '\n');
+  return measures;
+}
+
+async function main() {
+  const server = staticServer();
+  const serverPort = await listen(server);
+  const base = `http://127.0.0.1:${serverPort}`;
+  const debugPort = await freePort();
+  const profile = await mkdtemp(join(tmpdir(), 'triptych-day-reader-chrome-'));
+  const chrome = spawn(chromeBinary, [
+    '--headless=new', '--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu',
+    `--remote-debugging-port=${debugPort}`, `--user-data-dir=${profile}`,
+    '--no-first-run', '--no-default-browser-check', 'about:blank'
+  ], { stdio: ['ignore', 'ignore', 'pipe'] });
+  let chromeStderr = '';
+  chrome.stderr.on('data', (chunk) => { chromeStderr += chunk.toString(); });
+  let cdp;
+  try {
+    await waitForJson(`http://127.0.0.1:${debugPort}/json/version`);
+    const response = await fetch(
+      `http://127.0.0.1:${debugPort}/json/new?${encodeURIComponent('about:blank')}`,
+      { method: 'PUT' }
+    );
+    const page = await response.json();
+    cdp = new CDP(page.webSocketDebuggerUrl);
+    await cdp.ready();
+    await Promise.all([
+      cdp.send('Page.enable'), cdp.send('Runtime.enable'), cdp.send('Network.enable'),
+      cdp.send('Accessibility.enable'), cdp.send('Performance.enable')
+    ]);
+    cdp.on('Runtime.consoleAPICalled', ({ type, args }) => {
+      if (type === 'error') consoleProblems.push({
+        type, text: args.map((arg) => arg.value || arg.description || '').join(' ')
+      });
+    });
+    cdp.on('Network.loadingFailed', (event) => failedRequests.push({
+      requestId: event.requestId, error: event.errorText, canceled: Boolean(event.canceled)
+    }));
+    cdp.on('Network.responseReceived', ({ response: held }) => {
+      if (held.status >= 400) httpProblems.push({ status: held.status, url: held.url });
+    });
+
+    await runAssertions(cdp, base);
+    const captures = captureDir ? await captureMatrix(cdp, base, captureDir) : [];
+    await viewport(cdp, 393, 852);
+    await navigateBuiltCandidate(cdp, base);
+    await evaluate(cdp, 'window.scrollTo(0, 0)');
+    const measured = await metrics(cdp);
+    const ax = await cdp.send('Accessibility.getFullAXTree');
+    const report = {
+      generatedAt: new Date().toISOString(),
+      chrome: (await waitForJson(`http://127.0.0.1:${debugPort}/json/version`)).Browser,
+      assertions, failures, consoleProblems, failedRequests, httpProblems,
+      accessibility: {
+        nodeCount: ax.nodes.length,
+        unnamedInteractiveNodes: ax.nodes.filter((node) =>
+          ['button', 'link', 'radio'].includes(node.role?.value) && !node.name?.value).length
+      },
+      performance: {
+        metrics: measured,
+        resourceCount: measured.resources.length,
+        duplicateResources: measured.resources.filter((url, index, all) => all.indexOf(url) !== index)
+      },
+      captures: captures.length,
+      files: {
+        shellJavaScript: (await stat(join(ROOT, 'src/web/browser/liturgy/reader-shell.js'))).size,
+        candidateJavaScript: (await stat(join(ROOT, 'src/web/browser/liturgy/day-reader.js'))).size,
+        shellCss: (await stat(join(ROOT, 'src/web/browser/liturgy/reader-shell.css'))).size,
+        candidateCss: (await stat(join(ROOT, 'src/web/browser/liturgy/day-reader.css'))).size
+      }
+    };
+    if (captureDir) {
+      await writeFile(join(captureDir, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');
+    }
+    process.stdout.write(JSON.stringify(report, null, 2) + '\n');
+    if (failures.length || consoleProblems.length ||
+        failedRequests.some(row => !row.canceled) || httpProblems.length ||
+        report.accessibility.unnamedInteractiveNodes) process.exitCode = 1;
+  } catch (error) {
+    process.stderr.write((error.stack || String(error)) + '\n' + chromeStderr.slice(-4000));
+    process.exitCode = 1;
+  } finally {
+    if (cdp) cdp.close();
+    const exited = new Promise((accept) => chrome.once('exit', accept));
+    chrome.kill('SIGTERM');
+    await exited;
+    await new Promise((accept) => server.close(accept));
+  }
+}
+
+await main();

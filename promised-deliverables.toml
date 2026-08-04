@@ -54,6 +54,64 @@ state = "complete"
   needle = "c1a590f5854215d68d167d9040e188f41762663e"
 
 [[deliverables]]
+id = "liturgy-day-reader-shell-m3-candidate-2026-08-04"
+owner = "src/web/browser/liturgy/day-reader.html"
+promise = "Extract the accepted quiet persistent shell into a reusable production foundation and integrate a reversible, internal Day Read-mode candidate with production semantic parity, M1 state validation, explicit legacy-state handling, responsive interaction, and no live-route change."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "production-shell-foundation"
+  criterion = "A noindex, unlinked candidate uses a reusable persistent shell module rather than the M2 demonstration harness and remains removable without affecting live routes or public discovery."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.html",
+    "src/web/browser/liturgy/reader-shell.js",
+    "src/web/browser/liturgy/reader-shell.css",
+  ]
+
+  [[deliverables.requirements]]
+  id = "day-read-semantic-parity"
+  criterion = "The candidate renders real production Day content through the existing assembly and Proper-rendering path, crosses the accepted M1 state boundary, and matches current Day Read semantics for supported representative states."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.js",
+    "tools/tests/test_day_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "legacy-and-deferred-state"
+  criterion = "Read-compatible legacy state retains its current meaning; invalid explicit state fails closed; and later-mode state is preserved, disclosed, and handed to the unchanged live Day route without silent loss."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.js",
+    "tools/tests/test_day_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "interaction-accessibility-and-measurement"
+  criterion = "Focused and real-browser checks cover persistent deep-scroll reachability, semantic Contents, modal lifecycle, responsive and enlarged-text overflow, accessibility, performance, print, and the required review states."
+  status = "pass"
+  evidence = [
+    "tools/tests/day_reader_integration_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "production-isolation"
+  criterion = "The live Day and Propers routes, public navigation and selectors, existing supported URLs, liturgical and calendar data, generated public data, and M1 semantics retain their current behavior."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_day_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-candidate"
+  criterion = "An immutable integration handoff is ready for external review and the roadmap records M3 only as a candidate pending that review."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-reader-shell-m2-candidate-2026-08-03"
 owner = "src/web/browser/liturgy/prototypes/reader-shell"
 promise = "Prototype and measure one shared responsive reader shell for the distinct Day and Propers entrances without integrating production routes, later mode engines, search, comparison semantics, recension work, or liturgical data changes."
