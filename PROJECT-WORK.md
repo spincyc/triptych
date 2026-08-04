@@ -179,7 +179,7 @@ operations.
 
 ## Promised work
 
-### Liturgy Day reader-shell M3 candidate
+### Liturgy Day reader-shell M3 accepted
 
 <!-- promised-deliverable: liturgy-day-reader-shell-m3-candidate-2026-08-04 -->
 
@@ -191,7 +191,7 @@ Read-compatible legacy URL meaning, fails closed on invalid explicit state,
 and discloses later-mode state with an equivalent link to the unchanged live
 Day route rather than silently dropping or partially rendering it.
 
-This is an **M3 candidate pending external review**, not a production cutover.
+This was an **M3 candidate pending external review**, not a production cutover.
 The live Day and Propers routes, public navigation and selectors, M1 semantics,
 liturgical and calendar data, and generated public data remain outside the
 implementation boundary. Missal, Study, Compare, Propers integration, search,
@@ -227,6 +227,27 @@ handoff is
 `20260804T173010Z-day-reader-shell-integration-corrections`. M3 remains a
 candidate pending correction review; the live Day and Propers routes remain
 unchanged.
+
+M3 is now **accepted**. Accepted — the production Day Read candidate reuses
+the existing assembly and Proper renderer behind the shared persistent shell,
+preserves Read-compatible legacy state, explicitly defers later-mode state,
+fails closed across invalid and superseded asynchronous transitions, and
+remains isolated from the live Day and Propers routes. The final serial-token
+micro-fix is `c604edb8a1fffb1e5c0981798800ecb801258e7c`; deterministic Chromium
+tests release delayed valid, malformed, invalid-destination, and history
+requests only after the newer outcome is ready, then prove that identity,
+Proper text, Contents, Date, Details, semantic state, and render counters do
+not change.
+
+Acceptance evidence comprises original candidate
+`45a6b76249e015f68830495ca2971e9dbc4a4e14`, correction
+`d0872545ccc92106cb457b448f37201381c5bb2d`, the final micro-fix above,
+handoffs `20260804T154620Z-day-reader-shell-integration` and
+`20260804T173010Z-day-reader-shell-integration-corrections`, the original W3
+changes-requested review, and the W3 conditional-acceptance disposition. M3
+acceptance does not replace or redirect live Day, integrate Propers, expose
+public navigation, begin later modes, authorize public cutover, or begin the
+1956–1960 recension.
 
 ### Liturgy reader-shell M2 accepted
 

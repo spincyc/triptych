@@ -57,7 +57,7 @@ state = "complete"
 id = "liturgy-day-reader-shell-m3-candidate-2026-08-04"
 owner = "src/web/browser/liturgy/day-reader.html"
 promise = "Extract the accepted quiet persistent shell into a reusable production foundation and integrate a reversible, internal Day Read-mode candidate with production semantic parity, M1 state validation, explicit legacy-state handling, responsive interaction, and no live-route change."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "production-shell-foundation"
@@ -104,11 +104,12 @@ state = "candidate"
   ]
 
   [[deliverables.requirements]]
-  id = "external-review-candidate"
-  criterion = "An immutable integration handoff is ready for external review and the roadmap records M3 only as a candidate pending that review."
+  id = "external-review-acceptance"
+  criterion = "External review accepts the production Day Read candidate after the final superseded-render micro-fix, and the roadmap records M3 complete without authorizing live-route cutover or later-mode integration."
   status = "pass"
   evidence = [
     "guidance/liturgy-browser-roadmap.md",
+    "PROJECT-WORK.md",
   ]
 
 [[deliverables]]

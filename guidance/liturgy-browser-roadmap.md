@@ -660,8 +660,14 @@ parallel:
    Day route. External review accepted the architecture and requested bounded
    legacy-state, transition-clearing, weekday, and human-facing Details
    corrections. Those corrections are represented in the compact handoff
-   `20260804T173010Z-day-reader-shell-integration-corrections`; M3 remains
-   pending correction review.
+   `20260804T173010Z-day-reader-shell-integration-corrections`. M3 is accepted
+   after final micro-fix `c604edb8a1fffb1e5c0981798800ecb801258e7c` made the
+   existing render serial authoritative across delayed success and failure
+   paths. Deterministic Chromium races prove that a superseded valid or failed
+   request cannot replace a newer valid or invalid result, including during
+   Back navigation. Live Day and Propers remain unchanged; Propers integration,
+   later modes, public navigation and cutover, and recension work remain
+   outside M3.
 3. W7 verifies the pre-1955 base and official acts for the narrow Phase 10
    slice, while exact-printing acquisition continues in parallel as validation
    rather than a universal prerequisite.
@@ -696,6 +702,7 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-04 | M2 — responsive reader-shell external acceptance | Accepted — the quiet persistent reader shell is the M2 direction. Complete Read states are free of diagnostic noise, all auxiliary surfaces reflow without internal horizontal scrolling, and temporary Details is distinct from wide-desktop pinned Study and mobile Study sheets. Production Day and Propers routes remain unchanged. | Candidate `68becc59b396aca830c233b88ec74991563603d1`; correction `75234e72c402f0b25a681fbe074da70d895f7274`; handoffs `20260804T101952Z-liturgy-reader-shell-prototype` and `20260804T142747Z-liturgy-reader-shell-corrections`; external review results *M2 prototype changes-requested disposition* and *M2 responsive reader-shell acceptance and closeout disposition* |
 | 2026-08-04 | M3 candidate — production reader-shell foundation and Day Read integration | Candidate pending external review. The bounded noindex route extracts only the accepted persistent shell; integrates real Day Read output through production assembly, the accepted M1 adapter, shared fragment fetching, and the shared Proper renderer; preserves supported and deferred legacy state without fallback; and passes measured desktop, tablet, mobile, zoom, accessibility, print, and live-route isolation checks. | This candidate commit; handoff `20260804T154620Z-day-reader-shell-integration` |
 | 2026-08-04 | M3 candidate external-review corrections | External review accepted the reusable-shell architecture and requested three bounded corrections. The correction preserves valid inactive later-mode preferences as latent Read-compatible state while active requests still defer and invalid values fail closed; clears selection state before every render attempt; restores exact assembly-owned weekday presentation; and removes raw source-hook coordinates from visible Details. M3 remains pending correction review, and live routes remain unchanged. | This correction commit; compact correction handoff `20260804T173010Z-day-reader-shell-integration-corrections` |
+| 2026-08-04 | M3 — production Day Read integration external acceptance | Accepted — the production Day Read candidate reuses the existing assembly and Proper renderer behind the shared persistent shell, preserves Read-compatible legacy state, explicitly defers later-mode state, fails closed across invalid and superseded asynchronous transitions, and remains isolated from the live Day and Propers routes. Acceptance does not authorize cutover, Propers integration, later modes, public exposure, or recension work. | Candidate `45a6b76249e015f68830495ca2971e9dbc4a4e14`; correction `d0872545ccc92106cb457b448f37201381c5bb2d`; final micro-fix `c604edb8a1fffb1e5c0981798800ecb801258e7c`; handoffs `20260804T154620Z-day-reader-shell-integration` and `20260804T173010Z-day-reader-shell-integration-corrections`; external review dispositions *W3 Day reader-shell changes requested* and *W3 conditional acceptance, final micro-fix, and M3 closeout* |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).
