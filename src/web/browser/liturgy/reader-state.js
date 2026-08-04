@@ -660,7 +660,9 @@
         });
       }
     }
-    errors.push.apply(errors, validateSourceHooks(value.sourceHooks, 'sourceHooks', false));
+    if (has(value, 'sourceHooks')) {
+      errors.push.apply(errors, validateSourceHooks(value.sourceHooks, 'sourceHooks', true));
+    }
     if (value.entrance === 'day') {
       if (!strictDate(value.civilDate)) {
         errors.push(issue('day-date', 'civilDate', 'Day state requires a real civil date'));

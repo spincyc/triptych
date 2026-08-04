@@ -120,6 +120,15 @@ if (input.op === 'fixture-validate') {
   output = input.fixtures.map((fixture) => C.validateFixture(fixture));
 } else if (input.op === 'validate-states') {
   output = input.states.map((state) => C.validateReaderState(state));
+} else if (input.op === 'source-hooks-presence') {
+  const baseState = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2026-08-02',
+    edition: {id: 'x'}, calendar: {id: 'x'}, requestedMode: 'read'
+  };
+  output = [undefined, null, false, '', {}, []].map((sourceHooks) => {
+    const state = Object.assign({}, baseState, {sourceHooks});
+    return C.validateReaderState(state);
+  });
 } else if (input.op === 'context') {
   output = context(input.entrance, input.id, input.date || null, Boolean(input.includeOrdinary));
 } else if (input.op === 'context-trace') {
@@ -506,6 +515,12 @@ class ContractTests(unittest.TestCase):
         states.append(state)
         results = node_call({"op": "validate-states", "states": states})
         self.assertTrue(all(not result["ok"] for result in results))
+
+    def test_explicit_source_hooks_require_an_array_even_for_undefined(self) -> None:
+        results = node_call({"op": "source-hooks-presence"})
+        self.assertEqual([result["ok"] for result in results], [
+            False, False, False, False, False, True,
+        ])
 
     def test_entrance_fields_and_mode_comparison_are_mutually_consistent(self) -> None:
         day = {
