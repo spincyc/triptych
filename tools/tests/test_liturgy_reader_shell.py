@@ -174,6 +174,8 @@ class ReaderShellPrototypeTest(unittest.TestCase):
                 "git", "diff", "--exit-code", BASE, "--",
                 "src/web/browser/liturgy",
                 ":(exclude)src/web/browser/liturgy/prototypes/**",
+                ":(exclude)src/web/browser/liturgy/day-reader.*",
+                ":(exclude)src/web/browser/liturgy/reader-shell.*",
                 "src/web/browser/shared",
             ],
             cwd=ROOT, check=True,

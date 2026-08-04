@@ -49,6 +49,13 @@ function staticServer() {
         response.end();
         return;
       }
+      if (relative.endsWith('/structure/calendar/roman-1962/2121.json')) {
+        response.writeHead(200, {
+          'content-type': 'application/json', 'cache-control': 'no-store'
+        });
+        response.end('{');
+        return;
+      }
       const file = resolve(ROOT, relative || 'README.md');
       if (file !== ROOT && !file.startsWith(ROOT + sep)) throw new Error('outside root');
       const body = await readFile(file);
@@ -163,7 +170,11 @@ const STATES = Object.freeze({
   multiple: hash({ date: '2026-01-11', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'comm-s-hygini-papae-martyris' }),
   partial: hash({ date: '2026-01-01', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'octava-nativitatis-domini' }),
   deferred: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', ordinary: '1', 'ordinary-lang': 'en' }),
-  invalid: hash({ date: '2026-08-02', missal: 'not-a-missal', bible: 'douay-rheims', orations: 'la' })
+  invalid: hash({ date: '2026-08-02', missal: 'not-a-missal', bible: 'douay-rheims', orations: 'la' }),
+  currentStyleLatent: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'en', rubrics: '0', 'eucharistic-prayer': 'ep-ii' }),
+  ordinaryLatent: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', ordinary: '0', 'ordinary-lang': 'en', 'eucharistic-prayer': 'ep-ii' }),
+  territorial: hash({ date: '2026-01-04', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la' }),
+  loadFailure: hash({ date: '2121-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' })
 });
 
 function candidateUrl(base, state = STATES.roman) {
@@ -188,6 +199,26 @@ async function navigateCandidate(cdp, base, state = STATES.roman) {
   await waitFor(cdp,
     `location.href === ${JSON.stringify(target)} && window.dayReaderReady === true`,
     'Day reader candidate');
+  await new Promise((accept) => setTimeout(accept, 80));
+}
+
+async function transitionHash(cdp, state) {
+  const before = await evaluate(cdp, 'window.dayReaderDebug.renders');
+  await evaluate(cdp, `location.hash = ${JSON.stringify(state.replace(/^#/, ''))}`);
+  await waitFor(cdp,
+    `location.hash === ${JSON.stringify(state)} && window.dayReaderReady === true && ` +
+      `window.dayReaderDebug.renders > ${before}`,
+    'candidate hash transition');
+  await new Promise((accept) => setTimeout(accept, 80));
+}
+
+async function historyMove(cdp, direction, expected) {
+  const before = await evaluate(cdp, 'window.dayReaderDebug.renders');
+  await evaluate(cdp, `history.${direction}()`);
+  await waitFor(cdp,
+    `location.hash === ${JSON.stringify(expected)} && window.dayReaderReady === true && ` +
+      `window.dayReaderDebug.renders > ${before}`,
+    `history ${direction}`);
   await new Promise((accept) => setTimeout(accept, 80));
 }
 
@@ -382,26 +413,45 @@ async function runAssertions(cdp, base) {
     assert.equal(value.events, 0);
   });
 
-  await test('legacy Read keys, later-mode keys, and invalid explicit values keep distinct outcomes', async () => {
+  await test('inactive later-mode values remain validated latent Read state', async () => {
     const supported = [
       STATES.roman,
       hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'clementine-vulgate', orations: 'la', mass: 'pentecost-10' }),
-      hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '0', why: '0' })
+      hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '0', why: '0' }),
+      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', rubrics: '0', why: '0' }),
+      STATES.currentStyleLatent,
+      STATES.ordinaryLatent
     ];
     for (const state of supported) {
       await navigateCandidate(cdp, base, state);
       assert.ok(await evaluate(cdp, 'Boolean(dayReaderDebug.semantic && dayReaderDebug.semantic.resolved)'));
       assert.deepEqual(await evaluate(cdp, 'dayReaderDebug.deferred'), []);
+      assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
     }
+    await navigateCandidate(cdp, base, STATES.ordinaryLatent);
+    const latent = await evaluate(cdp, `({
+      ordinary: dayReaderDebug.state.options.ordinary,
+      ordinaryLanguage: dayReaderDebug.state.languages.ordinary,
+      prayer: dayReaderDebug.legacy.inert.find(row => row.key === 'eucharistic-prayer').value,
+      hash: location.hash
+    })`);
+    assert.deepEqual(latent, {
+      ordinary: false, ordinaryLanguage: 'en', prayer: 'ep-ii', hash: STATES.ordinaryLatent
+    });
+  });
+
+  await test('active later-mode state defers and invalid latent state still fails closed', async () => {
     const deferred = [
       hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
-      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', rubrics: '0' }),
-      hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', 'eucharistic-prayer': 'ep-ii' })
+      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', rubrics: '1' }),
+      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', ordinary: '1' }),
+      hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', ordinary: '1', 'eucharistic-prayer': 'ep-ii' })
     ];
     for (const state of deferred) {
       await navigateCandidate(cdp, base, state);
       assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
       assert.ok((await evaluate(cdp, 'dayReaderDebug.deferred.length')) > 0);
+      assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'deferred');
       assert.match(await evaluate(cdp, 'document.querySelector(".candidate-limitation a").href'), /day\.html/);
     }
     const invalid = [
@@ -414,7 +464,35 @@ async function runAssertions(cdp, base) {
       await navigateCandidate(cdp, base, state);
       assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
       assert.ok((await evaluate(cdp, 'dayReaderDebug.error.length')) > 0);
+      assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'invalid');
     }
+  });
+
+  await test('current-style latent URL matches live Read text, citations, and weekday', async () => {
+    await navigateCandidate(cdp, base, STATES.currentStyleLatent);
+    const candidate = await evaluate(cdp, `({
+      title: document.querySelector('#celebration-title').textContent,
+      date: document.querySelector('#celebration-date').textContent,
+      propers: [...document.querySelectorAll('#reader-document .proper')].map(row =>
+        row.textContent.replace(/\\s+/g, ' ').trim()),
+      state: {
+        rubrics: dayReaderDebug.state.apparatus.rubrics,
+        ordinary: dayReaderDebug.state.options.ordinary,
+        prayer: dayReaderDebug.legacy.inert.find(row => row.key === 'eucharistic-prayer').value
+      }
+    })`);
+    await navigateCurrent(cdp, base, STATES.currentStyleLatent);
+    const current = await evaluate(cdp, `({
+      title: document.querySelector('#celebration-title').textContent,
+      date: document.querySelector('#celebration-date').textContent,
+      propers: [...document.querySelectorAll('#reading .proper')].map(row =>
+        row.textContent.replace(/\\s+/g, ' ').trim())
+    })`);
+    assert.equal(candidate.title, current.title);
+    assert.equal(candidate.date, current.date);
+    assert.equal(candidate.date, 'Sunday 2 August 2026');
+    assert.deepEqual(candidate.propers, current.propers);
+    assert.deepEqual(candidate.state, { rubrics: false, ordinary: false, prayer: 'ep-ii' });
   });
 
   await test('first visit uses repository defaults without remembered or geographic state', async () => {
@@ -438,6 +516,83 @@ async function runAssertions(cdp, base) {
     assert.equal(state.bible.id, 'douay-rheims');
     assert.equal(state.civilDate, '2026-08-02');
     assert.equal(await evaluate(cdp, `'geolocation' in dayReaderDebug`), false);
+  });
+
+  await test('active and latent state remain distinct through Back and Forward', async () => {
+    const active = hash({
+      date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims',
+      orations: 'en', rubrics: '1', 'eucharistic-prayer': 'ep-ii'
+    });
+    await navigateCandidate(cdp, base, STATES.currentStyleLatent);
+    await transitionHash(cdp, active);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'deferred');
+    await historyMove(cdp, 'back', STATES.currentStyleLatent);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.state.apparatus.rubrics'), false);
+    assert.equal(await evaluate(cdp,
+      `dayReaderDebug.legacy.inert.find(row => row.key === 'eucharistic-prayer').value`), 'ep-ii');
+    await historyMove(cdp, 'forward', active);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'deferred');
+  });
+
+  await test('failed and unresolved transitions cannot expose prior selection state', async () => {
+    const stalePattern = /Tenth Sunday|2026-08-02|Missale Romanum|pentecost-10|Universal|proper-structure|Resolved Day result/i;
+    await navigateCandidate(cdp, base, STATES.roman);
+    await transitionHash(cdp, STATES.invalid);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'invalid');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.state'), null);
+    await click(cdp, '[data-reader-action="date"]');
+    const invalidDate = await evaluate(cdp, `({
+      text: document.querySelector('#date-surface').innerText,
+      values: [...document.querySelectorAll('#date-form input, #date-form select')].map(row => row.value),
+      disabled: [...document.querySelectorAll('#date-form input, #date-form select, #date-form button, #date-surface .date-steps button')].every(row => row.disabled)
+    })`);
+    assert.doesNotMatch(invalidDate.text, stalePattern);
+    assert.ok(invalidDate.values.every(value => value === ''), JSON.stringify(invalidDate));
+    assert.equal(invalidDate.disabled, true);
+    await escape(cdp);
+    await click(cdp, '[data-reader-action="details"]');
+    const invalidDetails = await evaluate(cdp, `document.querySelector('[data-reader-details]').innerText`);
+    assert.match(invalidDetails, /No validated selection.*invalid outcome/i);
+    assert.doesNotMatch(invalidDetails, stalePattern);
+    await escape(cdp);
+
+    await historyMove(cdp, 'back', STATES.roman);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+    assert.equal(await evaluate(cdp, `document.querySelector('#celebration-title').textContent`),
+      'Tenth Sunday after Pentecost');
+
+    await transitionHash(cdp, STATES.loadFailure);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'failed');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.state'), null);
+    await click(cdp, '[data-reader-action="details"]');
+    const failedDetails = await evaluate(cdp, `document.querySelector('[data-reader-details]').innerText`);
+    assert.match(failedDetails, /No validated selection.*failed outcome/i);
+    assert.doesNotMatch(failedDetails, stalePattern);
+    await escape(cdp);
+
+    await historyMove(cdp, 'back', STATES.roman);
+    await transitionHash(cdp, STATES.territorial);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'territorial-choice');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
+    await click(cdp, '[data-reader-action="details"]');
+    const territorial = await evaluate(cdp, `document.querySelector('[data-reader-details]').innerText`);
+    assert.match(territorial, /2026-01-04/);
+    assert.match(territorial, /Choice required/);
+    assert.doesNotMatch(territorial, /Universal|Tenth Sunday|pentecost-10|Resolved Day result|proper-structure/i);
+    await escape(cdp);
+  });
+
+  await test('deferred state returns to valid Read and forward restores deferral', async () => {
+    await navigateCandidate(cdp, base, STATES.roman);
+    await transitionHash(cdp, STATES.deferred);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'deferred');
+    await historyMove(cdp, 'back', STATES.roman);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic.resolved.formulary'), 'pentecost-10');
+    await historyMove(cdp, 'forward', STATES.deferred);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'deferred');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
   });
 
   await test('all actions preserve deep scroll, modal focus, Escape, and focus return', async () => {
@@ -503,6 +658,8 @@ async function runAssertions(cdp, base) {
     })`);
     assert.equal(details.builds, buildsBefore + 1);
     assert.doesNotMatch(details.text, /triptych-liturgy-reader-state|\{|\}|bound M1|machine envelope/i);
+    assert.doesNotMatch(details.text,
+      /proper-structure|roman-1962\/pentecost-10|\/\d{3}\b|Available source identities/i);
     assert.equal(details.state, before);
   });
 
@@ -661,6 +818,18 @@ async function captureMatrix(cdp, base, directory) {
   measures.push({ file: 'day-reader-date-200-percent-393x852.png', viewport: '393x852',
     state: 'date-200-percent', metrics: await metrics(cdp) });
   await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
+  await escape(cdp);
+
+  await viewport(cdp, 393, 852);
+  await navigateBuiltCandidate(cdp, base, STATES.currentStyleLatent);
+  await shot(cdp, join(directory, 'day-reader-latent-current-url-393x852.png'));
+  await navigateBuiltCandidate(cdp, base, STATES.roman);
+  await transitionHash(cdp, STATES.invalid);
+  await click(cdp, '[data-reader-action="date"]');
+  await shot(cdp, join(directory, 'day-reader-transition-invalid-date-393x852.png'));
+  await escape(cdp);
+  await click(cdp, '[data-reader-action="details"]');
+  await shot(cdp, join(directory, 'day-reader-transition-invalid-details-393x852.png'));
   await escape(cdp);
 
   await viewport(cdp, 1024, 768);

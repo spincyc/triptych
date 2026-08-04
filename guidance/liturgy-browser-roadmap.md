@@ -657,7 +657,11 @@ parallel:
    fragment fetching, and Proper rendering. Supported legacy state retains its
    meaning, later-mode state is handed intact to the unchanged live route, and
    invalid explicit state fails closed. It does not replace or alter the live
-   Day route, and M3 remains pending external review.
+   Day route. External review accepted the architecture and requested bounded
+   legacy-state, transition-clearing, weekday, and human-facing Details
+   corrections. Those corrections are represented in the compact handoff
+   `20260804T173010Z-day-reader-shell-integration-corrections`; M3 remains
+   pending correction review.
 3. W7 verifies the pre-1955 base and official acts for the narrow Phase 10
    slice, while exact-printing acquisition continues in parallel as validation
    rather than a universal prerequisite.
@@ -691,6 +695,7 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-04 | M2 candidate external-review corrections | External review accepted persistent reachability and requested three bounded corrections. The corrected candidate removes complete-state diagnostic noise, directly proves every auxiliary surface has no internal horizontal overflow including at 200% text, renames temporary Study access to Details, and gives Study mode a nonmodal pinned wide-desktop rail while retaining a reversible mobile sheet. M2 remains pending correction re-review. | This correction commit; compact correction handoff recorded in the completion report |
 | 2026-08-04 | M2 — responsive reader-shell external acceptance | Accepted — the quiet persistent reader shell is the M2 direction. Complete Read states are free of diagnostic noise, all auxiliary surfaces reflow without internal horizontal scrolling, and temporary Details is distinct from wide-desktop pinned Study and mobile Study sheets. Production Day and Propers routes remain unchanged. | Candidate `68becc59b396aca830c233b88ec74991563603d1`; correction `75234e72c402f0b25a681fbe074da70d895f7274`; handoffs `20260804T101952Z-liturgy-reader-shell-prototype` and `20260804T142747Z-liturgy-reader-shell-corrections`; external review results *M2 prototype changes-requested disposition* and *M2 responsive reader-shell acceptance and closeout disposition* |
 | 2026-08-04 | M3 candidate — production reader-shell foundation and Day Read integration | Candidate pending external review. The bounded noindex route extracts only the accepted persistent shell; integrates real Day Read output through production assembly, the accepted M1 adapter, shared fragment fetching, and the shared Proper renderer; preserves supported and deferred legacy state without fallback; and passes measured desktop, tablet, mobile, zoom, accessibility, print, and live-route isolation checks. | This candidate commit; handoff `20260804T154620Z-day-reader-shell-integration` |
+| 2026-08-04 | M3 candidate external-review corrections | External review accepted the reusable-shell architecture and requested three bounded corrections. The correction preserves valid inactive later-mode preferences as latent Read-compatible state while active requests still defer and invalid values fail closed; clears selection state before every render attempt; restores exact assembly-owned weekday presentation; and removes raw source-hook coordinates from visible Details. M3 remains pending correction review, and live routes remain unchanged. | This correction commit; compact correction handoff `20260804T173010Z-day-reader-shell-integration-corrections` |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).

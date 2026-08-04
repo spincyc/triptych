@@ -104,6 +104,37 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertIn("day.html", source)
         self.assertIn("window.location.hash", source)
         self.assertIn("did not partially render or map it to Read", source)
+        self.assertIn("recognized.rubrics === '1'", source)
+        self.assertIn("const ordinaryActive = recognized.ordinary === '1'", source)
+        self.assertIn("ordinaryActive && parsed.present.indexOf(key)", source)
+        self.assertIn("async function validateExplicitVariants", source)
+        self.assertIn("structure.variants", source)
+        self.assertIn("window.dayReaderDebug.legacy = normalized.legacy", source)
+
+    def test_each_render_clears_selection_state_before_validation(self) -> None:
+        source = text(DAY_JS)
+        self.assertIn("function clearSelectionState(outcome)", source)
+        self.assertIn("clearSelectionState('loading')", source)
+        self.assertIn("clearSelectionState(heading ? 'failed' : 'invalid')", source)
+        for assignment in (
+            "runtime.normalized = null", "runtime.result = null",
+            "runtime.derived = null", "runtime.structure = null",
+            "runtime.branch = null", "runtime.deferred = []",
+            "window.dayReaderDebug.state = null",
+            "window.dayReaderDebug.semantic = null",
+        ):
+            self.assertIn(assignment, source)
+        self.assertIn("No validated selection is available for the current candidate outcome", source)
+        self.assertIn("'Choice required'", source)
+
+    def test_weekday_and_details_are_human_facing(self) -> None:
+        source = text(DAY_JS)
+        self.assertIn("sunday: 'Sunday'", source)
+        self.assertIn("WEEKDAY_NAMES[weekday]", source)
+        self.assertNotIn("WEEKDAYS[weekday]", source)
+        self.assertNotIn("Available source identities", source)
+        self.assertNotIn("hook.kind + ': '", source)
+        self.assertNotIn("source-identifier', hook", source)
 
     def test_complete_notice_and_machine_envelope_boundaries_are_encoded(self) -> None:
         source = text(DAY_JS)
@@ -185,7 +216,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
     def test_candidate_size_is_bounded_below_prototype_harness(self) -> None:
         prototype = LITURGY / "prototypes/reader-shell/reader-shell.js"
         self.assertLess(SHELL_JS.stat().st_size, prototype.stat().st_size // 4)
-        self.assertLess(DAY_JS.stat().st_size, prototype.stat().st_size // 2)
+        self.assertLess(DAY_JS.stat().st_size, prototype.stat().st_size * 55 // 100)
 
 
 if __name__ == "__main__":

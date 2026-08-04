@@ -216,6 +216,18 @@ Back, lazy Details, print, and live-route parity. The immutable external-review
 handoff is `20260804T154620Z-day-reader-shell-integration`. M3 remains a
 candidate until external review accepts it.
 
+External review accepted the W3 architecture and requested three bounded
+corrections before M3 acceptance. The correction distinguishes inactive latent
+Ordinary, rubric, and why preferences from active later-mode requests; clears
+all selection-specific state before every render attempt so rejected,
+unresolved, deferred, or failed navigation cannot expose an earlier result;
+restores exact weekday presentation from the assembly model; and keeps raw
+source-hook coordinates out of reader-facing Details. The compact correction
+handoff is
+`20260804T173010Z-day-reader-shell-integration-corrections`. M3 remains a
+candidate pending correction review; the live Day and Propers routes remain
+unchanged.
+
 ### Liturgy reader-shell M2 accepted
 
 <!-- promised-deliverable: liturgy-reader-shell-m2-candidate-2026-08-03 -->
