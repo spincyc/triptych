@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-07-31.
+Last reconciled: 2026-08-04.
 
 ## Standing public-alpha authority
 
@@ -178,6 +178,35 @@ force-pushing, and all other history rewriting remain separately authorized
 operations.
 
 ## Promised work
+
+### Liturgy reader-shell M2 candidate
+
+<!-- promised-deliverable: liturgy-reader-shell-m2-candidate-2026-08-03 -->
+
+The first W2 milestone is a visible, interactive, responsive shell prototype,
+not a production-route integration. It will live in an unlinked nested
+`src/web/browser/liturgy/prototypes/reader-shell/` route, which the existing
+top-level-only public browser copier excludes. The candidate must reuse the
+current Proper renderer, keep Day and Propers as distinct entrances to one
+shared shell, compare quiet persistent and scroll-reveal reachability, and
+measure wide, intermediate, mobile, 320-pixel reflow, accessibility,
+performance, and print behavior. It may use clearly marked M1 contract-only
+fixtures for Compare and unresolved-choice layout, but it must not implement
+later semantic engines or change public generated data.
+
+The candidate now has one shared shell, persistent and scroll-reveal variants,
+real-renderer Day and Propers states, layout-only later-mode fixtures, semantic
+Contents, a coherent Study apparatus, 94 responsive review captures, a tagged
+four-page print review, and focused static and real-browser coverage. The
+measured decision recommends the quiet persistent shell: every global action
+remains one activation away at deep scroll while the shell occupies about
+58–59 CSS pixels and causes no measured layout shift. The immutable handoff is
+`20260804T101952Z-liturgy-reader-shell-prototype`.
+
+M2 remains pending external review and is not accepted merely because the
+prototype, commit, push, screenshots, or ZIP exist. Production Day and Propers
+sources, M1 semantics, current URLs, calendar and liturgical data, search,
+semantic comparison, and recension coverage remain outside this work.
 
 ### Liturgy reader-state M1 accepted
 

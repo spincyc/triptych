@@ -54,6 +54,49 @@ state = "complete"
   needle = "c1a590f5854215d68d167d9040e188f41762663e"
 
 [[deliverables]]
+id = "liturgy-reader-shell-m2-candidate-2026-08-03"
+owner = "src/web/browser/liturgy/prototypes/reader-shell"
+promise = "Prototype and measure one shared responsive reader shell for the distinct Day and Propers entrances without integrating production routes, later mode engines, search, comparison semantics, recension work, or liturgical data changes."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "shared-responsive-prototype"
+  criterion = "One noindex, unlinked, non-production prototype reuses the current Proper renderer and demonstrates both entrances, all four global actions, persistent and scroll-reveal reachability variants, representative states, semantic Contents, coherent Study, and print composition."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/prototypes/reader-shell",
+    "guidance/liturgy-reader-shell-prototype.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "interaction-accessibility-and-measurement"
+  criterion = "Focused unit and real-browser checks, accessibility review, performance and size measurements, required viewport captures, deep-scroll checks, 320-pixel reflow, and print review support a measured shell recommendation."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_liturgy_reader_shell.py",
+    "guidance/liturgy-reader-shell-prototype.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "production-boundary"
+  criterion = "Current Day and Propers production route sources and behavior, M1 semantics, public generated data and manifests, selector contents, and existing URL meanings remain unchanged; the nested prototype is excluded from production navigation and the public artifact."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day.html",
+    "src/web/browser/liturgy/index.html",
+    "tools/tests/test_liturgy_reader_shell.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-candidate"
+  criterion = "The immutable responsive prototype handoff is ready for external review and the roadmap records M2 only as a candidate pending that review."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+    "guidance/liturgy-reader-shell-prototype.md",
+  ]
+
+[[deliverables]]
 id = "project-gpt-deep-research-redevelopment-2026-07-29"
 owner = "src/gpt"
 promise = "Substantively redevelop the GPT Tenth Sunday after Pentecost, all three GPT Eighteenth Sunday in Ordinary Time cycles, and the GPT Catholic exorcism study through broad and deep source-first research without materially changing Claude publications."
