@@ -2,11 +2,21 @@
 
 ## Status and boundary
 
-Status: **corrected M2 candidate pending external re-review**, measured
-2026-08-04. External review accepted the quiet persistent shell as the M2
-direction and retained the shared Day/Propers model. It requested three bounded
-corrections before acceptance; this record describes the corrected candidate,
-not an accepted or production-integrated shell.
+Status: **M2 accepted**, measured and externally accepted 2026-08-04. Candidate
+`68becc59b396aca830c233b88ec74991563603d1` was reviewed through handoff
+`20260804T101952Z-liturgy-reader-shell-prototype`; the *M2 prototype
+changes-requested disposition* retained the quiet persistent direction and
+requested three bounded corrections. Correction
+`75234e72c402f0b25a681fbe074da70d895f7274` was reviewed through handoff
+`20260804T142747Z-liturgy-reader-shell-corrections`; the *M2 responsive
+reader-shell acceptance and closeout disposition* accepted the corrected M2
+direction.
+
+**Accepted — the quiet persistent reader shell is the M2 direction. Complete
+Read states are free of diagnostic noise, all auxiliary surfaces reflow
+without internal horizontal scrolling, and temporary Details is distinct from
+wide-desktop pinned Study and mobile Study sheets. Production Day and Propers
+routes remain unchanged.**
 
 The candidate is an internal, unlinked, noindex route at
 `src/web/browser/liturgy/prototypes/reader-shell/`. It does not alter the Day or
@@ -106,9 +116,9 @@ prototype-only layout material say so rather than inventing a claim.
 
 ## Recommendation
 
-Advance **the quiet persistent variant** as the M2 implementation direction,
-subject to correction re-review. External review accepted this direction and
-directed that scroll-reveal remain prototype evidence. Its measured 58–59 pixel
+Advance **the quiet persistent variant** as the accepted M2 implementation
+direction. External review directed that scroll-reveal remain prototype
+evidence. Its measured 58–59 pixel
 cost preserves real text in the first mobile viewport, does not alter the
 reading measure, and keeps all four accepted actions one activation away at
 every semantic position. The
@@ -151,4 +161,5 @@ fetched only after a Compare URL or mode transition is requested.
 - final canonicalization of configuration, mode, and semantic-location URLs;
 - the production data and rendering contract for the pinned contextual Study
   rail beyond this fixture-backed shell behavior;
-- any public release, selector exposure, or claim that M2 is accepted.
+- any public release or selector exposure; M2 acceptance does not authorize
+  production integration.

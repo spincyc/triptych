@@ -179,7 +179,7 @@ operations.
 
 ## Promised work
 
-### Liturgy reader-shell M2 candidate
+### Liturgy reader-shell M2 accepted
 
 <!-- promised-deliverable: liturgy-reader-shell-m2-candidate-2026-08-03 -->
 
@@ -203,20 +203,30 @@ remains one activation away at deep scroll while the shell occupies about
 58–59 CSS pixels and causes no measured layout shift. The immutable handoff is
 `20260804T101952Z-liturgy-reader-shell-prototype`.
 
-External review of commit `68becc59b396aca830c233b88ec74991563603d1`
-accepted that persistent-shell direction and the shared Day/Propers model, but
-requested three bounded corrections before M2 acceptance: remove internal
-diagnostic language from complete Read states, eliminate internal horizontal
-overflow and raw machine-shaped Study output, and distinguish temporary
-Details from a nonmodal wide-desktop Study presentation. Scroll-reveal remains
-prototype evidence, not a production preference. The corrected candidate is
-validated and ready for a compact immutable re-review handoff; that handoff
-does not itself accept M2.
+External review of candidate `68becc59b396aca830c233b88ec74991563603d1`
+in handoff `20260804T101952Z-liturgy-reader-shell-prototype` accepted that
+persistent-shell direction and the shared Day/Propers model, but its *M2
+prototype changes-requested disposition* required three bounded corrections.
+Correction `75234e72c402f0b25a681fbe074da70d895f7274`, reviewed through handoff
+`20260804T142747Z-liturgy-reader-shell-corrections`, removed complete-state
+diagnostic noise, eliminated auxiliary-surface overflow and raw
+machine-shaped Study output, and distinguished temporary Details from pinned
+wide-desktop Study and reversible mobile Study sheets.
 
-M2 remains pending external review and is not accepted merely because the
-prototype, commit, push, screenshots, or ZIP exist. Production Day and Propers
-sources, M1 semantics, current URLs, calendar and liturgical data, search,
-semantic comparison, and recension coverage remain outside this work.
+Accepted on 4 August 2026. The *M2 responsive reader-shell acceptance and
+closeout disposition* records: **Accepted — the quiet persistent reader shell
+is the M2 direction. Complete Read states are free of diagnostic noise, all
+auxiliary surfaces reflow without internal horizontal scrolling, and
+temporary Details is distinct from wide-desktop pinned Study and mobile Study
+sheets. Production Day and Propers routes remain unchanged.** Focused shell,
+M1, current-route, public-alpha, Chromium, print, syntax, registry, and
+whitespace checks passed. The repository example comparison preserves the 23
+pre-existing divergences and changes only the same two promised-deliverable
+rows from `16 tracked, 10 complete` to `16 tracked, 11 complete`; no transcript
+was modified or recaptured. Scroll-reveal remains prototype evidence only.
+M2 acceptance does not start M3, W3, W4, W5, or production integration, and it
+does not change M1 semantics, current URLs, calendar or liturgical data,
+search, semantic comparison, or recension coverage.
 
 ### Liturgy reader-state M1 accepted
 

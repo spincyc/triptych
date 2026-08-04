@@ -57,7 +57,7 @@ state = "complete"
 id = "liturgy-reader-shell-m2-candidate-2026-08-03"
 owner = "src/web/browser/liturgy/prototypes/reader-shell"
 promise = "Prototype and measure one shared responsive reader shell for the distinct Day and Propers entrances without integrating production routes, later mode engines, search, comparison semantics, recension work, or liturgical data changes."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "shared-responsive-prototype"
@@ -105,6 +105,19 @@ state = "candidate"
     "guidance/liturgy-reader-shell-prototype.md",
     "tools/tests/liturgy_reader_shell_browser.mjs",
   ]
+
+  [[deliverables.requirements]]
+  id = "external-review-acceptance"
+  criterion = "External review accepts the corrected quiet persistent reader shell as the M2 direction while production Day and Propers routes, M1 semantics, public data, URLs, and later workstreams remain unchanged."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/liturgy-browser-roadmap.md",
+    "guidance/liturgy-reader-shell-prototype.md",
+  ]
+  check = "contains"
+  path = "guidance/liturgy-browser-roadmap.md"
+  needle = "75234e72c402f0b25a681fbe074da70d895f7274"
 
 [[deliverables]]
 id = "project-gpt-deep-research-redevelopment-2026-07-29"
