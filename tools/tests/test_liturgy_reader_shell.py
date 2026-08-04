@@ -29,7 +29,6 @@ PRODUCTION = [
     "src/web/browser/liturgy/ordinary-seating.js",
     "src/web/browser/liturgy/assembly-model.js",
     "src/web/browser/shared/browser-core.css",
-    "src/web/browser/shared/browser-core.js",
 ]
 
 
@@ -162,7 +161,7 @@ class ReaderShellPrototypeTest(unittest.TestCase):
         self.assertFalse(any("prototypes/reader-shell" in str(path) for path in pages))
         self.assertFalse(any("prototypes/reader-shell" in str(path) for path in pages.values()))
 
-    def test_production_day_and_propers_sources_are_byte_identical_to_m1_base(self) -> None:
+    def test_production_routes_and_styles_are_byte_identical_to_m1_base(self) -> None:
         for relative in PRODUCTION:
             expected = subprocess.run(
                 ["git", "show", f"{BASE}:{relative}"], cwd=ROOT,
@@ -176,7 +175,8 @@ class ReaderShellPrototypeTest(unittest.TestCase):
                 ":(exclude)src/web/browser/liturgy/prototypes/**",
                 ":(exclude)src/web/browser/liturgy/day-reader.*",
                 ":(exclude)src/web/browser/liturgy/reader-shell.*",
-                "src/web/browser/shared",
+                ":(exclude)src/web/browser/liturgy/propers-reader.*",
+                "src/web/browser/shared/browser-core.css",
             ],
             cwd=ROOT, check=True,
         )

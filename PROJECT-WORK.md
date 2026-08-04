@@ -179,6 +179,25 @@ operations.
 
 ## Promised work
 
+### Liturgy Propers reader-shell M3 candidate
+
+<!-- promised-deliverable: liturgy-propers-reader-shell-m3-candidate-2026-08-04 -->
+
+The second M3 production-integration entrance connects an unlinked, noindex
+Propers Read candidate to the accepted persistent reader shell and the accepted
+M1 Propers state adapter. It must render existing production formularies
+without replacing the public Propers route, choosing an arbitrary formulary,
+or merging coequal cycles or alternatives.
+
+This work remains an **M3 candidate pending external review**. The live Day and
+Propers routes, the accepted Day candidate, public navigation and selectors,
+M1 contract meaning, liturgical and generated production data, later modes,
+search, public cutover, and recension expansion remain outside its boundary.
+Candidate completion requires semantic and legacy-URL parity evidence,
+transition and accessibility tests, measured responsive and print captures,
+production-isolation proof, and the immutable external-review handoff requested
+for the second entrance into the shared reader.
+
 ### Liturgy Day reader-shell M3 accepted
 
 <!-- promised-deliverable: liturgy-day-reader-shell-m3-candidate-2026-08-04 -->

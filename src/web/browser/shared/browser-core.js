@@ -1238,14 +1238,16 @@ window.Triptych = (function () {
    * reader believe they are looking at the English they asked for. The absence
    * is stated where the text would have been.
    */
-  function orationFor(proper, wanted) {
+  function orationFor(proper, wanted, witness) {
     const asked = wanted || SOURCE_LANGUAGE;
     if (asked === SOURCE_LANGUAGE) {
       return { text: proper.text, lang: SOURCE_LANGUAGE, missing: false, source: null };
     }
-    const found = (proper.translations || []).find(
-      (translation) => translation && translation.lang === asked && translation.text
-    );
+    const found = (proper.translations || []).find((translation) => {
+      if (!translation || translation.lang !== asked || !translation.text) return false;
+      if (!witness) return true;
+      return (translation.source_id || translation.source || null) === witness;
+    });
     if (found) {
       return {
         text: found.text,
@@ -1310,7 +1312,7 @@ window.Triptych = (function () {
     // and quietly. It is not a failure: the corpus indexes these propers by
     // their opening words and does not hold their bodies.
     if (proper.text) {
-      const oration = orationFor(proper, held.orations);
+      const oration = orationFor(proper, held.orations, held.translationWitness || null);
       const composed = el('p', 'composed');
       const label = oration.missing
         ? 'Composed text — not scripture · ' + languageName(SOURCE_LANGUAGE)

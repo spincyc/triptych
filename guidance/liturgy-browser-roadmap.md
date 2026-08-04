@@ -667,7 +667,13 @@ parallel:
    request cannot replace a newer valid or invalid result, including during
    Back navigation. Live Day and Propers remain unchanged; Propers integration,
    later modes, public navigation and cutover, and recension work remain
-   outside M3.
+   outside that accepted Day slice. A second, independently reviewable W3/M3
+   candidate now enters the same shell at `liturgy/propers-reader.html`: it
+   selects a formulary without a civil date, crosses the accepted M1 Propers
+   adapter, and reuses the production Proper renderer. Its Browse, cycle and
+   alternative, transition, responsive, accessibility, and print evidence is
+   pending external review. It does not reopen the accepted Day slice or start
+   public cutover, later modes, search, or recension work.
 3. W7 verifies the pre-1955 base and official acts for the narrow Phase 10
    slice, while exact-printing acquisition continues in parallel as validation
    rather than a universal prerequisite.
@@ -703,6 +709,7 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-04 | M3 candidate — production reader-shell foundation and Day Read integration | Candidate pending external review. The bounded noindex route extracts only the accepted persistent shell; integrates real Day Read output through production assembly, the accepted M1 adapter, shared fragment fetching, and the shared Proper renderer; preserves supported and deferred legacy state without fallback; and passes measured desktop, tablet, mobile, zoom, accessibility, print, and live-route isolation checks. | This candidate commit; handoff `20260804T154620Z-day-reader-shell-integration` |
 | 2026-08-04 | M3 candidate external-review corrections | External review accepted the reusable-shell architecture and requested three bounded corrections. The correction preserves valid inactive later-mode preferences as latent Read-compatible state while active requests still defer and invalid values fail closed; clears selection state before every render attempt; restores exact assembly-owned weekday presentation; and removes raw source-hook coordinates from visible Details. M3 remains pending correction review, and live routes remain unchanged. | This correction commit; compact correction handoff `20260804T173010Z-day-reader-shell-integration-corrections` |
 | 2026-08-04 | M3 — production Day Read integration external acceptance | Accepted — the production Day Read candidate reuses the existing assembly and Proper renderer behind the shared persistent shell, preserves Read-compatible legacy state, explicitly defers later-mode state, fails closed across invalid and superseded asynchronous transitions, and remains isolated from the live Day and Propers routes. Acceptance does not authorize cutover, Propers integration, later modes, public exposure, or recension work. | Candidate `45a6b76249e015f68830495ca2971e9dbc4a4e14`; correction `d0872545ccc92106cb457b448f37201381c5bb2d`; final micro-fix `c604edb8a1fffb1e5c0981798800ecb801258e7c`; handoffs `20260804T154620Z-day-reader-shell-integration` and `20260804T173010Z-day-reader-shell-integration-corrections`; external review dispositions *W3 Day reader-shell changes requested* and *W3 conditional acceptance, final micro-fix, and M3 closeout* |
+| 2026-08-04 | M3 Propers reader-shell candidate — second production Read entrance | Candidate pending external review. The unlinked, noindex Propers entrance uses the accepted shared shell, explicit M1 Propers state, production manifests, fragments, and Proper renderer; leaves missing identity unresolved; rejects invalid explicit state; and preserves coequal cycles and alternatives independently. Public Day and Propers, the accepted Day candidate, later modes, search, public cutover, and production liturgical data remain unchanged. | This candidate commit; external-review handoff recorded in the completion report |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).

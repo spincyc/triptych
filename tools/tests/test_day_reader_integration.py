@@ -214,7 +214,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
                 continue
             self.assertNotIn("day-reader.html", text(path), path.as_posix())
 
-    def test_promised_deliverable_is_open_m3_candidate(self) -> None:
+    def test_promised_deliverable_records_the_accepted_m3_day_slice(self) -> None:
         with (ROOT / "promised-deliverables.toml").open("rb") as handle:
             ledger = tomllib.load(handle)
         rows = [
@@ -222,9 +222,12 @@ class DayReaderIntegrationTests(unittest.TestCase):
             if row["id"] == "liturgy-day-reader-shell-m3-candidate-2026-08-04"
         ]
         self.assertEqual(len(rows), 1)
-        self.assertEqual(rows[0]["state"], "candidate")
+        self.assertEqual(rows[0]["state"], "complete")
         self.assertEqual(rows[0]["owner"], "src/web/browser/liturgy/day-reader.html")
-        self.assertNotIn("complete", [requirement["status"] for requirement in rows[0]["requirements"]])
+        self.assertEqual(
+            {requirement["status"] for requirement in rows[0]["requirements"]},
+            {"pass"},
+        )
 
     def test_candidate_size_is_bounded_below_prototype_harness(self) -> None:
         prototype = LITURGY / "prototypes/reader-shell/reader-shell.js"

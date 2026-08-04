@@ -1,6 +1,57 @@
 schema_version = 1
 
 [[deliverables]]
+id = "liturgy-propers-reader-shell-m3-candidate-2026-08-04"
+owner = "src/web/browser/liturgy/propers-reader.html"
+promise = "Integrate an unlinked, noindex Propers Read candidate into the accepted shared production reader shell and M1 Propers state path without changing public routes, data, later modes, search, or recension coverage."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "shared-shell-and-production-renderer"
+  criterion = "The candidate uses the exact accepted shell module and stylesheet and renders production formularies through the existing Proper renderer without route-specific shell duplication."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/propers-reader.html",
+    "src/web/browser/liturgy/propers-reader.js",
+    "tools/tests/test_propers_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "m1-state-legacy-and-choice-semantics"
+  criterion = "The candidate validates the explicit M1 Propers entrance, preserves supported legacy URL semantics, fails closed on missing or invalid formulary identity, and keeps cycles and alternatives independent without order-based selection."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/propers-reader.js",
+    "tools/tests/test_propers_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "interaction-accessibility-and-measurement"
+  criterion = "Focused and real-browser checks cover Browse, Contents, Mode, Details, transition races, responsive and enlarged-text overflow, accessibility, performance, required captures, and print."
+  status = "pass"
+  evidence = [
+    "tools/tests/propers_reader_integration_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "semantic-parity-and-production-isolation"
+  criterion = "Representative current and candidate output agrees semantically except for explicitly documented accepted-contract corrections, while live routes, the accepted Day candidate, public discovery, and production data remain unchanged."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_propers_reader_integration.py",
+    "tools/tests/propers_reader_integration_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-candidate"
+  criterion = "A complete immutable handoff asks the bounded Propers integration questions, and the roadmap records the result only as a candidate pending external review."
+  status = "open"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-reader-state-m1-2026-08-03"
 owner = "src/web/browser/liturgy/reader-state.js"
 promise = "Define the first W1/W9 shared semantic reader-state, URL, fixture, and Day/Propers/CLI parity contract without changing production reader behavior."
