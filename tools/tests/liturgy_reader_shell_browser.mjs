@@ -10,10 +10,14 @@ import { tmpdir } from 'node:os';
 import { extname, join, resolve, sep } from 'node:path';
 import process from 'node:process';
 
-const ROOT = resolve(import.meta.dirname, '../..');
+const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dirname, '../..'));
 const ROUTE = '/src/web/browser/liturgy/prototypes/reader-shell/index.html';
 const captureAt = process.argv.indexOf('--capture-dir');
 const captureDir = captureAt >= 0 ? resolve(process.argv[captureAt + 1]) : null;
+const correctionAt = process.argv.indexOf('--correction-dir');
+const correctionDir = correctionAt >= 0 ? resolve(process.argv[correctionAt + 1]) : null;
+const beforeAt = process.argv.indexOf('--before-dir');
+const beforeDir = beforeAt >= 0 ? resolve(process.argv[beforeAt + 1]) : null;
 const chromeBinary = process.env.TRIPTYCH_CHROME || '/usr/bin/google-chrome-stable';
 const failures = [];
 const observations = [];
@@ -213,6 +217,21 @@ async function test(name, callback) {
   }
 }
 
+async function surfaceOverflow(cdp, surface) {
+  return evaluate(cdp, `(() => {
+    const root = document.querySelector('#${surface}-surface');
+    const nodes = [root, ...root.querySelectorAll(
+      '.surface-head, .surface-body, .surface-fields, .surface-field, .date-steps, .browse-list, ' +
+      '.mode-options, .study-panel section, input, select, button, dl, dd, li'
+    )];
+    return nodes.map((element) => ({
+      name: element.id || element.className || element.tagName,
+      scrollWidth: element.scrollWidth,
+      clientWidth: element.clientWidth
+    })).filter((entry) => entry.scrollWidth > entry.clientWidth + 1);
+  })()`);
+}
+
 async function runAssertions(cdp, base) {
   await viewport(cdp, 393, 852);
   await navigate(cdp, url(base, 'day-read', 'persistent'));
@@ -230,10 +249,40 @@ async function runAssertions(cdp, base) {
     assert.equal(value.current.entrance, 'day');
     assert.equal(value.current.mode, 'read');
     assert.equal(value.current.selections.edition, 'roman-1962');
-    assert.deepEqual(value.labels, ['Date & edition', 'Contents', 'Mode', 'Study']);
+    assert.deepEqual(value.labels, ['Date & edition', 'Contents', 'Mode', 'Details']);
     assert.ok(value.properCount >= 8, 'real Proper renderer did not produce enough sections');
     assert.equal(value.properCount, value.contentsCount);
     assert.match(value.robots, /noindex/);
+  });
+
+  await test('complete Read states omit diagnostic notices while reliance states retain them', async () => {
+    let value = await evaluate(cdp, `(() => ({
+      hidden: document.querySelector('#reader-coverage').hidden,
+      text: document.querySelector('#reader-coverage').textContent,
+      meta: document.querySelector('#reader-meta').textContent,
+      firstTop: document.querySelector('#reader-document .proper').getBoundingClientRect().top
+    }))()`);
+    assert.equal(value.hidden, true);
+    assert.equal(value.text, '');
+    assert.equal(/bound M1|explicitly selected|No blocking notices|contract/i.test(value.meta), false);
+    assert.match(value.meta, /1962 Roman Missal · Universal · Douay–Rheims · Latin orations/);
+    assert.ok(value.firstTop < 255, `first content remains at ${value.firstTop}px`);
+
+    await navigate(cdp, url(base, 'unavailable', 'persistent'));
+    value = await evaluate(cdp, `({
+      hidden: document.querySelector('#reader-coverage').hidden,
+      text: document.querySelector('#reader-coverage').textContent
+    })`);
+    assert.equal(value.hidden, false);
+    assert.match(value.text, /partial or unavailable/i);
+
+    await navigate(cdp, url(base, 'day-read', 'persistent', '&display=original&bible=clementine-vulgate'));
+    value = await evaluate(cdp, `({
+      hidden: document.querySelector('#reader-coverage').hidden,
+      text: document.querySelector('#reader-coverage').textContent
+    })`);
+    assert.equal(value.hidden, false);
+    assert.match(value.text, /does not match.*Bible edition/i);
   });
 
   await test('Propers uses the same shell and changes only the entrance action', async () => {
@@ -343,6 +392,132 @@ async function runAssertions(cdp, base) {
     await waitFor(cdp, `ReaderShellPrototype.current().mode === "study" && ReaderShellPrototype.current().location === ${JSON.stringify(location)}`, 'Forward to Study and location');
   });
 
+  await test('Details and Study mode have distinct temporary, pinned, and mobile behavior', async () => {
+    await viewport(cdp, 1440, 900);
+    await navigate(cdp, url(base, 'day-read', 'persistent'));
+    const readWidth = await evaluate(cdp, `document.querySelector('#reader-document').getBoundingClientRect().width`);
+    await click(cdp, '[data-surface="study"]');
+    let value = await evaluate(cdp, `(() => ({
+      mode: ReaderShellPrototype.current().mode,
+      presentation: ReaderShellPrototype.current().surfacePresentation,
+      modal: document.querySelector('#study-surface').matches(':modal'),
+      action: document.querySelector('[data-surface="study"] span:last-child').textContent
+    }))()`);
+    assert.deepEqual(value, { mode: 'read', presentation: 'modal', modal: true, action: 'Details' });
+    await escape(cdp);
+
+    await evaluate(cdp, `window.scrollTo(0, document.querySelectorAll('[data-semantic-location]')[4].offsetTop)`);
+    await new Promise((accept) => setTimeout(accept, 80));
+    const location = await evaluate(cdp, 'ReaderShellPrototype.current().location');
+    await click(cdp, '[data-surface="mode"]');
+    await click(cdp, '[data-mode="study"]');
+    await waitFor(cdp, 'ReaderShellPrototype.current().surfacePresentation === "pinned"', 'pinned Study rail');
+    value = await evaluate(cdp, `(() => ({
+      location: ReaderShellPrototype.current().location,
+      modal: document.querySelector('#study-surface').matches(':modal'),
+      presentation: ReaderShellPrototype.current().surfacePresentation,
+      readingInert: document.querySelector('#reader-document').inert,
+      title: document.querySelector('#study-surface-title').textContent,
+      action: document.querySelector('[data-surface="study"] span:last-child').textContent,
+      readingWidth: document.querySelector('#reader-document').getBoundingClientRect().width
+    }))()`);
+    assert.equal(value.location, location);
+    assert.equal(value.modal, false);
+    assert.equal(value.presentation, 'pinned');
+    assert.equal(value.readingInert, false);
+    assert.equal(value.title, 'Study apparatus');
+    assert.equal(value.action, 'Details');
+    assert.ok(Math.abs(value.readingWidth - readWidth) <= 1, `${readWidth} became ${value.readingWidth}`);
+    const sourceBefore = await evaluate(cdp, `document.querySelector('.source-identifier')?.textContent`);
+    const laterLocation = await evaluate(cdp, `(() => {
+      const target = document.querySelectorAll('[data-semantic-location]')[7];
+      target.scrollIntoView({ block: 'start' });
+      target.querySelector('[data-semantic-focus]').focus({ preventScroll: true });
+      return target.dataset.semanticLocation;
+    })()`);
+    await waitFor(cdp,
+      `ReaderShellPrototype.current().location === ${JSON.stringify(laterLocation)}`,
+      'pinned Study semantic update');
+    await new Promise((accept) => setTimeout(accept, 100));
+    value = await evaluate(cdp, `({
+      railOpen: document.querySelector('#study-surface').open,
+      readingFocused: document.querySelector('#reader-document').contains(document.activeElement),
+      scrolled: window.scrollY > 0,
+      source: document.querySelector('.source-identifier')?.textContent
+    })`);
+    assert.equal(value.railOpen, true);
+    assert.equal(value.readingFocused, true);
+    assert.equal(value.scrolled, true);
+    assert.notEqual(value.source, sourceBefore);
+
+    await viewport(cdp, 768, 1024);
+    await waitFor(cdp, 'ReaderShellPrototype.current().surfacePresentation === "modal"', 'resized Study sheet');
+    assert.equal(await evaluate(cdp, `document.querySelector('#study-surface').matches(':modal')`), true);
+    await viewport(cdp, 1440, 900);
+    await waitFor(cdp, 'ReaderShellPrototype.current().surfacePresentation === "pinned"', 'restored pinned Study rail');
+
+    await viewport(cdp, 393, 852);
+    await navigate(cdp, url(base, 'day-read', 'persistent'));
+    await evaluate(cdp, `window.scrollTo(0, document.querySelectorAll('[data-semantic-location]')[4].offsetTop)`);
+    await new Promise((accept) => setTimeout(accept, 80));
+    const mobileLocation = await evaluate(cdp, 'ReaderShellPrototype.current().location');
+    await click(cdp, '[data-surface="mode"]');
+    await click(cdp, '[data-mode="study"]');
+    await waitFor(cdp, 'ReaderShellPrototype.current().surfacePresentation === "modal"', 'mobile Study sheet');
+    assert.equal(await evaluate(cdp, `document.querySelector('#study-surface').matches(':modal')`), true);
+    await escape(cdp);
+    value = await evaluate(cdp, `({
+      mode: ReaderShellPrototype.current().mode,
+      location: ReaderShellPrototype.current().location,
+      focused: document.activeElement === document.querySelector('[data-surface="study"]')
+    })`);
+    assert.deepEqual(value, { mode: 'study', location: mobileLocation, focused: true });
+    await click(cdp, '[data-surface="mode"]');
+    await click(cdp, '[data-mode="read"]');
+    await waitFor(cdp,
+      `ReaderShellPrototype.current().mode === "read" && ReaderShellPrototype.current().location === ${JSON.stringify(mobileLocation)} && ` +
+      `document.activeElement === document.querySelector('[data-surface="mode"]')`,
+      'return to Read location and focus');
+    value = await evaluate(cdp, `({
+      location: ReaderShellPrototype.current().location,
+      focused: document.activeElement === document.querySelector('[data-surface="mode"]'),
+      active: document.activeElement.outerHTML
+    })`);
+    assert.equal(value.location, mobileLocation);
+    assert.equal(value.focused, true, value.active);
+  });
+
+  await test('every open auxiliary surface reflows without internal horizontal overflow', async () => {
+    const sizes = [[1440, 900], [1024, 768], [768, 1024], [393, 852], [320, 852]];
+    for (const [width, height] of sizes) {
+      await viewport(cdp, width, height);
+      for (const surface of ['entrance', 'contents', 'mode', 'study']) {
+        await navigate(cdp, url(base, 'day-read', 'persistent'));
+        await click(cdp, `[data-surface="${surface}"]`);
+        assert.deepEqual(await surfaceOverflow(cdp, surface), [], `${surface} overflow at ${width}x${height}`);
+        await escape(cdp);
+      }
+      await navigate(cdp, url(base, 'propers-browse', 'persistent'));
+      await waitFor(cdp, 'ReaderShellPrototype.current().surface === "entrance"', 'Browse surface');
+      assert.deepEqual(await surfaceOverflow(cdp, 'entrance'), [], `Browse overflow at ${width}x${height}`);
+      await escape(cdp);
+    }
+
+    await viewport(cdp, 393, 852);
+    for (const [state, surface] of [
+      ['day-read', 'entrance'], ['day-read', 'contents'], ['day-read', 'mode'],
+      ['day-read', 'study'], ['propers-browse', 'entrance']
+    ]) {
+      await navigate(cdp, url(base, state, 'persistent'));
+      await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
+      if (await evaluate(cdp, 'ReaderShellPrototype.current().surface === null')) {
+        await click(cdp, `[data-surface="${surface}"]`);
+      }
+      assert.deepEqual(await surfaceOverflow(cdp, surface), [], `${state}/${surface} overflow at 200%`);
+      await escape(cdp);
+    }
+  });
+
   await test('state selection is explicit and invalid prototype input fails closed', async () => {
     const expected = {
       'day-read': ['roman-1962', 'pentecost-10', 'douay-rheims', 'la'],
@@ -388,7 +563,8 @@ async function runAssertions(cdp, base) {
     }))()`);
     assert.equal(value.trusted, true);
     assert.match(value.text, /pentecost-10/);
-    assert.match(value.text, /after-pentecost/);
+    assert.match(value.text, /After pentecost/);
+    assert.doesNotMatch(value.text, /[\[{]\s*"/);
     await escape(cdp);
 
     await navigate(cdp, url(base, 'day-read', 'persistent', '&display=original&bible=clementine-vulgate'));
@@ -517,7 +693,7 @@ async function runAssertions(cdp, base) {
     assert.equal(value.actions, 'none');
     assert.equal(value.flag, 'none');
     assert.notEqual(value.title, 'none');
-    assert.match(value.meta, /1962 Missal/);
+    assert.match(value.meta, /1962 Roman Missal/);
     assert.ok(value.content >= 8);
     await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
   });
@@ -617,6 +793,69 @@ async function captureMatrix(cdp, base, directory) {
   return measures;
 }
 
+async function captureCorrectionEvidence(cdp, base, directory) {
+  await mkdir(directory, { recursive: true });
+  const measures = [];
+
+  async function capture(name, width, height, state, surface = null, enlargement = false) {
+    await viewport(cdp, width, height);
+    await navigate(cdp, url(base, state, 'persistent'));
+    if (surface && await evaluate(cdp, 'ReaderShellPrototype.current().surface === null')) {
+      await click(cdp, `[data-surface="${surface}"]`);
+    }
+    if (surface) await waitFor(cdp,
+      `ReaderShellPrototype.current().surface === ${JSON.stringify(surface)}`, `${name} surface`);
+    if (enlargement) {
+      await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
+      await new Promise((accept) => setTimeout(accept, 100));
+    }
+    await shot(cdp, join(directory, name + '.png'));
+    const currentSurface = await evaluate(cdp, 'ReaderShellPrototype.current().surface');
+    measures.push({
+      file: name + '.png', viewport: `${width}x${height}`,
+      state, surface: currentSurface, enlargement: enlargement ? '200%' : '100%',
+      surfaceOverflow: currentSurface ? await surfaceOverflow(cdp, currentSurface) : [],
+      metrics: await evaluate(cdp, 'ReaderShellPrototype.metrics()')
+    });
+    if (currentSurface) await escape(cdp);
+  }
+
+  await capture('day-read-persistent-393x852', 393, 852, 'day-read');
+  await capture('day-read-persistent-320x852', 320, 852, 'day-read');
+  await capture('propers-read-persistent-393x852', 393, 852, 'propers-formulary');
+  await capture('day-date-persistent-1440x900', 1440, 900, 'day-read', 'entrance');
+  await capture('day-date-persistent-393x852', 393, 852, 'day-read', 'entrance');
+  await capture('propers-browse-persistent-1440x900', 1440, 900, 'propers-browse', 'entrance');
+  await capture('propers-browse-persistent-393x852', 393, 852, 'propers-browse', 'entrance');
+  await capture('day-details-persistent-1440x900', 1440, 900, 'day-read', 'study');
+  await capture('day-details-persistent-393x852', 393, 852, 'day-read', 'study');
+  await capture('day-study-mode-persistent-1440x900', 1440, 900, 'day-study', 'study');
+  await capture('day-study-mode-persistent-393x852', 393, 852, 'day-study', 'study');
+  await capture('propers-browse-persistent-393x852-200-percent', 393, 852, 'propers-browse', 'entrance', true);
+
+  for (const [width, height] of [[1440, 900], [1024, 768], [768, 1024]]) {
+    await viewport(cdp, width, height);
+    await navigate(cdp, url(base, 'day-read', 'persistent'));
+    measures.push({
+      file: null, viewport: `${width}x${height}`, state: 'day-read', surface: null,
+      enlargement: '100%', surfaceOverflow: [],
+      metrics: await evaluate(cdp, 'ReaderShellPrototype.metrics()')
+    });
+  }
+
+  await viewport(cdp, 1024, 768);
+  await navigate(cdp, url(base, 'day-read', 'persistent'));
+  await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+  const pdf = await cdp.send('Page.printToPDF', {
+    printBackground: true, preferCSSPageSize: true, paperWidth: 8.5, paperHeight: 11,
+    marginTop: 0.4, marginBottom: 0.4, marginLeft: 0.45, marginRight: 0.45
+  });
+  await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+  await writeFile(join(directory, 'day-read-print.pdf'), Buffer.from(pdf.data, 'base64'));
+  await writeFile(join(directory, 'measurements.json'), JSON.stringify(measures, null, 2) + '\n');
+  return measures;
+}
+
 async function main() {
   const server = staticServer();
   const serverPort = await listen(server);
@@ -657,9 +896,11 @@ async function main() {
         status: response.status, url: response.url, type: response.mimeType
       });
     });
-    await runAssertions(cdp, base);
+    if (!beforeDir) await runAssertions(cdp, base);
     let measures = [];
     if (captureDir) measures = await captureMatrix(cdp, base, captureDir);
+    if (correctionDir) measures = await captureCorrectionEvidence(cdp, base, correctionDir);
+    if (beforeDir) measures = await captureCorrectionEvidence(cdp, base, beforeDir);
     await navigate(cdp, url(base, 'day-read', 'persistent'));
     const defaultMetrics = await evaluate(cdp, 'ReaderShellPrototype.metrics()');
     const interactionLatencyMs = await evaluate(cdp, `(async () => {
@@ -693,7 +934,8 @@ async function main() {
         html: (await stat(join(ROOT, 'src/web/browser/liturgy/prototypes/reader-shell/index.html'))).size
       }
     };
-    if (captureDir) await writeFile(join(captureDir, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');
+    const reportDir = captureDir || correctionDir || beforeDir;
+    if (reportDir) await writeFile(join(reportDir, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');
     process.stdout.write(JSON.stringify(report, null, 2) + '\n');
     const unexpectedFailed = failedRequests.filter((one) => !one.canceled);
     if (failures.length || report.accessibility.unnamedInteractiveNodes || consoleProblems.length ||

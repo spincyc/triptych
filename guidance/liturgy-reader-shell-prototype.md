@@ -2,7 +2,11 @@
 
 ## Status and boundary
 
-Status: **M2 candidate pending external review**, measured 2026-08-04.
+Status: **corrected M2 candidate pending external re-review**, measured
+2026-08-04. External review accepted the quiet persistent shell as the M2
+direction and retained the shared Day/Propers model. It requested three bounded
+corrections before acceptance; this record describes the corrected candidate,
+not an accepted or production-integrated shell.
 
 The candidate is an internal, unlinked, noindex route at
 `src/web/browser/liturgy/prototypes/reader-shell/`. It does not alter the Day or
@@ -43,15 +47,19 @@ focus, safe-area, reduced-motion, and print states.
 
 | Viewport | Shell height | Reading width | Approx. characters/line | First liturgical content | Horizontal overflow |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| 1440×900 | 58 px | 571 px | 65 | 314 px | 0 px |
-| 1024×768 | 58 px | 571 px | 65 | 313 px | 0 px |
-| 768×1024 | 58 px | 571 px | 65 | 270 px | 0 px |
-| 393×852 | 59 px | 361 px | 41 | 255 px | 0 px |
-| 320×852 | 59 px | 288 px | 33 | 284 px | 0 px |
+| 1440×900 | 58 px | 571 px | 65 | 240 px | 0 px |
+| 1024×768 | 58 px | 571 px | 65 | 239 px | 0 px |
+| 768×1024 | 58 px | 571 px | 65 | 196 px | 0 px |
+| 393×852 | 59 px | 361 px | 41 | 181 px | 0 px |
+| 320×852 | 59 px | 288 px | 33 | 228 px | 0 px |
 
-At 393×852 the celebration identity, quiet edition/date/coverage context, and
+At 393×852 the celebration identity, quiet edition/date context, and
 the beginning of the real Introit are all present before the first viewport
-ends. At 320 CSS pixels every action remains inside the visual viewport; the
+ends. Removing the complete-state diagnostic row moved the first real Proper
+from 255 to 181 pixels at 393×852 and from 284 to 228 pixels at 320×852,
+without reserving an empty gap. Partial, unavailable, or mismatched states
+retain a concise visible reliance notice. At 320 CSS pixels every action
+remains inside the visual viewport; the
 page has no horizontal scroll, bilingual and Compare units stack, and 200%
 text enlargement retains all four action targets. The reading column does not
 move horizontally during initialization. The final captured initialization
@@ -71,26 +79,39 @@ tracks the current section, supports ordinary keyboard button navigation,
 moves and focuses the selected heading, and restores the invoking control on
 dismissal.
 
-On wide desktop, Contents and Study occupy unused outer margins as slim modal
-rails; they do not narrow the 68ch reading measure. They remain modal because
-the accepted interaction requirement suppresses background interaction while
-an auxiliary surface is open. On tablet and mobile, every auxiliary interface
-uses the same native-dialog manager as a bottom sheet. Only one can open at a
-time. Opening, Escape, close controls, selection, focus return, and scroll and
-semantic-location restoration are asserted in Chromium.
+The fourth global action is **Details**, distinct from the Study mode. In Read,
+Missal, and Compare, Details is a temporary modal inspection surface. In Study
+mode on wide desktop, the same apparatus becomes a pinned, nonmodal right rail:
+the 68ch reading measure does not move, the page remains focusable, selectable,
+and scrollable, and the rail follows the current semantic location. Date or
+Browse, Contents, and Mode remain temporary modal surfaces. On tablet and
+mobile, Study uses the same reversible native-dialog sheet as Details because
+there is insufficient width for simultaneous columns; closing it leaves Study
+mode explicit and returns focus and semantic position.
 
-Study is one surface for Why here, rubrics, calendar outcome, rank/precedence,
-commemorations/displacements, provenance, rights/availability/typed coverage,
-and historical links. It uses fixture-backed fields only where they are held;
-unavailable fields and prototype-only layout material say so rather than
-inventing a claim.
+Every surface and surface body was measured directly at 1440×900, 1024×768,
+768×1024, 393×852, and 320×852, plus 200% text enlargement. Each reports
+`scrollWidth <= clientWidth`. Forms use one shrinkable column, native controls
+fill but do not exceed it, long Browse labels wrap, and Study renders labeled
+fields, wrapping source identifiers, and compact coverage lists rather than raw
+machine-shaped output. Only one modal surface can open at a time. Opening,
+Escape, close controls, selection, focus return, and scroll and semantic-
+location restoration are asserted in Chromium.
+
+The Study apparatus is one structure for Why here, rubrics, calendar outcome,
+rank/precedence, commemorations/displacements, provenance,
+rights/availability/typed coverage, and historical links. It uses
+fixture-backed fields only where they are held; unavailable fields and
+prototype-only layout material say so rather than inventing a claim.
 
 ## Recommendation
 
 Advance **the quiet persistent variant** as the M2 implementation direction,
-subject to external review. Its measured 58–59 pixel cost preserves real text
-in the first mobile viewport, does not alter the reading measure, and keeps all
-four accepted actions one activation away at every semantic position. The
+subject to correction re-review. External review accepted this direction and
+directed that scroll-reveal remain prototype evidence. Its measured 58–59 pixel
+cost preserves real text in the first mobile viewport, does not alter the
+reading measure, and keeps all four accepted actions one activation away at
+every semantic position. The
 reveal behavior is reliable, but its minimal affordance saves little physical
 height and makes a panel two activations away at deep scroll. That trade is not
 justified by the measured result.
@@ -104,19 +125,22 @@ animation.
 
 Print hides the prototype flag, action bar, reveal affordance, dialogs, and
 error chrome. It retains celebration/formulary identity, date where applicable,
-edition, explicitly selected universal locality, language/Ordinary context,
-coverage, and liturgical sections without empty rail space. The representative
-Letter PDF is four pages and tagged; every page is included in the review
-raster/contact evidence.
+edition, universal locality, language/Ordinary context, any material coverage
+limitation, and liturgical sections without empty rail space. Complete states
+do not print an absence-of-problems notice or internal fixture terminology.
+The representative Letter PDF is four pages and tagged; every page is included
+in the review raster/contact evidence.
 
 The candidate adds no framework, package, font, icon library, or build system.
-Raw prototype assets are approximately 56 KB JavaScript, 18 KB CSS, and 7 KB
-HTML; gzip proxies are approximately 13 KB and 4 KB for JavaScript and CSS.
+Raw corrected prototype assets are approximately 60 KB JavaScript, 19 KB CSS,
+and 7 KB HTML; gzip proxies are approximately 14 KB and 4.4 KB for JavaScript
+and CSS.
 The default state makes 18 resource requests in the local review build, of
 which four are prototype-specific (`reader-shell.js`, `reader-shell.css`, the
-M1 fixture, and the M1 contract). Opening Study makes no additional request:
-its DOM is built on demand from already validated state. Compare fixture
-content is fetched only after a Compare URL or mode transition is requested.
+M1 fixture, and the M1 contract). Opening the apparatus makes no additional
+request: its DOM is built on demand from already validated state. Temporary
+Details and pinned Study share that same structure. Compare fixture content is
+fetched only after a Compare URL or mode transition is requested.
 
 ## Intentionally deferred
 
@@ -125,6 +149,6 @@ content is fetched only after a Compare URL or mode transition is requested.
 - semantic Compare correspondence and unresolved-choice resolution;
 - Propers search/indexing and new recension or calendar/data coverage;
 - final canonicalization of configuration, mode, and semantic-location URLs;
-- nonmodal desktop Study behavior, which would conflict with the present
-  modal-background requirement and needs a later explicit interaction choice;
+- the production data and rendering contract for the pinned contextual Study
+  rail beyond this fixture-backed shell behavior;
 - any public release, selector exposure, or claim that M2 is accepted.

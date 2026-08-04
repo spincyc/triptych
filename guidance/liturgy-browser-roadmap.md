@@ -642,13 +642,18 @@ parallel:
    correction `c6b8070ae76e75153448895a19a0b916c18806ea` plus final micro-fix
    `c1a590f5854215d68d167d9040e188f41762663e`. Any production integration or
    further W1/W9 slice requires separate scope.
-2. W2 has produced an **M2 candidate pending external review** at the internal,
+2. W2 has produced a **corrected M2 candidate pending external re-review** at
+   the internal,
    noindex `src/web/browser/liturgy/prototypes/reader-shell/` route. It tests
    persistent and scroll-reveal reachability for Date or Browse, Contents,
-   Mode, and Study across wide, intermediate, mobile, enlarged-text, and print
-   states. The measured decision record is
+   Mode, and Details across wide, intermediate, mobile, enlarged-text, and
+   print states. External review chose persistent and requested bounded cleanup
+   of Read metadata, surface overflow, and the distinction between temporary
+   Details and Study mode. The corrected candidate provides a nonmodal pinned
+   Study rail on wide desktop and a reversible Study sheet at smaller widths.
+   The measured decision record is
    [the reader-shell prototype record](liturgy-reader-shell-prototype.md).
-   Neither behavior is accepted for production until the external M2 decision.
+   M2 is not accepted until the correction receives external re-review.
 3. W7 verifies the pre-1955 base and official acts for the narrow Phase 10
    slice, while exact-printing acquisition continues in parallel as validation
    rather than a universal prerequisite.
@@ -679,6 +684,7 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-03 | M0 correction external acceptance | Accepted — all five blockers resolved. The governing contract is stable, and W1/W9, W2, and W7 may begin in parallel at their recorded boundaries. | Reviewed commit `aad3691ee67106f6ff2cdb639463248ff35e3594`; handoff `20260803T164600Z-liturgy-browser-vision-corrections`; review result `20260803T171758Z-liturgy-browser-vision-corrections-review-result.md` |
 | 2026-08-03 | M1 — semantic parity contract external acceptance | Accepted — cycle alternatives are preserved, v1 property-presence validation is complete, the focused suite passed all 38 tests, and the deployed Day and Propers routes still load neither M1 module. The full gate remains red only at the separately approved example baseline and its authorized completion-count update. | Implementation `259573d393cd6a6bac09fc751ac1d14ec9477853`; reviewed correction `c6b8070ae76e75153448895a19a0b916c18806ea`; final micro-fix `c1a590f5854215d68d167d9040e188f41762663e`; handoffs `20260803T223346Z-liturgy-reader-state-contract` and `20260803T235342Z-liturgy-reader-state-contract-corrections`; external review dispositions *M1 liturgy reader-state contract*, *M1 reader-state corrections*, and *M1 acceptance closeout count delta* |
 | 2026-08-04 | M2 candidate — responsive reader-shell prototype | Candidate pending external review. One internal noindex shell serves Day and Propers, reuses the Proper renderer and validated M1 fixtures, and tests persistent/reveal reachability, semantic Contents, coherent Study, representative mode shells, responsive sheets/rails, and print without production-route or liturgical-data integration. | This candidate commit; decision record `guidance/liturgy-reader-shell-prototype.md`; handoff `20260804T101952Z-liturgy-reader-shell-prototype` |
+| 2026-08-04 | M2 candidate external-review corrections | External review accepted persistent reachability and requested three bounded corrections. The corrected candidate removes complete-state diagnostic noise, directly proves every auxiliary surface has no internal horizontal overflow including at 200% text, renames temporary Study access to Details, and gives Study mode a nonmodal pinned wide-desktop rail while retaining a reversible mobile sheet. M2 remains pending correction re-review. | This correction commit; compact correction handoff recorded in the completion report |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).

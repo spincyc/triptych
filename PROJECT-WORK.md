@@ -203,6 +203,16 @@ remains one activation away at deep scroll while the shell occupies about
 58–59 CSS pixels and causes no measured layout shift. The immutable handoff is
 `20260804T101952Z-liturgy-reader-shell-prototype`.
 
+External review of commit `68becc59b396aca830c233b88ec74991563603d1`
+accepted that persistent-shell direction and the shared Day/Propers model, but
+requested three bounded corrections before M2 acceptance: remove internal
+diagnostic language from complete Read states, eliminate internal horizontal
+overflow and raw machine-shaped Study output, and distinguish temporary
+Details from a nonmodal wide-desktop Study presentation. Scroll-reveal remains
+prototype evidence, not a production preference. The corrected candidate is
+validated and ready for a compact immutable re-review handoff; that handoff
+does not itself accept M2.
+
 M2 remains pending external review and is not accepted merely because the
 prototype, commit, push, screenshots, or ZIP exist. Production Day and Propers
 sources, M1 semantics, current URLs, calendar and liturgical data, search,

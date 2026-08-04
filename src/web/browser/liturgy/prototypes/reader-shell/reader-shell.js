@@ -17,14 +17,14 @@
       date: '2026-08-02', bible: 'douay-rheims', orations: 'la', ordinaryLanguage: 'en',
       display: 'translation', ordinary: false,
       fixture: 'day-roman-1962-2026-08-02.json',
-      meta: '1962 Missal · universal calendar explicitly selected · Douay-Rheims · Latin orations'
+      meta: '1962 Roman Missal · Universal · Douay–Rheims · Latin orations'
     },
     'day-postconciliar': {
       entrance: 'day', mode: 'read', edition: 'postconciliar', mass: 'advent-1',
       date: '2026-11-29', bible: 'douay-rheims', orations: 'la', ordinaryLanguage: 'en',
       display: 'translation', ordinary: false, ordinaryOption: 'ep-i',
       fixture: 'day-postconciliar-2026-11-29.json',
-      meta: 'Postconciliar Missal · universal calendar explicitly selected · Douay-Rheims · Latin orations'
+      meta: 'Postconciliar Roman Missal · Universal · Douay–Rheims · Latin orations'
     },
     'day-missal': {
       entrance: 'day', mode: 'missal', edition: 'roman-1962', mass: 'pentecost-10',
@@ -135,6 +135,8 @@
     invoker: null,
     preservedY: 0,
     preservedLocation: null,
+    surfacePresentation: null,
+    pendingModeFocus: false,
     renderToken: 0,
     lastScrollY: 0,
     scrollTick: false,
@@ -315,12 +317,12 @@
 
   function selectionMeta(config) {
     if (config.synthetic) return config.meta;
-    const edition = config.edition === 'roman-1962' ? '1962 Missal' : 'Postconciliar Missal';
+    const edition = config.edition === 'roman-1962' ? '1962 Roman Missal' : 'Postconciliar Roman Missal';
     const bible = config.display === 'bilingual'
-      ? 'Douay-Rheims + Clementine Vulgate'
-      : config.bible === 'clementine-vulgate' ? 'Clementine Vulgate' : 'Douay-Rheims';
-    const parts = [edition, 'universal calendar explicitly selected', bible,
-      (config.orations === 'en' ? 'English where held' : 'Latin') + ' orations'];
+      ? 'Douay–Rheims + Clementine Vulgate'
+      : config.bible === 'clementine-vulgate' ? 'Clementine Vulgate' : 'Douay–Rheims';
+    const parts = [edition, 'Universal', bible,
+      (config.orations === 'en' ? 'English where available' : 'Latin') + ' orations'];
     if (config.ordinary) parts.push('Ordinary enabled · ' + (config.ordinaryLanguage === 'la' ? 'Latin' : 'English'));
     if (config.edition === 'postconciliar' && config.ordinaryOption) {
       parts.push('representative ' + config.ordinaryOption.toUpperCase().replace('-', ' '));
@@ -343,15 +345,19 @@
     meta.textContent = selectionMeta(config);
     const rows = selectedCoverage(fixture);
     const partial = config.partial || rows.some((row) => row.state !== 'supported' || row.completeness === 'partial');
-    coverage.hidden = false;
-    coverage.textContent = config.synthetic
-      ? 'Prototype-only contract material: no liturgical text or historical claim is supplied by this fixture.'
-      : runtime.fixture && !runtime.fixtureTrusted
-        ? 'Apparatus notice · the bound M1 fixture does not match the current ' +
-          runtime.fixtureMismatch.join(', ') + '; its provenance is suppressed.'
-      : partial
-        ? 'Coverage is intentionally partial or unavailable in this diagnostic state; each missing unit remains explicit below.'
-        : 'No blocking notices · the bound M1 state reports complete formulary coverage.';
+    coverage.hidden = true;
+    coverage.textContent = '';
+    if (config.synthetic) {
+      coverage.hidden = false;
+      coverage.textContent = 'Prototype-only layout material: no liturgical text or historical claim is supplied by this state.';
+    } else if (runtime.fixture && !runtime.fixtureTrusted) {
+      coverage.hidden = false;
+      coverage.textContent = 'Selection details are unavailable because the contextual record does not match the current ' +
+        runtime.fixtureMismatch.join(', ') + '. The displayed text remains identified; mismatched provenance is not shown.';
+    } else if (partial) {
+      coverage.hidden = false;
+      coverage.textContent = 'Coverage is partial or unavailable for this selection. Missing text remains identified below.';
+    }
     document.title = title.textContent + ' · Reader shell prototype · Triptych';
   }
 
@@ -359,10 +365,9 @@
     if (runtime.mode === 'read') return null;
     const messages = {
       missal: 'Missal shell preview: the current real Propers are retained. The prototype-only outline tests depth and reachability; W3 owns continuous Ordinary integration.',
-      study: 'Study shell preview: the liturgical text remains unchanged. Open Study for fixture-backed and explicitly unavailable apparatus fields.',
       compare: 'Compare shell preview: W2 tests layout only. No unit is semantically matched and no historical change is inferred.'
     };
-    return node('p', 'mode-boundary', messages[runtime.mode]);
+    return messages[runtime.mode] ? node('p', 'mode-boundary', messages[runtime.mode]) : null;
   }
 
   function ordinaryOutline() {
@@ -628,8 +633,10 @@
   function updateCurrentLocation() {
     const current = locationAtViewport();
     if (!current) return;
+    const changed = runtime.currentLocation !== current.dataset.semanticLocation;
     runtime.currentLocation = current.dataset.semanticLocation;
     markCurrentButton();
+    if (changed && runtime.openSurface === 'study' && runtime.surfacePresentation === 'pinned') populateStudy();
   }
 
   function announce(message) {
@@ -721,12 +728,12 @@
   function configurationFields(config) {
     const fragment = document.createDocumentFragment();
     const locality = node('select');
-    addOption(locality, 'universal', 'Universal · explicitly selected');
+    addOption(locality, 'universal', 'Universal');
     locality.disabled = true;
     fragment.appendChild(field('Locality', locality));
 
     const bible = node('select');
-    addOption(bible, 'douay-rheims', 'Douay-Rheims (Challoner)');
+    addOption(bible, 'douay-rheims', 'Douay–Rheims');
     addOption(bible, 'clementine-vulgate', 'Clementine Vulgate');
     bible.value = config.bible || 'douay-rheims';
     bible.addEventListener('change', () => {
@@ -741,7 +748,7 @@
     const display = node('select');
     addOption(display, 'translation', 'Translation');
     addOption(display, 'original', 'Original');
-    addOption(display, 'bilingual', 'Original + translation');
+    addOption(display, 'bilingual', 'Bilingual');
     display.value = config.display || 'translation';
     display.addEventListener('change', () => {
       replaceQuery({
@@ -764,7 +771,7 @@
 
     const ordinary = node('select');
     addOption(ordinary, 'off', 'Closed');
-    addOption(ordinary, 'on', 'Open · shell preview');
+    addOption(ordinary, 'on', 'Open');
     ordinary.value = config.ordinary ? 'on' : 'off';
     ordinary.addEventListener('change', () => {
       replaceQuery({ ordinary: ordinary.value }, true);
@@ -774,7 +781,7 @@
 
     const ordinaryLanguage = node('select');
     addOption(ordinaryLanguage, 'en', 'English');
-    addOption(ordinaryLanguage, 'la', 'Latin where held');
+    addOption(ordinaryLanguage, 'la', 'Latin if available');
     ordinaryLanguage.value = config.ordinaryLanguage || 'en';
     ordinaryLanguage.addEventListener('change', () => {
       replaceQuery({ ordinaryLanguage: ordinaryLanguage.value }, true);
@@ -784,13 +791,13 @@
 
     if (config.edition === 'postconciliar') {
       const option = node('select');
-      ['ep-i', 'ep-ii', 'ep-iii', 'ep-iv'].forEach((value, index) => addOption(option, value, 'Eucharistic Prayer ' + ['I', 'II', 'III', 'IV'][index]));
+      ['ep-i', 'ep-ii', 'ep-iii', 'ep-iv'].forEach((value, index) => addOption(option, value, ['I', 'II', 'III', 'IV'][index]));
       option.value = config.ordinaryOption || 'ep-i';
       option.addEventListener('change', () => {
         replaceQuery({ ordinaryOption: option.value }, true);
         renderFromUrl({ preserveLocation: true });
       });
-      fragment.appendChild(field('Legitimate option', option));
+      fragment.appendChild(field('Eucharistic Prayer', option));
     }
     return fragment;
   }
@@ -851,6 +858,56 @@
     return section;
   }
 
+  function readableValue(value) {
+    if (value === null || value === undefined || value === '') return 'Not supplied';
+    if (value === 'roman-1962') return '1962 Roman';
+    return String(value).replace(/:/g, ': ').replace(/[-_]+/g, ' ')
+      .replace(/\s+/g, ' ').replace(/^./, (letter) => letter.toUpperCase());
+  }
+
+  function definitionList(pairs, className) {
+    const list = node('dl', className || null);
+    pairs.forEach((pair) => {
+      const term = node('dt', null, pair[0]);
+      const description = node('dd');
+      if (pair[1] instanceof Node) description.appendChild(pair[1]);
+      else description.textContent = pair[1];
+      if (pair[2]) Object.keys(pair[2]).forEach((key) => { description.dataset[key] = pair[2][key]; });
+      list.append(term, description);
+    });
+    return list;
+  }
+
+  function calendarOutcome(outcome) {
+    if (!outcome) return 'Not applicable or not supplied by this fixture.';
+    return definitionList([
+      ['Calendar', readableValue(outcome.calendar), { value: outcome.calendar }],
+      ['Date', titleDate(outcome.date), { value: outcome.date }],
+      ['Outcome', readableValue(outcome.winner), { value: outcome.winner }],
+      ['Season', readableValue(outcome.season), { value: outcome.season }],
+      ['Locality', outcome.territory ? readableValue(outcome.territory) : 'Universal', { value: outcome.territory || 'universal' }],
+      ['Status', outcome.settled ? 'Settled' : 'Unresolved', { value: String(outcome.settled) }]
+    ], 'apparatus-fields');
+  }
+
+  function coverageList(rows) {
+    if (!rows.length) return node('p', null, 'No coverage record is supplied for this state.');
+    const list = node('ul', 'coverage-list');
+    rows.forEach((row) => {
+      const item = node('li');
+      item.dataset.state = row.state;
+      item.dataset.scope = row.scope;
+      item.dataset.completeness = row.completeness;
+      item.appendChild(node('strong', null, readableValue(row.completeness)));
+      item.appendChild(document.createTextNode(' · ' + readableValue(row.state) + ' · ' + readableValue(row.scope)));
+      if (row.reasons && row.reasons.length) {
+        item.appendChild(document.createTextNode(' · ' + row.reasons.map(readableValue).join('; ')));
+      }
+      list.appendChild(item);
+    });
+    return list;
+  }
+
   function populateStudy() {
     T.clear(studyContent);
     const event = fixtureEventForLocation();
@@ -858,7 +915,13 @@
     const selected = event && event.selected;
     const hookList = node('ul');
     const hooks = event && event.sourceHooks ? event.sourceHooks : [];
-    if (hooks.length) hooks.forEach((hook) => hookList.appendChild(node('li', null, hook.kind + ': ' + hook.id)));
+    if (hooks.length) hooks.forEach((hook) => {
+      const item = node('li');
+      item.dataset.kind = hook.kind;
+      item.dataset.sourceId = hook.id;
+      item.append(node('strong', null, readableValue(hook.kind) + ': '), node('span', 'source-identifier', hook.id));
+      hookList.appendChild(item);
+    });
     else hookList.appendChild(node('li', null, 'No claim-local source hook is present in this prototype fixture.'));
 
     const outcome = fixture && fixture.expected ? fixture.expected.calendarResult : null;
@@ -866,35 +929,31 @@
       studyContent.appendChild(apparatusSection('Apparatus boundary',
         runtime.config.partial
           ? 'Prototype-only typed coverage: unavailable · requested-day · unsupported-date. No M1 source hook is attached.'
-          : 'The bound M1 apparatus is not applied because the current shell selection differs in ' +
+          : 'The contextual apparatus is not applied because the current shell selection differs in ' +
             runtime.fixtureMismatch.join(', ') + '. The displayed text remains available, but no mismatched provenance is shown.'));
     }
     studyContent.appendChild(apparatusSection('Why here?',
       runtime.config.entrance === 'day' && runtime.fixtureTrusted
-        ? 'The prototype uses the selected production-backed M1 state where one exists. Full calendar reasoning remains in the production Day apparatus and is not re-derived here.'
+        ? 'The prototype uses the selected production-backed calendar state where one exists. Full calendar reasoning remains in the production Day apparatus and is not re-derived here.'
         : runtime.config.entrance === 'propers'
           ? 'This formulary was opened directly and remains calendar-independent; no civil date was invented.'
           : 'No fixture-backed “Why here?” claim is available for this requested state.'));
     studyContent.appendChild(apparatusSection('Rubrics',
       'Rubric access is represented as one part of Study. W2 does not copy or expand the current rubric record into a second apparatus.'));
-    studyContent.appendChild(apparatusSection('Calendar outcome',
-      outcome ? JSON.stringify(outcome) : 'Not applicable or not supplied by this fixture.'));
+    studyContent.appendChild(apparatusSection('Calendar outcome', calendarOutcome(outcome)));
     studyContent.appendChild(apparatusSection('Rank and precedence',
       'Not supplied by the selected fixture at this semantic location; the prototype leaves the field explicit instead of inventing a value.'));
     studyContent.appendChild(apparatusSection('Commemorations and displaced celebrations',
       'None is asserted by this shell prototype. A later shared Study model must carry any actual dispositions from the calendar result.'));
     studyContent.appendChild(apparatusSection('Sources and provenance', hookList));
 
-    const availability = node('dl');
-    const pairs = [
-      ['Selection', selected ? selected.kind + ' · ' + selected.availability : 'No selected material in this layout fixture'],
-      ['Rights', selected && selected.rights ? selected.rights : 'No additional rights value supplied here'],
-      ['Coverage', selectedCoverage(fixture).length ? JSON.stringify(selectedCoverage(fixture)) : 'No fixture coverage row']
-    ];
-    pairs.forEach((pair) => {
-      availability.append(node('dt', null, pair[0]), node('dd', null, pair[1]));
-    });
+    const availability = definitionList([
+      ['Selection', selected ? readableValue(selected.kind) + ' · ' + readableValue(selected.availability) : 'No selected material in this layout fixture'],
+      ['Rights', selected && selected.rights ? readableValue(selected.rights) : 'No additional rights value supplied here']
+    ], 'apparatus-fields');
+    const coverageValues = coverageList(selectedCoverage(fixture));
     studyContent.appendChild(apparatusSection('Rights, availability, and typed coverage', availability));
+    studyContent.lastElementChild.appendChild(coverageValues);
 
     const history = node('p');
     history.appendChild(document.createTextNode('Historical-change links remain in '));
@@ -920,13 +979,35 @@
     if (!runtime.openSurface) return;
     const held = surfaces[runtime.openSurface];
     if (held.open) held.close();
+    held.classList.remove('is-pinned-study');
     const button = surfaceButton(runtime.openSurface);
     if (button) button.setAttribute('aria-expanded', 'false');
     runtime.openSurface = null;
+    runtime.surfacePresentation = null;
+  }
+
+  function pinnedStudyAvailable() {
+    return runtime.mode === 'study' && window.matchMedia('(min-width: 72rem)').matches;
+  }
+
+  function syncStudyPresentation() {
+    if (runtime.openSurface !== 'study' || runtime.mode !== 'study') return;
+    const expected = pinnedStudyAvailable() ? 'pinned' : 'modal';
+    if (runtime.surfacePresentation === expected) return;
+    const invoker = runtime.invoker || surfaceButton('study');
+    const location = runtime.currentLocation;
+    closeSurface({ restoreScroll: false, restoreFocus: false });
+    runtime.currentLocation = location;
+    openSurface('study', invoker);
   }
 
   function openSurface(name, invoker) {
     if (!own(surfaces, name)) return;
+    if (runtime.openSurface === name && runtime.surfacePresentation === 'pinned') {
+      const first = surfaces[name].querySelector('[data-close], button, input, select, a[href]');
+      if (first) first.focus({ preventScroll: true });
+      return;
+    }
     closeOtherSurface();
     runtime.preservedY = window.scrollY;
     runtime.preservedLocation = runtime.currentLocation;
@@ -935,10 +1016,16 @@
     if (name === 'study') populateStudy();
     if (name === 'contents') updateCurrentLocation();
     const dialog = surfaces[name];
+    const pinned = name === 'study' && pinnedStudyAvailable();
     runtime.openSurface = name;
+    runtime.surfacePresentation = pinned ? 'pinned' : 'modal';
     const button = surfaceButton(name);
     if (button) button.setAttribute('aria-expanded', 'true');
-    dialog.showModal();
+    dialog.classList.toggle('is-pinned-study', pinned);
+    const studyTitle = document.getElementById('study-surface-title');
+    if (name === 'study') studyTitle.textContent = pinned ? 'Study apparatus' : 'Details';
+    if (pinned) dialog.show();
+    else dialog.showModal();
     const first = dialog.querySelector('[data-close], button, input, select, a[href]');
     if (first) first.focus({ preventScroll: true });
   }
@@ -951,12 +1038,15 @@
     const invoker = runtime.invoker;
     const y = runtime.preservedY;
     const semantic = runtime.preservedLocation;
+    const presentation = runtime.surfacePresentation;
     runtime.openSurface = null;
     runtime.invoker = null;
+    runtime.surfacePresentation = null;
     if (dialog.open) dialog.close();
+    dialog.classList.remove('is-pinned-study');
     const button = surfaceButton(name);
     if (button) button.setAttribute('aria-expanded', 'false');
-    if (held.restoreScroll !== false) {
+    if (held.restoreScroll !== false && presentation !== 'pinned') {
       window.scrollTo({ top: y, behavior: 'auto' });
       runtime.currentLocation = semantic;
       markCurrentButton();
@@ -967,6 +1057,7 @@
   function handleMode(mode) {
     const location = runtime.currentLocation;
     closeSurface({ restoreScroll: false, restoreFocus: false });
+    runtime.pendingModeFocus = true;
     if (mode === 'compare') {
       setState(runtime.config.entrance === 'day' ? 'compare-day' : 'compare');
       return;
@@ -1034,6 +1125,7 @@
     }
     error.hidden = true;
     const previousLocation = held.location || (held.preserveLocation ? runtime.currentLocation : null);
+    closeOtherSurface();
     runtime.stateName = parsed.stateName;
     runtime.config = parsed.config;
     runtime.shell = parsed.shell;
@@ -1074,9 +1166,14 @@
       performance.mark('reader-shell-ready');
       window.readerShellReady = true;
       window.readerShellMetrics = collectMetrics();
-      if (parsed.config.initialSurface && !runtime.openSurface) {
-        requestAnimationFrame(() => openSurface(parsed.config.initialSurface, surfaceButton(parsed.config.initialSurface)));
+      const initialSurface = runtime.mode === 'study' ? 'study' : parsed.config.initialSurface;
+      if (initialSurface && !runtime.openSurface) {
+        requestAnimationFrame(() => openSurface(initialSurface, surfaceButton(initialSurface)));
+      } else if (runtime.pendingModeFocus) {
+        const modeAction = surfaceButton('mode');
+        if (modeAction) modeAction.focus({ preventScroll: true });
       }
+      runtime.pendingModeFocus = false;
     } catch (caught) {
       if (token !== runtime.renderToken) return;
       reading.setAttribute('aria-busy', 'false');
@@ -1165,6 +1262,7 @@
   revealButton.addEventListener('click', () => revealShell(true));
   updateViewportScrollbar();
   window.addEventListener('resize', updateViewportScrollbar);
+  window.addEventListener('resize', syncStudyPresentation);
   if ('ResizeObserver' in window) new ResizeObserver(updateViewportScrollbar).observe(document.documentElement);
   document.addEventListener('focusin', () => {
     if (runtime.shell === 'reveal' && (actions.contains(document.activeElement) || revealButton === document.activeElement)) {
@@ -1191,6 +1289,7 @@
         shell: runtime.shell,
         location: runtime.currentLocation,
         surface: runtime.openSurface,
+        surfacePresentation: runtime.surfacePresentation,
         fixtureTrusted: runtime.fixtureTrusted,
         fixtureMismatch: runtime.fixtureMismatch.slice(),
         selections: runtime.config ? {

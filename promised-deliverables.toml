@@ -96,6 +96,16 @@ state = "candidate"
     "guidance/liturgy-reader-shell-prototype.md",
   ]
 
+  [[deliverables.requirements]]
+  id = "external-review-corrections"
+  criterion = "External review's three bounded M2 blockers are resolved and validated for a compact immutable correction handoff without marking M2 accepted or changing production routes, M1 semantics, liturgical data, or the persistent-shell recommendation."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/liturgy-reader-shell-prototype.md",
+    "tools/tests/liturgy_reader_shell_browser.mjs",
+  ]
+
 [[deliverables]]
 id = "project-gpt-deep-research-redevelopment-2026-07-29"
 owner = "src/gpt"

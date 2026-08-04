@@ -436,6 +436,41 @@ body.reader-prototype {
   color: var(--ink);
 }
 
+.aux-surface,
+.aux-surface *,
+.surface-head,
+.surface-head > div,
+.surface-body,
+.surface-fields,
+.surface-field,
+.date-steps,
+.browse-list,
+.mode-options,
+.study-panel section,
+.study-panel dl,
+.study-panel ul,
+.study-panel li,
+.study-panel dd {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.surface-kicker,
+.surface-head h2,
+.surface-field label,
+.surface-note,
+.browse-list button,
+.mode-options button,
+.study-panel,
+.study-panel a,
+.study-panel dd,
+.study-panel li,
+.source-identifier {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
 .aux-surface::backdrop {
   background: rgb(40 32 25 / 28%);
   backdrop-filter: blur(1px);
@@ -476,12 +511,13 @@ body.reader-prototype {
   max-height: calc(min(78vh, 50rem) - 5rem);
   padding: 1rem 1.1rem max(1.2rem, var(--safe-bottom));
   overflow-y: auto;
+  overflow-x: clip;
   overscroll-behavior: contain;
 }
 
 .surface-fields {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.85rem;
 }
 
@@ -507,6 +543,8 @@ body.reader-prototype {
 .date-steps button,
 .browse-list button {
   min-height: 2.75rem;
+  width: 100%;
+  min-width: 0;
   max-width: 100%;
   padding: 0.5rem 0.6rem;
   border: 1px solid var(--reader-rule);
@@ -527,7 +565,18 @@ body.reader-prototype {
 }
 
 .date-steps button,
-.browse-list button { cursor: pointer; }
+.browse-list button {
+  width: 100%;
+  min-width: 0;
+  cursor: pointer;
+  white-space: normal;
+}
+
+.browse-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem;
+}
 
 .surface-note {
   margin: 0.85rem 0 0;
@@ -623,12 +672,21 @@ body.reader-prototype {
 
 .study-panel dl {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: minmax(0, 7rem) minmax(0, 1fr);
   gap: 0.25rem 0.7rem;
 }
 
 .study-panel dt { color: var(--reader-red); }
 .study-panel dd { margin: 0; }
+
+.coverage-list {
+  padding-left: 1.1rem;
+}
+
+.source-identifier {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.82em;
+}
 
 @media (min-width: 72rem) {
   .aux-surface::backdrop {
@@ -643,6 +701,13 @@ body.reader-prototype {
     width: min(20rem, calc((100vw - 46rem) / 2 - 1rem));
     max-height: none;
     margin: 0;
+  }
+
+  .aux-surface.study-surface.is-pinned-study {
+    position: fixed;
+    z-index: 90;
+    border-color: color-mix(in srgb, var(--reader-rule) 80%, transparent);
+    box-shadow: 0 0.8rem 2.5rem rgb(55 43 29 / 10%);
   }
 
   .aux-surface.contents-surface {

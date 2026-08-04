@@ -55,8 +55,11 @@ class ReaderShellPrototypeTest(unittest.TestCase):
         self.assertEqual(self.html.count('id="reader-shell"'), 1)
         for action in ("entrance", "contents", "mode", "study"):
             self.assertIn(f'data-surface="{action}"', self.html)
-        for label in ("Date &amp; edition", "Contents", "Mode", "Study"):
+        for label in ("Date &amp; edition", "Contents", "Mode", "Details", "Study"):
             self.assertIn(label, self.html)
+        details_action = self.html.split('data-surface="study"', 1)[1].split("</button>", 1)[0]
+        self.assertIn("Details", details_action)
+        self.assertNotIn(">Study<", details_action)
         self.assertIn("config.entrance === 'day' ? 'Date & edition' : 'Browse & edition'", self.js)
         self.assertIn("'propers-formulary'", self.js)
         self.assertIn("'day-read'", self.js)
@@ -97,18 +100,40 @@ class ReaderShellPrototypeTest(unittest.TestCase):
         self.assertIn("Unsupported prototype state", self.js)
         self.assertIn("No fallback was selected", self.js)
         self.assertNotIn("navigator.geolocation", self.js)
-        self.assertIn("Universal · explicitly selected", self.js)
+        self.assertIn("addOption(locality, 'universal', 'Universal')", self.js)
         for key in ("config.bible", "config.orations", "config.mass", "config.edition"):
             self.assertIn(key, self.js)
 
     def test_focus_scroll_escape_and_single_modal_contract_is_present(self) -> None:
         self.assertIn("dialog.showModal()", self.js)
+        self.assertIn("dialog.show()", self.js)
+        self.assertIn("surfacePresentation", self.js)
+        self.assertIn("pinnedStudyAvailable", self.js)
         self.assertIn("closeOtherSurface()", self.js)
         self.assertIn("runtime.preservedY = window.scrollY", self.js)
         self.assertIn("window.scrollTo({ top: y, behavior: 'auto' })", self.js)
         self.assertIn("invoker.focus({ preventScroll: true })", self.js)
         self.assertIn("dialog.addEventListener('cancel'", self.js)
         self.assertIn("aria-expanded", self.html)
+
+    def test_complete_read_and_reader_facing_study_boundaries_are_explicit(self) -> None:
+        self.assertIn("coverage.hidden = true", self.js)
+        self.assertIn("coverage.textContent = ''", self.js)
+        self.assertNotIn("No blocking notices", self.js)
+        self.assertNotIn("bound M1 state", self.js)
+        self.assertIn("1962 Roman Missal", self.js)
+        self.assertIn("Coverage is partial or unavailable", self.js)
+        self.assertNotIn("JSON.stringify", self.js)
+        self.assertIn("calendarOutcome", self.js)
+        self.assertIn("coverageList", self.js)
+
+    def test_every_surface_has_explicit_shrink_and_wrapping_rules(self) -> None:
+        self.assertIn(".aux-surface *", self.css)
+        self.assertIn("overflow-wrap: anywhere", self.css)
+        self.assertIn("overflow-x: clip", self.css)
+        self.assertIn("grid-template-columns: minmax(0, 1fr)", self.css)
+        self.assertIn(".is-pinned-study", self.css)
+        self.assertIn("position: fixed", self.css)
 
     def test_contents_are_semantic_location_aware(self) -> None:
         self.assertIn("[data-semantic-location]", self.js)
