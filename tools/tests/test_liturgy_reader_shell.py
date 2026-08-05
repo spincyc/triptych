@@ -175,6 +175,8 @@ class ReaderShellPrototypeTest(unittest.TestCase):
                 ":(exclude)src/web/browser/liturgy/day-reader.*",
                 ":(exclude)src/web/browser/liturgy/reader-shell.*",
                 ":(exclude)src/web/browser/liturgy/propers-reader.*",
+                ":(exclude)src/web/browser/liturgy/reader-visual-reset.*",
+                ":(exclude)src/web/browser/liturgy/reader-visual-reset-*",
                 ":(exclude)src/web/browser/liturgy/day.js",
                 "src/web/browser/shared/browser-core.css",
             ],
