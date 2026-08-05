@@ -1,6 +1,57 @@
 schema_version = 1
 
 [[deliverables]]
+id = "liturgy-reader-visual-reset-candidate-2026-08-05"
+owner = "src/web/browser/liturgy/reader-visual-reset-day.html"
+promise = "Produce an unlinked, noindex high-fidelity visual-reset prototype for the Day and Propers entrances, presenting three genuinely distinct directions over the accepted shared state, shell behavior, production assembly, Ordinary seating, and Proper rendering boundaries without changing public routes, liturgical data, or deferred reader modes."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "three-shared-real-content-directions"
+  criterion = "Quiet Folio, Liturgical Instrument, and Contemporary Reader are materially distinct polished compositions over one shared semantic DOM and interaction foundation, using real Day Read/Missal and Propers production content."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/reader-visual-reset-day.html",
+    "src/web/browser/liturgy/reader-visual-reset-propers.html",
+    "src/web/browser/liturgy/reader-visual-reset.css",
+  ]
+
+  [[deliverables.requirements]]
+  id = "reader-interaction-and-responsive-quality"
+  criterion = "Date or Browse, Contents, Mode, and Details remain one action away; semantic location and focus survive interaction; and the shared visual shell passes keyboard, reflow, zoom, forced-colors, reduced-motion, overflow, and clean-network checks."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/reader-visual-reset.js",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "measured-visual-review-candidate"
+  criterion = "The three directions and one clearly justified recommendation have current same-viewport comparison captures, measured reading and shell evidence, and a compact immutable external-review handoff that permits any direction or none to be selected."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "production-isolation"
+  criterion = "Public Day and Propers routes, accepted reader candidates, state and renderer seams, public navigation, and production calendar, liturgical, source, and rights data remain unchanged."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_liturgy_reader_visual_reset.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-decision"
+  criterion = "Independent visual review chooses a production foundation or explicitly finds that none of the directions is sufficient; the candidate may not self-accept or authorize public cutover."
+  status = "open"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-day-missal-w3-candidate-2026-08-05"
 owner = "src/web/browser/liturgy/day-reader.html"
 promise = "Integrate an unlinked, noindex W3 Day Missal-mode candidate into the accepted shared production reader using the existing M1 Day state, calendar assembly, Ordinary rendering, seating, and Proper rendering paths without changing public routes, the accepted Propers candidate, production data, later modes, search, or recension coverage."

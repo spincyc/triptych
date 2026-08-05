@@ -172,10 +172,16 @@ class PublicAlphaTest(unittest.TestCase):
         """A shared preview is barely better than none, so each page states itself."""
         tool = load_tool()
         seen: dict[str, set[str]] = {"og:title": set(), "og:url": set()}
+        indexed = 0
         for output_relative, source in sorted(tool.web_browser_pages().items()):
             head = tool.render_browser_page(source, output_relative, False, {}).split(
                 "</head>"
             )[0]
+            if f'<meta name="robots" content="{tool.ROBOTS_DIRECTIVES}">' in head:
+                self.assertNotIn("og:url", head)
+                self.assertNotIn(tool.SITE_ORIGIN, head)
+                continue
+            indexed += 1
             properties = dict(tool.SOCIAL_PROPERTY_RE.findall(head))
             names = dict(tool.SOCIAL_NAME_RE.findall(head))
             for required in ("og:type", "og:site_name", "og:title", "og:description",
@@ -193,8 +199,8 @@ class PublicAlphaTest(unittest.TestCase):
             self.assertTrue(properties["og:image"].startswith("https://"))
             seen["og:title"].add(properties["og:title"])
             seen["og:url"].add(properties["og:url"])
-        self.assertEqual(len(seen["og:title"]), len(tool.web_browser_pages()))
-        self.assertEqual(len(seen["og:url"]), len(tool.web_browser_pages()))
+        self.assertEqual(len(seen["og:title"]), indexed)
+        self.assertEqual(len(seen["og:url"]), indexed)
 
     def test_link_preview_description_is_the_page_lede_not_a_second_copy(self) -> None:
         tool = load_tool()

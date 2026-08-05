@@ -179,6 +179,52 @@ operations.
 
 ## Promised work
 
+### Liturgy reader visual-reset direction candidate
+
+<!-- promised-deliverable: liturgy-reader-visual-reset-candidate-2026-08-05 -->
+
+**Candidate in progress; visual direction reopened by explicit maintainer
+decision.** The completed M1–M3 and W3 records remain authoritative for state,
+production assembly and rendering reuse, fail-closed behavior, focus and
+semantic-location restoration, responsive access, and render-race ownership.
+They were never a finding that the beige card, enlarged mobile-style command
+bar, improvised glyphs, typography, spacing, or desktop composition constituted
+a finished or world-class visual reader.
+
+This distinct visual-design work item will compare Quiet Folio, Liturgical
+Instrument, and Contemporary Reader over one shared semantic DOM and interaction
+foundation. It uses real production Day Read/Missal and Propers Read content at
+unlinked, noindex prototype routes, while preserving the accepted state,
+calendar, Ordinary seating, Proper rendering, source, and coverage boundaries.
+Its external review may select one direction, combine named strengths, or find
+that none is sufficient. The work does not reopen the completed Day Missal
+engineering deliverable, alter public Day or Propers, start Study/Compare/search,
+or authorize public cutover. No visual direction is accepted yet.
+
+The visual-reset candidate is now implemented and locally proven, with
+**Liturgical Instrument recommended for independent review**. Quiet Folio is
+the calmest editorial leaf; Liturgical Instrument adds an edition-neutral
+ritual cue grid, disciplined divisions, and a speaker/action gutter for actual
+following; Contemporary Reader supplies the most compact application chrome
+and polished title-led Propers Browse flow. All three are query-selected
+presentations over the same HTML, SVG icon set, shared shell controller, and
+accepted Day/Propers production adapters. The recommendation favors
+Instrument's continuous ritual legibility while retaining Folio's typographic
+restraint and Reader's Browse treatment as explicit comparison strengths; it
+is not a claim that any direction is accepted or world-class.
+
+The current evidence contains 52 same-run comparison captures at the required
+desktop, tablet, mobile, enlarged-text, forced-color, reduced-motion, keyboard,
+deep-scroll, surface, partial-coverage, and before/after states. Twelve focused
+Chromium assertions pass with no console, failed-request, HTTP, overflow, or
+unnamed-interactive-node result; a 26-page PDF is retained only as a print smoke
+check, not a print redesign. Exact hashes prove the public Day and Propers
+routes, both accepted candidates, shared shell, M1 state seams, production
+seating, and accepted adapters unchanged. The implementation is this candidate
+commit; its immutable visual-review handoff is created after the validated push
+and recorded in the completion report. External visual review and every public
+cutover decision remain open.
+
 ### Liturgy Day Missal-mode W3 integration accepted
 
 <!-- promised-deliverable: liturgy-day-missal-w3-candidate-2026-08-05 -->

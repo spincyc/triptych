@@ -306,7 +306,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         ]
         self.assertEqual(len(missal_rows), 1)
         self.assertEqual(missal_rows[0]["state"], "complete")
-        self.assertEqual(len(ledger["deliverables"]), 19)
+        self.assertEqual(len(ledger["deliverables"]), 20)
         self.assertEqual(
             sum(
                 row["state"] == "complete"

@@ -2423,6 +2423,7 @@ def wrap_in_layout(
     head_extra: str = "",
     body_extra: str = "",
     declared_description: str = "",
+    declared_robots: str = "",
 ) -> str:
     """Put one page's content inside the site's chrome.
 
@@ -2431,7 +2432,10 @@ def wrap_in_layout(
     metadata cannot differ between one page and the next.
     """
     template = (TEMPLATE_ROOT / "layout.html").read_text(encoding="utf-8")
-    if preview:
+    if declared_robots:
+        robots = f'<meta name="robots" content="{html.escape(declared_robots)}">'
+        banner = ""
+    elif preview:
         robots = f'<meta name="robots" content="{ROBOTS_DIRECTIVES}">'
         banner = (
             '<aside class="release-banner preview" aria-label="Edition status">'
@@ -2455,7 +2459,11 @@ def wrap_in_layout(
     # unadvertised copy is deliberately not; such a copy would otherwise hand a
     # reader the public page it was built to stand apart from.
     social = f'\n  <meta name="description" content="{html.escape(description)}">'
-    if not preview and not requires_unadvertised_controls(authorization):
+    if (
+        not preview
+        and not requires_unadvertised_controls(authorization)
+        and not declared_robots
+    ):
         social += social_meta(output_relative, title, description)
     home_current, about_current, feedback_current = navigation_state(source_relative)
     replacements = {
@@ -2505,12 +2513,14 @@ BROWSER_HEAD_ALLOWED_RE = re.compile(
       | <meta\ charset="utf-8">
       | <meta\ name="viewport"\ content="[^"]*">
       | <meta\ name="description"\ content="[^"]*">
+      | <meta\ name="robots"\ content="[^"]*">
       | <title>.*?</title>
       | <link\ rel="stylesheet"\ href="[^"]+">
     )\s*""",
     re.DOTALL | re.VERBOSE,
 )
 BROWSER_DESCRIPTION_RE = re.compile(r'<meta name="description" content="([^"]*)">')
+BROWSER_ROBOTS_RE = re.compile(r'<meta name="robots" content="([^"]*)">')
 
 
 def browser_page_parts(source_path: Path, output_relative: str) -> dict:
@@ -2533,7 +2543,7 @@ def browser_page_parts(source_path: Path, output_relative: str) -> dict:
     if BROWSER_HEAD_ALLOWED_RE.sub("", head).strip():
         raise ReleaseError(
             f"{label}: head carries markup the site layout has no place for; "
-            "the layout owns charset, viewport, title, robots and the site stylesheet"
+            "the layout owns charset, viewport, title and the site stylesheet"
         )
     stylesheets = BROWSER_STYLESHEET_RE.findall(head)
     if not stylesheets:
@@ -2557,9 +2567,15 @@ def browser_page_parts(source_path: Path, output_relative: str) -> dict:
     # described by, so it may declare its own description instead. A page that
     # opens with a real lede must not: the two would drift.
     declared = BROWSER_DESCRIPTION_RE.search(head)
+    declared_robots = BROWSER_ROBOTS_RE.search(head)
+    if declared_robots and declared_robots.group(1) != ROBOTS_DIRECTIVES:
+        raise ReleaseError(
+            f"{label}: browser-page robots must be the repository no-index directive"
+        )
     return {
         "title": title_match.group(1).strip(),
         "declared_description": html.unescape(declared.group(1)) if declared else "",
+        "declared_robots": declared_robots.group(1) if declared_robots else "",
         "head_extra": "".join(f"\n  {link}" for link in stylesheets),
         "body_extra": "".join(f"\n  {script}" for script in scripts),
         "content": content.strip("\n"),
@@ -2625,6 +2641,7 @@ def render_browser_page(
         head_extra=parts["head_extra"],
         body_extra=parts["body_extra"],
         declared_description=parts["declared_description"],
+        declared_robots=parts["declared_robots"],
     )
 
 
@@ -3294,7 +3311,10 @@ def verify_link_previews(output: Path, preview: bool, authorization: dict) -> li
             errors.append(f"{relative}: no description metadata")
         if 'rel="apple-touch-icon"' not in page:
             errors.append(f"{relative}: no apple-touch-icon for the preview's icon")
-        if not advertised:
+        page_advertised = advertised and (
+            f'<meta name="robots" content="{ROBOTS_DIRECTIVES}">' not in page
+        )
+        if not page_advertised:
             # A no-index copy deliberately carries no absolute public URLs.
             if SOCIAL_PROPERTY_RE.search(page):
                 errors.append(f"{relative}: a no-index artifact must not advertise the public site")
