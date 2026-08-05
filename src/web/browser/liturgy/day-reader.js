@@ -1173,6 +1173,8 @@
     }
     if (optionTarget) {
       optionTarget.focus({ preventScroll: true });
+      const optionGroup = optionTarget.closest('[data-option-group]');
+      (optionGroup || optionTarget).scrollIntoView({ block: 'start', behavior: 'auto' });
     } else if (held.modeFocus) {
       modeAction.focus({ preventScroll: true });
     }

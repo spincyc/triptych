@@ -249,6 +249,11 @@ const STATES = Object.freeze({
   slowYear: hash({ date: '2027-08-01', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' })
 });
 
+const DUPLICATE_ORDINARY_STATES = Object.freeze({
+  readThenMissal: STATES.roman + '&ordinary=0&ordinary=1',
+  missalThenRead: STATES.roman + '&ordinary=1&ordinary=0'
+});
+
 function candidateUrl(base, state = STATES.roman, nonce = null) {
   const review = nonce === null ? '' : `&review-document=${encodeURIComponent(nonce)}`;
   return `${base}${ROUTE}?data=${DATA}${review}${state}`;
@@ -269,9 +274,98 @@ function builtCurrentUrl(base, state = STATES.roman, nonce = null) {
   return `${base}/build/public-alpha/preview/liturgy/day.html${review}${state}`;
 }
 
-async function postRenderFrames(cdp) {
-  await evaluate(cdp,
-    'new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
+async function waitForVisualSettlement(cdp, options = {}) {
+  const config = {
+    semanticEventId: options.semanticEventId || null,
+    focus: options.focus || null,
+    requireTargetInViewport: Boolean(options.semanticEventId),
+    requireFocusInViewport: Boolean(options.focus),
+    requiredStableFrames: options.requiredStableFrames || 5,
+    tolerance: options.tolerance ?? 1,
+    timeoutMs: options.timeoutMs || 8000
+  };
+  const result = await evaluate(cdp, `(async () => {
+    const config = ${JSON.stringify(config)};
+    const started = performance.now();
+    let previous = null;
+    let stableFrames = 0;
+    let sampledFrames = 0;
+    let last = null;
+    function rectangle(element) {
+      if (!element) return null;
+      const box = element.getBoundingClientRect();
+      return { top: box.top, right: box.right, bottom: box.bottom, left: box.left,
+        width: box.width, height: box.height };
+    }
+    function intersects(rect) {
+      if (!rect) return false;
+      const width = Math.max(0, Math.min(rect.right, innerWidth) - Math.max(rect.left, 0));
+      const height = Math.max(0, Math.min(rect.bottom, innerHeight) - Math.max(rect.top, 0));
+      return width >= Math.min(12, Math.max(1, rect.width)) &&
+        height >= Math.min(12, Math.max(1, rect.height));
+    }
+    function near(a, b) {
+      if (a === null || b === null) return a === b;
+      return ['top', 'right', 'bottom', 'left', 'width', 'height']
+        .every(key => Math.abs(a[key] - b[key]) <= config.tolerance);
+    }
+    function sample() {
+      const target = config.semanticEventId ?
+        [...document.querySelectorAll('[data-semantic-event-id]')]
+          .find(row => row.dataset.semanticEventId === config.semanticEventId) || null : null;
+      const active = document.activeElement;
+      const fieldset = active && active.closest ? active.closest('[data-option-group]') : null;
+      const targetRect = rectangle(target);
+      const activeRect = rectangle(active);
+      const focusMatches = !config.focus || Boolean(active && active.type === 'radio' &&
+        active.checked && active.value === config.focus.option && fieldset &&
+        fieldset.dataset.optionGroup === config.focus.group &&
+        fieldset.querySelector('legend')?.textContent.trim() === config.focus.legend);
+      return {
+        scrollY,
+        targetFound: !config.semanticEventId || Boolean(target),
+        targetRect,
+        targetIntersectsViewport: !config.semanticEventId || intersects(targetRect),
+        activeElement: {
+          tag: active?.tagName || null,
+          type: active?.type || null,
+          value: active?.value || null,
+          checked: typeof active?.checked === 'boolean' ? active.checked : null,
+          optionGroup: fieldset?.dataset.optionGroup || null,
+          legend: fieldset?.querySelector('legend')?.textContent.trim() || null
+        },
+        activeElementRect: activeRect,
+        activeElementIntersectsViewport: !config.focus || intersects(activeRect),
+        focusMatches,
+        pendingNavigation: window.dayReaderDebug?.pendingNavigation ?? null
+      };
+    }
+    while (performance.now() - started <= config.timeoutMs) {
+      await new Promise(resolve => requestAnimationFrame(resolve));
+      sampledFrames += 1;
+      last = sample();
+      const stable = previous && Math.abs(last.scrollY - previous.scrollY) <= config.tolerance &&
+        near(last.targetRect, previous.targetRect) && near(last.activeElementRect, previous.activeElementRect);
+      const valid = last.targetFound && last.focusMatches &&
+        (!config.requireTargetInViewport || last.targetIntersectsViewport) &&
+        (!config.requireFocusInViewport || last.activeElementIntersectsViewport) &&
+        last.pendingNavigation === null;
+      stableFrames = stable && valid ? stableFrames + 1 : (valid ? 1 : 0);
+      if (stableFrames >= config.requiredStableFrames) {
+        return { ...last, settled: true, stableFramesObserved: stableFrames,
+          sampledFrames, tolerance: config.tolerance, requiredStableFrames: config.requiredStableFrames,
+          elapsedMs: performance.now() - started, expectedSemanticEventId: config.semanticEventId };
+      }
+      previous = last;
+    }
+    return { ...last, settled: false, stableFramesObserved: stableFrames,
+      sampledFrames, tolerance: config.tolerance, requiredStableFrames: config.requiredStableFrames,
+      elapsedMs: performance.now() - started, expectedSemanticEventId: config.semanticEventId };
+  })()`);
+  if (!result.settled) {
+    throw new Error('Visual settlement timed out: ' + JSON.stringify(result));
+  }
+  return result;
 }
 
 async function scheduleTopFrameNavigation(cdp, target, label) {
@@ -304,12 +398,13 @@ async function navigateFreshDocument(cdp, target, label) {
       `window.dayReaderDebug.committedRender.generation === window.dayReaderDebug.renders && ` +
       `window.dayReaderDebug.committedRender.href === ${JSON.stringify(target)}`,
     label + ' committed document render');
-  await postRenderFrames(cdp);
+  const settlement = await waitForVisualSettlement(cdp);
   currentDocumentToken = await evaluate(cdp, 'dayReaderDebug.documentToken');
   return {
     path: 'fresh-document', target,
     documentToken: currentDocumentToken,
-    generation: await evaluate(cdp, 'dayReaderDebug.committedRender.generation')
+    generation: await evaluate(cdp, 'dayReaderDebug.committedRender.generation'),
+    settlement
   };
 }
 
@@ -337,7 +432,7 @@ async function beginGatedCandidate(cdp, base, state, matches, label) {
   }
 }
 
-async function transitionHash(cdp, state) {
+async function transitionHash(cdp, state, settlementOptions = {}) {
   const before = await evaluate(cdp, 'window.dayReaderDebug.renders');
   const documentToken = await evaluate(cdp, 'window.dayReaderDebug.documentToken');
   await evaluate(cdp, `location.hash = ${JSON.stringify(state.replace(/^#/, ''))}`);
@@ -350,15 +445,16 @@ async function transitionHash(cdp, state) {
       `window.dayReaderDebug.committedRender.hash === ${JSON.stringify(state)} && ` +
       `window.dayReaderDebug.committedRender.href === location.href`,
     'candidate hash transition');
-  await postRenderFrames(cdp);
+  const settlement = await waitForVisualSettlement(cdp, settlementOptions);
   return {
     path: 'same-document', target: await evaluate(cdp, 'location.href'),
     documentToken,
-    generation: await evaluate(cdp, 'dayReaderDebug.committedRender.generation')
+    generation: await evaluate(cdp, 'dayReaderDebug.committedRender.generation'),
+    settlement
   };
 }
 
-async function historyMove(cdp, direction, expected) {
+async function historyMove(cdp, direction, expected, settlementOptions = {}) {
   const before = await evaluate(cdp, 'window.dayReaderDebug.renders');
   const documentToken = await evaluate(cdp, 'window.dayReaderDebug.documentToken');
   await evaluate(cdp, `history.${direction}()`);
@@ -371,7 +467,7 @@ async function historyMove(cdp, direction, expected) {
       `window.dayReaderDebug.committedRender.hash === ${JSON.stringify(expected)} && ` +
       `window.dayReaderDebug.committedRender.href === location.href`,
     `history ${direction}`);
-  await postRenderFrames(cdp);
+  return waitForVisualSettlement(cdp, settlementOptions);
 }
 
 async function settleResponseGate(cdp, gate) {
@@ -381,8 +477,7 @@ async function settleResponseGate(cdp, gate) {
   await waitFor(cdp,
     `performance.getEntriesByType('resource').some(row => row.name.endsWith(${JSON.stringify(suffix)}))`,
     'released gated response');
-  await evaluate(cdp,
-    'new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
+  await waitForVisualSettlement(cdp);
 }
 
 async function candidateOutcomeSnapshot(cdp) {
@@ -444,6 +539,8 @@ async function modeOutcomeSnapshot(cdp) {
     outcome: dayReaderDebug.outcome,
     outcomeClass: dayReaderDebug.outcomeClass,
     mode: dayReaderDebug.mode,
+    state: dayReaderDebug.state,
+    semantic: dayReaderDebug.semantic,
     pending: dayReaderDebug.pendingNavigation,
     committed: dayReaderDebug.committedRender,
     active: {
@@ -482,7 +579,8 @@ async function navigateCurrent(cdp, base, state = STATES.roman) {
       banner: document.querySelector('#banner')?.innerText || null })`);
     throw new Error(`${error.message}; current-route snapshot: ${JSON.stringify(snapshot)}`);
   }
-  await postRenderFrames(cdp);
+  const settlement = await waitForVisualSettlement(cdp);
+  return { path: 'fresh-document', target, documentToken: null, generation: null, settlement };
 }
 
 async function navigateBuiltCandidate(cdp, base, state = STATES.roman) {
@@ -502,7 +600,8 @@ async function navigateBuiltCurrent(cdp, base, state = STATES.roman) {
       `document.querySelector('#reading[aria-busy="false"]') && ` +
       `document.querySelector('#celebration-title').textContent !== 'Loading the Mass…'`,
     'built current Day route');
-  await postRenderFrames(cdp);
+  const settlement = await waitForVisualSettlement(cdp);
+  return { path: 'fresh-document', target, documentToken: null, generation: null, settlement };
 }
 
 async function click(cdp, selector) {
@@ -533,7 +632,7 @@ async function pressSpace(cdp) {
   });
 }
 
-async function waitForCommittedRender(cdp, before, expectedHash, label) {
+async function waitForCommittedRender(cdp, before, expectedHash, label, settlementOptions = {}) {
   const documentToken = await evaluate(cdp, 'window.dayReaderDebug.documentToken');
   await waitFor(cdp,
     `location.hash === ${JSON.stringify(expectedHash)} && window.dayReaderReady === true && ` +
@@ -544,7 +643,7 @@ async function waitForCommittedRender(cdp, before, expectedHash, label) {
       `window.dayReaderDebug.committedRender.hash === ${JSON.stringify(expectedHash)} && ` +
       `window.dayReaderDebug.committedRender.href === location.href`,
     label);
-  await postRenderFrames(cdp);
+  return waitForVisualSettlement(cdp, settlementOptions);
 }
 
 function updatedHash(state, key, value) {
@@ -615,10 +714,27 @@ async function metrics(cdp) {
   })()`);
 }
 
-async function captureEvidence(cdp, file, state, navigationPath) {
-  return evaluate(cdp, `(() => {
+async function captureEvidence(cdp, file, state, navigationPath, evidenceOptions = {}) {
+  const expectedSemanticEventId = evidenceOptions.expectedSemanticEventId || null;
+  const page = await evaluate(cdp, `(() => {
     const debug = window.dayReaderDebug || null;
     const active = document.activeElement;
+    const activeFieldset = active?.closest?.('[data-option-group]') || null;
+    const semanticTarget = ${JSON.stringify(expectedSemanticEventId)} ?
+      [...document.querySelectorAll('[data-semantic-event-id]')].find(row =>
+        row.dataset.semanticEventId === ${JSON.stringify(expectedSemanticEventId)}) || null : null;
+    function rectangle(element) {
+      if (!element) return null;
+      const box = element.getBoundingClientRect();
+      return { top: box.top, right: box.right, bottom: box.bottom, left: box.left,
+        width: box.width, height: box.height };
+    }
+    function intersects(rect) {
+      return Boolean(rect && rect.right > 0 && rect.bottom > 0 &&
+        rect.left < innerWidth && rect.top < innerHeight);
+    }
+    const semanticTargetRect = rectangle(semanticTarget);
+    const activeElementRect = rectangle(active);
     const pageOverflow = document.documentElement.scrollWidth - document.documentElement.clientWidth;
     return {
       file: ${JSON.stringify(file)},
@@ -629,6 +745,10 @@ async function captureEvidence(cdp, file, state, navigationPath) {
       documentToken: debug && debug.documentToken || null,
       renderGeneration: debug && debug.committedRender && debug.committedRender.generation || null,
       committedRender: debug && debug.committedRender || null,
+      expectedSemanticEventId: ${JSON.stringify(expectedSemanticEventId)},
+      semanticTargetRect,
+      semanticTargetIntersectsViewport: ${JSON.stringify(expectedSemanticEventId)} ?
+        intersects(semanticTargetRect) : null,
       viewport: { width: innerWidth, height: innerHeight },
       outcome: debug && debug.outcome || null,
       outcomeClass: debug && debug.outcomeClass || null,
@@ -644,8 +764,10 @@ async function captureEvidence(cdp, file, state, navigationPath) {
         type: active && active.type || null,
         value: active && active.value || null,
         checked: active && typeof active.checked === 'boolean' ? active.checked : null,
-        optionGroup: active && active.closest('[data-option-group]')?.dataset.optionGroup || null,
-        legend: active && active.closest('fieldset')?.querySelector('legend')?.textContent || null
+        optionGroup: activeFieldset?.dataset.optionGroup || null,
+        legend: activeFieldset?.querySelector('legend')?.textContent.trim() || null,
+        rect: activeElementRect,
+        intersectsViewport: intersects(activeElementRect)
       },
       pendingNavigation: debug && debug.pendingNavigation || null,
       pageOverflow,
@@ -654,12 +776,14 @@ async function captureEvidence(cdp, file, state, navigationPath) {
       })),
       scrollY
     };
-  })()`).then((value) => ({
-    ...value,
+  })()`);
+  return {
+    ...page,
+    visualSettlement: evidenceOptions.settlement || null,
     consoleErrors: structuredClone(consoleProblems),
     failedRequests: structuredClone(failedRequests),
     httpErrors: structuredClone(httpProblems)
-  }));
+  };
 }
 
 async function modePerformance(cdp, base) {
@@ -709,7 +833,7 @@ async function modePerformance(cdp, base) {
 async function runAssertions(cdp, base) {
   await navigateCandidate(cdp, base);
   await viewport(cdp, 393, 852);
-  await postRenderFrames(cdp);
+  await waitForVisualSettlement(cdp);
 
   await test('default candidate is calm Read with real content and four persistent actions', async () => {
     const value = await evaluate(cdp, `(() => ({
@@ -832,6 +956,50 @@ async function runAssertions(cdp, base) {
         assert.equal(transitioned.pending, null, label + ' transition pending state');
         assert.deepEqual(convergentOutcome(transitioned), convergentOutcome(direct),
           label + ' must converge from both modes');
+      }
+      assert.deepEqual([consoleProblems.length, failedRequests.length, httpProblems.length], noise,
+        label + ' console/network state');
+    }
+  });
+
+  await test('both duplicated Ordinary orderings are neutral and history-independent', async () => {
+    const stale = /Tenth Sunday|First Sunday|pentecost-10|advent-1|Missale Romanum|Eucharistic Prayer|But I have cried/i;
+    for (const [label, targetState] of Object.entries(DUPLICATE_ORDINARY_STATES)) {
+      const noise = [consoleProblems.length, failedRequests.length, httpProblems.length];
+      await navigateCandidate(cdp, base, targetState);
+      const direct = await modeOutcomeSnapshot(cdp);
+      assert.equal(direct.hash, targetState, label + ' direct hash');
+      assert.equal(direct.href, direct.committed.href, label + ' committed href');
+      assert.equal(direct.mode, null, label + ' neutral mode');
+      assert.equal(direct.outcome, 'invalid', label + ' invalid outcome');
+      assert.equal(direct.outcomeClass, 'invalid', label + ' invalid class');
+      assert.equal(direct.pending, null, label + ' pending navigation');
+      assert.equal(direct.context, 'Day · Mode unavailable');
+      assert.equal(direct.modeMetadata, 'Unavailable');
+      assert.deepEqual(direct.modes, [
+        { mode: 'read', checked: 'false' },
+        { mode: 'missal', checked: 'false' }
+      ]);
+      assert.equal(direct.title, 'Selection unavailable');
+      assert.equal(direct.date, '');
+      assert.match(direct.metadata, /Mode unavailable.*explicit state rejected/i);
+      assert.deepEqual(direct.events, []);
+      assert.deepEqual(direct.contents, []);
+      assert.equal(direct.state, null);
+      assert.equal(direct.semantic, null);
+      assert.doesNotMatch(direct.reading, stale);
+
+      for (const [originName, origin] of [
+        ['Read', STATES.postconciliar], ['Missal', STATES.postMissal]
+      ]) {
+        await navigateCandidate(cdp, base, origin);
+        await transitionHash(cdp, targetState);
+        const transitioned = await modeOutcomeSnapshot(cdp);
+        assert.equal(transitioned.hash, targetState, `${label} from ${originName} hash`);
+        assert.equal(transitioned.pending, null, `${label} from ${originName} pending`);
+        assert.equal(transitioned.active.tag, 'BODY', `${label} from ${originName} focus`);
+        assert.deepEqual(convergentOutcome(transitioned), convergentOutcome(direct),
+          `${label} must converge from ${originName}`);
       }
       assert.deepEqual([consoleProblems.length, failedRequests.length, httpProblems.length], noise,
         label + ' console/network state');
@@ -1226,7 +1394,10 @@ async function runAssertions(cdp, base) {
   await test('Contents follows real semantic sections and moves focus to the selected text', async () => {
     await navigateCandidate(cdp, base);
     await evaluate(cdp, `document.querySelectorAll('[data-semantic-event-id]')[5].scrollIntoView()`);
-    await postRenderFrames(cdp);
+    await waitForVisualSettlement(cdp, {
+      semanticEventId: await evaluate(cdp,
+        `document.querySelectorAll('[data-semantic-event-id]')[5].dataset.semanticEventId`)
+    });
     await click(cdp, '[data-reader-action="contents"]');
     const current = await evaluate(cdp,
       `document.querySelector('[data-reader-contents] [aria-current="location"]').dataset.readerLocation`);
@@ -1280,11 +1451,13 @@ async function runAssertions(cdp, base) {
     const derivationsBefore = await evaluate(cdp, 'dayReaderDebug.derivations');
     const properId = 'proper/postconciliar/advent-1/007';
     await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${properId}"]').scrollIntoView()`);
+    await waitForVisualSettlement(cdp, { semanticEventId: properId });
     const missalGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
     await click(cdp, '[data-reader-action="mode"]');
     await click(cdp, '[data-mode="missal"]');
     const missalHash = updatedHash(STATES.postReadLatent, 'ordinary', '1');
-    await waitForCommittedRender(cdp, missalGeneration, missalHash, 'Missal switch');
+    await waitForCommittedRender(cdp, missalGeneration, missalHash, 'Missal switch',
+      { semanticEventId: properId });
     const missal = await evaluate(cdp, `({
       hash: location.hash,
       derivations: dayReaderDebug.derivations,
@@ -1305,6 +1478,7 @@ async function runAssertions(cdp, base) {
     assert.ok(missal.latency >= 0);
     const ordinaryLocation = 'ordinary-element/prex-eucharistica/prex-eucharistica-ii';
     await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${ordinaryLocation}"]').scrollIntoView()`);
+    await waitForVisualSettlement(cdp, { semanticEventId: ordinaryLocation });
     const readGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
     await click(cdp, '[data-reader-action="mode"]');
     await click(cdp, '[data-mode="read"]');
@@ -1336,21 +1510,35 @@ async function runAssertions(cdp, base) {
     await navigateCandidate(cdp, base, STATES.postMissal);
     const semanticId = (option) => 'ordinary-element/prex-eucharistica/prex-eucharistica-' +
       option.replace(/^ep-/, '');
+    const focusOf = (option) => ({
+      group: 'eucharistic-prayer', option, legend: 'Eucharistic Prayer'
+    });
     let currentOption = 'ep-ii';
     await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${semanticId(currentOption)}"]').scrollIntoView({block: 'start'})`);
-    await evaluate(cdp, `document.querySelector('.ordinary-choice input:checked').focus({preventScroll: true})`);
-    assert.equal(await evaluate(cdp, 'document.activeElement.value'), 'ep-ii');
+    await waitForVisualSettlement(cdp, { semanticEventId: semanticId(currentOption) });
+    await evaluate(cdp, `(() => {
+      const radio = document.querySelector('.ordinary-choice input:checked');
+      radio.focus({preventScroll: true});
+      radio.closest('[data-option-group]').scrollIntoView({block: 'start', behavior: 'auto'});
+    })()`);
+    let settled = await waitForVisualSettlement(cdp, {
+      semanticEventId: semanticId(currentOption), focus: focusOf(currentOption)
+    });
+    assert.equal(settled.activeElement.value, 'ep-ii');
+    assert.equal(settled.targetIntersectsViewport, true);
+    assert.equal(settled.activeElementIntersectsViewport, true);
     let currentHash = STATES.postMissal;
     for (const option of ['ep-i', 'ep-iii', 'ep-iv', 'ep-ii']) {
       const before = await evaluate(cdp, 'dayReaderDebug.renders');
       const presentationsBefore = await evaluate(cdp, 'dayReaderDebug.ordinaryPresentations');
-      const beforeTop = await evaluate(cdp,
-        `document.querySelector('[data-semantic-event-id="${semanticId(currentOption)}"]').getBoundingClientRect().top`);
+      const beforeTop = settled.targetRect.top;
       await evaluate(cdp,
         `document.querySelector('.ordinary-choice input[value="${option}"]').focus({preventScroll: true})`);
       await pressSpace(cdp);
       currentHash = updatedHash(currentHash, 'eucharistic-prayer', option);
-      await waitForCommittedRender(cdp, before, currentHash, 'keyboard EP ' + option);
+      settled = await waitForCommittedRender(cdp, before, currentHash, 'keyboard EP ' + option, {
+        semanticEventId: semanticId(option), focus: focusOf(option)
+      });
       const restored = await evaluate(cdp, `(() => {
         const active = document.activeElement;
         const fieldset = active.closest('fieldset');
@@ -1376,7 +1564,10 @@ async function runAssertions(cdp, base) {
       assert.equal(restored.legend, 'Eucharistic Prayer');
       assert.equal(restored.group, 'eucharistic-prayer');
       assert.equal(restored.hash, currentHash);
-      assert.ok(Math.abs(restored.semanticTop - beforeTop) <= 2,
+      assert.equal(settled.targetIntersectsViewport, true);
+      assert.equal(settled.activeElementIntersectsViewport, true);
+      assert.ok(settled.stableFramesObserved >= 5);
+      assert.ok(Math.abs(restored.semanticTop - beforeTop) <= 4,
         `${option} semantic delta: ${restored.semanticTop - beforeTop}`);
       assert.equal(restored.pending, null);
       assert.equal(restored.presentations, presentationsBefore + 1);
@@ -1384,6 +1575,26 @@ async function runAssertions(cdp, base) {
       assert.equal(restored.epEvents.length, 1);
       currentOption = option;
     }
+
+    await cdp.send('Emulation.setEmulatedMedia', {
+      media: 'screen', features: [{ name: 'prefers-reduced-motion', value: 'reduce' }]
+    });
+    const reducedBeforeTop = settled.targetRect.top;
+    const reducedGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
+    await evaluate(cdp,
+      `document.querySelector('.ordinary-choice input[value="ep-iii"]').focus({preventScroll: true})`);
+    await pressSpace(cdp);
+    const reducedHash = updatedHash(currentHash, 'eucharistic-prayer', 'ep-iii');
+    const reduced = await waitForCommittedRender(cdp, reducedGeneration, reducedHash,
+      'reduced-motion keyboard EP ep-iii', {
+        semanticEventId: semanticId('ep-iii'), focus: focusOf('ep-iii')
+      });
+    assert.notEqual(await evaluate(cdp, 'getComputedStyle(document.documentElement).scrollBehavior'), 'smooth');
+    assert.ok(Math.abs(reduced.targetRect.top - reducedBeforeTop) <= 4,
+      `reduced-motion semantic delta: ${reduced.targetRect.top - reducedBeforeTop}`);
+    assert.equal(reduced.activeElement.value, 'ep-iii');
+    assert.equal(reduced.activeElement.checked, true);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
 
     await transitionHash(cdp, STATES.invalidPrayer);
     const invalid = await evaluate(cdp, `({
@@ -1399,12 +1610,13 @@ async function runAssertions(cdp, base) {
   });
 
   await test('top, reading, offertory, Canon, Communion, and end use semantic correspondence', async () => {
-    async function choose(mode) {
+    async function choose(mode, semanticEventId = null) {
       const before = await evaluate(cdp, 'dayReaderDebug.renders');
       await click(cdp, '[data-reader-action="mode"]');
       await click(cdp, `[data-mode="${mode}"]`);
       const target = await evaluate(cdp, 'location.hash');
-      await waitForCommittedRender(cdp, before, target, `${mode} correspondence`);
+      await waitForCommittedRender(cdp, before, target, `${mode} correspondence`,
+        semanticEventId ? { semanticEventId } : {});
     }
     await navigateCandidate(cdp, base, STATES.roman);
     await evaluate(cdp, 'window.scrollTo(0, 0)');
@@ -1417,7 +1629,8 @@ async function runAssertions(cdp, base) {
     ]) {
       await transitionHash(cdp, STATES.roman);
       await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${id}"]').scrollIntoView()`);
-      await choose('missal');
+      await waitForVisualSettlement(cdp, { semanticEventId: id });
+      await choose('missal', id);
       assert.ok(await evaluate(cdp,
         `Math.abs(document.querySelector('[data-semantic-event-id="${id}"]').getBoundingClientRect().top) < innerHeight`));
     }
@@ -1428,6 +1641,7 @@ async function runAssertions(cdp, base) {
     ]) {
       await transitionHash(cdp, STATES.romanMissal);
       await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${id}"]').scrollIntoView()`);
+      await waitForVisualSettlement(cdp, { semanticEventId: id });
       await choose('read');
       const visible = await evaluate(cdp, `[...document.querySelectorAll('[data-semantic-event-id^="proper/"]')]
         .filter(row => Math.abs(row.getBoundingClientRect().top) < innerHeight)
@@ -1609,8 +1823,8 @@ async function captureCandidate(cdp, base, state, kind) {
   } else if (['date', 'contents', 'mode', 'details'].includes(kind)) {
     await click(cdp, `[data-reader-action="${kind}"]`);
   }
-  await postRenderFrames(cdp);
-  return navigation;
+  const settlement = await waitForVisualSettlement(cdp);
+  return { ...navigation, settlement };
 }
 
 async function captureMatrix(cdp, base, directory) {
@@ -1639,67 +1853,81 @@ async function captureMatrix(cdp, base, directory) {
       const file = `day-reader-missal-${name}-${width}x${height}.png`;
       await shot(cdp, join(directory, file));
       measures.push({ file, viewport: `${width}x${height}`, state: name, metrics: await metrics(cdp) });
-      evidence.push(await captureEvidence(cdp, file, name, navigation.path));
+      evidence.push(await captureEvidence(cdp, file, name, navigation.path,
+        { settlement: navigation.settlement }));
       if (await evaluate(cdp, 'Boolean(document.querySelector("dialog[open]"))')) await escape(cdp);
     }
     for (const [name, state] of [['roman-missal', STATES.romanMissal], ['postconciliar-missal-ep-ii', STATES.postMissal]]) {
-      await navigateBuiltCurrent(cdp, base, state);
+      const navigation = await navigateBuiltCurrent(cdp, base, state);
       const file = `day-current-${name}-${width}x${height}.png`;
       await shot(cdp, join(directory, file));
-      evidence.push(await captureEvidence(cdp, file, 'current-' + name, 'fresh-document'));
+      evidence.push(await captureEvidence(cdp, file, 'current-' + name, navigation.path,
+        { settlement: navigation.settlement }));
     }
   }
 
   await viewport(cdp, 393, 852);
-  await navigateBuiltCandidate(cdp, base, STATES.postMissal);
+  let navigation = await navigateBuiltCandidate(cdp, base, STATES.postMissal);
   await evaluate(cdp, 'window.scrollTo(0, 0)');
   await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
   const enlargedFile = 'day-reader-missal-postconciliar-200-percent-393x852.png';
   await shot(cdp, join(directory, enlargedFile));
   measures.push({ file: enlargedFile, viewport: '393x852',
     state: 'postconciliar-missal-200-percent', metrics: await metrics(cdp) });
-  evidence.push(await captureEvidence(cdp, enlargedFile, 'postconciliar-missal-200-percent', 'fresh-document'));
+  const enlargedSettlement = await waitForVisualSettlement(cdp);
+  evidence.push(await captureEvidence(cdp, enlargedFile, 'postconciliar-missal-200-percent', navigation.path,
+    { settlement: enlargedSettlement }));
   await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
 
   await viewport(cdp, 393, 852);
-  await navigateBuiltCandidate(cdp, base, STATES.currentStyleLatent);
+  navigation = await navigateBuiltCandidate(cdp, base, STATES.currentStyleLatent);
   const latentFile = 'day-reader-missal-latent-read-393x852.png';
   await shot(cdp, join(directory, latentFile));
-  evidence.push(await captureEvidence(cdp, latentFile, 'latent-read', 'fresh-document'));
+  evidence.push(await captureEvidence(cdp, latentFile, 'latent-read', navigation.path,
+    { settlement: navigation.settlement }));
   await navigateBuiltCandidate(cdp, base, STATES.roman);
-  await transitionHash(cdp, STATES.invalid);
+  navigation = await transitionHash(cdp, STATES.invalid);
   await click(cdp, '[data-reader-action="date"]');
   const invalidDateFile = 'day-reader-missal-transition-invalid-date-393x852.png';
   await shot(cdp, join(directory, invalidDateFile));
-  evidence.push(await captureEvidence(cdp, invalidDateFile, 'transition-invalid-date', 'same-document'));
+  evidence.push(await captureEvidence(cdp, invalidDateFile, 'transition-invalid-date', navigation.path,
+    { settlement: navigation.settlement }));
   await escape(cdp);
   await click(cdp, '[data-reader-action="details"]');
   const invalidDetailsFile = 'day-reader-missal-transition-invalid-details-393x852.png';
   await shot(cdp, join(directory, invalidDetailsFile));
-  evidence.push(await captureEvidence(cdp, invalidDetailsFile, 'transition-invalid-details', 'same-document'));
+  evidence.push(await captureEvidence(cdp, invalidDetailsFile, 'transition-invalid-details', navigation.path,
+    { settlement: navigation.settlement }));
   await escape(cdp);
 
-  await navigateBuiltCandidate(cdp, base, STATES.postReadLatent);
-  await evaluate(cdp, `document.querySelector('[data-semantic-event-id="proper/postconciliar/advent-1/007"]').scrollIntoView()`);
+  navigation = await navigateBuiltCandidate(cdp, base, STATES.postReadLatent);
+  const switchSemanticId = 'proper/postconciliar/advent-1/007';
+  await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${switchSemanticId}"]').scrollIntoView()`);
+  let switchSettlement = await waitForVisualSettlement(cdp, { semanticEventId: switchSemanticId });
   const switchBeforeFile = 'day-reader-missal-mode-switch-before-393x852.png';
   await shot(cdp, join(directory, switchBeforeFile));
-  evidence.push(await captureEvidence(cdp, switchBeforeFile, 'mode-switch-read-before', 'fresh-document'));
+  evidence.push(await captureEvidence(cdp, switchBeforeFile, 'mode-switch-read-before', navigation.path,
+    { expectedSemanticEventId: switchSemanticId, settlement: switchSettlement }));
   const captureGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
   await click(cdp, '[data-reader-action="mode"]');
   await click(cdp, '[data-mode="missal"]');
-  await waitForCommittedRender(cdp, captureGeneration,
-    updatedHash(STATES.postReadLatent, 'ordinary', '1'), 'captured Missal switch');
+  switchSettlement = await waitForCommittedRender(cdp, captureGeneration,
+    updatedHash(STATES.postReadLatent, 'ordinary', '1'), 'captured Missal switch',
+    { semanticEventId: switchSemanticId });
   const switchAfterFile = 'day-reader-missal-mode-switch-missal-after-393x852.png';
   await shot(cdp, join(directory, switchAfterFile));
-  evidence.push(await captureEvidence(cdp, switchAfterFile, 'mode-switch-missal-after', 'same-document'));
+  evidence.push(await captureEvidence(cdp, switchAfterFile, 'mode-switch-missal-after', 'same-document',
+    { expectedSemanticEventId: switchSemanticId, settlement: switchSettlement }));
   const readGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
   await click(cdp, '[data-reader-action="mode"]');
   await click(cdp, '[data-mode="read"]');
   const capturedReadHash = updatedHash(STATES.postReadLatent, 'ordinary', '0');
-  await waitForCommittedRender(cdp, readGeneration, capturedReadHash, 'captured Read return');
+  switchSettlement = await waitForCommittedRender(cdp, readGeneration, capturedReadHash,
+    'captured Read return', { semanticEventId: switchSemanticId });
   const switchReturnFile = 'day-reader-missal-mode-switch-read-return-393x852.png';
   await shot(cdp, join(directory, switchReturnFile));
-  evidence.push(await captureEvidence(cdp, switchReturnFile, 'mode-switch-read-return', 'same-document'));
+  evidence.push(await captureEvidence(cdp, switchReturnFile, 'mode-switch-read-return', 'same-document',
+    { expectedSemanticEventId: switchSemanticId, settlement: switchSettlement }));
 
   const correctionStates = [
     ['invalid-ep', STATES.invalidPrayer], ['missing-seat', STATES.missingSeat],
@@ -1709,31 +1937,73 @@ async function captureMatrix(cdp, base, directory) {
   for (const [name, target] of correctionStates) {
     for (const [originName, origin] of [['read', STATES.roman], ['missal', STATES.romanMissal]]) {
       await navigateBuiltCandidate(cdp, base, origin);
-      await transitionHash(cdp, target);
+      navigation = await transitionHash(cdp, target);
       const file = `day-reader-missal-transition-${originName}-to-${name}-393x852.png`;
       await shot(cdp, join(directory, file));
-      evidence.push(await captureEvidence(cdp, file, `${originName}-to-${name}`, 'same-document'));
+      evidence.push(await captureEvidence(cdp, file, `${originName}-to-${name}`, navigation.path,
+        { settlement: navigation.settlement }));
     }
   }
 
-  await navigateBuiltCandidate(cdp, base, STATES.postMissal);
+  for (const [width, height] of [[393, 852], [1440, 900]]) {
+    await viewport(cdp, width, height);
+    for (const [name, target] of Object.entries(DUPLICATE_ORDINARY_STATES)) {
+      navigation = await navigateBuiltCandidate(cdp, base, target);
+      const file = `day-reader-missal-duplicate-ordinary-${name}-${width}x${height}.png`;
+      await shot(cdp, join(directory, file));
+      evidence.push(await captureEvidence(cdp, file, `duplicate-ordinary-${name}`,
+        navigation.path, { settlement: navigation.settlement }));
+    }
+  }
+  await viewport(cdp, 393, 852);
+  for (const [name, target] of Object.entries(DUPLICATE_ORDINARY_STATES)) {
+    for (const [originName, origin] of [['read', STATES.roman], ['missal', STATES.romanMissal]]) {
+      await navigateBuiltCandidate(cdp, base, origin);
+      navigation = await transitionHash(cdp, target);
+      const file = `day-reader-missal-transition-${originName}-to-duplicate-ordinary-${name}-393x852.png`;
+      await shot(cdp, join(directory, file));
+      evidence.push(await captureEvidence(cdp, file,
+        `${originName}-to-duplicate-ordinary-${name}`, navigation.path,
+        { settlement: navigation.settlement }));
+    }
+  }
+
+  navigation = await navigateBuiltCandidate(cdp, base, STATES.postMissal);
   const initialEpId = 'ordinary-element/prex-eucharistica/prex-eucharistica-ii';
   await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${initialEpId}"]').scrollIntoView({block: 'start'})`);
-  await evaluate(cdp, `document.querySelector('.ordinary-choice input:checked').focus({preventScroll: true})`);
+  await waitForVisualSettlement(cdp, { semanticEventId: initialEpId });
+  await evaluate(cdp, `(() => {
+    const radio = document.querySelector('.ordinary-choice input:checked');
+    radio.focus({preventScroll: true});
+    radio.closest('[data-option-group]').scrollIntoView({block: 'start', behavior: 'auto'});
+  })()`);
+  let epSettlement = await waitForVisualSettlement(cdp, {
+    semanticEventId: initialEpId,
+    focus: { group: 'eucharistic-prayer', option: 'ep-ii', legend: 'Eucharistic Prayer' }
+  });
   const epBeforeFile = 'day-reader-missal-ep-focus-before-393x852.png';
   await shot(cdp, join(directory, epBeforeFile));
-  evidence.push(await captureEvidence(cdp, epBeforeFile, 'ep-focus-before', 'fresh-document'));
+  evidence.push(await captureEvidence(cdp, epBeforeFile, 'ep-focus-before', navigation.path, {
+    expectedSemanticEventId: initialEpId, settlement: epSettlement
+  }));
   const epGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
   await evaluate(cdp, `document.querySelector('.ordinary-choice input[value="ep-iii"]').focus({preventScroll: true})`);
   await pressSpace(cdp);
   const epHash = updatedHash(STATES.postMissal, 'eucharistic-prayer', 'ep-iii');
-  await waitForCommittedRender(cdp, epGeneration, epHash, 'captured EP III focus restoration');
+  const epAfterId = 'ordinary-element/prex-eucharistica/prex-eucharistica-iii';
+  epSettlement = await waitForCommittedRender(cdp, epGeneration, epHash,
+    'captured EP III focus restoration', {
+      semanticEventId: epAfterId,
+      focus: { group: 'eucharistic-prayer', option: 'ep-iii', legend: 'Eucharistic Prayer' }
+    });
   const epAfterFile = 'day-reader-missal-ep-iii-focus-restored-393x852.png';
   await shot(cdp, join(directory, epAfterFile));
-  evidence.push(await captureEvidence(cdp, epAfterFile, 'ep-iii-focus-restored', 'same-document'));
+  evidence.push(await captureEvidence(cdp, epAfterFile, 'ep-iii-focus-restored', 'same-document', {
+    expectedSemanticEventId: epAfterId, settlement: epSettlement
+  }));
 
   await viewport(cdp, 1024, 768);
-  await navigateBuiltCandidate(cdp, base, STATES.postMissal);
+  navigation = await navigateBuiltCandidate(cdp, base, STATES.postMissal);
   await evaluate(cdp, 'window.scrollTo(0, 0)');
   await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
   const pdf = await cdp.send('Page.printToPDF', {
@@ -1742,7 +2012,8 @@ async function captureMatrix(cdp, base, directory) {
   });
   await writeFile(join(directory, 'day-reader-missal-postconciliar-print.pdf'), Buffer.from(pdf.data, 'base64'));
   const printMetadata = await captureEvidence(cdp,
-    'day-reader-missal-postconciliar-print.pdf', 'postconciliar-missal-print', 'fresh-document');
+    'day-reader-missal-postconciliar-print.pdf', 'postconciliar-missal-print', navigation.path,
+    { settlement: navigation.settlement });
   await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
   await writeFile(join(directory, 'measurements.json'), JSON.stringify(measures, null, 2) + '\n');
   await writeFile(join(directory, 'capture-metadata.json'), JSON.stringify(evidence, null, 2) + '\n');
@@ -1811,7 +2082,7 @@ async function main() {
         `window.dayReaderDebug.committedRender !== null && ` +
         `window.dayReaderDebug.committedRender.href === ${JSON.stringify(bootstrapTarget)}`,
       'bootstrap document render');
-    await postRenderFrames(cdp);
+    await waitForVisualSettlement(cdp);
     currentDocumentToken = await evaluate(cdp, 'dayReaderDebug.documentToken');
 
     await runAssertions(cdp, base);

@@ -240,6 +240,41 @@ boundary. The complete browser and print evidence was regenerated with that
 harness. These results resolve the three correction requirements for re-review;
 they do not accept or close the candidate.
 
+External review of correction
+`ce5fce8364d24156e41c444c43673e7de31555d8` and immutable handoff
+`20260805T183500Z-day-missal-mode-corrections` returned a second, narrowly
+bounded **changes requested** disposition. The substantive product corrections
+passed review: deterministic outcome chrome, neutral invalid-Ordinary state,
+distinct failure classes, inline-option focus restoration, generation-safe
+document navigation, and production isolation remain accepted correction
+evidence. Acceptance is still blocked because the Chromium harness waited only
+two animation frames while inherited smooth scrolling could remain in flight,
+and because duplicate `ordinary` keys were not exercised directly in Chromium.
+The evidence-settlement correction is limited to animation-frame scroll/target
+stability, settled default- and reduced-motion Eucharistic Prayer focus proof,
+both duplicate-key orderings from fresh and transitioned states, wholly
+regenerated evidence, and a new independent handoff. Product reader and shared
+shell behavior remain unchanged unless settled testing proves a real defect.
+The candidate, completion count, and external-review requirement remain open.
+
+The evidence-settlement micro-correction is now implemented and locally
+proven, but remains **pending independent external review**. Committed-render
+synchronization still requires exact document tokens and generations; a
+separate animation-frame loop now requires five stable scroll/target/focus
+frames, viewport intersection, cleared pending navigation, and a bounded
+diagnostic timeout before assertion or capture. Default-motion keyboard changes
+through EP I, III, IV, and II and a separate reduced-motion change preserve the
+settled semantic event and checked-radio focus. The stabilized test exposed one
+local Day-adapter defect: the correctly focused checked radio could settle above
+the viewport. The adapter now aligns that inline option group deterministically
+after semantic restoration, leaving the shared shell and global scrolling rules
+unchanged. Both `ordinary=0&ordinary=1` and `ordinary=1&ordinary=0` now produce
+neutral, unchecked mode chrome on fresh loads and transitions from Read and
+Missal. All browser and print evidence was regenerated; the public routes,
+Propers candidate, shared shell, M1 seams, seating, and production data remain
+unchanged. These results satisfy the bounded proof requirement for re-review;
+they do not accept, close, deploy, or cut over the candidate.
+
 ### Liturgy Propers Read W3 integration accepted
 
 <!-- promised-deliverable: liturgy-propers-read-w3-candidate-2026-08-04 -->

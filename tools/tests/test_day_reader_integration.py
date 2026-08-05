@@ -254,6 +254,16 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertLess(SHELL_JS.stat().st_size, prototype.stat().st_size // 4)
         self.assertLess(DAY_JS.stat().st_size, prototype.stat().st_size)
 
+    def test_chromium_evidence_distinguishes_commit_from_visual_settlement(self) -> None:
+        harness = text(ROOT / "tools/tests/day_reader_integration_browser.mjs")
+        commit = harness.index("async function waitForCommittedRender")
+        settlement = harness.index("return waitForVisualSettlement", commit)
+        self.assertGreater(settlement, commit)
+        self.assertIn("window.dayReaderDebug.committedRender.generation >", harness[commit:settlement])
+        self.assertIn("semanticTargetRect", harness)
+        self.assertIn("stableFramesObserved", harness)
+        self.assertIn("expectedSemanticEventId", harness)
+
 
 if __name__ == "__main__":
     unittest.main()

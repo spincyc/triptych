@@ -53,6 +53,16 @@ state = "candidate"
   ]
 
   [[deliverables.requirements]]
+  id = "external-review-evidence-settlement"
+  criterion = "Resolve the correction review's bounded evidence defect by waiting for animation-frame scroll and semantic-target stability, proving settled inline Eucharistic Prayer focus under default and reduced motion, and exercising both duplicate ordinary-key orderings on fresh documents and transitions from Read and Missal, with wholly regenerated browser and print evidence and no product behavior change."
+  status = "pass"
+  evidence = [
+    "tools/tests/day_reader_integration_browser.mjs",
+    "tools/tests/test_day_missal_integration.py",
+    "tools/tests/test_day_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
   id = "external-review-candidate"
   criterion = "A self-contained immutable handoff from the exact pushed implementation commit is archive-tested and manifest-verified for clean-conversation external review, while the roadmap and work register retain candidate-pending-review status."
   status = "open"

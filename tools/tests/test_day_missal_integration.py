@@ -95,6 +95,7 @@ class DayMissalIntegrationTests(unittest.TestCase):
             "modeStartedAt", "derivations", "if (!rendered || serial !== runtime.serial) return",
             "renderContext", "sourceHooks", "data-semantic-location",
             "ordinary-option", "pendingNavigation", "committedRender",
+            "(optionGroup || optionTarget).scrollIntoView({ block: 'start', behavior: 'auto' })",
         ):
             self.assertIn(token, candidate if token not in {"data-semantic-location"} else shell)
         self.assertIn("captureSemanticLocation", shell)
@@ -171,6 +172,29 @@ class DayMissalIntegrationTests(unittest.TestCase):
             ["node", "--check", str(ROOT / "tools/tests/day_reader_integration_browser.mjs")],
             cwd=ROOT, check=True,
         )
+
+    def test_browser_harness_waits_for_settled_scroll_target_and_focus(self) -> None:
+        harness = text(ROOT / "tools/tests/day_reader_integration_browser.mjs")
+        for token in (
+            "async function waitForVisualSettlement",
+            "requiredStableFrames: options.requiredStableFrames || 5",
+            "requestAnimationFrame(resolve)",
+            "targetIntersectsViewport",
+            "activeElementIntersectsViewport",
+            "Visual settlement timed out",
+            "prefers-reduced-motion",
+        ):
+            self.assertIn(token, harness)
+        self.assertNotIn("function postRenderFrames", harness)
+        self.assertNotIn("setTimeout(resolve, 1000", harness)
+
+    def test_browser_harness_covers_both_duplicate_ordinary_orderings(self) -> None:
+        harness = text(ROOT / "tools/tests/day_reader_integration_browser.mjs")
+        self.assertIn("STATES.roman + '&ordinary=0&ordinary=1'", harness)
+        self.assertIn("STATES.roman + '&ordinary=1&ordinary=0'", harness)
+        self.assertIn("both duplicated Ordinary orderings are neutral and history-independent", harness)
+        self.assertIn("['Read', STATES.postconciliar]", harness)
+        self.assertIn("['Missal', STATES.postMissal]", harness)
 
 
 if __name__ == "__main__":
