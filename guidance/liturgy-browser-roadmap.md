@@ -675,14 +675,16 @@ parallel:
    externally accepted after the bounded correction at
    `1e4587dfe04a11c18e996a16f7fbbdb54bc744a4`. It does not reopen the accepted
    Day slice or start public cutover, later modes, search, or recension work.
-   The next W3 boundary is now the distinct **Day Missal-mode integration
-   candidate**, pending external review. It extends only the existing unlinked
-   Day candidate: `ordinary=1` renders the production Ordinary through the
-   production renderer and M1 assembly/seating event stream, while `ordinary=0`
-   retains Read and valid latent Ordinary preferences. It does not alter the
-   accepted M3 record, the accepted Propers Read entrance, or any public route;
-   Study, Compare, Propers Missal mode, search, cutover, and recension coverage
-   remain later boundaries.
+   The distinct **Day Missal-mode integration** is now accepted at
+   `86a9816c1bffdcbdd09469f5f8d005c666a8045e`. It extends only the existing
+   unlinked Day candidate: `ordinary=1` renders the production Ordinary through
+   the production renderer and M1 assembly/seating event stream, while
+   `ordinary=0` retains Read and valid latent Ordinary preferences. Settled
+   Chromium evidence proves deterministic outcome chrome, semantic location,
+   inline Eucharistic Prayer focus, render ownership, and neutral duplicate-key
+   rejection without changing the accepted M3 record, accepted Propers Read
+   entrance, or any public route. Study, Compare, Propers Missal mode, search,
+   cutover, and recension coverage remain later boundaries.
 3. W7 verifies the pre-1955 base and official acts for the narrow Phase 10
    slice, while exact-printing acquisition continues in parallel as validation
    rather than a universal prerequisite.
@@ -726,6 +728,7 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-05 | W3 Day Missal-mode bounded corrections | Candidate pending independent correction review. One outcome-aware presentation path now commits requested Read/Missal chrome on every syntactically recognized state and neutral unchecked chrome for invalid `ordinary`; valid deferred, unresolved/territorial, and unrenderable states are distinct from explicit rejection. Inline Eucharistic Prayer changes restore focus to the rerendered checked semantic option while retaining reading location. The browser harness now proves fresh documents with unique non-semantic query nonces and document tokens, and same-document navigation with exact state plus greater committed render generation before the post-render frame boundary. All screenshots and the 21-page print were regenerated; no accepted architecture, public route, Propers surface, M1 seam, seating engine, or production data changed. | This correction commit; compact correction handoff recorded after push; acceptance remains open |
 | 2026-08-05 | W3 Day Missal-mode evidence-settlement changes requested | External review of correction `ce5fce8364d24156e41c444c43673e7de31555d8` and handoff `20260805T183500Z-day-missal-mode-corrections` found the substantive product corrections sound and production isolation intact. Acceptance remains blocked only because two post-render animation frames do not prove inherited smooth scrolling and its semantic target have settled, and because both duplicate `ordinary` key orderings lack direct Chromium coverage. The micro-correction is limited to animation-frame stability proof, settled default/reduced-motion Eucharistic Prayer focus and location assertions, both duplicate-key orderings from fresh/Read/Missal paths, complete replacement evidence, and a new independent handoff. The candidate is not accepted or public. | Changes requested; evidence micro-correction and compact re-handoff pending |
 | 2026-08-05 | W3 Day Missal-mode evidence-settlement micro-correction | Candidate pending independent external review. Exact document-token and committed-generation checks now precede a separate bounded animation-frame loop requiring five stable scroll, semantic-target, and focused-control frames with viewport intersection and cleared pending navigation. Settled default-motion EP I/III/IV/II and reduced-motion keyboard checks exposed and corrected one local Day-adapter issue by aligning the inline option group after semantic restoration; the shared shell and site scrolling remain unchanged. Both duplicate `ordinary` orderings are neutral and history-independent on fresh loads and transitions from Read and Missal. The complete Day screenshot and 21-page print set was regenerated; public Day/Propers, the Propers candidate, shared shell, M1 seams, seating, and production data remain isolated. | This micro-correction commit; compact correction handoff recorded after push; acceptance remains open |
+| 2026-08-05 | W3 Day Missal-mode integration external acceptance | Accepted — every blocking review question is resolved and no further handoff is required. The internal Day reader reuses the production Ordinary presenter, M1 event stream, single Ordinary seating path, and Proper renderer while retaining edition-specific Roman 1962 and postconciliar structures, deterministic fail-closed state, semantic location/history/race ownership, and production isolation. The accepted handoff records 34 passing Day Chromium assertions plus the focused and regression suites, settled default/reduced-motion Eucharistic Prayer focus, neutral unchecked behavior for both duplicate `ordinary` key orderings on fresh and transitioned paths, 107 settled screenshot rows, and the 21-page print review with no console, request, or HTTP errors. Public cutover, later modes, search, source/recension expansion, and print redesign remain separate future decisions. | Candidate `a1221755d4fac2a6b9a009a91b99cd1da82eee9e`; correction `ce5fce8364d24156e41c444c43673e7de31555d8`; accepted micro-correction `86a9816c1bffdcbdd09469f5f8d005c666a8045e`; handoffs `20260805T145914Z-day-missal-mode-integration`, `20260805T183500Z-day-missal-mode-corrections`, and `20260805T201722Z-day-missal-mode-evidence-corrections` |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).

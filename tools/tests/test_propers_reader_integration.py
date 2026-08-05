@@ -305,14 +305,14 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             if row["id"] == "liturgy-day-missal-w3-candidate-2026-08-05"
         ]
         self.assertEqual(len(missal_rows), 1)
-        self.assertEqual(missal_rows[0]["state"], "candidate")
+        self.assertEqual(missal_rows[0]["state"], "complete")
         self.assertEqual(len(ledger["deliverables"]), 19)
         self.assertEqual(
             sum(
                 row["state"] == "complete"
                 for row in ledger["deliverables"]
             ),
-            13,
+            14,
         )
 
     def test_candidate_sizes_are_bounded_and_shell_is_not_copied(self) -> None:

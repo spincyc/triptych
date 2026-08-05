@@ -247,7 +247,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
             if row["id"] == "liturgy-day-missal-w3-candidate-2026-08-05"
         ]
         self.assertEqual(len(candidate), 1)
-        self.assertEqual(candidate[0]["state"], "candidate")
+        self.assertEqual(candidate[0]["state"], "complete")
 
     def test_candidate_size_is_bounded_below_prototype_harness(self) -> None:
         prototype = LITURGY / "prototypes/reader-shell/reader-shell.js"

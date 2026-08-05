@@ -179,7 +179,7 @@ operations.
 
 ## Promised work
 
-### Liturgy Day Missal-mode W3 integration candidate
+### Liturgy Day Missal-mode W3 integration accepted
 
 <!-- promised-deliverable: liturgy-day-missal-w3-candidate-2026-08-05 -->
 
@@ -192,8 +192,9 @@ production calendar assembly, Ordinary data and renderer, Ordinary seating,
 and shared Proper renderer. It may not create a second liturgical sequence,
 renderer, seating engine, event-order engine, URL parser, or public route.
 
-The candidate has passing implementation evidence and is **pending external
-review**. Its contract includes Roman 1962 and postconciliar parity,
+**Accepted** — the internal W3 Day Missal-mode integration has passing
+implementation and independent external-review evidence. Its contract includes
+Roman 1962 and postconciliar parity,
 fail-closed Ordinary language and Eucharistic Prayer handling, explicit
 coverage and absence,
 semantic-location preservation across Read/Missal and history transitions,
@@ -204,12 +205,10 @@ cutover, and redesign of the accepted shell or complete print system remain
 out of scope.
 
 The implementation base is
-`c4c071d6ba962524487bc8f4c6a4b781981851c7`. The review handoff will be
-created only after the focused implementation commit is validated and pushed;
-its exact reviewed commit, checks, screenshots, measurements, diff, manifest,
-and archive-verification result will be recorded there. Until an external
-review disposition is returned and recorded, this row remains a candidate and
-does not amend the accepted M1, M2, M3, or Propers Read records.
+`c4c071d6ba962524487bc8f4c6a4b781981851c7`. The initial candidate, two bounded
+corrections, three immutable handoffs, and their successive review dispositions
+remain recorded below as the durable audit trail. This acceptance does not
+amend the accepted M1, M2, M3, or Propers Read records.
 
 External review of implementation
 `a1221755d4fac2a6b9a009a91b99cd1da82eee9e` and immutable handoff
@@ -274,6 +273,24 @@ Missal. All browser and print evidence was regenerated; the public routes,
 Propers candidate, shared shell, M1 seams, seating, and production data remain
 unchanged. These results satisfy the bounded proof requirement for re-review;
 they do not accept, close, deploy, or cut over the candidate.
+
+Independent external review now **accepts and closes this internal W3 Day
+Missal-mode slice** at micro-correction
+`86a9816c1bffdcbdd09469f5f8d005c666a8045e`; every blocking review question is
+resolved and no further handoff is required. The complete reviewed sequence is
+candidate `a1221755d4fac2a6b9a009a91b99cd1da82eee9e`, first correction
+`ce5fce8364d24156e41c444c43673e7de31555d8`, and the accepted micro-correction
+above, with immutable handoffs
+`20260805T145914Z-day-missal-mode-integration`,
+`20260805T183500Z-day-missal-mode-corrections`, and
+`20260805T201722Z-day-missal-mode-evidence-corrections`. Acceptance covers
+reuse of the production Ordinary presenter, Proper renderer, M1 event stream,
+and single seating path; Roman 1962 and postconciliar structures;
+deterministic fail-closed state; semantic location, history, and render-race
+ownership; settled inline Eucharistic Prayer keyboard focus; responsive,
+accessibility, performance, and print evidence; and production isolation. It
+does not authorize public-route cutover, public links, Propers Missal mode,
+Study, Compare, search, source or recension expansion, or print redesign.
 
 ### Liturgy Propers Read W3 integration accepted
 

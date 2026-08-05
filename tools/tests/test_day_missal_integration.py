@@ -155,15 +155,15 @@ class DayMissalIntegrationTests(unittest.TestCase):
         ).stdout.splitlines()
         self.assertEqual(changed, [])
 
-    def test_candidate_tracking_is_distinct_and_pending_review(self) -> None:
+    def test_candidate_tracking_is_distinct_and_accepted(self) -> None:
         with (ROOT / "promised-deliverables.toml").open("rb") as handle:
             ledger = tomllib.load(handle)
         rows = [row for row in ledger["deliverables"] if row["id"] ==
                 "liturgy-day-missal-w3-candidate-2026-08-05"]
         self.assertEqual(len(rows), 1)
-        self.assertEqual(rows[0]["state"], "candidate")
+        self.assertEqual(rows[0]["state"], "complete")
         self.assertEqual(len(ledger["deliverables"]), 19)
-        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 13)
+        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 14)
 
     def test_javascript_syntax_and_browser_harness(self) -> None:
         for path in (JS, PUBLIC_RENDERER, LITURGY / "reader-shell.js"):
