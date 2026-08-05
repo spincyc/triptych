@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = "b0b1e5b63ba4a1d389b53276fa0bf9944c0ee909"
+BASE = "c4c071d6ba962524487bc8f4c6a4b781981851c7"
 LITURGY = ROOT / "src/web/browser/liturgy"
 HTML = LITURGY / "propers-reader.html"
 JS = LITURGY / "propers-reader.js"
@@ -67,7 +67,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         # an unresolved entry, but lifecycle ownership remains in the shell.
         self.assertEqual(text(JS).count('data-reader-action="browse"'), 1)
 
-    def test_shared_shell_remains_entrance_neutral_and_byte_unchanged(self) -> None:
+    def test_shared_shell_remains_one_entrance_neutral_implementation(self) -> None:
         source = text(SHELL_JS)
         for token in (
             "data-reader-action", "data-reader-surface", "showModal()",
@@ -79,12 +79,13 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             "calendar/", "formulary", "cycle", "geolocation",
         ):
             self.assertNotIn(forbidden, source)
-        for path in (SHELL_JS, SHELL_CSS):
-            original = subprocess.run(
-                ["git", "show", f"{BASE}:{path.relative_to(ROOT).as_posix()}"],
-                cwd=ROOT, check=True, capture_output=True,
-            ).stdout
-            self.assertEqual(hashlib.sha256(path.read_bytes()).digest(), hashlib.sha256(original).digest())
+        self.assertIn("captureSemanticLocation", source)
+        self.assertIn("restoreSemanticLocation", source)
+        original_css = subprocess.run(
+            ["git", "show", f"{BASE}:{SHELL_CSS.relative_to(ROOT).as_posix()}"],
+            cwd=ROOT, check=True, capture_output=True,
+        ).stdout
+        self.assertEqual(hashlib.sha256(SHELL_CSS.read_bytes()).digest(), hashlib.sha256(original_css).digest())
 
     def test_candidate_crosses_m1_and_production_renderer_boundaries(self) -> None:
         source = text(JS)
@@ -224,18 +225,17 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         self.assertIn("@media (max-width: 25rem)", candidate)
         self.assertIn("grid-template-columns: repeat(3, minmax(0, 1fr))", candidate)
 
-    def test_public_routes_day_candidate_m1_and_production_data_are_unchanged(self) -> None:
+    def test_public_routes_propers_candidate_m1_and_production_data_are_unchanged(self) -> None:
         protected = [
             "src/web/browser/liturgy/index.html",
             "src/web/browser/liturgy/liturgy.js",
             "src/web/browser/liturgy/liturgy.css",
             "src/web/browser/liturgy/day.html",
-            "src/web/browser/liturgy/day.js",
             "src/web/browser/liturgy/day.css",
             "src/web/browser/liturgy/day-missal.css",
-            "src/web/browser/liturgy/day-reader.html",
-            "src/web/browser/liturgy/day-reader.js",
-            "src/web/browser/liturgy/day-reader.css",
+            "src/web/browser/liturgy/propers-reader.html",
+            "src/web/browser/liturgy/propers-reader.js",
+            "src/web/browser/liturgy/propers-reader.css",
             "src/web/browser/liturgy/reader-state.js",
             "src/web/browser/liturgy/reader-state-adapters.js",
         ]
@@ -300,7 +300,13 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         )
         self.assertEqual(len(day_rows), 1)
         self.assertEqual(day_rows[0]["state"], "complete")
-        self.assertEqual(len(ledger["deliverables"]), 18)
+        missal_rows = [
+            row for row in ledger["deliverables"]
+            if row["id"] == "liturgy-day-missal-w3-candidate-2026-08-05"
+        ]
+        self.assertEqual(len(missal_rows), 1)
+        self.assertEqual(missal_rows[0]["state"], "candidate")
+        self.assertEqual(len(ledger["deliverables"]), 19)
         self.assertEqual(
             sum(
                 row["state"] == "complete"

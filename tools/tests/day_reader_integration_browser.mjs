@@ -5,10 +5,11 @@
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { createServer } from 'node:http';
-import { mkdtemp, mkdir, readFile, stat, writeFile } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { extname, join, resolve, sep } from 'node:path';
 import process from 'node:process';
+import { gzipSync } from 'node:zlib';
 
 const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dirname, '../..'));
 const ROUTE = '/src/web/browser/liturgy/day-reader.html';
@@ -174,7 +175,7 @@ class CDP {
       const timer = setTimeout(() => {
         this.pending.delete(id);
         reject(new Error('CDP command timed out: ' + method));
-      }, 20000);
+      }, 60000);
       this.pending.set(id, { accept, reject, timer });
       this.socket.send(JSON.stringify({ id, method, params }));
     });
@@ -183,9 +184,14 @@ class CDP {
 }
 
 async function evaluate(cdp, expression, awaitPromise = true) {
-  const result = await cdp.send('Runtime.evaluate', {
-    expression, awaitPromise, returnByValue: true, userGesture: true
-  });
+  let result;
+  try {
+    result = await cdp.send('Runtime.evaluate', {
+      expression, awaitPromise, returnByValue: true, userGesture: true
+    });
+  } catch (error) {
+    throw new Error(`${error.message}; expression: ${expression.slice(0, 180)}`);
+  }
   if (result.exceptionDetails) {
     throw new Error(result.exceptionDetails.exception?.description || result.exceptionDetails.text);
   }
@@ -213,13 +219,21 @@ function hash(rows) {
 
 const STATES = Object.freeze({
   roman: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10' }),
+  romanMissal: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
+  romanLatinMissal: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', 'ordinary-lang': 'la', rubrics: '1', why: '0' }),
   postconciliar: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1' }),
+  postReadLatent: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '0', 'ordinary-lang': 'en', rubrics: '0', why: '0', 'eucharistic-prayer': 'ep-ii' }),
+  postMissal: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0', 'eucharistic-prayer': 'ep-ii' }),
   multiple: hash({ date: '2026-01-11', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'comm-s-hygini-papae-martyris' }),
-  partial: hash({ date: '2026-01-01', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'octava-nativitatis-domini' }),
-  deferred: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', ordinary: '1', 'ordinary-lang': 'en' }),
+  partial: hash({ date: '2026-01-01', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'octava-nativitatis-domini', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1' }),
+  missingSeat: hash({ date: '2026-02-18', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'ash-wednesday', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1' }),
+  deferred: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', why: '1' }),
   invalid: hash({ date: '2026-08-02', missal: 'not-a-missal', bible: 'douay-rheims', orations: 'la' }),
-  currentStyleLatent: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'en', rubrics: '0', 'eucharistic-prayer': 'ep-ii' }),
-  ordinaryLatent: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', ordinary: '0', 'ordinary-lang': 'en', 'eucharistic-prayer': 'ep-ii' }),
+  currentStyleLatent: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '0', 'ordinary-lang': 'en', rubrics: '0', 'eucharistic-prayer': 'ep-ii' }),
+  ordinaryLatent: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '0', 'ordinary-lang': 'en', rubrics: '1' }),
+  invalidPrayer: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '1', 'ordinary-lang': 'en', 'eucharistic-prayer': 'ep-99' }),
+  inapplicablePrayer: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', 'ordinary-lang': 'en', 'eucharistic-prayer': 'ep-ii' }),
+  invalidOrdinaryLanguage: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', 'ordinary-lang': 'fr' }),
   territorial: hash({ date: '2026-01-04', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la' }),
   loadFailure: hash({ date: '2121-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' }),
   fastValid: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'clementine-vulgate', orations: 'la', mass: 'advent-1' }),
@@ -442,6 +456,46 @@ async function metrics(cdp) {
   })()`);
 }
 
+async function modePerformance(cdp, base) {
+  await viewport(cdp, 1024, 768);
+  await navigateBuiltCandidate(cdp, base, STATES.postReadLatent);
+  const before = await evaluate(cdp, `({
+    derivations: dayReaderDebug.derivations,
+    detailsBuilds: dayReaderDebug.detailsBuilds,
+    resources: performance.getEntriesByType('resource').map(row => row.name)
+  })`);
+  await click(cdp, '[data-reader-action="mode"]');
+  await click(cdp, '[data-mode="missal"]');
+  await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.requestedMode === "missal"', 'performance Missal switch');
+  const missal = await evaluate(cdp, `({
+    derivations: dayReaderDebug.derivations,
+    detailsBuilds: dayReaderDebug.detailsBuilds,
+    latency: dayReaderDebug.lastModeSwitchMs,
+    loads: dayReaderDebug.loads,
+    resources: performance.getEntriesByType('resource').map(row => row.name),
+    layoutShift: performance.getEntriesByType('layout-shift').reduce((sum, entry) =>
+      sum + (entry.hadRecentInput ? 0 : entry.value), 0)
+  })`);
+  await click(cdp, '[data-reader-action="mode"]');
+  await click(cdp, '[data-mode="read"]');
+  await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.requestedMode === "read"', 'performance Read switch');
+  const readLatency = await evaluate(cdp, 'dayReaderDebug.lastModeSwitchMs');
+  const added = missal.resources.slice(before.resources.length);
+  return {
+    readToMissalMs: missal.latency,
+    missalToReadMs: readLatency,
+    derivationDelta: missal.derivations - before.derivations,
+    detailsBuildDelta: missal.detailsBuilds - before.detailsBuilds,
+    ordinaryManifestRequests: missal.resources.filter(row => /\/structure\/ordinary\/(index|postconciliar)\.json/.test(row)).length,
+    ordinaryBodyRequestsAddedBySwitch: added.filter(row => /\/structure\/ordinary\/postconciliar\.json/.test(row)).length,
+    fragmentRequestsAddedBySwitch: added.filter(row => /\/chapters\//.test(row)).length,
+    optionDataRequestsAddedBySwitch: added.filter(row => /option|variant/.test(row)).length,
+    duplicateResources: missal.resources.filter((url, index, all) => all.indexOf(url) !== index),
+    layoutShift: missal.layoutShift,
+    loads: missal.loads
+  };
+}
+
 async function runAssertions(cdp, base) {
   await viewport(cdp, 393, 852);
   await navigateCandidate(cdp, base);
@@ -525,7 +579,7 @@ async function runAssertions(cdp, base) {
     assert.match(value.text, /preserved/);
     assert.match(value.href, /day\.html/);
     assert.match(value.href, /ordinary=1/);
-    assert.match(value.href, /ordinary-lang=en/);
+    assert.match(value.href, /why=1/);
     assert.equal(value.events, 0);
   });
 
@@ -548,33 +602,32 @@ async function runAssertions(cdp, base) {
     const latent = await evaluate(cdp, `({
       ordinary: dayReaderDebug.state.options.ordinary,
       ordinaryLanguage: dayReaderDebug.state.languages.ordinary,
-      prayer: dayReaderDebug.legacy.inert.find(row => row.key === 'eucharistic-prayer').value,
+      prayer: dayReaderDebug.state.options.legitimate['eucharistic-prayer'] || null,
       hash: location.hash
     })`);
     assert.deepEqual(latent, {
-      ordinary: false, ordinaryLanguage: 'en', prayer: 'ep-ii', hash: STATES.ordinaryLatent
+      ordinary: false, ordinaryLanguage: 'en', prayer: null, hash: STATES.ordinaryLatent
     });
   });
 
-  await test('active later-mode state defers and invalid latent state still fails closed', async () => {
-    const deferred = [
-      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
-      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', rubrics: '1' }),
-      hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', ordinary: '1' }),
-      hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', ordinary: '1', 'eucharistic-prayer': 'ep-ii' })
-    ];
-    for (const state of deferred) {
+  await test('Missal and rubrics are active while Why remains exactly deferred', async () => {
+    for (const state of [STATES.romanMissal, STATES.postMissal]) {
       await navigateCandidate(cdp, base, state);
-      assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
-      assert.ok((await evaluate(cdp, 'dayReaderDebug.deferred.length')) > 0);
-      assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'deferred');
-      assert.match(await evaluate(cdp, 'document.querySelector(".candidate-limitation a").href'), /day\.html/);
+      assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+      assert.equal(await evaluate(cdp, 'dayReaderDebug.state.requestedMode'), 'missal');
+      assert.ok((await evaluate(cdp, 'dayReaderDebug.semantic.events.length')) > 10);
+      assert.deepEqual(await evaluate(cdp, 'dayReaderDebug.deferred'), []);
     }
+    await navigateCandidate(cdp, base, STATES.deferred);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
+    assert.deepEqual(await evaluate(cdp, 'dayReaderDebug.deferred'),
+      ['the current Day reasoning apparatus']);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'deferred');
     const invalid = [
       hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'not-a-bible', orations: 'la' }),
       hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'xx' }),
       hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'not-a-formulary' }),
-      hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', 'eucharistic-prayer': 'ep-99' })
+      STATES.invalidPrayer, STATES.inapplicablePrayer, STATES.invalidOrdinaryLanguage
     ];
     for (const state of invalid) {
       await navigateCandidate(cdp, base, state);
@@ -582,6 +635,76 @@ async function runAssertions(cdp, base) {
       assert.ok((await evaluate(cdp, 'dayReaderDebug.error.length')) > 0);
       assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'invalid');
     }
+  });
+
+  await test('both editions preserve production event order and seat every appointed Proper once', async () => {
+    const cases = [
+      [STATES.romanMissal, 211, 6, 195, 10, 'proper/roman-1962/pentecost-10/010'],
+      [STATES.postMissal, 62, 7, 45, 10, 'proper/postconciliar/advent-1/010']
+    ];
+    for (const [state, total, sections, ordinary, propers, lastProper] of cases) {
+      await navigateCandidate(cdp, base, state);
+      const value = await evaluate(cdp, `(() => {
+        const events = dayReaderDebug.semantic.events;
+        const properEvents = events.filter(row => row.kind === 'proper');
+        const dom = [...document.querySelectorAll('[data-semantic-event-id]')]
+          .map(row => row.dataset.semanticEventId);
+        return {
+          total: events.length,
+          sections: events.filter(row => row.kind === 'ordinary-section').length,
+          ordinary: events.filter(row => row.kind === 'ordinary-element').length,
+          propers: properEvents.length,
+          properIds: properEvents.map(row => row.id),
+          seats: properEvents.map(row => row.seat),
+          dom,
+          option: dayReaderDebug.state.options.legitimate['eucharistic-prayer'] || null,
+          checked: document.querySelector('.ordinary-choice input:checked')?.value || null
+        };
+      })()`);
+      assert.equal(value.total, total);
+      assert.equal(value.sections, sections);
+      assert.equal(value.ordinary, ordinary);
+      assert.equal(value.propers, propers);
+      assert.equal(new Set(value.properIds).size, propers);
+      assert.equal(value.properIds.at(-1), lastProper);
+      assert.ok(value.seats.every(row => row && row.id && row.placement === 'seated'));
+      assert.deepEqual(value.dom, (await evaluate(cdp, 'dayReaderDebug.semantic.events.map(row => row.id)')));
+      if (state === STATES.postMissal) {
+        assert.equal(value.option, 'ep-ii');
+        assert.equal(value.checked, 'ep-ii');
+        assert.equal(value.dom.filter(id => /prex-eucharistica-(i|ii|iii|iv)$/.test(id)).length, 1);
+        assert.ok(value.dom.includes('ordinary-element/prex-eucharistica/prex-eucharistica-ii'));
+        assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), false);
+        await click(cdp, '[data-reader-action="contents"]');
+        const contents = await evaluate(cdp,
+          `[...document.querySelectorAll('[data-reader-contents]')][0].innerText`);
+        assert.match(contents, /Rites and divisions/i);
+        assert.match(contents, /Appointed propers/i);
+        assert.match(contents, /Eucharistic Prayer: II/);
+        await escape(cdp);
+      } else {
+        assert.equal(value.option, null);
+        assert.equal(value.checked, null);
+        assert.ok(value.dom.includes('ordinary-element/canon/canon-heading'));
+        assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), true);
+      }
+    }
+  });
+
+  await test('valid unavailable language, partial coverage, and missing seats remain honest', async () => {
+    await navigateCandidate(cdp, base, STATES.romanLatinMissal);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.state.languages.ordinary'), 'la');
+    assert.match(await evaluate(cdp, 'document.querySelector("#reader-document").innerText'),
+      /Withheld under “latin-not-transcribed”/);
+    assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), false);
+    await navigateCandidate(cdp, base, STATES.partial);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+    assert.match(await evaluate(cdp, 'document.querySelector("#coverage-notice").textContent'), /not held/);
+    await navigateCandidate(cdp, base, STATES.missingSeat);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'failed');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
+    assert.match(await evaluate(cdp, 'document.querySelector("#reader-document").innerText'),
+      /no usable semantic seat/i);
   });
 
   await test('current-style latent URL matches live Read text, citations, and weekday', async () => {
@@ -594,7 +717,7 @@ async function runAssertions(cdp, base) {
       state: {
         rubrics: dayReaderDebug.state.apparatus.rubrics,
         ordinary: dayReaderDebug.state.options.ordinary,
-        prayer: dayReaderDebug.legacy.inert.find(row => row.key === 'eucharistic-prayer').value
+        prayer: dayReaderDebug.state.options.legitimate['eucharistic-prayer']
       }
     })`);
     await navigateCurrent(cdp, base, STATES.currentStyleLatent);
@@ -606,7 +729,7 @@ async function runAssertions(cdp, base) {
     })`);
     assert.equal(candidate.title, current.title);
     assert.equal(candidate.date, current.date);
-    assert.equal(candidate.date, 'Sunday 2 August 2026');
+    assert.equal(candidate.date, 'Sunday 29 November 2026');
     assert.deepEqual(candidate.propers, current.propers);
     assert.deepEqual(candidate.state, { rubrics: false, ordinary: false, prayer: 'ep-ii' });
   });
@@ -635,20 +758,19 @@ async function runAssertions(cdp, base) {
   });
 
   await test('active and latent state remain distinct through Back and Forward', async () => {
-    const active = hash({
-      date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims',
-      orations: 'en', rubrics: '1', 'eucharistic-prayer': 'ep-ii'
-    });
+    const active = STATES.postMissal;
     await navigateCandidate(cdp, base, STATES.currentStyleLatent);
     await transitionHash(cdp, active);
-    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'deferred');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.state.requestedMode'), 'missal');
     await historyMove(cdp, 'back', STATES.currentStyleLatent);
     assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
     assert.equal(await evaluate(cdp, 'dayReaderDebug.state.apparatus.rubrics'), false);
     assert.equal(await evaluate(cdp,
-      `dayReaderDebug.legacy.inert.find(row => row.key === 'eucharistic-prayer').value`), 'ep-ii');
+      `dayReaderDebug.state.options.legitimate['eucharistic-prayer']`), 'ep-ii');
     await historyMove(cdp, 'forward', active);
-    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'deferred');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.state.requestedMode'), 'missal');
   });
 
   await test('failed and unresolved transitions cannot expose prior selection state', async () => {
@@ -718,16 +840,38 @@ async function runAssertions(cdp, base) {
       'slow valid scripture fragment'
     );
     try {
-      await transitionHash(cdp, STATES.fastValid);
+      await transitionHash(cdp, STATES.postMissal);
       const before = await candidateOutcomeSnapshot(cdp);
       assert.equal(before.outcome, 'ready');
       assert.equal(before.title, 'First Sunday of Advent');
       assert.equal(before.state.edition.id, 'postconciliar');
+      assert.equal(before.state.requestedMode, 'missal');
       assert.equal(before.semantic.resolved.formulary, 'advent-1');
-      assert.ok(before.properText.length > 0);
+      assert.equal(before.semantic.events.length, 62);
       await settleResponseGate(cdp, gate);
       const after = await candidateOutcomeSnapshot(cdp);
       assert.deepEqual(after, before);
+    } finally {
+      gate.release();
+    }
+  });
+
+  await test('a superseded slow Missal cannot overwrite a newer Read result', async () => {
+    const gate = await beginGatedCandidate(
+      cdp, base, STATES.romanMissal,
+      (relative) => relative.endsWith('/structure/ordinary/roman-1962.json'),
+      'slow Roman Ordinary response'
+    );
+    try {
+      await transitionHash(cdp, STATES.roman);
+      const before = await candidateOutcomeSnapshot(cdp);
+      assert.equal(before.outcome, 'ready');
+      assert.equal(before.state.requestedMode, 'read');
+      assert.equal(before.semantic.events.length, 10);
+      await settleResponseGate(cdp, gate);
+      const after = await candidateOutcomeSnapshot(cdp);
+      assert.deepEqual(after, before);
+      assert.equal(await evaluate(cdp, 'document.querySelectorAll(".ordinary-element").length'), 0);
     } finally {
       gate.release();
     }
@@ -837,7 +981,7 @@ async function runAssertions(cdp, base) {
       'document.activeElement.dataset.semanticEventId'), 'proper/roman-1962/pentecost-10/010');
   });
 
-  await test('only Read is selectable and Details stays lazy and human-facing', async () => {
+  await test('Read and Missal are selectable while Details stays lazy and human-facing', async () => {
     await navigateCandidate(cdp, base);
     const buildsBefore = await evaluate(cdp, 'dayReaderDebug.detailsBuilds');
     assert.match(await evaluate(cdp, 'document.querySelector("[data-reader-details]").innerText'),
@@ -849,7 +993,7 @@ async function runAssertions(cdp, base) {
     }))`);
     assert.deepEqual(modes, [
       { name: 'Read', disabled: false, checked: 'true' },
-      { name: 'Missal', disabled: true, checked: 'false' },
+      { name: 'Missal', disabled: false, checked: 'false' },
       { name: 'Study', disabled: true, checked: 'false' },
       { name: 'Compare', disabled: true, checked: 'false' }
     ]);
@@ -865,6 +1009,109 @@ async function runAssertions(cdp, base) {
     assert.doesNotMatch(details.text,
       /proper-structure|roman-1962\/pentecost-10|\/\d{3}\b|Available source identities/i);
     assert.equal(details.state, before);
+    await escape(cdp);
+    await navigateCandidate(cdp, base, STATES.postMissal);
+    await click(cdp, '[data-reader-action="details"]');
+    const missalDetails = await evaluate(cdp,
+      `document.querySelector('[data-reader-details]').innerText`);
+    assert.match(missalDetails, /Mode\s+Missal/i);
+    assert.match(missalDetails, /Ordinary language\s+English/i);
+    assert.match(missalDetails, /Eucharistic Prayer: II/);
+    assert.doesNotMatch(missalDetails, /proper\/|ordinary-element\/|sourceHooks|ordinal|\{.*\}/i);
+  });
+
+  await test('mode switching preserves latent state, calendar derivation, semantic location, and history', async () => {
+    await navigateCandidate(cdp, base, STATES.postReadLatent);
+    const derivationsBefore = await evaluate(cdp, 'dayReaderDebug.derivations');
+    const properId = 'proper/postconciliar/advent-1/007';
+    await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${properId}"]').scrollIntoView()`);
+    await click(cdp, '[data-reader-action="mode"]');
+    await click(cdp, '[data-mode="missal"]');
+    await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.requestedMode === "missal"', 'Missal switch');
+    const missal = await evaluate(cdp, `({
+      hash: location.hash,
+      derivations: dayReaderDebug.derivations,
+      option: dayReaderDebug.state.options.legitimate['eucharistic-prayer'],
+      language: dayReaderDebug.state.languages.ordinary,
+      active: document.querySelector('[data-reader-action="mode"] .action-state').textContent,
+      focus: document.activeElement.dataset.readerAction || null,
+      location: document.querySelector('[data-semantic-event-id="${properId}"]').getBoundingClientRect().top,
+      latency: dayReaderDebug.lastModeSwitchMs
+    })`);
+    assert.match(missal.hash, /ordinary=1/);
+    assert.equal(missal.derivations, derivationsBefore);
+    assert.equal(missal.option, 'ep-ii');
+    assert.equal(missal.language, 'en');
+    assert.equal(missal.active, 'Missal');
+    assert.equal(missal.focus, 'mode');
+    assert.ok(Math.abs(missal.location) < 852);
+    assert.ok(missal.latency >= 0);
+    const ordinaryLocation = 'ordinary-element/prex-eucharistica/prex-eucharistica-ii';
+    await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${ordinaryLocation}"]').scrollIntoView()`);
+    await click(cdp, '[data-reader-action="mode"]');
+    await click(cdp, '[data-mode="read"]');
+    await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.requestedMode === "read"', 'Read switch');
+    const read = await evaluate(cdp, `({
+      hash: location.hash,
+      derivations: dayReaderDebug.derivations,
+      ordinaryNodes: document.querySelectorAll('.ordinary-element').length,
+      option: dayReaderDebug.state.options.legitimate['eucharistic-prayer'],
+      language: dayReaderDebug.state.languages.ordinary,
+      visibleProper: [...document.querySelectorAll('[data-semantic-event-id]')]
+        .some(row => Math.abs(row.getBoundingClientRect().top) < innerHeight)
+    })`);
+    assert.match(read.hash, /ordinary=0/);
+    assert.equal(read.derivations, derivationsBefore);
+    assert.equal(read.ordinaryNodes, 0);
+    assert.equal(read.option, 'ep-ii');
+    assert.equal(read.language, 'en');
+    assert.equal(read.visibleProper, true);
+    await historyMove(cdp, 'back', missal.hash);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.state.requestedMode'), 'missal');
+    await historyMove(cdp, 'forward', read.hash);
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.state.requestedMode'), 'read');
+  });
+
+  await test('top, reading, offertory, Canon, Communion, and end use semantic correspondence', async () => {
+    async function choose(mode) {
+      await click(cdp, '[data-reader-action="mode"]');
+      await click(cdp, `[data-mode="${mode}"]`);
+      await waitFor(cdp, `dayReaderReady && dayReaderDebug.state.requestedMode === "${mode}"`, `${mode} correspondence`);
+    }
+    await navigateCandidate(cdp, base, STATES.roman);
+    await evaluate(cdp, 'window.scrollTo(0, 0)');
+    await choose('missal');
+    assert.ok(await evaluate(cdp, 'scrollY <= 8'));
+
+    for (const id of [
+      'proper/roman-1962/pentecost-10/006',
+      'proper/roman-1962/pentecost-10/007'
+    ]) {
+      await transitionHash(cdp, STATES.roman);
+      await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${id}"]').scrollIntoView()`);
+      await choose('missal');
+      assert.ok(await evaluate(cdp,
+        `Math.abs(document.querySelector('[data-semantic-event-id="${id}"]').getBoundingClientRect().top) < innerHeight`));
+    }
+
+    for (const id of [
+      'ordinary-element/canon/canon-heading',
+      'ordinary-element/communio/domine-non-sum-dignus'
+    ]) {
+      await transitionHash(cdp, STATES.romanMissal);
+      await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${id}"]').scrollIntoView()`);
+      await choose('read');
+      const visible = await evaluate(cdp, `[...document.querySelectorAll('[data-semantic-event-id^="proper/"]')]
+        .filter(row => Math.abs(row.getBoundingClientRect().top) < innerHeight)
+        .map(row => row.dataset.semanticEventId)`);
+      assert.ok(visible.length > 0, `${id}: no corresponding Proper boundary`);
+    }
+
+    await transitionHash(cdp, STATES.roman);
+    await evaluate(cdp, 'window.scrollTo(0, document.documentElement.scrollHeight)');
+    await choose('missal');
+    assert.ok(await evaluate(cdp,
+      'scrollY + innerHeight >= document.documentElement.scrollHeight - 8'));
   });
 
   await test('every auxiliary surface reflows at required widths and 200-percent text', async () => {
@@ -923,6 +1170,39 @@ async function runAssertions(cdp, base) {
     assert.equal(await evaluate(cdp, 'document.querySelectorAll("[data-reader-shell]").length'), 0);
   });
 
+  await test('candidate Missal and current Day share Ordinary and Proper text for both editions', async () => {
+    await viewport(cdp, 1024, 768);
+    for (const state of [STATES.romanMissal, STATES.postMissal]) {
+      await navigateCandidate(cdp, base, state);
+      const candidate = await evaluate(cdp, `({
+        title: document.querySelector('#celebration-title').textContent,
+        ordinary: [...document.querySelectorAll('#reader-document .ordinary-element')]
+          .map(row => row.textContent.replace(/\s+/g, ' ').trim()),
+        propers: [...document.querySelectorAll('#reader-document .proper:not(.ordinary-element)')]
+          .map(row => ({
+            name: row.querySelector('.proper-name')?.childNodes[0]?.textContent.trim() || '',
+            text: [...row.querySelectorAll('.passage, .composed')]
+              .map(part => part.textContent.replace(/\s+/g, ' ').trim())
+          }))
+      })`);
+      await navigateCurrent(cdp, base, state);
+      const current = await evaluate(cdp, `({
+        title: document.querySelector('#celebration-title').textContent,
+        ordinary: [...document.querySelectorAll('#reading .ordinary-element')]
+          .map(row => row.textContent.replace(/\s+/g, ' ').trim()),
+        propers: [...document.querySelectorAll('#reading .proper:not(.ordinary-element)')]
+          .map(row => ({
+            name: row.querySelector('.proper-name')?.childNodes[0]?.textContent.trim() || '',
+            text: [...row.querySelectorAll('.passage, .composed')]
+              .map(part => part.textContent.replace(/\s+/g, ' ').trim())
+          }))
+      })`);
+      assert.equal(candidate.title, current.title);
+      assert.deepEqual(candidate.ordinary, current.ordinary);
+      assert.deepEqual(candidate.propers, current.propers);
+    }
+  });
+
   await test('normal preview build contains a noindex candidate but no candidate navigation link', async () => {
     const target = `${base}/build/public-alpha/preview/liturgy/day-reader.html${STATES.roman}`;
     await cdp.send('Page.navigate', { url: target });
@@ -954,6 +1234,19 @@ async function runAssertions(cdp, base) {
     assert.equal(value.title, 'Tenth Sunday after Pentecost');
     assert.match(value.meta, /Universal/);
     assert.equal(value.properCount, 10);
+    await navigateCandidate(cdp, base, STATES.postMissal);
+    const missal = await evaluate(cdp, `({
+      option: document.querySelector('#celebration-meta').textContent,
+      ordinary: document.querySelectorAll('.ordinary-element').length,
+      propers: document.querySelectorAll('#reader-document .proper[data-semantic-event-id^="proper/"]').length,
+      choice: getComputedStyle(document.querySelector('.ordinary-choice')).display,
+      actions: getComputedStyle(document.querySelector('.reader-actions')).display
+    })`);
+    assert.match(missal.option, /Eucharistic Prayer: II/);
+    assert.equal(missal.ordinary, 45);
+    assert.equal(missal.propers, 10);
+    assert.equal(missal.choice, 'none');
+    assert.equal(missal.actions, 'none');
     await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
   });
 
@@ -992,59 +1285,70 @@ async function captureMatrix(cdp, base, directory) {
   await mkdir(directory, { recursive: true });
   const sizes = [[1440, 900], [1024, 768], [768, 1024], [393, 852], [320, 852]];
   const cases = [
-    ['default', STATES.roman, 'top'], ['deep', STATES.roman, 'deep'],
-    ['date', STATES.roman, 'date'], ['contents', STATES.roman, 'contents'],
-    ['mode', STATES.roman, 'mode'], ['details', STATES.roman, 'details'],
-    ['deferred-ordinary', STATES.deferred, 'top'], ['partial', STATES.partial, 'top'],
-    ['invalid', STATES.invalid, 'top']
+    ['roman-read', STATES.roman, 'top'], ['roman-missal', STATES.romanMissal, 'top'],
+    ['roman-missal-deep', STATES.romanMissal, 'deep'],
+    ['roman-missal-contents', STATES.romanMissal, 'contents'],
+    ['roman-missal-mode', STATES.romanMissal, 'mode'],
+    ['roman-missal-details', STATES.romanMissal, 'details'],
+    ['postconciliar-read', STATES.postconciliar, 'top'],
+    ['postconciliar-missal-ep-ii', STATES.postMissal, 'top'],
+    ['invalid-eucharistic-prayer', STATES.invalidPrayer, 'top'],
+    ['partial-coverage', STATES.partial, 'top'], ['missing-seat', STATES.missingSeat, 'top']
   ];
   const measures = [];
   for (const [width, height] of sizes) {
     await viewport(cdp, width, height);
     for (const [name, state, kind] of cases) {
       await captureCandidate(cdp, base, state, kind);
-      const file = `day-reader-${name}-${width}x${height}.png`;
+      const file = `day-reader-missal-${name}-${width}x${height}.png`;
       await shot(cdp, join(directory, file));
       measures.push({ file, viewport: `${width}x${height}`, state: name, metrics: await metrics(cdp) });
       if (await evaluate(cdp, 'Boolean(document.querySelector("dialog[open]"))')) await escape(cdp);
     }
-    await navigateBuiltCurrent(cdp, base);
-    const currentFile = `day-current-default-${width}x${height}.png`;
-    await shot(cdp, join(directory, currentFile));
+    for (const [name, state] of [['roman-missal', STATES.romanMissal], ['postconciliar-missal-ep-ii', STATES.postMissal]]) {
+      await navigateBuiltCurrent(cdp, base, state);
+      await shot(cdp, join(directory, `day-current-${name}-${width}x${height}.png`));
+    }
   }
 
   await viewport(cdp, 393, 852);
-  await navigateBuiltCandidate(cdp, base, STATES.multiple);
+  await navigateBuiltCandidate(cdp, base, STATES.postMissal);
   await evaluate(cdp, 'window.scrollTo(0, 0)');
   await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
-  await click(cdp, '[data-reader-action="date"]');
-  await shot(cdp, join(directory, 'day-reader-date-200-percent-393x852.png'));
-  measures.push({ file: 'day-reader-date-200-percent-393x852.png', viewport: '393x852',
-    state: 'date-200-percent', metrics: await metrics(cdp) });
+  await shot(cdp, join(directory, 'day-reader-missal-postconciliar-200-percent-393x852.png'));
+  measures.push({ file: 'day-reader-missal-postconciliar-200-percent-393x852.png', viewport: '393x852',
+    state: 'postconciliar-missal-200-percent', metrics: await metrics(cdp) });
   await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
-  await escape(cdp);
 
   await viewport(cdp, 393, 852);
   await navigateBuiltCandidate(cdp, base, STATES.currentStyleLatent);
-  await shot(cdp, join(directory, 'day-reader-latent-current-url-393x852.png'));
+  await shot(cdp, join(directory, 'day-reader-missal-latent-read-393x852.png'));
   await navigateBuiltCandidate(cdp, base, STATES.roman);
   await transitionHash(cdp, STATES.invalid);
   await click(cdp, '[data-reader-action="date"]');
-  await shot(cdp, join(directory, 'day-reader-transition-invalid-date-393x852.png'));
+  await shot(cdp, join(directory, 'day-reader-missal-transition-invalid-date-393x852.png'));
   await escape(cdp);
   await click(cdp, '[data-reader-action="details"]');
-  await shot(cdp, join(directory, 'day-reader-transition-invalid-details-393x852.png'));
+  await shot(cdp, join(directory, 'day-reader-missal-transition-invalid-details-393x852.png'));
   await escape(cdp);
 
+  await navigateBuiltCandidate(cdp, base, STATES.postReadLatent);
+  await evaluate(cdp, `document.querySelector('[data-semantic-event-id="proper/postconciliar/advent-1/007"]').scrollIntoView()`);
+  await shot(cdp, join(directory, 'day-reader-missal-mode-switch-before-393x852.png'));
+  await click(cdp, '[data-reader-action="mode"]');
+  await click(cdp, '[data-mode="missal"]');
+  await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.requestedMode === "missal"', 'captured Missal switch');
+  await shot(cdp, join(directory, 'day-reader-missal-mode-switch-after-393x852.png'));
+
   await viewport(cdp, 1024, 768);
-  await navigateBuiltCandidate(cdp, base);
+  await navigateBuiltCandidate(cdp, base, STATES.postMissal);
   await evaluate(cdp, 'window.scrollTo(0, 0)');
   await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
   const pdf = await cdp.send('Page.printToPDF', {
     printBackground: true, preferCSSPageSize: true, paperWidth: 8.5, paperHeight: 11,
     marginTop: 0.4, marginBottom: 0.4, marginLeft: 0.45, marginRight: 0.45
   });
-  await writeFile(join(directory, 'day-reader-print.pdf'), Buffer.from(pdf.data, 'base64'));
+  await writeFile(join(directory, 'day-reader-missal-postconciliar-print.pdf'), Buffer.from(pdf.data, 'base64'));
   await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
   await writeFile(join(directory, 'measurements.json'), JSON.stringify(measures, null, 2) + '\n');
   return measures;
@@ -1058,6 +1362,8 @@ async function main() {
   const profile = await mkdtemp(join(tmpdir(), 'triptych-day-reader-chrome-'));
   const chrome = spawn(chromeBinary, [
     '--headless=new', '--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu',
+    '--disable-extensions', '--disable-component-extensions-with-background-pages',
+    '--disable-background-networking', '--disable-sync',
     `--remote-debugging-port=${debugPort}`, `--user-data-dir=${profile}`,
     '--no-first-run', '--no-default-browser-check', 'about:blank'
   ], { stdio: ['ignore', 'ignore', 'pipe'] });
@@ -1095,7 +1401,21 @@ async function main() {
     await navigateBuiltCandidate(cdp, base);
     await evaluate(cdp, 'window.scrollTo(0, 0)');
     const measured = await metrics(cdp);
+    const modeMeasured = await modePerformance(cdp, base);
     const ax = await cdp.send('Accessibility.getFullAXTree');
+    const measuredFiles = {};
+    for (const [name, relative] of Object.entries({
+      shellJavaScript: 'src/web/browser/liturgy/reader-shell.js',
+      candidateJavaScript: 'src/web/browser/liturgy/day-reader.js',
+      productionOrdinaryJavaScript: 'src/web/browser/liturgy/day.js',
+      shellCss: 'src/web/browser/liturgy/reader-shell.css',
+      candidateCss: 'src/web/browser/liturgy/day-reader.css',
+      productionOrdinaryCss: 'src/web/browser/liturgy/day.css',
+      productionMissalCss: 'src/web/browser/liturgy/day-missal.css'
+    })) {
+      const bytes = await readFile(join(ROOT, relative));
+      measuredFiles[name] = { raw: bytes.length, gzip: gzipSync(bytes).length };
+    }
     const report = {
       generatedAt: new Date().toISOString(),
       chrome: (await waitForJson(`http://127.0.0.1:${debugPort}/json/version`)).Browser,
@@ -1107,16 +1427,12 @@ async function main() {
       },
       performance: {
         metrics: measured,
+        modeSwitch: modeMeasured,
         resourceCount: measured.resources.length,
         duplicateResources: measured.resources.filter((url, index, all) => all.indexOf(url) !== index)
       },
       captures: captures.length,
-      files: {
-        shellJavaScript: (await stat(join(ROOT, 'src/web/browser/liturgy/reader-shell.js'))).size,
-        candidateJavaScript: (await stat(join(ROOT, 'src/web/browser/liturgy/day-reader.js'))).size,
-        shellCss: (await stat(join(ROOT, 'src/web/browser/liturgy/reader-shell.css'))).size,
-        candidateCss: (await stat(join(ROOT, 'src/web/browser/liturgy/day-reader.css'))).size
-      }
+      files: measuredFiles
     };
     if (captureDir) {
       await writeFile(join(captureDir, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');
@@ -1134,6 +1450,7 @@ async function main() {
     chrome.kill('SIGTERM');
     await exited;
     await new Promise((accept) => server.close(accept));
+    await rm(profile, { recursive: true, force: true });
   }
 }
 

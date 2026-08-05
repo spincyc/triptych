@@ -1,6 +1,56 @@
 schema_version = 1
 
 [[deliverables]]
+id = "liturgy-day-missal-w3-candidate-2026-08-05"
+owner = "src/web/browser/liturgy/day-reader.html"
+promise = "Integrate an unlinked, noindex W3 Day Missal-mode candidate into the accepted shared production reader using the existing M1 Day state, calendar assembly, Ordinary rendering, seating, and Proper rendering paths without changing public routes, the accepted Propers candidate, production data, later modes, search, or recension coverage."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "continuous-production-missal"
+  criterion = "Read remains the default and unchanged, while Missal renders the selected production Ordinary and each appointed Proper exactly once at its production semantic seat for Roman 1962 and postconciliar states without a second renderer, seating engine, or event-order implementation."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.html",
+    "src/web/browser/liturgy/day-reader.js",
+  ]
+
+  [[deliverables.requirements]]
+  id = "state-options-and-transitions"
+  criterion = "Legacy Ordinary, language, Eucharistic Prayer, rubrics, and why state is validated fail-closed; legitimate options are never chosen by incidental order; and Read/Missal transitions preserve valid latent preferences and explicit semantic location across navigation and races."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.js",
+    "tools/tests/test_day_missal_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "interaction-accessibility-performance-and-print"
+  criterion = "Focused and real-browser checks cover semantic Contents, Details, deep-scroll mode transitions, responsive and 200% reflow, accessibility, request and size budgets, superseded asynchronous renders, and independently usable continuous Missal print."
+  status = "pass"
+  evidence = [
+    "tools/tests/day_reader_integration_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "semantic-parity-and-production-isolation"
+  criterion = "Representative candidate output agrees with the production Day assembly, seating, Ordinary, and Proper semantics while public Day, public Propers, the accepted Propers candidate, navigation, selectors, M1 semantics, and production liturgical and generated data remain isolated."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_day_missal_integration.py",
+    "tools/tests/day_reader_integration_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-candidate"
+  criterion = "A self-contained immutable handoff from the exact pushed implementation commit is archive-tested and manifest-verified for clean-conversation external review, while the roadmap and work register retain candidate-pending-review status."
+  status = "open"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-propers-read-w3-candidate-2026-08-04"
 owner = "src/web/browser/liturgy/propers-reader.html"
 promise = "Integrate an unlinked, noindex W3 Propers Read candidate into the accepted shared production reader shell and M1 Propers state path without reopening the accepted M3 Day integration or changing public routes, data, later modes, search, or recension coverage."

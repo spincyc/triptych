@@ -6,16 +6,18 @@
 <title>Day reader — internal candidate</title>
 <link rel="stylesheet" href="../shared/browser-core.css">
 <link rel="stylesheet" href="liturgy.css">
+<link rel="stylesheet" href="day.css">
+<link rel="stylesheet" href="day-missal.css">
 <link rel="stylesheet" href="reader-shell.css">
 <link rel="stylesheet" href="day-reader.css">
 </head>
-<body class="day-reader-candidate">
+<body class="day-reader-candidate page-browser">
 <a class="skip-link" href="#reader-document">Skip to the Mass</a>
 
 <div class="day-reader-candidate-frame">
 <p class="candidate-flag" role="note">
-  <strong>Internal M3 candidate</strong>
-  <span>Day Read-mode integration for review; the live Day page is unchanged.</span>
+  <strong>Internal W3 candidate</strong>
+  <span>Day Read and Missal integration for review; the live Day page is unchanged.</span>
 </p>
 
 <div class="reader-shell" data-reader-shell data-entrance="day">
@@ -46,7 +48,7 @@
             aria-expanded="false">
       <span class="action-mark" aria-hidden="true">R</span>
       <span>Mode</span>
-      <span class="action-state">Read</span>
+      <span class="action-state" aria-live="polite">Read</span>
     </button>
     <button type="button" data-reader-action="details" aria-controls="details-surface"
             aria-expanded="false">
@@ -91,6 +93,14 @@
           <label for="reader-formulary">Readable formulary</label>
           <select id="reader-formulary" name="mass"></select>
         </div>
+        <div class="surface-field" id="reader-ordinary-lang-field" hidden>
+          <label for="reader-ordinary-lang">Ordinary language</label>
+          <select id="reader-ordinary-lang" name="ordinary-lang"></select>
+        </div>
+        <div class="surface-field" id="reader-ordinary-option-field" hidden>
+          <label for="reader-ordinary-option">Ordinary option</label>
+          <select id="reader-ordinary-option" name="ordinary-option"></select>
+        </div>
         <button class="surface-apply" type="submit">Apply selection</button>
       </form>
       <p class="surface-note">Locality is never inferred. Dates requiring an explicit territorial branch remain on the current Day page until that state is represented by the shared URL contract.</p>
@@ -122,8 +132,8 @@
       <button type="button" role="radio" aria-checked="true" data-mode="read">
         <strong>Read</strong><span>Available and active in this candidate.</span>
       </button>
-      <button type="button" role="radio" aria-checked="false" aria-disabled="true" disabled>
-        <strong>Missal</strong><span>Not integrated in the W3 candidate.</span>
+      <button type="button" role="radio" aria-checked="false" data-mode="missal">
+        <strong>Missal</strong><span>Continuous Ordinary with appointed propers in place.</span>
       </button>
       <button type="button" role="radio" aria-checked="false" aria-disabled="true" disabled>
         <strong>Study</strong><span>Not integrated in the W3 candidate.</span>
@@ -153,6 +163,7 @@
 <script src="../shared/browser-core.js"></script>
 <script src="assembly-model.js"></script>
 <script src="ordinary-seating.js"></script>
+<script src="day.js"></script>
 <script src="reader-state.js"></script>
 <script src="reader-state-adapters.js"></script>
 <script src="reader-shell.js"></script>

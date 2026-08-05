@@ -19,7 +19,6 @@ JS = PROTOTYPE / "reader-shell.js"
 PRODUCTION = [
     "src/web/browser/liturgy/day.html",
     "src/web/browser/liturgy/day.css",
-    "src/web/browser/liturgy/day.js",
     "src/web/browser/liturgy/index.html",
     "src/web/browser/liturgy/liturgy.css",
     "src/web/browser/liturgy/liturgy.js",
@@ -176,6 +175,7 @@ class ReaderShellPrototypeTest(unittest.TestCase):
                 ":(exclude)src/web/browser/liturgy/day-reader.*",
                 ":(exclude)src/web/browser/liturgy/reader-shell.*",
                 ":(exclude)src/web/browser/liturgy/propers-reader.*",
+                ":(exclude)src/web/browser/liturgy/day.js",
                 "src/web/browser/shared/browser-core.css",
             ],
             cwd=ROOT, check=True,

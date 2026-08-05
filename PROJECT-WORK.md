@@ -179,6 +179,38 @@ operations.
 
 ## Promised work
 
+### Liturgy Day Missal-mode W3 integration candidate
+
+<!-- promised-deliverable: liturgy-day-missal-w3-candidate-2026-08-05 -->
+
+This task extends the accepted internal Day reader at
+`liturgy/day-reader.html` with the next bounded W3/M3 production-integration
+slice: Read remains the default appointed-Propers view, and Missal presents the
+continuous production Ordinary with those same propers seated at their actual
+semantic locations. The candidate must reuse the accepted M1 Day state,
+production calendar assembly, Ordinary data and renderer, Ordinary seating,
+and shared Proper renderer. It may not create a second liturgical sequence,
+renderer, seating engine, event-order engine, URL parser, or public route.
+
+The candidate has passing implementation evidence and is **pending external
+review**. Its contract includes Roman 1962 and postconciliar parity,
+fail-closed Ordinary language and Eucharistic Prayer handling, explicit
+coverage and absence,
+semantic-location preservation across Read/Missal and history transitions,
+race ownership, responsive and accessible interaction, continuous Missal
+print, performance measurement, and production isolation. Study, Compare,
+Propers Missal mode, search, new recension or source coverage, public route
+cutover, and redesign of the accepted shell or complete print system remain
+out of scope.
+
+The implementation base is
+`c4c071d6ba962524487bc8f4c6a4b781981851c7`. The review handoff will be
+created only after the focused implementation commit is validated and pushed;
+its exact reviewed commit, checks, screenshots, measurements, diff, manifest,
+and archive-verification result will be recorded there. Until an external
+review disposition is returned and recorded, this row remains a candidate and
+does not amend the accepted M1, M2, M3, or Propers Read records.
+
 ### Liturgy Propers Read W3 integration accepted
 
 <!-- promised-deliverable: liturgy-propers-read-w3-candidate-2026-08-04 -->

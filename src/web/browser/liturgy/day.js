@@ -1336,28 +1336,52 @@
 
   const massEvents = Seating.massEvents;
 
-  /** The frame, with the day's propers set into it. */
-  function renderFrame(file, propers, renderMassProper) {
+  /** Present an already ordered semantic Mass stream in one continuous frame. */
+  function renderSemanticFrame(events, presenters) {
     const wrapper = T.el('section', 'ordinary-frame');
+    for (const event of events || []) {
+      let node = null;
+      if (event.kind === 'begin_section' || event.kind === 'ordinary-section') {
+        node = presenters.section(event);
+      } else if (event.kind === 'ordinary_element' || event.kind === 'ordinary-element') {
+        node = presenters.element(event);
+      } else if (event.kind === 'proper') {
+        node = presenters.proper(event);
+      } else {
+        throw new Error('Unsupported production semantic event kind: ' + event.kind);
+      }
+      if (node) wrapper.appendChild(node);
+    }
+    return wrapper;
+  }
+
+  /** The frame, with the day's propers set into it. */
+  function renderFrame(file, propers, renderMassProper, decorateEvent) {
     const shown = shownElements(file);
     const placed = seatPropers(propers, seats(file, shown));
-
     const announced = { before: false, after: false };
-    for (const event of massEvents(shown, placed)) {
-      if (event.kind === 'begin_section') {
-        wrapper.appendChild(T.el(DIVISION_HEADING, 'mass-subheading ordinary-division',
-          event.section.name));
-      } else if (event.kind === 'ordinary_element') {
-        wrapper.appendChild(renderElement(event.element, file));
-      } else if (event.kind === 'proper') {
+    return renderSemanticFrame(massEvents(shown, placed), {
+      section: function (event) {
+        const division = T.el(DIVISION_HEADING, 'mass-subheading ordinary-division',
+          event.section.name);
+        if (decorateEvent) decorateEvent(event, division);
+        return division;
+      },
+      element: function (event) {
+        const element = renderElement(event.element, file);
+        if (decorateEvent) decorateEvent(event, element);
+        return element;
+      },
+      proper: function (event) {
+        const fragment = document.createDocumentFragment();
         if (event.placement === 'before' && !announced.before) {
           announced.before = true;
-          wrapper.appendChild(T.el('p', 'row-meta ordinary-aside',
+          fragment.appendChild(T.el('p', 'row-meta ordinary-aside',
             'This Mass opens with propers the Ordinary appoints no place for. They ' +
             'are shown first, in the missal’s own order.'));
         } else if (event.placement === 'after' && !announced.after) {
           announced.after = true;
-          wrapper.appendChild(T.el('p', 'row-meta ordinary-aside',
+          fragment.appendChild(T.el('p', 'row-meta ordinary-aside',
             'From here the day’s propers no longer run forward through the Ordinary: ' +
             'this day carries more than one formulary, or its rite departs from the ' +
             'frame. The rest is shown in the missal’s own order, unseated and ' +
@@ -1365,12 +1389,39 @@
         }
         // Inside the frame a proper is a part of the Mass beside the parts that
         // never change, so both set at the same heading level.
-        wrapper.appendChild(
-          renderMassProper(event.proper, event.seat, PART_HEADING, event));
+        fragment.appendChild(renderMassProper(event.proper, event.seat, PART_HEADING, event));
+        return fragment;
       }
-    }
-    return wrapper;
+    });
   }
+
+  /* The production Ordinary presenter is also the internal reader candidate's
+     renderer. The candidate loads this exact file but has no live-Day controls,
+     so startup is gated below while these source-owned rendering functions stay
+     available without a copied Ordinary or a second Mass presenter. */
+  function configureOrdinaryRenderer(options) {
+    const held = options || {};
+    if (Object.prototype.hasOwnProperty.call(held, 'ordinaryLang')) {
+      state.ordinaryLang = held.ordinaryLang;
+    }
+    if (Object.prototype.hasOwnProperty.call(held, 'variants')) {
+      state.variants = Object.assign({}, held.variants || {});
+    }
+    if (Object.prototype.hasOwnProperty.call(held, 'why')) state.why = held.why === true;
+  }
+
+  window.TriptychOrdinaryRenderer = Object.freeze({
+    configure: configureOrdinaryRenderer,
+    chosenLanguage: chosenLanguage,
+    renderElement: renderElement,
+    renderFrame: renderFrame,
+    renderSemanticFrame: renderSemanticFrame,
+    ordinaryPreamble: ordinaryPreamble,
+    shownElements: shownElements,
+    seats: seats,
+    seatPropers: seatPropers,
+    massEvents: massEvents
+  });
 
   /* ------------------------------------------------------------------------
    * Controls
@@ -1664,6 +1715,10 @@
   /* ------------------------------------------------------------------------
    * Start-up
    * --------------------------------------------------------------------- */
+
+  // Loading day.js as the production Ordinary-renderer module inside the
+  // unlinked candidate must not initialize a second Day route.
+  if (!reading || !controls) return;
 
   T.setInlineNotice(
     'No data root could be reached at "' + T.dataRoot + '", so this page has ' +

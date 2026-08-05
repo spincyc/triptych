@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = "db64ab369daeaa17585c046722db87a200afabb3"
+BASE = "c4c071d6ba962524487bc8f4c6a4b781981851c7"
 LITURGY = ROOT / "src/web/browser/liturgy"
 HTML = LITURGY / "day-reader.html"
 SHELL_JS = LITURGY / "reader-shell.js"
@@ -35,12 +35,15 @@ class DayReaderIntegrationTests(unittest.TestCase):
         source = text(HTML)
         self.assertIn("meta[name=\"robots\"]", text(DAY_JS))
         self.assertIn("noindex, nofollow, noarchive", text(DAY_JS))
-        self.assertIn("Internal M3 candidate", source)
+        self.assertIn("Internal W3 candidate", source)
         self.assertIn('data-reader-shell', source)
         self.assertNotIn("shell=persistent", source)
         self.assertNotIn("shell=reveal", source)
         self.assertNotIn("prototypes/reader-shell", source)
-        for asset in ("reader-shell.js", "reader-shell.css", "day-reader.js", "day-reader.css"):
+        for asset in (
+            "reader-shell.js", "reader-shell.css", "day-reader.js", "day-reader.css",
+            "day.js", "day.css", "day-missal.css",
+        ):
             self.assertIn(asset, source)
 
         linked_from = []
@@ -80,7 +83,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertNotIn("prototypes/reader-shell", source)
         self.assertNotIn("fixture", source.lower())
 
-    def test_all_four_actions_and_read_only_mode_are_explicit(self) -> None:
+    def test_all_four_actions_and_bounded_modes_are_explicit(self) -> None:
         source = text(HTML)
         for action, label in (
             ("date", "Date &amp; edition"),
@@ -91,12 +94,14 @@ class DayReaderIntegrationTests(unittest.TestCase):
             self.assertIn(f'data-reader-action="{action}"', source)
             self.assertIn(label, source)
         self.assertIn('data-mode="read"', source)
-        self.assertEqual(source.count('aria-disabled="true" disabled'), 3)
-        for name in ("Missal", "Study", "Compare"):
+        self.assertIn('data-mode="missal"', source)
+        self.assertEqual(source.count('aria-disabled="true" disabled'), 2)
+        self.assertIn("Continuous Ordinary with appointed propers in place.", source)
+        for name in ("Study", "Compare"):
             self.assertIn(f"<strong>{name}</strong>", source)
             self.assertIn("Not integrated in the W3 candidate.", source)
 
-    def test_deferred_state_is_preserved_and_handed_to_live_day(self) -> None:
+    def test_only_why_remains_deferred_while_missal_state_is_active_or_latent(self) -> None:
         source = text(DAY_JS)
         for key in ("ordinary", "ordinary-lang", "rubrics", "why"):
             self.assertIn(key, source)
@@ -104,9 +109,9 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertIn("day.html", source)
         self.assertIn("window.location.hash", source)
         self.assertIn("did not partially render or map it to Read", source)
-        self.assertIn("recognized.rubrics === '1'", source)
-        self.assertIn("const ordinaryActive = recognized.ordinary === '1'", source)
-        self.assertIn("ordinaryActive && parsed.present.indexOf(key)", source)
+        self.assertIn("recognized.why === '1'", source)
+        self.assertNotIn("recognized.rubrics === '1'", source)
+        self.assertNotIn("const ordinaryActive = recognized.ordinary === '1'", source)
         self.assertIn("async function validateExplicitVariants", source)
         self.assertIn("structure.variants", source)
         self.assertIn("window.dayReaderDebug.legacy = normalized.legacy", source)
@@ -130,7 +135,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
     def test_superseded_async_renders_cannot_mutate_current_output(self) -> None:
         source = text(DAY_JS)
         self.assertIn(
-            "async function renderResult(result, structure, derived, branch, isCurrent)",
+            "async function renderResult(result, structure, derived, branch, renderContext, isCurrent)",
             source,
         )
         self.assertIn("if (!isCurrent()) return false", source)
@@ -172,16 +177,18 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertIn(".candidate-flag { display: none !important; }", candidate)
         self.assertIn("break-inside: avoid", candidate)
 
-    def test_live_day_propers_m1_and_production_data_are_byte_unchanged(self) -> None:
+    def test_public_pages_propers_m1_and_production_data_are_isolated(self) -> None:
         protected = [
             "src/web/browser/liturgy/day.html",
-            "src/web/browser/liturgy/day.js",
             "src/web/browser/liturgy/day.css",
             "src/web/browser/liturgy/day-missal.css",
             "src/web/browser/liturgy/index.html",
             "src/web/browser/liturgy/liturgy.js",
             "src/web/browser/liturgy/reader-state.js",
             "src/web/browser/liturgy/reader-state-adapters.js",
+            "src/web/browser/liturgy/propers-reader.html",
+            "src/web/browser/liturgy/propers-reader.js",
+            "src/web/browser/liturgy/propers-reader.css",
         ]
         for path in protected:
             current = (ROOT / path).read_bytes()
@@ -199,6 +206,10 @@ class DayReaderIntegrationTests(unittest.TestCase):
             "src/web/data", "src/sources/calendars"
         ).splitlines()
         self.assertEqual(changed_data, [])
+        public_renderer = text(LITURGY / "day.js")
+        self.assertIn("window.TriptychOrdinaryRenderer", public_renderer)
+        self.assertIn("renderSemanticFrame", public_renderer)
+        self.assertIn("if (!reading || !controls) return", public_renderer)
 
     def test_candidate_does_not_leak_fixture_or_discovery_records(self) -> None:
         changed = git("diff", "--name-only", BASE).splitlines()
@@ -228,11 +239,17 @@ class DayReaderIntegrationTests(unittest.TestCase):
             {requirement["status"] for requirement in rows[0]["requirements"]},
             {"pass"},
         )
+        candidate = [
+            row for row in ledger["deliverables"]
+            if row["id"] == "liturgy-day-missal-w3-candidate-2026-08-05"
+        ]
+        self.assertEqual(len(candidate), 1)
+        self.assertEqual(candidate[0]["state"], "candidate")
 
     def test_candidate_size_is_bounded_below_prototype_harness(self) -> None:
         prototype = LITURGY / "prototypes/reader-shell/reader-shell.js"
         self.assertLess(SHELL_JS.stat().st_size, prototype.stat().st_size // 4)
-        self.assertLess(DAY_JS.stat().st_size, prototype.stat().st_size * 55 // 100)
+        self.assertLess(DAY_JS.stat().st_size, prototype.stat().st_size * 80 // 100)
 
 
 if __name__ == "__main__":

@@ -43,6 +43,45 @@
       return winner;
     }
 
+    function captureSemanticLocation() {
+      if (window.scrollY <= 8) return { kind: 'top', id: null };
+      const documentHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+      if (window.scrollY + window.innerHeight >= documentHeight - 8) {
+        return { kind: 'end', id: null };
+      }
+      const candidates = Array.from(reading.querySelectorAll('[data-semantic-location]'));
+      if (!candidates.length) return { kind: 'top', id: null };
+      const line = Math.max(80, Math.min(window.innerHeight * 0.38, 280));
+      let winner = candidates[0];
+      for (const candidate of candidates) {
+        if (candidate.getBoundingClientRect().top <= line) winner = candidate;
+        else break;
+      }
+      return { kind: 'event', id: winner.dataset.semanticLocation || null };
+    }
+
+    function restoreSemanticLocation(location) {
+      const held = location || { kind: 'top', id: null };
+      if (held.kind === 'end') {
+        window.scrollTo({ top: Math.max(0, document.documentElement.scrollHeight), behavior: 'auto' });
+        markCurrent();
+        return true;
+      }
+      if (held.kind === 'top') {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        markCurrent();
+        return true;
+      }
+      const target = Array.from(reading.querySelectorAll('[data-semantic-location]')).find(function (node) {
+        return node.dataset.semanticLocation === held.id;
+      });
+      if (!target) return false;
+      target.scrollIntoView({ block: 'start', behavior: 'auto' });
+      currentLocation = held.id;
+      markCurrent();
+      return true;
+    }
+
     function markCurrent() {
       const active = currentSection();
       currentLocation = active ? active.id : null;
@@ -114,13 +153,16 @@
       const contents = shell.querySelector('[data-reader-contents]');
       if (!contents) return;
       contents.replaceChildren();
-      if (sections.length) {
-        const division = document.createElement('p');
-        division.className = 'contents-division';
-        division.textContent = 'Proper of the Mass';
-        contents.appendChild(division);
-      }
+      let currentGroup = null;
       sections.forEach(function (item, index) {
+        const group = item.group || 'Proper of the Mass';
+        if (group !== currentGroup) {
+          currentGroup = group;
+          const division = document.createElement('p');
+          division.className = 'contents-division';
+          division.textContent = group;
+          contents.appendChild(division);
+        }
         const button = document.createElement('button');
         button.type = 'button';
         button.dataset.readerLocation = item.id;
@@ -158,6 +200,8 @@
       close: close,
       setContents: setContents,
       currentLocation: function () { return currentLocation; },
+      captureSemanticLocation: captureSemanticLocation,
+      restoreSemanticLocation: restoreSemanticLocation,
       openSurface: function () { return openName; },
       refreshLocation: markCurrent
     });
