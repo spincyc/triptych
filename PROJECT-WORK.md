@@ -179,25 +179,41 @@ operations.
 
 ## Promised work
 
-### Liturgy Propers Read W3 integration candidate
+### Liturgy Propers Read W3 integration accepted
 
 <!-- promised-deliverable: liturgy-propers-read-w3-candidate-2026-08-04 -->
 
-The second W3 production-integration entrance connects an unlinked, noindex
-Propers Read candidate to the accepted persistent reader shell and the accepted
-M1 Propers state adapter. It must render existing production formularies
-without replacing the public Propers route, choosing an arbitrary formulary,
-or merging coequal cycles or alternatives.
+**Accepted** — the W3 Propers Read integration enters the same production
+reader shell as the accepted Day candidate, preserves current valid formulary
+semantics through the M1 Propers state and production Proper renderer, leaves
+missing identity unresolved, fails closed on invalid state, preserves cycles
+and alternatives independently, requests translation witnesses only when
+formulary-specific translated material requires a choice, and remains isolated
+from the public Day and Propers routes.
 
-This work remains a **W3 Propers candidate pending external review**. The
-accepted and closed M3 Day integration is not reopened. The live Day and
-Propers routes, the accepted Day candidate, public navigation and selectors,
-M1 contract meaning, liturgical and generated production data, later modes,
-search, public cutover, and recension expansion remain outside its boundary.
-Candidate completion requires semantic and legacy-URL parity evidence,
-transition and accessibility tests, measured responsive and print captures,
-production-isolation proof, and the immutable external-review handoff requested
-for the second entrance into the shared reader.
+External review first requested bounded Browse witness, Browse-race, tracking,
+and handoff corrections from candidate
+`b0b1e5b63ba4a1d389b53276fa0bf9944c0ee909` and handoff
+`20260804T212821Z-propers-reader-shell-integration`. It then accepted correction
+`1e4587dfe04a11c18e996a16f7fbbdb54bc744a4` and immutable handoff
+`20260804T225215Z-propers-reader-shell-corrections` after manifest verification.
+The reviewed evidence records 84 focused M1/shell/Day/Propers tests, 90
+public-alpha/gallery tests, and respectively 27, 25, and 18 Chromium assertions
+for Propers, Day, and the shared shell. The exact shared-shell hashes are
+`bf1c062453f8fcfd5a68c1fe30e31aca89ea1a3c8adeef9a5525d8081ae8c707`
+for `reader-shell.js` and
+`e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a`
+for `reader-shell.css`.
+
+Production-isolation evidence confirms that public Day and Propers, the
+accepted Day candidate, navigation and selectors, M1 semantics, production
+liturgical and generated data, and public URL behavior remain unchanged. The
+approved example baseline remains the same 23 unrelated pre-existing records
+and the same two promised-deliverable commands; acceptance changes only the
+candidate count from 18 tracked, 12 complete to 18 tracked, 13 complete.
+Public cutover, Missal, Study, Compare, search, and recension expansion remain
+deferred. Excess cycle-choice print whitespace remains non-blocking debt for a
+later print-refinement workstream.
 
 ### Liturgy Day reader-shell M3 accepted
 

@@ -4,7 +4,7 @@ schema_version = 1
 id = "liturgy-propers-read-w3-candidate-2026-08-04"
 owner = "src/web/browser/liturgy/propers-reader.html"
 promise = "Integrate an unlinked, noindex W3 Propers Read candidate into the accepted shared production reader shell and M1 Propers state path without reopening the accepted M3 Day integration or changing public routes, data, later modes, search, or recension coverage."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "shared-shell-and-production-renderer"
@@ -43,13 +43,16 @@ state = "candidate"
   ]
 
   [[deliverables.requirements]]
-  id = "external-review-candidate"
-  criterion = "A complete immutable handoff asks the bounded Propers integration questions, and the roadmap records the result only as a candidate pending external review."
-  status = "open"
+  id = "external-review-acceptance"
+  criterion = "External review accepts the corrected W3 Propers Read integration as the second entrance into the shared production reader while public cutover, later modes, search, and recension work remain deferred."
+  status = "pass"
   evidence = [
     "guidance/liturgy-browser-roadmap.md",
     "PROJECT-WORK.md",
   ]
+  check = "contains"
+  path = "guidance/liturgy-browser-roadmap.md"
+  needle = "1e4587dfe04a11c18e996a16f7fbbdb54bc744a4"
 
 [[deliverables]]
 id = "liturgy-reader-state-m1-2026-08-03"

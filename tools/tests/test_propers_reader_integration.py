@@ -274,18 +274,40 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             for sentinel in sentinels:
                 self.assertNotIn(sentinel, payload, path.as_posix())
 
-    def test_promised_deliverable_is_one_open_candidate(self) -> None:
+    def test_promised_deliverable_is_one_accepted_w3_record(self) -> None:
         with (ROOT / "promised-deliverables.toml").open("rb") as handle:
             ledger = tomllib.load(handle)
-        rows = [
+        propers_rows = [
             row for row in ledger["deliverables"]
             if row["id"] == "liturgy-propers-read-w3-candidate-2026-08-04"
         ]
-        self.assertEqual(len(rows), 1)
-        self.assertEqual(rows[0]["state"], "candidate")
-        self.assertEqual(rows[0]["owner"], "src/web/browser/liturgy/propers-reader.html")
-        self.assertNotIn("complete", [requirement["status"] for requirement in rows[0]["requirements"]])
+        day_rows = [
+            row for row in ledger["deliverables"]
+            if row["id"] == "liturgy-day-reader-shell-m3-candidate-2026-08-04"
+        ]
+        self.assertEqual(len(propers_rows), 1)
+        self.assertEqual(propers_rows[0]["state"], "complete")
+        self.assertEqual(
+            propers_rows[0]["owner"],
+            "src/web/browser/liturgy/propers-reader.html",
+        )
+        self.assertIn("W3 Propers Read", propers_rows[0]["promise"])
+        self.assertTrue(
+            all(
+                requirement["status"] == "pass"
+                for requirement in propers_rows[0]["requirements"]
+            )
+        )
+        self.assertEqual(len(day_rows), 1)
+        self.assertEqual(day_rows[0]["state"], "complete")
         self.assertEqual(len(ledger["deliverables"]), 18)
+        self.assertEqual(
+            sum(
+                row["state"] == "complete"
+                for row in ledger["deliverables"]
+            ),
+            13,
+        )
 
     def test_candidate_sizes_are_bounded_and_shell_is_not_copied(self) -> None:
         prototype = LITURGY / "prototypes/reader-shell/reader-shell.js"
