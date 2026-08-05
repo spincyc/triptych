@@ -211,6 +211,35 @@ and archive-verification result will be recorded there. Until an external
 review disposition is returned and recorded, this row remains a candidate and
 does not amend the accepted M1, M2, M3, or Propers Read records.
 
+External review of implementation
+`a1221755d4fac2a6b9a009a91b99cd1da82eee9e` and immutable handoff
+`20260805T145914Z-day-missal-mode-integration` returned **changes requested**.
+It passed the production-renderer, seating, edition, option-validity,
+ergonomics, isolation, and scope boundaries, but identified three bounded
+acceptance blockers: non-ready outcomes can retain history-dependent mode
+chrome; an inline Eucharistic Prayer change replaces the focused radio without
+restoring its semantic equivalent; and direct-load evidence can observe an old
+ready flag before the new document's render commits. Correction work is limited
+to deterministic outcome presentation, inline-option focus restoration, and
+generation-safe browser assertions and replacement captures. The candidate and
+its independent external-review requirement remain open; no acceptance,
+closeout, public cutover, or deployment is authorized by the correction work.
+
+The bounded correction is now implemented and locally proven, but remains
+**pending independent correction review**. Every render outcome commits one
+mode presentation (including a neutral, unchecked presentation for invalid
+`ordinary` state); invalid, deferred, unresolved/territorial, and unrenderable
+outcomes carry distinct diagnostics; and stale navigation, location, focus,
+metadata, and selection state is cleared before an outcome commits. Keyboard
+changes among the postconciliar Eucharistic Prayers restore focus to the newly
+rendered checked radio without losing the semantic reading location. The
+browser harness now distinguishes fresh documents by a unique non-semantic
+query nonce and document token, and same-document transitions by an exact hash
+and a greater committed render generation, followed by the UI's animation-frame
+boundary. The complete browser and print evidence was regenerated with that
+harness. These results resolve the three correction requirements for re-review;
+they do not accept or close the candidate.
+
 ### Liturgy Propers Read W3 integration accepted
 
 <!-- promised-deliverable: liturgy-propers-read-w3-candidate-2026-08-04 -->

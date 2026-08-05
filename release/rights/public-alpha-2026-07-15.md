@@ -1932,7 +1932,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/day-missal.css` | `a36a5ff9a57331e9cec5d82487b0f74d3fdf18d805a9a412a2b568e81960ec17` |
 | `src/web/browser/liturgy/day-reader.css` | `016e0bd460284637414e2fa134a189d9cce35c2fa7eeeaeca704103d7e5b8df6` |
 | `src/web/browser/liturgy/day-reader.html` | `1cf17d93283767b4294fe9a0a7864f3b3b1c16eb85511ec6de09afe904d7c6e1` |
-| `src/web/browser/liturgy/day-reader.js` | `e517bcc9df7d837c8343a2f5f92cc5af5c40c1b8bb8946870c2ba117e1a836b4` |
+| `src/web/browser/liturgy/day-reader.js` | `1d7e795dca744070acfe6044cf1ee482ecb902f5d1d03ab81d8798060581da19` |
 | `src/web/browser/liturgy/day.css` | `93ef9f44ee5d6488cb95a1587e856bd75488ea6b34b6ff723a01a437a75b6ed1` |
 | `src/web/browser/liturgy/day.html` | `bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868` |
 | `src/web/browser/liturgy/day.js` | `0bc1714bca04c65ed45de00f69c08d7536b3e72612bf6cb15301580d4f26daae` |

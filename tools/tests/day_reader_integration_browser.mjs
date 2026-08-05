@@ -6,7 +6,6 @@ import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { createServer } from 'node:http';
 import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
 import { extname, join, resolve, sep } from 'node:path';
 import process from 'node:process';
 import { gzipSync } from 'node:zlib';
@@ -25,6 +24,8 @@ const failedRequests = [];
 const httpProblems = [];
 let activeResponseGate = null;
 let gatedNavigationSequence = 0;
+let freshNavigationSequence = 0;
+let currentDocumentToken = null;
 
 function armResponseGate(matches) {
   assert.equal(activeResponseGate, null, 'a response gate is already armed');
@@ -145,6 +146,7 @@ class CDP {
     this.next = 0;
     this.pending = new Map();
     this.events = new Map();
+    this.sessionId = null;
   }
   async ready() {
     await new Promise((accept, reject) => {
@@ -168,6 +170,10 @@ class CDP {
   on(name, listener) {
     if (!this.events.has(name)) this.events.set(name, []);
     this.events.get(name).push(listener);
+    return () => {
+      const listeners = this.events.get(name) || [];
+      this.events.set(name, listeners.filter((candidate) => candidate !== listener));
+    };
   }
   send(method, params = {}) {
     const id = ++this.next;
@@ -177,7 +183,9 @@ class CDP {
         reject(new Error('CDP command timed out: ' + method));
       }, 60000);
       this.pending.set(id, { accept, reject, timer });
-      this.socket.send(JSON.stringify({ id, method, params }));
+      const message = { id, method, params };
+      if (this.sessionId) message.sessionId = this.sessionId;
+      this.socket.send(JSON.stringify(message));
     });
   }
   close() { this.socket.close(); }
@@ -234,35 +242,81 @@ const STATES = Object.freeze({
   invalidPrayer: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '1', 'ordinary-lang': 'en', 'eucharistic-prayer': 'ep-99' }),
   inapplicablePrayer: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', 'ordinary-lang': 'en', 'eucharistic-prayer': 'ep-ii' }),
   invalidOrdinaryLanguage: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', 'ordinary-lang': 'fr' }),
+  invalidOrdinary: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: 'sometimes' }),
   territorial: hash({ date: '2026-01-04', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la' }),
   loadFailure: hash({ date: '2121-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' }),
   fastValid: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'clementine-vulgate', orations: 'la', mass: 'advent-1' }),
   slowYear: hash({ date: '2027-08-01', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' })
 });
 
-function candidateUrl(base, state = STATES.roman) {
-  return `${base}${ROUTE}?data=${DATA}${state}`;
+function candidateUrl(base, state = STATES.roman, nonce = null) {
+  const review = nonce === null ? '' : `&review-document=${encodeURIComponent(nonce)}`;
+  return `${base}${ROUTE}?data=${DATA}${review}${state}`;
 }
 
-function currentUrl(base, state = STATES.roman) {
-  return `${base}${CURRENT}?data=${DATA}${state}`;
+function currentUrl(base, state = STATES.roman, nonce = null) {
+  const review = nonce === null ? '' : `&review-document=${encodeURIComponent(nonce)}`;
+  return `${base}${CURRENT}?data=${DATA}${review}${state}`;
 }
 
-function builtCandidateUrl(base, state = STATES.roman) {
-  return `${base}/build/public-alpha/preview/liturgy/day-reader.html${state}`;
+function builtCandidateUrl(base, state = STATES.roman, nonce = null) {
+  const review = nonce === null ? '' : `?review-document=${encodeURIComponent(nonce)}`;
+  return `${base}/build/public-alpha/preview/liturgy/day-reader.html${review}${state}`;
 }
 
-function builtCurrentUrl(base, state = STATES.roman) {
-  return `${base}/build/public-alpha/preview/liturgy/day.html${state}`;
+function builtCurrentUrl(base, state = STATES.roman, nonce = null) {
+  const review = nonce === null ? '' : `?review-document=${encodeURIComponent(nonce)}`;
+  return `${base}/build/public-alpha/preview/liturgy/day.html${review}${state}`;
+}
+
+async function postRenderFrames(cdp) {
+  await evaluate(cdp,
+    'new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
+}
+
+async function scheduleTopFrameNavigation(cdp, target, label) {
+  let cancelContextListener = () => {};
+  const newDocumentContext = new Promise((accept, reject) => {
+    const timer = setTimeout(() => {
+      cancelContextListener();
+      reject(new Error('Timed out waiting for new document context: ' + label));
+    }, 10000);
+    cancelContextListener = cdp.on('Runtime.executionContextCreated', ({ context }) => {
+      if (!context.auxData?.isDefault) return;
+      clearTimeout(timer);
+      cancelContextListener();
+      accept(context.id);
+    });
+  });
+  await evaluate(cdp,
+    `setTimeout(() => { location.href = ${JSON.stringify(target)}; }, 0); true`);
+  return newDocumentContext;
+}
+
+async function navigateFreshDocument(cdp, target, label) {
+  const previousToken = currentDocumentToken;
+  await scheduleTopFrameNavigation(cdp, target, label);
+  await waitFor(cdp,
+    `location.href === ${JSON.stringify(target)} && window.dayReaderReady === true && ` +
+      `window.dayReaderDebug.documentToken !== ${JSON.stringify(previousToken)} && ` +
+      `window.dayReaderDebug.committedRender !== null && ` +
+      `window.dayReaderDebug.committedRender.documentToken === window.dayReaderDebug.documentToken && ` +
+      `window.dayReaderDebug.committedRender.generation === window.dayReaderDebug.renders && ` +
+      `window.dayReaderDebug.committedRender.href === ${JSON.stringify(target)}`,
+    label + ' committed document render');
+  await postRenderFrames(cdp);
+  currentDocumentToken = await evaluate(cdp, 'dayReaderDebug.documentToken');
+  return {
+    path: 'fresh-document', target,
+    documentToken: currentDocumentToken,
+    generation: await evaluate(cdp, 'dayReaderDebug.committedRender.generation')
+  };
 }
 
 async function navigateCandidate(cdp, base, state = STATES.roman) {
-  const target = candidateUrl(base, state);
-  await cdp.send('Page.navigate', { url: target });
-  await waitFor(cdp,
-    `location.href === ${JSON.stringify(target)} && window.dayReaderReady === true`,
-    'Day reader candidate');
-  await new Promise((accept) => setTimeout(accept, 80));
+  freshNavigationSequence += 1;
+  const target = candidateUrl(base, state, `source-${freshNavigationSequence}`);
+  return navigateFreshDocument(cdp, target, 'Day reader candidate');
 }
 
 async function beginGatedCandidate(cdp, base, state, matches, label) {
@@ -270,7 +324,7 @@ async function beginGatedCandidate(cdp, base, state, matches, label) {
   gatedNavigationSequence += 1;
   const target = `${base}${ROUTE}?data=${DATA}&race=${gatedNavigationSequence}${state}`;
   try {
-    await cdp.send('Page.navigate', { url: target });
+    await scheduleTopFrameNavigation(cdp, target, label);
     await waitForGate(gate, label);
     await waitFor(cdp,
       `location.href === ${JSON.stringify(target)} && window.dayReaderReady === false`,
@@ -285,22 +339,39 @@ async function beginGatedCandidate(cdp, base, state, matches, label) {
 
 async function transitionHash(cdp, state) {
   const before = await evaluate(cdp, 'window.dayReaderDebug.renders');
+  const documentToken = await evaluate(cdp, 'window.dayReaderDebug.documentToken');
   await evaluate(cdp, `location.hash = ${JSON.stringify(state.replace(/^#/, ''))}`);
   await waitFor(cdp,
     `location.hash === ${JSON.stringify(state)} && window.dayReaderReady === true && ` +
-      `window.dayReaderDebug.renders > ${before}`,
+      `window.dayReaderDebug.renders > ${before} && ` +
+      `window.dayReaderDebug.committedRender.generation === window.dayReaderDebug.renders && ` +
+      `window.dayReaderDebug.committedRender.generation > ${before} && ` +
+      `window.dayReaderDebug.committedRender.documentToken === ${JSON.stringify(documentToken)} && ` +
+      `window.dayReaderDebug.committedRender.hash === ${JSON.stringify(state)} && ` +
+      `window.dayReaderDebug.committedRender.href === location.href`,
     'candidate hash transition');
-  await new Promise((accept) => setTimeout(accept, 80));
+  await postRenderFrames(cdp);
+  return {
+    path: 'same-document', target: await evaluate(cdp, 'location.href'),
+    documentToken,
+    generation: await evaluate(cdp, 'dayReaderDebug.committedRender.generation')
+  };
 }
 
 async function historyMove(cdp, direction, expected) {
   const before = await evaluate(cdp, 'window.dayReaderDebug.renders');
+  const documentToken = await evaluate(cdp, 'window.dayReaderDebug.documentToken');
   await evaluate(cdp, `history.${direction}()`);
   await waitFor(cdp,
     `location.hash === ${JSON.stringify(expected)} && window.dayReaderReady === true && ` +
-      `window.dayReaderDebug.renders > ${before}`,
+      `window.dayReaderDebug.renders > ${before} && ` +
+      `window.dayReaderDebug.committedRender.generation === window.dayReaderDebug.renders && ` +
+      `window.dayReaderDebug.committedRender.generation > ${before} && ` +
+      `window.dayReaderDebug.committedRender.documentToken === ${JSON.stringify(documentToken)} && ` +
+      `window.dayReaderDebug.committedRender.hash === ${JSON.stringify(expected)} && ` +
+      `window.dayReaderDebug.committedRender.href === location.href`,
     `history ${direction}`);
-  await new Promise((accept) => setTimeout(accept, 80));
+  await postRenderFrames(cdp);
 }
 
 async function settleResponseGate(cdp, gate) {
@@ -352,27 +423,86 @@ async function candidateOutcomeSnapshot(cdp) {
   return value;
 }
 
+async function modeOutcomeSnapshot(cdp) {
+  return evaluate(cdp, `(() => ({
+    href: location.href,
+    hash: location.hash,
+    context: document.querySelector('.reader-context').textContent,
+    modeHeading: document.querySelector('#mode-surface-title').textContent,
+    modeMetadata: document.querySelector('[data-reader-action="mode"] .action-state').textContent,
+    modes: [...document.querySelectorAll('[data-mode]')].map(row => ({
+      mode: row.dataset.mode, checked: row.getAttribute('aria-checked')
+    })),
+    title: document.querySelector('#celebration-title').textContent,
+    date: document.querySelector('#celebration-date').textContent,
+    metadata: document.querySelector('#celebration-meta').textContent,
+    reading: document.querySelector('#reader-document').innerText,
+    events: [...document.querySelectorAll('[data-semantic-event-id]')]
+      .map(row => row.dataset.semanticEventId),
+    contents: [...document.querySelectorAll('[data-reader-contents] button')]
+      .map(row => row.dataset.readerLocation),
+    outcome: dayReaderDebug.outcome,
+    outcomeClass: dayReaderDebug.outcomeClass,
+    mode: dayReaderDebug.mode,
+    pending: dayReaderDebug.pendingNavigation,
+    committed: dayReaderDebug.committedRender,
+    active: {
+      tag: document.activeElement.tagName,
+      mode: document.activeElement.dataset.mode || null,
+      option: document.activeElement.value || null
+    }
+  }))()`);
+}
+
+function convergentOutcome(snapshot) {
+  const copy = structuredClone(snapshot);
+  delete copy.href;
+  delete copy.hash;
+  delete copy.committed;
+  return copy;
+}
+
 async function navigateCurrent(cdp, base, state = STATES.roman) {
-  const target = currentUrl(base, state);
-  await cdp.send('Page.navigate', { url: target });
-  await waitFor(cdp,
-    `document.querySelector('#reading[aria-busy="false"] .proper')`,
-    'current Day route');
-  await new Promise((accept) => setTimeout(accept, 80));
+  freshNavigationSequence += 1;
+  const target = currentUrl(base, state, `current-${freshNavigationSequence}`);
+  const targetUrl = new URL(target);
+  await scheduleTopFrameNavigation(cdp, target, 'current Day route');
+  try {
+    await waitFor(cdp,
+      `location.pathname === ${JSON.stringify(targetUrl.pathname)} && ` +
+        `location.search === ${JSON.stringify(targetUrl.search)} && ` +
+        `document.querySelector('#reading[aria-busy="false"]') && ` +
+        `document.querySelector('#celebration-title').textContent !== 'Loading the Mass…'`,
+      'current Day route');
+  } catch (error) {
+    const snapshot = await evaluate(cdp, `({ href: location.href, title: document.title,
+      celebration: document.querySelector('#celebration-title')?.textContent || null,
+      busy: document.querySelector('#reading')?.getAttribute('aria-busy') || null,
+      reading: document.querySelector('#reading')?.innerText || null,
+      banner: document.querySelector('#banner')?.innerText || null })`);
+    throw new Error(`${error.message}; current-route snapshot: ${JSON.stringify(snapshot)}`);
+  }
+  await postRenderFrames(cdp);
 }
 
 async function navigateBuiltCandidate(cdp, base, state = STATES.roman) {
-  const target = builtCandidateUrl(base, state);
-  await cdp.send('Page.navigate', { url: target });
-  await waitFor(cdp, 'window.dayReaderReady === true', 'built Day reader candidate');
-  await new Promise((accept) => setTimeout(accept, 80));
+  freshNavigationSequence += 1;
+  const target = builtCandidateUrl(base, state, `built-${freshNavigationSequence}`);
+  return navigateFreshDocument(cdp, target, 'built Day reader candidate');
 }
 
 async function navigateBuiltCurrent(cdp, base, state = STATES.roman) {
-  await cdp.send('Page.navigate', { url: builtCurrentUrl(base, state) });
+  freshNavigationSequence += 1;
+  const target = builtCurrentUrl(base, state, `built-current-${freshNavigationSequence}`);
+  const targetUrl = new URL(target);
+  await scheduleTopFrameNavigation(cdp, target, 'built current Day route');
   await waitFor(cdp,
-    `document.querySelector('#reading[aria-busy="false"] .proper')`, 'built current Day route');
-  await new Promise((accept) => setTimeout(accept, 80));
+    `location.pathname === ${JSON.stringify(targetUrl.pathname)} && ` +
+      `location.search === ${JSON.stringify(targetUrl.search)} && ` +
+      `document.querySelector('#reading[aria-busy="false"]') && ` +
+      `document.querySelector('#celebration-title').textContent !== 'Loading the Mass…'`,
+    'built current Day route');
+  await postRenderFrames(cdp);
 }
 
 async function click(cdp, selector) {
@@ -392,6 +522,35 @@ async function escape(cdp) {
     type: 'keyUp', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27
   });
   await new Promise((accept) => setTimeout(accept, 50));
+}
+
+async function pressSpace(cdp) {
+  await cdp.send('Input.dispatchKeyEvent', {
+    type: 'keyDown', key: ' ', code: 'Space', windowsVirtualKeyCode: 32
+  });
+  await cdp.send('Input.dispatchKeyEvent', {
+    type: 'keyUp', key: ' ', code: 'Space', windowsVirtualKeyCode: 32
+  });
+}
+
+async function waitForCommittedRender(cdp, before, expectedHash, label) {
+  const documentToken = await evaluate(cdp, 'window.dayReaderDebug.documentToken');
+  await waitFor(cdp,
+    `location.hash === ${JSON.stringify(expectedHash)} && window.dayReaderReady === true && ` +
+      `window.dayReaderDebug.renders > ${before} && ` +
+      `window.dayReaderDebug.committedRender.generation === window.dayReaderDebug.renders && ` +
+      `window.dayReaderDebug.committedRender.generation > ${before} && ` +
+      `window.dayReaderDebug.committedRender.documentToken === ${JSON.stringify(documentToken)} && ` +
+      `window.dayReaderDebug.committedRender.hash === ${JSON.stringify(expectedHash)} && ` +
+      `window.dayReaderDebug.committedRender.href === location.href`,
+    label);
+  await postRenderFrames(cdp);
+}
+
+function updatedHash(state, key, value) {
+  const params = new URLSearchParams(state.replace(/^#/, ''));
+  params.set(key, value);
+  return '#' + params.toString();
 }
 
 async function shot(cdp, path) {
@@ -456,6 +615,53 @@ async function metrics(cdp) {
   })()`);
 }
 
+async function captureEvidence(cdp, file, state, navigationPath) {
+  return evaluate(cdp, `(() => {
+    const debug = window.dayReaderDebug || null;
+    const active = document.activeElement;
+    const pageOverflow = document.documentElement.scrollWidth - document.documentElement.clientWidth;
+    return {
+      file: ${JSON.stringify(file)},
+      state: ${JSON.stringify(state)},
+      targetUrl: location.href,
+      targetHash: location.hash,
+      navigationPath: ${JSON.stringify(navigationPath)},
+      documentToken: debug && debug.documentToken || null,
+      renderGeneration: debug && debug.committedRender && debug.committedRender.generation || null,
+      committedRender: debug && debug.committedRender || null,
+      viewport: { width: innerWidth, height: innerHeight },
+      outcome: debug && debug.outcome || null,
+      outcomeClass: debug && debug.outcomeClass || null,
+      mode: debug && debug.mode || null,
+      modeChrome: {
+        context: document.querySelector('.reader-context')?.textContent || null,
+        action: document.querySelector('[data-reader-action="mode"] .action-state')?.textContent || null,
+        checked: [...document.querySelectorAll('[data-mode][aria-checked="true"]')]
+          .map(row => row.dataset.mode)
+      },
+      activeElement: {
+        tag: active && active.tagName || null,
+        type: active && active.type || null,
+        value: active && active.value || null,
+        checked: active && typeof active.checked === 'boolean' ? active.checked : null,
+        optionGroup: active && active.closest('[data-option-group]')?.dataset.optionGroup || null,
+        legend: active && active.closest('fieldset')?.querySelector('legend')?.textContent || null
+      },
+      pendingNavigation: debug && debug.pendingNavigation || null,
+      pageOverflow,
+      surfaceOverflow: [...document.querySelectorAll('dialog[open]')].map(dialog => ({
+        id: dialog.id, overflow: dialog.scrollWidth - dialog.clientWidth
+      })),
+      scrollY
+    };
+  })()`).then((value) => ({
+    ...value,
+    consoleErrors: structuredClone(consoleProblems),
+    failedRequests: structuredClone(failedRequests),
+    httpErrors: structuredClone(httpProblems)
+  }));
+}
+
 async function modePerformance(cdp, base) {
   await viewport(cdp, 1024, 768);
   await navigateBuiltCandidate(cdp, base, STATES.postReadLatent);
@@ -464,9 +670,11 @@ async function modePerformance(cdp, base) {
     detailsBuilds: dayReaderDebug.detailsBuilds,
     resources: performance.getEntriesByType('resource').map(row => row.name)
   })`);
+  const missalGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
   await click(cdp, '[data-reader-action="mode"]');
   await click(cdp, '[data-mode="missal"]');
-  await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.requestedMode === "missal"', 'performance Missal switch');
+  await waitForCommittedRender(cdp, missalGeneration,
+    updatedHash(STATES.postReadLatent, 'ordinary', '1'), 'performance Missal switch');
   const missal = await evaluate(cdp, `({
     derivations: dayReaderDebug.derivations,
     detailsBuilds: dayReaderDebug.detailsBuilds,
@@ -476,9 +684,11 @@ async function modePerformance(cdp, base) {
     layoutShift: performance.getEntriesByType('layout-shift').reduce((sum, entry) =>
       sum + (entry.hadRecentInput ? 0 : entry.value), 0)
   })`);
+  const readGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
   await click(cdp, '[data-reader-action="mode"]');
   await click(cdp, '[data-mode="read"]');
-  await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.requestedMode === "read"', 'performance Read switch');
+  await waitForCommittedRender(cdp, readGeneration,
+    updatedHash(STATES.postReadLatent, 'ordinary', '0'), 'performance Read switch');
   const readLatency = await evaluate(cdp, 'dayReaderDebug.lastModeSwitchMs');
   const added = missal.resources.slice(before.resources.length);
   return {
@@ -497,8 +707,9 @@ async function modePerformance(cdp, base) {
 }
 
 async function runAssertions(cdp, base) {
-  await viewport(cdp, 393, 852);
   await navigateCandidate(cdp, base);
+  await viewport(cdp, 393, 852);
+  await postRenderFrames(cdp);
 
   await test('default candidate is calm Read with real content and four persistent actions', async () => {
     const value = await evaluate(cdp, `(() => ({
@@ -581,6 +792,50 @@ async function runAssertions(cdp, base) {
     assert.match(value.href, /ordinary=1/);
     assert.match(value.href, /why=1/);
     assert.equal(value.events, 0);
+  });
+
+  await test('fresh and transitioned outcomes commit identical deterministic mode chrome', async () => {
+    const cases = [
+      ['invalid Eucharistic Prayer', STATES.invalidPrayer, 'missal', 'invalid', 'invalid', /explicit state rejected/i],
+      ['missing semantic seat', STATES.missingSeat, 'missal', 'unrenderable', 'unrenderable', /valid selection unrenderable/i],
+      ['Why deferred', STATES.deferred, 'missal', 'deferred', 'deferred', /valid state deferred/i],
+      ['territorial choice', STATES.territorial, 'read', 'territorial-choice', 'unresolved', /valid state unresolved/i],
+      ['invalid Ordinary value', STATES.invalidOrdinary, null, 'invalid', 'invalid', /Mode unavailable.*explicit state rejected/i],
+      ['ready Read', STATES.roman, 'read', 'ready', 'ready', /1962/],
+      ['ready Missal', STATES.romanMissal, 'missal', 'ready', 'ready', /1962/]
+    ];
+    for (const [label, targetState, mode, outcome, outcomeClass, metadata] of cases) {
+      const noise = [consoleProblems.length, failedRequests.length, httpProblems.length];
+      await navigateCandidate(cdp, base, targetState);
+      const direct = await modeOutcomeSnapshot(cdp);
+      assert.equal(direct.hash, targetState, label + ' direct hash');
+      assert.equal(direct.href, direct.committed.href, label + ' committed href');
+      assert.equal(direct.mode, mode, label + ' direct mode');
+      assert.equal(direct.outcome, outcome, label + ' direct outcome');
+      assert.equal(direct.outcomeClass, outcomeClass, label + ' direct class');
+      assert.equal(direct.pending, null, label + ' direct pending state');
+      assert.equal(direct.modeHeading, 'Mode');
+      assert.match(direct.metadata, metadata, label + ' direct metadata');
+      assert.deepEqual(direct.modes, [
+        { mode: 'read', checked: String(mode === 'read') },
+        { mode: 'missal', checked: String(mode === 'missal') }
+      ]);
+      assert.equal(direct.modeMetadata, mode === 'read' ? 'Read' : mode === 'missal' ? 'Missal' : 'Unavailable');
+      assert.equal(direct.context, 'Day · ' + (mode === 'read' ? 'Read' : mode === 'missal' ? 'Missal' : 'Mode unavailable'));
+
+      for (const origin of [STATES.postconciliar, STATES.postMissal]) {
+        await navigateCandidate(cdp, base, origin);
+        await transitionHash(cdp, targetState);
+        const transitioned = await modeOutcomeSnapshot(cdp);
+        assert.equal(transitioned.hash, targetState, label + ' transition hash');
+        assert.equal(transitioned.href, transitioned.committed.href, label + ' transition committed href');
+        assert.equal(transitioned.pending, null, label + ' transition pending state');
+        assert.deepEqual(convergentOutcome(transitioned), convergentOutcome(direct),
+          label + ' must converge from both modes');
+      }
+      assert.deepEqual([consoleProblems.length, failedRequests.length, httpProblems.length], noise,
+        label + ' console/network state');
+    }
   });
 
   await test('inactive later-mode values remain validated latent Read state', async () => {
@@ -701,7 +956,7 @@ async function runAssertions(cdp, base) {
     assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
     assert.match(await evaluate(cdp, 'document.querySelector("#coverage-notice").textContent'), /not held/);
     await navigateCandidate(cdp, base, STATES.missingSeat);
-    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'failed');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'unrenderable');
     assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
     assert.match(await evaluate(cdp, 'document.querySelector("#reader-document").innerText'),
       /no usable semantic seat/i);
@@ -801,11 +1056,11 @@ async function runAssertions(cdp, base) {
       'Tenth Sunday after Pentecost');
 
     await transitionHash(cdp, STATES.loadFailure);
-    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'failed');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'unrenderable');
     assert.equal(await evaluate(cdp, 'dayReaderDebug.state'), null);
     await click(cdp, '[data-reader-action="details"]');
     const failedDetails = await evaluate(cdp, `document.querySelector('[data-reader-details]').innerText`);
-    assert.match(failedDetails, /No validated selection.*failed outcome/i);
+    assert.match(failedDetails, /No validated selection.*unrenderable outcome/i);
     assert.doesNotMatch(failedDetails, stalePattern);
     await escape(cdp);
 
@@ -971,7 +1226,7 @@ async function runAssertions(cdp, base) {
   await test('Contents follows real semantic sections and moves focus to the selected text', async () => {
     await navigateCandidate(cdp, base);
     await evaluate(cdp, `document.querySelectorAll('[data-semantic-event-id]')[5].scrollIntoView()`);
-    await new Promise((accept) => setTimeout(accept, 80));
+    await postRenderFrames(cdp);
     await click(cdp, '[data-reader-action="contents"]');
     const current = await evaluate(cdp,
       `document.querySelector('[data-reader-contents] [aria-current="location"]').dataset.readerLocation`);
@@ -1025,9 +1280,11 @@ async function runAssertions(cdp, base) {
     const derivationsBefore = await evaluate(cdp, 'dayReaderDebug.derivations');
     const properId = 'proper/postconciliar/advent-1/007';
     await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${properId}"]').scrollIntoView()`);
+    const missalGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
     await click(cdp, '[data-reader-action="mode"]');
     await click(cdp, '[data-mode="missal"]');
-    await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.requestedMode === "missal"', 'Missal switch');
+    const missalHash = updatedHash(STATES.postReadLatent, 'ordinary', '1');
+    await waitForCommittedRender(cdp, missalGeneration, missalHash, 'Missal switch');
     const missal = await evaluate(cdp, `({
       hash: location.hash,
       derivations: dayReaderDebug.derivations,
@@ -1048,9 +1305,11 @@ async function runAssertions(cdp, base) {
     assert.ok(missal.latency >= 0);
     const ordinaryLocation = 'ordinary-element/prex-eucharistica/prex-eucharistica-ii';
     await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${ordinaryLocation}"]').scrollIntoView()`);
+    const readGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
     await click(cdp, '[data-reader-action="mode"]');
     await click(cdp, '[data-mode="read"]');
-    await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.requestedMode === "read"', 'Read switch');
+    const readHash = updatedHash(STATES.postReadLatent, 'ordinary', '0');
+    await waitForCommittedRender(cdp, readGeneration, readHash, 'Read switch');
     const read = await evaluate(cdp, `({
       hash: location.hash,
       derivations: dayReaderDebug.derivations,
@@ -1072,11 +1331,80 @@ async function runAssertions(cdp, base) {
     assert.equal(await evaluate(cdp, 'dayReaderDebug.state.requestedMode'), 'read');
   });
 
+  await test('keyboard Eucharistic Prayer changes restore the selected inline radio and location', async () => {
+    await viewport(cdp, 393, 852);
+    await navigateCandidate(cdp, base, STATES.postMissal);
+    const semanticId = (option) => 'ordinary-element/prex-eucharistica/prex-eucharistica-' +
+      option.replace(/^ep-/, '');
+    let currentOption = 'ep-ii';
+    await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${semanticId(currentOption)}"]').scrollIntoView({block: 'start'})`);
+    await evaluate(cdp, `document.querySelector('.ordinary-choice input:checked').focus({preventScroll: true})`);
+    assert.equal(await evaluate(cdp, 'document.activeElement.value'), 'ep-ii');
+    let currentHash = STATES.postMissal;
+    for (const option of ['ep-i', 'ep-iii', 'ep-iv', 'ep-ii']) {
+      const before = await evaluate(cdp, 'dayReaderDebug.renders');
+      const presentationsBefore = await evaluate(cdp, 'dayReaderDebug.ordinaryPresentations');
+      const beforeTop = await evaluate(cdp,
+        `document.querySelector('[data-semantic-event-id="${semanticId(currentOption)}"]').getBoundingClientRect().top`);
+      await evaluate(cdp,
+        `document.querySelector('.ordinary-choice input[value="${option}"]').focus({preventScroll: true})`);
+      await pressSpace(cdp);
+      currentHash = updatedHash(currentHash, 'eucharistic-prayer', option);
+      await waitForCommittedRender(cdp, before, currentHash, 'keyboard EP ' + option);
+      const restored = await evaluate(cdp, `(() => {
+        const active = document.activeElement;
+        const fieldset = active.closest('fieldset');
+        const ids = [...document.querySelectorAll('[data-semantic-event-id]')]
+          .map(row => row.dataset.semanticEventId);
+        return {
+          activeType: active.type,
+          activeValue: active.value,
+          checked: active.checked,
+          legend: fieldset && fieldset.querySelector('legend').textContent,
+          group: fieldset && fieldset.dataset.optionGroup,
+          hash: location.hash,
+          semanticTop: document.querySelector('[data-semantic-event-id="${semanticId(option)}"]').getBoundingClientRect().top,
+          pending: dayReaderDebug.pendingNavigation,
+          presentations: dayReaderDebug.ordinaryPresentations,
+          uniqueEvents: new Set(ids).size === ids.length,
+          epEvents: ids.filter(id => /prex-eucharistica-(i|ii|iii|iv)$/.test(id))
+        };
+      })()`);
+      assert.equal(restored.activeType, 'radio');
+      assert.equal(restored.activeValue, option);
+      assert.equal(restored.checked, true);
+      assert.equal(restored.legend, 'Eucharistic Prayer');
+      assert.equal(restored.group, 'eucharistic-prayer');
+      assert.equal(restored.hash, currentHash);
+      assert.ok(Math.abs(restored.semanticTop - beforeTop) <= 2,
+        `${option} semantic delta: ${restored.semanticTop - beforeTop}`);
+      assert.equal(restored.pending, null);
+      assert.equal(restored.presentations, presentationsBefore + 1);
+      assert.equal(restored.uniqueEvents, true);
+      assert.equal(restored.epEvents.length, 1);
+      currentOption = option;
+    }
+
+    await transitionHash(cdp, STATES.invalidPrayer);
+    const invalid = await evaluate(cdp, `({
+      outcome: dayReaderDebug.outcome,
+      pending: dayReaderDebug.pendingNavigation,
+      activeTag: document.activeElement.tagName,
+      activeType: document.activeElement.type || null,
+      checkedOptions: document.querySelectorAll('.ordinary-choice input:checked').length
+    })`);
+    assert.deepEqual(invalid, {
+      outcome: 'invalid', pending: null, activeTag: 'BODY', activeType: null, checkedOptions: 0
+    });
+  });
+
   await test('top, reading, offertory, Canon, Communion, and end use semantic correspondence', async () => {
     async function choose(mode) {
+      const before = await evaluate(cdp, 'dayReaderDebug.renders');
       await click(cdp, '[data-reader-action="mode"]');
       await click(cdp, `[data-mode="${mode}"]`);
-      await waitFor(cdp, `dayReaderReady && dayReaderDebug.state.requestedMode === "${mode}"`, `${mode} correspondence`);
+      const target = await evaluate(cdp, 'location.hash');
+      await waitForCommittedRender(cdp, before, target, `${mode} correspondence`);
     }
     await navigateCandidate(cdp, base, STATES.roman);
     await evaluate(cdp, 'window.scrollTo(0, 0)');
@@ -1145,10 +1473,15 @@ async function runAssertions(cdp, base) {
     await viewport(cdp, 393, 852);
     await navigateCandidate(cdp, base);
     await click(cdp, '[data-reader-action="date"]');
+    const nextGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
     await click(cdp, '#next-date');
-    await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.civilDate === "2026-08-03"', 'next date');
+    const nextHash = await evaluate(cdp, 'location.hash');
+    await waitForCommittedRender(cdp, nextGeneration, nextHash, 'next date');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.state.civilDate'), '2026-08-03');
+    const backGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
     await evaluate(cdp, 'history.back()');
-    await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.civilDate === "2026-08-02"', 'Back date');
+    await waitForCommittedRender(cdp, backGeneration, STATES.roman, 'Back date');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.state.civilDate'), '2026-08-02');
     const loads = await evaluate(cdp, 'dayReaderDebug.loads');
     assert.ok(Object.values(loads).every(count => count === 1), JSON.stringify(loads));
   });
@@ -1204,9 +1537,7 @@ async function runAssertions(cdp, base) {
   });
 
   await test('normal preview build contains a noindex candidate but no candidate navigation link', async () => {
-    const target = `${base}/build/public-alpha/preview/liturgy/day-reader.html${STATES.roman}`;
-    await cdp.send('Page.navigate', { url: target });
-    await waitFor(cdp, 'window.dayReaderReady === true', 'built candidate route');
+    await navigateBuiltCandidate(cdp, base, STATES.roman);
     const value = await evaluate(cdp, `({
       robots: document.querySelector('meta[name="robots"]').content,
       title: document.querySelector('#celebration-title').textContent,
@@ -1271,14 +1602,15 @@ async function runAssertions(cdp, base) {
 }
 
 async function captureCandidate(cdp, base, state, kind) {
-  await navigateBuiltCandidate(cdp, base, state);
+  const navigation = await navigateBuiltCandidate(cdp, base, state);
   await evaluate(cdp, 'window.scrollTo(0, 0)');
   if (kind === 'deep') {
     await evaluate(cdp, 'window.scrollTo(0, document.documentElement.scrollHeight - innerHeight - 8)');
   } else if (['date', 'contents', 'mode', 'details'].includes(kind)) {
     await click(cdp, `[data-reader-action="${kind}"]`);
   }
-  await new Promise((accept) => setTimeout(accept, 80));
+  await postRenderFrames(cdp);
+  return navigation;
 }
 
 async function captureMatrix(cdp, base, directory) {
@@ -1293,21 +1625,28 @@ async function captureMatrix(cdp, base, directory) {
     ['postconciliar-read', STATES.postconciliar, 'top'],
     ['postconciliar-missal-ep-ii', STATES.postMissal, 'top'],
     ['invalid-eucharistic-prayer', STATES.invalidPrayer, 'top'],
-    ['partial-coverage', STATES.partial, 'top'], ['missing-seat', STATES.missingSeat, 'top']
+    ['partial-coverage', STATES.partial, 'top'], ['missing-seat', STATES.missingSeat, 'top'],
+    ['why-deferred', STATES.deferred, 'top'],
+    ['territorial-unresolved', STATES.territorial, 'top'],
+    ['invalid-ordinary', STATES.invalidOrdinary, 'top']
   ];
   const measures = [];
+  const evidence = [];
   for (const [width, height] of sizes) {
     await viewport(cdp, width, height);
     for (const [name, state, kind] of cases) {
-      await captureCandidate(cdp, base, state, kind);
+      const navigation = await captureCandidate(cdp, base, state, kind);
       const file = `day-reader-missal-${name}-${width}x${height}.png`;
       await shot(cdp, join(directory, file));
       measures.push({ file, viewport: `${width}x${height}`, state: name, metrics: await metrics(cdp) });
+      evidence.push(await captureEvidence(cdp, file, name, navigation.path));
       if (await evaluate(cdp, 'Boolean(document.querySelector("dialog[open]"))')) await escape(cdp);
     }
     for (const [name, state] of [['roman-missal', STATES.romanMissal], ['postconciliar-missal-ep-ii', STATES.postMissal]]) {
       await navigateBuiltCurrent(cdp, base, state);
-      await shot(cdp, join(directory, `day-current-${name}-${width}x${height}.png`));
+      const file = `day-current-${name}-${width}x${height}.png`;
+      await shot(cdp, join(directory, file));
+      evidence.push(await captureEvidence(cdp, file, 'current-' + name, 'fresh-document'));
     }
   }
 
@@ -1315,30 +1654,83 @@ async function captureMatrix(cdp, base, directory) {
   await navigateBuiltCandidate(cdp, base, STATES.postMissal);
   await evaluate(cdp, 'window.scrollTo(0, 0)');
   await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
-  await shot(cdp, join(directory, 'day-reader-missal-postconciliar-200-percent-393x852.png'));
-  measures.push({ file: 'day-reader-missal-postconciliar-200-percent-393x852.png', viewport: '393x852',
+  const enlargedFile = 'day-reader-missal-postconciliar-200-percent-393x852.png';
+  await shot(cdp, join(directory, enlargedFile));
+  measures.push({ file: enlargedFile, viewport: '393x852',
     state: 'postconciliar-missal-200-percent', metrics: await metrics(cdp) });
+  evidence.push(await captureEvidence(cdp, enlargedFile, 'postconciliar-missal-200-percent', 'fresh-document'));
   await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
 
   await viewport(cdp, 393, 852);
   await navigateBuiltCandidate(cdp, base, STATES.currentStyleLatent);
-  await shot(cdp, join(directory, 'day-reader-missal-latent-read-393x852.png'));
+  const latentFile = 'day-reader-missal-latent-read-393x852.png';
+  await shot(cdp, join(directory, latentFile));
+  evidence.push(await captureEvidence(cdp, latentFile, 'latent-read', 'fresh-document'));
   await navigateBuiltCandidate(cdp, base, STATES.roman);
   await transitionHash(cdp, STATES.invalid);
   await click(cdp, '[data-reader-action="date"]');
-  await shot(cdp, join(directory, 'day-reader-missal-transition-invalid-date-393x852.png'));
+  const invalidDateFile = 'day-reader-missal-transition-invalid-date-393x852.png';
+  await shot(cdp, join(directory, invalidDateFile));
+  evidence.push(await captureEvidence(cdp, invalidDateFile, 'transition-invalid-date', 'same-document'));
   await escape(cdp);
   await click(cdp, '[data-reader-action="details"]');
-  await shot(cdp, join(directory, 'day-reader-missal-transition-invalid-details-393x852.png'));
+  const invalidDetailsFile = 'day-reader-missal-transition-invalid-details-393x852.png';
+  await shot(cdp, join(directory, invalidDetailsFile));
+  evidence.push(await captureEvidence(cdp, invalidDetailsFile, 'transition-invalid-details', 'same-document'));
   await escape(cdp);
 
   await navigateBuiltCandidate(cdp, base, STATES.postReadLatent);
   await evaluate(cdp, `document.querySelector('[data-semantic-event-id="proper/postconciliar/advent-1/007"]').scrollIntoView()`);
-  await shot(cdp, join(directory, 'day-reader-missal-mode-switch-before-393x852.png'));
+  const switchBeforeFile = 'day-reader-missal-mode-switch-before-393x852.png';
+  await shot(cdp, join(directory, switchBeforeFile));
+  evidence.push(await captureEvidence(cdp, switchBeforeFile, 'mode-switch-read-before', 'fresh-document'));
+  const captureGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
   await click(cdp, '[data-reader-action="mode"]');
   await click(cdp, '[data-mode="missal"]');
-  await waitFor(cdp, 'dayReaderReady && dayReaderDebug.state.requestedMode === "missal"', 'captured Missal switch');
-  await shot(cdp, join(directory, 'day-reader-missal-mode-switch-after-393x852.png'));
+  await waitForCommittedRender(cdp, captureGeneration,
+    updatedHash(STATES.postReadLatent, 'ordinary', '1'), 'captured Missal switch');
+  const switchAfterFile = 'day-reader-missal-mode-switch-missal-after-393x852.png';
+  await shot(cdp, join(directory, switchAfterFile));
+  evidence.push(await captureEvidence(cdp, switchAfterFile, 'mode-switch-missal-after', 'same-document'));
+  const readGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
+  await click(cdp, '[data-reader-action="mode"]');
+  await click(cdp, '[data-mode="read"]');
+  const capturedReadHash = updatedHash(STATES.postReadLatent, 'ordinary', '0');
+  await waitForCommittedRender(cdp, readGeneration, capturedReadHash, 'captured Read return');
+  const switchReturnFile = 'day-reader-missal-mode-switch-read-return-393x852.png';
+  await shot(cdp, join(directory, switchReturnFile));
+  evidence.push(await captureEvidence(cdp, switchReturnFile, 'mode-switch-read-return', 'same-document'));
+
+  const correctionStates = [
+    ['invalid-ep', STATES.invalidPrayer], ['missing-seat', STATES.missingSeat],
+    ['why-deferred', STATES.deferred], ['territorial', STATES.territorial],
+    ['invalid-ordinary', STATES.invalidOrdinary]
+  ];
+  for (const [name, target] of correctionStates) {
+    for (const [originName, origin] of [['read', STATES.roman], ['missal', STATES.romanMissal]]) {
+      await navigateBuiltCandidate(cdp, base, origin);
+      await transitionHash(cdp, target);
+      const file = `day-reader-missal-transition-${originName}-to-${name}-393x852.png`;
+      await shot(cdp, join(directory, file));
+      evidence.push(await captureEvidence(cdp, file, `${originName}-to-${name}`, 'same-document'));
+    }
+  }
+
+  await navigateBuiltCandidate(cdp, base, STATES.postMissal);
+  const initialEpId = 'ordinary-element/prex-eucharistica/prex-eucharistica-ii';
+  await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${initialEpId}"]').scrollIntoView({block: 'start'})`);
+  await evaluate(cdp, `document.querySelector('.ordinary-choice input:checked').focus({preventScroll: true})`);
+  const epBeforeFile = 'day-reader-missal-ep-focus-before-393x852.png';
+  await shot(cdp, join(directory, epBeforeFile));
+  evidence.push(await captureEvidence(cdp, epBeforeFile, 'ep-focus-before', 'fresh-document'));
+  const epGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
+  await evaluate(cdp, `document.querySelector('.ordinary-choice input[value="ep-iii"]').focus({preventScroll: true})`);
+  await pressSpace(cdp);
+  const epHash = updatedHash(STATES.postMissal, 'eucharistic-prayer', 'ep-iii');
+  await waitForCommittedRender(cdp, epGeneration, epHash, 'captured EP III focus restoration');
+  const epAfterFile = 'day-reader-missal-ep-iii-focus-restored-393x852.png';
+  await shot(cdp, join(directory, epAfterFile));
+  evidence.push(await captureEvidence(cdp, epAfterFile, 'ep-iii-focus-restored', 'same-document'));
 
   await viewport(cdp, 1024, 768);
   await navigateBuiltCandidate(cdp, base, STATES.postMissal);
@@ -1349,8 +1741,12 @@ async function captureMatrix(cdp, base, directory) {
     marginTop: 0.4, marginBottom: 0.4, marginLeft: 0.45, marginRight: 0.45
   });
   await writeFile(join(directory, 'day-reader-missal-postconciliar-print.pdf'), Buffer.from(pdf.data, 'base64'));
+  const printMetadata = await captureEvidence(cdp,
+    'day-reader-missal-postconciliar-print.pdf', 'postconciliar-missal-print', 'fresh-document');
   await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
   await writeFile(join(directory, 'measurements.json'), JSON.stringify(measures, null, 2) + '\n');
+  await writeFile(join(directory, 'capture-metadata.json'), JSON.stringify(evidence, null, 2) + '\n');
+  await writeFile(join(directory, 'print-metadata.json'), JSON.stringify(printMetadata, null, 2) + '\n');
   return measures;
 }
 
@@ -1359,7 +1755,12 @@ async function main() {
   const serverPort = await listen(server);
   const base = `http://127.0.0.1:${serverPort}`;
   const debugPort = await freePort();
-  const profile = await mkdtemp(join(tmpdir(), 'triptych-day-reader-chrome-'));
+  freshNavigationSequence += 1;
+  const bootstrapTarget = candidateUrl(base, STATES.roman,
+    `bootstrap-${freshNavigationSequence}`);
+  const profileRoot = join(ROOT, 'build');
+  await mkdir(profileRoot, { recursive: true });
+  const profile = await mkdtemp(join(profileRoot, 'triptych-day-reader-chrome-'));
   const chrome = spawn(chromeBinary, [
     '--headless=new', '--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu',
     '--disable-extensions', '--disable-component-extensions-with-background-pages',
@@ -1371,12 +1772,22 @@ async function main() {
   chrome.stderr.on('data', (chunk) => { chromeStderr += chunk.toString(); });
   let cdp;
   try {
-    await waitForJson(`http://127.0.0.1:${debugPort}/json/version`);
+    const browserVersion = await waitForJson(`http://127.0.0.1:${debugPort}/json/version`);
     const response = await fetch(
-      `http://127.0.0.1:${debugPort}/json/new?${encodeURIComponent('about:blank')}`,
+      `http://127.0.0.1:${debugPort}/json/new?${encodeURIComponent(bootstrapTarget)}`,
       { method: 'PUT' }
     );
-    const page = await response.json();
+    const createdPage = await response.json();
+    let page = null;
+    for (let attempt = 0; attempt < 180; attempt += 1) {
+      const targets = await waitForJson(`http://127.0.0.1:${debugPort}/json/list`);
+      page = targets.find((target) => target.id === createdPage.id &&
+        target.type === 'page' && target.url === bootstrapTarget &&
+        target.title === 'Day reader — internal candidate') || null;
+      if (page && page.webSocketDebuggerUrl) break;
+      if (attempt === 179) throw new Error('Chromium bootstrap page did not load');
+      await new Promise((accept) => setTimeout(accept, 50));
+    }
     cdp = new CDP(page.webSocketDebuggerUrl);
     await cdp.ready();
     await Promise.all([
@@ -1394,6 +1805,14 @@ async function main() {
     cdp.on('Network.responseReceived', ({ response: held }) => {
       if (held.status >= 400) httpProblems.push({ status: held.status, url: held.url });
     });
+
+    await waitFor(cdp,
+      `location.href === ${JSON.stringify(bootstrapTarget)} && window.dayReaderReady === true && ` +
+        `window.dayReaderDebug.committedRender !== null && ` +
+        `window.dayReaderDebug.committedRender.href === ${JSON.stringify(bootstrapTarget)}`,
+      'bootstrap document render');
+    await postRenderFrames(cdp);
+    currentDocumentToken = await evaluate(cdp, 'dayReaderDebug.documentToken');
 
     await runAssertions(cdp, base);
     const captures = captureDir ? await captureMatrix(cdp, base, captureDir) : [];
@@ -1446,9 +1865,12 @@ async function main() {
     process.exitCode = 1;
   } finally {
     if (cdp) cdp.close();
-    const exited = new Promise((accept) => chrome.once('exit', accept));
-    chrome.kill('SIGTERM');
-    await exited;
+    if (chrome.exitCode === null && chrome.signalCode === null) {
+      const exited = new Promise((accept) => chrome.once('exit', accept));
+      chrome.kill('SIGTERM');
+      await exited;
+    }
+    server.closeAllConnections();
     await new Promise((accept) => server.close(accept));
     await rm(profile, { recursive: true, force: true });
   }

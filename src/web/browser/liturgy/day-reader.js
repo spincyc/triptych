@@ -62,6 +62,8 @@
   const modeAction = document.querySelector('[data-reader-action="mode"]');
   const modeState = modeAction.querySelector('.action-state');
   const modeButtons = Array.from(document.querySelectorAll('[data-mode]'));
+  const documentToken = typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
+    ? crypto.randomUUID() : String(performance.timeOrigin) + '-' + Math.random().toString(36).slice(2);
 
   const cache = new Map();
   const derivations = new Map();
@@ -79,9 +81,10 @@
     deferred: [],
     outcome: 'loading',
     serial: 0,
-    mode: 'read',
+    mode: null,
     pendingLocation: null,
     pendingModeFocus: false,
+    pendingFocus: null,
     modeStartedAt: null
   };
 
@@ -97,10 +100,16 @@
     deferred: [],
     legacy: null,
     outcome: 'loading',
+    outcomeClass: 'loading',
+    mode: null,
     error: null,
     derivations: 0,
     modeSwitches: 0,
-    lastModeSwitchMs: null
+    lastModeSwitchMs: null,
+    ordinaryPresentations: 0,
+    pendingNavigation: null,
+    documentToken: documentToken,
+    committedRender: null
   };
 
   function load(path) {
@@ -205,22 +214,43 @@
     runtime.branch = null;
     runtime.deferred = [];
     runtime.outcome = outcome;
+    runtime.mode = null;
     runtime.detailsLoaded = false;
     window.dayReaderDebug.state = null;
     window.dayReaderDebug.semantic = null;
     window.dayReaderDebug.deferred = [];
     window.dayReaderDebug.legacy = null;
     window.dayReaderDebug.outcome = outcome;
+    window.dayReaderDebug.outcomeClass = outcome;
+    window.dayReaderDebug.mode = null;
   }
 
-  function renderFailure(errors, heading) {
-    clearSelectionState(heading ? 'failed' : 'invalid');
-    resetDateSurface();
+  function renderFailure(errors, options) {
+    const held = options || {};
+    const outcome = held.outcome || 'invalid';
+    const mode = Object.prototype.hasOwnProperty.call(held, 'mode') ? held.mode : runtime.mode;
+    if (!held.preserveSelection) clearSelectionState(outcome);
+    else {
+      runtime.result = null;
+      runtime.outcome = outcome;
+      runtime.detailsLoaded = false;
+      window.dayReaderDebug.semantic = null;
+      window.dayReaderDebug.outcome = outcome;
+    }
+    commitOutcomePresentation({
+      mode: mode,
+      outcome: outcome,
+      outcomeClass: held.outcomeClass || outcome,
+      metadata: held.metadata || outcomeMetadata(mode, held.outcomeClass || outcome)
+    });
+    if (held.preserveSelection && runtime.normalized) populateDateSurface();
+    else resetDateSurface();
     detailsBody.replaceChildren(T.el('p', 'surface-note', 'Details load when this surface is opened.'));
     const section = T.el('section', 'candidate-failure');
-    section.appendChild(T.el('h2', null, heading || 'This explicit selection is invalid'));
+    section.appendChild(T.el('h2', null, held.heading || 'This explicit selection is invalid'));
     section.appendChild(T.el('p', null,
-      'The candidate did not substitute another edition, date, Bible, language, locality, or formulary.'));
+      held.explanation ||
+      'The candidate rejected the explicit state and did not substitute another edition, date, Bible, language, locality, or formulary.'));
     const list = T.el('ul');
     (errors || []).forEach(function (error) {
       const label = error.path ? error.path + ': ' : '';
@@ -230,7 +260,6 @@
     replaceReading(section);
     title.textContent = 'Selection unavailable';
     dateLine.textContent = '';
-    metaLine.textContent = 'Internal Day reader candidate · explicit state rejected';
     coverageNotice.hidden = true;
     window.dayReaderDebug.error = (errors || []).map(function (one) {
       return { code: one.code || null, path: one.path || '', message: one.message || String(one) };
@@ -252,6 +281,35 @@
     const recognized = parsed.recognized || {};
     if (recognized.why === '1') reasons.push('the current Day reasoning apparatus');
     return reasons;
+  }
+
+  function requestedModeOf(parsed) {
+    const duplicates = (parsed.duplicates || []).some(function (row) {
+      return row.key === 'ordinary';
+    });
+    if (duplicates) return null;
+    if (parsed.present.indexOf('ordinary') < 0) return 'read';
+    if (parsed.recognized.ordinary === '0') return 'read';
+    if (parsed.recognized.ordinary === '1') return 'missal';
+    return null;
+  }
+
+  function modeLabel(mode) {
+    if (mode === 'missal') return 'Missal';
+    if (mode === 'read') return 'Read';
+    return 'Mode unavailable';
+  }
+
+  function outcomeMetadata(mode, outcomeClass) {
+    const labels = {
+      loading: 'selection loading',
+      invalid: 'explicit state rejected',
+      deferred: 'valid state deferred',
+      unresolved: 'valid state unresolved',
+      unrenderable: 'valid selection unrenderable'
+    };
+    return ['Internal Day reader candidate', modeLabel(mode), labels[outcomeClass] || outcomeClass]
+      .filter(Boolean).join(' · ');
   }
 
   async function loadManifests() {
@@ -446,7 +504,7 @@
     if (runtime.outcome === 'territorial-choice') {
       dateStatus.textContent = 'Locality is unresolved: a territorial choice is required and no branch has been selected.';
     } else if (runtime.outcome === 'deferred') {
-      dateStatus.textContent = 'These validated values are preserved, but the active later-mode request is not rendered in this Read candidate.';
+      dateStatus.textContent = 'These validated values are preserved, but the active deferred request is not rendered in this candidate.';
     } else if (runtime.outcome === 'unresolved') {
       dateStatus.textContent = 'These validated values are current, but the formulary outcome remains unresolved.';
     } else {
@@ -495,7 +553,7 @@
         : (runtime.outcome === 'territorial-choice' ? 'Choice required' : 'Not selected')],
       ['Bible', bible && bible.label || state.bible.id],
       ['Orations', humanLanguage(state.languages.orations)],
-      ['Mode', runtime.mode === 'missal' ? 'Missal' : 'Read'],
+      ['Mode', modeLabel(runtime.mode)],
       ['Ordinary language', runtime.mode === 'missal'
         ? humanLanguage(state.languages.ordinary || 'en') : null],
       ['Ordinary option', runtime.mode === 'missal'
@@ -520,9 +578,10 @@
       const outcome = T.el('section', 'details-section');
       outcome.appendChild(T.el('h3', null, 'Candidate outcome'));
       const messages = {
-        deferred: 'An active later-mode request is preserved and has not been rendered as Read.',
+        deferred: 'An active request is valid and preserved, but remains deferred by this candidate.',
         'territorial-choice': 'A territorial choice is required; no locality has been selected.',
-        unresolved: 'The current request is validated, but no formulary outcome has been selected.'
+        unresolved: 'The current request is validated, but no formulary outcome has been selected.',
+        unrenderable: 'The current request is valid, but its semantic document cannot be rendered from the available production resources.'
       };
       outcome.appendChild(T.el('p', 'surface-note', messages[runtime.outcome] || 'This selection is not resolved.'));
       detailsBody.appendChild(outcome);
@@ -550,12 +609,22 @@
     return chosen ? group.name + ': ' + chosen.name : group.name + ': choice unresolved';
   }
 
-  function commitModePresentation(mode) {
-    contextLine.textContent = 'Day · ' + (mode === 'missal' ? 'Missal' : 'Read');
-    modeState.textContent = mode === 'missal' ? 'Missal' : 'Read';
+  function commitOutcomePresentation(presentation) {
+    const held = presentation || {};
+    const mode = held.mode === 'read' || held.mode === 'missal' ? held.mode : null;
+    runtime.mode = mode;
+    runtime.outcome = held.outcome || runtime.outcome;
+    window.dayReaderDebug.mode = mode;
+    window.dayReaderDebug.outcome = runtime.outcome;
+    window.dayReaderDebug.outcomeClass = held.outcomeClass || runtime.outcome;
+    contextLine.textContent = 'Day · ' + modeLabel(mode);
+    modeState.textContent = mode ? modeLabel(mode) : 'Unavailable';
     modeButtons.forEach(function (button) {
-      button.setAttribute('aria-checked', String(button.dataset.mode === mode));
+      button.setAttribute('aria-checked', String(Boolean(mode) && button.dataset.mode === mode));
     });
+    if (Object.prototype.hasOwnProperty.call(held, 'metadata')) {
+      metaLine.textContent = held.metadata || '';
+    }
     document.body.classList.toggle('hides-rubrics', Boolean(
       runtime.normalized && runtime.normalized.state.apparatus &&
       runtime.normalized.state.apparatus.rubrics === false
@@ -574,7 +643,7 @@
       return 'Some appointed text is unavailable in the selected edition or language; each held portion remains identified.';
     }
     if (rows.some(function (row) { return row.state === 'unsupported'; })) {
-      return 'Part of this selection is outside the candidate’s supported Read boundary.';
+      return 'Part of this selection is outside the candidate’s supported ' + modeLabel(runtime.mode) + ' boundary.';
     }
     if (rows.some(function (row) { return row.completeness === 'partial'; })) {
       return 'Some appointed text is not held in this repository; the available portions are shown.';
@@ -638,7 +707,12 @@
       metadata.push(humanLanguage(state.languages.ordinary || 'en') + ' Ordinary');
       metadata.push(selectedOrdinaryOptionLabel(state, ordinary));
     }
-    metaLine.textContent = metadata.filter(Boolean).join(' · ');
+    commitOutcomePresentation({
+      mode: mode,
+      outcome: 'ready',
+      outcomeClass: 'ready',
+      metadata: metadata.filter(Boolean).join(' · ')
+    });
     const notice = coverageMessage(result);
     coverageNotice.textContent = notice || '';
     coverageNotice.hidden = !notice;
@@ -672,6 +746,7 @@
       throw new Error('appointed Proper has no usable semantic seat: ' +
         unseated.map(function (event) { return event.editionSlotLabel || event.id; }).join(', '));
     }
+    window.dayReaderDebug.ordinaryPresentations += 1;
 
     OrdinaryRenderer.configure({
       ordinaryLang: state.languages.ordinary || null,
@@ -772,7 +847,10 @@
       input.addEventListener('change', function () {
         if (!input.checked) return;
         const location = { kind: 'event', id: event.id };
-        navigate({ ordinary: '1', [group.group]: option.id }, [], { location: location });
+        navigate({ ordinary: '1', [group.group]: option.id }, [], {
+          location: location,
+          focus: { kind: 'ordinary-option', group: group.group, option: option.id }
+        });
       });
       label.appendChild(input);
       label.appendChild(document.createTextNode(option.name));
@@ -782,8 +860,26 @@
     return fieldset;
   }
 
+  function takePendingNavigation() {
+    const pending = {
+      location: runtime.pendingLocation,
+      modeFocus: runtime.pendingModeFocus,
+      focus: runtime.pendingFocus
+    };
+    runtime.pendingLocation = null;
+    runtime.pendingModeFocus = false;
+    runtime.pendingFocus = null;
+    window.dayReaderDebug.pendingNavigation = null;
+    return pending;
+  }
+
   async function renderCandidate() {
     const serial = ++runtime.serial;
+    const pendingNavigation = takePendingNavigation();
+    const modeStartedAt = runtime.modeStartedAt;
+    runtime.modeStartedAt = null;
+    const initialParsed = Contract.parseLegacy('day', window.location.hash, { variantKeys: [] });
+    const requestedMode = requestedModeOf(initialParsed);
     if (readerShell.openSurface()) readerShell.close({ restoreFocus: false });
     clearSelectionState('loading');
     window.dayReaderReady = false;
@@ -792,13 +888,18 @@
     window.dayReaderDebug.state = null;
     window.dayReaderDebug.semantic = null;
     window.dayReaderDebug.deferred = [];
-    window.dayReaderDebug.outcome = 'loading';
+    window.dayReaderDebug.committedRender = null;
     reading.setAttribute('aria-busy', 'true');
     reading.replaceChildren(T.el('p', 'placeholder', 'Loading Day selection…'));
     readerShell.setContents([]);
     title.textContent = 'Loading Day selection';
     dateLine.textContent = '';
-    metaLine.textContent = 'Internal Day reader candidate';
+    commitOutcomePresentation({
+      mode: requestedMode,
+      outcome: 'loading',
+      outcomeClass: 'loading',
+      metadata: outcomeMetadata(requestedMode, 'loading')
+    });
     coverageNotice.textContent = '';
     coverageNotice.hidden = true;
     resetDateSurface();
@@ -811,13 +912,13 @@
       const parsed = Contract.parseLegacy('day', window.location.hash, { variantKeys: keys });
       const preliminary = preflightSelection(parsed, manifests);
       if (!preliminary.ok) {
-        renderFailure(preliminary.errors);
+        renderFailure(preliminary.errors, { mode: requestedMode });
         return;
       }
       const variantErrors = await validateExplicitVariants(parsed, manifests, preliminary.missal);
       if (serial !== runtime.serial) return;
       if (variantErrors.length) {
-        renderFailure(variantErrors);
+        renderFailure(variantErrors, { mode: requestedMode });
         return;
       }
       const assembled = await assemble(parsed, manifests, preliminary);
@@ -834,13 +935,13 @@
         }
       });
       if (!normalized.ok) {
-        renderFailure(normalized.errors);
+        renderFailure(normalized.errors, { mode: requestedMode });
         return;
       }
       normalized.state.requestedMode = normalized.state.options.ordinary ? 'missal' : 'read';
       const validation = Contract.validateReaderState(normalized.state);
       if (!validation.ok) {
-        renderFailure(validation.errors);
+        renderFailure(validation.errors, { mode: requestedMode });
         return;
       }
       runtime.normalized = normalized;
@@ -855,8 +956,12 @@
       window.dayReaderDebug.legacy = normalized.legacy;
 
       if (assembled.derived.options.length !== 1) {
-        runtime.outcome = 'territorial-choice';
-        window.dayReaderDebug.outcome = runtime.outcome;
+        commitOutcomePresentation({
+          mode: runtime.mode,
+          outcome: 'territorial-choice',
+          outcomeClass: 'unresolved',
+          metadata: outcomeMetadata(runtime.mode, 'unresolved') + ' · locality required'
+        });
         populateDateSurface();
         replaceReading(limitation(
           'Territorial branch requires the current Day reader',
@@ -864,23 +969,25 @@
         ));
         title.textContent = 'Locality required';
         dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
-        metaLine.textContent = missalRow(normalized.state.edition.id).edition;
         return;
       }
 
       if (runtime.deferred.length) {
-        runtime.outcome = 'deferred';
-        window.dayReaderDebug.outcome = runtime.outcome;
+        commitOutcomePresentation({
+          mode: runtime.mode,
+          outcome: 'deferred',
+          outcomeClass: 'deferred',
+          metadata: outcomeMetadata(runtime.mode, 'deferred')
+        });
         populateDateSurface();
         replaceReading(limitation(
           'This selection belongs to a later integration slice',
           'The candidate preserved ' + runtime.deferred.join(', ') +
-            ' but did not partially render or map it to Read. The unchanged current Day reader remains the faithful route for this request.'
+            ' but did not partially render it. The unchanged current Day reader remains the faithful route for this request.'
         ));
         title.textContent = runtime.branch && runtime.branch.winner
           ? runtime.branch.winner.name : 'Deferred Day selection';
         dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
-        metaLine.textContent = 'Read candidate limitation · explicit state preserved';
         return;
       }
 
@@ -893,8 +1000,12 @@
           ordinary: runtime.ordinary
         });
       } catch (error) {
-        runtime.outcome = 'unresolved';
-        window.dayReaderDebug.outcome = runtime.outcome;
+        commitOutcomePresentation({
+          mode: runtime.mode,
+          outcome: 'unresolved',
+          outcomeClass: 'unresolved',
+          metadata: outcomeMetadata(runtime.mode, 'unresolved')
+        });
         populateDateSurface();
         replaceReading(limitation(
           'This Day choice is not resolved by the candidate',
@@ -903,13 +1014,16 @@
         title.textContent = runtime.branch && runtime.branch.winner
           ? runtime.branch.winner.name : 'Unresolved Day selection';
         dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
-        metaLine.textContent = 'Read candidate limitation · no silent fallback';
         return;
       }
       runtime.result = result;
       if (!result.resolved) {
-        runtime.outcome = 'unresolved';
-        window.dayReaderDebug.outcome = runtime.outcome;
+        commitOutcomePresentation({
+          mode: runtime.mode,
+          outcome: 'unresolved',
+          outcomeClass: 'unresolved',
+          metadata: outcomeMetadata(runtime.mode, 'unresolved') + ' · choice required'
+        });
         populateDateSurface();
         replaceReading(limitation(
           'A formulary choice remains unresolved',
@@ -918,37 +1032,62 @@
         title.textContent = runtime.branch && runtime.branch.winner
           ? runtime.branch.winner.name : 'Unresolved Day selection';
         dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
-        metaLine.textContent = 'Read candidate limitation · choice required';
         return;
       }
-      runtime.outcome = 'ready';
-      window.dayReaderDebug.outcome = runtime.outcome;
       const renderContext = {
         state: normalized.state,
         mode: runtime.mode,
         ordinary: runtime.ordinary
       };
-      const rendered = await renderResult(
-        result, assembled.structure, assembled.derived, runtime.branch,
-        renderContext,
-        function () { return serial === runtime.serial; }
-      );
+      let rendered;
+      try {
+        rendered = await renderResult(
+          result, assembled.structure, assembled.derived, runtime.branch,
+          renderContext,
+          function () { return serial === runtime.serial; }
+        );
+      } catch (error) {
+        if (serial !== runtime.serial) return;
+        renderFailure([{ code: 'candidate-unrenderable', path: '', message: String(error.message || error) }], {
+          mode: runtime.mode,
+          outcome: 'unrenderable',
+          outcomeClass: 'unrenderable',
+          preserveSelection: true,
+          heading: 'This valid Day selection cannot be rendered',
+          explanation: 'The candidate stopped rather than inventing a missing resource, semantic seat, option, or liturgical text.'
+        });
+        return;
+      }
       if (!rendered || serial !== runtime.serial) return;
-      commitModePresentation(renderContext.mode);
       populateDateSurface();
       window.dayReaderDebug.semantic = semanticProjection(result);
-      restorePendingLocation();
-      if (runtime.modeStartedAt !== null) {
-        window.dayReaderDebug.lastModeSwitchMs = performance.now() - runtime.modeStartedAt;
-        runtime.modeStartedAt = null;
+      restorePendingNavigation(pendingNavigation);
+      if (modeStartedAt !== null) {
+        window.dayReaderDebug.lastModeSwitchMs = performance.now() - modeStartedAt;
       }
     } catch (error) {
       if (serial !== runtime.serial) return;
-      renderFailure([{ code: 'candidate-load', path: '', message: String(error.message || error) }],
-        'The Day candidate could not load this selection');
+      renderFailure([{ code: 'candidate-load', path: '', message: String(error.message || error) }], {
+        mode: requestedMode,
+        outcome: 'unrenderable',
+        outcomeClass: 'unrenderable',
+        preserveSelection: Boolean(runtime.normalized),
+        heading: 'The Day candidate could not load this selection',
+        explanation: 'The requested mode is valid, but the candidate could not obtain a required production resource and did not substitute another one.'
+      });
     } finally {
       if (serial === runtime.serial) {
         window.dayReaderDebug.renders += 1;
+        window.dayReaderDebug.committedRender = {
+          documentToken: documentToken,
+          generation: window.dayReaderDebug.renders,
+          serial: serial,
+          href: window.location.href,
+          hash: window.location.hash,
+          mode: runtime.mode,
+          outcome: runtime.outcome,
+          outcomeClass: window.dayReaderDebug.outcomeClass
+        };
         window.dayReaderDebug.ready = true;
         window.dayReaderReady = true;
       }
@@ -973,6 +1112,12 @@
     history.replaceState({ dayReaderLocation: currentLocation }, '', window.location.href);
     if (navigation.location) runtime.pendingLocation = navigation.location;
     runtime.pendingModeFocus = navigation.modeFocus === true;
+    runtime.pendingFocus = navigation.focus || null;
+    window.dayReaderDebug.pendingNavigation = {
+      location: runtime.pendingLocation,
+      modeFocus: runtime.pendingModeFocus,
+      focus: runtime.pendingFocus
+    };
     const hash = hashWith(updates, removals);
     history.pushState({ dayReaderLocation: runtime.pendingLocation }, '',
       window.location.pathname + window.location.search + hash);
@@ -1004,13 +1149,33 @@
     return location;
   }
 
-  function restorePendingLocation() {
-    if (!runtime.pendingLocation) return;
-    const restored = readerShell.restoreSemanticLocation(runtime.pendingLocation);
-    if (!restored) readerShell.restoreSemanticLocation({ kind: 'top', id: null });
-    runtime.pendingLocation = null;
-    if (runtime.pendingModeFocus) modeAction.focus({ preventScroll: true });
-    runtime.pendingModeFocus = false;
+  function restorePendingNavigation(pending) {
+    const held = pending || {};
+    let optionTarget = null;
+    if (held.focus && held.focus.kind === 'ordinary-option') {
+      optionTarget = Array.from(reading.querySelectorAll(
+        '[data-option-group] input[type="radio"]'
+      )).find(function (input) {
+        const group = input.closest('[data-option-group]');
+        return group && group.dataset.optionGroup === held.focus.group &&
+          input.value === held.focus.option && input.checked;
+      }) || null;
+    }
+    if (held.location) {
+      const restored = readerShell.restoreSemanticLocation(held.location);
+      if (!restored && optionTarget) {
+        const fieldset = optionTarget.closest('[data-option-group]');
+        const semantic = fieldset && fieldset.nextElementSibling;
+        if (semantic && semantic.dataset.semanticLocation) {
+          readerShell.restoreSemanticLocation({ kind: 'event', id: semantic.dataset.semanticLocation });
+        } else readerShell.restoreSemanticLocation({ kind: 'top', id: null });
+      } else if (!restored) readerShell.restoreSemanticLocation({ kind: 'top', id: null });
+    }
+    if (optionTarget) {
+      optionTarget.focus({ preventScroll: true });
+    } else if (held.modeFocus) {
+      modeAction.focus({ preventScroll: true });
+    }
   }
 
   dateForm.addEventListener('submit', function (event) {
@@ -1074,6 +1239,13 @@
   window.addEventListener('popstate', function (event) {
     runtime.pendingLocation = event.state && event.state.dayReaderLocation ||
       readerShell.captureSemanticLocation();
+    runtime.pendingModeFocus = false;
+    runtime.pendingFocus = null;
+    window.dayReaderDebug.pendingNavigation = {
+      location: runtime.pendingLocation,
+      modeFocus: false,
+      focus: null
+    };
     renderCandidate();
   });
   window.addEventListener('hashchange', function () {

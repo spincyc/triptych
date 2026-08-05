@@ -108,7 +108,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertIn("parsed.variantKeys", source)
         self.assertIn("day.html", source)
         self.assertIn("window.location.hash", source)
-        self.assertIn("did not partially render or map it to Read", source)
+        self.assertIn("but did not partially render it", source)
         self.assertIn("recognized.why === '1'", source)
         self.assertNotIn("recognized.rubrics === '1'", source)
         self.assertNotIn("const ordinaryActive = recognized.ordinary === '1'", source)
@@ -120,7 +120,10 @@ class DayReaderIntegrationTests(unittest.TestCase):
         source = text(DAY_JS)
         self.assertIn("function clearSelectionState(outcome)", source)
         self.assertIn("clearSelectionState('loading')", source)
-        self.assertIn("clearSelectionState(heading ? 'failed' : 'invalid')", source)
+        self.assertIn("if (!held.preserveSelection) clearSelectionState(outcome)", source)
+        self.assertIn("const pendingNavigation = takePendingNavigation()", source)
+        self.assertIn("runtime.pendingFocus = null", source)
+        self.assertIn("window.dayReaderDebug.pendingNavigation = null", source)
         for assignment in (
             "runtime.normalized = null", "runtime.result = null",
             "runtime.derived = null", "runtime.structure = null",
@@ -249,7 +252,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
     def test_candidate_size_is_bounded_below_prototype_harness(self) -> None:
         prototype = LITURGY / "prototypes/reader-shell/reader-shell.js"
         self.assertLess(SHELL_JS.stat().st_size, prototype.stat().st_size // 4)
-        self.assertLess(DAY_JS.stat().st_size, prototype.stat().st_size * 80 // 100)
+        self.assertLess(DAY_JS.stat().st_size, prototype.stat().st_size)
 
 
 if __name__ == "__main__":

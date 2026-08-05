@@ -42,6 +42,17 @@ state = "candidate"
   ]
 
   [[deliverables.requirements]]
+  id = "external-review-corrections"
+  criterion = "Resolve the external review's three bounded blockers by committing deterministic outcome-aware mode chrome, restoring keyboard focus to rerendered inline Ordinary options, and making fresh-document and same-document browser synchronization generation-safe, with wholly recaptured browser and print evidence and no public or Propers behavior change."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.js",
+    "tools/tests/day_reader_integration_browser.mjs",
+    "tools/tests/test_day_missal_integration.py",
+    "tools/tests/test_day_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
   id = "external-review-candidate"
   criterion = "A self-contained immutable handoff from the exact pushed implementation commit is archive-tested and manifest-verified for clean-conversation external review, while the roadmap and work register retain candidate-pending-review status."
   status = "open"

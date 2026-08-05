@@ -91,15 +91,27 @@ class DayMissalIntegrationTests(unittest.TestCase):
         candidate = text(JS)
         shell = text(LITURGY / "reader-shell.js")
         for token in (
-            "captureModeLocation", "nearestProperLocation", "restorePendingLocation",
+            "captureModeLocation", "nearestProperLocation", "restorePendingNavigation",
             "modeStartedAt", "derivations", "if (!rendered || serial !== runtime.serial) return",
             "renderContext", "sourceHooks", "data-semantic-location",
+            "ordinary-option", "pendingNavigation", "committedRender",
         ):
             self.assertIn(token, candidate if token not in {"data-semantic-location"} else shell)
         self.assertIn("captureSemanticLocation", shell)
         self.assertIn("restoreSemanticLocation", shell)
         self.assertNotIn("JSON.stringify(runtime", candidate)
         self.assertNotIn("hook.kind + ': '", candidate)
+
+    def test_every_outcome_has_one_deterministic_mode_commit_path(self) -> None:
+        source = text(JS)
+        self.assertIn("function commitOutcomePresentation(presentation)", source)
+        self.assertIn("function requestedModeOf(parsed)", source)
+        self.assertIn("mode ? modeLabel(mode) : 'Unavailable'", source)
+        self.assertIn("outcomeClass: 'unrenderable'", source)
+        self.assertIn("outcomeClass: 'unresolved'", source)
+        self.assertIn("outcomeClass: 'deferred'", source)
+        self.assertIn("invalid: 'explicit state rejected'", source)
+        self.assertNotIn("Read candidate limitation", source)
 
     def test_accessible_continuous_and_print_presentation_is_bounded(self) -> None:
         css = text(CSS)
