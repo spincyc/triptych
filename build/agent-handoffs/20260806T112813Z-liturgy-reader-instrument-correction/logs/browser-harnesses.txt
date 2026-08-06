@@ -1,0 +1,27 @@
+2026-08-06 browser harness summary
+
+visual reset
+  command: node tools/tests/liturgy_reader_visual_reset_browser.mjs --capture-dir <final>
+  exit: 0
+  Chrome/151.0.7922.71; 13/13 assertions; 53 captures
+  console problems: 0; failed requests: 0; HTTP problems: 0
+  unnamed interactive nodes: 0
+
+Day reader
+  command: node tools/tests/day_reader_integration_browser.mjs
+  exit: 1
+  33/34 assertions passed
+  sole stop: first-visit default-date assertion expected coverage notice hidden;
+  current default date 2026-08-06 has material coverage and shows the notice
+  console/network/HTTP problems: 0; unnamed interactive nodes: 0
+
+Propers reader
+  command: node tools/tests/propers_reader_integration_browser.mjs
+  exit: 0
+  27/27 assertions; unnamed interactive nodes: 0
+
+shared shell
+  command: node tools/tests/liturgy_reader_shell_browser.mjs
+  exit: 0
+  18/18 assertions; console/network/HTTP problems: 0
+  unnamed interactive nodes: 0

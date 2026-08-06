@@ -1,0 +1,750 @@
+diff --git a/PROJECT-WORK.md b/PROJECT-WORK.md
+index 795df1646..5cbf4a97c 100644
+--- a/PROJECT-WORK.md
++++ b/PROJECT-WORK.md
+@@ -179,39 +179,77 @@ operations.
+
+ ## Promised work
+
++### Liturgical Instrument visual correction candidate
++
++<!-- promised-deliverable: liturgy-reader-instrument-correction-2026-08-05 -->
++
++**Candidate in progress; independent correction review remains the gate.** The
++independent review of the visual-reset package selected Liturgical Instrument
++as the production visual foundation and left Quiet Folio and Contemporary
++Reader frozen as comparison references. The review did not authorize public
++cutover or production-integration execution. It authorized correction work and
++production-integration planning while requiring another independent visual
++review of the corrected evidence before implementation can move into the
++production reader.
++
++The bounded correction owns seven findings: integrate the persistent controls
++with the reading composition; advance the first principal Missal text; remove
++the empty Read gutter; constrain the 768-pixel portrait measure; subordinate
++partial and postconciliar coverage warnings to available text; replace or
++simplify the provisional masthead mark and progress treatment; and finish
++mobile ritual spacing and narrow division-title wrapping. The canonical plan,
++review mailbox, measurements, checkpoint record, and resume state are tracked
++at `build/agent-continuity/liturgy-reader-visual-plan.md` under this task's
++explicit build-tree exception. Work units A–C now implement and measure the
++bounded visual corrections: one 39.75rem Read axis, earlier Missal action,
++integrated rail/dock, authored masthead, consolidated warnings, tighter ritual
++rhythm, and deliberate 320-pixel wrapping. Work unit D now supplies the full
++matrix, measured before/after package, honest governed-check record, verified
++Pages deployment, and immutable tracked handoff at
++`build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/`.
++Only independent correction review remains open; this is still a candidate and
++not production-integration authorization.
++
++Accepted M1–M3 and W3 state, assembly, renderers, Ordinary seating, failure,
++location, focus, race, action-reachability, and isolation behavior remain
++binding. This candidate does not add Study, Compare, search, Propers Missal,
++sources, editions, recensions, translations, or public links, and it does not
++change `liturgy/day.html` or `liturgy/index.html`.
++
+ ### Liturgy reader visual-reset direction candidate
+
+ <!-- promised-deliverable: liturgy-reader-visual-reset-candidate-2026-08-05 -->
+
+-**Candidate in progress; visual direction reopened by explicit maintainer
+-decision.** The completed M1–M3 and W3 records remain authoritative for state,
++**Complete as a direction-selection study; Liturgical Instrument selected.**
++The completed M1–M3 and W3 records remain authoritative for state,
+ production assembly and rendering reuse, fail-closed behavior, focus and
+ semantic-location restoration, responsive access, and render-race ownership.
+ They were never a finding that the beige card, enlarged mobile-style command
+ bar, improvised glyphs, typography, spacing, or desktop composition constituted
+ a finished or world-class visual reader.
+
+-This distinct visual-design work item will compare Quiet Folio, Liturgical
++This distinct visual-design work item compared Quiet Folio, Liturgical
+ Instrument, and Contemporary Reader over one shared semantic DOM and interaction
+ foundation. It uses real production Day Read/Missal and Propers Read content at
+ unlinked, noindex prototype routes, while preserving the accepted state,
+ calendar, Ordinary seating, Proper rendering, source, and coverage boundaries.
+-Its external review may select one direction, combine named strengths, or find
+-that none is sufficient. The work does not reopen the completed Day Missal
+-engineering deliverable, alter public Day or Propers, start Study/Compare/search,
+-or authorize public cutover. No visual direction is accepted yet.
+-
+-The visual-reset candidate is now implemented and locally proven, with
+-**Liturgical Instrument recommended for independent review**. Quiet Folio is
+-the calmest editorial leaf; Liturgical Instrument adds an edition-neutral
++Its external review selected Liturgical Instrument. The work does not reopen
++the completed Day Missal engineering deliverable, alter public Day or Propers,
++start Study/Compare/search, or authorize public cutover.
++
++The visual-reset candidate was implemented and independently reviewed, with
++**Liturgical Instrument selected as the production visual foundation**. Quiet
++Folio is the calmest editorial leaf; Liturgical Instrument adds an edition-neutral
+ ritual cue grid, disciplined divisions, and a speaker/action gutter for actual
+ following; Contemporary Reader supplies the most compact application chrome
+ and polished title-led Propers Browse flow. All three are query-selected
+ presentations over the same HTML, SVG icon set, shared shell controller, and
+-accepted Day/Propers production adapters. The recommendation favors
+-Instrument's continuous ritual legibility while retaining Folio's typographic
+-restraint and Reader's Browse treatment as explicit comparison strengths; it
+-is not a claim that any direction is accepted or world-class.
++accepted Day/Propers production adapters. The selection favors Instrument's
++continuous ritual legibility. Folio and Reader remain frozen comparison
++references rather than ingredients for a merged compromise. The review also
++found seven bounded visual blockers, now owned by
++`liturgy-reader-instrument-correction-2026-08-05`; selection does not make the
++foundation world-class or authorize production integration.
+
+ The current evidence contains 52 same-run comparison captures at the required
+ desktop, tablet, mobile, enlarged-text, forced-color, reduced-motion, keyboard,
+@@ -221,9 +259,10 @@ unnamed-interactive-node result; a 26-page PDF is retained only as a print smoke
+ check, not a print redesign. Exact hashes prove the public Day and Propers
+ routes, both accepted candidates, shared shell, M1 state seams, production
+ seating, and accepted adapters unchanged. The implementation is this candidate
+-commit; its immutable visual-review handoff is created after the validated push
+-and recorded in the completion report. External visual review and every public
+-cutover decision remain open.
++commit; its immutable visual-review handoff was created after the validated
++push. The direction-selection decision is complete. Corrected visual review,
++production-integration execution, and every public-cutover decision remain
++open under the separate correction deliverable above.
+
+ ### Liturgy Day Missal-mode W3 integration accepted
+
+diff --git a/guidance/liturgy-browser-roadmap.md b/guidance/liturgy-browser-roadmap.md
+index 4e4e1719a..5240cd74f 100644
+--- a/guidance/liturgy-browser-roadmap.md
++++ b/guidance/liturgy-browser-roadmap.md
+@@ -638,16 +638,24 @@ The M0 documentation and correction gate passed external review on 2026-08-03.
+ The accepted implementation boundary now starts these independent actions in
+ parallel:
+
+-The maintainer has explicitly reopened the reader's **visual direction** for a
+-new high-fidelity comparison. This does not revoke M1–M3 or W3 semantic,
+-state, renderer, seating, one-action access, focus, reflow, fail-closed, source
+-honesty, or production-isolation acceptance. It does mean that the accepted M2
+-prototype's beige/pink styling, card treatment, bottom-bar geometry,
+-typography, glyphs, spacing, and desktop composition are evidence rather than a
+-protected destination. No earlier acceptance is a world-class visual verdict.
+-Quiet Folio, Liturgical Instrument, and Contemporary Reader will therefore be
+-judged as a distinct unlinked, noindex candidate before any public-cutover
+-decision; none is accepted in advance.
++Independent visual review selected **Liturgical Instrument** as the production
++visual foundation. Quiet Folio and Contemporary Reader remain frozen comparison
++references rather than ingredients for a compromise or a new direction. The
++selection does not revoke M1–M3 or W3 semantic, state, renderer, seating,
++one-action access, focus, reflow, fail-closed, source-honesty, or
++production-isolation acceptance, and it does not authorize public cutover.
++
++The selected foundation has completed the final evidence phase of its bounded
++visual-correction pass. Work units A–C supply an integrated control shell,
++earlier Missal text, one controlled Read axis, subordinate partial-coverage
++treatment, an authored masthead, and finished mobile ritual spacing and
++division wrapping. Work unit D supplies full-matrix inspection, governed-check
++dispositions, successful Pages verification, and the immutable handoff at
++`build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/`.
++Only independent correction review remains. Production-integration planning
++may proceed, but execution remains deferred until the corrected screenshots
++pass that review. The canonical correction plan and reviewer mailbox are
++tracked at `build/agent-continuity/liturgy-reader-visual-plan.md`.
+
+ 1. M1's W1/W9 shared semantic fixture and URL-state contract is accepted at
+    correction `c6b8070ae76e75153448895a19a0b916c18806ea` plus final micro-fix
+@@ -741,6 +749,10 @@ tracked commit say so rather than borrowing a neighboring SHA.
+ | 2026-08-05 | W3 Day Missal-mode evidence-settlement micro-correction | Candidate pending independent external review. Exact document-token and committed-generation checks now precede a separate bounded animation-frame loop requiring five stable scroll, semantic-target, and focused-control frames with viewport intersection and cleared pending navigation. Settled default-motion EP I/III/IV/II and reduced-motion keyboard checks exposed and corrected one local Day-adapter issue by aligning the inline option group after semantic restoration; the shared shell and site scrolling remain unchanged. Both duplicate `ordinary` orderings are neutral and history-independent on fresh loads and transitions from Read and Missal. The complete Day screenshot and 21-page print set was regenerated; public Day/Propers, the Propers candidate, shared shell, M1 seams, seating, and production data remain isolated. | This micro-correction commit; compact correction handoff recorded after push; acceptance remains open |
+ | 2026-08-05 | W3 Day Missal-mode integration external acceptance | Accepted — every blocking review question is resolved and no further handoff is required. The internal Day reader reuses the production Ordinary presenter, M1 event stream, single Ordinary seating path, and Proper renderer while retaining edition-specific Roman 1962 and postconciliar structures, deterministic fail-closed state, semantic location/history/race ownership, and production isolation. The accepted handoff records 34 passing Day Chromium assertions plus the focused and regression suites, settled default/reduced-motion Eucharistic Prayer focus, neutral unchecked behavior for both duplicate `ordinary` key orderings on fresh and transitioned paths, 107 settled screenshot rows, and the 21-page print review with no console, request, or HTTP errors. Public cutover, later modes, search, source/recension expansion, and print redesign remain separate future decisions. | Candidate `a1221755d4fac2a6b9a009a91b99cd1da82eee9e`; correction `ce5fce8364d24156e41c444c43673e7de31555d8`; accepted micro-correction `86a9816c1bffdcbdd09469f5f8d005c666a8045e`; handoffs `20260805T145914Z-day-missal-mode-integration`, `20260805T183500Z-day-missal-mode-corrections`, and `20260805T201722Z-day-missal-mode-evidence-corrections` |
+ | 2026-08-05 | Liturgy reader visual-reset direction candidate | Candidate pending maintainer and independent visual review. Explicit maintainer direction reopens visual composition without disturbing accepted M1–M3/W3 behavior. One unlinked, noindex Day/Propers prototype compares Quiet Folio, Liturgical Instrument, and Contemporary Reader over the same semantic DOM, production adapters, renderers, seating, and shell controller. Liturgical Instrument is recommended for its ritual cue grid and continuous-action hierarchy; Folio's editorial restraint and Reader's compact chrome and Browse flow remain explicit comparison strengths. The current evidence records 52 same-run screenshots, 12 passing Chromium assertions, clean console/network/accessibility/overflow results, required responsive and enlarged states, deployed before/after comparisons, and a print smoke check. Public routes, accepted candidates, shared shell, M1 seams, seating, and production data retain exact hashes. This is a visual decision candidate, not acceptance or public cutover. | This candidate commit; compact external-review handoff recorded after the validated push |
++| 2026-08-05 | Liturgy reader visual-reset direction selection | Independent review selected Liturgical Instrument as the production visual foundation and froze Quiet Folio and Contemporary Reader as comparison references. Selection closes the three-direction study but does not authorize production-integration execution or public cutover. Seven bounded visual blockers move into the separate Instrument correction candidate. | Reviewed end `0f3567dc509a2d5b42fd58a0e4c77c8f5e5dc113`; implementation `7233879350ff00c92fa2029ca04f481125daa519`; correction review remains open |
++| 2026-08-06 | Liturgical Instrument correction — Work unit A | Candidate geometry correction pending the remaining Instrument finish and independent review. Read now uses one 39.75rem axis, measuring 636 px and about 75 characters at 768×1024 instead of 726 px/about 86. Missal preserves identity and the semantic cue grid while advancing the first principal text from 474.58 to 316.98 px at 1440×900, 441.77 to 324.97 px at 393×852, and 458.83 to 342.03 px at 320×852. The rebuilt preview passed all 12 Chromium assertions with no console, network, accessibility-name, or horizontal-overflow result. Shell/masthead and warning/rhythm correction remain next; accepted behavior and public routes remain unchanged. | This geometry checkpoint; canonical measurements and continuity in `build/agent-continuity/liturgy-reader-visual-plan.md` |
++| 2026-08-06 | Liturgical Instrument correction — Work units B/C | Candidate finish pending Work unit D gates and independent review. The desktop card becomes a square, shadowless rail aligned immediately outside the ritual plane; the mobile dock is opaque and edge-integrated. Instrument now uses a three-stroke CSS mark and no visible meaningless progress dash, while internal semantic progress remains. Roman partial coverage becomes one exact compact status and advances held text by 197.39 px; postconciliar missing-language notices retain exact text in restrained inline pairs and advance first held text by 198.66 px at 1440×900. Mobile exchanges tighten and the 320-pixel first division wraps deliberately in two lines. The 53-capture run passed 13/13 Chromium assertions with clean console, network, HTTP, accessibility-name, duplicate-ID, and overflow results. | This finish checkpoint; full matrix/gates/handoff and independent correction review remain open |
++| 2026-08-06 | Liturgical Instrument correction — Work unit D review candidate | Candidate ready for independent correction review; no acceptance or cutover claimed. The immutable handoff records 22 required full-size final states, five blocker baselines, two contact sheets, explicit route/hash/geometry/focus/semantic/error metadata, 140 focused Python passes, 13/13 visual-reset Chromium passes, 27/27 Propers browser passes, 18/18 shared-shell passes, successful locked public-alpha build/verify, Pages run `31094868150`, and byte-matched deployed assets. Day browser is 33/34 because its date-dependent first-visit test expects no notice on the current default date; the governed full gate stops at pre-existing example transcript divergence after task-owned promised-ledger examples were corrected and independently replayed 2/2. Public Day/Propers and accepted seams remain unchanged. | Implementation `62e712a1962080d1dc3c6e106651c41afbf7531b`; handoff `build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/`; independent review only remaining gate |
+
+ For later updates, append a dated row with the workstream or unchanged
+ historical phase name, the evidence-backed result, and the exact commit(s).
+diff --git a/promised-deliverables.toml b/promised-deliverables.toml
+index 1de459a27..7ed51079e 100644
+--- a/promised-deliverables.toml
++++ b/promised-deliverables.toml
+@@ -1,10 +1,79 @@
+ schema_version = 1
+
++[[deliverables]]
++id = "liturgy-reader-instrument-correction-2026-08-05"
++owner = "src/web/browser/liturgy/reader-visual-reset-day.html"
++promise = "Correct the seven independently reviewed Liturgical Instrument visual blockers, produce measured before/after browser evidence and a complete immutable review handoff, and preserve accepted reader behavior and public-route isolation without beginning production integration or public cutover."
++state = "candidate"
++
++  [[deliverables.requirements]]
++  id = "selected-foundation-and-scope"
++  criterion = "Liturgical Instrument remains the sole selected production visual foundation; Quiet Folio and Contemporary Reader stay frozen comparison references; accepted M1–M3/W3 behavior, public routes, deferred modes, and production data are not reopened."
++  status = "pass"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++    "PROJECT-WORK.md",
++  ]
++
++  [[deliverables.requirements]]
++  id = "reading-plane-and-first-viewport"
++  criterion = "Read uses one deliberate axis and a controlled 768×1024 measure, while Missal advances principal ritual text by about 80 pixels at the required desktop and mobile viewports without crowding or semantic-grid loss."
++  status = "pass"
++  evidence = [
++    "src/web/browser/liturgy/reader-visual-reset.css",
++    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++  ]
++
++  [[deliverables.requirements]]
++  id = "integrated-shell-masthead-and-ritual-finish"
++  criterion = "The permanent controls and masthead read as one authored Instrument composition, the mobile dock is opaque, warnings remain honest but subordinate, and mobile exchanges and narrow division titles receive deliberate editorial spacing and wrapping."
++  status = "pass"
++  evidence = [
++    "src/web/browser/liturgy/reader-visual-reset-day.html",
++    "src/web/browser/liturgy/reader-visual-reset-propers.html",
++    "src/web/browser/liturgy/reader-visual-reset.css",
++    "src/web/browser/liturgy/reader-visual-reset.js",
++    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++  ]
++
++  [[deliverables.requirements]]
++  id = "complete-measured-evidence-and-handoff"
++  criterion = "The required responsive, open-surface, partial-coverage, enlarged-text, forced-color, reduced-motion, keyboard, and deep-scroll matrix has comparable before/after captures, explicit deltas, clean browser results, a labeled final contact sheet, and a verified immutable tracked handoff directory and ZIP."
++  status = "pass"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
++    "build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/HANDOFF.md",
++    "build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/evidence/capture-metadata.json",
++  ]
++
++  [[deliverables.requirements]]
++  id = "behavior-release-and-production-isolation"
++  criterion = "Focused integration, shared-shell, browser, accessibility, release-binding, full-gate, public-alpha build/verify, Pages, and direct deployed prototype checks agree while public Day and Propers and accepted reader seams remain unchanged."
++  status = "pass"
++  evidence = [
++    "tools/tests/test_liturgy_reader_visual_reset.py",
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++    "build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/checks.txt",
++    "build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/PRODUCTION-ISOLATION.md",
++  ]
++
++  [[deliverables.requirements]]
++  id = "independent-correction-review"
++  criterion = "A new independent visual review resolves every correction blocker before production-integration execution begins; public cutover remains separately unauthorized."
++  status = "open"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++    "guidance/liturgy-browser-roadmap.md",
++  ]
++
+ [[deliverables]]
+ id = "liturgy-reader-visual-reset-candidate-2026-08-05"
+ owner = "src/web/browser/liturgy/reader-visual-reset-day.html"
+ promise = "Produce an unlinked, noindex high-fidelity visual-reset prototype for the Day and Propers entrances, presenting three genuinely distinct directions over the accepted shared state, shell behavior, production assembly, Ordinary seating, and Proper rendering boundaries without changing public routes, liturgical data, or deferred reader modes."
+-state = "candidate"
++state = "complete"
+
+   [[deliverables.requirements]]
+   id = "three-shared-real-content-directions"
+@@ -45,8 +114,9 @@ state = "candidate"
+   [[deliverables.requirements]]
+   id = "external-review-decision"
+   criterion = "Independent visual review chooses a production foundation or explicitly finds that none of the directions is sufficient; the candidate may not self-accept or authorize public cutover."
+-  status = "open"
++  status = "pass"
+   evidence = [
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
+     "guidance/liturgy-browser-roadmap.md",
+     "PROJECT-WORK.md",
+   ]
+diff --git a/release/public-alpha.json b/release/public-alpha.json
+index dcc02b3cc..3aae4c133 100644
+--- a/release/public-alpha.json
++++ b/release/public-alpha.json
+@@ -19,7 +19,7 @@
+         "worldwide"
+       ],
+       "rights_record": "release/rights/public-alpha-2026-07-15.md",
+-      "rights_record_sha256": "228c452bda2d916e3192393e5720577c599e2992588856f4b7f0e0a12de9b107",
++      "rights_record_sha256": "2103eb23b0b8cbab9a12d1f0e6caa393c0e90db241682548a2ed7f06f0d05a58",
+       "site_sources": {
+         "ABOUT.md": "cfd87a1a388836f33b7b5ddc4a68274c01842b786092739def117b632829e5cc",
+         "CONTRIBUTING.md": "c889717323509dc634f9caa4d7c9e4423a18a63895abc9dbb5ee85e1dbccc0ab",
+@@ -269,8 +269,8 @@
+         "src/web/browser/liturgy/reader-state.js": "86fcb653738089a569f0f9747d5092e4e51fd2f4ee0ae7b4e7fe9a0c5f5a7cdc",
+         "src/web/browser/liturgy/reader-visual-reset-day.html": "ff734f07b797e5706c7e62a4c890f47c32c0fbfd78bfc855f421a4123273c18d",
+         "src/web/browser/liturgy/reader-visual-reset-propers.html": "7b0a3a4c7ef1189f27bf134a9f6df90315c62675a19cabca0135adaf7201ba65",
+-        "src/web/browser/liturgy/reader-visual-reset.css": "696680634af35e8110e7d0eb5848b81b481b032260c33343825b06efbeb41b1e",
+-        "src/web/browser/liturgy/reader-visual-reset.js": "e2dab3a2085c6bea1303ee1439a4b7ccf2dc98a7a4724705f000f9de19d498aa",
++        "src/web/browser/liturgy/reader-visual-reset.css": "337a8ce54b0af40eacc8c03425df3bddedb793b804afc49a16aee8cbe73d24eb",
++        "src/web/browser/liturgy/reader-visual-reset.js": "eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679",
+         "src/web/browser/liturgy/reading-contents.js": "01067b1208dc6468aecd278328043acc83d3c2de31bd149b66f1ac0383340f3d",
+         "src/web/browser/scripture/index.html": "1cd10d77d7f257c1ad6b3e5e9d7afd61942922b9913fdef1417fa1951e133edd",
+         "src/web/browser/scripture/plan-model.js": "c0c7a6635844f2e88e2d8d2e290790fa05f73ba1153f59e380812e3b8775ee51",
+diff --git a/release/rights/public-alpha-2026-07-15.md b/release/rights/public-alpha-2026-07-15.md
+index ff47b19eb..818a4b6bf 100644
+--- a/release/rights/public-alpha-2026-07-15.md
++++ b/release/rights/public-alpha-2026-07-15.md
+@@ -1950,8 +1950,8 @@ release attachment, announcement, or promotion.
+ | `src/web/browser/liturgy/reader-state.js` | `86fcb653738089a569f0f9747d5092e4e51fd2f4ee0ae7b4e7fe9a0c5f5a7cdc` |
+ | `src/web/browser/liturgy/reader-visual-reset-day.html` | `ff734f07b797e5706c7e62a4c890f47c32c0fbfd78bfc855f421a4123273c18d` |
+ | `src/web/browser/liturgy/reader-visual-reset-propers.html` | `7b0a3a4c7ef1189f27bf134a9f6df90315c62675a19cabca0135adaf7201ba65` |
+-| `src/web/browser/liturgy/reader-visual-reset.css` | `696680634af35e8110e7d0eb5848b81b481b032260c33343825b06efbeb41b1e` |
+-| `src/web/browser/liturgy/reader-visual-reset.js` | `e2dab3a2085c6bea1303ee1439a4b7ccf2dc98a7a4724705f000f9de19d498aa` |
++| `src/web/browser/liturgy/reader-visual-reset.css` | `337a8ce54b0af40eacc8c03425df3bddedb793b804afc49a16aee8cbe73d24eb` |
++| `src/web/browser/liturgy/reader-visual-reset.js` | `eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679` |
+ | `src/web/browser/liturgy/reading-contents.js` | `01067b1208dc6468aecd278328043acc83d3c2de31bd149b66f1ac0383340f3d` |
+ | `src/web/browser/scripture/index.html` | `1cd10d77d7f257c1ad6b3e5e9d7afd61942922b9913fdef1417fa1951e133edd` |
+ | `src/web/browser/scripture/plan-model.js` | `c0c7a6635844f2e88e2d8d2e290790fa05f73ba1153f59e380812e3b8775ee51` |
+diff --git a/src/web/browser/liturgy/reader-visual-reset.css b/src/web/browser/liturgy/reader-visual-reset.css
+index 3fb75c2cd..2a37db2ea 100644
+--- a/src/web/browser/liturgy/reader-visual-reset.css
++++ b/src/web/browser/liturgy/reader-visual-reset.css
+@@ -469,7 +469,19 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
+   --vr-accent-soft: #efe3e1;
+ }
+ .reader-visual-reset[data-design="instrument"] .reader-masthead { border-bottom: 3px solid var(--vr-ink); }
+-.reader-visual-reset[data-design="instrument"] .reader-brand-mark { border-radius: 50%; background: var(--vr-ink); color: var(--vr-panel); }
++.reader-visual-reset[data-design="instrument"] .reader-brand-mark {
++  width: 1.55rem;
++  height: 1.5rem;
++  border: 0;
++  border-radius: 0;
++  background:
++    linear-gradient(currentColor, currentColor) left bottom / 0.24rem 78% no-repeat,
++    linear-gradient(currentColor, currentColor) center / 0.24rem 100% no-repeat,
++    linear-gradient(currentColor, currentColor) right bottom / 0.24rem 78% no-repeat;
++  color: var(--vr-ink);
++  font-size: 0;
++}
++.reader-visual-reset[data-design="instrument"] .reader-progress { display: none; }
+ .reader-visual-reset[data-design="instrument"] .reader-identity { width: min(calc(100% - 3rem), 56rem); padding-bottom: 1.4rem; }
+ .reader-visual-reset[data-design="instrument"] .reader-identity .celebration-title { max-width: 30ch; font-family: var(--vr-sans); font-size: clamp(1.85rem, 3.6vw, 2.7rem); font-weight: 720; letter-spacing: -0.035em; }
+ .reader-visual-reset[data-design="instrument"] .reader-identity .entry-title { font-family: var(--vr-sans); }
+@@ -485,6 +497,86 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
+ .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-head { text-align: left; }
+ .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .annotated { max-width: 43rem; margin-left: 8rem; padding: 1.1rem 0 0.2rem 1rem; border-left: 3px solid var(--vr-accent); }
+ .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .annotated .proper-name { margin-left: 0; padding-left: 0; }
++.reader-visual-reset[data-design="instrument"] .coverage-notice {
++  max-width: 52ch;
++  margin-top: 0.75rem;
++  padding: 0.15rem 0 0.15rem 0.7rem;
++  border-left-width: 2px;
++  background: transparent;
++  font-size: 0.76rem;
++  line-height: 1.45;
++}
++.reader-visual-reset[data-design="instrument"] .coverage-notice .uncompiled-mark {
++  color: var(--vr-faint);
++  font-size: 0.62rem;
++}
++.reader-visual-reset[data-design="instrument"] .ordinary-absence-inline {
++  grid-column: 2;
++  display: flex;
++  flex-wrap: wrap;
++  gap: 0.2rem 1rem;
++  margin: 0.12rem 0 0.55rem;
++  padding-left: 0.65rem;
++  border-left: 1px solid var(--vr-line);
++}
++.reader-visual-reset[data-design="instrument"] .ordinary-absence-inline .notice {
++  flex: 1 1 17rem;
++  margin: 0;
++  padding: 0;
++  border: 0;
++  background: transparent;
++  color: var(--vr-faint);
++  font: 0.71rem/1.4 var(--vr-serif);
++}
++.reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .ordinary-element:is(.is-dialogue, .is-prayer, .is-form) {
++  margin-bottom: 0.78rem;
++}
++.reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .ordinary-element:is(.is-dialogue, .is-prayer, .is-form) + .ordinary-element:is(.is-dialogue, .is-prayer, .is-form) {
++  margin-top: -0.18rem;
++}
++.reader-visual-reset[data-design="instrument"] .reader-document .speaker-tag {
++  color: var(--vr-soft);
++  font-size: 0.61rem;
++  letter-spacing: 0.025em;
++}
++.reader-visual-reset[data-design="instrument"] .reader-document .ordinary-division {
++  text-wrap: balance;
++  hyphens: none;
++}
++
++/* Read is a single editorial axis; the ritual cue gutter belongs to Missal. */
++.reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-identity,
++.reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-document {
++  width: min(calc(100% - 2.5rem), 39.75rem);
++}
++.reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-document .proper {
++  max-width: none;
++  margin-left: 0;
++}
++.reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-document .proper-name {
++  margin-left: 0;
++  padding-left: 0;
++}
++
++/* Keep the identity, then begin the continuous rite without a dead interval. */
++.reader-visual-reset[data-design="instrument"][data-reader-mode="missal"] .reader-identity {
++  padding-top: clamp(0.9rem, 2vw, 1.35rem);
++  padding-bottom: 0.45rem;
++}
++.reader-visual-reset[data-design="instrument"][data-reader-mode="missal"] .reader-document .ordinary-frame {
++  margin-top: 0;
++}
++.reader-visual-reset[data-design="instrument"][data-reader-mode="missal"] .reader-document .ordinary-frame > .ordinary-division:first-child {
++  margin-top: 0;
++  margin-bottom: 0.5rem;
++  padding-block: 0.55rem 0.5rem;
++}
++.reader-visual-reset[data-design="instrument"][data-reader-mode="missal"] .reader-document .ordinary-frame > .ordinary-division:first-child + .ordinary-element {
++  margin-bottom: 0.35rem;
++}
++.reader-visual-reset[data-design="instrument"][data-reader-mode="missal"] .reader-document .ordinary-frame > .ordinary-division:first-child + .ordinary-element .ordinary-head {
++  margin-block: 0.4rem 0.3rem;
++}
+
+ /* Direction C — Contemporary Reader: precise application chrome and calm text. */
+ .reader-visual-reset[data-design="reader"] {
+@@ -523,7 +615,26 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
+   .reader-actions button { grid-template-columns: 1fr; justify-items: center; min-height: 4.6rem; padding: 0.5rem 0.25rem; border-right: 0; border-bottom: 1px solid var(--vr-line); text-align: center; }
+   .reader-actions button:last-child { border-bottom: 0; }
+   .reader-actions .action-state { grid-column: 1; }
+-  .reader-visual-reset[data-design="instrument"] .reader-actions { right: auto; left: max(1.25rem, calc((100vw - 72rem) / 2)); }
++  .reader-visual-reset[data-design="instrument"] .reader-actions {
++    right: auto;
++    left: max(0.75rem, calc(50% - 33rem));
++    width: 4.25rem;
++    overflow: visible;
++    border: 0;
++    border-left: 2px solid var(--vr-ink);
++    border-radius: 0;
++    background: transparent;
++    box-shadow: none;
++  }
++  .reader-visual-reset[data-design="instrument"] .reader-actions button {
++    min-height: 4.4rem;
++    border: 0;
++    color: var(--vr-soft);
++  }
++  .reader-visual-reset[data-design="instrument"] .reader-actions button[aria-expanded="true"] {
++    background: var(--vr-accent-soft);
++    color: var(--vr-ink);
++  }
+   .reader-visual-reset[data-design="reader"] .reader-actions {
+     top: 4.25rem;
+     right: max(1.25rem, calc((100vw - 70rem) / 2));
+@@ -561,6 +672,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
+   .surface-head { padding-right: max(1.1rem, var(--reader-safe-right)); padding-left: max(1.1rem, var(--reader-safe-left)); }
+   .reader-visual-reset[data-design="instrument"] .reader-identity,
+   .reader-visual-reset[data-design="instrument"] .reader-document { width: 100%; padding-inline: max(1.25rem, var(--reader-safe-right)) max(1.25rem, var(--reader-safe-left)); }
++  .reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-identity,
++  .reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-document {
++    width: min(calc(100% - 2.5rem), 39.75rem);
++    padding-inline: 0;
++  }
+   .reader-visual-reset[data-design="instrument"] .reader-document .proper { max-width: none; margin-left: 0; }
+   .reader-visual-reset[data-design="instrument"] .reader-document .proper-name { margin-left: 0; padding-left: 0; }
+   .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-division { padding-left: 0; }
+@@ -568,6 +684,20 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
+   .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-element > .proper-name { margin: 0 0 0.35rem; padding: 0; text-align: left; }
+   .reader-visual-reset[data-design="instrument"] .reader-document .speaker-tag { min-width: 0; margin-left: 0; text-align: left; }
+   .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .annotated { max-width: none; margin-left: 0; padding-left: 0.8rem; }
++  .reader-visual-reset[data-design="instrument"] .reader-actions {
++    border: 0;
++    border-top: 2px solid var(--vr-ink);
++    border-radius: 0;
++    background: var(--vr-panel);
++    box-shadow: 0 -0.2rem 0.8rem rgb(29 33 31 / 8%);
++  }
++  .reader-visual-reset[data-design="instrument"] .reader-actions button {
++    border: 0;
++  }
++  .reader-visual-reset[data-design="instrument"] .ordinary-absence-inline {
++    display: grid;
++    gap: 0.2rem;
++  }
+ }
+
+ @media (max-width: 30rem) {
+@@ -585,6 +715,23 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
+
+ @media (max-width: 25rem) {
+   .reader-actions .action-state { display: none; }
++  .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-division {
++    padding-right: 2.75rem;
++    font-size: 0.75rem;
++    line-height: 1.35;
++    letter-spacing: 0.055em;
++    text-align: left;
++  }
++  .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-element > .proper-name {
++    max-width: 28ch;
++    margin-bottom: 0.22rem;
++    font-size: 0.63rem;
++    line-height: 1.35;
++    text-wrap: balance;
++  }
++  .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .ordinary-element:is(.is-dialogue, .is-prayer, .is-form) {
++    margin-bottom: 0.64rem;
++  }
+ }
+
+ @media (max-width: 22rem) {
+@@ -603,6 +750,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
+   .reader-actions, .reader-surface, .reader-document .proper-name { border-color: CanvasText; }
+   .reader-actions button[aria-expanded="true"], .semantic-contents button[aria-current="location"], .mode-options button[aria-checked="true"] { outline: 2px solid Highlight; }
+   .reader-progress > span { background: Highlight; }
++  .reader-visual-reset[data-design="instrument"] .reader-brand-mark {
++    background:
++      linear-gradient(CanvasText, CanvasText) left bottom / 0.24rem 78% no-repeat,
++      linear-gradient(CanvasText, CanvasText) center / 0.24rem 100% no-repeat,
++      linear-gradient(CanvasText, CanvasText) right bottom / 0.24rem 78% no-repeat;
++  }
+ }
+
+ @media print {
+diff --git a/src/web/browser/liturgy/reader-visual-reset.js b/src/web/browser/liturgy/reader-visual-reset.js
+index 6c2248312..5ce50f3bb 100644
+--- a/src/web/browser/liturgy/reader-visual-reset.js
++++ b/src/web/browser/liturgy/reader-visual-reset.js
+@@ -42,10 +42,12 @@
+
+   const context = root.querySelector('.reader-context');
+   const visualMode = root.querySelector('[data-visual-mode]');
+-  if (context && visualMode) {
++  if (context) {
+     const syncMode = function () {
+       const parts = context.textContent.split('·');
+-      visualMode.textContent = (parts[1] || 'Read').trim();
++      const mode = (parts[1] || 'Read').trim();
++      root.dataset.readerMode = mode.toLocaleLowerCase();
++      if (visualMode) visualMode.textContent = mode;
+     };
+     new MutationObserver(syncMode).observe(context, { childList: true, characterData: true, subtree: true });
+     syncMode();
+@@ -53,6 +55,7 @@
+
+   const progress = root.querySelector('[data-visual-progress]');
+   const reading = root.querySelector('#reader-document');
++  const coverageNotice = root.querySelector('#coverage-notice');
+   let semanticCurrent = null;
+   let semanticCount = 0;
+   let progressQueued = false;
+@@ -87,9 +90,42 @@
+     progressQueued = true;
+     requestAnimationFrame(updateProgress);
+   }
++
++  /*
++   * The production renderers own every word and every absence. Instrument only
++   * composes those existing nodes so one truthful status leads into the held
++   * rite instead of repeating visually dominant warning bars. The guards make
++   * this idempotent across renderer-owned replacement and render races.
++   */
++  function normalizeInstrumentCoverage() {
++    if (design !== 'instrument') return;
++
++    const uncompiled = reading.querySelector(':scope > .uncompiled');
++    if (uncompiled && coverageNotice) {
++      coverageNotice.replaceChildren(...uncompiled.childNodes);
++      coverageNotice.hidden = false;
++      uncompiled.remove();
++    }
++
++    reading.querySelectorAll('.ordinary-element').forEach(function (element) {
++      const notices = Array.from(element.children).filter(function (child) {
++        return child.classList.contains('notice');
++      });
++      if (!notices.length || element.querySelector(':scope > .ordinary-absence-inline')) return;
++      const group = document.createElement('div');
++      group.className = 'ordinary-absence-inline';
++      element.insertBefore(group, notices[0]);
++      notices.forEach(function (notice) { group.appendChild(notice); });
++    });
++  }
++
+   window.addEventListener('scroll', queueProgress, { passive: true });
+   window.addEventListener('resize', queueProgress);
+-  new MutationObserver(queueProgress).observe(reading, { childList: true, subtree: true });
++  new MutationObserver(function () {
++    normalizeInstrumentCoverage();
++    queueProgress();
++  }).observe(reading, { childList: true, subtree: true });
++  normalizeInstrumentCoverage();
+   queueProgress();
+
+   const formulary = document.getElementById('reader-formulary');
+diff --git a/tools/check-promised-deliverables b/tools/check-promised-deliverables
+index a48520c98..3d44759a9 100755
+--- a/tools/check-promised-deliverables
++++ b/tools/check-promised-deliverables
+@@ -20,13 +20,13 @@ EXAMPLES = {
+         Example(
+             "tools/check-promised-deliverables",
+             (
+-                "Promised-deliverable ledger valid: 14 tracked, 9 complete.",
++                "Promised-deliverable ledger valid: 21 tracked, 15 complete.",
+             ),
+         ),
+         Example(
+             "tools/check-promised-deliverables --ledger promised-deliverables.toml",
+             (
+-                "Promised-deliverable ledger valid: 14 tracked, 9 complete.",
++                "Promised-deliverable ledger valid: 21 tracked, 15 complete.",
+             ),
+             "the same ledger named explicitly; --ledger is how a candidate file is checked before it replaces the tracked one",
+         ),
+diff --git a/tools/tests/liturgy_reader_visual_reset_browser.mjs b/tools/tests/liturgy_reader_visual_reset_browser.mjs
+index 0dde63e66..b65f6aab0 100644
+--- a/tools/tests/liturgy_reader_visual_reset_browser.mjs
++++ b/tools/tests/liturgy_reader_visual_reset_browser.mjs
+@@ -251,8 +251,10 @@ async function metrics(cdp) {
+     const reading = document.querySelector('#reader-document');
+     const identity = document.querySelector('.reader-identity');
+     const actions = document.querySelector('.reader-actions');
++    const coverage = document.querySelector('#coverage-notice');
+     const text = reading.querySelector('.passage, .composed');
+     const liturgical = reading.querySelector('.proper, .ordinary-element, .candidate-entry, .candidate-limitation');
++    const division = reading.querySelector('.ordinary-division');
+     const rect = node => node ? (() => { const r = node.getBoundingClientRect(); return {
+       x: Math.round(r.x * 100) / 100, y: Math.round(r.y * 100) / 100,
+       width: Math.round(r.width * 100) / 100, height: Math.round(r.height * 100) / 100,
+@@ -267,6 +269,12 @@ async function metrics(cdp) {
+       .map(node => ({ name: node.getAttribute('aria-label') || node.textContent.trim(), ...rect(node) }));
+     const duplicateIds = [...document.querySelectorAll('[id]')].map(node => node.id)
+       .filter((id, index, ids) => ids.indexOf(id) !== index);
++    const actionStyle = actions ? getComputedStyle(actions) : null;
++    const divisionStyle = division ? getComputedStyle(division) : null;
++    const divisionLineHeight = divisionStyle ? parseFloat(divisionStyle.lineHeight) : 0;
++    const divisionContentHeight = division ? division.getBoundingClientRect().height -
++      parseFloat(divisionStyle.paddingTop) - parseFloat(divisionStyle.paddingBottom) -
++      parseFloat(divisionStyle.borderTopWidth) - parseFloat(divisionStyle.borderBottomWidth) : 0;
+     return {
+       href: location.href, hash: location.hash, design: root.dataset.design,
+       entrance: root.dataset.entrance, semanticProgress: root.dataset.semanticProgress,
+@@ -276,6 +284,18 @@ async function metrics(cdp) {
+         scrollHeight: document.documentElement.scrollHeight },
+       reading: rect(reading), identity: rect(identity), actions: rect(actions),
+       firstLiturgical: rect(liturgical), firstText: rect(text),
++      coverage: { hidden: coverage ? coverage.hidden : true, box: rect(coverage),
++        text: coverage ? coverage.textContent.trim() : '' },
++      absences: {
++        directNotices: reading.querySelectorAll('.ordinary-element > .notice').length,
++        inlineGroups: reading.querySelectorAll('.ordinary-absence-inline').length,
++        inlineNotices: reading.querySelectorAll('.ordinary-absence-inline > .notice').length
++      },
++      firstDivision: { box: rect(division), text: division ? division.textContent.trim() : '',
++        approximateLines: divisionLineHeight ? Math.max(1, Math.round(divisionContentHeight / divisionLineHeight)) : 0 },
++      shell: actionStyle ? { background: actionStyle.backgroundColor, borderRadius: actionStyle.borderRadius,
++        boxShadow: actionStyle.boxShadow, borderTopWidth: actionStyle.borderTopWidth,
++        borderLeftWidth: actionStyle.borderLeftWidth } : null,
+       firstTextSample: text ? text.textContent.trim().slice(0, 180) : '',
+       text: { fontSize: font, width: Math.round(width * 100) / 100, approximateCharacters },
+       interactive, duplicateIds,
+@@ -417,6 +437,31 @@ async function runAssertions(cdp, base) {
+     assert.ok(value.noticeTop < value.firstTextTop);
+   });
+
++  await check('Instrument consolidates exact partial and postconciliar absences', async () => {
++    await viewport(cdp, 393, 852);
++    await fresh(cdp, prototypeUrl(base, 'day', 'instrument', STATES.partial), 'day');
++    let value = await evaluate(cdp, `({
++      coverage: document.querySelector('#coverage-notice').textContent.trim(),
++      uncompiled: document.querySelectorAll('#reader-document > .uncompiled').length,
++      held: document.querySelectorAll('#reader-document .composed, #reader-document .passage').length
++    })`);
++    assert.match(value.coverage, /not yet transcribed/i);
++    assert.equal(value.uncompiled, 0);
++    assert.ok(value.held > 3);
++
++    await fresh(cdp, prototypeUrl(base, 'day', 'instrument', STATES.postMissal), 'day');
++    value = await evaluate(cdp, `({
++      direct: document.querySelectorAll('.ordinary-element > .notice').length,
++      groups: document.querySelectorAll('.ordinary-absence-inline').length,
++      notices: document.querySelectorAll('.ordinary-absence-inline > .notice').length,
++      held: document.querySelectorAll('#reader-document .composed, #reader-document .passage').length
++    })`);
++    assert.equal(value.direct, 0);
++    assert.ok(value.groups > 3);
++    assert.ok(value.notices >= value.groups);
++    assert.ok(value.held > 3);
++  });
++
+   await check('320px reflow has no horizontal overflow or undersized dock targets', async () => {
+     await viewport(cdp, 320, 852);
+     for (const design of ['folio', 'instrument', 'reader']) {
+@@ -564,6 +609,7 @@ async function captureMatrix(cdp, base, directory) {
+     ['instrument-day-long-missal-deep-1440x900.png', 'day', 'romanMissal', 1440, 900, { deep: true }],
+     ['instrument-day-postconciliar-read-1440x900.png', 'day', 'postRead', 1440, 900, {}],
+     ['instrument-day-postconciliar-missal-1440x900.png', 'day', 'postMissal', 1440, 900, {}],
++    ['instrument-day-postconciliar-missal-393x852.png', 'day', 'postMissal', 393, 852, {}],
+     ['instrument-day-date-open-1024x768.png', 'day', 'romanRead', 1024, 768, { action: 'date' }],
+     ['instrument-day-mode-open-393x852.png', 'day', 'romanRead', 393, 852, { action: 'mode' }],
+     ['instrument-day-details-open-1440x900.png', 'day', 'postMissal', 1440, 900, { action: 'details' }],
+@@ -661,6 +707,7 @@ async function main() {
+       generatedAt: new Date().toISOString(),
+       chrome: (await waitForJson(`http://127.0.0.1:${debugPort}/json/version`)).Browser,
+       assertions, failures, consoleProblems, failedRequests, httpProblems,
++      resources: Array.from(new Set(requests)).map(url => new URL(url).pathname).sort(),
+       accessibility: { nodeCount: ax.nodes.length, unnamedInteractiveNodes: unnamed.length },
+       captures: captures.length,
+       sizes: {
+diff --git a/tools/tests/test_day_missal_integration.py b/tools/tests/test_day_missal_integration.py
+index e04cb3cd4..c6e202234 100644
+--- a/tools/tests/test_day_missal_integration.py
++++ b/tools/tests/test_day_missal_integration.py
+@@ -162,8 +162,8 @@ class DayMissalIntegrationTests(unittest.TestCase):
+                 "liturgy-day-missal-w3-candidate-2026-08-05"]
+         self.assertEqual(len(rows), 1)
+         self.assertEqual(rows[0]["state"], "complete")
+-        self.assertEqual(len(ledger["deliverables"]), 20)
+-        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 14)
++        self.assertEqual(len(ledger["deliverables"]), 21)
++        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 15)
+
+     def test_javascript_syntax_and_browser_harness(self) -> None:
+         for path in (JS, PUBLIC_RENDERER, LITURGY / "reader-shell.js"):
+diff --git a/tools/tests/test_liturgy_reader_visual_reset.py b/tools/tests/test_liturgy_reader_visual_reset.py
+index 4e3e26a90..b83a5f2a2 100644
+--- a/tools/tests/test_liturgy_reader_visual_reset.py
++++ b/tools/tests/test_liturgy_reader_visual_reset.py
+@@ -99,6 +99,18 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
+                 self.assertTrue(icon)
+                 self.assertRegex(body, r'class="action-label">[^<]+</span>')
+
++    def test_instrument_finish_is_presentation_only_and_source_honest(self) -> None:
++        script = held(SCRIPT)
++        css = held(CSS)
++        self.assertIn("normalizeInstrumentCoverage", script)
++        self.assertIn("coverageNotice.replaceChildren(...uncompiled.childNodes)", script)
++        self.assertIn("ordinary-absence-inline", script)
++        self.assertNotIn("Some appointed text", script)
++        self.assertIn('[data-design="instrument"] .reader-progress { display: none; }', css)
++        self.assertIn('[data-design="instrument"] .ordinary-absence-inline', css)
++        self.assertIn('border-left: 2px solid var(--vr-ink);', css)
++        self.assertIn('background: var(--vr-panel);', css)
++
+     def test_pages_have_unique_ids(self) -> None:
+         for page in (DAY, PROPERS):
+             ids = re.findall(r'\bid="([^"]+)"', held(page))
+diff --git a/tools/tests/test_propers_reader_integration.py b/tools/tests/test_propers_reader_integration.py
+index 2caaead6c..82aad8066 100644
+--- a/tools/tests/test_propers_reader_integration.py
++++ b/tools/tests/test_propers_reader_integration.py
+@@ -306,13 +306,13 @@ class PropersReaderIntegrationTests(unittest.TestCase):
+         ]
+         self.assertEqual(len(missal_rows), 1)
+         self.assertEqual(missal_rows[0]["state"], "complete")
+-        self.assertEqual(len(ledger["deliverables"]), 20)
++        self.assertEqual(len(ledger["deliverables"]), 21)
+         self.assertEqual(
+             sum(
+                 row["state"] == "complete"
+                 for row in ledger["deliverables"]
+             ),
+-            14,
++            15,
+         )
+
+     def test_candidate_sizes_are_bounded_and_shell_is_not_copied(self) -> None:
