@@ -4,7 +4,7 @@ schema_version = 1
 id = "liturgy-reader-instrument-correction-2026-08-05"
 owner = "src/web/browser/liturgy/reader-visual-reset-day.html"
 promise = "Correct the seven independently reviewed Liturgical Instrument visual blockers, produce measured before/after browser evidence and a complete immutable review handoff, and preserve accepted reader behavior and public-route isolation without beginning production integration or public cutover."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "selected-foundation-and-scope"
@@ -63,10 +63,11 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "independent-correction-review"
   criterion = "A new independent visual review resolves every correction blocker before production-integration execution begins; public cutover remains separately unauthorized."
-  status = "open"
+  status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "guidance/liturgy-browser-roadmap.md",
+    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/HANDOFF.md",
   ]
 
 [[deliverables]]

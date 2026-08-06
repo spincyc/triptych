@@ -179,18 +179,15 @@ operations.
 
 ## Promised work
 
-### Liturgical Instrument visual correction candidate
+### Liturgical Instrument visual correction accepted
 
 <!-- promised-deliverable: liturgy-reader-instrument-correction-2026-08-05 -->
 
-**Candidate in progress; independent correction review remains the gate.** The
-independent review of the visual-reset package selected Liturgical Instrument
-as the production visual foundation and left Quiet Folio and Contemporary
-Reader frozen as comparison references. The review did not authorize public
-cutover or production-integration execution. It authorized correction work and
-production-integration planning while requiring another independent visual
-review of the corrected evidence before implementation can move into the
-production reader.
+**Complete; independent Round 1 acceptance authorizes production-integration
+execution but not public navigation or cutover.** Liturgical Instrument is the
+accepted production visual foundation. Quiet Folio and Contemporary Reader
+remain frozen comparison references, and the accepted visual and behavioral
+seams are not reopened absent a concrete production-integration conflict.
 
 The bounded correction owns seven findings: integrate the persistent controls
 with the reading composition; advance the first principal Missal text; remove
@@ -214,9 +211,8 @@ the related 200%-text mid-word label reflow blocker. The bounded follow-up now
 uses the opaque square edge dock immediately below the 72rem rail breakpoint
 and a labeled 2×2 dock only at extreme root-font reflow. The 54-capture run
 passes 15/15 assertions, including end-content reserve, whole labels, accessible
-names, target size, and overflow. A new immutable handoff and independent
-re-review remain open; this is still a candidate and not production-integration
-authorization. Correction commit `ab89758e3f3ee165e0141e3605be88051450134b`
+names, target size, and overflow. Correction commit
+`ab89758e3f3ee165e0141e3605be88051450134b`
 is pushed. Its first Pages run passed every build/verification step but timed
 out while GitHub held the deployment queued, so deployed corrected-asset parity
 remains open and is not claimed. A second automatic run for continuity
@@ -229,14 +225,22 @@ push succeeded as Pages run `31109086658`; direct Day/Propers routes are HTTP
 200/noindex and deployed CSS/JS byte-match source. The final narrow immutable
 re-review handoff is
 `build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/`.
-Independent re-review remains the only gate; this is still a candidate and not
-production-integration authorization.
+Independent Round 1 acceptance passed shell continuity, 200% labeled reflow,
+and absence of accepted-geometry regressions. It independently verified the
+ZIP, all 109 manifest entries, candidate/source CSS parity, and all corrected
+original-pixel screenshots. Production integration may now begin through the
+shared presentation seam; it must stop for independent integration review
+before any separately authorized public cutover. Pages run `31110517661` for
+post-deployment evidence commit `4daf7d8a1e1c509edb81a738cc71223170bbbd2d`
+failed at deployment polling and is not represented as successful; successful
+deployed parity remains owned by run `31109086658` for
+`c388ab42dfc4f5c7d49abc71596d6bb511af5742`.
 
 Accepted M1–M3 and W3 state, assembly, renderers, Ordinary seating, failure,
 location, focus, race, action-reachability, and isolation behavior remain
-binding. This candidate does not add Study, Compare, search, Propers Missal,
-sources, editions, recensions, translations, or public links, and it does not
-change `liturgy/day.html` or `liturgy/index.html`.
+binding. This completed correction does not add Study, Compare, search, Propers
+Missal, sources, editions, recensions, translations, or public links, and it
+does not change `liturgy/day.html` or `liturgy/index.html`.
 
 ### Liturgy reader visual-reset direction candidate
 
