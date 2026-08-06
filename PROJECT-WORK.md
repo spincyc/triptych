@@ -234,6 +234,11 @@ pushed. As of 2026-08-06T18:08:35Z GitHub likewise had no Actions record for
 that head. Direct deployed Day and Propers candidates remain HTTP 200 at the
 prior artifact, which does not contain `reader-instrument.css`; deployed
 integration parity therefore remains explicitly open.
+GitHub later materialized automatic run `31125352169` for implementation commit
+`3cd46072b164ff39b00639bb67ad6b8943a255dc`, but at
+2026-08-06T18:27:03Z it had remained queued for more than 15 minutes with no
+runner or repository step started. This is a queued external-state result, not
+a successful or failed deployment; deployed parity remains open.
 
 ### Liturgical Instrument visual correction accepted
 
