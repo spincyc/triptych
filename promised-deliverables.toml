@@ -50,10 +50,11 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "complete-parity-evidence-and-deployment"
   criterion = "Production/prototype pairs, measurements, browser results, focused and governed checks, locked public-alpha verification, exact Pages disposition, and direct deployed/source asset parity are complete and honestly recorded."
-  status = "open"
+  status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/HANDOFF.md",
   ]
 
   [[deliverables.requirements]]

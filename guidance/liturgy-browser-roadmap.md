@@ -679,6 +679,13 @@ external-state blocker before integration acceptance.
 Run `31125352169` for the implementation head later materialized but remained
 queued without a runner or repository step through 2026-08-06T18:27:03Z, more
 than 15 minutes after creation. It is not a deployment success or failure.
+The following automatic run `31125898045` succeeded for exact intended
+production commit `5444d89fc9b379a1babef5b2220323fe1508b2b3` at
+2026-08-06T18:29:55Z. Direct Day/Propers routes are HTTP 200 and load the
+deployed Instrument layer; deployed Instrument CSS and candidate JavaScript
+byte-match source, while the accepted oracle remains noindex and byte-matched.
+Independent production-integration review is now the only integration gate.
+Public navigation and cutover remain unauthorized.
 
 1. M1's W1/W9 shared semantic fixture and URL-state contract is accepted at
    correction `c6b8070ae76e75153448895a19a0b916c18806ea` plus final micro-fix

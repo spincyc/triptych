@@ -239,6 +239,15 @@ GitHub later materialized automatic run `31125352169` for implementation commit
 2026-08-06T18:27:03Z it had remained queued for more than 15 minutes with no
 runner or repository step started. This is a queued external-state result, not
 a successful or failed deployment; deployed parity remains open.
+The next delayed automatic run, `31125898045`, succeeded for exact intended
+production commit `5444d89fc9b379a1babef5b2220323fe1508b2b3` at
+2026-08-06T18:29:55Z. Every repository build, verification, upload, and deploy
+step passed. Direct Day, Propers, and both accepted oracle routes return HTTP
+200; Day/Propers reference the Instrument stylesheet, the oracle routes remain
+noindex, and deployed Instrument CSS, Day/Propers JavaScript, and accepted
+oracle CSS/JavaScript byte-match source. Deployed production-integration parity
+is complete. The deliverable remains a candidate solely for independent
+integration review; public navigation and cutover remain unauthorized.
 
 ### Liturgical Instrument visual correction accepted
 
