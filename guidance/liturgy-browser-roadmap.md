@@ -645,14 +645,15 @@ selection does not revoke M1–M3 or W3 semantic, state, renderer, seating,
 one-action access, focus, reflow, fail-closed, source-honesty, or
 production-isolation acceptance, and it does not authorize public cutover.
 
-The selected foundation is now in a bounded visual-correction pass. Review
-requires an integrated control shell, earlier Missal text, one Read axis and a
-controlled portrait measure, subordinate partial-coverage treatment, an
-authored masthead, and finished mobile ritual spacing and division wrapping.
-Production-integration planning may proceed, but execution remains deferred
-until corrected screenshots pass another independent visual review. The
-canonical correction plan and reviewer mailbox are tracked at
-`build/agent-continuity/liturgy-reader-visual-plan.md`.
+The selected foundation is now in the final evidence phase of its bounded
+visual-correction pass. Work units A–C supply an integrated control shell,
+earlier Missal text, one controlled Read axis, subordinate partial-coverage
+treatment, an authored masthead, and finished mobile ritual spacing and
+division wrapping. Work unit D full-matrix inspection, governed checks, Pages
+verification, immutable handoff, and independent review remain. Production-
+integration planning may proceed, but execution remains deferred until the
+corrected screenshots pass that review. The canonical correction plan and
+reviewer mailbox are tracked at `build/agent-continuity/liturgy-reader-visual-plan.md`.
 
 1. M1's W1/W9 shared semantic fixture and URL-state contract is accepted at
    correction `c6b8070ae76e75153448895a19a0b916c18806ea` plus final micro-fix
@@ -748,6 +749,7 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-05 | Liturgy reader visual-reset direction candidate | Candidate pending maintainer and independent visual review. Explicit maintainer direction reopens visual composition without disturbing accepted M1–M3/W3 behavior. One unlinked, noindex Day/Propers prototype compares Quiet Folio, Liturgical Instrument, and Contemporary Reader over the same semantic DOM, production adapters, renderers, seating, and shell controller. Liturgical Instrument is recommended for its ritual cue grid and continuous-action hierarchy; Folio's editorial restraint and Reader's compact chrome and Browse flow remain explicit comparison strengths. The current evidence records 52 same-run screenshots, 12 passing Chromium assertions, clean console/network/accessibility/overflow results, required responsive and enlarged states, deployed before/after comparisons, and a print smoke check. Public routes, accepted candidates, shared shell, M1 seams, seating, and production data retain exact hashes. This is a visual decision candidate, not acceptance or public cutover. | This candidate commit; compact external-review handoff recorded after the validated push |
 | 2026-08-05 | Liturgy reader visual-reset direction selection | Independent review selected Liturgical Instrument as the production visual foundation and froze Quiet Folio and Contemporary Reader as comparison references. Selection closes the three-direction study but does not authorize production-integration execution or public cutover. Seven bounded visual blockers move into the separate Instrument correction candidate. | Reviewed end `0f3567dc509a2d5b42fd58a0e4c77c8f5e5dc113`; implementation `7233879350ff00c92fa2029ca04f481125daa519`; correction review remains open |
 | 2026-08-06 | Liturgical Instrument correction — Work unit A | Candidate geometry correction pending the remaining Instrument finish and independent review. Read now uses one 39.75rem axis, measuring 636 px and about 75 characters at 768×1024 instead of 726 px/about 86. Missal preserves identity and the semantic cue grid while advancing the first principal text from 474.58 to 316.98 px at 1440×900, 441.77 to 324.97 px at 393×852, and 458.83 to 342.03 px at 320×852. The rebuilt preview passed all 12 Chromium assertions with no console, network, accessibility-name, or horizontal-overflow result. Shell/masthead and warning/rhythm correction remain next; accepted behavior and public routes remain unchanged. | This geometry checkpoint; canonical measurements and continuity in `build/agent-continuity/liturgy-reader-visual-plan.md` |
+| 2026-08-06 | Liturgical Instrument correction — Work units B/C | Candidate finish pending Work unit D gates and independent review. The desktop card becomes a square, shadowless rail aligned immediately outside the ritual plane; the mobile dock is opaque and edge-integrated. Instrument now uses a three-stroke CSS mark and no visible meaningless progress dash, while internal semantic progress remains. Roman partial coverage becomes one exact compact status and advances held text by 197.39 px; postconciliar missing-language notices retain exact text in restrained inline pairs and advance first held text by 198.66 px at 1440×900. Mobile exchanges tighten and the 320-pixel first division wraps deliberately in two lines. The 53-capture run passed 13/13 Chromium assertions with clean console, network, HTTP, accessibility-name, duplicate-ID, and overflow results. | This finish checkpoint; full matrix/gates/handoff and independent correction review remain open |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).

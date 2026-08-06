@@ -251,8 +251,10 @@ async function metrics(cdp) {
     const reading = document.querySelector('#reader-document');
     const identity = document.querySelector('.reader-identity');
     const actions = document.querySelector('.reader-actions');
+    const coverage = document.querySelector('#coverage-notice');
     const text = reading.querySelector('.passage, .composed');
     const liturgical = reading.querySelector('.proper, .ordinary-element, .candidate-entry, .candidate-limitation');
+    const division = reading.querySelector('.ordinary-division');
     const rect = node => node ? (() => { const r = node.getBoundingClientRect(); return {
       x: Math.round(r.x * 100) / 100, y: Math.round(r.y * 100) / 100,
       width: Math.round(r.width * 100) / 100, height: Math.round(r.height * 100) / 100,
@@ -267,6 +269,12 @@ async function metrics(cdp) {
       .map(node => ({ name: node.getAttribute('aria-label') || node.textContent.trim(), ...rect(node) }));
     const duplicateIds = [...document.querySelectorAll('[id]')].map(node => node.id)
       .filter((id, index, ids) => ids.indexOf(id) !== index);
+    const actionStyle = actions ? getComputedStyle(actions) : null;
+    const divisionStyle = division ? getComputedStyle(division) : null;
+    const divisionLineHeight = divisionStyle ? parseFloat(divisionStyle.lineHeight) : 0;
+    const divisionContentHeight = division ? division.getBoundingClientRect().height -
+      parseFloat(divisionStyle.paddingTop) - parseFloat(divisionStyle.paddingBottom) -
+      parseFloat(divisionStyle.borderTopWidth) - parseFloat(divisionStyle.borderBottomWidth) : 0;
     return {
       href: location.href, hash: location.hash, design: root.dataset.design,
       entrance: root.dataset.entrance, semanticProgress: root.dataset.semanticProgress,
@@ -276,6 +284,18 @@ async function metrics(cdp) {
         scrollHeight: document.documentElement.scrollHeight },
       reading: rect(reading), identity: rect(identity), actions: rect(actions),
       firstLiturgical: rect(liturgical), firstText: rect(text),
+      coverage: { hidden: coverage ? coverage.hidden : true, box: rect(coverage),
+        text: coverage ? coverage.textContent.trim() : '' },
+      absences: {
+        directNotices: reading.querySelectorAll('.ordinary-element > .notice').length,
+        inlineGroups: reading.querySelectorAll('.ordinary-absence-inline').length,
+        inlineNotices: reading.querySelectorAll('.ordinary-absence-inline > .notice').length
+      },
+      firstDivision: { box: rect(division), text: division ? division.textContent.trim() : '',
+        approximateLines: divisionLineHeight ? Math.max(1, Math.round(divisionContentHeight / divisionLineHeight)) : 0 },
+      shell: actionStyle ? { background: actionStyle.backgroundColor, borderRadius: actionStyle.borderRadius,
+        boxShadow: actionStyle.boxShadow, borderTopWidth: actionStyle.borderTopWidth,
+        borderLeftWidth: actionStyle.borderLeftWidth } : null,
       firstTextSample: text ? text.textContent.trim().slice(0, 180) : '',
       text: { fontSize: font, width: Math.round(width * 100) / 100, approximateCharacters },
       interactive, duplicateIds,
@@ -415,6 +435,31 @@ async function runAssertions(cdp, base) {
     assert.match(value.notice, /partial|unavailable|not held/i);
     assert.ok(value.text > 3);
     assert.ok(value.noticeTop < value.firstTextTop);
+  });
+
+  await check('Instrument consolidates exact partial and postconciliar absences', async () => {
+    await viewport(cdp, 393, 852);
+    await fresh(cdp, prototypeUrl(base, 'day', 'instrument', STATES.partial), 'day');
+    let value = await evaluate(cdp, `({
+      coverage: document.querySelector('#coverage-notice').textContent.trim(),
+      uncompiled: document.querySelectorAll('#reader-document > .uncompiled').length,
+      held: document.querySelectorAll('#reader-document .composed, #reader-document .passage').length
+    })`);
+    assert.match(value.coverage, /not yet transcribed/i);
+    assert.equal(value.uncompiled, 0);
+    assert.ok(value.held > 3);
+
+    await fresh(cdp, prototypeUrl(base, 'day', 'instrument', STATES.postMissal), 'day');
+    value = await evaluate(cdp, `({
+      direct: document.querySelectorAll('.ordinary-element > .notice').length,
+      groups: document.querySelectorAll('.ordinary-absence-inline').length,
+      notices: document.querySelectorAll('.ordinary-absence-inline > .notice').length,
+      held: document.querySelectorAll('#reader-document .composed, #reader-document .passage').length
+    })`);
+    assert.equal(value.direct, 0);
+    assert.ok(value.groups > 3);
+    assert.ok(value.notices >= value.groups);
+    assert.ok(value.held > 3);
   });
 
   await check('320px reflow has no horizontal overflow or undersized dock targets', async () => {
@@ -564,6 +609,7 @@ async function captureMatrix(cdp, base, directory) {
     ['instrument-day-long-missal-deep-1440x900.png', 'day', 'romanMissal', 1440, 900, { deep: true }],
     ['instrument-day-postconciliar-read-1440x900.png', 'day', 'postRead', 1440, 900, {}],
     ['instrument-day-postconciliar-missal-1440x900.png', 'day', 'postMissal', 1440, 900, {}],
+    ['instrument-day-postconciliar-missal-393x852.png', 'day', 'postMissal', 393, 852, {}],
     ['instrument-day-date-open-1024x768.png', 'day', 'romanRead', 1024, 768, { action: 'date' }],
     ['instrument-day-mode-open-393x852.png', 'day', 'romanRead', 393, 852, { action: 'mode' }],
     ['instrument-day-details-open-1440x900.png', 'day', 'postMissal', 1440, 900, { action: 'details' }],

@@ -55,6 +55,7 @@
 
   const progress = root.querySelector('[data-visual-progress]');
   const reading = root.querySelector('#reader-document');
+  const coverageNotice = root.querySelector('#coverage-notice');
   let semanticCurrent = null;
   let semanticCount = 0;
   let progressQueued = false;
@@ -89,9 +90,42 @@
     progressQueued = true;
     requestAnimationFrame(updateProgress);
   }
+
+  /*
+   * The production renderers own every word and every absence. Instrument only
+   * composes those existing nodes so one truthful status leads into the held
+   * rite instead of repeating visually dominant warning bars. The guards make
+   * this idempotent across renderer-owned replacement and render races.
+   */
+  function normalizeInstrumentCoverage() {
+    if (design !== 'instrument') return;
+
+    const uncompiled = reading.querySelector(':scope > .uncompiled');
+    if (uncompiled && coverageNotice) {
+      coverageNotice.replaceChildren(...uncompiled.childNodes);
+      coverageNotice.hidden = false;
+      uncompiled.remove();
+    }
+
+    reading.querySelectorAll('.ordinary-element').forEach(function (element) {
+      const notices = Array.from(element.children).filter(function (child) {
+        return child.classList.contains('notice');
+      });
+      if (!notices.length || element.querySelector(':scope > .ordinary-absence-inline')) return;
+      const group = document.createElement('div');
+      group.className = 'ordinary-absence-inline';
+      element.insertBefore(group, notices[0]);
+      notices.forEach(function (notice) { group.appendChild(notice); });
+    });
+  }
+
   window.addEventListener('scroll', queueProgress, { passive: true });
   window.addEventListener('resize', queueProgress);
-  new MutationObserver(queueProgress).observe(reading, { childList: true, subtree: true });
+  new MutationObserver(function () {
+    normalizeInstrumentCoverage();
+    queueProgress();
+  }).observe(reading, { childList: true, subtree: true });
+  normalizeInstrumentCoverage();
   queueProgress();
 
   const formulary = document.getElementById('reader-formulary');

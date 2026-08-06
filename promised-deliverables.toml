@@ -18,21 +18,24 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "reading-plane-and-first-viewport"
   criterion = "Read uses one deliberate axis and a controlled 768×1024 measure, while Missal advances principal ritual text by about 80 pixels at the required desktop and mobile viewports without crowding or semantic-grid loss."
-  status = "open"
+  status = "pass"
   evidence = [
     "src/web/browser/liturgy/reader-visual-reset.css",
     "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
   ]
 
   [[deliverables.requirements]]
   id = "integrated-shell-masthead-and-ritual-finish"
   criterion = "The permanent controls and masthead read as one authored Instrument composition, the mobile dock is opaque, warnings remain honest but subordinate, and mobile exchanges and narrow division titles receive deliberate editorial spacing and wrapping."
-  status = "open"
+  status = "pass"
   evidence = [
     "src/web/browser/liturgy/reader-visual-reset-day.html",
     "src/web/browser/liturgy/reader-visual-reset-propers.html",
     "src/web/browser/liturgy/reader-visual-reset.css",
     "src/web/browser/liturgy/reader-visual-reset.js",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
   ]
 
   [[deliverables.requirements]]

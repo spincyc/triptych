@@ -200,8 +200,12 @@ simplify the provisional masthead mark and progress treatment; and finish
 mobile ritual spacing and narrow division-title wrapping. The canonical plan,
 review mailbox, measurements, checkpoint record, and resume state are tracked
 at `build/agent-continuity/liturgy-reader-visual-plan.md` under this task's
-explicit build-tree exception. Required implementation, before/after evidence,
-full checks, Pages verification, and the immutable tracked handoff remain open.
+explicit build-tree exception. Work units A–C now implement and measure the
+bounded visual corrections: one 39.75rem Read axis, earlier Missal action,
+integrated rail/dock, authored masthead, consolidated warnings, tighter ritual
+rhythm, and deliberate 320-pixel wrapping. The full Work unit D checks, final
+before/after package, immutable tracked handoff, and independent review remain
+open; this is still a candidate and not production-integration authorization.
 
 Accepted M1–M3 and W3 state, assembly, renderers, Ordinary seating, failure,
 location, focus, race, action-reachability, and isolation behavior remain

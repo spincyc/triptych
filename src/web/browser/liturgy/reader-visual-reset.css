@@ -469,7 +469,19 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   --vr-accent-soft: #efe3e1;
 }
 .reader-visual-reset[data-design="instrument"] .reader-masthead { border-bottom: 3px solid var(--vr-ink); }
-.reader-visual-reset[data-design="instrument"] .reader-brand-mark { border-radius: 50%; background: var(--vr-ink); color: var(--vr-panel); }
+.reader-visual-reset[data-design="instrument"] .reader-brand-mark {
+  width: 1.55rem;
+  height: 1.5rem;
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(currentColor, currentColor) left bottom / 0.24rem 78% no-repeat,
+    linear-gradient(currentColor, currentColor) center / 0.24rem 100% no-repeat,
+    linear-gradient(currentColor, currentColor) right bottom / 0.24rem 78% no-repeat;
+  color: var(--vr-ink);
+  font-size: 0;
+}
+.reader-visual-reset[data-design="instrument"] .reader-progress { display: none; }
 .reader-visual-reset[data-design="instrument"] .reader-identity { width: min(calc(100% - 3rem), 56rem); padding-bottom: 1.4rem; }
 .reader-visual-reset[data-design="instrument"] .reader-identity .celebration-title { max-width: 30ch; font-family: var(--vr-sans); font-size: clamp(1.85rem, 3.6vw, 2.7rem); font-weight: 720; letter-spacing: -0.035em; }
 .reader-visual-reset[data-design="instrument"] .reader-identity .entry-title { font-family: var(--vr-sans); }
@@ -485,6 +497,52 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-head { text-align: left; }
 .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .annotated { max-width: 43rem; margin-left: 8rem; padding: 1.1rem 0 0.2rem 1rem; border-left: 3px solid var(--vr-accent); }
 .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .annotated .proper-name { margin-left: 0; padding-left: 0; }
+.reader-visual-reset[data-design="instrument"] .coverage-notice {
+  max-width: 52ch;
+  margin-top: 0.75rem;
+  padding: 0.15rem 0 0.15rem 0.7rem;
+  border-left-width: 2px;
+  background: transparent;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+.reader-visual-reset[data-design="instrument"] .coverage-notice .uncompiled-mark {
+  color: var(--vr-faint);
+  font-size: 0.62rem;
+}
+.reader-visual-reset[data-design="instrument"] .ordinary-absence-inline {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1rem;
+  margin: 0.12rem 0 0.55rem;
+  padding-left: 0.65rem;
+  border-left: 1px solid var(--vr-line);
+}
+.reader-visual-reset[data-design="instrument"] .ordinary-absence-inline .notice {
+  flex: 1 1 17rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--vr-faint);
+  font: 0.71rem/1.4 var(--vr-serif);
+}
+.reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .ordinary-element:is(.is-dialogue, .is-prayer, .is-form) {
+  margin-bottom: 0.78rem;
+}
+.reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .ordinary-element:is(.is-dialogue, .is-prayer, .is-form) + .ordinary-element:is(.is-dialogue, .is-prayer, .is-form) {
+  margin-top: -0.18rem;
+}
+.reader-visual-reset[data-design="instrument"] .reader-document .speaker-tag {
+  color: var(--vr-soft);
+  font-size: 0.61rem;
+  letter-spacing: 0.025em;
+}
+.reader-visual-reset[data-design="instrument"] .reader-document .ordinary-division {
+  text-wrap: balance;
+  hyphens: none;
+}
 
 /* Read is a single editorial axis; the ritual cue gutter belongs to Missal. */
 .reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-identity,
@@ -557,7 +615,26 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .reader-actions button { grid-template-columns: 1fr; justify-items: center; min-height: 4.6rem; padding: 0.5rem 0.25rem; border-right: 0; border-bottom: 1px solid var(--vr-line); text-align: center; }
   .reader-actions button:last-child { border-bottom: 0; }
   .reader-actions .action-state { grid-column: 1; }
-  .reader-visual-reset[data-design="instrument"] .reader-actions { right: auto; left: max(1.25rem, calc((100vw - 72rem) / 2)); }
+  .reader-visual-reset[data-design="instrument"] .reader-actions {
+    right: auto;
+    left: max(0.75rem, calc(50% - 33rem));
+    width: 4.25rem;
+    overflow: visible;
+    border: 0;
+    border-left: 2px solid var(--vr-ink);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .reader-visual-reset[data-design="instrument"] .reader-actions button {
+    min-height: 4.4rem;
+    border: 0;
+    color: var(--vr-soft);
+  }
+  .reader-visual-reset[data-design="instrument"] .reader-actions button[aria-expanded="true"] {
+    background: var(--vr-accent-soft);
+    color: var(--vr-ink);
+  }
   .reader-visual-reset[data-design="reader"] .reader-actions {
     top: 4.25rem;
     right: max(1.25rem, calc((100vw - 70rem) / 2));
@@ -607,6 +684,20 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-element > .proper-name { margin: 0 0 0.35rem; padding: 0; text-align: left; }
   .reader-visual-reset[data-design="instrument"] .reader-document .speaker-tag { min-width: 0; margin-left: 0; text-align: left; }
   .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .annotated { max-width: none; margin-left: 0; padding-left: 0.8rem; }
+  .reader-visual-reset[data-design="instrument"] .reader-actions {
+    border: 0;
+    border-top: 2px solid var(--vr-ink);
+    border-radius: 0;
+    background: var(--vr-panel);
+    box-shadow: 0 -0.2rem 0.8rem rgb(29 33 31 / 8%);
+  }
+  .reader-visual-reset[data-design="instrument"] .reader-actions button {
+    border: 0;
+  }
+  .reader-visual-reset[data-design="instrument"] .ordinary-absence-inline {
+    display: grid;
+    gap: 0.2rem;
+  }
 }
 
 @media (max-width: 30rem) {
@@ -624,6 +715,23 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 @media (max-width: 25rem) {
   .reader-actions .action-state { display: none; }
+  .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-division {
+    padding-right: 2.75rem;
+    font-size: 0.75rem;
+    line-height: 1.35;
+    letter-spacing: 0.055em;
+    text-align: left;
+  }
+  .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-element > .proper-name {
+    max-width: 28ch;
+    margin-bottom: 0.22rem;
+    font-size: 0.63rem;
+    line-height: 1.35;
+    text-wrap: balance;
+  }
+  .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .ordinary-element:is(.is-dialogue, .is-prayer, .is-form) {
+    margin-bottom: 0.64rem;
+  }
 }
 
 @media (max-width: 22rem) {
@@ -642,6 +750,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .reader-actions, .reader-surface, .reader-document .proper-name { border-color: CanvasText; }
   .reader-actions button[aria-expanded="true"], .semantic-contents button[aria-current="location"], .mode-options button[aria-checked="true"] { outline: 2px solid Highlight; }
   .reader-progress > span { background: Highlight; }
+  .reader-visual-reset[data-design="instrument"] .reader-brand-mark {
+    background:
+      linear-gradient(CanvasText, CanvasText) left bottom / 0.24rem 78% no-repeat,
+      linear-gradient(CanvasText, CanvasText) center / 0.24rem 100% no-repeat,
+      linear-gradient(CanvasText, CanvasText) right bottom / 0.24rem 78% no-repeat;
+  }
 }
 
 @media print {

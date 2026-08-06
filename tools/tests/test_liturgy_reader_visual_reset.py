@@ -99,6 +99,18 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
                 self.assertTrue(icon)
                 self.assertRegex(body, r'class="action-label">[^<]+</span>')
 
+    def test_instrument_finish_is_presentation_only_and_source_honest(self) -> None:
+        script = held(SCRIPT)
+        css = held(CSS)
+        self.assertIn("normalizeInstrumentCoverage", script)
+        self.assertIn("coverageNotice.replaceChildren(...uncompiled.childNodes)", script)
+        self.assertIn("ordinary-absence-inline", script)
+        self.assertNotIn("Some appointed text", script)
+        self.assertIn('[data-design="instrument"] .reader-progress { display: none; }', css)
+        self.assertIn('[data-design="instrument"] .ordinary-absence-inline', css)
+        self.assertIn('border-left: 2px solid var(--vr-ink);', css)
+        self.assertIn('background: var(--vr-panel);', css)
+
     def test_pages_have_unique_ids(self) -> None:
         for page in (DAY, PROPERS):
             ids = re.findall(r'\bid="([^"]+)"', held(page))
