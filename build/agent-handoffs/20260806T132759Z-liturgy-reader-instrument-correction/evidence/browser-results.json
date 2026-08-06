@@ -1,0 +1,191 @@
+{
+  "generatedAt": "2026-08-06T13:05:12.398Z",
+  "chrome": "Chrome/151.0.7922.71",
+  "assertions": [
+    {
+      "name": "three directions preserve one Roman Day semantic document",
+      "status": "pass"
+    },
+    {
+      "name": "directions are materially distinct compositions, not palette aliases",
+      "status": "pass"
+    },
+    {
+      "name": "Day Read and Missal retain real production state and event identity",
+      "status": "pass"
+    },
+    {
+      "name": "Propers ready and Browse states share the visual foundation without defaults",
+      "status": "pass"
+    },
+    {
+      "name": "persistent shell stays one action away and restores focus at deep scroll",
+      "status": "pass"
+    },
+    {
+      "name": "Read and Missal mode switching keeps semantic location and focus behavior",
+      "status": "pass"
+    },
+    {
+      "name": "partial coverage stays explicit and subordinate to held text",
+      "status": "pass"
+    },
+    {
+      "name": "Instrument consolidates exact partial and postconciliar absences",
+      "status": "pass"
+    },
+    {
+      "name": "320px reflow has no horizontal overflow or undersized dock targets",
+      "status": "pass"
+    },
+    {
+      "name": "Instrument intermediate widths use an opaque square edge dock with reserved end space",
+      "status": "pass"
+    },
+    {
+      "name": "Instrument 200% text reflows to a labeled two-by-two dock without word breaks",
+      "status": "pass"
+    },
+    {
+      "name": "200% text enlargement retains one readable plane and usable surfaces",
+      "status": "pass"
+    },
+    {
+      "name": "400% browser scale keeps the compact reader operable",
+      "status": "pass"
+    },
+    {
+      "name": "forced colors, reduced motion, and keyboard focus remain explicit",
+      "status": "pass"
+    },
+    {
+      "name": "prototype resources remain local and network-clean",
+      "status": "pass"
+    }
+  ],
+  "failures": [],
+  "consoleProblems": [],
+  "failedRequests": [],
+  "httpProblems": [],
+  "resources": [
+    "/build/public-alpha/preview/assets/icon.png",
+    "/build/public-alpha/preview/assets/site.css",
+    "/build/public-alpha/preview/browse/bibles.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/1Cor/1.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/1Cor/12.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/1Thess/3.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/1Thess/4.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Is/2.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Is/63.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Is/64.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Jer/33.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Luke/18.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Luke/21.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Mark/13.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Matt/24.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/121.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/16.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/24.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/50.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/54.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/64.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/79.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/84.json",
+    "/build/public-alpha/preview/browse/douay-rheims/chapters/Rom/13.json",
+    "/build/public-alpha/preview/browse/structure/calendar/postconciliar/2026.json",
+    "/build/public-alpha/preview/browse/structure/calendar/roman-1962/2026.json",
+    "/build/public-alpha/preview/browse/structure/ordinary/index.json",
+    "/build/public-alpha/preview/browse/structure/ordinary/postconciliar.json",
+    "/build/public-alpha/preview/browse/structure/ordinary/roman-1962.json",
+    "/build/public-alpha/preview/browse/structure/propers/index.json",
+    "/build/public-alpha/preview/browse/structure/propers/postconciliar.json",
+    "/build/public-alpha/preview/browse/structure/propers/roman-1962.json",
+    "/build/public-alpha/preview/browse/structure/rubrics/index.json",
+    "/build/public-alpha/preview/browse/structure/rubrics/postconciliar.json",
+    "/build/public-alpha/preview/browse/structure/rubrics/roman-1962.json",
+    "/build/public-alpha/preview/liturgy/assembly-model.js",
+    "/build/public-alpha/preview/liturgy/day-missal.css",
+    "/build/public-alpha/preview/liturgy/day-reader.js",
+    "/build/public-alpha/preview/liturgy/day.css",
+    "/build/public-alpha/preview/liturgy/day.js",
+    "/build/public-alpha/preview/liturgy/liturgy.css",
+    "/build/public-alpha/preview/liturgy/ordinary-seating.js",
+    "/build/public-alpha/preview/liturgy/propers-reader.js",
+    "/build/public-alpha/preview/liturgy/reader-shell.css",
+    "/build/public-alpha/preview/liturgy/reader-shell.js",
+    "/build/public-alpha/preview/liturgy/reader-state-adapters.js",
+    "/build/public-alpha/preview/liturgy/reader-state.js",
+    "/build/public-alpha/preview/liturgy/reader-visual-reset-day.html",
+    "/build/public-alpha/preview/liturgy/reader-visual-reset-day.html",
+    "/build/public-alpha/preview/liturgy/reader-visual-reset-day.html",
+    "/build/public-alpha/preview/liturgy/reader-visual-reset-propers.html",
+    "/build/public-alpha/preview/liturgy/reader-visual-reset-propers.html",
+    "/build/public-alpha/preview/liturgy/reader-visual-reset-propers.html",
+    "/build/public-alpha/preview/liturgy/reader-visual-reset.css",
+    "/build/public-alpha/preview/liturgy/reader-visual-reset.js",
+    "/build/public-alpha/preview/shared/browser-core.css",
+    "/build/public-alpha/preview/shared/browser-core.js",
+    "/triptych/assets/icon.png",
+    "/triptych/assets/site.css",
+    "/triptych/browse/bibles.json",
+    "/triptych/browse/douay-rheims/chapters/1Cor/12.json",
+    "/triptych/browse/douay-rheims/chapters/2Tim/2.json",
+    "/triptych/browse/douay-rheims/chapters/Ecclus/49.json",
+    "/triptych/browse/douay-rheims/chapters/Ecclus/50.json",
+    "/triptych/browse/douay-rheims/chapters/Luke/10.json",
+    "/triptych/browse/douay-rheims/chapters/Luke/18.json",
+    "/triptych/browse/douay-rheims/chapters/Luke/21.json",
+    "/triptych/browse/douay-rheims/chapters/Luke/4.json",
+    "/triptych/browse/douay-rheims/chapters/Prov/3.json",
+    "/triptych/browse/douay-rheims/chapters/Ps/118.json",
+    "/triptych/browse/douay-rheims/chapters/Ps/16.json",
+    "/triptych/browse/douay-rheims/chapters/Ps/24.json",
+    "/triptych/browse/douay-rheims/chapters/Ps/50.json",
+    "/triptych/browse/douay-rheims/chapters/Ps/54.json",
+    "/triptych/browse/douay-rheims/chapters/Ps/64.json",
+    "/triptych/browse/douay-rheims/chapters/Ps/77.json",
+    "/triptych/browse/douay-rheims/chapters/Ps/84.json",
+    "/triptych/browse/douay-rheims/chapters/Rom/13.json",
+    "/triptych/browse/structure/calendar/roman-1962/2026.json",
+    "/triptych/browse/structure/ordinary/index.json",
+    "/triptych/browse/structure/propers/index.json",
+    "/triptych/browse/structure/propers/roman-1962.json",
+    "/triptych/browse/structure/rubrics/index.json",
+    "/triptych/browse/structure/rubrics/roman-1962.json",
+    "/triptych/liturgy/assembly-model.js",
+    "/triptych/liturgy/day-missal.css",
+    "/triptych/liturgy/day-reader.css",
+    "/triptych/liturgy/day-reader.html",
+    "/triptych/liturgy/day-reader.js",
+    "/triptych/liturgy/day.css",
+    "/triptych/liturgy/day.html",
+    "/triptych/liturgy/day.js",
+    "/triptych/liturgy/index.html",
+    "/triptych/liturgy/liturgy.css",
+    "/triptych/liturgy/liturgy.js",
+    "/triptych/liturgy/ordinary-seating.js",
+    "/triptych/liturgy/proper-placement-notes.js",
+    "/triptych/liturgy/propers-reader.css",
+    "/triptych/liturgy/propers-reader.html",
+    "/triptych/liturgy/propers-reader.js",
+    "/triptych/liturgy/reader-shell.css",
+    "/triptych/liturgy/reader-shell.js",
+    "/triptych/liturgy/reader-state-adapters.js",
+    "/triptych/liturgy/reader-state.js",
+    "/triptych/liturgy/reading-contents.js",
+    "/triptych/shared/browser-core.css",
+    "/triptych/shared/browser-core.js",
+    "image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJXaW5kb3dUZXh0IiBkPSJNMjAgM2gtMVYxaC0ydjJIN1YxSDV2Mkg0Yy0xLjEgMC0yIC45LTIgMnYxNmMwIDEuMS45IDIgMiAyaDE2YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMThINFY4aDE2djEzeiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiLz48L3N2Zz4="
+  ],
+  "accessibility": {
+    "nodeCount": 3025,
+    "unnamedInteractiveNodes": 0
+  },
+  "captures": 54,
+  "sizes": {
+    "javascript": 8310,
+    "css": 39623,
+    "dayHtml": 8429,
+    "propersHtml": 7602
+  }
+}

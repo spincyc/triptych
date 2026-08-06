@@ -1,0 +1,31 @@
+Pages and deployed parity
+=========================
+
+PASS  correction push
+      ab89758e3f3ee165e0141e3605be88051450134b reached origin/main
+
+STOP  GitHub Pages run 31104342722
+      checkout, Python/dependency setup, source verification, public build,
+      GitHub Pages compatibility verification, configuration, and artifact
+      upload passed. actions/deploy-pages@v5 timed out after GitHub held the
+      deployment queued for 600 seconds; the action canceled it.
+
+At that stop, deployed Day and Propers remained HTTP 200/noindex but served the
+reviewed CSS 337a8ce54b0af40eacc8c03425df3bddedb793b804afc49a16aee8cbe73d24eb,
+not corrected CSS 850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48.
+Parity was explicitly not claimed.
+
+STOP  GitHub Pages run 31106008011
+      The same repository-owned steps passed; deploy-pages polling again
+      reached its 600-second timeout.
+
+STOP  GitHub Pages run 31107294462
+      The same repository-owned steps passed. Deploy ran from 13:49:32Z to
+      13:58:58Z, when GitHub canceled the job at its 15-minute maximum.
+
+Direct Day and Propers routes remain HTTP 200/noindex. Deployed CSS remains
+337a8ce54b0af40eacc8c03425df3bddedb793b804afc49a16aee8cbe73d24eb,
+not corrected 850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48.
+Corrected parity is explicitly open. No manual rerun or broader deployment
+action was taken. The immutable-handoff push supplies the next ordinary
+automatic attempt, whose terminal result is reported separately.
