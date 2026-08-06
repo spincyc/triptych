@@ -179,6 +179,30 @@ operations.
 
 ## Promised work
 
+### Liturgical Instrument public-cutover plan
+
+<!-- promised-deliverable: liturgy-reader-instrument-public-cutover-plan-2026-08-06 -->
+
+**In progress; planning and pre-cutover readiness only.** Work begins from the
+clean, fully synchronized accepted-integration boundary
+`7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef`. It inventories the canonical
+`liturgy/day.html` and `liturgy/index.html` contracts against the accepted
+`liturgy/day-reader.html` and `liturgy/propers-reader.html` implementations,
+selects the smallest reversible same-URL mechanism, makes the known
+date-dependent Day browser gate deterministic if and only if its disclosed
+cause is confirmed, and prepares an unapplied exact patch, rollback, acceptance
+gates, and immutable independent-review handoff.
+
+No canonical public HTML, public navigation, candidate route, accepted visual
+oracle, or public deployment behavior may change in this phase. The accepted
+visual direction and production behavior seams remain frozen. Production
+integration and its durable handoff are complete; public-cutover planning is
+not acceptance, and public navigation changes and cutover execution remain
+unauthorized. Source inspection has already identified metadata/indexing,
+legacy-state fallback, first-visit default, and cross-entrance navigation
+differences that must be explicitly classified before a later execution can be
+authorized; none will be silently normalized away.
+
 ### Liturgical Instrument production integration
 
 <!-- promised-deliverable: liturgy-reader-instrument-production-integration-2026-08-06 -->

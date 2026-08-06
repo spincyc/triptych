@@ -1,6 +1,75 @@
 schema_version = 1
 
 [[deliverables]]
+id = "liturgy-reader-instrument-public-cutover-plan-2026-08-06"
+owner = "build/agent-continuity/liturgy-reader-cutover-decision.md"
+promise = "Produce an independently reviewable, route-compatible, reversible public-cutover plan for moving the accepted Liturgical Instrument Day and Propers readers onto their canonical URLs without changing canonical pages, public navigation, candidate routes, or the accepted visual oracle during planning."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "accepted-starting-boundary-and-planning-scope"
+  criterion = "The plan begins from the accepted and durably archived production integration, freezes the accepted visual and behavioral seams, and does not execute a canonical-route, navigation, candidate, oracle, or public-cutover change."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/HANDOFF.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "route-state-and-navigation-inventory"
+  criterion = "Tracked human- and machine-readable inventories distinguish the canonical public contract from implementation detail and classify every material Day, Propers, navigation, metadata, indexing, cache, and static-hosting difference."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-cutover-route-map.md",
+    "build/agent-continuity/liturgy-reader-cutover-state-matrix.md",
+    "build/agent-continuity/liturgy-reader-cutover-state-matrix.json",
+    "build/agent-continuity/liturgy-reader-cutover-navigation-map.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "smallest-reversible-mechanism"
+  criterion = "The plan selects and justifies the smallest canonical-URL-preserving mechanism, rejects more invasive alternatives, names exact cutover and protected files, and records every unresolved compatibility blocker without reopening accepted design."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-cutover-decision.md",
+    "build/agent-continuity/liturgy-reader-public-cutover-proposed.patch",
+  ]
+
+  [[deliverables.requirements]]
+  id = "deterministic-day-gate"
+  criterion = "The Day first-visit browser assertion is made deterministic without changing product behavior or weakening its repository-default contract, or a newly discovered non-date-dependent cause remains an explicit cutover blocker."
+  status = "open"
+  evidence = [
+    "tools/tests/day_reader_integration_browser.mjs",
+    "build/agent-continuity/liturgy-reader-cutover-state-matrix.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "rollback-and-acceptance-gates"
+  criterion = "An operational ordinary-revert rollback and exact local, canonical-route, visual-oracle, publication, Pages, deployed-parity, indexing, cache, accessibility, and browser acceptance gates make later execution bounded and testable."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-public-cutover-rollback.md",
+    "build/agent-continuity/liturgy-reader-public-cutover-gates.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "immutable-plan-review-handoff"
+  criterion = "A fresh tracked immutable handoff directory and verified one-root ZIP contain the exact instruction, byte-identical continuity, route/state/navigation inventories, decision, proposed patch, rollback, gates, source snapshots, checks, and narrow independent-review request."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-cutover-plan-review"
+  criterion = "Independent review accepts the cutover plan and separately authorizes execution; planning quality alone does not authorize public navigation changes or public cutover."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-reader-instrument-production-integration-2026-08-06"
 owner = "src/web/browser/liturgy/reader-instrument.css"
 promise = "Move the independently accepted Liturgical Instrument visual system into the existing unlinked, noindex Day and Propers production-reader candidates through the smallest shared presentation seam, prove prototype-to-production parity, and preserve accepted M1–M3/W3 behavior without changing public navigation or beginning public cutover."
