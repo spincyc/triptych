@@ -111,6 +111,25 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
         self.assertIn('border-left: 2px solid var(--vr-ink);', css)
         self.assertIn('background: var(--vr-panel);', css)
 
+    def test_instrument_shell_has_continuous_edge_and_extreme_reflow_rules(self) -> None:
+        css = held(CSS)
+        self.assertIn('container: reader-shell / inline-size;', css)
+        self.assertIn('@media (max-width: 71.999rem)', css)
+        self.assertIn('@container reader-shell (max-width: 18rem)', css)
+        self.assertIn('grid-template-columns: repeat(2, minmax(0, 1fr));', css)
+        self.assertIn('white-space: nowrap;', css)
+        instrument_edge = re.search(
+            r'@media \(max-width: 71\.999rem\).*?'
+            r'\.reader-visual-reset\[data-design="instrument"\] \.reader-actions \{(.*?)\n  \}',
+            css,
+            re.DOTALL,
+        )
+        self.assertIsNotNone(instrument_edge)
+        rule = instrument_edge.group(1)
+        self.assertIn('border-radius: 0;', rule)
+        self.assertIn('background: var(--vr-panel);', rule)
+        self.assertIn('box-shadow: none;', rule)
+
     def test_pages_have_unique_ids(self) -> None:
         for page in (DAY, PROPERS):
             ids = re.findall(r'\bid="([^"]+)"', held(page))

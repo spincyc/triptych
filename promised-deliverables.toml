@@ -27,7 +27,7 @@ state = "candidate"
 
   [[deliverables.requirements]]
   id = "integrated-shell-masthead-and-ritual-finish"
-  criterion = "The permanent controls and masthead read as one authored Instrument composition, the mobile dock is opaque, warnings remain honest but subordinate, and mobile exchanges and narrow division titles receive deliberate editorial spacing and wrapping."
+  criterion = "The permanent controls and masthead read as one authored Instrument composition, including a square opaque edge dock at 1024 and whole labeled 2×2 controls at extreme reflow; warnings remain honest but subordinate, and mobile exchanges and narrow division titles retain deliberate editorial spacing and wrapping."
   status = "pass"
   evidence = [
     "src/web/browser/liturgy/reader-visual-reset-day.html",
@@ -41,7 +41,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "complete-measured-evidence-and-handoff"
   criterion = "The required responsive, open-surface, partial-coverage, enlarged-text, forced-color, reduced-motion, keyboard, and deep-scroll matrix has comparable before/after captures, explicit deltas, clean browser results, a labeled final contact sheet, and a verified immutable tracked handoff directory and ZIP."
-  status = "pass"
+  status = "open"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "tools/tests/liturgy_reader_visual_reset_browser.mjs",

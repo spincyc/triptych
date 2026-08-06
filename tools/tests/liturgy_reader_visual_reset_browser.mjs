@@ -270,6 +270,21 @@ async function metrics(cdp) {
     const duplicateIds = [...document.querySelectorAll('[id]')].map(node => node.id)
       .filter((id, index, ids) => ids.indexOf(id) !== index);
     const actionStyle = actions ? getComputedStyle(actions) : null;
+    const actionButtons = actions ? [...actions.querySelectorAll('button')].map(node => {
+      const label = node.querySelector('.action-label');
+      const labelStyle = label ? getComputedStyle(label) : null;
+      const labelLineHeight = labelStyle ? parseFloat(labelStyle.lineHeight) : 0;
+      return {
+        name: node.getAttribute('aria-label') || node.textContent.trim(),
+        label: label ? label.textContent.trim() : '',
+        box: rect(node), labelBox: rect(label),
+        labelLines: label && labelLineHeight ? Math.round(label.getBoundingClientRect().height / labelLineHeight) : 0,
+        labelScrollWidth: label ? label.scrollWidth : 0,
+        labelClientWidth: label ? label.clientWidth : 0,
+        whiteSpace: labelStyle ? labelStyle.whiteSpace : null,
+        overflowWrap: labelStyle ? labelStyle.overflowWrap : null
+      };
+    }) : [];
     const divisionStyle = division ? getComputedStyle(division) : null;
     const divisionLineHeight = divisionStyle ? parseFloat(divisionStyle.lineHeight) : 0;
     const divisionContentHeight = division ? division.getBoundingClientRect().height -
@@ -296,6 +311,7 @@ async function metrics(cdp) {
       shell: actionStyle ? { background: actionStyle.backgroundColor, borderRadius: actionStyle.borderRadius,
         boxShadow: actionStyle.boxShadow, borderTopWidth: actionStyle.borderTopWidth,
         borderLeftWidth: actionStyle.borderLeftWidth } : null,
+      actionButtons,
       firstTextSample: text ? text.textContent.trim().slice(0, 180) : '',
       text: { fontSize: font, width: Math.round(width * 100) / 100, approximateCharacters },
       interactive, duplicateIds,
@@ -474,6 +490,62 @@ async function runAssertions(cdp, base) {
     }
   });
 
+  await check('Instrument intermediate widths use an opaque square edge dock with reserved end space', async () => {
+    await viewport(cdp, 1024, 768);
+    for (const state of [STATES.romanRead, STATES.romanMissal]) {
+      await fresh(cdp, prototypeUrl(base, 'day', 'instrument', state), 'day');
+      let value = await metrics(cdp);
+      assert.ok(value.actions.x <= 1, `left edge: ${value.actions.x}`);
+      assert.ok(Math.abs(value.actions.width - value.document.clientWidth) <= 1,
+        `dock width: ${value.actions.width}`);
+      assert.equal(value.shell.borderRadius, '0px');
+      assert.equal(value.shell.boxShadow, 'none');
+      assert.equal(value.shell.borderTopWidth, '2px');
+      assert.equal(value.shell.background, 'rgb(250, 248, 242)');
+      assert.ok(value.document.scrollWidth <= value.document.clientWidth + 1);
+      assert.deepEqual(value.actionButtons.map(node => node.label), ['Date', 'Contents', 'Mode', 'Details']);
+      value.actionButtons.forEach(node => {
+        assert.ok(node.box.width >= 44, `${node.label} width: ${node.box.width}`);
+        assert.ok(node.box.height >= 44, `${node.label} height: ${node.box.height}`);
+        assert.ok(node.name.length > 0, `${node.label} accessible name`);
+      });
+      await evaluate(cdp, `scrollTo(0, document.documentElement.scrollHeight)`);
+      await stableFrames(cdp);
+      value = await evaluate(cdp, `(() => {
+        const actions = document.querySelector('.reader-actions').getBoundingClientRect();
+        const reading = document.querySelector('#reader-document');
+        const last = reading.lastElementChild.getBoundingClientRect();
+        return { dockTop: actions.top, lastBottom: last.bottom,
+          overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth };
+      })()`);
+      assert.ok(value.lastBottom <= value.dockTop - 1,
+        `last content ${value.lastBottom} beneath dock ${value.dockTop}`);
+      assert.ok(value.overflow <= 1);
+    }
+  });
+
+  await check('Instrument 200% text reflows to a labeled two-by-two dock without word breaks', async () => {
+    await viewport(cdp, 393, 852);
+    await fresh(cdp, prototypeUrl(base, 'day', 'instrument', STATES.romanMissal), 'day');
+    await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
+    await stableFrames(cdp);
+    const value = await metrics(cdp);
+    assert.ok(value.document.scrollWidth <= value.document.clientWidth + 1);
+    assert.deepEqual(value.actionButtons.map(node => node.label), ['Date', 'Contents', 'Mode', 'Details']);
+    assert.equal(new Set(value.actionButtons.map(node => node.box.x)).size, 2);
+    assert.equal(new Set(value.actionButtons.map(node => node.box.y)).size, 2);
+    value.actionButtons.forEach(node => {
+      assert.equal(node.labelLines, 1, `${node.label} lines`);
+      assert.ok(node.labelScrollWidth <= node.labelClientWidth + 1,
+        `${node.label} clips: ${node.labelScrollWidth}/${node.labelClientWidth}`);
+      assert.equal(node.whiteSpace, 'nowrap');
+      assert.ok(node.box.width >= 44, `${node.label} width: ${node.box.width}`);
+      assert.ok(node.box.height >= 44, `${node.label} height: ${node.box.height}`);
+      assert.ok(node.name.length > 0, `${node.label} accessible name`);
+    });
+    await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
+  });
+
   await check('200% text enlargement retains one readable plane and usable surfaces', async () => {
     await viewport(cdp, 393, 852);
     await fresh(cdp, prototypeUrl(base, 'day', 'instrument', STATES.postMissal), 'day');
@@ -600,6 +672,7 @@ async function captureMatrix(cdp, base, directory) {
 
   const detailed = [
     ['instrument-day-read-1024x768.png', 'day', 'romanRead', 1024, 768, {}],
+    ['instrument-day-missal-1024x768.png', 'day', 'romanMissal', 1024, 768, {}],
     ['instrument-day-read-768x1024.png', 'day', 'romanRead', 768, 1024, {}],
     ['instrument-day-missal-320x852.png', 'day', 'romanMissal', 320, 852, {}],
     ['instrument-day-missal-200-percent-393x852.png', 'day', 'romanMissal', 393, 852, { enlargement: true }],

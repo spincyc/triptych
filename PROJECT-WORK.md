@@ -207,8 +207,16 @@ rhythm, and deliberate 320-pixel wrapping. Work unit D now supplies the full
 matrix, measured before/after package, honest governed-check record, verified
 Pages deployment, and immutable tracked handoff at
 `build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/`.
-Only independent correction review remains open; this is still a candidate and
-not production-integration authorization.
+Independent review round 1 passed six of seven original findings and confirmed
+the direction, typography, ritual grid, warnings, masthead, and Ordinary/Proper
+composition. It retained the original shell blocker only at 1024×768 and added
+the related 200%-text mid-word label reflow blocker. The bounded follow-up now
+uses the opaque square edge dock immediately below the 72rem rail breakpoint
+and a labeled 2×2 dock only at extreme root-font reflow. The 54-capture run
+passes 15/15 assertions, including end-content reserve, whole labels, accessible
+names, target size, and overflow. A new immutable handoff and independent
+re-review remain open; this is still a candidate and not production-integration
+authorization.
 
 Accepted M1–M3 and W3 state, assembly, renderers, Ordinary seating, failure,
 location, focus, race, action-reachability, and isolation behavior remain

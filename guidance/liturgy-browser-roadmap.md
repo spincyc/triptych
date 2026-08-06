@@ -645,17 +645,22 @@ selection does not revoke M1–M3 or W3 semantic, state, renderer, seating,
 one-action access, focus, reflow, fail-closed, source-honesty, or
 production-isolation acceptance, and it does not authorize public cutover.
 
-The selected foundation has completed the final evidence phase of its bounded
+The selected foundation completed the first evidence phase of its bounded
 visual-correction pass. Work units A–C supply an integrated control shell,
 earlier Missal text, one controlled Read axis, subordinate partial-coverage
 treatment, an authored masthead, and finished mobile ritual spacing and
 division wrapping. Work unit D supplies full-matrix inspection, governed-check
 dispositions, successful Pages verification, and the immutable handoff at
 `build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/`.
-Only independent correction review remains. Production-integration planning
-may proceed, but execution remains deferred until the corrected screenshots
-pass that review. The canonical correction plan and reviewer mailbox are
-tracked at `build/agent-continuity/liturgy-reader-visual-plan.md`.
+Independent review round 1 confirmed six original findings and retained only
+the floating 1024-pixel shell plus its related 200%-text label fragmentation.
+The narrow follow-up now transitions directly from the accepted 72rem rail to
+an opaque square edge dock, with a root-font-aware labeled 2×2 extreme-reflow
+state. Its 54-capture run passes 15/15 assertions; a new immutable handoff and
+independent re-review remain. Production-integration planning may proceed, but
+execution remains deferred until that review passes. The canonical correction
+plan and reviewer mailbox are tracked at
+`build/agent-continuity/liturgy-reader-visual-plan.md`.
 
 1. M1's W1/W9 shared semantic fixture and URL-state contract is accepted at
    correction `c6b8070ae76e75153448895a19a0b916c18806ea` plus final micro-fix
@@ -753,6 +758,7 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-06 | Liturgical Instrument correction — Work unit A | Candidate geometry correction pending the remaining Instrument finish and independent review. Read now uses one 39.75rem axis, measuring 636 px and about 75 characters at 768×1024 instead of 726 px/about 86. Missal preserves identity and the semantic cue grid while advancing the first principal text from 474.58 to 316.98 px at 1440×900, 441.77 to 324.97 px at 393×852, and 458.83 to 342.03 px at 320×852. The rebuilt preview passed all 12 Chromium assertions with no console, network, accessibility-name, or horizontal-overflow result. Shell/masthead and warning/rhythm correction remain next; accepted behavior and public routes remain unchanged. | This geometry checkpoint; canonical measurements and continuity in `build/agent-continuity/liturgy-reader-visual-plan.md` |
 | 2026-08-06 | Liturgical Instrument correction — Work units B/C | Candidate finish pending Work unit D gates and independent review. The desktop card becomes a square, shadowless rail aligned immediately outside the ritual plane; the mobile dock is opaque and edge-integrated. Instrument now uses a three-stroke CSS mark and no visible meaningless progress dash, while internal semantic progress remains. Roman partial coverage becomes one exact compact status and advances held text by 197.39 px; postconciliar missing-language notices retain exact text in restrained inline pairs and advance first held text by 198.66 px at 1440×900. Mobile exchanges tighten and the 320-pixel first division wraps deliberately in two lines. The 53-capture run passed 13/13 Chromium assertions with clean console, network, HTTP, accessibility-name, duplicate-ID, and overflow results. | This finish checkpoint; full matrix/gates/handoff and independent correction review remain open |
 | 2026-08-06 | Liturgical Instrument correction — Work unit D review candidate | Candidate ready for independent correction review; no acceptance or cutover claimed. The immutable handoff records 22 required full-size final states, five blocker baselines, two contact sheets, explicit route/hash/geometry/focus/semantic/error metadata, 140 focused Python passes, 13/13 visual-reset Chromium passes, 27/27 Propers browser passes, 18/18 shared-shell passes, successful locked public-alpha build/verify, Pages run `31094868150`, and byte-matched deployed assets. Day browser is 33/34 because its date-dependent first-visit test expects no notice on the current default date; the governed full gate stops at pre-existing example transcript divergence after task-owned promised-ledger examples were corrected and independently replayed 2/2. Public Day/Propers and accepted seams remain unchanged. | Implementation `62e712a1962080d1dc3c6e106651c41afbf7531b`; handoff `build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/`; independent review only remaining gate |
+| 2026-08-06 | Liturgical Instrument correction — independent review round 1 | Changes requested, narrowly. The reviewer confirmed the selected direction and passed six of seven original findings, including reading hierarchy, Read measure, ritual action, warnings, masthead, title wrap, and normal mobile spacing. Review retained the original shell blocker at 1024×768, where the floating card returned, and identified related mid-word action-label breaks at 200% text. Production-integration execution and public cutover remain unauthorized. | Reviewed commit `50288ddf9759f56e8a25e4907d8de25e27e25e8f`; exact disposition and bounded response in `build/agent-continuity/liturgy-reader-visual-plan.md`; narrow correction/re-review pending |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).

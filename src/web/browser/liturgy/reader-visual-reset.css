@@ -63,6 +63,7 @@ body:has(.reader-visual-reset) > .site-footer,
 
 .reader-visual-reset .reader-shell {
   position: relative;
+  container: reader-shell / inline-size;
   min-width: 0;
   padding-bottom: calc(var(--reader-shell-height) + var(--reader-safe-bottom) + 2rem);
 }
@@ -651,6 +652,21 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 @media (max-width: 71.999rem) {
   .reader-masthead { position: sticky; top: 0; backdrop-filter: blur(10px); }
+  .reader-visual-reset[data-design="instrument"] .reader-actions {
+    right: var(--reader-safe-right);
+    bottom: var(--reader-safe-bottom);
+    left: var(--reader-safe-left);
+    width: auto;
+    margin: 0;
+    border: 0;
+    border-top: 2px solid var(--vr-ink);
+    border-radius: 0;
+    background: var(--vr-panel);
+    box-shadow: none;
+  }
+  .reader-visual-reset[data-design="instrument"] .reader-actions button {
+    border: 0;
+  }
 }
 
 @media (max-width: 52rem) {
@@ -689,7 +705,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
     border-top: 2px solid var(--vr-ink);
     border-radius: 0;
     background: var(--vr-panel);
-    box-shadow: 0 -0.2rem 0.8rem rgb(29 33 31 / 8%);
+    box-shadow: none;
   }
   .reader-visual-reset[data-design="instrument"] .reader-actions button {
     border: 0;
@@ -697,6 +713,27 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .reader-visual-reset[data-design="instrument"] .ordinary-absence-inline {
     display: grid;
     gap: 0.2rem;
+  }
+}
+
+@container reader-shell (max-width: 18rem) {
+  .reader-visual-reset[data-design="instrument"] .reader-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .reader-visual-reset[data-design="instrument"] .reader-actions button {
+    min-height: max(3.25rem, 44px);
+    padding: 0.35rem 0.5rem;
+  }
+  .reader-visual-reset[data-design="instrument"] .reader-actions .action-label {
+    overflow-wrap: normal;
+    word-break: normal;
+    white-space: nowrap;
+  }
+  .reader-visual-reset[data-design="instrument"] .reader-document [data-semantic-location],
+  .reader-visual-reset[data-design="instrument"] .reader-document .proper,
+  .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-element,
+  .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-division {
+    scroll-margin-block-end: calc(6.5rem + 1rem);
   }
 }
 
