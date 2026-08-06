@@ -671,6 +671,11 @@ release, and public-alpha gates pass; the clean full gate remains stopped only
 by the unrelated governed example replay (23 divergent and 35 known-stale
 captures among 200). Its automatic Pages workflow had not yet materialized in
 the Actions API at 2026-08-06T18:04:26Z, so no deployment result is claimed.
+The following continuity push
+`e35f81c1e67c744aead0e4eaa73e079516751e66` likewise had no Actions record at
+2026-08-06T18:08:35Z. Direct deployed candidates still serve the prior
+pre-integration artifact, so production deployed parity remains an explicit
+external-state blocker before integration acceptance.
 
 1. M1's W1/W9 shared semantic fixture and URL-state contract is accepted at
    correction `c6b8070ae76e75153448895a19a0b916c18806ea` plus final micro-fix

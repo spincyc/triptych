@@ -229,6 +229,11 @@ stale, 6 never run, and 6 unrunnable here. It exits 2 and is not represented as
 green. As of 2026-08-06T18:04:26Z, GitHub had not materialized the automatic
 Pages run for this push in the Actions API; this is recorded as a pending
 workflow event, not a deployment success or failure.
+Continuity checkpoint `e35f81c1e67c744aead0e4eaa73e079516751e66` is also
+pushed. As of 2026-08-06T18:08:35Z GitHub likewise had no Actions record for
+that head. Direct deployed Day and Propers candidates remain HTTP 200 at the
+prior artifact, which does not contain `reader-instrument.css`; deployed
+integration parity therefore remains explicitly open.
 
 ### Liturgical Instrument visual correction accepted
 
