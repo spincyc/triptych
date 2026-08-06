@@ -1,0 +1,562 @@
+:root {
+  color-scheme: only light;
+  --ink: #302d29;
+  --muted: #6a635a;
+  --paper: #ece7de;
+  --surface: #f8f5ef;
+  --line: #d2c8ba;
+  --rubric: #8f3540;
+  --rubric-dark: #6f2831;
+  --banner: #641b25;
+  --gold: #9f7018;
+  --blue: #3f7180;
+  --shadow: 0 0.8rem 2.4rem rgba(63, 52, 42, 0.085);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
+    "Book Antiqua", Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(173, 133, 64, 0.07), transparent 32rem),
+    linear-gradient(180deg, #f0ece4 0, #e9e3da 34rem),
+    var(--paper);
+  font-size: 1.04rem;
+  line-height: 1.72;
+}
+
+a { color: var(--rubric); text-decoration-thickness: 0.08em; text-underline-offset: 0.16em; }
+a:hover { color: var(--rubric-dark); }
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -5rem;
+  z-index: 10;
+  padding: 0.65rem 0.9rem;
+  background: var(--surface);
+  border: 2px solid var(--rubric);
+}
+.skip-link:focus { top: 1rem; }
+
+.site-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: 1.25rem clamp(1rem, 4vw, 2.5rem);
+}
+
+.triptych-mark {
+  display: grid;
+  grid-template-columns: repeat(3, 0.5rem);
+  gap: 0.18rem;
+  align-items: end;
+  min-width: 2.4rem;
+  height: 2rem;
+}
+.triptych-mark i {
+  display: block;
+  height: 1.45rem;
+  border: 1px solid color-mix(in srgb, var(--rubric) 70%, var(--line));
+  border-radius: 0.08rem;
+  background: rgba(255, 255, 255, 0.42);
+}
+.triptych-mark i:nth-child(2) { height: 1.9rem; }
+
+.brand { display: flex; flex-direction: column; line-height: 1.16; }
+.brand a { color: var(--ink); font-size: 1.55rem; font-weight: 700; text-decoration: none; letter-spacing: 0.015em; }
+.brand span {
+  max-width: 42rem;
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 0.73rem;
+  letter-spacing: 0.055em;
+  line-height: 1.35;
+}
+
+nav { display: flex; gap: 1.1rem; font-family: system-ui, sans-serif; font-size: 0.9rem; font-weight: 650; }
+nav a { color: var(--ink); text-decoration: none; }
+
+.release-banner {
+  padding: 0.65rem 1rem;
+  color: #fff;
+  background: var(--banner);
+  font-family: system-ui, sans-serif;
+  font-size: 0.88rem;
+  text-align: center;
+}
+.release-banner.preview { background: #5f5043; }
+.release-banner.conditional { background: var(--blue); }
+.release-banner strong { margin-right: 0.35rem; }
+
+.page-shell {
+  max-width: 68rem;
+  min-height: 55vh;
+  margin: 1.6rem auto 3.2rem;
+  padding: clamp(1.5rem, 4vw, 3.6rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.22rem;
+  box-shadow: var(--shadow);
+}
+
+.page-home {
+  border-top: 0.2rem solid transparent;
+  border-image: linear-gradient(
+    90deg,
+    #c0b189 0 14.285%,
+    #b07c07 14.285% 28.57%,
+    #b02419 28.57% 42.855%,
+    #2c7a51 42.855% 57.14%,
+    #5a3f96 57.14% 71.425%,
+    #da8aa0 71.425% 85.71%,
+    #484d57 85.71% 100%
+  ) 1;
+}
+
+.page-home > h1,
+.page-catalog > h1 {
+  font-variant-caps: small-caps;
+  letter-spacing: 0.025em;
+}
+
+.page-catalog > h1::after,
+.page-utility > h1::after {
+  display: block;
+  width: 4.5rem;
+  margin-top: 0.7rem;
+  border-bottom: 1px solid var(--gold);
+  content: "";
+}
+
+.section-toned {
+  --section-accent: var(--rubric);
+  --section-ink: var(--rubric-dark);
+  --section-wash: rgba(155, 52, 67, 0.085);
+  --section-pale: #ead5d8;
+  --section-row: #f2e9e8;
+  --section-line: #d5afb5;
+  --section-symbol-primary: "";
+  --section-symbol-secondary: "";
+  background:
+    linear-gradient(90deg, var(--section-accent) 0 0.32rem, transparent 0.32rem),
+    radial-gradient(circle at 100% 0, var(--section-wash), transparent 30rem),
+    var(--surface);
+  border-color: var(--section-line);
+  border-top: 0.3rem solid var(--section-accent);
+}
+.section-white {
+  --section-accent: #c0b189;
+  --section-ink: #877545;
+  --section-wash: rgba(192, 177, 137, 0.16);
+  --section-pale: #ede9de;
+  --section-row: #f7f6f1;
+  --section-line: #ded6c2;
+  --section-symbol-primary: "☧";
+  --section-symbol-secondary: "✠";
+}
+.section-gold {
+  --section-accent: #b07c07;
+  --section-ink: #7e5802;
+  --section-wash: rgba(176, 124, 7, 0.16);
+  --section-pale: #e1cda1;
+  --section-row: #efe5cd;
+  --section-line: #ceae65;
+  --section-symbol-primary: "α";
+  --section-symbol-secondary: "ω";
+}
+.section-red {
+  --section-accent: #b02419;
+  --section-ink: #78140d;
+  --section-wash: rgba(176, 36, 25, 0.16);
+  --section-pale: #e1aca8;
+  --section-row: #efd3d1;
+  --section-line: #ce7770;
+  --section-symbol-primary: "℣";
+  --section-symbol-secondary: "℟";
+}
+.section-green {
+  --section-accent: #2c7a51;
+  --section-ink: #1d5739;
+  --section-wash: rgba(44, 122, 81, 0.16);
+  --section-pale: #afccbd;
+  --section-row: #d5e4dc;
+  --section-line: #7cad93;
+  --section-symbol-primary: "❦";
+  --section-symbol-secondary: "✣";
+}
+.section-violet {
+  --section-accent: #5a3f96;
+  --section-ink: #3e2b6b;
+  --section-wash: rgba(90, 63, 150, 0.16);
+  --section-pale: #c0b6d7;
+  --section-row: #ded9ea;
+  --section-line: #9988be;
+  --section-symbol-primary: "✦";
+  --section-symbol-secondary: "❖";
+}
+.section-rose {
+  --section-accent: #da8aa0;
+  --section-ink: #a72f50;
+  --section-wash: rgba(218, 138, 160, 0.17);
+  --section-pale: #f2d7df;
+  --section-row: #f9ecf0;
+  --section-line: #eabbc8;
+  --section-symbol-primary: "✷";
+  --section-symbol-secondary: "✥";
+}
+.section-black {
+  --section-accent: #484d57;
+  --section-ink: #2f333a;
+  --section-wash: rgba(72, 77, 87, 0.15);
+  --section-pale: #cfd1d3;
+  --section-row: #e9eaeb;
+  --section-line: #a7aaae;
+  --section-symbol-primary: "§";
+  --section-symbol-secondary: "¶";
+}
+.section-toned a { color: var(--section-ink); }
+.section-toned > h1 {
+  position: relative;
+  color: var(--section-ink);
+}
+.section-toned > h1::before {
+  float: right;
+  margin: -0.08em 0 0.15em 0.5em;
+  color: var(--section-accent);
+  content: var(--section-symbol-primary);
+  font-size: 0.72em;
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.62;
+}
+.section-toned > h1::after {
+  border-color: var(--section-accent);
+  opacity: 0.9;
+}
+.section-toned h2,
+.section-toned h4 { color: var(--section-ink); }
+.section-toned h3 { color: var(--section-ink); }
+.section-toned h6 { color: var(--section-ink); }
+.section-toned li::marker { color: var(--section-accent); }
+.section-toned ::selection { background: var(--section-pale); }
+
+/* A catalog is scanned across its full width; a document is read down a
+   column, so its page takes a measure of roughly 70 characters. */
+.page-shell.reading { max-width: 46rem; }
+
+/* The reading browsers. Wider than a page of prose because they carry a row of
+   controls above the text, narrower than the catalogs because what is under the
+   controls is still prose meant to be read. Everything inside them is styled by
+   shared/browser-core.css and the section stylesheet beside it; what belongs
+   here is only how the site frames them. */
+.page-shell.page-browser { max-width: 60rem; }
+.page-shell.reading table { display: block; width: max-content; max-width: 100%; overflow-x: auto; }
+
+h1, h2, h3, h4, h5, h6 { line-height: 1.2; text-wrap: balance; }
+h1 { margin-top: 0; font-size: clamp(2.1rem, 7vw, 4.1rem); font-weight: 400; letter-spacing: -0.025em; }
+h2 { margin-top: 2.4rem; padding-top: 0.25rem; font-size: clamp(1.45rem, 4vw, 2rem); color: var(--rubric-dark); }
+h3 { font-size: 1.25rem; }
+h4 { margin-top: 1.9rem; margin-bottom: 0.4rem; font-size: 1.08rem; color: var(--rubric-dark); }
+h5 { margin-top: 1.6rem; margin-bottom: 0.35rem; font-size: 1rem; font-style: italic; }
+h6 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.3rem;
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+h1 + p > em { color: var(--muted); font-size: 1.18rem; }
+
+ul, ol { margin: 1rem 0; padding-left: 1.6rem; }
+li + li { margin-top: 0.35rem; }
+li > ul, li > ol { margin: 0.35rem 0; }
+
+img { max-width: 100%; height: auto; }
+
+.gallery-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  margin: 1.5rem 0 2rem;
+  padding: 0.8rem 1rem;
+  border-block: 1px solid var(--line);
+}
+.pictorial-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: clamp(1rem, 2.5vw, 1.7rem);
+  align-items: start;
+}
+.gallery-card {
+  break-inside: avoid;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: linear-gradient(145deg, rgba(184, 138, 67, 0.08), transparent 35%), var(--surface);
+  box-shadow: 0 0.35rem 1.2rem rgba(65, 48, 33, 0.09);
+}
+.gallery-image {
+  display: grid;
+  min-height: 14rem;
+  padding: 1rem;
+  place-items: center;
+  background: radial-gradient(ellipse at center, rgba(255, 253, 249, 0.96), rgba(248, 245, 239, 0.45) 70%, transparent);
+}
+.gallery-image img {
+  width: 100%;
+  max-height: 22rem;
+  object-fit: contain;
+  filter: contrast(1.03);
+  mix-blend-mode: multiply;
+}
+.gallery-card figcaption { padding: 0 1.1rem 1.2rem; }
+.gallery-card h2 { margin: 0; padding: 0; color: var(--ink); font-size: 1.28rem; }
+.gallery-view {
+  margin: 0.35rem 0 0.8rem;
+  color: var(--rubric);
+  font-family: system-ui, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.gallery-card dl { margin: 0; }
+.gallery-card dt { margin-top: 0.8rem; font-weight: 700; }
+.gallery-card dd { margin: 0.18rem 0 0; color: var(--muted); }
+.gallery-latin { color: var(--muted); font-weight: 400; font-style: italic; }
+.gallery-rights {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+.gallery-note { margin-top: 2rem; padding: 1rem 1.2rem; border-left: 0.25rem solid var(--gold); background: #f5efe6; }
+
+.section-toned .gallery-categories { border-color: var(--section-line); }
+.section-toned .gallery-card {
+  border-color: var(--section-line);
+  background:
+    linear-gradient(145deg, var(--section-pale), transparent 38%),
+    var(--surface);
+}
+.section-toned .gallery-view { color: var(--section-ink); }
+.section-toned .gallery-rights { border-color: var(--section-line); }
+.section-toned .gallery-note {
+  border-color: var(--section-accent);
+  background: var(--section-pale);
+}
+
+.smallcaps { font-variant: small-caps; }
+
+table { width: 100%; margin: 1.4rem 0; border-collapse: collapse; font-family: system-ui, sans-serif; font-size: 0.94rem; }
+th, td { padding: 0.82rem 0.9rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { color: var(--rubric-dark); background: #f1ebe2; }
+tbody tr:nth-child(even) { background: #fbf8f3; }
+.section-toned th,
+.section-toned td { border-color: var(--section-line); }
+.section-toned th {
+  color: var(--section-ink);
+  background: var(--section-pale);
+}
+.section-toned tbody tr:nth-child(even) { background: var(--section-row); }
+
+.page-home table:first-of-type,
+.page-library-root table:first-of-type {
+  border-collapse: separate;
+  border-spacing: 0 0.48rem;
+}
+/* The portal tables name a section and describe it, which the rows already
+   say; Markdown requires the header row, so it is written and not shown. */
+.page-home table:first-of-type thead,
+.page-library-root table:first-of-type thead {
+  display: none;
+}
+.page-home table:first-of-type td,
+.page-library-root table:first-of-type td {
+  border-color: var(--line);
+  background: rgba(248, 245, 239, 0.78);
+}
+.page-home table:first-of-type td:first-child,
+.page-library-root table:first-of-type td:first-child {
+  width: 28%;
+  border-left: 0.32rem solid var(--portal-accent);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino,
+    "Book Antiqua", Georgia, serif;
+  font-size: 1.08rem;
+}
+.page-home table:first-of-type td:first-child::before,
+.page-library-root table:first-of-type td:first-child::before {
+  float: right;
+  margin-left: 0.55rem;
+  color: var(--portal-accent);
+  content: var(--portal-symbol);
+  /* Lowercase Greek sits far below the cap height of the other marks, so a row
+     may scale its own symbol to match them optically. The line box is fixed in
+     absolute units and the glyph is centred in it, so scaling one mark cannot
+     make its row taller than the others. */
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: var(--portal-symbol-scale, 1em);
+  line-height: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  opacity: 0.8;
+}
+.page-home table:first-of-type tbody tr:nth-child(1),
+.page-library-root table:first-of-type tbody tr:nth-child(1) { --portal-accent: #c0b189; --portal-pale: #ede9de; --portal-symbol: "☧"; }
+.page-home table:first-of-type tbody tr:nth-child(2),
+.page-library-root table:first-of-type tbody tr:nth-child(2) { --portal-accent: #b07c07; --portal-pale: #e1cda1; --portal-symbol: "α"; --portal-symbol-scale: 1.3em; }
+.page-home table:first-of-type tbody tr:nth-child(3),
+.page-library-root table:first-of-type tbody tr:nth-child(3) { --portal-accent: #b02419; --portal-pale: #e1aca8; --portal-symbol: "℣"; }
+.page-home table:first-of-type tbody tr:nth-child(4),
+.page-library-root table:first-of-type tbody tr:nth-child(4) { --portal-accent: #2c7a51; --portal-pale: #afccbd; --portal-symbol: "❦"; }
+.page-home table:first-of-type tbody tr:nth-child(5),
+.page-library-root table:first-of-type tbody tr:nth-child(5) { --portal-accent: #5a3f96; --portal-pale: #c0b6d7; --portal-symbol: "✦"; }
+.page-home table:first-of-type tbody tr:nth-child(6),
+.page-library-root table:first-of-type tbody tr:nth-child(6) { --portal-accent: #da8aa0; --portal-pale: #f2d7df; --portal-symbol: "✷"; }
+.page-home table:first-of-type tbody tr:nth-child(7),
+.page-library-root table:first-of-type tbody tr:nth-child(7) { --portal-accent: #484d57; --portal-pale: #cfd1d3; --portal-symbol: "§"; }
+.page-home table:first-of-type tbody td,
+.page-library-root table:first-of-type tbody td {
+  background: var(--portal-pale);
+}
+
+code, pre { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+code { padding: 0.1rem 0.28rem; border-radius: 0.2rem; background: #f0ebe4; font-size: 0.9em; }
+pre { overflow-x: auto; padding: 1rem; background: #2e2925; color: #f8f5ef; border-radius: 0.3rem; }
+pre code { padding: 0; background: transparent; }
+blockquote { margin-left: 0; padding-left: 1rem; border-left: 0.25rem solid var(--gold); color: var(--muted); }
+.section-toned code { background: var(--section-pale); }
+.section-toned blockquote {
+  padding: 0.7rem 1rem;
+  border-color: var(--section-accent);
+  background: var(--section-pale);
+  color: var(--ink);
+}
+.section-toned hr { border-color: var(--section-line); }
+
+.empty-shelf { padding: 1rem 1.2rem; border-left: 0.3rem solid var(--gold); background: #f5efe6; }
+.section-toned .empty-shelf {
+  border-color: var(--section-accent);
+  background: var(--section-pale);
+}
+.breadcrumb {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  margin: -0.2rem 0 1.5rem;
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 0.88rem;
+}
+.breadcrumb a { color: inherit; text-decoration-color: var(--gold); }
+.section-toned .breadcrumb a {
+  color: var(--section-ink);
+  text-decoration-color: var(--section-accent);
+}
+nav [aria-current="page"] { text-decoration-thickness: 0.16rem; text-underline-offset: 0.35rem; }
+
+/* Endnotes carry much of a document's scholarship: the marker stays small and
+   unobtrusive, the apparatus reads as a closing section, and a followed
+   reference is marked where the reader lands. */
+sup { line-height: 0; }
+a.footnote-ref { padding: 0 0.08em; text-decoration: none; }
+a.footnote-ref:hover { text-decoration: underline; }
+.footnote { margin-top: 2.8rem; color: var(--muted); font-size: 0.95rem; }
+.footnote hr { margin-bottom: 1.1rem; border: 0; border-top: 1px solid var(--line); }
+.footnote li { margin-bottom: 0.65rem; }
+.footnote li:target { background: #f5efe6; }
+a.footnote-backref { text-decoration: none; }
+.section-toned .footnote hr { border-color: var(--section-accent); }
+.section-toned .footnote li:target { background: var(--section-pale); }
+
+.site-footer {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 2.8rem;
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 0.84rem;
+  text-align: center;
+}
+.site-footer p { margin: 0.35rem 0; }
+.privacy-note { max-width: 48rem; margin-inline: auto !important; }
+.triptych-divider {
+  display: grid;
+  grid-template-columns: 1fr 2.4rem 1fr;
+  align-items: center;
+  gap: 0.55rem;
+  max-width: 11rem;
+  margin: 0 auto 1rem;
+}
+.triptych-divider i { border-top: 1px solid var(--line); }
+.triptych-divider i:nth-child(2) {
+  height: 0.7rem;
+  border: 1px solid var(--gold);
+  border-block-width: 0;
+}
+
+@media (min-width: 900px) {
+  .section-toned > h2 {
+    position: relative;
+  }
+  .section-toned > h2::before {
+    position: absolute;
+    left: -1.65rem;
+    top: 0.34em;
+    color: var(--section-accent);
+    content: var(--section-symbol-secondary);
+    font-size: 0.72em;
+    font-style: normal;
+    font-weight: 400;
+    opacity: 0.62;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header { grid-template-columns: auto 1fr; padding-block: 1rem 0.5rem; }
+  nav { grid-column: 1 / -1; flex-wrap: wrap; border-top: 1px solid var(--line); }
+  /* The primary navigation is the most-tapped thing on the site and these
+     links were bare text about 24px tall. 2.75rem is 44px, the smallest target
+     Apple's interface guidelines will call reliable. The height is spent on the
+     touch box, not on chrome: the header's own padding gives most of it back. */
+  nav a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+  .site-footer a { display: inline-block; padding-block: 0.35rem; }
+  .page-shell { margin-top: 0; border-left: 0; border-right: 0; border-radius: 0; box-shadow: none; }
+  table { display: block; overflow-x: auto; }
+  /* A long unbreakable run — a URL in the third-party notices, a query string
+     in a worked example — otherwise widens the document and sets every line of
+     prose scrolling sideways. */
+  body { overflow-wrap: break-word; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+@media print {
+  .site-header nav, .release-banner, .site-footer, .skip-link { display: none; }
+  body, .page-shell { background: #fff; }
+  .page-shell { max-width: none; margin: 0; padding: 0; border: 0; box-shadow: none; }
+  .section-toned > h1::before,
+  .section-toned > h2::before { color: #777; }
+}

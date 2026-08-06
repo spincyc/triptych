@@ -1,0 +1,1088 @@
+# Liturgy reader visual plan and continuity
+
+## Resume header
+
+- Current branch: `main`
+- Current commit: current `main`/`origin/main`; this append-preserving file is carried by its own final record-only commit, whose exact SHA is recorded in the sealed handoff
+- Reviewed visual baseline: `0f3567dc509a2d5b42fd58a0e4c77c8f5e5dc113` (visual implementation `7233879350ff00c92fa2029ca04f481125daa519`; task base `842333af79bd560ad6607b91b087ed8ff71e7477`)
+- Selected direction: Liturgical Instrument
+- Current phase: PI-A–PI-D implementation, local and deployed parity, clean validation, checkpoints, and successful Pages deployment complete; independent integration review remains
+- Last completed work unit: direct deployed/source parity verification after successful Pages run `31125898045`
+- Next exact action: independent reviewer reads the latest immutable handoff and returns exact integration blocker dispositions; do not begin public navigation or cutover
+- Open blockers: no implementation, local-parity, deployment, or asset-parity blocker remains; independent integration review is open, the unrelated governed example replay remains non-green, and public navigation/cutover remain unauthorized
+- Latest pushed commit: current `origin/main`; product code remains `3cd46072b164ff39b00639bb67ad6b8943a255dc`, exact successfully deployed production state remains `5444d89fc9b379a1babef5b2220323fe1508b2b3`, and later commits are continuity/tracking only
+- Latest successful Pages run: `31125898045`, success for exact intended production commit `5444d89fc9b379a1babef5b2220323fe1508b2b3` at 2026-08-06T18:29:55Z
+- Latest Pages attempt: `31125898045`, successful; all repository verification, build, compatibility, artifact upload, and deploy steps passed
+- Latest handoff directory: `build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/` (local immutable deployed-parity successor; ignored and not force-added because no new build-tree exception authorizes tracking this production-integration slug)
+- Latest handoff ZIP: `build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration.zip`
+
+## Fixed decisions and scope boundaries
+
+- Liturgical Instrument is the selected production visual foundation. Quiet Folio and Contemporary Reader are frozen comparison references; this correction does not merge them or create another direction.
+- Independent Round 1 review accepted Liturgical Instrument as the production visual foundation and authorized production-integration execution. Public cutover and public navigation links remain unauthorized.
+- Accepted M1–M3 and W3 state, production assembly, renderer reuse, one Ordinary seating path, fail-closed behavior, semantic-location restoration, focus behavior, render-race ownership, responsive action reachability, and production isolation remain binding.
+- Day and Propers remain distinct Date and Browse entrances to one product. Propers Missal, Study, Compare, search, source or recension expansion, and print redesign remain out of scope.
+- Production integration is CSS-first and must preserve the isolated accepted prototype as its comparison oracle. No accepted behavioral-seam conflict is presently known; any conflict must be proved and appended before reconsideration.
+- The public `liturgy/day.html` and `liturgy/index.html` routes remain unchanged and unlinked from the prototype.
+
+## Independent review round 0 — reviewer to Codex
+
+Disposition: Liturgical Instrument is selected as the production visual foundation, but corrected screenshots must pass another independent visual review before production-integration execution. Public cutover is not authorized.
+
+1. The permanent control shell still looks like a detachable application widget rather than part of the reading instrument.
+2. Missal mode begins the rite too far below the first viewport.
+3. Read mode incorrectly retains an empty ritual gutter.
+4. The 768-pixel portrait reading measure is too broad.
+5. Partial and postconciliar coverage warnings repeat and overpower available liturgical text.
+6. The masthead’s isolated progress dash and generic circular T feel provisional.
+7. Mobile ritual micro-spacing and narrow division-title wrapping need an editorial pass.
+
+## Codex response to review round 0
+
+1. Integrate the persistent controls with the Instrument grid: remove floating-card elevation and equal-compartment styling, align the wide rail to the text/cue geometry, and make the mobile dock visually opaque while retaining the accepted four actions and interaction controller.
+2. Compress Instrument identity-to-rite spacing in Missal mode and measure the first principal text against the reviewed 1440, 393, and 320 pixel baselines. The correction will retain meaningful identity and target at least an 80-pixel earlier start without collisions.
+3. Give Read mode its own single reading axis: Proper headings, references, and prose will not inherit the Missal cue gutter.
+4. Constrain the 768×1024 Read measure to approximately 40–42rem and 65–75 approximate characters, rather than the reviewed 726 pixels/about 86 characters.
+5. Keep one compact identity-level coverage statement, reduce repeated missing units to restrained inline absence notation, and verify that held Ordinary/Proper text dominates both Roman partial and postconciliar partial-English views. Source honesty and exact absence semantics remain unchanged.
+6. Replace the generic text-in-circle mark with a project-owned inline SVG/CSS triptych device and make semantic progress an intelligible labeled meter. If measurement shows the progress object remains ornamental or misleading, the visible meter will be removed while internal semantic state remains available.
+7. Tighten related response/rubric spacing, rely less on repeated red micro-labels where the grid already supplies meaning, and add deliberate narrow division-title wrapping at 320 pixels.
+
+No proposed correction presently needs to differ from the review request. All changes are planned in prototype HTML/CSS/JavaScript and its evidence harness, leaving accepted production behavior untouched.
+
+## Visual work plan
+
+1. Work unit A — capture reviewed baselines; separate Read and Missal geometry; constrain portrait measure; advance Missal principal text; record measurements and before/after evidence.
+2. Work unit B — integrate the desktop rail and compact dock; refine masthead mark and semantic progress; re-prove accessibility and accepted surface behavior.
+3. Work unit C — consolidate warnings; subordinate individual absences; tune ritual exchanges and 320-pixel division wrapping; preserve provenance.
+4. Work unit D — exercise the complete Day/Propers and interaction matrix; correct only exposed finish regressions; run all governed checks and public-alpha verification; assemble the immutable independent-review handoff.
+
+Each completed checkpoint will append its exact code/evidence paths, measurements, checks, commit, push, Pages run, deployed route verification, and next action. Earlier entries will not be rewritten.
+
+## Measurement baselines and targets
+
+Reviewed baselines supplied by round 0:
+
+| State | Reviewed baseline | Correction target |
+| --- | ---: | ---: |
+| Read at 768×1024 | 726 px / about 86 characters | about 40–42rem / 65–75 characters |
+| Missal first principal text at 1440×900 | 474.6 px | at least about 80 px earlier |
+| Missal first principal text at 393×852 | 441.8 px | at least about 80 px earlier |
+| Missal first principal text at 320×852 | 458.8 px | at least about 80 px earlier |
+
+Harness-captured baseline geometry will be appended after the pre-change run. Measurements must distinguish the first liturgical container from the first principal spoken/passage text and record exact URL/hash, viewport, scroll, overflow, focus, semantic state, and error counts.
+
+### Work unit A measured result — 2026-08-06
+
+The untouched baseline was captured from the preview bound to reviewed commit
+`0f3567dc509a2d5b42fd58a0e4c77c8f5e5dc113` in
+`build/agent-continuity/liturgy-reader-instrument-baseline/`. The settled
+corrected capture is
+`build/agent-continuity/liturgy-reader-instrument-work-unit-a-corrected-v3/`.
+Two intermediate corrected directories are retained locally but are not
+evidence: the first straddled a preview rebuild; the second correctly exposed a
+`data-mode` selector collision in one assertion. The v3 run is the sole Work
+unit A corrected evidence owner.
+
+| State | Baseline | Corrected | Delta / disposition |
+| --- | ---: | ---: | --- |
+| Read text width, 768×1024 | 726 px / about 86 characters | 636 px / about 75 characters | −90 px / −11 characters; target passes at about 39.75rem |
+| Missal first principal text, 1440×900 | 474.58 px | 316.98 px | −157.60 px; at least 80 px earlier |
+| Missal first principal text, 393×852 | 441.77 px | 324.97 px | −116.80 px; at least 80 px earlier |
+| Missal first principal text, 320×852 | 458.83 px | 342.03 px | −116.80 px; at least 80 px earlier |
+
+The 1440 Read measure is 636 px/about 69 characters. The 393 Read measure
+remains 351 px/about 41 characters, and the 320 Missal measure remains 278
+px/about 39 characters. Required Work unit A rows have zero horizontal
+overflow. Full-size inspection found one coherent system: Read no longer keeps
+the eight-rem ritual gutter, while Missal retains the wide cue grid and stacks
+it without collision on mobile. Identity remains complete in every measured
+first viewport.
+
+### Work units B/C measured result — 2026-08-06
+
+The complete corrected run is
+`build/agent-continuity/liturgy-reader-instrument-finish-corrected-v3/`.
+It records 53 captures and 13/13 passing Chromium assertions with no console,
+failed-request, HTTP, unnamed-interactive, duplicate-ID, or required horizontal
+overflow result. Earlier `finish-corrected` directories stopped before a fresh
+preview rebuild or a complete persistent run and are not evidence.
+
+| Finding | Baseline | Corrected | Delta / disposition |
+| --- | ---: | ---: | --- |
+| Desktop shell, 1440×900 | 76.8 px rounded card at x=144 with shadow | 68 px ruled rail at x=184.5, transparent, square, no shadow | aligned immediately outside the 896 px ritual plane; card elevation removed |
+| Mobile dock, 393×852 | translucent rounded dock | opaque `rgb(250, 248, 242)` edge dock with 2 px top rule | underlying text no longer shows through; all four targets remain at least 73.19 px high |
+| Roman partial first held text, 393×852 | 591.14 px | 393.75 px | −197.39 px; one exact identity-level status replaces the separate generic notice plus uncompiled paragraph |
+| Postconciliar first held text, 1440×900 | 741.11 px | 542.45 px | −198.66 px; exact missing-language notices become quiet inline pairs rather than full-width bars |
+| Narrow first division, 320×852 | uncontrolled single-line pressure | deliberate balanced two-line title, 53.17 px high | no orphan fragment and no horizontal overflow |
+
+The generic circular `T` is replaced in Instrument only by a three-stroke CSS
+triptych device. The visually meaningless progress dash is removed for
+Instrument while `data-semantic-progress` and semantic-current calculation
+remain intact. Speaker-change labels remain exact but shift from repeated red
+accents to quiet gray; named ritual cues remain in the semantic gutter.
+
+## Decision log
+
+- 2026-08-06 — Confirmed `main`, local `HEAD`, and `origin/main` all equal reviewed end commit `0f3567dc509a2d5b42fd58a0e4c77c8f5e5dc113`; no reset, pull, merge, or preservation workaround is required. Worktree was clean.
+- 2026-08-06 — Treat Instrument selection as fixed and the seven findings as the complete governing visual diagnosis for this correction. Frozen comparison directions remain useful only as baseline evidence.
+- 2026-08-06 — Use the existing Chromium harness as the measurement and capture owner, extending it to emit explicit baseline/corrected deltas and the requested matrix.
+- 2026-08-06 — Added a presentation-only `data-reader-mode` hook derived from the committed visible outcome, not from URL state. The initial name `data-mode` collided with the mode-button selector and was superseded immediately by `data-reader-mode`; the passing v3 run uses only the corrected name.
+- 2026-08-06 — Set the Read measure to 39.75rem rather than the initial 42rem correction. The initial correction produced 672 px/about 79 characters at 768×1024; 39.75rem produces 636 px/about 75 and meets the reviewed target without narrowing mobile.
+- 2026-08-06 — Retained the stronger Missal advance because full-size review shows no identity, division, cue-grid, or mobile collision. The correction moves principal ritual text 116.8–157.6 px earlier, exceeding the approximately 80 px minimum without deleting content.
+- 2026-08-06 — Removed Instrument's visible progress meter because its isolated dash was neither labeled nor sufficiently legible as semantic progress. Internal semantic progress ownership is unchanged and remains exercised by the browser harness.
+- 2026-08-06 — Replaced the Instrument-only circular text mark with a CSS three-stroke triptych device; frozen Folio and Contemporary Reader marks are unchanged and no asset, request, font, or external dependency was added.
+- 2026-08-06 — Consolidated Roman partial status by moving the renderer-owned uncompiled node contents, unchanged, into the existing identity-level `role="note"`. Postconciliar element notices retain their exact renderer-owned text and DOM semantics inside presentation-only inline groups. No missing text was inferred or manufactured.
+- 2026-08-06 — Flattened and grid-aligned the desktop rail and made the mobile dock opaque. The existing shared shell controller continues to own action reachability, surfaces, inertness, Escape, focus, and semantic restoration.
+- 2026-08-06 — Extended the governed harness by one required postconciliar 393×852 row and explicit shell, warning, division, focus, semantic, and error measurements. The final handoff normalizes only the ephemeral local origin while preserving exact route, query, hash, viewport, and scroll state.
+- 2026-08-06 — Corrected the two task-owned captured examples for the promised-deliverable ledger from 14 tracked/9 complete to the current 21/15. The remaining full-gate example divergences are unrelated, substantially pre-existing, and were not recaptured or blessed.
+
+## Checkpoint history
+
+- 2026-08-06T03:10:21Z — Pre-edit reconciliation complete. `tools/tpt check-promised-deliverables` exited 0 with `20 tracked, 14 complete`. No task checkpoint has yet been committed or pushed.
+- 2026-08-06T03:22:04Z — Untouched baseline capture completed: 52 screenshots, 12/12 Chromium assertions passing, no console/network/HTTP/accessibility-name failures.
+- 2026-08-06T03:34:57Z — Work unit A v3 corrected capture completed after an exact preview rebuild: 52 screenshots, 12/12 Chromium assertions passing, no console/network/HTTP/accessibility-name failures, and the four requested geometry targets met. Commit, push, Pages, and deployed-route verification are the next checkpoint actions.
+- 2026-08-06T03:38:40Z — Work unit A committed as `a2542c88fe9b811d58b8691fdfdfdb515d1342fa` and pushed to `origin/main`. GitHub Pages run `31069000038` completed successfully at 2026-08-06T03:40:40Z. Direct checks returned HTTP 200 and the required noindex metadata for both deployed unlinked prototype routes: `/triptych/liturgy/reader-visual-reset-day.html?design=instrument` and `/triptych/liturgy/reader-visual-reset-propers.html?design=instrument`.
+- 2026-08-06T10:46:47Z — Work units B/C complete capture `finish-corrected-v3` finished: 53 captures, 13/13 assertions passing, Chrome 151, no console/network/HTTP/accessibility-name failures. Full-size blocker inspection confirms an integrated desktop rail, opaque mobile edge dock, authored three-stroke masthead, one compact Roman partial statement, quiet postconciliar inline absences, earlier held text, tighter exchanges, and deliberate 320 px division wrapping. Focused checks, checkpoint commit/push, and deployment verification remain next.
+- 2026-08-06T10:48Z — Work units B/C focused validation passed: the exact requested seven-module Python command ran 140 tests with exit 0; JavaScript syntax checks for the prototype and harness, `tools/tpt check-promised-deliverables` (21 tracked/15 complete), `tools/tpt --check` (34 tools), `make check-release-bindings` (0 stale), and `git diff --check` all exited 0. The candidate ledger remains candidate with independent review open.
+- 2026-08-06T10:50:46Z — Instrument finish checkpoint `62e712a1962080d1dc3c6e106651c41afbf7531b` pushed to `origin/main`. Pages run `31094868150` completed success at 2026-08-06T11:00:15Z. Both unlinked prototype routes returned HTTP 200 with noindex; deployed CSS `337a8ce54b0af40eacc8c03425df3bddedb793b804afc49a16aee8cbe73d24eb` and JavaScript `eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679` byte-match task sources.
+- 2026-08-06T11:00Z — Existing browser harness dispositions: Propers 27/27 pass; shared shell 18/18 pass; Day 33/34 with only its date-dependent first-visit assertion failing because 2026-08-06 correctly shows material coverage instead of the test's expected hidden notice. All Day behavior, race, focus, reflow, print, production parity, network, and accessibility assertions passed.
+- 2026-08-06T11:20Z — Governed `make check` stopped with exit 2 at the existing example-replay gate after preceding checks passed: 23 divergences and 35 known-stale transcripts across calendar, citation, corpus, source-library, and research-staleness work. The two task-owned promised-deliverable count transcripts were corrected afterward; unrelated examples were not recaptured or blessed. System-Python public-alpha build stopped on Markdown 3.10.3 versus locked 3.10.2, while the repository's locked environment successfully checked, built, and verified the exact GitHub Pages artifact.
+- 2026-08-06T11:28Z — Final handoff assembled at `build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/`: 22 required full-size final states, 5 reviewed-baseline blocker counterparts, two labeled contact sheets, explicit combined metadata, browser results, print smoke, focused source snapshots, compact runnable candidate, checks, and review documents. Every required screenshot and both contact sheets were inspected at full size. Manifest/ZIP integrity follows after this continuity file is copied byte-for-byte.
+
+## Codex visual self-review and message to the next reviewer
+
+Visible changes resolve the seven round-0 findings as follows:
+
+1. **Shell integration:** the desktop floating card is now a transparent,
+   square, shadowless ruled rail aligned immediately outside the ritual plane;
+   the mobile dock is opaque and edge-bound. Date/Browse, Contents, Mode, and
+   Details remain one action away with the accepted controller and touch size.
+2. **Missal opening:** first principal text advances 157.60px at 1440, 117.68px
+   at 393, and 118.55px at 320, without removing identity or cue semantics.
+3. **Read gutter:** Read has one axis; no ritual gutter remains.
+4. **Portrait measure:** 768×1024 is 636px/about 75 characters, down from
+   726px/about 86.
+5. **Warnings:** Roman partial status is one exact compact note and held text
+   begins 197.39px earlier. Postconciliar exact absences are quiet inline pairs
+   and first held text begins 198.66px earlier at 1440; held Propers dominate.
+6. **Masthead:** the generic circular T is a CSS three-stroke triptych device;
+   the meaningless visible progress dash is gone while semantic progress stays.
+7. **Mobile finish:** speaker-change labels are quieter, related exchanges are
+   tighter, and the 320px division uses a deliberate balanced two-line wrap.
+
+Look first at `evidence/instrument-before-after-blockers.png`, then inspect the
+Roman partial mobile, postconciliar desktop/mobile, 320px Missal, 768px Read,
+deep-scroll provenance, and all four open surfaces at full size. The only
+provisional status is review acceptance itself: no known visual blocker is
+being withheld, but Codex does not claim independent acceptance.
+
+Please decide exactly whether the corrected Instrument is coherent and serious,
+whether the shell and warning hierarchy are now integrated and subordinate,
+whether Read and Ordinary rhythm are ready, and whether the masthead/narrow
+finish is sufficient to authorize production-integration execution. If not,
+name each remaining blocker by state, viewport, symptom, and requested change.
+Public cutover remains unauthorized regardless of this review.
+
+## Open questions for the next independent review
+
+- Does the corrected Instrument now feel like a serious, coherent reading instrument rather than a styled prototype?
+- Is the shell integrated into the composition on desktop and mobile?
+- Is real liturgical text dominant soon enough in Read, Missal, partial, and postconciliar states?
+- Does Read use one deliberate axis and a controlled measure at 768×1024?
+- Does the Ordinary read as continuous ritual action on desktop and mobile?
+- Are warnings honest but subordinate?
+- Are the masthead, narrow division titles, and mobile exchange spacing finished enough to authorize production-integration execution?
+- What exact blockers remain?
+
+## Independent review round 1 — reviewer to Codex
+
+Liturgical Instrument — Independent Review Round 1
+Disposition
+
+CHANGES REQUESTED
+
+The selected direction is confirmed. Liturgical Instrument now reads as a serious, coherent visual foundation, and six of the seven round-0 findings are resolved. Do not reopen the visual direction, typography system, ritual grid, warning hierarchy, masthead concept, or ordinary/proper composition.
+
+One original blocker remains at the intermediate responsive breakpoint, and one closely related high-zoom reflow blocker is visible in the required evidence matrix. Resolve only these shell states, then return a narrow immutable handoff for independent re-review.
+
+Production-integration execution remains unauthorized. Public cutover remains unauthorized.
+Reviewed state
+
+    Reviewed commit: 50288ddf9759f56e8a25e4907d8de25e27e25e8f
+
+    Reviewed handoff:
+
+        build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/
+
+        build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction.zip
+
+    Governing continuity file:
+
+        build/agent-continuity/liturgy-reader-visual-plan.md
+
+    Primary evidence:
+
+        evidence/instrument-before-after-blockers.png
+
+        evidence/instrument-final-contact-sheet.png
+
+        all 22 originals under evidence/screenshots/final/
+
+The GitHub Pages deployment associated with the final handoff was reported successful, and the unlinked Day and Propers prototype routes remain isolated and noindex. The review package records passing manifest and ZIP checks. The reviewer inspected every required final screenshot individually at full size. The reviewer did not independently rehash the ZIP because the review environment would not materialize an application/zip response; do not reinterpret this as an integrity failure.
+Explicit dispositions
+1. Serious, coherent reading instrument
+
+PASS
+
+The corrected Instrument is no longer merely a styled prototype. The reading plane, restrained masthead, typography, cue grid, ritual divisions, and Day/Propers relationship now form one authored product system.
+2. Shell integrated into desktop and mobile composition
+
+FAIL AT TWO RESPONSIVE STATES; PASS ELSEWHERE
+
+    Pass at 1440×900: the square, shadowless ruled rail belongs to the reading plane.
+
+    Pass at normal 768/393/320 widths: the opaque edge dock is visually owned by the viewport and does not show text through it.
+
+    Fail at 1024×768: the old floating rounded card returns.
+
+    Fail at 200% text zoom on 393×852: action labels break inside words.
+
+See the exact blockers below.
+3. Real liturgical text dominant soon enough
+
+PASS
+
+Read begins promptly. Roman Missal principal text now appears substantially earlier at 1440, 393, and 320. The Roman partial state has one compact status statement before held Ordinary text. The postconciliar state exposes held Propers soon enough and demotes exact absences.
+4. Read axis and 768×1024 measure
+
+PASS
+
+Read now uses one deliberate axis. The 636-pixel / approximately 75-character portrait measure is controlled and readable. The former empty ritual gutter is gone.
+5. Ordinary as continuous ritual action
+
+PASS
+
+The desktop cue grid and mobile stacking preserve continuous ritual action. Speaker changes are quieter, named ritual cues remain meaningful, and closely related exchanges no longer read as unrelated records.
+6. Warning hierarchy
+
+PASS
+
+Warnings remain exact and honest without overpowering held liturgical text. Roman partial and postconciliar partial-English states now have the correct hierarchy.
+7. Masthead, narrow title, and mobile spacing finish
+
+PASS AT NORMAL SCALE
+
+The three-stroke Triptych device is authored, the meaningless progress dash is gone, the 320-pixel division title wraps deliberately, and normal-scale mobile exchange spacing is finished enough. The 200% shell-label failure is separately blocking because it is a responsive control-layout defect, not a reason to reopen these accepted details.
+Exact blockers
+Blocker 1 — Intermediate-width shell remains a floating application card
+
+    State: Day · Read
+
+    Viewport: 1024×768
+
+    Evidence: evidence/screenshots/final/02-day-read-1024x768.png
+
+    Also visible beneath: evidence/screenshots/final/15-date-open-1024x768.png
+
+    Visible symptom: The controls become a centered rounded rectangle with shadow/elevation and translucent compartments. Liturgical text is visibly present beneath the card. The shell overlays the Collect rather than owning an edge or aligning with the reading geometry.
+
+    Why blocking: This is the original shell blocker at an uncorrected breakpoint. The visual system currently changes from integrated desktop rail, back to generic floating app widget, then to integrated mobile edge dock.
+
+    Requested correction: At every width where the external vertical rail cannot fit, transition directly to an opaque, square, edge-bound ruled dock. Remove rounded corners, floating inset, shadow, translucency, and equal-compartment card styling. Reserve block-end layout space equal to the dock’s occupied height so reading text never sits beneath it. A different integrated solution is acceptable only if it clearly belongs to the reading plane and preserves the four one-step actions.
+
+    Required regression states: 1024×768 Read, 1024×768 Missal, 1024×768 Date open, 768×1024 Read, and 393×852 Read/Missal.
+
+Blocker 2 — High-zoom shell labels break inside words
+
+    State: Day · Missal with 200% text zoom
+
+    Viewport: screenshot canvas 393×852; effective CSS width is approximately half under 200% zoom
+
+    Evidence: evidence/screenshots/final/19-text-200-percent-393x852.png
+
+    Visible symptom: Contents, Mode, and Details break as Cont / ents, Mod / e, and Deta / ils. The controls remain operable, but the shell looks visibly broken rather than deliberately reflowed.
+
+    Why blocking: The shell is a permanent primary-control system. Mid-word fragmentation in a required accessibility/reflow state is not production-foundation finish.
+
+    Requested correction: Introduce an extreme-reflow layout that preserves complete labels without horizontal scrolling or clipping. Prefer a two-column/two-row dock with whole labels and adequate targets. Do not counteract browser zoom by shrinking text. Do not hide labels unless the resulting icon-only controls remain unmistakable and retain accessible names; a labeled 2×2 arrangement is the safer default.
+
+    Required regression states: 200% text zoom at 393×852, forced colors at 393×852, keyboard focus at 393×852, and normal-scale 393×852.
+
+Bounded work order
+
+    Append this complete review under a new heading such as ## Independent review round 1 — reviewer to Codex in:
+
+        build/agent-continuity/liturgy-reader-visual-plan.md
+
+    Append Codex’s response immediately after it. State the proposed breakpoint and extreme-reflow solution before editing.
+
+    Change only the responsive shell geometry and any necessary reserved page padding/focus styling.
+
+    Do not alter accepted typography, title geometry, ritual text position, warning wording/hierarchy, cue semantics, masthead, Day/Propers entrances, or public routes.
+
+    Extend the visual harness so it asserts:
+
+        no floating rounded/translucent Instrument shell at the 1024 state;
+
+        no content visible beneath or obscured by the closed dock;
+
+        no mid-word action-label breaks at 200%;
+
+        no horizontal overflow;
+
+        all four actions retain accessible names and adequate target size.
+
+    Capture the required blocker and regression states at original pixels and inspect each at full size.
+
+    Run the existing focused tests, visual assertions, shared-shell checks, Day/Propers browser checks, production-isolation checks, and locked public-alpha build/verify. Preserve the honest dispositions of unrelated repository gates.
+
+    Commit and push the correction, verify the Pages run and deployed prototype asset parity, then append exact commit/run/hash/check results and the next action to the continuity file.
+
+    Produce a new immutable handoff directory and ZIP containing:
+
+        this review round;
+
+        the updated continuity record;
+
+        before/after evidence for both blockers;
+
+        the narrow final/regression matrix;
+
+        original screenshots;
+
+        capture metadata;
+
+        browser results;
+
+        checks;
+
+        manifest and verified ZIP.
+
+    Stop for independent re-review. Do not begin production-integration execution and do not authorize public cutover.
+
+Re-review scope
+
+The next independent review is intentionally narrow:
+
+    Is the Instrument shell integrated continuously at 1440, 1024, 768, 393, and 320?
+
+    Does the 200% state preserve whole, readable action labels and usable controls?
+
+    Did the shell correction avoid regressions to reading measure, first-principal-text position, modal behavior, focus, forced colors, and normal mobile rhythm?
+
+If all three pass, the correction may be accepted and production-integration execution may begin. Public cutover will still require a separate authorization.
+
+## Codex response to independent review round 1
+
+The two failures are accepted as the complete and intentionally narrow Round 1 scope. The six passing dispositions remain frozen.
+
+1. **Intermediate shell:** Instrument will stop inheriting the shared floating-card shell as soon as the external rail no longer fits. At `max-width: 71.999rem`, its four-action control becomes an edge-to-edge, block-end dock bounded by safe-area insets, with an opaque panel, square corners, a two-pixel top rule, and no shadow, blur, inset, or translucent compartment treatment. This applies continuously at 1024, 768, 393, and 320 pixels; the accepted ruled external rail remains unchanged at `min-width: 72rem`. Existing block-end document and shell reserve will be measured at maximum scroll and increased only if the dock can obscure the final readable content.
+2. **Extreme reflow:** the reader shell will become a named inline-size container. When its available measure falls to at most `18rem` in the current root-font measure—covering the required 393×852 state at 200% text while excluding normal-scale 393 and 320—the Instrument dock will reflow to a labeled two-column/two-row grid. Labels will remain whole with normal word breaking and no forced wrapping; text size will not be counter-scaled. Each action will retain its visible label, accessible name, and a target of at least 44×44 CSS pixels.
+3. **Regression ownership:** the Chromium harness will assert square/opaque/shadowless edge geometry at 1024, unobscured end content with an explicit dock reserve, whole label boxes at 200%, no horizontal overflow, four accessible names, and adequate targets. It will capture 1024 Read/Missal/Date, 768 Read, normal 393 Read/Missal, 200% 393, forced colors, and keyboard focus at original pixels.
+4. **Frozen seams:** no typography, title, identity, ritual text, warning, cue, masthead, entrance, state, adapter, renderer, seating, modal-controller, or public-route change is proposed. If CSS containment affects accepted geometry or focus, it will be rejected rather than expanding scope.
+
+The next code edit is limited to `reader-visual-reset.css` and its visual/static test coverage. Production-integration execution and public cutover remain unauthorized.
+
+## Round 1 correction measurements and visual self-review
+
+The authoritative corrected run is
+`build/agent-continuity/liturgy-reader-instrument-round1-corrected-v4/`.
+The first run accidentally exercised the already-built reviewed preview after a
+site-tree rather than preview-tree rebuild; the second correctly exercised the
+new CSS and exposed one assertion comparing the dock to `innerWidth` instead of
+the scrollbar-exclusive layout viewport. Neither is evidence. The v3 run uses
+the exact rebuilt preview and passes 15/15 assertions across 54 captures with
+zero console, failed-request, HTTP, unnamed-interactive, duplicate-ID, or
+horizontal-overflow failures.
+
+| State | Reviewed Round 1 evidence | Corrected v4 | Disposition |
+| --- | --- | --- | --- |
+| 1024×768 Read shell | x 232.5, width 544, y 686; 12.8px radius; translucent 97% panel; 12×40px shadow | x 0, width 1009 layout px, y 698; 0 radius; opaque `rgb(250, 248, 242)`; no shadow; 2px top rule | Direct transition from rail to edge dock; four named targets are 239.05–239.06×68px and final content clears the dock at maximum scroll |
+| 1024×768 Read text | first principal text y 299.23, width 636 | y 299.23, width 636 | accepted reading measure and first-text position unchanged |
+| 768×1024 Read | edge dock with shadow; first text y 267.39, width 636/about 75 characters | same dock geometry without shadow; first text y 267.39, width 636/about 75 | accepted measure and hierarchy unchanged |
+| 393×852 at 200% text | one 393×144.39px four-column dock; `Contents`, `Mode`, and `Details` split inside words | opaque square 393×245.19px two-column/two-row dock; four 178.91×104px targets; every label is one line with no clip | complete visible labels, no text shrinking, no horizontal overflow |
+| 393×852 at 200% first text | y 1027.28, width 311 | y 1027.28, width 311 | accepted high-zoom reading geometry unchanged |
+
+Full-size inspection covered 1024 Read, 1024 Missal, 1024 Date open, 768 Read,
+393 Read, 393 Missal, 320 Missal, 200% text, forced colors, keyboard focus, and
+the unchanged 1440 rail. The 1024 dock is square, edge-owned, opaque, and free
+of compartment borders; text ends visibly above it in the first viewport and
+the final content clears it at maximum scroll. The 200% dock reads as a
+deliberate 2×2 primary-control system with whole labels. Normal mobile rhythm,
+the 320 division wrap, modal treatment, focus indication, Read measure, and
+Missal text position remain visually unchanged.
+
+## Round 1 correction decision and checkpoint additions
+
+- 2026-08-06 — Use `max-width: 71.999rem` for the Instrument-only edge dock so the accepted external rail at 72rem and above transitions directly to the same opaque square block-end system used at normal tablet/mobile widths. Frozen Folio and Contemporary Reader shells remain unchanged.
+- 2026-08-06 — Use a named inline-size container at `max-width: 18rem` in the current root-font measure. This selects 393px at 200% text while excluding normal 393px and 320px, and reflows only the Instrument action grid to labeled 2×2 controls without counter-scaling text.
+- 2026-08-06T12:50:59Z — Non-evidence run `round1-corrected` stopped 13/15 because the wrong already-built preview tree was exercised. The product preview was rebuilt with `public-alpha build --preview`; no product correction was derived from that stale run.
+- 2026-08-06T12:52:58Z — Non-evidence run `round1-corrected-v2` passed the extreme-reflow assertion and stopped 14/15 only because the new edge assertion compared 1009 scrollbar-exclusive layout pixels to 1024 `innerWidth`. The assertion was corrected to compare `documentElement.clientWidth`; product CSS was unchanged.
+- 2026-08-06T12:54:09Z — Passing v3 Chromium run completed: 15/15 assertions and 54 captures. Full-size inspection passed every narrow regression state. Its opacity assertion rejected only transparent backgrounds and was intentionally strengthened before settlement.
+- 2026-08-06T13:05:12Z — Authoritative v4 Chromium run completed after requiring the exact opaque Instrument color `rgb(250, 248, 242)`: 15/15 assertions, 54 captures, Chrome 151, and clean console/network/HTTP/accessibility/overflow results. Product CSS and inspected pixels are unchanged from v3.
+- 2026-08-06T12:58Z — Focused validation: 141/141 Python tests; Propers Chromium 27/27; shared shell 18/18; Day 33/34 with only the unchanged current-date first-visit expectation; locked preview build/verify and exact public-alpha site build/GitHub Pages verification passed; release bindings report zero stale entries.
+- 2026-08-06T13:05:59Z — Correction checkpoint `ab89758e3f3ee165e0141e3605be88051450134b` pushed to `origin/main`. The outgoing commit contains only Round 1 continuity/tracking, responsive Instrument CSS, static/Chromium coverage, and exact public-alpha rights/release hashes.
+- 2026-08-06T13:17:56Z — Pages run `31104342722` failed only in `actions/deploy-pages@v5` after checkout, locked dependency setup, source verification, public build, GitHub Pages compatibility verification, configuration, and artifact upload all passed. Deployment `ab89758e3f3ee165e0141e3605be88051450134b` remained `deployment_queued` for the action's 600-second timeout and was canceled by the action. Direct Day/Propers routes remain HTTP 200/noindex but still serve reviewed CSS `337a8ce54b0af40eacc8c03425df3bddedb793b804afc49a16aee8cbe73d24eb`, not corrected CSS `850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48`; deployment parity is therefore explicitly not claimed.
+- 2026-08-06T13:28Z — Governed `make check` exited 2 at `check-examples` after all preceding repository checks passed. The exact unrelated transcript disposition is 200 captured, 188 replayed, 21 diverged, 35 known stale, 6 never run, 6 unrunnable, and 2 volatile lines; no task-owned example diverged and no unrelated transcript was recaptured or blessed.
+- 2026-08-06T13:42:20Z — Pages run `31106008011` for continuity checkpoint `c6b7f7f0a79468cfa1a503235044c92bd88c27b2` repeated the same external stop: checkout, locked setup, source verification, public build, Pages compatibility verification, configuration, and verified-artifact upload passed; `actions/deploy-pages@v5` then timed out after 600 seconds of deployment polling. Day and Propers remain HTTP 200/noindex and still serve reviewed CSS `337a8ce54b0af40eacc8c03425df3bddedb793b804afc49a16aee8cbe73d24eb`; corrected parity remains explicitly open. GitHub Status reported Actions and Pages operational, so no broader service diagnosis is inferred.
+- 2026-08-06T13:58:58Z — Pages run `31107294462` for checkpoint `3873bd99cb308432404378c665dbcb3246144c9e` again passed every repository-owned build/upload step. Its deploy step ran from 13:49:32Z until GitHub canceled the job at its 15-minute maximum; the run concluded `cancelled`, not success. Direct deployed CSS remains `337a8ce54b0af40eacc8c03425df3bddedb793b804afc49a16aee8cbe73d24eb`, so corrected parity is still not claimed. No manual rerun or broader deployment action was taken; the immutable-handoff push will supply the next ordinary automatic attempt.
+- 2026-08-06T14:17:40Z — Pages run `31109086658` for immutable-handoff commit `c388ab42dfc4f5c7d49abc71596d6bb511af5742` completed successfully after every repository-owned build/upload step and deployment passed. Direct Day and Propers routes return HTTP 200 with noindex metadata. Deployed CSS `850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48` and JS `eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679` byte-match source. Corrected deployed parity is resolved; independent re-review is the only remaining gate.
+
+## Message to the next independent reviewer
+
+Liturgical Instrument remains the confirmed direction. Review only the two
+Round 1 shell states: the intermediate dock and the 200% labeled reflow. At
+1024 the former rounded translucent card is now a square, opaque, shadowless
+edge dock; at 200% the four controls deliberately reflow to a labeled 2×2 grid
+with whole words and large targets. Begin with
+`evidence/round1-shell-before-after.png`, then inspect all originals in
+`evidence/screenshots/after/`, especially 01, 03, 08, 09, and 10. The accepted
+reading measure, first-text position, modal behavior, focus, forced colors,
+and normal mobile rhythm are measured unchanged. The earlier deployment-polling
+stop is resolved: Pages run `31109086658` succeeded and direct unlinked/noindex
+Day/Propers CSS/JS byte-match source. Decide exactly: (1) shell continuity across
+1440/1024/768/393/320, (2) whole usable labels at 200%, and (3) absence of the
+listed regressions. Production-integration execution may begin only if all
+three pass. Public cutover remains unauthorized regardless.
+
+## Independent review round 1 acceptance — reviewer to Codex
+
+Liturgical Instrument — Independent Round 1 Acceptance
+Disposition
+
+ACCEPTED
+
+The two responsive-shell blockers from Independent Review Round 1 are resolved. Liturgical Instrument is accepted as the production visual foundation, and production-integration execution may begin.
+
+Public cutover remains unauthorized.
+
+Do not reopen the accepted visual direction, typography system, reading measure, ritual grid, warning hierarchy, masthead, Ordinary/Proper composition, Day/Propers entrance model, or the seven Round 0 dispositions unless production integration exposes a concrete conflict with an accepted behavioral seam.
+Reviewed state
+
+    Correction implementation checkpoint: ab89758e3f3ee165e0141e3605be88051450134b
+
+    Successful deployed-parity handoff checkpoint: c388ab42dfc4f5c7d49abc71596d6bb511af5742
+
+    Post-deployment evidence commit: 4daf7d8
+
+    Reviewed handoff:
+
+        build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/
+
+        build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction.zip
+
+    Reviewed ZIP SHA-256:
+
+        b766a270abbff30e1fd9b79a7360b5f6fa8bd0ac7f10600fc621f6c9e7701fa1
+
+    Governing continuity file:
+
+        build/agent-continuity/liturgy-reader-visual-plan.md
+
+The reviewer independently:
+
+    tested the uploaded ZIP successfully;
+
+    verified all 109 MANIFEST.sha256 entries;
+
+    confirmed the archive has one top-level directory;
+
+    confirmed candidate CSS byte-matches the included corrected source at
+    850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48;
+
+    inspected the before/after sheet, regression matrix, and all 11 corrected original-pixel screenshots.
+
+Three requested dispositions
+1. Continuous shell integration across 1440, 1024, 768, 393, and 320
+
+PASS
+
+At 1440 pixels, the accepted external ruled rail remains part of the reading plane.
+
+At 1024 pixels, the prior floating rounded/translucent card is gone. Read, Missal, and Date-open states use a square, opaque, shadowless, edge-bound dock. The dock no longer appears as a detachable application widget, and the page reserves its occupied block-end space.
+
+At 768, 393, and 320 pixels, the same edge-owned dock grammar continues without a visual breakpoint reversal. Normal mobile text remains visible above rather than through the dock.
+
+Accepted evidence:
+
+    evidence/screenshots/after/01-day-read-1024x768.png
+
+    evidence/screenshots/after/02-day-missal-1024x768.png
+
+    evidence/screenshots/after/03-date-open-1024x768.png
+
+    evidence/screenshots/after/04-day-read-768x1024.png
+
+    evidence/screenshots/after/05-day-read-393x852.png
+
+    evidence/screenshots/after/06-day-missal-393x852.png
+
+    evidence/screenshots/after/07-day-missal-320x852.png
+
+    evidence/screenshots/after/11-day-read-1440x900.png
+
+2. Whole, readable, usable controls at 200% text
+
+PASS
+
+The extreme-reflow state now uses a deliberate labeled two-column/two-row dock. Date, Contents, Mode, and Details remain whole words, readable, unclipped, and visually balanced. Text is not counter-scaled. No horizontal scrolling is introduced, and the included measurements record four large named targets.
+
+Accepted evidence:
+
+    evidence/screenshots/after/08-text-200-percent-393x852.png
+
+    evidence/round1-shell-before-after.png
+
+3. No regression to accepted geometry or behavior
+
+PASS
+
+The correction remains confined to responsive shell geometry and associated reserve/test ownership.
+
+The evidence preserves:
+
+    the 636-pixel / approximately 75-character 768×1024 Read measure;
+
+    the accepted first-principal-text positions;
+
+    the normal 393 and 320 mobile rhythm;
+
+    the deliberate narrow Missal title wrap;
+
+    Date modal presentation;
+
+    visible keyboard focus;
+
+    forced-colors readability;
+
+    the 1440 external rail;
+
+    no required horizontal overflow;
+
+    four one-step named actions.
+
+Accepted evidence:
+
+    evidence/screenshots/after/03-date-open-1024x768.png
+
+    evidence/screenshots/after/04-day-read-768x1024.png
+
+    evidence/screenshots/after/09-forced-colors-393x852.png
+
+    evidence/screenshots/after/10-keyboard-focus-393x852.png
+
+    evidence/baseline-corrected-measurements.json
+
+    evidence/browser-results.json
+
+    checks.txt
+
+Validation disposition
+
+The package records:
+
+    141/141 focused Python tests;
+
+    15/15 governed visual assertions across 54 captures;
+
+    27/27 Propers browser checks;
+
+    18/18 shared-shell browser checks;
+
+    Day 33/34, with only the unchanged date-dependent first-visit expectation;
+
+    locked public-alpha check/build/verify passing;
+
+    no console, failed-request, HTTP, unnamed-control, duplicate-ID, or required-overflow failures.
+
+The governed full gate remains honestly stopped by unrelated example transcript divergence. That does not block this visual acceptance and must not be represented as a green full-repository gate.
+Deployment qualification
+
+GitHub Pages run 31110517661 for commit 4daf7d8 is not a successful run. GitHub reports failure after actions/deploy-pages reached its polling timeout. Record it exactly as a deployment-polling stop.
+
+This does not reverse visual acceptance:
+
+    the handoff records successful Pages run 31109086658 for
+    c388ab42dfc4f5c7d49abc71596d6bb511af5742;
+
+    that run deployed the corrected CSS and unchanged JavaScript;
+
+    the package records HTTP 200, noindex, and deployed/source byte parity;
+
+    commit 4daf7d8 records the post-deployment evidence/handoff rather than a new visual correction.
+
+Do not claim that run 31110517661 succeeded. Before any eventual public cutover, the exact intended production commit must have a successful Pages/deployment result and direct deployed-asset verification.
+Required continuity update
+
+Append this entire acceptance verbatim under:
+
+## Independent review round 1 acceptance — reviewer to Codex
+
+in:
+
+build/agent-continuity/liturgy-reader-visual-plan.md
+
+Then append Codex’s response with:
+
+    acknowledgment that all three Round 1 questions passed;
+
+    the exact production-integration work-unit plan;
+
+    the behavioral seams that remain frozen;
+
+    the first production file(s) proposed for change;
+
+    the evidence matrix that will prove prototype-to-production parity;
+
+    explicit confirmation that public cutover and public navigation remain unauthorized.
+
+Commit and push the continuity update as part of the build tree. Include this acceptance and the updated continuity record in every subsequent production-integration handoff.
+Next phase
+
+Production-integration execution is authorized.
+
+The first integration checkpoint should:
+
+    inventory the accepted Instrument prototype presentation hooks against the existing production Day and Propers reader shell;
+
+    identify the smallest shared production presentation seam;
+
+    preserve accepted state adapters, renderer reuse, Ordinary seating, fail-closed behavior, semantic-location restoration, focus, race ownership, and one-step actions;
+
+    move the accepted visual system into production code without yet changing public navigation or removing the isolated prototype;
+
+    capture production-vs-accepted-prototype parity at the governing desktop, intermediate, mobile, 200%, forced-colors, focus, modal, Read, Missal, Roman partial, and postconciliar states;
+
+    stop for independent integration review before public cutover.
+
+Final authorization
+
+    Liturgical Instrument visual correction: accepted
+
+    Production visual foundation: accepted
+
+    Production-integration execution: authorized
+
+    Public navigation change: unauthorized
+
+    Public cutover: unauthorized
+
+## Codex response to independent review round 1 acceptance
+
+All three bounded Round 1 questions passed: shell integration is continuous from the accepted 1440-pixel rail through 1024, 768, 393, and 320; the 200% state retains whole readable labels and usable targets; and the shell correction did not regress accepted geometry or behavior. The visual correction deliverable can therefore close as accepted, and production-integration execution can begin.
+
+### Production-integration work-unit plan
+
+1. **PI-A — hook inventory and smallest shared seam.** Map every accepted Instrument presentation hook, token, responsive rule, and surface state against the existing production Day and Propers reader DOM and styles. Record any missing hook or selector conflict before mutation. The first production file proposed for change is `src/web/browser/liturgy/reader-shell.css`, which owns the shared persistent actions, open surfaces, reserve, focus treatment, forced-colors response, and responsive dock. No controller or state change is proposed.
+2. **PI-B — shared shell and Day presentation.** Move the accepted masthead/action-shell/open-surface grammar into the shared production CSS, then move the accepted Day reading plane, Missal cue grid, first-viewport hierarchy, warning hierarchy, and ritual rhythm through `src/web/browser/liturgy/day-missal.css` and `src/web/browser/liturgy/day-reader.css`. Production assembly, renderer output, Ordinary seating, and event ordering remain owners of content and semantics. Production HTML will change only if the inventory proves an existing semantic element lacks a stable presentation hook; such a conflict must be recorded before editing.
+3. **PI-C — Propers presentation parity.** Apply the same accepted identity, reading-axis, Browse, masthead, action, and surface grammar through `src/web/browser/liturgy/propers-reader.css`, preserving the distinct Browse entrance and the prohibition on Propers Missal. JavaScript remains unchanged unless a concrete accepted-seam conflict is demonstrated and logged.
+4. **PI-D — parity, gates, and immutable integration handoff.** Capture accepted-prototype and production-reader pairs, compare measured geometry and semantic state, run the focused and governed checks with honest unrelated-gate dispositions, verify the locked public-alpha artifact and unlinked/noindex routes, and assemble a new immutable production-integration handoff containing this acceptance. Stop for independent integration review; do not change public navigation, remove the isolated prototype, or begin public cutover.
+
+### Frozen behavioral and visual seams
+
+The accepted M1 URL/state owners, production Day and Propers adapters, production Proper and Ordinary renderers, single Ordinary seating path, edition-specific option validity, fail-closed invalid and unsupported outcomes, semantic-location preservation and restoration, modal entry/Escape/inert/focus restoration, committed-render and race ownership, four one-step named actions, reduced-motion and forced-colors behavior, source honesty, explicit absences, release isolation, and noindex/unlinked status remain frozen. The accepted visual direction, typography, 39.75rem/636-pixel portrait reading measure, ritual cue grid, first-principal-text hierarchy, warning treatment, masthead, narrow-title wrap, mobile exchange rhythm, Ordinary/Proper composition, and Date/Browse entrance model are likewise frozen. Any concrete integration conflict must be proved and appended before a seam is reconsidered.
+
+### Prototype-to-production parity evidence matrix
+
+The integration evidence will pair the accepted prototype with the production reader at the same route state, query/hash, viewport, scroll position, semantic location, and open surface:
+
+- Day Read at 1440×900, 1024×768, 768×1024, and 393×852.
+- Day Missal at 1440×900, 1024×768, 393×852, and 320×852, plus 1440×900 deep scroll.
+- Roman 1962 partial coverage at 393×852 and postconciliar partial-English coverage at 1440×900 and 393×852.
+- Propers Read at 1440×900 and 393×852, and Propers Browse at 393×852.
+- Date open at 1024×768, Contents and Mode open at 393×852, and Details open at 1440×900.
+- 200% text, forced colors, reduced motion, and keyboard focus at 393×852.
+
+Each pair will record reading measure, first-principal-text position, rail/dock edge ownership, opacity, radius, shadow, block-end reserve, whole-label line boxes, target size, horizontal overflow, focus owner, semantic state, console errors, failed requests, HTTP errors, and production/prototype asset hashes. The 768×1024 Read target remains 636 pixels/about 75 characters; accepted Missal positions and normal mobile rhythm must not move absent a recorded conflict.
+
+Public navigation changes and public cutover remain explicitly unauthorized. The isolated prototype remains available as the accepted comparison oracle throughout integration.
+
+## Acceptance decision and checkpoint additions
+
+- 2026-08-06 — Independent Round 1 acceptance resolves all three bounded shell questions and all seven Round 0 findings. Liturgical Instrument is now the accepted production visual foundation; Quiet Folio and Contemporary Reader remain frozen references.
+- 2026-08-06 — Production-integration execution is authorized through the bounded PI-A–PI-D plan above. Integration begins at the shared production CSS presentation seam and does not itself authorize public navigation or cutover.
+- 2026-08-06 — GitHub Pages run `31110517661` for post-deployment evidence commit `4daf7d8a1e1c509edb81a738cc71223170bbbd2d` failed after `actions/deploy-pages` reached its polling timeout. The accepted deployed-parity owner remains successful run `31109086658` for `c388ab42dfc4f5c7d49abc71596d6bb511af5742`; direct HTTP 200/noindex and CSS/JS parity evidence from that run remains controlling.
+- 2026-08-06 — This acceptance checkpoint changes only durable continuity and the delivery trackers. No production CSS, HTML, JavaScript, public route, navigation, or prototype file is changed; the next exact action is the PI-A hook inventory.
+- 2026-08-06 — Acceptance-record validation passed: `tools/tpt check-promised-deliverables` reports 21 tracked/16 complete, `tools/tpt --check` reports 34 registered tools, and `git diff --check` exits 0. Product/browser suites are unchanged from the independently accepted package because this checkpoint has no product-code delta.
+- 2026-08-06T15:09:11Z — Pages run `31113461987` for acceptance-record commit `1608f0ee0ee61df956247072a91647147548c5ad` failed only after `actions/deploy-pages` polled a `deployment_in_progress` result for 600 seconds and timed out. Checkout, locked dependency setup, deployable-source verification, public build, Pages compatibility verification, configuration, and verified-artifact upload all passed. Direct Day and Propers Instrument routes remain HTTP 200 with `noindex, nofollow, noarchive, nosnippet, noimageindex`; deployed/source CSS SHA-256 remains `850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48` and JavaScript remains `eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679`. The run is a deployment-polling stop, not success, and does not replace successful deployed-parity run `31109086658`.
+
+## Production integration PI-A — hook inventory and seam decision
+
+### Inventory result before product mutation
+
+The accepted Instrument prototype and the two production candidates already
+share the semantic reading hooks emitted by the production renderers:
+`.reader-identity`, `.reader-context`, `.celebration-title`, `.entry-title`,
+`.entry-meta`, `.coverage-notice`, `.reader-document`, `.proper`,
+`.proper-name`, `.proper-ref`, `.passage`, `.composed`, `.ordinary-frame`,
+`.ordinary-division`, `.ordinary-element`, `.speaker-tag`, and the existing
+semantic-location attributes. The existing `[data-reader-shell]`,
+`[data-reader-action]`, `[data-reader-surface]`, and `[data-reader-contents]`
+contract likewise already owns the four actions, dialogs, Contents state,
+modal focus entry, Escape, inert background, and semantic-location restoration.
+No controller, renderer, seating, state-contract, or state-adapter rewrite is
+needed.
+
+The smallest production presentation seam is one new last-loaded stylesheet,
+`src/web/browser/liturgy/reader-instrument.css`, scoped through a shared
+`.reader-instrument` class on the existing candidate shell. This supersedes the
+earlier PI-A expectation that `reader-shell.css` would be the first file
+changed. The earlier statement remains above; this appended correction is
+controlling because inventory proved that `reader-shell.css` is already the
+accepted interaction-neutral base and that a scoped override avoids a broad
+refactor. It also avoids `day-missal.css`, which public Day and Propers routes
+load and therefore cannot change under the current isolation boundary.
+
+The production HTML needs only stable presentation hooks: the accepted
+masthead, `.reader-instrument`, `data-reader-mode`, `.action-label`, and
+project-owned icon hosts with hidden decorative marks. The existing candidate
+flags remain truthful in the DOM and become visually hidden. The accepted
+short dock labels are Date or Browse, Contents, Mode, and Details; surface
+headings may retain their explicit edition wording.
+
+### Proved presentation-adapter conflict and bounded resolution
+
+Two accepted outcomes are not achievable through CSS alone. First, the
+production renderers emit a source-owned top-level `.uncompiled` node and
+direct `.notice` children within Ordinary elements, while the accepted warning
+hierarchy moves the existing uncompiled content into the identity-level
+coverage notice and groups direct absence notices as
+`.ordinary-absence-inline`. Second, the accepted Read/Missal geometry requires
+an authoritative `data-reader-mode` styling hook. The prototype supplies both
+through post-render observers, but importing that prototype controller would
+also import `?design=` URL ownership, duplicate semantic-progress and mode
+observers, and title-filter behavior that is expressly out of scope as search.
+
+The bounded production resolution is generation-safe adapter composition:
+
+- Day exposes its already authoritative committed mode on the existing shell
+  during `commitOutcomePresentation()`; it does not derive or own another mode.
+- Day and Propers move the renderer-owned uncompiled node's existing children
+  into `#coverage-notice` before the winning render is committed, preserving
+  every word and absence while eliminating a second dominant warning.
+- Day groups only direct renderer-owned `.notice` children inside their
+  already-rendered Ordinary element. The wrapper adds no ID, focus target,
+  semantic location, or invented content.
+
+These are presentation hooks inside the existing committed render path, not a
+change to state, assembly, rendering, seating, semantic order, or race
+ownership. `reader-shell.js`, `reader-state.js`, `reader-state-adapters.js`,
+`ordinary-seating.js`, `assembly-model.js`, shared renderer code, production
+data, and public Day/Propers routes remain frozen.
+
+The prototype's title-filter Browse UI is not ported because search remains an
+explicitly deferred capability. Propers retains its accepted distinct Browse
+entrance and canonical production form while receiving the accepted Instrument
+masthead, shell, surface, typography, and responsive composition. This is the
+only planned production/prototype visual difference and will be stated and
+shown in the integration handoff rather than hidden.
+
+### PI-A decision and next action
+
+- 2026-08-06 — Hook inventory complete; smallest seam is the new scoped
+  `reader-instrument.css` loaded last by both unlinked production candidates.
+- 2026-08-06 — The only justified adapter changes are authoritative mode
+  exposure and generation-safe composition of renderer-owned absence nodes.
+- 2026-08-06 — Pages run `31114653517` for settlement commit
+  `b3ae6bddaab631661d342380f61365d851be160c` is recorded as another 600-second
+  deployment-polling failure after repository-owned build and upload passed;
+  successful deployed correction parity remains run `31109086658`.
+- Next exact action: implement the scoped stylesheet and stable HTML hooks,
+  make the bounded adapter composition changes, update task-owned tests, and
+  extend the existing visual-reset harness into paired prototype/production
+  evidence. Public navigation and public cutover remain unauthorized.
+
+## Production integration PI-B–PI-D — local candidate checkpoint
+
+### Implemented production presentation seam
+
+The new `src/web/browser/liturgy/reader-instrument.css` is loaded last only by
+the existing unlinked, noindex `day-reader.html` and `propers-reader.html`
+candidates. It carries the accepted Instrument masthead, typography, Read
+axis, Missal cue grid, compact warnings and absence notation, external ruled
+rail, opaque square intermediate/mobile dock, extreme-reflow 2×2 dock, open
+surfaces, focus treatment, forced-colors behavior, reduced-motion behavior,
+and print preservation. The existing public `day.html` and `index.html` do not
+load it and have not changed.
+
+Both candidate pages now expose the accepted masthead and stable action-label
+hooks with project-owned inline SVG icons. Day exposes the already-committed
+mode as `data-reader-mode`; Day and Propers relocate the existing source-owned
+uncompiled message into the identity coverage notice; and Day groups direct
+Ordinary absence notices without changing their text, semantic event,
+location, or renderer ownership. No state, adapter, renderer, seating, shared
+shell controller, production data, or public route was changed.
+
+Propers Browse deliberately retains the existing production selector rather
+than importing the accepted prototype's title-filter control. Search remains
+out of scope. The Date/Browse entrance distinction, all four one-step actions,
+and the common Instrument composition remain visually explicit.
+
+### Prototype-to-production measurements
+
+The final Chromium run captured 23 accepted-prototype/production pairs at the
+same state, viewport, scroll, and open surface, plus the complete existing
+direction matrix: 100 captures in all, with 19/19 governed assertions.
+
+| Governing state | Accepted prototype | Production candidate | Delta/disposition |
+| --- | --- | --- | --- |
+| Day Read 768×1024 | 636 px, about 75 characters; first text 267.39 px | 636 px, about 75 characters; first text 268.03 px | measure exact; first text +0.64 px |
+| Day Missal 393×852 | 351 px text plane; first principal text 324.09 px | 351 px text plane; first principal text 320.66 px | width exact; production 3.43 px earlier |
+| 200% text at 393×852 | four 178.91×104 px targets; all labels one line | same four target boxes; all labels one line | exact shell geometry; no mid-word breaks |
+| Intermediate 1024 dock | square, opaque, shadowless, edge-bound | same computed shell properties and reserved block end | pass |
+
+The harness also records zero required horizontal overflow, unnamed
+interactive controls, duplicate IDs, console errors, failed requests, or HTTP
+errors. Final source hashes are: accepted oracle CSS
+`850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48`;
+production Instrument CSS
+`64a566758f20df72f53f0f1dfc90ba82fe4ad28cf0ed55a346066f6c1ed5ee02`;
+Day HTML `5bc859042e907565afb304beaf0d5ae099c571933c474760c77730a9245531b9`;
+Day JavaScript `405069b81214d3598d568433b68440ac3433d7ceef09d64a05506b907ebc8320`;
+Propers HTML `9d30a46afc8d890e95a3e1dd8aab04a164eea906b0b88f520f2c70e878b9560b`;
+and Propers JavaScript
+`135f1864bb227ab35058a3fad614d9c7855d1c78aff048dae4bdae3fc69f4ad0`.
+
+### Full-size visual self-review
+
+Every one of the 23 production originals was inspected at original pixels,
+and the paired contact sheet was inspected as a complete system.
+
+- Read at 1440, 1024, 768, and 393 keeps one deliberate axis. The 1024 dock is
+  edge-owned and text ends above it; the portrait measure is the accepted 636
+  pixels; mobile does not become a different composition.
+- Missal at 1440, 1024, 393, and 320 begins with real ritual text promptly,
+  retains the wide cue grid and coherent mobile stacking, and preserves the
+  deliberate narrow division-title wrap. Deep scroll retains the ruled rail
+  and subordinate provenance.
+- Roman partial coverage has one compact identity statement before held
+  Ordinary text. Postconciliar partial-English coverage exposes held Propers
+  before restrained grouped absences at desktop and mobile.
+- Propers Read shares the same masthead, measure, typography, shell, and
+  surfaces. Propers Browse remains visibly the distinct production entrance;
+  its form is the disclosed out-of-scope search difference, not an accidental
+  parity gap.
+- Date, Contents, Mode, and Details surfaces retain coherent geometry,
+  backdrop, focus entry, and reading context. The 200% state uses whole labels
+  in a 2×2 dock; forced colors remains legible; keyboard focus is explicit;
+  reduced motion changes no content or control reachability.
+
+No visual, behavioral, accessibility, or isolation blocker was found in local
+self-review. This is not independent acceptance.
+
+### Local validation before checkpoint commit
+
+- Focused Python suite: 142/142 passed after the historic prototype-isolation
+  guard was narrowed to exclude exactly the newly authorized
+  `reader-instrument.css` candidate seam; frozen public/shared files remain
+  byte-checked.
+- Day browser harness: 33/34, with only the unchanged date-dependent
+  first-visit expectation; every task-owned assertion passed.
+- Propers browser harness: 27/27 passed.
+- Shared-shell browser harness: 18/18 passed.
+- Governed visual harness: 19/19 assertions, 100 captures, zero browser or
+  accessibility failures.
+- Node syntax checks passed for Day, Propers, the accepted visual oracle, and
+  the extended visual harness.
+- `tools/tpt public-alpha check`, locked build, and
+  `verify --deployment-target github-pages` passed. Release bindings are exact,
+  including the newly adopted Instrument CSS source and updated Day/Propers
+  hashes.
+- `tools/tpt check-promised-deliverables`, `tools/tpt --check`, and
+  `git diff --check` pass. `tmt` is unavailable both on `PATH` and at the
+  documented personal fallback, so the requested repeatable-tool note could
+  not be recorded.
+
+### PI-D checkpoint status
+
+- Implementation and local parity are complete; no task-owned check is
+  presently failing.
+- Exact checkpoint commit, push, Pages run, deployed source parity, handoff
+  manifest, and ZIP verification remain to be appended after those events.
+- Independent production-integration review remains the gate. Public
+  navigation and public cutover remain unauthorized.
+
+## Production integration implementation checkpoint — push and clean gate
+
+- 2026-08-06 — Commit `3cd46072b164ff39b00639bb67ad6b8943a255dc`
+  records the candidate-scoped Instrument CSS, Day and Propers presentation
+  hooks, bounded generation-safe absence composition, 19-assertion/100-capture
+  parity harness, release bindings, tests, roadmap, work register, promised
+  deliverable, and this continuity record. It was pushed normally to
+  `origin/main`; no force, amend, rebase, remote change, public navigation, or
+  cutover occurred.
+- The exact clean-tree `make check` invocation passed all preceding governed
+  checks and stopped at `check-examples` with exit 2: 200 captured examples,
+  188 replayed, 23 divergent, 35 known stale, 6 never run, 6 unrunnable here,
+  and 2 declared volatile lines. This is the repository's unrelated transcript
+  divergence and is not green. No example was recaptured or blessed.
+- The final local public-alpha policy/build/Pages-target verify and the private
+  preview build/verify pass with the locked Markdown environment. Release
+  bindings are exact, including Instrument CSS SHA-256
+  `64a566758f20df72f53f0f1dfc90ba82fe4ad28cf0ed55a346066f6c1ed5ee02`.
+- As of 2026-08-06T18:04:26Z, `origin/main` resolves to the implementation
+  commit, but GitHub's Actions API returns no run for that head SHA. This is a
+  pending workflow-event observation, not a successful run and not a failed
+  run. No manual workflow was dispatched because the task authorizes only the
+  normal push-triggered deployment attempt.
+- Next exact action: commit this truthful post-push record, push it as the
+  continuity checkpoint, observe the resulting automatic Pages run, verify
+  the unlinked Day and Propers candidates, the noindex visual oracle, and
+  deployed source hashes, then finalize the immutable integration-review
+  handoff.
+
+## Production integration deployment observation and handoff boundary
+
+- 2026-08-06 — Continuity checkpoint
+  `e35f81c1e67c744aead0e4eaa73e079516751e66` was pushed normally to
+  `origin/main`. As of 2026-08-06T18:08:35Z, the GitHub Actions API exposed no
+  run for either that head or implementation head
+  `3cd46072b164ff39b00639bb67ad6b8943a255dc`.
+- Direct deployed Day and Propers candidate routes return HTTP 200 but serve
+  the prior artifact: their HTML SHA-256 values differ from the integrated
+  source, and deployed Day does not reference `reader-instrument.css`.
+  Therefore production deployed parity is open. The routes retain their
+  pre-existing public-alpha robots policy; the separate accepted visual-reset
+  oracle remains unlinked and noindex.
+- No manual workflow was dispatched. The normal push-triggered workflow is the
+  only deployment authority granted by this task, so the absent workflow event
+  is an external-state blocker rather than permission to invoke another
+  deployment mechanism.
+- The new local review package is
+  `build/agent-handoffs/20260806T171432Z-liturgy-reader-instrument-production-integration/`
+  with a same-name ZIP. The original correction task's force-add exception is
+  path- and slug-bounded and does not authorize tracking this new production-
+  integration handoff. The package is therefore assembled and verified as an
+  ignored local artifact; the already-tracked canonical continuity remains the
+  durable pushed record.
+
+## Message to the next independent production-integration reviewer
+
+The production Day and Propers candidates now visibly use the accepted
+Liturgical Instrument masthead, reading axis, Missal cue grid, warning
+hierarchy, rail/dock, 200% reflow, surfaces, and accessibility finish. Begin
+with the labeled `evidence/prototype-production-parity-contact-sheet.png`, then
+inspect all 23 production originals at full size beside the accepted originals.
+Look first at Day Read 768×1024, Day Missal 393×852, Day partial 393×852,
+postconciliar Missal at both sizes, Propers Browse 393×852, the 1024 Date
+surface, and the 200%/forced-colors/focus states.
+
+One difference is deliberate and provisional only in the sense of scope:
+Propers keeps its canonical production Browse selector; the prototype title
+filter is search and was not integrated. No accepted visual or behavioral seam
+is otherwise reopened. Local parity and task-owned gates pass, but deployed
+parity is not established because GitHub did not materialize either automatic
+Pages run and the deployed routes still serve the prior artifact.
+
+The requested decisions are exact: does production match the accepted
+Instrument across the matrix; is retaining production Browse the correct
+out-of-scope-search disposition; did the bounded presentation composition
+preserve every frozen behavior; and, only after a successful Pages run and
+direct asset parity exist, is production integration accepted? Public
+navigation and public cutover remain unauthorized regardless of the review
+disposition.
+
+## Delayed Pages run observation
+
+- GitHub materialized automatic Pages run `31125352169` for implementation
+  commit `3cd46072b164ff39b00639bb67ad6b8943a255dc` at
+  2026-08-06T18:11:51Z, after the first immutable local handoff had been sealed
+  at its truthful no-run cutoff.
+- Codex monitored the run continuously through 2026-08-06T18:27:03Z. The
+  workflow and its `deploy` job remained `queued`; `startedAt` was recorded as
+  2026-08-06T18:11:52Z by the API, but no runner step, log, build, upload, or
+  deployment action began, `updatedAt` remained 2026-08-06T18:11:54Z, and no
+  conclusion existed.
+- This is a queued external-state result, neither success nor failure. It does
+  not establish deployed parity and does not supersede the last successful
+  accepted-correction run `31109086658`.
+- Because the earlier integration handoff is immutable, the latest handoff is
+  a fresh successor at
+  `build/agent-handoffs/20260806T182703Z-liturgy-reader-instrument-production-integration/`
+  and its same-name ZIP. It contains this exact observation and points the next
+  reviewer/agent to run `31125352169` first.
+
+## Successful production-integration deployment and parity
+
+- 2026-08-06 — Automatic Pages run `31125352169` for implementation commit
+  `3cd46072b164ff39b00639bb67ad6b8943a255dc` ultimately completed with failure
+  after its deploy job was cancelled before any repository step ran. Follow-up
+  run `31125595375` for continuity commit
+  `e35f81c1e67c744aead0e4eaa73e079516751e66` completed cancelled. These runs
+  are not deployment successes and are retained here as exact chronology.
+- Automatic Pages run `31125898045` succeeded for exact intended production
+  commit `5444d89fc9b379a1babef5b2220323fe1508b2b3`. The workflow was created at
+  2026-08-06T18:26:07Z, its deploy job ran from 18:28:11Z through 18:29:54Z,
+  and the run completed at 18:29:55Z. Checkout, Python setup, dependency
+  installation, deployable-source verification, site build, GitHub Pages
+  verification, Pages configuration, artifact upload, and deployment all
+  passed.
+- Direct verification after that run returned HTTP 200 for the Day production
+  reader candidate, Propers production reader candidate, and both accepted
+  visual-reset oracle routes. Day and Propers load `reader-instrument.css`.
+  The oracle routes retain `noindex, nofollow, noarchive, nosnippet,
+  noimageindex`; the production candidates retain the existing public-alpha
+  robots policy and remain absent from public navigation.
+- Deployed/source SHA-256 parity is exact for Instrument CSS
+  `64a566758f20df72f53f0f1dfc90ba82fe4ad28cf0ed55a346066f6c1ed5ee02`,
+  Day JavaScript
+  `405069b81214d3598d568433b68440ac3433d7ceef09d64a05506b907ebc8320`,
+  Propers JavaScript
+  `135f1864bb227ab35058a3fad614d9c7855d1c78aff048dae4bdae3fc69f4ad0`,
+  accepted-oracle CSS
+  `850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48`,
+  and accepted-oracle JavaScript
+  `eb1c1d06274dfaf99165a72735670c372c524f95363f5e104669b72f7d01ba0d`.
+- This supersedes the deployment-open qualification in the earlier reviewer
+  message without rewriting that append-preserved history. The new immutable
+  deployed-parity successor is
+  `build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/`
+  and its same-name ZIP. The original correction task did not authorize
+  force-adding a new production-integration handoff slug, so this package is a
+  verified ignored local artifact; this canonical continuity file remains the
+  pushed durable record.
+
+## Superseding message to the next independent production-integration reviewer
+
+Production integration and deployed/source parity are complete. Begin with
+`evidence/prototype-production-parity-contact-sheet.png`, then inspect the 23
+production originals at full size beside their accepted prototype counterparts.
+Look first at Day Read 768×1024, Day Missal 393×852, Roman partial 393×852,
+postconciliar Missal at desktop and mobile, Propers Browse 393×852, Date open
+at 1024×768, and the 200%, forced-colors, and focus states.
+
+The exact decisions requested are: does the integrated production presentation
+match the accepted Instrument across the governing matrix; is retaining the
+canonical production Browse selector the correct disposition because the
+prototype title filter is out-of-scope search; did the bounded CSS and
+generation-safe composition preserve every frozen behavioral seam; and is this
+production integration accepted? No known implementation, evidence,
+deployment, asset-parity, accessibility, or isolation blocker remains. The
+governed full gate is still honestly non-green only at unrelated stored example
+transcript divergence. Public navigation and public cutover remain unauthorized
+regardless of the integration-review disposition.
+
+## Successful deployment record checkpoint
+
+- 2026-08-06 — Commit `0d683db725219e258f3444720b33908d4cf01e63`
+  records successful Pages run `31125898045`, the direct deployed/source hash
+  verification, the completed deployment-evidence requirement, and the exact
+  remaining independent-review gate. It was pushed normally to `origin/main`.
+- The next exact action is to seal the fresh immutable deployed-parity handoff,
+  verify its byte-identical continuity copy, manifest, ZIP, and one-top-level
+  archive shape, and stop for independent production-integration review.
+- This final continuity append is a record-only handoff boundary. It changes no
+  candidate code, accepted visual detail, behavioral seam, public route, or
+  navigation.
+
+## Deployed hash transcription correction
+
+- 2026-08-06 — A final direct HTTP verification found that the accepted-oracle
+  JavaScript hash written in **Successful production-integration deployment and
+  parity** above was transcribed incorrectly. The deployed file and source are
+  byte-identical at the correct SHA-256
+  `eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679`.
+  This appended correction supersedes only the earlier mistyped
+  `eb1c1d06274dfaf99165a72735670c372c524f95363f5e104669b72f7d01ba0d`
+  statement; it does not change the parity disposition, code, evidence, or
+  review gate.

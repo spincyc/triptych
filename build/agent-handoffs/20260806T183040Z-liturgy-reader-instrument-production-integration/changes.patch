@@ -1,0 +1,2195 @@
+diff --git a/PROJECT-WORK.md b/PROJECT-WORK.md
+index a7fb68457a1ecb8bb1fc8a9da0b280ce06c36277..9faf1adf4d2db3ee555a48957c91c02e1e45798e 100644
+--- a/PROJECT-WORK.md
++++ b/PROJECT-WORK.md
+@@ -179,6 +179,76 @@ operations.
+ 
+ ## Promised work
+ 
++### Liturgical Instrument production integration
++
++<!-- promised-deliverable: liturgy-reader-instrument-production-integration-2026-08-06 -->
++
++**Candidate; implementation checkpoint pushed, deployed parity and independent
++integration review remain open; public navigation and cutover are
++unauthorized.** Independent Round 1 accepted the
++Liturgical Instrument visual foundation and all seven correction dispositions.
++Production integration begins from `b3ae6bddaab631661d342380f61365d851be160c`
++through four bounded units: PI-A inventories the accepted hooks and selects the
++smallest shared presentation seam; PI-B integrates the shell and Day
++Read/Missal presentation; PI-C proves Propers Read/Browse parity; and PI-D
++captures the full parity matrix, runs the governed checks, and assembles an
++immutable integration-review candidate.
++
++The completed inventory selects a new last-loaded, candidate-scoped
++`src/web/browser/liturgy/reader-instrument.css` layer. This keeps public-loaded
++`day-missal.css` unchanged and preserves `reader-shell.js`, the M1 state and
++adapter owners, production renderers, Ordinary seating, invalid-state failure,
++semantic-location restoration, focus, race ownership, and the four one-step
++actions. Stable masthead and action-label hooks are added to the two production
++candidate HTML files. Only generation-safe presentation composition may touch
++the Day or Propers adapters: the authoritative Day commit exposes its current
++mode as a styling attribute, and renderer-owned absence nodes may be grouped or
++moved without replacing their text or semantics. The accepted comparison
++prototype remains unmodified and available as the parity oracle. That seam is
++now implemented in both unlinked candidates. The extended Chromium harness
++passes 19/19 assertions over 100 captures and includes 23 exact
++prototype/production pairs covering Read, Missal, partial coverage,
++postconciliar coverage, Propers, all open surfaces, deep scroll, 200% text,
++forced colors, reduced motion, and keyboard focus. The accepted 768×1024
++636-pixel/~75-character measure is exact; production mobile Missal principal
++text is 3.43 pixels earlier than the accepted oracle and otherwise retains the
++same 351-pixel plane and action geometry.
++
++Successful deployed correction parity remains Pages run `31109086658` for
++`c388ab42dfc4f5c7d49abc71596d6bb511af5742`. Later runs
++`31110517661`, `31113461987`, and `31114653517` each passed repository-owned
++build/upload work and then failed at GitHub deployment polling; none is claimed
++as successful. The production-integration deliverable remains open until its
++own evidence, deployment record, and independent integration disposition are
++complete. The implementation checkpoint is not represented as deployed until
++its own push has a successful Pages result and direct asset verification.
++Implementation commit `3cd46072b164ff39b00639bb67ad6b8943a255dc` is pushed
++to `origin/main`. Its clean-tree full gate reached only the governed unrelated
++example-replay divergence: 200 examples, 188 replayed, 23 divergent, 35 known
++stale, 6 never run, and 6 unrunnable here. It exits 2 and is not represented as
++green. As of 2026-08-06T18:04:26Z, GitHub had not materialized the automatic
++Pages run for this push in the Actions API; this is recorded as a pending
++workflow event, not a deployment success or failure.
++Continuity checkpoint `e35f81c1e67c744aead0e4eaa73e079516751e66` is also
++pushed. As of 2026-08-06T18:08:35Z GitHub likewise had no Actions record for
++that head. Direct deployed Day and Propers candidates remain HTTP 200 at the
++prior artifact, which does not contain `reader-instrument.css`; deployed
++integration parity therefore remains explicitly open.
++GitHub later materialized automatic run `31125352169` for implementation commit
++`3cd46072b164ff39b00639bb67ad6b8943a255dc`, but at
++2026-08-06T18:27:03Z it had remained queued for more than 15 minutes with no
++runner or repository step started. This is a queued external-state result, not
++a successful or failed deployment; deployed parity remains open.
++The next delayed automatic run, `31125898045`, succeeded for exact intended
++production commit `5444d89fc9b379a1babef5b2220323fe1508b2b3` at
++2026-08-06T18:29:55Z. Every repository build, verification, upload, and deploy
++step passed. Direct Day, Propers, and both accepted oracle routes return HTTP
++200; Day/Propers reference the Instrument stylesheet, the oracle routes remain
++noindex, and deployed Instrument CSS, Day/Propers JavaScript, and accepted
++oracle CSS/JavaScript byte-match source. Deployed production-integration parity
++is complete. The deliverable remains a candidate solely for independent
++integration review; public navigation and cutover remain unauthorized.
++
+ ### Liturgical Instrument visual correction accepted
+ 
+ <!-- promised-deliverable: liturgy-reader-instrument-correction-2026-08-05 -->
+diff --git a/build/agent-continuity/liturgy-reader-visual-plan.md b/build/agent-continuity/liturgy-reader-visual-plan.md
+index b75131c172e33ef9696c434d6929c5abdf99b410..fede1d345eed580731a323be91e5434c1f0a743b 100644
+--- a/build/agent-continuity/liturgy-reader-visual-plan.md
++++ b/build/agent-continuity/liturgy-reader-visual-plan.md
+@@ -3,18 +3,18 @@
+ ## Resume header
+ 
+ - Current branch: `main`
+-- Current commit: `1608f0ee0ee61df956247072a91647147548c5ad` plus acceptance-deployment settlement staging
++- Current commit: current `main`/`origin/main`; this append-preserving file is carried by its own final record-only commit, whose exact SHA is recorded in the sealed handoff
+ - Reviewed visual baseline: `0f3567dc509a2d5b42fd58a0e4c77c8f5e5dc113` (visual implementation `7233879350ff00c92fa2029ca04f481125daa519`; task base `842333af79bd560ad6607b91b087ed8ff71e7477`)
+ - Selected direction: Liturgical Instrument
+-- Current phase: Liturgical Instrument visual correction accepted; production-integration execution authorized and bounded planning recorded; no production file has yet changed
+-- Last completed work unit: independent Round 1 acceptance of all three responsive-shell questions and reconciliation of the accepted visual foundation into the production-integration plan
+-- Next exact action: inventory accepted Instrument presentation hooks against the production Day and Propers shell, beginning with `src/web/browser/liturgy/reader-shell.css`; do not alter public navigation or begin public cutover
+-- Open blockers: no visual-correction blocker remains; production integration must prove prototype parity and pass independent integration review, the unrelated governed example-transcript divergence remains non-green, and public navigation/cutover remain unauthorized
+-- Latest pushed commit: `1608f0ee0ee61df956247072a91647147548c5ad` — independent Round 1 acceptance, production-integration plan, and truthful delivery tracking
+-- Latest successful Pages run: `31109086658`, success for `c388ab42dfc4f5c7d49abc71596d6bb511af5742` at 2026-08-06T14:17:40Z
+-- Latest Pages attempt: `31113461987`, failed for `1608f0ee0ee61df956247072a91647147548c5ad` at 2026-08-06T15:09:11Z after `actions/deploy-pages` polled `deployment_in_progress` for 600 seconds and timed out; all repository-owned verification, build, compatibility, configuration, and verified-artifact upload steps passed, but this is not a successful deployment
+-- Latest handoff directory: `build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/`
+-- Latest handoff ZIP: `build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction.zip`
++- Current phase: PI-A–PI-D implementation, local and deployed parity, clean validation, checkpoints, and successful Pages deployment complete; independent integration review remains
++- Last completed work unit: direct deployed/source parity verification after successful Pages run `31125898045`
++- Next exact action: independent reviewer reads the latest immutable handoff and returns exact integration blocker dispositions; do not begin public navigation or cutover
++- Open blockers: no implementation, local-parity, deployment, or asset-parity blocker remains; independent integration review is open, the unrelated governed example replay remains non-green, and public navigation/cutover remain unauthorized
++- Latest pushed commit: current `origin/main`; product code remains `3cd46072b164ff39b00639bb67ad6b8943a255dc`, exact successfully deployed production state remains `5444d89fc9b379a1babef5b2220323fe1508b2b3`, and later commits are continuity/tracking only
++- Latest successful Pages run: `31125898045`, success for exact intended production commit `5444d89fc9b379a1babef5b2220323fe1508b2b3` at 2026-08-06T18:29:55Z
++- Latest Pages attempt: `31125898045`, successful; all repository verification, build, compatibility, artifact upload, and deploy steps passed
++- Latest handoff directory: `build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/` (local immutable deployed-parity successor; ignored and not force-added because no new build-tree exception authorizes tracking this production-integration slug)
++- Latest handoff ZIP: `build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration.zip`
+ 
+ ## Fixed decisions and scope boundaries
+ 
+@@ -705,3 +705,384 @@ Public navigation changes and public cutover remain explicitly unauthorized. The
+ - 2026-08-06 — This acceptance checkpoint changes only durable continuity and the delivery trackers. No production CSS, HTML, JavaScript, public route, navigation, or prototype file is changed; the next exact action is the PI-A hook inventory.
+ - 2026-08-06 — Acceptance-record validation passed: `tools/tpt check-promised-deliverables` reports 21 tracked/16 complete, `tools/tpt --check` reports 34 registered tools, and `git diff --check` exits 0. Product/browser suites are unchanged from the independently accepted package because this checkpoint has no product-code delta.
+ - 2026-08-06T15:09:11Z — Pages run `31113461987` for acceptance-record commit `1608f0ee0ee61df956247072a91647147548c5ad` failed only after `actions/deploy-pages` polled a `deployment_in_progress` result for 600 seconds and timed out. Checkout, locked dependency setup, deployable-source verification, public build, Pages compatibility verification, configuration, and verified-artifact upload all passed. Direct Day and Propers Instrument routes remain HTTP 200 with `noindex, nofollow, noarchive, nosnippet, noimageindex`; deployed/source CSS SHA-256 remains `850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48` and JavaScript remains `eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679`. The run is a deployment-polling stop, not success, and does not replace successful deployed-parity run `31109086658`.
++
++## Production integration PI-A — hook inventory and seam decision
++
++### Inventory result before product mutation
++
++The accepted Instrument prototype and the two production candidates already
++share the semantic reading hooks emitted by the production renderers:
++`.reader-identity`, `.reader-context`, `.celebration-title`, `.entry-title`,
++`.entry-meta`, `.coverage-notice`, `.reader-document`, `.proper`,
++`.proper-name`, `.proper-ref`, `.passage`, `.composed`, `.ordinary-frame`,
++`.ordinary-division`, `.ordinary-element`, `.speaker-tag`, and the existing
++semantic-location attributes. The existing `[data-reader-shell]`,
++`[data-reader-action]`, `[data-reader-surface]`, and `[data-reader-contents]`
++contract likewise already owns the four actions, dialogs, Contents state,
++modal focus entry, Escape, inert background, and semantic-location restoration.
++No controller, renderer, seating, state-contract, or state-adapter rewrite is
++needed.
++
++The smallest production presentation seam is one new last-loaded stylesheet,
++`src/web/browser/liturgy/reader-instrument.css`, scoped through a shared
++`.reader-instrument` class on the existing candidate shell. This supersedes the
++earlier PI-A expectation that `reader-shell.css` would be the first file
++changed. The earlier statement remains above; this appended correction is
++controlling because inventory proved that `reader-shell.css` is already the
++accepted interaction-neutral base and that a scoped override avoids a broad
++refactor. It also avoids `day-missal.css`, which public Day and Propers routes
++load and therefore cannot change under the current isolation boundary.
++
++The production HTML needs only stable presentation hooks: the accepted
++masthead, `.reader-instrument`, `data-reader-mode`, `.action-label`, and
++project-owned icon hosts with hidden decorative marks. The existing candidate
++flags remain truthful in the DOM and become visually hidden. The accepted
++short dock labels are Date or Browse, Contents, Mode, and Details; surface
++headings may retain their explicit edition wording.
++
++### Proved presentation-adapter conflict and bounded resolution
++
++Two accepted outcomes are not achievable through CSS alone. First, the
++production renderers emit a source-owned top-level `.uncompiled` node and
++direct `.notice` children within Ordinary elements, while the accepted warning
++hierarchy moves the existing uncompiled content into the identity-level
++coverage notice and groups direct absence notices as
++`.ordinary-absence-inline`. Second, the accepted Read/Missal geometry requires
++an authoritative `data-reader-mode` styling hook. The prototype supplies both
++through post-render observers, but importing that prototype controller would
++also import `?design=` URL ownership, duplicate semantic-progress and mode
++observers, and title-filter behavior that is expressly out of scope as search.
++
++The bounded production resolution is generation-safe adapter composition:
++
++- Day exposes its already authoritative committed mode on the existing shell
++  during `commitOutcomePresentation()`; it does not derive or own another mode.
++- Day and Propers move the renderer-owned uncompiled node's existing children
++  into `#coverage-notice` before the winning render is committed, preserving
++  every word and absence while eliminating a second dominant warning.
++- Day groups only direct renderer-owned `.notice` children inside their
++  already-rendered Ordinary element. The wrapper adds no ID, focus target,
++  semantic location, or invented content.
++
++These are presentation hooks inside the existing committed render path, not a
++change to state, assembly, rendering, seating, semantic order, or race
++ownership. `reader-shell.js`, `reader-state.js`, `reader-state-adapters.js`,
++`ordinary-seating.js`, `assembly-model.js`, shared renderer code, production
++data, and public Day/Propers routes remain frozen.
++
++The prototype's title-filter Browse UI is not ported because search remains an
++explicitly deferred capability. Propers retains its accepted distinct Browse
++entrance and canonical production form while receiving the accepted Instrument
++masthead, shell, surface, typography, and responsive composition. This is the
++only planned production/prototype visual difference and will be stated and
++shown in the integration handoff rather than hidden.
++
++### PI-A decision and next action
++
++- 2026-08-06 — Hook inventory complete; smallest seam is the new scoped
++  `reader-instrument.css` loaded last by both unlinked production candidates.
++- 2026-08-06 — The only justified adapter changes are authoritative mode
++  exposure and generation-safe composition of renderer-owned absence nodes.
++- 2026-08-06 — Pages run `31114653517` for settlement commit
++  `b3ae6bddaab631661d342380f61365d851be160c` is recorded as another 600-second
++  deployment-polling failure after repository-owned build and upload passed;
++  successful deployed correction parity remains run `31109086658`.
++- Next exact action: implement the scoped stylesheet and stable HTML hooks,
++  make the bounded adapter composition changes, update task-owned tests, and
++  extend the existing visual-reset harness into paired prototype/production
++  evidence. Public navigation and public cutover remain unauthorized.
++
++## Production integration PI-B–PI-D — local candidate checkpoint
++
++### Implemented production presentation seam
++
++The new `src/web/browser/liturgy/reader-instrument.css` is loaded last only by
++the existing unlinked, noindex `day-reader.html` and `propers-reader.html`
++candidates. It carries the accepted Instrument masthead, typography, Read
++axis, Missal cue grid, compact warnings and absence notation, external ruled
++rail, opaque square intermediate/mobile dock, extreme-reflow 2×2 dock, open
++surfaces, focus treatment, forced-colors behavior, reduced-motion behavior,
++and print preservation. The existing public `day.html` and `index.html` do not
++load it and have not changed.
++
++Both candidate pages now expose the accepted masthead and stable action-label
++hooks with project-owned inline SVG icons. Day exposes the already-committed
++mode as `data-reader-mode`; Day and Propers relocate the existing source-owned
++uncompiled message into the identity coverage notice; and Day groups direct
++Ordinary absence notices without changing their text, semantic event,
++location, or renderer ownership. No state, adapter, renderer, seating, shared
++shell controller, production data, or public route was changed.
++
++Propers Browse deliberately retains the existing production selector rather
++than importing the accepted prototype's title-filter control. Search remains
++out of scope. The Date/Browse entrance distinction, all four one-step actions,
++and the common Instrument composition remain visually explicit.
++
++### Prototype-to-production measurements
++
++The final Chromium run captured 23 accepted-prototype/production pairs at the
++same state, viewport, scroll, and open surface, plus the complete existing
++direction matrix: 100 captures in all, with 19/19 governed assertions.
++
++| Governing state | Accepted prototype | Production candidate | Delta/disposition |
++| --- | --- | --- | --- |
++| Day Read 768×1024 | 636 px, about 75 characters; first text 267.39 px | 636 px, about 75 characters; first text 268.03 px | measure exact; first text +0.64 px |
++| Day Missal 393×852 | 351 px text plane; first principal text 324.09 px | 351 px text plane; first principal text 320.66 px | width exact; production 3.43 px earlier |
++| 200% text at 393×852 | four 178.91×104 px targets; all labels one line | same four target boxes; all labels one line | exact shell geometry; no mid-word breaks |
++| Intermediate 1024 dock | square, opaque, shadowless, edge-bound | same computed shell properties and reserved block end | pass |
++
++The harness also records zero required horizontal overflow, unnamed
++interactive controls, duplicate IDs, console errors, failed requests, or HTTP
++errors. Final source hashes are: accepted oracle CSS
++`850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48`;
++production Instrument CSS
++`64a566758f20df72f53f0f1dfc90ba82fe4ad28cf0ed55a346066f6c1ed5ee02`;
++Day HTML `5bc859042e907565afb304beaf0d5ae099c571933c474760c77730a9245531b9`;
++Day JavaScript `405069b81214d3598d568433b68440ac3433d7ceef09d64a05506b907ebc8320`;
++Propers HTML `9d30a46afc8d890e95a3e1dd8aab04a164eea906b0b88f520f2c70e878b9560b`;
++and Propers JavaScript
++`135f1864bb227ab35058a3fad614d9c7855d1c78aff048dae4bdae3fc69f4ad0`.
++
++### Full-size visual self-review
++
++Every one of the 23 production originals was inspected at original pixels,
++and the paired contact sheet was inspected as a complete system.
++
++- Read at 1440, 1024, 768, and 393 keeps one deliberate axis. The 1024 dock is
++  edge-owned and text ends above it; the portrait measure is the accepted 636
++  pixels; mobile does not become a different composition.
++- Missal at 1440, 1024, 393, and 320 begins with real ritual text promptly,
++  retains the wide cue grid and coherent mobile stacking, and preserves the
++  deliberate narrow division-title wrap. Deep scroll retains the ruled rail
++  and subordinate provenance.
++- Roman partial coverage has one compact identity statement before held
++  Ordinary text. Postconciliar partial-English coverage exposes held Propers
++  before restrained grouped absences at desktop and mobile.
++- Propers Read shares the same masthead, measure, typography, shell, and
++  surfaces. Propers Browse remains visibly the distinct production entrance;
++  its form is the disclosed out-of-scope search difference, not an accidental
++  parity gap.
++- Date, Contents, Mode, and Details surfaces retain coherent geometry,
++  backdrop, focus entry, and reading context. The 200% state uses whole labels
++  in a 2×2 dock; forced colors remains legible; keyboard focus is explicit;
++  reduced motion changes no content or control reachability.
++
++No visual, behavioral, accessibility, or isolation blocker was found in local
++self-review. This is not independent acceptance.
++
++### Local validation before checkpoint commit
++
++- Focused Python suite: 142/142 passed after the historic prototype-isolation
++  guard was narrowed to exclude exactly the newly authorized
++  `reader-instrument.css` candidate seam; frozen public/shared files remain
++  byte-checked.
++- Day browser harness: 33/34, with only the unchanged date-dependent
++  first-visit expectation; every task-owned assertion passed.
++- Propers browser harness: 27/27 passed.
++- Shared-shell browser harness: 18/18 passed.
++- Governed visual harness: 19/19 assertions, 100 captures, zero browser or
++  accessibility failures.
++- Node syntax checks passed for Day, Propers, the accepted visual oracle, and
++  the extended visual harness.
++- `tools/tpt public-alpha check`, locked build, and
++  `verify --deployment-target github-pages` passed. Release bindings are exact,
++  including the newly adopted Instrument CSS source and updated Day/Propers
++  hashes.
++- `tools/tpt check-promised-deliverables`, `tools/tpt --check`, and
++  `git diff --check` pass. `tmt` is unavailable both on `PATH` and at the
++  documented personal fallback, so the requested repeatable-tool note could
++  not be recorded.
++
++### PI-D checkpoint status
++
++- Implementation and local parity are complete; no task-owned check is
++  presently failing.
++- Exact checkpoint commit, push, Pages run, deployed source parity, handoff
++  manifest, and ZIP verification remain to be appended after those events.
++- Independent production-integration review remains the gate. Public
++  navigation and public cutover remain unauthorized.
++
++## Production integration implementation checkpoint — push and clean gate
++
++- 2026-08-06 — Commit `3cd46072b164ff39b00639bb67ad6b8943a255dc`
++  records the candidate-scoped Instrument CSS, Day and Propers presentation
++  hooks, bounded generation-safe absence composition, 19-assertion/100-capture
++  parity harness, release bindings, tests, roadmap, work register, promised
++  deliverable, and this continuity record. It was pushed normally to
++  `origin/main`; no force, amend, rebase, remote change, public navigation, or
++  cutover occurred.
++- The exact clean-tree `make check` invocation passed all preceding governed
++  checks and stopped at `check-examples` with exit 2: 200 captured examples,
++  188 replayed, 23 divergent, 35 known stale, 6 never run, 6 unrunnable here,
++  and 2 declared volatile lines. This is the repository's unrelated transcript
++  divergence and is not green. No example was recaptured or blessed.
++- The final local public-alpha policy/build/Pages-target verify and the private
++  preview build/verify pass with the locked Markdown environment. Release
++  bindings are exact, including Instrument CSS SHA-256
++  `64a566758f20df72f53f0f1dfc90ba82fe4ad28cf0ed55a346066f6c1ed5ee02`.
++- As of 2026-08-06T18:04:26Z, `origin/main` resolves to the implementation
++  commit, but GitHub's Actions API returns no run for that head SHA. This is a
++  pending workflow-event observation, not a successful run and not a failed
++  run. No manual workflow was dispatched because the task authorizes only the
++  normal push-triggered deployment attempt.
++- Next exact action: commit this truthful post-push record, push it as the
++  continuity checkpoint, observe the resulting automatic Pages run, verify
++  the unlinked Day and Propers candidates, the noindex visual oracle, and
++  deployed source hashes, then finalize the immutable integration-review
++  handoff.
++
++## Production integration deployment observation and handoff boundary
++
++- 2026-08-06 — Continuity checkpoint
++  `e35f81c1e67c744aead0e4eaa73e079516751e66` was pushed normally to
++  `origin/main`. As of 2026-08-06T18:08:35Z, the GitHub Actions API exposed no
++  run for either that head or implementation head
++  `3cd46072b164ff39b00639bb67ad6b8943a255dc`.
++- Direct deployed Day and Propers candidate routes return HTTP 200 but serve
++  the prior artifact: their HTML SHA-256 values differ from the integrated
++  source, and deployed Day does not reference `reader-instrument.css`.
++  Therefore production deployed parity is open. The routes retain their
++  pre-existing public-alpha robots policy; the separate accepted visual-reset
++  oracle remains unlinked and noindex.
++- No manual workflow was dispatched. The normal push-triggered workflow is the
++  only deployment authority granted by this task, so the absent workflow event
++  is an external-state blocker rather than permission to invoke another
++  deployment mechanism.
++- The new local review package is
++  `build/agent-handoffs/20260806T171432Z-liturgy-reader-instrument-production-integration/`
++  with a same-name ZIP. The original correction task's force-add exception is
++  path- and slug-bounded and does not authorize tracking this new production-
++  integration handoff. The package is therefore assembled and verified as an
++  ignored local artifact; the already-tracked canonical continuity remains the
++  durable pushed record.
++
++## Message to the next independent production-integration reviewer
++
++The production Day and Propers candidates now visibly use the accepted
++Liturgical Instrument masthead, reading axis, Missal cue grid, warning
++hierarchy, rail/dock, 200% reflow, surfaces, and accessibility finish. Begin
++with the labeled `evidence/prototype-production-parity-contact-sheet.png`, then
++inspect all 23 production originals at full size beside the accepted originals.
++Look first at Day Read 768×1024, Day Missal 393×852, Day partial 393×852,
++postconciliar Missal at both sizes, Propers Browse 393×852, the 1024 Date
++surface, and the 200%/forced-colors/focus states.
++
++One difference is deliberate and provisional only in the sense of scope:
++Propers keeps its canonical production Browse selector; the prototype title
++filter is search and was not integrated. No accepted visual or behavioral seam
++is otherwise reopened. Local parity and task-owned gates pass, but deployed
++parity is not established because GitHub did not materialize either automatic
++Pages run and the deployed routes still serve the prior artifact.
++
++The requested decisions are exact: does production match the accepted
++Instrument across the matrix; is retaining production Browse the correct
++out-of-scope-search disposition; did the bounded presentation composition
++preserve every frozen behavior; and, only after a successful Pages run and
++direct asset parity exist, is production integration accepted? Public
++navigation and public cutover remain unauthorized regardless of the review
++disposition.
++
++## Delayed Pages run observation
++
++- GitHub materialized automatic Pages run `31125352169` for implementation
++  commit `3cd46072b164ff39b00639bb67ad6b8943a255dc` at
++  2026-08-06T18:11:51Z, after the first immutable local handoff had been sealed
++  at its truthful no-run cutoff.
++- Codex monitored the run continuously through 2026-08-06T18:27:03Z. The
++  workflow and its `deploy` job remained `queued`; `startedAt` was recorded as
++  2026-08-06T18:11:52Z by the API, but no runner step, log, build, upload, or
++  deployment action began, `updatedAt` remained 2026-08-06T18:11:54Z, and no
++  conclusion existed.
++- This is a queued external-state result, neither success nor failure. It does
++  not establish deployed parity and does not supersede the last successful
++  accepted-correction run `31109086658`.
++- Because the earlier integration handoff is immutable, the latest handoff is
++  a fresh successor at
++  `build/agent-handoffs/20260806T182703Z-liturgy-reader-instrument-production-integration/`
++  and its same-name ZIP. It contains this exact observation and points the next
++  reviewer/agent to run `31125352169` first.
++
++## Successful production-integration deployment and parity
++
++- 2026-08-06 — Automatic Pages run `31125352169` for implementation commit
++  `3cd46072b164ff39b00639bb67ad6b8943a255dc` ultimately completed with failure
++  after its deploy job was cancelled before any repository step ran. Follow-up
++  run `31125595375` for continuity commit
++  `e35f81c1e67c744aead0e4eaa73e079516751e66` completed cancelled. These runs
++  are not deployment successes and are retained here as exact chronology.
++- Automatic Pages run `31125898045` succeeded for exact intended production
++  commit `5444d89fc9b379a1babef5b2220323fe1508b2b3`. The workflow was created at
++  2026-08-06T18:26:07Z, its deploy job ran from 18:28:11Z through 18:29:54Z,
++  and the run completed at 18:29:55Z. Checkout, Python setup, dependency
++  installation, deployable-source verification, site build, GitHub Pages
++  verification, Pages configuration, artifact upload, and deployment all
++  passed.
++- Direct verification after that run returned HTTP 200 for the Day production
++  reader candidate, Propers production reader candidate, and both accepted
++  visual-reset oracle routes. Day and Propers load `reader-instrument.css`.
++  The oracle routes retain `noindex, nofollow, noarchive, nosnippet,
++  noimageindex`; the production candidates retain the existing public-alpha
++  robots policy and remain absent from public navigation.
++- Deployed/source SHA-256 parity is exact for Instrument CSS
++  `64a566758f20df72f53f0f1dfc90ba82fe4ad28cf0ed55a346066f6c1ed5ee02`,
++  Day JavaScript
++  `405069b81214d3598d568433b68440ac3433d7ceef09d64a05506b907ebc8320`,
++  Propers JavaScript
++  `135f1864bb227ab35058a3fad614d9c7855d1c78aff048dae4bdae3fc69f4ad0`,
++  accepted-oracle CSS
++  `850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48`,
++  and accepted-oracle JavaScript
++  `eb1c1d06274dfaf99165a72735670c372c524f95363f5e104669b72f7d01ba0d`.
++- This supersedes the deployment-open qualification in the earlier reviewer
++  message without rewriting that append-preserved history. The new immutable
++  deployed-parity successor is
++  `build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/`
++  and its same-name ZIP. The original correction task did not authorize
++  force-adding a new production-integration handoff slug, so this package is a
++  verified ignored local artifact; this canonical continuity file remains the
++  pushed durable record.
++
++## Superseding message to the next independent production-integration reviewer
++
++Production integration and deployed/source parity are complete. Begin with
++`evidence/prototype-production-parity-contact-sheet.png`, then inspect the 23
++production originals at full size beside their accepted prototype counterparts.
++Look first at Day Read 768×1024, Day Missal 393×852, Roman partial 393×852,
++postconciliar Missal at desktop and mobile, Propers Browse 393×852, Date open
++at 1024×768, and the 200%, forced-colors, and focus states.
++
++The exact decisions requested are: does the integrated production presentation
++match the accepted Instrument across the governing matrix; is retaining the
++canonical production Browse selector the correct disposition because the
++prototype title filter is out-of-scope search; did the bounded CSS and
++generation-safe composition preserve every frozen behavioral seam; and is this
++production integration accepted? No known implementation, evidence,
++deployment, asset-parity, accessibility, or isolation blocker remains. The
++governed full gate is still honestly non-green only at unrelated stored example
++transcript divergence. Public navigation and public cutover remain unauthorized
++regardless of the integration-review disposition.
++
++## Successful deployment record checkpoint
++
++- 2026-08-06 — Commit `0d683db725219e258f3444720b33908d4cf01e63`
++  records successful Pages run `31125898045`, the direct deployed/source hash
++  verification, the completed deployment-evidence requirement, and the exact
++  remaining independent-review gate. It was pushed normally to `origin/main`.
++- The next exact action is to seal the fresh immutable deployed-parity handoff,
++  verify its byte-identical continuity copy, manifest, ZIP, and one-top-level
++  archive shape, and stop for independent production-integration review.
++- This final continuity append is a record-only handoff boundary. It changes no
++  candidate code, accepted visual detail, behavioral seam, public route, or
++  navigation.
++
++## Deployed hash transcription correction
++
++- 2026-08-06 — A final direct HTTP verification found that the accepted-oracle
++  JavaScript hash written in **Successful production-integration deployment and
++  parity** above was transcribed incorrectly. The deployed file and source are
++  byte-identical at the correct SHA-256
++  `eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679`.
++  This appended correction supersedes only the earlier mistyped
++  `eb1c1d06274dfaf99165a72735670c372c524f95363f5e104669b72f7d01ba0d`
++  statement; it does not change the parity disposition, code, evidence, or
++  review gate.
+diff --git a/guidance/liturgy-browser-roadmap.md b/guidance/liturgy-browser-roadmap.md
+index 30b9504cd57261c990a14f43bc6f117af3fed88c..e16a791ce7dd2dca248483d277a18ab459686911 100644
+--- a/guidance/liturgy-browser-roadmap.md
++++ b/guidance/liturgy-browser-roadmap.md
+@@ -638,34 +638,60 @@ The M0 documentation and correction gate passed external review on 2026-08-03.
+ The accepted implementation boundary now starts these independent actions in
+ parallel:
+ 
+-Independent visual review selected **Liturgical Instrument** as the production
+-visual foundation. Quiet Folio and Contemporary Reader remain frozen comparison
+-references rather than ingredients for a compromise or a new direction. The
+-selection does not revoke M1–M3 or W3 semantic, state, renderer, seating,
+-one-action access, focus, reflow, fail-closed, source-honesty, or
+-production-isolation acceptance, and it does not authorize public cutover.
+-
+-The selected foundation completed the first evidence phase of its bounded
+-visual-correction pass. Work units A–C supply an integrated control shell,
+-earlier Missal text, one controlled Read axis, subordinate partial-coverage
+-treatment, an authored masthead, and finished mobile ritual spacing and
+-division wrapping. Work unit D supplies full-matrix inspection, governed-check
+-dispositions, successful Pages verification, and the immutable handoff at
+-`build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/`.
+-Independent review round 1 confirmed six original findings and retained only
+-the floating 1024-pixel shell plus its related 200%-text label fragmentation.
+-The narrow follow-up now transitions directly from the accepted 72rem rail to
+-an opaque square edge dock, with a root-font-aware labeled 2×2 extreme-reflow
+-state. Its 54-capture run passes 15/15 assertions; a new immutable handoff and
+-independent re-review remain. Production-integration planning may proceed, but
+-execution remains deferred until that review passes. The canonical correction
+-plan and reviewer mailbox are tracked at
++Independent visual review selected and Round 1 accepted **Liturgical
++Instrument** as the production visual foundation. Quiet Folio and Contemporary
++Reader remain frozen comparison references rather than ingredients for a
++compromise or a new direction. The accepted foundation resolves all seven
++Round 0 findings, including continuous rail-to-dock integration and whole
++labeled controls at 200% text. Successful deployed correction parity is owned
++by commit `c388ab42dfc4f5c7d49abc71596d6bb511af5742` and Pages run
++`31109086658`; later acceptance-record runs stopped at GitHub deployment
++polling and are not represented as successful.
++
++Production-integration execution is authorized through PI-A–PI-D, with
++independent integration review as the next gate. PI-A selected a new
++last-loaded, candidate-scoped `reader-instrument.css` as the smallest shared
++production presentation seam. This avoids changing public-loaded
++`day-missal.css` and retains the isolated accepted prototype as the comparison
++oracle. PI-B and PI-C now integrate the shared shell, Day Read/Missal, and
++Propers Read/Browse presentation. PI-D's local parity matrix passes 19/19
++governed assertions over 100 captures, including 23 exact
++prototype/production pairs; checkpoint push, Pages/deployed-asset
++qualification, immutable handoff assembly, and independent integration review
++remain. M1–M3 and W3
++semantic, state, renderer, seating, one-action access, focus, reflow,
++fail-closed, race, source-honesty, and production-isolation acceptance remain
++binding. Public navigation and cutover remain unauthorized. The canonical
++review mailbox and execution record remain
+ `build/agent-continuity/liturgy-reader-visual-plan.md`.
+ 
++The first production-integration implementation checkpoint is pushed at
++`3cd46072b164ff39b00639bb67ad6b8943a255dc`. Local focused, browser, visual,
++release, and public-alpha gates pass; the clean full gate remains stopped only
++by the unrelated governed example replay (23 divergent and 35 known-stale
++captures among 200). Its automatic Pages workflow had not yet materialized in
++the Actions API at 2026-08-06T18:04:26Z, so no deployment result is claimed.
++The following continuity push
++`e35f81c1e67c744aead0e4eaa73e079516751e66` likewise had no Actions record at
++2026-08-06T18:08:35Z. Direct deployed candidates still serve the prior
++pre-integration artifact, so production deployed parity remains an explicit
++external-state blocker before integration acceptance.
++Run `31125352169` for the implementation head later materialized but remained
++queued without a runner or repository step through 2026-08-06T18:27:03Z, more
++than 15 minutes after creation. It is not a deployment success or failure.
++The following automatic run `31125898045` succeeded for exact intended
++production commit `5444d89fc9b379a1babef5b2220323fe1508b2b3` at
++2026-08-06T18:29:55Z. Direct Day/Propers routes are HTTP 200 and load the
++deployed Instrument layer; deployed Instrument CSS and candidate JavaScript
++byte-match source, while the accepted oracle remains noindex and byte-matched.
++Independent production-integration review is now the only integration gate.
++Public navigation and cutover remain unauthorized.
++
+ 1. M1's W1/W9 shared semantic fixture and URL-state contract is accepted at
+    correction `c6b8070ae76e75153448895a19a0b916c18806ea` plus final micro-fix
+-   `c1a590f5854215d68d167d9040e188f41762663e`. Any production integration or
+-   further W1/W9 slice requires separate scope.
++   `c1a590f5854215d68d167d9040e188f41762663e`. The Round 1 acceptance supplies
++   the separate bounded production-integration scope; any further W1/W9 slice
++   still requires separate authority.
+ 2. W2 and M2 are **accepted** at corrected implementation
+    `75234e72c402f0b25a681fbe074da70d895f7274`. The quiet persistent shell is
+    the direction for Date or Browse, Contents, Mode, and Details. Complete Read
+diff --git a/promised-deliverables.toml b/promised-deliverables.toml
+index 0d3313990db3f1876761a1dfec849975a7da3e5a..035fa9f024b52f77b6f170048981f0c2792ea7fa 100644
+--- a/promised-deliverables.toml
++++ b/promised-deliverables.toml
+@@ -1,5 +1,70 @@
+ schema_version = 1
+ 
++[[deliverables]]
++id = "liturgy-reader-instrument-production-integration-2026-08-06"
++owner = "src/web/browser/liturgy/reader-instrument.css"
++promise = "Move the independently accepted Liturgical Instrument visual system into the existing unlinked, noindex Day and Propers production-reader candidates through the smallest shared presentation seam, prove prototype-to-production parity, and preserve accepted M1–M3/W3 behavior without changing public navigation or beginning public cutover."
++state = "candidate"
++
++  [[deliverables.requirements]]
++  id = "accepted-foundation-and-scope"
++  criterion = "Liturgical Instrument remains the accepted production visual foundation; its accepted visual decisions and M1–M3/W3 behavioral seams remain frozen, and production integration does not authorize public navigation or cutover."
++  status = "pass"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++    "guidance/liturgy-browser-roadmap.md",
++    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/HANDOFF.md",
++  ]
++
++  [[deliverables.requirements]]
++  id = "hook-inventory-and-smallest-seam"
++  criterion = "A durable prototype-to-production hook inventory identifies the smallest candidate-scoped shared presentation seam, records every necessary HTML or adapter hook, and proves why public-loaded styles and accepted controller/state owners remain unchanged."
++  status = "pass"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++    "src/web/browser/liturgy/reader-instrument.css",
++  ]
++
++  [[deliverables.requirements]]
++  id = "production-presentation-parity"
++  criterion = "The production Day Read/Missal and Propers Read/Browse candidates use the accepted masthead, reading plane, ritual grid, warning hierarchy, shell, surfaces, responsive dock, and accessibility finish at the governing states and viewports."
++  status = "pass"
++  evidence = [
++    "src/web/browser/liturgy/reader-instrument.css",
++    "src/web/browser/liturgy/day-reader.html",
++    "src/web/browser/liturgy/propers-reader.html",
++    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
++  ]
++
++  [[deliverables.requirements]]
++  id = "frozen-behavior-and-public-isolation"
++  criterion = "State adapters, production renderers, Ordinary seating, fail-closed behavior, semantic-location and focus restoration, race ownership, four one-step actions, public routes/navigation, and the isolated noindex comparison prototype remain intact."
++  status = "pass"
++  evidence = [
++    "src/web/browser/liturgy/day-reader.js",
++    "src/web/browser/liturgy/propers-reader.js",
++    "tools/tests/test_liturgy_reader_shell.py",
++    "tools/tests/test_liturgy_reader_visual_reset.py",
++  ]
++
++  [[deliverables.requirements]]
++  id = "complete-parity-evidence-and-deployment"
++  criterion = "Production/prototype pairs, measurements, browser results, focused and governed checks, locked public-alpha verification, exact Pages disposition, and direct deployed/source asset parity are complete and honestly recorded."
++  status = "pass"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
++    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/HANDOFF.md",
++  ]
++
++  [[deliverables.requirements]]
++  id = "independent-integration-review"
++  criterion = "Independent integration review resolves every blocker before any separately authorized public navigation change or public cutover."
++  status = "open"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++  ]
++
+ [[deliverables]]
+ id = "liturgy-reader-instrument-correction-2026-08-05"
+ owner = "src/web/browser/liturgy/reader-visual-reset-day.html"
+diff --git a/release/public-alpha.json b/release/public-alpha.json
+index 6d7bb6c46db7ac376067593a5ecf757d613ff311..9dc718e6c4096e6b8ae5776f14082257cec09827 100644
+--- a/release/public-alpha.json
++++ b/release/public-alpha.json
+@@ -19,7 +19,7 @@
+         "worldwide"
+       ],
+       "rights_record": "release/rights/public-alpha-2026-07-15.md",
+-      "rights_record_sha256": "78338a28eccb6caafd451cd4c5f2099279a9a637f0dc19c4abd6b3b80e2b58d7",
++      "rights_record_sha256": "48a7f3410408afbedf1a1fd6757b7918918d021b26901f269f6988b24ec39153",
+       "site_sources": {
+         "ABOUT.md": "cfd87a1a388836f33b7b5ddc4a68274c01842b786092739def117b632829e5cc",
+         "CONTRIBUTING.md": "c889717323509dc634f9caa4d7c9e4423a18a63895abc9dbb5ee85e1dbccc0ab",
+@@ -250,8 +250,8 @@
+         "src/web/browser/liturgy/assembly-model.js": "de239c0c7efddbfbaeba2d3ee5a9439630abc8965e61765dfd7205e4b9181789",
+         "src/web/browser/liturgy/day-missal.css": "a36a5ff9a57331e9cec5d82487b0f74d3fdf18d805a9a412a2b568e81960ec17",
+         "src/web/browser/liturgy/day-reader.css": "016e0bd460284637414e2fa134a189d9cce35c2fa7eeeaeca704103d7e5b8df6",
+-        "src/web/browser/liturgy/day-reader.html": "1cf17d93283767b4294fe9a0a7864f3b3b1c16eb85511ec6de09afe904d7c6e1",
+-        "src/web/browser/liturgy/day-reader.js": "79385701b98fc3b2dcd2456929ffb14ef42b97aae45c554dbbd03e16abcfccf1",
++        "src/web/browser/liturgy/day-reader.html": "5bc859042e907565afb304beaf0d5ae099c571933c474760c77730a9245531b9",
++        "src/web/browser/liturgy/day-reader.js": "405069b81214d3598d568433b68440ac3433d7ceef09d64a05506b907ebc8320",
+         "src/web/browser/liturgy/day.css": "93ef9f44ee5d6488cb95a1587e856bd75488ea6b34b6ff723a01a437a75b6ed1",
+         "src/web/browser/liturgy/day.html": "bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868",
+         "src/web/browser/liturgy/day.js": "0bc1714bca04c65ed45de00f69c08d7536b3e72612bf6cb15301580d4f26daae",
+@@ -261,8 +261,9 @@
+         "src/web/browser/liturgy/ordinary-seating.js": "67917f4888764f1aac097d291df5e655fb485d89219fda56ffba9a25aee993ba",
+         "src/web/browser/liturgy/proper-placement-notes.js": "dd02a28ab4a922adbac69b26e53566e0dde23610f09359cd4377893b37f5fe6b",
+         "src/web/browser/liturgy/propers-reader.css": "93651fe00f97beaa55c581bb5066da0467a0245fd06bb02f7a5988b059e92ae9",
+-        "src/web/browser/liturgy/propers-reader.html": "59894171fbdbf8f500475cda0d8526fb5299984ef7ef9fe26a8d817f988bc0a3",
+-        "src/web/browser/liturgy/propers-reader.js": "f8e5d60924aa3a6b2314855a38d2b645d5e4a0e30737f9cbd65e151a8c279a80",
++        "src/web/browser/liturgy/propers-reader.html": "9d30a46afc8d890e95a3e1dd8aab04a164eea906b0b88f520f2c70e878b9560b",
++        "src/web/browser/liturgy/propers-reader.js": "135f1864bb227ab35058a3fad614d9c7855d1c78aff048dae4bdae3fc69f4ad0",
++        "src/web/browser/liturgy/reader-instrument.css": "64a566758f20df72f53f0f1dfc90ba82fe4ad28cf0ed55a346066f6c1ed5ee02",
+         "src/web/browser/liturgy/reader-shell.css": "e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a",
+         "src/web/browser/liturgy/reader-shell.js": "e17ccd767c016facc3d03820f5c0c1e71ab166f5a9c7a86de95245e0b87966a9",
+         "src/web/browser/liturgy/reader-state-adapters.js": "ec655b52e850152a1a3034b09fbc36b828000a5edc9d01b7b8d98dfaeea96bcb",
+diff --git a/release/rights/public-alpha-2026-07-15.md b/release/rights/public-alpha-2026-07-15.md
+index 1fd39c7111b2e32a647a0489c9fde3bfb09ea6f9..999fcee34cc8d38c1a70f8fb13ec6c6bd9836ec8 100644
+--- a/release/rights/public-alpha-2026-07-15.md
++++ b/release/rights/public-alpha-2026-07-15.md
+@@ -1931,8 +1931,8 @@ release attachment, announcement, or promotion.
+ | `src/web/browser/liturgy/assembly-model.js` | `de239c0c7efddbfbaeba2d3ee5a9439630abc8965e61765dfd7205e4b9181789` |
+ | `src/web/browser/liturgy/day-missal.css` | `a36a5ff9a57331e9cec5d82487b0f74d3fdf18d805a9a412a2b568e81960ec17` |
+ | `src/web/browser/liturgy/day-reader.css` | `016e0bd460284637414e2fa134a189d9cce35c2fa7eeeaeca704103d7e5b8df6` |
+-| `src/web/browser/liturgy/day-reader.html` | `1cf17d93283767b4294fe9a0a7864f3b3b1c16eb85511ec6de09afe904d7c6e1` |
+-| `src/web/browser/liturgy/day-reader.js` | `79385701b98fc3b2dcd2456929ffb14ef42b97aae45c554dbbd03e16abcfccf1` |
++| `src/web/browser/liturgy/day-reader.html` | `5bc859042e907565afb304beaf0d5ae099c571933c474760c77730a9245531b9` |
++| `src/web/browser/liturgy/day-reader.js` | `405069b81214d3598d568433b68440ac3433d7ceef09d64a05506b907ebc8320` |
+ | `src/web/browser/liturgy/day.css` | `93ef9f44ee5d6488cb95a1587e856bd75488ea6b34b6ff723a01a437a75b6ed1` |
+ | `src/web/browser/liturgy/day.html` | `bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868` |
+ | `src/web/browser/liturgy/day.js` | `0bc1714bca04c65ed45de00f69c08d7536b3e72612bf6cb15301580d4f26daae` |
+@@ -1942,8 +1942,9 @@ release attachment, announcement, or promotion.
+ | `src/web/browser/liturgy/ordinary-seating.js` | `67917f4888764f1aac097d291df5e655fb485d89219fda56ffba9a25aee993ba` |
+ | `src/web/browser/liturgy/proper-placement-notes.js` | `dd02a28ab4a922adbac69b26e53566e0dde23610f09359cd4377893b37f5fe6b` |
+ | `src/web/browser/liturgy/propers-reader.css` | `93651fe00f97beaa55c581bb5066da0467a0245fd06bb02f7a5988b059e92ae9` |
+-| `src/web/browser/liturgy/propers-reader.html` | `59894171fbdbf8f500475cda0d8526fb5299984ef7ef9fe26a8d817f988bc0a3` |
+-| `src/web/browser/liturgy/propers-reader.js` | `f8e5d60924aa3a6b2314855a38d2b645d5e4a0e30737f9cbd65e151a8c279a80` |
++| `src/web/browser/liturgy/propers-reader.html` | `9d30a46afc8d890e95a3e1dd8aab04a164eea906b0b88f520f2c70e878b9560b` |
++| `src/web/browser/liturgy/propers-reader.js` | `135f1864bb227ab35058a3fad614d9c7855d1c78aff048dae4bdae3fc69f4ad0` |
++| `src/web/browser/liturgy/reader-instrument.css` | `64a566758f20df72f53f0f1dfc90ba82fe4ad28cf0ed55a346066f6c1ed5ee02` |
+ | `src/web/browser/liturgy/reader-shell.css` | `e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a` |
+ | `src/web/browser/liturgy/reader-shell.js` | `e17ccd767c016facc3d03820f5c0c1e71ab166f5a9c7a86de95245e0b87966a9` |
+ | `src/web/browser/liturgy/reader-state-adapters.js` | `ec655b52e850152a1a3034b09fbc36b828000a5edc9d01b7b8d98dfaeea96bcb` |
+diff --git a/src/web/browser/liturgy/day-reader.html b/src/web/browser/liturgy/day-reader.html
+index fdffe031cee550fd65be8b5cb5918b44794d2f2c..229bc178ec935968e11cae4b455827474e188a3e 100644
+--- a/src/web/browser/liturgy/day-reader.html
++++ b/src/web/browser/liturgy/day-reader.html
+@@ -10,6 +10,7 @@
+ <link rel="stylesheet" href="day-missal.css">
+ <link rel="stylesheet" href="reader-shell.css">
+ <link rel="stylesheet" href="day-reader.css">
++<link rel="stylesheet" href="reader-instrument.css">
+ </head>
+ <body class="day-reader-candidate page-browser">
+ <a class="skip-link" href="#reader-document">Skip to the Mass</a>
+@@ -20,7 +21,16 @@
+   <span>Day Read and Missal integration for review; the live Day page is unchanged.</span>
+ </p>
+ 
+-<div class="reader-shell" data-reader-shell data-entrance="day">
++<div class="reader-shell reader-instrument" data-reader-shell data-entrance="day" data-reader-mode="read">
++  <div class="reader-masthead" aria-label="Triptych reader">
++    <a class="reader-brand" href="../index.html" aria-label="Triptych home">
++      <span class="reader-brand-mark" aria-hidden="true"></span>
++      <span>Triptych</span>
++    </a>
++    <div class="reader-place" aria-hidden="true">
++      <span>Day</span><span class="place-separator">/</span><span data-instrument-mode>Read</span>
++    </div>
++  </div>
+   <header class="reader-identity" aria-labelledby="celebration-title">
+     <p class="reader-context">Day · Read</p>
+     <h1 id="celebration-title" class="celebration-title">Loading the Mass…</h1>
+@@ -36,24 +46,24 @@
+   <nav class="reader-actions" aria-label="Reader actions">
+     <button type="button" data-reader-action="date" aria-controls="date-surface"
+             aria-expanded="false">
+-      <span class="action-mark" aria-hidden="true">▣</span>
+-      <span>Date &amp; edition</span>
++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M7.5 3v4M16.5 3v4M3.5 9.5h17M8 13h.01M12 13h.01M16 13h.01M8 16.5h.01M12 16.5h.01"/></svg></span>
++      <span class="action-label">Date</span>
+     </button>
+     <button type="button" data-reader-action="contents" aria-controls="contents-surface"
+             aria-expanded="false">
+-      <span class="action-mark" aria-hidden="true">≡</span>
+-      <span>Contents</span>
++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></span>
++      <span class="action-label">Contents</span>
+     </button>
+     <button type="button" data-reader-action="mode" aria-controls="mode-surface"
+             aria-expanded="false">
+-      <span class="action-mark" aria-hidden="true">R</span>
+-      <span>Mode</span>
++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
++      <span class="action-label">Mode</span>
+       <span class="action-state" aria-live="polite">Read</span>
+     </button>
+     <button type="button" data-reader-action="details" aria-controls="details-surface"
+             aria-expanded="false">
+-      <span class="action-mark" aria-hidden="true">i</span>
+-      <span>Details</span>
++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 10.5V17M12 7.2h.01"/></svg></span>
++      <span class="action-label">Details</span>
+     </button>
+   </nav>
+ 
+diff --git a/src/web/browser/liturgy/day-reader.js b/src/web/browser/liturgy/day-reader.js
+index 66389dfeecdb629fc8ff3736014a26641dfd66ab..76d7a9332957c4c37046d40fd11fa2a670f06247 100644
+--- a/src/web/browser/liturgy/day-reader.js
++++ b/src/web/browser/liturgy/day-reader.js
+@@ -59,6 +59,7 @@
+   const dateStatus = dateSurface.querySelector('.surface-note');
+   const dateStepButtons = Array.from(dateSurface.querySelectorAll('.date-steps button'));
+   const contextLine = document.querySelector('.reader-context');
++  const instrumentMode = document.querySelector('[data-instrument-mode]');
+   const modeAction = document.querySelector('[data-reader-action="mode"]');
+   const modeState = modeAction.querySelector('.action-state');
+   const modeButtons = Array.from(document.querySelectorAll('[data-mode]'));
+@@ -617,7 +618,9 @@
+     window.dayReaderDebug.mode = mode;
+     window.dayReaderDebug.outcome = runtime.outcome;
+     window.dayReaderDebug.outcomeClass = held.outcomeClass || runtime.outcome;
++    shellRoot.dataset.readerMode = mode || 'read';
+     contextLine.textContent = 'Day · ' + modeLabel(mode);
++    if (instrumentMode) instrumentMode.textContent = modeLabel(mode);
+     modeState.textContent = mode ? modeLabel(mode) : 'Unavailable';
+     modeButtons.forEach(function (button) {
+       button.setAttribute('aria-checked', String(Boolean(mode) && button.dataset.mode === mode));
+@@ -665,7 +668,7 @@
+     const documentFragment = document.createDocumentFragment();
+     const contents = [];
+ 
+-    if (T.massIsUncompiled(mass)) documentFragment.appendChild(T.uncompiledNote(mass));
++    const uncompiled = T.massIsUncompiled(mass) ? T.uncompiledNote(mass) : null;
+     if (mode === 'missal') {
+       renderMissalDocument(
+         documentFragment, contents, result, mass, structure, bible,
+@@ -714,8 +717,13 @@
+       metadata: metadata.filter(Boolean).join(' · ')
+     });
+     const notice = coverageMessage(result);
+-    coverageNotice.textContent = notice || '';
+-    coverageNotice.hidden = !notice;
++    if (uncompiled) {
++      coverageNotice.replaceChildren(...uncompiled.childNodes);
++      coverageNotice.hidden = false;
++    } else {
++      coverageNotice.textContent = notice || '';
++      coverageNotice.hidden = !notice;
++    }
+     return true;
+   }
+ 
+@@ -727,6 +735,17 @@
+     return node;
+   }
+ 
++  function composeInstrumentAbsences(node) {
++    const notices = Array.from(node.children).filter(function (child) {
++      return child.classList.contains('notice');
++    });
++    if (!notices.length) return node;
++    const group = T.el('div', 'ordinary-absence-inline');
++    node.insertBefore(group, notices[0]);
++    notices.forEach(function (notice) { group.appendChild(notice); });
++    return node;
++  }
++
+   function renderProperEvent(event, proper, index, structure, bible, fragments, state, heading) {
+     const section = T.renderProper(proper, bible, fragments, {
+       numbering: structure.numbering || null,
+@@ -785,7 +804,11 @@
+         const ordinal = ordinals.get(event.id);
+         const raw = elements.get(event.id.replace(/^ordinary-element\//, ''));
+         if (!raw) throw new Error('production Ordinary element is missing for ' + event.id);
+-        const node = semanticNode(OrdinaryRenderer.renderElement(raw, ordinary), event, ordinal);
++        const node = semanticNode(
++          composeInstrumentAbsences(OrdinaryRenderer.renderElement(raw, ordinary)),
++          event,
++          ordinal
++        );
+         if (!optionListed && group && raw.variant) {
+           optionListed = true;
+           const choice = renderOrdinaryChoice(group, selectedOption, event);
+diff --git a/src/web/browser/liturgy/propers-reader.html b/src/web/browser/liturgy/propers-reader.html
+index 5b3c86a853a6e3ad89123d37048c0ec8a0322559..98bae9e7197f83d5795410004aaeab6569d762d9 100644
+--- a/src/web/browser/liturgy/propers-reader.html
++++ b/src/web/browser/liturgy/propers-reader.html
+@@ -8,6 +8,7 @@
+ <link rel="stylesheet" href="liturgy.css">
+ <link rel="stylesheet" href="reader-shell.css">
+ <link rel="stylesheet" href="propers-reader.css">
++<link rel="stylesheet" href="reader-instrument.css">
+ </head>
+ <body class="propers-reader-candidate">
+ <a class="skip-link" href="#reader-document">Skip to the Propers</a>
+@@ -18,7 +19,14 @@
+   <span>Propers Read-mode integration for review; the live Propers page is unchanged.</span>
+ </p>
+ 
+-<div class="reader-shell" data-reader-shell data-entrance="propers">
++<div class="reader-shell reader-instrument" data-reader-shell data-entrance="propers" data-reader-mode="read">
++  <div class="reader-masthead" aria-label="Triptych reader">
++    <a class="reader-brand" href="../index.html" aria-label="Triptych home">
++      <span class="reader-brand-mark" aria-hidden="true"></span>
++      <span>Triptych</span>
++    </a>
++    <div class="reader-place" aria-hidden="true"><span>Propers</span><span class="place-separator">/</span><span>Read</span></div>
++  </div>
+   <header class="reader-identity" aria-labelledby="formulary-title">
+     <p class="reader-context">Propers · Read</p>
+     <h1 id="formulary-title" class="celebration-title">Choose a formulary</h1>
+@@ -34,24 +42,24 @@
+   <nav class="reader-actions" aria-label="Reader actions">
+     <button type="button" data-reader-action="browse" aria-controls="browse-surface"
+             aria-expanded="false">
+-      <span class="action-mark" aria-hidden="true">▣</span>
+-      <span>Browse &amp; edition</span>
++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M8 8.5h5M8 11.5h4"/></svg></span>
++      <span class="action-label">Browse</span>
+     </button>
+     <button type="button" data-reader-action="contents" aria-controls="contents-surface"
+             aria-expanded="false">
+-      <span class="action-mark" aria-hidden="true">≡</span>
+-      <span>Contents</span>
++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></span>
++      <span class="action-label">Contents</span>
+     </button>
+     <button type="button" data-reader-action="mode" aria-controls="mode-surface"
+             aria-expanded="false">
+-      <span class="action-mark" aria-hidden="true">R</span>
+-      <span>Mode</span>
++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
++      <span class="action-label">Mode</span>
+       <span class="action-state">Read</span>
+     </button>
+     <button type="button" data-reader-action="details" aria-controls="details-surface"
+             aria-expanded="false">
+-      <span class="action-mark" aria-hidden="true">i</span>
+-      <span>Details</span>
++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 10.5V17M12 7.2h.01"/></svg></span>
++      <span class="action-label">Details</span>
+     </button>
+   </nav>
+ 
+diff --git a/src/web/browser/liturgy/propers-reader.js b/src/web/browser/liturgy/propers-reader.js
+index 4b0943196c6f0d04ae72c9d7b033d48033085b0c..dc79c56ef8864d54ac9908e9f5db4390f114b8a7 100644
+--- a/src/web/browser/liturgy/propers-reader.js
++++ b/src/web/browser/liturgy/propers-reader.js
+@@ -599,7 +599,7 @@
+     if (serial !== runtime.serial) return false;
+     const fragment = document.createDocumentFragment();
+     const contents = [];
+-    if (T.massIsUncompiled(mass)) fragment.appendChild(T.uncompiledNote(mass));
++    const uncompiled = T.massIsUncompiled(mass) ? T.uncompiledNote(mass) : null;
+     (result.events || []).forEach(function (event) {
+       if (event.kind !== 'proper') return;
+       const index = sourceIndex(event);
+@@ -631,8 +631,13 @@
+       cycle
+     ].filter(Boolean).join(' · ');
+     const notice = coverageMessage(result);
+-    coverageNotice.textContent = notice || '';
+-    coverageNotice.hidden = !notice;
++    if (uncompiled) {
++      coverageNotice.replaceChildren(...uncompiled.childNodes);
++      coverageNotice.hidden = false;
++    } else {
++      coverageNotice.textContent = notice || '';
++      coverageNotice.hidden = !notice;
++    }
+     document.title = (mass.name || mass.key) + ' — Propers reader candidate';
+     return true;
+   }
+diff --git a/src/web/browser/liturgy/reader-instrument.css b/src/web/browser/liturgy/reader-instrument.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..634c97d094ad71f5c68cb2cfa5d74255d5dbf70e
+--- /dev/null
++++ b/src/web/browser/liturgy/reader-instrument.css
+@@ -0,0 +1,689 @@
++/*
++ * Accepted Liturgical Instrument presentation for the unlinked production
++ * reader candidates. State, interaction, renderers, and liturgical text remain
++ * owned by their existing production modules.
++ */
++:root {
++  --instrument-serif: Charter, "Bitstream Charter", "Iowan Old Style", Baskerville, Georgia, serif;
++  --instrument-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
++  --instrument-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
++  --instrument-ink: #1d211f;
++  --instrument-soft: #555e59;
++  --instrument-faint: #747d77;
++  --instrument-paper: #f4f1ea;
++  --instrument-panel: #faf8f2;
++  --instrument-line: #cfd3ce;
++  --instrument-accent: #8f292b;
++  --instrument-accent-soft: #efe3e1;
++  --instrument-focus: #1f5d8b;
++  --instrument-control: 3rem;
++  --reader-shell-height: 4.25rem;
++}
++
++html:has(.reader-instrument) {
++  scroll-behavior: smooth;
++  scroll-padding-block: 5rem calc(var(--reader-shell-height) + var(--reader-safe-bottom) + 1rem);
++  background: var(--instrument-paper);
++}
++
++body:has(.reader-instrument),
++.page-shell:has(.reader-instrument) {
++  width: 100%;
++  max-width: none;
++  margin: 0;
++  padding: 0;
++  overflow-x: clip;
++  background: var(--instrument-paper);
++  color: var(--instrument-ink);
++}
++
++body:has(.reader-instrument) > .site-header,
++body:has(.reader-instrument) > .release-banner,
++body:has(.reader-instrument) > .site-footer,
++.page-shell:has(.reader-instrument) > .breadcrumb {
++  display: none;
++}
++
++.day-reader-candidate-frame:has(.reader-instrument),
++.propers-reader-candidate-frame:has(.reader-instrument) {
++  min-width: 0;
++  background: var(--instrument-paper);
++}
++
++.candidate-flag:has(+ .reader-instrument) {
++  position: absolute;
++  width: 1px;
++  height: 1px;
++  overflow: hidden;
++  clip-path: inset(50%);
++  white-space: nowrap;
++}
++
++.reader-instrument {
++  position: relative;
++  container: reader-shell / inline-size;
++  min-width: 0;
++  min-height: 100svh;
++  padding-bottom: calc(var(--reader-shell-height) + var(--reader-safe-bottom) + 2rem);
++  background: var(--instrument-paper);
++  color: var(--instrument-ink);
++  font-family: var(--instrument-serif);
++}
++
++.reader-instrument .reader-masthead {
++  position: relative;
++  z-index: 30;
++  display: grid;
++  grid-template-columns: 1fr auto;
++  align-items: center;
++  min-height: 3.5rem;
++  padding: max(0.5rem, var(--reader-safe-top)) max(1.25rem, var(--reader-safe-right)) 0.5rem max(1.25rem, var(--reader-safe-left));
++  border-bottom: 3px solid var(--instrument-ink);
++  background: color-mix(in srgb, var(--instrument-paper) 96%, transparent);
++  font-family: var(--instrument-sans);
++}
++
++.reader-instrument .reader-brand {
++  display: inline-flex;
++  align-items: center;
++  gap: 0.55rem;
++  justify-self: start;
++  color: var(--instrument-ink);
++  font-size: 0.84rem;
++  font-weight: 650;
++  letter-spacing: 0.02em;
++  text-decoration: none;
++}
++
++.reader-instrument .reader-brand-mark {
++  display: grid;
++  width: 1.55rem;
++  height: 1.5rem;
++  background:
++    linear-gradient(currentColor, currentColor) left bottom / 0.24rem 78% no-repeat,
++    linear-gradient(currentColor, currentColor) center / 0.24rem 100% no-repeat,
++    linear-gradient(currentColor, currentColor) right bottom / 0.24rem 78% no-repeat;
++  color: var(--instrument-ink);
++}
++
++.reader-instrument .reader-place {
++  display: flex;
++  align-items: center;
++  gap: 0.45rem;
++  justify-self: end;
++  color: var(--instrument-soft);
++  font-size: 0.75rem;
++  font-weight: 560;
++}
++
++.reader-instrument .place-separator { color: var(--instrument-line); }
++
++.reader-instrument .reader-identity {
++  width: min(calc(100% - 3rem), 56rem);
++  margin: 0 auto;
++  padding: clamp(1.45rem, 4vw, 2.5rem) 0 1.4rem;
++  text-align: left;
++}
++
++.reader-instrument .reader-context {
++  margin: 0 0 0.45rem;
++  color: var(--instrument-accent);
++  font: 650 0.68rem/1.3 var(--instrument-sans);
++  letter-spacing: 0.11em;
++  text-transform: uppercase;
++}
++
++.reader-instrument .reader-identity .celebration-title {
++  max-width: 30ch;
++  margin: 0;
++  color: var(--instrument-ink);
++  font: 720 clamp(1.85rem, 3.6vw, 2.7rem)/1.08 var(--instrument-sans);
++  letter-spacing: -0.035em;
++}
++
++.reader-instrument .reader-identity .entry-title {
++  margin: 0.65rem 0 0;
++  color: var(--instrument-soft);
++  font: 500 1rem/1.35 var(--instrument-sans);
++  text-align: left;
++}
++
++.reader-instrument .reader-identity .entry-meta {
++  max-width: 60ch;
++  margin: 0.28rem 0 0;
++  color: var(--instrument-faint);
++  font: 0.78rem/1.5 var(--instrument-sans);
++  text-align: left;
++}
++
++.reader-instrument .coverage-notice {
++  max-width: 52ch;
++  margin: 0.75rem 0 0;
++  padding: 0.15rem 0 0.15rem 0.7rem;
++  border: 0;
++  border-left: 2px solid var(--instrument-accent);
++  background: transparent;
++  color: var(--instrument-soft);
++  font: 0.76rem/1.45 var(--instrument-sans);
++  text-align: left;
++}
++
++.reader-instrument .coverage-notice .uncompiled-mark {
++  color: var(--instrument-faint);
++  font-size: 0.62rem;
++}
++
++.reader-instrument [hidden] { display: none !important; }
++
++.reader-instrument .reader-document {
++  width: min(calc(100% - 3rem), 56rem);
++  margin: 0 auto;
++  padding: 0 0 7rem;
++  border: 0;
++  background: transparent;
++  box-shadow: none;
++  font-family: var(--instrument-serif);
++}
++
++.reader-instrument .reader-document > * {
++  width: auto;
++  max-width: 100%;
++  margin-inline: 0;
++}
++
++.reader-instrument .reader-document:focus-visible {
++  outline: 2px solid var(--instrument-focus);
++  outline-offset: 0.45rem;
++}
++
++.reader-instrument .reader-document [data-semantic-location],
++.reader-instrument .reader-document .proper,
++.reader-instrument .reader-document .ordinary-element,
++.reader-instrument .reader-document .ordinary-division {
++  scroll-margin-block: 5rem calc(var(--reader-shell-height) + 1rem);
++}
++
++.reader-instrument .reader-document .proper {
++  max-width: 43rem;
++  margin: 0 0 clamp(2.7rem, 6vw, 4.4rem) 8rem;
++  padding: 0;
++  border: 0;
++}
++
++.reader-instrument .reader-document .proper:focus-visible,
++.reader-instrument .reader-document .cycle-choice:focus-visible {
++  outline: 2px solid var(--instrument-focus);
++  outline-offset: 0.4rem;
++}
++
++.reader-instrument .reader-document .proper-name,
++.reader-instrument .reader-document .cycle-choice > h2 {
++  display: flex;
++  flex-wrap: wrap;
++  align-items: baseline;
++  justify-content: space-between;
++  gap: 0.25rem 1rem;
++  margin: 0 0 0.8rem -8rem;
++  padding: 0 0 0.48rem 8rem;
++  border: 0;
++  border-bottom: 2px solid var(--instrument-line);
++  color: var(--instrument-ink);
++  font: 650 0.83rem/1.4 var(--instrument-sans);
++  letter-spacing: 0.045em;
++  text-align: left;
++  text-transform: none;
++}
++
++.reader-instrument .reader-document .proper-ref {
++  color: var(--instrument-faint);
++  font: 500 0.74rem/1.4 var(--instrument-sans);
++  letter-spacing: 0;
++}
++
++.reader-instrument .reader-document .proper-form,
++.reader-instrument .reader-document .proper-incipit {
++  color: var(--instrument-faint);
++  font-family: var(--instrument-sans);
++  font-size: 0.76rem;
++}
++
++.reader-instrument .reader-document .passage,
++.reader-instrument .reader-document .composed {
++  color: var(--instrument-ink);
++  font-family: var(--instrument-serif);
++  font-size: 1.18rem;
++  line-height: 1.68;
++  text-align: left;
++}
++
++.reader-instrument .reader-document .passage { margin-block: 0.8rem 0; }
++.reader-instrument .reader-document .citation { margin-top: 0.9rem; }
++.reader-instrument .reader-document .citation-ref { color: var(--instrument-faint); font: 500 0.76rem/1.4 var(--instrument-sans); text-align: left; }
++.reader-instrument .reader-document .verse-num { color: var(--instrument-accent); font: 600 0.62em/1 var(--instrument-sans); }
++.reader-instrument .reader-document .row-meta { color: var(--instrument-faint); font-family: var(--instrument-sans); font-size: 0.78rem; line-height: 1.5; }
++.reader-instrument .reader-document .tag,
++.reader-instrument .reader-document .locus { border: 0; border-radius: 0; background: transparent; color: var(--instrument-faint); }
++
++.reader-instrument .reader-document .ordinary-frame { margin-top: 0.5rem; }
++.reader-instrument .reader-document .ordinary-division {
++  margin: 3.5rem 0 1.6rem;
++  padding: 0.75rem 0 0.7rem 8rem;
++  border: 0;
++  border-block: 2px solid var(--instrument-ink);
++  color: var(--instrument-ink);
++  font: 750 0.82rem/1.3 var(--instrument-sans);
++  letter-spacing: 0.08em;
++  text-align: left;
++  text-transform: uppercase;
++  text-wrap: balance;
++  hyphens: none;
++}
++
++.reader-instrument .reader-document .ordinary-frame > .ordinary-division:first-child { margin-top: 1.25rem; }
++.reader-instrument .reader-document .ordinary-frame > .ordinary-element {
++  display: grid;
++  grid-template-columns: 7rem minmax(0, 43rem);
++  column-gap: 1rem;
++  margin: 0 0 1.15rem;
++  padding: 0;
++  border: 0;
++}
++.reader-instrument .reader-document .ordinary-element > * { grid-column: 2; }
++.reader-instrument .reader-document .ordinary-element > .proper-name {
++  grid-column: 1;
++  align-self: start;
++  margin: 0;
++  padding: 0.22rem 0.75rem 0 0;
++  border: 0;
++  color: var(--instrument-accent);
++  font-size: 0.67rem;
++  letter-spacing: 0.055em;
++  text-align: right;
++}
++.reader-instrument .reader-document .ordinary-frame > .annotated {
++  max-width: 43rem;
++  margin: 3.2rem 0 3.2rem 8rem;
++  padding: 1.1rem 0 0.2rem 1rem;
++  border-left: 3px solid var(--instrument-accent);
++}
++.reader-instrument .reader-document .ordinary-frame > .annotated .annotated-text > .proper { margin: 0; }
++.reader-instrument .reader-document .ordinary-frame > .annotated .proper-name { margin-left: 0; padding-left: 0; }
++.reader-instrument .reader-document .ordinary-head { margin: 2rem 0 0.65rem; color: var(--instrument-accent); font: 600 0.8rem/1.4 var(--instrument-sans); letter-spacing: 0.04em; text-align: left; }
++.reader-instrument .reader-document .ordinary-element.is-rubric .composed {
++  grid-column: 2;
++  max-width: 60ch;
++  margin-block: 0.55rem;
++  padding-left: 0.85rem;
++  border-left: 2px solid var(--instrument-accent);
++  color: var(--instrument-soft);
++  font: italic 0.92rem/1.55 var(--instrument-serif);
++  text-align: left;
++}
++.reader-instrument .reader-document .speaker-tag {
++  display: inline-block;
++  min-width: 0;
++  margin: 0 0.5rem 0 0;
++  color: var(--instrument-soft);
++  font: 650 0.61rem/1.2 var(--instrument-sans);
++  letter-spacing: 0.025em;
++  text-align: left;
++}
++.reader-instrument .reader-document .ordinary-locus { color: var(--instrument-faint); font: 500 0.65rem/1.2 var(--instrument-sans); }
++.reader-instrument .reader-document .ordinary-preamble { margin: 2rem 0 0; padding-top: 1.2rem; border-top: 1px solid var(--instrument-line); }
++.reader-instrument .reader-document .ordinary-absence { border-left: 2px solid var(--instrument-line); padding-left: 0.75rem; }
++
++.reader-instrument .ordinary-absence-inline {
++  grid-column: 2;
++  display: flex;
++  flex-wrap: wrap;
++  gap: 0.2rem 1rem;
++  margin: 0.12rem 0 0.55rem;
++  padding-left: 0.65rem;
++  border-left: 1px solid var(--instrument-line);
++}
++.reader-instrument .ordinary-absence-inline .notice {
++  flex: 1 1 17rem;
++  margin: 0;
++  padding: 0;
++  border: 0;
++  background: transparent;
++  color: var(--instrument-faint);
++  font: 0.71rem/1.4 var(--instrument-serif);
++}
++.reader-instrument .reader-document .ordinary-frame > .ordinary-element:is(.is-dialogue, .is-prayer, .is-form) { margin-bottom: 0.78rem; }
++.reader-instrument .reader-document .ordinary-frame > .ordinary-element:is(.is-dialogue, .is-prayer, .is-form) + .ordinary-element:is(.is-dialogue, .is-prayer, .is-form) { margin-top: -0.18rem; }
++
++.reader-instrument .ordinary-choice {
++  margin: 1.8rem 0;
++  padding: 0.9rem 0;
++  border: 0;
++  border-block: 1px solid var(--instrument-line);
++  color: var(--instrument-soft);
++  font: 0.82rem/1.45 var(--instrument-sans);
++}
++.reader-instrument .ordinary-choice legend { padding: 0 0.4rem 0 0; color: var(--instrument-ink); font-weight: 700; }
++.reader-instrument .ordinary-choice-note { margin: 0.2rem 0 0.55rem; color: var(--instrument-faint); }
++.reader-instrument .ordinary-choice-options { display: flex; flex-wrap: wrap; gap: 0.3rem 1.15rem; }
++.reader-instrument .ordinary-choice-option { display: inline-flex; align-items: center; gap: 0.45rem; min-height: 2.75rem; cursor: pointer; }
++.reader-instrument .ordinary-choice-option input { width: 1.15rem; height: 1.15rem; margin: 0; accent-color: var(--instrument-accent); }
++
++.reader-instrument .candidate-entry,
++.reader-instrument .candidate-limitation,
++.reader-instrument .candidate-failure {
++  margin: 0;
++  padding: 1rem 0 1rem 1rem;
++  border: 0;
++  border-left: 3px solid var(--instrument-accent);
++  background: transparent;
++  color: var(--instrument-soft);
++  font: 0.92rem/1.6 var(--instrument-sans);
++}
++.reader-instrument .candidate-entry h2,
++.reader-instrument .candidate-limitation h2,
++.reader-instrument .candidate-failure h2 { margin: 0 0 0.45rem; color: var(--instrument-ink); font: 600 1.25rem/1.3 var(--instrument-serif); }
++.reader-instrument .reader-document .placeholder { color: var(--instrument-faint); font: 0.9rem/1.5 var(--instrument-sans); text-align: left; }
++
++.reader-instrument .cycle-choice { margin-bottom: 3rem; }
++.reader-instrument .cycle-choice-note { color: var(--instrument-soft); font: 0.84rem/1.5 var(--instrument-sans); }
++.reader-instrument .cycle-choice-controls { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1rem; }
++.reader-instrument .cycle-choice-controls button { min-width: 3rem; min-height: 2.75rem; border: 1px solid var(--instrument-line); background: var(--instrument-panel); color: var(--instrument-ink); font: 650 0.8rem/1 var(--instrument-sans); }
++.reader-instrument .cycle-alternative { margin-left: 0 !important; padding-left: 1rem !important; border-left: 2px solid var(--instrument-line) !important; }
++
++/* Read has one editorial axis; the ritual cue gutter belongs to Missal. */
++.reader-instrument[data-reader-mode="read"] .reader-identity,
++.reader-instrument[data-reader-mode="read"] .reader-document {
++  width: min(calc(100% - 2.5rem), 39.75rem);
++}
++.reader-instrument[data-reader-mode="read"] .reader-document .proper { max-width: none; margin-left: 0; }
++.reader-instrument[data-reader-mode="read"] .reader-document .proper-name { margin-left: 0; padding-left: 0; }
++
++/* The identity remains, but continuous ritual action begins promptly. */
++.reader-instrument[data-reader-mode="missal"] .reader-identity { padding-top: clamp(0.9rem, 2vw, 1.35rem); padding-bottom: 0.45rem; }
++.reader-instrument[data-reader-mode="missal"] .reader-document .ordinary-frame { margin-top: 0; }
++.reader-instrument[data-reader-mode="missal"] .reader-document .ordinary-frame > .ordinary-division:first-child { margin-top: 0; margin-bottom: 0.5rem; padding-block: 0.55rem 0.5rem; }
++.reader-instrument[data-reader-mode="missal"] .reader-document .ordinary-frame > .ordinary-division:first-child + .ordinary-element { margin-bottom: 0.35rem; }
++.reader-instrument[data-reader-mode="missal"] .reader-document .ordinary-frame > .ordinary-division:first-child + .ordinary-element .ordinary-head { margin-block: 0.4rem 0.3rem; }
++
++/* Persistent command system */
++.reader-instrument .reader-actions {
++  position: fixed;
++  z-index: 80;
++  right: max(0.75rem, var(--reader-safe-right));
++  bottom: max(0.75rem, var(--reader-safe-bottom));
++  left: max(0.75rem, var(--reader-safe-left));
++  display: grid;
++  grid-template-columns: repeat(4, minmax(0, 1fr));
++  width: min(calc(100% - 1.5rem), 34rem);
++  min-height: var(--reader-shell-height);
++  margin-inline: auto;
++  overflow: hidden;
++  border: 1px solid var(--instrument-line);
++  border-radius: 0.8rem;
++  background: var(--instrument-panel);
++  box-shadow: 0 0.75rem 2.5rem rgb(35 31 24 / 13%);
++}
++.reader-instrument .reader-actions button {
++  display: grid;
++  grid-template-columns: 1.4rem minmax(0, 1fr);
++  align-content: center;
++  align-items: center;
++  gap: 0.1rem 0.45rem;
++  min-width: 0;
++  min-height: var(--reader-shell-height);
++  padding: 0.45rem 0.65rem;
++  border: 0;
++  border-right: 1px solid var(--instrument-line);
++  background: transparent;
++  color: var(--instrument-soft);
++  font: 600 0.72rem/1.15 var(--instrument-sans);
++  text-align: left;
++  cursor: pointer;
++}
++.reader-instrument .reader-actions button:last-child { border-right: 0; }
++.reader-instrument .reader-actions button:hover { background: color-mix(in srgb, var(--instrument-accent-soft) 60%, transparent); color: var(--instrument-ink); }
++.reader-instrument .reader-actions button:active { background: var(--instrument-accent-soft); }
++.reader-instrument .reader-actions button[aria-expanded="true"] { background: var(--instrument-accent-soft); color: var(--instrument-accent); }
++.reader-instrument .reader-actions .action-mark { display: grid; place-items: center; color: currentColor; }
++.reader-instrument .reader-actions .action-state { grid-column: 2; color: var(--instrument-faint); font-size: 0.62rem; font-weight: 500; }
++.reader-instrument .reader-actions .action-label,
++.reader-instrument .reader-actions .action-state { max-width: 100%; overflow-wrap: anywhere; }
++.reader-instrument .reader-icon { width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
++
++.reader-instrument button:focus-visible,
++.reader-instrument a:focus-visible,
++.reader-instrument input:focus-visible,
++.reader-instrument select:focus-visible,
++.reader-instrument summary:focus-visible {
++  outline: 2px solid var(--instrument-focus);
++  outline-offset: 2px;
++}
++
++/* Temporary contextual surfaces */
++.reader-instrument .reader-surface {
++  width: min(calc(100% - 2rem), 39rem);
++  max-width: calc(100vw - 2rem);
++  max-height: min(88svh, 52rem);
++  margin: auto;
++  padding: 0;
++  overflow: hidden;
++  border: 1px solid var(--instrument-line);
++  border-radius: 0.75rem;
++  background: var(--instrument-panel);
++  color: var(--instrument-ink);
++  box-shadow: 0 1.6rem 5rem rgb(28 25 20 / 22%);
++}
++.reader-instrument .reader-surface::backdrop { background: rgb(25 23 20 / 34%); }
++.reader-instrument .reader-surface,
++.reader-instrument .reader-surface * { min-width: 0; overflow-wrap: anywhere; }
++.reader-instrument .surface-head { display: flex; align-items: start; justify-content: space-between; gap: 1rem; padding: 1.15rem 1.25rem 0.95rem; border-bottom: 1px solid var(--instrument-line); }
++.reader-instrument .surface-head h2 { margin: 0; color: var(--instrument-ink); font: 550 1.55rem/1.15 var(--instrument-serif); letter-spacing: -0.015em; }
++.reader-instrument .surface-kicker { margin: 0 0 0.2rem; color: var(--instrument-accent); font: 650 0.64rem/1.2 var(--instrument-sans); letter-spacing: 0.1em; text-transform: uppercase; }
++.reader-instrument .surface-close { display: grid; place-items: center; flex: 0 0 var(--instrument-control); width: var(--instrument-control); height: var(--instrument-control); padding: 0; border: 1px solid var(--instrument-line); border-radius: 50%; background: transparent; color: var(--instrument-soft); font: 400 1.4rem/1 var(--instrument-sans); cursor: pointer; }
++.reader-instrument .surface-close:hover { color: var(--instrument-ink); border-color: var(--instrument-soft); }
++.reader-instrument .surface-body { max-width: 100%; max-height: calc(min(88svh, 52rem) - 5.25rem); padding: 1.15rem 1.25rem 1.35rem; overflow: auto; overflow-x: hidden; }
++.reader-instrument .surface-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; }
++.reader-instrument .surface-field { display: grid; gap: 0.3rem; }
++.reader-instrument .surface-field.is-wide,
++.reader-instrument .surface-apply { grid-column: 1 / -1; }
++.reader-instrument .surface-field label { color: var(--instrument-soft); font: 650 0.68rem/1.3 var(--instrument-sans); letter-spacing: 0.045em; text-transform: none; }
++.reader-instrument .surface-field input,
++.reader-instrument .surface-field select,
++.reader-instrument .surface-apply,
++.reader-instrument .date-steps button {
++  width: 100%;
++  max-width: 100%;
++  min-height: 2.9rem;
++  padding: 0.55rem 0.7rem;
++  border: 1px solid var(--instrument-line);
++  border-radius: 0.35rem;
++  background: var(--instrument-paper);
++  color: var(--instrument-ink);
++  font: 0.95rem/1.2 var(--instrument-sans);
++}
++.reader-instrument .surface-apply { cursor: pointer; border-color: var(--instrument-ink); background: var(--instrument-ink); color: var(--instrument-panel); font-weight: 700; }
++.reader-instrument .surface-apply:hover { background: var(--instrument-accent); border-color: var(--instrument-accent); }
++.reader-instrument .date-steps { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.5rem; margin-bottom: 1rem; }
++.reader-instrument .date-steps button { display: flex; align-items: center; justify-content: center; gap: 0.25rem; cursor: pointer; background: transparent; }
++.reader-instrument .surface-note { margin: 0.9rem 0 0; color: var(--instrument-faint); font: 0.76rem/1.55 var(--instrument-sans); }
++
++.reader-instrument .semantic-contents { display: grid; gap: 0.12rem; }
++.reader-instrument .contents-division { margin: 1rem 0 0.3rem; color: var(--instrument-faint); font: 650 0.64rem/1.3 var(--instrument-sans); letter-spacing: 0.08em; text-transform: uppercase; }
++.reader-instrument .contents-division:first-child { margin-top: 0; }
++.reader-instrument .semantic-contents button { display: grid; grid-template-columns: 1.75rem minmax(0, 1fr); gap: 0.55rem; width: 100%; min-height: 2.75rem; padding: 0.55rem 0.65rem; border: 0; border-left: 3px solid transparent; background: transparent; color: var(--instrument-soft); font: 0.92rem/1.35 var(--instrument-serif); text-align: left; cursor: pointer; }
++.reader-instrument .semantic-contents button::before { content: attr(data-ordinal); color: var(--instrument-faint); font: 0.62rem/1.7 var(--instrument-sans); }
++.reader-instrument .semantic-contents button:hover { background: var(--instrument-accent-soft); }
++.reader-instrument .semantic-contents button[aria-current="location"] { border-left-color: var(--instrument-accent); background: var(--instrument-accent-soft); color: var(--instrument-ink); }
++
++.reader-instrument .mode-options { display: grid; gap: 0.45rem; }
++.reader-instrument .mode-options button { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 0.75rem; width: 100%; min-height: 3.4rem; padding: 0.8rem; border: 1px solid transparent; border-radius: 0.35rem; background: transparent; color: var(--instrument-soft); font: 0.8rem/1.4 var(--instrument-sans); text-align: left; cursor: pointer; }
++.reader-instrument .mode-options button:hover { background: var(--instrument-accent-soft); }
++.reader-instrument .mode-options button[aria-checked="true"] { border-color: var(--instrument-line); background: var(--instrument-accent-soft); }
++.reader-instrument .mode-options strong { color: var(--instrument-ink); font: 600 1rem/1.3 var(--instrument-serif); }
++
++.reader-instrument .details-list { display: grid; grid-template-columns: minmax(0, 8rem) minmax(0, 1fr); gap: 0.5rem 0.9rem; margin: 0; }
++.reader-instrument .details-list dt { color: var(--instrument-faint); font: 650 0.66rem/1.4 var(--instrument-sans); letter-spacing: 0.04em; text-transform: uppercase; }
++.reader-instrument .details-list dd { margin: 0; color: var(--instrument-soft); font: 0.9rem/1.5 var(--instrument-serif); }
++.reader-instrument .details-section + .details-section { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--instrument-line); }
++.reader-instrument .details-section h3 { margin: 0 0 0.45rem; color: var(--instrument-ink); font: 650 0.7rem/1.3 var(--instrument-sans); letter-spacing: 0.05em; }
++.reader-instrument .details-section ul { margin: 0; padding-left: 1.2rem; color: var(--instrument-soft); font: 0.86rem/1.5 var(--instrument-serif); }
++.reader-instrument .source-identifier { font-family: var(--instrument-mono); font-size: 0.76em; }
++
++@media (min-width: 72rem) {
++  .reader-instrument .reader-actions {
++    top: 50%;
++    right: auto;
++    bottom: auto;
++    left: max(0.75rem, calc(50% - 33rem));
++    grid-template-columns: 1fr;
++    width: 4.25rem;
++    min-height: 0;
++    margin: 0;
++    overflow: visible;
++    translate: 0 -50%;
++    border: 0;
++    border-left: 2px solid var(--instrument-ink);
++    border-radius: 0;
++    background: transparent;
++    box-shadow: none;
++  }
++  .reader-instrument .reader-actions button { grid-template-columns: 1fr; justify-items: center; min-height: 4.4rem; padding: 0.5rem 0.25rem; border: 0; color: var(--instrument-soft); text-align: center; }
++  .reader-instrument .reader-actions .action-state { grid-column: 1; }
++  .reader-instrument .reader-actions button[aria-expanded="true"] { background: var(--instrument-accent-soft); color: var(--instrument-ink); }
++  .reader-instrument .reader-surface.contents-surface,
++  .reader-instrument .reader-surface.details-surface { position: fixed; top: 1.25rem; right: max(1.25rem, var(--reader-safe-right)); bottom: 1.25rem; left: auto; width: min(25rem, calc((100vw - 43rem) / 2 - 1rem)); max-height: none; margin: 0; }
++  .reader-instrument .reader-surface.contents-surface .surface-body,
++  .reader-instrument .reader-surface.details-surface .surface-body { max-height: calc(100vh - 7rem); }
++}
++
++@media (max-width: 71.999rem) {
++  .reader-instrument .reader-masthead { position: sticky; top: 0; backdrop-filter: blur(10px); }
++  .reader-instrument .reader-actions {
++    right: var(--reader-safe-right);
++    bottom: var(--reader-safe-bottom);
++    left: var(--reader-safe-left);
++    width: auto;
++    margin: 0;
++    border: 0;
++    border-top: 2px solid var(--instrument-ink);
++    border-radius: 0;
++    background: var(--instrument-panel);
++    box-shadow: none;
++  }
++  .reader-instrument .reader-actions button { border: 0; }
++}
++
++@media (max-width: 52rem) {
++  :root { --reader-shell-height: 4.45rem; }
++  .reader-instrument .reader-masthead { min-height: 3.25rem; padding-inline: max(1rem, var(--reader-safe-right)) max(1rem, var(--reader-safe-left)); }
++  .reader-instrument .reader-brand-mark { width: 1.5rem; height: 1.5rem; }
++  .reader-instrument .reader-place { font-size: 0.7rem; }
++  .reader-instrument .reader-identity,
++  .reader-instrument .reader-document { width: 100%; padding-inline: max(1.5rem, var(--reader-safe-right)) max(1.5rem, var(--reader-safe-left)); }
++  .reader-instrument .reader-identity { padding-block: 1.25rem 0.9rem; }
++  .reader-instrument .reader-identity .celebration-title { font-size: clamp(1.75rem, 7vw, 2.35rem); }
++  .reader-instrument .reader-document { padding-bottom: 6rem; }
++  .reader-instrument .reader-document .passage,
++  .reader-instrument .reader-document .composed { font-size: max(1.08rem, 17px); line-height: 1.66; }
++  .reader-instrument[data-reader-mode="read"] .reader-identity,
++  .reader-instrument[data-reader-mode="read"] .reader-document { width: min(calc(100% - 2.5rem), 39.75rem); padding-inline: 0; }
++  .reader-instrument .reader-document .proper { max-width: none; margin-left: 0; }
++  .reader-instrument .reader-document .proper-name { margin-left: 0; padding-left: 0; }
++  .reader-instrument .reader-document .ordinary-division { padding-left: 0; }
++  .reader-instrument .reader-document .ordinary-frame > .ordinary-element { display: block; }
++  .reader-instrument .reader-document .ordinary-element > .proper-name { margin: 0 0 0.35rem; padding: 0; text-align: left; }
++  .reader-instrument .reader-document .ordinary-frame > .annotated { max-width: none; margin-left: 0; padding-left: 0.8rem; }
++  .reader-instrument .ordinary-absence-inline { display: grid; gap: 0.2rem; }
++  .reader-instrument .reader-actions button { grid-template-columns: 1fr; justify-items: center; gap: 0.12rem; padding: 0.35rem 0.2rem; text-align: center; }
++  .reader-instrument .reader-actions .action-label,
++  .reader-instrument .reader-actions .action-state { line-height: 1.05; }
++  .reader-instrument .reader-actions .action-state { grid-column: 1; }
++  .reader-instrument .reader-surface { width: 100%; max-width: 100%; max-height: min(90svh, 52rem); margin: auto 0 0; border-inline: 0; border-bottom: 0; border-radius: 1rem 1rem 0 0; }
++  .reader-instrument .surface-body { max-height: calc(min(90svh, 52rem) - 5.25rem); padding-right: max(1.1rem, var(--reader-safe-right)); padding-left: max(1.1rem, var(--reader-safe-left)); }
++  .reader-instrument .surface-head { padding-right: max(1.1rem, var(--reader-safe-right)); padding-left: max(1.1rem, var(--reader-safe-left)); }
++}
++
++@container reader-shell (max-width: 18rem) {
++  .reader-instrument .reader-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
++  .reader-instrument .reader-actions button { min-height: max(3.25rem, 44px); padding: 0.35rem 0.5rem; }
++  .reader-instrument .reader-actions .action-label { overflow-wrap: normal; word-break: normal; white-space: nowrap; }
++  .reader-instrument .reader-document [data-semantic-location],
++  .reader-instrument .reader-document .proper,
++  .reader-instrument .reader-document .ordinary-element,
++  .reader-instrument .reader-document .ordinary-division { scroll-margin-block-end: 7.5rem; }
++}
++
++@media (max-width: 30rem) {
++  .reader-instrument .reader-brand > span:last-child { display: none; }
++  .reader-instrument .reader-document { padding-inline: max(1.25rem, var(--reader-safe-right)) max(1.25rem, var(--reader-safe-left)); }
++  .reader-instrument .reader-document .proper { margin-bottom: 2.75rem; }
++  .reader-instrument .surface-fields,
++  .reader-instrument .mode-options button,
++  .reader-instrument .details-list { grid-template-columns: minmax(0, 1fr); }
++  .reader-instrument .surface-field.is-wide,
++  .reader-instrument .surface-apply { grid-column: auto; }
++  .reader-instrument .mode-options button { gap: 0.25rem; }
++  .reader-instrument .date-steps button { padding-inline: 0.35rem; font-size: 0.82rem; }
++  .reader-instrument .ordinary-choice-options { display: grid; grid-template-columns: 1fr; }
++}
++
++@media (max-width: 25rem) {
++  .reader-instrument .reader-actions .action-state { display: none; }
++  .reader-instrument .reader-document .ordinary-division { padding-right: 2.75rem; font-size: 0.75rem; line-height: 1.35; letter-spacing: 0.055em; text-align: left; }
++  .reader-instrument .reader-document .ordinary-element > .proper-name { max-width: 28ch; margin-bottom: 0.22rem; font-size: 0.63rem; line-height: 1.35; text-wrap: balance; }
++  .reader-instrument .reader-document .ordinary-frame > .ordinary-element:is(.is-dialogue, .is-prayer, .is-form) { margin-bottom: 0.64rem; }
++}
++
++@media (max-width: 22rem) {
++  .reader-instrument .reader-actions button { font-size: 0.64rem; }
++  .reader-instrument .reader-actions .action-state { font-size: 0.58rem; }
++  .reader-instrument .reader-icon { width: 1.1rem; height: 1.1rem; }
++}
++
++@media (prefers-reduced-motion: reduce) {
++  html:has(.reader-instrument) { scroll-behavior: auto; }
++}
++
++@media (forced-colors: active) {
++  .reader-instrument {
++    --instrument-paper: Canvas;
++    --instrument-panel: Canvas;
++    --instrument-ink: CanvasText;
++    --instrument-soft: CanvasText;
++    --instrument-faint: CanvasText;
++    --instrument-line: CanvasText;
++    --instrument-accent: LinkText;
++    --instrument-accent-soft: Canvas;
++    --instrument-focus: Highlight;
++    forced-color-adjust: auto;
++  }
++  .reader-instrument .reader-actions,
++  .reader-instrument .reader-surface,
++  .reader-instrument .reader-document .proper-name { border-color: CanvasText; }
++  .reader-instrument .reader-actions button[aria-expanded="true"],
++  .reader-instrument .semantic-contents button[aria-current="location"],
++  .reader-instrument .mode-options button[aria-checked="true"] { outline: 2px solid Highlight; }
++  .reader-instrument .reader-brand-mark {
++    background:
++      linear-gradient(CanvasText, CanvasText) left bottom / 0.24rem 78% no-repeat,
++      linear-gradient(CanvasText, CanvasText) center / 0.24rem 100% no-repeat,
++      linear-gradient(CanvasText, CanvasText) right bottom / 0.24rem 78% no-repeat;
++  }
++}
++
++@media print {
++  @page { size: letter; margin: 0.7in 0.72in; }
++  .reader-instrument .reader-masthead,
++  .reader-instrument .reader-actions,
++  .reader-instrument .reader-surface { display: none !important; }
++  .reader-instrument { min-height: 0; padding: 0; background: #fff; }
++  .reader-instrument .reader-identity { width: auto; padding: 0 0 0.2in; text-align: left; }
++  .reader-instrument .reader-identity .celebration-title { margin: 0; font-size: 22pt; }
++  .reader-instrument .reader-document { width: auto; padding: 0; }
++  .reader-instrument .reader-document .proper { max-width: none; margin: 0 0 0.24in; break-inside: avoid; }
++  .reader-instrument .reader-document .proper-name { margin-left: 0; padding-left: 0; break-after: avoid; }
++  .reader-instrument .reader-document .ordinary-element { display: block; }
++  .reader-instrument .reader-document .ordinary-division { margin: 0.3in 0 0.12in; padding: 0; border-inline: 0; break-after: avoid; }
++  .reader-instrument .reader-document .ordinary-frame > .annotated { max-width: none; margin-left: 0; }
++  .reader-instrument .ordinary-choice,
++  .reader-instrument .cycle-choice-controls { display: none; }
++}
+diff --git a/tools/tests/day_reader_integration_browser.mjs b/tools/tests/day_reader_integration_browser.mjs
+index 87cb64f6b906c517a67d2cb0861a4ae3a19a745b..b7ce158d34308934da4477f46a2bfbb21e341903 100644
+--- a/tools/tests/day_reader_integration_browser.mjs
++++ b/tools/tests/day_reader_integration_browser.mjs
+@@ -852,7 +852,7 @@ async function runAssertions(cdp, base) {
+     assert.equal(value.noticeHidden, true);
+     assert.equal(value.events.length, 10);
+     assert.deepEqual(value.actions.map(row => row.replace(/\s+/g, ' ')),
+-      ['▣ Date & edition', '≡ Contents', 'R Mode Read', 'i Details']);
++      ['Date', 'Contents', 'Mode Read', 'Details']);
+     assert.equal(value.shell, 'fixed');
+     assert.ok(value.first < value.viewport, JSON.stringify(value));
+   });
+@@ -897,7 +897,7 @@ async function runAssertions(cdp, base) {
+       completeness: dayReaderDebug.semantic.coverage.map(row => row.completeness)
+     })`);
+     assert.equal(value.hidden, false);
+-    assert.match(value.notice, /not held/);
++    assert.match(value.notice, /not held|not yet transcribed/i);
+     assert.ok(value.completeness.includes('partial'));
+   });
+ 
+@@ -1122,7 +1122,7 @@ async function runAssertions(cdp, base) {
+     assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), false);
+     await navigateCandidate(cdp, base, STATES.partial);
+     assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+-    assert.match(await evaluate(cdp, 'document.querySelector("#coverage-notice").textContent'), /not held/);
++    assert.match(await evaluate(cdp, 'document.querySelector("#coverage-notice").textContent'), /not held|not yet transcribed/i);
+     await navigateCandidate(cdp, base, STATES.missingSeat);
+     assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'unrenderable');
+     assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
+diff --git a/tools/tests/liturgy_reader_visual_reset_browser.mjs b/tools/tests/liturgy_reader_visual_reset_browser.mjs
+index 97c85a456758817e4d38321102d9c1c2be40815b..186a16910d06ab6082f0ccd1c2a7af7fcee839f9 100644
+--- a/tools/tests/liturgy_reader_visual_reset_browser.mjs
++++ b/tools/tests/liturgy_reader_visual_reset_browser.mjs
+@@ -4,6 +4,7 @@
+ 
+ import assert from 'node:assert/strict';
+ import { spawn } from 'node:child_process';
++import { createHash } from 'node:crypto';
+ import { createServer } from 'node:http';
+ import { mkdtemp, mkdir, readFile, stat, writeFile } from 'node:fs/promises';
+ import { tmpdir } from 'node:os';
+@@ -23,6 +24,10 @@ const failedRequests = [];
+ const httpProblems = [];
+ const requests = [];
+ 
++async function sha256(path) {
++  return createHash('sha256').update(await readFile(path)).digest('hex');
++}
++
+ const STATES = Object.freeze({
+   romanRead: '#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&mass=pentecost-10&ordinary=0',
+   romanMissal: '#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&mass=pentecost-10&ordinary=1&ordinary-lang=en&rubrics=1&why=0',
+@@ -189,6 +194,11 @@ function prototypeUrl(base, entrance, design, state) {
+   return `${base}${PREVIEW}${page}?design=${design}&data=${encodeURIComponent(DATA)}${state}`;
+ }
+ 
++function productionUrl(base, entrance, state) {
++  const page = entrance === 'day' ? 'day-reader.html' : 'propers-reader.html';
++  return `${base}${PREVIEW}${page}?data=${encodeURIComponent(DATA)}${state}`;
++}
++
+ async function fresh(cdp, target, entrance, selector = null) {
+   await cdp.send('Page.navigate', { url: 'about:blank' });
+   await waitFor(cdp, `location.href === 'about:blank'`, 'blank document');
+@@ -200,6 +210,17 @@ async function fresh(cdp, target, entrance, selector = null) {
+   return stableFrames(cdp, selector);
+ }
+ 
++async function productionFresh(cdp, target, entrance, selector = null) {
++  await cdp.send('Page.navigate', { url: 'about:blank' });
++  await waitFor(cdp, `location.href === 'about:blank'`, 'blank production document');
++  await cdp.send('Page.navigate', { url: target });
++  const ready = entrance === 'day' ? 'window.dayReaderReady === true' : 'window.propersReaderReady === true';
++  await waitFor(cdp,
++    `location.href === ${JSON.stringify(target)} && ${ready} && document.querySelector('.reader-instrument')`,
++    `${entrance} production Instrument readiness`);
++  return stableFrames(cdp, selector);
++}
++
+ async function genericFresh(cdp, target, readyExpression) {
+   await cdp.send('Page.navigate', { url: 'about:blank' });
+   await waitFor(cdp, `location.href === 'about:blank'`, 'blank baseline document');
+@@ -247,7 +268,7 @@ async function check(name, callback) {
+ 
+ async function metrics(cdp) {
+   return evaluate(cdp, `(() => {
+-    const root = document.querySelector('[data-visual-reset]');
++    const root = document.querySelector('[data-visual-reset], .reader-instrument');
+     const reading = document.querySelector('#reader-document');
+     const identity = document.querySelector('.reader-identity');
+     const actions = document.querySelector('.reader-actions');
+@@ -448,7 +469,7 @@ async function runAssertions(cdp, base) {
+       noticeTop: document.querySelector('#coverage-notice').getBoundingClientRect().top,
+       firstTextTop: document.querySelector('#reader-document .composed, #reader-document .passage').getBoundingClientRect().top })`);
+     assert.equal(value.hidden, false);
+-    assert.match(value.notice, /partial|unavailable|not held/i);
++    assert.match(value.notice, /partial|unavailable|not held|not yet transcribed/i);
+     assert.ok(value.text > 3);
+     assert.ok(value.noticeTop < value.firstTextTop);
+   });
+@@ -602,6 +623,98 @@ async function runAssertions(cdp, base) {
+     await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+   });
+ 
++  await check('production Instrument Read matches the accepted axis and portrait measure', async () => {
++    await viewport(cdp, 768, 1024);
++    await fresh(cdp, prototypeUrl(base, 'day', 'instrument', STATES.romanRead), 'day');
++    const oracle = await metrics(cdp);
++    await productionFresh(cdp, productionUrl(base, 'day', STATES.romanRead), 'day');
++    const production = await metrics(cdp);
++    assert.equal(production.ready.mode, 'read');
++    assert.equal(production.ready.outcome, 'ready');
++    assert.equal(production.text.width, 636);
++    assert.equal(production.text.approximateCharacters, 75);
++    assert.ok(Math.abs(production.reading.width - oracle.reading.width) <= 1);
++    assert.ok(Math.abs(production.identity.x - oracle.identity.x) <= 1);
++    assert.ok(Math.abs(production.firstText.top - oracle.firstText.top) <= 1,
++      JSON.stringify({ production: production.firstText, oracle: oracle.firstText }));
++    assert.ok(production.document.scrollWidth <= production.document.clientWidth + 1);
++    assert.deepEqual(production.actionButtons.map(row => row.label), ['Date', 'Contents', 'Mode', 'Details']);
++    assert.match(production.robots, /noindex/);
++  });
++
++  await check('production Instrument shell is continuous at intermediate and extreme reflow states', async () => {
++    await viewport(cdp, 1024, 768);
++    await productionFresh(cdp, productionUrl(base, 'day', STATES.romanMissal), 'day');
++    let value = await metrics(cdp);
++    assert.ok(value.actions.x <= 1);
++    assert.ok(Math.abs(value.actions.width - value.document.clientWidth) <= 1);
++    assert.equal(value.shell.borderRadius, '0px');
++    assert.equal(value.shell.boxShadow, 'none');
++    assert.equal(value.shell.background, 'rgb(250, 248, 242)');
++    value.actionButtons.forEach(row => {
++      assert.ok(row.box.width >= 44 && row.box.height >= 44, row.label);
++      assert.ok(row.name.length > 0, row.label);
++    });
++
++    await viewport(cdp, 393, 852);
++    await productionFresh(cdp, productionUrl(base, 'day', STATES.romanMissal), 'day');
++    await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
++    await stableFrames(cdp);
++    value = await metrics(cdp);
++    assert.equal(new Set(value.actionButtons.map(row => row.box.x)).size, 2);
++    assert.equal(new Set(value.actionButtons.map(row => row.box.y)).size, 2);
++    value.actionButtons.forEach(row => {
++      assert.equal(row.labelLines, 1, row.label);
++      assert.ok(row.labelScrollWidth <= row.labelClientWidth + 1, row.label);
++      assert.equal(row.whiteSpace, 'nowrap');
++      assert.ok(row.box.width >= 44 && row.box.height >= 44, row.label);
++    });
++    assert.ok(value.document.scrollWidth <= value.document.clientWidth + 1);
++    await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
++  });
++
++  await check('production Instrument preserves accepted Missal action and warning hierarchy', async () => {
++    await viewport(cdp, 393, 852);
++    await fresh(cdp, prototypeUrl(base, 'day', 'instrument', STATES.romanMissal), 'day');
++    const oracle = await metrics(cdp);
++    await productionFresh(cdp, productionUrl(base, 'day', STATES.romanMissal), 'day');
++    let production = await metrics(cdp);
++    assert.equal(production.ready.mode, 'missal');
++    assert.ok(Math.abs(production.firstText.top - oracle.firstText.top) <= 4,
++      JSON.stringify({ production: production.firstText, oracle: oracle.firstText }));
++    assert.equal(production.absences.directNotices, 0);
++
++    await productionFresh(cdp, productionUrl(base, 'day', STATES.partial), 'day');
++    production = await metrics(cdp);
++    assert.match(production.coverage.text, /not yet transcribed/i);
++    assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document > .uncompiled').length`), 0);
++    assert.ok(await evaluate(cdp, `document.querySelectorAll('#reader-document .composed, #reader-document .passage').length`) > 3);
++
++    await productionFresh(cdp, productionUrl(base, 'day', STATES.postMissal), 'day');
++    production = await metrics(cdp);
++    assert.equal(production.absences.directNotices, 0);
++    assert.ok(production.absences.inlineGroups > 3);
++    assert.ok(production.absences.inlineNotices >= production.absences.inlineGroups);
++  });
++
++  await check('production Propers retains its distinct Browse entrance in the accepted Instrument system', async () => {
++    await viewport(cdp, 393, 852);
++    await fresh(cdp, prototypeUrl(base, 'propers', 'instrument', STATES.propers), 'propers');
++    const oracle = await metrics(cdp);
++    await productionFresh(cdp, productionUrl(base, 'propers', STATES.propers), 'propers');
++    const production = await metrics(cdp);
++    assert.equal(production.ready.outcome, 'ready');
++    assert.deepEqual(production.ready.semantic.events.map(row => row.id),
++      oracle.ready.semantic.events.map(row => row.id));
++    assert.ok(Math.abs(production.reading.width - oracle.reading.width) <= 2,
++      JSON.stringify({ production: production.reading, oracle: oracle.reading }));
++    assert.deepEqual(production.actionButtons.map(row => row.label), ['Browse', 'Contents', 'Mode', 'Details']);
++    await productionFresh(cdp, productionUrl(base, 'propers', STATES.browse), 'propers');
++    assert.equal(await evaluate(cdp, `document.querySelector('#browse-surface').open`), true);
++    assert.equal(await evaluate(cdp, `propersReaderDebug.outcome`), 'browse');
++    assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document .proper').length`), 0);
++  });
++
+   await check('prototype resources remain local and network-clean', async () => {
+     const external = requests.filter(url => !url.startsWith(base) && !url.startsWith('about:'));
+     assert.deepEqual(external, []);
+@@ -613,11 +726,14 @@ async function runAssertions(cdp, base) {
+ 
+ async function captureOne(cdp, base, directory, row) {
+   const { file, entrance, design, state, width, height, action = null, deep = false,
+-    enlargement = false, media = null, keyboard = false } = row;
++    enlargement = false, media = null, keyboard = false, variant = 'prototype' } = row;
+   await viewport(cdp, width, height);
+   if (media) await cdp.send('Emulation.setEmulatedMedia', { media: 'screen', features: media });
+-  const target = prototypeUrl(base, entrance, design, STATES[state]);
+-  await fresh(cdp, target, entrance);
++  const target = variant === 'production'
++    ? productionUrl(base, entrance, STATES[state])
++    : prototypeUrl(base, entrance, design, STATES[state]);
++  if (variant === 'production') await productionFresh(cdp, target, entrance);
++  else await fresh(cdp, target, entrance);
+   if (enlargement) {
+     await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
+     await stableFrames(cdp);
+@@ -646,7 +762,7 @@ async function captureOne(cdp, base, directory, row) {
+   if (action || keyboard) await escape(cdp);
+   if (enlargement) await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
+   if (media) await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+-  return { ...row, target, measured,
++  return { ...row, variant, target, measured,
+     consoleErrors: consoleProblems.length, failedRequests: failedRequests.filter(one => !one.canceled).length,
+     httpErrors: httpProblems.length };
+ }
+@@ -692,9 +808,48 @@ async function captureMatrix(cdp, base, directory) {
+     file, entrance, design: 'instrument', state, width, height, ...extras
+   }));
+ 
++  const parityCases = [
++    ['01-day-read-1440x900.png', 'day', 'romanRead', 1440, 900, {}],
++    ['02-day-read-1024x768.png', 'day', 'romanRead', 1024, 768, {}],
++    ['03-day-read-768x1024.png', 'day', 'romanRead', 768, 1024, {}],
++    ['04-day-read-393x852.png', 'day', 'romanRead', 393, 852, {}],
++    ['05-day-missal-1440x900.png', 'day', 'romanMissal', 1440, 900, {}],
++    ['06-day-missal-1024x768.png', 'day', 'romanMissal', 1024, 768, {}],
++    ['07-day-missal-393x852.png', 'day', 'romanMissal', 393, 852, {}],
++    ['08-day-missal-320x852.png', 'day', 'romanMissal', 320, 852, {}],
++    ['09-day-missal-deep-1440x900.png', 'day', 'romanMissal', 1440, 900, { deep: true }],
++    ['10-day-partial-393x852.png', 'day', 'partial', 393, 852, {}],
++    ['11-day-post-missal-1440x900.png', 'day', 'postMissal', 1440, 900, {}],
++    ['12-day-post-missal-393x852.png', 'day', 'postMissal', 393, 852, {}],
++    ['13-propers-read-1440x900.png', 'propers', 'propers', 1440, 900, {}],
++    ['14-propers-read-393x852.png', 'propers', 'propers', 393, 852, {}],
++    ['15-propers-browse-393x852.png', 'propers', 'browse', 393, 852, {}],
++    ['16-date-open-1024x768.png', 'day', 'romanRead', 1024, 768, { action: 'date' }],
++    ['17-contents-open-393x852.png', 'day', 'romanMissal', 393, 852, { action: 'contents' }],
++    ['18-mode-open-393x852.png', 'day', 'romanRead', 393, 852, { action: 'mode' }],
++    ['19-details-open-1440x900.png', 'day', 'postMissal', 1440, 900, { action: 'details' }],
++    ['20-text-200-percent-393x852.png', 'day', 'romanMissal', 393, 852, { enlargement: true }],
++    ['21-forced-colors-393x852.png', 'day', 'romanRead', 393, 852, { media: [{ name: 'forced-colors', value: 'active' }] }],
++    ['22-reduced-motion-393x852.png', 'day', 'romanMissal', 393, 852, { media: [{ name: 'prefers-reduced-motion', value: 'reduce' }] }],
++    ['23-keyboard-focus-393x852.png', 'day', 'romanRead', 393, 852, { keyboard: true }]
++  ];
++
+   const evidence = [];
+   for (const row of rows) evidence.push(await captureOne(cdp, base, directory, row));
+ 
++  const oracleDirectory = join(directory, 'parity', 'prototype');
++  const productionDirectory = join(directory, 'parity', 'production');
++  await mkdir(oracleDirectory, { recursive: true });
++  await mkdir(productionDirectory, { recursive: true });
++  for (const [file, entrance, state, width, height, extras] of parityCases) {
++    evidence.push(await captureOne(cdp, base, oracleDirectory, {
++      file, entrance, design: 'instrument', state, width, height, ...extras, variant: 'prototype'
++    }));
++    evidence.push(await captureOne(cdp, base, productionDirectory, {
++      file, entrance, design: 'instrument', state, width, height, ...extras, variant: 'production'
++    }));
++  }
++
+   const deployed = 'https://spincyc.github.io/triptych/liturgy/';
+   const baselines = [
+     ['current-day', deployed + 'day.html', STATES.romanRead,
+@@ -788,6 +943,15 @@ async function main() {
+         css: (await stat(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset.css'))).size,
+         dayHtml: (await stat(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset-day.html'))).size,
+         propersHtml: (await stat(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset-propers.html'))).size
++      },
++      assetHashes: {
++        oracleCss: await sha256(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset.css')),
++        oracleJavaScript: await sha256(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset.js')),
++        productionCss: await sha256(join(ROOT, 'src/web/browser/liturgy/reader-instrument.css')),
++        productionDayHtml: await sha256(join(ROOT, 'src/web/browser/liturgy/day-reader.html')),
++        productionDayJavaScript: await sha256(join(ROOT, 'src/web/browser/liturgy/day-reader.js')),
++        productionPropersHtml: await sha256(join(ROOT, 'src/web/browser/liturgy/propers-reader.html')),
++        productionPropersJavaScript: await sha256(join(ROOT, 'src/web/browser/liturgy/propers-reader.js'))
+       }
+     };
+     if (captureDir) await writeFile(join(captureDir, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');
+diff --git a/tools/tests/propers_reader_integration_browser.mjs b/tools/tests/propers_reader_integration_browser.mjs
+index eeb0947221667778f88cef8bc1a5b6b3285719eb..ca4307de6315f600b463e1d24bbcc2d24f8d1ccc 100644
+--- a/tools/tests/propers_reader_integration_browser.mjs
++++ b/tools/tests/propers_reader_integration_browser.mjs
+@@ -340,7 +340,7 @@ async function assertions(cdp, base) {
+     assert.equal(value.semantic.resolved.formulary, 'advent-1');
+     assert.equal(value.semantic.events.length, 10);
+     assert.deepEqual(await evaluate(cdp, `[...document.querySelectorAll('[data-reader-action]')].map(row => row.textContent.replace(/\\s+/g, ' ').trim())`),
+-      ['▣ Browse & edition', '≡ Contents', 'R Mode Read', 'i Details']);
++      ['Browse', 'Contents', 'Mode Read', 'Details']);
+     const measured = await metrics(cdp);
+     const duplicateResources = measured.resources.filter((row, index, all) => all.indexOf(row) !== index);
+     performanceReport = {
+@@ -415,7 +415,7 @@ async function assertions(cdp, base) {
+     const held = await snapshot(cdp);
+     assert.equal(held.outcome, 'ready');
+     assert.equal(held.noticeHidden, false);
+-    assert.match(held.notice, /not held|unavailable|coverage/i);
++    assert.match(held.notice, /not held|not yet transcribed|unavailable|coverage/i);
+     assert.equal(await evaluate(cdp, `document.querySelectorAll('#coverage-notice').length`), 1);
+   });
+ 
+@@ -465,7 +465,7 @@ async function assertions(cdp, base) {
+     await candidate(cdp, base, STATES.romanEnglishNone);
+     const value = await snapshot(cdp);
+     assert.equal(value.outcome, 'ready'); assert.equal(value.noticeHidden, false);
+-    assert.match(value.notice, /not held|unavailable|coverage/i);
++    assert.match(value.notice, /not held|not yet transcribed|unavailable|coverage/i);
+     await click(cdp, '[data-reader-action="browse"]');
+     const form = await browseSnapshot(cdp);
+     assert.equal(form.witnessHidden, true); assert.equal(form.witnessDisplay, 'none');
+diff --git a/tools/tests/test_day_missal_integration.py b/tools/tests/test_day_missal_integration.py
+index c6e202234a828e41652596ca378badfc4fc72122..71a610ed435f5f1b131579dbe94484cbba140d67 100644
+--- a/tools/tests/test_day_missal_integration.py
++++ b/tools/tests/test_day_missal_integration.py
+@@ -116,6 +116,7 @@ class DayMissalIntegrationTests(unittest.TestCase):
+ 
+     def test_accessible_continuous_and_print_presentation_is_bounded(self) -> None:
+         css = text(CSS)
++        instrument = text(LITURGY / "reader-instrument.css")
+         html = text(HTML)
+         for token in (
+             ".ordinary-choice", "min-height: 2.75rem", "overflow-x: clip",
+@@ -127,6 +128,9 @@ class DayMissalIntegrationTests(unittest.TestCase):
+         self.assertIn("day.css", html)
+         self.assertIn("day-missal.css", html)
+         self.assertIn("day.js", html)
++        self.assertIn("ordinary-absence-inline", instrument)
++        self.assertIn("composeInstrumentAbsences", text(JS))
++        self.assertIn("shellRoot.dataset.readerMode", text(JS))
+ 
+     def test_public_and_accepted_propers_surfaces_are_byte_isolated(self) -> None:
+         protected = [
+@@ -136,9 +140,6 @@ class DayMissalIntegrationTests(unittest.TestCase):
+             "src/web/browser/liturgy/index.html",
+             "src/web/browser/liturgy/liturgy.js",
+             "src/web/browser/liturgy/liturgy.css",
+-            "src/web/browser/liturgy/propers-reader.html",
+-            "src/web/browser/liturgy/propers-reader.js",
+-            "src/web/browser/liturgy/propers-reader.css",
+             "src/web/browser/liturgy/reader-state.js",
+             "src/web/browser/liturgy/reader-state-adapters.js",
+             "src/web/browser/liturgy/assembly-model.js",
+@@ -162,8 +163,8 @@ class DayMissalIntegrationTests(unittest.TestCase):
+                 "liturgy-day-missal-w3-candidate-2026-08-05"]
+         self.assertEqual(len(rows), 1)
+         self.assertEqual(rows[0]["state"], "complete")
+-        self.assertEqual(len(ledger["deliverables"]), 21)
+-        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 15)
++        self.assertEqual(len(ledger["deliverables"]), 22)
++        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 16)
+ 
+     def test_javascript_syntax_and_browser_harness(self) -> None:
+         for path in (JS, PUBLIC_RENDERER, LITURGY / "reader-shell.js"):
+diff --git a/tools/tests/test_day_reader_integration.py b/tools/tests/test_day_reader_integration.py
+index d8f89930d8e6eb90825687e6c157716eee9f4092..3bc729a20a33cbe347bf62f73c1806c167ef6c05 100644
+--- a/tools/tests/test_day_reader_integration.py
++++ b/tools/tests/test_day_reader_integration.py
+@@ -42,7 +42,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
+         self.assertNotIn("prototypes/reader-shell", source)
+         for asset in (
+             "reader-shell.js", "reader-shell.css", "day-reader.js", "day-reader.css",
+-            "day.js", "day.css", "day-missal.css",
++            "reader-instrument.css", "day.js", "day.css", "day-missal.css",
+         ):
+             self.assertIn(asset, source)
+ 
+@@ -86,13 +86,13 @@ class DayReaderIntegrationTests(unittest.TestCase):
+     def test_all_four_actions_and_bounded_modes_are_explicit(self) -> None:
+         source = text(HTML)
+         for action, label in (
+-            ("date", "Date &amp; edition"),
++            ("date", "Date"),
+             ("contents", "Contents"),
+             ("mode", "Mode"),
+             ("details", "Details"),
+         ):
+             self.assertIn(f'data-reader-action="{action}"', source)
+-            self.assertIn(label, source)
++            self.assertIn(f'class="action-label">{label}</span>', source)
+         self.assertIn('data-mode="read"', source)
+         self.assertIn('data-mode="missal"', source)
+         self.assertEqual(source.count('aria-disabled="true" disabled'), 2)
+@@ -169,6 +169,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
+     def test_responsive_print_and_modal_rules_are_present(self) -> None:
+         shell = text(SHELL_CSS)
+         candidate = text(DAY_CSS)
++        instrument = text(LITURGY / "reader-instrument.css")
+         self.assertIn("--reader-shell-height: 3.65rem", shell)
+         self.assertIn("env(safe-area-inset-bottom", shell)
+         self.assertIn("@media (prefers-reduced-motion: reduce)", shell)
+@@ -179,6 +180,9 @@ class DayReaderIntegrationTests(unittest.TestCase):
+         self.assertIn(".reader-actions, .reader-surface { display: none !important; }", shell)
+         self.assertIn(".candidate-flag { display: none !important; }", candidate)
+         self.assertIn("break-inside: avoid", candidate)
++        self.assertIn("container: reader-shell / inline-size", instrument)
++        self.assertIn("@container reader-shell (max-width: 18rem)", instrument)
++        self.assertIn("grid-template-columns: repeat(2, minmax(0, 1fr))", instrument)
+ 
+     def test_public_pages_propers_m1_and_production_data_are_isolated(self) -> None:
+         protected = [
+@@ -189,9 +193,6 @@ class DayReaderIntegrationTests(unittest.TestCase):
+             "src/web/browser/liturgy/liturgy.js",
+             "src/web/browser/liturgy/reader-state.js",
+             "src/web/browser/liturgy/reader-state-adapters.js",
+-            "src/web/browser/liturgy/propers-reader.html",
+-            "src/web/browser/liturgy/propers-reader.js",
+-            "src/web/browser/liturgy/propers-reader.css",
+         ]
+         for path in protected:
+             current = (ROOT / path).read_bytes()
+diff --git a/tools/tests/test_liturgy_reader_shell.py b/tools/tests/test_liturgy_reader_shell.py
+index 715eb34111e256523b0febd3a4f306479a8e9c8f..ea83cb3d3fde4283026c10f841feb433ca8f62fa 100644
+--- a/tools/tests/test_liturgy_reader_shell.py
++++ b/tools/tests/test_liturgy_reader_shell.py
+@@ -175,6 +175,7 @@ class ReaderShellPrototypeTest(unittest.TestCase):
+                 ":(exclude)src/web/browser/liturgy/day-reader.*",
+                 ":(exclude)src/web/browser/liturgy/reader-shell.*",
+                 ":(exclude)src/web/browser/liturgy/propers-reader.*",
++                ":(exclude)src/web/browser/liturgy/reader-instrument.css",
+                 ":(exclude)src/web/browser/liturgy/reader-visual-reset.*",
+                 ":(exclude)src/web/browser/liturgy/reader-visual-reset-*",
+                 ":(exclude)src/web/browser/liturgy/day.js",
+diff --git a/tools/tests/test_liturgy_reader_visual_reset.py b/tools/tests/test_liturgy_reader_visual_reset.py
+index a6cb19af11a6fa546fb8c31521259323ff3ce6bf..21fc7b8b27746f5f2887b874d9d779f5f7b174b8 100644
+--- a/tools/tests/test_liturgy_reader_visual_reset.py
++++ b/tools/tests/test_liturgy_reader_visual_reset.py
+@@ -12,6 +12,9 @@ DAY = LITURGY / "reader-visual-reset-day.html"
+ PROPERS = LITURGY / "reader-visual-reset-propers.html"
+ CSS = LITURGY / "reader-visual-reset.css"
+ SCRIPT = LITURGY / "reader-visual-reset.js"
++INSTRUMENT = LITURGY / "reader-instrument.css"
++PRODUCTION_DAY = LITURGY / "day-reader.html"
++PRODUCTION_PROPERS = LITURGY / "propers-reader.html"
+ 
+ 
+ def held(path: Path) -> str:
+@@ -130,6 +133,24 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
+         self.assertIn('background: var(--vr-panel);', rule)
+         self.assertIn('box-shadow: none;', rule)
+ 
++    def test_accepted_instrument_has_one_scoped_production_presentation_seam(self) -> None:
++        css = held(INSTRUMENT)
++        self.assertIn("Accepted Liturgical Instrument presentation", css)
++        self.assertIn(".reader-instrument", css)
++        self.assertIn("container: reader-shell / inline-size", css)
++        self.assertIn('@container reader-shell (max-width: 18rem)', css)
++        self.assertIn("ordinary-absence-inline", css)
++        self.assertNotIn('[data-design=', css)
++        for page in (PRODUCTION_DAY, PRODUCTION_PROPERS):
++            source = held(page)
++            self.assertIn('class="reader-shell reader-instrument"', source)
++            self.assertIn('href="reader-instrument.css"', source)
++            self.assertEqual(source.count('class="reader-masthead"'), 1)
++            self.assertEqual(source.count('class="action-label"'), 4)
++        self.assertIn("composeInstrumentAbsences", held(LITURGY / "day-reader.js"))
++        self.assertIn("shellRoot.dataset.readerMode", held(LITURGY / "day-reader.js"))
++        self.assertIn("coverageNotice.replaceChildren(...uncompiled.childNodes)", held(LITURGY / "propers-reader.js"))
++
+     def test_pages_have_unique_ids(self) -> None:
+         for page in (DAY, PROPERS):
+             ids = re.findall(r'\bid="([^"]+)"', held(page))
+@@ -139,15 +160,11 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
+         expected = {
+             "day.html": "bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868",
+             "index.html": "f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65",
+-            "day-reader.html": "1cf17d93283767b4294fe9a0a7864f3b3b1c16eb85511ec6de09afe904d7c6e1",
+-            "propers-reader.html": "59894171fbdbf8f500475cda0d8526fb5299984ef7ef9fe26a8d817f988bc0a3",
+             "reader-shell.js": "e17ccd767c016facc3d03820f5c0c1e71ab166f5a9c7a86de95245e0b87966a9",
+             "reader-shell.css": "e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a",
+             "reader-state.js": "86fcb653738089a569f0f9747d5092e4e51fd2f4ee0ae7b4e7fe9a0c5f5a7cdc",
+             "reader-state-adapters.js": "ec655b52e850152a1a3034b09fbc36b828000a5edc9d01b7b8d98dfaeea96bcb",
+             "ordinary-seating.js": "67917f4888764f1aac097d291df5e655fb485d89219fda56ffba9a25aee993ba",
+-            "day-reader.js": "79385701b98fc3b2dcd2456929ffb14ef42b97aae45c554dbbd03e16abcfccf1",
+-            "propers-reader.js": "f8e5d60924aa3a6b2314855a38d2b645d5e4a0e30737f9cbd65e151a8c279a80",
+         }
+         for name, digest in expected.items():
+             self.assertEqual(hashlib.sha256((LITURGY / name).read_bytes()).hexdigest(), digest, name)
+diff --git a/tools/tests/test_propers_reader_integration.py b/tools/tests/test_propers_reader_integration.py
+index 82aad80664a8601bd6c51bd7656fd7e0ab2d9874..b6dc0ae29ba317e2456d04113ea94c4203116d3e 100644
+--- a/tools/tests/test_propers_reader_integration.py
++++ b/tools/tests/test_propers_reader_integration.py
+@@ -45,6 +45,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
+         for asset in (
+             "reader-shell.js", "reader-shell.css", "reader-state.js",
+             "reader-state-adapters.js", "propers-reader.js", "propers-reader.css",
++            "reader-instrument.css",
+         ):
+             self.assertIn(asset, html)
+ 
+@@ -152,11 +153,11 @@ class PropersReaderIntegrationTests(unittest.TestCase):
+     def test_all_four_actions_and_read_only_mode_are_explicit(self) -> None:
+         source = text(HTML)
+         for action, label in (
+-            ("browse", "Browse &amp; edition"), ("contents", "Contents"),
++            ("browse", "Browse"), ("contents", "Contents"),
+             ("mode", "Mode"), ("details", "Details"),
+         ):
+             self.assertIn(f'data-reader-action="{action}"', source)
+-            self.assertIn(label, source)
++            self.assertIn(f'class="action-label">{label}</span>', source)
+         self.assertIn('data-mode="read"', source)
+         self.assertEqual(source.count('aria-disabled="true"'), 3)
+         self.assertEqual(source.count(' disabled>'), 3)
+@@ -233,9 +234,6 @@ class PropersReaderIntegrationTests(unittest.TestCase):
+             "src/web/browser/liturgy/day.html",
+             "src/web/browser/liturgy/day.css",
+             "src/web/browser/liturgy/day-missal.css",
+-            "src/web/browser/liturgy/propers-reader.html",
+-            "src/web/browser/liturgy/propers-reader.js",
+-            "src/web/browser/liturgy/propers-reader.css",
+             "src/web/browser/liturgy/reader-state.js",
+             "src/web/browser/liturgy/reader-state-adapters.js",
+         ]
+@@ -306,13 +304,13 @@ class PropersReaderIntegrationTests(unittest.TestCase):
+         ]
+         self.assertEqual(len(missal_rows), 1)
+         self.assertEqual(missal_rows[0]["state"], "complete")
+-        self.assertEqual(len(ledger["deliverables"]), 21)
++        self.assertEqual(len(ledger["deliverables"]), 22)
+         self.assertEqual(
+             sum(
+                 row["state"] == "complete"
+                 for row in ledger["deliverables"]
+             ),
+-            15,
++            16,
+         )
+ 
+     def test_candidate_sizes_are_bounded_and_shell_is_not_copied(self) -> None:
