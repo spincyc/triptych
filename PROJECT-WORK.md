@@ -216,7 +216,10 @@ and a labeled 2×2 dock only at extreme root-font reflow. The 54-capture run
 passes 15/15 assertions, including end-content reserve, whole labels, accessible
 names, target size, and overflow. A new immutable handoff and independent
 re-review remain open; this is still a candidate and not production-integration
-authorization.
+authorization. Correction commit `ab89758e3f3ee165e0141e3605be88051450134b`
+is pushed. Its first Pages run passed every build/verification step but timed
+out while GitHub held the deployment queued, so deployed corrected-asset parity
+remains open and is not claimed.
 
 Accepted M1–M3 and W3 state, assembly, renderers, Ordinary seating, failure,
 location, focus, race, action-reachability, and isolation behavior remain
