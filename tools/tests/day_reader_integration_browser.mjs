@@ -1158,14 +1158,33 @@ async function runAssertions(cdp, base) {
   });
 
   await test('first visit uses repository defaults without remembered or geographic state', async () => {
-    await navigateCandidate(cdp, base, '');
-    const state = await evaluate(cdp, 'dayReaderDebug.state');
-    assert.equal(state.edition.id, 'roman-1962');
-    assert.equal(state.bible.id, 'douay-rheims');
-    assert.equal(state.languages.orations, 'la');
-    assert.equal(state.options.ordinary, false);
-    assert.equal(state.requestedMode, 'read');
-    assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), true);
+    const fixedClock = await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: `
+      (() => {
+        const OriginalDate = Date;
+        const fixed = new OriginalDate(2026, 7, 2, 12, 0, 0, 0).getTime();
+        class FixedDate extends OriginalDate {
+          constructor(...args) { super(...(args.length ? args : [fixed])); }
+          static now() { return fixed; }
+        }
+        Object.setPrototypeOf(FixedDate, OriginalDate);
+        globalThis.Date = FixedDate;
+      })();
+    ` });
+    try {
+      await navigateCandidate(cdp, base, '');
+      const state = await evaluate(cdp, 'dayReaderDebug.state');
+      assert.equal(state.civilDate, '2026-08-02');
+      assert.equal(state.edition.id, 'roman-1962');
+      assert.equal(state.bible.id, 'douay-rheims');
+      assert.equal(state.languages.orations, 'la');
+      assert.equal(state.options.ordinary, false);
+      assert.equal(state.requestedMode, 'read');
+      assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), true);
+    } finally {
+      await cdp.send('Page.removeScriptToEvaluateOnNewDocument', {
+        identifier: fixedClock.identifier
+      });
+    }
   });
 
   await test('URL state outranks storage and locality is never inferred', async () => {
