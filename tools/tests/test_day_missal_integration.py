@@ -163,8 +163,8 @@ class DayMissalIntegrationTests(unittest.TestCase):
                 "liturgy-day-missal-w3-candidate-2026-08-05"]
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["state"], "complete")
-        self.assertEqual(len(ledger["deliverables"]), 22)
-        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 16)
+        self.assertEqual(len(ledger["deliverables"]), 23)
+        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 17)
 
     def test_javascript_syntax_and_browser_harness(self) -> None:
         for path in (JS, PUBLIC_RENDERER, LITURGY / "reader-shell.js"):
