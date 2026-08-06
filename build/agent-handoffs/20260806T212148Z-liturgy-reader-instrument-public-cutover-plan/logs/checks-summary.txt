@@ -1,0 +1,28 @@
+Liturgical Instrument public-cutover planning validation
+UTC date: 2026-08-06
+
+PASS  starting HEAD/main/origin/main/remote main all 7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef
+PASS  Day browser 34/34; console/request/HTTP/name/duplicate/overflow failures 0
+PASS  Propers browser 27/27
+PASS  shared-shell browser 18/18
+PASS  governed Instrument 19/19; browser hygiene failures 0; captures 0 (no product/visual change)
+PASS  focused non-publication Python 142/142
+PASS  locked-publication Python 82/82 with Markdown 3.10.2
+QUAL  system Python publication run: 8 errors, all lock mismatch (installed Markdown 3.10.3)
+PASS  tools/tpt check-promised-deliverables: 23 tracked, 17 complete
+PASS  tools/tpt --check: 34 tools
+PASS  make check-release-bindings: exact, 0 stale
+PASS  locked public-alpha check/build/verify --deployment-target github-pages
+PASS  focused promised-deliverable example replay 2/2
+QUAL  make check: exit 2; 188 replayed, 23 unrelated diverged, 35 known stale; no unrelated recapture
+PASS  git diff --check
+PASS  canonical/candidate/oracle HTML isolation from starting boundary
+
+Source SHA-256:
+bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868  src/web/browser/liturgy/day.html
+f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65  src/web/browser/liturgy/index.html
+5bc859042e907565afb304beaf0d5ae099c571933c474760c77730a9245531b9  src/web/browser/liturgy/day-reader.html
+9d30a46afc8d890e95a3e1dd8aab04a164eea906b0b88f520f2c70e878b9560b  src/web/browser/liturgy/propers-reader.html
+405069b81214d3598d568433b68440ac3433d7ceef09d64a05506b907ebc8320  src/web/browser/liturgy/day-reader.js
+135f1864bb227ab35058a3fad614d9c7855d1c78aff048dae4bdae3fc69f4ad0  src/web/browser/liturgy/propers-reader.js
+64a566758f20df72f53f0f1dfc90ba82fe4ad28cf0ed55a346066f6c1ed5ee02  src/web/browser/liturgy/reader-instrument.css

@@ -1,0 +1,54 @@
+{
+  "schema": "triptych-liturgy-reader-cutover-compatibility/v1",
+  "baselineCommit": "7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef",
+  "acceptedProductionCommit": "5444d89fc9b379a1babef5b2220323fe1508b2b3",
+  "generatedAt": "2026-08-06T20:50:06Z",
+  "routes": {
+    "canonicalDay": "/liturgy/day.html",
+    "canonicalPropers": "/liturgy/index.html",
+    "candidateDay": "/liturgy/day-reader.html",
+    "candidatePropers": "/liturgy/propers-reader.html",
+    "oracleDay": "/liturgy/reader-visual-reset-day.html",
+    "oraclePropers": "/liturgy/reader-visual-reset-propers.html"
+  },
+  "classifications": [
+    "exact match",
+    "accepted intentional difference",
+    "cutover blocker",
+    "unrelated pre-existing behavior"
+  ],
+  "cases": [
+    {"id":"D01","entrance":"day","class":"direct-deep-link","hash":"#date=2026-08-05&missal=roman-1962&bible=douay-rheims","classification":"exact match","expected":"same Roman Day identity and Proper semantics; HTTP 200; hash preserved","evidence":["tools/tests/day_reader_integration_browser.mjs","tools/tests/test_liturgy_reader_state.py"]},
+    {"id":"D02","entrance":"day","class":"another-date-read","hash":"#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&ordinary=0","classification":"exact match","expected":"same identity, citations, Proper order and text","evidence":["tools/tests/day_reader_integration_browser.mjs:1133"]},
+    {"id":"D03","entrance":"day","class":"postconciliar-read","hash":"#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&ordinary=0","classification":"exact match","expected":"same postconciliar identity, cycle and Proper order","evidence":["tools/tests/day_reader_integration_browser.mjs"]},
+    {"id":"D04","entrance":"day","class":"missal-mode","hash":"#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&ordinary=1&ordinary-lang=en&eucharistic-prayer=ep-ii","classification":"exact match","expected":"same production Ordinary renderer, option, seating and appointed Propers","evidence":["tools/tests/day_reader_integration_browser.mjs:1720"]},
+    {"id":"D05","entrance":"day","class":"history-semantic-location","classification":"accepted intentional difference","expected":"candidate's stronger pushState, winning render, focus and semantic restoration retained","evidence":["tools/tests/day_reader_integration_browser.mjs"]},
+    {"id":"D06","entrance":"day","class":"invalid-explicit-state","hash":"#date=2026-08-02&missal=not-a-missal&bible=douay-rheims","classification":"accepted intentional difference","expected":"fail closed; no stale or implicit selection","evidence":["tools/tests/day_reader_integration_browser.mjs","tools/tests/test_liturgy_reader_state.py"]},
+    {"id":"D07","entrance":"day","class":"partial-coverage","hash":"#date=2026-08-06&missal=roman-1962&bible=douay-rheims&orations=la&ordinary=1","classification":"accepted intentional difference","expected":"same exact absences with accepted compact warning hierarchy","evidence":["tools/tests/liturgy_reader_visual_reset_browser.mjs"]},
+    {"id":"D08","entrance":"day","class":"first-visit-default","hash":"","classification":"cutover blocker","current":"local today; first rubrics row, currently postconciliar","candidate":"local today; Propers declared default, currently roman-1962","decision":"independent review must select the public default","evidence":["src/web/browser/liturgy/day.js:1795","src/web/browser/liturgy/day-reader.js:374"]},
+    {"id":"D09","entrance":"day","class":"why-apparatus","hash":"#date=2026-08-02&missal=roman-1962&bible=douay-rheims&why=1","classification":"cutover blocker","current":"renders existing reasoning apparatus","candidate":"defers and links day.html","decision":"compatibility integration or explicit narrowing; recursive link forbidden","evidence":["src/web/browser/liturgy/day-reader.js:190","src/web/browser/liturgy/day-reader.js:998"]},
+    {"id":"D10","entrance":"day","class":"territorial-choice","classification":"cutover blocker","current":"current Day production resolution surface","candidate":"fails closed then links day.html","decision":"retain honest non-geographic behavior without self-link","evidence":["src/web/browser/liturgy/day-reader.js:981"]},
+    {"id":"D11","entrance":"day","class":"first-visit-test-clock","classification":"unrelated pre-existing behavior","expected":"browser clock fixed at local noon 2026-08-02; product Date semantics unchanged; 34/34","evidence":["tools/tests/day_reader_integration_browser.mjs"]},
+    {"id":"P01","entrance":"propers","class":"seasonal-deep-link","hash":"#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims","classification":"exact match","expected":"same edition-qualified formulary, Proper order and text","evidence":["tools/tests/propers_reader_integration_browser.mjs"]},
+    {"id":"P02","entrance":"propers","class":"sanctoral-deep-link","hash":"#missal=roman-1962&type=sanctoral&mass=s-hilarii-episcopi-confessoris-ecclesiae-doctoris&bible=douay-rheims","classification":"exact match","expected":"explicit supported sanctoral selection or fixture failure without fallback","evidence":["src/web/data/structure/propers/roman-1962.json"]},
+    {"id":"P03","entrance":"propers","class":"first-visit","hash":"","classification":"accepted intentional difference","current":"first available type/formulary by order","candidate":"Browse open; no formulary selected","expected":"accepted no-arbitrary-selection behavior","evidence":["tools/tests/propers_reader_integration_browser.mjs"]},
+    {"id":"P04","entrance":"propers","class":"selection-and-history","classification":"exact match","expected":"five legacy public keys reproduce valid identity through direct load/reload","evidence":["tools/tests/test_liturgy_reader_state.py"]},
+    {"id":"P05","entrance":"propers","class":"browse-modal","classification":"accepted intentional difference","expected":"canonical selector identity/order with accepted modal focus and URL behavior","evidence":["tools/tests/propers_reader_integration_browser.mjs"]},
+    {"id":"P06","entrance":"propers","class":"invalid-explicit-state","classification":"accepted intentional difference","expected":"fail closed and select no formulary by order","evidence":["tools/tests/propers_reader_integration_browser.mjs"]},
+    {"id":"P07","entrance":"propers","class":"remembered-precedence","classification":"accepted intentional difference","expected":"URL then safe remembered missal/Bible/orations then declared default","evidence":["src/web/browser/liturgy/propers-reader.js:205","tools/tests/test_liturgy_reader_state.py"]},
+    {"id":"P08","entrance":"propers","class":"cycle-alternative-witness-url","classification":"cutover blocker","candidate":"_candidate-cycle, _candidate-alternative, _candidate-translation-witness","decision":"approve stable public spelling or gate affected states","evidence":["src/web/browser/liturgy/propers-reader.js:22","guidance/liturgy-reader-state.md:150"]},
+    {"id":"X01","entrance":"both","class":"relative-assets-and-data","classification":"exact match","expected":"same directory; ../browse and relative CSS/JS remain valid","evidence":["src/web/browser/shared/browser-core.js","tools/public-alpha"]},
+    {"id":"X02","entrance":"both","class":"candidate-indexing","classification":"cutover blocker","current":"deployed candidate raw HTML index, follow with public OG URL","decision":"source-declared noindex and no canonical/social advertising","evidence":["src/web/browser/liturgy/day-reader.html","src/web/browser/liturgy/propers-reader.html","tools/public-alpha:2435"]},
+    {"id":"X03","entrance":"both","class":"public-metadata-wording","classification":"cutover blocker","current":"candidate/internal titles and diagnostics","decision":"route-neutral controller wording; canonical public titles/descriptions","evidence":["src/web/browser/liturgy/day-reader.js","src/web/browser/liturgy/propers-reader.js"]},
+    {"id":"X04","entrance":"both","class":"cross-entrance-navigation","classification":"cutover blocker","current":"direct canonical footer links","candidate":"Triptych Home only; generated chrome hidden","decision":"approve quiet counterpart/context access or expressly accept removal","evidence":["src/web/browser/liturgy/day.html","src/web/browser/liturgy/index.html","src/web/browser/liturgy/reader-instrument.css:40"]},
+    {"id":"X05","entrance":"both","class":"static-cache","classification":"unrelated pre-existing behavior","current":"GitHub Pages max-age=600; unversioned assets","expected":"mixed-cache compatible; bypassed and post-expiry parity verification","evidence":[".github/workflows/pages.yml","tools/public-alpha"]},
+    {"id":"X06","entrance":"both","class":"governed-full-gate","classification":"unrelated pre-existing behavior","current":"stored example transcript divergence","expected":"record exact stop; no recapture or false green claim","evidence":["build/agent-continuity/liturgy-reader-visual-plan.md"]}
+  ],
+  "summary": {
+    "exactMatch": 8,
+    "acceptedIntentionalDifference": 7,
+    "cutoverBlocker": 7,
+    "unrelatedPreExistingBehavior": 3,
+    "executionAuthorized": false
+  }
+}

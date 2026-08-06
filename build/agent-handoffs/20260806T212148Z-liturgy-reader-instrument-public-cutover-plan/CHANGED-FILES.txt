@@ -1,0 +1,33 @@
+Planning/tracking changes from 7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef
+
+M  PROJECT-WORK.md
+A  build/agent-continuity/liturgy-reader-cutover-decision.md
+A  build/agent-continuity/liturgy-reader-cutover-navigation-map.md
+A  build/agent-continuity/liturgy-reader-cutover-route-map.md
+A  build/agent-continuity/liturgy-reader-cutover-state-matrix.json
+A  build/agent-continuity/liturgy-reader-cutover-state-matrix.md
+A  build/agent-continuity/liturgy-reader-day-deterministic-test.md
+A  build/agent-continuity/liturgy-reader-public-cutover-gates.md
+A  build/agent-continuity/liturgy-reader-public-cutover-proposed.patch
+A  build/agent-continuity/liturgy-reader-public-cutover-rollback.md
+M  build/agent-continuity/liturgy-reader-visual-plan.md
+M  guidance/liturgy-browser-roadmap.md
+M  promised-deliverables.toml
+M  tools/check-promised-deliverables
+M  tools/tests/day_reader_integration_browser.mjs
+M  tools/tests/test_day_missal_integration.py
+M  tools/tests/test_propers_reader_integration.py
+A  build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/
+A  build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan.zip
+
+Intentionally unchanged:
+src/web/browser/liturgy/day.html
+src/web/browser/liturgy/index.html
+src/web/browser/liturgy/day-reader.html
+src/web/browser/liturgy/propers-reader.html
+src/web/browser/liturgy/day-reader.js
+src/web/browser/liturgy/propers-reader.js
+src/web/browser/liturgy/reader-instrument.css
+src/web/browser/liturgy/reader-visual-reset-day.html
+src/web/browser/liturgy/reader-visual-reset-propers.html
+all repository-owned public navigation hrefs

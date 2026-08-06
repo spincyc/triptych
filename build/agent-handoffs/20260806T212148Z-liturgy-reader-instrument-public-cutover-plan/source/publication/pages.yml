@@ -1,0 +1,59 @@
+name: Publish GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install site dependency
+        run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt
+
+      - name: Verify deployable sources and inventories
+        run: make check-deployment-sources
+
+      - name: Build public artifact
+        run: make public-site
+
+      - name: Verify artifact and GitHub Pages compatibility
+        run: python tools/tpt public-alpha verify --deployment-target github-pages
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload verified artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: build/public-alpha/site
+          include-hidden-files: true
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v5

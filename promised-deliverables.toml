@@ -4,7 +4,7 @@ schema_version = 1
 id = "liturgy-reader-instrument-public-cutover-plan-2026-08-06"
 owner = "build/agent-continuity/liturgy-reader-cutover-decision.md"
 promise = "Produce an independently reviewable, route-compatible, reversible public-cutover plan for moving the accepted Liturgical Instrument Day and Propers readers onto their canonical URLs without changing canonical pages, public navigation, candidate routes, or the accepted visual oracle during planning."
-state = "in_progress"
+state = "candidate"
 
   [[deliverables.requirements]]
   id = "accepted-starting-boundary-and-planning-scope"
@@ -18,7 +18,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "route-state-and-navigation-inventory"
   criterion = "Tracked human- and machine-readable inventories distinguish the canonical public contract from implementation detail and classify every material Day, Propers, navigation, metadata, indexing, cache, and static-hosting difference."
-  status = "open"
+  status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-cutover-route-map.md",
     "build/agent-continuity/liturgy-reader-cutover-state-matrix.md",
@@ -29,7 +29,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "smallest-reversible-mechanism"
   criterion = "The plan selects and justifies the smallest canonical-URL-preserving mechanism, rejects more invasive alternatives, names exact cutover and protected files, and records every unresolved compatibility blocker without reopening accepted design."
-  status = "open"
+  status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-cutover-decision.md",
     "build/agent-continuity/liturgy-reader-public-cutover-proposed.patch",
@@ -38,16 +38,17 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "deterministic-day-gate"
   criterion = "The Day first-visit browser assertion is made deterministic without changing product behavior or weakening its repository-default contract, or a newly discovered non-date-dependent cause remains an explicit cutover blocker."
-  status = "open"
+  status = "pass"
   evidence = [
     "tools/tests/day_reader_integration_browser.mjs",
     "build/agent-continuity/liturgy-reader-cutover-state-matrix.md",
+    "build/agent-continuity/liturgy-reader-day-deterministic-test.md",
   ]
 
   [[deliverables.requirements]]
   id = "rollback-and-acceptance-gates"
   criterion = "An operational ordinary-revert rollback and exact local, canonical-route, visual-oracle, publication, Pages, deployed-parity, indexing, cache, accessibility, and browser acceptance gates make later execution bounded and testable."
-  status = "open"
+  status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-public-cutover-rollback.md",
     "build/agent-continuity/liturgy-reader-public-cutover-gates.md",
@@ -56,9 +57,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "immutable-plan-review-handoff"
   criterion = "A fresh tracked immutable handoff directory and verified one-root ZIP contain the exact instruction, byte-identical continuity, route/state/navigation inventories, decision, proposed patch, rollback, gates, source snapshots, checks, and narrow independent-review request."
-  status = "open"
+  status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/HANDOFF.md",
+    "build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/MANIFEST.sha256",
   ]
 
   [[deliverables.requirements]]

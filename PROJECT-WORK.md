@@ -183,7 +183,8 @@ operations.
 
 <!-- promised-deliverable: liturgy-reader-instrument-public-cutover-plan-2026-08-06 -->
 
-**In progress; planning and pre-cutover readiness only.** Work begins from the
+**Candidate for narrow independent planning review; planning and pre-cutover
+readiness only.** Work began from the
 clean, fully synchronized accepted-integration boundary
 `7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef`. It inventories the canonical
 `liturgy/day.html` and `liturgy/index.html` contracts against the accepted
@@ -202,6 +203,21 @@ unauthorized. Source inspection has already identified metadata/indexing,
 legacy-state fallback, first-visit default, and cross-entrance navigation
 differences that must be explicitly classified before a later execution can be
 authorized; none will be silently normalized away.
+
+Planning checkpoint `c7124de25` records the route, state, navigation,
+static-hosting, cache, mechanism, rollback, and later-execution gate maps.
+Test-only commit `5e1b82b51` proves and removes the disclosed wall-clock
+dependency while keeping the first-visit URL empty; Day now passes 34/34.
+Record checkpoint `2cf91dd01` updates only task-owned ledger expectations and
+retains the unrelated full-gate transcript stop. The proposed same-path patch
+is deliberately unapplied. Independent review must disposition the empty-Day
+default, deferred Day reasoning/territorial outcomes, stable public Propers
+option keys, canonical/candidate metadata, route-neutral wording, and direct
+cross-entrance/context access before a later execution can be authorized.
+The immutable planning package is
+`build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/`.
+Canonical pages, public navigation, candidate routes, and the visual oracle
+remain byte-unchanged.
 
 ### Liturgical Instrument production integration
 

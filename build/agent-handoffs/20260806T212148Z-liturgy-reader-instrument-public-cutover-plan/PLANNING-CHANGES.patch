@@ -1,0 +1,2006 @@
+diff --git a/PROJECT-WORK.md b/PROJECT-WORK.md
+index 7eb0e031d..838a91d3e 100644
+--- a/PROJECT-WORK.md
++++ b/PROJECT-WORK.md
+@@ -181,0 +182,40 @@ operations.
++### Liturgical Instrument public-cutover plan
++
++<!-- promised-deliverable: liturgy-reader-instrument-public-cutover-plan-2026-08-06 -->
++
++**Candidate for narrow independent planning review; planning and pre-cutover
++readiness only.** Work began from the
++clean, fully synchronized accepted-integration boundary
++`7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef`. It inventories the canonical
++`liturgy/day.html` and `liturgy/index.html` contracts against the accepted
++`liturgy/day-reader.html` and `liturgy/propers-reader.html` implementations,
++selects the smallest reversible same-URL mechanism, makes the known
++date-dependent Day browser gate deterministic if and only if its disclosed
++cause is confirmed, and prepares an unapplied exact patch, rollback, acceptance
++gates, and immutable independent-review handoff.
++
++No canonical public HTML, public navigation, candidate route, accepted visual
++oracle, or public deployment behavior may change in this phase. The accepted
++visual direction and production behavior seams remain frozen. Production
++integration and its durable handoff are complete; public-cutover planning is
++not acceptance, and public navigation changes and cutover execution remain
++unauthorized. Source inspection has already identified metadata/indexing,
++legacy-state fallback, first-visit default, and cross-entrance navigation
++differences that must be explicitly classified before a later execution can be
++authorized; none will be silently normalized away.
++
++Planning checkpoint `c7124de25` records the route, state, navigation,
++static-hosting, cache, mechanism, rollback, and later-execution gate maps.
++Test-only commit `5e1b82b51` proves and removes the disclosed wall-clock
++dependency while keeping the first-visit URL empty; Day now passes 34/34.
++Record checkpoint `2cf91dd01` updates only task-owned ledger expectations and
++retains the unrelated full-gate transcript stop. The proposed same-path patch
++is deliberately unapplied. Independent review must disposition the empty-Day
++default, deferred Day reasoning/territorial outcomes, stable public Propers
++option keys, canonical/candidate metadata, route-neutral wording, and direct
++cross-entrance/context access before a later execution can be authorized.
++The immutable planning package is
++`build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/`.
++Canonical pages, public navigation, candidate routes, and the visual oracle
++remain byte-unchanged.
++
+diff --git a/build/agent-continuity/liturgy-reader-cutover-decision.md b/build/agent-continuity/liturgy-reader-cutover-decision.md
+new file mode 100644
+index 000000000..7d31e8bed
+--- /dev/null
++++ b/build/agent-continuity/liturgy-reader-cutover-decision.md
+@@ -0,0 +1,156 @@
++# Liturgical Instrument public-cutover decision
++
++## Decision status
++
++**Planning candidate; execution remains unauthorized.** Select Option A,
++source-level in-place promotion behind the unchanged canonical filenames, as
++the smallest architecture. The mechanism is fixed; four compatibility
++dispositions below remain independent-review blockers before its proposed patch
++can be authorized for execution.
++
++## Selected mechanism — canonical filenames load the accepted implementation
++
++The later cutover replaces only the DOM/load graph at:
++
++- `src/web/browser/liturgy/day.html`
++- `src/web/browser/liturgy/index.html`
++
++with the accepted reader structure already exercised at `day-reader.html` and
++`propers-reader.html`. Canonical paths remain `/liturgy/day.html` and
++`/liturgy/index.html`; query and hash text is not redirected or rewritten by a
++forwarder. Day continues to load legacy `day.js` solely for its production
++Ordinary renderer export; its existing DOM guard prevents a second controller.
++All accepted state, adapter, seating, renderer, shell, and Instrument assets are
++reused by filename.
++
++The same cutover commit must make the retained candidate HTML pages statically
++noindex and route-neutralize public titles/diagnostics in the shared candidate
++controllers. Candidate and oracle routes remain deployed, unlinked, and
++unmodified in visual composition during the initial acceptance window.
++
++This mechanism has the best rollback property: an ordinary revert restores the
++two canonical HTML source files and any bounded route-neutral metadata changes;
++no redirect cache, renamed data root, deleted legacy controller, or build-only
++alias must be reconstructed.
++
++## Exact expected later execution paths
++
++Product route/runtime paths:
++
++- `src/web/browser/liturgy/day.html`
++- `src/web/browser/liturgy/index.html`
++- `src/web/browser/liturgy/day-reader.html` (static noindex only)
++- `src/web/browser/liturgy/propers-reader.html` (static noindex only)
++- `src/web/browser/liturgy/day-reader.js` (route-neutral title/diagnostics and
++  resolved deferred-state disposition)
++- `src/web/browser/liturgy/propers-reader.js` (route-neutral title/diagnostics
++  and resolved public option-key disposition)
++- `src/web/browser/liturgy/reader-state.js` only if independent review accepts
++  stable public cycle/alternative/witness key names
++
++Cutover-owned tests and publication records:
++
++- focused Day/Propers/state/visual/static Python tests;
++- Day, Propers, shared-shell, and governed visual Chromium harnesses adapted to
++  assert canonical ownership while retaining candidate/oracle parity;
++- `release/public-alpha.json` and
++  `release/rights/public-alpha-2026-07-15.md`, refreshed only for explicitly
++  authorized changed bytes;
++- the three tracking owners and a fresh cutover-execution continuity/handoff.
++
++Files that must not change include accepted Instrument/shell CSS, shell
++controller, state adapters unless a proved URL-name conflict requires it,
++assembly, renderers, Ordinary seating, liturgical/calendar/Bible data, sources,
++translations, public README/library/navigation hrefs, and visual oracle files.
++
++## Required dispositions before execution authorization
++
++### 1. Empty Day default
++
++Current canonical Day chooses the first rubrics calendar, currently
++postconciliar. The accepted reader chooses the repository-declared Propers
++default, currently Roman 1962. Recommendation: accept Roman 1962 as the
++intentional reader default because it is the accepted candidate’s tested
++repository default and avoids preserving accidental manifest ordering. This
++is reader-visible and requires independent approval; it is not silently folded
++into “parity.”
++
++### 2. Existing `why=1` and territorial fallback
++
++The accepted Day reader currently defers these states and links to `day.html`.
++After promotion that link is recursive. Recommendation: do **not** ship a
++self-link, redirect, or hidden automatic fallback. Before cutover, either:
++
++- authorize a bounded compatibility integration that presents the existing
++  production reasoning/territorial result inside the accepted shell without
++  changing its source owner; or
++- expressly accept a narrower public state and remove the recursive link while
++  retaining a fail-closed explanation.
++
++The first is preferred for preserving valid public behavior, but it is a new
++bounded implementation unit and requires its own evidence. Until one choice is
++accepted, public cutover is blocked.
++
++### 3. Propers cycle/alternative/witness URL names
++
++`_candidate-*` keys cannot become a public API by accident. Recommendation:
++approve stable additive public names `cycle`, `alternative`, and
++`translation-witness`, keep unknown keys inert, accept old `_candidate-*` only
++on retained candidate routes during the review window, and add exact state
++round-trip/browser fixtures. This is the smallest honest public contract; it
++does not change renderer ownership. Until reviewed, affected states are a
++cutover blocker.
++
++### 4. Direct cross-entrance/context navigation
++
++Current reader footers link Day↔Propers and to contextual sections. Instrument
++hides the generated site header/footer and offers Triptych Home only.
++Recommendation: add one quiet route-neutral Day/Propers counterpart link and
++place the longer contextual destinations in Details, using existing local
++URLs. This preserves product entrance reachability without restoring generic
++site chrome or reopening composition. Because it changes accepted surface
++content, independent review must approve its exact location. Until then the
++plan classifies two-step Home navigation as insufficient parity.
++
++## Rejected options
++
++### Option B — redirect/forward canonical pages
++
++Rejected. GitHub Pages has no native rewrite layer here. Client redirects add
++flash, hash/query/history risk, duplicate indexing, accessibility ambiguity,
++and a rollback surface while exposing internal filenames.
++
++### Option C — rename candidates and preserve aliases
++
++Rejected. Renames add deletion/alias work, disturb release bindings, make
++rollback multi-path, and risk relative-path/cache divergence while gaining
++nothing over same-directory in-place promotion.
++
++### Option D — build-time alias or controller replacement
++
++Rejected. A build-only copy would make source routes disagree with deployed
++routes. Renaming `day-reader.js` over `day.js` is destructive because the
++accepted Day still imports the legacy renderer export. A new router/loader is
++larger than two static entry-point changes.
++
++## Smallest reversible execution sequence
++
++1. Resolve and record all four dispositions above; update this plan if the
++   reviewer selects a different bounded answer.
++2. Commit any separately reviewed state-compatibility implementation and its
++   green focused evidence without changing canonical HTML.
++3. In one cutover commit, promote both canonical HTML entry points, add static
++   noindex to retained candidates, route-neutralize labels, update cutover
++   assertions, and refresh only exact authorized release bindings.
++4. Build and exercise actual canonical filenames locally against the accepted
++   candidate/oracle matrix.
++5. Push once; require successful Pages deployment for that exact commit and
++   complete cache-bypassed plus post-600-second parity checks.
++6. Stop for independent cutover acceptance. Do not remove candidates, oracle,
++   legacy controllers, or compatibility tests.
++
++If any post-deployment gate fails, ordinarily revert the cutover commit and
++verify the rollback deployment as specified in the rollback plan. Public
++navigation changes and cutover execution remain unauthorized until an
++independent plan disposition and separate maintainer authorization are both
++recorded.
+diff --git a/build/agent-continuity/liturgy-reader-cutover-navigation-map.md b/build/agent-continuity/liturgy-reader-cutover-navigation-map.md
+new file mode 100644
+index 000000000..641df3221
+--- /dev/null
++++ b/build/agent-continuity/liturgy-reader-cutover-navigation-map.md
+@@ -0,0 +1,70 @@
++# Liturgical Instrument cutover navigation map
++
++## Scope
++
++This is a read-only inventory at
++`7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef`. No link is changed by planning.
++The preferred same-path cutover intentionally makes external navigation edits
++unnecessary.
++
++## Repository-owned links into canonical readers
++
++| Owner | Current destination | Classification | Later cutover edit |
++| --- | --- | --- | --- |
++| `README.md` | `liturgy/day.html`, `liturgy/` | already canonical | none |
++| `docs/the-mass.md` | `../liturgy/` | already canonical Propers entrance | none |
++| `library/liturgy.md` | `../liturgy/` | already canonical Propers entrance | none |
++| `src/web/browser/history/index.html` | `../liturgy/day.html`, `../liturgy/` | already canonical | none |
++| `src/web/browser/sources/index.html` | `../liturgy/day.html`, `../liturgy/` | already canonical | none |
++| `src/web/browser/texts/index.html` | `../liturgy/day.html`, `../liturgy/` | already canonical | none |
++| `src/web/browser/catena/index.html` | `../liturgy/` | already canonical Propers entrance | none |
++| `src/web/browser/law/index.html` | `../liturgy/` | already canonical Propers entrance | none |
++| `src/web/browser/scripture/index.html` | `../liturgy/` | already canonical Propers entrance | none |
++| `src/web/browser/scripture/track.html` | `../liturgy/` | already canonical Propers entrance | none |
++
++`tools/public-alpha` resolves Markdown links naming the `liturgy` entrance to
++`liturgy/index.html`. Standalone browser pages keep authored relative links.
++`/liturgy/` and `/liturgy/index.html` currently return HTTP 200 with identical
++bytes rather than redirecting. The explicit canonical spelling for the plan is
++`/liturgy/index.html`; the directory form remains a host alias.
++
++No repository-owned navigation link to `day-reader.html` or
++`propers-reader.html` was found. No public navigation path therefore needs a
++route change, and any proposed mechanism that required broad href edits would
++be rejected as too invasive.
++
++## Links inside the current canonical readers
++
++| Source | Current links | Cutover consequence |
++| --- | --- | --- |
++| `src/web/browser/liturgy/day.html` footer | Propers `index.html`, Law, Texts | removed if candidate DOM is copied unchanged |
++| `src/web/browser/liturgy/index.html` footer | Day `day.html`, Scripture, History, Texts, Sources, Law | removed if candidate DOM is copied unchanged |
++
++The accepted Instrument masthead links to Triptych Home. In the built site,
++`reader-instrument.css` hides the generated header, footer, release banner, and
++breadcrumb around an Instrument. Thus “all external links already use canonical
++URLs” does not prove navigation parity: direct Day↔Propers and contextual exits
++would change from one link to a two-step trip through Home.
++
++The plan recommends one quiet counterpart entrance link plus contextual links
++inside Details, but the exact presentation is an independent-review decision.
++It must not restore the generic site header, add a new dashboard row, or alter
++the four primary action model. Until resolved, this is a cutover blocker rather
++than an unrecorded navigation deletion.
++
++## Candidate and oracle surfaces
++
++- `day-reader.html` and `propers-reader.html` remain unlinked compatibility and
++  parity surfaces for the initial acceptance window. They must become
++  source-declared noindex and must not advertise themselves as canonical.
++- `reader-visual-reset-day.html` and `reader-visual-reset-propers.html` remain
++  unlinked, statically noindex, unchanged visual oracles.
++- No cleanup, redirect, deletion, or repurposing of these routes belongs to the
++  initial cutover.
++
++## Later label-only possibilities
++
++The homepage/catalog descriptions may eventually be updated to describe the
++accepted reader’s Read/Missal/Browse interaction more precisely, but their
++current hrefs are correct and a label refresh is deliberately postponed until
++after independent public-cutover acceptance. It is not a cutover prerequisite.
+diff --git a/build/agent-continuity/liturgy-reader-cutover-route-map.md b/build/agent-continuity/liturgy-reader-cutover-route-map.md
+new file mode 100644
+index 000000000..ce4bdef62
+--- /dev/null
++++ b/build/agent-continuity/liturgy-reader-cutover-route-map.md
+@@ -0,0 +1,194 @@
++# Liturgical Instrument public-cutover route map
++
++## Boundary
++
++This map describes repository state at
++`7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef`. It distinguishes the public
++contract from replaceable implementation details. It does not authorize or
++apply a route, navigation, indexing, candidate, oracle, or cutover change.
++
++## Canonical public contract
++
++| Entrance | Canonical URL | Required stable state carrier | Current source |
++| --- | --- | --- | --- |
++| Day | `/liturgy/day.html` | query `data`; hash date, missal, Bible, orations, apparatus, Ordinary language/option, readable formulary | `src/web/browser/liturgy/day.html` |
++| Propers | `/liturgy/index.html` (also served byte-identically at `/liturgy/`) | query `data` and `missals`; hash missal, type, mass, Bible, orations | `src/web/browser/liturgy/index.html` |
++
++The filenames, valid hash meanings, relative `../browse` data root, direct
++reload, and Back/Forward behavior are public contract. The current disclosure
++DOM, legacy controller filenames, card styling, and first-item implementation
++defaults are implementation detail unless a separately recorded compatibility
++decision says otherwise.
++
++These existing URLs must remain directly resolvable without redirects:
++
++```text
++/liturgy/day.html#date=2026-08-05&missal=roman-1962&bible=douay-rheims
++/liturgy/index.html#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims
++```
++
++Representative compatibility URLs are:
++
++```text
++# Day: another date and explicit Read
++/liturgy/day.html#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&ordinary=0
++
++# Day: postconciliar Missal with a legitimate option
++/liturgy/day.html#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&ordinary=1&ordinary-lang=en&eucharistic-prayer=ep-ii
++
++# Day: incomplete Roman coverage
++/liturgy/day.html#date=2026-08-06&missal=roman-1962&bible=douay-rheims&orations=la&ordinary=1
++
++# Day: malformed explicit edition (must fail closed under the accepted reader)
++/liturgy/day.html#date=2026-08-02&missal=not-a-missal&bible=douay-rheims
++
++# Propers: Roman seasonal
++/liturgy/index.html#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims
++
++# Propers: supported sanctoral representative
++/liturgy/index.html#missal=roman-1962&type=sanctoral&mass=s-hilarii-episcopi-confessoris-ecclesiae-doctoris&bible=douay-rheims
++
++# Propers: malformed formulary (must fail closed under the accepted reader)
++/liturgy/index.html#missal=roman-1962&type=seasonal&mass=not-a-mass&bible=douay-rheims
++```
++
++The exact supported sanctoral key is revalidated from the built structure by
++the later execution gate before use; a missing key is a fixture error, not
++permission to select a nearby Mass.
++
++## Actual entry-point and loading graph
++
++### Canonical Day
++
++- HTML: `src/web/browser/liturgy/day.html`.
++- CSS, in order: `../shared/browser-core.css`, `liturgy.css`, `day.css`,
++  `day-missal.css`.
++- JavaScript, in order: `../shared/browser-core.js`, `assembly-model.js`,
++  `ordinary-seating.js`, `reading-contents.js`,
++  `proper-placement-notes.js`, `day.js`.
++- DOM/controller owner: `day.js` requires `#reading` and `#controls` and owns
++  the current settings/disclosures, resolution, hash writes, and render.
++- Data: `?data=` is parsed by `browser-core.js`; default `../browse`.
++- Default: local civil date, first rubrics-index calendar (currently
++  postconciliar), first Bible, Latin orations, Propers-only, rubrics latent-on.
++- URL/history: `T.writeHash` replaces an empty first visit with an explicit
++  selection by assigning `location.hash`; later external hash changes rerender.
++- Document title: source title `Today’s Missal`; the controller does not update
++  it for the selected celebration.
++
++### Accepted Day candidate
++
++- HTML: `src/web/browser/liturgy/day-reader.html`.
++- CSS, in order: canonical Day CSS plus `reader-shell.css`, `day-reader.css`,
++  and last-loaded `reader-instrument.css`.
++- JavaScript, in order: core, assembly, seating, legacy `day.js` (renderer
++  export only), `reader-state.js`, `reader-state-adapters.js`,
++  `reader-shell.js`, `day-reader.js`.
++- `day.js` safely does not initialize because the candidate has no legacy
++  `#reading`/`#controls` pair.
++- Default: local civil date, declared Propers default (currently Roman 1962),
++  first Bible, Latin orations, Read. Day deliberately ignores remembered state.
++- URL/history: strict legacy parsing, explicit-invalid fail-closed behavior,
++  `pushState`/`replaceState`, `popstate`/`hashchange`, semantic-location and
++  focus restoration.
++- Candidate-only behavior: JavaScript inserts noindex only when no robots meta
++  exists; deployed layout already supplies one, so this does not make the raw
++  deployed HTML noindex. The source and runtime title/diagnostics retain
++  “internal candidate” wording.
++- Deferred current features: `why=1` and multi-territorial outcomes link to
++  `day.html`; that becomes a self-link if the controller is promoted unchanged.
++
++### Canonical Propers
++
++- HTML: `src/web/browser/liturgy/index.html`.
++- CSS: `../shared/browser-core.css`, `liturgy.css`, `day-missal.css`.
++- JavaScript: `../shared/browser-core.js`, `reading-contents.js`, `liturgy.js`.
++- Data: default `../browse`; optional `?missals=` limits discovery.
++- Default: manifest landing edition, then first available type and formulary;
++  no remembered preference.
++- URL/history: writes five legacy keys; hash change selects a valid requested
++  value and otherwise keeps/falls back to current state.
++- Document title: source title `The Propers of the Mass`; the controller does
++  not update it per formulary.
++
++### Accepted Propers candidate
++
++- HTML: `src/web/browser/liturgy/propers-reader.html`.
++- CSS: core, `liturgy.css`, `reader-shell.css`, `propers-reader.css`,
++  `reader-instrument.css`.
++- JavaScript: core, seating, state, adapters, shell, `propers-reader.js`.
++- Default: URL, then remembered missal/Bible/orations, then repository defaults;
++  an absent type/mass opens canonical Browse and selects no formulary by order.
++- URL/history: strict fail-closed explicit state, `pushState`, coalesced
++  `popstate`/`hashchange`; Browse writes the five legacy public keys.
++- Candidate option keys `_candidate-cycle`, `_candidate-alternative`, and
++  `_candidate-translation-witness` are implemented but are not an approved
++  public URL spelling in `guidance/liturgy-reader-state.md`.
++- Source/runtime title and diagnostics retain “internal candidate” wording.
++
++## Shared state, shell, adapter, and renderer owners
++
++| Concern | Owner retained through cutover |
++| --- | --- |
++| data-root and Proper rendering primitives | `src/web/browser/shared/browser-core.js` |
++| Day calendar derivation | `assembly-model.js` and generated rubrics/calendar data |
++| semantic state and legacy parser | `reader-state.js` |
++| Day/Propers semantic adapters | `reader-state-adapters.js` |
++| Ordinary rendering export | `day.js` |
++| one Ordinary seating path | `ordinary-seating.js` |
++| modal/focus/location shell | `reader-shell.js` |
++| accepted presentation | `reader-instrument.css` loaded last |
++| Day orchestration/race ownership | `day-reader.js` |
++| Propers orchestration/Browse ownership | `propers-reader.js` |
++
++## Publication, robots, and static hosting
++
++`tools/public-alpha` renders every top-level `src/web/browser/liturgy/*.html`
++through `release/public-alpha/layout.html` and copies every top-level CSS/JS
++asset. Relative paths remain valid after an in-place canonical HTML promotion.
++Every changed served source requires an exact binding update in
++`release/public-alpha.json` and its rights-record digest.
++
++Public HTML without a source robots declaration receives `index, follow`, an
++absolute Open Graph URL, and social metadata. The accepted candidate source
++pages currently omit robots metadata; therefore their deployed raw HTML is
++`index, follow`, even though their JavaScript intended noindex. The oracle pages
++correctly declare the repository noindex directive in source. The cutover must
++make retained candidate routes statically noindex and leave canonical pages
++indexable. No service worker, webmanifest, Cache API, sitemap, or route rewrite
++exists.
++
++GitHub Pages serves HTML, CSS, and JavaScript with `Cache-Control: max-age=600`,
++ETag, and Last-Modified. Assets are not content-addressed. Both forward cutover
++and rollback must tolerate a ten-minute mixed-cache window; route controllers
++must be compatible with both old candidate and new canonical markup, and parity
++must be checked once with cache bypass and again after expiry.
++
++## Navigation into and out of the readers
++
++Repository links already target canonical URLs. No href needs a route change.
++The complete classification is in
++`build/agent-continuity/liturgy-reader-cutover-navigation-map.md`.
++
++Canonical Day and Propers currently contain direct cross-entrance and context
++footer links. The accepted Instrument hides the generated site header/footer
++and contains only its Triptych Home masthead link. An in-place promotion thus
++removes direct cross-entrance/context links unless the cutover explicitly
++preserves them. This is a navigation disposition, not a CSS cleanup.
++
++## Material compatibility findings
++
++1. Valid explicit core deep links map to the accepted readers with the same
++   relative data paths and semantic identities.
++2. Explicit invalid state changes from legacy fallback to accepted fail-closed
++   behavior; this is an accepted intentional difference, not a reason to weaken
++   the accepted contract.
++3. Empty Day changes its current edition default from postconciliar to the
++   accepted reader’s Roman 1962 repository default; independent cutover review
++   must expressly accept or reject that reader-visible change.
++4. Empty Propers changes from arbitrary first formulary to the accepted Browse
++   entrance; this is an accepted intentional difference required by the vision.
++5. `why=1`, territorial fallback, provisional Propers option keys, and direct
++   cross-entrance navigation require explicit decisions before execution.
++6. Retained candidates require source-level noindex; canonical routes require
++   public title/description/indexing and must not inherit candidate wording.
+diff --git a/build/agent-continuity/liturgy-reader-cutover-state-matrix.json b/build/agent-continuity/liturgy-reader-cutover-state-matrix.json
+new file mode 100644
+index 000000000..5aaab4d43
+--- /dev/null
++++ b/build/agent-continuity/liturgy-reader-cutover-state-matrix.json
+@@ -0,0 +1,54 @@
++{
++  "schema": "triptych-liturgy-reader-cutover-compatibility/v1",
++  "baselineCommit": "7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef",
++  "acceptedProductionCommit": "5444d89fc9b379a1babef5b2220323fe1508b2b3",
++  "generatedAt": "2026-08-06T20:50:06Z",
++  "routes": {
++    "canonicalDay": "/liturgy/day.html",
++    "canonicalPropers": "/liturgy/index.html",
++    "candidateDay": "/liturgy/day-reader.html",
++    "candidatePropers": "/liturgy/propers-reader.html",
++    "oracleDay": "/liturgy/reader-visual-reset-day.html",
++    "oraclePropers": "/liturgy/reader-visual-reset-propers.html"
++  },
++  "classifications": [
++    "exact match",
++    "accepted intentional difference",
++    "cutover blocker",
++    "unrelated pre-existing behavior"
++  ],
++  "cases": [
++    {"id":"D01","entrance":"day","class":"direct-deep-link","hash":"#date=2026-08-05&missal=roman-1962&bible=douay-rheims","classification":"exact match","expected":"same Roman Day identity and Proper semantics; HTTP 200; hash preserved","evidence":["tools/tests/day_reader_integration_browser.mjs","tools/tests/test_liturgy_reader_state.py"]},
++    {"id":"D02","entrance":"day","class":"another-date-read","hash":"#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&ordinary=0","classification":"exact match","expected":"same identity, citations, Proper order and text","evidence":["tools/tests/day_reader_integration_browser.mjs:1133"]},
++    {"id":"D03","entrance":"day","class":"postconciliar-read","hash":"#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&ordinary=0","classification":"exact match","expected":"same postconciliar identity, cycle and Proper order","evidence":["tools/tests/day_reader_integration_browser.mjs"]},
++    {"id":"D04","entrance":"day","class":"missal-mode","hash":"#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&ordinary=1&ordinary-lang=en&eucharistic-prayer=ep-ii","classification":"exact match","expected":"same production Ordinary renderer, option, seating and appointed Propers","evidence":["tools/tests/day_reader_integration_browser.mjs:1720"]},
++    {"id":"D05","entrance":"day","class":"history-semantic-location","classification":"accepted intentional difference","expected":"candidate's stronger pushState, winning render, focus and semantic restoration retained","evidence":["tools/tests/day_reader_integration_browser.mjs"]},
++    {"id":"D06","entrance":"day","class":"invalid-explicit-state","hash":"#date=2026-08-02&missal=not-a-missal&bible=douay-rheims","classification":"accepted intentional difference","expected":"fail closed; no stale or implicit selection","evidence":["tools/tests/day_reader_integration_browser.mjs","tools/tests/test_liturgy_reader_state.py"]},
++    {"id":"D07","entrance":"day","class":"partial-coverage","hash":"#date=2026-08-06&missal=roman-1962&bible=douay-rheims&orations=la&ordinary=1","classification":"accepted intentional difference","expected":"same exact absences with accepted compact warning hierarchy","evidence":["tools/tests/liturgy_reader_visual_reset_browser.mjs"]},
++    {"id":"D08","entrance":"day","class":"first-visit-default","hash":"","classification":"cutover blocker","current":"local today; first rubrics row, currently postconciliar","candidate":"local today; Propers declared default, currently roman-1962","decision":"independent review must select the public default","evidence":["src/web/browser/liturgy/day.js:1795","src/web/browser/liturgy/day-reader.js:374"]},
++    {"id":"D09","entrance":"day","class":"why-apparatus","hash":"#date=2026-08-02&missal=roman-1962&bible=douay-rheims&why=1","classification":"cutover blocker","current":"renders existing reasoning apparatus","candidate":"defers and links day.html","decision":"compatibility integration or explicit narrowing; recursive link forbidden","evidence":["src/web/browser/liturgy/day-reader.js:190","src/web/browser/liturgy/day-reader.js:998"]},
++    {"id":"D10","entrance":"day","class":"territorial-choice","classification":"cutover blocker","current":"current Day production resolution surface","candidate":"fails closed then links day.html","decision":"retain honest non-geographic behavior without self-link","evidence":["src/web/browser/liturgy/day-reader.js:981"]},
++    {"id":"D11","entrance":"day","class":"first-visit-test-clock","classification":"unrelated pre-existing behavior","expected":"browser clock fixed at local noon 2026-08-02; product Date semantics unchanged; 34/34","evidence":["tools/tests/day_reader_integration_browser.mjs"]},
++    {"id":"P01","entrance":"propers","class":"seasonal-deep-link","hash":"#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims","classification":"exact match","expected":"same edition-qualified formulary, Proper order and text","evidence":["tools/tests/propers_reader_integration_browser.mjs"]},
++    {"id":"P02","entrance":"propers","class":"sanctoral-deep-link","hash":"#missal=roman-1962&type=sanctoral&mass=s-hilarii-episcopi-confessoris-ecclesiae-doctoris&bible=douay-rheims","classification":"exact match","expected":"explicit supported sanctoral selection or fixture failure without fallback","evidence":["src/web/data/structure/propers/roman-1962.json"]},
++    {"id":"P03","entrance":"propers","class":"first-visit","hash":"","classification":"accepted intentional difference","current":"first available type/formulary by order","candidate":"Browse open; no formulary selected","expected":"accepted no-arbitrary-selection behavior","evidence":["tools/tests/propers_reader_integration_browser.mjs"]},
++    {"id":"P04","entrance":"propers","class":"selection-and-history","classification":"exact match","expected":"five legacy public keys reproduce valid identity through direct load/reload","evidence":["tools/tests/test_liturgy_reader_state.py"]},
++    {"id":"P05","entrance":"propers","class":"browse-modal","classification":"accepted intentional difference","expected":"canonical selector identity/order with accepted modal focus and URL behavior","evidence":["tools/tests/propers_reader_integration_browser.mjs"]},
++    {"id":"P06","entrance":"propers","class":"invalid-explicit-state","classification":"accepted intentional difference","expected":"fail closed and select no formulary by order","evidence":["tools/tests/propers_reader_integration_browser.mjs"]},
++    {"id":"P07","entrance":"propers","class":"remembered-precedence","classification":"accepted intentional difference","expected":"URL then safe remembered missal/Bible/orations then declared default","evidence":["src/web/browser/liturgy/propers-reader.js:205","tools/tests/test_liturgy_reader_state.py"]},
++    {"id":"P08","entrance":"propers","class":"cycle-alternative-witness-url","classification":"cutover blocker","candidate":"_candidate-cycle, _candidate-alternative, _candidate-translation-witness","decision":"approve stable public spelling or gate affected states","evidence":["src/web/browser/liturgy/propers-reader.js:22","guidance/liturgy-reader-state.md:150"]},
++    {"id":"X01","entrance":"both","class":"relative-assets-and-data","classification":"exact match","expected":"same directory; ../browse and relative CSS/JS remain valid","evidence":["src/web/browser/shared/browser-core.js","tools/public-alpha"]},
++    {"id":"X02","entrance":"both","class":"candidate-indexing","classification":"cutover blocker","current":"deployed candidate raw HTML index, follow with public OG URL","decision":"source-declared noindex and no canonical/social advertising","evidence":["src/web/browser/liturgy/day-reader.html","src/web/browser/liturgy/propers-reader.html","tools/public-alpha:2435"]},
++    {"id":"X03","entrance":"both","class":"public-metadata-wording","classification":"cutover blocker","current":"candidate/internal titles and diagnostics","decision":"route-neutral controller wording; canonical public titles/descriptions","evidence":["src/web/browser/liturgy/day-reader.js","src/web/browser/liturgy/propers-reader.js"]},
++    {"id":"X04","entrance":"both","class":"cross-entrance-navigation","classification":"cutover blocker","current":"direct canonical footer links","candidate":"Triptych Home only; generated chrome hidden","decision":"approve quiet counterpart/context access or expressly accept removal","evidence":["src/web/browser/liturgy/day.html","src/web/browser/liturgy/index.html","src/web/browser/liturgy/reader-instrument.css:40"]},
++    {"id":"X05","entrance":"both","class":"static-cache","classification":"unrelated pre-existing behavior","current":"GitHub Pages max-age=600; unversioned assets","expected":"mixed-cache compatible; bypassed and post-expiry parity verification","evidence":[".github/workflows/pages.yml","tools/public-alpha"]},
++    {"id":"X06","entrance":"both","class":"governed-full-gate","classification":"unrelated pre-existing behavior","current":"stored example transcript divergence","expected":"record exact stop; no recapture or false green claim","evidence":["build/agent-continuity/liturgy-reader-visual-plan.md"]}
++  ],
++  "summary": {
++    "exactMatch": 8,
++    "acceptedIntentionalDifference": 7,
++    "cutoverBlocker": 7,
++    "unrelatedPreExistingBehavior": 3,
++    "executionAuthorized": false
++  }
++}
+diff --git a/build/agent-continuity/liturgy-reader-cutover-state-matrix.md b/build/agent-continuity/liturgy-reader-cutover-state-matrix.md
+new file mode 100644
+index 000000000..92098504f
+--- /dev/null
++++ b/build/agent-continuity/liturgy-reader-cutover-state-matrix.md
+@@ -0,0 +1,89 @@
++# Liturgical Instrument cutover state compatibility
++
++## Method and classifications
++
++This matrix compares the current canonical controllers at
++`7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef` with the independently accepted
++Day/Propers production-reader candidates. It combines source tracing, existing
++state/adapter unit fixtures, and the current Chromium parity harnesses. The
++machine-readable companion is
++`liturgy-reader-cutover-state-matrix.json`.
++
++Classifications mean:
++
++- **exact match** — same valid identity/text/state meaning or same required
++  route behavior;
++- **accepted intentional difference** — already required by accepted
++  fail-closed, Browse, shell, focus, or visual architecture;
++- **cutover blocker** — requires an explicit plan disposition or bounded
++  compatibility implementation before execution;
++- **unrelated pre-existing behavior** — known behavior outside the cutover
++  diff, retained honestly.
++
++## Day
++
++| ID | State | Current canonical | Accepted candidate | Classification | Proof / required execution assertion |
++| --- | --- | --- | --- | --- | --- |
++| D01 | Governing Roman deep link, 2026-08-05 | parses date/missal/Bible and renders resolved Proper | strict parser resolves same identity and Proper | exact match | canonical and candidate identity/text/citations/order; direct load and reload |
++| D02 | Another date, Roman 2026-08-02 Read | Roman Propers-only | same Roman Read semantic projection | exact match | existing candidate/current parity and semantic fixture |
++| D03 | Postconciliar 2026-11-29 Read | postconciliar Propers-only | same identity, cycle, Proper order/text | exact match | both-edition parity fixture |
++| D04 | Bible/orations selection | hash selects held editions/languages | same public keys and held values | exact match | state round-trip plus rendered text/citation parity |
++| D05 | Roman/postconciliar Missal | `ordinary=1` seats production Ordinary/Propers | same public flag, renderer, seating, events | exact match | both-edition Ordinary/Proper text and seat parity |
++| D06 | Reload/direct link | hash reproduces selection | hash reproduces validated selection | exact match | browser reload/direct navigation |
++| D07 | Back/Forward Read↔Missal | hash rerender with coarse focus | `pushState`, committed render, semantic location | accepted intentional difference | accepted state/focus/race ownership must remain stronger |
++| D08 | Malformed/unsupported explicit state | often falls back or retains current value | rejects explicit invalid state and exposes no stale semantic selection | accepted intentional difference | fail-closed is frozen; never weaken for legacy smoothness |
++| D09 | Partial/incomplete coverage | explicit notices/text | same source facts with compact hierarchy | accepted intentional difference | exact absence reasons/text; accepted warning presentation |
++| D10 | Date/Contents/Mode/Details open/close | native flow disclosures | modal surfaces, inert background, Escape and focus return | accepted intentional difference | accepted shell behavior and URL unchanged while modal |
++| D11 | Scroll/semantic restoration | limited DOM focus behavior | stable semantic event capture/restoration | accepted intentional difference | mode and history transitions retain equivalent semantic location |
++| D12 | Empty first visit | local date, first rubrics row = postconciliar | local date, declared Propers default = Roman 1962 | cutover blocker | independent review must accept one public default; test clock fixes only the date |
++| D13 | Existing `why=1` | renders current calendar/rubrical explanation | retains key but defers and links `day.html` | cutover blocker | must integrate compatibility or expressly narrow; no post-cutover self-link |
++| D14 | Multiple territorial branches | current route retains its production resolution UI | fails closed and links current `day.html` | cutover blocker | no geography/array inference and no recursive canonical link |
++| D15 | Remembered preferences | current Day ignores storage | accepted Day intentionally normalizes with empty remembered state | exact match | URL/default only; storage cannot override |
++| D16 | Date-dependent harness result | current date may honestly carry partial coverage | same; prior test assumed notice hidden | unrelated pre-existing behavior, corrected test | freeze test browser clock at local noon 2026-08-02; product clock untouched; expect 34/34 |
++
++## Propers
++
++| ID | State | Current canonical | Accepted candidate | Classification | Proof / required execution assertion |
++| --- | --- | --- | --- | --- | --- |
++| P01 | Governing Roman seasonal deep link | renders Advent 1 | same production Proper identity/text | exact match | candidate/current text parity and state fixture |
++| P02 | Supported Roman sanctoral | renders explicitly named mass key | same edition-qualified formulary | exact match | derive exact key from structure; no nearby fallback |
++| P03 | Empty first visit | selects first type/formulary by order | opens Browse and selects no liturgical text | accepted intentional difference | vision forbids arbitrary first-formulary choice |
++| P04 | Missal/Bible/orations | five public hash keys | same five public keys; URL beats remembered values | exact match | explicit deep link and storage precedence fixture |
++| P05 | Browse selector | nested canonical production selector | same production Browse & edition model in modal surface | accepted intentional difference | selector option identity/order preserved; shell interaction accepted |
++| P06 | Reload/direct link | hash reproduces selection | strict hash reproduces selection | exact match | direct navigation and reload |
++| P07 | Back/Forward | hashchange rerender | coalesced popstate/hashchange with winning render | accepted intentional difference | identity and state restored without duplicate render |
++| P08 | Malformed/unsupported explicit state | may retain/fall back | fail closed without selecting by order | accepted intentional difference | frozen fail-closed behavior |
++| P09 | Modal open/close | native disclosure | modal/inert/Escape/focus restoration | accepted intentional difference | URL intact and four actions named/reachable |
++| P10 | Cycle/alternative/translation witness | no stable current public key contract | candidate writes `_candidate-*` keys reachable from production data | cutover blocker | stable public names or explicitly gated states required before cutover |
++| P11 | Remembered preferences | current route does not remember | candidate uses URL, then safe remembered missal/Bible/orations, then defaults | accepted intentional difference | accepted M1 precedence; invalid remembered value falls to declared default |
++
++## Cross-route, publication, and navigation differences
++
++| ID | State | Finding | Classification | Required resolution |
++| --- | --- | --- | --- | --- |
++| X01 | Relative assets/data | all four pages share the same directory and `../browse` default | exact match | in-place promotion, no redirect/build alias |
++| X02 | Candidate indexing | deployed candidate raw HTML is currently `index, follow`; runtime noindex is ineffective because layout already supplies robots | cutover blocker | source-declare repository noindex on retained candidates and suppress public OG/canonical advertising |
++| X03 | Canonical metadata | candidate source/runtime titles and diagnostics say internal/candidate; canonical titles are public | cutover blocker | route-neutral runtime wording plus canonical public title/description/indexing |
++| X04 | Cross-entrance/context navigation | canonical footers have direct exits; Instrument hides generated chrome and has Home only | cutover blocker | independently approve quiet counterpart/context access or expressly accept removal |
++| X05 | Service worker | none exists | exact match | introduce none |
++| X06 | Static cache | unversioned files and Pages `max-age=600` affect forward and rollback deployments | unrelated pre-existing behavior | compatible mixed-cache bytes; bypassed and post-expiry verification |
++| X07 | Full repository gate | unrelated stored example transcript divergence stops `make check` | unrelated pre-existing behavior | record exact exit; do not recapture/bless or call full gate green |
++
++## Difference disposition summary
++
++- Exact matches: valid core Day and Propers deep links, relative data/assets,
++  source identities, Proper/Ordinary text and order, Bible/oration selection,
++  reload/direct links, Day storage independence, and no service worker.
++- Accepted intentional differences: strict explicit-invalid failure, Propers
++  Browse first visit, modal/focus/location/race behavior, remembered Propers
++  precedence, and accepted warning/composition hierarchy.
++- Cutover blockers requiring independent disposition: empty-Day edition
++  default, `why=1`, territorial fallback, public option-key spellings, retained
++  candidate indexing/metadata, canonical candidate wording, and direct
++  cross-entrance/context navigation.
++- Unrelated pre-existing behavior: the now-determinized date-dependent Day test
++  cause, ten-minute Pages cache behavior, and governed example-transcript gate.
++
++No unexplained material difference is accepted. The selected same-path
++mechanism is executable only after all cutover blockers receive recorded
++dispositions and the proposed patch is regenerated to match them exactly.
+diff --git a/build/agent-continuity/liturgy-reader-day-deterministic-test.md b/build/agent-continuity/liturgy-reader-day-deterministic-test.md
+new file mode 100644
+index 000000000..6ea8b48c8
+--- /dev/null
++++ b/build/agent-continuity/liturgy-reader-day-deterministic-test.md
+@@ -0,0 +1,42 @@
++# Deterministic Day first-visit gate
++
++## Finding
++
++The disclosed 33/34 Day-browser result was caused exactly by wall-clock drift,
++not by product behavior. The first-visit assertion opened an empty URL and
++expected no partial-coverage notice. On 2026-08-06 the production default date
++correctly produced a partial Roman-1962 coverage notice, so only that assertion
++failed; all browser hygiene counters remained zero.
++
++## Bounded correction
++
++Commit `5e1b82b51` changes only
++`tools/tests/day_reader_integration_browser.mjs`. Immediately before the
++first-visit navigation, the harness installs a Chrome DevTools Protocol
++`Page.addScriptToEvaluateOnNewDocument` clock fixture whose local civil time is
++noon on 2026-08-02. The test still opens an empty URL, still exercises the
++production default-date path, and now additionally asserts the exact committed
++`civilDate` value `2026-08-02`. The fixture is removed in `finally`.
++
++The assertion was not deleted or broadened, and no Day HTML, CSS, JavaScript,
++calendar data, default-date rule, URL behavior, candidate route, canonical
++route, or visual-oracle byte changed.
++
++## Validation
++
++Before correction:
++
++- `node tools/tests/day_reader_integration_browser.mjs` — exit 1, 33/34; only
++  `first-visit default follows the Propers declared default` failed because the
++  coverage notice was visible on the wall-clock date.
++
++After correction:
++
++- `node --check tools/tests/day_reader_integration_browser.mjs` — exit 0.
++- `node tools/tests/day_reader_integration_browser.mjs` — exit 0, 34/34;
++  console errors 0, failed requests 0, HTTP errors 0, unnamed controls 0,
++  duplicate IDs 0, horizontal-overflow failures 0.
++- `python3 -m unittest -v tools.tests.test_day_missal_integration` — exit 0.
++
++This is a task-owned deterministic test correction, not a product change and
++not authorization to execute public cutover.
+diff --git a/build/agent-continuity/liturgy-reader-public-cutover-gates.md b/build/agent-continuity/liturgy-reader-public-cutover-gates.md
+new file mode 100644
+index 000000000..2ffbe9c33
+--- /dev/null
++++ b/build/agent-continuity/liturgy-reader-public-cutover-gates.md
+@@ -0,0 +1,182 @@
++# Liturgical Instrument public-cutover acceptance gates
++
++## Authorization boundary
++
++These are gates for a later separately authorized execution. Passing them does
++not itself authorize a push, public navigation change, or cutover. The execution
++agent must begin from the accepted plan SHA with a clean synchronized main and
++must stop if the four unresolved dispositions in the cutover decision have not
++been independently accepted.
++
++## Repository preflight
++
++Record exact command, exit code, concise result, and qualification for:
++
++```sh
++git status --short
++git rev-parse HEAD
++git rev-parse main
++git rev-parse origin/main
++git ls-remote origin refs/heads/main
++
++python3 -m unittest -v \
++  tools.tests.test_day_missal_integration \
++  tools.tests.test_day_reader_integration \
++  tools.tests.test_liturgy_reader_shell \
++  tools.tests.test_liturgy_reader_state \
++  tools.tests.test_mass_ordinary \
++  tools.tests.test_propers_reader_integration \
++  tools.tests.test_liturgy_reader_visual_reset \
++  tools.tests.test_public_alpha
++
++node --check src/web/browser/liturgy/day-reader.js
++node --check src/web/browser/liturgy/propers-reader.js
++node --check src/web/browser/liturgy/reader-state.js
++node --check tools/tests/day_reader_integration_browser.mjs
++node --check tools/tests/propers_reader_integration_browser.mjs
++node --check tools/tests/liturgy_reader_shell_browser.mjs
++node --check tools/tests/liturgy_reader_visual_reset_browser.mjs
++
++node tools/tests/day_reader_integration_browser.mjs
++node tools/tests/propers_reader_integration_browser.mjs
++node tools/tests/liturgy_reader_shell_browser.mjs
++node tools/tests/liturgy_reader_visual_reset_browser.mjs
++
++tools/tpt check-promised-deliverables
++tools/tpt --check
++make check-release-bindings
++git diff --check
++tools/tpt public-alpha check
++tools/tpt public-alpha build
++tools/tpt public-alpha verify --deployment-target github-pages
++make check
++```
++
++Expected task-owned results are Day 34/34, Propers all green, shared shell all
++green, governed Instrument assertions all green, focused Python all green,
++exact release bindings, and locked public-alpha check/build/verify all green.
++`make check` may retain only the already disclosed unrelated stored
++example-transcript divergence; its exact exit and stop must be recorded and it
++must not be called green. Do not recapture or bless unrelated transcripts.
++
++Before commit, inspect `git status`, the exact staged diff, the outgoing range,
++and every newly reachable object. No path outside the independently authorized
++cutover/test/release/tracking/handoff set may be staged.
++
++## Canonical-route compatibility harness
++
++The later harness must run against the actual staged/built canonical filenames,
++not substitute candidate URLs. It must compare equivalent canonical screenshots
++and semantic/browser measurements to the accepted production-reader candidates
++and, for visual composition, the accepted Instrument oracle.
++
++Required Day states:
++
++- Read at 1440×900, 1024×768, 768×1024, 393×852;
++- Missal at 1440×900, 1024×768, 393×852, 320×852;
++- deep-scroll Missal;
++- Roman partial coverage;
++- postconciliar partial-English desktop/mobile;
++- explicit first/default date, Roman 1962, postconciliar, Bible, oration,
++  Ordinary, Ordinary language/option, readable formulary;
++- direct governing deep link, reload, Back/Forward, malformed state,
++  incomplete coverage, modal open/close, and semantic-location restoration.
++
++Required Propers states:
++
++- Read desktop/mobile;
++- Browse desktop/mobile;
++- Roman seasonal and a verified supported sanctoral formulary;
++- postconciliar representative;
++- missal/Bible/orations, reload, direct deep link, Back/Forward, malformed and
++  unsupported selection, modal open/close, selector behavior;
++- any approved public cycle/alternative/translation-witness URL states.
++
++Required shell/accessibility states:
++
++- Date open 1024×768;
++- Browse open desktop/mobile;
++- Contents open 393×852;
++- Mode open 393×852;
++- Details open 1440×900;
++- 200% text at 393×852;
++- keyboard focus and forced colors at 393×852;
++- reduced motion at 393×852;
++- no horizontal overflow at every required state;
++- four named one-step actions with at least 44px targets where governed.
++
++Every capture records exact canonical URL/hash, viewport, effective CSS width,
++scroll, identity, mode/outcome, semantic location, focus, geometry, reading
++measure, first-principal-text position, overflow, console errors, failed
++requests, HTTP errors, duplicate IDs, unnamed controls, and target sizes.
++
++## Visual oracle and parity thresholds
++
++- Equivalent canonical and accepted-candidate states must be materially
++  identical: same Instrument stylesheets, DOM hooks, 636px/about-75-character
++  Read measure at 768×1024, accepted first-principal-text hierarchy, rail/dock,
++  warning hierarchy, ritual cue geometry, narrow title, and mobile rhythm.
++- No comparison begins from the old public reader’s geometry.
++- Route-specific title, description, robots, counterpart navigation, and an
++  independently approved compatibility message are the only intentional
++  differences and must be enumerated before capture.
++- Any CSS, masthead, typography, measure, ritual, warning, source, or renderer
++  delta is a blocker, not “close enough.”
++
++## Publication and indexing gate
++
++The exact cutover source set must have explicit maintainer byte authorization
++before release bindings are refreshed. `tools/tpt public-alpha prepare` may
++inventory candidate hashes but confers no approval. Refresh only authorized
++paths; update `release/public-alpha.json`, the rights-record source table, and
++its digest together.
++
++In the built public artifact verify:
++
++- canonical Day and Propers have intended public titles/descriptions,
++  `index, follow`, correct absolute OG URLs, and the selected canonical-link
++  policy;
++- `/liturgy/` and `/liturgy/index.html` duplicate behavior is intentionally
++  handled (canonical link or explicitly accepted existing alias);
++- retained `day-reader.html`, `propers-reader.html`, and oracle pages are
++  statically noindex/noarchive and carry no public OG/canonical advertising;
++- all relative CSS, JS, Home, counterpart, data, and contextual links resolve;
++- query and hash text survives without redirect semantics;
++- artifact checksums and source bindings match exact files.
++
++No service worker, new CDN, runtime dependency, redirect infrastructure, or
++asset pipeline may be introduced merely for cutover.
++
++## Deployment gate
++
++The exact intended cutover commit must have a successful GitHub Pages run with
++checkout, locked setup, source verification, public build, Pages compatibility,
++upload, and deploy all successful. A polling timeout, queued stop, cancellation,
++or success tied to a different SHA is not acceptable.
++
++Direct deployed checks, first cache-bypassed and again after at least 600
++seconds, must prove:
++
++- HTTP 200 for canonical base routes and governing deep links;
++- deployed/source byte parity for every changed HTML/CSS/JS and release record;
++- correct title, description, robots, canonical/OG URL, ETag, Last-Modified,
++  and observed cache headers;
++- required data/assets return expected status and bytes;
++- no console error, failed required request, unexpected HTTP failure,
++  duplicate ID, unnamed interactive control, or required overflow;
++- reload, Back/Forward, modal focus, semantic location, and valid hash state
++  remain correct;
++- retained candidates/oracle remain available and noindex;
++- repository-owned navigation still reaches canonical filenames.
++
++Any mixed-cache incompatibility is an immediate rollback trigger. Do not claim
++deployed cutover until both verification passes and the exact successful Pages
++run are recorded.
++
++## Independent acceptance stop
++
++After deployment evidence, stop for independent public-cutover review. Do not
++remove or redirect candidate/oracle routes, delete legacy controllers, rename
++assets, update navigation labels broadly, begin Study/Compare/search, or clean
++up provisional compatibility code until the cutover is independently accepted
++and a later cleanup phase is separately authorized.
+diff --git a/build/agent-continuity/liturgy-reader-public-cutover-proposed.patch b/build/agent-continuity/liturgy-reader-public-cutover-proposed.patch
+new file mode 100644
+index 000000000..2afabd6ec
+--- /dev/null
++++ b/build/agent-continuity/liturgy-reader-public-cutover-proposed.patch
+@@ -0,0 +1,632 @@
++# PROPOSED CUTOVER PATCH — NOT APPLIED
++#
++# This zero-context unified diff is the exact mechanical same-path HTML/load-
++# graph promotion selected by CO-B, plus source-level noindex for retained
++# candidates. Validate it with `git apply --check --unidiff-zero`.
++#
++# It is intentionally not executable while the compatibility blockers in
++# liturgy-reader-cutover-decision.md remain unresolved. Before cutover
++# authorization, regenerate it to include independently accepted route-neutral
++# wording, Day why/locality behavior, stable Propers option keys, and
++# counterpart/context navigation. Applying this draft alone is prohibited.
++#
++diff --git a/src/web/browser/liturgy/day-reader.html b/src/web/browser/liturgy/day-reader.html
++index 229bc178e..276a7da20 100644
++--- a/src/web/browser/liturgy/day-reader.html
+++++ b/src/web/browser/liturgy/day-reader.html
++@@ -5,0 +6 @@
+++<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
++diff --git a/src/web/browser/liturgy/day.html b/src/web/browser/liturgy/day.html
++index 48f9c250a..ec8ed3338 100644
++--- a/src/web/browser/liturgy/day.html
+++++ b/src/web/browser/liturgy/day.html
++@@ -5,0 +6 @@
+++<meta name="description" content="Read the Mass appointed for a civil date, in Read or continuous Missal mode, from Triptych's source-identified liturgical data.">
++@@ -7,5 +7,0 @@
++-<!-- The shared machinery, then the liturgy section's colour, then what only
++-     this page renders. All three are local; the page makes no external request
++-     of any kind. `liturgy.css` is shared with the propers page deliberately:
++-     it is the section's palette and the setting of a proper, and forking it
++-     would let two pages that show the same texts drift apart. -->
++@@ -15,0 +12,3 @@
+++<link rel="stylesheet" href="reader-shell.css">
+++<link rel="stylesheet" href="day-reader.css">
+++<link rel="stylesheet" href="reader-instrument.css">
++@@ -17,74 +16,13 @@
++-<body>
++-<a class="skip-link" href="#reading">Skip to the Mass</a>
++-
++-<!-- The celebration is the page's title. Utility controls and notices follow
++-     as native, closed disclosures; only then does the ordered Mass begin. -->
++-<header id="celebration-head" class="celebration-head">
++-  <h1 id="celebration-title" class="celebration-title">Loading the Mass…</h1>
++-  <p id="celebration-date" class="entry-title"></p>
++-  <p id="celebration-meta" class="entry-meta"></p>
++-</header>
++-
++-<details id="settings-disclosure" class="utility-disclosure settings-disclosure">
++-  <summary>Settings</summary>
++-  <form id="controls" class="controls" aria-labelledby="controls-heading">
++-  <h2 id="controls-heading" class="visually-hidden">Choose a day</h2>
++-
++-  <div class="field field-narrow">
++-    <label for="date-input">Date</label>
++-    <input type="date" id="date-input" name="date">
++-  </div>
++-
++-  <div class="field">
++-    <label for="missal-select">Missal</label>
++-    <select id="missal-select" name="missal" disabled>
++-      <option>Loading…</option>
++-    </select>
++-  </div>
++-
++-  <!-- The same two text controls the propers page carries, because this page
++-       shows the same two kinds of text: the bible governs what is quoted, the
++-       orations control governs what was composed. -->
++-  <div class="field">
++-    <label for="bible-select">Scripture</label>
++-    <select id="bible-select" name="bible" disabled>
++-      <option>Loading…</option>
++-    </select>
++-  </div>
++-
++-  <div class="field">
++-    <label for="orations-select">Orations</label>
++-    <select id="orations-select" name="orations" disabled>
++-      <option>Loading…</option>
++-    </select>
++-  </div>
++-
++-  <!-- The optional layers, in one control instead of three loose checkboxes
++-       that grew the control bar past the Mass it sits above. A `details` rather
++-       than a `select`, because a reader is turning several things on at once
++-       and a native multi-select cannot show a check per option; it also works
++-       with no script at all. Each id and hash key is unchanged — `why`,
++-       `ordinary`, `rubrics` — because they are internal, they remain accurate,
++-       and renaming one would break a URL somebody has already sent.
++-
++-       `why` is off: this page is the missal opened to a date, and how each
++-       proper was arrived at is an annotation on it. `ordinary` is off and, when
++-       on, is not appended but becomes the frame the day's propers are set into,
++-       and it is fetched only when asked for. `rubrics` is ON, because a missal
++-       prints what the priest does and a page opening without them would open
++-       showing less than the book. -->
++-  <div class="field field-options" id="options-field">
++-    <p class="field-legend">Configuration</p>
++-    <div class="options-list">
++-      <label for="why-toggle">
++-        <input type="checkbox" id="why-toggle" name="why">
++-        Why
++-      </label>
++-      <label for="ordinary-toggle">
++-        <input type="checkbox" id="ordinary-toggle" name="ordinary">
++-        Ordinary
++-      </label>
++-      <label for="rubrics-toggle" id="rubrics-field" hidden>
++-        <input type="checkbox" id="rubrics-toggle" name="rubrics" checked>
++-        Rubrics
++-      </label>
+++<body class="day-reader-candidate page-browser">
+++<a class="skip-link" href="#reader-document">Skip to the Mass</a>
+++
+++<div class="day-reader-candidate-frame">
+++
+++<div class="reader-shell reader-instrument" data-reader-shell data-entrance="day" data-reader-mode="read">
+++  <div class="reader-masthead" aria-label="Triptych reader">
+++    <a class="reader-brand" href="../index.html" aria-label="Triptych home">
+++      <span class="reader-brand-mark" aria-hidden="true"></span>
+++      <span>Triptych</span>
+++    </a>
+++    <div class="reader-place" aria-hidden="true">
+++      <span>Day</span><span class="place-separator">/</span><span data-instrument-mode>Read</span>
++@@ -93,33 +31,116 @@
++-
++-  <!-- The Ordinary's own language, hidden until the Ordinary is showing. It is
++-       a third text control beside Scripture and Orations, and a separate one,
++-       because the Ordinary is a separate book from the day's propers and its
++-       rights position is not theirs: the 1861 English is public domain entire
++-       and the postconciliar English is ICEL's and withheld. The languages are
++-       the ones the Ordinary's own file declares, each with how far it reaches;
++-       a language nothing is held in is still offered, because choosing it is
++-       how a reader sees, element by element, under what reason it is empty. -->
++-  <div class="field" id="ordinary-lang-field" hidden>
++-    <label for="ordinary-lang-select">Ordinary</label>
++-    <select id="ordinary-lang-select" name="ordinary-lang"></select>
++-  </div>
++-
++-  <!-- Postconciliar only, and hidden until the Ordinary is showing. The 1962
++-       Missal has one Canon and no choice to offer, so this control appears when
++-       the chosen missal's Ordinary declares a variant group and not otherwise;
++-       nothing here knows what a Eucharistic Prayer is. -->
++-  <div class="field" id="variant-field" hidden>
++-    <label for="variant-select" id="variant-label">Eucharistic Prayer</label>
++-    <select id="variant-select" name="variant"></select>
++-  </div>
++-
++-  <!-- Some dates carry more than one readable formulary. The selector is
++-       rendered here by day.js so it remains a setting rather than interrupting
++-       the Mass whose text it changes. -->
++-  <div id="formulary-controls"></div>
++-
++-  <div class="field field-steps">
++-    <span class="field-legend" id="step-legend">Day</span>
++-    <div class="steps" role="group" aria-labelledby="step-legend">
++-      <button type="button" id="prev-button">
++-        <span aria-hidden="true">←</span> Previous
+++  <header class="reader-identity" aria-labelledby="celebration-title">
+++    <p class="reader-context">Day · Read</p>
+++    <h1 id="celebration-title" class="celebration-title">Loading the Mass…</h1>
+++    <p id="celebration-date" class="entry-title"></p>
+++    <p id="celebration-meta" class="entry-meta"></p>
+++    <p id="coverage-notice" class="coverage-notice" role="note" hidden></p>
+++  </header>
+++
+++  <main id="reader-document" class="reader-document" tabindex="-1" aria-busy="true">
+++    <p class="placeholder">Loading the calendar…</p>
+++  </main>
+++
+++  <nav class="reader-actions" aria-label="Reader actions">
+++    <button type="button" data-reader-action="date" aria-controls="date-surface"
+++            aria-expanded="false">
+++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M7.5 3v4M16.5 3v4M3.5 9.5h17M8 13h.01M12 13h.01M16 13h.01M8 16.5h.01M12 16.5h.01"/></svg></span>
+++      <span class="action-label">Date</span>
+++    </button>
+++    <button type="button" data-reader-action="contents" aria-controls="contents-surface"
+++            aria-expanded="false">
+++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></span>
+++      <span class="action-label">Contents</span>
+++    </button>
+++    <button type="button" data-reader-action="mode" aria-controls="mode-surface"
+++            aria-expanded="false">
+++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+++      <span class="action-label">Mode</span>
+++      <span class="action-state" aria-live="polite">Read</span>
+++    </button>
+++    <button type="button" data-reader-action="details" aria-controls="details-surface"
+++            aria-expanded="false">
+++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 10.5V17M12 7.2h.01"/></svg></span>
+++      <span class="action-label">Details</span>
+++    </button>
+++  </nav>
+++
+++  <dialog id="date-surface" class="reader-surface" data-reader-surface="date"
+++          aria-labelledby="date-surface-title">
+++    <header class="surface-head">
+++      <div>
+++        <p class="surface-kicker">Day entrance</p>
+++        <h2 id="date-surface-title">Date &amp; edition</h2>
+++      </div>
+++      <button type="button" class="surface-close" data-reader-close aria-label="Close Date and edition">×</button>
+++    </header>
+++    <div class="surface-body">
+++      <div class="date-steps" role="group" aria-label="Move by date">
+++        <button type="button" id="previous-date">Previous</button>
+++        <button type="button" id="today-date">Today</button>
+++        <button type="button" id="next-date">Next</button>
+++      </div>
+++      <form id="date-form" class="surface-fields">
+++        <div class="surface-field">
+++          <label for="reader-date">Date</label>
+++          <input id="reader-date" name="date" type="date" required>
+++        </div>
+++        <div class="surface-field">
+++          <label for="reader-missal">Missal</label>
+++          <select id="reader-missal" name="missal"></select>
+++        </div>
+++        <div class="surface-field">
+++          <label for="reader-bible">Scripture</label>
+++          <select id="reader-bible" name="bible"></select>
+++        </div>
+++        <div class="surface-field">
+++          <label for="reader-orations">Orations</label>
+++          <select id="reader-orations" name="orations"></select>
+++        </div>
+++        <div class="surface-field is-wide" id="reader-formulary-field" hidden>
+++          <label for="reader-formulary">Readable formulary</label>
+++          <select id="reader-formulary" name="mass"></select>
+++        </div>
+++        <div class="surface-field" id="reader-ordinary-lang-field" hidden>
+++          <label for="reader-ordinary-lang">Ordinary language</label>
+++          <select id="reader-ordinary-lang" name="ordinary-lang"></select>
+++        </div>
+++        <div class="surface-field" id="reader-ordinary-option-field" hidden>
+++          <label for="reader-ordinary-option">Ordinary option</label>
+++          <select id="reader-ordinary-option" name="ordinary-option"></select>
+++        </div>
+++        <button class="surface-apply" type="submit">Apply selection</button>
+++      </form>
+++      <p class="surface-note">Locality is never inferred. Dates requiring an explicit territorial branch remain on the current Day page until that state is represented by the shared URL contract.</p>
+++    </div>
+++  </dialog>
+++
+++  <dialog id="contents-surface" class="reader-surface contents-surface"
+++          data-reader-surface="contents" aria-labelledby="contents-surface-title">
+++    <header class="surface-head">
+++      <div>
+++        <p class="surface-kicker">Current Mass</p>
+++        <h2 id="contents-surface-title">Contents</h2>
+++      </div>
+++      <button type="button" class="surface-close" data-reader-close aria-label="Close Contents">×</button>
+++    </header>
+++    <nav class="surface-body semantic-contents" data-reader-contents aria-label="Mass contents"></nav>
+++  </dialog>
+++
+++  <dialog id="mode-surface" class="reader-surface" data-reader-surface="mode"
+++          aria-labelledby="mode-surface-title">
+++    <header class="surface-head">
+++      <div>
+++        <p class="surface-kicker">Presentation</p>
+++        <h2 id="mode-surface-title">Mode</h2>
+++      </div>
+++      <button type="button" class="surface-close" data-reader-close aria-label="Close Mode">×</button>
+++    </header>
+++    <div class="surface-body mode-options" role="radiogroup" aria-label="Reader mode">
+++      <button type="button" role="radio" aria-checked="true" data-mode="read">
+++        <strong>Read</strong><span>Available and active in this candidate.</span>
+++      </button>
+++      <button type="button" role="radio" aria-checked="false" data-mode="missal">
+++        <strong>Missal</strong><span>Continuous Ordinary with appointed propers in place.</span>
+++      </button>
+++      <button type="button" role="radio" aria-checked="false" aria-disabled="true" disabled>
+++        <strong>Study</strong><span>Not integrated in the W3 candidate.</span>
++@@ -127,3 +148,2 @@
++-      <button type="button" id="today-button">Today</button>
++-      <button type="button" id="next-button">
++-        Next <span aria-hidden="true">→</span>
+++      <button type="button" role="radio" aria-checked="false" aria-disabled="true" disabled>
+++        <strong>Compare</strong><span>Not integrated in the W3 candidate.</span>
++@@ -132,54 +152,17 @@
++-  </div>
++-  </form>
++-</details>
++-
++-<details id="notices-disclosure" class="utility-disclosure notices-disclosure" hidden>
++-  <summary>Notices</summary>
++-  <div id="banner" class="banner" role="status" hidden></div>
++-  <div id="rendered-notices"></div>
++-</details>
++-
++-<details id="contents-disclosure"
++-         class="utility-disclosure contents-disclosure"
++-         hidden>
++-  <summary>Contents</summary>
++-  <nav id="contents-nav" aria-label="Mass contents"></nav>
++-</details>
++-
++-<main id="reading" class="reading reading-annotated" tabindex="-1" aria-busy="false">
++-  <p class="placeholder">Loading the calendar…</p>
++-</main>
++-
++-<footer class="page-footer">
++-  <p class="lede">
++-    Pick a date and a missal, and read that day's Mass: the text of each proper,
++-    with the rubric that put it there in the margin beside it — which days fell
++-    on the date, which one took it, and which of the rest survive as the second
++-    and third collects.
++-  </p>
++-  <p>
++-    Turn the Ordinary on and the page becomes a missal to follow the Mass in:
++-    the frame runs from the foot of the altar to the last Gospel, and the day's
++-    Introit, Collect, Epistle, Gradual, Gospel, Offertory, Secret, Communion and
++-    Postcommunion are set into it where they are said. Where each one belongs is
++-    the missal's own declaration, carried in its Ordinary and cited to the rubric
++-    that states it; a proper the missal seats nowhere is shown in the missal's
++-    own order rather than given a place this page invented for it.
++-  </p>
++-  <p>
++-    Choose the language the Ordinary is read in, and choose whether the priest's
++-    actions are shown. Where a missal has nothing in the language asked for, each
++-    element of the frame still holds its place and names the recorded reason it
++-    is silent — the reason itself is stated once, above the Mass, with how many
++-    elements it covers. That does not stop an element holding a place: the
++-    postconciliar Collect is withheld under licence and the day's Collect is
++-    still set down after it.
++-  </p>
++-  <p>
++-    To choose a Mass rather than a date, see
++-    <a href="index.html">the propers of the Mass</a>. For a canon rather than
++-    a Mass, see <a href="../law/">The Code, Canon by Canon</a>. To see
++-    everything this project has published, see
++-    <a href="../texts/">Every Document</a>.
++-  </p>
++-</footer>
+++  </dialog>
+++
+++  <dialog id="details-surface" class="reader-surface details-surface"
+++          data-reader-surface="details" aria-labelledby="details-surface-title">
+++    <header class="surface-head">
+++      <div>
+++        <p class="surface-kicker">Current selection</p>
+++        <h2 id="details-surface-title">Details</h2>
+++      </div>
+++      <button type="button" class="surface-close" data-reader-close aria-label="Close Details">×</button>
+++    </header>
+++    <div class="surface-body details-body" data-reader-details>
+++      <p class="surface-note">Details load when this surface is opened.</p>
+++    </div>
+++  </dialog>
+++</div>
+++</div>
++@@ -190,2 +172,0 @@
++-<script src="reading-contents.js"></script>
++-<script src="proper-placement-notes.js"></script>
++@@ -192,0 +174,4 @@
+++<script src="reader-state.js"></script>
+++<script src="reader-state-adapters.js"></script>
+++<script src="reader-shell.js"></script>
+++<script src="day-reader.js"></script>
++diff --git a/src/web/browser/liturgy/index.html b/src/web/browser/liturgy/index.html
++index 9cf9a8dd5..370375652 100644
++--- a/src/web/browser/liturgy/index.html
+++++ b/src/web/browser/liturgy/index.html
++@@ -5,0 +6 @@
+++<meta name="description" content="Browse and read edition-qualified Propers of the Mass from Triptych's source-identified liturgical data.">
++@@ -7,2 +7,0 @@
++-<!-- The shared machinery first, then this page's own colour. Both are local;
++-     the page makes no external request of any kind. -->
++@@ -11 +10,3 @@
++-<link rel="stylesheet" href="day-missal.css">
+++<link rel="stylesheet" href="reader-shell.css">
+++<link rel="stylesheet" href="propers-reader.css">
+++<link rel="stylesheet" href="reader-instrument.css">
++@@ -13,2 +14,2 @@
++-<body>
++-<a class="skip-link" href="#reading">Skip to the propers</a>
+++<body class="propers-reader-candidate">
+++<a class="skip-link" href="#reader-document">Skip to the Propers</a>
++@@ -16,6 +17 @@
++-<!-- The selected formulary is the page's title. Its settings and any notices
++-     follow as closed disclosures; only then does the ordered Proper begin. -->
++-<header id="celebration-head" class="celebration-head">
++-  <h1 id="formulary-title" class="celebration-title">Loading a Mass…</h1>
++-  <p id="formulary-meta" class="entry-meta"></p>
++-</header>
+++<div class="propers-reader-candidate-frame">
++@@ -23,12 +19,7 @@
++-<details id="settings-disclosure" class="utility-disclosure settings-disclosure">
++-  <summary>Settings</summary>
++-  <form id="controls" class="controls" aria-labelledby="controls-heading">
++-  <h2 id="controls-heading" class="visually-hidden">Choose a Mass</h2>
++-
++-  <!-- The missal comes first and everything below it is downstream: the type
++-       list and the Mass list are both rebuilt from whichever missal is chosen. -->
++-  <div class="field">
++-    <label for="missal-select">Missal</label>
++-    <select id="missal-select" name="missal" disabled>
++-      <option>Loading…</option>
++-    </select>
+++<div class="reader-shell reader-instrument" data-reader-shell data-entrance="propers" data-reader-mode="read">
+++  <div class="reader-masthead" aria-label="Triptych reader">
+++    <a class="reader-brand" href="../index.html" aria-label="Triptych home">
+++      <span class="reader-brand-mark" aria-hidden="true"></span>
+++      <span>Triptych</span>
+++    </a>
+++    <div class="reader-place" aria-hidden="true"><span>Propers</span><span class="place-separator">/</span><span>Read</span></div>
++@@ -35,0 +27,7 @@
+++  <header class="reader-identity" aria-labelledby="formulary-title">
+++    <p class="reader-context">Propers · Read</p>
+++    <h1 id="formulary-title" class="celebration-title">Choose a formulary</h1>
+++    <p id="formulary-type" class="entry-title"></p>
+++    <p id="formulary-meta" class="entry-meta"></p>
+++    <p id="coverage-notice" class="coverage-notice" role="note" hidden></p>
+++  </header>
++@@ -37,6 +35,3 @@
++-  <div class="field field-narrow">
++-    <label for="type-select">Type</label>
++-    <select id="type-select" name="type" disabled>
++-      <option>Loading…</option>
++-    </select>
++-  </div>
+++  <main id="reader-document" class="reader-document" tabindex="-1" aria-busy="true">
+++    <p class="placeholder">Loading the available editions…</p>
+++  </main>
++@@ -44,6 +39,23 @@
++-  <div class="field">
++-    <label for="mass-select">Mass</label>
++-    <select id="mass-select" name="mass" disabled>
++-      <option>Loading…</option>
++-    </select>
++-  </div>
+++  <nav class="reader-actions" aria-label="Reader actions">
+++    <button type="button" data-reader-action="browse" aria-controls="browse-surface"
+++            aria-expanded="false">
+++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M8 8.5h5M8 11.5h4"/></svg></span>
+++      <span class="action-label">Browse</span>
+++    </button>
+++    <button type="button" data-reader-action="contents" aria-controls="contents-surface"
+++            aria-expanded="false">
+++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></span>
+++      <span class="action-label">Contents</span>
+++    </button>
+++    <button type="button" data-reader-action="mode" aria-controls="mode-surface"
+++            aria-expanded="false">
+++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+++      <span class="action-label">Mode</span>
+++      <span class="action-state">Read</span>
+++    </button>
+++    <button type="button" data-reader-action="details" aria-controls="details-surface"
+++            aria-expanded="false">
+++      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 10.5V17M12 7.2h.01"/></svg></span>
+++      <span class="action-label">Details</span>
+++    </button>
+++  </nav>
++@@ -51,11 +63,40 @@
++-  <!-- Two controls, because a Mass is built out of two kinds of text and only
++-       one of them is scripture. The bible governs what is quoted; the orations
++-       control governs what was composed — collects, secrets, postcommunions.
++-       Choosing a bible cannot put the collects into English, and a reader who
++-       is not told that reads it as a broken dropdown. -->
++-  <div class="field">
++-    <label for="bible-select">Scripture</label>
++-    <select id="bible-select" name="bible" disabled>
++-      <option>Loading…</option>
++-    </select>
++-  </div>
+++  <dialog id="browse-surface" class="reader-surface browse-surface"
+++          data-reader-surface="browse" aria-labelledby="browse-surface-title">
+++    <header class="surface-head">
+++      <div>
+++        <p class="surface-kicker">Propers entrance</p>
+++        <h2 id="browse-surface-title">Browse &amp; edition</h2>
+++      </div>
+++      <button type="button" class="surface-close" data-reader-close aria-label="Close Browse and edition">×</button>
+++    </header>
+++    <div class="surface-body">
+++      <form id="browse-form" class="surface-fields">
+++        <div class="surface-field">
+++          <label for="reader-missal">Missal</label>
+++          <select id="reader-missal" name="missal"></select>
+++        </div>
+++        <div class="surface-field">
+++          <label for="reader-type">Formulary type</label>
+++          <select id="reader-type" name="type"></select>
+++        </div>
+++        <div class="surface-field is-wide">
+++          <label for="reader-formulary">Formulary</label>
+++          <select id="reader-formulary" name="mass"></select>
+++        </div>
+++        <div class="surface-field">
+++          <label for="reader-bible">Scripture</label>
+++          <select id="reader-bible" name="bible"></select>
+++        </div>
+++        <div class="surface-field">
+++          <label for="reader-orations">Orations</label>
+++          <select id="reader-orations" name="orations"></select>
+++        </div>
+++        <div class="surface-field is-wide" id="reader-witness-field" hidden>
+++          <label for="reader-witness">Translation witness</label>
+++          <select id="reader-witness" name="translation-witness"></select>
+++        </div>
+++        <button class="surface-apply" type="submit">Read this formulary</button>
+++      </form>
+++      <p id="browse-status" class="surface-note">A formulary must be selected. Nothing is chosen by manifest order.</p>
+++    </div>
+++  </dialog>
++@@ -63,6 +104,11 @@
++-  <div class="field">
++-    <label for="orations-select">Orations</label>
++-    <select id="orations-select" name="orations" disabled>
++-      <option>Loading…</option>
++-    </select>
++-  </div>
+++  <dialog id="contents-surface" class="reader-surface contents-surface"
+++          data-reader-surface="contents" aria-labelledby="contents-surface-title">
+++    <header class="surface-head">
+++      <div>
+++        <p class="surface-kicker">Current formulary</p>
+++        <h2 id="contents-surface-title">Contents</h2>
+++      </div>
+++      <button type="button" class="surface-close" data-reader-close aria-label="Close Contents">×</button>
+++    </header>
+++    <nav class="surface-body semantic-contents" data-reader-contents aria-label="Formulary contents"></nav>
+++  </dialog>
++@@ -70,5 +116,15 @@
++-  <div class="field field-steps">
++-    <span class="field-legend" id="step-legend">Step</span>
++-    <div class="steps" role="group" aria-labelledby="step-legend">
++-      <button type="button" id="prev-button" disabled>
++-        <span aria-hidden="true">←</span> Previous
+++  <dialog id="mode-surface" class="reader-surface" data-reader-surface="mode"
+++          aria-labelledby="mode-surface-title">
+++    <header class="surface-head">
+++      <div>
+++        <p class="surface-kicker">Presentation</p>
+++        <h2 id="mode-surface-title">Mode</h2>
+++      </div>
+++      <button type="button" class="surface-close" data-reader-close aria-label="Close Mode">×</button>
+++    </header>
+++    <div class="surface-body mode-options" role="radiogroup" aria-label="Reader mode">
+++      <button type="button" role="radio" aria-checked="true" data-mode="read">
+++        <strong>Read</strong><span>Available and active in this candidate.</span>
+++      </button>
+++      <button type="button" role="radio" aria-checked="false" aria-disabled="true" data-mode="missal" disabled>
+++        <strong>Missal</strong><span>Not integrated in this internal candidate.</span>
++@@ -76,2 +132,5 @@
++-      <button type="button" id="next-button" disabled>
++-        Next <span aria-hidden="true">→</span>
+++      <button type="button" role="radio" aria-checked="false" aria-disabled="true" data-mode="study" disabled>
+++        <strong>Study</strong><span>Not integrated in this internal candidate.</span>
+++      </button>
+++      <button type="button" role="radio" aria-checked="false" aria-disabled="true" data-mode="compare" disabled>
+++        <strong>Compare</strong><span>Not integrated in this internal candidate.</span>
++@@ -80,8 +139 @@
++-  </div>
++-  </form>
++-</details>
++-
++-<details id="notices-disclosure" class="utility-disclosure notices-disclosure" hidden>
++-  <summary>Notices</summary>
++-  <div id="banner" class="banner" role="status" hidden></div>
++-</details>
+++  </dialog>
++@@ -89,40 +141,15 @@
++-<details id="contents-disclosure"
++-         class="utility-disclosure contents-disclosure"
++-         hidden>
++-  <summary>Contents</summary>
++-  <nav id="contents-nav" aria-label="Mass contents"></nav>
++-</details>
++-
++-<!-- The propers are not themselves a live region: replacing them would read a
++-     whole Mass aloud on every change. The shared script announces a one-line
++-     summary through #reading-status instead. -->
++-<main id="reading" class="reading reading-formulary" tabindex="-1" aria-busy="false">
++-  <p class="placeholder">Loading the missals…</p>
++-</main>
++-
++-<!-- Everything that is not a Mass, kept and put where it belongs: after the
++-     Mass. The first paragraph is still the page's lede — it is what the site's
++-     description is taken from — it simply no longer stands between the reader
++-     and the propers. -->
++-<footer class="page-footer">
++-  <p class="lede">
++-    The full text of any Mass in either missal, in the translations this site
++-    can publish. Each missal carries its own calendar, so choosing one rebuilds
++-    everything below it.
++-  </p>
++-  <!-- The companion page answers the question this one cannot: not "what does
++-       this Mass say" but "why is this the Mass today". -->
++-  <p>
++-    Going the other way — from a date to its Mass, with the rubric behind each
++-    step — is <a href="day.html">Today’s Missal</a>.
++-    Reading scripture straight through rather than by the day?
++-    <a href="../scripture/">The Story of Salvation</a> is a separate page, and
++-    <a href="../history/">How the Missal Changed</a> maps every change to the
++-    Missal itself, act by act. <a href="../texts/">Every Document</a> lists the
++-    whole corpus, with what is recorded about each one, and
++-    <a href="../sources/">The Source Library</a> holds the sources behind it.
++-    <a href="../law/">The Code, Canon by Canon</a> does for the Code of Canon
++-    Law what the Missal page does for the Missal, entered by citation rather
++-    than by date.
++-  </p>
++-</footer>
+++  <dialog id="details-surface" class="reader-surface details-surface"
+++          data-reader-surface="details" aria-labelledby="details-surface-title">
+++    <header class="surface-head">
+++      <div>
+++        <p class="surface-kicker">Current selection</p>
+++        <h2 id="details-surface-title">Details</h2>
+++      </div>
+++      <button type="button" class="surface-close" data-reader-close aria-label="Close Details">×</button>
+++    </header>
+++    <div class="surface-body details-body" data-reader-details>
+++      <p class="surface-note">Details load when this surface is opened.</p>
+++    </div>
+++  </dialog>
+++</div>
+++</div>
++@@ -131,2 +158,5 @@
++-<script src="reading-contents.js"></script>
++-<script src="liturgy.js"></script>
+++<script src="ordinary-seating.js"></script>
+++<script src="reader-state.js"></script>
+++<script src="reader-state-adapters.js"></script>
+++<script src="reader-shell.js"></script>
+++<script src="propers-reader.js"></script>
++diff --git a/src/web/browser/liturgy/propers-reader.html b/src/web/browser/liturgy/propers-reader.html
++index 98bae9e71..021f16cf3 100644
++--- a/src/web/browser/liturgy/propers-reader.html
+++++ b/src/web/browser/liturgy/propers-reader.html
++@@ -5,0 +6 @@
+++<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+diff --git a/build/agent-continuity/liturgy-reader-public-cutover-rollback.md b/build/agent-continuity/liturgy-reader-public-cutover-rollback.md
+new file mode 100644
+index 000000000..6655a54d3
+--- /dev/null
++++ b/build/agent-continuity/liturgy-reader-public-cutover-rollback.md
+@@ -0,0 +1,89 @@
++# Liturgical Instrument public-cutover rollback
++
++## Purpose
++
++This is the operational rollback for the selected in-place canonical route
++promotion. It uses ordinary commits and GitHub Pages. It never rewrites
++history, force-pushes, deletes candidate/oracle surfaces, or edits data to make
++a failed reader appear healthy.
++
++## Immediate rollback triggers
++
++Rollback immediately if any of these occurs on the intended deployed commit:
++
++- a required canonical Day or Propers deep link changes meaning, loses state on
++  reload/Back/Forward, or stops resolving with HTTP 200;
++- valid `why`, locality, option, formulary, or incomplete-coverage state becomes
++  recursive, silently falls back, or fabricates content;
++- canonical composition materially diverges from the accepted production
++  candidate at an equivalent state;
++- semantic location, modal focus entry/Escape/inertness/restoration, or one-step
++  action access regresses;
++- required CSS/JS/data requests fail, console errors appear, or deployed bytes
++  disagree with the cutover commit;
++- canonical routes are noindex, retained candidate/oracle routes advertise as
++  canonical/indexable, or OG/canonical metadata names the wrong surface;
++- unnamed controls, duplicate IDs, target-size failures, horizontal overflow,
++  forced-colors, reduced-motion, zoom/reflow, or keyboard-focus failures occur;
++- Pages does not report a successful deployment for the exact intended commit;
++- the 600-second mixed-cache window exposes an incompatible old-HTML/new-JS or
++  new-HTML/old-JS combination.
++
++## Mechanism
++
++1. Identify the exact ordinary cutover commit (and any immediately coupled
++   exact release-binding commit) from the cutover continuity record.
++2. Run `git revert --no-edit <cutover-commit>` for a one-commit cutover. If a
++   separately pushed release-binding commit is not contained in that commit,
++   revert it in the same ordinary rollback series in reverse order. Do not
++   reset, amend, rebase, or force-push.
++3. Run the release/publication checks against the reverted tree. The release
++   manifest and rights-record digest must describe the restored canonical
++   bytes; do not leave the accepted hash record pointing at reverted files.
++4. Push the ordinary revert commit(s) to `origin/main` after inspecting the
++   exact outgoing range and public disclosure boundary.
++5. Require a successful Pages run for the exact revert tip. A workflow polling
++   stop is not a successful rollback deployment.
++
++## Deployment verification
++
++Verify first with cache-busting query parameters and `Cache-Control: no-cache`,
++then repeat after at least the advertised 600-second freshness window:
++
++```text
++/liturgy/day.html?rollback=<revert-sha>#date=2026-08-05&missal=roman-1962&bible=douay-rheims
++/liturgy/index.html?rollback=<revert-sha>#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims
++```
++
++Required rollback observations:
++
++- HTTP 200 and restored canonical HTML/source hashes;
++- canonical index/description/social metadata restored;
++- legacy Day and Propers controller assets byte-match the revert tip;
++- direct load, reload, Back/Forward, and the two governing hashes resolve;
++- no console, failed required request, unexpected HTTP, duplicate-ID, unnamed
++  control, or horizontal-overflow problem;
++- public navigation still points to canonical filenames;
++- retained candidate and oracle routes remain HTTP 200 and noindex.
++
++Record the Pages run number, exact revert SHA, route response headers, asset
++hashes, verification UTC, and any cache still serving the superseded cutover.
++Do not call rollback complete while the deployed artifact or cache check is
++unverified.
++
++## Retained fallback surfaces
++
++`day-reader.html`, `propers-reader.html`, and both accepted visual-reset oracle
++routes remain present and unchanged through the initial cutover acceptance
++window. Legacy `day.js`, `liturgy.js`, legacy CSS, renderers, adapters, and data
++also remain tracked. Initial cutover does not combine route promotion with
++candidate/prototype cleanup, controller renaming, data migration, or visual
++refactoring.
++
++## Recovery acceptance
++
++The rollback is accepted only when main, origin/main, and remote main agree on
++the revert tip; Pages succeeds for that tip; canonical direct/deep-link checks
++pass twice across the cache window; and the continuity/tracking record states
++that public cutover is rolled back. A later retry requires a new reviewed plan
++update and separate authorization.
+diff --git a/build/agent-continuity/liturgy-reader-visual-plan.md b/build/agent-continuity/liturgy-reader-visual-plan.md
+index 219738741..1d15c3696 100644
+--- a/build/agent-continuity/liturgy-reader-visual-plan.md
++++ b/build/agent-continuity/liturgy-reader-visual-plan.md
+@@ -6 +6 @@
+-- Current commit: current `main`/`origin/main`; this append-preserving file is carried by its own final record-only commit, whose exact SHA is recorded in the sealed handoff
++- Current commit: `2cf91dd01` (`Record deterministic Day cutover gate`); final plan sealing/handoff changes remain uncommitted
+@@ -9,9 +9,9 @@
+-- Current phase: production integration independently accepted; exact reviewed handoff archived in the pushed build tree; closeout record pending its final push
+-- Last completed work unit: archival commit `8c6e1270f692ca4136f2f6a60002bacd3af0440c` pushed the unchanged reviewed handoff directory and ZIP
+-- Next exact action: commit and push this review/response and truthful tracking closeout, verify `main` and `origin/main` agree, then stop; separate cutover planning is authorized only after that closeout
+-- Open blockers: no production-integration or durable-handoff blocker remains after the closeout record is pushed; the unrelated governed example replay remains non-green, and public navigation/cutover execution remain unauthorized
+-- Latest pushed commit: `8c6e1270f692ca4136f2f6a60002bacd3af0440c` — exact reviewed production-integration handoff archive; product code remains `3cd46072b164ff39b00639bb67ad6b8943a255dc` and exact successfully deployed production state remains `5444d89fc9b379a1babef5b2220323fe1508b2b3`
+-- Latest successful Pages run: `31125898045`, success for exact intended production commit `5444d89fc9b379a1babef5b2220323fe1508b2b3` at 2026-08-06T18:29:55Z
+-- Latest Pages attempt: `31125898045`, successful; all repository verification, build, compatibility, artifact upload, and deploy steps passed
+-- Latest handoff directory: `build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/` (tracked unchanged by explicitly authorized archival commit `8c6e1270f692ca4136f2f6a60002bacd3af0440c`)
+-- Latest handoff ZIP: `build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration.zip`
++- Current phase: public-cutover plan candidate sealing; execution remains unauthorized
++- Last completed work unit: CO-E through CO-G plan artifacts, tracking, and immutable review package prepared without applying the proposed patch
++- Next exact action: independent review of the same-path mechanism, compatibility dispositions, proposed patch boundary, rollback, and execution gates
++- Open blockers: independent dispositions are required for the empty-Day edition default, `why=1` and territorial fallback self-links, stable Propers option-key names, retained candidate indexing/metadata, and direct cross-entrance/context navigation; the unrelated governed example replay remains non-green
++- Latest pushed commit: `2cf91dd01` — deterministic Day proof and task-owned ledger-expectation record; planning checkpoint is `c7124de25`, test implementation is `5e1b82b51`
++- Latest successful Pages run: `31127811306`, success for the clean planning starting boundary `7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef` at 2026-08-06T20:45:21Z; exact accepted integrated product deployment remains run `31125898045` for `5444d89fc9b379a1babef5b2220323fe1508b2b3`
++- Latest Pages attempt: no Actions record had materialized for planning-only commits `c7124de25`, `5e1b82b51`, or `2cf91dd01` when queried at 2026-08-06T21:20Z; no result is claimed for them
++- Latest handoff directory: `build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/`
++- Latest handoff ZIP: `build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan.zip`
+@@ -1405,0 +1406,219 @@ after this closeout record is pushed and the remote ref is verified.
++
++## Public cutover planning — reviewer to Codex
++
++Starting boundary: clean `main` at
++`7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef`, with local `HEAD`, local
++`main`, `origin/main`, and remote `refs/heads/main` required to agree before
++planning. Production integration and its durable handoff are accepted and
++complete. Exact deployed integration remains commit
++`5444d89fc9b379a1babef5b2220323fe1508b2b3`, Pages run `31125898045`; the
++accepted archived handoff is
++`build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/`
++and its ZIP at reviewed SHA-256
++`ebf0361309ac33b4580cbb535e4bbd3eabd144756e6c078aa140e716c748f05f`.
++
++Authorization is planning and pre-cutover readiness only. The eventual target
++routes are canonical Day `/liturgy/day.html` and canonical Propers
++`/liturgy/index.html`; accepted candidates are `/liturgy/day-reader.html` and
++`/liturgy/propers-reader.html`. This phase must inventory actual load graphs,
++state and URL contracts, navigation, indexing, publication, caching, and Pages
++behavior; select the smallest reversible mechanism; prove compatibility in
++human- and machine-readable matrices; make the known date-dependent Day test
++deterministic only if its disclosed cause is exactly confirmed; produce but
++not apply an exact cutover patch; define rollback and acceptance gates; and
++seal a tracked immutable planning handoff for independent review.
++
++Frozen decisions include the Liturgical Instrument foundation, one Read axis
++and accepted 636-pixel/about-75-character portrait measure, Missal cue grid and
++mobile stacking, desktop rail, opaque square intermediate/mobile dock, whole
++labels at 200%, compact warnings, masthead and 320-pixel title treatment,
++Date/Browse entrance model, canonical production Propers Browse selector, and
++all production-owned state adapters, renderers, Ordinary seating, semantic
++locations, focus/modal/race ownership, sources, editions, translations, and
++fail-closed behavior. The visual-reset Instrument remains the comparison
++oracle. Search, redesign, source expansion, renderer changes, prototype or
++candidate cleanup, public navigation changes, canonical-route replacement,
++and cutover execution are outside this phase.
++
++Required durable artifacts are the route map, mechanism decision and rejected
++options, Markdown and JSON state matrix, navigation map, exact unapplied public
++cutover patch, rollback procedure, cutover gates, any bounded deterministic Day
++test evidence, truthful tracking records, and a timestamped tracked handoff
++directory and ZIP with byte-identical continuity/instructions, manifest, and
++archive verification. The stopping point is a clean pushed review candidate
++whose `main`, `origin/main`, and remote main agree. Independent review may
++request changes or authorize a later execution phase; a good plan does not
++itself authorize public navigation or public cutover.
++
++## Public cutover planning — Codex response
++
++At kickoff, `git status --short` was empty and `HEAD`, local `main`,
++`origin/main`, and remote `refs/heads/main` all resolved exactly to
++`7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef`.
++
++Before source inspection, the current canonical-route ownership is believed to
++begin at `src/web/browser/liturgy/day.html` plus `day.js`/Day styles for Day,
++and `src/web/browser/liturgy/index.html` plus `liturgy.js`/shared styles for
++Propers. The accepted candidates are believed to begin at
++`day-reader.html`/`day-reader.js`/`day-reader.css` and
++`propers-reader.html`/`propers-reader.js`/`propers-reader.css`, both last-loading
++`reader-instrument.css` and reusing `reader-shell.js`, reader state/adapters,
++production Day/Proper rendering, assembly, and Ordinary seating. These are
++initial hypotheses, not the route map.
++
++Analysis will proceed as CO-A canonical/candidate load, URL, publication, SEO,
++and navigation inventory; CO-B mechanism comparison and one reversible
++decision; CO-C machine-readable state compatibility proof; CO-D exact diagnosis
++and, only if safe, test-only deterministic Day correction; CO-E exact proposed
++cutover patch built outside canonical working files; CO-F operational rollback;
++and CO-G local, canonical-route, oracle, deployment, indexing, and rollback
++acceptance gates followed by the immutable planning handoff.
++
++Source inspection must resolve the actual script/style graph, relative fetch
++bases, hash/query parsing differences, default-date contract, history and
++semantic restoration ownership, robots/title behavior, release-copy rules,
++navigation references, service-worker or cache behavior, and whether canonical
++HTML replacement can directly reuse candidate modules without redirects or
++duplicated state. No public route, public navigation, candidate route, or
++accepted prototype will be modified in this planning phase.
++
++## Public cutover planning checkpoint CO-A through CO-C — Codex report
++
++Source tracing confirms there is no hidden route or build alias. Canonical Day
++is `day.html` plus the legacy `day.js` DOM/controller; canonical Propers is
++`index.html` plus `liturgy.js`. The accepted readers are separate static HTML
++entry points loading the accepted state/adapters/shell/controllers and
++last-loaded Instrument CSS. All four pages share the same directory and
++`../browse` data base, and `tools/public-alpha` renders every top-level liturgy
++HTML while copying every top-level liturgy CSS/JS asset.
++
++CO-B selects source-level in-place promotion of the accepted DOM/load graphs
++behind the unchanged `day.html` and `index.html` filenames. Redirects,
++renames/aliases, build-only copies, and destructive controller replacement are
++rejected. The selected mechanism preserves path, query/hash text, relative
++assets, source/deployed ownership, and one-commit rollback while reusing the
++accepted production implementation.
++
++The complete route, mechanism, navigation, and human/machine state maps are:
++
++- `build/agent-continuity/liturgy-reader-cutover-route-map.md`
++- `build/agent-continuity/liturgy-reader-cutover-decision.md`
++- `build/agent-continuity/liturgy-reader-cutover-state-matrix.md`
++- `build/agent-continuity/liturgy-reader-cutover-state-matrix.json`
++- `build/agent-continuity/liturgy-reader-cutover-navigation-map.md`
++
++The inventory records seven cutover blockers rather than obscuring them as
++parity: current empty Day defaults to the first rubrics row (postconciliar)
++while the accepted reader uses the declared Propers default (Roman 1962);
++`why=1` and multi-territorial outcomes currently link back to `day.html` and
++would self-link after promotion; production-reachable Propers option states
++still write provisional `_candidate-*` keys; deployed candidate raw HTML is
++currently `index, follow` with public social URLs because runtime noindex cannot
++override the layout's existing robots meta; candidate/internal runtime wording
++cannot reach canonical titles; and direct cross-entrance/context footer links
++would disappear because Instrument hides generated chrome and offers only
++Home. Independent review must resolve these exact dispositions before cutover
++execution is authorized.
++
++No service worker, Cache API, webmanifest, sitemap, rewrite layer, or external
++runtime dependency exists. GitHub Pages serves unversioned HTML/CSS/JS with
++`Cache-Control: max-age=600`; the forward and rollback plans therefore require
++mixed-cache-compatible bytes, cache-bypassed parity, and a second verification
++after the freshness window. The operational rollback and full later-execution
++gate are recorded in:
++
++- `build/agent-continuity/liturgy-reader-public-cutover-rollback.md`
++- `build/agent-continuity/liturgy-reader-public-cutover-gates.md`
++
++The Day browser failure was reproduced at exactly 33/34 with zero browser
++hygiene failures. The sole failure is the first-visit test's assumption that
++the coverage notice is hidden on the wall-clock date; 2026-08-06 correctly has
++partial Roman coverage. A test-only browser-clock fixture targeting local noon
++2026-08-02 is drafted separately, keeps the URL empty, and adds an exact civil
++date assertion. Product Date/default behavior is untouched. Its commit and
++34/34 result will be appended after validation.
++
++## Public cutover planning checkpoint CO-D — Codex report
++
++The known Day failure was exactly the disclosed date dependency. Test-only
++commit `5e1b82b51` installs a Chrome DevTools Protocol new-document clock fixture
++only around the first-visit assertion, keeps the URL empty, and adds the exact
++`civilDate === "2026-08-02"` assertion. The fixture is removed in `finally`.
++No product, calendar, default-date, canonical-route, candidate-route, or oracle
++byte changed.
++
++The Day browser harness now passes 34/34 with zero console, required-request,
++HTTP, unnamed-control, duplicate-ID, or overflow failures. The exact diagnosis,
++test boundary, and commands are recorded in
++`build/agent-continuity/liturgy-reader-day-deterministic-test.md`.
++
++The full governed gate still exits 2 at the unrelated stored example transcript
++divergence: 23 of 188 replayed examples diverge and 35 are already declared
++known-stale. The two promised-deliverable transcripts are task-owned count
++changes, so their exact expected count is updated from 21/15 to 23/17 and
++replayed independently 2/2; no unrelated example is recaptured or blessed.
++
++## Public cutover planning checkpoint CO-E through CO-G — Codex report
++
++The selected mechanism remains source-level same-path promotion: a later
++authorized execution would put the already accepted reader DOM/load graphs
++behind `src/web/browser/liturgy/day.html` and
++`src/web/browser/liturgy/index.html`, preserving canonical URLs and avoiding
++redirect, rename, rewrite, or build-alias semantics. The exact mechanical
++promotion is recorded—but not applied—in
++`build/agent-continuity/liturgy-reader-public-cutover-proposed.patch`. Its
++header prohibits applying the draft alone: route-neutral wording, Day deferred
++reasoning/territorial behavior, stable public Propers option names, and direct
++counterpart/context navigation require the review dispositions recorded in the
++decision before the patch can be regenerated as an executable cutover diff.
++
++Rollback is an ordinary revert of the bounded later cutover commit, followed
++by an exact Pages deployment and canonical-route verification. The gate names
++the local suites, actual-canonical-filename matrix, accepted production-reader
++and Instrument oracles, metadata, static-hosting, mixed-cache, 600-second
++second-pass, asset-parity, accessibility, and immediate rollback conditions.
++Candidate routes and the visual oracle remain deployed and unmodified through
++the acceptance window; their cleanup is deliberately postponed.
++
++Planning validation records:
++
++- focused non-publication Python: 142/142 pass;
++- locked-publication Python: 82/82 pass with Markdown 3.10.2; the system Python
++  run honestly errors in 8 publication tests because it has Markdown 3.10.3;
++- Day browser 34/34, Propers 27/27, shared shell 18/18;
++- governed Instrument 19/19, zero console/request/HTTP/accessibility/overflow
++  failures, 0 captures because no visual or product byte changed;
++- promised ledger 23 tracked/17 complete, tool registry 34, release bindings
++  exact with 0 stale, locked public-alpha check/build/Pages-verify pass;
++- governed `make check` exits 2 at 23 unrelated divergent and 35 known-stale
++  stored examples; the two task-owned ledger examples replay 2/2 after exact
++  count updates and no unrelated transcript is recaptured.
++
++Canonical Day hash
++`bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868`
++and canonical Propers hash
++`f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65`
++are byte-identical to the starting boundary. Public navigation, candidate
++HTML/JavaScript, Instrument CSS, and oracle files are likewise unchanged.
++
++## Message to the independent public-cutover-plan reviewer
++
++Start with `CUTOVER-DECISION.md`, then compare `ROUTE-MAP.md` and
++`STATE-COMPATIBILITY.md` to `PROPOSED-CUTOVER.patch`. The plan selects the
++smallest same-path mechanism and makes the Day gate deterministic, but it does
++not smuggle unresolved public-contract choices into “parity.” Please give an
++exact disposition on: Roman-1962 versus legacy manifest-order empty-Day
++default; preserved production treatment for `why=1` and territorial choice;
++stable public `cycle`, `alternative`, and `translation-witness` keys;
++source-static noindex and route-neutral metadata for retained candidates;
++public titles and non-candidate diagnostics; and quiet direct Day↔Propers plus
++context access. Also decide whether the draft patch must be regenerated with
++all accepted dispositions before execution can be authorized (Codex recommends
++yes).
++
++No public-route, public-navigation, candidate, oracle, visual, renderer,
++source, or coverage byte changed in this phase. Public navigation and public
++cutover execution remain explicitly unauthorized. If the plan is accepted, a
++separate clean execution agent must still apply only the reviewed final patch,
++pass every named local/canonical/oracle/deployment/cache gate, and stop for
++independent cutover acceptance before any cleanup.
+diff --git a/guidance/liturgy-browser-roadmap.md b/guidance/liturgy-browser-roadmap.md
+index 6fd4347ce..afa4b47c6 100644
+--- a/guidance/liturgy-browser-roadmap.md
++++ b/guidance/liturgy-browser-roadmap.md
+@@ -805,0 +806,2 @@ tracked commit say so rather than borrowing a neighboring SHA.
++| 2026-08-06 | Liturgical Instrument public-cutover planning kickoff | In progress from clean synchronized boundary `7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef`. Planning will map the canonical and accepted-candidate route/state/loading contracts, select one same-URL reversible mechanism, classify all differences, repair only the known clock-dependent Day test if safely proved, and prepare an unapplied patch, exact rollback/gates, and immutable review handoff. Initial inspection identifies static candidate indexing, legacy Day fallback/self-link, first-visit default, provisional Propers option-key, and lost direct cross-entrance navigation questions that must be resolved explicitly. No canonical page, public navigation, candidate, oracle, or cutover byte is changed or authorized by this phase. | Deliverable `liturgy-reader-instrument-public-cutover-plan-2026-08-06`; canonical continuity owns exact progress and stopping point |
++| 2026-08-06 | Liturgical Instrument public-cutover plan review candidate | Candidate for narrow independent planning review; no cutover or navigation authorization claimed. The route/load/publication map selects same-path source promotion behind unchanged `day.html` and `index.html`, rejects redirects/renames/build aliases, inventories every owned navigation link, classifies URL/state differences in Markdown and JSON, and defines ordinary-revert rollback plus exact local/oracle/Pages/cache gates. Day's only 33/34 failure was proved clock-dependent and now passes 34/34 through an empty-URL test-only clock fixture. The proposed mechanical patch is tracked but unapplied; review must resolve the empty-Day default, deferred Day reasoning/territorial behavior, stable Propers option keys, candidate/canonical metadata and wording, and direct cross-entrance/context access before execution. Canonical pages, navigation, candidates, and oracle remain byte-identical to the starting boundary. | Planning `c7124de25`; deterministic test `5e1b82b51`; record checkpoint `2cf91dd01`; handoff `build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/`; independent plan review is the only next phase |
+diff --git a/promised-deliverables.toml b/promised-deliverables.toml
+index 19fc830a8..913f940ff 100644
+--- a/promised-deliverables.toml
++++ b/promised-deliverables.toml
+@@ -2,0 +3,72 @@ schema_version = 1
++[[deliverables]]
++id = "liturgy-reader-instrument-public-cutover-plan-2026-08-06"
++owner = "build/agent-continuity/liturgy-reader-cutover-decision.md"
++promise = "Produce an independently reviewable, route-compatible, reversible public-cutover plan for moving the accepted Liturgical Instrument Day and Propers readers onto their canonical URLs without changing canonical pages, public navigation, candidate routes, or the accepted visual oracle during planning."
++state = "candidate"
++
++  [[deliverables.requirements]]
++  id = "accepted-starting-boundary-and-planning-scope"
++  criterion = "The plan begins from the accepted and durably archived production integration, freezes the accepted visual and behavioral seams, and does not execute a canonical-route, navigation, candidate, oracle, or public-cutover change."
++  status = "pass"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/HANDOFF.md",
++  ]
++
++  [[deliverables.requirements]]
++  id = "route-state-and-navigation-inventory"
++  criterion = "Tracked human- and machine-readable inventories distinguish the canonical public contract from implementation detail and classify every material Day, Propers, navigation, metadata, indexing, cache, and static-hosting difference."
++  status = "pass"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-cutover-route-map.md",
++    "build/agent-continuity/liturgy-reader-cutover-state-matrix.md",
++    "build/agent-continuity/liturgy-reader-cutover-state-matrix.json",
++    "build/agent-continuity/liturgy-reader-cutover-navigation-map.md",
++  ]
++
++  [[deliverables.requirements]]
++  id = "smallest-reversible-mechanism"
++  criterion = "The plan selects and justifies the smallest canonical-URL-preserving mechanism, rejects more invasive alternatives, names exact cutover and protected files, and records every unresolved compatibility blocker without reopening accepted design."
++  status = "pass"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-cutover-decision.md",
++    "build/agent-continuity/liturgy-reader-public-cutover-proposed.patch",
++  ]
++
++  [[deliverables.requirements]]
++  id = "deterministic-day-gate"
++  criterion = "The Day first-visit browser assertion is made deterministic without changing product behavior or weakening its repository-default contract, or a newly discovered non-date-dependent cause remains an explicit cutover blocker."
++  status = "pass"
++  evidence = [
++    "tools/tests/day_reader_integration_browser.mjs",
++    "build/agent-continuity/liturgy-reader-cutover-state-matrix.md",
++    "build/agent-continuity/liturgy-reader-day-deterministic-test.md",
++  ]
++
++  [[deliverables.requirements]]
++  id = "rollback-and-acceptance-gates"
++  criterion = "An operational ordinary-revert rollback and exact local, canonical-route, visual-oracle, publication, Pages, deployed-parity, indexing, cache, accessibility, and browser acceptance gates make later execution bounded and testable."
++  status = "pass"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-public-cutover-rollback.md",
++    "build/agent-continuity/liturgy-reader-public-cutover-gates.md",
++  ]
++
++  [[deliverables.requirements]]
++  id = "immutable-plan-review-handoff"
++  criterion = "A fresh tracked immutable handoff directory and verified one-root ZIP contain the exact instruction, byte-identical continuity, route/state/navigation inventories, decision, proposed patch, rollback, gates, source snapshots, checks, and narrow independent-review request."
++  status = "pass"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++    "build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/HANDOFF.md",
++    "build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/MANIFEST.sha256",
++  ]
++
++  [[deliverables.requirements]]
++  id = "independent-cutover-plan-review"
++  criterion = "Independent review accepts the cutover plan and separately authorizes execution; planning quality alone does not authorize public navigation changes or public cutover."
++  status = "open"
++  evidence = [
++    "build/agent-continuity/liturgy-reader-visual-plan.md",
++  ]
++
+diff --git a/tools/check-promised-deliverables b/tools/check-promised-deliverables
+index 3d44759a9..ccd8512fa 100755
+--- a/tools/check-promised-deliverables
++++ b/tools/check-promised-deliverables
+@@ -23 +23 @@ EXAMPLES = {
+-                "Promised-deliverable ledger valid: 21 tracked, 15 complete.",
++                "Promised-deliverable ledger valid: 23 tracked, 17 complete.",
+@@ -29 +29 @@ EXAMPLES = {
+-                "Promised-deliverable ledger valid: 21 tracked, 15 complete.",
++                "Promised-deliverable ledger valid: 23 tracked, 17 complete.",
+diff --git a/tools/tests/day_reader_integration_browser.mjs b/tools/tests/day_reader_integration_browser.mjs
+index b7ce158d3..c0605a9d6 100644
+--- a/tools/tests/day_reader_integration_browser.mjs
++++ b/tools/tests/day_reader_integration_browser.mjs
+@@ -1161,8 +1161,27 @@ async function runAssertions(cdp, base) {
+-    await navigateCandidate(cdp, base, '');
+-    const state = await evaluate(cdp, 'dayReaderDebug.state');
+-    assert.equal(state.edition.id, 'roman-1962');
+-    assert.equal(state.bible.id, 'douay-rheims');
+-    assert.equal(state.languages.orations, 'la');
+-    assert.equal(state.options.ordinary, false);
+-    assert.equal(state.requestedMode, 'read');
+-    assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), true);
++    const fixedClock = await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: `
++      (() => {
++        const OriginalDate = Date;
++        const fixed = new OriginalDate(2026, 7, 2, 12, 0, 0, 0).getTime();
++        class FixedDate extends OriginalDate {
++          constructor(...args) { super(...(args.length ? args : [fixed])); }
++          static now() { return fixed; }
++        }
++        Object.setPrototypeOf(FixedDate, OriginalDate);
++        globalThis.Date = FixedDate;
++      })();
++    ` });
++    try {
++      await navigateCandidate(cdp, base, '');
++      const state = await evaluate(cdp, 'dayReaderDebug.state');
++      assert.equal(state.civilDate, '2026-08-02');
++      assert.equal(state.edition.id, 'roman-1962');
++      assert.equal(state.bible.id, 'douay-rheims');
++      assert.equal(state.languages.orations, 'la');
++      assert.equal(state.options.ordinary, false);
++      assert.equal(state.requestedMode, 'read');
++      assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), true);
++    } finally {
++      await cdp.send('Page.removeScriptToEvaluateOnNewDocument', {
++        identifier: fixedClock.identifier
++      });
++    }
+diff --git a/tools/tests/test_day_missal_integration.py b/tools/tests/test_day_missal_integration.py
+index 71a610ed4..e1d36d81c 100644
+--- a/tools/tests/test_day_missal_integration.py
++++ b/tools/tests/test_day_missal_integration.py
+@@ -166,2 +166,2 @@ class DayMissalIntegrationTests(unittest.TestCase):
+-        self.assertEqual(len(ledger["deliverables"]), 22)
+-        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 16)
++        self.assertEqual(len(ledger["deliverables"]), 23)
++        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 17)
+diff --git a/tools/tests/test_propers_reader_integration.py b/tools/tests/test_propers_reader_integration.py
+index b6dc0ae29..b31ecdfcc 100644
+--- a/tools/tests/test_propers_reader_integration.py
++++ b/tools/tests/test_propers_reader_integration.py
+@@ -307 +307 @@ class PropersReaderIntegrationTests(unittest.TestCase):
+-        self.assertEqual(len(ledger["deliverables"]), 22)
++        self.assertEqual(len(ledger["deliverables"]), 23)
+@@ -313 +313 @@ class PropersReaderIntegrationTests(unittest.TestCase):
+-            16,
++            17,
