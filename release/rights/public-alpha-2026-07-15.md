@@ -1950,8 +1950,8 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/reader-state.js` | `86fcb653738089a569f0f9747d5092e4e51fd2f4ee0ae7b4e7fe9a0c5f5a7cdc` |
 | `src/web/browser/liturgy/reader-visual-reset-day.html` | `ff734f07b797e5706c7e62a4c890f47c32c0fbfd78bfc855f421a4123273c18d` |
 | `src/web/browser/liturgy/reader-visual-reset-propers.html` | `7b0a3a4c7ef1189f27bf134a9f6df90315c62675a19cabca0135adaf7201ba65` |
-| `src/web/browser/liturgy/reader-visual-reset.css` | `696680634af35e8110e7d0eb5848b81b481b032260c33343825b06efbeb41b1e` |
-| `src/web/browser/liturgy/reader-visual-reset.js` | `e2dab3a2085c6bea1303ee1439a4b7ccf2dc98a7a4724705f000f9de19d498aa` |
+| `src/web/browser/liturgy/reader-visual-reset.css` | `44f177fc859e96f7a8b3868971a2cc2e9b56922349b9fab88d17085aaa29d2c6` |
+| `src/web/browser/liturgy/reader-visual-reset.js` | `bd71284a9e12266f6c125a4cf9351e484e9a313c1d1e71dff78f59b5777268ed` |
 | `src/web/browser/liturgy/reading-contents.js` | `01067b1208dc6468aecd278328043acc83d3c2de31bd149b66f1ac0383340f3d` |
 | `src/web/browser/scripture/index.html` | `1cd10d77d7f257c1ad6b3e5e9d7afd61942922b9913fdef1417fa1951e133edd` |
 | `src/web/browser/scripture/plan-model.js` | `c0c7a6635844f2e88e2d8d2e290790fa05f73ba1153f59e380812e3b8775ee51` |

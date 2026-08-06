@@ -179,39 +179,70 @@ operations.
 
 ## Promised work
 
+### Liturgical Instrument visual correction candidate
+
+<!-- promised-deliverable: liturgy-reader-instrument-correction-2026-08-05 -->
+
+**Candidate in progress; independent correction review remains the gate.** The
+independent review of the visual-reset package selected Liturgical Instrument
+as the production visual foundation and left Quiet Folio and Contemporary
+Reader frozen as comparison references. The review did not authorize public
+cutover or production-integration execution. It authorized correction work and
+production-integration planning while requiring another independent visual
+review of the corrected evidence before implementation can move into the
+production reader.
+
+The bounded correction owns seven findings: integrate the persistent controls
+with the reading composition; advance the first principal Missal text; remove
+the empty Read gutter; constrain the 768-pixel portrait measure; subordinate
+partial and postconciliar coverage warnings to available text; replace or
+simplify the provisional masthead mark and progress treatment; and finish
+mobile ritual spacing and narrow division-title wrapping. The canonical plan,
+review mailbox, measurements, checkpoint record, and resume state are tracked
+at `build/agent-continuity/liturgy-reader-visual-plan.md` under this task's
+explicit build-tree exception. Required implementation, before/after evidence,
+full checks, Pages verification, and the immutable tracked handoff remain open.
+
+Accepted M1–M3 and W3 state, assembly, renderers, Ordinary seating, failure,
+location, focus, race, action-reachability, and isolation behavior remain
+binding. This candidate does not add Study, Compare, search, Propers Missal,
+sources, editions, recensions, translations, or public links, and it does not
+change `liturgy/day.html` or `liturgy/index.html`.
+
 ### Liturgy reader visual-reset direction candidate
 
 <!-- promised-deliverable: liturgy-reader-visual-reset-candidate-2026-08-05 -->
 
-**Candidate in progress; visual direction reopened by explicit maintainer
-decision.** The completed M1–M3 and W3 records remain authoritative for state,
+**Complete as a direction-selection study; Liturgical Instrument selected.**
+The completed M1–M3 and W3 records remain authoritative for state,
 production assembly and rendering reuse, fail-closed behavior, focus and
 semantic-location restoration, responsive access, and render-race ownership.
 They were never a finding that the beige card, enlarged mobile-style command
 bar, improvised glyphs, typography, spacing, or desktop composition constituted
 a finished or world-class visual reader.
 
-This distinct visual-design work item will compare Quiet Folio, Liturgical
+This distinct visual-design work item compared Quiet Folio, Liturgical
 Instrument, and Contemporary Reader over one shared semantic DOM and interaction
 foundation. It uses real production Day Read/Missal and Propers Read content at
 unlinked, noindex prototype routes, while preserving the accepted state,
 calendar, Ordinary seating, Proper rendering, source, and coverage boundaries.
-Its external review may select one direction, combine named strengths, or find
-that none is sufficient. The work does not reopen the completed Day Missal
-engineering deliverable, alter public Day or Propers, start Study/Compare/search,
-or authorize public cutover. No visual direction is accepted yet.
+Its external review selected Liturgical Instrument. The work does not reopen
+the completed Day Missal engineering deliverable, alter public Day or Propers,
+start Study/Compare/search, or authorize public cutover.
 
-The visual-reset candidate is now implemented and locally proven, with
-**Liturgical Instrument recommended for independent review**. Quiet Folio is
-the calmest editorial leaf; Liturgical Instrument adds an edition-neutral
+The visual-reset candidate was implemented and independently reviewed, with
+**Liturgical Instrument selected as the production visual foundation**. Quiet
+Folio is the calmest editorial leaf; Liturgical Instrument adds an edition-neutral
 ritual cue grid, disciplined divisions, and a speaker/action gutter for actual
 following; Contemporary Reader supplies the most compact application chrome
 and polished title-led Propers Browse flow. All three are query-selected
 presentations over the same HTML, SVG icon set, shared shell controller, and
-accepted Day/Propers production adapters. The recommendation favors
-Instrument's continuous ritual legibility while retaining Folio's typographic
-restraint and Reader's Browse treatment as explicit comparison strengths; it
-is not a claim that any direction is accepted or world-class.
+accepted Day/Propers production adapters. The selection favors Instrument's
+continuous ritual legibility. Folio and Reader remain frozen comparison
+references rather than ingredients for a merged compromise. The review also
+found seven bounded visual blockers, now owned by
+`liturgy-reader-instrument-correction-2026-08-05`; selection does not make the
+foundation world-class or authorize production integration.
 
 The current evidence contains 52 same-run comparison captures at the required
 desktop, tablet, mobile, enlarged-text, forced-color, reduced-motion, keyboard,
@@ -221,9 +252,10 @@ unnamed-interactive-node result; a 26-page PDF is retained only as a print smoke
 check, not a print redesign. Exact hashes prove the public Day and Propers
 routes, both accepted candidates, shared shell, M1 state seams, production
 seating, and accepted adapters unchanged. The implementation is this candidate
-commit; its immutable visual-review handoff is created after the validated push
-and recorded in the completion report. External visual review and every public
-cutover decision remain open.
+commit; its immutable visual-review handoff was created after the validated
+push. The direction-selection decision is complete. Corrected visual review,
+production-integration execution, and every public-cutover decision remain
+open under the separate correction deliverable above.
 
 ### Liturgy Day Missal-mode W3 integration accepted
 

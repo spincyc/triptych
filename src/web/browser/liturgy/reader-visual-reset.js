@@ -42,10 +42,12 @@
 
   const context = root.querySelector('.reader-context');
   const visualMode = root.querySelector('[data-visual-mode]');
-  if (context && visualMode) {
+  if (context) {
     const syncMode = function () {
       const parts = context.textContent.split('·');
-      visualMode.textContent = (parts[1] || 'Read').trim();
+      const mode = (parts[1] || 'Read').trim();
+      root.dataset.readerMode = mode.toLocaleLowerCase();
+      if (visualMode) visualMode.textContent = mode;
     };
     new MutationObserver(syncMode).observe(context, { childList: true, characterData: true, subtree: true });
     syncMode();

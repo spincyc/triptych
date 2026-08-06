@@ -486,6 +486,40 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .annotated { max-width: 43rem; margin-left: 8rem; padding: 1.1rem 0 0.2rem 1rem; border-left: 3px solid var(--vr-accent); }
 .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-frame > .annotated .proper-name { margin-left: 0; padding-left: 0; }
 
+/* Read is a single editorial axis; the ritual cue gutter belongs to Missal. */
+.reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-identity,
+.reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-document {
+  width: min(calc(100% - 2.5rem), 39.75rem);
+}
+.reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-document .proper {
+  max-width: none;
+  margin-left: 0;
+}
+.reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-document .proper-name {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Keep the identity, then begin the continuous rite without a dead interval. */
+.reader-visual-reset[data-design="instrument"][data-reader-mode="missal"] .reader-identity {
+  padding-top: clamp(0.9rem, 2vw, 1.35rem);
+  padding-bottom: 0.45rem;
+}
+.reader-visual-reset[data-design="instrument"][data-reader-mode="missal"] .reader-document .ordinary-frame {
+  margin-top: 0;
+}
+.reader-visual-reset[data-design="instrument"][data-reader-mode="missal"] .reader-document .ordinary-frame > .ordinary-division:first-child {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  padding-block: 0.55rem 0.5rem;
+}
+.reader-visual-reset[data-design="instrument"][data-reader-mode="missal"] .reader-document .ordinary-frame > .ordinary-division:first-child + .ordinary-element {
+  margin-bottom: 0.35rem;
+}
+.reader-visual-reset[data-design="instrument"][data-reader-mode="missal"] .reader-document .ordinary-frame > .ordinary-division:first-child + .ordinary-element .ordinary-head {
+  margin-block: 0.4rem 0.3rem;
+}
+
 /* Direction C — Contemporary Reader: precise application chrome and calm text. */
 .reader-visual-reset[data-design="reader"] {
   --vr-paper: #f7f8f8;
@@ -561,6 +595,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .surface-head { padding-right: max(1.1rem, var(--reader-safe-right)); padding-left: max(1.1rem, var(--reader-safe-left)); }
   .reader-visual-reset[data-design="instrument"] .reader-identity,
   .reader-visual-reset[data-design="instrument"] .reader-document { width: 100%; padding-inline: max(1.25rem, var(--reader-safe-right)) max(1.25rem, var(--reader-safe-left)); }
+  .reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-identity,
+  .reader-visual-reset[data-design="instrument"][data-reader-mode="read"] .reader-document {
+    width: min(calc(100% - 2.5rem), 39.75rem);
+    padding-inline: 0;
+  }
   .reader-visual-reset[data-design="instrument"] .reader-document .proper { max-width: none; margin-left: 0; }
   .reader-visual-reset[data-design="instrument"] .reader-document .proper-name { margin-left: 0; padding-left: 0; }
   .reader-visual-reset[data-design="instrument"] .reader-document .ordinary-division { padding-left: 0; }

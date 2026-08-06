@@ -1,10 +1,72 @@
 schema_version = 1
 
 [[deliverables]]
+id = "liturgy-reader-instrument-correction-2026-08-05"
+owner = "src/web/browser/liturgy/reader-visual-reset-day.html"
+promise = "Correct the seven independently reviewed Liturgical Instrument visual blockers, produce measured before/after browser evidence and a complete immutable review handoff, and preserve accepted reader behavior and public-route isolation without beginning production integration or public cutover."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "selected-foundation-and-scope"
+  criterion = "Liturgical Instrument remains the sole selected production visual foundation; Quiet Folio and Contemporary Reader stay frozen comparison references; accepted M1–M3/W3 behavior, public routes, deferred modes, and production data are not reopened."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "reading-plane-and-first-viewport"
+  criterion = "Read uses one deliberate axis and a controlled 768×1024 measure, while Missal advances principal ritual text by about 80 pixels at the required desktop and mobile viewports without crowding or semantic-grid loss."
+  status = "open"
+  evidence = [
+    "src/web/browser/liturgy/reader-visual-reset.css",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "integrated-shell-masthead-and-ritual-finish"
+  criterion = "The permanent controls and masthead read as one authored Instrument composition, the mobile dock is opaque, warnings remain honest but subordinate, and mobile exchanges and narrow division titles receive deliberate editorial spacing and wrapping."
+  status = "open"
+  evidence = [
+    "src/web/browser/liturgy/reader-visual-reset-day.html",
+    "src/web/browser/liturgy/reader-visual-reset-propers.html",
+    "src/web/browser/liturgy/reader-visual-reset.css",
+    "src/web/browser/liturgy/reader-visual-reset.js",
+  ]
+
+  [[deliverables.requirements]]
+  id = "complete-measured-evidence-and-handoff"
+  criterion = "The required responsive, open-surface, partial-coverage, enlarged-text, forced-color, reduced-motion, keyboard, and deep-scroll matrix has comparable before/after captures, explicit deltas, clean browser results, a labeled final contact sheet, and a verified immutable tracked handoff directory and ZIP."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "behavior-release-and-production-isolation"
+  criterion = "Focused integration, shared-shell, browser, accessibility, release-binding, full-gate, public-alpha build/verify, Pages, and direct deployed prototype checks agree while public Day and Propers and accepted reader seams remain unchanged."
+  status = "open"
+  evidence = [
+    "tools/tests/test_liturgy_reader_visual_reset.py",
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-correction-review"
+  criterion = "A new independent visual review resolves every correction blocker before production-integration execution begins; public cutover remains separately unauthorized."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "guidance/liturgy-browser-roadmap.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-reader-visual-reset-candidate-2026-08-05"
 owner = "src/web/browser/liturgy/reader-visual-reset-day.html"
 promise = "Produce an unlinked, noindex high-fidelity visual-reset prototype for the Day and Propers entrances, presenting three genuinely distinct directions over the accepted shared state, shell behavior, production assembly, Ordinary seating, and Proper rendering boundaries without changing public routes, liturgical data, or deferred reader modes."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "three-shared-real-content-directions"
@@ -45,8 +107,9 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "external-review-decision"
   criterion = "Independent visual review chooses a production foundation or explicitly finds that none of the directions is sufficient; the candidate may not self-accept or authorize public cutover."
-  status = "open"
+  status = "pass"
   evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
     "guidance/liturgy-browser-roadmap.md",
     "PROJECT-WORK.md",
   ]
