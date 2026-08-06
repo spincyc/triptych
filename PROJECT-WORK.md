@@ -183,8 +183,8 @@ operations.
 
 <!-- promised-deliverable: liturgy-reader-instrument-production-integration-2026-08-06 -->
 
-**Candidate; implementation checkpoint pushed, deployed parity and independent
-integration review remain open; public navigation and cutover are
+**Complete; production integration independently accepted and its exact
+reviewed handoff durably archived; public navigation and cutover remain
 unauthorized.** Independent Round 1 accepted the
 Liturgical Instrument visual foundation and all seven correction dispositions.
 Production integration begins from `b3ae6bddaab631661d342380f61365d851be160c`
@@ -248,6 +248,26 @@ noindex, and deployed Instrument CSS, Day/Propers JavaScript, and accepted
 oracle CSS/JavaScript byte-match source. Deployed production-integration parity
 is complete. The deliverable remains a candidate solely for independent
 integration review; public navigation and cutover remain unauthorized.
+
+Independent production-integration review passed all six requested questions:
+Day parity, Propers parity with canonical Browse retained, responsive shell and
+accessibility behavior, reading and ritual geometry, frozen behavioral/source
+ownership, and final integration disposition. No product, visual, evidence,
+harness, or deployment correction was requested. The only closeout finding was
+that the exact reviewed handoff remained ignored locally.
+
+Under the review's path-bounded force-add authority, archival commit
+`8c6e1270f692ca4136f2f6a60002bacd3af0440c` pushes the byte-identical reviewed
+directory and ZIP. All 216 manifest entries verify, the archive has one
+top-level directory, and its SHA-256 remains
+`ebf0361309ac33b4580cbb535e4bbd3eabd144756e6c078aa140e716c748f05f`.
+The canonical continuity file carries the complete review and Codex response.
+Production integration and durable handoff closeout are therefore complete.
+The Day browser remains honestly 33/34 only at its unchanged date-dependent
+expectation, and the full gate remains non-green only at unrelated example
+transcript divergence. Separate public-cutover planning may begin after this
+record is pushed, but public navigation changes and cutover execution remain
+unauthorized.
 
 ### Liturgical Instrument visual correction accepted
 

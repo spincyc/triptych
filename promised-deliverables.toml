@@ -4,7 +4,7 @@ schema_version = 1
 id = "liturgy-reader-instrument-production-integration-2026-08-06"
 owner = "src/web/browser/liturgy/reader-instrument.css"
 promise = "Move the independently accepted Liturgical Instrument visual system into the existing unlinked, noindex Day and Propers production-reader candidates through the smallest shared presentation seam, prove prototype-to-production parity, and preserve accepted M1–M3/W3 behavior without changing public navigation or beginning public cutover."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "accepted-foundation-and-scope"
@@ -60,8 +60,19 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "independent-integration-review"
   criterion = "Independent integration review resolves every blocker before any separately authorized public navigation change or public cutover."
-  status = "open"
+  status = "pass"
   evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/REVIEW_REQUEST.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "durable-handoff-closeout"
+  criterion = "The exact independently reviewed production-integration handoff directory and transport ZIP are tracked and pushed unchanged, with all 216 manifest entries valid and the reviewed ZIP SHA-256 preserved."
+  status = "pass"
+  evidence = [
+    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/MANIFEST.sha256",
+    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration.zip",
     "build/agent-continuity/liturgy-reader-visual-plan.md",
   ]
 

@@ -648,21 +648,23 @@ by commit `c388ab42dfc4f5c7d49abc71596d6bb511af5742` and Pages run
 `31109086658`; later acceptance-record runs stopped at GitHub deployment
 polling and are not represented as successful.
 
-Production-integration execution is authorized through PI-A–PI-D, with
-independent integration review as the next gate. PI-A selected a new
-last-loaded, candidate-scoped `reader-instrument.css` as the smallest shared
-production presentation seam. This avoids changing public-loaded
-`day-missal.css` and retains the isolated accepted prototype as the comparison
-oracle. PI-B and PI-C now integrate the shared shell, Day Read/Missal, and
-Propers Read/Browse presentation. PI-D's local parity matrix passes 19/19
-governed assertions over 100 captures, including 23 exact
-prototype/production pairs; checkpoint push, Pages/deployed-asset
-qualification, immutable handoff assembly, and independent integration review
-remain. M1–M3 and W3
-semantic, state, renderer, seating, one-action access, focus, reflow,
-fail-closed, race, source-honesty, and production-isolation acceptance remain
-binding. Public navigation and cutover remain unauthorized. The canonical
-review mailbox and execution record remain
+Production integration through PI-A–PI-D is independently accepted. The
+candidate-scoped `reader-instrument.css` remains the smallest shared
+presentation seam; public-loaded `day-missal.css`, the accepted prototype
+oracle, and M1–M3/W3 semantic, state, renderer, seating, one-action, focus,
+reflow, fail-closed, race, source-honesty, and production-isolation owners
+remain unchanged. The accepted matrix passes 19/19 governed assertions over
+100 captures, including 23 exact prototype/production pairs, and successful
+Pages run `31125898045` plus direct hashes establish deployed parity for exact
+production commit `5444d89fc9b379a1babef5b2220323fe1508b2b3`.
+
+The independent review passed all six integration questions and requested no
+product correction. Its sole process finding is closed by archival commit
+`8c6e1270f692ca4136f2f6a60002bacd3af0440c`, which tracks the unchanged
+reviewed handoff directory and ZIP. Production integration and durable handoff
+closeout are complete. The next separately authorized activity may be
+public-cutover planning; public navigation changes and cutover execution remain
+unauthorized. The canonical review mailbox and execution record remain
 `build/agent-continuity/liturgy-reader-visual-plan.md`.
 
 The first production-integration implementation checkpoint is pushed at
@@ -684,8 +686,17 @@ production commit `5444d89fc9b379a1babef5b2220323fe1508b2b3` at
 2026-08-06T18:29:55Z. Direct Day/Propers routes are HTTP 200 and load the
 deployed Instrument layer; deployed Instrument CSS and candidate JavaScript
 byte-match source, while the accepted oracle remains noindex and byte-matched.
-Independent production-integration review is now the only integration gate.
-Public navigation and cutover remain unauthorized.
+Independent production-integration review subsequently passed all six
+questions without requesting a product, visual, evidence, harness, or
+deployment correction. The review's only closeout finding authorized tracking
+the exact sealed production-integration handoff. Archival commit
+`8c6e1270f692ca4136f2f6a60002bacd3af0440c` pushes that unchanged directory and
+ZIP: all 216 manifest entries verify, the archive has one top-level directory,
+and ZIP SHA-256 remains
+`ebf0361309ac33b4580cbb535e4bbd3eabd144756e6c078aa140e716c748f05f`.
+Production integration and durable handoff closeout are complete. Separate
+public-cutover planning may begin after this record is pushed; public
+navigation changes and cutover execution remain unauthorized.
 
 1. M1's W1/W9 shared semantic fixture and URL-state contract is accepted at
    correction `c6b8070ae76e75153448895a19a0b916c18806ea` plus final micro-fix
@@ -791,6 +802,7 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-06 | Liturgical Instrument correction — Round 1 deployed re-review candidate | Pages run `31109086658` completed successfully for the immutable-handoff commit. Direct unlinked Day/Propers routes return HTTP 200/noindex and deployed CSS/JS byte-match source, resolving the earlier external polling stop. A fresh post-deployment immutable package keeps canonical continuity byte-identical and records the successful run and hashes. The candidate remains pending only the three-question independent visual re-review; production-integration execution and public cutover remain unauthorized. | Handoff commit `c388ab42dfc4f5c7d49abc71596d6bb511af5742`; final package `build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/`; independent re-review only remaining gate |
 | 2026-08-06 | Liturgical Instrument correction — independent Round 1 acceptance | Accepted. The reviewer independently tested the immutable ZIP, verified all 109 manifest entries and source/candidate CSS parity, inspected the blocker sheets and 11 original-pixel captures, and passed all three bounded questions: continuous shell integration across 1440/1024/768/393/320, whole usable labels at 200%, and no regression to accepted geometry or behavior. Liturgical Instrument is the accepted production visual foundation and production-integration execution may begin through the smallest shared presentation seam. Public navigation and cutover remain unauthorized. Pages run `31110517661` for post-deployment evidence commit `4daf7d8a1e1c509edb81a738cc71223170bbbd2d` failed at deploy polling and is not treated as successful; deployed parity remains owned by successful run `31109086658` for `c388ab42dfc4f5c7d49abc71596d6bb511af5742`. | Correction `ab89758e3f3ee165e0141e3605be88051450134b`; accepted deployed handoff `c388ab42dfc4f5c7d49abc71596d6bb511af5742`; reviewed package `build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/`; production integration next, independent integration review before cutover |
 | 2026-08-06 | Liturgical Instrument acceptance-record deployment settlement | Acceptance/tracking commit `1608f0ee0ee61df956247072a91647147548c5ad` changes no product or public route. Pages run `31113461987` passed checkout, locked setup, source verification, public build, Pages compatibility verification, configuration, and verified-artifact upload, then failed after deploy-pages polled `deployment_in_progress` for 600 seconds. Direct Day/Propers Instrument routes remain HTTP 200 with the complete noindex policy; deployed CSS `850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48` and JavaScript `eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679` byte-match source. The failed run is not a successful deployment and does not supersede accepted successful parity run `31109086658`. | Acceptance `1608f0ee0ee61df956247072a91647147548c5ad`; Pages `31113461987` failed at deployment polling; production hook inventory remains next |
+| 2026-08-06 | Liturgical Instrument production integration acceptance and durable closeout | Accepted. Independent review passed all six production-integration questions with no product, visual, evidence, harness, deployment, source-ownership, accessibility, or isolation correction. Exact production commit `5444d89fc9b379a1babef5b2220323fe1508b2b3` owns successful Pages run `31125898045` and direct deployed/source parity. The sole process finding—an ignored local review package—is closed by the path-authorized archival commit, which pushes the byte-identical reviewed directory and ZIP with 216/216 manifest entries, one top-level directory, and ZIP SHA-256 `ebf0361309ac33b4580cbb535e4bbd3eabd144756e6c078aa140e716c748f05f`. The Day date-dependent 33/34 result and unrelated example-transcript full-gate stop remain honestly disclosed. Separate cutover planning may begin after closeout; public navigation and cutover execution remain unauthorized. | Implementation `3cd46072b164ff39b00639bb67ad6b8943a255dc`; deployed state `5444d89fc9b379a1babef5b2220323fe1508b2b3`; archival commit `8c6e1270f692ca4136f2f6a60002bacd3af0440c`; exact review and response in canonical continuity |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).
