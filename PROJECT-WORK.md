@@ -219,7 +219,10 @@ re-review remain open; this is still a candidate and not production-integration
 authorization. Correction commit `ab89758e3f3ee165e0141e3605be88051450134b`
 is pushed. Its first Pages run passed every build/verification step but timed
 out while GitHub held the deployment queued, so deployed corrected-asset parity
-remains open and is not claimed.
+remains open and is not claimed. A second automatic run for continuity
+checkpoint `c6b7f7f0a79468cfa1a503235044c92bd88c27b2` again built and uploaded the
+verified artifact, then timed out only in deploy-pages polling; the durable
+continuity record owns both exact stops.
 
 Accepted M1–M3 and W3 state, assembly, renderers, Ordinary seating, failure,
 location, focus, race, action-reachability, and isolation behavior remain
