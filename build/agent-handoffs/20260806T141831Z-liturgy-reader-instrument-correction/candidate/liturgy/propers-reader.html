@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <title>Propers reader — internal candidate · Triptych</title>
+  <link rel="icon" href="../assets/icon.png" sizes="180x180" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <meta name="description" content="Internal Propers Read candidate Propers Read-mode integration for review; the live Propers page is unchanged.">
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="../shared/browser-core.css">
+  <link rel="stylesheet" href="liturgy.css">
+  <link rel="stylesheet" href="reader-shell.css">
+  <link rel="stylesheet" href="propers-reader.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="triptych-mark" aria-hidden="true">
+      <i></i><i></i><i></i>
+    </div>
+    <div class="brand">
+      <a href="../index.html">Triptych</a>
+      <span>AI Driven Studies in Catholic Faith, Worship, and Law</span>
+    </div>
+    <nav aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../contributing.html">Feedback</a>
+    </nav>
+  </header>
+  <aside class="release-banner preview" aria-label="Edition status"><strong>Preview.</strong> Local review copy; not for distribution.</aside>
+  <main id="main-content" class="page-shell page-browser section-toned section-red propers-reader-candidate">
+
+    <div class="propers-reader-candidate-frame">
+<p class="candidate-flag" role="note">
+  <strong>Internal Propers Read candidate</strong>
+  <span>Propers Read-mode integration for review; the live Propers page is unchanged.</span>
+</p>
+
+<div class="reader-shell" data-reader-shell data-entrance="propers">
+  <header class="reader-identity" aria-labelledby="formulary-title">
+    <p class="reader-context">Propers · Read</p>
+    <h1 id="formulary-title" class="celebration-title">Choose a formulary</h1>
+    <p id="formulary-type" class="entry-title"></p>
+    <p id="formulary-meta" class="entry-meta"></p>
+    <p id="coverage-notice" class="coverage-notice" role="note" hidden></p>
+  </header>
+
+  <main id="reader-document" class="reader-document" tabindex="-1" aria-busy="true">
+    <p class="placeholder">Loading the available editions…</p>
+  </main>
+
+  <nav class="reader-actions" aria-label="Reader actions">
+    <button type="button" data-reader-action="browse" aria-controls="browse-surface"
+            aria-expanded="false">
+      <span class="action-mark" aria-hidden="true">▣</span>
+      <span>Browse &amp; edition</span>
+    </button>
+    <button type="button" data-reader-action="contents" aria-controls="contents-surface"
+            aria-expanded="false">
+      <span class="action-mark" aria-hidden="true">≡</span>
+      <span>Contents</span>
+    </button>
+    <button type="button" data-reader-action="mode" aria-controls="mode-surface"
+            aria-expanded="false">
+      <span class="action-mark" aria-hidden="true">R</span>
+      <span>Mode</span>
+      <span class="action-state">Read</span>
+    </button>
+    <button type="button" data-reader-action="details" aria-controls="details-surface"
+            aria-expanded="false">
+      <span class="action-mark" aria-hidden="true">i</span>
+      <span>Details</span>
+    </button>
+  </nav>
+
+  <dialog id="browse-surface" class="reader-surface browse-surface"
+          data-reader-surface="browse" aria-labelledby="browse-surface-title">
+    <header class="surface-head">
+      <div>
+        <p class="surface-kicker">Propers entrance</p>
+        <h2 id="browse-surface-title">Browse &amp; edition</h2>
+      </div>
+      <button type="button" class="surface-close" data-reader-close aria-label="Close Browse and edition">×</button>
+    </header>
+    <div class="surface-body">
+      <form id="browse-form" class="surface-fields">
+        <div class="surface-field">
+          <label for="reader-missal">Missal</label>
+          <select id="reader-missal" name="missal"></select>
+        </div>
+        <div class="surface-field">
+          <label for="reader-type">Formulary type</label>
+          <select id="reader-type" name="type"></select>
+        </div>
+        <div class="surface-field is-wide">
+          <label for="reader-formulary">Formulary</label>
+          <select id="reader-formulary" name="mass"></select>
+        </div>
+        <div class="surface-field">
+          <label for="reader-bible">Scripture</label>
+          <select id="reader-bible" name="bible"></select>
+        </div>
+        <div class="surface-field">
+          <label for="reader-orations">Orations</label>
+          <select id="reader-orations" name="orations"></select>
+        </div>
+        <div class="surface-field is-wide" id="reader-witness-field" hidden>
+          <label for="reader-witness">Translation witness</label>
+          <select id="reader-witness" name="translation-witness"></select>
+        </div>
+        <button class="surface-apply" type="submit">Read this formulary</button>
+      </form>
+      <p id="browse-status" class="surface-note">A formulary must be selected. Nothing is chosen by manifest order.</p>
+    </div>
+  </dialog>
+
+  <dialog id="contents-surface" class="reader-surface contents-surface"
+          data-reader-surface="contents" aria-labelledby="contents-surface-title">
+    <header class="surface-head">
+      <div>
+        <p class="surface-kicker">Current formulary</p>
+        <h2 id="contents-surface-title">Contents</h2>
+      </div>
+      <button type="button" class="surface-close" data-reader-close aria-label="Close Contents">×</button>
+    </header>
+    <nav class="surface-body semantic-contents" data-reader-contents aria-label="Formulary contents"></nav>
+  </dialog>
+
+  <dialog id="mode-surface" class="reader-surface" data-reader-surface="mode"
+          aria-labelledby="mode-surface-title">
+    <header class="surface-head">
+      <div>
+        <p class="surface-kicker">Presentation</p>
+        <h2 id="mode-surface-title">Mode</h2>
+      </div>
+      <button type="button" class="surface-close" data-reader-close aria-label="Close Mode">×</button>
+    </header>
+    <div class="surface-body mode-options" role="radiogroup" aria-label="Reader mode">
+      <button type="button" role="radio" aria-checked="true" data-mode="read">
+        <strong>Read</strong><span>Available and active in this candidate.</span>
+      </button>
+      <button type="button" role="radio" aria-checked="false" aria-disabled="true" data-mode="missal" disabled>
+        <strong>Missal</strong><span>Not integrated in this internal candidate.</span>
+      </button>
+      <button type="button" role="radio" aria-checked="false" aria-disabled="true" data-mode="study" disabled>
+        <strong>Study</strong><span>Not integrated in this internal candidate.</span>
+      </button>
+      <button type="button" role="radio" aria-checked="false" aria-disabled="true" data-mode="compare" disabled>
+        <strong>Compare</strong><span>Not integrated in this internal candidate.</span>
+      </button>
+    </div>
+  </dialog>
+
+  <dialog id="details-surface" class="reader-surface details-surface"
+          data-reader-surface="details" aria-labelledby="details-surface-title">
+    <header class="surface-head">
+      <div>
+        <p class="surface-kicker">Current selection</p>
+        <h2 id="details-surface-title">Details</h2>
+      </div>
+      <button type="button" class="surface-close" data-reader-close aria-label="Close Details">×</button>
+    </header>
+    <div class="surface-body details-body" data-reader-details>
+      <p class="surface-note">Details load when this surface is opened.</p>
+    </div>
+  </dialog>
+</div>
+</div>
+  </main>
+  <footer class="site-footer">
+    <div class="triptych-divider" aria-hidden="true"><i></i><i></i><i></i></div>
+    <p>Independent study editions—not official Church publications.</p>
+    <p><a href="../license.html">Licensing</a> · <a href="../third-party.html">Third-party material</a></p>
+    <p class="privacy-note">Feedback submitted through GitHub is public. Do not include confidential personal, sacramental, pastoral, medical, or legal details.</p>
+  </footer>
+  <script src="../shared/browser-core.js"></script>
+  <script src="ordinary-seating.js"></script>
+  <script src="reader-state.js"></script>
+  <script src="reader-state-adapters.js"></script>
+  <script src="reader-shell.js"></script>
+  <script src="propers-reader.js"></script>
+</body>
+</html>
