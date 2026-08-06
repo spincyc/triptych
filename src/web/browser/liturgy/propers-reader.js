@@ -599,7 +599,7 @@
     if (serial !== runtime.serial) return false;
     const fragment = document.createDocumentFragment();
     const contents = [];
-    if (T.massIsUncompiled(mass)) fragment.appendChild(T.uncompiledNote(mass));
+    const uncompiled = T.massIsUncompiled(mass) ? T.uncompiledNote(mass) : null;
     (result.events || []).forEach(function (event) {
       if (event.kind !== 'proper') return;
       const index = sourceIndex(event);
@@ -631,8 +631,13 @@
       cycle
     ].filter(Boolean).join(' · ');
     const notice = coverageMessage(result);
-    coverageNotice.textContent = notice || '';
-    coverageNotice.hidden = !notice;
+    if (uncompiled) {
+      coverageNotice.replaceChildren(...uncompiled.childNodes);
+      coverageNotice.hidden = false;
+    } else {
+      coverageNotice.textContent = notice || '';
+      coverageNotice.hidden = !notice;
+    }
     document.title = (mass.name || mass.key) + ' — Propers reader candidate';
     return true;
   }

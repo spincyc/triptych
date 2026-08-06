@@ -638,34 +638,38 @@ The M0 documentation and correction gate passed external review on 2026-08-03.
 The accepted implementation boundary now starts these independent actions in
 parallel:
 
-Independent visual review selected **Liturgical Instrument** as the production
-visual foundation. Quiet Folio and Contemporary Reader remain frozen comparison
-references rather than ingredients for a compromise or a new direction. The
-selection does not revoke M1–M3 or W3 semantic, state, renderer, seating,
-one-action access, focus, reflow, fail-closed, source-honesty, or
-production-isolation acceptance, and it does not authorize public cutover.
+Independent visual review selected and Round 1 accepted **Liturgical
+Instrument** as the production visual foundation. Quiet Folio and Contemporary
+Reader remain frozen comparison references rather than ingredients for a
+compromise or a new direction. The accepted foundation resolves all seven
+Round 0 findings, including continuous rail-to-dock integration and whole
+labeled controls at 200% text. Successful deployed correction parity is owned
+by commit `c388ab42dfc4f5c7d49abc71596d6bb511af5742` and Pages run
+`31109086658`; later acceptance-record runs stopped at GitHub deployment
+polling and are not represented as successful.
 
-The selected foundation completed the first evidence phase of its bounded
-visual-correction pass. Work units A–C supply an integrated control shell,
-earlier Missal text, one controlled Read axis, subordinate partial-coverage
-treatment, an authored masthead, and finished mobile ritual spacing and
-division wrapping. Work unit D supplies full-matrix inspection, governed-check
-dispositions, successful Pages verification, and the immutable handoff at
-`build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/`.
-Independent review round 1 confirmed six original findings and retained only
-the floating 1024-pixel shell plus its related 200%-text label fragmentation.
-The narrow follow-up now transitions directly from the accepted 72rem rail to
-an opaque square edge dock, with a root-font-aware labeled 2×2 extreme-reflow
-state. Its 54-capture run passes 15/15 assertions; a new immutable handoff and
-independent re-review remain. Production-integration planning may proceed, but
-execution remains deferred until that review passes. The canonical correction
-plan and reviewer mailbox are tracked at
+Production-integration execution is authorized through PI-A–PI-D, with
+independent integration review as the next gate. PI-A selected a new
+last-loaded, candidate-scoped `reader-instrument.css` as the smallest shared
+production presentation seam. This avoids changing public-loaded
+`day-missal.css` and retains the isolated accepted prototype as the comparison
+oracle. PI-B and PI-C now integrate the shared shell, Day Read/Missal, and
+Propers Read/Browse presentation. PI-D's local parity matrix passes 19/19
+governed assertions over 100 captures, including 23 exact
+prototype/production pairs; checkpoint push, Pages/deployed-asset
+qualification, immutable handoff assembly, and independent integration review
+remain. M1–M3 and W3
+semantic, state, renderer, seating, one-action access, focus, reflow,
+fail-closed, race, source-honesty, and production-isolation acceptance remain
+binding. Public navigation and cutover remain unauthorized. The canonical
+review mailbox and execution record remain
 `build/agent-continuity/liturgy-reader-visual-plan.md`.
 
 1. M1's W1/W9 shared semantic fixture and URL-state contract is accepted at
    correction `c6b8070ae76e75153448895a19a0b916c18806ea` plus final micro-fix
-   `c1a590f5854215d68d167d9040e188f41762663e`. Any production integration or
-   further W1/W9 slice requires separate scope.
+   `c1a590f5854215d68d167d9040e188f41762663e`. The Round 1 acceptance supplies
+   the separate bounded production-integration scope; any further W1/W9 slice
+   still requires separate authority.
 2. W2 and M2 are **accepted** at corrected implementation
    `75234e72c402f0b25a681fbe074da70d895f7274`. The quiet persistent shell is
    the direction for Date or Browse, Contents, Mode, and Details. Complete Read

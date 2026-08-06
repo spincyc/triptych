@@ -12,6 +12,9 @@ DAY = LITURGY / "reader-visual-reset-day.html"
 PROPERS = LITURGY / "reader-visual-reset-propers.html"
 CSS = LITURGY / "reader-visual-reset.css"
 SCRIPT = LITURGY / "reader-visual-reset.js"
+INSTRUMENT = LITURGY / "reader-instrument.css"
+PRODUCTION_DAY = LITURGY / "day-reader.html"
+PRODUCTION_PROPERS = LITURGY / "propers-reader.html"
 
 
 def held(path: Path) -> str:
@@ -130,6 +133,24 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
         self.assertIn('background: var(--vr-panel);', rule)
         self.assertIn('box-shadow: none;', rule)
 
+    def test_accepted_instrument_has_one_scoped_production_presentation_seam(self) -> None:
+        css = held(INSTRUMENT)
+        self.assertIn("Accepted Liturgical Instrument presentation", css)
+        self.assertIn(".reader-instrument", css)
+        self.assertIn("container: reader-shell / inline-size", css)
+        self.assertIn('@container reader-shell (max-width: 18rem)', css)
+        self.assertIn("ordinary-absence-inline", css)
+        self.assertNotIn('[data-design=', css)
+        for page in (PRODUCTION_DAY, PRODUCTION_PROPERS):
+            source = held(page)
+            self.assertIn('class="reader-shell reader-instrument"', source)
+            self.assertIn('href="reader-instrument.css"', source)
+            self.assertEqual(source.count('class="reader-masthead"'), 1)
+            self.assertEqual(source.count('class="action-label"'), 4)
+        self.assertIn("composeInstrumentAbsences", held(LITURGY / "day-reader.js"))
+        self.assertIn("shellRoot.dataset.readerMode", held(LITURGY / "day-reader.js"))
+        self.assertIn("coverageNotice.replaceChildren(...uncompiled.childNodes)", held(LITURGY / "propers-reader.js"))
+
     def test_pages_have_unique_ids(self) -> None:
         for page in (DAY, PROPERS):
             ids = re.findall(r'\bid="([^"]+)"', held(page))
@@ -139,15 +160,11 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
         expected = {
             "day.html": "bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868",
             "index.html": "f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65",
-            "day-reader.html": "1cf17d93283767b4294fe9a0a7864f3b3b1c16eb85511ec6de09afe904d7c6e1",
-            "propers-reader.html": "59894171fbdbf8f500475cda0d8526fb5299984ef7ef9fe26a8d817f988bc0a3",
             "reader-shell.js": "e17ccd767c016facc3d03820f5c0c1e71ab166f5a9c7a86de95245e0b87966a9",
             "reader-shell.css": "e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a",
             "reader-state.js": "86fcb653738089a569f0f9747d5092e4e51fd2f4ee0ae7b4e7fe9a0c5f5a7cdc",
             "reader-state-adapters.js": "ec655b52e850152a1a3034b09fbc36b828000a5edc9d01b7b8d98dfaeea96bcb",
             "ordinary-seating.js": "67917f4888764f1aac097d291df5e655fb485d89219fda56ffba9a25aee993ba",
-            "day-reader.js": "79385701b98fc3b2dcd2456929ffb14ef42b97aae45c554dbbd03e16abcfccf1",
-            "propers-reader.js": "f8e5d60924aa3a6b2314855a38d2b645d5e4a0e30737f9cbd65e151a8c279a80",
         }
         for name, digest in expected.items():
             self.assertEqual(hashlib.sha256((LITURGY / name).read_bytes()).hexdigest(), digest, name)

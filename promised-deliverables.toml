@@ -1,6 +1,70 @@
 schema_version = 1
 
 [[deliverables]]
+id = "liturgy-reader-instrument-production-integration-2026-08-06"
+owner = "src/web/browser/liturgy/reader-instrument.css"
+promise = "Move the independently accepted Liturgical Instrument visual system into the existing unlinked, noindex Day and Propers production-reader candidates through the smallest shared presentation seam, prove prototype-to-production parity, and preserve accepted M1–M3/W3 behavior without changing public navigation or beginning public cutover."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "accepted-foundation-and-scope"
+  criterion = "Liturgical Instrument remains the accepted production visual foundation; its accepted visual decisions and M1–M3/W3 behavioral seams remain frozen, and production integration does not authorize public navigation or cutover."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "guidance/liturgy-browser-roadmap.md",
+    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/HANDOFF.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "hook-inventory-and-smallest-seam"
+  criterion = "A durable prototype-to-production hook inventory identifies the smallest candidate-scoped shared presentation seam, records every necessary HTML or adapter hook, and proves why public-loaded styles and accepted controller/state owners remain unchanged."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "src/web/browser/liturgy/reader-instrument.css",
+  ]
+
+  [[deliverables.requirements]]
+  id = "production-presentation-parity"
+  criterion = "The production Day Read/Missal and Propers Read/Browse candidates use the accepted masthead, reading plane, ritual grid, warning hierarchy, shell, surfaces, responsive dock, and accessibility finish at the governing states and viewports."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/reader-instrument.css",
+    "src/web/browser/liturgy/day-reader.html",
+    "src/web/browser/liturgy/propers-reader.html",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "frozen-behavior-and-public-isolation"
+  criterion = "State adapters, production renderers, Ordinary seating, fail-closed behavior, semantic-location and focus restoration, race ownership, four one-step actions, public routes/navigation, and the isolated noindex comparison prototype remain intact."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.js",
+    "src/web/browser/liturgy/propers-reader.js",
+    "tools/tests/test_liturgy_reader_shell.py",
+    "tools/tests/test_liturgy_reader_visual_reset.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "complete-parity-evidence-and-deployment"
+  criterion = "Production/prototype pairs, measurements, browser results, focused and governed checks, locked public-alpha verification, exact Pages disposition, and direct deployed/source asset parity are complete and honestly recorded."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-integration-review"
+  criterion = "Independent integration review resolves every blocker before any separately authorized public navigation change or public cutover."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-reader-instrument-correction-2026-08-05"
 owner = "src/web/browser/liturgy/reader-visual-reset-day.html"
 promise = "Correct the seven independently reviewed Liturgical Instrument visual blockers, produce measured before/after browser evidence and a complete immutable review handoff, and preserve accepted reader behavior and public-route isolation without beginning production integration or public cutover."

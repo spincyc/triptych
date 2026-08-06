@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="day-missal.css">
 <link rel="stylesheet" href="reader-shell.css">
 <link rel="stylesheet" href="day-reader.css">
+<link rel="stylesheet" href="reader-instrument.css">
 </head>
 <body class="day-reader-candidate page-browser">
 <a class="skip-link" href="#reader-document">Skip to the Mass</a>
@@ -20,7 +21,16 @@
   <span>Day Read and Missal integration for review; the live Day page is unchanged.</span>
 </p>
 
-<div class="reader-shell" data-reader-shell data-entrance="day">
+<div class="reader-shell reader-instrument" data-reader-shell data-entrance="day" data-reader-mode="read">
+  <div class="reader-masthead" aria-label="Triptych reader">
+    <a class="reader-brand" href="../index.html" aria-label="Triptych home">
+      <span class="reader-brand-mark" aria-hidden="true"></span>
+      <span>Triptych</span>
+    </a>
+    <div class="reader-place" aria-hidden="true">
+      <span>Day</span><span class="place-separator">/</span><span data-instrument-mode>Read</span>
+    </div>
+  </div>
   <header class="reader-identity" aria-labelledby="celebration-title">
     <p class="reader-context">Day · Read</p>
     <h1 id="celebration-title" class="celebration-title">Loading the Mass…</h1>
@@ -36,24 +46,24 @@
   <nav class="reader-actions" aria-label="Reader actions">
     <button type="button" data-reader-action="date" aria-controls="date-surface"
             aria-expanded="false">
-      <span class="action-mark" aria-hidden="true">▣</span>
-      <span>Date &amp; edition</span>
+      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M7.5 3v4M16.5 3v4M3.5 9.5h17M8 13h.01M12 13h.01M16 13h.01M8 16.5h.01M12 16.5h.01"/></svg></span>
+      <span class="action-label">Date</span>
     </button>
     <button type="button" data-reader-action="contents" aria-controls="contents-surface"
             aria-expanded="false">
-      <span class="action-mark" aria-hidden="true">≡</span>
-      <span>Contents</span>
+      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></span>
+      <span class="action-label">Contents</span>
     </button>
     <button type="button" data-reader-action="mode" aria-controls="mode-surface"
             aria-expanded="false">
-      <span class="action-mark" aria-hidden="true">R</span>
-      <span>Mode</span>
+      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+      <span class="action-label">Mode</span>
       <span class="action-state" aria-live="polite">Read</span>
     </button>
     <button type="button" data-reader-action="details" aria-controls="details-surface"
             aria-expanded="false">
-      <span class="action-mark" aria-hidden="true">i</span>
-      <span>Details</span>
+      <span class="action-mark" aria-hidden="true"><svg class="reader-icon" viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 10.5V17M12 7.2h.01"/></svg></span>
+      <span class="action-label">Details</span>
     </button>
   </nav>
 

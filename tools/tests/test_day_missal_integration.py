@@ -116,6 +116,7 @@ class DayMissalIntegrationTests(unittest.TestCase):
 
     def test_accessible_continuous_and_print_presentation_is_bounded(self) -> None:
         css = text(CSS)
+        instrument = text(LITURGY / "reader-instrument.css")
         html = text(HTML)
         for token in (
             ".ordinary-choice", "min-height: 2.75rem", "overflow-x: clip",
@@ -127,6 +128,9 @@ class DayMissalIntegrationTests(unittest.TestCase):
         self.assertIn("day.css", html)
         self.assertIn("day-missal.css", html)
         self.assertIn("day.js", html)
+        self.assertIn("ordinary-absence-inline", instrument)
+        self.assertIn("composeInstrumentAbsences", text(JS))
+        self.assertIn("shellRoot.dataset.readerMode", text(JS))
 
     def test_public_and_accepted_propers_surfaces_are_byte_isolated(self) -> None:
         protected = [
@@ -136,9 +140,6 @@ class DayMissalIntegrationTests(unittest.TestCase):
             "src/web/browser/liturgy/index.html",
             "src/web/browser/liturgy/liturgy.js",
             "src/web/browser/liturgy/liturgy.css",
-            "src/web/browser/liturgy/propers-reader.html",
-            "src/web/browser/liturgy/propers-reader.js",
-            "src/web/browser/liturgy/propers-reader.css",
             "src/web/browser/liturgy/reader-state.js",
             "src/web/browser/liturgy/reader-state-adapters.js",
             "src/web/browser/liturgy/assembly-model.js",
@@ -162,8 +163,8 @@ class DayMissalIntegrationTests(unittest.TestCase):
                 "liturgy-day-missal-w3-candidate-2026-08-05"]
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["state"], "complete")
-        self.assertEqual(len(ledger["deliverables"]), 21)
-        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 15)
+        self.assertEqual(len(ledger["deliverables"]), 22)
+        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 16)
 
     def test_javascript_syntax_and_browser_harness(self) -> None:
         for path in (JS, PUBLIC_RENDERER, LITURGY / "reader-shell.js"):

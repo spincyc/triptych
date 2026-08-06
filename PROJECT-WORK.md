@@ -179,6 +179,50 @@ operations.
 
 ## Promised work
 
+### Liturgical Instrument production integration
+
+<!-- promised-deliverable: liturgy-reader-instrument-production-integration-2026-08-06 -->
+
+**Implementation and local parity complete; checkpoint push, deployed parity,
+and independent integration review remain open; public navigation and cutover
+are unauthorized.** Independent Round 1 accepted the
+Liturgical Instrument visual foundation and all seven correction dispositions.
+Production integration begins from `b3ae6bddaab631661d342380f61365d851be160c`
+through four bounded units: PI-A inventories the accepted hooks and selects the
+smallest shared presentation seam; PI-B integrates the shell and Day
+Read/Missal presentation; PI-C proves Propers Read/Browse parity; and PI-D
+captures the full parity matrix, runs the governed checks, and assembles an
+immutable integration-review candidate.
+
+The completed inventory selects a new last-loaded, candidate-scoped
+`src/web/browser/liturgy/reader-instrument.css` layer. This keeps public-loaded
+`day-missal.css` unchanged and preserves `reader-shell.js`, the M1 state and
+adapter owners, production renderers, Ordinary seating, invalid-state failure,
+semantic-location restoration, focus, race ownership, and the four one-step
+actions. Stable masthead and action-label hooks are added to the two production
+candidate HTML files. Only generation-safe presentation composition may touch
+the Day or Propers adapters: the authoritative Day commit exposes its current
+mode as a styling attribute, and renderer-owned absence nodes may be grouped or
+moved without replacing their text or semantics. The accepted comparison
+prototype remains unmodified and available as the parity oracle. That seam is
+now implemented in both unlinked candidates. The extended Chromium harness
+passes 19/19 assertions over 100 captures and includes 23 exact
+prototype/production pairs covering Read, Missal, partial coverage,
+postconciliar coverage, Propers, all open surfaces, deep scroll, 200% text,
+forced colors, reduced motion, and keyboard focus. The accepted 768×1024
+636-pixel/~75-character measure is exact; production mobile Missal principal
+text is 3.43 pixels earlier than the accepted oracle and otherwise retains the
+same 351-pixel plane and action geometry.
+
+Successful deployed correction parity remains Pages run `31109086658` for
+`c388ab42dfc4f5c7d49abc71596d6bb511af5742`. Later runs
+`31110517661`, `31113461987`, and `31114653517` each passed repository-owned
+build/upload work and then failed at GitHub deployment polling; none is claimed
+as successful. The production-integration deliverable remains open until its
+own evidence, deployment record, and independent integration disposition are
+complete. The implementation checkpoint is not represented as deployed until
+its own push has a successful Pages result and direct asset verification.
+
 ### Liturgical Instrument visual correction accepted
 
 <!-- promised-deliverable: liturgy-reader-instrument-correction-2026-08-05 -->

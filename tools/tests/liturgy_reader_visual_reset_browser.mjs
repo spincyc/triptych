@@ -4,6 +4,7 @@
 
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { createServer } from 'node:http';
 import { mkdtemp, mkdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -22,6 +23,10 @@ const consoleProblems = [];
 const failedRequests = [];
 const httpProblems = [];
 const requests = [];
+
+async function sha256(path) {
+  return createHash('sha256').update(await readFile(path)).digest('hex');
+}
 
 const STATES = Object.freeze({
   romanRead: '#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&mass=pentecost-10&ordinary=0',
@@ -189,6 +194,11 @@ function prototypeUrl(base, entrance, design, state) {
   return `${base}${PREVIEW}${page}?design=${design}&data=${encodeURIComponent(DATA)}${state}`;
 }
 
+function productionUrl(base, entrance, state) {
+  const page = entrance === 'day' ? 'day-reader.html' : 'propers-reader.html';
+  return `${base}${PREVIEW}${page}?data=${encodeURIComponent(DATA)}${state}`;
+}
+
 async function fresh(cdp, target, entrance, selector = null) {
   await cdp.send('Page.navigate', { url: 'about:blank' });
   await waitFor(cdp, `location.href === 'about:blank'`, 'blank document');
@@ -197,6 +207,17 @@ async function fresh(cdp, target, entrance, selector = null) {
   await waitFor(cdp,
     `location.href === ${JSON.stringify(target)} && ${ready} && window.readerVisualResetDebug`,
     `${entrance} visual-reset readiness`);
+  return stableFrames(cdp, selector);
+}
+
+async function productionFresh(cdp, target, entrance, selector = null) {
+  await cdp.send('Page.navigate', { url: 'about:blank' });
+  await waitFor(cdp, `location.href === 'about:blank'`, 'blank production document');
+  await cdp.send('Page.navigate', { url: target });
+  const ready = entrance === 'day' ? 'window.dayReaderReady === true' : 'window.propersReaderReady === true';
+  await waitFor(cdp,
+    `location.href === ${JSON.stringify(target)} && ${ready} && document.querySelector('.reader-instrument')`,
+    `${entrance} production Instrument readiness`);
   return stableFrames(cdp, selector);
 }
 
@@ -247,7 +268,7 @@ async function check(name, callback) {
 
 async function metrics(cdp) {
   return evaluate(cdp, `(() => {
-    const root = document.querySelector('[data-visual-reset]');
+    const root = document.querySelector('[data-visual-reset], .reader-instrument');
     const reading = document.querySelector('#reader-document');
     const identity = document.querySelector('.reader-identity');
     const actions = document.querySelector('.reader-actions');
@@ -448,7 +469,7 @@ async function runAssertions(cdp, base) {
       noticeTop: document.querySelector('#coverage-notice').getBoundingClientRect().top,
       firstTextTop: document.querySelector('#reader-document .composed, #reader-document .passage').getBoundingClientRect().top })`);
     assert.equal(value.hidden, false);
-    assert.match(value.notice, /partial|unavailable|not held/i);
+    assert.match(value.notice, /partial|unavailable|not held|not yet transcribed/i);
     assert.ok(value.text > 3);
     assert.ok(value.noticeTop < value.firstTextTop);
   });
@@ -602,6 +623,98 @@ async function runAssertions(cdp, base) {
     await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
   });
 
+  await check('production Instrument Read matches the accepted axis and portrait measure', async () => {
+    await viewport(cdp, 768, 1024);
+    await fresh(cdp, prototypeUrl(base, 'day', 'instrument', STATES.romanRead), 'day');
+    const oracle = await metrics(cdp);
+    await productionFresh(cdp, productionUrl(base, 'day', STATES.romanRead), 'day');
+    const production = await metrics(cdp);
+    assert.equal(production.ready.mode, 'read');
+    assert.equal(production.ready.outcome, 'ready');
+    assert.equal(production.text.width, 636);
+    assert.equal(production.text.approximateCharacters, 75);
+    assert.ok(Math.abs(production.reading.width - oracle.reading.width) <= 1);
+    assert.ok(Math.abs(production.identity.x - oracle.identity.x) <= 1);
+    assert.ok(Math.abs(production.firstText.top - oracle.firstText.top) <= 1,
+      JSON.stringify({ production: production.firstText, oracle: oracle.firstText }));
+    assert.ok(production.document.scrollWidth <= production.document.clientWidth + 1);
+    assert.deepEqual(production.actionButtons.map(row => row.label), ['Date', 'Contents', 'Mode', 'Details']);
+    assert.match(production.robots, /noindex/);
+  });
+
+  await check('production Instrument shell is continuous at intermediate and extreme reflow states', async () => {
+    await viewport(cdp, 1024, 768);
+    await productionFresh(cdp, productionUrl(base, 'day', STATES.romanMissal), 'day');
+    let value = await metrics(cdp);
+    assert.ok(value.actions.x <= 1);
+    assert.ok(Math.abs(value.actions.width - value.document.clientWidth) <= 1);
+    assert.equal(value.shell.borderRadius, '0px');
+    assert.equal(value.shell.boxShadow, 'none');
+    assert.equal(value.shell.background, 'rgb(250, 248, 242)');
+    value.actionButtons.forEach(row => {
+      assert.ok(row.box.width >= 44 && row.box.height >= 44, row.label);
+      assert.ok(row.name.length > 0, row.label);
+    });
+
+    await viewport(cdp, 393, 852);
+    await productionFresh(cdp, productionUrl(base, 'day', STATES.romanMissal), 'day');
+    await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
+    await stableFrames(cdp);
+    value = await metrics(cdp);
+    assert.equal(new Set(value.actionButtons.map(row => row.box.x)).size, 2);
+    assert.equal(new Set(value.actionButtons.map(row => row.box.y)).size, 2);
+    value.actionButtons.forEach(row => {
+      assert.equal(row.labelLines, 1, row.label);
+      assert.ok(row.labelScrollWidth <= row.labelClientWidth + 1, row.label);
+      assert.equal(row.whiteSpace, 'nowrap');
+      assert.ok(row.box.width >= 44 && row.box.height >= 44, row.label);
+    });
+    assert.ok(value.document.scrollWidth <= value.document.clientWidth + 1);
+    await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
+  });
+
+  await check('production Instrument preserves accepted Missal action and warning hierarchy', async () => {
+    await viewport(cdp, 393, 852);
+    await fresh(cdp, prototypeUrl(base, 'day', 'instrument', STATES.romanMissal), 'day');
+    const oracle = await metrics(cdp);
+    await productionFresh(cdp, productionUrl(base, 'day', STATES.romanMissal), 'day');
+    let production = await metrics(cdp);
+    assert.equal(production.ready.mode, 'missal');
+    assert.ok(Math.abs(production.firstText.top - oracle.firstText.top) <= 4,
+      JSON.stringify({ production: production.firstText, oracle: oracle.firstText }));
+    assert.equal(production.absences.directNotices, 0);
+
+    await productionFresh(cdp, productionUrl(base, 'day', STATES.partial), 'day');
+    production = await metrics(cdp);
+    assert.match(production.coverage.text, /not yet transcribed/i);
+    assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document > .uncompiled').length`), 0);
+    assert.ok(await evaluate(cdp, `document.querySelectorAll('#reader-document .composed, #reader-document .passage').length`) > 3);
+
+    await productionFresh(cdp, productionUrl(base, 'day', STATES.postMissal), 'day');
+    production = await metrics(cdp);
+    assert.equal(production.absences.directNotices, 0);
+    assert.ok(production.absences.inlineGroups > 3);
+    assert.ok(production.absences.inlineNotices >= production.absences.inlineGroups);
+  });
+
+  await check('production Propers retains its distinct Browse entrance in the accepted Instrument system', async () => {
+    await viewport(cdp, 393, 852);
+    await fresh(cdp, prototypeUrl(base, 'propers', 'instrument', STATES.propers), 'propers');
+    const oracle = await metrics(cdp);
+    await productionFresh(cdp, productionUrl(base, 'propers', STATES.propers), 'propers');
+    const production = await metrics(cdp);
+    assert.equal(production.ready.outcome, 'ready');
+    assert.deepEqual(production.ready.semantic.events.map(row => row.id),
+      oracle.ready.semantic.events.map(row => row.id));
+    assert.ok(Math.abs(production.reading.width - oracle.reading.width) <= 2,
+      JSON.stringify({ production: production.reading, oracle: oracle.reading }));
+    assert.deepEqual(production.actionButtons.map(row => row.label), ['Browse', 'Contents', 'Mode', 'Details']);
+    await productionFresh(cdp, productionUrl(base, 'propers', STATES.browse), 'propers');
+    assert.equal(await evaluate(cdp, `document.querySelector('#browse-surface').open`), true);
+    assert.equal(await evaluate(cdp, `propersReaderDebug.outcome`), 'browse');
+    assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document .proper').length`), 0);
+  });
+
   await check('prototype resources remain local and network-clean', async () => {
     const external = requests.filter(url => !url.startsWith(base) && !url.startsWith('about:'));
     assert.deepEqual(external, []);
@@ -613,11 +726,14 @@ async function runAssertions(cdp, base) {
 
 async function captureOne(cdp, base, directory, row) {
   const { file, entrance, design, state, width, height, action = null, deep = false,
-    enlargement = false, media = null, keyboard = false } = row;
+    enlargement = false, media = null, keyboard = false, variant = 'prototype' } = row;
   await viewport(cdp, width, height);
   if (media) await cdp.send('Emulation.setEmulatedMedia', { media: 'screen', features: media });
-  const target = prototypeUrl(base, entrance, design, STATES[state]);
-  await fresh(cdp, target, entrance);
+  const target = variant === 'production'
+    ? productionUrl(base, entrance, STATES[state])
+    : prototypeUrl(base, entrance, design, STATES[state]);
+  if (variant === 'production') await productionFresh(cdp, target, entrance);
+  else await fresh(cdp, target, entrance);
   if (enlargement) {
     await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
     await stableFrames(cdp);
@@ -646,7 +762,7 @@ async function captureOne(cdp, base, directory, row) {
   if (action || keyboard) await escape(cdp);
   if (enlargement) await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
   if (media) await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
-  return { ...row, target, measured,
+  return { ...row, variant, target, measured,
     consoleErrors: consoleProblems.length, failedRequests: failedRequests.filter(one => !one.canceled).length,
     httpErrors: httpProblems.length };
 }
@@ -692,8 +808,47 @@ async function captureMatrix(cdp, base, directory) {
     file, entrance, design: 'instrument', state, width, height, ...extras
   }));
 
+  const parityCases = [
+    ['01-day-read-1440x900.png', 'day', 'romanRead', 1440, 900, {}],
+    ['02-day-read-1024x768.png', 'day', 'romanRead', 1024, 768, {}],
+    ['03-day-read-768x1024.png', 'day', 'romanRead', 768, 1024, {}],
+    ['04-day-read-393x852.png', 'day', 'romanRead', 393, 852, {}],
+    ['05-day-missal-1440x900.png', 'day', 'romanMissal', 1440, 900, {}],
+    ['06-day-missal-1024x768.png', 'day', 'romanMissal', 1024, 768, {}],
+    ['07-day-missal-393x852.png', 'day', 'romanMissal', 393, 852, {}],
+    ['08-day-missal-320x852.png', 'day', 'romanMissal', 320, 852, {}],
+    ['09-day-missal-deep-1440x900.png', 'day', 'romanMissal', 1440, 900, { deep: true }],
+    ['10-day-partial-393x852.png', 'day', 'partial', 393, 852, {}],
+    ['11-day-post-missal-1440x900.png', 'day', 'postMissal', 1440, 900, {}],
+    ['12-day-post-missal-393x852.png', 'day', 'postMissal', 393, 852, {}],
+    ['13-propers-read-1440x900.png', 'propers', 'propers', 1440, 900, {}],
+    ['14-propers-read-393x852.png', 'propers', 'propers', 393, 852, {}],
+    ['15-propers-browse-393x852.png', 'propers', 'browse', 393, 852, {}],
+    ['16-date-open-1024x768.png', 'day', 'romanRead', 1024, 768, { action: 'date' }],
+    ['17-contents-open-393x852.png', 'day', 'romanMissal', 393, 852, { action: 'contents' }],
+    ['18-mode-open-393x852.png', 'day', 'romanRead', 393, 852, { action: 'mode' }],
+    ['19-details-open-1440x900.png', 'day', 'postMissal', 1440, 900, { action: 'details' }],
+    ['20-text-200-percent-393x852.png', 'day', 'romanMissal', 393, 852, { enlargement: true }],
+    ['21-forced-colors-393x852.png', 'day', 'romanRead', 393, 852, { media: [{ name: 'forced-colors', value: 'active' }] }],
+    ['22-reduced-motion-393x852.png', 'day', 'romanMissal', 393, 852, { media: [{ name: 'prefers-reduced-motion', value: 'reduce' }] }],
+    ['23-keyboard-focus-393x852.png', 'day', 'romanRead', 393, 852, { keyboard: true }]
+  ];
+
   const evidence = [];
   for (const row of rows) evidence.push(await captureOne(cdp, base, directory, row));
+
+  const oracleDirectory = join(directory, 'parity', 'prototype');
+  const productionDirectory = join(directory, 'parity', 'production');
+  await mkdir(oracleDirectory, { recursive: true });
+  await mkdir(productionDirectory, { recursive: true });
+  for (const [file, entrance, state, width, height, extras] of parityCases) {
+    evidence.push(await captureOne(cdp, base, oracleDirectory, {
+      file, entrance, design: 'instrument', state, width, height, ...extras, variant: 'prototype'
+    }));
+    evidence.push(await captureOne(cdp, base, productionDirectory, {
+      file, entrance, design: 'instrument', state, width, height, ...extras, variant: 'production'
+    }));
+  }
 
   const deployed = 'https://spincyc.github.io/triptych/liturgy/';
   const baselines = [
@@ -788,6 +943,15 @@ async function main() {
         css: (await stat(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset.css'))).size,
         dayHtml: (await stat(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset-day.html'))).size,
         propersHtml: (await stat(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset-propers.html'))).size
+      },
+      assetHashes: {
+        oracleCss: await sha256(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset.css')),
+        oracleJavaScript: await sha256(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset.js')),
+        productionCss: await sha256(join(ROOT, 'src/web/browser/liturgy/reader-instrument.css')),
+        productionDayHtml: await sha256(join(ROOT, 'src/web/browser/liturgy/day-reader.html')),
+        productionDayJavaScript: await sha256(join(ROOT, 'src/web/browser/liturgy/day-reader.js')),
+        productionPropersHtml: await sha256(join(ROOT, 'src/web/browser/liturgy/propers-reader.html')),
+        productionPropersJavaScript: await sha256(join(ROOT, 'src/web/browser/liturgy/propers-reader.js'))
       }
     };
     if (captureDir) await writeFile(join(captureDir, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');

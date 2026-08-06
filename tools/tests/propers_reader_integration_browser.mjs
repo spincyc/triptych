@@ -340,7 +340,7 @@ async function assertions(cdp, base) {
     assert.equal(value.semantic.resolved.formulary, 'advent-1');
     assert.equal(value.semantic.events.length, 10);
     assert.deepEqual(await evaluate(cdp, `[...document.querySelectorAll('[data-reader-action]')].map(row => row.textContent.replace(/\\s+/g, ' ').trim())`),
-      ['▣ Browse & edition', '≡ Contents', 'R Mode Read', 'i Details']);
+      ['Browse', 'Contents', 'Mode Read', 'Details']);
     const measured = await metrics(cdp);
     const duplicateResources = measured.resources.filter((row, index, all) => all.indexOf(row) !== index);
     performanceReport = {
@@ -415,7 +415,7 @@ async function assertions(cdp, base) {
     const held = await snapshot(cdp);
     assert.equal(held.outcome, 'ready');
     assert.equal(held.noticeHidden, false);
-    assert.match(held.notice, /not held|unavailable|coverage/i);
+    assert.match(held.notice, /not held|not yet transcribed|unavailable|coverage/i);
     assert.equal(await evaluate(cdp, `document.querySelectorAll('#coverage-notice').length`), 1);
   });
 
@@ -465,7 +465,7 @@ async function assertions(cdp, base) {
     await candidate(cdp, base, STATES.romanEnglishNone);
     const value = await snapshot(cdp);
     assert.equal(value.outcome, 'ready'); assert.equal(value.noticeHidden, false);
-    assert.match(value.notice, /not held|unavailable|coverage/i);
+    assert.match(value.notice, /not held|not yet transcribed|unavailable|coverage/i);
     await click(cdp, '[data-reader-action="browse"]');
     const form = await browseSnapshot(cdp);
     assert.equal(form.witnessHidden, true); assert.equal(form.witnessDisplay, 'none');

@@ -45,6 +45,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         for asset in (
             "reader-shell.js", "reader-shell.css", "reader-state.js",
             "reader-state-adapters.js", "propers-reader.js", "propers-reader.css",
+            "reader-instrument.css",
         ):
             self.assertIn(asset, html)
 
@@ -152,11 +153,11 @@ class PropersReaderIntegrationTests(unittest.TestCase):
     def test_all_four_actions_and_read_only_mode_are_explicit(self) -> None:
         source = text(HTML)
         for action, label in (
-            ("browse", "Browse &amp; edition"), ("contents", "Contents"),
+            ("browse", "Browse"), ("contents", "Contents"),
             ("mode", "Mode"), ("details", "Details"),
         ):
             self.assertIn(f'data-reader-action="{action}"', source)
-            self.assertIn(label, source)
+            self.assertIn(f'class="action-label">{label}</span>', source)
         self.assertIn('data-mode="read"', source)
         self.assertEqual(source.count('aria-disabled="true"'), 3)
         self.assertEqual(source.count(' disabled>'), 3)
@@ -233,9 +234,6 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             "src/web/browser/liturgy/day.html",
             "src/web/browser/liturgy/day.css",
             "src/web/browser/liturgy/day-missal.css",
-            "src/web/browser/liturgy/propers-reader.html",
-            "src/web/browser/liturgy/propers-reader.js",
-            "src/web/browser/liturgy/propers-reader.css",
             "src/web/browser/liturgy/reader-state.js",
             "src/web/browser/liturgy/reader-state-adapters.js",
         ]
@@ -306,13 +304,13 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         ]
         self.assertEqual(len(missal_rows), 1)
         self.assertEqual(missal_rows[0]["state"], "complete")
-        self.assertEqual(len(ledger["deliverables"]), 21)
+        self.assertEqual(len(ledger["deliverables"]), 22)
         self.assertEqual(
             sum(
                 row["state"] == "complete"
                 for row in ledger["deliverables"]
             ),
-            15,
+            16,
         )
 
     def test_candidate_sizes_are_bounded_and_shell_is_not_copied(self) -> None:

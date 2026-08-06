@@ -852,7 +852,7 @@ async function runAssertions(cdp, base) {
     assert.equal(value.noticeHidden, true);
     assert.equal(value.events.length, 10);
     assert.deepEqual(value.actions.map(row => row.replace(/\s+/g, ' ')),
-      ['▣ Date & edition', '≡ Contents', 'R Mode Read', 'i Details']);
+      ['Date', 'Contents', 'Mode Read', 'Details']);
     assert.equal(value.shell, 'fixed');
     assert.ok(value.first < value.viewport, JSON.stringify(value));
   });
@@ -897,7 +897,7 @@ async function runAssertions(cdp, base) {
       completeness: dayReaderDebug.semantic.coverage.map(row => row.completeness)
     })`);
     assert.equal(value.hidden, false);
-    assert.match(value.notice, /not held/);
+    assert.match(value.notice, /not held|not yet transcribed/i);
     assert.ok(value.completeness.includes('partial'));
   });
 
@@ -1122,7 +1122,7 @@ async function runAssertions(cdp, base) {
     assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), false);
     await navigateCandidate(cdp, base, STATES.partial);
     assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
-    assert.match(await evaluate(cdp, 'document.querySelector("#coverage-notice").textContent'), /not held/);
+    assert.match(await evaluate(cdp, 'document.querySelector("#coverage-notice").textContent'), /not held|not yet transcribed/i);
     await navigateCandidate(cdp, base, STATES.missingSeat);
     assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'unrenderable');
     assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);

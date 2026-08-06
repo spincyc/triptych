@@ -59,6 +59,7 @@
   const dateStatus = dateSurface.querySelector('.surface-note');
   const dateStepButtons = Array.from(dateSurface.querySelectorAll('.date-steps button'));
   const contextLine = document.querySelector('.reader-context');
+  const instrumentMode = document.querySelector('[data-instrument-mode]');
   const modeAction = document.querySelector('[data-reader-action="mode"]');
   const modeState = modeAction.querySelector('.action-state');
   const modeButtons = Array.from(document.querySelectorAll('[data-mode]'));
@@ -617,7 +618,9 @@
     window.dayReaderDebug.mode = mode;
     window.dayReaderDebug.outcome = runtime.outcome;
     window.dayReaderDebug.outcomeClass = held.outcomeClass || runtime.outcome;
+    shellRoot.dataset.readerMode = mode || 'read';
     contextLine.textContent = 'Day · ' + modeLabel(mode);
+    if (instrumentMode) instrumentMode.textContent = modeLabel(mode);
     modeState.textContent = mode ? modeLabel(mode) : 'Unavailable';
     modeButtons.forEach(function (button) {
       button.setAttribute('aria-checked', String(Boolean(mode) && button.dataset.mode === mode));
@@ -665,7 +668,7 @@
     const documentFragment = document.createDocumentFragment();
     const contents = [];
 
-    if (T.massIsUncompiled(mass)) documentFragment.appendChild(T.uncompiledNote(mass));
+    const uncompiled = T.massIsUncompiled(mass) ? T.uncompiledNote(mass) : null;
     if (mode === 'missal') {
       renderMissalDocument(
         documentFragment, contents, result, mass, structure, bible,
@@ -714,8 +717,13 @@
       metadata: metadata.filter(Boolean).join(' · ')
     });
     const notice = coverageMessage(result);
-    coverageNotice.textContent = notice || '';
-    coverageNotice.hidden = !notice;
+    if (uncompiled) {
+      coverageNotice.replaceChildren(...uncompiled.childNodes);
+      coverageNotice.hidden = false;
+    } else {
+      coverageNotice.textContent = notice || '';
+      coverageNotice.hidden = !notice;
+    }
     return true;
   }
 
@@ -724,6 +732,17 @@
     node.dataset.semanticEventId = event.id;
     node.tabIndex = -1;
     node.id = 'reader-event-' + String(ordinal + 1).padStart(3, '0');
+    return node;
+  }
+
+  function composeInstrumentAbsences(node) {
+    const notices = Array.from(node.children).filter(function (child) {
+      return child.classList.contains('notice');
+    });
+    if (!notices.length) return node;
+    const group = T.el('div', 'ordinary-absence-inline');
+    node.insertBefore(group, notices[0]);
+    notices.forEach(function (notice) { group.appendChild(notice); });
     return node;
   }
 
@@ -785,7 +804,11 @@
         const ordinal = ordinals.get(event.id);
         const raw = elements.get(event.id.replace(/^ordinary-element\//, ''));
         if (!raw) throw new Error('production Ordinary element is missing for ' + event.id);
-        const node = semanticNode(OrdinaryRenderer.renderElement(raw, ordinary), event, ordinal);
+        const node = semanticNode(
+          composeInstrumentAbsences(OrdinaryRenderer.renderElement(raw, ordinary)),
+          event,
+          ordinal
+        );
         if (!optionListed && group && raw.variant) {
           optionListed = true;
           const choice = renderOrdinaryChoice(group, selectedOption, event);

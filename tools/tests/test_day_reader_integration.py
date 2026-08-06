@@ -42,7 +42,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertNotIn("prototypes/reader-shell", source)
         for asset in (
             "reader-shell.js", "reader-shell.css", "day-reader.js", "day-reader.css",
-            "day.js", "day.css", "day-missal.css",
+            "reader-instrument.css", "day.js", "day.css", "day-missal.css",
         ):
             self.assertIn(asset, source)
 
@@ -86,13 +86,13 @@ class DayReaderIntegrationTests(unittest.TestCase):
     def test_all_four_actions_and_bounded_modes_are_explicit(self) -> None:
         source = text(HTML)
         for action, label in (
-            ("date", "Date &amp; edition"),
+            ("date", "Date"),
             ("contents", "Contents"),
             ("mode", "Mode"),
             ("details", "Details"),
         ):
             self.assertIn(f'data-reader-action="{action}"', source)
-            self.assertIn(label, source)
+            self.assertIn(f'class="action-label">{label}</span>', source)
         self.assertIn('data-mode="read"', source)
         self.assertIn('data-mode="missal"', source)
         self.assertEqual(source.count('aria-disabled="true" disabled'), 2)
@@ -169,6 +169,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
     def test_responsive_print_and_modal_rules_are_present(self) -> None:
         shell = text(SHELL_CSS)
         candidate = text(DAY_CSS)
+        instrument = text(LITURGY / "reader-instrument.css")
         self.assertIn("--reader-shell-height: 3.65rem", shell)
         self.assertIn("env(safe-area-inset-bottom", shell)
         self.assertIn("@media (prefers-reduced-motion: reduce)", shell)
@@ -179,6 +180,9 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertIn(".reader-actions, .reader-surface { display: none !important; }", shell)
         self.assertIn(".candidate-flag { display: none !important; }", candidate)
         self.assertIn("break-inside: avoid", candidate)
+        self.assertIn("container: reader-shell / inline-size", instrument)
+        self.assertIn("@container reader-shell (max-width: 18rem)", instrument)
+        self.assertIn("grid-template-columns: repeat(2, minmax(0, 1fr))", instrument)
 
     def test_public_pages_propers_m1_and_production_data_are_isolated(self) -> None:
         protected = [
@@ -189,9 +193,6 @@ class DayReaderIntegrationTests(unittest.TestCase):
             "src/web/browser/liturgy/liturgy.js",
             "src/web/browser/liturgy/reader-state.js",
             "src/web/browser/liturgy/reader-state-adapters.js",
-            "src/web/browser/liturgy/propers-reader.html",
-            "src/web/browser/liturgy/propers-reader.js",
-            "src/web/browser/liturgy/propers-reader.css",
         ]
         for path in protected:
             current = (ROOT / path).read_bytes()
