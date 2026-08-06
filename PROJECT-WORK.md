@@ -235,6 +235,11 @@ post-deployment evidence commit `4daf7d8a1e1c509edb81a738cc71223170bbbd2d`
 failed at deployment polling and is not represented as successful; successful
 deployed parity remains owned by run `31109086658` for
 `c388ab42dfc4f5c7d49abc71596d6bb511af5742`.
+The acceptance-record push at `1608f0ee0ee61df956247072a91647147548c5ad`
+passed every repository-owned Pages build/upload step, then run `31113461987`
+failed after 600 seconds of `deployment_in_progress` polling. Direct prototype
+routes remain HTTP 200/noindex and their deployed CSS/JS still byte-match the
+accepted source; the new run is not represented as successful.
 
 Accepted M1–M3 and W3 state, assembly, renderers, Ordinary seating, failure,
 location, focus, race, action-reachability, and isolation behavior remain
