@@ -183,9 +183,9 @@ operations.
 
 <!-- promised-deliverable: liturgy-reader-instrument-production-integration-2026-08-06 -->
 
-**Implementation and local parity complete; checkpoint push, deployed parity,
-and independent integration review remain open; public navigation and cutover
-are unauthorized.** Independent Round 1 accepted the
+**Candidate; implementation checkpoint pushed, deployed parity and independent
+integration review remain open; public navigation and cutover are
+unauthorized.** Independent Round 1 accepted the
 Liturgical Instrument visual foundation and all seven correction dispositions.
 Production integration begins from `b3ae6bddaab631661d342380f61365d851be160c`
 through four bounded units: PI-A inventories the accepted hooks and selects the
@@ -222,6 +222,13 @@ as successful. The production-integration deliverable remains open until its
 own evidence, deployment record, and independent integration disposition are
 complete. The implementation checkpoint is not represented as deployed until
 its own push has a successful Pages result and direct asset verification.
+Implementation commit `3cd46072b164ff39b00639bb67ad6b8943a255dc` is pushed
+to `origin/main`. Its clean-tree full gate reached only the governed unrelated
+example-replay divergence: 200 examples, 188 replayed, 23 divergent, 35 known
+stale, 6 never run, and 6 unrunnable here. It exits 2 and is not represented as
+green. As of 2026-08-06T18:04:26Z, GitHub had not materialized the automatic
+Pages run for this push in the Actions API; this is recorded as a pending
+workflow event, not a deployment success or failure.
 
 ### Liturgical Instrument visual correction accepted
 

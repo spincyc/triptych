@@ -665,6 +665,13 @@ binding. Public navigation and cutover remain unauthorized. The canonical
 review mailbox and execution record remain
 `build/agent-continuity/liturgy-reader-visual-plan.md`.
 
+The first production-integration implementation checkpoint is pushed at
+`3cd46072b164ff39b00639bb67ad6b8943a255dc`. Local focused, browser, visual,
+release, and public-alpha gates pass; the clean full gate remains stopped only
+by the unrelated governed example replay (23 divergent and 35 known-stale
+captures among 200). Its automatic Pages workflow had not yet materialized in
+the Actions API at 2026-08-06T18:04:26Z, so no deployment result is claimed.
+
 1. M1's W1/W9 shared semantic fixture and URL-state contract is accepted at
    correction `c6b8070ae76e75153448895a19a0b916c18806ea` plus final micro-fix
    `c1a590f5854215d68d167d9040e188f41762663e`. The Round 1 acceptance supplies
