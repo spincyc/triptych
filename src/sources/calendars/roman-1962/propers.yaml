@@ -15987,11 +15987,116 @@ sections:
       rank: I
       kind: christological
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: Introit
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin:
+              chapter: 9
+              verse: 6
+            end:
+              chapter: 9
+              verse: 6
+          ref: Isaiah 9:6
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 97
+              verse: 1
+            end:
+              chapter: 97
+              verse: 1
+          ref: Psalms 97:1
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: Titus
+          ranges:
+          - begin:
+              chapter: 2
+              verse: 11
+            end:
+              chapter: 2
+              verse: 15
+          ref: Titus 2:11-15
+      - name: Gradual
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 97
+              verse: 3
+            end:
+              chapter: 97
+              verse: 4
+          - begin:
+              chapter: 97
+              verse: 2
+            end:
+              chapter: 97
+              verse: 2
+          ref: Psalms 97:3-4,2
+      - name: Alleluia
+        source: scripture
+        verses:
+        - book: Hebrews
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 1
+            end:
+              chapter: 1
+              verse: 2
+          ref: Hebrews 1:1-2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin:
+              chapter: 2
+              verse: 21
+            end:
+              chapter: 2
+              verse: 21
+          ref: Luke 2:21
+      - name: Offertory
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 88
+              verse: 12
+            end:
+              chapter: 88
+              verse: 12
+          - begin:
+              chapter: 88
+              verse: 15
+            end:
+              chapter: 88
+              verse: 15
+          ref: Psalms 88:12,15
+      - name: Communion
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 97
+              verse: 3
+            end:
+              chapter: 97
+              verse: 3
+          ref: Psalms 97:3
+      notes: Only the scripture-bearing propers are recorded; the orations the Missal prints for this day
+        are appointed and not transcribed here, and neither is any proper whose text the Missal composes
+        rather than cites. Identity, rank and the printed citations were read on 2026-08-07 from the embedded
+        text layer of the CMAA facsimile of the controlling edition at printed p. 36-37 (digital 117-118),
+        not from the facsimile images, and nothing here has been visually collated.
     - key: epiphania-domini
       name: In Epiphania Domini
       registry: '1962-01-06'
@@ -15999,11 +16104,119 @@ sections:
       rank: I
       kind: christological
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: Introit
+        source: scripture
+        verses:
+        - book: Malachi
+          ranges:
+          - begin:
+              chapter: 3
+              verse: 1
+            end:
+              chapter: 3
+              verse: 1
+          ref: Malachi 3:1
+        - book: 1 Chronicles
+          ranges:
+          - begin:
+              chapter: 29
+              verse: 12
+            end:
+              chapter: 29
+              verse: 12
+          ref: 1 Chronicles 29:12
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 71
+              verse: 1
+            end:
+              chapter: 71
+              verse: 1
+          ref: Psalms 71:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin:
+              chapter: 60
+              verse: 1
+            end:
+              chapter: 60
+              verse: 6
+          ref: Isaiah 60:1-6
+      - name: Gradual
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin:
+              chapter: 60
+              verse: 6
+            end:
+              chapter: 60
+              verse: 6
+          - begin:
+              chapter: 60
+              verse: 1
+            end:
+              chapter: 60
+              verse: 1
+          ref: Isaiah 60:6,1
+      - name: Alleluia
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 2
+              verse: 2
+            end:
+              chapter: 2
+              verse: 2
+          ref: Matthew 2:2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 2
+              verse: 1
+            end:
+              chapter: 2
+              verse: 12
+          ref: Matthew 2:1-12
+      - name: Offertory
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 71
+              verse: 10
+            end:
+              chapter: 71
+              verse: 11
+          ref: Psalms 71:10-11
+      - name: Communion
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 2
+              verse: 2
+            end:
+              chapter: 2
+              verse: 2
+          ref: Matthew 2:2
+      notes: Only the scripture-bearing propers are recorded; the orations the Missal prints for this day
+        are appointed and not transcribed here, and neither is any proper whose text the Missal composes
+        rather than cites. Identity, rank and the printed citations were read on 2026-08-07 from the embedded
+        text layer of the CMAA facsimile of the controlling edition at printed p. 38-39 (digital 119-120),
+        not from the facsimile images, and nothing here has been visually collated.
     - key: commemoratione-baptismatis-domini-nostri-iesu-christi
       name: In Commemoratione Baptismatis Domini Nostri Iesu Christi
       registry: '1962-01-13'
@@ -16011,11 +16224,119 @@ sections:
       rank: II
       kind: christological
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: Introit
+        source: scripture
+        verses:
+        - book: Malachi
+          ranges:
+          - begin:
+              chapter: 3
+              verse: 1
+            end:
+              chapter: 3
+              verse: 1
+          ref: Malachi 3:1
+        - book: 1 Chronicles
+          ranges:
+          - begin:
+              chapter: 29
+              verse: 12
+            end:
+              chapter: 29
+              verse: 12
+          ref: 1 Chronicles 29:12
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 71
+              verse: 1
+            end:
+              chapter: 71
+              verse: 1
+          ref: Psalms 71:1
+      - name: Lesson
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin:
+              chapter: 60
+              verse: 1
+            end:
+              chapter: 60
+              verse: 6
+          ref: Isaiah 60:1-6
+      - name: Gradual
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin:
+              chapter: 60
+              verse: 6
+            end:
+              chapter: 60
+              verse: 6
+          - begin:
+              chapter: 60
+              verse: 1
+            end:
+              chapter: 60
+              verse: 1
+          ref: Isaiah 60:6,1
+      - name: Alleluia
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 2
+              verse: 2
+            end:
+              chapter: 2
+              verse: 2
+          ref: Matthew 2:2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 29
+            end:
+              chapter: 1
+              verse: 34
+          ref: John 1:29-34
+      - name: Offertory
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 71
+              verse: 10
+            end:
+              chapter: 71
+              verse: 11
+          ref: Psalms 71:10-11
+      - name: Communion
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 2
+              verse: 2
+            end:
+              chapter: 2
+              verse: 2
+          ref: Matthew 2:2
+      notes: Only the scripture-bearing propers are recorded; the orations the Missal prints for this day
+        are appointed and not transcribed here, and neither is any proper whose text the Missal composes
+        rather than cites. Identity, rank and the printed citations were read on 2026-08-07 from the embedded
+        text layer of the CMAA facsimile of the controlling edition at printed p. 42-43 (digital 123-124),
+        not from the facsimile images, and nothing here has been visually collated.
     - key: pretiosissimi-sanguinis-domini-nostri-iesu-christi
       name: Pretiosissimi Sanguinis Domini Nostri Iesu Christi
       registry: '1962-07-01'
@@ -16023,11 +16344,152 @@ sections:
       rank: I
       kind: christological
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: Introit
+        source: scripture
+        verses:
+        - book: Revelation
+          ranges:
+          - begin:
+              chapter: 5
+              verse: 9
+            end:
+              chapter: 5
+              verse: 10
+          ref: Revelation 5:9-10
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 88
+              verse: 2
+            end:
+              chapter: 88
+              verse: 2
+          ref: Psalms 88:2
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: Hebrews
+          ranges:
+          - begin:
+              chapter: 9
+              verse: 11
+            end:
+              chapter: 9
+              verse: 15
+          ref: Hebrews 9:11-15
+      - name: Gradual
+        source: scripture
+        verses:
+        - book: 1 John
+          ranges:
+          - begin:
+              chapter: 5
+              verse: 6
+            end:
+              chapter: 5
+              verse: 6
+          - begin:
+              chapter: 5
+              verse: 7
+            end:
+              chapter: 5
+              verse: 8
+          ref: 1 John 5:6,7-8
+      - name: Alleluia
+        source: scripture
+        verses:
+        - book: 1 John
+          ranges:
+          - begin:
+              chapter: 5
+              verse: 9
+            end:
+              chapter: 5
+              verse: 9
+          ref: 1 John 5:9
+      - name: Tract
+        source: scripture
+        verses:
+        - book: Ephesians
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 6
+            end:
+              chapter: 1
+              verse: 8
+          ref: Ephesians 1:6-8
+        - book: Romans
+          ranges:
+          - begin:
+              chapter: 3
+              verse: 24
+            end:
+              chapter: 3
+              verse: 25
+          ref: Romans 3:24-25
+      - name: Greater Alleluia
+        source: scripture
+        verses:
+        - book: Revelation
+          ranges:
+          - begin:
+              chapter: 5
+              verse: 9
+            end:
+              chapter: 5
+              verse: 9
+          ref: Revelation 5:9
+        - book: Exodus
+          ranges:
+          - begin:
+              chapter: 12
+              verse: 13
+            end:
+              chapter: 12
+              verse: 13
+          ref: Exodus 12:13
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin:
+              chapter: 19
+              verse: 30
+            end:
+              chapter: 19
+              verse: 35
+          ref: John 19:30-35
+      - name: Offertory
+        source: scripture
+        verses:
+        - book: 1 Corinthians
+          ranges:
+          - begin:
+              chapter: 10
+              verse: 16
+            end:
+              chapter: 10
+              verse: 16
+          ref: 1 Corinthians 10:16
+      - name: Communion
+        source: scripture
+        verses:
+        - book: Hebrews
+          ranges:
+          - begin:
+              chapter: 9
+              verse: 28
+            end:
+              chapter: 9
+              verse: 28
+          ref: Hebrews 9:28
+      notes: Only the scripture-bearing propers are recorded; the orations the Missal prints for this day
+        are appointed and not transcribed here, and neither is any proper whose text the Missal composes
+        rather than cites. Identity, rank and the printed citations were read on 2026-08-07 from the embedded
+        text layer of the CMAA facsimile of the controlling edition at printed p. 573-574 (digital 654-655),
+        not from the facsimile images, and nothing here has been visually collated.
     - key: transfiguratione-domini-nostri-iesu-christi
       name: In Transfiguratione Domini Nostri Iesu Christi
       registry: '1962-08-06'
@@ -16035,11 +16497,110 @@ sections:
       rank: II
       kind: christological
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: Introit
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 76
+              verse: 19
+            end:
+              chapter: 76
+              verse: 19
+          ref: Psalms 76:19
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 83
+              verse: 2
+            end:
+              chapter: 83
+              verse: 3
+          ref: Psalms 83:2-3
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: 2 Peter
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 16
+            end:
+              chapter: 1
+              verse: 19
+          ref: 2 Peter 1:16-19
+      - name: Gradual
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 44
+              verse: 3
+            end:
+              chapter: 44
+              verse: 3
+          - begin:
+              chapter: 44
+              verse: 2
+            end:
+              chapter: 44
+              verse: 2
+          ref: Psalms 44:3,2
+      - name: Alleluia
+        source: scripture
+        verses:
+        - book: Wisdom
+          ranges:
+          - begin:
+              chapter: 7
+              verse: 26
+            end:
+              chapter: 7
+              verse: 26
+          ref: Wisdom 7:26
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 17
+              verse: 1
+            end:
+              chapter: 17
+              verse: 9
+          ref: Matthew 17:1-9
+      - name: Offertory
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 111
+              verse: 3
+            end:
+              chapter: 111
+              verse: 3
+          ref: Psalms 111:3
+      - name: Communion
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 17
+              verse: 9
+            end:
+              chapter: 17
+              verse: 9
+          ref: Matthew 17:9
+      notes: Only the scripture-bearing propers are recorded; the orations the Missal prints for this day
+        are appointed and not transcribed here, and neither is any proper whose text the Missal composes
+        rather than cites. Identity, rank and the printed citations were read on 2026-08-07 from the embedded
+        text layer of the CMAA facsimile of the controlling edition at printed p. 640-641 (digital 721-722),
+        not from the facsimile images, and nothing here has been visually collated.
     - key: exaltatione-s-crucis
       name: In Exaltatione S. Crucis
       registry: '1962-09-14'
@@ -16105,44 +16666,431 @@ sections:
       rank: I
       kind: christological
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: Introit
+        source: scripture
+        verses:
+        - book: Exodus
+          ranges:
+          - begin:
+              chapter: 16
+              verse: 6
+            end:
+              chapter: 16
+              verse: 7
+          ref: Exodus 16:6-7
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 23
+              verse: 1
+            end:
+              chapter: 23
+              verse: 1
+          ref: Psalms 23:1
+      - name: Epistle
+        source: scripture
+        verses:
+        - book: Romans
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 1
+            end:
+              chapter: 1
+              verse: 6
+          ref: Romans 1:1-6
+      - name: Gradual
+        source: scripture
+        verses:
+        - book: Exodus
+          ranges:
+          - begin:
+              chapter: 16
+              verse: 6
+            end:
+              chapter: 16
+              verse: 7
+          ref: Exodus 16:6-7
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 79
+              verse: 2
+            end:
+              chapter: 79
+              verse: 3
+          ref: Psalms 79:2-3
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 1
+              verse: 18
+            end:
+              chapter: 1
+              verse: 21
+          ref: Matthew 1:18-21
+      - name: Offertory
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin:
+              chapter: 23
+              verse: 7
+            end:
+              chapter: 23
+              verse: 7
+          ref: Psalms 23:7
+      - name: Communion
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin:
+              chapter: 40
+              verse: 5
+            end:
+              chapter: 40
+              verse: 5
+          ref: Isaiah 40:5
+      notes: Only the scripture-bearing propers are recorded; the orations the Missal prints for this day
+        are appointed and not transcribed here, and neither is any proper whose text the Missal composes
+        rather than cites. Identity, rank and the printed citations were read on 2026-08-07 from the embedded
+        text layer of the CMAA facsimile of the controlling edition at printed p. 15-16 (digital 96-97),
+        not from the facsimile images, and nothing here has been visually collated.
     - key: nativitate-domini-octave
       name: In Nativitate Domini, with octave
       registry: '1962-12-25'
       date: 12-25
       rank: I
       kind: christological
-      notes: RGMR 518 b names the three Masses of Christmas, and the Missal prints a
-        formulary for each. The second, in aurora, carries a commemoration of S. Anastasia
-        Martyr printed inside that formulary; it is not an entry the calendar inscribes
-        on the date and has no dated entry of its own here. Nothing of any of the three
-        formularies has been read.
+      notes: RGMR 518 b names the three Masses of Christmas, and the Missal prints a formulary for each.
+        The second, in aurora, carries a commemoration of S. Anastasia Martyr printed inside that formulary;
+        it is not an entry the calendar inscribes on the date and has no dated entry of its own here. Only
+        the scripture-bearing propers are recorded; the orations the Missal prints for this day are appointed
+        and not transcribed here, and neither is any proper whose text the Missal composes rather than cites.
+        Identity, rank and the printed citations were read on 2026-08-07 from the embedded text layer of
+        the CMAA facsimile of the controlling edition at printed p. 17-21 (digital 98-102), not from the
+        facsimile images, and nothing here has been visually collated.
       forms:
       - name: Ad primam Missam in nocte
         propers:
-        - name: Placeholder
-          source: composed
-          text: 'This entry is a placeholder pending formula migration and source verification.
-
-            '
+        - name: Introit
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 2
+                verse: 7
+              end:
+                chapter: 2
+                verse: 7
+            ref: Psalms 2:7
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 2
+                verse: 1
+              end:
+                chapter: 2
+                verse: 1
+            ref: Psalms 2:1
+        - name: Epistle
+          source: scripture
+          verses:
+          - book: Titus
+            ranges:
+            - begin:
+                chapter: 2
+                verse: 11
+              end:
+                chapter: 2
+                verse: 15
+            ref: Titus 2:11-15
+        - name: Gradual
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 109
+                verse: 3
+              end:
+                chapter: 109
+                verse: 3
+            - begin:
+                chapter: 109
+                verse: 1
+              end:
+                chapter: 109
+                verse: 1
+            ref: Psalms 109:3,1
+        - name: Alleluia
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 2
+                verse: 7
+              end:
+                chapter: 2
+                verse: 7
+            ref: Psalms 2:7
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin:
+                chapter: 2
+                verse: 1
+              end:
+                chapter: 2
+                verse: 14
+            ref: Luke 2:1-14
+        - name: Offertory
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 95
+                verse: 11
+              end:
+                chapter: 95
+                verse: 11
+            - begin:
+                chapter: 95
+                verse: 13
+              end:
+                chapter: 95
+                verse: 13
+            ref: Psalms 95:11,13
+        - name: Communion
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 109
+                verse: 3
+              end:
+                chapter: 109
+                verse: 3
+            ref: Psalms 109:3
       - name: Ad secundam Missam in aurora
         propers:
-        - name: Placeholder
-          source: composed
-          text: 'This entry is a placeholder pending formula migration and source verification.
-
-            '
+        - name: Introit
+          source: scripture
+          verses:
+          - book: Isaiah
+            ranges:
+            - begin:
+                chapter: 9
+                verse: 2
+              end:
+                chapter: 9
+                verse: 2
+            - begin:
+                chapter: 9
+                verse: 6
+              end:
+                chapter: 9
+                verse: 6
+            ref: Isaiah 9:2,6
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 92
+                verse: 1
+              end:
+                chapter: 92
+                verse: 1
+            ref: Psalms 92:1
+        - name: Epistle
+          source: scripture
+          verses:
+          - book: Titus
+            ranges:
+            - begin:
+                chapter: 3
+                verse: 4
+              end:
+                chapter: 3
+                verse: 7
+            ref: Titus 3:4-7
+        - name: Gradual
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 117
+                verse: 26
+              end:
+                chapter: 117
+                verse: 26
+            - begin:
+                chapter: 117
+                verse: 27
+              end:
+                chapter: 117
+                verse: 27
+            - begin:
+                chapter: 117
+                verse: 23
+              end:
+                chapter: 117
+                verse: 23
+            ref: Psalms 117:26,27,23
+        - name: Alleluia
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 92
+                verse: 1
+              end:
+                chapter: 92
+                verse: 1
+            ref: Psalms 92:1
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin:
+                chapter: 2
+                verse: 15
+              end:
+                chapter: 2
+                verse: 20
+            ref: Luke 2:15-20
+        - name: Offertory
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 92
+                verse: 1
+              end:
+                chapter: 92
+                verse: 2
+            ref: Psalms 92:1-2
+        - name: Communion
+          source: scripture
+          verses:
+          - book: Zechariah
+            ranges:
+            - begin:
+                chapter: 9
+                verse: 9
+              end:
+                chapter: 9
+                verse: 9
+            ref: Zechariah 9:9
       - name: Ad tertiam Missam in die
         propers:
-        - name: Placeholder
-          source: composed
-          text: 'This entry is a placeholder pending formula migration and source verification.
-
-            '
+        - name: Introit
+          source: scripture
+          verses:
+          - book: Isaiah
+            ranges:
+            - begin:
+                chapter: 9
+                verse: 6
+              end:
+                chapter: 9
+                verse: 6
+            ref: Isaiah 9:6
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 97
+                verse: 1
+              end:
+                chapter: 97
+                verse: 1
+            ref: Psalms 97:1
+        - name: Epistle
+          source: scripture
+          verses:
+          - book: Hebrews
+            ranges:
+            - begin:
+                chapter: 1
+                verse: 1
+              end:
+                chapter: 1
+                verse: 12
+            ref: Hebrews 1:1-12
+        - name: Gradual
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 97
+                verse: 3
+              end:
+                chapter: 97
+                verse: 4
+            - begin:
+                chapter: 97
+                verse: 2
+              end:
+                chapter: 97
+                verse: 2
+            ref: Psalms 97:3-4,2
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin:
+                chapter: 1
+                verse: 1
+              end:
+                chapter: 1
+                verse: 14
+            ref: John 1:1-14
+        - name: Offertory
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 88
+                verse: 12
+              end:
+                chapter: 88
+                verse: 12
+            - begin:
+                chapter: 88
+                verse: 15
+              end:
+                chapter: 88
+                verse: 15
+            ref: Psalms 88:12,15
+        - name: Communion
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 97
+                verse: 3
+              end:
+                chapter: 97
+                verse: 3
+            ref: Psalms 97:3
   sanctoral:
     kind: sanctoral
     label: Saints

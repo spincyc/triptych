@@ -105,8 +105,15 @@ source verification.` Nothing is partial — there is no half-filled tier.
 ## Invariants
 
 1. **Never edit these files by hand where a tool owns the transform.** Run
-   `tools/tpt citations encode` to encode a citation; it is idempotent and
-   refuses what it cannot encode without guessing.
+   `tools/tpt citations encode` to encode a citation; it refuses what it cannot
+   encode without guessing. It is idempotent in CONTENT and not in BYTES:
+   measured on 2026-08-07, running it on a pristine tree rewrote 5,560 lines of
+   `roman-1962/propers.yaml` and 2,960 of the postconciliar, because it reloads
+   and re-dumps the whole document and the tracked formatting is not what its
+   dumper emits. So the sanctioned way to encode a citation destroys the diff of
+   whatever else you were changing. Until that is fixed, encode a new entry by
+   calling `citations.parse_citation` — the same function, the same single
+   derivation — and splice only the block you are editing.
 2. **Never harmonize a divergence.** Two calendars citing the same text
    differently is the books' own inconsistency. Fix by collation, or record it
    in `open_collation_items`. Making the file uniform destroys evidence.
@@ -150,6 +157,7 @@ Assume more of the same kind exist.
 | The **English reaching the site and not the terminal** | Translations live in a sidecar overlay, and only `mass-propers structure` merged it. `mass-propers show --lang en` and `mass-today --expanded` read the raw `propers.yaml`, where no proper carries `translations`, so both answered `no en translation recorded; showing Latin` over every one of the 332 orations whose English the same repository was publishing. A maintainer checking whether a proper still needed harvesting was told, by the tool built for that question, that it did. | Now caught: `mass-propers.carry_translations` is the one merge and both verbs call it. The reading view applies no rights filter, unlike the structure pass, because a terminal over tracked sources should show the English the site withholds as well as the English it serves; `untranslated` is printed as a decision, not as a gap. |
 | A **chained `takes_from` addressed at its first hop** | `_resolve_reference` followed the chain for the TEXT and then overwrote the provenance with the mass it had just gone through, so a saint borrowing a Common that itself borrows another was addressed at the intermediate. `overlay_key` files a translation under the mass that PRINTS it, so Perpetua and Felicitas, Frances of Rome, Petronilla and Elizabeth looked up their English at a Common carrying none, found nothing, and served Latin while the terminal Common's English sat in the ledger. Text right, address wrong, nothing reporting either. | Now caught: `_resolve_reference` keeps the inner provenance where the inherited proper has one, so the address follows the text, and `mass-propers census`' `unaccounted` count fell from 5 to 0 on the strength of it. That count is the detector: a slot neither translated nor refused. |
 | A **coverage census scoped past the gap it measures** | `english_coverage` excluded every scripture-bearing proper, `mixed` among them. A `mixed` proper carries the Missal's own words beside its citations — `Salus populi ego sum` above a psalm verse — and no bible renders those words, so a real gap was counted out of scope, and the rows that closed it then surfaced as `unmatched_records`, which reads as ledger rot and was its opposite. | Now caught: only `source: scripture`, whose English is wholly a bible's, is excluded. 13 postconciliar rows and 8 of the 1962's moved from "rot" into the denominator they belong in. |
+| A mass block spliced by **"up to the next mass"** | The 1962 index nests masses under section headings, so the lines between the last mass of one section and the first of the next are the next section's `label:` and `masses:`. A textual edit that treats a mass as running up to the following `- key:` swallows them, and the two sections silently become one. Done on 2026-08-07 it produced 315 christological masses where there are eight, and `check-calendar-masses` passed on it: the schema is still valid, the masses are all still there, and only their filing moved. | Now caught, by accident of having a derived count: `mass-propers census --write` put `roman-1962 | christological | 315` into two documents, which is what made it visible. Nothing checks section membership directly. A block ends at the first line that is not indented into it, and a splice must stop there. |
 | Two propers under **one name in one mass** | The translation overlay is keyed `(mass, form, proper name)`. `palm-sunday` prints six propers all named `Procession Antiphon`, so one ledger row answers all six and no row can answer one. A shared refusal is harmless; a shared translation would attach one antiphon's English to five others. | Open. Nothing prevents it, and the 2026-08-07 harvest left the six under a single `untranslated` row for want of a key that could tell them apart. |
 | Any **stale count table** | One census of these files existed in three retyped copies, and all three disagreed; the 1962 sanctoral section read 247 in a document that called itself current and 307 in the file. | Now caught for the two documents that carry the derived block — this one and `docs/the-mass.md` — by `mass-propers census --check`, which `make check-propers-census` runs. `guidance/liturgy/propers-completion-todo.md` carried a third and was deleted on 2026-08-01 rather than corrected, its every count having drifted and nothing in it still being both unique and true. `src/sources/calendars/README.md` still carries a hand-typed table. Open. |
 
@@ -224,7 +232,7 @@ carries the identical block.
 | --- | --- | ---: | ---: | ---: |
 | roman-pre-1955 | seasonal | 6 | 6 | 6 |
 | roman-1962 | seasonal | 128 | 1138 | 5 |
-| roman-1962 | christological | 8 | 12 | 7 |
+| roman-1962 | christological | 8 | 66 | 0 |
 | roman-1962 | marian | 18 | 77 | 4 |
 | roman-1962 | sanctoral | 307 | 1009 | 94 |
 | roman-1962 | common | 30 | 152 | 0 |
@@ -252,17 +260,17 @@ carries the identical block.
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 6 | 491 | 269 |
-| Propers | 6 | 2388 | 1513 |
-| — named `Placeholder` | 6 | 112 | 55 |
-| — inside a `forms` block | 0 | 130 | 140 |
+| Propers | 6 | 2442 | 1513 |
+| — named `Placeholder` | 6 | 103 | 55 |
+| — inside a `forms` block | 0 | 147 | 140 |
 | — carrying a `cycles` mapping | 0 | 0 | 253 |
-| Masses holding only placeholders | 6 | 110 | 53 |
+| Masses holding only placeholders | 6 | 103 | 53 |
 | Masses taking a formulary from another entry | 0 | 80 | 0 |
 | Propers taking their text from another entry | 0 | 53 | 0 |
-| Propers that are not placeholders | 0 | 2276 | 1458 |
-| — of those, scripture-bearing | 0 | 1838 | 1185 |
-| Encoded passages | 0 | 2141 | 1721 |
-| Distinct books cited | 0 | 55 | 63 |
+| Propers that are not placeholders | 0 | 2339 | 1458 |
+| — of those, scripture-bearing | 0 | 1901 | 1185 |
+| Encoded passages | 0 | 2218 | 1721 |
+| Distinct books cited | 0 | 57 | 63 |
 | Distinct slot names | 1 | 119 | 89 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
