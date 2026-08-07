@@ -4,9 +4,10 @@
 
 These are gates for a later separately authorized execution. Passing them does
 not itself authorize a push, public navigation change, or cutover. The execution
-agent must begin from the accepted plan SHA with a clean synchronized main and
-must stop if the four unresolved dispositions in the cutover decision have not
-been independently accepted.
+agent must begin from the independently accepted compatibility/plan SHA with a
+clean synchronized main. Compatibility commit `3f3949617` resolves the prior
+four public-contract dispositions, but cutover execution remains unauthorized
+until narrow review accepts those bytes and the regenerated patch.
 
 ## Repository preflight
 
@@ -52,9 +53,12 @@ tools/tpt public-alpha verify --deployment-target github-pages
 make check
 ```
 
-Expected task-owned results are Day 34/34, Propers all green, shared shell all
-green, governed Instrument assertions all green, focused Python all green,
-exact release bindings, and locked public-alpha check/build/verify all green.
+Expected task-owned results are Day 40/40, Propers 32/32, shared shell 18/18,
+governed Instrument assertions 24/24, focused Python all green, exact release
+bindings, and locked public-alpha check/build/verify all green. The Day result
+must include literal reload and Back/Forward coverage for `why=1` and the
+multi-territorial fixture; the visual run must retain the mobile capture
+scrolled to the second territorial branch.
 `make check` may retain only the already disclosed unrelated stored
 example-transcript divergence; its exact exit and stop must be recorded and it
 must not be called green. Do not recapture or bless unrelated transcripts.
@@ -136,8 +140,9 @@ In the built public artifact verify:
 - canonical Day and Propers have intended public titles/descriptions,
   `index, follow`, correct absolute OG URLs, and the selected canonical-link
   policy;
-- `/liturgy/` and `/liturgy/index.html` duplicate behavior is intentionally
-  handled (canonical link or explicitly accepted existing alias);
+- `/liturgy/` and `/liturgy/index.html` remain the explicitly accepted existing
+  GitHub Pages host alias for the same built Propers document; no new
+  build-pipeline canonical-link parser is introduced by cutover;
 - retained `day-reader.html`, `propers-reader.html`, and oracle pages are
   statically noindex/noarchive and carry no public OG/canonical advertising;
 - all relative CSS, JS, Home, counterpart, data, and contextual links resolve;

@@ -875,7 +875,7 @@ async function runAssertions(cdp, base) {
 async function captureOne(cdp, base, directory, row) {
   const { file, entrance, design, state, width, height, action = null, deep = false,
     enlargement = false, media = null, keyboard = false, reasoning = false,
-    surfaceEnd = false,
+    surfaceEnd = false, scrollSelector = null,
     variant = 'prototype' } = row;
   await viewport(cdp, width, height);
   if (media) await cdp.send('Emulation.setEmulatedMedia', { media: 'screen', features: media });
@@ -917,6 +917,12 @@ async function captureOne(cdp, base, directory, row) {
       scroller.scrollTop = scroller.scrollHeight;
     })()`);
     await stableFrames(cdp, `[data-reader-surface="${action}"]`);
+  }
+  if (scrollSelector) {
+    await evaluate(cdp, `document.querySelector(${JSON.stringify(scrollSelector)}).scrollIntoView({
+      block: 'start', behavior: 'auto'
+    })`);
+    await stableFrames(cdp, scrollSelector);
   }
   if (keyboard) {
     if (!action) {
@@ -1036,7 +1042,9 @@ async function captureMatrix(cdp, base, directory) {
     ['10-day-why-no-slot-393x852.png', 'day', 'romanWhyNoSlot', 393, 852, { reasoning: true }],
     ['11-day-why-postconciliar-missal-1440x900.png', 'day', 'postWhy', 1440, 900, { reasoning: true }],
     ['12-day-territorial-why-1440x900.png', 'day', 'territorialEpiphanyWhy', 1440, 900,
-      { reasoning: true }]
+      { reasoning: true }],
+    ['13-day-territorial-second-branch-393x852.png', 'day', 'territorialEpiphany', 393, 852,
+      { scrollSelector: 'section.territorial-branch:nth-of-type(2)' }]
   ];
   for (const [file, entrance, state, width, height, extras] of compatibilityCases) {
     evidence.push(await captureOne(cdp, base, compatibilityDirectory, {

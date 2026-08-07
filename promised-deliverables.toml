@@ -84,11 +84,26 @@ state = "candidate"
   ]
 
   [[deliverables.requirements]]
+  id = "compatibility-closure-implementation"
+  criterion = "The retained candidate/shared implementation preserves source-derived Day reasoning and all territorial outcomes, stable Propers public option keys, static candidate privacy, route-neutral visible wording, and subordinate Details navigation without changing canonical routes, public navigation, the accepted shell, or the visual oracle."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "src/web/browser/liturgy/day-reader.js",
+    "src/web/browser/liturgy/propers-reader.js",
+    "src/web/browser/liturgy/reader-state.js",
+    "tools/tests/day_reader_integration_browser.mjs",
+    "tools/tests/propers_reader_integration_browser.mjs",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
   id = "compatibility-closure-evidence-and-narrow-rereview"
   criterion = "The accepted candidate/shared readers implement and evidence preserved Day reasoning and territorial outcomes, stable Propers public option keys, static retained-candidate noindex, route-neutral wording, and Details navigation; the final cutover patch is regenerated and mechanically checked; and a new immutable handoff passes narrow independent re-review before execution is authorized."
   status = "open"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "build/agent-continuity/liturgy-reader-public-cutover-proposed.patch",
   ]
 
 [[deliverables]]

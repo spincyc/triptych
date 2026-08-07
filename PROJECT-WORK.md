@@ -183,8 +183,9 @@ operations.
 
 <!-- promised-deliverable: liturgy-reader-instrument-public-cutover-plan-2026-08-06 -->
 
-**Same-path planning architecture accepted; bounded compatibility closure in
-progress; canonical promotion and public navigation remain unauthorized.**
+**Same-path planning architecture accepted; bounded compatibility closure is
+implemented and deployed for narrow review; canonical promotion and public
+navigation remain unauthorized.**
 Work began from the
 clean, fully synchronized accepted-integration boundary
 `7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef`. It inventories the canonical
@@ -205,8 +206,14 @@ candidates are source-static noindex; visible controller wording is
 route-neutral; and counterpart/context navigation belongs in Details without a
 fifth primary action.
 
-Compatibility implementation and evidence are now in progress only on the
-authorized candidate/shared seams. Canonical `liturgy/day.html` and
+Compatibility implementation commit
+`3f3949617a04ffa68a1070058d0f7bc5ac74dc93` closes those contracts only on the
+authorized candidate/shared seams. Pages run `31148986910` succeeded for that
+exact commit, and direct checks record HTTP 200 plus deployed/build/source
+parity for the affected retained-reader assets. Day passes 40/40, Propers
+32/32, the shared shell 18/18, and governed visual assertions 24/24 over 113
+captures, including literal reload of ordinary and territorial `why=1` and a
+mobile view of the second held branch. Canonical `liturgy/day.html` and
 `liturgy/index.html`, repository-owned public navigation, the shared shell,
 production data, and the accepted visual oracle remain byte-unchanged.
 Production integration and its durable handoff remain independently accepted
@@ -220,12 +227,12 @@ Test-only commit `5e1b82b51` proves and removes the disclosed wall-clock
 dependency while keeping the first-visit URL empty; Day now passes 34/34.
 Record checkpoint `2cf91dd01` updates only task-owned ledger expectations and
 retains the unrelated full-gate transcript stop. The reviewed draft same-path
-patch remains deliberately unapplied and non-executable. After compatibility
-implementation and its full evidence matrix are complete, that patch must be
-regenerated from the compatibility-closed bytes, mechanically checked, sealed
-in a new immutable handoff, and returned for narrow independent review. Those
-implementation, evidence, regenerated-patch, handoff, and re-review checkpoints
-are pending; no commit, Pages run, or handoff identity is claimed here. The
+patch remains deliberately unapplied and obsolete. It must be replaced by a
+normal-context patch regenerated from the compatibility-closed evidence
+baseline, mechanically checked, sealed in a new immutable handoff, and returned
+for narrow independent review. Only that regenerated-patch, handoff, and
+re-review boundary remain pending; no public cutover authorization is claimed.
+The
 immutable planning package is
 `build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/`.
 Canonical pages, public navigation, candidate routes, and the visual oracle

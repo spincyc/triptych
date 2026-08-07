@@ -91,12 +91,11 @@ permission to select a nearby Mass.
 - URL/history: strict legacy parsing, explicit-invalid fail-closed behavior,
   `pushState`/`replaceState`, `popstate`/`hashchange`, semantic-location and
   focus restoration.
-- Candidate-only behavior: JavaScript inserts noindex only when no robots meta
-  exists; deployed layout already supplies one, so this does not make the raw
-  deployed HTML noindex. The source and runtime title/diagnostics retain
-  “internal candidate” wording.
-- Deferred current features: `why=1` and multi-territorial outcomes link to
-  `day.html`; that becomes a self-link if the controller is promoted unchanged.
+- Compatibility-closed behavior: source HTML carries the full static noindex
+  directive; visible title/diagnostic copy is route-neutral. `why=1` renders
+  production-derived subordinate apparatus with no route link. Every held
+  territorial branch renders explicitly with namespaced semantic locations and
+  no locality inference or public locality key.
 
 ### Canonical Propers
 
@@ -121,10 +120,12 @@ permission to select a nearby Mass.
   an absent type/mass opens canonical Browse and selects no formulary by order.
 - URL/history: strict fail-closed explicit state, `pushState`, coalesced
   `popstate`/`hashchange`; Browse writes the five legacy public keys.
-- Candidate option keys `_candidate-cycle`, `_candidate-alternative`, and
-  `_candidate-translation-witness` are implemented but are not an approved
-  public URL spelling in `guidance/liturgy-reader-state.md`.
-- Source/runtime title and diagnostics retain “internal candidate” wording.
+- Stable public keys are `cycle`, `alternative`, and `translation-witness`.
+  Retained `_candidate-*` spellings are input-only aliases during the initial
+  window and are never serialized. Invalid explicit values fail closed.
+- Source HTML is statically noindex; visible title and diagnostics are
+  route-neutral. Details contains the direct counterpart first and the existing
+  contextual destinations after selection/result information.
 
 ## Shared state, shell, adapter, and renderer owners
 
@@ -150,13 +151,12 @@ Every changed served source requires an exact binding update in
 `release/public-alpha.json` and its rights-record digest.
 
 Public HTML without a source robots declaration receives `index, follow`, an
-absolute Open Graph URL, and social metadata. The accepted candidate source
-pages currently omit robots metadata; therefore their deployed raw HTML is
-`index, follow`, even though their JavaScript intended noindex. The oracle pages
-correctly declare the repository noindex directive in source. The cutover must
-make retained candidate routes statically noindex and leave canonical pages
-indexable. No service worker, webmanifest, Cache API, sitemap, or route rewrite
-exists.
+absolute Open Graph URL, and social metadata. Compatibility commit `3f3949617`
+adds the complete source-static noindex directive to both retained candidates,
+so the layout does not advertise canonical/Open Graph metadata for them. The
+oracle pages remain statically noindex. The later cutover omits that robots row
+from canonical Day and Propers so they remain indexable. No service worker,
+webmanifest, Cache API, sitemap, or route rewrite exists.
 
 GitHub Pages serves HTML, CSS, and JavaScript with `Cache-Control: max-age=600`,
 ETag, and Last-Modified. Assets are not content-addressed. Both forward cutover
@@ -171,8 +171,9 @@ The complete classification is in
 `build/agent-continuity/liturgy-reader-cutover-navigation-map.md`.
 
 Canonical Day and Propers currently contain direct cross-entrance and context
-footer links. The accepted Instrument hides the generated site header/footer
-and contains only its Triptych Home masthead link. An in-place promotion thus
+footer links. The accepted Instrument hides the generated site header/footer;
+compatibility closure preserves those destinations in route-neutral Details
+sections without adding a fifth primary action. An in-place promotion thus
 removes direct cross-entrance/context links unless the cutover explicitly
 preserves them. This is a navigation disposition, not a CSS cleanup.
 
@@ -184,11 +185,13 @@ preserves them. This is a navigation disposition, not a CSS cleanup.
    behavior; this is an accepted intentional difference, not a reason to weaken
    the accepted contract.
 3. Empty Day changes its current edition default from postconciliar to the
-   accepted reader’s Roman 1962 repository default; independent cutover review
-   must expressly accept or reject that reader-visible change.
+   accepted reader’s Roman 1962 repository default; independent plan review
+   expressly accepted this intentional public change.
 4. Empty Propers changes from arbitrary first formulary to the accepted Browse
    entrance; this is an accepted intentional difference required by the vision.
-5. `why=1`, territorial fallback, provisional Propers option keys, and direct
-   cross-entrance navigation require explicit decisions before execution.
-6. Retained candidates require source-level noindex; canonical routes require
-   public title/description/indexing and must not inherit candidate wording.
+5. `why=1`, all held territorial branches, stable Propers keys, direct
+   cross-entrance/context navigation, retained noindex, and route-neutral wording
+   are compatibility-closed and governed at commit `3f3949617`.
+6. Canonical routes must omit retained-candidate robots metadata and inherit no
+   candidate/internal visible wording; the regenerated patch owns that exact
+   same-path promotion.

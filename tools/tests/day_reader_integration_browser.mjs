@@ -398,6 +398,31 @@ async function scheduleTopFrameNavigation(cdp, target, label) {
 async function navigateFreshDocument(cdp, target, label) {
   const previousToken = currentDocumentToken;
   await scheduleTopFrameNavigation(cdp, target, label);
+  return awaitFreshDocumentCommit(cdp, target, previousToken, label);
+}
+
+async function reloadFreshDocument(cdp, label) {
+  const target = await evaluate(cdp, 'location.href');
+  const previousToken = currentDocumentToken;
+  const contextCreated = new Promise((accept, reject) => {
+    let cancelContextListener = () => {};
+    const timer = setTimeout(() => {
+      cancelContextListener();
+      reject(new Error('Timed out waiting for new document context: ' + label));
+    }, 10000);
+    cancelContextListener = cdp.on('Runtime.executionContextCreated', ({ context }) => {
+      if (!context.auxData?.isDefault) return;
+      clearTimeout(timer);
+      cancelContextListener();
+      accept(context.id);
+    });
+  });
+  await cdp.send('Page.reload', { ignoreCache: true });
+  await contextCreated;
+  return awaitFreshDocumentCommit(cdp, target, previousToken, label);
+}
+
+async function awaitFreshDocumentCommit(cdp, target, previousToken, label) {
   await waitFor(cdp,
     `location.href === ${JSON.stringify(target)} && window.dayReaderReady === true && ` +
       `window.dayReaderDebug.documentToken !== ${JSON.stringify(previousToken)} && ` +
@@ -953,6 +978,11 @@ async function runAssertions(cdp, base) {
     assert.match(value.apparatusText, /Placement in the Ordinary/);
     assert.match(value.apparatusText, /Ordinary resolution/);
     assert.match(value.apparatusText, /Ordinary source notes/);
+
+    await reloadFreshDocument(cdp, 'Why reload');
+    assert.equal(await evaluate(cdp, 'location.hash'), STATES.why);
+    assert.equal(await evaluate(cdp,
+      `document.querySelectorAll('details.day-reasoning').length`), 1);
   });
 
   await test('Why preserves transferred dates, Latin source text, and Proper oration apparatus', async () => {
@@ -1349,6 +1379,10 @@ async function runAssertions(cdp, base) {
       ['epiphany-january-6', 'epiphany-transferred-to-sunday']);
     assert.ok(why.branches.every(row => row.apparatus === 1 && row.loci > 0 && row.links === 0),
       JSON.stringify(why));
+    await reloadFreshDocument(cdp, 'territorial Why reload');
+    assert.equal(await evaluate(cdp, 'location.hash'), STATES.territorialEpiphanyWhy);
+    assert.equal(await evaluate(cdp,
+      `document.querySelectorAll('section.territorial-branch details.day-reasoning').length`), 2);
   });
 
   await test('active and latent state remain distinct through Back and Forward', async () => {
