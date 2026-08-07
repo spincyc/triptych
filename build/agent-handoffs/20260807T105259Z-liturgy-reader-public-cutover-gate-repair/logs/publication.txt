@@ -1,0 +1,8 @@
+Script started on 2026-08-07 05:55:46-05:00 [COMMAND="make check-release-bindings && env PATH=/home/ksh/src/triptych/build/visual-reset-venv/bin:/usr/local/bin:/usr/bin:/bin tools/tpt public-alpha check && env PATH=/home/ksh/src/triptych/build/visual-reset-venv/bin:/usr/local/bin:/usr/bin:/bin tools/tpt public-alpha build && env PATH=/home/ksh/src/triptych/build/visual-reset-venv/bin:/usr/local/bin:/usr/bin:/bin tools/tpt public-alpha verify --deployment-target github-pages" <not executed on terminal>]
+exact: 0 stale binding(s)
+public-alpha policy valid: 186 publications (186 alpha, 0 hold)
+perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)
+built build/public-alpha/site; not verified — run tools/public-alpha verify before publication
+verified build/public-alpha/site
+
+Script done on 2026-08-07 05:56:47-05:00 [COMMAND_EXIT_CODE="0"]

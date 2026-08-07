@@ -1,0 +1,15 @@
+Rejected patch trial:
+- locked focused Python: 225/230
+- shared-shell Chromium: 17/18
+
+Named defects:
+1. stale negative canonical shared-state ownership assertion
+2. stale Day hierarchy variables/assertions
+3. stale Propers hierarchy variables/assertions
+4. stale Contents <details> assertions
+5. raw-versus-escaped public-alpha metadata comparison
+6. shared-shell canonical test waiting for #reading and rejecting the shell
+
+Additional defect found by the full repaired gate:
+7. Day current-style latent-state parity still selected canonical Propers from
+   #reading, producing an empty list after promotion.

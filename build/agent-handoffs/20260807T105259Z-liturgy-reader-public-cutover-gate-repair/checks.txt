@@ -1,0 +1,32 @@
+Baseline: e20b2f542ab51a2b4f0807e6394ca5ecb313699c
+Scratch clone: build/gate-repair-scratch.u1lspq/repo
+
+PASS /home/ksh/src/triptych/build/visual-reset-venv/bin/python -m unittest -v tools.tests.test_liturgy_reader_state tools.tests.test_mass_ordinary tools.tests.test_public_alpha
+Result: 157 tests, 0 failures
+
+PASS /home/ksh/src/triptych/build/visual-reset-venv/bin/python -m unittest -v tools.tests.test_day_missal_integration tools.tests.test_day_reader_integration tools.tests.test_liturgy_reader_shell tools.tests.test_liturgy_reader_state tools.tests.test_mass_ordinary tools.tests.test_propers_reader_integration tools.tests.test_liturgy_reader_visual_reset tools.tests.test_public_alpha
+Result: 230 tests, 0 failures
+
+PASS node tools/tests/day_reader_integration_browser.mjs
+Result: 40/40
+PASS node tools/tests/propers_reader_integration_browser.mjs
+Result: 32/32
+PASS node tools/tests/liturgy_reader_shell_browser.mjs
+Result: 18/18
+PASS node tools/tests/liturgy_reader_visual_reset_browser.mjs
+Result: 24/24
+
+PASS python -m py_compile for all eight changed Python test modules
+PASS node --check for all four changed browser harnesses
+PASS tools/tpt check-promised-deliverables
+PASS tools/tpt --check
+PASS make check-release-bindings
+Result: exact, 0 stale
+PASS git diff --check
+PASS locked tools/tpt public-alpha check
+PASS locked tools/tpt public-alpha build
+PASS locked tools/tpt public-alpha verify --deployment-target github-pages
+PASS git apply --check build/agent-continuity/liturgy-reader-public-cutover-proposed.patch
+
+The unrelated governed stored-example divergence was not recaptured or blessed.
+No Pages cutover deployment was attempted.
