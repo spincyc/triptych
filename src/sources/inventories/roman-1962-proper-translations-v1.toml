@@ -148,6 +148,82 @@ and cites from 22 January, and all three orations of `comm-s-petri-apostoli`,
 which it prints at its own 18 January and cites from 25. A matcher keyed on the
 day would report four false absences here.
 
+A sixth pass ran on 2026-08-07, and it is the first that set out to close the
+file rather than to test a stratum of it. `mass-propers census` reported 49 slots
+carrying neither an entry nor a reason; that number is now nought. 42 entries and
+57 `untranslated` rows were added, and both halves have to be read together,
+because a large part of what this pass did was decide that a text is not here.
+
+WHAT WAS FOUND, AND HOW. Every one of the 42 was located in the 1861 text layer,
+whose bytes were fetched again on the day and whose sha256 reproduced the digest
+the artifact record pins, so the file read is the file registered. Each was then
+put through the 1843 second printing mechanically: the entry's English was
+reduced to a word stream and aligned against the whole of the tracked 1843
+artifact by longest-matching-block coverage, and the result is written on every
+row as `second_printing_coverage`. 30 rows reach 0.90 or better and carry
+`detector = "second-printing-agrees"`; 10 sit between 0.70 and 0.90 and carry
+`second-printing-partly-agrees`, and in each of those the shortfall was read and
+is optical -- the 1843 scan's own damage, or a text the two books set in parallel
+narrow columns that a word stream interleaves. One row, the Collect of
+`s-petri-damiani`, has NO second witness at all: the 1861 prints it in its
+APPENDIX, which carries feasts added after 1843, so that reading rests on one
+optical text layer and nothing else. It says so on the row.
+
+TWO READINGS WERE TAKEN FROM THE 1843 AND NOT FROM THE 1861, which is the
+opposite of this file's rule and is therefore named. At the Collect of
+`s-franciscae-romanae-viduae` the 1861 scan renders the last clause `into their
+idt us`; the 1843 reads `into their society`, and `society` is what is recorded.
+At the Collect of `s-catharinae-senensis-virginis` both printings read `by the
+example in her eminent virtues`, and the preposition is reproduced rather than
+mended. One word in the file is a reading of damage in BOTH scans and of neither
+page: `fraught` in that saint's Secret, where the 1861 gives `freaght` and the
+1843 `hi ght`. It is the only such word this pass produced and its row says so.
+
+THREE ENTRIES REST ON A LATIN IDENTITY RATHER THAN ON A HEADING. The Secret and
+Postcommunion of `comm-ss-faustini-iovitae-martyrum` and the Secret of
+`comm-s-romani-martyris` reprint, after orthographic folding, Latin this index
+already carries in the Commons, whose English the witness prints and this file
+already records. The identity was derived mechanically over the whole index on
+the day; the witness never sends its Common to these commemorations and the rows
+do not claim it does. The better shape is a `takes_from` on the mass, which
+belongs to the lane that owns `propers.yaml` and is named on each row.
+
+WHAT WAS REFUSED, AND WHY, because 57 rows is a large refusal. 39 are the Holy
+Week ceremonial -- the Palm Sunday procession, the Mandatum, the Good Friday
+liturgy, the Easter Vigil. The 1962 rite here is the Ordo Hebdomadae Sanctae
+instauratus of 1955 and this book is an 1861 printing of what that order
+replaced; the two do not stand in a one-to-one relation, and the pre-1955 vigil
+reads twelve prophecies where the 1962 reads four. Attaching this witness's
+English to those slots is precisely the recension error this repository records
+having made 176 times. NOT A CLAIM THAT THE WORDS DIFFER: the Exsultet, the
+Improperia and the Mandatum antiphons very likely survived the reform intact, and
+a targeted collation against a 1962 altar book should start there. 10 more are the
+three All Souls Masses' orations: the witness keeps no Mass for 2 November at all,
+and its MASSES FOR THE DEAD are a funeral, a third-seventh-thirtieth-day and an
+anniversary Mass whose orations are singular throughout -- `the soul of thy
+servant N.` -- where the 1962 sets plural orations for all the departed. Those are
+different prayers. The Tract and the Offertory are the same text in both books and
+ARE recorded, for all three forms. 5 are the great Sequences, which this witness
+prints in Latin with no English beside them, as a lay hand missal of the period
+does; the Dies irae is the exception and is refused for the opposite reason, that
+what it prints is a rhymed metrical paraphrase in two narrow columns whose order
+the text layer does not preserve. Public-domain English for all five exists in the
+nineteenth-century hymnal literature, and folding one in is a source acquisition
+under `guidance/sources.md`, not a harvest from this book. The remaining rows are
+days the witness does not keep.
+
+ONE LIMIT OF THE LEDGER ITSELF, found by writing these rows and not fixed here.
+The key is `(mass, form, proper name)`, and `palm-sunday` prints six propers all
+named `Procession Antiphon`. They cannot be told apart by that key, so the six
+share one `untranslated` row. For a refusal that covers all six alike that is
+harmless; for a translation it would not be, and nothing currently prevents one.
+
+NOTHING IN THIS PASS WAS COLLATED AGAINST A PAGE IMAGE. No row it added carries
+`collated` or `printed_page`, and none should be read as though it did. It is a
+text-layer harvest with a mechanical second-printing check over it, which is the
+weakest kind of evidence this file admits, and it is why every row carries its own
+coverage number instead of resting on a summary.
+
 The same third pass corrected one entry's provenance without touching its wording.
 `sexagesima`'s Secret cited printed p. 94, and p. 94 prints a different setting
 of the same prayer. The witness sets it twice and not identically, and the page
@@ -6927,6 +7003,805 @@ text = """
 O God, who for the salvation of souls wast pleased that blessed Francis, thy Confessor and Bishop, should become all to all: mercifully grant, that, being plentifully enriched with the sweetness of thy charity, by following his directions, and by the help of his merits, we may obtain life everlasting. Thro'.
 """
 
+[[entries]]
+mass = "advent-4"
+form = ""
+proper = "Alleluia"
+incipit = "Veni, Domine"
+witness = "cummiskey-1861"
+detector = "second-printing-partly-agrees"
+second_printing_coverage = 0.7059
+harvest_note = "The witness sets this verse in its parallel Latin and English columns at the Fourth Sunday of Advent, printing `V. Veni, Domine, et noli tardare* relaxa facinora plebis tuae Israel` beside the English recorded here, which is the two books' own join and not a reader's."
+ia_text_layer_line = 5181
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Alleluia, Alleluia. V. Come, O Lord, and delay not: release thy people Israel from their sins. Alleluia.
+"""
+
+[[entries]]
+mass = "easter-5"
+form = ""
+proper = "Greater Alleluia"
+incipit = "Surrexit Christus, et illuxit nobis"
+witness = "cummiskey-1861"
+second_printing_coverage = 0.6744
+harvest_note = "The witness prints both alleluia verses at V. SUNDAY after EASTER, the first in a single column and the second in its parallel columns beside `V. Exivi a Patre, et veni in mundum: iterum relinquo mundum, et vado ad Patrem. Alleluia`, which is the 1962's second verse word for word."
+ia_text_layer_line = 20622
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Alleluia, Alleluia. V. Christ is risen, and hath shone upon us, whom he hath redeemed with his blood. Alleluia. V. I came forth from the Father, and I came into the world: I leave the world again, and go to the Father. Alleluia.
+"""
+
+[[entries]]
+mass = "pentecost"
+form = ""
+proper = "Alleluia"
+incipit = "Emitte Spiritum tuum"
+witness = "cummiskey-1861"
+detector = "second-printing-partly-agrees"
+second_printing_coverage = 0.8333
+harvest_note = "The witness prints both verses at WHIT SUNDAY in its parallel columns, beside `V. Ps. cii. Emitte spiritum tuum et creabuntur: et renovabis faciem terrae, Alleluia` and `V. Veni, Sancte Spiritus, reple tuorum corda fidelium, et tui amoris in eis ignem accende`, which are the 1962's two verses. The witness cites the psalm as cii where the 1962 index cites 103; the citation is not carried by this file and the wording is unaffected."
+ia_text_layer_line = 21965
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Alleluia, Alleluia. V. Send forth thy spirit, and they shall be created: and thou wilt renew the face of the earth, Alleluia. V. Come, O Holy Ghost, fill the hearts of thy faithful, and kindle in them the fire of thy love.
+"""
+
+[[entries]]
+mass = "pentecost-12"
+form = ""
+proper = "Offertory"
+incipit = "Precatus est Moyses"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9677
+harvest_note = "Printed whole at XII. SUNDAY after PENTECOST under the heading `OFFERT. Exod. xxxiii`, where the 1962 index encodes Exodus 32. The books differ over the chapter and not over the words; the divergence belongs to the citation and this file carries only the English."
+ia_text_layer_line = 24734
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Moses prayed in the presence of the Lord his God, and said: Why, O Lord, art thou angry at thy people? Spare the wrath of thy soul: remember Abraham, Isaac, and Jacob, to whom thou didst swear to give a land flowing with milk and honey: and the Lord was appeased, and did not do the mischief he had threatened his people.
+"""
+
+[[entries]]
+mass = "pentecost-18"
+form = ""
+proper = "Offertory"
+incipit = "Sanctificavit Moyses"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9722
+harvest_note = "Printed whole at XVIII. SUNDAY after PENTECOST under `OFFERT. Exod. xxiv`, the same citation the 1962 index encodes."
+ia_text_layer_line = 26063
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Moses consecrated an altar to the Lord, offering whole burnt-offerings thereon, and slaying victims: he made an evening sacrifice for a sweet odour to the Lord God in the sight of the children of Israel.
+"""
+
+[[entries]]
+mass = "pentecost-19"
+form = ""
+proper = "Introit"
+incipit = "Salus populi"
+witness = "cummiskey-1861"
+detector = "second-printing-partly-agrees"
+second_printing_coverage = 0.7872
+harvest_note = "Printed whole at XIX. SUNDAY AFTER PENTECOST in the witness's parallel columns, beside `Salus populi ego sum, dicit Dominus: de quacumque tribulatione clamaverint ad me, exaudiam eos: et ero illorum Dominus in perpetuum`. THE WITNESS PRINTS THIS ANTIPHON TWICE AND RENDERS IT TWICE: at the Thursday of the September Ember week it reads `I am the salvation of my people ... in whatever tribulation they cry out to me ... and I will be their Lord forever`, and here it reads `I am the Saviour of my people ... in whatever distress they call on me ... and will be their Lord for ever`. The Sunday's own printing is the one recorded, because that is the Mass this row answers. The other reading is not an error and is not carried; it is recorded here so that a later reader meeting it does not take this row for a mistranscription."
+ia_text_layer_line = 26087
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+I am the Saviour of my people, saith the Lord: in whatever distress they call on me, I will hear them: and will be their Lord for ever. Ps. Attend, O my people, to my law, incline your ears to the words of my mouth. V. Glory.
+"""
+
+[[entries]]
+mass = "pentecost-21"
+form = ""
+proper = "Offertory"
+incipit = "Vir erat in terra Hus"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9825
+harvest_note = "Printed whole at XXI. SUNDAY AFTER PENTECOST under `OFFERT. Job i`, the same citation the 1962 index encodes."
+ia_text_layer_line = 26477
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+There was a man whose name was Job, and that man was simple and upright, and fearing God: and Satan asked to tempt him; and power was given him by the Lord over his possessions, and over his flesh: and he destroyed all his substance, and his sons: and he wounded his flesh with a grievous ulcer.
+"""
+
+[[entries]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form = ""
+proper = "Collect"
+incipit = "Deus, in cujus passione, secundum Simeonis prophetiam"
+witness = "cummiskey-1861"
+detector = "second-printing-partly-agrees"
+second_printing_coverage = 0.7857
+harvest_note = "The witness keeps this Mass and prints it whole under `ON FRIDAY IN PASSION WEEK. The SEVEN DOLOURS of the B. V. MARY.`, which is the day the 1962 keeps it on. This Collect is cued `Deus, in cujus.` and answers Deus, in cujus passione, secundum Simeonis prophetiam, dulcissimam animam gloriosae Virginis et Matris Mariae doloris gladius pertransivit."
+ia_text_layer_line = 13460
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, in whose passion, according to Simeon's prophecy, the sword of grief pierced the sweet soul of glorious Mary, the Virgin-mother; grant in thy mercy, that we, who with honour commemorate her sorrows and sufferings, may be helped by the glorious merits and prayers of all the saints that faithfully stood by thy cross, so as to partake of the happy fruits of thy passion. Who liveth.
+"""
+
+[[entries]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form = ""
+proper = "Gradual"
+incipit = "Dolorosa et lacrimabilis es, Virgo Maria"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.913
+harvest_note = "Printed under `GRAD.` in the same Mass, answering Dolorosa et lacrimabilis es, Virgo Maria, stans juxta Crucem Domini Jesu Filii tui Redemptoris. The witness renders only the antiphon and not the verse Virgo Dei Genetrix the 1962 sets after it; what is recorded is what it prints."
+ia_text_layer_line = 13491
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Thou art overwhelmed with grief and in tears, O Virgin Mary, standing by the cross of our Lord Jesus thy Son, thy Redeemer.
+"""
+
+[[entries]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form = ""
+proper = "Tract"
+incipit = "Stabat sancta Maria, caeli Regina et mundi Domina"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9302
+harvest_note = "Printed under `TRACT.` in the same Mass, with the verse, answering Stabat sancta Maria, caeli Regina et mundi Domina and its V. O vos omnes."
+ia_text_layer_line = 13495
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Holy Mary, the Queen of heaven and Lady of the world, stood full of grief by the cross of our Lord Jesus Christ. V. O all you that pass by the way, attend and see if there be any sorrow like unto mine.
+"""
+
+[[entries]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form = ""
+proper = "Secret"
+incipit = "Offerimus tibi preces et hostias, Domine Jesu Christe"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9531
+harvest_note = "Printed under `SECRET.` in the same Mass, answering Offerimus tibi preces et hostias, Domine Jesu Christe, and closing `Who livest` for Qui vivis, as the witness closes every oration addressed to the Son."
+ia_text_layer_line = 13590
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We offer thee, O Lord Jesus Christ, our prayers and sacrifices, humbly intreating thee, that we, who, in our prayers of this day, commemorate the transfixion of the most sweet soul of blessed Mary thy mother, may receive our reward with her and her blessed companions that stood under thy cross, this holy assembly being multiplied, through the merits of thy death. Who livest.
+"""
+
+[[entries]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form = ""
+proper = "Communion"
+incipit = "Felices sensus beatae Mariae Virginis"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 1.0
+harvest_note = "Printed under `COMM.` in the same Mass, answering Felices sensus beatae Mariae Virginis, qui sine morte meruerunt martyrii palmam sub Cruce Domini."
+ia_text_layer_line = 13602
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Happy are the senses of the blessed Virgin Mary, who, without dying, merited the crown of martyrdom under the cross of the Lord.
+"""
+
+[[entries]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form = ""
+proper = "Postcommunion"
+incipit = "Sacrificia, quae sumpsimus, Domine Jesu Christe"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9744
+harvest_note = "Printed under `P. COMM.` in the same Mass and cued `Sacrificia.`, answering Sacrificia, quae sumpsimus, Domine Jesu Christe."
+ia_text_layer_line = 13606
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, O Lord Jesus Christ, that the sacrifice we have partaken of, while with devotion we celebrate the transfixion of thy blessed Virgin-mother, may, through thy mercy, obtain for us the effect of every salutary good. Who livest.
+"""
+
+[[entries]]
+mass = "s-bibianae-virginis-martyris"
+form = ""
+proper = "Collect"
+incipit = "Deus, omnium largitor bonorum"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9
+harvest_note = "The witness keeps the day -- `December II. St. BIBIANA, v. m.` -- directs `All as in Mass XVII. p. 496, except`, and sets this Collect proper to it, cued `Deus, omnium.` and answering Deus, omnium largitor bonorum, qui in famula tua Bibiana cum virginitatis flore martyrii palmam conjunxisti."
+ia_text_layer_line = 30822
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, the bestower of all good gifts, who in thy servant Bibiana joinedst the palm of martyrdom with the flower of virginity, grant, that through her intercession, our hearts may be united to thee by charity; and that being delivered from all dangers, we may obtain everlasting rewards. Thro'.
+"""
+
+[[entries]]
+mass = "s-andreae-corsini-episcopi-confessoris"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui in Ecclesia tua"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9189
+harvest_note = "The witness keeps the day -- `IV. St. ANDREW CORSINI, bp c.` -- and sets this Collect proper to it, cued `Deus, qui.` and answering Deus, qui in Ecclesia tua nova semper instauras exempla virtutum."
+ia_text_layer_line = 32400
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who in every age furnishest the Church with fresh examples of virtue: grant thy faithful so closely to imitate blessed Andrew, thy Confessor and Bishop, as to be, one day, partakers in his reward. Thro'.
+"""
+
+[[entries]]
+mass = "s-scholasticae-virginis"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui animam beatae"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.96
+harvest_note = "The witness keeps the day -- `X. St. SCHOLASTICA, v.` -- and sets this Collect proper to it, cued `Deus, qui.` and answering Deus, qui animam beatae Virginis tuae Scholasticae ad ostendendam innocentiae viam in columbae specie caelum penetrare fecisti."
+ia_text_layer_line = 32510
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who to recommend to us innocence of life, wast pleased to let the soul of thy blessed Virgin Scholastica ascend to heaven in the shape of a dove: grant by her merits and prayers, that we may lead innocent lives here, and ascend to eternal joys hereafter. Thro'.
+"""
+
+[[entries]]
+mass = "comm-s-valentini-presbyteri-martyris"
+form = ""
+proper = "Collect"
+incipit = "Praesta, quaesumus, omnipotens"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9688
+harvest_note = "The witness keeps the day -- `XIV. St. VALENTINE, pr. and m.` -- and sets this Collect proper to it, cued `Praesta.` and answering Praesta, quaesumus, omnipotens Deus: ut, qui beati Valentini Martyris tui natalicia colimus. IT READS `by his instruction` WHERE THE LATIN READS ejus intercessione, AND THAT IS THE PRINTING AND NOT THE SCAN: the 1843 second printing renders the same three words the same way. Reproduced as printed."
+ia_text_layer_line = 32527
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that we who solemnize the festival of blessed Valentine, thy Martyr, may, by his instruction be delivered from all the evils that threaten us. Thro'.
+"""
+
+[[entries]]
+mass = "comm-s-valentini-presbyteri-martyris"
+form = ""
+proper = "Secret"
+incipit = "Suscipe, quaesumus, Domine"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9643
+harvest_note = "Printed under `SECRET.` in the same Mass, answering Suscipe, quaesumus, Domine, munera dignanter oblata."
+ia_text_layer_line = 32533
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Be appeased, O Lord, we beseech thee, with the offerings we have made, and by the intercession of blessed Valentine, thy Martyr, defend us from all dangers. Thro'.
+"""
+
+[[entries]]
+mass = "comm-s-valentini-presbyteri-martyris"
+form = ""
+proper = "Postcommunion"
+incipit = "Sit nobis, Domine"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9688
+harvest_note = "Printed under `P. COMM.` in the same Mass and cued `Sit nobis.`, answering Sit nobis, Domine, reparatio mentis et corporis caeleste mysterium."
+ia_text_layer_line = 32538
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May this divine sacrament strengthen us, O Lord, both in body and soul, that by the intercession of blessed Valentine, thy Martyr, we may receive the effects of what we celebrate. Thro'.
+"""
+
+[[entries]]
+mass = "s-petri-damiani-episcopi-confessoris-ecclesiae"
+form = ""
+proper = "Collect"
+incipit = "Concede nos, quaesumus"
+witness = "cummiskey-1861"
+second_printing_coverage = 0.4375
+harvest_note = "Printed in the witness's APPENDIX, not in its Proper of Saints, under `Feb. 23. ST. PETER DAMIAN.` with the direction `Mass XII. In Medio Ecclesiae, p. 485, except`, which is the Common of Doctors the 1962 also sends the day to. Cued `Concede.` and answering Concede nos, quaesumus, omnipotens Deus: beati Petri Confessoris tui atque Pontificis monita et exempla sectari. NO SECOND WITNESS REACHES THIS ROW: the appendix carries feasts added after 1843 and the 1843 printing has no counterpart to it, so this reading rests on one optical text layer alone."
+ia_text_layer_line = 41841
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant unto us, we beseech thee, Almighty God, to follow the counsel and example of blessed Peter, thy Confessor and Bishop, that by despising earthly things, we may attain unto everlasting joys.
+"""
+
+[[entries]]
+mass = "s-casimiri-confessoris"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui inter regales"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9615
+harvest_note = "The witness keeps the day -- `IV. St. CASIMIR, c.` -- and sets this Collect proper to it, cued `Deus, qui.` and answering Deus, qui inter regales delicias et mundi illecebras sanctum Casimirum virtute constantiae roborasti."
+ia_text_layer_line = 32673
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who amidst the delights of a court, and the attractive snares of the world, didst preserve holy Casimir constant and faithful in thy service: grant, we beseech thee, that by his intercession, thy people may despise the transitory things of this world, and eagerly pursue those that are everlasting. Thro'.
+"""
+
+[[entries]]
+mass = "s-franciscae-romanae-viduae"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui beatam Franciscam"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9474
+harvest_note = "The witness keeps the day -- `IX. St. FRANCES, w.` -- and sets this Collect proper to it, cued `Deus.` and answering Deus, qui beatam Franciscam famulam tuam, inter cetera gratiae tuae dona, familiari Angeli consuetudine decorasti. The 1861 scan is damaged at the last clause and renders `into their idt us`; the 1843 second printing reads `into their society` there, and that is what is recorded. The word was taken from the second printing and not reconstructed."
+ia_text_layer_line = 32725
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who amongst other privileges of thy grace didst honour blessed Frances, thy handmaid, with the familiar company of Angels: grant, we beseech thee, by her prayers, that we also may be admitted into their society. Thro'.
+"""
+
+[[entries]]
+mass = "s-gregorii-i-papae-confessoris-ecclesiae"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui animae famuli"
+witness = "cummiskey-1861"
+detector = "second-printing-partly-agrees"
+second_printing_coverage = 0.8857
+harvest_note = "The witness keeps the day -- `XII. St. GREGORY, p. c.` -- and sets this Collect proper to it, cued `Deus, qui.` and answering Deus, qui animae famuli tui Gregorii aeternae beatitudinis praemia contulisti. It does not print this day's Secret or Postcommunion; both stand untranslated below."
+ia_text_layer_line = 32798
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who hast rewarded the soul of blessed Gregory, thy servant, with eternal bliss: mercifully grant that we who are oppressed by the weight of our sins, may find relief by his intercession. Thro'.
+"""
+
+[[entries]]
+mass = "s-patricii-episcopi-confessoris"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui ad praedicandam"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9231
+harvest_note = "The witness keeps the day -- `XVII. St. PATRICK, ap. and patron of Ireland.` -- and sets this Collect proper to it, cued `Deus, qui.` and answering Deus, qui ad praedicandam gentibus gloriam tuam beatum Patricium Confessorem atque Pontificem mittere dignatus es."
+ia_text_layer_line = 32844
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who wast pleased to send blessed Patrick thy Bishop and Confessor, to preach thy glory to the Gentiles: grant, that by his merits and intercession we may, through thy grace, be enabled to keep thy commandments. Thro'.
+"""
+
+[[entries]]
+mass = "s-vincentii-ferrerii-confessoris"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui Ecclesiam tuam"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9744
+harvest_note = "The witness keeps the day -- `V. St. VINCENT FERRERIUS, c.` -- and sets this Collect proper to it, cued `Deus.` and answering Deus, qui Ecclesiam tuam beati Vincentii Confessoris tui meritis et praedicatione illustrare dignatus es."
+ia_text_layer_line = 33086
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who wast pleased to enlighten thy Church by the virtues and preaching of blessed Vincent, thy confessor: grant, that we thy servants may be instructed by his example, and by his prayers, delivered from all evil. Thro'.
+"""
+
+[[entries]]
+mass = "comm-ss-tiburtii-valeriani-maximi-martyrum"
+form = ""
+proper = "Collect"
+incipit = "Praesta, quaesumus, omnipotens"
+witness = "cummiskey-1861"
+detector = "second-printing-partly-agrees"
+second_printing_coverage = 0.8519
+harvest_note = "The witness keeps the day -- `XIV. St. TIBURTIUS, &c. mm.` -- and sets this Collect proper to it, cued `Praesta.` and naming all three martyrs, answering Praesta, quaesumus, omnipotens Deus: ut, qui sanctorum Martyrum tuorum Tiburtii, Valeriani et Maximi solemnia colimus."
+ia_text_layer_line = 33157
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that we who solemnize the festival of thy holy Martyrs, Tiburtius, Valerian, and Maximus, may likewise imitate their virtues. Thro'.
+"""
+
+[[entries]]
+mass = "comm-ss-tiburtii-valeriani-maximi-martyrum"
+form = ""
+proper = "Secret"
+incipit = "Haec hostia, quaesumus"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9444
+harvest_note = "Printed under `SECRET.` in the same Mass, answering Haec hostia, quaesumus, Domine, quam sanctorum Martyrum tuorum natalicia recensentes offerimus. THE WITNESS RENDERS THIS LATIN TWICE AND DIFFERENTLY: at St Prisca it reads `the sacrifice we offer in honour of the martyrdom of thy saints`, and here `the sacrifice which we offer thee in honour of the triumphs of thy Martyrs`. The day's own printing is the one recorded. Both printings agree on this day's wording."
+ia_text_layer_line = 33163
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We beseech thee, O Lord, that the sacrifice which we offer thee in honour of the triumphs of thy Martyrs, may loose the bonds of our sins, and procure us the gifts of thy mercy. Thro'.
+"""
+
+[[entries]]
+mass = "comm-ss-tiburtii-valeriani-maximi-martyrum"
+form = ""
+proper = "Postcommunion"
+incipit = "Sacro munere satiati"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 1.0
+harvest_note = "Printed under `P COMM.` in the same Mass and cued `Sacro munere.`, answering Sacro munere satiati, supplices te, Domine, deprecamur."
+ia_text_layer_line = 33167
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being filled with thy heavenly gifts, we humbly beseech thee, O Lord, that what we perform as an homage due to thee, may avail us to salvation. Thro'.
+"""
+
+[[entries]]
+mass = "s-fidelis-sigmaringa-martyris"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui beatum Fidelem"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9857
+harvest_note = "The witness keeps the day -- `XXIV. St. FIDELIS, m.` -- and sets this Collect proper to it, cued `Deus, qui.` and answering Deus, qui beatum Fidelem, seraphico spiritus ardore succensum, in verae fidei propagatione martyrii palma et gloriosis miraculis decorare dignatus es."
+ia_text_layer_line = 33271
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who didst fill the heart of blessed Fidelis with the fire of seraphic love; and whilst he laboured in the propagation of the true faith, didst honour him with the crown of martyrdom and the gift of miracles: grant, we beseech thee, that by his merits and intercession, we may be so confirmed by thy grace, as to be found faithful in thy service even unto death. Thro'.
+"""
+
+[[entries]]
+mass = "s-catharinae-senensis-virginis"
+form = ""
+proper = "Collect"
+incipit = "Da, quaesumus, omnipotens"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 1.0
+harvest_note = "The witness keeps the day -- `V. St. CATHARINE of SIENNA, v.` -- and sets this Collect proper to it, cued `Da, quaesumus.` and answering Da, quaesumus, omnipotens Deus: ut, qui beatae Catharinae Virginis tuae natalicia colimus. Both printings read `by the example in her eminent virtues`, and the preposition is reproduced as printed."
+ia_text_layer_line = 33762
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that we who celebrate the festival of blessed Catharine, thy Virgin, may rejoice in her yearly solemnity, and profit by the example in her eminent virtues. Thro'.
+"""
+
+[[entries]]
+mass = "s-catharinae-senensis-virginis"
+form = ""
+proper = "Secret"
+incipit = "Ascendant ad te, Domine"
+witness = "cummiskey-1861"
+detector = "second-printing-partly-agrees"
+second_printing_coverage = 0.8571
+harvest_note = "Printed under `SECRET.` in the same Mass, answering Ascendant ad te, Domine, quas in beatae Catharinae solemnitate offerimus, preces, et hostia salutaris, virgineo fragrans odore. BOTH SCANS ARE DAMAGED AT ONE WORD: the 1861 renders it `freaght` and the 1843 `hi ght`, where the sense of virgineo fragrans odore and the shape of the 1861's letters give `fraught`. That word is a reading of two damaged scans and not a collation; it is the only word in this row that has not been seen intact in either printing."
+ia_text_layer_line = 33769
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the prayers we offer on the festival of blessed Catharine ascend to thee, O Lord, together with the victim of our salvation, fraught with heavenly sweetness. Thro'.
+"""
+
+[[entries]]
+mass = "s-catharinae-senensis-virginis"
+form = ""
+proper = "Postcommunion"
+incipit = "Aeternitatem nobis, Domine"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9697
+harvest_note = "Printed under `P. COMM.` in the same Mass and cued `Aeternitatem.`, answering Aeternitatem nobis, Domine, conferat, qua pasti sumus, mensa caelestis."
+ia_text_layer_line = 33774
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, O Lord, that we may have eternal life communicated to us by the nourishment we have received at thy holy table, which supported the temporal life of blessed Catharine thy virgin. Thro'.
+"""
+
+[[entries]]
+mass = "s-elisabeth-viduae"
+form = ""
+proper = "Collect"
+incipit = "Tuorum corda fidelium"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9189
+harvest_note = "The witness keeps the day -- `XIX. St. ELIZABETH, w.` in November -- and sets this Collect proper to it, cued `Tuorum.` and answering Tuorum corda fidelium, Deus miserator, illustra: et, beatae Elisabeth precibus gloriosis."
+ia_text_layer_line = 40117
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Enlighten the hearts of thy faithful, O most merciful God, and by the prayers of blessed Elizabeth, grant we may despise the pleasing things of this world, and ever be refreshed with the comforts of heaven. Thro'.
+"""
+
+[[entries]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "First Mass (Ad primam Missam)"
+proper = "Offertory"
+incipit = "Domine Jesu Christe, Rex gloriae"
+witness = "cummiskey-1861"
+detector = "second-printing-partly-agrees"
+second_printing_coverage = 0.7292
+harvest_note = "The witness keeps no Mass for 2 November: its Proper of Saints goes from All Saints to `IV. St. CHARLES BORROMEUS`. It does print this Offertory whole, in its parallel Latin and English columns, in its MASSES FOR THE DEAD, beside `Domine Jesu Christe, Rex gloriae, libera animas omnium fidelium defunctorum de poenis inferni, et de profundo lacu` -- the same text, word for word, that the 1962 sets at all three of this day's Masses. The join is the Latin the witness prints beside its own English and not a reader's alignment, and it holds for all three forms because the 1962 prints one Offertory for all three. What the witness does NOT reach is this day's proper orations; those stand untranslated below."
+ia_text_layer_line = 30218
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Lord Jesus Christ, King of Glory, deliver the souls of all the faithful departed from the flames of hell, and from the deep pit. Deliver them from the lion's mouth, lest hell swallow them, lest they fall into darkness: and let the standard bearer, St. Michael, bring them into the holy light: * Which thou promisedst of old to Abraham and his posterity. V. We offer thee, O Lord, a sacrifice of praise and prayers: accept them in behalf of the souls we commemorate this day: and let them pass from death to life. * Which, &c.
+"""
+
+[[entries]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "First Mass (Ad primam Missam)"
+proper = "Tract"
+incipit = "Absolve, Domine, animas omnium fidelium defunctorum"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9744
+harvest_note = "As the Offertory above: not printed at 2 November, which the witness does not keep, but printed whole in its MASSES FOR THE DEAD beside `Absolve, Domine, animas omnium fidelium defunctorum ab omni vinculo delictorum` with both its verses, which is the text the 1962 sets at all three of this day's Masses."
+ia_text_layer_line = 29885
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Release, O Lord, the souls of all the faithful departed from the bonds of their sins. V. And by the assistance of thy grace may they escape the sentence of condemnation. V. And enjoy the bliss of eternal light.
+"""
+
+[[entries]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "Second Mass (Ad secundam Missam)"
+proper = "Offertory"
+incipit = "Domine Jesu Christe, Rex gloriae"
+witness = "cummiskey-1861"
+detector = "second-printing-partly-agrees"
+second_printing_coverage = 0.7292
+harvest_note = "The witness keeps no Mass for 2 November: its Proper of Saints goes from All Saints to `IV. St. CHARLES BORROMEUS`. It does print this Offertory whole, in its parallel Latin and English columns, in its MASSES FOR THE DEAD, beside `Domine Jesu Christe, Rex gloriae, libera animas omnium fidelium defunctorum de poenis inferni, et de profundo lacu` -- the same text, word for word, that the 1962 sets at all three of this day's Masses. The join is the Latin the witness prints beside its own English and not a reader's alignment, and it holds for all three forms because the 1962 prints one Offertory for all three. What the witness does NOT reach is this day's proper orations; those stand untranslated below."
+ia_text_layer_line = 30218
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Lord Jesus Christ, King of Glory, deliver the souls of all the faithful departed from the flames of hell, and from the deep pit. Deliver them from the lion's mouth, lest hell swallow them, lest they fall into darkness: and let the standard bearer, St. Michael, bring them into the holy light: * Which thou promisedst of old to Abraham and his posterity. V. We offer thee, O Lord, a sacrifice of praise and prayers: accept them in behalf of the souls we commemorate this day: and let them pass from death to life. * Which, &c.
+"""
+
+[[entries]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "Second Mass (Ad secundam Missam)"
+proper = "Tract"
+incipit = "Absolve, Domine, animas omnium fidelium defunctorum"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9744
+harvest_note = "As the Offertory above: not printed at 2 November, which the witness does not keep, but printed whole in its MASSES FOR THE DEAD beside `Absolve, Domine, animas omnium fidelium defunctorum ab omni vinculo delictorum` with both its verses, which is the text the 1962 sets at all three of this day's Masses."
+ia_text_layer_line = 29885
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Release, O Lord, the souls of all the faithful departed from the bonds of their sins. V. And by the assistance of thy grace may they escape the sentence of condemnation. V. And enjoy the bliss of eternal light.
+"""
+
+[[entries]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "Third Mass (Ad tertiam Missam)"
+proper = "Offertory"
+incipit = "Domine Jesu Christe, Rex gloriae"
+witness = "cummiskey-1861"
+detector = "second-printing-partly-agrees"
+second_printing_coverage = 0.7292
+harvest_note = "The witness keeps no Mass for 2 November: its Proper of Saints goes from All Saints to `IV. St. CHARLES BORROMEUS`. It does print this Offertory whole, in its parallel Latin and English columns, in its MASSES FOR THE DEAD, beside `Domine Jesu Christe, Rex gloriae, libera animas omnium fidelium defunctorum de poenis inferni, et de profundo lacu` -- the same text, word for word, that the 1962 sets at all three of this day's Masses. The join is the Latin the witness prints beside its own English and not a reader's alignment, and it holds for all three forms because the 1962 prints one Offertory for all three. What the witness does NOT reach is this day's proper orations; those stand untranslated below."
+ia_text_layer_line = 30218
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Lord Jesus Christ, King of Glory, deliver the souls of all the faithful departed from the flames of hell, and from the deep pit. Deliver them from the lion's mouth, lest hell swallow them, lest they fall into darkness: and let the standard bearer, St. Michael, bring them into the holy light: * Which thou promisedst of old to Abraham and his posterity. V. We offer thee, O Lord, a sacrifice of praise and prayers: accept them in behalf of the souls we commemorate this day: and let them pass from death to life. * Which, &c.
+"""
+
+[[entries]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "Third Mass (Ad tertiam Missam)"
+proper = "Tract"
+incipit = "Absolve, Domine, animas omnium fidelium defunctorum"
+witness = "cummiskey-1861"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9744
+harvest_note = "As the Offertory above: not printed at 2 November, which the witness does not keep, but printed whole in its MASSES FOR THE DEAD beside `Absolve, Domine, animas omnium fidelium defunctorum ab omni vinculo delictorum` with both its verses, which is the text the 1962 sets at all three of this day's Masses."
+ia_text_layer_line = 29885
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Release, O Lord, the souls of all the faithful departed from the bonds of their sins. V. And by the assistance of thy grace may they escape the sentence of condemnation. V. And enjoy the bliss of eternal light.
+"""
+
+[[entries]]
+mass = "comm-ss-faustini-iovitae-martyrum"
+form = ""
+proper = "Secret"
+incipit = "Adesto, Domine, supplicationibus"
+witness = "cummiskey-1861"
+printed_page = "476"
+detector = "second-printing-agrees"
+second_printing_coverage = 1.0
+harvest_note = "This 1962 entry does not print an oration of its own: it reprints, character for character after orthographic folding, the Latin the same index carries at commune-plurimorum-martyrum-1, whose English the witness prints in its Common of Saints under MASS VII. Intret, of MANY MARTYRS, p. 475 and which is recorded in this file at that mass. The identity of the two Latin texts was derived mechanically over this index on 2026-08-07 and is the whole of the join: the witness never sends its Common to this commemoration, and this row does not claim it does. What it claims is narrower and checkable -- that the 1962 sets the same words here, and that this is the witness's English for those words. The alternative shape, a `takes_from` on the mass so that neither the Latin nor the English is carried twice, is the better one and belongs to the lane that owns propers.yaml; it is named here rather than taken."
+ia_text_layer_line = 0
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Attend, O Lord, to our earnest prayers, which we put up in memory of thy saints ; and since we trust not in our own righteousness, may we be helped by the merits of those, who were well-pleasing to thee. Thro'.
+"""
+
+[[entries]]
+mass = "comm-ss-faustini-iovitae-martyrum"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, Domine, salutaribus"
+witness = "cummiskey-1861"
+printed_page = "476"
+detector = "second-printing-agrees"
+second_printing_coverage = 1.0
+harvest_note = "This 1962 entry does not print an oration of its own: it reprints, character for character after orthographic folding, the Latin the same index carries at commune-plurimorum-martyrum-1, whose English the witness prints in its Common of Saints under MASS VII. Intret, of MANY MARTYRS, p. 475 and which is recorded in this file at that mass. The identity of the two Latin texts was derived mechanically over this index on 2026-08-07 and is the whole of the join: the witness never sends its Common to this commemoration, and this row does not claim it does. What it claims is narrower and checkable -- that the 1962 sets the same words here, and that this is the witness's English for those words. The alternative shape, a `takes_from` on the mass so that neither the Latin nor the English is carried twice, is the better one and belongs to the lane that owns propers.yaml; it is named here rather than taken."
+ia_text_layer_line = 0
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being filled with thy saving mysteries, we beseech thee, O Lord, that we may be helped by their intercession, whose festivals we celebrate. Thro'.
+"""
+
+[[entries]]
+mass = "comm-s-romani-martyris"
+form = ""
+proper = "Secret"
+incipit = "Muneribus nostris, quaesumus"
+witness = "cummiskey-1861"
+printed_page = "467"
+detector = "second-printing-agrees"
+second_printing_coverage = 0.9048
+harvest_note = "This 1962 entry does not print an oration of its own: it reprints, character for character after orthographic folding, the Latin the same index carries at commune-unius-martyris-3, whose English the witness prints in its Common of Saints under MASS III. In virtute, of a MARTYR not a BISHOP, p. 466 and which is recorded in this file at that mass. The identity of the two Latin texts was derived mechanically over this index on 2026-08-07 and is the whole of the join: the witness never sends its Common to this commemoration, and this row does not claim it does. What it claims is narrower and checkable -- that the 1962 sets the same words here, and that this is the witness's English for those words. The alternative shape, a `takes_from` on the mass so that neither the Latin nor the English is carried twice, is the better one and belongs to the lane that owns propers.yaml; it is named here rather than taken."
+ia_text_layer_line = 0
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Receive, O Lord, we beseech thee, our offerings and prayers: purify us by these heavenly mysteries, and mercifully hear us. Thro'.
+"""
+
 [[untranslated]]
 mass = "commune-doctorum-pontificis"
 form = ""
@@ -7118,3 +7993,345 @@ mass = "commune-dedicationis-ecclesiae"
 form = ""
 proper = "Postcommunion (In ipso die Dedicationis)"
 reason = "the witness prints one Mass of the Dedication, the anniversary, whose orations are recorded here. The 1962 Missal prints a second set for the day of the dedication itself, and a second Secret for the anniversary said outside the dedicated church; the witness has no counterpart to either and its one Secret does not say which case it answers"
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Blessing of the Palms"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "First Antiphon at the Distribution of Palms"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Second Antiphon at the Distribution of Palms"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Versicle at the Beginning of the Procession"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Procession Antiphon"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Hymn to Christ the King"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Responsory at the Entrance into the Church"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "palm-sunday"
+form = ""
+proper = "Oration to Conclude the Procession"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Mandatum Antiphon 8"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Prayer of the Mandatum"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Hymn at the Translation of the Blessed Sacrament"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Prayer after the Prostration"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercessions"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Showing of the Cross"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Improperia"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Antiphons at the Translation of the Blessed Sacrament"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "First Prayer after Communion"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Second Prayer after Communion"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "good-friday"
+form = ""
+proper = "Third Prayer after Communion"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Blessing of the New Fire"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Blessing of the Paschal Candle"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Blessing of the Lighted Candle"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Lumen Christi"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Exsultet (Praeconium paschale)"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Oration after the First Prophecy"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Oration after the Second Prophecy"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Oration after the Third Prophecy"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Oration after the Fourth Prophecy"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Litany of the Saints, first part"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Blessing of the Baptismal Water"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Prayer at the Font"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Renewal of Baptismal Promises"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-vigil"
+form = ""
+proper = "Litany of the Saints, second part"
+reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation has not been run; when it is, these rows are the place to start."
+
+[[untranslated]]
+mass = "easter-sunday"
+form = ""
+proper = "Sequence"
+reason = "the witness prints this Sequence in Latin only. It sets the whole text under `The PROSE.` or `The SEQUENCE, or PROSE.` with no English beside it, which is what a lay hand missal of this period does with the sung sequences. There is no English here to record and none is composed. A public-domain English for these four sequences exists in the nineteenth-century hymnal literature -- Caswall, Neale, Aylward -- and folding one of those in is a source acquisition under guidance/sources.md, not a harvest from this book."
+
+[[untranslated]]
+mass = "pentecost"
+form = ""
+proper = "Sequence"
+reason = "the witness prints this Sequence in Latin only. It sets the whole text under `The PROSE.` or `The SEQUENCE, or PROSE.` with no English beside it, which is what a lay hand missal of this period does with the sung sequences. There is no English here to record and none is composed. A public-domain English for these four sequences exists in the nineteenth-century hymnal literature -- Caswall, Neale, Aylward -- and folding one of those in is a source acquisition under guidance/sources.md, not a harvest from this book."
+
+[[untranslated]]
+mass = "corpus-christi"
+form = ""
+proper = "Sequence"
+reason = "the witness prints this Sequence in Latin only. It sets the whole text under `The PROSE.` or `The SEQUENCE, or PROSE.` with no English beside it, which is what a lay hand missal of this period does with the sung sequences. There is no English here to record and none is composed. A public-domain English for these four sequences exists in the nineteenth-century hymnal literature -- Caswall, Neale, Aylward -- and folding one of those in is a source acquisition under guidance/sources.md, not a harvest from this book."
+
+[[untranslated]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form = ""
+proper = "Sequence"
+reason = "the witness prints this Sequence in Latin only. It sets the whole text under `The PROSE.` or `The SEQUENCE, or PROSE.` with no English beside it, which is what a lay hand missal of this period does with the sung sequences. There is no English here to record and none is composed. A public-domain English for these four sequences exists in the nineteenth-century hymnal literature -- Caswall, Neale, Aylward -- and folding one of those in is a source acquisition under guidance/sources.md, not a harvest from this book."
+
+[[untranslated]]
+mass = "septem-dolorum-beatae-mariae-virginis"
+form = ""
+proper = "Sequence"
+reason = "the witness prints this Sequence in Latin only. It sets the whole text under `The PROSE.` or `The SEQUENCE, or PROSE.` with no English beside it, which is what a lay hand missal of this period does with the sung sequences. There is no English here to record and none is composed. A public-domain English for these four sequences exists in the nineteenth-century hymnal literature -- Caswall, Neale, Aylward -- and folding one of those in is a source acquisition under guidance/sources.md, not a harvest from this book."
+
+[[untranslated]]
+mass = "s-ioannis-matha-confessoris"
+form = ""
+proper = "Collect"
+reason = "the witness does not keep this day. Its Proper of Saints has no heading for it and its APPENDIX, which carries the feasts added between 1843 and 1861, does not add it. There is therefore no Mass here whose English could answer this oration, and nothing was found by searching the text layer either; the absence is recorded from the two places that would have to carry it."
+
+[[untranslated]]
+mass = "comm-s-pauli-apostoli"
+form = ""
+proper = "Collect"
+reason = "the witness does not keep this day. Its Proper of Saints has no heading for it and its APPENDIX, which carries the feasts added between 1843 and 1861, does not add it. There is therefore no Mass here whose English could answer this oration, and nothing was found by searching the text layer either; the absence is recorded from the two places that would have to carry it."
+
+[[untranslated]]
+mass = "comm-s-pauli-apostoli"
+form = ""
+proper = "Secret"
+reason = "the witness does not keep this day. Its Proper of Saints has no heading for it and its APPENDIX, which carries the feasts added between 1843 and 1861, does not add it. There is therefore no Mass here whose English could answer this oration, and nothing was found by searching the text layer either; the absence is recorded from the two places that would have to carry it."
+
+[[untranslated]]
+mass = "comm-s-pauli-apostoli"
+form = ""
+proper = "Postcommunion"
+reason = "the witness does not keep this day. Its Proper of Saints has no heading for it and its APPENDIX, which carries the feasts added between 1843 and 1861, does not add it. There is therefore no Mass here whose English could answer this oration, and nothing was found by searching the text layer either; the absence is recorded from the two places that would have to carry it."
+
+[[untranslated]]
+mass = "ss-perpetuae-felicitatis-martyrum"
+form = ""
+proper = "Postcommunion"
+reason = "the witness does not keep this day. Its Proper of Saints has no heading for it and its APPENDIX, which carries the feasts added between 1843 and 1861, does not add it. There is therefore no Mass here whose English could answer this oration, and nothing was found by searching the text layer either; the absence is recorded from the two places that would have to carry it."
+
+[[untranslated]]
+mass = "s-gregorii-i-papae-confessoris-ecclesiae"
+form = ""
+proper = "Secret"
+reason = "the witness keeps the day and prints its Collect, which is recorded above, but it appoints nothing proper in this slot. It directs the rest of the Mass to its Common and sets no Secret or Postcommunion under `XII. St. GREGORY, p. c.`, so the prayer the 1962 appoints here -- Annue nobis, quaesumus -- is not printed at this day at all. Its Common's oration is a different prayer and is not transferred: that would be this file deciding that a Common the witness never sends this day to answers this day, which is refused elsewhere in this file on the same ground."
+
+[[untranslated]]
+mass = "s-gregorii-i-papae-confessoris-ecclesiae"
+form = ""
+proper = "Postcommunion"
+reason = "the witness keeps the day and prints its Collect, which is recorded above, but it appoints nothing proper in this slot. It directs the rest of the Mass to its Common and sets no Secret or Postcommunion under `XII. St. GREGORY, p. c.`, so the prayer the 1962 appoints here -- Deus, qui beatum Gregorium -- is not printed at this day at all. Its Common's oration is a different prayer and is not transferred: that would be this file deciding that a Common the witness never sends this day to answers this day, which is refused elsewhere in this file on the same ground."
+
+[[untranslated]]
+mass = "s-bedae-venerabilis-confessoris-ecclesiae-doctoris"
+form = ""
+proper = "Collect"
+reason = "the witness does not keep this day. Its Proper of Saints has no heading for it and its APPENDIX, which carries the feasts added between 1843 and 1861, does not add it. There is therefore no Mass here whose English could answer this oration, and nothing was found by searching the text layer either; the absence is recorded from the two places that would have to carry it."
+
+[[untranslated]]
+mass = "comm-s-romani-martyris"
+form = ""
+proper = "Postcommunion"
+reason = "the witness does not keep this commemoration, and unlike its Secret this Postcommunion has no twin already carrying the witness's English: Quaesumus, omnipotens Deus occurs at no other locus in this index whose English is recorded. The mechanical comparison of every composed Latin text in this file against every other was run on 2026-08-07 and returned nothing for this slot, which is a search and not a reading, so the absence is recorded as the weaker kind."
+
+[[untranslated]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "First Mass (Ad primam Missam)"
+proper = "Collect"
+reason = "the witness keeps no Mass for 2 November -- its Proper of Saints goes from All Saints to `IV. St. CHARLES BORROMEUS` -- and its MASSES FOR THE DEAD are not this day's three Masses. They are a Mass for one named person on the day of decease, a Mass for the third, seventh and thirtieth day, and an anniversary Mass, and their orations are singular throughout: `the soul of thy servant N. which thou hast this day called out of the world`. The 1962's three All Souls Masses set plural orations for all the departed -- animabus famulorum famularumque tuarum -- and they are different prayers, not a different rendering of one prayer. Attaching a funeral oration for one person to this day would be an invention with a page number attached to it. The Tract and the Offertory ARE the same text in both books and are recorded above; the orations are not."
+
+[[untranslated]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "First Mass (Ad primam Missam)"
+proper = "Sequence"
+reason = "the witness prints the Dies irae with an English beside it, and it is a rhymed metrical paraphrase in the manner of Roscommon, set in two narrow parallel columns. Two things make it unusable here. It is a verse paraphrase and not a rendering of the sequence's words, so recording it as this proper's English would put a poem where a translation is read. And the text layer does not preserve the column order: the Latin and the English interleave line by line, so reconstructing the English would mean choosing an order the scan does not give, which is composition. The page images would settle the second objection and not the first."
+
+[[untranslated]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "First Mass (Ad primam Missam)"
+proper = "Secret"
+reason = "the witness keeps no Mass for 2 November -- its Proper of Saints goes from All Saints to `IV. St. CHARLES BORROMEUS` -- and its MASSES FOR THE DEAD are not this day's three Masses. They are a Mass for one named person on the day of decease, a Mass for the third, seventh and thirtieth day, and an anniversary Mass, and their orations are singular throughout: `the soul of thy servant N. which thou hast this day called out of the world`. The 1962's three All Souls Masses set plural orations for all the departed -- animabus famulorum famularumque tuarum -- and they are different prayers, not a different rendering of one prayer. Attaching a funeral oration for one person to this day would be an invention with a page number attached to it. The Tract and the Offertory ARE the same text in both books and are recorded above; the orations are not."
+
+[[untranslated]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "First Mass (Ad primam Missam)"
+proper = "Postcommunion"
+reason = "the witness keeps no Mass for 2 November -- its Proper of Saints goes from All Saints to `IV. St. CHARLES BORROMEUS` -- and its MASSES FOR THE DEAD are not this day's three Masses. They are a Mass for one named person on the day of decease, a Mass for the third, seventh and thirtieth day, and an anniversary Mass, and their orations are singular throughout: `the soul of thy servant N. which thou hast this day called out of the world`. The 1962's three All Souls Masses set plural orations for all the departed -- animabus famulorum famularumque tuarum -- and they are different prayers, not a different rendering of one prayer. Attaching a funeral oration for one person to this day would be an invention with a page number attached to it. The Tract and the Offertory ARE the same text in both books and are recorded above; the orations are not."
+
+[[untranslated]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "Second Mass (Ad secundam Missam)"
+proper = "Collect"
+reason = "the witness keeps no Mass for 2 November -- its Proper of Saints goes from All Saints to `IV. St. CHARLES BORROMEUS` -- and its MASSES FOR THE DEAD are not this day's three Masses. They are a Mass for one named person on the day of decease, a Mass for the third, seventh and thirtieth day, and an anniversary Mass, and their orations are singular throughout: `the soul of thy servant N. which thou hast this day called out of the world`. The 1962's three All Souls Masses set plural orations for all the departed -- animabus famulorum famularumque tuarum -- and they are different prayers, not a different rendering of one prayer. Attaching a funeral oration for one person to this day would be an invention with a page number attached to it. The Tract and the Offertory ARE the same text in both books and are recorded above; the orations are not."
+
+[[untranslated]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "Second Mass (Ad secundam Missam)"
+proper = "Secret"
+reason = "the witness keeps no Mass for 2 November -- its Proper of Saints goes from All Saints to `IV. St. CHARLES BORROMEUS` -- and its MASSES FOR THE DEAD are not this day's three Masses. They are a Mass for one named person on the day of decease, a Mass for the third, seventh and thirtieth day, and an anniversary Mass, and their orations are singular throughout: `the soul of thy servant N. which thou hast this day called out of the world`. The 1962's three All Souls Masses set plural orations for all the departed -- animabus famulorum famularumque tuarum -- and they are different prayers, not a different rendering of one prayer. Attaching a funeral oration for one person to this day would be an invention with a page number attached to it. The Tract and the Offertory ARE the same text in both books and are recorded above; the orations are not."
+
+[[untranslated]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "Second Mass (Ad secundam Missam)"
+proper = "Postcommunion"
+reason = "the witness keeps no Mass for 2 November -- its Proper of Saints goes from All Saints to `IV. St. CHARLES BORROMEUS` -- and its MASSES FOR THE DEAD are not this day's three Masses. They are a Mass for one named person on the day of decease, a Mass for the third, seventh and thirtieth day, and an anniversary Mass, and their orations are singular throughout: `the soul of thy servant N. which thou hast this day called out of the world`. The 1962's three All Souls Masses set plural orations for all the departed -- animabus famulorum famularumque tuarum -- and they are different prayers, not a different rendering of one prayer. Attaching a funeral oration for one person to this day would be an invention with a page number attached to it. The Tract and the Offertory ARE the same text in both books and are recorded above; the orations are not."
+
+[[untranslated]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "Third Mass (Ad tertiam Missam)"
+proper = "Collect"
+reason = "the witness keeps no Mass for 2 November -- its Proper of Saints goes from All Saints to `IV. St. CHARLES BORROMEUS` -- and its MASSES FOR THE DEAD are not this day's three Masses. They are a Mass for one named person on the day of decease, a Mass for the third, seventh and thirtieth day, and an anniversary Mass, and their orations are singular throughout: `the soul of thy servant N. which thou hast this day called out of the world`. The 1962's three All Souls Masses set plural orations for all the departed -- animabus famulorum famularumque tuarum -- and they are different prayers, not a different rendering of one prayer. Attaching a funeral oration for one person to this day would be an invention with a page number attached to it. The Tract and the Offertory ARE the same text in both books and are recorded above; the orations are not."
+
+[[untranslated]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "Third Mass (Ad tertiam Missam)"
+proper = "Secret"
+reason = "the witness keeps no Mass for 2 November -- its Proper of Saints goes from All Saints to `IV. St. CHARLES BORROMEUS` -- and its MASSES FOR THE DEAD are not this day's three Masses. They are a Mass for one named person on the day of decease, a Mass for the third, seventh and thirtieth day, and an anniversary Mass, and their orations are singular throughout: `the soul of thy servant N. which thou hast this day called out of the world`. The 1962's three All Souls Masses set plural orations for all the departed -- animabus famulorum famularumque tuarum -- and they are different prayers, not a different rendering of one prayer. Attaching a funeral oration for one person to this day would be an invention with a page number attached to it. The Tract and the Offertory ARE the same text in both books and are recorded above; the orations are not."
+
+[[untranslated]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "Third Mass (Ad tertiam Missam)"
+proper = "Postcommunion"
+reason = "the witness keeps no Mass for 2 November -- its Proper of Saints goes from All Saints to `IV. St. CHARLES BORROMEUS` -- and its MASSES FOR THE DEAD are not this day's three Masses. They are a Mass for one named person on the day of decease, a Mass for the third, seventh and thirtieth day, and an anniversary Mass, and their orations are singular throughout: `the soul of thy servant N. which thou hast this day called out of the world`. The 1962's three All Souls Masses set plural orations for all the departed -- animabus famulorum famularumque tuarum -- and they are different prayers, not a different rendering of one prayer. Attaching a funeral oration for one person to this day would be an invention with a page number attached to it. The Tract and the Offertory ARE the same text in both books and are recorded above; the orations are not."
