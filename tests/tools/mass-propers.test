@@ -31,11 +31,29 @@ case "$out" in
 *) echo "scripture proper did not print its reference" >&2; exit 1 ;;
 esac
 
-# Latin is the tracked text, so an unrecorded language falls back and says so.
+# The recorded English reaches this verb, by the same merge the browser gets.
+# This assertion used to read the other way -- it required the fallback note
+# here -- and it passed because only `structure` merged the sidecar, so the
+# reading view answered "no en translation recorded" over an oration whose
+# English the site was publishing. The test encoded the defect.
 english="$(run_tool --calendar roman-1962 --mass advent-1 --lang en)"
 case "$english" in
-*"no en translation recorded"*) ;;
+*"Exert, we beseech thee, O Lord, thy power, and come"*) ;;
+*) echo "recorded English did not reach the reading view" >&2; exit 1 ;;
+esac
+
+# Latin is the tracked text, so a language nothing records falls back and says so.
+absent="$(run_tool --calendar roman-1962 --mass advent-1 --lang fr)"
+case "$absent" in
+*"no fr translation recorded"*) ;;
 *) echo "expected a note when the requested language is absent" >&2; exit 1 ;;
+esac
+
+# A proper deliberately left without English says so, rather than reading as a gap.
+deliberate="$(run_tool --calendar postconciliar --mass advent-1 --lang en)"
+case "$deliberate" in
+*"no en recorded, deliberately"*) ;;
+*) echo "ledgered untranslated proper did not say it was deliberate" >&2; exit 1 ;;
 esac
 
 # Machine forms carry the record only; rendering options stay off the payload.
@@ -45,12 +63,17 @@ if ! cmp -s one.json two.json; then
 	echo "json output is not byte-stable across runs" >&2
 	exit 1
 fi
-for leaked in '"bible"' '"lang"'; do
-	if grep -q "$leaked" one.json; then
-		echo "rendering option $leaked leaked into the payload" >&2
-		exit 1
-	fi
-done
+# Asserted at the top level and not by grepping the document. `lang` is also a
+# FIELD of every recorded translation, and those are part of the record: once
+# this verb merged the sidecar, a whole-file grep for '"lang"' condemned the
+# data it was meant to protect. What must stay off the payload is the OPTION.
+python3 - one.json <<'PY'
+import json, sys
+payload = json.load(open(sys.argv[1]))
+for leaked in ("bible", "lang", "witness"):
+    if leaked in payload:
+        raise SystemExit(f"rendering option {leaked!r} leaked into the payload")
+PY
 for want in '"calendar"' '"mass"' '"edition"'; do
 	if ! grep -q "$want" one.json; then
 		echo "payload is missing $want" >&2

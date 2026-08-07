@@ -82,7 +82,7 @@ EXAMPLES = {
                 "  key: advent-1",
                 "  name: First Sunday of Advent",
                 "  registry: '39'",
-                "... 188 more lines",
+                "... 283 more lines",
             ),
         ),
     ),
@@ -627,6 +627,44 @@ def overlay_key(
     return (mass.get("key"), form or "", proper.get("name"))
 
 
+def carry_translations(
+    calendar: str,
+    key: tuple[str, str, str],
+    proper: dict,
+    overlay: dict,
+    stale: list,
+) -> dict:
+    """A copy of `proper` carrying the translations recorded for it.
+
+    It is a function because two verbs merge the overlay — `structure`, which
+    writes what the browser serves, and `show`, which is how a maintainer reads
+    a Mass and checks a harvested translation. They were not one function, and
+    only `structure` merged: every one of the recorded English translations
+    reached the site and none of them reached the terminal, which answered
+    `no en translation recorded; showing Latin` over an oration whose English
+    the same repository was publishing. Two readers of one file must not
+    disagree about what is in it.
+
+    An entry whose proper no longer opens with the incipit it was derived
+    against is stale, and merging it on the strength of the mass key alone
+    would attach one prayer's English to another's Latin. Refuse it and report
+    it: a missing translation is visible, a misattached one is not.
+    """
+    recorded = overlay.get(key)
+    if recorded and recorded.get("incipit") and proper.get("incipit"):
+        if recorded["incipit"].strip() != str(proper["incipit"]).strip():
+            stale.append(
+                f"{calendar} {key[0]}/{key[2]}: recorded incipit "
+                f"{recorded['incipit']!r} does not match "
+                f"{proper['incipit']!r}"
+            )
+            recorded = None
+    carried = dict(proper)
+    if recorded:
+        carried["translations"] = recorded.get("translations")
+    return carried
+
+
 def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dict:
     document = load_calendar(root, calendar)
     overlay, untranslated, stale, witnesses = translation_overlay(calendar)
@@ -642,23 +680,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
             # the 1962 sidecar for the four resumed Sundays after the Epiphany,
             # and one of them had already drifted from its twin.
             key = overlay_key(mass, form, proper, taken_from)
-            recorded = overlay.get(key)
-            # An entry whose proper no longer opens with the incipit it was
-            # derived against is stale, and merging it on the strength of the
-            # mass key alone would attach one prayer's English to another's
-            # Latin. Refuse it and report it: a missing translation is visible,
-            # a misattached one is not.
-            if recorded and recorded.get("incipit") and proper.get("incipit"):
-                if recorded["incipit"].strip() != str(proper["incipit"]).strip():
-                    stale.append(
-                        f"{calendar} {key[0]}/{key[2]}: recorded incipit "
-                        f"{recorded['incipit']!r} does not match "
-                        f"{proper['incipit']!r}"
-                    )
-                    recorded = None
-            carried = dict(proper)
-            if recorded:
-                carried["translations"] = recorded.get("translations")
+            carried = carry_translations(calendar, key, proper, overlay, stale)
 
             def cited(owner: dict) -> list[dict]:
                 return [
@@ -1177,8 +1199,15 @@ def english_coverage(root: Path, calendar: str) -> dict | None:
       silently failing to translate them. What that leaves out is counted too,
       as `outside_the_ledger`, so the narrower denominator cannot hide behind
       itself.
-    * Scriptural propers are excluded. Their English is a bible's, not a
-      ledger's.
+    * Propers whose words are WHOLLY a bible's are excluded, and only those.
+      `source: scripture` carries citations and no text of its own, so its
+      English is the bible's and no ledger owes it one. `source: mixed` carries
+      both, and the text half is the Missal's own words which no bible renders:
+      the nineteenth Sunday after Pentecost prints `Salus populi ego sum` above
+      its psalm verse, and a reader with a bible attached still saw that
+      antiphon in Latin. Excluding `mixed` counted a real gap as out of scope
+      and then hid the rows that closed it under `unmatched_records`, which
+      reads as ledger rot and is the opposite of it.
 
     `unmatched_records` is the ledger's own rot: rows keyed to a slot no mass
     appoints any more. It is reported because such a row is invisible from the
@@ -1197,7 +1226,7 @@ def english_coverage(root: Path, calendar: str) -> dict | None:
         for form, proper, taken_from in appointed_propers(document, mass):
             if proper.get("name") == PLACEHOLDER:
                 continue
-            if proper_sources(proper) & SCRIPTURE_BEARING:
+            if proper_sources(proper) <= {"scripture"}:
                 continue
             key = overlay_key(mass, form, proper, taken_from)
             composed.add(key)
@@ -1374,6 +1403,34 @@ def run_show(arguments: argparse.Namespace) -> dict:
         raise ValueError("--mass is required")
     payload = find_mass(Path(arguments.root), arguments.calendar, arguments.mass)
     arguments.appointed = appointed_propers(payload.pop("_document"), payload["mass"])
+    # The recorded English, by the same merge the browser gets.
+    #
+    # `propers.yaml` carries no `translations` key — they live in the sidecar
+    # overlay this tool already reads for `structure`. Reading the raw entry
+    # here meant this verb reported `no en translation recorded` over every one
+    # of the translations the sidecar holds and the site serves, which is the
+    # answer a maintainer would act on when checking whether a proper still
+    # needs harvesting. Merged through `carry_translations` so the two verbs
+    # cannot disagree about which entry answers which proper.
+    #
+    # No rights filter here, unlike `structure`. That filter exists because the
+    # structure file is the published artifact; this verb prints to a terminal
+    # over tracked sources, and an operator checking the corpus needs to see
+    # the English the site is withholding as much as the English it shows.
+    overlay, untranslated, stale, _ = translation_overlay(arguments.calendar)
+    merged = []
+    for form, proper, taken_from in arguments.appointed:
+        key = overlay_key(payload["mass"], form, proper, taken_from)
+        carried = carry_translations(arguments.calendar, key, proper, overlay, stale)
+        # Distinguishes a proper nobody has looked at from one deliberately
+        # left without English, which is the distinction the `untranslated`
+        # ledger exists to record; the structure pass writes the same key.
+        if key in untranslated:
+            carried["untranslated"] = True
+        merged.append((form, carried, taken_from))
+    arguments.appointed = merged
+    if stale:
+        payload["stale_translations"] = stale
     # Resolve here so a missing bible or an unusable numbering fails before rendering.
     bible = load_bible(arguments.bible, Path(arguments.bible_root)) if arguments.bible else None
     arguments.resolved_bible = resolve_passages(payload, bible) if bible else {}

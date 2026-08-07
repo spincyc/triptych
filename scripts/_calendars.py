@@ -750,18 +750,29 @@ def _resolve_reference(
         return [("", p, dict(provenance, proper=str(p.get("name") or ""))) for p in chosen], []
     inherited, problems = resolve_propers(document, target, (*chain, key))
     citation = str(reference.get("citation") or "")
+    # Where the text is PRINTED, not the first hop toward it.
+    #
+    # `target` may itself take a proper from a third mass, and this loop used to
+    # throw the inner provenance away and name `target` regardless. The text was
+    # right and the address was wrong, which is the quiet half of the failure:
+    # `overlay_key` files a proper's translation under the mass that prints it,
+    # so seven days -- Perpetua and Felicitas, Frances of Rome, Petronilla,
+    # Elizabeth -- looked up their English at a Common that carries none, found
+    # nothing, and rendered Latin while the terminal Common's English sat in the
+    # ledger. Keeping the inner provenance makes the address follow the text.
     out = [
         (
             label,
             proper,
-            {
+            inner
+            or {
                 "mass": target_key,
                 "form": label,
                 "proper": str(proper.get("name") or ""),
                 "citation": citation,
             },
         )
-        for label, proper, _ in inherited
+        for label, proper, inner in inherited
     ]
     return out, problems
 
@@ -837,7 +848,13 @@ def texts_of(
         ]
     if proper.get("text"):
         scope = f" from {witness}" if witness else ""
-        return [
-            (str(proper["text"]), "", f"no {lang} translation{scope} recorded; showing Latin")
-        ]
+        # A proper nobody has reached and one deliberately left without English
+        # print the same Latin, and only one of them is work outstanding. The
+        # `untranslated` ledger records which is which and the reason; say so
+        # rather than let a settled decision read as a gap.
+        if proper.get("untranslated") and not witness:
+            note = f"no {lang} recorded, deliberately; see the untranslated ledger"
+        else:
+            note = f"no {lang} translation{scope} recorded; showing Latin"
+        return [(str(proper["text"]), "", note)]
     return []
