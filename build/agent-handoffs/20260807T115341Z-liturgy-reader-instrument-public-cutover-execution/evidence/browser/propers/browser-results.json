@@ -1,0 +1,421 @@
+{
+  "results": [
+    {
+      "name": "valid deep link uses the shared calm shell and complete state has no notice",
+      "status": "pass"
+    },
+    {
+      "name": "explicit URL outranks remembered preferences",
+      "status": "pass"
+    },
+    {
+      "name": "current and candidate Roman texts, citations, and order match exactly",
+      "status": "pass"
+    },
+    {
+      "name": "coequal cycles stay independent and explicit cycle selection is exact",
+      "status": "pass"
+    },
+    {
+      "name": "public semantic keys are stable while retained aliases remain input-only and conflicts fail closed",
+      "status": "pass"
+    },
+    {
+      "name": "missing and malformed identity fail closed without liturgical text",
+      "status": "pass"
+    },
+    {
+      "name": "partial production coverage produces one concise reliance notice",
+      "status": "pass"
+    },
+    {
+      "name": "Latin Browse never asks for a translation witness in either missal",
+      "status": "pass"
+    },
+    {
+      "name": "one formulary-relevant witness resolves deterministically without a control",
+      "status": "pass"
+    },
+    {
+      "name": "multiple relevant witnesses require an explicit formulary-specific choice",
+      "status": "pass"
+    },
+    {
+      "name": "no held witness remains an explicit unavailable or partial result",
+      "status": "pass"
+    },
+    {
+      "name": "switching a chosen translation witness to Latin removes private witness state",
+      "status": "pass"
+    },
+    {
+      "name": "edition witnesses irrelevant to the formulary are neither required nor accepted",
+      "status": "pass"
+    },
+    {
+      "name": "changing missal clears formulary and requires a new choice",
+      "status": "pass"
+    },
+    {
+      "name": "superseded Browse missal load cannot overwrite a newer valid route form",
+      "status": "pass"
+    },
+    {
+      "name": "Details opened during load refreshes only from the committed Propers result",
+      "status": "pass"
+    },
+    {
+      "name": "superseded Browse load cannot overwrite an invalid route form",
+      "status": "pass"
+    },
+    {
+      "name": "superseded Browse load cannot overwrite missing-formulary Browse state",
+      "status": "pass"
+    },
+    {
+      "name": "superseded Browse failure cannot overwrite a current valid form",
+      "status": "pass"
+    },
+    {
+      "name": "rapid Browse Missal A to Missal B keeps the latest form",
+      "status": "pass"
+    },
+    {
+      "name": "Back and Forward invalidate an older pending Browse request",
+      "status": "pass"
+    },
+    {
+      "name": "shared modal lifecycle, disabled modes, deep-scroll reachability, and restoration hold",
+      "status": "pass"
+    },
+    {
+      "name": "Back and Forward restore candidate semantic choice",
+      "status": "pass"
+    },
+    {
+      "name": "translation witness survives direct load, reload, Back, and Forward",
+      "status": "pass"
+    },
+    {
+      "name": "unsupported public alternative survives URL lifecycle and stays fail-closed",
+      "status": "pass"
+    },
+    {
+      "name": "320 CSS pixels and 200 percent zoom preserve page and surface overflow contracts",
+      "status": "pass"
+    },
+    {
+      "name": "reduced motion retains content, controls, and explicit focus",
+      "status": "pass"
+    },
+    {
+      "name": "the retained Propers route is statically noindex and visible copy is route-neutral",
+      "status": "pass"
+    },
+    {
+      "name": "print removes shell chrome but retains identity and choice notice",
+      "status": "pass"
+    },
+    {
+      "name": "superseded slow valid cannot overwrite fast valid or fast invalid",
+      "status": "pass"
+    },
+    {
+      "name": "superseded slow failure cannot overwrite fast valid",
+      "status": "pass"
+    },
+    {
+      "name": "Back and Forward cannot revive an older pending render",
+      "status": "pass"
+    }
+  ],
+  "measurements": {
+    "1440x900": {
+      "shellHeight": 281.5625,
+      "readingWidth": 636,
+      "charactersPerLine": 67,
+      "firstContentPosition": 260.25,
+      "pageOverflow": 0,
+      "surfaceOverflow": [],
+      "targets": [
+        {
+          "width": 66,
+          "height": 70.390625
+        },
+        {
+          "width": 66,
+          "height": 70.390625
+        },
+        {
+          "width": 66,
+          "height": 70.390625
+        },
+        {
+          "width": 66,
+          "height": 70.390625
+        }
+      ],
+      "resources": [
+        "http://127.0.0.1:42113/src/web/browser/shared/browser-core.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/liturgy.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-shell.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/propers-reader.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-instrument.css",
+        "http://127.0.0.1:42113/src/web/browser/shared/browser-core.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/ordinary-seating.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-state.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-state-adapters.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-shell.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/propers-reader.js",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/bibles.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/structure/propers/index.json",
+        "http://127.0.0.1:42113/favicon.ico",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/structure/propers/roman-1962.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/24.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Rom/13.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/84.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Luke/21.json"
+      ],
+      "loadCounts": {
+        "structure/propers/index.json": 1,
+        "structure/propers/roman-1962.json": 1
+      },
+      "detailsBuilds": 0,
+      "layoutShift": 0,
+      "scrollY": 0
+    },
+    "1024x768": {
+      "shellHeight": 70,
+      "readingWidth": 636,
+      "charactersPerLine": 67,
+      "firstContentPosition": 253.390625,
+      "pageOverflow": 0,
+      "surfaceOverflow": [],
+      "targets": [
+        {
+          "width": 252.25,
+          "height": 68
+        },
+        {
+          "width": 252.25,
+          "height": 68
+        },
+        {
+          "width": 252.25,
+          "height": 68
+        },
+        {
+          "width": 252.25,
+          "height": 68
+        }
+      ],
+      "resources": [
+        "http://127.0.0.1:42113/src/web/browser/shared/browser-core.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/liturgy.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-shell.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/propers-reader.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-instrument.css",
+        "http://127.0.0.1:42113/src/web/browser/shared/browser-core.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/ordinary-seating.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-state.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-state-adapters.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-shell.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/propers-reader.js",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/bibles.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/structure/propers/index.json",
+        "http://127.0.0.1:42113/favicon.ico",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/structure/propers/roman-1962.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/24.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Rom/13.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/84.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Luke/21.json"
+      ],
+      "loadCounts": {
+        "structure/propers/index.json": 1,
+        "structure/propers/roman-1962.json": 1
+      },
+      "detailsBuilds": 0,
+      "layoutShift": 0,
+      "scrollY": 0
+    },
+    "768x1024": {
+      "shellHeight": 73.1875,
+      "readingWidth": 636,
+      "charactersPerLine": 74,
+      "firstContentPosition": 222.1875,
+      "pageOverflow": 0,
+      "surfaceOverflow": [],
+      "targets": [
+        {
+          "width": 192,
+          "height": 71.1875
+        },
+        {
+          "width": 192,
+          "height": 71.1875
+        },
+        {
+          "width": 192,
+          "height": 71.1875
+        },
+        {
+          "width": 192,
+          "height": 71.1875
+        }
+      ],
+      "resources": [
+        "http://127.0.0.1:42113/src/web/browser/shared/browser-core.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/liturgy.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-shell.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/propers-reader.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-instrument.css",
+        "http://127.0.0.1:42113/src/web/browser/shared/browser-core.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/ordinary-seating.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-state.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-state-adapters.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-shell.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/propers-reader.js",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/bibles.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/structure/propers/index.json",
+        "http://127.0.0.1:42113/favicon.ico",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/structure/propers/roman-1962.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/24.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Rom/13.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/84.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Luke/21.json"
+      ],
+      "loadCounts": {
+        "structure/propers/index.json": 1,
+        "structure/propers/roman-1962.json": 1
+      },
+      "detailsBuilds": 0,
+      "layoutShift": 0,
+      "scrollY": 0
+    },
+    "393x852": {
+      "shellHeight": 73.1875,
+      "readingWidth": 353,
+      "charactersPerLine": 41,
+      "firstContentPosition": 211.828125,
+      "pageOverflow": 0,
+      "surfaceOverflow": [],
+      "targets": [
+        {
+          "width": 98.25,
+          "height": 71.1875
+        },
+        {
+          "width": 98.25,
+          "height": 71.1875
+        },
+        {
+          "width": 98.25,
+          "height": 71.1875
+        },
+        {
+          "width": 98.25,
+          "height": 71.1875
+        }
+      ],
+      "resources": [
+        "http://127.0.0.1:42113/src/web/browser/shared/browser-core.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/liturgy.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-shell.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/propers-reader.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-instrument.css",
+        "http://127.0.0.1:42113/src/web/browser/shared/browser-core.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/ordinary-seating.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-state.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-state-adapters.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-shell.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/propers-reader.js",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/bibles.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/structure/propers/index.json",
+        "http://127.0.0.1:42113/favicon.ico",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/structure/propers/roman-1962.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/24.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Rom/13.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/84.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Luke/21.json"
+      ],
+      "loadCounts": {
+        "structure/propers/index.json": 1,
+        "structure/propers/roman-1962.json": 1
+      },
+      "detailsBuilds": 0,
+      "layoutShift": 0,
+      "scrollY": 0
+    },
+    "320x852": {
+      "shellHeight": 73.1875,
+      "readingWidth": 280,
+      "charactersPerLine": 32,
+      "firstContentPosition": 242.0625,
+      "pageOverflow": 0,
+      "surfaceOverflow": [],
+      "targets": [
+        {
+          "width": 80,
+          "height": 71.1875
+        },
+        {
+          "width": 80,
+          "height": 71.1875
+        },
+        {
+          "width": 80,
+          "height": 71.1875
+        },
+        {
+          "width": 80,
+          "height": 71.1875
+        }
+      ],
+      "resources": [
+        "http://127.0.0.1:42113/src/web/browser/shared/browser-core.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/liturgy.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-shell.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/propers-reader.css",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-instrument.css",
+        "http://127.0.0.1:42113/src/web/browser/shared/browser-core.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/ordinary-seating.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-state.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-state-adapters.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/reader-shell.js",
+        "http://127.0.0.1:42113/src/web/browser/liturgy/propers-reader.js",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/bibles.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/structure/propers/index.json",
+        "http://127.0.0.1:42113/favicon.ico",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/structure/propers/roman-1962.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/24.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Rom/13.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Ps/84.json",
+        "http://127.0.0.1:42113/build/public-alpha/preview/browse/douay-rheims/chapters/Luke/21.json"
+      ],
+      "loadCounts": {
+        "structure/propers/index.json": 1,
+        "structure/propers/roman-1962.json": 1
+      },
+      "detailsBuilds": 0,
+      "layoutShift": 0,
+      "scrollY": 0
+    }
+  },
+  "accessibility": {
+    "nodeCount": 334,
+    "unnamedInteractiveNodes": 0,
+    "roles": []
+  },
+  "performance": {
+    "candidateResourceCount": 19,
+    "duplicateResources": [],
+    "manifestRequests": 2,
+    "properStructureRequests": 1,
+    "properFragmentRequests": 4,
+    "initializationLayoutShift": 0,
+    "detailsLazy": true,
+    "selectedStructureLoadCount": 1,
+    "currentRouteResourceCount": 19,
+    "additionalCandidateRequests": 0
+  }
+}

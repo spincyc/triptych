@@ -1,0 +1,26 @@
+Liturgical Instrument public-cutover local gate
+================================================
+
+Cutover working tree: exact promoted canonical filenames
+Focused locked Python: PASS, 230/230
+Day Chromium: PASS, 40/40, 77 captures
+Propers Chromium: PASS, 32/32
+Shared-shell Chromium: PASS, 18/18, 94 captures
+Governed Instrument: PASS, 24/24, 113 captures
+Changed Python/JavaScript syntax: PASS
+Promised-deliverables registry: PASS
+Tool registry: PASS, 34 tools
+Release bindings: PASS, 0 stale
+git diff --check: PASS
+Locked public-alpha check/build/verify for GitHub Pages: PASS
+
+Governed full make check: NON-GREEN at unrelated check-examples replay, exit 2.
+It replayed 200 examples, ran 188, reported 21 divergences and 35 known-stale
+cases, plus six deliberately unrun and six unavailable-artifact cases. No
+stored transcript was recaptured or blessed. No task-owned gate failed.
+
+The first post-deploy Instrument capture attempt hit a readiness timeout and a
+second long capture hit CDP resource exhaustion. Inspection showed 63 abandoned
+disposable Chrome profiles using about 6 GB of /tmp; only those profiles were
+removed. Serial reruns then completed all governed captures without product or
+harness changes.
