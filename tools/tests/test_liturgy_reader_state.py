@@ -598,7 +598,11 @@ class ContractTests(unittest.TestCase):
             ["date", "missal", "bible", "orations", "why", "ordinary",
              "ordinary-lang", "rubrics", "mass", "eucharistic-prayer"],
         )
-        self.assertEqual(propers["hash"], ["missal", "type", "mass", "bible", "orations"])
+        self.assertEqual(
+            propers["hash"],
+            ["missal", "type", "mass", "bible", "orations", "cycle",
+             "alternative", "translation-witness"],
+        )
         self.assertEqual(day["query"], ["data"])
         self.assertEqual(propers["query"], ["data", "missals"])
 
@@ -800,6 +804,57 @@ class UrlContractTests(unittest.TestCase):
         self.assertEqual(propers["normalized"]["state"]["languages"]["orations"], "en")
         self.assertEqual(propers["serialized"], propers_hash)
         self.assertEqual(propers["renormalized"]["state"], propers["normalized"]["state"])
+
+    def test_propers_public_choice_keys_round_trip_canonically(self) -> None:
+        url = (
+            "#missal=roman-1962&type=seasonal&mass=advent-1&"
+            "bible=douay-rheims&orations=en&cycle=B&alternative=option-b&"
+            "translation-witness=witness-english"
+        )
+        result = node_call({
+            "op": "url", "entrance": "propers", "hash": url,
+            "context": self.propers_context,
+            "defaults": {"missal": "roman-1962", "type": "seasonal",
+                         "mass": "advent-1", "bible": "douay-rheims",
+                         "orations": "la"},
+        })
+        self.assertTrue(result["normalized"]["ok"], result["normalized"]["errors"])
+        self.assertEqual(result["parsed"]["unknown"], [])
+        self.assertEqual(result["parsed"]["recognized"]["cycle"], "B")
+        self.assertEqual(result["parsed"]["recognized"]["alternative"], "option-b")
+        self.assertEqual(
+            result["parsed"]["recognized"]["translation-witness"],
+            "witness-english",
+        )
+        state = result["normalized"]["state"]
+        self.assertEqual(state["cycle"], "B")
+        self.assertEqual(state["alternative"], {"id": "option-b"})
+        self.assertEqual(state["languages"]["translationWitness"], "witness-english")
+        self.assertEqual(result["serialized"], url)
+        self.assertEqual(result["reserialized"], url)
+        self.assertEqual(result["renormalized"]["state"], state)
+        self.assertNotIn("_", result["serialized"])
+        self.assertNotIn("_candidate", CONTRACT.read_text(encoding="utf-8"))
+
+    def test_propers_public_choice_keys_reject_empty_and_duplicate_values(self) -> None:
+        base = (
+            "#missal=roman-1962&type=seasonal&mass=advent-1&"
+            "bible=douay-rheims&orations=en"
+        )
+        defaults = {"missal": "roman-1962", "type": "seasonal",
+                    "mass": "advent-1", "bible": "douay-rheims",
+                    "orations": "la"}
+        for key in ("cycle", "alternative", "translation-witness"):
+            for suffix in (f"&{key}=", f"&{key}=one&{key}=two"):
+                result = node_call({
+                    "op": "url", "entrance": "propers", "hash": base + suffix,
+                    "context": self.propers_context, "defaults": defaults,
+                })
+                self.assertFalse(result["normalized"]["ok"], key + suffix)
+                codes = [error["code"] for error in result["normalized"]["errors"]]
+                expected = "invalid-explicit-value" if suffix.endswith("=") \
+                    else "duplicate-explicit-key"
+                self.assertIn(expected, codes, key + suffix)
 
     def test_canonical_state_is_independent_of_remembered_opposites_and_storage(self) -> None:
         defaults = {"date": "2026-08-02", "missal": "roman-1962",

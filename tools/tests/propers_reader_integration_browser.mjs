@@ -173,8 +173,11 @@ const STATES = Object.freeze({
   roman: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
   post: hash({ missal: 'postconciliar', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
   cycles: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'la' }),
-  cycleA: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'la', '_candidate-cycle': 'A' }),
-  cycleBad: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'la', '_candidate-cycle': 'Z' }),
+  cycleA: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'la', cycle: 'A' }),
+  cycleLegacyA: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'la', '_candidate-cycle': 'A' }),
+  cycleMixed: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'la', cycle: 'A', '_candidate-cycle': 'A' }),
+  cycleBad: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'la', cycle: 'Z' }),
+  alternativeUnsupported: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'la', alternative: 'first-reading-alternative' }),
   alternative: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' }),
   partial: hash({ missal: 'roman-1962', type: 'christological', mass: 'octava-nativitatis-domini', bible: 'douay-rheims', orations: 'la' }),
   missing: hash({ missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' }),
@@ -183,6 +186,7 @@ const STATES = Object.freeze({
   invalidMass: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'not-a-mass', bible: 'douay-rheims', orations: 'la' }),
   fast: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' }),
   romanEnglishMultiple: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'en' }),
+  romanEnglishWitness: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'en', 'translation-witness': 'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861' }),
   romanEnglishOne: hash({ missal: 'roman-1962', type: 'common', mass: 'commune-unius-martyris-1', bible: 'douay-rheims', orations: 'en' }),
   romanEnglishNone: hash({ missal: 'roman-1962', type: 'christological', mass: 'octava-nativitatis-domini', bible: 'douay-rheims', orations: 'en' })
 });
@@ -390,6 +394,13 @@ async function assertions(cdp, base) {
     assert.deepEqual(unresolved.cycles, ['A', 'B', 'C']);
     assert.deepEqual(unresolved.buttons, ['Year A', 'Year B', 'Year C']);
     assert.equal(new Set(unresolved.cycles).size, 3); assert.match(unresolved.notice, /remain valid/);
+    await click(cdp, '.cycle-choice-controls button');
+    await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state.cycle === 'A'`,
+      'public cycle writer');
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).get('cycle')`), 'A');
+    assert.equal(await evaluate(cdp,
+      `[...new URLSearchParams(location.hash.slice(1)).keys()].some(key => key.startsWith('_candidate-'))`), false);
     await candidate(cdp, base, STATES.cycleA);
     const exact = await snapshot(cdp);
     assert.equal(exact.state.cycle, 'A');
@@ -397,6 +408,48 @@ async function assertions(cdp, base) {
     assert.equal(exact.semantic.events.find(row => row.editionSlotLabel === 'Gospel').selected.cycle, 'A');
     await candidate(cdp, base, STATES.cycleBad);
     assert.equal((await snapshot(cdp)).outcome, 'invalid');
+  });
+
+  await check('public semantic keys are stable while retained aliases remain input-only and conflicts fail closed', async () => {
+    assert.deepEqual(await evaluate(cdp, 'propersReaderDebug.publicKeys'), {
+      cycle: 'cycle', alternative: 'alternative', translationWitness: 'translation-witness'
+    });
+    assert.deepEqual(await evaluate(cdp, 'propersReaderDebug.legacyInputAliases'), {
+      cycle: '_candidate-cycle', alternative: '_candidate-alternative',
+      translationWitness: '_candidate-translation-witness'
+    });
+
+    await candidate(cdp, base, STATES.cycleLegacyA);
+    assert.equal((await snapshot(cdp)).outcome, 'ready');
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.state.cycle'), 'A');
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).has('cycle')`), false);
+
+    await candidate(cdp, base, STATES.romanEnglishWitness);
+    assert.equal((await snapshot(cdp)).outcome, 'ready');
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.state.languages.translationWitness'),
+      'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861');
+
+    const legacyWitness = STATES.romanEnglishMultiple +
+      '&_candidate-translation-witness=' + encodeURIComponent(
+        'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861');
+    await candidate(cdp, base, legacyWitness);
+    assert.equal((await snapshot(cdp)).outcome, 'ready');
+    assert.equal(await evaluate(cdp, 'propersReaderDebug.state.languages.translationWitness'),
+      'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861');
+
+    for (const state of [
+      STATES.cycleMixed,
+      STATES.cycleA + '&cycle=A',
+      STATES.cycles + '&cycle=',
+      STATES.romanEnglishWitness + '&_candidate-translation-witness=' + encodeURIComponent(
+        'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861'),
+      STATES.alternativeUnsupported
+    ]) {
+      await candidate(cdp, base, state);
+      assert.equal((await snapshot(cdp)).outcome, 'invalid', state);
+      assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document .proper').length`), 0);
+    }
   });
 
   await check('missing and malformed identity fail closed without liturgical text', async () => {
@@ -458,7 +511,9 @@ async function assertions(cdp, base) {
       `propersReaderDebug.ready && propersReaderDebug.state.languages.translationWitness === ${JSON.stringify(witness)}`,
       'explicit translation witness');
     assert.equal(await evaluate(cdp,
-      `new URLSearchParams(location.hash.slice(1)).get('_candidate-translation-witness')`), witness);
+      `new URLSearchParams(location.hash.slice(1)).get('translation-witness')`), witness);
+    assert.equal(await evaluate(cdp,
+      `[...new URLSearchParams(location.hash.slice(1)).keys()].some(key => key.startsWith('_candidate-'))`), false);
   });
 
   await check('no held witness remains an explicit unavailable or partial result', async () => {
@@ -486,7 +541,7 @@ async function assertions(cdp, base) {
     await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state.languages.orations === 'la'`,
       'Latin submission');
     assert.equal(await evaluate(cdp,
-      `new URLSearchParams(location.hash.slice(1)).has('_candidate-translation-witness')`), false);
+      `new URLSearchParams(location.hash.slice(1)).has('translation-witness')`), false);
     assert.equal(await evaluate(cdp,
       `'translationWitness' in propersReaderDebug.state.languages`), false);
   });
@@ -498,7 +553,7 @@ async function assertions(cdp, base) {
     assert.equal(form.witnessHidden, true); assert.equal(form.witnessDisplay, 'none');
     await escape(cdp);
     const invalidWitness = STATES.romanEnglishOne +
-      '&_candidate-translation-witness=' + encodeURIComponent(
+      '&translation-witness=' + encodeURIComponent(
         'artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en');
     await candidate(cdp, base, invalidWitness);
     assert.equal((await snapshot(cdp)).outcome, 'invalid');
@@ -524,6 +579,35 @@ async function assertions(cdp, base) {
     await new Promise((done) => setTimeout(done, 120));
     assert.deepEqual(await browseSnapshot(cdp), before);
     assert.equal(before.missal, 'postconciliar'); assert.equal(before.formulary, 'visitation-blessed-virgin-mary');
+    await escape(cdp);
+  });
+
+  await check('Details opened during load refreshes only from the committed Propers result', async () => {
+    const gate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));
+    await cdp.send('Page.navigate', { url: candidateUrl(base, STATES.roman) });
+    await waitGate(gate);
+    await waitFor(cdp, `window.propersReaderDebug && propersReaderDebug.outcome === 'loading'`,
+      'Propers loading state');
+    await click(cdp, '[data-reader-action="details"]');
+    const loading = await evaluate(cdp,
+      `document.querySelector('[data-reader-details]').textContent`);
+    assert.match(loading, /still loading/);
+    assert.doesNotMatch(loading, /Formulary\s+advent-1/);
+    gate.release();
+    await gate.served;
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.outcome === 'ready'`,
+      'Propers Details commit');
+    const committed = await evaluate(cdp, `({
+      open: document.querySelector('[data-reader-surface="details"]').open,
+      text: document.querySelector('[data-reader-details]').innerText,
+      headings: [...document.querySelectorAll('[data-reader-details] .details-section > h3')]
+        .map(row => row.textContent.trim())
+    })`);
+    assert.equal(committed.open, true);
+    assert.match(committed.text, /Formulary\s+First Sunday of Advent/i);
+    assert.deepEqual(committed.headings,
+      ['Selection', 'Related reader', 'Elsewhere in Triptych']);
     await escape(cdp);
   });
 
@@ -616,8 +700,28 @@ async function assertions(cdp, base) {
       { mode: 'compare', disabled: true, checked: 'false' }
     ]);
     await escape(cdp); await click(cdp, '[data-reader-action="details"]');
-    const details = await evaluate(cdp, `document.querySelector('[data-reader-details]').innerText`);
-    assert.doesNotMatch(details, /sourceHooks|ordinal|hash|reader state|\{.*\}/i);
+    const details = await evaluate(cdp, `({
+      text: document.querySelector('[data-reader-details]').innerText,
+      links: [...document.querySelectorAll('[data-reader-details] a')]
+        .map(row => ({ label: row.textContent.trim(), pathname: new URL(row.href).pathname }))
+    })`);
+    assert.doesNotMatch(details.text, /sourceHooks|ordinal|hash|reader state|\{.*\}/i);
+    assert.deepEqual(details.links.map(row => row.label), [
+      'Open the Day reader', 'The Story of Salvation', 'How the Missal Changed',
+      'Every Document', 'The Source Library', 'The Code, Canon by Canon'
+    ]);
+    assert.match(details.links[0].pathname, /\/liturgy\/day\.html$/);
+    assert.match(details.links[1].pathname, /\/scripture\/$/);
+    assert.match(details.links[2].pathname, /\/history\/$/);
+    assert.match(details.links[3].pathname, /\/texts\/$/);
+    assert.match(details.links[4].pathname, /\/sources\/$/);
+    assert.match(details.links[5].pathname, /\/law\/$/);
+    assert.deepEqual(await evaluate(cdp,
+      `[...document.querySelectorAll('[data-reader-details] .details-section > h3')]
+        .map(row => row.textContent.trim())`), [
+      'Selection', 'Related reader', 'Elsewhere in Triptych'
+    ]);
+    assert.equal(await evaluate(cdp, `document.querySelectorAll('[data-reader-action]').length`), 4);
     assert.equal(await evaluate(cdp, 'propersReaderDebug.detailsBuilds'), 1);
     await escape(cdp);
   });
@@ -630,6 +734,65 @@ async function assertions(cdp, base) {
     await waitFor(cdp, `propersReaderDebug.ready && !('cycle' in propersReaderDebug.state)`, 'history back');
     await evaluate(cdp, 'history.forward()');
     await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state.cycle === 'A'`, 'history forward');
+    await cdp.send('Page.reload', { ignoreCache: true });
+    await waitFor(cdp,
+      `performance.getEntriesByType('navigation')[0]?.type === 'reload' && window.propersReaderDebug && ` +
+      `window.propersReaderDebug && propersReaderDebug.ready && ` +
+      `propersReaderDebug.state.cycle === 'A'`, 'cycle reload');
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).get('cycle')`), 'A');
+  });
+
+  await check('translation witness survives direct load, reload, Back, and Forward', async () => {
+    await candidate(cdp, base, STATES.romanEnglishMultiple);
+    await evaluate(cdp, `location.hash=${JSON.stringify(STATES.romanEnglishWitness.slice(1))}`);
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.state.languages.translationWitness === ` +
+      `${JSON.stringify('edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861')}`,
+      'translation witness navigation');
+    await cdp.send('Page.reload', { ignoreCache: true });
+    await waitFor(cdp,
+      `performance.getEntriesByType('navigation')[0]?.type === 'reload' && window.propersReaderDebug && ` +
+      `window.propersReaderDebug && propersReaderDebug.ready && ` +
+      `propersReaderDebug.state.languages.translationWitness === ` +
+      `${JSON.stringify('edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861')}`,
+      'translation witness reload');
+    await evaluate(cdp, 'history.back()');
+    await waitFor(cdp,
+      `propersReaderDebug.ready && !('translationWitness' in propersReaderDebug.state.languages)`,
+      'translation witness history back');
+    await evaluate(cdp, 'history.forward()');
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.state.languages.translationWitness === ` +
+      `${JSON.stringify('edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861')}`,
+      'translation witness history forward');
+  });
+
+  await check('unsupported public alternative survives URL lifecycle and stays fail-closed', async () => {
+    await candidate(cdp, base, STATES.cycles);
+    await evaluate(cdp, `location.hash=${JSON.stringify(STATES.alternativeUnsupported.slice(1))}`);
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.outcome === 'invalid'`,
+      'unsupported alternative navigation');
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).get('alternative')`),
+      'first-reading-alternative');
+    await cdp.send('Page.reload', { ignoreCache: true });
+    await waitFor(cdp,
+      `performance.getEntriesByType('navigation')[0]?.type === 'reload' && window.propersReaderDebug && ` +
+      `window.propersReaderDebug && propersReaderDebug.ready && ` +
+      `propersReaderDebug.outcome === 'invalid'`,
+      'unsupported alternative reload');
+    await evaluate(cdp, 'history.back()');
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.outcome === 'ready' && ` +
+      `!new URLSearchParams(location.hash.slice(1)).has('alternative')`,
+      'unsupported alternative history back');
+    await evaluate(cdp, 'history.forward()');
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.outcome === 'invalid' && ` +
+      `new URLSearchParams(location.hash.slice(1)).get('alternative') === 'first-reading-alternative'`,
+      'unsupported alternative history forward');
   });
 
   await check('320 CSS pixels and 200 percent zoom preserve page and surface overflow contracts', async () => {
@@ -657,16 +820,34 @@ async function assertions(cdp, base) {
     await cdp.send('Emulation.setEmulatedMedia', { media: 'screen', features: [] });
   });
 
-  await check('print removes shell and candidate chrome but retains identity and choice notice', async () => {
+  await check('the retained Propers route is statically noindex and visible copy is route-neutral', async () => {
+    const source = await readFile(resolve(ROOT, 'src/web/browser/liturgy/propers-reader.html'), 'utf8');
+    assert.match(source,
+      /<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">/);
+    assert.doesNotMatch(source, /<link[^>]+rel=["']canonical["']|property=["']og:url["']/i);
+    await candidate(cdp, base, STATES.roman);
+    const value = await evaluate(cdp, `({
+      robots: document.querySelector('meta[name="robots"]').content,
+      title: document.title,
+      visible: document.body.innerText,
+      actions: document.querySelectorAll('[data-reader-action]').length
+    })`);
+    assert.equal(value.robots, 'noindex, nofollow, noarchive, nosnippet, noimageindex');
+    assert.equal(value.actions, 4);
+    assert.doesNotMatch(value.title + '\n' + value.visible,
+      /internal candidate|reader candidate|current reader|live reader/i);
+  });
+
+  await check('print removes shell chrome but retains identity and choice notice', async () => {
     await candidate(cdp, base, STATES.cycles); await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
     const value = await evaluate(cdp, `({
       shell:getComputedStyle(document.querySelector('.reader-actions')).display,
-      marker:getComputedStyle(document.querySelector('.candidate-flag')).display,
+      routeMarker:document.querySelector('.candidate-flag'),
       title:document.querySelector('#formulary-title').textContent,
       notice:document.querySelector('#coverage-notice').textContent,
       choices:[...document.querySelectorAll('.cycle-alternative')].length
     })`);
-    assert.equal(value.shell, 'none'); assert.equal(value.marker, 'none');
+    assert.equal(value.shell, 'none'); assert.equal(value.routeMarker, null);
     assert.equal(value.title, 'The Transfiguration of the Lord'); assert.match(value.notice, /cycles/); assert.equal(value.choices, 3);
     await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
   });
@@ -728,6 +909,10 @@ async function captures(cdp, base) {
   for (const [label, state] of states) {
     await candidate(cdp, base, state); await shot(cdp, resolve(captureDir, `propers-reader-${label}-393x852.png`));
   }
+  await candidate(cdp, base, STATES.cycleA);
+  await shot(cdp, resolve(captureDir, 'propers-reader-public-cycle-a-393x852.png'));
+  await candidate(cdp, base, STATES.romanEnglishWitness);
+  await shot(cdp, resolve(captureDir, 'propers-reader-public-translation-witness-393x852.png'));
   await candidate(cdp, base, STATES.roman); await click(cdp, '[data-reader-action="browse"]');
   await shot(cdp, resolve(captureDir, 'propers-reader-roman-1962-latin-browse-393x852.png')); await escape(cdp);
   await candidate(cdp, base, STATES.post); await click(cdp, '[data-reader-action="browse"]');
@@ -745,7 +930,7 @@ async function captures(cdp, base) {
   await new Promise((done) => setTimeout(done, 120));
   await shot(cdp, resolve(captureDir, 'propers-reader-browse-race-settled-393x852.png')); await escape(cdp);
   await candidate(cdp, base, STATES.roman);
-  await shot(cdp, resolve(captureDir, 'propers-reader-corrected-candidate-banner-393x852.png'));
+  await shot(cdp, resolve(captureDir, 'propers-reader-route-neutral-393x852.png'));
   await candidate(cdp, base, STATES.post); await evaluate(cdp, 'scrollTo(0, document.documentElement.scrollHeight)');
   await shot(cdp, resolve(captureDir, 'propers-reader-deep-scroll-393x852.png'));
   for (const action of ['browse', 'contents', 'mode', 'details']) {
@@ -755,6 +940,8 @@ async function captures(cdp, base) {
   await viewport(cdp, 1440, 900); await candidate(cdp, base, STATES.roman);
   await click(cdp, '[data-reader-action="browse"]');
   await shot(cdp, resolve(captureDir, 'propers-reader-browse-open-1440x900.png')); await escape(cdp);
+  await click(cdp, '[data-reader-action="details"]');
+  await shot(cdp, resolve(captureDir, 'propers-reader-details-open-1440x900.png')); await escape(cdp);
   await shot(cdp, resolve(captureDir, 'propers-reader-valid-1440x900-paired.png'));
   await current(cdp, base, STATES.roman); await shot(cdp, resolve(captureDir, 'propers-current-valid-1440x900.png'));
   await viewport(cdp, 393, 852); await candidate(cdp, base, STATES.cycles);

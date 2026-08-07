@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Focused static, contract, and isolation gates for the W3 Propers candidate."""
+"""Focused static, contract, and isolation gates for the Propers reader."""
 
 from __future__ import annotations
 
@@ -32,15 +32,27 @@ def git(*args: str) -> str:
 
 
 class PropersReaderIntegrationTests(unittest.TestCase):
-    def test_candidate_is_noindex_unlinked_and_normal_preview_source(self) -> None:
+    def test_reader_has_exact_static_privacy_title_and_route_neutral_copy(self) -> None:
         html = text(HTML)
         script = text(JS)
         self.assertIn('data-reader-shell', html)
         self.assertIn('data-entrance="propers"', html)
-        self.assertIn("meta[name=\"robots\"]", script)
-        self.assertIn("noindex, nofollow, noarchive", script)
-        self.assertIn("Internal Propers Read candidate", html)
-        self.assertNotIn("M3 candidate", html)
+        robots = '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">'
+        self.assertEqual(html.count(robots), 1)
+        self.assertNotIn("meta[name=\"robots\"]", script)
+        self.assertNotIn("robots.content", script)
+        self.assertIn("<title>Propers — Triptych</title>", html)
+        self.assertNotIn('class="candidate-flag"', html)
+        self.assertNotIn("Internal Propers Read candidate", html)
+        self.assertNotIn("internal candidate", html)
+        self.assertNotIn("W3 candidate", html)
+        for description in (
+            "Continuous reading of the appointed texts.",
+            "Continuous Ordinary with appointed propers in place.",
+            "Expanded notes and apparatus.",
+            "Parallel editions and recensions.",
+        ):
+            self.assertEqual(html.count(description), 1)
         self.assertNotIn("prototypes/reader-shell", html)
         for asset in (
             "reader-shell.js", "reader-shell.css", "reader-state.js",
@@ -113,15 +125,33 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         self.assertIn("No liturgical text is selected by list order", source)
         self.assertNotIn("state.masses[0].key", source)
 
-    def test_legacy_and_internal_state_spelling_are_bounded(self) -> None:
+    def test_public_state_keys_are_stable_and_legacy_aliases_are_input_only(self) -> None:
         source = text(JS)
+        contract = text(LITURGY / "reader-state.js")
         for key in ("missal", "type", "mass", "bible", "orations"):
             self.assertIn(key, source)
-        self.assertIn("_candidate-cycle", source)
-        self.assertIn("_candidate-alternative", source)
-        self.assertIn("_candidate-translation-witness", source)
-        self.assertNotIn("params.set('cycle'", source)
-        self.assertNotIn("params.set('alternative'", source)
+        for name, public, legacy in (
+            ("cycle", "cycle", "_candidate-cycle"),
+            ("alternative", "alternative", "_candidate-alternative"),
+            ("translationWitness", "translation-witness", "_candidate-translation-witness"),
+        ):
+            self.assertIn(f"{name}: '{public}'", source)
+            self.assertIn(f"{name}: '{legacy}'", source)
+            self.assertEqual(source.count(legacy), 1)
+        self.assertIn("const PUBLIC_KEYS = Object.freeze", source)
+        self.assertIn("const LEGACY_KEYS = Object.freeze", source)
+        self.assertIn("publicKeys: PUBLIC_KEYS", source)
+        self.assertIn("legacyInputAliases: LEGACY_KEYS", source)
+        self.assertIn("const publicValues = explicitValues(publicKey)", source)
+        self.assertIn("const legacyValues = explicitValues(legacyKey)", source)
+        self.assertIn("row[PUBLIC_KEYS.cycle] = alternative.cycle", source)
+        self.assertIn("updates[PUBLIC_KEYS.translationWitness]", source)
+        self.assertIn("[LEGACY_KEYS.cycle]", source)
+        self.assertIn(
+            "LEGACY_KEYS.cycle, LEGACY_KEYS.alternative, LEGACY_KEYS.translationWitness",
+            source,
+        )
+        self.assertIn("'cycle', 'alternative', 'translation-witness'", contract)
         self.assertIn("T.params.get('missals')", source)
         self.assertIn("T.dataRoot", source)
 
@@ -161,9 +191,29 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         self.assertIn('data-mode="read"', source)
         self.assertEqual(source.count('aria-disabled="true"'), 3)
         self.assertEqual(source.count(' disabled>'), 3)
-        for name in ("Missal", "Study", "Compare"):
-            self.assertIn(f"<strong>{name}</strong>", source)
-            self.assertIn("Not integrated in this internal candidate.", source)
+        for name, description in (
+            ("Read", "Continuous reading of the appointed texts."),
+            ("Missal", "Continuous Ordinary with appointed propers in place."),
+            ("Study", "Expanded notes and apparatus."),
+            ("Compare", "Parallel editions and recensions."),
+        ):
+            self.assertIn(f"<strong>{name}</strong><span>{description}</span>", source)
+
+    def test_details_offer_counterpart_and_context_links(self) -> None:
+        source = text(JS)
+        self.assertIn("function detailsLinkSection(heading, links)", source)
+        for token in (
+            "detailsLinkSection('Related reader'",
+            "{ label: 'Open the Day reader', href: 'day.html' }",
+            "detailsLinkSection('Elsewhere in Triptych'",
+            "{ label: 'The Story of Salvation', href: '../scripture/' }",
+            "{ label: 'How the Missal Changed', href: '../history/' }",
+            "{ label: 'Every Document', href: '../texts/' }",
+            "{ label: 'The Source Library', href: '../sources/' }",
+            "{ label: 'The Code, Canon by Canon', href: '../law/' }",
+        ):
+            self.assertIn(token, source)
+        self.assertIn("if (name === 'details') populateDetails()", source)
 
     def test_each_render_clears_state_and_superseded_work_cannot_commit(self) -> None:
         source = text(JS)
@@ -197,7 +247,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             self.assertIn(token, source)
         self.assertNotIn("function translationRows(structure, language)", source)
         self.assertIn("witnessSelect.replaceChildren();\n    witnessField.hidden = true;", source)
-        self.assertIn("updates[INTERNAL_WITNESS_KEY] = witnessField.hidden ? null", source)
+        self.assertIn("updates[PUBLIC_KEYS.translationWitness] = witnessField.hidden ? null", source)
         self.assertIn(".surface-field[hidden] { display: none; }", text(CSS))
 
     def test_complete_notice_details_and_print_boundaries_are_encoded(self) -> None:
@@ -226,15 +276,20 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         self.assertIn("@media (max-width: 25rem)", candidate)
         self.assertIn("grid-template-columns: repeat(3, minmax(0, 1fr))", candidate)
 
-    def test_public_routes_propers_candidate_m1_and_production_data_are_unchanged(self) -> None:
+    def test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated(self) -> None:
+        self.assertEqual(
+            hashlib.sha256((LITURGY / "day.html").read_bytes()).hexdigest(),
+            "bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868",
+        )
+        self.assertEqual(
+            hashlib.sha256((LITURGY / "index.html").read_bytes()).hexdigest(),
+            "f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65",
+        )
         protected = [
-            "src/web/browser/liturgy/index.html",
             "src/web/browser/liturgy/liturgy.js",
             "src/web/browser/liturgy/liturgy.css",
-            "src/web/browser/liturgy/day.html",
             "src/web/browser/liturgy/day.css",
             "src/web/browser/liturgy/day-missal.css",
-            "src/web/browser/liturgy/reader-state.js",
             "src/web/browser/liturgy/reader-state-adapters.js",
         ]
         for relative in protected:

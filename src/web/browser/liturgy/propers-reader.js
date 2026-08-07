@@ -1,27 +1,25 @@
-/* Internal W3 Propers Read candidate over production state and renderer paths. */
+/* Production Propers Read controller over production state and renderer paths. */
 'use strict';
 
 (function () {
-  if (!document.querySelector('meta[name="robots"]')) {
-    const robots = document.createElement('meta');
-    robots.name = 'robots';
-    robots.content = 'noindex, nofollow, noarchive';
-    document.head.appendChild(robots);
-  }
-
   const T = window.Triptych;
   const Contract = window.LiturgyReaderState;
   const Adapters = window.LiturgyReaderStateAdapters;
   const Shell = window.TriptychReaderShell;
 
   if (!T || !Contract || !Adapters || !Shell) {
-    throw new Error('Propers reader candidate requires production browser, state, adapter, and shell modules');
+    throw new Error('Propers reader requires production browser, state, adapter, and shell modules');
   }
 
   const PROPERS_INDEX = 'structure/propers/index.json';
-  const INTERNAL_CYCLE_KEY = '_candidate-cycle';
-  const INTERNAL_ALTERNATIVE_KEY = '_candidate-alternative';
-  const INTERNAL_WITNESS_KEY = '_candidate-translation-witness';
+  const PUBLIC_KEYS = Object.freeze({
+    cycle: 'cycle', alternative: 'alternative', translationWitness: 'translation-witness'
+  });
+  const LEGACY_KEYS = Object.freeze({
+    cycle: '_candidate-cycle',
+    alternative: '_candidate-alternative',
+    translationWitness: '_candidate-translation-witness'
+  });
   const KIND_SEQUENCE = ['seasonal', 'christological', 'marian', 'sanctoral'];
   const KIND_LABELS = {
     seasonal: 'Seasonal', christological: 'Christological',
@@ -81,11 +79,8 @@
     legacy: null,
     outcome: 'loading',
     error: null,
-    internalKeys: {
-      cycle: INTERNAL_CYCLE_KEY,
-      alternative: INTERNAL_ALTERNATIVE_KEY,
-      translationWitness: INTERNAL_WITNESS_KEY
-    }
+    publicKeys: PUBLIC_KEYS,
+    legacyInputAliases: LEGACY_KEYS
   };
 
   function load(path) {
@@ -178,24 +173,29 @@
     return runtime.groups.find(function (row) { return row.kind === kind; }) || null;
   }
 
-  function candidateValues(key) {
+  function explicitValues(key) {
     const params = new URLSearchParams(window.location.hash.replace(/^#/, ''));
     return params.getAll(key);
   }
 
-  function candidateValue(key, errors) {
-    const values = candidateValues(key);
-    if (values.length > 1) {
+  function explicitSemanticValue(name, errors) {
+    const publicKey = PUBLIC_KEYS[name];
+    const legacyKey = LEGACY_KEYS[name];
+    const publicValues = explicitValues(publicKey);
+    const legacyValues = explicitValues(legacyKey);
+    if (publicValues.length > 1 || legacyValues.length > 1 ||
+        (publicValues.length && legacyValues.length)) {
       errors.push({
-        code: 'duplicate-explicit-key', path: key,
-        message: 'a candidate semantic key may not occur more than once'
+        code: 'duplicate-explicit-key', path: publicKey,
+        message: 'the public state and its retained legacy alias may not occur together or repeat'
       });
       return null;
     }
+    const values = publicValues.length ? publicValues : legacyValues;
     if (values.length === 1 && !values[0]) {
       errors.push({
-        code: 'invalid-explicit-value', path: key,
-        message: 'the explicit candidate selection must be a stable nonempty code'
+        code: 'invalid-explicit-value', path: publicKey,
+        message: 'the explicit selection must be a stable nonempty code'
       });
       return null;
     }
@@ -350,11 +350,16 @@
     });
     if (!normalized.ok) return normalized;
     normalized.state.requestedMode = 'read';
-    const cycle = candidateValue(INTERNAL_CYCLE_KEY, errors);
-    const alternative = candidateValue(INTERNAL_ALTERNATIVE_KEY, errors);
-    const witness = candidateValue(INTERNAL_WITNESS_KEY, errors);
+    const cycle = explicitSemanticValue('cycle', errors);
+    const alternative = explicitSemanticValue('alternative', errors);
+    const witness = explicitSemanticValue('translationWitness', errors);
     if (cycle) normalized.state.cycle = cycle;
     if (alternative) normalized.state.alternative = { id: alternative };
+    normalized.legacy.unknown = (normalized.legacy.unknown || []).filter(function (row) {
+      return Object.keys(LEGACY_KEYS).every(function (name) {
+        return row.key !== LEGACY_KEYS[name];
+      });
+    });
     const mass = (prepared.structure.masses || []).find(function (row) {
       return row.key === normalized.state.formulary.id;
     });
@@ -366,7 +371,7 @@
         witnessState.choices.some(function (row) { return row.id === witness; });
       if (!held || normalized.state.languages.orations === T.SOURCE_LANGUAGE) {
         errors.push({
-          code: 'invalid-explicit-value', path: INTERNAL_WITNESS_KEY,
+          code: 'invalid-explicit-value', path: PUBLIC_KEYS.translationWitness,
           message: 'the explicit translation witness cannot faithfully supply this formulary and language'
         });
       } else {
@@ -428,7 +433,7 @@
     const section = T.el('section', 'candidate-failure');
     section.appendChild(T.el('h2', null, heading || 'This explicit selection is invalid'));
     section.appendChild(T.el('p', null,
-      'The candidate did not substitute another missal, type, formulary, Bible, language, cycle, alternative, or witness.'));
+      'The reader did not substitute another missal, type, formulary, Bible, language, cycle, alternative, or witness.'));
     const list = T.el('ul');
     (errors || []).forEach(function (error) {
       list.appendChild(T.el('li', null, (error.path ? error.path + ': ' : '') +
@@ -445,12 +450,13 @@
     replaceReading(failureNode(errors, heading));
     title.textContent = 'Selection unavailable';
     typeLine.textContent = '';
-    metaLine.textContent = 'Internal Propers Read candidate · explicit state rejected';
+    metaLine.textContent = 'Propers · explicit state rejected';
     coverageNotice.hidden = true;
-    document.title = 'Selection unavailable — Propers reader candidate';
+    document.title = 'Selection unavailable — Propers — Triptych';
     window.propersReaderDebug.error = (errors || []).map(function (row) {
       return { code: row.code || null, path: row.path || '', message: row.message || String(row) };
     });
+    refreshDetailsAfterOutcome();
   }
 
   function renderBrowseEntry() {
@@ -469,7 +475,7 @@
       T.languageName(state.languages.orations) + ' orations'
     ].filter(Boolean).join(' · ');
     coverageNotice.hidden = true;
-    document.title = 'Choose a formulary — Propers reader candidate';
+    document.title = 'Choose a formulary — Propers — Triptych';
   }
 
   function sourceIndex(event) {
@@ -512,8 +518,8 @@
       button.type = 'button';
       button.addEventListener('click', function () {
         navigate((function () {
-          const row = {}; row[INTERNAL_CYCLE_KEY] = alternative.cycle; return row;
-        }()), []);
+          const row = {}; row[PUBLIC_KEYS.cycle] = alternative.cycle; return row;
+        }()), [LEGACY_KEYS.cycle]);
       });
       controls.appendChild(button);
     });
@@ -586,7 +592,7 @@
       return 'Some Proper text is unavailable in the selected edition or language; available material remains identified.';
     }
     if (rows.some(function (row) { return row.state === 'unsupported'; })) {
-      return 'Part of this formulary is outside the candidate’s supported Read boundary.';
+      return 'Part of this formulary is outside the supported Read boundary.';
     }
     if (rows.some(function (row) { return row.completeness === 'partial'; })) {
       return 'Some Proper text is not held in this repository; the available portions are shown.';
@@ -638,7 +644,7 @@
       coverageNotice.textContent = notice || '';
       coverageNotice.hidden = !notice;
     }
-    document.title = (mass.name || mass.key) + ' — Propers reader candidate';
+    document.title = (mass.name || mass.key) + ' — Propers — Triptych';
     return true;
   }
 
@@ -832,6 +838,21 @@
     return list;
   }
 
+  function detailsLinkSection(heading, links) {
+    const section = T.el('section', 'details-section');
+    section.appendChild(T.el('h3', null, heading));
+    const list = T.el('ul');
+    links.forEach(function (link) {
+      const item = T.el('li');
+      const anchor = T.el('a', null, link.label);
+      anchor.href = link.href;
+      item.appendChild(anchor);
+      list.appendChild(item);
+    });
+    section.appendChild(list);
+    return section;
+  }
+
   function cycleSummary(result, state) {
     if (Object.prototype.hasOwnProperty.call(state, 'cycle')) return T.cycleLabel(state.cycle);
     const cycles = [];
@@ -854,6 +875,11 @@
   function populateDetails() {
     if (runtime.detailsLoaded) return;
     detailsBody.replaceChildren();
+    if (runtime.outcome === 'loading') {
+      detailsBody.appendChild(T.el('p', 'surface-note',
+        'The current selection is still loading. Details will follow the committed result.'));
+      return;
+    }
     const state = runtime.normalized && runtime.normalized.state;
     if (!state) {
       detailsBody.appendChild(T.el('p', 'surface-note',
@@ -876,8 +902,25 @@
       ['Coverage', runtime.result ? coverageSummary(runtime.result) : 'No formulary selected']
     ]));
     detailsBody.appendChild(selection);
+    detailsBody.appendChild(detailsLinkSection('Related reader', [
+      { label: 'Open the Day reader', href: 'day.html' }
+    ]));
+    detailsBody.appendChild(detailsLinkSection('Elsewhere in Triptych', [
+      { label: 'The Story of Salvation', href: '../scripture/' },
+      { label: 'How the Missal Changed', href: '../history/' },
+      { label: 'Every Document', href: '../texts/' },
+      { label: 'The Source Library', href: '../sources/' },
+      { label: 'The Code, Canon by Canon', href: '../law/' }
+    ]));
     runtime.detailsLoaded = true;
     window.propersReaderDebug.detailsBuilds += 1;
+  }
+
+  function refreshDetailsAfterOutcome() {
+    runtime.detailsLoaded = false;
+    detailsBody.replaceChildren(T.el('p', 'surface-note',
+      'Details load when this surface is opened.'));
+    if (readerShell.openSurface() === 'details') populateDetails();
   }
 
   const readerShell = Shell.create({
@@ -914,7 +957,8 @@
     readerShell.setContents([]);
     title.textContent = 'Loading Propers selection';
     typeLine.textContent = '';
-    metaLine.textContent = 'Internal Propers Read candidate';
+    metaLine.textContent = 'Propers · selection loading';
+    document.title = 'Propers — Triptych';
     coverageNotice.textContent = '';
     coverageNotice.hidden = true;
     resetBrowseSurface();
@@ -941,9 +985,14 @@
       const internalErrors = [];
       let normalized;
       if (prepared.browse) {
-        candidateValue(INTERNAL_CYCLE_KEY, internalErrors);
-        candidateValue(INTERNAL_ALTERNATIVE_KEY, internalErrors);
-        candidateValue(INTERNAL_WITNESS_KEY, internalErrors);
+        ['cycle', 'alternative', 'translationWitness'].forEach(function (name) {
+          if (explicitSemanticValue(name, internalErrors)) {
+            internalErrors.push({
+              code: 'invalid-explicit-value', path: PUBLIC_KEYS[name],
+              message: 'this selection requires an explicit formulary'
+            });
+          }
+        });
         if (internalErrors.length) {
           renderFailure(internalErrors);
           return;
@@ -964,6 +1013,7 @@
         window.propersReaderDebug.outcome = 'browse';
         renderBrowseEntry();
         populateBrowseSurface();
+        refreshDetailsAfterOutcome();
         if (serial !== runtime.serial) return;
         readerShell.open('browse', shellRoot.querySelector('[data-reader-action="browse"]'));
         return;
@@ -993,11 +1043,12 @@
       const rendered = await renderResult(result, mass, bibleRow(normalized.state.bible.id), serial);
       if (!rendered || serial !== runtime.serial) return;
       window.propersReaderDebug.semantic = semanticProjection(result);
+      refreshDetailsAfterOutcome();
     } catch (error) {
       if (serial !== runtime.serial) return;
       renderFailure([{
         code: 'candidate-load', path: '', message: String(error.message || error)
-      }], 'The Propers candidate could not load this selection');
+      }], 'The Propers reader could not load this selection');
     } finally {
       if (serial === runtime.serial) {
         window.propersReaderDebug.renders += 1;
@@ -1062,9 +1113,12 @@
       bible: bibleSelect.value,
       orations: orationsSelect.value
     };
-    updates[INTERNAL_WITNESS_KEY] = witnessField.hidden ? null : witnessSelect.value;
+    updates[PUBLIC_KEYS.translationWitness] = witnessField.hidden ? null : witnessSelect.value;
     readerShell.close({ restoreFocus: false });
-    navigate(updates, [INTERNAL_CYCLE_KEY, INTERNAL_ALTERNATIVE_KEY]);
+    navigate(updates, [
+      PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative,
+      LEGACY_KEYS.cycle, LEGACY_KEYS.alternative, LEGACY_KEYS.translationWitness
+    ]);
   });
 
   document.querySelector('[data-mode="read"]').addEventListener('click', function () {
@@ -1084,7 +1138,7 @@
   window.addEventListener('hashchange', historyRender);
 
   T.setInlineNotice(
-    'No data root could be reached at "' + T.dataRoot + '", so the internal Propers reader candidate has nothing to render.'
+    'No data root could be reached at "' + T.dataRoot + '", so the Propers reader has nothing to render.'
   );
   renderCandidate();
 }());

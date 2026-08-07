@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Day reader — internal candidate</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<title>Day — Triptych</title>
 <link rel="stylesheet" href="../shared/browser-core.css">
 <link rel="stylesheet" href="liturgy.css">
 <link rel="stylesheet" href="day.css">
@@ -16,11 +17,6 @@
 <a class="skip-link" href="#reader-document">Skip to the Mass</a>
 
 <div class="day-reader-candidate-frame">
-<p class="candidate-flag" role="note">
-  <strong>Internal W3 candidate</strong>
-  <span>Day Read and Missal integration for review; the live Day page is unchanged.</span>
-</p>
-
 <div class="reader-shell reader-instrument" data-reader-shell data-entrance="day" data-reader-mode="read">
   <div class="reader-masthead" aria-label="Triptych reader">
     <a class="reader-brand" href="../index.html" aria-label="Triptych home">
@@ -113,7 +109,7 @@
         </div>
         <button class="surface-apply" type="submit">Apply selection</button>
       </form>
-      <p class="surface-note">Locality is never inferred. Dates requiring an explicit territorial branch remain on the current Day page until that state is represented by the shared URL contract.</p>
+      <p class="surface-note">All held territorial branches are shown; no locality is inferred.</p>
     </div>
   </dialog>
 
@@ -140,16 +136,16 @@
     </header>
     <div class="surface-body mode-options" role="radiogroup" aria-label="Reader mode">
       <button type="button" role="radio" aria-checked="true" data-mode="read">
-        <strong>Read</strong><span>Available and active in this candidate.</span>
+        <strong>Read</strong><span>Continuous reading of the appointed texts.</span>
       </button>
       <button type="button" role="radio" aria-checked="false" data-mode="missal">
         <strong>Missal</strong><span>Continuous Ordinary with appointed propers in place.</span>
       </button>
       <button type="button" role="radio" aria-checked="false" aria-disabled="true" disabled>
-        <strong>Study</strong><span>Not integrated in the W3 candidate.</span>
+        <strong>Study</strong><span>Expanded notes and apparatus.</span>
       </button>
       <button type="button" role="radio" aria-checked="false" aria-disabled="true" disabled>
-        <strong>Compare</strong><span>Not integrated in the W3 candidate.</span>
+        <strong>Compare</strong><span>Parallel editions and recensions.</span>
       </button>
     </div>
   </dialog>

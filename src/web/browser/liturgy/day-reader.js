@@ -1,17 +1,7 @@
-/* Internal W3 Day Read/Missal candidate over production assembly, state, and renderers. */
+/* Production Day Read/Missal controller over production assembly, state, and renderers. */
 'use strict';
 
 (function () {
-  // The normal artifact layout supplies the repository's stronger no-index
-  // directive. This marker keeps the directly served review source no-index as
-  // well without teaching the shared static renderer page-specific head markup.
-  if (!document.querySelector('meta[name="robots"]')) {
-    const robots = document.createElement('meta');
-    robots.name = 'robots';
-    robots.content = 'noindex, nofollow, noarchive';
-    document.head.appendChild(robots);
-  }
-
   const T = window.Triptych;
   const Model = window.MassAssembly;
   const Contract = window.LiturgyReaderState;
@@ -20,7 +10,7 @@
   const OrdinaryRenderer = window.TriptychOrdinaryRenderer;
 
   if (!T || !Model || !Contract || !Adapters || !Shell || !OrdinaryRenderer) {
-    throw new Error('Day reader candidate requires production browser, assembly, Ordinary renderer, state, adapter, and shell modules');
+    throw new Error('Day reader requires production browser, assembly, Ordinary renderer, state, adapter, and shell modules');
   }
 
   const PATHS = Object.freeze({
@@ -78,6 +68,8 @@
     missals: [],
     bibles: [],
     branch: null,
+    branches: [],
+    rubrics: null,
     detailsLoaded: false,
     deferred: [],
     outcome: 'loading',
@@ -187,22 +179,10 @@
     readerShell.setContents([]);
   }
 
-  function currentDayLink() {
-    const link = new URL('day.html', window.location.href);
-    link.search = window.location.search;
-    link.hash = window.location.hash;
-    return link.href;
-  }
-
   function limitation(titleText, message) {
     const section = T.el('section', 'candidate-limitation');
     section.appendChild(T.el('h2', null, titleText));
     section.appendChild(T.el('p', null, message));
-    const paragraph = T.el('p');
-    const link = T.el('a', null, 'Open this selection in the current Day reader');
-    link.href = currentDayLink();
-    paragraph.appendChild(link);
-    section.appendChild(paragraph);
     return section;
   }
 
@@ -213,6 +193,8 @@
     runtime.structure = null;
     runtime.ordinary = null;
     runtime.branch = null;
+    runtime.branches = [];
+    runtime.rubrics = null;
     runtime.deferred = [];
     runtime.outcome = outcome;
     runtime.mode = null;
@@ -251,7 +233,7 @@
     section.appendChild(T.el('h2', null, held.heading || 'This explicit selection is invalid'));
     section.appendChild(T.el('p', null,
       held.explanation ||
-      'The candidate rejected the explicit state and did not substitute another edition, date, Bible, language, locality, or formulary.'));
+      'The reader rejected the explicit state and did not substitute another edition, date, Bible, language, locality, or formulary.'));
     const list = T.el('ul');
     (errors || []).forEach(function (error) {
       const label = error.path ? error.path + ': ' : '';
@@ -260,11 +242,13 @@
     section.appendChild(list);
     replaceReading(section);
     title.textContent = 'Selection unavailable';
+    document.title = 'Selection unavailable — Day — Triptych';
     dateLine.textContent = '';
     coverageNotice.hidden = true;
     window.dayReaderDebug.error = (errors || []).map(function (one) {
       return { code: one.code || null, path: one.path || '', message: one.message || String(one) };
     });
+    refreshDetailsAfterOutcome();
   }
 
   function variantKeys(ordinaryIndex) {
@@ -278,10 +262,7 @@
   }
 
   function deferredState(parsed) {
-    const reasons = [];
-    const recognized = parsed.recognized || {};
-    if (recognized.why === '1') reasons.push('the current Day reasoning apparatus');
-    return reasons;
+    return [];
   }
 
   function requestedModeOf(parsed) {
@@ -309,7 +290,7 @@
       unresolved: 'valid state unresolved',
       unrenderable: 'valid selection unrenderable'
     };
-    return ['Internal Day reader candidate', modeLabel(mode), labels[outcomeClass] || outcomeClass]
+    return ['Day', modeLabel(mode), labels[outcomeClass] || outcomeClass]
       .filter(Boolean).join(' · ');
   }
 
@@ -420,7 +401,13 @@
       ordinaries: ordinaries,
       derived: derived
     });
-    return { derived: derived, structure: rows[2], ordinary: rows[3] || null, context: context };
+    return {
+      derived: derived,
+      rubrics: rows[0],
+      structure: rows[2],
+      ordinary: rows[3] || null,
+      context: context
+    };
   }
 
   function setDateSurfaceEnabled(enabled) {
@@ -441,7 +428,7 @@
     formularyField.hidden = true;
     ordinaryLangField.hidden = true;
     ordinaryOptionField.hidden = true;
-    dateStatus.textContent = 'No validated selection is available for the current candidate outcome.';
+    dateStatus.textContent = 'No validated selection is available for the current reader outcome.';
     setDateSurfaceEnabled(false);
   }
 
@@ -502,14 +489,12 @@
       ordinaryLangField.hidden = true;
       ordinaryOptionField.hidden = true;
     }
-    if (runtime.outcome === 'territorial-choice') {
-      dateStatus.textContent = 'Locality is unresolved: a territorial choice is required and no branch has been selected.';
-    } else if (runtime.outcome === 'deferred') {
-      dateStatus.textContent = 'These validated values are preserved, but the active deferred request is not rendered in this candidate.';
-    } else if (runtime.outcome === 'unresolved') {
+    if (runtime.outcome === 'unresolved') {
       dateStatus.textContent = 'These validated values are current, but the formulary outcome remains unresolved.';
     } else {
-      dateStatus.textContent = 'Locality is never inferred. Dates requiring an explicit territorial branch remain on the current Day page until that state is represented by the shared URL contract.';
+      dateStatus.textContent = runtime.branches.length > 1
+        ? 'Every held territorial branch is shown; no locality or preferred branch is inferred.'
+        : 'The resolved production result is shown without inferring a locality.';
     }
     setDateSurfaceEnabled(true);
   }
@@ -524,9 +509,29 @@
     return list;
   }
 
+  function detailsLinkSection(heading, links) {
+    const section = T.el('section', 'details-section');
+    section.appendChild(T.el('h3', null, heading));
+    const list = T.el('ul');
+    links.forEach(function (link) {
+      const item = T.el('li');
+      const anchor = T.el('a', null, link.label);
+      anchor.href = link.href;
+      item.appendChild(anchor);
+      list.appendChild(item);
+    });
+    section.appendChild(list);
+    return section;
+  }
+
   function populateDetails() {
     if (runtime.detailsLoaded) return;
     detailsBody.replaceChildren();
+    if (runtime.outcome === 'loading') {
+      detailsBody.appendChild(T.el('p', 'surface-note',
+        'The current selection is still loading. Details will follow the committed result.'));
+      return;
+    }
     const state = runtime.normalized && runtime.normalized.state;
     if (!state) {
       detailsBody.appendChild(T.el('p', 'surface-note',
@@ -549,9 +554,9 @@
     selection.appendChild(definitionList([
       ['Date', state.civilDate],
       ['Missal', missal && (missal.edition || missal.label) || state.edition.id],
-      ['Locality', runtime.branch
-        ? (runtime.branch.option || 'Universal')
-        : (runtime.outcome === 'territorial-choice' ? 'Choice required' : 'Not selected')],
+      ['Territorial result', runtime.branches.length > 1
+        ? runtime.branches.map(function (row) { return row.branch.option; }).join('; ')
+        : (runtime.branch && runtime.branch.option || 'Universal')],
       ['Bible', bible && bible.label || state.bible.id],
       ['Orations', humanLanguage(state.languages.orations)],
       ['Mode', modeLabel(runtime.mode)],
@@ -559,7 +564,11 @@
         ? humanLanguage(state.languages.ordinary || 'en') : null],
       ['Ordinary option', runtime.mode === 'missal'
         ? selectedOrdinaryOptionLabel(state, runtime.ordinary) : null],
-      ['Formulary', runtime.result && runtime.result.resolved && runtime.result.resolved.formulary]
+      ['Formulary', runtime.branches.length > 1
+        ? runtime.branches.map(function (row) {
+          return row.result && row.result.resolved && row.result.resolved.formulary;
+        }).filter(Boolean).join('; ')
+        : (runtime.result && runtime.result.resolved && runtime.result.resolved.formulary)]
     ]));
     detailsBody.appendChild(selection);
 
@@ -577,18 +586,31 @@
       detailsBody.appendChild(calendar);
     } else if (runtime.outcome !== 'ready') {
       const outcome = T.el('section', 'details-section');
-      outcome.appendChild(T.el('h3', null, 'Candidate outcome'));
+      outcome.appendChild(T.el('h3', null, 'Reader outcome'));
       const messages = {
-        deferred: 'An active request is valid and preserved, but remains deferred by this candidate.',
-        'territorial-choice': 'A territorial choice is required; no locality has been selected.',
+        deferred: 'An active request is valid and preserved, but is not yet rendered.',
         unresolved: 'The current request is validated, but no formulary outcome has been selected.',
         unrenderable: 'The current request is valid, but its semantic document cannot be rendered from the available production resources.'
       };
       outcome.appendChild(T.el('p', 'surface-note', messages[runtime.outcome] || 'This selection is not resolved.'));
       detailsBody.appendChild(outcome);
     }
+    detailsBody.appendChild(detailsLinkSection('Related reader', [
+      { label: 'Browse the Propers', href: 'index.html' }
+    ]));
+    detailsBody.appendChild(detailsLinkSection('Elsewhere in Triptych', [
+      { label: 'The Code, Canon by Canon', href: '../law/' },
+      { label: 'Every Document', href: '../texts/' }
+    ]));
     runtime.detailsLoaded = true;
     window.dayReaderDebug.detailsBuilds += 1;
+  }
+
+  function refreshDetailsAfterOutcome() {
+    runtime.detailsLoaded = false;
+    detailsBody.replaceChildren(T.el('p', 'surface-note',
+      'Details load when this surface is opened.'));
+    if (readerShell.openSurface() === 'details') populateDetails();
   }
 
   const readerShell = Shell.create({
@@ -640,13 +662,13 @@
       return row.state === 'supported' && row.completeness === 'complete';
     }) && !(result.unresolvedChoices || []).length) return null;
     if ((result.unresolvedChoices || []).length) {
-      return 'This Day result contains an unresolved choice. The candidate has not selected one silently.';
+      return 'This Day result contains an unresolved choice. The reader has not selected one silently.';
     }
     if (rows.some(function (row) { return row.state === 'unavailable'; })) {
       return 'Some appointed text is unavailable in the selected edition or language; each held portion remains identified.';
     }
     if (rows.some(function (row) { return row.state === 'unsupported'; })) {
-      return 'Part of this selection is outside the candidate’s supported ' + modeLabel(runtime.mode) + ' boundary.';
+      return 'Part of this selection is outside the supported ' + modeLabel(runtime.mode) + ' boundary.';
     }
     if (rows.some(function (row) { return row.completeness === 'partial'; })) {
       return 'Some appointed text is not held in this repository; the available portions are shown.';
@@ -654,10 +676,345 @@
     return 'This selection has a material coverage limitation.';
   }
 
-  async function renderResult(result, structure, derived, branch, renderContext, isCurrent) {
+  function reasoningParagraph(text, locus) {
+    const paragraph = T.el('p', 'reasoning-note', text || '');
+    if (locus) {
+      paragraph.appendChild(document.createTextNode(' '));
+      paragraph.appendChild(T.el('cite', 'reasoning-locus', locus));
+    }
+    return paragraph;
+  }
+
+  function reasoningLatin(text) {
+    const paragraph = T.el('p', 'reasoning-latin', text);
+    paragraph.lang = 'la';
+    return paragraph;
+  }
+
+  const REASONING_SOURCE_WORDS = Object.freeze({
+    index: 'in the calendar',
+    implied: 'constituted from the season',
+    arrived: 'transferred here'
+  });
+
+  const REASONING_ORDINALS = Object.freeze({ 2: 'Second', 3: 'Third' });
+
+  function reasoningOrdinal(position) {
+    return REASONING_ORDINALS[position] || 'Oration ' + position;
+  }
+
+  function appendOrationRuleReasoning(item, oration, branch) {
+    if (oration.why) item.appendChild(reasoningParagraph(oration.why, oration.locus));
+    if (oration.conclusion) {
+      item.appendChild(reasoningParagraph('Said under ' + oration.conclusion + '.'));
+    }
+    if (oration.alternative) {
+      item.appendChild(reasoningParagraph(
+        'The collect of ' + oration.alternative.of_name +
+        ' may be said in its place: ' + oration.alternative.what,
+        oration.alternative.locus));
+    }
+    if (branch.sungDiffers) {
+      item.appendChild(reasoningParagraph(
+        'Not said at a sung Mass that is not the conventual Mass.'));
+    }
+  }
+
+  function appendProperReasoning(body, branch, rubrics, structure, result) {
+    const series = branch.orations && (branch.orations.all || branch.orations.low_mass) || [];
+    const subordinate = series.filter(function (row) { return row.position > 1; });
+    if (!subordinate.length) return;
+    const slots = [];
+    if (series[0] && series[0].label) {
+      slots.push({ slot: series[0].label, what: null, locus: null });
+    }
+    ((rubrics.orations || {}).tracked_by || []).forEach(function (row) {
+      if (row && row.slot) slots.push(row);
+    });
+    if (!slots.length) return;
+    const mass = (structure.masses || []).find(function (row) {
+      return result && result.resolved && row.key === result.resolved.formulary;
+    });
+    const heldNames = new Set(mass && !T.massIsUncompiled(mass)
+      ? (mass.propers || []).filter(function (row) { return !T.isPlaceholder(row); })
+        .map(function (row) { return row.name; }) : []);
+    let applicableSlots = slots.filter(function (slot) { return heldNames.has(slot.slot); });
+    const withoutHeldSlot = applicableSlots.length === 0;
+    body.appendChild(T.el('h4', null, 'Appointed commemorations'));
+    if (withoutHeldSlot) {
+      body.appendChild(reasoningParagraph(
+        'This corpus carries no oration slot for the day’s own Mass, so the reader ' +
+        'cannot say which Proper each follows. They are appointed, not absent.'));
+      const list = T.el('ul', 'reasoning-list');
+      subordinate.forEach(function (oration) {
+        const item = T.el('li');
+        item.appendChild(T.el('strong', null,
+          reasoningOrdinal(oration.position) + ' oration of ' + oration.of_name));
+        if (oration.kind) item.appendChild(document.createTextNode(' — ' + oration.kind + '.'));
+        const orationMass = (structure.masses || []).find(function (row) {
+          return row.key === oration.of;
+        });
+        const namedSlot = String(oration.label || '').replace(
+          /^(?:second|third|oration \d+)\s+/i, '');
+        const sourceSlot = namedSlot || series[0] && series[0].label || 'Collect';
+        const matching = orationMass && (orationMass.propers || []).find(function (row) {
+          return String(row.name).toLowerCase() === String(sourceSlot).toLowerCase() ||
+            String(row.name).toLowerCase() === 'collect';
+        });
+        if (matching && matching.incipit) item.appendChild(reasoningLatin(matching.incipit));
+        appendOrationRuleReasoning(item, oration, branch);
+        list.appendChild(item);
+      });
+      body.appendChild(list);
+      return;
+    }
+    applicableSlots.forEach(function (slot) {
+      body.appendChild(T.el('h5', null, 'What follows the ' + String(slot.slot).toLowerCase()));
+      if (slot.what) body.appendChild(reasoningParagraph(slot.what, slot.locus));
+      const list = T.el('ul', 'reasoning-list');
+      subordinate.forEach(function (oration) {
+        const item = T.el('li');
+        item.appendChild(T.el('strong', null,
+          reasoningOrdinal(oration.position) + ' ' + String(slot.slot).toLowerCase() +
+          ' of ' + oration.of_name));
+        if (oration.kind) item.appendChild(document.createTextNode(' — ' + oration.kind + '.'));
+        const orationMass = (structure.masses || []).find(function (row) {
+          return row.key === oration.of;
+        });
+        const matching = orationMass && (orationMass.propers || []).find(function (row) {
+          return row.name === slot.slot;
+        });
+        if (matching && matching.incipit) {
+          item.appendChild(reasoningLatin(matching.incipit));
+        } else if (orationMass && !T.massIsUncompiled(orationMass)) {
+          item.appendChild(reasoningParagraph(
+            'Its ' + String(slot.slot).toLowerCase() + ' is appointed and is not transcribed here.'));
+        }
+        appendOrationRuleReasoning(item, oration, branch);
+        list.appendChild(item);
+      });
+      body.appendChild(list);
+    });
+  }
+
+  function appendOrdinaryReasoning(body, result, ordinary) {
+    if (!ordinary || !result) return;
+    const placements = (result.events || []).filter(function (event) {
+      return event.kind === 'proper' && event.seat && event.seat.locus;
+    });
+    if (placements.length) {
+      body.appendChild(T.el('h4', null, 'Placement in the Ordinary'));
+      const list = T.el('ul', 'reasoning-list');
+      placements.forEach(function (event) {
+        const item = T.el('li');
+        item.appendChild(T.el('strong', null, event.editionSlotLabel || event.id));
+        item.appendChild(reasoningParagraph('Seated here by ' + event.seat.locus + '.'));
+        list.appendChild(item);
+      });
+      body.appendChild(list);
+    }
+    if (ordinary.derived_from || ordinary.slots_derived_from) {
+      body.appendChild(T.el('h4', null, 'Ordinary resolution'));
+      if (ordinary.derived_from) body.appendChild(reasoningParagraph(ordinary.derived_from));
+      if (ordinary.slots_derived_from) {
+        body.appendChild(reasoningParagraph(ordinary.slots_derived_from));
+      }
+    }
+    const shownElements = new Set((result.events || []).filter(function (event) {
+      return event.kind === 'ordinary-element' || event.kind === 'ordinary_element';
+    }).map(function (event) {
+      return event.id.replace(/^ordinary-element\//, '');
+    }));
+    const notes = [];
+    (ordinary.sections || []).forEach(function (section) {
+      (section.elements || []).forEach(function (element) {
+        if (element.note && shownElements.has(element.key)) notes.push(element);
+      });
+    });
+    if (notes.length) {
+      body.appendChild(T.el('h4', null, 'Ordinary source notes'));
+      const list = T.el('ul', 'reasoning-list');
+      notes.forEach(function (element) {
+        const item = T.el('li');
+        item.dataset.reasoningOrdinaryElement = element.key;
+        item.appendChild(T.el('strong', null, element.name || element.key));
+        item.appendChild(reasoningParagraph(element.note));
+        list.appendChild(item);
+      });
+      body.appendChild(list);
+    }
+  }
+
+  function reasoningApparatus(branch, rubrics, structure, result, ordinary) {
+    const apparatus = document.createElement('details');
+    apparatus.className = 'day-reasoning';
+    apparatus.dataset.reasoningBranch = branch.option || 'universal';
+    apparatus.appendChild(T.el('summary', null, 'Why this Mass'));
+    const body = T.el('div', 'day-reasoning-body');
+    const winner = branch.winner;
+    if (winner) {
+      const lead = T.el('p', 'reasoning-lead');
+      lead.appendChild(T.el('strong', null, winner.name));
+      lead.appendChild(document.createTextNode(winner.row !== null && winner.row !== undefined
+        ? (winner.optional ? ' stands highest at ' : ' takes the day at ') +
+          Model.placeWord(rubrics) + ' ' + winner.row +
+          (winner.class ? ', class ' + winner.class : '') + '.'
+        : ' takes the day.'));
+      body.appendChild(lead);
+      if (winner.rowLabel) body.appendChild(reasoningParagraph(winner.rowLabel, winner.locus));
+      if (winner.why && winner.why !== winner.rowLabel) {
+        body.appendChild(reasoningParagraph(winner.why, winner.locus));
+      }
+      if (winner.source) {
+        body.appendChild(reasoningParagraph(
+          REASONING_SOURCE_WORDS[winner.source] || winner.source));
+      }
+      if (winner.optional) {
+        body.appendChild(reasoningParagraph(
+          'It is optional; the day below it may be kept instead.', winner.locus));
+      }
+      if (winner.territorial) {
+        body.appendChild(reasoningParagraph(
+          'This result holds only under the source-defined territorial branch “' +
+          winner.territorial + '”.'));
+      }
+      if (winner.formulary && winner.formulary.kind === 'own') {
+        if (winner.formulary.why) {
+          body.appendChild(reasoningParagraph(winner.formulary.why, winner.formulary.locus));
+        }
+        if (winner.formulary.latin) body.appendChild(reasoningLatin(winner.formulary.latin));
+        if (winner.formulary.printed) {
+          body.appendChild(reasoningParagraph(
+            'The Missal prints it under the heading “' + winner.formulary.printed + '”.'));
+        }
+        if (winner.formulary.note) body.appendChild(reasoningParagraph(winner.formulary.note));
+      } else if (winner.formulary && winner.formulary.kind === 'borrowed') {
+        body.appendChild(reasoningParagraph(
+          'This day takes ' + winner.formulary.name + '.',
+          winner.formulary.rule && winner.formulary.rule.locus));
+        if (winner.formulary.rule && winner.formulary.rule.rule) {
+          body.appendChild(reasoningParagraph(winner.formulary.rule.rule));
+        }
+      }
+    } else if (branch.choice) {
+      body.appendChild(reasoningParagraph(
+        branch.choice.what + ': ' + (branch.choice.among || []).map(function (row) {
+          return row.name;
+        }).join('; '), branch.choice.locus));
+    }
+
+    const others = (branch.candidates || []).filter(function (candidate) {
+      return !winner || candidate.id !== winner.id;
+    });
+    if (others.length) {
+      body.appendChild(T.el('h4', null, 'Also on this date'));
+      const list = T.el('ul', 'reasoning-list');
+      others.forEach(function (candidate) {
+        const loser = (branch.losers || []).find(function (row) {
+          return row.id === candidate.id;
+        });
+        const item = T.el('li');
+        item.appendChild(T.el('strong', null, candidate.name));
+        if (loser && loser.disposition) {
+          item.appendChild(document.createTextNode(' — ' + loser.disposition + '.'));
+        }
+        item.appendChild(reasoningParagraph(
+          loser && loser.why || candidate.why,
+          loser && loser.locus || candidate.locus
+        ));
+        if (loser && loser.destination) {
+          item.appendChild(reasoningParagraph(
+            'Kept on ' + longDate(loser.destination, Model.weekdayOf(loser.destination)) + '.'));
+        }
+        if (loser && loser.destinationNotComputed) {
+          item.appendChild(reasoningParagraph(
+            'This reader does not compute where it goes. ' + loser.destinationNotComputed));
+        }
+        list.appendChild(item);
+      });
+      body.appendChild(list);
+    }
+    const ceiling = branch.ceilings && branch.ceilings.low_mass;
+    if (ceiling) {
+      body.appendChild(reasoningParagraph(ceiling.what ||
+        ('This day admits ' + ceiling.max + ' commemoration' +
+          (ceiling.max === 1 ? '' : 's') + '.'), ceiling.locus));
+    }
+    const category = rubrics.mass_category || {};
+    if (category.assumed) {
+      body.appendChild(reasoningParagraph(
+        'This result assumes ' + category.assumed +
+        '; it does not test whether a votive, ritual, requiem or festive Mass is admitted.',
+        category.locus));
+    }
+    (branch.extras || []).forEach(function (extra) {
+      body.appendChild(reasoningParagraph(extra.slot + ': ' + extra.what, extra.locus));
+    });
+    (branch.remarks || []).forEach(function (remark) {
+      body.appendChild(reasoningParagraph(remark.what, remark.locus));
+    });
+    (branch.massChoices || []).forEach(function (choice) {
+      body.appendChild(T.el('h4', null, choice.label || 'Source-defined Mass choice'));
+      body.appendChild(reasoningParagraph(choice.why || choice.what, choice.locus));
+      if (choice.latin) body.appendChild(reasoningLatin(choice.latin));
+      if (choice.openBecause) body.appendChild(reasoningParagraph(choice.openBecause));
+      if ((choice.among || []).length) {
+        const options = T.el('ul', 'reasoning-list');
+        choice.among.forEach(function (option) {
+          const item = T.el('li');
+          item.appendChild(T.el('strong', null, option.label || option.name || option.id));
+          if (choice.preferred === option.id) {
+            item.appendChild(document.createTextNode(' — ordinarily said.'));
+          }
+          item.appendChild(reasoningParagraph(option.why, option.locus));
+          options.appendChild(item);
+        });
+        body.appendChild(options);
+      }
+    });
+    appendProperReasoning(body, branch, rubrics, structure, result);
+    appendOrdinaryReasoning(body, result, ordinary);
+    apparatus.appendChild(body);
+    return apparatus;
+  }
+
+  function locationPrefix(branch, multiple) {
+    return multiple ? 'territory/' + branch.option + '/' : '';
+  }
+
+  function resultStateForBranch(state, branch, multiple) {
+    if (!multiple) return state;
+    return Object.assign({}, state, {
+      calendar: Object.assign({}, state.calendar, { territory: { id: branch.option } })
+    });
+  }
+
+  function failedBranchDocument(branch, prefix, error) {
+    const fragment = document.createDocumentFragment();
+    const section = T.el('section', 'candidate-failure');
+    section.appendChild(T.el('h3', null, 'This territorial result cannot be rendered'));
+    section.appendChild(T.el('p', null,
+      String(error && error.message || error) +
+      ' No locality, formulary, or liturgical text was substituted.'));
+    fragment.appendChild(section);
+    return {
+      branch: branch,
+      result: null,
+      fragment: fragment,
+      contents: [],
+      bible: bibleRow(runtime.normalized.state.bible.id),
+      uncompiled: null,
+      notice: 'One held territorial result cannot be rendered from the available production resources.',
+      prefix: prefix,
+      error: String(error && error.message || error)
+    };
+  }
+
+  async function buildResultDocument(result, structure, branch, renderContext, isCurrent) {
     const state = renderContext.state;
     const mode = renderContext.mode;
     const ordinary = renderContext.ordinary;
+    const prefix = renderContext.locationPrefix || '';
     const mass = (structure.masses || []).find(function (row) {
       return result.resolved && row.key === result.resolved.formulary;
     });
@@ -672,7 +1029,7 @@
     if (mode === 'missal') {
       renderMissalDocument(
         documentFragment, contents, result, mass, structure, bible,
-        fragments.fragments, state, ordinary
+        fragments.fragments, state, ordinary, prefix
       );
     } else {
       (result.events || []).forEach(function (event) {
@@ -681,10 +1038,10 @@
         const proper = index === null ? null : (mass.propers || [])[index];
         if (!proper || T.isPlaceholder(proper)) return;
         const section = renderProperEvent(event, proper, index, structure, bible,
-          fragments.fragments, state, 'h2');
+          fragments.fragments, state, 'h2', prefix);
         documentFragment.appendChild(section);
         contents.push({
-          id: event.id,
+          id: prefix + event.id,
           label: event.editionSlotLabel || proper.name || 'Proper',
           element: section,
           group: 'Proper of the Mass'
@@ -692,46 +1049,107 @@
       });
     }
 
+    const notice = coverageMessage(result);
+    return {
+      branch: branch,
+      result: result,
+      fragment: documentFragment,
+      contents: contents,
+      bible: bible,
+      uncompiled: uncompiled,
+      notice: notice
+    };
+  }
+
+  function branchHeading(branch, ordinal) {
+    const heading = T.el('header', 'territorial-branch-heading');
+    const identity = T.titleCase(String(branch.option || 'universal').replace(/-/g, ' '));
+    heading.appendChild(T.el('p', 'territorial-branch-label', 'Territorial branch · ' + identity));
+    const resultTitle = T.el('h2', null,
+      branch.winner && branch.winner.name || 'Branch result unavailable');
+    resultTitle.id = 'territorial-branch-' + String(ordinal + 1).padStart(2, '0');
+    heading.appendChild(resultTitle);
+    return { node: heading, titleId: resultTitle.id, identity: identity };
+  }
+
+  function commitResultDocuments(rows, assembled, state, showWhy) {
+    const multiple = rows.length > 1;
+    const documentFragment = document.createDocumentFragment();
+    const contents = [];
+    rows.forEach(function (row, ordinal) {
+      if (multiple) {
+        const branch = document.createElement('section');
+        branch.className = 'territorial-branch';
+        branch.dataset.territorialBranch = row.branch.option;
+        const heading = branchHeading(row.branch, ordinal);
+        branch.setAttribute('aria-labelledby', heading.titleId);
+        branch.appendChild(heading.node);
+        branch.appendChild(row.fragment);
+        if (showWhy) branch.appendChild(reasoningApparatus(
+          row.branch, assembled.rubrics, assembled.structure, row.result, runtime.ordinary));
+        documentFragment.appendChild(branch);
+        row.contents.forEach(function (entry) {
+          contents.push(Object.assign({}, entry, { group: heading.identity + ' · ' + entry.group }));
+        });
+      } else {
+        documentFragment.appendChild(row.fragment);
+        if (showWhy) documentFragment.appendChild(reasoningApparatus(
+          row.branch, assembled.rubrics, assembled.structure, row.result, runtime.ordinary));
+        row.contents.forEach(function (entry) { contents.push(entry); });
+      }
+    });
     reading.replaceChildren(documentFragment);
     reading.setAttribute('aria-busy', 'false');
     readerShell.setContents(contents);
 
-    const winner = branch && branch.winner;
-    title.textContent = winner && winner.name || 'No day is settled here';
-    dateLine.textContent = longDate(derived.date, derived.weekday);
     const missal = missalRow(state.edition.id);
+    const bible = rows[0] && rows[0].bible;
+    title.textContent = multiple
+      ? 'Held territorial branches'
+      : (rows[0].branch.winner && rows[0].branch.winner.name || 'No day is settled here');
+    dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
     const metadata = [
       missal && (missal.edition || missal.label),
-      branch && branch.option || 'Universal',
+      multiple ? rows.length + ' source-defined territorial results' : (rows[0].branch.option || 'Universal'),
       bible && bible.label,
       humanLanguage(state.languages.orations) + ' orations'
     ];
-    if (mode === 'missal') {
+    if (runtime.mode === 'missal') {
       metadata.push(humanLanguage(state.languages.ordinary || 'en') + ' Ordinary');
-      metadata.push(selectedOrdinaryOptionLabel(state, ordinary));
+      metadata.push(selectedOrdinaryOptionLabel(state, runtime.ordinary));
     }
     commitOutcomePresentation({
-      mode: mode,
+      mode: runtime.mode,
       outcome: 'ready',
       outcomeClass: 'ready',
       metadata: metadata.filter(Boolean).join(' · ')
     });
-    const notice = coverageMessage(result);
-    if (uncompiled) {
-      coverageNotice.replaceChildren(...uncompiled.childNodes);
+    document.title = multiple
+      ? 'Territorial results — Day — Triptych'
+      : title.textContent + ' — Day — Triptych';
+    refreshDetailsAfterOutcome();
+
+    const notices = rows.map(function (row) { return row.notice; }).filter(Boolean);
+    const uncompiled = rows.map(function (row) { return row.uncompiled; }).filter(Boolean);
+    if (uncompiled.length) {
+      coverageNotice.textContent = multiple
+        ? 'One or more held territorial results are not fully compiled; each available portion remains identified.'
+        : uncompiled[0].textContent;
       coverageNotice.hidden = false;
     } else {
-      coverageNotice.textContent = notice || '';
-      coverageNotice.hidden = !notice;
+      coverageNotice.textContent = notices.length
+        ? Array.from(new Set(notices)).join(' ') : '';
+      coverageNotice.hidden = !notices.length;
     }
-    return true;
   }
 
-  function semanticNode(node, event, ordinal) {
-    node.dataset.semanticLocation = event.id;
+  function semanticNode(node, event, ordinal, prefix) {
+    const heldPrefix = prefix || '';
+    node.dataset.semanticLocation = heldPrefix + event.id;
     node.dataset.semanticEventId = event.id;
     node.tabIndex = -1;
-    node.id = 'reader-event-' + String(ordinal + 1).padStart(3, '0');
+    node.id = 'reader-event-' + (heldPrefix ? heldPrefix.replace(/[^a-z0-9]+/gi, '-') : '') +
+      String(ordinal + 1).padStart(3, '0');
     return node;
   }
 
@@ -746,17 +1164,17 @@
     return node;
   }
 
-  function renderProperEvent(event, proper, index, structure, bible, fragments, state, heading) {
+  function renderProperEvent(event, proper, index, structure, bible, fragments, state, heading, prefix) {
     const section = T.renderProper(proper, bible, fragments, {
       numbering: structure.numbering || null,
       orations: state.languages.orations,
       heading: heading,
       cycle: event.selected && event.selected.cycle || null
     });
-    return semanticNode(section, event, index);
+    return semanticNode(section, event, index, prefix);
   }
 
-  function renderMissalDocument(fragment, contents, result, mass, structure, bible, fragments, state, ordinary) {
+  function renderMissalDocument(fragment, contents, result, mass, structure, bible, fragments, state, ordinary, prefix) {
     if (!ordinary) throw new Error('the selected edition has no production Ordinary to render');
     const unseated = (result.events || []).filter(function (event) {
       return event.kind === 'proper' && (!event.seat || !event.seat.id || event.seat.placement !== 'seated');
@@ -796,8 +1214,8 @@
         const ordinal = ordinals.get(event.id);
         const raw = sections.get(event.id.replace(/^ordinary-section\//, ''));
         if (!raw) throw new Error('production Ordinary section is missing for ' + event.id);
-        const node = semanticNode(T.el('h2', 'mass-subheading ordinary-division', raw.name), event, ordinal);
-        contents.push({ id: event.id, label: raw.name, element: node, group: 'Rites and divisions' });
+        const node = semanticNode(T.el('h2', 'mass-subheading ordinary-division', raw.name), event, ordinal, prefix);
+        contents.push({ id: prefix + event.id, label: raw.name, element: node, group: 'Rites and divisions' });
         return node;
       },
       element: function (event) {
@@ -807,13 +1225,14 @@
         const node = semanticNode(
           composeInstrumentAbsences(OrdinaryRenderer.renderElement(raw, ordinary)),
           event,
-          ordinal
+          ordinal,
+          prefix
         );
         if (!optionListed && group && raw.variant) {
           optionListed = true;
-          const choice = renderOrdinaryChoice(group, selectedOption, event);
+          const choice = renderOrdinaryChoice(group, selectedOption, event, prefix);
           contents.push({
-            id: event.id,
+            id: prefix + event.id,
             label: selectedOrdinaryOptionLabel(state, ordinary),
             element: node,
             group: 'Options'
@@ -832,9 +1251,9 @@
         if (!proper || T.isPlaceholder(proper)) {
           throw new Error('semantic Proper event has no production Proper at ' + event.id);
         }
-        const node = renderProperEvent(event, proper, ordinal, structure, bible, fragments, state, 'h3');
+        const node = renderProperEvent(event, proper, ordinal, structure, bible, fragments, state, 'h3', prefix);
         contents.push({
-          id: event.id,
+          id: prefix + event.id,
           label: event.editionSlotLabel || proper.name || 'Proper',
           element: node,
           group: 'Appointed propers'
@@ -853,9 +1272,10 @@
     fragment.appendChild(OrdinaryRenderer.ordinaryPreamble(ordinary));
   }
 
-  function renderOrdinaryChoice(group, selected, event) {
+  function renderOrdinaryChoice(group, selected, event, prefix) {
     const fieldset = T.el('fieldset', 'ordinary-choice');
     fieldset.dataset.optionGroup = group.group;
+    fieldset.dataset.optionBranch = prefix || '';
     fieldset.appendChild(T.el('legend', null, group.name));
     fieldset.appendChild(T.el('p', 'ordinary-choice-note',
       'This source-defined choice belongs here in the liturgical sequence.'));
@@ -864,15 +1284,18 @@
       const label = T.el('label', 'ordinary-choice-option');
       const input = document.createElement('input');
       input.type = 'radio';
-      input.name = 'reader-' + group.group;
+      input.name = 'reader-' + (prefix || '').replace(/[^a-z0-9]+/gi, '-') + group.group;
       input.value = option.id;
       input.checked = Boolean(selected && selected.id === option.id);
       input.addEventListener('change', function () {
         if (!input.checked) return;
-        const location = { kind: 'event', id: event.id };
+        const location = { kind: 'event', id: (prefix || '') + event.id };
         navigate({ ordinary: '1', [group.group]: option.id }, [], {
           location: location,
-          focus: { kind: 'ordinary-option', group: group.group, option: option.id }
+          focus: {
+            kind: 'ordinary-option', group: group.group, option: option.id,
+            branch: prefix || ''
+          }
         });
       });
       label.appendChild(input);
@@ -916,6 +1339,7 @@
     reading.replaceChildren(T.el('p', 'placeholder', 'Loading Day selection…'));
     readerShell.setContents([]);
     title.textContent = 'Loading Day selection';
+    document.title = 'Day — Triptych';
     dateLine.textContent = '';
     commitOutcomePresentation({
       mode: requestedMode,
@@ -969,31 +1393,16 @@
       }
       runtime.normalized = normalized;
       runtime.derived = assembled.derived;
+      runtime.rubrics = assembled.rubrics;
       runtime.structure = assembled.structure;
       runtime.ordinary = normalized.state.options.ordinary ? assembled.ordinary : null;
       runtime.mode = normalized.state.options.ordinary ? 'missal' : 'read';
       runtime.branch = assembled.derived.options.length === 1 ? assembled.derived.options[0] : null;
+      runtime.branches = [];
       runtime.deferred = deferredState(parsed);
       window.dayReaderDebug.state = normalized.state;
       window.dayReaderDebug.deferred = runtime.deferred.slice();
       window.dayReaderDebug.legacy = normalized.legacy;
-
-      if (assembled.derived.options.length !== 1) {
-        commitOutcomePresentation({
-          mode: runtime.mode,
-          outcome: 'territorial-choice',
-          outcomeClass: 'unresolved',
-          metadata: outcomeMetadata(runtime.mode, 'unresolved') + ' · locality required'
-        });
-        populateDateSurface();
-        replaceReading(limitation(
-          'Territorial branch requires the current Day reader',
-          'This date resolves to more than one territorial branch, and the accepted Day legacy URL contract carries no locality key. The candidate did not choose by array order or geography.'
-        ));
-        title.textContent = 'Locality required';
-        dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
-        return;
-      }
 
       if (runtime.deferred.length) {
         commitOutcomePresentation({
@@ -1005,8 +1414,8 @@
         populateDateSurface();
         replaceReading(limitation(
           'This selection belongs to a later integration slice',
-          'The candidate preserved ' + runtime.deferred.join(', ') +
-            ' but did not partially render it. The unchanged current Day reader remains the faithful route for this request.'
+          'The reader preserved ' + runtime.deferred.join(', ') +
+            ' but did not partially render it.'
         ));
         title.textContent = runtime.branch && runtime.branch.winner
           ? runtime.branch.winner.name : 'Deferred Day selection';
@@ -1014,61 +1423,45 @@
         return;
       }
 
-      let result;
+      const multiple = assembled.derived.options.length > 1;
+      const rendered = [];
+      let branchFailures = 0;
+      const branchErrors = [];
       try {
-        result = Adapters.adaptDay({
-          request: normalized.state,
-          derived: assembled.derived,
-          structure: assembled.structure,
-          ordinary: runtime.ordinary
-        });
-      } catch (error) {
-        commitOutcomePresentation({
-          mode: runtime.mode,
-          outcome: 'unresolved',
-          outcomeClass: 'unresolved',
-          metadata: outcomeMetadata(runtime.mode, 'unresolved')
-        });
-        populateDateSurface();
-        replaceReading(limitation(
-          'This Day choice is not resolved by the candidate',
-          String(error.message || error) + ' No formulary was selected implicitly.'
-        ));
-        title.textContent = runtime.branch && runtime.branch.winner
-          ? runtime.branch.winner.name : 'Unresolved Day selection';
-        dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
-        return;
-      }
-      runtime.result = result;
-      if (!result.resolved) {
-        commitOutcomePresentation({
-          mode: runtime.mode,
-          outcome: 'unresolved',
-          outcomeClass: 'unresolved',
-          metadata: outcomeMetadata(runtime.mode, 'unresolved') + ' · choice required'
-        });
-        populateDateSurface();
-        replaceReading(limitation(
-          'A formulary choice remains unresolved',
-          'The production calendar result authorizes more than one choice. The candidate has preserved that state and selected none.'
-        ));
-        title.textContent = runtime.branch && runtime.branch.winner
-          ? runtime.branch.winner.name : 'Unresolved Day selection';
-        dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
-        return;
-      }
-      const renderContext = {
-        state: normalized.state,
-        mode: runtime.mode,
-        ordinary: runtime.ordinary
-      };
-      let rendered;
-      try {
-        rendered = await renderResult(
-          result, assembled.structure, assembled.derived, runtime.branch,
-          renderContext,
-          function () { return serial === runtime.serial; }
-        );
+        for (let branchIndex = 0; branchIndex < assembled.derived.options.length; branchIndex += 1) {
+          const branch = assembled.derived.options[branchIndex];
+          const branchState = resultStateForBranch(normalized.state, branch, multiple);
+          const prefix = locationPrefix(branch, multiple);
+          try {
+            const result = Adapters.adaptDay({
+              request: branchState,
+              derived: assembled.derived,
+              structure: assembled.structure,
+              ordinary: runtime.ordinary
+            });
+            if (!result.resolved) {
+              throw new Error('the production result leaves its formulary unresolved');
+            }
+            const row = await buildResultDocument(
+              result, assembled.structure, branch,
+              {
+                state: branchState,
+                mode: runtime.mode,
+                ordinary: runtime.ordinary,
+                locationPrefix: prefix
+              },
+              function () { return serial === runtime.serial; }
+            );
+            if (!row || serial !== runtime.serial) return;
+            row.prefix = prefix;
+            row.state = branchState;
+            rendered.push(row);
+          } catch (error) {
+            branchFailures += 1;
+            branchErrors.push(error);
+            rendered.push(failedBranchDocument(branch, prefix, error));
+          }
+        }
       } catch (error) {
         if (serial !== runtime.serial) return;
         renderFailure([{ code: 'candidate-unrenderable', path: '', message: String(error.message || error) }], {
@@ -1077,13 +1470,33 @@
           outcomeClass: 'unrenderable',
           preserveSelection: true,
           heading: 'This valid Day selection cannot be rendered',
-          explanation: 'The candidate stopped rather than inventing a missing resource, semantic seat, option, or liturgical text.'
+          explanation: 'The reader stopped rather than inventing a missing resource, semantic seat, option, or liturgical text.'
         });
         return;
       }
-      if (!rendered || serial !== runtime.serial) return;
+      if (!rendered.length || serial !== runtime.serial) return;
+      if (branchFailures === rendered.length) {
+        throw branchErrors[0];
+      }
+      runtime.branches = rendered.map(function (row) {
+        return { branch: row.branch, result: row.result, prefix: row.prefix };
+      });
+      runtime.branch = multiple ? null : rendered[0].branch;
+      runtime.result = multiple ? null : rendered[0].result;
+      commitResultDocuments(
+        rendered, assembled, normalized.state,
+        Boolean(normalized.state.apparatus && normalized.state.apparatus.why)
+      );
       populateDateSurface();
-      window.dayReaderDebug.semantic = semanticProjection(result);
+      window.dayReaderDebug.semantic = multiple
+        ? rendered.map(function (row) {
+          return {
+            territory: row.branch.option,
+            prefix: row.prefix,
+            document: semanticProjection(row.result)
+          };
+        })
+        : semanticProjection(rendered[0].result);
       restorePendingNavigation(pendingNavigation);
       if (modeStartedAt !== null) {
         window.dayReaderDebug.lastModeSwitchMs = performance.now() - modeStartedAt;
@@ -1095,8 +1508,8 @@
         outcome: 'unrenderable',
         outcomeClass: 'unrenderable',
         preserveSelection: Boolean(runtime.normalized),
-        heading: 'The Day candidate could not load this selection',
-        explanation: 'The requested mode is valid, but the candidate could not obtain a required production resource and did not substitute another one.'
+        heading: 'The Day reader could not load this selection',
+        explanation: 'The requested mode is valid, but the reader could not obtain a required production resource and did not substitute another one.'
       });
     } finally {
       if (serial === runtime.serial) {
@@ -1149,9 +1562,20 @@
 
   function nearestProperLocation(location, events) {
     if (!location || location.kind !== 'event') return location;
-    if (/^proper\//.test(location.id || '')) return location;
-    const rows = events || [];
-    const at = rows.findIndex(function (event) { return event.id === location.id; });
+    let prefix = '';
+    let eventId = location.id || '';
+    const territorial = /^territory\/[^/]+\//.exec(eventId);
+    if (territorial) {
+      prefix = territorial[0];
+      eventId = eventId.slice(prefix.length);
+    }
+    if (/^proper\//.test(eventId)) return location;
+    let rows = events || [];
+    if (prefix) {
+      const held = runtime.branches.find(function (row) { return row.prefix === prefix; });
+      rows = held && held.result && held.result.events || [];
+    }
+    const at = rows.findIndex(function (event) { return event.id === eventId; });
     if (at < 0) return { kind: 'top', id: null };
     let best = null;
     rows.forEach(function (event, index) {
@@ -1161,7 +1585,7 @@
         best = { id: event.id, distance: distance, index: index };
       }
     });
-    return best ? { kind: 'event', id: best.id } : { kind: 'top', id: null };
+    return best ? { kind: 'event', id: prefix + best.id } : { kind: 'top', id: null };
   }
 
   function captureModeLocation(targetMode) {
@@ -1181,6 +1605,7 @@
       )).find(function (input) {
         const group = input.closest('[data-option-group]');
         return group && group.dataset.optionGroup === held.focus.group &&
+          group.dataset.optionBranch === (held.focus.branch || '') &&
           input.value === held.focus.option && input.checked;
       }) || null;
     }
@@ -1279,7 +1704,7 @@
   });
 
   T.setInlineNotice(
-    'No data root could be reached at "' + T.dataRoot + '", so the internal Day reader candidate has nothing to derive from.'
+    'No data root could be reached at "' + T.dataRoot + '", so the Day reader has nothing to derive from.'
   );
   renderCandidate();
 }());

@@ -147,8 +147,11 @@ alternative retains its own stable cycle identity, citations or composed
 material, rights, availability, and source hooks. Stable-key sorting may make
 the representation canonical, but may never choose an alternative. The adapter
 neither concatenates mutually exclusive readings nor overwrites one cycle's
-composed text with another. The future public URL spelling of cycle selection
-remains provisional.
+composed text with another. The Propers URL uses the stable `cycle` key for an
+explicit cycle and the stable `alternative` key for another explicitly named
+alternative. The shared contract validates their nonempty identities; whether
+the selected production formulary holds them remains adapter-owned and fails
+closed when it does not.
 
 Day Compare fixes the state's civil date and a named territorial context, then
 resolves each edition side independently before comparing semantic units.
@@ -162,7 +165,7 @@ The v1 inventory is:
 | Route | Hash keys | Query keys |
 | --- | --- | --- |
 | Day | `date`, `missal`, `bible`, `orations`, `why`, `ordinary`, `ordinary-lang`, `rubrics`, `mass`, and manifest-declared Ordinary variant keys (currently `eucharistic-prayer`) | `data` |
-| Propers | `missal`, `type`, `mass`, `bible`, `orations` | `data`, `missals` |
+| Propers | `missal`, `type`, `mass`, `bible`, `orations`, `cycle`, `alternative`, `translation-witness` | `data`, `missals` |
 
 The contract preserves current spelling and canonical route order. Unknown
 legacy pairs remain in a compatibility envelope and round-trip with both key
@@ -171,9 +174,11 @@ preference-sensitive semantic value, including values equal to repository
 defaults, so another reader's stored preferences cannot reinterpret a shared
 URL. A variant key valid in another edition is preserved as inert and is never
 applied across editions. Duplicate semantic keys and an explicit value invalid
-under the selected manifests fail closed. Unknown future `cycle` or
-`alternative` keys are preserved but cannot affect semantic state before their
-public contract exists.
+under the selected manifests fail closed. Propers `cycle`, `alternative`, and
+`translation-witness` values use stable nonempty public identities. Their
+canonical order follows the five base Propers keys, and serialization never
+uses implementation-scoped aliases. Production adapters retain ownership of
+whether the selected formulary actually holds the named choice or witness.
 
 URL fields outrank valid remembered preferences, which outrank
 repository-declared defaults. A throwing or absent storage adapter yields no

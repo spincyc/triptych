@@ -151,6 +151,48 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
         self.assertIn("shellRoot.dataset.readerMode", held(LITURGY / "day-reader.js"))
         self.assertIn("coverageNotice.replaceChildren(...uncompiled.childNodes)", held(LITURGY / "propers-reader.js"))
 
+    def test_candidate_routes_have_static_privacy_and_route_neutral_identity(self) -> None:
+        expected = {
+            PRODUCTION_DAY: ("Day — Triptych", "Date"),
+            PRODUCTION_PROPERS: ("Propers — Triptych", "Browse"),
+        }
+        robots = (
+            '<meta name="robots" content="noindex, nofollow, noarchive, '
+            'nosnippet, noimageindex">'
+        )
+        for path, (title, first_action) in expected.items():
+            source = held(path)
+            self.assertEqual(source.count(robots), 1, path.name)
+            self.assertIn(f"<title>{title}</title>", source)
+            self.assertNotIn('class="candidate-flag"', source)
+            self.assertNotIn("internal candidate", source.lower())
+            self.assertEqual(source.count('class="action-label"'), 4)
+            self.assertIn(f'class="action-label">{first_action}</span>', source)
+            for copy in (
+                "Continuous reading of the appointed texts.",
+                "Expanded notes and apparatus.",
+                "Parallel editions and recensions.",
+            ):
+                self.assertIn(copy, source)
+
+    def test_compatibility_closure_uses_public_propers_state_and_day_owned_apparatus(self) -> None:
+        state = held(LITURGY / "reader-state.js")
+        propers = held(LITURGY / "propers-reader.js")
+        day = held(LITURGY / "day-reader.js")
+        self.assertIn("'cycle', 'alternative', 'translation-witness'", state)
+        self.assertIn("const PUBLIC_KEYS = Object.freeze", propers)
+        self.assertIn("const LEGACY_KEYS = Object.freeze", propers)
+        self.assertIn("publicKeys: PUBLIC_KEYS", propers)
+        self.assertIn("legacyInputAliases: LEGACY_KEYS", propers)
+        self.assertIn("row[PUBLIC_KEYS.cycle] = alternative.cycle", propers)
+        self.assertIn("updates[PUBLIC_KEYS.translationWitness]", propers)
+        self.assertIn("function reasoningApparatus(branch, rubrics, structure, result, ordinary)", day)
+        self.assertIn("appendProperReasoning(body, branch, rubrics, structure, result)", day)
+        self.assertIn("appendOrdinaryReasoning(body, result, ordinary)", day)
+        self.assertIn("function commitResultDocuments(rows, assembled, state, showWhy)", day)
+        self.assertIn("territorial-branch", day)
+        self.assertNotIn("TriptychDayApparatus", day)
+
     def test_pages_have_unique_ids(self) -> None:
         for page in (DAY, PROPERS):
             ids = re.findall(r'\bid="([^"]+)"', held(page))
@@ -162,7 +204,6 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
             "index.html": "f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65",
             "reader-shell.js": "e17ccd767c016facc3d03820f5c0c1e71ab166f5a9c7a86de95245e0b87966a9",
             "reader-shell.css": "e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a",
-            "reader-state.js": "86fcb653738089a569f0f9747d5092e4e51fd2f4ee0ae7b4e7fe9a0c5f5a7cdc",
             "reader-state-adapters.js": "ec655b52e850152a1a3034b09fbc36b828000a5edc9d01b7b8d98dfaeea96bcb",
             "ordinary-seating.js": "67917f4888764f1aac097d291df5e655fb485d89219fda56ffba9a25aee993ba",
         }

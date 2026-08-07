@@ -62,7 +62,10 @@
     'date', 'missal', 'bible', 'orations', 'why', 'ordinary',
     'ordinary-lang', 'rubrics', 'mass'
   ]);
-  const PROPERS_KEYS = Object.freeze(['missal', 'type', 'mass', 'bible', 'orations']);
+  const PROPERS_KEYS = Object.freeze([
+    'missal', 'type', 'mass', 'bible', 'orations',
+    'cycle', 'alternative', 'translation-witness'
+  ]);
   const URL_INVENTORY = Object.freeze({
     day: Object.freeze({
       hash: Object.freeze(DAY_KEYS.concat(['eucharistic-prayer'])),
@@ -984,6 +987,14 @@
       }, true);
       state.formulary = mass ? { id: mass, type: type } : null;
       state.civilDate = null;
+      const cycle = validOrDefault('cycle', nonempty, false);
+      const alternative = validOrDefault('alternative', nonempty, false);
+      const translationWitness = validOrDefault('translation-witness', nonempty, false);
+      if (cycle !== null) state.cycle = cycle;
+      if (alternative !== null) state.alternative = { id: alternative };
+      if (translationWitness !== null) {
+        state.languages.translationWitness = translationWitness;
+      }
     }
 
     const validated = validateReaderState(state);
@@ -1019,6 +1030,11 @@
       pairs.push(['mass', state.formulary.id]);
       pairs.push(['bible', state.bible.id]);
       pairs.push(['orations', state.languages.orations]);
+      if (has(state, 'cycle') && state.cycle !== null) pairs.push(['cycle', state.cycle]);
+      if (state.alternative) pairs.push(['alternative', state.alternative.id]);
+      if (state.languages.translationWitness) {
+        pairs.push(['translation-witness', state.languages.translationWitness]);
+      }
     }
     for (const row of normalized.legacy.unknown || []) pairs.push([row.key, row.value]);
     return '#' + pairs.filter(function (one) {

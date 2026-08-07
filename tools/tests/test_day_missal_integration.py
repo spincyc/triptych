@@ -65,10 +65,16 @@ class DayMissalIntegrationTests(unittest.TestCase):
         for token in (
             "validateExplicitVariants", "invalid-explicit-variant",
             "the explicit option is not applicable", "ordinary-lang",
-            "recognized.why === '1'", "renderOrdinaryChoice",
+            "function reasoningApparatus(branch, rubrics, structure, result, ordinary)",
+            "appendProperReasoning(body, branch, rubrics, structure, result)",
+            "appendOrdinaryReasoning(body, result, ordinary)",
+            "Boolean(normalized.state.apparatus && normalized.state.apparatus.why)",
+            "apparatus.className = 'day-reasoning'", "renderOrdinaryChoice",
             "window.OrdinarySeating.chosenOption", "group.options || []",
         ):
             self.assertIn(token, source)
+        self.assertIn("function deferredState(parsed) {\n    return [];\n  }", source)
+        self.assertNotIn("recognized.why === '1'", source)
         self.assertNotIn("recognized.rubrics === '1'", source)
         self.assertNotIn("group.options[0]", source)
         self.assertNotIn("Object.keys(group", source)
@@ -92,7 +98,8 @@ class DayMissalIntegrationTests(unittest.TestCase):
         shell = text(LITURGY / "reader-shell.js")
         for token in (
             "captureModeLocation", "nearestProperLocation", "restorePendingNavigation",
-            "modeStartedAt", "derivations", "if (!rendered || serial !== runtime.serial) return",
+            "modeStartedAt", "derivations", "if (!row || serial !== runtime.serial) return",
+            "if (!rendered.length || serial !== runtime.serial) return",
             "renderContext", "sourceHooks", "data-semantic-location",
             "ordinary-option", "pendingNavigation", "committedRender",
             "(optionGroup || optionTarget).scrollIntoView({ block: 'start', behavior: 'auto' })",
@@ -100,6 +107,15 @@ class DayMissalIntegrationTests(unittest.TestCase):
             self.assertIn(token, candidate if token not in {"data-semantic-location"} else shell)
         self.assertIn("captureSemanticLocation", shell)
         self.assertIn("restoreSemanticLocation", shell)
+        for branch_token in (
+            "function locationPrefix(branch, multiple)",
+            "function resultStateForBranch(state, branch, multiple)",
+            "const territorial = /^territory\\/[^/]+\\//.exec(eventId)",
+            "runtime.branches.find(function (row) { return row.prefix === prefix; })",
+            "id: (prefix || '') + event.id",
+            "group.dataset.optionBranch === (held.focus.branch || '')",
+        ):
+            self.assertIn(branch_token, candidate)
         self.assertNotIn("JSON.stringify(runtime", candidate)
         self.assertNotIn("hook.kind + ': '", candidate)
 
@@ -109,8 +125,12 @@ class DayMissalIntegrationTests(unittest.TestCase):
         self.assertIn("function requestedModeOf(parsed)", source)
         self.assertIn("mode ? modeLabel(mode) : 'Unavailable'", source)
         self.assertIn("outcomeClass: 'unrenderable'", source)
-        self.assertIn("outcomeClass: 'unresolved'", source)
         self.assertIn("outcomeClass: 'deferred'", source)
+        self.assertIn("outcomeClass: 'ready'", source)
+        self.assertIn("function commitResultDocuments(rows, assembled, state, showWhy)", source)
+        self.assertIn("function failedBranchDocument(branch, prefix, error)", source)
+        self.assertIn("if (branchFailures === rendered.length)", source)
+        self.assertIn("throw branchErrors[0]", source)
         self.assertIn("invalid: 'explicit state rejected'", source)
         self.assertNotIn("Read candidate limitation", source)
 
@@ -132,15 +152,26 @@ class DayMissalIntegrationTests(unittest.TestCase):
         self.assertIn("composeInstrumentAbsences", text(JS))
         self.assertIn("shellRoot.dataset.readerMode", text(JS))
 
-    def test_public_and_accepted_propers_surfaces_are_byte_isolated(self) -> None:
+    def test_public_routes_renderer_data_and_accepted_oracles_are_isolated(self) -> None:
+        exact = {
+            "src/web/browser/liturgy/day.html":
+                "bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868",
+            "src/web/browser/liturgy/index.html":
+                "f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65",
+            "src/web/browser/liturgy/day.js":
+                "0bc1714bca04c65ed45de00f69c08d7536b3e72612bf6cb15301580d4f26daae",
+        }
+        for relative, digest in exact.items():
+            self.assertEqual(
+                hashlib.sha256((ROOT / relative).read_bytes()).hexdigest(),
+                digest,
+                relative,
+            )
         protected = [
-            "src/web/browser/liturgy/day.html",
             "src/web/browser/liturgy/day.css",
             "src/web/browser/liturgy/day-missal.css",
-            "src/web/browser/liturgy/index.html",
             "src/web/browser/liturgy/liturgy.js",
             "src/web/browser/liturgy/liturgy.css",
-            "src/web/browser/liturgy/reader-state.js",
             "src/web/browser/liturgy/reader-state-adapters.js",
             "src/web/browser/liturgy/assembly-model.js",
             "src/web/browser/liturgy/ordinary-seating.js",

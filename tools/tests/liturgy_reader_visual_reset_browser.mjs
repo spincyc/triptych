@@ -30,11 +30,17 @@ async function sha256(path) {
 
 const STATES = Object.freeze({
   romanRead: '#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&mass=pentecost-10&ordinary=0',
+  romanWhy: '#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&mass=pentecost-10&ordinary=0&why=1',
+  romanWhyNoSlot: '#date=2026-01-15&missal=roman-1962&bible=douay-rheims&orations=la&ordinary=0&why=1',
   romanMissal: '#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&mass=pentecost-10&ordinary=1&ordinary-lang=en&rubrics=1&why=0',
   postRead: '#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&mass=advent-1&ordinary=0&ordinary-lang=en&eucharistic-prayer=ep-ii',
   postMissal: '#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&mass=advent-1&ordinary=1&ordinary-lang=en&rubrics=1&eucharistic-prayer=ep-ii',
+  postWhy: '#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&mass=advent-1&ordinary=1&ordinary-lang=en&rubrics=1&why=1&eucharistic-prayer=ep-ii',
   partial: '#date=2026-01-01&missal=roman-1962&bible=douay-rheims&orations=la&mass=octava-nativitatis-domini&ordinary=1&ordinary-lang=en&rubrics=1',
+  territorialEpiphany: '#date=2026-01-04&missal=postconciliar&bible=douay-rheims&orations=la&ordinary=0&why=0',
+  territorialEpiphanyWhy: '#date=2026-01-04&missal=postconciliar&bible=douay-rheims&orations=la&ordinary=0&why=1',
   propers: '#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims&orations=la',
+  propersCycleChoice: '#missal=postconciliar&type=seasonal&mass=advent-1&bible=douay-rheims&orations=la',
   browse: '#missal=roman-1962&bible=douay-rheims&orations=la'
 });
 
@@ -715,6 +721,148 @@ async function runAssertions(cdp, base) {
     assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document .proper').length`), 0);
   });
 
+  await check('production Day Why exposes source-owned reasoning without changing the reading plane', async () => {
+    for (const [width, height] of [[1440, 900], [393, 852]]) {
+      await viewport(cdp, width, height);
+      await productionFresh(cdp, productionUrl(base, 'day', STATES.romanWhy), 'day');
+      const value = await evaluate(cdp, `(() => {
+        const apparatus = document.querySelector('.day-reasoning');
+        return {
+          outcome: dayReaderDebug.outcome,
+          why: dayReaderDebug.state.apparatus.why,
+          count: document.querySelectorAll('.day-reasoning').length,
+          summary: apparatus && apparatus.querySelector('summary').textContent.trim(),
+          loci: apparatus && apparatus.querySelectorAll('.reasoning-locus').length,
+          text: apparatus && apparatus.textContent,
+          properCount: document.querySelectorAll('#reader-document .proper').length,
+          overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth
+        };
+      })()`);
+      assert.equal(value.outcome, 'ready');
+      assert.equal(value.why, true);
+      assert.equal(value.count, 1);
+      assert.equal(value.summary, 'Why this Mass');
+      assert.ok(value.loci > 0);
+      assert.match(value.text, /Tenth Sunday after Pentecost/);
+      assert.ok(value.properCount > 0);
+      assert.ok(value.overflow <= 1);
+    }
+  });
+
+  await check('production Day renders every real Epiphany territorial branch without inference', async () => {
+    for (const [width, height] of [[1440, 900], [393, 852]]) {
+      await viewport(cdp, width, height);
+      await productionFresh(cdp, productionUrl(base, 'day', STATES.territorialEpiphany), 'day');
+      const value = await evaluate(cdp, `(() => {
+        const branches = [...document.querySelectorAll('.territorial-branch')];
+        const locations = [...document.querySelectorAll('[data-semantic-location]')]
+          .map(node => node.dataset.semanticLocation);
+        const ids = [...document.querySelectorAll('[id]')].map(node => node.id);
+        return {
+          outcome: dayReaderDebug.outcome,
+          title: document.querySelector('#celebration-title').textContent.trim(),
+          branches: branches.map(node => node.dataset.territorialBranch),
+          headings: branches.map(node => node.querySelector('.territorial-branch-heading h2').textContent.trim()),
+          properCounts: branches.map(node => node.querySelectorAll('.proper').length),
+          semanticBranches: dayReaderDebug.semantic.map(row => row.territory),
+          uniqueLocations: new Set(locations).size === locations.length,
+          uniqueIds: new Set(ids).size === ids.length,
+          overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth
+        };
+      })()`);
+      assert.equal(value.outcome, 'ready');
+      assert.equal(value.title, 'Held territorial branches');
+      assert.deepEqual(value.branches, ['epiphany-january-6', 'epiphany-transferred-to-sunday']);
+      assert.deepEqual(value.semanticBranches, value.branches);
+      assert.equal(new Set(value.headings).size, 2);
+      value.properCounts.forEach(count => assert.ok(count > 0));
+      assert.equal(value.uniqueLocations, true);
+      assert.equal(value.uniqueIds, true);
+      assert.ok(value.overflow <= 1);
+    }
+  });
+
+  await check('production Day and Propers Details expose counterpart and contextual navigation', async () => {
+    for (const [entrance, state, counterpart] of [
+      ['day', STATES.romanRead, 'Browse the Propers'],
+      ['propers', STATES.propers, 'Open the Day reader']
+    ]) {
+      for (const [width, height] of [[1440, 900], [393, 852]]) {
+        await viewport(cdp, width, height);
+        await productionFresh(cdp, productionUrl(base, entrance, state), entrance);
+        await click(cdp, '[data-reader-action="details"]');
+        await waitFor(cdp, 'document.querySelector("#details-surface").open', `${entrance} Details`);
+        const value = await evaluate(cdp, `(() => {
+          const surface = document.querySelector('#details-surface');
+          const links = [...surface.querySelectorAll('a')].map(node => node.textContent.trim());
+          return {
+            headings: [...surface.querySelectorAll('.details-section h3')].map(node => node.textContent.trim()),
+            links,
+            focus: document.activeElement.getAttribute('aria-label'),
+            overflow: surface.scrollWidth - surface.clientWidth
+          };
+        })()`);
+        assert.ok(value.headings.includes('Related reader'));
+        assert.ok(value.headings.includes('Elsewhere in Triptych'));
+        assert.ok(value.links.includes(counterpart));
+        assert.ok(value.links.includes('Every Document'));
+        assert.ok(value.links.includes('The Code, Canon by Canon'));
+        assert.equal(value.focus, 'Close Details');
+        assert.ok(value.overflow <= 1);
+        await escape(cdp);
+        assert.equal(await evaluate(cdp, 'document.activeElement.dataset.readerAction'), 'details');
+      }
+    }
+  });
+
+  await check('production Propers emits stable public state and accepts legacy aliases only as input', async () => {
+    await viewport(cdp, 393, 852);
+    await productionFresh(cdp, productionUrl(base, 'propers', STATES.propersCycleChoice), 'propers');
+    assert.ok(await evaluate(cdp, `document.querySelectorAll('.cycle-choice-controls button').length`) > 0);
+    await click(cdp, '.cycle-choice-controls button');
+    await waitFor(cdp, `propersReaderDebug.ready && new URLSearchParams(location.hash.slice(1)).has('cycle')`,
+      'public Propers cycle state');
+    let value = await evaluate(cdp, `({
+      hash: location.hash,
+      cycle: propersReaderDebug.state.cycle,
+      publicKeys: propersReaderDebug.publicKeys,
+      legacyInputAliases: propersReaderDebug.legacyInputAliases
+    })`);
+    assert.ok(value.cycle);
+    assert.match(value.hash, /(?:^|&)cycle=/);
+    assert.doesNotMatch(value.hash, /_candidate-/);
+    assert.deepEqual(value.publicKeys,
+      { cycle: 'cycle', alternative: 'alternative', translationWitness: 'translation-witness' });
+    assert.deepEqual(value.legacyInputAliases,
+      { cycle: '_candidate-cycle', alternative: '_candidate-alternative',
+        translationWitness: '_candidate-translation-witness' });
+
+    const legacy = STATES.propersCycleChoice + '&_candidate-cycle=' + encodeURIComponent(value.cycle);
+    await productionFresh(cdp, productionUrl(base, 'propers', legacy), 'propers');
+    value = await evaluate(cdp, `({ cycle: propersReaderDebug.state.cycle,
+      unknown: propersReaderDebug.legacy.unknown.map(row => row.key) })`);
+    assert.ok(value.cycle);
+    assert.equal(value.unknown.includes('_candidate-cycle'), false);
+  });
+
+  await check('production reader pages retain exact noindex and route-neutral rendered copy', async () => {
+    await viewport(cdp, 1440, 900);
+    for (const [entrance, state, titleSuffix] of [
+      ['day', STATES.romanRead, ' — Day — Triptych'],
+      ['propers', STATES.propers, ' — Propers — Triptych']
+    ]) {
+      await productionFresh(cdp, productionUrl(base, entrance, state), entrance);
+      const value = await evaluate(cdp, `({
+        robots: document.querySelector('meta[name="robots"]').content,
+        title: document.title,
+        visible: document.body.innerText
+      })`);
+      assert.equal(value.robots, 'noindex, nofollow, noarchive, nosnippet, noimageindex');
+      assert.ok(value.title.endsWith(titleSuffix), value.title);
+      assert.doesNotMatch(value.visible, /internal (?:reader )?candidate|W3 candidate/i);
+    }
+  });
+
   await check('prototype resources remain local and network-clean', async () => {
     const external = requests.filter(url => !url.startsWith(base) && !url.startsWith('about:'));
     assert.deepEqual(external, []);
@@ -726,7 +874,9 @@ async function runAssertions(cdp, base) {
 
 async function captureOne(cdp, base, directory, row) {
   const { file, entrance, design, state, width, height, action = null, deep = false,
-    enlargement = false, media = null, keyboard = false, variant = 'prototype' } = row;
+    enlargement = false, media = null, keyboard = false, reasoning = false,
+    surfaceEnd = false,
+    variant = 'prototype' } = row;
   await viewport(cdp, width, height);
   if (media) await cdp.send('Emulation.setEmulatedMedia', { media: 'screen', features: media });
   const target = variant === 'production'
@@ -747,6 +897,26 @@ async function captureOne(cdp, base, directory, row) {
     await click(cdp, `[data-reader-action="${action}"]`);
     await waitFor(cdp, `document.querySelector('[data-reader-surface="${action}"]').open`, `${action} surface`);
     await stableFrames(cdp);
+  }
+  if (reasoning) {
+    await evaluate(cdp, `(() => {
+      const rows = [...document.querySelectorAll('.day-reasoning')];
+      if (!rows.length) throw new Error('missing Day reasoning apparatus');
+      rows.forEach(node => { node.open = true; });
+      (rows[0].querySelector('summary') || rows[0]).scrollIntoView({
+        block: 'start', behavior: 'auto'
+      });
+    })()`);
+    await stableFrames(cdp, '.day-reasoning summary');
+  }
+  if (surfaceEnd && action) {
+    await evaluate(cdp, `(() => {
+      const surface = document.querySelector('[data-reader-surface="${action}"]');
+      const scroller = surface && (surface.querySelector('.surface-body') || surface);
+      if (!scroller) throw new Error('missing ${action} surface scroller');
+      scroller.scrollTop = scroller.scrollHeight;
+    })()`);
+    await stableFrames(cdp, `[data-reader-surface="${action}"]`);
   }
   if (keyboard) {
     if (!action) {
@@ -846,6 +1016,30 @@ async function captureMatrix(cdp, base, directory) {
       file, entrance, design: 'instrument', state, width, height, ...extras, variant: 'prototype'
     }));
     evidence.push(await captureOne(cdp, base, productionDirectory, {
+      file, entrance, design: 'instrument', state, width, height, ...extras, variant: 'production'
+    }));
+  }
+
+  const compatibilityDirectory = join(directory, 'compatibility');
+  await mkdir(compatibilityDirectory, { recursive: true });
+  const compatibilityCases = [
+    ['01-day-why-1440x900.png', 'day', 'romanWhy', 1440, 900, { reasoning: true }],
+    ['02-day-why-393x852.png', 'day', 'romanWhy', 393, 852, { reasoning: true }],
+    ['03-day-territorial-epiphany-1440x900.png', 'day', 'territorialEpiphany', 1440, 900, {}],
+    ['04-day-territorial-epiphany-393x852.png', 'day', 'territorialEpiphany', 393, 852, {}],
+    ['05-day-details-1440x900.png', 'day', 'romanRead', 1440, 900, { action: 'details' }],
+    ['06-day-details-393x852.png', 'day', 'romanRead', 393, 852, { action: 'details' }],
+    ['07-propers-details-1440x900.png', 'propers', 'propers', 1440, 900, { action: 'details' }],
+    ['08-propers-details-393x852.png', 'propers', 'propers', 393, 852, { action: 'details' }],
+    ['09-day-details-links-393x852.png', 'day', 'romanRead', 393, 852,
+      { action: 'details', surfaceEnd: true }],
+    ['10-day-why-no-slot-393x852.png', 'day', 'romanWhyNoSlot', 393, 852, { reasoning: true }],
+    ['11-day-why-postconciliar-missal-1440x900.png', 'day', 'postWhy', 1440, 900, { reasoning: true }],
+    ['12-day-territorial-why-1440x900.png', 'day', 'territorialEpiphanyWhy', 1440, 900,
+      { reasoning: true }]
+  ];
+  for (const [file, entrance, state, width, height, extras] of compatibilityCases) {
+    evidence.push(await captureOne(cdp, base, compatibilityDirectory, {
       file, entrance, design: 'instrument', state, width, height, ...extras, variant: 'production'
     }));
   }

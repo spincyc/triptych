@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Propers reader — internal candidate</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<title>Propers — Triptych</title>
 <link rel="stylesheet" href="../shared/browser-core.css">
 <link rel="stylesheet" href="liturgy.css">
 <link rel="stylesheet" href="reader-shell.css">
@@ -14,11 +15,6 @@
 <a class="skip-link" href="#reader-document">Skip to the Propers</a>
 
 <div class="propers-reader-candidate-frame">
-<p class="candidate-flag" role="note">
-  <strong>Internal Propers Read candidate</strong>
-  <span>Propers Read-mode integration for review; the live Propers page is unchanged.</span>
-</p>
-
 <div class="reader-shell reader-instrument" data-reader-shell data-entrance="propers" data-reader-mode="read">
   <div class="reader-masthead" aria-label="Triptych reader">
     <a class="reader-brand" href="../index.html" aria-label="Triptych home">
@@ -127,16 +123,16 @@
     </header>
     <div class="surface-body mode-options" role="radiogroup" aria-label="Reader mode">
       <button type="button" role="radio" aria-checked="true" data-mode="read">
-        <strong>Read</strong><span>Available and active in this candidate.</span>
+        <strong>Read</strong><span>Continuous reading of the appointed texts.</span>
       </button>
       <button type="button" role="radio" aria-checked="false" aria-disabled="true" data-mode="missal" disabled>
-        <strong>Missal</strong><span>Not integrated in this internal candidate.</span>
+        <strong>Missal</strong><span>Continuous Ordinary with appointed propers in place.</span>
       </button>
       <button type="button" role="radio" aria-checked="false" aria-disabled="true" data-mode="study" disabled>
-        <strong>Study</strong><span>Not integrated in this internal candidate.</span>
+        <strong>Study</strong><span>Expanded notes and apparatus.</span>
       </button>
       <button type="button" role="radio" aria-checked="false" aria-disabled="true" data-mode="compare" disabled>
-        <strong>Compare</strong><span>Not integrated in this internal candidate.</span>
+        <strong>Compare</strong><span>Parallel editions and recensions.</span>
       </button>
     </div>
   </dialog>

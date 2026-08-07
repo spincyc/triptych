@@ -183,8 +183,9 @@ operations.
 
 <!-- promised-deliverable: liturgy-reader-instrument-public-cutover-plan-2026-08-06 -->
 
-**Candidate for narrow independent planning review; planning and pre-cutover
-readiness only.** Work began from the
+**Same-path planning architecture accepted; bounded compatibility closure in
+progress; canonical promotion and public navigation remain unauthorized.**
+Work began from the
 clean, fully synchronized accepted-integration boundary
 `7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef`. It inventories the canonical
 `liturgy/day.html` and `liturgy/index.html` contracts against the accepted
@@ -194,30 +195,44 @@ date-dependent Day browser gate deterministic if and only if its disclosed
 cause is confirmed, and prepares an unapplied exact patch, rollback, acceptance
 gates, and immutable independent-review handoff.
 
-No canonical public HTML, public navigation, candidate route, accepted visual
-oracle, or public deployment behavior may change in this phase. The accepted
-visual direction and production behavior seams remain frozen. Production
-integration and its durable handoff are complete; public-cutover planning is
-not acceptance, and public navigation changes and cutover execution remain
-unauthorized. Source inspection has already identified metadata/indexing,
-legacy-state fallback, first-visit default, and cross-entrance navigation
-differences that must be explicitly classified before a later execution can be
-authorized; none will be silently normalized away.
+Independent review accepted source-level same-path promotion behind the
+unchanged canonical filenames, the rollback and static-hosting model, the
+canonical-route and visual-oracle gates, and the deterministic Day fixture. It
+also fixed the compatibility decisions: Roman 1962 is the intentional empty-Day
+default; `why=1` and every held territorial branch must be preserved; Propers
+uses stable `cycle`, `alternative`, and `translation-witness` keys; retained
+candidates are source-static noindex; visible controller wording is
+route-neutral; and counterpart/context navigation belongs in Details without a
+fifth primary action.
+
+Compatibility implementation and evidence are now in progress only on the
+authorized candidate/shared seams. Canonical `liturgy/day.html` and
+`liturgy/index.html`, repository-owned public navigation, the shared shell,
+production data, and the accepted visual oracle remain byte-unchanged.
+Production integration and its durable handoff remain independently accepted
+and complete. Compatibility closure does not authorize canonical promotion,
+public navigation changes, candidate/oracle cleanup, or public-cutover
+execution.
 
 Planning checkpoint `c7124de25` records the route, state, navigation,
 static-hosting, cache, mechanism, rollback, and later-execution gate maps.
 Test-only commit `5e1b82b51` proves and removes the disclosed wall-clock
 dependency while keeping the first-visit URL empty; Day now passes 34/34.
 Record checkpoint `2cf91dd01` updates only task-owned ledger expectations and
-retains the unrelated full-gate transcript stop. The proposed same-path patch
-is deliberately unapplied. Independent review must disposition the empty-Day
-default, deferred Day reasoning/territorial outcomes, stable public Propers
-option keys, canonical/candidate metadata, route-neutral wording, and direct
-cross-entrance/context access before a later execution can be authorized.
-The immutable planning package is
+retains the unrelated full-gate transcript stop. The reviewed draft same-path
+patch remains deliberately unapplied and non-executable. After compatibility
+implementation and its full evidence matrix are complete, that patch must be
+regenerated from the compatibility-closed bytes, mechanically checked, sealed
+in a new immutable handoff, and returned for narrow independent review. Those
+implementation, evidence, regenerated-patch, handoff, and re-review checkpoints
+are pending; no commit, Pages run, or handoff identity is claimed here. The
+immutable planning package is
 `build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/`.
 Canonical pages, public navigation, candidate routes, and the visual oracle
-remain byte-unchanged.
+were byte-unchanged by that package; canonical pages and public navigation
+remain byte-unchanged during the current compatibility closure. The governed
+full gate must remain reported as non-green while unrelated stored example
+transcripts diverge; they are not to be recaptured or blessed by this work.
 
 ### Liturgical Instrument production integration
 

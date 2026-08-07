@@ -18,6 +18,27 @@ SHELL_JS = LITURGY / "reader-shell.js"
 SHELL_CSS = LITURGY / "reader-shell.css"
 DAY_JS = LITURGY / "day-reader.js"
 DAY_CSS = LITURGY / "day-reader.css"
+STATE_JS = LITURGY / "reader-state.js"
+ROBOTS = "noindex, nofollow, noarchive, nosnippet, noimageindex"
+
+FROZEN_SOURCE_HASHES = {
+    "src/web/browser/liturgy/day.html":
+        "bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868",
+    "src/web/browser/liturgy/index.html":
+        "f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65",
+    "src/web/browser/liturgy/reader-shell.js":
+        "e17ccd767c016facc3d03820f5c0c1e71ab166f5a9c7a86de95245e0b87966a9",
+    "src/web/browser/liturgy/reader-shell.css":
+        "e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a",
+    "src/web/browser/liturgy/reader-visual-reset-day.html":
+        "ff734f07b797e5706c7e62a4c890f47c32c0fbfd78bfc855f421a4123273c18d",
+    "src/web/browser/liturgy/reader-visual-reset-propers.html":
+        "7b0a3a4c7ef1189f27bf134a9f6df90315c62675a19cabca0135adaf7201ba65",
+    "src/web/browser/liturgy/reader-visual-reset.css":
+        "850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48",
+    "src/web/browser/liturgy/reader-visual-reset.js":
+        "eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679",
+}
 
 
 def text(path: Path) -> str:
@@ -31,11 +52,22 @@ def git(*args: str) -> str:
 
 
 class DayReaderIntegrationTests(unittest.TestCase):
-    def test_candidate_is_noindex_unlinked_and_built_from_top_level_sources(self) -> None:
+    def test_reader_is_source_noindex_route_neutral_unlinked_and_top_level(self) -> None:
         source = text(HTML)
-        self.assertIn("meta[name=\"robots\"]", text(DAY_JS))
-        self.assertIn("noindex, nofollow, noarchive", text(DAY_JS))
-        self.assertIn("Internal W3 candidate", source)
+        script = text(DAY_JS)
+        self.assertEqual(
+            source.count(f'<meta name="robots" content="{ROBOTS}">'), 1
+        )
+        self.assertNotIn("meta[name=\"robots\"]", script)
+        self.assertNotIn("robots.content", script)
+        self.assertIn("<title>Day — Triptych</title>", source)
+        for obsolete in (
+            "Internal W3 candidate", "live Day page is unchanged",
+            "Available and active in this candidate",
+            "Not integrated in the W3 candidate",
+        ):
+            self.assertNotIn(obsolete, source)
+        self.assertNotIn("Internal Day reader candidate", script)
         self.assertIn('data-reader-shell', source)
         self.assertNotIn("shell=persistent", source)
         self.assertNotIn("shell=reveal", source)
@@ -96,25 +128,65 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertIn('data-mode="read"', source)
         self.assertIn('data-mode="missal"', source)
         self.assertEqual(source.count('aria-disabled="true" disabled'), 2)
+        self.assertIn("Continuous reading of the appointed texts.", source)
         self.assertIn("Continuous Ordinary with appointed propers in place.", source)
-        for name in ("Study", "Compare"):
-            self.assertIn(f"<strong>{name}</strong>", source)
-            self.assertIn("Not integrated in the W3 candidate.", source)
+        self.assertIn("<strong>Study</strong><span>Expanded notes and apparatus.</span>", source)
+        self.assertIn("<strong>Compare</strong><span>Parallel editions and recensions.</span>", source)
 
-    def test_only_why_remains_deferred_while_missal_state_is_active_or_latent(self) -> None:
+    def test_why_uses_source_derived_apparatus_without_a_self_link(self) -> None:
         source = text(DAY_JS)
         for key in ("ordinary", "ordinary-lang", "rubrics", "why"):
             self.assertIn(key, source)
         self.assertIn("parsed.variantKeys", source)
-        self.assertIn("day.html", source)
-        self.assertIn("window.location.hash", source)
-        self.assertIn("but did not partially render it", source)
-        self.assertIn("recognized.why === '1'", source)
+        self.assertIn("function deferredState(parsed) {\n    return [];", source)
+        self.assertNotIn("recognized.why === '1'", source)
         self.assertNotIn("recognized.rubrics === '1'", source)
         self.assertNotIn("const ordinaryActive = recognized.ordinary === '1'", source)
         self.assertIn("async function validateExplicitVariants", source)
         self.assertIn("structure.variants", source)
+        for token in (
+            "function reasoningApparatus(branch, rubrics, structure, result, ordinary)",
+            "Model.placeWord(rubrics)",
+            "REASONING_SOURCE_WORDS[winner.source]",
+            "longDate(loser.destination, Model.weekdayOf(loser.destination))",
+            "if (winner.formulary.latin)",
+            "if (choice.latin)",
+            "function appendProperReasoning(body, branch, rubrics, structure, result)",
+            "function appendOrdinaryReasoning(body, result, ordinary)",
+            "ordinary.slots_derived_from",
+            "event.seat.locus",
+            "if (winner.rowLabel)",
+            "winner.why && winner.why !== winner.rowLabel",
+            "winner.locus",
+            "(branch.candidates || [])",
+            "branch.ceilings && branch.ceilings.low_mass",
+            "rubrics.mass_category",
+            "Boolean(normalized.state.apparatus && normalized.state.apparatus.why)",
+        ):
+            self.assertIn(token, source)
+        self.assertNotIn("day.html", source)
+        self.assertNotIn("Open this selection in the current Day reader", source)
         self.assertIn("window.dayReaderDebug.legacy = normalized.legacy", source)
+
+    def test_all_held_territorial_branches_render_without_a_public_locality_key(self) -> None:
+        source = text(DAY_JS)
+        for token in (
+            "function resultStateForBranch(state, branch, multiple)",
+            "calendar: Object.assign({}, state.calendar, { territory: { id: branch.option } })",
+            "for (let branchIndex = 0; branchIndex < assembled.derived.options.length; branchIndex += 1)",
+            "branch.dataset.territorialBranch = row.branch.option",
+            "runtime.branches = rendered.map(function (row)",
+            "runtime.branch = multiple ? null : rendered[0].branch",
+            "title.textContent = multiple\n      ? 'Held territorial branches'",
+            "territory: row.branch.option",
+        ):
+            self.assertIn(token, source)
+        self.assertNotIn("territorial-choice", source)
+        self.assertIn("All held territorial branches are shown; no locality is inferred.", text(HTML))
+
+        day_keys = text(STATE_JS).split("const DAY_KEYS", 1)[1].split("]);", 1)[0]
+        self.assertNotIn("territory", day_keys)
+        self.assertNotIn("locality", day_keys)
 
     def test_each_render_clears_selection_state_before_validation(self) -> None:
         source = text(DAY_JS)
@@ -132,23 +204,23 @@ class DayReaderIntegrationTests(unittest.TestCase):
             "window.dayReaderDebug.semantic = null",
         ):
             self.assertIn(assignment, source)
-        self.assertIn("No validated selection is available for the current candidate outcome", source)
-        self.assertIn("'Choice required'", source)
+        self.assertIn("No validated selection is available for the current reader outcome", source)
+        self.assertIn("runtime.branches = []", source)
 
     def test_superseded_async_renders_cannot_mutate_current_output(self) -> None:
         source = text(DAY_JS)
         self.assertIn(
-            "async function renderResult(result, structure, derived, branch, renderContext, isCurrent)",
+            "async function buildResultDocument(result, structure, branch, renderContext, isCurrent)",
             source,
         )
         self.assertIn("if (!isCurrent()) return false", source)
         self.assertIn("function () { return serial === runtime.serial; }", source)
-        self.assertIn("if (!rendered || serial !== runtime.serial) return", source)
+        self.assertIn("if (!row || serial !== runtime.serial) return", source)
         catch = source.index("} catch (error) {", source.index("async function renderCandidate"))
         failure = source.index("renderFailure([{ code: 'candidate-load'", catch)
         self.assertIn("if (serial !== runtime.serial) return", source[catch:failure])
 
-    def test_weekday_and_details_are_human_facing(self) -> None:
+    def test_weekday_and_details_are_human_facing_with_direct_links(self) -> None:
         source = text(DAY_JS)
         self.assertIn("sunday: 'Sunday'", source)
         self.assertIn("WEEKDAY_NAMES[weekday]", source)
@@ -156,6 +228,12 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertNotIn("Available source identities", source)
         self.assertNotIn("hook.kind + ': '", source)
         self.assertNotIn("source-identifier', hook", source)
+        self.assertIn("function detailsLinkSection(heading, links)", source)
+        self.assertIn("detailsLinkSection('Related reader'", source)
+        self.assertIn("{ label: 'Browse the Propers', href: 'index.html' }", source)
+        self.assertIn("detailsLinkSection('Elsewhere in Triptych'", source)
+        self.assertIn("{ label: 'The Code, Canon by Canon', href: '../law/' }", source)
+        self.assertIn("{ label: 'Every Document', href: '../texts/' }", source)
 
     def test_complete_notice_and_machine_envelope_boundaries_are_encoded(self) -> None:
         source = text(DAY_JS)
@@ -184,14 +262,15 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertIn("@container reader-shell (max-width: 18rem)", instrument)
         self.assertIn("grid-template-columns: repeat(2, minmax(0, 1fr))", instrument)
 
-    def test_public_pages_propers_m1_and_production_data_are_isolated(self) -> None:
+    def test_canonical_routes_data_shell_and_visual_oracle_are_frozen(self) -> None:
+        for path, expected in FROZEN_SOURCE_HASHES.items():
+            actual = hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
+            self.assertEqual(actual, expected, path)
+
         protected = [
-            "src/web/browser/liturgy/day.html",
             "src/web/browser/liturgy/day.css",
             "src/web/browser/liturgy/day-missal.css",
-            "src/web/browser/liturgy/index.html",
             "src/web/browser/liturgy/liturgy.js",
-            "src/web/browser/liturgy/reader-state.js",
             "src/web/browser/liturgy/reader-state-adapters.js",
         ]
         for path in protected:
@@ -250,10 +329,10 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertEqual(len(candidate), 1)
         self.assertEqual(candidate[0]["state"], "complete")
 
-    def test_candidate_size_is_bounded_below_prototype_harness(self) -> None:
+    def test_reader_size_remains_bounded_after_compatibility_closure(self) -> None:
         prototype = LITURGY / "prototypes/reader-shell/reader-shell.js"
         self.assertLess(SHELL_JS.stat().st_size, prototype.stat().st_size // 4)
-        self.assertLess(DAY_JS.stat().st_size, prototype.stat().st_size)
+        self.assertLess(DAY_JS.stat().st_size, 72_000)
 
     def test_chromium_evidence_distinguishes_commit_from_visual_settlement(self) -> None:
         harness = text(ROOT / "tools/tests/day_reader_integration_browser.mjs")
