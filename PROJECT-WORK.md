@@ -227,11 +227,14 @@ Test-only commit `5e1b82b51` proves and removes the disclosed wall-clock
 dependency while keeping the first-visit URL empty; Day now passes 34/34.
 Record checkpoint `2cf91dd01` updates only task-owned ledger expectations and
 retains the unrelated full-gate transcript stop. The reviewed draft same-path
-patch remains deliberately unapplied and obsolete. It must be replaced by a
-normal-context patch regenerated from the compatibility-closed evidence
-baseline, mechanically checked, sealed in a new immutable handoff, and returned
-for narrow independent review. Only that regenerated-patch, handoff, and
-re-review boundary remain pending; no public cutover authorization is claimed.
+patch remains deliberately unapplied and obsolete. It is superseded by a
+normal-context patch regenerated from exact evidence baseline
+`998648c341691c0807b0c209f93fbae16d641d48`; the replacement passes
+`git apply --check` and is sealed with the 13-state compatibility subset and
+fresh browser results in
+`build/agent-handoffs/20260807T052836Z-liturgy-reader-public-cutover-compatibility/`.
+Only narrow independent re-review remains pending; no public cutover
+authorization is claimed.
 The
 immutable planning package is
 `build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/`.
