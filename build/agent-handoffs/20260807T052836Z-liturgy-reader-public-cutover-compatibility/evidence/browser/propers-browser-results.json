@@ -1,0 +1,151 @@
+{
+  "status": "pass",
+  "assertions": 32,
+  "results": [
+    {
+      "name": "valid deep link uses the shared calm shell and complete state has no notice",
+      "status": "pass"
+    },
+    {
+      "name": "explicit URL outranks remembered preferences",
+      "status": "pass"
+    },
+    {
+      "name": "current and candidate Roman texts, citations, and order match exactly",
+      "status": "pass"
+    },
+    {
+      "name": "coequal cycles stay independent and explicit cycle selection is exact",
+      "status": "pass"
+    },
+    {
+      "name": "public semantic keys are stable while retained aliases remain input-only and conflicts fail closed",
+      "status": "pass"
+    },
+    {
+      "name": "missing and malformed identity fail closed without liturgical text",
+      "status": "pass"
+    },
+    {
+      "name": "partial production coverage produces one concise reliance notice",
+      "status": "pass"
+    },
+    {
+      "name": "Latin Browse never asks for a translation witness in either missal",
+      "status": "pass"
+    },
+    {
+      "name": "one formulary-relevant witness resolves deterministically without a control",
+      "status": "pass"
+    },
+    {
+      "name": "multiple relevant witnesses require an explicit formulary-specific choice",
+      "status": "pass"
+    },
+    {
+      "name": "no held witness remains an explicit unavailable or partial result",
+      "status": "pass"
+    },
+    {
+      "name": "switching a chosen translation witness to Latin removes private witness state",
+      "status": "pass"
+    },
+    {
+      "name": "edition witnesses irrelevant to the formulary are neither required nor accepted",
+      "status": "pass"
+    },
+    {
+      "name": "changing missal clears formulary and requires a new choice",
+      "status": "pass"
+    },
+    {
+      "name": "superseded Browse missal load cannot overwrite a newer valid route form",
+      "status": "pass"
+    },
+    {
+      "name": "Details opened during load refreshes only from the committed Propers result",
+      "status": "pass"
+    },
+    {
+      "name": "superseded Browse load cannot overwrite an invalid route form",
+      "status": "pass"
+    },
+    {
+      "name": "superseded Browse load cannot overwrite missing-formulary Browse state",
+      "status": "pass"
+    },
+    {
+      "name": "superseded Browse failure cannot overwrite a current valid form",
+      "status": "pass"
+    },
+    {
+      "name": "rapid Browse Missal A to Missal B keeps the latest form",
+      "status": "pass"
+    },
+    {
+      "name": "Back and Forward invalidate an older pending Browse request",
+      "status": "pass"
+    },
+    {
+      "name": "shared modal lifecycle, disabled modes, deep-scroll reachability, and restoration hold",
+      "status": "pass"
+    },
+    {
+      "name": "Back and Forward restore candidate semantic choice",
+      "status": "pass"
+    },
+    {
+      "name": "translation witness survives direct load, reload, Back, and Forward",
+      "status": "pass"
+    },
+    {
+      "name": "unsupported public alternative survives URL lifecycle and stays fail-closed",
+      "status": "pass"
+    },
+    {
+      "name": "320 CSS pixels and 200 percent zoom preserve page and surface overflow contracts",
+      "status": "pass"
+    },
+    {
+      "name": "reduced motion retains content, controls, and explicit focus",
+      "status": "pass"
+    },
+    {
+      "name": "the retained Propers route is statically noindex and visible copy is route-neutral",
+      "status": "pass"
+    },
+    {
+      "name": "print removes shell chrome but retains identity and choice notice",
+      "status": "pass"
+    },
+    {
+      "name": "superseded slow valid cannot overwrite fast valid or fast invalid",
+      "status": "pass"
+    },
+    {
+      "name": "superseded slow failure cannot overwrite fast valid",
+      "status": "pass"
+    },
+    {
+      "name": "Back and Forward cannot revive an older pending render",
+      "status": "pass"
+    }
+  ],
+  "accessibility": {
+    "nodeCount": 334,
+    "unnamedInteractiveNodes": 0,
+    "roles": []
+  },
+  "performance": {
+    "candidateResourceCount": 19,
+    "duplicateResources": [],
+    "manifestRequests": 2,
+    "properStructureRequests": 1,
+    "properFragmentRequests": 4,
+    "initializationLayoutShift": 0,
+    "detailsLazy": true,
+    "selectedStructureLoadCount": 1,
+    "currentRouteResourceCount": 15,
+    "additionalCandidateRequests": 4
+  }
+}
