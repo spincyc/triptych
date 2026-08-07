@@ -398,7 +398,7 @@ or shared, so nothing in the fixed-date spine reports them missing.
 | The 1962 `P = 23` shortfall after Pentecost | `guidance/liturgy/calendar-computation.md` |
 | Part-verse letters retained in some Lectionary citations, dropped in others | postconciliar `open_collation_items` |
 | Oration conclusions rendered both as printed cue and expanded | both files' `open_collation_items` |
-| Whether the 1962 Holy Week's 39 English slots can be reached by a targeted collation against a 1962 altar book — the Exsultet, Improperia and Mandatum antiphons first | 1962 sidecar's `verification`, sixth pass |
+| A public-domain English for the 1962 Holy Week's 39 slots, which the 1861 witness cannot supply — measured 2026-08-07, not assumed | 1962 sidecar's `verification`, sixth pass; an acquisition like the Sequences below, not a collation of the book already held |
 | A public-domain English for the five great Sequences, which the 1861 witness prints in Latin only | 1962 sidecar's `verification`, sixth pass; a source acquisition under `guidance/sources.md`, not a harvest |
 | Three commemorations whose Latin the index reprints from a Common instead of referencing it, and whose English is therefore recorded twice | the three rows' own `harvest_note`; the fix is a `takes_from` and belongs to the lane owning `propers.yaml` |
 
