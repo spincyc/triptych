@@ -738,9 +738,17 @@ check-tool-registry:
 	else echo "tmt not installed; skipping tool-registry check"; fi
 
 # Needs PyYAML (requirements-tools.txt); skipped rather than failed without it.
+# Two claims. The first is that the sources are valid; the second is that what
+# the browser is served is what those sources produce NOW. `make check` proved
+# tracked web/**/*.md current and proved nothing about src/web/data/structure,
+# so on 2026-08-07 regenerating the propers with unchanged tools rewrote 4,269
+# lines of roman-pre-1955.json that no source change accounted for — the served
+# recension had drifted that far with nothing reporting it. `structure --check`
+# writes nothing; `mass-propers structure` is what fixes a failure.
 check-calendar-masses:
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) tools/tpt check-calendar-masses; \
+		$(PYTHON) tools/tpt mass-propers structure --check; \
 	else echo "PyYAML missing; skipping calendar-mass check"; fi
 
 # Validates the rubrical precedence sources, refuses a stale generated layer,

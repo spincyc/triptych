@@ -111,6 +111,16 @@ EXAMPLES = {
             ),
             "WRITES one file per missal and the manifest naming them. --out here is untracked; the default writes tracked src/web/data",
         ),
+        Example(
+            "tools/mass-propers structure --check",
+            (
+                "postconciliar: 269 masses, 1721 citations",
+                "roman-1962: 491 masses, 2257 citations",
+                "roman-pre-1955: 491 masses, 2250 citations",
+                "  4 tracked file(s) are current",
+            ),
+            "writes nothing: exits 1 naming each tracked file the sources no longer produce. `make check-calendar-masses` runs this",
+        ),
     ),
     "census": (
         Example(
@@ -795,13 +805,28 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
     }
 
 
+def _serialise(payload: object) -> str:
+    return json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=1) + "\n"
+
+
 def run_structure(arguments: argparse.Namespace) -> dict:
-    """Write one structure file per calendar for the browser to assemble from."""
+    """Write one structure file per calendar for the browser to assemble from.
+
+    Every file is built in memory first, so `--check` can compare the tracked
+    bytes against what the sources produce NOW without writing anything. That
+    verb exists because `make check` proved tracked `web/**/*.md` current and
+    proved nothing at all about this directory: on 2026-08-07 regenerating with
+    unchanged tools rewrote 4,269 lines of `roman-pre-1955.json` that no source
+    change of that day accounts for. The served recension had drifted that far
+    with nothing reporting it, which is the failure that looks like success —
+    the page renders, and renders a missal the sources stopped describing.
+    """
     root = Path(arguments.root)
     tokens = book_tokens()
     names = [arguments.calendar] if arguments.calendar else calendars(root)
     out = Path(arguments.out)
     written, counts, refused, withheld = [], {}, [], []
+    files: dict[Path, str] = {}
     for name in names:
         built = calendar_structure(root, name, tokens)
         # Counted from the source, before the structure pass drops them: the
@@ -820,11 +845,7 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         # take the same one: the manifest lands at its head and the structure
         # files under `structure/`.
         path = out / "structure" / "propers" / f"{name}.json"
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(
-            json.dumps(built, ensure_ascii=False, sort_keys=True, indent=1) + "\n",
-            encoding="utf-8",
-        )
+        files[path] = _serialise(built)
         written.append(str(path))
         cited = [
             citation
@@ -848,7 +869,10 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     # stop the page probing for missals would itself advertise a 404.
     listed = []
     for name in calendars(root):
-        if not (out / "structure" / "propers" / f"{name}.json").exists():
+        where = out / "structure" / "propers" / f"{name}.json"
+        # Built this run OR already there: `files` holds what this run produced
+        # and has not yet written, which under `--check` it never will.
+        if where not in files and not where.exists():
             continue
         document = load_calendar(root, name)
         listed.append(
@@ -861,28 +885,42 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     listed.sort(key=lambda entry: (entry["id"] != LANDING_MISSAL, entry["id"]))
     manifest = out.joinpath(*MISSAL_MANIFEST)
     if listed:
-        manifest.parent.mkdir(parents=True, exist_ok=True)
-        manifest.write_text(
-            json.dumps(
-                {
-                    # Named, and not merely first. A reader of this file should
-                    # not have to infer the landing missal from row order, and a
-                    # page that reads it should not have to trust that order.
-                    "default": (
-                        LANDING_MISSAL
-                        if any(entry["id"] == LANDING_MISSAL for entry in listed)
-                        else listed[0]["id"]
-                    ),
-                    "missals": listed,
-                },
-                ensure_ascii=False,
-                sort_keys=True,
-                indent=1,
-            )
-            + "\n",
-            encoding="utf-8",
+        files[manifest] = _serialise(
+            {
+                # Named, and not merely first. A reader of this file should
+                # not have to infer the landing missal from row order, and a
+                # page that reads it should not have to trust that order.
+                "default": (
+                    LANDING_MISSAL
+                    if any(entry["id"] == LANDING_MISSAL for entry in listed)
+                    else listed[0]["id"]
+                ),
+                "missals": listed,
+            }
         )
         written.append(str(manifest))
+
+    if arguments.check:
+        # Named individually, not counted. "3 files have drifted" sends a reader
+        # to regenerate and diff; a path sends them to the one file, and the
+        # first line of its diff usually says which source moved.
+        drifted = sorted(
+            str(path)
+            for path, body in files.items()
+            if not path.is_file() or path.read_text(encoding="utf-8") != body
+        )
+        return {
+            "checked": sorted(str(path) for path in files),
+            "drifted": drifted,
+            "calendars": counts,
+            "refused": refused if arguments.verbose else len(refused),
+            "withheld": withheld if arguments.verbose else len(withheld),
+            "status": "stale" if drifted else "ok",
+        }
+
+    for path, body in files.items():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(body, encoding="utf-8")
 
     return {
         "written": written,
@@ -1632,7 +1670,9 @@ def main(argv: list[str] | None = None) -> int:
     shared.add_argument(
         "--check",
         action="store_true",
-        help="`census`: exit 1 naming any document whose block is stale, writing nothing",
+        help="`census`: exit 1 naming any document whose block is stale, writing nothing. "
+        "`structure`: exit 1 naming any tracked structure file the sources no "
+        "longer produce, writing nothing",
     )
     shared.add_argument(
         "--verbose", action="store_true", help="list every citation that refused to resolve"
@@ -1709,6 +1749,22 @@ def main(argv: list[str] | None = None) -> int:
                     file=sys.stderr,
                 )
                 return 1
+            return 0
+        if "checked" in payload:
+            for calendar, counts in payload["calendars"].items():
+                print(f"{calendar}: {counts['masses']} masses, {counts['citations']} citations")
+            for path in payload["drifted"]:
+                print(f"  stale {path}")
+            if payload["status"] == "stale":
+                print(
+                    "mass-propers structure: "
+                    f"{len(payload['drifted'])} of {len(payload['checked'])} "
+                    "tracked file(s) are not what the sources produce; rerun "
+                    "`mass-propers structure` and commit the result",
+                    file=sys.stderr,
+                )
+                return 1
+            print(f"  {len(payload['checked'])} tracked file(s) are current")
             return 0
         if "written" in payload:
             for calendar, counts in payload["calendars"].items():
