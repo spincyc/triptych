@@ -201,6 +201,11 @@ function prototypeUrl(base, entrance, design, state) {
 }
 
 function productionUrl(base, entrance, state) {
+  const page = entrance === 'day' ? 'day.html' : 'index.html';
+  return `${base}${PREVIEW}${page}?data=${encodeURIComponent(DATA)}${state}`;
+}
+
+function retainedCandidateUrl(base, entrance, state) {
   const page = entrance === 'day' ? 'day-reader.html' : 'propers-reader.html';
   return `${base}${PREVIEW}${page}?data=${encodeURIComponent(DATA)}${state}`;
 }
@@ -838,20 +843,20 @@ async function runAssertions(cdp, base) {
         translationWitness: '_candidate-translation-witness' });
 
     const legacy = STATES.propersCycleChoice + '&_candidate-cycle=' + encodeURIComponent(value.cycle);
-    await productionFresh(cdp, productionUrl(base, 'propers', legacy), 'propers');
+    await productionFresh(cdp, retainedCandidateUrl(base, 'propers', legacy), 'propers');
     value = await evaluate(cdp, `({ cycle: propersReaderDebug.state.cycle,
       unknown: propersReaderDebug.legacy.unknown.map(row => row.key) })`);
     assert.ok(value.cycle);
     assert.equal(value.unknown.includes('_candidate-cycle'), false);
   });
 
-  await check('production reader pages retain exact noindex and route-neutral rendered copy', async () => {
+  await check('retained reader pages preserve exact noindex and route-neutral rendered copy', async () => {
     await viewport(cdp, 1440, 900);
     for (const [entrance, state, titleSuffix] of [
       ['day', STATES.romanRead, ' — Day — Triptych'],
       ['propers', STATES.propers, ' — Propers — Triptych']
     ]) {
-      await productionFresh(cdp, productionUrl(base, entrance, state), entrance);
+      await productionFresh(cdp, retainedCandidateUrl(base, entrance, state), entrance);
       const value = await evaluate(cdp, `({
         robots: document.querySelector('meta[name="robots"]').content,
         title: document.title,
@@ -1055,9 +1060,9 @@ async function captureMatrix(cdp, base, directory) {
   const deployed = 'https://spincyc.github.io/triptych/liturgy/';
   const baselines = [
     ['current-day', deployed + 'day.html', STATES.romanRead,
-      '!document.querySelector("#celebration-title").textContent.includes("Loading") && document.querySelector("#reading").textContent.length > 100'],
+      'window.dayReaderReady === true && !document.querySelector("#celebration-title").textContent.includes("Loading") && document.querySelector("#reader-document").textContent.length > 100'],
     ['current-propers', deployed + 'index.html', STATES.propers,
-      '!document.querySelector("#formulary-title").textContent.includes("Loading") && document.querySelector("#reading").textContent.length > 100'],
+      'window.propersReaderReady === true && !document.querySelector("#formulary-title").textContent.includes("Loading") && document.querySelector("#reader-document").textContent.length > 100'],
     ['accepted-day', deployed + 'day-reader.html', STATES.romanRead, 'window.dayReaderReady === true'],
     ['accepted-propers', deployed + 'propers-reader.html', STATES.propers, 'window.propersReaderReady === true']
   ];

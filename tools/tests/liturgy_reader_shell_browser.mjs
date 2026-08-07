@@ -619,18 +619,40 @@ async function runAssertions(cdp, base) {
     assert.equal(await evaluate(cdp, 'ReaderShellPrototype.current().entrance'), 'day');
   });
 
-  await test('production Day and Propers routes still render in Chromium', async () => {
+  await test('canonical Day and Propers own one integrated reader shell', async () => {
     await viewport(cdp, 1024, 768);
     await cdp.send('Page.navigate', {
-      url: `${base}/src/web/browser/liturgy/day.html?data=/build/public-alpha/preview/browse#date=2026-08-02&missal=roman-1962`
+      url: `${base}/src/web/browser/liturgy/day.html?data=/build/public-alpha/preview/browse#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&mass=pentecost-10&ordinary=0`
     });
-    await waitFor(cdp, 'document.querySelectorAll("#reading .proper, .reading .proper").length > 0', 'production Day Proper');
-    assert.equal(await evaluate(cdp, 'document.querySelectorAll("#reader-shell").length'), 0);
+    await waitFor(
+      cdp,
+      'window.dayReaderReady === true && document.querySelector("#reader-document[aria-busy=\\"false\\"] .proper")',
+      'canonical Day Proper'
+    );
+    assert.equal(
+      await evaluate(cdp, 'document.querySelectorAll("[data-reader-shell]").length'),
+      1
+    );
+    assert.equal(
+      await evaluate(cdp, 'document.querySelector("[data-reader-shell]").dataset.entrance'),
+      'day'
+    );
     await cdp.send('Page.navigate', {
-      url: `${base}/src/web/browser/liturgy/index.html?data=/build/public-alpha/preview/browse#missal=roman-1962&type=temporal&mass=advent-1`
+      url: `${base}/src/web/browser/liturgy/index.html?data=/build/public-alpha/preview/browse#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims&orations=la`
     });
-    await waitFor(cdp, 'document.querySelectorAll("#reading .proper, .reading .proper").length > 0', 'production Propers Proper');
-    assert.equal(await evaluate(cdp, 'document.querySelectorAll("#reader-shell").length'), 0);
+    await waitFor(
+      cdp,
+      'window.propersReaderReady === true && document.querySelector("#reader-document[aria-busy=\\"false\\"] .proper")',
+      'canonical Propers Proper'
+    );
+    assert.equal(
+      await evaluate(cdp, 'document.querySelectorAll("[data-reader-shell]").length'),
+      1
+    );
+    assert.equal(
+      await evaluate(cdp, 'document.querySelector("[data-reader-shell]").dataset.entrance'),
+      'propers'
+    );
   });
 
   await test('320-pixel reflow has no page overflow and keeps practical targets', async () => {

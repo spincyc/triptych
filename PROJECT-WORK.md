@@ -183,9 +183,8 @@ operations.
 
 <!-- promised-deliverable: liturgy-reader-instrument-public-cutover-plan-2026-08-06 -->
 
-**Same-path planning architecture accepted; bounded compatibility closure is
-implemented and deployed for narrow review; canonical promotion and public
-navigation remain unauthorized.**
+**Public-cutover execution candidate; canonical URLs are promoted in place,
+public navigation is unchanged, and independent cutover acceptance is open.**
 Work began from the
 clean, fully synchronized accepted-integration boundary
 `7b7044dea7f5c35a2d32ff85f26eb5b182bf40ef`. It inventories the canonical
@@ -217,9 +216,12 @@ mobile view of the second held branch. Canonical `liturgy/day.html` and
 `liturgy/index.html`, repository-owned public navigation, the shared shell,
 production data, and the accepted visual oracle remain byte-unchanged.
 Production integration and its durable handoff remain independently accepted
-and complete. Compatibility closure does not authorize canonical promotion,
-public navigation changes, candidate/oracle cleanup, or public-cutover
-execution.
+and complete. The independently accepted compatibility closure authorizes the
+separate bounded same-path execution represented by this cutover commit.
+Canonical `liturgy/day.html` and `liturgy/index.html` now load the accepted
+production reader implementation without redirecting or changing public
+navigation. Retained candidate and oracle routes remain present and noindex.
+Candidate or oracle cleanup and any navigation redesign remain unauthorized.
 
 Planning checkpoint `c7124de25` records the route, state, navigation,
 static-hosting, cache, mechanism, rollback, and later-execution gate maps.

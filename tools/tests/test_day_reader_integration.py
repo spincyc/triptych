@@ -23,9 +23,9 @@ ROBOTS = "noindex, nofollow, noarchive, nosnippet, noimageindex"
 
 FROZEN_SOURCE_HASHES = {
     "src/web/browser/liturgy/day.html":
-        "bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868",
+        "9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972",
     "src/web/browser/liturgy/index.html":
-        "f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65",
+        "a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600",
     "src/web/browser/liturgy/reader-shell.js":
         "e17ccd767c016facc3d03820f5c0c1e71ab166f5a9c7a86de95245e0b87966a9",
     "src/web/browser/liturgy/reader-shell.css":

@@ -216,14 +216,14 @@ async function current(cdp, base, state = STATES.roman) {
   await cdp.send('Page.navigate', { url });
   // The public route canonically omits the default Latin `orations` key.
   await waitFor(cdp,
-    `location.pathname === ${JSON.stringify(CURRENT)} && (` +
-    `document.querySelector('#reading[aria-busy="false"] .proper') || ` +
-    `document.querySelector('#reading[aria-busy="false"] .error') || ` +
-    `document.querySelector('#banner:not([hidden])'))`, 'current Propers readiness');
+    `location.pathname === ${JSON.stringify(CURRENT)} && window.propersReaderReady === true && (` +
+    `document.querySelector('#reader-document[aria-busy="false"] .proper') || ` +
+    `document.querySelector('#reader-document[aria-busy="false"] .error') || ` +
+    `document.querySelector('#coverage-notice:not([hidden])'))`, 'current Propers readiness');
   await new Promise((done) => setTimeout(done, 70));
   const problem = await evaluate(cdp,
-    `document.querySelector('#reading .proper') ? '' : ` +
-    `(document.querySelector('#reading .error')?.textContent || document.querySelector('#banner')?.textContent)`);
+    `document.querySelector('#reader-document .proper') ? '' : ` +
+    `(document.querySelector('#reader-document .error')?.textContent || document.querySelector('#coverage-notice')?.textContent)`);
   assert.equal(problem, '', 'current Propers route did not render: ' + problem);
 }
 
@@ -374,13 +374,13 @@ async function assertions(cdp, base) {
       `performance.getEntriesByType('resource').length`);
     performanceReport.additionalCandidateRequests =
       performanceReport.candidateResourceCount - performanceReport.currentRouteResourceCount;
-    const held = await evaluate(cdp, `[...document.querySelectorAll('#reading .proper')].map(row => row.textContent.replace(/\\s+/g, ' ').trim())`);
+    const held = await evaluate(cdp, `[...document.querySelectorAll('#reader-document .proper')].map(row => row.textContent.replace(/\\s+/g, ' ').trim())`);
     assert.deepEqual(wanted.texts, held);
     await candidate(cdp, base, STATES.alternative);
     const alternative = await snapshot(cdp);
     assert.ok(alternative.semantic.events.some(row => row.editionSlotLabel === 'First Reading (alternative)'));
     await current(cdp, base, STATES.alternative);
-    assert.deepEqual(alternative.texts, await evaluate(cdp, `[...document.querySelectorAll('#reading .proper')].map(row => row.textContent.replace(/\\s+/g, ' ').trim())`));
+    assert.deepEqual(alternative.texts, await evaluate(cdp, `[...document.querySelectorAll('#reader-document .proper')].map(row => row.textContent.replace(/\\s+/g, ' ').trim())`));
   });
 
   await check('coequal cycles stay independent and explicit cycle selection is exact', async () => {

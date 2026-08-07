@@ -160,8 +160,12 @@ class ReaderShellPrototypeTest(unittest.TestCase):
         self.assertFalse(any("prototypes/reader-shell" in str(path) for path in pages))
         self.assertFalse(any("prototypes/reader-shell" in str(path) for path in pages.values()))
 
-    def test_production_routes_and_styles_are_byte_identical_to_m1_base(self) -> None:
-        for relative in PRODUCTION:
+    def test_legacy_assets_are_byte_identical_to_m1_base(self) -> None:
+        promoted_routes = {
+            "src/web/browser/liturgy/day.html",
+            "src/web/browser/liturgy/index.html",
+        }
+        for relative in (path for path in PRODUCTION if path not in promoted_routes):
             expected = subprocess.run(
                 ["git", "show", f"{BASE}:{relative}"], cwd=ROOT,
                 check=True, stdout=subprocess.PIPE,
@@ -173,9 +177,11 @@ class ReaderShellPrototypeTest(unittest.TestCase):
                 "src/web/browser/liturgy",
                 ":(exclude)src/web/browser/liturgy/prototypes/**",
                 ":(exclude)src/web/browser/liturgy/day-reader.*",
+                ":(exclude)src/web/browser/liturgy/day.html",
                 ":(exclude)src/web/browser/liturgy/reader-shell.*",
                 ":(exclude)src/web/browser/liturgy/reader-state.js",
                 ":(exclude)src/web/browser/liturgy/propers-reader.*",
+                ":(exclude)src/web/browser/liturgy/index.html",
                 ":(exclude)src/web/browser/liturgy/reader-instrument.css",
                 ":(exclude)src/web/browser/liturgy/reader-visual-reset.*",
                 ":(exclude)src/web/browser/liturgy/reader-visual-reset-*",

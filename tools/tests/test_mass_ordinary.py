@@ -259,24 +259,49 @@ class OrdinaryPage(unittest.TestCase):
         )
 
     def test_reading_first_hierarchy_and_event_sequence(self) -> None:
-        """Utility disclosures follow the title; the Mass itself is unchanged."""
+        """The Instrument keeps identity, reading, and actions in authored order."""
         page = DAY_HTML.read_text(encoding="utf-8")
+        identity = page.index('<header class="reader-identity"')
         title = page.index('id="celebration-title"')
-        settings = page.index('id="settings-disclosure"')
-        notices = page.index('id="notices-disclosure"')
-        mass = page.index('id="reading"')
-        self.assertLess(title, settings)
-        self.assertLess(settings, notices)
-        self.assertLess(notices, mass)
-
-        for position in (settings, notices):
-            opening = page[page.rfind("<details", 0, position):page.index(">", position) + 1]
-            self.assertNotIn(" open", opening)
-
-        settings_end = page.index("</details>", settings)
-        self.assertLess(settings, page.index('id="controls"'))
-        self.assertLess(page.index('id="controls"'), settings_end)
-        self.assertLess(page.index('id="formulary-controls"'), settings_end)
+        notice = page.index('<p id="coverage-notice"')
+        mass = page.index('<main id="reader-document"')
+        actions = page.index('<nav class="reader-actions"')
+        date_surface = page.index('<dialog id="date-surface"')
+        self.assertLess(identity, title)
+        self.assertLess(title, notice)
+        self.assertLess(notice, mass)
+        self.assertLess(mass, actions)
+        self.assertLess(actions, date_surface)
+        main_opening = page[mass:page.index(">", mass) + 1]
+        self.assertIn('tabindex="-1"', main_opening)
+        self.assertIn('aria-busy="true"', main_opening)
+        notice_opening = page[notice:page.index(">", notice) + 1]
+        self.assertIn('role="note"', notice_opening)
+        self.assertIn(" hidden", notice_opening)
+        self.assertEqual(page.count('data-reader-action="'), 4)
+        for action, surface in (
+            ("date", "date"),
+            ("contents", "contents"),
+            ("mode", "mode"),
+            ("details", "details"),
+        ):
+            button = page.index(f'data-reader-action="{action}"')
+            button_opening = page[
+                page.rfind("<button", 0, button):page.index(">", button) + 1
+            ]
+            self.assertIn(f'aria-controls="{surface}-surface"', button_opening)
+            self.assertIn('aria-expanded="false"', button_opening)
+        scripts = [
+            '<script src="assembly-model.js"></script>',
+            '<script src="ordinary-seating.js"></script>',
+            '<script src="day.js"></script>',
+            '<script src="reader-state.js"></script>',
+            '<script src="reader-state-adapters.js"></script>',
+            '<script src="reader-shell.js"></script>',
+            '<script src="day-reader.js"></script>',
+        ]
+        positions = [page.index(script) for script in scripts]
+        self.assertEqual(positions, sorted(positions))
 
         report = self.run_harness()
         sequence = report["pentecost_10_sequence"]
@@ -493,34 +518,58 @@ class OrdinaryPage(unittest.TestCase):
 class FormularyPage(unittest.TestCase):
     """The direct-formulary entrance shares the reading-first page hierarchy."""
 
-    def test_title_first_hierarchy_and_closed_utility_disclosures(self) -> None:
+    def test_title_first_hierarchy_and_closed_reader_surfaces(self) -> None:
         page = FORMULARY_HTML.read_text(encoding="utf-8")
+        identity = page.index('<header class="reader-identity"')
         title = page.index('id="formulary-title"')
-        settings = page.index('id="settings-disclosure"')
-        notices = page.index('id="notices-disclosure"')
-        proper = page.index('id="reading"')
-        self.assertLess(title, settings)
-        self.assertLess(settings, notices)
-        self.assertLess(notices, proper)
-
-        for position in (settings, notices):
-            opening = page[page.rfind("<details", 0, position):page.index(">", position) + 1]
-            self.assertNotIn(" open", opening)
-
-        settings_end = page.index("</details>", settings)
-        notices_end = page.index("</details>", notices)
-        self.assertLess(settings, page.index('id="controls"'))
-        self.assertLess(page.index('id="controls"'), settings_end)
-        self.assertLess(notices, page.index('id="banner"'))
-        self.assertLess(page.index('id="banner"'), notices_end)
-        self.assertLess(
-            page.index('<link rel="stylesheet" href="liturgy.css">'),
-            page.index('<link rel="stylesheet" href="day-missal.css">'),
-        )
-
-        source = FORMULARY_JS.read_text(encoding="utf-8")
-        self.assertIn("noticesDisclosure.hidden = !shown", source)
-        self.assertNotIn("noticesDisclosure.open = true", source)
+        notice = page.index('<p id="coverage-notice"')
+        proper = page.index('<main id="reader-document"')
+        actions = page.index('<nav class="reader-actions"')
+        browse = page.index('<dialog id="browse-surface"')
+        self.assertLess(identity, title)
+        self.assertLess(title, notice)
+        self.assertLess(notice, proper)
+        self.assertLess(proper, actions)
+        self.assertLess(actions, browse)
+        self.assertEqual(page.count('data-reader-action="'), 4)
+        for action, surface in (
+            ("browse", "browse"),
+            ("contents", "contents"),
+            ("mode", "mode"),
+            ("details", "details"),
+        ):
+            button = page.index(f'data-reader-action="{action}"')
+            button_opening = page[
+                page.rfind("<button", 0, button):page.index(">", button) + 1
+            ]
+            self.assertIn(f'aria-controls="{surface}-surface"', button_opening)
+            self.assertIn('aria-expanded="false"', button_opening)
+            dialog = page.index(f'<dialog id="{surface}-surface"')
+            dialog_opening = page[dialog:page.index(">", dialog) + 1]
+            self.assertNotIn(" open", dialog_opening)
+            self.assertLess(dialog, page.index("</dialog>", dialog))
+        browse_end = page.index("</dialog>", browse)
+        self.assertLess(browse, page.index('id="browse-form"'))
+        self.assertLess(page.index('id="browse-form"'), browse_end)
+        styles = [
+            '<link rel="stylesheet" href="liturgy.css">',
+            '<link rel="stylesheet" href="reader-shell.css">',
+            '<link rel="stylesheet" href="propers-reader.css">',
+            '<link rel="stylesheet" href="reader-instrument.css">',
+        ]
+        positions = [page.index(style) for style in styles]
+        self.assertEqual(positions, sorted(positions))
+        self.assertNotIn('<link rel="stylesheet" href="day-missal.css">', page)
+        scripts = [
+            '<script src="ordinary-seating.js"></script>',
+            '<script src="reader-state.js"></script>',
+            '<script src="reader-state-adapters.js"></script>',
+            '<script src="reader-shell.js"></script>',
+            '<script src="propers-reader.js"></script>',
+        ]
+        positions = [page.index(script) for script in scripts]
+        self.assertEqual(positions, sorted(positions))
+        self.assertNotIn('<script src="liturgy.js"></script>', page)
 
     def test_renderer_keeps_each_missals_propers_in_source_order(self) -> None:
         expected = {
@@ -584,16 +633,10 @@ class FormularyPage(unittest.TestCase):
 
     def test_day_reading_missal_hierarchy_and_event_contract_remain_fixed(self) -> None:
         page = DAY_HTML.read_text(encoding="utf-8")
-        self.assertLess(
-            page.index('id="celebration-title"'), page.index('id="settings-disclosure"')
-        )
-        self.assertLess(
-            page.index('id="settings-disclosure"'), page.index('id="notices-disclosure"')
-        )
-        self.assertLess(
-            page.index('id="notices-disclosure"'), page.index('id="contents-disclosure"')
-        )
-        self.assertLess(page.index('id="contents-disclosure"'), page.index('id="reading"'))
+        self.assertLess(page.index('id="celebration-title"'), page.index('id="reader-document"'))
+        self.assertIn('data-reader-mode="read"', page)
+        self.assertIn('data-reader-surface="contents"', page)
+        self.assertIn('data-reader-surface="mode"', page)
         self.assertNotIn("annotation-control", page)
         self.assertNotIn("Annotation placeholder.", page)
         self.assertNotIn("annotation-control", DAY_JS.read_text(encoding="utf-8"))
@@ -606,36 +649,51 @@ class ReadingContentsPage(unittest.TestCase):
         if shutil.which("node") is None:
             self.skipTest("node is not installed")
 
-    def test_both_pages_load_a_closed_empty_contents_before_the_reading(self) -> None:
+    def test_both_pages_load_a_closed_empty_semantic_contents_dialog(self) -> None:
         cases = (
-            (DAY_HTML, '<script src="day.js"></script>'),
-            (FORMULARY_HTML, '<script src="liturgy.js"></script>'),
+            (DAY_HTML, '<script src="day-reader.js"></script>', "Mass contents"),
+            (
+                FORMULARY_HTML,
+                '<script src="propers-reader.js"></script>',
+                "Formulary contents",
+            ),
         )
-        for path, page_script in cases:
+        for path, page_script, accessible_name in cases:
             page = path.read_text(encoding="utf-8")
-            notices = page.index('id="notices-disclosure"')
-            contents = page.index('id="contents-disclosure"')
-            reading = page.index('id="reading"')
-            self.assertLess(notices, contents, path.name)
-            self.assertLess(contents, reading, path.name)
-
-            opening = page[
-                page.rfind("<details", 0, contents):page.index(">", contents) + 1
+            reading = page.index('<main id="reader-document"')
+            action = page.index('data-reader-action="contents"')
+            contents = page.index('<dialog id="contents-surface"')
+            script = page.index(page_script)
+            self.assertLess(reading, action, path.name)
+            self.assertLess(action, contents, path.name)
+            self.assertLess(reading, contents, path.name)
+            self.assertLess(contents, script, path.name)
+            action_opening = page[
+                page.rfind("<button", 0, action):page.index(">", action) + 1
             ]
-            self.assertIn(" hidden", opening, path.name)
-            self.assertNotIn(" open", opening, path.name)
-            end = page.index("</details>", contents)
-            self.assertLess(
-                contents, page.index("<summary>Contents</summary>", contents), path.name
-            )
-            nav = page.index('id="contents-nav"', contents)
-            self.assertLess(nav, end, path.name)
+            self.assertIn('aria-controls="contents-surface"', action_opening, path.name)
+            self.assertIn('aria-expanded="false"', action_opening, path.name)
+            dialog_opening = page[contents:page.index(">", contents) + 1]
+            self.assertIn('data-reader-surface="contents"', dialog_opening, path.name)
             self.assertIn(
-                'aria-label="Mass contents"', page[nav:page.index(">", nav)], path.name
+                'aria-labelledby="contents-surface-title"', dialog_opening, path.name
             )
-
-            shared = '<script src="reading-contents.js"></script>'
-            self.assertLess(page.index(shared), page.index(page_script), path.name)
+            self.assertNotIn(" open", dialog_opening, path.name)
+            end = page.index("</dialog>", contents)
+            heading = page.index('id="contents-surface-title"', contents)
+            nav = page.index("<nav", heading)
+            nav_open_end = page.index(">", nav)
+            nav_close = page.index("</nav>", nav_open_end)
+            self.assertLess(contents, heading, path.name)
+            self.assertLess(heading, nav, path.name)
+            self.assertLess(nav_close, end, path.name)
+            nav_opening = page[nav:nav_open_end + 1]
+            self.assertIn("data-reader-contents", nav_opening, path.name)
+            self.assertIn(f'aria-label="{accessible_name}"', nav_opening, path.name)
+            self.assertEqual(page[nav_open_end + 1:nav_close].strip(), "", path.name)
+            self.assertNotIn(
+                '<script src="reading-contents.js"></script>', page, path.name
+            )
 
     def test_each_page_supplies_only_its_rendered_semantic_landmarks(self) -> None:
         day = DAY_JS.read_text(encoding="utf-8")
@@ -703,14 +761,17 @@ class ProperPlacementNotesPage(unittest.TestCase):
 
     def test_day_alone_loads_placement_notes_before_its_renderer(self) -> None:
         day = DAY_HTML.read_text(encoding="utf-8")
-        module = '<script src="proper-placement-notes.js"></script>'
-        self.assertLess(day.index(module), day.index('<script src="day.js"></script>'))
+        self.assertNotIn('proper-placement-notes.js', day)
+        self.assertLess(
+            day.index('<script src="day.js"></script>'),
+            day.index('<script src="day-reader.js"></script>'),
+        )
 
         formulary = FORMULARY_HTML.read_text(encoding="utf-8")
         self.assertNotIn("proper-placement-notes", formulary)
         self.assertEqual(
             hashlib.sha256(FORMULARY_HTML.read_bytes()).hexdigest(),
-            "f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65",
+            "a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600",
         )
         self.assertEqual(
             hashlib.sha256(FORMULARY_JS.read_bytes()).hexdigest(),

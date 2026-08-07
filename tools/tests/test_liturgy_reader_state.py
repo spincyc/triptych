@@ -1233,11 +1233,24 @@ class PublicBoundaryTests(unittest.TestCase):
         self.assertIn("src/web/browser/liturgy/reader-state-adapters.js", sources)
         self.assertFalse(any("liturgy-reader-state/v1" in path for path in sources))
 
-    def test_contract_is_not_loaded_by_current_production_routes(self) -> None:
-        for name in ("day.html", "index.html"):
-            page = (ROOT / "src/web/browser/liturgy" / name).read_text(encoding="utf-8")
-            self.assertNotIn("reader-state.js", page)
-            self.assertNotIn("reader-state-adapters.js", page)
+    def test_promoted_production_routes_load_the_shared_reader_contract(self) -> None:
+        controllers = {
+            "day.html": "day-reader.js",
+            "index.html": "propers-reader.js",
+        }
+        state_tag = '<script src="reader-state.js"></script>'
+        adapters_tag = '<script src="reader-state-adapters.js"></script>'
+        for name, controller in controllers.items():
+            with self.subTest(route=name):
+                page = (ROOT / "src/web/browser/liturgy" / name).read_text(
+                    encoding="utf-8"
+                )
+                controller_tag = f'<script src="{controller}"></script>'
+                self.assertEqual(page.count(state_tag), 1)
+                self.assertEqual(page.count(adapters_tag), 1)
+                self.assertEqual(page.count(controller_tag), 1)
+                self.assertLess(page.index(state_tag), page.index(adapters_tag))
+                self.assertLess(page.index(adapters_tag), page.index(controller_tag))
 
 
 if __name__ == "__main__":

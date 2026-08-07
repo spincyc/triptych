@@ -601,15 +601,16 @@ async function navigateCurrent(cdp, base, state = STATES.roman) {
     await waitFor(cdp,
       `location.pathname === ${JSON.stringify(targetUrl.pathname)} && ` +
         `location.search === ${JSON.stringify(targetUrl.search)} && ` +
-        `document.querySelector('#reading[aria-busy="false"]') && ` +
+        `window.dayReaderReady === true && ` +
+        `document.querySelector('#reader-document[aria-busy="false"]') && ` +
         `document.querySelector('#celebration-title').textContent !== 'Loading the Mass…'`,
       'current Day route');
   } catch (error) {
     const snapshot = await evaluate(cdp, `({ href: location.href, title: document.title,
       celebration: document.querySelector('#celebration-title')?.textContent || null,
-      busy: document.querySelector('#reading')?.getAttribute('aria-busy') || null,
-      reading: document.querySelector('#reading')?.innerText || null,
-      banner: document.querySelector('#banner')?.innerText || null })`);
+      busy: document.querySelector('#reader-document')?.getAttribute('aria-busy') || null,
+      reading: document.querySelector('#reader-document')?.innerText || null,
+      banner: document.querySelector('#coverage-notice')?.innerText || null })`);
     throw new Error(`${error.message}; current-route snapshot: ${JSON.stringify(snapshot)}`);
   }
   const settlement = await waitForVisualSettlement(cdp);
@@ -630,7 +631,8 @@ async function navigateBuiltCurrent(cdp, base, state = STATES.roman) {
   await waitFor(cdp,
     `location.pathname === ${JSON.stringify(targetUrl.pathname)} && ` +
       `location.search === ${JSON.stringify(targetUrl.search)} && ` +
-      `document.querySelector('#reading[aria-busy="false"]') && ` +
+      `window.dayReaderReady === true && ` +
+      `document.querySelector('#reader-document[aria-busy="false"]') && ` +
       `document.querySelector('#celebration-title').textContent !== 'Loading the Mass…'`,
     'built current Day route');
   const settlement = await waitForVisualSettlement(cdp);
@@ -1255,7 +1257,7 @@ async function runAssertions(cdp, base) {
     const current = await evaluate(cdp, `({
       title: document.querySelector('#celebration-title').textContent,
       date: document.querySelector('#celebration-date').textContent,
-      propers: [...document.querySelectorAll('#reading .proper')].map(row =>
+      propers: [...document.querySelectorAll('#reader-document .proper')].map(row =>
         row.textContent.replace(/\\s+/g, ' ').trim())
     })`);
     assert.equal(candidate.title, current.title);
@@ -2000,11 +2002,11 @@ async function runAssertions(cdp, base) {
     await navigateCurrent(cdp, base);
     const current = await evaluate(cdp, `({
       title: document.querySelector('#celebration-title').textContent,
-      names: [...document.querySelectorAll('#reading .proper-name')].map(row => row.childNodes[0].textContent.trim())
+      names: [...document.querySelectorAll('#reader-document .proper-name')].map(row => row.childNodes[0].textContent.trim())
     })`);
     assert.equal(candidate.title, current.title);
     assert.deepEqual(candidate.names, current.names);
-    assert.equal(await evaluate(cdp, 'document.querySelectorAll("[data-reader-shell]").length'), 0);
+    assert.equal(await evaluate(cdp, 'document.querySelectorAll("[data-reader-shell]").length'), 1);
   });
 
   await test('candidate Missal and current Day share Ordinary and Proper text for both editions', async () => {
@@ -2025,9 +2027,9 @@ async function runAssertions(cdp, base) {
       await navigateCurrent(cdp, base, state);
       const current = await evaluate(cdp, `({
         title: document.querySelector('#celebration-title').textContent,
-        ordinary: [...document.querySelectorAll('#reading .ordinary-element')]
+        ordinary: [...document.querySelectorAll('#reader-document .ordinary-element')]
           .map(row => row.textContent.replace(/\s+/g, ' ').trim()),
-        propers: [...document.querySelectorAll('#reading .proper:not(.ordinary-element)')]
+        propers: [...document.querySelectorAll('#reader-document .proper:not(.ordinary-element)')]
           .map(row => ({
             name: row.querySelector('.proper-name')?.childNodes[0]?.textContent.trim() || '',
             text: [...row.querySelectorAll('.passage, .composed')]

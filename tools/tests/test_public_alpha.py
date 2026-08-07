@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from contextlib import redirect_stderr, redirect_stdout
 import hashlib
+import html
 import importlib.machinery
 import importlib.util
 import io
@@ -202,16 +203,22 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertEqual(len(seen["og:title"]), indexed)
         self.assertEqual(len(seen["og:url"]), indexed)
 
-    def test_link_preview_description_is_the_page_lede_not_a_second_copy(self) -> None:
-        tool = load_tool()
+    def test_link_preview_description_matches_declared_browser_description(self) -> None:
         head = self.render_browser_head("liturgy/index.html")
-        lede = tool.LEDE_RE.search(
-            (REPOSITORY_ROOT / "src/web/browser/liturgy/index.html").read_text(
-                encoding="utf-8"
-            )
+        source = (
+            REPOSITORY_ROOT / "src/web/browser/liturgy/index.html"
+        ).read_text(encoding="utf-8")
+        declared = re.search(
+            r'<meta name="description" content="([^"]+)"', source
         )
-        expected = " ".join(tool.MARKUP_RE.sub("", lede.group(1)).split())
-        self.assertIn(f'content="{expected}"', head)
+        self.assertIsNotNone(declared)
+        expected = html.escape(html.unescape(declared.group(1)), quote=True)
+        tool = load_tool()
+        properties = dict(tool.SOCIAL_PROPERTY_RE.findall(head))
+        names = dict(tool.SOCIAL_NAME_RE.findall(head))
+        self.assertEqual(names["description"], expected)
+        self.assertEqual(properties["og:description"], expected)
+        self.assertEqual(names["twitter:description"], expected)
 
     def test_link_preview_prefers_a_declared_description_over_a_placeholder(
         self,
@@ -249,8 +256,10 @@ class PublicAlphaTest(unittest.TestCase):
 
     def test_no_index_artifact_does_not_advertise_the_public_site(self) -> None:
         tool = load_tool()
-        source = REPOSITORY_ROOT / "src/web/browser/liturgy/index.html"
-        page = tool.render_browser_page(source, "liturgy/index.html", True, {})
+        source = REPOSITORY_ROOT / "src/web/browser/liturgy/propers-reader.html"
+        page = tool.render_browser_page(
+            source, "liturgy/propers-reader.html", True, {}
+        )
         self.assertNotIn("og:url", page)
         self.assertNotIn(tool.SITE_ORIGIN, page)
         # It still describes itself, for a reader and for the tab.

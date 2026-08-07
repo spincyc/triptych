@@ -279,11 +279,11 @@ class PropersReaderIntegrationTests(unittest.TestCase):
     def test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated(self) -> None:
         self.assertEqual(
             hashlib.sha256((LITURGY / "day.html").read_bytes()).hexdigest(),
-            "bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868",
+            "9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972",
         )
         self.assertEqual(
             hashlib.sha256((LITURGY / "index.html").read_bytes()).hexdigest(),
-            "f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65",
+            "a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600",
         )
         protected = [
             "src/web/browser/liturgy/liturgy.js",

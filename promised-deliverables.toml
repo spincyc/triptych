@@ -7,6 +7,17 @@ promise = "Produce an independently reviewable, route-compatible, reversible pub
 state = "candidate"
 
   [[deliverables.requirements]]
+  id = "same-path-public-cutover-execution"
+  criterion = "After separate independent authorization, canonical Day and Propers are promoted in place from the accepted compatibility-closed implementation with unchanged external filenames, no redirect or public-navigation change, exact release bindings, retained noindex candidate/oracle fallbacks, and ordinary-revert rollback."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day.html",
+    "src/web/browser/liturgy/index.html",
+    "release/public-alpha.json",
+    "release/rights/public-alpha-2026-07-15.md",
+  ]
+
+  [[deliverables.requirements]]
   id = "accepted-starting-boundary-and-planning-scope"
   criterion = "The plan begins from the accepted and durably archived production integration, freezes the accepted visual and behavioral seams, and does not execute a canonical-route, navigation, candidate, oracle, or public-cutover change."
   status = "pass"
