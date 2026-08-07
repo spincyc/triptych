@@ -3,18 +3,19 @@
 ## Resume header
 
 - Current branch: `main`
-- Current commit: `e20b2f542ab51a2b4f0807e6394ca5ecb313699c`; clean worktree and `HEAD`, local `main`, `origin/main`, and remote `main` agree at gate-repair start
+- Current commit: `85abf971e70e7d1acc8bfa1c29c61ff8c1ff26b3`; pushed emergency takeover checkpoint for Live Reader — Ritual Flow & Orientation
 - Reviewed visual baseline: `0f3567dc509a2d5b42fd58a0e4c77c8f5e5dc113` (visual implementation `7233879350ff00c92fa2029ca04f481125daa519`; task base `842333af79bd560ad6607b91b087ed8ff71e7477`)
 - Selected direction: Liturgical Instrument
-- Current phase: corrected 19-path cutover patch is green in scratch and being sealed for narrow independent re-review; canonical promotion and deployment remain unauthorized
-- Last completed work unit: repaired seven stale test/harness ownership defects in scratch, passed all prospective pre-deployment gates, and generated/apply-checked the corrected unapplied patch
-- Next exact action: independently review the immutable gate-repair handoff and decide whether the corrected patch may enter the prior execution/deployment/cache-window protocol
-- Open blockers: independent reauthorization is required before cutover execution; the unrelated governed example replay remains non-green
-- Latest pushed commit: `e20b2f542ab51a2b4f0807e6394ca5ecb313699c` — diagnostic clarification at the clean synchronized stop boundary
-- Latest successful Pages run: `31169274928`, success for continuity-only commit `e20b2f542ab51a2b4f0807e6394ca5ecb313699c`; this does not qualify a public-cutover SHA
-- Latest Pages attempt: run `31169274928` succeeded for unchanged canonical readers; no cutover deployment occurred
-- Latest handoff directory: `build/agent-handoffs/20260807T105259Z-liturgy-reader-public-cutover-gate-repair/` (269 files including manifest; sealed locally, push pending)
-- Latest handoff ZIP: `build/agent-handoffs/20260807T105259Z-liturgy-reader-public-cutover-gate-repair.zip` (integrity and one-top-level-directory checks pass; push pending)
+- Current phase: Live Reader — Ritual Flow & Orientation; takeover checkpoint after RF-A and the first RF-B/RF-C implementation
+- Last completed work unit: RF-A canonical baseline and source-owned semantic inventory; first persistent-locus and Contents-map implementation is present but not yet a review candidate
+- Next exact action: rebuild the locked preview, rerun Day/Propers/shared-shell/governed browser gates after the final locus simplification, capture corrected matrix v3, and inspect every original at full size before deciding whether RF-D/RF-E need further presentation changes
+- Open blockers: the final one-line major-only locus simplification has not yet been rerun through browser gates; mobile overlap measurement needs review; unresolved Roman conditional forms lack safe applicability metadata and remain visible; the unrelated governed example replay remains non-green
+- Latest pushed commit: `85abf971e70e7d1acc8bfa1c29c61ff8c1ff26b3` — ritual-flow implementation/takeover checkpoint; not a review candidate
+- Latest successful Pages run: `31175722949`, success for exact cutover SHA `9b5f21c0ca26bf02af03d207ddd2617021e16fb3`
+- Latest Pages attempt: run `31181413147` succeeded for acceptance-handoff commit `e647d1ababdc399da7296dfb6b87cd2b8e90e8e4`; it is a post-acceptance documentation deployment and does not replace qualifying cutover run `31175722949`
+- Current ritual-flow Pages attempt: run `31188364101` for checkpoint `85abf971e70e7d1acc8bfa1c29c61ff8c1ff26b3` was `in_progress` at shutdown; verify its final disposition and do not treat it as final phase evidence
+- Latest handoff directory: `build/agent-handoffs/20260807T130808Z-liturgy-reader-instrument-public-cutover-acceptance/` (six payload files plus manifest; committed and pushed)
+- Latest handoff ZIP: `build/agent-handoffs/20260807T130808Z-liturgy-reader-instrument-public-cutover-acceptance.zip`, SHA-256 `d44843a2a90971816e7fa35bb49b3e6b44b649edf35231c459709db8788901a4` (verified, committed, and pushed)
 
 ## Fixed decisions and scope boundaries
 
@@ -4360,3 +4361,1893 @@ spaces when the patch artifact itself is treated as prose by `git diff
 scratch target diff itself passes `git diff --check`. Repository diff checking
 therefore excludes only the generated patch envelope, not any prospective
 target path.
+
+### Post-seal push checkpoint
+
+Commit `a996a82a68163dd5f7a2af24ae63f100244d6bc0` pushed the corrected
+unapplied patch, continuity through sealing, and the immutable handoff directory
+and ZIP. Automatic Pages run `31172425199` succeeded for that exact commit. It
+is a handoff-only/continuity publication result: canonical source hashes remain
+`bc5a98de…` and `f630f4a6…`, so it must not be cited as a cutover deployment.
+
+The pushed corrected patch SHA-256 is
+`ce43cef0621e3e1bdf6eb53eb4ce62e479e54977bd739a26385068bcaa33b0e5`.
+The pushed ZIP SHA-256 is
+`01181404404d8e6b87f6746588866f0f56a2f3a1aa9018f60d6d9ae287961823`;
+its 268-entry manifest, ZIP integrity, and one-top-level-directory checks pass.
+The disposable scratch checkout was deleted after evidence was copied and
+sealed. The next action remains narrow independent gate-repair review; no
+execution authorization is inferred.
+
+## Independent gate-repair acceptance — reviewer to Codex
+
+Liturgical Instrument — Gate-Repair Acceptance and Public-Cutover Reauthorization
+Disposition
+
+GATE REPAIR ACCEPTED. PUBLIC-CUTOVER EXECUTION REAUTHORIZED.
+
+The corrected 19-path cutover patch repairs the pre-deployment gate failures at
+the test/harness ownership boundary without altering the previously accepted
+reader product bytes.
+
+The replacement patch may now proceed directly into the already-defined
+same-path public-cutover execution, deployment, cache-window verification, and
+post-deployment independent-acceptance protocol.
+
+This is execution authorization, not final cutover acceptance.
+
+Public navigation redesign remains unauthorized.
+
+Candidate/oracle cleanup remains unauthorized.
+
+Visual redesign, renderer/state refactoring, Ordinary changes, source expansion,
+translation expansion, and unrelated cleanup remain unauthorized.
+Reviewed sealed package
+
+Reviewed archive:
+
+20260807T105259Z-liturgy-reader-public-cutover-gate-repair.zip
+
+Independent archive verification:
+
+    ZIP integrity: PASS
+
+    exactly one top-level directory: PASS
+
+    MANIFEST.sha256: 268/268 payload entries PASS
+
+    ZIP SHA-256:
+
+01181404404d8e6b87f6746588866f0f56a2f3a1aa9018f60d6d9ae287961823
+
+Pushed immutable handoff:
+
+build/agent-handoffs/20260807T105259Z-liturgy-reader-public-cutover-gate-repair/
+build/agent-handoffs/20260807T105259Z-liturgy-reader-public-cutover-gate-repair.zip
+
+Pushed handoff/seal commit:
+
+a996a82a68163dd5f7a2af24ae63f100244d6bc0
+
+The handoff-only Pages run for that commit:
+
+31172425199
+
+succeeded, but canonical readers were unchanged. It is not a cutover deployment
+and must never be used as evidence that the public cutover succeeded.
+Corrected replacement patch
+
+Canonical replacement patch:
+
+build/agent-continuity/liturgy-reader-public-cutover-proposed.patch
+
+Reviewed copy:
+
+CORRECTED-CUTOVER.patch
+
+SHA-256:
+
+ce43cef0621e3e1bdf6eb53eb4ce62e479e54977bd739a26385068bcaa33b0e5
+
+It supersedes and invalidates the old executable patch:
+
+cd11518ba7b20d198cbd16d08cc153d3f3053afeba8a230441c57312318a7566
+
+Never execute the old patch again.
+Nine narrow review dispositions
+1. Were the pre-deployment defects repaired at the test/harness boundary?
+
+PASS
+
+No accepted reader implementation byte was changed.
+
+The repair correctly updates stale tests/harness ownership after same-path
+promotion rather than distorting the product to satisfy legacy assertions.
+
+The scratch run exposed one additional stale #reading selector in
+tools/tests/day_reader_integration_browser.mjs. That file was already within
+the authorized 19-path scope, and changing it to the accepted
+#reader-document contract was the correct bounded repair.
+2. Is the replacement patch limited to the authorized scope?
+
+PASS
+
+The patch contains exactly 19 paths:
+
+PROJECT-WORK.md
+guidance/liturgy-browser-roadmap.md
+promised-deliverables.toml
+release/public-alpha.json
+release/rights/public-alpha-2026-07-15.md
+src/web/browser/liturgy/day.html
+src/web/browser/liturgy/index.html
+tools/tests/day_reader_integration_browser.mjs
+tools/tests/liturgy_reader_shell_browser.mjs
+tools/tests/liturgy_reader_visual_reset_browser.mjs
+tools/tests/propers_reader_integration_browser.mjs
+tools/tests/test_day_missal_integration.py
+tools/tests/test_day_reader_integration.py
+tools/tests/test_liturgy_reader_shell.py
+tools/tests/test_liturgy_reader_state.py
+tools/tests/test_liturgy_reader_visual_reset.py
+tools/tests/test_mass_ordinary.py
+tools/tests/test_propers_reader_integration.py
+tools/tests/test_public_alpha.py
+
+This is exactly the authorized replacement scope.
+
+No reader JavaScript/CSS, shared state/adapter/shell implementation, source data,
+Ordinary implementation, candidate page, oracle, or public-navigation path is
+present.
+3. Are prospective product/release bytes identical to the accepted cutover?
+
+PASS
+
+The corrected patch preserves the previously accepted prospective hashes:
+
+src/web/browser/liturgy/day.html
+9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972
+
+src/web/browser/liturgy/index.html
+a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600
+
+release/rights/public-alpha-2026-07-15.md
+5a4b4d4f8bfbcf8d5fd54249c0d8664be7215b4bee9e82ccc8a37f400e3cf31e
+
+The gate repair therefore did not reopen product design or implementation.
+4. Does locked focused Python pass completely?
+
+PASS
+
+Prospective scratch state:
+
+formerly failing Python modules: 157/157
+complete focused locked Python: 230/230
+
+No skip or xfail was introduced to conceal the defects.
+5. Do all four browser gates pass against the prospective canonical state?
+
+PASS
+
+Day Chromium:             40/40
+Propers Chromium:         32/32
+shared-shell Chromium:    18/18
+governed Instrument:      24/24
+
+The browser reports also record:
+
+console problems:                 0
+required failed requests:         0
+HTTP problems:                    0
+unnamed controls:                 0
+required horizontal overflow:     0
+
+The prospective canonical Day and Propers screenshots remain materially the
+accepted Liturgical Instrument. No visual re-review blocker is introduced by
+the gate repair.
+6. Are the repaired assertions still strong?
+
+PASS
+Shared state ownership
+
+The replacement test does not merely delete the pre-cutover negative assertion.
+For each canonical page it requires exactly one:
+
+reader-state.js
+reader-state-adapters.js
+route controller
+
+and proves dependency order:
+
+state → adapters → controller
+
+That is the correct promoted production contract.
+Ordinary/page hierarchy
+
+The repaired tests now prove the actual accepted hierarchy and interaction
+surfaces, including:
+
+    reader identity/title;
+
+    coverage notice;
+
+    reader-document;
+
+    action rail/dock;
+
+    four exact actions;
+
+    aria-controls;
+
+    collapsed aria-expanded;
+
+    dialog presence and closed initial state;
+
+    accessibility attributes;
+
+    Browse/Date/Contents/Mode/Details structure;
+
+    expected script/style dependency ordering.
+
+They also retain the existing semantic/event/order tests.
+
+This is stronger than keeping stale <details>, settings, notices, and
+#reading assertions.
+Metadata serialization
+
+The metadata repair checks the declared browser description against the safely
+serialized form used by:
+
+description
+og:description
+twitter:description
+
+It accounts for HTML escaping instead of weakening the content contract or
+changing source copy to avoid apostrophes.
+Shared-shell browser ownership
+
+The canonical-route browser test now requires:
+
+    the actual canonical filenames;
+
+    route-specific ready flag;
+
+    settled #reader-document;
+
+    rendered Proper content;
+
+    exactly one [data-reader-shell];
+
+    the correct day or propers shell entrance.
+
+It no longer waits for legacy #reading or asserts that the canonical pages
+have no shell.
+
+The Day parity harness likewise reads the prospective canonical content from
+the actual accepted reading document.
+
+No repaired gate was made vacuous.
+7. Does the patch mechanically apply?
+
+PASS AT THE SEALED BOUNDARY; MUST BE RECHECKED IMMEDIATELY BEFORE EXECUTION
+
+The package records a normal-context:
+
+git apply --check
+
+pass against synchronized real main at the gate-repair baseline.
+
+Current pushed main subsequently adds the sealed patch/continuity/handoff
+commit a996a82...; that commit is archival/build-tree work rather than a
+cutover-target modification.
+
+The execution agent must nevertheless re-run all pre-apply checks against the
+actual synchronized current main. No inference substitutes for this check.
+
+If normal-context git apply --check fails, stop. Do not use --3way, fuzz,
+or manual reconstruction.
+8. Did the real canonical readers remain unchanged and undeployed?
+
+PASS
+
+During gate repair the real committed canonical sources remained:
+
+day.html
+bc5a98de6b718431f3b91e6a133bb847c2dcdf4d21fce6f45aae3ad4984de868
+
+index.html
+f630f4a66f3f525144336f183b1485c698030c7531ff679375b3a7aa00150c65
+
+No public cutover commit or deployment occurred.
+
+The successful Pages run 31172425199 only rebuilt those unchanged canonical
+readers.
+9. May the replacement patch enter the execution/deployment/cache protocol?
+
+YES. AUTHORIZED.
+
+The replacement patch has cleared the exact gate that stopped the previous
+attempt.
+
+Proceed directly to the bounded execution protocol below.
+EXECUTION PROTOCOL
+EX-1 — Start from current synchronized main
+
+Before any canonical modification:
+
+git status --short
+git rev-parse HEAD
+git rev-parse main
+git rev-parse origin/main
+git ls-remote origin refs/heads/main
+
+Require:
+
+HEAD == main == origin/main == remote main
+
+Record the actual starting SHA.
+
+Verify the pushed patch:
+
+sha256sum build/agent-continuity/liturgy-reader-public-cutover-proposed.patch
+
+Expected:
+
+ce43cef0621e3e1bdf6eb53eb4ce62e479e54977bd739a26385068bcaa33b0e5
+
+Verify the gate-repair baseline is an ancestor:
+
+git merge-base --is-ancestor e20b2f542ab51a2b4f0807e6394ca5ecb313699c HEAD
+
+Run:
+
+git apply --check build/agent-continuity/liturgy-reader-public-cutover-proposed.patch
+
+Then verify none of the 19 patch-owned target paths has drifted in a way that
+changes the accepted prospective result.
+
+If any precondition fails: STOP FOR REVIEW.
+
+Do not use:
+
+git apply --3way
+manual fuzzy application
+patch regeneration
+
+EX-2 — Append continuity before promotion
+
+Append this review verbatim under:
+
+## Independent gate-repair acceptance — reviewer to Codex
+
+in:
+
+build/agent-continuity/liturgy-reader-visual-plan.md
+
+Then append:
+
+## Public-cutover execution retry — Codex response
+
+Record before applying:
+
+    synchronized starting SHA;
+
+    clean worktree;
+
+    replacement patch SHA;
+
+    successful ancestor check;
+
+    successful normal-context apply check;
+
+    all nine gate-repair review dispositions;
+
+    exact intended commit/deploy sequence;
+
+    rollback trigger;
+
+    confirmation that navigation and candidate/oracle cleanup remain forbidden.
+
+EX-3 — Apply exactly the replacement patch
+
+Apply:
+
+git apply build/agent-continuity/liturgy-reader-public-cutover-proposed.patch
+
+Do not regenerate or hand-edit the promoted product.
+
+Immediately verify:
+
+day.html
+9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972
+
+index.html
+a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600
+
+release/rights/public-alpha-2026-07-15.md
+5a4b4d4f8bfbcf8d5fd54249c0d8664be7215b4bee9e82ccc8a37f400e3cf31e
+
+Verify the patch effect consists of the accepted 19 paths plus only the
+continuity/handoff bookkeeping explicitly required by this protocol.
+
+If any prospective product/release hash differs: stop and reverse the uncommitted
+application.
+EX-4 — Repeat the full local canonical pre-deployment gate
+
+The scratch proof authorizes execution; it does not waive a real-tree run.
+
+Before committing, require the actual promoted working tree to pass:
+
+focused locked Python:          230/230 or greater, zero failures
+Day Chromium:                   all green
+Propers Chromium:               all green
+shared-shell Chromium:          all green
+governed Instrument:            all green
+changed Python/JS syntax:       pass
+git diff --check:               pass
+promised-deliverables:          pass
+tool registry:                  pass
+release bindings:               zero stale
+locked public-alpha check:      pass
+locked public-alpha build:      pass
+locked public-alpha verify:     pass
+
+The browser suites must run the actual canonical:
+
+/liturgy/day.html
+/liturgy/index.html
+
+and preserve all previously accepted compatibility states:
+
+    Roman and postconciliar;
+
+    Read and Missal;
+
+    empty Day default;
+
+    direct deep links;
+
+    reload and Back/Forward;
+
+    partial coverage;
+
+    why=1;
+
+    multi-territorial outcomes;
+
+    stable Propers cycle;
+
+    stable alternative fail-closed behavior where unsupported;
+
+    stable translation-witness;
+
+    Date/Browse/Contents/Mode/Details;
+
+    200% text;
+
+    keyboard focus;
+
+    forced colors;
+
+    reduced motion;
+
+    deep scroll.
+
+The unrelated governed stored-example replay may remain non-green and must be
+disclosed honestly. Do not recapture/bless it.
+
+If any cutover-owned gate fails, reverse the uncommitted application and stop.
+EX-5 — Commit and push the bounded public cutover
+
+Once the actual promoted tree is fully green, create one bounded cutover commit
+unless repository mechanics require a second documentation-only checkpoint.
+
+The cutover commit must not include:
+
+    public navigation changes;
+
+    candidate/oracle cleanup;
+
+    visual redesign;
+
+    reader implementation changes outside the accepted promotion;
+
+    source/data changes;
+
+    unrelated refactoring.
+
+Push to origin/main.
+
+Record the exact cutover SHA.
+EX-6 — Exact-SHA Pages gate
+
+The cutover is not even provisionally successful until GitHub Pages reports
+Success for the exact cutover SHA.
+
+Require:
+
+    workflow source SHA == cutover SHA;
+
+    build succeeds;
+
+    deploy succeeds;
+
+    deployed artifact corresponds to that SHA.
+
+Do not substitute:
+
+    31172425199;
+
+    31169274928;
+
+    any compatibility run;
+
+    any earlier successful reader deployment.
+
+If the exact cutover deployment fails and the pushed canonical state could be
+publicly uncertain or mixed, follow the rollback rule below.
+EX-7 — Immediate live canonical verification
+
+After exact-SHA Pages success, verify the real public URLs, including:
+
+https://spincyc.github.io/triptych/liturgy/day.html
+https://spincyc.github.io/triptych/liturgy/day.html#date=2026-08-05&missal=roman-1962&bible=douay-rheims
+https://spincyc.github.io/triptych/liturgy/index.html
+https://spincyc.github.io/triptych/liturgy/index.html#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims
+
+Also verify representative live states for:
+
+    empty-Day Roman 1962 default;
+
+    postconciliar Day;
+
+    Read/Missal mode;
+
+    why=1;
+
+    real multi-territorial date;
+
+    Propers cycle;
+
+    translation-witness;
+
+    explicit unsupported alternative;
+
+    Details counterpart/context links.
+
+Require:
+
+    HTTP 200;
+
+    no redirect to *-reader.html;
+
+    correct hash/query state;
+
+    reload;
+
+    Back/Forward;
+
+    correct canonical/indexing metadata;
+
+    candidates/oracle remain statically noindex;
+
+    no user-visible candidate/internal product language;
+
+    no console problems;
+
+    no required failed requests;
+
+    no unexpected HTTP failure;
+
+    no duplicate IDs;
+
+    no unnamed controls;
+
+    no required horizontal overflow;
+
+    canonical visual output materially matches the accepted production candidate.
+
+Capture original-pixel evidence.
+
+Verify deployed/source byte parity for the changed canonical/release assets where
+the publication model permits direct byte comparison.
+EX-8 — Cache-window gate
+
+The accepted cutover plan identified an observed freshness window of roughly
+600 seconds.
+
+Do not request final independent acceptance based only on cache-bypassed checks.
+
+Run:
+Immediate pass
+
+Cache-bypassed/fresh verification of the new deployment.
+Post-window pass
+
+After more than the observed freshness window, run the key canonical checks
+without cache-busting.
+
+At minimum:
+
+    Day empty/default;
+
+    Day deep link;
+
+    Day Missal;
+
+    Propers deep link;
+
+    one modal/shell surface;
+
+    one compatibility state such as why=1 or territorial;
+
+    console/request/HTTP checks.
+
+The purpose is to detect old-HTML/new-JS or new-HTML/old-JS mixtures.
+
+If mixed-generation behavior appears, rollback rather than debug against live
+canonical routes.
+Immediate rollback rule
+
+For any material post-push canonical failure, prefer immediate ordinary revert.
+
+Use:
+
+git revert <CUTOVER_COMMIT>
+git push origin main
+
+Do not rewrite history.
+
+Then require:
+
+    successful Pages deployment for exact revert SHA;
+
+    canonical Day/Propers HTTP 200;
+
+    restored legacy public route behavior;
+
+    cache-bypassed verification;
+
+    post-freshness-window verification.
+
+The compatibility-closed candidate and oracle routes remain intact and must not
+be reverted merely because canonical promotion is reverted.
+EX-9 — Seal the execution handoff
+
+Only after:
+
+    real-tree local gates are green;
+
+    exact cutover SHA deploys successfully;
+
+    immediate live checks pass;
+
+    post-cache-window checks pass;
+
+create and push:
+
+build/agent-handoffs/<UTC>-liturgy-reader-instrument-public-cutover-execution/
+build/agent-handoffs/<UTC>-liturgy-reader-instrument-public-cutover-execution.zip
+
+The maintainer's continuity requirement authorizes force-adding only that exact
+new execution handoff directory and its matching ZIP if ignored.
+
+Include at minimum:
+
+START-HERE.md
+HANDOFF.md
+INSTRUCTIONS.md
+REVIEW-AUTHORIZATION.md
+CODEX-RESPONSE.md
+PLAN-AND-CONTINUITY.md
+CUTOVER-DIFF.patch
+CHANGED-FILES.txt
+SOURCE-HASHES.txt
+LOCAL-GATES.txt
+DEPLOYMENT.md
+LIVE-VERIFICATION.md
+CACHE-WINDOW.md
+ROLLBACK.md
+checks.txt
+MANIFEST.sha256
+
+Also include:
+
+    exact pre-cutover and cutover SHAs;
+
+    exact Pages run;
+
+    canonical browser JSON;
+
+    canonical screenshots;
+
+    accepted-candidate/oracle comparison evidence;
+
+    why/territorial/stable-key evidence;
+
+    indexing evidence;
+
+    deployed byte-parity evidence;
+
+    immediate and post-window checks.
+
+Generate MANIFEST.sha256 last.
+
+Verify:
+
+sha256sum -c MANIFEST.sha256
+unzip -t <zip>
+# exactly one top-level directory
+sha256sum <zip>
+
+Push the sealed artifacts and final continuity checkpoint.
+
+Require:
+
+clean worktree
+HEAD == main == origin/main == remote main
+
+HARD STOP
+
+After the execution handoff is durably pushed:
+
+STOP FOR INDEPENDENT PUBLIC-CUTOVER ACCEPTANCE.
+
+Do not:
+
+    delete day-reader.html or propers-reader.html;
+
+    remove the visual-reset oracle;
+
+    alter navigation;
+
+    perform cleanup;
+
+    start search;
+
+    add source/translation content;
+
+    redesign the reader.
+
+Final post-deployment review questions
+
+The next reviewer should answer only:
+
+    Are canonical Day and Propers now serving the accepted Liturgical Instrument?
+
+    Are canonical URLs and all accepted public state contracts preserved?
+
+    Is live visual output materially identical to the accepted candidate/oracle?
+
+    Are canonical pages indexable while candidate/oracle routes remain nonindexable?
+
+    Is the exact cutover SHA the successfully deployed Pages SHA?
+
+    Do deployed bytes match the intended cutover?
+
+    Did both immediate and post-cache-window checks pass?
+
+    Did public navigation remain unchanged and fallback candidate/oracle routes remain intact?
+
+    May the public cutover be accepted and marked complete?
+
+Only that review may close the cutover.
+Authorization boundary
+
+    Gate repair: ACCEPTED
+
+    Corrected patch SHA ce43cef...: ACCEPTED
+
+    Old patch SHA cd11518...: REJECTED / DO NOT EXECUTE
+
+    Corrected same-path cutover execution: AUTHORIZED
+
+    Exact 19-path promoted product/test/release change: AUTHORIZED
+
+    Exact-SHA public Pages deployment after local gates: AUTHORIZED
+
+    Immediate/post-cache-window live verification: AUTHORIZED
+
+    Ordinary rollback on material failure: AUTHORIZED
+
+    Final public-cutover acceptance: PENDING POST-DEPLOYMENT REVIEW
+
+    Public navigation changes: UNAUTHORIZED
+
+    Candidate/oracle cleanup: UNAUTHORIZED
+
+    Visual/product redesign: UNAUTHORIZED
+
+    State/renderer/source/translation expansion: UNAUTHORIZED
+
+## Public-cutover execution retry — Codex response
+
+Execution retry begins at synchronized starting SHA
+`6bb0d02e50794b1cfe89faa5424e6eea42e55872`. Before this continuity append,
+the worktree was clean and `HEAD`, local `main`, `origin/main`, and remote
+`refs/heads/main` all agreed at that SHA.
+
+The canonical replacement patch at
+`build/agent-continuity/liturgy-reader-public-cutover-proposed.patch` has the
+accepted SHA-256
+`ce43cef0621e3e1bdf6eb53eb4ce62e479e54977bd739a26385068bcaa33b0e5`.
+The gate-repair baseline ancestor check against
+`e20b2f542ab51a2b4f0807e6394ca5ecb313699c` exited 0, and normal-context
+`git apply --check` exited 0. No `--3way`, fuzz, regeneration, or manual
+reconstruction will be used.
+
+All nine gate-repair dispositions are recorded as accepted: the repairs are at
+the test/harness boundary; scope is exactly 19 paths; accepted prospective
+product/release bytes are unchanged; focused locked Python passes; all four
+browser gates pass; repaired assertions remain strong; mechanical application
+passed and was rechecked at this execution boundary; real canonical readers
+remained unchanged and undeployed during repair; and entry into the bounded
+execution/deployment/cache protocol is authorized.
+
+The intended sequence is exact: append this continuity record; apply only the
+accepted patch; verify the three frozen product/release hashes and exact scope;
+run the complete real-tree canonical gate; create and push one bounded cutover
+commit; require Pages success for that exact cutover SHA; run immediate live
+canonical and byte-parity verification; wait beyond the observed cache window
+and repeat the required non-cache-busted checks; then seal and push the execution
+handoff and stop for independent public-cutover acceptance.
+
+Any cutover-owned failure before commit triggers reversal of the uncommitted
+application and review. Any material post-push canonical failure or uncertain
+mixed deployment triggers an ordinary `git revert <CUTOVER_COMMIT>` followed by
+push, exact-revert-SHA Pages success, restored-route verification, and immediate
+and post-freshness checks; history will not be rewritten.
+
+Public navigation changes and candidate/oracle cleanup remain forbidden.
+Visual/product redesign, renderer/state refactoring, Ordinary changes,
+source/translation expansion, and unrelated cleanup likewise remain outside
+this execution authorization.
+
+### Real-tree canonical pre-deployment checkpoint
+
+The corrected patch was applied without regeneration or hand editing. Its
+effect is exactly the accepted 19 paths plus this append-only continuity file.
+The promoted source hashes are unchanged from the independently accepted
+prospective values: Day `9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972`,
+Propers `a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600`,
+and the rights record
+`5a4b4d4f8bfbcf8d5fd54249c0d8664be7215b4bee9e82ccc8a37f400e3cf31e`.
+
+The actual promoted working tree passes locked focused Python 230/230; Day
+Chromium 40/40; Propers Chromium 32/32; shared-shell Chromium 18/18; governed
+Instrument Chromium 24/24; syntax checks for all changed Python and JavaScript
+tests; promised-deliverables and tool registries; release bindings with zero
+stale entries; `git diff --check`; and locked public-alpha policy, build, and
+GitHub-Pages-target verification. The governed Instrument run initially found
+the expected pre-cutover generated preview still on disk; after the required
+locked preview build and verification, the same unmodified harness passed
+24/24 against the promoted canonical filenames.
+
+The governed full `make check` remains honestly non-green at `check-examples`
+with exit 2. It replayed 200 captured examples, ran 188, and reported 21
+divergences, 35 known-stale cases, six deliberately unrun network/mutating
+examples, and six unavailable built-artifact examples. This is the already
+disclosed unrelated stored-example transcript divergence; no transcript was
+recaptured or blessed. No task-owned gate failed.
+
+The next exact action is to commit and push this bounded cutover, then accept
+only a successful Pages run whose source SHA equals that cutover commit. Public
+navigation and retained candidate/oracle bytes remain outside the change.
+
+### Exact-SHA deployment and immediate live checkpoint
+
+Commit `9b5f21c0ca26bf02af03d207ddd2617021e16fb3` pushed the exact accepted
+19-path promotion plus continuity. GitHub Pages run `31175722949` names that
+exact source SHA and completed successfully; every build, verification, upload,
+and deploy step passed. Earlier continuity and handoff runs remain explicitly
+nonqualifying.
+
+The immediate cache-bypassed live verifier completed at
+`2026-08-07T12:16:10.158Z`: 936/936 assertions across 36 original-pixel states,
+with zero console, required-request, HTTP, unnamed-control, duplicate-ID, or
+required-overflow problem. It proves canonical HTTP 200/no-redirect behavior,
+indexing metadata, empty-Day Roman 1962 default, Read/Missal, deep links,
+why=1, two held territorial branches, Propers public option keys, fail-closed
+alternative state, Details links, accessibility/reflow states, reload and
+Back/Forward, retained candidate/oracle full noindex, and byte parity for 15
+deployed HTML/JS/CSS assets against the locked build.
+
+The governed original-pixel evidence is also green: Day 40/40 with 77 captures;
+Propers 32/32; shared shell 18/18 with 94 captures; Instrument 24/24 with 113
+captures. The immediate matrix was visually inspected as a labeled sheet and at
+full size for the portrait Read measure, 200% dock, territorial branch, and
+mobile Details states; no filename-change visual regression is visible.
+
+The verifier enforces at least 601 seconds after the immediate completion before
+the post-window pass. That pass may not begin before
+`2026-08-07T12:26:11Z`. No rollback trigger has fired.
+
+### Post-freshness-window checkpoint
+
+The required ordinary-cache pass began after 613 elapsed seconds and completed
+at `2026-08-07T12:26:32.943Z`: 216/216 assertions across the six required
+canonical states, with zero console, request, HTTP, accessibility-name,
+duplicate-ID, or overflow problem. It used a fresh Chrome profile, plain URLs,
+normal cache behavior, and no cache-busting query or headers. Canonical default,
+deep link, Missal, Propers deep link, Details, and territorial Why all settled;
+all 15 checked deployed assets remained HTTP 200, unredirected, and byte-equal
+to the locked build. No mixed-generation behavior appeared, and the ordinary
+rollback trigger did not fire.
+
+The exact execution handoff is
+`build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/`
+with a matching ZIP to be sealed. The cutover remains pending independent
+post-deployment acceptance; public navigation redesign, candidate/oracle
+cleanup, and all other excluded work remain unauthorized.
+
+### Immutable execution handoff seal
+
+The new handoff contains 441 payload files and `MANIFEST.sha256`; all 441
+manifest entries verify. The ZIP contains 462 entries including directories,
+passes `unzip -t`, and has exactly one top-level directory. Its SHA-256 is
+`06752126a3a3235a342f54ec08811faaf4fc2622924008c4362dda519624c410`.
+
+At sealing, `PLAN-AND-CONTINUITY.md` byte-matched this canonical file at
+SHA-256 `3259be77a04f2871ec07dbb250c2b2d362bc5f6e25c6a55eff58f51a0e43311d`.
+`INSTRUCTIONS.md` and `REVIEW-AUTHORIZATION.md` are byte-identical at SHA-256
+`7a3dac46eb8a85ccdacaa1403e3fe17ccec547a03a4e095180c5e74e2e1c23de`.
+This post-seal paragraph necessarily succeeds the immutable continuity snapshot
+so that the canonical record can name the finalized ZIP hash; the package is
+not rebuilt around its own transport hash.
+
+The next reviewer should begin with the latest handoff and answer only the nine
+questions in `REVIEW_REQUEST.md`. Visibly, canonical Day and Propers now match
+the accepted Instrument candidate/oracle at desktop, intermediate, mobile, and
+accessibility states. Provisionally, the cutover remains unaccepted until that
+review. The requested decisions are exact route/state preservation, live visual
+parity, indexing boundaries, exact-SHA deployment, deployed-byte parity, both
+cache passes, unchanged navigation/fallbacks, and whether the cutover may close.
+
+### Durable push and archival Pages checkpoint
+
+Commit `1d60b49bcf2a46e5ee43d6326af3e13a43265b72` pushed the exact immutable
+execution-handoff directory, its verified ZIP, and the post-seal continuity
+record. GitHub Pages run `31178547337` for that exact handoff-only commit
+completed successfully at `2026-08-07T12:33:52Z`; every build, artifact,
+verification, upload, and deploy step passed. That run changed no reader product
+bytes and is not the qualifying public-cutover deployment. The qualifying run
+remains `31175722949` for exact cutover commit
+`9b5f21c0ca26bf02af03d207ddd2617021e16fb3`.
+
+The durable archive paths are
+`build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/`
+and
+`build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution.zip`.
+The ZIP SHA-256 remains
+`06752126a3a3235a342f54ec08811faaf4fc2622924008c4362dda519624c410`;
+its 441 manifest payloads, one-top-level-directory shape, and transport integrity
+were verified before push. No rollback trigger fired.
+
+This is the final Codex execution checkpoint. The next exact action is independent
+public-cutover acceptance review from the immutable handoff. The cutover must not
+be marked accepted or complete before that disposition. Public navigation remains
+unchanged; candidate and oracle fallbacks remain intact and nonindexable; cleanup,
+redesign, search, and source/translation expansion remain unauthorized.
+
+
+## Independent public-cutover acceptance — reviewer to Codex
+
+Liturgical Instrument — Final Public-Cutover Acceptance
+Disposition
+
+PUBLIC CUTOVER ACCEPTED.
+
+The same-path promotion of the accepted Liturgical Instrument readers onto the
+canonical public Day and Propers URLs is independently accepted and may be
+marked complete.
+
+The cutover is no longer a candidate.
+
+No rollback is required.
+
+No remaining cutover blocker exists.
+
+This acceptance closes the visual-reset → correction → production-integration →
+compatibility → gate-repair → canonical-cutover sequence.
+
+It does not authorize:
+
+    candidate/oracle deletion;
+
+    public-navigation redesign;
+
+    search work;
+
+    source or translation expansion;
+
+    Ordinary or renderer refactoring;
+
+    a new visual redesign under the guise of cleanup.
+
+After the archival closeout below, further reader work should begin as a new
+production phase against the live canonical Day and Propers pages.
+Reviewed execution package
+
+Reviewed archive:
+
+20260807T115341Z-liturgy-reader-instrument-public-cutover-execution.zip
+
+Independent package verification:
+
+    ZIP integrity: PASS
+
+    top-level directories: exactly one
+
+    total ZIP entries: 462
+
+    MANIFEST.sha256: 441/441 payload entries PASS
+
+    files in the extracted handoff including MANIFEST.sha256: 442
+
+    independently calculated uploaded ZIP SHA-256:
+
+06752126a3a3235a342f54ec08811faaf4fc2622924008c4362dda519624c410
+
+The immutable execution handoff is also present in the repository build tree:
+
+build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/
+build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution.zip
+
+Accepted deployment boundary
+
+Pre-cutover SHA:
+
+6bb0d02e50794b1cfe89faa5424e6eea42e55872
+
+Accepted public-cutover SHA:
+
+9b5f21c0ca26bf02af03d207ddd2617021e16fb3
+
+Qualifying GitHub Pages run:
+
+31175722949
+
+The run is a success for the exact cutover SHA.
+
+Earlier compatibility, continuity, handoff, and gate-repair Pages runs remain
+nonqualifying as cutover evidence.
+Nine final review dispositions
+1. Are canonical Day and Propers serving the accepted Liturgical Instrument?
+
+PASS
+
+The canonical filenames are now the accepted production readers:
+
+/liturgy/day.html
+/liturgy/index.html
+
+There is no redirect to day-reader.html or propers-reader.html.
+
+The reviewed live evidence shows the accepted Liturgical Instrument composition
+at the canonical filenames across Day Read, Day Missal, Propers Read, Browse,
+desktop, intermediate, portrait-tablet, mobile, accessibility/reflow, modal,
+deep-scroll, partial-coverage, postconciliar, Why, and territorial states.
+
+The independently inspected live screenshots retain:
+
+    the accepted Triptych masthead;
+
+    one-axis Read composition;
+
+    1440 external control rail;
+
+    square opaque edge dock on mobile/intermediate;
+
+    200% deliberate reflow;
+
+    accepted Missal cue/ritual composition;
+
+    compact warning hierarchy;
+
+    canonical Propers Browse entrance.
+
+No filename-promotion visual regression is visible.
+2. Are canonical URLs and accepted public state contracts preserved?
+
+PASS
+
+The live verifier passes the canonical Day and Propers paths with no redirect and
+the exact requested hashes.
+
+Accepted public behavior is present for:
+Day
+
+    empty route;
+
+    local civil-date behavior;
+
+    Roman 1962 public default;
+
+    explicit date;
+
+    Roman 1962;
+
+    postconciliar;
+
+    Bible/oration state;
+
+    Read/Missal;
+
+    reload;
+
+    direct deep links;
+
+    Back/Forward;
+
+    partial coverage;
+
+    why=1;
+
+    multiple held territorial branches;
+
+    modal/surface interaction;
+
+    accessibility/reflow states.
+
+Propers
+
+    existing canonical seasonal deep link;
+
+    canonical Browse;
+
+    stable cycle;
+
+    stable translation-witness;
+
+    stable explicit alternative state with honest fail-closed behavior where no
+    selectable stable alternative exists;
+
+    reload;
+
+    Back/Forward;
+
+    direct links;
+
+    route-owned Details/context navigation.
+
+The required governing links remain valid in the evidence:
+
+/liturgy/day.html#date=2026-08-05&missal=roman-1962&bible=douay-rheims
+
+/liturgy/index.html#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims
+
+No accepted public-contract blocker remains.
+3. Is live visual output materially identical to the accepted candidate/oracle?
+
+PASS
+
+The governed visual run reports:
+
+24/24 assertions
+113 captures
+
+The canonical/candidate/oracle parity evidence remains green.
+
+The independent visual inspection included:
+
+    immediate live contact sheet;
+
+    post-window contact sheet;
+
+    canonical Day Read 1440×900;
+
+    canonical Day Missal 393×852;
+
+    canonical Day Why/mobile;
+
+    canonical territorial/mobile;
+
+    canonical Propers Read/mobile;
+
+    governing shell/accessibility states.
+
+The canonical output belongs to the same accepted Instrument system. No cutover
+artifact, legacy shell, transient route chrome, changed reading measure, broken
+dock, or reverted warning hierarchy appears.
+4. Are canonical pages indexable while candidate/oracle routes remain nonindexable?
+
+PASS
+
+The canonical Day and Propers sources contain no static robots=noindex
+directive.
+
+The live verifier explicitly passes:
+
+canonical page is indexable
+canonical Open Graph URL is route-correct
+
+for canonical states.
+
+The retained surfaces are separately verified as:
+
+day-reader.html
+propers-reader.html
+reader-visual-reset-day.html
+reader-visual-reset-propers.html
+
+with:
+
+noindex, nofollow, noarchive, nosnippet, noimageindex
+
+and no public Open Graph URL.
+
+This is the correct initial post-cutover indexing boundary.
+5. Is the exact cutover SHA the successfully deployed Pages SHA?
+
+PASS
+
+Cutover:
+
+9b5f21c0ca26bf02af03d207ddd2617021e16fb3
+
+Pages run:
+
+31175722949
+
+The workflow is recorded as Success for that exact pushed SHA, with build,
+artifact upload, and deploy completed.
+
+No earlier successful run is being substituted.
+6. Do deployed bytes match the intended cutover?
+
+PASS
+
+The independently rehashed source snapshots match the already accepted
+prospective product/release values:
+
+src/web/browser/liturgy/day.html
+9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972
+
+src/web/browser/liturgy/index.html
+a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600
+
+release/rights/public-alpha-2026-07-15.md
+5a4b4d4f8bfbcf8d5fd54249c0d8664be7215b4bee9e82ccc8a37f400e3cf31e
+
+The execution diff contains exactly the accepted 19 patch paths.
+
+The immediate and post-window evidence both report 15/15 deployed assets
+byte-identical to the locked public-alpha build, including canonical pages,
+candidate/oracle pages, reader controllers, state/adapters, shell assets, and
+Instrument CSS.
+
+No deployed/source parity blocker remains.
+7. Did immediate and post-cache-window checks pass?
+
+PASS
+Immediate live pass
+
+Completed:
+
+2026-08-07T12:16:10.158Z
+
+Result:
+
+936/936 assertions
+36 original-pixel screenshots
+0 console problems
+0 required failed requests
+0 HTTP problems
+0 unnamed controls
+0 duplicate IDs
+0 required horizontal overflow
+
+Post-freshness-window pass
+
+The verifier refused to begin before the required window and started after:
+
+613 seconds
+
+Completed:
+
+2026-08-07T12:26:32.943Z
+
+Result:
+
+216/216 assertions
+6 governing screenshots
+0 console problems
+0 required failed requests
+0 HTTP problems
+0 accessibility-name problems
+0 duplicate IDs
+0 required horizontal overflow
+
+It used ordinary cache behavior with no cache-busting query or headers.
+
+No mixed-generation behavior appeared.
+
+The rollback trigger did not fire.
+
+This satisfies the static GitHub Pages mixed-cache gate.
+8. Did public navigation remain unchanged and fallback surfaces remain intact?
+
+PASS
+
+The accepted cutover diff does not include repository-owned public-navigation
+files.
+
+The existing top-level public links continue to target the same canonical Day
+and Propers URLs, which is the principal benefit of same-path promotion.
+
+The candidate and visual-oracle routes remain present, HTTP-tested in the live
+evidence, and full-noindex.
+
+No cleanup was folded into cutover.
+
+This is the correct rollback/acceptance posture.
+9. May the public cutover be accepted and marked complete?
+
+YES — PASS.
+
+The public cutover is independently accepted.
+
+The deliverable may now be recorded as complete.
+Validation disposition
+
+Accepted task-owned local gates:
+
+focused locked Python:       230/230
+Day Chromium:                40/40
+Propers Chromium:            32/32
+shared shell:                18/18
+governed Instrument:         24/24
+changed syntax:              PASS
+promised-deliverables:       PASS
+tool registry:               PASS
+release bindings:            0 stale
+git diff --check:            PASS
+public-alpha check:          PASS
+public-alpha build:          PASS
+public-alpha GitHub Pages
+verification:                PASS
+
+The governed full repository check remains honestly non-green only at the
+previously disclosed unrelated stored-example transcript replay.
+
+No transcript should be recaptured or blessed as part of cutover acceptance.
+
+That unrelated repository condition does not block this task-owned cutover
+acceptance.
+Reviewer note on independent live observation
+
+The review environment's generic web text crawler currently exposes a cached
+pre-cutover parse of the canonical Day/Propers HTML and labels that parse as
+having been crawled before this cutover deployment.
+
+It is therefore not suitable as the authority for the post-cutover JavaScript
+reader state.
+
+This acceptance instead rests on:
+
+    independent verification of the sealed package and manifest;
+
+    independent inspection of the original-pixel immediate/post-window evidence;
+
+    independent parsing of the live-verifier results;
+
+    independent rehashing of the sealed source snapshots;
+
+    independent confirmation of the exact GitHub cutover commit and successful
+    exact-SHA Pages run;
+
+    the package's fresh-Chrome immediate and ordinary-cache post-window browser
+    verification, which includes direct HTTP/source parity.
+
+The stale crawler snapshot is not interpreted as a contradictory live result.
+Archival acceptance closeout — authorized
+
+Codex may now perform one non-product closeout.
+
+No product byte needs to change.
+AC-A — Append final reviewer acceptance
+
+Append this complete review under:
+
+## Independent public-cutover acceptance — reviewer to Codex
+
+in:
+
+build/agent-continuity/liturgy-reader-visual-plan.md
+
+Immediately append:
+
+## Public-cutover acceptance closeout — Codex response
+
+Record:
+
+    all nine final dispositions as PASS;
+
+    accepted cutover SHA 9b5f21c0ca26bf02af03d207ddd2617021e16fb3;
+
+    qualifying Pages run 31175722949;
+
+    execution handoff path;
+
+    execution ZIP SHA-256
+    06752126a3a3235a342f54ec08811faaf4fc2622924008c4362dda519624c410;
+
+    immediate 936/936;
+
+    post-window 216/216;
+
+    final cutover state: accepted/complete;
+
+    unrelated example-transcript qualification;
+
+    confirmation that candidate/oracle cleanup and navigation redesign remain
+    outside this acceptance.
+AC-B — Close tracking truthfully
+
+Update only the necessary tracking/roadmap records so they state:
+
+Liturgical Instrument production integration: accepted and complete
+Compatibility closure: accepted and complete
+Public cutover: independently accepted and complete
+Canonical Day/Propers: accepted Liturgical Instrument
+Public navigation redesign: not part of cutover
+Candidate/oracle cleanup: deferred
+
+Mark the existing public-cutover promised deliverable complete.
+
+Do not invent a new product deliverable merely for archival acceptance.
+
+Preserve the unrelated full-repository example replay qualification.
+AC-C — Preserve this review durably
+
+Track this review as:
+
+build/agent-continuity/liturgy-reader-public-cutover-final-acceptance.md
+
+The bytes should be identical to this supplied review artifact.
+
+The existing execution handoff remains immutable. Do not rewrite it merely to
+insert the acceptance that occurred after sealing.
+
+For the maintainer's clean-agent continuity requirement, create a small
+acceptance-closeout handoff, not another copy of the 43 MB execution evidence:
+
+build/agent-handoffs/<UTC>-liturgy-reader-instrument-public-cutover-acceptance/
+build/agent-handoffs/<UTC>-liturgy-reader-instrument-public-cutover-acceptance.zip
+
+Include only:
+
+START-HERE.md
+FINAL-ACCEPTANCE.md
+CODEX-RESPONSE.md
+PLAN-AND-CONTINUITY.md
+TRACKING-DIFF.patch
+EXECUTION-HANDOFF-REFERENCE.md
+MANIFEST.sha256
+
+EXECUTION-HANDOFF-REFERENCE.md must point to the already-pushed immutable
+execution handoff and record:
+
+cutover SHA
+Pages run
+execution handoff directory
+execution ZIP name/hash
+execution MANIFEST result
+immediate/post-window result
+
+Do not duplicate screenshots/browser payloads into this closeout package.
+
+The maintainer's continuity policy authorizes force-adding only this exact new
+acceptance-closeout directory and its matching ZIP if ignore rules require it.
+AC-D — Closeout checks
+
+Require:
+
+    product/evidence byte changes: zero
+
+    canonical Day source hash remains the accepted value
+
+    canonical Propers source hash remains the accepted value
+
+    candidate/oracle bytes unchanged
+
+    public-navigation bytes unchanged
+
+    continuity contains reviewer acceptance + Codex response
+
+    tracking truthfully marks cutover complete
+
+    promised-deliverables registry passes
+
+    release bindings remain current
+
+    git diff --check passes
+
+Generate the closeout manifest last.
+
+Verify:
+
+sha256sum -c MANIFEST.sha256
+unzip -t <acceptance-closeout.zip>
+# exactly one top-level directory
+sha256sum <acceptance-closeout.zip>
+
+Commit and push.
+
+If that documentation-only push triggers Pages, record the run honestly as a
+post-acceptance documentation deployment. Do not replace 31175722949 as the
+qualifying cutover run.
+
+Require a clean final worktree and:
+
+HEAD == main == origin/main == remote main
+
+No additional independent visual review is required for this archival closeout
+if product/evidence/public-navigation bytes remain unchanged.
+What comes after closeout
+
+Do not make candidate/oracle cleanup the automatic next development phase.
+
+The reason those surfaces still exist is useful: they provide a known-good
+fallback and a visual regression oracle while the newly canonical reader gains
+real use.
+
+The next substantive reader phase should start from the live canonical pages and
+ask what would make the reading experience materially better now that migration
+mechanics are finished.
+
+That phase should be separately planned and may consider such things as:
+
+    deeper first-viewport and long-reading polish;
+
+    ritual navigation and orientation during a long Missal;
+
+    typography and spacing refinements revealed by real content;
+
+    richer but still subordinate source/apparatus interaction;
+
+    handling of unusually long or unusual liturgical structures;
+
+    production accessibility refinement;
+
+    eventual search/study capabilities only if they strengthen rather than clutter
+    the reading instrument.
+
+No item in that list is authorized by this acceptance itself.
+Final state
+
+    Liturgical Instrument visual direction: ACCEPTED
+
+    Responsive correction: ACCEPTED
+
+    Production integration: ACCEPTED
+
+    Compatibility closure: ACCEPTED
+
+    Cutover gate repair: ACCEPTED
+
+    Canonical Day public cutover: ACCEPTED
+
+    Canonical Propers public cutover: ACCEPTED
+
+    Public cutover overall: COMPLETE
+
+    Rollback: NOT REQUIRED
+
+    Public navigation redesign: NOT AUTHORIZED
+
+    Candidate/oracle cleanup: DEFERRED / NOT AUTHORIZED
+
+    Next product/visual phase: SEPARATE FUTURE AUTHORIZATION
+
+## Public-cutover acceptance closeout — Codex response
+
+All nine final review dispositions pass. The independent reviewer accepted the
+canonical Day and Propers readers, URL and state contracts, live visual parity,
+indexing boundary, exact-SHA Pages deployment, deployed-byte parity, immediate
+and post-freshness verification, unchanged public navigation and retained
+fallback surfaces, and final completion of the public cutover.
+
+The accepted cutover SHA is
+`9b5f21c0ca26bf02af03d207ddd2617021e16fb3`; qualifying GitHub Pages run
+`31175722949` succeeded for that exact SHA. The immutable execution handoff is
+`build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/`,
+and its matching ZIP SHA-256 is
+`06752126a3a3235a342f54ec08811faaf4fc2622924008c4362dda519624c410`.
+The immediate live pass is 936/936 across 36 original-pixel states, and the
+ordinary-cache post-window pass is 216/216 across six governing states after
+613 seconds.
+
+The Liturgical Instrument visual direction, responsive correction, production
+integration, compatibility closure, gate repair, canonical Day cutover,
+canonical Propers cutover, and overall public cutover are accepted and complete.
+No rollback is required. The unrelated governed full repository check remains
+honestly non-green only at the previously disclosed stored-example transcript
+replay; no transcript was recaptured or blessed.
+
+This acceptance changes no product, evidence, candidate, oracle, public
+navigation, source, renderer, Ordinary, or translation byte. Candidate/oracle
+cleanup remains deferred and unauthorized, and public-navigation redesign
+remains outside this acceptance. Any further reader work begins as a separately
+authorized production phase against the live canonical pages.
+
+### Acceptance tracking and immutable closeout checkpoint
+
+Commit `96b371a8ae4f8af3eefff792462e7222ce17f887` pushes the verbatim final
+acceptance, its append-only continuity exchange, and truthful updates to
+`PROJECT-WORK.md`, `guidance/liturgy-browser-roadmap.md`, and
+`promised-deliverables.toml`. The existing public-cutover deliverable is
+complete: both prior review requirements pass and the added final-acceptance
+requirement records exact-SHA deployment and both live cache gates. GitHub
+Pages run `31180924173` succeeded for that exact documentation-only commit at
+`2026-08-07T13:06:11Z`. It changes no reader bytes and does not supersede
+qualifying cutover run `31175722949`.
+
+The small archival closeout is
+`build/agent-handoffs/20260807T130403Z-liturgy-reader-instrument-public-cutover-acceptance/`
+with matching ZIP
+`build/agent-handoffs/20260807T130403Z-liturgy-reader-instrument-public-cutover-acceptance.zip`.
+Its six manifest payloads verify, the ZIP contains eight entries including its
+single top-level directory, `unzip -t` passes, and ZIP SHA-256 is
+`98b21deb273de839db77c49f2cb92eef54aa66f8f8ee4dad0dbde49105932173`.
+At sealing, `PLAN-AND-CONTINUITY.md` byte-matched the canonical continuity file
+at SHA-256
+`010f55def6042fab6889cb947f3701f0054f9abe49e4a165d25cb8e1397f3e0e`;
+`FINAL-ACCEPTANCE.md` byte-matched the tracked verbatim review at SHA-256
+`fbfda03948f7e0c426fa1cd2ff6766864e96cc199bf96bb112fdccbb40e605e9`.
+This paragraph necessarily follows the immutable snapshot so the canonical
+record can name the transport hash; the package is not rebuilt around its own
+ZIP hash.
+
+The final closeout changes zero product, execution-evidence, candidate/oracle,
+or public-navigation bytes. The next exact action after the archive push is no
+automatic cleanup phase: further reader work requires separate authorization
+against the live canonical pages.
+
+### Acceptance archive pre-commit correction and final seal
+
+The preceding `20260807T130403Z` package statement is superseded before any
+commit or push. The staged whitespace audit found that its ordinary-context
+`TRACKING-DIFF.patch` necessarily carried patch context-prefix spaces that made
+the staged whitespace check noisy. That unpushed local directory and ZIP were
+removed; no corresponding Git object or public artifact exists. No product,
+tracking, acceptance, or evidence byte was changed to resolve the packaging
+defect.
+
+The fresh immutable closeout is
+`build/agent-handoffs/20260807T130808Z-liturgy-reader-instrument-public-cutover-acceptance/`
+with matching ZIP
+`build/agent-handoffs/20260807T130808Z-liturgy-reader-instrument-public-cutover-acceptance.zip`.
+It uses the same exact focused tracking diff in zero-context form. All six
+manifest payloads verify; `unzip -t` passes; the ZIP contains eight entries
+including exactly one top-level directory; and the final ZIP SHA-256 is
+`d44843a2a90971816e7fa35bb49b3e6b44b649edf35231c459709db8788901a4`.
+At the final seal, `PLAN-AND-CONTINUITY.md` byte-matched the canonical record
+at SHA-256
+`571c1fbb4051eb6bb1ab8dd084e58904e75c488de59790dac5f92c4d045f9b33`,
+and `FINAL-ACCEPTANCE.md` still byte-matched the tracked reviewer artifact at
+SHA-256
+`fbfda03948f7e0c426fa1cd2ff6766864e96cc199bf96bb112fdccbb40e605e9`.
+This post-seal correction necessarily follows the package snapshot so the
+canonical record can name its transport hash; the package remains immutable.
+
+### Final acceptance archive push
+
+Commit `e647d1ababdc399da7296dfb6b87cd2b8e90e8e4` pushes exactly the final
+acceptance-closeout directory, matching ZIP, and append-only post-seal
+continuity record. GitHub Pages run `31181413147` succeeded for that exact
+commit; every source verification, public build, artifact verification, upload,
+and deploy step passed. This is a post-acceptance documentation deployment, not
+new product or cutover evidence. Qualifying cutover deployment remains run
+`31175722949` for `9b5f21c0ca26bf02af03d207ddd2617021e16fb3`.
+
+The cutover sequence is closed. No rollback or further acceptance review is
+required. The next agent should begin from the live canonical readers and must
+obtain separate authority for any substantive phase; candidate/oracle cleanup
+and public-navigation redesign remain unauthorized.
+
+## Live ritual-flow phase — reviewer to Codex
+
+The migration/cutover sequence is finished. Begin a new production phase,
+**Live Reader — Ritual Flow & Orientation**, from clean synchronized commit
+`1bca6a0ee862fce5873d6b0c2d92389e78ca018b`, against canonical
+`/liturgy/day.html` and `/liturgy/index.html`. The accepted first viewport and
+Liturgical Instrument foundation are protected. The problem is sustained
+reading: once identity and headings scroll away, the reader must retain a quiet
+source-owned answer to “where am I,” Contents must open as a live map, and
+principal ritual action must remain visually stronger than rubric,
+provenance, and conditional/reference apparatus without dashboard chrome.
+
+The phase is bounded to RF-A through RF-E: capture a focused live/canonical
+baseline and map actual semantic ownership; integrate a persistent semantic
+locus with the existing rail/dock; place the current accessible Contents row
+into view on open; refine only classifications already proved by production
+state; then tune long-form desktop/mobile typography while measuring the
+accepted first viewport and 636-pixel Read measure. Required evidence spans
+Roman and postconciliar Day top/deep/Ordinary states, Day and Propers Read,
+Contents at beginning/middle/end/mobile/200%, why, territorial, partial
+coverage, accessibility states, 320-pixel mobile, and governing first-view
+regressions. Measurements must include locus and dock geometry, zero obscured
+text, current-row position, semantic state, block classes, focus/targets,
+overflow, and browser/network errors; every original must be inspected at full
+size.
+
+Orientation must use existing semantic-location ownership rather than scroll
+percentage and must not flicker, become stale across render/mode/date/history,
+change the URL, cover text, add a fifth primary action, or generate aria-live
+noise. Contents retains grouping, focus restoration, Escape and inert behavior.
+No CSS/JavaScript rule may infer liturgical applicability. Positively current
+material remains principal; positively reference/non-current material may be
+subordinate; unresolved conditional material remains explicitly available;
+unknown material remains visible and is recorded. Search, Study, Compare,
+print redesign, source/translation/recension/corpus expansion, navigation
+redesign, candidate/oracle cleanup, and another visual direction are excluded.
+
+Create deliverable `liturgy-reader-live-ritual-flow-2026-08-07`, preserve the
+cutover record, extend governed browser evidence, run every accepted focused,
+browser, release, public-alpha and whitespace gate, verify pushed Pages and the
+live routes, then seal a fresh immutable
+`<UTC>-liturgy-reader-live-ritual-flow` directory and ZIP. Stop for independent
+review of deep orientation, Instrument coherence, Contents mapping, ritual
+hierarchy, inference/source honesty, desktop/mobile calm, cross-route coherence,
+and protected first-view/accessibility/state behavior. Do not continue into a
+later phase automatically.
+
+## Live ritual-flow phase — Codex response
+
+The synchronized starting SHA is
+`1bca6a0ee862fce5873d6b0c2d92389e78ca018b`; `HEAD`, local `main`,
+`origin/main`, and remote `refs/heads/main` agree, and the starting worktree is
+clean. Canonical source hashes are Day
+`9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972`
+and Propers
+`a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600`.
+
+Initial ownership inspection finds:
+
+- `src/web/browser/liturgy/reader-shell.js` owns current semantic location,
+  the one `aria-current="location"` Contents row, scroll/resize coalescing,
+  surface focus/inert/Escape behavior, and semantic restoration.
+- `src/web/browser/liturgy/day-reader.js` maps production Proper and Ordinary
+  events into semantic nodes and Contents groups; it uses production assembly,
+  Ordinary seating and the shared renderer rather than owning liturgical
+  selection.
+- `src/web/browser/liturgy/propers-reader.js` maps production Proper events and
+  their source-owned labels into the Propers outline.
+- the production Ordinary renderer's existing classes distinguish proved
+  rubrics and selected source-defined choices; `day-reader.js` owns the
+  already-accepted source-derived why and territorial presentation hooks.
+- `src/web/browser/liturgy/reader-shell.css` owns generic shell/surface
+  interaction geometry, while `src/web/browser/liturgy/reader-instrument.css`
+  is the final accepted rail/dock, reading-plane, mobile identity, Ordinary,
+  Proper, warning, and accessibility presentation layer.
+- canonical HTML supplies route identity and mobile metadata; the controllers
+  update committed mode/outcome wording from existing state.
+
+Work unit RF-A will extend the governed capture path, preserve an original-pixel
+pre-change baseline, and finish the exact DOM/data classification inventory.
+RF-B will expose a quiet locus from the shell's already-current outline entry,
+using only source-owned group/label values and the existing stable animation-
+frame boundary. RF-C will keep the accessible current row and place it near the
+useful center of Contents on open with nonanimated scrolling. RF-D will style
+only already-proved rubric, provenance, selected-option, and conditional/
+reference hooks; unknown blocks remain visible. RF-E will tune sustained rhythm
+only after those behaviors settle and will remeasure protected top geometry.
+
+The requested “current unit” cannot be safely named for every Ordinary element
+today: the outline currently holds source-named divisions and appointed
+Propers, while some individual elements expose only internal keys. Likewise,
+not every long alternative-looking block carries a proved non-current flag.
+Neither gap will be filled by inference. This phase will use a source-owned
+public element label only where production already holds one, otherwise retain
+the current division, and will conservatively keep unknown material visible.
+
+The initial evidence baseline is the accepted cutover package plus a new
+same-run RF-A capture from the canonical routes; its matrix and protected
+measurements are recorded in
+`build/agent-continuity/liturgy-reader-ritual-flow-baseline.md`. The first
+bounded implementation checkpoint is baseline, semantic inventory, harness
+extensions, continuity and truthful tracking only; the first product checkpoint
+will then pair persistent orientation with current-map Contents and its focused
+evidence. No public navigation, candidate/oracle cleanup, source selection,
+renderer ownership, or invented liturgical inference is included.
+
+## Live ritual-flow emergency takeover checkpoint — Codex to next agent
+
+Recorded at `2026-08-07T14:33:26Z` because the maintainer needed to shut down.
+This is deliberately a resumable work-in-progress checkpoint, not a visual
+acceptance request and not a claim that RF-B through RF-E are complete.
+
+Completed and present in this checkpoint:
+
+- RF-A is documented in
+  `build/agent-continuity/liturgy-reader-ritual-flow-baseline.md` and
+  `build/agent-continuity/liturgy-reader-ritual-flow-semantics.md`.
+  The authoritative pre-change capture is the ignored local directory
+  `build/agent-continuity/liturgy-reader-ritual-flow-baseline-captures-v4/`:
+  61 original-pixel captures, governed assertions 24/24, and no recorded
+  console, request, HTTP, unnamed-control, duplicate-ID, or overflow problems.
+- Canonical and retained candidate HTML now carry one static, aria-hidden locus
+  hook. Day and Propers controllers expose only source-owned division, Proper,
+  Ordinary element, seating-anchor, and territorial labels. No percentage or
+  applicability inference was added.
+- `reader-shell.js` derives the persistent locus at the same stable reading
+  boundary used by semantic location. It chooses the geometrically nearest
+  source-owned locus above the boundary, avoiding DOM-order errors introduced
+  by Ordinary seating. The locus hides while identity or its major division
+  heading is visible and simplifies to the major division while the current
+  unit heading is visible. It has no live region and no URL ownership.
+- Contents keeps the existing `aria-current="location"` row and now scrolls the
+  actual `.surface-body` owner so that row is centered where possible and
+  clamped visibly near either list end. Focus entry, Escape, inertness, and
+  document scroll restoration remain on the existing shell path.
+- `reader-instrument.css` integrates the wide locus as ruled marginalia above
+  the accepted rail and uses the existing compact masthead line on mobile. It
+  also quiets proved rubric cue labels and existing source/apparatus notes. The
+  global rubric typography was intentionally restored after it moved accepted
+  first-viewport geometry.
+- The governed visual harness has a dedicated `--ritual-flow-dir` profile,
+  semantic-location capture, locus and Contents geometry, hierarchy counts,
+  per-capture error deltas, and the 61-state required matrix. Focused static
+  Python integration tests passed 49/49. A governed non-capture run passed
+  25/25 with zero console/request/HTTP problems before the last small
+  major-only simplification.
+- `build/agent-continuity/liturgy-reader-ritual-flow-corrected-v2/` is the latest
+  ignored local corrected capture: 61 originals and 25/25 governed assertions,
+  with unchanged accepted top geometry (Read 1440 first text 306.09 px and
+  width 636 px; Read 768 width 636 px; Roman Missal 1440 first text 316.98 px;
+  Roman Missal 393 first text 320.66 px; Roman Missal 320 first text 336.84 px).
+  It predates the final major-only locus simplification and therefore is
+  diagnostic evidence, not the final matrix.
+
+Visual inspection completed before shutdown:
+
+- wide Epistle and Gospel originals show a quiet two-line marginal locus that
+  aligns with the rail and leaves the reading plane untouched;
+- mobile Epistle and Preface show the locus as a single compact masthead line
+  without changing dock height;
+- mobile Canon revealed that hiding the whole locus when an element heading was
+  visible removed the major division. The final unvalidated edit now keeps the
+  major division while omitting the redundant unit, which implements the brief's
+  “disappear or simplify” rule;
+- mobile Contents opens with Canon selected and visible in the useful center of
+  the sheet while retaining focus on Close Contents.
+
+Honest unfinished state:
+
+- The post-fix Day and Propers browser rerun was interrupted for shutdown. The
+  previous run found only test-side issues: smooth scrolling in the new Day
+  scan and use of the list rather than `.surface-body` in centering assertions;
+  those assertions were corrected, but the complete runs must be repeated.
+- Rebuild `build/public-alpha/preview` before testing the final shell edit. Run
+  Day, Propers, shared-shell, governed Instrument, focused locked Python, syntax,
+  registry, release, public-alpha, and whitespace gates. No release hashes have
+  yet been updated for this phase.
+- Capture a fresh corrected-v3 directory. Inspect all 61 originals at full
+  size. The v2 metric reports geometric overlap between the sticky mobile locus
+  and one underlying text range in several deep states; determine whether the
+  measurement is counting text hidden behind the already-opaque accepted
+  masthead or whether presentation must change. Do not waive the requested
+  zero-obscured-text outcome without evidence.
+- Roman Preface and other alternative-looking forms remain visually
+  conservative because current data does not safely distinguish their
+  applicability. Do not classify from names or liturgical knowledge. Any new
+  metadata/assembly/source change requires the reviewer stop required by the
+  brief.
+- No phase handoff, ZIP, final contact sheet, Pages verification, or deployment
+  verification exists yet. Do not request independent review until RF-B through
+  RF-E, all required gates, deployed evidence, continuity, and the immutable
+  handoff are complete.
+
+Exact next command sequence:
+
+1. `PATH="$PWD/build/visual-reset-venv/bin:$PATH" tools/tpt public-alpha build --preview`
+2. syntax-check the changed JavaScript harnesses and controllers;
+3. rerun Day, Propers, shared-shell, and governed Instrument browser suites;
+4. if green, capture `liturgy-reader-ritual-flow-corrected-v3`, inspect the
+   mobile locus/overlap and every original, and continue only with bounded RF-D
+   or RF-E corrections supported by the semantic inventory.
+
+Do not force-add the ignored v1/v2/v3 exploratory capture directories. The
+final immutable handoff remains the only authorized large build-tree evidence
+exception for this phase.
