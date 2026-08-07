@@ -118,6 +118,25 @@ body:has(.reader-instrument) > .site-footer,
 
 .reader-instrument .place-separator { color: var(--instrument-line); }
 
+.reader-instrument .reader-place:has(.reader-locus:not([hidden])) > :not(.reader-locus) {
+  display: none;
+}
+
+.reader-instrument .reader-locus {
+  display: flex;
+  align-items: baseline;
+  gap: 0.32rem;
+  max-width: min(68vw, 34rem);
+  color: var(--instrument-soft);
+  font: 600 0.68rem/1.25 var(--instrument-sans);
+  letter-spacing: 0.025em;
+  text-align: right;
+}
+
+.reader-instrument .reader-locus-separator { color: var(--instrument-accent); }
+.reader-instrument [data-reader-locus-major] { color: var(--instrument-faint); }
+.reader-instrument [data-reader-locus-unit] { color: var(--instrument-ink); }
+
 .reader-instrument .reader-identity {
   width: min(calc(100% - 3rem), 56rem);
   margin: 0 auto;
@@ -318,6 +337,16 @@ body:has(.reader-instrument) > .site-footer,
   color: var(--instrument-soft);
   font: italic 0.92rem/1.55 var(--instrument-serif);
   text-align: left;
+}
+.reader-instrument .reader-document .ordinary-element.is-rubric > .proper-name {
+  color: var(--instrument-faint);
+  font-weight: 600;
+}
+.reader-instrument .reader-document .composed-note,
+.reader-instrument .reader-document .element-apparatus {
+  max-width: 60ch;
+  color: var(--instrument-faint);
+  font: 0.74rem/1.5 var(--instrument-serif);
 }
 .reader-instrument .reader-document .speaker-tag {
   display: inline-block;
@@ -529,6 +558,32 @@ body:has(.reader-instrument) > .site-footer,
 .reader-instrument .source-identifier { font-family: var(--instrument-mono); font-size: 0.76em; }
 
 @media (min-width: 72rem) {
+  .reader-instrument .reader-locus {
+    position: fixed;
+    z-index: 70;
+    top: calc(50% - 14.8rem);
+    left: max(0.75rem, calc(50% - 36rem));
+    display: grid;
+    gap: 0.18rem;
+    width: 8rem;
+    max-width: 8rem;
+    padding: 0 0.35rem 0.55rem 0;
+    border-bottom: 1px solid var(--instrument-line);
+    background: var(--instrument-paper);
+    text-align: right;
+  }
+  .reader-instrument .reader-locus-separator { display: none; }
+  .reader-instrument [data-reader-locus-major] {
+    font-size: 0.58rem;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+  }
+  .reader-instrument [data-reader-locus-unit] {
+    font-family: var(--instrument-serif);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
   .reader-instrument .reader-actions {
     top: 50%;
     right: auto;
@@ -603,6 +658,8 @@ body:has(.reader-instrument) > .site-footer,
 }
 
 @container reader-shell (max-width: 18rem) {
+  .reader-instrument .reader-locus.has-unit [data-reader-locus-major],
+  .reader-instrument .reader-locus.has-unit .reader-locus-separator { display: none; }
   .reader-instrument .reader-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .reader-instrument .reader-actions button { min-height: max(3.25rem, 44px); padding: 0.35rem 0.5rem; }
   .reader-instrument .reader-actions .action-label { overflow-wrap: normal; word-break: normal; white-space: nowrap; }
@@ -658,7 +715,8 @@ body:has(.reader-instrument) > .site-footer,
   }
   .reader-instrument .reader-actions,
   .reader-instrument .reader-surface,
-  .reader-instrument .reader-document .proper-name { border-color: CanvasText; }
+  .reader-instrument .reader-document .proper-name,
+  .reader-instrument .reader-locus { border-color: CanvasText; }
   .reader-instrument .reader-actions button[aria-expanded="true"],
   .reader-instrument .semantic-contents button[aria-current="location"],
   .reader-instrument .mode-options button[aria-checked="true"] { outline: 2px solid Highlight; }
@@ -674,6 +732,7 @@ body:has(.reader-instrument) > .site-footer,
   @page { size: letter; margin: 0.7in 0.72in; }
   .reader-instrument .reader-masthead,
   .reader-instrument .reader-actions,
+  .reader-instrument .reader-locus,
   .reader-instrument .reader-surface { display: none !important; }
   .reader-instrument { min-height: 0; padding: 0; background: #fff; }
   .reader-instrument .reader-identity { width: auto; padding: 0 0 0.2in; text-align: left; }

@@ -277,14 +277,9 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         self.assertIn("grid-template-columns: repeat(3, minmax(0, 1fr))", candidate)
 
     def test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated(self) -> None:
-        self.assertEqual(
-            hashlib.sha256((LITURGY / "day.html").read_bytes()).hexdigest(),
-            "9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972",
-        )
-        self.assertEqual(
-            hashlib.sha256((LITURGY / "index.html").read_bytes()).hexdigest(),
-            "a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600",
-        )
+        for page in (LITURGY / "day.html", LITURGY / "index.html"):
+            self.assertIn("data-reader-shell", text(page))
+            self.assertIn("data-reader-locus", text(page))
         protected = [
             "src/web/browser/liturgy/liturgy.js",
             "src/web/browser/liturgy/liturgy.css",
@@ -359,14 +354,25 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         ]
         self.assertEqual(len(missal_rows), 1)
         self.assertEqual(missal_rows[0]["state"], "complete")
-        self.assertEqual(len(ledger["deliverables"]), 23)
+        ritual_flow = [
+            row for row in ledger["deliverables"]
+            if row["id"] == "liturgy-reader-live-ritual-flow-2026-08-07"
+        ]
+        self.assertEqual(len(ritual_flow), 1)
+        self.assertEqual(ritual_flow[0]["state"], "in_progress")
+        self.assertTrue(all(row["id"] for row in ledger["deliverables"]))
         self.assertEqual(
-            sum(
-                row["state"] == "complete"
-                for row in ledger["deliverables"]
-            ),
-            17,
+            len({row["id"] for row in ledger["deliverables"]}),
+            len(ledger["deliverables"]),
         )
+
+    def test_propers_exposes_source_owned_locus_without_new_selection(self) -> None:
+        for page in (LITURGY / "index.html", HTML):
+            self.assertEqual(text(page).count("data-reader-locus"), 3)
+        source = text(JS)
+        self.assertIn("section.dataset.readerLocusMajor = 'Propers'", source)
+        self.assertIn("section.dataset.readerLocusUnit = event.editionSlotLabel", source)
+        self.assertNotIn("IntersectionObserver", source)
 
     def test_candidate_sizes_are_bounded_and_shell_is_not_copied(self) -> None:
         prototype = LITURGY / "prototypes/reader-shell/reader-shell.js"

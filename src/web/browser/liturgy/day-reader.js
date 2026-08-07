@@ -1024,12 +1024,14 @@
     if (!isCurrent()) return false;
     const documentFragment = document.createDocumentFragment();
     const contents = [];
+    const branchLocus = prefix && branch && branch.option
+      ? T.titleCase(String(branch.option).replace(/-/g, ' ')) : null;
 
     const uncompiled = T.massIsUncompiled(mass) ? T.uncompiledNote(mass) : null;
     if (mode === 'missal') {
       renderMissalDocument(
         documentFragment, contents, result, mass, structure, bible,
-        fragments.fragments, state, ordinary, prefix
+        fragments.fragments, state, ordinary, prefix, branchLocus
       );
     } else {
       (result.events || []).forEach(function (event) {
@@ -1039,6 +1041,8 @@
         if (!proper || T.isPlaceholder(proper)) return;
         const section = renderProperEvent(event, proper, index, structure, bible,
           fragments.fragments, state, 'h2', prefix);
+        exposeReaderLocus(section, branchLocus ? branchLocus + ' · Propers' : 'Propers',
+          event.editionSlotLabel || proper.name || 'Proper');
         documentFragment.appendChild(section);
         contents.push({
           id: prefix + event.id,
@@ -1153,6 +1157,14 @@
     return node;
   }
 
+  function exposeReaderLocus(node, major, unit) {
+    if (!node || !major) return node;
+    node.dataset.readerLocusMajor = major;
+    if (unit) node.dataset.readerLocusUnit = unit;
+    else delete node.dataset.readerLocusUnit;
+    return node;
+  }
+
   function composeInstrumentAbsences(node) {
     const notices = Array.from(node.children).filter(function (child) {
       return child.classList.contains('notice');
@@ -1174,7 +1186,7 @@
     return semanticNode(section, event, index, prefix);
   }
 
-  function renderMissalDocument(fragment, contents, result, mass, structure, bible, fragments, state, ordinary, prefix) {
+  function renderMissalDocument(fragment, contents, result, mass, structure, bible, fragments, state, ordinary, prefix, branchLocus) {
     if (!ordinary) throw new Error('the selected edition has no production Ordinary to render');
     const unseated = (result.events || []).filter(function (event) {
       return event.kind === 'proper' && (!event.seat || !event.seat.id || event.seat.placement !== 'seated');
@@ -1209,12 +1221,20 @@
     const ordinals = new Map((result.events || []).map(function (event, ordinal) {
       return [event.id, ordinal];
     }));
+    let currentDivision = null;
+    function namedDivision(name) {
+      return branchLocus ? branchLocus + ' · ' + name : name;
+    }
     const frame = OrdinaryRenderer.renderSemanticFrame(result.events, {
       section: function (event) {
         const ordinal = ordinals.get(event.id);
         const raw = sections.get(event.id.replace(/^ordinary-section\//, ''));
         if (!raw) throw new Error('production Ordinary section is missing for ' + event.id);
-        const node = semanticNode(T.el('h2', 'mass-subheading ordinary-division', raw.name), event, ordinal, prefix);
+        currentDivision = raw.name;
+        const node = exposeReaderLocus(
+          semanticNode(T.el('h2', 'mass-subheading ordinary-division', raw.name), event, ordinal, prefix),
+          namedDivision(raw.name), null
+        );
         contents.push({ id: prefix + event.id, label: raw.name, element: node, group: 'Rites and divisions' });
         return node;
       },
@@ -1222,11 +1242,15 @@
         const ordinal = ordinals.get(event.id);
         const raw = elements.get(event.id.replace(/^ordinary-element\//, ''));
         if (!raw) throw new Error('production Ordinary element is missing for ' + event.id);
-        const node = semanticNode(
-          composeInstrumentAbsences(OrdinaryRenderer.renderElement(raw, ordinary)),
-          event,
-          ordinal,
-          prefix
+        const node = exposeReaderLocus(
+          semanticNode(
+            composeInstrumentAbsences(OrdinaryRenderer.renderElement(raw, ordinary)),
+            event,
+            ordinal,
+            prefix
+          ),
+          namedDivision(currentDivision || ordinary.title || 'Order of Mass'),
+          raw.name || null
         );
         if (!optionListed && group && raw.variant) {
           optionListed = true;
@@ -1251,7 +1275,13 @@
         if (!proper || T.isPlaceholder(proper)) {
           throw new Error('semantic Proper event has no production Proper at ' + event.id);
         }
-        const node = renderProperEvent(event, proper, ordinal, structure, bible, fragments, state, 'h3', prefix);
+        const anchor = event.seat && event.seat.anchor || '';
+        const seatedSection = sections.get(anchor.split('/')[0]);
+        const node = exposeReaderLocus(
+          renderProperEvent(event, proper, ordinal, structure, bible, fragments, state, 'h3', prefix),
+          namedDivision(seatedSection && seatedSection.name || currentDivision || 'Appointed propers'),
+          event.editionSlotLabel || proper.name || 'Proper'
+        );
         contents.push({
           id: prefix + event.id,
           label: event.editionSlotLabel || proper.name || 'Proper',

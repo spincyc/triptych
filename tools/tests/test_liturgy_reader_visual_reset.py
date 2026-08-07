@@ -198,14 +198,15 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
             ids = re.findall(r'\bid="([^"]+)"', held(page))
             self.assertEqual(len(ids), len(set(ids)), page.name)
 
-    def test_accepted_and_public_boundaries_are_exactly_unchanged(self) -> None:
+    def test_visual_oracle_and_liturgical_owners_are_exactly_unchanged(self) -> None:
         expected = {
-            "day.html": "9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972",
-            "index.html": "a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600",
-            "reader-shell.js": "e17ccd767c016facc3d03820f5c0c1e71ab166f5a9c7a86de95245e0b87966a9",
             "reader-shell.css": "e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a",
             "reader-state-adapters.js": "ec655b52e850152a1a3034b09fbc36b828000a5edc9d01b7b8d98dfaeea96bcb",
             "ordinary-seating.js": "67917f4888764f1aac097d291df5e655fb485d89219fda56ffba9a25aee993ba",
+            "reader-visual-reset-day.html": "ff734f07b797e5706c7e62a4c890f47c32c0fbfd78bfc855f421a4123273c18d",
+            "reader-visual-reset-propers.html": "7b0a3a4c7ef1189f27bf134a9f6df90315c62675a19cabca0135adaf7201ba65",
+            "reader-visual-reset.css": "850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48",
+            "reader-visual-reset.js": "eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679",
         }
         for name, digest in expected.items():
             self.assertEqual(hashlib.sha256((LITURGY / name).read_bytes()).hexdigest(), digest, name)

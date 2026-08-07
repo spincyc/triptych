@@ -22,12 +22,6 @@ STATE_JS = LITURGY / "reader-state.js"
 ROBOTS = "noindex, nofollow, noarchive, nosnippet, noimageindex"
 
 FROZEN_SOURCE_HASHES = {
-    "src/web/browser/liturgy/day.html":
-        "9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972",
-    "src/web/browser/liturgy/index.html":
-        "a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600",
-    "src/web/browser/liturgy/reader-shell.js":
-        "e17ccd767c016facc3d03820f5c0c1e71ab166f5a9c7a86de95245e0b87966a9",
     "src/web/browser/liturgy/reader-shell.css":
         "e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a",
     "src/web/browser/liturgy/reader-visual-reset-day.html":
@@ -262,7 +256,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertIn("@container reader-shell (max-width: 18rem)", instrument)
         self.assertIn("grid-template-columns: repeat(2, minmax(0, 1fr))", instrument)
 
-    def test_canonical_routes_data_shell_and_visual_oracle_are_frozen(self) -> None:
+    def test_data_legacy_shell_css_and_visual_oracle_are_frozen(self) -> None:
         for path, expected in FROZEN_SOURCE_HASHES.items():
             actual = hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
             self.assertEqual(actual, expected, path)
@@ -293,6 +287,18 @@ class DayReaderIntegrationTests(unittest.TestCase):
         self.assertIn("window.TriptychOrdinaryRenderer", public_renderer)
         self.assertIn("renderSemanticFrame", public_renderer)
         self.assertIn("if (!reading || !controls) return", public_renderer)
+
+    def test_live_routes_expose_source_owned_locus_and_current_map_hooks(self) -> None:
+        for page in (LITURGY / "day.html", HTML):
+            self.assertEqual(text(page).count("data-reader-locus"), 3)
+        shell = text(SHELL_JS)
+        day = text(DAY_JS)
+        self.assertIn("function currentLocus()", shell)
+        self.assertIn("function centerCurrentContents(surface)", shell)
+        self.assertIn("data-reader-locus-major", shell)
+        self.assertIn("node.dataset.readerLocusMajor = major", day)
+        self.assertIn("event.seat && event.seat.anchor", day)
+        self.assertNotIn("aria-live", shell)
 
     def test_candidate_does_not_leak_fixture_or_discovery_records(self) -> None:
         changed = git("diff", "--name-only", BASE).splitlines()
@@ -332,7 +338,7 @@ class DayReaderIntegrationTests(unittest.TestCase):
     def test_reader_size_remains_bounded_after_compatibility_closure(self) -> None:
         prototype = LITURGY / "prototypes/reader-shell/reader-shell.js"
         self.assertLess(SHELL_JS.stat().st_size, prototype.stat().st_size // 4)
-        self.assertLess(DAY_JS.stat().st_size, 72_000)
+        self.assertLess(DAY_JS.stat().st_size, 76_000)
 
     def test_chromium_evidence_distinguishes_commit_from_visual_settlement(self) -> None:
         harness = text(ROOT / "tools/tests/day_reader_integration_browser.mjs")

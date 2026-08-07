@@ -1,6 +1,64 @@
 schema_version = 1
 
 [[deliverables]]
+id = "liturgy-reader-live-ritual-flow-2026-08-07"
+owner = "build/agent-continuity/liturgy-reader-visual-plan.md"
+promise = "Improve the live canonical Day and Propers readers for sustained liturgical reading through source-owned persistent ritual orientation, a current-place Contents map, and a calmer principal/rubric/reference hierarchy without reopening the accepted first viewport, cutover, navigation, state, renderer, source, or translation boundaries."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "baseline-and-semantic-inventory"
+  criterion = "A focused original-pixel live/canonical baseline and explicit semantic inventory identify the current state owners and every distinction that cannot safely be made without new liturgical inference."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-ritual-flow-baseline.md",
+    "build/agent-continuity/liturgy-reader-ritual-flow-semantics.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "persistent-source-owned-locus"
+  criterion = "Deep Day and Propers reading exposes a restrained current major division and available current unit from existing semantic ownership, without floating app chrome, URL changes, flicker, stale render state, text obstruction, or invented liturgical labels."
+  status = "open"
+  evidence = [
+    "src/web/browser/liturgy/reader-shell.js",
+    "src/web/browser/liturgy/reader-instrument.css",
+  ]
+
+  [[deliverables.requirements]]
+  id = "contents-live-map"
+  criterion = "Contents opens with its accessible current row immediately visible near the useful central portion of the surface across beginning, deep, mobile, 200%, and keyboard states while preserving close, focus, inertness, and semantic restoration behavior."
+  status = "open"
+  evidence = [
+    "src/web/browser/liturgy/reader-shell.js",
+  ]
+
+  [[deliverables.requirements]]
+  id = "ritual-apparatus-hierarchy"
+  criterion = "Principal liturgical action remains visually dominant over source-classified rubric, provenance, conditional, and reference material on desktop and mobile, with no source text dropped and no new applicability decision."
+  status = "open"
+  evidence = [
+    "src/web/browser/liturgy/reader-instrument.css",
+    "build/agent-continuity/liturgy-reader-ritual-flow-semantics.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "protected-regression-and-live-evidence"
+  criterion = "The accepted first viewport, 636-pixel portrait Read measure, four-action shell, URL/state contracts, accessibility behavior, candidate/oracle fallbacks, release bindings, and public-alpha artifact remain intact, with full-size visual inspection and exact deployed evidence."
+  status = "open"
+  evidence = [
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "immutable-independent-review-handoff"
+  criterion = "A fresh tracked immutable handoff and verified one-root ZIP contain the instructions, byte-identical continuity, semantic inventory, before/after evidence, measurements, checks, deployment record, and exact independent-review questions."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-reader-instrument-public-cutover-plan-2026-08-06"
 owner = "build/agent-continuity/liturgy-reader-cutover-decision.md"
 promise = "Produce an independently reviewable, route-compatible, reversible public-cutover plan for moving the accepted Liturgical Instrument Day and Propers readers onto their canonical URLs without changing canonical pages, public navigation, candidate routes, or the accepted visual oracle during planning."

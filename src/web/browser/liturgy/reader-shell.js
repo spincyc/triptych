@@ -30,6 +30,7 @@
     let preservedLocation = null;
     let currentLocation = null;
     let sections = [];
+    let loci = [];
     let updateQueued = false;
 
     function currentSection() {
@@ -41,6 +42,66 @@
         else break;
       }
       return winner;
+    }
+
+    function currentLocus() {
+      if (!loci.length) return null;
+      const line = Math.max(80, Math.min(window.innerHeight * 0.38, 280));
+      let winner = null;
+      let nearestTop = -Infinity;
+      for (const item of loci) {
+        const top = item.element.getBoundingClientRect().top;
+        if (top <= line && top > nearestTop) {
+          winner = item;
+          nearestTop = top;
+        }
+      }
+      return winner || loci[0];
+    }
+
+    function locusHeading(item) {
+      if (!item || !item.element) return null;
+      if (item.element.matches('.ordinary-division')) return item.element;
+      return item.element.querySelector(
+        ':scope > .proper-name, :scope > .ordinary-head, :scope > h2, :scope > h3'
+      );
+    }
+
+    function isReadingHeadingVisible(node) {
+      if (!node) return false;
+      const masthead = shell.querySelector('.reader-masthead');
+      const topEdge = masthead && getComputedStyle(masthead).position === 'sticky'
+        ? masthead.getBoundingClientRect().bottom : 0;
+      const box = node.getBoundingClientRect();
+      return box.bottom > topEdge && box.top < window.innerHeight;
+    }
+
+    function updateLocus() {
+      const output = shell.querySelector('[data-reader-locus]');
+      if (!output) return;
+      const identity = shell.querySelector('.reader-identity');
+      const masthead = shell.querySelector('.reader-masthead');
+      const identityEdge = masthead && getComputedStyle(masthead).position === 'sticky'
+        ? masthead.getBoundingClientRect().bottom : 0;
+      const active = currentLocus();
+      const identityVisible = identity && identity.getBoundingClientRect().bottom > identityEdge + 8;
+      const headingVisible = isReadingHeadingVisible(locusHeading(active));
+      const majorHeadingVisible = headingVisible && active && active.element.matches('.ordinary-division');
+      if (!active || identityVisible || majorHeadingVisible) {
+        output.hidden = true;
+        output.classList.remove('has-unit');
+        return;
+      }
+      const major = output.querySelector('[data-reader-locus-major]');
+      const unit = output.querySelector('[data-reader-locus-unit]');
+      const separator = output.querySelector('.reader-locus-separator');
+      major.textContent = active.major;
+      unit.textContent = active.unit || '';
+      const hasUnit = Boolean(active.unit && active.unit !== active.major && !headingVisible);
+      unit.hidden = !hasUnit;
+      if (separator) separator.hidden = !hasUnit;
+      output.classList.toggle('has-unit', hasUnit);
+      output.hidden = false;
     }
 
     function captureSemanticLocation() {
@@ -94,6 +155,21 @@
           button.removeAttribute('aria-current');
         }
       });
+      updateLocus();
+    }
+
+    function centerCurrentContents(surface) {
+      if (!surface || !surface.open || openName !== 'contents') return;
+      const contents = surface.querySelector('[data-reader-contents]');
+      const current = contents && contents.querySelector('[aria-current="location"]');
+      const scroller = contents && contents.closest('.surface-body');
+      if (!contents || !current || !scroller || !current.isConnected) return;
+      const row = current.getBoundingClientRect();
+      const viewport = scroller.getBoundingClientRect();
+      const wanted = scroller.scrollTop + row.top - viewport.top -
+        Math.max(0, (scroller.clientHeight - row.height) / 2);
+      scroller.scrollTop = Math.max(0, Math.min(wanted,
+        scroller.scrollHeight - scroller.clientHeight));
     }
 
     function scheduleMark() {
@@ -133,6 +209,7 @@
       const surface = surfaces.get(name);
       if (!surface) return;
       if (openName) close({ restoreFocus: false });
+      markCurrent();
       preservedY = window.scrollY;
       preservedLocation = currentLocation;
       invoker = button || actions.get(name) || null;
@@ -143,12 +220,20 @@
       surface.showModal();
       const first = focusable(surface);
       if (first) first.focus({ preventScroll: true });
+      if (name === 'contents') centerCurrentContents(surface);
       if (typeof held.onOpen === 'function') held.onOpen(name);
     }
 
     function setContents(items) {
       sections = (items || []).filter(function (item) {
         return item && item.id && item.element;
+      });
+      loci = Array.from(reading.querySelectorAll('[data-reader-locus-major]')).map(function (element) {
+        return {
+          element: element,
+          major: element.dataset.readerLocusMajor,
+          unit: element.dataset.readerLocusUnit || null
+        };
       });
       const contents = shell.querySelector('[data-reader-contents]');
       if (!contents) return;

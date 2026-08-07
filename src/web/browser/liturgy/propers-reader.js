@@ -613,6 +613,8 @@
       if (!proper || T.isPlaceholder(proper)) return;
       const section = renderEvent(event, proper, bible, held.fragments, runtime.normalized.state);
       section.id = 'reader-event-' + String(index + 1).padStart(3, '0');
+      section.dataset.readerLocusMajor = 'Propers';
+      section.dataset.readerLocusUnit = event.editionSlotLabel || proper.name || 'Proper';
       fragment.appendChild(section);
       contents.push({
         id: event.id,

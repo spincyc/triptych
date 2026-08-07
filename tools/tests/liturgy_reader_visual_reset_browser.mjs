@@ -16,6 +16,8 @@ const PREVIEW = '/build/public-alpha/preview/liturgy/';
 const DATA = '/build/public-alpha/preview/browse';
 const captureAt = process.argv.indexOf('--capture-dir');
 const captureDir = captureAt >= 0 ? resolve(process.argv[captureAt + 1]) : null;
+const ritualFlowAt = process.argv.indexOf('--ritual-flow-dir');
+const ritualFlowDir = ritualFlowAt >= 0 ? resolve(process.argv[ritualFlowAt + 1]) : null;
 const chromeBinary = process.env.TRIPTYCH_CHROME || '/usr/bin/google-chrome-stable';
 const failures = [];
 const assertions = [];
@@ -284,6 +286,9 @@ async function metrics(cdp) {
     const identity = document.querySelector('.reader-identity');
     const actions = document.querySelector('.reader-actions');
     const coverage = document.querySelector('#coverage-notice');
+    const locus = document.querySelector('[data-reader-locus]');
+    const currentRow = document.querySelector('[data-reader-contents] [aria-current="location"]');
+    const contentsScroller = document.querySelector('[data-reader-surface="contents"] [data-reader-contents]');
     const text = reading.querySelector('.passage, .composed');
     const liturgical = reading.querySelector('.proper, .ordinary-element, .candidate-entry, .candidate-limitation');
     const division = reading.querySelector('.ordinary-division');
@@ -302,6 +307,17 @@ async function metrics(cdp) {
     const duplicateIds = [...document.querySelectorAll('[id]')].map(node => node.id)
       .filter((id, index, ids) => ids.indexOf(id) !== index);
     const actionStyle = actions ? getComputedStyle(actions) : null;
+    const visible = node => {
+      if (!node) return false;
+      const box = node.getBoundingClientRect();
+      return box.bottom > 0 && box.top < innerHeight && box.right > 0 && box.left < innerWidth;
+    };
+    const overlaps = (one, two) => one && two && Math.max(0,
+      Math.min(one.right, two.right) - Math.max(one.left, two.left)) * Math.max(0,
+      Math.min(one.bottom, two.bottom) - Math.max(one.top, two.top));
+    const locusRect = locus && !locus.hidden ? locus.getBoundingClientRect() : null;
+    const obscured = locusRect ? [...reading.querySelectorAll('.passage, .composed')]
+      .map(node => overlaps(locusRect, node.getBoundingClientRect())).filter(area => area > 0) : [];
     const actionButtons = actions ? [...actions.querySelectorAll('button')].map(node => {
       const label = node.querySelector('.action-label');
       const labelStyle = label ? getComputedStyle(label) : null;
@@ -330,6 +346,22 @@ async function metrics(cdp) {
         clientWidth: document.documentElement.clientWidth,
         scrollHeight: document.documentElement.scrollHeight },
       reading: rect(reading), identity: rect(identity), actions: rect(actions),
+      locus: { hidden: !locus || locus.hidden, text: locus ? locus.textContent.trim() : '',
+        box: rect(locus && !locus.hidden ? locus : null), obscuredTextCount: obscured.length,
+        obscuredTextArea: Math.round(obscured.reduce((sum, area) => sum + area, 0) * 100) / 100 },
+      currentLocation: currentRow ? currentRow.dataset.readerLocation : null,
+      contentsCurrent: currentRow ? {
+        id: currentRow.dataset.readerLocation, label: currentRow.textContent.trim(),
+        ordinal: currentRow.dataset.ordinal, box: rect(currentRow),
+        scroller: rect(contentsScroller), scrollTop: contentsScroller.scrollTop,
+        scrollMax: Math.max(0, contentsScroller.scrollHeight - contentsScroller.clientHeight),
+        visible: visible(currentRow),
+        intersectsScroller: (() => {
+          const row = currentRow.getBoundingClientRect();
+          const scroller = contentsScroller.getBoundingClientRect();
+          return row.bottom > scroller.top && row.top < scroller.bottom;
+        })()
+      } : null,
       firstLiturgical: rect(liturgical), firstText: rect(text),
       coverage: { hidden: coverage ? coverage.hidden : true, box: rect(coverage),
         text: coverage ? coverage.textContent.trim() : '' },
@@ -346,6 +378,11 @@ async function metrics(cdp) {
       actionButtons,
       firstTextSample: text ? text.textContent.trim().slice(0, 180) : '',
       text: { fontSize: font, width: Math.round(width * 100) / 100, approximateCharacters },
+      visibleHierarchy: {
+        principal: [...reading.querySelectorAll('.passage, .ordinary-element:not(.is-rubric) > .composed')].filter(visible).length,
+        rubrics: [...reading.querySelectorAll('.ordinary-element.is-rubric > .composed')].filter(visible).length,
+        references: [...reading.querySelectorAll('.citation-ref, .proper-ref, .ordinary-locus, .composed-note')].filter(visible).length
+      },
       interactive, duplicateIds,
       dialogs: [...document.querySelectorAll('dialog[open]')].map(node => node.id),
       activeElement: { tag: document.activeElement.tagName, id: document.activeElement.id,
@@ -449,6 +486,62 @@ async function runAssertions(cdp, base) {
     const after = await evaluate(cdp, 'scrollY');
     assert.ok(Math.abs(after - before) <= 2, `${before} -> ${after}`);
     assert.equal(await evaluate(cdp, 'document.activeElement.dataset.readerAction'), 'contents');
+  });
+
+  await check('production ritual locus and Contents current map share stable semantic ownership', async () => {
+    for (const [width, height, enlargement] of [[1440, 900, false], [393, 852, false], [393, 852, true]]) {
+      await viewport(cdp, width, height);
+      await productionFresh(cdp, productionUrl(base, 'day', STATES.romanMissal), 'day');
+      if (enlargement) await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
+      const sought = await evaluate(cdp, `(async () => {
+        const nodes = [...document.querySelectorAll('[data-reader-locus-major]')];
+        const canon = nodes.filter(node => /Canon/i.test(node.dataset.readerLocusMajor));
+        const start = Math.min(...canon.map(node => node.getBoundingClientRect().top + scrollY));
+        const end = Math.max(...canon.map(node => node.getBoundingClientRect().bottom + scrollY));
+        for (let y = start + 120; y < end - 120; y += 80) {
+          scrollTo({ top: y, behavior: 'instant' });
+          await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+          const locus = document.querySelector('[data-reader-locus]');
+          if (locus && !locus.hidden && /Canon/i.test(locus.textContent)) return { found: true, y };
+        }
+        const locus = document.querySelector('[data-reader-locus]');
+        return { found: false, start, end, scrollY, locus: locus && {
+          hidden: locus.hidden, text: locus.textContent.trim()
+        }, near: nodes.filter(node => {
+          const box = node.getBoundingClientRect(); return box.bottom > -100 && box.top < innerHeight + 100;
+        }).slice(0, 12).map(node => ({ major: node.dataset.readerLocusMajor,
+          unit: node.dataset.readerLocusUnit || '', top: node.getBoundingClientRect().top,
+          height: node.getBoundingClientRect().height })) };
+      })()`);
+      assert.equal(sought.found, true, JSON.stringify(sought));
+      await stableFrames(cdp);
+      await waitFor(cdp,
+        `/Canon/i.test(document.querySelector('[data-reader-locus]')?.textContent || '') && document.querySelector('[data-reader-locus]')?.hidden === false`,
+        'Canon locus');
+      const locus = await evaluate(cdp, `(() => {
+        const node = document.querySelector('[data-reader-locus]');
+        const box = node.getBoundingClientRect();
+        return { text: node.textContent.trim(), width: box.width, scrollWidth: node.scrollWidth,
+          current: document.querySelector('[data-reader-contents] [aria-current="location"]')?.dataset.readerLocation };
+      })()`);
+      assert.match(locus.text, /Canon/i);
+      assert.equal(locus.current, 'ordinary-section/canon');
+      assert.ok(locus.scrollWidth <= locus.width + 1, JSON.stringify(locus));
+      await click(cdp, '[data-reader-action="contents"]');
+      const map = await metrics(cdp);
+      assert.equal(map.contentsCurrent.id, 'ordinary-section/canon');
+      assert.equal(map.contentsCurrent.intersectsScroller, true);
+      const rowCenter = (map.contentsCurrent.box.top + map.contentsCurrent.box.bottom) / 2;
+      const surfaceCenter = (map.contentsCurrent.scroller.top + map.contentsCurrent.scroller.bottom) / 2;
+      assert.ok(Math.abs(rowCenter - surfaceCenter) <= 70 ||
+        map.contentsCurrent.scrollTop >= map.contentsCurrent.scrollMax - 1,
+      JSON.stringify(map.contentsCurrent));
+      assert.equal(map.activeElement.label, 'Close Contents');
+      await escape(cdp);
+      if (enlargement) await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
+    }
+    await productionFresh(cdp, productionUrl(base, 'day', STATES.romanRead), 'day');
+    assert.equal(await evaluate(cdp, `document.querySelector('[data-reader-locus]').hidden`), true);
   });
 
   await check('Read and Missal mode switching keeps semantic location and focus behavior', async () => {
@@ -650,6 +743,8 @@ async function runAssertions(cdp, base) {
       JSON.stringify({ production: production.firstText, oracle: oracle.firstText }));
     assert.ok(production.document.scrollWidth <= production.document.clientWidth + 1);
     assert.deepEqual(production.actionButtons.map(row => row.label), ['Date', 'Contents', 'Mode', 'Details']);
+    // The governed browser uses the explicitly private public-alpha preview;
+    // canonical source/public builds are separately required to be indexable.
     assert.match(production.robots, /noindex/);
   });
 
@@ -880,8 +975,15 @@ async function runAssertions(cdp, base) {
 async function captureOne(cdp, base, directory, row) {
   const { file, entrance, design, state, width, height, action = null, deep = false,
     enlargement = false, media = null, keyboard = false, reasoning = false,
-    surfaceEnd = false, scrollSelector = null,
+    surfaceEnd = false, scrollSelector = null, semanticLocation = null,
+    semanticBlock = 'start', contentsMap = false, expectedCurrent = semanticLocation,
+    requireExpectedCurrent = contentsMap, revealLocus = false,
     variant = 'prototype' } = row;
+  const problemStart = {
+    console: consoleProblems.length,
+    failed: failedRequests.length,
+    http: httpProblems.length
+  };
   await viewport(cdp, width, height);
   if (media) await cdp.send('Emulation.setEmulatedMedia', { media: 'screen', features: media });
   const target = variant === 'production'
@@ -898,9 +1000,38 @@ async function captureOne(cdp, base, directory, row) {
     await evaluate(cdp, `document.querySelector(${JSON.stringify(selector)}).scrollIntoView({block:'center'})`);
     await stableFrames(cdp, selector);
   }
-  if (action) {
-    await click(cdp, `[data-reader-action="${action}"]`);
-    await waitFor(cdp, `document.querySelector('[data-reader-surface="${action}"]').open`, `${action} surface`);
+  if (semanticLocation) {
+    const selector = `[data-semantic-location=${JSON.stringify(semanticLocation)}]`;
+    const count = await evaluate(cdp,
+      `document.querySelectorAll(${JSON.stringify(selector)}).length`);
+    if (count !== 1) throw new Error(`semantic target count ${count}: ${semanticLocation}`);
+    await evaluate(cdp, `document.querySelector(${JSON.stringify(selector)}).scrollIntoView({
+      block: ${JSON.stringify(semanticBlock)}, behavior: 'instant'
+    })`);
+    await stableFrames(cdp, selector);
+    if (requireExpectedCurrent && expectedCurrent) await waitFor(cdp,
+      `document.querySelector('[data-reader-contents] [aria-current="location"]')?.dataset.readerLocation === ${JSON.stringify(expectedCurrent)}`,
+      `current semantic location ${expectedCurrent}`);
+    if (revealLocus) {
+      await evaluate(cdp, `(async () => {
+        const locus = document.querySelector('[data-reader-locus]');
+        for (let delta = 72; delta <= Math.min(480, innerHeight * 0.62); delta += 48) {
+          scrollBy({ top: 48, behavior: 'instant' });
+          await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+          if (locus && !locus.hidden) return;
+        }
+        document.querySelector(${JSON.stringify(selector)}).scrollIntoView({
+          block: 'center', behavior: 'instant'
+        });
+        await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      })()`);
+      await stableFrames(cdp);
+    }
+  }
+  const openedAction = contentsMap ? 'contents' : action;
+  if (openedAction) {
+    await click(cdp, `[data-reader-action="${openedAction}"]`);
+    await waitFor(cdp, `document.querySelector('[data-reader-surface="${openedAction}"]').open`, `${openedAction} surface`);
     await stableFrames(cdp);
   }
   if (reasoning) {
@@ -914,14 +1045,14 @@ async function captureOne(cdp, base, directory, row) {
     })()`);
     await stableFrames(cdp, '.day-reasoning summary');
   }
-  if (surfaceEnd && action) {
+  if (surfaceEnd && openedAction) {
     await evaluate(cdp, `(() => {
-      const surface = document.querySelector('[data-reader-surface="${action}"]');
+      const surface = document.querySelector('[data-reader-surface="${openedAction}"]');
       const scroller = surface && (surface.querySelector('.surface-body') || surface);
-      if (!scroller) throw new Error('missing ${action} surface scroller');
+      if (!scroller) throw new Error('missing ${openedAction} surface scroller');
       scroller.scrollTop = scroller.scrollHeight;
     })()`);
-    await stableFrames(cdp, `[data-reader-surface="${action}"]`);
+    await stableFrames(cdp, `[data-reader-surface="${openedAction}"]`);
   }
   if (scrollSelector) {
     await evaluate(cdp, `document.querySelector(${JSON.stringify(scrollSelector)}).scrollIntoView({
@@ -940,12 +1071,96 @@ async function captureOne(cdp, base, directory, row) {
   await stableFrames(cdp);
   await shot(cdp, join(directory, file));
   const measured = await metrics(cdp);
-  if (action || keyboard) await escape(cdp);
+  if (openedAction || keyboard) await escape(cdp);
   if (enlargement) await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
   if (media) await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
   return { ...row, variant, target, measured,
-    consoleErrors: consoleProblems.length, failedRequests: failedRequests.filter(one => !one.canceled).length,
-    httpErrors: httpProblems.length };
+    consoleErrors: consoleProblems.slice(problemStart.console).length,
+    failedRequests: failedRequests.slice(problemStart.failed).filter(one => !one.canceled).length,
+    httpErrors: httpProblems.slice(problemStart.http).length };
+}
+
+async function captureRitualFlowMatrix(cdp, base, directory) {
+  await mkdir(directory, { recursive: true });
+  const rows = [];
+  const add = (file, entrance, state, width, height, extras = {}) => rows.push({
+    file, entrance, design: 'instrument', state, width, height,
+    variant: 'production', ...extras
+  });
+  const roman = {
+    epistle: ['proper/roman-1962/pentecost-10/003', 'proper/roman-1962/pentecost-10/003'],
+    gospel: ['proper/roman-1962/pentecost-10/006', 'proper/roman-1962/pentecost-10/006'],
+    offertory: ['proper/roman-1962/pentecost-10/007', 'proper/roman-1962/pentecost-10/007'],
+    preface: ['ordinary-element/praefatio/praefatio-communis', 'ordinary-section/praefatio'],
+    canon: ['ordinary-element/canon/forma-corporis', 'ordinary-section/canon'],
+    communion: ['ordinary-element/communio/domine-non-sum-dignus', 'ordinary-section/communio'],
+    postcommunion: ['proper/roman-1962/pentecost-10/010', 'proper/roman-1962/pentecost-10/010'],
+    conditional: ['ordinary-element/conclusio/rubrica-postcommunio-paschalis', 'ordinary-section/conclusio']
+  };
+  for (const [width, height] of [[1440, 900], [393, 852]]) {
+    add(`day-roman-missal-top-${width}x${height}.png`, 'day', 'romanMissal', width, height);
+    for (const [name, [semanticLocation, expectedCurrent]] of Object.entries(roman)) {
+      add(`day-roman-missal-${name}-${width}x${height}.png`, 'day', 'romanMissal', width, height,
+        { semanticLocation, expectedCurrent, revealLocus: true });
+    }
+    add(`day-read-top-${width}x${height}.png`, 'day', 'romanRead', width, height);
+    add(`day-read-deep-${width}x${height}.png`, 'day', 'romanRead', width, height,
+      { semanticLocation: roman.postcommunion[0], expectedCurrent: roman.postcommunion[1], revealLocus: true });
+    add(`day-post-missal-top-${width}x${height}.png`, 'day', 'postMissal', width, height);
+    add(`day-post-missal-ordinary-${width}x${height}.png`, 'day', 'postMissal', width, height,
+      { semanticLocation: 'ordinary-element/prex-eucharistica/prex-eucharistica-ii',
+        expectedCurrent: 'ordinary-section/prex-eucharistica', revealLocus: true });
+    add(`day-post-missal-deep-${width}x${height}.png`, 'day', 'postMissal', width, height,
+      { semanticLocation: 'proper/postconciliar/advent-1/010',
+        expectedCurrent: 'proper/postconciliar/advent-1/010', revealLocus: true });
+    add(`propers-read-top-${width}x${height}.png`, 'propers', 'propers', width, height);
+    add(`propers-read-deep-${width}x${height}.png`, 'propers', 'propers', width, height,
+      { semanticLocation: 'proper/roman-1962/advent-1/010',
+        expectedCurrent: 'proper/roman-1962/advent-1/010', revealLocus: true });
+    add(`day-why-${width}x${height}.png`, 'day', 'romanWhy', width, height, { reasoning: true });
+    add(`day-territorial-${width}x${height}.png`, 'day', 'territorialEpiphany', width, height,
+      { scrollSelector: width === 393 ? 'section.territorial-branch:nth-of-type(2)' : null });
+    add(`day-details-${width}x${height}.png`, 'day', 'romanMissal', width, height, { action: 'details' });
+    add(`propers-details-${width}x${height}.png`, 'propers', 'propers', width, height, { action: 'details' });
+  }
+
+  add('day-read-top-768x1024.png', 'day', 'romanRead', 768, 1024);
+  add('day-roman-missal-top-320x852.png', 'day', 'romanMissal', 320, 852);
+  add('day-roman-missal-canon-320x852.png', 'day', 'romanMissal', 320, 852,
+    { semanticLocation: roman.canon[0], expectedCurrent: roman.canon[1], revealLocus: true });
+  add('day-roman-missal-deep-320x852.png', 'day', 'romanMissal', 320, 852,
+    { semanticLocation: roman.postcommunion[0], expectedCurrent: roman.postcommunion[1], revealLocus: true });
+  add('propers-browse-393x852.png', 'propers', 'browse', 393, 852);
+  add('day-roman-partial-393x852.png', 'day', 'partial', 393, 852);
+  add('day-post-partial-1440x900.png', 'day', 'postMissal', 1440, 900);
+  add('day-post-partial-393x852.png', 'day', 'postMissal', 393, 852);
+  add('day-text-200-percent-393x852.png', 'day', 'romanMissal', 393, 852, { enlargement: true });
+  add('day-keyboard-focus-393x852.png', 'day', 'romanMissal', 393, 852, { keyboard: true });
+  add('day-forced-colors-393x852.png', 'day', 'romanMissal', 393, 852,
+    { media: [{ name: 'forced-colors', value: 'active' }] });
+  add('day-reduced-motion-393x852.png', 'day', 'romanMissal', 393, 852,
+    { media: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
+
+  const maps = [
+    ['beginning', null, null, 1440, 900, false],
+    ['gospel', roman.gospel[0], roman.gospel[1], 1440, 900, false],
+    ['preface', roman.preface[0], roman.preface[1], 1440, 900, false],
+    ['canon', roman.canon[0], roman.canon[1], 1440, 900, false],
+    ['near-end', roman.postcommunion[0], roman.postcommunion[1], 1440, 900, false],
+    ['gospel-mobile', roman.gospel[0], roman.gospel[1], 393, 852, false],
+    ['canon-mobile', roman.canon[0], roman.canon[1], 393, 852, false],
+    ['near-end-mobile', roman.postcommunion[0], roman.postcommunion[1], 393, 852, false],
+    ['canon-200-percent', roman.canon[0], roman.canon[1], 393, 852, true]
+  ];
+  for (const [name, semanticLocation, expectedCurrent, width, height, enlargement] of maps) {
+    add(`contents-${name}-${width}x${height}.png`, 'day', 'romanMissal', width, height,
+      { semanticLocation, expectedCurrent, contentsMap: true, enlargement });
+  }
+
+  const evidence = [];
+  for (const row of rows) evidence.push(await captureOne(cdp, base, directory, row));
+  await writeFile(join(directory, 'capture-metadata.json'), JSON.stringify(evidence, null, 2) + '\n');
+  return evidence;
 }
 
 async function captureMatrix(cdp, base, directory) {
@@ -1134,6 +1349,8 @@ async function main() {
 
     await runAssertions(cdp, base);
     const captures = captureDir ? await captureMatrix(cdp, base, captureDir) : [];
+    const ritualFlowCaptures = ritualFlowDir
+      ? await captureRitualFlowMatrix(cdp, base, ritualFlowDir) : [];
     const ax = await cdp.send('Accessibility.getFullAXTree');
     const unnamed = ax.nodes.filter(node =>
       ['button', 'link', 'radio', 'textbox'].includes(node.role?.value) && !node.name?.value
@@ -1144,7 +1361,8 @@ async function main() {
       assertions, failures, consoleProblems, failedRequests, httpProblems,
       resources: Array.from(new Set(requests)).map(url => new URL(url).pathname).sort(),
       accessibility: { nodeCount: ax.nodes.length, unnamedInteractiveNodes: unnamed.length },
-      captures: captures.length,
+      captures: captures.length + ritualFlowCaptures.length,
+      captureProfiles: { visualReset: captures.length, ritualFlow: ritualFlowCaptures.length },
       sizes: {
         javascript: (await stat(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset.js'))).size,
         css: (await stat(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset.css'))).size,
@@ -1155,13 +1373,16 @@ async function main() {
         oracleCss: await sha256(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset.css')),
         oracleJavaScript: await sha256(join(ROOT, 'src/web/browser/liturgy/reader-visual-reset.js')),
         productionCss: await sha256(join(ROOT, 'src/web/browser/liturgy/reader-instrument.css')),
-        productionDayHtml: await sha256(join(ROOT, 'src/web/browser/liturgy/day-reader.html')),
+        canonicalDayHtml: await sha256(join(ROOT, 'src/web/browser/liturgy/day.html')),
+        retainedDayHtml: await sha256(join(ROOT, 'src/web/browser/liturgy/day-reader.html')),
         productionDayJavaScript: await sha256(join(ROOT, 'src/web/browser/liturgy/day-reader.js')),
-        productionPropersHtml: await sha256(join(ROOT, 'src/web/browser/liturgy/propers-reader.html')),
+        canonicalPropersHtml: await sha256(join(ROOT, 'src/web/browser/liturgy/index.html')),
+        retainedPropersHtml: await sha256(join(ROOT, 'src/web/browser/liturgy/propers-reader.html')),
         productionPropersJavaScript: await sha256(join(ROOT, 'src/web/browser/liturgy/propers-reader.js'))
       }
     };
     if (captureDir) await writeFile(join(captureDir, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');
+    if (ritualFlowDir) await writeFile(join(ritualFlowDir, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');
     process.stdout.write(JSON.stringify(report, null, 2) + '\n');
     if (failures.length || consoleProblems.length || failedRequests.filter(one => !one.canceled).length ||
         httpProblems.length || unnamed.length) process.exitCode = 1;

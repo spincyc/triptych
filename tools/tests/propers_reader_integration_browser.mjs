@@ -683,11 +683,30 @@ async function assertions(cdp, base) {
 
   await check('shared modal lifecycle, disabled modes, deep-scroll reachability, and restoration hold', async () => {
     await candidate(cdp, base, STATES.post);
-    await evaluate(cdp, `scrollTo(0, document.documentElement.scrollHeight)`);
+    await evaluate(cdp, `(async () => {
+      scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' });
+      await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    })()`);
     const before = await evaluate(cdp, 'scrollY');
+    const locus = await evaluate(cdp, `({
+      hidden: document.querySelector('[data-reader-locus]').hidden,
+      text: document.querySelector('[data-reader-locus]').textContent.trim()
+    })`);
+    assert.equal(locus.hidden, false);
+    assert.match(locus.text, /Propers/i);
     await click(cdp, '[data-reader-action="contents"]');
     assert.equal(await evaluate(cdp, `document.querySelector('[data-reader-surface="contents"]').open`), true);
     assert.equal(await evaluate(cdp, `document.querySelector('[data-reader-surface="contents"]').contains(document.activeElement)`), true);
+    const mapped = await evaluate(cdp, `(() => {
+      const row = document.querySelector('[data-reader-contents] [aria-current="location"]');
+      const scroller = document.querySelector('[data-reader-contents]').closest('.surface-body');
+      const r = row.getBoundingClientRect(); const s = scroller.getBoundingClientRect();
+      return { visible: r.bottom > s.top && r.top < s.bottom,
+        centered: Math.abs((r.top + r.bottom - s.top - s.bottom) / 2) <= 70,
+        clamped: scroller.scrollTop >= scroller.scrollHeight - scroller.clientHeight - 1 };
+    })()`);
+    assert.equal(mapped.visible, true);
+    assert.equal(mapped.centered || mapped.clamped, true);
     await escape(cdp);
     assert.equal(await evaluate(cdp, `document.activeElement.dataset.readerAction`), 'contents');
     assert.ok(Math.abs((await evaluate(cdp, 'scrollY')) - before) < 3);

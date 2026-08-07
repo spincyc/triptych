@@ -1640,6 +1640,54 @@ async function runAssertions(cdp, base) {
       'document.activeElement.dataset.semanticEventId'), 'proper/roman-1962/pentecost-10/010');
   });
 
+  await test('deep Missal locus and Contents map share current semantic ownership', async () => {
+    await navigateCandidate(cdp, base, STATES.romanMissal);
+    await evaluate(cdp, `(async () => {
+      const nodes = [...document.querySelectorAll('[data-reader-locus-major]')];
+      const canon = nodes.filter(node => /Canon/i.test(node.dataset.readerLocusMajor));
+      const start = Math.min(...canon.map(node => node.getBoundingClientRect().top + scrollY));
+      const end = Math.max(...canon.map(node => node.getBoundingClientRect().bottom + scrollY));
+      for (let y = start + 120; y < end - 120; y += 80) {
+        scrollTo({ top: y, behavior: 'instant' });
+        await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+        const locus = document.querySelector('[data-reader-locus]');
+        if (locus && !locus.hidden && /Canon/i.test(locus.textContent)) return y;
+      }
+      throw new Error('no stable visible Canon locus inside the Canon range');
+    })()`);
+    await waitFor(cdp,
+      `/Canon/i.test(document.querySelector('[data-reader-locus]')?.textContent || '') && document.querySelector('[data-reader-locus]')?.hidden === false`,
+      'persistent Canon locus');
+    const locus = await evaluate(cdp, `({
+      text: document.querySelector('[data-reader-locus]').textContent.trim(),
+      current: document.querySelector('[data-reader-contents] [aria-current="location"]')?.dataset.readerLocation,
+      count: document.querySelectorAll('[data-reader-locus]').length
+    })`);
+    assert.equal(locus.count, 1);
+    assert.match(locus.text, /Canon/i);
+    assert.equal(locus.current, 'ordinary-section/canon');
+
+    await click(cdp, '[data-reader-action="contents"]');
+    const map = await evaluate(cdp, `(() => {
+      const row = document.querySelector('[data-reader-contents] [aria-current="location"]');
+      const surface = document.querySelector('[data-reader-contents]').closest('.surface-body');
+      const r = row.getBoundingClientRect();
+      const s = surface.getBoundingClientRect();
+      return { current: row.dataset.readerLocation, rowCenter: (r.top + r.bottom) / 2,
+        surfaceCenter: (s.top + s.bottom) / 2, visible: r.bottom > s.top && r.top < s.bottom,
+        scrollTop: surface.scrollTop, scrollMax: surface.scrollHeight - surface.clientHeight,
+        focus: document.activeElement.getAttribute('aria-label') };
+    })()`);
+    assert.equal(map.current, 'ordinary-section/canon');
+    assert.equal(map.visible, true);
+    assert.ok(Math.abs(map.rowCenter - map.surfaceCenter) <= 70 ||
+      map.scrollTop >= map.scrollMax - 1, JSON.stringify(map));
+    assert.equal(map.focus, 'Close Contents');
+    await escape(cdp);
+    assert.match(await evaluate(cdp,
+      `document.querySelector('[data-reader-locus]').textContent.trim()`), /Canon/i);
+  });
+
   await test('Read and Missal are selectable while Details stays lazy and human-facing', async () => {
     await navigateCandidate(cdp, base);
     const buildsBefore = await evaluate(cdp, 'dayReaderDebug.detailsBuilds');

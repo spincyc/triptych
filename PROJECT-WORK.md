@@ -179,6 +179,27 @@ operations.
 
 ## Promised work
 
+### Live Reader — Ritual Flow & Orientation
+
+<!-- promised-deliverable: liturgy-reader-live-ritual-flow-2026-08-07 -->
+
+**In progress as a new production refinement phase against the independently
+accepted live canonical Day and Propers readers.** The completed migration and
+same-path cutover are not reopened. This phase protects the accepted first
+viewport and Instrument foundation while improving sustained-reading
+orientation, making Contents a current-place map, and restoring hierarchy
+between principal ritual action and source-owned rubric, provenance, or
+conditional/reference material.
+
+The implementation may expose existing semantic and renderer state through
+narrow shared presentation hooks. It may not manufacture liturgical
+applicability, locality, selection, source, translation, or content. Search,
+Study, Compare, print redesign, public-navigation redesign, candidate/oracle
+cleanup, source/translation/recension expansion, and a new visual direction
+remain separate and unauthorized. Exact baseline, decisions, checkpoints,
+Pages runs, and the independent-review stopping point live in
+`build/agent-continuity/liturgy-reader-visual-plan.md`.
+
 ### Liturgical Instrument public cutover
 
 <!-- promised-deliverable: liturgy-reader-instrument-public-cutover-plan-2026-08-06 -->
