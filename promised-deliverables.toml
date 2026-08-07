@@ -4,7 +4,7 @@ schema_version = 1
 id = "liturgy-reader-instrument-public-cutover-plan-2026-08-06"
 owner = "build/agent-continuity/liturgy-reader-cutover-decision.md"
 promise = "Produce an independently reviewable, route-compatible, reversible public-cutover plan for moving the accepted Liturgical Instrument Day and Propers readers onto their canonical URLs without changing canonical pages, public navigation, candidate routes, or the accepted visual oracle during planning."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "same-path-public-cutover-execution"
@@ -78,7 +78,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "independent-cutover-plan-review"
   criterion = "Independent review accepts the cutover plan and separately authorizes execution; planning quality alone does not authorize public navigation changes or public cutover."
-  status = "open"
+  status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
   ]
@@ -111,12 +111,26 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "compatibility-closure-evidence-and-narrow-rereview"
   criterion = "The accepted candidate/shared readers implement and evidence preserved Day reasoning and territorial outcomes, stable Propers public option keys, static retained-candidate noindex, route-neutral wording, and Details navigation; the final cutover patch is regenerated and mechanically checked; and a new immutable handoff passes narrow independent re-review before execution is authorized."
-  status = "open"
+  status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "build/agent-continuity/liturgy-reader-public-cutover-proposed.patch",
     "build/agent-handoffs/20260807T052836Z-liturgy-reader-public-cutover-compatibility/HANDOFF.md",
     "build/agent-handoffs/20260807T052836Z-liturgy-reader-public-cutover-compatibility/MANIFEST.sha256",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-public-cutover-acceptance"
+  criterion = "Independent post-deployment review accepts the canonical Day and Propers cutover after exact-cutover-SHA Pages success, deployed-byte parity, immediate and post-cache-window verification, with public navigation unchanged and retained candidate/oracle routes intact and nonindexable."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-public-cutover-final-acceptance.md",
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/HANDOFF.md",
+    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/DEPLOYMENT.md",
+    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/LIVE-VERIFICATION.md",
+    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/CACHE-WINDOW.md",
+    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/MANIFEST.sha256",
   ]
 
 [[deliverables]]
