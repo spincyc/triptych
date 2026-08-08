@@ -431,12 +431,18 @@
       ordinaryLangSelect, ordinaryOptionSelect].forEach(function (control) {
       control.disabled = !enabled;
     });
-    const navigable = Boolean(runtime.missals && runtime.missals.length);
-    dateInput.disabled = !navigable;
-    missalSelect.disabled = !navigable;
-    dateForm.querySelector('.surface-apply').disabled = !navigable;
+    // NEVER gated on runtime state. The first cut of this tied them to
+    // `runtime.missals`, which `loadManifests()` fills, so any paint before that
+    // landed disabled the date box, the missal select, Apply and Today at once —
+    // the whole surface frozen, which is the opposite of the escape this exists
+    // to guarantee. A control that can only ever navigate away is safe to leave
+    // live: the step handlers already refuse when there is no resolved day, and
+    // an empty missal select selects nothing.
+    dateInput.disabled = false;
+    missalSelect.disabled = false;
+    dateForm.querySelector('.surface-apply').disabled = false;
     dateStepButtons.forEach(function (button) {
-      button.disabled = button.id === 'today-date' ? !navigable : !enabled;
+      button.disabled = button.id === 'today-date' ? false : !enabled;
     });
   }
 
