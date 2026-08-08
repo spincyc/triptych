@@ -35,23 +35,45 @@ INSTALL ?= install
 # by the current embedded-font corpus. pacman and either root access or sudo
 # are bootstrap requirements for the installer target, not project runtime
 # dependencies. GitHub Actions and its hosted Python/pip environment are
-# CI-only. Node/npm, Ghostscript and qpdf are not used here.
+# CI-only. npm, Ghostscript and qpdf are not used here.
+#   PyYAML, and the reason it is declared rather than left to chance:
+#     five targets read the calendars through it and SKIP rather than fail when
+#     it is absent, so a host without it runs `make check` to a clean exit
+#     having validated no calendar at all. A silent skip is the one failure this
+#     list can prevent outright.
+#   node, which the comment above this one denied for months while
+#     `tools/calendar-rubrics` spawned it directly and told the operator to
+#     install it: the rubric and catena checks run the browser's own derivation
+#     under node against each source's solved cases, and both are documented as
+#     failures rather than skips without it.
+# A browser is NOT in that list and is declared separately below. It is wanted
+# only to run the four `*_browser.mjs` harnesses, it costs an order of magnitude
+# more to install than anything above, and a clone that only builds PDFs should
+# not pay for it.
 # pdfLaTeX remains necessary for the shared preamble's pdfTeX primitives;
 # XeLaTeX, LuaLaTeX and Tectonic are not drop-in replacements. latexmk from
 # texlive-binextra is a free, more robust pass controller, but is not currently
 # used. Poppler plus ImageMagick 7 remains the smallest purpose-fit PDF review
 # stack; MuPDF or GraphicsMagick would not eliminate an existing dependency.
 ARCH_CORE_PACKAGES := make bash findutils coreutils diffutils
-ARCH_PYTHON_PACKAGES := python tzdata python-markdown
+ARCH_PYTHON_PACKAGES := python tzdata python-markdown python-yaml
 ARCH_TEX_PACKAGES := texlive-bin texlive-basic texlive-latex \
 	texlive-latexrecommended texlive-latexextra texlive-pictures \
 	texlive-fontsrecommended texlive-fontsextra
 ARCH_PDF_PACKAGES := poppler imagemagick
 ARCH_WEB_PACKAGES := pandoc
+# The browser's own derivation, replayed under node against each source's
+# solved cases by `calendar-rubrics check` and `catena check`.
+ARCH_DERIVATION_PACKAGES := nodejs
 ARCH_WORKFLOW_PACKAGES := git github-cli openai-codex ripgrep
 ARCH_DEPENDENCY_PACKAGES := $(ARCH_CORE_PACKAGES) $(ARCH_PYTHON_PACKAGES) \
 	$(ARCH_TEX_PACKAGES) $(ARCH_PDF_PACKAGES) $(ARCH_WEB_PACKAGES) \
-	$(ARCH_WORKFLOW_PACKAGES)
+	$(ARCH_DERIVATION_PACKAGES) $(ARCH_WORKFLOW_PACKAGES)
+# Chromium and not google-chrome-stable: the latter is in no official
+# repository, and this installer never fetches a standalone binary. The
+# harnesses launch `--headless=new --disable-gpu`, so no display is involved
+# and a headless host is not a limitation. Point TRIPTYCH_CHROME at the binary.
+ARCH_BROWSER_PACKAGES := chromium
 ARCH_CANONICAL_COMMANDS := make:/usr/bin/make sh:/usr/bin/sh \
 	env:/usr/bin/env id:/usr/bin/id find:/usr/bin/find sort:/usr/bin/sort \
 	cmp:/usr/bin/cmp \
@@ -223,7 +245,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-curriculum-structure check-source-reader source-projection \
 	check-document-catalogue document-catalogue \
 	public-site public-preview \
-	dependencies-arch install-dependencies-arch \
+	dependencies-arch dependencies-arch-browser install-dependencies-arch \
 	verify-public-site verify-public-preview \
 	check-mass-ordinary \
 	check-release-bindings refresh-release-bindings approve-release \
@@ -289,6 +311,12 @@ list:
 
 dependencies-arch:
 	@printf '%s\n' $(ARCH_DEPENDENCY_PACKAGES)
+
+# What `install-dependencies-arch` deliberately does not install. Named by its
+# own target so that "which browser, and why is it not in the list" has one
+# answer a reader can run, rather than a comment they have to find.
+dependencies-arch-browser:
+	@printf '%s\n' $(ARCH_BROWSER_PACKAGES)
 
 # Arch does not support partial upgrades: synchronize and upgrade the system in
 # the same transaction that installs the canonical repository packages. This
@@ -414,6 +442,7 @@ help:
 		'make list     List discovered document IDs' \
 		'make dependencies-arch  List canonical Arch package dependencies' \
 		'make install-dependencies-arch  Run a full Arch upgrade and install canonical packages' \
+		'make dependencies-arch-browser  List the browser package the harnesses need and this installer omits' \
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
 		'make check-sources  Validate the source library, inventory, and migration ledger' \
 		'make check-deployment-sources  Validate deployable sources and publication inventories' \

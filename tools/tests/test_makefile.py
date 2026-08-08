@@ -696,6 +696,7 @@ exec /usr/bin/id "$@"
             "python",
             "tzdata",
             "python-markdown",
+            "python-yaml",
             "texlive-bin",
             "texlive-basic",
             "texlive-latex",
@@ -707,6 +708,7 @@ exec /usr/bin/id "$@"
             "poppler",
             "imagemagick",
             "pandoc",
+            "nodejs",
             "git",
             "github-cli",
             "openai-codex",
@@ -716,13 +718,21 @@ exec /usr/bin/id "$@"
         self.assertEqual(arguments[:2], ["-Syu", "--needed"])
         self.assertEqual(arguments[2:], listed)
         self.assertEqual(listed, expected_packages)
+        # `nodejs` was on this list until 2026-08-08 and should not have been:
+        # tools/calendar-rubrics spawns `node -e` and tells the operator to
+        # install it when absent, so the installer was documented as excluding
+        # a package two checks fail without. npm stays excluded because nothing
+        # here resolves a package from a registry.
         for excluded in (
             "base-devel",
             "texlive-meta",
-            "nodejs",
             "npm",
             "ghostscript",
             "qpdf",
+            # A browser is wanted only by the *_browser.mjs harnesses and is
+            # declared by `dependencies-arch-browser`, never installed here.
+            "chromium",
+            "google-chrome-stable",
         ):
             self.assertNotIn(excluded, listed)
         self.assertNotIn("--noconfirm", arguments)
