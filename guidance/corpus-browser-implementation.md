@@ -1716,3 +1716,78 @@ The `AGENTS.md` routing rows for the full `guidance/corpus-browser-*` family
 have the same shape of problem: this branch added the row for this document
 alone, because it is the only one of the family that exists here. The remaining
 rows land with the files they route to.
+
+## 16. Two extractions, prepared and not landed
+
+The hardening wave was told to prepare a reusable plan for shared accessibility
+helpers and for the duplicated history/law utilities, and not to land either.
+Both are recorded here at the point where the evidence was fresh, because a
+plan derived once and then lost is a plan derived twice.
+
+### 16.1 The act-record vocabulary is one vocabulary stored twice
+
+`history.js` and `law.js` each carry their own `CITATION_WORDS`, `STATE_WORDS`
+and `EDGE_WORDS` maps and their own `facts()`, `whatHappened()` and
+`lineLabel()`. `magnitude()` exists only in history. These are not similar
+functions that happen to resemble each other; they are the same act-record
+vocabulary, copied.
+
+The copy has already cost a reader something. At `af2c961`, law's
+`CITATION_WORDS` holds four entries and history's holds three. The three they
+share are byte-identical. History's is law's map minus `'none-claimed'`, and
+because the gloss was missing, every station whose citation state is
+`none-claimed` rendered a dangling em dash where the corpus had something to
+say. That is the whole argument for the extraction, and it is worth more than
+any appeal to tidiness: the duplication did not merely risk drift, it silently
+dropped a term and shipped.
+
+The extraction is one new `src/web/browser/shared/act-vocabulary.js` in the
+UMD shape the tested models already use — `catena-model.js`, `catalogue-model.js`
+and `reader-model.js` are the precedents, and all three are replayed under node
+from Python tests. It exports the three maps and the four functions, with the
+label differences between the two pages passed in as parameters rather than
+branched on inside. Both pages then import it and delete their copies.
+
+Why it is not landed here: it touches `law.js`, which no bounded hardening fix
+otherwise needs, and it is a real refactor rather than a rename. D17 is explicit
+that the findings are engineering debt to be paid incrementally with
+path-specific commits, not licence for a browser-stack rewrite. It belongs to
+whichever of `impl/history` or `impl/law` moves first, and that branch owns
+both sides of it. Until then the equality of the two maps is held by a test, so
+the specific failure that already happened cannot happen again.
+
+### 16.2 The accessibility blocks that six instruments do not have
+
+Measured at `af2c961`, counting `@media` blocks per stylesheet:
+
+| Stylesheet | `forced-colors` | `prefers-reduced-motion` | `@media print` |
+| --- | --: | --: | --: |
+| `shared/browser-core.css` | 0 | 1 | 0 |
+| `catena/catena.css` | 0 | 2 | 0 |
+| `history/history.css` | 0 | 0 | 0 |
+| `law/law.css` | 0 | 0 | 0 |
+| `sources/sources.css` | 0 | 0 | 0 |
+| `texts/texts.css` | 0 | 0 | 0 |
+| `scripture/scripture.css` | 0 | 0 | 0 |
+
+Every `forced-colors` block in the repository is in the liturgy files. Six
+instruments have no high-contrast handling at all, and no instrument outside
+liturgy has a print rule.
+
+The fix is a token remap in `browser-core.css` under
+`@media (forced-colors: active)`, modelled on the block in
+`reader-instrument.css`, which is read-only to this lane but may be read. It
+cannot regress liturgy, whose own block is more specific and wins. The
+reduced-motion block in `browser-core.css` should absorb
+`html { scroll-behavior: auto }` so the per-instrument copies can go, and a
+shared `@media print` block should exist so that a page with no print opinion
+still prints its content rather than its chrome.
+
+Why it is not landed here: `browser-core.css` is one of the 53 files under
+`src/web/browser/` bound by SHA-256 in `release/public-alpha.json`, it is
+loaded by all fourteen browser pages, and a token remap is the kind of change
+whose correctness is judged by looking at seven surfaces in forced-colors mode.
+That is a visual acceptance, and no visual contract has been accepted. It
+belongs to the shared-shell wave, where the same commit can carry the remap and
+the evidence. The gate already exercises `forced-colors` at 393×852 on every
+route, so the day someone lands it, the before-and-after is one command.
