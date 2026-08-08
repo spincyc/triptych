@@ -205,6 +205,37 @@ public-navigation redesign unauthorized. Sequencing the two is a maintainer
 decision; it is recorded as the first open conflict in the implementation
 document.
 
+### Foundation hardening
+
+The 2026-08-08 coordinator review answered those conflicts as amendments D1–D20
+and accepted the reconnaissance and the neutral gates. It also settled the
+sequencing question above by protecting the liturgy surface family outright, so
+promoting `reader-shell.js` into a shared shell is withdrawn rather than
+deferred: reuse its ideas, not the owned file.
+
+`impl/foundation-hardening` carries the work that is safe before a visual
+contract exists, each commit cherry-pickable by path. The four real-Chromium
+harnesses are invoked at last by `check-browser-harnesses`, which depends on
+`public-preview` because three of them address it as their data root — the
+reason they were read as broken for months was a missing build, not rot. The
+artifact gate moved to the governing matrix and gained no-JavaScript, subpath
+deep-link, link-resolution and focus-indicator coverage. Every published hash
+contract is pinned by 46 tests before anyone cleans up a router. Both new gates
+stay out of `make check`, which builds no artifact and cannot assume a browser.
+
+Three things that lane found are worth recording outside it. The gate's
+skip-link failures are a modal focus trap in the Propers reader, not a missing
+link, and belong to the liturgy deliverable rather than to any corpus lane. The
+Source Library's "Back to the corpus" does not leave a bare fragment as
+reported; it leaves the entire reader hash, so a reload reopens the edition the
+reader just closed. And target size fails on all nineteen routes — history alone
+has 909 undersized controls — which is a design-lane dependency, not a hardening
+defect.
+
+Measured baselines for anyone comparing: `make check` takes about 310 seconds
+and `check-browser-gate` about 74. Both are red at the base for reasons this
+project did not cause. Compare failure sets, never exit codes.
+
 ## Promised work
 
 ### Live Reader — Ritual Flow & Orientation
