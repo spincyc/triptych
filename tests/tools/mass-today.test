@@ -249,7 +249,12 @@ esac
 #
 # A Mass whose text is not transcribed is counted, and never printed as the
 # prayer it stands in for.
-placeholder="$(run_tool show --date 2026-01-01 --calendar roman-1962 --expanded)"
+# 2026-02-09, S. Cyrilli, and not 1 January: the Octave of the Nativity was a
+# placeholder when this was written and was filled on 2026-08-07, so the date
+# stopped exercising the assertion below and the test failed for the one
+# reason a placeholder test should not -- the placeholder went away. Pin it to
+# a day that still holds one, and expect to move it again.
+placeholder="$(run_tool show --date 2026-02-09 --calendar roman-1962 --expanded)"
 case "$placeholder" in
 *"This entry is a placeholder"*)
 	echo "a placeholder was printed as the prayer" >&2

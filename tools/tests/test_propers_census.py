@@ -433,7 +433,16 @@ class CarriedBlockTests(unittest.TestCase):
                 with self.subTest(document=relative, total=total):
                     if len(total) < shortest:
                         self.skipTest(f"{total} is too short to tell from prose")
-                    found = re.search(rf"(?<![\d:]){re.escape(total)}(?!\d)", outside)
+                    # The second lookbehind is for comma-grouped thousands.
+                    # `(?<![\d:])` alone accepts a comma as a left boundary, so
+                    # prose reading "rewrote 4,269 lines" was reported as a
+                    # restatement of the census total 269 -- a figure about a
+                    # diff, sharing three digits with a count of masses. A
+                    # detector that cries wolf on ordinary prose gets silenced,
+                    # which costs more than the collision it caught.
+                    found = re.search(
+                        rf"(?<![\d:])(?<!\d,){re.escape(total)}(?!\d)", outside
+                    )
                     self.assertIsNone(
                         found,
                         f"{relative} restates the census total {total}: "
