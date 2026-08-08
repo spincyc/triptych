@@ -177,6 +177,37 @@ Never re-derive what a tool owns; that is how two artifacts come to disagree.
 Invoke through `tools/tpt <tool>`. `make check` runs `check-calendar-masses` and
 skips rather than fails without PyYAML.
 
+## Harvesting the 1962 sanctoral from the facsimile
+
+Two findings from 2026-08-08 that make this tractable, both of which cost a
+session each to learn the hard way.
+
+**Extract with `pdftotext -raw`, never `-layout`.** The facsimile is set in two
+columns. `-layout` preserves the visual grid, which interleaves a day's oration
+with whatever sits beside it — the text comes out shuffled between two prayers,
+and reconstructing one from it is composition, not reading. `-raw` emits reading
+order, so an oration arrives contiguous. Every earlier judgement that oration
+extraction from this book was too dangerous to attempt was a judgement about
+`-layout`.
+
+**The day names its Common by the book's own number.** Most sanctoral days do
+not print a formulary at all; they print a directive, e.g. for 8 August:
+
+    Missa Os iusti, de Communi Confessoris non Pontificis I loco [24],
+    praeter orationem sequentem:
+
+That is a `takes_from` and a proper Collect, nothing more, and the bracketed
+number is the Missal's own reference into the Commune Sanctorum. 187 such
+directives carry one. Join on the NUMBER, not on the Introit incipit: `Os iusti`
+heads both the Confessor-not-a-Bishop Mass and the Abbots' Mass, and `Me
+exspectaverunt` heads both a Virgins' and a non-Virgins' Mass, so the incipit
+alone is ambiguous where the number never is. The Commons are already complete,
+so most of what looks like missing text is a missing pointer.
+
+What the number does NOT settle is the day's own orations, which still have to
+be read, and the drop-capital of each oration OCRs as garbage (`^\mnipotens`)
+and has to be repaired from the following letters.
+
 ## Commands to check a claim
 
 ```sh
