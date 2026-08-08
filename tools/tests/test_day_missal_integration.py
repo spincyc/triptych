@@ -12,7 +12,19 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = "c4c071d6ba962524487bc8f4c6a4b781981851c7"
+# The W3 reader candidates were accepted against c4c071d6ba962524487bc8f4c6a4b781981851c7
+# ("Record W3 Propers Read acceptance", 2026-08-04), and this guard froze the
+# calendar sources and the browser data at that commit so the reader could be
+# reviewed against inputs that did not move under it.
+#
+# Moved to the commit below on 2026-08-08, on the maintainer's instruction to
+# complete the propers and commons for both missals -- work that necessarily
+# rewrites both of those trees, so the freeze could not stay where it was. What
+# is NOT claimed by moving it: nobody has re-accepted the readers against the
+# data as it now stands. The acceptance remains a statement about
+# c4c071d6b, which git still holds and this comment still names; the guard
+# below is only the tripwire for drift from here on.
+BASE = "af6c0c8df"
 LITURGY = ROOT / "src/web/browser/liturgy"
 HTML = LITURGY / "day-reader.html"
 JS = LITURGY / "day-reader.js"
