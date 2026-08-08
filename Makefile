@@ -250,6 +250,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-mass-ordinary \
 	check-release-bindings refresh-release-bindings approve-release \
 	add-publication doc review-doc install-doc check check-tests \
+	check-browser-static \
 	check-examples recapture-examples \
 	altar-server-guides review-altar-server-guides install-altar-server-guides \
 	check-staleness measure-staleness explain-staleness rebaseline-doc \
@@ -738,8 +739,19 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-proper-components check-document-catalogue check-source-reader \
 	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
 	check-public-alpha check-release-bindings check-tool-registry \
+	check-browser-static \
 	check-calendar-masses check-calendar-rubrics check-propers-census \
 	check-mass-ordinary check-catena check-commentary-coverage check-examples
+
+# Seven of the browser scripts are parsed by nothing: no Python test loads
+# them, no node harness runs them, and their only protection is a sha256 pin in
+# release/public-alpha.json, which proves a file did not change rather than
+# that it is a program. This also runs the build's own page split at check
+# time, because a browser page the layout cannot take apart currently fails
+# during `make public-site`, which `check` does not run. Half a second, and it
+# needs no browser.
+check-browser-static:
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_browser_static.py'
 
 # Every tool carries a table of captured invocations, and until this target
 # existed nothing ran one: the registry test counted lines beginning with a
