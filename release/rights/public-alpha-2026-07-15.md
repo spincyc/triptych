@@ -1739,7 +1739,7 @@ release attachment, announcement, or promotion.
 | `release/public-alpha/assets/site.css` | `425f31fa5830ec6054df15e3d51659675d492216392fa33acc755ffd44ecc7ed` |
 | `release/public-alpha/assets/social-card.png` | `d0adf2056a5aa7d6e4fd240a324d76a654a904547908f77ad9d8f7fc8abc7278` |
 | `release/public-alpha/layout.html` | `141bac1edad42e3661b823c26fda76328ce07b74ff1db6df1f53bcf581284c88` |
-| `requirements-public-alpha.txt` | `c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc` |
+| `requirements-public-alpha.txt` | `59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml` | `77d170a850917063fcd3d51fea4727456497df494dedc7dd390f19972a2a7847` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-candle-v2-alpha.png` | `973f7cc89692ff07b3dd598d5c148eadcd72a1fe2e7f7206599f6953bee3088a` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-sanctuary-lamp-v2-alpha.png` | `c30ac4b8b384ff1816043b48ddaea78cfb255a3791a3b7c13c55c7ce3ba191d4` |
