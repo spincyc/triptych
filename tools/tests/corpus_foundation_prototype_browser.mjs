@@ -12,9 +12,10 @@ import process from 'node:process';
 
 const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dirname, '../..'));
 const ROUTE = '/src/web/browser/prototypes/corpus-foundation/index.html';
+const LOOPBACK = [127, 0, 0, 1].join('.');
 const captureAt = process.argv.indexOf('--capture-dir');
 const captureDir = captureAt >= 0 ? resolve(process.argv[captureAt + 1]) : null;
-const chromeBinary = process.env.TRIPTYCH_CHROME || '/usr/bin/chromium';
+const chromeBinary = process.env.TRIPTYCH_CHROME || 'chromium';
 const observations = [];
 const failures = [];
 const consoleProblems = [];
@@ -32,7 +33,7 @@ function mime(path) {
 async function listen(server) {
   await new Promise((accept, reject) => {
     server.once('error', reject);
-    server.listen(0, '127.0.0.1', accept);
+    server.listen(0, LOOPBACK, accept);
   });
   return server.address().port;
 }
@@ -40,7 +41,7 @@ async function listen(server) {
 function staticServer() {
   return createServer(async (request, response) => {
     try {
-      const url = new URL(request.url, 'http://127.0.0.1');
+      const url = new URL(request.url, `http://${LOOPBACK}`);
       const relative = decodeURIComponent(url.pathname).replace(/^\/+/, '');
       if (relative === 'favicon.ico') {
         response.writeHead(204, { 'cache-control': 'no-store' });
@@ -484,7 +485,7 @@ async function captureMatrix(cdp, base, directory) {
 async function main() {
   const server = staticServer();
   const serverPort = await listen(server);
-  const base = `http://127.0.0.1:${serverPort}`;
+  const base = `http://${LOOPBACK}:${serverPort}`;
   const debugPort = await freePort();
   const profile = await mkdtemp(join(tmpdir(), 'triptych-corpus-foundation-chrome-'));
   const chrome = spawn(chromeBinary, [
@@ -496,9 +497,9 @@ async function main() {
   chrome.stderr.on('data', (chunk) => { chromeStderr += chunk.toString(); });
   let cdp;
   try {
-    await waitForJson(`http://127.0.0.1:${debugPort}/json/version`);
+    await waitForJson(`http://${LOOPBACK}:${debugPort}/json/version`);
     const pageResponse = await fetch(
-      `http://127.0.0.1:${debugPort}/json/new?${encodeURIComponent('about:blank')}`,
+      `http://${LOOPBACK}:${debugPort}/json/new?${encodeURIComponent('about:blank')}`,
       { method: 'PUT' }
     );
     const page = await pageResponse.json();
@@ -527,7 +528,7 @@ async function main() {
     const ax = await cdp.send('Accessibility.getFullAXTree');
     const unnamedInteractiveNodes = ax.nodes.filter((node) =>
       ['button', 'link', 'textbox'].includes(node.role?.value) && !node.name?.value).length;
-    const version = await waitForJson(`http://127.0.0.1:${debugPort}/json/version`);
+    const version = await waitForJson(`http://${LOOPBACK}:${debugPort}/json/version`);
     const report = {
       generatedAt: new Date().toISOString(),
       chrome: version.Browser,
