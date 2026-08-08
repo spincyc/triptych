@@ -250,7 +250,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-mass-ordinary \
 	check-release-bindings refresh-release-bindings approve-release \
 	add-publication doc review-doc install-doc check check-tests \
-	check-browser-static \
+	check-browser-static check-browser-gate \
 	check-examples recapture-examples \
 	altar-server-guides review-altar-server-guides install-altar-server-guides \
 	check-staleness measure-staleness explain-staleness rebaseline-doc \
@@ -752,6 +752,17 @@ check: check-metadata check-web-editions check-web-editions-current \
 # needs no browser.
 check-browser-static:
 	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_browser_static.py'
+
+# Real Chromium over the built artifact, which is the only place the publish
+# step's own defects exist: the four harnesses beside it all load the
+# repository copies, so a second `<main>` or a stripped skip link introduced by
+# `wrap_in_layout` is invisible to every one of them. Deliberately outside
+# `check`: it needs a browser the installer does not install and an artifact
+# `check` does not build. Run `make public-site` first, and set TRIPTYCH_CHROME
+# unless google-chrome-stable is the browser present. It asserts nothing about
+# how the site looks, because no visual contract has been accepted.
+check-browser-gate:
+	@node tools/tests/corpus_browser_gate.mjs
 
 # Every tool carries a table of captured invocations, and until this target
 # existed nothing ran one: the registry test counted lines beginning with a
