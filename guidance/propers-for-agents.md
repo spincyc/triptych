@@ -233,6 +233,27 @@ What the number does NOT settle is the day's own orations, which still have to
 be read, and the drop-capital of each oration OCRs as garbage (`^\mnipotens`)
 and has to be repaired from the following letters.
 
+**A BRACKET NUMBER IS EDITION-SPECIFIC. Never carry one between books.** The
+1862 Pustet prints `S. Franciscae ... Missa. Cognovi. de Comm. nec Virg. nec
+Mart. [35]` where the 1962 prints `[37]` for the same Mass. Both are right about
+their own book and the map above is the 1962's alone. Read as confirmation of
+each other they would move Frances of Rome from the Common she takes to the one
+before it. The incipit -- `Cognovi` -- is what is comparable across editions;
+the number never is.
+
+**Read the ORATIONS off the page images, not off any text layer.** Three
+sessions reported the orations untranscribable, and all three were reading OCR.
+The CMAA facsimile destroys them under drop capitals; the tracked 1862's own
+text layer is no better, corrupting roughly one word in three -- its Casimir
+Collect reads `DEus, quLinter reg&les de-licias ... virttite const&ntise
+robor&sti: qusesu-mus; ut ejus intercessi6nefid6-les tui terr6na despiciant, et
+ad ccel6stia`. The 1862's PAGE IMAGES are clean and legible at
+`https://archive.org/download/bub_gb_E7sPAAAAIAAJ/page/n<leaf>_w1000.jpg`
+(922 leaves, item `bub_gb_E7sPAAAAIAAJ`, the same public-domain printing the
+library already tracks). Leaf n498 gives Frances of Rome's Collect entire and
+without damage. This is the route, and it is the same one the 1861 English was
+collated by at 200 and 400 dpi.
+
 ## Commands to check a claim
 
 ```sh
