@@ -11,6 +11,19 @@
  * independently of how the site looks. There is no visual contract yet, so nothing
  * here measures colour, spacing, typography, layout or composition; inventing such
  * a measurement would freeze a design that has not been decided.
+ *
+ * The run has five phases. The first drives every route through the governing
+ * viewport and emulation matrix. The other four are facts about a route rather
+ * than about a screen size, and run once per route: the page with JavaScript
+ * switched off, the hash contracts a shared link depends on, startup under the
+ * `/<repository>/` prefix a project site is published at, and whether the page's
+ * own links go anywhere.
+ *
+ * One assertion reads computed style, and only one: a focus indicator is invisible
+ * unless something about the element changes when it takes focus, so the gate
+ * compares an element with ITSELF unfocused and asserts only that the two differ.
+ * It never asserts a value, so it fixes no appearance. See
+ * FOCUS_INDICATOR_PROPERTIES.
  */
 
 import { spawn } from 'node:child_process';
@@ -54,12 +67,16 @@ const SAMPLED_FAMILIES = [
   { name: 'web', directory: 'web', recursive: true }
 ];
 
+/* The governing screenshot/state matrix: five viewports, plus the four
+ * accessibility derivatives of the handset. Changing a number here changes what
+ * the project means by "supported", so the five base sizes are written out rather
+ * than generated. */
 const STATES = [
-  { name: 'desktop-1440x1000', width: 1440, height: 1000 },
+  { name: 'desktop-1440x900', width: 1440, height: 900 },
   { name: 'laptop-1024x768', width: 1024, height: 768 },
   { name: 'tablet-768x1024', width: 768, height: 1024 },
   { name: 'handset-393x852', width: 393, height: 852 },
-  { name: 'narrow-320x800', width: 320, height: 800 },
+  { name: 'narrow-320x852', width: 320, height: 852 },
   { name: 'handset-393x852-text-200', width: 393, height: 852, textScale: 2 },
   { name: 'handset-393x852-scale-400', width: 393, height: 852, pageScale: 4 },
   {
@@ -76,6 +93,59 @@ const STATES = [
   }
 ];
 
+/* ------------------------------------------------------------------ hash table
+ *
+ * THE ONE PLACE A ROUTER CHANGE HAS TO BE UPDATED.
+ *
+ * Each entry is a deep link a reader could have been sent, written in the keys the
+ * page's own instrument reads. The keys were read off the built JavaScript:
+ *
+ *   /catena/index.html            catena.js writeHash: book, chapter, bible, voice
+ *   /history/index.html           history.js writeHash: station, unit
+ *   /law/index.html               law.js writeState: canon, par, line, act
+ *   /liturgy/index.html           liturgy.js writeHash: missal, type, mass, bible,
+ *                                 orations
+ *   /liturgy/day.html             day.js writeHash: date, missal, bible, orations,
+ *                                 why, ordinary, ordinary-lang, rubrics, mass, and
+ *                                 one key per variant group
+ *   /liturgy/day-reader.html      reader-state.js DAY_KEYS
+ *   /liturgy/propers-reader.html  reader-state.js PROPERS_KEYS
+ *   /scripture/track.html         track.js hashPairs: tier, reading|period, bible
+ *   /sources/index.html           sources.js applyHash: edition, passage
+ *   /texts/index.html             texts.js restore: author, edition, section,
+ *                                 reading, sort, find
+ *
+ * `/scripture/index.html` is deliberately absent: plan.js forwards a legacy
+ * `#tier=`/`#reading=`/`#period=` hash to `track.html` with `location.replace`, so
+ * its hash contract is a redirect and asserting the hash survives would assert the
+ * opposite of the intended behaviour.
+ *
+ * The assertion is that a stated selection survives arrival: every key and value
+ * given here must still be in `location.hash` once the page has settled. A page
+ * completing the hash with the rest of its state is normal and allowed; a page
+ * dropping or rewriting what the reader asked for is the defect. */
+const HASH_DEEP_LINKS = [
+  { route: '/catena/index.html', hash: '#book=Gen&chapter=1&bible=douay-rheims' },
+  { route: '/history/index.html', hash: '#station=praedicatorum-venetiis-1484' },
+  { route: '/law/index.html', hash: '#act=latin-missal' },
+  { route: '/liturgy/day-reader.html', hash: '#missal=roman-1962&bible=douay-rheims' },
+  { route: '/liturgy/day.html', hash: '#missal=roman-1962&bible=douay-rheims' },
+  {
+    route: '/liturgy/index.html',
+    hash: '#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims'
+  },
+  {
+    route: '/liturgy/propers-reader.html',
+    hash: '#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims'
+  },
+  { route: '/scripture/track.html', hash: '#tier=landmarks&bible=douay-rheims' },
+  {
+    route: '/sources/index.html',
+    hash: '#edition=edition.abraham-ibn-ezra.perush-al-ha-torah.piotrkow-1907'
+  },
+  { route: '/texts/index.html', hash: '#sort=title' }
+];
+
 /* One CSS pixel. Sub-pixel rounding of a fractional layout width can report a
  * scrollWidth one larger than clientWidth on a page that does not in fact scroll,
  * so a single pixel is forgiven and anything beyond it is reported. */
@@ -84,6 +154,44 @@ const CONTROL_SELECTOR =
   'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])';
 const TAB_DEPTH = 10;
 const SETTLE_TIMEOUT_MS = 9000;
+
+/* GitHub Pages serves a project site under `/<repository>/`, and nothing above it
+ * exists. A second server mounted here answers only under the prefix, so a
+ * root-relative reference — the one mistake that works perfectly on a local root
+ * and 404s on publication — cannot pass. */
+const SUBPATH_PREFIX = '/triptych';
+
+/* WCAG 2.2 target size (enhanced) is 44x44 CSS px, and 393px is the handset width
+ * of the governing matrix. A link set inline in a sentence is exempt by the
+ * standard's own inline exception, so those are counted and reported, never
+ * failed. */
+const TARGET_SIZE_MIN_PX = 44;
+const TARGET_SIZE_WIDTH = 393;
+const PROSE_ANCESTORS = 'p, blockquote, figcaption, dd, dt, td, th, li';
+const CHROME_ANCESTORS = 'nav, [role="navigation"], header, footer, menu, form';
+
+/* How many tab stops the focus-indicator check samples. The whole tab order would
+ * multiply an already long run by the length of the longest page's navigation; the
+ * first few stops are where a missing indicator is both most likely and most
+ * damaging, and the bound is reported rather than assumed. */
+const FOCUS_SAMPLE = 6;
+
+/* The three properties a stylesheet can draw a focus ring with. The gate reads
+ * them only to compare an element against ITSELF unfocused: it asserts that the
+ * two differ, never that either has some value, so no appearance is fixed here and
+ * no design decision is frozen. Pseudo-elements are read too, because a ring drawn
+ * on `::after` is a real ring. */
+const FOCUS_INDICATOR_PROPERTIES = [
+  'outline-style', 'outline-width', 'outline-color', 'outline-offset',
+  'box-shadow', 'border-style', 'border-width', 'border-color'
+];
+
+/* At most this many distinct link targets are resolved per route. Every route
+ * shares one library index and one navigation, so the cap almost never bites; when
+ * it does, the count not checked is recorded in the assertion detail AND in the
+ * report's `bounds` block, so a truncated check can never be mistaken for a
+ * complete one. */
+const LINKS_PER_ROUTE_CAP = 40;
 const BASE_FONT_SIZES = { standard: 16, fixed: 13 };
 const CHROME_CANDIDATES = [
   '/usr/bin/chromium',
@@ -139,25 +247,50 @@ async function listen(server) {
 }
 
 /* The artifact is served exactly as published: a missing file answers 404 and the
- * gate reports it, rather than being papered over with an index fallback. */
-function staticServer() {
+ * gate reports it, rather than being papered over with an index fallback.
+ *
+ * `prefix` mounts the artifact the way GitHub Pages mounts a project site: under
+ * `/<repository>/`, with nothing at all above it. Anything addressed outside the
+ * prefix answers 404 exactly as the real host would, which is the whole point —
+ * a root-relative reference must not be able to resolve.
+ *
+ * HEAD answers headers and no body, so resolving several hundred link targets does
+ * not read several hundred megabytes of PDF off disk. */
+function staticServer(prefix = '') {
   return createServer(async (request, response) => {
-    let file = null;
     try {
       const url = new URL(request.url, 'http://127.0.0.1');
-      const relative = decodeURIComponent(url.pathname).replace(/^\/+/, '');
-      file = resolve(ROOT, relative || 'index.html');
+      let pathname = decodeURIComponent(url.pathname);
+      if (prefix) {
+        if (pathname !== prefix && !pathname.startsWith(prefix + '/')) {
+          throw new Error('outside the published prefix');
+        }
+        pathname = pathname.slice(prefix.length) || '/';
+      }
+      const relative = pathname.replace(/^\/+/, '');
+      let file = resolve(ROOT, relative || 'index.html');
       if (file !== ROOT && !file.startsWith(ROOT + sep)) throw new Error('outside root');
-      const body = await readFile(file);
+      /* A directory answers with its own index.html, as the publishing host does.
+       * That is not a fallback: a file that is simply absent still 404s, which is
+       * what the gate exists to notice. */
+      let body;
+      try {
+        body = await readFile(file);
+      } catch (error) {
+        if (error.code !== 'EISDIR') throw error;
+        file = join(file, 'index.html');
+        body = await readFile(file);
+      }
       response.writeHead(200, {
         'content-type': mime(file),
+        'content-length': body.length,
         'cache-control': 'no-store',
         'x-robots-tag': 'noindex, nofollow'
       });
-      response.end(body);
+      response.end(request.method === 'HEAD' ? undefined : body);
     } catch (_error) {
       response.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' });
-      response.end('not found');
+      response.end(request.method === 'HEAD' ? undefined : 'not found');
     }
   });
 }
@@ -257,10 +390,16 @@ function slug(route) {
   return route.replace(/^\/+/, '').replace(/\.html$/, '').replace(/[^A-Za-z0-9]+/g, '-') || 'root';
 }
 
-/* Every recorded detail is scrubbed of the ephemeral port so two runs of the same
- * artifact produce byte-identical reports apart from `generatedAt`. */
-function scrub(text, base) {
-  return String(text ?? '').split(base).join('');
+/* Every recorded detail is scrubbed of the ephemeral origins so two runs of the
+ * same artifact produce byte-identical reports apart from `generatedAt`. Both the
+ * root server and the subpath server are registered, longest first, so the subpath
+ * origin is removed whole rather than leaving its prefix behind. */
+const ephemeralOrigins = [];
+
+function scrub(text) {
+  let value = String(text ?? '');
+  for (const origin of ephemeralOrigins) value = value.split(origin).join('');
+  return value;
 }
 
 async function exists(path) {
@@ -308,18 +447,24 @@ async function defaultRoutes() {
 
 /* ---------------------------------------------------------------- page probes */
 
+/* How a node is named in a failure detail: its tag, then its id or first class.
+ * Enough to find it in the source, and stable between runs. */
+const DESCRIPTOR = `((node) => {
+  if (!node || !node.getAttribute) return String(node);
+  const first = (node.getAttribute('class') || '').trim().split(/\\s+/)[0];
+  return node.tagName.toLowerCase() +
+    (node.id ? '#' + node.id : (first ? '.' + first : ''));
+})`;
+
+const SELECTOR = JSON.stringify(CONTROL_SELECTOR);
+
 const VISIBLE_CONTROLS = `(() => {
-  const nodes = [...document.querySelectorAll(${JSON.stringify(CONTROL_SELECTOR)})];
-  return nodes.map((node) => {
+  const describe = ${DESCRIPTOR};
+  return [...document.querySelectorAll(${SELECTOR})].map((node) => {
     const box = node.getBoundingClientRect();
-    const visible = node.getClientRects().length > 0 && node.checkVisibility();
-    const identity = node.id ? '#' + node.id
-      : (node.getAttribute('class') || '').trim().split(/\\s+/)[0]
-        ? '.' + (node.getAttribute('class') || '').trim().split(/\\s+/)[0]
-        : '';
     return {
-      visible,
-      descriptor: node.tagName.toLowerCase() + identity,
+      visible: node.getClientRects().length > 0 && node.checkVisibility(),
+      descriptor: describe(node),
       width: Math.round(box.width),
       height: Math.round(box.height)
     };
@@ -340,11 +485,33 @@ const DOCUMENT_FACTS = `(() => {
   };
 })()`;
 
-const ACTIVE_ELEMENT = `(() => {
+/* What a focus ring is made of, read off one element. Only ever compared with
+ * another reading of the same element, never with a literal. */
+const FINGERPRINT = `((node) => [null, '::before', '::after']
+  .map((part) => {
+    const style = window.getComputedStyle(node, part);
+    return ${JSON.stringify(FOCUS_INDICATOR_PROPERTIES)}
+      .map((name) => style.getPropertyValue(name)).join(',');
+  })
+  .join(' / '))`;
+
+/* The active element after a Tab press. `stash` records the element and its
+ * indicator while it genuinely holds keyboard focus, because that is the only
+ * moment `:focus-visible` is in effect — a programmatic `focus()` does not
+ * reliably reproduce it, and a check built on one is a check that flickers. The
+ * matching unfocused readings are taken afterwards by FOCUS_RESTING. */
+function activeElementProbe(stash) {
+  return `(() => {
   const node = document.activeElement;
   if (!node || node === document.body || node === document.documentElement) {
     return { none: true, descriptor: node ? node.tagName.toLowerCase() : 'null' };
   }
+  ${stash ? `(() => {
+    const store = window.__triptychGateFocusSample || (window.__triptychGateFocusSample = []);
+    if (store.length < ${FOCUS_SAMPLE} && !store.some((one) => one.node === node)) {
+      store.push({ node, focused: (${FINGERPRINT})(node), descriptor: (${DESCRIPTOR})(node) });
+    }
+  })();` : ''}
   const box = node.getBoundingClientRect();
   const href = node.getAttribute ? node.getAttribute('href') : null;
   let targetExists = null;
@@ -358,20 +525,106 @@ const ACTIVE_ELEMENT = `(() => {
       raw === 'top'
     );
   }
-  const identity = node.id ? '#' + node.id
-    : (node.getAttribute('class') || '').trim().split(/\\s+/)[0]
-      ? '.' + (node.getAttribute('class') || '').trim().split(/\\s+/)[0]
-      : '';
   return {
     none: false,
     tag: node.tagName.toLowerCase(),
-    descriptor: node.tagName.toLowerCase() + identity,
+    descriptor: (${DESCRIPTOR})(node),
     href,
     samePage: Boolean(href && href.startsWith('#')),
     targetExists,
     width: Math.round(box.width),
     height: Math.round(box.height),
     text: (node.textContent || '').trim().slice(0, 60)
+  };
+})()`;
+}
+
+const ACTIVE_ELEMENT = activeElementProbe(false);
+const ACTIVE_ELEMENT_SAMPLING = activeElementProbe(true);
+
+/* The other half of the focus-indicator check: focus is released, and each element
+ * the traversal stashed is read again with nothing focused. Each element is
+ * therefore compared with ITSELF, and the assertion is that the two readings
+ * differ. Nothing here says what a focus ring should look like — only that a
+ * reader can tell focus apart from its absence.
+ *
+ * `::before` and `::after` are read too, so a ring drawn on a pseudo-element
+ * counts. A ring drawn only by changing that pseudo-element's `content` would not
+ * be seen; widening the fingerprint further would start to read the page's
+ * appearance rather than its behaviour. */
+const FOCUS_RESTING = `(() => {
+  const store = window.__triptychGateFocusSample || [];
+  const holder = document.activeElement;
+  if (holder && holder.blur) holder.blur();
+  return store.map((one) => ({
+    descriptor: one.descriptor,
+    differs: one.focused !== (${FINGERPRINT})(one.node)
+  }));
+})()`;
+
+/* Target size. Only controls a reader can actually see are measured; a control
+ * smaller than the minimum in either dimension is returned, marked with whether
+ * the standard's inline exception covers it — a link inside a sentence, as opposed
+ * to a link in navigation, a header, a footer or a form, which are chrome and are
+ * not exempt however they are marked up. */
+const UNDERSIZED_TARGETS = `((minimum) => {
+  const describe = ${DESCRIPTOR};
+  const rows = [];
+  for (const node of document.querySelectorAll(${SELECTOR})) {
+    if (!(node.getClientRects().length > 0 && node.checkVisibility())) continue;
+    const box = node.getBoundingClientRect();
+    const width = Math.round(box.width);
+    const height = Math.round(box.height);
+    if (width >= minimum && height >= minimum) continue;
+    rows.push({
+      descriptor: describe(node),
+      /* An anchor often carries neither id nor class, so the descriptor alone
+       * would not say which one. Its own text does. */
+      text: (node.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 32),
+      width,
+      height,
+      exempt: node.tagName === 'A' &&
+        Boolean(node.closest(${JSON.stringify(PROSE_ANCESTORS)})) &&
+        !node.closest(${JSON.stringify(CHROME_ANCESTORS)})
+    });
+  }
+  return rows;
+})(${TARGET_SIZE_MIN_PX})`;
+
+/* Same-origin link targets, de-duplicated within the page and reported as
+ * path+query so the ephemeral origin never enters the report. A `javascript:` or
+ * `mailto:` href has a null origin and is dropped by the same-origin filter. */
+const SAME_ORIGIN_LINKS = `(() => {
+  const seen = new Set();
+  for (const node of document.querySelectorAll('a[href]')) {
+    const raw = node.getAttribute('href') || '';
+    if (!raw || raw.startsWith('#')) continue;
+    let url = null;
+    try { url = new URL(node.href, document.baseURI); } catch (_error) { continue; }
+    if (url.origin !== window.location.origin) continue;
+    seen.add(url.pathname + url.search);
+  }
+  return [...seen].sort();
+})()`;
+
+/* What a reader has before a single line of the page's JavaScript has run. */
+const STATIC_TRUTH = `(() => {
+  const here = window.location.pathname;
+  const links = new Set();
+  for (const node of document.querySelectorAll('a[href]')) {
+    const raw = node.getAttribute('href') || '';
+    if (!raw || raw.startsWith('#')) continue;
+    let url = null;
+    try { url = new URL(node.href, document.baseURI); } catch (_error) { continue; }
+    if (url.origin !== window.location.origin) continue;
+    if (url.pathname === here && !url.search) continue;
+    links.add(url.pathname + url.search);
+  }
+  return {
+    title: (document.title || '').trim(),
+    h1Count: document.querySelectorAll('h1').length,
+    mainCount: document.querySelectorAll('main').length,
+    links: [...links].sort()
   };
 })()`;
 
@@ -423,10 +676,10 @@ async function accessibleNames(cdp) {
 
 /* -------------------------------------------------------------- the assertions */
 
-async function runPage(cdp, base, route, state, channel) {
+async function runPage(cdp, route, state, channel) {
   const results = [];
   const record = (name, status, detail = '') =>
-    results.push({ name, status, detail: scrub(detail, base) });
+    results.push({ name, status, detail: scrub(detail) });
 
   const facts = await evaluate(cdp, DOCUMENT_FACTS);
 
@@ -467,7 +720,11 @@ async function runPage(cdp, base, route, state, channel) {
   const sequence = [];
   for (let step = 0; step < TAB_DEPTH; step += 1) {
     await key(cdp, 'Tab', 9);
-    sequence.push(await evaluate(cdp, ACTIVE_ELEMENT));
+    /* The first stops are sampled for the focus-indicator check as they go past,
+     * because the reading has to be taken while the element really holds keyboard
+     * focus. */
+    sequence.push(await evaluate(cdp,
+      step < FOCUS_SAMPLE ? ACTIVE_ELEMENT_SAMPLING : ACTIVE_ELEMENT));
   }
   const first = sequence[0];
   if (!first || first.none) {
@@ -555,6 +812,48 @@ async function runPage(cdp, base, route, state, channel) {
         : `${controls.filter((one) => one.visible).length} visible controls named`);
   }
 
+  /* 12 — focus is visible. Each sampled control is compared with itself, so this
+   * fails only when focus changes nothing a reader could see. */
+  const focused = await evaluate(cdp, FOCUS_RESTING);
+  const invisible = focused.filter((one) => !one.differs);
+  if (!focused.length) {
+    /* Tab reached nothing to sample. That is a real problem, but it is not this
+     * assertion's problem: skip-link and tab-traversal own whether a control can
+     * be reached at all, and reporting it twice would say the artifact has two
+     * defects where it has one. The reason is recorded so the skip cannot be read
+     * as coverage. */
+    record('focus-indicator-differs-from-resting', 'skip',
+      `${TAB_DEPTH} presses of Tab reached no control to sample`);
+  } else {
+    record('focus-indicator-differs-from-resting', invisible.length ? 'fail' : 'pass',
+      invisible.length
+        ? `${invisible.length} of ${focused.length} tab stops look identical focused ` +
+          `and unfocused: ${invisible.map((one) => one.descriptor).slice(0, 6).join(', ')}`
+        : `${focused.length} of the first ${FOCUS_SAMPLE} tab stops change visibly on focus`);
+  }
+
+  /* 13 — a control is big enough to hit with a thumb. Only at the handset width,
+   * because that is where the standard's 44px is about a finger. */
+  if (state.width === TARGET_SIZE_WIDTH) {
+    const undersized = await evaluate(cdp, UNDERSIZED_TARGETS);
+    const failing = undersized.filter((one) => !one.exempt);
+    const exempt = undersized.filter((one) => one.exempt);
+    const exemptNote = exempt.length
+      ? `; ${exempt.length} inline prose links are exempt and reported only`
+      : '';
+    record('primary-controls-meet-target-size', failing.length ? 'fail' : 'pass',
+      (failing.length
+        ? `${failing.length} controls under ${TARGET_SIZE_MIN_PX}x${TARGET_SIZE_MIN_PX}: ` +
+          failing.map((one) =>
+            `${one.descriptor}${one.text ? ` "${one.text}"` : ''} ${one.width}x${one.height}`)
+            .slice(0, 6).join(', ')
+        : `every visible control is at least ${TARGET_SIZE_MIN_PX}x${TARGET_SIZE_MIN_PX}`) +
+      exemptNote);
+  } else {
+    record('primary-controls-meet-target-size', 'skip',
+      `measured only at the ${TARGET_SIZE_WIDTH}px handset width, not at ${state.width}px`);
+  }
+
   /* 11 — the universal dismissal key is safe to press anywhere. */
   const beforeConsole = channel.consoleErrors.length;
   const beforeExceptions = channel.exceptions.length;
@@ -636,8 +935,11 @@ async function main() {
     : discovered.routes;
 
   const server = staticServer();
-  const serverPort = await listen(server);
-  const base = `http://127.0.0.1:${serverPort}`;
+  const base = `http://127.0.0.1:${await listen(server)}`;
+  const subpathServer = staticServer(SUBPATH_PREFIX);
+  const subpathOrigin = `http://127.0.0.1:${await listen(subpathServer)}`;
+  const subpathBase = subpathOrigin + SUBPATH_PREFIX;
+  ephemeralOrigins.push(base, subpathOrigin);
   const debugPort = await freePort();
   const profile = await mkdtemp(join(tmpdir(), 'triptych-corpus-gate-chrome-'));
 
@@ -659,13 +961,50 @@ async function main() {
   let chromeStderr = '';
   chrome.stderr.on('data', (chunk) => { chromeStderr += chunk.toString(); });
 
+  /* `origin` is the origin the run currently treats as same-origin. It moves to the
+   * subpath server for that phase, so a request the subpath mount cannot answer is
+   * recorded as this artifact's failure and not dismissed as third-party. */
   const channel = {
+    origin: base,
     consoleErrors: [], exceptions: [], failed: [], badStatus: [], inflight: 0, requests: new Map()
   };
   const assertions = [];
   const pages = [];
+  const cappedRoutes = [];
   let cdp = null;
   let chromeVersion = 'unknown';
+
+  const resetChannel = () => {
+    channel.consoleErrors.length = 0;
+    channel.exceptions.length = 0;
+    channel.failed.length = 0;
+    channel.badStatus.length = 0;
+    channel.requests.clear();
+    channel.inflight = 0;
+  };
+
+  /* Every phase adds rows the same way, so route/state/name ordering is a property
+   * of the loops rather than of each call site. */
+  const add = (name, route, state, status, detail = '') =>
+    assertions.push({ name, route, state, status, detail: scrub(detail) });
+
+  /* One HEAD per distinct target for the whole run: the navigation is shared by
+   * every page, so without this the link check would resolve the same few hundred
+   * targets nineteen times. */
+  const statusCache = new Map();
+  const statusOf = async (origin, target) => {
+    const memo = origin + target;
+    if (statusCache.has(memo)) return statusCache.get(memo);
+    let status;
+    try {
+      status = (await fetch(origin + target, { method: 'HEAD' })).status;
+    } catch (error) {
+      status = `unreachable (${error.message})`;
+    }
+    statusCache.set(memo, status);
+    return status;
+  };
+  const resolves = (status) => typeof status === 'number' && status >= 200 && status < 300;
 
   try {
     const version = await waitForJson(`http://127.0.0.1:${debugPort}/json/version`);
@@ -705,38 +1044,33 @@ async function main() {
       const url = channel.requests.get(event.requestId) || '';
       finish(event.requestId);
       if (event.canceled) return;
-      if (url && !url.startsWith(base)) return;
+      if (url && !url.startsWith(channel.origin)) return;
       channel.failed.push({ url, error: event.errorText || 'load failed' });
     });
     cdp.on('Network.responseReceived', ({ response }) => {
-      if (!response.url.startsWith(base)) return;
+      if (!response.url.startsWith(channel.origin)) return;
       if (response.status >= 200 && response.status < 400) return;
       channel.badStatus.push({ status: response.status, url: response.url });
     });
 
     if (captureDir) await mkdir(captureDir, { recursive: true });
 
+    /* ---------------------------------------------------- phase 1: the matrix */
     for (const route of routes) {
       for (const state of STATES) {
         await applyState(cdp, state);
-        channel.consoleErrors.length = 0;
-        channel.exceptions.length = 0;
-        channel.failed.length = 0;
-        channel.badStatus.length = 0;
-        channel.requests.clear();
-        channel.inflight = 0;
+        resetChannel();
 
-        const target = base + route;
         let settled = false;
         let results;
         try {
-          await cdp.send('Page.navigate', { url: target });
+          await cdp.send('Page.navigate', { url: base + route });
           settled = await settle(cdp, channel);
           await cdp.send('Emulation.setPageScaleFactor', {
             pageScaleFactor: state.pageScale || 1
           });
           if (state.pageScale) await new Promise((accept) => setTimeout(accept, 120));
-          results = await runPage(cdp, base, route, state, channel);
+          results = await runPage(cdp, route, state, channel);
           if (!settled) {
             results.unshift({
               name: 'page-settles', status: 'fail',
@@ -746,7 +1080,7 @@ async function main() {
         } catch (error) {
           results = [{
             name: 'page-settles', status: 'fail',
-            detail: scrub(error.stack || String(error), base)
+            detail: scrub(error.stack || String(error))
           }];
         }
 
@@ -764,9 +1098,7 @@ async function main() {
           }
         }
 
-        for (const one of results) {
-          assertions.push({ name: one.name, route, state: state.name, status: one.status, detail: one.detail });
-        }
+        for (const one of results) add(one.name, route, state.name, one.status, one.detail);
         pages.push({
           route,
           state: state.name,
@@ -777,15 +1109,122 @@ async function main() {
         });
       }
     }
+
+    /* The remaining phases are facts about a route rather than about a viewport,
+     * so each runs once per route at the widest supported state. Their rows carry
+     * the phase name where a viewport name would be, which keeps one flat
+     * assertion table without pretending a phase is a screen size. */
+    await applyState(cdp, STATES[0]);
+    await cdp.send('Emulation.setPageScaleFactor', { pageScaleFactor: 1 });
+
+    /* ------------------------------------------- phase 2: the page without JS */
+    await cdp.send('Emulation.setScriptExecutionDisabled', { value: true });
+    for (const route of routes) {
+      resetChannel();
+      await cdp.send('Page.navigate', { url: base + route });
+      await settle(cdp, channel);
+      const truth = await evaluate(cdp, STATIC_TRUTH);
+      const missing = [];
+      if (!truth.title) missing.push('no <title>');
+      if (truth.h1Count < 1) missing.push('no <h1>');
+      if (truth.mainCount < 1) missing.push('no main landmark');
+      let working = null;
+      for (const target of truth.links.slice(0, LINKS_PER_ROUTE_CAP)) {
+        if (resolves(await statusOf(base, target))) { working = target; break; }
+      }
+      if (!working) {
+        missing.push(truth.links.length
+          ? `none of its ${truth.links.length} same-origin links resolve`
+          : 'no same-origin link to anywhere else');
+      }
+      add('no-script-static-truth', route, '(no-script)',
+        missing.length ? 'fail' : 'pass',
+        missing.length
+          ? missing.join('; ')
+          : `title "${truth.title}", ${truth.h1Count} h1, ${truth.mainCount} main, ` +
+            `link to ${working} resolves`);
+    }
+    await cdp.send('Emulation.setScriptExecutionDisabled', { value: false });
+
+    /* --------------------------------------- phase 3: hash deep-link contracts */
+    for (const entry of HASH_DEEP_LINKS) {
+      if (!routes.includes(entry.route)) continue;
+      resetChannel();
+      await cdp.send('Page.navigate', { url: base + entry.route + entry.hash });
+      const settled = await settle(cdp, channel);
+      const arrived = await evaluate(cdp, 'window.location.hash');
+      const asked = new URLSearchParams(entry.hash.replace(/^#/, ''));
+      const got = new URLSearchParams(String(arrived).replace(/^#/, ''));
+      const lost = [];
+      for (const [name, value] of asked) {
+        if (got.get(name) !== value) lost.push(`${name}=${value} became ${got.get(name)}`);
+      }
+      const noise = [...channel.consoleErrors, ...channel.exceptions];
+      const problems = [];
+      if (!settled) problems.push(`did not settle within ${SETTLE_TIMEOUT_MS}ms`);
+      if (noise.length) problems.push('console: ' + noise.slice(0, 3).join(' | '));
+      if (lost.length) problems.push('the hash was rewritten: ' + lost.join(', '));
+      add('hash-deep-link-is-honoured', entry.route, '(hash-deep-link)',
+        problems.length ? 'fail' : 'pass',
+        problems.length
+          ? `${entry.hash} -> ${arrived}: ${problems.join('; ')}`
+          : `${entry.hash} survived as ${arrived}`);
+    }
+
+    /* -------------------------------- phase 4: startup under a published prefix */
+    channel.origin = subpathOrigin;
+    for (const route of routes) {
+      resetChannel();
+      await cdp.send('Page.navigate', { url: subpathBase + route });
+      const settled = await settle(cdp, channel);
+      const problems = [
+        ...channel.failed.map((one) => `${one.error}: ${one.url}`),
+        ...channel.badStatus.map((one) => `HTTP ${one.status}: ${one.url}`)
+      ];
+      if (!settled) problems.unshift(`did not settle within ${SETTLE_TIMEOUT_MS}ms`);
+      add('subpath-deep-link-startup', route, '(subpath)',
+        problems.length ? 'fail' : 'pass',
+        problems.length
+          ? `under ${SUBPATH_PREFIX}/: ` + problems.slice(0, 8).join(' | ')
+          : `loads under ${SUBPATH_PREFIX}/ with every same-origin request answered`);
+    }
+    channel.origin = base;
+
+    /* -------------------------------------- phase 5: internal links go anywhere */
+    for (const route of routes) {
+      resetChannel();
+      await cdp.send('Page.navigate', { url: base + route });
+      await settle(cdp, channel);
+      const collected = await evaluate(cdp, SAME_ORIGIN_LINKS);
+      const considered = collected.slice(0, LINKS_PER_ROUTE_CAP);
+      const notChecked = collected.length - considered.length;
+      if (notChecked) {
+        cappedRoutes.push({ route, collected: collected.length, checked: considered.length, notChecked });
+      }
+      const broken = [];
+      for (const target of considered) {
+        const status = await statusOf(base, target);
+        if (!resolves(status)) broken.push(`${status}: ${target}`);
+      }
+      const capNote = notChecked
+        ? ` (capped at ${LINKS_PER_ROUTE_CAP}; ${notChecked} of ${collected.length} NOT CHECKED)`
+        : '';
+      add('internal-links-resolve', route, '(links)', broken.length ? 'fail' : 'pass',
+        (broken.length
+          ? `${broken.length} of ${considered.length} checked links do not resolve: ` +
+            broken.slice(0, 8).join(' | ')
+          : `${considered.length} distinct same-origin links resolve`) + capNote);
+    }
   } catch (error) {
     assertions.push({
       name: 'gate-runs', route: '(harness)', state: '(harness)', status: 'fail',
-      detail: scrub((error.stack || String(error)) + '\n' + chromeStderr.slice(-2000), base)
+      detail: scrub((error.stack || String(error)) + '\n' + chromeStderr.slice(-2000))
     });
   } finally {
     if (cdp) cdp.close();
     chrome.kill('SIGTERM');
     await new Promise((accept) => server.close(accept));
+    await new Promise((accept) => subpathServer.close(accept));
   }
 
   for (const family of discovered.missingFamilies) {
@@ -796,14 +1235,56 @@ async function main() {
     });
   }
 
+  /* The phases append in phase order, which scatters a route's rows. Sorting by
+   * route, then state, then assertion name puts the table in one order that does
+   * not depend on how the run was scheduled, so two runs of the same artifact
+   * differ only in `generatedAt`. */
+  const order = (one, two) =>
+    one.route.localeCompare(two.route) ||
+    one.state.localeCompare(two.state) ||
+    one.name.localeCompare(two.name);
+  assertions.sort(order);
+
   const failures = assertions.filter((one) => one.status === 'fail');
+
+  /* Counts per assertion kind, so the shape of a failing run is readable without
+   * reading two thousand rows. `routesFailing` is what says whether a failure is
+   * one bad page or a defect the whole artifact shares. */
+  const summary = [...new Set(assertions.map((one) => one.name))].sort().map((name) => {
+    const rows = assertions.filter((one) => one.name === name);
+    const failing = rows.filter((one) => one.status === 'fail');
+    return {
+      name,
+      total: rows.length,
+      passed: rows.filter((one) => one.status === 'pass').length,
+      failed: failing.length,
+      skipped: rows.filter((one) => one.status === 'skip').length,
+      routesFailing: new Set(failing.map((one) => one.route)).size
+    };
+  });
+
   const report = {
     generatedAt: new Date().toISOString(),
     chrome: chromeVersion,
     root: ROOT,
     routes,
     states: STATES.map((one) => ({ name: one.name, width: one.width, height: one.height })),
+    phases: ['(no-script)', '(hash-deep-link)', '(subpath)', '(links)'],
     overflowTolerancePx: OVERFLOW_TOLERANCE_PX,
+    /* Everything the run deliberately did not do, stated where a reader of the
+     * report will see it. A bound recorded here is coverage this gate does not
+     * claim. */
+    bounds: {
+      tabDepth: TAB_DEPTH,
+      focusSample: FOCUS_SAMPLE,
+      targetSizeMinPx: TARGET_SIZE_MIN_PX,
+      targetSizeMeasuredAtWidth: TARGET_SIZE_WIDTH,
+      linksPerRouteCap: LINKS_PER_ROUTE_CAP,
+      cappedRoutes: cappedRoutes.sort((one, two) => one.route.localeCompare(two.route)),
+      hashDeepLinksCovered: HASH_DEEP_LINKS.map((one) => one.route).sort(),
+      subpathPrefix: SUBPATH_PREFIX + '/'
+    },
+    summary,
     pages,
     assertions,
     failures,
