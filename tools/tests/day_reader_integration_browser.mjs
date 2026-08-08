@@ -534,8 +534,14 @@ async function candidateOutcomeSnapshot(cdp) {
       bible: document.querySelector('#reader-bible').value,
       orations: document.querySelector('#reader-orations').value,
       formulary: document.querySelector('#reader-formulary').value,
-      disabled: [...document.querySelectorAll('#date-form input, #date-form select, #date-form button, #date-surface .date-steps button')]
-        .every(row => row.disabled)
+      // The DERIVED controls follow the outcome; the controls that leave a day
+      // do not. Disabling the whole surface hid no stale value that clearing
+      // does not already hide, and it stranded the reader on the failure with
+      // nothing that could reach another day. See setDateSurfaceEnabled.
+      disabled: [...document.querySelectorAll('#reader-bible, #reader-orations, #reader-formulary, #reader-ordinary-lang, #reader-ordinary-option, #previous-date, #next-date')]
+        .every(row => row.disabled),
+      escapable: [...document.querySelectorAll('#reader-date, #reader-missal, #date-form .surface-apply, #today-date')]
+        .every(row => !row.disabled)
     },
     details: document.querySelector('[data-reader-details]').innerText,
     state: dayReaderDebug.state,
@@ -1413,11 +1419,15 @@ async function runAssertions(cdp, base) {
     const invalidDate = await evaluate(cdp, `({
       text: document.querySelector('#date-surface').innerText,
       values: [...document.querySelectorAll('#date-form input, #date-form select')].map(row => row.value),
-      disabled: [...document.querySelectorAll('#date-form input, #date-form select, #date-form button, #date-surface .date-steps button')].every(row => row.disabled)
+      disabled: [...document.querySelectorAll('#reader-bible, #reader-orations, #reader-formulary, #reader-ordinary-lang, #reader-ordinary-option, #previous-date, #next-date')].every(row => row.disabled),
+      escapable: [...document.querySelectorAll('#reader-date, #reader-missal, #date-form .surface-apply, #today-date')].every(row => !row.disabled)
     })`);
     assert.doesNotMatch(invalidDate.text, stalePattern);
     assert.ok(invalidDate.values.every(value => value === ''), JSON.stringify(invalidDate));
     assert.equal(invalidDate.disabled, true);
+    // ...and the way out of the failure is still live. A cleared control shows
+    // no prior selection; a disabled one shows no way back.
+    assert.equal(invalidDate.escapable, true);
     await escape(cdp);
     await click(cdp, '[data-reader-action="details"]');
     const invalidDetails = await evaluate(cdp, `document.querySelector('[data-reader-details]').innerText`);

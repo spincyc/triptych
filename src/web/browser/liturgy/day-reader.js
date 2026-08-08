@@ -410,21 +410,50 @@
     };
   }
 
+  // The controls that DERIVE from a resolved day follow the outcome; the
+  // controls that LEAVE a day do not.
+  //
+  // A failed outcome used to disable this surface entire, which is right about
+  // stale state and wrong about escape: the date box, the missal select, Apply
+  // and all three step buttons were the only things on the page that could
+  // reach a different day, so a reader who stepped to a day that would not
+  // render was left with a dead surface and no way out but the URL bar. That is
+  // what "selecting a previous day makes the date box unresponsive" is.
+  //
+  // What the failure rule actually protects is that no PRIOR SELECTION shows
+  // through a failure, and that is kept: `resetDateSurface` still empties the
+  // date and every derived select, so these controls stay live holding nothing.
+  // Previous and Next need a resolved day to step from and so follow `enabled`;
+  // Today needs none, because today is a constant and not prior state, and it
+  // is the guaranteed way back.
   function setDateSurfaceEnabled(enabled) {
-    [dateInput, missalSelect, bibleSelect, orationsSelect, formularySelect,
+    [bibleSelect, orationsSelect, formularySelect,
       ordinaryLangSelect, ordinaryOptionSelect].forEach(function (control) {
       control.disabled = !enabled;
     });
-    dateForm.querySelector('.surface-apply').disabled = !enabled;
-    dateStepButtons.forEach(function (button) { button.disabled = !enabled; });
+    const navigable = Boolean(runtime.missals && runtime.missals.length);
+    dateInput.disabled = !navigable;
+    missalSelect.disabled = !navigable;
+    dateForm.querySelector('.surface-apply').disabled = !navigable;
+    dateStepButtons.forEach(function (button) {
+      button.disabled = button.id === 'today-date' ? !navigable : !enabled;
+    });
   }
 
   function resetDateSurface() {
     dateInput.value = '';
-    [missalSelect, bibleSelect, orationsSelect, formularySelect,
+    [bibleSelect, orationsSelect, formularySelect,
       ordinaryLangSelect, ordinaryOptionSelect].forEach(function (select) {
       select.replaceChildren();
     });
+    // The missal list is manifest data, not selection state: it is the same
+    // list whatever day failed. Emptying it left an enabled select with nothing
+    // in it, which is a second dead end wearing the first one's clothes. Its
+    // VALUE is still cleared below, so no prior missal shows through.
+    T.fillSelect(missalSelect, (runtime.missals || []).map(function (row) {
+      return { value: row.id, label: row.label, title: row.edition || row.code || row.id };
+    }));
+    missalSelect.value = '';
     formularyField.hidden = true;
     ordinaryLangField.hidden = true;
     ordinaryOptionField.hidden = true;
