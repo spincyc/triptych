@@ -1791,3 +1791,114 @@ That is a visual acceptance, and no visual contract has been accepted. It
 belongs to the shared-shell wave, where the same commit can carry the remap and
 the evidence. The gate already exercises `forced-colors` at 393×852 on every
 route, so the day someone lands it, the before-and-after is one command.
+
+## 17. What lets the surface branches run at the same time
+
+The next wave splits into `impl/library`, `impl/reader`, `impl/catena`,
+`impl/sources`, `impl/history`, `impl/law`, `impl/scripture` and `impl/search`,
+plus the sublanes `impl/browser-gates`, `impl/shell` and `impl/structural-fixes`.
+Whether they can genuinely run in parallel is a property of the tree, not of the
+plan, so it was measured.
+
+### 17.1 The coupling is looser than the plan assumes
+
+Every non-liturgy page loads exactly two things: `shared/browser-core.*` and the
+files in its own entrance directory. There is no cross-entrance *asset*
+reference anywhere. `browser-core.js` contains no header, navigation, footer,
+masthead or breadcrumb construction at all — zero matches.
+
+Two consequences follow, and both correct the plan.
+
+**B0 does not block the six instrument lanes.** The shared shell is built at the
+generator seam, not in `browser-core.js`, so nothing an instrument lane does to
+its own directory waits on it. The plan's dependency column says otherwise.
+
+**The unblocking that §11 step 6 promised never arrives, and was never needed.**
+That step proposed promoting `reader-shell.js` into `shared/` and claimed it
+would unblock lanes E, F, G, H and I. D2 withdrew the step, because the file
+belongs to the liturgy deliverable. Those five lanes were not blocked in the
+first place. Five are simultaneously parallel-safe today.
+
+What *is* coupled across entrances is links, not assets: seven hand-written
+footer link lists, no two alike, fifteen of the forty-nine possible edges
+missing. Editing them does not conflict — they are in different files — but they
+drift, which is what produced the missing edges. Replacing them with one
+generated navigation is a single change touching all seven, and therefore
+belongs to `impl/shell` alone and to no surface lane.
+
+### 17.2 The files that actually conflict, in order
+
+| Rank | Path | Why it conflicts | The discipline that fixes it |
+| --- | --- | --- | --- |
+| 1 | `release/public-alpha.json` | `rights_record_sha256` at line 22 is rewritten by every refresh. The hash rows are path-sorted and merge cleanly; that one line never does. | Treat as generated: regenerate, never merge. Better, move the derived line out of the merged record. |
+| 2 | `release/rights/public-alpha-2026-07-15.md` | Moves in lockstep with the record above. | Same. |
+| 3 | `tools/public-alpha` | Six branches need it, but only at three hot spots: the page-class map, the layout replacements, and the constants block. | Single owner: `impl/shell`. Surfaces register through an ordered list rather than editing the tool. |
+| 4 | `release/public-alpha/assets/site.css` | 562 lines on all 144 pages, and it owns the section colours. | Per-kind stylesheet — blocked today by §17.3. |
+| 5 | `Makefile` | `.PHONY`, `help` and `check` pack three or four target names per line, so two branches adding a gate collide on the same line. | One name per line. |
+| 6 | `shared/browser-core.{css,js}` | 33 distinct `T.*` members used outside liturgy across 751 non-liturgy call sites. | Single owner, additive only. |
+| 7 | `PROJECT-WORK.md`, `promised-deliverables.toml` | Both prepend, and the marker/id pairing binds them to each other. | Append at end, one subsection per lane. |
+
+`src/web/browser/liturgy/**` — 27 files, 14,588 lines — belongs to no lane at
+all under D2 and D18, and twelve of its paths are named as promised-deliverable
+evidence, so they cannot even be moved.
+
+One lane is misnamed. `impl/reader` owns no file under `src/web/browser/`; its
+entire diff lands in `tools/public-alpha` and `site.css`. It is a foundation
+lane wearing a surface lane's name, and scheduling it beside `impl/shell`
+rather than beside the instrument lanes avoids a guaranteed collision on both
+files.
+
+### 17.3 The single change that would reduce future conflict most
+
+A site-level asset is registered in six places: the layout marker, the
+`wrap_in_layout` replacement key, the fixed-input path set, the copy tuple, the
+expected-artifact list, and the static-source list. That is why nobody splits
+`site.css`, and why every visual change to the home page, the long-form reader
+and the shared chrome has to land in one 562-line file that four or five
+branches want at once.
+
+One `site_assets()` derived once and consumed by all six makes a per-kind
+stylesheet a one-line change. It also closes a gap worth naming on its own: the
+roughly forty browser CSS and JS files copied into the artifact are checked for
+presence but never compared to their source, so a copy that silently diverged
+would pass verification.
+
+This is the derive-once rule in `guidance/the-shape.md` applied to the one place
+the repository still restates a list six times. It is not a visual decision and
+it needs no design contract.
+
+### 17.4 Refreshing the release bindings without signing someone else's work
+
+Fifty-three files under `src/web/browser/` are SHA-256-bound. The refresh is the
+likeliest way two parallel branches corrupt each other, because an unfiltered
+run signs whatever a sibling has mid-flight, and a signature means someone
+reviewed those bytes.
+
+The procedure: be the only agent in your own checkout; refresh immediately
+before the landing commit, never mid-flight; confirm `git status --short` shows
+only your paths; then
+
+    make refresh-release-bindings ONLY="src/web/browser/<surface>"
+
+`ONLY` alone cannot see a file you *added* or *deleted*, because the refresh
+iterates the recorded set. Adding or removing a browser `.html`, `.css` or `.js`
+needs `ADOPT=1 ONLY="…"` — and then an audit, because `ADOPT=1` will also adopt
+a sibling's new files and retire paths they deleted.
+
+Verify with `make check-release-bindings`, then `make public-preview` and
+`make verify-public-preview`, which is the only place link verification runs.
+Never use `ADOPT=1` without `ONLY`, and never run `approve-release`. On a merge
+conflict in either record, take either side and re-run the filtered refresh: the
+hash is a pure function of the tree, so the record is derived, not negotiated.
+
+### 17.5 What each branch must run, and what is already red
+
+`make check` takes about 310 seconds and is red at the base on
+`check-tool-registry` and `check-examples`. `check-browser-gate` takes about 74
+seconds and reports 1,583 passes against 146 failures on the three known publish
+defects. Both rednesses are inherited.
+
+The rule that follows is the one that matters for parallel work: **compare
+failure sets, never exit codes.** Every branch here will see a non-zero exit
+from gates it did not break, and a lane that reads exit status alone will either
+panic or, worse, learn to ignore the gate.
