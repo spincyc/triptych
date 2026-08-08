@@ -1656,3 +1656,63 @@ contradiction: the guidance advice is a stash alternative for one agent inside a
 shared checkout, and the plan's rule is about parallel-lane isolation. Separate
 full checkouts satisfy both. But separate checkouts do not remove the shared-index
 hazard when two agents share one directory.
+
+## 14. Coordinator dispositions, and what they settle
+
+Section 13 listed sixteen conflicts and returned them for judgment. The
+coordinator answered them on 2026-08-08 in the v2 master plan as amendments
+D1–D20, and that review also disposed of the foundation lanes: A0, A1 and the
+Claude reconnaissance accepted; A2 accepted with these amendments; A3 accepted
+as foundation *direction* rather than pixel acceptance of any production route;
+A4 accepted with bounded-Jump and protected-liturgy amendments; the neutral
+static and browser gates accepted for integration.
+
+Only the parts that bind implementation are restated here, because a decision a
+future agent cannot find is a decision that will be re-litigated. The full text
+lives in the master plan. Where an amendment closed a §13 conflict, the conflict
+is named so nobody reopens it without new evidence.
+
+| Closes | Amendment | What it binds in code |
+| --- | --- | --- |
+| C1, and §12 R1 | D2, D18 | `reader-shell.js`, `reader-instrument.css`, canonical `liturgy/day.html` and `liturgy/index.html` are a protected surface family until the Live Reader ritual-flow deliverable closes. No fifth primary action, no second modal owner, no literal corpus masthead above the reader, no print redesign, no site-wide Search in the reader shell. §11 step 6 — promoting `reader-shell.js` to `shared/` — is therefore **withdrawn, not deferred**: reuse its ideas, not the owned file. |
+| C2 | D13 | Jump is a bounded fixture. Production search is J0→J1→J2 and no route may present a title fixture as global search. The 181-pixel first-viewport measurement stands as the constraint any later search entry point must respect. |
+| C3 | D7 | The seven editorial portals keep their names, order and colour identities. Task entrances go beside or above them. Changing the portal table itself is a `guidance/repository.md` amendment in the same commit. The generator's `README.md` preamble transform must not be broken silently. |
+| C4 | D19 | Claude may commit and push its assigned feature branches. Neither agent may merge or push `main`, or trigger public cutover. Never force-push. |
+| C5 | D9 | `guidance/web-editions.md` is controlling for the publication Reader lane. No second editable copy of publication prose; no edit of `web/<provider>/*.md` for presentation; rights colophon and revision identity preserved; re-run the currency checks after any converter change. |
+| C6 | D10 | Durable truth lives in the tracked guidance and ledger, not in `build/agent-continuity/*`. That directory may still carry handoffs, screenshots and temporary continuity, but no fact required by a future agent may live there alone. |
+| C8 | D11 | One site-wide matrix: 1440×900, 1024×768, 768×1024, 393×852, 320×852 — plus 200% text, exact 320-pixel reflow, 400% where meaningful, keyboard-only, forced colors, reduced motion, print where not delegated to the PDF, no-JavaScript truth, and console/network/HTTP/accessible-name checks. No pixel-diff baseline before a real-data surface has independent visual acceptance. |
+| C9 | D1, D8 | `/texts/` is labelled **Publications** and the route is not renamed. A faceted Publications surface is a discovery view; each publication keeps exactly one owning catalogue and one canonical PDF home. |
+| C10 | D12 | No webfont, no icon library, no framework migration, no root-relative link, no new asset type the generator rejects. Design to system stacks and CSS-drawn marks. |
+| C11 | D13 | A generated search index is a new writer under `src/web/data/` and carries its writer line, tool registration, smoke test and additivity proof in the same commit. |
+| C12 | D14 | Only proven edges may be shown: containment, passage→artifact/segment, Catena fragment→Scripture locus, Catena passage→Source Library passage, act descent and change, document→catalogue page, Mass→propers→Scripture. `translation_of`, `used_by`, `derived_from`, canon correspondences and Law→Source citations are **not** to be synthesised. Each is a schema and generator work unit first. |
+| C13 | D15 | Progressive disclosure may defer hashes, extended provenance, long rights apparatus and secondary metadata. It may never defer the licence acknowledgement at point of use, a withheld-text reason, a typed absence or unread or unsupported or invalid state, or the distinction between availability and redistribution. These must survive semantically, not merely as a colour or a class. |
+| C15 | D16 | Local reading progress is deferred. If it returns it is storage-optional and an explicit URL always wins. Day keeps its deliberate no-memory behaviour. |
+| C16 | D20 | Separate full checkouts, never worktrees, never two agents in one working directory. |
+| — | D3 | "Independent treatment" is the human-facing label for separately produced provider treatments; "parallel treatment" is the relationship label when two are intentionally connected. Provider is always explicit metadata. Never call these Source Library editions unless they satisfy the edition model. |
+| — | D5 | The token direction is accepted as roles, not frozen pixels. Type sizes, masthead density and spacing may move on real-data evidence. No production design may depend on a font being installed. |
+| — | D6 | Top-level destinations: Publications, Sources, Scripture, Liturgy, History, Law, Commentary. The wordmark is a Home affordance. Density may collapse to a Menu earlier than any prototype suggests — but not by shrinking text. |
+| C7, C14 | — | Still open. The roadmap's M6 framing was overtaken by the shipped cutover and needs a reconciling row, and a new `guidance/corpus-browser-*.md` family still needs its `AGENTS.md` routing rows. Both are writes to files this lane does not own; see §15. |
+
+D17 restates this document's own findings as accepted engineering debt and adds
+the instruction that matters most: fix them incrementally, with path-specific
+commits and before-and-after gates. It is not authority for a browser-stack
+rewrite, and §11's larger extractions stay proposals until a surface lane needs
+them.
+
+## 15. What this lane does not own
+
+Two records that ought to carry part of the story cannot be written from here
+without creating a second owner for one fact, which is exactly what D10
+forbids.
+
+`guidance/corpus-browser-roadmap.md` is the design lane's ledger and exists on
+its branch, not on this one. Writing a second copy here would guarantee a
+conflict at integration and leave two answers to the same question. The B0/B1
+rows belong in that file, written once, by whoever holds the integration
+branch. This lane supplies the row content in its handoff so that recording it
+is a paste rather than a re-derivation.
+
+The `AGENTS.md` routing rows for the full `guidance/corpus-browser-*` family
+have the same shape of problem: this branch added the row for this document
+alone, because it is the only one of the family that exists here. The remaining
+rows land with the files they route to.
