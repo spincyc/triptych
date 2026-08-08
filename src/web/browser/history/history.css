@@ -224,20 +224,18 @@
   word-break: break-word;
 }
 
-/* ONE NAME, TWO COMPONENTS. `.field` in `shared/browser-core.css` is a control
-   in the bar above a reading page: a label over a select, sized for a thumb.
-   `.field` here is a line of one change — a name, an old value, an arrow and a
-   new value — and this page has no control bar at all. The two have nothing in
-   common but the word, and this file re-declares `display` and `gap` over the
-   shared rule, so what renders is this one and the leftovers
-   (`flex-direction`, `flex`, `min-width`) are inert on a grid that is not a
-   flex item.
-   It renders correctly by luck rather than by construction, and the fix is a
-   rename — `.change-field` — which is a change to `history.js` and so is not
-   made here. Said out loud rather than left for the next reader to rediscover:
-   `.field-name`, `.field-pair`, `.field-arrow` and `.field-before` below all
-   belong to THIS component and none of them to the control bar. */
-.field {
+/* A LINE OF ONE CHANGE — a name, an old value, an arrow and a new value.
+   It was called `.field` and it collided with `.field` in
+   `shared/browser-core.css`, which is a different component entirely: a control
+   in the bar above a reading page, a label over a select sized for a thumb.
+   This page has no control bar at all. The two rules overlapped on every change
+   row, and the row rendered correctly only because this file loads second and
+   re-declares `display` and `gap` — a correctness that depended on the order of
+   two `<link>` elements. The name now says which component it is, and nothing
+   here reaches the control bar or is reached by it.
+   `.change-field-name`, `.change-field-pair`, `.change-field-arrow` and
+   `.change-field-before` below all belong to THIS component. */
+.change-field {
   display: grid;
   grid-template-columns: 5.5rem 1fr;
   gap: 0.3rem 0.7rem;
@@ -245,7 +243,13 @@
   align-items: baseline;
 }
 
-.field-name {
+/* A row that sets `display` must say what `hidden` means, or the attribute
+   loses to the grid. The shared file states that rule for its own `.field`;
+   nothing here hides a change row today, and the row must not start showing
+   through if something does. */
+.change-field[hidden] { display: none; }
+
+.change-field-name {
   font-family: var(--sans);
   font-size: 0.68rem;
   font-weight: 700;
@@ -254,26 +258,26 @@
   color: var(--ink-faint);
 }
 
-.field-pair {
+.change-field-pair {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   gap: 0.5rem;
   align-items: baseline;
 }
 
-.field-pair-long {
+.change-field-pair-long {
   grid-template-columns: 1fr;
 }
 
-.field-pair-long .field-arrow {
+.change-field-pair-long .change-field-arrow {
   text-align: left;
 }
 
-.field-arrow {
+.change-field-arrow {
   color: var(--ink-faint);
 }
 
-.field-before .value {
+.change-field-before .value {
   text-decoration: line-through;
   text-decoration-color: rgba(157, 58, 47, 0.55);
 }
@@ -392,13 +396,13 @@
    no room for two columns, so the pair stacks and the arrow that pointed
    across the gap points down the page instead. */
 @media (max-width: 40rem) {
-  .field {
+  .change-field {
     grid-template-columns: 1fr;
   }
-  .field-pair {
+  .change-field-pair {
     grid-template-columns: 1fr;
   }
-  .field-arrow {
+  .change-field-arrow {
     text-align: left;
   }
 }
