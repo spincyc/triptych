@@ -202,7 +202,20 @@ directives carry one. Join on the NUMBER, not on the Introit incipit: `Os iusti`
 heads both the Confessor-not-a-Bishop Mass and the Abbots' Mass, and `Me
 exspectaverunt` heads both a Virgins' and a non-Virgins' Mass, so the incipit
 alone is ambiguous where the number never is. The Commons are already complete,
-so most of what looks like missing text is a missing pointer.
+so a large part of what looks like missing text is a missing pointer.
+
+**But the Commons are complete in orations only, which the census does not say.**
+Measured 2026-08-08 across all thirty: 30 Postcommunions, 29 Collects, 29 Secrets
+-- and 6 Introits, 6 Gospels, 4 Lessons, 3 Graduals, 3 Alleluias, 3 Offertories,
+2 Epistles, 2 Communions. `Masses holding only placeholders` reads 0 for the
+common section because every one of them holds real orations, which is true and
+is not the same as complete. So pointing a saint's day at its Common gives that
+day its Secret and its Postcommunion and no scripture at all, which is what 8
+August does now. **Filling the Commons' scripture is the unlock**: it is thirty
+masses of work, not ninety-four, and it completes every day that points at them.
+Citations survive this text layer well -- they are short printed references, not
+prose under a drop capital -- so the objection that stopped the orations does not
+apply to them.
 
 What the number does NOT settle is the day's own orations, which still have to
 be read, and the drop-capital of each oration OCRs as garbage (`^\mnipotens`)
@@ -265,7 +278,7 @@ carries the identical block.
 | roman-1962 | seasonal | 128 | 1138 | 5 |
 | roman-1962 | christological | 8 | 66 | 0 |
 | roman-1962 | marian | 18 | 77 | 4 |
-| roman-1962 | sanctoral | 307 | 1009 | 94 |
+| roman-1962 | sanctoral | 307 | 1009 | 39 |
 | roman-1962 | common | 30 | 152 | 0 |
 | postconciliar | seasonal | 67 | 832 | 2 |
 | postconciliar | christological | 7 | 23 | 3 |
@@ -292,13 +305,13 @@ carries the identical block.
 | --- | ---: | ---: | ---: |
 | Masses | 6 | 491 | 269 |
 | Propers | 6 | 2442 | 1513 |
-| — named `Placeholder` | 6 | 103 | 55 |
+| — named `Placeholder` | 6 | 48 | 55 |
 | — inside a `forms` block | 0 | 147 | 140 |
 | — carrying a `cycles` mapping | 0 | 0 | 253 |
-| Masses holding only placeholders | 6 | 103 | 53 |
-| Masses taking a formulary from another entry | 0 | 80 | 0 |
+| Masses holding only placeholders | 6 | 48 | 53 |
+| Masses taking a formulary from another entry | 0 | 135 | 0 |
 | Propers taking their text from another entry | 0 | 53 | 0 |
-| Propers that are not placeholders | 0 | 2339 | 1458 |
+| Propers that are not placeholders | 0 | 2394 | 1458 |
 | — of those, scripture-bearing | 0 | 1901 | 1185 |
 | Encoded passages | 0 | 2218 | 1721 |
 | Distinct books cited | 0 | 57 | 63 |
