@@ -287,11 +287,11 @@ carries the identical block.
 | Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
 | roman-pre-1955 | seasonal | 6 | 6 | 6 |
-| roman-1962 | seasonal | 128 | 1138 | 5 |
+| roman-1962 | seasonal | 128 | 1152 | 3 |
 | roman-1962 | christological | 8 | 66 | 0 |
-| roman-1962 | marian | 18 | 77 | 4 |
-| roman-1962 | sanctoral | 307 | 1009 | 39 |
-| roman-1962 | common | 30 | 152 | 0 |
+| roman-1962 | marian | 18 | 86 | 2 |
+| roman-1962 | sanctoral | 307 | 1078 | 26 |
+| roman-1962 | common | 30 | 334 | 0 |
 | postconciliar | seasonal | 67 | 832 | 2 |
 | postconciliar | christological | 7 | 23 | 3 |
 | postconciliar | marian | 14 | 52 | 4 |
@@ -316,16 +316,16 @@ carries the identical block.
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 6 | 491 | 269 |
-| Propers | 6 | 2442 | 1513 |
-| — named `Placeholder` | 6 | 48 | 55 |
+| Propers | 6 | 2716 | 1513 |
+| — named `Placeholder` | 6 | 31 | 55 |
 | — inside a `forms` block | 0 | 147 | 140 |
 | — carrying a `cycles` mapping | 0 | 0 | 253 |
-| Masses holding only placeholders | 6 | 48 | 53 |
-| Masses taking a formulary from another entry | 0 | 135 | 0 |
+| Masses holding only placeholders | 6 | 31 | 53 |
+| Masses taking a formulary from another entry | 0 | 161 | 0 |
 | Propers taking their text from another entry | 0 | 53 | 0 |
-| Propers that are not placeholders | 0 | 2394 | 1458 |
-| — of those, scripture-bearing | 0 | 1901 | 1185 |
-| Encoded passages | 0 | 2218 | 1721 |
+| Propers that are not placeholders | 0 | 2685 | 1458 |
+| — of those, scripture-bearing | 0 | 2192 | 1185 |
+| Encoded passages | 0 | 2598 | 1721 |
 | Distinct books cited | 0 | 57 | 63 |
 | Distinct slot names | 1 | 119 | 89 |
 
