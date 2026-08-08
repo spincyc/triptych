@@ -919,6 +919,60 @@ The default Chrome binary in the harnesses is
 `/usr/bin/google-chrome-stable`, which does not exist on this host;
 `TRIPTYCH_CHROME` overrides it, and `Makefile:72-76` documents that.
 
+**They work, and their real prerequisite is written down nowhere.** Run against
+a checkout that has not built the preview artifact, all four fail in ways that
+look like rot: 0 of 25 assertions, every one "Timed out waiting for … readiness";
+a harness that emits no report at all; a harness that appears to run zero
+assertions. None of that is what it looks like. Three of the four fetch from
+`build/public-alpha/preview/` — `liturgy_reader_visual_reset_browser.mjs:15-16`
+hardcodes `/build/public-alpha/preview/liturgy/` and
+`/build/public-alpha/preview/browse`, and `day_reader_integration_browser.mjs:16`
+and `propers_reader_integration_browser.mjs:16` hardcode the same data root — so
+the server answers every request 404, the pages never reach ready, and the
+timeout is the symptom rather than the fault. `day_reader_integration` waits for
+a document titled `Day — Triptych`; a 404 body is `text/plain`, so it throws
+before writing its report and stdout is empty. `propers_reader_integration`
+writes its report to **stderr**, so reading stdout alone shows nothing and looks
+like a harness that ran nothing.
+
+With `make public-preview` run first — five seconds, exit 0 — and with no flag
+change and the same `TRIPTYCH_CHROME=/usr/bin/chromium`, the picture inverts:
+
+| Harness | Assertions | Exit |
+| --- | --- | --- |
+| `liturgy_reader_shell_browser.mjs` | **18 of 18 pass** | 0 |
+| `day_reader_integration_browser.mjs` | 39 of 41 pass | 1 |
+| `propers_reader_integration_browser.mjs` | 30 of 32 pass | 1 |
+| `liturgy_reader_visual_reset_browser.mjs` | 22 of 25 pass | 1 |
+
+Chromium is not the problem and never was: `/usr/bin/chromium` 151.0.7922.108
+drives all four correctly, `setPageScaleFactor` and forced-colors emulation
+included. The launch flags are exonerated. What was missing is a prerequisite no
+harness states, no Makefile target expresses and no comment mentions — which is
+exactly why four working harnesses read as broken. Any target that runs them
+must depend on `public-preview`, and a harness serving the artifact should fail
+loudly on a 404 at its own data root instead of waiting out a readiness flag
+that cannot arrive.
+
+**The seven residual failures are one finding, not seven.** Every one is a
+coverage-or-absence notice the page no longer renders: "partial coverage stays
+explicit and subordinate to held text" (`true !== false`); two assertions
+matching `/not yet transcribed/i` against an empty string; "explicit readable
+formulary and material coverage remain explicit"; one matching
+`/not held|not yet transcribed/i` against an empty string; and "partial
+production coverage produces one concise reliance notice", twice. They fall
+across three harnesses and they all say the same thing: the text that declares
+what is *not* held is absent where the accepted contract puts it.
+
+That is the invariant this repository is built around — a page that shows
+nothing where a prayer belongs has told the reader the Mass omits it. The
+in-progress ritual-flow phase set out to make source and apparatus notes
+quieter, and these seven assertions are the accepted contract for how quiet they
+may become. This document does not diagnose it: `day-reader.js`,
+`propers-reader.js` and `reader-instrument.css` are that deliverable's evidence
+paths and are not this lane's to touch. It is recorded because nothing was
+running these harnesses, so nothing had reported it.
+
 ### JS with no test at all
 
 Of 26 non-fixture browser JS files, twelve are executed under node by some
@@ -1119,13 +1173,20 @@ record. Verify: the same counts reproduce in a clean checkout at
 `c27d69153`. This exists so that no later step can be credited with a
 regression it did not cause, and so that no later step can hide behind the red.
 
-**2. Determine why the four Chromium harnesses fail. Depends on 1.** Run each
-with `TRIPTYCH_CHROME=/usr/bin/chromium` and separate chromium-versus-chrome
-differences from genuine staleness. Verify: a written disposition per harness,
-each either "fails for a host reason, and here is the fix" or "fails against the
-code, and here is the assertion." Until this is answered, no browser-visible
-change has an oracle, and every subsequent step's evidence is weaker than it
-looks. This is the single highest-value early step.
+**2. Give the four Chromium harnesses a target that runs them. Depends on 1.**
+This step was originally written as "determine why they fail"; that is now
+answered in §9 and the answer is that they do not fail. They need
+`make public-preview` first, and with it they return 18/18, 39/41, 30/32 and
+22/25 under `/usr/bin/chromium`. What remains is mechanical: a
+`check-browser-harnesses` target that depends on `public-preview`, resolves
+`TRIPTYCH_CHROME` and skips with a stated reason when no browser resolves,
+reads `propers_reader_integration`'s report from stderr where that harness
+writes it, and stays out of `check:` for the same reason `check-browser-gate`
+does. Verify: the target reproduces the four counts above. Do not adjust an
+assertion to raise them — the seven that fail are one real finding about
+absence notices, and §13-C1 governs who may act on it. Until a target exists,
+every browser-visible change is being made without the oracle that was sitting
+in the tree the whole time.
 
 **3. Wire a narrow browser-model gate into `make check`. Depends on 2.** Add a
 `check-browser-models` target running the subset of `tools/tests` that exercises
