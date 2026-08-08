@@ -477,7 +477,24 @@ contributes its own `<main>`. Two `main` landmarks, invalid HTML, and — becaus
 target is the outer wrapper rather than the reading document. Every browser page
 is affected. No harness catches it, because every Chromium harness loads the
 repository or preview page and the preview-build assertions test robots and
-links, not landmark nesting. And `history.js:341-348` sets `role="img"` on the
+links, not landmark nesting.
+
+One correction, because this document earlier let two separate things be read as
+one. The layout's own skip link **is** present and **does** point at an element
+that exists, on all thirteen routes. The gate's twenty-seven
+`skip-link-targets-existing-element` failures are therefore not a missing or
+dangling skip link. They are a focus trap: `propers-reader.js:1020` calls
+`readerShell.open('browse', …)` on load when no formulary is deep-linked, and
+`reader-shell.js:220` opens that surface with `showModal()`, so the rest of the
+document is inert and Tab never reaches the skip link at all. It affects
+`/liturgy/index.html`, `/liturgy/propers-reader.html` and
+`/liturgy/reader-visual-reset-propers.html`. No generator change can fix it: it
+is instrument-owned and both files sit inside the protected reader deliverable,
+so it belongs to that deliverable and to no corpus lane. The stripped-skip-link
+finding above stands and is a separate, milder matter about which landmark the
+surviving link targets.
+
+And `history.js:341-348` sets `role="img"` on the
 map's `<svg>`, which prunes all descendants from the accessibility tree — the 59
 station groups at `:372-379` carry `role="button"`, `tabindex="0"` and full
 `aria-label`s, and none of it is exposed. A screen-reader user tabs through 59
