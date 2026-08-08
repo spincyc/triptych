@@ -254,6 +254,51 @@ library already tracks). Leaf n498 gives Frances of Rome's Collect entire and
 without damage. This is the route, and it is the same one the 1861 English was
 collated by at 200 and 400 dpi.
 
+## What a public-domain printing can and cannot supply
+
+Sixteen agents read the 1862 page images on 2026-08-08 and settled the ceiling
+this project has been circling for a week.
+
+**1962: 66 of the 80 missing Collects were read and landed.** The rest are not a
+reading failure. A pre-1931 printing cannot contain a saint canonised after it,
+and each of these was confirmed by opening the leaf where the day would be, not
+by failing to grep: John Vianney (1925, leaf 597 shows 8 August as Ss. Cyriaci,
+Largi et Smaragdi), John Eudes (1925), Peter Canisius (1925), Laurence of
+Brindisi (1881), Claret (1950), Gregory Barbarigo (1960), Albert the Great,
+Ephraem. Others need no Collect at all -- Evaristus, the Lateran Dedication and
+Cornelius & Cyprian take their whole Mass from a Common and print no proper
+oration, so the right entry there is the pointer alone.
+
+**Postconciliar: 29 of 53 have a publishable source, 22 have none, 2 are
+undecided.** The negatives are one fact wearing many names -- Fatima, Guadalupe,
+Kolbe, Teresa of Calcutta, Padre Pio, Faustina, Paul VI, John XXIII, John Paul II,
+Juan Diego, Mother of the Church: every one canonised or inserted after 1931.
+Two findings worth acting on. **Rita of Cascia** was canonised in 1900, so she is
+absent from the 1862 but should be in the 1920 typica, which this library tracks
+as an edition directory WITH NO FULL-TEXT ARTIFACT -- the one case where a
+pre-1931 route plausibly exists and is not yet held. And the 1862's
+`pro aliquibus locis` **appendix carries its own later imprimaturs (1863, 1865,
+1866) and full proper Masses the Tridentine body lacks** -- Paul of the Cross,
+Margaret Mary Alacoque, John Leonardi, Peter Claver, Angela Merici, Our Lady of
+Loreto. Three of one lane's seven positives rest entirely on it. It deserves a
+systematic sweep; a wave that reads only the main sanctoral will report false
+absences.
+
+**What 29 "publishable" does NOT mean.** The agents established that a
+public-domain Latin oration exists for that saint. They did NOT establish that
+the 2002 Missal's oration is that text -- the MR 2002 is in copyright and not
+held here, so the per-oration match stays an editorial determination. Denis,
+Clement and Catherine were flagged as likely revisions.
+
+**Reading the 1862: leaf = printed page + 85**, derived independently by six
+lanes and constant through the main body. It breaks in the appendices, where the
+OCR text order does not track physical leaves; there, read one page, note its
+printed folio, and step by folio. Two traps the sanctoral sets: its *Festa
+Januarii* opens at 11 January, so 22 December to 10 January sits in the
+Temporale (Telesphorus, 5 January, is at leaf 116, some 350 leaves from where a
+date-ordered guess puts him); and the Proprium de Sanctis begins at 29 November
+and ends at 26 November, so late-November feasts are split across both ends.
+
 ## Commands to check a claim
 
 ```sh
@@ -310,8 +355,8 @@ carries the identical block.
 | roman-pre-1955 | seasonal | 6 | 6 | 6 |
 | roman-1962 | seasonal | 128 | 1152 | 3 |
 | roman-1962 | christological | 8 | 66 | 0 |
-| roman-1962 | marian | 18 | 86 | 2 |
-| roman-1962 | sanctoral | 307 | 1134 | 10 |
+| roman-1962 | marian | 18 | 87 | 1 |
+| roman-1962 | sanctoral | 307 | 1194 | 6 |
 | roman-1962 | common | 30 | 334 | 0 |
 | postconciliar | seasonal | 67 | 832 | 2 |
 | postconciliar | christological | 7 | 23 | 3 |
@@ -337,14 +382,14 @@ carries the identical block.
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 6 | 491 | 269 |
-| Propers | 6 | 2772 | 1513 |
+| Propers | 6 | 2833 | 1513 |
 | — named `Placeholder` | 6 | 31 | 55 |
 | — inside a `forms` block | 0 | 147 | 140 |
 | — carrying a `cycles` mapping | 0 | 0 | 253 |
-| Masses holding only placeholders | 6 | 15 | 53 |
+| Masses holding only placeholders | 6 | 10 | 53 |
 | Masses taking a formulary from another entry | 0 | 161 | 0 |
 | Propers taking their text from another entry | 0 | 53 | 0 |
-| Propers that are not placeholders | 0 | 2741 | 1458 |
+| Propers that are not placeholders | 0 | 2802 | 1458 |
 | — of those, scripture-bearing | 0 | 2192 | 1185 |
 | Encoded passages | 0 | 2598 | 1721 |
 | Distinct books cited | 0 | 57 | 63 |
