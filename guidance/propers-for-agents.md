@@ -217,6 +217,18 @@ Citations survive this text layer well -- they are short printed references, not
 prose under a drop capital -- so the objection that stopped the orations does not
 apply to them.
 
+**Why those 55 days carry a `Collect` named placeholder, and why the census reads
+55 unaccounted because of it.** A day that takes a Common `praeter orationem`
+has its OWN Collect. Leave the slot empty and the Common's Collect resolves
+through and is printed as the day's -- for 8 August that is `Deus, qui nos beati
+N. Confessoris tui`, a generic prayer with the saint's name left as `N.`,
+presented as if it were St John Vianney's. Naming the placeholder `Collect`
+overrides the borrowed one and blocks that. The cost is that
+`mass-propers census` counts a Collect-family slot with no English, so the
+1962 `unaccounted` figure went 0 -> 55. The figure is TRUE: those days' own
+Collects are not transcribed at all. A zero bought by printing the wrong prayer
+is the worse trade, and this was tried both ways on 2026-08-08 before choosing.
+
 What the number does NOT settle is the day's own orations, which still have to
 be read, and the drop-capital of each oration OCRs as garbage (`^\mnipotens`)
 and has to be repaired from the following letters.
