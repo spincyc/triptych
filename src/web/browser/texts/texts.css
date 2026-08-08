@@ -20,7 +20,10 @@
 .catalogue {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  /* min() keeps the track from demanding more than the viewport has. Above
+     22rem of container it is inert; below it the card reflowed off-screen and
+     took its text with it. */
+  grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr));
   align-items: start;
 }
 
