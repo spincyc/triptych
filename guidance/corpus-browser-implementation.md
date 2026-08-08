@@ -1919,3 +1919,48 @@ The rule that follows is the one that matters for parallel work: **compare
 failure sets, never exit codes.** Every branch here will see a non-zero exit
 from gates it did not break, and a lane that reads exit status alone will either
 panic or, worse, learn to ignore the gate.
+
+## 18. The ownership disposition, as accepted
+
+Section 17 was a measurement made by this lane. On 2026-08-08 the coordinator
+accepted it and turned it into authority, which changes its standing: what
+follows is not an argument from evidence any more, it is the rule, and a branch
+that disagrees with it needs a new measurement and a new disposition rather than
+a different opinion.
+
+**Accepted: the measured architecture supersedes the original assumption that
+B0 blocks all instrument implementation.** The independent instrument
+directories may proceed in parallel once their own designs are accepted. What
+gates an instrument lane is its design, not the shared shell.
+
+**These remain single-owner work, and no surface branch should casually edit
+them:**
+
+| Shared concern | Where it lives |
+| --- | --- |
+| Generator and layout shell | `tools/public-alpha`, `release/public-alpha/layout.html` |
+| Shared site assets | `release/public-alpha/assets/` |
+| Shared browser core | `src/web/browser/shared/browser-core.{css,js}` |
+| Release-binding regeneration | `release/public-alpha.json`, `release/rights/*.md` |
+| Global navigation | wherever the generated nav lands; today the seven hand-written footer lists |
+| Common browser gates | `tools/tests/corpus_browser_gate.mjs`, `test_browser_harnesses.py`, `test_browser_url_contract.py`, `test_browser_collisions.py`, `test_browser_static.py` |
+| Shared ledgers | `PROJECT-WORK.md`, `promised-deliverables.toml`, the `guidance/corpus-browser-*` family |
+
+"Casually" is the operative word. A surface lane that genuinely needs a shared
+change asks the owning lane for it, or takes ownership of that change explicitly
+and says so; what it must not do is make the edit in passing because its own
+surface needed it. The release-binding record is the sharpest case: a signature
+there means someone reviewed those bytes, and an unfiltered refresh signs a
+sibling's mid-flight work.
+
+**`impl/reader` is not an independent surface lane.** Its implementation is
+generator and site-CSS work — it owns no file under `src/web/browser/` at all —
+so it belongs with foundation and shell ownership and should be scheduled there.
+Treating it as a surface lane beside the instruments would put it in collision
+with `impl/shell` on both of the files it actually touches.
+
+The corollary for scheduling is worth stating, because it is the whole point of
+the disposition: the six instrument lanes and their designs are the parallel
+work, and the shared concerns above are the serial work. Getting that backwards
+— serialising the instruments behind a shell they do not depend on, while
+letting every branch edit the generator — is the failure this replaces.
