@@ -177,6 +177,34 @@ Retained-worker integration, non-Pages deployment, remote changes,
 force-pushing, and all other history rewriting remain separately authorized
 operations.
 
+## Corpus browser redesign
+
+A multi-agent project to make the non-PDF web surfaces one navigable scholarly
+corpus rather than a set of separately built instruments. The PDFs remain the
+canonical printable editions and are not a redesign target.
+
+The governing plan is `guidance/corpus-browser-master-plan.md`. It splits the
+work: a design lane owns the visual and product contract, and an implementation
+lane owns production code and tests. The site-wide vision and execution roadmap
+the plan calls for are the design lane's output and do not exist yet.
+
+`guidance/corpus-browser-implementation.md` is the implementation lane's durable
+technical record — how the surfaces are actually built, what will refuse a
+change, the proposed sequencing, the ranked risks, and the conflicts returned for
+disposition. Reconnaissance is done. No shared shell is implemented, because that
+depends on a visual contract that has not been accepted.
+
+Two facts from that record belong here because they bind unrelated work. First,
+`make check` fails at `c27d69153` on `check-tool-registry` and `check-examples`,
+and `python3 -m unittest discover -s tools/tests` fails with 14 failures and 13
+errors out of 1226; both were reproduced at the base commit in a separate
+checkout, so the redness is pre-existing and no later lane may be credited or
+blamed for it. Second, the corpus lanes overlap the in-progress deliverable
+below, which owns `reader-shell.js` and `reader-instrument.css` and declares
+public-navigation redesign unauthorized. Sequencing the two is a maintainer
+decision; it is recorded as the first open conflict in the implementation
+document.
+
 ## Promised work
 
 ### Live Reader — Ritual Flow & Orientation
