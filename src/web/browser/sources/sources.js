@@ -395,6 +395,14 @@
     const passage = (open.payload.passages || [])[open.at];
     if (!passage) return;
 
+    // Showing ANY passage supersedes whatever render is still running, and the
+    // token is taken here rather than beside the fetch below for that reason.
+    // Taken later, selecting a withheld passage left the previous passage's
+    // fetch believing it was current: it came back, took a child off this
+    // passage's notes, and painted another passage's words under this
+    // passage's heading and its refusal.
+    const token = T.beginRender();
+
     T.clear(body);
     const head = T.el('div', 'passage-head');
     head.appendChild(T.el('h3', 'passage-locus', passage.locus || passage.id));
@@ -422,7 +430,6 @@
       return;
     }
 
-    const token = T.beginRender();
     body.appendChild(T.el('p', 'placeholder', 'Loading ' + passage.words + ' words…'));
     let text;
     try {

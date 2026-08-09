@@ -590,33 +590,45 @@
       if (!found.length) {
         found = C.canons(rows.filter(function (row) { return C.matches(row, typed); }));
       }
+      // A body of law asked for is honoured. Widening back to every body of law
+      // when the chosen one carries no such number would answer with a canon of
+      // a different Code — the select still reading the Code the reader chose —
+      // and each body of law numbers independently, so that canon is not a near
+      // miss but the wrong law.
       const line = askedLine();
-      const narrowed = found.filter(function (entry) { return inLine(entry, line); });
-      const chosen = narrowed.length ? narrowed : found;
+      const chosen = line
+        ? found.filter(function (entry) { return inLine(entry, line); })
+        : found;
       if (chosen.length === 1) {
         openCanon(chosen[0]);
         return;
       }
-      renderChoices(typed, cited, chosen);
+      renderChoices(typed, cited, chosen, line);
     }).catch(reportIndexFailure);
   }
 
-  function renderChoices(typed, cited, entries) {
+  function renderChoices(typed, cited, entries, line) {
     T.clear(canonView);
     canonView.setAttribute('aria-busy', 'false');
+    const within = line ? ' in ' + lineLabel(line) : '';
     if (!entries.length) {
       const none = T.el('div', 'lookup-none');
       none.appendChild(T.el('h2', 'canon-citation', typed));
       none.appendChild(T.el('p', 'weak', cited
-        ? 'This record carries no canon numbered ' + cited.canon + '. That is a ' +
-          'statement about this record and not about the Code: nothing here ' +
-          'offers you a neighbouring canon instead, because a neighbouring ' +
-          'canon is the wrong law.'
-        : 'Nothing in this record answers to that. The lookup takes a citation ' +
-          '— c. 1095, can. 1095 §2, or the number alone — or any word carried in ' +
-          'a canon’s identity or in the division it stands in.'));
+        ? 'This record carries no canon numbered ' + cited.canon + within +
+          '. That is a statement about this record and not about the Code: ' +
+          'nothing here offers you a neighbouring canon instead' +
+          (line
+            ? ', and nothing hands you that number out of another body of law, ' +
+              'because each body of law numbers independently and another ' +
+              'body’s canon is the wrong law.'
+            : ', because a neighbouring canon is the wrong law.')
+        : 'Nothing' + (within || ' in this record') + ' answers to that. The ' +
+          'lookup takes a citation — c. 1095, can. 1095 §2, or the number alone ' +
+          '— or any word carried in a canon’s identity or in the division it ' +
+          'stands in.'));
       canonView.appendChild(none);
-      T.statusLine('Nothing found for ' + typed + '.');
+      T.statusLine('Nothing found for ' + typed + within + '.');
       return;
     }
     const list = T.el('div', 'lookup-choices');

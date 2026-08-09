@@ -296,6 +296,89 @@
   }
 
   /* ------------------------------------------------------------------------
+   * What this slice calls things
+   *
+   * The spine declares its base unit's word, its container's word, and the key
+   * its containers arrive under. Nothing here invents any of the three. A page
+   * that read `masses` and said "liturgies" regardless counted a Code's
+   * divisions under a key its files do not carry — printing `undefined` for a
+   * number it held, listing none of the 83 it was handed — and offered a reader
+   * "follow this prayer" over a canon of the Code. The missal's words stay as
+   * the fallback because a slice written before the vocabulary existed carries
+   * none of them, and that slice is a missal.
+   *
+   * A SLICE THAT DECLARES THE GENERIC NOUN HAS DECLARED NOTHING. `unit` is the
+   * word this page reaches for when it has NOT been told what a thing is, so
+   * reading it back out of a file says no more than silence — and taking it for
+   * a declaration costs the two places where this page has always had a better
+   * word of its own: a PRAYER is what a reader follows through the Missal, and
+   * a MISSAL is what stood after an act. The Missal's slice declares exactly
+   * that generic, so those two keep the page's words. The durable fix is for
+   * the generator to declare `prayer` there; until it does, a placeholder must
+   * not displace a word that carries meaning.
+   * --------------------------------------------------------------------- */
+
+  const DEFAULT_WORDS = { unit_word: 'unit', group_word: 'mass', group_key: 'masses' };
+  // Nouns that name a category rather than a thing. A slice offering one of
+  // these has told a reader nothing they did not have without it.
+  const GENERIC_WORDS = ['unit', 'units', 'group', 'groups', 'item', 'items'];
+  let words = { unit_named: '', group_named: '', group_key: DEFAULT_WORDS.group_key };
+
+  /** What the slice SAID a thing is called, or '' where it said nothing. */
+  function declaredWord(value) {
+    const word = String(value || '').trim();
+    return GENERIC_WORDS.indexOf(word.toLowerCase()) === -1 ? word : '';
+  }
+
+  function readVocabulary(data) {
+    words = {
+      unit_named: declaredWord(data && data.unit_word),
+      group_named: declaredWord(data && data.group_word),
+      group_key: (data && data.group_key) || DEFAULT_WORDS.group_key
+    };
+    return words;
+  }
+
+  /** The word for a base unit where counting it needs one either way. */
+  function unitWord() {
+    return words.unit_named || DEFAULT_WORDS.unit_word;
+  }
+
+  function groupWord() {
+    return words.group_named || DEFAULT_WORDS.group_word;
+  }
+
+  /* What a reader follows through the record. Where the slice named its base
+   * unit, that is the word; where it offered the generic, this page's own is
+   * kept, because "follow this prayer" is what the Missal's reader is doing and
+   * "follow this unit" would be a placeholder standing where a word had been. */
+  function followWord() {
+    return words.unit_named || 'prayer';
+  }
+
+  function plural(word) {
+    if (/(?:s|x|z|ch|sh)$/.test(word)) return word + 'es';
+    if (/[^aeiou]y$/.test(word)) return word.slice(0, -1) + 'ies';
+    return word + 's';
+  }
+
+  /** A count and the word for what is counted, in the number the count needs. */
+  function tallyOf(count, word) {
+    return count + ' ' + (count === 1 ? word : plural(word));
+  }
+
+  /** The containers a fragment carries, under whichever key it keeps them. */
+  function groupsIn(payload) {
+    const held = payload && payload[words.group_key];
+    return Array.isArray(held) ? held : [];
+  }
+
+  /** How many containers an act touched, under whichever key it counted them. */
+  function groupsTouched(changed) {
+    return (changed && changed[words.group_key + '_touched']) || 0;
+  }
+
+  /* ------------------------------------------------------------------------
    * The drawing
    * --------------------------------------------------------------------- */
 
@@ -318,11 +401,16 @@
     return 'M ' + x1 + ' ' + y1 + ' L ' + a + ' ' + y1 + ' L ' + b + ' ' + y2 + ' L ' + x2 + ' ' + y2;
   }
 
+  /* How many BASE UNITS an act moved. The containers it touched are not added
+   * in: a liturgy is not a unit, and one unit entering a liturgy touches both,
+   * so summing the two counted the same act twice and printed a number under
+   * the station that answered to nothing — "42 changed" over a station whose
+   * own summary said "38 entered, 4 liturgies touched". The containers are
+   * counted, and said, separately. */
   function magnitude(station) {
     const changed = station.changed || {};
     return (changed.units_entered || 0) + (changed.units_gone || 0) +
-      (changed.units_changed || 0) + (changed.masses_touched || 0) +
-      (changed.unestablished || 0);
+      (changed.units_changed || 0) + (changed.unestablished || 0);
   }
 
   function draw() {
@@ -384,8 +472,9 @@
       when.textContent = M.year(station.date);
       const count = svg('text', { x: x, y: y + 48, class: 'station-count' });
       const moved = magnitude(station);
-      const verb = kind === M.PROMULGATED ? 'changed' : 'differ';
-      count.textContent = moved ? moved + ' ' + verb : 'nothing ' + verb + 's';
+      count.textContent = kind === M.PROMULGATED
+        ? (moved ? moved + ' changed' : 'nothing changed')
+        : (moved ? moved + ' differ' : 'nothing differs');
       group.appendChild(name);
       group.appendChild(when);
       group.appendChild(count);
@@ -424,7 +513,8 @@
     if (changed.units_entered) parts.push(changed.units_entered + ' entered');
     if (changed.units_gone) parts.push(changed.units_gone + ' gone');
     if (changed.units_changed) parts.push(changed.units_changed + ' altered');
-    if (changed.masses_touched) parts.push(changed.masses_touched + ' liturgies touched');
+    const touched = groupsTouched(changed);
+    if (touched) parts.push(tallyOf(touched, groupWord()) + ' touched');
     if (changed.unestablished) parts.push(changed.unestablished + ' left unestablished');
     if (!parts.length) return 'nothing in this slice changed here';
     return parts.join(', ');
@@ -598,7 +688,7 @@
     const basis = citations(row);
     if (basis) card.appendChild(basis);
 
-    const link = T.el('button', 'link-button', 'Follow this prayer');
+    const link = T.el('button', 'link-button', 'Follow this ' + followWord());
     link.type = 'button';
     link.addEventListener('click', function () { openUnit(row.unit); });
     card.appendChild(link);
@@ -672,13 +762,14 @@
       host.appendChild(block);
     }
 
-    if (payload.masses && payload.masses.length) {
-      const block = section('The liturgies');
-      payload.masses.forEach(function (row) { block.appendChild(massCard(row)); });
+    const groups = groupsIn(payload);
+    if (groups.length) {
+      const block = section('The ' + plural(groupWord()));
+      groups.forEach(function (row) { block.appendChild(massCard(row)); });
       host.appendChild(block);
     }
     if (payload.units && payload.units.length) {
-      const block = section('The units');
+      const block = section('The ' + plural(unitWord()));
       payload.units.forEach(function (row) { block.appendChild(unitCard(row)); });
       host.appendChild(block);
     }
@@ -693,7 +784,7 @@
         card.appendChild(T.el('h4', 'change-head', row.unit));
         card.appendChild(T.el('pre', 'marker', row.marker));
         card.appendChild((function () {
-          const link = T.el('button', 'link-button', 'Follow this prayer');
+          const link = T.el('button', 'link-button', 'Follow this ' + followWord());
           link.type = 'button';
           link.addEventListener('click', function () { openUnit(row.unit); });
           return link;
@@ -702,9 +793,11 @@
       });
       host.appendChild(block);
     }
-    if (!(payload.masses || []).length && !(payload.units || []).length &&
+    if (!groups.length && !(payload.units || []).length &&
         !(payload.unestablished || []).length) {
-      const held = (totals.standing || 0) + ' units stand after it.';
+      const standing = totals.standing || 0;
+      const held = tallyOf(standing, unitWord()) +
+        (standing === 1 ? ' stands after it.' : ' stand after it.');
       host.appendChild(T.el('p', 'detail-weak',
         M.kindOf(station, kindsStated) === M.PROMULGATED
           ? 'This act moved nothing in this slice. It keeps its station because ' +
@@ -720,25 +813,29 @@
   function renderState(host, payload) {
     T.clear(host);
     const totals = payload.totals || {};
+    const groups = groupsIn(payload);
     host.appendChild(T.el('p', 'detail-summary',
-      totals.units + ' units across ' + totals.masses +
-      ' liturgies, as this record holds them after ' + payload.title + '.'));
+      tallyOf(totals.units || 0, unitWord()) + ' across ' +
+      tallyOf(totals[words.group_key] || 0, groupWord()) +
+      ', as this record holds them after ' + payload.title + '.'));
     if (payload.station_kind && payload.station_kind !== M.PROMULGATED) {
       host.appendChild(T.el('p', 'detail-weak',
         'This is what the surviving book prints at this point. No act stands ' +
         'behind it in this record, so it is a state witnessed and not a state ' +
         'ordered.'));
     }
-    (payload.masses || []).forEach(function (mass) {
+    groups.forEach(function (mass) {
       const block = T.el('section', 'mass');
-      block.appendChild(T.el('h4', 'mass-title', mass.title || mass.mass));
+      block.appendChild(T.el('h4', 'mass-title',
+        mass.title || mass[groupWord()] || ''));
       const meta = [mass.day, mass.hour].filter(Boolean).join(' · ');
       if (meta) block.appendChild(T.el('p', 'mass-meta', meta));
-      if (!mass.units.length) {
+      if (!(mass.units || []).length) {
         block.appendChild(T.el('p', 'detail-weak',
-          'This record carries no unit standing in this liturgy at this point.'));
+          'This record carries no ' + unitWord() + ' standing in this ' +
+          groupWord() + ' at this point.'));
       }
-      mass.units.forEach(function (unit) {
+      (mass.units || []).forEach(function (unit) {
         const row = T.el('article', 'held');
         const head = T.el('h5', 'held-name');
         head.appendChild(document.createTextNode(unit.name || unit.slot));
@@ -750,7 +847,7 @@
           unit.withheld));
         row.appendChild(line);
         if (unit.text) row.appendChild(T.el('p', 'held-text', unit.text));
-        const link = T.el('button', 'link-button', 'Follow this prayer');
+        const link = T.el('button', 'link-button', 'Follow this ' + followWord());
         link.type = 'button';
         link.addEventListener('click', function () { openUnit(unit.unit); });
         row.appendChild(link);
@@ -856,7 +953,9 @@
 
     if (station.state_path) {
       detail.appendChild(lazyBlock(
-        'Read the missal as it stood after this act',
+        words.unit_named
+          ? 'Read the ' + plural(words.unit_named) + ' as they stood after this act'
+          : 'Read the missal as it stood after this act',
         'structure/act-history/' + station.state_path,
         renderState));
     }
@@ -1123,6 +1222,7 @@
 
   function start(data) {
     spine = data;
+    readVocabulary(data);
     const stations = data.stations || [];
     byId = new Map(stations.map(function (station) { return [station.id, station]; }));
     kindsStated = M.kindsAreStated(stations);
