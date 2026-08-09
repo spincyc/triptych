@@ -87,7 +87,16 @@ class PublicAlphaTest(unittest.TestCase):
                 f"release/public-alpha/{asset}",
                 (REPOSITORY_ROOT / "release/public-alpha" / asset).read_bytes(),
             )
-        self.write("requirements-public-alpha.txt", b"Markdown==3.10.2\n")
+        # Read the lock rather than restating it. Hardcoding `Markdown==3.10.2`
+        # here meant that when the repository moved the pin to 3.10.3 the stub
+        # went on asserting the old one, and eight tests failed against an
+        # interpreter that was in fact correct — a stale fixture wearing the
+        # costume of an environment fault. The two asset writes above already
+        # take their bytes from the repository; this now does the same.
+        self.write(
+            "requirements-public-alpha.txt",
+            (REPOSITORY_ROOT / "requirements-public-alpha.txt").read_bytes(),
+        )
         self.write("tools/public-alpha", b"test generator\n")
         self.write("release/rights/approval.md", b"stale approval record\n")
         self.write("src/gpt/work/main.tex", b"source\n")
