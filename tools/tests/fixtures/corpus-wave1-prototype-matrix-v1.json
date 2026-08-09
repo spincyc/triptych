@@ -1,0 +1,2080 @@
+{
+  "version": 1,
+  "description": "Real generated Wave 1 routes. Before serves the preview unchanged; after injects only the isolated prototype stylesheet and script.",
+  "prototype_assets": {
+    "css": "src/web/browser/prototypes/corpus-wave-1/prototype.css",
+    "javascript": "src/web/browser/prototypes/corpus-wave-1/prototype.js"
+  },
+  "cases": [
+    {
+      "id": "before-home-default-1440x900",
+      "surface": "home",
+      "phase": "before",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content",
+        "useful": "main#main-content table",
+        "primary_targets": [],
+        "text": [
+          "Faith",
+          "Preview. Local review copy; not for distribution."
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-home-default-1440x900",
+      "surface": "home",
+      "phase": "after",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready]",
+        "useful": "[data-wave-task-entrances]",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Faith"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-home-default-1024x768",
+      "surface": "home",
+      "phase": "before",
+      "route": "/",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content",
+        "useful": "main#main-content table",
+        "primary_targets": [],
+        "text": [
+          "Faith"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-home-default-1024x768",
+      "surface": "home",
+      "phase": "after",
+      "route": "/",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready]",
+        "useful": "[data-wave-task-entrances]",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Faith"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-home-default-768x1024",
+      "surface": "home",
+      "phase": "before",
+      "route": "/",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content",
+        "useful": "main#main-content table",
+        "primary_targets": [],
+        "text": [
+          "Faith"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-home-default-768x1024",
+      "surface": "home",
+      "phase": "after",
+      "route": "/",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready]",
+        "useful": "[data-wave-task-entrances]",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Faith"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-home-default-393x852",
+      "surface": "home",
+      "phase": "before",
+      "route": "/",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content",
+        "useful": "main#main-content table",
+        "primary_targets": [],
+        "text": [
+          "Faith"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-home-default-393x852",
+      "surface": "home",
+      "phase": "after",
+      "route": "/",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready]",
+        "useful": "[data-wave-task-entrances]",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Faith"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-home-default-320x852",
+      "surface": "home",
+      "phase": "before",
+      "route": "/",
+      "viewport": {
+        "width": 320,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content",
+        "useful": "main#main-content table",
+        "primary_targets": [],
+        "text": [
+          "Faith"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-home-default-320x852",
+      "surface": "home",
+      "phase": "after",
+      "route": "/",
+      "viewport": {
+        "width": 320,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready]",
+        "useful": "[data-wave-task-entrances]",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Faith"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-publications-default-1440x900",
+      "surface": "publications",
+      "phase": "before",
+      "route": "/texts/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#reading .work",
+        "useful": "#reading .work",
+        "primary_targets": [],
+        "text": [],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-publications-default-1440x900",
+      "surface": "publications",
+      "phase": "after",
+      "route": "/texts/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .work",
+        "useful": "#reading .work",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-publications-default-1024x768",
+      "surface": "publications",
+      "phase": "before",
+      "route": "/texts/",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#reading .work",
+        "useful": "#reading .work",
+        "primary_targets": [],
+        "text": [],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-publications-default-1024x768",
+      "surface": "publications",
+      "phase": "after",
+      "route": "/texts/",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .work",
+        "useful": "#reading .work",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-publications-default-768x1024",
+      "surface": "publications",
+      "phase": "before",
+      "route": "/texts/",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#reading .work",
+        "useful": "#reading .work",
+        "primary_targets": [],
+        "text": [],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-publications-default-768x1024",
+      "surface": "publications",
+      "phase": "after",
+      "route": "/texts/",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .work",
+        "useful": "#reading .work",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-publications-default-393x852",
+      "surface": "publications",
+      "phase": "before",
+      "route": "/texts/",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#reading .work",
+        "useful": "#reading .work",
+        "primary_targets": [],
+        "text": [],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-publications-default-393x852",
+      "surface": "publications",
+      "phase": "after",
+      "route": "/texts/",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .work",
+        "useful": "#reading .work",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-publications-default-320x852",
+      "surface": "publications",
+      "phase": "before",
+      "route": "/texts/",
+      "viewport": {
+        "width": 320,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#reading .work",
+        "useful": "#reading .work",
+        "primary_targets": [],
+        "text": [],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-publications-default-320x852",
+      "surface": "publications",
+      "phase": "after",
+      "route": "/texts/",
+      "viewport": {
+        "width": 320,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .work",
+        "useful": "#reading .work",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-reader-default-1440x900",
+      "surface": "reader",
+      "phase": "before",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content h2",
+        "useful": "main#main-content h2",
+        "primary_targets": [],
+        "text": [
+          "Catholic Exorcism"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-reader-default-1440x900",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] [data-wave-reader-document]",
+        "useful": "[data-wave-reader-document] h2",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action",
+          "[data-wave-pdf]"
+        ],
+        "text": [
+          "Catholic Exorcism",
+          "Independent treatment",
+          "PROVIDER · GPT",
+          "Canonical PDF",
+          "Last revised (UTC):",
+          "Reuse and rights."
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-reader-default-1024x768",
+      "surface": "reader",
+      "phase": "before",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content h2",
+        "useful": "main#main-content h2",
+        "primary_targets": [],
+        "text": [
+          "Catholic Exorcism"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-reader-default-1024x768",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] [data-wave-reader-document]",
+        "useful": "[data-wave-reader-document] h2",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action",
+          "[data-wave-pdf]"
+        ],
+        "text": [
+          "Catholic Exorcism",
+          "Independent treatment",
+          "PROVIDER · GPT",
+          "Canonical PDF",
+          "Last revised (UTC):",
+          "Reuse and rights."
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-reader-default-768x1024",
+      "surface": "reader",
+      "phase": "before",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content h2",
+        "useful": "main#main-content h2",
+        "primary_targets": [],
+        "text": [
+          "Catholic Exorcism"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-reader-default-768x1024",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] [data-wave-reader-document]",
+        "useful": "[data-wave-reader-document] h2",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action",
+          "[data-wave-pdf]"
+        ],
+        "text": [
+          "Catholic Exorcism",
+          "Independent treatment",
+          "PROVIDER · GPT",
+          "Canonical PDF",
+          "Last revised (UTC):",
+          "Reuse and rights."
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-reader-default-393x852",
+      "surface": "reader",
+      "phase": "before",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content h2",
+        "useful": "main#main-content h2",
+        "primary_targets": [],
+        "text": [
+          "Catholic Exorcism"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-reader-default-393x852",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] [data-wave-reader-document]",
+        "useful": "[data-wave-reader-document] h2",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action",
+          "[data-wave-pdf]"
+        ],
+        "text": [
+          "Catholic Exorcism",
+          "Independent treatment",
+          "PROVIDER · GPT",
+          "Canonical PDF",
+          "Last revised (UTC):",
+          "Reuse and rights."
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-reader-default-320x852",
+      "surface": "reader",
+      "phase": "before",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 320,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content h2",
+        "useful": "main#main-content h2",
+        "primary_targets": [],
+        "text": [
+          "Catholic Exorcism"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-reader-default-320x852",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 320,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] [data-wave-reader-document]",
+        "useful": "[data-wave-reader-document] h2",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action",
+          "[data-wave-pdf]"
+        ],
+        "text": [
+          "Catholic Exorcism",
+          "Independent treatment",
+          "PROVIDER · GPT",
+          "Canonical PDF",
+          "Last revised (UTC):",
+          "Reuse and rights."
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-catena-default-1440x900",
+      "surface": "catena",
+      "phase": "before",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [],
+        "text": [
+          "Genesis"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-catena-default-1440x900",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Genesis"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-catena-default-1024x768",
+      "surface": "catena",
+      "phase": "before",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [],
+        "text": [
+          "Genesis"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-catena-default-1024x768",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Genesis"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-catena-default-768x1024",
+      "surface": "catena",
+      "phase": "before",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [],
+        "text": [
+          "Genesis"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-catena-default-768x1024",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Genesis"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-catena-default-393x852",
+      "surface": "catena",
+      "phase": "before",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [],
+        "text": [
+          "Genesis"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-catena-default-393x852",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Genesis"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-catena-default-320x852",
+      "surface": "catena",
+      "phase": "before",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 320,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [],
+        "text": [
+          "Genesis"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-catena-default-320x852",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 320,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Genesis"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-sources-default-1440x900",
+      "surface": "sources",
+      "phase": "before",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#finder .work",
+        "useful": "#finder .work",
+        "primary_targets": [],
+        "text": [
+          "Summa"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-sources-default-1440x900",
+      "surface": "sources",
+      "phase": "after",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [
+        {
+          "op": "scroll",
+          "selector": "body",
+          "block": "start"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] #finder .work",
+        "useful": "#finder .work",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Summa"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-sources-default-1024x768",
+      "surface": "sources",
+      "phase": "before",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#finder .work",
+        "useful": "#finder .work",
+        "primary_targets": [],
+        "text": [
+          "Summa"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-sources-default-1024x768",
+      "surface": "sources",
+      "phase": "after",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #finder .work",
+        "useful": "#finder .work",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Summa"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-sources-default-768x1024",
+      "surface": "sources",
+      "phase": "before",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#finder .work",
+        "useful": "#finder .work",
+        "primary_targets": [],
+        "text": [
+          "Summa"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-sources-default-768x1024",
+      "surface": "sources",
+      "phase": "after",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #finder .work",
+        "useful": "#finder .work",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Summa"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-sources-default-393x852",
+      "surface": "sources",
+      "phase": "before",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#finder .work",
+        "useful": "#finder .work",
+        "primary_targets": [],
+        "text": [
+          "Summa"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-sources-default-393x852",
+      "surface": "sources",
+      "phase": "after",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #finder .work",
+        "useful": "#finder .work",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Summa"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-sources-default-320x852",
+      "surface": "sources",
+      "phase": "before",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 320,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "#finder .work",
+        "useful": "#finder .work",
+        "primary_targets": [],
+        "text": [
+          "Summa"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-sources-default-320x852",
+      "surface": "sources",
+      "phase": "after",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 320,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #finder .work",
+        "useful": "#finder .work",
+        "primary_targets": [
+          "[data-wave-shell-actions] .wave-action"
+        ],
+        "text": [
+          "Summa"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-home-menu-open-393x852",
+      "surface": "home",
+      "phase": "after",
+      "route": "/",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "keyboard",
+      "actions": [
+        {
+          "op": "click",
+          "selector": "[data-wave-open-dialog=\"menu\"]"
+        }
+      ],
+      "expect": {
+        "ready": "dialog[data-wave-dialog-owner][open]",
+        "useful": "dialog[data-wave-dialog-owner]",
+        "primary_targets": [
+          "[data-wave-open-dialog=\"menu\"]",
+          "[data-wave-open-dialog=\"jump\"]"
+        ],
+        "text": [
+          "Menu"
+        ],
+        "absent_text": [],
+        "focus_within": "dialog[data-wave-dialog-owner]",
+        "restore_focus_after_escape": "[data-wave-open-dialog=\"menu\"]"
+      }
+    },
+    {
+      "id": "after-home-jump-reduced-motion-393x852",
+      "surface": "home",
+      "phase": "after",
+      "route": "/",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "reduced-motion",
+      "actions": [
+        {
+          "op": "click",
+          "selector": "[data-wave-open-dialog=\"jump\"]"
+        }
+      ],
+      "expect": {
+        "ready": "dialog[data-wave-dialog-owner][open]",
+        "useful": "dialog[data-wave-dialog-owner]",
+        "primary_targets": [
+          "[data-wave-open-dialog=\"jump\"]"
+        ],
+        "text": [
+          "Quick destinations—not corpus search"
+        ],
+        "absent_text": [],
+        "focus_within": "dialog[data-wave-dialog-owner]",
+        "restore_focus_after_escape": "[data-wave-open-dialog=\"jump\"]"
+      }
+    },
+    {
+      "id": "after-home-forced-colors-393x852",
+      "surface": "home",
+      "phase": "after",
+      "route": "/",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "forced-colors",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready]",
+        "useful": "[data-wave-task-entrances]",
+        "primary_targets": [],
+        "text": [
+          "Faith",
+          "Preview. Local review copy; not for distribution."
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-home-text-200-393x852",
+      "surface": "home",
+      "phase": "after",
+      "route": "/",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "text-200",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready]",
+        "useful": "main#main-content h1",
+        "primary_targets": [],
+        "text": [
+          "Triptych",
+          "Faith"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-home-no-js-393x852",
+      "surface": "home",
+      "phase": "before",
+      "route": "/",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "no-js",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content",
+        "useful": "main#main-content table",
+        "primary_targets": [],
+        "text": [
+          "Faith"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-publications-filters-keyboard-393x852",
+      "surface": "publications",
+      "phase": "after",
+      "route": "/texts/#find=institute%20of%20christ%20the%20king",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "keyboard",
+      "actions": [
+        {
+          "op": "focus",
+          "selector": "[data-wave-filter] > summary"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .work",
+        "useful": "#reading .work",
+        "primary_targets": [
+          "[data-wave-filter] > summary"
+        ],
+        "text": [],
+        "absent_text": [],
+        "focus": "[data-wave-filter] > summary"
+      }
+    },
+    {
+      "id": "after-publications-long-title-text-200-393x852",
+      "surface": "publications",
+      "phase": "after",
+      "route": "/texts/#find=institute%20of%20christ%20the%20king",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "text-200",
+      "actions": [
+        {
+          "op": "wait",
+          "selector": "#reading .edition-title"
+        },
+        {
+          "op": "scroll",
+          "selector": "#reading .edition-title",
+          "block": "center"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .work",
+        "useful": "#reading .work",
+        "primary_targets": [],
+        "text": [
+          "Institute of Christ"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-publications-zero-result-393x852",
+      "surface": "publications",
+      "phase": "after",
+      "route": "/texts/#find=zzzz-no-triptych-match",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [
+        {
+          "op": "wait",
+          "selector": "#reading .placeholder"
+        },
+        {
+          "op": "scroll",
+          "selector": "#reading .placeholder",
+          "block": "center"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .placeholder",
+        "useful": "#reading .placeholder",
+        "primary_targets": [],
+        "text": [
+          "Nothing in the corpus matches those choices. Widen one of them.",
+          "Active filters · Find “zzzz-no-triptych-match”",
+          "Clear filters"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-publications-detail-keyboard-393x852",
+      "surface": "publications",
+      "phase": "after",
+      "route": "/texts/#find=institute%20of%20christ%20the%20king",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "keyboard",
+      "actions": [
+        {
+          "op": "focus",
+          "selector": ".edition-title"
+        },
+        {
+          "op": "click",
+          "selector": ".edition-title"
+        },
+        {
+          "op": "wait",
+          "selector": "#detail:not([hidden])"
+        }
+      ],
+      "expect": {
+        "ready": "#detail:not([hidden])",
+        "useful": "#detail:not([hidden])",
+        "primary_targets": [
+          ".edition-title[aria-expanded=\"true\"]",
+          "#detail .detail-close"
+        ],
+        "text": [],
+        "absent_text": [],
+        "exact_text": [
+          {
+            "selector": "#detail [data-wave-treatment-kind=\"independent\"]",
+            "text": "Independent treatment"
+          },
+          {
+            "selector": "#detail [data-wave-meta=\"provider\"]",
+            "text": "Provider · GPT"
+          },
+          {
+            "selector": "#detail [data-wave-meta=\"work\"]",
+            "text": "Work · history/traditional-priestly-institutes/03-icksp"
+          }
+        ],
+        "focus": "#detail .detail-close",
+        "focus_within": "#detail",
+        "close_and_restore": {
+          "control": "#detail .detail-close",
+          "origin": ".edition-title",
+          "hidden": "#detail"
+        }
+      }
+    },
+    {
+      "id": "before-publications-no-js-393x852",
+      "surface": "publications",
+      "phase": "before",
+      "route": "/texts/",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "no-js",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content",
+        "useful": ".page-header",
+        "primary_targets": [],
+        "text": [
+          "Every Document"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-reader-contents-keyboard-393x852",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "keyboard",
+      "actions": [
+        {
+          "op": "click",
+          "selector": "[data-wave-open-dialog=\"contents\"]"
+        }
+      ],
+      "expect": {
+        "ready": "dialog[data-wave-dialog-owner][open]",
+        "useful": "dialog[data-wave-dialog-owner]",
+        "primary_targets": [
+          "[data-wave-open-dialog=\"contents\"]",
+          "[data-wave-pdf]"
+        ],
+        "text": [
+          "Contents"
+        ],
+        "absent_text": [],
+        "focus_within": "dialog[data-wave-dialog-owner]",
+        "restore_focus_after_escape": "[data-wave-open-dialog=\"contents\"]"
+      }
+    },
+    {
+      "id": "after-reader-reflow-400-320x852",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/gpt/history/traditional-priestly-institutes/03-icksp.html",
+      "viewport": {
+        "width": 320,
+        "height": 852
+      },
+      "emulation": "reflow-400",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] [data-wave-reader-document]",
+        "useful": "[data-wave-reader-document] h2",
+        "primary_targets": [],
+        "text": [
+          "Institute of Christ"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-reader-long-title-text-200-393x852",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/gpt/history/traditional-priestly-institutes/03-icksp.html",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "text-200",
+      "actions": [
+        {
+          "op": "wait",
+          "selector": "[data-wave-reader-document] h1"
+        },
+        {
+          "op": "scroll",
+          "selector": "[data-wave-reader-document] h1",
+          "block": "center"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] [data-wave-reader-document]",
+        "useful": "[data-wave-reader-document] h1",
+        "primary_targets": [],
+        "text": [
+          "The Institute of Christ the King Sovereign Priest: African Origins, Canonial Identity, and Global Expansion"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-reader-forced-colors-393x852",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/claude/articles/faith/in-defense-of-the-particular.html",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "forced-colors",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] [data-wave-reader-document]",
+        "useful": "[data-wave-reader-document] h2",
+        "primary_targets": [],
+        "text": [
+          "Preview. Local review copy; not for distribution."
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-reader-print-1024x768",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "emulation": "print",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] [data-wave-reader-document]",
+        "useful": "[data-wave-reader-document] h1",
+        "primary_targets": [],
+        "text": [
+          "Catholic Exorcism: History, Discipline, and Pastoral Practice",
+          "Independent treatment",
+          "Canonical PDF",
+          "Last revised (UTC):",
+          "Reuse and rights."
+        ],
+        "print_text": [
+          "Catholic Exorcism: History, Discipline, and Pastoral Practice",
+          "The first rule is about the person",
+          "Editorial adaptation after Chuck Palahniuk",
+          "Last revised (UTC): 2026-07-29T19:14:52Z",
+          "Reuse and rights. To the extent Triptych holds the rights, project-created content and design are licensed under CC BY 4.0. Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See LICENSE and THIRD_PARTY.md in the source."
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-reader-zoom-400-393x852",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "zoom-400",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] [data-wave-reader-document]",
+        "useful": "[data-wave-reader-document] h1",
+        "primary_targets": [],
+        "text": [
+          "Catholic Exorcism: History, Discipline, and Pastoral Practice"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-reader-no-js-393x852",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/gpt/articles/faith/four-last-things-02-judgment.html",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "no-js",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content",
+        "useful": "main#main-content h2",
+        "primary_targets": [],
+        "text": [],
+        "absent_text": [],
+        "inherited_overlay": {
+          "assertions": [
+            "reader-record-visible-provider",
+            "reader-record-visible-pdf"
+          ],
+          "reason": "The provider and PDF controls are rendered by the prototype JavaScript overlay, which is deliberately disabled in this case."
+        }
+      }
+    },
+    {
+      "id": "after-reader-deep-heading-1024x768",
+      "surface": "reader",
+      "phase": "after",
+      "route": "/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html#current-governance-is-a-ladder-not-one-permission",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "emulation": "default",
+      "actions": [
+        {
+          "op": "click",
+          "selector": "[data-wave-open-dialog=\"contents\"]"
+        },
+        {
+          "op": "wait",
+          "selector": "[data-wave-contents-target=\"current-governance-is-a-ladder-not-one-permission\"][aria-current=\"location\"]"
+        }
+      ],
+      "expect": {
+        "ready": "#current-governance-is-a-ladder-not-one-permission",
+        "useful": "#current-governance-is-a-ladder-not-one-permission",
+        "primary_targets": [],
+        "text": [],
+        "absent_text": [],
+        "current_contents": "current-governance-is-a-ladder-not-one-permission"
+      }
+    },
+    {
+      "id": "after-catena-cross-chapter-1440x900",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Gen&chapter=2&bible=douay-rheims",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [],
+        "text": [
+          "Genesis"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-catena-open-fragment-1440x900",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [
+        {
+          "op": "click",
+          "selector": ".chain details.author-body[open] .fragment-head"
+        },
+        {
+          "op": "wait-text",
+          "selector": ".chain details.author-body[open] .fragment-body[open] .fragment-text",
+          "absent": "Loading…"
+        },
+        {
+          "op": "scroll",
+          "selector": ".chain details.author-body[open] .fragment-head",
+          "block": "center"
+        }
+      ],
+      "expect": {
+        "ready": ".chain details.author-body[open] .fragment-body[open] .fragment-text",
+        "useful": ".chain details.author-body[open] .fragment-head",
+        "primary_targets": [
+          ".chain details.author-body[open] .fragment-head"
+        ],
+        "text": [
+          "Genesis 1:1",
+          "Open this passage in the Source Library"
+        ],
+        "absent_text": [
+          "Loading…"
+        ],
+        "requests": [
+          "/browse/structure/catena/text/passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-1.json"
+        ],
+        "links": [
+          {
+            "selector": ".chain details.author-body[open] .fragment-body[open] a.fragment-whole",
+            "href": "/sources/#passage=passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "after-catena-paragraph-data-error-393x852",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Ps&chapter=13&bible=douay-rheims",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading",
+        "useful": "#reading",
+        "primary_targets": [],
+        "text": [],
+        "absent_text": [],
+        "allowed_http": [
+          {
+            "path": "/browse/structure/paragraphs/douay-rheims/21-ps/013.json",
+            "status": 404
+          }
+        ]
+      }
+    },
+    {
+      "id": "after-catena-acquisition-only-393x852",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Ex&chapter=3&bible=douay-rheims",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [
+        {
+          "op": "wait",
+          "selector": "#reading .lead-list"
+        },
+        {
+          "op": "scroll",
+          "selector": "#reading .lead-list li:first-child",
+          "block": "center"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .lead-list",
+        "useful": "#reading .lead-list li:first-child",
+        "primary_targets": [],
+        "text": [
+          "Nothing held here",
+          "works not yet acquired",
+          "This is an acquisition list, not commentary"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-catena-numbering-refusal-393x852",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Ps&chapter=100&bible=king-james-version",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .refusal",
+        "useful": "#reading .refusal",
+        "primary_targets": [],
+        "text": [
+          "Boundary not established.",
+          "this page will not guess"
+        ],
+        "absent_text": [],
+        "allowed_http": [
+          {
+            "path": "/browse/structure/paragraphs/king-james-version/21-ps/100.json",
+            "status": 404
+          }
+        ]
+      }
+    },
+    {
+      "id": "after-catena-translation-unavailable-393x852",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Gen&chapter=10&bible=douay-rheims&voice=translation%3Aen",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [
+        {
+          "op": "wait",
+          "selector": "#chapter-select"
+        },
+        {
+          "op": "type",
+          "selector": "#chapter-select",
+          "value": "1"
+        },
+        {
+          "op": "wait-text",
+          "selector": "#language-select",
+          "text": "English translation"
+        },
+        {
+          "op": "type",
+          "selector": "#language-select",
+          "value": "translation:en"
+        },
+        {
+          "op": "type",
+          "selector": "#chapter-select",
+          "value": "10"
+        },
+        {
+          "op": "wait-text",
+          "selector": "#reading",
+          "text": "No commentary on this chapter is held in English translation."
+        },
+        {
+          "op": "scroll",
+          "selector": "#reading .absence-note",
+          "block": "center"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .absence-note",
+        "useful": "#reading .absence-note",
+        "primary_targets": [],
+        "text": [
+          "No commentary on this chapter is held in English translation.",
+          "5 works standing here have no English this project may publish"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-catena-forced-colors-393x852",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "forced-colors",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [],
+        "text": [
+          "Preview. Local review copy; not for distribution."
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-catena-reduced-motion-393x852",
+      "surface": "catena",
+      "phase": "after",
+      "route": "/catena/#book=Gen&chapter=44&bible=douay-rheims",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "reduced-motion",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reading .chapter",
+        "useful": "#reading .chapter",
+        "primary_targets": [],
+        "text": [],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "before-catena-no-js-393x852",
+      "surface": "catena",
+      "phase": "before",
+      "route": "/catena/#book=Gen&chapter=1&bible=douay-rheims",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "no-js",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content",
+        "useful": ".page-header",
+        "primary_targets": [],
+        "text": [
+          "Catena Omnia"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-sources-readable-passage-1440x900",
+      "surface": "sources",
+      "phase": "after",
+      "route": "/sources/#edition=edition.augustine.de-civitate-dei.dods-1871&passage=passage.augustine.de-civitate-dei.dods-1871.11.7",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "default",
+      "actions": [
+        {
+          "op": "wait",
+          "selector": "#reader .passage-text"
+        },
+        {
+          "op": "scroll",
+          "selector": "#reader .passage-text",
+          "block": "center"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] #reader:not([hidden])",
+        "useful": "#reader .passage-text",
+        "primary_targets": [],
+        "text": [
+          "De civitate Dei"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-sources-withheld-forced-colors-393x852",
+      "surface": "sources",
+      "phase": "after",
+      "route": "/sources/#edition=edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917&passage=passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-16",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "forced-colors",
+      "actions": [
+        {
+          "op": "wait",
+          "selector": "#reader .notice"
+        },
+        {
+          "op": "scroll",
+          "selector": "#reader .notice",
+          "block": "center"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] #reader:not([hidden])",
+        "useful": "#reader .notice",
+        "primary_targets": [],
+        "text": [
+          "The rights record states that lawful project access to this artifact does not include redistribution from this repository.",
+          "Preview. Local review copy; not for distribution."
+        ],
+        "absent_text": [],
+        "absent_selectors": [
+          "#reader .passage-text"
+        ]
+      }
+    },
+    {
+      "id": "after-sources-invalid-passage-393x852",
+      "surface": "sources",
+      "phase": "after",
+      "route": "/sources/#passage=passage.does-not-exist",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [],
+      "expect": {
+        "ready": "body[data-wave-ready] #reader .error",
+        "useful": "#reader .error",
+        "primary_targets": [],
+        "text": [
+          "No passage with the id “passage.does-not-exist” can be opened here."
+        ],
+        "absent_text": [],
+        "allowed_http": [
+          {
+            "path": "/browse/structure/sources/text/passage.does-not-exist.json",
+            "status": 404
+          }
+        ]
+      }
+    },
+    {
+      "id": "after-sources-many-editions-text-200-393x852",
+      "surface": "sources",
+      "phase": "after",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "text-200",
+      "actions": [
+        {
+          "op": "wait",
+          "selector": "#finder .work-title"
+        },
+        {
+          "op": "scroll",
+          "selector": "#finder .work-title",
+          "block": "center"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] #finder .work",
+        "useful": "#finder .work-title",
+        "primary_targets": [],
+        "text": [
+          "Summa"
+        ],
+        "absent_text": []
+      }
+    },
+    {
+      "id": "after-sources-filters-keyboard-393x852",
+      "surface": "sources",
+      "phase": "after",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "keyboard",
+      "actions": [
+        {
+          "op": "focus",
+          "selector": "[data-wave-filter] > summary"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] #finder .work",
+        "useful": "#finder .work",
+        "primary_targets": [
+          "[data-wave-filter] > summary"
+        ],
+        "text": [],
+        "absent_text": [],
+        "focus": "[data-wave-filter] > summary"
+      }
+    },
+    {
+      "id": "before-sources-no-js-393x852",
+      "surface": "sources",
+      "phase": "before",
+      "route": "/sources/",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "no-js",
+      "actions": [],
+      "expect": {
+        "ready": "main#main-content",
+        "useful": ".page-header",
+        "primary_targets": [],
+        "text": [
+          "Source Library"
+        ],
+        "absent_text": []
+      }
+    }
+  ]
+}

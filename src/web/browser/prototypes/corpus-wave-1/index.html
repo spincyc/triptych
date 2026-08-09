@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en" data-corpus-wave1="review">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="referrer" content="no-referrer">
+  <title>Wave 1 design prototype · Triptych</title>
+  <link rel="stylesheet" href="prototype.css">
+</head>
+<body class="wave-one-review"
+  data-review-boundary="local-only-not-production"
+  data-review-method="runtime-injection"
+  data-base-sha="c27d6915319785686d1df6a1401a489aa9921f6f"
+  data-ux-foundation-sha="3b5938a0dba88831763ec09c762ae1572007a27e"
+  data-foundation-prototype-sha="ac37b6ffa6022dbab551385d91a12e277bb816cb"
+  data-implementation-foundation-sha="af2c9613ccda48679face4e43f59c002f93056ef">
+  <a class="skip-link" href="#review-main">Skip to the review scope</a>
+
+  <div class="review-ribbon" role="note" aria-label="Review boundary">
+    <strong>Wave 1 design prototype — not production</strong>
+    <span>Not a public route, production implementation, or deployment candidate.</span>
+    <span>The boundary remains visible on every injected review state.</span>
+  </div>
+
+  <header class="review-header">
+    <p class="wordmark">Triptych <span>Corpus browser</span></p>
+    <nav aria-label="Review contents">
+      <a href="#method">Method</a>
+      <a href="#governed-surfaces">Five surfaces</a>
+      <a href="#data-boundary">Data boundary</a>
+      <a href="#provenance">Provenance</a>
+    </nav>
+  </header>
+
+  <main id="review-main" tabindex="-1">
+    <header class="review-introduction">
+      <p class="eyebrow">Real generated routes · disposable design layer</p>
+      <h1>Wave 1 corpus design review</h1>
+      <p class="lede">
+        This landing page is an index to the five governed design studies. The
+        actual designs are exercised on the repository's generated private
+        preview: the review harness loads a real preview route, then injects
+        <code>prototype.css</code> and <code>prototype.js</code> into that page at
+        runtime. The generated HTML, titles, metadata, absence states, rights
+        explanations, anchors, and canonical PDF relationships remain the real
+        inputs. The prototype files own presentation for review only.
+      </p>
+    </header>
+
+    <section id="method" aria-labelledby="method-heading">
+      <p class="section-number" aria-hidden="true">01</p>
+      <div>
+        <h2 id="method-heading">Review locally, against a private preview</h2>
+        <ol class="review-steps">
+          <li>From this checkout, run <code>make public-preview</code>.</li>
+          <li>Run the fixed matrix through <code>tools/tests/corpus_wave1_prototype_browser.mjs</code>; its private review server mounts the preview below the real <code>/triptych/</code> project prefix.</li>
+          <li>Use this page as the review inventory; the route/state matrix and screenshot index, not this landing page, own the exact automated states.</li>
+          <li>
+            Inspect the generated files under
+            <code>build/public-alpha/preview/</code>. Runtime injection does not
+            rewrite them; a hard reload returns the untouched preview route.
+          </li>
+        </ol>
+        <p class="boundary-note">
+          These directions are intentionally local. This page offers no link to
+          a hosted site, does not claim a production URL, and is excluded from
+          the public-alpha browser-page and data-file maps.
+        </p>
+      </div>
+    </section>
+
+    <section id="governed-surfaces" aria-labelledby="surfaces-heading">
+      <p class="section-number" aria-hidden="true">02</p>
+      <div>
+        <h2 id="surfaces-heading">Five real routes, five purpose-built views</h2>
+        <p>
+          Paths below identify files inside the generated private preview. They
+          are review targets, not links and not proposed route changes.
+        </p>
+
+        <div class="surface-list">
+          <article class="surface-record" data-review-surface="home"
+            data-preview-route="build/public-alpha/preview/index.html"
+            data-archetype="catalogue">
+            <header>
+              <p class="surface-kind">Catalogue · corpus entry</p>
+              <h3>Home</h3>
+            </header>
+            <dl>
+              <div><dt>Public identity</dt><dd><code>/</code></dd></div>
+              <div><dt>Preview route</dt><dd><code>build/public-alpha/preview/index.html</code></dd></div>
+              <div><dt>Real fixture</dt><dd>The generated README landing page, including the seven editorial portals in their recorded order and the present browser entrances.</dd></div>
+              <div><dt>Stress states</dt><dd>Task entrances, seven-portal orientation, compact navigation, open Menu and Jump, and the 320-pixel first viewport.</dd></div>
+            </dl>
+          </article>
+
+          <article class="surface-record" data-review-surface="publications"
+            data-preview-route="build/public-alpha/preview/texts/index.html"
+            data-archetype="catalogue">
+            <header>
+              <p class="surface-kind">Catalogue · discovery</p>
+              <h3>Publications</h3>
+            </header>
+            <dl>
+              <div><dt>Public identity</dt><dd><code>/texts/</code></dd></div>
+              <div><dt>Preview route</dt><dd><code>build/public-alpha/preview/texts/index.html</code></dd></div>
+              <div><dt>Real fixture</dt><dd><code>browse/structure/documents/corpus.json</code>, generated from 178 current publications and their owning catalogue, provider, web, and canonical PDF records.</dd></div>
+              <div><dt>Stress states</dt><dd>Long recorded titles, the relationship label <strong>Parallel treatment</strong>, individual publication rows labeled <strong>Independent treatment</strong>, PDF-only publications, active filters, and a genuine zero-result filter.</dd></div>
+            </dl>
+          </article>
+
+          <article class="surface-record" data-review-surface="reader"
+            data-preview-route="build/public-alpha/preview/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html"
+            data-archetype="reader">
+            <header>
+              <p class="surface-kind">Reader · publication</p>
+              <h3>Publication Reader</h3>
+            </header>
+            <dl>
+              <div><dt>Public identity</dt><dd><code>/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html</code></dd></div>
+              <div><dt>Preview route</dt><dd><code>build/public-alpha/preview/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html</code></dd></div>
+              <div><dt>Real fixture</dt><dd>The reviewed generated web edition of <cite>Catholic Exorcism: History, Discipline, and Pastoral Practice</cite>, with its existing headings, anchors, revision, and rights colophon. The harness joins its route to the generated publication record before the overlay presents provider, canonical PDF, and any verified parallel treatment.</dd></div>
+              <div><dt>Stress states</dt><dd>Long-form measure, branched Contents, deep heading focus, citations, long-title reflow, 200% text, distinct 320-pixel and 400% evidence, no-JavaScript limitations, and browser print.</dd></div>
+            </dl>
+          </article>
+
+          <article class="surface-record" data-review-surface="catena"
+            data-preview-route="build/public-alpha/preview/catena/index.html#book=Gen&amp;chapter=1&amp;bible=douay-rheims"
+            data-archetype="instrument">
+            <header>
+              <p class="surface-kind">Instrument · Scripture and commentary</p>
+              <h3>Catena Omnia</h3>
+            </header>
+            <dl>
+              <div><dt>Public identity</dt><dd><code>/catena/#book=Gen&amp;chapter=1&amp;bible=douay-rheims</code></dd></div>
+              <div><dt>Preview route</dt><dd><code>build/public-alpha/preview/catena/index.html</code> with the established book, chapter, bible, and optional voice hash keys.</dd></div>
+              <div><dt>Real fixture</dt><dd><code>browse/structure/catena/01-gen/001.json</code> plus the generated Douay–Rheims Genesis 1 Scripture chapter. Its spine carries metadata for 107 commentary references; a generator-admitted fragment payload is requested only after that fragment is opened.</dd></div>
+              <div><dt>Stress states</dt><dd>Genesis 1's Greek, Latin, translation, overlap, and acquisition metadata; a real opened passage; Genesis 2 cross-chapter extents; Exodus 3 acquisition evidence only; Psalm 100's numbering refusal; and Genesis 10's inherited unavailable-voice normalization defect. No real disputed-attribution or held-but-unrenderable fixture exists.</dd></div>
+            </dl>
+          </article>
+
+          <article class="surface-record" data-review-surface="sources"
+            data-preview-route="build/public-alpha/preview/sources/index.html#edition=edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917&amp;passage=passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-16"
+            data-archetype="instrument">
+            <header>
+              <p class="surface-kind">Instrument · evidence observatory</p>
+              <h3>Source Library</h3>
+            </header>
+            <dl>
+              <div><dt>Public identity</dt><dd><code>/sources/</code> with its established edition and passage hash. Passage-only lookup currently resolves only records with a public readable pointer.</dd></div>
+              <div><dt>Preview route</dt><dd><code>build/public-alpha/preview/sources/index.html</code></dd></div>
+              <div><dt>Real fixture</dt><dd><code>browse/structure/sources/index.json</code> plus selected generated projections: Augustine's readable <cite>De civitate Dei</cite> 11.7 and Fortescue's printed p. 16 with an explicit redistribution restriction.</dd></div>
+              <div><dt>Stress states</dt><dd>Structural Work → Edition ownership; sibling Artifact, Segment, and Passage identities; the separate record-backed relation from a Passage to its controlling Artifact or Segment; readable public-domain text; deep links; many editions; text not readable here; invalid identity; and a withholding reason where prose would otherwise stand.</dd></div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-boundary" aria-labelledby="data-heading">
+      <p class="section-number" aria-hidden="true">03</p>
+      <div>
+        <h2 id="data-heading">The public projection is the fixture boundary</h2>
+        <ul>
+          <li>
+            Review code reads generated files under
+            <code>build/public-alpha/preview/</code>; it does not walk
+            <code>src/sources/</code> or infer redistribution rights from bytes
+            found on disk.
+          </li>
+          <li>
+            No separate passage-text payload is generated for the selected
+            rights-withheld fixture. Current edition projections still require a
+            rights audit because other records' context or notes may contain
+            source wording; the review matrix therefore does not use the known
+            affected canon-7 record as a withholding oracle.
+          </li>
+          <li>
+            Catena chapter files remain spines. Commentary text is requested
+            only for a selected fragment already present in the public
+            projection, and offered Bible chapters are reached through the
+            generated Bible manifest.
+          </li>
+          <li>
+            The Reader uses the generated reviewed HTML. No publication prose
+            is copied into this directory, and the installed PDF remains the
+            canonical printable edition.
+          </li>
+          <li>
+            The review layer makes no external asset or network request. Its
+            stylesheet and script are the two sibling files named by this page.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="provenance" aria-labelledby="provenance-heading">
+      <p class="section-number" aria-hidden="true">04</p>
+      <div>
+        <h2 id="provenance-heading">Exact starting points</h2>
+        <dl class="provenance-list">
+          <div>
+            <dt>Wave 1 base</dt>
+            <dd><code>origin/main@c27d6915319785686d1df6a1401a489aa9921f6f</code></dd>
+          </div>
+          <div>
+            <dt>Accepted UX foundation inspected selectively</dt>
+            <dd><code>origin/ux/foundation@3b5938a0dba88831763ec09c762ae1572007a27e</code></dd>
+          </div>
+          <div>
+            <dt>Foundation prototype source</dt>
+            <dd><code>ac37b6ffa6022dbab551385d91a12e277bb816cb</code></dd>
+          </div>
+          <div>
+            <dt>Implementation and harness reference inspected selectively</dt>
+            <dd><code>origin/impl/foundation@af2c9613ccda48679face4e43f59c002f93056ef</code></dd>
+          </div>
+        </dl>
+        <p>
+          Neither foundation branch is merged wholesale. This wave carries
+          forward only the accepted token roles, archetype distinctions, shell
+          and focus ideas, prototype containment, and evidence discipline that
+          the real routes can test.
+        </p>
+      </div>
+    </section>
+
+    <noscript>
+      <section class="no-script-note" aria-labelledby="no-script-heading">
+        <h2 id="no-script-heading">JavaScript is off</h2>
+        <p>
+          The complete review scope, route identities, fixture sources, rights
+          boundary, local procedure, and provenance remain above. JavaScript is
+          needed only to inject the disposable visual layer into separately
+          generated preview routes; this landing page does not substitute
+          synthetic content when injection is unavailable.
+        </p>
+      </section>
+    </noscript>
+  </main>
+
+  <footer class="review-footer">
+    <p>
+      Local, noindex, real-data design evidence. Production browser sources,
+      publication prose, PDFs, routes, and generated preview files are not
+      owned or changed by this prototype.
+    </p>
+  </footer>
+
+  <script src="prototype.js" defer></script>
+</body>
+</html>

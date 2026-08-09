@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-04.
+Last reconciled: 2026-08-08.
 
 ## Standing public-alpha authority
 
@@ -178,6 +178,46 @@ force-pushing, and all other history rewriting remain separately authorized
 operations.
 
 ## Promised work
+
+### Corpus browser Wave 1 real-data design
+
+<!-- promised-deliverable: corpus-browser-wave-1-design-2026-08-08 -->
+
+**The Wave 1 design is a committed, pushed Candidate on `ux/corpus-wave-1`;
+independent external review remains open.** The branch started from exact current
+`origin/main` base `c27d6915319785686d1df6a1401a489aa9921f6f`. The
+task-specific directions override the master plan's integration-branch
+precursor, so no foundation-integration branch is claimed: accepted knowledge
+and artifacts were carried selectively from Codex foundation SHA
+`3b5938a0dba88831763ec09c762ae1572007a27e` and Claude foundation SHA
+`af2c9613ccda48679face4e43f59c002f93056ef`. A0 and A1 are accepted; A2 is
+accepted with amendments; A3 is accepted only as foundation direction, not as
+pixel or production-route acceptance; and A4 is accepted with Jump bounded
+pending J0--J2, Related typed, and the accepted liturgy boundary preserved.
+
+The durable design authority is
+[`guidance/corpus-browser-vision.md`](guidance/corpus-browser-vision.md); the
+execution, evidence, and disposition register is
+[`guidance/corpus-browser-roadmap.md`](guidance/corpus-browser-roadmap.md).
+
+C0/C1, D0, E0, and F0 together form one real-data design candidate for Home,
+the Publications catalogue at `/texts/`, the long-form Publication Reader,
+Catena Omnia, and the Source Library. Its isolated `noindex` prototype is
+injected over a real generated preview and exercises actual corpus content and
+hard states. It changes no production source or route, canonical Day/Propers or
+other liturgy behavior, PDF, release binding, deployment, or public navigation;
+none of these candidate lanes is accepted or complete.
+
+**Evidence and next handoff.** The immutable review record is
+`build/agent-handoffs/20260809T000346Z-corpus-wave-1-design-review/`, with its
+matching one-root ZIP. Its browser report covers 83 real-route cases and 1,979
+assertions: 1,917 pass, 62 disclosed inherited findings are non-gating, and no
+gate fails. It contains 83 main captures, all 25 required before/after pairs,
+one 236-page Reader print PDF, and all 236 page rasters. The next action is
+independent per-lane review of C0, C1, D0, E0, and F0, followed by recording the
+actual disposition and any corrections. No merge, production implementation,
+release, deployment, liturgy change, or PDF change is authorized by this
+candidate.
 
 ### Live Reader — Ritual Flow & Orientation
 

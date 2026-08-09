@@ -1,6 +1,93 @@
 schema_version = 1
 
 [[deliverables]]
+id = "corpus-browser-wave-1-design-2026-08-08"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Produce one independently reviewable real-data Wave 1 visual and product-design candidate for Home, Publications, the long-form Publication Reader, Catena Omnia, and the Source Library, while preserving canonical PDFs, protected Liturgy, production routes and implementation, source truth, and the requirement for a separate external acceptance disposition."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "canonical-durable-authorities"
+  criterion = "The tracked corpus-browser master plan, vision, roadmap, and implementation record are the mutually consistent canonical authorities for the accepted foundation amendments, Wave 1 scope and branch/base, route-specific decisions, data limitations, implementation seams, evidence gates, and still-open external disposition; no ignored continuity file is required to recover a decisive fact."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "guidance/corpus-browser-master-plan.md",
+    "guidance/corpus-browser-vision.md",
+    "guidance/corpus-browser-roadmap.md",
+    "guidance/corpus-browser-implementation.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "isolated-real-route-prototype"
+  criterion = "One unlinked noindex prototype under the dedicated Wave 1 prototype root presents Home, Publications, Publication Reader, Catena Omnia, and Source Library compositions over actual generated route content, titles, metadata, rights and absence states, and provider differences without becoming production application logic or a second editable publication text."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "src/web/browser/prototypes/corpus-wave-1",
+    "src/web/browser/prototypes/corpus-wave-1/index.html",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "five-by-five-before-after-matrix"
+  criterion = "The review evidence contains comparable before and after captures for all five governed surfaces at 1440x900, 1024x768, 768x1024, 393x852, and 320x852: twenty-five route-and-viewport pairs and at least fifty original-resolution screenshots, with a numbered contact sheet and an index mapping every capture to route, state, viewport, and review purpose."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "build/agent-handoffs",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "stress-accessibility-and-print-evidence"
+  criterion = "Additional original-resolution evidence exercises real long-title and long-metadata states, paired and single-provider publications, PDF-only and browser-readable treatments, synthesis, sparse provenance, zero results, multilingual or source-heavy content, unavailable or withheld states where applicable, 200 percent text, representative 400 percent zoom/reflow, keyboard focus, forced colors, reduced motion, no-JavaScript static truth, and Publication Reader browser print."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "build/agent-handoffs",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "complete-external-review-package"
+  criterion = "One verified one-root timestamped handoff directory and matching ZIP are reconciled into the evidence paths before this requirement passes and contain HANDOFF.md first, REVIEW_REQUEST.md with blocking questions, changes.patch, checks.txt with commands and numeric exits, sources.md, a changed-file inventory, route-state matrix, base/head/branch and commit list, screenshot index and contact sheet, required captures, prototype files, design decisions, known limitations, exact recommended next Codex tasks, and SHA-256 manifest and ZIP digest."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "build/agent-handoffs",
+    "guidance/external-review-handoffs.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "protected-production-zero-diff"
+  criterion = "The exact base-to-head and staged-diff evidence reports zero changes to canonical Day and Propers and every other production Liturgy asset, all canonical PDFs, publication prose, production browser HTML/CSS/JavaScript outside the isolated prototype, generated public data, release bindings, public routes and hash keys, and deployment configuration; no broad ignore rule or omitted path may substitute for the explicit inventories."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "build/agent-handoffs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "named-branch-commit-and-push"
+  criterion = "All durable Wave 1 design authorities, isolated prototype sources, review evidence records, and promise reconciliation are committed coherently on ux/corpus-wave-1 from its recorded exact base and pushed to the same named remote branch, with the outgoing commit list and remote head recorded; no merge or push to main and no deployment occurs."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "build/agent-handoffs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-external-acceptance"
+  criterion = "Independent external visual and product review records an explicit accepted disposition for each of C0, C1, D0, E0, and F0 after reviewing the real pages and complete ZIP, and every blocking question or required correction is resolved; prototype completion, checks, commit, push, or packaging alone cannot pass this gate or authorize production implementation, main integration, deployment, or public cutover."
+  status = "open"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-reader-live-ritual-flow-2026-08-07"
 owner = "build/agent-continuity/liturgy-reader-visual-plan.md"
 promise = "Improve the live canonical Day and Propers readers for sustained liturgical reading through source-owned persistent ritual orientation, a current-place Contents map, and a calmer principal/rubric/reference hierarchy without reopening the accepted first viewport, cutover, navigation, state, renderer, source, or translation boundaries."
