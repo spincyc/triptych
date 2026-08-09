@@ -343,15 +343,23 @@ for. Five separate memoised-JSON-fetch implementations exist
 (`history.js:271`, `law.js:96`, `day-reader.js:108`, `propers-reader.js:86`,
 `day.js:261`) and `catena.js` open-codes a sixth.
 
-The `history.js`/`law.js` divergence has already produced a live bug.
-`history.js:443-447` copies `CITATION_WORDS` from `law.js:218-223` and omits the
-`'none-claimed'` key. In `latin-missal.json`, the default slice, `act_citation`
-is `none-claimed` on 26 of 59 stations, so **44% of the default history view
-renders `Instrument read: none-claimed — ` with a dangling em dash and no
-gloss**. The page that needs the sentence most is the one missing it. A second,
-quieter divergence: `history.js:321-326` keeps a private `magnitude` that
-hardcodes `masses_touched` and omits `interpretations`, disagreeing with
-`code-model.js:353-360` about how big an act was.
+The `history.js`/`law.js` divergence produced a live bug, **fixed on this branch
+by `805e032e0`**. `history.js` copied `CITATION_WORDS` from `law.js:218-223` and
+omitted the `'none-claimed'` key. In `latin-missal.json`, the default slice,
+`act_citation` is `none-claimed` on 26 of 59 stations, so **44% of the default
+history view rendered `Instrument read: none-claimed — ` with a dangling em dash
+and no gloss**. The page that needed the sentence most was the one missing it.
+The map now carries the key at `history.js:455-459`, with the comment at
+`:443-453` recording why the two copies drifted; the fix is not on
+`origin/main`, which does not carry this branch.
+
+A second, quieter divergence is **still live here**: `history.js:321-326` keeps
+a private `magnitude` that hardcodes `masses_touched` and omits
+`interpretations`, disagreeing with `code-model.js:353-360` about how big an act
+was. `origin/main` closed the history half differently — `add105f39` dropped
+`masses_touched` from `magnitude` (`main:410-414`) — so the two files still
+disagree there too, and this branch and `main` disagree with each other as well.
+Whoever merges must pick one arithmetic rather than take the newer file.
 
 **Orphan JS.** `web_data_files()` (`tools/public-alpha:662-690`) copies every
 `.js` in each entrance directory whether or not any HTML loads it. Three files
@@ -417,25 +425,27 @@ That masthead link is also broken in the repository. There is no
 which the `body:not(:has(> .site-header))` guard at `browser-core.css:134`
 exists to serve — gives a 404 on the only link the page has.
 
-**`history.css`'s `.field` collides with the shared control bar and works by
-load order.** `browser-core.css:287` styles `.field` as a control in the bar
-above a reading page: a label over a select, sized for a thumb.
-`src/web/browser/history/history.css:240` styles `.field` as a line of one
-change — a name, an old value, an arrow, a new value — on a page that has no
-control bar at all. The stylesheet's own comment at `:226-239` says it out loud:
-the two "have nothing in common but the word," this file re-declares `display`
-and `gap` over the shared rule, the leftovers are inert, "it renders correctly
-by luck rather than by construction, and the fix is a rename — `.change-field` —
-which is a change to `history.js` and so is not made here." **Any shared-shell
-work that reorders stylesheet loading, or adds a `.field` rule after
-`history.css`, silently breaks every change row on the page.**
+**`history.css`'s `.field` collided with the shared control bar and worked by
+load order. Fixed on this branch by `bad976039`.** `browser-core.css:287` styles
+`.field` as a control in the bar above a reading page: a label over a select,
+sized for a thumb. `history.css` styled the same name as a line of one change —
+a name, an old value, an arrow, a new value — on a page that has no control bar
+at all, re-declaring `display` and `gap` over the shared rule and leaving the
+rest inert. It rendered correctly by luck rather than by construction, and **any
+shared-shell work that reordered stylesheet loading, or added a `.field` rule
+after `history.css`, would have silently broken every change row on the page.**
+The change row is now `.change-field` (`history.css:238`, with the family at
+`:250-280`), renamed across `history.js`, `history.css` and the markup together,
+and the two components no longer meet. Not on `origin/main`.
 
-Two related name collisions sit beside it. `texts.css:191-199` deliberately
-restates every declaration of `browser-core.css:556-564` so that the shared
-`.detail` — the history and law record panel — cannot reach the texts page,
-where `.detail` is a different component. Both files document it as a name
-collision and both say the fix is a rename in `texts.js`. Introducing a shared
-component library without doing that rename first will re-collide. And eight
+Two related name collisions sat beside it. `texts.css` deliberately restated
+every declaration of `browser-core.css:556-564` so that the shared `.detail` —
+the history and law record panel — could not reach the texts page, where
+`.detail` was a different component. **Fixed on this branch by `9e980ff5b`**:
+the texts record card is now `.record` (`texts.css:200`, family at `:216-271`),
+the panel keeps its `#detail` id, and the comment at `:187-198` is past tense.
+Introducing a shared component library would have re-collided otherwise. Not on
+`origin/main`. And eight
 class-name pairs still name one component twice: law's `.panel`/`.panel-title`/
 `.panel-block`/`.block-title`/`.stop`/`.stop-head`/`.stop-kinds`/`.weak` against
 history's `.detail`/`.detail-title`/`.detail-section`/`.detail-section-title`/
@@ -444,26 +454,30 @@ done at the selector-list level, and `browser-core.css:543-548` says the rename
 is the right next step and belongs in a commit that moves the HTML and the
 JavaScript with it.
 
-**`browser-core.js` `fail()` hard-codes `#reading`.**
+**`browser-core.js` `fail()` hard-coded `#reading`. Fixed on this branch by
+`a912e182e`.** `fail` looked up `#reading` and returned when it found nothing.
+Only catena, scripture (both pages), sources and texts use `id="reading"`;
+history's main is `#map`, law's is `#canon`, and all six liturgy pages use
+`#reader-document`. `T.fail` was therefore a silent no-op on law and history —
+neither called it — and any shared error or empty-state primitive routing errors
+through it would have made those pages fail silently.
 
-```js
-function fail(text) {
-  const reading = document.getElementById('reading');
-  if (!reading) return;
-  …
-}
-```
+A message is now aimed in two steps: an element or id passed by the caller
+always wins, and otherwise the first of `DOCUMENT_LANDMARKS` the page actually
+carries. `browser-core.js:288` holds the list —
+`['reading', 'map', 'canon', 'reader-document']` — `:291-300` is
+`documentRegion(target)`, and `:357-365` is the rewritten `fail`, which now also
+speaks the reason through `statusLine` whether or not a region was found.
+`showBanner` (`:310-317`) takes the same optional target, though it still
+resolves to the single id `#banner`, because `#banner` is the only banner host
+in the tree and the liturgy reader has none; a page without one still shows no
+inline-mode notice, and that remains open. `DOCUMENT_LANDMARKS` is now the
+contract, and `tools/tests/test_browser_collisions.py` fails a published page
+that names its `<main>` anything else. This fix is a prerequisite for a shared
+error component. Not on `origin/main`.
 
-`browser-core.js:294-301`. Only catena, scripture (both pages), sources and
-texts use `id="reading"`. History's main is `#map`, law's is `#canon`, and all
-six liturgy pages use `#reader-document`. `T.fail` is therefore a silent no-op
-on law and history today — neither calls it — and any shared error or
-empty-state primitive that routes errors through it would make those pages fail
-silently. `showBanner` (`:261`) has the same hard-coded `#banner` problem.
-Fixing this is a prerequisite for a shared error component, and the five
-different `<main>` ids are the reason it was never fixed.
-
-`T.fail` has a second defect where it *is* used. `sources.js:229` calls it when
+`T.fail` has a second defect, **still live**, where it *is* used.
+`sources.js:229` calls it when
 an edition has no recorded file; `fail` clears `#reading`, which contains both
 `#finder` and `#reader`, so `elements.finder` and `elements.reader` (`:53-54`)
 then point at detached nodes and every subsequent render writes into nothing.
@@ -478,6 +492,17 @@ target is the outer wrapper rather than the reading document. Every browser page
 is affected. No harness catches it, because every Chromium harness loads the
 repository or preview page and the preview-build assertions test robots and
 links, not landmark nesting.
+
+**This one is fixed on `impl/shell-plumbing` and not here.** `6b5742bf2` on that
+branch names the layout's wrapper element, has `wrap_in_layout` take it from the
+caller and `render_browser_page` ask for a `div`, while `browser_page_parts`
+refuses a browser page that does not declare exactly one `<main>` so the guard
+cannot silently become no landmark at all. It took that branch's gate from 117
+`single-main-element` failures to none. On `impl/foundation-hardening` the
+defect is live and measured: 117 failures in the run recorded in §17.5. The
+citation `layout.html:29` resolves here and **does not resolve** on
+`impl/shell-plumbing`, whose copy of this section still calls the defect
+outstanding; that branch's record is the wrong one.
 
 One correction, because this document earlier let two separate things be read as
 one. The layout's own skip link **is** present and **does** point at an element
@@ -1061,9 +1086,12 @@ gates are non-green honestly at the stored-example transcript replay and at
 writing it down."
 
 Host: node v26.7.0, chromium 151.0.7922.108, chromedriver 151. No npm, npx, deno
-or bun; no Playwright, no Selenium. Whether the four harness failures are a
-chromium-versus-chrome difference or genuine staleness is **not yet
-determined**, and determining it is step 2 of §11.
+or bun; no Playwright, no Selenium. Whether the four harness failures were a
+chromium-versus-chrome difference or genuine staleness was **neither**: they
+needed `make public-preview` first, because three of them address the preview
+build as their data root. This paragraph's "not yet determined" was superseded
+within this same document by §11 step 2, and closed in the tree by `d766aa1a5`,
+which added `check-browser-harnesses: public-preview` at `Makefile:778`.
 
 ## 10. Constraints that will stop an implementation
 
@@ -1242,18 +1270,28 @@ browser page so head-whitelist and whole-document violations fail at
 `make check` instead of at build. Both use logic that already exists. Verify:
 introducing a deliberate syntax error in a scratch copy fails the test.
 
-**5. Fix the four hazards that block a shared shell. Depends on 4.** These are
-prerequisites, not improvements. (a) Give `T.fail` and `T.showBanner` a target
-argument or landmark lookup, so they stop hard-coding `#reading` and `#banner`;
-five `<main>` ids exist and law and history currently get a silent no-op.
-(b) Rename history's change-row `.field` to `.change-field` in `history.js`,
-`history.css` and the markup together, removing the load-order dependency.
-(c) Rename texts' record card off `.detail` in `texts.js` and `texts.css`,
-removing the deliberate shadow of `browser-core.css:556-564`. (d) Scope
-`day-missal.css`'s six unscoped `body > .site-header` blocks to the page.
-Verify: each is a mechanical rename or signature change with an unchanged
-rendered DOM; capture before/after at 393×852 and 1440×900 on the affected
-routes. None of these makes a visual decision.
+**5. Fix the four hazards that block a shared shell. Depends on 4. Three of the
+four are done on this branch; (d) is not, and cannot be done from here.** These
+are prerequisites, not improvements.
+
+| | Hazard | State |
+| --- | --- | --- |
+| (a) | `T.fail`/`T.showBanner` hard-coding `#reading` and `#banner` | **Done, `a912e182e`.** Both take an optional target; `fail` falls back to `DOCUMENT_LANDMARKS` (§5). `showBanner` still resolves to the single `#banner` id, and the liturgy reader still has no banner host — that residue is open and belongs to the liturgy deliverable. |
+| (b) | history's change-row `.field` colliding with the shared control `.field` | **Done, `bad976039`.** Renamed to `.change-field` across `history.js`, `history.css` and the markup together. |
+| (c) | texts' record card shadowing the shared `.detail` | **Done, `9e980ff5b`.** Renamed to `.record`; the panel keeps its `#detail` id. |
+| (d) | `day-missal.css`'s six unscoped `body > .site-header` blocks | **Open, and not this lane's to close.** Still unscoped at `day-missal.css:51`, with further unscoped blocks in the 47.5rem media query at `:604` and the print block at `:730`. |
+
+(d) stands as the only remaining item, and it is blocked rather than merely
+undone: `day-missal.css` is loaded by four published liturgy pages inside the
+protected reader family, so scoping it is a change to protected liturgy and
+needs that deliverable's authority, not a corpus lane's. It remains the most
+dangerous file in the tree for anyone building a shared bundle, because pulling
+it in restyles the header of every page on the site.
+
+Verify, for each of (a)–(c) as landed and for (d) when it is done: a mechanical
+rename or signature change with an unchanged rendered DOM; before/after at
+393×852 and 1440×900 on the affected routes. None of these makes a visual
+decision.
 
 **6. Promote `reader-shell.js` and `reader-shell.css` to `shared/`. Depends on
 5, and on the liturgy deliverable in §13-C1 being closed or the files being
@@ -1301,9 +1339,12 @@ reduced-motion, print, 400%} matrix per route as evidence. **Skip cleanly when
 skip today, because the browser is deliberately excluded from the installed
 dependency set. Do not add pixel-diff baselines: a baseline *is* a visual
 decision, and it has not been made. Verify: the harness reproduces today's
-known-good states and reports today's known defects — the nested `<main>`, the
-`role="img"` pruning, the sources 320px overflow, the texts 320px overflow —
-rather than passing them.
+known-good states and reports today's known defects — the nested `<main>` and
+the `role="img"` pruning — rather than passing them. The two 320px overflows
+this step was written to catch are gone: `862f25173` wrapped the Source Library
+finder's and Publications' grid track minimums in `min(…, 100%)`, and
+`no-horizontal-overflow-at-320` now fails nowhere in the gate's 2,290
+assertions.
 
 **10. Emit one generated site navigation. Depends on 5 and on the design lane's
 decision about whether the liturgy routes keep site chrome.** Add a marker to
@@ -1349,10 +1390,14 @@ is touched, because `layout()` is the most intricate derivation in the corpus
 and the only one with no check at all; texts needs a per-document hash key
 before a catalogue redesign, because today `open()` writes nothing to the URL
 and a reader who finds a document and copies the address sends a filtered list;
-and catena's two offline-fallback promises (`catena.js:970`, `texts.js:391` call
-`setInlineNotice` and never `addInlineFiles`) must be fixed or dropped before a
-shell centralises the banner, or the shell centralises a promise two pages
-cannot keep.
+and the offline-fallback banner must be settled before a shell centralises it,
+or the shell centralises a promise the pages cannot keep. **This item named the
+wrong two pages** — see §20, FP8. `catena.js:970` and `texts.js:393` call
+`setInlineNotice` precisely in order to *replace* the shared promise with an
+honest "nothing to show" / "nothing to list", so they are the two that got it
+right. The page that makes the promise and cannot keep it is `history`, which
+overrides nothing and never clears `bootstrapping`; that is D-4 in §20, and it
+is what this step must actually fix.
 
 **14. Search index feasibility (J1) and implementation (J2). Depend on 9 and on
 the design lane's result taxonomy.** J1 is a measurement, not a build: the
@@ -1401,14 +1446,19 @@ than a silent scope expansion. Step 6 is the only step that needs them, and it
 is the only step that should wait.
 
 **R2. A stylesheet reorganisation breaking a page that never mentions the
-selector.** Evidence: `history.css:240`'s `.field` wins over the shared control
-`.field` purely by load order, and the file says so; `day-missal.css:51` restyles
-`body > .site-header` unscoped on four published pages; `texts.css:191-199`
-shadows the shared `.detail` by restating every declaration; `browser-core.css`'s
-global `:focus-visible` (`:202-205`) is injected after `site.css` and therefore
-overrides the site header's own focus treatment on every browser page.
-Mitigation: step 5 does the renames before anything is moved, each as an isolated
-commit with before/after captures.
+selector. Reduced, not closed.** Two of the four pieces of evidence are spent.
+history's `.field` no longer wins over the shared control `.field` by load
+order — it is `.change-field` (`bad976039`) — and `texts.css` no longer shadows
+the shared `.detail` — it is `.record` (`9e980ff5b`). Both renames landed as
+isolated commits on `impl/foundation-hardening`, exactly as this risk's
+mitigation asked, and neither is on `origin/main`. What remains is the worse
+half: `day-missal.css:51` restyles `body > .site-header` unscoped on four
+published pages, and `browser-core.css`'s global `:focus-visible` (`:202-205`)
+is injected after `site.css` and therefore overrides the site header's own focus
+treatment on every browser page. Mitigation, unchanged for the remainder: do the
+scoping before anything is moved, each as an isolated commit with before/after
+captures — but see §11 step 5(d), because `day-missal.css` is protected liturgy
+and the scoping is not a corpus lane's to make.
 
 **R3. Flipping the dual-context guard.** Evidence: `browser-core.css:134`
 `body:not(:has(> .site-header))` switches the whole page between "inside the site
@@ -1931,9 +1981,33 @@ hash is a pure function of the tree, so the record is derived, not negotiated.
 ### 17.5 What each branch must run, and what is already red
 
 `make check` takes about 310 seconds and is red at the base on
-`check-tool-registry` and `check-examples`. `check-browser-gate` takes about 74
-seconds and reports 1,583 passes against 146 failures on the three known publish
-defects. Both rednesses are inherited.
+`check-tool-registry` and `check-examples`. That redness is inherited.
+
+**The gate's numbers moved four times and are not the same on two branches, so
+no single figure is true of the lane.** The arc, each step measured by the
+commit that caused it:
+
+| At | Assertions | Failures | Cause | How known |
+| --- | --: | --: | --- | --- |
+| `0fcf0cb95` | not recorded | 146 | the original measurement, three publish defects; 1,583 passes | the sentence this table replaces |
+| `d0c9aac44` | 2,290 | 228 | widened to the five-viewport governing matrix; +82 target-size failures, a new class | assertion total from that commit's message; 146 + 82 |
+| `862f25173` | 2,290 | 226 | the two 320px overflows closed | "from two to none with no other count moving" |
+| `6b5742bf2`, `impl/shell-plumbing` only | 2,290 | 109 | the 117 nested-`<main>` failures closed | "from 117 … to none with no other count rising"; 226 − 117 |
+
+**On `impl/foundation-hardening` at `ecfb4e7b8`, re-run for this record: 2,290
+assertions over 19 routes and 9 states, 1,836 passed, 226 failed, 228 skipped,
+93 seconds.** Two consecutive runs agreed. The 226 are 117
+`single-main-element`, 82 `primary-controls-meet-target-size` and 27
+`skip-link-targets-existing-element`, and nothing else — `no-horizontal-overflow-at-320`
+fails nowhere. **On `impl/shell-plumbing` the same gate reports 109**, because
+`6b5742bf2` closed the 117; that number was not re-run here and is taken from
+that commit's own measurement. Anyone comparing must use the figure for the
+branch they are on. The earlier "1,583 passes against 146 failures … about 74
+seconds" was true at `0fcf0cb95` and is true nowhere now.
+
+Of the three surviving classes, one is a real live defect (`single-main-element`,
+fixed on the other impl branch), and two are dispositioned as not-defects here:
+see §20, FP1 for target size and FP5 for the skip link.
 
 The rule that follows is the one that matters for parallel work: **compare
 failure sets, never exit codes.** Every branch here will see a non-zero exit
@@ -2051,3 +2125,176 @@ the reader into that state. And the mode selector advertises
 `role="radiogroup"` on all six routes without arrow-key or roving-tabindex
 behaviour; it is operable by Tab and Enter and keeps `aria-checked` correct, so
 this is a promise the markup does not keep rather than a broken control.
+
+## 20. The defect register
+
+§14's amendment D10 says durable truth lives in the tracked guidance and the
+ledger, not in `build/agent-continuity/*`, and that no fact a future agent needs
+may live there alone. A read-only sweep on 2026-08-08 found ten browser defects
+that lived in neither — they existed only in agent reports under a scratch
+directory, which is worse than `build/`: a scratch directory is deleted. This
+section is their tracked home. It also records what the same sweep reported and
+what re-checking refuted, because a defect list nobody trusts is worse than a
+short true one, and an unrefuted false positive is re-reported by every
+subsequent sweep at full cost.
+
+Everything below was re-verified in the tree at `ecfb4e7b8` and, where a defect
+could plausibly have been closed elsewhere, against `origin/main` at `fc3092de9`
+and the fix branches. `impl/foundation-hardening` is **not** a descendant of
+`origin/main`, which is six commits ahead of the shared base, so a finding read
+off this worktree alone is not a finding about the published site. Line numbers
+are given for this branch; where `main`'s differ, both are given.
+
+### 20.1 Defects with no tracked record before this section
+
+All ten are live on `origin/main` as well as here, and none is fixed on any
+branch. Ranked worst first, where "worst" means the page states something untrue
+to a reader who cannot tell.
+
+| # | What the reader sees | Cause | Status |
+| --- | --- | --- | --- |
+| **D-1** | A shared Source Library link naming a passage opens **passage 1** of the edition, and the address bar goes on naming the passage that was asked for. Nothing on the page says a substitution happened. | `sources.js:251-255`: `Math.max(0, passages.findIndex(…))` turns the not-found `-1` into `0`. `applyHash` (`:591-605`) prefers `edition` over `passage`, so `openEdition(work, edition, passageId)` runs with no membership check and the honest "no passage with the id …" path at `:623` is never reached for the two-key form. That two-key form is the canonical hash this page writes for itself, i.e. the shape of every shared link. Nothing rewrites the URL afterwards, because `writeHash` runs only on step, select-change and `showFinder` (`:548`, `:554`). The file contradicts its own `:612-614`. | Live. `main:252` identical; `add105f39` touched only `renderPassage`. |
+| **D-2** | A citation to a retired history station id opens the **newest** station instead, and the address is then rewritten to the substituted id, destroying the evidence that the citation was wrong. | `history.js:1159-1160`: `if (wanted.station && byId.has(…)) open(…); else if (stations.length) open(stations[stations.length - 1].id);` — and `open()` ends by writing the hash at `:877`. The comment above justifies only the *no-instruction* case, which is a different case. | Live. `main:1247-1248`. |
+| **D-3** | Opening Gratian's Decretum on the Code of Canon Law slice prints "A printed station. **A missal survives** and no act has been located for it… the book is present, the instrument is missing." | `history.js:492-499` (`kindNote`), with the same wording in short form at `:1114`. Reached, not hypothetical: `structure/act-history/code-of-canon-law.json` carries 47 stations of which **3** are `station_kind: "printed"` — `gratianus-decretum-1150`, `extravagantes-communes-1582`, `extravagantes-ioannis-xxii-1582`. The map's `aria-label` (`:346`) repeats "the acts that changed this **missal**", and because of the `role="img"` pruning (§5) that string is the *only* content in the map's accessibility tree. Not a string swap: `printed` is defined in missal terms in `guidance/the-shape.md:164`, `guidance/act-histories.md:822` and `guidance/time-machine.md:48`, all written before the Code slice existed, and the slice's `unit_word` is `canon` and `group_word` is `division`, neither of which yields a replacement. The vocabulary needs a word the slice does not declare. | Live. `main:573`, `:1201`, `:434`. |
+| **D-4** | On `history`, **any** fetch failure shows "No data root could be reached, so this page is showing its small built-in fallback rather than the corpus." Both halves are false: the spine loaded from that root seconds earlier, and there is no fallback to show. | `browser-core.js:113` sets `bootstrapping = true`, cleared only by `doneBootstrapping()` — called inside `loadBibles()` (`:487`, `:493`) and explicitly by `texts.js`, `law.js` and `sources.js`. `history.js` calls it **never**, and registers no inline files, so a throw runs `enterInlineMode()` (`:141-145`) with the default notice at `:132-135`, and the next `loadJSON` throws `NotFound(path + ' is not in the built-in fallback')`. | Live, identical on `main`. |
+| **D-5** | Six selects render **blank** while the list below them is correct, so the control lies about what is being shown. | An invalid hash value is assigned to a `<select>` with no membership test; per spec that sets `selectedIndex = -1` and `value = ''`. Five sites in `texts.js:382-386` (`author`, `edition`, `section`, `reading`, `sort`) and one in `law.js:1244` (`line`). `T.fillSelect` (`browser-core.js:437-464`) only builds options and tests nothing. `readState` (`texts.js:69-73`) then falls back to `M.ANY` and `askedLine()` (`law.js:568-570`) to `''`, so the *content* is right and only the control is wrong. Compounds with D-6. | Live. `main` `texts.js:382-386`, `law.js:1256`. |
+| **D-6** | Arrive on `#author=…`, set the author back to "Any author", and the list re-renders unfiltered while **the address still carries the filter**. | `catalogue-model.js:42` makes `ANY` the empty string, and `texts.js:336-343` writes all six pairs with `sort` emitted as `''` at its default, so all six can be empty at once. `writeHash`'s `if (!parts.length) return;` (`browser-core.js:949`) then leaves the URL untouched. Clearing one filter while another is set is fine, because the hash is rebuilt whole. The mechanism itself is pinned at `test_browser_url_contract.py:485`, and the `sources` instance of it is written up at `:1047`; the `texts` instance is recorded nowhere. | Live. `main:885`, byte-identical `writeHash`. |
+| **D-7** | A `catena` link carrying `#voice=` opens on "Everything held" — the voice filter is silently discarded — but only on a genuine fresh load. | `catena.js:1010` assigns the hash value to a select that at that moment holds exactly one static option, `value=""` (`catena/index.html:69-71`). `selectedIndex` goes to `-1` and `value` to `''`, so `fillVoices()` (`:923-925`) reads the emptied value as `wanted` and the link is gone. The `hashchange` path (`:1026-1030`) works, because a prior render populated the options. Not the same thing as catena's deliberate refusal of legacy `language=` — see FP3. | Live, identical on `main`. |
+| **D-8** | Stepping through Source Library passages with Previous/Next **destroys keyboard focus**; it lands on `<body>`. | `step()` (`sources.js:382`) calls `refreshNavigation()` (`:375-380`), which does `bar.parentNode.replaceChild(renderNavigation(…), bar)`; `renderNavigation` (`:326-373`) builds brand-new Previous, `#passage-select` and Next nodes, so the element the click came from is detached. `grep -n focus sources.js` returns nothing — no `.focus()`, no `activeElement`, no restoration anywhere in the file. The select's own change handler does the same to the dropdown's keyboard position. Masked in casual testing because `T.onArrowStep` (`browser-core.js:972-982`) refuses to act while a button or select has focus, so losing focus *enables* arrow stepping. | Live, identical on `main`. |
+| **D-9** | When a law slice fails to load, the "Body of law" select sits at "**Loading…**", disabled, forever, beside prose saying the record could not be read. The page contradicts itself. | `law/index.html:41-42` seeds `<option>Loading…</option>`; the only replacement is `law.js:1293-1297`, and the slice-load `.catch` (`law.js:1346-1362`) renders into `canonView` and never touches `lineSelect`. Narrower than first reported: an *empty* bodies list still clears the placeholder, because the call seeds `{value:'', label:'Any'}`. The one reaching path is a failed slice — `?slice=nonesuch`, an unserved data root, any 404. `test_browser_collisions.py:19-25` makes exactly this argument about the *other* placeholder — a "Loading…" left standing "tells a reader the corpus is arriving when it is not" — and the `T.fail` work (§5) fixed it for `<main>` and did not extend to selects. Same shape in `texts/index.html`, five `Loading…` options at `:35`, `:42`, `:49`, `:56` and `:63`, behind the `T.fail` return at `texts.js:400-401`. | Live. `law/index.html` byte-identical on `main`. |
+| **D-10** | Nothing — this one is invisible to readers and costs only a maintainer's time. `scripture/track.js`'s header documents a hash that does not exist. | `:5` names the tiers "overview, narrative, year" and `:23-25` give `#tier=narrative`, `#tier=narrative&period=exile` and `#tier=narrative&reading=47`. The real tier ids in `structure/readings/narrative-spine.json` are `full-account`, `landmarks` and `story`, and the contract's canonical form is `#tier=wide&reading=r-014&bible=…` (`test_browser_url_contract.py:586`). `:796` — `tiers.indexOf(wantedTier) >= 0 ? wantedTier : tiers[0]` — opens the first tier for any unrecognised value, so the documented address does something, just not what it says. | Live. `track.js` byte-identical on `main`. |
+
+Two more defects are recorded on `main` but **scoped too narrowly to be found by
+the agents who need them**, which is its own kind of absence:
+
+- `guidance/liturgy-reader-state.md:194-195` records that "the shared
+  self-written-hash marker can mistake a later Forward navigation for its old
+  event" as a liturgy reader-state matter. The marker is `lastWritten` in
+  `browser-core.js:937`, set on every write and never cleared, and
+  `onHashChange` (`:956-961`) returns when `location.hash === lastWritten`.
+  Write `#A`, write `#B`; Back gives `#A ≠ #B` and renders A while `lastWritten`
+  stays `#B`; Forward gives `#B === lastWritten` and is swallowed — the URL says
+  B and the page shows A, stickily, because `writeHash`'s early return (`:951`)
+  does not refresh the marker. **Every instrument that writes a hash shares
+  it**: `liturgy/day.js:1554`, `catena/catena.js:893`,
+  `scripture/track.js:661`, `history/history.js:877` and `:938`,
+  `texts/texts.js:336`, `sources/sources.js:548` and `:554`,
+  `law/law.js:1224`, plus the orphan `liturgy/liturgy.js:381`. The comment at
+  `browser-core.js:933-935` defends the design — recognised by its text so a
+  flag can never be left set — which is true of Back and false of Forward.
+  `test_browser_url_contract.py:498` pins the guard and never tests Forward.
+  Identical on `main:873`, `:888`, `:894`.
+- The same file at `:192-193` records that Day history navigation "does not…
+  clear an absent Ordinary variant." The Apply path is the reachable one and the
+  record does not name it: `day-reader.js` on `main:1719-1723` writes
+  `updates[group.group] = ordinaryOptionSelect.value` whenever the field is
+  visible and removes only `['mass']`. `structure/ordinary/postconciliar.json`
+  declares group `eucharistic-prayer`; `structure/ordinary/roman-1962.json`
+  declares no variants at all. Postconciliar → 1962 via Apply therefore emits
+  `#missal=roman-1962&eucharistic-prayer=ep-iii`, `validateExplicitVariants`
+  returns `invalid-explicit-variant`, and `renderFailure` runs. This is the
+  mechanism `502dc3bc1`/`5b0675a1a` fixed for the `mass` key, reached by a
+  second key the fix did not extend to.
+
+### 20.2 Reported and refuted
+
+Each of these was reported as a defect and is not one. They are recorded with
+the evidence that refutes them so that the next sweep does not re-report them,
+and so that a reader who re-derives the finding can see it was considered rather
+than missed.
+
+**FP1 — the 82 target-size failures are a design dependency, not a defect.**
+The gate sets its own bar and says so at `corpus_browser_gate.mjs:164-168`: "WCAG
+2.2 target size (**enhanced**) is 44x44 CSS px." That is SC 2.5.5, level **AAA**.
+The AA minimum, SC 2.5.8, is 24×24, and nothing in the corpus fails it. The check
+runs at one width only (`:836-837`, the 393px handset of the governing matrix),
+and links set inline in a sentence are counted and reported but never failed, by
+the standard's own inline exception. What the 82 failures describe is a site-wide
+type and spacing scale — 909 undersized controls on history, 655 on sources —
+which is the design lane's contract to set and not a hardening lane's to change.
+`PROJECT-WORK.md` already dispositioned it in those terms. Counting it as 82
+defects inflates any list by 82 and reopens a settled disposition; the honest
+reading is that the gate is measuring an accepted gap against an aspirational
+bar, deliberately, and reporting it is the point.
+
+**FP2 — `law` has no dead hash keys.** All five are consumed. `canon` feeds
+`citationInput` and `lookUp` (`law.js:1248-1250`); `par` is appended as ` §N`
+(`:1249`), parsed by the `TYPED` citation grammar at `code-model.js:108-119`,
+becomes `entry.asked` at `:244` and marks the paragraph at `law.js:503-505`;
+`unit` reaches `openUnit` (`:1246`, body from `:515`); `act` reaches
+`openStation` (`:1252-1254`); `line` sets
+`lineSelect` (`:1244`) and is read back by `askedLine()` (`:568-570`) inside
+`lookUp`. What looks like deadness is that `unit` is never *written back*, and
+that is deliberate twice over: `law.js:1219-1220` says an id is what one page
+hands another, and `test_browser_url_contract.py:101-110` pins `unit` under
+`LEGACY_INPUT_ONLY_ALIASES` with an assertion at `:766-775` that the alias must
+still be accepted as input and must never be emitted. A sweep that calls `unit`
+dead is proposing to delete a tested contract. The genuinely weak thing about
+`line` is narrower and different, and is not deadness: `openUnit` never consults
+it and `writeState` overwrites it (`:510`), and `#line=` alone at boot is dropped
+because `:1321-1323` calls `applyHash` only when `unit` or `canon` is present
+while a later `hashchange` (`:1326`) calls it unconditionally — so the two
+arrival routes disagree.
+
+**FP3 — catena's refusal of a legacy `language=` key is deliberate.** Recorded in
+this document at §12's URL-stability risk ("A generic key-alias facility invites
+someone to 'fix' that. **It is not a bug**"), explained in `catena.js:896-903`
+where the two axes are shown not to correspond — `la` named Ambrose's own
+Latin — and pinned by `test_browser_url_contract.py:532`. The real catena bug is
+next door and easily conflated with it: D-7 above.
+
+**FP4 — "Back to the corpus leaves a bare `#edition=`" was already refuted in
+tracked form, and the refutation is the model this section follows.**
+`test_browser_url_contract.py:1047-1048` says so in its own words: "REFUTED AS
+REPORTED, AND CONFIRMED IN A WORSE FORM." `T.writeHash` drops empty values
+(`browser-core.js:946`), so `edition=` is never written bare. What actually
+happens is that a finder at all defaults produces no pairs, the router returns
+before touching the URL (`browser-core.js:949`, pinned at
+`test_browser_url_contract.py:485`), and the whole reader hash
+stays standing, so a reload reopens the edition the reader just closed. The
+reported shape was wrong and the underlying defect is real and different.
+
+**FP5 — the 27 `skip-link-targets-existing-element` failures are not a skip-link
+defect.** The layout's skip link is present and points at an element that
+exists, on all thirteen routes. The failures are a focus trap:
+`propers-reader.js:1020` calls `readerShell.open('browse', …)` on load and
+`reader-shell.js:220` opens it with `showModal()`, so the document is inert and
+Tab never reaches the link. Three routes, instrument-owned, inside the protected
+reader deliverable; no generator change can fix it. Recorded at length in §5 and
+separated from the stripped-skip-link finding by `4b87fd14e`.
+
+**FP6 — `role="radiogroup"` without roving tabindex is overstated by its own
+record.** §19 already downgrades it: the control is operable by Tab and Enter and
+keeps `aria-checked` correct, so this is a promise the markup does not keep
+rather than a broken control, and the honest repair may be to drop the role. It
+should not be listed as a peer of the absence defect.
+
+**FP7 — `texts`' `#detail` panel sitting before `<main>` is a design decision
+with its rationale in the file.** `texts/index.html:74-77` carries the comment:
+"The whole record of one document, opened from the list below it rather than
+after it: a panel under a hundred and thirty cards is a panel nobody sees open."
+The element is an `aria-live` `<aside>`, not a landmark competing with `<main>`.
+The *other* half of that report — that `texts` has no Escape handler — is real:
+`grep -n "keydown\|Escape" texts.js` returns nothing, the only Escape handler in
+the browser tree is `liturgy/proper-placement-notes.js:68`, and
+`corpus_browser_gate.mjs:857-867` asserts only that Escape does not throw, never
+that anything closes. Bundling a defensible decision with a real defect is what
+let the real half ride along unexamined; they are separated here.
+
+**FP8 — the two `setInlineNotice` pages are the ones that got it right.** §11
+step 13 lists `catena.js:970` and `texts.js:391` as offline-fallback promises
+that "must be fixed or dropped". They were already dropped, in wording:
+`catena.js:971-972` says "No data root could be reached, so this page has
+**nothing to show**", and `texts.js:394-395` says "…**nothing to list**".
+Neither promises a fallback. The text that does is `browser-core.js:132-135`,
+which is exactly what those two override. The non-compliant page is `history`,
+which overrides nothing and clears nothing — D-4 above. Step 13's list names the
+two compliant pages and misses the one that is wrong, and should be corrected
+when that step is taken.
+
+**A methodological warning, not a false positive.** Any sweep run on this branch
+will re-report the five defects `origin/main` already fixed, because
+`impl/foundation-hardening` is not a descendant of `main`. `law.js:593-595` here
+still widens the search past the chosen body of law, which `add105f39` fixed on
+`main` with a comment and 712 lines of test. Re-check every finding with
+`git show origin/main:<path>` before calling it live.
