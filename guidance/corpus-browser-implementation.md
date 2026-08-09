@@ -1014,6 +1014,18 @@ The coordinator ran these at the base commit. They are first-hand.
 | `python3 tools/tpt public-alpha verify --deployment-target github-pages` | 0 | artifact accepted for Pages |
 | all 144 built routes over `python3 -m http.server` | — | every route returns HTTP 200 |
 | `python3 -m unittest discover -s tools/tests` | 1 | Ran 1226 tests in 466 s: 14 failures, 13 errors, 8 skipped |
+
+**This baseline moved on `impl/shell-plumbing`, and the eight that went are
+worth naming so nobody is credited with them twice.** `test_public_alpha.py`
+wrote `Markdown==3.10.2` into the stub root every one of its cases builds in,
+while the repository's own lock says 3.10.3 and the installed interpreter has
+3.10.3. The generator's lock check correctly refused the stub, and eight tests
+errored against code and an environment that were both right. It was a stale
+fixture wearing the costume of an environment fault, and every branch since
+has carried it as inherited red. The fixture now reads the lock from the
+repository, as the two asset writes beside it already did, so the drift cannot
+recur. The suite baseline is therefore **14 failures and 5 errors** from that
+commit onward. A branch based before it should still expect 13.
 | `TRIPTYCH_CHROME=/usr/bin/chromium … liturgy_reader_shell_browser.mjs` | 1 | several assertions fail, including "real Proper renderer did not produce enough sections" |
 | `… liturgy_reader_visual_reset_browser.mjs` | 1 | 0 of 25 assertions pass, all "Timed out waiting for … readiness" |
 | `… day_reader_integration_browser.mjs` | 1 | exits without emitting parseable JSON |
@@ -1183,8 +1195,8 @@ Each step is independently verifiable and none requires a visual decision before
 that decision exists. Steps 1–4 are prerequisites; 5–9 are the shared foundation
 (master plan §8 lane **B0**/**B1**); 10 onward unblock the per-surface lanes.
 
-**1. Establish the honest baseline. Depends on nothing.** Record the 14 failures
-and 13 errors from `python3 -m unittest discover -s tools/tests` as the
+**1. Establish the honest baseline. Depends on nothing.** Record the failures
+from `python3 -m unittest discover -s tools/tests` as the
 pre-existing state, with the per-module breakdown in §9, in the lane's tracked
 record. Verify: the same counts reproduce in a clean checkout at
 `c27d69153`. This exists so that no later step can be credited with a
