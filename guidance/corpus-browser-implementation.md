@@ -622,7 +622,9 @@ baseline: "a prototype may choose the numbers; it may not ship without them."
 
 Source Library identifiers have stable dotted type prefixes, but the remainder
 is an opaque, variable-length repository identifier rather than a grammar a
-browser may safely decompose. Representative shapes include:
+browser may safely decompose. The following are independent identifier
+examples, not hierarchy levels. Work owns Edition; Artifact, Segment, and
+Passage are edition-owned sibling record types. Representative shapes include:
 
 ```
 work.<author-slug>.<work-slug>
@@ -661,18 +663,24 @@ opaque id at all**: a document edition is identified by its PDF path
 synthesise a key — provider plus section plus path stem is the obvious one —
 because none is written down.
 
-### The source graph is containment plus untyped foreign keys
+### The source graph separates ownership from controller foreign keys
 
 A grep across `structure/sources/index.json` and all 655 edition files returns
 **zero hits** for `cites`, `quotes`, `comments_on`, `translation_of`,
 `edition_of`, `artifact_of`, `passage_of`, `used_by`, `governs`, `changes`,
 `supersedes`, `appointed_in`, and for the generic `relation`, `relationships`,
 `edges`, `links`. There is no named-edge vocabulary in the served Source Library
-data. The graph is expressed entirely by nesting and by untyped foreign keys:
-`works[].editions[]` nesting plus `work_id`; `artifacts[]` nesting plus
-`edition_id` on all 1,467 upstream artifact records; `passage.edition_id` on all
-2,751 passages; `passage.artifact_id` on 2,613 of them; `passage.segment_id` on
-138.
+data. The projection expresses ownership through Work-to-Edition nesting and
+edition identifiers on the sibling records: `edition_id` on all 1,467 upstream
+Artifact records and on all 2,751 Passages. It expresses Passage control through
+`passage.artifact_id` on 2,613 records and `passage.segment_id` on 138.
+
+The public projection expresses Work-to-Edition ownership and the Edition's
+sibling Artifact, Segment, and Passage records. A Passage additionally names
+its controlling Artifact directly or its controlling Segment. Those foreign
+keys express control and source evidence, not Artifact-to-Passage or
+Segment-to-Passage containment. A Segment may resolve to an Artifact truthfully
+owned under another Work.
 
 `translation_of` is the load-bearing absence. The page's own prose says "a Greek
 original, Migne's Latin and a public-domain English translation are three

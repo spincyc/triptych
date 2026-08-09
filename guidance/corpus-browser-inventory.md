@@ -34,10 +34,12 @@ candidates/oracles. The four noindex pages are accessible review or
 compatibility surfaces, not additional accepted products.
 
 The generated corpus presently records 133 publication works, 178 provider
-documents, 186 issues, 5,675 pages, 491 source works, 655 source editions,
-1,467 artifacts, and 2,751 passages. Of 178 provider documents, 105 are
-browser-readable and 73 are PDF-only. Of 2,751 source passages, 1,630 are
-readable and 1,121 have explicit refusal or absence states.
+documents, 186 issues, and 5,675 pages. The Source Library records 491 Works
+owning 655 Editions; Artifact, Segment, and Passage are edition-owned sibling
+types, with 1,467 Artifacts and 2,751 Passages in the measured projection. Of
+178 provider documents, 105 are browser-readable and 73 are PDF-only. Of 2,751
+source Passages, 1,630 are readable and 1,121 have explicit refusal or absence
+states.
 
 ## Public surface families
 
@@ -163,13 +165,15 @@ corpus-browser vision and roadmap.
 | Catena `/catena/#book=Gen&chapter=1` | 107 held fragments from 13 sources, 33 acquisition leads, 272,033 aggregate fragment words, and English/Greek/Latin voices | Densest chronological chain, multilingual state, overlapping extents, and cross-chapter fragments. |
 | Catena `/catena/#book=Ps&chapter=13` | No held fragment, 35 acquisition leads, and 7 recorded refusal reasons | Held-none state where evidence must not be mistaken for commentary text. Across the projection, 561 chapters have evidence files: 50 contain held fragments and 511 are lead/refusal-only; 509 of those 511 carry leads and 16 carry refusals, with overlap. |
 | Sources `/sources/#edition=edition.holy-see.acta-apostolicae-sedis.volume-22-1930` and its sibling editions | The work `work.holy-see.acta-apostolicae-sedis` has 28 editions, the maximum | Multi-edition hierarchy stress; the exact selected edition may be changed among the work's recorded edition IDs without inventing a relationship. |
-| Sources `/sources/#edition=edition.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31` | One edition carries 148 artifacts, the maximum, and no addressed passage | Deep artifact hierarchy plus a truthful no-passage state. |
+| Sources `/sources/#edition=edition.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31` | One edition carries 148 artifacts, the maximum, and no addressed passage | Wide edition-owned Artifact set plus a truthful no-Passage state. |
 | Sources `/sources/#edition=edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131` | 396 of 396 passages readable, the maximum passage count in one edition | Large readable passage navigator and Latin/source-heavy stress case. |
 | Sources `/sources/#edition=edition.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25` | 82 addressed passages, none redistributable; rights state `restricted` | Large withheld state in which availability and redistribution rights must remain distinct. |
 
-The Source projection totals remain 491 works, 655 editions, 1,467 artifacts,
-and 2,751 passages: 1,630 readable and 1,121 explicitly unavailable. A separate
-long-metadata stress record is
+The Source projection totals remain 491 Works and 655 owned Editions, with
+1,467 edition-owned Artifacts and 2,751 edition-owned Passages: 1,630 readable
+and 1,121 explicitly unavailable. Each Passage separately identifies its
+controlling Artifact directly or through Segment. A separate long-metadata
+stress record is
 `work.convocation-of-canterbury.revised-version`, whose responsible-creator
 string is 131 characters.
 

@@ -80,7 +80,16 @@ state = "candidate"
 
   [[deliverables.requirements]]
   id = "independent-external-acceptance"
-  criterion = "Independent external visual and product review records an explicit accepted disposition for each of C0, C1, D0, E0, and F0 after reviewing the real pages and complete ZIP, and every blocking question or required correction is resolved; prototype completion, checks, commit, push, or packaging alone cannot pass this gate or authorize production implementation, main integration, deployment, or public cutover."
+  criterion = "Independent external visual and product review records the exact accepted or changes-required disposition for each of C0, C1, D0, E0, F0, and the shared non-Liturgy shell after reviewing the real pages and complete ZIP; C0, C1, D0, and E0 are accepted, while F0 and the shell remain changes required until their fresh correction evidence is independently accepted. Prototype completion, checks, commit, push, or packaging alone cannot pass this gate or authorize production implementation, main integration, deployment, or public cutover."
+  status = "open"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "review-fix-shell-acceptance"
+  criterion = "A fresh immutable correction handoff preserves the accepted C0, C1, D0, and E0 designs and protected Liturgy, PDF, route, and hash boundaries; corrects the Source Library sibling/controller model and one-passage navigation; corrects duplicated wide current-domain identity and the generic wide Menu while preserving compact narrow Menu and bounded Jump; and independent external review accepts corrected F0 and the shared non-Liturgy shell before Sources implementation or final shell cutover is authorized."
   status = "open"
   evidence = [
     "guidance/corpus-browser-roadmap.md",

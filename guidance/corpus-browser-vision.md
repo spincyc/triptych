@@ -11,11 +11,13 @@ work are accepted as foundation direction. That acceptance authorizes
 non-liturgy foundation implementation and real-data design; it does not freeze
 the synthetic prototype's pixels or accept any production route visually.
 
-The Wave 1 real-route design units C0/C1, D0, E0, and F0 are Candidate on the
-committed and pushed `ux/corpus-wave-1` checkpoint. Independent external review
-remains open for every unit. Their evidence uses the actual
-generated corpus. A prototype, passing local gate, branch push, or coherent
-appearance does not accept a route or authorize production cutover.
+Independent review of Wave 1 at exact head `e42b928...` accepted C0 Home, C1
+Publications, D0 Reader, and E0 Catena as design contracts. F0 Sources and the
+shared non-Liturgy shell require bounded corrections and remain unaccepted.
+Accessibility and resilience are accepted as production requirements with
+production proof outstanding; browser print is accepted only as a
+non-canonical fallback. A prototype, passing local gate, branch push, or
+coherent appearance does not authorize production cutover.
 
 This document owns the active site-wide product and visual rules. The master
 plan owns the coordinator disposition and program boundaries; the
@@ -114,11 +116,11 @@ repository-owned rule; otherwise they are omitted.
 
 ### Object and provider identity
 
-Source identity has four visible object types: **Work**, **Edition**,
-**Artifact** (with Segment where required), and **Passage**. Work owns Edition;
-Artifact, Segment, and Passage are edition-owned siblings, while a Passage is
-controlled by an Artifact directly or through a Segment. Human citation, stable internal
-ID, external alias, and rendered URL are related but distinct. Exact words must
+Source identity has five distinct record types: **Work**, **Edition**,
+**Artifact**, **Segment**, and **Passage**. Work owns Edition; Artifact, Segment,
+and Passage are edition-owned siblings, while a Passage is controlled by an
+Artifact directly or through a Segment. Human citation, stable internal ID,
+external alias, and rendered URL are related but distinct. Exact words must
 name an edition; immutable research citations additionally need revision or
 as-of identity.
 
@@ -529,38 +531,27 @@ the authority recorded in the master plan, but main integration and Pages
 publication remain later explicit decisions. Parallel lanes use separate full
 checkouts and never share a working directory or index.
 
-## Wave 1 independent acceptance questions
+## Wave 1 correction acceptance questions
 
-Independent review of the C0/C1, D0, E0, and F0 candidate must answer:
+C0, C1, D0, and E0 are accepted and are not reopened by the correction
+checkpoint. Independent review of the corrected F0 and shared shell must answer:
 
-1. **Home:** Does the first viewport provide a calm, intelligible corpus and
-   task entrance while preserving all seven portals, their order, and their
-   identities without becoming a dashboard?
-2. **Publications:** Does /texts/ work as a list-first Publications discovery
-   surface, show useful results before controls dominate, preserve one owning
-   catalogue, and distinguish Independent treatments and formats honestly?
-3. **Publication Reader:** Can a reader identify provider, revision, rights,
-   canonical PDF, source context, locus, and opening prose without permanent
-   chrome displacing sustained reading?
-4. **Commentary:** Does Scripture remain the anchor across sparse, dense,
-   partial, held, attribution-only, multilingual, and cross-chapter states,
-   with commentary chronology and Source transitions clear on wide and narrow
-   screens?
-5. **Sources:** Are Work → Edition ownership and Passage → Artifact or
-   Passage → Segment → Artifact evidence perceptible without forensic metadata
-   dominating the first glance, and do readable, withheld, text-not-readable-
-   here, external-only, partial, invalid, and rights-limited states remain
-   truthful? An honest unread fixture remains a future schema/data state.
-6. **Shared language:** Do the semantic token roles, navigation, Menu, Jump,
-   contextual transitions, focus behavior, no-JavaScript truth, responsive
-   compositions, and print behavior create one corpus without forcing the five
-   surfaces into one layout?
-7. **Evidence:** Does the mandatory real-data matrix include long-title,
-   multilingual/source-heavy, and unavailable or zero-result stress cases, and
-   does it disclose every compromise or unresolved question?
+1. **Sources:** Does the interface express Work → Edition ownership while
+   keeping Artifact, Segment, and Passage as edition-owned siblings, with the
+   Passage's controlling Artifact identified directly or through Segment?
+2. **One-Passage state:** When the selected Edition has one Passage, are
+   impossible Previous and Next actions absent or unequivocally disabled and
+   non-operable while `Passage 1 of 1` remains truthful?
+3. **Wide shell:** Does each wide surface show exactly one current-location
+   signal and a meaningful bounded Browse control rather than a duplicated
+   domain label plus generic Menu?
+4. **Compact shell:** At 393px and 320px, do the domain label, Menu, and bounded
+   Jump remain visible, named, operable, and free of clipping or overflow?
+5. **Preservation:** Are the four accepted compositions, protected Liturgy,
+   PDFs, routes and hashes, real-data boundary, and epistemic states unchanged?
 
-An answer may be accepted, changes required, or rejected per unit. Foundation
-acceptance does not predetermine the answer.
+F0 and the shell remain changes required until an independent reviewer records
+accepted dispositions in the roadmap and operational ledgers.
 
 ## World-class completion
 

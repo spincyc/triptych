@@ -41,8 +41,11 @@ foundation knowledge and required artifacts path by path. The proposed
 That is a sequencing override, not a claim that the precursor was completed,
 rejected, blocked, merged, or waived.
 
-Feature-branch checkpoints may be committed and pushed. Nothing in this
-roadmap authorizes a merge or push to `main`, Pages deployment, public cutover,
+The reviewed Wave 1 head is
+`e42b9287485a5a6d18ad8a528ab0f0f3f0024ff9`. The bounded correction branch
+`ux/corpus-wave-1-review-fixes` starts from that exact commit. Feature-branch
+checkpoints may be committed and pushed. Nothing in this roadmap authorizes a
+merge or push to `main`, Pages deployment, public cutover, production behavior,
 history rewriting, or force-push.
 
 ## State and disposition vocabulary
@@ -141,51 +144,47 @@ its own screenshot and external-acceptance gate.
 
 ## Wave 1 real-data design register
 
-All five Codex units are **Candidate** on
-`ux/corpus-wave-1` from exact base `c27d6915319785686d1df6a1401a489aa9921f6f`.
-Their dependencies are the reviewed A2/A3/A4 directions as amended above, not
-an integration-branch ancestry claim. One branch and one evidence ZIP may cover
-the wave, but each row receives an independent disposition.
+Independent review of `ux/corpus-wave-1` at exact head `e42b928...` produced a
+split disposition. The review package was
+`20260809T000346Z-corpus-wave-1-design-review.zip`; its manifest was
+independently verified. The accepted rows do not make F0 or the shared shell
+accepted.
 
-| ID | Surface and bounded output | State | Candidate gate | Independent disposition |
-| --- | --- | --- | --- | --- |
-| C0 | **Home / corpus entry.** Real-data task entrances for read, find, trace, follow, compare/change, and look up; the seven editorial portals remain durable orientation. This wave does not own a redesign of representative section-library routes. | **Candidate** | Before/after evidence proves a calm first viewport, direct access to all seven corpus destinations, preserved portal order/identity, honest generated counts only, usable long-title and 320/200% states, and no dashboard/card-wall composition. | **Open.** No production Home direction is accepted yet. |
-| C1 | **Publications `/texts/`.** A list-first scholarly discovery surface with facets, removable filter state, grouped independent treatments, browser/PDF availability, one owning catalogue, and a useful zero state. | **Candidate** | Exercises paired providers, one-provider-only, PDF-only, browser-readable, synthesis, long title, revision, empty result, narrow recomposition, and URL/filter state without changing the route or ownership model. | **Open.** Candidate and acceptance are independent of C0 even when reviewed in the same ZIP. |
-| D0 | **Publication/article Reader.** One primary reading plane with truthful provider/revision/rights colophon, actual heading-derived Contents, stable loci, citations/return behavior, source context, and canonical PDF action. | **Candidate** | Exercises long and citation-heavy works, tables, multilingual text, deep headings, footnotes, mobile, text enlargement, zoom/reflow, keyboard, no-JS identity, and browser print without changing publication prose, canonical PDFs, or the production renderer. | **Open.** The browser remains a navigable edition; it cannot replace or silently mutate the canonical printable PDF. |
-| E0 | **Catena Omnia.** Scripture anchors a chronological and typed commentary chain with source relationships and progressive evidence disclosure. | **Candidate** | Exercises real no-held, sparse, dense, overlap, cross-chapter, original/translation, unavailable-translation, acquisition-only, numbering-refusal, opened-fragment, and narrow states. No admissible disputed-attribution or held-unrenderable record exists; those categories are documented as unavailable rather than simulated. | **Open.** No Catena composition is accepted before independent review; no inferred relationship or fabricated fragment is permitted. |
-| F0 | **Source Library.** Make structural Work -> Edition ownership and the separate Passage -> Artifact or Passage -> Segment -> Artifact evidence controller perceptible while preserving rights, availability, evidence, and citation truth. | **Candidate** | Exercises real one/many editions, readable, rights-withheld, invalid, deep-linked, long-metadata, and active-filter states. No honest unread fixture exists because all current passages are inspected; it is documented rather than fabricated. | **Open.** The evidence-observatory direction requires independent review; IIIF remains unselected absent a justified witness and separate gate. |
+| ID | Surface and bounded output | Independent disposition | Binding follow-up |
+| --- | --- | --- | --- |
+| C0 | **Home / corpus entry.** Task entrances plus seven editorial portals. | **Accepted.** | Preserve the accepted composition. Do not force every task above the fold at 200% text; preserve semantic order and reflow. |
+| C1 | **Publications `/texts/`.** List-first discovery, facets, independent treatments, format availability, and zero state. | **Accepted.** | Preserve the composition and one-owning-catalogue rule. Redundant rule/spacing cleanup is optional implementation polish. |
+| D0 | **Publication Reader.** One reading plane, provider and revision identity, Contents, rights, stable loci, and canonical PDF. | **Accepted.** | Preserve typography and interaction. Production must make identity and PDF truth static, retain hash/focus/table semantics, and treat browser print only as fallback. |
+| E0 | **Catena Omnia.** Scripture anchor plus chronological and typed commentary chain. | **Accepted.** | Production may proceed independently without editing shared shell owners or protected Liturgy; preserve every held, lead, absence, refusal, and error state. |
+| F0 | **Source Library.** Work -> Edition ownership with edition-owned sibling Artifact, Segment, and Passage records and a separate Passage controller relation. | **Changes required.** | Correct the false linear lede/hierarchy and one-passage navigation; production F1 remains blocked until the correction receives independent acceptance. |
+| Shared shell | **Non-Liturgy shell.** Current domain, durable browse access, bounded Jump, responsive identity. | **Changes required.** | Use one wide current-location signal and a bounded wide Browse control; retain compact domain, Menu, and Jump. Final cutover remains blocked pending acceptance. |
+| Accessibility and resilience | Production requirement. | **Accepted as a requirement; production proof outstanding.** | Production must prove one `main`, 320px no-overflow, focus/dialog behavior, forced colors, reduced motion, hash/history, `/triptych/` links, no-JS truth, and static PDF access. |
+| Browser print | Non-canonical fallback. | **Accepted only as a non-canonical fallback.** | Hide interactive chrome and preserve obvious canonical-PDF access; do not reproduce the typeset PDF. |
 
-### Shared candidate and acceptance gates
+### Review-fix checkpoint
 
-A Wave 1 row may change from **In progress** to **Candidate** only when all of
-the following are true for that row:
+The correction branch may change only the isolated design layer, focused tests,
+and durable authorities needed to:
 
-- the prototype uses actual repository data, titles, metadata, provider
-  differences, absences, rights states, and difficult sizes;
-- a required category with no admissible current fixture is identified as a
-  data limitation and remains unrepresented rather than being synthesized;
-- user jobs, manipulated object, first-viewport target, hierarchy, wide/narrow
-  composition, keyboard/focus behavior, error/absence states, supported corpus
-  transitions, and deliberately deferred information are tracked;
-- the complete D11 matrix and applicable open Menu, Jump, Related, Contents,
-  filter, print, focus, forced-color, reduced-motion, and no-JavaScript states
-  have been captured and inspected at original resolution;
-- every governed route has comparable before/after evidence, with a numbered
-  contact sheet and index when the set exceeds roughly twelve screenshots;
-- tests and manual checks record exact commands and numeric exits, including
-  console, request, HTTP, accessible-name, target-size, and overflow findings;
-- protected liturgy assets, canonical PDFs, publication prose, production
-  implementation, public routes/hash keys, and public build mappings are proven
-  unchanged;
-- durable decisions, rejected alternatives, discoveries, data limits, route
-  observations, and next tasks are committed before one fresh verified one-root
-  external-review ZIP is assembled.
+- make the Source lede and labels express the exact sibling/controller model;
+- omit or unequivocally disable Previous and Next when an Edition has one
+  Passage;
+- remove duplicated wide current-domain identity;
+- present one meaningful wide Browse control while retaining compact Menu and
+  bounded Jump; and
+- optionally remove Source-only redundant filter/result spacing when already
+  touching that layout.
 
-The ZIP is evidence transport, not acceptance. Each C0, C1, D0, E0, and F0 row
-remains externally open until the reviewer returns accepted, changes-required,
-or rejected and that exact disposition is recorded in this roadmap and the
-fail-closed operational authorities. A row may be accepted while another row
-returns for correction.
+It may not redesign C0, C1, D0, or E0, implement production behavior, enter
+protected Liturgy, change a PDF, route, hash contract, public build mapping, or
+deployment state. Its fresh evidence must cover wide shell states on all five
+surfaces, compact Home and Instrument states at 393px and 320px, corrected
+Sources wide and narrow, the one-Passage state in normal and forced colors, and
+keyboard focus on the wide Browse control.
+
+The new ZIP is evidence transport, not acceptance. F0 and the shared shell
+remain **changes required** until an independent reviewer accepts the corrected
+states and that disposition is recorded here and in the fail-closed authorities.
 
 ## Structured-data limits and blocked follow-ups
 
@@ -226,7 +225,10 @@ comparison, text, or metadata in the UI.
 | Work | Current state | Exact dependency / stopping line |
 | --- | --- | --- |
 | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
-| C2/D1/E1/F1 production surface implementation | Planned | Requires the corresponding independently accepted C0/C1/D0/E0/F0 row plus the accepted implementation foundation. |
+| C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
+| E1 Catena production implementation | Authorized independently | E0 is accepted; do not edit shared shell/global owners or protected Liturgy. |
+| F1 Sources production implementation | **Blocked** | Requires independent acceptance of the F0 correction. |
+| Final shared-shell cutover | **Blocked** | Requires independent acceptance of the shell correction and a clean implementation-foundation checkpoint. |
 | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
 | K0/K1 typed relationships | Planned | Requires accepted owning surfaces and verified structured edges; schema gaps above remain explicit. |
 | L0/L1 visual and accessibility acceptance | Planned | Requires implemented representative surfaces and complete real-data matrices. Automated checks cannot supply independent visual judgment. |
@@ -239,19 +241,20 @@ comparison, text, or metadata in the UI.
 | 2026-08-08 | A0-A4 foundation | Inventory, research, corpus architecture, three archetypes, isolated synthetic prototype, Menu, bounded Jump, typed Related, responsive behavior, and browser gates were produced from `c27d691`; the coordinator accepted A0/A1, accepted A2/A4 with D1-D20 amendments, and accepted A3 as direction only. | Source roadmap/prototype commit `ac37b6f`; reviewed Codex head `3b5938a`; Claude findings head `af2c961`. |
 | 2026-08-08 | Direct Wave 1 dispatch | Created `ux/corpus-wave-1` directly from current `origin/main` `c27d691`; did not execute or merge the proposed foundation-integration precursor; authorized C0, C1, D0, E0, and F0 real-data visual/product work. | Base `c27d6915319785686d1df6a1401a489aa9921f6f`; branch `ux/corpus-wave-1`; external acceptance open. |
 | 2026-08-09 | Wave 1 Candidate checkpoint | Completed the isolated real-route prototype and 83-case matrix over all five surfaces. The exact browser report records 1,979 assertions, 1,917 passes, 62 disclosed inherited findings, and zero gating failures; 83 main captures and every page of the 236-page print were inspected. Protected Liturgy, PDFs, prose, production browser sources, release bindings, and deployment remain unchanged. | `build/agent-handoffs/20260809T000346Z-corpus-wave-1-design-review/`; exact branch head and ZIP digest are recorded in the handoff; external acceptance remains open. |
+| 2026-08-08 | Independent Wave 1 review | Accepted C0 Home, C1 Publications, D0 Reader, and E0 Catena; required changes to F0 and the shared non-Liturgy shell; accepted accessibility/resilience as a production requirement and browser print only as a non-canonical fallback. | Reviewed head `e42b9287485a5a6d18ad8a528ab0f0f3f0024ff9`; verified package `20260809T000346Z-corpus-wave-1-design-review.zip`. |
+| 2026-08-08 | Review-fix dispatch | Authorized `ux/corpus-wave-1-review-fixes` from exact reviewed head for bounded F0, shell, evidence, and authority corrections only. | F0 and shell remain changes required pending a fresh independent disposition; no production/main/deploy authority. |
 
 ## Next Codex tasks
 
-1. Give the verified one-root ZIP to an independent reviewer and obtain a
-   separate accepted, changes-required, or rejected disposition for C0, C1,
-   D0, E0, and F0.
-2. Record the returned disposition and every required correction in this
-   roadmap and the fail-closed operational authorities; do not infer acceptance
-   from the green internal matrix.
-3. Route only independently accepted lanes to separately authorized production
-   implementation. Keep missing relationship/schema fixtures explicit.
+1. Complete the bounded F0 and shell corrections without reopening C0, C1, D0,
+   or E0; run and inspect the focused real-data evidence matrix.
+2. Produce a fresh verified one-root correction ZIP and obtain independent
+   accepted, changes-required, or rejected dispositions for F0 and the shell.
+3. Keep F1 and final shell cutover blocked until those exact dispositions are
+   accepted and recorded. E1 may proceed independently within its ownership
+   boundary; C2/D1 wait for a clean shell ownership checkpoint.
 4. Do not merge or deploy `main`, alter protected Liturgy, change a canonical
-   PDF, or start production cutover from this design Candidate.
+   PDF, or infer missing source relationships.
 
 Append later findings and dispositions. Do not rewrite earlier rows to make the
 sequence appear cleaner.

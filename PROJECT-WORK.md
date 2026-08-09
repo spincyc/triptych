@@ -183,41 +183,49 @@ operations.
 
 <!-- promised-deliverable: corpus-browser-wave-1-design-2026-08-08 -->
 
-**The Wave 1 design is a committed, pushed Candidate on `ux/corpus-wave-1`;
-independent external review remains open.** The branch started from exact current
-`origin/main` base `c27d6915319785686d1df6a1401a489aa9921f6f`. The
-task-specific directions override the master plan's integration-branch
-precursor, so no foundation-integration branch is claimed: accepted knowledge
-and artifacts were carried selectively from Codex foundation SHA
+**Independent review of Wave 1 at exact head
+`e42b9287485a5a6d18ad8a528ab0f0f3f0024ff9` accepted C0 Home, C1
+Publications, D0 Reader, and E0 Catena as design contracts; F0 Sources and the
+shared non-Liturgy shell require corrections.** Accessibility and resilience
+are accepted as production requirements with production proof outstanding.
+Browser print is accepted only as a non-canonical fallback. The deliverable
+remains `candidate` until the bounded corrections receive independent
+acceptance.
+
+The original branch started from exact `origin/main` base
+`c27d6915319785686d1df6a1401a489aa9921f6f`. Its task-specific dispatch
+superseded the former integration-branch precursor, so no
+`corpus/foundation-integration` ancestry is claimed. Accepted knowledge and
+artifacts were carried selectively from Codex foundation SHA
 `3b5938a0dba88831763ec09c762ae1572007a27e` and Claude foundation SHA
-`af2c9613ccda48679face4e43f59c002f93056ef`. A0 and A1 are accepted; A2 is
-accepted with amendments; A3 is accepted only as foundation direction, not as
-pixel or production-route acceptance; and A4 is accepted with Jump bounded
-pending J0--J2, Related typed, and the accepted liturgy boundary preserved.
+`af2c9613ccda48679face4e43f59c002f93056ef`.
 
 The durable design authority is
 [`guidance/corpus-browser-vision.md`](guidance/corpus-browser-vision.md); the
 execution, evidence, and disposition register is
 [`guidance/corpus-browser-roadmap.md`](guidance/corpus-browser-roadmap.md).
 
-C0/C1, D0, E0, and F0 together form one real-data design candidate for Home,
-the Publications catalogue at `/texts/`, the long-form Publication Reader,
-Catena Omnia, and the Source Library. Its isolated `noindex` prototype is
-injected over a real generated preview and exercises actual corpus content and
-hard states. It changes no production source or route, canonical Day/Propers or
-other liturgy behavior, PDF, release binding, deployment, or public navigation;
-none of these candidate lanes is accepted or complete.
+C0, C1, D0, and E0 are not reopened by the correction checkpoint. The branch
+`ux/corpus-wave-1-review-fixes`, based on the exact reviewed head, may only
+correct the Source sibling/controller model, one-Passage navigation, duplicated
+wide current identity, and generic wide Menu; retain compact Menu and bounded
+Jump; reconcile durable authority; and prepare fresh review evidence. It may
+not implement production behavior, redesign an accepted surface, enter
+protected Liturgy, change a PDF, route, hash, release binding, public mapping,
+or deployment state.
 
-**Evidence and next handoff.** The immutable review record is
+**Evidence and next handoff.** The immutable reviewed record is
 `build/agent-handoffs/20260809T000346Z-corpus-wave-1-design-review/`, with its
 matching one-root ZIP. Its browser report covers 83 real-route cases and 1,979
 assertions: 1,917 pass, 62 disclosed inherited findings are non-gating, and no
 gate fails. It contains 83 main captures, all 25 required before/after pairs,
-one 236-page Reader print PDF, and all 236 page rasters. The next action is
-independent per-lane review of C0, C1, D0, E0, and F0, followed by recording the
-actual disposition and any corrections. No merge, production implementation,
-release, deployment, liturgy change, or PDF change is authorized by this
-candidate.
+one 236-page Reader print PDF, and all 236 page rasters. The next action is a
+fresh verified correction ZIP and independent disposition of F0 and the shell.
+F1 Sources and final shared-shell cutover remain blocked. E1 Catena may proceed
+independently without editing global shell owners; Home/Publications/Reader
+implementation waits for a clean shell ownership boundary. No main merge,
+deployment, production cutover, Liturgy change, or PDF change is authorized by
+this Candidate.
 
 ### Live Reader — Ritual Flow & Orientation
 
