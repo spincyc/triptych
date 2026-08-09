@@ -183,14 +183,16 @@ operations.
 
 <!-- promised-deliverable: corpus-browser-wave-1-design-2026-08-08 -->
 
-**Independent review of Wave 1 at exact head
+**Complete as a Wave 1 visual and product-design deliverable; production
+remains unimplemented.** Independent review of Wave 1 at exact head
 `e42b9287485a5a6d18ad8a528ab0f0f3f0024ff9` accepted C0 Home, C1
-Publications, D0 Reader, and E0 Catena as design contracts; F0 Sources and the
-shared non-Liturgy shell require corrections.** Accessibility and resilience
-are accepted as production requirements with production proof outstanding.
-Browser print is accepted only as a non-canonical fallback. The deliverable
-remains `candidate` until the bounded corrections receive independent
-acceptance.
+Publications, D0 Reader, and E0 Catena as design contracts. Independent review
+of the corrected checkpoint at exact head
+`ecbd93a0575c4b890cc814af7cd20d01f5af7beb` then recorded **F0 Source
+Library — ACCEPT** and **Shared non-Liturgy shell — ACCEPT**, closing the two
+remaining design-review gates. Accessibility and resilience remain accepted
+production requirements with production proof outstanding. Browser print
+remains accepted only as a non-canonical fallback.
 
 The original branch started from exact `origin/main` base
 `c27d6915319785686d1df6a1401a489aa9921f6f`. Its task-specific dispatch
@@ -205,16 +207,20 @@ The durable design authority is
 execution, evidence, and disposition register is
 [`guidance/corpus-browser-roadmap.md`](guidance/corpus-browser-roadmap.md).
 
-C0, C1, D0, and E0 are not reopened by the correction checkpoint. The branch
-`ux/corpus-wave-1-review-fixes`, based on the exact reviewed head, may only
-correct the Source sibling/controller model, one-Passage navigation, duplicated
-wide current identity, and generic wide Menu; retain compact Menu and bounded
-Jump; reconcile durable authority; and prepare fresh review evidence. It may
-not implement production behavior, redesign an accepted surface, enter
-protected Liturgy, change a PDF, route, hash, release binding, public mapping,
-or deployment state.
+C0, C1, D0, and E0 were not reopened by the correction checkpoint. The
+accepted F0 contract distinguishes Work/Edition ownership from the
+Artifact/Segment relation controlling Passage text. For the reviewed
+one-Passage Edition, it retains the selector, exact `Passage 1 of 1`, and
+rights, provenance, and inspection-scope truth while omitting impossible
+Previous and Next actions. The accepted wide shell has exactly one
+current-location signal, no duplicate wide domain identity, and Browse as a
+bounded destination control distinct from Jump; the compact shell preserves
+domain identity, Menu, Jump, target sizing, and no document-level overflow at
+393 and 320 CSS pixels. The correction changed no
+production behavior, protected Liturgy, canonical PDF, production route or
+hash contract, release binding, public mapping, or deployment state.
 
-**Evidence and next handoff.** The immutable reviewed record is
+**Evidence and reviewed handoff.** The immutable reviewed record is
 `build/agent-handoffs/20260809T000346Z-corpus-wave-1-design-review/`, with its
 matching one-root ZIP. Its browser report covers 83 real-route cases and 1,979
 assertions: 1,917 pass, 62 disclosed inherited findings are non-gating, and no
@@ -227,20 +233,39 @@ non-gating findings are 52 inherited nested-`main` findings, eight before-state
 useful-content findings, two before-only narrow-overflow findings, and two
 inherited Reader no-JavaScript overlay limitations. The correction package
 `20260809T014145Z-corpus-wave-1-review-fixes` is superseded for handoff-protocol
-defects; the next external action is independent review of the fresh immutable
-package assembled after this tracking repair. The exact reviewed-base-to-head
-range has zero changes under protected `src/web/browser/liturgy/` and `pdf/`.
+defects. Independent review of the fresh immutable package
+`build/agent-handoffs/20260809T021953Z-corpus-wave-1-review-fixes/` and its
+matching ZIP at packaged head `ecbd93a0575c4b890cc814af7cd20d01f5af7beb`;
+recorded the F0 and shared-shell ACCEPT dispositions. The ZIP SHA-256 is
+`d5fde51b14f143db05f762178896284d7768c0b2a11fc222fc2b32da63e22062`.
+The exact reviewed-base-to-head range has zero changes under protected
+`src/web/browser/liturgy/` and `pdf/`.
+
+The following findings are non-blocking only for these design dispositions;
+none is waived, satisfied, or reassigned by acceptance. The inherited
+nested-`main` defect remains a production blocker. Reader table-cell reflow and
+full no-JavaScript behavior remain production obligations. Comprehensive
+Menu/Browse destination-activation tests remain an implementation and
+hardening obligation. The prototype stylesheet used 8,171 of its 8,192-byte
+gzip-9 ceiling, so it provides no meaningful implementation headroom or
+production CSS budget. The stale Fortescue Artifact note remains open and may
+be corrected only by its proper source-data authority owner.
 
 For this program, Codex owns product and visual design, correction evidence,
 and independent product review. Claude owns production implementation, coding,
 and implementation testing on named lanes. Neither role may cross declared
 single-owner boundaries or accept, merge, or deploy its own work by implication.
 
-F1 Sources and final shared-shell cutover remain blocked. E1 Catena may proceed
-independently without editing global shell owners; Home/Publications/Reader
-implementation waits for a clean shell ownership boundary. No main merge,
-deployment, production cutover, Liturgy change, or PDF change is authorized by
-this Candidate.
+The F0 and shared-shell design-review dependencies are satisfied. F1 Sources is
+eligible only for separate owner-authorized production dispatch; final
+shared-shell cutover remains blocked on clean foundation plumbing and explicit
+cutover authority. E1 Catena may proceed
+within its existing independent boundary; Home/Publications/Reader
+implementation still requires clean shell ownership. Production implementation
+remains owned by the appropriate Claude lanes. This acceptance does not
+authorize merging the disposable prototype overlay, merging or pushing
+`main`, deployment, public cutover, a protected Liturgy change, or a canonical
+PDF change.
 
 ### Live Reader — Ritual Flow & Orientation
 

@@ -12,12 +12,15 @@ non-liturgy foundation implementation and real-data design; it does not freeze
 the synthetic prototype's pixels or accept any production route visually.
 
 Independent review of Wave 1 at exact head `e42b928...` accepted C0 Home, C1
-Publications, D0 Reader, and E0 Catena as design contracts. F0 Sources and the
-shared non-Liturgy shell require bounded corrections and remain unaccepted.
-Accessibility and resilience are accepted as production requirements with
-production proof outstanding; browser print is accepted only as a
-non-canonical fallback. A prototype, passing local gate, branch push, or
-coherent appearance does not authorize production cutover.
+Publications, D0 Reader, and E0 Catena as design contracts and required bounded
+corrections to F0 Sources and the shared non-Liturgy shell. Independent review
+of correction head `ecbd93a0575c4b890cc814af7cd20d01f5af7beb` then recorded
+**F0 Source Library — ACCEPT** and **Shared non-Liturgy shell — ACCEPT**,
+closing those design-review gates. Accessibility and resilience remain
+accepted production requirements with production proof outstanding; browser
+print remains accepted only as a non-canonical fallback. A prototype, passing
+local gate, branch push, or coherent appearance does not authorize production
+cutover.
 
 This document owns the active site-wide product and visual rules. The master
 plan owns the coordinator disposition and program boundaries; the
@@ -531,17 +534,17 @@ the authority recorded in the master plan, but main integration and Pages
 publication remain later explicit decisions. Parallel lanes use separate full
 checkouts and never share a working directory or index.
 
-## Wave 1 correction acceptance questions
+## Wave 1 correction acceptance record
 
-C0, C1, D0, and E0 are accepted and are not reopened by the correction
-checkpoint. Independent review of the corrected F0 and shared shell must answer:
+C0, C1, D0, and E0 are accepted and were not reopened by the correction
+checkpoint. Independent review of the corrected F0 and shared shell answered:
 
 1. **Sources:** Does the interface express Work → Edition ownership while
    keeping Artifact, Segment, and Passage as edition-owned siblings, with the
    Passage's controlling Artifact identified directly or through Segment?
-2. **One-Passage state:** When the selected Edition has one Passage, are
-   impossible Previous and Next actions absent or unequivocally disabled and
-   non-operable while `Passage 1 of 1` remains truthful?
+2. **One-Passage state:** When the selected Edition has one Passage, are the
+   selector and exact `Passage 1 of 1` retained while impossible Previous and
+   Next actions are omitted?
 3. **Wide shell:** Does each wide surface show exactly one current-location
    signal and a meaningful bounded Browse control rather than a duplicated
    domain label plus generic Menu?
@@ -550,8 +553,10 @@ checkpoint. Independent review of the corrected F0 and shared shell must answer:
 5. **Preservation:** Are the four accepted compositions, protected Liturgy,
    PDFs, routes and hashes, real-data boundary, and epistemic states unchanged?
 
-F0 and the shell remain changes required until an independent reviewer records
-accepted dispositions in the roadmap and operational ledgers.
+Independent review recorded accepted dispositions for F0 and the shared shell
+in the roadmap and operational ledgers. The accepted answers preserve the
+exact contracts above; they do not accept production implementation or
+authorize integration, deployment, or cutover.
 
 ## World-class completion
 

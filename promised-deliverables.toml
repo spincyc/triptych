@@ -4,11 +4,11 @@ schema_version = 1
 id = "corpus-browser-wave-1-design-2026-08-08"
 owner = "guidance/corpus-browser-roadmap.md"
 promise = "Produce one independently reviewable real-data Wave 1 visual and product-design candidate for Home, Publications, the long-form Publication Reader, Catena Omnia, and the Source Library, while preserving canonical PDFs, protected Liturgy, production routes and implementation, source truth, and the requirement for a separate external acceptance disposition."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "canonical-durable-authorities"
-  criterion = "The tracked corpus-browser master plan, vision, roadmap, and implementation record are the mutually consistent canonical authorities for the accepted foundation amendments, Wave 1 scope and branch/base, route-specific decisions, data limitations, implementation seams, evidence gates, and still-open external disposition; no ignored continuity file is required to recover a decisive fact."
+  criterion = "The tracked corpus-browser master plan, vision, roadmap, and implementation record are the mutually consistent canonical authorities for the accepted foundation amendments, Wave 1 scope and branch/base, route-specific decisions, data limitations, implementation seams, evidence gates, and final external dispositions; no ignored continuity file is required to recover a decisive fact."
   status = "pass"
   check = "path_exists"
   evidence = [
@@ -71,17 +71,18 @@ state = "candidate"
 
   [[deliverables.requirements]]
   id = "named-branch-commit-and-push"
-  criterion = "All durable Wave 1 design authorities, isolated prototype sources, review evidence records, and promise reconciliation are committed coherently on ux/corpus-wave-1 from its recorded exact base and pushed to the same named remote branch, with the outgoing commit list and remote head recorded; no merge or push to main and no deployment occurs."
+  criterion = "The original Wave 1 design authorities, isolated prototype sources, review evidence records, and promise reconciliation are committed coherently on ux/corpus-wave-1 from its recorded exact base; the bounded correction and final acceptance/continuity records are committed coherently on ux/corpus-wave-1-review-fixes from the exact reviewed head; both are pushed to their same named remote branches with outgoing ranges and remote heads verified, while no merge or push to main and no deployment occurs."
   status = "pass"
   evidence = [
     "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
     "build/agent-handoffs",
   ]
 
   [[deliverables.requirements]]
   id = "independent-external-acceptance"
-  criterion = "Independent external visual and product review records the exact accepted or changes-required disposition for each of C0, C1, D0, E0, F0, and the shared non-Liturgy shell after reviewing the real pages and complete ZIP; C0, C1, D0, and E0 are accepted, while F0 and the shell remain changes required until their fresh correction evidence is independently accepted. Prototype completion, checks, commit, push, or packaging alone cannot pass this gate or authorize production implementation, main integration, deployment, or public cutover."
-  status = "open"
+  criterion = "Independent external visual and product review records the exact disposition for C0, C1, D0, E0, F0, and the shared non-Liturgy shell after reviewing the real pages and complete ZIP; C0, C1, D0, and E0 are accepted, and fresh correction review records F0 Source Library and the shared shell as ACCEPT. Prototype completion, checks, commit, push, packaging, or design acceptance alone cannot authorize production implementation, main integration, deployment, or public cutover."
+  status = "pass"
   evidence = [
     "guidance/corpus-browser-roadmap.md",
     "PROJECT-WORK.md",
@@ -90,7 +91,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "review-fix-shell-acceptance"
   criterion = "A fresh immutable correction handoff preserves the accepted C0, C1, D0, and E0 designs and protected Liturgy, PDF, route, and hash boundaries; corrects the Source Library sibling/controller model and one-passage navigation; corrects duplicated wide current-domain identity and the generic wide Menu while preserving compact narrow Menu and bounded Jump; and independent external review accepts corrected F0 and the shared non-Liturgy shell before Sources implementation or final shell cutover is authorized."
-  status = "open"
+  status = "pass"
   evidence = [
     "guidance/corpus-browser-roadmap.md",
     "PROJECT-WORK.md",

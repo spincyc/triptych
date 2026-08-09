@@ -182,9 +182,48 @@ surfaces, compact Home and Instrument states at 393px and 320px, corrected
 Sources wide and narrow, the one-Passage state in normal and forced colors, and
 keyboard focus on the wide Browse control.
 
-The new ZIP is evidence transport, not acceptance. F0 and the shared shell
-remain **changes required** until an independent reviewer accepts the corrected
-states and that disposition is recorded here and in the fail-closed authorities.
+The new ZIP is evidence transport, not acceptance. At this checkpoint F0 and
+the shared shell remained **changes required** until an independent reviewer
+accepted the corrected states and that disposition was recorded here and in
+the fail-closed authorities.
+
+### Final correction disposition
+
+Independent review of packaged head
+`ecbd93a0575c4b890cc814af7cd20d01f5af7beb` and the fresh immutable package
+`20260809T021953Z-corpus-wave-1-review-fixes.zip` (SHA-256
+`d5fde51b14f143db05f762178896284d7768c0b2a11fc222fc2b32da63e22062`)
+recorded both required dispositions:
+
+- **F0 Source Library — ACCEPT.** The corrected design distinguishes
+  Work/Edition ownership from the Artifact/Segment relation controlling
+  Passage text. Its reviewed one-Passage state retains the selector, exact
+  `Passage 1 of 1`, rights, provenance, and inspection-scope truth while
+  omitting impossible Previous and Next actions.
+- **Shared non-Liturgy shell — ACCEPT.** Wide surfaces show exactly one
+  current-location signal, no duplicate wide domain identity, and Browse as a
+  bounded destination control distinct from Jump. Compact surfaces preserve
+  domain identity, Menu, Jump, target sizing, and no document-level overflow
+  at 393 and 320 CSS pixels.
+
+These dispositions preserve C0, C1, D0, and E0 and the protected Liturgy, PDF,
+production-route, and hash boundaries. They close only the F0 and shared-shell
+design-review gates; the disposable overlay remains design evidence rather
+than production application logic.
+
+The following findings are non-blocking only for design acceptance and retain
+their distinct downstream classifications:
+
+- the inherited nested-`main` defect remains a production blocker;
+- Reader table-cell reflow and full no-JavaScript behavior remain production
+  obligations;
+- implementation and hardening must add comprehensive Menu/Browse destination
+  activation tests;
+- the prototype stylesheet used 8,171 of its 8,192-byte gzip-9 ceiling and
+  supplies neither meaningful extension headroom nor a production CSS budget;
+  and
+- the stale Fortescue Artifact note remains with its proper source-data
+  authority owner and is not corrected by this disposition.
 
 ## Structured-data limits and blocked follow-ups
 
@@ -227,8 +266,8 @@ comparison, text, or metadata in the UI.
 | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
 | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
 | E1 Catena production implementation | Authorized independently | E0 is accepted; do not edit shared shell/global owners or protected Liturgy. |
-| F1 Sources production implementation | **Blocked** | Requires independent acceptance of the F0 correction. |
-| Final shared-shell cutover | **Blocked** | Requires independent acceptance of the shell correction and a clean implementation-foundation checkpoint. |
+| F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
+| Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
 | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
 | K0/K1 typed relationships | Planned | Requires accepted owning surfaces and verified structured edges; schema gaps above remain explicit. |
 | L0/L1 visual and accessibility acceptance | Planned | Requires implemented representative surfaces and complete real-data matrices. Automated checks cannot supply independent visual judgment. |
@@ -244,17 +283,17 @@ comparison, text, or metadata in the UI.
 | 2026-08-08 | Independent Wave 1 review | Accepted C0 Home, C1 Publications, D0 Reader, and E0 Catena; required changes to F0 and the shared non-Liturgy shell; accepted accessibility/resilience as a production requirement and browser print only as a non-canonical fallback. | Reviewed head `e42b9287485a5a6d18ad8a528ab0f0f3f0024ff9`; verified package `20260809T000346Z-corpus-wave-1-design-review.zip`. |
 | 2026-08-08 | Review-fix dispatch | Authorized `ux/corpus-wave-1-review-fixes` from exact reviewed head for bounded F0, shell, evidence, and authority corrections only. | F0 and shell remain changes required pending a fresh independent disposition; no production/main/deploy authority. |
 | 2026-08-09 | Review-fix implementation and test checkpoint | Completed the bounded F0 and shared-shell prototype corrections without reopening C0, C1, D0, or E0. The full capture run covered 85 real-route cases and 2,296 assertions with zero gating failures. Its 64 disclosed non-gating findings comprise 52 inherited nested-`main` findings, eight before-state useful-content findings, two before-only narrow-overflow findings, and two inherited Reader no-JavaScript overlay limitations. Protected Liturgy production and canonical PDF paths have zero reviewed-base-to-head changes. | Authority reconciliation `3bfb9df10e1bd4b8d4d2b56aeb430c897f67700a`; design/test head `c66c143643ff75a6cd54afdbe1fcd6eac0aca1b6`. F0 and shell remain changes required until independent acceptance. The earlier correction package `20260809T014145Z-corpus-wave-1-review-fixes` is superseded for protocol defects; a fresh immutable package follows this tracking repair. |
+| 2026-08-09 | Final F0 and shared-shell design review | Independent review recorded **F0 Source Library — ACCEPT** and **Shared non-Liturgy shell — ACCEPT**, preserving C0/C1/D0/E0 and protected Liturgy/PDF/routes/hashes while carrying the disclosed production and data obligations forward. | Reviewed and packaged head `ecbd93a0575c4b890cc814af7cd20d01f5af7beb`; package `20260809T021953Z-corpus-wave-1-review-fixes.zip`; SHA-256 `d5fde51b14f143db05f762178896284d7768c0b2a11fc222fc2b32da63e22062`. |
 
 ## Next Codex tasks
 
-1. Submit the fresh verified one-root correction ZIP assembled after this
-   tracking repair and obtain independent accepted, changes-required, or
-   rejected dispositions for F0 and the shell.
-2. Keep F1 and final shell cutover blocked until those exact dispositions are
-   accepted and recorded. E1 may proceed independently within its ownership
-   boundary; C2/D1 wait for a clean shell ownership checkpoint.
-3. Do not merge or deploy `main`, alter protected Liturgy, change a canonical
-   PDF, or infer missing source relationships.
+No further Codex design or implementation task is authorized by this
+acceptance. After this acceptance/continuity-only update is committed and
+pushed and its resulting HEAD SHA is reported, stop. Production implementation
+remains owned by the appropriate Claude lanes under separate authority. This
+acceptance does not authorize merging the disposable prototype, merging or
+pushing `main`, deployment, public cutover, protected Liturgy edits, or
+canonical PDF changes.
 
 Append later findings and dispositions. Do not rewrite earlier rows to make the
 sequence appear cleaner.

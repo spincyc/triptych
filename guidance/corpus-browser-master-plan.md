@@ -8,7 +8,7 @@ agent prompts, and amendment stack that formerly appeared in this file. A
 fresh contributor should not reconstruct current instructions from that
 historical sequence.
 
-The current independent review disposition applies to:
+The original independent review disposition applied to:
 
 - reviewed branch: `ux/corpus-wave-1`;
 - reviewed head: `e42b9287485a5a6d18ad8a528ab0f0f3f0024ff9`;
@@ -193,14 +193,21 @@ geometry remain real-data decisions.
 | C1 Publications | **Accepted** | Accepted design contract |
 | D0 Publication Reader | **Accepted** | Accepted design contract |
 | E0 Catena Omnia | **Accepted** | Accepted design contract |
-| F0 Source Library | **Changes required** | Production implementation blocked |
-| Shared non-Liturgy shell | **Changes required** | Final visual contract and cutover blocked |
+| F0 Source Library | **Accepted** | Design contract accepted; production implementation remains separately owned |
+| Shared non-Liturgy shell | **Accepted** | Design contract accepted; final production cutover remains blocked |
 | Accessibility and resilience | **Accepted as a requirement** | Production proof outstanding |
 | Browser print | **Accepted only as a non-canonical fallback** | Canonical PDF remains authoritative |
 
 The four accepted surface compositions are closed to redesign in the review-fix
 checkpoint. A shell correction may appear on their evidence routes, but it may
 not reopen their typography, hierarchy, interaction model, or epistemic states.
+
+Independent review of packaged correction head
+`ecbd93a0575c4b890cc814af7cd20d01f5af7beb` recorded **F0 Source Library —
+ACCEPT** and **Shared non-Liturgy shell — ACCEPT**. These are design-contract
+dispositions only. They do not accept the disposable overlay as production
+logic or authorize implementation, integration, deployment, public cutover,
+protected Liturgy changes, or canonical PDF changes.
 
 ### C0 Home contract
 
@@ -238,13 +245,14 @@ Keep the accepted Work/Edition identity, readable/withheld distinction,
 inspection-summary label, rights truth, and Artifact disclosure. Correct only:
 
 1. copy or hierarchy cues that imply Work -> Edition -> Artifact -> Passage;
-2. one-passage navigation so impossible Previous and Next actions are absent or
-   unequivocally disabled and non-operable; and
+2. one-passage navigation so the selector and exact `Passage 1 of 1` remain
+   while impossible Previous and Next actions are omitted; and
 3. optional Source-only redundant rule/spacing polish when already touching
    the affected selector.
 
-F0 remains **changes required** until a fresh correction package receives an
-independent accepted disposition.
+The corrected F0 design contract is **accepted**. F1 implementation remains a
+separately owned production lane and is not implemented or authorized by that
+design disposition alone.
 
 ### Shared shell correction contract
 
@@ -259,8 +267,9 @@ dialog, not separate controls. The current destination is marked with
 `aria-current`; Escape and dismissal restore focus and scroll. Jump remains a
 bounded fixture and never claims global Search.
 
-The shell remains **changes required** until its correction evidence receives
-independent acceptance. Protected Liturgy never receives it.
+The corrected shell design contract is **accepted**. Final production cutover
+remains blocked on clean foundation plumbing and explicit cutover authority.
+Protected Liturgy never receives it.
 
 ## Accessibility, resilience, URLs, and print
 
@@ -291,8 +300,8 @@ them; it cannot close them.
 | C2 Home/Publications implementation | Eligible after clean shared-shell ownership | Implement the accepted C0/C1 contracts; do not duplicate global owners across branches. |
 | D1 Reader implementation | Eligible after clean shared-shell ownership | Rendering and presentation only; preserve web-edition source ownership and canonical PDFs. |
 | E1 Catena implementation | Authorized independently | May begin from the corrected implementation foundation; do not edit global shell owners or protected Liturgy. |
-| F1 Sources implementation | **Blocked** | Requires accepted F0 correction evidence. |
-| Final shared-shell cutover | **Blocked** | Requires accepted shell correction evidence and clean foundation plumbing. |
+| F1 Sources implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by the disposition. |
+| Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires clean foundation plumbing and explicit authority. |
 | G0/G1 History; H0/H1 Law; I0/I1 Scripture | Planned | Follow their owning guidance and accepted foundation. |
 | J0/J1/J2 Search | Planned | Typed product design, measured public-only index, selected implementation. |
 | K0/K1 relationships | Planned | Requires verified schema/generator edges and accepted owning surfaces. |
