@@ -2470,12 +2470,18 @@ def wrap_in_layout(
     body_extra: str = "",
     declared_description: str = "",
     declared_robots: str = "",
+    content_element: str = "main",
 ) -> str:
     """Put one page's content inside the site's chrome.
 
     Every page a reader can reach comes through here, whichever way its content
     was produced, so the header, navigation, footer, stylesheet and robots
     metadata cannot differ between one page and the next.
+
+    `content_element` names the element the chrome wraps the content in. It is
+    `<main>` for a page whose content is prose the layout is the only landmark
+    for, and a plain `<div>` for one that already declares its own `<main>`;
+    see `render_browser_page`.
     """
     template = (TEMPLATE_ROOT / "layout.html").read_text(encoding="utf-8")
     if declared_robots:
@@ -2513,6 +2519,7 @@ def wrap_in_layout(
         social += social_meta(output_relative, title, description)
     home_current, about_current, feedback_current = navigation_state(source_relative)
     replacements = {
+        "{{CONTENT_ELEMENT}}": content_element,
         "{{PAGE_CLASS}}": page_class,
         "{{DOCUMENT_TITLE}}": html.escape(document_title(title)),
         "{{ROBOTS}}": robots,
@@ -2556,6 +2563,7 @@ BROWSER_STYLESHEET_RE = re.compile(r'<link rel="stylesheet" href="[^"]+">')
 BROWSER_SCRIPT_RE = re.compile(r'<script src="[^"]+"></script>')
 BROWSER_SKIP_LINK_RE = re.compile(r'<a class="skip-link" href="[^"]+">.*?</a>\s*', re.DOTALL)
 BROWSER_BODY_CLASS_RE = re.compile(r'\bclass="([^"]*)"')
+BROWSER_MAIN_RE = re.compile(r"<main\b")
 # What a browser page's head may hold. Anything else is a page doing something
 # the layout has no place for, and is refused rather than dropped: a stylesheet
 # or a meta tag silently discarded here would reach the reader as a page that
@@ -2607,9 +2615,22 @@ def browser_page_parts(source_path: Path, output_relative: str) -> dict:
     if not scripts:
         raise ReleaseError(f"{label}: declares no script; the page cannot render without one")
     content = BROWSER_SCRIPT_RE.sub("", body)
-    # The layout supplies its own skip link, to its own main element. Two of
-    # them puts the reader on a target that is no longer the top of the content.
+    # The layout supplies its own skip link, to the element it wraps the page
+    # in. Two of them puts the reader on a target that is no longer the top of
+    # the content.
     content = BROWSER_SKIP_LINK_RE.sub("", content, count=1)
+    # The page names its own main region, and it is the region a reader wants:
+    # the reading, the map, the code. The layout therefore wraps it in a plain
+    # element rather than a second <main>, which would tell assistive technology
+    # the page has two contents and leave the reader to guess which is the one.
+    # Exactly one is required here rather than assumed, because a page that
+    # stopped declaring one would otherwise publish with no main region at all.
+    landmarks = len(BROWSER_MAIN_RE.findall(content))
+    if landmarks != 1:
+        raise ReleaseError(
+            f"{label}: declares {landmarks} <main> elements; a browser page must "
+            "declare exactly one, which the layout wraps without adding its own"
+        )
 
     body_class = BROWSER_BODY_CLASS_RE.search(body_attributes)
     classes = ["page-shell", "page-browser", "section-toned"]
@@ -2695,6 +2716,11 @@ def render_browser_page(
         body_extra=parts["body_extra"],
         declared_description=parts["declared_description"],
         declared_robots=parts["declared_robots"],
+        # `browser_page_parts` has already required exactly one <main> in the
+        # content, so the layout adds none: the published page carries the one
+        # document landmark the page itself named, not that one nested inside a
+        # second the chrome invented.
+        content_element="div",
     )
 
 

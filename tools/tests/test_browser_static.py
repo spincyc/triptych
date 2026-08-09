@@ -112,16 +112,37 @@ class BrowserPagePublishabilityTest(unittest.TestCase):
   def test_no_published_browser_page_carries_a_second_document_landmark(self):
     """One `<main>` per source page.
 
-    The published artifact currently nests the page's own landmark inside the
-    layout's, which is a defect of `render_browser_page` rather than of these
-    files; this holds the source side of that boundary while the publish side
-    is settled.
+    The source side of the boundary. Its companion below asserts the published
+    side, because for a long time only this half existed: the artifact nested
+    the page's own landmark inside the layout's on all thirteen routes while
+    every source file here passed, and no gate read the built page.
     """
     for page in self.pages:
       with self.subTest(page=page.relative_to(ROOT).as_posix()):
         text = page.read_text(encoding="utf-8")
         self.assertEqual(text.count("<main"), 1, "exactly one <main> per source page")
         self.assertEqual(text.count("<h1"), 1, "exactly one <h1> per source page")
+
+  def test_no_built_browser_page_carries_a_second_document_landmark(self):
+    """One `<main>` per *built* page — the assertion that was missing.
+
+    A source page with one landmark says nothing about the artifact, which is
+    the page re-wrapped in `release/public-alpha/layout.html`. The layout now
+    wraps a browser page in a plain `<div id="main-content">` and keeps `<main>`
+    for the pages whose only landmark it is, so the reader receives the one
+    region the page itself named.
+    """
+    for page in self.pages:
+      output_relative = f"{page.parent.name}/{page.name}"
+      with self.subTest(page=page.relative_to(ROOT).as_posix()):
+        built = self.module.render_browser_page(page, output_relative, False, {})
+        self.assertEqual(built.count("<main"), 1, "exactly one <main> per built page")
+        self.assertEqual(built.count("<h1"), 1, "exactly one <h1> per built page")
+        self.assertIn('<div id="main-content"', built)
+        # The skip link has to land somewhere real, and the layout's is the only
+        # one left: the page's own is stripped as the content is taken apart.
+        self.assertEqual(built.count('class="skip-link"'), 1)
+        self.assertIn('href="#main-content"', built)
 
 
 if __name__ == "__main__":

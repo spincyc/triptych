@@ -304,6 +304,66 @@ class PublicAlphaTest(unittest.TestCase):
                 f"{asset.relative} names {asset.marker}, which the layout lacks",
             )
 
+    def test_the_layout_names_the_element_it_wraps_content_in(self) -> None:
+        """One landmark per published page, decided here rather than per page.
+
+        A prose page has no `<main>` of its own, so the layout is the only
+        landmark it can have. A browser page brings one — `#reading`, `#map`,
+        `#canon`, `#reader-document` — and for years the layout put a second
+        one around it, which tells assistive technology the document has two
+        contents. The wrapper is now named by the caller.
+        """
+        tool = load_tool()
+        layout = (REPOSITORY_ROOT / "release/public-alpha/layout.html").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("<{{CONTENT_ELEMENT}} id=\"main-content\"", layout)
+        self.assertNotIn("<main", layout)
+        source = REPOSITORY_ROOT / "src/web/browser/liturgy/day.html"
+        browser_page = tool.render_browser_page(source, "liturgy/day.html", False, {})
+        self.assertIn('<div id="main-content"', browser_page)
+        self.assertEqual(browser_page.count("<main"), 1)
+        # The prose side of the same seam, rendered through the real layout so
+        # the default is proved and not merely declared in a signature.
+        prose = tool.wrap_in_layout(
+            "ABOUT.md", "about.html", "page-shell", "About", "", "<p>Prose.</p>",
+            False, {},
+        )
+        self.assertIn('<main id="main-content"', prose)
+        self.assertEqual(prose.count("<main"), 1)
+
+    def test_a_browser_page_without_exactly_one_landmark_is_refused(self) -> None:
+        """Zero landmarks is the failure the wrapper change could hide.
+
+        With the layout no longer supplying a `<main>`, a page that stopped
+        declaring one would publish with no document landmark at all and
+        nothing would say so, which is worse than the two it replaced.
+        """
+        def page(regions: str) -> str:
+            return (
+                "<!doctype html><html lang=\"en-US\"><head><meta charset=\"utf-8\">"
+                "<title>Day</title><link rel=\"stylesheet\" href=\"day.css\">"
+                "</head><body><script src=\"day.js\"></script>"
+                f"{regions}</body></html>"
+            )
+
+        for regions, expected in (
+            ('<section id="reading"></section>', "declares 0 <main>"),
+            ('<main id="reading"></main><main id="also"></main>', "declares 2 <main>"),
+        ):
+            with self.subTest(expected=expected):
+                path = self.root / "src/web/browser/liturgy/day.html"
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(page(regions), encoding="utf-8")
+                with self.assertRaises(self.tool.ReleaseError) as failure:
+                    self.tool.browser_page_parts(path, "liturgy/day.html")
+                self.assertIn(expected, str(failure.exception))
+        # The same fixture with one region is accepted, so the refusals above
+        # are about the count and not about the fixture.
+        path.write_text(page('<main id="reading"></main>'), encoding="utf-8")
+        parts = self.tool.browser_page_parts(path, "liturgy/day.html")
+        self.assertIn("<main", parts["content"])
+
     def test_every_copied_browser_asset_is_byte_compared_on_verification(self) -> None:
         """Counted is not compared: the copies must be in the byte-checked set.
 
@@ -1522,7 +1582,11 @@ class PublicAlphaTest(unittest.TestCase):
             b"<!doctype html>\n<html lang=\"en\">\n<head>\n"
             b"<title>Scripture</title>\n"
             b'<link rel="stylesheet" href="scripture.css">\n'
-            b"</head>\n<body>\n<p>Read the text.</p>\n"
+            # The stub carries a `<main>` because a real browser page does: the
+            # layout wraps a browser page in a plain element and the page itself
+            # supplies the one document landmark.
+            b"</head>\n<body>\n"
+            b'<main id="reading"><p>Read the text.</p></main>\n'
             b'<script src="scripture.js"></script>\n</body>\n</html>\n',
         )
         self.tool.SITE_SOURCE_PATHS = self.tool.site_source_paths()
