@@ -1922,12 +1922,12 @@ release attachment, announcement, or promotion.
 | `src/web/browser/catena/catena.js` | `51aaa3cf9deb47127da9cce3acefd2740531c69a6ed17e7bf7a702171d6d20d0` |
 | `src/web/browser/catena/index.html` | `45c491abf22351e14fe22648a5a05e47f6abd8185a2565a3cc34a1d19acc440d` |
 | `src/web/browser/history/history.css` | `7813150f8cec2c426e5db8d7c6fe069030f110f7255d64c513051dfe8cbc6944` |
-| `src/web/browser/history/history.js` | `35905e032487a776931a668c0f0d2ff28804963905fd171930e12b080ed6279a` |
+| `src/web/browser/history/history.js` | `53d8fc4141669f03247fa000e3f767fc0d6aab68a373aeacf30b5d2b3005d5c1` |
 | `src/web/browser/history/index.html` | `d930cfcd2288781e2b7cb55efd551cd1202203fb960f5da067be6674e81fa382` |
 | `src/web/browser/law/code-model.js` | `61e58d843e2cad1c17c7fc7eab21aeb4836b20e544dd36bb0167954f70ca3f49` |
 | `src/web/browser/law/index.html` | `adfbe40b5ea62efffb7272414d1a7206dc37b477c5b2c7131d9495051d7687e5` |
 | `src/web/browser/law/law.css` | `57a2a758f4c3b01d73415c0f5ad1dc35e0ed3cbac03b607f43460a81cec0d9bc` |
-| `src/web/browser/law/law.js` | `9f4f50e40b005393f0790039f735c87df318a15e890cb3efe027d8eef83f6ca5` |
+| `src/web/browser/law/law.js` | `d98ebd8ba6699f8bf6540310cbb168fce9767b47893f37b1ceff91eff6d5676c` |
 | `src/web/browser/liturgy/assembly-model.js` | `de239c0c7efddbfbaeba2d3ee5a9439630abc8965e61765dfd7205e4b9181789` |
 | `src/web/browser/liturgy/day-missal.css` | `a36a5ff9a57331e9cec5d82487b0f74d3fdf18d805a9a412a2b568e81960ec17` |
 | `src/web/browser/liturgy/day-reader.css` | `695de63e1ae82091248515a849de5354389a551e4f589504d2faa1ae46b0b2e0` |
@@ -1965,7 +1965,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/sources/index.html` | `9d95eb0fa09b6a63def0430861f5cf47a335096587007686200e061fa9c348f3` |
 | `src/web/browser/sources/reader-model.js` | `bd446cbe9f811ed4e7db5c9e6bbaa78ac6def5ffa74723d033603516120185f9` |
 | `src/web/browser/sources/sources.css` | `c4240c2e520b76c1b68e48d079cac279a890a67a167b63b2c5de70c7f2344642` |
-| `src/web/browser/sources/sources.js` | `a39d4a90f261cbff4ce9b36879fe1b4308f59091fb67e242b5a66932ffa27416` |
+| `src/web/browser/sources/sources.js` | `092b633f7bea68a3a69139b7553ddbafc57f25693a2e2176e389cc5a960197f2` |
 | `src/web/browser/texts/catalogue-model.js` | `1bd5266d4b2d469403ad8efa63af8c21838d745258295f548bdd7c1f2603996a` |
 | `src/web/browser/texts/index.html` | `676890ce6b29c6ee5be3a797a053b10c140979544bf392db0c017796251322b9` |
 | `src/web/browser/texts/texts.css` | `299b117fcf3f917cb1fdfdc3142634e1e5de35856695b647bb6d8c4583a1d009` |
