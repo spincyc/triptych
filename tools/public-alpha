@@ -207,7 +207,17 @@ FIXED_ARTIFACT_INPUT_PATHS = {
 # absolute URL: the Open Graph protocol's URL type admits only http:// and
 # https:// forms (https://ogp.me/), and Apple's own worked example in TN3156
 # uses one, so nothing here may be left for a fetcher to resolve relatively.
-SITE_ORIGIN = "https://spincyc.github.io/triptych"
+#
+# The origin is two separable facts, and the split is the migration seam. The
+# scheme-and-host is where the site is reached; the base path is where the
+# artifact is mounted under that host — "/triptych" on the GitHub Pages
+# project site today, "" once the didach.ai custom domain serves the same
+# artifact at the root. Everything downstream reads the joined SITE_ORIGIN,
+# so the domain cutover is a two-value edit here and nowhere else;
+# guidance/didach-domain-migration.md owns the procedure and its checks.
+SITE_SCHEME_HOST = "https://spincyc.github.io"
+SITE_BASE_PATH = "/triptych"
+SITE_ORIGIN = SITE_SCHEME_HOST + SITE_BASE_PATH
 # Apple's TN3156 is explicit that the site name belongs in og:site_name and not
 # in og:title, so the preview reads as a page rather than as the site repeated.
 # `document_title` already appends this for the browser tab; the social title is
@@ -1961,8 +1971,11 @@ def source_to_output(
     if destination is None:
         return None
 
-    start = PurePosixPath(output_relative).parent.as_posix()
-    relative = posixpath.relpath(destination, start if start != "." else ".")
+    if output_relative in ROOT_SERVED_ERROR_PAGES:
+        relative = f"{SITE_BASE_PATH}/{destination}"
+    else:
+        start = PurePosixPath(output_relative).parent.as_posix()
+        relative = posixpath.relpath(destination, start if start != "." else ".")
     if target_parts.query:
         relative += "?" + target_parts.query
     if target_parts.fragment:
@@ -2071,6 +2084,22 @@ def page_body_markdown(source_relative: str, markdown_text: str) -> str:
 def relative_link(output_relative: str, destination: str) -> str:
     parent = PurePosixPath(output_relative).parent.as_posix()
     return posixpath.relpath(destination, parent if parent != "." else ".")
+
+
+# Pages a static host serves at the requested URL rather than at their own
+# path. GitHub Pages answers every missing route with 404.html while the
+# browser keeps the missing URL as the document base, so a relative link in
+# that page resolves against whatever directory the reader mistyped — at any
+# depth. Anchoring these pages to the deployment base is the only shape that
+# works everywhere; every other page stays document-relative, which is what
+# keeps the artifact portable across deployment bases.
+ROOT_SERVED_ERROR_PAGES = {"404.html"}
+
+
+def page_link(output_relative: str, destination: str) -> str:
+    if output_relative in ROOT_SERVED_ERROR_PAGES:
+        return f"{SITE_BASE_PATH}/{destination}"
+    return relative_link(output_relative, destination)
 
 
 def page_classes(source_relative: str, output_relative: str) -> str:
@@ -2471,14 +2500,14 @@ def wrap_in_layout(
         "{{DOCUMENT_TITLE}}": html.escape(document_title(title)),
         "{{ROBOTS}}": robots,
         "{{SOCIAL}}": social,
-        "{{ICON_PATH}}": relative_link(output_relative, SITE_ICON_RELATIVE),
-        "{{ASSET_PATH}}": relative_link(output_relative, "assets/site.css"),
+        "{{ICON_PATH}}": page_link(output_relative, SITE_ICON_RELATIVE),
+        "{{ASSET_PATH}}": page_link(output_relative, "assets/site.css"),
         "{{HEAD_EXTRA}}": head_extra,
-        "{{HOME_PATH}}": relative_link(output_relative, "index.html"),
-        "{{ABOUT_PATH}}": relative_link(output_relative, "about.html"),
-        "{{CONTRIBUTING_PATH}}": relative_link(output_relative, "contributing.html"),
-        "{{LICENSE_PATH}}": relative_link(output_relative, "license.html"),
-        "{{THIRD_PARTY_PATH}}": relative_link(output_relative, "third-party.html"),
+        "{{HOME_PATH}}": page_link(output_relative, "index.html"),
+        "{{ABOUT_PATH}}": page_link(output_relative, "about.html"),
+        "{{CONTRIBUTING_PATH}}": page_link(output_relative, "contributing.html"),
+        "{{LICENSE_PATH}}": page_link(output_relative, "license.html"),
+        "{{THIRD_PARTY_PATH}}": page_link(output_relative, "third-party.html"),
         "{{MODE_BANNER}}": banner,
         "{{HOME_CURRENT}}": home_current,
         "{{ABOUT_CURRENT}}": about_current,
@@ -2805,14 +2834,33 @@ def verify_links(output: Path) -> list[str]:
     output_resolved = output.resolve()
     for path_resolved, parser in parsers.items():
         path = Path(path_resolved)
+        page_relative = path.relative_to(output_resolved).as_posix()
+        base_anchored = page_relative in ROOT_SERVED_ERROR_PAGES
         for href in parser.links:
             parts = urlsplit(href)
             if parts.scheme or parts.netloc or href.startswith("//"):
                 continue
             if parts.path.startswith("/"):
-                errors.append(f"{path.relative_to(output)}: root-relative link is not portable: {href}")
+                # A base-anchored error page is the one page whose links must
+                # begin at the deployment base, because the host serves it at
+                # whatever URL was missed; everywhere else a root-relative
+                # link breaks the artifact's portability across bases.
+                if base_anchored and parts.path.startswith(f"{SITE_BASE_PATH}/"):
+                    inside = unquote(parts.path[len(SITE_BASE_PATH) :].lstrip("/"))
+                    target = (output_resolved / inside).resolve()
+                else:
+                    errors.append(
+                        f"{path.relative_to(output)}: root-relative link is not portable: {href}"
+                    )
+                    continue
+            elif base_anchored and parts.path:
+                errors.append(
+                    f"{path.relative_to(output)}: error-page link must be anchored "
+                    f"to the deployment base, not document-relative: {href}"
+                )
                 continue
-            target = path if not parts.path else (path.parent / unquote(parts.path)).resolve()
+            else:
+                target = path if not parts.path else (path.parent / unquote(parts.path)).resolve()
             try:
                 target.relative_to(output_resolved)
             except ValueError:
