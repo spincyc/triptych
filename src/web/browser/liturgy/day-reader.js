@@ -454,12 +454,17 @@
     });
     // The missal list is manifest data, not selection state: it is the same
     // list whatever day failed. Emptying it left an enabled select with nothing
-    // in it, which is a second dead end wearing the first one's clothes. Its
-    // VALUE is still cleared below, so no prior missal shows through.
+    // in it, which is a second dead end wearing the first one's clothes. Nor is
+    // its VALUE cleared now: that left a reader whose selection failed with no
+    // missal named at all. It is read from the hash, so it is the request in
+    // hand and not a prior selection showing through.
     T.fillSelect(missalSelect, (runtime.missals || []).map(function (row) {
       return { value: row.id, label: row.label, title: row.edition || row.code || row.id };
     }));
-    missalSelect.value = '';
+    const asked = new URLSearchParams(window.location.hash.replace(/^#/, '')).get('missal');
+    missalSelect.value = (runtime.missals || []).some(function (row) {
+      return row.id === asked;
+    }) ? asked : '';
     formularyField.hidden = true;
     ordinaryLangField.hidden = true;
     ordinaryOptionField.hidden = true;
@@ -1597,12 +1602,16 @@
 
   function hashWith(updates, removals) {
     const params = new URLSearchParams(window.location.hash.replace(/^#/, ''));
-    (removals || []).forEach(function (key) { params.delete(key); });
     Object.keys(updates || {}).forEach(function (key) {
       const value = updates[key];
       if (value === null || value === undefined || value === '') params.delete(key);
       else params.set(key, value);
     });
+    // Removals LAST, and they win. Applied first they died the moment an update
+    // named the same key: Apply asks for `mass` to go whenever the day or the
+    // missal changes, then wrote the outgoing missal's own formulary key back
+    // from a select nothing had repopulated — and no missal holds another's.
+    (removals || []).forEach(function (key) { params.delete(key); });
     const value = params.toString();
     return value ? '#' + value : '';
   }
