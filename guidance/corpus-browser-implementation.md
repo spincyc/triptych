@@ -1014,6 +1014,10 @@ The coordinator ran these at the base commit. They are first-hand.
 | `python3 tools/tpt public-alpha verify --deployment-target github-pages` | 0 | artifact accepted for Pages |
 | all 144 built routes over `python3 -m http.server` | — | every route returns HTTP 200 |
 | `python3 -m unittest discover -s tools/tests` | 1 | Ran 1226 tests in 466 s: 14 failures, 13 errors, 8 skipped |
+| `TRIPTYCH_CHROME=/usr/bin/chromium … liturgy_reader_shell_browser.mjs` | 1 | several assertions fail, including "real Proper renderer did not produce enough sections" |
+| `… liturgy_reader_visual_reset_browser.mjs` | 1 | 0 of 25 assertions pass, all "Timed out waiting for … readiness" |
+| `… day_reader_integration_browser.mjs` | 1 | exits without emitting parseable JSON |
+| `… propers_reader_integration_browser.mjs` | 1 | zero assertions run |
 
 **This baseline moved on `impl/shell-plumbing`, and the eight that went are
 worth naming so nobody is credited with them twice.** `test_public_alpha.py`
@@ -1026,10 +1030,6 @@ has carried it as inherited red. The fixture now reads the lock from the
 repository, as the two asset writes beside it already did, so the drift cannot
 recur. The suite baseline is therefore **14 failures and 5 errors** from that
 commit onward. A branch based before it should still expect 13.
-| `TRIPTYCH_CHROME=/usr/bin/chromium … liturgy_reader_shell_browser.mjs` | 1 | several assertions fail, including "real Proper renderer did not produce enough sections" |
-| `… liturgy_reader_visual_reset_browser.mjs` | 1 | 0 of 25 assertions pass, all "Timed out waiting for … readiness" |
-| `… day_reader_integration_browser.mjs` | 1 | exits without emitting parseable JSON |
-| `… propers_reader_integration_browser.mjs` | 1 | zero assertions run |
 
 The unit-suite failures were reproduced identically in a clean separate checkout
 at base SHA `c27d69153`:
