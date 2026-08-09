@@ -592,6 +592,33 @@ verify-public-preview:
 verify-public-site:
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify
 
+# The same generated artifact serves at the GitHub Pages project subpath
+# today and at the didach.ai root after the domain cutover
+# (guidance/didach-domain-migration.md), so the browser gate runs once per
+# mount. It needs a built artifact and a Chromium; each absence skips with
+# its reason, matching the browser-optional policy above. Reports land under
+# ignored build/ and are printed only on failure.
+.PHONY: check-site-mounts
+check-site-mounts:
+	@chrome="$${TRIPTYCH_CHROME:-$$(command -v google-chrome-stable || command -v chromium || true)}"; \
+	if [ -z "$$chrome" ]; then \
+		echo "no Chromium found; skipping site-mount browser gate"; \
+	elif [ ! -d build/public-alpha/site ]; then \
+		echo "build/public-alpha/site missing; run 'make public-site' first; skipping site-mount browser gate"; \
+	else \
+		status=0; \
+		for mount in "" "/triptych"; do \
+			report="build/site-mount$$(echo "$$mount" | tr / -).json"; \
+			if TRIPTYCH_CHROME="$$chrome" TRIPTYCH_TEST_MOUNT="$$mount" \
+				node tools/tests/public_site_mount_browser.mjs >"$$report" 2>&1; then \
+				echo "site mount '$${mount:-/}' verified ($$report)"; \
+			else \
+				status=1; cat "$$report"; \
+			fi; \
+		done; \
+		exit $$status; \
+	fi
+
 # Release bookkeeping; approval text is the operator's act, never invented.
 check-release-bindings:
 	@$(PYTHON) $(RELEASE_BINDINGS_TOOL) status

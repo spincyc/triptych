@@ -1272,7 +1272,12 @@ async function captureMatrix(cdp, base, directory) {
     }));
   }
 
-  const deployed = 'https://spincyc.github.io/triptych/liturgy/';
+  // The live deployed origin is a second copy of the canonical origin owned
+  // by tools/public-alpha (SITE_ORIGIN); the override exists so a capture run
+  // can follow the site when the canonical origin moves — didach.ai is the
+  // decided future root (guidance/didach-domain-migration.md).
+  const deployed = process.env.TRIPTYCH_DEPLOYED_BASE
+    || 'https://spincyc.github.io/triptych/liturgy/';
   const baselines = [
     ['current-day', deployed + 'day.html', STATES.romanRead,
       'window.dayReaderReady === true && !document.querySelector("#celebration-title").textContent.includes("Loading") && document.querySelector("#reader-document").textContent.length > 100'],
