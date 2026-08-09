@@ -40,6 +40,7 @@ largely a register of how that data has already gone wrong:
 | a calendar recension and its departures from a base | `guidance/recensions.md` |
 | whether a publication's research has gone stale | `guidance/staleness.md` |
 | a promised deliverable and whether it is met | `guidance/promised-deliverables.md` |
+| the site's canonical origin, deployment base path, or the didach.ai domain migration | `guidance/didach-domain-migration.md` |
 
 The remaining production plans and handoffs are maintainer records, linked from
 the profile or registry that owns their subject rather than from here.

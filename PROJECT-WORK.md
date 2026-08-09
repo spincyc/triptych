@@ -910,6 +910,22 @@ evidence ceilings and without implying external approval. Exorcism and both Line
 editions remain separate exact-snapshot boundaries, and the set-level promise
 remains open.
 
+### didach.ai domain migration architecture
+
+**In progress as a parallel technical workstream on `impl/didach-domain`;
+cutover not authorized.** The decided future canonical public root is
+`https://didach.ai/`, with GitHub Pages remaining the host.
+`guidance/didach-domain-migration.md` is the durable owner: the 2026-08-08
+repository-wide audit (origin exists in exactly two tracked places; corpus,
+PDFs, and source records are host-agnostic), the canonical URL model
+(`SITE_SCHEME_HOST` + `SITE_BASE_PATH` joined once in `tools/public-alpha`),
+the base-anchored 404 contract, the dual-mount browser gate
+(`make check-site-mounts`), verified GitHub Pages custom-domain behavior, and
+the exact cutover and rollback procedures. Visible identity remains with the
+Codex `ux/didach-identity` lane, which had not been created at review time.
+DNS, the Pages custom-domain setting, and the deploying merge are explicitly
+out of this workstream's authority.
+
 ## Full repository discrepancy audit
 
 The 2026-07-27 audit establishes the following actionable backlog:
