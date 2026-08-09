@@ -2,9 +2,10 @@
  * One track of the reading plan, read as a course
  * ===========================================================================
  *
- * A track is a tier — overview, narrative, year — and this page is the whole of
- * it: an orientation, twelve periods, and the readings in order. It is not a
- * lookup tool with a dropdown of tiers. A reader arrives at a track, is told
+ * A track is a tier — `landmarks`, `story`, `full-account` — and this page is
+ * the whole of it: an orientation, twelve periods, and the readings in order.
+ * It is not a lookup tool with a dropdown of tiers. A reader arrives at a
+ * track, is told
  * what it is, how long it takes and what it refuses to include, and then walks
  * it, always able to say where they are.
  *
@@ -20,9 +21,14 @@
  * reintroduce it. Every view is instead addressable through the hash, so a
  * reading can be bookmarked, linked and shared exactly as a file could:
  *
- *   #tier=narrative                          the orientation
- *   #tier=narrative&period=exile             one period
- *   #tier=narrative&reading=47&bible=douay-rheims   one reading
+ *   #tier=story                              the orientation
+ *   #tier=story&period=exile                 one period
+ *   #tier=story&reading=47&bible=douay-rheims       one reading
+ *
+ * The tier is the plan's own id and not a description of it. All three lines
+ * above named a tier `narrative`, which no plan has ever offered: every link
+ * built from this header landed on whatever track the page fell back to, and
+ * the page then said so in words about a track the reader had not named.
  *
  * Nothing in this file re-implements the shared machinery: the chapter cache,
  * the numbering-aware loci, the four failure renderings, the render token and
@@ -732,10 +738,23 @@
           // Only worth saying where the reader is actually looking at a
           // reading; on an orientation it would sit unread until some later
           // reading wore it, and explain nothing.
+          //
+          // WHICH TRACK, AND WHY THIS ONE. "the smaller selection" is a fact
+          // about a reader who has just narrowed, and it was said to readers
+          // who had not: a link naming a tier this plan does not offer landed
+          // on the smallest track and was then told its reading was missing
+          // from a track it had never asked for, as though it had chosen it.
+          // Where the track was chosen the sentence is unchanged; where the
+          // page chose it, the page says so.
           if (state.view === 'reading') {
-            state.notice = 'That reading is not in the ' + view.label +
-              ' track, which is the smaller selection. This is the nearest ' +
-              'reading before it.';
+            const instead = options && options.insteadOf;
+            state.notice = instead
+              ? 'This plan has no “' + instead + '” track, so the ' +
+                view.label + ' track is shown, and that reading is not in it. ' +
+                'This is the nearest reading before it.'
+              : 'That reading is not in the ' + view.label +
+                (previous ? ' track, which is the smaller selection.' : ' track.') +
+                ' This is the nearest reading before it.';
           }
         }
       }
@@ -793,14 +812,19 @@
 
     const tiers = P.tiers(state.plan);
     const wantedTier = hash.get('tier');
-    const tier = tiers.indexOf(wantedTier) >= 0 ? wantedTier : tiers[0];
+    const known = tiers.indexOf(wantedTier) >= 0;
+    const tier = known ? wantedTier : tiers[0];
 
     const wantedReading = hash.get('reading');
     const wantedPeriod = hash.get('period');
     state.view = wantedReading ? 'reading' : (wantedPeriod ? 'period' : 'orient');
     state.periodKey = wantedPeriod || null;
 
-    setTrack(tier, wantedReading, { moveFocus: false });
+    // A tier this plan does not offer is carried into `setTrack` so that
+    // whatever it has to say about the reading is said about the track the
+    // page picked, and named as the page's choice rather than the reader's.
+    setTrack(tier, wantedReading,
+      { moveFocus: false, insteadOf: wantedTier && !known ? wantedTier : null });
   }
 
   /* ------------------------------------------------------------------------
@@ -853,7 +877,14 @@
 
     const wantedTier = hash.get('tier');
     if (wantedTier && wantedTier !== state.tier) {
-      setTrack(wantedTier, wantedReading, { moveFocus: true });
+      // `setTrack` refuses a tier the plan does not offer, so a hash naming
+      // one used to change nothing at all: the address went on citing a track
+      // the page was not showing, and no words on the page mentioned it. The
+      // page answers the same way it answers the tier on arrival.
+      const offered = P.tiers(state.plan);
+      const known = offered.indexOf(wantedTier) >= 0;
+      setTrack(known ? wantedTier : offered[0], wantedReading,
+        { moveFocus: true, insteadOf: known ? null : wantedTier });
       return;
     }
 

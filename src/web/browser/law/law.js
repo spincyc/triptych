@@ -633,10 +633,24 @@
     }
     const list = T.el('div', 'lookup-choices');
     list.appendChild(T.el('h2', 'canon-citation', typed));
-    list.appendChild(T.el('p', 'weak',
-      'More than one canon answers to that. Each body of law numbers ' +
-      'independently, so one number stands in more than one of them, and they ' +
-      'are not the same canon.'));
+    // "Each body of law numbers independently" explains a collision ACROSS
+    // Codes, and it was printed over EVERY list of choices — including the
+    // ones where every canon offered stands in the same body of law. Looking
+    // up 100 offers c. 1008 and c. 1009, both of the 1983 Code, and told the
+    // reader that one number stood in more than one body: a true sentence
+    // deployed as the explanation of a case it does not describe.
+    //
+    // It is said where it holds and not otherwise. Where the choices share a
+    // body, the record does not say what separates them beyond their own
+    // numbers and the divisions printed on each row below, so nothing more is
+    // claimed here than that they are different canons.
+    const bodies = new Set();
+    entries.forEach(function (entry) { if (entry.line) bodies.add(entry.line); });
+    list.appendChild(T.el('p', 'weak', bodies.size > 1
+      ? 'More than one canon answers to that. Each body of law numbers ' +
+        'independently, so one number stands in more than one of them, and ' +
+        'they are not the same canon.'
+      : 'More than one canon answers to that, and they are not the same canon.'));
     entries.forEach(function (entry) {
       const item = T.el('article', 'choice');
       const open = T.el('button', 'link-button', C.canonCitation(entry.canon));
@@ -1253,7 +1267,15 @@
   }
 
   function applyHash(wanted) {
-    if (wanted.line && lineSelect) lineSelect.value = wanted.line;
+    if (wanted.line && lineSelect) {
+      lineSelect.value = wanted.line;
+      // A body of law this record does not carry is not a state this page can
+      // be in. Assigned straight, the select fell to selectedIndex -1 and read
+      // BLANK, while `askedLine` saw the same empty value and ran every lookup
+      // across every body of law — the control naming nothing while the page
+      // behaved as "Any". The control is put where the page actually is.
+      if (lineSelect.selectedIndex < 0) lineSelect.selectedIndex = 0;
+    }
     if (wanted.unit) {
       openUnit(wanted.unit);
     } else if (wanted.canon) {
@@ -1357,6 +1379,16 @@
 
   T.loadJSON(ROOT + '.json').then(start).catch(function (error) {
     T.doneBootstrapping();
+    // The controls ship saying "Loading…" and disabled, and `start` is what
+    // turns them on. When the record never arrives they were left exactly as
+    // shipped: a Body-of-law select loading forever out of a file that will
+    // never come, and a citation box refusing every keystroke without saying
+    // why. The paragraph below says what happened; these say it where a reader
+    // is looking when they try to use the page.
+    T.fillSelect(lineSelect, [
+      { value: '', label: 'Unavailable — the record could not be read' }
+    ]);
+    citationInput.placeholder = 'The record could not be read';
     T.clear(canonView);
     canonView.setAttribute('aria-busy', 'false');
     const block = T.el('div', 'lookup-none');

@@ -248,11 +248,21 @@
     }
     if (!T.isCurrentRender(token)) return;
 
-    const at = wantedPassage
-      ? Math.max(0, (payload.passages || []).findIndex(function (one) {
-          return one.id === wantedPassage;
-        }))
-      : 0;
+    // A passage named in the link and absent from this edition is NOT passage
+    // one. Rounding the miss up to the first passage left the address bar
+    // naming one passage while the page printed another — a citation that
+    // lies, which is worse than a link that plainly fails. The same refusal
+    // the passage-alone route already gives is given here.
+    let at = 0;
+    if (wantedPassage) {
+      at = (payload.passages || []).findIndex(function (one) {
+        return one.id === wantedPassage;
+      });
+      if (at < 0) {
+        reportPassageNotHere(wantedPassage);
+        return;
+      }
+    }
     open = { work: work, edition: edition, payload: payload, at: at };
     renderReader();
   }
@@ -596,6 +606,32 @@
     return null;
   }
 
+  /**
+   * A passage the corpus does not offer here. Said plainly, with the corpus
+   * still reachable, rather than dropping the reader on a list with no
+   * explanation of why the link did not work — or, worse, on some other
+   * passage under the id they asked for.
+   *
+   * Nothing is open once this is said, so the hash the reader arrived on is
+   * left exactly as they sent it and no later step can rewrite it to name a
+   * passage that is still being refused.
+   */
+  function reportPassageNotHere(passageId) {
+    open = null;
+    showReader();
+    T.clear(elements.reader);
+    const back = T.el('button', 'back', '← Back to the corpus');
+    back.type = 'button';
+    back.addEventListener('click', showFinder);
+    elements.reader.appendChild(back);
+    elements.reader.appendChild(
+      T.el('p', 'error',
+        'No passage with the id “' + passageId + '” can be opened here. It may ' +
+        'be a record whose text this repository may not serve, in which case ' +
+        'it is findable in the corpus below under its own work.')
+    );
+  }
+
   async function applyHash(hash) {
     const editionId = hash.get('edition');
     const passageId = hash.get('passage');
@@ -616,21 +652,7 @@
         await openEdition(found.work, found.edition, passageId);
         return;
       }
-      // A passage the corpus does not offer here. Said plainly, with the
-      // corpus still reachable, rather than dropping the reader on a list with
-      // no explanation of why the link did not work.
-      showReader();
-      T.clear(elements.reader);
-      const back = T.el('button', 'back', '← Back to the corpus');
-      back.type = 'button';
-      back.addEventListener('click', showFinder);
-      elements.reader.appendChild(back);
-      elements.reader.appendChild(
-        T.el('p', 'error',
-          'No passage with the id “' + passageId + '” can be opened here. It may ' +
-          'be a record whose text this repository may not serve, in which case ' +
-          'it is findable in the corpus below under its own work.')
-      );
+      reportPassageNotHere(passageId);
       return;
     }
 

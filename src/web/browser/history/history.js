@@ -431,7 +431,18 @@
       width: width,
       height: height,
       role: 'img',
-      'aria-label': 'The acts that changed this missal, drawn as a line with ' +
+      // NOT "this missal". `role="img"` prunes every station button out of the
+      // accessibility tree, so this string is very nearly the whole of the map
+      // to a reader who cannot see it — and on the Code slice it told them
+      // they were looking at a missal and then gave them nothing else.
+      //
+      // The neutral word is used rather than the slice's declared one. This
+      // page has two places where an undeclared vocabulary falls back to the
+      // Missal's own words, and both are defended above because the slice that
+      // declares nothing IS a missal; a third would put the same falsehood one
+      // undeclared slice away from returning. "This record" is what the rest
+      // of the file already calls whatever it has been handed.
+      'aria-label': 'The acts this record carries, drawn as a line with ' +
         stations.length + ' stations on ' + size.rows + ' tracks'
     });
 
@@ -569,11 +580,18 @@
   /** What a word in the record means, said once, where it is used. */
   function kindNote(kind) {
     if (kind === M.PRINTED) {
+      // NOT "a missal survives". This page draws whatever act-keyed slice it
+      // is handed, and on the Code slice the artifact behind a printed station
+      // is Friedberg's Decretum or the Editio Romana — calling either one a
+      // missal is simply false. The slice declares no word for the artifact
+      // and none is invented here: what every printed station does carry, and
+      // what `act-history check` requires of it, is the PRINTING it stands on,
+      // which is the word the row above already prints.
       return T.el('p', 'detail-weak',
-        'A printed station. A missal survives and no act has been located for ' +
-        'it, so nothing here claims one. That is a statement about the ' +
-        'evidence and not about the size of the change: the book is present, ' +
-        'the instrument is missing.');
+        'A printed station. The printing it stands on survives and no act has ' +
+        'been located for it, so nothing here claims one. That is a statement ' +
+        'about the evidence and not about the size of the change: the printing ' +
+        'is present, the instrument is missing.');
     }
     if (kind === M.UNSTATED) {
       return T.el('p', 'detail-weak',
@@ -889,6 +907,33 @@
     return block;
   }
 
+  /**
+   * A station id this record does not carry.
+   *
+   * It is NOT the newest station. Falling through to the last row answered a
+   * stale or mistyped citation with a real act and then rewrote the hash to
+   * name that act, so the address bar came to agree with a page the reader had
+   * never asked for and nothing on screen said the citation had failed. This
+   * refuses in the same terms the law page refuses a canon its record does not
+   * carry: the id is quoted back, nothing is opened, and nothing is written to
+   * the hash, so the link the reader followed stays exactly as they sent it.
+   */
+  function reportUnknownStation(id) {
+    selected = null;
+    Array.prototype.forEach.call(document.querySelectorAll('.station'), function (node) {
+      node.classList.remove('station-selected');
+    });
+    T.clear(detail);
+    detail.hidden = false;
+    detail.appendChild(T.el('h2', 'detail-title', id));
+    detail.appendChild(T.el('p', 'error',
+      'This record carries no station with the id “' + id + '”. That is a ' +
+      'statement about this record and not about the history: nothing here ' +
+      'hands you a neighbouring act instead, because a neighbouring act is a ' +
+      'different act.'));
+    T.statusLine('This record carries no station with the id ' + id + '.');
+  }
+
   function open(id) {
     const station = byId.get(id);
     if (!station) return;
@@ -1198,7 +1243,7 @@
       item.appendChild(document.createTextNode(
         counts.get(kind) + ' ' + kind +
         (kind === M.PROMULGATED ? ' — an act stands behind it'
-          : kind === M.PRINTED ? ' — a missal survives and no act has been located'
+          : kind === M.PRINTED ? ' — a printing survives and no act has been located'
             : ' — this file says nothing about which')));
       legend.appendChild(item);
     });
@@ -1245,12 +1290,15 @@
     const wanted = fromHash();
     if (wanted.unit) openUnit(wanted.unit);
     if (wanted.station && byId.has(wanted.station)) open(wanted.station);
+    else if (wanted.station) reportUnknownStation(wanted.station);
     else if (stations.length) open(stations[stations.length - 1].id);
 
     T.onHashChange(function (params) {
       const next = fromHash(params);
       if (next.unit && next.unit !== openedUnit) openUnit(next.unit);
-      if (next.station && next.station !== selected && byId.has(next.station)) open(next.station);
+      if (!next.station || next.station === selected) return;
+      if (byId.has(next.station)) open(next.station);
+      else reportUnknownStation(next.station);
     });
   }
 
@@ -1285,8 +1333,17 @@
     if (!slice) throw new Error(T.dataPath(MANIFEST) + ' names no slice to open');
     SLICE = slice;
     ROOT = 'structure/act-history/' + SLICE;
-    return T.loadJSON(ROOT + '.json').then(start);
+    return T.loadJSON(ROOT + '.json').then(function (data) {
+      // Bootstrapping ends the moment the spine is in hand, exactly as the
+      // other pages end it. Left on, the shared loader treats EVERY later
+      // fetch failure as proof that no data root exists and banners it, so a
+      // station fragment that goes missing halfway through a session was
+      // reported as a missing corpus rather than as the error it was.
+      T.doneBootstrapping();
+      start(data);
+    });
   }).catch(function (error) {
+    T.doneBootstrapping();
     T.clear(map);
     map.setAttribute('aria-busy', 'false');
     map.appendChild(T.el('p', 'placeholder',

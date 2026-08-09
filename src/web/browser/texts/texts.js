@@ -331,14 +331,40 @@
       (counted.unrecorded ? ' · ' + count(counted.unrecorded, 'title') + ' unrecorded' : '');
     T.statusLine(summary + '.');
 
-    T.writeHash([
+    const pairs = [
       ['author', state.author],
       ['edition', state.edition],
       ['section', state.section],
       ['reading', state.reading],
       ['sort', state.sort === 'section' ? '' : state.sort],
       ['find', state.find]
-    ]);
+    ];
+    // The shared writer declines to write an empty pair list, which is right
+    // for a page that has never put anything in the address and wrong for one
+    // whose reader has just cleared their LAST filter: the fragment naming
+    // that filter stayed behind, so the address went on citing a narrowing
+    // that was no longer in effect and a reload put it back. An unnarrowed
+    // corpus is a state like any other, and the address has to be able to
+    // reach it.
+    if (pairs.some(function (pair) { return pair[1]; })) T.writeHash(pairs);
+    else clearHash();
+  }
+
+  /* No choice is in effect, so the address carries no fragment.
+   *
+   * `replaceState` rather than assigning an empty hash: assigning leaves a
+   * bare "#" in the address and fires a hashchange this page would answer by
+   * restoring and re-rendering itself. A page opened straight off disk may
+   * refuse the rewrite, and there the bare "#" is still the better of the two
+   * — what must not survive is a fragment naming a filter nobody has set. */
+  function clearHash() {
+    if (!window.location.hash) return;
+    try {
+      window.history.replaceState(
+        null, '', window.location.pathname + window.location.search);
+    } catch (error) {
+      window.location.hash = '';
+    }
   }
 
   function count(number, noun) {
@@ -377,13 +403,27 @@
     T.fillSelect(sortSelect, SORTS);
   }
 
+  /* A hash value no option carries is not a state this page can be in.
+   *
+   * Assigned straight, the select fell to selectedIndex -1 and read BLANK,
+   * while `readState` saw the same empty value and narrowed by nothing — so
+   * the list came back unnarrowed under a control that named neither the
+   * choice asked for nor the one in force. The control is put where the page
+   * actually is, which is the first option, and `render` then writes the
+   * address back to match. */
+  function choose(select, value) {
+    if (!value) return;
+    select.value = value;
+    if (select.selectedIndex < 0) select.selectedIndex = 0;
+  }
+
   function restore() {
     const hash = T.readHash();
-    if (hash.get('author')) authorSelect.value = hash.get('author');
-    if (hash.get('edition')) editionSelect.value = hash.get('edition');
-    if (hash.get('section')) sectionSelect.value = hash.get('section');
-    if (hash.get('reading')) readingSelect.value = hash.get('reading');
-    sortSelect.value = hash.get('sort') || 'section';
+    choose(authorSelect, hash.get('author'));
+    choose(editionSelect, hash.get('edition'));
+    choose(sectionSelect, hash.get('section'));
+    choose(readingSelect, hash.get('reading'));
+    choose(sortSelect, hash.get('sort') || 'section');
     findInput.value = hash.get('find') || '';
   }
 
