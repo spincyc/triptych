@@ -28,6 +28,20 @@
 
 <div id="banner" class="banner" role="status" hidden></div>
 
+<!-- The controls live inside a disclosure, and it is BUILT HERE AND OPEN rather
+     than wrapped around the form by script.
+
+     Open, because a reader with scripts off must still be handed the controls —
+     disabled and saying "Loading…", which is the truth — rather than a
+     collapsed box with a label on it. A script that wrapped the form would also
+     move it on every load, one layout shift for nothing.
+
+     `catena.js` closes it at startup on a narrow viewport, where four selects
+     and two buttons are the whole first screen and the chapter is below them.
+     One media query read, no observer: the reader can open it again and nothing
+     re-closes it. -->
+<details id="controls-filter" class="controls-filter" open>
+  <summary>Change chapter and commentary voice</summary>
 <form id="controls" class="controls" aria-labelledby="controls-heading">
   <h2 id="controls-heading" class="visually-hidden">Choose a book, a chapter and a translation</h2>
 
@@ -83,6 +97,7 @@
     </div>
   </div>
 </form>
+</details>
 
 <!-- Not a live region: replacing it would read a whole chapter aloud on every
      change. The shared script announces a one-line summary instead. -->

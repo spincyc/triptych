@@ -24,13 +24,13 @@
  *   same reason `bibles.json` excludes a licensed edition rather than the
  *   browser hiding it.
  *
- * WHAT A READER PAYS FOR. The book file is a SPINE: it carries every fragment's
- * author, work, date, extent, edition, rights and length, and no prose at all.
- * Each fragment's text is its own file, named by the spine, and is fetched when
- * the reader opens that fragment. So a chapter that holds nothing costs the
- * spine, a chapter that holds twenty costs the spine, and reading one of the
- * twenty costs that one. Genesis was 606 KB before this, all of it prose about
- * chapter 1, fetched in full by a reader on chapter 40.
+ * WHAT A READER PAYS FOR. The book file is a SPINE: every fragment's author,
+ * work, date, extent, edition, rights and length, and no prose. Each fragment's
+ * text is its own file, named by the spine, fetched when the reader opens that
+ * fragment. A chapter that holds nothing costs the spine, one that holds twenty
+ * costs the spine, and reading one of the twenty costs that one. Genesis was
+ * 606 KB before this, all of it prose about chapter 1, fetched by a reader on
+ * chapter 40.
  *
  * The cost is real and is stated on the page rather than hidden: text that has
  * not been fetched is not in the document, so the browser's own find-in-page
@@ -40,7 +40,8 @@
  * THE ORDER OF THE PAGE IS THE MAINTAINER'S STANDING DIRECTION: the facts
  * first, everything else below. Reference, chapter, chain; then the works not
  * yet acquired; then the fragments held but not renderable; then, in the
- * footer, the prose.
+ * footer, the prose. Above 64rem the chapter and the chain are two columns
+ * rather than two blocks, which is a composition and not a reordering.
  * ======================================================================== */
 
 'use strict';
@@ -127,12 +128,13 @@
   const bookSelect = document.getElementById('book-select');
   const chapterSelect = document.getElementById('chapter-select');
   const bibleSelect = document.getElementById('bible-select');
-  // The control is `#language-select` in the markup and stays so: another lane
-  // is refactoring this page's stylesheet, and a renamed hook would collide with
-  // it for no gain a reader can see.
+  // The control is `#language-select` in the markup and stays so. The name is
+  // older than the axis; the hash key is `voice`, and that is the name that has
+  // to be right.
   const voiceSelect = document.getElementById('language-select');
   const previousButton = document.getElementById('prev-button');
   const nextButton = document.getElementById('next-button');
+  const controlsDisclosure = document.getElementById('controls-filter');
 
   let index = null;
   let bibles = [];
@@ -152,6 +154,19 @@
   // typesetter's `--no-paragraphs`, which is for reviewing an edition
   // mechanically rather than reading it.
   const paragraphsWanted = true;
+  // A voice a link asked for, held until a control that can hold it exists.
+  //
+  // THE DEFECT THIS REPLACES: `start()` assigned the hash's voice to
+  // `#language-select` while that control still held only the option the markup
+  // ships, because `fillVoices` needs the chapter file. A value no option
+  // carries leaves `select.value === ''`, so the page showed everything held
+  // and `T.writeHash`, which drops empty values, rewrote the reader's own URL
+  // without the `voice` they were sent: the link died on arrival.
+  //
+  // So it waits here and seeds the first `fillVoices`, which already keeps a
+  // voice the chapter lacks and appends “— none here”. One deferred assignment,
+  // no new policy, pinned by `corpus_browser_gate.mjs`.
+  let wantedVoice = '';
   // Authors the reader has switched OFF, held across chapters. Storing the
   // exclusions rather than the inclusions is what lets an author who does not
   // comment on the next chapter stay off rather than reappear checked.
@@ -299,13 +314,13 @@
       verse.appendChild(document.createTextNode(result.verses[String(number)] + ' '));
       passage.appendChild(verse);
     }
-    // Closed like everything else. The maintainer's direction is that the page
-    // opens as an index of what is here — the chapter, who comments on it, what
-    // is not yet acquired — and a reader opens what they want. An earlier pass
-    // kept this open on the theory that the chapter is the point; it made the
-    // page open on a wall of text with the chain pushed below the fold.
+    // OPEN. It was closed because chapter and chain were stacked, so an open
+    // chapter was a wall of text with the chain below the fold. Above 64rem
+    // they are columns, so the composition answers that rather than hiding the
+    // text the page exists to show. Still a `details`, so a phone can fold it.
     const holder = document.createElement('details');
     holder.className = 'chapter-body';
+    holder.open = true;
     const head = document.createElement('summary');
     head.className = 'chapter-head';
     head.appendChild(
@@ -509,13 +524,17 @@
       source.appendChild(T.el('span', 'state', fragment.review + ', not collated'));
     }
     // An excerpt is worth more when its context is a click away. The source
-    // library reads the whole edition this fragment was cut from, and the
-    // passage id is the only thing needed to reach the right place in it: that
-    // page looks the id up in what its own generator wrote, rather than being
-    // handed a path this page would have to compose and keep in step.
+    // library reads the whole edition this fragment was cut from and the passage
+    // id is all it needs: that page looks the id up in what its own generator
+    // wrote. The label is the accepted design's; THE HREF IS PINNED by
+    // `test_browser_url_contract.py`.
     if (fragment.id) {
       source.appendChild(T.el('span', 'sep'));
-      const whole = T.el('a', 'fragment-whole', 'Read the whole work');
+      const whole = T.el(
+        'a',
+        'fragment-whole',
+        'Open this passage in the Source Library'
+      );
       whole.href = '../sources/#passage=' + encodeURIComponent(fragment.id);
       source.appendChild(whole);
     }
@@ -671,10 +690,19 @@
 
     const list = T.el('ul', 'chain');
     const rendered = [];
+    // The first author, and only the first. All closed is an index and gives a
+    // reader nothing to read; all open is the wall of text the disclosure
+    // exists to prevent. It costs no request either way: a fragment's prose
+    // still arrives only when that fragment is opened.
+    let first = true;
     for (const group of groups) {
       const item = T.el('li', 'author');
       const node = document.createElement('details');
       node.className = 'author-body';
+      if (first) {
+        node.open = true;
+        first = false;
+      }
 
       const summary = document.createElement('summary');
       summary.className = 'author-head';
@@ -739,7 +767,13 @@
         label.appendChild(document.createTextNode(row.author));
         filter.appendChild(label);
       }
-      container.appendChild(filter);
+      // Folded away: on a chapter with twenty commentators the checkboxes were
+      // the first screen and the chain was under them. Nothing is hidden by it
+      // — the heading above prints "— N shown" whenever anything is off.
+      const disclosure = T.el('details', 'author-filter-disclosure');
+      disclosure.appendChild(T.el('summary', null, 'Filter authors'));
+      disclosure.appendChild(filter);
+      container.appendChild(disclosure);
     }
 
     container.appendChild(list);
@@ -922,7 +956,11 @@
    */
   function fillVoices(file) {
     const held = M.chapterVoices(file);
-    const wanted = voiceSelect.value;
+    // The reader's own selection first, and a voice a link asked for only while
+    // no selection has been made — so a deep link is honoured on arrival and
+    // never overrides a choice made afterwards.
+    const wanted = voiceSelect.value || wantedVoice;
+    wantedVoice = '';
     const items = [{ value: '', label: 'Everything held' }];
     for (const entry of held) items.push({ value: entry.key, label: voiceLabel(entry) });
     if (wanted && !held.some((one) => one.key === wanted)) {
@@ -1007,11 +1045,26 @@
       bibleSelect.value = hash.get('bible');
     }
 
-    if (hash.get('voice')) voiceSelect.value = hash.get('voice');
+    // Not assigned here: see `wantedVoice` above. This control holds one option
+    // until the chapter file arrives, and an assignment against it is silently
+    // dropped.
+    wantedVoice = hash.get('voice') || '';
 
     bookSelect.disabled = false;
     chapterSelect.disabled = false;
     bibleSelect.disabled = false;
+
+    // The controls ship open, because that is what a reader without JavaScript
+    // must be given. Narrow, four selects and two buttons are the whole first
+    // screen, so they fold — once, here, from one media query read. No
+    // listener: a reader who opens them is not re-closed by a rotation.
+    if (
+      controlsDisclosure &&
+      window.matchMedia &&
+      window.matchMedia('(max-width: 64rem)').matches
+    ) {
+      controlsDisclosure.open = false;
+    }
 
     bookSelect.addEventListener('change', () => {
       fillChapters(bookSelect.value, 1);
@@ -1027,7 +1080,11 @@
       if (next.get('book')) bookSelect.value = next.get('book');
       fillChapters(bookSelect.value, next.get('chapter') || 1);
       if (next.get('bible')) bibleSelect.value = next.get('bible');
-      voiceSelect.value = next.get('voice') || '';
+      // The same deferral as on arrival: these options belong to the chapter
+      // being left. Cleared first, so a Back to a hash without `voice` lands on
+      // everything held rather than on the last selection.
+      voiceSelect.value = '';
+      wantedVoice = next.get('voice') || '';
       render();
     });
 
