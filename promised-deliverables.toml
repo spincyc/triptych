@@ -1,6 +1,66 @@
 schema_version = 1
 
 [[deliverables]]
+id = "corpus-browser-foundation-hardening-2026-08-08"
+owner = "guidance/corpus-browser-implementation.md"
+promise = "Establish the design-neutral implementation foundation for the non-PDF corpus browser: a durable architecture and defect record, verification that reaches the artifact a reader receives rather than the repository copies, the published hash contracts pinned before any router cleanup, and the selector and plumbing hazards that would make later parallel surface work collide."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "durable-architecture-record"
+  criterion = "A tracked record states how the non-PDF browser surfaces are built, what will refuse a change, the verifiable sequencing, the ranked risks, the conflicts returned for disposition, and the defect register with each finding's status and each refuted finding's refutation."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-implementation.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "artifact-gate-over-the-built-site"
+  criterion = "A design-neutral gate drives real Chromium over the built artifact across the five-viewport governing matrix, asserts no visual contract, skips cleanly with a stated reason when no browser resolves, and stays out of `make check`."
+  status = "pass"
+  evidence = [
+    "tools/tests/corpus_browser_gate.mjs",
+    "tools/tests/test_corpus_browser_gate.py",
+    "Makefile",
+  ]
+
+  [[deliverables.requirements]]
+  id = "chromium-harnesses-are-run"
+  criterion = "The four reader harnesses have a target that builds their data root first and holds them to a recorded pass floor rather than to a zero exit."
+  status = "pass"
+  evidence = [
+    "Makefile",
+    "tools/tests/test_browser_harnesses.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "published-hash-contracts-pinned"
+  criterion = "Every published hash key of every instrument is pinned by test before any router cleanup, including the keys that are deliberately input-only."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_browser_url_contract.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "shared-shell-blocking-collisions-resolved"
+  criterion = "The four selector and plumbing hazards that block a shared shell are resolved with an unchanged rendered DOM: the `#reading`/`#banner` hard-coding, history's `.field`, texts' `.detail`, and `day-missal.css`'s unscoped `body > .site-header`."
+  status = "open"
+  evidence = [
+    "src/web/browser/shared/browser-core.js",
+    "src/web/browser/history/history.css",
+    "src/web/browser/texts/texts.css",
+    "tools/tests/test_browser_collisions.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "no-visual-or-product-decision"
+  criterion = "The lane changes no visual contract, accepts no screenshot baseline as an oracle, and makes no production change to a protected liturgy asset."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-implementation.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-reader-live-ritual-flow-2026-08-07"
 owner = "build/agent-continuity/liturgy-reader-visual-plan.md"
 promise = "Improve the live canonical Day and Propers readers for sustained liturgical reading through source-owned persistent ritual orientation, a current-place Contents map, and a calmer principal/rubric/reference hierarchy without reopening the accepted first viewport, cutover, navigation, state, renderer, source, or translation boundaries."

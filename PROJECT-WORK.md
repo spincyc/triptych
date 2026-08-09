@@ -392,10 +392,12 @@ branch:
 | `shared-shell-blocking-collisions-resolved` | The four selector and plumbing hazards that block a shared shell are resolved with an unchanged rendered DOM: the `#reading`/`#banner` hard-coding, history's `.field`, texts' `.detail`, and `day-missal.css`'s unscoped `body > .site-header`. | `open` — three of four done (`a912e182e`, `bad976039`, `9e980ff5b`); `day-missal.css` is protected liturgy and needs that deliverable's authority | `src/web/browser/shared/browser-core.js`, `src/web/browser/history/history.css`, `src/web/browser/texts/texts.css`, `tools/tests/test_browser_collisions.py` |
 | `no-visual-or-product-decision` | The lane changes no visual contract, accepts no screenshot baseline as an oracle, and makes no production change to a protected liturgy asset. | `pass` | `guidance/corpus-browser-implementation.md` |
 
-The work-register marker for this id is deliberately absent. Add it to this
-section — an HTML comment reading `promised-deliverable:` followed by the id,
-in the form every other entry in "Promised work" below uses — in the same commit
-that adds the TOML entry, and not before. Exactly one, or the validator fails.
+<!-- promised-deliverable: corpus-browser-foundation-hardening-2026-08-08 -->
+
+The entry above is now in `promised-deliverables.toml`, and this comment is its
+one work-register marker. Five requirements pass; the sixth stays open because
+`day-missal.css` is protected liturgy and needs that deliverable's authority,
+which is the honest state rather than a rounding of it.
 
 ## Promised work
 
