@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-04.
+Last reconciled: 2026-08-08.
 
 ## Standing public-alpha authority
 
@@ -178,6 +178,34 @@ force-pushing, and all other history rewriting remain separately authorized
 operations.
 
 ## Promised work
+
+### didach.ai public identity and corpus root
+
+<!-- promised-deliverable: didach-identity-design-2026-08-08 -->
+
+**In progress as an isolated identity-and-product-design candidate on
+`ux/didach-identity`, based exactly on `origin/main` at
+`fc3092de98fee56ab09c406ade257e84e7633e45`.** The task defines the future
+public identity and root experience for `https://didach.ai/`, tests that
+identity against real corpus content and accepted Reader, Catalogue, and
+Instrument compositions, and prepares an independently reviewable evidence
+package. It does not change the live origin, canonical URLs, DNS, Pages
+configuration, canonical PDFs, protected Liturgy surfaces, or production
+artifacts.
+
+The working hypothesis is a sole lowercase `didach.ai` public wordmark with
+the corpus, its objects, and their source and rights apparatus kept primary.
+Triptych remains the project, repository, legal, and historical provenance
+identity rather than a coequal masthead brand. This is not yet an accepted
+identity: adjacent-name risk, exact wordmark and icon behavior, transition
+language, responsive integration, social-card treatment, and every
+accepted-surface consequence remain explicit independent-review questions.
+The durable decision and research records belong in
+`guidance/didach-identity.md` and `guidance/didach-identity-research.md`; the
+real-data prototype is structurally unpublished under
+`src/web/browser/prototypes/didach-identity/`; the ignored handoff will contain
+the original-resolution visual evidence and contact sheets. The branch may be
+pushed for review, but this work unit authorizes no merge or deployment.
 
 ### Live Reader — Ritual Flow & Orientation
 

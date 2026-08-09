@@ -1,6 +1,71 @@
 schema_version = 1
 
 [[deliverables]]
+id = "didach-identity-design-2026-08-08"
+owner = "guidance/didach-identity.md"
+promise = "Define and evidence the didach.ai public identity and root corpus experience as a reversible identity-and-product-design candidate, preserving accepted Reader, Catalogue, Instrument, canonical PDF, route, rights, and provenance contracts without changing production URLs, DNS, deployment configuration, or live surfaces."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "accepted-boundary-and-research"
+  criterion = "The candidate records the exact main and accepted-design boundaries, current identity owners, primary-source precedent research, naming risks, rights constraints, and the distinction between accepted evidence and still-open design work."
+  status = "open"
+  evidence = [
+    "guidance/didach-identity.md",
+    "guidance/didach-identity-research.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "naming-hierarchy-and-transition"
+  criterion = "One recommended public name, wordmark, descriptor, domain and instrument hierarchy, Triptych relationship, AI-positioning rule, title grammar, asset direction, and transition boundary are explicit, with rejected alternatives and unresolved launch questions preserved."
+  status = "open"
+  evidence = [
+    "guidance/didach-identity.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "real-data-isolated-prototype"
+  criterion = "A noindex, structurally unpublished prototype applies the identity candidate to real Home, Publications, Reader, Catena, Sources, and failure-state content while leaving canonical Liturgy and production surfaces untouched."
+  status = "open"
+  evidence = [
+    "src/web/browser/prototypes/didach-identity/index.html",
+    "src/web/browser/prototypes/didach-identity/prototype.css",
+    "src/web/browser/prototypes/didach-identity/prototype.js",
+    "src/web/browser/prototypes/didach-identity/social-card.html",
+    "src/web/browser/prototypes/didach-identity/icon.html",
+  ]
+
+  [[deliverables.requirements]]
+  id = "cross-surface-contract"
+  criterion = "The tracked candidate covers responsive masthead and footer behavior, metadata and social-card grammar, favicon constraints, accessibility and forced colors, no-JavaScript and print resilience, typed absence and failure states, and the protected Liturgy adapter boundary."
+  status = "open"
+  evidence = [
+    "guidance/didach-identity.md",
+    "src/web/browser/prototypes/didach-identity/index.html",
+    "src/web/browser/prototypes/didach-identity/social-card.html",
+    "src/web/browser/prototypes/didach-identity/icon.html",
+  ]
+
+  [[deliverables.requirements]]
+  id = "focused-checks-and-visual-evidence"
+  criterion = "Focused static, browser, isolation, responsive, accessibility-state, and protected-surface checks pass, and every captured original-resolution page is visually inspected through an indexed contact-sheet handoff."
+  status = "open"
+  evidence = [
+    "tools/tests/test_didach_identity_prototype.py",
+    "tools/tests/didach_identity_prototype_browser.mjs",
+    "tools/tests/fixtures/didach-identity-prototype-matrix-v1.json",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-review-handoff"
+  criterion = "A fresh ignored one-root review ZIP records exact branch and commit identity, research sources, original-resolution screenshots, contact sheets, checks, protected boundaries, blocking review questions, and the next safe action; the branch is pushed for review without deployment."
+  status = "open"
+  evidence = [
+    "guidance/didach-identity.md",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-reader-live-ritual-flow-2026-08-07"
 owner = "build/agent-continuity/liturgy-reader-visual-plan.md"
 promise = "Improve the live canonical Day and Propers readers for sustained liturgical reading through source-owned persistent ritual orientation, a current-place Contents map, and a calmer principal/rubric/reference hierarchy without reopening the accepted first viewport, cutover, navigation, state, renderer, source, or translation boundaries."
