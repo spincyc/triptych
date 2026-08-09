@@ -49,15 +49,15 @@ class PublicAlphaTest(unittest.TestCase):
             "library/ecclesiastical-latin.md": "library/ecclesiastical-latin.html",
             "library/test.md": "library/test.html",
         }
-        self.tool.SITE_SOURCE_PATHS = set(self.tool.PAGE_MAP) | {
-            "LICENSES/MIT.txt",
-            "release/public-alpha/layout.html",
-            "release/public-alpha/assets/site.css",
-            "release/public-alpha/assets/social-card.png",
-            "release/public-alpha/assets/icon.png",
-            "requirements-public-alpha.txt",
-            "tools/public-alpha",
-        }
+        # PAGE_MAP stays stubbed — the fixture serves four pages, not twenty-five
+        # — but the fixed inputs are taken from the tool rather than hand-copied,
+        # so a newly declared site asset cannot leave the stub tree quietly
+        # disagreeing with the real one.
+        self.tool.SITE_SOURCE_PATHS = (
+            set(self.tool.PAGE_MAP)
+            | {"LICENSES/MIT.txt"}
+            | self.tool.FIXED_ARTIFACT_INPUT_PATHS
+        )
         self.write("README.md", b"# Test\n")
         self.write(
             "library/test.md",
@@ -272,6 +272,55 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn("{{SOCIAL}}", layout)
         self.assertIn('rel="apple-touch-icon"', layout)
         self.assertIn("{{ICON_PATH}}", layout)
+
+    def test_every_site_asset_marker_exists_in_the_layout(self) -> None:
+        """The direction `wrap_in_layout` cannot assert, and nothing else checks.
+
+        An unresolved `{{MARKER}}` left in the rendered page is a hard failure.
+        The reverse — a replacement key naming a marker the layout does not
+        carry — is discarded in silence by `str.replace`, so a site asset would
+        ship with no head element pointing at it, no error, and a link checker
+        with nothing to find fault with because the link is simply absent.
+        """
+        tool = load_tool()
+        layout = (REPOSITORY_ROOT / "release/public-alpha/layout.html").read_text(
+            encoding="utf-8"
+        )
+        marked = [asset for asset in tool.SITE_ASSETS if asset.marker]
+        self.assertTrue(marked, "no site asset declares a layout marker")
+        for asset in marked:
+            self.assertIn(
+                asset.marker,
+                layout,
+                f"{asset.relative} names {asset.marker}, which the layout lacks",
+            )
+
+    def test_every_copied_browser_asset_is_byte_compared_on_verification(self) -> None:
+        """Counted is not compared: the copies must be in the byte-checked set.
+
+        `verify_web_data` compares only what lands under the data root, and the
+        browser's own stylesheets and scripts land beside it, not in it. They
+        were enumerated by `expected_artifact_files` and never opened, so a copy
+        that diverged from its source verified clean.
+        """
+        tool = load_tool()
+        output = Path("/artifact")
+        copied = {
+            relative
+            for relative, source in tool.web_data_files().items()
+            if source.suffix in {".css", ".js"}
+        }
+        self.assertEqual(
+            len(copied),
+            40,
+            "the browser's stylesheet and script count moved; confirm the new "
+            "files are compared, then correct this number",
+        )
+        compared = {
+            artifact.relative_to(output).as_posix()
+            for _, artifact in tool.static_source_pairs(output)
+        }
+        self.assertEqual(copied - compared, set())
 
     def test_home_browser_title_is_not_duplicated(self) -> None:
         self.assertEqual(self.tool.document_title("Triptych"), "Triptych")
@@ -1430,6 +1479,70 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn(
             "site source notes/retired.md is recorded but the renderer no "
             "longer reads it",
+            str(failure.exception),
+        )
+
+    def stub_browser_tree(self) -> None:
+        """The smallest browser the artifact will copy: one entrance, one shared pair.
+
+        Deliberately not in `setUp`. A non-empty `web_data_files()` changes what
+        every build in this class assembles, and a fixture that quietly did that
+        would make the rest of the suite test a different artifact.
+        """
+        # `setUp` pins the stub tree to a Markdown release the repository's own
+        # lock has moved past, and every build-based test in this class errors on
+        # that today. This one needs a build, so it restates the lock from the
+        # file the repository actually pins rather than joining the casualties.
+        self.write(
+            "requirements-public-alpha.txt",
+            (REPOSITORY_ROOT / "requirements-public-alpha.txt").read_bytes(),
+        )
+        self.tool.WEB_BROWSER_ENTRANCES = ("scripture",)
+        self.tool.WEB_BROWSER_DIRECTORIES = ("shared",) + self.tool.WEB_BROWSER_ENTRANCES
+        self.write(
+            "src/web/data/bibles.json",
+            b'{"bibles": [{"id": "test-edition", "numbering": "vulgate"}]}\n',
+        )
+        (self.root / "src/sources/bibles/test-edition/chapters").mkdir(parents=True)
+        self.write("src/web/browser/shared/browser-core.css", b".browser {}\n")
+        self.write("src/web/browser/shared/browser-core.js", b"// shared\n")
+        self.write("src/web/browser/scripture/scripture.css", b".scripture {}\n")
+        self.write("src/web/browser/scripture/scripture.js", b"// scripture\n")
+        self.write(
+            "src/web/browser/scripture/scripture.html",
+            b"<!doctype html>\n<html lang=\"en\">\n<head>\n"
+            b"<title>Scripture</title>\n"
+            b'<link rel="stylesheet" href="scripture.css">\n'
+            b"</head>\n<body>\n<p>Read the text.</p>\n"
+            b'<script src="scripture.js"></script>\n</body>\n</html>\n',
+        )
+        self.tool.SITE_SOURCE_PATHS = self.tool.site_source_paths()
+
+    def test_verifier_rejects_a_copied_browser_asset_that_diverged_from_its_source(
+        self,
+    ) -> None:
+        """A stylesheet the artifact carries must be the stylesheet the repository holds.
+
+        Nothing else asks the question. `SHA256SUMS` proves only that the
+        artifact agrees with a list the same build wrote, so a partial rebuild
+        that re-lists without re-copying satisfies it; `verify_web_data`
+        compares only what lands under the data root, and the browser's own
+        stylesheets land beside it; and the site-source bindings compare the
+        repository against the approval record, never against the copy. The
+        divergence below therefore passed verification outright until the
+        copies joined the byte-compared set.
+        """
+        self.stub_browser_tree()
+        publications, output = self.build_verified_artifact()
+        copied = output / "scripture/scripture.css"
+        copied.write_bytes(b".scripture { color: red }\n")
+        self.tool.write_checksums(output)
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.verify_output(self.manifest, publications, output, preview=False)
+
+        self.assertIn(
+            "scripture/scripture.css: static file does not match its repository source",
             str(failure.exception),
         )
 

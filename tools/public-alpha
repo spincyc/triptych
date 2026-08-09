@@ -19,6 +19,7 @@ from collections import Counter, defaultdict
 from collections.abc import Iterable
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path, PurePosixPath
+from typing import NamedTuple
 from urllib.parse import unquote, urlsplit
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 # Shared CLI helpers live outside tools/ so that tmt's registry scan, which
@@ -195,13 +196,43 @@ PAGE_MAP = {
     "library/traditional-latin-mass.md": "library/traditional-latin-mass.html",
     "release/public-alpha/404.md": "404.html",
 }
+
+
+class SiteAsset(NamedTuple):
+    """One file under release/public-alpha/assets/ the whole site is served.
+
+    `relative` is both the artifact path and the path under TEMPLATE_ROOT: a
+    site asset is copied, never rewritten, so one string answers the copy, the
+    expected file set, the byte comparison and the page-relative link alike.
+    `marker` is the layout placeholder the link is substituted into, or None for
+    an asset no head element points at — the social card is named only by
+    absolute URL, inside og:image.
+
+    Derived once and consumed everywhere. The list used to be restated in eight
+    places, and the cost of that was that nobody would split the stylesheet.
+    """
+
+    relative: str
+    marker: str | None
+
+
+SITE_STYLESHEET_RELATIVE = "assets/site.css"
+SOCIAL_CARD_RELATIVE = "assets/social-card.png"
+SITE_ICON_RELATIVE = "assets/icon.png"
+# Declared in the order the copy loop has always used. Copy and comparison order
+# do not affect any artifact byte; the order is kept so the refactor is provably
+# a no-op rather than a reordering that happens to be safe.
+SITE_ASSETS = (
+    SiteAsset(SITE_STYLESHEET_RELATIVE, "{{ASSET_PATH}}"),
+    SiteAsset(SOCIAL_CARD_RELATIVE, None),
+    SiteAsset(SITE_ICON_RELATIVE, "{{ICON_PATH}}"),
+)
+SITE_ASSET_RELATIVES = tuple(asset.relative for asset in SITE_ASSETS)
 FIXED_ARTIFACT_INPUT_PATHS = {
     "release/public-alpha/layout.html",
-    "release/public-alpha/assets/site.css",
-    "release/public-alpha/assets/social-card.png",
-    "release/public-alpha/assets/icon.png",
     "requirements-public-alpha.txt",
     "tools/public-alpha",
+    *(f"release/public-alpha/{relative}" for relative in SITE_ASSET_RELATIVES),
 }
 # The one origin the published site is reached at. A link preview needs an
 # absolute URL: the Open Graph protocol's URL type admits only http:// and
@@ -213,8 +244,6 @@ SITE_ORIGIN = "https://spincyc.github.io/triptych"
 # `document_title` already appends this for the browser tab; the social title is
 # the bare page title, and neither is written twice.
 SITE_NAME = "Triptych"
-SOCIAL_CARD_RELATIVE = "assets/social-card.png"
-SITE_ICON_RELATIVE = "assets/icon.png"
 # Used only by a page that carries no prose of its own — a browser page whose
 # lede the script fills in after load has nothing static to describe it with.
 # A page with an opening paragraph never reaches this.
@@ -247,6 +276,19 @@ EXTERNAL_RE = re.compile(r"^[A-Za-z][A-Za-z0-9+.-]*:")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 SAFE_ID_RE = re.compile(r"^[a-z0-9][a-z0-9./-]*[a-z0-9]$")
 TEXT_SUFFIXES = {".html", ".css", ".txt", ".json", ".js"}
+# A site asset whose suffix the artifact file-type check refuses would build and
+# then fail verification with "unexpected file type", naming the artifact rather
+# than the declaration that caused it. Fail at the declaration instead.
+_UNSERVEABLE_ASSETS = [
+    asset.relative
+    for asset in SITE_ASSETS
+    if PurePosixPath(asset.relative).suffix not in TEXT_SUFFIXES | {".png"}
+]
+if _UNSERVEABLE_ASSETS:
+    raise SystemExit(
+        "public-alpha: site asset(s) the artifact may not carry: "
+        + ", ".join(_UNSERVEABLE_ASSETS)
+    )
 SUPPORTED_CONDITIONS = {
     "no-project-initiated-promotion",
     "unadvertised-public-hosting",
@@ -824,7 +866,13 @@ def site_source_inventory_gaps(
 
 
 def artifact_license_source_paths() -> list[str]:
-    """Return the exact license inputs captured in the authorized source set."""
+    """Return the exact license inputs captured in the authorized source set.
+
+    The filter is by prefix, and SITE_SOURCE_PATHS now carries SITE_ASSETS
+    through FIXED_ARTIFACT_INPUT_PATHS: a site asset declared under LICENSES/
+    would be swept in here and copied twice. Site assets live under
+    release/public-alpha/assets/, and that is the reason.
+    """
     return sorted(
         source_path
         for source_path in SITE_SOURCE_PATHS
@@ -1716,12 +1764,10 @@ def expected_artifact_files(
     expected.update(
         artifact_license_source_paths()
     )
+    expected.update(SITE_ASSET_RELATIVES)
     expected.update(
         {
             ".nojekyll",
-            "assets/site.css",
-            SOCIAL_CARD_RELATIVE,
-            SITE_ICON_RELATIVE,
             "PUBLICATION-MANIFEST.json",
             "robots.txt",
             "SHA256SUMS",
@@ -2471,8 +2517,15 @@ def wrap_in_layout(
         "{{DOCUMENT_TITLE}}": html.escape(document_title(title)),
         "{{ROBOTS}}": robots,
         "{{SOCIAL}}": social,
-        "{{ICON_PATH}}": relative_link(output_relative, SITE_ICON_RELATIVE),
-        "{{ASSET_PATH}}": relative_link(output_relative, "assets/site.css"),
+        # Substitution below is a loop of independent str.replace calls and every
+        # marker is distinct, so this dict's order carries no meaning. A marker
+        # the layout does not contain is dropped silently — the unresolved check
+        # is one-directional — which is what the marker-guard test covers.
+        **{
+            asset.marker: relative_link(output_relative, asset.relative)
+            for asset in SITE_ASSETS
+            if asset.marker
+        },
         "{{HEAD_EXTRA}}": head_extra,
         "{{HOME_PATH}}": relative_link(output_relative, "index.html"),
         "{{ABOUT_PATH}}": relative_link(output_relative, "about.html"),
@@ -3026,6 +3079,37 @@ def site_source_binding_errors(manifest: dict) -> list[str]:
     return errors
 
 
+def static_source_pairs(output: Path) -> list[tuple[Path, Path]]:
+    """Pair every artifact file copied verbatim with the repository file it copies.
+
+    Derived once so the byte comparison in `verify_output` cannot drift from the
+    copies `build_site` and `assemble_web_data` make, and so a test can ask what
+    the comparison covers without building an artifact first.
+    """
+    return [
+        *[
+            (TEMPLATE_ROOT / asset_relative, output / asset_relative)
+            for asset_relative in SITE_ASSET_RELATIVES
+        ],
+        *[
+            (ROOT / source_relative, output / source_relative)
+            for source_relative in artifact_license_source_paths()
+        ],
+        *[
+            (source, output / destination_relative)
+            for destination_relative, source in sorted(reading_plan_pdfs().items())
+        ],
+        # The gap beside the restatement: forty browser stylesheets and scripts
+        # and the generated corpus were copied into the artifact and only
+        # counted, never compared, so a copy that diverged from its source
+        # passed. Comparing all of them costs 0.16 s against a 5 s build.
+        *[
+            (source, output / destination_relative)
+            for destination_relative, source in sorted(web_data_files().items())
+        ],
+    ]
+
+
 def verify_output(
     manifest: dict,
     publications: dict[tuple[str, str], dict],
@@ -3138,21 +3222,7 @@ def verify_output(
             if artifact_path.is_file() and sha256(artifact_path) != card["sha256"]:
                 errors.append(f"{card['destination']}: gallery PNG does not match canonical bytes")
 
-    static_sources = [
-        *[
-            (TEMPLATE_ROOT / asset_relative, output / asset_relative)
-            for asset_relative in ("assets/site.css", SOCIAL_CARD_RELATIVE, SITE_ICON_RELATIVE)
-        ],
-        *[
-            (ROOT / source_relative, output / source_relative)
-            for source_relative in artifact_license_source_paths()
-        ],
-        *[
-            (source, output / destination_relative)
-            for destination_relative, source in sorted(reading_plan_pdfs().items())
-        ],
-    ]
-    for source_path, artifact_path in static_sources:
+    for source_path, artifact_path in static_source_pairs(output):
         if artifact_path.is_file() and sha256(artifact_path) != sha256(source_path):
             errors.append(
                 f"{artifact_path.relative_to(output)}: static file does not match its repository source"
@@ -3383,7 +3453,7 @@ def build_site(
         shutil.rmtree(output)
     output.mkdir(parents=True)
 
-    for asset_relative in ("assets/site.css", SOCIAL_CARD_RELATIVE, SITE_ICON_RELATIVE):
+    for asset_relative in SITE_ASSET_RELATIVES:
         asset_destination = output / asset_relative
         asset_destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(TEMPLATE_ROOT / asset_relative, asset_destination)
