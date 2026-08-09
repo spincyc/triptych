@@ -183,16 +183,14 @@ A multi-agent project to make the non-PDF web surfaces one navigable scholarly
 corpus rather than a set of separately built instruments. The PDFs remain the
 canonical printable editions and are not a redesign target.
 
-The governing plan is `guidance/corpus-browser-master-plan.md`. It splits the
-work: a design lane owns the visual and product contract, and an implementation
-lane owns production code and tests. The site-wide vision and execution roadmap
-the plan calls for are the design lane's output and do not exist yet.
+The governing plan on this branch is `guidance/corpus-browser-master-plan.md`.
+It splits the work: a design lane owns the visual and product contract, and an
+implementation lane owns production code and tests.
 
 `guidance/corpus-browser-implementation.md` is the implementation lane's durable
 technical record — how the surfaces are actually built, what will refuse a
 change, the proposed sequencing, the ranked risks, and the conflicts returned for
-disposition. Reconnaissance is done. No shared shell is implemented, because that
-depends on a visual contract that has not been accepted.
+disposition. Reconnaissance is done.
 
 Two facts from that record belong here because they bind unrelated work. First,
 `make check` fails at `c27d69153` on `check-tool-registry` and `check-examples`,
@@ -201,20 +199,76 @@ errors out of 1226; both were reproduced at the base commit in a separate
 checkout, so the redness is pre-existing and no later lane may be credited or
 blamed for it. Second, the corpus lanes overlap the in-progress deliverable
 below, which owns `reader-shell.js` and `reader-instrument.css` and declares
-public-navigation redesign unauthorized. Sequencing the two is a maintainer
-decision; it is recorded as the first open conflict in the implementation
-document.
+public-navigation redesign unauthorized. Sequencing the two was returned as the
+first open conflict in that document; the review recorded below settled it.
+
+### Which branch carries what
+
+No corpus-browser document is on `main` (`c27d69153`). Each lives on exactly one
+lane branch, and every lane branch is based on `c27d69153`. The design lane's
+documents are absent from `impl/foundation-hardening`. That is a fact about
+branch topology, not a statement that the work is outstanding.
+
+| Path | Branch |
+| --- | --- |
+| `guidance/corpus-browser-master-plan.md` | `impl/foundation-hardening`, inherited from its ancestor `impl/foundation` |
+| `guidance/corpus-browser-implementation.md` | `impl/foundation-hardening`, inherited from its ancestor `impl/foundation` |
+| `guidance/corpus-browser-vision.md` | `ux/foundation` |
+| `guidance/corpus-browser-roadmap.md` | `ux/foundation` |
+| `guidance/corpus-browser-inventory.md` | `ux/foundation` |
+| `guidance/corpus-browser-research.md` | `ux/foundation` |
+| `docs/triptych-world-class-corpus-master-plan.md` | `ux/foundation` |
+| `src/web/browser/prototypes/corpus-foundation/` | `ux/foundation` |
+| `tools/tests/test_corpus_foundation_prototype.py`, `tools/tests/corpus_foundation_prototype_browser.mjs` | `ux/foundation` |
+| `build/agent-continuity/corpus-browser-foundation.md` | `ux/foundation`, tracked there although `/build/` is ignored on this branch |
+
+`ux/foundation` was at `3b5938a0d` on 2026-08-08. Read those documents on that
+branch — `git show ux/foundation:<path>` — rather than here. They are
+deliberately not reproduced, summarised, or paraphrased in this register: a fact
+has one owner, and a second copy of a design contract is a disagreement waiting
+to happen. `ux/foundation` also carries the design lane's own ledger entry and
+work-register section, which is why neither appears on this branch.
+
+### Acceptance, 2026-08-08
+
+The coordinator dispositioned both lanes on 2026-08-08.
+
+| Lane | Disposition |
+| --- | --- |
+| A0, surface inventory | accepted |
+| A1, research synthesis | accepted |
+| A2, site-wide product vision | accepted with amendments D1–D20 |
+| A3, tokens and Reader/Catalogue/Instrument archetypes | accepted as foundation direction, not as pixel acceptance of any production route |
+| A4, shared navigation, Jump, Related, and shell interaction | accepted with the bounded-Jump and protected-liturgy amendments |
+| Claude reconnaissance | accepted |
+| the neutral gates | accepted for integration |
+
+The A3 wording governs what implementation may assume. The direction is
+accepted; no production route is visually accepted, so no route may cite A3 as
+approval of how it renders. The roadmap on `ux/foundation` still records A0–A4
+as candidates awaiting independent review; this register is later than that
+record, and the design lane has not yet written the dispositions down.
+
+### Blocker: B0 cannot start
+
+An integration branch `corpus/foundation-integration` is planned, to carry both
+lanes' artifacts onto one base. It does not exist. On 2026-08-08
+`git ls-remote --heads origin` returned `main`, `impl/foundation`,
+`impl/foundation-hardening`, `ux/foundation`, and
+`codex/isolated/20260727t173839z-a98664d00a5a`, and nothing else.
+`impl/corpus-wave-1` bases on that integration branch's head, so it cannot be
+created, and B0 — the production shared shell primitives — cannot start.
+Creating the integration branch is the unblocking act. Until then no shared
+shell is implemented on any branch, and none is expected to be.
 
 ### Foundation hardening
 
-The 2026-08-08 coordinator review answered those conflicts as amendments D1–D20
-and accepted the reconnaissance and the neutral gates. It also settled the
-sequencing question above by protecting the liturgy surface family outright, so
-promoting `reader-shell.js` into a shared shell is withdrawn rather than
-deferred: reuse its ideas, not the owned file.
+The 2026-08-08 review settled the sequencing question above by protecting the
+liturgy surface family outright, so promoting `reader-shell.js` into a shared
+shell is withdrawn rather than deferred: reuse its ideas, not the owned file.
 
-`impl/foundation-hardening` carries the work that is safe before a visual
-contract exists, each commit cherry-pickable by path. The four real-Chromium
+`impl/foundation-hardening` carries the work that does not depend on the visual
+contract, each commit cherry-pickable by path. The four real-Chromium
 harnesses are invoked at last by `check-browser-harnesses`, which depends on
 `public-preview` because three of them address it as their data root — the
 reason they were read as broken for months was a missing build, not rot. The
