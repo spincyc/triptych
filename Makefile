@@ -540,6 +540,8 @@ help:
 		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
 		'make check-propers-census  Refuse a document whose derived count table has gone stale' \
 		'make check-tests  Run the complete script unit-test suite' \
+		'make check-browser-gate  Real Chromium over the built artifact; needs public-site first and TRIPTYCH_CHROME' \
+		'make check-browser-harnesses  The four reader harnesses; builds the preview itself, needs TRIPTYCH_CHROME' \
 		'make check-staleness  Suspended 2026-07-31; reports the suspension and exits clean' \
 		'make measure-staleness  Run the suspended signal anyway, without acting on it' \
 		'make explain-staleness DOC=<leaf> [PROVIDER=<p>]  Name the changed research inputs' \
