@@ -241,6 +241,10 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-tools \
 	check-tool-registry \
 	check-calendar-masses \
+	check-calendar-rubrics \
+	check-catena \
+	check-commentary-coverage \
+	check-roman-sanctuary-artwork \
 	check-propers-census \
 	check-metadata \
 	check-web-editions \
