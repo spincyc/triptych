@@ -125,7 +125,18 @@ const STATES = [
  * completing the hash with the rest of its state is normal and allowed; a page
  * dropping or rewriting what the reader asked for is the defect. */
 const HASH_DEEP_LINKS = [
-  { route: '/catena/index.html', hash: '#book=Gen&chapter=1&bible=douay-rheims' },
+  /* `voice` is here because it was the key that did not survive. The page
+   * assigned it to `#language-select` at startup, before the chapter file had
+   * arrived and therefore before that control held any option but "Everything
+   * held"; the assignment was dropped, the empty value was skipped by
+   * `writeHash`, and the reader's own link was rewritten without it. Genesis 1
+   * holds commentary in its authors' own languages, so `voice=original` is a
+   * selection that chapter can honour, and this line fails if the deferral in
+   * `catena.js` is ever undone. */
+  {
+    route: '/catena/index.html',
+    hash: '#book=Gen&chapter=1&bible=douay-rheims&voice=original'
+  },
   { route: '/history/index.html', hash: '#station=praedicatorum-venetiis-1484' },
   { route: '/law/index.html', hash: '#act=latin-missal' },
   { route: '/liturgy/day-reader.html', hash: '#missal=roman-1962&bible=douay-rheims' },
