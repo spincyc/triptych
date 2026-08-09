@@ -28,12 +28,13 @@ or asset is redistributed by this record.
 
 ## Durable conclusions
 
-1. Identity needs five distinct record types: conceptual Work, Source Edition,
-   exact Artifact, Segment, and Passage. Work owns Edition; Artifact, Segment,
-   and Passage are edition-owned siblings; Passage identifies its controlling
-   Artifact directly or through Segment. Provider-qualified publication
-   treatments are a different axis and must not be confused with bibliographic
-   Source Editions.
+1. Source identity needs five distinct object types: conceptual Work, Source
+   Edition, exact Artifact, Segment, and Passage. Work owns Edition; Artifact,
+   Segment, and Passage are edition-owned siblings; Passage identifies its
+   controlling Artifact directly or through Segment. Corpus records and
+   publication-local Bindings have separate roles and are not additional
+   source-identity objects. Provider-qualified publication treatments are a
+   different axis and must not be confused with bibliographic Source Editions.
 2. A stable human citation, internal object ID, external alias, and rendered
    URL are related but distinct. Displayed words require edition qualification;
    immutable research citations additionally need a revision/as-of identity.

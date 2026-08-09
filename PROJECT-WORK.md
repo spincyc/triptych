@@ -219,8 +219,23 @@ or deployment state.
 matching one-root ZIP. Its browser report covers 83 real-route cases and 1,979
 assertions: 1,917 pass, 62 disclosed inherited findings are non-gating, and no
 gate fails. It contains 83 main captures, all 25 required before/after pairs,
-one 236-page Reader print PDF, and all 236 page rasters. The next action is a
-fresh verified correction ZIP and independent disposition of F0 and the shell.
+one 236-page Reader print PDF, and all 236 page rasters. The bounded correction
+is complete at design/test head
+`c66c143643ff75a6cd54afdbe1fcd6eac0aca1b6`. Its full capture run covers 85
+real-route cases and 2,296 assertions with zero gating failures. The 64
+non-gating findings are 52 inherited nested-`main` findings, eight before-state
+useful-content findings, two before-only narrow-overflow findings, and two
+inherited Reader no-JavaScript overlay limitations. The correction package
+`20260809T014145Z-corpus-wave-1-review-fixes` is superseded for handoff-protocol
+defects; the next external action is independent review of the fresh immutable
+package assembled after this tracking repair. The exact reviewed-base-to-head
+range has zero changes under protected `src/web/browser/liturgy/` and `pdf/`.
+
+For this program, Codex owns product and visual design, correction evidence,
+and independent product review. Claude owns production implementation, coding,
+and implementation testing on named lanes. Neither role may cross declared
+single-owner boundaries or accept, merge, or deploy its own work by implication.
+
 F1 Sources and final shared-shell cutover remain blocked. E1 Catena may proceed
 independently without editing global shell owners; Home/Publications/Reader
 implementation waits for a clean shell ownership boundary. No main merge,

@@ -670,17 +670,19 @@ A grep across `structure/sources/index.json` and all 655 edition files returns
 `edition_of`, `artifact_of`, `passage_of`, `used_by`, `governs`, `changes`,
 `supersedes`, `appointed_in`, and for the generic `relation`, `relationships`,
 `edges`, `links`. There is no named-edge vocabulary in the served Source Library
-data. The projection expresses ownership through Work-to-Edition nesting and
-edition identifiers on the sibling records: `edition_id` on all 1,467 upstream
-Artifact records and on all 2,751 Passages. It expresses Passage control through
-`passage.artifact_id` on 2,613 records and `passage.segment_id` on 138.
+data. The upstream source tree expresses ownership with `edition_id` on all
+1,467 Artifact records, 62 Segment records, and 2,751 Passage records. Passage
+control is direct through `passage.artifact_id` on 2,613 upstream records and
+indirect through `passage.segment_id` on 138.
 
-The public projection expresses Work-to-Edition ownership and the Edition's
-sibling Artifact, Segment, and Passage records. A Passage additionally names
-its controlling Artifact directly or its controlling Segment. Those foreign
-keys express control and source evidence, not Artifact-to-Passage or
-Segment-to-Passage containment. A Segment may resolve to an Artifact truthfully
-owned under another Work.
+The served public projection groups Artifact and Passage rows under an Edition;
+it emits no first-class Segment collection or Segment rows and does not repeat
+`edition_id` on the nested Artifact and Passage rows. Every projected Passage
+does carry its resolved ultimate `artifact_id`, and the 138 indirect records
+also retain `segment_id`. These keys express controller/source-evidence
+relationships, not Artifact-to-Passage or Segment-to-Passage containment. The
+upstream Segment remains an edition-owned sibling and may resolve to an Artifact
+truthfully owned under another Work.
 
 `translation_of` is the load-bearing absence. The page's own prose says "a Greek
 original, Migne's Latin and a public-domain English translation are three

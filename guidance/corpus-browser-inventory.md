@@ -34,12 +34,15 @@ candidates/oracles. The four noindex pages are accessible review or
 compatibility surfaces, not additional accepted products.
 
 The generated corpus presently records 133 publication works, 178 provider
-documents, 186 issues, and 5,675 pages. The Source Library records 491 Works
-owning 655 Editions; Artifact, Segment, and Passage are edition-owned sibling
-types, with 1,467 Artifacts and 2,751 Passages in the measured projection. Of
-178 provider documents, 105 are browser-readable and 73 are PDF-only. Of 2,751
-source Passages, 1,630 are readable and 1,121 have explicit refusal or absence
-states.
+documents, 186 issues, and 5,675 pages. The Source Library upstream records
+491 Works owning 655 Editions; Artifact, Segment, and Passage are
+edition-owned sibling types, with 1,467 Artifacts, 62 Segments, and 2,751
+Passages. The public projection groups 1,467 Artifact and 2,751 Passage rows
+under their Editions; it emits no first-class Segment rows, although 138
+Passages retain `segment_id` and every Passage resolves its ultimate
+`artifact_id`. Of 178 provider documents, 105 are browser-readable and 73 are
+PDF-only. Of 2,751 source Passages, 1,630 are readable and 1,121 have explicit
+refusal or absence states.
 
 ## Public surface families
 

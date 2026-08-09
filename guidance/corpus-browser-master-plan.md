@@ -24,6 +24,13 @@ commit, and push that named feature branch. It may not merge or push `main`,
 deploy, cut over production, implement production behavior, rewrite history,
 alter canonical PDFs, or enter protected Liturgy.
 
+For this dispatched program, Codex owns product and visual design,
+design-correction evidence, and independent product review. Claude owns
+production implementation, coding, and implementation testing on the named
+implementation lanes. That role split does not authorize either side to cross
+single-owner files, integrate a retained worker, accept its own work, merge,
+deploy, or bypass the explicit stopping lines below.
+
 The governing documents divide responsibility as follows:
 
 - this file owns program boundaries, reviewed decisions, work sequencing, and

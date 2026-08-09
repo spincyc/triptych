@@ -359,7 +359,7 @@ Production **Search** remains J0 → J1 → J2:
 
 Production Search must recognize exact public routes, object IDs, conventional
 citations, and known aliases before lexical matching; group results by type and
-say why each matched; preserve Work/Edition/Artifact/Passage/provider
+say why each matched; preserve Work/Edition/Artifact/Segment/Passage/provider
 distinctions; expose ambiguity instead of substituting a nearest object; index
 public material only; provide stable shareable state within static-hosting
 constraints; and leave useful browse routes and direct URLs when JavaScript is
@@ -513,7 +513,7 @@ fallback and research aid, not the canonical edition.
 | RA-05 | Faux medieval or ecclesial ornament | Credibility comes from authority and evidence, not parchment, crests, decorative crosses, or institutional imitation. |
 | RA-06 | Literal global shell on Liturgy | Preserve the protected four-action adapter and first viewport. |
 | RA-07 | Calling a bounded title fixture Search | It remains Jump until J0–J2 prove real typed corpus coverage. |
-| RA-08 | Flattening Work/Edition/Artifact/Passage | Preserve explicit object identity for citation and rights truth. |
+| RA-08 | Flattening Work/Edition/Artifact/Segment/Passage | Preserve explicit object identity for citation and rights truth. |
 | RA-09 | Merging provider outputs or calling them Source Editions | Show Independent treatments with explicit provider metadata; use Parallel treatment only for a proven relationship. |
 | RA-10 | Digest-first Source interface | Human identity and material availability precede hashes and technical provenance. |
 | RA-11 | Generic related recommendations | Display only deterministic structured relationships. |

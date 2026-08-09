@@ -243,17 +243,17 @@ comparison, text, or metadata in the UI.
 | 2026-08-09 | Wave 1 Candidate checkpoint | Completed the isolated real-route prototype and 83-case matrix over all five surfaces. The exact browser report records 1,979 assertions, 1,917 passes, 62 disclosed inherited findings, and zero gating failures; 83 main captures and every page of the 236-page print were inspected. Protected Liturgy, PDFs, prose, production browser sources, release bindings, and deployment remain unchanged. | `build/agent-handoffs/20260809T000346Z-corpus-wave-1-design-review/`; exact branch head and ZIP digest are recorded in the handoff; external acceptance remains open. |
 | 2026-08-08 | Independent Wave 1 review | Accepted C0 Home, C1 Publications, D0 Reader, and E0 Catena; required changes to F0 and the shared non-Liturgy shell; accepted accessibility/resilience as a production requirement and browser print only as a non-canonical fallback. | Reviewed head `e42b9287485a5a6d18ad8a528ab0f0f3f0024ff9`; verified package `20260809T000346Z-corpus-wave-1-design-review.zip`. |
 | 2026-08-08 | Review-fix dispatch | Authorized `ux/corpus-wave-1-review-fixes` from exact reviewed head for bounded F0, shell, evidence, and authority corrections only. | F0 and shell remain changes required pending a fresh independent disposition; no production/main/deploy authority. |
+| 2026-08-09 | Review-fix implementation and test checkpoint | Completed the bounded F0 and shared-shell prototype corrections without reopening C0, C1, D0, or E0. The full capture run covered 85 real-route cases and 2,296 assertions with zero gating failures. Its 64 disclosed non-gating findings comprise 52 inherited nested-`main` findings, eight before-state useful-content findings, two before-only narrow-overflow findings, and two inherited Reader no-JavaScript overlay limitations. Protected Liturgy production and canonical PDF paths have zero reviewed-base-to-head changes. | Authority reconciliation `3bfb9df10e1bd4b8d4d2b56aeb430c897f67700a`; design/test head `c66c143643ff75a6cd54afdbe1fcd6eac0aca1b6`. F0 and shell remain changes required until independent acceptance. The earlier correction package `20260809T014145Z-corpus-wave-1-review-fixes` is superseded for protocol defects; a fresh immutable package follows this tracking repair. |
 
 ## Next Codex tasks
 
-1. Complete the bounded F0 and shell corrections without reopening C0, C1, D0,
-   or E0; run and inspect the focused real-data evidence matrix.
-2. Produce a fresh verified one-root correction ZIP and obtain independent
-   accepted, changes-required, or rejected dispositions for F0 and the shell.
-3. Keep F1 and final shell cutover blocked until those exact dispositions are
+1. Submit the fresh verified one-root correction ZIP assembled after this
+   tracking repair and obtain independent accepted, changes-required, or
+   rejected dispositions for F0 and the shell.
+2. Keep F1 and final shell cutover blocked until those exact dispositions are
    accepted and recorded. E1 may proceed independently within its ownership
    boundary; C2/D1 wait for a clean shell ownership checkpoint.
-4. Do not merge or deploy `main`, alter protected Liturgy, change a canonical
+3. Do not merge or deploy `main`, alter protected Liturgy, change a canonical
    PDF, or infer missing source relationships.
 
 Append later findings and dispositions. Do not rewrite earlier rows to make the
