@@ -1930,7 +1930,9 @@
         "useful": "#reader .passage-text",
         "primary_targets": [],
         "text": [
-          "De civitate Dei"
+          "De civitate Dei",
+          "Previous",
+          "Next"
         ],
         "absent_text": []
       }
@@ -1966,7 +1968,14 @@
         ],
         "absent_text": [],
         "absent_selectors": [
-          "#reader .passage-text"
+          "#reader .passage-text",
+          "#reader .passage-nav .step"
+        ],
+        "exact_text": [
+          {
+            "selector": "#reader .passage-count",
+            "text": "Passage 1 of 1"
+          }
         ]
       }
     },
@@ -2074,6 +2083,92 @@
           "Source Library"
         ],
         "absent_text": []
+      }
+    },
+    {
+      "id": "after-sources-one-passage-default-393x852",
+      "surface": "sources",
+      "phase": "after",
+      "route": "/sources/#edition=edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917&passage=passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917.p-16",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "emulation": "default",
+      "actions": [
+        {
+          "op": "wait",
+          "selector": "#reader .notice"
+        },
+        {
+          "op": "scroll",
+          "selector": "#reader .notice",
+          "block": "center"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] #reader:not([hidden])",
+        "useful": "#reader .notice",
+        "primary_targets": [],
+        "text": [
+          "The rights record states that lawful project access to this artifact does not include redistribution from this repository."
+        ],
+        "absent_text": [],
+        "absent_selectors": [
+          "#reader .passage-text",
+          "#reader .passage-nav .step"
+        ],
+        "exact_text": [
+          {
+            "selector": "#reader .passage-count",
+            "text": "Passage 1 of 1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "after-sources-browse-keyboard-1440x900",
+      "surface": "sources",
+      "phase": "after",
+      "route": "/sources/#find=summa%20theologiae",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "emulation": "keyboard",
+      "actions": [
+        {
+          "op": "wait",
+          "selector": "#finder .work"
+        },
+        {
+          "op": "focus",
+          "selector": "[data-wave-navigation-control]"
+        }
+      ],
+      "expect": {
+        "ready": "body[data-wave-ready] #finder .work",
+        "useful": "#finder .work",
+        "primary_targets": [
+          "[data-wave-navigation-control]"
+        ],
+        "focus": "[data-wave-navigation-control]",
+        "text": [],
+        "absent_text": [],
+        "absent_selectors": [
+          "[data-wave-domain]:not([hidden])",
+          "[data-wave-desktop-nav] a[aria-current=\"page\"] ~ a[aria-current=\"page\"]"
+        ],
+        "exact_text": [
+          {
+            "selector": "[data-wave-navigation-control]",
+            "text": "Browse"
+          },
+          {
+            "selector": "[data-wave-desktop-nav] a[aria-current=\"page\"]",
+            "text": "Sources"
+          }
+        ]
       }
     }
   ]

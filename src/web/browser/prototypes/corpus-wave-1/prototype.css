@@ -1878,8 +1878,9 @@ html[data-corpus-wave1] [data-wave-heading-level="6"] {
   }
 
   html[data-corpus-wave1] [data-wave-shell] [data-wave-shell-actions] {
-    width: auto;
+    width: 100%;
     margin-left: auto;
+    justify-content: flex-end;
   }
 
   html[data-corpus-wave1] [data-wave-shell] button {

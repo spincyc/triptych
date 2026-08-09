@@ -8,6 +8,7 @@ artifact's contract rather than a convention reviewers must remember.
 from __future__ import annotations
 
 from html.parser import HTMLParser
+import gzip
 import importlib.machinery
 import importlib.util
 import json
@@ -232,6 +233,17 @@ class CorpusWave1PrototypeTests(unittest.TestCase):
         for term in ("Independent treatment", "Parallel treatment"):
             self.assertIn(term, self.js)
         self.assertNotIn("Parallel treatments", self.js)
+        self.assertIn(
+            "Browse works and editions, then inspect passages and the artifact or segment",
+            self.js,
+        )
+        self.assertNotIn(
+            "Browse each source as a Work, Edition, Artifact, and Passage",
+            self.js,
+        )
+        self.assertIn("data-wave-single-passage", self.js)
+        self.assertIn("data-wave-navigation-control", self.js)
+        self.assertIn("wide.matches ? 'Browse' : 'Menu'", self.js)
 
     def test_matrix_names_all_routes_and_required_viewports(self) -> None:
         self.assertIsInstance(self.matrix, dict)
@@ -344,6 +356,27 @@ class CorpusWave1PrototypeTests(unittest.TestCase):
             ["reader-record-visible-provider", "reader-record-visible-pdf"],
         )
         self.assertIn("JavaScript overlay", inherited_overlay.get("reason", ""))
+        one_passage = next(
+            case for case in cases
+            if case.get("id") == "after-sources-one-passage-default-393x852"
+        )
+        self.assertIn("#reader .passage-nav .step", one_passage["expect"]["absent_selectors"])
+        self.assertEqual(
+            one_passage["expect"]["exact_text"],
+            [{"selector": "#reader .passage-count", "text": "Passage 1 of 1"}],
+        )
+        browse_focus = next(
+            case for case in cases
+            if case.get("id") == "after-sources-browse-keyboard-1440x900"
+        )
+        self.assertEqual(browse_focus.get("emulation"), "keyboard")
+        self.assertEqual(
+            browse_focus["expect"].get("focus"), "[data-wave-navigation-control]"
+        )
+        self.assertIn(
+            {"selector": "[data-wave-navigation-control]", "text": "Browse"},
+            browse_focus["expect"].get("exact_text", []),
+        )
 
     def test_harness_is_bound_to_the_prototype_and_fixed_matrix(self) -> None:
         self.assertIn(
@@ -362,6 +395,9 @@ class CorpusWave1PrototypeTests(unittest.TestCase):
         )
         self.assertIn("normalizePrintText(extracted)", self.harness)
         self.assertIn("normalizePrintText(text)", self.harness)
+        self.assertIn("wide-shell-one-current-location", self.harness)
+        self.assertIn("wide-shell-domain-not-duplicated", self.harness)
+        self.assertIn("compact-shell-menu-label", self.harness)
         self.assertIn(r"\p{Dash_Punctuation}", self.harness)
         self.assertIn("IPV4_LOOPBACK_OCTETS", self.harness)
         self.assertIn("IPV4_LOOPBACK_OCTETS.join", self.harness)
@@ -403,6 +439,7 @@ class CorpusWave1PrototypeTests(unittest.TestCase):
             flags=re.IGNORECASE | re.DOTALL | re.MULTILINE,
         )
         self.assertIsNone(global_overflow_mask.search(self.css))
+        self.assertLess(len(gzip.compress(self.css.encode("utf-8"), compresslevel=9, mtime=0)), 8192)
 
     def test_javascript_syntax_when_node_is_available(self) -> None:
         if shutil.which("node") is None:

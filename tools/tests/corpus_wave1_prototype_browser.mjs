@@ -850,6 +850,23 @@ async function pageFacts(cdp, held) {
       injectedJs: Boolean(document.querySelector('[data-wave1-prototype-js]')),
       prototypeRan: document.documentElement.hasAttribute('data-corpus-wave1') ||
         document.documentElement.hasAttribute('data-corpus-wave1-pending'),
+      shell: (() => {
+        const visible = (node) => Boolean(node?.getClientRects().length);
+        const navigation = document.querySelector('[data-wave-navigation-control]');
+        const jump = document.querySelector('[data-wave-action="jump"]');
+        const domain = document.querySelector('[data-wave-domain]');
+        const desktop = document.querySelector('[data-wave-desktop-nav]');
+        return {
+          desktopVisible: visible(desktop),
+          domainVisible: visible(domain),
+          navigationVisible: visible(navigation),
+          navigationLabel: navigation?.textContent?.trim() || null,
+          jumpVisible: visible(jump),
+          visibleCurrent: [...document.querySelectorAll(
+            '[data-wave-desktop-nav] a[aria-current="page"]'
+          )].filter(visible).map((node) => node.textContent.trim())
+        };
+      })(),
       publicationRecord,
       readerRecordPresentation: (() => {
         const provider = document.querySelector('[data-wave-provider]');
@@ -1149,6 +1166,29 @@ function recordAssertions(
     channel.external.slice(0, 8).join(' | '), true));
   rows.push(assertion('expected-ready-visible', facts.expectedReady === true,
     held.expect.ready, gating));
+  if (held.phase === 'after' && !['no-js', 'print'].includes(held.emulation)) {
+    const wideShell = held.viewport.width > 1024;
+    rows.push(assertion('shell-navigation-control-visible', facts.shell.navigationVisible === true,
+      JSON.stringify(facts.shell), true));
+    rows.push(assertion('shell-jump-visible', facts.shell.jumpVisible === true,
+      JSON.stringify(facts.shell), true));
+    if (wideShell) {
+      rows.push(assertion('wide-shell-one-current-location',
+        facts.shell.desktopVisible === true && facts.shell.visibleCurrent.length === 1,
+      JSON.stringify(facts.shell), true));
+      rows.push(assertion('wide-shell-domain-not-duplicated', facts.shell.domainVisible === false,
+        JSON.stringify(facts.shell), true));
+      rows.push(assertion('wide-shell-browse-label', facts.shell.navigationLabel === 'Browse',
+        JSON.stringify(facts.shell), true));
+    } else {
+      rows.push(assertion('compact-shell-domain-visible', facts.shell.domainVisible === true,
+        JSON.stringify(facts.shell), true));
+      rows.push(assertion('compact-shell-desktop-nav-collapsed', facts.shell.desktopVisible === false,
+        JSON.stringify(facts.shell), true));
+      rows.push(assertion('compact-shell-menu-label', facts.shell.navigationLabel === 'Menu',
+        JSON.stringify(facts.shell), true));
+    }
+  }
   const inheritedNestedMain = INHERITED_NESTED_MAIN_SURFACES.has(held.surface);
   rows.push(assertion('one-main', facts.mainCount === 1, `found ${facts.mainCount}`,
     inheritedNestedMain ? false : gating));

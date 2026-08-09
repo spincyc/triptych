@@ -210,7 +210,7 @@
     }
     function menuPanel() {
       return {
-        title: 'Menu',
+        title: 'Corpus destinations',
         node:
             navigationList(destinationLinks(true), 'Corpus menu', 'wave-dialog-list wave-menu-list')
       };
@@ -382,12 +382,27 @@
         nav.appendChild(publications);
     }
     publications.setAttribute('data-wave-publications-link', '');
-    if (surface === 'publications' || surface === 'reader') {
+    const currentDomain = surface === 'reader' ? 'publications' : surface;
+    const currentDefinition = currentDomain === 'home' ? ['Home', '', 'home'] :
+        CORPUS_DESTINATIONS.find(([, , domain]) => domain === currentDomain);
+    if (currentDefinition) {
+      const [label, route] = currentDefinition;
+      const currentPath = normalizedPath(new URL(route, siteRoot()).pathname);
+      let current = [...nav.querySelectorAll('a[href]')].find(
+          (anchor) => routeOf(anchor) === currentPath);
+      if (!current) {
+        current = element('a', '', label);
+        current.href = localRoute(route);
+        const about = [...nav.querySelectorAll('a[href]')].find(
+            (anchor) => /\/about\.html$/.test(routeOf(anchor)));
+        nav.insertBefore(current, about || null);
+      }
       nav.querySelectorAll('[aria-current]')
           .forEach((node) => node.removeAttribute('aria-current'));
-      publications.setAttribute('aria-current', 'page');
+      current.setAttribute('aria-current', 'page');
     }
-    if (!header.querySelector('[data-wave-domain]')) {
+    let domain = header.querySelector('[data-wave-domain]');
+    if (!domain) {
       const domain = element('span', 'wave-domain', DOMAINS[surface]);
       domain.setAttribute('data-wave-domain', surface);
       const brand = header.querySelector('.brand');
@@ -396,13 +411,24 @@
       else
         header.appendChild(domain);
     }
+    domain = header.querySelector('[data-wave-domain]');
     if (!header.querySelector('[data-wave-shell-actions]')) {
       const actions = element('div', 'wave-shell-actions');
       actions.setAttribute('data-wave-shell-actions', '');
       actions.setAttribute('data-wave-actions', 'shell');
-      actions.append(actionButton('Menu', 'menu'), actionButton('Jump', 'jump'));
+      const navigation = actionButton('Menu', 'menu');
+      navigation.setAttribute('data-wave-navigation-control', '');
+      actions.append(navigation, actionButton('Jump', 'jump'));
       header.appendChild(actions);
     }
+    const navigation = header.querySelector('[data-wave-navigation-control]');
+    const wide = window.matchMedia('(min-width: 64.0625rem)');
+    const syncResponsiveShell = () => {
+      if (domain) domain.hidden = wide.matches;
+      if (navigation) navigation.textContent = wide.matches ? 'Browse' : 'Menu';
+    };
+    syncResponsiveShell();
+    wide.addEventListener('change', syncResponsiveShell);
     document.addEventListener('click', (event) => {
       const button = event.target.closest('[data-wave-open-dialog]');
       if (!button || !button.isConnected) return;
@@ -950,7 +976,8 @@
     const lede = document.querySelector('.page-header .lede');
     if (lede) {
       lede.textContent =
-          'Browse each source as a Work, Edition, Artifact, and Passage. Read held text ' +
+          'Browse works and editions, then inspect passages and the artifact or segment ' +
+          'that controls their text. Read held text ' +
           'where rights permit; where it may not be served, keep the record and reason.';
     }
   }
@@ -1011,6 +1038,13 @@
       sourceFilter.hidden = sourceForm.hidden;
     }
     decorateSourceConstraints();
+    const passageSelect = document.querySelector('#reader #passage-select');
+    const passageNavigation = passageSelect?.closest('.passage-nav');
+    if (passageSelect?.options.length === 1 && passageNavigation) {
+      passageNavigation.setAttribute('data-wave-single-passage', '');
+      passageNavigation.style.gridTemplateColumns = '1fr';
+      passageNavigation.querySelectorAll(':scope > button.step').forEach((button) => button.remove());
+    }
     for (const work of document.querySelectorAll('#finder .work')) {
       work.setAttribute('data-wave-object', 'work');
       const title = work.querySelector(':scope > .work-title');
