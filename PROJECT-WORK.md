@@ -183,15 +183,14 @@ operations.
 
 <!-- promised-deliverable: didach-identity-design-2026-08-08 -->
 
-**In progress as an isolated identity-and-product-design candidate on
-`ux/didach-identity`, based exactly on `origin/main` at
-`fc3092de98fee56ab09c406ade257e84e7633e45`.** The task defines the future
-public identity and root experience for `https://didach.ai/`, tests that
-identity against real corpus content and accepted Reader, Catalogue, and
-Instrument compositions, and prepares an independently reviewable evidence
-package. It does not change the live origin, canonical URLs, DNS, Pages
-configuration, canonical PDFs, protected Liturgy surfaces, or production
-artifacts.
+**Candidate ready for independent review on `ux/didach-identity`, based exactly
+on `origin/main` at `fc3092de98fee56ab09c406ade257e84e7633e45`; substantive
+review target `20cefc15e1ee3c1bf6c44c528d39e197586c8d4d`.** The target is
+pushed at the feature ref and defines the future public identity and root
+experience for `https://didach.ai/` against real corpus content and accepted
+Reader, Catalogue, and Instrument compositions. It does not change the live
+origin, canonical URLs, DNS, Pages configuration, canonical PDFs, protected
+Liturgy surfaces, or production artifacts.
 
 The working hypothesis is a sole lowercase `didach.ai` public wordmark with
 the corpus, its objects, and their source and rights apparatus kept primary.
@@ -203,9 +202,18 @@ accepted-surface consequence remain explicit independent-review questions.
 The durable decision and research records belong in
 `guidance/didach-identity.md` and `guidance/didach-identity-research.md`; the
 real-data prototype is structurally unpublished under
-`src/web/browser/prototypes/didach-identity/`; the ignored handoff will contain
-the original-resolution visual evidence and contact sheets. The branch may be
-pushed for review, but this work unit authorizes no merge or deployment.
+`src/web/browser/prototypes/didach-identity/`. The 104-case Chromium matrix ran
+3,315 assertions with zero candidate-gating failures; its protected Liturgy
+checks pass. The ignored one-root handoff
+`didach-identity-review-20cefc15e-2026-08-08.zip` contains 104 viewport
+originals, 236 print-page rasters, 10 identity/card/icon originals, six contact
+sheets, exact checks, and a verified manifest; its SHA-256 is
+`c447c398813ddbe5923fd27c7d868688cf46fe91c184d72be302af2b86f8a45a`.
+The branch is pushed without deployment. Independent disposition is requested
+and pending; this work unit authorizes no merge or production implementation.
+Native-browser 400% zoom, cross-platform assistive-technology evidence,
+adjacent-name clearance, final icon geometry, and the complete production
+social-card family remain explicit later gates.
 
 ### Live Reader — Ritual Flow & Orientation
 
