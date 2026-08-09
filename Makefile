@@ -229,34 +229,84 @@ override _TRIPTYCH_PDF_JOBS_INVALID = $(strip \
 override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),,\
 	$(if $(_TRIPTYCH_PDF_JOBS_INVALID),$(error PDF_JOBS requires a positive integer),--jobs=$(PDF_JOBS)))
 
-.PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
-	distclean check-tools check-tool-registry check-calendar-masses \
+.PHONY: all \
+	pdf \
+	review-pdfs \
+	review-all-pdfs \
+	install \
+	list \
+	help \
+	clean \
+	distclean \
+	check-tools \
+	check-tool-registry \
+	check-calendar-masses \
 	check-propers-census \
-	check-metadata check-web-editions \
+	check-metadata \
+	check-web-editions \
 	check-proper-components \
-	web-editions install-web-editions check-web-editions-current \
-	check-sources check-deployment-sources check-source-library \
-	check-source-inventory check-source-inventory-tool \
-	check-source-family-migration check-source-family-migration-tool \
+	web-editions \
+	install-web-editions \
+	check-web-editions-current \
+	check-sources \
+	check-deployment-sources \
+	check-source-library \
+	check-source-inventory \
+	check-source-inventory-tool \
+	check-source-family-migration \
+	check-source-family-migration-tool \
 	check-source-family-screening \
 	check-promised-deliverables \
-	check-public-alpha prepare-public-alpha \
-	check-pdf-review check-curriculum-sources \
-	check-curriculum-structure check-source-reader source-projection \
-	check-document-catalogue document-catalogue \
-	public-site public-preview \
-	dependencies-arch dependencies-arch-browser install-dependencies-arch \
-	verify-public-site verify-public-preview \
+	check-public-alpha \
+	prepare-public-alpha \
+	check-pdf-review \
+	check-curriculum-sources \
+	check-curriculum-structure \
+	check-source-reader \
+	source-projection \
+	check-document-catalogue \
+	document-catalogue \
+	public-site \
+	public-preview \
+	dependencies-arch \
+	dependencies-arch-browser \
+	install-dependencies-arch \
+	verify-public-site \
+	verify-public-preview \
 	check-mass-ordinary \
-	check-release-bindings refresh-release-bindings approve-release \
-	add-publication doc review-doc install-doc check check-tests \
-	check-browser-static check-browser-gate check-browser-harnesses \
-	check-examples recapture-examples \
-	altar-server-guides review-altar-server-guides install-altar-server-guides \
-	check-staleness measure-staleness explain-staleness rebaseline-doc \
-	bibles bible review-bible check-bibles \
-	tracks track review-track check-tracks check-plan-sources reading-structure \
-	FORCE_METADATA_VERIFICATION FORCE_BIBLE_RENDER
+	check-release-bindings \
+	refresh-release-bindings \
+	approve-release \
+	add-publication \
+	doc \
+	review-doc \
+	install-doc \
+	check \
+	check-tests \
+	check-browser-static \
+	check-browser-gate \
+	check-browser-harnesses \
+	check-examples \
+	recapture-examples \
+	altar-server-guides \
+	review-altar-server-guides \
+	install-altar-server-guides \
+	check-staleness \
+	measure-staleness \
+	explain-staleness \
+	rebaseline-doc \
+	bibles \
+	bible \
+	review-bible \
+	check-bibles \
+	tracks \
+	track \
+	review-track \
+	check-tracks \
+	check-plan-sources \
+	reading-structure \
+	FORCE_METADATA_VERIFICATION \
+	FORCE_BIBLE_RENDER
 .DELETE_ON_ERROR:
 .SECONDARY: $(BUILD_METADATA_STAMPS)
 
@@ -735,13 +785,26 @@ rebaseline-doc:
 	@$(PYTHON) $(RESEARCH_STALENESS_TOOL) rebaseline --provider '$(PROVIDER)' --id '$(DOC)'
 
 # Staleness stays out of `check`: it flags re-evaluation work, not breakage.
-check: check-metadata check-web-editions check-web-editions-current \
-	check-proper-components check-document-catalogue check-source-reader \
-	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
-	check-public-alpha check-release-bindings check-tool-registry \
+check: check-metadata \
+	check-web-editions \
+	check-web-editions-current \
+	check-proper-components \
+	check-document-catalogue \
+	check-source-reader \
+	check-sources \
+	check-roman-sanctuary-artwork \
+	check-promised-deliverables \
+	check-public-alpha \
+	check-release-bindings \
+	check-tool-registry \
 	check-browser-static \
-	check-calendar-masses check-calendar-rubrics check-propers-census \
-	check-mass-ordinary check-catena check-commentary-coverage check-examples
+	check-calendar-masses \
+	check-calendar-rubrics \
+	check-propers-census \
+	check-mass-ordinary \
+	check-catena \
+	check-commentary-coverage \
+	check-examples
 
 # Seven of the browser scripts are parsed by nothing: no Python test loads
 # them, no node harness runs them, and their only protection is a sha256 pin in
