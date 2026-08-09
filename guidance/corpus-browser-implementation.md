@@ -1964,3 +1964,70 @@ the disposition: the six instrument lanes and their designs are the parallel
 work, and the shared concerns above are the serial work. Getting that backwards
 — serialising the instruments behind a shell they do not depend on, while
 letting every branch edit the generator — is the failure this replaces.
+
+## 19. The absence defect, and why the seven harness failures are one thing
+
+A sweep of the liturgy reader on 2026-08-08 found that the seven assertions the
+Chromium harnesses fail are not seven small omissions. They are the notice half
+of one defect, and the defect is the inversion of the rule this repository is
+built on: a page that shows nothing where a prayer belongs has told the reader
+the Mass omits it.
+
+**What happens.** For a formulary whose Collect, Secret and Postcommunion are
+not in the corpus, the reader renders the sections it has, marks nothing at the
+three places it does not, and reports coverage `complete`. In Missal mode the
+result is worse than silence: the page prints the missal's own rubric, "After
+the COLLECT (which may be found in its proper place)…", immediately above the
+gap where no Collect was emitted. The reader is directed to a place that is
+empty, by a page asserting nothing is missing.
+
+**How much of the corpus.** Counted over the built data at `af2c961`, by mass
+record, where "missing" means no proper named Collect, Secret or Postcommunion
+and no `Placeholder` marking the absence:
+
+| Edition | Masses | Missing all three | Unmarked, so reported `complete` |
+| --- | --: | --: | --: |
+| `roman-1962` | 491 | 239 | **233** |
+| `postconciliar` | 269 | 207 | **154** |
+| `roman-pre-1955` | 491 | 239 | **232** |
+
+Confirmed live on the Epiphany, the Octave of the Nativity, and the Assumption.
+These are principal feasts, not corners of the calendar.
+
+**Why it reports complete.** `reader-state-adapters.js:350-361` measures
+completeness by counting propers literally named `Placeholder`. A formulary that
+carries an explicit placeholder is `partial`; a formulary with no oration object
+at all is indistinguishable from a fully held one, because nothing compares the
+slots held against the slots the edition appoints. `seatedEvents` can only seat
+a proper that exists, so the body has no place to mark either.
+
+**The intent is already written down and unimplemented.** `day.js:944-949` says
+"an element that names its absence still marks the place, and the day's Collect
+is seated after the withheld one rather than in its stead." That is the correct
+behaviour, described in the file that does not do it.
+
+**A third channel exists and is wired to nothing.** `explicitAbsences` is a
+first-class field of the reader-state contract (`reader-state.js:31`, validated
+at `:752-762`) and is populated from `branch.absent`
+(`reader-state-adapters.js:519-530`, `:622`). Neither renderer reads it:
+`day-reader.js:694-712` and `propers-reader.js:584` branch only on `coverage`
+and `unresolvedChoices`. The pipeline's only channel for "the corpus records
+that X is absent here" reaches no reader.
+
+**Not repaired here.** Every file involved belongs to the in-progress Live
+Reader deliverable, and the fix is not merely mechanical: what the mark says,
+where it sits, and whether `complete` should become a computed comparison
+against the edition's appointed slots are product decisions with a frozen v1
+contract around them. It is recorded so the owning deliverable can size it
+correctly, and so nobody treats the seven harness assertions as small.
+
+Two smaller findings from the same sweep, also unrepaired and also liturgy-owned.
+Choosing a commemorated or displaced formulary swaps the whole body while the
+heading, `document.title` and the celebration metadata continue to name the
+calendar's winner — `day-reader.js:1146-1148` titles from
+`rows[0].branch.winner.name` rather than from the resolved formulary, so the
+page mis-describes what it is showing, and the Date control expressly invites
+the reader into that state. And the mode selector advertises
+`role="radiogroup"` on all six routes without arrow-key or roving-tabindex
+behaviour; it is operable by Tab and Enter and keeps `aria-checked` correct, so
+this is a promise the markup does not keep rather than a broken control.
