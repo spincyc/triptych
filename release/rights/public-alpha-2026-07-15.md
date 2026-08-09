@@ -1971,7 +1971,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/texts/texts.css` | `edba3a5dbeed923c83993026d2ae7810412fe265eab2209b6d137c76443d378d` |
 | `src/web/browser/texts/texts.js` | `4c24470b228765ddd4785db0e2866267ba3ceb9237f60277ba1ea818feda5a8b` |
 | `src/web/data/bibles.json` | `2833103696cfde54ee1266c7d74909beb433a7951f216c423858868b9d4001d6` |
-| `tools/public-alpha` | `c0124a02797c4ee0e4e0303532b3d722f09f663c04fffcc1e12adee5b2d97199` |
+| `tools/public-alpha` | `92a2a7a759d734df06f77bede431250fb4c5dff27808f6796d2cca105cdcf61e` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `4d97a8a50671d69dac75bd40ba84646439bbc3c9426db541f17b63002e0a204e` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `5142fc621475233a8843f98ca10e49e22bc63adc6cd001044335b5f9e1634482` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `6b86977adffdece0e49c43803db515040f30e115d68ba382d8e9658b14fc3569` |
