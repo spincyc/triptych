@@ -1738,7 +1738,7 @@ release attachment, announcement, or promotion.
 | `release/public-alpha/assets/icon.png` | `ef1315d47930179e71319cebba58bd284756b9306a40d376ab7ca6e6d3c15ad5` |
 | `release/public-alpha/assets/site.css` | `425f31fa5830ec6054df15e3d51659675d492216392fa33acc755ffd44ecc7ed` |
 | `release/public-alpha/assets/social-card.png` | `d0adf2056a5aa7d6e4fd240a324d76a654a904547908f77ad9d8f7fc8abc7278` |
-| `release/public-alpha/layout.html` | `141bac1edad42e3661b823c26fda76328ce07b74ff1db6df1f53bcf581284c88` |
+| `release/public-alpha/layout.html` | `6687546feca2e378e57917fa44ed908c5abfa49f4499731c95316f1d34b3d9eb` |
 | `requirements-public-alpha.txt` | `59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml` | `77d170a850917063fcd3d51fea4727456497df494dedc7dd390f19972a2a7847` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-candle-v2-alpha.png` | `973f7cc89692ff07b3dd598d5c148eadcd72a1fe2e7f7206599f6953bee3088a` |
@@ -1971,7 +1971,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/texts/texts.css` | `edba3a5dbeed923c83993026d2ae7810412fe265eab2209b6d137c76443d378d` |
 | `src/web/browser/texts/texts.js` | `4c24470b228765ddd4785db0e2866267ba3ceb9237f60277ba1ea818feda5a8b` |
 | `src/web/data/bibles.json` | `2833103696cfde54ee1266c7d74909beb433a7951f216c423858868b9d4001d6` |
-| `tools/public-alpha` | `92a2a7a759d734df06f77bede431250fb4c5dff27808f6796d2cca105cdcf61e` |
+| `tools/public-alpha` | `f28eb0b4303a4e487bdb72dfc852a38462a2f464cc2b9ded444574ece94028e0` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `4d97a8a50671d69dac75bd40ba84646439bbc3c9426db541f17b63002e0a204e` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `5142fc621475233a8843f98ca10e49e22bc63adc6cd001044335b5f9e1634482` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `6b86977adffdece0e49c43803db515040f30e115d68ba382d8e9658b14fc3569` |
