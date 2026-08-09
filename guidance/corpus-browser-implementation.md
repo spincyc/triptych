@@ -614,18 +614,38 @@ opaque id at all**: a document edition is identified by its PDF path
 synthesise a key — provider plus section plus path stem is the obvious one —
 because none is written down.
 
-### The source graph is containment plus untyped foreign keys
+### Artifact and Passage are siblings under an Edition, not a chain
+
+An earlier version of this section called the graph "containment plus untyped
+foreign keys" and gave figures for it. The design lane caught the substance —
+Artifact, Segment and Passage are **not** a linear chain beneath Edition, and
+presenting them as one is the F0 error the Wave 1 review required corrected.
+Re-measuring to write the correction showed both that version and the design
+lane's replacement were imprecise, so here is what the served projection
+actually holds.
 
 A grep across `structure/sources/index.json` and all 655 edition files returns
 **zero hits** for `cites`, `quotes`, `comments_on`, `translation_of`,
 `edition_of`, `artifact_of`, `passage_of`, `used_by`, `governs`, `changes`,
 `supersedes`, `appointed_in`, and for the generic `relation`, `relationships`,
-`edges`, `links`. There is no named-edge vocabulary in the served Source Library
-data. The graph is expressed entirely by nesting and by untyped foreign keys:
-`works[].editions[]` nesting plus `work_id`; `artifacts[]` nesting plus
-`edition_id` on all 1,467 upstream artifact records; `passage.edition_id` on all
-2,751 passages; `passage.artifact_id` on 2,613 of them; `passage.segment_id` on
-138.
+`edges`, `links`. There is no named-edge vocabulary. That much stands.
+
+The shape is this. `index.json` nests `works[].editions[]`, and each edition
+there carries a passage **count** and a `file` pointer, not the passages. Each
+edition file then holds two **sibling lists**, `artifacts` and `passages`, under
+one `work` and one `edition` header. A passage carries **no `edition_id` at
+all** — its edition is containment, not a key. It carries `artifact_id`, and it
+carries it **always**: 2,751 of 2,751, not the 2,613 previously recorded here.
+`segment_id` appears on 138, and every one of those 138 also carries
+`artifact_id`, so a segment is an additional narrowing and never an alternative
+to naming the artifact.
+
+Two consequences for anyone building the Source Library surface. A reader moving
+"down" from an Edition reaches artifacts and passages **in parallel**, not one
+through the other, so a UI that nests passages inside artifacts is inventing a
+containment the data does not assert. And because the edition is expressed by
+containment rather than a key, a passage lifted out of its file loses its
+edition silently; carry it explicitly or keep the file as the unit.
 
 `translation_of` is the load-bearing absence. The page's own prose says "a Greek
 original, Migne's Latin and a public-domain English translation are three
