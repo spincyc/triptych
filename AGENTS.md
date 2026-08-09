@@ -82,6 +82,32 @@ unrelated changes before mutation.
 
 Direct sessions have standing authority to create ordinary coherent commits for authorized work and to push validated checkpoints regularly to `origin/main`. Before each push, verify the exact outgoing range, confirm that every newly reachable object is intended for public disclosure, and run the checks required by the affected guidance. A push to `origin/main` triggers the GitHub Pages workflow and therefore authorizes that automatic deployment attempt. This standing authority does not permit force-pushing, rewriting published history, integrating retained workers, changing remotes, or triggering any other deployment.
 
+## Claude sessions
+
+A Claude session works in its own full checkout on its own branch, never in a
+checkout another agent holds, and commits there as ordinary implementation.
+
+On 2026-08-08 the maintainer granted one narrower standing authority: **a bug
+fix found against `main` may be merged to `main` and pushed, provided the merge
+is a clean rebase and a genuine fast-forward.** It is bounded in four ways, and
+the bounds are the reason it was granted.
+
+- **Bug fixes only.** Feature branches, redesign lanes, and anything awaiting
+  independent review still go to a feature branch and stop there.
+- **Fast-forward only.** If a rebase is not clean, or `main` is no longer an
+  ancestor, stop and report. Never force, never rewrite published history.
+- **The deploy gates run first, locally.** `make check-deployment-sources`,
+  `make public-site`, and `public-alpha verify --deployment-target github-pages`
+  are exactly what the Pages workflow runs; run all three and the fix's own
+  tests before pushing.
+- **The push is the deployment.** A push to `origin/main` triggers the Pages
+  workflow, so pushing authorizes that publication. Verify the run afterwards
+  rather than assuming it.
+
+Inherited failures are not a reason to stop: `make check` is red at the base for
+reasons no bug fix causes. Compare failure sets, not exit codes, and say which
+set you compared against.
+
 ## Work sequence
 
 Before editing:
