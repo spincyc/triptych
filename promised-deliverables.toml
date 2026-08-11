@@ -1,6 +1,93 @@
 schema_version = 1
 
 [[deliverables]]
+id = "corpus-browser-foundation-design-2026-08-08"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Execute A0-A4 for the non-PDF Triptych corpus experience: complete the public-surface inventory and scholarly-interface research, define the governing site-wide product vision and three visual archetypes, specify shared navigation/search/context behavior, commit durable design memory, and produce one verified standard external-review ZIP without implementing production application logic or merging to main."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "a0-complete-surface-inventory"
+  criterion = "A complete route, surface, state, owning-source, and design-debt inventory is reconciled against the generated public artifact and includes representative current-state visual evidence."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-inventory.md",
+    "guidance/corpus-browser-roadmap.md",
+    "build/agent-continuity/corpus-browser-foundation.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "a1-research-synthesis"
+  criterion = "Checked, dated scholarly-interface and accessibility research distinguishes observed fact, Triptych inference, borrowed principles, rejected approaches, and unresolved leads."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-research.md",
+    "build/agent-continuity/corpus-browser-foundation.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "a2-site-wide-product-vision"
+  criterion = "The tracked corpus-browser vision governs information architecture, visual language, responsive and accessible behavior, source and edition presentation, URLs, performance, canonical PDFs, anti-patterns, and world-class completion while preserving the more specific liturgy contract."
+  status = "pass"
+  evidence = ["guidance/corpus-browser-vision.md"]
+
+  [[deliverables.requirements]]
+  id = "a3-visual-system-and-archetypes"
+  criterion = "A review-only prototype and tracked design contract define compatible Reader, Catalogue, and Instrument archetypes with desktop, mobile, 320-pixel, enlarged-text, zoom, and forced-color evidence."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-vision.md",
+    "guidance/corpus-browser-roadmap.md",
+    "src/web/browser/prototypes/corpus-foundation/index.html",
+    "src/web/browser/prototypes/corpus-foundation/prototype.css",
+    "tools/tests/test_corpus_foundation_prototype.py",
+    "tools/tests/corpus_foundation_prototype_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "a4-shared-shell-and-discovery"
+  criterion = "Shared navigation, typed static-first search, contextual related-object navigation, responsive shell, keyboard/focus behavior, URL state, and unsupported/partial states are specified and prototyped without claiming unavailable production data or relationships."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-vision.md",
+    "guidance/corpus-browser-roadmap.md",
+    "src/web/browser/prototypes/corpus-foundation/index.html",
+    "src/web/browser/prototypes/corpus-foundation/prototype.js",
+    "tools/tests/test_corpus_foundation_prototype.py",
+    "tools/tests/corpus_foundation_prototype_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "foundation-scope-and-production-boundary"
+  criterion = "The foundation changes only tracked design/research memory, the isolated synthetic prototype, and its tests; production browser routes, generated data, public build mappings, canonical PDFs, deployment, integration, and accepted liturgy assets remain unchanged."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "src/web/browser/prototypes/corpus-foundation/index.html",
+    "tools/tests/test_corpus_foundation_prototype.py",
+    "build/agent-continuity/corpus-browser-foundation.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "committed-standard-review-handoff"
+  criterion = "All durable discoveries and decisions are committed before one fresh standard handoff directory and one-root ZIP are assembled and verified with exact base/head/branch/commits, inventories, source notes, before/after responsive evidence, contact sheet, numeric check statuses, limitations, blockers, and next tasks."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "build/agent-continuity/corpus-browser-foundation.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-foundation-disposition"
+  criterion = "An independent reviewer answers the four blocking information-architecture, liturgy-adapter, provider-terminology, and A2-A4 visual/interaction questions, and the accepted, rejected, or changes-required disposition is recorded in the operational authorities before production foundation work begins."
+  status = "open"
+  evidence = [
+    "guidance/corpus-browser-vision.md",
+    "guidance/corpus-browser-roadmap.md",
+    "build/agent-continuity/corpus-browser-foundation.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-reader-live-ritual-flow-2026-08-07"
 owner = "build/agent-continuity/liturgy-reader-visual-plan.md"
 promise = "Improve the live canonical Day and Propers readers for sustained liturgical reading through source-owned persistent ritual orientation, a current-place Contents map, and a calmer principal/rubric/reference hierarchy without reopening the accepted first viewport, cutover, navigation, state, renderer, source, or translation boundaries."

@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-04.
+Last reconciled: 2026-08-08.
 
 ## Standing public-alpha authority
 
@@ -178,6 +178,27 @@ force-pushing, and all other history rewriting remain separately authorized
 operations.
 
 ## Promised work
+
+### Corpus browser foundation design
+
+<!-- promised-deliverable: corpus-browser-foundation-design-2026-08-08 -->
+
+**Candidate on isolated branch `ux/foundation` from exact base
+`c27d6915319785686d1df6a1401a489aa9921f6f`; no production or PDF change is
+authorized and independent acceptance remains open.** A0-A4 inventory the
+complete public surface, synthesize checked
+scholarly-interface research, establish the site-wide corpus-browser vision,
+define one visual system with Reader/Catalogue/Instrument archetypes, and
+specify shared navigation, bounded synthetic Jump behavior, typed contextual
+navigation, and shell behavior. Production global typed search remains J0-J2.
+The accepted Liturgical Instrument remains the liturgy-specific reference and
+is not reopened. `PROJECT-WORK.md` and `promised-deliverables.toml` remain the
+fail-closed operational authorities; durable design and execution detail lives
+in `guidance/corpus-browser-vision.md`, `guidance/corpus-browser-roadmap.md`, and
+`build/agent-continuity/corpus-browser-foundation.md`. One standard external-
+review ZIP will present the committed candidate; creating it will not mark the
+foundation accepted or authorize production implementation, integration, or
+public cutover.
 
 ### Live Reader — Ritual Flow & Orientation
 

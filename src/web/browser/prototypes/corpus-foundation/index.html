@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <title>Corpus foundation prototype · Triptych</title>
+  <link rel="stylesheet" href="prototype.css">
+</head>
+<body class="corpus-prototype" data-review-query-keys="surface panel">
+  <a class="skip-link" href="#prototype-main">Skip to prototype</a>
+  <div class="review-ribbon" role="note">
+    <strong>A3/A4 prototype</strong>
+    <span>Synthetic review fixtures · not a public route or data contract</span>
+    <span>surface and panel query values are review-only</span>
+  </div>
+
+  <header class="corpus-shell" data-prototype-shell="single">
+    <div class="shell-row">
+      <a class="wordmark" href="#prototype-main" aria-label="Triptych prototype home">
+        <span>Triptych</span>
+        <small>Corpus browser</small>
+      </a>
+      <span class="current-domain" id="current-domain">Publications</span>
+      <nav class="global-nav" aria-label="Global corpus">
+        <a href="#prototype-main" data-domain="Home">Home</a>
+        <a href="#prototype-main" data-domain="Publications" aria-current="page">Publications</a>
+        <a href="#prototype-main" data-domain="Sources">Sources</a>
+        <a href="#prototype-main" data-domain="Scripture">Scripture</a>
+        <a href="#prototype-main" data-domain="Liturgy">Liturgy</a>
+        <a href="#prototype-main" data-domain="History">History</a>
+        <a href="#prototype-main" data-domain="Law">Law</a>
+        <a href="#prototype-main" data-domain="Commentary">Commentary</a>
+      </nav>
+      <div class="shell-actions">
+        <button class="quiet-action" type="button" data-open-dialog="jump-dialog">Jump</button>
+        <button class="quiet-action menu-action" type="button" data-open-dialog="menu-dialog">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="prototype-main" data-fixture-boundary="synthetic-review-v1" tabindex="-1">
+    <section class="prototype-toolbar" aria-labelledby="prototype-heading">
+      <div>
+        <p class="eyebrow">Candidate foundation · exact base c27d691</p>
+        <h1 id="prototype-heading">Three views into one corpus</h1>
+        <p>Switch archetypes to review shared identity, typography, responsive
+          composition, source honesty, and contextual navigation.</p>
+      </div>
+      <div class="surface-switcher" role="group" aria-label="Prototype surface">
+        <button type="button" data-select-surface="reader" aria-pressed="true">Reader</button>
+        <button type="button" data-select-surface="catalogue" aria-pressed="false">Catalogue</button>
+        <button type="button" data-select-surface="instrument" aria-pressed="false">Instrument</button>
+      </div>
+    </section>
+
+    <article class="prototype-surface reader-surface" data-archetype="reader"
+      data-prototype-fixture="synthetic-review-v1">
+      <header class="surface-heading reader-heading">
+        <nav aria-label="Breadcrumb"><a href="#prototype-main">Faith</a> / Study</nav>
+        <p class="eyebrow">Reader · ChatGPT treatment · illustrative revision</p>
+        <h2 tabindex="-1">On Reading a Source-First Claim</h2>
+        <p class="dek">A synthetic study fragment showing how text, local contents,
+          canonical print, and evidence can coexist without crowding the reading axis.</p>
+        <p class="fixture-warning">Illustrative prototype state—not a corpus claim.</p>
+        <div class="primary-actions">
+          <a class="button primary" href="#reader-text">Read</a>
+          <a class="button" href="#reader-pdf-note">PDF · canonical print</a>
+          <button class="button" type="button" data-open-dialog="related-dialog" data-related-context="reader">Related</button>
+        </div>
+      </header>
+
+      <div class="reader-layout">
+        <details class="contents">
+          <summary>Contents</summary>
+          <ol>
+            <li><a href="#reader-text">The visible claim</a></li>
+            <li><a href="#reader-source-note">Evidence nearby</a></li>
+            <li><a href="#reader-pdf-note">Canonical print</a></li>
+          </ol>
+        </details>
+        <div class="prose" id="reader-text">
+          <p class="locus">§ 1 · The visible claim</p>
+          <p class="lead">A scholarly page earns confidence by making the object,
+            edition, and limits legible before asking the reader to trust its polish.</p>
+          <p>The primary text should remain primary. Qualification belongs close
+            enough to the sentence it governs that a reader can understand what is
+            known, what is synthesized, and what remains unresolved without opening
+            a dashboard of metadata.</p>
+          <p>That does not require flattening the record. A quiet identity line can
+            preserve provider and revision; a focused note can name an illustrative
+            source; and a deliberate context surface can disclose the exact artifact,
+            rights basis, derivation, and digest.</p>
+          <aside class="source-note" id="reader-source-note" aria-labelledby="source-note-title">
+            <h3 id="source-note-title">Source note · synthetic</h3>
+            <p>This fixture demonstrates placement only. It cites no real work and
+              makes no historical, theological, liturgical, or canonical assertion.</p>
+          </aside>
+          <h3>The reading axis</h3>
+          <p>A reader should not lose its measure when Contents or Related becomes
+            available. On a narrow viewport the apparatus joins the document order;
+            on a wide viewport it may sit beside the text without moving the text's
+            center or making a second primary plane.</p>
+          <p id="reader-pdf-note"><strong>Canonical print:</strong> in production,
+            this action opens the installed reviewed PDF. The prototype keeps every
+            destination local and does not imitate a publication binding.</p>
+        </div>
+      </div>
+    </article>
+
+    <section class="prototype-surface catalogue-surface" data-archetype="catalogue"
+      data-prototype-fixture="synthetic-review-v1" hidden>
+      <header class="surface-heading catalogue-heading">
+        <p class="eyebrow">Catalogue · 3 illustrative works</p>
+        <h2 tabindex="-1">Publications</h2>
+        <p class="dek">Browse independent provider treatments and canonical PDFs
+          without collapsing them into one edition.</p>
+        <p class="fixture-warning">Illustrative prototype state—not a corpus claim.</p>
+      </header>
+      <form class="catalogue-controls" action="#catalogue-results">
+        <label for="catalogue-filter">Filter illustrative titles</label>
+        <div class="control-line">
+          <input id="catalogue-filter" name="q" type="search" autocomplete="off">
+          <button class="button" type="submit">Apply</button>
+        </div>
+        <p role="status" aria-live="polite">Showing <strong id="catalogue-count">3 works</strong> · synthetic fixture</p>
+      </form>
+      <div class="catalogue-list" id="catalogue-results">
+        <article class="catalogue-row" data-catalogue-terms="faith reference virtues chatgpt claude browser pdf">
+          <div class="work-identity">
+            <p class="eyebrow">Faith · Reference</p>
+            <h3><a href="#catalogue-results">A Demonstration of the Virtues</a></h3>
+            <p>Two independent browser-readable treatments with canonical PDFs.</p>
+          </div>
+          <dl class="treatment-list">
+            <div><dt>ChatGPT</dt><dd><a href="#catalogue-results">Read treatment</a> · <a href="#catalogue-results">PDF</a></dd></div>
+            <div><dt>Claude</dt><dd><a href="#catalogue-results">Read treatment</a> · <a href="#catalogue-results">PDF</a></dd></div>
+          </dl>
+        </article>
+        <article class="catalogue-row" data-catalogue-terms="history study small history text chatgpt browser pdf">
+          <div class="work-identity">
+            <p class="eyebrow">History · Study</p>
+            <h3><a href="#catalogue-results">A Small History of a Text</a></h3>
+            <p>One provider-qualified browser treatment.</p>
+          </div>
+          <dl class="treatment-list">
+            <div><dt>ChatGPT</dt><dd><a href="#catalogue-results">Read treatment</a> · <a href="#catalogue-results">PDF</a></dd></div>
+          </dl>
+        </article>
+        <article class="catalogue-row" data-catalogue-terms="formation guide illustrative study packet claude pdf only">
+          <div class="work-identity">
+            <p class="eyebrow">Formation · Guide</p>
+            <h3><a href="#catalogue-results">An Illustrative Study Packet</a></h3>
+            <p>The browser edition is not available.</p>
+          </div>
+          <dl class="treatment-list">
+            <div><dt>Claude</dt><dd><span class="status caution">PDF only</span> · <a href="#catalogue-results">Open canonical PDF</a></dd></div>
+          </dl>
+        </article>
+        <p class="catalogue-empty" id="catalogue-empty" hidden><strong>No illustrative work matches.</strong> Clear the filter to restore all three synthetic rows.</p>
+      </div>
+    </section>
+
+    <section class="prototype-surface instrument-surface" data-archetype="instrument"
+      data-prototype-fixture="synthetic-review-v1" hidden>
+      <header class="surface-heading instrument-heading">
+        <p class="eyebrow">Instrument · Source passage</p>
+        <h2 tabindex="-1">De custodia fontium <span lang="en">— On the custody of sources</span></h2>
+        <p class="dek">Work → Edition → Artifact → Passage remains visible while
+          readable text and material limits stay distinct.</p>
+        <p class="fixture-warning">Illustrative prototype state—not a corpus claim.</p>
+      </header>
+      <div class="instrument-locus" aria-label="Selected source object">
+        <dl>
+          <div><dt>Work</dt><dd><strong>De custodia fontium</strong> · synthetic</dd></div>
+          <div><dt>Edition</dt><dd>Auctor Exemplaris, Latin, 1894 · fictional</dd></div>
+          <div><dt>Artifact</dt><dd>Illustrative scan record · not acquired</dd></div>
+          <div><dt>Passage</dt><dd>Book I, section 4 · stable fixture locus</dd></div>
+        </dl>
+      </div>
+      <div class="instrument-layout">
+        <article class="passage-plane" aria-labelledby="passage-heading">
+          <p class="locus">Book I · § 4</p>
+          <h3 id="passage-heading">Readable synthetic transcription</h3>
+          <p lang="la" class="lead">Fons non ornamento, sed testimonio custoditur.</p>
+          <p>The Latin and translation are invented for this visual fixture. They
+            demonstrate bilingual rhythm and must not be cited as a real passage.</p>
+          <hr>
+          <h3>Adjacent passage</h3>
+          <p class="status caution"><strong>Text withheld in this state.</strong>
+            The illustrative artifact has no redistribution disposition.</p>
+        </article>
+        <aside class="evidence-plane" aria-labelledby="evidence-heading">
+          <h3 id="evidence-heading">Evidence and availability</h3>
+          <dl class="evidence-list">
+            <div><dt>Authority</dt><dd>Fictional author and edition</dd></div>
+            <div><dt>Readable text</dt><dd>Prototype-authored sample only</dd></div>
+            <div><dt>Rights</dt><dd>Undetermined for the illustrative artifact</dd></div>
+            <div><dt>Retrieval</dt><dd>No external artifact requested</dd></div>
+            <div><dt>Revision</dt><dd>Synthetic review fixture v1</dd></div>
+            <div><dt>Digest</dt><dd>Not shown; a hash would prove bytes, not authority</dd></div>
+          </dl>
+          <button class="button" type="button" data-open-dialog="related-dialog" data-related-context="instrument">Related objects</button>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="corpus-footer">
+    <nav aria-label="Project">
+      <a href="#prototype-main">About</a>
+      <a href="#prototype-main">Contributing</a>
+      <a href="#prototype-main">Licence</a>
+      <a href="#prototype-main">Third-party material</a>
+      <a href="#prototype-main">Feedback</a>
+    </nav>
+    <p>Review-only local prototype. Production routes, data, PDFs, and liturgy assets are untouched.</p>
+  </footer>
+
+  <dialog id="menu-dialog" aria-labelledby="menu-dialog-title">
+    <div class="dialog-shell">
+      <header><h2 id="menu-dialog-title">Corpus menu</h2><button type="button" data-close-dialog aria-label="Close corpus menu">Close</button></header>
+      <nav aria-label="Mobile global corpus">
+        <a href="#prototype-main" data-domain="Home">Home</a><a href="#prototype-main" data-domain="Publications" aria-current="page">Publications</a>
+        <a href="#prototype-main" data-domain="Sources">Sources</a><a href="#prototype-main" data-domain="Scripture">Scripture</a>
+        <a href="#prototype-main" data-domain="Liturgy">Liturgy</a><a href="#prototype-main" data-domain="History">History</a>
+        <a href="#prototype-main" data-domain="Law">Law</a><a href="#prototype-main" data-domain="Commentary">Commentary</a>
+      </nav>
+    </div>
+  </dialog>
+
+  <dialog id="jump-dialog" aria-labelledby="jump-dialog-title">
+    <div class="dialog-shell jump-shell">
+      <header><div><p class="eyebrow">Synthetic destination fixture</p><h2 id="jump-dialog-title">Jump in the corpus</h2></div><button type="button" data-close-dialog aria-label="Close Jump">Close</button></header>
+      <label for="jump-query">Title, place, or exact citation</label>
+      <input id="jump-query" type="search" autocomplete="off" aria-describedby="jump-boundary">
+      <p id="jump-boundary" class="fixture-warning">This is not production global search.</p>
+      <p id="jump-status" role="status" aria-live="polite">4 synthetic destinations</p>
+      <ul class="jump-results" id="jump-results">
+        <li data-search-terms="publication virtues faith"><a href="#prototype-main"><strong>A Demonstration of the Virtues</strong><span>Publication · two provider treatments</span></a></li>
+        <li data-search-terms="source custodia 1.4 latin"><a href="#prototype-main"><strong>De custodia fontium I.4</strong><span>Source passage · fictional edition</span></a></li>
+        <li data-search-terms="scripture luke 4"><a href="#prototype-main"><strong>Luke 4</strong><span>Scripture · illustrative destination only</span></a></li>
+        <li data-search-terms="canon 100 law"><a href="#prototype-main"><strong>Canon 100</strong><span>Law · illustrative destination only</span></a></li>
+      </ul>
+      <p class="jump-empty" id="jump-empty" hidden><strong>No synthetic match.</strong> Clear the fixture query or browse a public place.</p>
+    </div>
+  </dialog>
+
+  <dialog id="related-dialog" aria-labelledby="related-dialog-title">
+    <div class="dialog-shell related-shell">
+      <header><div><p class="eyebrow">Typed edges · synthetic</p><h2 id="related-dialog-title">Related corpus objects</h2></div><button type="button" data-close-dialog aria-label="Close related objects">Close</button></header>
+      <p class="fixture-warning">These demonstrate relationship language; they are not corpus assertions.</p>
+      <dl class="related-list" data-related-set="reader">
+        <div><dt>Cites passage</dt><dd><a href="#prototype-main">De custodia fontium I.4</a><span>Reader → Source passage · fictional edition</span></dd></div>
+        <div><dt>Parallel provider treatment</dt><dd><a href="#prototype-main">On Reading a Source-First Claim</a><span>Reader → Claude treatment · illustrative</span></dd></div>
+        <div><dt>Comments on Scripture passage</dt><dd><a href="#prototype-main">Luke 4</a><span>Reader → Commentary destination · illustrative</span></dd></div>
+      </dl>
+      <dl class="related-list" data-related-set="instrument" hidden>
+        <div><dt>Is cited by publication</dt><dd><a href="#prototype-main">On Reading a Source-First Claim</a><span>Source passage → Reader · illustrative</span></dd></div>
+        <div><dt>Is passage of work</dt><dd><a href="#prototype-main">De custodia fontium</a><span>Passage → Work · fictional identity</span></dd></div>
+        <div><dt>Has adjacent passage</dt><dd><a href="#prototype-main">Book I, section 5</a><span>Passage → Passage · text withheld in fixture</span></dd></div>
+      </dl>
+      <p class="related-empty" data-related-set="catalogue" hidden><strong>No structured Related fixture is defined for this Catalogue view.</strong> Browse a work row or close this review surface.</p>
+    </div>
+  </dialog>
+
+  <script src="prototype.js"></script>
+</body>
+</html>
