@@ -474,6 +474,33 @@ one work-register marker. Five requirements pass; the sixth stays open because
 `day-missal.css` is protected liturgy and needs that deliverable's authority,
 which is the honest state rather than a rounding of it.
 
+### E1 Catena route-owned correction lane
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-2026-08-11 -->
+
+Branch `impl/catena-wave-1-e1-corrections` was created from current main
+`9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4` per the review's one E1 next
+action; its route-correction commit is `67191afd1d6281006e5cb947596452481c0d9692`
+and the branch tip is the durable-record commit that carries this section. The
+reviewed head `efd7559a9` served only as reference for reconstructing the
+route-owned patch. The lane's exclusive boundary is the three Catena route
+files and the new `tools/tests/test_catena_wave_1.py`; `catena-model.js` is
+byte-identical. It corrected review findings 2, 6, 7, 8, the route halves of
+3, 4, and 5, and the evidence half of 11, and recorded — without touching —
+the generator (1; 3 and 4 generator halves), release (9), common-gate `voice`
+sample, and B0/shared-shell (10; shared-history half of 5) prerequisites.
+
+Validation at `67191afd1`: focused suites 99, 52, 47, 5, 11, and 18-with-1-skip,
+all passing; the artifact gate reports 2,290 assertions with 226 failures and
+the Catena route's 121 rows identical to the pristine-main baseline.
+`make check-release-bindings` fails on this branch because the route files
+changed and only the release owner may re-sign; the failure is disclosed in
+the handoff and is the intended fail-closed state, not a regression. The
+handoff package identity is recorded in the roadmap's correction subsection
+and in the package itself; the deliverable is
+`corpus-browser-catena-e1-corrections-2026-08-11`, blocked on fresh
+independent review. No merge to main, deployment, or cutover occurred.
+
 ## Promised work
 
 ### Corpus browser foundation design

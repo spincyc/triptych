@@ -1239,3 +1239,45 @@ state = "complete"
   criterion = "Artwork validation and source-controlled review records close every held notice without inventing object identities or implying external approval."
   status = "pass"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "corpus-browser-catena-e1-corrections-2026-08-11"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Correct only the route-owned defects from the 2026-08-10 E1 Catena CHANGES REQUIRED review on a new branch from current main, record every outside-owner prerequisite without crossing its boundary, and return one protocol-complete exact-head handoff for fresh independent review without merging, deploying, or re-signing release bindings."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "route-owned-defects-corrected"
+  criterion = "Findings 2, 6, 7, 8, the route halves of 3, 4, and 5, and the evidence half of 11 are corrected inside the exclusive boundary of src/web/browser/catena/catena.js, catena.css, index.html, and tools/tests/test_catena_wave_1.py, with the focused suite green at the route-correction commit and no edit to any generator, generated-data, release, gate, shared-shell, or protected Liturgy path."
+  status = "pass"
+  evidence = [
+    "src/web/browser/catena/catena.js",
+    "src/web/browser/catena/catena.css",
+    "src/web/browser/catena/index.html",
+    "tools/tests/test_catena_wave_1.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "outside-owner-prerequisites-recorded"
+  criterion = "The generator Scripture-projection, acquisition-reconciliation, and licence-projection defects, the release Catena-data binding and re-signing, the common-gate voice sample, and the B0 shell and shared-history defects are recorded as intentionally uncorrected with their owners named, and no file of theirs is changed on the correction branch."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "protocol-complete-handoff-package"
+  criterion = "One immutable timestamped handoff directory and matching ZIP under build/agent-handoffs contain HANDOFF.md, REVIEW_REQUEST.md with blockers, changes.patch, checks.txt with exact commands and numeric exits including the disclosed red release-bindings state, sources.md, the unresolved-blocker ledger, the required capture matrix with contact sheet, and SHA-256 manifest and ZIP digest for the exact packaged head."
+  status = "open"
+  evidence = [
+    "guidance/external-review-handoffs.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "Independent external review of the exact packaged head records one durable disposition for the corrected route in guidance/corpus-browser-roadmap.md; packaging, green tests, or this ledger entry alone authorize no acceptance, merge, deployment, or cutover."
+  status = "open"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+  ]
