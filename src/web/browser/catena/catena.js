@@ -1,46 +1,22 @@
 /* ===========================================================================
  * The catena page — a chapter, and every fragment held on it
  * ===========================================================================
+ * Book, chapter, translation; the chapter, and beside or beneath it the
+ * commentary held on it, oldest first. Above 64rem chapter and chain are
+ * two columns — a composition, not a reordering; facts first, prose in the
+ * footer, per the maintainer's standing direction.
  *
- * The reader picks a book, a chapter and a translation. The page shows the
- * chapter in that translation and, beneath it, the commentary this project
- * holds on that chapter, oldest first.
+ * WHAT THIS FILE DOES NOT DO, AND MUST NOT START DOING. It does not decide
+ * what belongs to a chapter — that is `catena-model.js`, replayed by
+ * `catena check`; one derivation. It does not resolve a numbering: the
+ * projection's refusals arrive as data, because guessing where a displaced
+ * psalm's boundary moved is what this apparatus exists to prevent. It does
+ * not filter on rights or confidence — both guards live in the generator.
  *
- * WHAT THIS FILE DOES NOT DO, AND MUST NOT START DOING:
- *
- *   It does not decide which fragments belong to a chapter. That is
- *   `catena-model.js`, which `catena check` replays under node against the
- *   solved cases in the source. One derivation.
- *
- *   It does not resolve a numbering. `guidance/web-data.md` keeps numbering
- *   logic out of the browser entirely: the refusals the projection made arrive
- *   as data in the book file, and this file reads them. Working out where a
- *   displaced psalm's boundary moved is exactly the guess the whole apparatus
- *   exists to prevent.
- *
- *   It does not filter on rights or on confidence. An unpublishable fragment
- *   never enters the structure file, and an L1 confidence is dropped at
- *   generation. Both guards live where a page cannot undo them, which is the
- *   same reason `bibles.json` excludes a licensed edition rather than the
- *   browser hiding it.
- *
- * WHAT A READER PAYS FOR. The book file is a SPINE: it carries every fragment's
- * author, work, date, extent, edition, rights and length, and no prose at all.
- * Each fragment's text is its own file, named by the spine, and is fetched when
- * the reader opens that fragment. So a chapter that holds nothing costs the
- * spine, a chapter that holds twenty costs the spine, and reading one of the
- * twenty costs that one. Genesis was 606 KB before this, all of it prose about
- * chapter 1, fetched in full by a reader on chapter 40.
- *
- * The cost is real and is stated on the page rather than hidden: text that has
- * not been fetched is not in the document, so the browser's own find-in-page
- * cannot reach it. That is the trade, and it is why the summary line carries a
- * word count — a reader chooses what to open knowing how long it is.
- *
- * THE ORDER OF THE PAGE IS THE MAINTAINER'S STANDING DIRECTION: the facts
- * first, everything else below. Reference, chapter, chain; then the works not
- * yet acquired; then the fragments held but not renderable; then, in the
- * footer, the prose.
+ * WHAT A READER PAYS FOR. The book file is a SPINE — no prose; a
+ * fragment's text is its own file, fetched when opened, so unfetched text
+ * is beyond find-in-page. The page says so, and prints each length so the
+ * reader chooses knowingly.
  * ======================================================================== */
 
 'use strict';
@@ -52,69 +28,45 @@
   const INDEX_PATH = 'structure/catena/index.json';
   const PARAGRAPH_INDEX_PATH = 'structure/paragraphs/index.json';
 
-  // The languages a fragment's edition can be in, named for a reader. The codes
-  // are the source library's, which are ISO 639 and are what the `lang`
-  // attribute needs; the words are what a selector can be read in. An unknown
-  // code prints as itself rather than being dropped, because a language nobody
-  // named is still a language the reader is looking at.
+  // ISO 639 codes named for a reader; an unknown code prints as itself.
   const LANGUAGE_NAMES = {
-    la: 'Latin',
-    grc: 'Greek',
-    el: 'Greek',
-    en: 'English',
-    de: 'German',
-    fr: 'French',
-    he: 'Hebrew',
-    syr: 'Syriac',
-    it: 'Italian',
-    es: 'Spanish'
+    la: 'Latin', grc: 'Greek', el: 'Greek', en: 'English', de: 'German',
+    fr: 'French', he: 'Hebrew', syr: 'Syriac', it: 'Italian', es: 'Spanish'
   };
 
   function languageName(code) {
     return LANGUAGE_NAMES[String(code || '')] || String(code || '');
   }
 
-  /** "Latin, Greek and English" — a list, joined the way a sentence needs. */
+  /** "Latin, Greek and English". */
   function joinNames(names) {
     if (names.length <= 1) return names.join('');
     return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
   }
 
-  /**
-   * One voice, named for a reader.
-   *
-   * The original is named by nothing but itself, because the whole point of the
-   * axis is that "Latin" does not distinguish Ambrose writing it from
-   * Eustathius translating into it. A translation is named by the language it
-   * translates INTO, because that is what a reader who wants English is asking
-   * for.
-   */
+  // The original is named only by itself — "Latin" cannot tell Ambrose
+  // writing from Eustathius translating; a translation, by the language
+  // it translates INTO.
   function voiceLabel(entry) {
     if (!entry) return '';
     if (entry.voice === M.ORIGINAL) return 'The author’s own language';
     return languageName(entry.language) + ' translation';
   }
 
-  /** The same, inside a sentence: "the author’s own language". */
+  /** The same, inside a sentence. */
   function voicePhrase(entry) {
     if (!entry) return '';
     if (entry.voice === M.ORIGINAL) return 'the author’s own language';
     return languageName(entry.language) + ' translation';
   }
 
-  /** "the author’s own language and English translation", for prose. */
+  /** Every held voice as prose, for the empty-selection sentence. */
   function voiceList(file) {
     return joinNames(M.chapterVoices(file).map(voicePhrase));
   }
 
-  /**
-   * The voice a selection names, whether or not this chapter holds it.
-   *
-   * A reader who asked for English on a chapter that has none must be told
-   * "English" — so the selection is read back from its own key rather than
-   * looked up among what is present, which would leave the sentence with a
-   * blank where the answer belongs.
-   */
+  // The voice a selection names, held here or not — read back from the
+  // key itself.
   function chosen(file, wanted) {
     const held = M.chapterVoices(file).find((one) => one.key === wanted);
     return held || M.parseVoiceKey(wanted);
@@ -127,55 +79,45 @@
   const bookSelect = document.getElementById('book-select');
   const chapterSelect = document.getElementById('chapter-select');
   const bibleSelect = document.getElementById('bible-select');
-  // The control is `#language-select` in the markup and stays so: another lane
-  // is refactoring this page's stylesheet, and a renamed hook would collide with
-  // it for no gain a reader can see.
+  // `#language-select` in the markup, and stays so: the id is older
+  // than the axis; the hash key is `voice`.
   const voiceSelect = document.getElementById('language-select');
   const previousButton = document.getElementById('prev-button');
   const nextButton = document.getElementById('next-button');
+  const controlsDisclosure = document.getElementById('controls-filter');
 
   let index = null;
   let bibles = [];
   const chapterFiles = new Map();
-  // One promise per fragment text file, so a reader who closes a fragment and
-  // opens it again, or pages away and back, refetches nothing.
+  // One promise per file, so closing and reopening refetches nothing.
   const fragmentTexts = new Map();
   const paragraphFiles = new Map();
-  // The paragraph layer, and whether the reader wants it. On by default because
-  // a whole chapter set as one block is the reason the layer exists; the switch
-  // is what lets it be turned off, and turned off the chapter renders exactly as
-  // it did before the layer existed.
   let paragraphs = null;
-  // Always on, and not a control. Where a chapter divides, that is how the
-  // chapter reads; offering it as a preference invited a reader to turn off
-  // the edition's own paragraphing. The opt-out that does exist is the
-  // typesetter's `--no-paragraphs`, which is for reviewing an edition
-  // mechanically rather than reading it.
+  // Always on, not a control: where a chapter divides, that is how it reads.
   const paragraphsWanted = true;
-  // Authors the reader has switched OFF, held across chapters. Storing the
-  // exclusions rather than the inclusions is what lets an author who does not
-  // comment on the next chapter stay off rather than reappear checked.
+  // Authors switched OFF — exclusions, so they persist across chapters.
   const hiddenAuthors = new Set();
+  // A voice a link asked for, held until a control that can hold it
+  // exists. THE DEFECT THIS REPLACES: assigning it while the select held
+  // one option read back '' and rewrote the reader's URL without their
+  // `voice`. It now seeds the first `fillVoices`.
+  let wantedVoice = '';
+  // True while an invalid-address notice is up; it matches no hash.
+  let showingError = false;
+  // True when the next render answers an ARRIVING address (cold load, Back,
+  // Forward, a typed hash) rather than a reader action on the controls.
+  let arrival = false;
 
-  /* ------------------------------------------------------------------------
-   * Data
-   * --------------------------------------------------------------------- */
+  /* --------------------------------------------------------------- data */
 
   function heldEntry(token) {
     return (index.held || []).find((book) => book.token === token) || null;
   }
 
-  /**
-   * The spine for one chapter: who comments here, what is led to, what is
-   * refused. It carries no prose.
-   *
-   * A chapter with nothing at all has NO FILE, and the index says which chapters
-   * have one — so a reader on Genesis 40 asks for nothing and is told plainly
-   * that nothing is held there. The path and the padding both come from the
-   * index rather than being composed here: `structure/catena/01-gen/040.json` is
-   * a form the generator owns, and a page that assembled it out of a token and a
-   * width would be the second place that convention lived.
-   */
+  // The spine for one chapter. A chapter with nothing has NO FILE, so
+  // absence costs no request; the path is read from the index, never
+  // composed. A 404 on a listed chapter is a broken record, not emptiness
+  // — it comes back marked.
   function chapterFile(token, chapter) {
     const held = heldEntry(token);
     if (!held || !(held.present || []).includes(Number(chapter))) {
@@ -188,7 +130,7 @@
     const pending = T.loadJSON(path).then(
       (file) => file,
       (error) => {
-        if (error instanceof T.NotFound) return null;
+        if (error instanceof T.NotFound) return { unfetched: path };
         throw error;
       }
     );
@@ -200,25 +142,11 @@
     return (index.canon || []).find((book) => book.token === token) || null;
   }
 
-  /**
-   * Where this edition opens a paragraph in this chapter.
-   *
-   * The layer is the EDITION's, not the catena's — `scripts/_paragraphs.py`
-   * owns the derivation and this page owns none of it. A chapter that runs on
-   * has no file, so the 404 is the answer and costs one request; a chapter that
-   * divides costs about 220 bytes.
-   *
-   * Switched off, this asks for nothing at all and the chapter renders exactly
-   * as it did before the layer existed. That is the point of the switch: a
-   * mechanical review of an edition must be able to see the edition and not
-   * this project's reading of it.
-   */
+  // Where this edition opens a paragraph. The layer is the EDITION's —
+  // a chapter that runs on has no file, so the 404 is the answer.
   function chapterParagraphs(bible, token, chapter) {
     if (!paragraphsWanted || !paragraphs) return Promise.resolve(null);
     const edition = (paragraphs.editions || {})[bible.id];
-    // The book's path component is the one the canon index wrote down. It is
-    // read, never composed: the convention lives in `scripts/_canon.py` and a
-    // page that rebuilt it would be the second place it lived.
     const book = canonEntry(token);
     if (!edition || !book || !book.path) return Promise.resolve(null);
     const digits = Number(paragraphs.chapter_digits) || 1;
@@ -236,14 +164,8 @@
     return pending;
   }
 
-  /**
-   * One fragment's prose, fetched once and kept.
-   *
-   * Keyed by the path the SPINE gave, never by a path this file assembles from
-   * an id: a page that builds its own URLs out of record identifiers is a page
-   * that can be walked out of its data root by a bad identifier. The generator
-   * checks the name and writes it down; this follows it.
-   */
+  // One fragment's prose, fetched once and kept — keyed by the path the
+  // SPINE gave, never assembled from an id.
   function fragmentText(path) {
     if (!path) return Promise.resolve(null);
     if (fragmentTexts.has(path)) return fragmentTexts.get(path);
@@ -253,9 +175,7 @@
   }
 
 
-  /* ------------------------------------------------------------------------
-   * Rendering — the chapter
-   * --------------------------------------------------------------------- */
+  /* ------------------------------------------------- the chapter */
 
   function renderChapter(container, bible, book, chapter, result, marks) {
     const section = T.el('section', 'chapter');
@@ -274,21 +194,19 @@
       return;
     }
 
-    // The chapter is set as prose, not as a stack of verse-lines, because a
-    // stack of verse-lines is a concordance. Where paragraph structure is held
-    // it divides that prose; where it is not, the chapter runs on as it always
-    // has. `marks` is empty in both the "switched off" and the "none held"
-    // cases, and the note below says which of the two a reader is looking at.
+    // Prose — a stack of verse-lines is a concordance.
     const breaks = (marks && marks.breaks) || {};
     const body = T.el('div', 'passage');
     body.lang = bible.language || 'en';
     let passage = null;
     let printed = 0;
     let projected = 0;
+    let opened = 0;
     for (const number of numbers) {
       const kind = breaks[String(number)];
       if (!passage || kind) {
         passage = T.el('p', 'passage-paragraph');
+        opened += 1;
         if (kind === 'projected') passage.classList.add('projected');
         if (kind === 'printed') printed += 1;
         if (kind === 'projected') projected += 1;
@@ -299,13 +217,11 @@
       verse.appendChild(document.createTextNode(result.verses[String(number)] + ' '));
       passage.appendChild(verse);
     }
-    // Closed like everything else. The maintainer's direction is that the page
-    // opens as an index of what is here — the chapter, who comments on it, what
-    // is not yet acquired — and a reader opens what they want. An earlier pass
-    // kept this open on the theory that the chapter is the point; it made the
-    // page open on a wall of text with the chain pushed below the fold.
+    // OPEN. Closed dated from the stacked layout; the columns answer
+    // that. Still a `details`.
     const holder = document.createElement('details');
     holder.className = 'chapter-body';
+    holder.open = true;
     const head = document.createElement('summary');
     head.className = 'chapter-head';
     head.appendChild(
@@ -318,20 +234,21 @@
         numbers.length + (numbers.length === 1 ? ' verse' : ' verses')
       )
     );
+    // The chip counts the PARAGRAPHS on the page, not the recorded
+    // breaks: the first opens unmarked, so the break count was off by one.
     if (printed + projected) {
       head.appendChild(
         T.el(
           'span',
           'chapter-count',
-          printed + projected + (printed + projected === 1 ? ' paragraph' : ' paragraphs')
+          opened + (opened === 1 ? ' paragraph' : ' paragraphs')
         )
       );
     }
     holder.appendChild(head);
     holder.appendChild(body);
-    // A printed mark and a projected one are not the same claim, so the page
-    // says which it is showing rather than letting a division this project
-    // inferred read as the edition's own printing.
+    // A printed mark and a projected one are different claims; the
+    // note counts BREAKS, in those words.
     if (printed + projected) {
       const note = T.el('p', 'paragraph-note');
       const parts = [];
@@ -363,22 +280,16 @@
     container.appendChild(section);
   }
 
-  /* ------------------------------------------------------------------------
-   * Rendering — the chain
-   *
-   * Rule 6 governs the label: a fragment shown under a chapter it only reaches
-   * into still says where it actually runs from and to, because a fragment cut
-   * at a boundary would attribute to one chapter words written about another.
-   * --------------------------------------------------------------------- */
+  /* ------------------------------------------------- the chain
+   * Rule 6 governs the label: a fragment shown under a chapter it only
+   * reaches into still says where it actually runs. */
 
   function renderFragment(fragment, bookName) {
     const item = T.el('li', 'fragment');
+    item.setAttribute('data-state', 'held');
 
-    // Collapsed by default, and `details` rather than a scripted toggle so the
-    // control is keyboard-reachable. The summary carries author, work, date,
-    // extent and length, which is what makes a closed chain worth reading on
-    // its own: it becomes a chronological index of who comments here, how far
-    // each one reaches, and how much of him there is.
+    // `details`, not a scripted toggle: keyboard-reachable, and closed
+    // rows read as a chronological index.
     const details = document.createElement('details');
     details.className = 'fragment-body';
 
@@ -389,12 +300,8 @@
     if (fragment.date !== null && fragment.date !== undefined) {
       head.appendChild(T.el('span', 'fragment-date', String(fragment.date)));
     }
-    // The language, and WHOSE it is. "Latin" alone is true of Ambrose writing
-    // and of Eustathius translating Basil, and a reader cannot tell them apart
-    // from it; the second word is what makes the chip a claim rather than a
-    // label. Where the generator could not establish the voice the chip says
-    // only the language, because inventing the missing half is the failure this
-    // whole axis exists to prevent.
+    // The language, and WHOSE it is; an unestablished voice says only
+    // the language.
     if (fragment.language) {
       const name = languageName(fragment.language);
       head.appendChild(
@@ -432,16 +339,22 @@
     head.appendChild(extent);
     details.appendChild(head);
 
-    // The prose is not here yet, and is fetched the first time the reader opens
-    // this fragment. A failure is reported against this fragment and nothing
-    // else: one text that will not load must not take the chain down with it.
+    // A licence travels ABOVE the words, so a copied selection carries
+    // the condition. Rendered only when the record carries one; nothing is
+    // invented for a bare `licensed`.
+    const licence = (note) => {
+      const block = T.el('p', 'fragment-acknowledgement');
+      block.appendChild(T.el('strong', null, 'Licence: '));
+      block.appendChild(document.createTextNode(note));
+      return block;
+    };
+    if (fragment.acknowledgement) details.appendChild(licence(fragment.acknowledgement));
+
+    // The prose arrives on first open; a failure is reported against
+    // this fragment and nothing else.
     const text = T.el('p', 'fragment-text', 'Loading…');
     text.lang = fragment.language || 'en';
     details.appendChild(text);
-    // The apparatus that travels with the prose: why the extent was drawn where
-    // it was, and on what ground the date rests. Both are about this one
-    // fragment, so both are in its file rather than in the spine, and both are
-    // shown below the text where a reader can weigh them against it.
     const apparatus = T.el('div', 'fragment-apparatus');
     details.appendChild(apparatus);
     let asked = false;
@@ -455,6 +368,9 @@
             text.textContent =
               'This fragment carries no text file, so nothing of it can be shown.';
             return;
+          }
+          if (loaded.acknowledgement && !fragment.acknowledgement) {
+            details.insertBefore(licence(loaded.acknowledgement), text);
           }
           text.textContent = String(loaded.text || '');
           if (loaded.basis) {
@@ -480,42 +396,36 @@
       );
     });
 
-    // Where it came from and how to check it. Below the text, never above.
+    // Provenance, below the text, rendered whether or not the text loads.
+    // Every rights, printing and attribution fact the spine carries is
+    // printed; only `container` (a record id) stays unprinted.
     const source = T.el('p', 'fragment-source');
     source.appendChild(document.createTextNode(fragment.locator));
-    if (fragment.edition) {
+    const fact = (said) => {
       source.appendChild(T.el('span', 'sep'));
-      source.appendChild(document.createTextNode(fragment.edition));
-    }
-    if ((fragment.translators || []).length) {
-      source.appendChild(T.el('span', 'sep'));
-      source.appendChild(
-        document.createTextNode('tr. ' + fragment.translators.join(', '))
-      );
-    }
-    // `fragment.container` is carried in the data and deliberately not printed:
-    // it is a record id, and the edition line above already names the volume in
-    // words. A reader is owed the volume, not the key it is filed under.
-    if (fragment.rights) {
-      source.appendChild(T.el('span', 'sep'));
-      source.appendChild(document.createTextNode(fragment.rights));
-    }
-    // The review state, said truthfully or not at all. `inspected` means
-    // someone read it; `verified` means it was collated against the
-    // controlling witness. Printing them alike would claim a check nobody
-    // performed, so the weaker state is the one that gets the word.
+      source.appendChild(document.createTextNode(said));
+    };
+    if (fragment.edition) fact(fragment.edition);
+    if (fragment.edition_published) fact(fragment.edition_published);
+    if ((fragment.translators || []).length) fact('tr. ' + fragment.translators.join(', '));
+    if (fragment.rights) fact(fragment.rights);
+    if (fragment.attribution) fact(fragment.attribution);
+    // A rights basis only where no acknowledgement already states the terms.
+    if (fragment.rights_basis && !fragment.acknowledgement) fact(fragment.rights_basis);
+    // The weaker review state gets the word — printing `inspected` and
+    // `verified` alike would claim a collation nobody made.
     if (fragment.review && fragment.review !== 'verified') {
       source.appendChild(T.el('span', 'sep'));
       source.appendChild(T.el('span', 'state', fragment.review + ', not collated'));
     }
-    // An excerpt is worth more when its context is a click away. The source
-    // library reads the whole edition this fragment was cut from, and the
-    // passage id is the only thing needed to reach the right place in it: that
-    // page looks the id up in what its own generator wrote, rather than being
-    // handed a path this page would have to compose and keep in step.
+    // THE HREF IS PINNED by `test_browser_url_contract.py`.
     if (fragment.id) {
       source.appendChild(T.el('span', 'sep'));
-      const whole = T.el('a', 'fragment-whole', 'Read the whole work');
+      const whole = T.el(
+        'a',
+        'fragment-whole',
+        'Open this passage in the Source Library'
+      );
       whole.href = '../sources/#passage=' + encodeURIComponent(fragment.id);
       source.appendChild(whole);
     }
@@ -524,20 +434,10 @@
     return item;
   }
 
-  /**
-   * Why the works standing here do not reach the language the reader asked for.
-   *
-   * A reader without Latin who chooses English on Genesis 2 is shown two
-   * fragments out of ninety-nine, and is owed the reason for the other
-   * ninety-seven. Left unsaid, the page reads as though the English had failed
-   * to load — and the pressure that answers is the one this project must never
-   * yield to, which is supplying a fluent English of a Latin father itself.
-   *
-   * The findings are the generator's, from a tracked record with its evidence
-   * and its bounds, and `catena check` refuses a record claiming a work reaches
-   * no English while the library holds an English edition of it. Nothing is
-   * decided here; this only prints it.
-   */
+  // Why the works standing here miss the asked-for language; unsaid, the
+  // page reads as a load failure. The findings are the generator's; this
+  // prints them, counting the two apart — a partly public-domain English
+  // is SOME, and filing it under "none" was false.
   function renderAbsences(container, file, wanted) {
     const asked = M.parseVoiceKey(wanted);
     if (!asked || asked.voice !== M.TRANSLATION || !asked.language) return;
@@ -560,16 +460,26 @@
     if (!rows.length) return;
 
     const note = T.el('details', 'absence-note');
+    note.setAttribute('data-state', 'absence');
+    const untaken = rows.filter((row) => row.absence.partial).length;
+    const closed = rows.length - untaken;
+    const language = languageName(asked.language);
+    const parts = [];
+    if (closed) {
+      parts.push(
+        (closed === 1 ? 'One work standing here has' : closed + ' works standing here have') +
+          ' no ' + language + ' this project may publish'
+      );
+    }
+    if (untaken) {
+      parts.push(
+        (closed ? String(untaken) : untaken === 1 ? 'one work standing here' : untaken + ' works standing here') +
+          (untaken === 1 ? ' has' : ' have') +
+          ' only a partly public domain ' + language + ', not yet taken'
+      );
+    }
     const head = document.createElement('summary');
-    head.textContent =
-      rows.length === 1
-        ? 'One work standing here has no ' +
-          languageName(asked.language) +
-          ' this project may publish'
-        : rows.length +
-          ' works standing here have no ' +
-          languageName(asked.language) +
-          ' this project may publish';
+    head.textContent = parts.join('; ');
     note.appendChild(head);
     const list = T.el('ul', 'absence-list');
     for (const row of rows) {
@@ -577,8 +487,8 @@
       item.appendChild(T.el('span', 'absence-author', row.author));
       item.appendChild(T.el('span', 'absence-work', row.work));
       item.appendChild(T.el('p', 'absence-reason', row.absence.reason));
-      // A partial that exists and has not been taken is an offer, not an
-      // excuse, and reads as one only if it is kept separate from the reason.
+      // A partial not yet taken is an offer, not an excuse, and reads as
+      // one only apart from the reason.
       if (row.absence.partial) {
         item.appendChild(
           T.el('p', 'absence-partial', 'Partly public domain — ' + row.absence.partial)
@@ -591,11 +501,7 @@
   }
 
   function renderChain(container, file, book) {
-    // Already the chapter's own list: the spine is addressed by chapter, and the
-    // derivation that decided which fragments stand here ran in the generator,
-    // out of `catena-model.js` under node. One derivation, and it is that file's.
-    // What each fragment shares with its edition is stored once per file and
-    // rejoined here, which is the same file's `chapterFragments`.
+    // Already the chapter's own list: the derivation is the model's.
     const all = M.chapterFragments(file);
     const wanted = voiceSelect.value;
     const held = all.filter((one) => M.matchesVoice(one, wanted));
@@ -608,8 +514,7 @@
     const heading = T.el('h2', 'section-heading', headingText);
     container.appendChild(heading);
     if (!held.length) {
-      // Rule 1: a chapter with no fragments shows no fragments, and says so
-      // plainly rather than showing something else in their place.
+      // Rule 1: no fragments shows no fragments, said plainly.
       container.appendChild(
         T.el(
           'p',
@@ -632,9 +537,8 @@
       return 0;
     }
 
-    // Which voices this chapter is held in, and which the reader is not seeing.
-    // Said rather than hidden: a father held only in his own Latin must not
-    // disappear from the page because the control is set to English.
+    // A father held only in his own Latin must not vanish under an
+    // English selection: the unshown voices are named.
     if (wanted) {
       const others = M.chapterVoices(file).filter((one) => one.key !== wanted);
       if (others.length) {
@@ -653,33 +557,38 @@
       renderAbsences(container, file, wanted);
     }
 
-    // Grouped by author, in the order the chain already runs, which is oldest
-    // first. Insertion order is the grouping order, so the tree inherits the
-    // chronology rather than re-deriving it — and a second sort here could
-    // silently disagree with the model's.
+    // Grouped WITHOUT reordering: only a CONTIGUOUS author+date run
+    // shares a heading. By-author grouping filed Augustine's 417 under a
+    // 401 heading ahead of Severian's 401; the three stand as three.
     const groups = [];
-    const byAuthor = new Map();
     for (const fragment of held) {
-      let group = byAuthor.get(fragment.author);
-      if (!group) {
-        group = { author: fragment.author, date: fragment.date, fragments: [] };
-        byAuthor.set(fragment.author, group);
-        groups.push(group);
+      const date = fragment.date === undefined ? null : fragment.date;
+      const last = groups[groups.length - 1];
+      if (last && last.author === fragment.author && last.date === date) {
+        last.fragments.push(fragment);
+      } else {
+        groups.push({ author: fragment.author, date: date, fragments: [fragment] });
       }
-      group.fragments.push(fragment);
     }
 
     const list = T.el('ul', 'chain');
     const rendered = [];
+    // The first group opens: all closed reads as nothing, all open as a
+    // wall. No request either way.
+    let first = true;
     for (const group of groups) {
       const item = T.el('li', 'author');
       const node = document.createElement('details');
       node.className = 'author-body';
+      if (first) {
+        node.open = true;
+        first = false;
+      }
 
       const summary = document.createElement('summary');
       summary.className = 'author-head';
       summary.appendChild(T.el('span', 'author-name', group.author));
-      if (group.date !== null && group.date !== undefined) {
+      if (group.date !== null) {
         summary.appendChild(T.el('span', 'author-date', String(group.date)));
       }
       summary.appendChild(
@@ -703,10 +612,16 @@
       rendered.push({ author: group.author, item: item, count: group.fragments.length });
     }
 
-    // Who may be read. The set holds the DESELECTED authors, so turning one off
-    // keeps him off while paging through chapters, and an author who simply
-    // does not comment on the next chapter does not come back switched on.
-    // Hiding rows rather than rebuilding is what keeps an opened node open.
+    // One toggle per AUTHOR, though he may stand at several dates.
+    const authors = [];
+    for (const row of rendered) {
+      if (!authors.includes(row.author)) authors.push(row.author);
+    }
+
+    let filterHolder = null;
+
+    // DESELECTED authors; hiding rows, not rebuilding, keeps open nodes
+    // open.
     function applyFilter() {
       let shown = 0;
       for (const row of rendered) {
@@ -714,32 +629,45 @@
         row.item.hidden = !on;
         if (on) shown += row.count;
       }
-      // The heading counts what is HELD; this says what is shown, and only when
-      // the two differ. A filtered chain reporting a smaller total as the total
-      // would misstate the corpus.
+      // The heading counts what is HELD; when the filter hides everything
+      // the page says so and opens the control that undoes it.
       heading.textContent =
-        shown === held.length ? headingText : headingText + ' \u2014 ' + shown + ' shown';
+        shown === held.length ? headingText : headingText + ' — ' + shown + ' shown';
+      if (!shown && filterHolder) {
+        heading.textContent =
+          headingText + ' — none shown; every author is switched off below';
+        filterHolder.open = true;
+      }
     }
 
-    if (rendered.length > 1) {
+    // The filter exists when there is anyone to choose between AND when a
+    // carried-over exclusion touches this chapter: a sole author switched
+    // off elsewhere must still get his switch here.
+    const hiddenHere = authors.some((name) => hiddenAuthors.has(name));
+    if (authors.length > 1 || hiddenHere) {
       const filter = T.el('div', 'author-filter');
       filter.setAttribute('role', 'group');
       filter.setAttribute('aria-label', 'Authors shown');
-      for (const row of rendered) {
+      for (const name of authors) {
         const label = T.el('label', 'author-toggle');
         const box = document.createElement('input');
         box.type = 'checkbox';
-        box.checked = !hiddenAuthors.has(row.author);
+        box.checked = !hiddenAuthors.has(name);
         box.addEventListener('change', () => {
-          if (box.checked) hiddenAuthors.delete(row.author);
-          else hiddenAuthors.add(row.author);
+          if (box.checked) hiddenAuthors.delete(name);
+          else hiddenAuthors.add(name);
           applyFilter();
         });
         label.appendChild(box);
-        label.appendChild(document.createTextNode(row.author));
+        label.appendChild(document.createTextNode(name));
         filter.appendChild(label);
       }
-      container.appendChild(filter);
+      // Folded away — twenty checkboxes were the first screen.
+      filterHolder = T.el('details', 'author-filter-disclosure');
+      filterHolder.appendChild(T.el('summary', null, 'Filter authors'));
+      filterHolder.appendChild(filter);
+      if (hiddenHere) filterHolder.open = true;
+      container.appendChild(filterHolder);
     }
 
     container.appendChild(list);
@@ -747,23 +675,27 @@
     return held.length;
   }
 
-  /* ------------------------------------------------------------------------
-   * Rendering — the things that are not fragments
-   * --------------------------------------------------------------------- */
+  /* ----------------------------------- the things that are not fragments */
 
+  // The acquisition list, printed as recorded and no further: the record
+  // is NOT reconciled against the held commentary (the two overlap), so
+  // this copy claims neither absence above nor non-possession.
+  // Reconciliation belongs to the record's generator.
   function renderLeads(container, leads) {
     if (!leads.length) return;
     const section = T.el('section', 'aside');
+    section.setAttribute('data-state', 'lead');
     section.appendChild(
-      T.el('h2', 'section-heading', 'Believed to comment here, not yet acquired')
+      T.el('h2', 'section-heading', 'Believed to comment here — the acquisition list')
     );
     section.appendChild(
       T.el(
         'p',
         'aside-note',
         leads.length +
-          ' works. This is an acquisition list, not commentary: no text of any ' +
-          'of them is held, and none of them is shown above.'
+          ' works the acquisition record lists for this chapter, printed as ' +
+          'recorded. The list is kept separately from the commentary above ' +
+          'and is not checked against it here.'
       )
     );
     const list = T.el('ul', 'lead-list');
@@ -788,6 +720,7 @@
     );
     for (const entry of blocked) {
       const node = T.el('div', 'blocked');
+      node.setAttribute('data-state', 'blocked');
       const who = T.el('b', null, entry.author + ' — ' + entry.work);
       node.appendChild(who);
       node.appendChild(T.el('span', 'why', entry.reason));
@@ -796,23 +729,15 @@
     container.appendChild(section);
   }
 
-  /**
-   * Rule 4 — where the projection refuses, the page refuses.
-   *
-   * It shows the fragment against its canonical address and states that the
-   * boundary in the selected edition is not established. It does not fall back
-   * to the same verse number, which is precisely the wrong answer dressed as
-   * the right one.
-   */
+  // Rule 4 — where the projection refuses, the page refuses, and does not
+  // fall back to the same verse number: the wrong answer dressed right.
   function renderRefusal(container, file, bible, book, chapter) {
     const here = ((file && file.refusals) || {})[bible.id] || [];
     if (!here.length) return;
-    // The projection's own note is a clause, not a sentence, so it is set into
-    // one here rather than printed as though it were prose. Nothing is added
-    // to what it says.
     const note = String(here[0].note || '').replace(/\s+$/, '');
     const sentence = note ? note.charAt(0).toUpperCase() + note.slice(1) + '.' : '';
     const node = T.el('p', 'refusal');
+    node.setAttribute('data-state', 'refusal');
     node.appendChild(T.el('strong', null, 'Boundary not established. '));
     node.appendChild(
       document.createTextNode(
@@ -831,11 +756,121 @@
     container.appendChild(node);
   }
 
-  /* ------------------------------------------------------------------------
-   * Assembly
-   * --------------------------------------------------------------------- */
+  /* ------------------------------------ the cited state, failing closed
+   * A value this page cannot honour is never traded for a default: the
+   * URL keeps the reader's text, the page names what it could not read,
+   * and recovery is a link and the live controls. */
+
+  function hashProblems(hash) {
+    const bad = [];
+    const token = hash.get('book') || '';
+    const entry = token ? canonEntry(token) : null;
+    if (token && !entry) {
+      bad.push({ key: 'book', value: token, note: 'is not a book of this canon' });
+    }
+    const chapter = hash.get('chapter') || '';
+    if (chapter) {
+      const numeric = /^[0-9]+$/.test(chapter) ? Number(chapter) : NaN;
+      // Ranged against the book the page would actually resolve: the cited
+      // book when it is sound, else the current or default one.
+      const anchor = entry || canonEntry(bookSelect.value) || canonEntry('Gen');
+      const within = anchor
+        ? numeric >= 1 && numeric <= anchor.chapters
+        : numeric >= 1;
+      if (!within) {
+        bad.push({
+          key: 'chapter',
+          value: chapter,
+          note: anchor
+            ? 'is not a chapter of ' + anchor.name + ', which has ' + anchor.chapters
+            : 'is not a chapter number'
+        });
+      }
+    }
+    const bible = hash.get('bible') || '';
+    if (bible && !bibles.some((one) => one.id === bible)) {
+      bad.push({ key: 'bible', value: bible, note: 'is not a published edition' });
+    }
+    const voice = hash.get('voice') || '';
+    if (voice) {
+      // The WHOLE key must be sound: `original:x` parses to an original
+      // voice but is not the literal key, and would self-contradict.
+      const parsed = M.parseVoiceKey(voice);
+      const sound =
+        parsed &&
+        (parsed.key === M.ORIGINAL ||
+          (parsed.voice === M.TRANSLATION && parsed.language));
+      if (!sound) {
+        bad.push({
+          key: 'voice',
+          value: voice,
+          note: 'is not a voice — “original”, or “translation:” plus a language'
+        });
+      }
+    }
+    return bad;
+  }
+
+  // The nearest valid address: sound values kept, broken ones defaulted —
+  // offered as a link, never imposed.
+  function recoveryHash(hash, bad) {
+    const broken = new Set(bad.map((one) => one.key));
+    const token =
+      !broken.has('book') && hash.get('book') ? hash.get('book') : 'Gen';
+    const entry = canonEntry(token);
+    let chapter =
+      !broken.has('chapter') && hash.get('chapter') ? hash.get('chapter') : '1';
+    if (entry && Number(chapter) > entry.chapters) chapter = '1';
+    const bible =
+      !broken.has('bible') && hash.get('bible')
+        ? hash.get('bible')
+        : (bibles[0] || {}).id || '';
+    const voice = !broken.has('voice') ? hash.get('voice') || '' : '';
+    const parts = [];
+    for (const pair of [['book', token], ['chapter', chapter], ['bible', bible], ['voice', voice]]) {
+      if (pair[1]) parts.push(pair[0] + '=' + encodeURIComponent(pair[1]));
+    }
+    return '#' + parts.join('&');
+  }
+
+  function errorSection(title) {
+    const section = T.el('section', 'catena-error');
+    section.setAttribute('data-state', 'error');
+    section.appendChild(T.el('h2', 'section-heading', title));
+    return section;
+  }
+
+  function renderInvalid(bad, recovery) {
+    T.beginRender();
+    showingError = true;
+    reference.textContent = 'Address not recognised';
+    referenceBook.textContent = '';
+    T.clear(tally);
+    T.clear(reading);
+    const section = errorSection('This address names what the page does not have');
+    for (const one of bad) {
+      const row = T.el('p', 'error-detail');
+      row.appendChild(T.el('code', null, one.key + '=' + one.value));
+      row.appendChild(document.createTextNode(' ' + one.note + '.'));
+      section.appendChild(row);
+    }
+    const recover = T.el('p', 'error-recovery');
+    recover.appendChild(document.createTextNode('The address is left as written. '));
+    const link = T.el('a', null, 'Open the nearest valid page');
+    link.href = recovery;
+    recover.appendChild(link);
+    recover.appendChild(document.createTextNode(', or change a control above.'));
+    section.appendChild(recover);
+    reading.appendChild(section);
+    reading.setAttribute('aria-busy', 'false');
+    T.statusLine('The address could not be read; its invalid values are shown, unchanged.');
+  }
+
+  /* ----------------------------------------------------------- assembly */
 
   async function render() {
+    const wasArrival = arrival;
+    arrival = false;
     const token = bookSelect.value;
     const chapter = Number(chapterSelect.value);
     const bible = bibles.find((one) => one.id === bibleSelect.value) || bibles[0];
@@ -864,65 +899,106 @@
     }
     if (!T.isCurrentRender(renderToken)) return;
 
+    // An expected spine that would not come is an error, not an absence.
+    const unfetched = file && file.unfetched ? file.unfetched : '';
+    if (unfetched) file = null;
+
     fillVoices(file);
     const leads = (file && file.leads) || [];
+    const total = M.chapterFragments(file).length;
     T.clear(reading);
-    renderRefusal(reading, file, bible, book, chapter);
-    renderChapter(reading, bible, book, chapter, chapterResult, marks);
-    const count = renderChain(reading, file, book);
-    renderLeads(reading, leads);
-    renderBlocked(reading, file);
+    let count = 0;
+    if (unfetched) {
+      renderChapter(reading, bible, book, chapter, chapterResult, marks);
+      const section = errorSection('This chapter’s commentary record did not load');
+      section.appendChild(
+        T.el(
+          'p',
+          'error-detail',
+          'The index records commentary on ' + book.name + ' ' + chapter +
+            ', but its record (' + unfetched + ') could not be fetched — a ' +
+            'data or connection fault, not an empty ' +
+            'chapter. Reloading may recover it.'
+        )
+      );
+      reading.appendChild(section);
+    } else {
+      renderRefusal(reading, file, bible, book, chapter);
+      renderChapter(reading, bible, book, chapter, chapterResult, marks);
+      // One wrapper for all that is not the chapter, so the wide grid
+      // seats the two side by side without counting children.
+      const column = T.el('div', 'chain-column');
+      count = renderChain(column, file, book);
+      renderLeads(column, leads);
+      renderBlocked(column, file);
+      reading.appendChild(column);
+    }
     reading.setAttribute('aria-busy', 'false');
 
+    // The tally states the corpus, never the filter: an empty selection
+    // must not read as an empty chapter.
     T.clear(tally);
-    tally.appendChild(T.el('b', null, count === 0 ? 'Nothing' : String(count)));
-    tally.appendChild(
-      document.createTextNode(
-        (count === 0
-          ? ' held here'
-          : count === 1
-            ? ' fragment held'
-            : ' fragments held') +
-          (leads.length ? ' · ' + leads.length + ' works not yet acquired' : '')
-      )
-    );
+    const wanted = voiceSelect.value;
+    if (unfetched) {
+      tally.appendChild(document.createTextNode('The commentary record did not load'));
+    } else {
+      tally.appendChild(T.el('b', null, total === 0 ? 'Nothing' : String(total)));
+      let text =
+        total === 0 ? ' held here' : total === 1 ? ' fragment held' : ' fragments held';
+      if (total && wanted && count < total) {
+        text += ' · ' + (count ? count + ' in ' : 'none in ') + voicePhrase(chosen(file, wanted));
+      }
+      if (leads.length) {
+        text += ' · ' + leads.length + (leads.length === 1 ? ' work' : ' works') +
+          ' on the acquisition list';
+      }
+      tally.appendChild(document.createTextNode(text));
+    }
 
     T.statusLine(
-      book.name + ' ' + chapter + ', ' + bible.label + ', ' + count + ' fragments.'
+      book.name + ' ' + chapter + ', ' + bible.label + ', ' +
+        (unfetched
+          ? 'commentary record unavailable.'
+          : total + ' fragments held' +
+            (wanted && count < total ? ', ' + count + ' shown' : '') + '.')
     );
-    T.writeHash([
-      ['book', token],
-      ['chapter', String(chapter)],
-      ['bible', bible.id],
-      // `voice`, not `language`, because the value is no longer a language
-      // code. A link carrying the old `language=en` is not translated into a
-      // voice: the two axes do not correspond — `la` named Ambrose's own Latin
-      // AND Eustathius's Latin of Basil, which the new axis exists to separate —
-      // so an old link opens on everything held rather than on a guess about
-      // which half of it was meant.
-      ['voice', voiceSelect.value],
-    ]);
+    showingError = false;
+    // History. A reader ACTION pushes an entry; an ARRIVAL never may. A
+    // hash already parsing to these four values stays byte for byte as
+    // written — rewriting `%3A`, a leading zero or an extra key would push
+    // an entry Back can only bounce off — and a partial arrival is
+    // completed with replaceState, not with a pushing write.
+    const now = T.readHash();
+    const identical =
+      now.get('book') === token &&
+      Number(now.get('chapter')) === chapter &&
+      now.get('bible') === bible.id &&
+      (now.get('voice') || '') === voiceSelect.value;
+    if (!identical) {
+      if (wasArrival && window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', currentHashText());
+      } else {
+        T.writeHash([
+          ['book', token],
+          ['chapter', String(chapter)],
+          ['bible', bible.id],
+          // `voice`, not `language`: an old `language=` link deliberately
+          // opens on everything held rather than on a guess.
+          ['voice', voiceSelect.value],
+        ]);
+      }
+    }
     updateSteps();
   }
 
-  /**
-   * The commentary control, filled from what this chapter actually holds.
-   *
-   * The axis is the AUTHOR'S OWN LANGUAGE against a translation of it, not the
-   * bare language code. Those two are different questions wherever a work is
-   * held in a translation that is not English — Basil's Hexaemeron stands here
-   * in Eustathius's ancient Latin as well as in Jackson's English, and on a
-   * language axis that Latin is indistinguishable from Ambrose's own.
-   *
-   * The list is COUNTED, never assumed. A chapter held only in its authors'
-   * own words offers only that, and a reader whose selection is not held here
-   * KEEPS IT — the chain then says so and names what is held instead, rather
-   * than silently widening to something the reader did not ask for or hiding
-   * the father who is only in the other voice.
-   */
+  // The voice control, COUNTED from what this chapter holds, never
+  // assumed. An unheld selection is KEPT; the chain says so.
   function fillVoices(file) {
     const held = M.chapterVoices(file);
-    const wanted = voiceSelect.value;
+    // The reader's own selection first; a deep-linked voice only before
+    // any selection.
+    const wanted = voiceSelect.value || wantedVoice;
+    wantedVoice = '';
     const items = [{ value: '', label: 'Everything held' }];
     for (const entry of held) items.push({ value: entry.key, label: voiceLabel(entry) });
     if (wanted && !held.some((one) => one.key === wanted)) {
@@ -962,11 +1038,67 @@
     render();
   }
 
-  /* ------------------------------------------------------------------------
-   * Start
-   * --------------------------------------------------------------------- */
+  /* ------------------------------ history, route-owned and deterministic
+   * Not `T.onHashChange`: its remembered-write string goes stale after
+   * Back and swallows Forward. This page compares the arriving hash with
+   * what its CURRENT state would write — same keys, order and encoding as
+   * the one `T.writeHash` call — so its own echoes are skipped and every
+   * reader move renders. It yields while an error notice is up. */
+
+  function currentHashText() {
+    const parts = [];
+    for (const pair of [
+      ['book', bookSelect.value],
+      ['chapter', chapterSelect.value],
+      ['bible', bibleSelect.value],
+      ['voice', voiceSelect.value]
+    ]) {
+      if (pair[1]) parts.push(pair[0] + '=' + encodeURIComponent(pair[1]));
+    }
+    return parts.length ? '#' + parts.join('&') : '';
+  }
+
+  function onArrival(next) {
+    const bad = hashProblems(next);
+    if (bad.length) {
+      // Fail closed: the address stays as written and no stale chapter
+      // stands under it.
+      renderInvalid(bad, recoveryHash(next, bad));
+      return;
+    }
+    if (next.get('book')) bookSelect.value = next.get('book');
+    fillChapters(bookSelect.value, next.get('chapter') || 1);
+    if (next.get('bible')) bibleSelect.value = next.get('bible');
+    // The voice deferral again; cleared first, so a Back to a hash
+    // without `voice` lands on everything held.
+    voiceSelect.value = '';
+    wantedVoice = next.get('voice') || '';
+    arrival = true;
+    render();
+  }
+
+  /* -------------------------------------------------------------- start */
 
   async function start() {
+    // Narrow viewports fold the controls NOW, synchronously — after
+    // three fetches, the fold shifted the page. Nothing re-closes them.
+    if (
+      controlsDisclosure &&
+      window.matchMedia &&
+      window.matchMedia('(max-width: 64rem)').matches
+    ) {
+      controlsDisclosure.open = false;
+    }
+    // The static document tells the truth without scripts; once this
+    // script runs, "loading" becomes the truth instead.
+    reference.textContent = 'Loading…';
+    for (const select of [bookSelect, chapterSelect, bibleSelect, voiceSelect]) {
+      T.clear(select);
+      const option = T.el('option', null, 'Loading…');
+      option.value = '';
+      select.appendChild(option);
+    }
+
     T.setInlineNotice(
       'No data root could be reached, so this page has nothing to show. Serve ' +
         'the pages over HTTP, or try ?data=fixture for the sample corpus.'
@@ -977,8 +1109,8 @@
       [index, manifest, paragraphs] = await Promise.all([
         T.loadJSON(INDEX_PATH),
         T.loadBibles(),
-        // The paragraph layer is optional in the strongest sense: a data root
-        // without it serves the page, and the chapter runs on as it always did.
+        // Optional in the strongest sense: a data root without the
+        // paragraph layer serves the page and the chapter runs on.
         T.loadJSON(PARAGRAPH_INDEX_PATH).catch((error) => {
           if (error instanceof T.NotFound) return null;
           throw error;
@@ -995,19 +1127,31 @@
     bibles = manifest.bibles;
 
     const hash = T.readHash();
+    const bad = hashProblems(hash);
+    const broken = new Set(bad.map((one) => one.key));
     T.fillSelect(
       bookSelect,
       (index.canon || []).map((book) => ({ value: book.token, label: book.name }))
     );
-    bookSelect.value = hash.get('book') || 'Gen';
+    // The controls take every SOUND cited value and the default for the
+    // rest; a broken value never becomes a selection.
+    bookSelect.value =
+      !broken.has('book') && hash.get('book') ? hash.get('book') : 'Gen';
     if (!bookSelect.value) bookSelect.value = (index.canon[0] || {}).token;
-    fillChapters(bookSelect.value, hash.get('chapter') || 1);
+    fillChapters(
+      bookSelect.value,
+      broken.has('chapter') ? 1 : hash.get('chapter') || 1
+    );
     T.fillBibleSelect(bibleSelect, bibles);
-    if (hash.get('bible') && bibles.some((one) => one.id === hash.get('bible'))) {
+    if (
+      !broken.has('bible') &&
+      hash.get('bible') &&
+      bibles.some((one) => one.id === hash.get('bible'))
+    ) {
       bibleSelect.value = hash.get('bible');
     }
-
-    if (hash.get('voice')) voiceSelect.value = hash.get('voice');
+    // Not assigned to the control here: see `wantedVoice` above.
+    wantedVoice = broken.has('voice') ? '' : hash.get('voice') || '';
 
     bookSelect.disabled = false;
     chapterSelect.disabled = false;
@@ -1023,14 +1167,19 @@
     previousButton.addEventListener('click', () => step(-1));
     nextButton.addEventListener('click', () => step(1));
     T.onArrowStep(step);
-    T.onHashChange((next) => {
-      if (next.get('book')) bookSelect.value = next.get('book');
-      fillChapters(bookSelect.value, next.get('chapter') || 1);
-      if (next.get('bible')) bibleSelect.value = next.get('bible');
-      voiceSelect.value = next.get('voice') || '';
-      render();
+    window.addEventListener('hashchange', () => {
+      if (!showingError && window.location.hash === currentHashText()) return;
+      onArrival(T.readHash());
     });
 
+    if (bad.length) {
+      // Cold load against a broken address: the notice, not a default page,
+      // and a seeded voice control — never a control left "loading".
+      fillVoices(null);
+      renderInvalid(bad, recoveryHash(hash, bad));
+      return;
+    }
+    arrival = true;
     await render();
   }
 
