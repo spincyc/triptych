@@ -242,6 +242,47 @@ state = "complete"
   ]
 
 [[deliverables]]
+id = "corpus-browser-catena-e1-independent-review-2026-08-10"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Independently review the exact E1 Catena production candidate against accepted E0, current governing authority, real repository data, the required visual and accessibility matrix, repository gates, ownership boundaries, and current-main integration risk; record exactly one durable disposition without changing, merging, or deploying the candidate."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "exact-candidate-and-handoff-verified"
+  criterion = "The review records the exact E1 head, focused base, current-main comparison, merge base, reviewed handoff and ZIP, independently measured digests and archive equivalence, and every protocol limitation without relying on another agent's summary."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "implementation-data-and-boundary-reviewed"
+  criterion = "The exact focused diff, built artifact, real Catena states, data/generator semantics, rights and provenance, protected ownership boundaries, and current-main integration overlaps are independently inspected and durably classified."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "guidance/corpus-browser-master-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "validation-and-visual-matrix-reviewed"
+  criterion = "The review records exact focused and repository gate results, compares inherited failure identities, inspects representative wide, tablet, mobile, enlarged-text, forced-colors, reduced-motion, no-JavaScript, print, populated, sparse, held, lead, absence, refusal, error, navigation, and deep-link states, and names evidence that is genuinely unavailable."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "single-disposition-and-next-action-recorded"
+  criterion = "The review records one allowed disposition, every required correction with the smallest acceptable scope and re-review evidence, the no-merge/no-deploy boundary, and one exact next action."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-reader-live-ritual-flow-2026-08-07"
 owner = "build/agent-continuity/liturgy-reader-visual-plan.md"
 promise = "Improve the live canonical Day and Propers readers for sustained liturgical reading through source-owned persistent ritual orientation, a current-place Contents map, and a calmer principal/rubric/reference hierarchy without reopening the accepted first viewport, cutover, navigation, state, renderer, source, or translation boundaries."

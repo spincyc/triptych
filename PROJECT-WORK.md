@@ -474,6 +474,37 @@ one work-register marker. Five requirements pass; the sixth stays open because
 `day-missal.css` is protected liturgy and needs that deliverable's authority,
 which is the honest state rather than a rounding of it.
 
+### E1 Catena production independent review
+
+<!-- promised-deliverable: corpus-browser-catena-e1-independent-review-2026-08-10 -->
+
+The cold independent review of `impl/catena-wave-1` reviewed exact head
+`efd7559a93310442753383bfeec80529f4693288` against current main
+`9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4` and recorded **CHANGES
+REQUIRED** in `guidance/corpus-browser-roadmap.md`. The reviewed transport is
+`20260809T030856Z-catena-wave-1-implementation.zip`, independently hashed as
+`e906ffcf4a056e00ba4596059d0eef6255fedd320f2fb1ecf96e43f3c29c72c8`;
+its directory and ZIP agree, but the handoff is protocol-incomplete.
+
+The accepted E0 direction survives and the route-owned E1 changes respect the
+protected Liturgy, PDF, Search, relationship, generator, generated-data, model,
+route, and shared-shell boundaries. Its common-gate and derived release-record
+edits still require their global owners' disposition. Production acceptance
+does not follow: real states expose a wrong cross-versification Psalm anchor,
+non-chronological author grouping, false held/acquisition and empty-state
+claims, missing CC BY-SA attribution, fail-open cited state, permanent
+no-JavaScript loading, forced-colors loss of paragraph-boundary meaning, and
+unbound public Catena data. The evidence package and the current
+shell/accessibility prerequisites also remain incomplete.
+
+No candidate code was changed; this review merged or pushed no candidate or
+main branch; no deployment, cutover, or follow-on wave began. Do not merge
+`efd7559a9` wholesale: its nine
+pre-E1 shell-plumbing commits remain separately owned. Retain current-main
+guidance, regenerate both release records from any corrected reconciled tree,
+and require a fresh independent review of that exact artifact. The sole E1
+next action is the bounded correction dispatch stated in the roadmap.
+
 ## Promised work
 
 ### Corpus browser foundation design
