@@ -15,13 +15,15 @@
 <!-- The reference is the fact and it is the whole header. What a catena is,
      and what this page does not yet hold, are in the footer. The reference
      line is empty until script fills it: a static "Loading…" would stand
-     forever, and falsely, for a reader whose scripts do not run. -->
+     forever, and falsely, for a reader whose scripts do not run. It is a
+     heading — the primary Scripture locus must stand in heading
+     navigation — styled to the line it always was. -->
 <header class="page-header">
   <h1><span class="page-mark" aria-hidden="true">§</span>Catena Omnia</h1>
-  <p class="reference-line">
+  <h2 class="reference-line">
     <span id="reference"></span>
     <span class="reference-book" id="reference-book"></span>
-  </p>
+  </h2>
   <p class="tally" id="tally"></p>
 </header>
 
@@ -56,7 +58,9 @@
     </select>
   </div>
 
-  <div class="field">
+  <!-- `print-identity`: the two fields that survive into print, as plain
+       lines — paper needs the edition and the voice, not the controls. -->
+  <div class="field print-identity">
     <label for="bible-select">Translation</label>
     <select id="bible-select" name="bible" disabled>
       <option value="">Needs JavaScript</option>
@@ -70,7 +74,7 @@
        Basil into it — one word covering two claims. The control lists what
        this chapter actually holds, and when it holds nothing in the chosen
        voice it says so and names what it does hold. -->
-  <div class="field">
+  <div class="field print-identity">
     <label for="language-select">Commentary in</label>
     <select id="language-select" name="voice" disabled>
       <option value="">Needs JavaScript</option>
@@ -125,14 +129,17 @@
 <footer class="page-footer">
   <p>
     A <em>catena</em> is a chain of excerpted comment running beside the text.
-    This page shows only commentary this project actually holds: the works its
-    acquisition record merely lists are printed separately, under their own
-    heading, and never beside an excerpt. Fragments are stored at the extent
+    This page shows only commentary this project actually holds: the entries
+    its acquisition record merely lists are printed separately, under their
+    own heading, and never beside an excerpt. Fragments are stored at the extent
     their author addressed and the chapter view is derived from that, so a
     fragment reaching across a chapter boundary appears under both chapters at
     its full extent rather than being cut at the seam.
   </p>
-  <p>
+  <!-- The two paragraphs below are for a reader AT the page — how opening
+       works, where the links go — so print drops them by these classes;
+       the paragraph above states what the page holds and is kept. -->
+  <p class="footer-interaction">
     Once the page renders, the chapter and the first commentator stand open;
     every other fragment is closed until you open it, and opening is what it
     costs to read. A chapter fetches a list of who comments on it — never their words —
@@ -141,7 +148,7 @@
     beside its name. The consequence is worth knowing: your browser's own
     find-in-page reaches only what you have opened.
   </p>
-  <p>
+  <p class="footer-entrances">
     <a href="../scripture/">The Story of Salvation</a> ·
     <a href="../liturgy/">The propers of the Mass</a> ·
     <a href="../history/">How the Missal Changed</a> ·
