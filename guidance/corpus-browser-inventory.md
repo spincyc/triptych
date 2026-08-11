@@ -34,10 +34,15 @@ candidates/oracles. The four noindex pages are accessible review or
 compatibility surfaces, not additional accepted products.
 
 The generated corpus presently records 133 publication works, 178 provider
-documents, 186 issues, 5,675 pages, 491 source works, 655 source editions,
-1,467 artifacts, and 2,751 passages. Of 178 provider documents, 105 are
-browser-readable and 73 are PDF-only. Of 2,751 source passages, 1,630 are
-readable and 1,121 have explicit refusal or absence states.
+documents, 186 issues, and 5,675 pages. The Source Library upstream records
+491 Works owning 655 Editions; Artifact, Segment, and Passage are
+edition-owned sibling types, with 1,467 Artifacts, 62 Segments, and 2,751
+Passages. The public projection groups 1,467 Artifact and 2,751 Passage rows
+under their Editions; it emits no first-class Segment rows, although 138
+Passages retain `segment_id` and every Passage resolves its ultimate
+`artifact_id`. Of 178 provider documents, 105 are browser-readable and 73 are
+PDF-only. Of 2,751 source Passages, 1,630 are readable and 1,121 have explicit
+refusal or absence states.
 
 ## Public surface families
 
@@ -134,3 +139,54 @@ Scripture; J0/J1/J2 typed search; K0/K1 cross-corpus relationships; L0/L1
 responsive and accessibility refinement; M0/M1 release acceptance. Production
 route, PDF, generated-data, and public-deployment changes remain outside this
 foundation branch.
+
+## Wave 1 dispatch delta — 2026-08-08
+
+This delta selects real evidence from the unchanged A0 base for C0/C1, D0, E0,
+and F0. It does not restate product decisions or execution state owned by the
+corpus-browser vision and roadmap.
+
+- Current Wave 1 base: `c27d6915319785686d1df6a1401a489aa9921f6f`.
+- Accepted A0 source: commit
+  `ac37b6ffa6022dbab551385d91a12e277bb816cb`, blob
+  `d05efca324e4d7e181faf90687c2e9935e626dce`; reviewed design-branch head
+  `3b5938a0dba88831763ec09c762ae1572007a27e`.
+- Accepted implementation-reconnaissance head used for the defect cross-check:
+  `af2c9613ccda48679face4e43f59c002f93056ef`.
+- At the base, the generated page at `/texts/` visibly belongs to the
+  **Every Document** baseline. The accepted forward-facing label is
+  **Publications**; the route and the repository's one-owning-catalogue rule do
+  not change.
+
+### Required real fixtures
+
+| Surface and route/state | Exact base fact | Why it is a useful extreme |
+| --- | --- | --- |
+| Home `/`; Publications `/texts/` | 133 works, 178 provider documents, 186 issues; 105 browser-readable and 73 PDF-only | Exercises task entrances, seven-portal orientation, paired and single treatments, format availability, and accurate scale without synthetic freshness. |
+| Reader `/web/gpt/history/traditional-priestly-institutes/03-icksp.html` | The 107-character title is the longest provider-document title: “The Institute of Christ the King Sovereign Priest: African Origins, Canonial Identity, and Global Expansion.” | Long-title and narrow-heading stress case; preserve the repository's actual wording in evidence. |
+| Reader `/web/gpt/history/catholic-exorcism/01-history-and-current-practice.html` | 120-page canonical PDF, the longest browser-readable publication at the base | Long contents, sustained reading, citation, colophon, canonical-PDF, and browser-print stress case. |
+| Catena `/catena/#book=Gen&chapter=1` | 107 held fragments from 13 sources, 33 acquisition leads, 272,033 aggregate fragment words, and English/Greek/Latin voices | Densest chronological chain, multilingual state, overlapping extents, and cross-chapter fragments. |
+| Catena `/catena/#book=Ps&chapter=13` | No held fragment, 35 acquisition leads, and 7 recorded refusal reasons | Held-none state where evidence must not be mistaken for commentary text. Across the projection, 561 chapters have evidence files: 50 contain held fragments and 511 are lead/refusal-only; 509 of those 511 carry leads and 16 carry refusals, with overlap. |
+| Sources `/sources/#edition=edition.holy-see.acta-apostolicae-sedis.volume-22-1930` and its sibling editions | The work `work.holy-see.acta-apostolicae-sedis` has 28 editions, the maximum | Multi-edition hierarchy stress; the exact selected edition may be changed among the work's recorded edition IDs without inventing a relationship. |
+| Sources `/sources/#edition=edition.ronald-conte.catholic-public-domain-version.sacredbible-original-web-2026-07-31` | One edition carries 148 artifacts, the maximum, and no addressed passage | Wide edition-owned Artifact set plus a truthful no-Passage state. |
+| Sources `/sources/#edition=edition.remigius-of-auxerre.commentarius-in-genesim.latin-migne-pl-131` | 396 of 396 passages readable, the maximum passage count in one edition | Large readable passage navigator and Latin/source-heavy stress case. |
+| Sources `/sources/#edition=edition.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25` | 82 addressed passages, none redistributable; rights state `restricted` | Large withheld state in which availability and redistribution rights must remain distinct. |
+
+The Source projection totals remain 491 Works and 655 owned Editions, with
+1,467 edition-owned Artifacts and 2,751 edition-owned Passages: 1,630 readable
+and 1,121 explicitly unavailable. Each Passage separately identifies its
+controlling Artifact directly or through Segment. A separate long-metadata
+stress record is
+`work.convocation-of-canterbury.revised-version`, whose responsible-creator
+string is 131 characters.
+
+### Defects the Wave 1 evidence must expose
+
+| Route family | Base defect to preserve in before evidence |
+| --- | --- |
+| All 13 generated browser pages | The wrapper creates nested `<main>` landmarks. |
+| `/` | The generator recognizes an exact README preamble; changing it without updating the transform can silently restore a duplicate title instead of producing the intended Home composition. |
+| `/texts/` | 56px horizontal overflow at 320 CSS pixels; the filter plane pushes the first result below the narrow first viewport; clear/back-forward hash behavior is defective. |
+| Publication Readers | No local contents, direct canonical-PDF action, citation-return enhancement, or route-family browser accessibility matrix. |
+| `/catena/` | No fragment-level address; invalid selection may fall back; dense Genesis and held-none Psalm states have radically different information loads. |
+| `/sources/` | 24px horizontal overflow at 320 CSS pixels; the first result falls below the narrow first viewport; work and artifact are not addressable; a mismatched passage may select passage zero. |

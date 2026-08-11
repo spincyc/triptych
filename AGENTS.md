@@ -32,6 +32,7 @@ largely a register of how that data has already gone wrong:
 | a mass, proper, or rubric in `src/sources/calendars/` | `guidance/propers-for-agents.md` |
 | anything the browser fetches from `src/web/data/` | `guidance/web-data.md` |
 | the site layout template, `assets/site.css`, `src/web/browser/shared/`, site navigation, route generation in `tools/public-alpha`, or any non-PDF web surface outside liturgy | `guidance/corpus-browser-implementation.md`, `guidance/corpus-browser-master-plan.md` |
+| non-liturgy corpus browser work: Home or Publications routes; the web publication Reader; Catena or Sources routes; or shared non-liturgy shell, navigation, search, context, responsive, or print presentation | `guidance/corpus-browser-master-plan.md`, `guidance/corpus-browser-vision.md`, `guidance/corpus-browser-roadmap.md`, `guidance/corpus-browser-implementation.md`, plus the existing universal, profile, and owning-surface guidance as applicable — including `guidance/web-editions.md` for the Reader, the Catena guidance below, `guidance/sources.md` for Sources, and `guidance/web-data.md` for fetched data |
 | liturgy browser HTML, CSS, or JavaScript; Day or Propers routes; shared liturgical rendering; modes or navigation; responsive or print presentation; calendar or source apparatus; comparison views; or browser-visible recension coverage | `guidance/liturgy-browser-vision.md`, `guidance/liturgy-browser-roadmap.md` |
 | a bible edition, its index, or its chapter fragments | `guidance/bibles-for-agents.md` |
 | a verse or chapter numbering question across editions | `guidance/versification.md` |
@@ -41,6 +42,9 @@ largely a register of how that data has already gone wrong:
 | a calendar recension and its departures from a base | `guidance/recensions.md` |
 | whether a publication's research has gone stale | `guidance/staleness.md` |
 | a promised deliverable and whether it is met | `guidance/promised-deliverables.md` |
+
+The non-liturgy corpus browser route does not govern the Liturgy browser or
+relax its dedicated routing and protections.
 
 The remaining production plans and handoffs are maintainer records, linked from
 the profile or registry that owns their subject rather than from here.
