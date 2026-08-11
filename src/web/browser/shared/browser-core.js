@@ -258,8 +258,59 @@ window.Triptych = (function () {
     while (node.firstChild) node.removeChild(node.firstChild);
   }
 
-  function showBanner(text) {
-    const banner = document.getElementById('banner');
+  /* ------------------------------------------------------------------------
+   * WHERE A MESSAGE LANDS
+   *
+   * There is no one document landmark. The instruments name their `<main>` four
+   * different ways — `#reading` on catena, scripture, sources and texts, `#map`
+   * on history, `#canon` on law, `#reader-document` on the liturgy reader — and
+   * `fail` used to look up `#reading` alone and return silently when it was not
+   * there. On the other three, `fail(text)` did NOTHING AT ALL: no error, no
+   * spoken line, and the page's "Loading…" placeholder and `aria-busy="true"`
+   * left standing, which is worse than an error, because it tells a reader the
+   * corpus is arriving when it is not. History and law escaped that only by
+   * open-coding their own failure rendering rather than calling `fail`, and the
+   * liturgy reader by having its own; the trap was set for whoever called it
+   * next.
+   *
+   * So a message is now aimed, in this order:
+   *
+   *   1. an element or an id passed by the caller, which always wins;
+   *   2. the first of DOCUMENT_LANDMARKS the page actually carries.
+   *
+   * `#reading` is first in that list, so every caller that passed nothing
+   * before still lands exactly where it did. The list is the contract: a new
+   * instrument either names its `<main>` with one of these or passes its own
+   * node, and `tools/tests/test_browser_collisions.py` fails if a published
+   * page names it anything else.
+   * --------------------------------------------------------------------- */
+
+  const DOCUMENT_LANDMARKS = ['reading', 'map', 'canon', 'reader-document'];
+
+  /** The element a page-level message belongs in, or null if there is none. */
+  function documentRegion(target) {
+    if (target && typeof target === 'object' && target.nodeType === 1) return target;
+    if (typeof target === 'string' && target) return document.getElementById(target);
+    for (const id of DOCUMENT_LANDMARKS) {
+      const node = document.getElementById(id);
+      if (node) return node;
+    }
+    return null;
+  }
+
+  /**
+   * The strip above the reading area, for something true of the whole page.
+   *
+   * Aimed the same way as `fail`, but at one id rather than a list: `#banner`
+   * is the only banner host in the tree. A page without one — the liturgy
+   * reader is the live case — still shows nothing, including the inline-mode
+   * notice, and fixing that means giving that page a banner host in its own
+   * markup rather than inventing one from here.
+   */
+  function showBanner(text, target) {
+    const banner = target && typeof target === 'object' && target.nodeType === 1
+      ? target
+      : document.getElementById(typeof target === 'string' && target ? target : 'banner');
     if (!banner) return;
     banner.textContent = text;
     banner.hidden = false;
@@ -270,6 +321,10 @@ window.Triptych = (function () {
    *
    * The reading area is not itself a live region: replacing it would read a
    * whole Mass aloud on every change. This says what changed instead.
+   *
+   * It needs no target and has never had the defect `fail` had: where the live
+   * region is absent this MAKES one and appends it to the body, so the message
+   * is spoken on every page in the tree, named or not.
    */
   function statusLine(text) {
     let status = document.getElementById('reading-status');
@@ -291,12 +346,21 @@ window.Triptych = (function () {
     return node;
   }
 
-  function fail(text) {
-    const reading = document.getElementById('reading');
-    if (!reading) return;
-    clear(reading);
-    reading.appendChild(el('p', 'error', text));
-    reading.setAttribute('aria-busy', 'false');
+  /**
+   * The page could not be drawn, and this says why, in the page's own document
+   * region. `target` is an element or an id; without one the region is found by
+   * DOCUMENT_LANDMARKS above.
+   *
+   * The spoken line is said whether or not a region was found, because a reader
+   * on a page with no landmark at all is still owed the reason.
+   */
+  function fail(text, target) {
+    const region = documentRegion(target);
+    if (region) {
+      clear(region);
+      region.appendChild(el('p', 'error', text));
+      region.setAttribute('aria-busy', 'false');
+    }
     statusLine(text);
   }
 
@@ -1465,6 +1529,8 @@ window.Triptych = (function () {
     showBanner: showBanner,
     statusLine: statusLine,
     fail: fail,
+    documentLandmarks: DOCUMENT_LANDMARKS.slice(),
+    documentRegion: documentRegion,
     titleCase: titleCase,
     fillSelect: fillSelect,
 

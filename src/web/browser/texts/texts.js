@@ -159,12 +159,14 @@
   }
 
   /* ------------------------------------------------------------------------
-   * The detail panel: everything recorded about one document
+   * The record card: everything recorded about one document. Its classes are
+   * `.record-*`, not `.detail-*`, because `shared/browser-core.css` owns
+   * `.detail` for the panel the history and law pages draw; see `texts.css`.
    * --------------------------------------------------------------------- */
 
   function line(label, value) {
-    const node = T.el('p', 'detail-line');
-    node.appendChild(T.el('span', 'detail-label', label));
+    const node = T.el('p', 'record-line');
+    node.appendChild(T.el('span', 'record-label', label));
     node.appendChild(document.createTextNode(value));
     return node;
   }
@@ -185,14 +187,14 @@
     detail.hidden = false;
 
     const name = M.nameOf(work, edition);
-    const heading = T.el('h2', 'detail-title', name.text);
+    const heading = T.el('h2', 'record-title', name.text);
     if (name.unrecorded) heading.classList.add('unrecorded');
     detail.appendChild(heading);
     detail.appendChild(
-      T.el('p', 'detail-sub', editionLabel(edition.provider) + ' edition of ' + work.leaf)
+      T.el('p', 'record-sub', editionLabel(edition.provider) + ' edition of ' + work.leaf)
     );
 
-    const dismiss = T.el('button', 'detail-close', 'Close');
+    const dismiss = T.el('button', 'record-close', 'Close');
     dismiss.type = 'button';
     dismiss.addEventListener('click', close);
     detail.appendChild(dismiss);
@@ -213,7 +215,7 @@
     detail.appendChild(line('Section', work.section));
     if (work.catalog) detail.appendChild(line('Catalogued in', work.catalog));
 
-    detail.appendChild(T.el('h3', 'detail-heading', 'In the browser'));
+    detail.appendChild(T.el('h3', 'record-heading', 'In the browser'));
     if (edition.web) {
       detail.appendChild(
         line('Rendered', 'eligible, reviewed ' + day(edition.reviewed))
@@ -232,7 +234,7 @@
       }
     }
 
-    detail.appendChild(T.el('h3', 'detail-heading', 'Issues'));
+    detail.appendChild(T.el('h3', 'record-heading', 'Issues'));
     detail.appendChild(issueLine('full', edition.pages, edition.pdf, edition.pdf_absent,
       edition.status, edition.authorization, null));
     for (const issue of edition.also || []) {
@@ -247,7 +249,7 @@
       ));
     }
 
-    detail.appendChild(T.el('h3', 'detail-heading', 'Authorship'));
+    detail.appendChild(T.el('h3', 'record-heading', 'Authorship'));
     if (edition.inherits) {
       detail.appendChild(
         line('Inherited from', edition.inherits)
@@ -274,15 +276,15 @@
   }
 
   function issueLine(kind, pages, pdf, absent, status, authorization, title) {
-    const node = T.el('p', 'detail-line');
-    node.appendChild(T.el('span', 'detail-label', T.titleCase(kind)));
+    const node = T.el('p', 'record-line');
+    node.appendChild(T.el('span', 'record-label', T.titleCase(kind)));
     const measured = typeof pages === 'number' ? pages + 'pp' : 'extent unrecorded';
     node.appendChild(document.createTextNode(
       measured + ' · ' + (status || 'no release status') +
       ' · ' + (authorization || 'no authorization recorded')
     ));
     if (title) {
-      node.appendChild(T.el('span', 'detail-aside', 'titled ' + title));
+      node.appendChild(T.el('span', 'record-aside', 'titled ' + title));
     }
     if (pdf) {
       node.appendChild(document.createTextNode(' '));

@@ -177,6 +177,228 @@ Retained-worker integration, non-Pages deployment, remote changes,
 force-pushing, and all other history rewriting remain separately authorized
 operations.
 
+## Corpus browser redesign
+
+A multi-agent project to make the non-PDF web surfaces one navigable scholarly
+corpus rather than a set of separately built instruments. The PDFs remain the
+canonical printable editions and are not a redesign target.
+
+The governing plan on this branch is `guidance/corpus-browser-master-plan.md`.
+It splits the work: a design lane owns the visual and product contract, and an
+implementation lane owns production code and tests.
+
+`guidance/corpus-browser-implementation.md` is the implementation lane's durable
+technical record — how the surfaces are actually built, what will refuse a
+change, the proposed sequencing, the ranked risks, and the conflicts returned for
+disposition. Reconnaissance is done.
+
+Two facts from that record belong here because they bind unrelated work. First,
+`make check` fails at `c27d69153` on `check-tool-registry` and `check-examples`,
+and `python3 -m unittest discover -s tools/tests` fails with 14 failures and 13
+errors out of 1226; both were reproduced at the base commit in a separate
+checkout, so the redness is pre-existing and no later lane may be credited or
+blamed for it. Eight of those thirteen errors were later shown to be a stale
+fixture rather than a defect — every `test_public_alpha` case wrote a stub root
+hardcoding `Markdown==3.10.2` after the repository's lock moved to 3.10.3 —
+and `f434c5b91` on `impl/shell-plumbing` fixed it, moving the baseline to **14
+failures and 5 errors on that branch and its descendants**. A branch based
+before `f434c5b91`, including `impl/foundation-hardening`, should still expect
+14 and 13. Second, the corpus lanes overlap the in-progress deliverable
+below, which owns `reader-shell.js` and `reader-instrument.css` and declares
+public-navigation redesign unauthorized. Sequencing the two was returned as the
+first open conflict in that document; the review recorded below settled it.
+
+### Which branch carries what
+
+No corpus-browser document is on `main`, which is `fc3092de9` as of 2026-08-08
+and six commits ahead of the shared base `c27d69153`. The seven lane branches
+all still base on `c27d69153`; the two `fix/*` branches do not, because they
+were bug fixes taken against `main` itself.
+
+Branch heads, all read from `origin` on 2026-08-08:
+
+| Branch | Head | Bases on | Carries |
+| --- | --- | --- | --- |
+| `main` | `fc3092de9` | — | no corpus-browser document |
+| `impl/foundation` | `af2c9613c` | `c27d69153` | master plan, implementation record, `build/agent-continuity/corpus-browser-foundation-recon.md` |
+| `impl/foundation-hardening` | `ecfb4e7b8` | `impl/foundation` | the same three, plus §19 of the implementation record, which exists nowhere else |
+| `impl/shell-plumbing` | `c62b83904` | `impl/foundation` at `b87dfc744` | the same three; its implementation record lacks §19 |
+| `impl/catena-wave-1` | `efd7559a9` | `impl/foundation` at `b87dfc744` | the same three; its implementation record lacks §19 |
+| `ux/foundation` | `3b5938a0d` | `c27d69153` | vision, roadmap, inventory, research, `docs/triptych-world-class-corpus-master-plan.md`, `src/web/browser/prototypes/corpus-foundation/`, `tools/tests/test_corpus_foundation_prototype.py`, `tools/tests/corpus_foundation_prototype_browser.mjs`, `build/agent-continuity/corpus-browser-foundation.md`, and the design lane's ledger entry |
+| `ux/corpus-wave-1` | `e42b92874` | `c27d69153` **directly** | vision, roadmap, inventory, research, master plan, implementation record — six documents, and none of the prototype or continuity files |
+| `ux/corpus-wave-1-review-fixes` | `ecbd93a05` | `ux/corpus-wave-1` | the same six |
+| `fix/day-missal-switch` | `f099e2280` | merged into `main` | — |
+| `fix/browser-truthfulness` | `fc3092de9` | merged into `main`; it *is* `main` | — |
+
+Read every one of those documents on the branch that owns it —
+`git show <branch>:<path>` — rather than here. They are deliberately not
+reproduced, summarised, or paraphrased in this register: a fact has one owner,
+and a second copy of a design contract is a disagreement waiting to happen.
+`ux/foundation` also carries the design lane's own ledger entry and
+work-register section, which is why neither appears on this branch.
+
+Two cautions the table above is the evidence for. First, this table as it stands
+on `impl/shell-plumbing` (`PROJECT-WORK.md:215` there) tells a reader that
+`guidance/corpus-browser-implementation.md` lives on
+`impl/foundation-hardening` — that is, not on the branch they are reading it
+on. It is on four branches and the four copies differ. Second, the
+`ux/corpus-wave-1*` copies of the
+implementation record are a **rewrite pinned at `af2c9613c`**, so they carry as
+live four defects that `impl/foundation-hardening` has since fixed — the
+`none-claimed` gloss, history's `.field` collision, texts' `.detail` shadow and
+`T.fail`'s silent no-op. A Wave-1 agent reading its own branch's copy would act
+on repaired work. `guidance/corpus-browser-implementation.md` §5, §11 step 5 and
+§20 on `impl/foundation-hardening` are the current statement.
+
+### Acceptance, 2026-08-08
+
+The coordinator dispositioned both lanes on 2026-08-08.
+
+| Lane | Disposition |
+| --- | --- |
+| A0, surface inventory | accepted |
+| A1, research synthesis | accepted |
+| A2, site-wide product vision | accepted with amendments D1–D20 |
+| A3, tokens and Reader/Catalogue/Instrument archetypes | accepted as foundation direction, not as pixel acceptance of any production route |
+| A4, shared navigation, Jump, Related, and shell interaction | accepted with the bounded-Jump and protected-liturgy amendments |
+| Claude reconnaissance | accepted |
+| the neutral gates | accepted for integration |
+
+The A3 wording governs what implementation may assume. The direction is
+accepted; no production route is visually accepted, so no route may cite A3 as
+approval of how it renders. The roadmap on `ux/foundation` still records A0–A4
+as candidates awaiting independent review; this register is later than that
+record, and the design lane has not yet written the dispositions down.
+
+### Blocker: B0 cannot start
+
+An integration branch `corpus/foundation-integration` is planned, to carry both
+lanes' artifacts onto one base. **It still does not exist.** The branch list
+this section originally cited — five branches, "and nothing else" — is stale:
+`origin` now carries the eleven branches tabulated above under "Which branch
+carries what", plus `codex/isolated/20260727t173839z-a98664d00a5a`.
+`impl/corpus-wave-1` bases on the integration branch's head, so it cannot be
+created, and B0 — the production shared shell primitives — cannot start.
+Creating the integration branch is the unblocking act.
+
+**Deviation, recorded because it is real: Wave 1 started off-base.** The master
+plan requires that "once `corpus/foundation-integration` is pushed, all new
+Wave 1 work starts from its exact head"
+(`guidance/corpus-browser-master-plan.md:1585`, and again at `:1658` and
+`:1790`). `ux/corpus-wave-1` (`e42b92874`) was created as a single commit
+directly on `c27d69153`, not on any integration head, and
+`ux/corpus-wave-1-review-fixes` (`ecbd93a05`) descends from it. Neither branch
+descends from `ux/foundation` or from any impl branch; the two lanes' documents
+were reconciled onto that branch by hand instead, which is precisely the work
+the integration branch exists to do once and durably. The consequence is already
+visible: those branches carry a rewritten implementation record pinned at
+`af2c9613c` that presents four repaired defects as live. The wave should be
+rebased onto the integration head when it exists, and its implementation record
+replaced rather than merged.
+
+The narrower claim this section used to make — that no shared shell is
+implemented on any branch — still holds. `impl/shell-plumbing` changed the
+generator and the layout wrapper; it built no shared shell.
+
+### Foundation hardening
+
+The 2026-08-08 review settled the sequencing question above by protecting the
+liturgy surface family outright, so promoting `reader-shell.js` into a shared
+shell is withdrawn rather than deferred: reuse its ideas, not the owned file.
+
+`impl/foundation-hardening` carries the work that does not depend on the visual
+contract, each commit cherry-pickable by path. The four real-Chromium
+harnesses are invoked at last by `check-browser-harnesses`, which depends on
+`public-preview` because three of them address it as their data root — the
+reason they were read as broken for months was a missing build, not rot. The
+artifact gate moved to the governing matrix and gained no-JavaScript, subpath
+deep-link, link-resolution and focus-indicator coverage. Every published hash
+contract is pinned by 46 tests before anyone cleans up a router. Both new gates
+stay out of `make check`, which builds no artifact and cannot assume a browser.
+
+Three things that lane found are worth recording outside it. The gate's
+skip-link failures are a modal focus trap in the Propers reader, not a missing
+link, and belong to the liturgy deliverable rather than to any corpus lane. The
+Source Library's "Back to the corpus" does not leave a bare fragment as
+reported; it leaves the entire reader hash, so a reload reopens the edition the
+reader just closed. And target size fails on all nineteen routes — history alone
+has 909 undersized controls — which is a design-lane dependency, not a hardening
+defect.
+
+Measured baselines for anyone comparing. `make check` takes about 310 seconds
+and is red at the base for reasons this project did not cause.
+
+`check-browser-gate` is no longer "about 74 seconds" and no longer reports 146
+failures; both figures were true at `0fcf0cb95` and are true nowhere now. The
+gate was widened to the five-viewport governing matrix, which took it to 2,290
+assertions and surfaced an entire new failure class. **Re-run at `ecfb4e7b8` on
+`impl/foundation-hardening`: 93 seconds, 2,290 assertions, 1,836 passed, 226
+failed, 228 skipped**, across 19 routes and 9 states, with two consecutive runs
+agreeing. The 226 are 117 `single-main-element`, 82
+`primary-controls-meet-target-size` and 27 `skip-link-targets-existing-element`,
+and nothing else.
+
+**The number differs by branch and a single figure would be false on one of
+them.** On `impl/shell-plumbing` the same gate reports **109**, because
+`6b5742bf2` gave every published page exactly one main landmark and closed the
+117; that branch's figure is taken from that commit's own measurement rather
+than re-run here. Cite the branch with the number.
+`guidance/corpus-browser-implementation.md` §17.5 owns the full arc and §20 owns
+the disposition of each surviving class. Compare failure sets, never exit codes.
+
+The lane also gave ten previously unrecorded browser defects a tracked home, and
+recorded eight reported findings that re-checking refuted, in
+`guidance/corpus-browser-implementation.md` §20. Before that section they existed
+only in agent reports in a scratch directory, which §14's amendment D10
+forbids — and a scratch directory is deleted, so they were one `rm` from being
+rediscovered at full cost.
+
+### Ledger gap: the implementation lane has no promised deliverable
+
+The design lane recorded `corpus-browser-foundation-design-2026-08-08` in
+`promised-deliverables.toml` on `ux/foundation`. **The implementation lane
+recorded nothing.** Its diff against `c27d69153` touches `PROJECT-WORK.md` and
+does not touch the ledger, so nothing fail-closed tracks the implementation work
+at all — no promise, no acceptance criteria, and no requirement that a later
+session must either satisfy or explicitly supersede. That is a live breach of
+`guidance/promised-deliverables.md`, which requires a substantive outcome to be
+recorded with a stable ID *before* material implementation, and this lane shipped
+material implementation: two new gates, a harness target, 46 hash-contract tests,
+three production renames and signature changes, and seven re-signed browser
+files.
+
+The promise and its completion criteria are known, so per that guidance they are
+specified here for immediate promotion into the TOML ledger. **The ledger file
+itself is outside this task's exclusive file boundary and was deliberately not
+written**, because `promised-deliverables.toml` is shared across every branch
+and a malformed entry breaks `make check` everywhere; the write belongs to
+whoever holds the ledger. Adding only the `<!-- promised-deliverable: … -->`
+marker was also rejected: the validator checks ledger ids against the register
+and not the reverse, so a bare marker would pass silently while pointing at a
+promise that does not exist, and would then read as a duplicate the moment the
+entry landed.
+
+The entry to add, `id = "corpus-browser-foundation-hardening-2026-08-08"`, owner
+`guidance/corpus-browser-implementation.md`, state `in_progress` — not
+`candidate`, because one prerequisite is open and the record is on no integrated
+branch:
+
+| Requirement | Criterion | Status | Evidence |
+| --- | --- | --- | --- |
+| `durable-architecture-record` | A tracked record states how the non-PDF browser surfaces are built, what will refuse a change, the verifiable sequencing, the ranked risks, the conflicts returned for disposition, and the defect register with each finding's status and each refuted finding's refutation. | `pass` | `guidance/corpus-browser-implementation.md` |
+| `artifact-gate-over-the-built-site` | A design-neutral gate drives real Chromium over the built artifact across the five-viewport governing matrix, asserts no visual contract, skips cleanly with a stated reason when no browser resolves, and stays out of `make check`. | `pass` | `tools/tests/corpus_browser_gate.mjs`, `Makefile` |
+| `chromium-harnesses-are-run` | The four reader harnesses have a target that builds their data root first and holds them to a recorded pass floor rather than to a zero exit. | `pass` | `Makefile`, `tools/tests/test_browser_harnesses.py` |
+| `published-hash-contracts-pinned` | Every published hash key of every instrument is pinned by test before any router cleanup, including the keys that are deliberately input-only. | `pass` | `tools/tests/test_browser_url_contract.py` |
+| `shared-shell-blocking-collisions-resolved` | The four selector and plumbing hazards that block a shared shell are resolved with an unchanged rendered DOM: the `#reading`/`#banner` hard-coding, history's `.field`, texts' `.detail`, and `day-missal.css`'s unscoped `body > .site-header`. | `open` — three of four done (`a912e182e`, `bad976039`, `9e980ff5b`); `day-missal.css` is protected liturgy and needs that deliverable's authority | `src/web/browser/shared/browser-core.js`, `src/web/browser/history/history.css`, `src/web/browser/texts/texts.css`, `tools/tests/test_browser_collisions.py` |
+| `no-visual-or-product-decision` | The lane changes no visual contract, accepts no screenshot baseline as an oracle, and makes no production change to a protected liturgy asset. | `pass` | `guidance/corpus-browser-implementation.md` |
+
+<!-- promised-deliverable: corpus-browser-foundation-hardening-2026-08-08 -->
+
+The entry above is now in `promised-deliverables.toml`, and this comment is its
+one work-register marker. Five requirements pass; the sixth stays open because
+`day-missal.css` is protected liturgy and needs that deliverable's authority,
+which is the honest state rather than a rounding of it.
+
 ## Promised work
 
 ### Corpus browser foundation design

@@ -20,7 +20,10 @@
 .catalogue {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  /* min() keeps the track from demanding more than the viewport has. Above
+     22rem of container it is inert; below it the card reflowed off-screen and
+     took its text with it. */
+  grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr));
   align-items: start;
 }
 
@@ -179,16 +182,22 @@
   font-size: 0.82rem;
 }
 
-/* --- The detail panel ---------------------------------------------------
-   A NAME COLLISION, NOT A SHARED COMPONENT. `shared/browser-core.css` also has
-   a `.detail`: the record panel the history and law pages draw, white, with a
-   rule across its top. This one is the card that opens beside the catalogue —
-   toned, with a rule down its left edge, and closable. Every declaration of
-   the shared rule is restated below deliberately, so that the shared one
-   cannot reach this page. The right fix is a rename in `texts.js`, which is a
-   change to the markup and so is not made here. */
+/* --- The record card -----------------------------------------------------
+   THE CARD THAT OPENS BESIDE THE CATALOGUE — toned, with a rule down its left
+   edge, and closable. It was called `.detail`, which is also the name
+   `shared/browser-core.css` gives a different component: the record panel the
+   history and law pages draw, white, with a rule across its top. The shared
+   rule reached every card on this page, and the card looked right only because
+   this file loads second and restated every one of the shared declarations,
+   including `.detail-title`. That is a correctness resting on the order of two
+   `<link>` elements, and on nobody ever adding a declaration to the shared rule
+   without restating it here.
+   Renamed, the two components no longer meet. `.record-title`, `.record-sub`,
+   `.record-close`, `.record-heading`, `.record-line`, `.record-label` and
+   `.record-aside` all belong to THIS card. The panel keeps its `#detail` id,
+   which is a page landmark and collides with nothing. */
 
-.detail {
+.record {
   position: relative;
   margin: 0 0 1.5rem;
   padding: 1rem 1.2rem 1.2rem;
@@ -198,26 +207,26 @@
   background: var(--section-row);
 }
 
-.detail[hidden] {
+.record[hidden] {
   display: none;
 }
 
 /* Set in the page's own face, not the serif the shared panel title takes: this
    is the head of a catalogue card, and it sits among sans-set apparatus. */
-.detail-title {
+.record-title {
   margin: 0;
   font-family: var(--sans);
   font-size: 1.15rem;
   padding-right: 5rem;
 }
 
-.detail-sub {
+.record-sub {
   margin: 0.2rem 0 0.8rem;
   font-size: 0.82rem;
   opacity: 0.8;
 }
 
-.detail-close {
+.record-close {
   position: absolute;
   top: 0.9rem;
   right: 1.1rem;
@@ -231,11 +240,11 @@
   cursor: pointer;
 }
 
-.detail-close:hover {
+.record-close:hover {
   border-color: var(--section-accent);
 }
 
-.detail-heading {
+.record-heading {
   margin: 1rem 0 0.35rem;
   font-size: 0.78rem;
   font-variant: small-caps;
@@ -243,14 +252,14 @@
   color: var(--section-ink);
 }
 
-.detail-line {
+.record-line {
   margin: 0.25rem 0;
   font-size: 0.84rem;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
 
-.detail-label {
+.record-label {
   display: inline-block;
   min-width: 9.5rem;
   padding-right: 0.6rem;
@@ -259,7 +268,7 @@
   opacity: 0.75;
 }
 
-.detail-aside {
+.record-aside {
   display: block;
   margin-left: 9.5rem;
   font-style: italic;
@@ -284,12 +293,12 @@
 }
 
 @media (max-width: 34rem) {
-  .detail-label {
+  .record-label {
     display: block;
     min-width: 0;
   }
 
-  .detail-aside {
+  .record-aside {
     margin-left: 0;
   }
 }

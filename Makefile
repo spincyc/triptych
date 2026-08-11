@@ -250,6 +250,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-mass-ordinary \
 	check-release-bindings refresh-release-bindings approve-release \
 	add-publication doc review-doc install-doc check check-tests \
+	check-browser-static check-browser-gate check-browser-harnesses \
 	check-examples recapture-examples \
 	altar-server-guides review-altar-server-guides install-altar-server-guides \
 	check-staleness measure-staleness explain-staleness rebaseline-doc \
@@ -738,8 +739,44 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-proper-components check-document-catalogue check-source-reader \
 	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
 	check-public-alpha check-release-bindings check-tool-registry \
+	check-browser-static \
 	check-calendar-masses check-calendar-rubrics check-propers-census \
 	check-mass-ordinary check-catena check-commentary-coverage check-examples
+
+# Seven of the browser scripts are parsed by nothing: no Python test loads
+# them, no node harness runs them, and their only protection is a sha256 pin in
+# release/public-alpha.json, which proves a file did not change rather than
+# that it is a program. This also runs the build's own page split at check
+# time, because a browser page the layout cannot take apart currently fails
+# during `make public-site`, which `check` does not run. Half a second, and it
+# needs no browser.
+check-browser-static:
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_browser_static.py'
+
+# Real Chromium over the built artifact, which is the only place the publish
+# step's own defects exist: the four harnesses beside it all load the
+# repository copies, so a second `<main>` or a stripped skip link introduced by
+# `wrap_in_layout` is invisible to every one of them. Deliberately outside
+# `check`: it needs a browser the installer does not install and an artifact
+# `check` does not build. Run `make public-site` first, and set TRIPTYCH_CHROME
+# unless google-chrome-stable is the browser present. It asserts nothing about
+# how the site looks, because no visual contract has been accepted.
+check-browser-gate:
+	@node tools/tests/corpus_browser_gate.mjs
+
+# The four reader harnesses drive real Chromium over the preview build, and
+# until this target existed nothing ran them: the suite only syntax-checked
+# them, so they were read as broken for months when what they wanted was a
+# build. Three address `build/public-alpha/preview` as their data root, so
+# without `public-preview` every request 404s and the failure wears the costume
+# of a code defect — "Timed out waiting for ... readiness". Hence the
+# prerequisite. Outside `check` for the same reasons as `check-browser-gate`,
+# and because it takes two minutes rather than half a second. Three harnesses
+# exit non-zero on a real finding about absence and coverage notices, so this
+# holds them to a recorded pass floor rather than to a zero exit; raising the
+# floor is the point of it.
+check-browser-harnesses: public-preview
+	@TRIPTYCH_BROWSER_HARNESSES=1 $(PYTHON) -m unittest discover -s tools/tests -p 'test_browser_harnesses.py'
 
 # Every tool carries a table of captured invocations, and until this target
 # existed nothing ran one: the registry test counted lines beginning with a

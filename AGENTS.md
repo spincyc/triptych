@@ -31,6 +31,7 @@ largely a register of how that data has already gone wrong:
 | a task requiring external visual, product, source, architectural, or acceptance review | `guidance/external-review-handoffs.md` |
 | a mass, proper, or rubric in `src/sources/calendars/` | `guidance/propers-for-agents.md` |
 | anything the browser fetches from `src/web/data/` | `guidance/web-data.md` |
+| the site layout template, `assets/site.css`, `src/web/browser/shared/`, site navigation, route generation in `tools/public-alpha`, or any non-PDF web surface outside liturgy | `guidance/corpus-browser-implementation.md`, `guidance/corpus-browser-master-plan.md` |
 | liturgy browser HTML, CSS, or JavaScript; Day or Propers routes; shared liturgical rendering; modes or navigation; responsive or print presentation; calendar or source apparatus; comparison views; or browser-visible recension coverage | `guidance/liturgy-browser-vision.md`, `guidance/liturgy-browser-roadmap.md` |
 | a bible edition, its index, or its chapter fragments | `guidance/bibles-for-agents.md` |
 | a verse or chapter numbering question across editions | `guidance/versification.md` |

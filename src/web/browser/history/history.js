@@ -541,10 +541,22 @@
     return node;
   }
 
+  /* Every value `act_citation` takes, glossed. `none-claimed` was missing here
+   * and present in `law.js`, and this table is a copy of that one: 26 of the 59
+   * stations in the default slice are printed stations whose `act_citation` is
+   * `none-claimed`, and every one of them rendered `none-claimed — ` with
+   * nothing after the dash. The wording is `law.js`'s, unchanged, because the
+   * two pages gloss one vocabulary and must not gloss it two ways. It is also
+   * the distinction the record insists on: `none-claimed` is NOT `not-found` —
+   * not-found means an instrument is believed to exist and nobody has read it;
+   * none-claimed means no instrument is asserted at all, which is what a
+   * printed station says and the only value such a station may carry
+   * (guidance/act-histories.md, section 10). */
   const CITATION_WORDS = {
     'cited-in-corpus': 'the instrument was read in this project’s own corpus',
     'cited-externally': 'the instrument was read, in a witness held elsewhere',
-    'not-found': 'the instrument was searched for and not found'
+    'not-found': 'the instrument was searched for and not found',
+    'none-claimed': 'no instrument is claimed at all'
   };
 
   function facts(station) {
@@ -620,9 +632,9 @@
   };
 
   function fieldRow(field, before, after, wasSide, nowSide) {
-    const row = T.el('div', 'field');
-    row.appendChild(T.el('span', 'field-name', FIELD_NAMES[field] || field));
-    const pair = T.el('div', 'field-pair');
+    const row = T.el('div', 'change-field');
+    row.appendChild(T.el('span', 'change-field-name', FIELD_NAMES[field] || field));
+    const pair = T.el('div', 'change-field-pair');
     const long = field === 'text' || field === 'incipit';
     const missing = long
       ? 'this record does not carry these words'
@@ -631,14 +643,14 @@
       const text = raw === undefined || raw === null ? '' : String(raw);
       return value(text, missing, long ? (side || {}).withheld : '');
     };
-    const was = T.el('div', 'field-side field-before');
+    const was = T.el('div', 'change-field-side change-field-before');
     was.appendChild(shown(before, wasSide));
-    const now = T.el('div', 'field-side field-after');
+    const now = T.el('div', 'change-field-side change-field-after');
     now.appendChild(shown(after, nowSide));
     pair.appendChild(was);
-    pair.appendChild(T.el('div', 'field-arrow', '→'));
+    pair.appendChild(T.el('div', 'change-field-arrow', '→'));
     pair.appendChild(now);
-    if (long) pair.className = 'field-pair field-pair-long';
+    if (long) pair.className = 'change-field-pair change-field-pair-long';
     row.appendChild(pair);
     return row;
   }
