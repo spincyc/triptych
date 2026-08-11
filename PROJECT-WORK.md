@@ -474,6 +474,62 @@ one work-register marker. Five requirements pass; the sixth stays open because
 `day-missal.css` is protected liturgy and needs that deliverable's authority,
 which is the honest state rather than a rounding of it.
 
+### E1 Catena route-owned correction lane, pass 2
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v2-2026-08-11 -->
+
+The 2026-08-11 independent correction review (`8f8f424ec5ccd5300dcee997a529f79fc23a8959`,
+branch `ux/catena-wave-1-e1-correction-review`) held E1 Catena at **CHANGES
+REQUIRED** for correction head `dfc636665df26563138ff893bd2a9f9afc7d80c0`: the
+URL parser accepted contradictory duplicate keys and malformed translation
+voices; an identical invalid address validated and recovered differently
+depending on the controls a reader left behind, and recovery lost focus; stale
+load failures could erase newer state; blocked and empty claims could
+contradict one another, and integrity or invalid states could label a voice an
+absence; lead and licence rendering overstated or suppressed what the record
+supplies; browser print omitted the selected Scripture edition while keeping
+interactive footer matter; the accepted forced-colors correction carried a
+route focus rule that overrode the accepted shared role; and the first handoff
+package was protocol-incomplete, with inaccurate head, page-count, gate and
+navigation claims, absent referenced captures, and machine-private values.
+
+This second bounded lane, from unmoved main `9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`
+on branch `impl/catena-wave-1-e1-corrections-v2`, carried the useful route/test
+commit `67191afd1d6281006e5cb947596452481c0d9692` forward and corrected every
+route-owned defect above in `981959b4f78209401ba00bfbdcc430e23e09c8bb`, inside the exclusive boundary of
+`src/web/browser/catena/catena.js`, `catena.css`, `index.html`, and
+`tools/tests/test_catena_wave_1.py`. The focused suite grew from 99 to 179
+tests and stays green; the original 8,000/13,000-byte whole-file gzip-9
+ceilings hold unraised at 7,629 and 12,996; `catena-model.js` is byte-identical
+to main; and the browser-gate failure identity/status set is unchanged from the
+pristine-main baseline, with 15 Catena assertion `detail` texts differing and
+no assertion changing status — the rows are not byte-identical and this record
+does not call them so. `check-release-bindings` deliberately fails closed on
+the three changed route assets, and the single new `check-examples` divergence
+is that same unsigned-binding condition seen through
+`tools/public-alpha verify --preview`, until the release owner re-signs.
+
+An internal adversarial audit of this lane's own candidate found six further
+route-owned defects — a stranded focus on the failure arm of recovery, a
+superseded arrival's voice leaking into the next reader action, the route's own
+history echo reverting a reader who had already moved, a blocked-only chapter
+manufacturing a voice absence, malformed payload, lead and blocked values
+coerced into words, and a malformed acknowledgement suppressing a valid one —
+each now fixed and pinned by its own regression test. Ten further observations
+are recorded as decisions or limitations in the handoff rather than silently
+fixed, and two belong to other owners.
+
+No real assistive-technology session was possible in this environment, so that
+requirement is recorded as unmet with labelled accessibility-tree and
+keyboard-sequence supplements in its place, and forced-colors evidence is
+labelled browser emulation rather than a system palette. Generator/data,
+release, common-gate, and B0/shared-shell prerequisites remain with their
+owners in the roadmap subsection and the package's unresolved-blocker ledger. A
+new immutable sanitized handoff, `20260811T212656Z-catena-e1-corrections-v2`, records the exact
+candidate head; the sole next action is a fresh independent review of that head
+and its package. Nothing here is accepted, integrable, merged, re-signed, or
+deployed.
+
 ## Promised work
 
 ### Corpus browser foundation design

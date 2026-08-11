@@ -259,13 +259,136 @@ Designs may show an explicit unsupported/absent state or record a future corpus
 opportunity. They must not simulate the missing relationship, search result,
 comparison, text, or metadata in the UI.
 
+### E1 Catena corrections and their independent review — 2026-08-11
+
+E1 Catena production implementation was dispatched independently from main
+`9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`. Its history, which this tree did
+not previously record, is: an independent production review
+(`254c4446ff693e3015364e005624d62fbdf8e35b`, branch
+`ux/catena-wave-1-e1-review`) found **CHANGES REQUIRED** at candidate head
+`efd7559a93310442753383bfeec80529f4693288` with eleven findings; a first
+bounded correction lane (route/test commit
+`67191afd1d6281006e5cb947596452481c0d9692`, packaged head
+`dfc636665df26563138ff893bd2a9f9afc7d80c0`, branch
+`impl/catena-wave-1-e1-corrections`, immutable package
+`20260811T134130Z-catena-e1-corrections` and its ZIP, SHA-256
+`8013074d9a77ae54208399207e10d58aaacb7e1b6efab6e820bbeaaa9fd83b05`) met the
+original budgets and corrected the chronological chain, ordinary
+no-JavaScript truth, narrow and 200-percent reflow, route-local
+Back/Forward, and the forced-colors paragraph-border rule; and a fresh
+independent correction review
+(`8f8f424ec5ccd5300dcee997a529f79fc23a8959`, branch
+`ux/catena-wave-1-e1-correction-review`) again found **CHANGES REQUIRED** at
+`dfc636665`, because the route-owned halves of findings 3, 4, 5, 6, 8 and 11
+remained open, the accepted forced-colors correction carried a route focus
+rule that overrode the accepted shared role, five route-local robustness
+findings stood, and the first package was protocol-incomplete.
+
+This second bounded correction lane answers that review from current main.
+
+- Base and merge base: `9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`, unmoved
+  through the lane. Branch `impl/catena-wave-1-e1-corrections-v2`. The first
+  lane's route/test commit `67191afd1` was carried forward by cherry-pick and
+  the remaining route-owned defects were corrected in `981959b4f78209401ba00bfbdcc430e23e09c8bb`.
+  The candidate head is the durable-record commit carrying this subsection;
+  its exact SHA is recorded in the handoff package and this lane's report,
+  which is how package and head identity stay non-circular.
+- Exclusive file boundary, unchanged: `src/web/browser/catena/catena.js`,
+  `catena.css`, `index.html`, and `tools/tests/test_catena_wave_1.py`, plus
+  these four durable authority records. `catena-model.js` is byte-identical
+  to main (SHA-256 `f1ea94f9…ccf57b`, pinned by the focused suite), and the
+  base-to-head range changes no other tracked path.
+- Route defects corrected: the URL grammar validates the raw multimap, so a
+  recognized key cited twice is refused even when the citations agree while a
+  stranger's key is neither honoured nor disturbed, an undecodable
+  percent-value fails, `voice` is a closed whole-key grammar, and a chapter is
+  ranged against the book the address resolves to rather than a leftover
+  control; one seeding runs for every arrival, so an identical invalid address
+  renders one page whether it was pasted, reloaded, or reached by hashchange,
+  Back or Forward, with no stale controls, options or step buttons beneath it;
+  a rebuild that swallows the focused element hands focus to the reading
+  region, including on the failure arm, and each state speaks once;
+  asynchronous completions prove route ownership before they may repaint,
+  error, recount, announce or write history, rejected loads are evicted so the
+  retry the copy promises is real, a failed bootstrap says so instead of
+  leaving a permanent Loading label, and the route's own pushing write is
+  remembered by identity so its echo cannot revert a reader who has moved on;
+  tally, empty, blocked, integrity and voice-option claims derive from one
+  typed state, so held-but-unrenderable material is never summarized as
+  nothing held and no absence label is manufactured during an integrity
+  failure, an invalid route, a failed load, or beside a blocked row whose
+  voice the record does not state; acquisition rows are unreconciled lead
+  entries whose omitted confidence is disclosed and which assert no distinct
+  work, possession or renderability; every supplied valid rights fact renders
+  through one point-of-use acknowledgement channel without browser-side
+  precedence, and a malformed value is withheld rather than coerced into a
+  fact or a guessed legal status; print carries the selected Scripture edition
+  and voice, drops navigation, loopback annotations and interaction-only
+  prose, and keeps headings with their content; the route's focus-outline
+  overrides are gone in normal and forced-colors modes; the Scripture locus is
+  a heading; and per-work translation-absence reasons are no longer deferred
+  behind a closed disclosure.
+- Validation at the candidate head: focused suite 179 tests OK, grown from 99
+  and covering the adversarial URL, load-race, blocked/empty, print-identity
+  and real-payload cases the review named, an exactly-once identity assertion
+  over every rendered commentary fragment, and a regression test for each
+  finding of this lane's own internal adversarial audit; `test_catena` 52,
+  `test_browser_url_contract` 47, `test_browser_static` 5,
+  `test_browser_collisions` 11, `test_corpus_browser_gate` 18 with its one
+  intentional live-browser skip, and `make check-browser-harnesses` 6, all
+  matching the pristine-main baseline; `scripts/_catena.py check` exit 0 with
+  1,351 fragments, one held book and a 73-book canon; whole-file gzip-9
+  budgets 7,629 of 8,000 bytes for CSS and 12,996 of 13,000 for JavaScript,
+  the original ceilings, unraised; `make -k check` exit 2 with three failing
+  targets against the baseline's two — `check-tool-registry` and
+  `check-examples` are inherited, and both new reds are the one unsigned
+  binding condition seen twice, since `check-release-bindings` finds exactly
+  the three changed Catena route assets stale and `check-examples`' single new
+  divergence is `tools/public-alpha verify --preview` failing on those same
+  three hashes; browser artifact gate exit 1 with 2,290 assertions, 1,836
+  passed, 226 failed and 228 skipped, its failure classes 117 nested-`main`,
+  82 target-size and 27 skip-link, exactly the pristine-main baseline.
+- Baseline comparison, in precise terms: the base and head
+  `(route, state, name, status)` identity/status tuple sets are identical and
+  no assertion changed status in either direction. The complete assertion
+  objects are **not** byte-identical: of the 121 Catena rows on each side, 106
+  objects match byte for byte and 15 differ in their `detail` text alone,
+  reporting the renamed controls and lower target-size offender counts; of all
+  2,290 assertions exactly those 15 objects differ, and no non-Catena row
+  changed.
+- Outside-owner prerequisites remain untouched and open: the Psalm
+  Vulgate-to-edition projection, acquisition-lead reconciliation with its
+  stripped confidence, and the real licence/attribution projection belong to
+  the generator and data owner; the deterministic Catena-data release root and
+  the three route re-signatures belong to the release owner, and
+  `check-release-bindings` is meant to stay fail-closed until that owner acts;
+  the `voice` deep-link sample disposition belongs to the common-gate owner;
+  and the wrapper width, nested `main`, skip target, global focus and arrow
+  behavior, target size, and the shared-history `lastWritten` Forward
+  suppression belong to the B0/shared-shell owner. This lane also records two
+  findings of its own audit for other owners: the shared chapter loader caches
+  a transport rejection for the session, and every browser page nests
+  `main#reading` inside `main#main-content`.
+- Environment limits stated rather than papered over: no real
+  assistive-technology session was possible in this lane's headless
+  environment, so the accessibility-tree and keyboard-sequence artifacts are
+  labelled supplements and the requirement is recorded as unmet; forced-colors
+  evidence is browser emulation, labelled as such, not a system palette.
+- Immutable handoff: `20260811T212656Z-catena-e1-corrections-v2` and its sibling ZIP under
+  `build/agent-handoffs/`, whose ZIP SHA-256 is recorded in the package's
+  transport digest and this lane's report. The first package remains unchanged
+  as historical evidence.
+- Status: **awaiting fresh independent review** of the exact candidate head and
+  its package. This lane accepts nothing, integrates nothing, merges nothing,
+  re-signs nothing, and deploys nothing.
+
 ## Remaining program sequence
 
 | Work | Current state | Exact dependency / stopping line |
 | --- | --- | --- |
 | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
 | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
-| E1 Catena production implementation | Authorized independently | E0 is accepted; do not edit shared shell/global owners or protected Liturgy. |
+| E1 Catena production implementation | Second correction candidate awaiting fresh independent review | Review `8f8f424ec` (CHANGES REQUIRED at `dfc636665`) is answered by `impl/catena-wave-1-e1-corrections-v2`; preserve accepted E0 and the corrections the review passed; every generator/data, release, common-gate, B0/shared-shell, protected Liturgy, and PDF prerequisite stays with its owner; no merge, re-sign, deploy, or cutover. |
 | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
 | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
 | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
@@ -284,6 +407,7 @@ comparison, text, or metadata in the UI.
 | 2026-08-08 | Review-fix dispatch | Authorized `ux/corpus-wave-1-review-fixes` from exact reviewed head for bounded F0, shell, evidence, and authority corrections only. | F0 and shell remain changes required pending a fresh independent disposition; no production/main/deploy authority. |
 | 2026-08-09 | Review-fix implementation and test checkpoint | Completed the bounded F0 and shared-shell prototype corrections without reopening C0, C1, D0, or E0. The full capture run covered 85 real-route cases and 2,296 assertions with zero gating failures. Its 64 disclosed non-gating findings comprise 52 inherited nested-`main` findings, eight before-state useful-content findings, two before-only narrow-overflow findings, and two inherited Reader no-JavaScript overlay limitations. Protected Liturgy production and canonical PDF paths have zero reviewed-base-to-head changes. | Authority reconciliation `3bfb9df10e1bd4b8d4d2b56aeb430c897f67700a`; design/test head `c66c143643ff75a6cd54afdbe1fcd6eac0aca1b6`. F0 and shell remain changes required until independent acceptance. The earlier correction package `20260809T014145Z-corpus-wave-1-review-fixes` is superseded for protocol defects; a fresh immutable package follows this tracking repair. |
 | 2026-08-09 | Final F0 and shared-shell design review | Independent review recorded **F0 Source Library — ACCEPT** and **Shared non-Liturgy shell — ACCEPT**, preserving C0/C1/D0/E0 and protected Liturgy/PDF/routes/hashes while carrying the disclosed production and data obligations forward. | Reviewed and packaged head `ecbd93a0575c4b890cc814af7cd20d01f5af7beb`; package `20260809T021953Z-corpus-wave-1-review-fixes.zip`; SHA-256 `d5fde51b14f143db05f762178896284d7768c0b2a11fc222fc2b32da63e22062`. |
+| 2026-08-11 | E1 Catena correction pass 2 | Answered correction review `8f8f424ec` (**CHANGES REQUIRED** at `dfc636665`) from unmoved main `9b9ff74a7`: carried route/test commit `67191afd1` forward and corrected the remaining route-owned URL-grammar, history-independence, recovery-focus, asynchronous-transaction, blocked/empty, lead, licence, print, focus-override, heading, and absence-disclosure defects inside the four-path boundary. Focused suite 179 tests; budgets 7,629/8,000 and 12,996/13,000 unraised; gate 2,290 assertions with the pristine-main failure identity/status set unchanged, 15 Catena `detail` texts differing and no row changing status; `check-release-bindings` deliberately fail-closed on the three changed route assets. | Branch `impl/catena-wave-1-e1-corrections-v2`; route/test commit `981959b4f78209401ba00bfbdcc430e23e09c8bb`; packaged head and package `20260811T212656Z-catena-e1-corrections-v2` recorded in the handoff; awaiting fresh independent review. |
 
 ## Next Codex tasks
 

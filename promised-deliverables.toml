@@ -1239,3 +1239,33 @@ state = "complete"
   criterion = "Artwork validation and source-controlled review records close every held notice without inventing object identities or implying external approval."
   status = "pass"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v2-2026-08-11"
+owner = "src/web/browser/catena"
+promise = "Answer the 2026-08-11 E1 Catena correction review (8f8f424ec, CHANGES REQUIRED at dfc636665) with a second bounded route/test correction from current main and a new protocol-complete immutable handoff for fresh independent review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "route-owned-defects-corrected"
+  criterion = "The URL-grammar, history-independence, recovery-focus, asynchronous-transaction, blocked/empty-truth, lead-wording, rights-rendering, print, focus-override, heading, and absence-disclosure defects of review 8f8f424ec are corrected inside the exclusive boundary of src/web/browser/catena/catena.js, catena.css, index.html, and tools/tests/test_catena_wave_1.py, with the focused suite green, the original gzip-9 ceilings unraised, catena-model.js byte-identical, and no edit to any generator, generated-data, release, gate, shared-shell, or protected Liturgy path."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena.css", "src/web/browser/catena/index.html", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "outside-owner-prerequisites-recorded"
+  criterion = "Every generator/data, release, common-gate, and B0/shared-shell prerequisite the review left open is recorded with its owner, remains untouched by this lane, and is not marked complete."
+  status = "pass"
+  evidence = ["guidance/corpus-browser-roadmap.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "protocol-complete-handoff-package"
+  criterion = "One new immutable timestamped handoff directory and matching ZIP contain the required core files, exact commands with numeric exits, a sanitized capture matrix with honest page and baseline claims, the required before/after and focused evidence, a machine-checked evidence index resolving every reference, a SHA-256 manifest, and a ZIP digest for the exact corrected head."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "A fresh independent review of the exact pass-2 correction head and its new immutable package records a durable disposition."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
