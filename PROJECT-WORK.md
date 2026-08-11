@@ -339,6 +339,14 @@ old URL. Correcting the canonical origin is product/domain-architecture work
 under the master plan, not a bug fix to smuggle in; Triptych remains the
 product and repository identity.
 
+**Gate baseline for this tree.** `check-browser-gate` over the built site:
+2,290 assertions, **228** failures — 117 single-`main`, 82 target-size, 27
+skip-link/modal-trap, 2 narrow-320 overflows (`/sources/` by 24px, `/texts/`
+by 56px). The same gate over a pure-`main` build reports the identical 228,
+so the two overflow findings are main's newer surfaces measured for the first
+time, not an integration regression. The hardening branch's recorded 226
+described its own older tree.
+
 **Next action.** B0/B1 — the production shared-shell primitives and their
 regression harness — are unblocked and authorized: the design contracts and
 shared-shell acceptance are recorded above, and the plan's sequence
