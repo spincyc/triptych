@@ -61,6 +61,12 @@ ASSERTION_FLOORS = {
     "propers_reader_integration_browser.mjs": 30,
 }
 
+# Review-only prototype harnesses serve the tracked tree directly rather than
+# the preview artifact, and each keeps its floor in its own test module
+# (test_corpus_foundation_prototype.py), so they are accounted for here without
+# a preview requirement or a second floor.
+PROTOTYPE_HARNESSES = frozenset({"corpus_foundation_prototype_browser.mjs"})
+
 # The diagnostic arrays a harness keeps beside its assertions. These, not the exit
 # status, are the health signal: a console error, a dead request or a non-200 is a
 # defect in the page whoever ran the gate should hear about, and it says so with
@@ -161,9 +167,10 @@ class BrowserHarnessStructureTest(unittest.TestCase):
     def test_every_expected_harness_is_present_and_none_is_unaccounted_for(self) -> None:
         self.assertEqual(
             discovered_harnesses(),
-            sorted(ASSERTION_FLOORS),
+            sorted(set(ASSERTION_FLOORS) | PROTOTYPE_HARNESSES),
             "a *_browser.mjs harness appeared or vanished; add or remove its floor "
-            "deliberately rather than letting the set drift",
+            "(or its PROTOTYPE_HARNESSES entry) deliberately rather than letting "
+            "the set drift",
         )
 
     def test_every_harness_parses(self) -> None:
@@ -173,6 +180,8 @@ class BrowserHarnessStructureTest(unittest.TestCase):
 
     def test_every_harness_reads_the_preview_build(self) -> None:
         for name in discovered_harnesses():
+            if name in PROTOTYPE_HARNESSES:
+                continue
             with self.subTest(harness=name):
                 source = (TESTS / name).read_text(encoding="utf-8")
                 self.assertIn(

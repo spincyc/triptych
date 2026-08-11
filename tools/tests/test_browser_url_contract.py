@@ -86,7 +86,7 @@ WRITTEN_HASH_KEYS = {
     ["edition", "passage"],
     ["author", "category", "language", "period", "rights", "readable", "find", "sort"],
   ],
-  "texts/texts.js": [["author", "edition", "section", "reading", "sort", "find"]],
+  "texts/texts.js": [],
   "liturgy/day.js": [],
   "scripture/track.js": [],
 }
@@ -94,6 +94,11 @@ WRITTEN_HASH_KEYS = {
 COMPUTED_HASH_WRITERS = {
   "liturgy/day.js": ["pairs"],
   "scripture/track.js": ["hashPairs()"],
+  # texts.js moved its literal into `const pairs` when the mainline
+  # fragment-hygiene fix made the write conditional (an unnarrowed corpus
+  # clears the fragment instead of writing nothing); the six keys are pinned
+  # by test_the_texts_page_still_builds_its_six_pair_writer.
+  "texts/texts.js": ["pairs"],
 }
 
 # Read as input, never written back out. This is the repository's rule about
@@ -559,6 +564,21 @@ class WrittenHashKeysTest(unittest.TestCase):
         answer = probe(probe="writtenKeys", file=relative)
         self.assertEqual(answer["literal"], calls)
         self.assertEqual(answer["computed"], COMPUTED_HASH_WRITERS.get(relative, []))
+
+  def test_the_texts_page_still_builds_its_six_pair_writer(self):
+    """The pinned keys survived the literal's move into `const pairs`.
+
+    WEAK: derived from the source text, like RecognisedHashKeysTest, because
+    the pair list now feeds a conditional write and no longer appears as a
+    `T.writeHash([...])` literal the probe can evaluate.
+    """
+    import re
+    literal = re.search(r"const pairs = \[(.*?)\n    \];", text_of("texts/texts.js"), re.S)
+    self.assertIsNotNone(literal, "texts.js no longer builds its `pairs` list")
+    self.assertEqual(
+      re.findall(r"\['([a-z]+)',", literal.group(1)),
+      ["author", "edition", "section", "reading", "sort", "find"],
+    )
 
 
 @needs_node

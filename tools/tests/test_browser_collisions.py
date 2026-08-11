@@ -112,7 +112,12 @@ def emitted_classes(path: Path) -> set[str]:
 
 
 def instrument_stylesheets() -> list[Path]:
-  return sorted(p for p in BROWSER.rglob("*.css") if p != CORE_CSS)
+  # prototypes/ holds unlinked review-only candidates that never load beside
+  # browser-core.css, so the shared-namespace rules do not govern them.
+  return sorted(
+    p for p in BROWSER.rglob("*.css")
+    if p != CORE_CSS and "prototypes" not in p.relative_to(BROWSER).parts
+  )
 
 
 def citation_words(path: Path) -> dict[str, str]:
@@ -133,6 +138,10 @@ def main_ids() -> dict[str, str]:
   """Every `<main id>` in the tree, by the page that carries it."""
   found: dict[str, str] = {}
   for page in sorted(BROWSER.rglob("*.html")):
+    # A prototype page never loads the shared failure plumbing, so its <main>
+    # is not a landmark browser-core.js has to know.
+    if "prototypes" in page.relative_to(BROWSER).parts:
+      continue
     for element in re.findall(r"<main[^>]*>", page.read_text()):
       identifier = re.search(r'id="([^"]+)"', element)
       if identifier:
