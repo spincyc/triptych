@@ -505,6 +505,53 @@ guidance, regenerate both release records from any corrected reconciled tree,
 and require a fresh independent review of that exact artifact. The sole E1
 next action is the bounded correction dispatch stated in the roadmap.
 
+### E1 Catena correction independent review
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-2026-08-11 -->
+<!-- promised-deliverable: corpus-browser-catena-e1-correction-independent-review-2026-08-11 -->
+
+The cold independent review of the bounded correction branch
+`impl/catena-wave-1-e1-corrections` inspected exact head
+`dfc636665df26563138ff893bd2a9f9afc7d80c0`, route commit
+`67191afd1d6281006e5cb947596452481c0d9692`, current-main base
+`9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`, and the immutable package
+`20260811T134130Z-catena-e1-corrections.zip` with independently verified
+SHA-256
+`8013074d9a77ae54208399207e10d58aaacb7e1b6efab6e820bbeaaa9fd83b05`.
+The disposition remains **CHANGES REQUIRED**.
+
+The correction preserves its four-path route/test boundary and fixes the
+Genesis 1 chronological coalescing, ordinary no-JavaScript state, narrow and
+200-percent reflow, route-local Back/Forward sequence, and forced-colors
+paragraph-border rule. It also meets the original whole-file gzip-9 ceilings:
+CSS is 7,026 of 8,000 bytes and JavaScript is 12,946 of 13,000 bytes.
+Acceptance nevertheless fails. The URL parser accepts contradictory duplicate
+keys and malformed translation voices; invalid recovery depends on prior
+controls; stale load errors can replace newer states; blocked and empty claims
+can contradict one another; lead and licence rendering still overstate or
+suppress supplied records; and browser print omits the selected Scripture
+edition while retaining interactive footer matter.
+
+The handoff directory and ZIP are mechanically intact, but the package is not
+protocol-complete. Its screenshot index names the route commit rather than the
+packaged head, cites capture files that are absent, exposes machine-private
+paths and loopback ports, reports a 17-page PDF as eight pages, claims
+navigation is absent when it remains in print, and calls complete Catena gate
+rows byte-identical when only assertion identity/status tuples are identical.
+Required before/after, focused 1024/768, meaningful 400-percent, real
+assistive-technology, full-palette forced-colors, and throttled-startup
+evidence is also absent.
+
+No implementation, source, generator, data, release, gate, shared-shell,
+Liturgy, or PDF file was changed by this review. No candidate or main branch
+was merged or pushed, no release record was re-signed, and no deployment,
+cutover, or follow-on work began. The complete validation, visual, ownership,
+finding, and package matrix is in `guidance/corpus-browser-roadmap.md`. The
+only next action is one new bounded Catena correction lane from current main;
+it must correct the route/test defects and produce a new immutable sanitized
+handoff, while the already named generator, release, common-gate, and
+B0/shared-shell prerequisites remain with their owners.
+
 ## Promised work
 
 ### Corpus browser foundation design

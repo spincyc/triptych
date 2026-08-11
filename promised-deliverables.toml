@@ -283,6 +283,89 @@ state = "complete"
   ]
 
 [[deliverables]]
+id = "corpus-browser-catena-e1-corrections-2026-08-11"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Correct only the route-owned defects from the 2026-08-10 E1 Catena CHANGES REQUIRED review on a new branch from current main, record every outside-owner prerequisite without crossing its boundary, and return one protocol-complete exact-head handoff for fresh independent review without merging, deploying, or re-signing release bindings."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "route-owned-defects-corrected"
+  criterion = "Findings 2, 6, 7, 8, the route halves of 3, 4, and 5, and the evidence half of 11 are corrected inside the exclusive boundary of src/web/browser/catena/catena.js, catena.css, index.html, and tools/tests/test_catena_wave_1.py, with the focused suite green and no edit to any generator, generated-data, release, gate, shared-shell, or protected Liturgy path."
+  status = "open"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "outside-owner-prerequisites-recorded"
+  criterion = "The generator Scripture-projection, acquisition-reconciliation, and licence-projection defects, the release Catena-data binding and re-signing, the common-gate voice sample, and the B0 shell and shared-history defects are recorded as intentionally uncorrected with their owners named, and no file of theirs is changed on the correction branch."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "protocol-complete-handoff-package"
+  criterion = "One new immutable timestamped handoff directory and matching ZIP contain the required core files, exact commands and numeric exits, a sanitized capture matrix with honest page and baseline claims, required before/after and focused evidence, a SHA-256 manifest, and a ZIP digest for the exact corrected head."
+  status = "open"
+  evidence = [
+    "guidance/external-review-handoffs.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "Independent external review of the exact packaged correction head records one durable disposition; packaging, green tests, or this ledger entry alone authorize no acceptance, merge, deployment, or cutover."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
+id = "corpus-browser-catena-e1-correction-independent-review-2026-08-11"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Independently review the exact bounded E1 Catena correction against the original eleven findings, accepted E0, the immutable handoff, current-main baselines, route and outside-owner boundaries, budgets, and the complete visual and behavioral contract; record one durable disposition without fixing, merging, re-signing, deploying, or beginning follow-on work."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "exact-correction-and-package-verified"
+  criterion = "The review records the exact base, route commit, packaged head, branch, prior review, package identity, manifest and archive results, ZIP digest, live remote identity, and every protocol contradiction."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "original-finding-matrix-reviewed"
+  criterion = "Every one of the original eleven findings is independently classified as corrected, still open with its existing owner, or changes required with the smallest bounded correction and re-review evidence stated."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "validation-visual-budget-and-boundary-reviewed"
+  criterion = "The review records exact focused, repository, and live-browser results; compares natural failure identities and full diagnostic rows; inspects the original-resolution and print evidence; reproduces the original whole-file budgets; and proves the route/test, generator/data, release, common-gate, shared-shell, Liturgy, and PDF ownership boundaries."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "guidance/corpus-browser-master-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "single-correction-disposition-and-next-action-recorded"
+  criterion = "The review records exactly one allowed disposition, every remaining blocker, the no-fix/no-merge/no-re-sign/no-deploy boundary, and one new bounded Catena correction-lane next action."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
 id = "liturgy-reader-live-ritual-flow-2026-08-07"
 owner = "build/agent-continuity/liturgy-reader-visual-plan.md"
 promise = "Improve the live canonical Day and Propers readers for sustained liturgical reading through source-owned persistent ritual orientation, a current-place Contents map, and a calmer principal/rubric/reference hierarchy without reopening the accepted first viewport, cutover, navigation, state, renderer, source, or translation boundaries."
