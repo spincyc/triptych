@@ -210,9 +210,15 @@ first open conflict in that document; the review recorded below settled it.
 
 ### Which branch carries what
 
-No corpus-browser document is on `main`, which is `fc3092de9` as of 2026-08-08
+**Superseded by the 2026-08-10 foundation integration recorded below.** `main`
+now carries the six corpus documents, the accepted design and engineering
+foundation, and the three corpus ledger entries. The table and cautions below
+are kept as the pre-integration state they document; read current documents on
+`main`.
+
+No corpus-browser document was on `main`, which was `fc3092de9` as of 2026-08-08
 and six commits ahead of the shared base `c27d69153`. The seven lane branches
-all still base on `c27d69153`; the two `fix/*` branches do not, because they
+all still based on `c27d69153`; the two `fix/*` branches did not, because they
 were bug fixes taken against `main` itself.
 
 Branch heads, all read from `origin` on 2026-08-08:
@@ -268,18 +274,79 @@ The A3 wording governs what implementation may assume. The direction is
 accepted; no production route is visually accepted, so no route may cite A3 as
 approval of how it renders. The roadmap on `ux/foundation` still records A0–A4
 as candidates awaiting independent review; this register is later than that
-record, and the design lane has not yet written the dispositions down.
+record, and the design lane had not yet written the dispositions down. (Since
+the 2026-08-10 integration, the roadmap on `main` is the Wave 1 rewrite, which
+carries the amended dispositions; the `ux/foundation` ledger entry keeps its
+honest `candidate` state because its own independent-disposition requirement
+was answered by this register and the later Wave 1 review, not by the ZIP
+review it originally named.)
 
-### Blocker: B0 cannot start
+### Foundation integration, 2026-08-10
 
-An integration branch `corpus/foundation-integration` is planned, to carry both
-lanes' artifacts onto one base. **It still does not exist.** The branch list
-this section originally cited — five branches, "and nothing else" — is stale:
-`origin` now carries the eleven branches tabulated above under "Which branch
-carries what", plus `codex/isolated/20260727t173839z-a98664d00a5a`.
-`impl/corpus-wave-1` bases on the integration branch's head, so it cannot be
-created, and B0 — the production shared shell primitives — cannot start.
-Creating the integration branch is the unblocking act.
+The blocker this section used to record — "B0 cannot start" because no
+integration base existed — is resolved. The accepted foundation was
+reconciled onto **current `main`** (not the stale `c27d69153` base) and landed
+as three merges plus this record:
+
+1. `ux/foundation` (`3b5938a0d`) — consumed in full: A0–A4 documents, the
+   corpus-foundation prototype and harnesses, continuity record, and the
+   design ledger entry, per the 2026-08-08 coordinator dispositions above.
+2. `impl/foundation` + `impl/foundation-hardening` (`81fa65d76`) — consumed in
+   full: implementation record with §19, recon continuity record, the neutral
+   gates (static parse, artifact gate, URL-contract, harness-runner, and
+   collision suites), preview-build wiring, five design-neutral browser
+   fixes, and the fail-closed hardening ledger entry, which honestly remains
+   `in_progress` with `shared-shell-blocking-collisions-resolved` open on the
+   protected `day-missal.css` hazard.
+3. `ux/corpus-wave-1` + `ux/corpus-wave-1-review-fixes` (`01eb3eb1e`) —
+   documents consumed: the rewritten program-level master plan, vision,
+   roadmap, inventory, research, the Wave 1 ledger entry (complete), and the
+   acceptance records. The disposable prototype overlay and its harnesses
+   were deliberately **not** merged, per the acceptance's own scope limit;
+   they remain on the preserved branches. The wave's rewritten implementation
+   record was replaced by the engineering lane's, as this register directed.
+
+Semantic reconciliation against the six newer `main` commits (missal-switch,
+truthfulness, and URL/page-truth fixes): `history.js` and `texts.js` carry
+both lines of fixes; the release bindings were regenerated with
+`tools/release-bindings` for the seven browser files the integration changed,
+on top of `main`'s current hashes, so no old signature resurrected.
+
+**Deliberately not integrated**, each awaiting its own recorded gate:
+
+- `impl/shell-plumbing` (`c62b83904`): generator/layout plumbing, Makefile
+  target hygiene, the stale `test_public_alpha` fixture fix (`f434c5b91`),
+  and the single-`main`-landmark change. No acceptance record exists. Its
+  content is the natural input to B0 and should be consumed under B0's own
+  gates, not merged wholesale.
+- `impl/catena-wave-1` (`efd7559a9`): the E1 implementation of the accepted
+  E0 contract, with its 36-test suite and re-signing. E1 was authorized to
+  proceed independently, but no acceptance disposition of the implementation
+  is recorded; under the plan's acceptance model it stays off `main` until
+  independent review dispositions it. It is the nearest-to-ready pending
+  lane.
+- `impl/didach-domain` and `ux/didach-identity`: the abandoned `didach.ai`
+  direction; not part of this program.
+
+**Domain state, recorded so nobody manufactures a fix.** The public origin
+moved to `https://mystago.gy/` entirely through GitHub Pages settings and
+DNS; no repository change accomplished it and none was made by this
+integration. The old origin 301-redirects. `tools/public-alpha` still
+declares `SITE_ORIGIN = "https://spincyc.github.io/triptych"`, so `og:url`
+and `og:image` metadata name the old origin (reachable via the redirect), and
+`tools/tests/liturgy_reader_visual_reset_browser.mjs` baselines against the
+old URL. Correcting the canonical origin is product/domain-architecture work
+under the master plan, not a bug fix to smuggle in; Triptych remains the
+product and repository identity.
+
+**Next action.** B0/B1 — the production shared-shell primitives and their
+regression harness — are unblocked and authorized: the design contracts and
+shared-shell acceptance are recorded above, and the plan's sequence
+(foundation → catalogue/reader/instrument lanes → cross-object links/search →
+final acceptance) is unchanged. A Claude engineering lane should start B0
+from the current `main` tip on a fresh `impl/` branch, consuming
+`impl/shell-plumbing`'s work under B0's gates. New lanes start from `main`;
+no standing integration branch exists or is a dependency.
 
 **Deviation, recorded because it is real: Wave 1 started off-base.** The master
 plan requires that "once `corpus/foundation-integration` is pushed, all new
@@ -1329,6 +1396,18 @@ make the verb and id changes mechanical. The id renames come last because they
 move release hash records and every smoke-test filename together.
 
 ## Reconciliation history
+
+- 2026-08-10: **Foundation integration.** The accepted corpus foundation
+  landed on `main` from a fresh checkout: `ux/foundation`,
+  `impl/foundation-hardening` (with `impl/foundation`), and the six design
+  documents of `ux/corpus-wave-1-review-fixes` (with `ux/corpus-wave-1`) were
+  merged and semantically reconciled against the six newer `main` bug-fix
+  commits; the Wave 1 prototype overlay stayed on its branches by the
+  acceptance's own terms; release bindings were regenerated for the seven
+  changed browser files. `impl/shell-plumbing` and `impl/catena-wave-1`
+  remain deliberately unintegrated pending their recorded gates. The
+  `mystago.gy` cutover is external to the repository and untouched. Details
+  under "Foundation integration, 2026-08-10".
 
 - 2026-07-31: Twenty-two commits, none pushed. **Site shape.** The landing page
   became the library and its prose moved to `ABOUT.md`, which still opens
