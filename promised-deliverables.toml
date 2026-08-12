@@ -1249,8 +1249,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "route-owned-defects-corrected"
   criterion = "The URL-grammar, history-independence, recovery-focus, asynchronous-transaction, blocked/empty-truth, lead-wording, rights-rendering, print, focus-override, heading, and absence-disclosure defects of review 8f8f424ec are corrected inside the exclusive boundary of src/web/browser/catena/catena.js, catena.css, index.html, and tools/tests/test_catena_wave_1.py, with the focused suite green, the original gzip-9 ceilings unraised, catena-model.js byte-identical, and no edit to any generator, generated-data, release, gate, shared-shell, or protected Liturgy path."
-  status = "pass"
-  evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena.css", "src/web/browser/catena/index.html", "tools/tests/test_catena_wave_1.py"]
+  status = "open"
+  evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena.css", "src/web/browser/catena/index.html", "tools/tests/test_catena_wave_1.py", "guidance/corpus-browser-roadmap.md"]
 
   [[deliverables.requirements]]
   id = "outside-owner-prerequisites-recorded"
@@ -1267,5 +1267,35 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact pass-2 correction head and its new immutable package records a durable disposition."
-  status = "open"
+  status = "pass"
   evidence = ["guidance/corpus-browser-roadmap.md"]
+
+[[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v2-independent-review-2026-08-12"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Independently review exact E1 Catena correction V2 head 17f031b37840d8320c664a128d72b502108fe075 against prior review 8f8f424ec, the frozen main baseline, accepted E0, the immutable handoff, adversarial route behavior, accessibility and print evidence, budgets, and ownership boundaries; record one durable disposition without fixing, merging, re-signing, deploying, or beginning follow-on work."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "exact-identity-package-and-boundary-verified"
+  criterion = "The review independently verifies the live branch, head, base, route and carried commits, prior review, directory and ZIP, manifest, evidence references, sanitizer result, PDF and file counts, exact changed-path set, and every unchanged outside-owner class."
+  status = "pass"
+  evidence = ["guidance/corpus-browser-roadmap.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "prior-findings-and-adversarial-route-reviewed"
+  criterion = "Every prior finding is classified from the prior review rather than the implementation report, and URL/history, asynchronous ownership, typed truth, leads, rights, focus, responsive behavior, accessibility evidence, and print are independently exercised."
+  status = "pass"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
+
+  [[deliverables.requirements]]
+  id = "commands-gates-budgets-and-print-reproduced"
+  criterion = "The review records the exact focused and sibling counts, generated-corpus check, browser harnesses, base/head gate object comparison, base/head make-check failure-set comparison, gzip-9 measurements, and actual every-page count of a fresh exact-head print."
+  status = "pass"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
+
+  [[deliverables.requirements]]
+  id = "single-disposition-prerequisites-and-next-action-recorded"
+  criterion = "The review records CHANGES REQUIRED only for the confirmed Catena route and handoff defects, keeps real-AT/system-forced-colors and all generator, release, common-gate, B0/shared-shell, Liturgy, and PDF prerequisites with their owners, forbids integration and deployment, and names one smallest correction action."
+  status = "pass"
+  evidence = ["guidance/corpus-browser-roadmap.md", "PROJECT-WORK.md", "guidance/corpus-browser-master-plan.md"]

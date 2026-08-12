@@ -530,6 +530,56 @@ candidate head; the sole next action is a fresh independent review of that head
 and its package. Nothing here is accepted, integrable, merged, re-signed, or
 deployed.
 
+### E1 Catena correction V2 independent review
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v2-independent-review-2026-08-12 -->
+
+The cold independent review inspected branch
+`impl/catena-wave-1-e1-corrections-v2` at exact head
+`17f031b37840d8320c664a128d72b502108fe075`, route/test commit
+`981959b4f78209401ba00bfbdcc430e23e09c8bb`, carried correction
+`da7d938d4cb0115b3b95bf91b82a091f2a379e5c`, frozen main
+`9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`, and prior review
+`8f8f424ec5ccd5300dcee997a529f79fc23a8959`. The immutable package has 160
+files, a 159-entry valid manifest, three PDFs of 6, 3, and 6 pages, no missing
+evidence reference or sanitizer hit, and the independently reproduced ZIP
+SHA-256 `e4083de536b041094f0a6c3f376d3f50800242b037f71ae994f2572c6b86a96b`.
+
+The disposition is **CHANGES REQUIRED**. The reviewed URL, history, focus,
+asynchronous-ownership, truth-state, lead, ordinary print, and responsive
+corrections work under independent adversarial replay, and the focused suite
+is 179 tests green. One Catena-owned rights/provenance defect remains: object
+values supplied as `edition`, `edition_published`, or an item of `translators`
+are converted into visible `[object Object]` text. The focused suite validates
+malformed acknowledgement, attribution, and rights-basis values but does not
+exercise those adjacent provenance fields. The smallest correction is to
+validate every presented provenance field as typed nonempty text, retain valid
+sibling facts, and add the adversarial regression without raising the existing
+budgets.
+
+The package is mechanically sound but its claims are not fully exact. Its
+summary says a stranger key is neither honoured nor disturbed although its own
+limitations correctly record that partial-address completion discards stranger
+keys. Its AT limitation also says no AT-SPI bus launcher exists, while
+`/usr/lib/at-spi-bus-launcher` is an executable installed before capture. No
+running accessibility bus, display, screen reader, speech channel, or braille
+stack was available, so the conclusion that no real AT session occurred remains
+true. The governing vision makes real-device or assistive-technology review a
+pre-release prerequisite; that environmental evidence gap is not recast as a
+Catena implementation defect. Genuine Chrome 400-percent zoom passed in this
+review; forced colors remained browser emulation because no genuine system
+high-contrast environment was available.
+
+The review changed only the four durable authority records. It did not edit the
+implementation branch, generator or generated Catena data, release records,
+common gate, B0/shared shell, protected Liturgy, PDFs, or `catena-model.js`; it
+did not merge, re-sign, deploy, or begin another lane. The complete previous-
+finding matrix, command results, fresh 15-page print inspection, ownership
+audit, and outside-owner prerequisites are recorded in
+`guidance/corpus-browser-roadmap.md`. The one next action is a smallest bounded
+Catena route/test and exact-handoff correction for the provenance coercion and
+the two package statements, followed by another fresh independent review.
+
 ## Promised work
 
 ### Corpus browser foundation design
