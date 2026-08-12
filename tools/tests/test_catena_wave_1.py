@@ -361,6 +361,91 @@ LICENCE_FIXTURE = {
     "refusals": {},
 }
 
+# EXPLICITLY SYNTHETIC untyped-provenance fixture (V3, review finding 4).
+# The tracked corpus types every provenance field it carries, so the coercion
+# the review found can only be driven from a labelled fixture. Every malformed
+# value below stands BESIDE a sound one, because the requirement is not merely
+# that garbage is withheld: it is that withholding garbage costs no valid fact.
+UNTYPED_PROVENANCE_FIXTURE = {
+    "book": "Gen",
+    "chapter": 1,
+    "text_prefix": "structure/catena/text/",
+    "sources": {
+        # The control: every field sound, so any loss is visible as a diff.
+        "0": {
+            "author": "Alpha Author", "work": "Alpha Work", "work_id": "work.alpha",
+            "date": 401, "language": "la", "voice": "original",
+            "rights": "public-domain", "edition": "Alpha Edition",
+            "edition_published": "Alpha Press, 1899",
+            "translators": [], "container": "",
+        },
+        # The review's three named fields, plus the mixed translator list: the
+        # two sound names must survive the object, the number and the blank.
+        "1": {
+            "author": "Beta Author", "work": "Beta Work", "work_id": "work.beta",
+            "date": 402, "language": "en", "voice": "translation",
+            "rights": "public-domain",
+            "edition": {"title": "not text"},
+            "edition_published": ["Beta Press", "1901"],
+            "translators": ["Good Name", {"broken": True}, 42, "   ", "Other Name"],
+            "container": "",
+        },
+        # A translators CONTAINER that is not a list. `.length` satisfied the
+        # old guard and `.join` then threw, killing the render mid-chapter and
+        # leaving the region busy for ever; it must simply carry no hands.
+        "2": {
+            "author": "Gamma Author", "work": "Gamma Work", "work_id": "work.gamma",
+            "date": 403, "language": "la", "voice": "original",
+            "rights": "licensed", "edition": "Gamma Edition",
+            "edition_published": "", "translators": {"length": 2}, "container": "",
+        },
+        # The identity fields themselves untyped — the same defect one node up.
+        "3": {
+            "author": {"name": "not text"}, "work": ["Delta", "Work"],
+            "work_id": "work.delta", "date": {"year": 404},
+            "language": {"code": "la"}, "voice": "original",
+            "rights": "public-domain", "edition": "Delta Edition",
+            "edition_published": "", "translators": [], "container": "",
+        },
+        # The remaining adversarial scalars: boolean, null, empty, whitespace.
+        "4": {
+            "author": "Epsilon Author", "work": "Epsilon Work",
+            "work_id": "work.epsilon", "date": 405, "language": "la",
+            "voice": "original", "rights": "", "edition": True,
+            "edition_published": None, "translators": None,
+            "attribution": "   ", "rights_basis": "Epsilon basis stands.",
+            "container": "",
+        },
+    },
+    "fragments": [
+        {"id": "untyped-control", "locator": "1", "source": "0",
+         "review": "inspected", "text_words": 2,
+         "extent": {"token": "Gen", "first_chapter": 1, "first_verse": 1,
+                    "last_chapter": 1, "last_verse": 1}},
+        {"id": "untyped-fields", "locator": "2", "source": "1",
+         "review": "inspected", "text_words": 2,
+         "extent": {"token": "Gen", "first_chapter": 1, "first_verse": 2,
+                    "last_chapter": 1, "last_verse": 2}},
+        # A locator and a review state that are not text either.
+        {"id": "untyped-container", "locator": {"ref": "not text"}, "source": "2",
+         "review": {"state": "not text"}, "text_words": 2,
+         "extent": {"token": "Gen", "first_chapter": 1, "first_verse": 3,
+                    "last_chapter": 1, "last_verse": 3}},
+        {"id": "untyped-identity", "locator": "", "source": "3",
+         "review": False, "text_words": 2,
+         "extent": {"token": "Gen", "first_chapter": 1, "first_verse": 4,
+                    "last_chapter": 1, "last_verse": 4}},
+        {"id": "untyped-scalars", "locator": "5", "source": "4",
+         "review": "inspected", "text_words": 2,
+         "extent": {"token": "Gen", "first_chapter": 1, "first_verse": 5,
+                    "last_chapter": 1, "last_verse": 5}},
+    ],
+    "leads": [],
+    "blocked": [],
+    # The refusal note is displayed prose too, and was coerced the same way.
+    "refusals": {"douay-rheims": [{"note": {"broken": True}}]},
+}
+
 # EXPLICITLY SYNTHETIC malformed-record fixture, for the adversarial audit's
 # defensive-rendering findings (R2 F3/F4/F5). Every tracked lead and blocked
 # array is either empty or well typed, and no tracked payload is malformed, so
@@ -472,7 +557,26 @@ SCENARIOS = [
     {"name": "default", "hash": GEN1,
      "steps": [{"do": "openFirstFragment", "label": "opened"}]},
     {"name": "voice-held", "hash": GEN1 + "&voice=translation:en"},
-    {"name": "voice-not-held", "hash": GEN1 + "&voice=translation:de"},
+    # A voice the CHAPTER lacks, in a language the corpus does hold (Genesis
+    # holds Greek originals, and no Greek translation): still kept and named.
+    {"name": "voice-not-held", "hash": GEN1 + "&voice=translation:grc"},
+    # Well formed, and in a language the corpus holds NOTHING in. `zz` is
+    # unassigned; `de` is a real ISO code this project has never held a
+    # fragment in. Grammar admits both; support must admit neither.
+    {"name": "unsupported-voice", "hash": GEN1 + "&voice=translation:zz"},
+    # Case is part of the closed grammar, so an upper-case code is MALFORMED
+    # and not merely unsupported: the two refusals must not collapse.
+    {"name": "invalid-voice-upper", "hash": GEN1 + "&voice=translation:EN"},
+    {"name": "unsupported-voice-real-code", "hash": GEN1 + "&voice=translation:de"},
+    # Supported -> unsupported -> supported over a live document: the refusal
+    # must not strand the page in the error state or lose the reader's voice.
+    {"name": "unsupported-voice-change", "hash": GEN1 + "&voice=translation:en",
+     "steps": [{"do": "hash", "value": GEN1 + "&voice=translation:zz",
+                "label": "unsupported"},
+               {"do": "hash", "value": GEN1 + "&voice=translation:en",
+                "label": "supported-again"}]},
+    {"name": "untyped-provenance", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": UNTYPED_PROVENANCE_FIXTURE}},
     # Genesis 10 holds 71 fragments, every one in its author's own Latin: the
     # selected-empty-voice chapter finding 8 demands be told truthfully.
     {"name": "voice-empty-chapter", "hash": GEN10_ENGLISH},
@@ -1106,6 +1210,12 @@ function inspect(page, document, location, fetched, hashWrites, replaced, status
     acknowledgements: withClass('fragment-acknowledgement').map(text),
     acknowledgementAboveText: ackPlacement,
     languages: withClass('fragment-language').map(text),
+    // The fragment's own identity chips. They were outside every projection,
+    // so the no-coercion sweep could not see a value coerced into them.
+    authors: withClass('fragment-author').map(text),
+    works: withClass('fragment-work').map(text),
+    dates: withClass('fragment-date').map(text),
+    extents: withClass('fragment-extent').map(text),
     states: withClass('state').map(text),
     errorSections: errors,
     staticEntry: Boolean(first('static-entry')),
@@ -1959,12 +2069,105 @@ class VoiceDeepLinkTest(ReplayTest):
                             for one in page["asideNotes"]))
 
     def test_a_voice_the_chapter_lacks_is_kept_and_named_rather_than_widened(self):
+        # SUPPORTED, and not held HERE. Genesis 1 holds Greek originals and no
+        # Greek translation, so "none here" is a fact about this chapter and
+        # the corpus really does hold the language it names.
         page = self.page("voice-not-held")
-        self.assertEqual(page["voice"], "translation:de")
-        self.assertEqual(page["hash"], GEN1 + "&voice=translation:de")
+        self.assertEqual(page["voice"], "translation:grc")
+        self.assertEqual(page["hash"], GEN1 + "&voice=translation:grc")
         self.assertEqual(page["hashWrites"], [])
-        self.assertIn("German translation — none here", page["voiceLabels"])
+        self.assertIn("Greek translation — none here", page["voiceLabels"])
         self.assertEqual(page["fragmentCount"], 0)
+
+
+class UnsupportedVoiceTest(ReplayTest):
+    """V3 finding 5/8 — shape is not support.
+
+    `voice=translation:zz` satisfied the two-to-three-lowercase-letter grammar
+    and was then carried into the page as though the corpus held a ZZ
+    translation and merely had none on this chapter, producing the invented
+    claim "none in ZZ translation". A voice naming a language the index holds
+    nothing in is a different thing from a voice the chapter lacks, and the
+    page must not spend a holding it has never had to describe one.
+    """
+
+    UNSUPPORTED = ("unsupported-voice", "unsupported-voice-real-code")
+
+    def test_an_unsupported_voice_fails_closed(self):
+        self.assert_failed_closed(
+            "unsupported-voice",
+            "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:zz",
+            "voice=translation:zz is not a voice this corpus holds")
+
+    def test_a_real_but_unheld_language_code_fails_closed_the_same_way(self):
+        # `de` is well formed and nameable; the corpus has never held a German
+        # fragment, so naming it is exactly the same invention as `zz`.
+        self.assert_failed_closed(
+            "unsupported-voice-real-code",
+            "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:de",
+            "voice=translation:de is not a voice this corpus holds")
+
+    def test_an_upper_case_code_is_malformed_rather_than_unsupported(self):
+        # `EN` names a language the corpus does hold; it still fails the closed
+        # lowercase grammar, and must be refused for the shape, not the set.
+        self.assert_failed_closed(
+            "invalid-voice-upper",
+            "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:EN",
+            "voice=translation:EN is not a voice —")
+
+    def test_the_refusal_is_distinct_from_the_malformed_one(self):
+        # Three states, not two: malformed shape, supported voice, and a
+        # well-formed voice the corpus cannot answer.
+        malformed = self.page("invalid-voice")["errorSections"][0]["details"]
+        unsupported = self.page("unsupported-voice")["errorSections"][0]["details"]
+        self.assertTrue(any("is not a voice —" in one for one in malformed))
+        self.assertFalse(any("is not a voice —" in one for one in unsupported))
+        self.assertTrue(any("this corpus holds" in one for one in unsupported))
+        self.assertFalse(any("this corpus holds" in one for one in malformed))
+
+    def test_no_unsupported_voice_ever_claims_a_holding(self):
+        # The review's exact complaint, asserted as a contradiction: no
+        # rendered state may name the language or claim an absence in it.
+        for name in self.UNSUPPORTED:
+            page = self.page(name)
+            with self.subTest(scenario=name):
+                rendered = json.dumps(self.rendered_state(page), ensure_ascii=False)
+                for invented in ("none in ZZ translation", "ZZ translation",
+                                 "none in German translation", "German translation",
+                                 "none here"):
+                    self.assertNotIn(invented, rendered)
+                self.assertEqual(page["tallyText"], "")
+                self.assertEqual(page["voiceLabels"], ["Everything held"])
+
+    def test_the_unsupported_voice_is_dropped_from_the_recovery_route(self):
+        # The rest of the address is sound, so recovery keeps it and offers
+        # the page without the voice it cannot honour.
+        page = self.page("unsupported-voice")
+        self.assertEqual(page["errorSections"][0]["recoveryHref"],
+                         "#book=Gen&chapter=1&bible=douay-rheims")
+
+    def test_a_supported_voice_survives_a_pass_through_an_unsupported_one(self):
+        # supported -> unsupported -> supported, over one live document.
+        first = self.snapshot("unsupported-voice-change", "start")
+        self.assertEqual(first["voice"], "translation:en")
+        self.assertEqual(first["fragmentCount"], 14)
+        broken = self.snapshot("unsupported-voice-change", "unsupported")
+        self.assertEqual(broken["referenceText"], "Address not recognised")
+        self.assertEqual(broken["fragmentCount"], 0)
+        back = self.snapshot("unsupported-voice-change", "supported-again")
+        self.assertEqual(back["voice"], "translation:en")
+        self.assertEqual(back["fragmentCount"], 14)
+        self.assertEqual(back["hash"], GEN1 + "&voice=translation:en")
+
+    def test_the_supported_set_is_read_from_the_index_not_from_the_key(self):
+        # The closed set is Catena-owned runtime truth the route already has,
+        # never manufactured from the voice string or from a new request.
+        script = held(CATENA / "catena.js")
+        self.assertIn("(index.held || []).some((one) => (one.languages || []).includes(",
+                      script)
+        self.assertEqual(self.page("unsupported-voice")["fetched"],
+                         ["structure/catena/index.json", "bibles.json",
+                          "structure/paragraphs/index.json"])
 
     def test_the_page_no_longer_assigns_the_voice_before_the_options_exist(self):
         script = held(CATENA / "catena.js")
@@ -2711,6 +2914,102 @@ class BlockedVoiceClaimTest(ReplayTest):
                          "language; choose “Everything held” to see them.")
 
 
+class UntypedProvenanceTest(ReplayTest):
+    """V3 finding 4 — every displayed provenance field is typed, not coerced.
+
+    The review mutated `edition`, `edition_published` and one `translators`
+    item to objects and read `4[object Object][object Object]tr. [object
+    Object]licensed` off the page. The audit for this correction found the
+    same door open on `locator`, `review`, `author`, `work`, `date`,
+    `language` and the refusal note, and one worse: a `translators` value with
+    a `length` and no `join` threw out of an async render, so the chapter kept
+    `aria-busy` for ever. All of them are one rule — a fact is a fact only as
+    nonempty text — and the rule is applied once, at the point of display.
+    """
+
+    def page_lines(self):
+        return self.page("untyped-provenance")["sourceLines"]
+
+    def test_nothing_untyped_reaches_the_page_as_words(self):
+        rendered = json.dumps(
+            self.rendered_state(self.page("untyped-provenance")), ensure_ascii=False)
+        for artefact in ("[object Object]", "undefined", "NaN",
+                         "Beta Press,1901", "not text"):
+            self.assertNotIn(artefact, rendered)
+        # Booleans and nulls are checked against the displayed prose alone;
+        # the projection itself is JSON and carries them legitimately.
+        for line in self.page_lines():
+            for artefact in ("true", "false", "null"):
+                self.assertNotIn(artefact, line)
+
+    def test_the_sound_record_beside_them_is_untouched(self):
+        # The control row: withholding garbage must cost no valid fact.
+        first = self.page_lines()[0]
+        self.assertIn("Alpha Edition", first)
+        self.assertIn("Alpha Press, 1899", first)
+        self.assertIn("public-domain", first)
+
+    def test_a_malformed_edition_and_printing_are_withheld_not_coerced(self):
+        second = self.page_lines()[1]
+        self.assertNotIn("[object Object]", second)
+        # An array must not arrive as an apparent printing, comma-joined.
+        self.assertNotIn("Beta Press", second)
+        self.assertNotIn("1901", second)
+        # …and the sound sibling fact on the same row still renders.
+        self.assertIn("public-domain", second)
+
+    def test_a_mixed_translator_list_keeps_every_valid_hand_and_no_other(self):
+        # The review's exact requirement: one malformed item may not erase its
+        # valid siblings, and may not appear beside them either.
+        second = self.page_lines()[1]
+        self.assertIn("tr. Good Name, Other Name", second)
+        self.assertNotIn("42", second)
+        self.assertNotIn("[object Object]", second)
+
+    def test_a_translator_container_that_is_not_a_list_kills_nothing(self):
+        # `{"length": 2}` passed `.length` and threw on `.join`, aborting the
+        # render after the chapter and before the tally, focus and route write.
+        page = self.page("untyped-provenance")
+        self.assertEqual(page["fragmentCount"], 5, "every fragment still renders")
+        self.assertNotIn("tr.", self.page_lines()[2])
+        self.assertIn("Gamma Edition", self.page_lines()[2])
+        # The render completed: the tally, the announcement and the route write
+        # all come after the point the exception used to escape from.
+        self.assertTrue(page["tallyText"])
+        self.assertTrue(page["statusText"])
+
+    def test_an_untyped_locator_and_review_state_say_nothing(self):
+        third = self.page_lines()[2]
+        self.assertNotIn("[object Object]", third)
+        self.assertNotIn("not collated", third,
+                         "an untyped review state claims no collation either")
+
+    def test_untyped_identity_fields_are_withheld_from_every_chip(self):
+        page = self.page("untyped-provenance")
+        for key in ("authors", "works", "dates", "languages", "extents"):
+            with self.subTest(field=key):
+                self.assertFalse([one for one in page[key]
+                                  if one and "[object" in one])
+        # The author heading, the filter label and the exclusion set are the
+        # same one name, so an untyped author cannot reach any of them.
+        self.assertNotIn("[object Object]", json.dumps(page["authorGroups"]))
+        self.assertNotIn("[object Object]", json.dumps(page["filterLabels"]))
+
+    def test_the_remaining_adversarial_scalars_render_nothing(self):
+        # boolean edition, null printing, null translators, empty rights,
+        # whitespace attribution — and the one sound fact among them stands.
+        fifth = self.page_lines()[4]
+        self.assertNotIn("true", fifth)
+        self.assertNotIn("null", fifth)
+        self.assertNotIn("tr.", fifth)
+        self.assertIn("Epsilon basis stands.", fifth)
+
+    def test_an_untyped_refusal_note_is_not_coerced_into_the_sentence(self):
+        refusal = self.page("untyped-provenance")["refusal"]
+        self.assertIn("Boundary not established.", refusal)
+        self.assertNotIn("[object Object]", refusal)
+
+
 class MalformedRecordRenderingTest(ReplayTest):
     """Adversarial audit R2, findings F3, F4 and F5 — broken values are not words.
 
@@ -3283,6 +3582,25 @@ class PayloadTest(ReplayTest):
 
 class FrozenContractTest(ReplayTest):
     """What this lane was not allowed to move, and did not."""
+
+    def test_the_name_joiner_is_only_ever_handed_a_fresh_list(self):
+        """`joinNames` CONSUMES the list it is given.
+
+        V3 rewrote it to pop rather than slice because the recorded gzip-9
+        ceilings left no room for the unsupported-voice and provenance-typing
+        corrections otherwise; the two non-mutating forms measured were larger
+        than the original. That is safe only while every caller hands it a
+        freshly mapped array, and the byte ceiling also left no room to say so
+        in a comment, so the precondition is pinned here instead.
+        """
+        script = held(CATENA / "catena.js")
+        uses = [line.strip() for line in script.splitlines()
+                if "joinNames(" in line and "function joinNames" not in line]
+        self.assertEqual(len(uses), 2, f"unexpected joinNames call sites: {uses}")
+        for line in uses:
+            with self.subTest(call=line):
+                self.assertIn(".map(", line,
+                              "joinNames consumes its argument; hand it a fresh list")
 
     def test_the_one_cross_entrance_link_still_points_where_it_did(self):
         script = held(CATENA / "catena.js")

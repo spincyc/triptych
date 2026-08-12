@@ -1241,6 +1241,42 @@ state = "complete"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v3-2026-08-12"
+owner = "src/web/browser/catena"
+promise = "Answer the 2026-08-12 E1 Catena correction V2 independent review (4c30d86f7, CHANGES REQUIRED at 17f031b37) with the smallest bounded route/test correction of the unsupported-voice and untyped-provenance defects, correct the inaccurate stranger-key and AT-SPI statements in new durable records and a new immutable exact-head handoff, and return that head for fresh independent review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "unsupported-voice-distinguished-from-shape"
+  criterion = "A syntactically well-formed voice naming a language the corpus holds nothing in is distinguished from both a malformed voice and a supported voice, is refused from Catena-owned runtime truth already available to the route without adding a request, renders no invented held-language absence, and preserves supported voices and voices the chapter merely lacks."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "displayed-provenance-typed"
+  criterion = "Every provenance value this route displays is validated as nonempty text before presentation, list entries are validated independently so a malformed item neither renders nor erases its valid siblings, no malformed value produces visible object or array coercion, and no malformed container can abort the render."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "inaccurate-statements-corrected"
+  criterion = "The unqualified stranger-key preservation claim and the false AT-SPI-bus-launcher absence claim are replaced by statements of the exact actual behaviour and the exact actual environment limitation, without changing implementation to suit the earlier prose and without mutating the sealed V2 package."
+  status = "pass"
+  evidence = ["guidance/corpus-browser-roadmap.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "boundaries-and-budgets-held"
+  criterion = "The change is confined to src/web/browser/catena/catena.js and tools/tests/test_catena_wave_1.py plus durable records, catena-model.js and the route CSS and markup are byte-identical, the recorded gzip-9 ceilings are unraised, and no generator, generated-data, release, common-gate, B0/shared-shell, protected Liturgy, or PDF path is touched or repaired."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "A fresh independent review of the exact V3 head and its new immutable package records a durable disposition."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
+
+[[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v2-2026-08-11"
 owner = "src/web/browser/catena"
 promise = "Answer the 2026-08-11 E1 Catena correction review (8f8f424ec, CHANGES REQUIRED at dfc636665) with a second bounded route/test correction from current main and a new protocol-complete immutable handoff for fresh independent review."

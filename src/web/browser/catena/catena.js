@@ -22,8 +22,8 @@
 
   /** "Latin, Greek and English". */
   function joinNames(names) {
-    if (names.length <= 1) return names.join('');
-    return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
+    const last = names.pop();
+    return names.length ? names.join(', ') + ' and ' + last : last || '';
   }
 
   // The original is named only by itself; a translation, by language.
@@ -135,7 +135,7 @@
     }
     const numbers = Object.keys(result.verses)
       .map(Number)
-      .filter((n) => Number.isFinite(n))
+      .filter(Number.isFinite)
       .sort((a, b) => a - b);
     if (!numbers.length) {
       section.appendChild(T.notice(book.name + ' ' + chapter + ' carries no verses.'));
@@ -224,13 +224,13 @@
     const details = T.el('details', 'fragment-body');
 
     const head = T.el('summary', 'fragment-head');
-    head.appendChild(T.el('span', 'fragment-author', fragment.author));
-    head.appendChild(T.el('span', 'fragment-work', fragment.work));
-    if (fragment.date != null) {
+    head.appendChild(T.el('span', 'fragment-author', sound(fragment.author) || ''));
+    head.appendChild(T.el('span', 'fragment-work', sound(fragment.work) || ''));
+    if (sound(fragment.date) || Number.isFinite(fragment.date)) {
       head.appendChild(T.el('span', 'fragment-date', String(fragment.date)));
     }
     // The language, and WHOSE it is; an unestablished voice says only it.
-    if (fragment.language) {
+    if (sound(fragment.language)) {
       const name = languageName(fragment.language);
       head.appendChild(T.el('span', 'fragment-language',
         fragment.voice === M.ORIGINAL
@@ -314,27 +314,29 @@
 
     // Provenance, whether or not the text loads: every fact the spine carries.
     const source = T.el('p', 'fragment-source');
-    source.appendChild(textNode(fragment.locator));
+    source.appendChild(textNode(sound(fragment.locator) || ''));
     const fact = (said) => {
+      if (!sound(said)) return;
       source.appendChild(T.el('span', 'sep'));
       source.appendChild(textNode(said));
     };
-    if (fragment.edition) fact(fragment.edition);
-    if (fragment.edition_published) fact(fragment.edition_published);
-    if ((fragment.translators || []).length) fact('tr. ' + fragment.translators.join(', '));
-    if (sound(fragment.rights)) fact(fragment.rights);
-    if (sound(fragment.attribution)) fact(fragment.attribution);
+    fact(fragment.edition);
+    fact(fragment.edition_published);
+    const hands = [].concat(fragment.translators).filter(sound).join(', ');
+    if (hands) fact('tr. ' + hands);
+    fact(fragment.rights);
+    fact(fragment.attribution);
     // EVERY supplied fact renders: an acknowledgement does not suppress a
     // recorded rights basis — that precedence hid supplied terms.
-    if (sound(fragment.rights_basis)) fact(fragment.rights_basis);
+    fact(fragment.rights_basis);
     // The weaker review state gets the word — printing `inspected` and
     // `verified` alike would claim a collation nobody made.
-    if (fragment.review && fragment.review !== 'verified') {
+    if (sound(fragment.review) && fragment.review !== 'verified') {
       source.appendChild(T.el('span', 'sep'));
       source.appendChild(T.el('span', 'state', fragment.review + ', not collated'));
     }
     // THE HREF IS PINNED by `test_browser_url_contract.py`.
-    if (fragment.id) {
+    if (sound(fragment.id)) {
       source.appendChild(T.el('span', 'sep'));
       const whole = T.el('a', 'fragment-whole', 'Open this passage in the Source Library');
       whole.href = '../sources/#passage=' + encodeURIComponent(fragment.id);
@@ -430,7 +432,7 @@
           all.length
             ? 'No ' + (blockedHeld ? 'renderable ' : '') +
                 'commentary on this chapter is held in ' +
-                voicePhrase(M.chapterVoices(file).find((one) => one.key === wanted) || M.parseVoiceKey(wanted)) + '. ' + all.length +
+                voicePhrase(M.parseVoiceKey(wanted)) + '. ' + all.length +
                 (all.length === 1 ? ' fragment is' : ' fragments are') +
                 ' held here, in ' +
                 joinNames(M.chapterVoices(file).map(voicePhrase)) +
@@ -451,7 +453,7 @@
       if (others.length) {
         container.appendChild(
           T.el('p', 'aside-note',
-            'Showing ' + voicePhrase(M.chapterVoices(file).find((one) => one.key === wanted) || M.parseVoiceKey(wanted)) +
+            'Showing ' + voicePhrase(M.parseVoiceKey(wanted)) +
               ' only. This chapter is also held in ' +
               joinNames(others.map(voicePhrase)) + '.'));
       }
@@ -462,12 +464,13 @@
     // a heading — by-author grouping misfiled Augustine's 417 before 401.
     const groups = [];
     for (const fragment of held) {
-      const date = fragment.date === undefined ? null : fragment.date;
+      const author = sound(fragment.author) || '';
+      const date = sound(fragment.date) || Number.isFinite(fragment.date) ? fragment.date : null;
       const last = groups[groups.length - 1];
-      if (last && last.author === fragment.author && last.date === date) {
+      if (last && last.author === author && last.date === date) {
         last.fragments.push(fragment);
       } else {
-        groups.push({ author: fragment.author, date: date, fragments: [fragment] });
+        groups.push({ author: author, date: date, fragments: [fragment] });
       }
     }
 
@@ -615,7 +618,7 @@
   function renderRefusal(container, file, bible, book, chapter) {
     const here = ((file && file.refusals) || {})[bible.id] || [];
     if (!here.length) return;
-    const note = String(here[0].note || '').replace(/\s+$/, '');
+    const note = sound(here[0].note) || '';
     const sentence = note ? note.charAt(0).toUpperCase() + note.slice(1) + '.' : '';
     const node = T.el('p', 'refusal');
     node.setAttribute('data-state', 'refusal');
@@ -637,8 +640,8 @@
     const bad = [];
     const flag = (key, value, note) => bad.push({ key, value, note });
     // Multiplicity first: a recognized key cited twice is refused even when
-    // the citations agree; a stranger's key is neither honoured nor disturbed.
-    // (An undecodable percent-value stays literal, and fails.)
+    // the citations agree; a stranger's key is not judged, and no write keeps
+    // one. (An undecodable percent-value stays literal, and fails.)
     for (const key of ['book', 'chapter', 'bible', 'voice']) {
       const all = hash.getAll(key);
       if (all.length > 1) flag(key, all.join(', '), 'is cited more than once');
@@ -672,6 +675,9 @@
           !(parsed && parsed.voice === M.TRANSLATION &&
             /^[a-z]{2,3}$/.test(parsed.language))) {
         flag('voice', voice, 'is not a voice — “original”, or “translation:” plus a language');
+      } else if (parsed.language &&
+                 !(index.held || []).some((one) => (one.languages || []).includes(parsed.language))) {
+        flag('voice', voice, 'is not a voice this corpus holds');
       }
     }
     return bad;
@@ -815,7 +821,7 @@
         : blocked.length ? blockedClause : 'Nothing held here';
       // "none in X" is provable only with no blocked row standing.
       if (total && wanted && count < total && (count || !blocked.length)) {
-        extras.push((count ? count + ' in ' : 'none in ') + voicePhrase(M.chapterVoices(file).find((one) => one.key === wanted) || M.parseVoiceKey(wanted)));
+        extras.push((count ? count + ' in ' : 'none in ') + voicePhrase(M.parseVoiceKey(wanted)));
       }
       if (total && blocked.length) extras.push(blockedClause);
       if (leads.length) {
@@ -876,7 +882,7 @@
       // a standing blocked row — none proves absence, so no "none here".
       items.push({
         value: wanted,
-        label: voiceLabel(M.chapterVoices(file).find((one) => one.key === wanted) || M.parseVoiceKey(wanted)) + (unknown ? '' : ' — none here')
+        label: voiceLabel(M.parseVoiceKey(wanted)) + (unknown ? '' : ' — none here')
       });
     }
     T.fillSelect(voiceSelect, items);
