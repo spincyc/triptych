@@ -1,0 +1,597 @@
+.......................................................................................................................ss..............................................................................................................................................................................................................................................................................................................................................................................................<frozen importlib._bootstrap>:533: DeprecationWarning: the load_module() method is deprecated and slated for removal in Python 3.15; use exec_module() instead
+.....................s.............................................................................................F...F...................F..F.....................................................................................run 1/1: 2 passages
+  Psalms 24: 2
+  ! Luke 21: no answer
+.run 1/1: 2 passages
+  ! Psalms 24: no answer
+  ! Luke 21: no answer
+.run 1/2: 2 passages
+  Psalms 24: 2
+  Luke 21: 2
+run 2/2: 2 passages
+  Psalms 24: 2
+  Luke 21: 2
+.run 1/2: 2 passages
+  Psalms 24: 2
+  Luke 21: 2
+run 2/2: 2 passages
+  Psalms 24: 2
+  Luke 21: 2
+.run 1/2: 2 passages
+  Psalms 24: 2
+  Luke 21: 2
+run 2/2: 2 passages
+  Psalms 24: 2
+  Luke 21: 2
+.run 1/2: 2 passages
+  Psalms 24: 2
+  Luke 21: 2
+run 2/2: 2 passages
+  Psalms 24: 2
+  Luke 21: 2
+.run 1/2: 2 passages
+  Psalms 24: 2
+  Luke 21: 2
+run 2/2: 2 passages
+  Psalms 24: 2
+  Luke 21: 2
+.run 1/2: 2 passages
+  Psalms 24: 2
+  Luke 21: 2
+run 2/2: 2 passages
+  Psalms 24: 2
+  Luke 21: 2
+..run 1/1: 2 passages
+  Psalms 24: 1
+  Luke 21: 1
+..run 1/1: 2 passages
+  Psalms 24: 0
+  Luke 21: 0
+...................E..EEE....................E...................................................................................................................................................................................F......................................................................................................ssssssss..............................F..F..........................................................................................................................E...............E...........................EEEEEE................................................................................................................................................................................................................................................................FF....FFFFF.............................................................
+======================================================================
+ERROR: test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites (test_index_bible.CorrectedReadingTests.test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_index_bible.py", line 611, in test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites
+    "there is not with him respect of person", self.douay["Sirach 35:12-14, 16-18"]
+                                               ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'Sirach 35:12-14, 16-18'
+
+======================================================================
+ERROR: test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it (test_index_bible.CorrectedReadingTests.test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_index_bible.py", line 568, in test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it
+    self.assertIn("This is my most beloved Son", self.douay["Mark 9:7"])
+                                                 ~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'Mark 9:7'
+
+======================================================================
+ERROR: test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching (test_index_bible.CorrectedReadingTests.test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_index_bible.py", line 557, in test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching
+    text = self.douay["Acts 14:21-27"]
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'Acts 14:21-27'
+
+======================================================================
+ERROR: test_the_holy_family_sirach_opens_at_the_fathers_honour (test_index_bible.CorrectedReadingTests.test_the_holy_family_sirach_opens_at_the_fathers_honour)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_index_bible.py", line 606, in test_the_holy_family_sirach_opens_at_the_fathers_honour
+    self.douay["Sirach 3:2-6, 12-14"].startswith("For God hath made the father")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'Sirach 3:2-6, 12-14'
+
+======================================================================
+ERROR: test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter (test_index_bible.TrackedIndexTests.test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_index_bible.py", line 122, in test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter
+    self.douay["Isaiah 8:23-9:3"].startswith("At the first time the land of Zabulon")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'Isaiah 8:23-9:3'
+
+======================================================================
+ERROR: test_long_form_contents_marker_renders_linked_unique_anchors (test_public_alpha.PublicAlphaTest.test_long_form_contents_marker_renders_linked_unique_anchors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_public_alpha.py", line 1026, in test_long_form_contents_marker_renders_linked_unique_anchors
+    page = self.tool.render_page(
+        "web/gpt/work.md",
+    ...<3 lines>...
+        self.manifest["authorizations"]["test-authorization"],
+    )
+  File "$REPO/tools/public-alpha", line 2394, in render_page
+    require_locked_markdown_dependency()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/public-alpha", line 868, in require_locked_markdown_dependency
+    raise ReleaseError(
+    ...<2 lines>...
+    )
+test_public_alpha_tool.ReleaseError: installed Python Markdown does not match the bound dependency lock: expected 3.10.2, found 3.10.3
+
+======================================================================
+ERROR: test_public_site_records_and_reaches_legacy_review_as_alpha (test_public_alpha.PublicAlphaTest.test_public_site_records_and_reaches_legacy_review_as_alpha)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_public_alpha.py", line 1308, in test_public_site_records_and_reaches_legacy_review_as_alpha
+    output = self.tool.build_site(self.manifest, publications, preview=False)
+  File "$REPO/tools/public-alpha", line 3422, in build_site
+    render_source_page(
+    ~~~~~~~~~~~~~~~~~~^
+        source_relative,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        authorization,
+        ^^^^^^^^^^^^^^
+    ),
+    ^
+  File "$REPO/tools/public-alpha", line 2663, in render_source_page
+    return render_page(
+        source_relative,
+    ...<3 lines>...
+        authorization,
+    )
+  File "$REPO/tools/public-alpha", line 2394, in render_page
+    require_locked_markdown_dependency()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/public-alpha", line 868, in require_locked_markdown_dependency
+    raise ReleaseError(
+    ...<2 lines>...
+    )
+test_public_alpha_tool.ReleaseError: installed Python Markdown does not match the bound dependency lock: expected 3.10.2, found 3.10.3
+
+======================================================================
+ERROR: test_verifier_passes_when_every_site_source_matches_its_approved_hash (test_public_alpha.PublicAlphaTest.test_verifier_passes_when_every_site_source_matches_its_approved_hash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_public_alpha.py", line 1359, in test_verifier_passes_when_every_site_source_matches_its_approved_hash
+    publications, output = self.build_verified_artifact()
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/tests/test_public_alpha.py", line 1352, in build_verified_artifact
+    output = self.tool.build_site(self.manifest, publications, preview=False)
+  File "$REPO/tools/public-alpha", line 3422, in build_site
+    render_source_page(
+    ~~~~~~~~~~~~~~~~~~^
+        source_relative,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        authorization,
+        ^^^^^^^^^^^^^^
+    ),
+    ^
+  File "$REPO/tools/public-alpha", line 2663, in render_source_page
+    return render_page(
+        source_relative,
+    ...<3 lines>...
+        authorization,
+    )
+  File "$REPO/tools/public-alpha", line 2394, in render_page
+    require_locked_markdown_dependency()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/public-alpha", line 868, in require_locked_markdown_dependency
+    raise ReleaseError(
+    ...<2 lines>...
+    )
+test_public_alpha_tool.ReleaseError: installed Python Markdown does not match the bound dependency lock: expected 3.10.2, found 3.10.3
+
+======================================================================
+ERROR: test_verifier_rejects_a_recognized_site_source_the_record_omits (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recognized_site_source_the_record_omits)
+Hashing the record alone reports exact over an input it never names.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_public_alpha.py", line 1403, in test_verifier_rejects_a_recognized_site_source_the_record_omits
+    publications, output = self.build_verified_artifact()
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/tests/test_public_alpha.py", line 1352, in build_verified_artifact
+    output = self.tool.build_site(self.manifest, publications, preview=False)
+  File "$REPO/tools/public-alpha", line 3422, in build_site
+    render_source_page(
+    ~~~~~~~~~~~~~~~~~~^
+        source_relative,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        authorization,
+        ^^^^^^^^^^^^^^
+    ),
+    ^
+  File "$REPO/tools/public-alpha", line 2663, in render_source_page
+    return render_page(
+        source_relative,
+    ...<3 lines>...
+        authorization,
+    )
+  File "$REPO/tools/public-alpha", line 2394, in render_page
+    require_locked_markdown_dependency()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/public-alpha", line 868, in require_locked_markdown_dependency
+    raise ReleaseError(
+    ...<2 lines>...
+    )
+test_public_alpha_tool.ReleaseError: installed Python Markdown does not match the bound dependency lock: expected 3.10.2, found 3.10.3
+
+======================================================================
+ERROR: test_verifier_rejects_a_recorded_site_source_nothing_renders (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recorded_site_source_nothing_renders)
+A hash attesting a file the release does not use is a false record.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_public_alpha.py", line 1421, in test_verifier_rejects_a_recorded_site_source_nothing_renders
+    publications, output = self.build_verified_artifact()
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/tests/test_public_alpha.py", line 1352, in build_verified_artifact
+    output = self.tool.build_site(self.manifest, publications, preview=False)
+  File "$REPO/tools/public-alpha", line 3422, in build_site
+    render_source_page(
+    ~~~~~~~~~~~~~~~~~~^
+        source_relative,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        authorization,
+        ^^^^^^^^^^^^^^
+    ),
+    ^
+  File "$REPO/tools/public-alpha", line 2663, in render_source_page
+    return render_page(
+        source_relative,
+    ...<3 lines>...
+        authorization,
+    )
+  File "$REPO/tools/public-alpha", line 2394, in render_page
+    require_locked_markdown_dependency()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/public-alpha", line 868, in require_locked_markdown_dependency
+    raise ReleaseError(
+    ...<2 lines>...
+    )
+test_public_alpha_tool.ReleaseError: installed Python Markdown does not match the bound dependency lock: expected 3.10.2, found 3.10.3
+
+======================================================================
+ERROR: test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_public_alpha.py", line 1367, in test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash
+    publications, output = self.build_verified_artifact()
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/tests/test_public_alpha.py", line 1352, in build_verified_artifact
+    output = self.tool.build_site(self.manifest, publications, preview=False)
+  File "$REPO/tools/public-alpha", line 3422, in build_site
+    render_source_page(
+    ~~~~~~~~~~~~~~~~~~^
+        source_relative,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        authorization,
+        ^^^^^^^^^^^^^^
+    ),
+    ^
+  File "$REPO/tools/public-alpha", line 2663, in render_source_page
+    return render_page(
+        source_relative,
+    ...<3 lines>...
+        authorization,
+    )
+  File "$REPO/tools/public-alpha", line 2394, in render_page
+    require_locked_markdown_dependency()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/public-alpha", line 868, in require_locked_markdown_dependency
+    raise ReleaseError(
+    ...<2 lines>...
+    )
+test_public_alpha_tool.ReleaseError: installed Python Markdown does not match the bound dependency lock: expected 3.10.2, found 3.10.3
+
+======================================================================
+ERROR: test_verifier_rejects_a_site_source_whose_file_is_gone (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_whose_file_is_gone)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_public_alpha.py", line 1388, in test_verifier_rejects_a_site_source_whose_file_is_gone
+    publications, output = self.build_verified_artifact()
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/tests/test_public_alpha.py", line 1352, in build_verified_artifact
+    output = self.tool.build_site(self.manifest, publications, preview=False)
+  File "$REPO/tools/public-alpha", line 3422, in build_site
+    render_source_page(
+    ~~~~~~~~~~~~~~~~~~^
+        source_relative,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        authorization,
+        ^^^^^^^^^^^^^^
+    ),
+    ^
+  File "$REPO/tools/public-alpha", line 2663, in render_source_page
+    return render_page(
+        source_relative,
+    ...<3 lines>...
+        authorization,
+    )
+  File "$REPO/tools/public-alpha", line 2394, in render_page
+    require_locked_markdown_dependency()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/public-alpha", line 868, in require_locked_markdown_dependency
+    raise ReleaseError(
+    ...<2 lines>...
+    )
+test_public_alpha_tool.ReleaseError: installed Python Markdown does not match the bound dependency lock: expected 3.10.2, found 3.10.3
+
+======================================================================
+ERROR: test_verifier_rejects_copied_pdf_without_owning_catalog_link (test_public_alpha.PublicAlphaTest.test_verifier_rejects_copied_pdf_without_owning_catalog_link)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_public_alpha.py", line 1439, in test_verifier_rejects_copied_pdf_without_owning_catalog_link
+    output = self.tool.build_site(self.manifest, publications, preview=False)
+  File "$REPO/tools/public-alpha", line 3422, in build_site
+    render_source_page(
+    ~~~~~~~~~~~~~~~~~~^
+        source_relative,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        authorization,
+        ^^^^^^^^^^^^^^
+    ),
+    ^
+  File "$REPO/tools/public-alpha", line 2663, in render_source_page
+    return render_page(
+        source_relative,
+    ...<3 lines>...
+        authorization,
+    )
+  File "$REPO/tools/public-alpha", line 2394, in render_page
+    require_locked_markdown_dependency()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "$REPO/tools/public-alpha", line 868, in require_locked_markdown_dependency
+    raise ReleaseError(
+    ...<2 lines>...
+    )
+test_public_alpha_tool.ReleaseError: installed Python Markdown does not match the bound dependency lock: expected 3.10.2, found 3.10.3
+
+======================================================================
+FAIL: test_candidate_tracking_is_distinct_and_accepted (test_day_missal_integration.DayMissalIntegrationTests.test_candidate_tracking_is_distinct_and_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_day_missal_integration.py", line 209, in test_candidate_tracking_is_distinct_and_accepted
+    self.assertEqual(len(ledger["deliverables"]), 23)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 29 != 23
+
+======================================================================
+FAIL: test_public_routes_renderer_data_and_accepted_oracles_are_isolated (test_day_missal_integration.DayMissalIntegrationTests.test_public_routes_renderer_data_and_accepted_oracles_are_isolated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_day_missal_integration.py", line 177, in test_public_routes_renderer_data_and_accepted_oracles_are_isolated
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        hashlib.sha256((ROOT / relative).read_bytes()).hexdigest(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        digest,
+        ^^^^^^^
+        relative,
+        ^^^^^^^^^
+    )
+    ^
+AssertionError: 'fae86f1a2da5984599f5a346e4494b741e06361644f66e9d18426752aeaaedea' != '9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972'
+- fae86f1a2da5984599f5a346e4494b741e06361644f66e9d18426752aeaaedea
++ 9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972
+ : src/web/browser/liturgy/day.html
+
+======================================================================
+FAIL: test_candidate_does_not_leak_fixture_or_discovery_records (test_day_reader_integration.DayReaderIntegrationTests.test_candidate_does_not_leak_fixture_or_discovery_records)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_day_reader_integration.py", line 323, in test_candidate_does_not_leak_fixture_or_discovery_records
+    self.assertEqual(forbidden, [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['src/web/data/structure/propers/roman-196[57 chars]son'] != []
+
+First list contains 2 additional elements.
+First extra element 0:
+'src/web/data/structure/propers/roman-1962.json'
+
++ []
+- ['src/web/data/structure/propers/roman-1962.json',
+-  'src/web/data/structure/propers/roman-pre-1955.json']
+
+======================================================================
+FAIL: test_data_legacy_shell_css_and_visual_oracle_are_frozen (test_day_reader_integration.DayReaderIntegrationTests.test_data_legacy_shell_css_and_visual_oracle_are_frozen)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_day_reader_integration.py", line 297, in test_data_legacy_shell_css_and_visual_oracle_are_frozen
+    self.assertEqual(changed_data, [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['src/sources/calendars/roman-1962/propers[106 chars]son'] != []
+
+First list contains 3 additional elements.
+First extra element 0:
+'src/sources/calendars/roman-1962/propers.yaml'
+
++ []
+- ['src/sources/calendars/roman-1962/propers.yaml',
+-  'src/web/data/structure/propers/roman-1962.json',
+-  'src/web/data/structure/propers/roman-pre-1955.json']
+
+======================================================================
+FAIL: test_day_alone_loads_placement_notes_before_its_renderer (test_mass_ordinary.ProperPlacementNotesPage.test_day_alone_loads_placement_notes_before_its_renderer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_mass_ordinary.py", line 772, in test_day_alone_loads_placement_notes_before_its_renderer
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        hashlib.sha256(FORMULARY_HTML.read_bytes()).hexdigest(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: '61593982117969b8673a936117ae8c331aca91c20283f613bd9c289424c83164' != 'a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600'
+- 61593982117969b8673a936117ae8c331aca91c20283f613bd9c289424c83164
++ a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600
+
+
+======================================================================
+FAIL: test_candidate_and_contract_fixtures_do_not_leak_into_generated_data (test_propers_reader_integration.PropersReaderIntegrationTests.test_candidate_and_contract_fixtures_do_not_leak_into_generated_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_propers_reader_integration.py", line 330, in test_candidate_and_contract_fixtures_do_not_leak_into_generated_data
+    self.assertEqual(forbidden, [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['src/web/data/structure/propers/roman-196[57 chars]son'] != []
+
+First list contains 2 additional elements.
+First extra element 0:
+'src/web/data/structure/propers/roman-1962.json'
+
++ []
+- ['src/web/data/structure/propers/roman-1962.json',
+-  'src/web/data/structure/propers/roman-pre-1955.json']
+
+======================================================================
+FAIL: test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated (test_propers_reader_integration.PropersReaderIntegrationTests.test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_propers_reader_integration.py", line 312, in test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated
+    self.assertEqual(changed_data, [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['src/sources/calendars/roman-1962/propers[106 chars]son'] != []
+
+First list contains 3 additional elements.
+First extra element 0:
+'src/sources/calendars/roman-1962/propers.yaml'
+
++ []
+- ['src/sources/calendars/roman-1962/propers.yaml',
+-  'src/web/data/structure/propers/roman-1962.json',
+-  'src/web/data/structure/propers/roman-pre-1955.json']
+
+======================================================================
+FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='check-calendar-masses.test')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_tool_registry.py", line 523, in test_shell_smoke_tests_pass
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : a fully specified licensed translation should validate
+
+
+======================================================================
+FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='index-bible.test')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_tool_registry.py", line 523, in test_shell_smoke_tests_pass
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : index-bible: $REPO/src/sources/bibles/douay-rheims/index.yaml is stale; run `index-bible build`
+
+
+======================================================================
+FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history check')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_tool_registry.py", line 220, in test_every_verb_shows_at_least_two_real_invocations
+    self.assertGreaterEqual(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        shown, floor * multiplier,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        f"{NO_EXAMPLE!r} line",
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: 1 not greater than or equal to 2 : act-history check: 1 example(s); the rule is 2 a verb, or one beside a 'no runnable example:' line
+
+======================================================================
+FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history graph')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_tool_registry.py", line 220, in test_every_verb_shows_at_least_two_real_invocations
+    self.assertGreaterEqual(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        shown, floor * multiplier,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        f"{NO_EXAMPLE!r} line",
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: 1 not greater than or equal to 2 : act-history graph: 1 example(s); the rule is 2 a verb, or one beside a 'no runnable example:' line
+
+======================================================================
+FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history structure')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_tool_registry.py", line 220, in test_every_verb_shows_at_least_two_real_invocations
+    self.assertGreaterEqual(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        shown, floor * multiplier,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        f"{NO_EXAMPLE!r} line",
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: 0 not greater than or equal to 2 : act-history structure: 0 example(s); the rule is 2 a verb, or one beside a 'no runnable example:' line
+
+======================================================================
+FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history commonality')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_tool_registry.py", line 220, in test_every_verb_shows_at_least_two_real_invocations
+    self.assertGreaterEqual(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        shown, floor * multiplier,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        f"{NO_EXAMPLE!r} line",
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: 0 not greater than or equal to 2 : act-history commonality: 0 example(s); the rule is 2 a verb, or one beside a 'no runnable example:' line
+
+======================================================================
+FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history emit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_tool_registry.py", line 220, in test_every_verb_shows_at_least_two_real_invocations
+    self.assertGreaterEqual(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        shown, floor * multiplier,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        f"{NO_EXAMPLE!r} line",
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: 1 not greater than or equal to 2 : act-history emit: 1 example(s); the rule is 2 a verb, or one beside a 'no runnable example:' line
+
+----------------------------------------------------------------------
+Ran 1600 tests in 492.720s
+
+FAILED (failures=14, errors=13, skipped=11)
+exact: 0 stale binding(s)
+exact: 0 stale binding(s)
+exact: 0 stale binding(s)
+exact: 0 stale binding(s)
+exact: 0 stale binding(s)
+stale site source README.md: recorded 94b93dcb724d8b3451173bfd2b6b96e89573d4dd9beb2ffe70c9d60cf8863c38, actual 662c6acd61a6a6b8d3682c18e4605b51c290208618182671b34a3ea4a0ec279d
+stale: 1 stale binding(s)
+exact: 0 stale binding(s)
+bootstrapped src/sources/inventories/research-staleness-v1.toml
+bootstrapped src/sources/inventories/research-staleness-v1.toml
+fresh: 0 edition(s) need attention
+bootstrapped src/sources/inventories/research-staleness-v1.toml
+changed input src/sources/works/augustine/confessiones/work.toml
+fresh claude articles/example
+bootstrapped src/sources/inventories/research-staleness-v1.toml
+unbaselined claude articles/second
+stale: 1 edition(s) need attention
+bootstrapped src/sources/inventories/research-staleness-v1.toml
+bootstrapped src/sources/inventories/research-staleness-v1.toml
+rebaselined 1 edition(s)
+fresh gpt articles/example
+changed input src/claude/articles/example/research/scope.md
+changed input src/gpt/articles/example/research/scope.md [cross-provider diagnostic only; staleness grants no authority to change this provider]
+rebaselined 1 edition(s)
+fresh: 0 edition(s) need attention
+bootstrapped src/sources/inventories/research-staleness-v1.toml
+changed input src/claude/articles/example/research/scope.md
+EXIT=1

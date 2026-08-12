@@ -1,0 +1,9 @@
+baseline (17f031b37): replay-examples: 201 captured example(s); 192 replayed, 30 diverged, 35 known stale, 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+head:                 replay-examples: 201 captured example(s); 192 replayed, 28 diverged, 35 known stale, 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+
+only in baseline (stopped diverging):
+DIFF    tools/mass-ordinary check --out build/example-ordinary
+DIFF    tools/mass-ordinary check --out build/example-ordinary
+
+only at head (NEW divergence):
+(empty above = no new divergence)

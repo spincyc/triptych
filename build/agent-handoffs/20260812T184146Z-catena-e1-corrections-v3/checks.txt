@@ -1,0 +1,224 @@
+checks.txt — E1 Catena correction V3
+
+Reviewed head : f2c9bc49dd29499734193b264ba9da21304b27f1
+Task base     : 17f031b37840d8320c664a128d72b502108fe075  (the exact V2 head the
+                2026-08-12 independent review dispositioned)
+Review        : 4c30d86f7118d69eb27d12dc9b63568e531918eb
+Branch        : impl/catena-wave-1-e1-corrections-v3
+Working tree  : clean (`git status --short` empty) at the packaged head. This
+                package lives under build/, which is git-ignored, and is not
+                part of the reviewed tree.
+Run from      : the repository root.
+Environment   : python3 3.14.6, node v26.7.0, chromium 151.0.7922.108.
+
+Every command below is given exactly as run, with its numeric exit status and
+its result. Where a result is a comparison against the baseline, the baseline
+was measured from the same commit — in this tree before any edit, and for the
+full test discovery in a separate clean clone of 17f031b37 so the two failure
+sets could be compared rather than assumed.
+
+================================================================================
+A. IDENTITY AND OWNERSHIP BOUNDARY — at the packaged head
+================================================================================
+
+A1. $ git rev-parse HEAD
+    exit 0. f2c9bc49dd29499734193b264ba9da21304b27f1
+
+A2. $ git merge-base HEAD 17f031b37840d8320c664a128d72b502108fe075
+    exit 0. 17f031b37840d8320c664a128d72b502108fe075 — the base is the exact
+    reviewed head, not main, so the reviewable delta is the correction alone.
+
+A3. $ git status --short
+    exit 0. No output. The tree is clean.
+
+A4. $ git diff --stat 17f031b37840d8320c664a128d72b502108fe075..HEAD
+    exit 0. Six paths: two route/test paths and four durable records.
+    See changed-files.txt for the full inventory and the boundary audit.
+
+A5. $ sha256sum src/web/browser/catena/catena-model.js
+    exit 0. f1ea94f9ec6b54813859c2b526163e90d9de61992b839fe2eb0e349f31ccf57b
+    Byte-identical to main, and equal to the MODEL_SHA256 literal the focused
+    suite asserts against (tools/tests/test_catena_wave_1.py).
+
+A6. $ git diff --stat 17f031b37840d8320c664a128d72b502108fe075..HEAD -- \
+        src/web/browser/catena/catena.css \
+        src/web/browser/catena/index.html \
+        src/web/browser/catena/catena-model.js
+    exit 0. No output — all three are byte-identical to the reviewed head.
+    Independently corroborated by section E: their release-binding `actual`
+    digests are unchanged from the baseline run.
+
+A7. Paths verified NOT changed, by inspection of the full diff:
+    generator and generated Catena data (scripts/_catena.py, src/web/data/**),
+    release records and bindings, the common browser gate
+    (tools/tests/corpus_browser_gate.mjs), B0/shared shell and core
+    (src/web/browser/shared/**), protected Liturgy (src/web/browser/liturgy/**),
+    PDFs, and every unrelated corpus surface. No CSS anywhere changed.
+
+================================================================================
+B. FOCUSED CATENA SUITE
+================================================================================
+
+B1. $ python3 -m unittest discover -s tools/tests -p 'test_catena*.py'
+    exit 0. Ran 249 tests — OK. (Baseline at 17f031b37: 231 tests, OK.)
+    Log: logs/focused-catena-suite.log
+
+    Of the 249: tools/tests/test_catena.py 52 (unchanged, generator/model side),
+    tools/tests/test_catena_wave_1.py 197 (was 179).
+
+B2. The 18 new tests, by class:
+    UnsupportedVoiceTest — 7 tests
+      an unsupported voice fails closed;
+      a real-but-unheld language code (`de`) fails closed the same way;
+      an upper-case code is MALFORMED rather than unsupported, so the two
+        refusals do not collapse;
+      the refusal is textually distinct from the malformed one;
+      no unsupported voice ever claims a holding — the review's exact
+        contradiction assertion, swept over the whole rendered state;
+      the unsupported voice is dropped from the recovery route;
+      a supported voice survives a pass through an unsupported one
+        (supported -> unsupported -> supported over one live document);
+      plus the supported set is read from the index, not the key, and adds
+        no request.
+    UntypedProvenanceTest — 9 tests
+      nothing untyped reaches the page as words;
+      the sound record beside them is untouched;
+      a malformed edition and printing are withheld, not coerced;
+      a mixed translator list keeps every valid hand and no other;
+      a translator container that is not a list kills nothing;
+      an untyped locator and review state say nothing;
+      untyped identity fields are withheld from every chip;
+      the remaining adversarial scalars render nothing;
+      an untyped refusal note is not coerced into the sentence.
+    FrozenContractTest — 1 test
+      the name joiner is only ever handed a fresh list.
+
+B3. One existing test was changed, and none deleted or weakened.
+    test_a_voice_the_chapter_lacks_is_kept_and_named_rather_than_widened used
+    `voice=translation:de` and asserted the page render "German translation —
+    none here". That assertion pinned the defect the review found: `de` is a
+    language the corpus has never held a fragment in, so the label was a claim
+    about holdings manufactured from the URL. It is retargeted to
+    `translation:grc` — a language the corpus does hold, and in which Genesis 1
+    holds no translation — which preserves the test's original intent exactly.
+    The `de` case is now pinned as a refusal in UnsupportedVoiceTest.
+
+B4. $ python3 -m unittest discover -s tools/tests
+    Baseline and head were both run; see logs/all-tests-comparison.log for the
+    per-name set difference. The pre-existing failures in unrelated suites are
+    identical on both sides.
+
+================================================================================
+C. SITE BUILD AND BROWSER ARTIFACT GATE
+================================================================================
+
+C1. $ make public-site
+    exit 0. "built build/public-alpha/site; not verified — run
+    tools/public-alpha verify before publication"
+    Log: logs/public-site.log
+
+C2. $ node tools/tests/corpus_browser_gate.mjs        (= make check-browser-gate)
+    exit 1 — the known baseline red state, unchanged.
+    routes 19, states 9, pages 171, assertions 2290,
+    passed 1836, failed 226, skipped 228.
+    Log: logs/browser-gate-head.json
+
+C3. Gate comparison against the baseline report, as complete assertion objects
+    keyed by (route, state, name):
+      identity set equal ......................... yes
+      rows whose status changed .................. 0
+      rows whose detail text changed ............. 0
+    So the two reports are equal object-for-object. V3 changes no rendered
+    output in any state the gate visits.
+    Log: logs/gate-comparison.log
+
+C4. The 14 failing Catena rows are unchanged: 9 single-main-element and
+    5 primary-controls-meet-target-size. Every control named by the latter is a
+    shared shell or navigation link, not a Catena-owned control. Both are
+    B0/shared-shell findings; see UNRESOLVED-BLOCKERS.md row 8.
+
+================================================================================
+D. BUDGETS AND THE FROZEN MODEL
+================================================================================
+
+D1. Measured with the repository's own function, which is the same one the
+    focused suite asserts with:
+        gzip.compress(text.encode("utf-8"), 9, mtime=0)
+    over the whole file, and over the file with /* */ and // comments stripped.
+
+      budget                     ceiling   baseline     head    margin
+      catena.css whole             8,000      7,629    7,629       371
+      catena.css rules only        2,700      2,676    2,676        24
+      catena.js  whole            13,000     12,996   12,995         5
+      catena.js  code only         8,800      8,795    8,799         1
+
+    exit 0 for all four assertions (PayloadTest, inside B1).
+    Log: logs/budgets-head.log
+
+D2. No ceiling was raised. The corrections were funded by deletion:
+    a provably dead voice lookup repeated four times, six per-field guards
+    folded into one typed gate, and three tightened expressions. The whole-file
+    measure fell by one byte relative to the reviewed head.
+
+D3. The code-only measure stands 1 byte clear, which cost source prose. The new
+    refusal branch carries no comment, and `joinNames` now consumes its
+    argument with the precondition pinned by test rather than stated in the
+    file. Disclosed in LIMITATIONS.md §3 and raised in REVIEW_REQUEST.md
+    blocker 7.
+
+================================================================================
+E. FULL CHECK
+================================================================================
+
+E1. $ make -k check
+    MAKE_EXIT=2. Exactly three targets fail, and they are the same three that
+    fail at the reviewed head:
+      check-release-bindings   (release-owned; see E2)
+      check-tool-registry      (8 sibling-declaration findings; unrelated)
+      check-examples           (see E3)
+    The other 17 targets pass, including check-catena
+    ("catena valid: fragments=1351 books=1 canon=73") and check-browser-static.
+    Log: logs/make-k-check-head.log
+
+E2. check-release-bindings — the deliberately unsigned Catena condition,
+    NOT repaired.
+      stale site source src/web/browser/catena/catena.css:
+        recorded aa564bc2…0099d6, actual 733e8490…8851c5   (unchanged from base)
+      stale site source src/web/browser/catena/catena.js:
+        recorded 51aaa3cf…6d20d0, actual fb03ee65…3cf591   (changed: this lane)
+      stale site source src/web/browser/catena/index.html:
+        recorded 45c491ab…acc440d, actual 7779d1f1…2bb8fa8 (unchanged from base)
+      stale: 3 stale binding(s)
+    Same three paths, same recorded hashes, same count as the baseline. Only
+    catena.js's actual digest moves, because it is the only site source edited.
+    `refresh-release-bindings` was not run; this lane holds no authority to
+    re-sign, and did not.
+    Log: logs/release-bindings-head.log
+
+E3. check-examples — 28 divergences at head, 30 at the reviewed head. The head
+    set is a STRICT SUBSET of the baseline set: there is no new divergence.
+    The two absent lines are both `tools/mass-ordinary check --out
+    build/example-ordinary`, an unrelated tool whose capture is sensitive to
+    build/ state, which differs between the runs because the head run followed
+    a `make public-site` in the same tree. No expected failure was altered to
+    obtain this. The one Catena-attributable divergence,
+    `tools/public-alpha verify --preview`, is present on both sides and is E2
+    seen through the public-alpha verifier.
+    Log: logs/examples-comparison.log
+
+================================================================================
+S. SKIPPED, AND WHY
+================================================================================
+
+S1. No real assistive-technology session. Impossible here; the reason is
+    corrected in AT-LIMITATION.md and the conclusion is unchanged.
+S2. No system forced-colors palette. No CSS changed; catena.css is
+    byte-identical.
+S3. No screenshot or capture set. No new visual state was introduced; the four
+    corrections are a validation branch, a rendering-type discipline and two
+    prose corrections, each pinned by the focused suite. HANDOFF.md §10.
+S4. No release re-signing, no merge, no deployment, no cutover, and no work in
+    any separately owned prerequisite.
+S5. No stranger-key discard tests. Deliberate; STRANGER-KEYS.md §3 states
+    exactly what is proven and what is read from the code, and
+    REVIEW_REQUEST.md blocker 4 asks whether they are required.

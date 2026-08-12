@@ -1,0 +1,27 @@
+Browser artifact gate — baseline 17f031b37 versus the packaged head.
+Compared as complete assertion objects keyed by (route, state, name).
+
+  baseline  assertions 2290  pass 1836  fail 226  skip 228
+  head      assertions 2290  pass 1836  fail 226  skip 228
+
+  identity set equal ......... True
+  rows only in baseline ...... 0
+  rows only at head .......... 0
+  rows with changed status ... 0
+  rows with changed detail ... 0
+
+  Catena failing rows: head 14, baseline 14
+    desktop-1440x900             single-main-element
+    handset-393x852              primary-controls-meet-target-size
+    handset-393x852              single-main-element
+    handset-393x852-forced-colors primary-controls-meet-target-size
+    handset-393x852-forced-colors single-main-element
+    handset-393x852-reduced-motion primary-controls-meet-target-size
+    handset-393x852-reduced-motion single-main-element
+    handset-393x852-scale-400    primary-controls-meet-target-size
+    handset-393x852-scale-400    single-main-element
+    handset-393x852-text-200     primary-controls-meet-target-size
+    handset-393x852-text-200     single-main-element
+    laptop-1024x768              single-main-element
+    narrow-320x852               single-main-element
+    tablet-768x1024              single-main-element

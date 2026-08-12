@@ -1,0 +1,66 @@
+Commits in the reviewed range, base 17f031b37840d8320c664a128d72b502108fe075 (exclusive) to packaged head f2c9bc49dd29499734193b264ba9da21304b27f1 (inclusive).
+
+$ git log --oneline 17f031b37840d8320c664a128d72b502108fe075..HEAD
+f2c9bc49d Correct the E1 Catena unsupported voice and untyped displayed provenance
+
+=== Full messages, oldest first ===
+------------------------------------------------------------------
+commit f2c9bc49dd29499734193b264ba9da21304b27f1
+author-date 2026-08-12T13:56:32-05:00
+
+Correct the E1 Catena unsupported voice and untyped displayed provenance
+
+Answers the 2026-08-12 independent review of correction V2
+(4c30d86f7118d69eb27d12dc9b63568e531918eb, CHANGES REQUIRED at
+17f031b37840d8320c664a128d72b502108fe075) with the smallest bounded
+correction of the four things it assigned to this lane, and nothing else.
+
+Shape is not support. `hashProblems` validated `voice` against a grammar
+alone while book, chapter and bible were each validated against runtime
+data, so `translation:zz` passed and was carried into the page as "none
+in ZZ translation" — a claim about corpus holdings derived from the
+reader's own URL. The closed supported-language set is now read from
+`index.held[].languages`, Catena-owned truth the route already awaits
+before any arrival resolves, so no request is added; a well-formed voice
+naming a language the corpus holds nothing in fails closed through the
+existing invalid-address state, exactly as an unpublished bible does.
+Malformed shape, supported voice, and supported-shape-without-supported-
+language are now three states, and a voice the chapter merely lacks is
+untouched.
+
+Every displayed provenance value now passes one typed gate, moved into
+the `fact` funnel so six per-field guards disappear rather than multiply.
+Beyond the edition, publication and translator item the review named,
+the same door was open on locator, review, author, work, date, language,
+the author heading, the filter label and the refusal note. Each
+translator entry is judged alone, so a broken one drops while its valid
+siblings stand. This also removes a page-kill: a `translators` value
+carrying a length and no join threw out of the async render, so the
+tally, the announcement, focus recovery and the route write never ran and
+the region kept aria-busy for ever.
+
+The two evidence corrections change records, not behaviour. The
+unqualified stranger-key claim is replaced by the exact rule — unknown
+hash keys are judged by nothing and survive exactly as long as the route
+writes nothing, while every write it makes replaces the fragment with the
+four recognized keys — with the cases that tests actually prove
+distinguished from those read from the code. The false AT-SPI launcher
+claim is corrected in the new package; the launcher exists, and what was
+missing was a display, a screen reader, speech and braille, so the
+no-real-AT conclusion stands.
+
+Nothing was waived. Both gzip-9 ceilings hold unraised at 12,995/13,000
+and 8,799/8,800, paid for by deleting a provably dead voice lookup
+repeated four times, folding the per-field guards into one gate, and
+tightening three expressions. That left no room for the prose this file
+usually carries, so one precondition is pinned by test instead of by
+comment and the trade is recorded as a limitation.
+
+catena.css, index.html and catena-model.js are byte-identical. The
+browser gate is equal to the baseline object-for-object. The focused
+suite is 249 tests green, up from 179 at the reviewed head, and the full
+repository discovery adds no failure anywhere. The deliberately unsigned
+Catena release binding still fails closed and was not repaired.
+
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+

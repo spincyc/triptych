@@ -1,0 +1,30 @@
+Changed files, base 17f031b37840d8320c664a128d72b502108fe075 -> packaged head f2c9bc49dd29499734193b264ba9da21304b27f1
+(branch impl/catena-wave-1-e1-corrections-v3).
+
+Command of record:
+  $ git diff --numstat -M 17f031b37840d8320c664a128d72b502108fe075..HEAD
+
+  added  deleted  path
+  -----  -------  ----------------------------------------------
+     68        0  PROJECT-WORK.md
+      1        1  guidance/corpus-browser-master-plan.md
+     87        4  guidance/corpus-browser-roadmap.md
+     36        0  promised-deliverables.toml
+     32       26  src/web/browser/catena/catena.js
+    322        4  tools/tests/test_catena_wave_1.py
+
+  totals: 6 files changed, 546 insertions(+), 35 deletions(-)
+
+Ownership boundary, verified at the packaged head:
+  - src/web/browser/catena/catena.js  is the whole implementation change.
+  - tools/tests/test_catena_wave_1.py is the regression pins for it.
+  - the four remaining paths are durable authority records.
+
+Byte-identical at this head (no diff against the reviewed head):
+  src/web/browser/catena/catena.css
+  src/web/browser/catena/index.html
+  src/web/browser/catena/catena-model.js  (sha256 f1ea94f9ec6b54813859c2b526163e90d9de61992b839fe2eb0e349f31ccf57b)
+
+NOT changed: generator and generated Catena data, release records and
+bindings, the common browser gate, B0/shared shell and core, protected
+Liturgy, PDFs, and every unrelated corpus surface. No CSS changed.

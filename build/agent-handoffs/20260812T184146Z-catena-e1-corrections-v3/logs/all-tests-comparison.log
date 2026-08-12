@@ -1,0 +1,27 @@
+Full test discovery — baseline 17f031b37 versus the packaged head.
+$ python3 -m unittest discover -s tools/tests
+
+baseline (measured in a separate clean clone of 17f031b37):
+  Ran 1582 tests in 489.403s
+  FAILED (failures=15, errors=13, skipped=11)
+head:
+  Ran 1600 tests in 492.720s
+  FAILED (failures=14, errors=13, skipped=11)
+
+  test count 1582 -> 1600 (+18: this lane's new regressions)
+
+NEW failures at head (baseline set subtracted) — the claim that matters:
+  (empty above = no regression anywhere in the repository's test suites)
+
+Present at baseline, absent at head:
+  FAIL: test_shell_smoke_tests_pass
+
+  test_shell_smoke_tests_pass is an environment-sensitive test. The
+  baseline was necessarily measured in a separate clean clone at a
+  different filesystem path, which is the likely cause; it is NOT
+  evidence that this lane fixed anything, and it is reported rather
+  than quietly dropped. Nothing in this lane touches shell tooling.
+
+The 27 failures shared by both sides are pre-existing and belong to
+unrelated suites; none is a Catena test. The focused Catena suite is
+fully green on both sides (231 baseline, 249 head).

@@ -1,0 +1,801 @@
+diff --git a/PROJECT-WORK.md b/PROJECT-WORK.md
+index e93353398..acdd2f550 100644
+--- a/PROJECT-WORK.md
++++ b/PROJECT-WORK.md
+@@ -530,6 +530,74 @@ candidate head; the sole next action is a fresh independent review of that head
+ and its package. Nothing here is accepted, integrable, merged, re-signed, or
+ deployed.
+ 
++### E1 Catena route-owned correction lane, V3
++
++<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v3-2026-08-12 -->
++
++The independent review of correction V2 (`4c30d86f7118d69eb27d12dc9b63568e531918eb`,
++branch `review/catena-wave-1-e1-corrections-v2-independent`) dispositioned the
++reviewed head `17f031b37840d8320c664a128d72b502108fe075` **CHANGES REQUIRED**. It
++found the V2 URL, history, asynchronous-ownership, truth-state, lead, print,
++focus and responsive corrections sound under adversarial replay, the package
++mechanics and unraised budgets sound, and named exactly four things for this
++lane. Two are implementation defects and two are inaccurate statements; every
++other finding remains with the owner the review assigned it to.
++
++First, a structurally well-formed but unsupported voice. `voice=translation:zz`
++satisfied the closed two-or-three-lowercase-letter grammar and was then carried
++into the page as `none in ZZ translation`, which converts an unsupported voice
++into a claim about what the corpus holds. Shape and support are now distinct
++questions: the supported language set is read from `index.held[].languages` —
++Catena-owned runtime truth the route already has in memory before any voice is
++resolved, requiring no new request — and a well-formed voice naming a language
++the corpus holds nothing in fails closed through the existing invalid-address
++state, exactly as an unpublished `bible` value does. A voice the chapter merely
++lacks is unchanged and still names itself rather than widening.
++
++Second, untyped displayed provenance. Every provenance value this route shows
++now passes one typed gate before it can become words. The review named
++`edition`, `edition_published` and one `translators` item; this lane's own
++audit found the same coercion on `locator`, `review`, `author`, `work`, `date`,
++`language`, the author heading, the author-filter label and the numbering
++refusal note, and one case that was worse than a coercion: a `translators`
++value carrying a `length` and no `join` threw out of the asynchronous render,
++so the tally, the announcement, focus recovery and the route write never ran
++and the reading region kept `aria-busy` for ever. Each translator entry is now
++judged alone, so a malformed one is dropped while its valid siblings still
++render, and no scalar fact is withheld because a neighbour is malformed.
++
++The two evidence corrections change records, not behaviour. The V2 handoff
++claimed without qualification that a stranger's key is "neither honoured nor
++disturbed"; the exact behaviour is that unrecognized hash keys are judged by
++nothing and survive exactly as long as the route writes nothing, while every
++write it does make replaces the whole fragment with the four recognized keys,
++so an unrecognized key is discarded by partial-address completion, by a reader
++action, and by the recovery link. Only the value-identical case is proven by
++test, and the discard cases are labelled as read from the code. The V2
++`AT-LIMITATION.md` also said no AT-SPI bus launcher exists; that is false, and
++the accurate limitation is that no usable display, AT bus session, screen
++reader, speech channel or braille stack was available, so no successful
++real-assistive-technology evidence was produced. No implementation was changed
++to make either statement true.
++
++The changed paths are `src/web/browser/catena/catena.js` and
++`tools/tests/test_catena_wave_1.py` alone, plus these durable records.
++`catena.css` and `index.html` are byte-identical to the reviewed head and
++`catena-model.js` to main. The focused suite is 249 tests green, up from 179.
++The recorded ceilings are unraised and were paid for by deletion rather than by
++waiver: `catena.css` is unchanged at 7,629/8,000, and `catena.js` is
++12,995/13,000 whole and 8,799/8,800 comment-stripped, funded by removing a
++provably dead voice lookup repeated four times, folding six per-field guards
++into one typed gate, and tightening three expressions. That left no room for
++the explanatory prose this file's style would ordinarily carry, so one
++precondition is pinned by a test rather than a comment and the trade is
++recorded as a limitation. `check-release-bindings` still fails closed on the
++changed Catena route assets and was not repaired; it is the release owner's.
++A new immutable handoff, `20260812T184146Z-catena-e1-corrections-v3`, records the
++exact V3 head, and the V2 package is unchanged. The sole next action is a fresh
++independent review of that head and package. Nothing here is accepted,
++integrable, merged, re-signed, or deployed.
++
+ ## Promised work
+ 
+ ### Corpus browser foundation design
+diff --git a/guidance/corpus-browser-master-plan.md b/guidance/corpus-browser-master-plan.md
+index 009e7e765..2dfac3961 100644
+--- a/guidance/corpus-browser-master-plan.md
++++ b/guidance/corpus-browser-master-plan.md
+@@ -299,7 +299,7 @@ them; it cannot close them.
+ | B0/B1 shared foundation and neutral browser gates | Authorized implementation work | One global owner; ingest the shell correction only after independent acceptance; do not enter protected Liturgy or invent surface composition. |
+ | C2 Home/Publications implementation | Eligible after clean shared-shell ownership | Implement the accepted C0/C1 contracts; do not duplicate global owners across branches. |
+ | D1 Reader implementation | Eligible after clean shared-shell ownership | Rendering and presentation only; preserve web-edition source ownership and canonical PDFs. |
+-| E1 Catena implementation | **Changes required** at correction head `dfc636665` (review `8f8f424ec`, 2026-08-11); second correction candidate awaiting fresh independent review | The bounded pass-2 correction preserves E0 and the four-path ownership limit while answering the route-owned URL, asynchronous-state, blocked/empty, lead, licence, print, focus, and evidence defects; the generator/data, release, common-gate, and B0/shared-shell prerequisites remain separately owned; E1 stays off main, and only a fresh exact-head independent review may follow. |
++| E1 Catena implementation | **Changes required** at pass-2 head `17f031b37` (independent review `4c30d86f7`, 2026-08-12); third correction candidate `impl/catena-wave-1-e1-corrections-v3` awaiting fresh independent review | The bounded pass-2 correction preserves E0 and the four-path ownership limit while answering the route-owned URL, asynchronous-state, blocked/empty, lead, licence, print, focus, and evidence defects; the generator/data, release, common-gate, and B0/shared-shell prerequisites remain separately owned; E1 stays off main, and only a fresh exact-head independent review may follow. |
+ | F1 Sources implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by the disposition. |
+ | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires clean foundation plumbing and explicit authority. |
+ | G0/G1 History; H0/H1 Law; I0/I1 Scripture | Planned | Follow their owning guidance and accepted foundation. |
+diff --git a/guidance/corpus-browser-roadmap.md b/guidance/corpus-browser-roadmap.md
+index 2b6cada2e..c99d53053 100644
+--- a/guidance/corpus-browser-roadmap.md
++++ b/guidance/corpus-browser-roadmap.md
+@@ -299,9 +299,10 @@ This second bounded correction lane answers that review from current main.
+   to main (SHA-256 `f1ea94f9…ccf57b`, pinned by the focused suite), and the
+   base-to-head range changes no other tracked path.
+ - Route defects corrected: the URL grammar validates the raw multimap, so a
+-  recognized key cited twice is refused even when the citations agree while a
+-  stranger's key is neither honoured nor disturbed, an undecodable
+-  percent-value fails, `voice` is a closed whole-key grammar, and a chapter is
++  recognized key cited twice is refused even when the citations agree, an
++  undecodable percent-value fails, `voice` is a closed whole-key grammar
++  (corrected in V3 below, which distinguishes a supported voice from a
++  merely well-formed one), and a chapter is
+   ranged against the book the address resolves to rather than a leftover
+   control; one seeding runs for every arrival, so an identical invalid address
+   renders one page whether it was pasted, reloaded, or reached by hashchange,
+@@ -382,13 +383,94 @@ This second bounded correction lane answers that review from current main.
+   its package. This lane accepts nothing, integrates nothing, merges nothing,
+   re-signs nothing, and deploys nothing.
+ 
++### E1 Catena correction V3 — 2026-08-12
++
++The independent review of correction V2 (`4c30d86f7118d69eb27d12dc9b63568e531918eb`, branch
++`review/catena-wave-1-e1-corrections-v2-independent`) dispositioned the
++reviewed head `17f031b37840d8320c664a128d72b502108fe075` **CHANGES REQUIRED**. It
++passed the V2 URL, history, race, focus, print, lead and rights corrections,
++the package mechanics and the unraised budgets, and named exactly four things
++for this lane: two route defects and two inaccurate statements. Every other
++finding stays with the owner the review assigned it to, and none is answered
++here.
++
++- Implementation defect 1 — **unsupported voice** (findings 5 and 8). A
++  well-formed `voice=translation:zz` satisfied the two-or-three-lowercase
++  grammar and was then carried into the page as `none in ZZ translation`,
++  converting an unsupported voice into a claim about corpus holdings. Shape
++  and support are now separate questions: the closed supported-language set
++  is read from `index.held[].languages`, Catena-owned runtime truth the route
++  already holds before any voice is resolved, and a well-formed voice naming a
++  language the corpus holds nothing in fails closed through the existing
++  invalid-address state, exactly as an unpublished `bible` does. Three states
++  now exist where two did — malformed shape, supported voice, and supported
++  shape without a supported language. A voice the CHAPTER merely lacks is
++  untouched and still says so.
++- Implementation defect 2 — **untyped displayed provenance** (finding 4). Every
++  provenance value this route displays now passes one typed gate before it can
++  become words. The review named `edition`, `edition_published` and a
++  `translators` item; the audit for this correction found the same door open on
++  `locator`, `review`, `author`, `work`, `date`, `language`, the author heading,
++  the author-filter label and the refusal note, and one worse case: a
++  `translators` value carrying a `length` and no `join` threw out of an
++  asynchronous render, so the chapter kept `aria-busy` for ever. Each translator
++  entry is judged alone, so a broken one is dropped while its valid siblings
++  stand, and no scalar fact is lost because a neighbour is malformed.
++- Evidence correction 1 — **stranger keys**. The V2 handoff claimed without
++  qualification that a stranger's key is "neither honoured nor disturbed". The
++  precise behaviour is: unrecognized hash keys are judged by nothing — the
++  validator reads only `book`, `chapter`, `bible` and `voice` — and they
++  survive exactly as long as the route writes nothing, which is an address that
++  already parses to the rendered state, and an invalid or duplicate-key address
++  left as written. Every write the route makes replaces the whole fragment with
++  those four keys alone, so an unrecognized key is discarded when a partial or
++  otherwise non-identical arrival is completed in place, when a reader action
++  pushes an entry, and in the recovery link the invalid page offers.
++  Preservation is a consequence of not writing, not a preservation rule. Only
++  the value-identical case is proven by test; the discard cases are read from
++  the code and are labelled as such. No URL contract changed to suit the prose.
++- Evidence correction 2 — **AT-SPI**. The V2 `AT-LIMITATION.md` said no AT-SPI
++  bus launcher exists. That is false: `at-spi2-core` provides
++  `/usr/lib/at-spi-bus-launcher`, installed before the V2 capture. The accurate
++  limitation is that the review environment provided no usable display, AT bus
++  session or AT client stack — no screen-reader, speech or braille session was
++  available — and therefore no successful real-assistive-technology evidence
++  was produced. The existing emulated and structural artifacts remain labelled
++  supplements, and no real-AT validation is claimed. The V2 package is left
++  byte-identical; the correction is carried in the V3 package, not by editing
++  a sealed one.
++- Exclusive file boundary: `src/web/browser/catena/catena.js` and
++  `tools/tests/test_catena_wave_1.py`, plus these durable records. `catena.css`
++  and `index.html` are byte-identical to the reviewed head, `catena-model.js`
++  is byte-identical to main, and no generator, generated data, release record,
++  common gate, B0/shared shell, protected Liturgy or PDF path is touched.
++- Budgets unraised and paid for by deletion, not waiver: `catena.css` is
++  unchanged at 7,629/8,000 and 2,676/2,700; `catena.js` is 12,995/13,000 whole
++  and 8,799/8,800 with comments stripped. The corrections were funded by
++  removing a provably dead voice lookup repeated four times, folding six
++  per-field guards into one typed gate, and tightening three expressions. The
++  code-only ceiling now stands one byte clear, and the prose the house style
++  would ordinarily carry could not be afforded — one precondition is pinned by
++  test instead of by comment, and that is recorded as a limitation.
++- Focused suite: 249 tests green, up from 179. The one V2 test that pinned the
++  defect — a `translation:de` deep link rendering "German translation — none
++  here" — is retargeted to `translation:grc`, a language the corpus really
++  holds, and the unsupported case is now pinned as a refusal.
++- Immutable handoff: `20260812T184146Z-catena-e1-corrections-v3` under
++  `build/agent-handoffs/`, for the exact V3 head. The V2 package and its ZIP
++  are unchanged.
++- Status: **awaiting fresh independent review** of the exact V3 head and its
++  package. This lane accepts nothing, integrates nothing, merges nothing,
++  re-signs nothing, and deploys nothing. Every outside-owner prerequisite the
++  review left open remains open.
++
+ ## Remaining program sequence
+ 
+ | Work | Current state | Exact dependency / stopping line |
+ | --- | --- | --- |
+ | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
+ | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
+-| E1 Catena production implementation | Second correction candidate awaiting fresh independent review | Review `8f8f424ec` (CHANGES REQUIRED at `dfc636665`) is answered by `impl/catena-wave-1-e1-corrections-v2`; preserve accepted E0 and the corrections the review passed; every generator/data, release, common-gate, B0/shared-shell, protected Liturgy, and PDF prerequisite stays with its owner; no merge, re-sign, deploy, or cutover. |
++| E1 Catena production implementation | Third correction candidate awaiting fresh independent review | Review `4c30d86f7` (CHANGES REQUIRED at `17f031b37`) is answered by `impl/catena-wave-1-e1-corrections-v3`, which corrects unsupported-voice handling, untyped displayed provenance, and the two inaccurate handoff statements and nothing else; preserve accepted E0 and every V2 correction the review passed; every generator/data, release, common-gate, B0/shared-shell, pre-release real-device-or-AT evidence, emulation-only forced-colors limitation, protected Liturgy, and PDF prerequisite stays with its owner; no merge, re-sign, deploy, or cutover. |
+ | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
+ | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
+ | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
+@@ -408,6 +490,7 @@ This second bounded correction lane answers that review from current main.
+ | 2026-08-09 | Review-fix implementation and test checkpoint | Completed the bounded F0 and shared-shell prototype corrections without reopening C0, C1, D0, or E0. The full capture run covered 85 real-route cases and 2,296 assertions with zero gating failures. Its 64 disclosed non-gating findings comprise 52 inherited nested-`main` findings, eight before-state useful-content findings, two before-only narrow-overflow findings, and two inherited Reader no-JavaScript overlay limitations. Protected Liturgy production and canonical PDF paths have zero reviewed-base-to-head changes. | Authority reconciliation `3bfb9df10e1bd4b8d4d2b56aeb430c897f67700a`; design/test head `c66c143643ff75a6cd54afdbe1fcd6eac0aca1b6`. F0 and shell remain changes required until independent acceptance. The earlier correction package `20260809T014145Z-corpus-wave-1-review-fixes` is superseded for protocol defects; a fresh immutable package follows this tracking repair. |
+ | 2026-08-09 | Final F0 and shared-shell design review | Independent review recorded **F0 Source Library — ACCEPT** and **Shared non-Liturgy shell — ACCEPT**, preserving C0/C1/D0/E0 and protected Liturgy/PDF/routes/hashes while carrying the disclosed production and data obligations forward. | Reviewed and packaged head `ecbd93a0575c4b890cc814af7cd20d01f5af7beb`; package `20260809T021953Z-corpus-wave-1-review-fixes.zip`; SHA-256 `d5fde51b14f143db05f762178896284d7768c0b2a11fc222fc2b32da63e22062`. |
+ | 2026-08-11 | E1 Catena correction pass 2 | Answered correction review `8f8f424ec` (**CHANGES REQUIRED** at `dfc636665`) from unmoved main `9b9ff74a7`: carried route/test commit `67191afd1` forward and corrected the remaining route-owned URL-grammar, history-independence, recovery-focus, asynchronous-transaction, blocked/empty, lead, licence, print, focus-override, heading, and absence-disclosure defects inside the four-path boundary. Focused suite 179 tests; budgets 7,629/8,000 and 12,996/13,000 unraised; gate 2,290 assertions with the pristine-main failure identity/status set unchanged, 15 Catena `detail` texts differing and no row changing status; `check-release-bindings` deliberately fail-closed on the three changed route assets. | Branch `impl/catena-wave-1-e1-corrections-v2`; route/test commit `981959b4f78209401ba00bfbdcc430e23e09c8bb`; packaged head and package `20260811T212656Z-catena-e1-corrections-v2` recorded in the handoff; awaiting fresh independent review. |
++| 2026-08-12 | E1 Catena correction V3 | Answered independent review `4c30d86f7` (**CHANGES REQUIRED** at `17f031b37`) with the smallest bounded correction: a well-formed but unsupported voice now fails closed against the corpus's own held-language set instead of rendering `none in ZZ translation`, and every displayed provenance value passes one typed gate, which also removes a `translators` shape that threw out of an asynchronous render and left the region `aria-busy`. The unqualified stranger-key claim and the false AT-SPI-launcher claim are corrected in these records and in a new package. Focused suite 249 tests green; budgets unraised at 7,629/8,000 and 12,995/13,000, paid for by deletion; `catena.css`, `index.html` and `catena-model.js` byte-identical; `check-release-bindings` still deliberately fail-closed on the Catena route assets, unrepaired. | Branch `impl/catena-wave-1-e1-corrections-v3`; base `17f031b37840d8320c664a128d72b502108fe075`; package `20260812T184146Z-catena-e1-corrections-v3`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ 
+ ## Next Codex tasks
+ 
+diff --git a/promised-deliverables.toml b/promised-deliverables.toml
+index d058a51fe..fc40d6972 100644
+--- a/promised-deliverables.toml
++++ b/promised-deliverables.toml
+@@ -1240,6 +1240,42 @@ state = "complete"
+   status = "pass"
+   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
+ 
++[[deliverables]]
++id = "corpus-browser-catena-e1-corrections-v3-2026-08-12"
++owner = "src/web/browser/catena"
++promise = "Answer the 2026-08-12 E1 Catena correction V2 independent review (4c30d86f7, CHANGES REQUIRED at 17f031b37) with the smallest bounded route/test correction of the unsupported-voice and untyped-provenance defects, correct the inaccurate stranger-key and AT-SPI statements in new durable records and a new immutable exact-head handoff, and return that head for fresh independent review."
++state = "in_progress"
++
++  [[deliverables.requirements]]
++  id = "unsupported-voice-distinguished-from-shape"
++  criterion = "A syntactically well-formed voice naming a language the corpus holds nothing in is distinguished from both a malformed voice and a supported voice, is refused from Catena-owned runtime truth already available to the route without adding a request, renders no invented held-language absence, and preserves supported voices and voices the chapter merely lacks."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "displayed-provenance-typed"
++  criterion = "Every provenance value this route displays is validated as nonempty text before presentation, list entries are validated independently so a malformed item neither renders nor erases its valid siblings, no malformed value produces visible object or array coercion, and no malformed container can abort the render."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "inaccurate-statements-corrected"
++  criterion = "The unqualified stranger-key preservation claim and the false AT-SPI-bus-launcher absence claim are replaced by statements of the exact actual behaviour and the exact actual environment limitation, without changing implementation to suit the earlier prose and without mutating the sealed V2 package."
++  status = "pass"
++  evidence = ["guidance/corpus-browser-roadmap.md", "PROJECT-WORK.md"]
++
++  [[deliverables.requirements]]
++  id = "boundaries-and-budgets-held"
++  criterion = "The change is confined to src/web/browser/catena/catena.js and tools/tests/test_catena_wave_1.py plus durable records, catena-model.js and the route CSS and markup are byte-identical, the recorded gzip-9 ceilings are unraised, and no generator, generated-data, release, common-gate, B0/shared-shell, protected Liturgy, or PDF path is touched or repaired."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "fresh-independent-review"
++  criterion = "A fresh independent review of the exact V3 head and its new immutable package records a durable disposition."
++  status = "open"
++  evidence = ["guidance/corpus-browser-roadmap.md"]
++
+ [[deliverables]]
+ id = "corpus-browser-catena-e1-corrections-v2-2026-08-11"
+ owner = "src/web/browser/catena"
+diff --git a/src/web/browser/catena/catena.js b/src/web/browser/catena/catena.js
+index fde8bcb03..daf5e32a8 100644
+--- a/src/web/browser/catena/catena.js
++++ b/src/web/browser/catena/catena.js
+@@ -22,8 +22,8 @@
+ 
+   /** "Latin, Greek and English". */
+   function joinNames(names) {
+-    if (names.length <= 1) return names.join('');
+-    return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
++    const last = names.pop();
++    return names.length ? names.join(', ') + ' and ' + last : last || '';
+   }
+ 
+   // The original is named only by itself; a translation, by language.
+@@ -135,7 +135,7 @@
+     }
+     const numbers = Object.keys(result.verses)
+       .map(Number)
+-      .filter((n) => Number.isFinite(n))
++      .filter(Number.isFinite)
+       .sort((a, b) => a - b);
+     if (!numbers.length) {
+       section.appendChild(T.notice(book.name + ' ' + chapter + ' carries no verses.'));
+@@ -224,13 +224,13 @@
+     const details = T.el('details', 'fragment-body');
+ 
+     const head = T.el('summary', 'fragment-head');
+-    head.appendChild(T.el('span', 'fragment-author', fragment.author));
+-    head.appendChild(T.el('span', 'fragment-work', fragment.work));
+-    if (fragment.date != null) {
++    head.appendChild(T.el('span', 'fragment-author', sound(fragment.author) || ''));
++    head.appendChild(T.el('span', 'fragment-work', sound(fragment.work) || ''));
++    if (sound(fragment.date) || Number.isFinite(fragment.date)) {
+       head.appendChild(T.el('span', 'fragment-date', String(fragment.date)));
+     }
+     // The language, and WHOSE it is; an unestablished voice says only it.
+-    if (fragment.language) {
++    if (sound(fragment.language)) {
+       const name = languageName(fragment.language);
+       head.appendChild(T.el('span', 'fragment-language',
+         fragment.voice === M.ORIGINAL
+@@ -314,27 +314,29 @@
+ 
+     // Provenance, whether or not the text loads: every fact the spine carries.
+     const source = T.el('p', 'fragment-source');
+-    source.appendChild(textNode(fragment.locator));
++    source.appendChild(textNode(sound(fragment.locator) || ''));
+     const fact = (said) => {
++      if (!sound(said)) return;
+       source.appendChild(T.el('span', 'sep'));
+       source.appendChild(textNode(said));
+     };
+-    if (fragment.edition) fact(fragment.edition);
+-    if (fragment.edition_published) fact(fragment.edition_published);
+-    if ((fragment.translators || []).length) fact('tr. ' + fragment.translators.join(', '));
+-    if (sound(fragment.rights)) fact(fragment.rights);
+-    if (sound(fragment.attribution)) fact(fragment.attribution);
++    fact(fragment.edition);
++    fact(fragment.edition_published);
++    const hands = [].concat(fragment.translators).filter(sound).join(', ');
++    if (hands) fact('tr. ' + hands);
++    fact(fragment.rights);
++    fact(fragment.attribution);
+     // EVERY supplied fact renders: an acknowledgement does not suppress a
+     // recorded rights basis — that precedence hid supplied terms.
+-    if (sound(fragment.rights_basis)) fact(fragment.rights_basis);
++    fact(fragment.rights_basis);
+     // The weaker review state gets the word — printing `inspected` and
+     // `verified` alike would claim a collation nobody made.
+-    if (fragment.review && fragment.review !== 'verified') {
++    if (sound(fragment.review) && fragment.review !== 'verified') {
+       source.appendChild(T.el('span', 'sep'));
+       source.appendChild(T.el('span', 'state', fragment.review + ', not collated'));
+     }
+     // THE HREF IS PINNED by `test_browser_url_contract.py`.
+-    if (fragment.id) {
++    if (sound(fragment.id)) {
+       source.appendChild(T.el('span', 'sep'));
+       const whole = T.el('a', 'fragment-whole', 'Open this passage in the Source Library');
+       whole.href = '../sources/#passage=' + encodeURIComponent(fragment.id);
+@@ -430,7 +432,7 @@
+           all.length
+             ? 'No ' + (blockedHeld ? 'renderable ' : '') +
+                 'commentary on this chapter is held in ' +
+-                voicePhrase(M.chapterVoices(file).find((one) => one.key === wanted) || M.parseVoiceKey(wanted)) + '. ' + all.length +
++                voicePhrase(M.parseVoiceKey(wanted)) + '. ' + all.length +
+                 (all.length === 1 ? ' fragment is' : ' fragments are') +
+                 ' held here, in ' +
+                 joinNames(M.chapterVoices(file).map(voicePhrase)) +
+@@ -451,7 +453,7 @@
+       if (others.length) {
+         container.appendChild(
+           T.el('p', 'aside-note',
+-            'Showing ' + voicePhrase(M.chapterVoices(file).find((one) => one.key === wanted) || M.parseVoiceKey(wanted)) +
++            'Showing ' + voicePhrase(M.parseVoiceKey(wanted)) +
+               ' only. This chapter is also held in ' +
+               joinNames(others.map(voicePhrase)) + '.'));
+       }
+@@ -462,12 +464,13 @@
+     // a heading — by-author grouping misfiled Augustine's 417 before 401.
+     const groups = [];
+     for (const fragment of held) {
+-      const date = fragment.date === undefined ? null : fragment.date;
++      const author = sound(fragment.author) || '';
++      const date = sound(fragment.date) || Number.isFinite(fragment.date) ? fragment.date : null;
+       const last = groups[groups.length - 1];
+-      if (last && last.author === fragment.author && last.date === date) {
++      if (last && last.author === author && last.date === date) {
+         last.fragments.push(fragment);
+       } else {
+-        groups.push({ author: fragment.author, date: date, fragments: [fragment] });
++        groups.push({ author: author, date: date, fragments: [fragment] });
+       }
+     }
+ 
+@@ -615,7 +618,7 @@
+   function renderRefusal(container, file, bible, book, chapter) {
+     const here = ((file && file.refusals) || {})[bible.id] || [];
+     if (!here.length) return;
+-    const note = String(here[0].note || '').replace(/\s+$/, '');
++    const note = sound(here[0].note) || '';
+     const sentence = note ? note.charAt(0).toUpperCase() + note.slice(1) + '.' : '';
+     const node = T.el('p', 'refusal');
+     node.setAttribute('data-state', 'refusal');
+@@ -637,8 +640,8 @@
+     const bad = [];
+     const flag = (key, value, note) => bad.push({ key, value, note });
+     // Multiplicity first: a recognized key cited twice is refused even when
+-    // the citations agree; a stranger's key is neither honoured nor disturbed.
+-    // (An undecodable percent-value stays literal, and fails.)
++    // the citations agree; a stranger's key is not judged, and no write keeps
++    // one. (An undecodable percent-value stays literal, and fails.)
+     for (const key of ['book', 'chapter', 'bible', 'voice']) {
+       const all = hash.getAll(key);
+       if (all.length > 1) flag(key, all.join(', '), 'is cited more than once');
+@@ -672,6 +675,9 @@
+           !(parsed && parsed.voice === M.TRANSLATION &&
+             /^[a-z]{2,3}$/.test(parsed.language))) {
+         flag('voice', voice, 'is not a voice — “original”, or “translation:” plus a language');
++      } else if (parsed.language &&
++                 !(index.held || []).some((one) => (one.languages || []).includes(parsed.language))) {
++        flag('voice', voice, 'is not a voice this corpus holds');
+       }
+     }
+     return bad;
+@@ -815,7 +821,7 @@
+         : blocked.length ? blockedClause : 'Nothing held here';
+       // "none in X" is provable only with no blocked row standing.
+       if (total && wanted && count < total && (count || !blocked.length)) {
+-        extras.push((count ? count + ' in ' : 'none in ') + voicePhrase(M.chapterVoices(file).find((one) => one.key === wanted) || M.parseVoiceKey(wanted)));
++        extras.push((count ? count + ' in ' : 'none in ') + voicePhrase(M.parseVoiceKey(wanted)));
+       }
+       if (total && blocked.length) extras.push(blockedClause);
+       if (leads.length) {
+@@ -876,7 +882,7 @@
+       // a standing blocked row — none proves absence, so no "none here".
+       items.push({
+         value: wanted,
+-        label: voiceLabel(M.chapterVoices(file).find((one) => one.key === wanted) || M.parseVoiceKey(wanted)) + (unknown ? '' : ' — none here')
++        label: voiceLabel(M.parseVoiceKey(wanted)) + (unknown ? '' : ' — none here')
+       });
+     }
+     T.fillSelect(voiceSelect, items);
+diff --git a/tools/tests/test_catena_wave_1.py b/tools/tests/test_catena_wave_1.py
+index cc1930544..f04926259 100644
+--- a/tools/tests/test_catena_wave_1.py
++++ b/tools/tests/test_catena_wave_1.py
+@@ -361,6 +361,91 @@ LICENCE_FIXTURE = {
+     "refusals": {},
+ }
+ 
++# EXPLICITLY SYNTHETIC untyped-provenance fixture (V3, review finding 4).
++# The tracked corpus types every provenance field it carries, so the coercion
++# the review found can only be driven from a labelled fixture. Every malformed
++# value below stands BESIDE a sound one, because the requirement is not merely
++# that garbage is withheld: it is that withholding garbage costs no valid fact.
++UNTYPED_PROVENANCE_FIXTURE = {
++    "book": "Gen",
++    "chapter": 1,
++    "text_prefix": "structure/catena/text/",
++    "sources": {
++        # The control: every field sound, so any loss is visible as a diff.
++        "0": {
++            "author": "Alpha Author", "work": "Alpha Work", "work_id": "work.alpha",
++            "date": 401, "language": "la", "voice": "original",
++            "rights": "public-domain", "edition": "Alpha Edition",
++            "edition_published": "Alpha Press, 1899",
++            "translators": [], "container": "",
++        },
++        # The review's three named fields, plus the mixed translator list: the
++        # two sound names must survive the object, the number and the blank.
++        "1": {
++            "author": "Beta Author", "work": "Beta Work", "work_id": "work.beta",
++            "date": 402, "language": "en", "voice": "translation",
++            "rights": "public-domain",
++            "edition": {"title": "not text"},
++            "edition_published": ["Beta Press", "1901"],
++            "translators": ["Good Name", {"broken": True}, 42, "   ", "Other Name"],
++            "container": "",
++        },
++        # A translators CONTAINER that is not a list. `.length` satisfied the
++        # old guard and `.join` then threw, killing the render mid-chapter and
++        # leaving the region busy for ever; it must simply carry no hands.
++        "2": {
++            "author": "Gamma Author", "work": "Gamma Work", "work_id": "work.gamma",
++            "date": 403, "language": "la", "voice": "original",
++            "rights": "licensed", "edition": "Gamma Edition",
++            "edition_published": "", "translators": {"length": 2}, "container": "",
++        },
++        # The identity fields themselves untyped — the same defect one node up.
++        "3": {
++            "author": {"name": "not text"}, "work": ["Delta", "Work"],
++            "work_id": "work.delta", "date": {"year": 404},
++            "language": {"code": "la"}, "voice": "original",
++            "rights": "public-domain", "edition": "Delta Edition",
++            "edition_published": "", "translators": [], "container": "",
++        },
++        # The remaining adversarial scalars: boolean, null, empty, whitespace.
++        "4": {
++            "author": "Epsilon Author", "work": "Epsilon Work",
++            "work_id": "work.epsilon", "date": 405, "language": "la",
++            "voice": "original", "rights": "", "edition": True,
++            "edition_published": None, "translators": None,
++            "attribution": "   ", "rights_basis": "Epsilon basis stands.",
++            "container": "",
++        },
++    },
++    "fragments": [
++        {"id": "untyped-control", "locator": "1", "source": "0",
++         "review": "inspected", "text_words": 2,
++         "extent": {"token": "Gen", "first_chapter": 1, "first_verse": 1,
++                    "last_chapter": 1, "last_verse": 1}},
++        {"id": "untyped-fields", "locator": "2", "source": "1",
++         "review": "inspected", "text_words": 2,
++         "extent": {"token": "Gen", "first_chapter": 1, "first_verse": 2,
++                    "last_chapter": 1, "last_verse": 2}},
++        # A locator and a review state that are not text either.
++        {"id": "untyped-container", "locator": {"ref": "not text"}, "source": "2",
++         "review": {"state": "not text"}, "text_words": 2,
++         "extent": {"token": "Gen", "first_chapter": 1, "first_verse": 3,
++                    "last_chapter": 1, "last_verse": 3}},
++        {"id": "untyped-identity", "locator": "", "source": "3",
++         "review": False, "text_words": 2,
++         "extent": {"token": "Gen", "first_chapter": 1, "first_verse": 4,
++                    "last_chapter": 1, "last_verse": 4}},
++        {"id": "untyped-scalars", "locator": "5", "source": "4",
++         "review": "inspected", "text_words": 2,
++         "extent": {"token": "Gen", "first_chapter": 1, "first_verse": 5,
++                    "last_chapter": 1, "last_verse": 5}},
++    ],
++    "leads": [],
++    "blocked": [],
++    # The refusal note is displayed prose too, and was coerced the same way.
++    "refusals": {"douay-rheims": [{"note": {"broken": True}}]},
++}
++
+ # EXPLICITLY SYNTHETIC malformed-record fixture, for the adversarial audit's
+ # defensive-rendering findings (R2 F3/F4/F5). Every tracked lead and blocked
+ # array is either empty or well typed, and no tracked payload is malformed, so
+@@ -472,7 +557,26 @@ SCENARIOS = [
+     {"name": "default", "hash": GEN1,
+      "steps": [{"do": "openFirstFragment", "label": "opened"}]},
+     {"name": "voice-held", "hash": GEN1 + "&voice=translation:en"},
+-    {"name": "voice-not-held", "hash": GEN1 + "&voice=translation:de"},
++    # A voice the CHAPTER lacks, in a language the corpus does hold (Genesis
++    # holds Greek originals, and no Greek translation): still kept and named.
++    {"name": "voice-not-held", "hash": GEN1 + "&voice=translation:grc"},
++    # Well formed, and in a language the corpus holds NOTHING in. `zz` is
++    # unassigned; `de` is a real ISO code this project has never held a
++    # fragment in. Grammar admits both; support must admit neither.
++    {"name": "unsupported-voice", "hash": GEN1 + "&voice=translation:zz"},
++    # Case is part of the closed grammar, so an upper-case code is MALFORMED
++    # and not merely unsupported: the two refusals must not collapse.
++    {"name": "invalid-voice-upper", "hash": GEN1 + "&voice=translation:EN"},
++    {"name": "unsupported-voice-real-code", "hash": GEN1 + "&voice=translation:de"},
++    # Supported -> unsupported -> supported over a live document: the refusal
++    # must not strand the page in the error state or lose the reader's voice.
++    {"name": "unsupported-voice-change", "hash": GEN1 + "&voice=translation:en",
++     "steps": [{"do": "hash", "value": GEN1 + "&voice=translation:zz",
++                "label": "unsupported"},
++               {"do": "hash", "value": GEN1 + "&voice=translation:en",
++                "label": "supported-again"}]},
++    {"name": "untyped-provenance", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": UNTYPED_PROVENANCE_FIXTURE}},
+     # Genesis 10 holds 71 fragments, every one in its author's own Latin: the
+     # selected-empty-voice chapter finding 8 demands be told truthfully.
+     {"name": "voice-empty-chapter", "hash": GEN10_ENGLISH},
+@@ -1106,6 +1210,12 @@ function inspect(page, document, location, fetched, hashWrites, replaced, status
+     acknowledgements: withClass('fragment-acknowledgement').map(text),
+     acknowledgementAboveText: ackPlacement,
+     languages: withClass('fragment-language').map(text),
++    // The fragment's own identity chips. They were outside every projection,
++    // so the no-coercion sweep could not see a value coerced into them.
++    authors: withClass('fragment-author').map(text),
++    works: withClass('fragment-work').map(text),
++    dates: withClass('fragment-date').map(text),
++    extents: withClass('fragment-extent').map(text),
+     states: withClass('state').map(text),
+     errorSections: errors,
+     staticEntry: Boolean(first('static-entry')),
+@@ -1959,13 +2069,106 @@ class VoiceDeepLinkTest(ReplayTest):
+                             for one in page["asideNotes"]))
+ 
+     def test_a_voice_the_chapter_lacks_is_kept_and_named_rather_than_widened(self):
++        # SUPPORTED, and not held HERE. Genesis 1 holds Greek originals and no
++        # Greek translation, so "none here" is a fact about this chapter and
++        # the corpus really does hold the language it names.
+         page = self.page("voice-not-held")
+-        self.assertEqual(page["voice"], "translation:de")
+-        self.assertEqual(page["hash"], GEN1 + "&voice=translation:de")
++        self.assertEqual(page["voice"], "translation:grc")
++        self.assertEqual(page["hash"], GEN1 + "&voice=translation:grc")
+         self.assertEqual(page["hashWrites"], [])
+-        self.assertIn("German translation — none here", page["voiceLabels"])
++        self.assertIn("Greek translation — none here", page["voiceLabels"])
+         self.assertEqual(page["fragmentCount"], 0)
+ 
++
++class UnsupportedVoiceTest(ReplayTest):
++    """V3 finding 5/8 — shape is not support.
++
++    `voice=translation:zz` satisfied the two-to-three-lowercase-letter grammar
++    and was then carried into the page as though the corpus held a ZZ
++    translation and merely had none on this chapter, producing the invented
++    claim "none in ZZ translation". A voice naming a language the index holds
++    nothing in is a different thing from a voice the chapter lacks, and the
++    page must not spend a holding it has never had to describe one.
++    """
++
++    UNSUPPORTED = ("unsupported-voice", "unsupported-voice-real-code")
++
++    def test_an_unsupported_voice_fails_closed(self):
++        self.assert_failed_closed(
++            "unsupported-voice",
++            "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:zz",
++            "voice=translation:zz is not a voice this corpus holds")
++
++    def test_a_real_but_unheld_language_code_fails_closed_the_same_way(self):
++        # `de` is well formed and nameable; the corpus has never held a German
++        # fragment, so naming it is exactly the same invention as `zz`.
++        self.assert_failed_closed(
++            "unsupported-voice-real-code",
++            "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:de",
++            "voice=translation:de is not a voice this corpus holds")
++
++    def test_an_upper_case_code_is_malformed_rather_than_unsupported(self):
++        # `EN` names a language the corpus does hold; it still fails the closed
++        # lowercase grammar, and must be refused for the shape, not the set.
++        self.assert_failed_closed(
++            "invalid-voice-upper",
++            "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:EN",
++            "voice=translation:EN is not a voice —")
++
++    def test_the_refusal_is_distinct_from_the_malformed_one(self):
++        # Three states, not two: malformed shape, supported voice, and a
++        # well-formed voice the corpus cannot answer.
++        malformed = self.page("invalid-voice")["errorSections"][0]["details"]
++        unsupported = self.page("unsupported-voice")["errorSections"][0]["details"]
++        self.assertTrue(any("is not a voice —" in one for one in malformed))
++        self.assertFalse(any("is not a voice —" in one for one in unsupported))
++        self.assertTrue(any("this corpus holds" in one for one in unsupported))
++        self.assertFalse(any("this corpus holds" in one for one in malformed))
++
++    def test_no_unsupported_voice_ever_claims_a_holding(self):
++        # The review's exact complaint, asserted as a contradiction: no
++        # rendered state may name the language or claim an absence in it.
++        for name in self.UNSUPPORTED:
++            page = self.page(name)
++            with self.subTest(scenario=name):
++                rendered = json.dumps(self.rendered_state(page), ensure_ascii=False)
++                for invented in ("none in ZZ translation", "ZZ translation",
++                                 "none in German translation", "German translation",
++                                 "none here"):
++                    self.assertNotIn(invented, rendered)
++                self.assertEqual(page["tallyText"], "")
++                self.assertEqual(page["voiceLabels"], ["Everything held"])
++
++    def test_the_unsupported_voice_is_dropped_from_the_recovery_route(self):
++        # The rest of the address is sound, so recovery keeps it and offers
++        # the page without the voice it cannot honour.
++        page = self.page("unsupported-voice")
++        self.assertEqual(page["errorSections"][0]["recoveryHref"],
++                         "#book=Gen&chapter=1&bible=douay-rheims")
++
++    def test_a_supported_voice_survives_a_pass_through_an_unsupported_one(self):
++        # supported -> unsupported -> supported, over one live document.
++        first = self.snapshot("unsupported-voice-change", "start")
++        self.assertEqual(first["voice"], "translation:en")
++        self.assertEqual(first["fragmentCount"], 14)
++        broken = self.snapshot("unsupported-voice-change", "unsupported")
++        self.assertEqual(broken["referenceText"], "Address not recognised")
++        self.assertEqual(broken["fragmentCount"], 0)
++        back = self.snapshot("unsupported-voice-change", "supported-again")
++        self.assertEqual(back["voice"], "translation:en")
++        self.assertEqual(back["fragmentCount"], 14)
++        self.assertEqual(back["hash"], GEN1 + "&voice=translation:en")
++
++    def test_the_supported_set_is_read_from_the_index_not_from_the_key(self):
++        # The closed set is Catena-owned runtime truth the route already has,
++        # never manufactured from the voice string or from a new request.
++        script = held(CATENA / "catena.js")
++        self.assertIn("(index.held || []).some((one) => (one.languages || []).includes(",
++                      script)
++        self.assertEqual(self.page("unsupported-voice")["fetched"],
++                         ["structure/catena/index.json", "bibles.json",
++                          "structure/paragraphs/index.json"])
++
+     def test_the_page_no_longer_assigns_the_voice_before_the_options_exist(self):
+         script = held(CATENA / "catena.js")
+         # The deferral now lives in `seedControls`, the one seeding every
+@@ -2711,6 +2914,102 @@ class BlockedVoiceClaimTest(ReplayTest):
+                          "language; choose “Everything held” to see them.")
+ 
+ 
++class UntypedProvenanceTest(ReplayTest):
++    """V3 finding 4 — every displayed provenance field is typed, not coerced.
++
++    The review mutated `edition`, `edition_published` and one `translators`
++    item to objects and read `4[object Object][object Object]tr. [object
++    Object]licensed` off the page. The audit for this correction found the
++    same door open on `locator`, `review`, `author`, `work`, `date`,
++    `language` and the refusal note, and one worse: a `translators` value with
++    a `length` and no `join` threw out of an async render, so the chapter kept
++    `aria-busy` for ever. All of them are one rule — a fact is a fact only as
++    nonempty text — and the rule is applied once, at the point of display.
++    """
++
++    def page_lines(self):
++        return self.page("untyped-provenance")["sourceLines"]
++
++    def test_nothing_untyped_reaches_the_page_as_words(self):
++        rendered = json.dumps(
++            self.rendered_state(self.page("untyped-provenance")), ensure_ascii=False)
++        for artefact in ("[object Object]", "undefined", "NaN",
++                         "Beta Press,1901", "not text"):
++            self.assertNotIn(artefact, rendered)
++        # Booleans and nulls are checked against the displayed prose alone;
++        # the projection itself is JSON and carries them legitimately.
++        for line in self.page_lines():
++            for artefact in ("true", "false", "null"):
++                self.assertNotIn(artefact, line)
++
++    def test_the_sound_record_beside_them_is_untouched(self):
++        # The control row: withholding garbage must cost no valid fact.
++        first = self.page_lines()[0]
++        self.assertIn("Alpha Edition", first)
++        self.assertIn("Alpha Press, 1899", first)
++        self.assertIn("public-domain", first)
++
++    def test_a_malformed_edition_and_printing_are_withheld_not_coerced(self):
++        second = self.page_lines()[1]
++        self.assertNotIn("[object Object]", second)
++        # An array must not arrive as an apparent printing, comma-joined.
++        self.assertNotIn("Beta Press", second)
++        self.assertNotIn("1901", second)
++        # …and the sound sibling fact on the same row still renders.
++        self.assertIn("public-domain", second)
++
++    def test_a_mixed_translator_list_keeps_every_valid_hand_and_no_other(self):
++        # The review's exact requirement: one malformed item may not erase its
++        # valid siblings, and may not appear beside them either.
++        second = self.page_lines()[1]
++        self.assertIn("tr. Good Name, Other Name", second)
++        self.assertNotIn("42", second)
++        self.assertNotIn("[object Object]", second)
++
++    def test_a_translator_container_that_is_not_a_list_kills_nothing(self):
++        # `{"length": 2}` passed `.length` and threw on `.join`, aborting the
++        # render after the chapter and before the tally, focus and route write.
++        page = self.page("untyped-provenance")
++        self.assertEqual(page["fragmentCount"], 5, "every fragment still renders")
++        self.assertNotIn("tr.", self.page_lines()[2])
++        self.assertIn("Gamma Edition", self.page_lines()[2])
++        # The render completed: the tally, the announcement and the route write
++        # all come after the point the exception used to escape from.
++        self.assertTrue(page["tallyText"])
++        self.assertTrue(page["statusText"])
++
++    def test_an_untyped_locator_and_review_state_say_nothing(self):
++        third = self.page_lines()[2]
++        self.assertNotIn("[object Object]", third)
++        self.assertNotIn("not collated", third,
++                         "an untyped review state claims no collation either")
++
++    def test_untyped_identity_fields_are_withheld_from_every_chip(self):
++        page = self.page("untyped-provenance")
++        for key in ("authors", "works", "dates", "languages", "extents"):
++            with self.subTest(field=key):
++                self.assertFalse([one for one in page[key]
++                                  if one and "[object" in one])
++        # The author heading, the filter label and the exclusion set are the
++        # same one name, so an untyped author cannot reach any of them.
++        self.assertNotIn("[object Object]", json.dumps(page["authorGroups"]))
++        self.assertNotIn("[object Object]", json.dumps(page["filterLabels"]))
++
++    def test_the_remaining_adversarial_scalars_render_nothing(self):
++        # boolean edition, null printing, null translators, empty rights,
++        # whitespace attribution — and the one sound fact among them stands.
++        fifth = self.page_lines()[4]
++        self.assertNotIn("true", fifth)
++        self.assertNotIn("null", fifth)
++        self.assertNotIn("tr.", fifth)
++        self.assertIn("Epsilon basis stands.", fifth)
++
++    def test_an_untyped_refusal_note_is_not_coerced_into_the_sentence(self):
++        refusal = self.page("untyped-provenance")["refusal"]
++        self.assertIn("Boundary not established.", refusal)
++        self.assertNotIn("[object Object]", refusal)
++
++
+ class MalformedRecordRenderingTest(ReplayTest):
+     """Adversarial audit R2, findings F3, F4 and F5 — broken values are not words.
+ 
+@@ -3284,6 +3583,25 @@ class PayloadTest(ReplayTest):
+ class FrozenContractTest(ReplayTest):
+     """What this lane was not allowed to move, and did not."""
+ 
++    def test_the_name_joiner_is_only_ever_handed_a_fresh_list(self):
++        """`joinNames` CONSUMES the list it is given.
++
++        V3 rewrote it to pop rather than slice because the recorded gzip-9
++        ceilings left no room for the unsupported-voice and provenance-typing
++        corrections otherwise; the two non-mutating forms measured were larger
++        than the original. That is safe only while every caller hands it a
++        freshly mapped array, and the byte ceiling also left no room to say so
++        in a comment, so the precondition is pinned here instead.
++        """
++        script = held(CATENA / "catena.js")
++        uses = [line.strip() for line in script.splitlines()
++                if "joinNames(" in line and "function joinNames" not in line]
++        self.assertEqual(len(uses), 2, f"unexpected joinNames call sites: {uses}")
++        for line in uses:
++            with self.subTest(call=line):
++                self.assertIn(".map(", line,
++                              "joinNames consumes its argument; hand it a fresh list")
++
+     def test_the_one_cross_entrance_link_still_points_where_it_did(self):
+         script = held(CATENA / "catena.js")
+         self.assertIn(
