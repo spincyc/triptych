@@ -474,6 +474,199 @@ one work-register marker. Five requirements pass; the sixth stays open because
 `day-missal.css` is protected liturgy and needs that deliverable's authority,
 which is the honest state rather than a rounding of it.
 
+### E1 Catena route-owned correction lane, pass 2
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v2-2026-08-11 -->
+
+The 2026-08-11 independent correction review (`8f8f424ec5ccd5300dcee997a529f79fc23a8959`,
+branch `ux/catena-wave-1-e1-correction-review`) held E1 Catena at **CHANGES
+REQUIRED** for correction head `dfc636665df26563138ff893bd2a9f9afc7d80c0`: the
+URL parser accepted contradictory duplicate keys and malformed translation
+voices; an identical invalid address validated and recovered differently
+depending on the controls a reader left behind, and recovery lost focus; stale
+load failures could erase newer state; blocked and empty claims could
+contradict one another, and integrity or invalid states could label a voice an
+absence; lead and licence rendering overstated or suppressed what the record
+supplies; browser print omitted the selected Scripture edition while keeping
+interactive footer matter; the accepted forced-colors correction carried a
+route focus rule that overrode the accepted shared role; and the first handoff
+package was protocol-incomplete, with inaccurate head, page-count, gate and
+navigation claims, absent referenced captures, and machine-private values.
+
+This second bounded lane, from unmoved main `9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`
+on branch `impl/catena-wave-1-e1-corrections-v2`, carried the useful route/test
+commit `67191afd1d6281006e5cb947596452481c0d9692` forward and corrected every
+route-owned defect above in `981959b4f78209401ba00bfbdcc430e23e09c8bb`, inside the exclusive boundary of
+`src/web/browser/catena/catena.js`, `catena.css`, `index.html`, and
+`tools/tests/test_catena_wave_1.py`. The focused suite grew from 99 to 179
+tests and stays green; the original 8,000/13,000-byte whole-file gzip-9
+ceilings hold unraised at 7,629 and 12,996; `catena-model.js` is byte-identical
+to main; and the browser-gate failure identity/status set is unchanged from the
+pristine-main baseline, with 15 Catena assertion `detail` texts differing and
+no assertion changing status — the rows are not byte-identical and this record
+does not call them so. `check-release-bindings` deliberately fails closed on
+the three changed route assets, and the single new `check-examples` divergence
+is that same unsigned-binding condition seen through
+`tools/public-alpha verify --preview`, until the release owner re-signs.
+
+An internal adversarial audit of this lane's own candidate found six further
+route-owned defects — a stranded focus on the failure arm of recovery, a
+superseded arrival's voice leaking into the next reader action, the route's own
+history echo reverting a reader who had already moved, a blocked-only chapter
+manufacturing a voice absence, malformed payload, lead and blocked values
+coerced into words, and a malformed acknowledgement suppressing a valid one —
+each now fixed and pinned by its own regression test. Ten further observations
+are recorded as decisions or limitations in the handoff rather than silently
+fixed, and two belong to other owners.
+
+No real assistive-technology session was possible in this environment, so that
+requirement is recorded as unmet with labelled accessibility-tree and
+keyboard-sequence supplements in its place, and forced-colors evidence is
+labelled browser emulation rather than a system palette. Generator/data,
+release, common-gate, and B0/shared-shell prerequisites remain with their
+owners in the roadmap subsection and the package's unresolved-blocker ledger. A
+new immutable sanitized handoff, `20260811T212656Z-catena-e1-corrections-v2`, records the exact
+candidate head; the sole next action is a fresh independent review of that head
+and its package. Nothing here is accepted, integrable, merged, re-signed, or
+deployed.
+
+### E1 Catena route-owned correction lane, V3
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v3-2026-08-12 -->
+
+The independent review of correction V2 (`4c30d86f7118d69eb27d12dc9b63568e531918eb`,
+branch `review/catena-wave-1-e1-corrections-v2-independent`) dispositioned the
+reviewed head `17f031b37840d8320c664a128d72b502108fe075` **CHANGES REQUIRED**. It
+found the V2 URL, history, asynchronous-ownership, truth-state, lead, print,
+focus and responsive corrections sound under adversarial replay, the package
+mechanics and unraised budgets sound, and named exactly four things for this
+lane. Two are implementation defects and two are inaccurate statements; every
+other finding remains with the owner the review assigned it to.
+
+First, a structurally well-formed but unsupported voice. `voice=translation:zz`
+satisfied the closed two-or-three-lowercase-letter grammar and was then carried
+into the page as `none in ZZ translation`, which converts an unsupported voice
+into a claim about what the corpus holds. Shape and support are now distinct
+questions: the supported language set is read from `index.held[].languages` —
+Catena-owned runtime truth the route already has in memory before any voice is
+resolved, requiring no new request — and a well-formed voice naming a language
+the corpus holds nothing in fails closed through the existing invalid-address
+state, exactly as an unpublished `bible` value does. A voice the chapter merely
+lacks is unchanged and still names itself rather than widening.
+
+Second, untyped displayed provenance. Every provenance value this route shows
+now passes one typed gate before it can become words. The review named
+`edition`, `edition_published` and one `translators` item; this lane's own
+audit found the same coercion on `locator`, `review`, `author`, `work`, `date`,
+`language`, the author heading, the author-filter label and the numbering
+refusal note, and one case that was worse than a coercion: a `translators`
+value carrying a `length` and no `join` threw out of the asynchronous render,
+so the tally, the announcement, focus recovery and the route write never ran
+and the reading region kept `aria-busy` for ever. Each translator entry is now
+judged alone, so a malformed one is dropped while its valid siblings still
+render, and no scalar fact is withheld because a neighbour is malformed.
+
+The two evidence corrections change records, not behaviour. The V2 handoff
+claimed without qualification that a stranger's key is "neither honoured nor
+disturbed"; the exact behaviour is that unrecognized hash keys are judged by
+nothing and survive exactly as long as the route writes nothing, while every
+write it does make replaces the whole fragment with the four recognized keys,
+so an unrecognized key is discarded by partial-address completion, by a reader
+action, and by the recovery link. Only the value-identical case is proven by
+test, and the discard cases are labelled as read from the code. The V2
+`AT-LIMITATION.md` also said no AT-SPI bus launcher exists; that is false, and
+the accurate limitation is that no usable display, AT bus session, screen
+reader, speech channel or braille stack was available, so no successful
+real-assistive-technology evidence was produced. No implementation was changed
+to make either statement true.
+
+The changed paths are `src/web/browser/catena/catena.js` and
+`tools/tests/test_catena_wave_1.py` alone, plus these durable records.
+`catena.css` and `index.html` are byte-identical to the reviewed head and
+`catena-model.js` to main. The focused suite is 249 tests green, up from 179.
+The recorded ceilings are unraised and were paid for by deletion rather than by
+waiver: `catena.css` is unchanged at 7,629/8,000, and `catena.js` is
+12,995/13,000 whole and 8,799/8,800 comment-stripped, funded by removing a
+provably dead voice lookup repeated four times, folding six per-field guards
+into one typed gate, and tightening three expressions. That left no room for
+the explanatory prose this file's style would ordinarily carry, so one
+precondition is pinned by a test rather than a comment and the trade is
+recorded as a limitation. `check-release-bindings` still fails closed on the
+changed Catena route assets and was not repaired; it is the release owner's.
+A new immutable handoff, `20260812T184146Z-catena-e1-corrections-v3`, records the
+exact V3 head, and the V2 package is unchanged. The sole next action is a fresh
+independent review of that head and package. Nothing here is accepted,
+integrable, merged, re-signed, or deployed.
+
+### E1 Catena correction V3 independent review
+
+The fresh independent review examined exact candidate
+`f2c9bc49dd29499734193b264ba9da21304b27f1`, its direct parent
+`17f031b37840d8320c664a128d72b502108fe075`, prior review
+`4c30d86f7118d69eb27d12dc9b63568e531918eb`, and package
+`build/agent-handoffs/20260812T184146Z-catena-e1-corrections-v3` with transport
+SHA-256 `625c7d45593990dce5d4c871a6b29834e0341391216f914e2d0ef8e5d27e86f8`.
+The package is preserved without alteration on
+`evidence/catena-e1-corrections-v3-handoff` at
+`428487559a0dc18b4c2a4a4cd40d18fd17e867ec`. Current `origin/main` for the
+read-only integration comparison was
+`9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`; it is the candidate lineage's
+exact ancestor, so no newer-main implementation overlap exists.
+
+The disposition is **CHANGES REQUIRED**. V3 is correctly bounded and preserves
+the previously accepted history, focus, race, lead, rights, print, no-script,
+forced-colors-emulation, and reflow behavior, but the two implementation
+closures are not sound:
+
+1. `index.held[].languages` is a language inventory, not an exact voice
+   inventory. The emitted corpus contains `original:grc`, `original:la`,
+   `translation:en`, and `translation:la`, but no `translation:grc`. V3 still
+   accepts `translation:grc` and manufactures “Greek translation — none here.”
+   A correct fix must publish or derive exact corpus-wide voice keys, validate
+   the complete voice, reject Greek translation, and retain a real
+   supported-but-chapter-empty case such as English translation on Genesis 10.
+2. The typed-display boundary remains incomplete. Translation-absence
+   `author`, `work`, `reason`, and `partial` bypass the gate; a scalar string
+   `translators` container is widened into valid-looking provenance; malformed
+   translation language can still reach the selector and the DOM `lang`
+   attribute; malformed authors collapse into an empty heading and unnamed,
+   shared filter identity; and structured extent members can still stringify.
+   Render-tail exceptions are not protected by a current-token-aware terminal
+   cleanup. The next regression must exercise each sink, valid siblings,
+   `aria-busy`, focus/status completion, and route completion.
+
+The stranger-key correction is substantively accurate: unknown keys survive
+only while Catena writes no route and are discarded by canonical writes and
+recovery. The AT-SPI correction is accurate at its core—the launcher and bus
+existed and no successful real-AT session was produced—but the sealed package
+publishes a local username, UID/PID, D-Bus identity, and session-bus path while
+its sanitizer reports zero hits; it also overstates several session-scoped
+negatives as impossibility. A replacement immutable package must redact those
+identifiers, scope the prose to the inspected session, and correct the focused-
+suite, full-suite, browser-report, screenshot/conditional-artifact, and other
+exactness gaps recorded in the roadmap review below.
+
+Fresh validation ran the focused Catena discovery at 249 tests, all green; the
+browser artifact gate at 2,290 assertions (1,836 pass, 226 fail, 228 skip), the
+same assertion status/detail baseline; and full discovery at 1,600 tests with
+14 failures, 14 errors, and 11 skips in this environment. The extra error over
+the package's 14-failure/13-error head log is an environment-sensitive PDF
+signal-cleanup race. The package's base/head comparison has no new failure
+identity, but one shared failure changes from `28 != 23` to `29 != 23` because
+V3 adds a promised-deliverable record, so “identical failures” is inaccurate.
+Budgets reproduce exactly at CSS 7,629/8,000 and 2,676/2,700, and JavaScript
+12,995/13,000 and 8,799/8,800; no ceiling moved, and the code-only margin is one
+byte.
+
+This review changed only durable records on
+`review/catena-wave-1-e1-corrections-v3-independent`. It did not modify the V3
+implementation, merge it, refresh a release binding, re-sign, deploy, or begin
+another implementation lane. The one next action is a smallest bounded V4
+correction from `f2c9bc49dd29499734193b264ba9da21304b27f1`, with explicit
+generator/data authority for an exact Catena voice-key projection, the route-
+owned typed-presentation fixes above, and a new sanitized immutable package,
+followed by fresh independent review.
+
 ## Promised work
 
 ### Corpus browser foundation design

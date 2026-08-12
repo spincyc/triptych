@@ -1239,3 +1239,39 @@ state = "complete"
   criterion = "Artwork validation and source-controlled review records close every held notice without inventing object identities or implying external approval."
   status = "pass"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v3-2026-08-12"
+owner = "src/web/browser/catena"
+promise = "Answer the 2026-08-12 E1 Catena correction V2 independent review with a bounded V3 correction and return the exact head and immutable package for fresh independent review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "unsupported-voice-distinguished-from-shape"
+  criterion = "A syntactically well-formed unsupported voice is distinguished from malformed and supported voices without inventing corpus holdings, while a globally supported voice absent from the current chapter remains valid."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "displayed-provenance-typed"
+  criterion = "Every route-presented provenance and related display value follows its declared scalar or structured type, malformed values neither coerce nor create unnamed structural identity, valid siblings remain visible, and malformed containers cannot strand terminal render work."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "inaccurate-statements-corrected"
+  criterion = "The stranger-key and AT-SPI records state the actual behavior and bounded environment evidence without mutating the sealed V2 package."
+  status = "pass"
+  evidence = ["guidance/corpus-browser-roadmap.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "boundaries-and-budgets-held"
+  criterion = "The V3 candidate remained within its recorded production/test boundary, left protected and outside-owner paths unchanged, and raised no Catena gzip ceiling."
+  status = "pass"
+  evidence = ["guidance/corpus-browser-roadmap.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "A fresh independent review of exact V3 head f2c9bc49dd29499734193b264ba9da21304b27f1 and its immutable package records a durable disposition."
+  status = "pass"
+  evidence = ["guidance/corpus-browser-roadmap.md", "PROJECT-WORK.md"]
