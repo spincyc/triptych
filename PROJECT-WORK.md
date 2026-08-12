@@ -548,13 +548,17 @@ SHA-256 `e4083de536b041094f0a6c3f376d3f50800242b037f71ae994f2572c6b86a96b`.
 The disposition is **CHANGES REQUIRED**. The reviewed URL, history, focus,
 asynchronous-ownership, truth-state, lead, ordinary print, and responsive
 corrections work under independent adversarial replay, and the focused suite
-is 179 tests green. One Catena-owned rights/provenance defect remains: object
-values supplied as `edition`, `edition_published`, or an item of `translators`
-are converted into visible `[object Object]` text. The focused suite validates
-malformed acknowledgement, attribution, and rights-basis values but does not
-exercise those adjacent provenance fields. The smallest correction is to
-validate every presented provenance field as typed nonempty text, retain valid
-sibling facts, and add the adversarial regression without raising the existing
+is 179 tests green. Two Catena-owned defects remain. First, the structurally
+well-formed but unsupported `voice=translation:zz` is accepted and rendered as
+“none in ZZ translation,” manufacturing a held-language absence instead of an
+unsupported-voice state. Second, object values supplied as `edition`,
+`edition_published`, or an item of `translators` are converted into visible
+`[object Object]` text. The focused suite validates malformed acknowledgement,
+attribution, and rights-basis values but does not exercise those adjacent
+provenance fields or a well-formed unsupported language code. The smallest
+correction is to distinguish supported voices from syntactic form, validate
+every presented provenance field as typed nonempty text, retain valid sibling
+facts, and add both adversarial regressions without raising the existing
 budgets.
 
 The package is mechanically sound but its claims are not fully exact. Its
@@ -577,8 +581,9 @@ did not merge, re-sign, deploy, or begin another lane. The complete previous-
 finding matrix, command results, fresh 15-page print inspection, ownership
 audit, and outside-owner prerequisites are recorded in
 `guidance/corpus-browser-roadmap.md`. The one next action is a smallest bounded
-Catena route/test and exact-handoff correction for the provenance coercion and
-the two package statements, followed by another fresh independent review.
+Catena route/test and exact-handoff correction for unsupported voice,
+provenance coercion, and the two package statements, followed by another fresh
+independent review.
 
 ## Promised work
 
