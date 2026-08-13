@@ -106,6 +106,18 @@
     return value && typeof value === 'object' && !Array.isArray(value) ? value : {};
   }
 
+  /**
+   * A number AS THE DATA CARRIES IT, or nothing.
+   *
+   * Not `Number(value)`: that coercion accepts `"1"` and, worse, accepts `[1]`,
+   * because a one-member list numifies to its member. Every extent member in
+   * the tracked corpus is an integer, so a member that is not one is a
+   * malformed record and not a locus to be printed.
+   */
+  function count(value) {
+    return typeof value === 'number' && Number.isFinite(value) ? value : null;
+  }
+
   /** A fact that may legitimately arrive as a finite number, or else as text. */
   function say(value) {
     return Number.isFinite(value) ? String(value) : sound(value);
@@ -146,18 +158,18 @@
   function formatExtent(extent, bookName) {
     if (!extent) return sound(bookName);
     const book = sound(bookName) || sound(extent.token);
-    const firstChapter = Number(extent.first_chapter);
-    const lastChapter = Number(extent.last_chapter);
-    const firstVerse = Number(extent.first_verse);
-    const lastVerse = Number(extent.last_verse);
+    const firstChapter = count(extent.first_chapter);
+    const lastChapter = count(extent.last_chapter);
+    const firstVerse = count(extent.first_verse);
+    const lastVerse = count(extent.last_verse);
     // A RANGE THIS RENDERER CANNOT STATE IS NOT GUESSED AT. The four members are
     // validated as the numbers the format is written in; anything else — a
     // structured member, an absent one, a list — leaves the book standing alone
     // rather than printing "Genesis [object Object]:1" or "Genesis
     // undefined:undefined" as though a locus had been established. The
     // structure is left for a renderer that understands it, not flattened.
-    if (!Number.isFinite(firstChapter) || !Number.isFinite(lastChapter) ||
-        !Number.isFinite(firstVerse) || !Number.isFinite(lastVerse)) {
+    if (firstChapter === null || lastChapter === null ||
+        firstVerse === null || lastVerse === null) {
       return book;
     }
     const first = firstChapter + ':' + firstVerse;
@@ -170,7 +182,13 @@
 
   /** Does this fragment cross a chapter boundary? The page says so when it does. */
   function spansChapters(extent) {
-    return !!extent && Number(extent.last_chapter) > Number(extent.first_chapter);
+    if (!extent) return false;
+    // A CROSSING IS A CLAIM, so it is made only from two real numbers: two
+    // arrays are never `===`, and comparing them coerced announced a boundary
+    // crossing for a record that established no boundary at all.
+    const first = count(extent.first_chapter);
+    const last = count(extent.last_chapter);
+    return first !== null && last !== null && last > first;
   }
 
   /**
@@ -330,6 +348,7 @@
     sound: sound,
     list: list,
     bag: bag,
+    count: count,
     say: say,
     ORIGINAL: ORIGINAL,
     TRANSLATION: TRANSLATION

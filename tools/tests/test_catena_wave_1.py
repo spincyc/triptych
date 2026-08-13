@@ -135,7 +135,7 @@ NODE = shutil.which("node")
 # under node by `scripts/_catena.py check`, and no part of E1 touches it: a
 # deliberate model change is a deliberate change to this literal. The digest
 # is of the tracked file itself — release bindings are the release owner's.
-MODEL_SHA256 = "73090c18a557552f648251d978320785eaa498c92f98ffc75aff1d511c0a95f5"
+MODEL_SHA256 = "5fda9dbd1916bf12b464a74c87213f8e1fc14d50480270d6a0c86ec5d5b78625"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -553,6 +553,96 @@ GEN42 = "#book=Gen&chapter=42&bible=douay-rheims"
 # Genesis 10 holds 71 fragments, every one in its author's own Latin.
 GEN10_ENGLISH = "#book=Gen&chapter=10&bible=douay-rheims&voice=translation:en"
 
+# EXPLICITLY SYNTHETIC malformed-STRUCTURE fixture (V4, the V3 review's
+# remaining typed-presentation findings). The tracked corpus types everything
+# it carries, so these shapes can only be driven from a labelled fixture. Each
+# malformed value stands beside a sound one: withholding garbage must cost no
+# valid fact, and must not strand the render.
+MALFORMED_STRUCTURE_FIXTURE = {
+    "book": "Gen",
+    "chapter": 1,
+    "text_prefix": "structure/catena/text/",
+    "sources": {
+        # The control. Every field sound, and the work whose absence rows the
+        # scenario patches into the index.
+        "0": {"author": "Sound Author", "work": "Sound Work",
+              "work_id": "work.sound", "date": 401, "language": "en",
+              "voice": "translation", "rights": "public-domain",
+              "edition": "Sound Edition", "edition_published": "1899",
+              "translators": ["Sound Hand"], "container": ""},
+        # A TRANSLATED LANGUAGE that is not text. It must never become a voice
+        # key, a control value, a `lang` attribute, or a URL the page then
+        # refuses on the way back in.
+        "1": {"author": "Language Author", "work": "Language Work",
+              "work_id": "work.language", "date": 402, "language": {"code": "en"},
+              "voice": "translation", "rights": "public-domain",
+              "edition": "Language Edition", "edition_published": "",
+              "translators": [], "container": ""},
+        # A SCALAR translator container. A string is not a one-item list, and
+        # was widened into a validated-looking attribution of translation.
+        "2": {"author": "Scalar Author", "work": "Scalar Work",
+              "work_id": "work.scalar", "date": 403, "language": "en",
+              "voice": "translation", "rights": "public-domain",
+              "edition": "Scalar Edition", "edition_published": "",
+              "translators": "Not A List", "container": ""},
+        # An AUTHOR that cannot be named. Two of these are not one man, and the
+        # filter key they collapsed into was shared across every chapter.
+        "3": {"author": {"name": "not text"}, "work": "Nameless Work One",
+              "work_id": "work.nameless1", "date": 404, "language": "en",
+              "voice": "translation", "rights": "public-domain",
+              "edition": "Nameless Edition", "edition_published": "",
+              "translators": [], "container": ""},
+        "4": {"author": ["also", "not text"], "work": "Nameless Work Two",
+              "work_id": "work.nameless2", "date": 404, "language": "en",
+              "voice": "translation", "rights": "public-domain",
+              "edition": "Nameless Edition", "edition_published": "",
+              "translators": [], "container": ""},
+    },
+    "fragments": [
+        {"id": "shape-control", "locator": "1", "source": "0",
+         "review": "inspected", "text_words": 2,
+         "extent": {"token": "Gen", "first_chapter": 1, "first_verse": 1,
+                    "last_chapter": 1, "last_verse": 1}},
+        {"id": "shape-language", "locator": "2", "source": "1",
+         "review": "inspected", "text_words": 2,
+         "extent": {"token": "Gen", "first_chapter": 1, "first_verse": 2,
+                    "last_chapter": 1, "last_verse": 2}},
+        # STRUCTURED EXTENT MEMBERS. Objects stringified into a locus; two
+        # arrays are never `===`, so they also claimed a chapter crossing.
+        {"id": "shape-extent-object", "locator": "3", "source": "2",
+         "review": "inspected", "text_words": 2,
+         "extent": {"token": "Gen", "first_chapter": {"n": 1}, "first_verse": 1,
+                    "last_chapter": {"n": 1}, "last_verse": 2}},
+        {"id": "shape-extent-list", "locator": "4", "source": "3",
+         "review": "inspected", "text_words": 2,
+         "extent": {"token": "Gen", "first_chapter": [1], "first_verse": [1],
+                    "last_chapter": [1], "last_verse": [2]}},
+        {"id": "shape-extent-absent", "locator": "5", "source": "4",
+         "review": "inspected", "text_words": 2, "extent": {}},
+    ],
+    # CONTAINERS THAT ARE NOT LISTS. A string satisfied `.length`, so the tally
+    # counted characters as works and the refusal claimed a boundary.
+    "leads": "not a list",
+    "blocked": {"length": 2},
+    "refusals": {"douay-rheims": "not a list"},
+}
+
+# Absence rows for the same works, every displayed field malformed in turn.
+# `partial` is the sharpest: untyped, its truthiness moved a work out of "no
+# publishable translation" and into "partly public domain, not yet taken".
+MALFORMED_ABSENCES = {
+    "absences": {
+        "work.sound": [{"language": "en", "reason": "A sound recorded reason.",
+                        "partial": "a sound partial offer"}],
+        "work.language": [{"language": "en", "reason": {"text": "not text"},
+                           "partial": {"offer": "not text"}}],
+        "work.scalar": [{"language": "en", "reason": ["not", "text"],
+                         "partial": 42}],
+        "work.nameless1": [{"language": "en", "reason": "   ", "partial": True}],
+        "work.nameless2": [{"language": "en", "reason": None, "partial": "   "}],
+    }
+}
+
 SCENARIOS = [
     {"name": "default", "hash": GEN1,
      "steps": [{"do": "openFirstFragment", "label": "opened"}]},
@@ -566,6 +656,25 @@ SCENARIOS = [
     # unassigned; `de` is a real ISO code this project has never held a
     # fragment in. Grammar admits both; support must admit neither.
     {"name": "unsupported-voice", "hash": GEN1 + "&voice=translation:zz"},
+    # The second supported translation, so "supported" is not a synonym for
+    # English: `translation:la` is one source entry in the whole corpus.
+    {"name": "voice-latin", "hash": GEN1 + "&voice=translation:la"},
+    # Well formed by shape but naming NO language, and one carrying a second
+    # delimiter: both are malformed, and must not reach the support question.
+    {"name": "voice-empty-language", "hash": GEN1 + "&voice=translation:"},
+    {"name": "voice-extra-delimiter", "hash": GEN1 + "&voice=translation:en:extra"},
+    # The refused Greek key over a live document, and back again: the refusal
+    # must not strand the page or lose the reader's supported voice.
+    {"name": "unsupported-greek-change", "hash": GEN1 + "&voice=translation:en",
+     "steps": [{"do": "hash", "value": GEN1 + "&voice=translation:grc",
+                "label": "greek"},
+               {"do": "hash", "value": GEN1 + "&voice=translation:en",
+                "label": "supported-again"}]},
+    # Every remaining typed sink at once, under a supported translation so the
+    # absence view renders beside the chapter.
+    {"name": "malformed-structure", "hash": GEN1 + "&voice=translation:en",
+     "files": {"structure/catena/01-gen/001.json": MALFORMED_STRUCTURE_FIXTURE},
+     "patch": {"structure/catena/index.json": MALFORMED_ABSENCES}},
     # Case is part of the closed grammar, so an upper-case code is MALFORMED
     # and not merely unsupported: the two refusals must not collapse.
     {"name": "invalid-voice-upper", "hash": GEN1 + "&voice=translation:EN"},
@@ -1231,6 +1340,9 @@ function inspect(page, document, location, fetched, hashWrites, replaced, status
         ? decodeURIComponent(String(whole.href).replace('../sources/#passage=', ''))
         : null;
     }),
+    // TERMINAL STATE. Nothing could see a region left claiming work in
+    // progress, which is how a render-tail throw hid behind a green suite.
+    busy: byId('reading') ? byId('reading').getAttribute('aria-busy') : null,
     activeElement: document.activeElement
       ? (document.activeElement.id || document.activeElement.localName)
       : null,
@@ -3647,3 +3759,188 @@ class FrozenContractTest(ReplayTest):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ExactVoiceKeyTest(ReplayTest):
+    """The V3 defect, and the distinction it destroyed.
+
+    Support, language existence and chapter availability are three different
+    questions. V3 answered the first with the second: `index.held[].languages`
+    carries `grc` because Greek stands in this corpus as an ORIGINAL, and from
+    that V3 concluded a Greek translation was supported and rendered "Greek
+    translation — none here" — a statement about holdings nobody has.
+    """
+
+    def test_a_greek_translation_fails_closed(self):
+        self.assert_failed_closed(
+            "unsupported-voice-greek",
+            "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:grc",
+            "voice=translation:grc is not a voice this corpus holds")
+
+    def test_the_greek_refusal_never_claims_a_holding(self):
+        # THE PINNED SENTENCE. Neither this wording nor any equivalent absence
+        # or holdings claim may appear for a voice the corpus does not have.
+        page = self.page("unsupported-voice-greek")
+        self.assertNotIn("Greek translation — none here", page["voiceLabels"])
+        for label in page["voiceLabels"]:
+            self.assertNotIn("Greek", label)
+        for note in page["asideNotes"]:
+            self.assertNotIn("Greek", note)
+        for said in page["statusWrites"]:
+            self.assertNotIn("Greek", said)
+        self.assertEqual(page["voiceLabels"], ["Everything held"])
+
+    def test_the_second_supported_translation_is_honoured(self):
+        # `translation:la` is ONE source entry in the whole corpus. Support is
+        # not a synonym for English, and the exact set must carry it.
+        page = self.page("voice-latin")
+        self.assertEqual(page["voice"], "translation:la")
+        self.assertEqual(page["hashWrites"], [])
+        self.assertFalse(page["errorSections"])
+        self.assertEqual(page["fragmentCount"], 9)
+
+    def test_a_voice_naming_no_language_is_malformed(self):
+        self.assert_failed_closed(
+            "voice-empty-language",
+            "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:",
+            "voice=translation: is not a voice")
+
+    def test_a_second_delimiter_is_malformed(self):
+        # Malformed by SHAPE, not unsupported by set: the two refusals are
+        # different findings and must not collapse into one.
+        self.assert_failed_closed(
+            "voice-extra-delimiter",
+            "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:en:extra",
+            "voice=translation:en:extra is not a voice")
+
+    def test_the_refusal_does_not_strand_the_reader_s_supported_voice(self):
+        # supported -> unsupported -> supported, over a live document.
+        greek = self.snapshot("unsupported-greek-change", "greek")
+        self.assertEqual(greek["referenceText"], "Address not recognised")
+        self.assertEqual(greek["fragmentCount"], 0)
+        self.assertEqual(greek["busy"], "false")
+        self.assertNotIn("Greek translation — none here", greek["voiceLabels"])
+        back = self.snapshot("unsupported-greek-change", "supported-again")
+        self.assertEqual(back["voice"], "translation:en")
+        self.assertEqual(back["fragmentCount"], 14)
+        self.assertEqual(back["busy"], "false")
+
+    def test_the_published_projection_is_the_exact_key_set(self):
+        # The corpus holds four (voice, language) SOURCE PAIRS — original:grc,
+        # original:la, translation:en, translation:la — which the route's own
+        # `voiceKey` projects onto three keys, because a reader asking for the
+        # author's own language asks one question and not one per language.
+        index = json.loads(
+            (ROOT / "src/web/data/structure/catena/index.json").read_text(encoding="utf-8"))
+        self.assertEqual(index["voices"],
+                         ["original", "translation:en", "translation:la"])
+        self.assertNotIn("translation:grc", index["voices"])
+        pairs = set()
+        for path in sorted((ROOT / "src/web/data/structure/catena").glob("*/[0-9]*.json")):
+            spine = json.loads(path.read_text(encoding="utf-8"))
+            for source in (spine.get("sources") or {}).values():
+                pairs.add((source.get("voice"), source.get("language")))
+        self.assertEqual(pairs, {("original", "grc"), ("original", "la"),
+                                 ("translation", "en"), ("translation", "la")})
+
+
+class TypedStructureBoundaryTest(ReplayTest):
+    """The nine sinks the V3 review left open, driven at once.
+
+    One boundary, not nine special cases: unknown or malformed structured data
+    must not become visible prose, a filter, a label, a count, or terminal
+    state. Every malformed value in the fixture stands beside a sound one,
+    because the requirement is not that garbage is withheld — it is that
+    withholding garbage costs no valid fact and strands no render.
+    """
+
+    def test_the_region_never_stays_busy(self):
+        # THE TERMINAL RULE. Non-list `leads`, `blocked` and `refusals` all
+        # threw out of the render tail, which stood outside the funnel.
+        page = self.page("malformed-structure")
+        self.assertEqual(page["busy"], "false")
+        self.assertTrue(page["statusWrites"], "the render must still announce")
+
+    def test_malformed_extent_members_state_no_locus(self):
+        # Structured members stringified into "Genesis [object Object]:1", and
+        # absent ones into "Genesis undefined:undefined". The book alone is
+        # true; the structure is left for a renderer that understands it.
+        page = self.page("malformed-structure")
+        self.assertEqual(page["extents"],
+                         ["Genesis 1:1", "Genesis", "Genesis", "Genesis"])
+
+    def test_no_boundary_crossing_is_claimed_from_a_malformed_extent(self):
+        self.assertEqual(self.page("malformed-structure")["spans"], [])
+
+    def test_a_scalar_translator_container_attributes_nobody(self):
+        # A string is not a one-item list. "Not A List" was printed as
+        # "tr. Not A List" — an attribution of translation nobody recorded.
+        page = self.page("malformed-structure")
+        for line in page["sourceLines"]:
+            self.assertNotIn("Not A List", line)
+        self.assertTrue(any("tr. Sound Hand" in one for one in page["sourceLines"]),
+                        "the sound translator list must survive beside it")
+
+    def test_a_malformed_language_never_becomes_a_voice_or_a_url(self):
+        # It composed `translation:[object Object]` — a select value the page
+        # wrote into history and then refused on the way back in.
+        page = self.page("malformed-structure")
+        self.assertEqual(page["voiceLabels"], ["Everything held", "English translation"])
+        for written in page["hashWrites"]:
+            self.assertNotIn("object", written)
+
+    def test_unnamed_authors_get_no_shared_filter_key(self):
+        # Two unnamed authors are not one man, and `hiddenAuthors` persists
+        # across chapters, so a key of '' switched off every author-less
+        # fragment in the corpus and force-opened a filter elsewhere.
+        page = self.page("malformed-structure")
+        self.assertEqual(page["filterLabels"], ["Sound Author", "Scalar Author"])
+        for label in page["filterLabels"]:
+            self.assertTrue(label.strip(), "a toggle with no name has no accessible name")
+
+    def test_valid_siblings_survive_every_malformed_neighbour(self):
+        page = self.page("malformed-structure")
+        self.assertEqual(page["authors"], ["Sound Author", "Scalar Author", "", ""])
+        # The unnameable authors still carry their WORKS: coupling the two
+        # fields lost a held work's title whenever its author was missing.
+        self.assertEqual(page["works"], ["Sound Work", "Scalar Work",
+                                         "Nameless Work One", "Nameless Work Two"])
+
+    def test_absence_counts_and_words_are_one_typed_value(self):
+        # THE SHARPEST CASE. Untyped, the truthiness of `partial` moved a work
+        # out of "no publishable translation" and into "only a partly public
+        # domain one, not yet taken" — a different claim about somebody's
+        # rights, made by an object, a number, a boolean and a blank string.
+        page = self.page("malformed-structure")
+        self.assertEqual(page["absenceReasons"], ["A sound recorded reason."])
+        self.assertEqual(page["absencePartials"],
+                         ["Partly public domain — a sound partial offer"])
+        self.assertIn("1 has only a partly public domain", page["absenceSummary"])
+
+    def test_containers_that_are_not_lists_count_nothing(self):
+        # A string satisfied `.length`, so the tally counted characters as
+        # works held and the refusal claimed a boundary nobody established.
+        page = self.page("malformed-structure")
+        self.assertEqual(page["leads"], [])
+        self.assertEqual(page["blocked"], [])
+        for said in page["statusWrites"]:
+            self.assertNotIn("not renderable yet", said)
+            self.assertNotIn("lead entr", said)
+
+    def test_nothing_malformed_reaches_the_page_as_words(self):
+        # The sweep reads only what the page SAYS — the text-bearing
+        # projections — so a boolean in the harness's own report cannot be
+        # mistaken for a boolean coerced into prose.
+        page = self.page("malformed-structure")
+        said = []
+        for key in ("authors", "works", "dates", "extents", "spans", "languages",
+                    "voiceLabels", "filterLabels", "absenceReasons",
+                    "absencePartials", "sectionHeadings", "asideNotes", "leads",
+                    "blocked", "sourceLines", "acknowledgements", "states",
+                    "statusWrites", "hashWrites"):
+            said.extend(page.get(key) or [])
+        said.append(page.get("absenceSummary") or "")
+        rendered = " ¶ ".join(str(one) for one in said)
+        for token in ("[object Object]", "[OBJECT OBJECT]", "undefined", "null",
+                      "not text", "NaN", "true", "false"):
+            self.assertNotIn(token, rendered, f"{token!r} reached the page")
