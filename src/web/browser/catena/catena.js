@@ -11,33 +11,11 @@
   const T = window.Triptych;
   const M = window.CatenaModel;
   const textNode = (said) => document.createTextNode(said);
-  // A typed value is a fact only as nonempty text; anything else is
-  // withheld, never coerced into words or a legal status.
-  const sound = (value) => typeof value === 'string' && value.trim();
+  // The typed boundary — asked, and explained, in `catena-model.js`.
+  const { sound, list, bag, say } = M;
 
-  // ISO 639 codes the shared table lacks; the shared fallback names the rest.
-  function languageName(code) {
-    return { grc: 'Greek', el: 'Greek', he: 'Hebrew', syr: 'Syriac' }[code] || T.languageName(code);
-  }
-
-  /** "Latin, Greek and English". */
-  function joinNames(names) {
-    const last = names.pop();
-    return names.length ? names.join(', ') + ' and ' + last : last || '';
-  }
-
-  // The original is named only by itself; a translation, by language.
-  function voicePhrase(entry) {
-    if (!entry) return '';
-    if (entry.voice === M.ORIGINAL) return 'the author’s own language';
-    return languageName(entry.language) + ' translation';
-  }
-
-  /** The same, opening a label. */
-  function voiceLabel(entry) {
-    const phrase = voicePhrase(entry);
-    return phrase.charAt(0).toUpperCase() + phrase.slice(1);
-  }
+  const { joinNames, voicePhrase, voiceLabel } = M;
+  M.useLanguageNames(T.languageName);
 
   const reference = document.getElementById('reference');
   const referenceBook = document.getElementById('reference-book');
@@ -70,8 +48,8 @@
 
   /* --------------------------------------------------------------- data */
 
-  function entryOf(list, token) {
-    return (list || []).find((book) => book.token === token) || null;
+  function entryOf(entries, token) {
+    return list(entries).find((book) => book.token === token) || null;
   }
 
   function canonEntry(token) { return entryOf(index.canon, token); }
@@ -96,7 +74,7 @@
   // A 404 on a LISTED chapter is a broken record, not emptiness — marked.
   function chapterFile(token, chapter) {
     const held = entryOf(index.held, token);
-    if (!held || !(held.present || []).includes(Number(chapter))) {
+    if (!held || !list(held.present).includes(Number(chapter))) {
       return Promise.resolve(null);
     }
     const path = held.path +
@@ -108,7 +86,7 @@
   // a chapter that runs on has no file, so the 404 is the answer.
   function chapterParagraphs(bible, token, chapter) {
     if (!paragraphs) return Promise.resolve(null);
-    const edition = (paragraphs.editions || {})[bible.id];
+    const edition = bag(paragraphs.editions)[bible.id];
     const book = canonEntry(token);
     if (!edition || !book || !book.path) return Promise.resolve(null);
     const path = edition.path + book.path + '/' +
@@ -224,14 +202,13 @@
     const details = T.el('details', 'fragment-body');
 
     const head = T.el('summary', 'fragment-head');
-    head.appendChild(T.el('span', 'fragment-author', sound(fragment.author) || ''));
-    head.appendChild(T.el('span', 'fragment-work', sound(fragment.work) || ''));
-    if (sound(fragment.date) || Number.isFinite(fragment.date)) {
-      head.appendChild(T.el('span', 'fragment-date', String(fragment.date)));
-    }
+    head.appendChild(T.el('span', 'fragment-author', sound(fragment.author)));
+    head.appendChild(T.el('span', 'fragment-work', sound(fragment.work)));
+    const when = say(fragment.date);
+    if (when) head.appendChild(T.el('span', 'fragment-date', when));
     // The language, and WHOSE it is; an unestablished voice says only it.
     if (sound(fragment.language)) {
-      const name = languageName(fragment.language);
+      const name = M.LANGUAGE_NAMES[fragment.language] || T.languageName(fragment.language);
       head.appendChild(T.el('span', 'fragment-language',
         fragment.voice === M.ORIGINAL
           ? name + ' — the author’s own'
@@ -291,7 +268,7 @@
           acknowledge(loaded.acknowledgement);
           text.className = 'fragment-text';
           // The payload's body fields are typed too: broken renders nothing.
-          text.textContent = sound(loaded.text) ? loaded.text : '';
+          text.textContent = sound(loaded.text);
           if (sound(loaded.basis)) {
             apparatus.appendChild(T.el('p', 'fragment-basis', 'Extent — ' + loaded.basis));
           }
@@ -314,7 +291,7 @@
 
     // Provenance, whether or not the text loads: every fact the spine carries.
     const source = T.el('p', 'fragment-source');
-    source.appendChild(textNode(sound(fragment.locator) || ''));
+    source.appendChild(textNode(sound(fragment.locator)));
     const fact = (said) => {
       if (!sound(said)) return;
       source.appendChild(T.el('span', 'sep'));
@@ -322,7 +299,7 @@
     };
     fact(fragment.edition);
     fact(fragment.edition_published);
-    const hands = [].concat(fragment.translators).filter(sound).join(', ');
+    const hands = list(fragment.translators).map(sound).filter(Boolean).join(', ');
     if (hands) fact('tr. ' + hands);
     fact(fragment.rights);
     fact(fragment.attribution);
@@ -353,20 +330,26 @@
   function renderAbsences(container, file, wanted) {
     const asked = M.parseVoiceKey(wanted);
     if (!asked || asked.voice !== M.TRANSLATION || !asked.language) return;
-    const recorded = (index && index.absences) || {};
-    const sources = (file && file.sources) || {};
+    const recorded = bag(index && index.absences);
+    const sources = bag(file && file.sources);
     const named = new Set();
     const rows = [];
     for (const key in sources) {
-      const source = sources[key];
-      const workId = source.work_id || '';
+      const source = bag(sources[key]);
+      const workId = sound(source.work_id);
       if (!workId || named.has(workId)) continue;
-      const found = (recorded[workId] || []).find(
-        (one) => one.language === asked.language
+      const found = list(recorded[workId]).find(
+        (one) => sound(bag(one).language) === asked.language
       );
       if (!found) continue;
       named.add(workId);
-      rows.push({ author: source.author, work: source.work, absence: found });
+      // Typed AT THE READ: the count and the words are one value.
+      rows.push({
+        author: sound(source.author),
+        work: sound(source.work),
+        reason: sound(bag(found).reason),
+        partial: sound(bag(found).partial)
+      });
     }
     if (!rows.length) return;
 
@@ -375,9 +358,9 @@
     // the disclosure only lets a reader fold them away.
     note.open = true;
     note.setAttribute('data-state', 'absence');
-    const untaken = rows.filter((row) => row.absence.partial).length;
+    const untaken = rows.filter((row) => row.partial).length;
     const closed = rows.length - untaken;
-    const language = languageName(asked.language);
+    const language = M.LANGUAGE_NAMES[asked.language] || T.languageName(asked.language);
     const parts = [];
     if (closed) {
       parts.push(
@@ -393,20 +376,20 @@
     const head = document.createElement('summary');
     head.textContent = parts.join('; ');
     note.appendChild(head);
-    const list = T.el('ul', 'absence-list');
+    const items = T.el('ul', 'absence-list');
     for (const row of rows) {
       const item = T.el('li', 'absence');
       item.appendChild(T.el('span', 'absence-author', row.author));
       item.appendChild(T.el('span', 'absence-work', row.work));
-      item.appendChild(T.el('p', 'absence-reason', row.absence.reason));
+      if (row.reason) item.appendChild(T.el('p', 'absence-reason', row.reason));
       // A partial not yet taken is an offer, not an excuse.
-      if (row.absence.partial) {
+      if (row.partial) {
         item.appendChild(
-          T.el('p', 'absence-partial', 'Partly public domain — ' + row.absence.partial));
+          T.el('p', 'absence-partial', 'Partly public domain — ' + row.partial));
       }
-      list.appendChild(item);
+      items.appendChild(item);
     }
-    note.appendChild(list);
+    note.appendChild(items);
     container.appendChild(note);
   }
 
@@ -464,17 +447,18 @@
     // a heading — by-author grouping misfiled Augustine's 417 before 401.
     const groups = [];
     for (const fragment of held) {
-      const author = sound(fragment.author) || '';
-      const date = sound(fragment.date) || Number.isFinite(fragment.date) ? fragment.date : null;
+      const author = sound(fragment.author);
+      const date = say(fragment.date) || null;
       const last = groups[groups.length - 1];
-      if (last && last.author === author && last.date === date) {
+      // Unnamed is not a name to group by: two unnamed fragments are not one man.
+      if (author && last && last.author === author && last.date === date) {
         last.fragments.push(fragment);
       } else {
         groups.push({ author: author, date: date, fragments: [fragment] });
       }
     }
 
-    const list = T.el('ul', 'chain');
+    const chain = T.el('ul', 'chain');
     const rendered = [];
     // The first group opens: all closed reads as nothing, all open as
     // a wall. No request either way.
@@ -504,12 +488,14 @@
       }
       node.appendChild(inner);
       item.appendChild(node);
-      list.appendChild(item);
+      chain.appendChild(item);
       rendered.push({ author: group.author, item, count: group.fragments.length });
     }
 
     // One toggle per AUTHOR, though he may stand at several dates.
-    const authors = [...new Set(rendered.map((row) => row.author))];
+    // Only a NAMED author gets a switch: `hiddenAuthors` persists across
+    // chapters, so a key of '' hid every author-less fragment in the corpus.
+    const authors = [...new Set(rendered.map((row) => row.author).filter(Boolean))];
 
     let filterHolder = null;
 
@@ -517,7 +503,7 @@
     function applyFilter() {
       let shown = 0;
       for (const row of rendered) {
-        const on = !hiddenAuthors.has(row.author);
+        const on = !(row.author && hiddenAuthors.has(row.author));
         row.item.hidden = !on;
         if (on) shown += row.count;
       }
@@ -562,7 +548,7 @@
       container.appendChild(filterHolder);
     }
 
-    container.appendChild(list);
+    container.appendChild(chain);
     applyFilter();
     return held.length;
   }
@@ -586,16 +572,18 @@
           'confidence. An entry establishes no distinct work, no possession ' +
           'and nothing renderable, and the list is not checked against the ' +
           'commentary above.'));
-    const list = T.el('ul', 'lead-list');
+    const items = T.el('ul', 'lead-list');
     // Typed fields only: the count is the record's, the words must be.
     for (const lead of leads) {
       const item = T.el('li', 'lead');
-      if (sound(lead.author)) item.appendChild(textNode(lead.author + ' — '));
-      item.appendChild(T.el('span', 'lead-work', sound(lead.title) ? lead.title : ''));
-      if (sound(lead.date) || Number.isFinite(lead.date) && lead.date) item.appendChild(textNode(' (' + lead.date + ')'));
-      list.appendChild(item);
+      const who = sound(lead.author);
+      if (who) item.appendChild(textNode(who + ' — '));
+      item.appendChild(T.el('span', 'lead-work', sound(lead.title)));
+      const when = say(lead.date);
+      if (when) item.appendChild(textNode(' (' + when + ')'));
+      items.appendChild(item);
     }
-    section.appendChild(list);
+    section.appendChild(items);
     container.appendChild(section);
   }
 
@@ -606,8 +594,11 @@
     for (const entry of blocked) {
       const node = T.el('div', 'blocked');
       node.setAttribute('data-state', 'blocked');
-      if (sound(entry.author) && sound(entry.work)) node.appendChild(T.el('b', null, entry.author + ' — ' + entry.work));
-      if (sound(entry.reason)) node.appendChild(T.el('span', 'why', entry.reason));
+      // Each field on its own merit: coupled, a missing author lost the title.
+      const named = [sound(entry.author), sound(entry.work)].filter(Boolean).join(' — ');
+      if (named) node.appendChild(T.el('b', null, named));
+      const why = sound(entry.reason);
+      if (why) node.appendChild(T.el('span', 'why', why));
       section.appendChild(node);
     }
     container.appendChild(section);
@@ -616,9 +607,9 @@
   // Rule 4 — where the projection refuses, the page refuses; no
   // same-number fallback dressed right.
   function renderRefusal(container, file, bible, book, chapter) {
-    const here = ((file && file.refusals) || {})[bible.id] || [];
+    const here = list(bag(file && file.refusals)[bible.id]);
     if (!here.length) return;
-    const note = sound(here[0].note) || '';
+    const note = sound(bag(here[0]).note);
     const sentence = note ? note.charAt(0).toUpperCase() + note.slice(1) + '.' : '';
     const node = T.el('p', 'refusal');
     node.setAttribute('data-state', 'refusal');
@@ -675,8 +666,7 @@
           !(parsed && parsed.voice === M.TRANSLATION &&
             /^[a-z]{2,3}$/.test(parsed.language))) {
         flag('voice', voice, 'is not a voice — “original”, or “translation:” plus a language');
-      } else if (parsed.language &&
-                 !(index.held || []).some((one) => (one.languages || []).includes(parsed.language))) {
+      } else if (!(index.voices || []).includes(voice)) {
         flag('voice', voice, 'is not a voice this corpus holds');
       }
     }
@@ -748,6 +738,10 @@
     referenceBook.textContent =
       book.testament === 'old' ? 'Old Testament' : 'New Testament';
 
+    // ONE FUNNEL after the address is claimed: outside it, a throw in the tail
+    // stranded `aria-busy`, focus, the tally and the route. The keeper is taken
+    // BEFORE the work, or it reads an emptied page and sees no loss.
+    const refocus = focusKeeper();
     let file, chapterResult, marks;
     try {
       [file, chapterResult, marks] = await Promise.all([
@@ -755,93 +749,88 @@
         T.loadChapter(bible.id, token, chapter),
         chapterParagraphs(bible, token, chapter)
       ]);
-    } catch (error) {
-      // A STALE failure proves nothing: only the render still owning the
-      // route may show one — completing the address (URL, controls and
-      // error agree), claiming no voice absence, keeping the reader's focus.
       if (!T.isCurrentRender(renderToken)) return;
-      const refocus = focusKeeper();
+
+      // An expected spine that would not come is an error, not an absence.
+      const unfetched = (file && file.unfetched) || '';
+      if (unfetched) file = null;
+
+      // ONE typed truth beside the chapter: every tally, empty, blocked
+      // and voice claim derives from these counts — held-but-unrenderable
+      // is HELD, never "nothing".
+      const blocked = list(file && file.blocked);
+      const leads = list(file && file.leads);
+      const total = M.chapterFragments(file).length;
+      fillVoices(file, unfetched || blocked.length);
+      T.clear(reading);
+      let count = 0;
+      renderRefusal(reading, file, bible, book, chapter);
+      renderChapter(reading, bible, book, chapter, chapterResult, marks);
+      if (unfetched) {
+        const section = errorSection('This chapter’s commentary record did not load');
+        section.appendChild(T.el('p', 'error-detail',
+          'The index records commentary on ' + book.name + ' ' + chapter +
+            ', but its record (' + unfetched + ') could not be fetched — a ' +
+            'data or connection fault, not an empty ' +
+            'chapter. Reloading may recover it.'));
+        reading.appendChild(section);
+      } else {
+        // One wrapper for all that is not the chapter, for the wide grid.
+        const column = T.el('div', 'chain-column');
+        count = renderChain(column, file, book, blocked.length);
+        renderLeads(column, leads);
+        renderBlocked(column, blocked);
+        reading.appendChild(column);
+      }
+      reading.setAttribute('aria-busy', 'false');
+      refocus();
+
+      // The tally states the corpus, never the filter — and the announcement
+      // is the same clauses in the same order, so the two cannot disagree.
+      T.clear(tally);
+      const wanted = voiceSelect.value;
+      const blockedClause = blocked.length +
+        (blocked.length === 1 ? ' work' : ' works') + ' held, not renderable yet';
+      let head;
+      const extras = [];
+      if (unfetched) {
+        head = 'The commentary record did not load';
+      } else {
+        head = total
+          ? total + (total === 1 ? ' fragment held' : ' fragments held')
+          : blocked.length ? blockedClause : 'Nothing held here';
+        // "none in X" is provable only with no blocked row standing.
+        if (total && wanted && count < total && (count || !blocked.length)) {
+          extras.push((count ? count + ' in ' : 'none in ') + voicePhrase(M.parseVoiceKey(wanted)));
+        }
+        if (total && blocked.length) extras.push(blockedClause);
+        if (leads.length) {
+          extras.push(leads.length +
+            (leads.length === 1 ? ' lead entry' : ' lead entries') +
+            ' on the acquisition list');
+        }
+      }
+      const bold = unfetched ? '' : String(total || blocked.length || 'Nothing');
+      if (bold) tally.appendChild(T.el('b', null, bold));
+      tally.appendChild(textNode(
+        head.slice(bold.length) + extras.map((one) => ' · ' + one).join('')));
+
+      T.statusLine(
+        book.name + ' ' + chapter + ', ' + bible.label + ', ' +
+          (unfetched
+            ? 'commentary record unavailable'
+            : [head].concat(extras).join(', ')) + '.'
+      );
+      writeRoute(wasArrival);
+    } catch (error) {
+      // Stale proves nothing: only the owning render may show a failure.
+      if (!T.isCurrentRender(renderToken)) return;
       fillVoices(null, true);
       T.clear(tally);
       T.fail('This chapter could not be loaded: ' + (error.message || error));
       refocus();
       writeRoute(wasArrival);
-      return;
     }
-    if (!T.isCurrentRender(renderToken)) return;
-
-    // An expected spine that would not come is an error, not an absence.
-    const unfetched = (file && file.unfetched) || '';
-    if (unfetched) file = null;
-
-    // ONE typed truth beside the chapter: every tally, empty, blocked
-    // and voice claim derives from these counts — held-but-unrenderable
-    // is HELD, never "nothing".
-    const blocked = (file && file.blocked) || [];
-    const leads = (file && file.leads) || [];
-    const total = M.chapterFragments(file).length;
-    fillVoices(file, unfetched || blocked.length);
-    const refocus = focusKeeper();
-    T.clear(reading);
-    let count = 0;
-    renderRefusal(reading, file, bible, book, chapter);
-    renderChapter(reading, bible, book, chapter, chapterResult, marks);
-    if (unfetched) {
-      const section = errorSection('This chapter’s commentary record did not load');
-      section.appendChild(T.el('p', 'error-detail',
-        'The index records commentary on ' + book.name + ' ' + chapter +
-          ', but its record (' + unfetched + ') could not be fetched — a ' +
-          'data or connection fault, not an empty ' +
-          'chapter. Reloading may recover it.'));
-      reading.appendChild(section);
-    } else {
-      // One wrapper for all that is not the chapter, for the wide grid.
-      const column = T.el('div', 'chain-column');
-      count = renderChain(column, file, book, blocked.length);
-      renderLeads(column, leads);
-      renderBlocked(column, blocked);
-      reading.appendChild(column);
-    }
-    reading.setAttribute('aria-busy', 'false');
-    refocus();
-
-    // The tally states the corpus, never the filter — and the announcement
-    // is the same clauses in the same order, so the two cannot disagree.
-    T.clear(tally);
-    const wanted = voiceSelect.value;
-    const blockedClause = blocked.length +
-      (blocked.length === 1 ? ' work' : ' works') + ' held, not renderable yet';
-    let head;
-    const extras = [];
-    if (unfetched) {
-      head = 'The commentary record did not load';
-    } else {
-      head = total
-        ? total + (total === 1 ? ' fragment held' : ' fragments held')
-        : blocked.length ? blockedClause : 'Nothing held here';
-      // "none in X" is provable only with no blocked row standing.
-      if (total && wanted && count < total && (count || !blocked.length)) {
-        extras.push((count ? count + ' in ' : 'none in ') + voicePhrase(M.parseVoiceKey(wanted)));
-      }
-      if (total && blocked.length) extras.push(blockedClause);
-      if (leads.length) {
-        extras.push(leads.length +
-          (leads.length === 1 ? ' lead entry' : ' lead entries') +
-          ' on the acquisition list');
-      }
-    }
-    const bold = unfetched ? '' : String(total || blocked.length || 'Nothing');
-    if (bold) tally.appendChild(T.el('b', null, bold));
-    tally.appendChild(textNode(
-      head.slice(bold.length) + extras.map((one) => ' · ' + one).join('')));
-
-    T.statusLine(
-      book.name + ' ' + chapter + ', ' + bible.label + ', ' +
-        (unfetched
-          ? 'commentary record unavailable'
-          : [head].concat(extras).join(', ')) + '.'
-    );
-    writeRoute(wasArrival);
   }
 
   // History. A reader ACTION pushes an entry; an ARRIVAL never may: a
@@ -940,7 +929,7 @@
   // borrowed from a leftover selection.
   function seedControls(hash, broken) {
     bookSelect.value = (!broken.has('book') && hash.get('book')) || 'Gen';
-    if (!bookSelect.value) bookSelect.value = (index.canon[0] || {}).token;
+    if (!bookSelect.value) bookSelect.value = bag(list(index.canon)[0]).token;
     fillChapters(bookSelect.value, broken.has('chapter') ? 1 : hash.get('chapter') || 1);
     bibleSelect.value =
       (!broken.has('bible') && hash.get('bible')) || (bibles[0] || {}).id || '';
@@ -1012,7 +1001,7 @@
     bibles = manifest.bibles;
 
     T.fillSelect(bookSelect,
-      (index.canon || []).map((book) => ({ value: book.token, label: book.name })));
+      list(index.canon).map((book) => ({ value: book.token, label: book.name })));
     T.fillBibleSelect(bibleSelect, bibles);
     bookSelect.disabled = chapterSelect.disabled = bibleSelect.disabled = false;
 

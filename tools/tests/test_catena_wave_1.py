@@ -135,7 +135,7 @@ NODE = shutil.which("node")
 # under node by `scripts/_catena.py check`, and no part of E1 touches it: a
 # deliberate model change is a deliberate change to this literal. The digest
 # is of the tracked file itself — release bindings are the release owner's.
-MODEL_SHA256 = "f1ea94f9ec6b54813859c2b526163e90d9de61992b839fe2eb0e349f31ccf57b"
+MODEL_SHA256 = "73090c18a557552f648251d978320785eaa498c92f98ffc75aff1d511c0a95f5"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -557,9 +557,11 @@ SCENARIOS = [
     {"name": "default", "hash": GEN1,
      "steps": [{"do": "openFirstFragment", "label": "opened"}]},
     {"name": "voice-held", "hash": GEN1 + "&voice=translation:en"},
-    # A voice the CHAPTER lacks, in a language the corpus does hold (Genesis
-    # holds Greek originals, and no Greek translation): still kept and named.
-    {"name": "voice-not-held", "hash": GEN1 + "&voice=translation:grc"},
+    # THE V3 DEFECT, pinned as its correction. Greek stands in this corpus
+    # only as `original:grc`; there are zero Greek translations. A language
+    # inventory cannot tell those apart, so V3 read "Genesis holds Greek" and
+    # offered a Greek translation nobody has. The exact key is unsupported.
+    {"name": "unsupported-voice-greek", "hash": GEN1 + "&voice=translation:grc"},
     # Well formed, and in a language the corpus holds NOTHING in. `zz` is
     # unassigned; `de` is a real ISO code this project has never held a
     # fragment in. Grammar admits both; support must admit neither.
@@ -2069,14 +2071,15 @@ class VoiceDeepLinkTest(ReplayTest):
                             for one in page["asideNotes"]))
 
     def test_a_voice_the_chapter_lacks_is_kept_and_named_rather_than_widened(self):
-        # SUPPORTED, and not held HERE. Genesis 1 holds Greek originals and no
-        # Greek translation, so "none here" is a fact about this chapter and
-        # the corpus really does hold the language it names.
-        page = self.page("voice-not-held")
-        self.assertEqual(page["voice"], "translation:grc")
-        self.assertEqual(page["hash"], GEN1 + "&voice=translation:grc")
+        # SUPPORTED, and not held on THIS chapter. Genesis 10 holds originals
+        # only, while `translation:en` is held elsewhere in the corpus, so
+        # "none here" is a true statement about a chapter rather than an
+        # invented statement about the holdings.
+        page = self.page("voice-empty-chapter")
+        self.assertEqual(page["voice"], "translation:en")
+        self.assertEqual(page["hash"], GEN10_ENGLISH)
         self.assertEqual(page["hashWrites"], [])
-        self.assertIn("Greek translation — none here", page["voiceLabels"])
+        self.assertIn("English translation — none here", page["voiceLabels"])
         self.assertEqual(page["fragmentCount"], 0)
 
 
@@ -2163,8 +2166,12 @@ class UnsupportedVoiceTest(ReplayTest):
         # The closed set is Catena-owned runtime truth the route already has,
         # never manufactured from the voice string or from a new request.
         script = held(CATENA / "catena.js")
-        self.assertIn("(index.held || []).some((one) => (one.languages || []).includes(",
-                      script)
+        # The WHOLE key against the whole keys the corpus holds. A language
+        # inventory is not a voice authority: `held[].languages` carries `grc`
+        # because Greek stands here as an original, and answering support from
+        # it manufactured `translation:grc`.
+        self.assertIn("!(index.voices || []).includes(voice)", script)
+        self.assertNotIn("(one.languages || []).includes(", script)
         self.assertEqual(self.page("unsupported-voice")["fetched"],
                          ["structure/catena/index.json", "bibles.json",
                           "structure/paragraphs/index.json"])

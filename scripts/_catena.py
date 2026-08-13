@@ -1629,6 +1629,13 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
     folders = path_forms(root)
     width = _canon.chapter_width(root)
     index: list[dict[str, Any]] = []
+    # The exact voice keys the corpus holds, composed the way the page composes
+    # them (`catena-model.js`'s `voiceKey`), so the browser compares a whole key
+    # against a whole key. A LANGUAGE is not a voice: Greek stands here only as
+    # an original, so `grc` belongs to `original` and there is no
+    # `translation:grc` to offer. Counting the pairs is the only way to know
+    # that; inferring support from the language alone invents a holding.
+    voices: set[str] = set()
     for book in books:
         token = book["token"]
         folder = folders[token]
@@ -1638,6 +1645,12 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
         held_back = blocked_for_book(root, token)
         if not rows and not leads and not held_back:
             continue
+
+        for row in rows:
+            if row.get("voice") == ORIGINAL:
+                voices.add(ORIGINAL)
+            elif row.get("voice") == TRANSLATION:
+                voices.add(f"{TRANSLATION}:{row.get('language') or ''}")
 
         # The payload, written once per fragment, and the metadata that stays
         # behind in every chapter spine that names it.
@@ -1746,6 +1759,12 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
             # — reads it here rather than composing one.
             "canon": [dict(book, path=folders[book["token"]]) for book in books],
             "held": index,
+            # Every voice key the corpus actually holds, whole. The page judges
+            # an address against this and refuses a well-formed key that is not
+            # in it, rather than deciding support from `held[].languages` — a
+            # language inventory, which cannot tell an original apart from a
+            # translation and so accepted a Greek translation nobody holds.
+            "voices": sorted(voices),
             "texts": f"structure/catena/{TEXT_DIRECTORY}/",
             # Which held works do not reach a language, and why. Written ONCE
             # for the whole catena and keyed by the work id every chapter

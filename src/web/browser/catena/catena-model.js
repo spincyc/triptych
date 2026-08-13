@@ -35,6 +35,82 @@
   else root.CatenaModel = api;
 }(typeof self !== 'undefined' ? self : this, function () {
 
+  /* ------------------------------------------------------------------------
+   * The typed boundary — asked once, for the page and the model alike
+   *
+   * UNKNOWN OR MALFORMED STRUCTURED DATA MUST NOT BECOME visible prose, a
+   * filter, a label, a count, or terminal state through implicit coercion or an
+   * unchecked shape assumption. `String(x)` and `x || []` are both such
+   * assumptions: the first turns a record into "[object Object]" and an array
+   * into accidental comma-joined text, the second turns a string into a
+   * container whose `.length` then counts characters as though they were works.
+   *
+   * Four questions answer that for every field this page displays. They live
+   * HERE, beside the derivation, so the page and the model cannot answer them
+   * differently — and because this file carries no byte ceiling, asking them
+   * properly costs the composition nothing.
+   * --------------------------------------------------------------------- */
+
+  /**
+   * "Latin, Greek and English" — names joined as English joins them.
+   *
+   * Non-mutating: V3 rewrote this to `pop()` to buy bytes in the page, which
+   * left a caller's array emptied as a side effect and the precondition pinned
+   * by a test rather than by the code. This file carries no ceiling, so the
+   * safe form is simply affordable here.
+   */
+  function joinNames(names) {
+    const said = list(names).map(sound).filter(Boolean);
+    if (said.length < 2) return said[0] || '';
+    return said.slice(0, -1).join(', ') + ' and ' + said[said.length - 1];
+  }
+
+  // ISO 639 codes the shared language table lacks. Data, so the page spends no
+  // ceiling carrying it; the shared fallback still names everything else.
+  const LANGUAGE_NAMES = { grc: 'Greek', el: 'Greek', he: 'Hebrew', syr: 'Syriac' };
+
+  // How a code becomes a name. The page installs the shared table's namer as
+  // the fallback; this file never reaches for `window.Triptych`, because it is
+  // loaded under node by `catena check` where no such global exists.
+  let nameLanguage = (code) => LANGUAGE_NAMES[code] || sound(code);
+
+  function useLanguageNames(namer) {
+    nameLanguage = (code) => LANGUAGE_NAMES[code] || namer(code);
+  }
+
+  /** The original is named only by itself; a translation, by its language. */
+  function voicePhrase(entry) {
+    if (!entry) return '';
+    if (entry.voice === ORIGINAL) return 'the author\u2019s own language';
+    return nameLanguage(entry.language) + ' translation';
+  }
+
+  /** The same, opening a label. */
+  function voiceLabel(entry) {
+    const phrase = voicePhrase(entry);
+    return phrase.charAt(0).toUpperCase() + phrase.slice(1);
+  }
+
+  /** Text, trimmed, or nothing. Never a coerced record, list, number or flag. */
+  function sound(value) {
+    return typeof value === 'string' ? value.trim() : '';
+  }
+
+  /** A container, or nothing. A SCALAR IS NOT A ONE-ITEM LIST. */
+  function list(value) {
+    return Array.isArray(value) ? value : [];
+  }
+
+  /** A record, or nothing. A list and a string are both refused. */
+  function bag(value) {
+    return value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+  }
+
+  /** A fact that may legitimately arrive as a finite number, or else as text. */
+  function say(value) {
+    return Number.isFinite(value) ? String(value) : sound(value);
+  }
+
   /**
    * Does this extent touch this chapter?
    *
@@ -55,7 +131,7 @@
   /** Every fragment standing under one chapter, in the order it was given. */
   function fragmentsOnChapter(fragments, chapter) {
     const wanted = Number(chapter);
-    return (fragments || []).filter(function (fragment) {
+    return list(fragments).filter(function (fragment) {
       return touchesChapter(fragment.extent, wanted);
     });
   }
@@ -68,14 +144,28 @@
    * chapter 2 when he wrote across the seam.
    */
   function formatExtent(extent, bookName) {
-    if (!extent) return bookName || '';
-    const book = bookName || extent.token || '';
-    const first = extent.first_chapter + ':' + extent.first_verse;
-    if (extent.first_chapter !== extent.last_chapter) {
-      return book + ' ' + first + '-' + extent.last_chapter + ':' + extent.last_verse;
+    if (!extent) return sound(bookName);
+    const book = sound(bookName) || sound(extent.token);
+    const firstChapter = Number(extent.first_chapter);
+    const lastChapter = Number(extent.last_chapter);
+    const firstVerse = Number(extent.first_verse);
+    const lastVerse = Number(extent.last_verse);
+    // A RANGE THIS RENDERER CANNOT STATE IS NOT GUESSED AT. The four members are
+    // validated as the numbers the format is written in; anything else — a
+    // structured member, an absent one, a list — leaves the book standing alone
+    // rather than printing "Genesis [object Object]:1" or "Genesis
+    // undefined:undefined" as though a locus had been established. The
+    // structure is left for a renderer that understands it, not flattened.
+    if (!Number.isFinite(firstChapter) || !Number.isFinite(lastChapter) ||
+        !Number.isFinite(firstVerse) || !Number.isFinite(lastVerse)) {
+      return book;
     }
-    if (extent.first_verse === extent.last_verse) return book + ' ' + first;
-    return book + ' ' + first + '-' + extent.last_verse;
+    const first = firstChapter + ':' + firstVerse;
+    if (firstChapter !== lastChapter) {
+      return book + ' ' + first + '-' + lastChapter + ':' + lastVerse;
+    }
+    if (firstVerse === lastVerse) return book + ' ' + first;
+    return book + ' ' + first + '-' + lastVerse;
   }
 
   /** Does this fragment cross a chapter boundary? The page says so when it does. */
@@ -100,10 +190,13 @@
    */
   function chapterFragments(file) {
     if (!file) return [];
-    const sources = file.sources || {};
-    const prefix = file.text_prefix || '';
-    return (file.fragments || []).map(function (fragment) {
-      const shared = sources[fragment.source] || {};
+    const sources = bag(file.sources);
+    const prefix = sound(file.text_prefix);
+    // `list` rather than `file.fragments || []`: a spine whose `fragments` is a
+    // record or a string is a broken record, and mapping over it threw out of
+    // the render tail — past `aria-busy`, past the tally, past the announcement.
+    return list(file.fragments).map(function (fragment) {
+      const shared = bag(sources[fragment.source]);
       const joined = {};
       for (const name in shared) if (Object.hasOwn(shared, name)) joined[name] = shared[name];
       for (const name in fragment) if (Object.hasOwn(fragment, name)) joined[name] = fragment[name];
@@ -138,9 +231,16 @@
 
   /** The selectable key for one edition's voice, or '' where it has none. */
   function voiceKey(source) {
-    const voice = (source && source.voice) || '';
+    const voice = sound(source && source.voice);
     if (voice === ORIGINAL) return ORIGINAL;
-    if (voice === TRANSLATION) return TRANSLATION + ':' + ((source && source.language) || '');
+    if (voice === TRANSLATION) {
+      // THE KEY BECOMES A CONTROL VALUE AND A URL, so a language that is not
+      // sound text names no offer at all. Composed from a record this produced
+      // `translation:[object Object]`, which the page then wrote into history
+      // and refused on the way back in — a link the page issued against itself.
+      const language = sound(source && source.language);
+      return language ? TRANSLATION + ':' + language : '';
+    }
     return '';
   }
 
@@ -154,7 +254,7 @@
    * outward from the author.
    */
   function chapterVoices(file) {
-    const sources = (file && file.sources) || {};
+    const sources = bag(file && file.sources);
     const found = new Map();
     for (const key in sources) {
       if (!Object.hasOwn(sources, key)) continue;
@@ -163,13 +263,13 @@
       if (!wanted || found.has(wanted)) continue;
       found.set(wanted, {
         key: wanted,
-        voice: source.voice,
+        voice: sound(source.voice),
         // Named for a translation and deliberately blank for an original. The
         // reader asking for the author's own language is asking one question,
         // not one per language: a chapter holding Ambrose's Latin beside
         // Severian's Greek holds both authors' own words, and offering them
         // separately would put the reader back on the axis this replaced.
-        language: source.voice === TRANSLATION ? source.language || '' : ''
+        language: sound(source.voice) === TRANSLATION ? sound(source.language) : ''
       });
     }
     return Array.from(found.values()).sort(function (a, b) {
@@ -222,6 +322,15 @@
     matchesVoice: matchesVoice,
     voiceKey: voiceKey,
     parseVoiceKey: parseVoiceKey,
+    joinNames: joinNames,
+    useLanguageNames: useLanguageNames,
+    voicePhrase: voicePhrase,
+    voiceLabel: voiceLabel,
+    LANGUAGE_NAMES: LANGUAGE_NAMES,
+    sound: sound,
+    list: list,
+    bag: bag,
+    say: say,
     ORIGINAL: ORIGINAL,
     TRANSLATION: TRANSLATION
   };
