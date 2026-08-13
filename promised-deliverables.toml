@@ -1243,20 +1243,20 @@ state = "complete"
 [[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v3-2026-08-12"
 owner = "src/web/browser/catena"
-promise = "Answer the 2026-08-12 E1 Catena correction V2 independent review (4c30d86f7, CHANGES REQUIRED at 17f031b37) with the smallest bounded route/test correction of the unsupported-voice and untyped-provenance defects, correct the inaccurate stranger-key and AT-SPI statements in new durable records and a new immutable exact-head handoff, and return that head for fresh independent review."
+promise = "Answer the E1 Catena correction reviews through V4.1 with exact voice-key truth, a neutral fail-closed umbrella, one complete typed-presentation boundary, accurate durable records, a sanitized exact-head handoff and screenshot matrix, and a fresh independent disposition before integration."
 state = "in_progress"
 
   [[deliverables.requirements]]
   id = "unsupported-voice-distinguished-from-shape"
-  criterion = "A syntactically well-formed voice naming a language the corpus holds nothing in is distinguished from both a malformed voice and a supported voice, is refused from Catena-owned runtime truth already available to the route without adding a request, renders no invented held-language absence, and preserves supported voices and voices the chapter merely lacks."
+  criterion = "A syntactically well-formed unsupported voice is distinguished from both a malformed and supported voice using the exact voice keys projected by the owning Catena generator; it renders no invented absence, while supported voices and supported-but-chapter-empty states remain truthful."
   status = "pass"
   evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "displayed-provenance-typed"
-  criterion = "Every provenance value this route displays is validated as nonempty text before presentation, list entries are validated independently so a malformed item neither renders nor erases its valid siblings, no malformed value produces visible object or array coercion, and no malformed container can abort the render."
-  status = "pass"
-  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+  criterion = "Every top-level value and collection member is validated as the required record or scalar type before it affects prose, identity, a key, path, count, terminal claim, DOM metadata or control flow; malformed neighbours neither render nor erase valid sibling facts; absences retain typed finding semantics; numeric, extent, verse and break domains are strict; and malformed post-load data completes through the terminal async/history funnel."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
 
   [[deliverables.requirements]]
   id = "inaccurate-statements-corrected"
@@ -1266,15 +1266,27 @@ state = "in_progress"
 
   [[deliverables.requirements]]
   id = "boundaries-and-budgets-held"
-  criterion = "The change is confined to src/web/browser/catena/catena.js and tools/tests/test_catena_wave_1.py plus durable records, catena-model.js and the route CSS and markup are byte-identical, the recorded gzip-9 ceilings are unraised, and no generator, generated-data, release, common-gate, B0/shared-shell, protected Liturgy, or PDF path is touched or repaired."
+  criterion = "The V4/V4.1 change remains inside the explicitly authorized Catena route/model/test and exact generator/data voice-key seam plus durable records; the recorded gzip-9 ceilings stay unraised; no release binding is re-signed; and common-gate, B0/shared-shell, Day-reader, real-device/AT, protected Liturgy and PDF prerequisites remain separately owned."
   status = "pass"
-  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
+
+  [[deliverables.requirements]]
+  id = "neutral-refusal-umbrella"
+  criterion = "The shared fail-closed reference line, heading and status are neutral and consistent without erasing the exact typed reason that distinguishes malformed and unsupported values."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "sanitized-v4-1-package-and-visual-matrix"
+  criterion = "A sanitized immutable evidence package for the exact V4.1 implementation verifies every manifest member and privacy/reference scan, supplies the required viewport, refusal, supported-voice, forced-colors, print and disclosure captures, and states ancestry and capture provenance exactly."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
 
   [[deliverables.requirements]]
   id = "fresh-independent-review"
-  criterion = "A fresh independent review of the exact V3 head and its new immutable package records a durable disposition."
-  status = "open"
-  evidence = ["guidance/corpus-browser-roadmap.md"]
+  criterion = "A fresh independent review of exact V4.1 candidate f93757854b54c19e50bdcb97ca0fed9b48d22bb7 and evidence commit 8bd64e70f18892f52029f25817d2ca493ddb7467 records a durable disposition."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-master-plan.md", "guidance/corpus-browser-roadmap.md"]
 
 [[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v2-2026-08-11"

@@ -711,6 +711,139 @@ and did not weaken, delete, whitelist or expect-mark the test.
 E1 remains **awaiting fresh independent review**. Nothing here is accepted,
 integrable, merged, re-signed, or deployed.
 
+### E1 Catena route-owned correction lane, V4.1 independent review
+
+The fresh independent review inspected exact candidate
+`f93757854b54c19e50bdcb97ca0fed9b48d22bb7`, its implementation base
+`e40720d5d622e8b0528b8c714cc5caee0b21cee3`, its direct parent
+`3fb6685b2c725adca9a1e0efb43cfdd55c68c311`, prior review
+`9b1c23680c8da6b9a83bb7fb8ca689fbf9d2004c`, evidence commit
+`8bd64e70f18892f52029f25817d2ca493ddb7467`, and both the V4 and V4.1
+packages. The candidate is two commits, not one, above the V4 base: `3fb6685b`
+contains the implementation/test micro-diff and `f9375785` the producer
+records. The disposition is **CHANGES REQUIRED**.
+
+The V4.1 work it claims passes. The shared refusal umbrella is neutral and
+consistent: `Address not used`, `This address cannot be used as written`, and
+`The address is unchanged; the values not used are listed.` The typed reason
+still distinguishes a malformed voice from a well-formed unsupported one.
+The index's exact route keys are `original`, `translation:en`, and
+`translation:la`; `translation:grc` fails closed while Genesis 10 in supported
+English truthfully reaches the chapter-empty state. The ordinary, narrow,
+forced-colors, print, supported-voice, unsupported-voice, malformed-address,
+and disclosure images show no V4.1 visual regression. This finding applies
+neutrality to the shared refusal umbrella, not to every truthful held, lead,
+absence, blocked, rights, or integrity state on the page.
+
+The typed-presentation boundary does not pass:
+
+1. `catena.js` still assigns raw `fragment.language` to the fragment text's
+   DOM `lang`. The committed malformed-language scenario filters that fragment
+   out and its inspector never reads the attribute. An Everything-held replay
+   in real Chromium 151 rendered `lang="[object Object]"` while otherwise
+   completing normally. Arrays, numbers, booleans and whitespace similarly
+   become DOM metadata. This is the exact sink the V3 review required V4 to
+   close and the V4 record says was closed.
+2. The list gate validates containers but not their members. Scalar or array
+   fragment, lead, blocked and refusal members become blank corpus rows, false
+   counts, or a false numbering refusal; null members throw, discard valid
+   siblings, and replace the page with a raw JavaScript error. The chapter-file
+   value itself can likewise turn a malformed record into `Nothing held here`.
+   The render catch clears `aria-busy`, but that does not make the lost facts or
+   terminal claim truthful. Malformed post-load index/manifest records can
+   also leave the page at `Loading…` because startup after fetch is outside the
+   terminal failure funnel.
+3. Absence presentation drops the generator's typed `finding`. A valid
+   `not-surveyed` row is consequently presented as a closed publication
+   negative. The candidate's own malformed-absence fixture manufactures
+   `4 works standing here have no English this project may publish` from four
+   malformed neighbours while preserving only one valid partial row. A
+   malformed value may be withheld, but it may not become a count or a closed
+   claim.
+4. Number-like and primary-text values still bypass the boundary.
+   `text_words` accepts strings, singleton arrays, booleans and fractions;
+   extent membership and formatting admit coercible, fractional, zero,
+   negative or reversed coordinates; and raw verse keys, verse values, and
+   paragraph-break values can render `null`, `undefined`, `[object Object]`,
+   comma-joined arrays, or false structure. Raw ids, source keys, book names,
+   Bible labels and held paths have related control-flow and presentation
+   sinks. The shipped data is valid, but the candidate expressly claims a
+   defensive presentation boundary and its adversarial tests do not cover
+   these paths.
+
+The smallest acceptable correction is one strict record boundary for every
+file and collection member; nonempty text before every id, key, path, label,
+prose and `lang` use; positive-safe-integer/domain checks for counts, extents,
+verse numbers and breaks; and `finding`-driven absence classification with a
+non-claiming malformed fallback. Valid sibling facts must survive a malformed
+neighbour, and malformed bootstrap data must enter the same terminal failure
+funnel as failed requests. Regressions must inspect whole rendered text and
+DOM language attributes under Everything held, exercise scalar/array/null
+members beside valid siblings, cover `not-surveyed`, verse and numeric cases,
+and prove exact replace/push/hash/status/`aria-busy` completion for a partial
+arrival and a reader or deferred action. The current malformed scenarios start
+canonical and therefore do not prove the route-completion requirement the
+prior review named.
+
+Fresh validation in the isolated review clone found 267 focused Catena tests
+green, the Catena generator check green, the payload tests green, and the
+promise ledger mechanically valid at 29 tracked/19 complete. Whole-file gzip-9
+budgets remain 7,629/8,000 for CSS and 12,970/13,000 for JavaScript; stripped
+budgets remain 2,676/2,700 and 8,734/8,800. The browser gate recorded 2,290
+assertions, 1,836 pass / 226 fail / 228 skip, with its inherited common-gate
+failure population preserved. Four Catena release bindings remain stale and
+fail closed. Full-suite and `make -k check` results are recorded in the roadmap
+review section rather than rounded into a green claim.
+
+The V4.1 archive itself is acceptable review evidence. Evidence commit
+`8bd64e70` has candidate `f9375785` as its sole parent. Its ZIP is 7,518,977
+bytes with SHA-256
+`781c9b7582c5d3dd22a9330291fa158b12b722a626ce0264dc3dfc95d54f1552`;
+the sibling checksum matches, all 86 manifest members verify, the Git tree and
+ZIP trees are byte-identical, and the privacy/reference scans report zero
+hits. The 53 PNGs have no textual or EXIF chunks and are exactly inventoried.
+One package sentence must be corrected in the successor evidence:
+`REVIEW_REQUEST.md` says the candidate is one commit above `e40720d5`; it is
+two. The captures were made at `3fb6685b`, whose build-sensitive tree is
+byte-identical to `f9375785`; that qualification is sufficient for this review
+but should be stated directly. A successor provenance-focused capture must
+either show the full citation/edition/rights row it claims to evidence or
+narrow that claim.
+
+The broad `src/web/data/` guard failure is **C: a separate owner/test mismatch,
+with an authorized exception**, not an E1 ownership violation and not a V4.1
+data change. V4.1 has no parent-to-head data diff. Review `9b1c23680` explicitly
+authorized the exact Catena voice-key projection produced through the owning
+`scripts/_catena.py structure` writer; regenerated Catena index/Isaiah paths
+belong to that seam. The two Propers paths predate V4. The protected
+Liturgy/Day-reader owner must separately re-review the integrated generated
+data and reform or advance its historical `af6c0c8` tripwire with an exact
+baseline and explicit acceptance status. No candidate whitelist, silent
+baseline bump, test weakening, or data revert is authorized.
+
+Current recorded `origin/main` `9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`
+is an ancestor of the candidate, so the implementation history has no current-
+main path or semantic conflict and is mechanically a fast-forward. Review
+`9b1c23680` is a sibling record commit, not candidate ancestry, and read-only
+merge analysis reports conflicts only in `PROJECT-WORK.md`,
+`guidance/corpus-browser-master-plan.md`,
+`guidance/corpus-browser-roadmap.md`, and `promised-deliverables.toml`.
+Missing reviewer ancestry
+is not itself a code defect: eventual integration must preserve the V2/V3
+review chronology, V4/V4.1 producer records, this disposition, and the stricter
+review criteria by semantic reconciliation rather than cherry-picking a
+reviewer commit into the implementation or choosing either record side whole.
+Because the code disposition is changes required, no implementation or review
+record is authorized for main integration yet.
+
+The exact next action is a bounded Catena V5 correction from `f9375785` that
+fixes the typed boundary and regression gaps above, corrects the package
+provenance statements, produces a new sanitized exact-head handoff, and stops
+for fresh independent review. Separately owned release, common-gate,
+B0/shared-shell, data-guard, real-device/AT, protected Liturgy, and PDF work
+remains open. This review authorizes no candidate edit, merge, re-sign,
+deployment, or production cutover.
+
 ## Promised work
 
 ### Corpus browser foundation design

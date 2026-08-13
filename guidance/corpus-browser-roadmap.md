@@ -525,13 +525,59 @@ in count, none re-signed), the common gate, B0/shared shell, real-device-or-AT
 evidence, protected Liturgy and PDFs. E1 stays off main and is **awaiting fresh
 independent review**.
 
+### E1 Catena correction V4.1 independent review — 2026-08-13
+
+Exact candidate `f93757854b54c19e50bdcb97ca0fed9b48d22bb7` is **CHANGES
+REQUIRED**. The V4 base is `e40720d5d`; `3fb6685b` is the implementation/test
+commit and direct parent; `f9375785` adds producer records. Prior independent
+review `9b1c23680`, evidence commit `8bd64e70`, and the V4 and V4.1 packages
+were reviewed independently.
+
+| Review question | Disposition |
+| --- | --- |
+| Exact voice support and fail-closed truth | **Pass.** Exact route keys are `original`, `translation:en`, and `translation:la`. `translation:grc` is well formed but unsupported and fails closed; supported `translation:en` remains usable and Genesis 10 truthfully reaches its chapter-empty state. |
+| Shared refusal neutrality | **Pass.** The three shared strings are neutral and consistent while the typed per-value reason remains exact. Neutrality governs the umbrella, not every truthful held, lead, absence, blocked, rights, refusal, or integrity state. |
+| Typed presentation | **Open, blocking.** Raw `fragment.language` produced `lang="[object Object]"` in real Chromium. Untyped collection members create false counts/refusals or discard valid siblings; malformed bootstrap records can remain at `Loading…`; absence rows discard `finding` and manufacture closed negatives; number-like counts/extents and raw verse/identity/path metadata still coerce into presentation or control flow. The current tests do not inspect those outputs. |
+| Async and route completion | **Behavior mostly contained; regression requirement open.** Current chapter-render exceptions clear `aria-busy`, status and route in direct probes, but null members replace valid siblings with errors and malformed bootstrap data can miss the terminal funnel. Committed malformed scenarios start canonical, so they do not assert exact replace/push/hash completion for partial arrivals or actions. |
+| Screenshot matrix | **Pass with bounded successor correction.** Fifty-three real PNGs cover the stated ordinary/narrow/forced-colors/print and changed-state matrix without a V4.1 visual regression. A successor focused-provenance capture must show the full facts it claims or narrow the claim. |
+| Package integrity and privacy | **Pass with factual qualification.** ZIP SHA-256 is `781c9b7582c5d3dd22a9330291fa158b12b722a626ce0264dc3dfc95d54f1552`; 86/86 manifest members verify; ZIP and evidence tree match; privacy/reference scans find zero hits. `REVIEW_REQUEST.md` incorrectly says one commit above the V4 base; the true count is two. Captures at `3fb6685b` correspond to `f9375785` because the build-sensitive trees are identical. |
+| Data-guard contradiction | **C — separate owner/test mismatch, with an authorized Catena exception.** V4.1 changed no data. The V3 review authorized the exact Catena voice-key seam through the owning generator; two Propers paths are older drift. The Day-reader owner must separately re-review and reform its historical broad tripwire. |
+| Current-main overlap and review ancestry | **No implementation conflict; record reconciliation required later.** Recorded `origin/main` is the candidate merge base and ancestor. Prior review `9b1c23680` is a sibling record commit; only the four durable record paths conflict. A future accepted integration must reconcile their meaning, not absorb reviewer ancestry for appearance or select one side whole. |
+
+Smallest correction: validate each top-level value and list member as a record;
+gate every prose, identity, key, path, label and DOM language value as nonempty
+text; enforce positive safe integer and ordered domains for counts, extents,
+verses and breaks; classify absences from validated `finding`; preserve valid
+sibling facts; and put malformed post-load startup in the same terminal funnel.
+Regressions must inspect the whole text and DOM attributes, cover scalar,
+array, object, null, blank and number-like neighbours, and assert exact history,
+hash, status and busy completion for a partial arrival and an action. Then
+correct the package ancestry sentence, make provenance evidence exact, issue a
+new sanitized exact-head handoff, and stop for fresh review.
+
+Fresh reruns: 267 focused Catena tests pass; Catena structure and payload
+checks pass; the promise ledger is valid at 29 tracked/19 complete; budgets are
+7,629/8,000 and 2,676/2,700 CSS, 12,970/13,000 and 8,734/8,800 JavaScript.
+The browser gate reports 2,290 assertions, 1,836 pass / 226 fail / 228 skip,
+with inherited common-gate failures. Four Catena release bindings remain stale.
+Full discovery ran 1,618 tests: 14 failures, 13 errors and 11 skips, matching
+the candidate package's inherited failure/error count and identity. The errors
+include the local Python Markdown 3.10.3 versus locked 3.10.2 mismatch; the
+failures include the authorized Catena/historical data-guard mismatch and
+other separately owned stale baselines. `make -k check` exited 2 at the same
+three inherited targets: `check-release-bindings` (the four stale Catena
+bindings), `check-tool-registry` (eight undeclared sibling dependencies), and
+`check-examples` (30 transcript divergences, including the already recorded
+deliverable-count drift). No review record rounds those failures into a green
+repository-wide check.
+
 ## Remaining program sequence
 
 | Work | Current state | Exact dependency / stopping line |
 | --- | --- | --- |
 | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
 | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
-| E1 Catena production implementation | Fifth correction candidate (V4.1) awaiting fresh independent review | Review `9b1c23680` (CHANGES REQUIRED at `f2c9bc49d`) is answered by `impl/catena-wave-1-e1-corrections-v4`, which replaces the language-membership voice test with an exact voice-key projection published in the catena index — the one generator/data seam that review authorised — closes the nine remaining typed-presentation sinks behind one boundary in `catena-model.js`, and issues a new sanitized immutable package; nothing else. `catena-model.js` changes deliberately, because `catena.js` had one byte of margin and two findings live inside `voiceKey` and `formatExtent`; `MODEL_SHA256` is updated and a fourth release binding is now stale, unsigned. Preserve accepted E0 and every V2/V3 correction the review passed; every remaining generator/data, release, common-gate, B0/shared-shell, pre-release real-device-or-AT evidence, emulation-only forced-colors limitation, protected Liturgy, and PDF prerequisite stays with its owner; no merge, re-sign, deploy, or cutover. |
+| E1 Catena production implementation | **Changes required** at V4.1 candidate `f9375785` | Exact voice support, refusal neutrality, visual evidence, budgets and the sealed package pass. Typed presentation remains open: language metadata, collection members, absence findings, numeric/verse values and bootstrap records can still coerce, create false terminal claims, lose valid siblings or fail to complete. A bounded V5 must correct and test that boundary, correct the evidence qualifications, and stop for fresh review. Preserve accepted E0 and every sound V2/V3/V4 correction. The exact Catena data seam is authorized but does not transfer broader ownership; release, common-gate, B0/shared-shell, Day-reader guard, real-device/AT, protected Liturgy and PDF prerequisites remain separate. No merge, re-sign, deploy or cutover. |
 | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
 | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
 | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
@@ -553,6 +599,7 @@ independent review**.
 | 2026-08-11 | E1 Catena correction pass 2 | Answered correction review `8f8f424ec` (**CHANGES REQUIRED** at `dfc636665`) from unmoved main `9b9ff74a7`: carried route/test commit `67191afd1` forward and corrected the remaining route-owned URL-grammar, history-independence, recovery-focus, asynchronous-transaction, blocked/empty, lead, licence, print, focus-override, heading, and absence-disclosure defects inside the four-path boundary. Focused suite 179 tests; budgets 7,629/8,000 and 12,996/13,000 unraised; gate 2,290 assertions with the pristine-main failure identity/status set unchanged, 15 Catena `detail` texts differing and no row changing status; `check-release-bindings` deliberately fail-closed on the three changed route assets. | Branch `impl/catena-wave-1-e1-corrections-v2`; route/test commit `981959b4f78209401ba00bfbdcc430e23e09c8bb`; packaged head and package `20260811T212656Z-catena-e1-corrections-v2` recorded in the handoff; awaiting fresh independent review. |
 | 2026-08-12 | E1 Catena correction V3 | Answered independent review `4c30d86f7` (**CHANGES REQUIRED** at `17f031b37`) with the smallest bounded correction: a well-formed but unsupported voice now fails closed against the corpus's own held-language set instead of rendering `none in ZZ translation`, and every displayed provenance value passes one typed gate, which also removes a `translators` shape that threw out of an asynchronous render and left the region `aria-busy`. The unqualified stranger-key claim and the false AT-SPI-launcher claim are corrected in these records and in a new package. Focused suite 249 tests green; budgets unraised at 7,629/8,000 and 12,995/13,000, paid for by deletion; `catena.css`, `index.html` and `catena-model.js` byte-identical; `check-release-bindings` still deliberately fail-closed on the Catena route assets, unrepaired. | Branch `impl/catena-wave-1-e1-corrections-v3`; base `17f031b37840d8320c664a128d72b502108fe075`; package `20260812T184146Z-catena-e1-corrections-v3`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
 | 2026-08-13 | E1 Catena correction V4.1 | Answered the two requirements V4 at `e40720d5d` disclosed as unmet. The shared fail-closed umbrella copy is neutral: the reference line, heading and status write no longer claim the address was unreadable, assert a holdings negative over addresses refused on grammar, or call the reader's values invalid, while the typed per-value reason is untouched and malformed and unsupported refusals stay distinguishable; one narrow regression pins it and fails on the previous copy. The missing captures were produced -- V4's stated reason, that no display was available, was incorrect, because headless Chromium needs no display server -- giving 53 images from real built artifacts at the parent and this head across nine route states, three viewports, forced-colors and print emulation, with before/after pairs for the two changed states; they evidence rendering only and do not supersede the real-AT limitation. Focused suite 267 green; full discovery 1,618 against the base's 1,617 with an identical 27-entry failure/error name set; browser gate 2,290 assertions deep-equal to the base across 480,881 bytes; `catena.css` byte-identical and `catena.js` 12,970/13,000 whole and 8,734/8,800 stripped, both smaller, no ceiling raised. The `src/web/data/` contradiction is preserved untouched for independent adjudication. | Branch `impl/catena-wave-1-e1-corrections-v4-1`; base `e40720d5d622e8b0528b8c714cc5caee0b21cee3`; head `3fb6685b2c725adca9a1e0efb43cfdd55c68c311`; package `20260813T164804Z-catena-e1-corrections-v4-1`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+| 2026-08-13 | Independent E1 Catena V4.1 review | **CHANGES REQUIRED** at exact candidate `f9375785`. Exact voice support, neutral refusal copy, budgets, 53-image matrix, and sealed-package integrity pass. Typed presentation remains unsound: raw DOM language, malformed collection members, untyped absence findings, number-like counts/extents and raw verse/bootstrap metadata can create coercions, false claims, lost siblings or incomplete terminal state. Current malformed regressions also omit exact route-completion assertions. | Fresh review branch `review/catena-wave-1-e1-corrections-v4-1-independent`; candidate `f93757854b54c19e50bdcb97ca0fed9b48d22bb7`; evidence `8bd64e70f18892f52029f25817d2ca493ddb7467`; corrected exact-head V5 and fresh independent review required. |
 
 ## Next Codex tasks
 
