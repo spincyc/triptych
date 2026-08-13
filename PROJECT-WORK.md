@@ -583,7 +583,7 @@ to make either statement true.
 The changed paths are `src/web/browser/catena/catena.js` and
 `tools/tests/test_catena_wave_1.py` alone, plus these durable records.
 `catena.css` and `index.html` are byte-identical to the reviewed head and
-`catena-model.js` to main. The focused suite is 249 tests green, up from 179.
+`catena-model.js` to main. The focused suite is 249 tests green, up from 231.
 The recorded ceilings are unraised and were paid for by deletion rather than by
 waiver: `catena.css` is unchanged at 7,629/8,000, and `catena.js` is
 12,995/13,000 whole and 8,799/8,800 comment-stripped, funded by removing a
@@ -597,6 +597,71 @@ A new immutable handoff, `20260812T184146Z-catena-e1-corrections-v3`, records th
 exact V3 head, and the V2 package is unchanged. The sole next action is a fresh
 independent review of that head and package. Nothing here is accepted,
 integrable, merged, re-signed, or deployed.
+
+### E1 Catena route-owned correction lane, V4
+
+The V3 independent review at `9b1c23680c8da6b9a83bb7fb8ca689fbf9d2004c` is
+**CHANGES REQUIRED**. It accepted the shared fail-closed mechanism, the
+substance of the stranger-key correction, the core AT-SPI correction and the E0
+visual direction, and it found three things wrong.
+
+**The voice classifier.** `index.held[].languages` is a language inventory, not
+a voice authority. Greek stands in this corpus only as an original — the exact
+source pairs are `original:grc`, `original:la`, `translation:en` and
+`translation:la`, and there are zero Greek translations — so answering support
+from the language inventory accepted `translation:grc` and rendered "Greek
+translation — none here", a holdings claim nothing supports. V4 publishes the
+exact voice keys the corpus holds as a top-level `voices` array of the catena
+index, counted by the generator from the `voice` it already derives per row,
+and the route judges the whole key against it. `translation:grc` now fails
+closed; Genesis 10 in `translation:en` still says "none here", because that one
+is true. This is the one generator/data seam the review authorised explicitly.
+
+**The typed-presentation boundary.** Nine sinks remained: absence `author`,
+`work`, `reason` and `partial` bypassed the gate; a scalar translator container
+was widened into valid-looking provenance; malformed translation language
+reached the voice label, the control value, the written URL and the DOM `lang`;
+malformed authors collapsed into one unnamed, corpus-wide filter key;
+structured extent members stringified into a locus; and a throw in the render
+tail stranded `aria-busy`, focus, the tally, the announcement and the route.
+They are closed as one boundary in `catena-model.js` — text, list, record, a
+number as carried, and a fact that may be a finite number — asked once so the
+page and the model cannot answer differently.
+
+**The V3 package.** It published an account name, a PID, a uid, a D-Bus name
+and a session-bus path while its own sanitizer reported zero hits, because
+every rule knew the username only as a path component and the sanitizer shipped
+its own denylist in a form invisible to its own scan. V4 replaces it with a new
+sanitized immutable package whose sealer reads identities from the environment,
+matches the account name on word boundaries, scans every file and every path,
+and refuses to write the manifest on any hit. Run against the sealed V3
+package, it refuses to seal. The V3 package is not mutated: it is evidence of a
+review that happened.
+
+`catena-model.js` changed, which the V3 lane deliberately avoided. It carries
+no byte ceiling while `catena.js` had one byte of margin, and two of the nine
+findings — the translated-language metadata and the structured extents — live
+inside `voiceKey` and `formatExtent` and cannot be closed from the page at all.
+`MODEL_SHA256` is updated deliberately and a fourth release binding is now
+stale; no release record was re-signed.
+
+Measured at the V4 head: focused suite 266 green, up from 249; full discovery
+1,617 tests against the base's 1,600, with **no new failure identity**; browser
+gate 2,290 assertions, 1,836 pass / 226 fail / 228 skip, its assertion set,
+statuses and details equal to the base object for object; `catena.css`
+unchanged at 7,629/8,000 and 2,676/2,700; `catena.js` **12,981/13,000** whole
+and **8,749/8,800** stripped, both improved on V3 and neither ceiling raised.
+One pre-existing failure's detail is attributable to V4: a day-reader test
+forbidding any `src/web/data/` change now lists the two catena data paths the
+authorised seam writes. Regenerating also restored Isaiah 8, whose chapter file
+and `present` entry were missing from the committed data; the unmodified
+generator at `f2c9bc49` produces the same output, so that drift predates this
+lane.
+
+E1 is **awaiting fresh independent review**. Nothing here is accepted,
+integrable, merged, re-signed, or deployed, and the separately owned
+generator/data, release, common-gate, B0/shared-shell and real-AT
+prerequisites remain open.
 
 ## Promised work
 

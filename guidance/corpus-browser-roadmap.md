@@ -452,7 +452,7 @@ here.
   code-only ceiling now stands one byte clear, and the prose the house style
   would ordinarily carry could not be afforded — one precondition is pinned by
   test instead of by comment, and that is recorded as a limitation.
-- Focused suite: 249 tests green, up from 179. The one V2 test that pinned the
+- Focused suite: 249 tests green, up from 231. The one V2 test that pinned the
   defect — a `translation:de` deep link rendering "German translation — none
   here" — is retargeted to `translation:grc`, a language the corpus really
   holds, and the unsupported case is now pinned as a refusal.
@@ -464,13 +464,44 @@ here.
   re-signs nothing, and deploys nothing. Every outside-owner prerequisite the
   review left open remains open.
 
+### E1 Catena correction V4 — 2026-08-13
+
+Answering the independent review at `9b1c23680c8da6b9a83bb7fb8ca689fbf9d2004c`
+(**CHANGES REQUIRED**) from the exact reviewed head `f2c9bc49d`.
+
+| Finding answered | Disposition |
+| --- | --- |
+| Unsupported voice — the classifier | **Corrected.** The generator counts the voice keys the corpus holds and writes them as a top-level `voices` array; the route compares the whole key. The corpus holds four source pairs — `original:grc`, `original:la`, `translation:en`, `translation:la` — projecting onto three route keys, and no Greek translation. `translation:grc`, `translation:de` and `translation:zz` all fail closed; Genesis 10 in `translation:en` keeps its true "none here". |
+| Typed presentation — the nine sinks | **Corrected as one boundary**, in `catena-model.js`: text, list, record, a number as the data carries it, and a fact that may be a finite number. Absence author/work/reason/partial are typed at the read so the summary count and the listed words are one value; a scalar is no longer a translator list; a malformed language reaches no label, control value, URL or `lang`; malformed extent members state no locus; unnamed authors get no shared filter key; and the render tail sits inside the existing funnel, so a throw can no longer strand `aria-busy`, focus, the tally, the announcement or the route. |
+| Package privacy | **Replaced.** A new sanitized immutable package, sealed by a rewritten sealer that reads identities from the environment, matches the account name on word boundaries, scans every file and path, and refuses to write a manifest on any hit. It refuses to seal the V3 package. The V3 package is not mutated. |
+| AT-SPI overstatement | **Corrected.** Negatives are scoped to the inspected session, no command transcript is reproduced, and the claim is one status-region write rather than one spoken announcement. |
+| Full-suite exactness | **Stated exactly.** No new failure identity; one pre-existing failure's detail is attributable to V4; one is environment-sensitive; the deliverable-count assertion did not move and is reported as unmoved. |
+| Stranger keys | **Prose corrected**, no implementation change: `replaceState` is conditional, the canonical vocabulary is four keys but omits an empty voice, and the `?data=` evidence is real but bounded. |
+| Focused-suite baseline | **Corrected** in these records: 249 is up from 231, not 179. |
+
+Independent validation at the V4 head: focused suite **266 green**; full
+discovery **1,617** tests, 14 failures, 13 errors, 11 skips against the base's
+1,600/15/13/11, with **no new failure identity**; browser gate **2,290**
+assertions, 1,836 pass / 226 fail / 228 skip, its assertion set, statuses and
+details equal to the base object for object, run metadata excluded; promised
+deliverables valid, 29 tracked; `make -k check` exit 2 with the same three
+failing targets as the base. Budgets: `catena.css` unchanged at 7,629/8,000 and
+2,676/2,700; `catena.js` **12,981/13,000** whole and **8,749/8,800** stripped —
+both improved, no ceiling raised, paid for by the classifier simplification and
+by moving pure helpers into the unbudgeted model.
+
+Preserved owners: generator/data beyond the authorised voice-key seam, release
+(now four stale Catena bindings, none re-signed), the common gate, B0/shared
+shell, real-device-or-AT evidence, protected Liturgy and PDFs. E1 stays off
+main and is **awaiting fresh independent review**.
+
 ## Remaining program sequence
 
 | Work | Current state | Exact dependency / stopping line |
 | --- | --- | --- |
 | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
 | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
-| E1 Catena production implementation | Third correction candidate awaiting fresh independent review | Review `4c30d86f7` (CHANGES REQUIRED at `17f031b37`) is answered by `impl/catena-wave-1-e1-corrections-v3`, which corrects unsupported-voice handling, untyped displayed provenance, and the two inaccurate handoff statements and nothing else; preserve accepted E0 and every V2 correction the review passed; every generator/data, release, common-gate, B0/shared-shell, pre-release real-device-or-AT evidence, emulation-only forced-colors limitation, protected Liturgy, and PDF prerequisite stays with its owner; no merge, re-sign, deploy, or cutover. |
+| E1 Catena production implementation | Fourth correction candidate awaiting fresh independent review | Review `9b1c23680` (CHANGES REQUIRED at `f2c9bc49d`) is answered by `impl/catena-wave-1-e1-corrections-v4`, which replaces the language-membership voice test with an exact voice-key projection published in the catena index — the one generator/data seam that review authorised — closes the nine remaining typed-presentation sinks behind one boundary in `catena-model.js`, and issues a new sanitized immutable package; nothing else. `catena-model.js` changes deliberately, because `catena.js` had one byte of margin and two findings live inside `voiceKey` and `formatExtent`; `MODEL_SHA256` is updated and a fourth release binding is now stale, unsigned. Preserve accepted E0 and every V2/V3 correction the review passed; every remaining generator/data, release, common-gate, B0/shared-shell, pre-release real-device-or-AT evidence, emulation-only forced-colors limitation, protected Liturgy, and PDF prerequisite stays with its owner; no merge, re-sign, deploy, or cutover. |
 | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
 | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
 | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
