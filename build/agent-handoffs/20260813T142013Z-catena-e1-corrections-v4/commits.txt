@@ -1,0 +1,112 @@
+base   f2c9bc49dd29499734193b264ba9da21304b27f1
+head   e40720d5d622e8b0528b8c714cc5caee0b21cee3
+review 9b1c23680c8da6b9a83bb7fb8ca689fbf9d2004c
+
+commit e40720d5d622e8b0528b8c714cc5caee0b21cee3
+author-date 2026-08-13
+
+Record the V3 independent review and the V4 correction
+
+The review at 9b1c23680 is CHANGES REQUIRED. Recorded here: the exact
+voice-classifier defect and the exact key set that replaces it, the nine
+typed-presentation sinks and the one boundary that closes them, the V3
+package's privacy and evidence-exactness defects, the V4 head and package, and
+E1's status as awaiting fresh independent review.
+
+Two claims in the V3 lane's own records are corrected. The focused suite is
+249 up from 231, not 179: 179 was the V2 count under a narrower pattern, and
+comparing against it overstated the growth. The E1 row now names the review it
+answers and states that catena-model.js changes deliberately, leaving a fourth
+release binding stale and unsigned.
+
+E1 is not marked accepted and not marked integrable. The two deliverables the
+reviewer reopened stay open: V4 believes it meets them, but saying so in the
+ledger would be certifying its own work, and the fresh review is what decides.
+
+AI summary: Recorded the V3 CHANGES REQUIRED disposition, the V4 corrections
+and measurements, and corrected the overstated focused-suite baseline.
+
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+---
+commit 0ee017f158b29248d05e1413a872d4f5ad7d4090
+author-date 2026-08-13
+
+Pin the V4 voice and typed-structure corrections with regressions
+
+Seventeen regressions over two new classes, and one corrected oracle pair.
+
+The V3 suite was green while the defect stood, because two of its oracles
+encoded the defect. `voice-not-held` drove `translation:grc` and asserted
+"Greek translation — none here"; the support test pinned the literal source
+of the language-membership check. Both now assert the corrected behaviour:
+Greek fails closed and claims no holding, and the supported-but-chapter-empty
+control moves to Genesis 10 in English, which is a true statement about a
+chapter rather than an invented one about the corpus.
+
+`ExactVoiceKeyTest` covers the three exact keys, the two refused codes, an
+empty language, a second delimiter, an upper-case code, the supported ->
+unsupported -> supported round trip, and the projection itself: the four
+source pairs the corpus holds, and the three route keys they project onto.
+
+`TypedStructureBoundaryTest` drives every remaining sink at once from one
+labelled fixture — malformed absence author/work/reason/partial, a scalar
+translator container, a structured translated language, structured and absent
+extent members, unnameable authors, and `leads`/`blocked`/`refusals` that are
+not lists. Against the V3 implementation this fixture does not merely render
+wrongly, it throws `TypeError: blocked is not iterable` and kills the replay,
+which is the stranded-terminal-state finding made concrete. A new `busy`
+projection asserts the region never stays busy; nothing else could see it.
+
+Extent members are now required to be numbers as the data carries them rather
+than `Number()`-coercible, because a one-member list numifies to its member
+and printed a locus from a record that established none.
+
+AI summary: Added seventeen adversarial regressions for the exact voice-key
+projection and the typed-presentation boundary, corrected the two V3 oracles
+that encoded the Greek defect, and added a terminal-state projection.
+
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+---
+commit ad0d208cc87dbe0d5ef2cd707b31a516f8913bd4
+author-date 2026-08-13
+
+Project the exact Catena voice keys and finish the typed boundary
+
+The V3 independent review (9b1c23680) found the unsupported-voice mechanism
+sound but its classifier wrong: `index.held[].languages` is a language
+inventory, not a voice authority. Greek stands in this corpus only as
+`original:grc` and there are zero Greek translations, so asking whether the
+corpus holds `grc` answered yes and the page offered a Greek translation
+nobody has. The generator now writes the exact keys the corpus holds, the way
+`catena-model.js` composes them, and the route judges the whole key against
+them. `translation:grc` fails closed; `translation:en` on Genesis 10 stays a
+true statement about a chapter.
+
+The same review left nine typed-presentation sinks open. They are closed as
+one boundary rather than nine special cases: four questions — text, list,
+record, or a fact that may be a finite number — asked once in the model, so
+the page and the model cannot answer them differently. Absence author/work/
+reason/partial are typed at the read, so the summary's count and the list's
+words are one value. A scalar is no longer widened into a translator list, a
+malformed language no longer reaches a control value or the URL, a malformed
+extent leaves the book standing rather than printing a locus nobody
+established, and an unnamed author no longer collapses into a shared,
+unlabelled, corpus-wide filter key. The render tail now sits inside the
+funnel that already existed, so a throw there can no longer strand
+`aria-busy`, focus, the tally, the announcement or the route.
+
+The type primitives and the voice phrasing live in `catena-model.js` because
+it carries no byte ceiling and `catena.js` is at one. No ceiling moved: the
+composition falls from 12,995 to 12,981 whole and 8,799 to 8,749 stripped.
+
+AI summary: Replaced the Catena language-membership voice test with an exact
+voice-key projection emitted by the generator, and closed the remaining typed-
+presentation defects behind one shared boundary in the model.
+
+Discovered, not introduced: regenerating the catena structure also restores
+Isaiah 8, whose chapter file and `present` entry were missing from the
+committed data. The unmodified generator at f2c9bc49 produces the same output,
+so the drift predates this lane.
+
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+---

@@ -1,0 +1,15 @@
+  baseline  routes 19 states 9 pages 171 assertions 2290  pass 1836  fail 226  skip 228
+  head      routes 19 states 9 pages 171 assertions 2290  pass 1836  fail 226  skip 228
+  identity set equal .........: True
+  rows only in baseline ......: 0
+  rows only at head ..........: 0
+  rows with changed status ...: 0
+  rows with changed detail ...: 0
+  Catena failing rows: baseline 14
+      primary-controls-meet-target-size
+      single-main-element
+  Catena failing rows: head 14
+      primary-controls-meet-target-size
+      single-main-element
+  NOTE: `generatedAt` and `root` differ between any two runs by design;
+        they are run metadata and are excluded from this comparison.
