@@ -1,0 +1,529 @@
+Generation metadata valid: 127 canonical record(s), 6 inherited record(s).
+Web-edition declarations valid: 60 eligible, 58 conditional, 15 ineligible.
+Tracked web editions match current sources.
+Proper component manifests valid: 6.
+133 works, 178 documents, 186 issues, 5675 pages.
+  titles derived from source and confirmed against the built PDF: 186
+  titles the sources do not state: 0
+  issues with no PDF installed: 0
+  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js
+133 works, 178 documents, 186 issues, 5675 pages.
+  src/web/data/structure/documents/corpus.json is current
+491 works, 655 editions, 1467 artifacts, 2751 passages; 1630 readable here.
+  passages the rights records withhold: 1121
+  every one of them listed with its reason: yes
+  the page's own derivation, replayed: src/web/browser/sources/reader-model.js
+491 works, 655 editions, 1467 artifacts, 2751 passages; 1630 readable here.
+  src/web/data/structure/sources is current (2286 files)
+source-library valid: artifact=1467 corpus=5 edition=655 passage=2751 segment=62 work=491 bindings=1854
+source-inventory valid: publications=45 source_surface_files=954 owners=5
+source-inventory valid: publications=133 source_surface_files=1963 owners=11
+source-family-migration valid: families=385 review_units=144 screened=0 pending=144 trace_records=4041 atomic_citation_coverage=false
+Roman sanctuary artwork manifest valid; 0 held object-link notice(s).
+Promised-deliverable ledger valid: 29 tracked, 19 complete.
+public-alpha policy valid: 186 publications (186 alpha, 0 hold)
+perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57<tz> (<tz>)
+stale site source src/web/browser/catena/catena-model.js: recorded f1ea94f9ec6b54813859c2b526163e90d9de61992b839fe2eb0e349f31ccf57b, actual 5fda9dbd1916bf12b464a74c87213f8e1fc14d50480270d6a0c86ec5d5b78625
+stale site source src/web/browser/catena/catena.css: recorded aa564bc23918eeb98a0680df416549d94525444bcf837606293f031c8b0099d6, actual 733e84909e0e8049629187352d3800be320e469da7be200e860378bcc28851c5
+stale site source src/web/browser/catena/catena.js: recorded 51aaa3cf9deb47127da9cce3acefd2740531c69a6ed17e7bf7a702171d6d20d0, actual 7bc94596f299159522051d6ca2399107eb136363e3a211cad444250c33fc3b4b
+stale site source src/web/browser/catena/index.html: recorded 45c491abf22351e14fe22648a5a05e47f6abd8185a2565a3cc34a1d19acc440d, actual 7779d1f19ca175fd315cd7164f5347cc3c08d68b20b3b68a9219429b02bb8fa8
+stale: 4 stale binding(s)
+make: *** [Makefile:598: check-release-bindings] Error 1
+FAIL calendar-days: uses sibling 'calendar-rubrics' without declaring it in requires
+FAIL calendar-rubrics: uses sibling 'mass-propers' without declaring it in requires
+FAIL mass-ordinary: uses sibling 'mass-today' without declaring it in requires
+FAIL mass-propers: uses sibling 'check-calendar-masses' without declaring it in requires
+FAIL mass-propers: uses sibling 'mass-today' without declaring it in requires
+FAIL mass-today: uses sibling 'citations' without declaring it in requires
+FAIL mass-today: uses sibling 'index-bible' without declaring it in requires
+FAIL source-reader: uses sibling 'tpt' without declaring it in requires
+make: *** [Makefile:803: check-tool-registry] Error 1
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.530s
+
+OK
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance Antiphon/begin: Psalm 67:33 exceeds hebrew Psalm 67, which ends at verse 8
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance Antiphon/end: Psalm 67:33 exceeds hebrew Psalm 67, which ends at verse 8
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance Antiphon/begin: Psalm 67:35 exceeds hebrew Psalm 67, which ends at verse 8
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance Antiphon/end: Psalm 67:35 exceeds hebrew Psalm 67, which ends at verse 8
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-6/Communion Antiphon/begin: Psalm 77:29 exceeds hebrew Psalm 77, which ends at verse 21
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-6/Communion Antiphon/end: Psalm 77:30 exceeds hebrew Psalm 77, which ends at verse 21
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-8/Entrance Antiphon/begin: Psalm 17:19 exceeds hebrew Psalm 17, which ends at verse 15
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-8/Entrance Antiphon/end: Psalm 17:20 exceeds hebrew Psalm 17, which ends at verse 15
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-9/Entrance Antiphon/begin: Psalm 24:16 exceeds hebrew Psalm 24, which ends at verse 10
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-9/Entrance Antiphon/end: Psalm 24:16 exceeds hebrew Psalm 24, which ends at verse 10
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-9/Entrance Antiphon/begin: Psalm 24:18 exceeds hebrew Psalm 24, which ends at verse 10
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-9/Entrance Antiphon/end: Psalm 24:18 exceeds hebrew Psalm 24, which ends at verse 10
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-22/Communion Antiphon/begin: Psalm 30:20 exceeds hebrew Psalm 30, which ends at verse 13
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-22/Communion Antiphon/end: Psalm 30:20 exceeds hebrew Psalm 30, which ends at verse 13
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-23/Entrance Antiphon/begin: Psalm 118:137 exceeds hebrew Psalm 118, which ends at verse 29
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-23/Entrance Antiphon/end: Psalm 118:137 exceeds hebrew Psalm 118, which ends at verse 29
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-23/Entrance Antiphon/begin: Psalm 118:124 exceeds hebrew Psalm 118, which ends at verse 29
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-23/Entrance Antiphon/end: Psalm 118:124 exceeds hebrew Psalm 118, which ends at verse 29
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-26/Communion Antiphon/begin: Psalm 118:49 exceeds hebrew Psalm 118, which ends at verse 29
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-26/Communion Antiphon/end: Psalm 118:50 exceeds hebrew Psalm 118, which ends at verse 29
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-29/Communion Antiphon/begin: Psalm 32:18 exceeds hebrew Psalm 32, which ends at verse 11
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-29/Communion Antiphon/end: Psalm 32:19 exceeds hebrew Psalm 32, which ends at verse 11
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-31/Communion Antiphon/begin: Psalm 15:11 exceeds hebrew Psalm 15, which ends at verse 5
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-31/Communion Antiphon/end: Psalm 15:11 exceeds hebrew Psalm 15, which ends at verse 5
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-33/Communion Antiphon/begin: Psalm 72:28 exceeds hebrew Psalm 72, which ends at verse 20
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: ot-33/Communion Antiphon/end: Psalm 72:28 exceeds hebrew Psalm 72, which ends at verse 20
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: christ-the-king/Communion Antiphon/begin: Psalm 28:10 exceeds hebrew Psalm 28, which ends at verse 9
+calendar-mass excepted: src/sources/calendars/postconciliar/propers.yaml: christ-the-king/Communion Antiphon/end: Psalm 28:11 exceeds hebrew Psalm 28, which ends at verse 9
+src/sources/calendars/postconciliar/propers.yaml	269 masses	1513 propers
+src/sources/calendars/roman-1962/propers.yaml	491 masses	2833 propers
+src/sources/calendars/roman-pre-1955/propers.yaml	6 masses	6 propers
+src/sources/inventories/roman-1962-proper-translations-v1.toml	156 read twice	146 agree	10 disagree
+postconciliar: 269 masses, 1721 citations
+roman-1962: 491 masses, 4319 citations
+roman-pre-1955: 491 masses, 4312 citations
+  4 tracked file(s) are current
+postconciliar: 269 masses classified over 13 bases and 13 rows, 11 implied-day rules, 3 questions left open
+roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 5 questions left open
+solved cases: 29 of 29 verified against the browser's model
+  asserting 6 of 19 fields the model returns; no case asserts absent, candidates, ceilings, choice, conditions, extras, folded, option, remarks, season, sungDiffers, unsettled, winnerRule
+current	docs/the-mass.md
+current	guidance/propers-for-agents.md
+postconciliar: 7 sections, 48 elements, 1 witness, 1 variants, 11 slots; 9 elements translated, 39 absent
+roman-1962: 6 sections, 195 elements, 1 witness, 0 variants, 9 slots; 195 elements translated, 0 absent
+the written files are current
+catena valid: fragments=1351 books=1 canon=73
+coverage: 12 works held, 2 with a gap inside a recorded extent, 3 with no extent recorded, 60 chapters not held; see `tpt commentary-work-index coverage`
+  ok      tools/act-history plate --source src/sources/inventories/latin-missal-acts-v1.toml --out build/act-history/plate
+  ok      tools/act-history plate --out build/act-history/plate
+  ok      tools/act-history check
+  ok      tools/act-history graph
+  ok      tools/act-history emit --out build/act-history/roman-holy-week
+  ok      tools/artwork-library identify src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-015-lm-elevation-stations.png
+  ok      tools/artwork-library identify build/example-art.png
+  ok      tools/artwork-library identify src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-015-lm-elevation-stations.png
+  ok      tools/artwork-library normalize src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-015-lm-elevation-stations.png build/example-art.png
+  ok      tools/artwork-library check src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml
+  ok      tools/artwork-library check src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/artwork-manifest.example.toml
+  absent  tools/artwork-library check-pdf build/core-last-20.pdf
+  absent  tools/artwork-library check-pdf --strict-review-triggers build/core-last-20.pdf
+  ok      tools/calendar-days day --date 2026-12-25
+  ok      tools/calendar-days day --date 2026-04-05 --calendar roman-1962
+  stale   tools/calendar-days check
+  DIFF    tools/calendar-days check --json
+  stale   tools/calendar-days coverage --calendar roman-1962 --first 2026 --last 2026
+  ok      tools/calendar-days coverage --calendar postconciliar --first 2026 --last 2026 --json
+  stale   tools/calendar-days check
+  ok      tools/calendar-days structure --out build/example-days --first 2026 --last 2026
+  ok      tools/calendar-rubrics check --out build/example-web
+  ok      tools/calendar-rubrics check --out build/example-web --json
+  ok      tools/calendar-rubrics assign --calendar roman-1962
+  ok      tools/calendar-rubrics assign --calendar postconciliar --json
+  ok      tools/calendar-rubrics day --date 2026-04-05 --calendar roman-1962
+  ok      tools/calendar-rubrics day --date 2026-12-19 --calendar roman-1962 --json
+  ok      tools/calendar-rubrics check --out build/example-web
+  ok      tools/calendar-rubrics structure --out build/example-web
+  ok      tools/calendar-spine derive --calendar roman-1962 --kind marian
+  ok      tools/calendar-spine derive --calendar postconciliar --kind christological --json
+  stale   tools/check-calendar-masses check --calendar roman-1962
+  DIFF    tools/check-calendar-masses check --json
+  ok      tools/check-curriculum-structure --curriculum-root src/gpt/curriculums/ecclesiastical-latin --sources-only
+  ok      tools/check-curriculum-structure --curriculum-root src/gpt/curriculums/no-such-curriculum --sources-only
+  ok      tools/check-generation-metadata
+  ok      tools/check-generation-metadata --provider claude
+  DIFF    tools/check-promised-deliverables
+  DIFF    tools/check-promised-deliverables --ledger promised-deliverables.toml
+  ok      tools/check-proper-components
+  ok      tools/check-proper-components --list-synthesis
+  ok      tools/check-roman-sanctuary-artwork
+  ok      tools/check-roman-sanctuary-artwork --root src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary
+  ok      tools/check-web-edition
+  ok      tools/check-web-edition --document articles/faith/at-the-end-of-every-why
+  ok      tools/citations parse 'Psalm 24:1-3'
+  ok      tools/citations parse --json 'Isaias 7:14'
+  stale   tools/citations encode --root build/example-cal
+  DIFF    tools/citations encode --root build/example-cal --json
+  stale   tools/citations check
+  DIFF    tools/citations check --json
+  ok      tools/commentary-work-index discover --passage 'John 3:16' --max-results 3
+  stale   tools/commentary-work-index discover --passage 'Psalm 24:1-3' --numbering vulgate --max-results 2 --json
+  stale   tools/commentary-work-index discover --passage 'Joel 3:1-5' --max-results 3
+  ok      tools/commentary-work-index coverage
+  ok      tools/commentary-work-index coverage --book Luke
+  ok      tools/commentary-work-index discover --passage 'John 3:16' --max-results 2
+  DIFF    tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml
+  ok      tools/document-library check
+  ok      tools/document-library check --provider claude
+  ok      tools/document-library list --section biographies --provider claude
+  ok      tools/document-library list --author claude-fable-5 --sort pages
+  ok      tools/document-library show --document articles/faith/ontological-vertigo --provider claude
+  ok      tools/document-library show --document theology/sacraments-at-a-glance --provider gpt
+  ok      tools/document-library structure --out build/example-catalogue
+  ok      tools/document-library structure --check
+  stale   tools/harvest propers --top 3
+  stale   tools/harvest propers --top 2 --format json
+  ok      tools/harvest harvest roman-1962 advent-1 --top 3
+  ok      tools/harvest harvest postconciliar advent-1 --top 2 --src-list-only
+  stale   tools/harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml --limit 3
+  stale   tools/harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml --limit 2 --by-chapter --format json
+  stale   tools/harvest ask --corpus src/sources/commentary/mass-commentary-corpus.yaml --by-chapter --limit 3 --dry-run
+  exempt  tools/harvest ask --passage 'Psalms 24' --runs 1 --top 5 --out build/example-harvest
+  stale   tools/harvest aliases
+  stale   tools/harvest aliases --rebuild --alias-table build/example-harvest/aliases.yaml --audited-on 2026-07-31
+  exempt  tools/harvest record --ledger build/example-harvest/ledger.yaml --results build/example-results.yaml --model claude-opus-5 --audited-on 2026-07-31
+  exempt  tools/harvest record --ledger build/example-harvest/ledger.yaml --results build/example-results.yaml --model claude-opus-5 --audited-on 2026-07-31 --format json
+  stale   tools/harvest promote --audited-on 2026-07-31 --dry-run --index src/sources/commentary/passage-commentary-index.yaml
+  stale   tools/harvest promote --audited-on 2026-07-31 --index build/example-discovery.yaml
+  ok      tools/index-bible manifest --out build/example-index
+  ok      tools/index-bible manifest --out build/example-index --json
+  stale   tools/index-bible check --bible douay-rheims
+  DIFF    tools/index-bible check --bible clementine-vulgate --json
+  stale   tools/index-bible check --bible king-james-version --verbose
+  ok      tools/index-bible projection
+  ok      tools/index-bible projection --bible clementine-vulgate --json
+  ok      tools/index-bible projection --bible douay-rheims --bible-root build/example-bibles --write
+  stale   tools/index-bible check --bible douay-rheims
+  stale   tools/index-bible build --bible douay-rheims --bible-root build/example-bibles
+  ok      tools/knox-bible plan --root build/knox
+  ok      tools/knox-bible plan --root build/knox --json
+  exempt  tools/knox-bible fetch --root build/knox
+  ok      tools/knox-bible build --root build/knox
+  ok      tools/knox-bible build --root . --json
+  ok      tools/mass-ordinary check --out build/example-ordinary
+  ok      tools/mass-ordinary check --calendar roman-1962 --json
+  ok      tools/mass-ordinary show --calendar roman-1962
+  ok      tools/mass-ordinary show --calendar postconciliar
+  ok      tools/mass-ordinary coverage --calendar postconciliar
+  ok      tools/mass-ordinary coverage --calendar roman-1962
+  ok      tools/mass-ordinary check --out build/example-ordinary
+  ok      tools/mass-ordinary structure --out build/example-ordinary
+  stale   tools/mass-propers list --calendar roman-1962
+  DIFF    tools/mass-propers list --calendar postconciliar --format json
+  ok      tools/mass-propers show --calendar roman-1962 --mass advent-1
+  ok      tools/mass-propers show --calendar roman-1962 --mass advent-1 --format yaml
+  stale   tools/mass-propers list --calendar roman-1962
+  DIFF    tools/mass-propers structure --out build/example-propers
+  DIFF    tools/mass-propers structure --check
+  DIFF    tools/mass-propers census
+  ok      tools/mass-propers census --check
+  DIFF    tools/mass-today show --date 2026-11-29 --calendar roman-1962
+  ok      tools/mass-today show --date 2026-07-31 --calendar roman-1962
+  DIFF    tools/mass-today show --date 2026-11-29 --calendar roman-1962 --expanded
+  ok      tools/pdf-review --explain
+  absent  tools/pdf-review --output build/example-review build/core-last-20.pdf
+  ok      tools/public-alpha check
+  ok      tools/public-alpha check --preview
+  stale   tools/public-alpha prepare
+  ok      tools/public-alpha check
+  ok      tools/public-alpha check
+  ok      tools/public-alpha build --preview
+  DIFF    tools/public-alpha verify --preview
+  ok      tools/public-alpha verify --preview --deployment-target github-pages
+  ok      tools/reading-plan check
+  ok      tools/reading-plan check --json
+  ok      tools/reading-plan structure --out build/example-reading
+  ok      tools/reading-plan structure --out build/example-reading --verbose
+  stale   tools/release-bindings status
+  stale   tools/release-bindings status --help
+  stale   tools/release-bindings status
+  exempt  tools/release-bindings refresh
+  stale   tools/release-bindings status
+  exempt  tools/release-bindings migrate-publications
+  ok      tools/release-bindings approve
+  ok      tools/release-bindings add-publication --provider nope --id articles/faith/x --catalog faith
+  ok      tools/release-bindings add-publication --provider claude --id articles/faith/at-the-end-of-every-why --catalog faith
+  ok      tools/render-sanctuary-dictionary --schema src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/inventory-schema.toml --selections src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/edition-selections.toml --artwork-manifest src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml --records src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects --output build/example-sanctuary
+  ok      tools/render-sanctuary-dictionary --schema src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/inventory-schema.toml --selections src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/edition-selections.toml --artwork-manifest src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml --records build/example-empty-objects --output build/example-sanctuary
+  DIFF    tools/research-staleness status
+  DIFF    tools/research-staleness status --provider claude
+  DIFF    tools/research-staleness explain claude articles/faith/four-last-things-01-death
+  DIFF    tools/research-staleness explain gpt articles/faith/last-supper-calvary-and-the-mass
+  ok      tools/research-staleness bootstrap
+  ok      tools/research-staleness rebaseline
+  stale   tools/source-family-migration check
+  stale   tools/source-family-migration --root . check
+  DIFF    tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-07-31
+  DIFF    tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-07-31
+  stale   tools/source-family-migration check
+  DIFF    tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-07-31
+  ok      tools/source-inventory check
+  ok      tools/source-inventory --root . check
+  ok      tools/source-inventory bootstrap build/example-inventory.toml --audited-on 2026-07-31
+  ok      tools/source-inventory bootstrap build/example-inventory.toml --audited-on 2026-07-31 --provider claude
+  ok      tools/source-inventory bootstrap-classification-review build/example-review.toml --audited-on 2026-07-31
+  ok      tools/source-inventory bootstrap-classification-review build/example-review.toml --audited-on 2026-07-31 --provider gpt
+  ok      tools/source-inventory check
+  ok      tools/source-inventory classify
+  ok      tools/source-inventory check
+  ok      tools/source-inventory refresh build/example-inventory.toml --audited-on 2026-07-31
+  stale   tools/source-library validate
+  stale   tools/source-library validate --help
+  ok      tools/source-library fingerprint work.ambrose.de-mysteriis
+  ok      tools/source-library fingerprint corpus.augustine.de-civitate-dei.dods-1871-complete
+  ok      tools/source-library uses work.ambrose.de-mysteriis
+  ok      tools/source-library uses work.ambrose.de-mysteriis --format json
+  ok      tools/source-library impact work.ambrose.de-mysteriis
+  ok      tools/source-library impact work.ambrose.de-mysteriis --format json
+  ok      tools/source-library search corpus.augustine.de-civitate-dei.dods-1871-complete Rome --count
+  ok      tools/source-library search corpus.augustine.de-civitate-dei.dods-1871-complete Rome
+  DIFF    tools/tpt source-reader check
+  ok      tools/tpt source-reader check --rights licensed
+  ok      tools/tpt source-reader list --author 'Augustine of Hippo'
+  DIFF    tools/tpt source-reader list --language grc --sort date
+  ok      tools/tpt source-reader show --edition edition.matthew-arnold.dover-beach.macmillan-1867-uva-lic
+  ok      tools/tpt source-reader show --edition edition.augustine.de-civitate-dei.dods-1871
+  DIFF    tools/tpt source-reader structure --out build/example-sources
+  DIFF    tools/tpt source-reader structure --check
+  ok      tools/tpt --list
+  DIFF    tools/tpt --list --json
+  ok      tools/tpt --info tpt
+  DIFF    tools/tpt --info tpt --json
+  ok      tools/tpt --path tpt
+  ok      tools/tpt --path no-such-tool
+  ok      tools/tpt --check
+  ok      tools/tpt --check --json
+  ok      tools/tpt tpt --path tpt
+  ok      tools/tpt no-such-tool
+  ok      tools/typeset-bible list
+  ok      tools/typeset-bible list --format ids
+  ok      tools/typeset-bible list --plan narrative-spine --format ids
+  ok      tools/typeset-bible check --bible clementine-vulgate
+  ok      tools/typeset-bible check --bible douay-rheims --json
+  stale   tools/typeset-bible check --volume narrative-spine-landmarks-king-james-version --verbose
+  ok      tools/typeset-bible check --bible clementine-vulgate
+  ok      tools/typeset-bible render --bible clementine-vulgate --out build/example-typeset
+  stale   tools/typeset-bible render --volume narrative-spine-landmarks-douay-rheims --out build/example-typeset
+  ok      tools/web-edition --provider claude --output build/example-web-edition articles/faith/at-the-end-of-every-why
+  ok      tools/web-edition --provider claude --output build/example-web-edition articles/faith/no-such-leaf
+
+calendar-days:101 $ tools/calendar-days check --json
+    line 1: recorded '{"calendars":{"postconciliar":{"placements":6735,"rules_without_a_mass":[]},"roman-1962":{"place... [+318 chars]'
+            the run printed '{"calendars":{"postconciliar":{"placements":6837,"rules_without_a_mass":[]},"roman-1962":{"place'
+
+check-calendar-masses:57 $ tools/check-calendar-masses check --json
+    line 1: recorded a line cut at +4901 chars; the run's line continues for 4926
+
+check-promised-deliverables:20 $ tools/check-promised-deliverables
+    line 1: recorded 'Promised-deliverable ledger valid: 23 tracked, 17 complete.'
+            the run printed 'Promised-deliverable ledger valid: 29 tracked, 19 complete.'
+
+check-promised-deliverables:26 $ tools/check-promised-deliverables --ledger promised-deliverables.toml
+    line 1: recorded 'Promised-deliverable ledger valid: 23 tracked, 17 complete.'
+            the run printed 'Promised-deliverable ledger valid: 29 tracked, 19 complete.'
+
+citations:73 $ tools/citations encode --root build/example-cal --json
+    line 1: recorded '{"files":{"build/example-cal/postconciliar/propers.yaml":{"already_encoded":1082,"encoded":0},"b... [+114 chars]'
+            the run printed '{"files":{"build/example-cal/postconciliar/propers.yaml":{"already_encoded":1721,"encoded":0},"b'
+
+citations:94 $ tools/citations check --json
+    line 1: recorded '{"files":{"src/sources/calendars/postconciliar/propers.yaml":{"books":61,"passages":1082},"src/s... [+4178 chars]'
+            the run printed '{"files":{"src/sources/calendars/postconciliar/propers.yaml":{"books":63,"passages":1721},"src/s'
+
+commentary-work-index:142 $ tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml
+    line 1: recorded 'masses: 277 covered of 277'
+            the run printed 'masses: 331 covered of 331'
+    line 2: recorded 'total works in union corpus: 172'
+            the run printed 'total works in union corpus: 175'
+    line 3: recorded 'unresolved passages: 83'
+            the run printed 'unresolved passages: 110'
+
+index-bible:90 $ tools/index-bible check --bible clementine-vulgate --json
+    line 1: recorded '{"bible":"clementine-vulgate","calendars":{"postconciliar":{"cited":950,"resolved":949},"roman-1... [+245 chars]'
+            the run printed '{"code":"input","error":"$REPO/src/'
+
+mass-propers:51 $ tools/mass-propers list --calendar postconciliar --format json
+    line 1: recorded a line cut at +36056 chars; the run's line continues for 36159
+
+mass-propers:100 $ tools/mass-propers structure --out build/example-propers
+    line 1: recorded 'postconciliar: 268 masses, 1144 citations'
+            the run printed 'postconciliar: 269 masses, 1721 citations'
+    line 2: recorded 'roman-1962: 490 masses, 2194 citations'
+            the run printed 'roman-1962: 491 masses, 4319 citations'
+    line 3: recorded 'roman-pre-1955: 490 masses, 2187 citations'
+            the run printed 'roman-pre-1955: 491 masses, 4312 citations'
+    line 8: recorded '  refused: 14'
+            the run printed '  refused: 32'
+
+mass-propers:114 $ tools/mass-propers structure --check
+    line 2: recorded 'roman-1962: 491 masses, 2257 citations'
+            the run printed 'roman-1962: 491 masses, 4319 citations'
+    line 3: recorded 'roman-pre-1955: 491 masses, 2250 citations'
+            the run printed 'roman-pre-1955: 491 masses, 4312 citations'
+
+mass-propers:126 $ tools/mass-propers census
+    line 1: recorded '<!-- census:begin — derived; edit nothing between these markers -->'
+            the run printed "# roman-1962 English orations: 468 slots appointed, 303 with English, 89 ledgered untranslated, 76 unaccounted; 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot"
+    line 2: recorded ''
+            the run printed "# postconciliar English orations: 284 slots appointed, 70 with English, 214 ledgered untranslated, 0 unaccounted; 0 composed propers outside the ledger's slots, 3 ledger rows matching no slot"
+    line 3: recorded '| Calendar | Section | Masses | Propers | Masses holding only placeholders |'
+            the run printed '<!-- census:begin — derived; edit nothing between these markers -->'
+    line 4: recorded '| --- | --- | ---: | ---: | ---: |'
+            the run printed ''
+    line 5: recorded '| roman-pre-1955 | seasonal | 6 | 6 | 6 |'
+            the run printed '| Calendar | Section | Masses | Propers | Masses holding only placeholders |'
+    line 6: recorded '| roman-1962 | seasonal | 128 | 1121 | 5 |'
+            the run printed '| --- | --- | ---: | ---: | ---: |'
+    line 7: the transcript ends claiming 49 more line(s); the run printed 88
+
+mass-today:101 $ tools/mass-today show --date 2026-11-29 --calendar roman-1962
+    line 17: the transcript ends claiming 25 more line(s); the run printed 55
+
+mass-today:149 $ tools/mass-today show --date 2026-11-29 --calendar roman-1962 --expanded
+    line 15: the transcript ends claiming 898 more line(s); the run printed 975
+
+public-alpha:96 $ tools/public-alpha verify --preview
+    line 1: recorded 'verified build/public-alpha/preview'
+            the run printed 'Public-alpha artifact verification failed:'
+    the run printed 5 line(s) beyond the 1 recorded, and nothing said the transcript was cut
+
+research-staleness:32 $ tools/research-staleness status
+    line 2: recorded 'stale claude articles/faith/four-last-things-01-death'
+            the run printed 'stale claude articles/faith/council-missal-and-crisis'
+    line 3: recorded 'stale claude articles/faith/four-last-things-02-judgment'
+            the run printed 'stale claude articles/faith/four-last-things-01-death'
+    line 4: recorded 'stale claude articles/faith/four-last-things-03-hell'
+            the run printed 'stale claude articles/faith/four-last-things-02-judgment'
+    line 5: the transcript ends claiming 47 more line(s); the run printed 86
+
+research-staleness:42 $ tools/research-staleness status --provider claude
+    line 2: recorded 'stale claude articles/faith/four-last-things-01-death'
+            the run printed 'stale claude articles/faith/council-missal-and-crisis'
+    line 3: recorded 'stale claude articles/faith/four-last-things-02-judgment'
+            the run printed 'stale claude articles/faith/four-last-things-01-death'
+    line 4: the transcript ends claiming 14 more line(s); the run printed 20
+
+research-staleness:53 $ tools/research-staleness explain claude articles/faith/four-last-things-01-death
+    line 4: the transcript ends claiming 156 more line(s); the run printed 157
+
+research-staleness:62 $ tools/research-staleness explain gpt articles/faith/last-supper-calvary-and-the-mass
+    line 4: the transcript ends claiming 79 more line(s); the run printed 89
+
+source-family-migration:52 $ tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-07-31
+    the run printed 1 line(s) beyond the 0 recorded, and nothing said the transcript was cut
+
+source-family-migration:58 $ tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-07-31
+    line 1: recorded 'source-family-migration error: $REPO/build/example-migration.toml: already exists; use refresh'
+            the run printed 'source-family-migration error: --audited-on cannot predate the inventory or classification review'
+
+source-family-migration:74 $ tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-07-31
+    the run printed 1 line(s) beyond the 0 recorded, and nothing said the transcript was cut
+
+source-reader:1278 $ tools/tpt source-reader check
+    line 1: recorded '479 works, 636 editions, 1427 artifacts, 1264 passages; 143 readable here.'
+            the run printed '491 works, 655 editions, 1467 artifacts, 2751 passages; 1630 readable here.'
+
+source-reader:1303 $ tools/tpt source-reader list --language grc --sort date
+    line 1: the transcript ends claiming 12 more line(s); the run printed 13
+
+source-reader:1327 $ tools/tpt source-reader structure --out build/example-sources
+    line 1: recorded '479 works, 636 editions, 1427 artifacts, 1264 passages; 143 readable here.'
+            the run printed '491 works, 655 editions, 1467 artifacts, 2751 passages; 1630 readable here.'
+    line 2: recorded '  -> build/example-sources/structure/sources (780 files)'
+            the run printed '  -> build/example-sources/structure/sources (2286 files)'
+
+source-reader:1335 $ tools/tpt source-reader structure --check
+    line 1: recorded '479 works, 636 editions, 1427 artifacts, 1264 passages; 143 readable here.'
+            the run printed '491 works, 655 editions, 1467 artifacts, 2751 passages; 1630 readable here.'
+    line 2: recorded '  src/web/data/structure/sources is current (780 files)'
+            the run printed '  src/web/data/structure/sources is current (2286 files)'
+
+tpt:69 $ tools/tpt --list --json
+    line 1: recorded a line cut at +9078 chars; the run's line continues for 9136
+
+tpt:90 $ tools/tpt --info tpt --json
+    line 1: recorded a line cut at +237 chars; the run's line continues for 281
+
+known stale, replayed and still diverging:
+  $ tools/calendar-days check
+    2026-07-31: roman-1962 gained a mass; 12667 placements recorded, 12769 now
+  $ tools/calendar-days coverage --calendar roman-1962 --first 2026 --last 2026
+    2026-07-31: 459 masses and 454 reachable recorded; 462 and 455 now. The two new masses are the Commune Sanctorum's, which no date reaches and which are therefore correctly unreachable
+  $ tools/calendar-days check
+    2026-07-31: roman-1962 gained a mass; 12667 placements recorded, 12769 now
+  $ tools/check-calendar-masses check --calendar roman-1962
+    2026-07-31: 459 masses over 1465 propers recorded; 462 over 1472 now
+  $ tools/citations encode --root build/example-cal
+    2026-07-31: roman-1962 propers grew; 1108 already-encoded recorded, 1151 now
+  $ tools/citations check
+    2026-07-31: the transcript ends claiming 25 further lines; the run prints 26
+  $ tools/commentary-work-index discover --passage 'Psalm 24:1-3' --numbering vulgate --max-results 2 --json
+    2026-07-31: the payload grew; the line was cut at +401 chars, +499 now
+  $ tools/commentary-work-index discover --passage 'Joel 3:1-5' --max-results 3
+    2026-07-31: the refusal shortened; the line was cut at +130 chars, +128 now
+  $ tools/harvest propers --top 3
+    2026-07-31: the ledger grew; 490 passages over 6 runs recorded, 524 over 9 now
+  $ tools/harvest propers --top 2 --format json
+    2026-07-31: the ledger grew; 490 passages over 6 runs recorded, 524 over 9 now
+  $ tools/harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml --limit 3
+    2026-07-31: the corpus is covered; 3 passages below 3 runs recorded, 0 now, so the rows the transcript shows are no longer printed at all
+  $ tools/harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml --limit 2 --by-chapter --format json
+    2026-07-31: the payload shrank; the line was cut at +328 chars, +261 now
+  $ tools/harvest ask --corpus src/sources/commentary/mass-commentary-corpus.yaml --by-chapter --limit 3 --dry-run
+    2026-07-31: nothing is left to ask about, so the dry run refuses where the transcript shows the prompt it would send
+  $ tools/harvest aliases
+    2026-07-31: 300 derived groups over 10 reviewed recorded; 517 over 31 now
+  $ tools/harvest aliases --rebuild --alias-table build/example-harvest/aliases.yaml --audited-on 2026-07-31
+    2026-07-31: the rebuild now refuses — Peter Lombard's canonical title names Psalms while one of its own names names Colossians. A live naming conflict, not a stale count; recapturing would record the refusal as the example
+  $ tools/harvest promote --audited-on 2026-07-31 --dry-run --index src/sources/commentary/passage-commentary-index.yaml
+    2026-07-31: 341 distinct works recorded, 556 now, and the keys reordered
+  $ tools/harvest promote --audited-on 2026-07-31 --index build/example-discovery.yaml
+    2026-07-31: 341 distinct works recorded, 556 now, and the keys reordered
+  $ tools/index-bible check --bible douay-rheims
+    2026-07-31: 1601 passages recorded, 1605 now, with the resolved counts behind them
+  $ tools/index-bible check --bible king-james-version --verbose
+    2026-07-31: the tracked king-james-version index is stale, so the verb refuses where the transcript shows a report. A repository defect the transcript is reporting honestly; `index-bible build --bible king-james-version` is the fix
+  $ tools/index-bible check --bible douay-rheims
+    2026-07-31: 1601 passages recorded, 1605 now, with the resolved counts behind them
+  $ tools/index-bible build --bible douay-rheims --bible-root build/example-bibles
+    2026-07-31: 1601 passages recorded, 1605 now, with the resolved counts behind them
+  $ tools/mass-propers list --calendar roman-1962
+    2026-07-31: the calendar gained masses; 459 recorded, 462 now, the last two being the Commune Sanctorum's first entries
+  $ tools/mass-propers list --calendar roman-1962
+    2026-07-31: the calendar gained masses; 459 recorded, 462 now, the last two being the Commune Sanctorum's first entries
+  $ tools/public-alpha prepare
+    2026-07-31: the candidate inventory grew; 2257 further lines recorded, 2305 now
+  $ tools/release-bindings status
+    2026-07-31: captured against a tree carrying 19 stale bindings; this tree is exact, so the verb prints one line where the transcript shows twenty
+  $ tools/release-bindings status --help
+    2026-07-31: the tool's own epilog grew; 11 further lines recorded, 16 now
+  $ tools/release-bindings status
+    2026-07-31: captured against a tree carrying 19 stale bindings; this tree is exact, so the verb prints one line where the transcript shows twenty
+  $ tools/release-bindings status
+    2026-07-31: captured against a tree carrying 19 stale bindings; this tree is exact, so the verb prints one line where the transcript shows twenty
+  $ tools/source-family-migration check
+    2026-07-31: the library gained a family; 362 recorded, 363 now
+  $ tools/source-family-migration --root . check
+    2026-07-31: the library gained a family; 362 recorded, 363 now
+  $ tools/source-family-migration check
+    2026-07-31: the library gained a family; 362 recorded, 363 now
+  $ tools/source-library validate
+    2026-07-31: the library grew; artifact=1391 passage=1227 work=466 recorded, 1392, 1231 and 467 now
+  $ tools/source-library validate --help
+    2026-07-31: the tool's own epilog grew; 11 further lines recorded, 12 now
+  $ tools/typeset-bible check --volume narrative-spine-landmarks-king-james-version --verbose
+    2026-07-31: the refused-reading line shortened; cut at +31 chars, +27 now
+  $ tools/typeset-bible render --volume narrative-spine-landmarks-douay-rheims --out build/example-typeset
+    2026-07-31: the volume is written under its own name now; the transcript records a narrative-spine-overview path. A behaviour change, not a count
+
+never replayed, by invocation:
+  $ tools/harvest ask --passage 'Psalms 24' --runs 1 --top 5 --out build/example-harvest
+    calls a model, once a passage a run; the only invocation in tools/ that spends
+  $ tools/harvest record --ledger build/example-harvest/ledger.yaml --results build/example-results.yaml --model claude-opus-5 --audited-on 2026-07-31
+    reads the results file only `harvest ask` writes, and `ask` calls a model
+  $ tools/harvest record --ledger build/example-harvest/ledger.yaml --results build/example-results.yaml --model claude-opus-5 --audited-on 2026-07-31 --format json
+    reads the results file only `harvest ask` writes, and `ask` calls a model
+  $ tools/knox-bible fetch --root build/knox
+    the one verb that opens a socket; it refuses this root before fetching, but a replay must not be one edit away from retrieving licensed text
+  $ tools/release-bindings refresh
+    rewrites tracked release/ bindings, which the deploy requires to be exact
+  $ tools/release-bindings migrate-publications
+    rewrites tracked release/publications records whenever one is in an older shape
+
+not runnable in this checkout:
+  $ tools/artwork-library check-pdf build/core-last-20.pdf
+    a built PDF; no target produces this one, so a fresh clone has no copy (path:build/core-last-20.pdf)
+  $ tools/artwork-library check-pdf --strict-review-triggers build/core-last-20.pdf
+    a built PDF; no target produces this one, so a fresh clone has no copy (path:build/core-last-20.pdf)
+  $ tools/pdf-review --output build/example-review build/core-last-20.pdf
+    a built PDF; no target produces this one, so a fresh clone has no copy (path:build/core-last-20.pdf)
+
+replay-examples: 201 captured example(s); 192 replayed, 28 diverged, 35 known stale, 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+make: *** [Makefile:791: check-examples] Error 1
+make: Target 'check' not remade because of errors.
+EXIT=2

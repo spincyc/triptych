@@ -1,0 +1,28 @@
+review addressed     9b1c23680c8da6b9a83bb7fb8ca689fbf9d2004c  Record Catena E1 V3 independent review
+base (V4 head)       e40720d5d622e8b0528b8c714cc5caee0b21cee3  Record the V3 independent review and the V4 correction
+implementation       3fb6685b2c725adca9a1e0efb43cfdd55c68c311  Neutralise the shared Catena fail-closed copy the V3 review required
+V4.1 HEAD (final)    f93757854b54c19e50bdcb97ca0fed9b48d22bb7  Record the V4.1 refusal-copy correction and its visual evidence
+
+branch               impl/catena-wave-1-e1-corrections-v4-1
+e40720d5d..f93757854 is exactly TWO commits: one implementation, one records.
+
+Why two SHAs appear in this package
+-----------------------------------
+Every measurement, screenshot and gate run in this package was taken at the
+implementation commit 3fb6685b2. The final head f93757854 adds ONLY the durable
+records, and touches no code:
+
+    $ git diff --name-only 3fb6685b2..f93757854 -- src/ tools/ scripts/ release/
+    (no output -- zero files)
+
+    $ git diff --stat 3fb6685b2..f93757854
+     PROJECT-WORK.md                    | 48 ++++++++++++++++
+     guidance/corpus-browser-roadmap.md | 33 +++++++++-
+
+So every number below holds at the final head by construction: the reviewed
+implementation, its stylesheet, its data and its tests are byte-identical
+between 3fb6685b2 and f93757854. This mirrors how V4 was packaged, where
+e40720d5d is likewise a records commit above the implementation.
+
+superseded package   build/agent-handoffs/20260813T142013Z-catena-e1-corrections-v4  (NOT mutated)
+V4 package SHA-256   1f8fce78e3e8371ada1aee7bd12ec3fda69a306f5244472f95669b87a6d75516  (re-verified byte-exact)

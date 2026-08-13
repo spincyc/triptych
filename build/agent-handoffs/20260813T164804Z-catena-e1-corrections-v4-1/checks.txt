@@ -1,0 +1,122 @@
+Checks run for the Catena E1 V4.1 correction.
+
+Base  e40720d5d622e8b0528b8c714cc5caee0b21cee3
+Head  f93757854b54c19e50bdcb97ca0fed9b48d22bb7  (final)
+      3fb6685b2c725adca9a1e0efb43cfdd55c68c311  (implementation; every number
+      below was measured here. The final head adds records only and touches no
+      code -- see commits.txt for the proving git commands.)
+All commands run from the repository root. Exit statuses are numeric and real.
+
+=== A. Diff audit ===
+$ git diff --stat e40720d5d622e8b0528b8c714cc5caee0b21cee3..HEAD
+ PROJECT-WORK.md                    | 48 ++++++++++++++++++++++++++++++++++++++
+ guidance/corpus-browser-roadmap.md | 33 +++++++++++++++++++++++++-
+ src/web/browser/catena/catena.js   |  6 ++---
+ tools/tests/test_catena_wave_1.py  | 36 ++++++++++++++++++++++------
+ 4 files changed, 112 insertions(+), 11 deletions(-)
+EXIT=0
+Production files changed: 1 (src/web/browser/catena/catena.js, three string
+literals). Test files changed: 1.
+
+=== B. Ownership boundary (byte identity against the base) ===
+$ git diff --name-only e40720d5d622e8b0528b8c714cc5caee0b21cee3..HEAD
+PROJECT-WORK.md
+guidance/corpus-browser-roadmap.md
+src/web/browser/catena/catena.js
+tools/tests/test_catena_wave_1.py
+EXIT=0
+UNCHANGED, byte for byte: src/web/data/ (all), src/web/browser/catena/catena.css,
+src/web/browser/catena/catena-model.js, src/web/browser/catena/index.html,
+src/web/browser/shared/, src/web/browser/liturgy/, release/, pdf/,
+tools/public-alpha, tools/tests/corpus_browser_gate.mjs, scripts/_catena.py,
+promised-deliverables.toml.
+
+=== C. Focused Catena suite ===
+$ python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+Ran 267 tests in 2.525s
+OK
+EXIT=0
+266 at the base + 1 new refusal-neutrality regression.
+Log: logs/focused-catena-suite.log
+
+=== D. Promised deliverables ===
+$ python3 tools/tpt check-promised-deliverables
+Promised-deliverable ledger valid: 29 tracked, 19 complete.
+EXIT=0
+Log: logs/misc-checks-head.log
+
+=== E. Catena model/corpus replay ===
+$ python3 scripts/_catena.py check
+catena valid: fragments=1351 books=1 canon=73
+EXIT=0
+Log: logs/misc-checks-head.log
+
+=== F. Budgets ===
+$ python3 -c "import sys; sys.path.insert(0,'tools/tests'); import test_catena_wave_1 as t; ..."
+   (gzip -9, mtime=0, using the repository's own PayloadTest helpers
+    held() / without_comments() / gz() from tools/tests/test_catena_wave_1.py)
+catena.css whole        7629 / 8000     (base 7629 — byte-identical)
+catena.css rules only   2676 / 2700     (base 2676 — byte-identical)
+catena.js  whole       12970 / 13000    (base 12981 — 11 bytes SMALLER)
+catena.js  code only    8734 / 8800     (base 8749 — 15 bytes SMALLER)
+EXIT=0
+$ python3 -m unittest discover -s tools/tests -p test_catena_wave_1.py -k PayloadTest
+Ran 4 tests ... OK
+EXIT=0
+No ceiling was raised. JavaScript did not grow; it shrank.
+Log: logs/budgets-head.log
+
+=== G. Release bindings ===
+$ python3 tools/tpt release-bindings status
+stale: 4 stale binding(s)
+EXIT=1
+Four at the base, four at the head, the same four files. catena.js's ACTUAL
+hash moves with this correction, but it was already stale at the base, so no
+new binding is made stale and nothing was re-signed. Intended state.
+Log: logs/misc-checks-head.log
+
+=== H. Full discovery ===
+$ python3 -m unittest discover -s tools/tests
+base e40720d5d:  Ran 1617 tests in 482.092s  FAILED (failures=14, errors=13, skipped=11)  EXIT=1
+head 3fb6685b2:  Ran 1618 tests in 483.470s  FAILED (failures=14, errors=13, skipped=11)  EXIT=1
+The one extra test at head is this lane's new regression. The FAIL/ERROR name
+sets are 27 entries on each side and compare IDENTICAL under diff(1).
+Logs: logs/all-tests-base.log, logs/all-tests-head.log
+
+=== I. Browser gate (real Chromium 151.0.7922.108) ===
+$ make public-site
+$ node tools/tests/corpus_browser_gate.mjs --json-out <out>.json
+base e40720d5d:  routes 19 states 9 pages 171 assertions 2290 — 1836 pass / 226 fail / 228 skip  EXIT=1
+head 3fb6685b2:  routes 19 states 9 pages 171 assertions 2290 — 1836 pass / 226 fail / 228 skip  EXIT=1
+$ python3 logs/compare-gate.py logs/browser-gate-base.json logs/browser-gate-head.json
+every key except generatedAt is deep-equal: True
+bytes compared: 480881
+failure entries: 226  deep-equal: True
+EXIT=0
+This is a literal object-for-object identity over the whole report, including
+all 399,178 bytes of assertions and all 226 failure objects — not a count match.
+generatedAt differs only because the runs happened at different times.
+Logs: logs/browser-gate-base.json, logs/browser-gate-head.json, logs/gate-comparison.log
+
+=== J. make -k check ===
+$ make -k check
+base e40720d5d:  MAKE_EXIT=2, failing targets: check-release-bindings, check-tool-registry, check-examples
+head 3fb6685b2:  MAKE_EXIT=2, failing targets: check-release-bindings, check-tool-registry, check-examples
+Identical target sets.
+Logs: logs/make-k-check-base.log, logs/make-k-check-head.log
+
+=== K. Screenshot capture ===
+$ node logs/capture-catena.mjs build/public-alpha/site <out> "before--"   (at the base)
+$ node logs/capture-catena.mjs build/public-alpha/site <out> "after--"    (at the head)
+$ node logs/capture-provenance.mjs build/public-alpha/site <out>          (at the head)
+53 PNGs produced. EXIT=0 for all three.
+See SCREENSHOT-METHOD.md and VISUAL-STATE-INDEX.md.
+
+=== Skipped ===
+- `make check-browser-harnesses` (TRIPTYCH_BROWSER_HARNESSES=1): not run. It
+  targets the liturgy day/propers reader harnesses, which this lane does not
+  touch, and four of them default to /usr/bin/google-chrome-stable, absent here.
+- Real assistive-technology validation: not run. No AT bus or screen reader was
+  available, and screenshots do not substitute. V4's AT-LIMITATION.md stands.
+- Print-to-PDF: not run. Print evidence is CSS print-media emulation only; the
+  repository has no deterministic print-to-PDF harness.
