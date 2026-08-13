@@ -693,11 +693,11 @@
     showingError = true;
     const refocus = focusKeeper();
     fillVoices(null, true);
-    reference.textContent = 'Address not recognised';
+    reference.textContent = 'Address not used';
     referenceBook.textContent = '';
     T.clear(tally);
     T.clear(reading);
-    const section = errorSection('This address names what the page does not have');
+    const section = errorSection('This address cannot be used as written');
     for (const one of bad) {
       const row = T.el('p', 'error-detail');
       row.appendChild(T.el('code', null, one.key + '=' + one.value));
@@ -714,7 +714,7 @@
     reading.appendChild(section);
     reading.setAttribute('aria-busy', 'false');
     refocus();
-    T.statusLine('The address could not be read; its invalid values are shown, unchanged.');
+    T.statusLine('The address is unchanged; the values not used are listed.');
   }
 
   /* ----------------------------------------------------------- assembly */

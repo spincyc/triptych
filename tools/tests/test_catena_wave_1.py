@@ -1609,12 +1609,12 @@ class ReplayTest(unittest.TestCase):
         self.assertEqual(page["hash"], written, "the URL keeps the reader's own text")
         self.assertTrue(page["errorSections"], "a visible error state is owed")
         error = page["errorSections"][0]
-        self.assertEqual(error["heading"], "This address names what the page does not have")
+        self.assertEqual(error["heading"], "This address cannot be used as written")
         self.assertEqual(error["state"], "error")
         self.assertTrue(any(named in one for one in error["details"]),
                         f"{named!r} not named in {error['details']}")
         self.assertTrue(error["recoveryHref"], "recovery must be offered")
-        self.assertEqual(page["referenceText"], "Address not recognised")
+        self.assertEqual(page["referenceText"], "Address not used")
         self.assertEqual(page["fragmentCount"], 0, "no content may render under the error")
         self.assertFalse([one for one in page["fetched"] if "/chapters/" in one],
                          "no chapter may be fetched for an invalid address")
@@ -2267,7 +2267,7 @@ class UnsupportedVoiceTest(ReplayTest):
         self.assertEqual(first["voice"], "translation:en")
         self.assertEqual(first["fragmentCount"], 14)
         broken = self.snapshot("unsupported-voice-change", "unsupported")
-        self.assertEqual(broken["referenceText"], "Address not recognised")
+        self.assertEqual(broken["referenceText"], "Address not used")
         self.assertEqual(broken["fragmentCount"], 0)
         back = self.snapshot("unsupported-voice-change", "supported-again")
         self.assertEqual(back["voice"], "translation:en")
@@ -2450,7 +2450,7 @@ class HistoryIndependenceTest(ReplayTest):
         self.assertEqual(over["voiceLabels"], ["Everything held"])
         self.assertEqual(over["stepButtons"], [True, False],
                          "the step buttons must reflect the reseeded controls")
-        self.assertEqual(over["referenceText"], "Address not recognised")
+        self.assertEqual(over["referenceText"], "Address not used")
 
 
 class RecoveryFocusTest(ReplayTest):
@@ -2473,7 +2473,7 @@ class RecoveryFocusTest(ReplayTest):
     def test_recovery_announces_the_new_page_exactly_once(self):
         spoken = self.snapshot("keyboard-recovery", "recovered")["statusWrites"]
         self.assertEqual(len(spoken), 2, spoken)
-        self.assertIn("The address could not be read", spoken[0])
+        self.assertIn("The address is unchanged", spoken[0])
         self.assertTrue(spoken[1].startswith("Genesis 1, "), spoken[1])
 
     def test_the_recovered_address_is_the_links_own_text(self):
@@ -2494,7 +2494,7 @@ class RecoveryFocusTest(ReplayTest):
     def test_an_invalid_arrival_speaks_exactly_once(self):
         self.assertEqual(
             self.page("invalid-book")["statusWrites"],
-            ["The address could not be read; its invalid values are shown, unchanged."])
+            ["The address is unchanged; the values not used are listed."])
 
 
 class AsyncTransactionTest(ReplayTest):
@@ -3647,6 +3647,28 @@ class TypedStateTest(ReplayTest):
         self.assertIn("error", self.page("integrity-404")["dataStates"])
         self.assertIn("error", self.page("invalid-book")["dataStates"])
 
+    def test_the_shared_refusal_umbrella_stays_neutral(self):
+        # V3 review, "Fail-closed presentation": one styled error surface may
+        # be reused, but its SHARED copy — reference line, heading, status
+        # write — must not diagnose. "address could not be read" was untrue of
+        # a value that parsed cleanly and is merely unsupported, and "names
+        # what the page does not have" asserted a holdings negative for an
+        # address refused on SHAPE. The umbrella states the outcome; only the
+        # per-value detail states the reason. A regression re-diagnoses here.
+        for name in ("unsupported-voice-greek", "invalid-book"):
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                error = page["errorSections"][0]
+                umbrella = " ".join(
+                    [error["heading"], page["referenceText"]] + page["statusWrites"])
+                for claim in ("could not be read", "not recognised", "invalid",
+                              "does not have", "unreadable"):
+                    self.assertNotIn(claim, umbrella,
+                                     f"{claim!r} diagnoses in shared copy: {umbrella!r}")
+                # The reason survives, typed, on the value it belongs to.
+                self.assertTrue(any("is not a" in one for one in error["details"]),
+                                error["details"])
+
     def test_each_state_keeps_a_class_of_its_own(self):
         seen: set[str] = set()
         for name in self.pages:
@@ -3816,7 +3838,7 @@ class ExactVoiceKeyTest(ReplayTest):
     def test_the_refusal_does_not_strand_the_reader_s_supported_voice(self):
         # supported -> unsupported -> supported, over a live document.
         greek = self.snapshot("unsupported-greek-change", "greek")
-        self.assertEqual(greek["referenceText"], "Address not recognised")
+        self.assertEqual(greek["referenceText"], "Address not used")
         self.assertEqual(greek["fragmentCount"], 0)
         self.assertEqual(greek["busy"], "false")
         self.assertNotIn("Greek translation — none here", greek["voiceLabels"])
