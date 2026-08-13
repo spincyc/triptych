@@ -663,6 +663,54 @@ integrable, merged, re-signed, or deployed, and the separately owned
 generator/data, release, common-gate, B0/shared-shell and real-AT
 prerequisites remain open.
 
+### E1 Catena route-owned correction lane, V4.1
+
+V4 completed at `e40720d5d622e8b0528b8c714cc5caee0b21cee3` and explicitly
+disclosed two requirements of the V3 review it had **not** met: the refusal copy
+was not made neutral, and the required screenshots were not produced. This lane
+answers exactly those two and nothing else.
+
+**The refusal copy.** The review's "Fail-closed presentation" finding accepted
+the mechanism and rejected the copy, because "address could not be read" is
+imprecise for a value that parsed cleanly and is merely unsupported. Three
+shared strings in `renderInvalid` changed: the reference line from `Address not
+recognised` to `Address not used`, the heading from `This address names what the
+page does not have` to `This address cannot be used as written`, and the status
+write from `The address could not be read; its invalid values are shown,
+unchanged.` to `The address is unchanged; the values not used are listed.` The
+old heading asserted a holdings negative over addresses refused on grammar, and
+`invalid values` located the fault in the reader. The typed per-value reason is
+untouched, so unsupported and malformed refusals stay distinguishable. Seven
+wording pins moved and one narrow regression was added, which fails on the
+previous copy. The wider non-neutral phrasing elsewhere on the page was
+deliberately left alone and is raised as a scope question for the reviewer.
+
+**The screenshots.** V4's stated reason — no display was available — was
+incorrect: headless Chromium needs no display server, and the repository already
+drives it over the DevTools Protocol. 53 real captures were produced from
+`make public-site` artifacts at both the parent and this head, covering nine
+route states at 1440x900, 393x852 and 320x852, plus forced-colors and print
+emulation, with before/after pairs for the two states whose copy changed. They
+prove rendering, not announcement; V4's real-AT limitation stands unsuperseded.
+
+Measured at the V4.1 head: focused suite 267 green, the 266 inherited plus the
+new regression; full discovery 1,618 tests against the base's 1,617, the extra
+test being this lane's, with the 27-entry failure/error name set **identical**
+under `diff`; browser gate 2,290 assertions whose whole report is deep-equal to
+the base across 480,881 bytes, `generatedAt` excepted; `make -k check` exit 2
+with the same three failing targets; `catena.css` byte-identical at 7,629/8,000
+and 2,676/2,700; `catena.js` **12,970/13,000** whole and **8,734/8,800**
+stripped, both *smaller* than V4 because the replacement copy is shorter. No
+ceiling raised. Four stale release bindings, unchanged in count, none re-signed.
+
+The `src/web/data/` contradiction is **preserved untouched** for independent
+adjudication: a day-reader guard forbids every `src/web/data/` change while the
+V3 review authorised exactly one. This lane wrote nothing under `src/web/data/`,
+and did not weaken, delete, whitelist or expect-mark the test.
+
+E1 remains **awaiting fresh independent review**. Nothing here is accepted,
+integrable, merged, re-signed, or deployed.
+
 ## Promised work
 
 ### Corpus browser foundation design
