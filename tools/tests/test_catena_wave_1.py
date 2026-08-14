@@ -141,8 +141,10 @@ NODE = shutil.which("node")
 # thirty bytes of margin, and the record boundary the review requires cannot
 # be paid for out of thirty bytes. `catena-model.js` carries no ceiling, so
 # the typed questions, the index-derived addresses, the chapter lines and the
-# absence findings are all asked there and the page only calls them. The page
-# is SMALLER for it: 8,734 to 8,356 bytes of code.
+# absence findings are all asked there and the page only calls them, which
+# leaves the page SMALLER than it was before the boundary existed. The exact
+# measurement belongs in the durable records, where it is re-taken, not beside
+# a digest where it silently goes stale.
 MODEL_SHA256 = "f1ed13795d3b3774bbfc4811282de304eb2c97e746bcd3c9db47f0536bf36b5e"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
