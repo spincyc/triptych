@@ -823,6 +823,114 @@ integrable, merged, re-signed, or deployed, and every separately owned
 release, common-gate, B0/shared-shell, real-device/AT, protected Liturgy and
 PDF prerequisite stays open with its owner.
 
+### E1 Catena route-owned correction lane, V6
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v6-2026-08-14 -->
+
+The disposition answered is **CHANGES REQUIRED** at exact candidate
+`19982ab433dd25704ed60b1ac6ddb678bc3a98f9`, recorded by the independent review
+`fa5b2f601565508acee2b1b236b0c69138af07a3` on branch
+`review/catena-wave-1-e1-corrections-v5-independent`, whose evidence is
+`fe71d03e51bc3a89f01b9262cd3a4d9077bb0cef` and whose package digest
+`18500400ce617365ef8322e41f011f44dc5a0a88dc39fbbcb5deb1abd78b75ea` this lane
+re-verified byte-exact before starting. That review is a sibling of this line
+at the reviewed parent and is **not merged into it**: what follows records
+implementation-lane facts only.
+
+The review found one thing said fourteen ways, and the thing is the difference
+between a SHAPE and a MEMBERSHIP. V5 validated that a value was an object and
+never asked whether the object was a member of the collection it stood in, nor
+whether a string was an identity this corpus had issued. So `{}` counted
+itself as a work this project holds and cannot name, and refused a boundary in
+Scripture's own numbering; `sources[["1"]]` resolved to `sources["1"]`, and a
+one-member list took a real edition's author, rights and language for a
+fragment that named no edition at all; a fragment id that was sound text
+composed `../../../etc/passwd.json` and the page requested it.
+
+Where truth was unavailable, V5 substituted rather than omitted. An unreadable
+language became `en`, which tells a screen reader to read Latin commentary in
+an English voice on the authority of a fallback; an unreadable testament
+became "New Testament" on the authority of an `else`; and a Bible record whose
+language nobody could read reached the edition control as
+`Douay-Rheims ([object Object])`. Each of those is a fact about the corpus
+manufactured out of a record nobody could read, and none of them is a smaller
+defect than the coercion it replaced. V6 omits the unsupported claim and
+preserves every valid fact beside it.
+
+Finding selection was first-match, so the same two records listed the other
+way round made a different claim about one work's rights. Findings are read as
+a SET now: one recognized finding is the record speaking, two different ones
+are a record contradicting itself and the page declines rather than choosing
+the harsher of two claims about somebody's property. A stray `partial`
+licenses nothing; only `partial-public-domain` does, in its own name.
+`^[0-9]+$` admitted `"01"` beside `"1"` and `Number()` folded them together,
+so verse 1 rendered twice, each row claiming to be the verse the edition
+numbers 1. JSON `null` is a valid document and not an index, and read raw it
+threw past the bootstrap's request catch and left `Loading…` standing for
+ever; the parent still does this, reproducibly, and the unfiltered log is in
+the package. One defect the review did not name was found by writing its
+required regression: judged against an empty canon the page answered
+"Gen is not a book of this canon", which is a claim about the canon drawn from
+a parse failure.
+
+The review's finding about the PROOFS was sharper than its finding about the
+code, and it is why the test delta is larger than the correction. Three V5
+oracles could not fail on the defect they were written for. The word-tally
+oracle counted a deduplicated set of class names, so one chip and seven were
+the same value and reverting the gate to `Number(x) > 0` left it green. The
+verse oracle swept the commentary while its fixture corrupted the bible
+chapter. The "nothing stale" case released its payload before navigating, so
+no late work existed to reject. Eight oracles that expected the defects are
+corrected in place rather than deleted, each carrying the reason. The harness
+now projects the rendered verses and their numbers, the uncounted tally chips,
+the edition options and their route values, the testament line, the absence
+rows' own author and work, the visible failure paragraph, and a count of
+parked requests actually released — which turns "nothing stale survived" from
+an argument into a measurement.
+
+Two regressions exist because a delegated lane reported its own assertions
+vacuous rather than passing: opening only the safe fragment proved nothing
+about six refused ids nothing had asked for. Both now ask.
+
+The numbers are recorded as measured, each against the command and the head
+that produced it. Focused Catena suite `423` at this head, exit 0, against
+`306` at the parent. Replaying the V6 test file against the parent with NO
+filter kills the harness on the JSON-null bootstrap — `TypeError: Cannot read
+properties of null (reading 'canon')` out of `catena.js:981` — and every
+`ReplayTest` class errors in `setUpClass`; that log is preserved unfiltered,
+and the three-scenario filter needed to get a per-class reading is preserved
+as an exact patch beside it. Filtered, the parent runs `371` and fails `71`
+with `14` errors across all twenty-four V6 classes. Full discovery
+`1,774` at this head against `1,657` at the parent — `14` failures, `13`
+errors and `11` skips at BOTH ends, with an identical 27-entry FAIL/ERROR
+identity set. The head runs 117 more tests, so no literal count identity is
+claimed; the two name files are byte-identical, which is the result being
+reported rather than evidence for it, and both source logs and the extraction
+script ship so it can be re-derived. Fresh browser gates at parent and head both report `2,290`
+assertions — `1,836` pass, `226` fail, `228` skip — and the two reports are
+**deep-equal excluding four volatile fields**, `generatedAt`, `root`,
+`durationMs` and `browser`, which is stated in four because the V4.1 record
+named one. `make -k check` exits `2` at the same three inherited targets as the parent —
+`check-release-bindings`, `check-tool-registry` and `check-examples`. Promise ledger valid. Catena check
+valid at `1,351` fragments, 1 book, 73 canon books. `catena.css` and
+`index.html` are byte-identical to the parent and nothing under
+`src/web/data/` changed at all.
+
+Budgets hold unraised: `catena.css` 7,629/8,000 whole and 2,676/2,700
+stripped, both unchanged; `catena.js` 12,993/13,000 whole and 8,202/8,800
+stripped, the composition 161 bytes lighter than V5 left it. The boundary
+moved into `catena-model.js` again, which carries no ceiling, and the
+relocation is disclosed rather than presented as unchanged load.
+
+Four stale release bindings remain fail-closed and none was re-signed. The
+`src/web/data/` test contradiction is preserved untouched for its owner, and
+the two Day-reader guard failures it causes are inherited identically at the
+parent. E1 remains **awaiting fresh independent review**. Nothing here is
+accepted, integrable, merged, re-signed, or deployed, and every separately
+owned release, common-gate, B0/shared-shell, real-device/AT, protected Liturgy
+and PDF prerequisite stays open with its owner. This lane does not review its
+own work.
+
 ## Promised work
 
 ### Corpus browser foundation design
