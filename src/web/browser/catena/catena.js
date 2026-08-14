@@ -196,9 +196,10 @@
     const when = say(fragment.date);
     if (when) head.appendChild(T.el('span', 'fragment-date', when));
     // The language, and WHOSE it is; an unestablished voice says only it.
-    // `tongue`, not `sound`: "not a language code" is sound text too.
-    if (tongue(fragment.language)) {
-      const name = M.LANGUAGE_NAMES[fragment.language] || T.languageName(fragment.language);
+    // `tongue`, not `sound`: the gated value is what is named.
+    const code = tongue(fragment.language);
+    if (code) {
+      const name = M.LANGUAGE_NAMES[code] || T.languageName(code);
       head.appendChild(T.el('span', 'fragment-language',
         fragment.voice === M.ORIGINAL
           ? name + ' — the author’s own'
@@ -222,7 +223,7 @@
     // Prose arrives on first open; a failure reports against this fragment.
     const text = T.el('p', 'fragment-text', 'Loading…');
     // THE SINK THE V4.1 REVIEW REPLAYED, on an otherwise complete page.
-    text.lang = tongue(fragment.language) || 'en';
+    text.lang = code || 'en';
     details.appendChild(text);
     const apparatus = T.el('div', 'fragment-apparatus');
     details.appendChild(apparatus);
