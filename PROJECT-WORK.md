@@ -823,6 +823,122 @@ integrable, merged, re-signed, or deployed, and every separately owned
 release, common-gate, B0/shared-shell, real-device/AT, protected Liturgy and
 PDF prerequisite stays open with its owner.
 
+### E1 Catena route-owned correction lane, V5 independent review
+
+The independent review disposition is **CHANGES REQUIRED** at exact candidate
+`19982ab433dd25704ed60b1ac6ddb678bc3a98f9`, whose reviewed parent is
+`f93757854b54c19e50bdcb97ca0fed9b48d22bb7`. The review answered is
+`7f69575b982926e827974f2ed236b1c8bfd8aaad`. Evidence branch
+`evidence/catena-e1-corrections-v5-handoff` resolves to
+`fe71d03e51bc3a89f01b9262cd3a4d9077bb0cef`; its immutable package is
+`build/agent-handoffs/20260814T123524Z-catena-e1-corrections-v5`, and the ZIP
+SHA-256 independently verifies as
+`18500400ce617365ef8322e41f011f44dc5a0a88dc39fbbcb5deb1abd78b75ea`.
+Current main is still `9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`, is the merge base, and is an
+ancestor of the candidate. This review authorizes no merge.
+
+The exact V5 production diff is only
+`src/web/browser/catena/catena-model.js` and
+`src/web/browser/catena/catena.js`. The range also changes
+`tools/tests/test_catena_wave_1.py` and the four durable records. There is no
+V5 change to Catena CSS or HTML, `src/web/data/`, release bindings, the common
+gate, shared shell, protected Liturgy or PDFs. The final candidate commit is
+records-only. The candidate has four commits after the reviewed parent; only
+the first two touch production, the third changes a test comment only, and
+the fourth changes records only. The prior review is a sibling of the
+candidate line at the reviewed parent, which is the expected independent
+review topology rather than missing candidate ancestry.
+
+The following candidate-owned requirements remain blocking.
+
+1. `records()` validates only non-null object shape. Semantically malformed
+   lead and blocked records still render blank rows and enter tallies; the new
+   test explicitly expects three where only two members are readable. An
+   empty refusal record still manufactures `Boundary not established`, and
+   malformed same-key held, refusal and absence records can mask later valid
+   siblings. The contract requires member-local semantic validation before
+   presentation, counting or state derivation. The smallest correction is a
+   typed predicate for each record family, selection across all valid
+   siblings rather than the first object-shaped match, and route regressions
+   containing malformed objects as well as scalars and nulls.
+2. The boundary does not cover the Bible manifest or every identity join.
+   `fillBibleSelect()` still receives raw Bible records, so the committed
+   malformed language fixture visibly produces
+   `Douay-Rheims ([object Object])`; passage and fragment rendering also
+   guesses `lang="en"` after rejecting the supplied metadata. Arbitrary
+   sound IDs and paths can still reach fetches, routes and links, a malformed
+   `source` can be property-key coerced into a real source, and malformed
+   testament metadata becomes the visible claim `New Testament`. The
+   correction must normalize Bible, canon, held, fragment and source
+   identities through safe contract grammars, omit an unsupported language
+   claim rather than guess it, and inspect the selector, route, link and
+   passage sinks in runtime tests.
+3. Typed absence remains order-dependent. An unreadable same-language finding
+   before `none-published` erases the valid finding, while an unknown or
+   `not-surveyed` row carrying a stray `partial` string is presented as
+   `Partly public domain`. Selection must prefer a recognized typed finding,
+   and partial-public-domain prose must require the exact
+   `partial-public-domain` class. Regressions must reverse mixed-record order
+   and pin both identity and the absence of unsupported rights claims.
+4. Bootstrap and route completion are not terminal under all admitted JSON.
+   A successful fetch whose index is JSON `null` throws after the request
+   catch and leaves the loading page stranded. `startFailed()` does not
+   invalidate a pending render, so older work can overwrite a later terminal
+   failure. The route regressions never assert focus, incompletely inspect
+   replace/status/tally/announcement state, and their “nothing stale” case
+   releases the malformed payload before navigating, so no late work exists.
+   The whole post-fetch assembly needs the same terminal funnel, render-token
+   invalidation and focus completion as failed requests, followed by an
+   actually deferred stale completion and exact whole-state assertions.
+5. Numeric filtering is sound in the main helper, but the committed proof is
+   not. The word-tally oracle counts a deduplicated class-name set, so one and
+   many chips look identical; the verse-coercion oracle inspects commentary,
+   not rendered Scripture; and verse keys `"1"` and `"01"` can render two
+   verse-1 rows. The correction must inspect exact rendered tally and
+   Scripture values, require canonical verse keys, and cover zero, negative,
+   fractional, numeric-string and reversed endpoints while retaining valid
+   siblings.
+6. The package is cryptographically integral and contains no detected private
+   host token, but its validation record is not exact enough to accept. Some
+   checks claimed to run at `d0218bae2` necessarily saw the later 30-entry
+   ledger; the unfiltered parent crash and stated filter are absent; the
+   focused log is not reproducible from its stated command; five claimed
+   visibly different screenshot pairs are byte-identical and several after
+   images are described with before-state failures; the probe records no
+   focus despite the limitation record claiming it does; and the sealer's
+   timezone matching and stale-manifest failure path are incomplete. A fresh
+   immutable evidence-only package must use truthful checkout provenance,
+   exact commands and exits, self-label synthetic fixtures, omit or accurately
+   describe non-evidentiary images, preserve both parent runs, and regress the
+   sealer before it can support acceptance.
+
+The review preserves the sound portions of the line: exact supported voice
+keys remain `original`, `translation:en` and `translation:la`, while Greek and
+unknown translations fail closed; the neutral refusal umbrella is unchanged;
+the original gzip ceilings remain unraised; no candidate data or release
+binding was changed; and the accepted real-corpus V4.1 visual baseline is not
+reopened by this code-only delta. Formal budget measurements remain
+`catena.css` 7,629/8,000 whole and 2,676/2,700 stripped, and `catena.js`
+12,990/13,000 whole and 8,363/8,800 stripped. Moving the boundary into the
+unbudgeted model adds 5,359 whole gzip bytes there and 5,379 bytes to the
+combined page-plus-model payload; that relocation is disclosed and does not
+raise a formal ceiling, but it is not evidence of unchanged practical load.
+
+Fresh independent checks verify the exact candidate, package digest, focused
+306-test Catena suite, 30-entry promise ledger and 1,351-fragment Catena
+model. The browser gate and repository-wide discovery/check results are
+recorded with their inherited failures in the roadmap review subsection; no
+failing repository-wide command is rounded into green. Four stale release
+bindings remain fail-closed and unrepaired.
+
+The one exact next action is a bounded V6 correction from `19982ab4`: finish
+the semantic member/root boundary and terminal transaction described above,
+replace the lossy oracles with whole-state runtime assertions, and issue one
+truthfully labeled immutable successor package for fresh independent review.
+Do not enter the separately owned data, release, gate, shell, device/AT,
+Liturgy or PDF lanes. E1 remains off main; nothing is accepted, integrable,
+merged, re-signed, deployed or cut over.
+
 ## Promised work
 
 ### Corpus browser foundation design
