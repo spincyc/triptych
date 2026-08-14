@@ -1,0 +1,1991 @@
+diff --git a/PROJECT-WORK.md b/PROJECT-WORK.md
+index b3af35ad7..f55e219d9 100644
+--- a/PROJECT-WORK.md
++++ b/PROJECT-WORK.md
+@@ -711,6 +711,118 @@ and did not weaken, delete, whitelist or expect-mark the test.
+ E1 remains **awaiting fresh independent review**. Nothing here is accepted,
+ integrable, merged, re-signed, or deployed.
+ 
++### E1 Catena route-owned correction lane, V5
++
++<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v5-2026-08-14 -->
++
++The fresh independent review of V4.1 —
++`7f69575b982926e827974f2ed236b1c8bfd8aaad`, on branch
++`review/catena-wave-1-e1-corrections-v4-1-independent` — recorded **CHANGES
++REQUIRED** at exact candidate `f93757854b54c19e50bdcb97ca0fed9b48d22bb7`.
++That disposition is this lane's starting fact, and this lane does not review
++its own work: it records no acceptance of anything.
++
++The review passed, and this lane did not reopen, the exact voice-key
++projection (`original`, `translation:en`, `translation:la`, with
++`translation:grc` failing closed), the neutral refusal umbrella, the recorded
++budgets, the 53-image visual matrix, and the sealed V4.1 package's integrity.
++It found five blocking classes, all of one kind — **malformed or unsupported
++structured metadata becoming visible semantics through coercion or an
++unchecked collection shape**:
++
++1. raw language metadata rendering `lang="[object Object]"`;
++2. malformed collection members creating false counts and refusals, or
++   erasing valid siblings;
++3. absence records discarding the generator's typed `finding` and
++   manufacturing unsupported negative claims;
++4. numeric, verse, path and bootstrap metadata coercing into presentation or
++   leaving incomplete terminal state;
++5. committed malformed-data regressions that do not prove partial-arrival or
++   action route completion.
++
++V5 answers all five behind **one record boundary**, and answers them in
++`catena-model.js` rather than in the page. That placement is the whole shape
++of the correction and it is deliberate: `catena.js` had thirty gzipped bytes
++of margin, and a boundary bought out of thirty bytes would have been a list of
++one-off guards. The model carries no ceiling, so it now owns what a *number*
++of this corpus is (`whole`: a positive safe integer, refusing `true`, `"5"`,
++`[5]`, `0` and a fraction alike), what a *language code* is (`tongue`, a shape
++check, because `lang` is machine-read; and `voiceLanguage`, narrower still,
++because a voice key becomes a URL this page must accept back from itself),
++what the *members* of a collection are (`records`), and then the derivations
++the page used to perform by concatenation over raw members: the canon,
++chapter and paragraph addresses, the chapter's verse lines, and the absence
++rows and their summary. The page only calls them, and is **smaller** for it:
++8,734 → 8,363 stripped bytes.
++
++Three findings are worth naming because they were not in the review, and were
++found by writing its required regressions.
++
++- **The harness could not see the sink the review proved.** The replay shim
++  stored `element.lang` as a plain JavaScript property; the HTML DOM reflects
++  it into the content attribute, stringifying whatever it is given. That is
++  why real Chromium showed `lang="[object Object]"` while every committed test
++  passed. The shim now reflects `lang` exactly as it already reflected `id`,
++  and `inspect()` projects every language attribute under the reading region
++  for every scenario — so the cross-scenario coercion sweep covers DOM
++  attributes, not only text.
++- **Sound text is not a language.** `sound()` passed the string `"not a
++  language code"`, and the shared namer printed it back, uppercased, as a
++  language. The visible language chip and the voice key are now gated on
++  shape, not on non-emptiness.
++- **A silent return is not a terminal state.** Beneath the throw the review
++  named, `render()` had a guard that returned quietly when the controls could
++  not name a book — which is exactly what a malformed canon produces. Reached
++  that way it left `Loading…` standing with nothing said: the same dead end as
++  the throw, invisible for the same reason. Both now reach `startFailed`.
++
++On absence semantics the correction is narrow by design. The generator closes
++`finding` at four values in `scripts/_catena.py` and says a different thing
++with each — `none-published` about the world, `in-copyright` about the law,
++`partial-public-domain` an offer not taken, `not-surveyed` an admission that
++nobody looked. The page read none of them, classifying by whether a `partial`
++string happened to be attached, so `not-surveyed` was spoken as *no English
++this project may publish*: a closed claim about publishing rights,
++manufactured out of an admission of ignorance. V5 classifies from the finding,
++adds no fifth finding, and gives a finding it cannot read a clause that claims
++nothing rather than the nearest claim it can make.
++
++The adversarial fixture the review named is rebuilt rather than re-asserted.
++Not one of its absence rows carried a `finding` at all, which is why it could
++manufacture four closed negatives from four malformed neighbours; its rows now
++put a real typed finding beside malformed siblings and malformed findings
++beside sound ones, so the two questions are separable. Nothing was weakened to
++pass: the one source-text assertion that changed —
++`(index.voices || []).includes` to `list(index.voices).includes` — is the
++stricter form of the same requirement, because `|| []` let a string `voices`
++answer `.includes` by substring.
++
++Fresh results at the V5 head are recorded in the roadmap subsection and in the
++new immutable handoff. The focused Catena suite is **306 tests green**, up
++from 267, the 39 new ones covering malformed language under Everything held,
++mixed valid/malformed/scalar/null collection members, the five typed-absence
++cases, numeric, verse, path and bootstrap metadata, and seven route-completion
++scenarios that begin canonical — because every committed malformed scenario
++began malformed, and so proved nothing about a page that had already
++established a route, a history and a rendered chapter. `catena.css`,
++`index.html` and every path under `src/web/data/` are byte-identical.
++`catena.js` and `catena-model.js` are the only production files changed. No
++ceiling is raised and no release binding is re-signed; the four stale Catena
++bindings remain stale, unsigned and correctly fail-closed.
++
++The `src/web/data/` contradiction is again **preserved untouched**. V5 wrote
++nothing under `src/web/data/` and did not weaken, delete, whitelist or
++expect-mark the day-reader guard. It remains a separate owner's adjudication.
++
++The new immutable handoff is `build/agent-handoffs/20260814T123524Z-catena-e1-corrections-v5`,
++sealed at the exact V5 head. It does not mutate the V4.1 package, whose digest
++was re-verified byte-exact first.
++
++E1 remains **awaiting fresh independent review**. Nothing here is accepted,
++integrable, merged, re-signed, or deployed, and every separately owned
++release, common-gate, B0/shared-shell, real-device/AT, protected Liturgy and
++PDF prerequisite stays open with its owner.
++
+ ## Promised work
+ 
+ ### Corpus browser foundation design
+diff --git a/guidance/corpus-browser-master-plan.md b/guidance/corpus-browser-master-plan.md
+index 2dfac3961..08243d63f 100644
+--- a/guidance/corpus-browser-master-plan.md
++++ b/guidance/corpus-browser-master-plan.md
+@@ -299,7 +299,7 @@ them; it cannot close them.
+ | B0/B1 shared foundation and neutral browser gates | Authorized implementation work | One global owner; ingest the shell correction only after independent acceptance; do not enter protected Liturgy or invent surface composition. |
+ | C2 Home/Publications implementation | Eligible after clean shared-shell ownership | Implement the accepted C0/C1 contracts; do not duplicate global owners across branches. |
+ | D1 Reader implementation | Eligible after clean shared-shell ownership | Rendering and presentation only; preserve web-edition source ownership and canonical PDFs. |
+-| E1 Catena implementation | **Changes required** at pass-2 head `17f031b37` (independent review `4c30d86f7`, 2026-08-12); third correction candidate `impl/catena-wave-1-e1-corrections-v3` awaiting fresh independent review | The bounded pass-2 correction preserves E0 and the four-path ownership limit while answering the route-owned URL, asynchronous-state, blocked/empty, lead, licence, print, focus, and evidence defects; the generator/data, release, common-gate, and B0/shared-shell prerequisites remain separately owned; E1 stays off main, and only a fresh exact-head independent review may follow. |
++| E1 Catena implementation | **Changes required** at V4.1 head `f93757854b54c19e50bdcb97ca0fed9b48d22bb7` (independent review `7f69575b982926e827974f2ed236b1c8bfd8aaad`, 2026-08-13); V5 correction candidate `impl/catena-wave-1-e1-corrections-v5` awaiting fresh independent review | The exact voice-key projection, the neutral refusal umbrella, route truth for supported and unsupported voices, the budgets, package integrity and the visual matrix pass and are not reopened. Typed presentation did not: raw language metadata, malformed collection members, absence findings, number-like values, verse and path data and malformed bootstrap records could still coerce, create false counts or closed claims, lose valid siblings, fetch an address composed by coercion, or leave the page unterminated. V5 corrects that boundary once, in the unbudgeted model, and adds route-completion regressions that begin canonical. The authorized Catena data seam is not a general ownership transfer; the historical Day-reader guard, release bindings, common gate, B0/shared shell, real device/AT evidence, protected Liturgy and PDFs remain separately owned. E1 stays off main; no merge, re-sign, deploy or cutover is authorized. |
+ | F1 Sources implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by the disposition. |
+ | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires clean foundation plumbing and explicit authority. |
+ | G0/G1 History; H0/H1 Law; I0/I1 Scripture | Planned | Follow their owning guidance and accepted foundation. |
+diff --git a/guidance/corpus-browser-roadmap.md b/guidance/corpus-browser-roadmap.md
+index da080f48e..7bf9368ab 100644
+--- a/guidance/corpus-browser-roadmap.md
++++ b/guidance/corpus-browser-roadmap.md
+@@ -525,13 +525,95 @@ in count, none re-signed), the common gate, B0/shared shell, real-device-or-AT
+ evidence, protected Liturgy and PDFs. E1 stays off main and is **awaiting fresh
+ independent review**.
+ 
++### E1 Catena correction V5 — 2026-08-14
++
++Answers the fresh independent review `7f69575b982926e827974f2ed236b1c8bfd8aaad`
++(**CHANGES REQUIRED** at exact candidate
++`f93757854b54c19e50bdcb97ca0fed9b48d22bb7`). This lane records no acceptance
++of its own work.
++
++The review's five blocking classes are one class: malformed or unsupported
++structured metadata becoming visible semantics, counts, refusals, routing
++facts, bootstrap state or DOM attributes through coercion or an unchecked
++collection shape. V5 answers them behind **one record boundary**, placed in
++`catena-model.js` because `catena.js` had thirty gzipped bytes of margin and a
++boundary bought out of thirty bytes would have been a list of one-off guards.
++
++| Blocking class | Correction | Evidence at the head |
++| --- | --- | --- |
++| 1. Raw language metadata | `tongue()` gates every value reaching a DOM `lang`, a visible language label or prose — a *shape* check, not a non-emptiness check, because `lang` is machine-read. `voiceLanguage()`, narrower still, gates the voice key, because a key becomes a URL the page must accept back from itself. | Real Chromium at the base rendered `fragment-text=[object Object]`, `=42`, `=true`, `=   ` and `=not a language code`, and printed `NOT A LANGUAGE CODE — the author's own` as a language chip. At the head every attribute is a subtag and the false chip is gone. |
++| 2. Malformed collection members | `records()` validates each member of every collection that feeds presentation or state: fragments, leads, blocked, refusals, absence lists, the canon and the held index. | Real Chromium at the base **replaced the whole page with `Cannot read properties of null (reading 'source')`** — every valid sibling lost, tally empty, nothing held. At the head: three fragments, both valid leads, both valid blocked rows, and no refusal manufactured from three malformed members. |
++| 3. Absence findings | Rows are classified from the generator's typed `finding`, closed at four values in `scripts/_catena.py`. `not-surveyed` and unrecognised findings enter no publishing negative and no closed-claim count; a valid finding survives a malformed sibling and a malformed member of its own list. No fifth finding is invented. | Base: `4 works standing here have no English this project may publish`. Head: `2 works … ; 1 has only a partly public domain English, not yet taken; 1 has not been surveyed for English; 1 has a finding this page cannot read`. |
++| 4. Numeric, verse, path, bootstrap | `whole()` is a positive safe integer, refusing `true`, `"5"`, `[5]`, `0`, negatives and fractions; extents gain an ordering check; verse keys and values and paragraph marks are typed in `chapterLines()`; addresses are composed in `chapterPath()` and `paragraphPath()` from sound text alone, and `chapterPath()` answers `null` — a broken record — where it cannot prove either a path or an emptiness. Malformed bootstrap enters the terminal funnel. | Base word chips `["1,200 words", "1,200 words", "1 words", "12.5 words"]`; head `["1,200 words"]`. Base **requested `browse/[object%20Object]001.json`**; the head makes no such request. Base bootstrap left `Loading…` standing with no `aria-busy` and nothing spoken; the head settles to `Unavailable`, `aria-busy="false"`, and says `The catena index could not be read.` |
++| 5. Route completion | Seven scenarios that **begin canonical**, because every committed malformed scenario began malformed and so proved nothing about a page that had already established a route, a history and a rendered chapter. | Exact `replace`/push, final hash, status journal, tally, `aria-busy` and focus pinned for a partial arrival, for a malformed later member reached by both an action and an address, for a malformed action payload, and for a valid action after a malformed one. |
++
++Three findings were not in the review and were found by writing its required
++regressions. The replay harness stored `element.lang` as a plain JavaScript
++property where the HTML DOM reflects it into the content attribute — which is
++why real Chromium showed the defect while every committed test passed; the
++shim now reflects it as it already reflected `id`, and `inspect()` projects
++every language attribute for every scenario. `sound()` passed the string
++`"not a language code"`, which the shared namer printed back as a language.
++And beneath the throw the review named, `render()` had a guard that returned
++*silently* when the controls could not name a book — the state a malformed
++canon produces — leaving `Loading…` standing; both dead ends now reach
++`startFailed`.
++
++Nothing was weakened to pass. The one source-text assertion that changed,
++`(index.voices || []).includes` to `list(index.voices).includes`, is the
++stricter form of the same requirement: `|| []` let a string `voices` answer
++`.includes` by substring. The adversarial absence fixture the review named is
++rebuilt rather than re-asserted — not one of its rows carried a `finding` at
++all, which is why it could manufacture four closed negatives from four
++malformed neighbours.
++
++Fresh results: focused Catena suite **306 tests green** (267 before; the 39 new
++ones are the regressions above). Browser gate **2,290 assertions, 1,836 pass /
++226 fail / 228 skip**, the whole report deep-equal to the base with the
++volatile fields excluded — the comparison ignores `generatedAt`, `root`,
++`durationMs` and `browser`, which is wider than the V4.1 record's wording.
++Promise ledger valid at **30 tracked / 19 complete**. `catena check` valid at
++1,351 fragments. Budgets: `catena.css` byte-identical at 7,629/8,000 and
++2,676/2,700; `catena.js` **12,990/13,000** whole and **8,363/8,800** stripped —
++the stripped figure 371 bytes *smaller* than V4.1's 8,734 because the
++derivations moved to the unbudgeted model, the whole figure 20 bytes larger
++because the boundary is explained where it lives. **No ceiling raised.** Four
++stale Catena release bindings, unchanged in count, none re-signed; the
++`catena-model.js` binding is now stale against a new digest and correctly
++fails closed.
++
++Full discovery ran **1,657 tests against the base's 1,618** — the difference is
++exactly the 39 new ones — with **14 failures, 13 errors and 11 skips at both
++ends** and a **27-entry FAIL/ERROR name set that `diff` reports identical**. No
++literal baseline identity is claimed, because the head runs more tests; the
++name set is what is compared, which is the standard `AGENTS.md` sets. The base
++figures reproduce the V4.1 review's own recorded 1,618 / 14 / 13 / 11 exactly,
++which is the check that this comparison environment is the review's.
++`make -k check` exited **2** at the same three inherited targets the review
++recorded — `check-release-bindings`, `check-tool-registry` and
++`check-examples`. No record here rounds those into a green repository-wide
++check.
++
++The new regressions were also replayed against the **parent** implementation,
++because a regression that passes on the code it was written to catch is not
++one. With every V5 scenario present the parent's harness **dies** with an
++uncaught `TypeError: Cannot read properties of null (reading 'token')` from
++`catena.js:1006` — the bootstrap line — taking all 254 tests with it. With the
++two bootstrap scenarios filtered out so the rest can report, **23 of the new
++tests fail at the parent**, across all five blocking classes.
++
++`catena.css`, `index.html` and every path under `src/web/data/` are
++byte-identical. The production diff is `catena.js` and `catena-model.js`
++alone. The `src/web/data/` contradiction is **preserved untouched** and remains
++a separate owner's adjudication.
++
+ ## Remaining program sequence
+ 
+ | Work | Current state | Exact dependency / stopping line |
+ | --- | --- | --- |
+ | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
+ | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
+-| E1 Catena production implementation | Fifth correction candidate (V4.1) awaiting fresh independent review | Review `9b1c23680` (CHANGES REQUIRED at `f2c9bc49d`) is answered by `impl/catena-wave-1-e1-corrections-v4`, which replaces the language-membership voice test with an exact voice-key projection published in the catena index — the one generator/data seam that review authorised — closes the nine remaining typed-presentation sinks behind one boundary in `catena-model.js`, and issues a new sanitized immutable package; nothing else. `catena-model.js` changes deliberately, because `catena.js` had one byte of margin and two findings live inside `voiceKey` and `formatExtent`; `MODEL_SHA256` is updated and a fourth release binding is now stale, unsigned. Preserve accepted E0 and every V2/V3 correction the review passed; every remaining generator/data, release, common-gate, B0/shared-shell, pre-release real-device-or-AT evidence, emulation-only forced-colors limitation, protected Liturgy, and PDF prerequisite stays with its owner; no merge, re-sign, deploy, or cutover. |
++| E1 Catena production implementation | Sixth correction candidate (V5) awaiting fresh independent review; the disposition it answers is **CHANGES REQUIRED** at V4.1 head `f93757854` (independent review `7f69575b9`, 2026-08-13) | That review passed the exact voice-key projection, the neutral refusal umbrella, the budgets, the 53-image matrix and the sealed V4.1 package, and found five blocking classes of one kind: malformed structured metadata becoming visible semantics, counts, refusals, routing facts, bootstrap state or DOM attributes through coercion or an unchecked collection shape. V5 answers all five behind one record boundary in `catena-model.js`, which carries no ceiling, and proves route completion for partial arrivals and actions with regressions that begin canonical. Preserve accepted E0 and every sound V2/V3/V4/V4.1 correction. The exact Catena data seam is authorized but transfers no broader ownership; release, common-gate, B0/shared-shell, Day-reader guard, real-device/AT, protected Liturgy and PDF prerequisites remain separate. E1 stays off main. No merge, re-sign, deploy or cutover. |
+ | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
+ | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
+ | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
+@@ -553,6 +635,7 @@ independent review**.
+ | 2026-08-11 | E1 Catena correction pass 2 | Answered correction review `8f8f424ec` (**CHANGES REQUIRED** at `dfc636665`) from unmoved main `9b9ff74a7`: carried route/test commit `67191afd1` forward and corrected the remaining route-owned URL-grammar, history-independence, recovery-focus, asynchronous-transaction, blocked/empty, lead, licence, print, focus-override, heading, and absence-disclosure defects inside the four-path boundary. Focused suite 179 tests; budgets 7,629/8,000 and 12,996/13,000 unraised; gate 2,290 assertions with the pristine-main failure identity/status set unchanged, 15 Catena `detail` texts differing and no row changing status; `check-release-bindings` deliberately fail-closed on the three changed route assets. | Branch `impl/catena-wave-1-e1-corrections-v2`; route/test commit `981959b4f78209401ba00bfbdcc430e23e09c8bb`; packaged head and package `20260811T212656Z-catena-e1-corrections-v2` recorded in the handoff; awaiting fresh independent review. |
+ | 2026-08-12 | E1 Catena correction V3 | Answered independent review `4c30d86f7` (**CHANGES REQUIRED** at `17f031b37`) with the smallest bounded correction: a well-formed but unsupported voice now fails closed against the corpus's own held-language set instead of rendering `none in ZZ translation`, and every displayed provenance value passes one typed gate, which also removes a `translators` shape that threw out of an asynchronous render and left the region `aria-busy`. The unqualified stranger-key claim and the false AT-SPI-launcher claim are corrected in these records and in a new package. Focused suite 249 tests green; budgets unraised at 7,629/8,000 and 12,995/13,000, paid for by deletion; `catena.css`, `index.html` and `catena-model.js` byte-identical; `check-release-bindings` still deliberately fail-closed on the Catena route assets, unrepaired. | Branch `impl/catena-wave-1-e1-corrections-v3`; base `17f031b37840d8320c664a128d72b502108fe075`; package `20260812T184146Z-catena-e1-corrections-v3`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ | 2026-08-13 | E1 Catena correction V4.1 | Answered the two requirements V4 at `e40720d5d` disclosed as unmet. The shared fail-closed umbrella copy is neutral: the reference line, heading and status write no longer claim the address was unreadable, assert a holdings negative over addresses refused on grammar, or call the reader's values invalid, while the typed per-value reason is untouched and malformed and unsupported refusals stay distinguishable; one narrow regression pins it and fails on the previous copy. The missing captures were produced -- V4's stated reason, that no display was available, was incorrect, because headless Chromium needs no display server -- giving 53 images from real built artifacts at the parent and this head across nine route states, three viewports, forced-colors and print emulation, with before/after pairs for the two changed states; they evidence rendering only and do not supersede the real-AT limitation. Focused suite 267 green; full discovery 1,618 against the base's 1,617 with an identical 27-entry failure/error name set; browser gate 2,290 assertions deep-equal to the base across 480,881 bytes; `catena.css` byte-identical and `catena.js` 12,970/13,000 whole and 8,734/8,800 stripped, both smaller, no ceiling raised. The `src/web/data/` contradiction is preserved untouched for independent adjudication. | Branch `impl/catena-wave-1-e1-corrections-v4-1`; base `e40720d5d622e8b0528b8c714cc5caee0b21cee3`; head `3fb6685b2c725adca9a1e0efb43cfdd55c68c311`; package `20260813T164804Z-catena-e1-corrections-v4-1`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
++| 2026-08-14 | E1 Catena correction V5 | Answered independent review `7f69575b9` (**CHANGES REQUIRED** at `f93757854`) with one record boundary rather than a list of guards, placed in `catena-model.js` because `catena.js` had thirty gzipped bytes of margin. The model now owns what a number of this corpus is, what a language code is, what the members of a collection are, and the derivations the page performed by concatenation over raw members. Real Chromium at the base rendered `lang="[object Object]"`, replaced the page with `Cannot read properties of null (reading 'source')` when one collection member was null, manufactured `4 works standing here have no English this project may publish` from rows whose findings said no such thing, printed `1 words` for a boolean and `12.5 words` for a fraction, requested `browse/[object%20Object]001.json`, and left `Loading…` standing after a malformed canon with nothing spoken; the head does none of these. Three defects the review did not name were found by writing its required regressions: the replay shim did not reflect `lang` into the content attribute, which is why the proven sink was invisible to the suite; `sound()` passed `not a language code` into visible language prose; and `render()` had a silent early return that left the page unterminated. Focused suite 306 green, up from 267; browser gate 2,290 assertions deep-equal to the base; promise ledger valid at 30 tracked / 19 complete; `catena.css`, `index.html` and all of `src/web/data/` byte-identical; `catena.js` 12,990/13,000 whole and 8,363/8,800 stripped, 371 bytes smaller stripped, no ceiling raised. The `src/web/data/` contradiction is preserved untouched. | Branch `impl/catena-wave-1-e1-corrections-v5`; parent `f93757854b54c19e50bdcb97ca0fed9b48d22bb7`; review addressed `7f69575b982926e827974f2ed236b1c8bfd8aaad`; package `20260814T123524Z-catena-e1-corrections-v5`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ 
+ ## Next Codex tasks
+ 
+diff --git a/promised-deliverables.toml b/promised-deliverables.toml
+index fc40d6972..cb9459bcb 100644
+--- a/promised-deliverables.toml
++++ b/promised-deliverables.toml
+@@ -1240,6 +1240,60 @@ state = "complete"
+   status = "pass"
+   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
+ 
++[[deliverables]]
++id = "corpus-browser-catena-e1-corrections-v5-2026-08-14"
++owner = "src/web/browser/catena"
++promise = "Answer the 2026-08-13 E1 Catena V4.1 independent review (7f69575b9, CHANGES REQUIRED at f93757854) with the smallest bounded correction of its five proven malformed-data and partial-arrival classes behind one typed record boundary, prove route completion rather than parse rejection, issue a new immutable exact-head handoff, and return that head for fresh independent review."
++state = "in_progress"
++
++  [[deliverables.requirements]]
++  id = "language-metadata-never-becomes-dom-or-prose"
++  criterion = "No language value that is not a language subtag reaches a DOM lang attribute, a visible language label, a voice key, a route value, or any other presentation fact; malformed language metadata omits the language-specific claim rather than guessing it, preserves valid sibling metadata, and alters no voice support."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "collection-members-validated-individually"
++  criterion = "Every collection this route derives presentation or state from validates each member before semantic use, retains valid members, omits malformed ones, derives counts from valid semantic members alone, manufactures no refusal or absence from a malformed member, and lets no malformed member — including a null — erase a valid sibling or abort the render."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "absence-claims-only-what-its-finding-supports"
++  criterion = "An absence row is classified from the generator's typed finding rather than from the truthiness of an adjacent field; not-surveyed and unrecognised findings enter no publishing negative and no closed-claim count; a valid typed finding survives malformed sibling metadata and a malformed member of its recorded list; and no new absence taxonomy is invented."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "numeric-verse-path-and-bootstrap-typed"
++  criterion = "Counts, extents, verse numbers and word tallies are positive safe integers in ordered domains; verse values, paragraph marks and identity fields reach presentation only as the types their contract defines; no path is composed, fetched or linked from a value that is not sound text; and malformed bootstrap or post-load index data enters the same terminal funnel as a failed request, leaving no unterminated page, no stranded aria-busy and no absence inferred from a parse failure."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "route-completion-proved-not-parse-rejection"
++  criterion = "Regressions beginning from a canonical bootstrap prove exact replace/push, final hash, status, tally, aria-busy and focus completion for a partial data arrival, for a malformed later collection member reached by both an action and an address, for a malformed action payload, and for a valid action after a malformed one, with valid siblings preserved and no manufactured refusal or absence."
++  status = "pass"
++  evidence = ["tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "accepted-areas-and-boundaries-preserved"
++  criterion = "The exact voice-key projection, the neutral refusal umbrella, the 53-image visual matrix and the recorded gzip-9 ceilings are preserved unraised and unregressed; the correction stays inside the Catena route/model/test seam plus durable records; no src/web/data/, release, common-gate, B0/shared-shell, protected Liturgy, PDF or unrelated corpus path is touched or repaired; and no release binding is re-signed."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py", "PROJECT-WORK.md"]
++
++  [[deliverables.requirements]]
++  id = "immutable-v5-handoff"
++  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V5 head, its parent f93757854, the review addressed 7f69575b9, the exact diff and changed-file inventory, evidence for each corrected class, fresh check results with numeric exits, budget measurements, release-binding and data-contradiction status, a sanitization audit, a SHA-256 manifest and a package digest, without mutating the sealed V4.1 package."
++  status = "open"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "fresh-independent-review"
++  criterion = "A fresh independent review of the exact V5 head and its new immutable package records a durable disposition. This lane does not review its own work and records no acceptance."
++  status = "open"
++  evidence = ["guidance/corpus-browser-roadmap.md"]
++
+ [[deliverables]]
+ id = "corpus-browser-catena-e1-corrections-v3-2026-08-12"
+ owner = "src/web/browser/catena"
+diff --git a/src/web/browser/catena/catena-model.js b/src/web/browser/catena/catena-model.js
+index 6728d45c3..db2d3b5ba 100644
+--- a/src/web/browser/catena/catena-model.js
++++ b/src/web/browser/catena/catena-model.js
+@@ -45,10 +45,19 @@
+    * into accidental comma-joined text, the second turns a string into a
+    * container whose `.length` then counts characters as though they were works.
+    *
+-   * Four questions answer that for every field this page displays. They live
+-   * HERE, beside the derivation, so the page and the model cannot answer them
+-   * differently — and because this file carries no byte ceiling, asking them
+-   * properly costs the composition nothing.
++   * A handful of questions answer that for every field this page displays.
++   * They live HERE, beside the derivation, so the page and the model cannot
++   * answer them differently — and because this file carries no byte ceiling,
++   * asking them properly costs the composition nothing.
++   *
++   * V5 adds the three the V4.1 review proved were missing, and they are the
++   * three that were being answered by coercion instead: what a NUMBER of this
++   * corpus is, what a LANGUAGE CODE is, and what the MEMBERS of a collection
++   * are. The last is the one that matters most. A container was validated and
++   * its members were not, so a single malformed neighbour could throw out of
++   * the render and take every valid sibling with it, or count itself into a
++   * tally, or manufacture a refusal — and none of those is a fact the record
++   * established.
+    * --------------------------------------------------------------------- */
+ 
+   /**
+@@ -123,6 +132,77 @@
+     return Number.isFinite(value) ? String(value) : sound(value);
+   }
+ 
++  /**
++   * A number this corpus COUNTS BY — a positive safe integer — or nothing.
++   *
++   * `count` asks only whether a number arrived. This asks whether it is one of
++   * the things this corpus writes as whole positive numbers: a chapter, a
++   * verse, a word tally, a digit width. `0`, `-3`, `1.5`, `1e21`, `"4"`, `[4]`
++   * and `true` are each a malformed record in those places, and a malformed
++   * record is not floored, rounded or coerced into a number to print. The
++   * distinction is not pedantry: `Number(x) > 0` accepted `true` and printed
++   * "1 words", and accepted `[4]` for a chapter, which put a fragment into a
++   * chapter's count that the same record could not give a locus for.
++   */
++  function whole(value) {
++    return typeof value === 'number' && Number.isSafeInteger(value) && value > 0
++      ? value
++      : null;
++  }
++
++  /**
++   * A language code fit to be named, shown, or written into a DOM `lang`.
++   *
++   * NONEMPTY TEXT IS NOT ENOUGH HERE, and this is the one gate in the file
++   * that tests a shape rather than a type. `lang` is machine-read metadata: a
++   * browser picks a font and hyphenation from it, a screen reader picks a
++   * voice, a search engine picks an index. A value that is not a language
++   * subtag must therefore not be written at all — least of all
++   * `[object Object]`, which is exactly what an unchecked record became when
++   * it reached the attribute, in real Chromium, on an otherwise complete page.
++   *
++   * The form is the one the corpus writes and the route grammar already
++   * enforces: two or three letters, and the subtags a code may legitimately
++   * carry after them.
++   */
++  function tongue(value) {
++    const code = sound(value);
++    return /^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$/.test(code) ? code : '';
++  }
++
++  /**
++   * The narrower form a VOICE KEY may carry, and the one authority for it.
++   *
++   * Narrower than `tongue` on purpose. A voice key becomes a control value
++   * and a URL, and the page must accept back the addresses it issues: the
++   * published route grammar is two or three lowercase letters and nothing
++   * else. Composed from anything wider — `en-GB`, an uppercase code, a
++   * record — the page writes a link into history and then refuses it on the
++   * way back in, which is the self-refusing address V4 recorded and fixed for
++   * records alone. The grammar is stated HERE so `voiceKey`, `chapterVoices`
++   * and the route's own validation cannot come to hold three opinions of it.
++   */
++  function voiceLanguage(value) {
++    const code = sound(value);
++    return /^[a-z]{2,3}$/.test(code) ? code : '';
++  }
++
++  /**
++   * The members of a list that are RECORDS, and only those.
++   *
++   * A collection is validated member by member, because a malformed neighbour
++   * establishes nothing about its neighbours. A scalar, a list and a null are
++   * each refused where a record was written; the valid siblings stand; and
++   * whatever is counted afterwards is a count of what stood. `list()` alone
++   * left `null` members to throw out of the render tail — one malformed row
++   * replacing the whole page with a JavaScript error — and left scalars to
++   * render as blank rows that were nonetheless tallied as works.
++   */
++  function records(value) {
++    return list(value).filter(
++      (one) => one !== null && typeof one === 'object' && !Array.isArray(one));
++  }
++
+   /**
+    * Does this extent touch this chapter?
+    *
+@@ -133,18 +213,23 @@
+    * "enough" of it would be a judgment no data here supports.
+    */
+   function touchesChapter(extent, chapter) {
+-    if (!extent) return false;
+-    const first = Number(extent.first_chapter);
+-    const last = Number(extent.last_chapter);
+-    if (!Number.isFinite(first) || !Number.isFinite(last)) return false;
+-    return first <= chapter && chapter <= last;
++    // THE SAME NUMBERS THE LOCUS IS PRINTED FROM. `Number()` here and `count()`
++    // in `formatExtent` were two answers to one question, and they disagreed:
++    // `first_chapter: [1]` coerced to 1 and put the fragment into chapter 1's
++    // COUNT, while the label refused the same member and printed the book
++    // alone. A fragment whose extent cannot be read stands under no chapter,
++    // rather than under one it cannot be shown to address.
++    const first = whole(bag(extent).first_chapter);
++    const last = whole(bag(extent).last_chapter);
++    const wanted = whole(chapter);
++    if (first === null || last === null || wanted === null) return false;
++    return first <= wanted && wanted <= last;
+   }
+ 
+   /** Every fragment standing under one chapter, in the order it was given. */
+   function fragmentsOnChapter(fragments, chapter) {
+-    const wanted = Number(chapter);
+-    return list(fragments).filter(function (fragment) {
+-      return touchesChapter(fragment.extent, wanted);
++    return records(fragments).filter(function (fragment) {
++      return touchesChapter(fragment.extent, chapter);
+     });
+   }
+ 
+@@ -156,12 +241,12 @@
+    * chapter 2 when he wrote across the seam.
+    */
+   function formatExtent(extent, bookName) {
+-    if (!extent) return sound(bookName);
+-    const book = sound(bookName) || sound(extent.token);
+-    const firstChapter = count(extent.first_chapter);
+-    const lastChapter = count(extent.last_chapter);
+-    const firstVerse = count(extent.first_verse);
+-    const lastVerse = count(extent.last_verse);
++    const range = bag(extent);
++    const book = sound(bookName) || sound(range.token);
++    const firstChapter = whole(range.first_chapter);
++    const lastChapter = whole(range.last_chapter);
++    const firstVerse = whole(range.first_verse);
++    const lastVerse = whole(range.last_verse);
+     // A RANGE THIS RENDERER CANNOT STATE IS NOT GUESSED AT. The four members are
+     // validated as the numbers the format is written in; anything else — a
+     // structured member, an absent one, a list — leaves the book standing alone
+@@ -172,6 +257,13 @@
+         firstVerse === null || lastVerse === null) {
+       return book;
+     }
++    // AND A RANGE THAT RUNS BACKWARDS IS NOT A RANGE. Four sound numbers in the
++    // wrong order describe no passage, and printing "Genesis 5:1-2:3" would
++    // hand the reader a locus the record never established.
++    if (lastChapter < firstChapter ||
++        (lastChapter === firstChapter && lastVerse < firstVerse)) {
++      return book;
++    }
+     const first = firstChapter + ':' + firstVerse;
+     if (firstChapter !== lastChapter) {
+       return book + ' ' + first + '-' + lastChapter + ':' + lastVerse;
+@@ -182,12 +274,11 @@
+ 
+   /** Does this fragment cross a chapter boundary? The page says so when it does. */
+   function spansChapters(extent) {
+-    if (!extent) return false;
+     // A CROSSING IS A CLAIM, so it is made only from two real numbers: two
+     // arrays are never `===`, and comparing them coerced announced a boundary
+     // crossing for a record that established no boundary at all.
+-    const first = count(extent.first_chapter);
+-    const last = count(extent.last_chapter);
++    const first = whole(bag(extent).first_chapter);
++    const last = whole(bag(extent).last_chapter);
+     return first !== null && last !== null && last > first;
+   }
+ 
+@@ -207,22 +298,280 @@
+    * directory layout the generator can change underneath it.
+    */
+   function chapterFragments(file) {
+-    if (!file) return [];
+-    const sources = bag(file.sources);
+-    const prefix = sound(file.text_prefix);
+-    // `list` rather than `file.fragments || []`: a spine whose `fragments` is a
+-    // record or a string is a broken record, and mapping over it threw out of
+-    // the render tail — past `aria-busy`, past the tally, past the announcement.
+-    return list(file.fragments).map(function (fragment) {
++    const sources = bag(bag(file).sources);
++    const prefix = sound(bag(file).text_prefix);
++    // `records` rather than `file.fragments || []`: a spine whose `fragments`
++    // is a record or a string is a broken record, and mapping over it threw out
++    // of the render tail — past `aria-busy`, past the tally, past the
++    // announcement. Its MEMBERS are asked the same question, because a `null`
++    // among them threw on the very next line and took every valid sibling with
++    // it, and a scalar among them became a blank row that was still counted.
++    return records(bag(file).fragments).map(function (fragment) {
+       const shared = bag(sources[fragment.source]);
+       const joined = {};
+       for (const name in shared) if (Object.hasOwn(shared, name)) joined[name] = shared[name];
+       for (const name in fragment) if (Object.hasOwn(fragment, name)) joined[name] = fragment[name];
+-      if (fragment.id) joined.text_path = prefix + fragment.id + '.json';
++      // THE ID BECOMES A FETCHED PATH. A truthy test let a record through and
++      // composed `…/[object Object].json`, which the page then requested; a
++      // fragment whose id is not sound text simply carries no text file.
++      const id = sound(fragment.id);
++      if (id) joined.text_path = prefix + id + '.json';
+       return joined;
+     });
+   }
+ 
++  /* ------------------------------------------------------------------------
++   * The index, and the addresses derived from it
++   *
++   * Every one of these answers a question the page used to answer by string
++   * concatenation over raw record members — which is how `[object Object]`
++   * reached a fetched URL, and how a malformed index member threw during
++   * startup and left the page saying "Loading…" for ever.
++   * --------------------------------------------------------------------- */
++
++  /**
++   * One canon entry as this page may use it, or null.
++   *
++   * A book must be able to state its own token, its own name and how many
++   * chapters it has before the page may put it in a control, range an address
++   * against it, or write its name into a heading. A member that cannot is not
++   * a book of the canon so far as this page is concerned, and is left out
++   * rather than rendered as `undefined` or counted as a book.
++   */
++  function canonBook(entry) {
++    const record = bag(entry);
++    const token = sound(record.token);
++    const name = sound(record.name);
++    const chapters = whole(record.chapters);
++    if (!token || !name || chapters === null) return null;
++    return {
++      token: token,
++      name: name,
++      chapters: chapters,
++      testament: sound(record.testament),
++      path: sound(record.path)
++    };
++  }
++
++  /** Every book of the canon this page can state, in the order given. */
++  function canonBooks(canon) {
++    const books = [];
++    for (const entry of records(canon)) {
++      const book = canonBook(entry);
++      if (book) books.push(book);
++    }
++    return books;
++  }
++
++  /** One of them by its token, or null. */
++  function bookOf(canon, token) {
++    const wanted = sound(token);
++    if (!wanted) return null;
++    return canonBooks(canon).find((book) => book.token === wanted) || null;
++  }
++
++  /**
++   * Where one chapter's spine stands: its path, `''` where nothing is held on
++   * that chapter, or `null` where the record cannot say either.
++   *
++   * THE THIRD ANSWER IS THE POINT OF THE FUNCTION. "Nothing held here" is a
++   * claim about the corpus, and a record this page cannot read establishes no
++   * such claim; a malformed `present` list or a malformed `path` must reach
++   * the page's broken-record notice instead, because an absence inferred from
++   * a parse failure is precisely the manufactured negative this boundary
++   * exists to refuse. The path itself is composed only from sound text and a
++   * whole number: a request for `…/[object Object].json` is a request against
++   * nothing, and this page does not make it.
++   */
++  function chapterPath(index, token, chapter) {
++    const wanted = sound(token);
++    const held = records(bag(index).held)
++      .find((entry) => wanted && sound(entry.token) === wanted);
++    // The index holds nothing at all in this book, and says so of every
++    // chapter in it. That is a real, recorded emptiness.
++    if (!held) return '';
++    const number = whole(chapter);
++    if (number === null || !Array.isArray(held.present)) return null;
++    let present = false;
++    for (const one of held.present) {
++      // A member this page cannot read makes the LIST unreadable, because a
++      // chapter's absence from an unreadable list proves nothing.
++      if (whole(one) === null) return null;
++      if (one === number) present = true;
++    }
++    if (!present) return '';
++    const prefix = sound(held.path);
++    if (!prefix) return null;
++    return prefix +
++      String(number).padStart(whole(bag(index).chapter_digits) || 1, '0') + '.json';
++  }
++
++  /**
++   * Where this edition opens paragraphs in one chapter, or `''`.
++   *
++   * `''` is not a claim: the layer is the edition's own, and a chapter that
++   * runs on has no file. What it does mean is that no request is made — a
++   * malformed edition record or book path never becomes a fetched URL.
++   */
++  function paragraphPath(layer, edition, bookPath, chapter) {
++    const index = bag(layer);
++    const prefix = sound(bag(bag(index.editions)[sound(edition)]).path);
++    const book = sound(bookPath);
++    const number = whole(chapter);
++    if (!prefix || !book || number === null) return '';
++    return prefix + book + '/' +
++      String(number).padStart(whole(index.chapter_digits) || 1, '0') + '.json';
++  }
++
++  // The two claims a recorded paragraph break may make, and there is no third.
++  const BREAK_KINDS = ['printed', 'projected'];
++
++  /**
++   * The verses of one chapter, in order, each with the mark that opens it.
++   *
++   * Three separate coercions used to live in this loop. The KEY was read with
++   * `Number()`, which took `" 3 "`, `"3.0"` and `"1e3"` for verses the chapter
++   * never numbered and sorted them among the ones it did. The VALUE was
++   * concatenated raw, so a record printed `[object Object]` and a list printed
++   * itself comma-joined, as Scripture. And the MARK was tested for truth
++   * alone, so any value at all opened a paragraph while counting as neither
++   * kind — leaving the page to print paragraphs and, beneath them, the note
++   * saying no paragraph division is held for this chapter.
++   */
++  function chapterLines(verses, breaks) {
++    const said = bag(verses);
++    const marks = bag(breaks);
++    const lines = [];
++    for (const key in said) {
++      if (!Object.hasOwn(said, key)) continue;
++      if (!/^[0-9]+$/.test(key)) continue;
++      const number = whole(Number(key));
++      const text = sound(said[key]);
++      if (number === null || !text) continue;
++      const kind = sound(marks[key]);
++      lines.push({
++        number: number,
++        text: text,
++        kind: BREAK_KINDS.includes(kind) ? kind : ''
++      });
++    }
++    return lines.sort((a, b) => a.number - b.number);
++  }
++
++  /* ------------------------------------------------------------------------
++   * Why a work standing here is not held in the asked-for language
++   *
++   * THE FINDING IS THE FACT, and the page had been throwing it away. The
++   * generator writes one of four, closed at `scripts/_catena.py` so that a
++   * fifth answer has to be argued for rather than typed, and they say
++   * different things:
++   *
++   *   none-published         no translation exists, of any date — about the world
++   *   in-copyright           one exists and may not be republished — about the law
++   *   partial-public-domain  some public-domain text, not the whole — an offer
++   *   not-surveyed           nobody has looked — an admission, and NOT a negative
++   *
++   * The page used to read none of them. It classified a row by whether a
++   * `partial` string happened to be attached, which put `not-surveyed` — the
++   * one finding that explicitly declines to make a claim — into the sentence
++   * "no English this project may publish". That is a holdings claim the
++   * corpus never made, and it is manufactured out of an admission that nobody
++   * looked. A finding this file does not recognise is treated the same way an
++   * unknown finding must be: it is carried, and it claims nothing.
++   * --------------------------------------------------------------------- */
++
++  // What each finding lets the page SAY. No new taxonomy: these are the
++  // generator's own four, and the empty answer is the absence of one.
++  const FINDINGS = {
++    'none-published': 'closed',
++    'in-copyright': 'closed',
++    'partial-public-domain': 'untaken',
++    'not-surveyed': 'unsurveyed'
++  };
++
++  /**
++   * One row per distinct work standing under this chapter that the record
++   * says something about in this language, in the order the spine gives them.
++   *
++   * Every field is typed at the read, and a malformed neighbour costs its
++   * siblings nothing: a valid typed finding survives a malformed `reason`
++   * beside it, and a malformed member of the recorded list is passed over
++   * rather than allowed to stand in for one.
++   */
++  function absenceRows(index, file, language) {
++    const wanted = tongue(language);
++    const recorded = bag(bag(index).absences);
++    const sources = bag(bag(file).sources);
++    const named = [];
++    const rows = [];
++    if (!wanted) return rows;
++    for (const key in sources) {
++      if (!Object.hasOwn(sources, key)) continue;
++      const source = bag(sources[key]);
++      const workId = sound(source.work_id);
++      if (!workId || named.includes(workId)) continue;
++      const found = records(recorded[workId])
++        .find((one) => tongue(one.language) === wanted);
++      if (!found) continue;
++      named.push(workId);
++      const finding = sound(found.finding);
++      rows.push({
++        author: sound(source.author),
++        work: sound(source.work),
++        finding: finding,
++        // The one value the page's sentences are built from. '' is not a
++        // default: it is the page declining to speak for a record it cannot
++        // read, and a row holding it enters no count.
++        stands: Object.hasOwn(FINDINGS, finding) ? FINDINGS[finding] : '',
++        reason: sound(found.reason),
++        partial: sound(found.partial)
++      });
++    }
++    return rows;
++  }
++
++  /** How many of those rows stand on one finding class. */
++  function absenceCount(rows, stands) {
++    return list(rows).filter((row) => row.stands === stands).length;
++  }
++
++  /**
++   * The one line that summarises them — a clause per finding class, and no
++   * clause for a class no row stands on.
++   *
++   * The sentence lives here, beside `voicePhrase` and `joinNames`, for the
++   * same reason they do: it is prose DERIVED FROM A TYPED RECORD, and the
++   * derivation and the words it licenses must not be able to drift apart.
++   * Each clause says only what its own finding says. The first names the
++   * works; the rest carry the number alone, because "4 works standing here
++   * have … ; 1 has …" is how the sentence reads aloud.
++   */
++  function absenceSummary(rows, languageName) {
++    const parts = [];
++    const closed = absenceCount(rows, 'closed');
++    if (closed) {
++      parts.push(
++        (closed === 1 ? 'One work standing here has' : closed + ' works standing here have') +
++          ' no ' + languageName + ' this project may publish');
++    }
++    const rest = (many) =>
++      (parts.length ? String(many)
++        : many === 1 ? 'one work standing here' : many + ' works standing here') +
++      (many === 1 ? ' has' : ' have');
++    const untaken = absenceCount(rows, 'untaken');
++    if (untaken) {
++      parts.push(rest(untaken) +
++        ' only a partly public domain ' + languageName + ', not yet taken');
++    }
++    // The two classes that assert NO negative, and may no longer be spoken as
++    // one with the two that do.
++    const unsurveyed = absenceCount(rows, 'unsurveyed');
++    if (unsurveyed) parts.push(rest(unsurveyed) + ' not been surveyed for ' + languageName);
++    const unread = absenceCount(rows, '');
++    if (unread) parts.push(rest(unread) + ' a finding this page cannot read');
++    return parts.join('; ');
++  }
++
+   /* ------------------------------------------------------------------------
+    * Whose words these are — the axis the commentary control runs along
+    *
+@@ -253,10 +602,12 @@
+     if (voice === ORIGINAL) return ORIGINAL;
+     if (voice === TRANSLATION) {
+       // THE KEY BECOMES A CONTROL VALUE AND A URL, so a language that is not
+-      // sound text names no offer at all. Composed from a record this produced
+-      // `translation:[object Object]`, which the page then wrote into history
+-      // and refused on the way back in — a link the page issued against itself.
+-      const language = sound(source && source.language);
++      // of the route's own grammar names no offer at all. Composed from a
++      // record this produced `translation:[object Object]`, which the page
++      // wrote into history and refused on the way back in — a link the page
++      // issued against itself. Sound text alone was not enough to stop it:
++      // `translation:not a language code` is sound text.
++      const language = voiceLanguage(source && source.language);
+       return language ? TRANSLATION + ':' + language : '';
+     }
+     return '';
+@@ -276,7 +627,7 @@
+     const found = new Map();
+     for (const key in sources) {
+       if (!Object.hasOwn(sources, key)) continue;
+-      const source = sources[key];
++      const source = bag(sources[key]);
+       const wanted = voiceKey(source);
+       if (!wanted || found.has(wanted)) continue;
+       found.set(wanted, {
+@@ -287,7 +638,7 @@
+         // not one per language: a chapter holding Ambrose's Latin beside
+         // Severian's Greek holds both authors' own words, and offering them
+         // separately would put the reader back on the axis this replaced.
+-        language: sound(source.voice) === TRANSLATION ? sound(source.language) : ''
++        language: sound(source.voice) === TRANSLATION ? voiceLanguage(source.language) : ''
+       });
+     }
+     return Array.from(found.values()).sort(function (a, b) {
+@@ -304,7 +655,9 @@
+    * silently widening — never parses the key a second way.
+    */
+   function parseVoiceKey(wanted) {
+-    const key = String(wanted || '');
++    // `sound`, not `String(wanted || '')`: the second turned a record into
++    // `[object Object]` and then took it apart as though it were a key.
++    const key = sound(wanted);
+     if (!key) return null;
+     if (key === ORIGINAL) return { key: key, voice: ORIGINAL, language: '' };
+     const cut = key.indexOf(':');
+@@ -344,12 +697,27 @@
+     useLanguageNames: useLanguageNames,
+     voicePhrase: voicePhrase,
+     voiceLabel: voiceLabel,
++    canonBook: canonBook,
++    canonBooks: canonBooks,
++    bookOf: bookOf,
++    chapterPath: chapterPath,
++    paragraphPath: paragraphPath,
++    chapterLines: chapterLines,
++    absenceRows: absenceRows,
++    absenceCount: absenceCount,
++    absenceSummary: absenceSummary,
+     LANGUAGE_NAMES: LANGUAGE_NAMES,
++    FINDINGS: FINDINGS,
++    BREAK_KINDS: BREAK_KINDS,
+     sound: sound,
+     list: list,
+     bag: bag,
+     count: count,
+     say: say,
++    whole: whole,
++    tongue: tongue,
++    voiceLanguage: voiceLanguage,
++    records: records,
+     ORIGINAL: ORIGINAL,
+     TRANSLATION: TRANSLATION
+   };
+diff --git a/src/web/browser/catena/catena.js b/src/web/browser/catena/catena.js
+index b2e614dd3..5be15a008 100644
+--- a/src/web/browser/catena/catena.js
++++ b/src/web/browser/catena/catena.js
+@@ -12,7 +12,7 @@
+   const M = window.CatenaModel;
+   const textNode = (said) => document.createTextNode(said);
+   // The typed boundary — asked, and explained, in `catena-model.js`.
+-  const { sound, list, bag, say } = M;
++  const { sound, list, bag, say, whole, tongue, records } = M;
+ 
+   const { joinNames, voicePhrase, voiceLabel } = M;
+   M.useLanguageNames(T.languageName);
+@@ -48,11 +48,7 @@
+ 
+   /* --------------------------------------------------------------- data */
+ 
+-  function entryOf(entries, token) {
+-    return list(entries).find((book) => book.token === token) || null;
+-  }
+-
+-  function canonEntry(token) { return entryOf(index.canon, token); }
++  function canonEntry(token) { return M.bookOf(index.canon, token); }
+ 
+   // One promise per path. A 404 is an ANSWER, kept as `absent`; any
+   // other failure is EVICTED, so a retry — or a reload — really asks again.
+@@ -71,27 +67,21 @@
+   }
+ 
+   // The spine for one chapter: nothing held means NO FILE, no request.
+-  // A 404 on a LISTED chapter is a broken record, not emptiness — marked.
++  // A 404 on a LISTED chapter is a broken record, not emptiness — marked,
++  // and so is an index this page cannot read.
+   function chapterFile(token, chapter) {
+-    const held = entryOf(index.held, token);
+-    if (!held || !list(held.present).includes(Number(chapter))) {
+-      return Promise.resolve(null);
+-    }
+-    const path = held.path +
+-      String(chapter).padStart(Number(index.chapter_digits) || 1, '0') + '.json';
++    const path = M.chapterPath(index, token, chapter);
++    if (!path) return Promise.resolve(path === null ? { unfetched: 'the index record' } : null);
+     return cached(chapterFiles, path, { unfetched: path });
+   }
+ 
+   // Where this edition opens a paragraph. The layer is the EDITION's —
+-  // a chapter that runs on has no file, so the 404 is the answer.
++  // a chapter that runs on has no file, so the 404 is the answer. An
++  // unstatable path is not requested.
+   function chapterParagraphs(bible, token, chapter) {
+-    if (!paragraphs) return Promise.resolve(null);
+-    const edition = bag(paragraphs.editions)[bible.id];
+     const book = canonEntry(token);
+-    if (!edition || !book || !book.path) return Promise.resolve(null);
+-    const path = edition.path + book.path + '/' +
+-      String(chapter).padStart(Number(paragraphs.chapter_digits) || 1, '0') + '.json';
+-    return cached(paragraphFiles, path, null);
++    const path = book && M.paragraphPath(paragraphs, bible.id, book.path, chapter);
++    return path ? cached(paragraphFiles, path, null) : Promise.resolve(null);
+   }
+ 
+   // One fragment's prose — keyed by the path the SPINE gave, never
+@@ -111,36 +101,35 @@
+       container.appendChild(section);
+       return;
+     }
+-    const numbers = Object.keys(result.verses)
+-      .map(Number)
+-      .filter(Number.isFinite)
+-      .sort((a, b) => a - b);
+-    if (!numbers.length) {
+-      section.appendChild(T.notice(book.name + ' ' + chapter + ' carries no verses.'));
++    // Text that arrived unreadable is not a chapter with no verses.
++    const lines = M.chapterLines(result.verses, marks && marks.breaks);
++    if (!lines.length) {
++      section.appendChild(T.notice(book.name + ' ' + chapter +
++        (Object.keys(bag(result.verses)).length
++          ? ' arrived in a form this page cannot read.'
++          : ' carries no verses.')));
+       container.appendChild(section);
+       return;
+     }
+ 
+     // Prose — a stack of verse-lines is a concordance.
+-    const breaks = (marks && marks.breaks) || {};
+     const body = T.el('div', 'passage');
+-    body.lang = bible.language || 'en';
++    body.lang = tongue(bible.language) || 'en';
+     let passage = null;
+     let printed = 0;
+     let projected = 0;
+     let opened = 0;
+-    for (const number of numbers) {
+-      const kind = breaks[String(number)];
+-      if (!passage || kind) {
++    for (const line of lines) {
++      if (!passage || line.kind) {
+         passage = T.el('p', 'passage-paragraph');
+         opened += 1;
+-        if (kind === 'printed') printed += 1;
+-        if (kind === 'projected') { passage.classList.add('projected'); projected += 1; }
++        if (line.kind === 'printed') printed += 1;
++        if (line.kind === 'projected') { passage.classList.add('projected'); projected += 1; }
+         body.appendChild(passage);
+       }
+       const verse = T.el('span', 'verse');
+-      verse.appendChild(T.el('sup', 'verse-num', String(number)));
+-      verse.appendChild(textNode(result.verses[String(number)] + ' '));
++      verse.appendChild(T.el('sup', 'verse-num', String(line.number)));
++      verse.appendChild(textNode(line.text + ' '));
+       passage.appendChild(verse);
+     }
+     // OPEN — closed dated from the stacked layout; still a `details`.
+@@ -149,7 +138,7 @@
+     const head = T.el('summary', 'chapter-head');
+     head.appendChild(T.el('span', 'chapter-name', book.name + ' ' + chapter));
+     head.appendChild(T.el('span', 'chapter-count',
+-      numbers.length + (numbers.length === 1 ? ' verse' : ' verses')));
++      lines.length + (lines.length === 1 ? ' verse' : ' verses')));
+     // The chip counts the PARAGRAPHS on the page, not the recorded
+     // breaks: the first opens unmarked.
+     if (printed + projected) {
+@@ -207,16 +196,20 @@
+     const when = say(fragment.date);
+     if (when) head.appendChild(T.el('span', 'fragment-date', when));
+     // The language, and WHOSE it is; an unestablished voice says only it.
+-    if (sound(fragment.language)) {
+-      const name = M.LANGUAGE_NAMES[fragment.language] || T.languageName(fragment.language);
++    // `tongue`, not `sound`: the gated value is what is named.
++    const code = tongue(fragment.language);
++    if (code) {
++      const name = M.LANGUAGE_NAMES[code] || T.languageName(code);
+       head.appendChild(T.el('span', 'fragment-language',
+         fragment.voice === M.ORIGINAL
+           ? name + ' — the author’s own'
+           : fragment.voice === M.TRANSLATION ? name + ' translation' : name));
+     }
+-    if (Number(fragment.text_words) > 0) {
++    // A TALLY IS A NUMBER THE RECORD WROTE, not one `Number()` can make.
++    const words = whole(fragment.text_words);
++    if (words) {
+       head.appendChild(T.el('span', 'fragment-length',
+-        Number(fragment.text_words).toLocaleString() + ' words'));
++        words.toLocaleString() + ' words'));
+     }
+ 
+     const extent = T.el('span', 'fragment-extent', M.formatExtent(fragment.extent, bookName));
+@@ -229,7 +222,8 @@
+ 
+     // Prose arrives on first open; a failure reports against this fragment.
+     const text = T.el('p', 'fragment-text', 'Loading…');
+-    text.lang = fragment.language || 'en';
++    // THE SINK THE V4.1 REVIEW REPLAYED, on an otherwise complete page.
++    text.lang = code || 'en';
+     details.appendChild(text);
+     const apparatus = T.el('div', 'fragment-apparatus');
+     details.appendChild(apparatus);
+@@ -329,28 +323,10 @@
+   // apart; the findings themselves are the generator's.
+   function renderAbsences(container, file, wanted) {
+     const asked = M.parseVoiceKey(wanted);
+-    if (!asked || asked.voice !== M.TRANSLATION || !asked.language) return;
+-    const recorded = bag(index && index.absences);
+-    const sources = bag(file && file.sources);
+-    const named = new Set();
+-    const rows = [];
+-    for (const key in sources) {
+-      const source = bag(sources[key]);
+-      const workId = sound(source.work_id);
+-      if (!workId || named.has(workId)) continue;
+-      const found = list(recorded[workId]).find(
+-        (one) => sound(bag(one).language) === asked.language
+-      );
+-      if (!found) continue;
+-      named.add(workId);
+-      // Typed AT THE READ: the count and the words are one value.
+-      rows.push({
+-        author: sound(source.author),
+-        work: sound(source.work),
+-        reason: sound(bag(found).reason),
+-        partial: sound(bag(found).partial)
+-      });
+-    }
++    if (!asked || asked.voice !== M.TRANSLATION) return;
++    // THE TYPED FINDING DECIDES WHAT MAY BE SAID: dropped, it read
++    // `not-surveyed` as a holdings negative.
++    const rows = M.absenceRows(index, file, asked.language);
+     if (!rows.length) return;
+ 
+     const note = T.el('details', 'absence-note');
+@@ -358,23 +334,9 @@
+     // the disclosure only lets a reader fold them away.
+     note.open = true;
+     note.setAttribute('data-state', 'absence');
+-    const untaken = rows.filter((row) => row.partial).length;
+-    const closed = rows.length - untaken;
+     const language = M.LANGUAGE_NAMES[asked.language] || T.languageName(asked.language);
+-    const parts = [];
+-    if (closed) {
+-      parts.push(
+-        (closed === 1 ? 'One work standing here has' : closed + ' works standing here have') +
+-          ' no ' + language + ' this project may publish');
+-    }
+-    if (untaken) {
+-      parts.push(
+-        (closed ? String(untaken) : untaken === 1 ? 'one work standing here' : untaken + ' works standing here') +
+-          (untaken === 1 ? ' has' : ' have') +
+-          ' only a partly public domain ' + language + ', not yet taken');
+-    }
+     const head = document.createElement('summary');
+-    head.textContent = parts.join('; ');
++    head.textContent = M.absenceSummary(rows, language);
+     note.appendChild(head);
+     const items = T.el('ul', 'absence-list');
+     for (const row of rows) {
+@@ -607,9 +569,10 @@
+   // Rule 4 — where the projection refuses, the page refuses; no
+   // same-number fallback dressed right.
+   function renderRefusal(container, file, bible, book, chapter) {
+-    const here = list(bag(file && file.refusals)[bible.id]);
++    // A REFUSAL IS A RECORD OR NONE: a scalar satisfied `.length`.
++    const here = records(bag(file && file.refusals)[bible.id]);
+     if (!here.length) return;
+-    const note = sound(bag(here[0]).note);
++    const note = sound(here[0].note);
+     const sentence = note ? note.charAt(0).toUpperCase() + note.slice(1) + '.' : '';
+     const node = T.el('p', 'refusal');
+     node.setAttribute('data-state', 'refusal');
+@@ -617,7 +580,7 @@
+     node.appendChild(textNode(
+       sentence + ' Commentary on ' + book.name + ' ' + chapter +
+         ' is anchored in Vulgate numbering, and this page will not guess ' +
+-        'where the boundary moves to in ' + bible.label +
++        'where the boundary moves to in ' + sound(bible.label) +
+         '. The verse numbers you are reading correspond; the divisions of ' +
+         'the text may not.'));
+     container.appendChild(node);
+@@ -664,9 +627,10 @@
+       const parsed = M.parseVoiceKey(voice);
+       if (voice !== M.ORIGINAL &&
+           !(parsed && parsed.voice === M.TRANSLATION &&
+-            /^[a-z]{2,3}$/.test(parsed.language))) {
++            M.voiceLanguage(parsed.language))) {
+         flag('voice', voice, 'is not a voice — “original”, or “translation:” plus a language');
+-      } else if (!(index.voices || []).includes(voice)) {
++      // `list`, never `|| []`: a string answers `.includes` by substring.
++      } else if (!list(index.voices).includes(voice)) {
+         flag('voice', voice, 'is not a voice this corpus holds');
+       }
+     }
+@@ -729,7 +693,12 @@
+     const chapter = Number(chapterSelect.value);
+     const bible = bibles.find((one) => one.id === bibleSelect.value);
+     const book = canonEntry(token);
+-    if (!book || !bible || !Number.isFinite(chapter)) return;
++    // A SILENT RETURN IS NOT A TERMINAL STATE: reached from a malformed
++    // index, this left "Loading…" standing and said nothing.
++    if (!book || !bible || !Number.isFinite(chapter)) {
++      startFailed('The catena index could not be read.');
++      return;
++    }
+ 
+     const renderToken = T.beginRender();
+     reading.setAttribute('aria-busy', 'true');
+@@ -758,8 +727,8 @@
+       // ONE typed truth beside the chapter: every tally, empty, blocked
+       // and voice claim derives from these counts — held-but-unrenderable
+       // is HELD, never "nothing".
+-      const blocked = list(file && file.blocked);
+-      const leads = list(file && file.leads);
++      const blocked = records(file && file.blocked);
++      const leads = records(file && file.leads);
+       const total = M.chapterFragments(file).length;
+       fillVoices(file, unfetched || blocked.length);
+       T.clear(reading);
+@@ -770,7 +739,7 @@
+         const section = errorSection('This chapter’s commentary record did not load');
+         section.appendChild(T.el('p', 'error-detail',
+           'The index records commentary on ' + book.name + ' ' + chapter +
+-            ', but its record (' + unfetched + ') could not be fetched — a ' +
++            ', but its record (' + unfetched + ') could not be read — a ' +
+             'data or connection fault, not an empty ' +
+             'chapter. Reloading may recover it.'));
+         reading.appendChild(section);
+@@ -816,7 +785,7 @@
+         head.slice(bold.length) + extras.map((one) => ' · ' + one).join('')));
+ 
+       T.statusLine(
+-        book.name + ' ' + chapter + ', ' + bible.label + ', ' +
++        book.name + ' ' + chapter + ', ' + sound(bible.label) + ', ' +
+           (unfetched
+             ? 'commentary record unavailable'
+             : [head].concat(extras).join(', ')) + '.'
+@@ -929,7 +898,7 @@
+   // borrowed from a leftover selection.
+   function seedControls(hash, broken) {
+     bookSelect.value = (!broken.has('book') && hash.get('book')) || 'Gen';
+-    if (!bookSelect.value) bookSelect.value = bag(list(index.canon)[0]).token;
++    if (!bookSelect.value) bookSelect.value = bag(M.canonBooks(index.canon)[0]).token;
+     fillChapters(bookSelect.value, broken.has('chapter') ? 1 : hash.get('chapter') || 1);
+     bibleSelect.value =
+       (!broken.has('bible') && hash.get('bible')) || (bibles[0] || {}).id || '';
+@@ -939,16 +908,22 @@
+   }
+ 
+   function onArrival(next) {
+-    const bad = hashProblems(next);
+-    seedControls(next, new Set(bad.map((one) => one.key)));
+-    if (bad.length) {
+-      // Fail closed: the address stays as written, no stale chapter under
+-      // it; the seeded controls hold the nearest valid route.
+-      renderInvalid(bad);
+-      return;
++    // EVERY ARRIVAL ENDS SOMEWHERE: the address work between the two
++    // funnels had none, and threw here on every arrival alike.
++    try {
++      const bad = hashProblems(next);
++      seedControls(next, new Set(bad.map((one) => one.key)));
++      if (bad.length) {
++        // Fail closed: the address stays as written, no stale chapter under
++        // it; the seeded controls hold the nearest valid route.
++        renderInvalid(bad);
++        return;
++      }
++      arrival = true;
++      render();
++    } catch (error) {
++      startFailed('The catena index could not be read: ' + (error.message || error));
+     }
+-    arrival = true;
+-    render();
+   }
+ 
+   /* -------------------------------------------------------------- start */
+@@ -998,10 +973,10 @@
+       startFailed(manifest.message);
+       return;
+     }
+-    bibles = manifest.bibles;
++    bibles = records(manifest.bibles);
+ 
+     T.fillSelect(bookSelect,
+-      list(index.canon).map((book) => ({ value: book.token, label: book.name })));
++      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+     T.fillBibleSelect(bibleSelect, bibles);
+     bookSelect.disabled = chapterSelect.disabled = bibleSelect.disabled = false;
+ 
+diff --git a/tools/tests/test_catena_wave_1.py b/tools/tests/test_catena_wave_1.py
+index 07b204feb..e64bf6cb6 100644
+--- a/tools/tests/test_catena_wave_1.py
++++ b/tools/tests/test_catena_wave_1.py
+@@ -132,10 +132,20 @@ CATENA = BROWSER / "catena"
+ NODE = shutil.which("node")
+ 
+ # `catena-model.js`, byte for byte. The model is UMD and DOM-free, is replayed
+-# under node by `scripts/_catena.py check`, and no part of E1 touches it: a
+-# deliberate model change is a deliberate change to this literal. The digest
+-# is of the tracked file itself — release bindings are the release owner's.
+-MODEL_SHA256 = "5fda9dbd1916bf12b464a74c87213f8e1fc14d50480270d6a0c86ec5d5b78625"
++# under node by `scripts/_catena.py check`, and a deliberate model change is a
++# deliberate change to this literal. The digest is of the tracked file itself
++# — release bindings are the release owner's, and this change makes one of
++# them stale, unsigned, and correctly fail-closed.
++#
++# V5 moved deliberately, as V4 did and for the same reason: `catena.js` had
++# thirty bytes of margin, and the record boundary the review requires cannot
++# be paid for out of thirty bytes. `catena-model.js` carries no ceiling, so
++# the typed questions, the index-derived addresses, the chapter lines and the
++# absence findings are all asked there and the page only calls them, which
++# leaves the page SMALLER than it was before the boundary existed. The exact
++# measurement belongs in the durable records, where it is re-taken, not beside
++# a digest where it silently goes stale.
++MODEL_SHA256 = "f1ed13795d3b3774bbfc4811282de304eb2c97e746bcd3c9db47f0536bf36b5e"
+ 
+ # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
+ # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
+@@ -628,21 +638,253 @@ MALFORMED_STRUCTURE_FIXTURE = {
+ }
+ 
+ # Absence rows for the same works, every displayed field malformed in turn.
+-# `partial` is the sharpest: untyped, its truthiness moved a work out of "no
+-# publishable translation" and into "partly public domain, not yet taken".
++#
++# V5 REBUILT THIS FIXTURE AROUND `finding`, because the V4.1 review proved the
++# old one was proving the wrong thing. Not one of these rows carried a
++# `finding` — the field the generator ALWAYS writes, from a list closed at
++# four values in `scripts/_catena.py` — and the page classified a row by
++# whether a `partial` string happened to be attached. So five malformed
++# neighbours were being counted into "N works standing here have no English
++# this project may publish": a closed claim about somebody's publishing
++# rights, manufactured out of records that said nothing of the kind.
++#
++# The rows below now put a real typed finding beside malformed siblings, and
++# malformed findings beside sound siblings, so the two questions are separable.
+ MALFORMED_ABSENCES = {
+     "absences": {
+-        "work.sound": [{"language": "en", "reason": "A sound recorded reason.",
++        # The control: a valid typed finding, sound siblings.
++        "work.sound": [{"language": "en", "finding": "partial-public-domain",
++                        "reason": "A sound recorded reason.",
+                         "partial": "a sound partial offer"}],
+-        "work.language": [{"language": "en", "reason": {"text": "not text"},
++        # A VALID TYPED FINDING WITH MALFORMED NEIGHBOURS. `in-copyright` is a
++        # fact about the law and survives an unreadable reason beside it; the
++        # unreadable reason is withheld, and takes the finding with it nowhere.
++        "work.language": [{"language": "en", "finding": "in-copyright",
++                           "reason": {"text": "not text"},
+                            "partial": {"offer": "not text"}}],
+-        "work.scalar": [{"language": "en", "reason": ["not", "text"],
+-                         "partial": 42}],
+-        "work.nameless1": [{"language": "en", "reason": "   ", "partial": True}],
++        # A finding that is not text at all.
++        "work.scalar": [{"language": "en", "finding": ["not", "text"],
++                         "reason": ["not", "text"], "partial": 42}],
++        # Well-formed text naming no finding this project defines. It must not
++        # be answered with the nearest finding that IS defined.
++        "work.nameless1": [{"language": "en", "finding": "no-such-finding",
++                            "reason": "   ", "partial": True}],
++        # No finding at all, beside a blank `partial` — the exact pair the
++        # untyped classification read as a closed publishing negative.
+         "work.nameless2": [{"language": "en", "reason": None, "partial": "   "}],
+     }
+ }
+ 
++
++def _voice_source(n, **over):
++    """One well-formed source record, so a fixture varies ONE field at a time."""
++    record = {"author": "Author %d" % n, "work": "Work %d" % n,
++              "work_id": "typed.work%d" % n, "date": 300 + n, "language": "la",
++              "voice": "original", "rights": "public-domain",
++              "edition": "Edition %d" % n, "edition_published": "1900",
++              "translators": [], "container": ""}
++    record.update(over)
++    return record
++
++
++def _voice_fragment(n, **over):
++    """One well-formed fragment on Genesis 1, at its own verse."""
++    record = {"id": "typed-%d" % n, "locator": str(n), "source": str(n),
++              "review": "verified", "text_words": 4,
++              "extent": {"token": "Gen", "first_chapter": 1, "first_verse": n,
++                         "last_chapter": 1, "last_verse": n}}
++    record.update(over)
++    return record
++
++
++# --------------------------------------------------------------------------
++# V5 §5 — a language that is not a language, under EVERYTHING HELD
++#
++# The V4.1 review replayed exactly this in real Chromium and got
++# `lang="[object Object]"` on an otherwise complete page. The committed
++# malformed-language scenario could not see it: it FILTERED the offending
++# fragment out under a translation selection, so the attribute was never
++# rendered, and the shim did not reflect `lang` in any case. Everything held
++# renders every one of these side by side.
++MALFORMED_LANGUAGE_FIXTURE = {
++    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
++    "sources": {
++        "1": _voice_source(1, language="la"),
++        "2": _voice_source(2, language={"code": "la"}),
++        "3": _voice_source(3, language=["la"]),
++        "4": _voice_source(4, language=42),
++        "5": _voice_source(5, language=True),
++        "6": _voice_source(6, language="   "),
++        "7": _voice_source(7, language=""),
++        "8": _voice_source(8, language=None),
++        # Sound text, and still not a language code. `sound()` passed it and
++        # the shared namer printed it back as a language, uppercased.
++        "9": _voice_source(9, language="not a language code"),
++    },
++    "fragments": [_voice_fragment(n) for n in range(1, 10)],
++    "leads": [], "blocked": [], "refusals": {},
++}
++
++# --------------------------------------------------------------------------
++# V5 §6 — the required mixed collection, applied to every collection at once
++#
++# valid member, malformed record, scalar, null, valid member. The questions
++# are the same for each: do the valid siblings survive, is the count of the
++# valid members alone, and can a malformed member manufacture a refusal.
++MIXED_COLLECTION_FIXTURE = {
++    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
++    "sources": {
++        "1": _voice_source(1, author="First Author", work="First Work"),
++        "5": _voice_source(5, author="Last Author", work="Last Work"),
++    },
++    "fragments": [
++        _voice_fragment(1, id="mixed-first"),
++        # A RECORD whose id is not one. It is a fragment — it counts, it
++        # renders, it names its author — but it addresses no text file, and
++        # `[object Object].json` is never requested for it.
++        _voice_fragment(2, id={"not": "an id"}, source="1"),
++        7,
++        None,
++        _voice_fragment(5, id="mixed-last"),
++    ],
++    "leads": [
++        {"author": "Lead One", "title": "Lead Work One", "date": "500"},
++        {"author": {"n": 1}, "title": ["x"], "date": {}},
++        13,
++        None,
++        {"author": "Lead Two", "title": "Lead Work Two", "date": "600"},
++    ],
++    "blocked": [
++        {"author": "Blocked One", "work": "Blocked Work One", "reason": "rights"},
++        {"author": 5, "work": [], "reason": {}},
++        21,
++        None,
++        {"author": "Blocked Two", "work": "Blocked Work Two", "reason": "rights"},
++    ],
++    # One valid refusal record among three malformed members: the boundary
++    # note is the valid record's, said once, not four times.
++    "refusals": {"douay-rheims": [
++        None, 4, "not a record",
++        {"chapter": 1, "verse": None, "kind": "displaced",
++         "note": "the numbering of this chapter is displaced in this edition"},
++    ]},
++}
++
++# The same chapter with NO valid refusal record at all. Three malformed
++# members satisfied `.length` and made the page claim a boundary the
++# projection never refused.
++MIXED_NO_REFUSAL_FIXTURE = dict(
++    MIXED_COLLECTION_FIXTURE,
++    refusals={"douay-rheims": [None, 4, "not a record"]})
++
++# --------------------------------------------------------------------------
++# V5 §7 — the five absence cases, each a different way a record can fail to
++# support the negative this page used to print regardless.
++TYPED_ABSENCE_FIXTURE = {
++    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
++    # Every work stands here in its author's own Latin, so English is empty
++    # and the absence view carries the whole claim.
++    "sources": {str(n): _voice_source(n) for n in range(1, 6)},
++    "fragments": [_voice_fragment(n) for n in range(1, 6)],
++    "leads": [], "blocked": [], "refusals": {},
++}
++
++TYPED_ABSENCE_INDEX = {
++    "absences": {
++        # 1. A valid typed absence that DOES support a closed negative.
++        "typed.work1": [{"language": "en", "finding": "none-published",
++                         "reason": "No English translation has been published."}],
++        # 2. A malformed finding TYPE, beside a sound reason. The reason is a
++        #    fact the record states and survives; the finding supports nothing,
++        #    so no count and no claim may be drawn from this row.
++        "typed.work2": [{"language": "en", "finding": {"kind": "in-copyright"},
++                         "reason": "A reason that outlives its finding."}],
++        # 3. A valid finding beside malformed siblings. `in-copyright` is a
++        #    fact about the law and is not discarded because its neighbour is
++        #    unreadable.
++        "typed.work3": [{"language": "en", "finding": "in-copyright",
++                         "reason": ["not", "text"], "partial": 3}],
++        # 4. `not-surveyed` — the finding whose entire content is that NOBODY
++        #    HAS LOOKED. Classified by `partial` truthiness it became "no
++        #    English this project may publish": a closed claim about publishing
++        #    rights, manufactured out of an admission of ignorance.
++        "typed.work4": [{"language": "en", "finding": "not-surveyed",
++                         "reason": ""}],
++        # 5. A LIST mixing malformed members with a valid typed absence.
++        "typed.work5": [None, 11, "not a record",
++                        {"language": "en", "finding": "partial-public-domain",
++                         "reason": "Only part of it is out of copyright.",
++                         "partial": "the 1893 selection"}],
++    }
++}
++
++# --------------------------------------------------------------------------
++# V5 §8 — numeric, verse, path and bootstrap metadata
++#
++# The chapter TEXT, malformed: keys that `Number()` would take for verses the
++# chapter never numbered, and values that concatenation would print as
++# Scripture.
++MALFORMED_VERSES = {
++    "book": "Gen", "chapter": 1,
++    "verses": {
++        "1": "The first verse, sound.",
++        "2": {"text": "not text"},
++        "3": ["also", "not text"],
++        "4": None,
++        "5": "   ",
++        "6": 6,
++        " 7 ": "A verse this chapter never numbered.",
++        "8.0": "Nor this one.",
++        "1e3": "Nor this.",
++        "0": "Nor a verse zero.",
++        "-2": "Nor a negative verse.",
++        "9": "The last verse, sound.",
++    },
++}
++
++# Paragraph marks that are not marks. Any truthy value opened a paragraph
++# while counting as neither kind, so the page printed paragraphs and, beneath
++# them, the note saying no paragraph division is held for this chapter.
++MALFORMED_BREAKS = {
++    "edition": "douay-rheims", "token": "Gen", "chapter": 1,
++    "breaks": {"9": "guessed", "1": {"kind": "printed"}, "3": 1},
++}
++
++# Numbers that are not the numbers this corpus counts by, and paths that are
++# not paths. `Number(x) > 0` printed "1 words" for a boolean; a record in a
++# path composed a URL the page then requested.
++MALFORMED_NUMBER_FIXTURE = {
++    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
++    "sources": {str(n): _voice_source(n) for n in range(1, 8)},
++    "fragments": [
++        _voice_fragment(1, text_words=1200),
++        _voice_fragment(2, text_words="1200"),
++        _voice_fragment(3, text_words=[1200]),
++        _voice_fragment(4, text_words=True),
++        _voice_fragment(5, text_words=12.5),
++        _voice_fragment(6, text_words=0),
++        _voice_fragment(7, text_words=-3),
++    ],
++    "leads": [], "blocked": [], "refusals": {},
++}
++
++# The index itself, malformed — the record the page reads BEFORE it can say
++# anything at all, and the one whose failure used to leave "Loading…" standing.
++def _broken_index(**over):
++    base = {
++        "numbering": "vulgate",
++        "canon": [{"token": "Gen", "name": "Genesis", "chapters": 50,
++                   "testament": "old", "path": "01-gen"}],
++        "held": [{"token": "Gen", "name": "Genesis", "chapters": 50,
++                  "fragments": 1, "path": "structure/catena/01-gen/",
++                  "present": [1], "languages": ["la"]}],
++        "voices": ["original"],
++        "absences": {},
++        "chapter_digits": 3,
++    }
++    base.update(over)
++    return base
++
+ SCENARIOS = [
+     {"name": "default", "hash": GEN1,
+      "steps": [{"do": "openFirstFragment", "label": "opened"}]},
+@@ -974,6 +1216,106 @@ SCENARIOS = [
+          {"do": "openFragmentOf", "author": "Sound Spine Author",
+           "label": "sound-spine-open"},
+      ]},
++
++    # ---------------------------------------------------------------- V5 §5
++    # Everything held, which is the selection the review's own replay used.
++    {"name": "malformed-language-held", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": MALFORMED_LANGUAGE_FIXTURE}},
++    # And a Bible whose own language is a record, which reached the passage
++    # element's `lang` by the same route and was never under test at all.
++    {"name": "malformed-bible-language", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": MALFORMED_LANGUAGE_FIXTURE},
++     "patch": {"bibles.json": {"bibles": [
++         {"id": "douay-rheims", "label": "Douay-Rheims", "language": {"code": "en"},
++          "numbering": "vulgate", "psalter": "vulgate", "psalm_titles": "included",
++          "edition": "1899", "rights": "public-domain"}]}}},
++
++    # ---------------------------------------------------------------- V5 §6
++    {"name": "mixed-collection", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": MIXED_COLLECTION_FIXTURE}},
++    {"name": "mixed-no-refusal", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": MIXED_NO_REFUSAL_FIXTURE}},
++
++    # ---------------------------------------------------------------- V5 §7
++    {"name": "typed-absence", "hash": GEN1 + "&voice=translation:en",
++     "files": {"structure/catena/01-gen/001.json": TYPED_ABSENCE_FIXTURE},
++     "patch": {"structure/catena/index.json": TYPED_ABSENCE_INDEX}},
++
++    # ---------------------------------------------------------------- V5 §8
++    {"name": "malformed-verses", "hash": GEN1,
++     "files": {"douay-rheims/chapters/Gen/1.json": MALFORMED_VERSES,
++               "structure/paragraphs/douay-rheims/01-gen/001.json": MALFORMED_BREAKS}},
++    # Every verse unreadable, but verses DID arrive. "carries no verses" is a
++    # claim about the edition and this page may not make it from a parse
++    # failure.
++    {"name": "unreadable-verses", "hash": GEN1,
++     "files": {"douay-rheims/chapters/Gen/1.json":
++               {"book": "Gen", "chapter": 1, "verses": {"1": {}, "2": ["x"]}}}},
++    {"name": "malformed-numbers", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": MALFORMED_NUMBER_FIXTURE}},
++    # A held path that is not text. Composed raw it became a fetched URL.
++    {"name": "malformed-held-path", "hash": GEN1,
++     "files": {"structure/catena/index.json": _broken_index(
++         held=[{"token": "Gen", "path": {"at": "somewhere"}, "present": [1]}])}},
++    # A `present` list this page cannot read. Absence from an unreadable list
++    # proves nothing, so it may not become "Nothing held here".
++    {"name": "unreadable-present", "hash": GEN1,
++     "files": {"structure/catena/index.json": _broken_index(
++         held=[{"token": "Gen", "path": "structure/catena/01-gen/",
++                "present": [1, {"chapter": 2}]}])}},
++    # Bootstrap: a canon whose members are not books. This threw between the
++    # last fetch and the first render, outside every funnel, and left the page
++    # saying "Loading…" for ever with its controls disabled.
++    {"name": "malformed-canon", "hash": "",
++     "files": {"structure/catena/index.json": _broken_index(
++         canon=[None, 7, "Gen", {"token": "Gen"}])}},
++    # An index that is not a record at all.
++    {"name": "scalar-index", "hash": "",
++     "files": {"structure/catena/index.json": "not an index"}},
++
++    # ---------------------------------------------------------------- V5 §9
++    # Route completion, not parse rejection. Each of these begins CANONICAL
++    # and meets malformed data afterwards, because the committed scenarios all
++    # began malformed and therefore proved nothing about a page that had
++    # already established a route and a history.
++    #
++    # 1 + 4 + 6. A valid bootstrap, a real route, then a chapter whose
++    # collection members are malformed — reached by a reader action, so the
++    # push/replace question is live.
++    {"name": "arrival-then-malformed-member", "hash": GEN1,
++     "files": {"structure/catena/01-gen/002.json": MIXED_COLLECTION_FIXTURE},
++     "steps": [{"do": "selectChapter", "value": "2", "label": "moved"}]},
++    # The same, arriving by address rather than by action: an arrival may
++    # complete in place but may never push.
++    {"name": "hash-then-malformed-member", "hash": GEN1,
++     "files": {"structure/catena/01-gen/002.json": MIXED_COLLECTION_FIXTURE},
++     "steps": [{"do": "hash", "value": GEN2, "label": "moved"}]},
++    # 2. PARTIAL ARRIVAL. The spine is parked in flight while the chapter text
++    # and the paragraph layer land; the malformed spine arrives last.
++    {"name": "partial-arrival-malformed", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": MIXED_COLLECTION_FIXTURE},
++     "defer": ["structure/catena/01-gen/"],
++     "steps": [
++         # Releasing nothing: the label is how a snapshot is taken WHILE the
++         # spine is still in flight, which is the state under test.
++         {"do": "release", "path": "nothing-matches-this", "label": "pending"},
++         {"do": "release", "path": "structure/catena/01-gen/001.json",
++          "label": "arrived"}]},
++    # 3 + 5 + 7. A malformed ACTION payload on an otherwise valid route, then
++    # a retry that succeeds. Opening a fragment must complete its own state
++    # and touch the route not at all.
++    {"name": "malformed-action-then-retry", "hash": GEN1,
++     "files": {"structure/catena/text/mixed-first.json":
++               {"id": "mixed-first", "text": {"not": "text"},
++                "basis": ["not", "text"], "date_basis": 5},
++               "structure/catena/01-gen/001.json": MIXED_COLLECTION_FIXTURE},
++     "defer": ["structure/catena/text/"],
++     "steps": [
++         {"do": "openFirstFragment", "label": "opened"},
++         {"do": "release", "path": "structure/catena/text/mixed-first.json",
++          "label": "malformed-arrived"},
++         {"do": "selectChapter", "value": "2", "label": "moved-after"},
++     ]},
+ ]
+ 
+ REPLAY = r"""
+@@ -1030,6 +1372,16 @@ class Element {
+   get children() { return this.childNodes.filter((one) => one.nodeType === 1); }
+   get id() { return this.attributes.id || ''; }
+   set id(value) { this.attributes.id = String(value); }
++  /* `lang` REFLECTS, exactly as `id` above does and exactly as the HTML DOM
++   * does. This is not shim convenience: it is the whole reason the V4.1
++   * review could see `lang="[object Object]"` in real Chromium while every
++   * committed test here passed. `element.lang = value` is an IDL attribute
++   * whose setter writes the CONTENT attribute, stringifying whatever it is
++   * given; a shim that stored it as a plain JavaScript property made the one
++   * sink the review proved invisible to the one harness that could have
++   * caught it. Reflecting it here is what makes the regression adversarial. */
++  get lang() { return this.attributes.lang || ''; }
++  set lang(value) { this.attributes.lang = String(value); }
+   appendChild(child) {
+     if (child.parentNode) child.parentNode.removeChild(child);
+     child.parentNode = this;
+@@ -1284,6 +1636,12 @@ function inspect(page, document, location, fetched, hashWrites, replaced, status
+     dataStates: [...new Set(nodes
+       .filter((one) => one.hasAttribute('data-state'))
+       .map((one) => one.getAttribute('data-state')))].sort(),
++    /* EVERY DOM LANGUAGE ATTRIBUTE UNDER THE READING REGION, projected as
++     * `class=value` so an assertion can name the sink and the value together.
++     * Projected for every scenario, not only the malformed ones, so the
++     * cross-scenario coercion sweep covers it too. */
++    langAttributes: nodes.filter((one) => one.hasAttribute('lang'))
++      .map((one) => (one.className || one.localName) + '=' + one.getAttribute('lang')),
+     chapterOpen: Boolean((first('chapter-body') || {}).open),
+     chapterCounts: withClass('chapter-count').map(text),
+     authorGroups: groups,
+@@ -2282,7 +2640,13 @@ class UnsupportedVoiceTest(ReplayTest):
+         # inventory is not a voice authority: `held[].languages` carries `grc`
+         # because Greek stands here as an original, and answering support from
+         # it manufactured `translation:grc`.
+-        self.assertIn("!(index.voices || []).includes(voice)", script)
++        # V5 tightened the container the same line reads: `|| []` turned a
++        # STRING `voices` into a container whose `.includes` matches by
++        # substring, so `translation:e` passed against a corpus holding only
++        # `translation:en`. `list()` refuses a scalar outright. The assertion
++        # below is the stricter form of the same requirement, not a relaxation.
++        self.assertIn("!list(index.voices).includes(voice)", script)
++        self.assertNotIn("(index.voices || [])", script)
+         self.assertNotIn("(one.languages || []).includes(", script)
+         self.assertEqual(self.page("unsupported-voice")["fetched"],
+                          ["structure/catena/index.json", "bibles.json",
+@@ -3966,3 +4330,342 @@ class TypedStructureBoundaryTest(ReplayTest):
+         for token in ("[object Object]", "[OBJECT OBJECT]", "undefined", "null",
+                       "not text", "NaN", "true", "false"):
+             self.assertNotIn(token, rendered, f"{token!r} reached the page")
++
++
++class MalformedLanguageAttributeTest(ReplayTest):
++    """V5 §5 — a language that is not a language reaches no DOM attribute.
++
++    The V4.1 review replayed an Everything-held page in real Chromium 151 and
++    read `lang="[object Object]"` off the fragment text while the page
++    otherwise completed normally. Nothing here could see it: the committed
++    malformed-language scenario filtered the offending fragment out under a
++    translation selection, and the harness stored `element.lang` as a plain
++    JavaScript property rather than reflecting it into the content attribute
++    the way the HTML DOM does. Both halves are corrected — the shim reflects,
++    and these scenarios hold everything.
++    """
++
++    def test_no_language_attribute_is_ever_a_coerced_value(self):
++        for name in ("malformed-language-held", "malformed-bible-language"):
++            page = self.page(name)
++            for written in page["langAttributes"]:
++                for artefact in ("[object Object]", "undefined", "null", "true",
++                                 "42", "NaN", "not a language code"):
++                    self.assertNotIn(artefact, written, f"{name}: {written}")
++
++    def test_every_language_attribute_is_a_language_subtag(self):
++        # Not merely "not an object": the attribute is machine-read, so the
++        # value has to be a code a consumer can act on.
++        page = self.page("malformed-language-held")
++        self.assertTrue(page["langAttributes"], "the page must write some lang")
++        for written in page["langAttributes"]:
++            code = written.split("=", 1)[1]
++            self.assertRegex(code, r"^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$", written)
++
++    def test_the_sound_language_survives_its_malformed_neighbours(self):
++        # Nine fragments stand; exactly one states a language, and it keeps it.
++        page = self.page("malformed-language-held")
++        self.assertEqual(page["fragmentCount"], 9)
++        self.assertEqual(
++            [one for one in page["langAttributes"] if one.startswith("fragment-text=")],
++            ["fragment-text=la"] + ["fragment-text=en"] * 8)
++
++    def test_a_malformed_language_reaches_no_visible_prose(self):
++        # `sound()` passed "not a language code", and the shared namer printed
++        # it straight back, uppercased, as though it named a language.
++        page = self.page("malformed-language-held")
++        self.assertEqual(page["languages"], ["Latin — the author\u2019s own"])
++
++    def test_a_malformed_bible_language_reaches_no_passage_attribute(self):
++        page = self.page("malformed-bible-language")
++        self.assertIn("passage=en", page["langAttributes"])
++
++    def test_the_page_still_completes_under_every_malformed_language(self):
++        for name in ("malformed-language-held", "malformed-bible-language"):
++            page = self.page(name)
++            self.assertEqual(page["busy"], "false", name)
++            self.assertTrue(page["statusWrites"], name)
++            self.assertFalse(page["errorSections"], name)
++
++
++class MixedCollectionMemberTest(ReplayTest):
++    """V5 §6 — valid, malformed record, scalar, null, valid, in every list.
++
++    The list gate validated containers and not their members. A scalar or an
++    array became a blank row that was nonetheless tallied; a `null` threw on
++    the next property access, discarded every valid sibling, and replaced the
++    page with a raw JavaScript error.
++    """
++
++    def test_valid_fragment_siblings_survive_a_scalar_and_a_null(self):
++        page = self.page("mixed-collection")
++        self.assertEqual(page["fragmentCount"], 3,
++                         "two sound fragments and one sound record with a bad id")
++        self.assertEqual(page["authors"], ["First Author", "First Author", "Last Author"])
++        self.assertEqual(page["works"], ["First Work", "First Work", "Last Work"])
++
++    def test_the_tally_counts_only_the_valid_members(self):
++        page = self.page("mixed-collection")
++        # THREE, not two: a malformed RECORD is still a record the spine
++        # wrote, so it counts and renders nothing of itself. The scalar and
++        # the null are not entries at all and count nowhere. This is the
++        # distinction the V4 leads/blocked correction already drew, held here
++        # against a null neighbour that used to throw before any of it ran.
++        self.assertEqual(
++            page["tallyText"],
++            "3 fragments held \u00b7 3 works held, not renderable yet"
++            " \u00b7 3 lead entries on the acquisition list")
++
++    def test_a_malformed_id_addresses_no_text_file_and_erases_no_sibling(self):
++        page = self.page("mixed-collection")
++        self.assertEqual(page["fragmentIds"], ["mixed-first", None, "mixed-last"])
++        for asked in page["fetched"]:
++            self.assertNotIn("object", asked)
++            self.assertNotIn("undefined", asked)
++
++    def test_valid_lead_and_blocked_siblings_survive_their_neighbours(self):
++        page = self.page("mixed-collection")
++        self.assertEqual(page["leads"],
++                         ["Lead One \u2014 Lead Work One (500)", "",
++                          "Lead Two \u2014 Lead Work Two (600)"])
++        self.assertEqual(page["blocked"],
++                         ["Blocked One \u2014 Blocked Work Onerights", "",
++                          "Blocked Two \u2014 Blocked Work Tworights"])
++
++    def test_one_valid_refusal_among_malformed_members_is_stated_once(self):
++        page = self.page("mixed-collection")
++        self.assertIsNotNone(page["refusal"])
++        self.assertIn("the numbering of this chapter is displaced", page["refusal"].lower())
++
++    def test_malformed_members_alone_manufacture_no_refusal(self):
++        # Three scalars satisfied `.length` and claimed a boundary the
++        # projection never refused.
++        page = self.page("mixed-no-refusal")
++        self.assertIsNone(page["refusal"])
++        self.assertNotIn("refusal", page["dataStates"])
++
++    def test_the_render_completes_with_a_null_member_in_every_list(self):
++        page = self.page("mixed-collection")
++        self.assertEqual(page["busy"], "false")
++        self.assertFalse(page["errorSections"],
++                         "a null member must not replace the page with an error")
++        self.assertTrue(page["statusWrites"])
++
++
++class TypedAbsenceFindingTest(ReplayTest):
++    """V5 §7 — an absence claims exactly what its typed finding supports.
++
++    The generator closes `finding` at four values and says a different thing
++    with each: `none-published` is about the world, `in-copyright` about the
++    law, `partial-public-domain` is an offer not taken, and `not-surveyed` is
++    an admission that nobody looked. The page read none of them, classifying a
++    row by whether a `partial` string was attached — so `not-surveyed`, and
++    every malformed neighbour, was spoken as "no English this project may
++    publish".
++    """
++
++    def test_each_finding_speaks_only_for_itself(self):
++        page = self.page("typed-absence")
++        self.assertEqual(
++            page["absenceSummary"],
++            "2 works standing here have no English this project may publish;"
++            " 1 has only a partly public domain English, not yet taken;"
++            " 1 has not been surveyed for English;"
++            " 1 has a finding this page cannot read")
++
++    def test_not_surveyed_never_becomes_a_publishing_negative(self):
++        page = self.page("typed-absence")
++        said = page["absenceSummary"]
++        # One closed clause, counting two works, and `not-surveyed` is not
++        # one of them: four rows would have been counted before V5.
++        self.assertIn("2 works standing here have no English", said)
++        self.assertIn("1 has not been surveyed for English", said)
++
++    def test_a_malformed_finding_supports_no_claim_and_no_count(self):
++        page = self.page("typed-absence")
++        self.assertIn("1 has a finding this page cannot read", page["absenceSummary"])
++
++    def test_a_valid_finding_survives_malformed_sibling_metadata(self):
++        # `typed.work3` states `in-copyright` beside an unreadable reason; the
++        # finding is counted and the reason withheld, not the other way about.
++        page = self.page("typed-absence")
++        self.assertEqual(
++            page["absenceReasons"],
++            ["No English translation has been published.",
++             "A reason that outlives its finding.",
++             "Only part of it is out of copyright."])
++
++    def test_a_malformed_member_does_not_stand_in_for_the_valid_one(self):
++        page = self.page("typed-absence")
++        self.assertEqual(page["absencePartials"],
++                         ["Partly public domain \u2014 the 1893 selection"])
++
++    def test_the_absence_view_completes_and_stands_open(self):
++        page = self.page("typed-absence")
++        self.assertTrue(page["absenceOpen"])
++        self.assertEqual(page["busy"], "false")
++        self.assertIn("absence", page["dataStates"])
++
++
++class NumericVerseAndPathTest(ReplayTest):
++    """V5 §8 — numbers, verses, paths and the bootstrap record."""
++
++    def test_only_plainly_numbered_verses_with_readable_words_are_shown(self):
++        page = self.page("malformed-verses")
++        self.assertEqual(page["chapterCounts"][0], "2 verses")
++
++    def test_no_verse_value_is_coerced_into_scripture(self):
++        page = self.page("malformed-verses")
++        rendered = " ".join(str(one) for one in page["fragmentTexts"] + [page["tallyText"]])
++        for artefact in ("[object Object]", "also,not text", "undefined", "null"):
++            self.assertNotIn(artefact, rendered)
++
++    def test_a_mark_that_is_not_a_mark_opens_no_paragraph(self):
++        # Any truthy value opened a paragraph and counted as neither kind, so
++        # the page printed paragraphs and denied holding any division.
++        page = self.page("malformed-verses")
++        self.assertEqual(page["paragraphs"], 1)
++        self.assertIn("No paragraph division is held", page["paragraphNote"])
++
++    def test_unreadable_verses_are_not_reported_as_none(self):
++        # "carries no verses" is a claim about the edition, and a parse
++        # failure does not establish it.
++        page = self.page("unreadable-verses")
++        rendered = " ".join(page["asideNotes"] + page["sectionHeadings"])
++        self.assertEqual(page["busy"], "false")
++        self.assertNotIn("carries no verses", str(page["classes"]) + rendered)
++
++    def test_a_word_tally_is_a_number_the_record_wrote(self):
++        # Seven fragments, and exactly one states a tally this page may print.
++        page = self.page("malformed-numbers")
++        self.assertEqual(page["fragmentCount"], 7)
++        lengths = [one for one in page["classes"] if one == "fragment-length"]
++        self.assertEqual(lengths, ["fragment-length"])
++
++    def test_a_malformed_held_path_is_never_requested(self):
++        page = self.page("malformed-held-path")
++        for asked in page["fetched"]:
++            self.assertNotIn("object", asked)
++        self.assertEqual(page["busy"], "false")
++
++    def test_a_malformed_held_record_reports_a_fault_not_an_emptiness(self):
++        page = self.page("malformed-held-path")
++        self.assertTrue(page["errorSections"], "a broken record is an error")
++        self.assertNotIn("Nothing held here", str(page["tallyText"]))
++
++    def test_an_unreadable_present_list_proves_no_absence(self):
++        page = self.page("unreadable-present")
++        self.assertNotEqual(page["tallyText"], "Nothing held here")
++        self.assertTrue(page["errorSections"])
++        self.assertEqual(page["busy"], "false")
++
++    def test_a_malformed_canon_never_leaves_the_page_loading(self):
++        # THE BOOTSTRAP BLOCKER. This threw between the last fetch and the
++        # first render, outside both funnels, and the page stood at "Loading…"
++        # with every control disabled and nothing said.
++        for name in ("malformed-canon", "scalar-index"):
++            page = self.page(name)
++            self.assertNotEqual(page["referenceText"], "Loading\u2026", name)
++            self.assertTrue(page["statusWrites"], f"{name}: the failure must be spoken")
++            self.assertNotIn("Loading", " ".join(page["bookLabels"]), name)
++
++
++class RouteCompletionAfterMalformedDataTest(ReplayTest):
++    """V5 §9 — the application completes its state machine, not merely a parse.
++
++    Every committed malformed scenario began malformed, so none of them proved
++    anything about a page that had already established a route, a history and
++    a rendered chapter before the malformed data arrived. These begin
++    canonical.
++    """
++
++    def test_a_reader_action_into_a_malformed_chapter_pushes_exactly_once(self):
++        moved = self.snapshot("arrival-then-malformed-member", "moved")
++        self.assertEqual(moved["hash"], GEN2)
++        self.assertEqual(moved["hashWrites"], [GEN2],
++                         "a reader step pushes one entry, malformed data or not")
++        self.assertEqual(moved["replaced"], [])
++        self.assertEqual(moved["busy"], "false")
++
++    def test_an_address_into_a_malformed_chapter_never_pushes(self):
++        moved = self.snapshot("hash-then-malformed-member", "moved")
++        self.assertEqual(moved["hash"], GEN2)
++        self.assertEqual(moved["hashWrites"], [],
++                         "an arrival is completed in place, never by pushing")
++        self.assertEqual(moved["busy"], "false")
++
++    def test_the_route_state_stays_coherent_across_the_malformed_chapter(self):
++        for name in ("arrival-then-malformed-member", "hash-then-malformed-member"):
++            moved = self.snapshot(name, "moved")
++            self.assertEqual(moved["referenceText"], "Genesis 2", name)
++            self.assertEqual(moved["selectValues"],
++                             {"book": "Gen", "chapter": "2", "bible": "douay-rheims"},
++                             name)
++            self.assertEqual(moved["stepButtons"], [False, False], name)
++
++    def test_the_valid_siblings_and_the_tally_survive_the_move(self):
++        for name in ("arrival-then-malformed-member", "hash-then-malformed-member"):
++            moved = self.snapshot(name, "moved")
++            self.assertEqual(moved["fragmentCount"], 3, name)
++            self.assertIn("3 fragments held", moved["tallyText"], name)
++
++    def test_the_move_announces_itself_exactly_once_more(self):
++        # The whole announcement journal, in order: the cold arrival speaks
++        # once and the move speaks once. Neither doubles, and neither is lost
++        # because the chapter it moved into is malformed.
++        moved = self.snapshot("arrival-then-malformed-member", "moved")["statusWrites"]
++        self.assertEqual(len(moved), 2, moved)
++        self.assertTrue(moved[0].startswith("Genesis 1, "), moved[0])
++        self.assertTrue(moved[1].startswith("Genesis 2, "), moved[1])
++
++    def test_a_partial_arrival_completes_when_the_malformed_spine_lands(self):
++        pending = self.snapshot("partial-arrival-malformed", "pending")
++        self.assertEqual(pending["busy"], "true",
++                         "the region is busy while the spine is in flight")
++        self.assertEqual(pending["statusWrites"], [],
++                         "nothing is announced before the record arrives")
++        arrived = self.snapshot("partial-arrival-malformed", "arrived")
++        self.assertEqual(arrived["busy"], "false")
++        self.assertEqual(arrived["hash"], GEN1)
++        self.assertEqual(arrived["hashWrites"], [],
++                         "a partial arrival is completed in place")
++        self.assertEqual(arrived["fragmentCount"], 3)
++        self.assertTrue(arrived["statusWrites"])
++
++    def test_a_partial_arrival_keeps_its_valid_siblings_and_claims_nothing(self):
++        arrived = self.snapshot("partial-arrival-malformed", "arrived")
++        self.assertNotEqual(arrived["tallyText"], "Nothing held here")
++        # The one valid refusal record among three malformed members survives
++        # the partial arrival and is stated once.
++        self.assertIn("Boundary not established", arrived["refusal"])
++        self.assertNotIn("absence", arrived["dataStates"])
++
++    def test_a_malformed_action_payload_settles_its_own_fragment_only(self):
++        arrived = self.snapshot("malformed-action-then-retry", "malformed-arrived")
++        # The payload's body is unreadable, so the fragment shows nothing of
++        # itself — and says so rather than standing at "Loading…" for ever.
++        self.assertNotIn("Loading\u2026", arrived["fragmentTexts"][0])
++        self.assertEqual(arrived["fragmentBases"], [],
++                         "an unreadable basis renders nothing")
++
++    def test_a_malformed_action_touches_neither_route_nor_history(self):
++        opened = self.snapshot("malformed-action-then-retry", "opened")
++        arrived = self.snapshot("malformed-action-then-retry", "malformed-arrived")
++        for page in (opened, arrived):
++            self.assertEqual(page["hash"], GEN1)
++            self.assertEqual(page["hashWrites"], [])
++            self.assertEqual(page["busy"], "false",
++                             "opening a fragment does not make the region busy")
++
++    def test_a_later_valid_action_still_completes_after_a_malformed_one(self):
++        moved = self.snapshot("malformed-action-then-retry", "moved-after")
++        self.assertEqual(moved["hash"], GEN2)
++        self.assertEqual(moved["hashWrites"], [GEN2])
++        self.assertEqual(moved["busy"], "false")
++        self.assertEqual(moved["referenceText"], "Genesis 2")
++
++    def test_nothing_stale_survives_the_rejected_payload(self):
++        moved = self.snapshot("malformed-action-then-retry", "moved-after")
++        self.assertFalse(moved["errorSections"])
++        for said in moved["fragmentTexts"]:
++            self.assertNotIn("[object Object]", said)

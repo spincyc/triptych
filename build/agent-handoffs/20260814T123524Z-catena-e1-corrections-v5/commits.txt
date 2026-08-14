@@ -1,0 +1,32 @@
+review addressed     7f69575b982926e827974f2ed236b1c8bfd8aaad  Record Catena V4.1 independent review
+parent (V4.1 head)   f93757854b54c19e50bdcb97ca0fed9b48d22bb7  Record the V4.1 refusal-copy correction and its visual evidence
+implementation       aba43989637989430dbaf8814c24960bf372cd9a  Close the Catena typed record boundary the V4.1 review proved open
+implementation       3dbe298246cbeb9357cd3c787d6a2e6b66cc5893  Name the gated language code, not the raw value beside it
+implementation       d0218bae2f7db75e181a0a97937264933c35c09f  Stop the model-digest note quoting a byte figure that can drift
+V5 HEAD (final)      19982ab433dd25704ed60b1ac6ddb678bc3a98f9  Record the V4.1 disposition, the V5 correction, and what it did not settle
+
+branch               impl/catena-wave-1-e1-corrections-v5
+f93757854..19982ab43 is exactly 4 commits: three implementation, one records.
+
+Why two SHAs appear in this package
+-----------------------------------
+Every measurement, probe and capture in this package was taken at the
+implementation commit d0218bae2. The final head 19982ab43 adds ONLY the
+durable records, and touches no code:
+
+    $ git diff --name-only d0218bae2..19982ab43 -- src/ tools/ scripts/ release/
+    (no output -- zero files)
+
+    $ git diff --stat d0218bae2..19982ab43
+     PROJECT-WORK.md                        | 112 +++++++++++++++++++++++++++++++++
+     guidance/corpus-browser-master-plan.md |   2 +-
+     guidance/corpus-browser-roadmap.md     |  85 ++++++++++++++++++++++++-
+     promised-deliverables.toml             |  54 ++++++++++++++++
+     4 files changed, 251 insertions(+), 2 deletions(-)
+
+So every number below holds at the final head by construction: the
+reviewed implementation, its stylesheet, its data and its tests are
+byte-identical between those two commits.
+
+superseded package   build/agent-handoffs/20260813T164804Z-catena-e1-corrections-v4-1  (NOT mutated)
+V4.1 package SHA-256 781c9b7582c5d3dd22a9330291fa158b12b722a626ce0264dc3dfc95d54f1552  (re-verified byte-exact)

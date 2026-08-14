@@ -1,0 +1,261 @@
+Catena E1 V5 — checks
+=====================
+
+Base            f93757854b54c19e50bdcb97ca0fed9b48d22bb7
+                the exact reviewed V4.1 head, in a separate clean clone
+Head            19982ab433dd25704ed60b1ac6ddb678bc3a98f9
+Implementation  d0218bae2f7db75e181a0a97937264933c35c09f
+                every measurement below was taken here; commits.txt proves the
+                records commit above it touches no code
+
+All commands run from the repository root. Exit statuses are numeric and real.
+A command that was not run appears under "Skipped" with its reason, never as a
+pass.
+
+=== A. Focused Catena suite, head ===
+
+$ python3 -m unittest discover -s tools/tests -p 'test_catena*.py'
+
+    ----------------------------------------------------------------------
+    Ran 306 tests in 2.580s
+    
+    OK
+
+EXIT=0
+306 tests, all green. The base runs 267; the 39 new are the regressions
+the review required, across all five of its blocking classes.
+Log: logs/focused-catena-head.log
+
+=== B. Focused Catena suite, base ===
+
+$ python3 -m unittest discover -s tools/tests -p 'test_catena*.py'
+
+    ----------------------------------------------------------------------
+    Ran 267 tests in 2.483s
+    
+    OK
+
+EXIT=0
+267 tests, all green, in a separate clean clone at the parent.
+Log: logs/focused-catena-base.log
+
+=== C. The new regressions, replayed against the PARENT implementation ===
+
+$ python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py'   # V5 test file, parent code
+
+    Ran 254 tests in 0.950s
+    FAILED (failures=31, errors=3)
+
+EXIT=1
+A regression that passes on the code it was written to catch is not one.
+With every V5 scenario present the parent's node harness DIES with an
+uncaught TypeError from catena.js:1006 — the bootstrap line this
+correction identified — taking all 254 tests with it. With the two
+bootstrap scenarios filtered out so the rest can report, 23 of the new
+tests fail at the parent. See REGRESSIONS-FAIL-ON-PARENT.md. The base
+clone was restored to a clean parent afterwards.
+Log: logs/new-tests-against-base.log
+
+=== D. Catena generator and model check ===
+
+$ python3 scripts/_catena.py check
+
+    catena valid: fragments=1351 books=1 canon=73
+
+EXIT=0
+Replays catena-model.js under node against the solved cases in
+src/sources/commentary/fragment-loci.yaml. This is the check that proves
+V5's stricter fragmentsOnChapter membership rule did not move the emitted
+chapter view — the model is executed by the generator during emit.
+Log: logs/misc-checks-head.log
+
+=== E. Promised-deliverable ledger ===
+
+$ python3 tools/tpt check-promised-deliverables
+
+    Promised-deliverable ledger valid: 30 tracked, 19 complete.
+
+EXIT=0
+30 tracked at the head, 29 at the base. The added entry's
+immutable-v5-handoff and fresh-independent-review requirements are both
+open. Nothing was marked complete by this lane.
+Log: logs/misc-checks-head.log
+
+=== F. Release bindings, read-only status ===
+
+$ python3 tools/tpt release-bindings status
+
+    stale site source src/web/browser/catena/catena-model.js: recorded f1ea94f9ec6b54813859c2b526163e90d9de61992b839fe2eb0e349f31ccf57b, actual f1ed13795d3b3774bbfc4811282de304eb2c97e746bcd3c9db47f0536bf36b5e
+    stale site source src/web/browser/catena/catena.css: recorded aa564bc23918eeb98a0680df416549d94525444bcf837606293f031c8b0099d6, actual 733e84909e0e8049629187352d3800be320e469da7be200e860378bcc28851c5
+    stale site source src/web/browser/catena/catena.js: recorded 51aaa3cf9deb47127da9cce3acefd2740531c69a6ed17e7bf7a702171d6d20d0, actual 8bb2834a8814a18470bc1d4c0849e5e88db5bf7e259726ebb2a3f1134b98d25b
+    stale site source src/web/browser/catena/index.html: recorded 45c491abf22351e14fe22648a5a05e47f6abd8185a2565a3cc34a1d19acc440d, actual 7779d1f19ca175fd315cd7164f5347cc3c08d68b20b3b68a9219429b02bb8fa8
+    stale: 4 stale binding(s)
+
+EXIT=1
+Four stale — the same four Catena paths as at the base, unchanged in
+count. catena-model.js and catena.js are stale against new digests
+because they changed; catena.css and index.html are byte-identical to
+V4.1 and were already stale. NONE WAS RE-SIGNED: refresh-release-bindings
+and approve-release were not run. Failing closed is correct for a
+candidate awaiting review.
+Log: logs/misc-checks-head.log
+
+=== G. Budgets — gzip -9, whole file, mtime pinned to zero ===
+
+$ python3 - <<'EOF'   # the exact algorithm of PayloadTest in tools/tests/test_catena_wave_1.py
+
+    gzip -9, whole file, mtime pinned to zero
+    catena.css whole        7629 / 8000
+    catena.css rules only   2676 / 2700
+    catena.js  whole       12990 / 13000
+    catena.js  code only    8363 / 8800
+
+EXIT=0
+catena.css is BYTE-IDENTICAL to the base, not merely equal in size.
+catena.js is 20 bytes larger whole and 371 bytes smaller stripped,
+because the derivations moved to the unbudgeted model. No ceiling was
+raised and no budget authority was changed.
+Log: logs/budgets-head.log
+
+=== H. Public site build ===
+
+$ make public-site
+
+    built build/public-alpha/site; not verified — run tools/public-alpha verify before publication
+
+EXIT=0
+Writes build/public-alpha/site only. Both the browser gate and the probe
+ran against this build.
+Log: logs/public-site.log
+
+=== I. Browser gate, head ===
+
+$ node tools/tests/corpus_browser_gate.mjs --json-out <out>
+
+    "counts": { "routes": 19, "states": 9, "pages": 171,
+                "assertions": 2290, "passed": 1836,
+                "failed": 226, "skipped": 228 }
+
+EXIT=1
+2,290 assertions: 1,836 pass, 226 fail, 228 skip. Exit 1 because the
+inherited common-gate failures are present, exactly as at the base. The
+226 are the shared shell's: single-main-element 117,
+primary-controls-meet-target-size 82,
+skip-link-targets-existing-element 27. None is a Catena assertion.
+Log: logs/browser-gate-head.json
+
+=== J. Browser gate comparison, base against head ===
+
+$ python3 logs/compare-gate.py logs/browser-gate-base.json logs/browser-gate-head.json
+
+    assertion objects, base: 17
+    assertion objects, head: 17
+    identity set equal: True
+    base-only identities: []
+    head-only identities: []
+    rows with changed status: 0
+    rows with changed detail: 0
+    whole report identical (volatile fields excluded): True
+
+EXIT=0
+Deep-equal. NOTE the comparison excludes FOUR volatile keys, not one:
+generatedAt, root, durationMs and browser. The V4.1 record's wording
+named only generatedAt; this is the corrected statement. See
+LIMITATIONS.md section 5.
+Log: logs/gate-comparison.log
+
+=== K. Real-Chromium probe, head and base ===
+
+$ node logs/probe-catena.mjs build/public-alpha/site logs/probe-head.json 'V5 head' screenshots/ 'after--'
+
+    probed 6 states at V5 head -> $SCRATCH/-home-<user>-git-worktrees-triptych-e1-catena-v3/<uuid>/scratchpad/final/probe-head.json
+
+EXIT=0
+Six malformed-data states, read from the live DOM and the live resource
+log in headless Chromium, at the base and at the head under identical
+fixtures. Twenty differing fields; PROBE-DIFFERENCE.md lists every one.
+EVERY FIXTURE IS FABRICATED ADVERSARIAL DATA and represents no holding of
+this project — see LIMITATIONS.md section 1.
+Log: logs/probe-head.json
+
+=== L. Full discovery, head ===
+
+$ python3 -m unittest discover -s tools/tests
+
+    Ran 1657 tests in 491.066s
+    FAILED (failures=14, errors=13, skipped=11)
+
+EXIT=1
+The head runs 39 more tests than the base. No literal baseline identity
+is claimed; what is compared is the SET of FAIL and ERROR test names, and
+diff over the two sorted sets produces no output. See BASELINE-COMPARISON.md.
+Log: logs/all-tests-head.log
+
+=== M. Full discovery, base ===
+
+$ python3 -m unittest discover -s tools/tests
+
+    Ran 1618 tests in 488.609s
+    FAILED (failures=14, errors=13, skipped=11)
+
+EXIT=1
+Reproduces the V4.1 review's own recorded 1,618 / 14 / 13 / 11 exactly,
+which is the check that this comparison environment is the review's.
+Log: logs/all-tests-base.log
+
+=== N. Failure-name-set comparison ===
+
+$ diff logs/names-base.txt logs/names-head.txt
+
+    (no output)
+
+EXIT=0
+No output: the 27-entry FAIL/ERROR name set is identical at base and
+head. This is the comparison AGENTS.md requires — failure sets, not exit
+codes.
+Log: logs/names-base.txt, logs/names-head.txt
+
+=== O. make -k check ===
+
+$ make -k check
+
+    make: *** [Makefile:598: check-release-bindings] Error 1
+    make: *** [Makefile:803: check-tool-registry] Error 1
+    make: *** [Makefile:791: check-examples] Error 1
+
+EXIT=2
+Exit 2 at the same three inherited failing targets as the base and as the
+V4.1 review recorded: check-release-bindings (the four stale Catena
+bindings), check-tool-registry (undeclared sibling dependencies) and
+check-examples (transcript divergences). Each is owned elsewhere and
+listed in UNRESOLVED-BLOCKERS.md. No record here rounds these into a
+green repository-wide check.
+Log: logs/make-k-check-head.log
+
+=== Skipped ===
+
+- make check-browser-harnesses — drives the four liturgy/foundation reader
+  harnesses. None touches the Catena route, and this correction changes no
+  shared shell file. Not run, and therefore not reported as a pass.
+
+- make refresh-release-bindings, make approve-release — these WRITE the release
+  record. Deliberately not run: re-signing is the release owner's act and this
+  candidate is not accepted.
+
+- python3 scripts/_catena.py structure, and every other generator with a
+  --out src/web/data form — these rewrite tracked served data and own the whole
+  directory, deleting what they did not write. Deliberately not run; V5 changes
+  no data at all.
+
+- make recapture-examples — rewrites the EXAMPLES tables inside tracked tools/
+  sources. Not this lane's to run.
+
+- capture-catena.mjs and capture-provenance.mjs — carried forward in logs/ as
+  evidence but NOT re-run. They visit only real corpus addresses, which cannot
+  exhibit malformed-data behaviour, and V5 changes no CSS, so V4.1's accepted
+  53-image matrix stands unaltered and unsuperseded.
+
+- Any real assistive-technology run — no AT bus or screen reader is available
+  here. The probe reads aria-busy, the status region and the focused element;
+  it does not prove what a screen reader says. V4's AT-LIMITATION.md is not
+  superseded.

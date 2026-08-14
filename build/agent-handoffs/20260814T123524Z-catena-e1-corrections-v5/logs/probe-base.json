@@ -1,0 +1,289 @@
+{
+  "label": "V4.1 base f93757854",
+  "browser": "Chrome/151.0.7922.108",
+  "probes": {
+    "malformed-language-everything-held": {
+      "shows": "blocker 1 — a DOM lang attribute composed from a record",
+      "address": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "reference": "Genesis 1",
+      "tally": "7 fragments held",
+      "status": "Genesis 1, Douay-Rheims (Challoner), 7 fragments held.",
+      "ariaBusy": "false",
+      "langAttributes": [
+        "passage=en",
+        "fragment-text=la",
+        "fragment-text=[object Object]",
+        "fragment-text=la",
+        "fragment-text=42",
+        "fragment-text=true",
+        "fragment-text=   ",
+        "fragment-text=not a language code"
+      ],
+      "languageChips": [
+        "Latin — the author’s own",
+        "NOT A LANGUAGE CODE — the author’s own"
+      ],
+      "fragmentCount": 7,
+      "wordChips": [
+        "4 words",
+        "4 words",
+        "4 words",
+        "4 words",
+        "4 words",
+        "4 words",
+        "4 words"
+      ],
+      "extents": [
+        "Genesis 1:1",
+        "Genesis 1:2",
+        "Genesis 1:3",
+        "Genesis 1:4",
+        "Genesis 1:5",
+        "Genesis 1:6",
+        "Genesis 1:7"
+      ],
+      "leads": [],
+      "blocked": [],
+      "refusal": null,
+      "absenceSummary": null,
+      "absenceReasons": [],
+      "absencePartials": [],
+      "asideNotes": [],
+      "errorHeadings": [],
+      "bookOptions": [
+        "Genesis",
+        "Exodus",
+        "Leviticus"
+      ],
+      "dataStates": [
+        "held"
+      ],
+      "requested": [
+        "browse/bibles.json",
+        "browse/douay-rheims/chapters/Gen/1.json",
+        "browse/structure/catena/01-gen/001.json",
+        "browse/structure/catena/index.json",
+        "browse/structure/paragraphs/douay-rheims/01-gen/001.json",
+        "browse/structure/paragraphs/index.json"
+      ]
+    },
+    "mixed-collection-members": {
+      "shows": "blocker 2 — counts, refusals and surviving siblings",
+      "address": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "reference": "Genesis 1",
+      "tally": "",
+      "status": "This chapter could not be loaded: Cannot read properties of null (reading 'source')",
+      "ariaBusy": "false",
+      "langAttributes": [],
+      "languageChips": [],
+      "fragmentCount": 0,
+      "wordChips": [],
+      "extents": [],
+      "leads": [],
+      "blocked": [],
+      "refusal": null,
+      "absenceSummary": null,
+      "absenceReasons": [],
+      "absencePartials": [],
+      "asideNotes": [],
+      "errorHeadings": [],
+      "bookOptions": [
+        "Genesis",
+        "Exodus",
+        "Leviticus"
+      ],
+      "dataStates": [],
+      "requested": [
+        "browse/bibles.json",
+        "browse/douay-rheims/chapters/Gen/1.json",
+        "browse/structure/catena/01-gen/001.json",
+        "browse/structure/catena/index.json",
+        "browse/structure/paragraphs/douay-rheims/01-gen/001.json",
+        "browse/structure/paragraphs/index.json"
+      ]
+    },
+    "typed-absence-findings": {
+      "shows": "blocker 3 — what each typed finding licenses the page to say",
+      "address": "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:en",
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:en",
+      "reference": "Genesis 1",
+      "tally": "5 fragments held · none in English translation",
+      "status": "Genesis 1, Douay-Rheims (Challoner), 5 fragments held, none in English translation.",
+      "ariaBusy": "false",
+      "langAttributes": [
+        "passage=en"
+      ],
+      "languageChips": [],
+      "fragmentCount": 0,
+      "wordChips": [],
+      "extents": [],
+      "leads": [],
+      "blocked": [],
+      "refusal": null,
+      "absenceSummary": "4 works standing here have no English this project may publish; 1 has only a partly public domain English, not yet taken",
+      "absenceReasons": [
+        "No English translation has been published.",
+        "A reason that outlives its finding.",
+        "Only part of it is out of copyright."
+      ],
+      "absencePartials": [
+        "Partly public domain — the 1893 selection"
+      ],
+      "asideNotes": [
+        "No commentary on this chapter is held in English translation. 5 fragments are held here, in the author’s own language; choose “Everything held” to see them."
+      ],
+      "errorHeadings": [],
+      "bookOptions": [
+        "Genesis",
+        "Exodus",
+        "Leviticus"
+      ],
+      "dataStates": [
+        "absence"
+      ],
+      "requested": [
+        "browse/bibles.json",
+        "browse/douay-rheims/chapters/Gen/1.json",
+        "browse/structure/catena/01-gen/001.json",
+        "browse/structure/catena/index.json",
+        "browse/structure/paragraphs/douay-rheims/01-gen/001.json",
+        "browse/structure/paragraphs/index.json"
+      ]
+    },
+    "malformed-word-tallies": {
+      "shows": "blocker 4 — a tally is a number the record wrote",
+      "address": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "reference": "Genesis 1",
+      "tally": "4 fragments held",
+      "status": "Genesis 1, Douay-Rheims (Challoner), 4 fragments held.",
+      "ariaBusy": "false",
+      "langAttributes": [
+        "passage=en",
+        "fragment-text=la",
+        "fragment-text=la",
+        "fragment-text=la",
+        "fragment-text=la"
+      ],
+      "languageChips": [
+        "Latin — the author’s own",
+        "Latin — the author’s own",
+        "Latin — the author’s own",
+        "Latin — the author’s own"
+      ],
+      "fragmentCount": 4,
+      "wordChips": [
+        "1,200 words",
+        "1,200 words",
+        "1 words",
+        "12.5 words"
+      ],
+      "extents": [
+        "Genesis 1:1",
+        "Genesis 1:2",
+        "Genesis 1:3",
+        "Genesis 1:4"
+      ],
+      "leads": [],
+      "blocked": [],
+      "refusal": null,
+      "absenceSummary": null,
+      "absenceReasons": [],
+      "absencePartials": [],
+      "asideNotes": [],
+      "errorHeadings": [],
+      "bookOptions": [
+        "Genesis",
+        "Exodus",
+        "Leviticus"
+      ],
+      "dataStates": [
+        "held"
+      ],
+      "requested": [
+        "browse/bibles.json",
+        "browse/douay-rheims/chapters/Gen/1.json",
+        "browse/structure/catena/01-gen/001.json",
+        "browse/structure/catena/index.json",
+        "browse/structure/paragraphs/douay-rheims/01-gen/001.json",
+        "browse/structure/paragraphs/index.json"
+      ]
+    },
+    "malformed-held-path": {
+      "shows": "blocker 4 — a path that is not text is not fetched",
+      "address": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "reference": "Genesis 1",
+      "tally": "The commentary record did not load",
+      "status": "Genesis 1, Douay-Rheims (Challoner), commentary record unavailable.",
+      "ariaBusy": "false",
+      "langAttributes": [
+        "passage=en"
+      ],
+      "languageChips": [],
+      "fragmentCount": 0,
+      "wordChips": [],
+      "extents": [],
+      "leads": [],
+      "blocked": [],
+      "refusal": null,
+      "absenceSummary": null,
+      "absenceReasons": [],
+      "absencePartials": [],
+      "asideNotes": [],
+      "errorHeadings": [
+        "This chapter’s commentary record did not load"
+      ],
+      "bookOptions": [
+        "Genesis",
+        "Exodus",
+        "Leviticus"
+      ],
+      "dataStates": [
+        "error"
+      ],
+      "requested": [
+        "browse/[object%20Object]001.json",
+        "browse/bibles.json",
+        "browse/douay-rheims/chapters/Gen/1.json",
+        "browse/structure/catena/index.json",
+        "browse/structure/paragraphs/douay-rheims/01-gen/001.json",
+        "browse/structure/paragraphs/index.json"
+      ]
+    },
+    "malformed-canon-bootstrap": {
+      "shows": "blocker 4 — the bootstrap record, and the terminal state it owes",
+      "address": "(no address)",
+      "hash": "",
+      "reference": "Loading…",
+      "tally": "",
+      "status": null,
+      "ariaBusy": null,
+      "langAttributes": [],
+      "languageChips": [],
+      "fragmentCount": 0,
+      "wordChips": [],
+      "extents": [],
+      "leads": [],
+      "blocked": [],
+      "refusal": null,
+      "absenceSummary": null,
+      "absenceReasons": [],
+      "absencePartials": [],
+      "asideNotes": [],
+      "errorHeadings": [],
+      "bookOptions": [
+        "Loading…"
+      ],
+      "dataStates": [],
+      "requested": [
+        "browse/bibles.json",
+        "browse/structure/catena/index.json",
+        "browse/structure/paragraphs/index.json"
+      ]
+    }
+  },
+  "screenshots": 10
+}
