@@ -1241,6 +1241,60 @@ state = "complete"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v5-2026-08-14"
+owner = "src/web/browser/catena"
+promise = "Answer the 2026-08-13 E1 Catena V4.1 independent review (7f69575b9, CHANGES REQUIRED at f93757854) with the smallest bounded correction of its five proven malformed-data and partial-arrival classes behind one typed record boundary, prove route completion rather than parse rejection, issue a new immutable exact-head handoff, and return that head for fresh independent review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "language-metadata-never-becomes-dom-or-prose"
+  criterion = "No language value that is not a language subtag reaches a DOM lang attribute, a visible language label, a voice key, a route value, or any other presentation fact; malformed language metadata omits the language-specific claim rather than guessing it, preserves valid sibling metadata, and alters no voice support."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "collection-members-validated-individually"
+  criterion = "Every collection this route derives presentation or state from validates each member before semantic use, retains valid members, omits malformed ones, derives counts from valid semantic members alone, manufactures no refusal or absence from a malformed member, and lets no malformed member — including a null — erase a valid sibling or abort the render."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "absence-claims-only-what-its-finding-supports"
+  criterion = "An absence row is classified from the generator's typed finding rather than from the truthiness of an adjacent field; not-surveyed and unrecognised findings enter no publishing negative and no closed-claim count; a valid typed finding survives malformed sibling metadata and a malformed member of its recorded list; and no new absence taxonomy is invented."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "numeric-verse-path-and-bootstrap-typed"
+  criterion = "Counts, extents, verse numbers and word tallies are positive safe integers in ordered domains; verse values, paragraph marks and identity fields reach presentation only as the types their contract defines; no path is composed, fetched or linked from a value that is not sound text; and malformed bootstrap or post-load index data enters the same terminal funnel as a failed request, leaving no unterminated page, no stranded aria-busy and no absence inferred from a parse failure."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "route-completion-proved-not-parse-rejection"
+  criterion = "Regressions beginning from a canonical bootstrap prove exact replace/push, final hash, status, tally, aria-busy and focus completion for a partial data arrival, for a malformed later collection member reached by both an action and an address, for a malformed action payload, and for a valid action after a malformed one, with valid siblings preserved and no manufactured refusal or absence."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "accepted-areas-and-boundaries-preserved"
+  criterion = "The exact voice-key projection, the neutral refusal umbrella, the 53-image visual matrix and the recorded gzip-9 ceilings are preserved unraised and unregressed; the correction stays inside the Catena route/model/test seam plus durable records; no src/web/data/, release, common-gate, B0/shared-shell, protected Liturgy, PDF or unrelated corpus path is touched or repaired; and no release binding is re-signed."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "immutable-v5-handoff"
+  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V5 head, its parent f93757854, the review addressed 7f69575b9, the exact diff and changed-file inventory, evidence for each corrected class, fresh check results with numeric exits, budget measurements, release-binding and data-contradiction status, a sanitization audit, a SHA-256 manifest and a package digest, without mutating the sealed V4.1 package."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "A fresh independent review of the exact V5 head and its new immutable package records a durable disposition. This lane does not review its own work and records no acceptance."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
+
+[[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v3-2026-08-12"
 owner = "src/web/browser/catena"
 promise = "Answer the 2026-08-12 E1 Catena correction V2 independent review (4c30d86f7, CHANGES REQUIRED at 17f031b37) with the smallest bounded route/test correction of the unsupported-voice and untyped-provenance defects, correct the inaccurate stranger-key and AT-SPI statements in new durable records and a new immutable exact-head handoff, and return that head for fresh independent review."

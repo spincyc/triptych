@@ -711,6 +711,118 @@ and did not weaken, delete, whitelist or expect-mark the test.
 E1 remains **awaiting fresh independent review**. Nothing here is accepted,
 integrable, merged, re-signed, or deployed.
 
+### E1 Catena route-owned correction lane, V5
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v5-2026-08-14 -->
+
+The fresh independent review of V4.1 —
+`7f69575b982926e827974f2ed236b1c8bfd8aaad`, on branch
+`review/catena-wave-1-e1-corrections-v4-1-independent` — recorded **CHANGES
+REQUIRED** at exact candidate `f93757854b54c19e50bdcb97ca0fed9b48d22bb7`.
+That disposition is this lane's starting fact, and this lane does not review
+its own work: it records no acceptance of anything.
+
+The review passed, and this lane did not reopen, the exact voice-key
+projection (`original`, `translation:en`, `translation:la`, with
+`translation:grc` failing closed), the neutral refusal umbrella, the recorded
+budgets, the 53-image visual matrix, and the sealed V4.1 package's integrity.
+It found five blocking classes, all of one kind — **malformed or unsupported
+structured metadata becoming visible semantics through coercion or an
+unchecked collection shape**:
+
+1. raw language metadata rendering `lang="[object Object]"`;
+2. malformed collection members creating false counts and refusals, or
+   erasing valid siblings;
+3. absence records discarding the generator's typed `finding` and
+   manufacturing unsupported negative claims;
+4. numeric, verse, path and bootstrap metadata coercing into presentation or
+   leaving incomplete terminal state;
+5. committed malformed-data regressions that do not prove partial-arrival or
+   action route completion.
+
+V5 answers all five behind **one record boundary**, and answers them in
+`catena-model.js` rather than in the page. That placement is the whole shape
+of the correction and it is deliberate: `catena.js` had thirty gzipped bytes
+of margin, and a boundary bought out of thirty bytes would have been a list of
+one-off guards. The model carries no ceiling, so it now owns what a *number*
+of this corpus is (`whole`: a positive safe integer, refusing `true`, `"5"`,
+`[5]`, `0` and a fraction alike), what a *language code* is (`tongue`, a shape
+check, because `lang` is machine-read; and `voiceLanguage`, narrower still,
+because a voice key becomes a URL this page must accept back from itself),
+what the *members* of a collection are (`records`), and then the derivations
+the page used to perform by concatenation over raw members: the canon,
+chapter and paragraph addresses, the chapter's verse lines, and the absence
+rows and their summary. The page only calls them, and is **smaller** for it:
+8,734 → 8,363 stripped bytes.
+
+Three findings are worth naming because they were not in the review, and were
+found by writing its required regressions.
+
+- **The harness could not see the sink the review proved.** The replay shim
+  stored `element.lang` as a plain JavaScript property; the HTML DOM reflects
+  it into the content attribute, stringifying whatever it is given. That is
+  why real Chromium showed `lang="[object Object]"` while every committed test
+  passed. The shim now reflects `lang` exactly as it already reflected `id`,
+  and `inspect()` projects every language attribute under the reading region
+  for every scenario — so the cross-scenario coercion sweep covers DOM
+  attributes, not only text.
+- **Sound text is not a language.** `sound()` passed the string `"not a
+  language code"`, and the shared namer printed it back, uppercased, as a
+  language. The visible language chip and the voice key are now gated on
+  shape, not on non-emptiness.
+- **A silent return is not a terminal state.** Beneath the throw the review
+  named, `render()` had a guard that returned quietly when the controls could
+  not name a book — which is exactly what a malformed canon produces. Reached
+  that way it left `Loading…` standing with nothing said: the same dead end as
+  the throw, invisible for the same reason. Both now reach `startFailed`.
+
+On absence semantics the correction is narrow by design. The generator closes
+`finding` at four values in `scripts/_catena.py` and says a different thing
+with each — `none-published` about the world, `in-copyright` about the law,
+`partial-public-domain` an offer not taken, `not-surveyed` an admission that
+nobody looked. The page read none of them, classifying by whether a `partial`
+string happened to be attached, so `not-surveyed` was spoken as *no English
+this project may publish*: a closed claim about publishing rights,
+manufactured out of an admission of ignorance. V5 classifies from the finding,
+adds no fifth finding, and gives a finding it cannot read a clause that claims
+nothing rather than the nearest claim it can make.
+
+The adversarial fixture the review named is rebuilt rather than re-asserted.
+Not one of its absence rows carried a `finding` at all, which is why it could
+manufacture four closed negatives from four malformed neighbours; its rows now
+put a real typed finding beside malformed siblings and malformed findings
+beside sound ones, so the two questions are separable. Nothing was weakened to
+pass: the one source-text assertion that changed —
+`(index.voices || []).includes` to `list(index.voices).includes` — is the
+stricter form of the same requirement, because `|| []` let a string `voices`
+answer `.includes` by substring.
+
+Fresh results at the V5 head are recorded in the roadmap subsection and in the
+new immutable handoff. The focused Catena suite is **306 tests green**, up
+from 267, the 39 new ones covering malformed language under Everything held,
+mixed valid/malformed/scalar/null collection members, the five typed-absence
+cases, numeric, verse, path and bootstrap metadata, and seven route-completion
+scenarios that begin canonical — because every committed malformed scenario
+began malformed, and so proved nothing about a page that had already
+established a route, a history and a rendered chapter. `catena.css`,
+`index.html` and every path under `src/web/data/` are byte-identical.
+`catena.js` and `catena-model.js` are the only production files changed. No
+ceiling is raised and no release binding is re-signed; the four stale Catena
+bindings remain stale, unsigned and correctly fail-closed.
+
+The `src/web/data/` contradiction is again **preserved untouched**. V5 wrote
+nothing under `src/web/data/` and did not weaken, delete, whitelist or
+expect-mark the day-reader guard. It remains a separate owner's adjudication.
+
+The new immutable handoff is `build/agent-handoffs/20260814T123524Z-catena-e1-corrections-v5`,
+sealed at the exact V5 head. It does not mutate the V4.1 package, whose digest
+was re-verified byte-exact first.
+
+E1 remains **awaiting fresh independent review**. Nothing here is accepted,
+integrable, merged, re-signed, or deployed, and every separately owned
+release, common-gate, B0/shared-shell, real-device/AT, protected Liturgy and
+PDF prerequisite stays open with its owner.
+
 ## Promised work
 
 ### Corpus browser foundation design

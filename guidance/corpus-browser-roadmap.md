@@ -525,13 +525,95 @@ in count, none re-signed), the common gate, B0/shared shell, real-device-or-AT
 evidence, protected Liturgy and PDFs. E1 stays off main and is **awaiting fresh
 independent review**.
 
+### E1 Catena correction V5 — 2026-08-14
+
+Answers the fresh independent review `7f69575b982926e827974f2ed236b1c8bfd8aaad`
+(**CHANGES REQUIRED** at exact candidate
+`f93757854b54c19e50bdcb97ca0fed9b48d22bb7`). This lane records no acceptance
+of its own work.
+
+The review's five blocking classes are one class: malformed or unsupported
+structured metadata becoming visible semantics, counts, refusals, routing
+facts, bootstrap state or DOM attributes through coercion or an unchecked
+collection shape. V5 answers them behind **one record boundary**, placed in
+`catena-model.js` because `catena.js` had thirty gzipped bytes of margin and a
+boundary bought out of thirty bytes would have been a list of one-off guards.
+
+| Blocking class | Correction | Evidence at the head |
+| --- | --- | --- |
+| 1. Raw language metadata | `tongue()` gates every value reaching a DOM `lang`, a visible language label or prose — a *shape* check, not a non-emptiness check, because `lang` is machine-read. `voiceLanguage()`, narrower still, gates the voice key, because a key becomes a URL the page must accept back from itself. | Real Chromium at the base rendered `fragment-text=[object Object]`, `=42`, `=true`, `=   ` and `=not a language code`, and printed `NOT A LANGUAGE CODE — the author's own` as a language chip. At the head every attribute is a subtag and the false chip is gone. |
+| 2. Malformed collection members | `records()` validates each member of every collection that feeds presentation or state: fragments, leads, blocked, refusals, absence lists, the canon and the held index. | Real Chromium at the base **replaced the whole page with `Cannot read properties of null (reading 'source')`** — every valid sibling lost, tally empty, nothing held. At the head: three fragments, both valid leads, both valid blocked rows, and no refusal manufactured from three malformed members. |
+| 3. Absence findings | Rows are classified from the generator's typed `finding`, closed at four values in `scripts/_catena.py`. `not-surveyed` and unrecognised findings enter no publishing negative and no closed-claim count; a valid finding survives a malformed sibling and a malformed member of its own list. No fifth finding is invented. | Base: `4 works standing here have no English this project may publish`. Head: `2 works … ; 1 has only a partly public domain English, not yet taken; 1 has not been surveyed for English; 1 has a finding this page cannot read`. |
+| 4. Numeric, verse, path, bootstrap | `whole()` is a positive safe integer, refusing `true`, `"5"`, `[5]`, `0`, negatives and fractions; extents gain an ordering check; verse keys and values and paragraph marks are typed in `chapterLines()`; addresses are composed in `chapterPath()` and `paragraphPath()` from sound text alone, and `chapterPath()` answers `null` — a broken record — where it cannot prove either a path or an emptiness. Malformed bootstrap enters the terminal funnel. | Base word chips `["1,200 words", "1,200 words", "1 words", "12.5 words"]`; head `["1,200 words"]`. Base **requested `browse/[object%20Object]001.json`**; the head makes no such request. Base bootstrap left `Loading…` standing with no `aria-busy` and nothing spoken; the head settles to `Unavailable`, `aria-busy="false"`, and says `The catena index could not be read.` |
+| 5. Route completion | Seven scenarios that **begin canonical**, because every committed malformed scenario began malformed and so proved nothing about a page that had already established a route, a history and a rendered chapter. | Exact `replace`/push, final hash, status journal, tally, `aria-busy` and focus pinned for a partial arrival, for a malformed later member reached by both an action and an address, for a malformed action payload, and for a valid action after a malformed one. |
+
+Three findings were not in the review and were found by writing its required
+regressions. The replay harness stored `element.lang` as a plain JavaScript
+property where the HTML DOM reflects it into the content attribute — which is
+why real Chromium showed the defect while every committed test passed; the
+shim now reflects it as it already reflected `id`, and `inspect()` projects
+every language attribute for every scenario. `sound()` passed the string
+`"not a language code"`, which the shared namer printed back as a language.
+And beneath the throw the review named, `render()` had a guard that returned
+*silently* when the controls could not name a book — the state a malformed
+canon produces — leaving `Loading…` standing; both dead ends now reach
+`startFailed`.
+
+Nothing was weakened to pass. The one source-text assertion that changed,
+`(index.voices || []).includes` to `list(index.voices).includes`, is the
+stricter form of the same requirement: `|| []` let a string `voices` answer
+`.includes` by substring. The adversarial absence fixture the review named is
+rebuilt rather than re-asserted — not one of its rows carried a `finding` at
+all, which is why it could manufacture four closed negatives from four
+malformed neighbours.
+
+Fresh results: focused Catena suite **306 tests green** (267 before; the 39 new
+ones are the regressions above). Browser gate **2,290 assertions, 1,836 pass /
+226 fail / 228 skip**, the whole report deep-equal to the base with the
+volatile fields excluded — the comparison ignores `generatedAt`, `root`,
+`durationMs` and `browser`, which is wider than the V4.1 record's wording.
+Promise ledger valid at **30 tracked / 19 complete**. `catena check` valid at
+1,351 fragments. Budgets: `catena.css` byte-identical at 7,629/8,000 and
+2,676/2,700; `catena.js` **12,990/13,000** whole and **8,363/8,800** stripped —
+the stripped figure 371 bytes *smaller* than V4.1's 8,734 because the
+derivations moved to the unbudgeted model, the whole figure 20 bytes larger
+because the boundary is explained where it lives. **No ceiling raised.** Four
+stale Catena release bindings, unchanged in count, none re-signed; the
+`catena-model.js` binding is now stale against a new digest and correctly
+fails closed.
+
+Full discovery ran **1,657 tests against the base's 1,618** — the difference is
+exactly the 39 new ones — with **14 failures, 13 errors and 11 skips at both
+ends** and a **27-entry FAIL/ERROR name set that `diff` reports identical**. No
+literal baseline identity is claimed, because the head runs more tests; the
+name set is what is compared, which is the standard `AGENTS.md` sets. The base
+figures reproduce the V4.1 review's own recorded 1,618 / 14 / 13 / 11 exactly,
+which is the check that this comparison environment is the review's.
+`make -k check` exited **2** at the same three inherited targets the review
+recorded — `check-release-bindings`, `check-tool-registry` and
+`check-examples`. No record here rounds those into a green repository-wide
+check.
+
+The new regressions were also replayed against the **parent** implementation,
+because a regression that passes on the code it was written to catch is not
+one. With every V5 scenario present the parent's harness **dies** with an
+uncaught `TypeError: Cannot read properties of null (reading 'token')` from
+`catena.js:1006` — the bootstrap line — taking all 254 tests with it. With the
+two bootstrap scenarios filtered out so the rest can report, **23 of the new
+tests fail at the parent**, across all five blocking classes.
+
+`catena.css`, `index.html` and every path under `src/web/data/` are
+byte-identical. The production diff is `catena.js` and `catena-model.js`
+alone. The `src/web/data/` contradiction is **preserved untouched** and remains
+a separate owner's adjudication.
+
 ## Remaining program sequence
 
 | Work | Current state | Exact dependency / stopping line |
 | --- | --- | --- |
 | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
 | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
-| E1 Catena production implementation | Fifth correction candidate (V4.1) awaiting fresh independent review | Review `9b1c23680` (CHANGES REQUIRED at `f2c9bc49d`) is answered by `impl/catena-wave-1-e1-corrections-v4`, which replaces the language-membership voice test with an exact voice-key projection published in the catena index — the one generator/data seam that review authorised — closes the nine remaining typed-presentation sinks behind one boundary in `catena-model.js`, and issues a new sanitized immutable package; nothing else. `catena-model.js` changes deliberately, because `catena.js` had one byte of margin and two findings live inside `voiceKey` and `formatExtent`; `MODEL_SHA256` is updated and a fourth release binding is now stale, unsigned. Preserve accepted E0 and every V2/V3 correction the review passed; every remaining generator/data, release, common-gate, B0/shared-shell, pre-release real-device-or-AT evidence, emulation-only forced-colors limitation, protected Liturgy, and PDF prerequisite stays with its owner; no merge, re-sign, deploy, or cutover. |
+| E1 Catena production implementation | Sixth correction candidate (V5) awaiting fresh independent review; the disposition it answers is **CHANGES REQUIRED** at V4.1 head `f93757854` (independent review `7f69575b9`, 2026-08-13) | That review passed the exact voice-key projection, the neutral refusal umbrella, the budgets, the 53-image matrix and the sealed V4.1 package, and found five blocking classes of one kind: malformed structured metadata becoming visible semantics, counts, refusals, routing facts, bootstrap state or DOM attributes through coercion or an unchecked collection shape. V5 answers all five behind one record boundary in `catena-model.js`, which carries no ceiling, and proves route completion for partial arrivals and actions with regressions that begin canonical. Preserve accepted E0 and every sound V2/V3/V4/V4.1 correction. The exact Catena data seam is authorized but transfers no broader ownership; release, common-gate, B0/shared-shell, Day-reader guard, real-device/AT, protected Liturgy and PDF prerequisites remain separate. E1 stays off main. No merge, re-sign, deploy or cutover. |
 | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
 | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
 | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
@@ -553,6 +635,7 @@ independent review**.
 | 2026-08-11 | E1 Catena correction pass 2 | Answered correction review `8f8f424ec` (**CHANGES REQUIRED** at `dfc636665`) from unmoved main `9b9ff74a7`: carried route/test commit `67191afd1` forward and corrected the remaining route-owned URL-grammar, history-independence, recovery-focus, asynchronous-transaction, blocked/empty, lead, licence, print, focus-override, heading, and absence-disclosure defects inside the four-path boundary. Focused suite 179 tests; budgets 7,629/8,000 and 12,996/13,000 unraised; gate 2,290 assertions with the pristine-main failure identity/status set unchanged, 15 Catena `detail` texts differing and no row changing status; `check-release-bindings` deliberately fail-closed on the three changed route assets. | Branch `impl/catena-wave-1-e1-corrections-v2`; route/test commit `981959b4f78209401ba00bfbdcc430e23e09c8bb`; packaged head and package `20260811T212656Z-catena-e1-corrections-v2` recorded in the handoff; awaiting fresh independent review. |
 | 2026-08-12 | E1 Catena correction V3 | Answered independent review `4c30d86f7` (**CHANGES REQUIRED** at `17f031b37`) with the smallest bounded correction: a well-formed but unsupported voice now fails closed against the corpus's own held-language set instead of rendering `none in ZZ translation`, and every displayed provenance value passes one typed gate, which also removes a `translators` shape that threw out of an asynchronous render and left the region `aria-busy`. The unqualified stranger-key claim and the false AT-SPI-launcher claim are corrected in these records and in a new package. Focused suite 249 tests green; budgets unraised at 7,629/8,000 and 12,995/13,000, paid for by deletion; `catena.css`, `index.html` and `catena-model.js` byte-identical; `check-release-bindings` still deliberately fail-closed on the Catena route assets, unrepaired. | Branch `impl/catena-wave-1-e1-corrections-v3`; base `17f031b37840d8320c664a128d72b502108fe075`; package `20260812T184146Z-catena-e1-corrections-v3`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
 | 2026-08-13 | E1 Catena correction V4.1 | Answered the two requirements V4 at `e40720d5d` disclosed as unmet. The shared fail-closed umbrella copy is neutral: the reference line, heading and status write no longer claim the address was unreadable, assert a holdings negative over addresses refused on grammar, or call the reader's values invalid, while the typed per-value reason is untouched and malformed and unsupported refusals stay distinguishable; one narrow regression pins it and fails on the previous copy. The missing captures were produced -- V4's stated reason, that no display was available, was incorrect, because headless Chromium needs no display server -- giving 53 images from real built artifacts at the parent and this head across nine route states, three viewports, forced-colors and print emulation, with before/after pairs for the two changed states; they evidence rendering only and do not supersede the real-AT limitation. Focused suite 267 green; full discovery 1,618 against the base's 1,617 with an identical 27-entry failure/error name set; browser gate 2,290 assertions deep-equal to the base across 480,881 bytes; `catena.css` byte-identical and `catena.js` 12,970/13,000 whole and 8,734/8,800 stripped, both smaller, no ceiling raised. The `src/web/data/` contradiction is preserved untouched for independent adjudication. | Branch `impl/catena-wave-1-e1-corrections-v4-1`; base `e40720d5d622e8b0528b8c714cc5caee0b21cee3`; head `3fb6685b2c725adca9a1e0efb43cfdd55c68c311`; package `20260813T164804Z-catena-e1-corrections-v4-1`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+| 2026-08-14 | E1 Catena correction V5 | Answered independent review `7f69575b9` (**CHANGES REQUIRED** at `f93757854`) with one record boundary rather than a list of guards, placed in `catena-model.js` because `catena.js` had thirty gzipped bytes of margin. The model now owns what a number of this corpus is, what a language code is, what the members of a collection are, and the derivations the page performed by concatenation over raw members. Real Chromium at the base rendered `lang="[object Object]"`, replaced the page with `Cannot read properties of null (reading 'source')` when one collection member was null, manufactured `4 works standing here have no English this project may publish` from rows whose findings said no such thing, printed `1 words` for a boolean and `12.5 words` for a fraction, requested `browse/[object%20Object]001.json`, and left `Loading…` standing after a malformed canon with nothing spoken; the head does none of these. Three defects the review did not name were found by writing its required regressions: the replay shim did not reflect `lang` into the content attribute, which is why the proven sink was invisible to the suite; `sound()` passed `not a language code` into visible language prose; and `render()` had a silent early return that left the page unterminated. Focused suite 306 green, up from 267; browser gate 2,290 assertions deep-equal to the base; promise ledger valid at 30 tracked / 19 complete; `catena.css`, `index.html` and all of `src/web/data/` byte-identical; `catena.js` 12,990/13,000 whole and 8,363/8,800 stripped, 371 bytes smaller stripped, no ceiling raised. The `src/web/data/` contradiction is preserved untouched. | Branch `impl/catena-wave-1-e1-corrections-v5`; parent `f93757854b54c19e50bdcb97ca0fed9b48d22bb7`; review addressed `7f69575b982926e827974f2ed236b1c8bfd8aaad`; package `20260814T123524Z-catena-e1-corrections-v5`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
 
 ## Next Codex tasks
 
