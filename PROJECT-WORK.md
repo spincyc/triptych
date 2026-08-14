@@ -900,7 +900,13 @@ properties of null (reading 'canon')` out of `catena.js:981` — and every
 `ReplayTest` class errors in `setUpClass`; that log is preserved unfiltered,
 and the three-scenario filter needed to get a per-class reading is preserved
 as an exact patch beside it. Filtered, the parent runs `371` and fails `71`
-with `14` errors across all twenty-four V6 classes. Full discovery
+with `14` errors — 85 FAIL/ERROR identities across 24 distinct classes: 19
+of the 23 classes V6 adds, the 5 pre-existing classes whose oracles V6
+corrected, and the model-digest pin. The other four V6 classes do NOT fail
+at the parent, and that is stated rather than rounded away: they are the
+positive control over the real corpus, and three oracles that read the
+production sinks for behaviour V5 had already made correct. A regression
+defending an earlier fix with a better instrument does not prove this one. Full discovery
 `1,774` at this head against `1,657` at the parent — `14` failures, `13`
 errors and `11` skips at BOTH ends, with an identical 27-entry FAIL/ERROR
 identity set. The head runs 117 more tests, so no literal count identity is

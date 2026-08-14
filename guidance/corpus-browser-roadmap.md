@@ -647,7 +647,11 @@ Replaying the V6 test file against the parent with **no filter** kills the
 harness and errors every `ReplayTest` class in `setUpClass`; that log ships
 unfiltered, and the three-scenario filter needed for a per-class reading ships
 as an exact patch beside it. Filtered, the parent runs `371` and fails `71`
-with `14` errors across **all twenty-four** V6 classes.
+with `14` errors — 85 FAIL/ERROR identities over 24 distinct classes: 19 of
+the 23 classes V6 adds, the 5 whose oracles it corrected, and the
+model-digest pin. Four V6 classes do not fail there, and are named as what
+they are: the real-corpus positive control, and three oracles reading the
+production sinks for behaviour V5 had already made correct.
 
 Focused suite `423` at the head, exit 0, against `306` at the parent. Full
 discovery `1,774` at the head against `1,657` at the parent — `14` failures,

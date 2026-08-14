@@ -152,7 +152,7 @@ NODE = shutil.which("node")
 # The page is SMALLER than V5 left it (12,993 against 12,990 is the whole
 # file; the composition itself is 8,202 against 8,363, 161 bytes lighter),
 # because every derivation that moved out took its prose with it.
-MODEL_SHA256 = "36221c05db3d3143c2b77f637298314e4c13d3629b2ac12870c44b5e0e79fc94"
+MODEL_SHA256 = "adb61eb7849e192266e8bb34f7ce82fe0fcc2fb091a7baf2b0aca8e09a9bef24"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -1063,10 +1063,10 @@ V6_STRAY_PARTIAL_INDEX = _fixture({"absences": {
 
 # V6 §5/§6 — a canon entry whose testament nobody can read. An `else` printed
 # "New Testament" over it, which is a claim about the canon.
-V6_TESTAMENT_INDEX = {"canon": [
+V6_TESTAMENT_INDEX = _fixture({"canon": [
     {"token": "Gen", "name": "Genesis", "chapters": 50,
      "testament": {"half": "old"}, "path": "01-gen"},
-]}
+]})
 
 # V6 §6 — a malformed HELD record standing before the valid one, and after it.
 # `find` stopped at the first and made the whole book unreadable.

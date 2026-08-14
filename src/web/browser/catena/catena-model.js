@@ -667,7 +667,7 @@
       const carriers = finding
         ? same.filter((one) => sound(one.finding) === finding)
         : same;
-      const rank = (one) => sound(one.reason) + ' ' + sound(one.partial);
+      const rank = (one) => sound(one.reason) + '\u0000' + sound(one.partial);
       const found = carriers.slice().sort(function (a, b) {
         const x = rank(a);
         const y = rank(b);
