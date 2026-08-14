@@ -1,0 +1,128 @@
+PAIR AUDIT — SHA-256, and pixels, over every before--/after-- pair
+==============================================================================
+
+catena--bible-language-forms--1440x900.png
+  verdict : c. PIXELS DIFFER
+  before  :    256996 bytes  e010bcc180edf089463ee20a6df800cffdc5bac402e8634781176101aebcdf02
+  after   :    254768 bytes  3b052bab9b79b588ae068f07999535b34cc8936a920e9c2378f9f23bc546acc3
+  pixels  : 689 of 1296000 differ (0.0532%); 4 noise pixel(s) ignored; worst channel delta 213
+  region  : x 981..1097, y 399..413  (117 x 15 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--finding-order--1440x900.png
+  verdict : c. PIXELS DIFFER
+  before  :    719716 bytes  b7ea02eb81dc6a3852129f961ed0ded81e3ffcb8b66e405a773b1822facec6f6
+  after   :    719741 bytes  05e16e6fbf4c63b854fb9831dca5ad89fa6a4b88b3e79298ec6a3c4c0ae4fdf4
+  pixels  : 4872 of 5123520 differ (0.0951%); 34 noise pixel(s) ignored; worst channel delta 219
+  region  : x 780..1120, y 1110..1205  (341 x 96 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--finding-order--393x852.png
+  verdict : c. PIXELS DIFFER
+  before  :    604041 bytes  8d444768df652954fb6c7892e78dba6eb2818cd0fb3d4d342c3c8bed523c6cfa
+  after   :    604034 bytes  59be8945135b15ab6898bd0b6bdc9f1bf0f96449fc7d2fbeb6ed568157c8562f
+  pixels  : 7019 of 1870287 differ (0.3753%); 43 noise pixel(s) ignored; worst channel delta 219
+  region  : x 33..348, y 3699..3820  (316 x 122 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--finding-order-reversed--1440x900.png
+  verdict : c. PIXELS DIFFER
+  before  :    720942 bytes  9e10b24f4539c35cf0f78c2cd39accb0d58b4dd5c4a131a6108b1351f7e3e997
+  after   :    719750 bytes  0f3681848c257646c903d1721d07fd04f4c052eccb6c41fdc3ca0d2dcd5134b9
+  pixels  : 30392 of 5123520 differ (0.5932%); 146 noise pixel(s) ignored; worst channel delta 219
+  region  : x 754..1120, y 686..1306  (367 x 621 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--finding-order-reversed--393x852.png
+  verdict : c. PIXELS DIFFER (different dimensions: 393x4835 vs 393x4759)
+  before  :    608491 bytes  bddfe6a1f0d413c90bd8423acca7d21793cf8667a34a07e5ac7728fcb2a12ec9
+  after   :    604043 bytes  54a8dbc089f7dca96c8417dceadc812df20f59a782adf5932083e02c888d7674
+
+catena--malformed-testament--1440x900.png
+  verdict : c. PIXELS DIFFER
+  before  :    256279 bytes  4cfe9f3ebd4a5129fa84f37cbe2b7b315c5b4b48084f9b2e1e581f0435b11389
+  after   :    254213 bytes  95188102aca62d912663f8dbad8d51d1e299bb67056d049d920be94fb26c3a2b
+  pixels  : 507 of 1296000 differ (0.0391%); 7 noise pixel(s) ignored; worst channel delta 136
+  region  : x 394..510, y 228..235  (117 x 8 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--malformed-testament--393x852.png
+  verdict : c. PIXELS DIFFER
+  before  :    186686 bytes  ed237593fc97c9cc87de003d3cdfced6ad1274794e8f5d466db247305179c2db
+  after   :    185388 bytes  c2f0f466545e6edb1487a685e69273c5c88026501c718eb5183bdd496af59afb
+  pixels  : 410 of 334836 differ (0.1224%); 10 noise pixel(s) ignored; worst channel delta 130
+  region  : x 108..210, y 221..227  (103 x 7 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--mixed-collection-members--1440x900.png
+  verdict : c. PIXELS DIFFER
+  before  :    259595 bytes  715986554a1a34f81831978dc0f2bf4728cd453cf9cde403f1e36cd2cd685767
+  after   :    264131 bytes  16f16ed3b34641b5e43412073be290bf7e81934d1da422a8e9c136e0d597023c
+  pixels  : 14030 of 1296000 differ (1.0826%); 107 noise pixel(s) ignored; worst channel delta 198
+  region  : x 430..1140, y 253..724  (711 x 472 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--mixed-collection-members--393x852.png
+  verdict : c. PIXELS DIFFER
+  before  :    189714 bytes  54ec8a797d274004b51508c5f43f76b2ca2799145ec0fcd483af115e9a43fc49
+  after   :    190982 bytes  d3ccb255d1cf2a5d7888b91a4c17641fd54497910bbff19b11d8c1d9da827822
+  pixels  : 37398 of 334836 differ (11.1690%); 319 noise pixel(s) ignored; worst channel delta 219
+  region  : x 10..368, y 245..851  (359 x 607 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--null-bootstrap--1440x900.png
+  verdict : c. PIXELS DIFFER
+  before  :    234575 bytes  50c0a2f538d43a263153b572ae3d07395df4a52d7fc4fc5934a90dee2aa3e441
+  after   :    245228 bytes  45c11f5096d7bc2925588a45ef9371be96a5f47a1d40797fe452be23437bacc1
+  pixels  : 58181 of 1296000 differ (4.4893%); 552 noise pixel(s) ignored; worst channel delta 219
+  region  : x 298..1140, y 221..899  (843 x 679 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--null-bootstrap--393x852.png
+  verdict : c. PIXELS DIFFER
+  before  :    181159 bytes  3dc30152a97d6da0c89788f304f6e8c6ef381cc92915d5878db7318454a1a13f
+  after   :    186018 bytes  67e0bbac565cded406dfc03b995861374710d17c9e74cb06dfac6eb538346e36
+  pixels  : 54799 of 334836 differ (16.3659%); 522 noise pixel(s) ignored; worst channel delta 214
+  region  : x 23..368, y 215..850  (346 x 636 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--padded-verse-keys--1440x900.png
+  verdict : c. PIXELS DIFFER
+  before  :    240864 bytes  1a15a9070ec74364f2b2232cb1ecfbcb32f7052cd0d826943fea05636732eeb7
+  after   :    226035 bytes  7732735e157d1c728ce5632157804039d7802104813f728ef19bff84c8cc8a31
+  pixels  : 14469 of 1296000 differ (1.1164%); 157 noise pixel(s) ignored; worst channel delta 219
+  region  : x 297..714, y 595..843  (418 x 249 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--padded-verse-keys--393x852.png
+  verdict : c. PIXELS DIFFER
+  before  :    164097 bytes  db61861110eb5a928879d88fef5e4decfdf80cef9ddd09ba6cd144cd940aa45c
+  after   :    157355 bytes  be3128b3924edb72f8257da5a0bf5fd17a642448f43d255f2aba0d8cc20b204e
+  pixels  : 22165 of 334836 differ (6.6197%); 251 noise pixel(s) ignored; worst channel delta 219
+  region  : x 22..368, y 408..851  (347 x 444 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--stray-partial--1440x900.png
+  verdict : c. PIXELS DIFFER
+  before  :    734840 bytes  62f283439ad075058f9f0d95663ca59984710efd75363bc82b4e8b3b21f5eb9e
+  after   :    709597 bytes  f1e44daf056b466323a0567f027612b99c871be05d50723f81349ad92c6a4abb
+  pixels  : 22112 of 5123520 differ (0.4316%); 105 noise pixel(s) ignored; worst channel delta 219
+  region  : x 763..1139, y 865..1396  (377 x 532 box)
+  NAME IT : a description of this pair must name what changed inside that box.
+
+catena--stray-partial--393x852.png
+  verdict : c. PIXELS DIFFER (different dimensions: 393x4901 vs 393x4607)
+  before  :    616200 bytes  a27715f1e1996b7260b5a28000cb0cc0226154bc6104c147a7a024bd3c54d0b2
+  after   :    594416 bytes  c5566e4cdf289de3e026b3115c000e7b42e1081b959eeda1ea880c9e6f7bcfef
+
+probe-index.json
+  verdict : c. DIFFERING (not a raster; digests only)
+  before  :     12747 bytes  fa90551f0e52c02a87d4957f5f7000ddd1c0791002eac0093f5183de3e93f7e7
+  after   :     12723 bytes  51cf4ebf670a34b9511687668fb0c9b0bd94d418eff65234a00febbb3b29ce54
+
+==============================================================================
+pairs audited          : 16
+a. byte-identical      : 0
+b. visually equivalent : 0
+c. pixels differ       : 16
+unpaired captures      : 0

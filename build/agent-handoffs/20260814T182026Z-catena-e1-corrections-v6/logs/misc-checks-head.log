@@ -1,0 +1,55 @@
+Every command below was run from the repository root at the commit named beside
+it, and its numeric exit is recorded. Nothing is rounded, and nothing is
+attributed to a commit that could not have produced it.
+
+=== A. promise ledger — SHA 4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46, clean tree ===
+$ python3 tools/tpt check-promised-deliverables
+Promised-deliverable ledger valid: 31 tracked, 19 complete.
+EXIT=0
+
+=== B. catena model check — SHA 4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46 ===
+$ python3 scripts/_catena.py check
+catena valid: fragments=1351 books=1 canon=73
+EXIT=0
+
+=== C. release bindings, READ-ONLY — SHA 4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46 ===
+$ python3 tools/tpt release-bindings status
+stale site source src/web/browser/catena/catena-model.js: recorded f1ea94f9ec6b54813859c2b526163e90d9de61992b839fe2eb0e349f31ccf57b, actual adb61eb7849e192266e8bb34f7ce82fe0fcc2fb091a7baf2b0aca8e09a9bef24
+stale site source src/web/browser/catena/catena.css: recorded aa564bc23918eeb98a0680df416549d94525444bcf837606293f031c8b0099d6, actual 733e84909e0e8049629187352d3800be320e469da7be200e860378bcc28851c5
+stale site source src/web/browser/catena/catena.js: recorded 51aaa3cf9deb47127da9cce3acefd2740531c69a6ed17e7bf7a702171d6d20d0, actual 3dc290efcf187083a8ed06e5b3d9ef9a14af54655ca3046b25fd47b52cd588e2
+stale site source src/web/browser/catena/index.html: recorded 45c491abf22351e14fe22648a5a05e47f6abd8185a2565a3cc34a1d19acc440d, actual 7779d1f19ca175fd315cd7164f5347cc3c08d68b20b3b68a9219429b02bb8fa8
+stale: 4 stale binding(s)
+EXIT=1
+(no binding was re-signed; refresh-release-bindings and approve-release were not run)
+
+=== D. budgets — SHA 4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46 ===
+$ python3 tools/tests/../../scratch-free measurement using the test module own gz()
+catena.css: whole 7629/8000   stripped 2676/2700
+catena.js: whole 12993/13000   stripped 8202/8800
+catena-model.js (NO CEILING): whole 15767   stripped 4377
+EXIT=0
+
+=== E. the relocation, disclosed — SHA 4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46 against parent 19982ab433dd25704ed60b1ac6ddb678bc3a98f9 ===
+parent  catena.js  12990  catena-model.js  11171  gzipped together  23449  gzipped separately and summed  24161
+head    catena.js  12993  catena-model.js  15767  gzipped together  28028  gzipped separately and summed  28760
+delta   catena.js     +3  catena-model.js  +4596  together  +4579  summed  +4599
+The model carries no ceiling by design, so formal compliance is real and is
+NOT the same statement as unchanged practical load. Both measures are given.
+EXIT=0
+
+=== F. byte-identity against the parent 19982ab433dd25704ed60b1ac6ddb678bc3a98f9 ===
+$ git diff --name-only <parent>..HEAD
+PROJECT-WORK.md
+guidance/corpus-browser-roadmap.md
+promised-deliverables.toml
+src/web/browser/catena/catena-model.js
+src/web/browser/catena/catena.js
+tools/tests/test_catena_wave_1.py
+$ git diff --stat <parent>..HEAD -- src/web/data src/web/browser/catena/catena.css src/web/browser/catena/index.html
+(no output above = byte-identical)
+
+=== G. the production sources are text — SHA 4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46 ===
+$ file src/web/browser/catena/catena.js src/web/browser/catena/catena-model.js
+src/web/browser/catena/catena.js:       JavaScript source, Unicode text, UTF-8 text
+src/web/browser/catena/catena-model.js: JavaScript source, Unicode text, UTF-8 text
+EXIT=0

@@ -1,0 +1,509 @@
+Catena E1 V6 — checks
+=====================
+
+Review addressed  fa5b2f601565508acee2b1b236b0c69138af07a3   CHANGES REQUIRED
+Parent            19982ab433dd25704ed60b1ac6ddb678bc3a98f9   the exact reviewed V5 head
+Commit 1 of 5     2c1f87e5d6b1c07e9da6392693315c1049aa94b0   production + oracle corrections
+Commit 2 of 5     e041411f67c725b78deac41f15b4411e8c46101a   regressions + harness projections
+Commit 3 of 5     ee1048c903300e21ccb942b6b268f941dfe126e0   durable records only
+Commit 4 of 5     83cb63b61e366fac07b298fee77f63d1658086f7   the NUL byte, the fixture stamp,
+                                                             and two overstated counts
+Commit 5 of 5     4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46   records only: an arithmetic
+                                                             error, and the relocation cost
+                                                             restated as measured
+Head              4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46
+
+EVERY HEAD-SIDE MEASUREMENT BELOW WAS TAKEN AT 4639b139f, ON A CLEAN TREE, IN
+ONE SEQUENTIAL PROCESS. That process is `logs/measure-all.sh`, which ships: the
+focused suite, full discovery, `make -k check`, the site build, the gate, the
+gate comparison and the short read-only checks are lines in one script, so each
+waits for the one before it. `make check`, the suite, the build and the gate all
+write under `build/`, and two of them running at once is a measurement of
+neither.
+
+EARLIER HEAD-SIDE ROUNDS WERE DISCARDED AND ARE NOT IN THIS PACKAGE. In the
+first, background waiters fired early and let `make -k check` and the browser
+gate run concurrently with full discovery in the same checkout; concurrent runs
+in one checkout measure neither job, so they were thrown away rather than merged
+into a set that looked complete. The later ones predated the fourth and fifth
+commits. There is exactly one head-side run of each command here, and it is the
+one at 4639b139f.
+
+Each parent-side log records its own run at 19982ab4. The parent tree did not
+move, so the parent-side full-discovery, replay and gate runs were not re-taken
+when the head moved by one commit; the parent-side focused suite, `make -k
+check` and short read-only checks were added in this round. Where a parent-side
+run is absent, the entry says so.
+
+There is no blanket attribution in this file: every entry carries the commit it
+ran at, and each log carries its own `COMMAND:` and `SHA:`/`TREE:` header, so
+every attribution here can be checked against the artifact rather than taken
+from here. This is a direct correction of a V5 defect — V5's `checks.txt` said
+"every measurement below was taken here" of one commit, and its promise-ledger
+output could only have come from a later one.
+
+All commands run from the repository root. Exit statuses are numeric and real.
+A command that was not run appears under "Skipped" with its reason, never as a
+pass.
+
+
+=== A. Focused Catena suite, head ===
+
+$ python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+
+    Ran 423 tests in 2.948s
+
+    OK
+
+EXIT=0
+SHA: 4639b139f, clean tree.
+Log: logs/focused-catena-head.log
+The `-v` is recorded because the log is verbose; the command as written
+reproduces the format of its own log.
+
+=== B. Focused Catena suite, parent ===
+
+$ python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+
+    Ran 306 tests in 2.664s
+
+    OK
+
+EXIT=0
+SHA: 19982ab4, the parent's own tree and its own test file; nothing of V6 is
+     present.
+Log: logs/focused-catena-parent.log
+423 against 306 is +117, which is also the full-discovery difference at D.
+
+=== C. Full discovery, head ===
+
+$ python3 -m unittest discover -s tools/tests
+
+    Ran 1774 tests in 485.669s
+    FAILED (failures=14, errors=13, skipped=11)
+
+EXIT=1
+SHA: 4639b139f, clean tree; the log's own TREE line records that this was the
+     only job running in that checkout.
+Log: logs/all-tests-head.log
+The 14 failures, 13 errors and 11 skips are the same population as at the
+parent — see E. None is a Catena test.
+
+=== D. Full discovery, parent ===
+
+$ python3 -m unittest discover -s tools/tests
+
+    Ran 1657 tests in 489.732s
+    FAILED (failures=14, errors=13, skipped=11)
+
+EXIT=1
+SHA: 19982ab4, in a separate checkout of the parent.
+Log: logs/all-tests-parent.log
+1,657 / 14 / 13 / 11 reproduces the figure the V5 package recorded for its own
+head, which is the check that this comparison environment is the reviewed one.
+The head runs 117 more tests, so NO LITERAL COUNT IDENTITY IS CLAIMED.
+
+=== E. Failure-name-set derivation and comparison ===
+
+$ sh logs/names.sh logs/all-tests-parent.log > logs/names-parent.txt
+$ sh logs/names.sh logs/all-tests-head.log   > logs/names-head.txt
+$ diff logs/names-parent.txt logs/names-head.txt
+
+    (no output)
+
+EXIT=0
+SHA: none — derived from the two logs at C and D, not from a checkout.
+Log: logs/names-parent.txt, logs/names-head.txt, script logs/names.sh
+27 entries each, and the two files are byte-identical. READ THIS AS A RESULT,
+NOT AS EVIDENCE FOR ITSELF: two identical files prove nothing on their own. The
+two source logs ship, they differ, and the extraction script ships, so the
+identity is re-derivable. This lane re-derived it — running `logs/names.sh` over
+each shipped log reproduces the corresponding shipped name file byte for byte.
+What is compared is the SET of fully qualified FAIL/ERROR identities, because
+the head runs more tests than the parent.
+
+=== F. The V6 test file replayed against the PARENT, unfiltered ===
+
+$ python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py'
+
+    TypeError: Cannot read properties of null (reading 'canon')
+        at start (… <anonymous>:981:26)
+    Ran 31 tests in 66.624s
+    FAILED (errors=62)
+
+EXIT=1
+TREE: the parent 19982ab4 with ONLY `tools/tests/test_catena_wave_1.py`
+      replaced by the V6 file. No production file changed; the log records the
+      SHA-256 of both production files at that tree, and both match the parent
+      blobs (catena.js 8bb2834a…, catena-model.js f1ed1379…).
+      The test file replayed is the one AT THE HEAD, 4639b139f: both replays
+      were re-run after the fourth and fifth commits, and the log's TREE line
+      names the head it came from.
+Log: logs/v6-tests-against-parent.log
+A regression that passes on the code it was written to catch is not one. With
+every V6 scenario present, the JSON-null bootstrap throws out of the node
+process, so 62 `ReplayTest` classes error in `setUpClass` and only 31 tests
+report at all. The harness reports the throw at line 981; the same statement
+stands at line 979 of `src/web/browser/catena/catena.js` at the parent, the
+two-line difference being the replay wrapper. V5 narrated this crash in two
+documents and preserved it in none; it ships here whole.
+
+=== G. The same, with the three-scenario filter ===
+
+$ python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py'
+
+    Ran 371 tests in 1.359s
+    FAILED (failures=71, errors=14)
+
+EXIT=1
+TREE: as F, plus the filter in logs/parent-run-filter.patch — a literal diff,
+      not a description of one. It drops exactly three scenarios:
+      `null-index`, `null-index-cold`, `list-index`.
+Log: logs/v6-tests-against-parent-filtered.log
+85 FAIL/ERROR identities across 24 distinct classes of
+`tools/tests/test_catena_wave_1.py`, decomposed against the log and the file:
+
+    19  of the 23 classes V6 adds
+     4  pre-existing classes that hold corrected oracles AND fail here —
+        MalformedRecordRenderingTest, MalformedLanguageAttributeTest,
+        MixedCollectionMemberTest, UntypedProvenanceTest
+     1  FrozenContractTest, whose MODEL_SHA256 pin fails at the parent by
+        construction because the model differs; it holds no corrected oracle
+    ---
+    24  distinct classes
+
+Two neighbouring sets do not coincide with that decomposition, and neither is
+folded into it. Corrected-oracle blocks live in FIVE pre-existing classes: the
+four above and `NumericVerseAndPathTest`, which does NOT fail at the parent.
+And four of the classes V6 adds do not fail here either —
+`AbsenceRowIdentityTest`, `CountedWordTallyTest`, `RenderedScriptureTruthTest`,
+`UnregressedScriptureTest` — being the real-corpus positive control and three
+oracles reading production sinks for behaviour V5 had already made correct.
+Both sets are recorded as passing at both ends rather than counted as
+regressions.
+
+=== H. make -k check, head and parent ===
+
+$ make -k check
+
+    make: *** [Makefile:598: check-release-bindings] Error 1
+    make: *** [Makefile:803: check-tool-registry] Error 1
+    make: *** [Makefile:791: check-examples] Error 1
+    make: Target 'check' not remade because of errors.
+
+EXIT=2 at both.
+SHA: 4639b139f, clean tree, run after the full suite finished rather than
+     beside it; and 19982ab4 on the parent's own clean tree.
+Log: logs/make-k-check-head.log, logs/make-k-check-parent.log
+The same three targets fail at the same three Makefile lines at both ends, so
+the failures are inherited and measured rather than inherited and asserted.
+Each is owned elsewhere and listed in UNRESOLVED-BLOCKERS.md. NO RECORD HERE
+ROUNDS THESE INTO A GREEN REPOSITORY-WIDE CHECK.
+
+=== I. Public site build, head and parent ===
+
+$ make public-site
+
+    built build/public-alpha/site; not verified — run tools/public-alpha verify before publication
+
+EXIT=0
+SHA: 4639b139f (head build), 19982ab4 (parent build).
+Log: logs/public-site-head.log, logs/public-site-parent.log
+Writes `build/public-alpha/site` only. Each gate ran against the build made
+from the tree it is attributed to.
+
+=== J. Browser gate, head ===
+
+$ TRIPTYCH_CHROME=<chromium binary> node tools/tests/corpus_browser_gate.mjs --json-out logs/gate-head.json
+
+    counts {'routes': 19, 'states': 9, 'pages': 171, 'assertions': 2290,
+            'passed': 1836, 'failed': 226, 'skipped': 228}
+
+EXIT=1
+SHA: 4639b139f.
+Log: logs/gate-head.json, logs/gate-head.log
+The command is the literal one with the chromium binary's absolute path
+elided, because no absolute path may appear in a document of this package; the
+log names it, and `logs/measure-all.sh` runs it. Exit 1 is the inherited
+common-gate failure population, identical at the parent — see
+UNRESOLVED-BLOCKERS.md §3.
+
+=== K. Browser gate, parent ===
+
+$ TRIPTYCH_CHROME=<chromium binary> node tools/tests/corpus_browser_gate.mjs --json-out gate-parent.json
+
+    counts {'routes': 19, 'states': 9, 'pages': 171, 'assertions': 2290,
+            'passed': 1836, 'failed': 226, 'skipped': 228}
+
+EXIT=1
+SHA: 19982ab4.
+Log: logs/gate-parent.json, logs/gate-parent.log
+
+=== L. Browser gate comparison ===
+
+$ python3 logs/compare-gate.py logs/gate-parent.json logs/gate-head.json
+
+    summary equal: True
+    assertion objects, base: 17
+    assertion objects, head: 17
+    identity set equal: True
+    base-only identities: []
+    head-only identities: []
+    rows with changed status: 0
+    rows with changed detail: 0
+    whole report identical (volatile fields excluded): True
+
+EXIT=0
+SHA: parent 19982ab4 against head 4639b139f, both named in the log's header.
+Log: logs/gate-comparison.log, tool logs/compare-gate.py
+THE COMPARISON EXCLUDES FOUR VOLATILE FIELDS, NOT ONE: `generatedAt`, `root`,
+`durationMs` and `browser`. The V4.1 record's wording named only `generatedAt`.
+The correct statement is that every non-volatile key of the whole report,
+including all 226 failure objects with their exact `detail` strings, is
+deep-equal across the two runs, with those four excluded. The tool's own
+docstring names all four.
+
+=== M. Promised-deliverable ledger, head and parent ===
+
+$ python3 tools/tpt check-promised-deliverables
+
+    head:   Promised-deliverable ledger valid: 31 tracked, 19 complete.
+    parent: Promised-deliverable ledger valid: 30 tracked, 19 complete.
+
+EXIT=0 at both.
+SHA: 4639b139f (clean tree) and 19982ab4.
+Log: logs/misc-checks-head.log §A, logs/misc-checks-parent.log §A
+Measured at both ends, which is the direct answer to the V5 provenance defect:
+V5 attributed a 30-entry ledger output to a commit that could not have produced
+it. The entry V6 adds is
+`corpus-browser-catena-e1-corrections-v6-2026-08-14`, state `in_progress`, with
+ten requirements of which three are `open`: `self-labelling-truthful-evidence`,
+`immutable-v6-handoff` and `fresh-independent-review`. NOTHING WAS MARKED
+COMPLETE BY THIS LANE.
+
+=== N. Catena generator and model check, head and parent ===
+
+$ python3 scripts/_catena.py check
+
+    catena valid: fragments=1351 books=1 canon=73
+
+EXIT=0 at both.
+SHA: 4639b139f and 19982ab4.
+Log: logs/misc-checks-head.log §B, logs/misc-checks-parent.log §B
+Replays `catena-model.js` under node against the solved cases in
+`src/sources/commentary/fragment-loci.yaml`. This is the check that the
+stricter membership and identity rules did not move the emitted chapter view:
+the model is executed by the generator during emit, and the same three numbers
+come out at both ends.
+
+=== O. Release bindings, READ-ONLY status, head and parent ===
+
+$ python3 tools/tpt release-bindings status
+
+    head:   4 stale — catena-model.js (recorded f1ea94f9…, actual adb61eb7…),
+            catena.css (aa564bc2… / 733e8490…), catena.js (51aaa3cf… /
+            3dc290ef…), index.html (45c491ab… / 7779d1f1…)
+    parent: the same four paths, with catena-model.js actual f1ed1379… and
+            catena.js actual 8bb2834a…
+
+EXIT=1 at both.
+SHA: 4639b139f and 19982ab4.
+Log: logs/misc-checks-head.log §C, logs/misc-checks-parent.log §C — all four
+     listed in full at each end.
+Four stale at both ends, the same four Catena paths. What V6 changed is two of
+the four ACTUAL digests, not the count: `catena.css` and `index.html` are
+byte-identical to the parent and were already stale there. NO BINDING WAS
+RE-SIGNED: `refresh-release-bindings` and `approve-release` were not run.
+Failing closed is correct for a candidate awaiting review.
+
+=== P. Budgets — gzip -9, whole file, mtime pinned to zero ===
+
+    head:   catena.css whole  7629/8000   stripped 2676/2700
+            catena.js  whole 12993/13000  stripped 8202/8800
+            catena-model.js (NO CEILING): whole 15767   stripped 4377
+    parent: catena.css whole  7629/8000   stripped 2676/2700
+            catena.js  whole 12990/13000  stripped 8363/8800
+            catena-model.js (NO CEILING): whole 11171   stripped 3284
+
+EXIT=0 at both.
+SHA: 4639b139f and 19982ab4.
+Log: logs/misc-checks-head.log §D, logs/misc-checks-parent.log §D
+THE LINE ECHOED ABOVE THE HEAD FIGURES IN THAT LOG IS NOT AN INVOCATION. It
+reads `$ python3 tools/tests/../../scratch-free measurement using the test
+module own gz()`, which is a description that would not run. The code that
+produced the figures ships as `logs/misc.sh` §D: it imports
+`tools/tests/test_catena_wave_1.py` and calls that module's own `gz()` and
+`without_comments()` — gzip level 9 over the UTF-8 bytes with `mtime=0`,
+"stripped" removing `/* … */` and, for scripts, whole-line `//` comments. The
+parent log's §D and §E carry no echoed command line at all; `logs/misc.sh`
+carries both. This lane re-derived all twelve figures independently from the
+git blobs at 19982ab4 and 4639b139f with that algorithm and reproduced every
+one.
+The four ceiling constants are unchanged from the parent, and
+`PayloadTest.test_the_stylesheet_holds_the_recorded_ceiling` and
+`…test_the_script_holds_the_recorded_ceiling` enforce two of them.
+`catena-model.js` carries no size ceiling — only the `MODEL_SHA256` digest pin,
+re-pinned at the head to adb61eb7…, which is the model's actual digest and the
+value `release-bindings status` reports as stale.
+
+=== Q. The relocation, disclosed in both measures ===
+
+    parent  catena.js 12990  catena-model.js 11171  together 23449  summed 24161
+    head    catena.js 12993  catena-model.js 15767  together 28028  summed 28760
+    delta   catena.js    +3  catena-model.js +4596  together +4579  summed +4599
+
+EXIT=0
+SHA: 4639b139f against 19982ab4.
+Log: logs/misc-checks-head.log §E
+"Together" is the two files concatenated and gzipped as ONE stream; "summed" is
+the two files gzipped separately and the sizes added. They are different
+measures and different numbers, and both are recorded so that neither can be
+quoted as the other. Formal compliance is real and is NOT the same statement as
+unchanged practical load: a reader of the route fetches both files.
+
+=== R. Byte-identity of the untouched paths ===
+
+$ git diff --name-only <parent>..HEAD
+$ git diff --stat <parent>..HEAD -- src/web/data src/web/browser/catena/catena.css src/web/browser/catena/index.html
+
+    six files changed, and no output from the second command
+
+EXIT=0
+SHA: 4639b139f against 19982ab4.
+Log: logs/misc-checks-head.log §F
+No output from the second means byte-identical: `src/web/data/`,
+`catena.css` and `index.html` are the parent's. See DATA-TEST-CONTRADICTION.md.
+
+=== S. The production sources are text, head and parent ===
+
+$ file src/web/browser/catena/catena.js src/web/browser/catena/catena-model.js
+
+    both: JavaScript source, Unicode text, UTF-8 text
+
+EXIT=0 at both.
+SHA: 4639b139f and 19982ab4.
+Log: logs/misc-checks-head.log §G, logs/misc-checks-parent.log §E
+This check exists because it once failed. A raw NUL byte written as the
+separator in the model's `absenceRows` sort key made `catena-model.js` — and
+the shipped patch — binary to `grep`, `diff` and a pager, from the first commit
+of this correction to the third. The fourth commit replaced it with the escape.
+The parent is text and the head is text; the three commits between were not.
+See TYPED-PRESENTATION-BOUNDARY.md.
+
+
+=== Measurements taken while writing this package ===
+
+Each is a read-only command reproducible at the head, recorded here rather than
+asserted elsewhere without a provenance line. Most have no log file; where one
+ships, it is named.
+
+T. Working tree at the reviewed head
+   $ git status --porcelain          → no output, EXIT=0, at 4639b139f
+   There are no uncommitted changes in the reviewed state.
+
+U. The commits, and which touch production
+   $ git show --name-only <each>
+   2c1f87e5d: catena-model.js, catena.js, test_catena_wave_1.py ·
+   e041411f6: test_catena_wave_1.py alone ·
+   ee1048c90: PROJECT-WORK.md, guidance/corpus-browser-roadmap.md,
+   promised-deliverables.toml alone ·
+   83cb63b61: catena-model.js, test_catena_wave_1.py, PROJECT-WORK.md,
+   guidance/corpus-browser-roadmap.md ·
+   4639b139f: PROJECT-WORK.md, guidance/corpus-browser-roadmap.md alone.
+   TWO of the five commits touch production, the first and the fourth.
+   `commits.txt` records the same, per commit.
+
+V. The patch, the file list and the ancestry
+   $ git diff 19982ab4..4639b139f
+   `changes.patch` reproduces this byte for byte — verified by byte comparison
+   against a fresh `git diff` at the sealed head — is 228,083 bytes, and
+   contains NO NUL byte, so it is text to `grep`, `diff` and a pager.
+   `changed-files.txt` names 4639b139f as the head, and `commits.txt` lists all
+   five commits with a file list each. All three were regenerated at the sealed
+   head after the fourth and fifth commits; an earlier draft of this package
+   carried versions cut at ee1048c90, and they were replaced rather than
+   re-explained.
+
+W. The V5 package digest
+   $ git show fe71d03e:build/agent-handoffs/…-v5.zip | sha256sum
+   → 18500400ce617365ef8322e41f011f44dc5a0a88dc39fbbcb5deb1abd78b75ea,
+   matching the `.zip.sha256` recorded beside it. The sealed V5 package is
+   byte-exact and was not mutated by this lane. The same three digests —
+   claimed, measured and recorded in the sidecar — are in
+   logs/v5-package-verify.log; this lane re-derived them independently from the
+   archived blob at fe71d03e.
+
+X. The review is a sibling, not an ancestor
+   $ git merge-base fa5b2f601 4639b139f  → 19982ab433dd… (the reviewed parent)
+   $ git merge-base --is-ancestor fa5b2f601 4639b139f → EXIT=1
+   The review commit is not in this line's history.
+
+Y. Corpus grammar sweep over `src/web/data` and `src/sources/bibles`
+   Every tracked value the V6 predicates gate, checked against the predicate
+   that gates it, with the regular expressions read out of
+   `src/web/browser/catena/catena-model.js` at the head: 73 canon tokens and 73
+   canon paths, 1,351 distinct fragment ids, 12 work ids, 7 published edition
+   ids, 112 refusal rows, 16,710 paragraph break marks and 252,288 verse keys
+   across 9,387 chapter files, among others. Full table in
+   TYPED-PRESENTATION-BOUNDARY.md. NOTHING THE CORPUS HOLDS IS REFUSED.
+
+Z. The self-labelling of the fixtures
+   All ten module-level V6 fixture roots, and the roots the two V6 fixture
+   factories build, pass through `_fixture()` and carry
+   `_adversarial: "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA"`. The
+   fourth commit stamped the last one. The fixture roots inherited from earlier
+   waves carry no such key.
+
+AA. The sealer's own tests
+   $ python3 logs/test-sanitize-and-seal.py
+   → Ran 46 tests, OK, EXIT=0
+   Log: logs/sealer-tests.log
+   46 tests over the sealer's normalize, scan, index-check, pair-audit and
+   verify behaviours. The 46th,
+   `test_a_document_may_name_the_manifest_this_tool_writes`, pins a fix made
+   while this package was being assembled: the index check counted
+   `MANIFEST.sha256` as a missing reference, because the tool writes the
+   manifest AFTER the check runs — which made a package that documents its own
+   integrity proof unsealable. It tests the instrument, not this package's
+   content.
+
+
+=== Not recorded in this file ===
+
+The real-Chromium probe (logs/probe-catena.mjs), the screenshot pair audit
+(logs/pair-audit.py) and the capture pairs under screenshots/ are produced by a
+separate lane. Their records are PROBE-DIFFERENCE.md and SCREENSHOT-METHOD.md,
+and EVIDENCE-INDEX.md indexes them against the classes they bear on. Their
+commands, exits and attributions are NOT recorded here, and nothing in this file
+vouches for any of them. Read this file as complete for the suites, gates,
+budgets and repository-wide checks only.
+
+
+=== Skipped ===
+
+- make check-browser-harnesses — drives the liturgy and foundation reader
+  harnesses. None touches the Catena route, and this correction changes no
+  shared shell file. Not run, and therefore not reported as a pass.
+
+- make refresh-release-bindings, make approve-release — these WRITE the release
+  record. Deliberately not run: re-signing is the release owner's act and this
+  candidate is not accepted. See O and UNRESOLVED-BLOCKERS.md §1.
+
+- python3 scripts/_catena.py structure, and every other generator with an
+  `--out src/web/data` form — these rewrite tracked served data and own the
+  whole directory, deleting what they did not write. Deliberately not run: V6
+  changes no data at all, and the guard that fails over that directory is
+  another owner's adjudication. See DATA-TEST-CONTRADICTION.md.
+
+- make recapture-examples — rewrites the EXAMPLES tables inside tracked
+  `tools/` sources. Not this lane's to run, and `check-examples` is separately
+  owned and separately red.
+
+- print and forced-colors captures — `catena.css` is byte-identical to the
+  parent and nothing in this correction bears on those media. V4.1's accepted
+  53-image matrix is neither superseded nor re-issued.
+
+- Any real assistive-technology run — no AT bus or screen reader is available
+  here. Nothing in this package proves what a screen reader announces. V4's
+  AT-LIMITATION.md is not superseded. See LIMITATIONS.md §3 and
+  UNRESOLVED-BLOCKERS.md §5.

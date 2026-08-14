@@ -1,0 +1,38 @@
+# Commits between the reviewed V5 head and this V6 head
+# $ git log --format='%H %ci%n    %s' <parent>..<head>
+
+4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46 2026-08-14 14:25:07 -0500
+    Correct an arithmetic error and record the relocation cost as measured
+83cb63b61e366fac07b298fee77f63d1658086f7 2026-08-14 13:53:06 -0500
+    Correct a NUL byte in the model and two counts the records overstated
+ee1048c903300e21ccb942b6b268f941dfe126e0 2026-08-14 13:20:44 -0500
+    Record the V5 disposition, the V6 correction, and what it did not settle
+e041411f67c725b78deac41f15b4411e8c46101a 2026-08-14 13:07:23 -0500
+    Prove the corrected boundary at the sinks the page actually writes
+2c1f87e5d6b1c07e9da6392693315c1049aa94b0 2026-08-14 12:55:58 -0500
+    Normalize semantic roots and members before they can mean anything
+
+# Which commits touch production, and which do not
+
+2c1f87e5d6b1c07e9da6392693315c1049aa94b0 Normalize semantic roots and members before they can mean anything
+src/web/browser/catena/catena-model.js
+src/web/browser/catena/catena.js
+tools/tests/test_catena_wave_1.py
+
+e041411f67c725b78deac41f15b4411e8c46101a Prove the corrected boundary at the sinks the page actually writes
+tools/tests/test_catena_wave_1.py
+
+ee1048c903300e21ccb942b6b268f941dfe126e0 Record the V5 disposition, the V6 correction, and what it did not settle
+PROJECT-WORK.md
+guidance/corpus-browser-roadmap.md
+promised-deliverables.toml
+
+83cb63b61e366fac07b298fee77f63d1658086f7 Correct a NUL byte in the model and two counts the records overstated
+PROJECT-WORK.md
+guidance/corpus-browser-roadmap.md
+src/web/browser/catena/catena-model.js
+tools/tests/test_catena_wave_1.py
+
+4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46 Correct an arithmetic error and record the relocation cost as measured
+PROJECT-WORK.md
+guidance/corpus-browser-roadmap.md

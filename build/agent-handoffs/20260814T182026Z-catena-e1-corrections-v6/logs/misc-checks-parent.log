@@ -1,0 +1,31 @@
+The same short read-only checks, run at the PARENT, so the head's results are
+compared against measurements rather than against recollection.
+
+=== A. promise ledger — SHA 19982ab433dd25704ed60b1ac6ddb678bc3a98f9 ===
+$ python3 tools/tpt check-promised-deliverables
+Promised-deliverable ledger valid: 30 tracked, 19 complete.
+EXIT=0
+
+=== B. catena model check — SHA 19982ab433dd25704ed60b1ac6ddb678bc3a98f9 ===
+$ python3 scripts/_catena.py check
+catena valid: fragments=1351 books=1 canon=73
+EXIT=0
+
+=== C. release bindings, READ-ONLY — SHA 19982ab433dd25704ed60b1ac6ddb678bc3a98f9 ===
+$ python3 tools/tpt release-bindings status
+stale site source src/web/browser/catena/catena-model.js: recorded f1ea94f9ec6b54813859c2b526163e90d9de61992b839fe2eb0e349f31ccf57b, actual f1ed13795d3b3774bbfc4811282de304eb2c97e746bcd3c9db47f0536bf36b5e
+stale site source src/web/browser/catena/catena.css: recorded aa564bc23918eeb98a0680df416549d94525444bcf837606293f031c8b0099d6, actual 733e84909e0e8049629187352d3800be320e469da7be200e860378bcc28851c5
+stale site source src/web/browser/catena/catena.js: recorded 51aaa3cf9deb47127da9cce3acefd2740531c69a6ed17e7bf7a702171d6d20d0, actual 8bb2834a8814a18470bc1d4c0849e5e88db5bf7e259726ebb2a3f1134b98d25b
+stale site source src/web/browser/catena/index.html: recorded 45c491abf22351e14fe22648a5a05e47f6abd8185a2565a3cc34a1d19acc440d, actual 7779d1f19ca175fd315cd7164f5347cc3c08d68b20b3b68a9219429b02bb8fa8
+stale: 4 stale binding(s)
+EXIT=1
+
+=== D. budgets — SHA 19982ab433dd25704ed60b1ac6ddb678bc3a98f9 ===
+catena.css: whole 7629/8000   stripped 2676/2700
+catena.js: whole 12990/13000   stripped 8363/8800
+catena-model.js (NO CEILING): whole 11171   stripped 3284
+EXIT=0
+
+=== E. the production sources are text — SHA 19982ab433dd25704ed60b1ac6ddb678bc3a98f9 ===
+src/web/browser/catena/catena.js:       JavaScript source, Unicode text, UTF-8 text
+src/web/browser/catena/catena-model.js: JavaScript source, Unicode text, UTF-8 text

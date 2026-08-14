@@ -1,0 +1,5 @@
+COMMAND: TRIPTYCH_CHROME=/usr/bin/chromium node tools/tests/corpus_browser_gate.mjs --json-out logs/gate-head.json
+PREREQUISITE: make public-site (see logs/public-site-head.log)
+SHA: 4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46
+EXIT=1
+counts {'routes': 19, 'states': 9, 'pages': 171, 'assertions': 2290, 'passed': 1836, 'failed': 226, 'skipped': 228}

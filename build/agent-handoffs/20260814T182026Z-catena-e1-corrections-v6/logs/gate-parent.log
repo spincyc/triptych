@@ -1,0 +1,4 @@
+COMMAND: TRIPTYCH_CHROME=/usr/bin/chromium node tools/tests/corpus_browser_gate.mjs --json-out gate-parent.json
+SHA: 19982ab433dd25704ed60b1ac6ddb678bc3a98f9
+EXIT=1
+counts {'routes': 19, 'states': 9, 'pages': 171, 'assertions': 2290, 'passed': 1836, 'failed': 226, 'skipped': 228}

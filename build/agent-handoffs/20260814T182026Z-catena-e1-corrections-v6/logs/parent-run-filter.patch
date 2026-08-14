@@ -1,0 +1,27 @@
+--- /tmp/v6-unfiltered.py	2026-08-14 14:27:14.305196087 -0500
++++ tools/tests/test_catena_wave_1.py	2026-08-14 14:27:14.320072249 -0500
+@@ -2378,6 +2378,24 @@
+ _REPLAYED: dict | None = None
+ 
+ 
++# ---------------------------------------------------------------------------
++# PARENT-RUN FILTER — applied ONLY when replaying this file against the
++# uncorrected parent 19982ab4, and recorded here in full because the V5
++# package narrated a filter it did not preserve.
++#
++# At the parent, the three scenarios whose root arrives as JSON `null` or as a
++# JSON list throw `TypeError: Cannot read properties of null (reading 'canon')`
++# out of catena.js — past the bootstrap's request catch, outside every funnel.
++# The throw escapes the whole node process, so the harness dies and EVERY
++# ReplayTest class errors in setUpClass. That is itself the §12 finding, and it
++# is preserved unfiltered in v6-tests-against-parent.log.
++#
++# Dropping exactly those three lets the remaining classes report, so the other
++# blocker classes can be read per class rather than as one process death.
++_PARENT_FILTER = ("null-index", "null-index-cold", "list-index")
++SCENARIOS = [one for one in SCENARIOS if one["name"] not in _PARENT_FILTER]
++
++
+ def replayed() -> dict:
+     """Run every scenario once; the corpus is large and the states are many."""
+     global _REPLAYED

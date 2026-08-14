@@ -1,0 +1,20 @@
+# Files changed between the reviewed V5 head and this V6 head
+# parent 19982ab433dd25704ed60b1ac6ddb678bc3a98f9
+# head   4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46
+# $ git diff --name-status <parent>..<head>
+
+M	PROJECT-WORK.md
+M	guidance/corpus-browser-roadmap.md
+M	promised-deliverables.toml
+M	src/web/browser/catena/catena-model.js
+M	src/web/browser/catena/catena.js
+M	tools/tests/test_catena_wave_1.py
+
+# $ git diff --stat <parent>..<head>
+ PROJECT-WORK.md                        |  127 ++
+ guidance/corpus-browser-roadmap.md     |   68 +-
+ promised-deliverables.toml             |   66 +
+ src/web/browser/catena/catena-model.js |  389 ++++-
+ src/web/browser/catena/catena.js       |   88 +-
+ tools/tests/test_catena_wave_1.py      | 2711 +++++++++++++++++++++++++++++++-
+ 6 files changed, 3329 insertions(+), 120 deletions(-)

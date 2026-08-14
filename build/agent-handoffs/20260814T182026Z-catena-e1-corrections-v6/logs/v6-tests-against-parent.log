@@ -1,0 +1,1130 @@
+COMMAND: python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py'
+TREE: the parent 19982ab433dd25704ed60b1ac6ddb678bc3a98f9 with ONLY
+      tools/tests/test_catena_wave_1.py replaced by the file at head 4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46.
+      No production file is changed. No filter of any kind is applied.
+PRODUCTION SHA256 AT THIS TREE:
+8bb2834a8814a18470bc1d4c0849e5e88db5bf7e259726ebb2a3f1134b98d25b  src/web/browser/catena/catena.js
+f1ed13795d3b3774bbfc4811282de304eb2c97e746bcd3c9db47f0536bf36b5e  src/web/browser/catena/catena-model.js
+---- output ----
+EEEEEEEEEEEE.........EEEEEE.....EEEEEEEEEEEEEEEEEEE...........EEEEEEEEE......EEEEEEEEEEEEEEEE
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.AbsenceCountTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-ef9fcqw_.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.AbsenceDisclosureTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-nd3zpttp.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.AbsenceRowIdentityTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-64w3gznm.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.AcknowledgementChannelOrderTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-m5rrr9op.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.ActionPartialArrivalTerminalStateTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-_hrsbme1.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.AsyncTransactionTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-1_8v5fd6.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.AuthorFilterRecoveryTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-ednl_6d0.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.BlockedVoiceClaimTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-oc3v2e_v.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.BootstrapFailureTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-rubt9yay.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.CacheRecoveryTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-jr4ka1v9.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.CanonicalVerseIdentityTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-5pm1bvzg.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.ChronologyTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-4s5ry_cj.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.CompositionTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-zd_lxah9.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.CountedWordTallyTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-36j3vhu9.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.EditionIdentityTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-8zajgxhv.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.EmptyRefusalRecordTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-o9rgm24n.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.ExactVoiceKeyTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-ebx9zbjo.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.FindingOrderIndependenceTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-9vpkpezq.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.FrozenContractTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-izkrp2t7.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.GenuinelyLateStaleWorkTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-ro2wehig.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.HashValidationTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-56dibnm9.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.HeldIndexSiblingTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-pizfrgma.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.HistoryDeterminismTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-ivvwxztm.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.HistoryIndependenceTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-d63mruj8.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.IntegrityErrorTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-r93raeof.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.LateCompletionFocusEvidenceTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-vtehaa1r.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.LateWorkReallyHappenedTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-sa7yv6pa.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.LeadsCopyTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-j3hk95bo.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.MalformedLanguageAttributeTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-epz2s2ij.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.MalformedRecordRenderingTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-w1q7u3ej.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.MixedCollectionMemberTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-nrbt02kw.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.MixedCollectionOrderInvarianceTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-xox8lv96.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.NeutralRefusalUmbrellaTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-jmot9ric.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.NullBootstrapTerminalStateTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-twi4ko9x.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.NumericVerseAndPathTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-0klucm7j.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.ParagraphCountTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-66e_ssav.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.PayloadTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-txt3ph5g.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.RecoveryFailureFocusTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-8j1atacp.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.RecoveryFocusTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-0g27ixbr.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.RenderedScriptureTruthTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-px9ksh0h.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.RightsRenderingTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-lx6m2d7i.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.RootLanguageIdentityTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-tdrdbvdh.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.RoutableIdentityTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-t754dnye.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.RouteCompletionAfterMalformedDataTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-9_53xenq.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.SelfWriteEchoTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-8h1virxo.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.SeverianRightsTraceTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-dqnb_21r.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.StrayPartialOfferTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-ghcp84ug.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.SupersededArrivalVoiceTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-huchh0l4.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.TypedAbsenceFindingTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-_iuv58v5.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.TypedStateTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-c8to0fl4.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.TypedStructureBoundaryTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-phfemmce.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.TypedTruthStateTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-6kzrzu_6.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.UnreadableTestamentTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-0e5k_qcv.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.UnregressedScriptureTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-2bff23js.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.UnsafeTextPrefixTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-tlxgrvx2.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.UnsafeTextualIdentityTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-qqcm82fx.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.UnsupportedVoiceTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-df2yqhzp.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.UntypedProvenanceTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-iiqo8jtp.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.UrlGrammarClosureTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-rbvanlkn.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.VisibleFailureTextTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-_lwspajh.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.VoiceCountTruthTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-xs3s_2wm.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+======================================================================
+ERROR: setUpClass (test_catena_wave_1.VoiceDeepLinkTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2407, in setUpClass
+    cls.pages = replayed()
+                ~~~~~~~~^^
+  File "$REPO-parent/tools/tests/test_catena_wave_1.py", line 2394, in replayed
+    raise AssertionError(result.stderr.strip() or "the replay harness exited non-zero")
+AssertionError: <anonymous_script>:981
+      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+                         ^
+
+TypeError: Cannot read properties of null (reading 'canon')
+    at start (eval at run (/tmp/catena-replay-p8xgb9h1.js:535:5), <anonymous>:981:26)
+
+Node.js v26.7.0
+
+----------------------------------------------------------------------
+Ran 31 tests in 66.624s
+
+FAILED (errors=62)
+EXIT=1

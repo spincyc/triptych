@@ -1,0 +1,891 @@
+{
+  "GEN1": "#book=Gen&chapter=1&bible=douay-rheims",
+  "ADVERSARIAL": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA",
+  "V6_BIBLE_LANGUAGES": {
+    "bibles": [
+      {
+        "id": "douay-rheims",
+        "label": "Douay-Rheims",
+        "language": {
+          "code": "en"
+        },
+        "numbering": "vulgate",
+        "psalter": "gallican",
+        "psalm_titles": "numbered",
+        "edition": "Synthetic edition record",
+        "rights": "public-domain"
+      },
+      {
+        "id": "list-language",
+        "label": "List Language",
+        "language": [
+          "en"
+        ],
+        "numbering": "vulgate",
+        "psalter": "gallican",
+        "psalm_titles": "numbered",
+        "edition": "Synthetic edition record",
+        "rights": "public-domain"
+      },
+      {
+        "id": "number-language",
+        "label": "Number Language",
+        "language": 42,
+        "numbering": "vulgate",
+        "psalter": "gallican",
+        "psalm_titles": "numbered",
+        "edition": "Synthetic edition record",
+        "rights": "public-domain"
+      },
+      {
+        "id": "boolean-language",
+        "label": "Boolean Language",
+        "language": true,
+        "numbering": "vulgate",
+        "psalter": "gallican",
+        "psalm_titles": "numbered",
+        "edition": "Synthetic edition record",
+        "rights": "public-domain"
+      },
+      {
+        "id": "null-language",
+        "label": "Null Language",
+        "language": null,
+        "numbering": "vulgate",
+        "psalter": "gallican",
+        "psalm_titles": "numbered",
+        "edition": "Synthetic edition record",
+        "rights": "public-domain"
+      },
+      {
+        "id": "empty-language",
+        "label": "Empty Language",
+        "language": "",
+        "numbering": "vulgate",
+        "psalter": "gallican",
+        "psalm_titles": "numbered",
+        "edition": "Synthetic edition record",
+        "rights": "public-domain"
+      },
+      {
+        "id": "blank-language",
+        "label": "Blank Language",
+        "language": "   ",
+        "numbering": "vulgate",
+        "psalter": "gallican",
+        "psalm_titles": "numbered",
+        "edition": "Synthetic edition record",
+        "rights": "public-domain"
+      },
+      {
+        "id": "prose-language",
+        "label": "Prose Language",
+        "language": "not a language code",
+        "numbering": "vulgate",
+        "psalter": "gallican",
+        "psalm_titles": "numbered",
+        "edition": "Synthetic edition record",
+        "rights": "public-domain"
+      },
+      {
+        "id": "clementine-vulgate",
+        "label": "Clementine Vulgate",
+        "language": "la",
+        "numbering": "vulgate",
+        "psalter": "gallican",
+        "psalm_titles": "numbered",
+        "edition": "Synthetic edition record",
+        "rights": "public-domain"
+      }
+    ],
+    "_adversarial": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA"
+  },
+  "V6_TESTAMENT_INDEX": {
+    "canon": [
+      {
+        "token": "Gen",
+        "name": "Genesis",
+        "chapters": 50,
+        "testament": {
+          "half": "old"
+        },
+        "path": "01-gen"
+      }
+    ]
+  },
+  "V6_MIXED_REORDERED": {
+    "token": "Gen",
+    "chapter": 1,
+    "text_prefix": "structure/catena/text/",
+    "sources": {
+      "1": {
+        "author": "First Author",
+        "work": "First Work",
+        "work_id": "typed.work1",
+        "date": 301,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 1",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "5": {
+        "author": "Last Author",
+        "work": "Last Work",
+        "work_id": "typed.work5",
+        "date": 305,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 5",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      }
+    },
+    "fragments": [
+      null,
+      {
+        "id": "mixed-first",
+        "locator": "1",
+        "source": "1",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 1,
+          "last_chapter": 1,
+          "last_verse": 1
+        }
+      },
+      7,
+      {
+        "id": {
+          "not": "an id"
+        },
+        "locator": "2",
+        "source": "1",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 2,
+          "last_chapter": 1,
+          "last_verse": 2
+        }
+      },
+      {
+        "id": "mixed-last",
+        "locator": "5",
+        "source": "5",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 5,
+          "last_chapter": 1,
+          "last_verse": 5
+        }
+      }
+    ],
+    "leads": [
+      13,
+      {
+        "author": "Lead One",
+        "title": "Lead Work One",
+        "date": "500"
+      },
+      null,
+      {
+        "author": "Lead Two",
+        "title": "Lead Work Two",
+        "date": "600"
+      },
+      {
+        "author": {
+          "n": 1
+        },
+        "title": [
+          "x"
+        ],
+        "date": {}
+      }
+    ],
+    "blocked": [
+      {
+        "author": 5,
+        "work": [],
+        "reason": {}
+      },
+      null,
+      {
+        "author": "Blocked One",
+        "work": "Blocked Work One",
+        "reason": "rights"
+      },
+      21,
+      {
+        "author": "Blocked Two",
+        "work": "Blocked Work Two",
+        "reason": "rights"
+      }
+    ],
+    "refusals": {
+      "douay-rheims": [
+        {},
+        {
+          "note": {
+            "broken": true
+          }
+        },
+        {
+          "kind": "displaced"
+        },
+        {
+          "chapter": 1,
+          "verse": null,
+          "kind": "displaced",
+          "note": "the numbering of this chapter is displaced in this edition"
+        }
+      ]
+    },
+    "_adversarial": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA"
+  },
+  "TYPED_ABSENCE_FIXTURE": {
+    "token": "Gen",
+    "chapter": 1,
+    "text_prefix": "structure/catena/text/",
+    "sources": {
+      "1": {
+        "author": "Author 1",
+        "work": "Work 1",
+        "work_id": "typed.work1",
+        "date": 301,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 1",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "2": {
+        "author": "Author 2",
+        "work": "Work 2",
+        "work_id": "typed.work2",
+        "date": 302,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 2",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "3": {
+        "author": "Author 3",
+        "work": "Work 3",
+        "work_id": "typed.work3",
+        "date": 303,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 3",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "4": {
+        "author": "Author 4",
+        "work": "Work 4",
+        "work_id": "typed.work4",
+        "date": 304,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 4",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "5": {
+        "author": "Author 5",
+        "work": "Work 5",
+        "work_id": "typed.work5",
+        "date": 305,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 5",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      }
+    },
+    "fragments": [
+      {
+        "id": "typed-1",
+        "locator": "1",
+        "source": "1",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 1,
+          "last_chapter": 1,
+          "last_verse": 1
+        }
+      },
+      {
+        "id": "typed-2",
+        "locator": "2",
+        "source": "2",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 2,
+          "last_chapter": 1,
+          "last_verse": 2
+        }
+      },
+      {
+        "id": "typed-3",
+        "locator": "3",
+        "source": "3",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 3,
+          "last_chapter": 1,
+          "last_verse": 3
+        }
+      },
+      {
+        "id": "typed-4",
+        "locator": "4",
+        "source": "4",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 4,
+          "last_chapter": 1,
+          "last_verse": 4
+        }
+      },
+      {
+        "id": "typed-5",
+        "locator": "5",
+        "source": "5",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 5,
+          "last_chapter": 1,
+          "last_verse": 5
+        }
+      }
+    ],
+    "leads": [],
+    "blocked": [],
+    "refusals": {}
+  },
+  "FINDING_ORDER": {
+    "absences": {
+      "typed.work1": [
+        {
+          "language": "en",
+          "finding": "none-published",
+          "reason": "No English translation has been published."
+        },
+        {
+          "language": "en",
+          "finding": {
+            "kind": "in-copyright"
+          },
+          "reason": "A reason standing beside an unreadable finding."
+        }
+      ],
+      "typed.work2": [
+        {
+          "language": "en",
+          "finding": "partial-public-domain",
+          "reason": "Only part of it is out of copyright.",
+          "partial": "the 1893 selection"
+        },
+        {
+          "language": "en",
+          "finding": {
+            "kind": "in-copyright"
+          },
+          "reason": "A reason standing beside an unreadable finding."
+        }
+      ],
+      "typed.work3": [
+        {
+          "language": "en",
+          "finding": "not-surveyed",
+          "reason": ""
+        },
+        {
+          "language": "en",
+          "finding": {
+            "kind": "in-copyright"
+          },
+          "reason": "A reason standing beside an unreadable finding."
+        }
+      ],
+      "typed.work4": [
+        {
+          "language": "en",
+          "finding": "none-published",
+          "reason": "No English translation has been published."
+        },
+        {
+          "language": "en",
+          "finding": "partial-public-domain",
+          "reason": "Only part of it is out of copyright.",
+          "partial": "the 1893 selection"
+        }
+      ],
+      "typed.work5": [
+        {
+          "language": "en",
+          "finding": "no-such-finding",
+          "reason": "A finding this project does not define."
+        },
+        {
+          "language": "en",
+          "finding": "none-published",
+          "reason": "No English translation has been published."
+        }
+      ]
+    },
+    "_adversarial": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA"
+  },
+  "FINDING_ORDER_REVERSED": {
+    "absences": {
+      "typed.work1": [
+        {
+          "language": "en",
+          "finding": {
+            "kind": "in-copyright"
+          },
+          "reason": "A reason standing beside an unreadable finding."
+        },
+        {
+          "language": "en",
+          "finding": "none-published",
+          "reason": "No English translation has been published."
+        }
+      ],
+      "typed.work2": [
+        {
+          "language": "en",
+          "finding": {
+            "kind": "in-copyright"
+          },
+          "reason": "A reason standing beside an unreadable finding."
+        },
+        {
+          "language": "en",
+          "finding": "partial-public-domain",
+          "reason": "Only part of it is out of copyright.",
+          "partial": "the 1893 selection"
+        }
+      ],
+      "typed.work3": [
+        {
+          "language": "en",
+          "finding": {
+            "kind": "in-copyright"
+          },
+          "reason": "A reason standing beside an unreadable finding."
+        },
+        {
+          "language": "en",
+          "finding": "not-surveyed",
+          "reason": ""
+        }
+      ],
+      "typed.work4": [
+        {
+          "language": "en",
+          "finding": "partial-public-domain",
+          "reason": "Only part of it is out of copyright.",
+          "partial": "the 1893 selection"
+        },
+        {
+          "language": "en",
+          "finding": "none-published",
+          "reason": "No English translation has been published."
+        }
+      ],
+      "typed.work5": [
+        {
+          "language": "en",
+          "finding": "none-published",
+          "reason": "No English translation has been published."
+        },
+        {
+          "language": "en",
+          "finding": "no-such-finding",
+          "reason": "A finding this project does not define."
+        }
+      ]
+    },
+    "_adversarial": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA"
+  },
+  "V6_STRAY_PARTIAL_INDEX": {
+    "absences": {
+      "typed.work1": [
+        {
+          "language": "en",
+          "finding": "not-surveyed",
+          "partial": "a stray offer beside an admission"
+        }
+      ],
+      "typed.work2": [
+        {
+          "language": "en",
+          "finding": "no-such-finding",
+          "partial": "a stray offer beside an unknown finding"
+        }
+      ],
+      "typed.work3": [
+        {
+          "language": "en",
+          "partial": "a stray offer beside no finding at all"
+        }
+      ],
+      "typed.work4": [
+        {
+          "language": "en",
+          "finding": "partial-public-domain",
+          "reason": "Only part of it is out of copyright.",
+          "partial": "the 1893 selection"
+        }
+      ],
+      "typed.work5": [
+        {
+          "language": "en",
+          "finding": "in-copyright",
+          "reason": "A living author's rendering.",
+          "partial": "a stray offer beside a closed finding"
+        }
+      ]
+    },
+    "_adversarial": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA"
+  },
+  "V6_PADDED_VERSES": {
+    "book": "Gen",
+    "chapter": 1,
+    "verses": {
+      "1": "The first verse, sound.",
+      "2": "The second verse, sound.",
+      "01": "A padded encoding of verse one.",
+      "001": "A twice-padded encoding of verse one.",
+      "0002": "A padded encoding of verse two.",
+      "03": "A padded verse three, with no canonical sibling."
+    },
+    "_adversarial": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA"
+  },
+  "V6_UNSAFE_IDENTITY_FIXTURE": {
+    "token": "Gen",
+    "chapter": 1,
+    "text_prefix": "structure/catena/text/",
+    "sources": {
+      "1": {
+        "author": "Author 1",
+        "work": "Work 1",
+        "work_id": "typed.work1",
+        "date": 301,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 1",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "2": {
+        "author": "Author 2",
+        "work": "Work 2",
+        "work_id": "typed.work2",
+        "date": 302,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 2",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "3": {
+        "author": "Author 3",
+        "work": "Work 3",
+        "work_id": "typed.work3",
+        "date": 303,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 3",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "4": {
+        "author": "Author 4",
+        "work": "Work 4",
+        "work_id": "typed.work4",
+        "date": 304,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 4",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "5": {
+        "author": "Author 5",
+        "work": "Work 5",
+        "work_id": "typed.work5",
+        "date": 305,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 5",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "6": {
+        "author": "Author 6",
+        "work": "Work 6",
+        "work_id": "typed.work6",
+        "date": 306,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 6",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "7": {
+        "author": "Author 7",
+        "work": "Work 7",
+        "work_id": "typed.work7",
+        "date": 307,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 7",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "8": {
+        "author": "Author 8",
+        "work": "Work 8",
+        "work_id": "typed.work8",
+        "date": 308,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 8",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "9": {
+        "author": "Author 9",
+        "work": "Work 9",
+        "work_id": "typed.work9",
+        "date": 309,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 9",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      },
+      "10": {
+        "author": "Author 10",
+        "work": "Work 10",
+        "work_id": "typed.work10",
+        "date": 310,
+        "language": "la",
+        "voice": "original",
+        "rights": "public-domain",
+        "edition": "Edition 10",
+        "edition_published": "1900",
+        "translators": [],
+        "container": ""
+      }
+    },
+    "fragments": [
+      {
+        "id": "safe-first",
+        "locator": "1",
+        "source": "1",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 1,
+          "last_chapter": 1,
+          "last_verse": 1
+        }
+      },
+      {
+        "id": "../../../etc/passwd",
+        "locator": "2",
+        "source": "2",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 2,
+          "last_chapter": 1,
+          "last_verse": 2
+        }
+      },
+      {
+        "id": "a space is not an id",
+        "locator": "3",
+        "source": "3",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 3,
+          "last_chapter": 1,
+          "last_verse": 3
+        }
+      },
+      {
+        "id": "Upper.Case",
+        "locator": "4",
+        "source": "4",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 4,
+          "last_chapter": 1,
+          "last_verse": 4
+        }
+      },
+      {
+        "id": "   ",
+        "locator": "5",
+        "source": "5",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 5,
+          "last_chapter": 1,
+          "last_verse": 5
+        }
+      },
+      {
+        "id": "trailing/",
+        "locator": "6",
+        "source": "6",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 6,
+          "last_chapter": 1,
+          "last_verse": 6
+        }
+      },
+      {
+        "id": "%2e%2e%2fsecret",
+        "locator": "7",
+        "source": "7",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 7,
+          "last_chapter": 1,
+          "last_verse": 7
+        }
+      },
+      {
+        "id": "coerced-source",
+        "locator": "8",
+        "source": [
+          "1"
+        ],
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 8,
+          "last_chapter": 1,
+          "last_verse": 8
+        }
+      },
+      {
+        "id": "proto-source",
+        "locator": "9",
+        "source": "constructor",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 9,
+          "last_chapter": 1,
+          "last_verse": 9
+        }
+      },
+      {
+        "id": "safe-last",
+        "locator": "10",
+        "source": "10",
+        "review": "verified",
+        "text_words": 4,
+        "extent": {
+          "token": "Gen",
+          "first_chapter": 1,
+          "first_verse": 10,
+          "last_chapter": 1,
+          "last_verse": 10
+        }
+      }
+    ],
+    "leads": [],
+    "blocked": [],
+    "refusals": {},
+    "_adversarial": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA"
+  }
+}
