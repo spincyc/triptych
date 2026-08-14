@@ -950,6 +950,105 @@ owned release, common-gate, B0/shared-shell, real-device/AT, protected Liturgy
 and PDF prerequisite stays open with its owner. This lane does not review its
 own work.
 
+### E1 Catena route-owned correction lane, V6 independent review
+
+The fresh independent disposition is **CHANGES REQUIRED** at exact candidate
+`4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46`, parent
+`19982ab433dd25704ed60b1ac6ddb678bc3a98f9`. The reviewed evidence is branch
+`evidence/catena-e1-corrections-v6-handoff` at
+`ca2a8659010b3fca2ccada24f9c431796ca702b1`, package
+`build/agent-handoffs/20260814T182026Z-catena-e1-corrections-v6`, ZIP SHA-256
+`eeddfa26321398f2f67959365dae9309c7f15186011e36bc6e9cb95ab5eb6e10`.
+The current integration reference was independently fetched as
+`origin/main` `9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`; it is an ancestor of the
+candidate and has no code overlap that changes this review. The earlier V5
+independent review `fa5b2f601565508acee2b1b236b0c69138af07a3` remains a
+sibling record and is not erased or treated as merged.
+
+V6 does close bounded parts of that review. Root and Bible language values are
+normalized before their actual DOM and prose sinks, an unreadable language no
+longer guesses English, and the accepted `original`, `translation:en`, and
+`translation:la` voice support is unchanged. The neutral three-string refusal
+umbrella is unchanged. Canonical positive verse identifiers remove the padded
+duplicate, JSON `null` now terminates, the final JavaScript is UTF-8 with no
+NUL or forbidden control byte, and no CSS, HTML, generated data, release,
+common-gate, shared-shell, Liturgy, or PDF path changed. The formal ceilings
+remain unraised: `catena.css` is 7,629/8,000 gzip-9 bytes whole and
+2,676/2,700 stripped; `catena.js` is 12,993/13,000 whole and 8,202/8,800
+stripped. The unbudgeted model relocation is accurately measured at 15,767
+whole and 4,377 stripped bytes, and the two JavaScript files at 28,028 bytes
+when compressed as one stream or 28,760 when compressed separately and
+summed.
+
+The typed boundary is not complete. `chapterFragments()` copies every raw
+fragment property and clears `text_path` only when both normalized identities
+are valid. A malformed fragment can therefore retain an injected `text_path`,
+which `openFragment()` passes to the real request sink. Generic object-shape
+checks also admit `{}` as a fragment or absence member, so malformed records
+can still create blank rows, tallies and closed absence claims; source identity
+is deduplicated before its author/work fields are validated; and a nonempty
+refusal note can establish `Boundary not established` without the closed
+refusal kind or matching locus required by the source contract.
+
+Finding resolution still speaks after it says it has declined. When recognized
+findings conflict, the model blanks `finding` but selects one record's
+`reason` and `partial` by longest-plus-lexical ranking, and that reason is
+rendered. Zero recognized findings can likewise leak arbitrary rights prose.
+The generator also string-coerces truthy malformed `partial` values instead of
+validating and coupling them to `partial-public-domain`. These are observable
+rights claims, not merely internal representation differences.
+
+Bootstrap truth remains conflated with recorded emptiness. Malformed or
+all-invalid holdings can render `Nothing held`; an unreadable Bible root can
+render an edition as unpublished; an incomplete canon or voice root can make
+a negative canon or voice claim; a malformed paragraph root can render `No
+paragraph division held`; and an unreadable verses container can say the
+chapter carries no verses. The new late-work proof does park and release real
+work after a newer action settles, but its guard omits the final status sink,
+and the partial-arrival oracle omits other terminal sinks. No regression drives
+a pending render through `startFailed()` before release. Malformed lazy text is
+still normalized to an empty string, so a route may finish without truthfully
+reporting the unreadable payload.
+
+The immutable package is mechanically intact: its 85 manifested payload files
+match the directory and ZIP, the ZIP digest and sidecar agree, referenced files
+are present, and the shipped privacy scanner reports zero matches. Its claims
+are not yet truthful enough to close the handoff. `REVIEW_REQUEST.md` calls
+`83cb63b61` the exact head and retains pre-final size figures although the
+package is sealed for `4639b139`; other members say 45 sealer tests where 46
+ran, four commits where five exist, and three changed files where six exist.
+The roadmap claim that every V6 test class fails at the parent contradicts the
+shipped class decomposition: four new classes and one corrected-oracle class
+do not. There are 15 raster before/after pairs, not 16; their pixels genuinely
+differ, but the pair-audit paths name a nonexistent `shots/` directory. All 30
+PNGs and every probe state are explicitly labelled test-only, while the sealed
+fixture/probe source omits the final adversarial stamp and the exact probe
+invocation and second successful sealing transcript are not preserved. The
+sealer verifies the tree and ZIP sidecar separately rather than proving every
+ZIP member against the manifest, and its check-only failure path can remove the
+manifest despite the no-write claim.
+
+Independent reruns at the exact candidate produced: focused Catena suite 423
+tests, exit 0; full discovery 1,774 tests with 14 failures, 13 errors and 11
+skips, the same 27 fully-qualified inherited FAIL/ERROR identities and no
+Catena identity; browser gate 2,290 assertions, 1,836 pass, 226 fail and 228
+skip across 19 routes, 9 states and 171 pages, with the inherited
+single-`main`, target-size and skip-link categories; `make -k check` exit 2 at
+the same three inherited targets `check-release-bindings`,
+`check-tool-registry`, and `check-examples`; promise ledger valid at 31 tracked
+and 19 complete; Catena data valid at 1,351 fragments, 1 book and 73 canon
+books; and exactly four stale Catena release bindings, still fail-closed. The
+historical `src/web/data/` contradiction and its two Day-reader failures remain
+untouched and separately owned.
+
+The smallest next action is one correction branch from exact
+`4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46`: replace raw fragment copying with
+an explicit typed projection, validate fragment, absence and refusal members
+before semantic use, unconditionally discard unvalidated `text_path`, and add
+exact opened-request, row, tally and refusal regressions in both member orders.
+That action does not authorize integration, release signing, deployment, a
+broader data repair, shared-shell work, protected Liturgy, or PDF changes.
+
 ## Promised work
 
 ### Corpus browser foundation design

@@ -1249,37 +1249,37 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "roots-and-members-typed-before-use"
   criterion = "No semantic root, record, collection member, textual identity, language identity, verse identity, path identity, finding, tally input or bootstrap payload participates in rendering, routing or state derivation before it is validated into an accepted typed representation; only the malformed unit is rejected; valid siblings survive; counts derive from normalized members alone; and no malformed member produces a blank row, a false tally, a false refusal or a false absence."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "unsupported-claims-omitted-not-guessed"
   criterion = "Where language, testament or any other structured truth is unavailable or malformed, the route omits the unsupported claim rather than substituting a default: no lang attribute, visible label, edition option, voice key, filter value or testament line is manufactured from an unreadable value, and no valid sibling fact is lost by the omission."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "finding-resolution-order-independent"
   criterion = "The same finding set produces the same presented result independent of record order; a malformed or unknown finding never overrides a valid typed one; a self-contradicting record is declined rather than resolved to the stronger claim; and stray partial metadata never manufactures a public-domain or publishability claim."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "unsafe-identities-unroutable"
   criterion = "Textual identities feeding route keys, hashes, source and path lookups, verse keys, book identity and action targets are validated against the corpus grammar before use; arbitrary prose, unsafe path-like strings, whitespace-only strings, malformed encoded forms and non-string property keys reach no fetch, route or link; and no real corpus identity is refused."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "terminal-state-and-late-work"
   criterion = "A null or otherwise unreadable bootstrap payload is a terminal invalid state with no permanent loading, aria-busy false, a coherent visible and spoken failure, no stale tally, no stale route mutation and no stale focus; a terminal state invalidates pending render work; and deterministic runtime regressions prove that async work resolving after a newer action has completely settled cannot alter that action's hash, history, status, tally, aria-busy, focus, announcement or visible records."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "oracles-assert-the-production-sink"
   criterion = "Every oracle defending a corrected class asserts the production-observable sink rather than a helper return value or a deduplicated projection; every oracle the review proved blessed a defect is corrected or removed with its reason recorded; and each corrected class is shown to fail against the uncorrected parent with both the unfiltered run and any filter preserved verbatim."
-  status = "pass"
+  status = "open"
   evidence = ["tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1303,7 +1303,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V6 head and its new immutable package records a durable disposition. This lane does not review its own work and records no acceptance."
-  status = "open"
+  status = "pass"
   evidence = ["guidance/corpus-browser-roadmap.md"]
 
 [[deliverables]]
@@ -1315,31 +1315,31 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "language-metadata-never-becomes-dom-or-prose"
   criterion = "No language value that is not a language subtag reaches a DOM lang attribute, a visible language label, a voice key, a route value, or any other presentation fact; malformed language metadata omits the language-specific claim rather than guessing it, preserves valid sibling metadata, and alters no voice support."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "collection-members-validated-individually"
   criterion = "Every collection this route derives presentation or state from validates each member before semantic use, retains valid members, omits malformed ones, derives counts from valid semantic members alone, manufactures no refusal or absence from a malformed member, and lets no malformed member — including a null — erase a valid sibling or abort the render."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "absence-claims-only-what-its-finding-supports"
   criterion = "An absence row is classified from the generator's typed finding rather than from the truthiness of an adjacent field; not-surveyed and unrecognised findings enter no publishing negative and no closed-claim count; a valid typed finding survives malformed sibling metadata and a malformed member of its recorded list; and no new absence taxonomy is invented."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "numeric-verse-path-and-bootstrap-typed"
   criterion = "Counts, extents, verse numbers and word tallies are positive safe integers in ordered domains; verse values, paragraph marks and identity fields reach presentation only as the types their contract defines; no path is composed, fetched or linked from a value that is not sound text; and malformed bootstrap or post-load index data enters the same terminal funnel as a failed request, leaving no unterminated page, no stranded aria-busy and no absence inferred from a parse failure."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "route-completion-proved-not-parse-rejection"
   criterion = "Regressions beginning from a canonical bootstrap prove exact replace/push, final hash, status, tally, aria-busy and focus completion for a partial data arrival, for a malformed later collection member reached by both an action and an address, for a malformed action payload, and for a valid action after a malformed one, with valid siblings preserved and no manufactured refusal or absence."
-  status = "pass"
+  status = "open"
   evidence = ["tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1357,7 +1357,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V5 head and its new immutable package records a durable disposition. This lane does not review its own work and records no acceptance."
-  status = "open"
+  status = "pass"
   evidence = ["guidance/corpus-browser-roadmap.md"]
 
 [[deliverables]]
