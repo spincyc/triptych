@@ -45,10 +45,19 @@
    * into accidental comma-joined text, the second turns a string into a
    * container whose `.length` then counts characters as though they were works.
    *
-   * Four questions answer that for every field this page displays. They live
-   * HERE, beside the derivation, so the page and the model cannot answer them
-   * differently — and because this file carries no byte ceiling, asking them
-   * properly costs the composition nothing.
+   * A handful of questions answer that for every field this page displays.
+   * They live HERE, beside the derivation, so the page and the model cannot
+   * answer them differently — and because this file carries no byte ceiling,
+   * asking them properly costs the composition nothing.
+   *
+   * V5 adds the three the V4.1 review proved were missing, and they are the
+   * three that were being answered by coercion instead: what a NUMBER of this
+   * corpus is, what a LANGUAGE CODE is, and what the MEMBERS of a collection
+   * are. The last is the one that matters most. A container was validated and
+   * its members were not, so a single malformed neighbour could throw out of
+   * the render and take every valid sibling with it, or count itself into a
+   * tally, or manufacture a refusal — and none of those is a fact the record
+   * established.
    * --------------------------------------------------------------------- */
 
   /**
@@ -124,6 +133,77 @@
   }
 
   /**
+   * A number this corpus COUNTS BY — a positive safe integer — or nothing.
+   *
+   * `count` asks only whether a number arrived. This asks whether it is one of
+   * the things this corpus writes as whole positive numbers: a chapter, a
+   * verse, a word tally, a digit width. `0`, `-3`, `1.5`, `1e21`, `"4"`, `[4]`
+   * and `true` are each a malformed record in those places, and a malformed
+   * record is not floored, rounded or coerced into a number to print. The
+   * distinction is not pedantry: `Number(x) > 0` accepted `true` and printed
+   * "1 words", and accepted `[4]` for a chapter, which put a fragment into a
+   * chapter's count that the same record could not give a locus for.
+   */
+  function whole(value) {
+    return typeof value === 'number' && Number.isSafeInteger(value) && value > 0
+      ? value
+      : null;
+  }
+
+  /**
+   * A language code fit to be named, shown, or written into a DOM `lang`.
+   *
+   * NONEMPTY TEXT IS NOT ENOUGH HERE, and this is the one gate in the file
+   * that tests a shape rather than a type. `lang` is machine-read metadata: a
+   * browser picks a font and hyphenation from it, a screen reader picks a
+   * voice, a search engine picks an index. A value that is not a language
+   * subtag must therefore not be written at all — least of all
+   * `[object Object]`, which is exactly what an unchecked record became when
+   * it reached the attribute, in real Chromium, on an otherwise complete page.
+   *
+   * The form is the one the corpus writes and the route grammar already
+   * enforces: two or three letters, and the subtags a code may legitimately
+   * carry after them.
+   */
+  function tongue(value) {
+    const code = sound(value);
+    return /^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$/.test(code) ? code : '';
+  }
+
+  /**
+   * The narrower form a VOICE KEY may carry, and the one authority for it.
+   *
+   * Narrower than `tongue` on purpose. A voice key becomes a control value
+   * and a URL, and the page must accept back the addresses it issues: the
+   * published route grammar is two or three lowercase letters and nothing
+   * else. Composed from anything wider — `en-GB`, an uppercase code, a
+   * record — the page writes a link into history and then refuses it on the
+   * way back in, which is the self-refusing address V4 recorded and fixed for
+   * records alone. The grammar is stated HERE so `voiceKey`, `chapterVoices`
+   * and the route's own validation cannot come to hold three opinions of it.
+   */
+  function voiceLanguage(value) {
+    const code = sound(value);
+    return /^[a-z]{2,3}$/.test(code) ? code : '';
+  }
+
+  /**
+   * The members of a list that are RECORDS, and only those.
+   *
+   * A collection is validated member by member, because a malformed neighbour
+   * establishes nothing about its neighbours. A scalar, a list and a null are
+   * each refused where a record was written; the valid siblings stand; and
+   * whatever is counted afterwards is a count of what stood. `list()` alone
+   * left `null` members to throw out of the render tail — one malformed row
+   * replacing the whole page with a JavaScript error — and left scalars to
+   * render as blank rows that were nonetheless tallied as works.
+   */
+  function records(value) {
+    return list(value).filter(
+      (one) => one !== null && typeof one === 'object' && !Array.isArray(one));
+  }
+
+  /**
    * Does this extent touch this chapter?
    *
    * Inclusive at both ends and stated over chapters alone. A fragment on
@@ -133,18 +213,23 @@
    * "enough" of it would be a judgment no data here supports.
    */
   function touchesChapter(extent, chapter) {
-    if (!extent) return false;
-    const first = Number(extent.first_chapter);
-    const last = Number(extent.last_chapter);
-    if (!Number.isFinite(first) || !Number.isFinite(last)) return false;
-    return first <= chapter && chapter <= last;
+    // THE SAME NUMBERS THE LOCUS IS PRINTED FROM. `Number()` here and `count()`
+    // in `formatExtent` were two answers to one question, and they disagreed:
+    // `first_chapter: [1]` coerced to 1 and put the fragment into chapter 1's
+    // COUNT, while the label refused the same member and printed the book
+    // alone. A fragment whose extent cannot be read stands under no chapter,
+    // rather than under one it cannot be shown to address.
+    const first = whole(bag(extent).first_chapter);
+    const last = whole(bag(extent).last_chapter);
+    const wanted = whole(chapter);
+    if (first === null || last === null || wanted === null) return false;
+    return first <= wanted && wanted <= last;
   }
 
   /** Every fragment standing under one chapter, in the order it was given. */
   function fragmentsOnChapter(fragments, chapter) {
-    const wanted = Number(chapter);
-    return list(fragments).filter(function (fragment) {
-      return touchesChapter(fragment.extent, wanted);
+    return records(fragments).filter(function (fragment) {
+      return touchesChapter(fragment.extent, chapter);
     });
   }
 
@@ -156,12 +241,12 @@
    * chapter 2 when he wrote across the seam.
    */
   function formatExtent(extent, bookName) {
-    if (!extent) return sound(bookName);
-    const book = sound(bookName) || sound(extent.token);
-    const firstChapter = count(extent.first_chapter);
-    const lastChapter = count(extent.last_chapter);
-    const firstVerse = count(extent.first_verse);
-    const lastVerse = count(extent.last_verse);
+    const range = bag(extent);
+    const book = sound(bookName) || sound(range.token);
+    const firstChapter = whole(range.first_chapter);
+    const lastChapter = whole(range.last_chapter);
+    const firstVerse = whole(range.first_verse);
+    const lastVerse = whole(range.last_verse);
     // A RANGE THIS RENDERER CANNOT STATE IS NOT GUESSED AT. The four members are
     // validated as the numbers the format is written in; anything else — a
     // structured member, an absent one, a list — leaves the book standing alone
@@ -170,6 +255,13 @@
     // structure is left for a renderer that understands it, not flattened.
     if (firstChapter === null || lastChapter === null ||
         firstVerse === null || lastVerse === null) {
+      return book;
+    }
+    // AND A RANGE THAT RUNS BACKWARDS IS NOT A RANGE. Four sound numbers in the
+    // wrong order describe no passage, and printing "Genesis 5:1-2:3" would
+    // hand the reader a locus the record never established.
+    if (lastChapter < firstChapter ||
+        (lastChapter === firstChapter && lastVerse < firstVerse)) {
       return book;
     }
     const first = firstChapter + ':' + firstVerse;
@@ -182,12 +274,11 @@
 
   /** Does this fragment cross a chapter boundary? The page says so when it does. */
   function spansChapters(extent) {
-    if (!extent) return false;
     // A CROSSING IS A CLAIM, so it is made only from two real numbers: two
     // arrays are never `===`, and comparing them coerced announced a boundary
     // crossing for a record that established no boundary at all.
-    const first = count(extent.first_chapter);
-    const last = count(extent.last_chapter);
+    const first = whole(bag(extent).first_chapter);
+    const last = whole(bag(extent).last_chapter);
     return first !== null && last !== null && last > first;
   }
 
@@ -207,20 +298,278 @@
    * directory layout the generator can change underneath it.
    */
   function chapterFragments(file) {
-    if (!file) return [];
-    const sources = bag(file.sources);
-    const prefix = sound(file.text_prefix);
-    // `list` rather than `file.fragments || []`: a spine whose `fragments` is a
-    // record or a string is a broken record, and mapping over it threw out of
-    // the render tail — past `aria-busy`, past the tally, past the announcement.
-    return list(file.fragments).map(function (fragment) {
+    const sources = bag(bag(file).sources);
+    const prefix = sound(bag(file).text_prefix);
+    // `records` rather than `file.fragments || []`: a spine whose `fragments`
+    // is a record or a string is a broken record, and mapping over it threw out
+    // of the render tail — past `aria-busy`, past the tally, past the
+    // announcement. Its MEMBERS are asked the same question, because a `null`
+    // among them threw on the very next line and took every valid sibling with
+    // it, and a scalar among them became a blank row that was still counted.
+    return records(bag(file).fragments).map(function (fragment) {
       const shared = bag(sources[fragment.source]);
       const joined = {};
       for (const name in shared) if (Object.hasOwn(shared, name)) joined[name] = shared[name];
       for (const name in fragment) if (Object.hasOwn(fragment, name)) joined[name] = fragment[name];
-      if (fragment.id) joined.text_path = prefix + fragment.id + '.json';
+      // THE ID BECOMES A FETCHED PATH. A truthy test let a record through and
+      // composed `…/[object Object].json`, which the page then requested; a
+      // fragment whose id is not sound text simply carries no text file.
+      const id = sound(fragment.id);
+      if (id) joined.text_path = prefix + id + '.json';
       return joined;
     });
+  }
+
+  /* ------------------------------------------------------------------------
+   * The index, and the addresses derived from it
+   *
+   * Every one of these answers a question the page used to answer by string
+   * concatenation over raw record members — which is how `[object Object]`
+   * reached a fetched URL, and how a malformed index member threw during
+   * startup and left the page saying "Loading…" for ever.
+   * --------------------------------------------------------------------- */
+
+  /**
+   * One canon entry as this page may use it, or null.
+   *
+   * A book must be able to state its own token, its own name and how many
+   * chapters it has before the page may put it in a control, range an address
+   * against it, or write its name into a heading. A member that cannot is not
+   * a book of the canon so far as this page is concerned, and is left out
+   * rather than rendered as `undefined` or counted as a book.
+   */
+  function canonBook(entry) {
+    const record = bag(entry);
+    const token = sound(record.token);
+    const name = sound(record.name);
+    const chapters = whole(record.chapters);
+    if (!token || !name || chapters === null) return null;
+    return {
+      token: token,
+      name: name,
+      chapters: chapters,
+      testament: sound(record.testament),
+      path: sound(record.path)
+    };
+  }
+
+  /** Every book of the canon this page can state, in the order given. */
+  function canonBooks(canon) {
+    const books = [];
+    for (const entry of records(canon)) {
+      const book = canonBook(entry);
+      if (book) books.push(book);
+    }
+    return books;
+  }
+
+  /** One of them by its token, or null. */
+  function bookOf(canon, token) {
+    const wanted = sound(token);
+    if (!wanted) return null;
+    return canonBooks(canon).find((book) => book.token === wanted) || null;
+  }
+
+  /**
+   * Where one chapter's spine stands: its path, `''` where nothing is held on
+   * that chapter, or `null` where the record cannot say either.
+   *
+   * THE THIRD ANSWER IS THE POINT OF THE FUNCTION. "Nothing held here" is a
+   * claim about the corpus, and a record this page cannot read establishes no
+   * such claim; a malformed `present` list or a malformed `path` must reach
+   * the page's broken-record notice instead, because an absence inferred from
+   * a parse failure is precisely the manufactured negative this boundary
+   * exists to refuse. The path itself is composed only from sound text and a
+   * whole number: a request for `…/[object Object].json` is a request against
+   * nothing, and this page does not make it.
+   */
+  function chapterPath(index, token, chapter) {
+    const wanted = sound(token);
+    const held = records(bag(index).held)
+      .find((entry) => wanted && sound(entry.token) === wanted);
+    // The index holds nothing at all in this book, and says so of every
+    // chapter in it. That is a real, recorded emptiness.
+    if (!held) return '';
+    const number = whole(chapter);
+    if (number === null || !Array.isArray(held.present)) return null;
+    let present = false;
+    for (const one of held.present) {
+      // A member this page cannot read makes the LIST unreadable, because a
+      // chapter's absence from an unreadable list proves nothing.
+      if (whole(one) === null) return null;
+      if (one === number) present = true;
+    }
+    if (!present) return '';
+    const prefix = sound(held.path);
+    if (!prefix) return null;
+    return prefix +
+      String(number).padStart(whole(bag(index).chapter_digits) || 1, '0') + '.json';
+  }
+
+  /**
+   * Where this edition opens paragraphs in one chapter, or `''`.
+   *
+   * `''` is not a claim: the layer is the edition's own, and a chapter that
+   * runs on has no file. What it does mean is that no request is made — a
+   * malformed edition record or book path never becomes a fetched URL.
+   */
+  function paragraphPath(layer, edition, bookPath, chapter) {
+    const index = bag(layer);
+    const prefix = sound(bag(bag(index.editions)[sound(edition)]).path);
+    const book = sound(bookPath);
+    const number = whole(chapter);
+    if (!prefix || !book || number === null) return '';
+    return prefix + book + '/' +
+      String(number).padStart(whole(index.chapter_digits) || 1, '0') + '.json';
+  }
+
+  // The two claims a recorded paragraph break may make, and there is no third.
+  const BREAK_KINDS = ['printed', 'projected'];
+
+  /**
+   * The verses of one chapter, in order, each with the mark that opens it.
+   *
+   * Three separate coercions used to live in this loop. The KEY was read with
+   * `Number()`, which took `" 3 "`, `"3.0"` and `"1e3"` for verses the chapter
+   * never numbered and sorted them among the ones it did. The VALUE was
+   * concatenated raw, so a record printed `[object Object]` and a list printed
+   * itself comma-joined, as Scripture. And the MARK was tested for truth
+   * alone, so any value at all opened a paragraph while counting as neither
+   * kind — leaving the page to print paragraphs and, beneath them, the note
+   * saying no paragraph division is held for this chapter.
+   */
+  function chapterLines(verses, breaks) {
+    const said = bag(verses);
+    const marks = bag(breaks);
+    const lines = [];
+    for (const key in said) {
+      if (!Object.hasOwn(said, key)) continue;
+      if (!/^[0-9]+$/.test(key)) continue;
+      const number = whole(Number(key));
+      const text = sound(said[key]);
+      if (number === null || !text) continue;
+      const kind = sound(marks[key]);
+      lines.push({
+        number: number,
+        text: text,
+        kind: BREAK_KINDS.includes(kind) ? kind : ''
+      });
+    }
+    return lines.sort((a, b) => a.number - b.number);
+  }
+
+  /* ------------------------------------------------------------------------
+   * Why a work standing here is not held in the asked-for language
+   *
+   * THE FINDING IS THE FACT, and the page had been throwing it away. The
+   * generator writes one of four, closed at `scripts/_catena.py` so that a
+   * fifth answer has to be argued for rather than typed, and they say
+   * different things:
+   *
+   *   none-published         no translation exists, of any date — about the world
+   *   in-copyright           one exists and may not be republished — about the law
+   *   partial-public-domain  some public-domain text, not the whole — an offer
+   *   not-surveyed           nobody has looked — an admission, and NOT a negative
+   *
+   * The page used to read none of them. It classified a row by whether a
+   * `partial` string happened to be attached, which put `not-surveyed` — the
+   * one finding that explicitly declines to make a claim — into the sentence
+   * "no English this project may publish". That is a holdings claim the
+   * corpus never made, and it is manufactured out of an admission that nobody
+   * looked. A finding this file does not recognise is treated the same way an
+   * unknown finding must be: it is carried, and it claims nothing.
+   * --------------------------------------------------------------------- */
+
+  // What each finding lets the page SAY. No new taxonomy: these are the
+  // generator's own four, and the empty answer is the absence of one.
+  const FINDINGS = {
+    'none-published': 'closed',
+    'in-copyright': 'closed',
+    'partial-public-domain': 'untaken',
+    'not-surveyed': 'unsurveyed'
+  };
+
+  /**
+   * One row per distinct work standing under this chapter that the record
+   * says something about in this language, in the order the spine gives them.
+   *
+   * Every field is typed at the read, and a malformed neighbour costs its
+   * siblings nothing: a valid typed finding survives a malformed `reason`
+   * beside it, and a malformed member of the recorded list is passed over
+   * rather than allowed to stand in for one.
+   */
+  function absenceRows(index, file, language) {
+    const wanted = tongue(language);
+    const recorded = bag(bag(index).absences);
+    const sources = bag(bag(file).sources);
+    const named = [];
+    const rows = [];
+    if (!wanted) return rows;
+    for (const key in sources) {
+      if (!Object.hasOwn(sources, key)) continue;
+      const source = bag(sources[key]);
+      const workId = sound(source.work_id);
+      if (!workId || named.includes(workId)) continue;
+      const found = records(recorded[workId])
+        .find((one) => tongue(one.language) === wanted);
+      if (!found) continue;
+      named.push(workId);
+      const finding = sound(found.finding);
+      rows.push({
+        author: sound(source.author),
+        work: sound(source.work),
+        finding: finding,
+        // The one value the page's sentences are built from. '' is not a
+        // default: it is the page declining to speak for a record it cannot
+        // read, and a row holding it enters no count.
+        stands: Object.hasOwn(FINDINGS, finding) ? FINDINGS[finding] : '',
+        reason: sound(found.reason),
+        partial: sound(found.partial)
+      });
+    }
+    return rows;
+  }
+
+  /** How many of those rows stand on one finding class. */
+  function absenceCount(rows, stands) {
+    return list(rows).filter((row) => row.stands === stands).length;
+  }
+
+  /**
+   * The one line that summarises them — a clause per finding class, and no
+   * clause for a class no row stands on.
+   *
+   * The sentence lives here, beside `voicePhrase` and `joinNames`, for the
+   * same reason they do: it is prose DERIVED FROM A TYPED RECORD, and the
+   * derivation and the words it licenses must not be able to drift apart.
+   * Each clause says only what its own finding says. The first names the
+   * works; the rest carry the number alone, because "4 works standing here
+   * have … ; 1 has …" is how the sentence reads aloud.
+   */
+  function absenceSummary(rows, languageName) {
+    const parts = [];
+    const closed = absenceCount(rows, 'closed');
+    if (closed) {
+      parts.push(
+        (closed === 1 ? 'One work standing here has' : closed + ' works standing here have') +
+          ' no ' + languageName + ' this project may publish');
+    }
+    const rest = (many) =>
+      (parts.length ? String(many)
+        : many === 1 ? 'one work standing here' : many + ' works standing here') +
+      (many === 1 ? ' has' : ' have');
+    const untaken = absenceCount(rows, 'untaken');
+    if (untaken) {
+      parts.push(rest(untaken) +
+        ' only a partly public domain ' + languageName + ', not yet taken');
+    }
+    // The two classes that assert NO negative, and may no longer be spoken as
+    // one with the two that do.
+    const unsurveyed = absenceCount(rows, 'unsurveyed');
+    if (unsurveyed) parts.push(rest(unsurveyed) + ' not been surveyed for ' + languageName);
+    const unread = absenceCount(rows, '');
+    if (unread) parts.push(rest(unread) + ' a finding this page cannot read');
+    return parts.join('; ');
   }
 
   /* ------------------------------------------------------------------------
@@ -253,10 +602,12 @@
     if (voice === ORIGINAL) return ORIGINAL;
     if (voice === TRANSLATION) {
       // THE KEY BECOMES A CONTROL VALUE AND A URL, so a language that is not
-      // sound text names no offer at all. Composed from a record this produced
-      // `translation:[object Object]`, which the page then wrote into history
-      // and refused on the way back in — a link the page issued against itself.
-      const language = sound(source && source.language);
+      // of the route's own grammar names no offer at all. Composed from a
+      // record this produced `translation:[object Object]`, which the page
+      // wrote into history and refused on the way back in — a link the page
+      // issued against itself. Sound text alone was not enough to stop it:
+      // `translation:not a language code` is sound text.
+      const language = voiceLanguage(source && source.language);
       return language ? TRANSLATION + ':' + language : '';
     }
     return '';
@@ -276,7 +627,7 @@
     const found = new Map();
     for (const key in sources) {
       if (!Object.hasOwn(sources, key)) continue;
-      const source = sources[key];
+      const source = bag(sources[key]);
       const wanted = voiceKey(source);
       if (!wanted || found.has(wanted)) continue;
       found.set(wanted, {
@@ -287,7 +638,7 @@
         // not one per language: a chapter holding Ambrose's Latin beside
         // Severian's Greek holds both authors' own words, and offering them
         // separately would put the reader back on the axis this replaced.
-        language: sound(source.voice) === TRANSLATION ? sound(source.language) : ''
+        language: sound(source.voice) === TRANSLATION ? voiceLanguage(source.language) : ''
       });
     }
     return Array.from(found.values()).sort(function (a, b) {
@@ -304,7 +655,9 @@
    * silently widening — never parses the key a second way.
    */
   function parseVoiceKey(wanted) {
-    const key = String(wanted || '');
+    // `sound`, not `String(wanted || '')`: the second turned a record into
+    // `[object Object]` and then took it apart as though it were a key.
+    const key = sound(wanted);
     if (!key) return null;
     if (key === ORIGINAL) return { key: key, voice: ORIGINAL, language: '' };
     const cut = key.indexOf(':');
@@ -344,12 +697,27 @@
     useLanguageNames: useLanguageNames,
     voicePhrase: voicePhrase,
     voiceLabel: voiceLabel,
+    canonBook: canonBook,
+    canonBooks: canonBooks,
+    bookOf: bookOf,
+    chapterPath: chapterPath,
+    paragraphPath: paragraphPath,
+    chapterLines: chapterLines,
+    absenceRows: absenceRows,
+    absenceCount: absenceCount,
+    absenceSummary: absenceSummary,
     LANGUAGE_NAMES: LANGUAGE_NAMES,
+    FINDINGS: FINDINGS,
+    BREAK_KINDS: BREAK_KINDS,
     sound: sound,
     list: list,
     bag: bag,
     count: count,
     say: say,
+    whole: whole,
+    tongue: tongue,
+    voiceLanguage: voiceLanguage,
+    records: records,
     ORIGINAL: ORIGINAL,
     TRANSLATION: TRANSLATION
   };

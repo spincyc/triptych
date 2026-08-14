@@ -132,10 +132,18 @@ CATENA = BROWSER / "catena"
 NODE = shutil.which("node")
 
 # `catena-model.js`, byte for byte. The model is UMD and DOM-free, is replayed
-# under node by `scripts/_catena.py check`, and no part of E1 touches it: a
-# deliberate model change is a deliberate change to this literal. The digest
-# is of the tracked file itself — release bindings are the release owner's.
-MODEL_SHA256 = "5fda9dbd1916bf12b464a74c87213f8e1fc14d50480270d6a0c86ec5d5b78625"
+# under node by `scripts/_catena.py check`, and a deliberate model change is a
+# deliberate change to this literal. The digest is of the tracked file itself
+# — release bindings are the release owner's, and this change makes one of
+# them stale, unsigned, and correctly fail-closed.
+#
+# V5 moved deliberately, as V4 did and for the same reason: `catena.js` had
+# thirty bytes of margin, and the record boundary the review requires cannot
+# be paid for out of thirty bytes. `catena-model.js` carries no ceiling, so
+# the typed questions, the index-derived addresses, the chapter lines and the
+# absence findings are all asked there and the page only calls them. The page
+# is SMALLER for it: 8,734 to 8,356 bytes of code.
+MODEL_SHA256 = "f1ed13795d3b3774bbfc4811282de304eb2c97e746bcd3c9db47f0536bf36b5e"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -628,20 +636,252 @@ MALFORMED_STRUCTURE_FIXTURE = {
 }
 
 # Absence rows for the same works, every displayed field malformed in turn.
-# `partial` is the sharpest: untyped, its truthiness moved a work out of "no
-# publishable translation" and into "partly public domain, not yet taken".
+#
+# V5 REBUILT THIS FIXTURE AROUND `finding`, because the V4.1 review proved the
+# old one was proving the wrong thing. Not one of these rows carried a
+# `finding` — the field the generator ALWAYS writes, from a list closed at
+# four values in `scripts/_catena.py` — and the page classified a row by
+# whether a `partial` string happened to be attached. So five malformed
+# neighbours were being counted into "N works standing here have no English
+# this project may publish": a closed claim about somebody's publishing
+# rights, manufactured out of records that said nothing of the kind.
+#
+# The rows below now put a real typed finding beside malformed siblings, and
+# malformed findings beside sound siblings, so the two questions are separable.
 MALFORMED_ABSENCES = {
     "absences": {
-        "work.sound": [{"language": "en", "reason": "A sound recorded reason.",
+        # The control: a valid typed finding, sound siblings.
+        "work.sound": [{"language": "en", "finding": "partial-public-domain",
+                        "reason": "A sound recorded reason.",
                         "partial": "a sound partial offer"}],
-        "work.language": [{"language": "en", "reason": {"text": "not text"},
+        # A VALID TYPED FINDING WITH MALFORMED NEIGHBOURS. `in-copyright` is a
+        # fact about the law and survives an unreadable reason beside it; the
+        # unreadable reason is withheld, and takes the finding with it nowhere.
+        "work.language": [{"language": "en", "finding": "in-copyright",
+                           "reason": {"text": "not text"},
                            "partial": {"offer": "not text"}}],
-        "work.scalar": [{"language": "en", "reason": ["not", "text"],
-                         "partial": 42}],
-        "work.nameless1": [{"language": "en", "reason": "   ", "partial": True}],
+        # A finding that is not text at all.
+        "work.scalar": [{"language": "en", "finding": ["not", "text"],
+                         "reason": ["not", "text"], "partial": 42}],
+        # Well-formed text naming no finding this project defines. It must not
+        # be answered with the nearest finding that IS defined.
+        "work.nameless1": [{"language": "en", "finding": "no-such-finding",
+                            "reason": "   ", "partial": True}],
+        # No finding at all, beside a blank `partial` — the exact pair the
+        # untyped classification read as a closed publishing negative.
         "work.nameless2": [{"language": "en", "reason": None, "partial": "   "}],
     }
 }
+
+
+def _voice_source(n, **over):
+    """One well-formed source record, so a fixture varies ONE field at a time."""
+    record = {"author": "Author %d" % n, "work": "Work %d" % n,
+              "work_id": "typed.work%d" % n, "date": 300 + n, "language": "la",
+              "voice": "original", "rights": "public-domain",
+              "edition": "Edition %d" % n, "edition_published": "1900",
+              "translators": [], "container": ""}
+    record.update(over)
+    return record
+
+
+def _voice_fragment(n, **over):
+    """One well-formed fragment on Genesis 1, at its own verse."""
+    record = {"id": "typed-%d" % n, "locator": str(n), "source": str(n),
+              "review": "verified", "text_words": 4,
+              "extent": {"token": "Gen", "first_chapter": 1, "first_verse": n,
+                         "last_chapter": 1, "last_verse": n}}
+    record.update(over)
+    return record
+
+
+# --------------------------------------------------------------------------
+# V5 §5 — a language that is not a language, under EVERYTHING HELD
+#
+# The V4.1 review replayed exactly this in real Chromium and got
+# `lang="[object Object]"` on an otherwise complete page. The committed
+# malformed-language scenario could not see it: it FILTERED the offending
+# fragment out under a translation selection, so the attribute was never
+# rendered, and the shim did not reflect `lang` in any case. Everything held
+# renders every one of these side by side.
+MALFORMED_LANGUAGE_FIXTURE = {
+    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+    "sources": {
+        "1": _voice_source(1, language="la"),
+        "2": _voice_source(2, language={"code": "la"}),
+        "3": _voice_source(3, language=["la"]),
+        "4": _voice_source(4, language=42),
+        "5": _voice_source(5, language=True),
+        "6": _voice_source(6, language="   "),
+        "7": _voice_source(7, language=""),
+        "8": _voice_source(8, language=None),
+        # Sound text, and still not a language code. `sound()` passed it and
+        # the shared namer printed it back as a language, uppercased.
+        "9": _voice_source(9, language="not a language code"),
+    },
+    "fragments": [_voice_fragment(n) for n in range(1, 10)],
+    "leads": [], "blocked": [], "refusals": {},
+}
+
+# --------------------------------------------------------------------------
+# V5 §6 — the required mixed collection, applied to every collection at once
+#
+# valid member, malformed record, scalar, null, valid member. The questions
+# are the same for each: do the valid siblings survive, is the count of the
+# valid members alone, and can a malformed member manufacture a refusal.
+MIXED_COLLECTION_FIXTURE = {
+    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+    "sources": {
+        "1": _voice_source(1, author="First Author", work="First Work"),
+        "5": _voice_source(5, author="Last Author", work="Last Work"),
+    },
+    "fragments": [
+        _voice_fragment(1, id="mixed-first"),
+        # A RECORD whose id is not one. It is a fragment — it counts, it
+        # renders, it names its author — but it addresses no text file, and
+        # `[object Object].json` is never requested for it.
+        _voice_fragment(2, id={"not": "an id"}, source="1"),
+        7,
+        None,
+        _voice_fragment(5, id="mixed-last"),
+    ],
+    "leads": [
+        {"author": "Lead One", "title": "Lead Work One", "date": "500"},
+        {"author": {"n": 1}, "title": ["x"], "date": {}},
+        13,
+        None,
+        {"author": "Lead Two", "title": "Lead Work Two", "date": "600"},
+    ],
+    "blocked": [
+        {"author": "Blocked One", "work": "Blocked Work One", "reason": "rights"},
+        {"author": 5, "work": [], "reason": {}},
+        21,
+        None,
+        {"author": "Blocked Two", "work": "Blocked Work Two", "reason": "rights"},
+    ],
+    # One valid refusal record among three malformed members: the boundary
+    # note is the valid record's, said once, not four times.
+    "refusals": {"douay-rheims": [
+        None, 4, "not a record",
+        {"chapter": 1, "verse": None, "kind": "displaced",
+         "note": "the numbering of this chapter is displaced in this edition"},
+    ]},
+}
+
+# The same chapter with NO valid refusal record at all. Three malformed
+# members satisfied `.length` and made the page claim a boundary the
+# projection never refused.
+MIXED_NO_REFUSAL_FIXTURE = dict(
+    MIXED_COLLECTION_FIXTURE,
+    refusals={"douay-rheims": [None, 4, "not a record"]})
+
+# --------------------------------------------------------------------------
+# V5 §7 — the five absence cases, each a different way a record can fail to
+# support the negative this page used to print regardless.
+TYPED_ABSENCE_FIXTURE = {
+    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+    # Every work stands here in its author's own Latin, so English is empty
+    # and the absence view carries the whole claim.
+    "sources": {str(n): _voice_source(n) for n in range(1, 6)},
+    "fragments": [_voice_fragment(n) for n in range(1, 6)],
+    "leads": [], "blocked": [], "refusals": {},
+}
+
+TYPED_ABSENCE_INDEX = {
+    "absences": {
+        # 1. A valid typed absence that DOES support a closed negative.
+        "typed.work1": [{"language": "en", "finding": "none-published",
+                         "reason": "No English translation has been published."}],
+        # 2. A malformed finding TYPE, beside a sound reason. The reason is a
+        #    fact the record states and survives; the finding supports nothing,
+        #    so no count and no claim may be drawn from this row.
+        "typed.work2": [{"language": "en", "finding": {"kind": "in-copyright"},
+                         "reason": "A reason that outlives its finding."}],
+        # 3. A valid finding beside malformed siblings. `in-copyright` is a
+        #    fact about the law and is not discarded because its neighbour is
+        #    unreadable.
+        "typed.work3": [{"language": "en", "finding": "in-copyright",
+                         "reason": ["not", "text"], "partial": 3}],
+        # 4. `not-surveyed` — the finding whose entire content is that NOBODY
+        #    HAS LOOKED. Classified by `partial` truthiness it became "no
+        #    English this project may publish": a closed claim about publishing
+        #    rights, manufactured out of an admission of ignorance.
+        "typed.work4": [{"language": "en", "finding": "not-surveyed",
+                         "reason": ""}],
+        # 5. A LIST mixing malformed members with a valid typed absence.
+        "typed.work5": [None, 11, "not a record",
+                        {"language": "en", "finding": "partial-public-domain",
+                         "reason": "Only part of it is out of copyright.",
+                         "partial": "the 1893 selection"}],
+    }
+}
+
+# --------------------------------------------------------------------------
+# V5 §8 — numeric, verse, path and bootstrap metadata
+#
+# The chapter TEXT, malformed: keys that `Number()` would take for verses the
+# chapter never numbered, and values that concatenation would print as
+# Scripture.
+MALFORMED_VERSES = {
+    "book": "Gen", "chapter": 1,
+    "verses": {
+        "1": "The first verse, sound.",
+        "2": {"text": "not text"},
+        "3": ["also", "not text"],
+        "4": None,
+        "5": "   ",
+        "6": 6,
+        " 7 ": "A verse this chapter never numbered.",
+        "8.0": "Nor this one.",
+        "1e3": "Nor this.",
+        "0": "Nor a verse zero.",
+        "-2": "Nor a negative verse.",
+        "9": "The last verse, sound.",
+    },
+}
+
+# Paragraph marks that are not marks. Any truthy value opened a paragraph
+# while counting as neither kind, so the page printed paragraphs and, beneath
+# them, the note saying no paragraph division is held for this chapter.
+MALFORMED_BREAKS = {
+    "edition": "douay-rheims", "token": "Gen", "chapter": 1,
+    "breaks": {"9": "guessed", "1": {"kind": "printed"}, "3": 1},
+}
+
+# Numbers that are not the numbers this corpus counts by, and paths that are
+# not paths. `Number(x) > 0` printed "1 words" for a boolean; a record in a
+# path composed a URL the page then requested.
+MALFORMED_NUMBER_FIXTURE = {
+    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+    "sources": {str(n): _voice_source(n) for n in range(1, 8)},
+    "fragments": [
+        _voice_fragment(1, text_words=1200),
+        _voice_fragment(2, text_words="1200"),
+        _voice_fragment(3, text_words=[1200]),
+        _voice_fragment(4, text_words=True),
+        _voice_fragment(5, text_words=12.5),
+        _voice_fragment(6, text_words=0),
+        _voice_fragment(7, text_words=-3),
+    ],
+    "leads": [], "blocked": [], "refusals": {},
+}
+
+# The index itself, malformed — the record the page reads BEFORE it can say
+# anything at all, and the one whose failure used to leave "Loading…" standing.
+def _broken_index(**over):
+    base = {
+        "numbering": "vulgate",
+        "canon": [{"token": "Gen", "name": "Genesis", "chapters": 50,
+                   "testament": "old", "path": "01-gen"}],
+        "held": [{"token": "Gen", "name": "Genesis", "chapters": 50,
+                  "fragments": 1, "path": "structure/catena/01-gen/",
+                  "present": [1], "languages": ["la"]}],
+        "voices": ["original"],
+        "absences": {},
+        "chapter_digits": 3,
+    }
+    base.update(over)
+    return base
 
 SCENARIOS = [
     {"name": "default", "hash": GEN1,
@@ -974,6 +1214,106 @@ SCENARIOS = [
          {"do": "openFragmentOf", "author": "Sound Spine Author",
           "label": "sound-spine-open"},
      ]},
+
+    # ---------------------------------------------------------------- V5 §5
+    # Everything held, which is the selection the review's own replay used.
+    {"name": "malformed-language-held", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": MALFORMED_LANGUAGE_FIXTURE}},
+    # And a Bible whose own language is a record, which reached the passage
+    # element's `lang` by the same route and was never under test at all.
+    {"name": "malformed-bible-language", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": MALFORMED_LANGUAGE_FIXTURE},
+     "patch": {"bibles.json": {"bibles": [
+         {"id": "douay-rheims", "label": "Douay-Rheims", "language": {"code": "en"},
+          "numbering": "vulgate", "psalter": "vulgate", "psalm_titles": "included",
+          "edition": "1899", "rights": "public-domain"}]}}},
+
+    # ---------------------------------------------------------------- V5 §6
+    {"name": "mixed-collection", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": MIXED_COLLECTION_FIXTURE}},
+    {"name": "mixed-no-refusal", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": MIXED_NO_REFUSAL_FIXTURE}},
+
+    # ---------------------------------------------------------------- V5 §7
+    {"name": "typed-absence", "hash": GEN1 + "&voice=translation:en",
+     "files": {"structure/catena/01-gen/001.json": TYPED_ABSENCE_FIXTURE},
+     "patch": {"structure/catena/index.json": TYPED_ABSENCE_INDEX}},
+
+    # ---------------------------------------------------------------- V5 §8
+    {"name": "malformed-verses", "hash": GEN1,
+     "files": {"douay-rheims/chapters/Gen/1.json": MALFORMED_VERSES,
+               "structure/paragraphs/douay-rheims/01-gen/001.json": MALFORMED_BREAKS}},
+    # Every verse unreadable, but verses DID arrive. "carries no verses" is a
+    # claim about the edition and this page may not make it from a parse
+    # failure.
+    {"name": "unreadable-verses", "hash": GEN1,
+     "files": {"douay-rheims/chapters/Gen/1.json":
+               {"book": "Gen", "chapter": 1, "verses": {"1": {}, "2": ["x"]}}}},
+    {"name": "malformed-numbers", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": MALFORMED_NUMBER_FIXTURE}},
+    # A held path that is not text. Composed raw it became a fetched URL.
+    {"name": "malformed-held-path", "hash": GEN1,
+     "files": {"structure/catena/index.json": _broken_index(
+         held=[{"token": "Gen", "path": {"at": "somewhere"}, "present": [1]}])}},
+    # A `present` list this page cannot read. Absence from an unreadable list
+    # proves nothing, so it may not become "Nothing held here".
+    {"name": "unreadable-present", "hash": GEN1,
+     "files": {"structure/catena/index.json": _broken_index(
+         held=[{"token": "Gen", "path": "structure/catena/01-gen/",
+                "present": [1, {"chapter": 2}]}])}},
+    # Bootstrap: a canon whose members are not books. This threw between the
+    # last fetch and the first render, outside every funnel, and left the page
+    # saying "Loading…" for ever with its controls disabled.
+    {"name": "malformed-canon", "hash": "",
+     "files": {"structure/catena/index.json": _broken_index(
+         canon=[None, 7, "Gen", {"token": "Gen"}])}},
+    # An index that is not a record at all.
+    {"name": "scalar-index", "hash": "",
+     "files": {"structure/catena/index.json": "not an index"}},
+
+    # ---------------------------------------------------------------- V5 §9
+    # Route completion, not parse rejection. Each of these begins CANONICAL
+    # and meets malformed data afterwards, because the committed scenarios all
+    # began malformed and therefore proved nothing about a page that had
+    # already established a route and a history.
+    #
+    # 1 + 4 + 6. A valid bootstrap, a real route, then a chapter whose
+    # collection members are malformed — reached by a reader action, so the
+    # push/replace question is live.
+    {"name": "arrival-then-malformed-member", "hash": GEN1,
+     "files": {"structure/catena/01-gen/002.json": MIXED_COLLECTION_FIXTURE},
+     "steps": [{"do": "selectChapter", "value": "2", "label": "moved"}]},
+    # The same, arriving by address rather than by action: an arrival may
+    # complete in place but may never push.
+    {"name": "hash-then-malformed-member", "hash": GEN1,
+     "files": {"structure/catena/01-gen/002.json": MIXED_COLLECTION_FIXTURE},
+     "steps": [{"do": "hash", "value": GEN2, "label": "moved"}]},
+    # 2. PARTIAL ARRIVAL. The spine is parked in flight while the chapter text
+    # and the paragraph layer land; the malformed spine arrives last.
+    {"name": "partial-arrival-malformed", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": MIXED_COLLECTION_FIXTURE},
+     "defer": ["structure/catena/01-gen/"],
+     "steps": [
+         # Releasing nothing: the label is how a snapshot is taken WHILE the
+         # spine is still in flight, which is the state under test.
+         {"do": "release", "path": "nothing-matches-this", "label": "pending"},
+         {"do": "release", "path": "structure/catena/01-gen/001.json",
+          "label": "arrived"}]},
+    # 3 + 5 + 7. A malformed ACTION payload on an otherwise valid route, then
+    # a retry that succeeds. Opening a fragment must complete its own state
+    # and touch the route not at all.
+    {"name": "malformed-action-then-retry", "hash": GEN1,
+     "files": {"structure/catena/text/mixed-first.json":
+               {"id": "mixed-first", "text": {"not": "text"},
+                "basis": ["not", "text"], "date_basis": 5},
+               "structure/catena/01-gen/001.json": MIXED_COLLECTION_FIXTURE},
+     "defer": ["structure/catena/text/"],
+     "steps": [
+         {"do": "openFirstFragment", "label": "opened"},
+         {"do": "release", "path": "structure/catena/text/mixed-first.json",
+          "label": "malformed-arrived"},
+         {"do": "selectChapter", "value": "2", "label": "moved-after"},
+     ]},
 ]
 
 REPLAY = r"""
@@ -1030,6 +1370,16 @@ class Element {
   get children() { return this.childNodes.filter((one) => one.nodeType === 1); }
   get id() { return this.attributes.id || ''; }
   set id(value) { this.attributes.id = String(value); }
+  /* `lang` REFLECTS, exactly as `id` above does and exactly as the HTML DOM
+   * does. This is not shim convenience: it is the whole reason the V4.1
+   * review could see `lang="[object Object]"` in real Chromium while every
+   * committed test here passed. `element.lang = value` is an IDL attribute
+   * whose setter writes the CONTENT attribute, stringifying whatever it is
+   * given; a shim that stored it as a plain JavaScript property made the one
+   * sink the review proved invisible to the one harness that could have
+   * caught it. Reflecting it here is what makes the regression adversarial. */
+  get lang() { return this.attributes.lang || ''; }
+  set lang(value) { this.attributes.lang = String(value); }
   appendChild(child) {
     if (child.parentNode) child.parentNode.removeChild(child);
     child.parentNode = this;
@@ -1284,6 +1634,12 @@ function inspect(page, document, location, fetched, hashWrites, replaced, status
     dataStates: [...new Set(nodes
       .filter((one) => one.hasAttribute('data-state'))
       .map((one) => one.getAttribute('data-state')))].sort(),
+    /* EVERY DOM LANGUAGE ATTRIBUTE UNDER THE READING REGION, projected as
+     * `class=value` so an assertion can name the sink and the value together.
+     * Projected for every scenario, not only the malformed ones, so the
+     * cross-scenario coercion sweep covers it too. */
+    langAttributes: nodes.filter((one) => one.hasAttribute('lang'))
+      .map((one) => (one.className || one.localName) + '=' + one.getAttribute('lang')),
     chapterOpen: Boolean((first('chapter-body') || {}).open),
     chapterCounts: withClass('chapter-count').map(text),
     authorGroups: groups,
@@ -2282,7 +2638,13 @@ class UnsupportedVoiceTest(ReplayTest):
         # inventory is not a voice authority: `held[].languages` carries `grc`
         # because Greek stands here as an original, and answering support from
         # it manufactured `translation:grc`.
-        self.assertIn("!(index.voices || []).includes(voice)", script)
+        # V5 tightened the container the same line reads: `|| []` turned a
+        # STRING `voices` into a container whose `.includes` matches by
+        # substring, so `translation:e` passed against a corpus holding only
+        # `translation:en`. `list()` refuses a scalar outright. The assertion
+        # below is the stricter form of the same requirement, not a relaxation.
+        self.assertIn("!list(index.voices).includes(voice)", script)
+        self.assertNotIn("(index.voices || [])", script)
         self.assertNotIn("(one.languages || []).includes(", script)
         self.assertEqual(self.page("unsupported-voice")["fetched"],
                          ["structure/catena/index.json", "bibles.json",
@@ -3966,3 +4328,342 @@ class TypedStructureBoundaryTest(ReplayTest):
         for token in ("[object Object]", "[OBJECT OBJECT]", "undefined", "null",
                       "not text", "NaN", "true", "false"):
             self.assertNotIn(token, rendered, f"{token!r} reached the page")
+
+
+class MalformedLanguageAttributeTest(ReplayTest):
+    """V5 §5 — a language that is not a language reaches no DOM attribute.
+
+    The V4.1 review replayed an Everything-held page in real Chromium 151 and
+    read `lang="[object Object]"` off the fragment text while the page
+    otherwise completed normally. Nothing here could see it: the committed
+    malformed-language scenario filtered the offending fragment out under a
+    translation selection, and the harness stored `element.lang` as a plain
+    JavaScript property rather than reflecting it into the content attribute
+    the way the HTML DOM does. Both halves are corrected — the shim reflects,
+    and these scenarios hold everything.
+    """
+
+    def test_no_language_attribute_is_ever_a_coerced_value(self):
+        for name in ("malformed-language-held", "malformed-bible-language"):
+            page = self.page(name)
+            for written in page["langAttributes"]:
+                for artefact in ("[object Object]", "undefined", "null", "true",
+                                 "42", "NaN", "not a language code"):
+                    self.assertNotIn(artefact, written, f"{name}: {written}")
+
+    def test_every_language_attribute_is_a_language_subtag(self):
+        # Not merely "not an object": the attribute is machine-read, so the
+        # value has to be a code a consumer can act on.
+        page = self.page("malformed-language-held")
+        self.assertTrue(page["langAttributes"], "the page must write some lang")
+        for written in page["langAttributes"]:
+            code = written.split("=", 1)[1]
+            self.assertRegex(code, r"^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$", written)
+
+    def test_the_sound_language_survives_its_malformed_neighbours(self):
+        # Nine fragments stand; exactly one states a language, and it keeps it.
+        page = self.page("malformed-language-held")
+        self.assertEqual(page["fragmentCount"], 9)
+        self.assertEqual(
+            [one for one in page["langAttributes"] if one.startswith("fragment-text=")],
+            ["fragment-text=la"] + ["fragment-text=en"] * 8)
+
+    def test_a_malformed_language_reaches_no_visible_prose(self):
+        # `sound()` passed "not a language code", and the shared namer printed
+        # it straight back, uppercased, as though it named a language.
+        page = self.page("malformed-language-held")
+        self.assertEqual(page["languages"], ["Latin — the author\u2019s own"])
+
+    def test_a_malformed_bible_language_reaches_no_passage_attribute(self):
+        page = self.page("malformed-bible-language")
+        self.assertIn("passage=en", page["langAttributes"])
+
+    def test_the_page_still_completes_under_every_malformed_language(self):
+        for name in ("malformed-language-held", "malformed-bible-language"):
+            page = self.page(name)
+            self.assertEqual(page["busy"], "false", name)
+            self.assertTrue(page["statusWrites"], name)
+            self.assertFalse(page["errorSections"], name)
+
+
+class MixedCollectionMemberTest(ReplayTest):
+    """V5 §6 — valid, malformed record, scalar, null, valid, in every list.
+
+    The list gate validated containers and not their members. A scalar or an
+    array became a blank row that was nonetheless tallied; a `null` threw on
+    the next property access, discarded every valid sibling, and replaced the
+    page with a raw JavaScript error.
+    """
+
+    def test_valid_fragment_siblings_survive_a_scalar_and_a_null(self):
+        page = self.page("mixed-collection")
+        self.assertEqual(page["fragmentCount"], 3,
+                         "two sound fragments and one sound record with a bad id")
+        self.assertEqual(page["authors"], ["First Author", "First Author", "Last Author"])
+        self.assertEqual(page["works"], ["First Work", "First Work", "Last Work"])
+
+    def test_the_tally_counts_only_the_valid_members(self):
+        page = self.page("mixed-collection")
+        # THREE, not two: a malformed RECORD is still a record the spine
+        # wrote, so it counts and renders nothing of itself. The scalar and
+        # the null are not entries at all and count nowhere. This is the
+        # distinction the V4 leads/blocked correction already drew, held here
+        # against a null neighbour that used to throw before any of it ran.
+        self.assertEqual(
+            page["tallyText"],
+            "3 fragments held \u00b7 3 works held, not renderable yet"
+            " \u00b7 3 lead entries on the acquisition list")
+
+    def test_a_malformed_id_addresses_no_text_file_and_erases_no_sibling(self):
+        page = self.page("mixed-collection")
+        self.assertEqual(page["fragmentIds"], ["mixed-first", None, "mixed-last"])
+        for asked in page["fetched"]:
+            self.assertNotIn("object", asked)
+            self.assertNotIn("undefined", asked)
+
+    def test_valid_lead_and_blocked_siblings_survive_their_neighbours(self):
+        page = self.page("mixed-collection")
+        self.assertEqual(page["leads"],
+                         ["Lead One \u2014 Lead Work One (500)", "",
+                          "Lead Two \u2014 Lead Work Two (600)"])
+        self.assertEqual(page["blocked"],
+                         ["Blocked One \u2014 Blocked Work Onerights", "",
+                          "Blocked Two \u2014 Blocked Work Tworights"])
+
+    def test_one_valid_refusal_among_malformed_members_is_stated_once(self):
+        page = self.page("mixed-collection")
+        self.assertIsNotNone(page["refusal"])
+        self.assertIn("the numbering of this chapter is displaced", page["refusal"].lower())
+
+    def test_malformed_members_alone_manufacture_no_refusal(self):
+        # Three scalars satisfied `.length` and claimed a boundary the
+        # projection never refused.
+        page = self.page("mixed-no-refusal")
+        self.assertIsNone(page["refusal"])
+        self.assertNotIn("refusal", page["dataStates"])
+
+    def test_the_render_completes_with_a_null_member_in_every_list(self):
+        page = self.page("mixed-collection")
+        self.assertEqual(page["busy"], "false")
+        self.assertFalse(page["errorSections"],
+                         "a null member must not replace the page with an error")
+        self.assertTrue(page["statusWrites"])
+
+
+class TypedAbsenceFindingTest(ReplayTest):
+    """V5 §7 — an absence claims exactly what its typed finding supports.
+
+    The generator closes `finding` at four values and says a different thing
+    with each: `none-published` is about the world, `in-copyright` about the
+    law, `partial-public-domain` is an offer not taken, and `not-surveyed` is
+    an admission that nobody looked. The page read none of them, classifying a
+    row by whether a `partial` string was attached — so `not-surveyed`, and
+    every malformed neighbour, was spoken as "no English this project may
+    publish".
+    """
+
+    def test_each_finding_speaks_only_for_itself(self):
+        page = self.page("typed-absence")
+        self.assertEqual(
+            page["absenceSummary"],
+            "2 works standing here have no English this project may publish;"
+            " 1 has only a partly public domain English, not yet taken;"
+            " 1 has not been surveyed for English;"
+            " 1 has a finding this page cannot read")
+
+    def test_not_surveyed_never_becomes_a_publishing_negative(self):
+        page = self.page("typed-absence")
+        said = page["absenceSummary"]
+        # One closed clause, counting two works, and `not-surveyed` is not
+        # one of them: four rows would have been counted before V5.
+        self.assertIn("2 works standing here have no English", said)
+        self.assertIn("1 has not been surveyed for English", said)
+
+    def test_a_malformed_finding_supports_no_claim_and_no_count(self):
+        page = self.page("typed-absence")
+        self.assertIn("1 has a finding this page cannot read", page["absenceSummary"])
+
+    def test_a_valid_finding_survives_malformed_sibling_metadata(self):
+        # `typed.work3` states `in-copyright` beside an unreadable reason; the
+        # finding is counted and the reason withheld, not the other way about.
+        page = self.page("typed-absence")
+        self.assertEqual(
+            page["absenceReasons"],
+            ["No English translation has been published.",
+             "A reason that outlives its finding.",
+             "Only part of it is out of copyright."])
+
+    def test_a_malformed_member_does_not_stand_in_for_the_valid_one(self):
+        page = self.page("typed-absence")
+        self.assertEqual(page["absencePartials"],
+                         ["Partly public domain \u2014 the 1893 selection"])
+
+    def test_the_absence_view_completes_and_stands_open(self):
+        page = self.page("typed-absence")
+        self.assertTrue(page["absenceOpen"])
+        self.assertEqual(page["busy"], "false")
+        self.assertIn("absence", page["dataStates"])
+
+
+class NumericVerseAndPathTest(ReplayTest):
+    """V5 §8 — numbers, verses, paths and the bootstrap record."""
+
+    def test_only_plainly_numbered_verses_with_readable_words_are_shown(self):
+        page = self.page("malformed-verses")
+        self.assertEqual(page["chapterCounts"][0], "2 verses")
+
+    def test_no_verse_value_is_coerced_into_scripture(self):
+        page = self.page("malformed-verses")
+        rendered = " ".join(str(one) for one in page["fragmentTexts"] + [page["tallyText"]])
+        for artefact in ("[object Object]", "also,not text", "undefined", "null"):
+            self.assertNotIn(artefact, rendered)
+
+    def test_a_mark_that_is_not_a_mark_opens_no_paragraph(self):
+        # Any truthy value opened a paragraph and counted as neither kind, so
+        # the page printed paragraphs and denied holding any division.
+        page = self.page("malformed-verses")
+        self.assertEqual(page["paragraphs"], 1)
+        self.assertIn("No paragraph division is held", page["paragraphNote"])
+
+    def test_unreadable_verses_are_not_reported_as_none(self):
+        # "carries no verses" is a claim about the edition, and a parse
+        # failure does not establish it.
+        page = self.page("unreadable-verses")
+        rendered = " ".join(page["asideNotes"] + page["sectionHeadings"])
+        self.assertEqual(page["busy"], "false")
+        self.assertNotIn("carries no verses", str(page["classes"]) + rendered)
+
+    def test_a_word_tally_is_a_number_the_record_wrote(self):
+        # Seven fragments, and exactly one states a tally this page may print.
+        page = self.page("malformed-numbers")
+        self.assertEqual(page["fragmentCount"], 7)
+        lengths = [one for one in page["classes"] if one == "fragment-length"]
+        self.assertEqual(lengths, ["fragment-length"])
+
+    def test_a_malformed_held_path_is_never_requested(self):
+        page = self.page("malformed-held-path")
+        for asked in page["fetched"]:
+            self.assertNotIn("object", asked)
+        self.assertEqual(page["busy"], "false")
+
+    def test_a_malformed_held_record_reports_a_fault_not_an_emptiness(self):
+        page = self.page("malformed-held-path")
+        self.assertTrue(page["errorSections"], "a broken record is an error")
+        self.assertNotIn("Nothing held here", str(page["tallyText"]))
+
+    def test_an_unreadable_present_list_proves_no_absence(self):
+        page = self.page("unreadable-present")
+        self.assertNotEqual(page["tallyText"], "Nothing held here")
+        self.assertTrue(page["errorSections"])
+        self.assertEqual(page["busy"], "false")
+
+    def test_a_malformed_canon_never_leaves_the_page_loading(self):
+        # THE BOOTSTRAP BLOCKER. This threw between the last fetch and the
+        # first render, outside both funnels, and the page stood at "Loading…"
+        # with every control disabled and nothing said.
+        for name in ("malformed-canon", "scalar-index"):
+            page = self.page(name)
+            self.assertNotEqual(page["referenceText"], "Loading\u2026", name)
+            self.assertTrue(page["statusWrites"], f"{name}: the failure must be spoken")
+            self.assertNotIn("Loading", " ".join(page["bookLabels"]), name)
+
+
+class RouteCompletionAfterMalformedDataTest(ReplayTest):
+    """V5 §9 — the application completes its state machine, not merely a parse.
+
+    Every committed malformed scenario began malformed, so none of them proved
+    anything about a page that had already established a route, a history and
+    a rendered chapter before the malformed data arrived. These begin
+    canonical.
+    """
+
+    def test_a_reader_action_into_a_malformed_chapter_pushes_exactly_once(self):
+        moved = self.snapshot("arrival-then-malformed-member", "moved")
+        self.assertEqual(moved["hash"], GEN2)
+        self.assertEqual(moved["hashWrites"], [GEN2],
+                         "a reader step pushes one entry, malformed data or not")
+        self.assertEqual(moved["replaced"], [])
+        self.assertEqual(moved["busy"], "false")
+
+    def test_an_address_into_a_malformed_chapter_never_pushes(self):
+        moved = self.snapshot("hash-then-malformed-member", "moved")
+        self.assertEqual(moved["hash"], GEN2)
+        self.assertEqual(moved["hashWrites"], [],
+                         "an arrival is completed in place, never by pushing")
+        self.assertEqual(moved["busy"], "false")
+
+    def test_the_route_state_stays_coherent_across_the_malformed_chapter(self):
+        for name in ("arrival-then-malformed-member", "hash-then-malformed-member"):
+            moved = self.snapshot(name, "moved")
+            self.assertEqual(moved["referenceText"], "Genesis 2", name)
+            self.assertEqual(moved["selectValues"],
+                             {"book": "Gen", "chapter": "2", "bible": "douay-rheims"},
+                             name)
+            self.assertEqual(moved["stepButtons"], [False, False], name)
+
+    def test_the_valid_siblings_and_the_tally_survive_the_move(self):
+        for name in ("arrival-then-malformed-member", "hash-then-malformed-member"):
+            moved = self.snapshot(name, "moved")
+            self.assertEqual(moved["fragmentCount"], 3, name)
+            self.assertIn("3 fragments held", moved["tallyText"], name)
+
+    def test_the_move_announces_itself_exactly_once_more(self):
+        # The whole announcement journal, in order: the cold arrival speaks
+        # once and the move speaks once. Neither doubles, and neither is lost
+        # because the chapter it moved into is malformed.
+        moved = self.snapshot("arrival-then-malformed-member", "moved")["statusWrites"]
+        self.assertEqual(len(moved), 2, moved)
+        self.assertTrue(moved[0].startswith("Genesis 1, "), moved[0])
+        self.assertTrue(moved[1].startswith("Genesis 2, "), moved[1])
+
+    def test_a_partial_arrival_completes_when_the_malformed_spine_lands(self):
+        pending = self.snapshot("partial-arrival-malformed", "pending")
+        self.assertEqual(pending["busy"], "true",
+                         "the region is busy while the spine is in flight")
+        self.assertEqual(pending["statusWrites"], [],
+                         "nothing is announced before the record arrives")
+        arrived = self.snapshot("partial-arrival-malformed", "arrived")
+        self.assertEqual(arrived["busy"], "false")
+        self.assertEqual(arrived["hash"], GEN1)
+        self.assertEqual(arrived["hashWrites"], [],
+                         "a partial arrival is completed in place")
+        self.assertEqual(arrived["fragmentCount"], 3)
+        self.assertTrue(arrived["statusWrites"])
+
+    def test_a_partial_arrival_keeps_its_valid_siblings_and_claims_nothing(self):
+        arrived = self.snapshot("partial-arrival-malformed", "arrived")
+        self.assertNotEqual(arrived["tallyText"], "Nothing held here")
+        # The one valid refusal record among three malformed members survives
+        # the partial arrival and is stated once.
+        self.assertIn("Boundary not established", arrived["refusal"])
+        self.assertNotIn("absence", arrived["dataStates"])
+
+    def test_a_malformed_action_payload_settles_its_own_fragment_only(self):
+        arrived = self.snapshot("malformed-action-then-retry", "malformed-arrived")
+        # The payload's body is unreadable, so the fragment shows nothing of
+        # itself — and says so rather than standing at "Loading…" for ever.
+        self.assertNotIn("Loading\u2026", arrived["fragmentTexts"][0])
+        self.assertEqual(arrived["fragmentBases"], [],
+                         "an unreadable basis renders nothing")
+
+    def test_a_malformed_action_touches_neither_route_nor_history(self):
+        opened = self.snapshot("malformed-action-then-retry", "opened")
+        arrived = self.snapshot("malformed-action-then-retry", "malformed-arrived")
+        for page in (opened, arrived):
+            self.assertEqual(page["hash"], GEN1)
+            self.assertEqual(page["hashWrites"], [])
+            self.assertEqual(page["busy"], "false",
+                             "opening a fragment does not make the region busy")
+
+    def test_a_later_valid_action_still_completes_after_a_malformed_one(self):
+        moved = self.snapshot("malformed-action-then-retry", "moved-after")
+        self.assertEqual(moved["hash"], GEN2)
+        self.assertEqual(moved["hashWrites"], [GEN2])
+        self.assertEqual(moved["busy"], "false")
+        self.assertEqual(moved["referenceText"], "Genesis 2")
+
+    def test_nothing_stale_survives_the_rejected_payload(self):
+        moved = self.snapshot("malformed-action-then-retry", "moved-after")
+        self.assertFalse(moved["errorSections"])
+        for said in moved["fragmentTexts"]:
+            self.assertNotIn("[object Object]", said)
