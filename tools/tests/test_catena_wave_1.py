@@ -145,7 +145,14 @@ NODE = shutil.which("node")
 # leaves the page SMALLER than it was before the boundary existed. The exact
 # measurement belongs in the durable records, where it is re-taken, not beside
 # a digest where it silently goes stale.
-MODEL_SHA256 = "f1ed13795d3b3774bbfc4811282de304eb2c97e746bcd3c9db47f0536bf36b5e"
+# V6 moves again, for the same reason and by the same arithmetic: the page
+# had seven gzipped bytes of margin at the end of this correction and the
+# semantic boundary the V5 review requires — identity grammars, collection
+# members, order-independent findings — is not payable out of seven bytes.
+# The page is SMALLER than V5 left it (12,993 against 12,990 is the whole
+# file; the composition itself is 8,202 against 8,363, 161 bytes lighter),
+# because every derivation that moved out took its prose with it.
+MODEL_SHA256 = "36221c05db3d3143c2b77f637298314e4c13d3629b2ac12870c44b5e0e79fc94"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -885,6 +892,237 @@ def _broken_index(**over):
     base.update(over)
     return base
 
+# --------------------------------------------------------------------------
+# V6 — the fixtures below are self-labeling, and that is a requirement rather
+# than a courtesy.
+#
+# The V5 review found that the package's fabricated data was disclosed in
+# prose alone: every JSON dump, every probe row and every capture read, on its
+# own, as a record of this corpus. Detached from the Markdown that disclaimed
+# them they were indistinguishable from real holdings of the project. So every
+# V6 fixture root carries the banner below, inertly — no reader of this page
+# looks at the key, and any artifact captured from one of these fixtures
+# carries its own denial with it.
+ADVERSARIAL = "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA"
+
+
+def _fixture(record):
+    """One fabricated file root, stamped as fabricated."""
+    stamped = dict(record)
+    stamped["_adversarial"] = ADVERSARIAL
+    return stamped
+
+
+def _edition(id_, label, language):
+    """One published-edition record, varying only its language."""
+    return {"id": id_, "label": label, "language": language,
+            "numbering": "vulgate", "psalter": "gallican",
+            "psalm_titles": "numbered", "edition": "Synthetic edition record",
+            "rights": "public-domain"}
+
+
+# V6 §5 — the ROOT language record, which is where the review found
+# `Douay-Rheims ([object Object])` still reaching a reader. Every malformed
+# form stands beside two sound ones, and the sound ones must keep their claim.
+V6_BIBLE_LANGUAGES = _fixture({"bibles": [
+    _edition("douay-rheims", "Douay-Rheims", {"code": "en"}),
+    _edition("list-language", "List Language", ["en"]),
+    _edition("number-language", "Number Language", 42),
+    _edition("boolean-language", "Boolean Language", True),
+    _edition("null-language", "Null Language", None),
+    _edition("empty-language", "Empty Language", ""),
+    _edition("blank-language", "Blank Language", "   "),
+    _edition("prose-language", "Prose Language", "not a language code"),
+    _edition("clementine-vulgate", "Clementine Vulgate", "la"),
+]})
+
+# An edition record that cannot name ITSELF is not an edition: it can be no
+# option, no route value and no fetched directory. One sound edition stands
+# behind each, so refusing the broken one must not empty the control.
+V6_BIBLE_IDENTITIES = _fixture({"bibles": [
+    _edition("douay-rheims", "Douay-Rheims", "en"),
+    _edition("../../escape", "Escaping Edition", "en"),
+    _edition("has space", "Spaced Edition", "en"),
+    _edition("", "Nameless Edition", "en"),
+    dict(_edition("no-label", "", "en")),
+    _edition("clementine-vulgate", "Clementine Vulgate", "la"),
+]})
+
+# V6 §11 — textual identities that are sound TEXT and no identity of this
+# corpus. Each becomes a fetched path, a link href or a property lookup.
+V6_UNSAFE_IDENTITY_FIXTURE = _fixture({
+    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+    "sources": {str(n): _voice_source(n) for n in range(1, 11)},
+    "fragments": [
+        _voice_fragment(1, id="safe-first"),
+        _voice_fragment(2, id="../../../etc/passwd"),
+        _voice_fragment(3, id="a space is not an id"),
+        _voice_fragment(4, id="Upper.Case"),
+        _voice_fragment(5, id="   "),
+        _voice_fragment(6, id="trailing/"),
+        _voice_fragment(7, id="%2e%2e%2fsecret"),
+        # A SOURCE KEY THAT IS NOT A STRING. `sources[["1"]]` is `sources["1"]`
+        # — a one-member list is coerced by the lookup itself, so this
+        # fragment took a real edition's author, rights and language while
+        # naming no edition at all.
+        _voice_fragment(8, id="coerced-source", source=["1"]),
+        # And a key that is not a member of the record but of every object.
+        _voice_fragment(9, id="proto-source", source="constructor"),
+        _voice_fragment(10, id="safe-last"),
+    ],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
+# A `text_prefix` that is not a directory of this data root. Composed raw, it
+# is the head of every fragment-text URL the page requests.
+V6_UNSAFE_PREFIX_FIXTURE = _fixture(dict(
+    V6_UNSAFE_IDENTITY_FIXTURE,
+    text_prefix="../../../etc/",
+    fragments=[_voice_fragment(1, id="safe-first"), _voice_fragment(2, id="safe-last")]))
+
+# V6 §9 — one verse, written more than one way. `^[0-9]+$` admitted `"01"`
+# beside `"1"` and `Number()` folded them together, so verse 1 rendered twice.
+V6_PADDED_VERSES = _fixture({
+    "book": "Gen", "chapter": 1,
+    "verses": {
+        "1": "The first verse, sound.",
+        "2": "The second verse, sound.",
+        "01": "A padded encoding of verse one.",
+        "001": "A twice-padded encoding of verse one.",
+        "0002": "A padded encoding of verse two.",
+        # A padded key with NO canonical sibling: it is not a third verse
+        # arriving under an unusual name, it is a key this chapter never wrote.
+        "03": "A padded verse three, with no canonical sibling.",
+    },
+})
+
+# The remaining verse identities, none of which numbers a verse.
+V6_UNSAFE_VERSES = _fixture({
+    "book": "Gen", "chapter": 1,
+    "verses": {
+        "1": "The only verse this chapter numbers.",
+        "0": "Verse zero.",
+        "-2": "A negative verse.",
+        "1.5": "A fractional verse.",
+        "1e3": "An exponent.",
+        " 4 ": "A verse with whitespace in its number.",
+        "": "A verse with no number at all.",
+        "../5": "A verse whose number is a path.",
+        "true": "A verse whose number is a flag.",
+    },
+})
+
+# V6 §7 — the SAME finding set, listed two ways. The review proved selection
+# was first-match, so these two scenarios rendered different rights claims
+# about the same works.
+_CLOSED_ROW = {"language": "en", "finding": "none-published",
+               "reason": "No English translation has been published."}
+_PARTIAL_ROW = {"language": "en", "finding": "partial-public-domain",
+                "reason": "Only part of it is out of copyright.",
+                "partial": "the 1893 selection"}
+_UNSURVEYED_ROW = {"language": "en", "finding": "not-surveyed", "reason": ""}
+_MALFORMED_ROW = {"language": "en", "finding": {"kind": "in-copyright"},
+                  "reason": "A reason standing beside an unreadable finding."}
+_UNKNOWN_ROW = {"language": "en", "finding": "no-such-finding",
+                "reason": "A finding this project does not define."}
+
+
+def _finding_order(flip):
+    """Every required §7 permutation, in one order or the other."""
+    def pair(first, second):
+        return [second, first] if flip else [first, second]
+    return _fixture({"absences": {
+        # a valid absence beside a malformed record
+        "typed.work1": pair(_CLOSED_ROW, _MALFORMED_ROW),
+        # a valid partial beside a malformed record
+        "typed.work2": pair(_PARTIAL_ROW, _MALFORMED_ROW),
+        # a valid unsurveyed beside a malformed record
+        "typed.work3": pair(_UNSURVEYED_ROW, _MALFORMED_ROW),
+        # TWO valid typed findings that say different things. Neither may be
+        # chosen over the other by position, and the harsher may not be
+        # chosen at all: the record contradicts itself and the page says so.
+        "typed.work4": pair(_CLOSED_ROW, _PARTIAL_ROW),
+        # an unknown finding beside a valid typed one
+        "typed.work5": pair(_UNKNOWN_ROW, _CLOSED_ROW),
+    }})
+
+
+# V6 §8 — `partial` detached from any finding that could license it.
+V6_STRAY_PARTIAL_INDEX = _fixture({"absences": {
+    "typed.work1": [{"language": "en", "finding": "not-surveyed",
+                     "partial": "a stray offer beside an admission"}],
+    "typed.work2": [{"language": "en", "finding": "no-such-finding",
+                     "partial": "a stray offer beside an unknown finding"}],
+    "typed.work3": [{"language": "en",
+                     "partial": "a stray offer beside no finding at all"}],
+    "typed.work4": [_PARTIAL_ROW],
+    "typed.work5": [{"language": "en", "finding": "in-copyright",
+                     "reason": "A living author's rendering.",
+                     "partial": "a stray offer beside a closed finding"}],
+}})
+
+# V6 §5/§6 — a canon entry whose testament nobody can read. An `else` printed
+# "New Testament" over it, which is a claim about the canon.
+V6_TESTAMENT_INDEX = {"canon": [
+    {"token": "Gen", "name": "Genesis", "chapters": 50,
+     "testament": {"half": "old"}, "path": "01-gen"},
+]}
+
+# V6 §6 — a malformed HELD record standing before the valid one, and after it.
+# `find` stopped at the first and made the whole book unreadable.
+def _held_order(flip):
+    broken = {"token": "Gen", "path": "../../escape/", "present": [1]}
+    sound_ = {"token": "Gen", "name": "Genesis", "chapters": 50, "fragments": 1,
+              "path": "structure/catena/01-gen/", "present": [1],
+              "languages": ["la"]}
+    return _broken_index(held=[sound_, broken] if flip else [broken, sound_])
+
+
+# V6 §6 — the required mixed collection with the malformed members MOVED. The
+# same set of members in a different order must produce the same page.
+V6_MIXED_REORDERED = _fixture({
+    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+    "sources": {
+        "1": _voice_source(1, author="First Author", work="First Work"),
+        "5": _voice_source(5, author="Last Author", work="Last Work"),
+    },
+    "fragments": [
+        None,
+        _voice_fragment(1, id="mixed-first"),
+        7,
+        _voice_fragment(2, id={"not": "an id"}, source="1"),
+        _voice_fragment(5, id="mixed-last"),
+    ],
+    "leads": [
+        13,
+        {"author": "Lead One", "title": "Lead Work One", "date": "500"},
+        None,
+        {"author": "Lead Two", "title": "Lead Work Two", "date": "600"},
+        {"author": {"n": 1}, "title": ["x"], "date": {}},
+    ],
+    "blocked": [
+        {"author": 5, "work": [], "reason": {}},
+        None,
+        {"author": "Blocked One", "work": "Blocked Work One", "reason": "rights"},
+        21,
+        {"author": "Blocked Two", "work": "Blocked Work Two", "reason": "rights"},
+    ],
+    # The valid refusal record LAST, behind three that state nothing.
+    "refusals": {"douay-rheims": [
+        {}, {"note": {"broken": True}}, {"kind": "displaced"},
+        {"chapter": 1, "verse": None, "kind": "displaced",
+         "note": "the numbering of this chapter is displaced in this edition"},
+    ]},
+})
+
+# The same chapter whose refusal list holds only records that state nothing.
+# `{}` satisfied the record shape and manufactured "Boundary not established"
+# — a claim about Scripture's own numbering, made by an empty object.
+V6_EMPTY_REFUSAL = _fixture(dict(
+    V6_MIXED_REORDERED,
+    refusals={"douay-rheims": [{}, {"note": "   "}, {"kind": "displaced"}]}))
+
+
 SCENARIOS = [
     {"name": "default", "hash": GEN1,
      "steps": [{"do": "openFirstFragment", "label": "opened"}]},
@@ -1316,6 +1554,139 @@ SCENARIOS = [
           "label": "malformed-arrived"},
          {"do": "selectChapter", "value": "2", "label": "moved-after"},
      ]},
+
+    # =====================================================================
+    # V6 — the scenarios the V5 independent review's findings require
+    # =====================================================================
+
+    # ---------------------------------------------------------------- §5
+    # THE ROOT LANGUAGE RECORD. The review read `Douay-Rheims ([object
+    # Object])` out of the edition control in real Chromium; nothing here
+    # could see it, because the control was never projected and because the
+    # page guessed `en` wherever it rejected a language.
+    {"name": "bible-language-forms", "hash": GEN1,
+     "files": {"bibles.json": V6_BIBLE_LANGUAGES}},
+    # The same page under a supported translation, so the fragment sink, the
+    # passage sink, the chip, the filter and the absence view all render.
+    {"name": "bible-language-forms-voice", "hash": GEN1 + "&voice=translation:en",
+     "files": {"bibles.json": V6_BIBLE_LANGUAGES}},
+    # An edition that cannot name itself is no edition; the sound ones stand.
+    {"name": "bible-identity-forms", "hash": GEN1,
+     "files": {"bibles.json": V6_BIBLE_IDENTITIES}},
+    # A testament nobody can read is not the New Testament.
+    {"name": "malformed-testament", "hash": GEN1,
+     "patch": {"structure/catena/index.json": V6_TESTAMENT_INDEX}},
+
+    # ---------------------------------------------------------------- §6
+    # The required mixed collection with every malformed member MOVED, and
+    # the valid refusal record standing last behind three that state nothing.
+    {"name": "mixed-reordered", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V6_MIXED_REORDERED}},
+    # Refusal records that satisfy the shape and state nothing at all.
+    {"name": "empty-refusal-records", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V6_EMPTY_REFUSAL}},
+    # A malformed HELD record before the valid one, and after it.
+    {"name": "held-malformed-first", "hash": GEN1,
+     "files": {"structure/catena/index.json": _held_order(False)}},
+    {"name": "held-malformed-last", "hash": GEN1,
+     "files": {"structure/catena/index.json": _held_order(True)}},
+
+    # ---------------------------------------------------------------- §7
+    # THE SAME FINDING SET, LISTED TWO WAYS.
+    {"name": "finding-order", "hash": GEN1 + "&voice=translation:en",
+     "files": {"structure/catena/01-gen/001.json": TYPED_ABSENCE_FIXTURE},
+     "patch": {"structure/catena/index.json": _finding_order(False)}},
+    {"name": "finding-order-reversed", "hash": GEN1 + "&voice=translation:en",
+     "files": {"structure/catena/01-gen/001.json": TYPED_ABSENCE_FIXTURE},
+     "patch": {"structure/catena/index.json": _finding_order(True)}},
+
+    # ---------------------------------------------------------------- §8
+    # `partial` detached from every finding that could license the words.
+    {"name": "stray-partial", "hash": GEN1 + "&voice=translation:en",
+     "files": {"structure/catena/01-gen/001.json": TYPED_ABSENCE_FIXTURE},
+     "patch": {"structure/catena/index.json": V6_STRAY_PARTIAL_INDEX}},
+
+    # ---------------------------------------------------------------- §9
+    # ONE VERSE, WRITTEN MORE THAN ONE WAY.
+    {"name": "padded-verses", "hash": GEN1,
+     "files": {"douay-rheims/chapters/Gen/1.json": V6_PADDED_VERSES}},
+    {"name": "unsafe-verses", "hash": GEN1,
+     "files": {"douay-rheims/chapters/Gen/1.json": V6_UNSAFE_VERSES}},
+
+    # --------------------------------------------------------------- §11
+    # TEXTUAL IDENTITIES THAT ARE SOUND TEXT AND NAME NOTHING HERE.
+    {"name": "unsafe-identities", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V6_UNSAFE_IDENTITY_FIXTURE},
+     "steps": [{"do": "openFirstFragment", "label": "opened"}]},
+    {"name": "unsafe-prefix", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V6_UNSAFE_PREFIX_FIXTURE},
+     "steps": [{"do": "openFirstFragment", "label": "opened"}]},
+
+    # --------------------------------------------------------------- §12
+    # A SUCCESSFUL FETCH ANSWERING JSON `null`. `files` cannot express this:
+    # there a null body is the 404, which the page already handled. This is
+    # the 200 the review proved threw past the request catch.
+    {"name": "null-index", "hash": GEN1,
+     "raw": {"structure/catena/index.json": None}},
+    {"name": "null-index-cold", "hash": "",
+     "raw": {"structure/catena/index.json": None}},
+    {"name": "null-bibles", "hash": GEN1, "raw": {"bibles.json": None}},
+    # And the same root arriving as a bare scalar and as a list.
+    {"name": "list-index", "hash": GEN1,
+     "raw": {"structure/catena/index.json": [1, 2, 3]}},
+
+    # --------------------------------------------------------------- §13
+    # GENUINELY LATE STALE WORK. A is started and HELD; B is begun and
+    # allowed to settle completely; only then does A complete. The V5 §9
+    # scenarios released before navigating, so no late work ever existed.
+    {"name": "genuinely-late-action", "hash": GEN1,
+     "defer": ["structure/catena/text/"],
+     "steps": [
+         {"do": "openFirstFragment", "label": "a-held"},
+         {"do": "selectChapter", "value": "2", "label": "b-settled"},
+         {"do": "release", "path": "structure/catena/text/", "label": "a-late"},
+     ]},
+    {"name": "genuinely-late-action-failure", "hash": GEN1,
+     "defer": ["structure/catena/text/"],
+     "steps": [
+         {"do": "openFirstFragment", "label": "a-held"},
+         {"do": "selectChapter", "value": "2", "label": "b-settled"},
+         {"do": "release", "path": "structure/catena/text/", "outcome": "fail",
+          "label": "a-late"},
+     ]},
+    # The same shape over a MALFORMED payload, which is where the V5 class
+    # made its claim without ever creating late work.
+    {"name": "genuinely-late-malformed", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": MIXED_COLLECTION_FIXTURE,
+               "structure/catena/text/mixed-first.json":
+                   {"id": "mixed-first", "text": {"not": "text"},
+                    "basis": ["not", "text"], "date_basis": 5}},
+     "defer": ["structure/catena/text/"],
+     "steps": [
+         {"do": "openFirstFragment", "label": "a-held"},
+         {"do": "selectChapter", "value": "2", "label": "b-settled"},
+         {"do": "release", "path": "structure/catena/text/", "label": "a-late"},
+     ]},
+    # A spine held while the reader walks into an INVALID address, which is a
+    # terminal state of its own: the held work must not repaint the refusal.
+    {"name": "late-after-invalidation", "hash": GEN1, "defer": ["01-gen/001.json"],
+     "steps": [
+         {"do": "hash", "value": "#book=Foo&chapter=1&bible=douay-rheims",
+          "label": "invalid"},
+         {"do": "release", "path": "01-gen/001.json", "label": "late"},
+     ]},
+
+    # --------------------------------------------------------------- §14
+    # A malformed partial arrival whose spine lands last, reached from a
+    # canonical route by a READER ACTION rather than cold — so push, replace,
+    # focus, tally and announcement are all live questions at once.
+    {"name": "action-then-partial-malformed", "hash": GEN1,
+     "files": {"structure/catena/01-gen/002.json": V6_MIXED_REORDERED},
+     "defer": ["01-gen/002.json"],
+     "steps": [
+         {"do": "selectChapter", "value": "2", "label": "in-flight"},
+         {"do": "release", "path": "01-gen/002.json", "label": "arrived"},
+     ]},
 ]
 
 REPLAY = r"""
@@ -1644,6 +2015,27 @@ function inspect(page, document, location, fetched, hashWrites, replaced, status
       .map((one) => (one.className || one.localName) + '=' + one.getAttribute('lang')),
     chapterOpen: Boolean((first('chapter-body') || {}).open),
     chapterCounts: withClass('chapter-count').map(text),
+    /* THE RENDERED SCRIPTURE ITSELF, verse by verse, in rendered order.
+     * V6. The V5 verse-coercion oracle read `fragmentTexts` — the COMMENTARY —
+     * while the fixture it defended corrupted the bible chapter, so a value
+     * coerced into Scripture, a verse the chapter never numbered, and one
+     * verse rendered twice under two encodings of its own number were all
+     * invisible to every test in this file. These are the production sink. */
+    verseNumbers: withClass('verse-num').map(text),
+    verseTexts: withClass('verse').map(text),
+    /* THE WORD-TALLY CHIPS THEMSELVES. `classes` is a deduplicated SET, so
+     * the V5 tally oracle read the same value for one chip and for seven. */
+    lengths: withClass('fragment-length').map(text),
+    /* HOW MANY REFUSALS STAND. "Stated once" was asserted with `assertIn`. */
+    refusalCount: withClass('refusal').length,
+    /* THE EDITION OPTIONS AS A READER SEES THEM. The V5 review read
+     * `Douay-Rheims ([object Object])` out of this control in real Chromium
+     * and nothing here could see it: the select was never projected. */
+    bibleLabels: byId('bible-select').descendants()
+      .filter((one) => one.localName === 'option')
+      .map((one) => one.textContent),
+    /* THE TESTAMENT CLAIM. `New Testament` was printed by an `else`. */
+    referenceBookText: text(byId('reference-book')),
     authorGroups: groups,
     authorFilterInDisclosure: Boolean(
       filter && filter.parentNode
@@ -1779,9 +2171,18 @@ async function run(scenario) {
     const body = has ? overrides[path] : corpusFile(path);
     const extra = (scenario.patch || {})[path];
     if (extra && body) mergeInto(body, extra);
-    const response = (body === null || body === undefined)
-      ? { ok: false, status: 404, json: async () => null }
-      : { ok: true, status: 200, json: async () => body };
+    /* A SUCCESSFUL FETCH THAT ANSWERS JSON `null`, which `files` cannot
+     * express: there a null body IS the 404, and the two are different facts
+     * about the world. A 200 carrying `null` is a valid JSON document that
+     * is not the record asked for, and it is the one the V5 review proved
+     * threw past the request catch and left the page loading for ever. */
+    const raw = scenario.raw || {};
+    const rawly = Object.prototype.hasOwnProperty.call(raw, path);
+    const response = rawly
+      ? { ok: true, status: 200, json: async () => raw[path] }
+      : (body === null || body === undefined)
+        ? { ok: false, status: 404, json: async () => null }
+        : { ok: true, status: 200, json: async () => body };
     if ((scenario.defer || []).some((piece) => path.includes(piece))) {
       return new Promise((resolve, reject) => {
         if (!parked.has(path)) parked.set(path, []);
@@ -3488,9 +3889,18 @@ class UntypedProvenanceTest(ReplayTest):
         self.assertIn("Epsilon basis stands.", fifth)
 
     def test_an_untyped_refusal_note_is_not_coerced_into_the_sentence(self):
-        refusal = self.page("untyped-provenance")["refusal"]
-        self.assertIn("Boundary not established.", refusal)
-        self.assertNotIn("[object Object]", refusal)
+        # CORRECTED ORACLE (V6). V5 required "Boundary not established." to
+        # stand over `{"note": {"broken": True}}` — a record that states no
+        # reason at all — and merely forbade the coercion artefact inside it.
+        # But the sentence IS the claim: it tells a reader that Scripture's
+        # own verse division moves in this edition and that this page will not
+        # guess where to. A record that cannot say why refuses nothing, and
+        # `{}` may not make a claim about the numbering of Genesis.
+        page = self.page("untyped-provenance")
+        self.assertIsNone(page["refusal"])
+        self.assertEqual(page["refusalCount"], 0)
+        self.assertNotIn("refusal", page["dataStates"])
+        self.assertEqual(page["busy"], "false")
 
 
 class MalformedRecordRenderingTest(ReplayTest):
@@ -3513,23 +3923,38 @@ class MalformedRecordRenderingTest(ReplayTest):
         self.assertEqual(opened["fragmentBases"], [],
                          "and 'Extent — [object Object]' and 'Date — 42' beneath them")
 
+    # CORRECTED ORACLES (V6). The two below pinned `["", "", "…"]` — two blank
+    # rows standing in the document and counted in the tally — and called it
+    # correct because the malformed values were withheld. Withholding the
+    # words was never the whole requirement: a row that names nothing is not a
+    # thin entry, it is not an entry, and counting it told the reader this
+    # project has three leads and three works it cannot name.
     def test_malformed_lead_rows_render_no_words_and_the_sound_row_does(self):
         page = self.page("malformed-record")
-        self.assertEqual(page["leads"],
-                         ["", "", "Origen — Homiliae in Genesim (240)"])
-        # The COUNT stays the record's — three rows ARE on the acquisition
-        # record for this chapter, and the note claims nothing more of them.
-        self.assertIn("3 unreconciled lead entries on the acquisition record",
-                      page["asideNotes"][0])
+        self.assertEqual(page["leads"], ["Origen — Homiliae in Genesim (240)"],
+                         "no blank row stands where a record named nothing")
+        # And the count is of what the page can state, said in the singular.
+        self.assertEqual(
+            page["asideNotes"][0],
+            "1 unreconciled lead entry on the acquisition record for this "
+            "chapter, which omits its confidence. An entry establishes no "
+            "distinct work, no possession and nothing renderable, and the "
+            "list is not checked against the commentary above.")
 
     def test_malformed_blocked_rows_name_no_author_and_the_sound_row_does(self):
         page = self.page("malformed-record")
         self.assertEqual(
             page["blocked"],
-            ["", "", "Anonymous — Catena in Genesimheld only as page images"])
+            ["Anonymous — Catena in Genesimheld only as page images"])
         self.assertEqual(page["tallyText"],
-                         "1 fragment held · 3 works held, not renderable yet"
-                         " · 3 lead entries on the acquisition list")
+                         "1 fragment held · 1 work held, not renderable yet"
+                         " · 1 lead entry on the acquisition list")
+        # The announcement is the same clauses in the same order, so the two
+        # cannot disagree about how much this project holds.
+        self.assertEqual(
+            page["statusWrites"],
+            ["Genesis 1, Douay-Rheims (Challoner), 1 fragment held, 1 work "
+             "held, not renderable yet, 1 lead entry on the acquisition list."])
 
     def test_no_replayed_page_ever_coerces_a_value_into_words(self):
         # The sweep the audit's malformed matrices invite: across every
@@ -4364,11 +4789,20 @@ class MalformedLanguageAttributeTest(ReplayTest):
 
     def test_the_sound_language_survives_its_malformed_neighbours(self):
         # Nine fragments stand; exactly one states a language, and it keeps it.
+        #
+        # CORRECTED ORACLE (V6). V5 pinned `["fragment-text=la"] +
+        # ["fragment-text=en"] * 8` and called it survival. Eight of those
+        # nine records intend LATIN and state a language nobody can read; the
+        # page answered each with `en`, so a screen reader was told to read
+        # Latin commentary in an English voice on the authority of `|| 'en'`.
+        # A guessed fact is not a smaller defect than a coerced one, and the
+        # requirement is to OMIT the claim, not to substitute a default.
         page = self.page("malformed-language-held")
         self.assertEqual(page["fragmentCount"], 9)
         self.assertEqual(
             [one for one in page["langAttributes"] if one.startswith("fragment-text=")],
-            ["fragment-text=la"] + ["fragment-text=en"] * 8)
+            ["fragment-text=la"],
+            "the eight unreadable languages must carry no lang at all")
 
     def test_a_malformed_language_reaches_no_visible_prose(self):
         # `sound()` passed "not a language code", and the shared namer printed
@@ -4377,8 +4811,18 @@ class MalformedLanguageAttributeTest(ReplayTest):
         self.assertEqual(page["languages"], ["Latin — the author\u2019s own"])
 
     def test_a_malformed_bible_language_reaches_no_passage_attribute(self):
+        # CORRECTED ORACLE (V6). V5 required the passage element to carry
+        # `lang="en"` for a Bible whose language is `{"code": "en"}` — which
+        # is to require the page to READ the malformed value and act on what
+        # it guessed it meant. The edition states no language this page can
+        # use, so the passage makes no language claim, and the option names
+        # the edition without one.
         page = self.page("malformed-bible-language")
-        self.assertIn("passage=en", page["langAttributes"])
+        self.assertEqual(
+            [one for one in page["langAttributes"] if one.startswith("passage=")], [],
+            "an edition that states no readable language claims none")
+        self.assertEqual(page["bibleLabels"], ["Douay-Rheims"],
+                         "and the option is the label alone, not `(...)`")
 
     def test_the_page_still_completes_under_every_malformed_language(self):
         for name in ("malformed-language-held", "malformed-bible-language"):
@@ -4406,15 +4850,22 @@ class MixedCollectionMemberTest(ReplayTest):
 
     def test_the_tally_counts_only_the_valid_members(self):
         page = self.page("mixed-collection")
-        # THREE, not two: a malformed RECORD is still a record the spine
-        # wrote, so it counts and renders nothing of itself. The scalar and
-        # the null are not entries at all and count nowhere. This is the
-        # distinction the V4 leads/blocked correction already drew, held here
-        # against a null neighbour that used to throw before any of it ran.
+        # CORRECTED ORACLE (V6). V5 argued THREE \u2014 "a malformed RECORD is
+        # still a record the spine wrote, so it counts and renders nothing of
+        # itself" \u2014 and the independent review rejected the argument. A count
+        # is a claim about what stands here. A lead record naming neither work
+        # nor man, and a blocked record naming neither the work held nor why
+        # it cannot be shown, support no part of that claim; counting them
+        # told the reader this project holds three works it cannot name.
+        #
+        # THE FRAGMENT COUNT IS STILL THREE, and the difference is the point:
+        # the second fragment states its author, its work, its date and its
+        # extent, and only its ID is unreadable. It is a member that renders,
+        # minus one fact. The rejected lead and blocked rows render nothing.
         self.assertEqual(
             page["tallyText"],
-            "3 fragments held \u00b7 3 works held, not renderable yet"
-            " \u00b7 3 lead entries on the acquisition list")
+            "3 fragments held \u00b7 2 works held, not renderable yet"
+            " \u00b7 2 lead entries on the acquisition list")
 
     def test_a_malformed_id_addresses_no_text_file_and_erases_no_sibling(self):
         page = self.page("mixed-collection")
@@ -4424,18 +4875,29 @@ class MixedCollectionMemberTest(ReplayTest):
             self.assertNotIn("undefined", asked)
 
     def test_valid_lead_and_blocked_siblings_survive_their_neighbours(self):
+        # CORRECTED ORACLE (V6): the blank middle row is gone from both, and
+        # A and B \u2014 the members standing either side of it \u2014 are untouched.
         page = self.page("mixed-collection")
         self.assertEqual(page["leads"],
-                         ["Lead One \u2014 Lead Work One (500)", "",
+                         ["Lead One \u2014 Lead Work One (500)",
                           "Lead Two \u2014 Lead Work Two (600)"])
         self.assertEqual(page["blocked"],
-                         ["Blocked One \u2014 Blocked Work Onerights", "",
+                         ["Blocked One \u2014 Blocked Work Onerights",
                           "Blocked Two \u2014 Blocked Work Tworights"])
 
     def test_one_valid_refusal_among_malformed_members_is_stated_once(self):
+        # CORRECTED ORACLE (V6): "once" is now counted rather than asserted by
+        # a substring that a doubled refusal would also satisfy, and the whole
+        # sentence is pinned rather than a fragment of it.
         page = self.page("mixed-collection")
-        self.assertIsNotNone(page["refusal"])
-        self.assertIn("the numbering of this chapter is displaced", page["refusal"].lower())
+        self.assertEqual(page["refusalCount"], 1)
+        self.assertEqual(
+            page["refusal"],
+            "Boundary not established. The numbering of this chapter is "
+            "displaced in this edition. Commentary on Genesis 1 is anchored "
+            "in Vulgate numbering, and this page will not guess where the "
+            "boundary moves to in Douay-Rheims (Challoner). The verse numbers "
+            "you are reading correspond; the divisions of the text may not.")
 
     def test_malformed_members_alone_manufacture_no_refusal(self):
         # Three scalars satisfied `.length` and claimed a boundary the

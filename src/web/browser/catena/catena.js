@@ -12,7 +12,7 @@
   const M = window.CatenaModel;
   const textNode = (said) => document.createTextNode(said);
   // The typed boundary — asked, and explained, in `catena-model.js`.
-  const { sound, list, bag, say, whole, tongue, records } = M;
+  const { sound, list, bag, say, whole, tongue } = M;
 
   const { joinNames, voicePhrase, voiceLabel } = M;
   M.useLanguageNames(T.languageName);
@@ -114,7 +114,8 @@
 
     // Prose — a stack of verse-lines is a concordance.
     const body = T.el('div', 'passage');
-    body.lang = tongue(bible.language) || 'en';
+    // OMITTED, NEVER GUESSED: `|| 'en'` made an unreadable language English.
+    if (bible.language) body.lang = bible.language;
     let passage = null;
     let printed = 0;
     let projected = 0;
@@ -196,15 +197,10 @@
     const when = say(fragment.date);
     if (when) head.appendChild(T.el('span', 'fragment-date', when));
     // The language, and WHOSE it is; an unestablished voice says only it.
-    // `tongue`, not `sound`: the gated value is what is named.
+    // Derived beside the other typed prose, so the two cannot drift.
     const code = tongue(fragment.language);
-    if (code) {
-      const name = M.LANGUAGE_NAMES[code] || T.languageName(code);
-      head.appendChild(T.el('span', 'fragment-language',
-        fragment.voice === M.ORIGINAL
-          ? name + ' — the author’s own'
-          : fragment.voice === M.TRANSLATION ? name + ' translation' : name));
-    }
+    const named = M.languageChip(fragment);
+    if (named) head.appendChild(T.el('span', 'fragment-language', named));
     // A TALLY IS A NUMBER THE RECORD WROTE, not one `Number()` can make.
     const words = whole(fragment.text_words);
     if (words) {
@@ -222,8 +218,8 @@
 
     // Prose arrives on first open; a failure reports against this fragment.
     const text = T.el('p', 'fragment-text', 'Loading…');
-    // THE SINK THE V4.1 REVIEW REPLAYED, on an otherwise complete page.
-    text.lang = code || 'en';
+    // THE SINK THE V4.1 REVIEW REPLAYED — omitted where unstated, not guessed.
+    if (code) text.lang = code;
     details.appendChild(text);
     const apparatus = T.el('div', 'fragment-apparatus');
     details.appendChild(apparatus);
@@ -334,7 +330,7 @@
     // the disclosure only lets a reader fold them away.
     note.open = true;
     note.setAttribute('data-state', 'absence');
-    const language = M.LANGUAGE_NAMES[asked.language] || T.languageName(asked.language);
+    const language = M.sayLanguage(asked.language);
     const head = document.createElement('summary');
     head.textContent = M.absenceSummary(rows, language);
     note.appendChild(head);
@@ -344,11 +340,8 @@
       item.appendChild(T.el('span', 'absence-author', row.author));
       item.appendChild(T.el('span', 'absence-work', row.work));
       if (row.reason) item.appendChild(T.el('p', 'absence-reason', row.reason));
-      // A partial not yet taken is an offer, not an excuse.
-      if (row.partial) {
-        item.appendChild(
-          T.el('p', 'absence-partial', 'Partly public domain — ' + row.partial));
-      }
+      // Only the finding that says so in its own name licenses the offer.
+      if (row.offer) item.appendChild(T.el('p', 'absence-partial', row.offer));
       items.appendChild(item);
     }
     note.appendChild(items);
@@ -517,9 +510,7 @@
 
   /* ----------------------------------- the things that are not fragments */
 
-  // The acquisition record's rows are UNRECONCILED LEAD ENTRIES: the record
-  // omits its confidence and overlaps held commentary, so a row asserts no
-  // distinct work, no possession, nothing renderable.
+  // UNRECONCILED LEAD ENTRIES — what one is, and is not, is the model's.
   function renderLeads(container, leads) {
     if (!leads.length) return;
     const section = T.el('section', 'aside');
@@ -535,14 +526,12 @@
           'and nothing renderable, and the list is not checked against the ' +
           'commentary above.'));
     const items = T.el('ul', 'lead-list');
-    // Typed fields only: the count is the record's, the words must be.
+    // The model's members: naming nothing is no entry, and enters no count.
     for (const lead of leads) {
       const item = T.el('li', 'lead');
-      const who = sound(lead.author);
-      if (who) item.appendChild(textNode(who + ' — '));
-      item.appendChild(T.el('span', 'lead-work', sound(lead.title)));
-      const when = say(lead.date);
-      if (when) item.appendChild(textNode(' (' + when + ')'));
+      if (lead.who) item.appendChild(textNode(lead.who + ' — '));
+      item.appendChild(T.el('span', 'lead-work', lead.title));
+      if (lead.when) item.appendChild(textNode(' (' + lead.when + ')'));
       items.appendChild(item);
     }
     section.appendChild(items);
@@ -556,11 +545,8 @@
     for (const entry of blocked) {
       const node = T.el('div', 'blocked');
       node.setAttribute('data-state', 'blocked');
-      // Each field on its own merit: coupled, a missing author lost the title.
-      const named = [sound(entry.author), sound(entry.work)].filter(Boolean).join(' — ');
-      if (named) node.appendChild(T.el('b', null, named));
-      const why = sound(entry.reason);
-      if (why) node.appendChild(T.el('span', 'why', why));
+      if (entry.named) node.appendChild(T.el('b', null, entry.named));
+      if (entry.why) node.appendChild(T.el('span', 'why', entry.why));
       section.appendChild(node);
     }
     container.appendChild(section);
@@ -569,18 +555,16 @@
   // Rule 4 — where the projection refuses, the page refuses; no
   // same-number fallback dressed right.
   function renderRefusal(container, file, bible, book, chapter) {
-    // A REFUSAL IS A RECORD OR NONE: a scalar satisfied `.length`.
-    const here = records(bag(file && file.refusals)[bible.id]);
-    if (!here.length) return;
-    const note = sound(here[0].note);
-    const sentence = note ? note.charAt(0).toUpperCase() + note.slice(1) + '.' : '';
+    // A REFUSAL IS A RECORD THAT STATES ONE: `{}` refuses nothing at all.
+    const sentence = M.refusalNote(file, bible.id);
+    if (!sentence) return;
     const node = T.el('p', 'refusal');
     node.setAttribute('data-state', 'refusal');
     node.appendChild(T.el('strong', null, 'Boundary not established. '));
     node.appendChild(textNode(
       sentence + ' Commentary on ' + book.name + ' ' + chapter +
         ' is anchored in Vulgate numbering, and this page will not guess ' +
-        'where the boundary moves to in ' + sound(bible.label) +
+        'where the boundary moves to in ' + bible.label +
         '. The verse numbers you are reading correspond; the divisions of ' +
         'the text may not.'));
     container.appendChild(node);
@@ -704,8 +688,8 @@
     reading.setAttribute('aria-busy', 'true');
 
     reference.textContent = book.name + ' ' + chapter;
-    referenceBook.textContent =
-      book.testament === 'old' ? 'Old Testament' : 'New Testament';
+    // '' where the canon states no testament; an `else` printed "New".
+    referenceBook.textContent = book.testamentName;
 
     // ONE FUNNEL after the address is claimed: outside it, a throw in the tail
     // stranded `aria-busy`, focus, the tally and the route. The keeper is taken
@@ -727,8 +711,8 @@
       // ONE typed truth beside the chapter: every tally, empty, blocked
       // and voice claim derives from these counts — held-but-unrenderable
       // is HELD, never "nothing".
-      const blocked = records(file && file.blocked);
-      const leads = records(file && file.leads);
+      const blocked = M.blockedRows(file && file.blocked);
+      const leads = M.leadRows(file && file.leads);
       const total = M.chapterFragments(file).length;
       fillVoices(file, unfetched || blocked.length);
       T.clear(reading);
@@ -785,7 +769,7 @@
         head.slice(bold.length) + extras.map((one) => ' · ' + one).join('')));
 
       T.statusLine(
-        book.name + ' ' + chapter + ', ' + sound(bible.label) + ', ' +
+        book.name + ' ' + chapter + ', ' + bible.label + ', ' +
           (unfetched
             ? 'commentary record unavailable'
             : [head].concat(extras).join(', ')) + '.'
@@ -936,10 +920,17 @@
     }
   }
 
+  // A TERMINAL STATE IS A TRANSACTION: this left the tally standing and
+  // invalidated nothing, so a render in flight repainted over the failure.
   function startFailed(message) {
+    T.beginRender();
+    const refocus = focusKeeper();
     reference.textContent = 'Unavailable';
+    referenceBook.textContent = '';
+    T.clear(tally);
     labelSelects('Unavailable');
     T.fail(message);
+    refocus();
   }
 
   async function start() {
@@ -969,14 +960,21 @@
       startFailed('The catena index could not be loaded: ' + (error.message || error));
       return;
     }
+    // JSON `null` is a valid document and NOT an index: read raw it threw
+    // HERE, past the request catch, leaving "Loading…" standing for ever.
+    index = bag(index);
     if (!manifest.ok) {
       startFailed(manifest.message);
       return;
     }
-    bibles = records(manifest.bibles);
+    bibles = M.bibles(manifest.bibles);
 
+    // AND AN UNREADABLE ROOT IS NOT A BAD ADDRESS: judged against an empty
+    // canon, a null index answered "Gen is not a book of this canon".
+    const books = M.canonBooks(index.canon);
+    if (!books.length) return startFailed('The catena index could not be read.');
     T.fillSelect(bookSelect,
-      M.canonBooks(index.canon).map((book) => ({ value: book.token, label: book.name })));
+      books.map((book) => ({ value: book.token, label: book.name })));
     T.fillBibleSelect(bibleSelect, bibles);
     bookSelect.disabled = chapterSelect.disabled = bibleSelect.disabled = false;
 
