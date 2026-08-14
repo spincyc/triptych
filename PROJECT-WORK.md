@@ -900,13 +900,17 @@ properties of null (reading 'canon')` out of `catena.js:981` — and every
 `ReplayTest` class errors in `setUpClass`; that log is preserved unfiltered,
 and the three-scenario filter needed to get a per-class reading is preserved
 as an exact patch beside it. Filtered, the parent runs `371` and fails `71`
-with `14` errors — 85 FAIL/ERROR identities across 24 distinct classes: 19
-of the 23 classes V6 adds, the 5 pre-existing classes whose oracles V6
-corrected, and the model-digest pin. The other four V6 classes do NOT fail
-at the parent, and that is stated rather than rounded away: they are the
-positive control over the real corpus, and three oracles that read the
-production sinks for behaviour V5 had already made correct. A regression
-defending an earlier fix with a better instrument does not prove this one. Full discovery
+with `14` errors — 85 FAIL/ERROR identities across 24 distinct classes,
+which decompose as `19 + 4 + 1`: 19 of the 23 classes V6 adds, 4 of the 5
+pre-existing classes whose oracles V6 corrected, and the model-digest pin,
+which holds no corrected oracle. The two sets do not coincide and are not
+summed as though they did — an earlier draft of this paragraph said
+`19 + 5 + 1`, which is 25. Four V6 classes and one corrected-oracle class
+do NOT fail at the parent, and that is stated rather than rounded away:
+they are the positive control over the real corpus, and oracles that read
+the production sinks for behaviour V5 had already made correct. A
+regression defending an earlier fix with a better instrument does not
+prove this one. Full discovery
 `1,774` at this head against `1,657` at the parent — `14` failures, `13`
 errors and `11` skips at BOTH ends, with an identical 27-entry FAIL/ERROR
 identity set. The head runs 117 more tests, so no literal count identity is
@@ -926,7 +930,16 @@ Budgets hold unraised: `catena.css` 7,629/8,000 whole and 2,676/2,700
 stripped, both unchanged; `catena.js` 12,993/13,000 whole and 8,202/8,800
 stripped, the composition 161 bytes lighter than V5 left it. The boundary
 moved into `catena-model.js` again, which carries no ceiling, and the
-relocation is disclosed rather than presented as unchanged load.
+relocation is disclosed with its cost rather than presented as unchanged
+load. Measured at this head against the parent: the model grows `11,171`
+to `15,767` gzipped whole, `+4,596`, of which `+1,093` is composition and
+`+3,503` is explanation the model carries deliberately. The two files
+gzipped together grow `23,449` to `28,028`, `+4,579`; gzipped separately
+and summed, `24,161` to `28,760`, `+4,599`. Both measures are given
+because neither alone is the load a reader pays. The commit message of
+`ee1048c90` quotes `+4,593` and `+4,576` for the first two: those were
+measured before the NUL correction in `83cb63b61`, which is five source
+bytes longer, and the figures above supersede them.
 
 Four stale release bindings remain fail-closed and none was re-signed. The
 `src/web/data/` test contradiction is preserved untouched for its owner, and
