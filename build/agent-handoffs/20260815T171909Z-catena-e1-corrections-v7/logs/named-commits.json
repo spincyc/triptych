@@ -1,0 +1,11 @@
+{
+ "_why": "Commits this package legitimately DISCUSSES but was not produced from. head-consistency.py refuses any other SHA in a claim-bearing member, so a stale head from a superseded round — the exact V6 defect — cannot appear silently. Every entry here is a deliberate mention with its reason.",
+ "commits": {
+  "83cb63b61e366fac07b298fee77f63d1658086f7": "The head V6's REVIEW_REQUEST.md wrongly named as its exact head. Named here, in LIMITATIONS.md and in the two V7 tools' docstrings, as the defect this audit exists to catch.",
+  "af6c0c8df": "The BASE commit of the src/web/data/ guard in tools/tests/test_day_reader_integration.py, quoted in DATA-TEST-CONTRADICTION.md as part of the contradiction preserved for its owner.",
+  "19982ab433dd25704ed60b1ac6ddb678bc3a98f9": "The V5 head, which is V6's parent. Named where the lineage is described.",
+  "fa5b2f601565508acee2b1b236b0c69138af07a3": "The V5 independent review, a sibling record named where the lineage is described.",
+  "ca2a8659010b3fca2ccada24f9c431796ca702b1": "The V6 evidence commit, named where the package this one answers is identified.",
+  "9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4": "origin/main as independently fetched, named where the integration reference is stated."
+ }
+}

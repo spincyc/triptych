@@ -1,0 +1,204 @@
+Every command this lane ran, its exact invocation, its numeric exit,
+the log it wrote, and the commit it ran at.
+
+COMPOSED, NOT TYPED. `logs/checks.py` reads the ordering ledgers the
+two batteries wrote as they ran and the logs those ledgers name. V6
+wrote this member by hand and its review found five counts wrong
+across the package; the answer for this one is that nobody writes it.
+
+parent  4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46
+head    e876b29e5797edcc6e86422daa807f4b1104ec81
+
+======================================================================
+PARENT battery — logs/order-parent.txt
+======================================================================
+
+--- focused-catena
+    command : python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+    exit    : 0
+    started : 2026-08-15T10:16:57<tz>
+    ended   : 2026-08-15T10:17:00<tz>
+    log     : logs/focused-catena-parent.log
+    result  : Ran 423 tests in 2.900s
+    result  : OK
+
+--- catena-check
+    command : python3 scripts/_catena.py check
+    exit    : 0
+    started : 2026-08-15T10:17:07<tz>
+    ended   : 2026-08-15T10:17:09<tz>
+    log     : logs/catena-check-parent.log
+    result  : catena valid: fragments=1351 books=1 canon=73
+
+--- promised
+    command : tools/tpt check-promised-deliverables
+    exit    : 0
+    started : 2026-08-15T10:17:15<tz>
+    ended   : 2026-08-15T10:17:15<tz>
+    log     : logs/promised-parent.log
+    result  : Promised-deliverable ledger valid: 31 tracked, 19 complete.
+
+--- full-discovery
+    command : python3 -m unittest discover -s tools/tests
+    exit    : 1
+    started : 2026-08-15T10:17:21<tz>
+    ended   : 2026-08-15T10:25:26<tz>
+    log     : logs/full-discovery-parent.log
+    result  : Ran 1774 tests in 484.394s
+    result  : FAILED (failures=14, errors=13, skipped=11)
+    result  : stale: 1 stale binding(s)
+    result  : stale: 1 edition(s) need attention
+
+--- make-check
+    command : make -k check
+    exit    : 2
+    started : 2026-08-15T10:25:44<tz>
+    ended   : 2026-08-15T10:30:36<tz>
+    log     : logs/make-check-parent.log
+    result  : Ran 5 tests in 0.559s
+    result  : OK
+    result  : Promised-deliverable ledger valid: 31 tracked, 19 complete.
+    result  : catena valid: fragments=1351 books=1 canon=73
+    result  : stale: 4 stale binding(s)
+    result  : replay-examples: 201 captured example(s); 192 replayed, 30 diverged, 35 known stale, 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+
+--- release-bindings
+    command : make check-release-bindings
+    exit    : 2
+    started : 2026-08-15T10:30:51<tz>
+    ended   : 2026-08-15T10:30:52<tz>
+    log     : logs/release-bindings-parent.log
+    result  : stale: 4 stale binding(s)
+
+--- public-site
+    command : make public-site
+    exit    : 0
+    started : 2026-08-15T10:30:58<tz>
+    ended   : 2026-08-15T10:31:03<tz>
+    log     : logs/public-site-parent.log
+    result  : (no headline line matched; read the log)
+
+--- browser-gate
+    command : node tools/tests/corpus_browser_gate.mjs
+    exit    : 1
+    started : 2026-08-15T10:31:08<tz>
+    ended   : 2026-08-15T10:32:45<tz>
+    log     : logs/browser-gate-parent.log
+    result  : (no headline line matched; read the log)
+
+--- gzip-sizes
+    command : python3 -c <gzip -9 mtime=0 whole/stripped sizes>
+    exit    : 0
+    started : 2026-08-15T10:33:04<tz>
+    ended   : 2026-08-15T10:33:04<tz>
+    log     : logs/gzip-sizes-parent.log
+    result  : catena.css whole 7629 stripped 2676
+    result  : catena.js whole 12993 stripped 8202
+
+======================================================================
+HEAD battery — logs/order-head.txt
+======================================================================
+
+--- focused-catena
+    command : (not recorded)
+    exit    : 0
+    started : 2026-08-15T12:00:36<tz>
+    ended   : 2026-08-15T12:00:40<tz>
+    log     : logs/focused-catena-head.log
+    result  : Ran 505 tests in 3.521s
+    result  : OK
+
+--- catena-check
+    command : (not recorded)
+    exit    : 0
+    started : 2026-08-15T12:00:45<tz>
+    ended   : 2026-08-15T12:00:48<tz>
+    log     : logs/catena-check-head.log
+    result  : catena valid: fragments=1351 books=1 canon=73
+
+--- promised
+    command : (not recorded)
+    exit    : 0
+    started : 2026-08-15T12:00:54<tz>
+    ended   : 2026-08-15T12:00:54<tz>
+    log     : logs/promised-head.log
+    result  : Promised-deliverable ledger valid: 32 tracked, 19 complete.
+
+--- full-discovery
+    command : (not recorded)
+    exit    : 1
+    started : 2026-08-15T12:01:02<tz>
+    ended   : 2026-08-15T12:09:05<tz>
+    log     : logs/full-discovery-head.log
+    result  : Ran 1856 tests in 482.900s
+    result  : FAILED (failures=14, errors=13, skipped=11)
+    result  : stale: 1 stale binding(s)
+    result  : stale: 1 edition(s) need attention
+
+--- make-check
+    command : (not recorded)
+    exit    : 2
+    started : 2026-08-15T12:09:16<tz>
+    ended   : 2026-08-15T12:14:07<tz>
+    log     : logs/make-check-head.log
+    result  : Ran 5 tests in 0.556s
+    result  : OK
+    result  : Promised-deliverable ledger valid: 32 tracked, 19 complete.
+    result  : catena valid: fragments=1351 books=1 canon=73
+    result  : stale: 4 stale binding(s)
+    result  : replay-examples: 201 captured example(s); 192 replayed, 30 diverged, 35 known stale, 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+
+--- release-bindings
+    command : (not recorded)
+    exit    : 2
+    started : 2026-08-15T12:14:16<tz>
+    ended   : 2026-08-15T12:14:17<tz>
+    log     : logs/release-bindings-head.log
+    result  : stale: 4 stale binding(s)
+
+--- public-site
+    command : (not recorded)
+    exit    : 0
+    started : 2026-08-15T12:14:26<tz>
+    ended   : 2026-08-15T12:14:31<tz>
+    log     : logs/public-site-head.log
+    result  : (no headline line matched; read the log)
+
+--- browser-gate
+    command : (not recorded)
+    exit    : 1
+    started : 2026-08-15T12:14:39<tz>
+    ended   : 2026-08-15T12:16:17<tz>
+    log     : logs/browser-gate-head.log
+    result  : (no headline line matched; read the log)
+
+--- browser-static
+    command : (not recorded)
+    exit    : 0
+    started : 2026-08-15T12:16:23<tz>
+    ended   : 2026-08-15T12:16:24<tz>
+    log     : logs/browser-static-head.log
+    result  : Ran 5 tests in 0.558s
+    result  : OK
+
+--- gzip-sizes
+    command : (not recorded)
+    exit    : 0
+    started : 2026-08-15T12:16:32<tz>
+    ended   : 2026-08-15T12:16:32<tz>
+    log     : logs/gzip-sizes-head.log
+    result  : catena.css whole 7629 stripped 2676
+    result  : catena.js whole 12901 stripped 7530
+
+======================================================================
+Not recorded in this file
+======================================================================
+
+The sealing and sanitization passes are their own transcripts —
+logs/seal-check.log and logs/seal.log — and the derivation and audit
+are logs/derive-claims.log and logs/head-consistency.log. They are
+not summarised here, because a summary of a transcript is the thing
+this file exists to stop being written.
+
+No judgement is recorded here either. What a result MEANS is argued
+in HANDOFF.md, LIMITATIONS.md and UNRESOLVED-BLOCKERS.md.

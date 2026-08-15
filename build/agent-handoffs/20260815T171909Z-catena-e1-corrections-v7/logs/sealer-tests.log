@@ -1,0 +1,65 @@
+test_a_probe_package_full_of_coordinates_seals (__main__.FalsePositives.test_a_probe_package_full_of_coordinates_seals) ... ok
+test_benign_data_is_not_flagged (__main__.FalsePositives.test_benign_data_is_not_flagged) ... ok
+test_benign_data_is_not_rewritten (__main__.FalsePositives.test_benign_data_is_not_rewritten) ... ok
+test_a_document_may_name_the_manifest_this_tool_writes (__main__.IndexCheck.test_a_document_may_name_the_manifest_this_tool_writes)
+The manifest is written AFTER the index check, by this tool. ... ok
+test_external_references_are_not_package_members (__main__.IndexCheck.test_external_references_are_not_package_members) ... ok
+test_missing_top_level_artifact_is_detected (__main__.IndexCheck.test_missing_top_level_artifact_is_detected) ... ok
+test_unreferenced_members_are_reported_as_data (__main__.IndexCheck.test_unreferenced_members_are_reported_as_data) ... ok
+test_wrong_directory_reference_does_not_pass (__main__.IndexCheck.test_wrong_directory_reference_does_not_pass) ... ok
+test_manifest_lists_every_member (__main__.ManifestCoverage.test_manifest_lists_every_member) ... ok
+test_a_leaky_package_is_refused (__main__.PreservedDetections.test_a_leaky_package_is_refused) ... ok
+test_private_tokens_are_still_flagged (__main__.PreservedDetections.test_private_tokens_are_still_flagged) ... ok
+test_private_tokens_are_still_repaired (__main__.PreservedDetections.test_private_tokens_are_still_repaired) ... ok
+test_public_addresses_stay_exempt (__main__.PreservedDetections.test_public_addresses_stay_exempt) ... ok
+test_a_file_that_decodes_only_at_the_head_does_not_abort_the_run (__main__.Robustness.test_a_file_that_decodes_only_at_the_head_does_not_abort_the_run) ... ok
+test_is_text_sniffs_only_the_head (__main__.Robustness.test_is_text_sniffs_only_the_head) ... ok
+test_short_reporting_says_nothing_extra (__main__.Robustness.test_short_reporting_says_nothing_extra) ... ok
+test_truncated_reporting_says_it_is_truncated (__main__.Robustness.test_truncated_reporting_says_it_is_truncated) ... ok
+test_differing_pair_with_a_difference_claim_passes (__main__.ScreenshotPairs.test_differing_pair_with_a_difference_claim_passes) ... ok
+test_identical_pair_with_a_difference_claim_fails (__main__.ScreenshotPairs.test_identical_pair_with_a_difference_claim_fails) ... ok
+test_identical_pair_with_an_accurate_description_passes (__main__.ScreenshotPairs.test_identical_pair_with_an_accurate_description_passes) ... ok
+test_pair_detection_finds_the_pair (__main__.ScreenshotPairs.test_pair_detection_finds_the_pair) ... ok
+test_pairs_are_reported_as_data (__main__.ScreenshotPairs.test_pairs_are_reported_as_data) ... ok
+test_a_private_value_written_as_a_literal_is_refused (__main__.SelfBlindness.test_a_private_value_written_as_a_literal_is_refused) ... ok
+test_clean_identities_pass_the_self_check (__main__.SelfBlindness.test_clean_identities_pass_the_self_check) ... ok
+test_the_sealer_seals_a_package_containing_itself (__main__.SelfBlindness.test_the_sealer_seals_a_package_containing_itself) ... ok
+test_the_shipped_pair_seals_together (__main__.SelfBlindness.test_the_shipped_pair_seals_together) ... ok
+test_the_test_module_is_itself_sealable (__main__.SelfBlindness.test_the_test_module_is_itself_sealable)
+THE PIN. Every adversarial fixture in this file is composed at ... ok
+test_a_failing_verify_removes_nothing_either (__main__.StaleManifest.test_a_failing_verify_removes_nothing_either) ... ok
+test_failing_check_only_keeps_the_manifest_it_promised_not_to_touch (__main__.StaleManifest.test_failing_check_only_keeps_the_manifest_it_promised_not_to_touch)
+CORRECTED ORACLE (V7), and the V6 review found it. ... ok
+test_failing_seal_removes_the_previous_manifest (__main__.StaleManifest.test_failing_seal_removes_the_previous_manifest) ... ok
+test_successful_seal_writes_a_fresh_manifest (__main__.StaleManifest.test_successful_seal_writes_a_fresh_manifest) ... ok
+test_known_forms_are_still_caught (__main__.TimezoneAreas.test_known_forms_are_still_caught) ... ok
+test_previously_escaping_forms_are_flagged (__main__.TimezoneAreas.test_previously_escaping_forms_are_flagged) ... ok
+test_previously_escaping_forms_are_normalized (__main__.TimezoneAreas.test_previously_escaping_forms_are_normalized) ... ok
+test_bare_names_in_context_are_flagged_and_repaired (__main__.TimezoneBareNames.test_bare_names_in_context_are_flagged_and_repaired) ... ok
+test_bare_names_out_of_context_are_left_alone (__main__.TimezoneBareNames.test_bare_names_out_of_context_are_left_alone) ... ok
+test_every_shared_pattern_backs_both_a_rule_and_a_check (__main__.UtcOffsetSymmetry.test_every_shared_pattern_backs_both_a_rule_and_a_check) ... ok
+test_offsets_are_flagged_and_repaired (__main__.UtcOffsetSymmetry.test_offsets_are_flagged_and_repaired) ... ok
+test_rule_and_check_agree_on_every_sample (__main__.UtcOffsetSymmetry.test_rule_and_check_agree_on_every_sample) ... ok
+test_time_ranges_are_neither_flagged_nor_rewritten (__main__.UtcOffsetSymmetry.test_time_ranges_are_neither_flagged_nor_rewritten) ... ok
+test_a_changed_file_at_the_repository_root_is_not_a_package_reference (__main__.VerifyMode.test_a_changed_file_at_the_repository_root_is_not_a_package_reference)
+V7. `EXTERNAL_REFERENCE` knows a repository's directory prefixes and ... ok
+test_a_dangling_reference_is_still_caught_beside_one (__main__.VerifyMode.test_a_dangling_reference_is_still_caught_beside_one) ... ok
+test_verify_checks_the_archive_digest (__main__.VerifyMode.test_verify_checks_the_archive_digest) ... ok
+test_verify_fails_on_a_removed_or_added_member (__main__.VerifyMode.test_verify_fails_on_a_removed_or_added_member) ... ok
+test_verify_fails_on_a_tampered_member (__main__.VerifyMode.test_verify_fails_on_a_tampered_member) ... ok
+test_verify_fails_on_a_wrong_archive_digest (__main__.VerifyMode.test_verify_fails_on_a_wrong_archive_digest) ... ok
+test_verify_names_a_member_the_archive_carries_and_the_seal_does_not (__main__.VerifyMode.test_verify_names_a_member_the_archive_carries_and_the_seal_does_not) ... ok
+test_verify_names_a_member_the_archive_omits (__main__.VerifyMode.test_verify_names_a_member_the_archive_omits) ... ok
+test_verify_needs_a_manifest (__main__.VerifyMode.test_verify_needs_a_manifest) ... ok
+test_verify_passes_on_a_sealed_package (__main__.VerifyMode.test_verify_passes_on_a_sealed_package) ... ok
+test_verify_proves_every_archive_member_against_the_manifest (__main__.VerifyMode.test_verify_proves_every_archive_member_against_the_manifest)
+V7. The ZIP is what a reviewer receives, and V6 never opened it. ... ok
+test_verify_refuses_an_archive_that_is_not_rooted_at_the_package (__main__.VerifyMode.test_verify_refuses_an_archive_that_is_not_rooted_at_the_package)
+The layout the protocol requires, asserted rather than assumed. ... ok
+test_verify_writes_nothing (__main__.VerifyMode.test_verify_writes_nothing) ... ok
+
+----------------------------------------------------------------------
+Ran 53 tests in 0.126s
+
+OK
+EXIT=0

@@ -1,0 +1,50 @@
+2026-08-15T12:00:36<tz>
+START focused-catena
+exit=0
+2026-08-15T12:00:40<tz>
+END focused-catena
+2026-08-15T12:00:45<tz>
+START catena-check
+exit=0
+2026-08-15T12:00:48<tz>
+END catena-check
+2026-08-15T12:00:54<tz>
+START promised
+exit=0
+2026-08-15T12:00:54<tz>
+END promised
+2026-08-15T12:01:02<tz>
+START full-discovery
+exit=1
+2026-08-15T12:09:05<tz>
+END full-discovery
+2026-08-15T12:09:16<tz>
+START make-check
+exit=2
+2026-08-15T12:14:07<tz>
+END make-check
+2026-08-15T12:14:16<tz>
+START release-bindings
+exit=2
+2026-08-15T12:14:17<tz>
+END release-bindings
+2026-08-15T12:14:26<tz>
+START public-site
+exit=0
+2026-08-15T12:14:31<tz>
+END public-site
+2026-08-15T12:14:39<tz>
+START browser-gate
+exit=1
+2026-08-15T12:16:17<tz>
+END browser-gate
+2026-08-15T12:16:23<tz>
+START browser-static
+exit=0
+2026-08-15T12:16:24<tz>
+END browser-static
+2026-08-15T12:16:32<tz>
+START gzip-sizes
+exit=0
+2026-08-15T12:16:32<tz>
+END gzip-sizes
