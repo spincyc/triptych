@@ -950,6 +950,195 @@ owned release, common-gate, B0/shared-shell, real-device/AT, protected Liturgy
 and PDF prerequisite stays open with its owner. This lane does not review its
 own work.
 
+### E1 Catena route-owned correction lane, V7
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v7-2026-08-15 -->
+
+The disposition answered is **CHANGES REQUIRED** at exact candidate
+`4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46`, recorded by the independent review
+`f183ed1b0afc6f14574a3507f6eaf3102dc999fa` on branch
+`review/catena-wave-1-e1-corrections-v6-independent`, whose evidence is
+`ca2a8659010b3fca2ccada24f9c431796ca702b1` and whose package digest this lane
+re-verified before starting. That review is a sibling of this line at the
+reviewed parent and is **not merged into it**: what follows records
+implementation-lane facts only.
+
+The review's central finding is about a SHAPE, and the shape is a shallow
+copy. `chapterFragments` copied every own property of the shared source record
+and then of the fragment into one object, and cleared afterwards the two
+fields it knew were dangerous — `text_path` only when a valid composed form
+existed. Where the fragment's id or its file's prefix could not be read, the
+record's own `text_path` survived the copy and `openFragment` handed it to the
+real request sink. `'../../../etc/passwd'` is a string, and a string was all
+the copy asked for. The wider fault is the loop above it: a shallow copy
+carries whatever the data happens to hold, so the boundary has to be
+re-established at every later sink, which is why V4, V5 and V6 each found one
+more sink where it had not been.
+
+V7 projects. A fragment is read into a record of known, validated fields and
+nothing else crosses; there is no `joined[name] = raw[name]` left in the file.
+`text_path` is COMPOSED from the file's own prefix and the fragment's own
+identity. Where a spine states no prefix — the sample corpus does not — a
+carried path may stand in only when it is a relative JSON file of this data
+root's grammar AND its stem is that fragment's own validated id, so the one
+thing it can address is the text of the fragment that carried it. All 47
+sample-corpus paths satisfy that unchanged, and an injected path names some
+other file by definition.
+
+The same reading closes the other six classes. A hollow fragment makes no row
+and no tally. An absence SOURCE is validated before it claims a work's row, so
+a source naming neither author nor work no longer renders a blank entry while
+masking the valid sibling behind it. A refusal needs the whole typed record
+the projection writes — the closed kind, and the chapter matched against the
+chapter being read: the reviewed fixture's one well-formed refusal states
+chapter 1 and V6 printed it under Genesis 2 with the sentence interpolated to
+say Genesis 2. A contradiction now contributes no prose at all, where V6
+blanked the finding and then printed one side's `reason`, chosen by ranking
+the two on length. `scripts/_catena.py` stops coercing `partial`:
+`str(row.get("partial") or "")` turned a mapping into `"{'a': 1}"` and the
+page printed it as "Partly public domain — …".
+
+And the unreadable roots: holdings, canon, voices, the edition manifest, the
+paragraph layer, the verses container and the chapter spine itself each now
+distinguish *we read the corpus and found nothing* from *we could not
+establish what the corpus holds*. Those are not interchangeable sentences and
+every one of them was answering the first while meaning the second.
+
+The oracles had blessed each defect, which is why the V6 suite was green while
+they stood. Ten `CORRECTED ORACLE (V7)` blocks correct them in place with
+their reasons recorded rather than deleted; the sharpest is the one whose own
+name forbade what it pinned — `test_the_late_arrival_manufactures_no_absence_and_no_false_refusal`
+asserted the false refusal. The late-work guard grew from thirteen keys to
+thirty-six, because the review found it omitted the FINAL STATUS SINK: it
+compared the announcement journal, which a stale write cannot shorten, rather
+than the live region's current contents, which a stale write could replace.
+
+**This lane attacked its own change three times, and every pass found real
+defects in it.** The first found five. One was introduced by the
+correction — a fragment could inherit its `id`, and so its Source Library href
+and the one request it can cause, from its edition's shared record. Four the
+correction had not reached: `paragraphPath` still fell back to a digit width
+of 1, which is verbatim the code the same commit removed from `chapterPath`;
+an edition's own unreadable record answered `''`, the value reserved for an
+edition that publishes no layer; `chapterPath` consulted its readability flag
+on only one of two exits; and a chapter spine answering 200 with `null` or a
+list was read as an empty chapter.
+
+The second pass found the same class again one level under three of those
+fixes, which is the finding worth recording. The chapter PAYLOAD had been
+given a third answer and its CONTENTS had not, so a spine whose `fragments` is
+a record, or whose `sources` is a list, or whose `refusals` is a string, came
+through as readable — and the last of those dropped Rule 4's refusal in
+silence, the strongest claim this page makes, failing open. `null` had been
+made the mark of an unreadable document in one place and left as the mark of a
+404 in three others: the paragraph root, a paragraph file and a fragment's own
+text each read a successful, unreadable 200 as "there is no such file". The
+optional paragraph layer's transport failure still took down the whole
+bootstrap and blamed the catena index. And two address spellings passed the
+grammar and then rendered something else: `#chapter=007` showed chapter 1 and
+rewrote the address to say so, and `#book=%20Ex` showed Genesis 3 and rewrote
+the address to say the reader had asked for Genesis.
+
+The third pass found eleven more, three of them introduced by the second
+round's own fixes, and by then the pattern was the finding: each round had
+closed a CONTAINER and left its MEMBERS, or replaced one data-comparable
+sentinel and left three, or caught one optional fetch and left the one beside
+it. The `sources` root was guarded and its members were not, so the voice
+control still said "none here" of a chapter holding nine Latin fragments. A
+`fragments` list was checked for being a list and never for yielding a
+fragment, so a list of hollow members answered "Nothing held here" over a
+chapter the index says holds 1,351 — trading an over-claim for a manufactured
+negative. And the new absence sentinel was compared by VALUE, so a payload
+carrying a key named `absent` could forge the page's own 404 and suppress the
+paragraph layer of every chapter of every edition; the same forgery worked on
+`unfetched`, whose payload-chosen string was printed to a reader inside the
+page's own failure sentence. A sentinel a payload can carry is not one.
+
+Beside those, four older instances of the same class: an unreadable `breaks`
+member set reported as an edition that divides nothing, the optional paragraph
+FILE's transport failure still taking the whole page down one scope under the
+root whose failure had just been caught, the `absences` root left unguarded
+while `refusals` had just been given one, and the voice key trimmed before the
+grammar tier judged it so `translation:%20en` was refused as a voice this
+corpus does not hold rather than as a value that is not a voice key.
+`bibleRecord` was the last raw copy in the model, forty lines from the comment
+saying there must not be one again, and `ident()` trimmed — so `" x"` silently
+became the identity `x` and was fetched and linked as one.
+
+All are fixed with regressions, and every one of the 562 tracked spines, 561
+fixture spines and all 5,547 paragraph records still reads as readable. A new
+guard asserts what the others cannot: no exported model function throws on a
+hostile argument, over every export and 225 argument shapes. It found three
+that did. Two confirmed findings are recorded UNFIXED. A record stating
+nothing but `source` is still counted as a fragment held here, because closing
+it means moving a line V6 drew and this review left standing, and V6's request
+asked that exact question and got no answer. And `bibles.json` arriving
+unreadable is reported as "lists no translations" — a claim about the manifest
+drawn from a document nobody could read — because the sentence is composed in
+`loadBibles`, which is shared-shell ownership this lane does not hold; the
+route carries the truthful sentence and cannot reach it. Both are named at
+their seams rather than repaired across an ownership boundary.
+
+The evidence half of the review was about truthfulness rather than mechanism.
+V6's package was mechanically intact and descriptively untrue: it named a head
+it was not sealed for, said 45 sealer tests where its own log says 46, four
+commits where five exist, three changed files where six exist, and sixteen
+raster pairs where fifteen exist. Every one was available to a program.
+`logs/derive-claims.py` now computes them and writes `claims.json` and
+`DERIVED-CLAIMS.md` from one pass, so the machine-readable record and the
+readable one cannot disagree; `logs/head-consistency.py` reads them back and
+refuses a package whose prose names a commit it may not name, calls the head a
+parent, names a path the package lacks, or leaves a member unreferenced. A
+commit the package legitimately DISCUSSES must be declared with a reason;
+the default is refusal.
+
+The sealer's own two defects are fixed. `--check-only`, documented as never
+rewriting a member, deleted `MANIFEST.sha256` on failure — in a mode the
+package's own instructions tell a REVIEWER to run, and whose account-name
+pattern the same document concedes false-hits on an ordinary English username.
+And `verify()` never opened the ZIP: the tree was proved against the manifest
+and the archive against its sidecar, and nothing joined them, so the artifact
+a reviewer actually receives was the one whose contents nothing checked.
+Writing that check immediately caught a third thing — the sealer's own test
+helper built its archive in the layout the guidance forbids.
+
+There are no screenshots, and the count is derived as zero rather than
+described as none: the stylesheet and the markup are byte-identical and the
+change is semantic, so a raster of a valid chapter would be identical at both
+ends. What replaces them is the V7 test file replayed against the PARENT's
+production files — same scenarios, same oracles, other code — with the class
+decomposition derived from that log rather than asserted. Two of the classes
+V7 adds do NOT fail at the parent, and they are named as what they are: one
+closes a proof gap the review identified rather than a defect, and one covers
+a generator correction the browser half already had right. V6's roadmap
+claimed every one of its classes failed at the parent and its own shipped
+decomposition contradicted it.
+
+Budgets hold unraised. `catena.css` is unchanged. `catena.js` is SMALLER than
+V6 left it in both measures, because the raw reads and the repeated guards
+left with the derivations. The boundary moved into `catena-model.js` again,
+which carries no ceiling, and the relocation is disclosed with its cost rather
+than presented as unchanged load — both ways of measuring the two files'
+combined payload, because neither alone is what a reader pays. `catena.js`
+finished V6 with SEVEN gzipped bytes of margin, which is the whole of the
+reason the move was not optional. The V5 and V6 reviews each asked whether
+that much explanation belongs in an unbudgeted model and neither was answered;
+this lane trimmed its own additions by a measured amount in a commit that says
+so, and asks a third time rather than taking silence for consent.
+
+Four stale release bindings remain fail-closed and none was re-signed. The
+`src/web/data/` test contradiction is preserved untouched for its owner, and
+`src/web/data/` has zero new changes: the adversarial fixtures live in the
+test file and are served by the replay harness's own stub network, and no
+generated file was altered to make a malformed test pass. The common-gate
+failure population, `check-tool-registry` and `check-examples` are inherited,
+red at both ends, and separately owned; none was worked around, whitelisted,
+weakened or expect-marked.
+
+Status: **awaiting fresh independent review.** This lane records no acceptance
+of its own work, marks no separately owned prerequisite complete, and does not
+review itself.
+
 ## Promised work
 
 ### Corpus browser foundation design
