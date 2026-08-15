@@ -81,10 +81,15 @@
   // How a code becomes a name. The page installs the shared table's namer as
   // the fallback; this file never reaches for `window.Triptych`, because it is
   // loaded under node by `catena check` where no such global exists.
-  let nameLanguage = (code) => LANGUAGE_NAMES[code] || sound(code);
+  // A PROPERTY LOOKUP IS A COERCION, here as at every other lookup in this
+  // file: `LANGUAGE_NAMES[code]` stringifies its key, and a record with a
+  // null prototype has no `toString` to stringify with, so the lookup itself
+  // threw. The code is asked to be text before it is used as one.
+  const spoken = (code) => (typeof code === 'string' ? code : '');
+  let nameLanguage = (code) => LANGUAGE_NAMES[spoken(code)] || sound(code);
 
   function useLanguageNames(namer) {
-    nameLanguage = (code) => LANGUAGE_NAMES[code] || namer(code);
+    nameLanguage = (code) => LANGUAGE_NAMES[spoken(code)] || namer(spoken(code));
   }
 
   /** The original is named only by itself; a translation, by its language. */
@@ -226,6 +231,11 @@
    */
   function ident(value) {
     const said = sound(value);
+    // AND TRIMMING IS NOT READING. `sound()` is the right question everywhere
+    // else in this file, and the wrong one here: `" x"` trimmed to `x` is the
+    // page deciding which identity the record meant, and then fetching it and
+    // linking to it. An identity is the text the record wrote or it is none.
+    if (typeof value !== 'string' || said !== value) return '';
     return /^[a-z0-9]+([.-][a-z0-9]+)*$/.test(said) ? said : '';
   }
 
@@ -557,6 +567,29 @@
     if (!Array.isArray(record.fragments)) return true;
     if (record.sources !== undefined && bag(record.sources) !== record.sources) return true;
     if (record.refusals !== undefined && bag(record.refusals) !== record.refusals) return true;
+    // A SPINE DOES NOT CARRY THE ROUTE'S OWN WORD FOR A RECORD THAT WOULD NOT
+    // COME. `unfetched` is how `chapterFile` says a request failed, and the
+    // contract's twelve keys do not include it — so a 200 carrying one was a
+    // payload forging the page's own failure, and its string was printed to a
+    // reader inside the broken-record sentence.
+    if (record.unfetched !== undefined) return true;
+    // EVERY SOURCE, not just the container. `chapterVoices` and the join both
+    // do `bag(sources[key])` per member, so a member that is not a record
+    // counted as no voice, no author, no work and no rights — and the voice
+    // control then said "none here" of a chapter that holds nine Latin
+    // fragments. The container was guarded and its members were not, which is
+    // the whole of what the V6 review was about.
+    const sources = bag(record.sources);
+    for (const key in sources) {
+      if (Object.hasOwn(sources, key) && bag(sources[key]) !== sources[key]) return true;
+    }
+    // AND A LIST OF MEMBERS NONE OF WHICH IS ONE. `fragments: []` is a real
+    // recorded emptiness and 512 of the 562 tracked spines carry it. A
+    // NON-EMPTY list that yields no fragment is a record that tried to say
+    // something and said nothing this page can read — and answering it with
+    // "Nothing held here" turns an over-claim into a manufactured negative,
+    // which is the trade this correction exists to refuse.
+    if (record.fragments.length && !chapterFragments(record).length) return true;
     return false;
   }
 
@@ -776,11 +809,17 @@
     // is a valid document and a 200 carrying it is a file nobody can read,
     // which V7's first pass read as the 404 and printed as an edition that
     // opens no paragraph here.
-    // `undefined` is never fetched; `absent` is the route's mark for the 404.
-    // `null` is NOT here: a 200 answering JSON `null` is a file nobody could
-    // read, and reading it as the 404 is what printed an edition that opens
-    // no paragraph here over a layer root that had failed.
-    if (layer === undefined || bag(layer).absent === true) return '';
+    // `undefined` IS THE ABSENCE, and it is the only thing that can be: the
+    // route resolves its own 404 to it before calling, and no JSON document
+    // can be `undefined`. V7's first answer was a record key named `absent`,
+    // which meant a layer root could FORGE the page's 404 and suppress the
+    // paragraph layer of every chapter of every edition while the page stated
+    // a positive fact about how each edition sets its text. A sentinel a
+    // payload can carry is not a sentinel.
+    //
+    // `null` is not the absence either: a 200 answering JSON `null` is a file
+    // nobody could read.
+    if (layer === undefined) return '';
     const index = bag(layer);
     if (index !== layer) return null;
     // The EDITION KEY is a property lookup again, so it is an identity this
@@ -877,6 +916,31 @@
    *                   genuinely runs on, is not unread and is the one case that
    *                   may speak.
    */
+  /**
+   * Does this `breaks` record state marks and state none this page can read?
+   *
+   * Asked of the RECORD, never of the lines it was applied to. Judging it by
+   * whether any rendered line carried a mark made the answer depend on which
+   * verses the chapter happened to have — so a perfectly good paragraph file
+   * read as unreadable whenever the verses it marks were not among the ones
+   * being rendered, which is 508 of 600 tracked files if you ask it wrongly.
+   *
+   * A record with a readable member beside an unreadable one is readable: the
+   * sibling rule holds here as everywhere.
+   */
+  function markless(breaks) {
+    let stated = 0;
+    let read = 0;
+    for (const key in breaks) {
+      if (!Object.hasOwn(breaks, key)) continue;
+      stated += 1;
+      if (/^[1-9][0-9]*$/.test(key) && BREAK_KINDS.includes(sound(breaks[key]))) {
+        read += 1;
+      }
+    }
+    return stated > 0 && read === 0;
+  }
+
   function chapterReading(verses, marks) {
     const said = bag(verses);
     const layer = bag(marks);
@@ -890,20 +954,21 @@
       // which is a fact about the edition and stays sayable.
       versesUnread: !readable ||
         (!lines.length && Object.keys(said).length > 0),
-      // `unfetched` is the route's own word for a record that was expected
-      // and would not come — the same one `chapterFile` answers with for the
-      // spine — and the paragraph ROOT arriving unreadable is carried here in
-      // it. `absent` is the route's mark for a 404, which is the one answer
-      // that means the chapter genuinely runs on; `null` cannot carry it,
-      // because a 200 answering JSON `null` is a file nobody could read and
-      // V7's first pass printed it as an edition that divides nothing.
+      // `undefined` is the 404 the route resolved for us, and the one answer
+      // that means the chapter genuinely runs on. Everything else that
+      // arrived is a document, and a document that is not a paragraph record
+      // is one this page could not read.
       //
-      // A record with NO `breaks` key is unreadable too. All 5,547 tracked
-      // paragraph files carry one and none is empty, so a paragraph file
-      // without it states nothing about how this chapter divides.
+      // A record with NO `breaks` key is unreadable: all 5,547 tracked
+      // paragraph files carry one and none is empty. So is one whose `breaks`
+      // states marks and yields none — a kind outside the closed two, a
+      // non-canonical key, a verse the chapter does not number. The record
+      // DID state a division; the page could not read it, and saying the
+      // edition holds none is the same manufactured negative `versesUnread`
+      // exists to refuse one field away.
       marksUnread: !!layer.unfetched ||
-        (marks !== undefined && layer.absent !== true &&
-          (layer !== marks || breaks !== layer.breaks))
+        (marks !== undefined &&
+          (layer !== marks || breaks !== layer.breaks || markless(breaks)))
     };
   }
 
@@ -979,6 +1044,28 @@
       // finding it can only refine, and never on its own.
       partial: sound(record.partial)
     };
+  }
+
+  /**
+   * Could the recorded absences be read at all?
+   *
+   * V7, third pass, and it closes an asymmetry this lane had left standing:
+   * the `refusals` root was guarded because an unreadable one drops Rule 4's
+   * boundary claim in silence, and the `absences` root was not — though it
+   * carries the same kind of claim and fails the same way. An `absences` that
+   * is a string, a list or a number made the whole translation-absence
+   * disclosure vanish, with nothing said; and `renderAbsences`' own comment
+   * says why that is not neutral — unsaid, the page reads as a load failure.
+   *
+   * One member being unreadable is not this: a work whose rows cannot be read
+   * loses its own row and costs its siblings nothing, as everywhere else.
+   */
+  function absencesUnread(index) {
+    const stated = bag(index).absences;
+    return stated !== undefined && bag(stated) !== stated
+      ? 'What is recorded about translations of the works standing here could ' +
+        'not be read, so nothing is said about them.'
+      : '';
   }
 
   function absenceRows(index, file, language) {
@@ -1089,7 +1176,10 @@
 
   /** How many of those rows stand on one finding class. */
   function absenceCount(rows, stands) {
-    return list(rows).filter((row) => row.stands === stands).length;
+    // `records`, not `list`: this reads `.stands` off every member, and a
+    // `null` among them threw — the omission this file's own `records()` doc
+    // condemns, in the two functions that count what the rest of it built.
+    return records(rows).filter((row) => row.stands === stands).length;
   }
 
   /**
@@ -1169,12 +1259,22 @@
     const id = ident(record.id);
     const label = sound(record.label);
     if (!id || !label) return null;
-    const said = {};
-    for (const key in record) if (Object.hasOwn(record, key)) said[key] = record[key];
-    said.id = id;
-    said.label = label;
-    said.language = tongue(record.language);
-    return said;
+    // PROJECTED, not copied. This was the last `said[key] = record[key]` in
+    // the file, forty lines from the comment saying there must not be one
+    // again — and it carried whatever the manifest held, including an
+    // inherited `__proto__` payload whose `numbering` and `psalter` the
+    // shared shell reads. The eight fields below are the ones every tracked
+    // edition record writes and the only ones anything reads.
+    return {
+      id: id,
+      label: label,
+      language: tongue(record.language),
+      edition: sound(record.edition),
+      numbering: sound(record.numbering),
+      psalter: sound(record.psalter),
+      psalm_titles: sound(record.psalm_titles),
+      rights: sound(record.rights)
+    };
   }
 
   /** Every edition the manifest states, in the order it states them. */
@@ -1533,6 +1633,13 @@
    */
   function addressProblems(hash, canon, editions, voices) {
     const bad = [];
+    // The one argument this cannot type: a `URLSearchParams`. It is asked for
+    // what it is rather than assumed to be it, because this is an exported
+    // entry point and the page's own habit is not a contract a caller reads.
+    if (!hash || typeof hash.getAll !== 'function' ||
+        typeof hash.get !== 'function') {
+      return bad;
+    }
     const flag = (key, value, note) => bad.push({ key, value, note });
     const said = (whole, negative) => (whole ? negative : UNMATCHED);
     // Multiplicity first: a recognized key cited twice is refused even when
@@ -1542,7 +1649,11 @@
       const all = hash.getAll(key);
       if (all.length > 1) flag(key, all.join(', '), 'is cited more than once');
     }
-    const books = list(bag(canon).books);
+    // `records`, not `list`: this reads `one.token` and `one.id` of every
+    // member, and a `null` among them threw — the exact omission this file's
+    // own `records()` doc condemns, in the one function that had been moved
+    // out of the page and exported without it.
+    const books = records(bag(canon).books);
     // EXACTLY, not trimmed. `sound()` here made `#book=%20Ex` resolve to
     // Exodus and pass the address grammar, while `seedControls` handed the
     // untrimmed `" Ex"` to a control that carries no such option, fell back to
@@ -1567,7 +1678,7 @@
       }
     }
     const bible = hash.get('bible') || '';
-    if (bible && !list(bag(editions).bibles).some((one) => one.id === bible)) {
+    if (bible && !records(bag(editions).bibles).some((one) => one.id === bible)) {
       flag('bible', bible, said(bag(editions).whole, 'is not a published edition'));
     }
     const voice = hash.get('voice') || '';
@@ -1575,9 +1686,17 @@
       // The WHOLE key, as a closed grammar: `original` alone, or
       // `translation:` plus one lowercase code — no second colon, no
       // whitespace, no suffix. `original:x` would self-contradict.
+      // JUDGED ON THE KEY AS WRITTEN. `parseVoiceKey` and `voiceLanguage`
+      // both trim, so `translation:%20en` passed the grammar tier and was
+      // refused on the HOLDINGS tier — the reader told this corpus does not
+      // hold a voice when the truth is that the value is not a voice key. The
+      // same defect the book token's exact comparison closed, in the sibling
+      // key, and the grammar is not restated here to fix it: the key is
+      // required to be the canonical text it claims to be.
       const parsed = parseVoiceKey(voice);
-      if (voice !== ORIGINAL &&
-          !(parsed && parsed.voice === TRANSLATION && voiceLanguage(parsed.language))) {
+      if (voice !== sound(voice) || /\s/.test(voice) ||
+          (voice !== ORIGINAL &&
+          !(parsed && parsed.voice === TRANSLATION && voiceLanguage(parsed.language)))) {
         flag('voice', voice, 'is not a voice — “original”, or “translation:” plus a language');
       // The keys the ROOT states, read as keys. `list(index.voices)` answered
       // `[]` for a voices value nobody could read, and every address was then
@@ -1669,6 +1788,7 @@
     blockedRows: blockedRows,
     refusalNote: refusalNote,
     absenceMember: absenceMember,
+    absencesUnread: absencesUnread,
     LANGUAGE_NAMES: LANGUAGE_NAMES,
     FINDINGS: FINDINGS,
     TESTAMENTS: TESTAMENTS,

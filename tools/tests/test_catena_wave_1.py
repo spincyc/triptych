@@ -164,7 +164,7 @@ NODE = shutil.which("node")
 # repeat both went with them. The relocation's own cost is measured in the
 # durable records, where it is re-taken rather than going stale beside a
 # digest.
-MODEL_SHA256 = "c2aad30035ed1057a0cbc8298181c55070e1bba7eba1dcd822987d6f1cff6873"
+MODEL_SHA256 = "451fde821ce882fb37ee1258e498fa2a1778350a57665853fc87f71695f36aec"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -2182,6 +2182,79 @@ SCENARIOS = [
      "steps": [{"do": "openFirstFragment", "label": "opened"}]},
     # A paragraph file that is a record and states no `breaks`. All 5,547
     # tracked ones carry the key.
+    # ========================================================= V7, third pass
+    # The `sources` ROOT was guarded and its MEMBERS were not, so a member
+    # that is not a record counted as no voice, no author, no work and no
+    # rights — and the voice control said "none here" of a chapter that holds
+    # nine Latin fragments.
+    {"name": "v7-source-member-unreadable",
+     "hash": "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:la",
+     "patch": {"structure/catena/01-gen/001.json": {"sources": {"0": "unreadable"}}}},
+    # A list of members none of which is a member. `fragments: []` is a real
+    # emptiness; a non-empty list yielding nothing is a record that tried to
+    # say something and said nothing this page can read.
+    {"name": "v7-fragments-all-hollow", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": _fixture({
+         "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+         "sources": {"1": _voice_source(1)}, "fragments": [{}, {}, {}],
+         "leads": [], "blocked": [], "refusals": {}})}},
+    {"name": "v7-fragments-all-scalar", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": _fixture({
+         "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+         "sources": {"1": _voice_source(1)}, "fragments": [None, 3, "x", ["y"]],
+         "leads": [], "blocked": [], "refusals": {}})}},
+    # A payload forging the route's own sentinels. Both used to be data-
+    # comparable values, so a document could claim to be the page's own 404 or
+    # its own failed request — and the second printed its string to a reader.
+    {"name": "v7-forged-absent-root", "hash": GEN1,
+     "patch": {"structure/paragraphs/index.json": {"absent": True}}},
+    {"name": "v7-forged-absent-file", "hash": GEN1,
+     "files": {"structure/paragraphs/douay-rheims/01-gen/001.json":
+               {"edition": "douay-rheims", "token": "Gen", "chapter": 1,
+                "absent": True}}},
+    {"name": "v7-forged-unfetched", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": _fixture({
+         "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+         "unfetched": "x", "sources": {"1": _voice_source(1)},
+         "fragments": [_voice_fragment(1)],
+         "leads": [], "blocked": [], "refusals": {}})}},
+    # A `breaks` record that states marks and states none this page can read.
+    {"name": "v7-breaks-all-unreadable", "hash": GEN1,
+     "files": {"structure/paragraphs/douay-rheims/01-gen/001.json":
+               {"edition": "douay-rheims", "token": "Gen", "chapter": 1,
+                "breaks": {"3": "bogus", "9": {"kind": "printed"}, "03": "printed",
+                           "7": "Printed"}}}},
+    # And one readable member among them: the sibling rule holds here too.
+    {"name": "v7-breaks-one-readable", "hash": GEN1,
+     "files": {"structure/paragraphs/douay-rheims/01-gen/001.json":
+               {"edition": "douay-rheims", "token": "Gen", "chapter": 1,
+                "breaks": {"3": "printed", "9": "bogus"}}}},
+    # The OPTIONAL per-chapter paragraph file failing in transport. Its root's
+    # failure was caught one scope up and this one was not.
+    {"name": "v7-paragraph-file-transport-failure", "hash": GEN1,
+     "defer": ["structure/paragraphs/douay-rheims/01-gen/001.json"],
+     "steps": [{"do": "release",
+                "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+                "outcome": "fail", "label": "released"}]},
+    # The absences ROOT unreadable: the refusals root was guarded and this one
+    # was not, though it carries the same kind of claim.
+    {"name": "v7-absences-root-unreadable", "hash": GEN10_ENGLISH,
+     "files": {"structure/catena/index.json": _broken_index(
+         absences="x", voices=["original", "translation:en"],
+         held=[{"token": "Gen", "name": "Genesis", "chapters": 50,
+                "fragments": 5, "path": "structure/catena/01-gen/",
+                "present": [10], "languages": ["la"]}]),
+               "structure/catena/01-gen/010.json": TYPED_ABSENCE_FIXTURE}},
+    # The voice key, judged on the key as written.
+    {"name": "v7-spaced-voice",
+     "hash": "#book=Gen&chapter=1&bible=douay-rheims&voice=translation:%20en"},
+
+    # A paragraph record this page reads perfectly, which records no break.
+    # That is the one shape that may say the edition holds no division here.
+    {"name": "v7-empty-breaks", "hash": GEN1,
+     "files": {"structure/paragraphs/douay-rheims/01-gen/001.json":
+               {"edition": "douay-rheims", "token": "Gen", "chapter": 1,
+                "breaks": {}}}},
     {"name": "v7-paragraph-no-breaks", "hash": GEN1,
      "files": {"structure/paragraphs/douay-rheims/01-gen/001.json":
                {"edition": "douay-rheims", "token": "Gen", "chapter": 1}}},
@@ -5663,10 +5736,20 @@ class NumericVerseAndPathTest(ReplayTest):
 
     def test_a_mark_that_is_not_a_mark_opens_no_paragraph(self):
         # Any truthy value opened a paragraph and counted as neither kind, so
-        # the page printed paragraphs and denied holding any division.
+        # the page printed paragraphs and denied holding any division. The
+        # first half of that is V5's correction and is unchanged.
+        #
+        # CORRECTED ORACLE (V7). The second half — the note then saying none
+        # is held — is the manufactured negative the V6 review named for this
+        # exact record ("a malformed paragraph root can render `No paragraph
+        # division held`"). `MALFORMED_BREAKS` STATES a division at verses 1,
+        # 3 and 9; the page cannot read any of the three, and denying that the
+        # edition divides the chapter is a claim about how it sets its text
+        # drawn from a record nobody could read.
         page = self.page("malformed-verses")
         self.assertEqual(page["paragraphs"], 1)
-        self.assertIn("No paragraph division is held", page["paragraphNote"])
+        self.assertNotIn("No paragraph division is held", page["paragraphNote"])
+        self.assertIn("could not be read", page["paragraphNote"])
 
     def test_unreadable_verses_are_not_reported_as_none(self):
         # "carries no verses" is a claim about the edition, and a parse
@@ -6307,14 +6390,23 @@ class RenderedScriptureTruthTest(ReplayTest):
         # denying it holds any division. Asserted against all three sinks — the
         # paragraphs rendered, the projected marks drawn, and the exact words
         # of the note — because the contradiction lived between them.
+        #
+        # CORRECTED ORACLE (V7). The three sinks are still read together and
+        # the first two are unchanged. The third is not: the record STATES a
+        # division at three verses and states it in three ways this page
+        # cannot read, so "no paragraph division is held" denies something the
+        # record asserted. The contradiction the V5 note lived between is
+        # replaced by the sentence that covers both halves — the chapter runs
+        # on unmarked because nothing readable marked it, and whether the
+        # edition divides it is not established here.
         page = self.page("malformed-verses")
         self.assertEqual(page["paragraphs"], 1, "one unmarked paragraph runs on")
         self.assertEqual(page["projected"], 0)
         self.assertEqual(
             page["paragraphNote"],
-            "No paragraph division is held for this chapter in this edition, "
-            "so it runs on. Another edition’s paragraphs are not borrowed "
-            "for it.")
+            "The paragraph record for this chapter in this edition could not "
+            "be read, so whether it divides the chapter is not established "
+            "here.")
 
     def test_every_chapter_page_terminates_and_announces(self):
         # THE TERMINAL RULE, for each fixture this lane drives. Refusing a
@@ -8588,9 +8680,19 @@ class V7UnreadableRootDomainClaimTest(ReplayTest):
     def test_a_readable_paragraph_layer_still_says_it_holds_none(self):
         # The other half of the same claim, and the reason this correction is
         # narrow: where the record CAN be read and records no division, the
-        # page still says so. `malformed-verses` carries a readable layer.
-        self.assertIn("No paragraph division is held",
-                      self.page("malformed-verses")["paragraphNote"])
+        # page still says so, in those words.
+        #
+        # CORRECTED ORACLE (V7). This used `malformed-verses` as its control,
+        # which was the wrong scenario for it: that fixture's `breaks` states
+        # three marks and none is readable, so it is an example of the thing
+        # this test exists to distinguish rather than of the thing it is
+        # distinguishing from. `v7-empty-breaks` is the real control — a
+        # paragraph record this page reads perfectly, which records no break.
+        self.assertEqual(
+            self.page("v7-empty-breaks")["paragraphNote"],
+            "No paragraph division is held for this chapter in this edition, "
+            "so it runs on. Another edition’s paragraphs are not borrowed "
+            "for it.")
 
     VERSES_UNREAD = "Not shown: Genesis 1 arrived in a form this page cannot read."
 
@@ -9078,3 +9180,219 @@ class V7SharedFieldDriftTest(unittest.TestCase):
                     "extent", "source"):
             with self.subTest(field=own):
                 self.assertNotIn(own, inherited)
+
+
+class V7ThirdPassFindingsTest(ReplayTest):
+    """V7 — what a THIRD adversarial pass found, after the second round of fixes.
+
+    The pattern by this point is the finding. Each round closed a container
+    and left its MEMBERS, or replaced one data-comparable sentinel and left
+    three, or caught one optional fetch and left the one beside it. What is
+    pinned here is that level; that a fourth exists is stated in
+    `LIMITATIONS.md` rather than claimed not to.
+    """
+
+    UNAVAILABLE = "The commentary record did not load"
+    PARAGRAPH_UNREAD = ("The paragraph record for this chapter in this edition"
+                        " could not be read, so whether it divides the chapter"
+                        " is not established here.")
+    RUNS_ON = "No paragraph division is held"
+
+    # ------------------------------------- the container, and its members
+    def test_a_source_member_that_is_not_a_record_is_not_a_readable_spine(self):
+        # The `sources` ROOT was guarded and its MEMBERS were not. `bag()` per
+        # member then counted an unreadable one as no voice, no author, no
+        # work and no rights — so the voice control said "none here" of a
+        # chapter that holds nine Latin fragments, and the tally and the
+        # announcement said it too.
+        page = self.page("v7-source-member-unreadable")
+        self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+        self.assertNotIn("none in Latin translation", page["tallyText"])
+        self.assertNotIn("— none here", " ".join(page["voiceLabels"]))
+        self.assertEqual(page["asideNotes"], [])
+        self.assertEqual(page["busy"], "false")
+
+    HOLLOW = ("v7-fragments-all-hollow", "v7-fragments-all-scalar")
+
+    def test_a_list_of_members_none_of_which_is_one_is_not_an_emptiness(self):
+        # `fragments: []` is a real recorded emptiness — 512 of the 562
+        # tracked spines carry it. A NON-EMPTY list yielding no fragment is a
+        # record that tried to say something and said nothing this page can
+        # read, and answering it with "Nothing held here" trades an over-claim
+        # for a manufactured negative.
+        for name in self.HOLLOW:
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+                self.assertNotIn("Nothing held", page["tallyText"])
+                self.assertNotIn("No commentary on this chapter is held yet.",
+                                 " ".join(page["asideNotes"]))
+                self.assertEqual(page["fragmentCount"], 0)
+                self.assertEqual(page["busy"], "false")
+
+    def test_a_genuinely_empty_fragment_list_is_still_an_emptiness(self):
+        # The other half, and the reason the question is about SHAPE. The real
+        # corpus is full of chapters holding leads and no fragments.
+        page = self.page("acquisition-only")
+        self.assertNotIn(self.UNAVAILABLE, page["tallyText"])
+        self.assertEqual(page["errorSections"], [])
+
+    # ------------------------------------------------- forged sentinels
+    def test_a_payload_cannot_forge_the_routes_own_404(self):
+        # `bag(layer).absent === true` made the route's private 404 token a
+        # data-comparable value, so a layer root could forge it and suppress
+        # the paragraph layer of every chapter of every edition while the page
+        # stated a positive fact about how each sets its text. The sentinel is
+        # resolved to `undefined` before the model sees it, and no JSON
+        # document is `undefined`.
+        page = self.page("v7-forged-absent-root")
+        self.assertIn("Paragraphs:", page["paragraphNote"])
+        self.assertNotIn(self.RUNS_ON, page["paragraphNote"])
+        self.assertEqual(page["fragmentCount"], 107)
+
+    def test_a_payload_carrying_absent_is_read_as_the_document_it_is(self):
+        # At the per-chapter file the same forgery bought the positive claim;
+        # a record carrying `absent` and no `breaks` is simply unreadable.
+        page = self.page("v7-forged-absent-file")
+        self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+
+    def test_a_payload_cannot_forge_the_routes_own_failed_request(self):
+        # A valid spine additionally carrying `unfetched: "x"` printed
+        # "its record (x) could not be read" — the page's own failure
+        # sentence, with a string the payload chose, shown to a reader. The
+        # contract's twelve keys do not include `unfetched`.
+        page = self.page("v7-forged-unfetched")
+        self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+        detail = page["errorSections"][0]["details"][0]
+        self.assertIn("structure/catena/01-gen/001.json", detail,
+                      "the notice names the record the ROUTE asked for")
+        self.assertNotIn("(x)", detail, "the payload chose the sentence")
+
+    # ------------------------------------------- the marks, member by member
+    def test_a_breaks_record_that_states_marks_and_states_none_readably(self):
+        # `marksUnread` asked whether `breaks` is a record and never whether
+        # any member of it could be read. A bogus kind, a record kind, a
+        # padded key and a capitalised kind each state a division the page
+        # cannot read, and denying the edition divides the chapter is the
+        # manufactured negative `versesUnread` refuses one field away.
+        page = self.page("v7-breaks-all-unreadable")
+        self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+        self.assertNotIn(self.RUNS_ON, page["paragraphNote"])
+
+    def test_one_readable_mark_among_them_still_speaks(self):
+        # The sibling rule, here as everywhere: a readable member beside an
+        # unreadable one is read.
+        page = self.page("v7-breaks-one-readable")
+        self.assertIn("1 break is printed", page["paragraphNote"])
+        self.assertNotIn("could not be read", page["paragraphNote"])
+
+    def test_every_tracked_paragraph_record_still_reads(self):
+        # And the correction refuses nothing the corpus holds: the real
+        # Genesis 1 layer is unchanged.
+        self.assertIn("Paragraphs:", self.page("default")["paragraphNote"])
+
+    # ------------------------------------------------ the optional fetch
+    def test_the_optional_paragraph_FILE_failing_is_not_the_pages_failure(self):
+        # The layer ROOT's transport failure was caught one scope up and this
+        # one was not, so a fault on one optional file lost the Scripture and
+        # all 107 fragments beside it.
+        page = self.snapshot("v7-paragraph-file-transport-failure", "released")
+        self.assertIsNone(page["failureText"])
+        self.assertEqual(page["fragmentCount"], 107)
+        self.assertEqual(page["chapterCounts"][0], "31 verses")
+        self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+        self.assertEqual(page["busy"], "false")
+
+    # ------------------------------------------------- the absences root
+    def test_an_unreadable_absences_root_says_so_rather_than_vanishing(self):
+        # The `refusals` root was guarded because an unreadable one drops Rule
+        # 4's claim in silence; the `absences` root carries the same kind of
+        # claim and had no such guard, so the whole translation-absence
+        # disclosure simply disappeared. `renderAbsences`' own comment says
+        # why that is not neutral: unsaid, the page reads as a load failure.
+        page = self.page("v7-absences-root-unreadable")
+        self.assertIn(
+            "What is recorded about translations of the works standing here"
+            " could not be read, so nothing is said about them.",
+            page["asideNotes"])
+        self.assertIsNone(page["absenceSummary"])
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["errorSections"], [])
+
+    def test_a_readable_absences_root_still_says_what_it_records(self):
+        page = self.page("typed-absence")
+        self.assertIsNotNone(page["absenceSummary"])
+        self.assertNotIn(
+            "What is recorded about translations of the works standing here"
+            " could not be read, so nothing is said about them.",
+            page["asideNotes"])
+
+    # ------------------------------------------- the voice key, as written
+    def test_the_voice_key_is_judged_on_the_key_the_reader_wrote(self):
+        # `parseVoiceKey` and `voiceLanguage` both trim, so
+        # `translation:%20en` passed the GRAMMAR tier and was refused on the
+        # HOLDINGS tier — the reader told this corpus does not hold a voice
+        # when the truth is that the value is not a voice key at all. The same
+        # defect the book token's exact comparison closed, in the sibling key.
+        page = self.page("v7-spaced-voice")
+        self.assertEqual(
+            page["errorSections"][0]["details"],
+            ["voice=translation: en is not a voice — “original”, or"
+             " “translation:” plus a language."])
+        self.assertNotIn("is not a voice this corpus holds",
+                         page["errorSections"][0]["details"][0])
+        self.assertEqual(page["busy"], "false")
+
+    def test_the_voices_the_corpus_holds_are_still_matched(self):
+        # And nothing legitimate regressed: the three real keys resolve.
+        self.assertEqual(self.page("voice-held")["errorSections"], [])
+        self.assertEqual(self.page("voice-latin")["errorSections"], [])
+
+
+class V7ModelTotalityTest(unittest.TestCase):
+    """V7 — no exported model function throws on a hostile argument.
+
+    `addressProblems` was moved out of `catena.js` and exported, and it read
+    `one.token` and `one.id` of every member of containers it had validated —
+    the precise omission this file's own `records()` doc condemns, in the one
+    function that had just been given a wider audience. `absenceCount` and
+    `absenceSummary` had the same one, older. The page feeds them validated
+    input, so neither was reachable there; an exported entry point does not
+    get to rely on that.
+
+    `useLanguageNames` is excluded because it INSTALLS the namer every other
+    prose function reads: fuzzing it first poisons them all and then reports
+    the poison as their defect. It is called once, by the page, with the
+    shared table's namer.
+    """
+
+    @unittest.skipIf(NODE is None, "node is not installed")
+    def test_no_export_throws_on_a_hostile_argument(self):
+        hostile = ("null", "undefined", "0", "''", "'x'", "[]", "[null]",
+                   "[{}]", "{}", "{books:[null]}", "{bibles:[null]}",
+                   "{keys:[null]}", "true", "NaN", "({__proto__:null})")
+        script = """
+        const M = require(process.argv[1]);
+        const junk = [%s];
+        const bad = [];
+        for (const name of Object.keys(M)) {
+          const fn = M[name];
+          if (typeof fn !== 'function') continue;
+          // `useLanguageNames` INSTALLS the namer every other prose function
+          // reads. Fuzzing it first poisons them all and reports the poison
+          // as their defect, which is the fuzz testing itself.
+          if (name === 'useLanguageNames') continue;
+          for (const a of junk) for (const b of junk) {
+            try { fn(a, b, a); } catch (error) { bad.push(name + ': ' + error.message); }
+          }
+        }
+        process.stdout.write(JSON.stringify([...new Set(bad)]));
+        """ % ", ".join(hostile)
+        answer = subprocess.run([NODE, "-e", script,
+                                 str(CATENA / "catena-model.js")],
+                                capture_output=True, text=True, cwd=ROOT)
+        self.assertEqual(0, answer.returncode, answer.stderr)
+        threw = json.loads(answer.stdout)
+        # `useLanguageNames` legitimately requires a function: it installs the
+        # shared table's namer and is called once, by the page, with one.
+        self.assertEqual(threw, [], "an exported model function threw")

@@ -51,8 +51,10 @@
   // The next render answers an ARRIVING address, not a reader action.
   let arrival = false;
   // THE 404, AS A VALUE, because `null` cannot be it: JSON `null` is a valid
-  // document, and a 200 carrying one was read as "there is no such file".
+  // document. Resolved to `undefined` before the model sees it: a sentinel a
+  // payload could carry would be one a payload could forge.
   const ABSENT = { absent: true };
+  const seen = (file) => (file === ABSENT ? undefined : file);
 
   /* --------------------------------------------------------------- data */
 
@@ -101,8 +103,13 @@
     const path = M.paragraphPath(paragraphs, bible.id, bag(canonEntry(token)).path, chapter);
     // `null` is the layer ROOT unreadable, not the 404 that means this
     // chapter runs on; carried in the route's own `unfetched`.
+    // A layer that would not come is not a chapter that runs on, and the
+    // fetch for an OPTIONAL record may not decide the page: a transport fault
+    // on one paragraph file lost the Scripture and 107 fragments with it.
     return path === null ? Promise.resolve({ unfetched: true })
-      : path ? cached(paragraphFiles, path, ABSENT) : Promise.resolve(ABSENT);
+      : path ? cached(paragraphFiles, path, ABSENT)
+        .then(seen, () => ({ unfetched: true }))
+      : Promise.resolve(undefined);
   }
 
   // One fragment's prose — keyed by the path the SPINE gave, never
@@ -123,8 +130,7 @@
       return;
     }
     // Unreadable text is not a chapter with no verses, and an unreadable
-    // paragraph record is not an edition that opens none here. The model
-    // draws both distinctions; the page only states them.
+    // paragraph record is not an edition that opens none here.
     const read = M.chapterReading(result.verses, marks);
     const lines = read.lines;
     if (!lines.length) {
@@ -362,7 +368,12 @@
     // THE TYPED FINDING DECIDES WHAT MAY BE SAID: dropped, it read
     // `not-surveyed` as a holdings negative.
     const rows = M.absenceRows(index, file, asked.language);
-    if (!rows.length) return;
+    // An unreadable absences root is not a corpus with nothing to say.
+    if (!rows.length) {
+      const unread = M.absencesUnread(index);
+      if (unread) container.appendChild(T.el('p', 'aside-note', unread));
+      return;
+    }
 
     const note = T.el('details', 'absence-note');
     // The absence contract is not deferrable: the findings stand OPEN, and
@@ -908,7 +919,7 @@
         // OPTIONAL MEANS ITS FAILURE IS NOT THE PAGE'S. Unguarded, a transport
         // fault here took down the whole bootstrap and blamed the catena index.
         cached(paragraphFiles, 'structure/paragraphs/index.json', ABSENT)
-          .catch(() => 'unreadable')
+          .then(seen, () => 'unreadable')
       ]);
     } catch (error) {
       startFailed('The catena index could not be loaded: ' + (error.message || error));
