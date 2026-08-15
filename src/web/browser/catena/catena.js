@@ -12,7 +12,7 @@
   const M = window.CatenaModel;
   const textNode = (said) => document.createTextNode(said);
   // The typed boundary — asked, and explained, in `catena-model.js`.
-  const { sound, list, bag, say, whole, tongue } = M;
+  const { sound, bag } = M;
 
   const { joinNames, voicePhrase, voiceLabel } = M;
   M.useLanguageNames(T.languageName);
@@ -33,6 +33,11 @@
 
   let index = null;
   let bibles = [];
+  // The three roots an address is judged against, read once; `whole` is
+  // whether each could be read entire. `M.canonRoot` says why that matters.
+  let canon = { books: [], whole: false };
+  let voices = { keys: [], whole: false };
+  let editions = { bibles: [], whole: false };
   const chapterFiles = new Map();
   const fragmentTexts = new Map();
   const paragraphFiles = new Map();
@@ -48,7 +53,11 @@
 
   /* --------------------------------------------------------------- data */
 
-  function canonEntry(token) { return M.bookOf(index.canon, token); }
+  // Off the root read at startup: one reading of the canon, one answer.
+  function canonEntry(token) {
+    const wanted = sound(token);
+    return canon.books.find((one) => one.token === wanted) || null;
+  }
 
   // One promise per path. A 404 is an ANSWER, kept as `absent`; any
   // other failure is EVICTED, so a retry — or a reload — really asks again.
@@ -79,9 +88,11 @@
   // a chapter that runs on has no file, so the 404 is the answer. An
   // unstatable path is not requested.
   function chapterParagraphs(bible, token, chapter) {
-    const book = canonEntry(token);
-    const path = book && M.paragraphPath(paragraphs, bible.id, book.path, chapter);
-    return path ? cached(paragraphFiles, path, null) : Promise.resolve(null);
+    const path = M.paragraphPath(paragraphs, bible.id, bag(canonEntry(token)).path, chapter);
+    // `null` is the layer ROOT unreadable, not the 404 that means this
+    // chapter runs on; carried in the route's own `unfetched`.
+    return path === null ? Promise.resolve({ unfetched: true })
+      : path ? cached(paragraphFiles, path, null) : Promise.resolve(null);
   }
 
   // One fragment's prose — keyed by the path the SPINE gave, never
@@ -101,11 +112,14 @@
       container.appendChild(section);
       return;
     }
-    // Text that arrived unreadable is not a chapter with no verses.
-    const lines = M.chapterLines(result.verses, marks && marks.breaks);
+    // Unreadable text is not a chapter with no verses, and an unreadable
+    // paragraph record is not an edition that opens none here. The model
+    // draws both distinctions; the page only states them.
+    const read = M.chapterReading(result.verses, marks);
+    const lines = read.lines;
     if (!lines.length) {
       section.appendChild(T.notice(book.name + ' ' + chapter +
-        (Object.keys(bag(result.verses)).length
+        (read.versesUnread
           ? ' arrived in a form this page cannot read.'
           : ' carries no verses.')));
       container.appendChild(section);
@@ -164,8 +178,11 @@
         T.el('p', 'paragraph-note', 'Paragraphs: ' + parts.join('; ') + '.'));
     } else {
       holder.appendChild(T.el('p', 'paragraph-note',
-        'No paragraph division is held for this chapter in this edition, so it ' +
-          'runs on. Another edition’s paragraphs are not borrowed for it.'));
+        read.marksUnread
+          ? 'The paragraph record for this chapter in this edition could not be ' +
+              'read, so whether it divides the chapter is not established here.'
+          : 'No paragraph division is held for this chapter in this edition, so it ' +
+              'runs on. Another edition’s paragraphs are not borrowed for it.'));
     }
     section.appendChild(holder);
     container.appendChild(section);
@@ -192,17 +209,18 @@
     const details = T.el('details', 'fragment-body');
 
     const head = T.el('summary', 'fragment-head');
-    head.appendChild(T.el('span', 'fragment-author', sound(fragment.author)));
-    head.appendChild(T.el('span', 'fragment-work', sound(fragment.work)));
-    const when = say(fragment.date);
-    if (when) head.appendChild(T.el('span', 'fragment-date', when));
+    // EVERY FIELD HERE IS ALREADY TYPED: `M.chapterFragments` projects, and
+    // carries no field this function does not render.
+    head.appendChild(T.el('span', 'fragment-author', fragment.author));
+    head.appendChild(T.el('span', 'fragment-work', fragment.work));
+    if (fragment.date) head.appendChild(T.el('span', 'fragment-date', fragment.date));
     // The language, and WHOSE it is; an unestablished voice says only it.
     // Derived beside the other typed prose, so the two cannot drift.
-    const code = tongue(fragment.language);
+    const code = fragment.language;
     const named = M.languageChip(fragment);
     if (named) head.appendChild(T.el('span', 'fragment-language', named));
     // A TALLY IS A NUMBER THE RECORD WROTE, not one `Number()` can make.
-    const words = whole(fragment.text_words);
+    const words = fragment.text_words;
     if (words) {
       head.appendChild(T.el('span', 'fragment-length',
         words.toLocaleString() + ' words'));
@@ -228,18 +246,20 @@
     // block, and a broken note — said to be broken once — cannot claim the
     // channel and erase a valid note the other supply carries.
     let acknowledged = 0;
-    const acknowledge = (note) => {
-      if (acknowledged > 1 || note == null || note === '') return;
-      if (!sound(note) && acknowledged) return;
-      acknowledged = sound(note) ? 2 : 1;
+    // `awry`: something was recorded and is not text — kept apart from the
+    // note so a malformed supply still says so instead of reading as none.
+    const acknowledge = (note, awry) => {
+      if (acknowledged > 1 || !(note || awry)) return;
+      if (!note && acknowledged) return;
+      acknowledged = note ? 2 : 1;
       details.insertBefore(
-        sound(note)
+        note
           ? licence(note)
           : T.el('p', 'fragment-acknowledgement',
               'The recorded acknowledgement is malformed and not shown.'),
         text);
     };
-    acknowledge(fragment.acknowledgement);
+    acknowledge(fragment.acknowledgement, fragment.acknowledgement_broken);
 
     let asked = false;
     details.addEventListener('toggle', () => {
@@ -255,15 +275,23 @@
               'This fragment carries no text file, so nothing of it can be shown.';
             return;
           }
-          acknowledge(loaded.acknowledgement);
-          text.className = 'fragment-text';
-          // The payload's body fields are typed too: broken renders nothing.
-          text.textContent = sound(loaded.text);
-          if (sound(loaded.basis)) {
-            apparatus.appendChild(T.el('p', 'fragment-basis', 'Extent — ' + loaded.basis));
+          // PROJECTED, not read field by field: an unreadable payload used
+          // to render an empty paragraph and report nothing.
+          const body = M.textPayload(loaded);
+          acknowledge(body.acknowledgement, body.acknowledgement_broken);
+          if (body.unreadable) {
+            text.className = 'fragment-text missing';
+            text.textContent =
+              'The text of this fragment arrived in a form this page cannot read.';
+            return;
           }
-          if (sound(loaded.date_basis)) {
-            apparatus.appendChild(T.el('p', 'fragment-basis', 'Date — ' + loaded.date_basis));
+          text.className = 'fragment-text';
+          text.textContent = body.text;
+          if (body.basis) {
+            apparatus.appendChild(T.el('p', 'fragment-basis', 'Extent — ' + body.basis));
+          }
+          if (body.date_basis) {
+            apparatus.appendChild(T.el('p', 'fragment-basis', 'Date — ' + body.date_basis));
           }
         },
         (error) => {
@@ -281,15 +309,15 @@
 
     // Provenance, whether or not the text loads: every fact the spine carries.
     const source = T.el('p', 'fragment-source');
-    source.appendChild(textNode(sound(fragment.locator)));
+    source.appendChild(textNode(fragment.locator));
     const fact = (said) => {
-      if (!sound(said)) return;
+      if (!said) return;
       source.appendChild(T.el('span', 'sep'));
       source.appendChild(textNode(said));
     };
     fact(fragment.edition);
     fact(fragment.edition_published);
-    const hands = list(fragment.translators).map(sound).filter(Boolean).join(', ');
+    const hands = fragment.translators.join(', ');
     if (hands) fact('tr. ' + hands);
     fact(fragment.rights);
     fact(fragment.attribution);
@@ -298,12 +326,12 @@
     fact(fragment.rights_basis);
     // The weaker review state gets the word — printing `inspected` and
     // `verified` alike would claim a collation nobody made.
-    if (sound(fragment.review) && fragment.review !== 'verified') {
+    if (fragment.review && fragment.review !== 'verified') {
       source.appendChild(T.el('span', 'sep'));
       source.appendChild(T.el('span', 'state', fragment.review + ', not collated'));
     }
     // THE HREF IS PINNED by `test_browser_url_contract.py`.
-    if (sound(fragment.id)) {
+    if (fragment.id) {
       source.appendChild(T.el('span', 'sep'));
       const whole = T.el('a', 'fragment-whole', 'Open this passage in the Source Library');
       whole.href = '../sources/#passage=' + encodeURIComponent(fragment.id);
@@ -402,8 +430,8 @@
     // a heading — by-author grouping misfiled Augustine's 417 before 401.
     const groups = [];
     for (const fragment of held) {
-      const author = sound(fragment.author);
-      const date = say(fragment.date) || null;
+      const author = fragment.author;
+      const date = fragment.date || null;
       const last = groups[groups.length - 1];
       // Unnamed is not a name to group by: two unnamed fragments are not one man.
       if (author && last && last.author === author && last.date === date) {
@@ -556,7 +584,7 @@
   // same-number fallback dressed right.
   function renderRefusal(container, file, bible, book, chapter) {
     // A REFUSAL IS A RECORD THAT STATES ONE: `{}` refuses nothing at all.
-    const sentence = M.refusalNote(file, bible.id);
+    const sentence = M.refusalNote(file, bible.id, chapter);
     if (!sentence) return;
     const node = T.el('p', 'refusal');
     node.setAttribute('data-state', 'refusal');
@@ -573,53 +601,6 @@
   /* ------------------------------------ the cited state, failing closed
    * A value this page cannot honour is never traded for a default: the URL
    * keeps the reader's text; recovery is a link and the controls. */
-
-  function hashProblems(hash) {
-    const bad = [];
-    const flag = (key, value, note) => bad.push({ key, value, note });
-    // Multiplicity first: a recognized key cited twice is refused even when
-    // the citations agree; a stranger's key is not judged, and no write keeps
-    // one. (An undecodable percent-value stays literal, and fails.)
-    for (const key of ['book', 'chapter', 'bible', 'voice']) {
-      const all = hash.getAll(key);
-      if (all.length > 1) flag(key, all.join(', '), 'is cited more than once');
-    }
-    const token = hash.get('book') || '';
-    const entry = token ? canonEntry(token) : null;
-    if (token && !entry) flag('book', token, 'is not a book of this canon');
-    const chapter = hash.get('chapter') || '';
-    if (chapter) {
-      const numeric = /^[0-9]+$/.test(chapter) ? Number(chapter) : NaN;
-      // Ranged against the book the ADDRESS resolves to — never a
-      // leftover control — so every arrival judges alike.
-      const anchor = entry || canonEntry('Gen');
-      if (!(anchor ? numeric >= 1 && numeric <= anchor.chapters : numeric >= 1)) {
-        flag('chapter', chapter, anchor
-          ? 'is not a chapter of ' + anchor.name + ', which has ' + anchor.chapters
-          : 'is not a chapter number');
-      }
-    }
-    const bible = hash.get('bible') || '';
-    if (bible && !bibles.some((one) => one.id === bible)) {
-      flag('bible', bible, 'is not a published edition');
-    }
-    const voice = hash.get('voice') || '';
-    if (voice) {
-      // The WHOLE key, as a closed grammar: `original` alone, or
-      // `translation:` plus one lowercase code — no second colon, no
-      // whitespace, no suffix. `original:x` would self-contradict.
-      const parsed = M.parseVoiceKey(voice);
-      if (voice !== M.ORIGINAL &&
-          !(parsed && parsed.voice === M.TRANSLATION &&
-            M.voiceLanguage(parsed.language))) {
-        flag('voice', voice, 'is not a voice — “original”, or “translation:” plus a language');
-      // `list`, never `|| []`: a string answers `.includes` by substring.
-      } else if (!list(index.voices).includes(voice)) {
-        flag('voice', voice, 'is not a voice this corpus holds');
-      }
-    }
-    return bad;
-  }
 
   function errorSection(title) {
     const section = T.el('section', 'catena-error');
@@ -882,7 +863,7 @@
   // borrowed from a leftover selection.
   function seedControls(hash, broken) {
     bookSelect.value = (!broken.has('book') && hash.get('book')) || 'Gen';
-    if (!bookSelect.value) bookSelect.value = bag(M.canonBooks(index.canon)[0]).token;
+    if (!bookSelect.value) bookSelect.value = bag(canon.books[0]).token;
     fillChapters(bookSelect.value, broken.has('chapter') ? 1 : hash.get('chapter') || 1);
     bibleSelect.value =
       (!broken.has('bible') && hash.get('bible')) || (bibles[0] || {}).id || '';
@@ -895,7 +876,7 @@
     // EVERY ARRIVAL ENDS SOMEWHERE: the address work between the two
     // funnels had none, and threw here on every arrival alike.
     try {
-      const bad = hashProblems(next);
+      const bad = M.addressProblems(next, canon, editions, voices);
       seedControls(next, new Set(bad.map((one) => one.key)));
       if (bad.length) {
         // Fail closed: the address stays as written, no stale chapter under
@@ -967,14 +948,19 @@
       startFailed(manifest.message);
       return;
     }
-    bibles = M.bibles(manifest.bibles);
+    // ONE READING OF EACH ROOT; everything judging an address consults these.
+    editions = M.bibleRoot(manifest.bibles);
+    bibles = editions.bibles;
+    canon = M.canonRoot(index.canon);
+    voices = M.voiceRoot(index);
 
     // AND AN UNREADABLE ROOT IS NOT A BAD ADDRESS: judged against an empty
     // canon, a null index answered "Gen is not a book of this canon".
-    const books = M.canonBooks(index.canon);
-    if (!books.length) return startFailed('The catena index could not be read.');
+    if (!canon.books.length) return startFailed('The catena index could not be read.');
+    // An unreadable edition root is not a corpus published in no edition.
+    if (!bibles.length) return startFailed('The published editions could not be read.');
     T.fillSelect(bookSelect,
-      books.map((book) => ({ value: book.token, label: book.name })));
+      canon.books.map((book) => ({ value: book.token, label: book.name })));
     T.fillBibleSelect(bibleSelect, bibles);
     bookSelect.disabled = chapterSelect.disabled = bibleSelect.disabled = false;
 

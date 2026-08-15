@@ -256,6 +256,26 @@
   }
 
   /**
+   * A RELATIVE JSON FILE this page may request, or ''.
+   *
+   * V7, and the sink the V6 review proved was still open. `trail` states what a
+   * DIRECTORY of this data root looks like; nothing stated what a FILE looks
+   * like, so a `text_path` the record carried was handed to `fetch` on the
+   * strength of being truthy. A trail of `trail`'s own segments, one `ident`
+   * stem, and the `.json` suffix the corpus writes: an object, a list, a
+   * number, a flag, `''`, `'   '`, `'../../etc/passwd'`, `'/etc/passwd'`,
+   * `'%2e%2e%2fsecret.json'` and `'a b.json'` are each refused here rather than
+   * three guards later, because the guard that was three guards later was the
+   * one that did not exist.
+   */
+  function leaf(value) {
+    const said = sound(value);
+    return /^([a-z0-9]+([.-][a-z0-9]+)*\/)+[a-z0-9]+([.-][a-z0-9]+)*\.json$/.test(said)
+      ? said
+      : '';
+  }
+
+  /**
    * The members of a list that are RECORDS, and only those.
    *
    * A collection is validated member by member, because a malformed neighbour
@@ -351,55 +371,185 @@
   }
 
   /**
-   * A chapter file's fragments, each rejoined to what it shares with its edition.
+   * A chapter file's fragments, PROJECTED — one typed record each, or none.
+   *
+   * =======================================================================
+   * V7, AND THE CENTRE OF THE V6 REVIEW. This function used to SHALLOW-COPY.
+   * =======================================================================
    *
    * The spine writes the author, the work, the date, the language, the printing,
    * the translators and the rights ONCE per distinct set of them, under
    * `sources`, and gives every fragment the key of its set. Written per fragment
    * they cost more than everything else in the file put together — on Genesis 1,
    * 107 copies of ten fields — and every copy was a chance for two of them to
-   * disagree about one edition.
+   * disagree about one edition. So the join happens here, at read time, which is
+   * where `browser-core.js` says joins belong.
    *
-   * The join happens here and at read time, which is where `browser-core.js`
-   * says joins belong. `text_path` is composed the same way, from the file's own
-   * one statement of where fragment texts live, so the page never carries a
-   * directory layout the generator can change underneath it.
+   * V6 performed that join by copying every own property of the shared record
+   * and then every own property of the fragment into one object, and then
+   * clearing the two fields it knew were dangerous. The V6 review proved why
+   * that is the wrong shape and not merely an untidy one:
+   *
+   *   - `text_path` was OVERWRITTEN only when the composed form could be
+   *     built. A fragment whose id or whose file's prefix was unreadable kept
+   *     whatever `text_path` the RECORD carried, and `openFragment` handed it
+   *     to the real request sink. `'../../../etc/passwd'` is a string, and a
+   *     string was all the copy asked for.
+   *   - every OTHER unknown property came through untouched, so the set of
+   *     fields flowing downstream was whatever the data happened to hold. A
+   *     boundary that carries unknown fields forward is a boundary that has to
+   *     be re-established at every later sink, and V4, V5 and V6 each found
+   *     one more sink where it had not been.
+   *
+   * V7 projects instead. A fragment is read into a record of KNOWN fields, each
+   * one validated for the use the page actually puts it to, and nothing else
+   * crosses. There is no `joined[name] = raw[name]` here and there must not be
+   * one again: a field this page does not name is a field this page does not
+   * carry. Everything downstream — the rows, the tally, the voice filter, the
+   * chips, the provenance line, the Source Library link and the one request a
+   * fragment can cause — reads this record and never the raw one.
+   *
+   * A member that can name NOTHING of itself is not a thin fragment; it is not
+   * a fragment. `{}` rendered a blank `<li>` with an empty author, an empty
+   * work, a perpetual "Loading…" and no locator, and was still counted into "3
+   * fragments held here" — a claim of possession made by an empty object. Its
+   * valid siblings are untouched, which is the point of refusing it one member
+   * at a time rather than refusing the file.
    */
+
+  /** One fragment as this page may use it, or null. */
+  function fragmentRow(fragment, sources, prefix) {
+    // THE SOURCE KEY IS A PROPERTY LOOKUP, and V6's review proved a lookup is a
+    // coercion: `sources[["1"]]` is `sources["1"]`, so a one-member LIST
+    // silently took a real edition's author, rights and language for a fragment
+    // that named no edition at all — and `sources["constructor"]` is a
+    // function, which `bag` refuses but the raw index did not. Only a string
+    // that the record itself carries as its own key joins anything.
+    const key = fragment.source;
+    const shared = typeof key === 'string' && Object.hasOwn(sources, key)
+      ? bag(sources[key])
+      : {};
+    // The fragment's own statement wins over its edition's, as the fold
+    // intends — but only for a field this projection names.
+    const said = (name) =>
+      Object.hasOwn(fragment, name) ? fragment[name]
+        : Object.hasOwn(shared, name) ? shared[name] : undefined;
+
+    // THE ID BECOMES A FETCHED PATH AND A LINK. A truthy test let a record
+    // through and composed `…/[object Object].json`, which the page then
+    // requested; sound text alone still let arbitrary prose and a path-like
+    // string through.
+    const id = ident(said('id'));
+    const author = sound(said('author'));
+    const work = sound(said('work'));
+    // THE LEAST A FRAGMENT MUST SAY. Not "is an object": a fragment row is the
+    // page stating that this project holds this commentary here, and a record
+    // that can name neither the passage's own identity, nor its author, nor
+    // its work states no part of that.
+    if (!id && !author && !work) return null;
+
+    const extent = bag(said('extent'));
+    const voice = sound(said('voice'));
+    return {
+      id: id,
+      // COMPOSED, NEVER CARRIED. The file states once where its fragment texts
+      // live and the fragment states its own identity; the request is built
+      // from those two validated values and from nothing else. Where the file
+      // states no prefix — the sample corpus does not — a `text_path` the
+      // record itself carries may stand in, but only when it is a relative
+      // JSON file of this data root's own grammar AND its stem is this
+      // fragment's own validated id. So the path can address one thing: the
+      // text of the fragment that carried it. An injected path names some
+      // other file by definition, and is discarded here, before projection
+      // completes, rather than guarded at the fetch.
+      text_path: id
+        ? (prefix ? prefix + id + '.json'
+          : leaf(said('text_path')).endsWith('/' + id + '.json')
+            ? leaf(said('text_path'))
+            : '')
+        : '',
+      author: author,
+      work: work,
+      date: say(said('date')),
+      language: tongue(said('language')),
+      // The two the corpus derives, and there is no third; anything else
+      // establishes no voice and answers no selection.
+      voice: voice === ORIGINAL || voice === TRANSLATION ? voice : '',
+      // A TALLY IS A NUMBER THE RECORD WROTE, not one `Number()` can make.
+      text_words: whole(said('text_words')),
+      // The same four numbers the locus is printed from and the chapter
+      // membership is decided by, asked once so the two cannot disagree.
+      extent: {
+        token: bookToken(extent.token),
+        first_chapter: whole(extent.first_chapter),
+        last_chapter: whole(extent.last_chapter),
+        first_verse: whole(extent.first_verse),
+        last_verse: whole(extent.last_verse)
+      },
+      locator: sound(said('locator')),
+      edition: sound(said('edition')),
+      edition_published: sound(said('edition_published')),
+      translators: list(said('translators')).map(sound).filter(Boolean),
+      rights: sound(said('rights')),
+      attribution: sound(said('attribution')),
+      rights_basis: sound(said('rights_basis')),
+      review: sound(said('review')),
+      // The licence travels above the words, so the two states are kept apart:
+      // a note that is sound text, and a note that ARRIVED and is not text.
+      // Collapsing them printed nothing where the record had said something
+      // unreadable, and the page owes the reader the difference.
+      acknowledgement: sound(said('acknowledgement')),
+      acknowledgement_broken: broken(said('acknowledgement'))
+    };
+  }
+
+  /** Was something recorded here that this page cannot read as text? */
+  function broken(value) {
+    return value !== undefined && value !== null && value !== '' && !sound(value);
+  }
+
+  /** Every fragment of one chapter file that can be one, in the order given. */
   function chapterFragments(file) {
     const sources = bag(bag(file).sources);
     // `trail`, not `sound`: the prefix is the head of a URL this page requests.
     const prefix = trail(bag(file).text_prefix);
+    const rows = [];
     // `records` rather than `file.fragments || []`: a spine whose `fragments`
     // is a record or a string is a broken record, and mapping over it threw out
     // of the render tail — past `aria-busy`, past the tally, past the
     // announcement. Its MEMBERS are asked the same question, because a `null`
     // among them threw on the very next line and took every valid sibling with
     // it, and a scalar among them became a blank row that was still counted.
-    return records(bag(file).fragments).map(function (fragment) {
-      // THE SOURCE KEY IS A PROPERTY LOOKUP, and V6's review proved a
-      // lookup is a coercion: `sources[["1"]]` is `sources["1"]`, so a
-      // one-member LIST silently took a real edition's author, rights and
-      // language for a fragment that named no edition at all — and
-      // `sources["constructor"]` is a function, which `bag` refuses but the
-      // raw index did not. Only a string that the record itself carries as
-      // its own key joins anything.
-      const key = fragment.source;
-      const shared = typeof key === 'string' && Object.hasOwn(sources, key)
-        ? bag(sources[key])
-        : {};
-      const joined = {};
-      for (const name in shared) if (Object.hasOwn(shared, name)) joined[name] = shared[name];
-      for (const name in fragment) if (Object.hasOwn(fragment, name)) joined[name] = fragment[name];
-      // THE ID BECOMES A FETCHED PATH AND A LINK. A truthy test let a record
-      // through and composed `…/[object Object].json`, which the page then
-      // requested; sound text alone still let arbitrary prose and a path-like
-      // string through. A fragment whose id is not an identity of this corpus
-      // carries no text file and no cross-entrance link.
-      const id = ident(fragment.id);
-      joined.id = id;
-      if (id && prefix) joined.text_path = prefix + id + '.json';
-      return joined;
-    });
+    for (const fragment of records(bag(file).fragments)) {
+      const row = fragmentRow(fragment, sources, prefix);
+      if (row) rows.push(row);
+    }
+    return rows;
+  }
+
+  /**
+   * One fragment's own text payload, projected, or the fact that it is not one.
+   *
+   * V7. `sound(loaded.text)` normalized a record, a list and a number alike to
+   * `''`, so a payload that arrived unreadable rendered as an EMPTY paragraph
+   * and the route finished without ever saying the words could not be read.
+   * Nothing was shown and nothing was claimed, which reads to a reader exactly
+   * like a fragment whose text is blank.
+   */
+  function textPayload(loaded) {
+    const record = bag(loaded);
+    const text = sound(record.text);
+    return {
+      // A payload is a record that states its words. Anything else — a list, a
+      // string, a number, a record whose `text` is not text — is a file this
+      // page could not read, and it says so instead of showing nothing.
+      unreadable: record !== loaded || !text,
+      text: text,
+      basis: sound(record.basis),
+      date_basis: sound(record.date_basis),
+      acknowledgement: sound(record.acknowledgement),
+      acknowledgement_broken: broken(record.acknowledgement)
+    };
   }
 
   /* ------------------------------------------------------------------------
@@ -481,20 +631,48 @@
    */
   function chapterPath(index, token, chapter) {
     const wanted = bookToken(token);
+    // A BOOK THIS PAGE CANNOT NAME IS NOT A BOOK THE INDEX IS EMPTY OF. V6
+    // answered `''` here, which the page reads as recorded emptiness.
+    if (!wanted) return null;
+    const root = bag(index).held;
+    // AND NEITHER IS A HOLDINGS RECORD THAT IS NOT A LIST. `records()` turns a
+    // string, a number and a record alike into `[]`, so V6 read every one of
+    // them as "this index holds nothing in this book", of every book, and the
+    // page said `Nothing held here` over a root it had entirely failed to
+    // read. The distinction this whole function exists for is exactly that
+    // one: we read the corpus and found nothing, against we could not
+    // establish what the corpus holds.
+    if (!Array.isArray(root)) return null;
     // EVERY entry for this book, not the first object-shaped one. The V5
     // review proved a malformed same-token record masked a valid sibling
     // standing behind it: `find` stopped at the broken one and the whole book
     // became an unreadable record, though the index stated it perfectly well
     // one member later. Nothing here depends on which order they arrive in.
-    const held = wanted
-      ? records(bag(index).held).filter((entry) => bookToken(entry.token) === wanted)
-      : [];
+    //
+    // A member that cannot state WHICH BOOK it is about is not merely skipped:
+    // it might have been this one, so no emptiness can be drawn from the list
+    // that carries it.
+    const held = [];
+    let whole_root = true;
+    for (const entry of root) {
+      const record = bag(entry);
+      const named = record === entry ? bookToken(record.token) : '';
+      if (!named) whole_root = false;
+      else if (named === wanted) held.push(record);
+    }
     // The index holds nothing at all in this book, and says so of every
-    // chapter in it. That is a real, recorded emptiness.
-    if (!held.length) return '';
+    // chapter in it. That is a real, recorded emptiness — and only where every
+    // member of the list could be read.
+    if (!held.length) return whole_root ? '' : null;
     const number = whole(chapter);
     if (number === null) return null;
-    const digits = whole(bag(index).chapter_digits) || 1;
+    // A DIGIT WIDTH NOBODY CAN READ COMPOSES THE WRONG PATH. V6 fell back to
+    // 1, so a malformed `chapter_digits` sent a real request for a file that
+    // cannot exist and reported the 404 as a broken record. Absent is the
+    // documented default; present and unreadable is an unreadable index.
+    const stated = bag(index).chapter_digits;
+    if (stated !== undefined && whole(stated) === null) return null;
+    const digits = whole(stated) || 1;
     // '' only if some entry could be read and truthfully recorded no chapter
     // here; `null` if none could be read at all. An absence is a claim, so it
     // is drawn only from a record that states one.
@@ -518,18 +696,33 @@
   }
 
   /**
-   * Where this edition opens paragraphs in one chapter, or `''`.
+   * Where this edition opens paragraphs in one chapter: its path, `''` where
+   * this edition publishes no such layer, or `null` where the layer root
+   * cannot be read at all.
    *
-   * `''` is not a claim: the layer is the edition's own, and a chapter that
-   * runs on has no file. What it does mean is that no request is made — a
-   * malformed edition record or book path never becomes a fetched URL.
+   * `''` is not a claim about the chapter: the layer is the EDITION's own, and
+   * an edition that publishes none of it leaves every chapter running on,
+   * truthfully. What it does mean is that no request is made — a malformed
+   * edition record or book path never becomes a fetched URL.
+   *
+   * V7 adds the third answer for the reason `chapterPath` has one. The V6
+   * review proved that a layer root arriving as a string, a list or a number
+   * came through `bag()` as `{}` and then out of here as `''`, and the page
+   * printed "No paragraph division is held for this chapter in this edition"
+   * — a claim about how an edition sets its text, drawn from a file nobody
+   * could read.
    */
   function paragraphPath(layer, edition, bookPath, chapter) {
+    // A layer that was never fetched, or answered 404, is no layer. That is
+    // the absence the page may speak from.
+    if (layer === null || layer === undefined) return '';
     const index = bag(layer);
+    if (index !== layer) return null;
     // The EDITION KEY is a property lookup again, so it is an identity this
     // corpus issued or it is nothing: `editions[["douay-rheims"]]` resolved a
     // real layer for a value that named no edition.
     const editions = bag(index.editions);
+    if (index.editions !== undefined && editions !== index.editions) return null;
     const key = ident(edition);
     const prefix = key && Object.hasOwn(editions, key)
       ? trail(bag(editions[key]).path)
@@ -583,6 +776,56 @@
     return lines.sort((a, b) => a.number - b.number);
   }
 
+  /**
+   * One chapter of Scripture, read: its lines, and what could not be read.
+   *
+   * V7, and the two false claims the V6 review found on this seam. Both come
+   * from the same mistake — reading the ABSENCE OF A READABLE VALUE as a
+   * recorded fact about the edition.
+   *
+   *   `versesUnread`  The page distinguished "carries no verses" from "arrived
+   *                   in a form this page cannot read" by counting the keys of
+   *                   `bag(verses)`, which is `{}` for a list, a string and a
+   *                   number alike — so a chapter payload whose `verses` was a
+   *                   LIST was reported to the reader as a chapter of
+   *                   Scripture that has no verses in it. `loadChapter` admits
+   *                   an array because `typeof [] === 'object'`, and that
+   *                   function belongs to the shared shell, so the distinction
+   *                   is drawn here.
+   *
+   *   `marksUnread`   A paragraph file that arrived unreadable — a string, a
+   *                   list, or a record whose `breaks` is not a record —
+   *                   produced no marks, and no marks was printed as "No
+   *                   paragraph division is held for this chapter in this
+   *                   edition, so it runs on". That is a claim about how the
+   *                   edition sets its text. `null` — the 404 that means the
+   *                   chapter genuinely runs on — is not unread, and is the
+   *                   one case that may speak.
+   */
+  function chapterReading(verses, marks) {
+    const said = bag(verses);
+    const layer = bag(marks);
+    const readable = said === verses;
+    const lines = chapterLines(verses, layer.breaks);
+    const breaks = bag(layer.breaks);
+    return {
+      lines: lines,
+      // Not a record, or a record whose keys yielded no line it could read.
+      // A record with no keys at all is the edition recording no verse here,
+      // which is a fact about the edition and stays sayable.
+      versesUnread: !readable ||
+        (!lines.length && Object.keys(said).length > 0),
+      // `unfetched` is the route's own word for a record that was expected
+      // and would not come — the same one `chapterFile` answers with for the
+      // spine — and the paragraph ROOT arriving unreadable is carried here in
+      // it. A 404 is `null`, and means the chapter genuinely runs on.
+      marksUnread: !!layer.unfetched ||
+        (marks !== null && marks !== undefined &&
+          (layer !== marks ||
+            (layer.breaks !== undefined && breaks !== layer.breaks)))
+    };
+  }
+
   /* ------------------------------------------------------------------------
    * Why a work standing here is not held in the asked-for language
    *
@@ -623,6 +866,42 @@
    * beside it, and a malformed member of the recorded list is passed over
    * rather than allowed to stand in for one.
    */
+  /**
+   * One recorded absence as this page may reason from it, or null.
+   *
+   * V7. `records()` asked whether a member was an object and `tongue()` asked
+   * whether it named a language; between them `{language: 'en'}` was an
+   * absence record, and a hollow object took a real work's selection slot and
+   * spoke for it. An absence is a claim about somebody's property rights or
+   * about what this project could find, so a member states a claim or it
+   * states nothing.
+   *
+   * What a member must state is the language it is about and one of the four
+   * closed findings — `scripts/_catena.py` writes no other, and a fifth answer
+   * has to be argued for rather than typed. The REASON is deliberately not
+   * required, though the generator requires it of its own rows: V6 established
+   * that `in-copyright` is a fact about the law and survives a malformed
+   * reason standing beside it, the V6 review did not disturb that, and V7 does
+   * not reopen it. What the reason may no longer do is speak for a row whose
+   * finding could not be read.
+   */
+  function absenceMember(entry, wanted) {
+    const record = bag(entry);
+    if (tongue(record.language) !== wanted) return null;
+    const finding = sound(record.finding);
+    if (!Object.hasOwn(FINDINGS, finding)) return null;
+    return {
+      finding: finding,
+      reason: sound(record.reason),
+      // `partial` IS PROSE OR IT IS NOTHING. The contract writes it as a
+      // whitespace-collapsed string and omits it when empty, so an object, a
+      // list, a number, a flag and a null are each a malformed value and not a
+      // rights statement to be coerced into one. It is read here, beside the
+      // finding it can only refine, and never on its own.
+      partial: sound(record.partial)
+    };
+  }
+
   function absenceRows(index, file, language) {
     const wanted = tongue(language);
     const recorded = bag(bag(index).absences);
@@ -638,8 +917,31 @@
       // as for the record.
       const workId = ident(source.work_id);
       if (!workId || named.includes(workId) || !Object.hasOwn(recorded, workId)) continue;
-      const same = records(recorded[workId])
-        .filter((one) => tongue(one.language) === wanted);
+      // THE SOURCE IS VALIDATED BEFORE IT CLAIMS THE SLOT. V6 deduplicated on
+      // `work_id` first and read the author and the work afterwards, so a
+      // source stating neither took the row for that work and rendered it
+      // blank — an absence note about a work the page could not name — while
+      // the valid sibling standing behind it, carrying the same work id and
+      // both its names, was skipped as a duplicate.
+      const author = sound(source.author);
+      const work = sound(source.work);
+      if (!author && !work) continue;
+      // TWO QUESTIONS, NOT ONE. `same` is the members that are about this
+      // work in this language at all — the ground for the row existing. `said`
+      // is the members that state a claim the page may repeat — the ground for
+      // anything the row says. V6 asked only the first and then spoke from
+      // whatever it had; a record naming the language and nothing else was
+      // enough to put its prose on the page. A member that is not a record, or
+      // names no language, is neither, so `{}`, a scalar and a null make no
+      // row and take no slot.
+      const same = [];
+      const said = [];
+      for (const one of records(recorded[workId])) {
+        if (tongue(one.language) !== wanted) continue;
+        same.push(one);
+        const member = absenceMember(one, wanted);
+        if (member) said.push(member);
+      }
       if (!same.length) continue;
       named.push(workId);
       // A SET, NOT A SEQUENCE. The V5 review proved selection was
@@ -654,46 +956,52 @@
       // declines rather than choosing the stronger — an absence must never be
       // resolved by picking the harsher of two claims.
       const stated = [];
-      for (const one of same) {
-        const said = sound(one.finding);
-        if (Object.hasOwn(FINDINGS, said) && !stated.includes(said)) stated.push(said);
-      }
+      for (const one of said) if (!stated.includes(one.finding)) stated.push(one.finding);
       const finding = stated.length === 1 ? stated[0] : '';
       // Which record's PROSE stands for the row, chosen without reference to
-      // position: among the records that carry the chosen finding (or, where
-      // none is recognized, among all of them) the one that states the most,
-      // and where two state as much, the one that sorts first. The same set
-      // yields the same row in any order.
-      const carriers = finding
-        ? same.filter((one) => sound(one.finding) === finding)
-        : same;
-      const rank = (one) => sound(one.reason) + '\u0000' + sound(one.partial);
+      // position: among the records that carry the chosen finding, the one
+      // that states the most, and where two state as much, the one that sorts
+      // first. The same set yields the same row in any order.
+      //
+      // WHERE THERE IS NO ONE FINDING THERE ARE NO CARRIERS, AND SO NO PROSE.
+      // V6 fell back to ranking every same-language record, so a page that had
+      // just declined to state a finding went on to print one record's
+      // `reason` beneath the declining — the rights prose of one side of a
+      // contradiction, offered as the reason this work is not held in this
+      // language, and chosen because it happened to be the longest. A
+      // contradiction is the record failing to say one thing; the page says
+      // nothing rather than picking a side, and it must not resolve one by
+      // length, by order, or by taking the harsher of the two claims.
+      const carriers = finding ? said.filter((one) => one.finding === finding) : [];
+      const rank = (one) => one.reason + '\u0000' + one.partial;
       const found = carriers.slice().sort(function (a, b) {
         const x = rank(a);
         const y = rank(b);
         if (x.length !== y.length) return y.length - x.length;
         return x < y ? -1 : x > y ? 1 : 0;
-      })[0] || {};
+      })[0] || { reason: '', partial: '' };
       rows.push({
-        author: sound(source.author),
-        work: sound(source.work),
+        author: author,
+        work: work,
         finding: finding,
         // The one value the page's sentences are built from. '' is not a
         // default: it is the page declining to speak for a record it cannot
         // read, and a row holding it enters no count.
         stands: finding ? FINDINGS[finding] : '',
-        reason: sound(found.reason),
+        reason: found.reason,
         // `partial` REFINES A FINDING AND NEVER ESTABLISHES ONE. The V5
         // review proved a stray `partial` string on an unknown or
         // `not-surveyed` row was still printed as "Partly public domain" — a
         // rights claim about somebody's text, manufactured out of a field
         // beside a finding that supports no such thing. Only the finding that
-        // says it in its own name licenses the words.
-        partial: finding === 'partial-public-domain' ? sound(found.partial) : '',
+        // says it in its own name licenses the words, and only from a record
+        // that carries that finding and states its `partial` as the prose the
+        // contract writes.
+        partial: finding === 'partial-public-domain' ? found.partial : '',
         // The words themselves, derived beside the value that licenses them:
         // a partial not yet taken is an offer, not an excuse.
-        offer: finding === 'partial-public-domain' && sound(found.partial)
-          ? 'Partly public domain — ' + sound(found.partial)
+        offer: finding === 'partial-public-domain' && found.partial
+          ? 'Partly public domain — ' + found.partial
           : ''
       });
     }
@@ -792,12 +1100,78 @@
 
   /** Every edition the manifest states, in the order it states them. */
   function bibles(value) {
+    return bibleRoot(value).bibles;
+  }
+
+  /* ------------------------------------------------------------------------
+   * The three roots an address is judged against, and whether each was read whole
+   *
+   * V7, and the V6 review's semantic-integrity blocker. Every one of these
+   * collections is read member by member, and a member that cannot be read is
+   * left out so its valid siblings still serve the reader. That is right, and
+   * on its own it is how a parse failure became a claim about the corpus:
+   *
+   *   an unreadable canon member   -> "book=Gen is not a book of this canon"
+   *   an unreadable edition record -> "bible=douay-rheims is not a published edition"
+   *   an unreadable voices list    -> "voice=translation:en is not a voice this corpus holds"
+   *
+   * Each of those is a negative about what this project holds, drawn from a
+   * value nobody could read, and handed to the reader as a fault in the
+   * address they typed. `whole` is the difference between the two sentences
+   * the page is allowed: the corpus does not have this, and this page could
+   * not establish what the corpus has. The books, editions and voices that
+   * WERE read are returned beside it, so nothing readable is withheld to
+   * punish a malformed neighbour.
+   * --------------------------------------------------------------------- */
+
+  /** The editions the manifest states, and whether it stated them all. */
+  function bibleRoot(value) {
     const out = [];
-    for (const one of records(value)) {
+    let read = Array.isArray(value);
+    for (const one of list(value)) {
       const record = bibleRecord(one);
       if (record) out.push(record);
+      else read = false;
     }
-    return out;
+    return { bibles: out, whole: read };
+  }
+
+  /** The canon this page can state, and whether it could state all of it. */
+  function canonRoot(canon) {
+    const books = [];
+    let read = Array.isArray(canon);
+    for (const entry of list(canon)) {
+      const book = canonBook(entry);
+      if (book) books.push(book);
+      else read = false;
+    }
+    return { books: books, whole: read };
+  }
+
+  /**
+   * The voice keys this corpus states holding something in, and whether the
+   * list could be read whole.
+   *
+   * The members are held to the published route grammar `voiceKey` composes,
+   * because a member outside it names no offer this page could ever match an
+   * address against — and a list carrying one cannot be the ground for saying
+   * an address names a voice the corpus does not hold.
+   */
+  function voiceRoot(index) {
+    const stated = bag(index).voices;
+    const keys = [];
+    let read = Array.isArray(stated);
+    for (const one of list(stated)) {
+      const key = sound(one);
+      const parsed = parseVoiceKey(key);
+      if (key === ORIGINAL ||
+          (parsed && parsed.voice === TRANSLATION && voiceLanguage(parsed.language))) {
+        keys.push(key);
+      } else {
+        read = false;
+      }
+    }
+    return { keys: keys, whole: read };
   }
 
   /**
@@ -853,21 +1227,41 @@
     return rows;
   }
 
+  // The two claims a recorded refusal may make, closed at
+  // `scripts/_projection.py` so that a third has to be argued for rather than
+  // typed: `displaced` — the numbers agree and the text boundary does not;
+  // `unrecorded` — known to diverge, correspondence not established.
+  const REFUSAL_KINDS = ['displaced', 'unrecorded'];
+
   /**
-   * The sentence one edition's recorded refusal opens with, or ''.
+   * The sentence one edition's recorded refusal of THIS chapter opens with, or ''.
    *
    * A refusal is Rule 4: where the projection refuses, the page refuses. It is
-   * therefore a claim the RECORD makes, and the record makes it by stating why
-   * — the note is the whole of what this page can say about a boundary it will
-   * not guess at. A refusal list holding no member that states one refuses
-   * nothing, and the first member that does states it, whatever position the
-   * malformed members occupy around it.
+   * therefore a claim the RECORD makes, and "Boundary not established" is a
+   * claim about Scripture's own numbering — the strongest thing this page says
+   * about a text it did not write.
+   *
+   * V6 required the note alone, and the V6 review proved that too little: a
+   * record carrying nothing but a nonempty `note` established the boundary
+   * claim without the closed `kind` the source contract writes and without
+   * saying which locus it refuses. So it could be a note about anything, filed
+   * under any chapter, and the page would print it as this chapter's refusal.
+   *
+   * V7 asks for the whole typed record: the kind the projection actually
+   * recorded, the chapter it stands on — matched against the chapter being
+   * read, not merely present — and the note, which remains the whole of what
+   * this page may say about a boundary it will not guess at. A list holding no
+   * member that states all three refuses nothing, and the first member that
+   * does states it, whatever position the malformed members occupy around it.
    */
-  function refusalNote(file, edition) {
+  function refusalNote(file, edition, chapter) {
     const key = ident(edition);
     const held = bag(bag(file).refusals);
-    if (!key || !Object.hasOwn(held, key)) return '';
+    const here = whole(chapter);
+    if (!key || here === null || !Object.hasOwn(held, key)) return '';
     for (const one of records(held[key])) {
+      if (!REFUSAL_KINDS.includes(sound(one.kind))) continue;
+      if (whole(one.chapter) !== here) continue;
       const note = sound(one.note);
       if (note) return note.charAt(0).toUpperCase() + note.slice(1) + '.';
     }
@@ -949,6 +1343,92 @@
     });
   }
 
+  /* ------------------------------------------------------------------------
+   * The cited state, judged
+   *
+   * A value the page cannot honour is never traded for a default: the URL
+   * keeps the reader's text and recovery is a link and the controls. WHY the
+   * address cannot be used is prose about this corpus, and V7 moves the
+   * judgment here for the same reason every other derivation moved here —
+   * the sentence and the value that licenses it must not be able to drift
+   * apart, and the page carries a byte ceiling that this argument will not
+   * fit under.
+   *
+   * The V6 review's blocker is the third clause of each negative. "…is not a
+   * book of this canon", "…is not a published edition" and "…is not a voice
+   * this corpus holds" are three claims about what this project has, and V6
+   * made all three out of a failure to read the root they were checked
+   * against: a canon whose members would not parse, an edition manifest read
+   * as `[]`, a `voices` value that was not a list. The reader was then handed
+   * a claim about the corpus dressed as a fault in the address they typed.
+   *
+   * So each is spoken only from a root that could be read WHOLE, and where it
+   * could not the page says the thing it can actually support — that it could
+   * not match the value — while the address still fails closed exactly as
+   * before. Failing closed was never the defect; the sentence was.
+   * --------------------------------------------------------------------- */
+
+  const UNMATCHED =
+    'is not a value this page could match; the record it would be matched ' +
+    'against could not be read whole';
+
+  /**
+   * Everything wrong with one cited address, in the order the page states it.
+   *
+   * `canon`, `editions` and `voices` are the roots as `canonRoot`,
+   * `bibleRoot` and `voiceRoot` read them; `hash` is any `URLSearchParams`.
+   */
+  function addressProblems(hash, canon, editions, voices) {
+    const bad = [];
+    const flag = (key, value, note) => bad.push({ key, value, note });
+    const said = (whole, negative) => (whole ? negative : UNMATCHED);
+    // Multiplicity first: a recognized key cited twice is refused even when
+    // the citations agree; a stranger's key is not judged, and no write keeps
+    // one. (An undecodable percent-value stays literal, and fails.)
+    for (const key of ['book', 'chapter', 'bible', 'voice']) {
+      const all = hash.getAll(key);
+      if (all.length > 1) flag(key, all.join(', '), 'is cited more than once');
+    }
+    const books = list(bag(canon).books);
+    const named = (token) => books.find((one) => one.token === sound(token)) || null;
+    const token = hash.get('book') || '';
+    const entry = token ? named(token) : null;
+    if (token && !entry) flag('book', token, said(bag(canon).whole, 'is not a book of this canon'));
+    const chapter = hash.get('chapter') || '';
+    if (chapter) {
+      const numeric = /^[0-9]+$/.test(chapter) ? Number(chapter) : NaN;
+      // Ranged against the book the ADDRESS resolves to — never a
+      // leftover control — so every arrival judges alike.
+      const anchor = entry || named('Gen');
+      if (!(anchor ? numeric >= 1 && numeric <= anchor.chapters : numeric >= 1)) {
+        flag('chapter', chapter, anchor
+          ? 'is not a chapter of ' + anchor.name + ', which has ' + anchor.chapters
+          : 'is not a chapter number');
+      }
+    }
+    const bible = hash.get('bible') || '';
+    if (bible && !list(bag(editions).bibles).some((one) => one.id === bible)) {
+      flag('bible', bible, said(bag(editions).whole, 'is not a published edition'));
+    }
+    const voice = hash.get('voice') || '';
+    if (voice) {
+      // The WHOLE key, as a closed grammar: `original` alone, or
+      // `translation:` plus one lowercase code — no second colon, no
+      // whitespace, no suffix. `original:x` would self-contradict.
+      const parsed = parseVoiceKey(voice);
+      if (voice !== ORIGINAL &&
+          !(parsed && parsed.voice === TRANSLATION && voiceLanguage(parsed.language))) {
+        flag('voice', voice, 'is not a voice — “original”, or “translation:” plus a language');
+      // The keys the ROOT states, read as keys. `list(index.voices)` answered
+      // `[]` for a voices value nobody could read, and every address was then
+      // told this corpus holds no such voice.
+      } else if (!list(bag(voices).keys).includes(voice)) {
+        flag('voice', voice, said(bag(voices).whole, 'is not a voice this corpus holds'));
+      }
+    }
+    return bad;
+  }
+
   /**
    * A selection key read back as the voice it names.
    *
@@ -989,12 +1469,15 @@
     touchesChapter: touchesChapter,
     fragmentsOnChapter: fragmentsOnChapter,
     chapterFragments: chapterFragments,
+    fragmentRow: fragmentRow,
+    textPayload: textPayload,
     formatExtent: formatExtent,
     spansChapters: spansChapters,
     chapterVoices: chapterVoices,
     matchesVoice: matchesVoice,
     voiceKey: voiceKey,
     parseVoiceKey: parseVoiceKey,
+    addressProblems: addressProblems,
     joinNames: joinNames,
     useLanguageNames: useLanguageNames,
     voicePhrase: voicePhrase,
@@ -1007,20 +1490,26 @@
     chapterPath: chapterPath,
     paragraphPath: paragraphPath,
     chapterLines: chapterLines,
+    chapterReading: chapterReading,
     absenceRows: absenceRows,
     absenceCount: absenceCount,
     absenceSummary: absenceSummary,
     bibleRecord: bibleRecord,
     bibles: bibles,
+    bibleRoot: bibleRoot,
+    canonRoot: canonRoot,
+    voiceRoot: voiceRoot,
     leadRow: leadRow,
     leadRows: leadRows,
     blockedRow: blockedRow,
     blockedRows: blockedRows,
     refusalNote: refusalNote,
+    absenceMember: absenceMember,
     LANGUAGE_NAMES: LANGUAGE_NAMES,
     FINDINGS: FINDINGS,
     TESTAMENTS: TESTAMENTS,
     BREAK_KINDS: BREAK_KINDS,
+    REFUSAL_KINDS: REFUSAL_KINDS,
     sound: sound,
     list: list,
     bag: bag,
@@ -1032,6 +1521,7 @@
     ident: ident,
     bookToken: bookToken,
     trail: trail,
+    leaf: leaf,
     records: records,
     ORIGINAL: ORIGINAL,
     TRANSLATION: TRANSLATION

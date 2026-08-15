@@ -667,8 +667,18 @@ def absent_by_work(root: Path = ROOT) -> dict[str, list[dict[str, str]]]:
             "finding": str(row.get("finding") or ""),
             "reason": " ".join(str(row.get("reason") or "").split()),
         }
-        partial = " ".join(str(row.get("partial") or "").split())
-        if partial:
+        # `partial` IS PROSE OR IT IS NOTHING, and it is prose only under the
+        # one finding that can license it. `str(row.get("partial") or "")`
+        # coerced a mapping into "{'a': 1}" and a number into "1893", and the
+        # browser then rendered whichever it got as "Partly public domain —
+        # …" — a rights claim about somebody's text, composed out of a value
+        # that was never a sentence. `_absence_errors` refuses both faults at
+        # build time; this refuses to emit them even if that check is ever
+        # loosened, because the page downstream cannot tell a coerced string
+        # from a written one.
+        value = row.get("partial")
+        partial = " ".join(value.split()) if isinstance(value, str) else ""
+        if partial and str(row.get("finding") or "") == "partial-public-domain":
             entry["partial"] = partial
         served.setdefault(work_id, []).append(entry)
     return served
@@ -714,8 +724,27 @@ def _absence_errors(root: Path, sources: Sources, standing: set[str]) -> list[st
                 f"{label} finding {finding!r} is not one of "
                 f"{', '.join(sorted(ABSENCE_FINDINGS))}"
             )
+        # The two prose fields are prose. A mapping, a list, a number or a
+        # flag here is a malformed record and not a sentence to be coerced
+        # into one: `str()` accepts every one of them, and what the reader
+        # then meets is a rights statement nobody wrote.
+        for name in ("reason", "partial"):
+            if name in row and not isinstance(row[name], (str, type(None))):
+                errors.append(
+                    f"{label} records a {name} that is not text "
+                    f"({type(row[name]).__name__}); it would be coerced into one"
+                )
         if finding != "not-surveyed" and not str(row.get("reason") or "").strip():
             errors.append(f"{label} records no reason, so the absence explains nothing")
+        # `partial` REFINES A FINDING AND NEVER ESTABLISHES ONE. Detached from
+        # `partial-public-domain` it is inert in the page and misleading here,
+        # so it is refused where it stands rather than silently dropped.
+        if (isinstance(row.get("partial"), str) and row["partial"].strip()
+                and finding != "partial-public-domain"):
+            errors.append(
+                f"{label} records a partial beside {finding!r}; only "
+                f"partial-public-domain licenses an offer"
+            )
         if not str(row.get("checked_on") or "").strip():
             errors.append(f"{label} records no checked_on date")
         if not (row.get("aliases_searched") or []) and finding != "not-surveyed":

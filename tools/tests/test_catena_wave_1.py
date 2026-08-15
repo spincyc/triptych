@@ -152,7 +152,19 @@ NODE = shutil.which("node")
 # The page is SMALLER than V5 left it (12,993 against 12,990 is the whole
 # file; the composition itself is 8,202 against 8,363, 161 bytes lighter),
 # because every derivation that moved out took its prose with it.
-MODEL_SHA256 = "adb61eb7849e192266e8bb34f7ce82fe0fcc2fb091a7baf2b0aca8e09a9bef24"
+# V7 moves once more, and this time the arithmetic left no choice at all:
+# `catena.js` finished V6 with SEVEN gzipped bytes under its whole-file
+# ceiling, and the V6 review's central finding — replace raw fragment copying
+# with an explicit typed projection — is not payable out of seven bytes in
+# any form. The typed projection, the payload projection, the chapter
+# reading, the three bootstrap roots and the whole address judgment are all
+# asked in the model now, and the page calls them. It is SMALLER than V6 left
+# it in both measures (12,746 against 12,993 whole; 7,841 against 8,202
+# stripped), because the raw reads it used to make and the guards it used to
+# repeat both went with them. The relocation's own cost is measured in the
+# durable records, where it is re-taken rather than going stale beside a
+# digest.
+MODEL_SHA256 = "ae8a316c95ee09e3da370cc25a34f176691bb1cf9c7914dc1e937233f150085d"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -980,6 +992,290 @@ V6_UNSAFE_PREFIX_FIXTURE = _fixture(dict(
     text_prefix="../../../etc/",
     fragments=[_voice_fragment(1, id="safe-first"), _voice_fragment(2, id="safe-last")]))
 
+# ==========================================================================
+# V7 §5 — `text_path`, and the REQUEST SINK it reached
+#
+# The V6 review proved this open, and proved it at `fetch`. `chapterFragments`
+# copied every raw property of a fragment forward and then overwrote
+# `text_path` only when BOTH the file's prefix and the fragment's id could be
+# read. Where either could not, the record's own `text_path` survived the
+# copy, `openFragment` handed it to `T.loadJSON`, and the page requested it.
+#
+# Helper-level validation could not have caught that, because there was no
+# helper: the value never passed through one. So these fixtures are driven at
+# the real sink, by opening every fragment and reading `fetched`.
+
+V7_TEXT_PATH_FIXTURE = _fixture({
+    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+    "sources": {str(n): _voice_source(n) for n in range(1, 13)},
+    "fragments": [
+        _voice_fragment(1, id="path-valid"),
+        _voice_fragment(2, id="path-object", text_path={"a": "b"}),
+        _voice_fragment(3, id="path-array",
+                        text_path=["structure/catena/text/path-valid.json"]),
+        _voice_fragment(4, id="path-number", text_path=7),
+        _voice_fragment(5, id="path-null", text_path=None),
+        _voice_fragment(6, id="path-empty", text_path=""),
+        _voice_fragment(7, id="path-space", text_path="   "),
+        _voice_fragment(8, id="path-traversal", text_path="../../../etc/passwd.json"),
+        _voice_fragment(9, id="path-absolute", text_path="/etc/passwd.json"),
+        _voice_fragment(10, id="path-encoded", text_path="%2e%2e%2fsecret.json"),
+        _voice_fragment(11, id="path-boolean", text_path=True),
+        # THE V6 HOLE, EXACTLY AS THE REVIEW PROVED IT. The id is a record, so
+        # V6 composed nothing and left the record's own `text_path` standing,
+        # and the page then requested it. Its author still names it, so it is
+        # still a fragment and still opens.
+        _voice_fragment(12, id={"not": "an id"},
+                        text_path="../../../etc/shadow.json"),
+    ],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
+# The SAMPLE-CORPUS shape: a spine that states no `text_prefix`, so nothing can
+# be composed and a carried `text_path` is the only candidate there is. It is
+# accepted, and only when it is a relative JSON file of this data root's own
+# grammar whose stem is this fragment's own validated id — so the one thing it
+# can address is the text of the fragment that carried it.
+V7_TEXT_PATH_NO_PREFIX = _fixture({
+    "token": "Gen", "chapter": 1,
+    "sources": {str(n): _voice_source(n) for n in range(1, 11)},
+    "fragments": [
+        _voice_fragment(1, id="carried-valid",
+                        text_path="structure/catena/text/carried-valid.json"),
+        # Sound, relative, of the right grammar — and it names SOME OTHER
+        # file. A path that is not this fragment's text is not this fragment's
+        # text however well formed it is.
+        _voice_fragment(2, id="carried-other",
+                        text_path="structure/catena/text/somebody-else.json"),
+        _voice_fragment(3, id="carried-object", text_path={"a": "b"}),
+        _voice_fragment(4, id="carried-array",
+                        text_path=["structure/catena/text/carried-array.json"]),
+        _voice_fragment(5, id="carried-number", text_path=7),
+        _voice_fragment(6, id="carried-traversal",
+                        text_path="../../../etc/passwd.json"),
+        _voice_fragment(7, id="carried-absolute",
+                        text_path="/structure/catena/text/carried-absolute.json"),
+        _voice_fragment(8, id="carried-encoded",
+                        text_path="structure/%2e%2e/carried-encoded.json"),
+        _voice_fragment(9, id="carried-space", text_path="   "),
+        # A directory, not a file: `trail`'s grammar is not `leaf`'s.
+        _voice_fragment(10, id="carried-dir",
+                        text_path="structure/catena/text/"),
+    ],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
+# ==========================================================================
+# V7 §6 — a fragment that can name NOTHING of itself
+#
+# `{}` rendered an `<li class="fragment">` with an empty author, an empty
+# work, a perpetual "Loading…" and no locator, and was counted into "N
+# fragments held here" — a claim of possession made by an empty object. The
+# same six members are listed in both orders, because refusing a member must
+# not depend on where it stands.
+def _hollow_members(flip):
+    """valid A, {}, malformed, null, scalar, valid B — or the reverse."""
+    members = [
+        _voice_fragment(1, id="hollow-first"),
+        {},
+        # A record that IS a record and names nothing this page can use: no
+        # id, no author, no work. Its extent is readable, which is the point:
+        # a locus with nobody behind it is not a fragment held here.
+        {"extent": {"token": "Gen", "first_chapter": 1, "first_verse": 4,
+                    "last_chapter": 1, "last_verse": 4}, "locator": "4"},
+        None,
+        7,
+        _voice_fragment(2, id="hollow-last"),
+    ]
+    return list(reversed(members)) if flip else members
+
+
+def _hollow_fixture(flip):
+    return _fixture({
+        "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+        "sources": {"1": _voice_source(1), "2": _voice_source(2)},
+        "fragments": _hollow_members(flip),
+        "leads": [], "blocked": [], "refusals": {},
+    })
+
+
+# ==========================================================================
+# V7 §7 — an absence row about a work the record cannot name
+#
+# `absenceRows` deduplicated on `work_id` and read the author and the work
+# afterwards, so a source stating neither took the row for that work — a blank
+# `<li>` under a summary counting it as a work standing here — and the valid
+# sibling carrying the same work id and both its names was skipped behind it.
+V7_ABSENCE_SLOT_FIXTURE = _fixture({
+    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+    "sources": {
+        # The hollow source stands FIRST, which is what made it the winner.
+        "1": {"work_id": "typed.work1", "language": "la", "voice": "original",
+              "rights": "public-domain", "translators": [], "container": "",
+              "edition": "Edition 1", "edition_published": "1900", "date": 301},
+        "2": _voice_source(1),
+    },
+    "fragments": [_voice_fragment(1, source="1"), _voice_fragment(2, source="2")],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
+V7_ABSENCE_SLOT_INDEX = _fixture({"absences": {
+    "typed.work1": [{"language": "en", "finding": "none-published",
+                     "reason": "No English translation has been published."}],
+}})
+
+# The absence members themselves, hollow: a record naming no language is about
+# nothing, and a scalar and a null are not records at all. None of them may
+# make a row, take a slot, or enter a count.
+V7_ABSENCE_MEMBER_INDEX = _fixture({"absences": {
+    "typed.work1": [{}, None, 4, "not a record",
+                    {"language": "en", "finding": "in-copyright",
+                     "reason": "The only rendering is in copyright."}],
+    "typed.work2": [{}, None, 9],
+}})
+
+# ==========================================================================
+# V7 §8 — a refusal that states no locus
+#
+# "Boundary not established" is the strongest sentence this page says about a
+# text it did not write. V6 required only a nonempty `note`, so a note filed
+# under any chapter, carrying no recognized `kind`, established it.
+V7_REFUSAL_FIXTURE = _fixture({
+    "token": "Gen", "chapter": 2, "text_prefix": "structure/catena/text/",
+    "sources": {"1": _voice_source(1)},
+    "fragments": [_voice_fragment(1, id="refusal-sibling",
+                                  extent={"token": "Gen", "first_chapter": 2,
+                                          "first_verse": 1, "last_chapter": 2,
+                                          "last_verse": 1})],
+    "leads": [], "blocked": [],
+    "refusals": {"douay-rheims": [
+        # A note about ANOTHER chapter.
+        {"chapter": 1, "verse": None, "kind": "displaced",
+         "note": "a note about the chapter before this one"},
+        # A note with no kind the projection ever recorded.
+        {"chapter": 2, "verse": None, "note": "a note carrying no kind"},
+        # A kind that is not one of the two.
+        {"chapter": 2, "verse": None, "kind": "invented",
+         "note": "a note carrying a kind this projection never wrote"},
+        # A chapter that is not a number.
+        {"chapter": "2", "verse": None, "kind": "displaced",
+         "note": "a note whose chapter is text"},
+        # Hollow, and a note that is only whitespace.
+        {}, {"kind": "displaced", "chapter": 2, "note": "   "},
+    ]},
+})
+
+# The same chapter with ONE well-formed record among the malformed ones, last,
+# so a valid refusal is still found however the broken members are arranged.
+V7_REFUSAL_VALID = _fixture(dict(
+    V7_REFUSAL_FIXTURE,
+    refusals={"douay-rheims": list(
+        V7_REFUSAL_FIXTURE["refusals"]["douay-rheims"]) + [
+            {"chapter": 2, "verse": None, "kind": "displaced",
+             "note": "the numbering of this chapter is displaced in this edition"}]}))
+
+# ==========================================================================
+# V7 §10 — `partial`, and the rights prose it may license
+#
+# `partial` is prose or it is nothing: the generator writes it as a
+# whitespace-collapsed string and omits it when empty. Every form below is a
+# malformed value or a value detached from the one finding that can license
+# it, and none may reach "Partly public domain — …".
+V7_PARTIAL_INDEX = _fixture({"absences": {
+    "typed.work1": [{"language": "en", "finding": "partial-public-domain",
+                     "reason": "Some of it is out of copyright.",
+                     "partial": {"offer": "a record, not prose"}}],
+    "typed.work2": [{"language": "en", "finding": "partial-public-domain",
+                     "reason": "Some of it is out of copyright.",
+                     "partial": ["a", "list"]}],
+    "typed.work3": [{"language": "en", "finding": "partial-public-domain",
+                     "reason": "Some of it is out of copyright.",
+                     "partial": 1893}],
+    "typed.work4": [{"language": "en", "finding": "partial-public-domain",
+                     "reason": "Some of it is out of copyright.",
+                     "partial": True}],
+    "typed.work5": [{"language": "en", "finding": "partial-public-domain",
+                     "reason": "Some of it is out of copyright.",
+                     "partial": None}],
+}})
+
+# A `partial` that IS prose, attached to a parent that cannot license it, and
+# one attached to a contradiction — so the offer is refused by the parent's
+# state rather than by its own type.
+V7_PARTIAL_PARENT_INDEX = _fixture({"absences": {
+    "typed.work1": [{"language": "en", "finding": "in-copyright",
+                     "reason": "The only rendering is in copyright.",
+                     "partial": "an offer beside a closed finding"}],
+    "typed.work2": [{"language": "en", "partial": "an offer beside no finding"}],
+    "typed.work3": [
+        {"language": "en", "finding": "partial-public-domain",
+         "reason": "Some of it is out of copyright.",
+         "partial": "an offer on one side of a contradiction"},
+        {"language": "en", "finding": "none-published",
+         "reason": "No English translation has been published."}],
+    "typed.work4": [{"language": "en", "finding": "partial-public-domain",
+                     "reason": "Some of it is out of copyright.",
+                     "partial": "the offer that is genuinely licensed"}],
+    "typed.work5": [{"language": "en", "finding": "not-surveyed",
+                     "partial": "an offer beside an admission"}],
+}})
+
+# ==========================================================================
+# V7 §11 — a bootstrap root that cannot support the claim drawn from it
+#
+# "We read the corpus and found nothing" and "we could not establish what the
+# corpus holds" are not interchangeable, and every root below was answering
+# the first while meaning the second.
+
+# `held` is not a list at all: V6 read it as this index holding nothing in any
+# book, and said `Nothing held here` of every chapter.
+V7_HELD_NOT_A_LIST = _broken_index(held={"Gen": [1]})
+
+# `held` is a list whose one member cannot say which book it is about. It might
+# have been this one, so no emptiness may be drawn from the list carrying it.
+V7_HELD_UNREADABLE_MEMBER = _broken_index(held=[{"path": "structure/catena/01-gen/",
+                                                "present": [1]}])
+
+# A digit width nobody can read composed the WRONG path and reported the 404
+# it caused as a broken record — a real request against a file that cannot be.
+V7_HELD_BAD_DIGITS = _broken_index(chapter_digits={"width": 3})
+
+# A canon that states one book readably and one not. The readable book still
+# serves; what the incomplete list may not do is prove a token is outside it.
+V7_PARTIAL_CANON = _broken_index(canon=[
+    {"token": "Gen", "name": "Genesis", "chapters": 50,
+     "testament": "old", "path": "01-gen"},
+    {"name": "A book whose token nobody can read", "chapters": 12},
+])
+
+# A voices list carrying a member outside the published route grammar. It is
+# not a key this page could ever match an address against, so the list is not
+# ground for saying an address names a voice this corpus does not hold.
+V7_PARTIAL_VOICES = _broken_index(voices=["original", {"key": "translation:en"}])
+
+# The paragraph LAYER root, unreadable. `bag()` made it `{}`, no path was
+# composed, and no path composed was printed as this edition opening no
+# paragraph here.
+V7_PARAGRAPH_ROOT_SCALAR = "not a paragraph index"
+
+# The paragraph file for ONE chapter, unreadable in three ways.
+V7_PARAGRAPH_FILE_SCALAR = "not a paragraph file"
+V7_PARAGRAPH_FILE_BREAKS = _fixture({"token": "Gen", "chapter": 1,
+                                     "edition": "douay-rheims",
+                                     "breaks": "not a break record"})
+
+# A verses container that is a LIST. `loadChapter` admits it — `typeof [] ===
+# "object"` — so the page received `{ok: true}` and then reported a chapter of
+# Scripture as carrying no verses.
+V7_VERSES_LIST = {"book": "Gen", "chapter": 1,
+                  "verses": ["In principio", "Terra autem erat inanis"]}
+
+# And one that is a record with keys the page cannot read: genuinely
+# unreadable, and already distinguished — pinned here so the two answers stay
+# apart under V7's reading.
+V7_VERSES_UNREADABLE = {"book": "Gen", "chapter": 1,
+                        "verses": {"first": "In principio", "01": "padded"}}
+
 # V6 §9 — one verse, written more than one way. `^[0-9]+$` admitted `"01"`
 # beside `"1"` and `Number()` folded them together, so verse 1 rendered twice.
 V6_PADDED_VERSES = _fixture({
@@ -1697,6 +1993,134 @@ SCENARIOS = [
          {"do": "release", "path": "01-gen/001.json", "label": "late"},
      ]},
 
+    # =============================================================== V7 §13
+    # A PENDING RENDER DRIVEN THROUGH A TERMINAL STATE BEFORE ITS WORK LANDS.
+    # The V6 review found the late-work proof had no case of this shape: every
+    # late completion it tested arrived behind another COMPLETED render, never
+    # behind a terminal transaction that invalidated the render in flight.
+    # Chapter 2's spine is parked, the address is then changed to one that
+    # cannot be used — which takes the invalid-address transaction, clears the
+    # region and speaks — and only then does chapter 2 answer.
+    {"name": "v7-invalidated-then-late", "hash": GEN1,
+     "defer": ["01-gen/002.json"],
+     "steps": [
+         {"do": "selectChapter", "value": "2", "label": "a-held"},
+         {"do": "hash", "value": "#book=Zzz&chapter=1&bible=douay-rheims",
+          "label": "b-settled"},
+         {"do": "release", "path": "01-gen/002.json", "label": "a-late"},
+     ]},
+    # The same, answering with a REJECTION: a stale failure owns no error
+    # notice, and may not replace the terminal page with one.
+    {"name": "v7-invalidated-then-late-failure", "hash": GEN1,
+     "defer": ["01-gen/002.json"],
+     "steps": [
+         {"do": "selectChapter", "value": "2", "label": "a-held"},
+         {"do": "hash", "value": "#book=Zzz&chapter=1&bible=douay-rheims",
+          "label": "b-settled"},
+         {"do": "release", "path": "01-gen/002.json", "outcome": "fail",
+          "label": "a-late"},
+     ]},
+
+    # =============================================================== V7 §5
+    # `text_path` at the REQUEST SINK. Every fragment is opened, so every
+    # request the chapter can cause has been made by the time `fetched` is
+    # read; a scenario that opens one fragment proves nothing about the ten
+    # beside it.
+    {"name": "v7-text-path", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V7_TEXT_PATH_FIXTURE},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v7-text-path-no-prefix", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V7_TEXT_PATH_NO_PREFIX},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # =============================================================== V7 §6
+    # The same six members in both orders. A member's fate may not depend on
+    # where it stands, and neither may the page's.
+    {"name": "v7-hollow-fragments", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": _hollow_fixture(False)},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v7-hollow-fragments-reversed", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": _hollow_fixture(True)},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # =============================================================== V7 §7
+    {"name": "v7-absence-slot", "hash": GEN10_ENGLISH,
+     "files": {"structure/catena/01-gen/010.json": V7_ABSENCE_SLOT_FIXTURE,
+               "structure/catena/index.json": _broken_index(
+                   absences=V7_ABSENCE_SLOT_INDEX["absences"],
+                   voices=["original", "translation:en"],
+                   held=[{"token": "Gen", "name": "Genesis", "chapters": 50,
+                          "fragments": 2, "path": "structure/catena/01-gen/",
+                          "present": [10], "languages": ["la"]}])}},
+    {"name": "v7-absence-members", "hash": GEN10_ENGLISH,
+     "files": {"structure/catena/01-gen/010.json": TYPED_ABSENCE_FIXTURE,
+               "structure/catena/index.json": _broken_index(
+                   absences=V7_ABSENCE_MEMBER_INDEX["absences"],
+                   voices=["original", "translation:en"],
+                   held=[{"token": "Gen", "name": "Genesis", "chapters": 50,
+                          "fragments": 5, "path": "structure/catena/01-gen/",
+                          "present": [10], "languages": ["la"]}])}},
+
+    # =============================================================== V7 §8
+    {"name": "v7-refusal-locus", "hash": "#book=Gen&chapter=2&bible=douay-rheims",
+     "files": {"structure/catena/01-gen/002.json": V7_REFUSAL_FIXTURE,
+               "structure/catena/index.json": _broken_index(
+                   held=[{"token": "Gen", "name": "Genesis", "chapters": 50,
+                          "fragments": 1, "path": "structure/catena/01-gen/",
+                          "present": [2], "languages": ["la"]}])}},
+    {"name": "v7-refusal-valid", "hash": "#book=Gen&chapter=2&bible=douay-rheims",
+     "files": {"structure/catena/01-gen/002.json": V7_REFUSAL_VALID,
+               "structure/catena/index.json": _broken_index(
+                   held=[{"token": "Gen", "name": "Genesis", "chapters": 50,
+                          "fragments": 1, "path": "structure/catena/01-gen/",
+                          "present": [2], "languages": ["la"]}])}},
+
+    # ============================================================== V7 §10
+    {"name": "v7-partial-values", "hash": GEN10_ENGLISH,
+     "files": {"structure/catena/01-gen/010.json": TYPED_ABSENCE_FIXTURE,
+               "structure/catena/index.json": _broken_index(
+                   absences=V7_PARTIAL_INDEX["absences"],
+                   voices=["original", "translation:en"],
+                   held=[{"token": "Gen", "name": "Genesis", "chapters": 50,
+                          "fragments": 5, "path": "structure/catena/01-gen/",
+                          "present": [10], "languages": ["la"]}])}},
+    {"name": "v7-partial-parents", "hash": GEN10_ENGLISH,
+     "files": {"structure/catena/01-gen/010.json": TYPED_ABSENCE_FIXTURE,
+               "structure/catena/index.json": _broken_index(
+                   absences=V7_PARTIAL_PARENT_INDEX["absences"],
+                   voices=["original", "translation:en"],
+                   held=[{"token": "Gen", "name": "Genesis", "chapters": 50,
+                          "fragments": 5, "path": "structure/catena/01-gen/",
+                          "present": [10], "languages": ["la"]}])}},
+
+    # ============================================================== V7 §11
+    # Roots that cannot support the claim V6 drew from them. Each is read at
+    # the sinks a reader actually meets: the tally, the announcement, the
+    # notice, and what was requested.
+    {"name": "v7-held-not-a-list", "hash": GEN1,
+     "files": {"structure/catena/index.json": V7_HELD_NOT_A_LIST}},
+    {"name": "v7-held-unreadable-member", "hash": GEN1,
+     "files": {"structure/catena/index.json": V7_HELD_UNREADABLE_MEMBER}},
+    {"name": "v7-held-bad-digits", "hash": GEN1,
+     "files": {"structure/catena/index.json": V7_HELD_BAD_DIGITS}},
+    {"name": "v7-partial-canon", "hash": "#book=Zzz&chapter=1&bible=douay-rheims",
+     "files": {"structure/catena/index.json": V7_PARTIAL_CANON}},
+    {"name": "v7-partial-voices", "hash": "#book=Gen&chapter=1&bible=douay-rheims"
+                                          "&voice=translation:en",
+     "files": {"structure/catena/index.json": V7_PARTIAL_VOICES}},
+    {"name": "v7-paragraph-root", "hash": GEN1,
+     "raw": {"structure/paragraphs/index.json": V7_PARAGRAPH_ROOT_SCALAR}},
+    {"name": "v7-paragraph-file", "hash": GEN1,
+     "raw": {"structure/paragraphs/douay-rheims/01-gen/001.json":
+             V7_PARAGRAPH_FILE_SCALAR}},
+    {"name": "v7-paragraph-breaks", "hash": GEN1,
+     "files": {"structure/paragraphs/douay-rheims/01-gen/001.json":
+               V7_PARAGRAPH_FILE_BREAKS}},
+    {"name": "v7-verses-list", "hash": GEN1,
+     "files": {"douay-rheims/chapters/Gen/1.json": V7_VERSES_LIST}},
+    {"name": "v7-verses-unreadable", "hash": GEN1,
+     "files": {"douay-rheims/chapters/Gen/1.json": V7_VERSES_UNREADABLE}},
+
     # --------------------------------------------------------------- §14
     # A malformed partial arrival whose spine lands last, reached from a
     # canonical route by a READER ACTION rather than cold — so push, replace,
@@ -1720,8 +2144,13 @@ REPLAY = r"""
 const fs = require('fs');
 const pathlib = require('path');
 
-const [, , ROOT, PLAN_JSON] = process.argv;
-const PLAN = JSON.parse(PLAN_JSON);
+// V7: the plan arrives as a FILE, not as an argv element. V6 passed the whole
+// scenario list as one argument, and the V7 additions carried it past
+// `ARG_MAX` — `OSError: [Errno 7] Argument list too long`, which is a limit of
+// the operating system and not of the harness. A path costs nothing and has no
+// ceiling.
+const [, , ROOT, PLAN_PATH] = process.argv;
+const PLAN = JSON.parse(fs.readFileSync(PLAN_PATH, 'utf8'));
 const DATA = pathlib.join(ROOT, 'src/web/data');
 const BROWSER = pathlib.join(ROOT, 'src/web/browser');
 
@@ -2097,6 +2526,12 @@ function inspect(page, document, location, fetched, hashWrites, replaced, status
     absenceWorks: withClass('absence-work').map(text),
     sectionHeadings: withClass('section-heading').map(text),
     asideNotes: withClass('aside-note').map(text),
+    // V7. `T.notice()` is where the page states what it could NOT read about
+    // a chapter of Scripture, and no projection carried it: the V6 oracles
+    // could only assert that the wrong sentence was absent, never that the
+    // right one was present. "Carries no verses" and "arrived in a form this
+    // page cannot read" are two different claims and both are read here.
+    notices: withClass('notice').map(text),
     leads: withClass('lead').map(text),
     blocked: withClass('blocked').map(text),
     fragmentTexts: withClass('fragment-text').map(text),
@@ -2352,6 +2787,18 @@ async function run(scenario) {
         body.dispatch('toggle');
       }
       await settle();
+    // V7 §5. Opening ONE fragment cannot fail on a request the page composes
+    // for a different one, and the `text_path` regressions are a claim about
+    // every member of a collection at once. This opens all of them, in the
+    // order they stand, and settles once at the end — so `fetched` afterwards
+    // is the complete set of requests the whole chapter can cause.
+    } else if (step.do === 'openEveryFragment') {
+      for (const body of page.reading.descendants()
+             .filter((one) => new ClassList(one).contains('fragment-body'))) {
+        body.open = true;
+        body.dispatch('toggle');
+      }
+      await settle();
     }
     snapshots[step.label || step.do] = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released);
   }
@@ -2384,10 +2831,14 @@ def replayed() -> dict:
     if _REPLAYED is None:
         handle, path = tempfile.mkstemp(suffix=".js", prefix="catena-replay-")
         os.close(handle)
+        plan_handle, plan_path = tempfile.mkstemp(suffix=".json",
+                                                  prefix="catena-plan-")
+        os.close(plan_handle)
         try:
             Path(path).write_text(REPLAY, encoding="utf-8")
+            Path(plan_path).write_text(json.dumps(SCENARIOS), encoding="utf-8")
             result = subprocess.run(
-                [NODE, path, str(ROOT), json.dumps(SCENARIOS)],
+                [NODE, path, str(ROOT), plan_path],
                 cwd=ROOT, capture_output=True, text=True,
             )
             if result.returncode != 0:
@@ -2395,6 +2846,7 @@ def replayed() -> dict:
             _REPLAYED = json.loads(result.stdout)
         finally:
             os.unlink(path)
+            os.unlink(plan_path)
     return _REPLAYED
 
 
@@ -3098,9 +3550,19 @@ class UnsupportedVoiceTest(ReplayTest):
         # substring, so `translation:e` passed against a corpus holding only
         # `translation:en`. `list()` refuses a scalar outright. The assertion
         # below is the stricter form of the same requirement, not a relaxation.
-        self.assertIn("!list(index.voices).includes(voice)", script)
-        self.assertNotIn("(index.voices || [])", script)
-        self.assertNotIn("(one.languages || []).includes(", script)
+        # CORRECTED ORACLE (V7). The line this named moved to
+        # `catena-model.js` with the rest of the address judgment, and it
+        # moved because it was WRONG in a way a source-text assertion could
+        # not see: `list(index.voices)` answers `[]` for a voices value nobody
+        # can read, so every address was then told this corpus holds no such
+        # voice — a negative about the corpus drawn from a parse failure. The
+        # requirement is unchanged and the assertion follows it to the file
+        # that now carries it: the WHOLE key, against the whole keys the
+        # corpus states, read as keys rather than as a container of anything.
+        model = held(CATENA / "catena-model.js")
+        self.assertIn("!list(bag(voices).keys).includes(voice)", model)
+        self.assertNotIn("(index.voices || [])", script + model)
+        self.assertNotIn("(one.languages || []).includes(", script + model)
         self.assertEqual(self.page("unsupported-voice")["fetched"],
                          ["structure/catena/index.json", "bibles.json",
                           "structure/paragraphs/index.json"])
@@ -3969,9 +4431,21 @@ class MalformedRecordRenderingTest(ReplayTest):
     """
 
     def test_a_malformed_payload_body_renders_nothing_of_itself(self):
+        # CORRECTED ORACLE (V7). This pinned `[""]` — an EMPTY paragraph where
+        # the father's prose belongs — and called it correct because the
+        # malformed value had been withheld. The V6 review found the other
+        # half: a route that finishes with an empty paragraph has not told the
+        # reader anything, and an empty paragraph is what a fragment whose
+        # text is genuinely blank would look like too. The page opened a
+        # fragment, fetched its payload, could not read it, and said nothing.
+        #
+        # Nothing OF THE PAYLOAD is still rendered, which was always the
+        # requirement; what is added is the page saying so.
         opened = self.snapshot("malformed-record", "opened")
-        self.assertEqual(opened["fragmentTexts"], [""],
-                         "the audit found '[object Object]' as the fragment's words")
+        self.assertEqual(
+            opened["fragmentTexts"],
+            ["The text of this fragment arrived in a form this page cannot read."],
+            "the audit found '[object Object]' as the fragment's words")
         self.assertEqual(opened["fragmentBases"], [],
                          "and 'Extent — [object Object]' and 'Date — 42' beneath them")
 
@@ -5002,12 +5476,31 @@ class TypedAbsenceFindingTest(ReplayTest):
     def test_a_valid_finding_survives_malformed_sibling_metadata(self):
         # `typed.work3` states `in-copyright` beside an unreadable reason; the
         # finding is counted and the reason withheld, not the other way about.
+        # That half is V6's and is unchanged: a fact about the law survives a
+        # malformed neighbour.
+        #
+        # CORRECTED ORACLE (V7). The middle entry was `typed.work2`'s reason —
+        # "A reason that outlives its finding." — a sound sentence standing
+        # beside a finding that is a RECORD, so the page could read no finding
+        # for that row at all. V6 printed it anyway, under a summary saying
+        # this work has a finding the page cannot read.
+        #
+        # The V6 review named that as a leak: a reason is a rights statement
+        # about somebody's text, and what licenses it is the finding it
+        # belongs to. Where no finding could be read, nothing licenses the
+        # prose, and the row says only what it can support — this work stands
+        # here, and its finding could not be read. The reason genuinely does
+        # not outlive its finding, which is what the fixture's own name for it
+        # was asserting the other way about.
         page = self.page("typed-absence")
         self.assertEqual(
             page["absenceReasons"],
             ["No English translation has been published.",
-             "A reason that outlives its finding.",
              "Only part of it is out of copyright."])
+        self.assertNotIn("A reason that outlives its finding.",
+                         page["absenceReasons"])
+        # The row itself is not deleted: five works stand, and work2 among them.
+        self.assertEqual(len(page["absenceAuthors"]), 5)
 
     def test_a_malformed_member_does_not_stand_in_for_the_valid_one(self):
         page = self.page("typed-absence")
@@ -5806,13 +6299,25 @@ class FindingOrderIndependenceTest(ReplayTest):
         " 1 has not been surveyed for English;"
         " 1 has a finding this page cannot read")
 
-    # `absenceReasons` is one entry per row THAT STATES A REASON, in row order,
-    # so it names works by position: work1, work2, work4, work5. `work3` states
-    # no reason at all and contributes no line — four entries for five rows.
+    # CORRECTED ORACLE (V7). `absenceReasons` is one entry per row THAT STATES
+    # A REASON THE PAGE MAY REPEAT, in row order: work1, work2, work5. `work3`
+    # states no reason at all.
+    #
+    # V6 listed FOUR, and the fourth was work4's — the contradictory pair. The
+    # V6 review found that the page, having just declined to state work4's
+    # finding, went on to print one of the two contradicting records' `reason`
+    # underneath the declining, chosen by ranking the two on length. That
+    # sentence reads to a reader as the reason this work is not held in
+    # English, and it is one side of a contradiction the page has said it
+    # cannot resolve. A reason is licensed by the finding it belongs to; where
+    # no one finding could be read, no reason may stand for the row.
+    #
+    # So the reason count and the row count now differ by TWO rows, not one:
+    # work3, which states no reason, and work4, whose reasons the page
+    # declines with its finding.
     REASONS = [
         "No English translation has been published.",  # work1
         "Only part of it is out of copyright.",        # work2
-        "Only part of it is out of copyright.",        # work4
         "No English translation has been published.",  # work5
     ]
 
@@ -5869,6 +6374,12 @@ class FindingOrderIndependenceTest(ReplayTest):
             self.assertEqual(page["absenceReasons"], self.REASONS)
             self.assertNotIn("A reason standing beside an unreadable finding.",
                              page["absenceReasons"])
+            # V7: nor does the prose of EITHER side of work4's contradiction
+            # stand for work4. Exactly one partial-public-domain reason is on
+            # the page, and it is work2's.
+            self.assertEqual(
+                page["absenceReasons"].count("Only part of it is out of copyright."),
+                1, "a declined contradiction contributed a reason")
 
     def test_an_unknown_finding_never_stands_in_for_the_valid_one(self):
         # work5 pairs `no-such-finding` with a valid `none-published`. An
@@ -5922,20 +6433,31 @@ class FindingOrderIndependenceTest(ReplayTest):
             self.assertEqual(page["absencePartials"], self.PARTIALS)
 
     def test_valid_facts_survive_beside_the_records_the_page_refuses(self):
-        # Refusing what cannot be read must cost the record nothing it really
-        # states. work4's finding is declined, and work4's reason — the third
-        # entry, a fact the record states in its own words — still renders.
-        # work3's reason is empty and work3 is still counted, so the row count
-        # and the reason count differ by exactly that row.
+        # CORRECTED ORACLE (V7). Refusing what cannot be read must cost the
+        # record nothing it really states — and work4's reason is not such a
+        # thing. work4 carries TWO valid findings that say different things,
+        # the page declines to choose between them, and a reason belonging to
+        # one of the two is not a fact standing apart from that choice: it is
+        # the choice, in prose. V6 rendered it, and the V6 review named that as
+        # a leaked rights statement.
         #
-        # The companion case, a valid finding standing beside a `reason` that
-        # is not text, is `typed.work3` of the `typed-absence` scenario and is
-        # pinned by `TypedAbsenceFindingTest`.
+        # What survives is what the row states independently of the finding:
+        # work4 keeps its author and its work, and still stands as a row.
+        #
+        # The companion case — a valid finding standing beside a `reason` that
+        # is not text — is `typed.work3` of the `typed-absence` scenario, is
+        # pinned by `TypedAbsenceFindingTest`, and is deliberately unchanged:
+        # there the finding IS readable, so the row still speaks with it.
         for page in self.both():
             self.assertEqual(page["absenceReasons"], self.REASONS)
-            self.assertEqual(len(page["absenceReasons"]), 4)
+            self.assertEqual(len(page["absenceReasons"]), 3)
+            self.assertNotIn("Only part of it is out of copyright.",
+                             page["absenceReasons"][2:],
+                             "the declined contradiction still speaks")
             self.assertIn("1 has not been surveyed for English",
                           page["absenceSummary"].split("; "))
+            # work4 is still a row: declining its finding is not deleting it.
+            self.assertEqual(len(page["absenceAuthors"]), 5)
 
     def test_both_orders_complete_and_stand_open(self):
         # A render-tail throw would leave the region claiming work in progress
@@ -6720,9 +7242,26 @@ class GenuinelyLateStaleWorkTest(ReplayTest):
 
     # The keys a stale completion could plausibly move: route, history,
     # announcement, tally, busy, focus and everything rendered.
-    GUARDED = ("hash", "hashWrites", "replaced", "statusWrites", "tallyText",
-               "busy", "activeElement", "referenceText", "selectValues",
-               "fragmentCount", "fragmentIds", "errorSections", "sectionHeadings")
+    #
+    # CORRECTED ORACLE (V7). The V6 guard omitted the FINAL STATUS SINK. It
+    # compared `statusWrites` — the journal of everything ever spoken — which
+    # a late completion cannot shorten and could only lengthen. What a reader
+    # or a screen reader actually meets is `statusText`, the live region's
+    # current contents, and a stale write that REPLACED the standing
+    # announcement with an older one would leave the journal identical and
+    # the region wrong. The V6 review named that gap, and it is the reason
+    # the rest of this list is now enumerated rather than sampled: every
+    # projection the page writes on a settled route is guarded, so a sink
+    # added later is guarded by having to be added here too.
+    GUARDED = ("hash", "hashWrites", "replaced", "statusWrites", "statusText",
+               "tallyText", "busy", "activeElement", "referenceText",
+               "selectValues", "fragmentCount", "fragmentIds", "fragmentTexts",
+               "errorSections", "sectionHeadings", "failureText", "notices",
+               "dataStates", "asideNotes", "refusalCount", "refusal",
+               "absenceSummary", "absenceReasons", "absencePartials",
+               "paragraphNote", "chapterCounts", "verseNumbers", "leads",
+               "blocked", "voice", "voiceLabels", "stepButtons", "classes",
+               "langAttributes", "acknowledgements", "authorGroups")
 
     GEN1_SPOKEN = ("Genesis 1, Douay-Rheims (Challoner), 107 fragments held,"
                    " 33 lead entries on the acquisition list.")
@@ -6743,8 +7282,13 @@ class GenuinelyLateStaleWorkTest(ReplayTest):
         after = self.snapshot(name, late)
         for key in self.GUARDED:
             self.assertEqual(after[key], before[key], f"{name}: {key} moved late")
-        # And it asked for nothing new on its way past.
+        # And it asked for nothing new on its way past — nor did the settled
+        # route acquire any request ownership it did not already hold.
         self.assertEqual(after["fetched"], before["fetched"], name)
+        # The release really happened: `released` counts parked requests LET
+        # GO, so a late completion that changed nothing is told apart from one
+        # that never occurred.
+        self.assertGreater(after["released"], before["released"], name)
         return after
 
     def test_the_late_work_is_really_late(self):
@@ -6924,6 +7468,18 @@ class ActionPartialArrivalTerminalStateTest(ReplayTest):
     BLOCKED = ["Blocked One — Blocked Work Onerights",
                "Blocked Two — Blocked Work Tworights"]
 
+    # CORRECTED ORACLE (V7). This read as though the refusal were per-chapter,
+    # and it was not: the ONE refusal record in `MIXED_COLLECTION_FIXTURE`
+    # states `"chapter": 1`, and V6 printed it under Genesis 2 as readily as
+    # under Genesis 1, interpolating whichever chapter the page happened to be
+    # rendering into the surrounding sentence. So the page told a reader that
+    # Genesis 2's boundary is not established, on the authority of a record
+    # about Genesis 1 — the "matching locus" the V6 review found missing.
+    #
+    # A refusal is now read as the whole typed record the source contract
+    # writes: the closed `kind`, the chapter it stands on, and the note. The
+    # fixture is unchanged and is now the evidence: its chapter-1 record
+    # refuses chapter 1 and refuses nothing about chapter 2.
     def refusal_for(self, chapter: int) -> str:
         return ("Boundary not established. The numbering of this chapter is"
                 " displaced in this edition. Commentary on Genesis"
@@ -6983,10 +7539,13 @@ class ActionPartialArrivalTerminalStateTest(ReplayTest):
 
     def test_the_late_arrival_manufactures_no_absence_and_no_false_refusal(self):
         arrived = self.snapshot("action-then-partial-malformed", "arrived")
-        # Exactly one refusal, the one valid refusal record in the fixture,
-        # stated in full and stated once.
-        self.assertEqual(arrived["refusalCount"], 1)
-        self.assertEqual(arrived["refusal"], self.refusal_for(2))
+        # CORRECTED ORACLE (V7), and the test finally means its own name. This
+        # chapter is Genesis 2; the fixture's one well-formed refusal record
+        # states chapter 1. V6 printed it here — a false refusal, asserted
+        # about a chapter no record refused — and this oracle pinned it as the
+        # correct answer. Nothing refuses Genesis 2, so nothing is said.
+        self.assertEqual(arrived["refusalCount"], 0)
+        self.assertEqual(arrived["refusal"], None)
         self.assertNotIn("absence", arrived["dataStates"])
         self.assertEqual(arrived["absenceSummary"], None)
         self.assertEqual(arrived["absenceReasons"], [])
@@ -7013,14 +7572,22 @@ class ActionPartialArrivalTerminalStateTest(ReplayTest):
                 self.assertEqual(snap["busy"], "false", name)
 
     def test_every_route_into_the_malformed_chapter_renders_the_same_content(self):
-        # One chapter's data, four arrival paths, one rendering. The refusal
-        # names its own chapter, so `partial-arrival-malformed` (Genesis 1)
-        # differs there and nowhere else.
+        # One chapter's data, four arrival paths, one rendering.
+        #
+        # CORRECTED ORACLE (V7). The refusal is the one thing that is NOT
+        # common to the four, and V6 had it exactly backwards: it compared
+        # `refusalCount` across all four as though it were shared, and then
+        # asserted a per-chapter refusal SENTENCE that was really one
+        # chapter-1 record printed under two different chapters. The record
+        # refuses Genesis 1, so the Genesis 1 route shows a refusal and the
+        # three Genesis 2 routes show none. `refusalCount` therefore leaves
+        # the shared set and is asserted per route with the sentence.
         keys = ("tallyText", "fragmentCount", "fragmentIds", "authors", "works",
-                "dates", "extents", "leads", "blocked", "refusalCount",
-                "sectionHeadings", "asideNotes", "dataStates", "lengths",
+                "dates", "extents", "leads", "blocked",
+                "sectionHeadings", "asideNotes", "lengths",
                 "absenceSummary", "absenceReasons", "errorSections")
         base = self.snapshot("action-then-partial-malformed", "arrived")
+        self.assertEqual(base["refusalCount"], 0)
         for name, label, chapter in (("arrival-then-malformed-member", "moved", 2),
                                      ("hash-then-malformed-member", "moved", 2),
                                      ("partial-arrival-malformed", "arrived", 1)):
@@ -7028,7 +7595,14 @@ class ActionPartialArrivalTerminalStateTest(ReplayTest):
                 snap = self.snapshot(name, label)
                 for key in keys:
                     self.assertEqual(snap[key], base[key], f"{name}: {key}")
-                self.assertEqual(snap["refusal"], self.refusal_for(chapter), name)
+                refused = chapter == 1
+                self.assertEqual(snap["refusalCount"], 1 if refused else 0, name)
+                self.assertEqual(snap["refusal"],
+                                 self.refusal_for(chapter) if refused else None, name)
+                # `dataStates` is a SET, so the refusal is the only member that
+                # may differ between the Genesis 1 route and the Genesis 2 ones.
+                self.assertEqual(set(snap["dataStates"]) - set(base["dataStates"]),
+                                 {"refusal"} if refused else set(), name)
 
     def test_the_partial_arrival_is_silent_and_busy_before_its_spine_lands(self):
         pending = self.snapshot("partial-arrival-malformed", "pending")
@@ -7201,6 +7775,17 @@ class RoutableIdentityTest(ReplayTest):
         # the manifest was a published edition as far as the address grammar
         # could tell, and the page fetched `../../escape/chapters/Gen/1.json`.
         # It is now refused before the manifest, so the address fails closed.
+        #
+        # CORRECTED ORACLE (V7). The failing closed is unchanged and is the
+        # whole of the security claim: the reader's text is kept, no request
+        # is composed through the refused id, and the recovery link stands.
+        # What is corrected is the SENTENCE. This manifest carries four
+        # records that cannot name themselves — one of them the very value
+        # cited — so the page could not read the set of published editions
+        # whole, and "is not a published edition" is a claim about what this
+        # project publishes made out of a manifest it failed to read. The V6
+        # review named that class of sentence a semantic-integrity blocker.
+        # The page now says the thing it can support.
         page = self.page("unsafe-bible-route")
         self.assertEqual(page["hash"], "#book=Gen&chapter=1&bible=../../escape",
                          "the URL keeps the reader's own text")
@@ -7208,7 +7793,9 @@ class RoutableIdentityTest(ReplayTest):
         self.assertEqual(page["errorSections"], [{
             "heading": "This address cannot be used as written",
             "state": "error",
-            "details": ["bible=../../escape is not a published edition."],
+            "details": ["bible=../../escape is not a value this page could match;"
+                        " the record it would be matched against could not be"
+                        " read whole."],
             "recoveryHref": "#book=Gen&chapter=1&bible=douay-rheims",
         }])
         self.assertEqual(page["fetched"], ["structure/catena/index.json",
@@ -7306,3 +7893,719 @@ class VisibleFailureTextTest(ReplayTest):
                      "padded-verses", "unsafe-identities-opened"):
             with self.subTest(scenario=name):
                 self.assertIsNone(self.page(name)["failureText"])
+
+
+# ==========================================================================
+# V7 — the classes the V6 independent review requires
+#
+# Every one of these reads a PRODUCTION SINK: what the page requested, what it
+# rendered, what it announced, what it counted, and where it stopped. The V6
+# review's standing objection to helper-level proof is that a helper can be
+# right while the value never reaches it, and `text_path` was exactly that —
+# a value that passed through no helper at all on its way to `fetch`.
+# ==========================================================================
+
+
+class V7TextPathRequestSinkTest(ReplayTest):
+    """V7 §5 — an unvalidated `text_path` reaches no request.
+
+    `chapterFragments` copied every raw property forward and then overwrote
+    `text_path` only when the file's prefix AND the fragment's id could both
+    be read. Where either could not, the record's own value survived the copy
+    and `openFragment` handed it to `T.loadJSON`. The twelfth fragment of
+    `V7_TEXT_PATH_FIXTURE` is that case exactly.
+
+    Both scenarios OPEN EVERY FRAGMENT, because a request is only composed
+    when a fragment is opened and a scenario that opens one proves nothing
+    about the eleven beside it.
+    """
+
+    BOOTSTRAP = [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+    ]
+
+    # The eleven fragments whose id can be read, each addressed by the path
+    # the page COMPOSED from the file's own prefix and the fragment's own id.
+    # The twelfth names no identity, so it addresses nothing.
+    COMPOSED = ["structure/catena/text/%s.json" % one for one in (
+        "path-valid", "path-object", "path-array", "path-number", "path-null",
+        "path-empty", "path-space", "path-traversal", "path-absolute",
+        "path-encoded", "path-boolean")]
+
+    def opened(self, name):
+        return self.snapshot(name, "opened")
+
+    def test_every_request_is_composed_and_none_is_carried(self):
+        # The whole request journal, in order, pinned entire. Not "no `..`
+        # appears": the exact set, so a request this page should not make
+        # fails here whatever it looks like.
+        self.assertEqual(self.opened("v7-text-path")["fetched"],
+                         self.BOOTSTRAP + self.COMPOSED)
+
+    def test_the_proven_v6_hole_makes_no_request_at_all(self):
+        # A record id and an injected traversal, together — the combination
+        # the V6 review proved reached the sink. Neither identity can be read,
+        # so nothing is composed and nothing is carried: the fragment says it
+        # carries no text file, which is the truth about it.
+        fetched = self.opened("v7-text-path")["fetched"]
+        self.assertNotIn("../../../etc/shadow.json", fetched)
+        self.assertFalse([one for one in fetched if "etc/" in one or ".." in one],
+                         fetched)
+        page = self.opened("v7-text-path")
+        self.assertEqual(
+            page["fragmentTexts"][11],
+            "This fragment carries no text file, so nothing of it can be shown.")
+
+    def test_no_malformed_value_survives_projection_into_a_url(self):
+        # Object, array, number, null, empty, whitespace, traversal, absolute,
+        # percent-encoded and boolean, all standing on fragments whose ids ARE
+        # readable. Every one of them is addressed by its own composed path,
+        # so not one of the carried values reached a URL in any form —
+        # stringified, encoded, or kept as a fallback.
+        fetched = self.opened("v7-text-path")["fetched"]
+        for carried in ("[object Object]", "%2e", "/etc/", "..", "shadow"):
+            with self.subTest(carried=carried):
+                self.assertFalse([one for one in fetched if carried in one],
+                                 "%r reached the request sink" % carried)
+        # And every request the chapter made was composed from a fragment's
+        # own id, so no coerced form of a carried value can be hiding in one.
+        for one in fetched[len(self.BOOTSTRAP):]:
+            self.assertIn(one, self.COMPOSED, one)
+
+    def test_the_whole_chapter_still_stands_and_terminates(self):
+        # Refusing eleven carried paths costs no fragment its row, and the
+        # route completes: a page that fails closed by falling over is not
+        # failing closed.
+        page = self.opened("v7-text-path")
+        self.assertEqual(page["fragmentCount"], 12)
+        self.assertEqual(page["tallyText"], "12 fragments held")
+        self.assertEqual(page["statusWrites"],
+                         ["Genesis 1, Douay-Rheims (Challoner), 12 fragments held."])
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["errorSections"], [])
+        self.assertEqual(page["hash"], GEN1)
+        self.assertEqual(page["hashWrites"], [])
+        self.assertEqual(page["replaced"], [])
+        self.assertEqual(page["activeElement"], "body")
+        self.assertIsNone(page["failureText"])
+
+    def test_a_carried_path_is_taken_only_for_the_fragment_that_owns_it(self):
+        # THE SAMPLE-CORPUS SHAPE. This spine states no `text_prefix`, so
+        # nothing can be composed and the carried value is the only candidate
+        # there is. It is accepted for exactly one of the ten fragments: the
+        # one whose path is a relative JSON file of this data root's grammar
+        # AND whose stem is that fragment's own validated id.
+        #
+        # `carried-other` is the discriminating case. Its path is sound,
+        # relative, correctly formed and inside the text directory — and it
+        # names somebody else's file, so it is not this fragment's text and is
+        # not requested.
+        self.assertEqual(
+            self.opened("v7-text-path-no-prefix")["fetched"],
+            self.BOOTSTRAP + ["structure/catena/text/carried-valid.json"])
+
+    def test_the_nine_refused_carriers_say_they_carry_no_text(self):
+        page = self.opened("v7-text-path-no-prefix")
+        self.assertEqual(page["fragmentCount"], 10)
+        said = "This fragment carries no text file, so nothing of it can be shown."
+        self.assertEqual(page["fragmentTexts"][1:], [said] * 9)
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["tallyText"], "10 fragments held")
+
+
+class V7HollowFragmentMemberTest(ReplayTest):
+    """V7 §6 — a record that names nothing is not a thin fragment.
+
+    `{}` rendered an `<li class="fragment">` carrying an empty author, an
+    empty work, a perpetual "Loading…" and no locator, and was counted into
+    "N fragments held here" — a statement that this project possesses a
+    commentary, made by an empty object. `records()` asked whether a member
+    was an object; nothing asked whether it was a fragment.
+
+    The six members are listed in both orders because refusing one must not
+    depend on where it stands, and neither may anything downstream of it.
+    """
+
+    BOTH = ("v7-hollow-fragments", "v7-hollow-fragments-reversed")
+
+    def opened(self, name):
+        return self.snapshot(name, "opened")
+
+    def test_only_the_two_valid_members_render(self):
+        for name in self.BOTH:
+            with self.subTest(scenario=name):
+                page = self.opened(name)
+                self.assertEqual(page["fragmentCount"], 2)
+                self.assertEqual(sorted(page["fragmentIds"]),
+                                 ["hollow-first", "hollow-last"])
+                self.assertEqual(sorted(page["authors"]), ["Author 1", "Author 2"])
+                self.assertEqual(sorted(page["works"]), ["Work 1", "Work 2"])
+
+    def test_no_blank_row_stands_and_none_is_counted(self):
+        # The tally and the heading are the two places the count is stated,
+        # and they are read together: V6 could have refused the row and kept
+        # the count, or kept the row and refused the count, and either would
+        # have been a page contradicting itself.
+        for name in self.BOTH:
+            with self.subTest(scenario=name):
+                page = self.opened(name)
+                self.assertEqual(page["tallyText"], "2 fragments held")
+                self.assertEqual(page["sectionHeadings"], ["2 fragments held here"])
+                self.assertNotIn("", page["authors"], "a nameless row stands")
+                self.assertNotIn("", page["works"])
+
+    def test_the_locus_with_nobody_behind_it_is_not_a_fragment(self):
+        # The third member is a REAL record with a readable extent and a
+        # locator, and it names no author, no work and no identity. A locus
+        # nobody wrote is not a commentary held here.
+        for name in self.BOTH:
+            with self.subTest(scenario=name):
+                self.assertNotIn("Genesis 1:4", self.opened(name)["extents"])
+
+    def test_no_false_refusal_absence_or_emptiness_is_manufactured(self):
+        for name in self.BOTH:
+            with self.subTest(scenario=name):
+                page = self.opened(name)
+                self.assertEqual(page["refusalCount"], 0)
+                self.assertIsNone(page["refusal"])
+                self.assertIsNone(page["absenceSummary"])
+                self.assertEqual(page["absenceAuthors"], [])
+                self.assertEqual(page["asideNotes"], [])
+                self.assertNotIn("Nothing held here", page["tallyText"])
+
+    def test_the_ordering_of_the_malformed_members_changes_nothing(self):
+        # Every semantic projection, and then the announcement. The two pages
+        # differ only in the order the two valid siblings stand in, which is
+        # the order the spine gave them.
+        listed, flipped = (self.opened(one) for one in self.BOTH)
+        for key in ("fragmentCount", "tallyText", "sectionHeadings", "asideNotes",
+                    "refusalCount", "refusal", "absenceSummary", "absenceReasons",
+                    "leads", "blocked", "errorSections", "dataStates", "busy"):
+            with self.subTest(key=key):
+                self.assertEqual(listed[key], flipped[key],
+                                 "%s moved with the listing order" % key)
+        self.assertEqual(listed["statusWrites"], flipped["statusWrites"])
+        self.assertEqual(listed["fragmentIds"], list(reversed(flipped["fragmentIds"])))
+
+    def test_both_orders_terminate(self):
+        for name in self.BOTH:
+            with self.subTest(scenario=name):
+                page = self.opened(name)
+                self.assertEqual(page["busy"], "false")
+                self.assertEqual(page["hash"], GEN1)
+                self.assertEqual(page["hashWrites"], [])
+                self.assertEqual(page["replaced"], [])
+                self.assertEqual(page["activeElement"], "body")
+                self.assertIsNone(page["failureText"])
+                self.assertEqual(page["errorSections"], [])
+
+
+class V7AbsenceMemberTest(ReplayTest):
+    """V7 §7 — an absence row about a work the record can name.
+
+    Two defects, one seam. `absenceRows` deduplicated on `work_id` and read
+    the author and the work AFTERWARDS, so a source stating neither took the
+    row for that work — a blank entry under a summary counting it as a work
+    standing here — and the valid sibling carrying the same work id and both
+    its names was skipped behind it as a duplicate. And a member naming a
+    language and nothing else was an absence record, so `{}` beside it made a
+    row it could not support.
+    """
+
+    def test_a_source_that_cannot_name_the_work_takes_no_slot(self):
+        # The hollow source stands FIRST in the fixture, which is what made it
+        # the winner. The row is now the valid sibling's, named in full.
+        page = self.page("v7-absence-slot")
+        self.assertEqual(page["absenceAuthors"], ["Author 1"])
+        self.assertEqual(page["absenceWorks"], ["Work 1"])
+        self.assertEqual(page["absenceReasons"],
+                         ["No English translation has been published."])
+        self.assertEqual(
+            page["absenceSummary"],
+            "One work standing here has no English this project may publish")
+
+    def test_no_blank_absence_row_stands(self):
+        for name in ("v7-absence-slot", "v7-absence-members"):
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertNotIn("", page["absenceAuthors"])
+                self.assertNotIn("", page["absenceWorks"])
+                self.assertEqual(len(page["absenceAuthors"]),
+                                 len(page["absenceWorks"]))
+
+    def test_hollow_members_make_no_row_and_mask_no_sibling(self):
+        # `typed.work1` lists `{}`, `null`, `4` and a string before its one
+        # real record; `typed.work2` lists only hollow members. The first
+        # speaks with its valid member; the second says nothing at all,
+        # because a work no member says anything readable about is a work this
+        # page has nothing to report.
+        page = self.page("v7-absence-members")
+        self.assertEqual(page["absenceAuthors"], ["Author 1"])
+        self.assertEqual(page["absenceReasons"],
+                         ["The only rendering is in copyright."])
+        self.assertEqual(
+            page["absenceSummary"],
+            "One work standing here has no English this project may publish")
+
+    def test_the_absence_pages_terminate(self):
+        for name in ("v7-absence-slot", "v7-absence-members"):
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["busy"], "false")
+                self.assertEqual(page["hash"], GEN10_ENGLISH)
+                self.assertEqual(page["hashWrites"], [])
+                self.assertEqual(page["replaced"], [])
+                self.assertEqual(page["errorSections"], [])
+                self.assertIsNone(page["failureText"])
+                self.assertIn("absence", page["dataStates"])
+                self.assertTrue(page["absenceOpen"])
+                self.assertEqual(len(page["statusWrites"]), 1)
+
+
+class V7RefusalLocusTest(ReplayTest):
+    """V7 §8 — "Boundary not established" needs the whole typed record.
+
+    It is the strongest sentence this page says about a text it did not
+    write. V6 required a nonempty `note` and nothing else, so a note filed
+    under another chapter, or carrying no `kind` the projection ever recorded,
+    established it. `V7_REFUSAL_FIXTURE` is Genesis 2 and holds six records
+    that each fail one clause of the contract; `V7_REFUSAL_VALID` adds one
+    well-formed record LAST, so a valid refusal is still found whatever stands
+    in front of it.
+    """
+
+    def test_no_malformed_or_misfiled_record_establishes_the_boundary(self):
+        page = self.page("v7-refusal-locus")
+        self.assertEqual(page["refusalCount"], 0)
+        self.assertIsNone(page["refusal"])
+        self.assertNotIn("refusal", page["dataStates"])
+        # And none of the six notes reaches the page in any other form.
+        for note in ("a note about the chapter before this one",
+                     "a note carrying no kind",
+                     "a note carrying a kind this projection never wrote",
+                     "a note whose chapter is text"):
+            with self.subTest(note=note):
+                self.assertNotIn(note, " ".join(
+                    page["asideNotes"] + page["sectionHeadings"]
+                    + page["statusWrites"] + [page["tallyText"] or ""]))
+
+    def test_the_one_well_formed_record_still_refuses_from_last_place(self):
+        page = self.page("v7-refusal-valid")
+        self.assertEqual(page["refusalCount"], 1)
+        self.assertIn("Boundary not established.", page["refusal"])
+        self.assertIn("the numbering of this chapter is displaced",
+                      page["refusal"].lower())
+        self.assertIn("refusal", page["dataStates"])
+
+    def test_the_chapter_is_untouched_by_either_answer(self):
+        # Refusing six records must cost the chapter nothing it really holds,
+        # and establishing one must not either.
+        refused, valid = (self.page("v7-refusal-locus"),
+                          self.page("v7-refusal-valid"))
+        for page in (refused, valid):
+            self.assertEqual(page["fragmentCount"], 1)
+            self.assertEqual(page["fragmentIds"], ["refusal-sibling"])
+            self.assertEqual(page["tallyText"], "1 fragment held")
+            self.assertEqual(page["busy"], "false")
+            self.assertEqual(page["errorSections"], [])
+            self.assertEqual(page["hashWrites"], [])
+            self.assertEqual(page["replaced"], [])
+            self.assertIsNone(page["failureText"])
+            self.assertEqual(
+                page["statusWrites"],
+                ["Genesis 2, Douay-Rheims (Challoner), 1 fragment held."])
+        # The refusal is the ONLY difference the two pages carry.
+        self.assertEqual(set(valid["dataStates"]) - set(refused["dataStates"]),
+                         {"refusal"})
+
+
+class V7ContradictoryFindingRightsTest(ReplayTest):
+    """V7 §9 — a contradiction leaks no selected rights prose.
+
+    V6 blanked the FINDING when recognized findings conflicted and then chose
+    one record's `reason` and `partial` by ranking them on length, and
+    rendered that reason. So the page declined to say which rights claim the
+    record made and then printed one of them anyway, picked by an arbitrary
+    rule, underneath a summary saying it could not read the finding.
+
+    `finding-order` and `finding-order-reversed` carry the same contradictory
+    pair in opposite orders, so the claim is made twice over.
+    """
+
+    # work4 carries BOTH of these sentences, one on each side of its
+    # contradiction, and V6 printed the second of them for work4 because
+    # ranking on length preferred the record that also carried a `partial`.
+    # The other four works say them legitimately: work1 and work5 the first,
+    # work2 the second. So the leak is caught by COUNT — three reasons, in
+    # these exact multiplicities, and a fourth would be work4 speaking.
+    LEAKS = {"No English translation has been published.": 2,  # work1, work5
+             "Only part of it is out of copyright.": 1}        # work2
+
+    def both(self):
+        return self.page("finding-order"), self.page("finding-order-reversed")
+
+    def test_the_contradictory_work_contributes_no_reason(self):
+        for page in self.both():
+            for said, times in self.LEAKS.items():
+                with self.subTest(said=said):
+                    self.assertEqual(page["absenceReasons"].count(said), times,
+                                     "a declined contradiction spoke")
+            self.assertEqual(len(page["absenceReasons"]), 3)
+            self.assertEqual(len(page["absenceAuthors"]), 5,
+                             "declining a finding is not deleting the row")
+
+    def test_no_partial_offer_comes_from_the_contradiction(self):
+        for page in self.both():
+            self.assertEqual(page["absencePartials"],
+                             ["Partly public domain — the 1893 selection"])
+
+    def test_neither_side_is_chosen_and_neither_is_the_harsher(self):
+        # `none-published` is the harsher of work4's two claims and
+        # `partial-public-domain` the gentler. Neither may be counted, so the
+        # closed clause counts two works and not three, and the untaken clause
+        # one and not two.
+        for page in self.both():
+            clauses = page["absenceSummary"].split("; ")
+            self.assertEqual(
+                clauses[0],
+                "2 works standing here have no English this project may publish")
+            self.assertEqual(
+                clauses[1], "1 has only a partly public domain English, not yet taken")
+            self.assertEqual(clauses[3], "1 has a finding this page cannot read")
+
+    def test_the_two_orders_are_one_page(self):
+        listed, flipped = self.both()
+        self.assertEqual(self.rendered_state(listed), self.rendered_state(flipped))
+        self.assertEqual(listed["statusWrites"], flipped["statusWrites"])
+        self.assertEqual(listed["busy"], "false")
+        self.assertEqual(listed["hashWrites"], [])
+        self.assertEqual(listed["replaced"], [])
+        self.assertIsNone(listed["failureText"])
+
+
+class V7MalformedPartialTest(ReplayTest):
+    """V7 §10 — `partial` is prose licensed by one finding, or it is nothing.
+
+    The contract is the generator's: a whitespace-collapsed string, omitted
+    when empty, meaningful only under `partial-public-domain`. Two scenarios,
+    because a `partial` can fail in two independent ways — its own VALUE can
+    be malformed, or its PARENT can be a state that licenses no offer — and
+    the assertion in both cases is the rendered rights prose, not a helper.
+    """
+
+    OFFER = "Partly public domain"
+
+    def test_no_malformed_value_becomes_an_offer(self):
+        # Five works, each `partial-public-domain` — so the finding licenses
+        # an offer — each carrying a `partial` that is a record, a list, a
+        # number, a flag or a null. Five rows stand in the untaken class and
+        # not one offer is printed.
+        page = self.page("v7-partial-values")
+        self.assertEqual(page["absencePartials"], [])
+        self.assertEqual(
+            page["absenceSummary"],
+            "5 works standing here have only a partly public domain English,"
+            " not yet taken")
+        self.assertEqual(len(page["absenceAuthors"]), 5)
+
+    def test_only_a_licensed_parent_prints_the_offer(self):
+        # Five works, each carrying a `partial` that IS prose: beside a closed
+        # finding, beside no finding, on one side of a contradiction, beside
+        # the finding that licenses it, and beside an admission that nobody
+        # looked. Exactly one offer is printed.
+        page = self.page("v7-partial-parents")
+        self.assertEqual(page["absencePartials"],
+                         ["Partly public domain — the offer that is"
+                          " genuinely licensed"])
+        for stray in ("an offer beside a closed finding",
+                      "an offer beside no finding",
+                      "an offer on one side of a contradiction",
+                      "an offer beside an admission"):
+            with self.subTest(stray=stray):
+                self.assertNotIn(stray, " ".join(
+                    page["absencePartials"] + page["absenceReasons"]
+                    + [page["absenceSummary"] or ""]))
+
+    def test_the_rights_pages_terminate(self):
+        for name in ("v7-partial-values", "v7-partial-parents"):
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["busy"], "false")
+                self.assertEqual(page["hash"], GEN10_ENGLISH)
+                self.assertEqual(page["hashWrites"], [])
+                self.assertEqual(page["replaced"], [])
+                self.assertEqual(page["errorSections"], [])
+                self.assertIsNone(page["failureText"])
+                self.assertEqual(len(page["statusWrites"]), 1)
+
+
+class V7UnreadableRootDomainClaimTest(ReplayTest):
+    """V7 §11 — an unreadable root makes no claim about the corpus.
+
+    "We read the corpus and found nothing" and "we could not establish what
+    the corpus holds" are not interchangeable sentences, and every case below
+    was answering the first while meaning the second.
+    """
+
+    UNAVAILABLE = "The commentary record did not load"
+    SPOKEN = ("Genesis 1, Douay-Rheims (Challoner),"
+              " commentary record unavailable.")
+    HELD = ("v7-held-not-a-list", "v7-held-unreadable-member",
+            "v7-held-bad-digits")
+
+    def test_an_unreadable_holdings_root_never_says_nothing_is_held(self):
+        # `held` as a record, `held` as a list whose member cannot say which
+        # book it is about, and a `chapter_digits` nobody can read. V6
+        # answered all three with `Nothing held here`.
+        for name in self.HELD:
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+                self.assertNotIn("Nothing held", page["tallyText"])
+                self.assertEqual(page["statusWrites"], [self.SPOKEN])
+                self.assertEqual(page["sectionHeadings"],
+                                 ["This chapter’s commentary record did not load"])
+                self.assertEqual(page["asideNotes"], [],
+                                 "no emptiness is stated beside the fault")
+
+    def test_an_unreadable_holdings_root_asks_for_no_chapter_record(self):
+        # A digit width nobody can read used to compose the WRONG path and
+        # request it, then report the 404 it caused as a broken record. A
+        # record this page cannot read is not a URL.
+        for name in self.HELD:
+            with self.subTest(scenario=name):
+                self.assertFalse(
+                    [one for one in self.page(name)["fetched"]
+                     if one.startswith("structure/catena/01-gen/")],
+                    "a chapter record was requested from an unreadable index")
+
+    def test_the_unreadable_holdings_root_terminates(self):
+        for name in self.HELD:
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["busy"], "false")
+                self.assertEqual(page["hash"], GEN1)
+                self.assertEqual(page["hashWrites"], [])
+                self.assertEqual(page["replaced"], [])
+                self.assertEqual(page["activeElement"], "body")
+                self.assertEqual(page["referenceText"], "Genesis 1")
+                self.assertEqual(page["dataStates"], ["error"])
+
+    def test_an_incomplete_canon_makes_no_claim_about_the_canon(self):
+        # One book readable, one not. The readable book still serves the page;
+        # what the incomplete list may not do is prove a token is outside it.
+        page = self.page("v7-partial-canon")
+        detail = page["errorSections"][0]["details"]
+        self.assertEqual(detail, [
+            "book=Zzz is not a value this page could match; the record it"
+            " would be matched against could not be read whole."])
+        self.assertNotIn("is not a book of this canon", " ".join(detail))
+        self.assertEqual(page["referenceText"], "Address not used")
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["hash"], "#book=Zzz&chapter=1&bible=douay-rheims")
+        self.assertEqual(page["hashWrites"], [])
+
+    def test_an_unreadable_voices_root_makes_no_claim_about_the_voices(self):
+        page = self.page("v7-partial-voices")
+        detail = page["errorSections"][0]["details"]
+        self.assertEqual(detail, [
+            "voice=translation:en is not a value this page could match; the"
+            " record it would be matched against could not be read whole."])
+        self.assertNotIn("is not a voice this corpus holds", " ".join(detail))
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["hashWrites"], [])
+
+    def test_neither_incomplete_root_asks_for_anything_beyond_the_roots(self):
+        for name in ("v7-partial-canon", "v7-partial-voices"):
+            with self.subTest(scenario=name):
+                self.assertEqual(self.page(name)["fetched"], [
+                    "structure/catena/index.json",
+                    "bibles.json",
+                    "structure/paragraphs/index.json",
+                ])
+
+    PARAGRAPH_UNREAD = ("The paragraph record for this chapter in this edition"
+                        " could not be read, so whether it divides the chapter"
+                        " is not established here.")
+
+    def test_an_unreadable_paragraph_record_claims_no_division(self):
+        # The layer ROOT unreadable, the chapter FILE unreadable, and the
+        # file's `breaks` unreadable. V6 printed "No paragraph division is
+        # held for this chapter in this edition, so it runs on" for all three
+        # — a claim about how an edition sets its text, drawn from a file
+        # nobody could read.
+        for name in ("v7-paragraph-root", "v7-paragraph-file",
+                     "v7-paragraph-breaks"):
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+                self.assertNotIn("No paragraph division is held",
+                                 page["paragraphNote"])
+                # The chapter itself is untouched: refusing the layer is not
+                # refusing the Scripture it would have divided.
+                self.assertEqual(page["chapterCounts"], ["31 verses"])
+                self.assertEqual(page["busy"], "false")
+                self.assertEqual(page["errorSections"], [])
+
+    def test_an_unreadable_paragraph_root_composes_no_request(self):
+        self.assertNotIn(
+            "structure/paragraphs/douay-rheims/01-gen/001.json",
+            self.page("v7-paragraph-root")["fetched"])
+
+    def test_a_readable_paragraph_layer_still_says_it_holds_none(self):
+        # The other half of the same claim, and the reason this correction is
+        # narrow: where the record CAN be read and records no division, the
+        # page still says so. `malformed-verses` carries a readable layer.
+        self.assertIn("No paragraph division is held",
+                      self.page("malformed-verses")["paragraphNote"])
+
+    VERSES_UNREAD = "Not shown: Genesis 1 arrived in a form this page cannot read."
+
+    def test_an_unreadable_verses_container_is_never_reported_as_none(self):
+        # `loadChapter` belongs to the shared shell and admits an ARRAY,
+        # because `typeof [] === "object"`; the page then counted its keys,
+        # found none, and told the reader a chapter of Scripture carries no
+        # verses. The sentence is now asserted in the positive, which the V6
+        # oracle could not do: it had no projection for the notice and could
+        # only say the wrong words were absent.
+        for name in ("v7-verses-list", "v7-verses-unreadable",
+                     "unreadable-verses"):
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["notices"], [self.VERSES_UNREAD])
+                self.assertNotIn("carries no verses", " ".join(page["notices"]))
+                self.assertEqual(page["busy"], "false")
+                self.assertIsNone(page["failureText"])
+
+    def test_the_chapter_beside_the_unreadable_verses_still_stands(self):
+        # An unreadable edition text is not an unreadable chapter of
+        # commentary: the catena is rendered, counted and announced in full.
+        page = self.page("v7-verses-list")
+        self.assertEqual(page["tallyText"],
+                         "107 fragments held · 33 lead entries"
+                         " on the acquisition list")
+        self.assertEqual(page["errorSections"], [])
+        self.assertEqual(page["hashWrites"], [])
+
+
+class V7InvalidatedPendingRenderTest(ReplayTest):
+    """V7 §13 — a render invalidated MID-FLIGHT by a terminal transaction.
+
+    The V6 review accepted that genuinely late work settles nothing, and
+    rejected the proof for having no case of this shape: every late completion
+    V6 tested arrived behind another render that had COMPLETED, never behind a
+    terminal transaction that invalidated the render still in flight. Those
+    are different claims. The first says a finished route defends itself; the
+    second says an UNFINISHED one, torn down by a state that owns the page
+    instead, cannot come back and write over it.
+
+    The sequence is the one the correction brief sets out:
+
+        1. chapter 2 is chosen and its spine is parked in flight;
+        2. the address is changed to one that cannot be used, which takes the
+           invalid-address transaction — `T.beginRender()`, the region
+           cleared, the tally cleared, focus kept and one line spoken;
+        3. that state is captured whole;
+        4. chapter 2's spine is answered, once with a payload and once with a
+           rejection;
+        5. the state is captured again and nothing of it has moved.
+    """
+
+    BOTH = ("v7-invalidated-then-late", "v7-invalidated-then-late-failure")
+
+    TERMINAL = {
+        "busy": "false",
+        "hash": "#book=Zzz&chapter=1&bible=douay-rheims",
+        "hashWrites": [],
+        "replaced": [],
+        "tallyText": "",
+        "referenceText": "Address not used",
+        "activeElement": "chapter-select",
+        "fragmentCount": 0,
+        "failureText": None,
+        "statusText": "The address is unchanged; the values not used are listed.",
+    }
+
+    ERROR = [{
+        "heading": "This address cannot be used as written",
+        "state": "error",
+        "details": ["book=Zzz is not a book of this canon."],
+        "recoveryHref": "#book=Gen&chapter=1&bible=douay-rheims",
+    }]
+
+    def test_the_pending_render_really_is_pending_when_it_is_torn_down(self):
+        # Without this the rest is vacuous. At `a-held` the region claims work
+        # in progress, the reference has already been rewritten to Genesis 2,
+        # and nothing has been released — so the spine genuinely had not
+        # answered when the address changed under it.
+        for name in self.BOTH:
+            with self.subTest(scenario=name):
+                held = self.snapshot(name, "a-held")
+                self.assertEqual(held["busy"], "true")
+                self.assertEqual(held["referenceText"], "Genesis 2")
+                self.assertEqual(held["released"], 0)
+                self.assertEqual(held["errorSections"], [])
+                self.assertEqual(len(held["statusWrites"]), 1)
+
+    def test_the_terminal_state_is_whole_before_the_late_work_lands(self):
+        for name in self.BOTH:
+            with self.subTest(scenario=name):
+                settled = self.snapshot(name, "b-settled")
+                for key, want in self.TERMINAL.items():
+                    self.assertEqual(settled[key], want, f"{name}: {key}")
+                self.assertEqual(settled["errorSections"], self.ERROR)
+                self.assertEqual(settled["released"], 0,
+                                 "the parked spine has not been let go yet")
+
+    def test_the_late_completion_moves_nothing_of_the_terminal_state(self):
+        # Every sink the settled page owns, compared across the release AND
+        # pinned to its exact value, so a pair that is identically wrong fails
+        # here too.
+        for name in self.BOTH:
+            with self.subTest(scenario=name):
+                before = self.snapshot(name, "b-settled")
+                after = self.snapshot(name, "a-late")
+                for key in GenuinelyLateStaleWorkTest.GUARDED:
+                    self.assertEqual(after[key], before[key],
+                                     f"{name}: {key} moved after invalidation")
+                for key, want in self.TERMINAL.items():
+                    self.assertEqual(after[key], want, f"{name}: {key}")
+                self.assertEqual(after["errorSections"], self.ERROR)
+
+    def test_the_late_work_really_happened(self):
+        # `released` counts parked requests LET GO, so a completion that
+        # changed nothing is told apart from one that never occurred — which
+        # is exactly how V5's "nothing stale survived" passed vacuously.
+        for name in self.BOTH:
+            with self.subTest(scenario=name):
+                self.assertGreater(self.snapshot(name, "a-late")["released"], 0)
+
+    def test_a_stale_rejection_owns_no_failure(self):
+        # The rejection variant is the sharper case: `render`'s catch writes
+        # the failure, clears the tally and re-seats focus, and none of that
+        # belongs to a render the page has already torn down.
+        after = self.snapshot("v7-invalidated-then-late-failure", "a-late")
+        self.assertIsNone(after["failureText"])
+        self.assertEqual(after["errorSections"], self.ERROR)
+        self.assertEqual(
+            after["statusWrites"],
+            ["Genesis 1, Douay-Rheims (Challoner), 107 fragments held,"
+             " 33 lead entries on the acquisition list.",
+             "The address is unchanged; the values not used are listed."],
+            "a stale rejection spoke")
+
+    def test_neither_late_answer_writes_the_route(self):
+        for name in self.BOTH:
+            with self.subTest(scenario=name):
+                after = self.snapshot(name, "a-late")
+                self.assertEqual(after["hashWrites"], [],
+                                 "a torn-down render pushed history")
+                self.assertEqual(after["replaced"], [],
+                                 "a torn-down render replaced the address")
+                self.assertEqual(after["hash"], self.TERMINAL["hash"],
+                                 "the reader's own text was overwritten")
