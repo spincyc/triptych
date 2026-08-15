@@ -378,52 +378,44 @@
    * =======================================================================
    *
    * The spine writes the author, the work, the date, the language, the printing,
-   * the translators and the rights ONCE per distinct set of them, under
-   * `sources`, and gives every fragment the key of its set — on Genesis 1 that
-   * saves 107 copies of ten fields, and every copy was a chance for two of them
-   * to disagree about one edition. The join happens here, at read time, which is
-   * where `browser-core.js` says joins belong.
+   * the translators and the rights ONCE per distinct set of them under
+   * `sources` — on Genesis 1 that saves 107 copies of ten fields, and every
+   * copy was a chance for two of them to disagree. The join happens here, at
+   * read time, which is where `browser-core.js` says joins belong.
    *
    * V6 joined by copying every own property of the shared record and then of
-   * the fragment into one object, and clearing afterwards the two it knew were
-   * dangerous. `text_path` was cleared only when the composed form could be
-   * built, so a fragment whose id or whose file's prefix was unreadable kept
-   * whatever `text_path` the RECORD carried, and `openFragment` handed it to
-   * the real request sink: `'../../../etc/passwd'` is a string, and a string
-   * was all the copy asked for. Every other unknown property came through
-   * untouched, so the boundary had to be re-established at every later sink —
-   * which is why V4, V5 and V6 each found one more sink where it had not been.
+   * the fragment, and clearing afterwards the two it knew were dangerous.
+   * `text_path` was cleared only when the composed form could be built, so a
+   * fragment whose id or prefix was unreadable kept whatever `text_path` the
+   * RECORD carried and `openFragment` handed it to the real request sink:
+   * `'../../../etc/passwd'` is a string, and a string was all the copy asked
+   * for. Every other unknown property came through untouched, so the boundary
+   * had to be re-established at every later sink — which is why V4, V5 and V6
+   * each found one more sink where it had not been.
    *
-   * V7 projects. A fragment is read into a record of KNOWN fields, each
-   * validated for the use the page puts it to, and nothing else crosses. There
-   * is no `joined[name] = raw[name]` here and there must not be one again.
-   * Everything downstream — rows, tally, voice filter, chips, provenance, the
-   * Source Library link, and the one request a fragment can cause — reads this
-   * record and never the raw one.
+   * V7 projects: known fields, each validated for the use the page puts it to,
+   * and nothing else crosses. There is no `joined[name] = raw[name]` here and
+   * there must not be one again. Everything downstream reads this record.
    *
-   * A member that can name NOTHING of itself is not a thin fragment; it is not
-   * a fragment. `{}` rendered a blank `<li>` with an empty author, an empty
-   * work, a perpetual "Loading…" and no locator, and was counted into "3
-   * fragments held here" — possession claimed by an empty object. Its valid
-   * siblings stand, which is why members are refused one at a time.
+   * A member naming NOTHING of itself is not a thin fragment; it is not a
+   * fragment. `{}` rendered a blank row and was counted into "3 fragments held
+   * here" — possession claimed by an empty object.
    */
 
   /**
    * The fields the fold moves to `sources`, and the ONLY ones a fragment may
    * inherit from its edition.
    *
-   * `_fold_shared` in `scripts/_catena.py` writes exactly these once per
-   * distinct set of them; the identity, the locus, the review state and the
-   * word tally are written per fragment and are the fragment's own. V7's first
-   * draft looked every field up through the fallback, which let a fragment
-   * inherit its `id` — and so its Source Library href and the one request it
-   * can cause — from its edition's record, so two fragments of one edition
-   * linked to the same passage and fetched the same file. No tracked source
-   * carries an `id`, so nothing real did it; it is a widening of exactly the
-   * field this projection exists to guard, and it is closed rather than
-   * excused. `attribution`, `rights_basis` and `acknowledgement` are here
-   * because they are facts about the edition's terms, which is what the fold
-   * shares, and because V6 already read them that way.
+   * `_fold_shared` in `scripts/_catena.py` writes these once per edition; the
+   * identity, the locus, the review state and the word tally are the
+   * fragment's own. V7's first draft looked every field up through the
+   * fallback, which let a fragment inherit its `id` — and so its Source
+   * Library href and the one request it can cause — from its edition, so two
+   * fragments of one edition linked to one passage and fetched one file. No
+   * tracked source carries an `id`, so nothing real did it; it is a widening
+   * of exactly the field this projection guards. `attribution`,
+   * `rights_basis` and `acknowledgement` are here because they are terms of
+   * the edition, and because V6 already read them that way.
    */
   const SHARED_WITH_EDITION = [
     'work_id', 'author', 'work', 'date', 'language', 'voice', 'edition',
@@ -542,29 +534,22 @@
    *
    * V7, second pass. The correction gave the chapter PAYLOAD a third answer —
    * a 200 carrying `null`, a list or a string is a request that succeeded
-   * carrying no spine — and stopped one level too shallow. A record whose
-   * `fragments` is not a list came through as a readable spine, `records()`
-   * turned it into `[]`, and the page printed "No commentary on this chapter
-   * is held yet" over a chapter its own index says holds 1,351 fragments.
-   * A `sources` that is not a record blanked the author, the work, the
-   * edition, the printing, the translators and the RIGHTS of all 107
-   * fragments while still stating possession of them, and made the voice
-   * control say "none here" of a chapter holding fourteen English fragments.
-   * An unreadable `refusals` ROOT dropped Rule 4's refusal in silence, which
-   * is the strongest claim this page makes failing OPEN.
+   * carrying no spine — and stopped one level too shallow. `fragments` as a
+   * record came through as readable, `records()` made it `[]`, and the page
+   * printed "No commentary on this chapter is held yet" over a chapter its
+   * own index says holds 1,351. `sources` as a list blanked the author, work,
+   * edition, printing, translators and RIGHTS of all 107 fragments while
+   * still stating possession of them. And an unreadable `refusals` root
+   * dropped Rule 4's refusal in silence — the strongest claim this page
+   * makes, failing OPEN.
    *
-   * `fragments: []` is legitimate and common — 512 of the 562 tracked spines
-   * carry it — so this asks about SHAPE and never about emptiness.
+   * `fragments: []` is legitimate and common, so this asks about SHAPE and
+   * never about emptiness.
    *
-   * Four things are deliberately NOT here. `leads`, `blocked` and a
-   * per-edition refusal list that is not a list: V5 settled, and its review
-   * accepted, that a container which is not one counts nothing and costs its
-   * siblings nothing. And `text_prefix`: V6 settled, and its review passed,
-   * that an unsafe or unreadable prefix refuses the composed path and leaves
-   * every fragment standing, saying it carries no text file — losing the
-   * whole chapter instead would be worse for a reader and would reverse an
-   * accepted decision. That the sentence is imprecise for three different
-   * situations is asked about in `REVIEW_REQUEST.md` rather than changed here.
+   * `leads`, `blocked`, a per-edition refusal list and `text_prefix` are
+   * deliberately NOT here: V5 and V6 each settled those and their reviews
+   * accepted them, and reversing an accepted decision is not this file's to
+   * do. `REVIEW_REQUEST.md` asks about the one whose copy is imprecise.
    */
   function spineUnreadable(file) {
     const record = bag(file);
@@ -972,13 +957,11 @@
    * about what this project could find, so a member states a claim or it
    * states nothing.
    *
-   * What a member must state is the language it is about and one of the four
-   * closed findings — `scripts/_catena.py` writes no other, and a fifth answer
-   * has to be argued for rather than typed. The REASON is deliberately not
-   * required, though the generator requires it of its own rows: V6 established
-   * that `in-copyright` is a fact about the law and survives a malformed
-   * reason standing beside it, the V6 review did not disturb that, and V7 does
-   * not reopen it. What the reason may no longer do is speak for a row whose
+   * A member states the language it is about and one of the four closed
+   * findings. The REASON is deliberately not required, though the generator
+   * requires it of its own rows: V6 established that `in-copyright` is a fact
+   * about the law and survives a malformed reason beside it, and V7 does not
+   * reopen that. What a reason may no longer do is speak for a row whose
    * finding could not be read.
    */
   function absenceMember(entry, wanted) {
@@ -1479,11 +1462,9 @@
    * The one typed truth beside the chapter: the tally, and the line spoken.
    *
    * V7 moves this here because `catena.js` had no bytes left, and it belongs
-   * here for a better reason than that. The page's own comment says "the
-   * announcement is the same clauses in the same order, so the two cannot
-   * disagree" — an invariant asserted by writing the clauses twice, in two
-   * expressions, twenty lines apart. Written once and returned as three
-   * values, the two cannot disagree because there is nothing to disagree.
+   * here for a better reason: the page's own comment claimed "the same clauses
+   * in the same order, so the two cannot disagree" while writing them twice,
+   * twenty lines apart. Written once, there is nothing to disagree.
    *
    * `bold` is the number the tally sets in bold and `tail` is the rest of the
    * same sentence, split so the page can mark one without composing the
@@ -1532,15 +1513,12 @@
    *
    * A value the page cannot honour is never traded for a default: the URL keeps
    * the reader's text and recovery is a link and the controls. WHY it cannot be
-   * used is prose about this corpus, so the judgment moves here for the reason
-   * every other derivation did — the sentence and the value that licenses it
-   * must not be able to drift apart, and the page's ceiling will not carry the
-   * argument.
+   * used is prose about this corpus, so the judgment lives here — the sentence
+   * and the value that licenses it must not drift apart.
    *
    * Failing closed was never the defect; the sentence was. Each negative is
-   * spoken only from a root read WHOLE, per `canonRoot` above, and where one
-   * could not be, the page says the thing it can support: that it could not
-   * match the value. The address fails closed exactly as before.
+   * spoken only from a root read WHOLE, per `canonRoot` above; where one could
+   * not be, the page says only that it could not match the value.
    * --------------------------------------------------------------------- */
 
   const UNMATCHED =
