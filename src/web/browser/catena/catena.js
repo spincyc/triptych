@@ -81,7 +81,14 @@
   function chapterFile(token, chapter) {
     const path = M.chapterPath(index, token, chapter);
     if (!path) return Promise.resolve(path === null ? { unfetched: 'the index record' } : null);
-    return cached(chapterFiles, path, { unfetched: path });
+    // A 200 CARRYING A DOCUMENT THAT IS NOT A SPINE IS NOT AN EMPTY CHAPTER.
+    // `null`, a list and a string are all valid JSON, so the request succeeded
+    // and every derivation off the payload then answered nothing — and the
+    // page printed "No commentary on this chapter is held yet" over a chapter
+    // its own index says holds commentary. The same manufactured negative the
+    // index record already had a third answer for.
+    return cached(chapterFiles, path, { unfetched: path })
+      .then((file) => (bag(file) === file ? file : { unfetched: path }));
   }
 
   // Where this edition opens a paragraph. The layer is the EDITION's —

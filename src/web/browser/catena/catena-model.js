@@ -408,6 +408,28 @@
    * siblings stand, which is why members are refused one at a time.
    */
 
+  /**
+   * The fields the fold moves to `sources`, and the ONLY ones a fragment may
+   * inherit from its edition.
+   *
+   * `_fold_shared` in `scripts/_catena.py` writes exactly these once per
+   * distinct set of them; the identity, the locus, the review state and the
+   * word tally are written per fragment and are the fragment's own. V7's first
+   * draft looked every field up through the fallback, which let a fragment
+   * inherit its `id` — and so its Source Library href and the one request it
+   * can cause — from its edition's record, so two fragments of one edition
+   * linked to the same passage and fetched the same file. No tracked source
+   * carries an `id`, so nothing real did it; it is a widening of exactly the
+   * field this projection exists to guard, and it is closed rather than
+   * excused. `attribution`, `rights_basis` and `acknowledgement` are here
+   * because they are facts about the edition's terms, which is what the fold
+   * shares, and because V6 already read them that way.
+   */
+  const SHARED_WITH_EDITION = [
+    'work_id', 'author', 'work', 'date', 'language', 'voice', 'edition',
+    'edition_published', 'translators', 'container', 'rights', 'attribution',
+    'rights_basis', 'acknowledgement'];
+
   /** One fragment as this page may use it, or null. */
   function fragmentRow(fragment, sources, prefix) {
     // THE SOURCE KEY IS A PROPERTY LOOKUP, and V6's review proved a lookup is a
@@ -416,27 +438,42 @@
     // that named no edition at all — and `sources["constructor"]` is a
     // function, which `bag` refuses but the raw index did not. Only a string
     // that the record itself carries as its own key joins anything.
-    const key = fragment.source;
+    // `bag`, because this is an exported entry point and a caller is not
+    // `chapterFragments`; inside, `records()` has already asked.
+    const own = bag(fragment);
+    const key = own.source;
     const shared = typeof key === 'string' && Object.hasOwn(sources, key)
       ? bag(sources[key])
       : {};
     // The fragment's own statement wins over its edition's, as the fold
-    // intends — but only for a field this projection names.
+    // intends — and only a field the fold actually shares may be inherited.
     const said = (name) =>
-      Object.hasOwn(fragment, name) ? fragment[name]
-        : Object.hasOwn(shared, name) ? shared[name] : undefined;
+      Object.hasOwn(own, name) ? own[name]
+        : SHARED_WITH_EDITION.includes(name) && Object.hasOwn(shared, name)
+          ? shared[name] : undefined;
 
     // THE ID BECOMES A FETCHED PATH AND A LINK. A truthy test let a record
     // through and composed `…/[object Object].json`, which the page then
     // requested; sound text alone still let arbitrary prose and a path-like
-    // string through.
-    const id = ident(said('id'));
+    // string through. Read off the fragment ALONE, never off its edition.
+    const id = ident(own.id);
     const author = sound(said('author'));
     const work = sound(said('work'));
     // THE LEAST A FRAGMENT MUST SAY. Not "is an object": a fragment row is the
     // page stating that this project holds this commentary here, and a record
     // that can name neither the passage's own identity, nor its author, nor
     // its work states no part of that.
+    //
+    // The names are read through the JOIN, deliberately. Every fragment of the
+    // tracked corpus states its author and its work only through its edition,
+    // so asking the fragment's own record for them would refuse all 1,351 of
+    // them; and V6 settled, and its review left standing, that a fragment
+    // whose id alone is unreadable still renders and still counts — it is a
+    // fragment held here minus one fact. The cost is that `{source: "0"}`, a
+    // record stating nothing whatever but which edition it belongs to, borrows
+    // that edition's author and work and is counted. `REVIEW_REQUEST.md` asks
+    // about that case rather than moving the line on it a second time: V6's
+    // request asked the same question and the review did not answer it.
     if (!id && !author && !work) return null;
 
     const extent = bag(said('extent'));
@@ -455,8 +492,8 @@
       // completes, rather than guarded at the fetch.
       text_path: id
         ? (prefix ? prefix + id + '.json'
-          : leaf(said('text_path')).endsWith('/' + id + '.json')
-            ? leaf(said('text_path'))
+          : leaf(own.text_path).endsWith('/' + id + '.json')
+            ? leaf(own.text_path)
             : '')
         : '',
       author: author,
@@ -643,18 +680,23 @@
     // A member that cannot state WHICH BOOK it is about is not merely skipped:
     // it might have been this one, so no emptiness can be drawn from the list
     // that carries it.
+    // `readable` is carried through BOTH loops below, and that is the whole of
+    // it: V7's first draft consulted it only where no entry for this book was
+    // found, so once one readable entry existed the second loop could still
+    // answer `''` — a recorded emptiness — with an unreadable sibling standing
+    // beside it that might have recorded the very chapter being asked for.
     const held = [];
-    let whole_root = true;
+    let readable = true;
     for (const entry of root) {
       const record = bag(entry);
       const named = record === entry ? bookToken(record.token) : '';
-      if (!named) whole_root = false;
+      if (!named) readable = false;
       else if (named === wanted) held.push(record);
     }
     // The index holds nothing at all in this book, and says so of every
     // chapter in it. That is a real, recorded emptiness — and only where every
     // member of the list could be read.
-    if (!held.length) return whole_root ? '' : null;
+    if (!held.length) return readable ? '' : null;
     const number = whole(chapter);
     if (number === null) return null;
     // A DIGIT WIDTH NOBODY CAN READ COMPOSES THE WRONG PATH. V6 fell back to
@@ -670,20 +712,21 @@
     let recorded = null;
     for (const entry of held) {
       const prefix = trail(entry.path);
-      if (!prefix || !Array.isArray(entry.present)) continue;
-      let readable = true;
+      if (!prefix || !Array.isArray(entry.present)) { readable = false; continue; }
+      let listed = true;
       let present = false;
       for (const one of entry.present) {
         // A member this page cannot read makes THAT list unreadable, because
         // a chapter's absence from an unreadable list proves nothing.
-        if (whole(one) === null) { readable = false; break; }
+        if (whole(one) === null) { listed = false; break; }
         if (one === number) present = true;
       }
-      if (!readable) continue;
+      if (!listed) { readable = false; continue; }
       if (present) return prefix + String(number).padStart(digits, '0') + '.json';
       recorded = '';
     }
-    return recorded;
+    // `''` only where every record that could have spoken for this book did.
+    return readable ? recorded : null;
   }
 
   /**
@@ -715,14 +758,27 @@
     const editions = bag(index.editions);
     if (index.editions !== undefined && editions !== index.editions) return null;
     const key = ident(edition);
-    const prefix = key && Object.hasOwn(editions, key)
-      ? trail(bag(editions[key]).path)
-      : '';
+    // This edition publishes no paragraph layer at all. A real absence, and
+    // the one answer here that lets the page say the chapter runs on.
+    if (!key || !Object.hasOwn(editions, key)) return '';
+    // FROM HERE DOWN EVERY FAILURE IS UNREADABILITY, NOT ABSENCE. V7's first
+    // draft answered `''` for an edition record that is not a record and for a
+    // `path` that is not a trail, so a member of the layer nobody could read
+    // was printed as this edition opening no paragraph here — the same
+    // manufactured negative the rest of this function exists to refuse.
+    const record = bag(editions[key]);
+    if (record !== editions[key]) return null;
+    const prefix = trail(record.path);
     const book = ident(bookPath);
     const number = whole(chapter);
-    if (!prefix || !book || number === null) return '';
+    if (!prefix || !book || number === null) return null;
+    // AND A DIGIT WIDTH NOBODY CAN READ COMPOSES THE WRONG PATH, exactly as it
+    // did in `chapterPath`: the request goes out, 404s, and the 404 is read as
+    // an edition that opens no paragraph here.
+    const stated = index.chapter_digits;
+    if (stated !== undefined && whole(stated) === null) return null;
     return prefix + book + '/' +
-      String(number).padStart(whole(index.chapter_digits) || 1, '0') + '.json';
+      String(number).padStart(whole(stated) || 1, '0') + '.json';
   }
 
   // The two claims a recorded paragraph break may make, and there is no third.

@@ -164,7 +164,7 @@ NODE = shutil.which("node")
 # repeat both went with them. The relocation's own cost is measured in the
 # durable records, where it is re-taken rather than going stale beside a
 # digest.
-MODEL_SHA256 = "8f0061b33123c612120c00aa88593514894858f94f00b81a2b43ef006236e843"
+MODEL_SHA256 = "ce651db9d5eb3a4c778887c1491ed27383c55fddef1d1046cfedc6620dc7eaa3"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -1253,6 +1253,49 @@ V7_PARTIAL_CANON = _broken_index(canon=[
 # ground for saying an address names a voice this corpus does not hold.
 V7_PARTIAL_VOICES = _broken_index(voices=["original", {"key": "translation:en"}])
 
+# A paragraph layer root that IS readable, carrying a member that is not. Both
+# were answered `''` — "this edition opens no paragraph here" — in V7's first
+# draft, and the second composed the WRONG path and requested it.
+V7_PARAGRAPH_BAD_DIGITS = {
+    "chapter_digits": {"width": 3},
+    "editions": {"douay-rheims": {"path": "structure/paragraphs/douay-rheims/"}},
+}
+V7_PARAGRAPH_BAD_EDITION = {
+    "chapter_digits": 3,
+    "editions": {"douay-rheims": "structure/paragraphs/douay-rheims/"},
+}
+
+# A holdings list carrying a readable entry for this book that does not record
+# this chapter, BESIDE a member nobody can read. The unreadable member might
+# have been the second entry that records it, so no emptiness follows from the
+# list that carries it.
+V7_HELD_UNREADABLE_SIBLING = _broken_index(held=[
+    {"token": "Gen", "name": "Genesis", "chapters": 50, "fragments": 1,
+     "path": "structure/catena/01-gen/", "present": [2], "languages": ["la"]},
+    {"nope": 1},
+])
+# The same shape one level down: two entries for this book, one whose `present`
+# is not a list and one that is readable and does not record the chapter.
+V7_HELD_MALFORMED_PRESENT = _broken_index(held=[
+    {"token": "Gen", "name": "Genesis", "chapters": 50,
+     "path": "structure/catena/01-gen/", "present": "1,2"},
+    {"token": "Gen", "name": "Genesis", "chapters": 50,
+     "path": "structure/catena/01-gen/", "present": [2]},
+])
+
+# A fragment whose id can only be had from its EDITION. The fold writes the id
+# per fragment and never shares it, so a source carrying one is a malformed
+# record — and inheriting it gave two fragments one Source Library link and
+# one text file.
+V7_INHERITED_ID_FIXTURE = _fixture({
+    "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+    "sources": {"0": dict(_voice_source(1), id="passage.borrowed.identity",
+                          text_path="structure/catena/text/"
+                                    "passage.borrowed.identity.json")},
+    "fragments": [{"source": "0", "locator": "1"}, {"source": "0", "locator": "2"}],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
 # The paragraph LAYER root, unreadable. `bag()` made it `{}`, no path was
 # composed, and no path composed was printed as this edition opening no
 # paragraph here.
@@ -2108,6 +2151,23 @@ SCENARIOS = [
     {"name": "v7-partial-voices", "hash": "#book=Gen&chapter=1&bible=douay-rheims"
                                           "&voice=translation:en",
      "files": {"structure/catena/index.json": V7_PARTIAL_VOICES}},
+    {"name": "v7-paragraph-digits", "hash": GEN1,
+     "files": {"structure/paragraphs/index.json": V7_PARAGRAPH_BAD_DIGITS}},
+    {"name": "v7-paragraph-edition-record", "hash": GEN1,
+     "files": {"structure/paragraphs/index.json": V7_PARAGRAPH_BAD_EDITION}},
+    {"name": "v7-held-unreadable-sibling", "hash": GEN1,
+     "files": {"structure/catena/index.json": V7_HELD_UNREADABLE_SIBLING}},
+    {"name": "v7-held-malformed-present", "hash": GEN1,
+     "files": {"structure/catena/index.json": V7_HELD_MALFORMED_PRESENT}},
+    # A 200 whose body is a list: the request succeeded and the document is
+    # not a spine. `raw` is the only way to express that.
+    {"name": "v7-spine-not-a-record", "hash": GEN1,
+     "raw": {"structure/catena/01-gen/001.json": [1, 2, 3]}},
+    {"name": "v7-spine-null", "hash": GEN1,
+     "raw": {"structure/catena/01-gen/001.json": None}},
+    {"name": "v7-inherited-id", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V7_INHERITED_ID_FIXTURE},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
     {"name": "v7-paragraph-root", "hash": GEN1,
      "raw": {"structure/paragraphs/index.json": V7_PARAGRAPH_ROOT_SCALAR}},
     {"name": "v7-paragraph-file", "hash": GEN1,
@@ -8609,3 +8669,142 @@ class V7InvalidatedPendingRenderTest(ReplayTest):
                                  "a torn-down render replaced the address")
                 self.assertEqual(after["hash"], self.TERMINAL["hash"],
                                  "the reader's own text was overwritten")
+
+
+class V7AdversarialReviewFindingsTest(ReplayTest):
+    """V7 — five defects an adversarial pass over V7's own diff confirmed.
+
+    Every one is the SAME class the correction set out to close, found in a
+    place the correction had not reached. They are pinned here together, with
+    the input that produced each, because a defect found by attacking one's own
+    change is the kind most easily quietly fixed and never recorded.
+    """
+
+    UNAVAILABLE = "The commentary record did not load"
+    SPOKEN = ("Genesis 1, Douay-Rheims (Challoner),"
+              " commentary record unavailable.")
+    PARAGRAPH_UNREAD = ("The paragraph record for this chapter in this edition"
+                        " could not be read, so whether it divides the chapter"
+                        " is not established here.")
+
+    # --------------------------------------------------------------- 1 and 2
+    PARAGRAPH = ("v7-paragraph-digits", "v7-paragraph-edition-record")
+
+    def test_an_unreadable_member_of_a_readable_paragraph_root_claims_nothing(self):
+        # 1. `chapter_digits` that is not a number. V7 removed this exact
+        #    fallback from `chapterPath` and left it in `paragraphPath`, where
+        #    it composed `…/01-gen/1.json` for a layer that writes `001.json`,
+        #    requested it, took the 404 for an answer and printed the answer as
+        #    "No paragraph division is held … so it runs on".
+        # 2. An edition's own record that is not a record. Same sentence, same
+        #    manufactured claim, one member further in.
+        for name in self.PARAGRAPH:
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+                self.assertNotIn("No paragraph division is held",
+                                 page["paragraphNote"])
+
+    def test_neither_unreadable_paragraph_member_composes_a_request(self):
+        # The 404 was not merely misread; it should never have been asked for.
+        for name in self.PARAGRAPH:
+            with self.subTest(scenario=name):
+                self.assertFalse(
+                    [one for one in self.page(name)["fetched"]
+                     if one.startswith("structure/paragraphs/douay-rheims/")],
+                    "a path was composed from a member nobody could read")
+
+    def test_the_chapter_beside_the_unreadable_layer_is_untouched(self):
+        for name in self.PARAGRAPH:
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["fragmentCount"], 107)
+                self.assertEqual(page["chapterCounts"][0], "31 verses")
+                self.assertEqual(page["errorSections"], [])
+                self.assertEqual(page["busy"], "false")
+
+    # ------------------------------------------------------------------- 3
+    HELD = ("v7-held-unreadable-sibling", "v7-held-malformed-present")
+
+    def test_an_unreadable_sibling_holdings_record_proves_no_emptiness(self):
+        # Both lists carry a READABLE entry for Genesis that does not record
+        # chapter 1, beside a member that cannot be read — a member with no
+        # token in the first, one whose `present` is a string in the second.
+        # The unreadable member might have been the entry that records chapter
+        # 1, so the emptiness does not follow. V7's first draft consulted its
+        # readability flag only where NO entry for the book was found, so once
+        # one readable entry existed the second loop answered `''` regardless.
+        for name in self.HELD:
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+                self.assertEqual(page["statusWrites"], [self.SPOKEN])
+                self.assertNotIn("Nothing held", page["tallyText"])
+                self.assertEqual(page["asideNotes"], [])
+                self.assertNotIn(
+                    "No commentary on this chapter is held yet.",
+                    " ".join(page["asideNotes"] + page["sectionHeadings"]))
+
+    def test_no_chapter_record_is_requested_from_an_unreadable_holdings_list(self):
+        for name in self.HELD:
+            with self.subTest(scenario=name):
+                self.assertFalse(
+                    [one for one in self.page(name)["fetched"]
+                     if one.startswith("structure/catena/01-gen/")])
+
+    # ------------------------------------------------------------------- 4
+    SPINE = ("v7-spine-not-a-record", "v7-spine-null")
+
+    def test_a_spine_that_answers_with_no_spine_is_a_fault_not_an_emptiness(self):
+        # A 200 carrying `null` or a list: the request SUCCEEDED and the
+        # document is not a spine. Every derivation off it answered nothing,
+        # and the page printed "No commentary on this chapter is held yet" over
+        # a chapter its own index says holds 107 fragments. The index record
+        # already had a third answer for this; the payload did not.
+        for name in self.SPINE:
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+                self.assertEqual(page["statusWrites"], [self.SPOKEN])
+                self.assertEqual(page["fragmentCount"], 0)
+                self.assertEqual(page["asideNotes"], [])
+                self.assertEqual(page["sectionHeadings"],
+                                 ["This chapter’s commentary record did not load"])
+                # The notice names the record that would not come, by its path.
+                self.assertIn("structure/catena/01-gen/001.json",
+                              page["errorSections"][0]["details"][0])
+
+    def test_the_malformed_spine_still_terminates(self):
+        for name in self.SPINE:
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["busy"], "false")
+                self.assertEqual(page["hash"], GEN1)
+                self.assertEqual(page["hashWrites"], [])
+                self.assertEqual(page["replaced"], [])
+                self.assertEqual(page["activeElement"], "body")
+                self.assertIsNone(page["failureText"])
+                self.assertEqual(page["dataStates"], ["error"])
+
+    # ------------------------------------------------------------------- 5
+    def test_a_fragment_never_inherits_its_identity_from_its_edition(self):
+        # `_fold_shared` writes the id PER FRAGMENT and never shares it, so a
+        # source carrying one is a malformed record. Looking the field up
+        # through the shared fallback let two fragments of one edition take the
+        # same id — and so the same Source Library link and the same text file.
+        # No tracked source carries an `id`, so nothing real did it; it is a
+        # widening of exactly the field the projection exists to guard.
+        page = self.snapshot("v7-inherited-id", "opened")
+        self.assertEqual(page["fragmentIds"], [None, None],
+                         "a fragment borrowed its edition's identity")
+        self.assertFalse([one for one in page["fetched"]
+                          if "passage.borrowed.identity" in one],
+                         "and fetched the file that identity names")
+        # Both still stand and are counted: they name their author and their
+        # work through the join, which is what the fold shares.
+        self.assertEqual(page["fragmentCount"], 2)
+        self.assertEqual(page["tallyText"], "2 fragments held")
+        self.assertEqual(
+            page["fragmentTexts"],
+            ["This fragment carries no text file, so nothing of it can be shown."] * 2)
+        self.assertEqual(page["busy"], "false")
