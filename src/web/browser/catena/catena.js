@@ -14,7 +14,7 @@
   // The typed boundary — asked, and explained, in `catena-model.js`.
   const { sound, bag } = M;
 
-  const { joinNames, voicePhrase, voiceLabel } = M;
+  const { voiceLabel } = M;
   M.useLanguageNames(T.languageName);
 
   const reference = document.getElementById('reference');
@@ -50,6 +50,9 @@
   let showingError = false;
   // The next render answers an ARRIVING address, not a reader action.
   let arrival = false;
+  // THE 404, AS A VALUE, because `null` cannot be it: JSON `null` is a valid
+  // document, and a 200 carrying one was read as "there is no such file".
+  const ABSENT = { absent: true };
 
   /* --------------------------------------------------------------- data */
 
@@ -88,7 +91,7 @@
     // its own index says holds commentary. The same manufactured negative the
     // index record already had a third answer for.
     return cached(chapterFiles, path, { unfetched: path })
-      .then((file) => (bag(file) === file ? file : { unfetched: path }));
+      .then((file) => (M.spineUnreadable(file) ? { unfetched: path } : file));
   }
 
   // Where this edition opens a paragraph. The layer is the EDITION's —
@@ -99,13 +102,13 @@
     // `null` is the layer ROOT unreadable, not the 404 that means this
     // chapter runs on; carried in the route's own `unfetched`.
     return path === null ? Promise.resolve({ unfetched: true })
-      : path ? cached(paragraphFiles, path, null) : Promise.resolve(null);
+      : path ? cached(paragraphFiles, path, ABSENT) : Promise.resolve(ABSENT);
   }
 
   // One fragment's prose — keyed by the path the SPINE gave, never
   // assembled from an id. Even its 404 is evicted: retry is real.
   function fragmentText(path) {
-    if (!path) return Promise.resolve(null);
+    if (!path) return Promise.resolve(ABSENT);
     return cached(fragmentTexts, path);
   }
 
@@ -276,7 +279,8 @@
         (loaded) => {
           // A completion for a rebuilt page mutates nothing here.
           if (!reading.contains(details)) return;
-          if (!loaded) {
+          // No file, or a file: a 200 answering `null` is the second.
+          if (loaded === ABSENT) {
             text.className = 'fragment-text missing';
             text.textContent =
               'This fragment carries no text file, so nothing of it can be shown.';
@@ -397,39 +401,18 @@
     const heading = T.el('h2', 'section-heading', headingText);
     container.appendChild(heading);
     if (!held.length) {
-      // Rule 1: no fragments shows no fragments, said plainly — but a
-      // held row that cannot be rendered is NOT absence; beside one, an
-      // absence claim covers the RENDERABLE rows alone.
-      container.appendChild(
-        T.el('p', 'aside-note',
-          all.length
-            ? 'No ' + (blockedHeld ? 'renderable ' : '') +
-                'commentary on this chapter is held in ' +
-                voicePhrase(M.parseVoiceKey(wanted)) + '. ' + all.length +
-                (all.length === 1 ? ' fragment is' : ' fragments are') +
-                ' held here, in ' +
-                joinNames(M.chapterVoices(file).map(voicePhrase)) +
-                '; choose “Everything held” to see ' +
-                (all.length === 1 ? 'it' : 'them') + '.'
-            : blockedHeld
-              ? 'Nothing held on this chapter is renderable yet; what is ' +
-                'held, and why it cannot be shown, stands below.'
-              : 'No commentary on this chapter is held yet.'));
+      // Rule 1: no fragments shows no fragments, said plainly. The sentence
+      // is the model's, beside the counts it is derived from.
+      container.appendChild(T.el('p', 'aside-note',
+        M.emptyChainNote(all.length, blockedHeld, wanted, M.chapterVoices(file))));
       renderAbsences(container, file, wanted);
       return 0;
     }
 
-    // A father held only in his own Latin must not vanish under an
-    // English selection: the unshown voices are named.
     if (wanted) {
-      const others = M.chapterVoices(file).filter((one) => one.key !== wanted);
-      if (others.length) {
-        container.appendChild(
-          T.el('p', 'aside-note',
-            'Showing ' + voicePhrase(M.parseVoiceKey(wanted)) +
-              ' only. This chapter is also held in ' +
-              joinNames(others.map(voicePhrase)) + '.'));
-      }
+      const said = M.otherVoicesNote(wanted,
+        M.chapterVoices(file).filter((one) => one.key !== wanted));
+      if (said) container.appendChild(T.el('p', 'aside-note', said));
       renderAbsences(container, file, wanted);
     }
 
@@ -693,7 +676,9 @@
       if (!T.isCurrentRender(renderToken)) return;
 
       // An expected spine that would not come is an error, not an absence.
-      const unfetched = (file && file.unfetched) || '';
+      // `sound`: it reaches a reader inside a sentence, and a payload
+      // carrying `unfetched: {…}` printed "[object Object]" there.
+      const unfetched = sound(bag(file).unfetched);
       if (unfetched) file = null;
 
       // ONE typed truth beside the chapter: every tally, empty, blocked
@@ -726,42 +711,18 @@
       reading.setAttribute('aria-busy', 'false');
       refocus();
 
-      // The tally states the corpus, never the filter — and the announcement
-      // is the same clauses in the same order, so the two cannot disagree.
+      // The tally states the corpus, never the filter, and the announcement
+      // is the same clauses in the same order — one derivation, so the two
+      // cannot disagree rather than being asserted not to.
       T.clear(tally);
-      const wanted = voiceSelect.value;
-      const blockedClause = blocked.length +
-        (blocked.length === 1 ? ' work' : ' works') + ' held, not renderable yet';
-      let head;
-      const extras = [];
-      if (unfetched) {
-        head = 'The commentary record did not load';
-      } else {
-        head = total
-          ? total + (total === 1 ? ' fragment held' : ' fragments held')
-          : blocked.length ? blockedClause : 'Nothing held here';
-        // "none in X" is provable only with no blocked row standing.
-        if (total && wanted && count < total && (count || !blocked.length)) {
-          extras.push((count ? count + ' in ' : 'none in ') + voicePhrase(M.parseVoiceKey(wanted)));
-        }
-        if (total && blocked.length) extras.push(blockedClause);
-        if (leads.length) {
-          extras.push(leads.length +
-            (leads.length === 1 ? ' lead entry' : ' lead entries') +
-            ' on the acquisition list');
-        }
-      }
-      const bold = unfetched ? '' : String(total || blocked.length || 'Nothing');
-      if (bold) tally.appendChild(T.el('b', null, bold));
-      tally.appendChild(textNode(
-        head.slice(bold.length) + extras.map((one) => ' · ' + one).join('')));
-
+      const said = M.chapterSummary({
+        total: total, shown: count, blocked: blocked.length,
+        leads: leads.length, unfetched: !!unfetched, voice: voiceSelect.value
+      });
+      if (said.bold) tally.appendChild(T.el('b', null, said.bold));
+      tally.appendChild(textNode(said.tail));
       T.statusLine(
-        book.name + ' ' + chapter + ', ' + bible.label + ', ' +
-          (unfetched
-            ? 'commentary record unavailable'
-            : [head].concat(extras).join(', ')) + '.'
-      );
+        book.name + ' ' + chapter + ', ' + bible.label + ', ' + said.spoken + '.');
       writeRoute(wasArrival);
     } catch (error) {
       // Stale proves nothing: only the owning render may show a failure.
@@ -826,7 +787,9 @@
     const items = [];
     for (let n = 1; n <= count; n += 1) items.push({ value: String(n), label: String(n) });
     T.fillSelect(chapterSelect, items);
-    chapterSelect.value = String(wanted);
+    // THE NUMBER IT DENOTES, not the spelling: `#chapter=007` carried no
+    // option, so the page showed chapter 1 and rewrote the address to say so.
+    chapterSelect.value = String(Number(wanted) || wanted);
     if (!chapterSelect.value) chapterSelect.value = '1';
   }
 
@@ -941,8 +904,11 @@
       [index, manifest, paragraphs] = await Promise.all([
         T.loadJSON('structure/catena/index.json'),
         T.loadBibles(),
-        // Optional: without the paragraph layer, the chapter runs on.
-        cached(paragraphFiles, 'structure/paragraphs/index.json', null)
+        // Optional: without the paragraph layer, the chapter runs on — and
+        // OPTIONAL MEANS ITS FAILURE IS NOT THE PAGE'S. Unguarded, a transport
+        // fault here took down the whole bootstrap and blamed the catena index.
+        cached(paragraphFiles, 'structure/paragraphs/index.json', ABSENT)
+          .catch(() => 'unreadable')
       ]);
     } catch (error) {
       startFailed('The catena index could not be loaded: ' + (error.message || error));

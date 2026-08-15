@@ -441,9 +441,10 @@
     // `bag`, because this is an exported entry point and a caller is not
     // `chapterFragments`; inside, `records()` has already asked.
     const own = bag(fragment);
+    const held = bag(sources);
     const key = own.source;
-    const shared = typeof key === 'string' && Object.hasOwn(sources, key)
-      ? bag(sources[key])
+    const shared = typeof key === 'string' && Object.hasOwn(held, key)
+      ? bag(held[key])
       : {};
     // The fragment's own statement wins over its edition's, as the fold
     // intends — and only a field the fold actually shares may be inherited.
@@ -534,6 +535,44 @@
   /** Was something recorded here that this page cannot read as text? */
   function broken(value) {
     return value !== undefined && value !== null && value !== '' && !sound(value);
+  }
+
+  /**
+   * Is this chapter spine a document this page cannot read as one?
+   *
+   * V7, second pass. The correction gave the chapter PAYLOAD a third answer —
+   * a 200 carrying `null`, a list or a string is a request that succeeded
+   * carrying no spine — and stopped one level too shallow. A record whose
+   * `fragments` is not a list came through as a readable spine, `records()`
+   * turned it into `[]`, and the page printed "No commentary on this chapter
+   * is held yet" over a chapter its own index says holds 1,351 fragments.
+   * A `sources` that is not a record blanked the author, the work, the
+   * edition, the printing, the translators and the RIGHTS of all 107
+   * fragments while still stating possession of them, and made the voice
+   * control say "none here" of a chapter holding fourteen English fragments.
+   * An unreadable `refusals` ROOT dropped Rule 4's refusal in silence, which
+   * is the strongest claim this page makes failing OPEN.
+   *
+   * `fragments: []` is legitimate and common — 512 of the 562 tracked spines
+   * carry it — so this asks about SHAPE and never about emptiness.
+   *
+   * Four things are deliberately NOT here. `leads`, `blocked` and a
+   * per-edition refusal list that is not a list: V5 settled, and its review
+   * accepted, that a container which is not one counts nothing and costs its
+   * siblings nothing. And `text_prefix`: V6 settled, and its review passed,
+   * that an unsafe or unreadable prefix refuses the composed path and leaves
+   * every fragment standing, saying it carries no text file — losing the
+   * whole chapter instead would be worse for a reader and would reverse an
+   * accepted decision. That the sentence is imprecise for three different
+   * situations is asked about in `REVIEW_REQUEST.md` rather than changed here.
+   */
+  function spineUnreadable(file) {
+    const record = bag(file);
+    if (record !== file) return true;
+    if (!Array.isArray(record.fragments)) return true;
+    if (record.sources !== undefined && bag(record.sources) !== record.sources) return true;
+    if (record.refusals !== undefined && bag(record.refusals) !== record.refusals) return true;
+    return false;
   }
 
   /** Every fragment of one chapter file that can be one, in the order given. */
@@ -747,9 +786,16 @@
    * could read.
    */
   function paragraphPath(layer, edition, bookPath, chapter) {
-    // A layer that was never fetched, or answered 404, is no layer. That is
-    // the absence the page may speak from.
-    if (layer === null || layer === undefined) return '';
+    // A layer that answered 404 is no layer, and that is the absence the page
+    // may speak from. The route marks it, because `null` cannot: JSON `null`
+    // is a valid document and a 200 carrying it is a file nobody can read,
+    // which V7's first pass read as the 404 and printed as an edition that
+    // opens no paragraph here.
+    // `undefined` is never fetched; `absent` is the route's mark for the 404.
+    // `null` is NOT here: a 200 answering JSON `null` is a file nobody could
+    // read, and reading it as the 404 is what printed an edition that opens
+    // no paragraph here over a layer root that had failed.
+    if (layer === undefined || bag(layer).absent === true) return '';
     const index = bag(layer);
     if (index !== layer) return null;
     // The EDITION KEY is a property lookup again, so it is an identity this
@@ -862,11 +908,17 @@
       // `unfetched` is the route's own word for a record that was expected
       // and would not come — the same one `chapterFile` answers with for the
       // spine — and the paragraph ROOT arriving unreadable is carried here in
-      // it. A 404 is `null`, and means the chapter genuinely runs on.
+      // it. `absent` is the route's mark for a 404, which is the one answer
+      // that means the chapter genuinely runs on; `null` cannot carry it,
+      // because a 200 answering JSON `null` is a file nobody could read and
+      // V7's first pass printed it as an edition that divides nothing.
+      //
+      // A record with NO `breaks` key is unreadable too. All 5,547 tracked
+      // paragraph files carry one and none is empty, so a paragraph file
+      // without it states nothing about how this chapter divides.
       marksUnread: !!layer.unfetched ||
-        (marks !== null && marks !== undefined &&
-          (layer !== marks ||
-            (layer.breaks !== undefined && breaks !== layer.breaks)))
+        (marks !== undefined && layer.absent !== true &&
+          (layer !== marks || breaks !== layer.breaks))
     };
   }
 
@@ -1385,6 +1437,96 @@
     });
   }
 
+  /**
+   * What the chain says when this selection shows nothing.
+   *
+   * Prose derived from typed counts, so it is derived here beside them. A
+   * held row that cannot be rendered is NOT absence: beside one, an absence
+   * claim covers the renderable rows alone.
+   *
+   * V7 also stops the sentence naming an empty list. `chapterVoices` reads
+   * `sources`, and a chapter whose `sources` nobody can read offers none — so
+   * `joinNames([])` reached a reader as "held here, in ;". A clause with
+   * nothing to say is not said.
+   */
+  function emptyChainNote(total, blocked, wanted, voices) {
+    const many = whole(total) || 0;
+    if (!many) {
+      return blocked
+        ? 'Nothing held on this chapter is renderable yet; what is held, and ' +
+          'why it cannot be shown, stands below.'
+        : 'No commentary on this chapter is held yet.';
+    }
+    const named = joinNames(list(voices).map(voicePhrase));
+    return 'No ' + (blocked ? 'renderable ' : '') +
+      'commentary on this chapter is held in ' +
+      voicePhrase(parseVoiceKey(wanted)) + '. ' + many +
+      (many === 1 ? ' fragment is' : ' fragments are') + ' held here' +
+      (named ? ', in ' + named : '') + '; choose \u201cEverything held\u201d to see ' +
+      (many === 1 ? 'it' : 'them') + '.';
+  }
+
+  /** A father held only in his own Latin must not vanish under English. */
+  function otherVoicesNote(wanted, others) {
+    const named = joinNames(list(others).map(voicePhrase));
+    return named
+      ? 'Showing ' + voicePhrase(parseVoiceKey(wanted)) +
+        ' only. This chapter is also held in ' + named + '.'
+      : '';
+  }
+
+  /**
+   * The one typed truth beside the chapter: the tally, and the line spoken.
+   *
+   * V7 moves this here because `catena.js` had no bytes left, and it belongs
+   * here for a better reason than that. The page's own comment says "the
+   * announcement is the same clauses in the same order, so the two cannot
+   * disagree" — an invariant asserted by writing the clauses twice, in two
+   * expressions, twenty lines apart. Written once and returned as three
+   * values, the two cannot disagree because there is nothing to disagree.
+   *
+   * `bold` is the number the tally sets in bold and `tail` is the rest of the
+   * same sentence, split so the page can mark one without composing the
+   * other. `spoken` is every clause in order, for the live region.
+   */
+  function chapterSummary(state) {
+    const said = bag(state);
+    const total = whole(said.total) || 0;
+    const shown = whole(said.shown) || 0;
+    const blocked = whole(said.blocked) || 0;
+    const leads = whole(said.leads) || 0;
+    const voice = sound(said.voice);
+    const blockedClause = blocked + (blocked === 1 ? ' work' : ' works') +
+      ' held, not renderable yet';
+    if (said.unfetched) {
+      return {
+        bold: '',
+        tail: 'The commentary record did not load',
+        spoken: 'commentary record unavailable'
+      };
+    }
+    const head = total
+      ? total + (total === 1 ? ' fragment held' : ' fragments held')
+      : blocked ? blockedClause : 'Nothing held here';
+    const extras = [];
+    // "none in X" is provable only with no blocked row standing.
+    if (total && voice && shown < total && (shown || !blocked)) {
+      extras.push((shown ? shown + ' in ' : 'none in ') +
+        voicePhrase(parseVoiceKey(voice)));
+    }
+    if (total && blocked) extras.push(blockedClause);
+    if (leads) {
+      extras.push(leads + (leads === 1 ? ' lead entry' : ' lead entries') +
+        ' on the acquisition list');
+    }
+    const bold = String(total || blocked || 'Nothing');
+    return {
+      bold: bold,
+      tail: head.slice(bold.length) + extras.map((one) => ' \u00b7 ' + one).join(''),
+      spoken: [head].concat(extras).join(', ')
+    };
+  }
+
   /* ------------------------------------------------------------------------
    * The cited state, judged
    *
@@ -1423,7 +1565,14 @@
       if (all.length > 1) flag(key, all.join(', '), 'is cited more than once');
     }
     const books = list(bag(canon).books);
-    const named = (token) => books.find((one) => one.token === sound(token)) || null;
+    // EXACTLY, not trimmed. `sound()` here made `#book=%20Ex` resolve to
+    // Exodus and pass the address grammar, while `seedControls` handed the
+    // untrimmed `" Ex"` to a control that carries no such option, fell back to
+    // the first book of the canon, and REPLACED the reader's address with
+    // `book=Gen`. A reader who asked for Exodus 3 was shown Genesis 3 and told
+    // by the URL that they had asked for it. `bible` was already compared
+    // raw, so this also stops two keys of one grammar being judged two ways.
+    const named = (token) => books.find((one) => one.token === token) || null;
     const token = hash.get('book') || '';
     const entry = token ? named(token) : null;
     if (token && !entry) flag('book', token, said(bag(canon).whole, 'is not a book of this canon'));
@@ -1510,6 +1659,7 @@
     matchesVoice: matchesVoice,
     voiceKey: voiceKey,
     parseVoiceKey: parseVoiceKey,
+    spineUnreadable: spineUnreadable,
     addressProblems: addressProblems,
     joinNames: joinNames,
     useLanguageNames: useLanguageNames,
@@ -1524,6 +1674,9 @@
     paragraphPath: paragraphPath,
     chapterLines: chapterLines,
     chapterReading: chapterReading,
+    chapterSummary: chapterSummary,
+    emptyChainNote: emptyChainNote,
+    otherVoicesNote: otherVoicesNote,
     absenceRows: absenceRows,
     absenceCount: absenceCount,
     absenceSummary: absenceSummary,

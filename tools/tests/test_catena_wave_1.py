@@ -164,7 +164,7 @@ NODE = shutil.which("node")
 # repeat both went with them. The relocation's own cost is measured in the
 # durable records, where it is re-taken rather than going stale beside a
 # digest.
-MODEL_SHA256 = "ce651db9d5eb3a4c778887c1491ed27383c55fddef1d1046cfedc6620dc7eaa3"
+MODEL_SHA256 = "47a3d50a98fa90cc8e81bd8801dbe3f56e93098b84f832041fbc42ae7a4fcf2d"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -581,6 +581,7 @@ GEN3 = "#book=Gen&chapter=3&bible=douay-rheims"
 GEN42 = "#book=Gen&chapter=42&bible=douay-rheims"
 # Genesis 10 holds 71 fragments, every one in its author's own Latin.
 GEN10_ENGLISH = "#book=Gen&chapter=10&bible=douay-rheims&voice=translation:en"
+PS2 = "#book=Ps&chapter=2&bible=douay-rheims"
 
 # EXPLICITLY SYNTHETIC malformed-STRUCTURE fixture (V4, the V3 review's
 # remaining typed-presentation findings). The tracked corpus types everything
@@ -2151,6 +2152,54 @@ SCENARIOS = [
     {"name": "v7-partial-voices", "hash": "#book=Gen&chapter=1&bible=douay-rheims"
                                           "&voice=translation:en",
      "files": {"structure/catena/index.json": V7_PARTIAL_VOICES}},
+    # ======================================================== V7, second pass
+    # A spine that is a record and is not a spine. `fragments: []` is
+    # legitimate — 512 of the 562 tracked spines carry it — so the question is
+    # SHAPE, never emptiness.
+    {"name": "v7-spine-fragments-not-a-list", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": _fixture({
+         "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+         "sources": {"1": _voice_source(1)},
+         "fragments": {"0": _voice_fragment(1)},
+         "leads": [], "blocked": [], "refusals": {}})}},
+    {"name": "v7-spine-sources-not-a-record", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": _fixture({
+         "token": "Gen", "chapter": 1, "text_prefix": "structure/catena/text/",
+         "sources": [], "fragments": [_voice_fragment(1)],
+         "leads": [], "blocked": [], "refusals": {}})}},
+    {"name": "v7-spine-refusals-not-a-record", "hash": PS2,
+     "patch": {"structure/catena/21-ps/002.json": {"refusals": "displaced"}}},
+    # A 200 carrying JSON `null` where a 404 was the only absence the page may
+    # speak from. Three layers, one mistake.
+    {"name": "v7-null-paragraph-root", "hash": GEN1,
+     "raw": {"structure/paragraphs/index.json": None}},
+    {"name": "v7-null-paragraph-file", "hash": GEN1,
+     "raw": {"structure/paragraphs/douay-rheims/01-gen/001.json": None}},
+    {"name": "v7-null-fragment-text", "hash": GEN1,
+     "raw": {"structure/catena/text/passage.basil-of-caesarea"
+             ".homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-1.json":
+             None},
+     "steps": [{"do": "openFirstFragment", "label": "opened"}]},
+    # A paragraph file that is a record and states no `breaks`. All 5,547
+    # tracked ones carry the key.
+    {"name": "v7-paragraph-no-breaks", "hash": GEN1,
+     "files": {"structure/paragraphs/douay-rheims/01-gen/001.json":
+               {"edition": "douay-rheims", "token": "Gen", "chapter": 1}}},
+    # The OPTIONAL layer failing must not take the page down, nor blame a file
+    # it is not.
+    {"name": "v7-paragraph-root-transport-failure", "hash": GEN1,
+     "defer": ["structure/paragraphs/index.json"],
+     "steps": [{"do": "release", "path": "structure/paragraphs/index.json",
+                "outcome": "fail", "label": "released"}]},
+    # The two address spellings that passed the grammar and then rendered
+    # something else, rewriting the reader's own address to say so.
+    {"name": "v7-padded-chapter", "hash": "#book=Gen&chapter=007&bible=douay-rheims"},
+    {"name": "v7-spaced-book", "hash": "#book=%20Ex&chapter=3&bible=douay-rheims"},
+    # An untyped value reaching a reader inside the broken-record sentence.
+    {"name": "v7-unfetched-not-text", "hash": GEN1,
+     "raw": {"structure/catena/01-gen/001.json":
+             {"unfetched": {"a": 1}, "fragments": []}}},
+
     {"name": "v7-paragraph-digits", "hash": GEN1,
      "files": {"structure/paragraphs/index.json": V7_PARAGRAPH_BAD_DIGITS}},
     {"name": "v7-paragraph-edition-record", "hash": GEN1,
@@ -5099,24 +5148,43 @@ class PayloadTest(ReplayTest):
 class FrozenContractTest(ReplayTest):
     """What this lane was not allowed to move, and did not."""
 
-    def test_the_name_joiner_is_only_ever_handed_a_fresh_list(self):
-        """`joinNames` CONSUMES the list it is given.
+    def test_the_name_joiner_consumes_nothing_it_is_given(self):
+        """CORRECTED ORACLE (V7). This pinned a precondition that expired.
 
-        V3 rewrote it to pop rather than slice because the recorded gzip-9
-        ceilings left no room for the unsupported-voice and provenance-typing
-        corrections otherwise; the two non-mutating forms measured were larger
-        than the original. That is safe only while every caller hands it a
-        freshly mapped array, and the byte ceiling also left no room to say so
-        in a comment, so the precondition is pinned here instead.
+        V3 rewrote `joinNames` to `pop()` rather than `slice()` to buy bytes
+        in the page, which left a caller's array emptied as a side effect; the
+        precondition — every caller hands it a freshly mapped array — was
+        pinned here as a source-text scan of `src/web/browser/catena/catena.js`
+        because the ceiling left no room to say it in a comment.
+
+        V5 moved the function to `src/web/browser/catena/catena-model.js`,
+        which carries no ceiling, and restored the non-mutating form. The
+        precondition has not held since, and the assertion went on passing
+        because it read the SHAPE of two call sites rather than the property
+        they existed to protect. V7 moved both call sites into the model with
+        the sentences they compose, and the scan then found nothing to check
+        and failed on the count — which is the first time it has said anything
+        true about `joinNames` since V5.
+
+        So it asks the real question, of the real function, by running it:
+        does it leave its argument alone? The file's own doctrine is that a
+        source-text assertion is the fallback for what a replay cannot reach,
+        and this is reachable.
         """
-        script = held(CATENA / "catena.js")
-        uses = [line.strip() for line in script.splitlines()
-                if "joinNames(" in line and "function joinNames" not in line]
-        self.assertEqual(len(uses), 2, f"unexpected joinNames call sites: {uses}")
-        for line in uses:
-            with self.subTest(call=line):
-                self.assertIn(".map(", line,
-                              "joinNames consumes its argument; hand it a fresh list")
+        answer = subprocess.run(
+            [NODE, "-e",
+             "const M = require(process.argv[1]);"
+             "const given = ['Latin', 'Greek', 'English'];"
+             "const said = M.joinNames(given);"
+             "process.stdout.write(JSON.stringify("
+             "{said: said, after: given}));",
+             str(CATENA / "catena-model.js")],
+            capture_output=True, text=True, cwd=ROOT)
+        self.assertEqual(0, answer.returncode, answer.stderr)
+        answer = json.loads(answer.stdout)
+        self.assertEqual(answer["said"], "Latin, Greek and English")
+        self.assertEqual(answer["after"], ["Latin", "Greek", "English"],
+                         "joinNames consumed the list it was given")
 
     def test_the_one_cross_entrance_link_still_points_where_it_did(self):
         script = held(CATENA / "catena.js")
@@ -8808,3 +8876,205 @@ class V7AdversarialReviewFindingsTest(ReplayTest):
             page["fragmentTexts"],
             ["This fragment carries no text file, so nothing of it can be shown."] * 2)
         self.assertEqual(page["busy"], "false")
+
+
+class V7SecondPassFindingsTest(ReplayTest):
+    """V7 — what a SECOND adversarial pass found, after the first five fixes.
+
+    Every one is the same manufactured-negative class again, one level deeper
+    than the fix that preceded it: the chapter payload had been given a third
+    answer and its CONTENTS had not; `null` had been made the mark of an
+    unreadable document in one place and was still the mark of a 404 in three
+    others; and two address spellings passed the grammar and then rendered
+    something the reader had not asked for.
+
+    They are pinned together because a defect found by attacking one's own
+    correction twice is the kind most easily fixed quietly.
+    """
+
+    UNAVAILABLE = "The commentary record did not load"
+    PARAGRAPH_UNREAD = ("The paragraph record for this chapter in this edition"
+                        " could not be read, so whether it divides the chapter"
+                        " is not established here.")
+    RUNS_ON = "No paragraph division is held"
+
+    # ------------------------------------------------- a record, and no spine
+    SPINE = ("v7-spine-fragments-not-a-list", "v7-spine-sources-not-a-record")
+
+    def test_a_record_that_is_not_a_spine_is_a_fault_not_an_emptiness(self):
+        # `fragments` as a record: `records()` turns it into `[]` and the page
+        # printed "No commentary on this chapter is held yet" over a chapter
+        # its own index says holds 1,351 fragments. `sources` as a list: every
+        # author, work, edition, printing, translator and RIGHTS statement of
+        # all 107 fragments blanked, while the page went on stating possession
+        # of them — and the voice control said "none here" of a chapter it
+        # holds fourteen English fragments on.
+        #
+        # `fragments: []` is legitimate and common, so the question asked is
+        # the SHAPE and never the emptiness.
+        for name in self.SPINE:
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+                self.assertEqual(page["fragmentCount"], 0)
+                self.assertEqual(page["asideNotes"], [])
+                self.assertNotIn("No commentary on this chapter is held yet.",
+                                 " ".join(page["asideNotes"]))
+                self.assertEqual(page["sectionHeadings"],
+                                 ["This chapter’s commentary record did not load"])
+                self.assertEqual(page["busy"], "false")
+                self.assertEqual(page["hashWrites"], [])
+
+    def test_an_unreadable_sources_root_states_no_voice_negative(self):
+        page = self.page("v7-spine-sources-not-a-record")
+        self.assertEqual(page["authors"], [], "a fragment stood with no name")
+        self.assertNotIn("none here", " ".join(page["voiceLabels"]))
+        self.assertNotIn("held here, in ;", " ".join(page["asideNotes"]),
+                         "an empty voice list reached a reader as prose")
+
+    def test_an_unreadable_refusals_root_never_fails_open(self):
+        # Rule 4's refusal is the strongest claim this page makes about a text
+        # it did not write, and an unreadable `refusals` dropped it in
+        # SILENCE: the chapter rendered with its verse numbers and no warning.
+        page = self.page("v7-spine-refusals-not-a-record")
+        self.assertEqual(page["refusalCount"], 0)
+        self.assertEqual(page["tallyText"], self.UNAVAILABLE,
+                         "the record could not be read and the page said so")
+        self.assertEqual(page["busy"], "false")
+
+    # ------------------------------------- a 200 answering `null` is not a 404
+    def test_a_200_carrying_null_is_never_read_as_the_404(self):
+        # `cached(map, path, absent)` used `null` as the absence sentinel, and
+        # JSON `null` is a valid document — so a 200 carrying one WAS the
+        # absence, at three layers at once. The route now marks its own 404.
+        for name in ("v7-null-paragraph-root", "v7-null-paragraph-file"):
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+                self.assertNotIn(self.RUNS_ON, page["paragraphNote"])
+                # And the chapter beside it is untouched.
+                self.assertEqual(page["fragmentCount"], 107)
+                self.assertEqual(page["busy"], "false")
+
+    def test_a_200_carrying_null_at_a_fragment_text_says_what_it_is(self):
+        opened = self.snapshot("v7-null-fragment-text", "opened")
+        self.assertEqual(
+            opened["fragmentTexts"][0],
+            "The text of this fragment arrived in a form this page cannot read.",
+            "a fetched, successful, unreadable payload claimed no file exists")
+        self.assertIn(
+            "structure/catena/text/passage.basil-of-caesarea"
+            ".homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-1.json",
+            opened["fetched"], "the request really was made and really answered")
+
+    def test_a_paragraph_file_stating_no_breaks_claims_no_division(self):
+        # All 5,547 tracked paragraph files carry a `breaks` key and none is
+        # empty, so a record without one states nothing about this chapter.
+        page = self.page("v7-paragraph-no-breaks")
+        self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+        self.assertNotIn(self.RUNS_ON, page["paragraphNote"])
+
+    def test_the_optional_layer_failing_is_not_the_pages_failure(self):
+        # Unguarded, a transport fault on this one optional file rejected the
+        # whole bootstrap: every control labelled Unavailable, no Scripture,
+        # no commentary, and a sentence saying the CATENA INDEX could not be
+        # loaded while naming the paragraph layer's own URL.
+        page = self.snapshot("v7-paragraph-root-transport-failure", "released")
+        self.assertIsNone(page["failureText"])
+        self.assertEqual(page["referenceText"], "Genesis 1")
+        self.assertEqual(page["fragmentCount"], 107)
+        self.assertEqual(page["chapterCounts"][0], "31 verses")
+        # And the layer it could not read claims nothing about the chapter.
+        self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+        self.assertEqual(page["busy"], "false")
+
+    # ------------------------------------------- the address, and what it says
+    def test_a_padded_chapter_renders_the_chapter_it_names(self):
+        # `#chapter=007` passed the grammar as chapter 7, carried no control
+        # option, so the page rendered chapter 1 and REPLACED the reader's
+        # address with `chapter=1`: asked for 7, shown 1, and told by the URL
+        # that they had asked for 1.
+        page = self.page("v7-padded-chapter")
+        self.assertEqual(page["referenceText"], "Genesis 7")
+        self.assertEqual(page["errorSections"], [])
+        self.assertEqual(page["hash"], "#book=Gen&chapter=007&bible=douay-rheims",
+                         "an equivalent spelling is not rewritten")
+        self.assertEqual(page["replaced"], [])
+        self.assertEqual(page["hashWrites"], [])
+        # `chapter=01` still denotes chapter 1 and is still left alone.
+        self.assertEqual(self.page("noncanonical-arrival")["referenceText"],
+                         "Genesis 1")
+
+    def test_a_spaced_book_token_fails_closed_rather_than_resolving(self):
+        # `#book=%20Ex` was trimmed by the address grammar, resolved to
+        # Exodus, passed — and then the untrimmed value carried no control
+        # option, so the page rendered GENESIS 3 and rewrote the address to
+        # say the reader had asked for Genesis. `bible` was already compared
+        # raw; the two keys of one grammar were judged two ways.
+        page = self.page("v7-spaced-book")
+        self.assertEqual(page["referenceText"], "Address not used")
+        self.assertEqual(page["errorSections"][0]["details"],
+                         ["book= Ex is not a book of this canon."])
+        self.assertEqual(page["hash"], "#book=%20Ex&chapter=3&bible=douay-rheims",
+                         "the URL keeps the reader's own text")
+        self.assertEqual(page["replaced"], [])
+        self.assertEqual(page["busy"], "false")
+
+    def test_no_untyped_value_reaches_the_broken_record_sentence(self):
+        # `'… its record (' + unfetched + ')'` printed "[object Object]" and a
+        # comma-joined list to a reader. The value is typed now, and a payload
+        # carrying an `unfetched` key that is not text is simply a payload
+        # with a key this page does not use.
+        page = self.page("v7-unfetched-not-text")
+        rendered = " ".join(
+            page["asideNotes"] + page["sectionHeadings"] + page["statusWrites"]
+            + [page["tallyText"] or ""]
+            + [one["details"][0] for one in page["errorSections"]])
+        self.assertNotIn("[object Object]", rendered)
+        self.assertEqual(page["busy"], "false")
+
+
+class V7SharedFieldDriftTest(unittest.TestCase):
+    """V7 — the two lists that name the fold's shared fields must not drift.
+
+    `_fold_shared` in `scripts/_catena.py` decides which fields are written
+    once per edition under `sources`; `SHARED_WITH_EDITION` in
+    `src/web/browser/catena/catena-model.js` decides which a fragment may
+    inherit from there. Nothing related them, so a field added to the Python
+    tuple would be written only under `sources` and silently dropped from
+    every fragment — a real fact of the corpus, gone, with no test to notice.
+
+    The JS list is deliberately WIDER: `attribution`, `rights_basis` and
+    `acknowledgement` are terms-of-the-edition facts the page renders and the
+    generator does not currently emit. Wider is safe; narrower is the defect.
+    """
+
+    def test_every_field_the_generator_shares_may_be_inherited(self):
+        python = re.search(r"SHARED_WITH_EDITION = \(([^)]*)\)",
+                           held(ROOT / "scripts/_catena.py"), re.S).group(1)
+        emitted = set(re.findall(r'"([a-z_]+)"', python))
+        model = re.search(r"const SHARED_WITH_EDITION = \[([^\]]*)\]",
+                          held(CATENA / "catena-model.js"), re.S).group(1)
+        inherited = set(re.findall(r"'([a-z_]+)'", model))
+        self.assertTrue(emitted, "the generator's tuple was not found")
+        self.assertTrue(inherited, "the model's list was not found")
+        missing = sorted(emitted - inherited)
+        self.assertEqual(missing, [],
+                         "the generator shares these and a fragment cannot "
+                         "inherit them, so they are dropped from every row")
+
+    def test_no_per_fragment_field_may_be_inherited(self):
+        """And the other direction, which is the one V7 got wrong first.
+
+        `id`, `text_path`, `locator`, `review`, `text_words` and `extent` are
+        written per fragment. Letting a fragment inherit `id` gave two
+        fragments of one edition the same Source Library link and the same
+        text request.
+        """
+        model = re.search(r"const SHARED_WITH_EDITION = \[([^\]]*)\]",
+                          held(CATENA / "catena-model.js"), re.S).group(1)
+        inherited = set(re.findall(r"'([a-z_]+)'", model))
+        for own in ("id", "text_path", "locator", "review", "text_words",
+                    "extent", "source"):
+            with self.subTest(field=own):
+                self.assertNotIn(own, inherited)
