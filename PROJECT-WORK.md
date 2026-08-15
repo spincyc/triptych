@@ -1139,6 +1139,277 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena route-owned correction lane, V7 independent review
+
+Disposition: **CHANGES REQUIRED** for exact candidate
+`e876b29e5797edcc6e86422daa807f4b1104ec81`, whose parent is
+`4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46`. This review addresses
+`f183ed1b0afc6f14574a3507f6eaf3102dc999fa`, independently inspected evidence
+branch `evidence/catena-e1-corrections-v7-handoff` at
+`92c88ab8c2d2b671009e8cf9f36aa5dd352f9b61`, and verified final package
+`build/agent-handoffs/20260815T174121Z-catena-e1-corrections-v7` with ZIP
+SHA-256 `823ac17da5f0c0f79e11688f088638d73a453ecd4adb58cf46dcac01c275a5b8`.
+Current `origin/main` was `9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`: it is the exact merge base and
+ancestor, with no main-only patch and 25 candidate-only patches. No candidate
+file was modified by this review.
+
+The parent-to-candidate diff is linear, seven commits, eight paths, and
+3,586 insertions / 321 deletions. The production portion is exactly
+`scripts/_catena.py`, `src/web/browser/catena/catena-model.js`, and
+`src/web/browser/catena/catena.js`; the rest is `PROJECT-WORK.md`,
+`guidance/corpus-browser-roadmap.md`, `promised-deliverables.toml`,
+`tools/tests/test_catena.py`, and `tools/tests/test_catena_wave_1.py`.
+`src/web/data/`, `catena.css`, `index.html`, release records, browser budget
+configuration, the common gate, shared shell, protected Liturgy, and PDFs are
+unchanged.
+
+#### Judgments that pass
+
+- The top-level fragment fold is no longer an arbitrary raw spread. Fresh
+  adversarial records retain no unknown top-level key in the projected row.
+  Valid language boundaries, exact supported voices, the neutral refusal
+  umbrella, padded-verse deduplication, and null-bootstrap termination remain
+  fail-closed. `original`, `en`, and `la` pass; `grc`, `zz`, and malformed
+  languages do not become guessed English.
+- A contradictory pair of recognised findings emits no selected reason or
+  partial-rights offer, and reversing that exact pair leaves the production
+  result unchanged. The generator rejects non-string `partial` values on an
+  otherwise valid parent finding.
+- The reachable late-arrival A/B case added by V7 is real: after B settles, an
+  invalid address makes the in-flight A obsolete, and releasing A changes none
+  of the sinks that test records. Parent and head both pass this new proof-gap
+  test; it is not evidence of a parent defect.
+- The adversarial fixtures are labelled test-only, carry the candidate
+  identity and scenario, exercise the production model/route replay, and stay
+  distinct from real-corpus inventory evidence. The changed-file byte scan is
+  clean UTF-8 with no NUL or unexpected control byte.
+- Formal per-file ceilings remain unraised: CSS is 7,629/8,000 bytes whole and
+  2,676/2,700 stripped; `catena.js` is 12,901/13,000 whole and 7,530/8,800
+  stripped. `catena.css` and `index.html` are byte-identical to the parent.
+
+Those passes do not close the following V7-owned defects.
+
+#### Required production corrections
+
+1. **The projection is not yet the sole semantic source.** In
+   `src/web/browser/catena/catena-model.js`, `chapterVoices()` and
+   `absenceRows()` rescan every raw `file.sources` member instead of deriving
+   from accepted fragment rows. An orphan source referenced by no accepted
+   fragment can therefore manufacture a voice offer and an absence row. In
+   `scripts/_catena.py`, a scalar `translators = "Dods"` is iterated into
+   `['D', 'o', 'd', 's']`, passes validation, and is rendered as four people.
+   This violates the closed-world typed-projection contract. Project the
+   nested translator collection by exact type, and derive voices and absences
+   only from sources reached through accepted passage rows. Regression
+   evidence must drive an orphan source and scalar translator through the
+   production outputs, in both sibling orders, and show no offer, absence,
+   tally, provenance, or four-name rendering while preserving valid siblings.
+
+2. **`text_path` accepts the wrong namespace at the request sink.**
+   `catena-model.js` `trail()`, `leaf()`, and `fragmentRow()` enforce a generic
+   relative JSON grammar and same-id stem, not the Catena text namespace. With
+   prefix `structure/paragraphs/`, or with no prefix and a carried
+   `structure/paragraphs/text/<same-id>.json`, the production route fetches
+   and renders the real Sources text sharing that id. Whitespace-wrapped paths
+   are also trimmed into validity. This violates the requirement that only
+   validated Catena text addresses reach a request. Require the byte-exact
+   `structure/catena/text/` namespace for both composed and fallback paths,
+   without whitespace repair. Add production request-journal regressions for
+   same-stem wrong-namespace prefix and fallback paths, asserting the fetched
+   journal and terminal `statusText`, not a helper return value.
+
+3. **A `source`-only fragment is invalid and still counts.** The governing E0
+   contract in `guidance/catena.md` defines L3 as these words, by this author,
+   on this locus; the producer emits passage id, source, locator, and canonical
+   extent for every one of the 1,356 audited occurrences. At
+   `catena-model.js` `fragmentRow()`, `{source: "0"}` borrows author/work and
+   passes `if (!id && !author && !work)`. It then renders, increments the
+   tally, adds provenance and voice state, and creates a missing-text row. In
+   a valid-A / source-only / valid-B list the result is three rather than two.
+   Require a fragment-owned validated passage id, resolved author/work, and a
+   complete canonical extent before a fragment can claim a passage; a shared
+   source may remain non-counting metadata. Replace the oracle near the
+   source/locator fixture that blesses this row, and prove both sibling orders
+   at all row, tally, provenance, route-identity, voice, and request sinks.
+
+4. **Absence members still manufacture rows and suppress valid siblings.**
+   `absenceMember()` rejects malformed members, but `absenceRows()` creates a
+   row when raw `same.length` is nonzero even if projected `said.length` is
+   zero. `{language: "en"}`, an unknown finding, and a detached partial thus
+   render “has a finding this page cannot read”; padded
+   `" none-published "` is trimmed into a false strong negative; and a
+   malformed sibling can suppress a valid partial offer. The generator still
+   `str()`-coerces malformed absence reasons when `structure` bypasses
+   `validate`. Require at least one accepted typed finding before a row owns a
+   slot, accept the finding enum byte-exactly, keep all valid siblings, and
+   preserve a genuine pair of recognised contradictory findings as a neutral
+   unreadable row. In Python accept a reason only when the raw value is a
+   string. Correct the existing hollow/unknown/padded-member oracles and add
+   both-order terminal-sink tests.
+
+5. **Partial selection is neither closed nor order-independent.** A detached
+   partial creates the row above. For one finding, a malformed sibling with a
+   longer valid reason can win carrier ranking and suppress the valid sibling's
+   partial offer in either listing order. Control-bearing strings are admitted,
+   and the NUL-delimited ranking key is non-injective, so equivalent record
+   multisets can choose different rights prose. Reject forbidden controls,
+   compare a structured canonical tuple rather than a delimiter-concatenated
+   string, and select only among fully typed members. Regressions must use the
+   same multiset in exact reversed order and assert rights prose, rows, tally,
+   announcement, and status.
+
+6. **A refusal is not a whole typed refusal member.** `refusalNote()` checks
+   kind, edition, chapter, and note but ignores the kind-dependent `verse`.
+   Missing, object, numbered-displaced, null-unrecorded, and object-unrecorded
+   verse shapes all emit refusal prose. Require the complete record:
+   `displaced` needs a valid positive verse and `unrecorded` needs the contract's
+   exact no-verse representation. Add DOM-level tests for each malformed shape
+   and a true same-multiset reversed-order permutation; the present fixtures do
+   not vary verse and place the valid record last rather than reversing one
+   set.
+
+7. **Unreadable roots still become Catena claims.** `bookToken()` and
+   `voiceRoot()` trim malformed data identities, licensing false canon,
+   holdings, and voice negatives. `spineUnreadable()` omits leads, blocked
+   state, per-edition refusals, and expected token/chapter checks. A missing or
+   `{}` paragraph root is treated as a successful empty layer; paragraph files
+   do not validate edition/token/chapter; a break at a nonexistent verse can
+   claim that the edition does not divide the chapter. Shared `loadChapter`
+   values with missing, null, or scalar `verses` become “carries no verses”,
+   though only a typed empty object can support that negative. Require
+   byte-exact data identities, validate the whole relevant spine/paragraph
+   shape against the requested locus, and emit a neutral unavailable terminal
+   state for unreadable containers. Add production-route regressions for each
+   listed root/member and distinguish a typed empty corpus from an unreadable
+   one.
+
+8. **Unreadable `bibles.json` is locally suppressible and therefore
+   Catena-owned here.** Although the shared loader composes “lists no
+   translations”, `src/web/browser/catena/catena.js:931-933` forwards that
+   message verbatim. The route can stop the false domain claim without editing
+   shared code. At that seam replace loader prose with neutral Catena copy such
+   as “No usable published edition is available to this page,” then terminate
+   coherently. Drive null, object, missing, malformed, and typed-empty manifest
+   states through the production route and assert no “lists no translations”
+   claim at any visible or announced sink.
+
+9. **Terminal proof remains partial.** The reachable late-work case is useful,
+   but its 36-key `GUARDED` list still omits visible projections, and the V7
+   class omits exact request paths, fetched-journal count, release count, and
+   exact success status writes. It substitutes `renderInvalid` for
+   `startFailed`, so it does not establish bootstrap-failure ownership. No
+   major V7 malformed class proves the full required terminal vector:
+   `aria-busy`, exact status/live region, announcement journal, tally, rows,
+   route/hash/history, focus, request journal/ownership, and no-stale-after-
+   release. Add one parameterized production replay used by every corrected
+   class and both member orders: settle a prior valid request, settle the
+   failure, release the held request, and compare every named sink with exact
+   released/fetched increments.
+
+10. **Several corrected oracles still bless the defects.** Current tests
+    expressly expect source-only rows, malformed absence rows, and unreadable
+    bible prose; refusal verse is absent; raw-unknown-key projection is not
+    followed to every sink; and terminal tests use unrelated B states rather
+    than each defect's own failure. Replace those expectations with the
+    contracts above. The parent/head decomposition must then name each exact
+    class, command, exit, and outcome from isolated runs rather than count
+    comment blocks.
+
+#### Architecture, payload, and evidence judgments
+
+`scripts/_catena.py` moves toward a presentation-neutral model and correctly
+uses the JavaScript model for some membership decisions, but the semantic
+projection is not yet first-class for CLI and web. Python and JavaScript
+duplicate absence enums/rules, `structure` can bypass `validate`, and the
+Python reason/translators paths still coerce malformed nested values. Keep the
+next correction bounded to V7; a later authorized integration/prerequisite
+lane must make one neutral typed semantic model callable by both surfaces.
+
+The formal per-file JavaScript budget passes, but practical route-local
+JavaScript does not have a combined ceiling. Separately gzipped
+`catena.js + catena-model.js` grows from 28,760 at the parent to 40,733 at the
+candidate (+11,973, +41.6%); stripped grows 12,579 to 14,915 (+2,336, +18.6%).
+The model is always loaded and uncapped. This is not a raised configured
+ceiling, but the durable “budgets preserved” claim must disclose that moving
+semantics to the model evades enforcement of the practical combined payload;
+the correction evidence must report both files and the governing owner must
+either add a combined route ceiling or explicitly accept the measured cost.
+
+The final ZIP digest, evidence ref, root layout, CRCs, privacy scan, reference
+inventory, and 54 archive-member inventory verify. The sealer's own 53 focused
+tests pass. The sealed package is nevertheless internally inconsistent:
+
+- actual archive size is 285,331 bytes and actual uncompressed package size is
+  2,081,071, while the machine claims 2,079,138;
+- the sealed `claims.json` size/hash differs from its own claim row;
+  `derive-claims.log` and `head-consistency.log` are claimed empty but are not;
+  and the claimed hashes for `DERIVED-CLAIMS.md` and `MANIFEST.sha256` are
+  stale;
+- prose says ten corrected-oracle blocks where derivation/code find fourteen,
+  says two V7 classes pass at the parent where derivation finds four, and gives
+  incompatible parent-pass totals of 30, 23, and 19 across records;
+- the command ledgers lack contemporaneous exact-SHA, cwd, clean-state,
+  command, exit, and output-path provenance for several parent/head runs; one
+  names a nonexistent parent gate report, and the parent-V7 and gate comparison
+  runs are not fully ledgered. “Figures identical” has no exact comparison
+  artifact.
+
+Regenerate the final package from an immutable clean exact head after all logs
+exist, derive member size/hash rows from the bytes actually sealed, and make
+the consistency check verify every machine/prose count and command ledger.
+The first package
+`build/agent-handoffs/20260815T171909Z-catena-e1-corrections-v7` is not safely
+superseded: its handoff says “supersedes nothing,” while the final package does
+not identify that exact path and digest. Mark the first package with an exact
+superseded-by identity and make the final package name the exact predecessor;
+neither may present an active review request.
+
+Screenshot count is truthfully zero and the artifacts are labelled
+semantic/runtime evidence. CSS and HTML identity plus the unchanged generic
+Chromium gate support no stylesheet/markup regression, but there is no
+route-specific visual baseline. Focus is observed only by the DOM replay shim
+in five B/A pairs, all ending at the chapter select; there is no real-browser
+`document.activeElement` evidence for the terminal classes. Supply
+route-specific visual/focus evidence wherever the final corrected behavior
+changes visible or terminal state, while keeping semantic claims distinct from
+raster claims.
+
+#### Independent validation and boundaries
+
+- Focused Catena discovery: **505 tests, pass**.
+- Catena structural check: **1,351 fragments / 1 book / 73 canon entries,
+  pass**. Promise ledger: **32 tracked / 19 complete, valid**.
+- Full discovery: **1,856 tests; 14 failures, 13 errors, 11 skips**. The same
+  27 failure/error identities appear at parent and head; none is Catena. The
+  current environment has Markdown 3.10.3 where the lock records 3.10.2, but
+  the identity comparison is unchanged.
+- Browser gate: **2,290 assertions; 1,836 pass, 226 fail, 228 skip**, matching
+  the sealed parent/head result. The failures are 117 single-main, 82 target-
+  size, and 27 skip-link findings, inherited and separately owned.
+- `make -k check`: **exit 2** with the same three inherited failing targets:
+  four stale Catena release bindings, eight undeclared tool dependencies, and
+  example drift (30 diverged, 35 known stale, six never run, three unrunnable).
+  `make public-site` passes. No binding was re-signed.
+
+The historical `src/web/data/` Day-reader guard contradiction is unchanged and
+remains separately owned. So do the four release bindings, common-gate and
+B0/shared-shell work, real-device/AT evidence, protected Liturgy, and PDF
+prerequisites. They are not assigned to V7. The prior V6 review is a valid
+sibling review record and need not be in implementation ancestry. When E1 is
+eventually accepted, integration must preserve and reconcile the cumulative
+V2–V7 implementation and independent-review history; direct mechanical
+merging of the V6 review record currently conflicts in the three durable
+records and is not acceptance authority.
+
+**One exact next action:** start one V8 correction from exact
+`e876b29e5797edcc6e86422daa807f4b1104ec81` and make its first bounded commit
+only the text namespace closure: require byte-exact
+`structure/catena/text/` for both prefix and fallback paths and add same-stem
+wrong-namespace production request-sink regressions. Then continue only within
+that V8 correction to the other enumerated blockers before repackaging and
+fresh independent review. This review does not authorize merge, re-signing,
+deployment, or another master-plan lane.
+
 ## Promised work
 
 ### Corpus browser foundation design
