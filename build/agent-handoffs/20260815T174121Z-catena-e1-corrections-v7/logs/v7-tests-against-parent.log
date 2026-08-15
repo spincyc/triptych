@@ -1,0 +1,1002 @@
+scenarios: 168, harness-dead: 0
+...........F...F...............................................................F......F...................................................................F..FF.............................F................................F........................F.........................................F...........................................................................F.F.FFFFFFFF..FF..FF..FF.FFFF...........FFFFFFFFFFFFFFF..FFFFFFFF.F.FF.FF.FF..FF..FFFFFFF.FF..FF........
+======================================================================
+FAIL: test_every_route_into_the_malformed_chapter_renders_the_same_content (test_catena_wave_1.ActionPartialArrivalTerminalStateTest.test_every_route_into_the_malformed_chapter_renders_the_same_content)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 7810, in test_every_route_into_the_malformed_chapter_renders_the_same_content
+    self.assertEqual(base["refusalCount"], 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_the_late_arrival_manufactures_no_absence_and_no_false_refusal (test_catena_wave_1.ActionPartialArrivalTerminalStateTest.test_the_late_arrival_manufactures_no_absence_and_no_false_refusal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 7767, in test_the_late_arrival_manufactures_no_absence_and_no_false_refusal
+    self.assertEqual(arrived["refusalCount"], 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_a_malformed_record_never_stands_in_for_the_valid_finding_beside_it (test_catena_wave_1.FindingOrderIndependenceTest.test_a_malformed_record_never_stands_in_for_the_valid_finding_beside_it)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 6594, in test_a_malformed_record_never_stands_in_for_the_valid_finding_beside_it
+    self.assertEqual(page["absenceReasons"], self.REASONS)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['No [78 chars].', 'Only part of it is out of copyright.', 'N[38 chars]ed.'] != ['No [78 chars].', 'No English translation has been published.']
+
+First differing element 2:
+'Only part of it is out of copyright.'
+'No English translation has been published.'
+
+First list contains 1 additional elements.
+First extra element 3:
+'No English translation has been published.'
+
+  ['No English translation has been published.',
+   'Only part of it is out of copyright.',
+-  'Only part of it is out of copyright.',
+   'No English translation has been published.']
+
+======================================================================
+FAIL: test_valid_facts_survive_beside_the_records_the_page_refuses (test_catena_wave_1.FindingOrderIndependenceTest.test_valid_facts_survive_beside_the_records_the_page_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 6672, in test_valid_facts_survive_beside_the_records_the_page_refuses
+    self.assertEqual(page["absenceReasons"], self.REASONS)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['No [78 chars].', 'Only part of it is out of copyright.', 'N[38 chars]ed.'] != ['No [78 chars].', 'No English translation has been published.']
+
+First differing element 2:
+'Only part of it is out of copyright.'
+'No English translation has been published.'
+
+First list contains 1 additional elements.
+First extra element 3:
+'No English translation has been published.'
+
+  ['No English translation has been published.',
+   'Only part of it is out of copyright.',
+-  'Only part of it is out of copyright.',
+   'No English translation has been published.']
+
+======================================================================
+FAIL: test_a_malformed_payload_body_renders_nothing_of_itself (test_catena_wave_1.MalformedRecordRenderingTest.test_a_malformed_payload_body_renders_nothing_of_itself)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 4627, in test_a_malformed_payload_body_renders_nothing_of_itself
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        opened["fragmentTexts"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+        ["The text of this fragment arrived in a form this page cannot read."],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "the audit found '[object Object]' as the fragment's words")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [''] != ['The text of this fragment arrived in a form this page cannot read.']
+
+First differing element 0:
+''
+'The text of this fragment arrived in a form this page cannot read.'
+
+- ['']
++ ['The text of this fragment arrived in a form this page cannot read.'] : the audit found '[object Object]' as the fragment's words
+
+======================================================================
+FAIL: test_no_replayed_page_ever_coerces_a_value_into_words (test_catena_wave_1.MalformedRecordRenderingTest.test_no_replayed_page_ever_coerces_a_value_into_words) (scenario='v7-unfetched-not-text', snapshot='final')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 4678, in test_no_replayed_page_ever_coerces_a_value_into_words
+    self.assertNotIn(artefact, rendered)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: '[object Object]' unexpectedly found in '{"hash": "#book=Gen&chapter=1&bible=douay-rheims", "referenceText": "Genesis 1", "tallyText": "The commentary record did not load", "statusText": "Genesis 1, Douay-Rheims (Challoner), commentary record unavailable.", "voice": "", "voiceLabels": ["Everything held"], "selectValues": {"book": "Gen", "chapter": "1", "bible": "douay-rheims"}, "controlsOpen": true, "classes": ["catena-error", "chapter", "chapter-body", "chapter-count", "chapter-head", "chapter-name", "error-detail", "paragraph-note", "passage", "passage-paragraph", "passage-paragraph projected", "section-heading", "verse", "verse-num"], "dataStates": ["error"], "langAttributes": ["passage=en"], "chapterOpen": true, "chapterCounts": ["31 verses", "8 paragraphs"], "verseNumbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"], "verseTexts": ["1Verse 1 of the stub chapter. ", "2Verse 2 of the stub chapter. ", "3Verse 3 of the stub chapter. ", "4Verse 4 of the stub chapter. ", "5Verse 5 of the stub chapter. ", "6Verse 6 of the stub chapter. ", "7Verse 7 of the stub chapter. ", "8Verse 8 of the stub chapter. ", "9Verse 9 of the stub chapter. ", "10Verse 10 of the stub chapter. ", "11Verse 11 of the stub chapter. ", "12Verse 12 of the stub chapter. ", "13Verse 13 of the stub chapter. ", "14Verse 14 of the stub chapter. ", "15Verse 15 of the stub chapter. ", "16Verse 16 of the stub chapter. ", "17Verse 17 of the stub chapter. ", "18Verse 18 of the stub chapter. ", "19Verse 19 of the stub chapter. ", "20Verse 20 of the stub chapter. ", "21Verse 21 of the stub chapter. ", "22Verse 22 of the stub chapter. ", "23Verse 23 of the stub chapter. ", "24Verse 24 of the stub chapter. ", "25Verse 25 of the stub chapter. ", "26Verse 26 of the stub chapter. ", "27Verse 27 of the stub chapter. ", "28Verse 28 of the stub chapter. ", "29Verse 29 of the stub chapter. ", "30Verse 30 of the stub chapter. ", "31Verse 31 of the stub chapter. "], "lengths": [], "refusalCount": 0, "bibleLabels": ["Douay-Rheims (Challoner) (en)", "Douay-Rheims (American 1899) (en)", "Clementine Vulgate (Latin) (la)", "Catholic Public Domain Version (en)", "World English, Catholic Edition (en)", "King James, with Apocrypha (en)", "Revised Version, with Apocrypha (en)"], "bibleValues": ["douay-rheims", "douay-rheims-american-1899", "clementine-vulgate", "catholic-public-domain-version", "world-english-bible-catholic", "king-james-version", "revised-version-1895"], "referenceBookText": "Old Testament", "authorGroups": [], "authorFilterInDisclosure": false, "authorFilterOpen": false, "filterLabels": [], "filterChecked": [], "fragmentCount": 0, "linkText": null, "linkHref": null, "refusal": null, "paragraphNote": "Paragraphs: 7 are projected from the witnesses that concur, and marked.", "projected": 7, "paragraphs": 8, "spans": [], "absenceSummary": null, "absenceOpen": false, "absenceReasons": [], "absencePartials": [], "absenceAuthors": [], "absenceWorks": [], "sectionHeadings": ["This chapter’s commentary record did not load"], "asideNotes": [], "notices": [], "leads": [], "blocked": [], "fragmentTexts": [], "fragmentBases": [], "sourceLines": [], "acknowledgements": [], "acknowledgementAboveText": [], "languages": [], "authors": [], "works": [], "dates": [], "extents": [], "states": [], "errorSections": [{"heading": "This chapter’s commentary record did not load", "state": "error", "details": ["The index records commentary on Genesis 1, but its record ([object Object]) could not be read — a data or connection fault, not an empty chapter. Reloading may recover it."], "recoveryHref": null}], "staticEntry": false, "fragmentIds": [], "busy": "false", "activeElement": "body", "stepButtons": [true, false], "bookLabels": ["Genesis", "Exodus", "Leviticus"], "failureText": null}'
+
+======================================================================
+FAIL: test_no_replayed_page_ever_coerces_a_value_into_words (test_catena_wave_1.MalformedRecordRenderingTest.test_no_replayed_page_ever_coerces_a_value_into_words) (scenario='v7-unfetched-not-text', snapshot='start')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 4678, in test_no_replayed_page_ever_coerces_a_value_into_words
+    self.assertNotIn(artefact, rendered)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: '[object Object]' unexpectedly found in '{"hash": "#book=Gen&chapter=1&bible=douay-rheims", "referenceText": "Genesis 1", "tallyText": "The commentary record did not load", "statusText": "Genesis 1, Douay-Rheims (Challoner), commentary record unavailable.", "voice": "", "voiceLabels": ["Everything held"], "selectValues": {"book": "Gen", "chapter": "1", "bible": "douay-rheims"}, "controlsOpen": true, "classes": ["catena-error", "chapter", "chapter-body", "chapter-count", "chapter-head", "chapter-name", "error-detail", "paragraph-note", "passage", "passage-paragraph", "passage-paragraph projected", "section-heading", "verse", "verse-num"], "dataStates": ["error"], "langAttributes": ["passage=en"], "chapterOpen": true, "chapterCounts": ["31 verses", "8 paragraphs"], "verseNumbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"], "verseTexts": ["1Verse 1 of the stub chapter. ", "2Verse 2 of the stub chapter. ", "3Verse 3 of the stub chapter. ", "4Verse 4 of the stub chapter. ", "5Verse 5 of the stub chapter. ", "6Verse 6 of the stub chapter. ", "7Verse 7 of the stub chapter. ", "8Verse 8 of the stub chapter. ", "9Verse 9 of the stub chapter. ", "10Verse 10 of the stub chapter. ", "11Verse 11 of the stub chapter. ", "12Verse 12 of the stub chapter. ", "13Verse 13 of the stub chapter. ", "14Verse 14 of the stub chapter. ", "15Verse 15 of the stub chapter. ", "16Verse 16 of the stub chapter. ", "17Verse 17 of the stub chapter. ", "18Verse 18 of the stub chapter. ", "19Verse 19 of the stub chapter. ", "20Verse 20 of the stub chapter. ", "21Verse 21 of the stub chapter. ", "22Verse 22 of the stub chapter. ", "23Verse 23 of the stub chapter. ", "24Verse 24 of the stub chapter. ", "25Verse 25 of the stub chapter. ", "26Verse 26 of the stub chapter. ", "27Verse 27 of the stub chapter. ", "28Verse 28 of the stub chapter. ", "29Verse 29 of the stub chapter. ", "30Verse 30 of the stub chapter. ", "31Verse 31 of the stub chapter. "], "lengths": [], "refusalCount": 0, "bibleLabels": ["Douay-Rheims (Challoner) (en)", "Douay-Rheims (American 1899) (en)", "Clementine Vulgate (Latin) (la)", "Catholic Public Domain Version (en)", "World English, Catholic Edition (en)", "King James, with Apocrypha (en)", "Revised Version, with Apocrypha (en)"], "bibleValues": ["douay-rheims", "douay-rheims-american-1899", "clementine-vulgate", "catholic-public-domain-version", "world-english-bible-catholic", "king-james-version", "revised-version-1895"], "referenceBookText": "Old Testament", "authorGroups": [], "authorFilterInDisclosure": false, "authorFilterOpen": false, "filterLabels": [], "filterChecked": [], "fragmentCount": 0, "linkText": null, "linkHref": null, "refusal": null, "paragraphNote": "Paragraphs: 7 are projected from the witnesses that concur, and marked.", "projected": 7, "paragraphs": 8, "spans": [], "absenceSummary": null, "absenceOpen": false, "absenceReasons": [], "absencePartials": [], "absenceAuthors": [], "absenceWorks": [], "sectionHeadings": ["This chapter’s commentary record did not load"], "asideNotes": [], "notices": [], "leads": [], "blocked": [], "fragmentTexts": [], "fragmentBases": [], "sourceLines": [], "acknowledgements": [], "acknowledgementAboveText": [], "languages": [], "authors": [], "works": [], "dates": [], "extents": [], "states": [], "errorSections": [{"heading": "This chapter’s commentary record did not load", "state": "error", "details": ["The index records commentary on Genesis 1, but its record ([object Object]) could not be read — a data or connection fault, not an empty chapter. Reloading may recover it."], "recoveryHref": null}], "staticEntry": false, "fragmentIds": [], "busy": "false", "activeElement": "body", "stepButtons": [true, false], "bookLabels": ["Genesis", "Exodus", "Leviticus"], "failureText": null}'
+
+======================================================================
+FAIL: test_a_mark_that_is_not_a_mark_opens_no_paragraph (test_catena_wave_1.NumericVerseAndPathTest.test_a_mark_that_is_not_a_mark_opens_no_paragraph)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 5751, in test_a_mark_that_is_not_a_mark_opens_no_paragraph
+    self.assertNotIn("No paragraph division is held", page["paragraphNote"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'No paragraph division is held' unexpectedly found in 'No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.'
+
+======================================================================
+FAIL: test_a_mark_that_is_not_a_mark_opens_no_paragraph (test_catena_wave_1.RenderedScriptureTruthTest.test_a_mark_that_is_not_a_mark_opens_no_paragraph)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 6405, in test_a_mark_that_is_not_a_mark_opens_no_paragraph
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        page["paragraphNote"],
+        ^^^^^^^^^^^^^^^^^^^^^^
+        "The paragraph record for this chapter in this edition could not "
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "be read, so whether it divides the chapter is not established "
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "here.")
+        ^^^^^^^^
+AssertionError: 'No paragraph division is held for this ch[87 chars] it.' != 'The paragraph record for this chapter in [86 chars]ere.'
+- No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.
++ The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.
+
+
+======================================================================
+FAIL: test_an_edition_that_cannot_name_itself_is_not_a_route (test_catena_wave_1.RoutableIdentityTest.test_an_edition_that_cannot_name_itself_is_not_a_route)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8013, in test_an_edition_that_cannot_name_itself_is_not_a_route
+    self.assertEqual(page["errorSections"], [{
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "heading": "This address cannot be used as written",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        "recoveryHref": "#book=Gen&chapter=1&bible=douay-rheims",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }])
+    ^^^
+AssertionError: Lists differ: [{'he[104 chars]ot a published edition.'], 'recoveryHref': '#b[34 chars]ms'}] != [{'he[104 chars]ot a value this page could match; the record i[108 chars]ms'}]
+
+First differing element 0:
+{'hea[103 chars]ot a published edition.'], 'recoveryHref': '#b[33 chars]ims'}
+{'hea[103 chars]ot a value this page could match; the record i[107 chars]ims'}
+
+- [{'details': ['bible=../../escape is not a published edition.'],
++ [{'details': ['bible=../../escape is not a value this page could match; the '
++               'record it would be matched against could not be read whole.'],
+    'heading': 'This address cannot be used as written',
+    'recoveryHref': '#book=Gen&chapter=1&bible=douay-rheims',
+    'state': 'error'}]
+
+======================================================================
+FAIL: test_a_valid_finding_survives_malformed_sibling_metadata (test_catena_wave_1.TypedAbsenceFindingTest.test_a_valid_finding_survives_malformed_sibling_metadata)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 5697, in test_a_valid_finding_survives_malformed_sibling_metadata
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        page["absenceReasons"],
+        ^^^^^^^^^^^^^^^^^^^^^^^
+        ["No English translation has been published.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         "Only part of it is out of copyright."])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['No [38 chars].', 'A reason that outlives its finding.', 'On[31 chars]ht.'] != ['No [38 chars].', 'Only part of it is out of copyright.']
+
+First differing element 1:
+'A reason that outlives its finding.'
+'Only part of it is out of copyright.'
+
+First list contains 1 additional elements.
+First extra element 2:
+'Only part of it is out of copyright.'
+
+  ['No English translation has been published.',
+-  'A reason that outlives its finding.',
+   'Only part of it is out of copyright.']
+
+======================================================================
+FAIL: test_a_source_that_cannot_name_the_work_takes_no_slot (test_catena_wave_1.V7AbsenceMemberTest.test_a_source_that_cannot_name_the_work_takes_no_slot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8344, in test_a_source_that_cannot_name_the_work_takes_no_slot
+    self.assertEqual(page["absenceAuthors"], ["Author 1"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [''] != ['Author 1']
+
+First differing element 0:
+''
+'Author 1'
+
+- ['']
++ ['Author 1']
+
+======================================================================
+FAIL: test_no_blank_absence_row_stands (test_catena_wave_1.V7AbsenceMemberTest.test_no_blank_absence_row_stands) (scenario='v7-absence-slot')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8356, in test_no_blank_absence_row_stands
+    self.assertNotIn("", page["absenceAuthors"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '' unexpectedly found in ['']
+
+======================================================================
+FAIL: test_a_fragment_never_inherits_its_identity_from_its_edition (test_catena_wave_1.V7AdversarialReviewFindingsTest.test_a_fragment_never_inherits_its_identity_from_its_edition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8970, in test_a_fragment_never_inherits_its_identity_from_its_edition
+    self.assertFalse([one for one in page["fetched"]
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      if "passage.borrowed.identity" in one],
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     "and fetched the file that identity names")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ['structure/catena/text/passage.borrowed.identity.json'] is not false : and fetched the file that identity names
+
+======================================================================
+FAIL: test_a_spine_that_answers_with_no_spine_is_a_fault_not_an_emptiness (test_catena_wave_1.V7AdversarialReviewFindingsTest.test_a_spine_that_answers_with_no_spine_is_a_fault_not_an_emptiness) (scenario='v7-spine-not-a-record')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8937, in test_a_spine_that_answers_with_no_spine_is_a_fault_not_an_emptiness
+    self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Nothing held here' != 'The commentary record did not load'
+- Nothing held here
++ The commentary record did not load
+
+
+======================================================================
+FAIL: test_a_spine_that_answers_with_no_spine_is_a_fault_not_an_emptiness (test_catena_wave_1.V7AdversarialReviewFindingsTest.test_a_spine_that_answers_with_no_spine_is_a_fault_not_an_emptiness) (scenario='v7-spine-null')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8937, in test_a_spine_that_answers_with_no_spine_is_a_fault_not_an_emptiness
+    self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Nothing held here' != 'The commentary record did not load'
+- Nothing held here
++ The commentary record did not load
+
+
+======================================================================
+FAIL: test_an_unreadable_member_of_a_readable_paragraph_root_claims_nothing (test_catena_wave_1.V7AdversarialReviewFindingsTest.test_an_unreadable_member_of_a_readable_paragraph_root_claims_nothing) (scenario='v7-paragraph-digits')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8874, in test_an_unreadable_member_of_a_readable_paragraph_root_claims_nothing
+    self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'No paragraph division is held for this ch[87 chars] it.' != 'The paragraph record for this chapter in [86 chars]ere.'
+- No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.
++ The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.
+
+
+======================================================================
+FAIL: test_an_unreadable_member_of_a_readable_paragraph_root_claims_nothing (test_catena_wave_1.V7AdversarialReviewFindingsTest.test_an_unreadable_member_of_a_readable_paragraph_root_claims_nothing) (scenario='v7-paragraph-edition-record')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8874, in test_an_unreadable_member_of_a_readable_paragraph_root_claims_nothing
+    self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'No paragraph division is held for this ch[87 chars] it.' != 'The paragraph record for this chapter in [86 chars]ere.'
+- No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.
++ The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.
+
+
+======================================================================
+FAIL: test_an_unreadable_sibling_holdings_record_proves_no_emptiness (test_catena_wave_1.V7AdversarialReviewFindingsTest.test_an_unreadable_sibling_holdings_record_proves_no_emptiness) (scenario='v7-held-unreadable-sibling')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8910, in test_an_unreadable_sibling_holdings_record_proves_no_emptiness
+    self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Nothing held here' != 'The commentary record did not load'
+- Nothing held here
++ The commentary record did not load
+
+
+======================================================================
+FAIL: test_an_unreadable_sibling_holdings_record_proves_no_emptiness (test_catena_wave_1.V7AdversarialReviewFindingsTest.test_an_unreadable_sibling_holdings_record_proves_no_emptiness) (scenario='v7-held-malformed-present')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8910, in test_an_unreadable_sibling_holdings_record_proves_no_emptiness
+    self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Nothing held here' != 'The commentary record did not load'
+- Nothing held here
++ The commentary record did not load
+
+
+======================================================================
+FAIL: test_neither_unreadable_paragraph_member_composes_a_request (test_catena_wave_1.V7AdversarialReviewFindingsTest.test_neither_unreadable_paragraph_member_composes_a_request) (scenario='v7-paragraph-digits')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8882, in test_neither_unreadable_paragraph_member_composes_a_request
+    self.assertFalse(
+    ~~~~~~~~~~~~~~~~^
+        [one for one in self.page(name)["fetched"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         if one.startswith("structure/paragraphs/douay-rheims/")],
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "a path was composed from a member nobody could read")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ['structure/paragraphs/douay-rheims/01-gen/1.json'] is not false : a path was composed from a member nobody could read
+
+======================================================================
+FAIL: test_the_malformed_spine_still_terminates (test_catena_wave_1.V7AdversarialReviewFindingsTest.test_the_malformed_spine_still_terminates) (scenario='v7-spine-not-a-record')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8957, in test_the_malformed_spine_still_terminates
+    self.assertEqual(page["dataStates"], ["error"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != ['error']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'error'
+
+- []
++ ['error']
+
+======================================================================
+FAIL: test_the_malformed_spine_still_terminates (test_catena_wave_1.V7AdversarialReviewFindingsTest.test_the_malformed_spine_still_terminates) (scenario='v7-spine-null')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8957, in test_the_malformed_spine_still_terminates
+    self.assertEqual(page["dataStates"], ["error"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != ['error']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'error'
+
+- []
++ ['error']
+
+======================================================================
+FAIL: test_the_contradictory_work_contributes_no_reason (test_catena_wave_1.V7ContradictoryFindingRightsTest.test_the_contradictory_work_contributes_no_reason) (said='Only part of it is out of copyright.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8476, in test_the_contradictory_work_contributes_no_reason
+    self.assertEqual(page["absenceReasons"].count(said), times,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     "a declined contradiction spoke")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 1 : a declined contradiction spoke
+
+======================================================================
+FAIL: test_the_contradictory_work_contributes_no_reason (test_catena_wave_1.V7ContradictoryFindingRightsTest.test_the_contradictory_work_contributes_no_reason)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8478, in test_the_contradictory_work_contributes_no_reason
+    self.assertEqual(len(page["absenceReasons"]), 3)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 4 != 3
+
+======================================================================
+FAIL: test_no_blank_row_stands_and_none_is_counted (test_catena_wave_1.V7HollowFragmentMemberTest.test_no_blank_row_stands_and_none_is_counted) (scenario='v7-hollow-fragments')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8277, in test_no_blank_row_stands_and_none_is_counted
+    self.assertEqual(page["tallyText"], "2 fragments held")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '4 fragments held' != '2 fragments held'
+- 4 fragments held
+? ^
++ 2 fragments held
+? ^
+
+
+======================================================================
+FAIL: test_no_blank_row_stands_and_none_is_counted (test_catena_wave_1.V7HollowFragmentMemberTest.test_no_blank_row_stands_and_none_is_counted) (scenario='v7-hollow-fragments-reversed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8277, in test_no_blank_row_stands_and_none_is_counted
+    self.assertEqual(page["tallyText"], "2 fragments held")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '4 fragments held' != '2 fragments held'
+- 4 fragments held
+? ^
++ 2 fragments held
+? ^
+
+
+======================================================================
+FAIL: test_only_the_two_valid_members_render (test_catena_wave_1.V7HollowFragmentMemberTest.test_only_the_two_valid_members_render) (scenario='v7-hollow-fragments')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8263, in test_only_the_two_valid_members_render
+    self.assertEqual(page["fragmentCount"], 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 4 != 2
+
+======================================================================
+FAIL: test_only_the_two_valid_members_render (test_catena_wave_1.V7HollowFragmentMemberTest.test_only_the_two_valid_members_render) (scenario='v7-hollow-fragments-reversed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8263, in test_only_the_two_valid_members_render
+    self.assertEqual(page["fragmentCount"], 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 4 != 2
+
+======================================================================
+FAIL: test_the_locus_with_nobody_behind_it_is_not_a_fragment (test_catena_wave_1.V7HollowFragmentMemberTest.test_the_locus_with_nobody_behind_it_is_not_a_fragment) (scenario='v7-hollow-fragments')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8288, in test_the_locus_with_nobody_behind_it_is_not_a_fragment
+    self.assertNotIn("Genesis 1:4", self.opened(name)["extents"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Genesis 1:4' unexpectedly found in ['Genesis 1:1', 'Genesis', 'Genesis 1:4', 'Genesis 1:2']
+
+======================================================================
+FAIL: test_the_locus_with_nobody_behind_it_is_not_a_fragment (test_catena_wave_1.V7HollowFragmentMemberTest.test_the_locus_with_nobody_behind_it_is_not_a_fragment) (scenario='v7-hollow-fragments-reversed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8288, in test_the_locus_with_nobody_behind_it_is_not_a_fragment
+    self.assertNotIn("Genesis 1:4", self.opened(name)["extents"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Genesis 1:4' unexpectedly found in ['Genesis 1:2', 'Genesis 1:4', 'Genesis', 'Genesis 1:1']
+
+======================================================================
+FAIL: test_no_malformed_or_misfiled_record_establishes_the_boundary (test_catena_wave_1.V7RefusalLocusTest.test_no_malformed_or_misfiled_record_establishes_the_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8404, in test_no_malformed_or_misfiled_record_establishes_the_boundary
+    self.assertEqual(page["refusalCount"], 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_the_chapter_is_untouched_by_either_answer (test_catena_wave_1.V7RefusalLocusTest.test_the_chapter_is_untouched_by_either_answer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8443, in test_the_chapter_is_untouched_by_either_answer
+    self.assertEqual(set(valid["dataStates"]) - set(refused["dataStates"]),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     {"refusal"})
+                     ^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'refusal'
+
+======================================================================
+FAIL: test_the_one_well_formed_record_still_refuses_from_last_place (test_catena_wave_1.V7RefusalLocusTest.test_the_one_well_formed_record_still_refuses_from_last_place)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8421, in test_the_one_well_formed_record_still_refuses_from_last_place
+    self.assertIn("the numbering of this chapter is displaced",
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                  page["refusal"].lower())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'the numbering of this chapter is displaced' not found in 'boundary not established. a note about the chapter before this one. commentary on genesis 2 is anchored in vulgate numbering, and this page will not guess where the boundary moves to in douay-rheims (challoner). the verse numbers you are reading correspond; the divisions of the text may not.'
+
+======================================================================
+FAIL: test_a_200_carrying_null_at_a_fragment_text_says_what_it_is (test_catena_wave_1.V7SecondPassFindingsTest.test_a_200_carrying_null_at_a_fragment_text_says_what_it_is)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9063, in test_a_200_carrying_null_at_a_fragment_text_says_what_it_is
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        opened["fragmentTexts"][0],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "The text of this fragment arrived in a form this page cannot read.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "a fetched, successful, unreadable payload claimed no file exists")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'This fragment carries no text file, so nothing of it can be shown.' != 'The text of this fragment arrived in a form this page cannot read.'
+- This fragment carries no text file, so nothing of it can be shown.
++ The text of this fragment arrived in a form this page cannot read.
+ : a fetched, successful, unreadable payload claimed no file exists
+
+======================================================================
+FAIL: test_a_200_carrying_null_is_never_read_as_the_404 (test_catena_wave_1.V7SecondPassFindingsTest.test_a_200_carrying_null_is_never_read_as_the_404) (scenario='v7-null-paragraph-root')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9055, in test_a_200_carrying_null_is_never_read_as_the_404
+    self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'No paragraph division is held for this ch[87 chars] it.' != 'The paragraph record for this chapter in [86 chars]ere.'
+- No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.
++ The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.
+
+
+======================================================================
+FAIL: test_a_200_carrying_null_is_never_read_as_the_404 (test_catena_wave_1.V7SecondPassFindingsTest.test_a_200_carrying_null_is_never_read_as_the_404) (scenario='v7-null-paragraph-file')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9055, in test_a_200_carrying_null_is_never_read_as_the_404
+    self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'No paragraph division is held for this ch[87 chars] it.' != 'The paragraph record for this chapter in [86 chars]ere.'
+- No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.
++ The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.
+
+
+======================================================================
+FAIL: test_a_padded_chapter_renders_the_chapter_it_names (test_catena_wave_1.V7SecondPassFindingsTest.test_a_padded_chapter_renders_the_chapter_it_names)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9100, in test_a_padded_chapter_renders_the_chapter_it_names
+    self.assertEqual(page["referenceText"], "Genesis 7")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Genesis 1' != 'Genesis 7'
+- Genesis 1
+?         ^
++ Genesis 7
+?         ^
+
+
+======================================================================
+FAIL: test_a_paragraph_file_stating_no_breaks_claims_no_division (test_catena_wave_1.V7SecondPassFindingsTest.test_a_paragraph_file_stating_no_breaks_claims_no_division)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9076, in test_a_paragraph_file_stating_no_breaks_claims_no_division
+    self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'No paragraph division is held for this ch[87 chars] it.' != 'The paragraph record for this chapter in [86 chars]ere.'
+- No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.
++ The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.
+
+
+======================================================================
+FAIL: test_a_record_that_is_not_a_spine_is_a_fault_not_an_emptiness (test_catena_wave_1.V7SecondPassFindingsTest.test_a_record_that_is_not_a_spine_is_a_fault_not_an_emptiness) (scenario='v7-spine-fragments-not-a-list')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9020, in test_a_record_that_is_not_a_spine_is_a_fault_not_an_emptiness
+    self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Nothing held here' != 'The commentary record did not load'
+- Nothing held here
++ The commentary record did not load
+
+
+======================================================================
+FAIL: test_a_record_that_is_not_a_spine_is_a_fault_not_an_emptiness (test_catena_wave_1.V7SecondPassFindingsTest.test_a_record_that_is_not_a_spine_is_a_fault_not_an_emptiness) (scenario='v7-spine-sources-not-a-record')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9020, in test_a_record_that_is_not_a_spine_is_a_fault_not_an_emptiness
+    self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '1 fragment held' != 'The commentary record did not load'
+- 1 fragment held
++ The commentary record did not load
+
+
+======================================================================
+FAIL: test_a_spaced_book_token_fails_closed_rather_than_resolving (test_catena_wave_1.V7SecondPassFindingsTest.test_a_spaced_book_token_fails_closed_rather_than_resolving)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9117, in test_a_spaced_book_token_fails_closed_rather_than_resolving
+    self.assertEqual(page["referenceText"], "Address not used")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Genesis 3' != 'Address not used'
+- Genesis 3
++ Address not used
+
+
+======================================================================
+FAIL: test_an_unreadable_refusals_root_never_fails_open (test_catena_wave_1.V7SecondPassFindingsTest.test_an_unreadable_refusals_root_never_fails_open)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9043, in test_an_unreadable_refusals_root_never_fails_open
+    self.assertEqual(page["tallyText"], self.UNAVAILABLE,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     "the record could not be read and the page said so")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Nothing held here · 19 lead entries on the acquisition list' != 'The commentary record did not load'
+- Nothing held here · 19 lead entries on the acquisition list
++ The commentary record did not load
+ : the record could not be read and the page said so
+
+======================================================================
+FAIL: test_an_unreadable_sources_root_states_no_voice_negative (test_catena_wave_1.V7SecondPassFindingsTest.test_an_unreadable_sources_root_states_no_voice_negative)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9032, in test_an_unreadable_sources_root_states_no_voice_negative
+    self.assertEqual(page["authors"], [], "a fragment stood with no name")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [''] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+''
+
+- ['']
++ [] : a fragment stood with no name
+
+======================================================================
+FAIL: test_no_untyped_value_reaches_the_broken_record_sentence (test_catena_wave_1.V7SecondPassFindingsTest.test_no_untyped_value_reaches_the_broken_record_sentence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9135, in test_no_untyped_value_reaches_the_broken_record_sentence
+    self.assertNotIn("[object Object]", rendered)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '[object Object]' unexpectedly found in 'This chapter’s commentary record did not load Genesis 1, Douay-Rheims (Challoner), commentary record unavailable. The commentary record did not load The index records commentary on Genesis 1, but its record ([object Object]) could not be read — a data or connection fault, not an empty chapter. Reloading may recover it.'
+
+======================================================================
+FAIL: test_the_optional_layer_failing_is_not_the_pages_failure (test_catena_wave_1.V7SecondPassFindingsTest.test_the_optional_layer_failing_is_not_the_pages_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9085, in test_the_optional_layer_failing_is_not_the_pages_failure
+    self.assertIsNone(page["failureText"])
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'The catena index could not be loaded: ../browse/structure/paragraphs/index.json could not be reached: the network failed' is not None
+
+======================================================================
+FAIL: test_a_carried_path_is_taken_only_for_the_fragment_that_owns_it (test_catena_wave_1.V7TextPathRequestSinkTest.test_a_carried_path_is_taken_only_for_the_fragment_that_owns_it)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8228, in test_a_carried_path_is_taken_only_for_the_fragment_that_owns_it
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.opened("v7-text-path-no-prefix")["fetched"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.BOOTSTRAP + ["structure/catena/text/carried-valid.json"])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['str[239 chars]json', 'structure/catena/text/somebody-else.js[217 chars]xt/'] != ['str[239 chars]json']
+
+First list contains 9 additional elements.
+First extra element 7:
+'structure/catena/text/somebody-else.json'
+
+Diff is 703 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_every_request_is_composed_and_none_is_carried (test_catena_wave_1.V7TextPathRequestSinkTest.test_every_request_is_composed_and_none_is_carried)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8167, in test_every_request_is_composed_and_none_is_carried
+    self.assertEqual(self.opened("v7-text-path")["fetched"],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     self.BOOTSTRAP + self.COMPOSED)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['str[629 chars]ure/catena/text/path-boolean.json', '../../../etc/shadow.json'] != ['str[629 chars]ure/catena/text/path-boolean.json']
+
+First list contains 1 additional elements.
+First extra element 17:
+'../../../etc/shadow.json'
+
+Diff is 891 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_no_malformed_value_survives_projection_into_a_url (test_catena_wave_1.V7TextPathRequestSinkTest.test_no_malformed_value_survives_projection_into_a_url) (carried='/etc/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8193, in test_no_malformed_value_survives_projection_into_a_url
+    self.assertFalse([one for one in fetched if carried in one],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     "%r reached the request sink" % carried)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ['../../../etc/shadow.json'] is not false : '/etc/' reached the request sink
+
+======================================================================
+FAIL: test_no_malformed_value_survives_projection_into_a_url (test_catena_wave_1.V7TextPathRequestSinkTest.test_no_malformed_value_survives_projection_into_a_url) (carried='..')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8193, in test_no_malformed_value_survives_projection_into_a_url
+    self.assertFalse([one for one in fetched if carried in one],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     "%r reached the request sink" % carried)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ['../../../etc/shadow.json'] is not false : '..' reached the request sink
+
+======================================================================
+FAIL: test_no_malformed_value_survives_projection_into_a_url (test_catena_wave_1.V7TextPathRequestSinkTest.test_no_malformed_value_survives_projection_into_a_url) (carried='shadow')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8193, in test_no_malformed_value_survives_projection_into_a_url
+    self.assertFalse([one for one in fetched if carried in one],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     "%r reached the request sink" % carried)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ['../../../etc/shadow.json'] is not false : 'shadow' reached the request sink
+
+======================================================================
+FAIL: test_no_malformed_value_survives_projection_into_a_url (test_catena_wave_1.V7TextPathRequestSinkTest.test_no_malformed_value_survives_projection_into_a_url)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8198, in test_no_malformed_value_survives_projection_into_a_url
+    self.assertIn(one, self.COMPOSED, one)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '../../../etc/shadow.json' not found in ['structure/catena/text/path-valid.json', 'structure/catena/text/path-object.json', 'structure/catena/text/path-array.json', 'structure/catena/text/path-number.json', 'structure/catena/text/path-null.json', 'structure/catena/text/path-empty.json', 'structure/catena/text/path-space.json', 'structure/catena/text/path-traversal.json', 'structure/catena/text/path-absolute.json', 'structure/catena/text/path-encoded.json', 'structure/catena/text/path-boolean.json'] : ../../../etc/shadow.json
+
+======================================================================
+FAIL: test_the_nine_refused_carriers_say_they_carry_no_text (test_catena_wave_1.V7TextPathRequestSinkTest.test_the_nine_refused_carriers_say_they_carry_no_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8236, in test_the_nine_refused_carriers_say_they_carry_no_text
+    self.assertEqual(page["fragmentTexts"][1:], [said] * 9)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['The text of this fragment was not published[614 chars]ead'] != ['This fragment carries no text file, so noth[580 chars]wn.']
+
+First differing element 0:
+'The text of this fragment was not published beside the page.'
+'This fragment carries no text file, so nothing of it can be shown.'
+
+Diff is 1360 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_the_proven_v6_hole_makes_no_request_at_all (test_catena_wave_1.V7TextPathRequestSinkTest.test_the_proven_v6_hole_makes_no_request_at_all)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8176, in test_the_proven_v6_hole_makes_no_request_at_all
+    self.assertNotIn("../../../etc/shadow.json", fetched)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '../../../etc/shadow.json' unexpectedly found in ['structure/catena/index.json', 'bibles.json', 'structure/paragraphs/index.json', 'structure/catena/01-gen/001.json', 'douay-rheims/chapters/Gen/1.json', 'structure/paragraphs/douay-rheims/01-gen/001.json', 'structure/catena/text/path-valid.json', 'structure/catena/text/path-object.json', 'structure/catena/text/path-array.json', 'structure/catena/text/path-number.json', 'structure/catena/text/path-null.json', 'structure/catena/text/path-empty.json', 'structure/catena/text/path-space.json', 'structure/catena/text/path-traversal.json', 'structure/catena/text/path-absolute.json', 'structure/catena/text/path-encoded.json', 'structure/catena/text/path-boolean.json', '../../../etc/shadow.json']
+
+======================================================================
+FAIL: test_a_breaks_record_that_states_marks_and_states_none_readably (test_catena_wave_1.V7ThirdPassFindingsTest.test_a_breaks_record_that_states_marks_and_states_none_readably)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9279, in test_a_breaks_record_that_states_marks_and_states_none_readably
+    self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'No paragraph division is held for this ch[87 chars] it.' != 'The paragraph record for this chapter in [86 chars]ere.'
+- No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.
++ The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.
+
+
+======================================================================
+FAIL: test_a_list_of_members_none_of_which_is_one_is_not_an_emptiness (test_catena_wave_1.V7ThirdPassFindingsTest.test_a_list_of_members_none_of_which_is_one_is_not_an_emptiness) (scenario='v7-fragments-all-hollow')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9226, in test_a_list_of_members_none_of_which_is_one_is_not_an_emptiness
+    self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '3 fragments held' != 'The commentary record did not load'
+- 3 fragments held
++ The commentary record did not load
+
+
+======================================================================
+FAIL: test_a_list_of_members_none_of_which_is_one_is_not_an_emptiness (test_catena_wave_1.V7ThirdPassFindingsTest.test_a_list_of_members_none_of_which_is_one_is_not_an_emptiness) (scenario='v7-fragments-all-scalar')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9226, in test_a_list_of_members_none_of_which_is_one_is_not_an_emptiness
+    self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Nothing held here' != 'The commentary record did not load'
+- Nothing held here
++ The commentary record did not load
+
+
+======================================================================
+FAIL: test_a_payload_cannot_forge_the_routes_own_failed_request (test_catena_wave_1.V7ThirdPassFindingsTest.test_a_payload_cannot_forge_the_routes_own_failed_request)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9267, in test_a_payload_cannot_forge_the_routes_own_failed_request
+    self.assertIn("structure/catena/01-gen/001.json", detail,
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                  "the notice names the record the ROUTE asked for")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'structure/catena/01-gen/001.json' not found in 'The index records commentary on Genesis 1, but its record (x) could not be read — a data or connection fault, not an empty chapter. Reloading may recover it.' : the notice names the record the ROUTE asked for
+
+======================================================================
+FAIL: test_a_payload_carrying_absent_is_read_as_the_document_it_is (test_catena_wave_1.V7ThirdPassFindingsTest.test_a_payload_carrying_absent_is_read_as_the_document_it_is)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9257, in test_a_payload_carrying_absent_is_read_as_the_document_it_is
+    self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'No paragraph division is held for this ch[87 chars] it.' != 'The paragraph record for this chapter in [86 chars]ere.'
+- No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.
++ The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.
+
+
+======================================================================
+FAIL: test_a_source_member_that_is_not_a_record_is_not_a_readable_spine (test_catena_wave_1.V7ThirdPassFindingsTest.test_a_source_member_that_is_not_a_record_is_not_a_readable_spine)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9209, in test_a_source_member_that_is_not_a_record_is_not_a_readable_spine
+    self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '107 fragments held · none in Latin transl[43 chars]list' != 'The commentary record did not load'
+- 107 fragments held · none in Latin translation · 33 lead entries on the acquisition list
++ The commentary record did not load
+
+
+======================================================================
+FAIL: test_an_unreadable_absences_root_says_so_rather_than_vanishing (test_catena_wave_1.V7ThirdPassFindingsTest.test_an_unreadable_absences_root_says_so_rather_than_vanishing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9314, in test_an_unreadable_absences_root_says_so_rather_than_vanishing
+    self.assertIn(
+    ~~~~~~~~~~~~~^
+        "What is recorded about translations of the works standing here"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        " could not be read, so nothing is said about them.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        page["asideNotes"])
+        ^^^^^^^^^^^^^^^^^^^
+AssertionError: 'What is recorded about translations of the works standing here could not be read, so nothing is said about them.' not found in ['No commentary on this chapter is held in English translation. 5 fragments are held here, in the author’s own language; choose “Everything held” to see them.']
+
+======================================================================
+FAIL: test_the_optional_paragraph_FILE_failing_is_not_the_pages_failure (test_catena_wave_1.V7ThirdPassFindingsTest.test_the_optional_paragraph_FILE_failing_is_not_the_pages_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9300, in test_the_optional_paragraph_FILE_failing_is_not_the_pages_failure
+    self.assertIsNone(page["failureText"])
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'This chapter could not be loaded: ../browse/structure/paragraphs/douay-rheims/01-gen/001.json could not be reached: the network failed' is not None
+
+======================================================================
+FAIL: test_the_voice_key_is_judged_on_the_key_the_reader_wrote (test_catena_wave_1.V7ThirdPassFindingsTest.test_the_voice_key_is_judged_on_the_key_the_reader_wrote)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 9338, in test_the_voice_key_is_judged_on_the_key_the_reader_wrote
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        page["errorSections"][0]["details"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ["voice=translation: en is not a voice — “original”, or"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         " “translation:” plus a language."])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['voi[21 chars] not a voice this corpus holds.'] != ['voi[21 chars] not a voice — “original”, or “translation:” plus a language.']
+
+First differing element 0:
+'voic[19 chars]s not a voice this corpus holds.'
+'voic[19 chars]s not a voice — “original”, or “translation:” plus a language.'
+
+- ['voice=translation: en is not a voice this corpus holds.']
++ ['voice=translation: en is not a voice — “original”, or “translation:” plus a '
++  'language.']
+
+======================================================================
+FAIL: test_an_incomplete_canon_makes_no_claim_about_the_canon (test_catena_wave_1.V7UnreadableRootDomainClaimTest.test_an_incomplete_canon_makes_no_claim_about_the_canon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8624, in test_an_incomplete_canon_makes_no_claim_about_the_canon
+    self.assertEqual(detail, [
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+        "book=Zzz is not a value this page could match; the record it"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        " would be matched against could not be read whole."])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['book=Zzz is not a book of this canon.'] != ['book=Zzz is not a value this page could match; the record i[48 chars]le.']
+
+First differing element 0:
+'book=Zzz is not a book of this canon.'
+'book=Zzz is not a value this page could match; the record i[47 chars]ole.'
+
+- ['book=Zzz is not a book of this canon.']
++ ['book=Zzz is not a value this page could match; the record it would be '
++  'matched against could not be read whole.']
+
+======================================================================
+FAIL: test_an_unreadable_holdings_root_asks_for_no_chapter_record (test_catena_wave_1.V7UnreadableRootDomainClaimTest.test_an_unreadable_holdings_root_asks_for_no_chapter_record) (scenario='v7-held-bad-digits')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8602, in test_an_unreadable_holdings_root_asks_for_no_chapter_record
+    self.assertFalse(
+    ~~~~~~~~~~~~~~~~^
+        [one for one in self.page(name)["fetched"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         if one.startswith("structure/catena/01-gen/")],
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "a chapter record was requested from an unreadable index")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ['structure/catena/01-gen/1.json'] is not false : a chapter record was requested from an unreadable index
+
+======================================================================
+FAIL: test_an_unreadable_holdings_root_never_says_nothing_is_held (test_catena_wave_1.V7UnreadableRootDomainClaimTest.test_an_unreadable_holdings_root_never_says_nothing_is_held) (scenario='v7-held-not-a-list')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8588, in test_an_unreadable_holdings_root_never_says_nothing_is_held
+    self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Nothing held here' != 'The commentary record did not load'
+- Nothing held here
++ The commentary record did not load
+
+
+======================================================================
+FAIL: test_an_unreadable_holdings_root_never_says_nothing_is_held (test_catena_wave_1.V7UnreadableRootDomainClaimTest.test_an_unreadable_holdings_root_never_says_nothing_is_held) (scenario='v7-held-unreadable-member')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8588, in test_an_unreadable_holdings_root_never_says_nothing_is_held
+    self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Nothing held here' != 'The commentary record did not load'
+- Nothing held here
++ The commentary record did not load
+
+
+======================================================================
+FAIL: test_an_unreadable_paragraph_record_claims_no_division (test_catena_wave_1.V7UnreadableRootDomainClaimTest.test_an_unreadable_paragraph_record_claims_no_division) (scenario='v7-paragraph-root')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8666, in test_an_unreadable_paragraph_record_claims_no_division
+    self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'No paragraph division is held for this ch[87 chars] it.' != 'The paragraph record for this chapter in [86 chars]ere.'
+- No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.
++ The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.
+
+
+======================================================================
+FAIL: test_an_unreadable_paragraph_record_claims_no_division (test_catena_wave_1.V7UnreadableRootDomainClaimTest.test_an_unreadable_paragraph_record_claims_no_division) (scenario='v7-paragraph-file')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8666, in test_an_unreadable_paragraph_record_claims_no_division
+    self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'No paragraph division is held for this ch[87 chars] it.' != 'The paragraph record for this chapter in [86 chars]ere.'
+- No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.
++ The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.
+
+
+======================================================================
+FAIL: test_an_unreadable_paragraph_record_claims_no_division (test_catena_wave_1.V7UnreadableRootDomainClaimTest.test_an_unreadable_paragraph_record_claims_no_division) (scenario='v7-paragraph-breaks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8666, in test_an_unreadable_paragraph_record_claims_no_division
+    self.assertEqual(page["paragraphNote"], self.PARAGRAPH_UNREAD)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'No paragraph division is held for this ch[87 chars] it.' != 'The paragraph record for this chapter in [86 chars]ere.'
+- No paragraph division is held for this chapter in this edition, so it runs on. Another edition’s paragraphs are not borrowed for it.
++ The paragraph record for this chapter in this edition could not be read, so whether it divides the chapter is not established here.
+
+
+======================================================================
+FAIL: test_an_unreadable_verses_container_is_never_reported_as_none (test_catena_wave_1.V7UnreadableRootDomainClaimTest.test_an_unreadable_verses_container_is_never_reported_as_none) (scenario='v7-verses-list')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8710, in test_an_unreadable_verses_container_is_never_reported_as_none
+    self.assertEqual(page["notices"], [self.VERSES_UNREAD])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['Not shown: Genesis 1 carries no verses.'] != ['Not shown: Genesis 1 arrived in a form this page cannot read.']
+
+First differing element 0:
+'Not shown: Genesis 1 carries no verses.'
+'Not shown: Genesis 1 arrived in a form this page cannot read.'
+
+- ['Not shown: Genesis 1 carries no verses.']
++ ['Not shown: Genesis 1 arrived in a form this page cannot read.']
+
+======================================================================
+FAIL: test_an_unreadable_voices_root_makes_no_claim_about_the_voices (test_catena_wave_1.V7UnreadableRootDomainClaimTest.test_an_unreadable_voices_root_makes_no_claim_about_the_voices)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8636, in test_an_unreadable_voices_root_makes_no_claim_about_the_voices
+    self.assertEqual(detail, [
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+        "voice=translation:en is not a value this page could match; the"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        " record it would be matched against could not be read whole."])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['voi[23 chars]t a voice this corpus holds.'] != ['voi[23 chars]t a value this page could match; the record it[47 chars]le.']
+
+First differing element 0:
+'voic[22 chars]t a voice this corpus holds.'
+'voic[22 chars]t a value this page could match; the record it[46 chars]ole.'
+
+- ['voice=translation:en is not a voice this corpus holds.']
++ ['voice=translation:en is not a value this page could match; the record it '
++  'would be matched against could not be read whole.']
+
+======================================================================
+FAIL: test_the_unreadable_holdings_root_terminates (test_catena_wave_1.V7UnreadableRootDomainClaimTest.test_the_unreadable_holdings_root_terminates) (scenario='v7-held-not-a-list')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8617, in test_the_unreadable_holdings_root_terminates
+    self.assertEqual(page["dataStates"], ["error"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != ['error']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'error'
+
+- []
++ ['error']
+
+======================================================================
+FAIL: test_the_unreadable_holdings_root_terminates (test_catena_wave_1.V7UnreadableRootDomainClaimTest.test_the_unreadable_holdings_root_terminates) (scenario='v7-held-unreadable-member')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$REPO/tools/tests/test_catena_wave_1.py", line 8617, in test_the_unreadable_holdings_root_terminates
+    self.assertEqual(page["dataStates"], ["error"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != ['error']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'error'
+
+- []
++ ['error']
+
+----------------------------------------------------------------------
+Ran 449 tests in 0.126s
+
+FAILED (failures=74)
+RESULT tests=449 failures=74 errors=0 skipped=0

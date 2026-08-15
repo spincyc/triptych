@@ -1,0 +1,54 @@
+2026-08-15T10:16:57<tz>
+START focused-catena
+CMD: python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+exit=0
+2026-08-15T10:17:00<tz>
+END focused-catena
+2026-08-15T10:17:07<tz>
+START catena-check
+CMD: python3 scripts/_catena.py check
+exit=0
+2026-08-15T10:17:09<tz>
+END catena-check
+2026-08-15T10:17:15<tz>
+START promised
+CMD: tools/tpt check-promised-deliverables
+exit=0
+2026-08-15T10:17:15<tz>
+END promised
+2026-08-15T10:17:21<tz>
+START full-discovery
+CMD: python3 -m unittest discover -s tools/tests
+exit=1
+2026-08-15T10:25:26<tz>
+END full-discovery
+2026-08-15T10:25:44<tz>
+START make-check
+CMD: make -k check
+exit=2
+2026-08-15T10:30:36<tz>
+END make-check
+2026-08-15T10:30:51<tz>
+START release-bindings
+CMD: make check-release-bindings
+exit=2
+2026-08-15T10:30:52<tz>
+END release-bindings
+2026-08-15T10:30:58<tz>
+START public-site
+CMD: make public-site
+exit=0
+2026-08-15T10:31:03<tz>
+END public-site
+2026-08-15T10:31:08<tz>
+START browser-gate
+CMD: node tools/tests/corpus_browser_gate.mjs
+exit=1
+2026-08-15T10:32:45<tz>
+END browser-gate
+2026-08-15T10:33:04<tz>
+START gzip-sizes
+CMD: python3 -c <gzip -9 mtime=0 whole/stripped sizes>
+exit=0
+2026-08-15T10:33:04<tz>
+END gzip-sizes

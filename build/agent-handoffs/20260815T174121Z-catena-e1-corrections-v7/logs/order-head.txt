@@ -1,0 +1,70 @@
+2026-08-15T12:22:44<tz>
+START focused-catena
+CMD: python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+exit=0
+2026-08-15T12:22:48<tz>
+END focused-catena
+2026-08-15T12:22:53<tz>
+START catena-check
+CMD: python3 scripts/_catena.py check
+exit=0
+2026-08-15T12:22:56<tz>
+END catena-check
+2026-08-15T12:23:03<tz>
+START promised
+CMD: tools/tpt check-promised-deliverables
+exit=0
+2026-08-15T12:23:03<tz>
+END promised
+2026-08-15T12:23:11<tz>
+START full-discovery
+CMD: python3 -m unittest discover -s tools/tests
+exit=1
+2026-08-15T12:31:14<tz>
+END full-discovery
+2026-08-15T12:31:24<tz>
+START make-check
+CMD: make -k check
+exit=2
+2026-08-15T12:36:14<tz>
+END make-check
+2026-08-15T12:36:26<tz>
+START release-bindings
+CMD: make check-release-bindings
+exit=2
+2026-08-15T12:36:27<tz>
+END release-bindings
+2026-08-15T12:36:33<tz>
+START public-site
+CMD: make public-site
+exit=0
+2026-08-15T12:36:38<tz>
+END public-site
+2026-08-15T12:36:45<tz>
+START browser-gate
+CMD: node tools/tests/corpus_browser_gate.mjs
+exit=1
+2026-08-15T12:38:23<tz>
+END browser-gate
+2026-08-15T12:38:29<tz>
+START browser-static
+CMD: python3 -m unittest discover -s tools/tests -p 'test_browser_static.py'
+exit=0
+2026-08-15T12:38:29<tz>
+END browser-static
+2026-08-15T12:38:40<tz>
+START gzip-sizes
+CMD: python3 -c "
+import gzip,re,pathlib
+C=pathlib.Path('src/web/browser/catena')
+def gz(t): return len(gzip.compress(t.encode(),9,mtime=0))
+def strip(t,s=False):
+    x=re.sub(r'/\*.*?\*/','',t,flags=re.S)
+    return re.sub(r'^\s*//.*\$','',x,flags=re.M) if s else x
+for n,s in (('catena.css',False),('catena.js',True),('catena-model.js',True)):
+    t=(C/n).read_text()
+    print(n,'whole',gz(t),'stripped',gz(strip(t,s)))
+"
+exit=0
+2026-08-15T12:38:40<tz>
+END gzip-sizes
