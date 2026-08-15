@@ -164,7 +164,7 @@ NODE = shutil.which("node")
 # repeat both went with them. The relocation's own cost is measured in the
 # durable records, where it is re-taken rather than going stale beside a
 # digest.
-MODEL_SHA256 = "ae8a316c95ee09e3da370cc25a34f176691bb1cf9c7914dc1e937233f150085d"
+MODEL_SHA256 = "8f0061b33123c612120c00aa88593514894858f94f00b81a2b43ef006236e843"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver

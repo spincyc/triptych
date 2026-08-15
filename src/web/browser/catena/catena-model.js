@@ -379,42 +379,33 @@
    *
    * The spine writes the author, the work, the date, the language, the printing,
    * the translators and the rights ONCE per distinct set of them, under
-   * `sources`, and gives every fragment the key of its set. Written per fragment
-   * they cost more than everything else in the file put together — on Genesis 1,
-   * 107 copies of ten fields — and every copy was a chance for two of them to
-   * disagree about one edition. So the join happens here, at read time, which is
+   * `sources`, and gives every fragment the key of its set — on Genesis 1 that
+   * saves 107 copies of ten fields, and every copy was a chance for two of them
+   * to disagree about one edition. The join happens here, at read time, which is
    * where `browser-core.js` says joins belong.
    *
-   * V6 performed that join by copying every own property of the shared record
-   * and then every own property of the fragment into one object, and then
-   * clearing the two fields it knew were dangerous. The V6 review proved why
-   * that is the wrong shape and not merely an untidy one:
+   * V6 joined by copying every own property of the shared record and then of
+   * the fragment into one object, and clearing afterwards the two it knew were
+   * dangerous. `text_path` was cleared only when the composed form could be
+   * built, so a fragment whose id or whose file's prefix was unreadable kept
+   * whatever `text_path` the RECORD carried, and `openFragment` handed it to
+   * the real request sink: `'../../../etc/passwd'` is a string, and a string
+   * was all the copy asked for. Every other unknown property came through
+   * untouched, so the boundary had to be re-established at every later sink —
+   * which is why V4, V5 and V6 each found one more sink where it had not been.
    *
-   *   - `text_path` was OVERWRITTEN only when the composed form could be
-   *     built. A fragment whose id or whose file's prefix was unreadable kept
-   *     whatever `text_path` the RECORD carried, and `openFragment` handed it
-   *     to the real request sink. `'../../../etc/passwd'` is a string, and a
-   *     string was all the copy asked for.
-   *   - every OTHER unknown property came through untouched, so the set of
-   *     fields flowing downstream was whatever the data happened to hold. A
-   *     boundary that carries unknown fields forward is a boundary that has to
-   *     be re-established at every later sink, and V4, V5 and V6 each found
-   *     one more sink where it had not been.
-   *
-   * V7 projects instead. A fragment is read into a record of KNOWN fields, each
-   * one validated for the use the page actually puts it to, and nothing else
-   * crosses. There is no `joined[name] = raw[name]` here and there must not be
-   * one again: a field this page does not name is a field this page does not
-   * carry. Everything downstream — the rows, the tally, the voice filter, the
-   * chips, the provenance line, the Source Library link and the one request a
-   * fragment can cause — reads this record and never the raw one.
+   * V7 projects. A fragment is read into a record of KNOWN fields, each
+   * validated for the use the page puts it to, and nothing else crosses. There
+   * is no `joined[name] = raw[name]` here and there must not be one again.
+   * Everything downstream — rows, tally, voice filter, chips, provenance, the
+   * Source Library link, and the one request a fragment can cause — reads this
+   * record and never the raw one.
    *
    * A member that can name NOTHING of itself is not a thin fragment; it is not
    * a fragment. `{}` rendered a blank `<li>` with an empty author, an empty
-   * work, a perpetual "Loading…" and no locator, and was still counted into "3
-   * fragments held here" — a claim of possession made by an empty object. Its
-   * valid siblings are untouched, which is the point of refusing it one member
-   * at a time rather than refusing the file.
+   * work, a perpetual "Loading…" and no locator, and was counted into "3
+   * fragments held here" — possession claimed by an empty object. Its valid
+   * siblings stand, which is why members are refused one at a time.
    */
 
   /** One fragment as this page may use it, or null. */
@@ -783,24 +774,21 @@
    * from the same mistake — reading the ABSENCE OF A READABLE VALUE as a
    * recorded fact about the edition.
    *
-   *   `versesUnread`  The page distinguished "carries no verses" from "arrived
-   *                   in a form this page cannot read" by counting the keys of
+   *   `versesUnread`  "Carries no verses" and "arrived in a form this page
+   *                   cannot read" were told apart by counting the keys of
    *                   `bag(verses)`, which is `{}` for a list, a string and a
-   *                   number alike — so a chapter payload whose `verses` was a
-   *                   LIST was reported to the reader as a chapter of
-   *                   Scripture that has no verses in it. `loadChapter` admits
-   *                   an array because `typeof [] === 'object'`, and that
-   *                   function belongs to the shared shell, so the distinction
-   *                   is drawn here.
+   *                   number alike — so a payload whose `verses` was a LIST was
+   *                   reported as a chapter of Scripture with no verses in it.
+   *                   `loadChapter` admits an array (`typeof [] === 'object'`)
+   *                   and belongs to the shared shell, so the distinction is
+   *                   drawn here.
    *
-   *   `marksUnread`   A paragraph file that arrived unreadable — a string, a
-   *                   list, or a record whose `breaks` is not a record —
-   *                   produced no marks, and no marks was printed as "No
-   *                   paragraph division is held for this chapter in this
-   *                   edition, so it runs on". That is a claim about how the
-   *                   edition sets its text. `null` — the 404 that means the
-   *                   chapter genuinely runs on — is not unread, and is the
-   *                   one case that may speak.
+   *   `marksUnread`   A paragraph file that arrived unreadable produced no
+   *                   marks, and no marks was printed as "No paragraph division
+   *                   is held … so it runs on" — a claim about how the edition
+   *                   sets its text. `null`, the 404 that means the chapter
+   *                   genuinely runs on, is not unread and is the one case that
+   *                   may speak.
    */
   function chapterReading(verses, marks) {
     const said = bag(verses);
@@ -1106,22 +1094,21 @@
   /* ------------------------------------------------------------------------
    * The three roots an address is judged against, and whether each was read whole
    *
-   * V7, and the V6 review's semantic-integrity blocker. Every one of these
-   * collections is read member by member, and a member that cannot be read is
-   * left out so its valid siblings still serve the reader. That is right, and
-   * on its own it is how a parse failure became a claim about the corpus:
+   * V7, and the V6 review's semantic-integrity blocker. Each collection is read
+   * member by member and an unreadable member is left out, so its valid
+   * siblings still serve the reader. That is right, and on its own it is how a
+   * parse failure became a claim about the corpus:
    *
    *   an unreadable canon member   -> "book=Gen is not a book of this canon"
    *   an unreadable edition record -> "bible=douay-rheims is not a published edition"
    *   an unreadable voices list    -> "voice=translation:en is not a voice this corpus holds"
    *
-   * Each of those is a negative about what this project holds, drawn from a
-   * value nobody could read, and handed to the reader as a fault in the
-   * address they typed. `whole` is the difference between the two sentences
-   * the page is allowed: the corpus does not have this, and this page could
-   * not establish what the corpus has. The books, editions and voices that
-   * WERE read are returned beside it, so nothing readable is withheld to
-   * punish a malformed neighbour.
+   * Three negatives about what this project holds, drawn from values nobody
+   * could read and handed to the reader as faults in the address they typed.
+   * `whole` is the difference between the two sentences the page is allowed:
+   * the corpus does not have this, and this page could not establish what the
+   * corpus has. What WAS read is returned beside it, so nothing readable is
+   * withheld to punish a malformed neighbour.
    * --------------------------------------------------------------------- */
 
   /** The editions the manifest states, and whether it stated them all. */
@@ -1241,18 +1228,17 @@
    * claim about Scripture's own numbering — the strongest thing this page says
    * about a text it did not write.
    *
-   * V6 required the note alone, and the V6 review proved that too little: a
-   * record carrying nothing but a nonempty `note` established the boundary
-   * claim without the closed `kind` the source contract writes and without
-   * saying which locus it refuses. So it could be a note about anything, filed
-   * under any chapter, and the page would print it as this chapter's refusal.
+   * V6 required the note alone, and the review proved that too little: a record
+   * carrying nothing but a nonempty `note` established the claim without the
+   * closed `kind` the source contract writes and without saying which locus it
+   * refuses — so a note about anything, filed under any chapter, printed as
+   * this chapter's refusal.
    *
-   * V7 asks for the whole typed record: the kind the projection actually
-   * recorded, the chapter it stands on — matched against the chapter being
-   * read, not merely present — and the note, which remains the whole of what
-   * this page may say about a boundary it will not guess at. A list holding no
-   * member that states all three refuses nothing, and the first member that
-   * does states it, whatever position the malformed members occupy around it.
+   * V7 asks for the whole typed record: the kind the projection recorded, the
+   * chapter it stands on MATCHED against the chapter being read, and the note,
+   * which remains the whole of what this page may say about a boundary it will
+   * not guess at. A list holding no such member refuses nothing, and the first
+   * that is one states it, whatever stands around it.
    */
   function refusalNote(file, edition, chapter) {
     const key = ident(edition);
@@ -1346,26 +1332,17 @@
   /* ------------------------------------------------------------------------
    * The cited state, judged
    *
-   * A value the page cannot honour is never traded for a default: the URL
-   * keeps the reader's text and recovery is a link and the controls. WHY the
-   * address cannot be used is prose about this corpus, and V7 moves the
-   * judgment here for the same reason every other derivation moved here —
-   * the sentence and the value that licenses it must not be able to drift
-   * apart, and the page carries a byte ceiling that this argument will not
-   * fit under.
+   * A value the page cannot honour is never traded for a default: the URL keeps
+   * the reader's text and recovery is a link and the controls. WHY it cannot be
+   * used is prose about this corpus, so the judgment moves here for the reason
+   * every other derivation did — the sentence and the value that licenses it
+   * must not be able to drift apart, and the page's ceiling will not carry the
+   * argument.
    *
-   * The V6 review's blocker is the third clause of each negative. "…is not a
-   * book of this canon", "…is not a published edition" and "…is not a voice
-   * this corpus holds" are three claims about what this project has, and V6
-   * made all three out of a failure to read the root they were checked
-   * against: a canon whose members would not parse, an edition manifest read
-   * as `[]`, a `voices` value that was not a list. The reader was then handed
-   * a claim about the corpus dressed as a fault in the address they typed.
-   *
-   * So each is spoken only from a root that could be read WHOLE, and where it
-   * could not the page says the thing it can actually support — that it could
-   * not match the value — while the address still fails closed exactly as
-   * before. Failing closed was never the defect; the sentence was.
+   * Failing closed was never the defect; the sentence was. Each negative is
+   * spoken only from a root read WHOLE, per `canonRoot` above, and where one
+   * could not be, the page says the thing it can support: that it could not
+   * match the value. The address fails closed exactly as before.
    * --------------------------------------------------------------------- */
 
   const UNMATCHED =
