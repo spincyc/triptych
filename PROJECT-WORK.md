@@ -1139,6 +1139,139 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena route-owned correction lane, V10
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v10-2026-08-16 -->
+
+The disposition answered is **CHANGES REQUIRED** at exact candidate
+`3c5b78249193df065c4e1c2ee5a98e5989c6e582`, recorded by the independent review
+`55df5c236a1dfda12bb974efdbb9f46d0aeb3436` on branch
+`review/catena-wave-1-e1-corrections-v9-independent` with published review
+head `4f00e04bdd1fd63702a51bfdafef256b468bef77`, which independently
+inspected evidence `eb1ee9987425339c2b5522987bee1fb862cd7d33` and verified
+package `build/agent-handoffs/20260816T044924Z-catena-e1-corrections-v9`
+with ZIP SHA-256
+`4872b04ed47873d84e5a8090aff42d3e43b7a2c11653484d659205db5488d945`. That
+review is a sibling of this line at the reviewed parent and is **not merged
+into it**: what follows records implementation-lane facts only.
+
+The review passed the V9 request-layer closure entire — three-state
+composition through the request decision, the carried door opened only on
+genuine absence, the exact V8 escape closed cold, prewarmed and late, the
+thirteen-shape matrix, the primitive namespace regressions, ownership
+boundaries and budgets — and found the third state stopped at the model:
+`text_refused` was projected and no production consumer read it, so
+`catena.js` sent the refused row's empty path through the same `ABSENT`
+sentinel as genuine absence and told the reader the fragment `carries no
+text file` — false of a fragment whose spine stated a text reference this
+page declined, and doubly false prewarmed, where the reviewer's exact
+carried file had already been fetched. Beside it the review found the
+exported claim boundary accepted the contradictory
+`{stated: false, trail: <valid>}` as absence; the cold, prewarmed, late and
+present-valid terminal proofs materially incomplete — a focus assertion
+anchored to a scenario whose own focus was unpinned, a filtered journal
+slice a substitute request could pass, a control asserting only request and
+body, a late guard comparing B's terminal state only to itself,
+`history.state` uncaptured, ownership inferred from counts — and the V9
+package protocol still short: overwritten `request-journals` logs,
+provenance asserted only in prose after the fact, a P8 transcript that
+never names the ZIP it verified, stale V8 labels, a collapsed parent
+decomposition, an assembler that deletes rather than refuses, and the
+required handoff and review-request structure missing. One exact next
+action: render the distinct refused state, fail contradictory claims
+closed, exact-pin the four terminal vectors, and rebuild the protocol in a
+new timestamp. This lane is that correction and nothing else.
+
+The refusal now reaches the reader. The page consumes `fragment.text_refused`
+before the request sink — never inferring refusal from raw input — and a
+refused row renders one neutral sentence, stated once in the unbudgeted
+model as `TEXT_REFUSED`: `A text reference was supplied for this fragment,
+but it cannot be used as written, so no text is shown.` It claims only what
+the refusal establishes — not that the corpus lacks the text, the file is
+missing, a request failed, or anything is blocked — and because it is
+consumed before the sink, no path, carried, cached, or late, may answer it.
+Genuine absence keeps its own sentence and its carried door; a valid prefix
+still composes its own byte-exact address and renders its body; the two
+no-text sentences are pinned as visibly distinct claims with a positive
+control each way. The exported claim boundary is closed with it: absence at
+`fragmentRow` is exactly one shape, `{stated: false, trail: ''}`, and every
+contradictory or malformed direct claim — the review's exact shape included
+— resolves no text and projects as refused, so no contradictory pairing can
+compose a request, substitute a cached body, or leak body text.
+
+The four terminal vectors are pinned to expected values, not to each other.
+The replay journals every request with its sequence and owning step and
+captures every `replaceState` state argument and the standing
+`history.state` — the sink the review found uncaptured. Cold,
+present-valid, prewarmed, and genuinely-late each pin the whole owned
+journal, row identity and count, the refused or composed body with the
+absence sentence proven absent where refusal stands, tally, the
+announcement journal and the standing `statusText`, `aria-busy`, hash and
+history journals and `history.state`, focus pinned to its own expected
+value, and the error and failure sinks. The late vector pins B's complete
+terminal baseline before AND after the release, retains the full 36-field
+guarded comparison, and pins the release at exactly zero-then-one. Driven
+against the uncorrected parent, the V10 file runs 466 wave-1 tests and
+yields nine failing subtest identities across seven behavioral methods —
+the two V10 presentation methods, the upgraded V8 terminal-claim method,
+the upgraded unsafe-prefix method, and the upgraded V9 cold (two
+scenarios), prewarmed, and late (two snapshots) vectors — beside the
+model-digest frozen-contract pin; the neutrality sweep and the
+present-valid, genuine-absence, and late-non-vacuity controls pass at the
+parent, stated so because a collapsed count was one of the review's label
+findings.
+
+The package protocol is corrected in the pipeline this lane will seal with,
+not by patching prose: every battery entry writes a unique indexed log and
+an existing target is refused, never overwritten, with discarded runs
+keeping their own marked rows; the battery ledgers emit exact-SHA,
+clean-tree and sanitized-cwd provenance contemporaneously at preflight and
+postflight as execution happens; the assembler refuses a reused timestamp
+outright; the P8 read-only transcript binds itself to the exact ZIP
+basename, byte size and SHA-256, adds independent duplicate-row checks, and
+derives the member partition and final byte totals from the ZIP alone; and
+the claims deriver carries accurate lane labels with the parent
+decomposition reported as methods run, controls passing, and failing
+subtest identities. The handoff will carry all ten protocol items and a
+review request structured as Blockers and Optional feedback, naming the
+superseded V9 package.
+
+Fresh figures at this head: focused Catena suite 522 (V9: 519), all green;
+`scripts/_catena.py check` passes at 1,351 fragments / 1 book / 73 canon
+entries; full discovery 1,873 tests (V9: 1,870, plus the three V10
+presentation methods) with the inherited 14 failures / 13 errors / 11
+skips and the same 27-entry name set; browser gate 2,290 assertions,
+1,836 / 226 / 228 across 171 pages and 19 routes; `make -k check` fails on
+the same three inherited targets before this record and additionally on
+`check-web-editions-current` after it, because this durable-record edit
+makes its derived web editions stale; promise ledger valid at 35 tracked /
+19 complete. Budgets unraised: `catena.css` byte-identical at 7,629/8,000
+whole and 2,676/2,700 stripped; `catena.js` 12,987/13,000 whole and
+7,565/8,800 stripped — the refusal's consumption paid inside the margin,
+86 gzipped bytes whole. The unbudgeted model grows 29,179 to 29,741
+gzipped whole and 7,571 to 7,664 stripped, so the two files' combined
+payload is 42,728 summed and 42,010 one-stream against V9's 42,080 and
+41,392 — disclosed, not presented as unchanged load. Four stale release
+bindings remain fail-closed, none re-signed; `src/web/data/` has zero
+changes.
+
+Every other blocker remains open and untouched here, recorded as the V9
+review left it: projection not yet the sole semantic source; orphan raw
+sources; source-only fragments still counting; scalar and nested translator
+coercion; malformed and padded absence findings; refusal verse validation;
+the broader partial-selection ordering defects; unreadable roots and the
+unreadable `bibles.json` prose; the broader terminal and corrected-oracle
+proofs outside this lane's four vectors; the CLI/web duplicated semantic
+model; the uncapped combined and model payload question, answered here only
+by accurate disclosure; and the historical data-seam contradiction. Release
+bindings, the common gate, B0/shared shell, real-device/AT evidence,
+protected Liturgy and PDFs remain separately owned.
+
+Status: **awaiting fresh independent review** of the exact V10 head and its
+immutable handoff archived on `evidence/catena-e1-corrections-v10-handoff`.
+This lane records no acceptance of its own work, marks no separately owned
+prerequisite complete, and does not review itself.
+
 ### E1 Catena route-owned correction lane, V9
 
 <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v9-2026-08-16 -->
