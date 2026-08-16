@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-08-15"
+audited_on = "2026-08-16"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 46
-source_surface_file_count = 976
-snapshot = "sha256:87e0686c1d5fe5afaeb9facd6c6712eb49c3434582f1557900c08c5944cf3fc8"
+source_surface_file_count = 983
+snapshot = "sha256:fda516924232e5bf0c9346c7e82c26b82d62d2a7b246ffed5f6553f32ca2c68e"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -5465,8 +5465,50 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
 
 [[files]]
+path = "src/claude/theology/mariology/ark-of-the-covenant/figures/fig-ark.tex"
+sha256 = "06fd14c70fe6c66dd12a8e1c0305b7a49093d735fa4fe9942c3d63ad84148de5"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/claude/theology/mariology/ark-of-the-covenant/figures/fig-construction.tex"
+sha256 = "801dcdecc597fb80261e274b6f11f82010721f90e285a710b4fe7845524cea85"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/claude/theology/mariology/ark-of-the-covenant/figures/fig-fulfilment.tex"
+sha256 = "32fc0428951045084651b81b638fcda25175aee82c7369029e63206077e946f4"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/claude/theology/mariology/ark-of-the-covenant/figures/fig-journey.tex"
+sha256 = "a8f295005a940c0ef9dc5b18df625db2828ba5f7216ac198f9e9d10c3463112f"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/claude/theology/mariology/ark-of-the-covenant/figures/fig-overlay.tex"
+sha256 = "81487ff1aa0fb0c5687dddddeb6c415f97b01eb33a8f18c6958e3ea5a3cadb7d"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/claude/theology/mariology/ark-of-the-covenant/figures/fig-tabernacle.tex"
+sha256 = "bed25f6abaab8065f033a938b3b904581db497ee8023e255e3bdd110d298c9d0"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/claude/theology/mariology/ark-of-the-covenant/figures/fig-temple.tex"
+sha256 = "2d3f17f9f5e6ebee67aafeaee4a1607bbdd61d78d1e0daa8aa786ce2d0fa2067"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/format.tex"
-sha256 = "88737610186e4c03f580e9abf20fd59b84dbf9b719210e53fc1bf8b99b981e1e"
+sha256 = "b67b980dd36c82ec989b7d3ba8868eff8f25e54e268d8dfe2a536ab668bb2c2b"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
@@ -5484,7 +5526,7 @@ owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/research/scope.md"
-sha256 = "bfdb4196732f6c7bd12d08aee996b0caba26799ca0fa3037e64e3694300f542e"
+sha256 = "97e823cd523b3c0234667fbb24e89b1edbe22d7bf280591c412c59f6d1d44b35"
 kind = "research-scope"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
@@ -5502,85 +5544,85 @@ owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/00-overture.tex"
-sha256 = "c2809e56bfab54d07804c47a2a48e8c2bafd2bbcb5949d6bf3e5849ffdeb6874"
+sha256 = "1b171fa28ce7739299cc8e9ea46311a19a1cba6b9e77aca473e21c0bbd8e3895"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/10-sinai.tex"
-sha256 = "9725aff35534f95ffc76958cbd14aaa59716f93022978fd62267909aceadc05f"
+sha256 = "f7f521efdfb12b872efc27f17301a4b2529a186396b8011e431d1666756a76d7"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/11-into-the-land.tex"
-sha256 = "3c26b5a29e5f8e86b86211896ebfaf0cb4e90008bd64c0d44dd1b74e0870de1b"
+sha256 = "c6779d0d62272b7bae401bad2f49748b15ea2a1f6be5fb84262977b17bb0cc1c"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/12-catastrophe.tex"
-sha256 = "711978371439a8ef4150697c1b536d12c95310e5c0a5c0418882d8b40f91de8f"
+sha256 = "64751caa27cb115ffb467328e782f0b0fa4a43eeb5bf3b5631b705a68cf15d07"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/13-processions.tex"
-sha256 = "a39bceb89996b4883918d21c6d0deb1975cf35cb11bae6387a4e94e58d48a776"
+sha256 = "77f6583a09dd72fc086e384e60bbe8d70511127e654666582e35b79995896270"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/14-temple-and-silence.tex"
-sha256 = "e5157e0da65db8a803f9d6de1e2025466dba04fdfd73bb7c9655924aa8fa5b53"
+sha256 = "2f8087a3f6e121a39470da11554313bbb18c05d707eba66f312e10fc6958b268"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/20-the-pattern.tex"
-sha256 = "61ef85daaae07aad47495881dae55197c156efb8bb2ed0437967be7aaffb8c0a"
+sha256 = "a0bf29facf3395e734a9bcae70bad7a1ac24b2d999416199ea0ac6d5f487eddd"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/21-reading-forward.tex"
-sha256 = "09bd6f593a768e48d2f79108827ac545f1aaa34ac2dd11c00f7549f0d756714d"
+sha256 = "fc798f759f96b8faf8e359bd253dc62b7d36b94e824a102ed532173a1a1b7e22"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/30-luke.tex"
-sha256 = "c9e379f83af8f0e7b8d348a467adff2941fa385be23a8b4d0e5a1a9ca5b5f000"
+sha256 = "364ed5ca03b54bd6dffd15d209fbbf819d83a6cb65add1c14449d452e9fa7ab2"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/31-fathers.tex"
-sha256 = "fe57c1892230d32f4c9dc7f698a2527ba6350015ed3371ae36908f3af74b7461"
+sha256 = "60f65d09849475051965e8afd5fea2990a33580b8cd1416e4664646f475d3a01"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/32-reception.tex"
-sha256 = "50ab6a7bf5a70c3ac8d3b937d614fdd3d1adbda53d55ffa5716b7082f7290e24"
+sha256 = "1c0f3a6a873cbd81921a06b32690087a62835d7494b76b140726c0404350febe"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/33-assumption-and-the-woman.tex"
-sha256 = "b9022c0e230cf7822077910f264d89c1108f47e8350f804e7127412431f86ae2"
+sha256 = "2732b43c650f12aa1a91fd1f4069deda06d11b88e25b669f89ac46edeb0656bd"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/40-carrying-the-presence.tex"
-sha256 = "60e6042833982e0af8182fcd005b87d0dcced68f171a4b161896758074c220ff"
+sha256 = "43a431b1e0916f12b42dfd4330651371cb398f187e9bdb254fe072916b8377d1"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/sections/90-scope-status-qualifications.tex"
-sha256 = "41b8882eff0f62ff3b6c568f08925ef1ed7e94305de2dc46a369339055c7a49f"
+sha256 = "1e98029a1ccd19fa95f805b845db17f3b7da680930a3b0a963b993e20cb16f49"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 
@@ -5592,7 +5634,7 @@ owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/claude/theology/mariology/ark-of-the-covenant/web-edition.toml"
-sha256 = "342171b432284344670e3d0a590eea283e98783b2580079b79469a476efad52d"
+sha256 = "2bac84d75a5ca6cdf58c13f6d2c97507da6ee00da5fbac7b75f1a8d2bbd1bddf"
 kind = "rendered-content"
 owners = ["theology/mariology/ark-of-the-covenant"]
 

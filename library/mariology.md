@@ -10,7 +10,7 @@ Dogmas, prayer, apparitions, and the historical reception of Marian devotion.
 | --- | --- | --- | --- |
 | **The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed** | [PDF](../pdf/gpt/theology/mariology/marian-dogmas.pdf) · [Read](../web/gpt/theology/mariology/marian-dogmas.html) | [PDF](../pdf/claude/theology/mariology/marian-dogmas.pdf) · [Read](../web/claude/theology/mariology/marian-dogmas.html) | The four dogmas and their biblical, patristic, Thomistic, historical, liturgical, and magisterial boundaries. |
 | **Dogma, Doctrine, and Devotion in Mariology** | [PDF](../pdf/gpt/theology/mariology/doctrinal-authority.pdf) · [Read](../web/gpt/theology/mariology/doctrinal-authority.html) | — | Catholic authority and assent applied to Marian dogmas, doctrines, titles, devotion, and private revelation. |
-| **The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun** | — | [PDF](../pdf/claude/theology/mariology/ark-of-the-covenant.pdf) · [Read](../web/claude/theology/mariology/ark-of-the-covenant.html) | The ark's whole canonical journey, its theology of presence and holiness, and the Church's reading of Mary as the ark of the new covenant, every parallel graded by attestation and reception. |
+| **The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun** | — | [PDF](../pdf/claude/theology/mariology/ark-of-the-covenant.pdf) | The ark's whole canonical journey, its theology of presence and holiness, and the Church's reading of Mary as the ark of the new covenant, every parallel graded by attestation and reception. |
 
 ## Prayer and Devotion
 

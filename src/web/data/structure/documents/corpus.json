@@ -3,7 +3,7 @@
  "counted": {
   "documents": 179,
   "issues": 187,
-  "pages": 5738,
+  "pages": 5741,
   "titles_unrecorded": 0,
   "works": 134
  },
@@ -7809,6 +7809,10 @@
    "editions": [
     {
      "authorization": "perpetual-public-repository-2026",
+     "basis": "diagram-dependent",
+     "blocking_constructs": [
+      "tikzpicture"
+     ],
      "contributions": [
       {
        "model": "claude-fable-5",
@@ -7816,20 +7820,20 @@
        "runtime": "Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.220; unexposed: server revision"
       }
      ],
-     "eligibility": "eligible",
+     "eligibility": "conditional",
      "models": [
       "claude-fable-5"
      ],
-     "pages": 63,
+     "pages": 66,
      "pdf": "pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
      "provider": "claude",
-     "reviewed": "2026-08-15",
-     "revised": "2026-08-16T03:47:13Z",
+     "rationale": "Seven hand-drawn TikZ figures carry the ark's anatomy, the tabernacle and temple plans, the journey map, the Visitation overlay, and the fulfilment arc; the prose stands alone, but a web edition that silently dropped the drawings would misrepresent the print publication, so the leaf waits on a figure-rendering path.",
+     "reviewed": "2026-08-16",
+     "revised": "2026-08-16T05:11:19Z",
      "status": "alpha",
      "subject": "A source-audited study of the ark of the covenant: its canonical journey from Sinai to its disappearance, the theology of presence and holiness it teaches, and the Church's reading of the Virgin Mary as the ark of the new covenant, with every parallel graded by attestation and reception",
      "title": "The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun",
-     "title_source": "src/claude/theology/mariology/ark-of-the-covenant/main.tex",
-     "web": "web/claude/theology/mariology/ark-of-the-covenant.html"
+     "title_source": "src/claude/theology/mariology/ark-of-the-covenant/main.tex"
     }
    ],
    "leaf": "theology/mariology/ark-of-the-covenant",

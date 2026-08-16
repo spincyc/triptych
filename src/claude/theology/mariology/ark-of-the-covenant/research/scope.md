@@ -162,11 +162,29 @@ review, installed-PDF review.
   final-page colophon shares the terminal content page. Rendered extent exceeds the
   scoped ~40 pages (39pp body + 14pp notes + 8pp appendices); surfaced at the
   draft-review checkpoint. Not yet installed; awaiting draft review.
+- 2026-08-15 — released: PDF installed, web edition installed, catalog row added,
+  alpha release record and bindings recorded, deployment gates green; published as
+  commit cfe588f81.
+- 2026-08-16 — readability and figures revision. All 13 body sections revised
+  sentence-by-sentence and holistically (shorter sentences, apparatus moved to
+  endnotes, meta-discourse cut; all quotations frozen and re-verified against the
+  pre-revision snapshot — 481/482 spans byte-identical, one duplicate quotation
+  merged into its surviving endnote). Douay name forms normalized in prose. Seven
+  hand-drawn TikZ figures added (ark, construction, tabernacle plan, journey map,
+  temple plan, Lucan overlay, fulfilment arc), drawn in a reproducible
+  pencil-sketch style (fixed decoration seed). The figures make the leaf's web
+  eligibility conditional (diagram-dependent): the tracked web edition is
+  withdrawn until a figure-rendering path exists, and the catalog row now offers
+  the PDF only. Rebuilt clean at 66 pages (no overfull boxes, no undefined
+  references); all pages visually reviewed.
 
 ## Review completed (internal only)
 
-- None yet.
+- Draft review, 180-quotation Douay collation, full-page visual review, and the
+  release-gate chain (deployment sources, public site, public-alpha verify) for
+  the 2026-08-15 release; quotation re-verification and page review for the
+  2026-08-16 revision.
 
 ## Outstanding review
 
-- All drafting, building, page review, and installation gates outstanding.
+- None.
