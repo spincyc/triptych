@@ -205,63 +205,63 @@ All web sources were accessed and checked on 2026-07-24; the quoted witnesses we
 
 ### Jerome: prefaces, letters, and catalogue (participant documents)
 
--   Jerome, prefaces to the Vulgate books, tr. Kevin P. Edgecomb (1999–2006; released by the translator into the public domain), at tertullian.org: Gospels (<https://www.tertullian.org/fathers/jerome_preface_gospels.htm>), Kings/*Prologus galeatus* (<https://www.tertullian.org/fathers/jerome_preface_kings.htm>), Psalms according to the Seventy (<https://www.tertullian.org/fathers/jerome_preface_psalms_lxx.htm>), Psalms according to the Hebrew (<https://www.tertullian.org/fathers/jerome_preface_psalms_hebrew.htm>), Books of Solomon (<https://www.tertullian.org/fathers/jerome_preface_solomon.htm>), Daniel (<https://www.tertullian.org/fathers/jerome_preface_daniel.htm>), Tobit (<https://www.tertullian.org/fathers/jerome_preface_tobit.htm>), Judith (<https://www.tertullian.org/fathers/jerome_preface_judith_e.htm>), and the anonymous *Primum quaeritur* preface to the Pauline Epistles (<https://www.tertullian.org/fathers/jerome_preface_pauls_letters.htm>).
+- Jerome, prefaces to the Vulgate books, tr. Kevin P. Edgecomb (1999–2006; released by the translator into the public domain), at tertullian.org: Gospels (<https://www.tertullian.org/fathers/jerome_preface_gospels.htm>), Kings/*Prologus galeatus* (<https://www.tertullian.org/fathers/jerome_preface_kings.htm>), Psalms according to the Seventy (<https://www.tertullian.org/fathers/jerome_preface_psalms_lxx.htm>), Psalms according to the Hebrew (<https://www.tertullian.org/fathers/jerome_preface_psalms_hebrew.htm>), Books of Solomon (<https://www.tertullian.org/fathers/jerome_preface_solomon.htm>), Daniel (<https://www.tertullian.org/fathers/jerome_preface_daniel.htm>), Tobit (<https://www.tertullian.org/fathers/jerome_preface_tobit.htm>), Judith (<https://www.tertullian.org/fathers/jerome_preface_judith_e.htm>), and the anonymous *Primum quaeritur* preface to the Pauline Epistles (<https://www.tertullian.org/fathers/jerome_preface_pauls_letters.htm>).
 
--   Jerome, *Letters* 27, 71 (to Lucinius), and 84, tr. W. H. Fremantle with G. Lewis and W. G. Martley, NPNF series 2, vol. 6 (New York, 1893), at New Advent (<https://www.newadvent.org/fathers/3001027.htm>, <https://www.newadvent.org/fathers/3001071.htm>, <https://www.newadvent.org/fathers/3001084.htm>); *Letter* 112 (= Augustine, *Letter* 75), tr. J. G. Cunningham, NPNF series 1, vol. 1, at New Advent (<https://www.newadvent.org/fathers/1102075.htm>).
+- Jerome, *Letters* 27, 71 (to Lucinius), and 84, tr. W. H. Fremantle with G. Lewis and W. G. Martley, NPNF series 2, vol. 6 (New York, 1893), at New Advent (<https://www.newadvent.org/fathers/3001027.htm>, <https://www.newadvent.org/fathers/3001071.htm>, <https://www.newadvent.org/fathers/3001084.htm>); *Letter* 112 (= Augustine, *Letter* 75), tr. J. G. Cunningham, NPNF series 1, vol. 1, at New Advent (<https://www.newadvent.org/fathers/1102075.htm>).
 
--   Jerome, *On Illustrious Men* 135, tr. E. C. Richardson, NPNF series 2, vol. 3, at New Advent (<https://www.newadvent.org/fathers/2708.htm>).
+- Jerome, *On Illustrious Men* 135, tr. E. C. Richardson, NPNF series 2, vol. 3, at New Advent (<https://www.newadvent.org/fathers/2708.htm>).
 
 ### Augustine and Rufinus (contemporary reception)
 
--   Augustine, *Letters* 71 and 82, tr. J. G. Cunningham, NPNF series 1, vol. 1 (Buffalo, 1887), at New Advent (<https://www.newadvent.org/fathers/1102071.htm>, <https://www.newadvent.org/fathers/1102082.htm>).
+- Augustine, *Letters* 71 and 82, tr. J. G. Cunningham, NPNF series 1, vol. 1 (Buffalo, 1887), at New Advent (<https://www.newadvent.org/fathers/1102071.htm>, <https://www.newadvent.org/fathers/1102082.htm>).
 
--   Augustine, *On Christian Doctrine* 2.11.16 and 2.15.22, tr. J. F. Shaw, NPNF series 1, vol. 2, at New Advent (<https://www.newadvent.org/fathers/12022.htm>).
+- Augustine, *On Christian Doctrine* 2.11.16 and 2.15.22, tr. J. F. Shaw, NPNF series 1, vol. 2, at New Advent (<https://www.newadvent.org/fathers/12022.htm>).
 
--   Augustine, *City of God* 18.43, Marcus Dods translation (Edinburgh, 1871; NPNF series 1, vol. 2), at CCEL (<https://ccel.org/ccel/schaff/npnf102.iv.XVIII.43.html>).
+- Augustine, *City of God* 18.43, Marcus Dods translation (Edinburgh, 1871; NPNF series 1, vol. 2), at CCEL (<https://ccel.org/ccel/schaff/npnf102.iv.XVIII.43.html>).
 
--   Rufinus of Aquileia, *Apology against Jerome* 2.33–36, tr. W. H. Fremantle, NPNF series 2, vol. 3, at New Advent (<https://www.newadvent.org/fathers/27052.htm>).
+- Rufinus of Aquileia, *Apology against Jerome* 2.33–36, tr. W. H. Fremantle, NPNF series 2, vol. 3, at New Advent (<https://www.newadvent.org/fathers/27052.htm>).
 
 ### Official ecclesial acts
 
--   Council of Trent, Session IV (8 April 1546), Decree concerning the canonical Scriptures and Decree concerning the edition and use of the sacred books, tr. J. Waterworth (1848), at papalencyclicals.net (<https://www.papalencyclicals.net/councils/trent/fourth-session.htm>).
+- Council of Trent, Session IV (8 April 1546), Decree concerning the canonical Scriptures and Decree concerning the edition and use of the sacred books, tr. J. Waterworth (1848), at papalencyclicals.net (<https://www.papalencyclicals.net/councils/trent/fourth-session.htm>).
 
--   Pius XII, encyclical *Divino afflante Spiritu* (30 September 1943), n. 21, Vatican website English text (<https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_30091943_divino-afflante-spiritu.html>).
+- Pius XII, encyclical *Divino afflante Spiritu* (30 September 1943), n. 21, Vatican website English text (<https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_30091943_divino-afflante-spiritu.html>).
 
--   Second Vatican Council, *Dei Verbum* 22 (18 November 1965), Vatican website English text (<https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html>).
+- Second Vatican Council, *Dei Verbum* 22 (18 November 1965), Vatican website English text (<https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html>).
 
--   John Paul II, apostolic constitution *Scripturarum thesaurus* (25 April 1979), Vatican website English text (<https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_19790425_scripturarum-thesaurus.html>).
+- John Paul II, apostolic constitution *Scripturarum thesaurus* (25 April 1979), Vatican website English text (<https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_19790425_scripturarum-thesaurus.html>).
 
--   *Nova Vulgata Bibliorum Sacrorum editio*, *editio typica altera* (1986), *Praefatio ad Lectorem*, Latin text at the Vatican website (<https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_praefatio_lt.html>).
+- *Nova Vulgata Bibliorum Sacrorum editio*, *editio typica altera* (1986), *Praefatio ad Lectorem*, Latin text at the Vatican website (<https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_praefatio_lt.html>).
 
--   Congregation for Divine Worship and the Discipline of the Sacraments, instruction *Liturgiam authenticam* (28 March 2001), nn. 24, 37, 41, 43, Vatican website English text (<https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20010507_liturgiam-authenticam_en.html>).
+- Congregation for Divine Worship and the Discipline of the Sacraments, instruction *Liturgiam authenticam* (28 March 2001), nn. 24, 37, 41, 43, Vatican website English text (<https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20010507_liturgiam-authenticam_en.html>).
 
--   *Catechism of the Catholic Church* 131 (within the article on Sacred Scripture, 101–141), Vatican website English text (<https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/v_sacred_scripture_in_the_life_of_the_church.html>).
+- *Catechism of the Catholic Church* 131 (within the article on Sacred Scripture, 101–141), Vatican website English text (<https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/v_sacred_scripture_in_the_life_of_the_church.html>).
 
 ### Editions and artifacts
 
--   *Biblia Sacra Vulgatæ Editionis* (Clementine Vulgate), ed. Michael Hetzenauer (Ratisbon and Rome: Pustet, 1914); Jonah 4:6 checked in the public-domain page-image edition at SacredBible (<https://www.sacredbible.org/hetzenauer1914/>, scan page 0875). Registered in this repository’s source library as `edition.catholic-church.vulgata-clementina.hetzenauer-1914`.
+- *Biblia Sacra Vulgatæ Editionis* (Clementine Vulgate), ed. Michael Hetzenauer (Ratisbon and Rome: Pustet, 1914); Jonah 4:6 checked in the public-domain page-image edition at SacredBible (<https://www.sacredbible.org/hetzenauer1914/>, scan page 0875). Registered in this repository’s source library as `edition.catholic-church.vulgata-clementina.hetzenauer-1914`.
 
--   *Biblia latina* (the Gutenberg Bible), Mainz: Johann Gutenberg and Johann Fust, between 1454 and 1456; edition facts from the Harry Ransom Center, University of Texas at Austin (<https://www.hrc.utexas.edu/gutenberg-bible/>).
+- *Biblia latina* (the Gutenberg Bible), Mainz: Johann Gutenberg and Johann Fust, between 1454 and 1456; edition facts from the Harry Ransom Center, University of Texas at Austin (<https://www.hrc.utexas.edu/gutenberg-bible/>).
 
--   *Nouum Testamentum Domini nostri Iesu Christi latine secundum editionem sancti Hieronymi* (Oxford Vulgate), ed. J. Wordsworth, H. J. White, et al., 3 parts (Oxford, 1889–1954); cited from Houghton’s guide, not examined.
+- *Nouum Testamentum Domini nostri Iesu Christi latine secundum editionem sancti Hieronymi* (Oxford Vulgate), ed. J. Wordsworth, H. J. White, et al., 3 parts (Oxford, 1889–1954); cited from Houghton’s guide, not examined.
 
--   *Biblia Sacra iuxta Latinam Vulgatam versionem ad codicum fidem* (Roman/Benedictine Vulgate), 18 vols. (Rome: Typis Polyglottis Vaticanis, 1926–1995); cited from Houghton’s guide, Gasquet’s 1912 account, and public catalog descriptions; not examined.
+- *Biblia Sacra iuxta Latinam Vulgatam versionem ad codicum fidem* (Roman/Benedictine Vulgate), 18 vols. (Rome: Typis Polyglottis Vaticanis, 1926–1995); cited from Houghton’s guide, Gasquet’s 1912 account, and public catalog descriptions; not examined.
 
--   *Biblia Sacra iuxta vulgatam versionem* (Stuttgart Vulgate), ed. R. Weber; 5th ed. rev. R. Gryson (Stuttgart: Deutsche Bibelgesellschaft, 1969; 2007); cited from Houghton’s guide, not examined.
+- *Biblia Sacra iuxta vulgatam versionem* (Stuttgart Vulgate), ed. R. Weber; 5th ed. rev. R. Gryson (Stuttgart: Deutsche Bibelgesellschaft, 1969; 2007); cited from Houghton’s guide, not examined.
 
--   *Vetus Latina: Die Reste der altlateinischen Bibel* (Beuron, 1949– ), Vetus Latina-Institut; project facts from Houghton’s guide.
+- *Vetus Latina: Die Reste der altlateinischen Bibel* (Beuron, 1949– ), Vetus Latina-Institut; project facts from Houghton’s guide.
 
 ### Modern scholarship and finding aids
 
--   H. A. G. Houghton, *The Latin New Testament: A Guide to Its Early History, Texts, and Manuscripts* (Oxford: Oxford University Press, 2016), open access under CC BY-NC-ND 4.0, read in the Library of Congress PDF (<https://www.loc.gov/item/2019666835/>); the principal modern control used throughout, summarized and cited without reproduction.
+- H. A. G. Houghton, *The Latin New Testament: A Guide to Its Early History, Texts, and Manuscripts* (Oxford: Oxford University Press, 2016), open access under CC BY-NC-ND 4.0, read in the Library of Congress PDF (<https://www.loc.gov/item/2019666835/>); the principal modern control used throughout, summarized and cited without reproduction.
 
--   Aidan Gasquet, “Revision of Vulgate,” *The Catholic Encyclopedia*, vol. 15 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/15515b.htm>).
+- Aidan Gasquet, “Revision of Vulgate,” *The Catholic Encyclopedia*, vol. 15 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/15515b.htm>).
 
--   Sydney F. Smith, “St. Robert Bellarmine,” *The Catholic Encyclopedia*, vol. 2 (1907), at New Advent (<https://www.newadvent.org/cathen/02411d.htm>); “Pope Sixtus V,” vol. 14 (1912), at New Advent (<https://www.newadvent.org/cathen/14033a.htm>). Dated, sympathetic treatments, used as identified period witnesses.
+- Sydney F. Smith, “St. Robert Bellarmine,” *The Catholic Encyclopedia*, vol. 2 (1907), at New Advent (<https://www.newadvent.org/cathen/02411d.htm>); “Pope Sixtus V,” vol. 14 (1912), at New Advent (<https://www.newadvent.org/cathen/14033a.htm>). Dated, sympathetic treatments, used as identified period witnesses.
 
--   Bernard Ward, “Douay Bible,” *The Catholic Encyclopedia*, vol. 5 (1909), at New Advent (<https://www.newadvent.org/cathen/05140a.htm>); 1582 title-page wording checked at bible-researcher.com (<https://www.bible-researcher.com/rheims.html>).
+- Bernard Ward, “Douay Bible,” *The Catholic Encyclopedia*, vol. 5 (1909), at New Advent (<https://www.newadvent.org/cathen/05140a.htm>); 1582 title-page wording checked at bible-researcher.com (<https://www.bible-researcher.com/rheims.html>).
 
--   Survey and finding-aid articles consulted for bounded facts with their limits recorded in the source audit: the Roman Psalter attribution debate (De Bruyne 1930; Goins 2014; Norris 2017, as surveyed at en.wikipedia.org, “Latin Psalters”); the Sixtine–Clementine difference counts (James 1600; Vercellone; Metzger; Aland, as surveyed at en.wikipedia.org, “Sixto-Clementine Vulgate”); the Benedictine edition’s volume record (public catalog listings). Finding aids only; no such page is treated as a checked witness to wording.
+- Survey and finding-aid articles consulted for bounded facts with their limits recorded in the source audit: the Roman Psalter attribution debate (De Bruyne 1930; Goins 2014; Norris 2017, as surveyed at en.wikipedia.org, “Latin Psalters”); the Sixtine–Clementine difference counts (James 1600; Vercellone; Metzger; Aland, as surveyed at en.wikipedia.org, “Sixto-Clementine Vulgate”); the Benedictine edition’s volume record (public catalog listings). Finding aids only; no such page is treated as a checked witness to wording.
 
 **Last revised (UTC):** 2026-07-25T04:15:59Z
 

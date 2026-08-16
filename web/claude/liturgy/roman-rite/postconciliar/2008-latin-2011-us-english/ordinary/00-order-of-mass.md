@@ -320,13 +320,13 @@ The Instruction adds the ceremonial that the four prayers share. The priest begi
 
 The Instruction gives norms for choosing among the four, and they are more directive than is often supposed.
 
--   **Prayer I, the Roman Canon**, may always be used. It is more suitably said on days assigned a proper *Communicantes*, or at Masses enriched with a proper *Hanc igitur*, and in celebrations of the Apostles and of the Saints mentioned in it; likewise on Sundays, unless for pastoral reasons the third prayer is preferred.
+- **Prayer I, the Roman Canon**, may always be used. It is more suitably said on days assigned a proper *Communicantes*, or at Masses enriched with a proper *Hanc igitur*, and in celebrations of the Apostles and of the Saints mentioned in it; likewise on Sundays, unless for pastoral reasons the third prayer is preferred.
 
--   **Prayer II**, on account of its particular features, is more suitably used on weekdays or in particular circumstances. Though it has its own preface, it may be used with others, especially those that present the mystery of salvation in summary form.
+- **Prayer II**, on account of its particular features, is more suitably used on weekdays or in particular circumstances. Though it has its own preface, it may be used with others, especially those that present the mystery of salvation in summary form.
 
--   **Prayer III** may be said with any preface, and its use is to be preferred on Sundays and feasts.
+- **Prayer III** may be said with any preface, and its use is to be preferred on Sundays and feasts.
 
--   **Prayer IV** has an unchangeable preface and gives a fuller summary of salvation history. It may be used when a Mass has no proper preface, and on Sundays in Ordinary Time.[^55]
+- **Prayer IV** has an unchangeable preface and gives a fuller summary of salvation history. It may be used when a Mass has no proper preface, and on Sundays in Ordinary Time.[^55]
 
 Two consequences follow that bear on ordinary parish practice. Prayer II is the shortest and is, by the Instruction’s own norm, the weekday prayer; its use as the standard Sunday prayer is contrary to a stated norm, not merely to taste. And Prayer IV cannot be used when the day has a proper preface, which excludes it from most solemnities and from the strong seasons; its apparent rarity is largely a consequence of the calendar rather than of neglect.
 
@@ -408,15 +408,15 @@ The oldest Latin text of the eucharistic prayer in the church order conventional
 
 Three things must be said with equal firmness. The dependence is real and demonstrable, and anyone who denies it has not compared the texts. The attribution of the underlying church order to Hippolytus of Rome, and its dating to about 215, are not established; authorship, date, place, and the very unity of the work are disputed, and the prayer may be a composite of material of different dates and provenances. And Prayer II is not that anaphora: it is an adaptation. What was added is as important as what was kept.
 
--   A *Sanctus* was added. The Verona anaphora has none, and its preface runs straight from thanksgiving to the institution narrative. Prayer II’s preface is fitted with the conclusion *Et ideo cum Angelis et omnibus Sanctis gloriam tuam praedicamus, una voce dicentes* so that the Roman *Sanctus* can follow.
+- A *Sanctus* was added. The Verona anaphora has none, and its preface runs straight from thanksgiving to the institution narrative. Prayer II’s preface is fitted with the conclusion *Et ideo cum Angelis et omnibus Sanctis gloriam tuam praedicamus, una voce dicentes* so that the Roman *Sanctus* can follow.
 
--   A consecratory epiclesis was added before the narrative — *Haec ergo dona, quaesumus, Spiritus tui rore sanctifica … ut nobis Corpus et Sanguis fiant Domini nostri Iesu Christi* (n. 101) — giving the prayer the split epiclesis characteristic of the Roman family, where the Verona text has only the single post-anamnetic petition for the Spirit.
+- A consecratory epiclesis was added before the narrative — *Haec ergo dona, quaesumus, Spiritus tui rore sanctifica … ut nobis Corpus et Sanguis fiant Domini nostri Iesu Christi* (n. 101) — giving the prayer the split epiclesis characteristic of the Roman family, where the Verona text has only the single post-anamnetic petition for the Spirit.
 
--   Intercessions were added. The Verona anaphora has none; Prayer II acquires a commemoration of the Church with the Pope and the local bishop, an optional commemoration of a named dead person, a commemoration of the dead generally, and a petition for a share with the Mother of God, the Apostles, and all the saints (n. 105).
+- Intercessions were added. The Verona anaphora has none; Prayer II acquires a commemoration of the Church with the Pope and the local bishop, an optional commemoration of a named dead person, a commemoration of the dead generally, and a petition for a share with the Mother of God, the Apostles, and all the saints (n. 105).
 
--   The dominical words were replaced by the common form imposed on all four prayers, so that Prayer II does not print the Verona narrative at all.
+- The dominical words were replaced by the common form imposed on all four prayers, so that Prayer II does not print the Verona narrative at all.
 
--   The permission at n. 99 that this prayer may be used with other prefaces makes its preface detachable in a way the ancient text’s was not.
+- The permission at n. 99 that this prayer may be used with other prefaces makes its preface detachable in a way the ancient text’s was not.
 
 The honest summary is therefore this: Prayer II is a Roman prayer built on a very early non-Roman armature, with the Roman elements the armature lacked supplied from the Roman tradition. It is neither “the prayer of Hippolytus” nor a free composition, and both descriptions are common.
 
@@ -622,15 +622,15 @@ That count is not a verdict. It is the material on which a verdict has to be bas
 >
 > **The reasons.**
 >
-> -   *Retention is demonstrable, not asserted.* The list above of texts carried over from the 1962 Missal with little or no change covers the great majority of the fixed texts of the rite, and it includes the Roman Canon in substance. Both books were read directly for this comparison.
+> - *Retention is demonstrable, not asserted.* The list above of texts carried over from the 1962 Missal with little or no change covers the great majority of the fixed texts of the rite, and it includes the Roman Canon in substance. Both books were read directly for this comparison.
 >
-> -   *Reordering is equally demonstrable.* The Instruction’s own account of the two parts and their hinge, the transfer of the readings to lectors and deacons, the assembly’s assumption of the *Confiteor*, the *Pater noster*, and the Communion *Amen*, and the audibility of the Canon are all provisions of the book, not effects of custom.
+> - *Reordering is equally demonstrable.* The Instruction’s own account of the two parts and their hinge, the transfer of the readings to lectors and deacons, the assembly’s assumption of the *Confiteor*, the *Pater noster*, and the Communion *Amen*, and the audibility of the Canon are all provisions of the book, not effects of custom.
 >
-> -   *The consecratory words were changed, and this is the strongest fact on the critical side.* *Mysterium fidei* was removed from the form of the chalice, *Haec quotiescumque feceritis* was replaced by *Hoc facite in meam commemorationem*, and *quod pro vobis tradetur* was added over the bread — by papal decree, on stated pastoral and practical grounds, to a form that had stood substantially unchanged in the Latin West for more than a millennium. Any account of the reform that does not name this is not serious.
+> - *The consecratory words were changed, and this is the strongest fact on the critical side.* *Mysterium fidei* was removed from the form of the chalice, *Haec quotiescumque feceritis* was replaced by *Hoc facite in meam commemorationem*, and *quod pro vobis tradetur* was added over the bread — by papal decree, on stated pastoral and practical grounds, to a form that had stood substantially unchanged in the Latin West for more than a millennium. Any account of the reform that does not name this is not serious.
 >
-> -   *The new prayers are not of one kind and cannot be assessed as a bloc.* Prayer II depends demonstrably, clause by clause, on the Verona Latin anaphora, but supplies from the Roman tradition a *Sanctus*, a consecratory epiclesis, and intercessions that the ancient text lacks. Prayer III is a new composition built on Malachi 1:11 with dense sacrificial vocabulary. Prayer IV is a new composition on the Antiochene plan, structurally alien to Rome and constrained by its own rubric because of it.
+> - *The new prayers are not of one kind and cannot be assessed as a bloc.* Prayer II depends demonstrably, clause by clause, on the Verona Latin anaphora, but supplies from the Roman tradition a *Sanctus*, a consecratory epiclesis, and intercessions that the ancient text lacks. Prayer III is a new composition built on Malachi 1:11 with dense sacrificial vocabulary. Prayer IV is a new composition on the Antiochene plan, structurally alien to Rome and constrained by its own rubric because of it.
 >
-> -   *The 2011 English did what its instrument required.* Every principal disputed change is traceable to *Liturgiam authenticam* 43, 53, or 56, or to the circular letter of 17 October 2006, and the manner of introduction — all at once, with catechesis — is what n. 74 prescribes.
+> - *The 2011 English did what its instrument required.* Every principal disputed change is traceable to *Liturgiam authenticam* 43, 53, or 56, or to the circular letter of 17 October 2006, and the manner of introduction — all at once, with catechesis — is what n. 74 prescribes.
 >
 > **The strongest counterargument, at full strength.** The judgement above measures continuity by counting texts, and counting texts is the wrong measure of a rite. A liturgy is not a corpus but a form of action, and forms of action can be transformed while every sentence survives. On this view, the decisive facts are precisely the ones this study classes as “manner rather than matter,” and they are not lesser: a Canon prayed silently by a priest facing east, with the faithful in interior adherence, is a different act from the same words declaimed audibly across a table to a congregation, however identical the letters on the page; an offertory whose prayers name the host and the chalice of salvation forms a different expectation than one that blesses God for bread; a rite in which the celebrant reads everything himself asserts something about sacerdotal mediation that a rite of distributed ministries does not. Add the alteration of the words of consecration — which this study concedes — and the enormous permissiveness of the options (four dismissals, three penitential forms, four Eucharistic Prayers, four chant options in the United States at three points), and the conclusion follows that the received rite was not so much retained as quarried: its stones are in the new building, and the building is new. On this account the study’s own *Retained* list is evidence for the counterargument, since a rite that has to be shown to be continuous by inventory is one whose continuity is no longer self-evident in the celebrating.
 >
@@ -654,13 +654,13 @@ Excluded: the temporal and sanctoral Propers; the Lectionary and its text; the E
 
 ### The editions
 
--   **Controlling Latin rite:** *Missale Romanum*, *editio typica tertia*, *reimpressio emendata* (Vatican City, 2008). No exact artifact of the 2008 altar book was obtained or is registered. The study therefore works from two controls in combination: the registered secondary digital reproduction of the 2002 third typical edition, and the official published list of the 2008 variations. Every statement about the 2008 state is either supported by the variation list or is a statement that the variation list records no change at that place; the latter is bounded negative evidence, since the 2008 notice states that further corrections of accent, punctuation, colour, and typography were made without being listed.
+- **Controlling Latin rite:** *Missale Romanum*, *editio typica tertia*, *reimpressio emendata* (Vatican City, 2008). No exact artifact of the 2008 altar book was obtained or is registered. The study therefore works from two controls in combination: the registered secondary digital reproduction of the 2002 third typical edition, and the official published list of the 2008 variations. Every statement about the 2008 state is either supported by the variation list or is a statement that the variation list records no change at that place; the latter is bounded negative evidence, since the 2008 notice states that further corrections of accent, punctuation, colour, and typography were made without being listed.
 
--   **Latin General Instruction:** the *Institutio Generalis Missalis Romani* as printed in the same 2002 reproduction, with the one 2008 emendation at n. 149 noted in place.
+- **Latin General Instruction:** the *Institutio Generalis Missalis Romani* as printed in the same 2002 reproduction, with the one 2008 emendation at n. 149 noted in place.
 
--   **English:** *The Roman Missal, Third Edition, for use in the Dioceses of the United States of America* (2011), and the General Instruction in the United States English state emended through 2021. Chapter II (nn. 27–90) of that state was obtained and read. Chapters III and IV were not obtainable: the host returned an interstitial challenge page rather than the chapter. Nothing in this study rests on nn. 160 or 281–287, and the study says so where the gap affects a movement.
+- **English:** *The Roman Missal, Third Edition, for use in the Dioceses of the United States of America* (2011), and the General Instruction in the United States English state emended through 2021. Chapter II (nn. 27–90) of that state was obtained and read. Chapters III and IV were not obtainable: the host returned an interstitial challenge page rather than the chapter. Nothing in this study rests on nn. 160 or 281–287, and the study says so where the gap affects a movement.
 
--   **Comparand:** *Missale Romanum*, *editio typica* (Vatican City, 1962), in the registered facsimile, used at the Canon and at named points of comparison only.
+- **Comparand:** *Missale Romanum*, *editio typica* (Vatican City, 1962), in the registered facsimile, used at the Canon and at named points of comparison only.
 
 ### Territory and date
 
@@ -688,19 +688,19 @@ Claims in this study fall into four classes and are distinguishable in the notes
 
 Specific limitations that a reader should carry away:
 
--   The controlling Latin artifact is a secondary digitally typeset reproduction, not a page facsimile of the printed altar book. Its typesetting carries visible defects. Wording claims are made only where the reading is unambiguous, and anyone needing an exact reading should consult a printed altar book.
+- The controlling Latin artifact is a secondary digitally typeset reproduction, not a page facsimile of the printed altar book. Its typesetting carries visible defects. Wording claims are made only where the reading is unambiguous, and anyone needing an exact reading should consult a printed altar book.
 
--   No exact 2008 altar-book artifact was obtained. Every 2008 claim is mediated by the published variation list.
+- No exact 2008 altar-book artifact was obtained. Every 2008 claim is mediated by the published variation list.
 
--   General Instruction chapters III–VIII were not read in full; the study’s negative claims about what the Missal does and does not require are bounded accordingly, and this bound is restated inside the Project synthesis where it matters.
+- General Instruction chapters III–VIII were not read in full; the study’s negative claims about what the Missal does and does not require are bounded accordingly, and this bound is restated inside the Project synthesis where it matters.
 
--   Prayer IV’s relation to the Antiochene anaphoral family is asserted at the level of form, from the Missal’s own text and rubric. No edition of the anaphora of St Basil was examined and no verbal dependence is claimed.
+- Prayer IV’s relation to the Antiochene anaphoral family is asserted at the level of form, from the Missal’s own text and rubric. No edition of the anaphora of St Basil was examined and no verbal dependence is claimed.
 
--   The authorship, date, place, and redactional unity of the church order conventionally called the *Traditio apostolica* are disputed. This study uses the Verona Latin as a witness to a text and makes no attribution to Hippolytus.
+- The authorship, date, place, and redactional unity of the church order conventionally called the *Traditio apostolica* are disputed. This study uses the Verona Latin as a witness to a text and makes no attribution to Hippolytus.
 
--   The drafting history of the new Eucharistic Prayers is not established here. Promulgation by papal act is documented; individual authorship is not claimed.
+- The drafting history of the new Eucharistic Prayers is not established here. Promulgation by papal act is documented; individual authorship is not claimed.
 
--   Reception history, celebration practice, music, architecture, and the sociology of the reform are outside the study’s scope entirely.
+- Reception history, celebration practice, music, architecture, and the sociology of the reform are outside the study’s scope entirely.
 
 ### Review state
 
@@ -735,51 +735,51 @@ Two absences from this table are deliberate. The working history of the Consiliu
 
 ### Liturgical books
 
--   *Missale Romanum*, editio typica tertia (Civitas Vaticana: Typis Vaticanis, 2002), consulted in the registered secondary digital reproduction (restricted; SHA-256 `0b458944…`; 828 pages). Re-acquired publication-locally on 2026-07-25 and found byte-identical to the registered artifact. Pages inspected for this study: the front matter carrying the Latin constitution *Missale Romanum* and the decrees; the *Institutio Generalis* entire; and the *Ordo Missae* nn. 1–146 with the following solemn blessings. Not the printed altar book; claims are bounded to the inspected pages and to unambiguous readings.
+- *Missale Romanum*, editio typica tertia (Civitas Vaticana: Typis Vaticanis, 2002), consulted in the registered secondary digital reproduction (restricted; SHA-256 `0b458944…`; 828 pages). Re-acquired publication-locally on 2026-07-25 and found byte-identical to the registered artifact. Pages inspected for this study: the front matter carrying the Latin constitution *Missale Romanum* and the decrees; the *Institutio Generalis* entire; and the *Ordo Missae* nn. 1–146 with the following solemn blessings. Not the printed altar book; claims are bounded to the inspected pages and to unambiguous readings.
 
--   *Missale Romanum*, editio typica tertia, *reimpressio emendata* (Civitas Vaticana, 2008). No exact artifact obtained; the 2008 state is controlled by the two *Notitiae* records below.
+- *Missale Romanum*, editio typica tertia, *reimpressio emendata* (Civitas Vaticana, 2008). No exact artifact obtained; the 2008 state is controlled by the two *Notitiae* records below.
 
--   *Missale Romanum*, editio typica (Civitas Vaticana: Typis Polyglottis Vaticanis, 1962), consulted in the registered facsimile (remote; SHA-256 `648fdb8f…`). Canon pages read at rendered page images on 2026-07-25; the chalice narrative and consecratory form at printed p. 307 (marginal nn. 1103–1105) newly registered as a verified passage.
+- *Missale Romanum*, editio typica (Civitas Vaticana: Typis Polyglottis Vaticanis, 1962), consulted in the registered facsimile (remote; SHA-256 `648fdb8f…`). Canon pages read at rendered page images on 2026-07-25; the chalice narrative and consecratory form at printed p. 307 (marginal nn. 1103–1105) newly registered as a verified passage.
 
--   *Institutio Generalis Missalis Romani*, Latin text of the third typical edition, in the same reproduction.
+- *Institutio Generalis Missalis Romani*, Latin text of the third typical edition, in the same reproduction.
 
--   *General Instruction of the Roman Missal*, United States English state emended through 2021, Chapter II (nn. 27–90), [usccb.org](https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal/girm-chapter-2), read 2026-07-25 (new source record). Chapters III and IV were not obtainable from the same host during this review; no claim rests on them.
+- *General Instruction of the Roman Missal*, United States English state emended through 2021, Chapter II (nn. 27–90), [usccb.org](https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal/girm-chapter-2), read 2026-07-25 (new source record). Chapters III and IV were not obtainable from the same host during this review; no claim rests on them.
 
--   *The Roman Missal, Third Edition, for use in the Dioceses of the United States of America* (2011). Under copyright; not reproduced. Cited by locus and described only.
+- *The Roman Missal, Third Edition, for use in the Dioceses of the United States of America* (2011). Under copyright; not reproduced. Cited by locus and described only.
 
--   *Ordo lectionum Missae*, editio typica altera (1981). Identified as the Missal’s own authority at *IGMR* 56, 57, and 61; not examined for this study, and its text is nowhere reproduced.
+- *Ordo lectionum Missae*, editio typica altera (1981). Identified as the Missal’s own authority at *IGMR* 56, 57, and 61; not examined for this study, and its text is nowhere reproduced.
 
 ### Acts governing the rite and its translation
 
--   Second Vatican Council, *Sacrosanctum Concilium* (4 December 1963), official English web text, [vatican.va](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html), re-fetched 2026-07-25 byte-identical to the registered artifact; arts. 7, 14, 47, 50–53 consulted. The promulgated Latin (AAS 56 \[1964\] 97–138) is authoritative and was not collated.
+- Second Vatican Council, *Sacrosanctum Concilium* (4 December 1963), official English web text, [vatican.va](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html), re-fetched 2026-07-25 byte-identical to the registered artifact; arts. 7, 14, 47, 50–53 consulted. The promulgated Latin (AAS 56 \[1964\] 97–138) is authoritative and was not collated.
 
--   Paul VI, apostolic constitution *Missale Romanum* (3 April 1969), Latin as reprinted at the head of the third typical edition, read 2026-07-25 in the registered reproduction (registered passage).
+- Paul VI, apostolic constitution *Missale Romanum* (3 April 1969), Latin as reprinted at the head of the third typical edition, read 2026-07-25 in the registered reproduction (registered passage).
 
--   Congregation for Divine Worship and the Discipline of the Sacraments, instruction *Liturgiam authenticam* (28 March 2001, published 7 May 2001), official English web text, [vatican.va](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20010507_liturgiam-authenticam_en.html), read 2026-07-25 (new source record); nn. 8, 20, 25, 27, 43, 51, 53, 56, 57, 64, 74, 131, 133 consulted. The promulgated Latin is in AAS 93 (2001) 685–726 and was not consulted.
+- Congregation for Divine Worship and the Discipline of the Sacraments, instruction *Liturgiam authenticam* (28 March 2001, published 7 May 2001), official English web text, [vatican.va](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20010507_liturgiam-authenticam_en.html), read 2026-07-25 (new source record); nn. 8, 20, 25, 27, 43, 51, 53, 56, 57, 64, 74, 131, 133 consulted. The promulgated Latin is in AAS 93 (2001) 685–726 and was not consulted.
 
--   Congregation for Divine Worship and the Discipline of the Sacraments, circular letter Prot. N. 467/05/L (17 October 2006) on the vernacular rendering of *pro multis*, *Notitiae* 42 (2006) 441–443, official Dicastery PDF (restricted; SHA-256 `942aacc0…`; 126 pages), read at artifact pages 57–59 on 2026-07-25 (new source records: edition, artifact, work, segment, passage).
+- Congregation for Divine Worship and the Discipline of the Sacraments, circular letter Prot. N. 467/05/L (17 October 2006) on the vernacular rendering of *pro multis*, *Notitiae* 42 (2006) 441–443, official Dicastery PDF (restricted; SHA-256 `942aacc0…`; 126 pages), read at artifact pages 57–59 on 2026-07-25 (new source records: edition, artifact, work, segment, passage).
 
--   Congregation for Divine Worship and the Discipline of the Sacraments, notice *Reimpressio emendata “Missalis Romani”* and *Variationes et additiones in reimpressione emendata “Missalis Romani”, editionis typicae tertiae*, *Notitiae* 44 (2008) 367–387, official Dicastery PDF (restricted; SHA-256 `74c8d174…`), read publication-locally 2026-07-25 at artifact pages 49–69; the *Ordo Missae* and Appendix subsections and the *Supplementum* dismissals newly registered as a verified passage.
+- Congregation for Divine Worship and the Discipline of the Sacraments, notice *Reimpressio emendata “Missalis Romani”* and *Variationes et additiones in reimpressione emendata “Missalis Romani”, editionis typicae tertiae*, *Notitiae* 44 (2008) 367–387, official Dicastery PDF (restricted; SHA-256 `74c8d174…`), read publication-locally 2026-07-25 at artifact pages 49–69; the *Ordo Missae* and Appendix subsections and the *Supplementum* dismissals newly registered as a verified passage.
 
--   Congregation for the Doctrine of the Faith, declaration on the sense to be attributed to the approval of vernacular versions of sacramental formulas (25 January 1974), AAS 66 (1974) 661. Cited only as the 2006 circular letter cites it; not independently examined.
+- Congregation for the Doctrine of the Faith, declaration on the sense to be attributed to the approval of vernacular versions of sacramental formulas (25 January 1974), AAS 66 (1974) 661. Cited only as the 2006 circular letter cites it; not independently examined.
 
--   Decree N. 652/08/L (8 June 2008) approving the three changes for the emended reprint. Cited as recited in the 2008 *Notitiae* notice; the decree itself, published in the previous issue at pp. 175–176, was not examined.
+- Decree N. 652/08/L (8 June 2008) approving the three changes for the emended reprint. Cited as recited in the 2008 *Notitiae* notice; the decree itself, published in the previous issue at pp. 175–176, was not examined.
 
 ### Ancient and patristic witnesses
 
--   Justin Martyr, *First Apology* 65–67, in *The Ante-Nicene Fathers*, vol. 1 (Buffalo: Christian Literature Publishing, 1887), Dods–Reith translation; registered edition with facsimile and OCR witnesses. Chapter 67 used for the second-century Roman sequence.
+- Justin Martyr, *First Apology* 65–67, in *The Ante-Nicene Fathers*, vol. 1 (Buffalo: Christian Literature Publishing, 1887), Dods–Reith translation; registered edition with facsimile and OCR witnesses. Chapter 67 used for the second-century Roman sequence.
 
--   The church order conventionally called *Traditio apostolica*, Latin of the Verona palimpsest, in Edmund Hauler, *Didascaliae apostolorum fragmenta Veronensia Latina* (Leipzig: Teubner, 1900), pp. 106–107; page images read 2026-07-25 (new source records: work, edition, two artifacts, two verified passages). Authorship, date, place, and redactional unity of the underlying work are disputed; no attribution to Hippolytus is made here.
+- The church order conventionally called *Traditio apostolica*, Latin of the Verona palimpsest, in Edmund Hauler, *Didascaliae apostolorum fragmenta Veronensia Latina* (Leipzig: Teubner, 1900), pp. 106–107; page images read 2026-07-25 (new source records: work, edition, two artifacts, two verified passages). Authorship, date, place, and redactional unity of the underlying work are disputed; no attribution to Hippolytus is made here.
 
--   Ambrose of Milan (or the author of *De sacramentis*), *De sacramentis* IV, 5, 21–23 and IV, 6, 26–27, in *Patrologiae cursus completus, series Latina*, tomus XVI (Parisiis: apud Garnier Fratres et J.-P. Migne successores, 1880), coll. 462–464; page images read 2026-07-25 (new source records: work, edition, two artifacts, two verified passages). The Maurist apparatus on those columns records the variant readings noted in this study.
+- Ambrose of Milan (or the author of *De sacramentis*), *De sacramentis* IV, 5, 21–23 and IV, 6, 26–27, in *Patrologiae cursus completus, series Latina*, tomus XVI (Parisiis: apud Garnier Fratres et J.-P. Migne successores, 1880), coll. 462–464; page images read 2026-07-25 (new source records: work, edition, two artifacts, two verified passages). The Maurist apparatus on those columns records the variant readings noted in this study.
 
 ### Cited but not examined
 
--   John Paul II, *Vicesimus quintus annus* (4 December 1988) n. 13, AAS 81 (1989) 910; cited only as *IGMR* 57 cites it.
+- John Paul II, *Vicesimus quintus annus* (4 December 1988) n. 13, AAS 81 (1989) 910; cited only as *IGMR* 57 cites it.
 
--   Sacred Congregation of Rites, instruction *Inter Oecumenici* (26 September 1964) and instruction *Eucharisticum mysterium* (25 May 1967); Sacred Congregation for the Sacraments, instruction *Immensae caritatis* (29 January 1973); Sacred Congregation for the Sacraments and Divine Worship, instruction *Inaestimabile donum* (3 April 1980). All cited only as the General Instruction’s own authorities at the numbers quoted.
+- Sacred Congregation of Rites, instruction *Inter Oecumenici* (26 September 1964) and instruction *Eucharisticum mysterium* (25 May 1967); Sacred Congregation for the Sacraments, instruction *Immensae caritatis* (29 January 1973); Sacred Congregation for the Sacraments and Divine Worship, instruction *Inaestimabile donum* (3 April 1980). All cited only as the General Instruction’s own authorities at the numbers quoted.
 
--   Anaphora of St Basil, in any recension. Named as the best-known representative of the Antiochene type; no edition was examined and no verbal claim is made.
+- Anaphora of St Basil, in any recension. Named as the best-known representative of the Antiochene type; no edition was examined and no verbal claim is made.
 
 **Last revised (UTC):** 2026-07-26T03:14:06Z
 

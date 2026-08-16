@@ -2195,137 +2195,137 @@ The source and corpus audit is internal. Independent specialist review in histor
 
 ### Scripture, law, catechism, and levels of teaching
 
--   Sacred Scripture, especially Acts 15; Romans 3–9; 1 Corinthians 15; Galatians 2–5; Colossians 1–2; the Pastoral Epistles; Hebrews; 1–2 John; and Revelation 2. The publication paraphrases short doctrinal centers rather than reproducing a modern translation in bulk.
+- Sacred Scripture, especially Acts 15; Romans 3–9; 1 Corinthians 15; Galatians 2–5; Colossians 1–2; the Pastoral Epistles; Hebrews; 1–2 John; and Revelation 2. The publication paraphrases short doctrinal centers rather than reproducing a modern translation in bulk.
 
--   1983 *Code of Canon Law*, canons 9, 17–18, 749–755, especially canon 751’s definitions of heresy, apostasy, and schism: [official Holy See English text](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib3-cann747-755_en.html).
+- 1983 *Code of Canon Law*, canons 9, 17–18, 749–755, especially canon 751’s definitions of heresy, apostasy, and schism: [official Holy See English text](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib3-cann747-755_en.html).
 
--   1990 *Code of Canons of the Eastern Churches*, especially canons 598–606 and 1436–1437, consulted for present Eastern Catholic terminology where relevant: [promulgating constitution and Holy See access](https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_19901018_sacri-canones.html).
+- 1990 *Code of Canons of the Eastern Churches*, especially canons 598–606 and 1436–1437, consulted for present Eastern Catholic terminology where relevant: [promulgating constitution and Holy See access](https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_19901018_sacri-canones.html).
 
--   *Catechism of the Catholic Church*, 27–49, 185–267, 385–421, 456–483, 638–682, 748–870, 976–987, 1987–2029, and 2088–2089: [Holy See edition](https://www.vatican.va/content/catechism/en.html). The Catechism supplies positive synthesis, not the historical act for every dossier.
+- *Catechism of the Catholic Church*, 27–49, 185–267, 385–421, 456–483, 638–682, 748–870, 976–987, 1987–2029, and 2088–2089: [Holy See edition](https://www.vatican.va/content/catechism/en.html). The Catechism supplies positive synthesis, not the historical act for every dossier.
 
--   Congregation for the Doctrine of the Faith, doctrinal commentary on the concluding formula of the *Professio fidei* (1998), especially 5–11 on revealed truths, definitive teachings, and other authentic teaching: [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_1998_professio-fidei_en.html).
+- Congregation for the Doctrine of the Faith, doctrinal commentary on the concluding formula of the *Professio fidei* (1998), especially 5–11 on revealed truths, definitive teachings, and other authentic teaching: [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_1998_professio-fidei_en.html).
 
 ### Conciliar and documentary corpora
 
--   Norman P. Tanner, ed., *Decrees of the Ecumenical Councils*, 2 vols. (Georgetown University Press edition, 2016; first published 1990). Latin or Greek and English documentary collection for the first twenty-one councils; a scholarly edition, not itself the promulgating authority: [publisher record](https://www.bibliovault.org/BV.book.epl?ISBN=9781626164826).
+- Norman P. Tanner, ed., *Decrees of the Ecumenical Councils*, 2 vols. (Georgetown University Press edition, 2016; first published 1990). Latin or Greek and English documentary collection for the first twenty-one councils; a scholarly edition, not itself the promulgating authority: [publisher record](https://www.bibliovault.org/BV.book.epl?ISBN=9781626164826).
 
--   Giuseppe Alberigo et al., eds., *Conciliorum Oecumenicorum Decreta*, 3rd ed. (Bologna: Istituto per le Scienze Religiose, 1973), consulted as an original-language conciliar crosscheck.
+- Giuseppe Alberigo et al., eds., *Conciliorum Oecumenicorum Decreta*, 3rd ed. (Bologna: Istituto per le Scienze Religiose, 1973), consulted as an original-language conciliar crosscheck.
 
--   *Acta Conciliorum Oecumenicorum*, series I–III, for Ephesus, Chalcedon, Constantinople II, and later acta. The current project describes the corpus, editions, and translation work: [ACO project](https://aco.uni-mainz.de/).
+- *Acta Conciliorum Oecumenicorum*, series I–III, for Ephesus, Chalcedon, Constantinople II, and later acta. The current project describes the corpus, editions, and translation work: [ACO project](https://aco.uni-mainz.de/).
 
--   Giovanni Domenico Mansi, *Sacrorum conciliorum nova et amplissima collectio*, used as a finding and documentary collection where a newer critical edition was not available; not treated as a critical text by default.
+- Giovanni Domenico Mansi, *Sacrorum conciliorum nova et amplissima collectio*, used as a finding and documentary collection where a newer critical edition was not available; not treated as a critical text by default.
 
--   Heinrich Denzinger and Peter Hünermann, *Enchiridion symbolorum definitionum et declarationum de rebus fidei et morum*, 45th ed. (Freiburg: Herder, 2017), with DH/DS numbers used only as stable locators to the underlying acts. No substantial text from this copyrighted compendium is reproduced.
+- Heinrich Denzinger and Peter Hünermann, *Enchiridion symbolorum definitionum et declarationum de rebus fidei et morum*, 45th ed. (Freiburg: Herder, 2017), with DH/DS numbers used only as stable locators to the underlying acts. No substantial text from this copyrighted compendium is reproduced.
 
--   *Acta Sanctae Sedis* and *Acta Apostolicae Sedis*, official publication record for modern Roman acts: [Holy See archive](https://www.vatican.va/archive/aas/index_en.htm).
+- *Acta Sanctae Sedis* and *Acta Apostolicae Sedis*, official publication record for modern Roman acts: [Holy See archive](https://www.vatican.va/archive/aas/index_en.htm).
 
--   DDF/CDF complete document index, checked through 16 July 2026: [official index](https://www.vatican.va/roman_curia/congregations/cfaith/doc_doc_index.htm).
+- DDF/CDF complete document index, checked through 16 July 2026: [official index](https://www.vatican.va/roman_curia/congregations/cfaith/doc_doc_index.htm).
 
 ### Ancient target texts and heresiological witnesses
 
--   St. Ignatius of Antioch, *Letters to the Smyrnaeans* 1–7 and *Trallians* 9–11, on Christ’s real flesh, Passion, Resurrection, and Eucharist: [Smyrnaeans working translation](https://www.newadvent.org/fathers/0109.htm); [Trallians working translation](https://www.newadvent.org/fathers/0106.htm).
+- St. Ignatius of Antioch, *Letters to the Smyrnaeans* 1–7 and *Trallians* 9–11, on Christ’s real flesh, Passion, Resurrection, and Eucharist: [Smyrnaeans working translation](https://www.newadvent.org/fathers/0109.htm); [Trallians working translation](https://www.newadvent.org/fathers/0106.htm).
 
--   St. Justin Martyr, *First Apology* and *Dialogue with Trypho*; Irenaeus, *Against Heresies*, especially books I, III, and V. Irenaeus’s book I is a census witness; books III and V state the public rule of faith, apostolic succession, recapitulation, Eucharist, and bodily resurrection: [working translation index](https://www.newadvent.org/fathers/0103.htm).
+- St. Justin Martyr, *First Apology* and *Dialogue with Trypho*; Irenaeus, *Against Heresies*, especially books I, III, and V. Irenaeus’s book I is a census witness; books III and V state the public rule of faith, apostolic succession, recapitulation, Eucharist, and bodily resurrection: [working translation index](https://www.newadvent.org/fathers/0103.htm).
 
--   The early-school dossier uses Justin, *First Apology* 26 and 56; Irenaeus, *Against Heresies* I.1–28, II.31–32, and the response loci in III and V; Clement of Alexandria’s preserved target fragments; and Eusebius, *Ecclesiastical History* III.26–28 and IV.7. Simon, Menander, Cerinthus, Saturnilus, Basilides, Carpocrates, and the Valentinian schools remain witness-specific; no lost council sentence is inferred from a refuter.
+- The early-school dossier uses Justin, *First Apology* 26 and 56; Irenaeus, *Against Heresies* I.1–28, II.31–32, and the response loci in III and V; Clement of Alexandria’s preserved target fragments; and Eusebius, *Ecclesiastical History* III.26–28 and IV.7. Simon, Menander, Cerinthus, Saturnilus, Basilides, Carpocrates, and the Valentinian schools remain witness-specific; no lost council sentence is inferred from a refuter.
 
--   Tertullian, *Against Marcion*, *Against Praxeas*, *Prescription against Heretics*, and *On the Flesh of Christ*; Hippolytus, *Refutation of All Heresies*; Pseudo-Tertullian, *Against All Heresies*. These are interested witnesses and sometimes hostile intra-Roman polemics, not neutral transcripts.
+- Tertullian, *Against Marcion*, *Against Praxeas*, *Prescription against Heretics*, and *On the Flesh of Christ*; Hippolytus, *Refutation of All Heresies*; Pseudo-Tertullian, *Against All Heresies*. These are interested witnesses and sometimes hostile intra-Roman polemics, not neutral transcripts.
 
--   Eusebius of Caesarea, *Ecclesiastical History*, especially books V–VII for Montanist synods, Monarchian controversies, Novatian, and Paul of Samosata: [working translation index](https://www.newadvent.org/fathers/2501.htm).
+- Eusebius of Caesarea, *Ecclesiastical History*, especially books V–VII for Montanist synods, Monarchian controversies, Novatian, and Paul of Samosata: [working translation index](https://www.newadvent.org/fathers/2501.htm).
 
--   St. Epiphanius, *Panarion*; St. Augustine, *De haeresibus*; St. Philastrius, *Diversarum hereseon liber*; Theodoret, *Haereticarum fabularum compendium*; St. John Damascene, *De haeresibus*. Their numbered lists are crosswalked in the research inventory and are not concatenated as though each named one distinct organization.
+- St. Epiphanius, *Panarion*; St. Augustine, *De haeresibus*; St. Philastrius, *Diversarum hereseon liber*; Theodoret, *Haereticarum fabularum compendium*; St. John Damascene, *De haeresibus*. Their numbered lists are crosswalked in the research inventory and are not concatenated as though each named one distinct organization.
 
--   Coptic and Greek Gnostic codices, including securely identified Valentinian, Sethian, and related writings, consulted through current scholarly editions where a target-side proposition matters. A recovered text is not assigned to Irenaeus’s opponent merely because modern editors place both under “Gnosticism.”
+- Coptic and Greek Gnostic codices, including securely identified Valentinian, Sethian, and related writings, consulted through current scholarly editions where a target-side proposition matters. A recovered text is not assigned to Irenaeus’s opponent merely because modern editors place both under “Gnosticism.”
 
--   Manichaean Coptic, Middle Persian, Parthian, Sogdian, and Latin witnesses, Augustine’s anti-Manichaean works, and imperial legislation. Manichaeism is identified as a rival universal religion historically classed by Christian heresiologists, not simply a baptized Catholic faction.
+- Manichaean Coptic, Middle Persian, Parthian, Sogdian, and Latin witnesses, Augustine’s anti-Manichaean works, and imperial legislation. Manichaeism is identified as a rival universal religion historically classed by Christian heresiologists, not simply a baptized Catholic faction.
 
 ### Trinity, Christology, grace, and images
 
--   Nicaea I (325), creed and attached anathemas; Constantinople I (381), creed and canon 1; Athanasius’s *Orations against the Arians*, Hilary’s *De synodis*, Basil’s *On the Holy Spirit*, and Gregory Nazianzen’s theological orations. Complete stenographic acta for 325 and 381 do not survive.
+- Nicaea I (325), creed and attached anathemas; Constantinople I (381), creed and canon 1; Athanasius’s *Orations against the Arians*, Hilary’s *De synodis*, Basil’s *On the Holy Spirit*, and Gregory Nazianzen’s theological orations. Complete stenographic acta for 325 and 381 do not survive.
 
--   Antioch (268) on Paul of Samosata, preserved fragments and Eusebian record; Roman and eastern synods on Sabellius, Marcellus, Photinus, Apollinaris, and related formulas. The source audit marks opponent-mediated proposition wording.
+- Antioch (268) on Paul of Samosata, preserved fragments and Eusebian record; Roman and eastern synods on Sabellius, Marcellus, Photinus, Apollinaris, and related formulas. The source audit marks opponent-mediated proposition wording.
 
--   Carthage (418) on grace and original sin; Augustine’s *On Nature and Grace*, *On the Spirit and the Letter*, *On the Proceedings of Pelagius*, and later anti-Pelagian works: [working translation access](https://www.newadvent.org/fathers/1503.htm). Orange II (529), canons and Boniface II’s confirmation, controls the western response to propositions later called Semi-Pelagian.
+- Carthage (418) on grace and original sin; Augustine’s *On Nature and Grace*, *On the Spirit and the Letter*, *On the Proceedings of Pelagius*, and later anti-Pelagian works: [working translation access](https://www.newadvent.org/fathers/1503.htm). Orange II (529), canons and Boniface II’s confirmation, controls the western response to propositions later called Semi-Pelagian.
 
--   Siricius’s Roman notification and Ambrose, *Letter* 42, for Jovinian; Lucidus’s c. 473 *Libellus* of submission; sixth-century Philoponan and anti-Tritheist fragments; and Gregory the Great, *Register* X.39, for the Agnoete controversy: [working translation of Gregory’s letter](https://www.newadvent.org/fathers/360210039.htm). These source-poor dossiers expressly do not claim an extant ecumenical proposition list.
+- Siricius’s Roman notification and Ambrose, *Letter* 42, for Jovinian; Lucidus’s c. 473 *Libellus* of submission; sixth-century Philoponan and anti-Tritheist fragments; and Gregory the Great, *Register* X.39, for the Agnoete controversy: [working translation of Gregory’s letter](https://www.newadvent.org/fathers/360210039.htm). These source-poor dossiers expressly do not claim an extant ecumenical proposition list.
 
--   Ephesus (431): Cyril’s second and third letters to Nestorius, the conciliar proceedings and sentence, the rival session, and the Formula of Reunion (433). A working conciliar translation is available at [New Advent](https://www.newadvent.org/fathers/3810.htm); ACO controls detailed textual claims.
+- Ephesus (431): Cyril’s second and third letters to Nestorius, the conciliar proceedings and sentence, the rival session, and the Formula of Reunion (433). A working conciliar translation is available at [New Advent](https://www.newadvent.org/fathers/3810.htm); ACO controls detailed textual claims.
 
--   Chalcedon (451): Definition, Leo’s Tome, acta, and canons: [working translation](https://www.newadvent.org/fathers/3811.htm). Eutyches’s synodal record and the 449 proceedings are kept separate from present Oriental Orthodox faith.
+- Chalcedon (451): Definition, Leo’s Tome, acta, and canons: [working translation](https://www.newadvent.org/fathers/3811.htm). Eutyches’s synodal record and the 449 proceedings are kept separate from present Oriental Orthodox faith.
 
--   Constantinople II (553): sentence and anathemas concerning the Three Chapters. The 543 anti-Origenist act and disputed fifteen-anathema dossier are audited separately rather than silently inserted into the extant conciliar sessions.
+- Constantinople II (553): sentence and anathemas concerning the Three Chapters. The 543 anti-Origenist act and disputed fifteen-anathema dossier are audited separately rather than silently inserted into the extant conciliar sessions.
 
--   Lateran synod of 649 and Constantinople III (680–681), definitions and acts on Christ’s two wills and operations; Leo II’s confirmation and characterization of Honorius. Nicaea II (787), definition and acts on images, together with Hieria (754) and the later Byzantine restoration.
+- Lateran synod of 649 and Constantinople III (680–681), definitions and acts on Christ’s two wills and operations; Leo II’s confirmation and characterization of Honorius. Nicaea II (787), definition and acts on images, together with Hieria (754) and the later Byzantine restoration.
 
 ### Medieval acts and witnesses
 
--   Berengar of Tours: council records and the 1059 and 1079 professions; Lateran II (1139), canon 23; Sens (1140/1141) on Abelard; Reims (1148) on Gilbert of Poitiers. Later scholastic terminology is not projected into the earliest stages.
+- Berengar of Tours: council records and the 1059 and 1079 professions; Lateran II (1139), canon 23; Sens (1140/1141) on Abelard; Reims (1148) on Gilbert of Poitiers. Later scholastic terminology is not projected into the earliest stages.
 
--   The Utrecht canons’ accusatory letter and the *Life of Norbert* for Tanchelm; Paris acts of 1210 and Robert of Courçon’s 1215 statutes for David of Dinant; and the 1255 Anagni commission protocol for Gerard of Borgo San Donnino. Each remains bounded by the survival and genre of its witness.
+- The Utrecht canons’ accusatory letter and the *Life of Norbert* for Tanchelm; Paris acts of 1210 and Robert of Courçon’s 1215 statutes for David of Dinant; and the 1255 Anagni commission protocol for Gerard of Borgo San Donnino. Each remains bounded by the survival and genre of its witness.
 
--   Lucius III, *Ad abolendam* (1184); Innocent III, *Vergentis in senium* (1199); Durand of Huesca’s profession (1208); Lateran IV (1215), especially constitutions 1–3. Texts are checked in Tanner, papal registers, or Friedberg as applicable.
+- Lucius III, *Ad abolendam* (1184); Innocent III, *Vergentis in senium* (1199); Durand of Huesca’s profession (1208); Lateran IV (1215), especially constitutions 1–3. Texts are checked in Tanner, papal registers, or Friedberg as applicable.
 
--   Gregory IX, *Excommunicamus* (1231); Innocent IV, *Ad extirpanda* (1252). These juridical and coercive measures are never cited as though their penalties defined the doctrinal object.
+- Gregory IX, *Excommunicamus* (1231); Innocent IV, *Ad extirpanda* (1252). These juridical and coercive measures are never cited as though their penalties defined the doctrinal object.
 
--   Stephen Tempier’s Paris condemnations of 1270 and 1277 in an identified critical edition; Nicholas III, *Exiit qui seminat* (1279); John XXII, *Sancta Romana*, *Gloriosam Ecclesiam*, *Cum inter nonnullos*, *Licet iuxta doctrinam*, and *In agro dominico*. Every proposition list retains local scope and individual or collective censure.
+- Stephen Tempier’s Paris condemnations of 1270 and 1277 in an identified critical edition; Nicholas III, *Exiit qui seminat* (1279); John XXII, *Sancta Romana*, *Gloriosam Ecclesiam*, *Cum inter nonnullos*, *Licet iuxta doctrinam*, and *In agro dominico*. Every proposition list retains local scope and individual or collective censure.
 
--   Vienne (1311–1312), *Ad nostrum* and *Fidei catholicae fundamento*; Gregory XI’s Wyclif letters (1377); Blackfriars (1382); Constance’s Wyclif and Hus materials; Martin V, *Inter cunctas* (1418); the Bohemian Compactata; Pius II, *Execrabilis* (1460); Lateran V, *Apostolici regiminis* (1513).
+- Vienne (1311–1312), *Ad nostrum* and *Fidei catholicae fundamento*; Gregory XI’s Wyclif letters (1377); Blackfriars (1382); Constance’s Wyclif and Hus materials; Martin V, *Inter cunctas* (1418); the Bohemian Compactata; Pius II, *Execrabilis* (1460); Lateran V, *Apostolici regiminis* (1513).
 
--   Medieval heresy evidence in MGH, papal registers, the *Corpus Iuris Canonici*, episcopal registers, chronicles, polemics, sermons, and inquisitorial depositions. Digital MGH access: [dMGH](https://www.dmgh.de). Every deposition is treated as a scribally and procedurally mediated record.
+- Medieval heresy evidence in MGH, papal registers, the *Corpus Iuris Canonici*, episcopal registers, chronicles, polemics, sermons, and inquisitorial depositions. Digital MGH access: [dMGH](https://www.dmgh.de). Every deposition is treated as a scribally and procedurally mediated record.
 
--   Critical-edition programs used or identified for future collation: [CSEL](https://csel.at/en/); [Corpus Christianorum](https://www.corpuschristianorum.org/critical-editions); [Sources Chrétiennes](https://www.sourceschretiennes.net/).
+- Critical-edition programs used or identified for future collation: [CSEL](https://csel.at/en/); [Corpus Christianorum](https://www.corpuschristianorum.org/critical-editions); [Sources Chrétiennes](https://www.sourceschretiennes.net/).
 
 ### Reformation and post-Tridentine acts
 
--   Leo X, *Exsurge Domine* (1520) and *Decet Romanum Pontificem* (1521), checked in the papal register/*Bullarium Romanum* and DH 1451–1492. The collective censure is not redistributed into invented article-by-article grades.
+- Leo X, *Exsurge Domine* (1520) and *Decet Romanum Pontificem* (1521), checked in the papal register/*Bullarium Romanum* and DH 1451–1492. The collective censure is not redistributed into invented article-by-article grades.
 
--   Martin Luther’s relevant disputations, treatises, and confessional reception; the Augsburg Confession and Apology; Zwingli’s and Calvin’s sacramental writings; Reformed confessions; representative Anabaptist confessions and trial records; Schwenckfeld and the Racovian Catechism. Counterparty sources control what later communities actually taught.
+- Martin Luther’s relevant disputations, treatises, and confessional reception; the Augsburg Confession and Apology; Zwingli’s and Calvin’s sacramental writings; Reformed confessions; representative Anabaptist confessions and trial records; Schwenckfeld and the Racovian Catechism. Counterparty sources control what later communities actually taught.
 
--   Michael Servetus, *Christianismi restitutio* (Vienne, 1553), in the BnF/Gallica first-edition witness NUMM-109340: [catalogue and digital-facsimile record](https://catalogue.bnf.fr/ark:/12148/cb313565137). The witness fixes the target book; it does not make Geneva’s civic sentence a Catholic act.
+- Michael Servetus, *Christianismi restitutio* (Vienne, 1553), in the BnF/Gallica first-edition witness NUMM-109340: [catalogue and digital-facsimile record](https://catalogue.bnf.fr/ark:/12148/cb313565137). The witness fixes the target book; it does not make Geneva’s civic sentence a Catholic act.
 
--   Toledo inquisitorial edict of 23 September 1525, forty-eight propositions judicially attributed to Alumbrados, using Vicente Beltrán de Heredia’s published transcription as a working witness; the underlying cases and later regional edicts remain separate. Edmond Richer’s *De ecclesiastica et politica potestate* (1611), Sens and Aix provincial censures (1612), Paul V’s confirming briefs, and the 1613 Index decree control the Richerist dossier.
+- Toledo inquisitorial edict of 23 September 1525, forty-eight propositions judicially attributed to Alumbrados, using Vicente Beltrán de Heredia’s published transcription as a working witness; the underlying cases and later regional edicts remain separate. Edmond Richer’s *De ecclesiastica et politica potestate* (1611), Sens and Aix provincial censures (1612), Paul V’s confirming briefs, and the 1613 Index decree control the Richerist dossier.
 
--   Council of Trent, sessions IV–VII, XIII–XIV, XXI–XXV, decrees and canons on Scripture and Tradition, original sin, justification, sacraments, Eucharist, Penance, Anointing, Communion, Mass, Orders, Matrimony, purgatory, saints, images, and indulgences. Tanner and the original-language decree text control; individual canons are cited by session and canon.
+- Council of Trent, sessions IV–VII, XIII–XIV, XXI–XXV, decrees and canons on Scripture and Tradition, original sin, justification, sacraments, Eucharist, Penance, Anointing, Communion, Mass, Orders, Matrimony, purgatory, saints, images, and indulgences. Tanner and the original-language decree text control; individual canons are cited by session and canon.
 
--   Pius V, *Ex omnibus afflictionibus* (1567), propositions associated with Baius; Urban VIII, *In eminenti* (1642); Innocent X, *Cum occasione* (1653); Alexander VII, *Ad sanctam beati Petri sedem* (1656); Clement XI, *Unigenitus Dei Filius* (1713).
+- Pius V, *Ex omnibus afflictionibus* (1567), propositions associated with Baius; Urban VIII, *In eminenti* (1642); Innocent X, *Cum occasione* (1653); Alexander VII, *Ad sanctam beati Petri sedem* (1656); Clement XI, *Unigenitus Dei Filius* (1713).
 
--   Alexander VII and Innocent XI on laxist propositions; Innocent XI, *Caelestis Pastor* (1687) on Molinos; Alexander VIII, *Sanctissimus Dominus* (1690); Innocent XII, *Cum alias* (1699) on Fénelon; Pius VI, *Auctorem fidei* (1794) on Pistoia. The relevant censure applies exactly as the act states.
+- Alexander VII and Innocent XI on laxist propositions; Innocent XI, *Caelestis Pastor* (1687) on Molinos; Alexander VIII, *Sanctissimus Dominus* (1690); Innocent XII, *Cum alias* (1699) on Fénelon; Pius VI, *Auctorem fidei* (1794) on Pistoia. The relevant censure applies exactly as the act states.
 
--   Thomist, Molinist, Augustinian, Jesuit, and Dominican grace sources around the *de auxiliis* congregations. Paul V’s 1607 non-condemnation boundary controls: permitted Catholic schools are not added to a heresy list.
+- Thomist, Molinist, Augustinian, Jesuit, and Dominican grace sources around the *de auxiliis* congregations. Paul V’s 1607 non-condemnation boundary controls: permitted Catholic schools are not added to a heresy list.
 
 ### Modern Roman and conciliar sources
 
--   Gregory XVI-era professions required of Louis-Eugène Bautain; Pius IX, *Eximiam tuam* (1857) on Günther; Holy Office decree on Ontologism (1861); Pius IX, *Quanta cura* and the *Syllabus* (1864): [Holy See Italian/Latin access](https://www.vatican.va/content/pius-ix/it/documents/encyclica-quanta-cura-8-decembris-1864.html).
+- Gregory XVI-era professions required of Louis-Eugène Bautain; Pius IX, *Eximiam tuam* (1857) on Günther; Holy Office decree on Ontologism (1861); Pius IX, *Quanta cura* and the *Syllabus* (1864): [Holy See Italian/Latin access](https://www.vatican.va/content/pius-ix/it/documents/encyclica-quanta-cura-8-decembris-1864.html).
 
--   Vatican I, *Dei Filius* (24 April 1870) and *Pastor aeternus* (18 July 1870): [Holy See text of Dei Filius](https://www.vatican.va/content/pius-ix/en/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html); original Latin controls where the English page is incomplete.
+- Vatican I, *Dei Filius* (24 April 1870) and *Pastor aeternus* (18 July 1870): [Holy See text of Dei Filius](https://www.vatican.va/content/pius-ix/en/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html); original Latin controls where the English page is incomplete.
 
--   Holy Office, *Post obitum* (1887), and CDF note on Rosmini (2001): [official English note](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20010701_rosmini_en.html). Walter Elliott, *Le Père Hecker*, anonymous authorized French translation/adaptation, introduction by John Ireland, preface by Félix Klein, 5th ed. (Paris: Victor Lecoffre, 1897): [complete facsimile](https://archive.org/details/lepereheckerfond0000elli). Leo XIII, *Testem benevolentiae* (1899): [Holy See Latin text](https://www.vatican.va/content/leo-xiii/la/letters/documents/hf_l-xiii_let_18990122_testem-benevolentiae.html).
+- Holy Office, *Post obitum* (1887), and CDF note on Rosmini (2001): [official English note](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20010701_rosmini_en.html). Walter Elliott, *Le Père Hecker*, anonymous authorized French translation/adaptation, introduction by John Ireland, preface by Félix Klein, 5th ed. (Paris: Victor Lecoffre, 1897): [complete facsimile](https://archive.org/details/lepereheckerfond0000elli). Leo XIII, *Testem benevolentiae* (1899): [Holy See Latin text](https://www.vatican.va/content/leo-xiii/la/letters/documents/hf_l-xiii_let_18990122_testem-benevolentiae.html).
 
--   Holy Office, *Lamentabili sane exitu* (1907); Pius X, *Pascendi dominici gregis*: [Holy See English text](https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html); *Praestantia Scripturae* and *Sacrorum antistitum*.
+- Holy Office, *Lamentabili sane exitu* (1907); Pius X, *Pascendi dominici gregis*: [Holy See English text](https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html); *Praestantia Scripturae* and *Sacrorum antistitum*.
 
--   Holy Office decree on millenarianism (1944); Holy Office, *Suprema haec sacra* (1949); Pius XII, *Humani generis* (1950): [Holy See Latin text](https://www.vatican.va/content/pius-xii/la/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html). Holy Office, instruction *De “Ethica Situationis”* (2 February 1956), *AAS* 48 (1956), 144–145: [official AAS facsimile](https://www.vatican.va/archive/aas/documents/AAS-48-1956-ocr.pdf).
+- Holy Office decree on millenarianism (1944); Holy Office, *Suprema haec sacra* (1949); Pius XII, *Humani generis* (1950): [Holy See Latin text](https://www.vatican.va/content/pius-xii/la/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html). Holy Office, instruction *De “Ethica Situationis”* (2 February 1956), *AAS* 48 (1956), 144–145: [official AAS facsimile](https://www.vatican.va/archive/aas/documents/AAS-48-1956-ocr.pdf).
 
--   Vatican II, [*Dei Verbum* 11–12](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html); *Gaudium et spes*; and especially [*Unitatis redintegratio* 3–4, 11](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html) (21 November 1964).
+- Vatican II, [*Dei Verbum* 11–12](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html); *Gaudium et spes*; and especially [*Unitatis redintegratio* 3–4, 11](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html) (21 November 1964).
 
--   CDF, *Mysterium Ecclesiae* (1973), *Donum veritatis* (1990), and *Dominus Iesus* (2000); the complete official DDF index supplies document genre and publication data.
+- CDF, *Mysterium Ecclesiae* (1973), *Donum veritatis* (1990), and *Dominus Iesus* (2000); the complete official DDF index supplies document genre and publication data.
 
--   CDF, *Instruction on Certain Aspects of the Theology of Liberation* (1984) and *Instruction on Christian Freedom and Liberation* (1986). The two are read together so doctrinal criticism is not misreported as rejection of integral liberation or concern for the poor.
+- CDF, *Instruction on Certain Aspects of the Theology of Liberation* (1984) and *Instruction on Christian Freedom and Liberation* (1986). The two are read together so doctrinal criticism is not misreported as rejection of integral liberation or concern for the poor.
 
--   DDF prefect, statement concerning announced SSPX episcopal ordinations (13 May 2026): [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260513_dichiarazione-fernandez-fsspx_en.html). Its conditional future wording is retained for the warning as issued.
+- DDF prefect, statement concerning announced SSPX episcopal ordinations (13 May 2026): [official text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260513_dichiarazione-fernandez-fsspx_en.html). Its conditional future wording is retained for the warning as issued.
 
--   Leo XIV, letter to the SSPX superior general (29 June 2026): [official English text](https://www.vatican.va/content/leo-xiv/en/letters/2026/documents/20260629-lettera-fraternita-sanpiox.html), asking that the intended act be abandoned.
+- Leo XIV, letter to the SSPX superior general (29 June 2026): [official English text](https://www.vatican.va/content/leo-xiv/en/letters/2026/documents/20260629-lettera-fraternita-sanpiox.html), asking that the intended act be abandoned.
 
--   DDF, signed decree (2 July 2026): [official Italian decree](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_decreto-scomunica-fsspx_it.html), controlling the five reserved canon 1387 cases and Fellay’s separate canon 1364 §1 case; DDF, [official Italian explanatory note](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_nota-esplicativa-fsspx_it.html), controlling the minister, lay-adherence, and sacramental consequences. [Vatican News’s 1 July event report](https://www.vaticannews.va/en/church/news/2026-07/lefebvrists-consecrate-four-new-bishops-without-a-papal-mandate.html) is used only to establish and publicly report the completed event, not to allocate penalties.
+- DDF, signed decree (2 July 2026): [official Italian decree](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_decreto-scomunica-fsspx_it.html), controlling the five reserved canon 1387 cases and Fellay’s separate canon 1364 §1 case; DDF, [official Italian explanatory note](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_nota-esplicativa-fsspx_it.html), controlling the minister, lay-adherence, and sacramental consequences. [Vatican News’s 1 July event report](https://www.vaticannews.va/en/church/news/2026-07/lefebvrists-consecrate-four-new-bishops-without-a-papal-mandate.html) is used only to establish and publicly report the completed event, not to allocate penalties.
 
 ### Ecumenical afterlife controls
 
--   Paul VI and Shenouda III, Catholic–Coptic common declaration (10 May 1973): [Holy See text](https://www.vatican.va/content/paul-vi/en/speeches/1973/may/documents/hf_p-vi_spe_19730510_dichiarazione-comune.html).
+- Paul VI and Shenouda III, Catholic–Coptic common declaration (10 May 1973): [Holy See text](https://www.vatican.va/content/paul-vi/en/speeches/1973/may/documents/hf_p-vi_spe_19730510_dichiarazione-comune.html).
 
--   John Paul II and Ignatius Zakka I, Catholic–Syriac common declaration (23 June 1984): [Dicastery for Promoting Christian Unity text](https://www.christianunity.va/content/unitacristiani/en/dialoghi/sezione-orientale/chiese-ortodosse-orientali/relazioni-bilaterali/chiesa-ortodossa-sira-del-malankar/joint-international-commission-for-dialogue-between-the-catholic/declarations-of-agreement/en3.html).
+- John Paul II and Ignatius Zakka I, Catholic–Syriac common declaration (23 June 1984): [Dicastery for Promoting Christian Unity text](https://www.christianunity.va/content/unitacristiani/en/dialoghi/sezione-orientale/chiese-ortodosse-orientali/relazioni-bilaterali/chiesa-ortodossa-sira-del-malankar/joint-international-commission-for-dialogue-between-the-catholic/declarations-of-agreement/en3.html).
 
--   John Paul II and Mar Dinkha IV, Common Christological Declaration between the Catholic Church and the Assyrian Church of the East (11 November 1994): [Holy See text](https://www.vatican.va/content/john-paul-ii/en/speeches/1994/november/documents/hf_jp-ii_spe_19941111_dichiarazione-cristologica.html).
+- John Paul II and Mar Dinkha IV, Common Christological Declaration between the Catholic Church and the Assyrian Church of the East (11 November 1994): [Holy See text](https://www.vatican.va/content/john-paul-ii/en/speeches/1994/november/documents/hf_jp-ii_spe_19941111_dichiarazione-cristologica.html).
 
--   Catholic Church and Lutheran World Federation, *Joint Declaration on the Doctrine of Justification*, official common statement, and annex (31 October 1999): [official twentieth-anniversary documentary edition](https://www.christianunity.va/content/dam/unitacristiani/Relazioni%20ecumeniche/Sezione%20occidentale/Dialogo%20multilaterale/Edizione_20_Anniversario_DCDJ/EN%2020th%20Anniversary%20Edition%20joint_declaration_2019.pdf).
+- Catholic Church and Lutheran World Federation, *Joint Declaration on the Doctrine of Justification*, official common statement, and annex (31 October 1999): [official twentieth-anniversary documentary edition](https://www.christianunity.va/content/dam/unitacristiani/Relazioni%20ecumeniche/Sezione%20occidentale/Dialogo%20multilaterale/Edizione_20_Anniversario_DCDJ/EN%2020th%20Anniversary%20Edition%20joint_declaration_2019.pdf).
 
 ### Historical scholarship
 

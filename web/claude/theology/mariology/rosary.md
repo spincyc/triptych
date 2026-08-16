@@ -16,13 +16,13 @@ Two boundaries govern everything in this reference. First, the Rosary is a pious
 
 Paul VI’s *Marialis cultus* 49 enumerates the elements of the Rosary “according to the tradition accepted by our predecessor St. Pius V and authoritatively taught by him”: contemplation of a series of mysteries of salvation distributed in cycles; the Lord’s Prayer; the litany-like succession of the Hail Mary “in the full and typical number of one hundred and fifty,” with the five-decade recitation “adopted by popular piety and approved by papal authority”; and the doxology **Glory be to the Father**.[^5] Each vocal element has its own provenance:
 
--   **The Our Father** is the dominical prayer itself (Mt 6:9–13; Lk 11:2–4), “at the basis of Christian prayer,” opening each decade so that meditation rises first to the Father.[^6]
+- **The Our Father** is the dominical prayer itself (Mt 6:9–13; Lk 11:2–4), “at the basis of Christian prayer,” opening each decade so that meditation rises first to the Father.[^6]
 
--   **The Hail Mary** is built of three strata: the greeting of the angel Gabriel—in the Douay-Rheims rendering, “Hail, full of grace, the Lord is with thee: blessed art thou among women” (Lk 1:28)—the greeting of Elizabeth, “Blessed art thou among women, and blessed is the fruit of thy womb” (Lk 1:42), and the Church’s own petition, “Holy Mary, Mother of God, pray for us sinners…,” which the Catechism of the Council of Trent describes as framed by the Church. The name “Jesus” is the hinge joining the biblical praise to the petition.[^7]
+- **The Hail Mary** is built of three strata: the greeting of the angel Gabriel—in the Douay-Rheims rendering, “Hail, full of grace, the Lord is with thee: blessed art thou among women” (Lk 1:28)—the greeting of Elizabeth, “Blessed art thou among women, and blessed is the fruit of thy womb” (Lk 1:42), and the Church’s own petition, “Holy Mary, Mother of God, pray for us sinners…,” which the Catechism of the Council of Trent describes as framed by the Church. The name “Jesus” is the hinge joining the biblical praise to the petition.[^7]
 
--   **The doxology** concludes each decade by glorifying the Trinity, “the goal of all Christian contemplation” (RVM 34); Paul VI calls it the prayer’s culmination “in conformity with an orientation common to Christian piety” (MC 49(d), citing Rom 11:36).
+- **The doxology** concludes each decade by glorifying the Trinity, “the goal of all Christian contemplation” (RVM 34); Paul VI calls it the prayer’s culmination “in conformity with an orientation common to Christian piety” (MC 49(d), citing Rom 11:36).
 
--   **Customary additions** frame the core without belonging to its essence. RVM 37 records the plural customs: some places open with Psalm 70’s “O God, come to my aid,” others with the Apostles’ Creed; the recitation customarily ends with prayer for the Pope’s intentions; and the whole is often crowned with the *Salve Regina* or the Litany of Loreto. A concluding collect varies by local custom (RVM 35). These are legitimate customs, not obligations.[^8]
+- **Customary additions** frame the core without belonging to its essence. RVM 37 records the plural customs: some places open with Psalm 70’s “O God, come to my aid,” others with the Apostles’ Creed; the recitation customarily ends with prayer for the Pope’s intentions; and the whole is often crowned with the *Salve Regina* or the Litany of Loreto. A concluding collect varies by local custom (RVM 35). These are legitimate customs, not obligations.[^8]
 
 ### How a decade is prayed
 
@@ -76,11 +76,11 @@ Three further texts belong to the Rosary’s customary environment and are delib
 
 The meditations of the Rosary are called mysteries: events of the one saving economy, recalled not as mere history but as saving deeds whose grace remains present. Three cycles are traditional—joyful, sorrowful, and glorious, five mysteries each—and their order, Paul VI observed, both follows the chronology of the facts and “reflects the plan of the original proclamation of the Faith,” the kenosis, death, and exaltation of Philippians 2:6–11.[^15] In 2002 John Paul II proposed a fourth cycle, the mysteries of light, drawn from Christ’s public ministry. Three distinct quantities must therefore be kept apart:
 
--   the **historic full Rosary** of fifteen decades, the “Psalter” of one hundred and fifty Hail Marys stabilized in the sixteenth century and presupposed by every papal document before 2002 (and still by the *Enchiridion Indulgentiarum*’s definition);
+- the **historic full Rosary** of fifteen decades, the “Psalter” of one hundred and fifty Hail Marys stabilized in the sixteenth century and presupposed by every papal document before 2002 (and still by the *Enchiridion Indulgentiarum*’s definition);
 
--   the **twenty-mystery cycle** formed when the mysteries of light are added—a proposal, as the next paragraph shows, left expressly to freedom; and
+- the **twenty-mystery cycle** formed when the mysteries of light are added—a proposal, as the next paragraph shows, left expressly to freedom; and
 
--   the **ordinary five-decade recitation**, one cycle prayed as the normal daily measure, “adopted by popular piety and approved by papal authority” (MC 49(c)).
+- the **ordinary five-decade recitation**, one cycle prayed as the normal daily measure, “adopted by popular piety and approved by papal authority” (MC 49(c)).
 
 ### The 2002 proposal: an addition, not an imposition
 
@@ -404,19 +404,19 @@ First, its account of the prayer’s parts: the Lord’s Prayer and the angelic 
 
 Paul VI’s exhortation of 2 February 1974 remains the most precise magisterial anatomy of the devotion, and its governing category is the Gospel. Section 44 states the thesis: “the Rosary draws from the Gospel the presentation of the mysteries and its main formulas,” and “the Rosary is thus a Gospel prayer, as pastors and scholars like to define it, more today perhaps than in the past.” Everything else in the treatment follows from that.
 
--   **Christological orientation** (46). The litany-like succession of Hail Marys “becomes in itself an unceasing praise of Christ, who is the ultimate object both of the angel’s announcement and of the greeting of the mother of John the Baptist”; that succession “constitutes the warp on which is woven the contemplation of the mysteries.” The Jesus of each Hail Mary is the same Jesus the mysteries propose—in the stable, in the Temple, in agony, scourged and crowned, on Calvary, risen, ascended.
+- **Christological orientation** (46). The litany-like succession of Hail Marys “becomes in itself an unceasing praise of Christ, who is the ultimate object both of the angel’s announcement and of the greeting of the mother of John the Baptist”; that succession “constitutes the warp on which is woven the contemplation of the mysteries.” The Jesus of each Hail Mary is the same Jesus the mysteries propose—in the stable, in the Temple, in agony, scourged and crowned, on Calvary, risen, ascended.
 
--   **The order of the cycles** (45). The threefold division “not only adheres strictly to the chronological order of the facts but above all reflects the plan of the original proclamation of the Faith,” setting forth the mystery of Christ as Philippians 2:6–11 sees it—kenosis, death, exaltation.
+- **The order of the cycles** (45). The threefold division “not only adheres strictly to the chronological order of the facts but above all reflects the plan of the original proclamation of the Faith,” setting forth the mystery of Christ as Philippians 2:6–11 sees it—kenosis, death, exaltation.
 
--   **Contemplation as essential** (47). “Without this the Rosary is a body without a soul, and its recitation is in danger of becoming a mechanical repetition of formulas and of going counter to the warning of Christ” against heaping up empty phrases (Mt 6:7). Hence “a quiet rhythm and a lingering pace.”
+- **Contemplation as essential** (47). “Without this the Rosary is a body without a soul, and its recitation is in danger of becoming a mechanical repetition of formulas and of going counter to the warning of Christ” against heaping up empty phrases (Mt 6:7). Hence “a quiet rhythm and a lingering pace.”
 
--   **The liturgy boundary** (48). The Rosary is “a branch sprung from the ancient trunk of the Christian liturgy, the Psalter of the Blessed Virgin,” arising when the liturgical spirit was in decline; it “easily harmonizes with the liturgy” and draws its motivating force from it, but “does not, however, become part of the liturgy,” and “it is a mistake to recite the Rosary during the celebration of the liturgy.” Liturgical commemoration and rosary contemplation exist “on essentially different planes of reality” while having the same object.
+- **The liturgy boundary** (48). The Rosary is “a branch sprung from the ancient trunk of the Christian liturgy, the Psalter of the Blessed Virgin,” arising when the liturgical spirit was in decline; it “easily harmonizes with the liturgy” and draws its motivating force from it, but “does not, however, become part of the liturgy,” and “it is a mistake to recite the Rosary during the celebration of the liturgy.” Liturgical commemoration and rosary contemplation exist “on essentially different planes of reality” while having the same object.
 
--   **The elements** (49) and **the manner** (50): each element has “its own particular character,” so that recitation is “grave and suppliant” in the Lord’s Prayer, “lyrical and full of praise” in the Hail Marys, contemplative in the meditation, “full of adoration” in the doxology.
+- **The elements** (49) and **the manner** (50): each element has “its own particular character,” so that recitation is “grave and suppliant” in the Lord’s Prayer, “lyrical and full of praise” in the Hail Marys, contemplative in the meditation, “full of adoration” in the doxology.
 
--   **The family** (52–54): after the Liturgy of the Hours, the Rosary “should be considered as one of the best and most efficacious prayers in common that the Christian family is invited to recite.”
+- **The family** (52–54): after the Liturgy of the Hours, the Rosary “should be considered as one of the best and most efficacious prayers in common that the Christian family is invited to recite.”
 
--   **Freedom** (55), the exhortation’s last word on the subject: this devotion “should not be propagated in a way that is too one-sided or exclusive. The Rosary is an excellent prayer, but the faithful should feel serenely free in its regard. They should be drawn to its calm recitation by its intrinsic appeal.”
+- **Freedom** (55), the exhortation’s last word on the subject: this devotion “should not be propagated in a way that is too one-sided or exclusive. The Rosary is an excellent prayer, but the faithful should feel serenely free in its regard. They should be drawn to its calm recitation by its intrinsic appeal.”
 
 Two lesser points deserve keeping. MC 43 concedes the historical question in the plainest terms available to a pope—the research of historians is “aimed not at defining in a sort of archaeological fashion the primitive form of the Rosary but at uncovering the original inspiration and driving force behind it.” And MC 51 commends, without imposing, celebrations of the word of God that take up elements of the Rosary: meditation on the mysteries and the litany-like repetition of the angel’s greeting, set among readings, a homily, silence, and song.[^66]
 
@@ -448,19 +448,19 @@ This section is a study aid describing how the received sources say the Rosary i
 
 Drawn from RVM 28–37 and MC 46–50, all as suggestions carrying their authors’ pastoral authority and no more:
 
--   **Announce the mystery**, perhaps with an icon or image; the announcement opens “a scenario on which to focus our attention” (RVM 29).
+- **Announce the mystery**, perhaps with an icon or image; the announcement opens “a scenario on which to focus our attention” (RVM 29).
 
--   **Let Scripture speak**: a related biblical passage, long or short, may follow the announcement—“No other words can ever match the efficacy of the inspired word” (RVM 30). The Rosary presupposes and promotes **lectio divina**; it does not replace it (RVM 29).
+- **Let Scripture speak**: a related biblical passage, long or short, may follow the announcement—“No other words can ever match the efficacy of the inspired word” (RVM 30). The Rosary presupposes and promotes **lectio divina**; it does not replace it (RVM 29).
 
--   **Keep silence** briefly after the word, before the vocal prayer (RVM 31).
+- **Keep silence** briefly after the word, before the vocal prayer (RVM 31).
 
--   **Weigh the words**: the Our Father grounds each decade in the Father; the ten Aves carry the contemplation, the name of Jesus their hinge—in public recitation some regions add a clause naming the mystery; the doxology is a summit, not a formality (RVM 32–34; MC 46).
+- **Weigh the words**: the Our Father grounds each decade in the Father; the ten Aves carry the contemplation, the name of Jesus their hinge—in public recitation some regions add a clause naming the mystery; the doxology is a summit, not a formality (RVM 32–34; MC 46).
 
--   **Pace and tone**: “a quiet rhythm and a lingering pace” (MC 47); recitation “grave and suppliant” in the Lord’s Prayer, “lyrical and full of praise” in the Aves, “full of adoration” in the doxology (MC 50).
+- **Pace and tone**: “a quiet rhythm and a lingering pace” (MC 47); recitation “grave and suppliant” in the Lord’s Prayer, “lyrical and full of praise” in the Aves, “full of adoration” in the doxology (MC 50).
 
--   **Conclude in the Church**: prayer for the Pope’s intentions, and a Marian antiphon or litany as the crowning of the inner journey (RVM 37); a concluding collect follows local custom (RVM 35).
+- **Conclude in the Church**: prayer for the Pope’s intentions, and a Marian antiphon or litany as the crowning of the inner journey (RVM 37); a concluding collect follows local custom (RVM 35).
 
--   **Family recitation** is the setting the modern popes urge most: the family Rosary gathers parents and children before the image of the Virgin, unites them with the absent and the dead (Pius XII), and makes the family that prays it “reproduce something of the atmosphere of the household of Nazareth” (RVM 41); the Rosary is “one of the best and most efficacious prayers in common” of the family (MC 54).[^69]
+- **Family recitation** is the setting the modern popes urge most: the family Rosary gathers parents and children before the image of the Virgin, unites them with the absent and the dead (Pius XII), and makes the family that prays it “reproduce something of the atmosphere of the household of Nazareth” (RVM 41); the Rosary is “one of the best and most efficacious prayers in common” of the family (MC 54).[^69]
 
 ### The Church’s own cautions against mechanical recitation {#sec:cautions}
 
@@ -484,15 +484,15 @@ Reported private revelations—Lourdes and Fatima above all—have commended thi
 
 The devotion’s liturgical reception has a documented sequence, and it begins with a battle. On the first Sunday of October 1571 the Holy League’s fleet defeated the Ottoman fleet at Lepanto—“the naval battle by the Echinades Islands,” as Leo XIII’s encyclical calls it—while the members of the Roman Rosary confraternity processed and prayed on that same day. St. Pius V “thereupon ordered that a commemoration of the Rosary should be made upon that day”; Leo XIII, recounting the same events three centuries later, says the commemoration was of “Our Lady of Victories.” Then:
 
--   **1573**, Gregory XIII, at the request of the Dominican Order, “allowed this feast to be kept in all churches which possessed an altar dedicated to the Holy Rosary,” and it is Gregory who dedicated it under the title “The Holy Rosary.”
+- **1573**, Gregory XIII, at the request of the Dominican Order, “allowed this feast to be kept in all churches which possessed an altar dedicated to the Holy Rosary,” and it is Gregory who dedicated it under the title “The Holy Rosary.”
 
--   **1671**, Clement X extended the observance to the whole of Spain.
+- **1671**, Clement X extended the observance to the whole of Spain.
 
--   **1716**, Clement XI, after Prince Eugene’s victory over the Turks at Peterwardein in Hungary on 6 August of that year, “commanded the feast of the Rosary to be celebrated by the universal Church.”
+- **1716**, Clement XI, after Prince Eugene’s victory over the Turks at Peterwardein in Hungary on 6 August of that year, “commanded the feast of the Rosary to be celebrated by the universal Church.”
 
--   **Benedict XIII** conceded a set of proper lessons in the second nocturn.
+- **Benedict XIII** conceded a set of proper lessons in the second nocturn.
 
--   **Leo XIII** raised the feast to the rank of a double of the second class—already done by September 1887, when he refers to it in *Vi è ben noto*—and added the invocation “Queen of the Most Holy Rosary” to the Litany of Loreto.[^72]
+- **Leo XIII** raised the feast to the rank of a double of the second class—already done by September 1887, when he refers to it in *Vi è ben noto*—and added the invocation “Queen of the Most Holy Rosary” to the Litany of Loreto.[^72]
 
 The addition to the Litany can be dated exactly, because the act survives in the Holy See’s own *Acta*: by the apostolic letter *Salutaris ille* of 24 December 1883—issued in the same year and in continuation of *Supremi apostolatus officio*—Leo XIII “willed and decreed that in the Litany of Loreto, after the invocation **Regina sine labe originali concepta**, the acclamation **Regina sacratissimi Rosarii ora pro nobis** be added.” The same letter records his wish that the Rosary be recited daily in the principal church of every diocese and on feast days in parish churches.[^73]
 
@@ -506,7 +506,7 @@ The addition to the Litany can be dated exactly, because the act survives in the
 
 The general norms cap and condition every such grant: a plenary indulgence can be acquired only once a day; it requires, besides exclusion of all attachment to even venial sin, the performance of the indulgenced work and the three conditions of sacramental confession, Eucharistic communion, and prayer for the Supreme Pontiff’s intentions; and one who for a reasonable cause completes only part of a divisible work (the Rosary is the Enchiridion’s own example, divisible into decades) acquires a partial indulgence for the part performed.[^75]
 
-Two further provisions of the same concession bear on this reference. Concession 17 §2, 3 grants a partial indulgence to one who devoutly pours out “some approved prayer” to the Blessed Virgin, and its examples include the *Salve Regina*—the antiphon printed in section 1. And the concession closes by directing the competent episcopal conferences to add, in their own language editions of the Enchiridion, the Marian prayers most used and most dear in their territories. Both clauses turn on *approval*: eligibility under this discipline follows a competent authority’s approval of the particular text in the particular language, which the printing of a historical witness for study does not supply.[^76]
+Two further provisions of the same concession bear on this reference. Concession 17 §2, 3° grants a partial indulgence to one who devoutly pours out “some approved prayer” to the Blessed Virgin, and its examples include the *Salve Regina*—the antiphon printed in section 1. And the concession closes by directing the competent episcopal conferences to add, in their own language editions of the Enchiridion, the Marian prayers most used and most dear in their territories. Both clauses turn on *approval*: eligibility under this discipline follows a competent authority’s approval of the particular text in the particular language, which the printing of a historical witness for study does not supply.[^76]
 
 Indulgence discipline is mutable law of the Apostolic Penitentiary: the statement above is true of the fourth edition as checked on 2026-07-25, historical grants (such as Leo XIII’s 1883 concession of “seven years and seven times forty days of indulgence” for the public October Rosary and Litanies) are superseded, and a reader or future editor must verify the current Enchiridion—and, where a vernacular prayer text’s approval matters for a grant, the competent authority’s approval of that translation—before relying on any of it.[^77]
 
@@ -536,43 +536,43 @@ Witnesses are listed with role and rights notes; the access date for all web loc
 
 ### Magisterial and normative sources
 
--   \*John Paul II, *Rosarium Virginis Mariae* (16 October 2002), Vatican English web text (43 numbered sections; translator unnamed): <https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html>. Role: principal current teaching document; mysteries of light; the per-cycle and per-mystery readings; method.
+- \*John Paul II, *Rosarium Virginis Mariae* (16 October 2002), Vatican English web text (43 numbered sections; translator unnamed): <https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html>. Role: principal current teaching document; mysteries of light; the per-cycle and per-mystery readings; method.
 
--   \*Paul VI, *Marialis cultus* (2 February 1974) 42–55, Vatican English web text (translator unnamed; minor delivery corruptions quoted around): <https://www.vatican.va/content/paul-vi/en/apost_exhortations/documents/hf_p-vi_exh_19740202_marialis-cultus.html>. Role: anatomy of the devotion; evangelical character; liturgy boundary; freedom.
+- \*Paul VI, *Marialis cultus* (2 February 1974) 42–55, Vatican English web text (translator unnamed; minor delivery corruptions quoted around): <https://www.vatican.va/content/paul-vi/en/apost_exhortations/documents/hf_p-vi_exh_19740202_marialis-cultus.html>. Role: anatomy of the devotion; evangelical character; liturgy boundary; freedom.
 
--   \*Pius V, *Consueverunt Romani Pontifices* (17 September 1569), English presentation at <https://www.papalencyclicals.net/pius05/p5consue.htm>. Partial witness: the concluding indult/indulgence grant is editorially summarized on the page, the translator is unnamed, and rights of the modern translation are unresolved (quoted in short attributed clauses only). The Latin original (Magnum Bullarium Romanum) is public domain and was not collated. Role: stabilizing act and received-attribution witness.
+- \*Pius V, *Consueverunt Romani Pontifices* (17 September 1569), English presentation at <https://www.papalencyclicals.net/pius05/p5consue.htm>. Partial witness: the concluding indult/indulgence grant is editorially summarized on the page, the translator is unnamed, and rights of the modern translation are unresolved (quoted in short attributed clauses only). The Latin original (Magnum Bullarium Romanum) is public domain and was not collated. Role: stabilizing act and received-attribution witness.
 
--   \*Leo XIII, *Supremi apostolatus officio* (1 September 1883), Vatican English web text: <https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01091883_supremi-apostolatus-officio.html>. Role: first of the Leonine Rosary encyclicals; the chain of sixteenth-century papal commendations; Lepanto and feast narrative; historical (superseded) 1883 indulgences and October prescription.
+- \*Leo XIII, *Supremi apostolatus officio* (1 September 1883), Vatican English web text: <https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01091883_supremi-apostolatus-officio.html>. Role: first of the Leonine Rosary encyclicals; the chain of sixteenth-century papal commendations; Lepanto and feast narrative; historical (superseded) 1883 indulgences and October prescription.
 
--   Leo XIII, *Salutaris ille*, apostolic letter in the form of a brief (24 December 1883), *Acta Sanctae Sedis* 16 (1883–84), 209–211, in the Holy See’s *Acta* archive: <https://www.vatican.va/archive/ass/documents/ASS-16-1883-84-1-576+supplemento-17-96-ocr.pdf>. Latin only; official text. Role: the act adding **Regina sacratissimi Rosarii** to the Litany of Loreto and commending daily recitation in cathedral and parish churches. Located through its citation in *Fidentem piumque animum* (20 September 1896) on vatican.va.
+- Leo XIII, *Salutaris ille*, apostolic letter in the form of a brief (24 December 1883), *Acta Sanctae Sedis* 16 (1883–84), 209–211, in the Holy See’s *Acta* archive: <https://www.vatican.va/archive/ass/documents/ASS-16-1883-84-1-576+supplemento-17-96-ocr.pdf>. Latin only; official text. Role: the act adding **Regina sacratissimi Rosarii** to the Litany of Loreto and commending daily recitation in cathedral and parish churches. Located through its citation in *Fidentem piumque animum* (20 September 1896) on vatican.va.
 
--   Leo XIII, *Vi è ben noto* (20 September 1887), Vatican English web text: <https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20091887_vi-e-ben-noto.html>. Role: the Rosary encyclical published in Italian and absent from the Vatican English index; witness to the feast’s rank as a double of the second class. Indices used for the series: <https://www.vatican.va/content/leo-xiii/en/encyclicals.index.html> and <https://www.vatican.va/content/leo-xiii/it/encyclicals.index.html>. Only titles, dates, and subject lines of the other Leonine encyclicals were checked; their texts were not read.
+- Leo XIII, *Vi è ben noto* (20 September 1887), Vatican English web text: <https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20091887_vi-e-ben-noto.html>. Role: the Rosary encyclical published in Italian and absent from the Vatican English index; witness to the feast’s rank as a double of the second class. Indices used for the series: <https://www.vatican.va/content/leo-xiii/en/encyclicals.index.html> and <https://www.vatican.va/content/leo-xiii/it/encyclicals.index.html>. Only titles, dates, and subject lines of the other Leonine encyclicals were checked; their texts were not read.
 
--   \*Pius XII, *Ingruentium malorum* (15 September 1951), Vatican English web text: <https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_15091951_ingruentium-malorum.html>. Role: twentieth-century commendation; family Rosary; defence of repetition.
+- \*Pius XII, *Ingruentium malorum* (15 September 1951), Vatican English web text: <https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_15091951_ingruentium-malorum.html>. Role: twentieth-century commendation; family Rosary; defence of repetition.
 
--   \*Apostolic Penitentiary, *Enchiridion Indulgentiarum. Normae et concessiones*, 4th ed. (decree of 16 July 1999), Vatican Latin web text: <https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html>. Role: current indulgence discipline (concession 17 §§1–2; norms 18, 20; praenotanda 6–7), as of 2026-07-25; official Latin text, editorially summarized, not translated.
+- \*Apostolic Penitentiary, *Enchiridion Indulgentiarum. Normae et concessiones*, 4th ed. (decree of 16 July 1999), Vatican Latin web text: <https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html>. Role: current indulgence discipline (concession 17 §§1–2; norms 18, 20; praenotanda 6–7), as of 2026-07-25; official Latin text, editorially summarized, not translated.
 
--   Congregation for Divine Worship and the Discipline of the Sacraments, circular letter on the invocations **Mater misericordiae**, **Mater spei**, and **Solacium migrantium** (20 June 2020), Latin original with official English, Holy See Press Office bulletin: <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2020/06/20/0350/00805.html>. Role: evidence that the Litany of Loreto’s text remains open to addition by competent authority. With Benedict XV’s letter of 5 May 1917 (*AAS* 9/I, 266) and the Congregation of Rites’ decree *Urbis et Orbis* of 31 October 1950 (*AAS* 42, 795), both in the Holy See’s *Acta* archive.
+- Congregation for Divine Worship and the Discipline of the Sacraments, circular letter on the invocations **Mater misericordiae**, **Mater spei**, and **Solacium migrantium** (20 June 2020), Latin original with official English, Holy See Press Office bulletin: <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2020/06/20/0350/00805.html>. Role: evidence that the Litany of Loreto’s text remains open to addition by competent authority. With Benedict XV’s letter of 5 May 1917 (*AAS* 9/I, 266) and the Congregation of Rites’ decree *Urbis et Orbis* of 31 October 1950 (*AAS* 42, 795), both in the Holy See’s *Acta* archive.
 
--   \**Catechism of the Catholic Church*, Holy See IntraText English pages for §§971, 2678, 2708: <https://www.vatican.va/archive/ENG0015/__P2C.HTM>, <https://www.vatican.va/archive/ENG0015/__P9F.HTM>, <https://www.vatican.va/archive/ENG0015/__P9L.HTM>. Role: current doctrinal placement.
+- \**Catechism of the Catholic Church*, Holy See IntraText English pages for §§971, 2678, 2708: <https://www.vatican.va/archive/ENG0015/__P2C.HTM>, <https://www.vatican.va/archive/ENG0015/__P9F.HTM>, <https://www.vatican.va/archive/ENG0015/__P9L.HTM>. Role: current doctrinal placement.
 
--   \*Second Vatican Council, *Lumen gentium* (21 November 1964) 58–62, 66–67, Vatican English web text: <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html>. Role: doctrinal frame for Marian devotion and cooperation.
+- \*Second Vatican Council, *Lumen gentium* (21 November 1964) 58–62, 66–67, Vatican English web text: <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html>. Role: doctrinal frame for Marian devotion and cooperation.
 
--   \*Pius XII, *Munificentissimus Deus* (1 November 1950) §44, Vatican English web text: <https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html>. Role: definition of the Assumption, cited for the fourth glorious mystery’s status; treated fully in the project’s Marian-dogmas reference.
+- \*Pius XII, *Munificentissimus Deus* (1 November 1950) §44, Vatican English web text: <https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html>. Role: definition of the Assumption, cited for the fourth glorious mystery’s status; treated fully in the project’s Marian-dogmas reference.
 
--   United States Conference of Catholic Bishops, *Liturgical Calendar for the Dioceses of the United States of America, 2026*: <https://www.usccb.org/resources/2026cal.pdf>. Role: the sole checked witness for the current rank, title, and colour of the 7 October memorial. Territorial, not universal; used because no Holy See page consulted publishes the General Roman Calendar table.
+- United States Conference of Catholic Bishops, *Liturgical Calendar for the Dioceses of the United States of America, 2026*: <https://www.usccb.org/resources/2026cal.pdf>. Role: the sole checked witness for the current rank, title, and colour of the 7 October memorial. Territorial, not universal; used because no Holy See page consulted publishes the General Roman Calendar table.
 
 ### Historical scholarship (public domain)
 
--   \*Herbert Thurston and Andrew Shipman, “The Rosary,” *The Catholic Encyclopedia*, vol. 13 (New York: Robert Appleton, 1912), New Advent transcription: <https://www.newadvent.org/cathen/13184b.htm>. Role: principal witness for the documented development, the Eastern prayer-rope section, and the critique of the attribution legend.
+- \*Herbert Thurston and Andrew Shipman, “The Rosary,” *The Catholic Encyclopedia*, vol. 13 (New York: Robert Appleton, 1912), New Advent transcription: <https://www.newadvent.org/cathen/13184b.htm>. Role: principal witness for the documented development, the Eastern prayer-rope section, and the critique of the attribution legend.
 
--   \*Herbert Thurston, “Feast of the Holy Rosary,” ibid., vol. 13 (1912): <https://www.newadvent.org/cathen/13189a.htm>. Role: feast history from Lepanto to Leo XIII. The article names no title for Pius V’s act, gives no date within 1573, and does not mention 7 October.
+- \*Herbert Thurston, “Feast of the Holy Rosary,” ibid., vol. 13 (1912): <https://www.newadvent.org/cathen/13189a.htm>. Role: feast history from Lepanto to Leo XIII. The article names no title for Pius V’s act, gives no date within 1573, and does not mention 7 October.
 
--   \*Herbert Thurston, “Hail Mary,” ibid., vol. 7 (1910): <https://www.newadvent.org/cathen/07110b.htm>. Role: textual history of the Hail Mary.
+- \*Herbert Thurston, “Hail Mary,” ibid., vol. 7 (1910): <https://www.newadvent.org/cathen/07110b.htm>. Role: textual history of the Hail Mary.
 
--   \*A. Mougel, “Dominic of Prussia,” ibid., vol. 5 (1909): <https://www.newadvent.org/cathen/05112b.htm>. Role: the Carthusian clausulae and their author’s biography.
+- \*A. Mougel, “Dominic of Prussia,” ibid., vol. 5 (1909): <https://www.newadvent.org/cathen/05112b.htm>. Role: the Carthusian clausulae and their author’s biography.
 
--   \*J. McNicholas, “Alanus de Rupe,” ibid., vol. 1 (1907): <https://www.newadvent.org/cathen/01246a.htm>. Role: Alan de la Roche’s dates, teaching, confraternities, and the non-historical character of his Dominic relations.
+- \*J. McNicholas, “Alanus de Rupe,” ibid., vol. 1 (1907): <https://www.newadvent.org/cathen/01246a.htm>. Role: Alan de la Roche’s dates, teaching, confraternities, and the non-historical character of his Dominic relations.
 
 The 1907–1912 printings are public domain; New Advent’s transcriptions are a later web presentation whose wording was used as delivered.
 
@@ -580,27 +580,27 @@ The 1907–1912 printings are public domain; New Advent’s transcriptions are a
 
 Quoted at the individual mysteries as early readings of the same scriptural events, never as evidence of Rosary practice.
 
--   Irenaeus, *Against Heresies* III.16.4 and III.22.4, trans. Alexander Roberts and William Rambaut, *Ante-Nicene Fathers* vol. 1: <https://www.newadvent.org/fathers/0103316.htm>, <https://www.newadvent.org/fathers/0103322.htm>.
+- Irenaeus, *Against Heresies* III.16.4 and III.22.4, trans. Alexander Roberts and William Rambaut, *Ante-Nicene Fathers* vol. 1: <https://www.newadvent.org/fathers/0103316.htm>, <https://www.newadvent.org/fathers/0103322.htm>.
 
--   Cyril of Jerusalem, *Catechetical Lecture* 22.1, trans. Edwin Hamilton Gifford, *Nicene and Post-Nicene Fathers* second series vol. 7: <https://www.newadvent.org/fathers/310122.htm>.
+- Cyril of Jerusalem, *Catechetical Lecture* 22.1, trans. Edwin Hamilton Gifford, *Nicene and Post-Nicene Fathers* second series vol. 7: <https://www.newadvent.org/fathers/310122.htm>.
 
--   Gregory Nazianzen, *Oration* 39.14, trans. Charles Gordon Browne and James Edward Swallow, NPNF second series vol. 7: <https://www.newadvent.org/fathers/310239.htm>.
+- Gregory Nazianzen, *Oration* 39.14, trans. Charles Gordon Browne and James Edward Swallow, NPNF second series vol. 7: <https://www.newadvent.org/fathers/310239.htm>.
 
--   Augustine, *Tractates on the Gospel of John* 9.5 and 119.1, trans. John Gibb, NPNF first series vol. 7: <https://www.newadvent.org/fathers/1701009.htm>, <https://www.newadvent.org/fathers/1701119.htm>.
+- Augustine, *Tractates on the Gospel of John* 9.5 and 119.1, trans. John Gibb, NPNF first series vol. 7: <https://www.newadvent.org/fathers/1701009.htm>, <https://www.newadvent.org/fathers/1701119.htm>.
 
--   Leo the Great, *Sermons* 21.1, 51.3, 58.5, 71.4, 74.1, 75.5, trans. Charles Lett Feltoe, NPNF second series vol. 12: <https://www.newadvent.org/fathers/360321.htm> and the correspondingly numbered pages.
+- Leo the Great, *Sermons* 21.1, 51.3, 58.5, 71.4, 74.1, 75.5, trans. Charles Lett Feltoe, NPNF second series vol. 12: <https://www.newadvent.org/fathers/360321.htm> and the correspondingly numbered pages.
 
--   Cyril of Alexandria, *Commentary on Luke*, Sermons 4 and 5, trans. R. Payne Smith (Oxford: Oxford University Press, 1859; public domain), Tertullian Project transcription: <https://www.tertullian.org/fathers/cyril_on_luke_01_sermons_01_11.htm>. Not in the ANF/NPNF corpora; the transcription’s scan page markers are not reproduced in the quotations.
+- Cyril of Alexandria, *Commentary on Luke*, Sermons 4 and 5, trans. R. Payne Smith (Oxford: Oxford University Press, 1859; public domain), Tertullian Project transcription: <https://www.tertullian.org/fathers/cyril_on_luke_01_sermons_01_11.htm>. Not in the ANF/NPNF corpora; the transcription’s scan page markers are not reproduced in the quotations.
 
--   John Damascene, first sermon on the Assumption, trans. Mary H. Allies, *St. John Damascene on Holy Images … Followed by Three Sermons on the Assumption* (London: Thomas Baker, 1898), Project Gutenberg transcription: <https://www.gutenberg.org/ebooks/49917>. The translation carries no section numbering; cited by sermon.
+- John Damascene, first sermon on the Assumption, trans. Mary H. Allies, *St. John Damascene on Holy Images … Followed by Three Sermons on the Assumption* (London: Thomas Baker, 1898), Project Gutenberg transcription: <https://www.gutenberg.org/ebooks/49917>. The translation carries no section numbering; cited by sermon.
 
 ### Scripture and prayer-text witnesses
 
--   Douay-Rheims Bible (Challoner revision; public domain), drbo.org chapter pages (e.g. <https://drbo.org/chapter/49001.htm> for Lk 1; <https://drbo.org/chapter/48009.htm> for the Douay versification of Mk 9). Role: every English Scripture quotation and every mystery locus.
+- Douay-Rheims Bible (Challoner revision; public domain), drbo.org chapter pages (e.g. <https://drbo.org/chapter/49001.htm> for Lk 1; <https://drbo.org/chapter/48009.htm> for the Douay versification of Mk 9). Role: every English Scripture quotation and every mystery locus.
 
--   \**A Catechism of Christian Doctrine, Prepared and Enjoined by Order of the Third Plenary Council of Baltimore, No. 3* (New York: Benziger Brothers, 1921; imprimaturs 1885/1901/1921; published in the United States in 1921 and public domain there), collated against page images of the Internet Archive exemplar <https://archive.org/details/catechismofchris00unse> (pp. 5, 44, 240–241). Role: witness for four of the five printed prayer texts and for the recitation lesson; collation record in `research/prayer-text-audit.md`.
+- \**A Catechism of Christian Doctrine, Prepared and Enjoined by Order of the Third Plenary Council of Baltimore, No. 3* (New York: Benziger Brothers, 1921; imprimaturs 1885/1901/1921; published in the United States in 1921 and public domain there), collated against page images of the Internet Archive exemplar <https://archive.org/details/catechismofchris00unse> (pp. 5, 44, 240–241). Role: witness for four of the five printed prayer texts and for the recitation lesson; collation record in `research/prayer-text-audit.md`.
 
--   *A Manual of Prayers for the Use of the Catholic Laity, Prepared and Published by Order of the Third Plenary Council of Baltimore* (New York: The Catholic Publication Society Co.; London: Burns & Oates, 1889; approval of James Cardinal Gibbons, 17 May 1889; imprimatur of Michael Augustinus Corrigan, Archbishop of New York; copyright 1888, expired; public domain in the United States), collated against page images of the Internet Archive exemplar <https://archive.org/details/manualofprayersf00wood> (pp. 79–80, 369–381). Role: witness for the printed *Salve Regina* in English with its versicle and response, for the per-mystery petitions quoted as the traditional fruits, for the statement that each mystery’s meditation contains a prayer for its particular virtue, and for the older weekly and seasonal distribution.
+- *A Manual of Prayers for the Use of the Catholic Laity, Prepared and Published by Order of the Third Plenary Council of Baltimore* (New York: The Catholic Publication Society Co.; London: Burns & Oates, 1889; approval of James Cardinal Gibbons, 17 May 1889; imprimatur of Michael Augustinus Corrigan, Archbishop of New York; copyright 1888, expired; public domain in the United States), collated against page images of the Internet Archive exemplar <https://archive.org/details/manualofprayersf00wood> (pp. 79–80, 369–381). Role: witness for the printed *Salve Regina* in English with its versicle and response, for the per-mystery petitions quoted as the traditional fruits, for the statement that each mystery’s meditation contains a prayer for its particular virtue, and for the older weekly and seasonal distribution.
 
 The prayer texts reproduced from these two witnesses are received prayers of the Church, not project-owned expression.
 
@@ -758,7 +758,7 @@ The prayer texts reproduced from these two witnesses are received prayers of the
 
 [^75]: *Enchiridion Indulgentiarum*, 4th ed., norm 18 §1, norm 20 §1, and praenotanda 6–7, checked in the Latin web presentation cited in section 1 on 2026-07-25. The prose statement of concession 17 §1 above is an editorial summary of the Latin, not an official translation.
 
-[^76]: *Enchiridion Indulgentiarum*, 4th ed., conc. 17 §2, 3 (“ad Beatissimam Virginem Mariam aliquam precem adprobatam pie effuderit (e.g. **Maria, Mater gratiae**; **Memorare, o piissima Virgo Maria**; **Salve, Regina**; **Sancta Maria, succurre miseris**; **Sub tuum praesidium**)”) and the closing rubric on episcopal conferences, both checked 2026-07-25 in the Latin web presentation.
+[^76]: *Enchiridion Indulgentiarum*, 4th ed., conc. 17 §2, 3° (“ad Beatissimam Virginem Mariam aliquam precem adprobatam pie effuderit (e.g. **Maria, Mater gratiae**; **Memorare, o piissima Virgo Maria**; **Salve, Regina**; **Sancta Maria, succurre miseris**; **Sub tuum praesidium**)”) and the closing rubric on episcopal conferences, both checked 2026-07-25 in the Latin web presentation.
 
 [^77]: See the terminal appendix for the as-of boundary; *Supremi apostolatus officio* 9 for the 1883 grants, reported as history only. The prayer texts printed in section 1 are received historical witnesses printed for study; this reference makes no claim that those particular printings are approved texts for any indulgence-related purpose.
 

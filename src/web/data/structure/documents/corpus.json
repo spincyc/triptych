@@ -1,9 +1,9 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name.",
  "counted": {
-  "documents": 179,
-  "issues": 187,
-  "pages": 5717,
+  "documents": 180,
+  "issues": 188,
+  "pages": 5783,
   "titles_unrecorded": 0,
   "works": 134
  },
@@ -18,16 +18,16 @@
   },
   {
    "documents": 24,
-   "id": "claude-opus-5[1m]"
+   "id": "claude-fable-5"
   },
   {
-   "documents": 23,
-   "id": "claude-fable-5"
+   "documents": 24,
+   "id": "claude-opus-5[1m]"
   }
  ],
  "providers": [
   {
-   "documents": 45,
+   "documents": 46,
    "id": "claude",
    "label": "Claude"
   },
@@ -7807,6 +7807,34 @@
    "catalog": "library/mariology.md",
    "catalog_page": "library/mariology.html",
    "editions": [
+    {
+     "authorization": "perpetual-public-repository-2026",
+     "basis": "diagram-dependent",
+     "blocking_constructs": [
+      "tikzpicture"
+     ],
+     "contributions": [
+      {
+       "model": "claude-fable-5",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.220; unexposed: server revision"
+      }
+     ],
+     "eligibility": "conditional",
+     "models": [
+      "claude-fable-5"
+     ],
+     "pages": 66,
+     "pdf": "pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+     "provider": "claude",
+     "rationale": "Seven hand-drawn TikZ figures carry the ark's anatomy, the tabernacle and temple plans, the journey map, the Visitation overlay, and the fulfilment arc; the prose stands alone, but a web edition that silently dropped the drawings would misrepresent the print publication, so the leaf waits on a figure-rendering path.",
+     "reviewed": "2026-08-16",
+     "revised": "2026-08-16T05:11:19Z",
+     "status": "alpha",
+     "subject": "A source-audited study of the ark of the covenant: its canonical journey from Sinai to its disappearance, the theology of presence and holiness it teaches, and the Church's reading of the Virgin Mary as the ark of the new covenant, with every parallel graded by attestation and reception",
+     "title": "The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun",
+     "title_source": "src/claude/theology/mariology/ark-of-the-covenant/main.tex"
+    },
     {
      "authorization": "perpetual-public-repository-2026",
      "contributions": [

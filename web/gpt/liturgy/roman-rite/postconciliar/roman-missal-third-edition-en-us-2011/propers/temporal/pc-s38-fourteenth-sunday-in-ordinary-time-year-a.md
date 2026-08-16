@@ -178,11 +178,11 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 ## The Propers: Notable and Quotable
 
--   **“My yoke is easy and my burden light” — a spectacularly indecent burden. (*Gospel*)** In James Gillray’s 1782 satire of the Worsley scandal, Sir Richard physically supports his wife’s lover so the man can look through a bathhouse window. He announces Christ’s line while bearing the voyeur on his shoulders. The visual pun makes “yoke” bodily, and the sacred promise becomes savage ridicule of complaisance and humiliation.
+- **“My yoke is easy and my burden light” — a spectacularly indecent burden. (*Gospel*)** In James Gillray’s 1782 satire of the Worsley scandal, Sir Richard physically supports his wife’s lover so the man can look through a bathhouse window. He announces Christ’s line while bearing the voyeur on his shoulders. The visual pun makes “yoke” bodily, and the sacred promise becomes savage ridicule of complaisance and humiliation.
 
--   **“My burden is light” — a novel titled for a burden that is anything but. (*Gospel*)** Agatha Christie’s official site confirms that her 1956 Mary Westmacott novel *The Burden* prints Matthew 11:30 as its epigraph. Its fierce sisterly story blurs love, jealousy, obsession, family, and identity, letting the promised lightness sit tensely over a psychologically crushing form of love.
+- **“My burden is light” — a novel titled for a burden that is anything but. (*Gospel*)** Agatha Christie’s official site confirms that her 1956 Mary Westmacott novel *The Burden* prints Matthew 11:30 as its epigraph. Its fierce sisterly story blurs love, jealousy, obsession, family, and identity, letting the promised lightness sit tensely over a psychologically crushing form of love.
 
--   **“My yoke is easy and my burden is light” — a sweetheart supplies the weight. (*Gospel*)** An 1862 California newspaper prints the line as a young man’s joke while his sweetheart sits on his lap with her arm around his neck. “Yoke” becomes the embrace and “burden” the woman herself: a sacred paradox is compressed into a flirtatious physical pun.
+- **“My yoke is easy and my burden is light” — a sweetheart supplies the weight. (*Gospel*)** An 1862 California newspaper prints the line as a young man’s joke while his sweetheart sits on his lap with her arm around his neck. “Yoke” becomes the embrace and “burden” the woman herself: a sacred paradox is compressed into a flirtatious physical pun.
 
 ## The Propers: Interpretive Possibilities
 
@@ -228,43 +228,43 @@ The Prayer after Communion asks that recipients filled with great gifts receive 
 
 **Liturgical and scriptural sources**
 
--   *Missale Romanum*, editio typica tertia (Vatican City, 2002), Week XIV, p. 464; the shared audit records exact owner evidence and the official 2008 variation-list result (Ordinary Time changes only at pp. 457 and 471; none at pp. 464–466).
+- *Missale Romanum*, editio typica tertia (Vatican City, 2002), Week XIV, p. 464; the shared audit records exact owner evidence and the official 2008 variation-list result (Ordinary Time changes only at pp. 457 and 471; none at pp. 464–466).
 
--   United States Conference of Catholic Bishops, [*2026 Liturgical Calendar*](https://www.usccb.org/resources/2026cal.pdf) and [Lectionary 100 occurrence page](https://bible.usccb.org/bible/readings/070526.cfm), checked 2026-07-15.
+- United States Conference of Catholic Bishops, [*2026 Liturgical Calendar*](https://www.usccb.org/resources/2026cal.pdf) and [Lectionary 100 occurrence page](https://bible.usccb.org/bible/readings/070526.cfm), checked 2026-07-15.
 
--   Bishops’ official [*Antiphonary*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), p. 74, corroborating the ICEL antiphon assignments; protected wording is not reproduced.
+- Bishops’ official [*Antiphonary*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), p. 74, corroborating the ICEL antiphon assignments; protected wording is not reproduced.
 
--   Holy See, [*General Instruction of the Roman Missal*](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html), especially 46–90; approved [*General Introduction to the Lectionary*](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf), especially 65–69, 78–91, and 93–110.
+- Holy See, [*General Instruction of the Roman Missal*](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html), especially 46–90; approved [*General Introduction to the Lectionary*](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf), especially 65–69, 78–91, and 93–110.
 
--   Holy Scripture: Psalms 34, 48, and 145; Zechariah 9; Matthew 11; Romans 8. Historical orientation used the corresponding *New American Bible, Revised Edition* introductions, texts, and notes at [Zechariah](https://bible.usccb.org/bible/zechariah/0), [Matthew](https://bible.usccb.org/bible/matthew/0), and [Romans](https://bible.usccb.org/bible/romans/0).
+- Holy Scripture: Psalms 34, 48, and 145; Zechariah 9; Matthew 11; Romans 8. Historical orientation used the corresponding *New American Bible, Revised Edition* introductions, texts, and notes at [Zechariah](https://bible.usccb.org/bible/zechariah/0), [Matthew](https://bible.usccb.org/bible/matthew/0), and [Romans](https://bible.usccb.org/bible/romans/0).
 
--   Holy See, *Nova Vulgata Bibliorum Sacrorum Editio*, editio typica altera (1986), [Matthew 11:29](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-matthaeum_lt.html), official Latin wording checked 2026-07-18.
+- Holy See, *Nova Vulgata Bibliorum Sacrorum Editio*, editio typica altera (1986), [Matthew 11:29](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-matthaeum_lt.html), official Latin wording checked 2026-07-18.
 
 **Cultural, humorous, and literary afterlives**
 
--   James Gillray, [*Sir Richard Worse-than-Sly, Exposing His Wife’s Bottom; — O Fye!*](https://www.britishmuseum.org/collection/object/P_1851-0901-63), hand-coloured etching, 14 March 1782, British Museum 1851,0901.63.
+- James Gillray, [*Sir Richard Worse-than-Sly, Exposing His Wife’s Bottom; — O Fye!*](https://www.britishmuseum.org/collection/object/P_1851-0901-63), hand-coloured etching, 14 March 1782, British Museum 1851,0901.63.
 
--   Agatha Christie Limited, [*The Burden*](https://www.agathachristie.com/en/stories/the-burden), official work record for the 1956 Mary Westmacott novel, checked 2026-07-19.
+- Agatha Christie Limited, [*The Burden*](https://www.agathachristie.com/en/stories/the-burden), official work record for the 1956 Mary Westmacott novel, checked 2026-07-19.
 
--   *Knight’s Landing News*, vol. 6, no. 9 (Knight’s Landing, California), 28 June 1862, p. 1, [California Revealed / Internet Archive scan, accession cawoyca_000276](https://upload.wikimedia.org/wikipedia/commons/1/15/Knight%27s_Landing_News_1862-06-28_%28IA_cawoyca_000276%29.pdf); issue line, column context, and wording checked 2026-07-19. Public domain in the United States.
+- *Knight’s Landing News*, vol. 6, no. 9 (Knight’s Landing, California), 28 June 1862, p. 1, [California Revealed / Internet Archive scan, accession cawoyca_000276](https://upload.wikimedia.org/wikipedia/commons/1/15/Knight%27s_Landing_News_1862-06-28_%28IA_cawoyca_000276%29.pdf); issue line, column context, and wording checked 2026-07-19. Public domain in the United States.
 
 **Reception and doctrinal illumination**
 
--   St. John Chrysostom, [*Homily 13 on Romans*](https://www.newadvent.org/fathers/210213.htm) and [*Homily 14 on Romans*](https://www.newadvent.org/fathers/210214.htm), direct treatment spanning Romans 8:9–17.
+- St. John Chrysostom, [*Homily 13 on Romans*](https://www.newadvent.org/fathers/210213.htm) and [*Homily 14 on Romans*](https://www.newadvent.org/fathers/210214.htm), direct treatment spanning Romans 8:9–17.
 
--   St. Augustine, *Sermon 156* §§6–15, direct treatment of Romans 8:12–17, [Latin text](https://www.augustinus.it/latino/discorsi/discorso_201_testo.htm).
+- St. Augustine, *Sermon 156* §§6–15, direct treatment of Romans 8:12–17, [Latin text](https://www.augustinus.it/latino/discorsi/discorso_201_testo.htm).
 
--   St. Thomas Aquinas, *Commentary on Romans* VIII, lect. 3, nos. 634–651, [Latin and English](https://aquinas.cc/en/la/~Rom.C8.L3).
+- St. Thomas Aquinas, *Commentary on Romans* VIII, lect. 3, nos. 634–651, [Latin and English](https://aquinas.cc/en/la/~Rom.C8.L3).
 
--   St. Augustine, [*Exposition on Psalm 48*](https://www.newadvent.org/fathers/1801048.htm), [*Exposition on Psalm 145*](https://www.newadvent.org/fathers/1801145.htm), and [*Exposition on Psalm 34*](https://www.newadvent.org/fathers/1801034.htm).
+- St. Augustine, [*Exposition on Psalm 48*](https://www.newadvent.org/fathers/1801048.htm), [*Exposition on Psalm 145*](https://www.newadvent.org/fathers/1801145.htm), and [*Exposition on Psalm 34*](https://www.newadvent.org/fathers/1801034.htm).
 
--   St. Justin Martyr, [*Dialogue with Trypho*, ch. 53](https://www.newadvent.org/fathers/01284.htm); Origen, [*Commentary on John* X.17](https://www.newadvent.org/fathers/101510.htm); St. Cyril of Jerusalem, [*Catechetical Lecture 12*, sec. 10](https://www.newadvent.org/fathers/310112.htm); St. John Chrysostom, [*Homily 66 on Matthew*](https://www.newadvent.org/fathers/200166.htm); Clement of Alexandria, [*Paedagogus* I](https://www.newadvent.org/fathers/02091.htm), direct or closely identified reception of Zechariah 9:9–10.
+- St. Justin Martyr, [*Dialogue with Trypho*, ch. 53](https://www.newadvent.org/fathers/01284.htm); Origen, [*Commentary on John* X.17](https://www.newadvent.org/fathers/101510.htm); St. Cyril of Jerusalem, [*Catechetical Lecture 12*, sec. 10](https://www.newadvent.org/fathers/310112.htm); St. John Chrysostom, [*Homily 66 on Matthew*](https://www.newadvent.org/fathers/200166.htm); Clement of Alexandria, [*Paedagogus* I](https://www.newadvent.org/fathers/02091.htm), direct or closely identified reception of Zechariah 9:9–10.
 
--   St. John Chrysostom, [*Homily 38 on Matthew*](https://www.newadvent.org/fathers/200138.htm); St. Augustine, [*Sermon 19 on the New Testament*](https://www.newadvent.org/fathers/160319.htm) and [*Confessions* VII.21](https://www.newadvent.org/fathers/110107.htm); St. Thomas Aquinas, [*Catena Aurea on Matthew* 11, lect. 10](https://aquinas.cc/la/en/~CaMatt.C11.L10).
+- St. John Chrysostom, [*Homily 38 on Matthew*](https://www.newadvent.org/fathers/200138.htm); St. Augustine, [*Sermon 19 on the New Testament*](https://www.newadvent.org/fathers/160319.htm) and [*Confessions* VII.21](https://www.newadvent.org/fathers/110107.htm); St. Thomas Aquinas, [*Catena Aurea on Matthew* 11, lect. 10](https://aquinas.cc/la/en/~CaMatt.C11.L10).
 
--   St. Ambrose, [*Exposition of the Christian Faith* V.167](https://www.newadvent.org/fathers/34045.htm); St. Leo the Great, [*Letter 14*](https://www.newadvent.org/fathers/3604014.htm), illuminating reception of Christ’s yoke and meek pastoral authority.
+- St. Ambrose, [*Exposition of the Christian Faith* V.167](https://www.newadvent.org/fathers/34045.htm); St. Leo the Great, [*Letter 14*](https://www.newadvent.org/fathers/3604014.htm), illuminating reception of Christ’s yoke and meek pastoral authority.
 
--   *Catechism of the Catholic Church* 541–550, [the Kingdom present in Christ and disclosed in his ministry](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html); doctrinal illumination, not direct commentary on the Week XIV formulary.
+- *Catechism of the Catholic Church* 541–550, [the Kingdom present in Christ and disclosed in his ministry](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html); doctrinal illumination, not direct commentary on the Week XIV formulary.
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

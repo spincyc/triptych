@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
 audited_on = "2026-07-27"
-publication_snapshot = "sha256:34c20f28fc0741e1cd2ca958179df9d6b5e931074a0053b26e5d51cd7582b636"
-classification_snapshot = "sha256:9e9edc55bfe8c52556256f90e982a324dfccf1a31a254959cac37472f09eca64"
+publication_snapshot = "sha256:c69ac3be994f1da74f7db8ad2272eb229b0a2045ea2db25edd15030745762b0f"
+classification_snapshot = "sha256:1bb3cb1c86976c0d1fe1097f429f8069391312d4386b4dc656cd9f67713eb50c"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -155,6 +155,10 @@ source_categories = ["canon-law", "finding-aid", "historical-primary", "institut
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
+
+[[classifications]]
+document = "theology/mariology/ark-of-the-covenant"
+source_categories = ["classical", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "theology/mariology/champion"

@@ -93,13 +93,13 @@ TLM propers: light, travail, Christ’s word, and the merciful compelling of reb
 
 > **Four guardrails — recoverable at a glance**
 >
-> -   **Hope tells the truth about pain.** Travail has a promised end; suffering is neither denied nor made saving by itself.
+> - **Hope tells the truth about pain.** Travail has a promised end; suffering is neither denied nor made saving by itself.
 >
-> -   **Salvation remains embodied.** Romans awaits redemption of *our body*; Irenaeus identifies the mortal body as the body God vivifies.
+> - **Salvation remains embodied.** Romans awaits redemption of *our body*; Irenaeus identifies the mortal body as the body God vivifies.
 >
-> -   **Gift does not certify the recipient.** The catch brings Peter to confession and discipleship, not self-congratulation.
+> - **Gift does not certify the recipient.** The catch brings Peter to confession and discipleship, not self-congratulation.
 >
-> -   **Grace does not abolish agency.** God commands, compels mercifully, purifies, and protects; the person obeys, follows, offers, and asks.
+> - **Grace does not abolish agency.** God commands, compels mercifully, purifies, and protects; the person obeys, follows, offers, and asks.
 
 > **Three relations that no single image may absorb**
 >
@@ -199,11 +199,11 @@ The Postcommunion preserves the same dependence after reception. The mysteries a
 
 ## The Propers: Notable and Quotable
 
--   ***Dominus illuminatio mea* — University of Oxford motto and a Vice-Chancellor’s pun.** The Introit’s “Lord is my light” has served on Oxford’s arms since at least the later sixteenth century, shifting psalmic trust into institutional claims about learning. In the 2023 Oration, Irene Tracey deliberately dropped letters to make *Domus illuminat nos*—“our home enlightens us”—and redirected divine illumination toward collegiate community. The joke is her update, not a translation of the psalm.
+- ***Dominus illuminatio mea* — University of Oxford motto and a Vice-Chancellor’s pun.** The Introit’s “Lord is my light” has served on Oxford’s arms since at least the later sixteenth century, shifting psalmic trust into institutional claims about learning. In the 2023 Oration, Irene Tracey deliberately dropped letters to make *Domus illuminat nos*—“our home enlightens us”—and redirected divine illumination toward collegiate community. The joke is her update, not a translation of the psalm.
 
--   ***Duc in altum* — Mitt Romney’s Southern Virginia University commencement, 2013.** After quoting Luke, Romney turned fishing depth into a whole-life metaphor and urged graduates to marry, start families, find God, pursue careers, and serve. A concrete maneuver after an empty night’s work becomes unusually specific commencement advice; the promise of filled nets belongs to the speech’s rhetoric, not to Luke as a guarantee of worldly success.
+- ***Duc in altum* — Mitt Romney’s Southern Virginia University commencement, 2013.** After quoting Luke, Romney turned fishing depth into a whole-life metaphor and urged graduates to marry, start families, find God, pursue careers, and serve. A concrete maneuver after an empty night’s work becomes unusually specific commencement advice; the promise of filled nets belongs to the speech’s rhetoric, not to Luke as a guarantee of worldly success.
 
--   **“The whole creation groaneth” — William Lyon Phelps, *Reading the Bible* (1919), pp. 8–9.** Phelps remembered picturing everyone in the world suffering green-apple indigestion at the same instant and drawing them in a circle. Yale president Arthur Hadley later supplied the punchline: unauthorized apple-eating really did make creation groan. Paul’s cosmic travail becomes gastrointestinal slapstick and an Eden pun, not an alternative exegesis.
+- **“The whole creation groaneth” — William Lyon Phelps, *Reading the Bible* (1919), pp. 8–9.** Phelps remembered picturing everyone in the world suffering green-apple indigestion at the same instant and drawing them in a circle. Yale president Arthur Hadley later supplied the punchline: unauthorized apple-eating really did make creation groan. Paul’s cosmic travail becomes gastrointestinal slapstick and an Eden pun, not an alternative exegesis.
 
 ## The Propers: Interpretive Possibilities
 
@@ -227,37 +227,37 @@ The Postcommunion preserves the same dependence after reception. The mysteries a
 
 **Primary and inherited sources**
 
--   *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), *Dominica Quarta post Pentecosten*, pp. 382–383, [facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf); all ten elements collated.
+- *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), *Dominica Quarta post Pentecosten*, pp. 382–383, [facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf); all ten elements collated.
 
--   Internet Archive, [1962 missal item](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin) and [OCR aid](https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin_djvu.txt); retrieval and checksums: `propers/verified.md`.
+- Internet Archive, [1962 missal item](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin) and [OCR aid](https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin_djvu.txt); retrieval and checksums: `propers/verified.md`.
 
--   Holy Scripture: Psalms 9, 12, 17, 26, 78; 1 Samuel 16; 2 Samuel 2, 5, 22; 1 Chronicles 6, 15, 25; Luke 1, 4–5; Romans 8, 15–16; John 21; Philippians 2:12–13. Psalm numbering follows the Vulgate.
+- Holy Scripture: Psalms 9, 12, 17, 26, 78; 1 Samuel 16; 2 Samuel 2, 5, 22; 1 Chronicles 6, 15, 25; Luke 1, 4–5; Romans 8, 15–16; John 21; Philippians 2:12–13. Psalm numbering follows the Vulgate.
 
--   St. John Chrysostom, *Homily 14 on Romans*, on 8:18–23, [text](https://www.newadvent.org/fathers/210214.htm); *Homily 8 on Philippians*, on 2:12–13, [text](https://www.newadvent.org/fathers/230208.htm).
+- St. John Chrysostom, *Homily 14 on Romans*, on 8:18–23, [text](https://www.newadvent.org/fathers/210214.htm); *Homily 8 on Philippians*, on 2:12–13, [text](https://www.newadvent.org/fathers/230208.htm).
 
--   St. Irenaeus, *Against Heresies* V.7.1–2, [mortal body vivified](https://www.newadvent.org/fathers/0103507.htm); V.2.2–3, [Eucharist and resurrection](https://www.newadvent.org/fathers/0103502.htm).
+- St. Irenaeus, *Against Heresies* V.7.1–2, [mortal body vivified](https://www.newadvent.org/fathers/0103507.htm); V.2.2–3, [Eucharist and resurrection](https://www.newadvent.org/fathers/0103502.htm).
 
--   St. Cyril, *Commentary on Luke* at 5:2–8, [translation](https://www.tertullian.org/fathers/cyril_on_luke_02_sermons_12_25.htm); St. Ambrose, *Exposition of Luke* IV.68–79, [Latin](https://la.wikisource.org/wiki/Expositio_evangelii_secundum_Lucam/IV).
+- St. Cyril, *Commentary on Luke* at 5:2–8, [translation](https://www.tertullian.org/fathers/cyril_on_luke_02_sermons_12_25.htm); St. Ambrose, *Exposition of Luke* IV.68–79, [Latin](https://la.wikisource.org/wiki/Expositio_evangelii_secundum_Lucam/IV).
 
--   St. Anthony of Padua, *Sermon for the Fifth Sunday after Pentecost* §§1–21, especially §§17–21, [official Latin text](https://www.santantonio.org/en/sermons/sermoni-domenicali/domenica-v-dopo-pentecoste?latin=1); direct medieval reception of Luke 5:1–11, checked 2026-07-18.
+- St. Anthony of Padua, *Sermon for the Fifth Sunday after Pentecost* §§1–21, especially §§17–21, [official Latin text](https://www.santantonio.org/en/sermons/sermoni-domenicali/domenica-v-dopo-pentecoste?latin=1); direct medieval reception of Luke 5:1–11, checked 2026-07-18.
 
--   St. Augustine, *City of God* XIX.13, [tranquility of order](https://www.newadvent.org/fathers/120119.htm); *Tractate 122 on John*, 7, [two catches](https://www.newadvent.org/fathers/1701122.htm).
+- St. Augustine, *City of God* XIX.13, [tranquility of order](https://www.newadvent.org/fathers/120119.htm); *Tractate 122 on John*, 7, [two catches](https://www.newadvent.org/fathers/1701122.htm).
 
--   St. Augustine, *Confessions* VIII.5, 8–12, [text](https://www.newadvent.org/fathers/110108.htm); *Grace and Free Will* 31–33, [text](https://www.newadvent.org/fathers/1510.htm).
+- St. Augustine, *Confessions* VIII.5, 8–12, [text](https://www.newadvent.org/fathers/110108.htm); *Grace and Free Will* 31–33, [text](https://www.newadvent.org/fathers/1510.htm).
 
--   St. Augustine, *Expositions*: Psalm 26, 1–3, [text](https://www.newadvent.org/fathers/1801027.htm); 78, 12–13, [text](https://www.newadvent.org/fathers/1801079.htm); 9, 6, 9–10, [text](https://www.newadvent.org/fathers/1801009.htm); 12, 3–6, [text](https://www.newadvent.org/fathers/1801013.htm); 17, 2–3, [text](https://www.newadvent.org/fathers/1801018.htm). Patristic links above rechecked 2026-07-14; exact source roles and quotation/paraphrase use are recorded in `research/scope.md`.
+- St. Augustine, *Expositions*: Psalm 26, 1–3, [text](https://www.newadvent.org/fathers/1801027.htm); 78, 12–13, [text](https://www.newadvent.org/fathers/1801079.htm); 9, 6, 9–10, [text](https://www.newadvent.org/fathers/1801009.htm); 12, 3–6, [text](https://www.newadvent.org/fathers/1801013.htm); 17, 2–3, [text](https://www.newadvent.org/fathers/1801018.htm). Patristic links above rechecked 2026-07-14; exact source roles and quotation/paraphrase use are recorded in `research/scope.md`.
 
--   University of Oxford Archives, [“Guide to University arms”](https://www.bodleian.ox.ac.uk/universityarchives/guides/university-arms), later-sixteenth-century use and psalm source of *Dominus Illuminatio Mea*; Irene Tracey, *Vice-Chancellor’s Oration 2023*, *University of Oxford Gazette*, supplement 1 to no. 5397 (12 Oct. 2023), p. 4, [official PDF](https://gazette.web.ox.ac.uk/sites/default/files/gazette/documents/media/vice-chancellors_oration_2023_-_1_to_no_5397.pdf); institutional reframing and *Domus illuminat nos* pun checked 2026-07-19. Contemporary excerpts kept brief.
+- University of Oxford Archives, [“Guide to University arms”](https://www.bodleian.ox.ac.uk/universityarchives/guides/university-arms), later-sixteenth-century use and psalm source of *Dominus Illuminatio Mea*; Irene Tracey, *Vice-Chancellor’s Oration 2023*, *University of Oxford Gazette*, supplement 1 to no. 5397 (12 Oct. 2023), p. 4, [official PDF](https://gazette.web.ox.ac.uk/sites/default/files/gazette/documents/media/vice-chancellors_oration_2023_-_1_to_no_5397.pdf); institutional reframing and *Domus illuminat nos* pun checked 2026-07-19. Contemporary excerpts kept brief.
 
--   Southern Virginia University, [“Mitt Romney Speaks at Southern Virginia University’s Largest Commencement Ever”](https://news.svu.edu/2013/mitt-romney-speaks-at-southern-virginia-universitys-largest-commencement-ever/) (27 Apr. 2013); official report identifies the Luke quotation and the address’s applications to marriage, family, faith, career, and service; checked 2026-07-19. Protected speech is paraphrased apart from the appointed biblical phrase.
+- Southern Virginia University, [“Mitt Romney Speaks at Southern Virginia University’s Largest Commencement Ever”](https://news.svu.edu/2013/mitt-romney-speaks-at-southern-virginia-universitys-largest-commencement-ever/) (27 Apr. 2013); official report identifies the Luke quotation and the address’s applications to marriage, family, faith, career, and service; checked 2026-07-19. Protected speech is paraphrased apart from the appointed biblical phrase.
 
--   William Lyon Phelps, *Reading the Bible* (New York: Macmillan, 1919), pp. 8–9, [Cornell University / Internet Archive scan](https://commons.wikimedia.org/wiki/File:Reading_the_Bible_(IA_cu31924029280489).pdf); Romans 8:22, the green-apple drawing, and Arthur Hadley’s punchline checked 2026-07-19. The 1919 work is public domain in the United States, and the scan reports no known copyright restrictions.
+- William Lyon Phelps, *Reading the Bible* (New York: Macmillan, 1919), pp. 8–9, [Cornell University / Internet Archive scan](https://commons.wikimedia.org/wiki/File:Reading_the_Bible_(IA_cu31924029280489).pdf); Romans 8:22, the green-apple drawing, and Arthur Hadley’s punchline checked 2026-07-19. The 1919 work is public domain in the United States, and the scan reports no known copyright restrictions.
 
 **Biblical-historical orientation**
 
--   *NABRE*: introductions to [Psalms](https://bible.usccb.org/bible/psalms/0), [Luke](https://bible.usccb.org/bible/luke/0), [Romans](https://bible.usccb.org/bible/romans/0), accessed 2026-07-10; complete contexts and notes for [Psalms 9](https://bible.usccb.org/bible/psalms/9), [13](https://bible.usccb.org/bible/psalms/13), [18](https://bible.usccb.org/bible/psalms/18), [27](https://bible.usccb.org/bible/psalms/27), [79](https://bible.usccb.org/bible/psalms/79), [Luke 5](https://bible.usccb.org/bible/luke/5), and [Romans 8](https://bible.usccb.org/bible/romans/8), rechecked 2026-07-14.
+- *NABRE*: introductions to [Psalms](https://bible.usccb.org/bible/psalms/0), [Luke](https://bible.usccb.org/bible/luke/0), [Romans](https://bible.usccb.org/bible/romans/0), accessed 2026-07-10; complete contexts and notes for [Psalms 9](https://bible.usccb.org/bible/psalms/9), [13](https://bible.usccb.org/bible/psalms/13), [18](https://bible.usccb.org/bible/psalms/18), [27](https://bible.usccb.org/bible/psalms/27), [79](https://bible.usccb.org/bible/psalms/79), [Luke 5](https://bible.usccb.org/bible/luke/5), and [Romans 8](https://bible.usccb.org/bible/romans/8), rechecked 2026-07-14.
 
--   Traditional orientation: New Advent Bible titles for Psalms [9](https://www.newadvent.org/bible/psa009.htm), [12](https://www.newadvent.org/bible/psa012.htm), [17](https://www.newadvent.org/bible/psa017.htm), [26](https://www.newadvent.org/bible/psa026.htm), [78](https://www.newadvent.org/bible/psa078.htm); *Catholic Encyclopedia*, [“Psalms”](https://www.newadvent.org/cathen/12533a.htm), [“King David”](https://www.newadvent.org/cathen/04642b.htm), [“Luke”](https://www.newadvent.org/cathen/09420a.htm), [“Chronology of Jesus”](https://www.newadvent.org/cathen/08377a.htm), [“Genesareth”](https://www.newadvent.org/cathen/06413a.htm); accessed 2026-07-10.
+- Traditional orientation: New Advent Bible titles for Psalms [9](https://www.newadvent.org/bible/psa009.htm), [12](https://www.newadvent.org/bible/psa012.htm), [17](https://www.newadvent.org/bible/psa017.htm), [26](https://www.newadvent.org/bible/psa026.htm), [78](https://www.newadvent.org/bible/psa078.htm); *Catholic Encyclopedia*, [“Psalms”](https://www.newadvent.org/cathen/12533a.htm), [“King David”](https://www.newadvent.org/cathen/04642b.htm), [“Luke”](https://www.newadvent.org/cathen/09420a.htm), [“Chronology of Jesus”](https://www.newadvent.org/cathen/08377a.htm), [“Genesareth”](https://www.newadvent.org/cathen/06413a.htm); accessed 2026-07-10.
 
 **Last revised (UTC):** 2026-07-19T17:00:22Z
 

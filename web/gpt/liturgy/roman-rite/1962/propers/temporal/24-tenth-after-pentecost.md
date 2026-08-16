@@ -97,9 +97,9 @@ The altar intensifies rather than resolves this dependence. The Secret asks God 
 | **From abasement to hope** | Lowered eyes, guarded sight, and a lifted soul become one Godward dependence. | Humility is neither self-hatred nor despair, and trust does not deny distress. |
 | **From reception to perseverance** | Mercy sets the Church in motion and sacramental renewal sustains it. | Acceptance and restoration remain divine acts, not achieved spiritual closure. |
 
-<span id="triptych:brief-synthesis:end" label="triptych:brief-synthesis:end"></span>
+<span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
-<span id="triptych:brief-synthesis:next" label="triptych:brief-synthesis:next"></span>
+<span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
 
 ## The Propers: Detailed Commentary
 
@@ -417,41 +417,41 @@ The result is ecclesial as well as personal. The common-benefit criterion, Zion�
 
 **Sources**
 
--   *Missale Romanum*, editio typica (Vatican City, 1962), *Dominica Decima post Pentecosten*, printed pp. 389–390, [facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf); exact collation and checksum in `propers/verified.md`.
+- *Missale Romanum*, editio typica (Vatican City, 1962), *Dominica Decima post Pentecosten*, printed pp. 389–390, [facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf); exact collation and checksum in `propers/verified.md`.
 
--   *The Roman Missal, Translated into the English Language for the Use of the Laity* (Philadelphia: Eugene Cummiskey, 1861), Tenth Sunday after Pentecost, pp. 416–418; Collect, Secret, and Postcommunion visually checked. Scriptural English: public-domain Douay–Rheims/Challoner registered in the repository source library.
+- *The Roman Missal, Translated into the English Language for the Use of the Laity* (Philadelphia: Eugene Cummiskey, 1861), Tenth Sunday after Pentecost, pp. 416–418; Collect, Secret, and Postcommunion visually checked. Scriptural English: public-domain Douay–Rheims/Challoner registered in the repository source library.
 
--   Holy Scripture: Psalms 16 (17), 24 (25), 50 (51), 54 (55), and 64 (65); Luke 18; 1 Corinthians 12–14. *NABRE* [Psalms](https://bible.usccb.org/bible/psalms/0), [Luke](https://bible.usccb.org/bible/luke/0), and [First Corinthians](https://bible.usccb.org/bible/1corinthians/0) introductions, texts, and notes; protected modern text is summarized.
+- Holy Scripture: Psalms 16 (17), 24 (25), 50 (51), 54 (55), and 64 (65); Luke 18; 1 Corinthians 12–14. *NABRE* [Psalms](https://bible.usccb.org/bible/psalms/0), [Luke](https://bible.usccb.org/bible/luke/0), and [First Corinthians](https://bible.usccb.org/bible/1corinthians/0) introductions, texts, and notes; protected modern text is summarized.
 
--   H. A. Wilson, ed., [*The Gelasian Sacramentary*](https://archive.org/details/gelasiansacrame00gelagoog) (Oxford, 1894), Book III, sections V–VI, pp. 227–228; Leo La Fontaine, [*The Historical Deveopment \[sic\] of the Postcommunion Collects*](https://scholar.csl.edu/stm/370/) (1967), p. 59, for the bounded modern transmission synthesis. Deshusses’s SupG numbering is reported through checked transmission records, not represented as direct inspection of his protected edition.
+- H. A. Wilson, ed., [*The Gelasian Sacramentary*](https://archive.org/details/gelasiansacrame00gelagoog) (Oxford, 1894), Book III, sections V–VI, pp. 227–228; Leo La Fontaine, [*The Historical Deveopment \[sic\] of the Postcommunion Collects*](https://scholar.csl.edu/stm/370/) (1967), p. 59, for the bounded modern transmission synthesis. Deshusses’s SupG numbering is reported through checked transmission records, not represented as direct inspection of his protected edition.
 
--   St. Augustine, [*Exposition on Psalm 55*](https://www.newadvent.org/fathers/1801055.htm), §§16–19, 23–24; [Psalm 17](https://www.newadvent.org/fathers/1801017.htm), §§2, 8; [Psalm 65](https://www.newadvent.org/fathers/1801065.htm), §§3–5; [Psalm 25](https://www.newadvent.org/fathers/1801025.htm), §§1–11, 15–22; [Psalm 51](https://www.newadvent.org/fathers/1801051.htm), §§21–23.
+- St. Augustine, [*Exposition on Psalm 55*](https://www.newadvent.org/fathers/1801055.htm), §§16–19, 23–24; [Psalm 17](https://www.newadvent.org/fathers/1801017.htm), §§2, 8; [Psalm 65](https://www.newadvent.org/fathers/1801065.htm), §§3–5; [Psalm 25](https://www.newadvent.org/fathers/1801025.htm), §§1–11, 15–22; [Psalm 51](https://www.newadvent.org/fathers/1801051.htm), §§21–23.
 
--   Theodoret of Cyrus, *Interpretatio in Psalmos*, PG 80, cols. 968–969, 1033–1037, 1252–1256, 1277–1284, and 1345–1349; direct Greek loci checked.
+- Theodoret of Cyrus, *Interpretatio in Psalmos*, PG 80, cols. 968–969, 1033–1037, 1252–1256, 1277–1284, and 1345–1349; direct Greek loci checked.
 
--   St. John Chrysostom, [*Homily 29 on First Corinthians*](https://www.newadvent.org/fathers/220129.htm); [*Homily 3 on the Statues*](https://www.newadvent.org/fathers/190103.htm), §§8, 13.
+- St. John Chrysostom, [*Homily 29 on First Corinthians*](https://www.newadvent.org/fathers/220129.htm); [*Homily 3 on the Statues*](https://www.newadvent.org/fathers/190103.htm), §§8, 13.
 
--   Ambrosiaster, [*Commentary on First Corinthians*](https://la.wikisource.org/wiki/Commentaria_in_Epistolam_ad_Corinthios_Primam_(Ambrosiaster)) 12:1–11, PL 17, cols. 150–152; St. Basil, [*On the Holy Spirit*](https://www.newadvent.org/fathers/3203.htm) 16.37.
+- Ambrosiaster, [*Commentary on First Corinthians*](https://la.wikisource.org/wiki/Commentaria_in_Epistolam_ad_Corinthios_Primam_(Ambrosiaster)) 12:1–11, PL 17, cols. 150–152; St. Basil, [*On the Holy Spirit*](https://www.newadvent.org/fathers/3203.htm) 16.37.
 
--   St. Thomas Aquinas, [*Super I ad Corinthios* XII](https://www.corpusthomisticum.org/c1r.html); [*Summa theologiae* II–II, q. 30, a. 4, ad 3](https://aquinas.cc/la/en/~ST.II-II.Q30.A4); *Super Sententias* IV, d. 46, q. 2, a. 1, qc. 3, ad 1; *Super Psalmos* 16, nos. 1, 3; 24, nos. 1–3; 50, no. 87290.
+- St. Thomas Aquinas, [*Super I ad Corinthios* XII](https://www.corpusthomisticum.org/c1r.html); [*Summa theologiae* II–II, q. 30, a. 4, ad 3](https://aquinas.cc/la/en/~ST.II-II.Q30.A4); *Super Sententias* IV, d. 46, q. 2, a. 1, qc. 3, ad 1; *Super Psalmos* 16, nos. 1, 3; 24, nos. 1–3; 50, no. 87290.
 
--   Nikolaus Gihr, [*The Holy Sacrifice of the Mass*](https://archive.org/details/TheHolySacrificeOfTheMass), 2nd ed. (St. Louis: B. Herder, 1902), p. 134 n. 2; direct reception of the Secret.
+- Nikolaus Gihr, [*The Holy Sacrifice of the Mass*](https://archive.org/details/TheHolySacrificeOfTheMass), 2nd ed. (St. Louis: B. Herder, 1902), p. 134 n. 2; direct reception of the Secret.
 
--   Prosper Guéranger, [*The Liturgical Year*](https://archive.org/details/V11TheLiturgicalYear/page/n303/mode/2up), vol. XI (Dublin: James Duffy, 1900), p. 271; Ildefonso Schuster, [*Liber Sacramentorum*](https://archive.org/details/LiberSacramentorum), vol. III (London, 1927), p. 123; Miguel Nicolau, [“La comunión y la vida de la gracia,”](https://repositorio.sandamaso.es/bitstream/123456789/10164/1/RET-58-1%20%282%29.pdf) *Revista Española de Teología* 18 (1958): 35–59, at 42; direct reception of the Postcommunion.
+- Prosper Guéranger, [*The Liturgical Year*](https://archive.org/details/V11TheLiturgicalYear/page/n303/mode/2up), vol. XI (Dublin: James Duffy, 1900), p. 271; Ildefonso Schuster, [*Liber Sacramentorum*](https://archive.org/details/LiberSacramentorum), vol. III (London, 1927), p. 123; Miguel Nicolau, [“La comunión y la vida de la gracia,”](https://repositorio.sandamaso.es/bitstream/123456789/10164/1/RET-58-1%20%282%29.pdf) *Revista Española de Teología* 18 (1958): 35–59, at 42; direct reception of the Postcommunion.
 
--   Leo La Fontaine, [*The Historical Deveopment \[sic\] of the Postcommunion Collects*](https://scholar.csl.edu/stm/370/) (S.T.M. thesis, Concordia Seminary, 1967), p. 59; transmission history.
+- Leo La Fontaine, [*The Historical Deveopment \[sic\] of the Postcommunion Collects*](https://scholar.csl.edu/stm/370/) (S.T.M. thesis, Concordia Seminary, 1967), p. 59; transmission history.
 
--   St. Augustine, [*Sermon 115*](https://www.augustinus.it/latino/discorsi/discorso_150_testo.htm), §§2–3 (older English New Testament-series [Sermon 65](https://www.newadvent.org/fathers/160365.htm)); St. Cyril of Alexandria, [*Commentary on Luke*, Sermon 120](https://www.tertullian.org/fathers/cyril_on_luke_11_sermons_110_123.htm).
+- St. Augustine, [*Sermon 115*](https://www.augustinus.it/latino/discorsi/discorso_150_testo.htm), §§2–3 (older English New Testament-series [Sermon 65](https://www.newadvent.org/fathers/160365.htm)); St. Cyril of Alexandria, [*Commentary on Luke*, Sermon 120](https://www.tertullian.org/fathers/cyril_on_luke_11_sermons_110_123.htm).
 
--   St. Anthony of Padua, [*Eleventh Sunday after Pentecost*](https://www.santantonio.org/en/node/798), §§3–14; its Sunday numbering and accompanying propers differ from the 1962 formulary.
+- St. Anthony of Padua, [*Eleventh Sunday after Pentecost*](https://www.santantonio.org/en/node/798), §§3–14; its Sunday numbering and accompanying propers differ from the 1962 formulary.
 
--   Greek Orthodox Archdiocese, [Triodion orientation](https://www.goarch.org/triodion); Orthodox Church in America, [Sunday of the Publican and Pharisee](https://www.oca.org/liturgics/outlines/publican-and-the-pharisee-with-leavetaking-of-the-meeting-of-the-lord); distinct Byzantine reception.
+- Greek Orthodox Archdiocese, [Triodion orientation](https://www.goarch.org/triodion); Orthodox Church in America, [Sunday of the Publican and Pharisee](https://www.oca.org/liturgics/outlines/publican-and-the-pharisee-with-leavetaking-of-the-meeting-of-the-lord); distinct Byzantine reception.
 
--   Second Vatican Council, [*Lumen gentium* 12](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html); [*Apostolicam actuositatem* 3](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651118_apostolicam-actuositatem_en.html); Pope Francis, [*Misericordiae vultus* 6](https://www.vatican.va/content/francesco/en/bulls/documents/papa-francesco_bolla_20150411_misericordiae-vultus.html).
+- Second Vatican Council, [*Lumen gentium* 12](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html); [*Apostolicam actuositatem* 3](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651118_apostolicam-actuositatem_en.html); Pope Francis, [*Misericordiae vultus* 6](https://www.vatican.va/content/francesco/en/bulls/documents/papa-francesco_bolla_20150411_misericordiae-vultus.html).
 
--   Peter J. Green, [“Diversities of Gifts, but the Same Spirit,”](https://doi.org/10.1046/j.1467-9884.2003.02060.x) *JRSS Series D* 52.4 (2003): 423–438; Robert Burns, [“Holy Willie’s Prayer,”](https://www.gutenberg.org/ebooks/18500) composed 1785, in James Cunningham, ed., *The Complete Works of Robert Burns*.
+- Peter J. Green, [“Diversities of Gifts, but the Same Spirit,”](https://doi.org/10.1046/j.1467-9884.2003.02060.x) *JRSS Series D* 52.4 (2003): 423–438; Robert Burns, [“Holy Willie’s Prayer,”](https://www.gutenberg.org/ebooks/18500) composed 1785, in James Cunningham, ed., *The Complete Works of Robert Burns*.
 
--   Martin Luther King Jr., [“Pride Versus Humility: The Parable of the Pharisee and the Publican,”](https://kinginstitute.stanford.edu/king-papers/documents/pride-versus-humility-parable-pharisee-and-publican-sermon-dexter-avenue) Dexter Avenue sermon manuscript, probably 25 September 1955.
+- Martin Luther King Jr., [“Pride Versus Humility: The Parable of the Pharisee and the Publican,”](https://kinginstitute.stanford.edu/king-papers/documents/pride-versus-humility-parable-pharisee-and-publican-sermon-dexter-avenue) Dexter Avenue sermon manuscript, probably 25 September 1955.
 
 **Last revised (UTC):** 2026-07-29T20:21:55Z
 

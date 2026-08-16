@@ -1,0 +1,84 @@
+% Claude Ark of the Covenant study: leaf-local typesetting primitives. This
+% file owns only presentation. Every doctrinal, historical, and evidentiary
+% judgment remains in the section files and research records.
+
+\usepackage{endnotes}
+% Long archival URLs in the references must break freely rather than
+% overflowing the measure.
+\usepackage{xurl}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2.2em}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% Work titles and transliterated Hebrew, Greek, or Latin technical terms are
+% set through semantic commands so a later style change never requires editing
+% the prose.
+\newcommand{\work}[1]{\textit{#1}}
+\newcommand{\term}[1]{\textit{#1}}
+
+% The governing thesis is substantive content and may open the body.
+\newcommand{\arkthesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+% Witness block: a primary text quoted from one identified witness, named in
+% the frame title. The framed border marks quoted source text that is not
+% project-owned expression.
+\newenvironment{witnessbox}[1]{%
+  \begin{massbox}{Witness --- #1}}{\end{massbox}}
+
+% Labeled-synthesis block: a reading the project proposes or reports as
+% synthesis rather than as attested exegesis, kept visually distinct so the
+% evidence boundary is structural, not only verbal.
+\newenvironment{synthesisbox}{%
+  \begin{massbox}{Source-grounded synthesis --- the project's reading}}{\end{massbox}}
+
+% Endnotes carry citations and subordinate evidence detail; the heading joins
+% the table of contents as an ordinary numbered section.
+\renewcommand{\enoteheading}{\section{Notes}}
+\renewcommand{\enoteformat}{%
+  \noindent\footnotesize\makebox[1.8em][l]{\theenmark.}\hangindent=1.8em}
+
+% Hand-drawn figure program. All figures are monochrome line drawings in a
+% deliberate pencil-sketch register: wobbled strokes via path morphing, light
+% gray washes, no photographic pretension. The random-steps decoration is
+% seeded once with a fixed value so unchanged sources rebuild to identical
+% bytes; do not remove the seed.
+\usetikzlibrary{decorations.pathmorphing}
+\pgfmathsetseed{19620815}
+\tikzset{
+  sketch/.style={draw=black, line width=0.55pt, decorate,
+    decoration={random steps, segment length=6pt, amplitude=0.35pt}},
+  sketchbold/.style={draw=black, line width=0.8pt, decorate,
+    decoration={random steps, segment length=6pt, amplitude=0.4pt}},
+  sketchthin/.style={draw=black, line width=0.35pt, decorate,
+    decoration={random steps, segment length=5pt, amplitude=0.3pt}},
+  sketchwash/.style={fill=black!7},
+  sketchdark/.style={fill=black!18},
+  slabel/.style={font=\footnotesize, inner sep=1.5pt, align=center},
+  stiny/.style={font=\scriptsize, inner sep=1pt, align=center},
+  sroute/.style={draw=black, line width=0.7pt, dash pattern=on 4pt off 2.5pt,
+    decorate, decoration={random steps, segment length=7pt, amplitude=0.45pt},
+    -{Stealth[length=2.4mm]}},
+  slink/.style={draw=black, line width=0.4pt, dash pattern=on 1.6pt off 1.8pt,
+    {Stealth[length=1.6mm]}-{Stealth[length=1.6mm]}},
+}
+
+% A figure block: centered drawing with a numbered, self-identifying caption.
+% Kept off the float mechanism so figures stay exactly where the argument
+% needs them; \sectionguard-style spacing is handled by the environment.
+\newcounter{sketchfigure}
+\newenvironment{sketchfig}{%
+  \par\medskip\begin{center}}{%
+  \end{center}\medskip\par}
+\newcommand{\sketchcaption}[1]{%
+  \par\vspace{2pt}
+  \begin{minipage}{0.92\linewidth}
+  \refstepcounter{sketchfigure}%
+  \footnotesize\textbf{Drawing \thesketchfigure.} #1\par
+  \end{minipage}}

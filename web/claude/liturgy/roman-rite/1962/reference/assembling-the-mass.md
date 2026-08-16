@@ -36,11 +36,11 @@ Two words that look interchangeable are not. **Occurrence** is two or more Offi
 
 Three further cautions belong here rather than in an appendix, because each one changes an answer.
 
--   **Day class, feast class and Mass class are three scales.** Days are of the first, second, third or fourth class (RG 8). Feasts are of the first, second or third class only (RG 36); there is no fourth-class feast. Votive Masses and Masses of the dead have their own four-class systems (RGMR 325, RGMR 392) whose numbers name the days on which they are *allowed*, not the dignity they possess. A “second-class votive Mass” is not a second-class day.
+- **Day class, feast class and Mass class are three scales.** Days are of the first, second, third or fourth class (RG 8). Feasts are of the first, second or third class only (RG 36); there is no fourth-class feast. Votive Masses and Masses of the dead have their own four-class systems (RGMR 325, RGMR 392) whose numbers name the days on which they are *allowed*, not the dignity they possess. A “second-class votive Mass” is not a second-class day.
 
--   **A calendar is a place, not a book.** RGMR 274 makes the Mass follow the calendar of the church or oratory where it is said, or of the place, or of the celebrating priest, or of the universal Church, according to the cases set out in RGMR 275–RGMR 284. Two priests at two altars in the same town can owe two different Masses on the same morning, lawfully.
+- **A calendar is a place, not a book.** RGMR 274 makes the Mass follow the calendar of the church or oratory where it is said, or of the place, or of the celebrating priest, or of the universal Church, according to the cases set out in RGMR 275–RGMR 284. Two priests at two altars in the same town can owe two different Masses on the same morning, lawfully.
 
--   **This book cannot supply your particular calendar.** Every result below that depends on a national, diocesan, religious, titular, patronal or dedication feast is stated as a conditional. The approved proper has to be produced and read before the conditional becomes an answer, and a competent Ordo remains the practical authority for a given year and place.
+- **This book cannot supply your particular calendar.** Every result below that depends on a national, diocesan, religious, titular, patronal or dedication feast is stated as a conditional. The approved proper has to be produced and read before the conditional becomes an answer, and a competent Ordo remains the practical authority for a given year and place.
 
 ## Decision one: which liturgical day is it?
 
@@ -169,11 +169,11 @@ RG 91 introduces it in a sentence that forecloses argument: “Praecedentia die
 
 Three features of the table are load-bearing and easy to miss.
 
--   **It ranks days, not saints.** Rows 6, 7, 15, 18, 22, 25, 27 and 28 contain no feast at all. A saint whose feast is third class in the universal calendar sits at row 24, below the Lenten ferias at row 22 and below any third-class feast a particular calendar owns at row 23 — including a particular calendar’s indulted feasts.
+- **It ranks days, not saints.** Rows 6, 7, 15, 18, 22, 25, 27 and 28 contain no feast at all. A saint whose feast is third class in the universal calendar sits at row 24, below the Lenten ferias at row 22 and below any third-class feast a particular calendar owns at row 23 — including a particular calendar’s indulted feasts.
 
--   **Universal beats particular within a class, except at third class.** Rows 11 and 12 put universal first-class feasts above proper ones; rows 16 and 19 do the same at second class. At third class the order reverses: row 23 (particular) precedes row 24 (universal). The code does not explain the inversion; it simply prints it, and the practical consequence is that a diocesan third-class feast displaces a universal one on the same date.
+- **Universal beats particular within a class, except at third class.** Rows 11 and 12 put universal first-class feasts above proper ones; rows 16 and 19 do the same at second class. At third class the order reverses: row 23 (particular) precedes row 24 (universal). The code does not explain the inversion; it simply prints it, and the practical consequence is that a diocesan third-class feast displaces a universal one on the same date.
 
--   **Row 8 contains a defeat clause.** All Souls is a first-class liturgical day placed above the vigil of Pentecost and above every first-class feast of the universal Church, yet the row itself adds “quae tamen locum cedit dominicae occurrenti.” RG 16 b says the same thing from the Sunday’s side. This is the only place in the table where a row is qualified in this way, and it drives Case 3 below.
+- **Row 8 contains a defeat clause.** All Souls is a first-class liturgical day placed above the vigil of Pentecost and above every first-class feast of the universal Church, yet the row itself adds “quae tamen locum cedit dominicae occurrenti.” RG 16 b says the same thing from the Sunday’s side. This is the only place in the table where a row is qualified in this way, and it drives Case 3 below.
 
 ### Occurrence: accidental and perpetual
 
@@ -410,11 +410,11 @@ Only now open the book. What follows is the whole variable surface of a Mass, in
 
 Three books’ worth of material meet in one Mass, and the code is explicit about the seams.
 
--   **The Ordinary and the Canon** supply everything invariable, and the *Ordo Missae* itself carries the conditional directions — the alternative Gospel formula at the end, the two forms of the dismissal, the alternative to the blessing.
+- **The Ordinary and the Canon** supply everything invariable, and the *Ordo Missae* itself carries the conditional directions — the alternative Gospel formula at the end, the two forms of the dismissal, the alternative to the blessing.
 
--   **The Proper** supplies the formulary, either from the Proper of the Season or from the Proper of Saints. A saint’s entry in the Proper of Saints is frequently not a complete Mass: it is a pointer to a Common plus whatever is genuinely proper. St Patrick’s entry on 17 March is typical — “Missa *Statuit*, de Communi Confessoris Pontificis I loco, praeter orationem sequentem,” followed by his own collect, secret and postcommunion. So the Mass is the Common’s chants and readings with a proper set of orations.
+- **The Proper** supplies the formulary, either from the Proper of the Season or from the Proper of Saints. A saint’s entry in the Proper of Saints is frequently not a complete Mass: it is a pointer to a Common plus whatever is genuinely proper. St Patrick’s entry on 17 March is typical — “Missa *Statuit*, de Communi Confessoris Pontificis I loco, praeter orationem sequentem,” followed by his own collect, secret and postcommunion. So the Mass is the Common’s chants and readings with a proper set of orations.
 
--   **The Common** supplies the rest. When a feast is not in the Proper of Saints at all, the whole Mass is taken from the Common (RGMR 305 b), and where a Common offers several formularies the choice is the celebrant’s. In every Common, the epistles and gospels printed either within the individual Masses or at the end of the whole Common “sumi possunt in qualibet Missa de eodem Communi” — they are interchangeable within that Common (RGMR 305 b). For votive Masses of Our Lady, the Angels and the saints the same route is prescribed by RGMR 315, with a further instruction: the parts that vary with the season and are missing from the formulary “sumuntur e Communi festorum B. Mariae Virg.” for Marian votives (RGMR 309), and in every case “serventur … rubricae de mutandis nonnullis partibus vel verbis, iuxta anni tempora et iuxta qualitatem mere votivam huius Missae.”
+- **The Common** supplies the rest. When a feast is not in the Proper of Saints at all, the whole Mass is taken from the Common (RGMR 305 b), and where a Common offers several formularies the choice is the celebrant’s. In every Common, the epistles and gospels printed either within the individual Masses or at the end of the whole Common “sumi possunt in qualibet Missa de eodem Communi” — they are interchangeable within that Common (RGMR 305 b). For votive Masses of Our Lady, the Angels and the saints the same route is prescribed by RGMR 315, with a further instruction: the parts that vary with the season and are missing from the formulary “sumuntur e Communi festorum B. Mariae Virg.” for Marian votives (RGMR 309), and in every case “serventur … rubricae de mutandis nonnullis partibus vel verbis, iuxta anni tempora et iuxta qualitatem mere votivam huius Missae.”
 
 The Missal performs those substitutions in print wherever the season demands it. Its Masses carry directions such as “Post Septuagesimam, omissis Alleluia et versu sequenti, dicitur Tractus …” and “Tempore paschali antiphonae ad Introitum et ad Offertorium sumuntur ex Missa *Protexisti* …” Where the book supplies no such direction for a season a Mass was never expected to meet — a votive of the Sacred Heart between Septuagesima and Easter, for instance, whose feast Mass prints a Gradual and Alleluia and no Tract — the general rubrics do not fill the gap, and the slot is genuinely open. Do not invent a Tract; consult the Ordo.
 
@@ -535,13 +535,13 @@ The 1962 Missal prints sixteen prefaces, and RGMR 484–RGMR 499 assign each o
 
 Four consequences are worth stating plainly, because each of them contradicts a common expectation.
 
--   **The Nativity Preface is the only one with overriding force.** RGMR 484 b alone says “etiam in Missis quae secus praefationem propriam haberent.” Every other seasonal assignment is expressed as applying to Masses “quae praefatione propria carent.” Inside the Christmas octave the Nativity Preface therefore displaces, for instance, the Preface of the Apostles on 27 December, but does not displace a Preface of a divine mystery or Person.
+- **The Nativity Preface is the only one with overriding force.** RGMR 484 b alone says “etiam in Missis quae secus praefationem propriam haberent.” Every other seasonal assignment is expressed as applying to Masses “quae praefatione propria carent.” Inside the Christmas octave the Nativity Preface therefore displaces, for instance, the Preface of the Apostles on 27 December, but does not displace a Preface of a divine mystery or Person.
 
--   **Weekdays in Advent take the Common Preface.** No rubric assigns any Preface *de Tempore* for Advent as a season; RGMR 494 b assigns Trinity to the *Sundays* of Advent only. A ferial Mass on a Tuesday in Advent, using the previous Sunday’s formulary under RGMR 299, therefore takes the Common Preface even though the Mass is verbally the Sunday’s. The same holds for the Septuagesima weekdays and for the weekdays of the year outside the assigned stretches.
+- **Weekdays in Advent take the Common Preface.** No rubric assigns any Preface *de Tempore* for Advent as a season; RGMR 494 b assigns Trinity to the *Sundays* of Advent only. A ferial Mass on a Tuesday in Advent, using the previous Sunday’s formulary under RGMR 299, therefore takes the Common Preface even though the Mass is verbally the Sunday’s. The same holds for the Septuagesima weekdays and for the weekdays of the year outside the assigned stretches.
 
--   **A saint’s Mass in Lent or Passiontide takes the seasonal Preface.** RGMR 486 b and RGMR 487 b apply to “ceteris Missis quae celebrantur eodem tempore, et praefatione propria carent” and “omnibus Missis … quae praefatione propria carent” respectively. A first-class feast of a Confessor Bishop on the Wednesday of Passion Week, taken from the Common, has no proper Preface — so it takes the Preface of the Holy Cross.
+- **A saint’s Mass in Lent or Passiontide takes the seasonal Preface.** RGMR 486 b and RGMR 487 b apply to “ceteris Missis quae celebrantur eodem tempore, et praefatione propria carent” and “omnibus Missis … quae praefatione propria carent” respectively. A first-class feast of a Confessor Bishop on the Wednesday of Passion Week, taken from the Common, has no proper Preface — so it takes the Preface of the Holy Cross.
 
--   **The Preface of the season is read off the calendar, not off the formulary.** Steps one and three depend on the Mass; step two depends only on the date. Establish the date’s seasonal Preface before you decide which formulary you are saying, and the slot fills itself.
+- **The Preface of the season is read off the calendar, not off the formulary.** Steps one and three depend on the Mass; step two depends only on the date. Establish the date’s seasonal Preface before you decide which formulary you are saying, and the slot fills itself.
 
 > **Contested: whether the Trinity Preface reaches a Mass that is not of the Sunday**
 >
@@ -899,9 +899,9 @@ Four questions in this book’s territory are genuinely open on the text. Two mo
 
 Two further open questions are argued at the place where a reader meets them, and are only listed here so that the inventory is complete.
 
--   **Whether the Preface of the Trinity reaches a Mass that is not of the Sunday** — RGMR 494 b’s “in dominicis II classis” against the neighbouring rubrics’ “in Missis quae celebrantur eodem tempore.” Section 7.
+- **Whether the Preface of the Trinity reaches a Mass that is not of the Sunday** — RGMR 494 b’s “in dominicis II classis” against the neighbouring rubrics’ “in Missis quae celebrantur eodem tempore.” Section 7.
 
--   **The year with only twenty-three Sundays after Pentecost** — RG 18 does not expressly legislate that shortfall. The calendar computation profile requires a fail-closed result pending a competent dated Ordo.
+- **The year with only twenty-three Sundays after Pentecost** — RG 18 does not expressly legislate that shortfall. The calendar computation profile requires a fail-closed result pending a competent dated Ordo.
 
 ### Closed by evidence: the Purification is a feast of the Lord
 
@@ -982,27 +982,27 @@ Latin is quoted from the controlling witness. Ligatured æ and œ are rendered *
 
 Three grades of claim are used and are visible in the prose:
 
--   **Direct rule** — what a numbered rubric says, quoted or closely restated at its own locus.
+- **Direct rule** — what a numbered rubric says, quoted or closely restated at its own locus.
 
--   **Necessary inference** — a result that follows from two or more direct rules and is marked as an inference where it is not obvious. The reach of RGMR 422’s octave when All Souls has been transferred is the one place a worked case rests on an inference, and it says so.
+- **Necessary inference** — a result that follows from two or more direct rules and is marked as an inference where it is not obvious. The reach of RGMR 422’s octave when All Souls has been transferred is the one place a worked case rests on an inference, and it says so.
 
--   **Contested** — a question the rubrics do not settle. These are collected in Section 10 with both readings at full strength, and no answer is asserted where we do not think the text supplies one.
+- **Contested** — a question the rubrics do not settle. These are collected in Section 10 with both readings at full strength, and no answer is asserted where we do not think the text supplies one.
 
 Civil dates were computed from the Gregorian Easter and cross-checked against the code’s own date rules — RG 18, RG 17 d, RG 20, RG 80 — before being used. Each worked case states the anchor dates it depends on so the arithmetic can be reproduced. No year was taken from an Ordo, and no result in this book has been checked against a published Ordo for the year it names.
 
 ### Bounds and known gaps
 
--   **The Office is out of scope.** Parts one and three of the code are treated; part two, *Rubricae generales Breviarii Romani*, is used only for RGBR 237–RGBR 238, because RGMR 431 a depends on it. Nothing here should be used to arrange the Divine Office.
+- **The Office is out of scope.** Parts one and three of the code are treated; part two, *Rubricae generales Breviarii Romani*, is used only for RGBR 237–RGBR 238, because RGMR 431 a depends on it. Nothing here should be used to arrange the Divine Office.
 
--   **Ceremonial is out of scope.** The *Ritus servandus* is used for what it says about the text and its conditions, not for how ministers move. Solemn Mass, pontifical Mass, ordination, funeral, marriage, procession and exposition ceremonies belong to their own books.
+- **Ceremonial is out of scope.** The *Ritus servandus* is used for what it says about the text and its conditions, not for how ministers move. Solemn Mass, pontifical Mass, ordination, funeral, marriage, procession and exposition ceremonies belong to their own books.
 
--   **Holy Week is treated only at its edges.** The restored Order of Holy Week is presupposed as the 1962 Missal prints it; its own extensive rubrics are cited where a general rule points at them and are not expounded.
+- **Holy Week is treated only at its edges.** The restored Order of Holy Week is presupposed as the 1962 Missal prints it; its own extensive rubrics are cited where a general rule points at them and are not expounded.
 
--   **No formulary is reproduced.** This work explains where text comes from. It is not a hand missal and prints no Mass.
+- **No formulary is reproduced.** This work explains where text comes from. It is not a hand missal and prints no Mass.
 
--   **Not collated against an Ordo.** Every worked case is a derivation. An Ordo is compiled by a competent authority for a diocese or institute and resolves locally the questions Section 10 leaves open.
+- **Not collated against an Ordo.** Every worked case is a derivation. An Ordo is compiled by a competent authority for a diocese or institute and resolves locally the questions Section 10 leaves open.
 
--   **Canon law is not entered.** The obligation of hearing Mass, the application *pro populo*, marriage law and funeral law are named only where a rubric points at them.
+- **Canon law is not entered.** The obligation of hearing Mass, the application *pro populo*, marriage law and funeral law are named only where a rubric points at them.
 
 ### Rights
 
@@ -1097,27 +1097,27 @@ This table lists the decisions this book teaches and the exact rubric that answe
 
 ### Controlling liturgical books and norms
 
--   *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica. Vatican City: Typis Polyglottis Vaticanis, 1962. Front matter: *Rubricae generales* (nn. 1–137, printed pp. XII–XX); *Rubricae generales Missalis Romani* (nn. 269–530, pp. XXI–XXXVI); *Ritus servandus in celebratione Missae*; *De defectibus*. Body: *Ordo Missae*; *Proprium de Tempore*; *Proprium Sanctorum*; *Commune Sanctorum*; *Missae votivae*; *Missae defunctorum*; *Praefationes*. Read in the Church Music Association of America facsimile of that edition. *Controlling witness.*
+- *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica. Vatican City: Typis Polyglottis Vaticanis, 1962. Front matter: *Rubricae generales* (nn. 1–137, printed pp. XII–XX); *Rubricae generales Missalis Romani* (nn. 269–530, pp. XXI–XXXVI); *Ritus servandus in celebratione Missae*; *De defectibus*. Body: *Ordo Missae*; *Proprium de Tempore*; *Proprium Sanctorum*; *Commune Sanctorum*; *Missae votivae*; *Missae defunctorum*; *Praefationes*. Read in the Church Music Association of America facsimile of that edition. *Controlling witness.*
 
--   John XXIII, *Litterae apostolicae motu proprio datae* “*Rubricarum instructum*”, 25 July 1960. *Acta Apostolicae Sedis* 52 (1960) 593–595. *Approving act; establishes the three-part division and the 1 January 1961 effective date.*
+- John XXIII, *Litterae apostolicae motu proprio datae* “*Rubricarum instructum*”, 25 July 1960. *Acta Apostolicae Sedis* 52 (1960) 593–595. *Approving act; establishes the three-part division and the 1 January 1961 effective date.*
 
--   Sacred Congregation of Rites, *Decretum generale quo novus rubricarum Breviarii ac Missalis Romani codex promulgatur*, 26 July 1960. *Acta Apostolicae Sedis* 52 (1960) 596. *Promulgating decree.*
+- Sacred Congregation of Rites, *Decretum generale quo novus rubricarum Breviarii ac Missalis Romani codex promulgatur*, 26 July 1960. *Acta Apostolicae Sedis* 52 (1960) 596. *Promulgating decree.*
 
--   *Rubricae Breviarii et Missalis Romani*. *Acta Apostolicae Sedis* 52 (1960) 597–705. *The promulgated text of the code, in three parts, with the enumerations of days and the tables of occurrence and concurrence that the Missal does not reprint. Used here as textual control and as the source of RGBR 237–RGBR 238.*
+- *Rubricae Breviarii et Missalis Romani*. *Acta Apostolicae Sedis* 52 (1960) 597–705. *The promulgated text of the code, in three parts, with the enumerations of days and the tables of occurrence and concurrence that the Missal does not reprint. Used here as textual control and as the source of RGBR 237–RGBR 238.*
 
--   *Variationes in Breviario et Missali Romano ad normam novi codicis rubricarum*. *Acta Apostolicae Sedis* 52 (1960) 706–740. *Used only for the abolition of the seasonal orations (cap. IV, n. 18) and of the Suffrage and commemoration of the Cross (cap. II, n. 13).*
+- *Variationes in Breviario et Missali Romano ad normam novi codicis rubricarum*. *Acta Apostolicae Sedis* 52 (1960) 706–740. *Used only for the abolition of the seasonal orations (cap. IV, n. 18) and of the Suffrage and commemoration of the Cross (cap. II, n. 13).*
 
--   Sacred Congregation of the Council, *Decretum: Novus index statuitur dierum festorum, quibus inest obligatio litandi Sacrum pro populo*, 3 December 1960. *Acta Apostolicae Sedis* 52 (1960) 985–986. *Cited once, for the contemporaneous official list of *festa de praecepto* for the *pro populo* obligation under cann. 339 §1 and 466 §1 of the 1917 Code. Not a rubrical definition.*
+- Sacred Congregation of the Council, *Decretum: Novus index statuitur dierum festorum, quibus inest obligatio litandi Sacrum pro populo*, 3 December 1960. *Acta Apostolicae Sedis* 52 (1960) 985–986. *Cited once, for the contemporaneous official list of *festa de praecepto* for the *pro populo* obligation under cann. 339 §1 and 466 §1 of the 1917 Code. Not a rubrical definition.*
 
 ### Identified English witnesses
 
--   *The Roman Missal translated into the English language for the use of the laity*, first revised edition. Philadelphia: Eugene Cummiskey, 1861. Published with the approbation of the Bishop of Philadelphia; the translator is not named. *Quoted once, for the collect of the Fifth Sunday after Epiphany. A pre-1955 witness: its rubrics, seasonal second and third orations and Holy Week are not those of the 1962 book, and none of them is used here.*
+- *The Roman Missal translated into the English language for the use of the laity*, first revised edition. Philadelphia: Eugene Cummiskey, 1861. Published with the approbation of the Bishop of Philadelphia; the translator is not named. *Quoted once, for the collect of the Fifth Sunday after Epiphany. A pre-1955 witness: its rubrics, seasonal second and third orations and Holy Week are not those of the 1962 book, and none of them is used here.*
 
--   *The Holy Bible*, Douay-Rheims, in Bishop Richard Challoner’s revision. *Quoted once, for John 1, 1–3 and 14. An identified historical English translation of the Vulgate, offered as a witness to the sense of the Latin the celebrant reads, not as a liturgical translation and not for recitation.*
+- *The Holy Bible*, Douay-Rheims, in Bishop Richard Challoner’s revision. *Quoted once, for John 1, 1–3 and 14. An identified historical English translation of the Vulgate, offered as a witness to the sense of the Latin the celebrant reads, not as a liturgical translation and not for recitation.*
 
 ### Non-controlling aids
 
--   *Missale Romanum … editio iuxta typicam*. New York: Benziger Brothers, 1962. Consulted only as an uncorrected optical transcription for locating passages in the front matter. It controls no wording here and is a distinct edition from the Vatican typical edition.
+- *Missale Romanum … editio iuxta typicam*. New York: Benziger Brothers, 1962. Consulted only as an uncorrected optical transcription for locating passages in the front matter. It controls no wording here and is a distinct edition from the Vatican typical edition.
 
 ### Note on what is not cited
 

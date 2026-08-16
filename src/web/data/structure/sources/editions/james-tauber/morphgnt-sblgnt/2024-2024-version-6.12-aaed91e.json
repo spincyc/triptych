@@ -1,0 +1,63 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "repository-snapshot-archive",
+   "byte_size": 1313320,
+   "id": "artifact.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e.github-archive-aaed91e-e760c941",
+   "media_type": "application/gzip",
+   "notes": "The full mixed-rights archive is identified and hashed but not retained. The tracked lemma projection contains no SBLGNT surface-text column.",
+   "page_count": null,
+   "retrieved": "2026-08-15",
+   "rights": "licensed",
+   "rights_basis": "MorphGNT's morphological parsing and lemmatization are offered under CC BY-SA 3.0. The archive also embeds SBLGNT surface text governed by the separate SBLGNT text license; the MorphGNT license does not relicense that text.",
+   "rights_jurisdiction": null,
+   "source_url": "https://github.com/morphgnt/sblgnt/archive/aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d.tar.gz",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "lemma-field-projection",
+   "byte_size": 1411444,
+   "id": "artifact.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e.lemma-field-projection-9135bfb2",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "One lemma occupies each physical line. Raw-line literal case-sensitive searches therefore replay exact lemma-token counts without distributing the SBLGNT surface text.",
+   "page_count": null,
+   "retrieved": "2026-08-15",
+   "rights": "licensed",
+   "rights_basis": "This projection retains only MorphGNT's lemma field, whose parsing and lemmatization are distributed under CC BY-SA 3.0; it omits the separately licensed SBLGNT surface-text fields.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2024",
+  "editors": [
+   "James Tauber"
+  ],
+  "id": "edition.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e",
+  "jurisdiction": null,
+  "language": "grc",
+  "notes": "The publication search uses a deterministic lemma-only projection so that MorphGNT's CC BY-SA 3.0 parsing and lemmatization remain separate from the embedded SBLGNT surface text and its own license.",
+  "publication": "MorphGNT GitHub repository, commit aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d (2024-01-21 snapshot)",
+  "title": "MorphGNT SBLGNT version 6.12 lineage, commit aaed91e",
+  "translators": [],
+  "year": 2024
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "MorphGNT SBLGNT",
+   "MorphGNT 6.12"
+  ],
+  "author": "James Tauber and MorphGNT contributors",
+  "category": "greek-new-testament-morphology-dataset",
+  "description": "A token-level morphological parsing and lemmatization aligned to the SBL Greek New Testament. The MorphGNT analysis and the embedded SBLGNT surface text are distinct rights layers.",
+  "id": "work.james-tauber.morphgnt-sblgnt",
+  "languages": [
+   "grc"
+  ],
+  "title": "MorphGNT: SBLGNT Edition"
+ }
+}

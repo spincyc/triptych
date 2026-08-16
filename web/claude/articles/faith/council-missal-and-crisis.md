@@ -167,57 +167,57 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 ### Conciliar and papal acts, 1959–1969
 
--   John XXIII, allocution announcing the Roman synod, ecumenical council, and revision of the Code of Canon Law (25 January 1959), official Italian text, [vatican.va](https://www.vatican.va/content/john-xxiii/it/speeches/1959/documents/hf_j-xxiii_spe_19590125_annuncio.html); registered web state, verified 2026-07-24.
+- John XXIII, allocution announcing the Roman synod, ecumenical council, and revision of the Code of Canon Law (25 January 1959), official Italian text, [vatican.va](https://www.vatican.va/content/john-xxiii/it/speeches/1959/documents/hf_j-xxiii_spe_19590125_annuncio.html); registered web state, verified 2026-07-24.
 
--   John XXIII, *Gaudet Mater Ecclesia*, opening address (11 October 1962), official Latin text, [vatican.va](https://www.vatican.va/content/john-xxiii/la/speeches/1962/documents/hf_j-xxiii_spe_19621011_opening-council.html); registered web state verified 2026-07-24, re-fetched byte-identical 2026-07-25. English renderings are labeled working glosses; the 2005 address’s quotation follows the Abbott translation as given there.
+- John XXIII, *Gaudet Mater Ecclesia*, opening address (11 October 1962), official Latin text, [vatican.va](https://www.vatican.va/content/john-xxiii/la/speeches/1962/documents/hf_j-xxiii_spe_19621011_opening-council.html); registered web state verified 2026-07-24, re-fetched byte-identical 2026-07-25. English renderings are labeled working glosses; the 2005 address’s quotation follows the Abbott translation as given there.
 
--   Second Vatican Council, *Sacrosanctum Concilium* (4 December 1963), official English web text, [vatican.va](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html), checked 2026-07-25 (registered dated state; no translator named); promulgated Latin in AAS 56 (1964) 97–138, registered from the AAS volume record.
+- Second Vatican Council, *Sacrosanctum Concilium* (4 December 1963), official English web text, [vatican.va](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html), checked 2026-07-25 (registered dated state; no translator named); promulgated Latin in AAS 56 (1964) 97–138, registered from the AAS volume record.
 
--   Doctrinal Commission of the Second Vatican Council, declaration of 6 March 1964, repeated 16 November 1964; Latin text in the registered AAS records; cited for its existence, dates, and rule.
+- Doctrinal Commission of the Second Vatican Council, declaration of 6 March 1964, repeated 16 November 1964; Latin text in the registered AAS records; cited for its existence, dates, and rule.
 
--   Paul VI, closing address of the Council (7 December 1965), official English text, [vatican.va](https://www.vatican.va/content/paul-vi/en/speeches/1965/documents/hf_p-vi_spe_19651207_epilogo-concilio.html); registered web state, verified 2026-07-24.
+- Paul VI, closing address of the Council (7 December 1965), official English text, [vatican.va](https://www.vatican.va/content/paul-vi/en/speeches/1965/documents/hf_p-vi_spe_19651207_epilogo-concilio.html); registered web state, verified 2026-07-24.
 
--   Paul VI, general audience of 12 January 1966, official Italian text, [vatican.va](https://www.vatican.va/content/paul-vi/it/audiences/1966/documents/hf_p-vi_aud_19660112.html); registered web state, verified 2026-07-24; working glosses labeled.
+- Paul VI, general audience of 12 January 1966, official Italian text, [vatican.va](https://www.vatican.va/content/paul-vi/it/audiences/1966/documents/hf_p-vi_aud_19660112.html); registered web state, verified 2026-07-24; working glosses labeled.
 
--   Paul VI, apostolic constitution *Missale Romanum* (3 April 1969), official English web text, [vatican.va](https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html), checked 2026-07-25 (new source-library record); Latin text as reprinted in the 2002 editio typica tertia, checked at the registered reproduction (below).
+- Paul VI, apostolic constitution *Missale Romanum* (3 April 1969), official English web text, [vatican.va](https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_19690403_missale-romanum.html), checked 2026-07-25 (new source-library record); Latin text as reprinted in the 2002 editio typica tertia, checked at the registered reproduction (below).
 
 ### Missal editions and their instruments
 
--   *Missale Romanum*, editio typica tertia (Vatican City: Typis Vaticanis, 2002), consulted in the registered secondary digital reproduction (restricted; SHA-256 recorded; pages 1–7 inspected 2026-07-25: edition-history line, 1970 decree Prot. n. 166/70, 1975 act Prot. N. 1970/74, 2000 decree Prot. N. 143/00/L, and the Latin constitution). Not the printed altar book; claims bounded to the inspected pages.
+- *Missale Romanum*, editio typica tertia (Vatican City: Typis Vaticanis, 2002), consulted in the registered secondary digital reproduction (restricted; SHA-256 recorded; pages 1–7 inspected 2026-07-25: edition-history line, 1970 decree Prot. n. 166/70, 1975 act Prot. N. 1970/74, 2000 decree Prot. N. 143/00/L, and the Latin constitution). Not the printed altar book; claims bounded to the inspected pages.
 
--   Congregation for Divine Worship and the Discipline of the Sacraments, notice *Reimpressio emendata “Missalis Romani”* and *Variationes et additiones*, *Notitiae* 44 (2008) 367–387; registered records, cited for the 2008 reprint’s character.
+- Congregation for Divine Worship and the Discipline of the Sacraments, notice *Reimpressio emendata “Missalis Romani”* and *Variationes et additiones*, *Notitiae* 44 (2008) 367–387; registered records, cited for the 2008 reprint’s character.
 
--   *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962); registered edition record, cited for identity only (“the 1962 Missal”).
+- *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962); registered edition record, cited for identity only (“the 1962 Missal”).
 
--   Sacred Congregation for Divine Worship, instruction *Memoriale Domini* (29 May 1969); identified by title and date only; not examined for this essay.
+- Sacred Congregation for Divine Worship, instruction *Memoriale Domini* (29 May 1969); identified by title and date only; not examined for this essay.
 
 ### The discipline of the older Missal, 1984–2026
 
--   Congregation for Divine Worship, letter *Quattuor abhinc annos* (3 October 1984), AAS 76 (1984) 1088–1089; cited through *Ecclesia Dei* note 9; not independently examined.
+- Congregation for Divine Worship, letter *Quattuor abhinc annos* (3 October 1984), AAS 76 (1984) 1088–1089; cited through *Ecclesia Dei* note 9; not independently examined.
 
--   John Paul II, apostolic letter motu proprio *Ecclesia Dei* (2 July 1988), official English text, [vatican.va](https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html), checked 2026-07-25 (new source-library record).
+- John Paul II, apostolic letter motu proprio *Ecclesia Dei* (2 July 1988), official English text, [vatican.va](https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html), checked 2026-07-25 (new source-library record).
 
--   Benedict XVI, apostolic letter motu proprio *Summorum Pontificum* (7 July 2007), official English text, [vatican.va](https://www.vatican.va/content/benedict-xvi/en/motu_proprio/documents/hf_ben-xvi_motu-proprio_20070707_summorum-pontificum.html), with the accompanying Letter to the Bishops, [vatican.va](https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html); both checked 2026-07-25 (new source-library records); promulgated Latin of the motu proprio authoritative.
+- Benedict XVI, apostolic letter motu proprio *Summorum Pontificum* (7 July 2007), official English text, [vatican.va](https://www.vatican.va/content/benedict-xvi/en/motu_proprio/documents/hf_ben-xvi_motu-proprio_20070707_summorum-pontificum.html), with the accompanying Letter to the Bishops, [vatican.va](https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html); both checked 2026-07-25 (new source-library records); promulgated Latin of the motu proprio authoritative.
 
--   Benedict XVI, Letter to the Bishops concerning the remission of the excommunication of the four bishops consecrated by Archbishop Lefebvre (10 March 2009), official English text, [vatican.va](https://www.vatican.va/content/benedict-xvi/en/letters/2009/documents/hf_ben-xvi_let_20090310_remissione-scomunica.html), fetched and read 2026-07-25.
+- Benedict XVI, Letter to the Bishops concerning the remission of the excommunication of the four bishops consecrated by Archbishop Lefebvre (10 March 2009), official English text, [vatican.va](https://www.vatican.va/content/benedict-xvi/en/letters/2009/documents/hf_ben-xvi_let_20090310_remissione-scomunica.html), fetched and read 2026-07-25.
 
--   Francis, apostolic letter motu proprio *Traditionis custodes* (16 July 2021), official English translation, [vatican.va](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html), checked 2026-07-25 (new source-library record); with the accompanying Letter to the Bishops of the whole world, [vatican.va](https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html), checked 2026-07-25 (new source-library record).
+- Francis, apostolic letter motu proprio *Traditionis custodes* (16 July 2021), official English translation, [vatican.va](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html), checked 2026-07-25 (new source-library record); with the accompanying Letter to the Bishops of the whole world, [vatican.va](https://www.vatican.va/content/francesco/en/letters/2021/documents/20210716-lettera-vescovi-liturgia.html), checked 2026-07-25 (new source-library record).
 
--   Congregation for Divine Worship and the Discipline of the Sacraments, *Responsa ad dubia* on *Traditionis custodes* with explanatory notes (4 December 2021), official English text, [vatican.va](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html), checked 2026-07-25 (new source-library record).
+- Congregation for Divine Worship and the Discipline of the Sacraments, *Responsa ad dubia* on *Traditionis custodes* with explanatory notes (4 December 2021), official English text, [vatican.va](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html), checked 2026-07-25 (new source-library record).
 
--   Dicastery for Divine Worship and the Discipline of the Sacraments, *Rescriptum ex audientia Ss.mi* on *Traditionis custodes* (20 February 2023; published 21 February 2023), official English text, [vatican.va](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20230220_rescriptum-traditioniscustodes_en.html), checked 2026-07-25 (new source-library record).
+- Dicastery for Divine Worship and the Discipline of the Sacraments, *Rescriptum ex audientia Ss.mi* on *Traditionis custodes* (20 February 2023; published 21 February 2023), official English text, [vatican.va](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20230220_rescriptum-traditioniscustodes_en.html), checked 2026-07-25 (new source-library record).
 
--   Dicastery for the Doctrine of the Faith, decree and explanatory note of 2 July 2026 (Prot. N. 99/2009), official Italian texts, [vatican.va (decree)](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_decreto-scomunica-fsspx_it.html) and [vatican.va (note)](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_nota-esplicativa-fsspx_it.html), fetched, hashed, and read 2026-07-25; working glosses labeled.
+- Dicastery for the Doctrine of the Faith, decree and explanatory note of 2 July 2026 (Prot. N. 99/2009), official Italian texts, [vatican.va (decree)](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_decreto-scomunica-fsspx_it.html) and [vatican.va (note)](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20260702_nota-esplicativa-fsspx_it.html), fetched, hashed, and read 2026-07-25; working glosses labeled.
 
--   Benedict XVI, Address to the Roman Curia offering them his Christmas greetings (22 December 2005), official English text, [vatican.va](https://www.vatican.va/content/benedict-xvi/en/speeches/2005/december/documents/hf_ben_xvi_spe_20051222_roman-curia.html); registered dated web state, verified 2026-07-24, re-fetched byte-identical 2026-07-25.
+- Benedict XVI, Address to the Roman Curia offering them his Christmas greetings (22 December 2005), official English text, [vatican.va](https://www.vatican.va/content/benedict-xvi/en/speeches/2005/december/documents/hf_ben_xvi_spe_20051222_roman-curia.html); registered dated web state, verified 2026-07-24, re-fetched byte-identical 2026-07-25.
 
 ### Statistical and survey sources
 
--   Center for Applied Research in the Apostolate (CARA), *Frequently Requested Church Statistics*: United States workbook (1965–2025; *Official Catholic Directory* counts and survey estimates) and worldwide workbook (*Annuarium Statisticum Ecclesiae*, 1970–2023), downloaded 2026-07-25 from [cara.georgetown.edu/faqs](https://cara.georgetown.edu/faqs); values quoted exactly as stated, coverage and caveats in section 5.
+- Center for Applied Research in the Apostolate (CARA), *Frequently Requested Church Statistics*: United States workbook (1965–2025; *Official Catholic Directory* counts and survey estimates) and worldwide workbook (*Annuarium Statisticum Ecclesiae*, 1970–2023), downloaded 2026-07-25 from [cara.georgetown.edu/faqs](https://cara.georgetown.edu/faqs); values quoted exactly as stated, coverage and caveats in section 5.
 
--   Pew Research Center, “Just one-third of U.S. Catholics agree with their church that Eucharist is body, blood of Christ” (5 August 2019), [pewresearch.org](https://www.pewresearch.org/short-reads/2019/08/05/transubstantiation-eucharist-u-s-catholics/), checked 2026-07-25.
+- Pew Research Center, “Just one-third of U.S. Catholics agree with their church that Eucharist is body, blood of Christ” (5 August 2019), [pewresearch.org](https://www.pewresearch.org/short-reads/2019/08/05/transubstantiation-eucharist-u-s-catholics/), checked 2026-07-25.
 
--   CARA/NORC with the McGrath Institute for Church Life, *Eucharist Beliefs: A National Survey of Adult Catholics* (fielded 11 July–2 August 2022; published 2023), report and authors’ account, [churchlifejournal.nd.edu](https://churchlifejournal.nd.edu/articles/the-theological-foundations-of-eucharistic-beliefs-a-national-survey-of-adult-catholics/), checked 2026-07-25.
+- CARA/NORC with the McGrath Institute for Church Life, *Eucharist Beliefs: A National Survey of Adult Catholics* (fielded 11 July–2 August 2022; published 2023), report and authors’ account, [churchlifejournal.nd.edu](https://churchlifejournal.nd.edu/articles/the-theological-foundations-of-eucharistic-beliefs-a-national-survey-of-adult-catholics/), checked 2026-07-25.
 
 **Last revised (UTC):** 2026-07-25T06:12:30Z
 

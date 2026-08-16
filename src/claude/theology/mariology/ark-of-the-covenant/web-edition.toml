@@ -1,0 +1,9 @@
+schema = 1
+record_type = "web-edition"
+document = "theology/mariology/ark-of-the-covenant"
+
+eligibility = "conditional"
+basis = "diagram-dependent"
+blocking_constructs = ["tikzpicture"]
+rationale = "Seven hand-drawn TikZ figures carry the ark's anatomy, the tabernacle and temple plans, the journey map, the Visitation overlay, and the fulfilment arc; the prose stands alone, but a web edition that silently dropped the drawings would misrepresent the print publication, so the leaf waits on a figure-rendering path."
+reviewed = "2026-08-16"

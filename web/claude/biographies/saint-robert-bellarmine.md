@@ -437,43 +437,43 @@ All web sources were accessed and checked on 2026-07-25. Citations in the text u
 
 ### Subject-authored sources
 
--   Robert Bellarmine, *Vita Roberti Cardinalis Bellarmini quam ipsemet scripsit* (1613), Latin text with German translation and commentary in I. von Döllinger and F. H. Reusch, *Die Selbstbiographie des Cardinals Bellarmin* (Bonn: Neusser, 1887); read in the public scan at the Internet Archive (<https://archive.org/details/dieselbstbiogra00reusgoog>). Cited by page of that edition. The same volume’s commentary is the study’s witness for the beatification-process history and for the Index bibliography of 1590.
+- Robert Bellarmine, *Vita Roberti Cardinalis Bellarmini quam ipsemet scripsit* (1613), Latin text with German translation and commentary in I. von Döllinger and F. H. Reusch, *Die Selbstbiographie des Cardinals Bellarmin* (Bonn: Neusser, 1887); read in the public scan at the Internet Archive (<https://archive.org/details/dieselbstbiogra00reusgoog>). Cited by page of that edition. The same volume’s commentary is the study’s witness for the beatification-process history and for the Index bibliography of 1590.
 
--   *Disputationes Roberti Bellarmini Politiani S.R.E. Cardinalis de controversiis christianae fidei adversus huius temporis haereticos*: (a) Venice: Societas Minima, 1599, four-tome edition, first tome with the dedication to Sixtus V, tome contents lists verified in the scan at (<https://archive.org/details/bub_gb_CYhfGhPyoSwC>); (b) Venice: Malachinus, 1721, *Tomus primus controversias tres generales complectens*, book divisions verified in the scan at (<https://archive.org/details/bub_gb_B0G1UjyRYyIC>).
+- *Disputationes Roberti Bellarmini Politiani S.R.E. Cardinalis de controversiis christianae fidei adversus huius temporis haereticos*: (a) Venice: Societas Minima, 1599, four-tome edition, first tome with the dedication to Sixtus V, tome contents lists verified in the scan at (<https://archive.org/details/bub_gb_CYhfGhPyoSwC>); (b) Venice: Malachinus, 1721, *Tomus primus controversias tres generales complectens*, book divisions verified in the scan at (<https://archive.org/details/bub_gb_B0G1UjyRYyIC>).
 
--   Bellarmine’s letters of 19 April 1611 (to the Roman College mathematicians), 23 June 1612 (to Galileo), and 12 April 1615 (to Foscarini), and the certificate of 26 May 1616, in Favaro’s edition below (vol. XI nos. 515, 709; vol. XII no. 1110; vol. XIX pp. 342, 348).
+- Bellarmine’s letters of 19 April 1611 (to the Roman College mathematicians), 23 June 1612 (to Galileo), and 12 April 1615 (to Foscarini), and the certificate of 26 May 1616, in Favaro’s edition below (vol. XI nos. 515, 709; vol. XII no. 1110; vol. XIX pp. 342, 348).
 
 ### The Galileo dossier
 
--   Antonio Favaro (ed.), *Le Opere di Galileo Galilei, Edizione Nazionale* (Florence: Barbèra, 1890–1909). Vol. XI (correspondence 1611–13) and vol. XII (1614–19), read in the scans at (<https://archive.org/details/le-opere-di-galileo-galilei-edizione-nazionale-volume-11>; `...-volume-12`); vol. XIX (the trial documents), read in the scan at (<https://archive.org/details/agh6462.0019.001.umich.edu>). Documents used: the qualifiers’ propositions and censure (pp. 320–321); the minutes of 25 and 26 February 1616 (pp. 321–322); the Holy Office session of 3 March 1616 (p. 278); the Index decree of 5 March 1616 (pp. 322–323); Galileo’s depositions and defense of 1633 with the certificate (pp. 342, 348).
+- Antonio Favaro (ed.), *Le Opere di Galileo Galilei, Edizione Nazionale* (Florence: Barbèra, 1890–1909). Vol. XI (correspondence 1611–13) and vol. XII (1614–19), read in the scans at (<https://archive.org/details/le-opere-di-galileo-galilei-edizione-nazionale-volume-11>; `...-volume-12`); vol. XIX (the trial documents), read in the scan at (<https://archive.org/details/agh6462.0019.001.umich.edu>). Documents used: the qualifiers’ propositions and censure (pp. 320–321); the minutes of 25 and 26 February 1616 (pp. 321–322); the Holy Office session of 3 March 1616 (p. 278); the Index decree of 5 March 1616 (pp. 322–323); Galileo’s depositions and defense of 1633 with the certificate (pp. 342, 348).
 
--   Karl von Gebler, *Galileo Galilei and the Roman Curia*, trans. Mrs. George Sturge (London: Kegan Paul, 1879); read in the public scan at (<https://archive.org/details/galileogalileia02geblgoog>). Used for the English of the 5 March 1616 decree and for the authenticity debate over the 26 February minute (Appendix, including pp. 337–338).
+- Karl von Gebler, *Galileo Galilei and the Roman Curia*, trans. Mrs. George Sturge (London: Kegan Paul, 1879); read in the public scan at (<https://archive.org/details/galileogalileia02geblgoog>). Used for the English of the 5 March 1616 decree and for the authenticity debate over the 26 February minute (Appendix, including pp. 337–338).
 
 ### The English controversy
 
--   C. H. McIlwain (ed.), *The Political Works of James I* (Cambridge, Mass.: Harvard University Press, 1918), reprinting the 1616 *Workes*: *Triplici nodo, triplex cuneus* with the text of the Oath of Allegiance, the breves of Paul V (22 September 1606; 1607), and the *Premonition*; introduction for the Blackwell letters and the sequence of editions. Read in the public scan at (<https://archive.org/details/politicalworksj00mcilgoog>).
+- C. H. McIlwain (ed.), *The Political Works of James I* (Cambridge, Mass.: Harvard University Press, 1918), reprinting the 1616 *Workes*: *Triplici nodo, triplex cuneus* with the text of the Oath of Allegiance, the breves of Paul V (22 September 1606; 1607), and the *Premonition*; introduction for the Blackwell letters and the sequence of editions. Read in the public scan at (<https://archive.org/details/politicalworksj00mcilgoog>).
 
 ### Official acts (Acta Apostolicae Sedis)
 
--   *AAS* 22 (1930), read in the Vatican website scan (<https://www.vatican.va/archive/aas/documents/AAS-22-1930-ocr.pdf>): decree on the canonization miracles with the “impugned memory” preamble (pp. 278–279); the decretal letter *Lux illa* of 29 June 1930 with the canonization formula and the history of the cause (pp. 593–604).
+- *AAS* 22 (1930), read in the Vatican website scan (<https://www.vatican.va/archive/aas/documents/AAS-22-1930-ocr.pdf>): decree on the canonization miracles with the “impugned memory” preamble (pp. 278–279); the decretal letter *Lux illa* of 29 June 1930 with the canonization formula and the history of the cause (pp. 593–604).
 
--   *AAS* 23 (1931), read in the Vatican website scan (<https://www.vatican.va/archive/aas/documents/AAS-23-1931-ocr.pdf>): apostolic letter *Providentissimus Deus*, 17 September 1931, declaring Bellarmine Doctor of the Universal Church (pp. 433–438). The incipit and contents were verified directly in this scan.
+- *AAS* 23 (1931), read in the Vatican website scan (<https://www.vatican.va/archive/aas/documents/AAS-23-1931-ocr.pdf>): apostolic letter *Providentissimus Deus*, 17 September 1931, declaring Bellarmine Doctor of the Universal Church (pp. 433–438). The incipit and contents were verified directly in this scan.
 
--   *AAS* 60 (1968), read in the Vatican website scan (<https://www.vatican.va/archive/aas/documents/AAS-60-1968-ocr.pdf>): Paul VI, apostolic letter *Roma altera*, 29 September 1967, constituting Bellarmine co-patron of the archdiocese of Capua (pp. 12–13).
+- *AAS* 60 (1968), read in the Vatican website scan (<https://www.vatican.va/archive/aas/documents/AAS-60-1968-ocr.pdf>): Paul VI, apostolic letter *Roma altera*, 29 September 1967, constituting Bellarmine co-patron of the archdiocese of Capua (pp. 12–13).
 
--   General Roman Calendar: the 17 September optional memorial “S. Roberti Bellarmino, episcopi et Ecclesiae doctoris” stated per the repository’s source-library record of the *Calendarium Romanum Generale* (*Missale Romanum*, ed. typica tertia, 2002), verified against the calendar pages of that record’s controlling artifact; mutable facts carry the 2026-07-25 cutoff.
+- General Roman Calendar: the 17 September optional memorial “S. Roberti Bellarmino, episcopi et Ecclesiae doctoris” stated per the repository’s source-library record of the *Calendarium Romanum Generale* (*Missale Romanum*, ed. typica tertia, 2002), verified against the calendar pages of that record’s controlling artifact; mutable facts carry the 2026-07-25 cutoff.
 
--   Benedict XVI, General Audience of 23 February 2011 (on St. Robert Bellarmine), English text, Vatican website (<https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110223.html>).
+- Benedict XVI, General Audience of 23 February 2011 (on St. Robert Bellarmine), English text, Vatican website (<https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110223.html>).
 
 ### Encyclopedic and critical literature
 
--   Sydney Smith, “St. Robert Francis Romulus Bellarmine,” *The Catholic Encyclopedia*, vol. 2 (New York: Robert Appleton, 1907), at New Advent (<https://www.newadvent.org/cathen/02411d.htm>). A catalog-level source-library record of CE vol. 2 was created for this study and is bound in `research/source-bindings.toml`.
+- Sydney Smith, “St. Robert Francis Romulus Bellarmine,” *The Catholic Encyclopedia*, vol. 2 (New York: Robert Appleton, 1907), at New Advent (<https://www.newadvent.org/cathen/02411d.htm>). A catalog-level source-library record of CE vol. 2 was created for this study and is bound in `research/source-bindings.toml`.
 
--   Antonio Astrain, “Congregatio de Auxiliis,” *The Catholic Encyclopedia*, vol. 4 (1908), at New Advent (<https://www.newadvent.org/cathen/04238a.htm>).
+- Antonio Astrain, “Congregatio de Auxiliis,” *The Catholic Encyclopedia*, vol. 4 (1908), at New Advent (<https://www.newadvent.org/cathen/04238a.htm>).
 
--   William Turner, “Giordano Bruno,” *The Catholic Encyclopedia*, vol. 3 (1908), at New Advent (<https://www.newadvent.org/cathen/03016a.htm>).
+- William Turner, “Giordano Bruno,” *The Catholic Encyclopedia*, vol. 3 (1908), at New Advent (<https://www.newadvent.org/cathen/03016a.htm>).
 
--   Early lives named at reported level only (not inspected): Giacomo Fuligatti, *Vita del Cardinale Roberto Bellarmino* (1624; Latin amplification by Silvestro Petra Sancta, 1626); Cervini, *Imago virtutum* (1625); Daniello Bartoli (1678); James Brodrick’s modern biography (in copyright, not consulted). Bibliographic identification per the 1907 Catholic Encyclopedia article above.
+- Early lives named at reported level only (not inspected): Giacomo Fuligatti, *Vita del Cardinale Roberto Bellarmino* (1624; Latin amplification by Silvestro Petra Sancta, 1626); Cervini, *Imago virtutum* (1625); Daniello Bartoli (1678); James Brodrick’s modern biography (in copyright, not consulted). Bibliographic identification per the 1907 Catholic Encyclopedia article above.
 
 **Last revised (UTC):** 2026-07-25T10:52:00Z
 

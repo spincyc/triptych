@@ -108,17 +108,17 @@ This independent article treats heaven’s dogmatic center: communion with the T
 
 ## References
 
--   Sacred Scripture: John 17; Romans 8; 1 Corinthians 13 and 15; Philippians 3; 1 John 3; 2 Peter 3; Revelation 2, 5, and 21–22.
+- Sacred Scripture: John 17; Romans 8; 1 Corinthians 13 and 15; Philippians 3; 1 John 3; 2 Peter 3; Revelation 2, 5, and 21–22.
 
--   Benedict XII, constitution *Benedictus Deus* (1336), DS 1000–1001; *Catechism of the Catholic Church* 988–1019, 1023–1029, 1042–1053.
+- Benedict XII, constitution *Benedictus Deus* (1336), DS 1000–1001; *Catechism of the Catholic Church* 988–1019, 1023–1029, 1042–1053.
 
--   Second Vatican Council, pastoral constitution *Gaudium et spes* 39.
+- Second Vatican Council, pastoral constitution *Gaudium et spes* 39.
 
--   St. Irenaeus, *Against Heresies* V.6–14, 31–36; St. Augustine, *City of God* XXII.
+- St. Irenaeus, *Against Heresies* V.6–14, 31–36; St. Augustine, *City of God* XXII.
 
--   St. Thomas Aquinas, *Summa theologiae* I, q. 12; I–II, qq. 2–5; Supplement, qq. 92 and 95. The Supplement is a posthumous compilation principally from Aquinas’s *Scriptum super Sententiis*.
+- St. Thomas Aquinas, *Summa theologiae* I, q. 12; I–II, qq. 2–5; Supplement, qq. 92 and 95. The Supplement is a posthumous compilation principally from Aquinas’s *Scriptum super Sententiis*.
 
--   Roman Rite: the Sanctus, communion of saints in the Eucharistic prayers, and prayers for the dead, cited at source-family level without reproducing a territorial vernacular.
+- Roman Rite: the Sanctus, communion of saints in the Eucharistic prayers, and prayers for the dead, cited at source-family level without reproducing a territorial vernacular.
 
 **Last revised (UTC):** 2026-07-24T20:52:18Z
 

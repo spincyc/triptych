@@ -209,69 +209,69 @@ All web sources were accessed and checked on 2026-07-24. Citations in the text u
 
 ### Primary narrative and documentary witnesses
 
--   *Letter of Aristeas*, English translation from R. H. Charles (ed.), *The Apocrypha and Pseudepigrapha of the Old Testament*, vol. 2 (Oxford: Clarendon Press, 1913; the printed translation is credited to H. T. Andrews), read in the transcription at attalus.org (<https://www.attalus.org/translate/aristeas1.html> and <https://www.attalus.org/translate/aristeas2.html>); sections 9–11, 28–51, 301–322 checked. Public domain.
+- *Letter of Aristeas*, English translation from R. H. Charles (ed.), *The Apocrypha and Pseudepigrapha of the Old Testament*, vol. 2 (Oxford: Clarendon Press, 1913; the printed translation is credited to H. T. Andrews), read in the transcription at attalus.org (<https://www.attalus.org/translate/aristeas1.html> and <https://www.attalus.org/translate/aristeas2.html>); sections 9–11, 28–51, 301–322 checked. Public domain.
 
--   Prologue to Sirach (Ecclesiasticus), in L. C. L. Brenton’s English translation of the Septuagint (1851), at ebible.org (<https://ebible.org/eng-Brenton/SIR01.htm>); also Psalm 39:7 and Amos 9:11–12 (<https://ebible.org/eng-Brenton/PSA039.htm>, <https://ebible.org/eng-Brenton/AMO09.htm>). Public domain.
+- Prologue to Sirach (Ecclesiasticus), in L. C. L. Brenton’s English translation of the Septuagint (1851), at ebible.org (<https://ebible.org/eng-Brenton/SIR01.htm>); also Psalm 39:7 and Amos 9:11–12 (<https://ebible.org/eng-Brenton/PSA039.htm>, <https://ebible.org/eng-Brenton/AMO09.htm>). Public domain.
 
--   Philo, *On the Life of Moses* 2.25–44, C. D. Yonge translation (Bohn, 1855), at Early Christian Writings (<https://www.earlychristianwritings.com/yonge/book25.html>). Public domain.
+- Philo, *On the Life of Moses* 2.25–44, C. D. Yonge translation (Bohn, 1855), at Early Christian Writings (<https://www.earlychristianwritings.com/yonge/book25.html>). Public domain.
 
--   Josephus, *Antiquities of the Jews* 12.2, William Whiston translation (1737), at the University of Chicago Penelope transcription (<https://penelope.uchicago.edu/josephus/ant-12.html>). Public domain.
+- Josephus, *Antiquities of the Jews* 12.2, William Whiston translation (1737), at the University of Chicago Penelope transcription (<https://penelope.uchicago.edu/josephus/ant-12.html>). Public domain.
 
 ### Patristic and later Christian witnesses
 
--   Justin Martyr, *First Apology* 31 and *Dialogue with Trypho* 71–73, ANF vol. 1 (Buffalo, 1887), at New Advent (<https://www.newadvent.org/fathers/0126.htm>, <https://www.newadvent.org/fathers/01286.htm>).
+- Justin Martyr, *First Apology* 31 and *Dialogue with Trypho* 71–73, ANF vol. 1 (Buffalo, 1887), at New Advent (<https://www.newadvent.org/fathers/0126.htm>, <https://www.newadvent.org/fathers/01286.htm>).
 
--   Pseudo-Justin, *Hortatory Address to the Greeks* 13, ANF vol. 1, at New Advent (<https://www.newadvent.org/fathers/0129.htm>).
+- Pseudo-Justin, *Hortatory Address to the Greeks* 13, ANF vol. 1, at New Advent (<https://www.newadvent.org/fathers/0129.htm>).
 
--   Irenaeus, *Against Heresies* 3.21.1–3, ANF vol. 1, at New Advent (<https://www.newadvent.org/fathers/0103321.htm>).
+- Irenaeus, *Against Heresies* 3.21.1–3, ANF vol. 1, at New Advent (<https://www.newadvent.org/fathers/0103321.htm>).
 
--   Origen, *Letter to Africanus*, ANF vol. 4, at New Advent (<https://www.newadvent.org/fathers/0414.htm>).
+- Origen, *Letter to Africanus*, ANF vol. 4, at New Advent (<https://www.newadvent.org/fathers/0414.htm>).
 
--   Eusebius, *Church History* 4.26; 6.16–17, NPNF series 2, vol. 1, at New Advent (<https://www.newadvent.org/fathers/250104.htm>, <https://www.newadvent.org/fathers/250106.htm>).
+- Eusebius, *Church History* 4.26; 6.16–17, NPNF series 2, vol. 1, at New Advent (<https://www.newadvent.org/fathers/250104.htm>, <https://www.newadvent.org/fathers/250106.htm>).
 
--   Athanasius, *Festal Letter* 39, NPNF series 2, vol. 4, at New Advent (<https://www.newadvent.org/fathers/2806039.htm>).
+- Athanasius, *Festal Letter* 39, NPNF series 2, vol. 4, at New Advent (<https://www.newadvent.org/fathers/2806039.htm>).
 
--   Epiphanius, *On Weights and Measures* 3–11, 14–15, tr. J. E. Dean (Chicago, 1935), presented at tertullian.org (<https://www.tertullian.org/fathers/epiphanius_weights_03_text.htm>) and at Livius (<https://www.livius.org/sources/content/epiphanius-weights-and-measures-14-15/>); paraphrased only.
+- Epiphanius, *On Weights and Measures* 3–11, 14–15, tr. J. E. Dean (Chicago, 1935), presented at tertullian.org (<https://www.tertullian.org/fathers/epiphanius_weights_03_text.htm>) and at Livius (<https://www.livius.org/sources/content/epiphanius-weights-and-measures-14-15/>); paraphrased only.
 
--   Jerome, Prologue to Genesis (Preface to the Pentateuch), tr. K. P. Edgecomb (2006, released to the public domain), at tertullian.org (<https://www.tertullian.org/fathers/jerome_preface_genesis.htm>); Jerome’s prefaces and letters otherwise follow NPNF series 2, vol. 6 (New York, 1893).
+- Jerome, Prologue to Genesis (Preface to the Pentateuch), tr. K. P. Edgecomb (2006, released to the public domain), at tertullian.org (<https://www.tertullian.org/fathers/jerome_preface_genesis.htm>); Jerome’s prefaces and letters otherwise follow NPNF series 2, vol. 6 (New York, 1893).
 
--   Jerome, *Letter* 112 (= Augustine, *Letters* 75), and Augustine, *Letter* 71, NPNF series 1, at New Advent (<https://www.newadvent.org/fathers/1102075.htm>, <https://www.newadvent.org/fathers/1102071.htm>).
+- Jerome, *Letter* 112 (= Augustine, *Letters* 75), and Augustine, *Letter* 71, NPNF series 1, at New Advent (<https://www.newadvent.org/fathers/1102075.htm>, <https://www.newadvent.org/fathers/1102071.htm>).
 
--   Augustine, *City of God* 18.42–43, Marcus Dods translation (1871; NPNF series 1, vol. 2), at CCEL (<https://ccel.org/ccel/schaff/npnf102.iv.XVIII.42.html> and …XVIII.43.html).
+- Augustine, *City of God* 18.42–43, Marcus Dods translation (1871; NPNF series 1, vol. 2), at CCEL (<https://ccel.org/ccel/schaff/npnf102.iv.XVIII.42.html> and …XVIII.43.html).
 
 ### Jewish tradition
 
--   Babylonian Talmud, *Megillah* 9a–9b, William Davidson (Steinsaltz) English at Sefaria (<https://www.sefaria.org/Megillah.9a>); licensed CC BY-NC; paraphrased only.
+- Babylonian Talmud, *Megillah* 9a–9b, William Davidson (Steinsaltz) English at Sefaria (<https://www.sefaria.org/Megillah.9a>); licensed CC BY-NC; paraphrased only.
 
--   Jerusalem Talmud, *Megillah* 1:9, Guggenheimer translation at Sefaria; paraphrased only.
+- Jerusalem Talmud, *Megillah* 1:9, Guggenheimer translation at Sefaria; paraphrased only.
 
--   *Tractate Soferim* 1.7, Soncino minor-tractates translation (A. Cohen, 1965) at Sefaria; paraphrased only.
+- *Tractate Soferim* 1.7, Soncino minor-tractates translation (A. Cohen, 1965) at Sefaria; paraphrased only.
 
--   Justinian, Novella 146 *De Hebraeis* (553), F. H. Blume translation at the University of Wyoming (<https://www.uwyo.edu/lawlib/blume-justinian/>); consulted for its core provisions.
+- Justinian, Novella 146 *De Hebraeis* (553), F. H. Blume translation at the University of Wyoming (<https://www.uwyo.edu/lawlib/blume-justinian/>); consulted for its core provisions.
 
 ### Official ecclesial acts
 
--   Council of Trent, Session IV (8 April 1546), Decree concerning the canonical Scriptures, at papalencyclicals.net (<https://www.papalencyclicals.net/councils/trent/fourth-session.htm>).
+- Council of Trent, Session IV (8 April 1546), Decree concerning the canonical Scriptures, at papalencyclicals.net (<https://www.papalencyclicals.net/councils/trent/fourth-session.htm>).
 
--   Second Vatican Council, *Dei Verbum* 22 (18 November 1965), Vatican website English text (<https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html>).
+- Second Vatican Council, *Dei Verbum* 22 (18 November 1965), Vatican website English text (<https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html>).
 
--   *Catechism of the Catholic Church* 120–123, Vatican website English text (<https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/iv_the_canon_of_scripture.html>).
+- *Catechism of the Catholic Church* 120–123, Vatican website English text (<https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/iv_the_canon_of_scripture.html>).
 
 ### Modern scholarship, editions, and finding aids
 
--   “Aristeas, Letter of,” *The Jewish Encyclopedia* (1906), at jewishencyclopedia.com (<https://www.jewishencyclopedia.com/articles/1765-aristeas-letter-of>); used for the history of criticism (Hody 1685; dating proposals).
+- “Aristeas, Letter of,” *The Jewish Encyclopedia* (1906), at jewishencyclopedia.com (<https://www.jewishencyclopedia.com/articles/1765-aristeas-letter-of>); used for the history of criticism (Hody 1685; dating proposals).
 
--   D. Barthélemy, *Les devanciers d’Aquila* (Leiden: Brill, 1963); cited for the *kaige* identification as reported in the edition and survey literature; not read in full.
+- D. Barthélemy, *Les devanciers d’Aquila* (Leiden: Brill, 1963); cited for the *kaige* identification as reported in the edition and survey literature; not read in full.
 
--   E. Tov (ed.), *The Greek Minor Prophets Scroll from Naḥal Ḥever (8ḤevXIIgr)*, Discoveries in the Judaean Desert VIII (Oxford: Clarendon Press, 1990); identity and dating cited from the publisher’s and repository descriptions (<https://global.oup.com/academic/product/the-greek-minor-prophets-scroll-from-nahal-hever-8hevxiigr-9780198263272>); not read in full.
+- E. Tov (ed.), *The Greek Minor Prophets Scroll from Naḥal Ḥever (8ḤevXIIgr)*, Discoveries in the Judaean Desert VIII (Oxford: Clarendon Press, 1990); identity and dating cited from the publisher’s and repository descriptions (<https://global.oup.com/academic/product/the-greek-minor-prophets-scroll-from-nahal-hever-8hevxiigr-9780198263272>); not read in full.
 
--   Manuscript identities and datings (Rylands 458, Fouad 266, 4Q119, 4Q120, the great codices): standard public catalog descriptions and survey articles consulted online, as bounded in the source audit; no manuscript image is reproduced.
+- Manuscript identities and datings (Rylands 458, Fouad 266, 4Q119, 4Q120, the great codices): standard public catalog descriptions and survey articles consulted online, as bounded in the source audit; no manuscript image is reproduced.
 
--   Göttinger Septuaginta, official project site, University of Göttingen (<https://septuaginta.uni-goettingen.de/>); project history and Psalter-project facts.
+- Göttinger Septuaginta, official project site, University of Göttingen (<https://septuaginta.uni-goettingen.de/>); project history and Psalter-project facts.
 
--   Rahlfs and Rahlfs–Hanhart edition facts: German Bible Society edition descriptions (die-bibel.de/academic-bible.com).
+- Rahlfs and Rahlfs–Hanhart edition facts: German Bible Society edition descriptions (die-bibel.de/academic-bible.com).
 
--   *A New English Translation of the Septuagint* (NETS), ed. A. Pietersma and B. G. Wright (New York: Oxford University Press, 2007; corrected printings 2009, 2014, 2021), electronic edition pages at the University of Pennsylvania (<http://ccat.sas.upenn.edu/nets/edition/>); copyright IOSCS; nothing reproduced.
+- *A New English Translation of the Septuagint* (NETS), ed. A. Pietersma and B. G. Wright (New York: Oxford University Press, 2007; corrected printings 2009, 2014, 2021), electronic edition pages at the University of Pennsylvania (<http://ccat.sas.upenn.edu/nets/edition/>); copyright IOSCS; nothing reproduced.
 
 **Last revised (UTC):** 2026-07-24T23:18:11Z
 

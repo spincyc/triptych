@@ -166,11 +166,11 @@ Cyril of Jerusalem’s *Catechetical Lecture 10*, section 5, receives the same s
 
 ## The Propers: Notable and Quotable
 
--   **“Not one of them falls” — Hamlet walks into a fatal duel. (*Gospel*)** In *Hamlet* 5.2, the prince dismisses augury because “there is a special providence in the fall of a sparrow,” then accepts the fencing match that kills him. Shakespeare preserves Matthew’s tiny bird while moving the saying into tragic dramatic irony: confidence in providence does not mean escape from death.
+- **“Not one of them falls” — Hamlet walks into a fatal duel. (*Gospel*)** In *Hamlet* 5.2, the prince dismisses augury because “there is a special providence in the fall of a sparrow,” then accepts the fencing match that kills him. Shakespeare preserves Matthew’s tiny bird while moving the saying into tragic dramatic irony: confidence in providence does not mean escape from death.
 
--   **“All the hairs of your head are counted” — and a bald man’s back-order. (*Gospel*)** A 1900 college magazine reprinted “The Back Numbers”: a bald worshipper hears that every hair is numbered and prays, “O Lord, send me down the back numbers.” The joke makes divine enumeration sound like missing installments of a periodical.
+- **“All the hairs of your head are counted” — and a bald man’s back-order. (*Gospel*)** A 1900 college magazine reprinted “The Back Numbers”: a bald worshipper hears that every hair is numbered and prays, “O Lord, send me down the back numbers.” The joke makes divine enumeration sound like missing installments of a periodical.
 
--   **“The hairs of your head are counted” — a quantified-self performance. (*Gospel*)** The 2017–2018 media-arts work *The Hairs of Your Head Are Numbered* measured bodies, turned audience data into live visualization, and questioned tracking and manipulation. The exact Gospel-like title becomes an uneasy cultural echo for bodies rendered measurable by sensors, platforms, and companies; no checked source records the naming decision.
+- **“The hairs of your head are counted” — a quantified-self performance. (*Gospel*)** The 2017–2018 media-arts work *The Hairs of Your Head Are Numbered* measured bodies, turned audience data into live visualization, and questioned tracking and manipulation. The exact Gospel-like title becomes an uneasy cultural echo for bodies rendered measurable by sensors, platforms, and companies; no checked source records the naming decision.
 
 ## The Propers: Interpretive Possibilities
 
@@ -212,31 +212,31 @@ Cyril of Jerusalem’s *Catechetical Lecture 10*, section 5, receives the same s
 
 ## References
 
--   USCCB, [Twelfth Sunday in Ordinary Time, 21 June 2026](https://bible.usccb.org/bible/readings/062126.cfm), U.S. Lectionary 94; and [2026 Liturgical Calendar](https://www.usccb.org/resources/2026cal.pdf), accessed 2026-07-15.
+- USCCB, [Twelfth Sunday in Ordinary Time, 21 June 2026](https://bible.usccb.org/bible/readings/062126.cfm), U.S. Lectionary 94; and [2026 Liturgical Calendar](https://www.usccb.org/resources/2026cal.pdf), accessed 2026-07-15.
 
--   *Missale Romanum*, editio typica tertia (2002), pp. 462–463; reimpressio emendata (2008); and *Roman Missal, Third Edition*, U.S. English edition implemented 2011.
+- *Missale Romanum*, editio typica tertia (2002), pp. 462–463; reimpressio emendata (2008); and *Roman Missal, Third Edition*, U.S. English edition implemented 2011.
 
--   Bishops’ Conference of England and Wales, [*Antiphonary: Excerpted from the Roman Missal*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf) (ICEL, 2010), pp. 72–73, used as official corroboration of the common ICEL antiphons, not as a substitute U.S. altar book.
+- Bishops’ Conference of England and Wales, [*Antiphonary: Excerpted from the Roman Missal*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf) (ICEL, 2010), pp. 72–73, used as official corroboration of the common ICEL antiphons, not as a substitute U.S. altar book.
 
--   *General Instruction of the Roman Missal* 46–90; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
+- *General Instruction of the Roman Missal* 46–90; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
 
--   Holy See, *Nova Vulgata Bibliorum Sacrorum Editio*, editio typica altera (1986), [Jeremiah 20:11](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_ieremiae_lt.html), official Latin wording checked 2026-07-18.
+- Holy See, *Nova Vulgata Bibliorum Sacrorum Editio*, editio typica altera (1986), [Jeremiah 20:11](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_ieremiae_lt.html), official Latin wording checked 2026-07-18.
 
--   St. John Chrysostom, [*Homily 34 on Matthew*](https://www.newadvent.org/fathers/200134.htm) and [*Homily 10 on Romans*](https://www.newadvent.org/fathers/210210.htm).
+- St. John Chrysostom, [*Homily 34 on Matthew*](https://www.newadvent.org/fathers/200134.htm) and [*Homily 10 on Romans*](https://www.newadvent.org/fathers/210210.htm).
 
--   St. Jerome, [*Commentary on Jeremiah*, book IV, on Jer. 20:9–13](https://la.wikisource.org/wiki/Commentaria_in_Ieremiam_%28Hieronymus%29) (Latin).
+- St. Jerome, [*Commentary on Jeremiah*, book IV, on Jer. 20:9–13](https://la.wikisource.org/wiki/Commentaria_in_Ieremiam_%28Hieronymus%29) (Latin).
 
--   St. Augustine, [*Exposition on Psalm 28*](https://www.newadvent.org/fathers/1801028.htm), [*Exposition on Psalm 69*](https://www.newadvent.org/fathers/1801069.htm), [*Exposition on Psalm 145*](https://www.newadvent.org/fathers/1801145.htm), [*Tractate 92 on John*](https://www.newadvent.org/fathers/1701092.htm), [*Tractate 46*](https://www.newadvent.org/fathers/1701046.htm) and [*Tractate 47 on John*](https://www.newadvent.org/fathers/1701047.htm), and [*Against Two Letters of the Pelagians* IV.8](https://www.newadvent.org/fathers/15094.htm).
+- St. Augustine, [*Exposition on Psalm 28*](https://www.newadvent.org/fathers/1801028.htm), [*Exposition on Psalm 69*](https://www.newadvent.org/fathers/1801069.htm), [*Exposition on Psalm 145*](https://www.newadvent.org/fathers/1801145.htm), [*Tractate 92 on John*](https://www.newadvent.org/fathers/1701092.htm), [*Tractate 46*](https://www.newadvent.org/fathers/1701046.htm) and [*Tractate 47 on John*](https://www.newadvent.org/fathers/1701047.htm), and [*Against Two Letters of the Pelagians* IV.8](https://www.newadvent.org/fathers/15094.htm).
 
--   St. Thomas Aquinas, [*Commentary on Romans* V, lect. 3](https://aquinas.cc/en/la/~Rom.C5.L3); St. Cyprian, [*Testimonies* III.4](https://www.newadvent.org/fathers/050712c.htm); St. Cyril of Jerusalem, [*Catechetical Lecture 10*, sec. 5](https://www.newadvent.org/fathers/310110.htm); St. Gregory Nazianzen, [*Oration 18*](https://www.newadvent.org/fathers/310218.htm).
+- St. Thomas Aquinas, [*Commentary on Romans* V, lect. 3](https://aquinas.cc/en/la/~Rom.C5.L3); St. Cyprian, [*Testimonies* III.4](https://www.newadvent.org/fathers/050712c.htm); St. Cyril of Jerusalem, [*Catechetical Lecture 10*, sec. 5](https://www.newadvent.org/fathers/310110.htm); St. Gregory Nazianzen, [*Oration 18*](https://www.newadvent.org/fathers/310218.htm).
 
--   *Catechism of the Catholic Church* 302–314 and 402–412; Council of Trent, Session V.
+- *Catechism of the Catholic Church* 302–314 and 402–412; Council of Trent, Session V.
 
--   William Shakespeare, [*Hamlet*](https://www.folger.edu/explore/shakespeares-works/Hamlet/read/), act 5, scene 2, lines 230–238, Folger Shakespeare Library digital text, checked 2026-07-19.
+- William Shakespeare, [*Hamlet*](https://www.folger.edu/explore/shakespeares-works/Hamlet/read/), act 5, scene 2, lines 230–238, Folger Shakespeare Library digital text, checked 2026-07-19.
 
--   “The Back Numbers,” exchange item credited to *Grey Jacket*, [*The New Hampshire College Monthly* 8, no. 3 (December 1900)](https://upload.wikimedia.org/wikipedia/commons/e/ed/The_New_Hampshire_College_Monthly_%28IA_newhampshirec19001901newh%29.pdf), p. 72.
+- “The Back Numbers,” exchange item credited to *Grey Jacket*, [*The New Hampshire College Monthly* 8, no. 3 (December 1900)](https://upload.wikimedia.org/wikipedia/commons/e/ed/The_New_Hampshire_College_Monthly_%28IA_newhampshirec19001901newh%29.pdf), p. 72.
 
--   Kim Albrecht with Doublelucky Productions, [*The Hairs of Your Head Are Numbered*](https://www.kimalbrecht.com/item/hairs-of-your-head/), project and performances, 2017–2018; and Albrecht, [artist statement](https://www.kimalbrecht.com/about/), checked 2026-07-19.
+- Kim Albrecht with Doublelucky Productions, [*The Hairs of Your Head Are Numbered*](https://www.kimalbrecht.com/item/hairs-of-your-head/), project and performances, 2017–2018; and Albrecht, [artist statement](https://www.kimalbrecht.com/about/), checked 2026-07-19.
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

@@ -185,13 +185,13 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 
 ## The Propers: Notable and Quotable
 
--   **“You might uproot the wheat along with them” — a charter for unpersecuted consciences. (*both Gospel forms*)** Roger Williams’s *Bloudy Tenent of Persecution* (1644), chs. XVIII–XXVIII, expressly argues from Matthew 13:30, 38. In ch. XXVI the endangered wheat becomes a civil-peace argument: punish civil offenses, he says, but do not uproot worship and conscience. The harvest image has become political reasoning, not a farming illustration.
+- **“You might uproot the wheat along with them” — a charter for unpersecuted consciences. (*both Gospel forms*)** Roger Williams’s *Bloudy Tenent of Persecution* (1644), chs. XVIII–XXVIII, expressly argues from Matthew 13:30, 38. In ch. XXVI the endangered wheat becomes a civil-peace argument: punish civil offenses, he says, but do not uproot worship and conscience. The harvest image has become political reasoning, not a farming illustration.
 
--   **“Let them grow together until harvest” — an objection to licensing ideas. (*both Gospel forms*)** In *Areopagitica* (1644), John Milton says mortals cannot “sever the wheat from the tares”; that belongs to angels at the end. He turns delayed sorting into a case against compulsory conformity and prior licensing: human censors may destroy truth while trying to remove error. His own toleration still had sharp historical exclusions.
+- **“Let them grow together until harvest” — an objection to licensing ideas. (*both Gospel forms*)** In *Areopagitica* (1644), John Milton says mortals cannot “sever the wheat from the tares”; that belongs to angels at the end. He turns delayed sorting into a case against compulsory conformity and prior licensing: human censors may destroy truth while trying to remove error. His own toleration still had sharp historical exclusions.
 
--   **“Wailing and grinding of teeth” — with dental provision guaranteed. (*long Gospel*)** Irvin S. Cobb’s 1923 joke collection, no. 358, has an elderly hearer interrupt a damnation sermon because she has no teeth. The preacher’s answer—“Teeth will be provided!”—literalizes a figure of eschatological anguish into a brisk supply problem. Cobb’s wording blends the familiar formulas from several Matthean passages; dependence on Matthew 13:42 alone cannot be shown.
+- **“Wailing and grinding of teeth” — with dental provision guaranteed. (*long Gospel*)** Irvin S. Cobb’s 1923 joke collection, no. 358, has an elderly hearer interrupt a damnation sermon because she has no teeth. The preacher’s answer—“Teeth will be provided!”—literalizes a figure of eschatological anguish into a brisk supply problem. Cobb’s wording blends the familiar formulas from several Matthean passages; dependence on Matthew 13:42 alone cannot be shown.
 
--   **“I stand at the door and knock” — a door with no outside handle. (*Communion B*)** William Holman Hunt’s *The Light of the World* (1851–1853) paints Revelation 3:20 as Christ before an overgrown door that can be opened only from within. The visual addition shifts a rebuke addressed to a complacent church into an image of the individual heart or mind and its agency; the Museum of Oxford records that the picture became one of its age’s most widely reproduced images.
+- **“I stand at the door and knock” — a door with no outside handle. (*Communion B*)** William Holman Hunt’s *The Light of the World* (1851–1853) paints Revelation 3:20 as Christ before an overgrown door that can be opened only from within. The visual addition shifts a rebuke addressed to a complacent church into an image of the individual heart or mind and its agency; the Museum of Oxford records that the picture became one of its age’s most widely reproduced images.
 
 ## The Propers: Interpretive Possibilities
 
@@ -237,51 +237,51 @@ The two antiphons remain distinct textual paths: one proceeds through remembered
 
 **Liturgical and scriptural sources**
 
--   *Missale Romanum*, editio typica tertia (Vatican City, 2002), Week XVI, pp. 465–466; the shared audit records exact owner evidence and the official 2008 variation-list result (Ordinary Time changes only at pp. 457 and 471; none at pp. 464–466).
+- *Missale Romanum*, editio typica tertia (Vatican City, 2002), Week XVI, pp. 465–466; the shared audit records exact owner evidence and the official 2008 variation-list result (Ordinary Time changes only at pp. 457 and 471; none at pp. 464–466).
 
--   United States Conference of Catholic Bishops, [*2026 Liturgical Calendar*](https://www.usccb.org/resources/2026cal.pdf) and [Lectionary 106 occurrence page](https://bible.usccb.org/bible/readings/071926.cfm), checked 2026-07-15.
+- United States Conference of Catholic Bishops, [*2026 Liturgical Calendar*](https://www.usccb.org/resources/2026cal.pdf) and [Lectionary 106 occurrence page](https://bible.usccb.org/bible/readings/071926.cfm), checked 2026-07-15.
 
--   Bishops’ official [*Antiphonary*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), pp. 74–75, corroborating the ICEL antiphon assignments; protected wording is not reproduced.
+- Bishops’ official [*Antiphonary*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), pp. 74–75, corroborating the ICEL antiphon assignments; protected wording is not reproduced.
 
--   Holy See, [*General Instruction of the Roman Missal*](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html), especially 46–90; approved [*General Introduction to the Lectionary*](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf), especially 65–69, 78–91, and 93–110.
+- Holy See, [*General Instruction of the Roman Missal*](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html), especially 46–90; approved [*General Introduction to the Lectionary*](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf), especially 65–69, 78–91, and 93–110.
 
--   Holy Scripture: Psalms 54, 86, and 111; Wisdom 11–12; Matthew 11 and 13; Romans 8; Revelation 3. Historical orientation used the corresponding *New American Bible, Revised Edition* introductions, texts, and notes at [Wisdom](https://bible.usccb.org/bible/wisdom/0), [Matthew](https://bible.usccb.org/bible/matthew/0), [Romans](https://bible.usccb.org/bible/romans/0), and [Revelation](https://bible.usccb.org/bible/revelation/0).
+- Holy Scripture: Psalms 54, 86, and 111; Wisdom 11–12; Matthew 11 and 13; Romans 8; Revelation 3. Historical orientation used the corresponding *New American Bible, Revised Edition* introductions, texts, and notes at [Wisdom](https://bible.usccb.org/bible/wisdom/0), [Matthew](https://bible.usccb.org/bible/matthew/0), [Romans](https://bible.usccb.org/bible/romans/0), and [Revelation](https://bible.usccb.org/bible/revelation/0).
 
 **Reception and doctrinal illumination**
 
--   St. Augustine, *Expositions on the Psalms* 53.8–11, 85.1 and 7, and 110.4–5 (Vulgate/LXX numbering), direct reception of the Entrance, Responsorial, and Communion-A sources: [Psalm 53](https://www.newadvent.org/fathers/1801054.htm), [Psalm 85](https://www.newadvent.org/fathers/1801086.htm), and [Psalm 110](https://www.newadvent.org/fathers/1801111.htm).
+- St. Augustine, *Expositions on the Psalms* 53.8–11, 85.1 and 7, and 110.4–5 (Vulgate/LXX numbering), direct reception of the Entrance, Responsorial, and Communion-A sources: [Psalm 53](https://www.newadvent.org/fathers/1801054.htm), [Psalm 85](https://www.newadvent.org/fathers/1801086.htm), and [Psalm 110](https://www.newadvent.org/fathers/1801111.htm).
 
--   St. Augustine, *Eighty-three Questions* 53.3, direct reception of Wisdom 12:15–18, [PL 40 Latin text](https://www.augustinus.it/latino/ottantatre_questioni/ottantatre_questioni_libro.htm); and *Expositions on Psalms* 2.4 and 6.3, direct use of Wisdom 12:18, [Psalm 2](https://www.augustinus.it/latino/esposizioni_salmi/esposizione_salmo_002_testo.htm) and [Psalm 6](https://www.augustinus.it/latino/esposizioni_salmi/esposizione_salmo_006_testo.htm).
+- St. Augustine, *Eighty-three Questions* 53.3, direct reception of Wisdom 12:15–18, [PL 40 Latin text](https://www.augustinus.it/latino/ottantatre_questioni/ottantatre_questioni_libro.htm); and *Expositions on Psalms* 2.4 and 6.3, direct use of Wisdom 12:18, [Psalm 2](https://www.augustinus.it/latino/esposizioni_salmi/esposizione_salmo_002_testo.htm) and [Psalm 6](https://www.augustinus.it/latino/esposizioni_salmi/esposizione_salmo_006_testo.htm).
 
--   St. Gregory the Great, *Moralia in Job* V.78, direct reuse of Wisdom 12:18 on tranquil judgment and restrained anger, [working English text](https://www.lectionarycentral.com/GregoryMoralia/Book05.html).
+- St. Gregory the Great, *Moralia in Job* V.78, direct reuse of Wisdom 12:18 on tranquil judgment and restrained anger, [working English text](https://www.lectionarycentral.com/GregoryMoralia/Book05.html).
 
--   St. Salvian, *On the Governance of God* II, direct Latin use of Wisdom 12:15, 18 in an argument about divine rule and human dignity, [Latin text](https://www.documentacatholicaomnia.eu/02m/0400-0470%2C_Salvianus_Massiliensis_Episcopus%2C_De_Gubernatione_Dei_Octo_Libri%2C_MLT.pdf); St. Thomas Aquinas, [*Exposition on the Lord’s Prayer*](https://isidore.co/aquinas/PaterNoster.htm), use of Wisdom 12:18 for rational and filial governance.
+- St. Salvian, *On the Governance of God* II, direct Latin use of Wisdom 12:15, 18 in an argument about divine rule and human dignity, [Latin text](https://www.documentacatholicaomnia.eu/02m/0400-0470%2C_Salvianus_Massiliensis_Episcopus%2C_De_Gubernatione_Dei_Octo_Libri%2C_MLT.pdf); St. Thomas Aquinas, [*Exposition on the Lord’s Prayer*](https://isidore.co/aquinas/PaterNoster.htm), use of Wisdom 12:18 for rational and filial governance.
 
--   St. John Chrysostom, *Homily 14 on Romans*, direct treatment of Romans 8:26–27, [working English text](https://www.newadvent.org/fathers/210214.htm); *Homilies 38, 46, and 47 on Matthew*, direct treatment of Matthew 11:25 and 13:24–43, [Homily 38](https://www.newadvent.org/fathers/200138.htm), [Homily 46](https://www.newadvent.org/fathers/200146.htm), and [Homily 47](https://www.newadvent.org/fathers/200147.htm).
+- St. John Chrysostom, *Homily 14 on Romans*, direct treatment of Romans 8:26–27, [working English text](https://www.newadvent.org/fathers/210214.htm); *Homilies 38, 46, and 47 on Matthew*, direct treatment of Matthew 11:25 and 13:24–43, [Homily 38](https://www.newadvent.org/fathers/200138.htm), [Homily 46](https://www.newadvent.org/fathers/200146.htm), and [Homily 47](https://www.newadvent.org/fathers/200147.htm).
 
--   St. Augustine, *Letter 130* 15 and 28–29, and *On the Soul and Its Origin* IV.13, direct reception of Romans 8:26–27 and the discipline of petition, [Letter 130](https://www.newadvent.org/fathers/1102130.htm) and [Book IV](https://www.newadvent.org/fathers/15084.htm).
+- St. Augustine, *Letter 130* 15 and 28–29, and *On the Soul and Its Origin* IV.13, direct reception of Romans 8:26–27 and the discipline of petition, [Letter 130](https://www.newadvent.org/fathers/1102130.htm) and [Book IV](https://www.newadvent.org/fathers/15084.htm).
 
--   Origen, *Commentary on Matthew* X, direct treatment of Matthew 13:36–43 within the long-form branch, [working English text](https://www.newadvent.org/fathers/101610.htm).
+- Origen, *Commentary on Matthew* X, direct treatment of Matthew 13:36–43 within the long-form branch, [working English text](https://www.newadvent.org/fathers/101610.htm).
 
--   St. Ambrose, *Exposition of the Christian Faith* IV.19–23, direct reception of Revelation 3:20, [working English text](https://www.newadvent.org/fathers/34044.htm); St. Jerome, *Letter 22* 26, [working English text](https://www.newadvent.org/fathers/3001022.htm); and St. John Cassian, *Institutes* V.19–20, [working English text](https://www.newadvent.org/fathers/350705.htm).
+- St. Ambrose, *Exposition of the Christian Faith* IV.19–23, direct reception of Revelation 3:20, [working English text](https://www.newadvent.org/fathers/34044.htm); St. Jerome, *Letter 22* 26, [working English text](https://www.newadvent.org/fathers/3001022.htm); and St. John Cassian, *Institutes* V.19–20, [working English text](https://www.newadvent.org/fathers/350705.htm).
 
--   St. Victorinus of Pettau, *Commentary on the Apocalypse*, treatment of the Laodicean rebuke surrounding Revelation 3:20, [working English text](https://www.newadvent.org/fathers/0712.htm); contextual reception, not direct exposition of verse 20.
+- St. Victorinus of Pettau, *Commentary on the Apocalypse*, treatment of the Laodicean rebuke surrounding Revelation 3:20, [working English text](https://www.newadvent.org/fathers/0712.htm); contextual reception, not direct exposition of verse 20.
 
--   First Vatican Council, *Dei Filius*, ch. 1, DS 3001–3003, [official Latin text](https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html), on universal Providence including free creaturely acts.
+- First Vatican Council, *Dei Filius*, ch. 1, DS 3001–3003, [official Latin text](https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html), on universal Providence including free creaturely acts.
 
--   *Catechism of the Catholic Church* 301–324, [Providence, secondary causes, permission of evil, and hope](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_4_the_creator.html); 541–550, [the Kingdom and parables](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html).
+- *Catechism of the Catholic Church* 301–324, [Providence, secondary causes, permission of evil, and hope](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_4_the_creator.html); 541–550, [the Kingdom and parables](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html).
 
--   St. Thomas Aquinas, *Summa theologiae* I, q. 22, aa. 1–4, on Providence and secondary causes, [working English text](https://www.newadvent.org/summa/1022.htm); *Summa contra Gentiles* III.95, on prayer within Providence.
+- St. Thomas Aquinas, *Summa theologiae* I, q. 22, aa. 1–4, on Providence and secondary causes, [working English text](https://www.newadvent.org/summa/1022.htm); *Summa contra Gentiles* III.95, on prayer within Providence.
 
 **Cultural, humorous, visual, and political afterlives**
 
--   Roger Williams, *The Bloudy Tenent of Persecution for Cause of Conscience Discussed* (1644), chs. XVIII–XXVIII, especially ch. XXVI, in Edward Bean Underhill, ed. (London, 1848), [source-audited public-domain text](https://www.gutenberg.org/cache/epub/65739/pg65739-images.html).
+- Roger Williams, *The Bloudy Tenent of Persecution for Cause of Conscience Discussed* (1644), chs. XVIII–XXVIII, especially ch. XXVI, in Edward Bean Underhill, ed. (London, 1848), [source-audited public-domain text](https://www.gutenberg.org/cache/epub/65739/pg65739-images.html).
 
--   John Milton, *Areopagitica: A Speech for the Liberty of Unlicens’d Printing* (1644), paragraph beginning “Not that I can think well,” checked in the [University of Michigan EEBO–TCP record and encoded edition](https://name.umdl.umich.edu/A50883.0001.001) and [Project Gutenberg text](https://www.gutenberg.org/files/608/608-h/608-h.htm).
+- John Milton, *Areopagitica: A Speech for the Liberty of Unlicens’d Printing* (1644), paragraph beginning “Not that I can think well,” checked in the [University of Michigan EEBO–TCP record and encoded edition](https://name.umdl.umich.edu/A50883.0001.001) and [Project Gutenberg text](https://www.gutenberg.org/files/608/608-h/608-h.htm).
 
--   Irvin S. Cobb, *A Laugh a Day Keeps the Doctor Away* (Garden City, NY, 1923), no. 358, “No Detail to Be Overlooked,” [Project Gutenberg text](https://www.gutenberg.org/cache/epub/69467/pg69467-images.html).
+- Irvin S. Cobb, *A Laugh a Day Keeps the Doctor Away* (Garden City, NY, 1923), no. 358, “No Detail to Be Overlooked,” [Project Gutenberg text](https://www.gutenberg.org/cache/epub/69467/pg69467-images.html).
 
--   Museum of Oxford, [“The Light of the World”](https://moxdigiexhibits.omeka.net/exhibits/show/oxford-re-formed/item/1110), catalogue record for William Holman Hunt’s 1851–1853 painting, its Revelation 3:20 source, symbolic door, reception, and image rights.
+- Museum of Oxford, [“The Light of the World”](https://moxdigiexhibits.omeka.net/exhibits/show/oxford-re-formed/item/1110), catalogue record for William Holman Hunt’s 1851–1853 painting, its Revelation 3:20 source, symbolic door, reception, and image rights.
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

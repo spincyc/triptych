@@ -428,15 +428,15 @@ Francis sharply warned in 2023 and 2024 against using Guadalupan reality for ide
 
 John Paul II’s first international apostolic journey brought him to Guadalupe in 1979, placing the emerging pontificate and the Latin American episcopal meeting under Mary’s protection. In 1990 he beatified Juan Diego at Tepeyac. His 1999 post-synodal exhortation *Ecclesia in America* gave the most concentrated authoritative synthesis:
 
--   genuine Marian devotion leads to encounter with Christ and life by the Gospel;
+- genuine Marian devotion leads to encounter with Christ and life by the Gospel;
 
--   the 1531 appearance to Juan Diego had a decisive evangelizing effect;
+- the 1531 appearance to Juan Diego had a decisive evangelizing effect;
 
--   the mestiza face is an example of perfectly inculturated evangelization;
+- the mestiza face is an example of perfectly inculturated evangelization;
 
--   Guadalupe is venerated as Queen of all America, Patroness, and Star of the first and new evangelization; and
+- Guadalupe is venerated as Queen of all America, Patroness, and Star of the first and new evangelization; and
 
--   12 December should be celebrated throughout the continent as the feast of Our Lady of Guadalupe, Mother and Evangelizer of America.
+- 12 December should be celebrated throughout the continent as the feast of Our Lady of Guadalupe, Mother and Evangelizer of America.
 
 The Congregation for Divine Worship and the Discipline of the Sacraments implemented the papal decision by decree dated 25 March 1999 and published in the Holy See collection in 2000. It ordered the feast into the calendars of every nation and territory in America, preserving higher ranks already granted in particular places. This is a precise continental liturgical act.
 

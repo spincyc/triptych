@@ -99,9 +99,9 @@ The sequence also orders distinct kinds of hunger without confusing them. Isaiah
 | Inseparable love | Rom. 8 | Chrysostom and Aquinas on suffering and providence | Evil remains evil; safety, medicine, reporting, and justice remain duties. |
 | Heavenly refreshment | Communion A/B; final prayer | Wisdom’s manna rereading; Johannine bread discourse | Alternatives remain distinct; sacramental fruit is not mechanical. |
 
-<span id="triptych:brief-synthesis:end" label="triptych:brief-synthesis:end"></span>
+<span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
-<span id="triptych:brief-synthesis:next" label="triptych:brief-synthesis:next"></span>
+<span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
 
 ## The Propers: Detailed Commentary
 
@@ -294,11 +294,11 @@ Romans stands independently of the Isaiah–Matthew correlation. It contributes 
 
 ## The Propers: Notable and Quotable
 
--   **“Why do you spend your money for that which is not bread?” (*First Reading*)** Henry David Thoreau’s *Walden*, “Economy,” invokes Isaiah’s question while attacking lives consumed by unnecessary expenditure. A prophetic summons to covenant nourishment becomes an ironic instrument of American economic criticism. The verbal dependence is explicit; Thoreau’s program is not treated as Isaiah’s own.
+- **“Why do you spend your money for that which is not bread?” (*First Reading*)** Henry David Thoreau’s *Walden*, “Economy,” invokes Isaiah’s question while attacking lives consumed by unnecessary expenditure. A prophetic summons to covenant nourishment becomes an ironic instrument of American economic criticism. The verbal dependence is explicit; Thoreau’s program is not treated as Isaiah’s own.
 
--   **“Five loaves and two fish” (*Gospel*)** The anonymous 1783 political etching *The Loaves and Fishes* turns the feeding image into satire: ministers crowd around loaves and fish that signify offices, rewards, and access to patronage. Provision for a multitude becomes appetite for government place. The checked print establishes the visual and titular reuse of the Gospel tradition, but it does not identify Matthew rather than another Synoptic feeding account as its exclusive source.
+- **“Five loaves and two fish” (*Gospel*)** The anonymous 1783 political etching *The Loaves and Fishes* turns the feeding image into satire: ministers crowd around loaves and fish that signify offices, rewards, and access to patronage. Provision for a multitude becomes appetite for government place. The checked print establishes the visual and titular reuse of the Gospel tradition, but it does not identify Matthew rather than another Synoptic feeding account as its exclusive source.
 
--   **“Neither death, nor life” (*Second Reading*)** Matthew Arnold’s *Dover Beach*, lines 29–37, answers a world without secure consolation by asking two lovers to be true to one another, then builds its own accumulating “neither” and “nor” catalogue around love, light, certitude, peace, and help for pain. Its form and vocabulary make a striking changed-register echo of Romans 8’s catalogue of forces unable to separate believers from divine love. The checked first-edition transcription supports comparison, not a claim that Arnold consciously borrowed this passage.
+- **“Neither death, nor life” (*Second Reading*)** Matthew Arnold’s *Dover Beach*, lines 29–37, answers a world without secure consolation by asking two lovers to be true to one another, then builds its own accumulating “neither” and “nor” catalogue around love, light, certitude, peace, and help for pain. Its form and vocabulary make a striking changed-register echo of Romans 8’s catalogue of forces unable to separate believers from divine love. The checked first-edition transcription supports comparison, not a claim that Arnold consciously borrowed this passage.
 
 ## The Propers: Interpretive Possibilities
 
@@ -346,19 +346,19 @@ The feeding ends in visible abundance, but Romans locates security in inseparabl
 
 ## References
 
--   USCCB, [Eighteenth Sunday in Ordinary Time, 2 August 2026](https://bible.usccb.org/bible/readings/080226.cfm), U.S. Lectionary no. 112; and [2026 Liturgical Calendar](https://www.usccb.org/resources/2026cal.pdf).
+- USCCB, [Eighteenth Sunday in Ordinary Time, 2 August 2026](https://bible.usccb.org/bible/readings/080226.cfm), U.S. Lectionary no. 112; and [2026 Liturgical Calendar](https://www.usccb.org/resources/2026cal.pdf).
 
--   *Missale Romanum*, editio typica tertia (2002), pp. 467–468; reimpressio emendata (2008); *Roman Missal, Third Edition*, U.S. English edition implemented 2011.
+- *Missale Romanum*, editio typica tertia (2002), pp. 467–468; reimpressio emendata (2008); *Roman Missal, Third Edition*, U.S. English edition implemented 2011.
 
--   *General Instruction of the Roman Missal* 46–90, 352–367; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
+- *General Instruction of the Roman Missal* 46–90, 352–367; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
 
--   St. John Chrysostom, [*Homily 49 on Matthew*](https://www.newadvent.org/fathers/200149.htm) and *Homily 15 on Romans*; St. Augustine, *Expositions on Psalms 69 and 144* and *Tractates on John* 25–26; St. Thomas Aquinas, *Super Romanos* 8, lect. 7, and *Super Ioannem* 6.
+- St. John Chrysostom, [*Homily 49 on Matthew*](https://www.newadvent.org/fathers/200149.htm) and *Homily 15 on Romans*; St. Augustine, *Expositions on Psalms 69 and 144* and *Tractates on John* 25–26; St. Thomas Aquinas, *Super Romanos* 8, lect. 7, and *Super Ioannem* 6.
 
--   Henry David Thoreau, [*Walden*](https://www.gutenberg.org/files/205/205-h/205-h.htm), “Economy,” Project Gutenberg public-domain edition.
+- Henry David Thoreau, [*Walden*](https://www.gutenberg.org/files/205/205-h/205-h.htm), “Economy,” Project Gutenberg public-domain edition.
 
--   Anonymous, [*The Loaves and Fishes*](https://www.britishmuseum.org/collection/object/P_1868-0808-4955) (etching, published by E. Achery, 24 March 1783), British Museum object 1868,0808.4955; the visually checked public-domain scan is identified in the source-library artifact record.
+- Anonymous, [*The Loaves and Fishes*](https://www.britishmuseum.org/collection/object/P_1868-0808-4955) (etching, published by E. Achery, 24 March 1783), British Museum object 1868,0808.4955; the visually checked public-domain scan is identified in the source-library artifact record.
 
--   Matthew Arnold, [*Dover Beach*](https://anthology.lib.virginia.edu/exist/apps/LiC/work/Arnold/arnold-dover-beach.xml), lines 29–37, in *New Poems* (Macmillan, 1867), Literature in Context first-edition transcription.
+- Matthew Arnold, [*Dover Beach*](https://anthology.lib.virginia.edu/exist/apps/LiC/work/Arnold/arnold-dover-beach.xml), lines 29–37, in *New Poems* (Macmillan, 1867), Literature in Context first-edition transcription.
 
 **Last revised (UTC):** 2026-07-29T18:04:07Z
 

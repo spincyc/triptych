@@ -1,0 +1,45 @@
+% Drawing: the whole arc — made, carried, lost, seen; and the liturgy's answer.
+\begin{sketchfig}
+\begin{tikzpicture}[scale=0.98]
+% baseline
+\draw[sketchbold] (0.2,0) -- (6.1,0);
+% Sinai
+\draw[sketch] (0.55,0) -- (0.95,0.75) -- (1.35,0);
+\node[stiny] at (0.95,-0.45) {Sinai:\\made};
+% Silo (tent)
+\draw[sketch] (2.35,0) -- (2.7,0.62) -- (3.05,0);
+\draw[sketchthin] (2.7,0.62) -- (2.7,0);
+\node[stiny] at (2.7,-0.45) {Silo:\\the residence};
+% Jerusalem (temple gable)
+\draw[sketch] (4.35,0) -- (4.35,0.55) -- (4.55,0.85) -- (5.15,0.85) -- (5.35,0.55) -- (5.35,0);
+\node[stiny] at (4.85,-0.45) {Jerusalem:\\the temple};
+% the break and the traditions
+\node[stiny] at (6.7,-0.02) {587};
+\draw[sketchthin, dash pattern=on 1.2pt off 2.2pt] (7.1,0) .. controls (7.55,-0.5) and (7.95,-0.75) .. (8.45,-0.85);
+\node[stiny, anchor=west] at (8.55,-0.85) {a cave on Nebo};
+\draw[sketchthin, dash pattern=on 1.2pt off 2.2pt] (7.1,0) .. controls (7.65,-0.15) and (8.1,-0.25) .. (8.45,-0.28);
+\node[stiny, anchor=west] at (8.55,-0.28) {beneath the temple court};
+\draw[sketchthin, dash pattern=on 1.2pt off 2.2pt] (7.1,0) .. controls (7.55,0.2) and (7.95,0.28) .. (8.45,0.3);
+\node[stiny, anchor=west] at (8.55,0.3) {carried to Babylon};
+\node[stiny] at (9.7,-1.5) {the traditions: kept, each with its horizon\\(and one dissent: plundered)};
+% the ascent
+\draw[sroute] (7.1,0.1) .. controls (7.9,1.0) and (9.1,1.9) .. (9.9,2.55);
+\node[stiny, anchor=west] at (9.85,1.25) {the liturgy's answer:\\the living ark assumed\\(the fifteenth of August)};
+% the opened temple in heaven
+\draw[sketch] (9.85,3.0) -- (9.85,3.5) -- (10.1,3.85) -- (10.8,3.85) -- (11.05,3.5) -- (11.05,3.0) -- cycle;
+\path[sketchdark] (10.3,3.0) rectangle (10.6,3.3);
+\draw[sketchthin] (9.4,4.15) -- (9.65,3.9) (11.5,4.15) -- (11.25,3.9) (10.45,4.35) -- (10.45,4.0);
+\node[stiny] at (10.45,4.78) {``the ark of his testament was seen\\in his temple'' (Apoc 11:19)};
+% the woman: a small figure, sun-ring about her, stars above
+\draw[line width=0.5pt] (12.85,2.6) -- (13.15,3.3) -- (13.45,2.6) -- cycle;
+\draw[line width=0.5pt] (13.15,3.47) circle (0.1);
+\foreach \a in {0,30,...,330} { \fill ([shift=(\a:0.82)]13.15,3.05) circle (0.028); }
+\node[stiny] at (13.15,1.75) {``a woman clothed with the sun''\\the next verse (12:1)};
+\end{tikzpicture}
+\sketchcaption{The whole arc, drawn once: made at Sinai, resident at Silo,
+at rest in the temple, unaccounted for after Josias --- then seen, at the
+last trumpet, in the opened temple in heaven, one verse before the sign of
+the woman. That the two verses are one movement is an ancient reading; that
+the movement is Mary's is the lectionary's, and the master table nearby
+holds both judgments apart and together.}
+\end{sketchfig}

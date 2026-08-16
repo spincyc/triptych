@@ -1140,107 +1140,107 @@ Second, the short *Sancte Michael Archangele* attached to the Leonine sequence m
 
 ### Controlling liturgical and magisterial sources
 
--   *Missale Romanum ex decreto SS. Concilii Tridentini restitutum Summorum Pontificum cura recognitum*, editio typica (1962), especially *Ritus servandus in celebratione Missae*, *Ordo Missae*, and *Canon Missae*. [Public typical-edition facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf).
+- *Missale Romanum ex decreto SS. Concilii Tridentini restitutum Summorum Pontificum cura recognitum*, editio typica (1962), especially *Ritus servandus in celebratione Missae*, *Ordo Missae*, and *Canon Missae*. [Public typical-edition facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf).
 
--   John XXIII, apostolic letter *Rubricarum instructum* (25 July 1960), nos. 1–5, promulgating the new Code of Rubrics. [Holy See Latin text](https://www.vatican.va/content/john-xxiii/la/motu_proprio/documents/hf_j-xxiii_motu-proprio_19600725_rubricarum-instructum.html).
+- John XXIII, apostolic letter *Rubricarum instructum* (25 July 1960), nos. 1–5, promulgating the new Code of Rubrics. [Holy See Latin text](https://www.vatican.va/content/john-xxiii/la/motu_proprio/documents/hf_j-xxiii_motu-proprio_19600725_rubricarum-instructum.html).
 
--   Sacred Congregation of Rites, decree *Novis hisce temporibus* (13 November 1962), AAS 54 (1962), 873, ordering Saint Joseph’s name in *Communicantes* from 8 December 1962.
+- Sacred Congregation of Rites, decree *Novis hisce temporibus* (13 November 1962), AAS 54 (1962), 873, ordering Saint Joseph’s name in *Communicantes* from 8 December 1962.
 
--   Council of Trent, Session XIII, decree on the Eucharist, especially chs. 1–8 and canons 1–4; Session XIV, doctrine on Penance, chs. 4–5; Session XXI, chs. 1–3, on Communion under either species; and Session XXII, doctrine and canons on the Sacrifice of the Mass, especially chs. 1–9 and canons 1–9.
+- Council of Trent, Session XIII, decree on the Eucharist, especially chs. 1–8 and canons 1–4; Session XIV, doctrine on Penance, chs. 4–5; Session XXI, chs. 1–3, on Communion under either species; and Session XXII, doctrine and canons on the Sacrifice of the Mass, especially chs. 1–9 and canons 1–9.
 
--   Councils of Nicaea I (325), Constantinople I (381), and Chalcedon (451): DS 125 and 150, with the received expanded Creed at Chalcedon in ACO II.1.2, p. 128 and the limitation that the surviving acts of 381 do not themselves transmit it; Third Council of Toledo (589), canon 2, Mansi IX, 993, for Western Eucharistic use before the Lord’s Prayer.
+- Councils of Nicaea I (325), Constantinople I (381), and Chalcedon (451): DS 125 and 150, with the received expanded Creed at Chalcedon in ACO II.1.2, p. 128 and the limitation that the surviving acts of 381 do not themselves transmit it; Third Council of Toledo (589), canon 2, Mansi IX, 993, for Western Eucharistic use before the Lord’s Prayer.
 
--   Pius V, apostolic constitution *Quo primum* (14 July 1570), read with the title and contents of the promulgated Missal rather than as a claim that the Roman rite began in 1570.
+- Pius V, apostolic constitution *Quo primum* (14 July 1570), read with the title and contents of the promulgated Missal rather than as a claim that the Roman rite began in 1570.
 
--   Pius XII, encyclical *Mediator Dei* (20 November 1947), especially nos. 20–23, 47–59, 68–78, and 80–104. [Holy See English text](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).
+- Pius XII, encyclical *Mediator Dei* (20 November 1947), especially nos. 20–23, 47–59, 68–78, and 80–104. [Holy See English text](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html).
 
--   Second Vatican Council, constitution *Sacrosanctum Concilium* (4 December 1963), especially nos. 7, 14, 47–48, 50, and 56. [Holy See English text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html).
+- Second Vatican Council, constitution *Sacrosanctum Concilium* (4 December 1963), especially nos. 7, 14, 47–48, 50, and 56. [Holy See English text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html).
 
--   Second Vatican Council, dogmatic constitution *Lumen gentium*, nos. 10–11 and 60–62; decree *Presbyterorum ordinis*, nos. 2 and 5.
+- Second Vatican Council, dogmatic constitution *Lumen gentium*, nos. 10–11 and 60–62; decree *Presbyterorum ordinis*, nos. 2 and 5.
 
--   *Catechism of the Catholic Church*, nos. 1066–1209, 1322–1419, and 1544–1553. [Holy See English edition](https://www.vatican.va/archive/ENG0015/_INDEX.HTM).
+- *Catechism of the Catholic Church*, nos. 1066–1209, 1322–1419, and 1544–1553. [Holy See English edition](https://www.vatican.va/archive/ENG0015/_INDEX.HTM).
 
--   Benedict XVI, apostolic exhortation *Sacramentum Caritatis* (22 February 2007), no. 64, on mystagogy as the relation of rites to salvation history, interpretation of signs, and formation of Christian life. [Holy See English text](https://www.vatican.va/content/benedict-xvi/en/apost_exhortations/documents/hf_ben-xvi_exh_20070222_sacramentum-caritatis.html).
+- Benedict XVI, apostolic exhortation *Sacramentum Caritatis* (22 February 2007), no. 64, on mystagogy as the relation of rites to salvation history, interpretation of signs, and formation of Christian life. [Holy See English text](https://www.vatican.va/content/benedict-xvi/en/apost_exhortations/documents/hf_ben-xvi_exh_20070222_sacramentum-caritatis.html).
 
--   Paul VI, encyclical *Mysterium Fidei* (3 September 1965), nos. 45–46, on the duration of Christ’s presence while the Eucharistic species subsist. [Holy See English text](https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_03091965_mysterium.html).
+- Paul VI, encyclical *Mysterium Fidei* (3 September 1965), nos. 45–46, on the duration of Christ’s presence while the Eucharistic species subsist. [Holy See English text](https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_03091965_mysterium.html).
 
--   Benedict XVI, letter to the German Bishops’ Conference concerning *pro multis* (14 April 2012), read with CCC 605 on Christ’s death for every human being. [Holy See English text](https://www.vatican.va/content/benedict-xvi/en/letters/2012/documents/hf_ben-xvi_let_20120414_zollitsch.html).
+- Benedict XVI, letter to the German Bishops’ Conference concerning *pro multis* (14 April 2012), read with CCC 605 on Christ’s death for every human being. [Holy See English text](https://www.vatican.va/content/benedict-xvi/en/letters/2012/documents/hf_ben-xvi_let_20120414_zollitsch.html).
 
 ### Scriptural, patristic, and early liturgical witnesses
 
--   Genesis 1, 4, 14, and 22; Numbers 6; 1 Chronicles 29; Ruth 2; Nehemiah 8; 2 Maccabees 12; Psalms 25, 42, 117, 121, and 140; Isaiah 6; Lamentations 3; Daniel 3, 10, and 12; Malachi 1:11; Matthew 6, 8, 15, 20–21, and 26–28; Mark 14; Luke 1–2, 4, 10–11, 18, 22, and 24; John 1, 6, 14, and 19; Acts 2 and 20; 1 Corinthians 10–11 and 15; 2 Corinthians 13; Galatians 6; Ephesians 4; Philippians 2; Colossians 1 and 3; 1 Timothy 2 and 4; 2 Timothy 4; Hebrews 7, 9–10, and 12; James 5; 2 Peter 1; 1 John 1; Jude 9; Revelation 4–6, 8, 12, 19, and 21–22. Each liturgical reuse is read in its literary and canonical context and classified as literal, typological, allusive, or analogical where material.
+- Genesis 1, 4, 14, and 22; Numbers 6; 1 Chronicles 29; Ruth 2; Nehemiah 8; 2 Maccabees 12; Psalms 25, 42, 117, 121, and 140; Isaiah 6; Lamentations 3; Daniel 3, 10, and 12; Malachi 1:11; Matthew 6, 8, 15, 20–21, and 26–28; Mark 14; Luke 1–2, 4, 10–11, 18, 22, and 24; John 1, 6, 14, and 19; Acts 2 and 20; 1 Corinthians 10–11 and 15; 2 Corinthians 13; Galatians 6; Ephesians 4; Philippians 2; Colossians 1 and 3; 1 Timothy 2 and 4; 2 Timothy 4; Hebrews 7, 9–10, and 12; James 5; 2 Peter 1; 1 John 1; Jude 9; Revelation 4–6, 8, 12, 19, and 21–22. Each liturgical reuse is read in its literary and canonical context and classified as literal, typological, allusive, or analogical where material.
 
--   *Didache*, chs. 8–10 and 14.
+- *Didache*, chs. 8–10 and 14.
 
--   Justin Martyr, *First Apology* 65 and 67. The Dods–Reith English as printed in ANF volume 1 (Buffalo, 1887) was checked in the exact facsimile; [New Advent](https://www.newadvent.org/fathers/0126.htm) supplies a distinct Kevin Knight–revised web presentation.
+- Justin Martyr, *First Apology* 65 and 67. The Dods–Reith English as printed in ANF volume 1 (Buffalo, 1887) was checked in the exact facsimile; [New Advent](https://www.newadvent.org/fathers/0126.htm) supplies a distinct Kevin Knight–revised web presentation.
 
--   Ignatius of Antioch, *Letter to the Ephesians* 20.2, for Eucharistic food ordered to immortality; Irenaeus of Lyons, *Against Heresies*, IV.17–18 and V.2, for created offering, ecclesial communion, and resurrection.
+- Ignatius of Antioch, *Letter to the Ephesians* 20.2, for Eucharistic food ordered to immortality; Irenaeus of Lyons, *Against Heresies*, IV.17–18 and V.2, for created offering, ecclesial communion, and resurrection.
 
--   Tertullian, *De corona* 3; Origen, *Commentary on John* I.6; *Apostolic Constitutions* VII.47 and VIII.12.27, ed. Funk, I, 454–457 and 506.
+- Tertullian, *De corona* 3; Origen, *Commentary on John* I.6; *Apostolic Constitutions* VII.47 and VIII.12.27, ed. Funk, I, 454–457 and 506.
 
--   Cyprian of Carthage, *Epistle* 63, on the mixed chalice, Christ’s institution, and the unity of the people with their Lord; *De dominica oratione* 8–9, 18, 31.
+- Cyprian of Carthage, *Epistle* 63, on the mixed chalice, Christ’s institution, and the unity of the people with their Lord; *De dominica oratione* 8–9, 18, 31.
 
--   The redactionally complex church order conventionally called the *Apostolic Tradition*, used with the modern caution that date, authorship, and recoverable strata are disputed.
+- The redactionally complex church order conventionally called the *Apostolic Tradition*, used with the modern caution that date, authorship, and recoverable strata are disputed.
 
--   Cyril of Jerusalem, *Mystagogical Catechesis* V, especially 2–6 and 11–23, for a movement-shaped ancient exposition from washing through Communion; Gregory of Nyssa, *De baptismo*, PG 46:421C; and *Apostolic Constitutions* VIII.12.27 for secure fourth-century Eastern Sanctus witnesses.
+- Cyril of Jerusalem, *Mystagogical Catechesis* V, especially 2–6 and 11–23, for a movement-shaped ancient exposition from washing through Communion; Gregory of Nyssa, *De baptismo*, PG 46:421C; and *Apostolic Constitutions* VIII.12.27 for secure fourth-century Eastern Sanctus witnesses.
 
--   Ambrose of Milan, *De mysteriis*, chs. 8–9; *De sacramentis*, IV.4–6 and V, especially IV.5.21 and IV.6.26–27, ed. Botte, SC 25, pp. 84ff.
+- Ambrose of Milan, *De mysteriis*, chs. 8–9; *De sacramentis*, IV.4–6 and V, especially IV.5.21 and IV.6.26–27, ed. Botte, SC 25, pp. 84ff.
 
--   Optatus of Milevis, *Contra Parmenianum* II.20, CSEL 26, p. 56; Augustine of Hippo, Sermons 57, 227, 272, and 293; *Epistle* 149.16; *Confessions* IX.11–13; *Enarrationes in Psalmos* 30, 42, and 85; *Tractates on John* 1–2; *City of God* X.6 and X.20.
+- Optatus of Milevis, *Contra Parmenianum* II.20, CSEL 26, p. 56; Augustine of Hippo, Sermons 57, 227, 272, and 293; *Epistle* 149.16; *Confessions* IX.11–13; *Enarrationes in Psalmos* 30, 42, and 85; *Tractates on John* 1–2; *City of God* X.6 and X.20.
 
--   Gregory the Great, *Register of Letters*, IX.26, October 598, ed. Ewald–Hartmann, MGH *Epistolae* II, 59 (IX.12 in the NPNF arrangement), used as a bounded witness to Roman Kyrie, Alleluia, and Pater placement rather than proof that he composed them.
+- Gregory the Great, *Register of Letters*, IX.26, October 598, ed. Ewald–Hartmann, MGH *Epistolae* II, 59 (IX.12 in the NPNF arrangement), used as a bounded witness to Roman Kyrie, Alleluia, and Pater placement rather than proof that he composed them.
 
--   *Liber pontificalis*, ed. Duchesne, I, 56, 230, 263, 312, and 376: the Telesphorus, Celestine, Symmachus, Gregory, and Sergius notices are distinguished by date, genre, and historical reliability rather than treated as autograph composition decrees.
+- *Liber pontificalis*, ed. Duchesne, I, 56, 230, 263, 312, and 376: the Telesphorus, Celestine, Symmachus, Gregory, and Sergius notices are distinguished by date, genre, and historical reliability rather than treated as autograph composition decrees.
 
--   *Ordo Romanus I*, in Michel Andrieu, *Les Ordines Romani du haut moyen âge*, vol. II, *Les textes (Ordines I–XIII)* (Louvain, 1948), pp. 38–51 and 81–108, nn. 42–71, for the recensions and the Roman order from entrance through dismissal.
+- *Ordo Romanus I*, in Michel Andrieu, *Les Ordines Romani du haut moyen âge*, vol. II, *Les textes (Ordines I–XIII)* (Louvain, 1948), pp. 38–51 and 81–108, nn. 42–71, for the recensions and the Roman order from entrance through dismissal.
 
--   Ludovico Antonio Muratori, ed., *Liturgia Romana Vetus*, 2 vols. (Venice, 1748), especially I, 318, 359, 366, 430, 467, 588, and 746 and II, 653; H. A. Wilson, ed., *The Gelasian Sacramentary*, p. 5; and Hans Lietzmann, ed., *Das Sacramentarium Gregorianum*, no. 9.6. These control ancient prayer ancestry and blessings formerly inserted before *Per quem haec omnia* without equating manuscript date, original composition, and later ritual placement.
+- Ludovico Antonio Muratori, ed., *Liturgia Romana Vetus*, 2 vols. (Venice, 1748), especially I, 318, 359, 366, 430, 467, 588, and 746 and II, 653; H. A. Wilson, ed., *The Gelasian Sacramentary*, p. 5; and Hans Lietzmann, ed., *Das Sacramentarium Gregorianum*, no. 9.6. These control ancient prayer ancestry and blessings formerly inserted before *Per quem haec omnia* without equating manuscript date, original composition, and later ritual placement.
 
--   Bernard Botte, *Le canon de la messe romaine: édition critique*, especially pp. 30 and 50 with apparatus, for Roman Canon manuscript readings and layered clauses.
+- Bernard Botte, *Le canon de la messe romaine: édition critique*, especially pp. 30 and 50 with apparatus, for Roman Canon manuscript readings and layered clauses.
 
 ### Scholastic, medieval, and historical witnesses
 
--   Amalarius of Metz, *Liber officialis*, especially III.19.26, ed. Hanssens, II, 319; Innocent III, *De sacro altaris mysterio*; William Durandus, *Rationale divinorum officiorum*, book IV, especially IV.24.5. These are witnesses to medieval practice or interpretation and must not automatically be treated as evidence of a ceremony’s first cause.
+- Amalarius of Metz, *Liber officialis*, especially III.19.26, ed. Hanssens, II, 319; Innocent III, *De sacro altaris mysterio*; William Durandus, *Rationale divinorum officiorum*, book IV, especially IV.24.5. These are witnesses to medieval practice or interpretation and must not automatically be treated as evidence of a ceremony’s first cause.
 
--   Thomas Aquinas, *Summa theologiae* I, qq. 110–114, for angelic ministry beneath divine providence; and III, qq. 73–83, especially q. 75, aa. 1–4; q. 79; q. 82; q. 83, a. 4, ad 7–9; and q. 83, a. 5, ad 7–10, for Eucharistic presence, sacrifice, effects, minister, Canon petitions, fraction, commingling, and ablutions. [Corpus Thomisticum Latin text](https://www.corpusthomisticum.org/sth4083.html); [public-domain English edition](https://www.newadvent.org/summa/4083.htm).
+- Thomas Aquinas, *Summa theologiae* I, qq. 110–114, for angelic ministry beneath divine providence; and III, qq. 73–83, especially q. 75, aa. 1–4; q. 79; q. 82; q. 83, a. 4, ad 7–9; and q. 83, a. 5, ad 7–10, for Eucharistic presence, sacrifice, effects, minister, Canon petitions, fraction, commingling, and ablutions. [Corpus Thomisticum Latin text](https://www.corpusthomisticum.org/sth4083.html); [public-domain English edition](https://www.newadvent.org/summa/4083.htm).
 
--   Robert Lippe, ed., *Missale Romanum Mediolani, 1474*, Henry Bradshaw Society 17 and 33 (London, 1899 and 1907), especially pp. 198–212; and the Roman typical editions promulgated in 1570, 1604, and 1634. The 1474 pages were checked for both presence and absence; the later editions control identified standardization points rather than an asserted complete collation.
+- Robert Lippe, ed., *Missale Romanum Mediolani, 1474*, Henry Bradshaw Society 17 and 33 (London, 1899 and 1907), especially pp. 198–212; and the Roman typical editions promulgated in 1570, 1604, and 1634. The 1474 pages were checked for both presence and absence; the later editions control identified standardization points rather than an asserted complete collation.
 
--   Edmond Martène, *De antiquis Ecclesiae ritibus*, vol. I, especially 508E, 510–511, 520B, and 526C; George F. Warner, ed., *The Stowe Missal*, Henry Bradshaw Society 32, p. 7; Bernold of Constance, *Micrologus*, chs. 11 and 23, PL 151:983–995; and the edition of the *Capitulare ecclesiastici ordinis* by Silva-Tarouca, pp. 198 and 204–207. These loci distinguish partial ancestor, different placement, and exact received form.
+- Edmond Martène, *De antiquis Ecclesiae ritibus*, vol. I, especially 508E, 510–511, 520B, and 526C; George F. Warner, ed., *The Stowe Missal*, Henry Bradshaw Society 32, p. 7; Bernold of Constance, *Micrologus*, chs. 11 and 23, PL 151:983–995; and the edition of the *Capitulare ecclesiastici ordinis* by Silva-Tarouca, pp. 198 and 204–207. These loci distinguish partial ancestor, different placement, and exact received form.
 
--   Parisian *Praecepta synodalia* under Bishop Odo of Sully, around 1200, canon 28, in Odette Pontal, *Les statuts synodaux français du XIIIe siècle*, vol. I (Paris: Bibliothèque nationale, 1971), p. 82 (older printing Mansi XXII, 628), as an important early catalyst for elevation of the consecrated Host, not as an invention decree; Vincent L. Kennedy, “The Date of the Parisian Decree on the Elevation of the Host,” *Mediaeval Studies* 8 (1946), pp. 87–96, used only to delimit the dating dispute.
+- Parisian *Praecepta synodalia* under Bishop Odo of Sully, around 1200, canon 28, in Odette Pontal, *Les statuts synodaux français du XIIIe siècle*, vol. I (Paris: Bibliothèque nationale, 1971), p. 82 (older printing Mansi XXII, 628), as an important early catalyst for elevation of the consecrated Host, not as an invention decree; Vincent L. Kennedy, “The Date of the Parisian Decree on the Elevation of the Host,” *Mediaeval Studies* 8 (1946), pp. 87–96, used only to delimit the dating dispute.
 
--   J. Wickham Legg, ed., *Tracts on the Mass*, Henry Bradshaw Society 27, pp. 159–160, for the later contracted timing of the Canon’s doxological elevation; the earlier joint elevation is controlled by *Ordo Romanus I*, no. 16, Andrieu II, p. 96.
+- J. Wickham Legg, ed., *Tracts on the Mass*, Henry Bradshaw Society 27, pp. 159–160, for the later contracted timing of the Canon’s doxological elevation; the earlier joint elevation is controlled by *Ordo Romanus I*, no. 16, Andrieu II, p. 96.
 
--   F.-M. Guerrini, ed., *Ordinarium iuxta ritum Sacri Ordinis Fratrum Praedicatorum* (Rome: Società tipografica A. Manuzio, 1921), especially p. 250, editing the Dominican order codified in 1256; Victor Leroquais, “L’Ordo Missae du sacramentaire d’Amiens, Paris, Bibl. Nat. ms. lat. 9432,” *Ephemerides Liturgicae* 41 (1927), pp. 435–445, especially p. 444, and *Les sacramentaires et les missels manuscrits des bibliothèques publiques de France*, vol. I (Paris, 1924), p. 30; the Synod of Aix (1585), Hardouin X, 1525; and *Rituale Romanum: Editio princeps (1614)*, ed. Manlio Sodi and Juan Javier Flores Arcas, Monumenta Liturgica Concilii Tridentini 5 (Vatican City: Libreria Editrice Vaticana, 2004), for separately staged histories of private prayers, the Last Gospel, ablutions, and the faithful’s *Ecce Agnus*.
+- F.-M. Guerrini, ed., *Ordinarium iuxta ritum Sacri Ordinis Fratrum Praedicatorum* (Rome: Società tipografica A. Manuzio, 1921), especially p. 250, editing the Dominican order codified in 1256; Victor Leroquais, “L’Ordo Missae du sacramentaire d’Amiens, Paris, Bibl. Nat. ms. lat. 9432,” *Ephemerides Liturgicae* 41 (1927), pp. 435–445, especially p. 444, and *Les sacramentaires et les missels manuscrits des bibliothèques publiques de France*, vol. I (Paris, 1924), p. 30; the Synod of Aix (1585), Hardouin X, 1525; and *Rituale Romanum: Editio princeps (1614)*, ed. Manlio Sodi and Juan Javier Flores Arcas, Monumenta Liturgica Concilii Tridentini 5 (Vatican City: Libreria Editrice Vaticana, 2004), for separately staged histories of private prayers, the Last Gospel, ablutions, and the faithful’s *Ecce Agnus*.
 
--   Egeria, *Silviae vel potius Aetheriae peregrinatio ad loca sancta* 25.1–2, ed. Wilhelm Heraeus, Sammlung vulgärlateinischer Texte 1 (Heidelberg: Carl Winter, 1908), for early Christian use of *missa* in the setting of a completed service and departure.
+- Egeria, *Silviae vel potius Aetheriae peregrinatio ad loca sancta* 25.1–2, ed. Wilhelm Heraeus, Sammlung vulgärlateinischer Texte 1 (Heidelberg: Carl Winter, 1908), for early Christian use of *missa* in the setting of a completed service and departure.
 
--   Gregor Richter and Albert Schönfelder, eds., *Sacramentarium Fuldense saeculi X: Cod. Theol. 231 der K. Universitätsbibliothek zu Göttingen* (Fulda: Fuldaer Actiendruckerei, 1912), especially no. 24; Clemens Blume and Henry Marriott Bannister, eds., *Tropi graduales I: Tropen zum Ordinarium Missae*, *Analecta Hymnica Medii Aevi* 47 (Leipzig: O. R. Reisland, 1905), pp. 373, 385, nos. 385 and 419.
+- Gregor Richter and Albert Schönfelder, eds., *Sacramentarium Fuldense saeculi X: Cod. Theol. 231 der K. Universitätsbibliothek zu Göttingen* (Fulda: Fuldaer Actiendruckerei, 1912), especially no. 24; Clemens Blume and Henry Marriott Bannister, eds., *Tropi graduales I: Tropen zum Ordinarium Missae*, *Analecta Hymnica Medii Aevi* 47 (Leipzig: O. R. Reisland, 1905), pp. 373, 385, nos. 385 and 419.
 
--   Josef A. Jungmann, *The Mass of the Roman Rite: Its Origins and Development*, trans. Francis A. Brunner, 2 vols. (New York: Benziger, 1951–1955). Exact printed volume and page ranges for every unit are recorded in the repository source matrix; the synthesis is used critically beside primary witnesses.
+- Josef A. Jungmann, *The Mass of the Roman Rite: Its Origins and Development*, trans. Francis A. Brunner, 2 vols. (New York: Benziger, 1951–1955). Exact printed volume and page ranges for every unit are recorded in the repository source matrix; the synthesis is used critically beside primary witnesses.
 
 ### Leonine-prayer legislation and reception
 
--   Sacred Congregation of Rites, decree *Iam inde ab anno* (6 January 1884), *Acta Sanctae Sedis* 16 (1883–84), 239–240. It supplies the universal rule after every Mass celebrated without chant, the original listed sequence, and the official retrospective notice of Pius IX’s 1859 Papal-State antecedent. [Official Acta scan](https://www.vatican.va/archive/ass/documents/ASS-16-1883-84-1-576%2Bsupplemento-17-96-ocr.pdf).
+- Sacred Congregation of Rites, decree *Iam inde ab anno* (6 January 1884), *Acta Sanctae Sedis* 16 (1883–84), 239–240. It supplies the universal rule after every Mass celebrated without chant, the original listed sequence, and the official retrospective notice of Pius IX’s 1859 Papal-State antecedent. [Official Acta scan](https://www.vatican.va/archive/ass/documents/ASS-16-1883-84-1-576%2Bsupplemento-17-96-ocr.pdf).
 
--   Official Pécs diocesan circular (1886), communicating the revised formula ordered by Leo XIII, including the revised collect and short *Sancte Michael Archangele*. It is a contemporary official reception witness; the central Roman promulgation locus remains outstanding. [Diocesan archive scan](https://archivum.pecsiegyhazmegye.hu/images/PEL.I.1.f.1_1886.pdf).
+- Official Pécs diocesan circular (1886), communicating the revised formula ordered by Leo XIII, including the revised collect and short *Sancte Michael Archangele*. It is a contemporary official reception witness; the central Roman promulgation locus remains outstanding. [Diocesan archive scan](https://archivum.pecsiegyhazmegye.hu/images/PEL.I.1.f.1_1886.pdf).
 
--   Sacred Congregation of Rites, response of 23 November 1887, *Acta Sanctae Sedis* 23 (1890–91), 128–129, directing that the prayers be said *immediate expleto ultimo Evangelio*. [Official Acta scan](https://www.vatican.va/archive/ass/documents/ASS-23-1890-91-ocr.pdf).
+- Sacred Congregation of Rites, response of 23 November 1887, *Acta Sanctae Sedis* 23 (1890–91), 128–129, directing that the prayers be said *immediate expleto ultimo Evangelio*. [Official Acta scan](https://www.vatican.va/archive/ass/documents/ASS-23-1890-91-ocr.pdf).
 
--   Leo XIII, *Exorcismus in satanam et angelos apostaticos iussu Leonis XIII P.M. editus*, *Acta Sanctae Sedis* 23 (1890–91), 743–746. This directly checked publication controls the distinction between the long exorcistic formula and the short 1886 post-Mass prayer; shared invocations do not make one a “full version” of the other. [Official Acta scan](https://www.vatican.va/archive/ass/documents/ASS-23-1890-91-ocr.pdf).
+- Leo XIII, *Exorcismus in satanam et angelos apostaticos iussu Leonis XIII P.M. editus*, *Acta Sanctae Sedis* 23 (1890–91), 743–746. This directly checked publication controls the distinction between the long exorcistic formula and the short 1886 post-Mass prayer; shared invocations do not make one a “full version” of the other. [Official Acta scan](https://www.vatican.va/archive/ass/documents/ASS-23-1890-91-ocr.pdf).
 
--   Sacred Congregation of Indulgences and Sacred Relics, act of 17 June 1904, *Acta Sanctae Sedis* 36 (1903–04), 750, permitting the threefold Sacred Heart invocation and attaching an indulgence; and declaration of 19 August 1904, *Acta Sanctae Sedis* 37 (1904–05), 125–126, distinguishing desired uniformity and encouragement from a strict obligation imposed by Pius X. [Official 1903–04 Acta scan](https://www.vatican.va/archive/ass/documents/ASS-36-1903-4-ocr.pdf); [official 1904–05 Acta scan](https://www.vatican.va/archive/ass/documents/ASS-37-1904-5-ocr.pdf).
+- Sacred Congregation of Indulgences and Sacred Relics, act of 17 June 1904, *Acta Sanctae Sedis* 36 (1903–04), 750, permitting the threefold Sacred Heart invocation and attaching an indulgence; and declaration of 19 August 1904, *Acta Sanctae Sedis* 37 (1904–05), 125–126, distinguishing desired uniformity and encouragement from a strict obligation imposed by Pius X. [Official 1903–04 Acta scan](https://www.vatican.va/archive/ass/documents/ASS-36-1903-4-ocr.pdf); [official 1904–05 Acta scan](https://www.vatican.va/archive/ass/documents/ASS-37-1904-5-ocr.pdf).
 
--   Pius XI, allocution *Indictam ante* (30 June 1930), AAS 22 (1930), 301, directing Latin priests throughout the world to apply the prayers for Russia; and Pontifical Commission for Russia direction (11 July 1930), AAS 22 (1930), 366, giving an analogous implementation for its non-Latin clergy through additions to the Great Litany and the prayer after the ambo. [Official Acta scan](https://www.vatican.va/archive/aas/documents/AAS-22-1930-ocr.pdf).
+- Pius XI, allocution *Indictam ante* (30 June 1930), AAS 22 (1930), 301, directing Latin priests throughout the world to apply the prayers for Russia; and Pontifical Commission for Russia direction (11 July 1930), AAS 22 (1930), 366, giving an analogous implementation for its non-Latin clergy through additions to the Great Litany and the prayer after the ambo. [Official Acta scan](https://www.vatican.va/archive/aas/documents/AAS-22-1930-ocr.pdf).
 
--   Sacred Congregation of Rites, decree *De precibus post Missae celebrationem recitandis* (9 March 1960), approved by John XXIII, AAS 52 (1960), 360. It states the then-current omission cases for specified ritual or communal Masses, a following function or pious exercise, a homily within Mass, and Sunday/feast dialogue Masses, and permits Ordinaries to approve vernacular texts. [Official Acta scan](https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf).
+- Sacred Congregation of Rites, decree *De precibus post Missae celebrationem recitandis* (9 March 1960), approved by John XXIII, AAS 52 (1960), 360. It states the then-current omission cases for specified ritual or communal Masses, a following function or pious exercise, a homily within Mass, and Sunday/feast dialogue Masses, and permits Ordinaries to approve vernacular texts. [Official Acta scan](https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf).
 
--   Sacred Congregation of Rites and Consilium, instruction *Inter Oecumenici* (26 September 1964), no. 48(j), AAS 56 (1964), 888, suppressing the Leonine prayers under a concluding norm effective 7 March 1965. [Acta text scan](https://liturgia.it/content/instructiones/inter%20oecumenici.pdf).
+- Sacred Congregation of Rites and Consilium, instruction *Inter Oecumenici* (26 September 1964), no. 48(j), AAS 56 (1964), 888, suppressing the Leonine prayers under a concluding norm effective 7 March 1965. [Acta text scan](https://liturgia.it/content/instructiones/inter%20oecumenici.pdf).
 
 ### Legacy thirty-three-step provenance
 
--   John T. McMahon, *Pray the Mass*, Part I, 13th revised ed. (Sydney: Pellegrini, 1959), with imprimatur of Archbishop Raymond Prendiville (June 1959). The booklet explicitly arranges thirty-three steps in association with Christ’s earthly years. [Public scan](https://www.ccwatershed.org/pdfs/pray-mass-booklet/download/); [bibliographic description](https://www.ccwatershed.org/2014/09/13/pray-mass-booklet-and-cards/). The superseded edition’s count had this catechetical antecedent; the present study follows natural movements and retains the old rows only as a research concordance.
+- John T. McMahon, *Pray the Mass*, Part I, 13th revised ed. (Sydney: Pellegrini, 1959), with imprimatur of Archbishop Raymond Prendiville (June 1959). The booklet explicitly arranges thirty-three steps in association with Christ’s earthly years. [Public scan](https://www.ccwatershed.org/pdfs/pray-mass-booklet/download/); [bibliographic description](https://www.ccwatershed.org/2014/09/13/pray-mass-booklet-and-cards/). The superseded edition’s count had this catechetical antecedent; the present study follows natural movements and retains the old rows only as a research concordance.
 
 **Last revised (UTC):** 2026-07-29T13:56:12Z
 

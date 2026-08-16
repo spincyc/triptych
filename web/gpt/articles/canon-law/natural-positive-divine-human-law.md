@@ -51,19 +51,19 @@ Latin *ius* is broader than enacted *lex*. Depending on author and period, *ius*
 
 This article uses:
 
--   **law** for a norm or juridical order, with the intended sense specified;
+- **law** for a norm or juridical order, with the intended sense specified;
 
--   **right** for what is due to a person, a protected freedom or claim, or the just relation itself;
+- **right** for what is due to a person, a protected freedom or claim, or the just relation itself;
 
--   **obligation** for a reason that binds a person to act or refrain, with moral and juridical obligation kept distinct;
+- **obligation** for a reason that binds a person to act or refrain, with moral and juridical obligation kept distinct;
 
--   **positive** for what is authoritatively posited or historically given, not for what is morally desirable;
+- **positive** for what is authoritatively posited or historically given, not for what is morally desirable;
 
--   **natural** for rational moral normativity grounded in human goods and ends, not physical regularity, instinct, or preference;
+- **natural** for rational moral normativity grounded in human goods and ends, not physical regularity, instinct, or preference;
 
--   **divine law** with an express distinction between natural authorship and revealed positive law where the context requires it; and
+- **divine law** with an express distinction between natural authorship and revealed positive law where the context requires it; and
 
--   **ecclesiastical law** for norms in the Church’s juridical order, without presuming that every such norm is merely human or, conversely, divinely immutable.
+- **ecclesiastical law** for norms in the Church’s juridical order, without presuming that every such norm is merely human or, conversely, divinely immutable.
 
 ### Classification attaches to an exact proposition and effect
 
@@ -467,17 +467,17 @@ Canonical forum is not identical to conscience. CIC c. 130 states that power of
 
 The codes make the source distinction operational:
 
--   Custom contrary to divine law cannot acquire legal force (CIC c. 24 §1; CCEO c. 1506 §2).
+- Custom contrary to divine law cannot acquire legal force (CIC c. 24 §1; CCEO c. 1506 §2).
 
--   Civil law receives canonical effects only where canon law yields or refers to it, insofar as the civil norm is not contrary to divine law and canon law does not provide otherwise (CIC c. 22; CCEO c. 1504).
+- Civil law receives canonical effects only where canon law yields or refers to it, insofar as the civil norm is not contrary to divine law and canon law does not provide otherwise (CIC c. 22; CCEO c. 1504).
 
--   Dispensation relaxes a merely ecclesiastical law in a particular case (CIC c. 85; CCEO c. 1536). CIC c. 86 excludes laws defining essentials of juridic institutions or acts; CCEO c. 1537 additionally excludes procedural and penal laws from dispensation.
+- Dispensation relaxes a merely ecclesiastical law in a particular case (CIC c. 85; CCEO c. 1536). CIC c. 86 excludes laws defining essentials of juridic institutions or acts; CCEO c. 1537 additionally excludes procedural and penal laws from dispensation.
 
--   Prescription does not run against rights and obligations of divine natural or positive law (CIC c. 199, no. 1; CCEO c. 1542).
+- Prescription does not run against rights and obligations of divine natural or positive law (CIC c. 199, no. 1; CCEO c. 1542).
 
--   Only supreme Church authority authentically declares when divine law prohibits or invalidates marriage and establishes other impediments for the baptized (CIC c. 1075).
+- Only supreme Church authority authentically declares when divine law prohibits or invalidates marriage and establishes other impediments for the baptized (CIC c. 1075).
 
--   A ratified and consummated sacramental marriage cannot be dissolved by any human power or cause other than death (CIC c. 1141). The rules for establishing the relevant facts and deciding a cause are human canonical law.
+- A ratified and consummated sacramental marriage cannot be dissolved by any human power or cause other than death (CIC c. 1141). The rules for establishing the relevant facts and deciding a cause are human canonical law.
 
 The presence of the word *divine* does not eliminate the need to establish the proposition and its authoritative basis. The codes allocate juridical consequences once that source claim has been established; they do not convert every theological inference into an external rule.
 
@@ -997,183 +997,183 @@ This is a *source-audited working article*. Independent review by specialists in
 
 ### Scripture
 
--   United States Conference of Catholic Bishops, New American Bible, Revised Edition: [Jeremiah 31](https://bible.usccb.org/bible/jeremiah/31); [Matthew 5](https://bible.usccb.org/bible/matthew/5); [Matthew 22](https://bible.usccb.org/bible/matthew/22); [John 13](https://bible.usccb.org/bible/john/13); [Acts 5](https://bible.usccb.org/bible/acts/5); [Acts 15](https://bible.usccb.org/bible/acts/15); [Romans 2](https://bible.usccb.org/bible/romans/2); [Romans 13](https://bible.usccb.org/bible/romans/13); [1 Corinthians 5](https://bible.usccb.org/bible/1corinthians/5); and [1 Peter 2](https://bible.usccb.org/bible/1peter/2).
+- United States Conference of Catholic Bishops, New American Bible, Revised Edition: [Jeremiah 31](https://bible.usccb.org/bible/jeremiah/31); [Matthew 5](https://bible.usccb.org/bible/matthew/5); [Matthew 22](https://bible.usccb.org/bible/matthew/22); [John 13](https://bible.usccb.org/bible/john/13); [Acts 5](https://bible.usccb.org/bible/acts/5); [Acts 15](https://bible.usccb.org/bible/acts/15); [Romans 2](https://bible.usccb.org/bible/romans/2); [Romans 13](https://bible.usccb.org/bible/romans/13); [1 Corinthians 5](https://bible.usccb.org/bible/1corinthians/5); and [1 Peter 2](https://bible.usccb.org/bible/1peter/2).
 
--   Pontifical Biblical Commission, [*The Bible and Morality: Biblical Roots of Christian Conduct* 151–153](https://www.vatican.va/roman_curia/congregations/cfaith/pcb_documents/rc_con_cfaith_doc_20080511_bibbia-e-morale_en.html) (2008), used as a modern ecclesial reading of the Acts 15 process.
+- Pontifical Biblical Commission, [*The Bible and Morality: Biblical Roots of Christian Conduct* 151–153](https://www.vatican.va/roman_curia/congregations/cfaith/pcb_documents/rc_con_cfaith_doc_20080511_bibbia-e-morale_en.html) (2008), used as a modern ecclesial reading of the Acts 15 process.
 
 ### Greek philosophy and Stoic witnesses
 
--   Sophocles, [*Antigone* 441–460](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0186%3Acard%3D441), Perseus Greek and English witness; R. C. Jebb’s [commentary at line 454](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0023%3Atext%3Dcomm%3Acommline%3D454).
+- Sophocles, [*Antigone* 441–460](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0186%3Acard%3D441), Perseus Greek and English witness; R. C. Jebb’s [commentary at line 454](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0023%3Atext%3Dcomm%3Acommline%3D454).
 
--   Plato, [*Gorgias* 482e–484c](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0178%3Atext%3DGorg.%3Apage%3D482); [*Laws* I](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0166%3Abook%3D1); and [*Laws* X](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0166%3Abook%3D10), Perseus witnesses.
+- Plato, [*Gorgias* 482e–484c](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0178%3Atext%3DGorg.%3Apage%3D482); [*Laws* I](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0166%3Abook%3D1); and [*Laws* X](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0166%3Abook%3D10), Perseus witnesses.
 
--   Aristotle, [*Nicomachean Ethics* V.7](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0054%3Abook%3D5); [*Rhetoric* I.13](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0060%3Abook%3D1); and [*Politics* III.16](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0058%3Abook%3D3%3Asection%3D1287a), Perseus witnesses.
+- Aristotle, [*Nicomachean Ethics* V.7](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0054%3Abook%3D5); [*Rhetoric* I.13](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0060%3Abook%3D1); and [*Politics* III.16](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0058%3Abook%3D3%3Asection%3D1287a), Perseus witnesses.
 
--   Diogenes Laertius, [*Lives of Eminent Philosophers* VII.87–89](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0258%3Abook%3D7%3Achapter%3D1), reporting Stoic doctrine.
+- Diogenes Laertius, [*Lives of Eminent Philosophers* VII.87–89](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0258%3Abook%3D7%3Achapter%3D1), reporting Stoic doctrine.
 
--   Cleanthes, *Hymn to Zeus*, lines 1–5, 12–26, and 31–39; Greek witness in the [Bibliotheca Augustana](https://www.hs-augsburg.de/~harsch/graeca/Chronologia/S_ante03/Kleanthes/kle_f.html); Johan C. Thom, [*Cleanthes’ Hymn to Zeus: Text, Translation, and Commentary*](https://doi.org/10.1628/978-3-16-158676-7) (Tübingen: Mohr Siebeck, 2006).
+- Cleanthes, *Hymn to Zeus*, lines 1–5, 12–26, and 31–39; Greek witness in the [Bibliotheca Augustana](https://www.hs-augsburg.de/~harsch/graeca/Chronologia/S_ante03/Kleanthes/kle_f.html); Johan C. Thom, [*Cleanthes’ Hymn to Zeus: Text, Translation, and Commentary*](https://doi.org/10.1628/978-3-16-158676-7) (Tübingen: Mohr Siebeck, 2006).
 
--   Chrysippus, *On Law*, fragment preserved by Marcian at [Digest 1.3.2](https://droitromain.univ-grenoble-alpes.fr/Corpus/d-01.htm) (SVF III.314).
+- Chrysippus, *On Law*, fragment preserved by Marcian at [Digest 1.3.2](https://droitromain.univ-grenoble-alpes.fr/Corpus/d-01.htm) (SVF III.314).
 
 ### Roman philosophy and jurisprudence
 
--   Cicero, [*De legibus* I](https://www.thelatinlibrary.com/cicero/leg1.shtml) and [II](https://www.thelatinlibrary.com/cicero/leg2.shtml), Latin Library witness; [*De re publica* III.33](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A2007.01.0031%3Abook%3D3%3Asection%3D33), fragment transmitted at Lactantius, *Divine Institutes* VI.8.6–9. Modern translation control: Cicero, *The Republic and The Laws*, trans. Niall Rudd (Oxford: Oxford University Press, 1998).
+- Cicero, [*De legibus* I](https://www.thelatinlibrary.com/cicero/leg1.shtml) and [II](https://www.thelatinlibrary.com/cicero/leg2.shtml), Latin Library witness; [*De re publica* III.33](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A2007.01.0031%3Abook%3D3%3Asection%3D33), fragment transmitted at Lactantius, *Divine Institutes* VI.8.6–9. Modern translation control: Cicero, *The Republic and The Laws*, trans. Niall Rudd (Oxford: Oxford University Press, 1998).
 
--   Gaius, [*Institutes* 1.1–7](https://droitromain.univ-grenoble-alpes.fr/Responsa/gai1.htm), Latin text.
+- Gaius, [*Institutes* 1.1–7](https://droitromain.univ-grenoble-alpes.fr/Responsa/gai1.htm), Latin text.
 
--   Justinian, [*Digest* 1.1, 1.3, 1.5, and 1.8](https://droitromain.univ-grenoble-alpes.fr/Corpus/d-01.htm); [44.7](https://droitromain.univ-grenoble-alpes.fr/Corpus/d-44.htm); and [50.17](https://droitromain.univ-grenoble-alpes.fr/Corpus/d-50.htm), Grenoble Roman Law collection; modern translation control: *The Digest of Justinian*, trans. Alan Watson, rev. English-language ed., 2 vols. (Philadelphia: University of Pennsylvania Press, 1998).
+- Justinian, [*Digest* 1.1, 1.3, 1.5, and 1.8](https://droitromain.univ-grenoble-alpes.fr/Corpus/d-01.htm); [44.7](https://droitromain.univ-grenoble-alpes.fr/Corpus/d-44.htm); and [50.17](https://droitromain.univ-grenoble-alpes.fr/Corpus/d-50.htm), Grenoble Roman Law collection; modern translation control: *The Digest of Justinian*, trans. Alan Watson, rev. English-language ed., 2 vols. (Philadelphia: University of Pennsylvania Press, 1998).
 
--   Justinian, [*Institutes* 1.1–1.3](https://droitromain.univ-grenoble-alpes.fr/Corpus/just1.gr.htm), Latin text based on Krueger; J. B. Moyle, [English translation](https://droitromain.univ-grenoble-alpes.fr/Anglica/just1_Moyle.htm), used only as an older aid.
+- Justinian, [*Institutes* 1.1–1.3](https://droitromain.univ-grenoble-alpes.fr/Corpus/just1.gr.htm), Latin text based on Krueger; J. B. Moyle, [English translation](https://droitromain.univ-grenoble-alpes.fr/Anglica/just1_Moyle.htm), used only as an older aid.
 
--   Justinian, [Novel 6](https://droitromain.univ-grenoble-alpes.fr/Anglica/N6_Scott.htm), English witness in S. P. Scott’s older translation; cited for the imperial presentation of sacerdotal and imperial gifts, not as current ecclesiastical law.
+- Justinian, [Novel 6](https://droitromain.univ-grenoble-alpes.fr/Anglica/N6_Scott.htm), English witness in S. P. Scott’s older translation; cited for the imperial presentation of sacerdotal and imperial gifts, not as current ecclesiastical law.
 
 ### Patristic, medieval, and scholastic sources
 
--   [*Didache*](https://www.newadvent.org/fathers/0714.htm), especially chs. 1–5 and 15; [*Epistle to Diognetus* 5](https://www.newadvent.org/fathers/0101.htm); Tertullian, [*Apology* 33–34](https://www.newadvent.org/fathers/0301.htm); Lactantius, [*Epitome of the Divine Institutes* 54](https://www.newadvent.org/fathers/0702.htm).
+- [*Didache*](https://www.newadvent.org/fathers/0714.htm), especially chs. 1–5 and 15; [*Epistle to Diognetus* 5](https://www.newadvent.org/fathers/0101.htm); Tertullian, [*Apology* 33–34](https://www.newadvent.org/fathers/0301.htm); Lactantius, [*Epitome of the Divine Institutes* 54](https://www.newadvent.org/fathers/0702.htm).
 
--   Augustine, [*Contra Faustum* XXII.27](https://www.newadvent.org/fathers/140622.htm); [*City of God* XIX.17](https://www.newadvent.org/fathers/120119.htm); *De libero arbitrio* I.5–6; [Letter 93, 16–17](https://www.newadvent.org/fathers/1102093.htm); and [Letter 185, 23–26](https://www.newadvent.org/fathers/1102185.htm).
+- Augustine, [*Contra Faustum* XXII.27](https://www.newadvent.org/fathers/140622.htm); [*City of God* XIX.17](https://www.newadvent.org/fathers/120119.htm); *De libero arbitrio* I.5–6; [Letter 93, 16–17](https://www.newadvent.org/fathers/1102093.htm); and [Letter 185, 23–26](https://www.newadvent.org/fathers/1102185.htm).
 
--   Gelasius I, *Famulae pietatis* (494), received at Gratian D.96 c.10, [Friedberg edition witness](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_1_1042); compare [D.96 c.6](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_1_1038).
+- Gelasius I, *Famulae pietatis* (494), received at Gratian D.96 c.10, [Friedberg edition witness](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_1_1042); compare [D.96 c.6](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_1_1038).
 
--   Gratian, *Decretum*: [D.1 dictum before c.1](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_0004); [D.1 c.1](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_5); [D.1 c.6](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_10); [D.1 c.7](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_11); [D.1 c.8](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_12); [D.1 c.9](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_13); and [D.4 c.2](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_33). These links present Friedberg’s 1879 text without its critical apparatus. Also Anders Winroth, ed., [*Decretum Gratiani*, first recension, edition in progress](https://gratian.org/Decretum/Decretum%20Gratiani%201.pdf) (version 21 November 2025).
+- Gratian, *Decretum*: [D.1 dictum before c.1](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_0004); [D.1 c.1](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_5); [D.1 c.6](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_10); [D.1 c.7](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_11); [D.1 c.8](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_12); [D.1 c.9](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_13); and [D.4 c.2](https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_33). These links present Friedberg’s 1879 text without its critical apparatus. Also Anders Winroth, ed., [*Decretum Gratiani*, first recension, edition in progress](https://gratian.org/Decretum/Decretum%20Gratiani%201.pdf) (version 21 November 2025).
 
--   Rufinus, *Summa Decretorum*, ed. Heinrich Singer (Paderborn, 1902), 4–10, [public scan](https://archive.org/details/diesummadecretor00rufi).
+- Rufinus, *Summa Decretorum*, ed. Heinrich Singer (Paderborn, 1902), 4–10, [public scan](https://archive.org/details/diesummadecretor00rufi).
 
--   Gregory IX, *Liber Extra* (1234), with text, translation aids, and source orientation at the [Colby Canon Law project](https://web.colby.edu/canonlaw/extra/). The medieval text is used historically; edition and decretal context control.
+- Gregory IX, *Liber Extra* (1234), with text, translation aids, and source orientation at the [Colby Canon Law project](https://web.colby.edu/canonlaw/extra/). The medieval text is used historically; edition and decretal context control.
 
--   Thomas Aquinas, *Summa theologiae* I–II, [qq. 90](https://www.newadvent.org/summa/2090.htm), [91](https://www.newadvent.org/summa/2091.htm), [93](https://www.newadvent.org/summa/2093.htm), [94](https://www.newadvent.org/summa/2094.htm), [95](https://www.newadvent.org/summa/2095.htm), [96](https://www.newadvent.org/summa/2096.htm), and [97](https://www.newadvent.org/summa/2097.htm); II–II q. 120 on equity; I–II qq. 98–108 on Old and New Law. Latin–English comparison: [Aquinas.cc](https://aquinas.cc/la/en/~ST.I-II.Q91).
+- Thomas Aquinas, *Summa theologiae* I–II, [qq. 90](https://www.newadvent.org/summa/2090.htm), [91](https://www.newadvent.org/summa/2091.htm), [93](https://www.newadvent.org/summa/2093.htm), [94](https://www.newadvent.org/summa/2094.htm), [95](https://www.newadvent.org/summa/2095.htm), [96](https://www.newadvent.org/summa/2096.htm), and [97](https://www.newadvent.org/summa/2097.htm); II–II q. 120 on equity; I–II qq. 98–108 on Old and New Law. Latin–English comparison: [Aquinas.cc](https://aquinas.cc/la/en/~ST.I-II.Q91).
 
--   Francisco de Vitoria, “On the American Indians” (*De Indis*), in *Political Writings*, ed. Anthony Pagden and Jeremy Lawrance (Cambridge: Cambridge University Press, 1991), 231–292, especially q. 1 at 239–251 and its conclusion at 250; compare the older [Nys translation witness](https://constitution.org/2-Authors/victoria/victoria_4.htm). The Valladolid sources and their contested imperial premises are controlled through [*The Valladolid Debate (1550–1551)*](https://academic.oup.com/book/46077).
+- Francisco de Vitoria, “On the American Indians” (*De Indis*), in *Political Writings*, ed. Anthony Pagden and Jeremy Lawrance (Cambridge: Cambridge University Press, 1991), 231–292, especially q. 1 at 239–251 and its conclusion at 250; compare the older [Nys translation witness](https://constitution.org/2-Authors/victoria/victoria_4.htm). The Valladolid sources and their contested imperial premises are controlled through [*The Valladolid Debate (1550–1551)*](https://academic.oup.com/book/46077).
 
--   Francisco Suárez, *De legibus ac Deo legislatore*, especially I.5–12; II; III–IV; VII on custom; VIII on privilege; and IX–X on Old and New divine law, in *Opera omnia*, vols. 5–6 (Paris: Vivès, 1856). Paraphrases were checked against the cited Latin edition; no unverified modern translation is quoted.
+- Francisco Suárez, *De legibus ac Deo legislatore*, especially I.5–12; II; III–IV; VII on custom; VIII on privilege; and IX–X on Old and New divine law, in *Opera omnia*, vols. 5–6 (Paris: Vivès, 1856). Paraphrases were checked against the cited Latin edition; no unverified modern translation is quoted.
 
 ### Early modern religious settlements
 
--   [Religious Peace of Augsburg](https://germanhistorydocs.org/en/from-the-reformations-to-the-thirty-years-war-1500-1648/ghdi:document-4386) (25 September 1555), English translation and German source witness in German History in Documents and Images.
+- [Religious Peace of Augsburg](https://germanhistorydocs.org/en/from-the-reformations-to-the-thirty-years-war-1500-1648/ghdi:document-4386) (25 September 1555), English translation and German source witness in German History in Documents and Images.
 
--   [Instrumentum Pacis Osnabrugensis](https://www.lwl.org/westfaelische-geschichte/portal/Internet/finde/langDatensatz.php?urlID=740&url_tabelle=tab_quelle) (24 October 1648), especially art. V, Latin and German source witness in the Westfälische Geschichte portal.
+- [Instrumentum Pacis Osnabrugensis](https://www.lwl.org/westfaelische-geschichte/portal/Internet/finde/langDatensatz.php?urlID=740&url_tabelle=tab_quelle) (24 October 1648), especially art. V, Latin and German source witness in the Westfälische Geschichte portal.
 
 ### Councils, papal teaching, and catechetical synthesis
 
--   Council of Trent, Session VII, canon 8 on baptism (3 March 1547), and Session XXIV, canon 4 on matrimony and decree *Tametsi* (11 November 1563), convenient English witnesses at [Session VII](https://www.papalencyclicals.net/councils/trent/seventh-session.htm) and [Session XXIV](https://www.papalencyclicals.net/councils/trent/twenty-fourth-session.htm); Latin conciliar text controls.
+- Council of Trent, Session VII, canon 8 on baptism (3 March 1547), and Session XXIV, canon 4 on matrimony and decree *Tametsi* (11 November 1563), convenient English witnesses at [Session VII](https://www.papalencyclicals.net/councils/trent/seventh-session.htm) and [Session XXIV](https://www.papalencyclicals.net/councils/trent/twenty-fourth-session.htm); Latin conciliar text controls.
 
--   Pius IX, [*Quanta cura* and appended *Syllabus*](https://www.vatican.va/content/pius-ix/la/documents/encyclica-quanta-cura-8-decembris-1864.html) (8 December 1864), official Latin.
+- Pius IX, [*Quanta cura* and appended *Syllabus*](https://www.vatican.va/content/pius-ix/la/documents/encyclica-quanta-cura-8-decembris-1864.html) (8 December 1864), official Latin.
 
--   Leo XIII, [*Immortale Dei*](https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html) (1 November 1885) and [*Libertas praestantissimum*](https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html) (20 June 1888).
+- Leo XIII, [*Immortale Dei*](https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01111885_immortale-dei.html) (1 November 1885) and [*Libertas praestantissimum*](https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html) (20 June 1888).
 
--   Pius XI, [*Mit brennender Sorge* 29–31](https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_14031937_mit-brennender-sorge.html) (14 March 1937).
+- Pius XI, [*Mit brennender Sorge* 29–31](https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_14031937_mit-brennender-sorge.html) (14 March 1937).
 
--   Pius XII, [*Summi Pontificatus*](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20101939_summi-pontificatus.html) (20 October 1939) and [*Ci riesce*](https://www.vatican.va/content/pius-xii/it/speeches/1953/documents/hf_p-xii_spe_19531206_giuristi-cattolici.html) (6 December 1953).
+- Pius XII, [*Summi Pontificatus*](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20101939_summi-pontificatus.html) (20 October 1939) and [*Ci riesce*](https://www.vatican.va/content/pius-xii/it/speeches/1953/documents/hf_p-xii_spe_19531206_giuristi-cattolici.html) (6 December 1953).
 
--   United Nations General Assembly, [Universal Declaration of Human Rights](https://www.un.org/en/about-us/universal-declaration-of-human-rights) (10 December 1948), especially the preamble and arts. 1, 18, and 28–30. Historical international declaration, not a treaty or an ecclesiastical source.
+- United Nations General Assembly, [Universal Declaration of Human Rights](https://www.un.org/en/about-us/universal-declaration-of-human-rights) (10 December 1948), especially the preamble and arts. 1, 18, and 28–30. Historical international declaration, not a treaty or an ecclesiastical source.
 
--   John XXIII, [*Pacem in terris*](https://www.vatican.va/content/john-xxiii/en/encyclicals/documents/hf_j-xxiii_enc_11041963_pacem.html) (11 April 1963).
+- John XXIII, [*Pacem in terris*](https://www.vatican.va/content/john-xxiii/en/encyclicals/documents/hf_j-xxiii_enc_11041963_pacem.html) (11 April 1963).
 
--   Second Vatican Council, [*Dignitatis humanae*](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html) (7 December 1965) and [*Gaudium et spes*](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html) (7 December 1965), especially nn. 16, 36, 42–43, and 74–76.
+- Second Vatican Council, [*Dignitatis humanae*](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html) (7 December 1965) and [*Gaudium et spes*](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html) (7 December 1965), especially nn. 16, 36, 42–43, and 74–76.
 
--   [*Catechism of the Catholic Church* 1950–1986](https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_1/the_moral_law.html), moral law; [1954–1960](https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_1/i_the_natural_moral_law.html), natural law; [1776–1802](https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_6/moral_conscience.html), conscience; [2234–2246](https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_4/v_the_authorities_in_civil_society.html), civil authority and Church; and [2284–2287](https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_5/ii_respect_for_the_dignity_of_persons.html), scandal.
+- [*Catechism of the Catholic Church* 1950–1986](https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_1/the_moral_law.html), moral law; [1954–1960](https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_1/i_the_natural_moral_law.html), natural law; [1776–1802](https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_6/moral_conscience.html), conscience; [2234–2246](https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_4/v_the_authorities_in_civil_society.html), civil authority and Church; and [2284–2287](https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_5/ii_respect_for_the_dignity_of_persons.html), scandal.
 
--   John Paul II, [*Veritatis splendor*](https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html) (6 August 1993), especially nn. 35–64 and 79–83; [*Evangelium vitae*](https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25031995_evangelium-vitae.html) (25 March 1995), especially nn. 68–74.
+- John Paul II, [*Veritatis splendor*](https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html) (6 August 1993), especially nn. 35–64 and 79–83; [*Evangelium vitae*](https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25031995_evangelium-vitae.html) (25 March 1995), especially nn. 68–74.
 
--   International Theological Commission, [*In Search of a Universal Ethic: A New Look at the Natural Law*](https://www.vatican.va/roman_curia/congregations/cfaith/cti_documents/rc_con_cfaith_doc_20090520_legge-naturale_en.html) (2009). Expert theological study, not an act of the Magisterium.
+- International Theological Commission, [*In Search of a Universal Ethic: A New Look at the Natural Law*](https://www.vatican.va/roman_curia/congregations/cfaith/cti_documents/rc_con_cfaith_doc_20090520_legge-naturale_en.html) (2009). Expert theological study, not an act of the Magisterium.
 
 ### Current canon law and ecclesiastical institutions
 
--   Benedict XV, [*Providentissima Mater*](https://www.vatican.va/content/benedict-xv/it/bulls/documents/hf_ben-xv_bulls_19170527_providentissima-mater.html) (27 May 1917), promulgating the first Latin code; 1917 CIC c. 6, no. 6, in the [official AAS code volume](https://press.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf), preserving unincorporated natural and divine-positive law while abrogating other disciplinary law within its rule.
+- Benedict XV, [*Providentissima Mater*](https://www.vatican.va/content/benedict-xv/it/bulls/documents/hf_ben-xv_bulls_19170527_providentissima-mater.html) (27 May 1917), promulgating the first Latin code; 1917 CIC c. 6, no. 6, in the [official AAS code volume](https://press.vatican.va/archive/aas/documents/AAS-09-II-1917-ocr.pdf), preserving unincorporated natural and divine-positive law while abrogating other disciplinary law within its rule.
 
--   John Paul II, [*Sacrae disciplinae leges*](https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_25011983_sacrae-disciplinae-leges.html) (25 January 1983), promulgating the CIC; [official Latin CIC index](https://www.vatican.va/archive/cod-iuris-canonici/cic_index_la.html); [Holy See English index](https://www.vatican.va/archive/cod-iuris-canonici/cic_index_en.html).
+- John Paul II, [*Sacrae disciplinae leges*](https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_25011983_sacrae-disciplinae-leges.html) (25 January 1983), promulgating the CIC; [official Latin CIC index](https://www.vatican.va/archive/cod-iuris-canonici/cic_index_la.html); [Holy See English index](https://www.vatican.va/archive/cod-iuris-canonici/cic_index_en.html).
 
--   CIC primary loci: [cc. 7–22](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann7-22_en.html); [23–28](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann23-28_en.html); [29–34](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann29-34_en.html); [35–93](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann35-93_en.html); [96–123](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann96-123_en.html); [129–144](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann129-144_en.html); [208–223](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html); [330–367](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann330-367_en.html); [368–430](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann368-430_en.html); [431–459](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann431-459_en.html); [747–755](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib3-cann747-755_en.html); [998–1165](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html); [1254–1310](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib5-cann1254-1310_en.html); [1311–1363](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib6-cann1311-1363_en.html); [1400–1500](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib7-cann1400-1500_en.html); and [1732–1752](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib7-cann1732-1752_en.html).
+- CIC primary loci: [cc. 7–22](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann7-22_en.html); [23–28](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann23-28_en.html); [29–34](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann29-34_en.html); [35–93](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann35-93_en.html); [96–123](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann96-123_en.html); [129–144](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann129-144_en.html); [208–223](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html); [330–367](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann330-367_en.html); [368–430](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann368-430_en.html); [431–459](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann431-459_en.html); [747–755](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib3-cann747-755_en.html); [998–1165](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann998-1165_en.html); [1254–1310](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib5-cann1254-1310_en.html); [1311–1363](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib6-cann1311-1363_en.html); [1400–1500](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib7-cann1400-1500_en.html); and [1732–1752](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib7-cann1732-1752_en.html).
 
--   John Paul II, [*Sacri canones*](https://www.vatican.va/content/john-paul-ii/la/apost_constitutions/documents/hf_jp-ii_apc_19901018_sacri-canones.html) (18 October 1990), promulgating the CCEO; official Latin [cc. 1–409](https://www.vatican.va/content/john-paul-ii/la/apost_constitutions/documents/hf_jp-ii_apc_19901018_codex-can-eccl-orient-1.html), [410–1006](https://www.vatican.va/content/john-paul-ii/la/apost_constitutions/documents/hf_jp-ii_apc_19901018_codex-can-eccl-orient-2.html), and [1007–1546](https://www.vatican.va/content/john-paul-ii/la/apost_constitutions/documents/hf_jp-ii_apc_19901018_codex-can-eccl-orient-3.html). Canon Law Society of America, *Code of Canons of the Eastern Churches: Latin–English Edition* (Washington, DC: CLSA, 2001), translation aid.
+- John Paul II, [*Sacri canones*](https://www.vatican.va/content/john-paul-ii/la/apost_constitutions/documents/hf_jp-ii_apc_19901018_sacri-canones.html) (18 October 1990), promulgating the CCEO; official Latin [cc. 1–409](https://www.vatican.va/content/john-paul-ii/la/apost_constitutions/documents/hf_jp-ii_apc_19901018_codex-can-eccl-orient-1.html), [410–1006](https://www.vatican.va/content/john-paul-ii/la/apost_constitutions/documents/hf_jp-ii_apc_19901018_codex-can-eccl-orient-2.html), and [1007–1546](https://www.vatican.va/content/john-paul-ii/la/apost_constitutions/documents/hf_jp-ii_apc_19901018_codex-can-eccl-orient-3.html). Canon Law Society of America, *Code of Canons of the Eastern Churches: Latin–English Edition* (Washington, DC: CLSA, 2001), translation aid.
 
--   Francis, [*Praedicate Evangelium*](https://www.vatican.va/content/francesco/en/apost_constitutions/documents/20220319-costituzione-ap-praedicate-evangelium.html) (19 March 2022), effective 5 June 2022.
+- Francis, [*Praedicate Evangelium*](https://www.vatican.va/content/francesco/en/apost_constitutions/documents/20220319-costituzione-ap-praedicate-evangelium.html) (19 March 2022), effective 5 June 2022.
 
--   Francis, [*Vos estis lux mundi*](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20230325-motu-proprio-vos-estis-lux-mundi-aggiornato.html) (updated 25 March 2023), effective 30 April 2023.
+- Francis, [*Vos estis lux mundi*](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20230325-motu-proprio-vos-estis-lux-mundi-aggiornato.html) (updated 25 March 2023), effective 30 April 2023.
 
--   John Paul II, [*Apostolos suos*](https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_22071998_apostolos-suos.html), especially concluding arts. 1–4 (21 May 1998), on episcopal-conference doctrinal declarations.
+- John Paul II, [*Apostolos suos*](https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_22071998_apostolos-suos.html), especially concluding arts. 1–4 (21 May 1998), on episcopal-conference doctrinal declarations.
 
--   Dicastery for Legislative Texts, [official authentic-interpretation register](https://www.delegumtextibus.va/content/testilegislativi/it/interpretazioni-autentiche.html) and [official profile](https://www.vatican.va/content/romancuria/en/dicasteri/dicastero-testi-legislativi/profilo.html).
+- Dicastery for Legislative Texts, [official authentic-interpretation register](https://www.delegumtextibus.va/content/testilegislativi/it/interpretazioni-autentiche.html) and [official profile](https://www.vatican.va/content/romancuria/en/dicasteri/dicastero-testi-legislativi/profilo.html).
 
--   Francis, [*Fidem servare*](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20220211-motu-proprio-fidem-servare.html) (11 February 2022); Congregation for the Doctrine of the Faith, [revised norms on delicts reserved to the Congregation](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/12/07/211207c.html) (2021).
+- Francis, [*Fidem servare*](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20220211-motu-proprio-fidem-servare.html) (11 February 2022); Congregation for the Doctrine of the Faith, [revised norms on delicts reserved to the Congregation](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/12/07/211207c.html) (2021).
 
--   Benedict XVI, [*Antiqua ordinatione*](https://www.vatican.va/content/benedict-xvi/en/apost_letters/documents/hf_ben-xvi_apl_20080621_antiqua-ordinatione.html) and the Apostolic Signatura’s annexed *Lex propria* (21 June 2008), as amended by Francis, [*Munus Tribunalis*](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20240228-motu-proprio-munus-tribunalis.html) (28 February 2024).
+- Benedict XVI, [*Antiqua ordinatione*](https://www.vatican.va/content/benedict-xvi/en/apost_letters/documents/hf_ben-xvi_apl_20080621_antiqua-ordinatione.html) and the Apostolic Signatura’s annexed *Lex propria* (21 June 2008), as amended by Francis, [*Munus Tribunalis*](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20240228-motu-proprio-munus-tribunalis.html) (28 February 2024).
 
--   Leo XIV, [General Regulations of the Roman Curia](https://www.vatican.va/content/leo-xiv/it/motu_proprio/documents/20251123-regolamento-generale-curia-romana.html) (23 November 2025), effective 1 January 2026 *ad experimentum* for five years.
+- Leo XIV, [General Regulations of the Roman Curia](https://www.vatican.va/content/leo-xiv/it/motu_proprio/documents/20251123-regolamento-generale-curia-romana.html) (23 November 2025), effective 1 January 2026 *ad experimentum* for five years.
 
--   Holy See, [Codes of Canon Law and amendment archive](https://press.vatican.va/archive/cdc/index.htm); Francis, [*Pascite gregem Dei*](https://www.vatican.va/content/francesco/en/apost_constitutions/documents/papa-francesco_costituzione-ap_20210523_pascite-gregem-dei.html) (2021), [*Recognitum Librum VI*](https://www.vatican.va/content/francesco/la/motu_proprio/documents/20220426-motu-proprio-recognitum-librum-vi.html) (2022), [*Competentias quasdam decernere*](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20220211-motu-proprio-assegnare-alcune-competenze.pdf) (2022), [*Vocare peccatores*](https://www.vatican.va/content/francesco/la/motu_proprio/documents/20230320-motu-proprio-vocare-peccatores.html) (2023), and [*Expedit ut iura*](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20230402-motu-proprio-expedit-ut-iura.pdf) (2023); Leo XIV, [rescript concerning CIC c. 699 §2](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/05/28/260528f.html) (28 May 2026) and [*Confirma fratres tuos*](https://www.vatican.va/content/leo-xiv/it/apost_letters/documents/20260624-confirma-fratres-tuos.html) (24 June 2026), particular legislation for the Diocese of Rome published 30 June 2026.
+- Holy See, [Codes of Canon Law and amendment archive](https://press.vatican.va/archive/cdc/index.htm); Francis, [*Pascite gregem Dei*](https://www.vatican.va/content/francesco/en/apost_constitutions/documents/papa-francesco_costituzione-ap_20210523_pascite-gregem-dei.html) (2021), [*Recognitum Librum VI*](https://www.vatican.va/content/francesco/la/motu_proprio/documents/20220426-motu-proprio-recognitum-librum-vi.html) (2022), [*Competentias quasdam decernere*](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20220211-motu-proprio-assegnare-alcune-competenze.pdf) (2022), [*Vocare peccatores*](https://www.vatican.va/content/francesco/la/motu_proprio/documents/20230320-motu-proprio-vocare-peccatores.html) (2023), and [*Expedit ut iura*](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20230402-motu-proprio-expedit-ut-iura.pdf) (2023); Leo XIV, [rescript concerning CIC c. 699 §2](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/05/28/260528f.html) (28 May 2026) and [*Confirma fratres tuos*](https://www.vatican.va/content/leo-xiv/it/apost_letters/documents/20260624-confirma-fratres-tuos.html) (24 June 2026), particular legislation for the Diocese of Rome published 30 June 2026.
 
 ### Holy See, treaties, and Vatican City State
 
--   [Lateran Treaty](https://www.vaticanstate.va/phocadownload/laws-decrees/LateranTreaty.pdf) (11 February 1929), English text; [official Italian archive](https://www.vatican.va/roman_curia/secretariat_state/archivio/documents/rc_seg-st_19290211_patti-lateranensi_it.html).
+- [Lateran Treaty](https://www.vaticanstate.va/phocadownload/laws-decrees/LateranTreaty.pdf) (11 February 1929), English text; [official Italian archive](https://www.vatican.va/roman_curia/secretariat_state/archivio/documents/rc_seg-st_19290211_patti-lateranensi_it.html).
 
--   Vatican City State, [Fundamental Law of 13 May 2023](https://www.vaticanstate.va/phocadownload/leggi-decreti/normativa-generale/Legge%20fondamentale%20dello%20S.C.V.%2013%20maggio%2023.pdf), effective 7 June 2023; official [explanatory account](https://vaticanstate.va/en/news/550-one-year-after-the-entry-into-force-of-the-new-fundamental-law-of-the-vatican-city-state.html).
+- Vatican City State, [Fundamental Law of 13 May 2023](https://www.vaticanstate.va/phocadownload/leggi-decreti/normativa-generale/Legge%20fondamentale%20dello%20S.C.V.%2013%20maggio%2023.pdf), effective 7 June 2023; official [explanatory account](https://vaticanstate.va/en/news/550-one-year-after-the-entry-into-force-of-the-new-fundamental-law-of-the-vatican-city-state.html).
 
--   Vatican City State, Law N. LXXI, [Law on the Sources of Law](https://www.vatican.va/roman_curia/labour_office/docs/documents/ulsa_b16_1_it.html) (1 October 2008), effective 1 January 2009.
+- Vatican City State, Law N. LXXI, [Law on the Sources of Law](https://www.vatican.va/roman_curia/labour_office/docs/documents/ulsa_b16_1_it.html) (1 October 2008), effective 1 January 2009.
 
--   Francis, [decree regarding the publication of normative measures in Vatican City State](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20240116-decreto-provvedim-normativi.html) (16 January 2024).
+- Francis, [decree regarding the publication of normative measures in Vatican City State](https://www.vatican.va/content/francesco/en/motu_proprio/documents/20240116-decreto-provvedim-normativi.html) (16 January 2024).
 
--   Leo XIV, [apostolic letter on the composition and presidency of the Pontifical Commission for Vatican City State](https://www.vatican.va/content/leo-xiv/en/apost_letters/documents/20251119-il-governatorato.html) (19 November 2025), amending Fundamental Law art. 8, no. 1.
+- Leo XIV, [apostolic letter on the composition and presidency of the Pontifical Commission for Vatican City State](https://www.vatican.va/content/leo-xiv/en/apost_letters/documents/20251119-il-governatorato.html) (19 November 2025), amending Fundamental Law art. 8, no. 1.
 
--   Holy See, [general information on the Holy See and Vatican City State](https://www.vatican.va/roman_curia/secretariat_state/documents/informazione_generale/sp_ss_scv_info-generale_en.html); Vatican City State, [diplomatic relations](https://vaticanstate.va/en/state-and-government/international-relations/diplomatic-relations.html) and [judicial function](https://www.vaticanstate.va/en/state-and-government/government-bodies/judicial-function.html).
+- Holy See, [general information on the Holy See and Vatican City State](https://www.vatican.va/roman_curia/secretariat_state/documents/informazione_generale/sp_ss_scv_info-generale_en.html); Vatican City State, [diplomatic relations](https://vaticanstate.va/en/state-and-government/international-relations/diplomatic-relations.html) and [judicial function](https://www.vaticanstate.va/en/state-and-government/government-bodies/judicial-function.html).
 
 ### Modern jurisprudence
 
--   John Austin, *The Province of Jurisprudence Determined* (1832), especially Lectures I and V; historical command theory, not a proxy for every positivist theory.
+- John Austin, *The Province of Jurisprudence Determined* (1832), especially Lectures I and V; historical command theory, not a proxy for every positivist theory.
 
--   Hans Kelsen, [“On the Pure Theory of Law,” *Israel Law Review* 1 (1966): 1–7](https://www.cambridge.org/core/journals/israel-law-review/article/abs/on-the-pure-theory-of-law/5CC1B2C9A085AC3655AFBEDB7A3F6511), and *Pure Theory of Law*, 2nd ed., trans. Max Knight (Berkeley: University of California Press, 1967).
+- Hans Kelsen, [“On the Pure Theory of Law,” *Israel Law Review* 1 (1966): 1–7](https://www.cambridge.org/core/journals/israel-law-review/article/abs/on-the-pure-theory-of-law/5CC1B2C9A085AC3655AFBEDB7A3F6511), and *Pure Theory of Law*, 2nd ed., trans. Max Knight (Berkeley: University of California Press, 1967).
 
--   H. L. A. Hart, [“Positivism and the Separation of Law and Morals,” *Harvard Law Review* 71 (1958): 593–629](https://www.law.nyu.edu/sites/default/files/Hart%2C%20H.%20A.%20%281958%29%20%27Positivism%20and%20the%20Separation%20of%20Law%20and%20Morals%27%20Harvard%20Law%20Review%20Vol.%2071%2C%20No.%204%20%281958%29%20pp.%20593-629.pdf), and *The Concept of Law*, 2nd ed. (Oxford: Clarendon, 1994).
+- H. L. A. Hart, [“Positivism and the Separation of Law and Morals,” *Harvard Law Review* 71 (1958): 593–629](https://www.law.nyu.edu/sites/default/files/Hart%2C%20H.%20A.%20%281958%29%20%27Positivism%20and%20the%20Separation%20of%20Law%20and%20Morals%27%20Harvard%20Law%20Review%20Vol.%2071%2C%20No.%204%20%281958%29%20pp.%20593-629.pdf), and *The Concept of Law*, 2nd ed. (Oxford: Clarendon, 1994).
 
--   Lon L. Fuller, *The Morality of Law*, rev. ed. (New Haven: Yale University Press, 1969).
+- Lon L. Fuller, *The Morality of Law*, rev. ed. (New Haven: Yale University Press, 1969).
 
--   Gustav Radbruch, “Statutory Lawlessness and Supra-Statutory Law” (1946), trans. Bonnie Litschewski Paulson and Stanley L. Paulson, [*Oxford Journal of Legal Studies* 26 (2006): 1–11](https://academic.oup.com/ojls/article-abstract/26/1/1/1505665).
+- Gustav Radbruch, “Statutory Lawlessness and Supra-Statutory Law” (1946), trans. Bonnie Litschewski Paulson and Stanley L. Paulson, [*Oxford Journal of Legal Studies* 26 (2006): 1–11](https://academic.oup.com/ojls/article-abstract/26/1/1/1505665).
 
 ### Historical and methodological scholarship used as controls
 
 These sources assist historical interpretation; they do not establish present canon law.
 
--   Gisela Striker, “Origins of the Concept of Natural Law,” in *Essays on Hellenistic Epistemology and Ethics* (Cambridge: Cambridge University Press, 1996), [DOI](https://doi.org/10.1017/CBO9781139172783.012).
+- Gisela Striker, “Origins of the Concept of Natural Law,” in *Essays on Hellenistic Epistemology and Ethics* (Cambridge: Cambridge University Press, 1996), [DOI](https://doi.org/10.1017/CBO9781139172783.012).
 
--   René Brouwer, [“The Normativity of Law in Nature Revisited: Natural Law in Late Hellenistic Thought,” *Ancient Philosophy* 42 (2022)](https://research-portal.uu.nl/ws/portalfiles/portal/229186531/brouwer-2022-the-normativity-of-law-in-nature-revisited-natural-law-in-late-hellenistic-thought.pdf).
+- René Brouwer, [“The Normativity of Law in Nature Revisited: Natural Law in Late Hellenistic Thought,” *Ancient Philosophy* 42 (2022)](https://research-portal.uu.nl/ws/portalfiles/portal/229186531/brouwer-2022-the-normativity-of-law-in-nature-revisited-natural-law-in-late-hellenistic-thought.pdf).
 
--   Péter Lautner, [“Aristotle and Natural Justice,” *Pázmány Law Review* 8, no. 1 (2021): 57–65](https://doi.org/10.55019/plr.2021.1.57-65).
+- Péter Lautner, [“Aristotle and Natural Justice,” *Pázmány Law Review* 8, no. 1 (2021): 57–65](https://doi.org/10.55019/plr.2021.1.57-65).
 
--   Caroline Humfress, [“Natural Law and Casuistic Reasoning in Roman Jurisprudence,” in *State and Nature: Studies in Ancient and Medieval Philosophy*, ed. Peter Adamson and Christof Rapp](https://doi.org/10.1515/9783110730944-012) (Berlin: De Gruyter, 2021), 247–266.
+- Caroline Humfress, [“Natural Law and Casuistic Reasoning in Roman Jurisprudence,” in *State and Nature: Studies in Ancient and Medieval Philosophy*, ed. Peter Adamson and Christof Rapp](https://doi.org/10.1515/9783110730944-012) (Berlin: De Gruyter, 2021), 247–266.
 
--   Charles Donahue Jr., [“Roman Law: Natural Law, the Law of Nations, and Civil Law,” lecture outline](https://amesfoundation.law.harvard.edu/RL/lectures/c07.out_rev.pdf), Ames Foundation.
+- Charles Donahue Jr., [“Roman Law: Natural Law, the Law of Nations, and Civil Law,” lecture outline](https://amesfoundation.law.harvard.edu/RL/lectures/c07.out_rev.pdf), Ames Foundation.
 
--   Anders Winroth, *The Making of Gratian’s Decretum* (Cambridge: Cambridge University Press, 2000); “Gratian and His Book,” *Oxford Journal of Law and Religion* 10 (2021): 1–15; and [“The Legal Underpinnings”](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FA2BFB47AB644DA069661A47E69B08D9/9781139056021c6_p89-98_CBO.pdf/the-legal-underpinnings.pdf), on reform, institutions, schools, and collections.
+- Anders Winroth, *The Making of Gratian’s Decretum* (Cambridge: Cambridge University Press, 2000); “Gratian and His Book,” *Oxford Journal of Law and Religion* 10 (2021): 1–15; and [“The Legal Underpinnings”](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FA2BFB47AB644DA069661A47E69B08D9/9781139056021c6_p89-98_CBO.pdf/the-legal-underpinnings.pdf), on reform, institutions, schools, and collections.
 
--   David Wagschal, [*Law and Legality in the Greek East: The Byzantine Canonical Tradition, 381–883*](https://academic.oup.com/book/11033) (Oxford: Oxford University Press, 2015).
+- David Wagschal, [*Law and Legality in the Greek East: The Byzantine Canonical Tradition, 381–883*](https://academic.oup.com/book/11033) (Oxford: Oxford University Press, 2015).
 
--   Joseph Goering, [“The Internal Forum and the Literature of Penance and Confession,” *Traditio* 59 (2004): 175–227](https://www.cambridge.org/core/journals/traditio/article/abs/internal-forum-and-the-literature-of-penance-and-confession/D2C46A52A2AD91AE721EA5162AEA203D); Wolfgang P. Müller, [“The Internal Forum of the Later Middle Ages: A Modern Myth?” *Law and History Review* 33 (2015): 887–913](https://doi.org/10.1017/S0738248015000486). Used as competing historical controls.
+- Joseph Goering, [“The Internal Forum and the Literature of Penance and Confession,” *Traditio* 59 (2004): 175–227](https://www.cambridge.org/core/journals/traditio/article/abs/internal-forum-and-the-literature-of-penance-and-confession/D2C46A52A2AD91AE721EA5162AEA203D); Wolfgang P. Müller, [“The Internal Forum of the Later Middle Ages: A Modern Myth?” *Law and History Review* 33 (2015): 887–913](https://doi.org/10.1017/S0738248015000486). Used as competing historical controls.
 
--   Lauren Benton and Richard J. Ross, eds., *Legal Pluralism and Empires, 1500–1850* (New York: NYU Press, 2013); compare the methodological discussion in [“Legal Pluralism as a Category of Analysis”](https://www.cambridge.org/core/journals/law-and-history-review/article/legal-pluralism-as-a-category-of-analysis/EDFD7E065C7EA438131508CD4EE9A3CA).
+- Lauren Benton and Richard J. Ross, eds., *Legal Pluralism and Empires, 1500–1850* (New York: NYU Press, 2013); compare the methodological discussion in [“Legal Pluralism as a Category of Analysis”](https://www.cambridge.org/core/journals/law-and-history-review/article/legal-pluralism-as-a-category-of-analysis/EDFD7E065C7EA438131508CD4EE9A3CA).
 
--   Brian Tierney, *The Idea of Natural Rights: Studies on Natural Rights, Natural Law, and Church Law, 1150–1625* (Grand Rapids: Eerdmans, 1997).
+- Brian Tierney, *The Idea of Natural Rights: Studies on Natural Rights, Natural Law, and Church Law, 1150–1625* (Grand Rapids: Eerdmans, 1997).
 
--   R. H. Helmholz, *Natural Law in Court: A History of Legal Theory in Practice* (Cambridge, MA: Harvard University Press, 2015).
+- R. H. Helmholz, *Natural Law in Court: A History of Legal Theory in Practice* (Cambridge, MA: Harvard University Press, 2015).
 
--   Kenneth Pennington, *The Prince and the Law, 1200–1600: Sovereignty and Rights in the Western Legal Tradition* (Berkeley: University of California Press, 1993).
+- Kenneth Pennington, *The Prince and the Law, 1200–1600: Sovereignty and Rights in the Western Legal Tradition* (Berkeley: University of California Press, 1993).
 
--   Heinz Schilling, *Religion, Political Culture and the Emergence of Early Modern Society: Essays in German and Dutch History* (Leiden: Brill, 1992), especially “Confessionalization in the Empire.” Used as a scholarly control on the confessionalization thesis rather than as a description of every territory.
+- Heinz Schilling, *Religion, Political Culture and the Emergence of Early Modern Society: Essays in German and Dutch History* (Leiden: Brill, 1992), especially “Confessionalization in the Empire.” Used as a scholarly control on the confessionalization thesis rather than as a description of every territory.
 
--   Peter Stein, [*Roman Law in European History*](https://www.cambridge.org/highereducation/books/roman-law-in-european-history/C674E514A286F0D8EB4927CBEB9618D4) (Cambridge: Cambridge University Press, 1999), especially chs. 6–7 on natural law, codification, and the later learned tradition.
+- Peter Stein, [*Roman Law in European History*](https://www.cambridge.org/highereducation/books/roman-law-in-european-history/C674E514A286F0D8EB4927CBEB9618D4) (Cambridge: Cambridge University Press, 1999), especially chs. 6–7 on natural law, codification, and the later learned tradition.
 
 ### Further reading—not controlling authority
 
--   Heinrich A. Rommen, *The Natural Law: A Study in Legal and Social History and Philosophy*, trans. Thomas R. Hanley (Indianapolis: Liberty Fund, 1998).
+- Heinrich A. Rommen, *The Natural Law: A Study in Legal and Social History and Philosophy*, trans. Thomas R. Hanley (Indianapolis: Liberty Fund, 1998).
 
--   John Finnis, *Natural Law and Natural Rights*, 2nd ed. (Oxford: Oxford University Press, 2011).
+- John Finnis, *Natural Law and Natural Rights*, 2nd ed. (Oxford: Oxford University Press, 2011).
 
--   Jean Porter, *Nature as Reason: A Thomistic Theory of the Natural Law* (Grand Rapids: Eerdmans, 2005).
+- Jean Porter, *Nature as Reason: A Thomistic Theory of the Natural Law* (Grand Rapids: Eerdmans, 2005).
 
--   Russell Hittinger, *The First Grace: Rediscovering the Natural Law in a Post-Christian World* (Wilmington, DE: ISI Books, 2003).
+- Russell Hittinger, *The First Grace: Rediscovering the Natural Law in a Post-Christian World* (Wilmington, DE: ISI Books, 2003).
 
--   James A. Coriden, Thomas J. Green, and Donald E. Heintschel, eds., *The Code of Canon Law: A Text and Commentary* (New York: Paulist Press, 1985); John P. Beal, James A. Coriden, and Thomas J. Green, eds., *New Commentary on the Code of Canon Law* (New York: Paulist Press, 2000). Commentary aids; verify later amendments and controlling law.
+- James A. Coriden, Thomas J. Green, and Donald E. Heintschel, eds., *The Code of Canon Law: A Text and Commentary* (New York: Paulist Press, 1985); John P. Beal, James A. Coriden, and Thomas J. Green, eds., *New Commentary on the Code of Canon Law* (New York: Paulist Press, 2000). Commentary aids; verify later amendments and controlling law.
 
--   Ladislas Orsy, *Theology and Canon Law: New Horizons for Legislation and Interpretation* (Collegeville, MN: Liturgical Press, 1992).
+- Ladislas Orsy, *Theology and Canon Law: New Horizons for Legislation and Interpretation* (Collegeville, MN: Liturgical Press, 1992).
 
 **Last revised (UTC):** 2026-07-19T03:44:17Z
 

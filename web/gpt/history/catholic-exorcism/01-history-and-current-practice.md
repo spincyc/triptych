@@ -356,11 +356,11 @@ The episode then widens from failed appropriation to conversion. Fear falls upon
 
 These three Acts scenes form a compact narrative matrix:
 
--   Samaria joins proclamation, departures, healings, and civic joy;
+- Samaria joins proclamation, departures, healings, and civic joy;
 
--   Philippi joins command, a woman’s exploitation, lost profit, and persecution;
+- Philippi joins command, a woman’s exploitation, lost profit, and persecution;
 
--   Ephesus joins apostolic signs, attempted secondhand adjuration, failure, confession, and abandonment of magical books.
+- Ephesus joins apostolic signs, attempted secondhand adjuration, failure, confession, and abandonment of magical books.
 
 Their shared reference to hostile agency does not erase their different missionary functions.
 

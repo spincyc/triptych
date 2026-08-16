@@ -1,0 +1,45 @@
+% Drawing: plan of Solomon's house (3 Kings 6-8): porch, temple, oracle.
+\begin{sketchfig}
+\begin{tikzpicture}[scale=1.0]
+% house outline: oracle (west, left), temple, porch (east, right)
+\path[sketchwash] (1.0,1.2) rectangle (3.8,4.0);
+\draw[sketchbold] (1.0,1.2) rectangle (3.8,4.0);
+\draw[sketchbold] (3.8,1.2) rectangle (9.4,4.0);
+\draw[sketch] (9.4,1.85) rectangle (10.2,3.35);
+% doorway gaps (painted out)
+\draw[draw=white, line width=3pt] (3.8,2.3) -- (3.8,2.9);
+\draw[draw=white, line width=3pt] (9.4,2.3) -- (9.4,2.9);
+% pillars of the porch (plain circles)
+\draw[line width=0.55pt] (10.62,2.15) circle (0.17);
+\draw[line width=0.55pt] (10.62,3.05) circle (0.17);
+\node[stiny, anchor=west] at (10.92,3.05) {Jachin};
+\node[stiny, anchor=west] at (10.92,2.15) {Booz};
+% names of the rooms
+\node[stiny] at (2.4,4.45) {the oracle (the debir),\\twenty cubits square};
+\node[stiny] at (6.6,4.45) {the temple,\\forty cubits};
+\node[stiny] at (9.8,1.5) {the porch};
+% the two great cherubim: wings wall to wall, meeting in the midst (plan)
+\draw[sketchbold] (1.15,3.95) .. controls (1.9,3.55) and (2.25,3.15) .. (2.4,2.72);
+\draw[sketchbold] (1.15,1.25) .. controls (1.9,1.65) and (2.25,2.05) .. (2.4,2.48);
+\draw[sketchbold] (3.65,3.95) .. controls (2.95,3.55) and (2.6,3.15) .. (2.46,2.72);
+\draw[sketchbold] (3.65,1.25) .. controls (2.95,1.65) and (2.6,2.05) .. (2.46,2.48);
+\node[stiny] at (3.4,0.45) {two cherubims of olive tree, ten cubits high; their wings\\touch the walls, and one another in the midst (3 Kings 6:23--27)};
+\draw[sketchthin] (2.2,0.85) -- (1.9,1.55);
+% the ark beneath the meeting wings
+\path[sketchdark] (2.06,2.4) rectangle (2.78,2.8);
+\draw[sketch] (2.06,2.4) rectangle (2.78,2.8);
+% the staves, their ends seen without
+\draw[sketchbold] (2.6,2.52) -- (4.5,2.52);
+\draw[sketchbold] (2.6,2.68) -- (4.5,2.68);
+\node[stiny] at (6.6,5.45) {the ends of the staves were seen without, in the sanctuary ---\\``and there they have been unto this day'' (3 Kings 8:8)};
+\draw[sketchthin] (4.9,5.1) -- (4.45,2.75);
+% the way in
+\draw[sketchthin, dash pattern=on 1.2pt off 2.2pt, -{Stealth[length=1.6mm]}] (10.1,2.6) -- (4.9,2.6);
+\node[stiny] at (7.8,0.85) {the way in, from the east};
+\draw[sketchthin] (7.8,1.1) -- (7.9,2.5);
+\end{tikzpicture}
+\sketchcaption{Plan of Solomon's house, after 3 Kings 6--8: porch, temple,
+and the windowless oracle where the ark came to rest under the wings of the
+great cherubim. The drawn staves make the text's strangest clause visible:
+the ark at rest is still rigged for the road.}
+\end{sketchfig}

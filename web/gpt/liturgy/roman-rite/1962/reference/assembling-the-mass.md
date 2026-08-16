@@ -306,17 +306,17 @@ Without all four, “This is a second-class Mass” is ambiguous. It may refer t
 
 Rubrics 38–58 and 274–284 keep universal and particular calendars distinct. Particular feasts include:
 
--   principal and secondary patrons of nation, region, diocese, city, or place;
+- principal and secondary patrons of nation, region, diocese, city, or place;
 
--   anniversary of the cathedral’s dedication;
+- anniversary of the cathedral’s dedication;
 
--   dedication anniversary and title of the particular church;
+- dedication anniversary and title of the particular church;
 
--   a saint whose body is preserved there under the stated conditions;
+- a saint whose body is preserved there under the stated conditions;
 
--   title, founder, and patrons of a religious institute;
+- title, founder, and patrons of a religious institute;
 
--   other feasts granted by competent indult.
+- other feasts granted by competent indult.
 
 These entries can occupy positions 12, 19, or 23 in the precedence table and therefore reverse an answer obtained from the universal calendar alone. The title of a qualifying church and its anniversary of dedication are I class; they are not informal parish devotions. Conversely, a parish custom does not become a proper feast merely because it is longstanding. The proper calendar or competent grant must establish it.
 
@@ -443,9 +443,9 @@ This rule prevents two errors: treating a stable calendar repair as a fresh annu
 
 Rubrics 106–110 distinguish:
 
--   **Privileged:** a Sunday; an I-class day; a day within the Christmas octave; a September Ember feria; any feria of Advent, Lent, or Passiontide; and the Major Litanies in Mass.
+- **Privileged:** a Sunday; an I-class day; a day within the Christmas octave; a September Ember feria; any feria of Advent, Lent, or Passiontide; and the Major Litanies in Mass.
 
--   **Ordinary:** every other commemoration, apart from the inseparable Peter–Paul arrangement of rubric 110.
+- **Ordinary:** every other commemoration, apart from the inseparable Peter–Paul arrangement of rubric 110.
 
 Privileged commemorations are made at Lauds and Vespers and in every Mass. Ordinary commemorations are made at Lauds, the conventual Mass, and all Low Masses, but not in a nonconventual sung Mass (rubric 108). This difference can produce two correct parish formularies on the same morning: the Low Mass contains an ordinary saint’s commemoration while the later nonconventual sung Sunday Mass does not.
 
@@ -533,13 +533,13 @@ For a feast printed in the Proper of Saints, use the indicated Mass. If it direc
 
 A votive Mass is outside the order of the Office or its commemorations (rubric 306). It may concern a mystery of the Lord, Mary, angels, saints, or a stated need. Rubrics 308–316 govern what can be selected:
 
--   the Missal enumerates votives of the Trinity, Holy Name, Sacred Heart, Precious Blood, Christ the King, Eucharist, Eternal High Priest, Holy Cross, Passion, Holy Family, Holy Spirit, and others;
+- the Missal enumerates votives of the Trinity, Holy Name, Sacred Heart, Precious Blood, Christ the King, Eucharist, Eternal High Priest, Holy Cross, Passion, Holy Family, Holy Spirit, and others;
 
--   Marian votives include the seasonal Masses of Our Lady on Saturday and universal Marian feast formularies, but the restriction on mysteries of Mary’s life and its Immaculate Conception exception must be observed;
+- Marian votives include the seasonal Masses of Our Lady on Saturday and universal Marian feast formularies, but the restriction on mysteries of Mary’s life and its Immaculate Conception exception must be observed;
 
--   a canonized saint with an approved Martyrology entry may have a votive Mass; a blessed requires the stated apostolic indult;
+- a canonized saint with an approved Martyrology entry may have a votive Mass; a blessed requires the stated apostolic indult;
 
--   a specific need uses its appointed votive or, if absent, the general Mass for any necessity with suitable prayers from the diverse orations.
+- a specific need uses its appointed votive or, if absent, the general Mass for any necessity with suitable prayers from the diverse orations.
 
 If the votive honors the same Divine Person, Mary, or saint as an occurring I- or II-class day, the Mass of the occurring Office must be celebrated. On a III- or IV-class day, rubric 317 permits a choice between the day and the votive, excluding a commemoration of the other. That is a same-identity rule; a different saint or temporal feria follows the ordinary commemoration rules.
 
@@ -681,15 +681,15 @@ with Gradual and Alleluia often counted separately to make ten. This map is usef
 
 Rubrics 431–432 give the decision:
 
--   In a Mass corresponding to the Office, Gloria follows whether the Office used *Te Deum*.
+- In a Mass corresponding to the Office, Gloria follows whether the Office used *Te Deum*.
 
--   Festive Masses under 302 use it.
+- Festive Masses under 302 use it.
 
--   Votive I, II, and III use it unless violet excludes it under the stated rule.
+- Votive I, II, and III use it unless violet excludes it under the stated rule.
 
--   IV-class votives omit it except Masses of angels on any day and Marian votives on Saturday.
+- IV-class votives omit it except Masses of angels on any day and Marian votives on Saturday.
 
--   Requiems omit it.
+- Requiems omit it.
 
 This prevents two common errors: retaining the Sunday Gloria when the Sunday formulary is repeated on an ordinary feria, and omitting the Gloria from a qualified First Friday votive simply because it falls in Lent.
 
@@ -697,15 +697,15 @@ This prevents two common errors: retaining the Sunday Gloria when the Sunday for
 
 Rubrics 475–476 require the Creed:
 
--   on every Sunday, even when its Office yields or a permitted II-class votive is celebrated;
+- on every Sunday, even when its Office yields or a permitted II-class votive is celebrated;
 
--   on I-class feasts and I-class votives;
+- on I-class feasts and I-class votives;
 
--   on II-class feasts of the Lord and Mary;
+- on II-class feasts of the Lord and Mary;
 
--   through the three surviving octaves, even in occurring feasts and votives;
+- through the three surviving octaves, even in occurring feasts and votives;
 
--   on the named apostolic and evangelist feasts.
+- on the named apostolic and evangelist feasts.
 
 Other II-class feasts, II-class votives, festive or votive III/IV Masses, commemorations as such, and Requiems do not receive it. A II-class external solemnity on Sunday has the Creed because Sunday independently requires it.
 
@@ -741,9 +741,9 @@ Rubric 501 and the Canon’s annotated texts control variations in *Communicante
 
 When Septuagesima prevents the Third through Sixth Sundays after Epiphany, rubric 18 assigns the needed formularies before the final Sunday after Pentecost. Rubric 298 constructs each resumed Mass from two sources:
 
--   Introit, Gradual, Alleluia, Offertory, and Communion from the Twenty-third Sunday after Pentecost;
+- Introit, Gradual, Alleluia, Offertory, and Communion from the Twenty-third Sunday after Pentecost;
 
--   Collect, Epistle, Gospel, Secret, and Postcommunion from the resumed Epiphany Sunday.
+- Collect, Epistle, Gospel, Secret, and Postcommunion from the resumed Epiphany Sunday.
 
 The Mass keeps its proper resumed-Sunday identity. Rubric 18 first fixes each nominal resumed formulary in its numbered slot; occurrence is a separate operation. A feast that wins one slot impedes that slot’s Sunday under Rubrics 14 and 16, but does not pull later resumed formularies backward. In a twenty-eight-Sunday year, therefore, XXIV–XXVII remain Third–Sixth after Epiphany even when Christ the King displaces the Third at XXIV. The Twenty-fourth and Last Sunday after Pentecost always remains last. A hand missal that simply points to “the preceding Sunday” cannot replace this explicit composite. A dated Ordo must still verify an actual civil year and its proper-calendar overlays; the twenty-three-Sunday shortfall remains fail-closed.
 
@@ -804,15 +804,15 @@ The date of a devotion does not itself replace the Mass of the day. Rubric 385 c
 
 Rubric 386 supplies:
 
--   Gloria;
+- Gloria;
 
--   no Creed;
+- no Creed;
 
--   up to two commemorations, or one commemoration and an imposed collect;
+- up to two commemorations, or one commemoration and an imposed collect;
 
--   solemn tone when sung;
+- solemn tone when sung;
 
--   no commemoration of the requested votive when it is prohibited.
+- no commemoration of the requested votive when it is prohibited.
 
 The selected formulary supplies Introit through Postcommunion and its proper Preface where assigned. A privileged Advent, Lent, or Passiontide feria is commemorated in every such Mass and occupies the first commemoration place (109e, 113). A non-Marian III-class saint can be commemorated subject to the remaining limit. A Mass of the same Divine Person or of Mary as the occurring day invokes rubric 317’s same-identity choice and exclusion.
 
@@ -910,15 +910,15 @@ Each priest may celebrate three Masses using the three appointed formularies and
 
 One Requiem directly joined to the funeral is I class (402, 405). Rubric 406 prohibits it:
 
--   on precedence-table positions 1–6;
+- on precedence-table positions 1–6;
 
--   on holy days of obligation included among the other universal I-class feasts at position 11;
+- on holy days of obligation included among the other universal I-class feasts at position 11;
 
--   on the dedication anniversary and title of the church where the funeral occurs;
+- on the dedication anniversary and title of the church where the funeral occurs;
 
--   on the principal patron of the city or place;
+- on the principal patron of the city or place;
 
--   on the title and canonized founder of the religious institute to which the church belongs.
+- on the title and canonized founder of the religious institute to which the church belongs.
 
 Rubric 407 adds two easily missed qualifications. A funeral Mass is prohibited on a Sunday when an external solemnity of a feast is celebrated. If a feast named in rubric 406 is accidentally transferred, the funeral Mass remains prohibited on the feast’s impeded original day but is permitted, other bars aside, on the day to which the feast’s Office transfers.
 
@@ -932,21 +932,21 @@ One cannot reason, “The funeral Requiem is I class, therefore all I-class rule
 
 ### Requiem assembly
 
--   Omit Psalm 42 and the Introit doxology (425b, 428).
+- Omit Psalm 42 and the Introit doxology (425b, 428).
 
--   Omit Gloria and Creed (432d, 476f).
+- Omit Gloria and Creed (432d, 476f).
 
--   Make no commemoration of the Office (391); Requiem prayers are governed by 398.
+- Make no commemoration of the Office (391); Requiem prayers are governed by 398.
 
--   *Dies irae* is obligatory only in I-class Requiems; it may be omitted in II–IV (399).
+- *Dies irae* is obligatory only in I-class Requiems; it may be omitted in II–IV (399).
 
--   Use the Requiem Preface (499).
+- Use the Requiem Preface (499).
 
--   Follow the Requiem Agnus Dei and peace variants printed in the Order.
+- Follow the Requiem Agnus Dei and peace variants printed in the Order.
 
--   Say *Requiescant in pace*; omit the blessing (507c, 508).
+- Say *Requiescant in pace*; omit the blessing (507c, 508).
 
--   Omit the Last Gospel when the absolution at the bier follows; otherwise apply 509–510 exactly.
+- Omit the Last Gospel when the absolution at the bier follows; otherwise apply 509–510 exactly.
 
 ### Nuptial Mass
 
@@ -2054,53 +2054,53 @@ Complete this worksheet in order. A blank source field is a reason to stop; it i
 
 A second calculation should begin from the raw calendar entries, not from the first worker’s conclusion. The checker initials each statement:
 
--   
+- 
 
-    ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
 
-     every candidate and particular-calendar source is present;
+   every candidate and particular-calendar source is present;
 
--   
+- 
 
-    ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
 
-     the precedence position, exception, and loser disposition were separately proved;
+   the precedence position, exception, and loser disposition were separately proved;
 
--   
+- 
 
-    ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
 
-     Mass category, class, number, place, exercises, authorization, and prohibitions were tested;
+   Mass category, class, number, place, exercises, authorization, and prohibitions were tested;
 
--   
+- 
 
-    ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
 
-     all twenty-six assembly-map moments are represented or marked inapplicable;
+   all twenty-six assembly-map moments are represented or marked inapplicable;
 
--   
+- 
 
-    ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
 
-     prayer count and order agree at Collect, Secret, and Postcommunion;
+   prayer count and order agree at Collect, Secret, and Postcommunion;
 
--   
+- 
 
-    ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
 
-     Gloria, Creed, Preface, Canon forms, dismissal, blessing, and Last Gospel were independently recalculated;
+   Gloria, Creed, Preface, Canon forms, dismissal, blessing, and Last Gospel were independently recalculated;
 
--   
+- 
 
-    ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
 
-     the source leaves no unmarked Common, choice, calendar, or local-law gap;
+   the source leaves no unmarked Common, choice, calendar, or local-law gap;
 
--   
+- 
 
-    ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
 
-     the result states its 1962-edition scope and does not imply present authorization.
+   the result states its 1962-edition scope and does not imply present authorization.
 
 Checker:
 
@@ -2154,11 +2154,11 @@ The official Latin rules control. The English explanations are original study pa
 
 Three labels govern the exposition:
 
--   A **direct rule** restates an express numbered rubric or formulary direction.
+- A **direct rule** restates an express numbered rubric or formulary direction.
 
--   A **necessary application** combines express rules to answer a case, without creating a new permission.
+- A **necessary application** combines express rules to answer a case, without creating a new permission.
 
--   An **editorial workflow** arranges the rules into a usable checklist; its order is pedagogical, not another promulgated rubric.
+- An **editorial workflow** arranges the rules into a usable checklist; its order is pedagogical, not another promulgated rubric.
 
 The worked cases use conditions rather than invented civil dates unless the date is inherent in the rule. A hypothetical “parish titular” assumes that the title and rank are established in a competent proper calendar; the example does not establish them for an actual church.
 

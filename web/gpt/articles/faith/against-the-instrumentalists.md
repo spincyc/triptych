@@ -120,35 +120,35 @@ This is an internally source-audited working study. Production and artifact evid
 
 ### Authoritative Catholic witnesses
 
--   Second Vatican Council, pastoral constitution *Gaudium et spes* (7 December 1965), 36, 57, and 59, on the proper autonomy and methods of the sciences, the temptation to make observable data the rule of all truth, and the distinct orders of faith and reason; [official English](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html).
+- Second Vatican Council, pastoral constitution *Gaudium et spes* (7 December 1965), 36, 57, and 59, on the proper autonomy and methods of the sciences, the temptation to make observable data the rule of all truth, and the distinct orders of faith and reason; [official English](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html).
 
--   John Paul II, encyclical *Fides et ratio* (14 September 1998), 81–83 and 88, on functional knowledge, metaphysical inquiry, the movement from phenomenon to foundation, and scientism; [official English](https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html).
+- John Paul II, encyclical *Fides et ratio* (14 September 1998), 81–83 and 88, on functional knowledge, metaphysical inquiry, the movement from phenomenon to foundation, and scientism; [official English](https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html).
 
--   Benedict XVI, address at the University of Regensburg (12 September 2006), on the mathematical–empirical canon of modern science and the reduction of reason when that canon is made exhaustive; [official English](https://www.vatican.va/content/benedict-xvi/en/speeches/2006/september/documents/hf_ben-xvi_spe_20060912_university-regensburg.html).
+- Benedict XVI, address at the University of Regensburg (12 September 2006), on the mathematical–empirical canon of modern science and the reduction of reason when that canon is made exhaustive; [official English](https://www.vatican.va/content/benedict-xvi/en/speeches/2006/september/documents/hf_ben-xvi_spe_20060912_university-regensburg.html).
 
 ### Thomistic framework
 
--   St. Thomas Aquinas, *Summa theologiae* I, q. 2, a. 2, on demonstration from effects; q. 12, a. 12, on natural knowledge of God from sensible effects without vision of the divine essence; q. 84, aa. 6–7, and q. 85, a. 1, on sense, phantasms, and intellectual abstraction.
+- St. Thomas Aquinas, *Summa theologiae* I, q. 2, a. 2, on demonstration from effects; q. 12, a. 12, on natural knowledge of God from sensible effects without vision of the divine essence; q. 84, aa. 6–7, and q. 85, a. 1, on sense, phantasms, and intellectual abstraction.
 
--   Latin loci available through the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html); the [New Advent Summa](https://www.newadvent.org/summa/) supplied a working public English index. Work, question, article, and reply govern rather than either site’s wording.
+- Latin loci available through the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html); the [New Advent Summa](https://www.newadvent.org/summa/) supplied a working public English index. Work, question, article, and reply govern rather than either site’s wording.
 
 ### Measurement and philosophy of science
 
--   Joint Committee for Guides in Metrology, *International Vocabulary of Metrology—Basic and General Concepts and Associated Terms*, 3rd ed., JCGM 200:2012, 2.9, 2.39, and 4.1; [BIPM-hosted official PDF](https://www.bipm.org/documents/20126/2071204/JCGM_200_2012.pdf).
+- Joint Committee for Guides in Metrology, *International Vocabulary of Metrology—Basic and General Concepts and Associated Terms*, 3rd ed., JCGM 200:2012, 2.9, 2.39, and 4.1; [BIPM-hosted official PDF](https://www.bipm.org/documents/20126/2071204/JCGM_200_2012.pdf).
 
--   National Institute of Standards and Technology, Engineering Statistics Handbook, sec. 2.3, “Calibration”; [official technical reference](https://www.itl.nist.gov/div898/handbook/mpc/section3/mpc3.htm).
+- National Institute of Standards and Technology, Engineering Statistics Handbook, sec. 2.3, “Calibration”; [official technical reference](https://www.itl.nist.gov/div898/handbook/mpc/section3/mpc3.htm).
 
--   Stanford Encyclopedia of Philosophy, “Measurement in Science,” especially sec. 7.1; [Spring 2025 archived edition](https://plato.stanford.edu/archives/spr2025/entries/measurement-science/).
+- Stanford Encyclopedia of Philosophy, “Measurement in Science,” especially sec. 7.1; [Spring 2025 archived edition](https://plato.stanford.edu/archives/spr2025/entries/measurement-science/).
 
--   Stanford Encyclopedia of Philosophy, “Scientific Realism,” sec. 4.1; [Spring 2017 archived edition](https://plato.stanford.edu/archives/spr2017/entries/scientific-realism/); “Operationalism,” especially sec. 2.3; [Spring 2022 archived edition](https://plato.stanford.edu/archives/spr2022/entries/operationalism/); and “Religious Language,” sec. 2.1; [current entry accessed 23 July 2026](https://plato.stanford.edu/entries/religious-language/).
+- Stanford Encyclopedia of Philosophy, “Scientific Realism,” sec. 4.1; [Spring 2017 archived edition](https://plato.stanford.edu/archives/spr2017/entries/scientific-realism/); “Operationalism,” especially sec. 2.3; [Spring 2022 archived edition](https://plato.stanford.edu/archives/spr2022/entries/operationalism/); and “Religious Language,” sec. 2.1; [current entry accessed 23 July 2026](https://plato.stanford.edu/entries/religious-language/).
 
 ### Lewis and the argument from reason
 
--   C. S. Lewis, *Miracles: A Preliminary Study*, rev. ed., ch. 3, identified primary work. A [HarperCollins 2009 bibliographic and limited-preview record](https://books.google.com/books/about/Miracles.html?id=tH8di3qQDhEC) identifies the revised work and chapter but was not used as a full-text witness. No Lewis wording is reproduced.
+- C. S. Lewis, *Miracles: A Preliminary Study*, rev. ed., ch. 3, identified primary work. A [HarperCollins 2009 bibliographic and limited-preview record](https://books.google.com/books/about/Miracles.html?id=tH8di3qQDhEC) identifies the revised work and chapter but was not used as a full-text witness. No Lewis wording is reproduced.
 
--   The [C. S. Lewis Foundation study guide](https://www.cslewis.org/resources/studyguides/Study%20Guide%20-%20Miracles.pdf) supplies the checked outline and modification notice; the Foundation’s [chronology](https://www.cslewis.org/resource/chronocsl/) records Anscombe’s 1948 criticism and the revised 1960 Fontana reprint.
+- The [C. S. Lewis Foundation study guide](https://www.cslewis.org/resources/studyguides/Study%20Guide%20-%20Miracles.pdf) supplies the checked outline and modification notice; the Foundation’s [chronology](https://www.cslewis.org/resource/chronocsl/) records Anscombe’s 1948 criticism and the revised 1960 Fontana reprint.
 
--   G. E. M. Anscombe, “C. S. Lewis’s Rewrite of Chapter III of *Miracles*,” in Roger White, Judith Wolfe, and Brendan N. Wolfe, eds., *C. S. Lewis and His Circle* (Oxford University Press, 2015), 15–23; [publisher record and abstract](https://academic.oup.com/book/9928/chapter-abstract/157260151).
+- G. E. M. Anscombe, “C. S. Lewis’s Rewrite of Chapter III of *Miracles*,” in Roger White, Judith Wolfe, and Brendan N. Wolfe, eds., *C. S. Lewis and His Circle* (Oxford University Press, 2015), 15–23; [publisher record and abstract](https://academic.oup.com/book/9928/chapter-abstract/157260151).
 
 **Last revised (UTC):** 2026-07-23T13:23:48Z
 

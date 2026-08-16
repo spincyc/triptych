@@ -256,13 +256,13 @@ Possidius reports burial in the setting of Hippo. Paul the Deacon’s late-eight
 
 Augustine is especially vulnerable to quotation drift.
 
--   The Latin imperative *dilige et quod vis fac* is genuine (*In epistulam Ioannis* 7.8), but its love is formed charity whose actions, including correction, flow from love; it is not permission for arbitrary desire.
+- The Latin imperative *dilige et quod vis fac* is genuine (*In epistulam Ioannis* 7.8), but its love is formed charity whose actions, including correction, flow from love; it is not permission for arbitrary desire.
 
--   Augustine retrospectively remembers praying for chastity while asking that it not yet be given (*Confessions* 8.7.17). He does not offer the episode as a lifelong motto or comic indulgence.
+- Augustine retrospectively remembers praying for chastity while asking that it not yet be given (*Confessions* 8.7.17). He does not offer the episode as a lifelong motto or comic indulgence.
 
--   *Confessions* 1.1.1 describes the human heart as restless until it rests in God. Its grammar is corporate as well as personal; no one English wording is presented here as the uniquely authorized translation.
+- *Confessions* 1.1.1 describes the human heart as restless until it rests in God. Its grammar is corporate as well as personal; no one English wording is presented here as the uniquely authorized translation.
 
--   Attractive internet aphorisms attributed to Augustine without work and locus should remain unverified until located in the Latin or a controlled edition.
+- Attractive internet aphorisms attributed to Augustine without work and locus should remain unverified until located in the Latin or a controlled edition.
 
 ### Miracle stories and holy death
 
@@ -367,23 +367,23 @@ Ancient Latin and the 1919 Possidius edition are public-domain source material. 
 
 ### Ancient and official sources
 
--   Augustine. *Confessionum libri XIII*. Ed. Pius Knöll, CSEL 33 (Vienna, 1896). Latin text and scan through the [Bibliothek der Kirchenväter](https://bkv.unifr.ch/en/works/cpl-251/versions/aug-conf-csel); accessed 2026-07-15. The old critical text is public domain; this study paraphrases and gives loci rather than reproducing a modern translation.
+- Augustine. *Confessionum libri XIII*. Ed. Pius Knöll, CSEL 33 (Vienna, 1896). Latin text and scan through the [Bibliothek der Kirchenväter](https://bkv.unifr.ch/en/works/cpl-251/versions/aug-conf-csel); accessed 2026-07-15. The old critical text is public domain; this study paraphrases and gives loci rather than reproducing a modern translation.
 
--   Augustine. *Confessions*; *De beata vita*; *De magistro*; *De doctrina christiana*; *De Trinitate*; *De civitate Dei*; *Retractationes*; anti-Manichaean, anti-Donatist, and anti-Pelagian works; sermons and letters. Edition orientation and volume map in the [CSEL catalog](https://csel.at/en/publikationen/csel/); accessed 2026-07-15. Exact loci used are mapped in the source audit. Individual critical editions and modern translations beyond the checked *Confessions* base were not collated or quoted.
+- Augustine. *Confessions*; *De beata vita*; *De magistro*; *De doctrina christiana*; *De Trinitate*; *De civitate Dei*; *Retractationes*; anti-Manichaean, anti-Donatist, and anti-Pelagian works; sermons and letters. Edition orientation and volume map in the [CSEL catalog](https://csel.at/en/publikationen/csel/); accessed 2026-07-15. Exact loci used are mapped in the source audit. Individual critical editions and modern translations beyond the checked *Confessions* base were not collated or quoted.
 
--   Possidius. *Sancti Augustini Vita*. Trans. Herbert T. Weiskotten, *The Life of Saint Augustine* (Princeton, 1919), [English and Latin text](https://www.tertullian.org/fathers/possidius_life_of_augustine_02_text.htm); translator’s [introduction](https://www.tertullian.org/fathers/possidius_life_of_augustine_01_intro.htm); accessed 2026-07-15. Public-domain edition; used primarily by paraphrase.
+- Possidius. *Sancti Augustini Vita*. Trans. Herbert T. Weiskotten, *The Life of Saint Augustine* (Princeton, 1919), [English and Latin text](https://www.tertullian.org/fathers/possidius_life_of_augustine_02_text.htm); translator’s [introduction](https://www.tertullian.org/fathers/possidius_life_of_augustine_01_intro.htm); accessed 2026-07-15. Public-domain edition; used primarily by paraphrase.
 
--   Prosper of Aquitaine. *Epitoma chronicon*, in Theodor Mommsen, ed., *Chronica minora*, MGH Auctores antiquissimi 9 (Berlin, 1892), p. 473, [digital MGH](https://www.dmgh.de/mgh_auct_ant_9/index.htm#page/473/mode/1up); accessed 2026-07-17. The entry directly supplies the 28 August death date.
+- Prosper of Aquitaine. *Epitoma chronicon*, in Theodor Mommsen, ed., *Chronica minora*, MGH Auctores antiquissimi 9 (Berlin, 1892), p. 473, [digital MGH](https://www.dmgh.de/mgh_auct_ant_9/index.htm#page/473/mode/1up); accessed 2026-07-17. The entry directly supplies the 28 August death date.
 
--   *Gesta collationis Carthaginiensis*, Paris, BnF lat. 1546, fols. 1v–143v, [Bibliotheca Laureshamensis facsimile](https://doi.org/10.11588/diglit.13514); and Clemens Weidmann, ed., *Collatio Carthaginensis anni 411*, CSEL 104 (Berlin/Boston, 2018), [edition record](https://csel.at/en/news/csel-104-collatio-carthaginensis-anni-411/); accessed 2026-07-17. Used for the representatives and dossier architecture, not as neutral or complete proceedings.
+- *Gesta collationis Carthaginiensis*, Paris, BnF lat. 1546, fols. 1v–143v, [Bibliotheca Laureshamensis facsimile](https://doi.org/10.11588/diglit.13514); and Clemens Weidmann, ed., *Collatio Carthaginensis anni 411*, CSEL 104 (Berlin/Boston, 2018), [edition record](https://csel.at/en/news/csel-104-collatio-carthaginensis-anni-411/); accessed 2026-07-17. Used for the representatives and dossier architecture, not as neutral or complete proceedings.
 
--   *Codex Theodosianus* 16.5.38 (12 February 405), Mommsen–Meyer text, [online Latin](https://www.ancienttexts.org/library/latinlibrary/theod16.html); accessed 2026-07-17. Used to establish the imperial legal setting.
+- *Codex Theodosianus* 16.5.38 (12 February 405), Mommsen–Meyer text, [online Latin](https://www.ancienttexts.org/library/latinlibrary/theod16.html); accessed 2026-07-17. Used to establish the imperial legal setting.
 
--   Augustine. Letter 211.5–16, [Latin text](https://www.augustinus.it/latino/lettere/lettera_217_testo.htm); with the [Rule text-and-manuscript catalogue](https://earlymedievalmonasticism.org/texts/Augustine-Regulae.html); accessed 2026-07-17. Used for the women’s community and the plurality of transmitted Rule text families.
+- Augustine. Letter 211.5–16, [Latin text](https://www.augustinus.it/latino/lettere/lettera_217_testo.htm); with the [Rule text-and-manuscript catalogue](https://earlymedievalmonasticism.org/texts/Augustine-Regulae.html); accessed 2026-07-17. Used for the women’s community and the plurality of transmitted Rule text families.
 
--   Paul the Deacon. *Historia Langobardorum* 6.48, ed. Georg Waitz, MGH *Scriptores rerum Langobardicarum* (Hanover, 1878), p. 234, [Latin, edition locus, and research translation](https://saraceni.uni-koeln.de/wiki/Historia_Langobardorum_0010); accessed 2026-07-17. Used only for the late-eighth-century Sardinia–Pavia translation report.
+- Paul the Deacon. *Historia Langobardorum* 6.48, ed. Georg Waitz, MGH *Scriptores rerum Langobardicarum* (Hanover, 1878), p. 234, [Latin, edition locus, and research translation](https://saraceni.uni-koeln.de/wiki/Historia_Langobardorum_0010); accessed 2026-07-17. Used only for the late-eighth-century Sardinia–Pavia translation report.
 
--   Benedict XVI. General Audience, 9 January 2008, [“Saint Augustine of Hippo”](https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html); accessed 2026-07-15. Official ecclesial reception; Vatican English remains third-party text and is paraphrased.
+- Benedict XVI. General Audience, 9 January 2008, [“Saint Augustine of Hippo”](https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html); accessed 2026-07-15. Official ecclesial reception; Vatican English remains third-party text and is paraphrased.
 
 **Last revised (UTC):** 2026-07-19T03:44:17Z
 

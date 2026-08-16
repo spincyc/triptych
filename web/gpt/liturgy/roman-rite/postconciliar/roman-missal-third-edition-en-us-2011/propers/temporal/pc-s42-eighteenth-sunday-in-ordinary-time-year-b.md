@@ -47,7 +47,7 @@ PC-S42-B
 | Second Reading | Eph. 4:17, 20–24 | Addressed to gentile Christians in Asia Minor | First century; Pauline authorship is traditional, while modern scholarship disputes direct authorship |
 | The selected verses belong to the letter’s transition from ecclesial confession to baptismal conduct. Verses 18–19 are not appointed; the boundary therefore moves directly from the prohibition in v. 17 to learning Christ in vv. 20–24. |  |  |  |
 
-<span id="triptych:brief-synthesis:start" label="triptych:brief-synthesis:start"></span>
+<span id="triptych:brief-synthesis:start" data-label="triptych:brief-synthesis:start"></span>
 
 ## The Propers: Themes and Movement
 
@@ -82,9 +82,9 @@ The source-grounded center is neither “earn the bread” nor “ignore earthly
 >
 > The First Reading and Gospel are officially correlated. The Psalm is responsorial, the acclamation acclamatory, and Ephesians belongs to the semi-continuous apostolic course. Connections to the Week XVIII prayers and antiphons are textual observations and source-grounded synthesis, not claims about historical selection intent.
 
-<span id="triptych:brief-synthesis:end" label="triptych:brief-synthesis:end"></span>
+<span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
-<span id="triptych:brief-synthesis:next" label="triptych:brief-synthesis:next"></span>
+<span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
 
 ## The Propers: Detailed Commentary
 
@@ -238,11 +238,11 @@ Israel asks “What is this?”; the Johannine crowd asks what work and sign it 
 
 ## The Propers: Notable and Quotable
 
--   **“Manna of Females” (*First Reading; Responsorial Psalm*)** William Dent’s 1784 satirical etching *Catlap for Ever, or the Smuggler’s Downfall* puts the phrase into William Pitt’s speech about reduced tea duties. Wilderness food becomes cheap tea in an argument about taxation, smuggling, gin, windows, coal, and candles. The British Museum record controls the object, inscription, and political setting; the satire illuminates an economic afterlife of “manna,” not the meaning of Exodus.
+- **“Manna of Females” (*First Reading; Responsorial Psalm*)** William Dent’s 1784 satirical etching *Catlap for Ever, or the Smuggler’s Downfall* puts the phrase into William Pitt’s speech about reduced tea duties. Wilderness food becomes cheap tea in an argument about taxation, smuggling, gin, windows, coal, and candles. The British Museum record controls the object, inscription, and political setting; the satire illuminates an economic afterlife of “manna,” not the meaning of Exodus.
 
--   **“Operation Manna” (*First Reading; Responsorial Psalm*)** The Allied food drops over the occupied Netherlands in 1945 turned the biblical name into an operational title. The named relation was material rather than decorative: food came from aircraft to people suffering in the Dutch famine. The NOS liberation-year dossier explicitly explains the biblical naming and preserves the danger, organization, and human labor behind the aid. The comparison must not recast war relief as an unmediated miracle.
+- **“Operation Manna” (*First Reading; Responsorial Psalm*)** The Allied food drops over the occupied Netherlands in 1945 turned the biblical name into an operational title. The named relation was material rather than decorative: food came from aircraft to people suffering in the Dutch famine. The NOS liberation-year dossier explicitly explains the biblical naming and preserves the danger, organization, and human labor behind the aid. The comparison must not recast war relief as an unmediated miracle.
 
--   **“Bread of heaven, feed me” (*Gospel; Communion B*)** William Williams’s pilgrimage hymn *Guide Me, O Thou Great Jehovah*, in Peter Williams’s English tradition, gathers wilderness guidance, living water, bread from heaven, death, and arrival in Canaan into a singer’s petition. A 1913 public-domain hymnal witness was checked. The hymn therefore shows Exodus and Johannine imagery becoming congregational prayer; it is not direct exegesis of John 6 or evidence that the Communion option was selected.
+- **“Bread of heaven, feed me” (*Gospel; Communion B*)** William Williams’s pilgrimage hymn *Guide Me, O Thou Great Jehovah*, in Peter Williams’s English tradition, gathers wilderness guidance, living water, bread from heaven, death, and arrival in Canaan into a singer’s petition. A 1913 public-domain hymnal witness was checked. The hymn therefore shows Exodus and Johannine imagery becoming congregational prayer; it is not direct exegesis of John 6 or evidence that the Communion option was selected.
 
 ## Appendix: Liturgical Resolution
 
@@ -273,25 +273,25 @@ The reception search concentrated on direct exposition: Chrysostom’s *Homilies
 
 ## References
 
--   *Missale Romanum*, editio typica tertia (2002), Dominica XVIII per annum, printed pp. 467–468; canonical Week XVIII owner cited above.
+- *Missale Romanum*, editio typica tertia (2002), Dominica XVIII per annum, printed pp. 467–468; canonical Week XVIII owner cited above.
 
--   U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 113; USCCB occurrence page for 4 August 2024.
+- U.S. *Lectionary for Mass*, Second Typical Edition, Volume I, no. 113; USCCB occurrence page for 4 August 2024.
 
--   Douay–Rheims Bible, Challoner revision: Exod. 16:2–4, 12–15; Ps. 77:3–4, 23–25, 54 (modern Ps. 78); Eph. 4:17, 20–24; Matt. 4:4; John 6:24–35; Wis. 16:15–29.
+- Douay–Rheims Bible, Challoner revision: Exod. 16:2–4, 12–15; Ps. 77:3–4, 23–25, 54 (modern Ps. 78); Eph. 4:17, 20–24; Matt. 4:4; John 6:24–35; Wis. 16:15–29.
 
--   John Chrysostom, *Homilies on John* 43–45; *Homily on Ephesians* 13.
+- John Chrysostom, *Homilies on John* 43–45; *Homily on Ephesians* 13.
 
--   Augustine, *Tractates on John* 25.8–14; *Exposition of Psalm 77* 15, 30.
+- Augustine, *Tractates on John* 25.8–14; *Exposition of Psalm 77* 15, 30.
 
--   Ambrose, *On the Mysteries* 8.44–49.
+- Ambrose, *On the Mysteries* 8.44–49.
 
--   William Dent, [*Catlap for Ever, or the Smuggler’s Downfall*](https://www.britishmuseum.org/collection/object/P_1868-0808-5356) (1784), British Museum 1868,0808.5356.
+- William Dent, [*Catlap for Ever, or the Smuggler’s Downfall*](https://www.britishmuseum.org/collection/object/P_1868-0808-5356) (1784), British Museum 1868,0808.5356.
 
--   NOS, [“Als manna uit de hemel: voedsel gedropt in Nederland”](https://nos.nl/bevrijdingsjaar/bericht/2332123-als-manna-uit-de-hemel-voedsel-gedropt-in-nederland), liberation-year dossier for 29 April 1945.
+- NOS, [“Als manna uit de hemel: voedsel gedropt in Nederland”](https://nos.nl/bevrijdingsjaar/bericht/2332123-als-manna-uit-de-hemel-voedsel-gedropt-in-nederland), liberation-year dossier for 29 April 1945.
 
--   William Williams and Peter Williams, [“Guide me, O thou great Jehovah”](https://hymnary.org/hymn/HoP1913/265), *The Hymnal of Praise* (1913), no. 265.
+- William Williams and Peter Williams, [“Guide me, O thou great Jehovah”](https://hymnary.org/hymn/HoP1913/265), *The Hymnal of Praise* (1913), no. 265.
 
--   GIRM 46–90, 352–367; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
+- GIRM 46–90, 352–367; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
 
 **Last revised (UTC):** 2026-07-29T18:04:07Z
 

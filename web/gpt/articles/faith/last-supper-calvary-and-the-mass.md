@@ -100,19 +100,19 @@ This vocabulary is not timid. “Makes present,” “same sacrifice,” and “
 
 Not every true theological sentence has the same authority. Several claims in this study belong to the Church’s received doctrinal synthesis:
 
--   Christ instituted the Eucharist at the Last Supper and commanded its celebration in his memory.
+- Christ instituted the Eucharist at the Last Supper and commanded its celebration in his memory.
 
--   By the consecration of bread and wine, their whole substances are changed into Christ’s Body and Blood; the whole risen Christ is present truly, really, and substantially under either species.
+- By the consecration of bread and wine, their whole substances are changed into Christ’s Body and Blood; the whole risen Christ is present truly, really, and substantially under either species.
 
--   Calvary is Christ’s unique, complete, once-for-all sacrifice.
+- Calvary is Christ’s unique, complete, once-for-all sacrifice.
 
--   The Mass is a true sacrifice and the same sacrifice as Calvary: Christ is the same principal priest and victim, while the manner of offering is sacramental and unbloody.
+- The Mass is a true sacrifice and the same sacrifice as Calvary: Christ is the same principal priest and victim, while the manner of offering is sacramental and unbloody.
 
--   Eucharistic memorial makes the Paschal sacrifice present and applies its fruit; it is not bare mental recollection.
+- Eucharistic memorial makes the Paschal sacrifice present and applies its fruit; it is not bare mental recollection.
 
--   The Church and faithful participate in and are joined to Christ’s offering without supplementing its sufficiency.
+- The Church and faithful participate in and are joined to Christ’s offering without supplementing its sufficiency.
 
--   The Eucharist is also banquet, communion, ecclesial unity, and pledge of future glory.
+- The Eucharist is also banquet, communion, ecclesial unity, and pledge of future glory.
 
 Other formulations are theological models or explanatory syntheses. Saying that the Supper “anticipates” Calvary is well grounded and used by modern magisterial theology, but proposed accounts of *how* a future sacrifice can be sacramentally given require care. Saying that the sacrifice of Christ is “eternally present” may intend his enduring heavenly priesthood or the permanent efficacy of his completed offering; it becomes misleading if it denies that the Passion occurred once in created history. Speaking of the sacrifice of the Cross as made present in the Mass is sound when “present” is sacramental; it becomes false if it implies renewed suffering or local replication of the hill, crowd, and execution.
 
@@ -163,17 +163,17 @@ This map also corrects a false symmetry. It is not quite right to say that the S
 
 Used explicitly as poetry, the original image may awaken a true intuition: Calvary is not sealed away from Christian worship, and the apostles received more than a prediction. But it should immediately be translated into the Church’s grammar.
 
--   Say that the Last Supper *sacramentally anticipated* the Cross; do not say that the apostles literally arrived at a future execution.
+- Say that the Last Supper *sacramentally anticipated* the Cross; do not say that the apostles literally arrived at a future execution.
 
--   Say that the Mass *sacramentally makes present* the one sacrifice; do not say that the congregation leaves its historical time.
+- Say that the Mass *sacramentally makes present* the one sacrifice; do not say that the congregation leaves its historical time.
 
--   Say that Christ is the same priest and victim; do not imagine the risen Lord suffering or dying again.
+- Say that Christ is the same priest and victim; do not imagine the risen Lord suffering or dying again.
 
--   Say that anamnesis is effective ecclesial memorial; do not reduce it either to mental recall or to a hidden physical mechanism.
+- Say that anamnesis is effective ecclesial memorial; do not reduce it either to mental recall or to a hidden physical mechanism.
 
--   Say that the Eucharist looks toward the Lord’s return and heavenly banquet as well as toward the Cross.
+- Say that the Eucharist looks toward the Lord’s return and heavenly banquet as well as toward the Cross.
 
--   Say which statement is doctrine and which is an explanatory model; do not present one theologian’s mechanism as “what the Church teaches.”
+- Say which statement is doctrine and which is an explanatory model; do not present one theologian’s mechanism as “what the Church teaches.”
 
 These qualifications do not drain the mystery. They prevent an imaginative model from becoming a rival explanation. Sacraments are not weak because they are sacramental. Through created signs and the power of Christ and the Spirit, they communicate the saving reality in the mode Christ instituted.
 

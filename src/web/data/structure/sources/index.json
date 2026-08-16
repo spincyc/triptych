@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 1467,
-  "editions": 655,
+  "artifacts": 1475,
+  "editions": 660,
   "passages": 2751,
   "readable": 1630,
-  "works": 491
+  "works": 495
  },
  "facets": {
   "authors": [
@@ -246,6 +246,10 @@
     "works": 2
    },
    {
+    "id": "Center for Biblical Languages and Computation",
+    "works": 1
+   },
+   {
     "id": "Charles G. Herbermann and others",
     "works": 3
    },
@@ -263,6 +267,10 @@
    },
    {
     "id": "Claude de la Colombière",
+    "works": 1
+   },
+   {
+    "id": "Computer Assisted Tools for Septuagint Studies",
     "works": 1
    },
    {
@@ -355,6 +363,10 @@
    },
    {
     "id": "Edmundo O'Gorman",
+    "works": 1
+   },
+   {
+    "id": "Eliran Wong",
     "works": 1
    },
    {
@@ -567,6 +579,10 @@
    },
    {
     "id": "Jacques-Paul Migne, publisher and series editor",
+    "works": 1
+   },
+   {
+    "id": "James Tauber and MorphGNT contributors",
     "works": 1
    },
    {
@@ -1680,6 +1696,10 @@
     "works": 1
    },
    {
+    "id": "greek-new-testament-morphology-dataset",
+    "works": 1
+   },
+   {
     "id": "hellenistic-jewish-narrative",
     "works": 1
    },
@@ -2100,6 +2120,18 @@
     "works": 1
    },
    {
+    "id": "septuagint-electronic-dataset",
+    "works": 1
+   },
+   {
+    "id": "septuagint-morphology-dataset",
+    "works": 1
+   },
+   {
+    "id": "septuagint-text-fabric-dataset",
+    "works": 1
+   },
+   {
     "id": "sermon-manuscript",
     "works": 1
    },
@@ -2138,12 +2170,12 @@
     "id": "fr"
    },
    {
-    "editions": 15,
-    "id": "it"
+    "editions": 17,
+    "id": "grc"
    },
    {
-    "editions": 12,
-    "id": "grc"
+    "editions": 15,
+    "id": "it"
    },
    {
     "editions": 12,
@@ -2254,7 +2286,7 @@
     "label": "20th century"
    },
    {
-    "editions": 345,
+    "editions": 350,
     "id": "2000",
     "label": "21st century"
    }
@@ -2265,7 +2297,7 @@
     "id": "public-domain"
    },
    {
-    "artifacts": 358,
+    "artifacts": 361,
     "id": "restricted"
    },
    {
@@ -2273,7 +2305,7 @@
     "id": "unresolved"
    },
    {
-    "artifacts": 46,
+    "artifacts": 51,
     "id": "licensed"
    },
    {
@@ -5749,6 +5781,31 @@
    "title": "Codex Iuris Canonici (1983)"
   },
   {
+   "alternate_titles": [],
+   "author": "Center for Biblical Languages and Computation",
+   "category": "septuagint-text-fabric-dataset",
+   "directory": "editions/centerblc/lxx-text-fabric/",
+   "editions": [
+    {
+     "date": "2022",
+     "file": "2022-2022-rlxx1935-4829f37.json",
+     "id": "edition.centerblc.lxx-text-fabric.rlxx1935-4829f37",
+     "language": "grc",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 2022
+    }
+   ],
+   "id": "work.centerblc.lxx-text-fabric",
+   "languages": [
+    "grc"
+   ],
+   "title": "CenterBLC LXX Text-Fabric Dataset"
+  },
+  {
    "alternate_titles": [
     "CE 3"
    ],
@@ -6096,6 +6153,34 @@
     "fr"
    ],
    "title": "Sermons de Claude de la Colombière"
+  },
+  {
+   "alternate_titles": [
+    "CATSS LXXM",
+    "LXXM Unicode"
+   ],
+   "author": "Computer Assisted Tools for Septuagint Studies",
+   "category": "septuagint-morphology-dataset",
+   "directory": "editions/catss/lxxm-morphology/",
+   "editions": [
+    {
+     "date": "2025",
+     "file": "2025-2025-unicode-fddec9b.json",
+     "id": "edition.catss.lxxm-morphology.unicode-fddec9b",
+     "language": "grc",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 2025
+    }
+   ],
+   "id": "work.catss.lxxm-morphology",
+   "languages": [
+    "grc"
+   ],
+   "title": "CATSS Septuagint Morphological Analysis"
   },
   {
    "alternate_titles": [],
@@ -7386,6 +7471,31 @@
     "es"
    ],
    "title": "Destierro de sombras. Luz en el origen de la imagen y culto de Nuestra Señora de Guadalupe del Tepeyac"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Eliran Wong",
+   "category": "septuagint-electronic-dataset",
+   "directory": "editions/eliran-wong/lxx-rahlfs-1935-dataset/",
+   "editions": [
+    {
+     "date": "2020",
+     "file": "2020-2020-a1b5ff1.json",
+     "id": "edition.eliran-wong.lxx-rahlfs-1935-dataset.a1b5ff1",
+     "language": "grc",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 2020
+    }
+   ],
+   "id": "work.eliran-wong.lxx-rahlfs-1935-dataset",
+   "languages": [
+    "grc"
+   ],
+   "title": "LXX-Rahlfs-1935 Electronic Dataset"
   },
   {
    "alternate_titles": [],
@@ -9502,6 +9612,34 @@
     "la"
    ],
    "title": "Patrologiae cursus completus, Series Latina, volume 56"
+  },
+  {
+   "alternate_titles": [
+    "MorphGNT SBLGNT",
+    "MorphGNT 6.12"
+   ],
+   "author": "James Tauber and MorphGNT contributors",
+   "category": "greek-new-testament-morphology-dataset",
+   "directory": "editions/james-tauber/morphgnt-sblgnt/",
+   "editions": [
+    {
+     "date": "2024",
+     "file": "2024-2024-version-6.12-aaed91e.json",
+     "id": "edition.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e",
+     "language": "grc",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "year": 2024
+    }
+   ],
+   "id": "work.james-tauber.morphgnt-sblgnt",
+   "languages": [
+    "grc"
+   ],
+   "title": "MorphGNT: SBLGNT Edition"
   },
   {
    "alternate_titles": [
@@ -15645,6 +15783,18 @@
       "licensed"
      ],
      "year": 2023
+    },
+    {
+     "date": "2025",
+     "file": "2025-2025-faithlife-v1.2-c4d241a.json",
+     "id": "edition.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a",
+     "language": "grc",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "year": 2025
     }
    ],
    "id": "work.society-of-biblical-literature.sbl-greek-new-testament",

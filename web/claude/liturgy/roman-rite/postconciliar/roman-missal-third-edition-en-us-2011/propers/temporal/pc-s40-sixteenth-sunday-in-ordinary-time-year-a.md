@@ -92,7 +92,8 @@ Formula `PC-S40-A` ⋅ Lectionary 106
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Entrance Antiphon</p></td>
-<td style="text-align: left;">Psalm 54:6, 8 (Vulgate 53:6, 8)</td>
+<td style="text-align: left;">Psalm 54:6, 8<br />
+(Vulgate 53:6, 8)</td>
 <td style="text-align: left;">Judahite temple prayer; transmitted in the Psalter of Jerusalem worship</td>
 <td style="text-align: left;">Final form uncertain; collection closed in the Second Temple period</td>
 </tr>
@@ -127,7 +128,8 @@ Formula `PC-S40-A` ⋅ Lectionary 106
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Communion Antiphon, first</p></td>
-<td style="text-align: left;">Psalm 111:4–5 (Vulgate 110:4–5)</td>
+<td style="text-align: left;">Psalm 111:4–5<br />
+(Vulgate 110:4–5)</td>
 <td style="text-align: left;">Praise sung in the assembly of the upright (111:1); temple setting</td>
 <td style="text-align: left;">Post-exilic; commonly placed in the Persian or early Hellenistic period</td>
 </tr>
@@ -265,13 +267,13 @@ The three orations and both Communion antiphons belong to Week XVI of Ordinary T
 
 Four of the inventoried units belong to no functional grouping at all, because the books leave them open. They are named here so that the account above is not mistaken for a description of any actual celebration.
 
--   *Entrance, preparation, and Communion music.* Four options are in force for the dioceses of the United States at the entrance and at Communion, and the printed antiphon is only the first of them; for the preparation of the gifts this Missal supplies no antiphon at all. Whether the assembly heard Psalm 54 or Psalm 111 in any form is not recoverable from the books.
+- *Entrance, preparation, and Communion music.* Four options are in force for the dioceses of the United States at the entrance and at Communion, and the printed antiphon is only the first of them; for the preparation of the gifts this Missal supplies no antiphon at all. Whether the assembly heard Psalm 54 or Psalm 111 in any form is not recoverable from the books.
 
--   *Preface and Eucharistic Prayer.* No Preface is proper to Week XVI. One of the Prefaces of the Sundays in Ordinary Time is used unless the Eucharistic Prayer chosen supplies its own, so the two choices are coupled by rubric and can never be resolved separately.
+- *Preface and Eucharistic Prayer.* No Preface is proper to Week XVI. One of the Prefaces of the Sundays in Ordinary Time is used unless the Eucharistic Prayer chosen supplies its own, so the two choices are coupled by rubric and can never be resolved separately.
 
--   *The two Communion antiphons.* The rubric that ordinarily settles such pairs prefers the antiphon agreeing with the Gospel of the Mass. Here the second antiphon comes from the Apocalypse and neither is drawn from Matthew, so the rubric decides nothing and both remain open.
+- *The two Communion antiphons.* The rubric that ordinarily settles such pairs prefers the antiphon agreeing with the Gospel of the Mass. Here the second antiphon comes from the Apocalypse and neither is drawn from Matthew, so the rubric decides nothing and both remain open.
 
--   *The sprinkling rite.* On Sundays the blessing and sprinkling of water may replace the Penitential Act. That is a ritual substitution, not a proper text, and nothing in the day’s formulary triggers it.
+- *The sprinkling rite.* On Sundays the blessing and sprinkling of water may replace the Penitential Act. That is a ritual substitution, not a proper text, and nothing in the day’s formulary triggers it.
 
 ### Branch-dependent: two Gospels of different lengths
 
@@ -625,59 +627,59 @@ Completed: source research and same-day verification of every witness quoted; cl
 
 ### Liturgical books, norms, and calendars
 
--   *Missale Romanum*, editio typica tertia (Typis Vaticanis, 2002), *Tempus per annum*, introductory rubrics 1–6 and *Dominica XVI “per annum”* (printed pp. 465–466), with the *Dominica XXVI* Collect and the Roman Canon’s *Supra quae*. Read in the exact digital reproduction registered in this repository’s source library, SHA-256 `0b458944…5523d7`, <https://media.musicasacra.com/books/latin_missal2002.pdf>.
+- *Missale Romanum*, editio typica tertia (Typis Vaticanis, 2002), *Tempus per annum*, introductory rubrics 1–6 and *Dominica XVI “per annum”* (printed pp. 465–466), with the *Dominica XXVI* Collect and the Roman Canon’s *Supra quae*. Read in the exact digital reproduction registered in this repository’s source library, SHA-256 `0b458944…5523d7`, <https://media.musicasacra.com/books/latin_missal2002.pdf>.
 
--   Congregation for Divine Worship and the Discipline of the Sacraments, “Variationes et additiones in reimpressione emendata ‘Missalis Romani’, editionis typicae tertiae,” *Notitiae* 44 (2008), pp. 368–387, <https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-(2008)/Notitiae-503-504-2008.pdf>.
+- Congregation for Divine Worship and the Discipline of the Sacraments, “Variationes et additiones in reimpressione emendata ‘Missalis Romani’, editionis typicae tertiae,” *Notitiae* 44 (2008), pp. 368–387, <https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-(2008)/Notitiae-503-504-2008.pdf>.
 
--   *General Instruction of the Roman Missal*, nn. 48, 51, 61–62, 74, 87, 363, 365, 367, <https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html>.
+- *General Instruction of the Roman Missal*, nn. 48, 51, 61–62, 74, 87, 363, 365, 367, <https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html>.
 
--   *Lectionary: General Introduction*, nn. 66–69, 103–107, <https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf>.
+- *Lectionary: General Introduction*, nn. 66–69, 103–107, <https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf>.
 
--   *Universal Norms on the Liturgical Year and the Calendar*, nn. 43–44 and the Table of Liturgical Days, <https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/GNLY.pdf>.
+- *Universal Norms on the Liturgical Year and the Calendar*, nn. 43–44 and the Table of Liturgical Days, <https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/GNLY.pdf>.
 
--   United States Conference of Catholic Bishops, *2026 Liturgical Calendar*, entry for 19 July 2026, <https://www.usccb.org/resources/2026cal.pdf>.
+- United States Conference of Catholic Bishops, *2026 Liturgical Calendar*, entry for 19 July 2026, <https://www.usccb.org/resources/2026cal.pdf>.
 
--   United States Conference of Catholic Bishops, daily readings for 19 July 2026 (Lectionary 106), archived capture of `bible.usccb.org/bible/readings/071926.cfm`, <https://web.archive.org/web/20260720132519/https://bible.usccb.org/bible/readings/071926.cfm>.
+- United States Conference of Catholic Bishops, daily readings for 19 July 2026 (Lectionary 106), archived capture of `bible.usccb.org/bible/readings/071926.cfm`, <https://web.archive.org/web/20260720132519/https://bible.usccb.org/bible/readings/071926.cfm>.
 
--   Second Vatican Council, *Dignitatis humanae*, nn. 2, 11–12, <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html>.
+- Second Vatican Council, *Dignitatis humanae*, nn. 2, 11–12, <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html>.
 
 ### Scripture
 
--   *The Holy Bible*, Douay–Rheims (Challoner revision), public domain, read at <https://drbo.org/>: Psalms 53, 85, 110 (Vulgate numbering); Wisdom 12; Matthew 11 and 13; Romans 8; Apocalypse 3.
+- *The Holy Bible*, Douay–Rheims (Challoner revision), public domain, read at <https://drbo.org/>: Psalms 53, 85, 110 (Vulgate numbering); Wisdom 12; Matthew 11 and 13; Romans 8; Apocalypse 3.
 
 ### Patristic and scholastic witnesses
 
--   Irenaeus, *Against Heresies* IV.40.3, Ante-Nicene Fathers translation, <https://www.newadvent.org/fathers/0103440.htm>.
+- Irenaeus, *Against Heresies* IV.40.3, Ante-Nicene Fathers translation, <https://www.newadvent.org/fathers/0103440.htm>.
 
--   Origen, *Commentary on Matthew* X.1–3, Ante-Nicene Fathers translation, <https://www.newadvent.org/fathers/101610.htm>.
+- Origen, *Commentary on Matthew* X.1–3, Ante-Nicene Fathers translation, <https://www.newadvent.org/fathers/101610.htm>.
 
--   John Chrysostom, *Homilies on Matthew* 38, 46, and 47, and *Homily 14 on Romans*, Nicene and Post-Nicene Fathers translation, <https://www.newadvent.org/fathers/200138.htm>, <https://www.newadvent.org/fathers/200146.htm>, <https://www.newadvent.org/fathers/200147.htm>, <https://www.newadvent.org/fathers/210214.htm>.
+- John Chrysostom, *Homilies on Matthew* 38, 46, and 47, and *Homily 14 on Romans*, Nicene and Post-Nicene Fathers translation, <https://www.newadvent.org/fathers/200138.htm>, <https://www.newadvent.org/fathers/200146.htm>, <https://www.newadvent.org/fathers/200147.htm>, <https://www.newadvent.org/fathers/210214.htm>.
 
--   Augustine, *Expositions on the Psalms* 53, 85, and 110 (Vulgate numbering), Nicene and Post-Nicene Fathers translation, <https://www.newadvent.org/fathers/1801054.htm>, <https://www.newadvent.org/fathers/1801086.htm>, <https://www.newadvent.org/fathers/1801111.htm>.
+- Augustine, *Expositions on the Psalms* 53, 85, and 110 (Vulgate numbering), Nicene and Post-Nicene Fathers translation, <https://www.newadvent.org/fathers/1801054.htm>, <https://www.newadvent.org/fathers/1801086.htm>, <https://www.newadvent.org/fathers/1801111.htm>.
 
--   Augustine, *Letter* 130 to Proba, nn. 25–28, Nicene and Post-Nicene Fathers translation, <https://www.newadvent.org/fathers/1102130.htm>.
+- Augustine, *Letter* 130 to Proba, nn. 25–28, Nicene and Post-Nicene Fathers translation, <https://www.newadvent.org/fathers/1102130.htm>.
 
--   Augustine, *The City of God* XX.5 and XX.9, in the Dods (1871) translation and the Hoffmann CSEL 40 Latin, both read in this repository’s tracked source-library artifacts.
+- Augustine, *The City of God* XX.5 and XX.9, in the Dods (1871) translation and the Hoffmann CSEL 40 Latin, both read in this repository’s tracked source-library artifacts.
 
--   Augustine, *Answer to the Letters of Petilian the Donatist* III.2, Nicene and Post-Nicene Fathers translation, read at <https://en.wikisource.org/wiki/Nicene_and_Post-Nicene_Fathers:_Series_I/Volume_IV/Donatist_Controversy/Answer_to_the_Letters_of_Petilian,_the_Donatist/Book_III/Chapter_2>.
+- Augustine, *Answer to the Letters of Petilian the Donatist* III.2, Nicene and Post-Nicene Fathers translation, read at <https://en.wikisource.org/wiki/Nicene_and_Post-Nicene_Fathers:_Series_I/Volume_IV/Donatist_Controversy/Answer_to_the_Letters_of_Petilian,_the_Donatist/Book_III/Chapter_2>.
 
--   Augustine, *On Christian Doctrine* III.25, Nicene and Post-Nicene Fathers translation, <https://www.newadvent.org/fathers/12023.htm>.
+- Augustine, *On Christian Doctrine* III.25, Nicene and Post-Nicene Fathers translation, <https://www.newadvent.org/fathers/12023.htm>.
 
--   Thomas Aquinas, *Super Evangelium S. Matthaei lectura*, cap. 13, lect. 2–4 (Latin), <https://www.corpusthomisticum.org/cml13.html>.
+- Thomas Aquinas, *Super Evangelium S. Matthaei lectura*, cap. 13, lect. 2–4 (Latin), <https://www.corpusthomisticum.org/cml13.html>.
 
--   Thomas Aquinas, *Super Epistolam ad Romanos lectura*, cap. 8, lect. 5 (Latin), <https://www.corpusthomisticum.org/cro05.html>.
+- Thomas Aquinas, *Super Epistolam ad Romanos lectura*, cap. 8, lect. 5 (Latin), <https://www.corpusthomisticum.org/cro05.html>.
 
--   Thomas Aquinas, *Summa theologiae* II-II, q. 10, a. 8; q. 11, a. 3; q. 64, a. 2; q. 83, aa. 5 and 10; q. 157 (checked for Wisdom 12:18 with a negative result), English Dominican translation, <https://www.newadvent.org/summa/3010.htm>, <https://www.newadvent.org/summa/3011.htm>, <https://www.newadvent.org/summa/3064.htm>, <https://www.newadvent.org/summa/3083.htm>, <https://www.newadvent.org/summa/3157.htm>.
+- Thomas Aquinas, *Summa theologiae* II-II, q. 10, a. 8; q. 11, a. 3; q. 64, a. 2; q. 83, aa. 5 and 10; q. 157 (checked for Wisdom 12:18 with a negative result), English Dominican translation, <https://www.newadvent.org/summa/3010.htm>, <https://www.newadvent.org/summa/3011.htm>, <https://www.newadvent.org/summa/3064.htm>, <https://www.newadvent.org/summa/3083.htm>, <https://www.newadvent.org/summa/3157.htm>.
 
 ### Later uses cited in the notable-and-quotable gallery
 
--   Joseph Priestley, *An Essay on the First Principles of Government*, 2nd ed. (1771), preface, <https://en.wikisource.org/wiki/Essay_on_the_First_Principles_of_Government,_2nd_Edition_(1771)/preface>.
+- Joseph Priestley, *An Essay on the First Principles of Government*, 2nd ed. (1771), preface, <https://en.wikisource.org/wiki/Essay_on_the_First_Principles_of_Government,_2nd_Edition_(1771)/preface>.
 
--   *Doctrine and Covenants* 86:6–7 (revelation dated 6 December 1832), <https://en.wikisource.org/wiki/The_Doctrine_and_Covenants_(unsourced)/Section_86>.
+- *Doctrine and Covenants* 86:6–7 (revelation dated 6 December 1832), <https://en.wikisource.org/wiki/The_Doctrine_and_Covenants_(unsourced)/Section_86>.
 
--   P. G. Wodehouse, *The White Feather* (1907), ch. 12, <https://en.wikisource.org/wiki/The_White_Feather/Chapter_12>.
+- P. G. Wodehouse, *The White Feather* (1907), ch. 12, <https://en.wikisource.org/wiki/The_White_Feather/Chapter_12>.
 
--   *Easton’s Bible Dictionary* (1897), s.v. “Tares,” <https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/R-Z>; *Chambers’s Twentieth Century Dictionary* (1908), s.v. “Darnel,” <https://en.wikisource.org/wiki/Chambers%27s_Twentieth_Century_Dictionary_1908/D_Defect>.
+- *Easton’s Bible Dictionary* (1897), s.v. “Tares,” <https://en.wikisource.org/wiki/Easton%27s_Bible_Dictionary_(1897)/R-Z>; *Chambers’s Twentieth Century Dictionary* (1908), s.v. “Darnel,” <https://en.wikisource.org/wiki/Chambers%27s_Twentieth_Century_Dictionary_1908/D_Defect>.
 
 **Last revised (UTC):** 2026-07-26T02:03:00Z
 

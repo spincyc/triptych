@@ -673,17 +673,17 @@ n. 91 introduces the table with the exclusivity clause already quoted, and then
 
 Several features of the table are worth naming because they are invisible to anyone who reasons from class labels alone.
 
--   **Line 8 carries its own defeat.** The Commemoration of All the Faithful Departed stands above the vigil of Pentecost and above the days within the paschal octaves, yet the line itself states that it yields to an occurring Sunday — an exception written into the table rather than left to n. 16 b.
+- **Line 8 carries its own defeat.** The Commemoration of All the Faithful Departed stands above the vigil of Pentecost and above the days within the paschal octaves, yet the line itself states that it yields to an occurring Sunday — an exception written into the table rather than left to n. 16 b.
 
--   **Feasts of the Lord of the II class outrank Sundays of the II class** (line 14 above line 15), while other universal II class feasts fall below them (line 16). This is the table’s implementation of n. 16 a, and it is why the substitution rule exists.
+- **Feasts of the Lord of the II class outrank Sundays of the II class** (line 14 above line 15), while other universal II class feasts fall below them (line 16). This is the table’s implementation of n. 16 a, and it is why the substitution rule exists.
 
--   **The days within the octave of the Nativity (line 17) outrank the II class ferias of late Advent (line 18)** — but those ferias have already ended on 23 December, so the ordering is operative only against Ember ferias of Lent and September, which cannot coincide with the Christmas octave either. The line is a formal completion rather than a live conflict.
+- **The days within the octave of the Nativity (line 17) outrank the II class ferias of late Advent (line 18)** — but those ferias have already ended on 23 December, so the ordering is operative only against Ember ferias of Lent and September, which cannot coincide with the Christmas octave either. The line is a formal completion rather than a live conflict.
 
--   **Lenten ferias outrank every III class feast, universal or particular** (line 22 above lines 23–24), while Advent ferias fall below both (line 25).
+- **Lenten ferias outrank every III class feast, universal or particular** (line 22 above lines 23–24), while Advent ferias fall below both (line 25).
 
--   **Particular III class feasts outrank universal ones** (line 23 above line 24). This inverts the usual expectation and is deliberate: a diocese’s own Saint takes its own day against a universal III class feast of the same class.
+- **Particular III class feasts outrank universal ones** (line 23 above line 24). This inverts the usual expectation and is deliberate: a diocese’s own Saint takes its own day against a universal III class feast of the same class.
 
--   **Within lines 13, 14, 20, 23, and 24, movable feasts precede fixed ones.** This tie-break is stated five times and nowhere else.
+- **Within lines 13, 14, 20, 23, and 24, movable feasts precede fixed ones.** This tie-break is stated five times and nowhere else.
 
 ### Occurrence
 
@@ -836,13 +836,13 @@ Every date below was computed from the Gregorian computus by the method of Secti
 
 **Occurrences worth stating.**
 
--   **19 March**, St Joseph (I class), falls on the Monday after the Second Sunday of Lent — Ash Wednesday being 7 March, the Sundays of Lent are 11, 18, and 25 March. The day is a Lenten feria of the III class (n. 25 a); the feast holds the higher place at line 11, so the feast is celebrated. Because the feria is of Lent, its commemoration is privileged (n. 109 e), and n. 111 a admits one privileged commemoration on a I class day; the feria is therefore commemorated.
+- **19 March**, St Joseph (I class), falls on the Monday after the Second Sunday of Lent — Ash Wednesday being 7 March, the Sundays of Lent are 11, 18, and 25 March. The day is a Lenten feria of the III class (n. 25 a); the feast holds the higher place at line 11, so the feast is celebrated. Because the feria is of Lent, its commemoration is privileged (n. 109 e), and n. 111 a admits one privileged commemoration on a I class day; the feria is therefore commemorated.
 
--   **25 March**, the Annunciation (I class), falls on the Third Sunday of Lent. Sundays of Lent stand at line 6, above I class feasts of the universal Church at line 11, so the Sunday prevails. The feast, being of the I class, has the right of translation under n. 95 and goes, by n. 96, to the next following day that is not of the I or II class — Monday 26 March, a Lenten feria of the III class. The special seat of n. 96 a, the Monday after Low Sunday, is not engaged, because it applies only when the Annunciation must be transferred *after Easter*.
+- **25 March**, the Annunciation (I class), falls on the Third Sunday of Lent. Sundays of Lent stand at line 6, above I class feasts of the universal Church at line 11, so the Sunday prevails. The feast, being of the I class, has the right of translation under n. 95 and goes, by n. 96, to the next following day that is not of the I or II class — Monday 26 March, a Lenten feria of the III class. The special seat of n. 96 a, the Monday after Low Sunday, is not engaged, because it applies only when the Annunciation must be transferred *after Easter*.
 
--   **21 December**, St Thomas the Apostle (II class of the universal Church, line 16), falls on the Ember Friday of Advent (II class feria, line 18). The feast prevails; the Ember feria, being of the II class, must be commemorated when impeded (n. 24).
+- **21 December**, St Thomas the Apostle (II class of the universal Church, line 16), falls on the Ember Friday of Advent (II class feria, line 18). The feast prevails; the Ember feria, being of the II class, must be commemorated when impeded (n. 24).
 
--   **22 December** is the Ember Saturday of Advent. By Missal rubrics n. 300 the Mass in which sacred Orders are conferred that day must be of the Saturday, even if a I or II class feast occurs.
+- **22 December** is the Ember Saturday of Advent. By Missal rubrics n. 300 the Mass in which sacred Orders are conferred that day must be of the Saturday, even if a I or II class feast occurs.
 
 ### 2008: *E* = 1, *P* = 28, the maximum resumption
 
@@ -888,9 +888,9 @@ The Second Sunday after the Epiphany occurred nowhere in 2008. It was impeded in
 
 **Two of the resumed places were themselves impeded.**
 
--   **26 October** was the last Sunday of October and therefore Christ the King (I class), which by n. 17 d is perpetually assigned to that Sunday and *locum tenet dominicae occurrentis cum omnibus iuribus et privilegiis*, no commemoration of the Sunday being made. The Third Sunday left over after the Epiphany, assigned to the twenty-fourth place, therefore did not occur either. Its assignment by n. 18 is an identification of the Sunday, not a guarantee that its Mass is said.
+- **26 October** was the last Sunday of October and therefore Christ the King (I class), which by n. 17 d is perpetually assigned to that Sunday and *locum tenet dominicae occurrentis cum omnibus iuribus et privilegiis*, no commemoration of the Sunday being made. The Third Sunday left over after the Epiphany, assigned to the twenty-fourth place, therefore did not occur either. Its assignment by n. 18 is an identification of the Sunday, not a guarantee that its Mass is said.
 
--   **2 November** was a Sunday, so the Commemoration of All the Faithful Departed, which at line 8 of the table expressly *locum cedit dominicae occurrenti*, yielded and was transferred by n. 96 b, *tamquam in sedem propriam*, to Monday 3 November. The Fourth Sunday left over after the Epiphany was celebrated on 2 November.
+- **2 November** was a Sunday, so the Commemoration of All the Faithful Departed, which at line 8 of the table expressly *locum cedit dominicae occurrenti*, yielded and was transferred by n. 96 b, *tamquam in sedem propriam*, to Monday 3 November. The Fourth Sunday left over after the Epiphany was celebrated on 2 November.
 
 **9 November: the Missal’s own index resolves the category.** The twenty-sixth place nominally carried the Fifth Sunday left over after the Epiphany. The date was also the Dedication of the Archbasilica of the Most Holy Saviour, a feast of the II class. The final alphabetical index of the 1962 typical Missal expressly lists that dedication under *Festa Domini*. It therefore stands at line 14, above Sundays of the II class at line 15, and by n. 16 a takes the Sunday’s place without its commemoration. The Fifth is impeded; the Sixth remains at its independently assigned twenty-seventh place on 16 November. This is occurrence applied after the nominal slot map, not a compression of the resumed sequence.
 
@@ -1050,11 +1050,11 @@ None of the four affects the substance of the law as this reference states it, b
 
 The *Tabella temporaria festorum mobilium* printed among the paschal tables of the 1962 typical edition gives, for each year from 1960 onward, the number of Sundays after Pentecost. For 1996 the cell reads **16**.
 
--   Sixteen is outside the possible range. The same book’s perpetual *Tabula paschalis antiqua reformata*, printed in the same run of tables, shows the number ranging from 28 at the earliest Easters to 23 at the latest, and no combination of epact and dominical letter yields fewer than 23.
+- Sixteen is outside the possible range. The same book’s perpetual *Tabula paschalis antiqua reformata*, printed in the same run of tables, shows the number ranging from 28 at the earliest Easters to 23 at the latest, and no combination of epact and dominical letter yields fewer than 23.
 
--   The perpetual table itself gives the right value for the 1996 combination. Its row for Easter on 7 April with Pentecost on 26 May, Corpus Christi on 6 June, and the First Sunday of Advent on 1 December — which is exactly the 1996 line of the temporary table — prints **26** in the Sundays-after-Pentecost column.
+- The perpetual table itself gives the right value for the 1996 combination. Its row for Easter on 7 April with Pentecost on 26 May, Corpus Christi on 6 June, and the First Sunday of Advent on 1 December — which is exactly the 1996 line of the temporary table — prints **26** in the Sundays-after-Pentecost column.
 
--   Computation agrees with the perpetual table: 26 May to 1 December is 189 days, that is 27 weeks, so *P* = 27 − 1 = 26.
+- Computation agrees with the perpetual table: 26 May to 1 December is 189 days, that is 27 weeks, so *P* = 27 − 1 = 26.
 
 The 1996 cell is therefore a printing or scanning defect in the temporary table, contradicted by the perpetual table in the same book. All fifty-one other rows of that page were recomputed and agree with the printed values in every column.
 
@@ -1139,19 +1139,19 @@ The structure of the sanctoral: the layout of the printed calendar; the complete
 
 ### What is not covered
 
--   An entry-by-entry inventory of the III class feasts and commemorations of the universal calendar. Those layers are described structurally and their counts are not published.
+- An entry-by-entry inventory of the III class feasts and commemorations of the universal calendar. Those layers are described structurally and their counts are not published.
 
--   Any territorial, diocesan, religious, or church calendar, and any patronal, titular, or dedication feast. The rules governing them are given; their contents are not.
+- Any territorial, diocesan, religious, or church calendar, and any patronal, titular, or dedication feast. The rules governing them are given; their contents are not.
 
--   An Ordo for any civil year. The worked years of Section [10](#sec:years) apply the universal rules and are explicitly not a statement of what was or will be celebrated anywhere.
+- An Ordo for any civil year. The worked years of Section [10](#sec:years) apply the universal rules and are explicitly not a statement of what was or will be celebrated anywhere.
 
--   Mass and Office texts. Formularies are named and located; their prayers are not reproduced, except for short rubrical sentences quoted as law.
+- Mass and Office texts. Formularies are named and located; their prayers are not reproduced, except for short rubrical sentences quoted as law.
 
--   The Breviary rubrics (nn. 138–268) and the Acta’s tables of occurrence and concurrence, which belong to the Office and are not printed in the Missal.
+- The Breviary rubrics (nn. 138–268) and the Acta’s tables of occurrence and concurrence, which belong to the Office and are not printed in the Missal.
 
--   Present discipline concerning the use of the older books, which is mutable and is deliberately not stated.
+- Present discipline concerning the use of the older books, which is mutable and is deliberately not stated.
 
--   Any claim that the 1962 books are presently authorised in a particular place, or that any computation here may be substituted for a competent calendar or Ordo.
+- Any claim that the 1962 books are presently authorised in a particular place, or that any computation here may be substituted for a competent calendar or Ordo.
 
 ### Method and source hierarchy
 
@@ -1189,51 +1189,51 @@ Sources are grouped by the role they play. Only sources actually read for this e
 
 ### Promulgating acts
 
--   John XXIII, apostolic letter given *motu proprio*, *Novum rubricarum Breviarii et Missalis Romani corpus approbatur* (*Rubricarum instructum*), 25 July 1960. *Acta Apostolicae Sedis* 52 (1960): 593–595. The complete text was read; the preamble and the six numbered dispositions are used throughout Section 1. The same text is reprinted in the 1962 typical edition of the Missal, where it likewise carries the date 25 July 1960.
+- John XXIII, apostolic letter given *motu proprio*, *Novum rubricarum Breviarii et Missalis Romani corpus approbatur* (*Rubricarum instructum*), 25 July 1960. *Acta Apostolicae Sedis* 52 (1960): 593–595. The complete text was read; the preamble and the six numbered dispositions are used throughout Section 1. The same text is reprinted in the 1962 typical edition of the Missal, where it likewise carries the date 25 July 1960.
 
--   Sacred Congregation of Rites, general decree *Quo novus rubricarum Breviarii ac Missalis Romani codex promulgatur* (*Novum rubricarum*), 26 July 1960. *Acta Apostolicae Sedis* 52 (1960): 596. The complete text was read; its provision annexing the *Variationes* is used in Sections 1 and 6.
+- Sacred Congregation of Rites, general decree *Quo novus rubricarum Breviarii ac Missalis Romani codex promulgatur* (*Novum rubricarum*), 26 July 1960. *Acta Apostolicae Sedis* 52 (1960): 596. The complete text was read; its provision annexing the *Variationes* is used in Sections 1 and 6.
 
--   Sacred Congregation of Rites, decree declaring the new Vatican edition of the Roman Missal typical, 23 June 1962, subscribed by A. M. Cardinal Larraona, Prefect, and Enrico Dante, Secretary. Printed at the head of the 1962 typical edition. The complete text was read; its recitation of the date of *Rubricarum instructum* is treated in Section [12](#sec:collation).
+- Sacred Congregation of Rites, decree declaring the new Vatican edition of the Roman Missal typical, 23 June 1962, subscribed by A. M. Cardinal Larraona, Prefect, and Enrico Dante, Secretary. Printed at the head of the 1962 typical edition. The complete text was read; its recitation of the date of *Rubricarum instructum* is treated in Section [12](#sec:collation).
 
 ### The controlling norms
 
--   *Rubricae Breviarii et Missalis Romani*, 26 July 1960. *Acta Apostolicae Sedis* 52 (1960): 597–740. *Pars prima, Rubricae generales*, nn. 1–137, was read in full at pages 597–621 and is the principal source of Sections 2 through 5 and 7 through 8. *Pars tertia, Rubricae generales Missalis Romani*, was read at the chapters bearing on the calendar and the orations: nn. 269–279 on the calendar to be used in celebrating Mass; nn. 298–305 on the Mass on Sundays, ferias, and feasts; nn. 341–347 on votive Masses of the II class and the Rogation Mass; and nn. 433–465 on the orations. Printed pages 598 and 599 were additionally read as rendered page images at 400 dots per inch.
+- *Rubricae Breviarii et Missalis Romani*, 26 July 1960. *Acta Apostolicae Sedis* 52 (1960): 597–740. *Pars prima, Rubricae generales*, nn. 1–137, was read in full at pages 597–621 and is the principal source of Sections 2 through 5 and 7 through 8. *Pars tertia, Rubricae generales Missalis Romani*, was read at the chapters bearing on the calendar and the orations: nn. 269–279 on the calendar to be used in celebrating Mass; nn. 298–305 on the Mass on Sundays, ferias, and feasts; nn. 341–347 on votive Masses of the II class and the Rogation Mass; and nn. 433–465 on the orations. Printed pages 598 and 599 were additionally read as rendered page images at 400 dots per inch.
 
--   The same code as reprinted in *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), pages XIII–XXXVI, carrying *pars prima* and *pars tertia* only, as n. 5 of *Rubricarum instructum* requires. The whole of *pars prima* was read, and the pages carrying nn. 1–19 and the table at n. 91 were read as rendered page images at 300 dots per inch.
+- The same code as reprinted in *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), pages XIII–XXXVI, carrying *pars prima* and *pars tertia* only, as n. 5 of *Rubricarum instructum* requires. The whole of *pars prima* was read, and the pages carrying nn. 1–19 and the table at n. 91 were read as rendered page images at 300 dots per inch.
 
--   *Variationes in Breviario et Missali Romano ad normam novi codicis rubricarum*, annexed to the promulgating decree. *Acta Apostolicae Sedis* 52 (1960): 706 and following. *Caput I, Variationes in Calendario*, nn. 1–12, was read in full and supplies the itemised calendar changes in Section [7](#sec:sanctoral); n. 13 of *Caput II* supplies the abolition of the Suffrage of All Saints and the commemoration of the Cross in Section [9](#sec:commemorations).
+- *Variationes in Breviario et Missali Romano ad normam novi codicis rubricarum*, annexed to the promulgating decree. *Acta Apostolicae Sedis* 52 (1960): 706 and following. *Caput I, Variationes in Calendario*, nn. 1–12, was read in full and supplies the itemised calendar changes in Section [7](#sec:sanctoral); n. 13 of *Caput II* supplies the abolition of the Suffrage of All Saints and the commemoration of the Cross in Section [9](#sec:commemorations).
 
 ### The typical edition and its calendar
 
--   *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962). Read in the facsimile published by the Church Music Association of America, whose exact bytes are registered in the repository’s source library and were re-downloaded and hashed byte-identical during the preparation of this edition. The following were read:
+- *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962). Read in the facsimile published by the Church Music Association of America, whose exact bytes are registered in the repository’s source library and were re-downloaded and hashed byte-identical during the preparation of this edition. The following were read:
 
-    -   the front-matter decrees and papal bulls;
+  - the front-matter decrees and papal bulls;
 
-    -   the note *De anno et eius partibus*, including the Ember Day rule and the account of the Gregorian correction;
+  - the note *De anno et eius partibus*, including the Ember Day rule and the account of the Gregorian correction;
 
-    -   the *Tabella temporaria festorum mobilium* and the *Tabula paschalis antiqua reformata*, read as rendered page images at 200 and 400 dots per inch;
+  - the *Tabella temporaria festorum mobilium* and the *Tabula paschalis antiqua reformata*, read as rendered page images at 200 and 400 dots per inch;
 
-    -   the universal *Calendarium* at printed pages XLV–LIII, all nine pages read as rendered page images at 260 dots per inch;
+  - the universal *Calendarium* at printed pages XLV–LIII, all nine pages read as rendered page images at 260 dots per inch;
 
-    -   the formularies of the First Sunday after the Epiphany, the Holy Family, and the Commemoration of the Baptism of the Lord, with their occurrence rubrics;
+  - the formularies of the First Sunday after the Epiphany, the Holy Family, and the Commemoration of the Baptism of the Lord, with their occurrence rubrics;
 
-    -   the Ember Wednesday of Pentecost and of September;
+  - the Ember Wednesday of Pentecost and of September;
 
-    -   the Twenty-third Sunday after Pentecost with the resumption rubric printed at its end; the Third and Fourth Sundays left over after the Epiphany; and the Twenty-fourth and last Sunday after Pentecost, whose Epistle is Colossians 1:9–14 and Gospel Matthew 24:15–35.
+  - the Twenty-third Sunday after Pentecost with the resumption rubric printed at its end; the Third and Fourth Sundays left over after the Epiphany; and the Twenty-fourth and last Sunday after Pentecost, whose Epistle is Colossians 1:9–14 and Gospel Matthew 24:15–35.
 
--   Pius V, bull *Quo primum tempore*, 14 July 1570; Clement VIII, brief of 7 July 1604; and Urban VIII, brief of 2 September 1634 — all read in the front matter of the same 1962 edition, and used only for the dated timeline.
+- Pius V, bull *Quo primum tempore*, 14 July 1570; Clement VIII, brief of 7 July 1604; and Urban VIII, brief of 2 September 1634 — all read in the front matter of the same 1962 edition, and used only for the dated timeline.
 
 ### Comparative witness, printing year unestablished
 
--   *Missale Romanum … a Pio X reformatum, Benedicti XV auctoritate vulgatum*, *editio IV iuxta typicam Vaticanam* (New York: Benziger Brothers, Inc., copyright 1942 and 1944), with the approval leaf of Francis Joseph, Archbishop of New York, dated 8 December 1942 and reciting conformity to the decree of the Sacred Congregation of Rites of 9 January 1942, and with the Congregation’s decree of 25 July 1920 declaring the Vatican edition typical. Read in an Internet Archive optical text derivative whose exact bytes are registered in the repository’s source library; the item’s “1947” is uploader-supplied and unconfirmed. It carries the pre-1955 general rubrics with the double, semidouble, and simple grades. Four passages were used: the resumption rubric printed at the end of the Twenty-third Sunday after Pentecost; the note fixing the Ember Days by the third Sunday of Advent, the first Sunday of Lent, Pentecost Sunday, and the feast of the Exaltation of the Holy Cross; *Additiones et Variationes*, *De occurrentia et de translatione festorum*, n. 6, on resuming an impeded Sunday’s Mass within the following week; and the ceiling of seven orations, of odd number, in the same *Additiones et Variationes*. It is a Missal and carries no Breviary rubrics and no tables of occurrence or concurrence. The witness controls no reading of the 1962 books and no dating of any change; see Section [12.5](#sec:witness).
+- *Missale Romanum … a Pio X reformatum, Benedicti XV auctoritate vulgatum*, *editio IV iuxta typicam Vaticanam* (New York: Benziger Brothers, Inc., copyright 1942 and 1944), with the approval leaf of Francis Joseph, Archbishop of New York, dated 8 December 1942 and reciting conformity to the decree of the Sacred Congregation of Rites of 9 January 1942, and with the Congregation’s decree of 25 July 1920 declaring the Vatican edition typical. Read in an Internet Archive optical text derivative whose exact bytes are registered in the repository’s source library; the item’s “1947” is uploader-supplied and unconfirmed. It carries the pre-1955 general rubrics with the double, semidouble, and simple grades. Four passages were used: the resumption rubric printed at the end of the Twenty-third Sunday after Pentecost; the note fixing the Ember Days by the third Sunday of Advent, the first Sunday of Lent, Pentecost Sunday, and the feast of the Exaltation of the Holy Cross; *Additiones et Variationes*, *De occurrentia et de translatione festorum*, n. 6, on resuming an impeded Sunday’s Mass within the following week; and the ceiling of seven orations, of odd number, in the same *Additiones et Variationes*. It is a Missal and carries no Breviary rubrics and no tables of occurrence or concurrence. The witness controls no reading of the 1962 books and no dating of any change; see Section [12.5](#sec:witness).
 
--   *Missale Romanum … editio iuxta typicam* (New York: Benziger Brothers, Inc., 1962), whose approval leaf recites that the Sacred Congregation of Rites declared the Benziger edition *iuxta typicam* on 21 October 1961. Read in an Internet Archive optical text derivative already registered in the repository’s source library. One passage was used: the front-matter note fixing the Ember Days, which reads *post dominicam III septembris* and so corroborates the 1962 Vatican wording from an independently produced book conformed to the same code.
+- *Missale Romanum … editio iuxta typicam* (New York: Benziger Brothers, Inc., 1962), whose approval leaf recites that the Sacred Congregation of Rites declared the Benziger edition *iuxta typicam* on 21 October 1961. Read in an Internet Archive optical text derivative already registered in the repository’s source library. One passage was used: the front-matter note fixing the Ember Days, which reads *post dominicam III septembris* and so corroborates the 1962 Vatican wording from an independently produced book conformed to the same code.
 
 ### Computation
 
--   The paschal dates, the derived movable anchors, the counts *E* and *P*, and the surplus *S* were computed for 1900–2100 from the Gregorian ecclesiastical rule and compared with the *Tabella temporaria* for the fifty-two years 1960–2011 printed on its first page. The method, the agreement, and the single divergence are stated in Sections [5](#sec:movable) and [12](#sec:collation). No source outside the Missal is relied on for any dated result.
+- The paschal dates, the derived movable anchors, the counts *E* and *P*, and the surplus *S* were computed for 1900–2100 from the Gregorian ecclesiastical rule and compared with the *Tabella temporaria* for the fifty-two years 1960–2011 printed on its first page. The method, the agreement, and the single divergence are stated in Sections [5](#sec:movable) and [12](#sec:collation). No source outside the Missal is relied on for any dated result.
 
--   The repository’s own *Roman Calendar Computation* guidance owns the shared arithmetic used across its liturgy collections. This edition states and applies those rules and does not establish a divergent one; the open points it records — the absence of an official statement of the computus, and the unlegislated shortfall case — are the same points recorded there.
+- The repository’s own *Roman Calendar Computation* guidance owns the shared arithmetic used across its liturgy collections. This edition states and applies those rules and does not establish a divergent one; the open points it records — the absence of an official statement of the computus, and the unlegislated shortfall case — are the same points recorded there.
 
 **Last revised (UTC):** 2026-07-27T23:02:25Z
 

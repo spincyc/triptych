@@ -607,9 +607,9 @@ Two further variables lie outside the proper texts and are named only so that th
 
 ### The shape, stated once
 
-If the whole formulary is heard together, its movement is from a question about worth to an act of receiving. It begins by naming a God who gathers rather than a God who demands; it asks, in the Collect, for competence with things that do not last; it hears a king refuse the three goods any king would want and a psalm rank instruction over bullion; it watches two strangers spend everything on one object; and it ends by receiving, without payment, the memorial of a purchase made by someone else. The formulary never resolves the tension between spending everything and being given everything. It stages both, in that order, and leaves the assembly holding the second. <span id="triptych:brief-synthesis:end" label="triptych:brief-synthesis:end"></span>
+If the whole formulary is heard together, its movement is from a question about worth to an act of receiving. It begins by naming a God who gathers rather than a God who demands; it asks, in the Collect, for competence with things that do not last; it hears a king refuse the three goods any king would want and a psalm rank instruction over bullion; it watches two strangers spend everything on one object; and it ends by receiving, without payment, the memorial of a purchase made by someone else. The formulary never resolves the tension between spending everything and being given everything. It stages both, in that order, and leaves the assembly holding the second. <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
-<span id="triptych:brief-synthesis:next" label="triptych:brief-synthesis:next"></span>
+<span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
 
 ## Source-Grounded Synthesis Across the Propers
 
@@ -858,15 +858,15 @@ Third-party pages, translations and transcriptions cited in the references retai
 
 The following are incomplete, and no statement in this guide should be read as though they were done:
 
--   **Liturgical-text permission.** None has been sought or granted for any protected liturgical text. The guide is written to need none, but that absence is itself a ceiling on what it can show a reader.
+- **Liturgical-text permission.** None has been sought or granted for any protected liturgical text. The guide is written to need none, but that absence is itself a ceiling on what it can show a reader.
 
--   **Altar-book collation.** No named United States printing of the *Roman Missal*, Third Edition, and no 2008 Latin reprint page image, has been collated. Publisher- and printing-specific differences remain unchecked.
+- **Altar-book collation.** No named United States printing of the *Roman Missal*, Third Edition, and no 2008 Latin reprint page image, has been collated. Publisher- and printing-specific differences remain unchecked.
 
--   **Work-specific rights review.** No formal rights review of this leaf has been performed by anyone other than its author.
+- **Work-specific rights review.** No formal rights review of this leaf has been performed by anyone other than its author.
 
--   **Independent review.** Nothing here has received specialist, theological, canonical or ecclesiastical review. Internal checking is not independent review, and production quality is not approval.
+- **Independent review.** Nothing here has received specialist, theological, canonical or ecclesiastical review. Internal checking is not independent review, and production quality is not approval.
 
--   **Chant and music.** Neither the *Graduale Romanum* nor any approved musical setting was collated, and no claim is made about what is sung.
+- **Chant and music.** Neither the *Graduale Romanum* nor any approved musical setting was collated, and no claim is made about what is sung.
 
 This is a study document. It is not an official liturgical book, a critical edition, a catechism, a magisterial act, or a substitute for the approved books and the competent pastoral authority. It carries no imprimatur and no *nihil obstat*.
 
@@ -880,83 +880,83 @@ Only sources actually used are listed. Where an online witness was read, the del
 
 ### Liturgical books, instructions and calendars
 
--   *Missale Romanum*, editio typica tertia (Typis Vaticanis, 2002): *Dominica XVII “per annum”* at artifact pp. 281–282, and the Order of Mass, First Sunday of Advent, Thursday of the Fourth Week of Lent, and the Ritual Mass *In dedicatione ecclesiæ*. A digitally typeset secondary reproduction, not a page-image facsimile.
+- *Missale Romanum*, editio typica tertia (Typis Vaticanis, 2002): *Dominica XVII “per annum”* at artifact pp. 281–282, and the Order of Mass, First Sunday of Advent, Thursday of the Fourth Week of Lent, and the Ritual Mass *In dedicatione ecclesiæ*. A digitally typeset secondary reproduction, not a page-image facsimile.
 
--   *Missale Romanum*, editio typica tertia, *reimpressio emendata* (Libreria Editrice Vaticana, 2008), the Latin base of the United States Missal. Not inspected; identified through the official notices below.
+- *Missale Romanum*, editio typica tertia, *reimpressio emendata* (Libreria Editrice Vaticana, 2008), the Latin base of the United States Missal. Not inspected; identified through the official notices below.
 
--   *Roman Missal, Third Edition, for Use in the Dioceses of the United States of America*, English, implemented 27 November 2011. Not collated; no wording reproduced.
+- *Roman Missal, Third Edition, for Use in the Dioceses of the United States of America*, English, implemented 27 November 2011. Not collated; no wording reproduced.
 
--   *Lectionary for Mass for Use in the Dioceses of the United States of America*, Second Typical Edition, Volume I, no. 109. Boundaries read from the official calendar and occurrence page; no wording reproduced.
+- *Lectionary for Mass for Use in the Dioceses of the United States of America*, Second Typical Edition, Volume I, no. 109. Boundaries read from the official calendar and occurrence page; no wording reproduced.
 
--   *General Instruction of the Roman Missal*, United States English edition (2011) with the 2021 emendations, nos. 48, 87, 363, 365(b) and 365(d). [usccb.org](https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal).
+- *General Instruction of the Roman Missal*, United States English edition (2011) with the 2021 emendations, nos. 48, 87, 363, 365(b) and 365(d). [usccb.org](https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal).
 
--   *Normae universales de anno liturgico et de calendario*, nn. 4–6, and the *Calendarium Romanum generale*, entry for 26 July, both read in the 2002 *Missale Romanum* artifact.
+- *Normae universales de anno liturgico et de calendario*, nn. 4–6, and the *Calendarium Romanum generale*, entry for 26 July, both read in the 2002 *Missale Romanum* artifact.
 
--   “Reimpressio emendata *Missalis Romani*” and “Variationes et additiones in *Missali Romano*,” *Notitiae* 44 (2008), nos. 503–504, pp. 367–387; *Tempus per annum* subsection at printed p. 371. Read in the official Dicastery issue PDF, [cultodivino.va](https://www.cultodivino.va/).
+- “Reimpressio emendata *Missalis Romani*” and “Variationes et additiones in *Missali Romano*,” *Notitiae* 44 (2008), nos. 503–504, pp. 367–387; *Tempus per annum* subsection at printed p. 371. Read in the official Dicastery issue PDF, [cultodivino.va](https://www.cultodivino.va/).
 
--   Bishops’ Conference of England and Wales, *Antiphonary: Excerpted from the Roman Missal* (ICEL, 2010), p. 75. [liturgyoffice.org.uk](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf).
+- Bishops’ Conference of England and Wales, *Antiphonary: Excerpted from the Roman Missal* (ICEL, 2010), p. 75. [liturgyoffice.org.uk](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf).
 
--   USCCB Secretariat of Divine Worship, *Liturgical Calendar for the Dioceses of the United States of America*, 2026, entry for 26 July and the following week. [usccb.org](https://www.usccb.org/resources/2026cal.pdf).
+- USCCB Secretariat of Divine Worship, *Liturgical Calendar for the Dioceses of the United States of America*, 2026, entry for 26 July and the following week. [usccb.org](https://www.usccb.org/resources/2026cal.pdf).
 
--   Official occurrence page for 26 July 2026, giving Lectionary no. 109 and the psalm response citation. [bible.usccb.org](https://bible.usccb.org/).
+- Official occurrence page for 26 July 2026, giving Lectionary no. 109 and the psalm response citation. [bible.usccb.org](https://bible.usccb.org/).
 
--   *Missale Romanum* (1962), *Dominica III* and *Dominica XI post Pentecosten*. Consulted in the Divinum Officium project’s community transcription, a secondary witness and not a collated printing. [divinumofficium.com](https://www.divinumofficium.com/).
+- *Missale Romanum* (1962), *Dominica III* and *Dominica XI post Pentecosten*. Consulted in the Divinum Officium project’s community transcription, a secondary witness and not a collated printing. [divinumofficium.com](https://www.divinumofficium.com/).
 
 ### Scripture, in public-domain versions
 
--   *Biblia Sacra Vulgatæ Editionis* (Sixto-Clementine), 3 Kings 3; Ps 67, 102, 118; Matthew 5, 11, 13; Romans 8. [drbo.org](http://www.drbo.org/lvb/).
+- *Biblia Sacra Vulgatæ Editionis* (Sixto-Clementine), 3 Kings 3; Ps 67, 102, 118; Matthew 5, 11, 13; Romans 8. [drbo.org](http://www.drbo.org/lvb/).
 
--   *The Holy Bible, Douay-Rheims Version*, same chapters, with the annotator’s note at Romans 8:29. [drbo.org](http://www.drbo.org/).
+- *The Holy Bible, Douay-Rheims Version*, same chapters, with the annotator’s note at Romans 8:29. [drbo.org](http://www.drbo.org/).
 
--   *Nova Vulgata*, Ps 68(67):6–7, 36, for one comparison. [vatican.va](https://www.vatican.va/archive/bible/nova_vulgata/).
+- *Nova Vulgata*, Ps 68(67):6–7, 36, for one comparison. [vatican.va](https://www.vatican.va/archive/bible/nova_vulgata/).
 
--   Hebrew and Greek forms of 1 Kings 3:9 and Matthew 13:52 reported from an identified interlinear resource, not from a critical edition.
+- Hebrew and Greek forms of 1 Kings 3:9 and Matthew 13:52 reported from an identified interlinear resource, not from a critical edition.
 
 ### Patristic, medieval and later reception
 
--   Ambrose, *De officiis ministrorum* II.8, §§43–47 [(newadvent.org)](https://www.newadvent.org/fathers/34012.htm); *Expositio Psalmi CXVIII*, Sermo VIII on v. 57 and Sermo IX on v. 72, read in an Internet Archive scan of the 1845 printing of *Patrologia Latina* 15.
+- Ambrose, *De officiis ministrorum* II.8, §§43–47 [(newadvent.org)](https://www.newadvent.org/fathers/34012.htm); *Expositio Psalmi CXVIII*, Sermo VIII on v. 57 and Sermo IX on v. 72, read in an Internet Archive scan of the 1845 printing of *Patrologia Latina* 15.
 
--   Augustine, *Enarrationes in Psalmos* 68 (§§6, 40), 103 (§2), and 118/119 (§§57, 71, 76, 126–129); *De doctrina christiana* I.3–4; *De sermone Domini in monte* I.2.7–8 and I.4.11–12; *Sermon* 74 (formerly 24 on the New Testament), §5; *De civitate Dei* XVII.8, XVII.20 and XX.4; *Quæstiones Evangeliorum* I.13; *Quæstiones XVII in Matthæum* q. 12, whose authenticity is disputed; *De prædestinatione sanctorum* 7–8, 19, 32, 34; *De dono perseverantiæ* 35, 47.
+- Augustine, *Enarrationes in Psalmos* 68 (§§6, 40), 103 (§2), and 118/119 (§§57, 71, 76, 126–129); *De doctrina christiana* I.3–4; *De sermone Domini in monte* I.2.7–8 and I.4.11–12; *Sermon* 74 (formerly 24 on the New Testament), §5; *De civitate Dei* XVII.8, XVII.20 and XX.4; *Quæstiones Evangeliorum* I.13; *Quæstiones XVII in Matthæum* q. 12, whose authenticity is disputed; *De prædestinatione sanctorum* 7–8, 19, 32, 34; *De dono perseverantiæ* 35, 47.
 
--   John Chrysostom, *Homilies on Matthew* 38 and 47; *Homilies on Romans* 15 and 16. [newadvent.org](https://www.newadvent.org/fathers/).
+- John Chrysostom, *Homilies on Matthew* 38 and 47; *Homilies on Romans* 15 and 16. [newadvent.org](https://www.newadvent.org/fathers/).
 
--   John Cassian, *Conferences* II, and Gregory the Great, *Regula pastoralis*, both consulted for the negative results reported above.
+- John Cassian, *Conferences* II, and Gregory the Great, *Regula pastoralis*, both consulted for the negative results reported above.
 
--   Origen, *Commentary on Matthew* X.4–15. [newadvent.org](https://www.newadvent.org/fathers/101610.htm).
+- Origen, *Commentary on Matthew* X.4–15. [newadvent.org](https://www.newadvent.org/fathers/101610.htm).
 
--   Jerome, *Commentarii in Matthæum*, lib. II, on 13:44–52; Hilary of Poitiers, *In Matthæum* XIII.7–9 and XIV.1; Gregory the Great, *Homiliæ in Evangelia* I.11. Read in public Latin transcriptions of the Migne text.
+- Jerome, *Commentarii in Matthæum*, lib. II, on 13:44–52; Hilary of Poitiers, *In Matthæum* XIII.7–9 and XIV.1; Gregory the Great, *Homiliæ in Evangelia* I.11. Read in public Latin transcriptions of the Migne text.
 
--   Thomas Aquinas, *Super Matthæum*, cap. XI and cap. XIII lect. 4; *Super Romanos*, cap. 8, lect. 6; *Summa theologiæ* I q. 23 aa. 1–5, II-II q. 66 a. 5, II-II q. 83 aa. 5–6, and, for the negative results, II-II qq. 45 and 47 and I-II q. 68. Latin at [corpusthomisticum.org](https://www.corpusthomisticum.org/); English of the *Summa* at [newadvent.org](https://www.newadvent.org/summa/).
+- Thomas Aquinas, *Super Matthæum*, cap. XI and cap. XIII lect. 4; *Super Romanos*, cap. 8, lect. 6; *Summa theologiæ* I q. 23 aa. 1–5, II-II q. 66 a. 5, II-II q. 83 aa. 5–6, and, for the negative results, II-II qq. 45 and 47 and I-II q. 68. Latin at [corpusthomisticum.org](https://www.corpusthomisticum.org/); English of the *Summa* at [newadvent.org](https://www.newadvent.org/summa/).
 
 ### Councils, magisterium and catechesis
 
--   Second Council of Orange (529), canons 3–5 and 25, and the Conclusion.
+- Second Council of Orange (529), canons 3–5 and 25, and the Conclusion.
 
--   Council of Trent, Session VI (1547), *Decree on Justification*, chapters 12–13 and canons 15–17.
+- Council of Trent, Session VI (1547), *Decree on Justification*, chapters 12–13 and canons 15–17.
 
--   “Congregatio de Auxiliis,” *The Catholic Encyclopedia*, vol. 4 (1908), for the terms of Paul V’s decree of 5 September 1607. A period reference work, used for the decree’s terms and not as an arbiter between the schools.
+- “Congregatio de Auxiliis,” *The Catholic Encyclopedia*, vol. 4 (1908), for the terms of Paul V’s decree of 5 September 1607. A period reference work, used for the decree’s terms and not as an arbiter between the schools.
 
--   Second Vatican Council, *Sacrosanctum concilium* 47–48; *Gaudium et spes* 22.
+- Second Vatican Council, *Sacrosanctum concilium* 47–48; *Gaudium et spes* 22.
 
--   *Catechism of the Catholic Church*, 311–314, 600, 1821, 2012.
+- *Catechism of the Catholic Church*, 311–314, 600, 1821, 2012.
 
--   General Introduction to the *Lectionary for Mass*, on the correlation of the Old Testament reading with the Gospel and the semi-continuous apostolic course.
+- General Introduction to the *Lectionary for Mass*, on the correlation of the Old Testament reading with the Gospel and the semi-continuous apostolic course.
 
--   Benedict XVI, *The Listening Heart: Reflections on the Foundations of Law*, address to the Bundestag, Berlin, 22 September 2011. [vatican.va](https://www.vatican.va/).
+- Benedict XVI, *The Listening Heart: Reflections on the Foundations of Law*, address to the Bundestag, Berlin, 22 September 2011. [vatican.va](https://www.vatican.va/).
 
 ### Later cultural reception
 
--   Nathaniel Hawthorne, *The Scarlet Letter* (1850), chapters 6 and 8. Project Gutenberg.
+- Nathaniel Hawthorne, *The Scarlet Letter* (1850), chapters 6 and 8. Project Gutenberg.
 
--   Henry van Dyke, *The Story of the Other Wise Man*, chapter 5. Wikisource.
+- Henry van Dyke, *The Story of the Other Wise Man*, chapter 5. Wikisource.
 
--   P. G. Wodehouse, “A Sea of Troubles,” *The Man with Two Left Feet* (1917). Wikisource.
+- P. G. Wodehouse, “A Sea of Troubles,” *The Man with Two Left Feet* (1917). Wikisource.
 
--   George Tyrrell, S.J., *Nova et Vetera: Informal Meditations for Times of Spiritual Dryness* (Longmans, Green, 2nd impression 1898), meditation CCXXXII. Internet Archive.
+- George Tyrrell, S.J., *Nova et Vetera: Informal Meditations for Times of Spiritual Dryness* (Longmans, Green, 2nd impression 1898), meditation CCXXXII. Internet Archive.
 
--   Voltaire, *Candide*, chapters I and XXVIII, for the negative result reported in the gallery. Project Gutenberg.
+- Voltaire, *Candide*, chapters I and XXVIII, for the negative result reported in the gallery. Project Gutenberg.
 
--   “Dragnet,” *Online Etymology Dictionary*, for the negative result reported in the gallery.
+- “Dragnet,” *Online Etymology Dictionary*, for the negative result reported in the gallery.
 
 **Last revised (UTC):** 2026-07-27T12:03:33Z
 

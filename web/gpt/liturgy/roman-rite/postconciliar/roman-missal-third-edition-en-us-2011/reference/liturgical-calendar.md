@@ -539,11 +539,11 @@ The adjacent research records preserve the scope, edition manifest, source audit
 
 ### Controlling books and norms
 
--   Paul VI, apostolic letter *Mysterii Paschalis*, 14 February 1969, and the accompanying *Calendarium Romanum* and Universal Norms.
+- Paul VI, apostolic letter *Mysterii Paschalis*, 14 February 1969, and the accompanying *Calendarium Romanum* and Universal Norms.
 
--   *Missale Romanum*, editio typica tertia (Vatican City: Typis Vaticanis, 2002), *Normae universales de anno liturgico et de calendario* and *Calendarium Romanum generale*; editio typica tertia, *reimpressio emendata* (2008).
+- *Missale Romanum*, editio typica tertia (Vatican City: Typis Vaticanis, 2002), *Normae universales de anno liturgico et de calendario* and *Calendarium Romanum generale*; editio typica tertia, *reimpressio emendata* (2008).
 
--   *The Roman Missal*, Third Edition, for use in the Dioceses of the United States of America (2011), together with the 2010 confirmations and later amendments to the United States proper.
+- *The Roman Missal*, Third Edition, for use in the Dioceses of the United States of America (2011), together with the 2010 confirmations and later amendments to the United States proper.
 
 ### Historical reconstruction
 

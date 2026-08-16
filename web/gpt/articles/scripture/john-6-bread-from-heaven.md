@@ -240,49 +240,49 @@ The authority classes are distinct: Scripture is the governing text; patristic w
 
 ## References
 
--   Holy Scripture: Luke 2:1–20; Micah 5:2–4; John 1:1–18; John 6:1–71; 1 Corinthians 10:16–17; 11:23–29. English quotations are from the public-domain Douay–Rheims Bible, Challoner revision.
+- Holy Scripture: Luke 2:1–20; Micah 5:2–4; John 1:1–18; John 6:1–71; 1 Corinthians 10:16–17; 11:23–29. English quotations are from the public-domain Douay–Rheims Bible, Challoner revision.
 
--   St. Ignatius of Antioch, *Letter to the Smyrnaeans* 7.
+- St. Ignatius of Antioch, *Letter to the Smyrnaeans* 7.
 
--   St. Irenaeus of Lyons, *Against Heresies* IV.18.5; V.2.2–3.
+- St. Irenaeus of Lyons, *Against Heresies* IV.18.5; V.2.2–3.
 
--   St. Cyprian of Carthage, *On the Lord’s Prayer* 18.
+- St. Cyprian of Carthage, *On the Lord’s Prayer* 18.
 
--   Jerusalem mystagogical catechesis IV.1–6, traditionally attributed to St. Cyril of Jerusalem.
+- Jerusalem mystagogical catechesis IV.1–6, traditionally attributed to St. Cyril of Jerusalem.
 
--   St. John Chrysostom, *Homilies on John* 45–47; *Homily 24 on First Corinthians*.
+- St. John Chrysostom, *Homilies on John* 45–47; *Homily 24 on First Corinthians*.
 
--   St. Augustine, *Tractates on John* 25–27.
+- St. Augustine, *Tractates on John* 25–27.
 
--   St. Cyril of Alexandria, *Commentary on John*, book IV, on John 6.
+- St. Cyril of Alexandria, *Commentary on John*, book IV, on John 6.
 
--   St. Ambrose, *On the Mysteries* 47–49; Letter 70.
+- St. Ambrose, *On the Mysteries* 47–49; Letter 70.
 
--   St. Jerome, Letter 108.10.
+- St. Jerome, Letter 108.10.
 
--   Pseudo-Gregory Thaumaturgus, first of the *Four Homilies*, transmitted among doubtful or spurious works; authorship unresolved in this study.
+- Pseudo-Gregory Thaumaturgus, first of the *Four Homilies*, transmitted among doubtful or spurious works; authorship unresolved in this study.
 
--   St. Thomas Aquinas, *Super Evangelium Ioannis* 6, lectures 4 and 6–8; *Summa theologiae* III, qq. 75–76, 79–80.
+- St. Thomas Aquinas, *Super Evangelium Ioannis* 6, lectures 4 and 6–8; *Summa theologiae* III, qq. 75–76, 79–80.
 
--   Second Vatican Council, *Sacrosanctum Concilium* 47–48.
+- Second Vatican Council, *Sacrosanctum Concilium* 47–48.
 
--   Council of Trent, Session XIII, decree chs. 1–5 and canons 1–11.
+- Council of Trent, Session XIII, decree chs. 1–5 and canons 1–11.
 
--   *Catechism of the Catholic Church* 1322–1323.
+- *Catechism of the Catholic Church* 1322–1323.
 
--   Paul VI, *Mysterium fidei* 38–49.
+- Paul VI, *Mysterium fidei* 38–49.
 
--   John Paul II, *Ecclesia de Eucharistia* 1–26.
+- John Paul II, *Ecclesia de Eucharistia* 1–26.
 
--   Benedict XVI, *Sacramentum caritatis* 6–11, 70–71.
+- Benedict XVI, *Sacramentum caritatis* 6–11, 70–71.
 
--   H. B. Swete, ed., *The Old Testament in Greek*, vol. I, fourth edition (1909), Ex 16:2, 7–12.
+- H. B. Swete, ed., *The Old Testament in Greek*, vol. I, fourth edition (1909), Ex 16:2, 7–12.
 
--   University of Iowa Bible and Archaeology, “RTL Words: LEHEM,” dated web state, 27 July 2026.
+- University of Iowa Bible and Archaeology, “RTL Words: LEHEM,” dated web state, 27 July 2026.
 
--   John Calvin, *Commentary on the Gospel according to John*, on John 6:47–58; *Institutes of the Christian Religion* IV.17.4–10, trans. Henry Beveridge (Edinburgh: Calvin Translation Society, 1845).
+- John Calvin, *Commentary on the Gospel according to John*, on John 6:47–58; *Institutes of the Christian Religion* IV.17.4–10, trans. Henry Beveridge (Edinburgh: Calvin Translation Society, 1845).
 
--   Meredith J. C. Warren, *My Flesh Is Meat Indeed: A Nonsacramental Reading of John 6:51–58* (Minneapolis: Fortress Press, 2015), 19–60, 249–255.
+- Meredith J. C. Warren, *My Flesh Is Meat Indeed: A Nonsacramental Reading of John 6:51–58* (Minneapolis: Fortress Press, 2015), 19–60, 249–255.
 
 **Last revised (UTC):** 2026-07-29T14:49:37Z
 

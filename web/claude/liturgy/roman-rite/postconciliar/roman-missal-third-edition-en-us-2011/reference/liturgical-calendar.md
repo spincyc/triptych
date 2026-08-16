@@ -112,9 +112,9 @@ That sentence is doing more work than its position as a footnote suggests. It is
 
 The practical statement of the boundary is therefore double, and both halves are needed:
 
--   the liturgical year named for civil year *Y* begins at Evening Prayer I of the First Sunday of Advent in civil year *Y* − 1 — the Sunday falling from 27 November to 3 December — and ends on the Saturday before the First Sunday of Advent in civil year *Y*;
+- the liturgical year named for civil year *Y* begins at Evening Prayer I of the First Sunday of Advent in civil year *Y* − 1 — the Sunday falling from 27 November to 3 December — and ends on the Saturday before the First Sunday of Advent in civil year *Y*;
 
--   within that span, the last *Sunday* is Christ the King, one week earlier than the last *day*.
+- within that span, the last *Sunday* is Christ the King, one week earlier than the last *day*.
 
 The two are routinely conflated. The Secretariat of Divine Worship’s own annual calendar for the United States keeps them apart with some care: for the year 2026 it gives the Sunday Lectionary cycle as “<span class="smallcaps">year a</span>, November 30, 2025 to November 22, 2026” — ending on Christ the King — while giving the weekday cycle as “<span class="smallcaps">cycle 2</span>, January 12 to February 17, 2026” and “May 25 to November 28, 2026,” ending on the Saturday. Each interval is stated in the units the cycle actually occupies. A reference that reports “Year A ran to 22 November 2026” and “the liturgical year ended on 22 November 2026” has silently lost six days, all of them Ordinary Time weekdays of week XXXIV with their own Lectionary readings.
 
@@ -334,11 +334,11 @@ The *Tabella temporaria* of the 2002 edition is not merely a convenience. It is 
 
 Every one of its twenty-four rows was recomputed for this reference from the Gregorian computus and the norms, field by field. The results are worth reporting exactly, because they are the evidence for the rules published here and because one of them is a discrepancy.
 
--   In all twenty-four rows the Sunday cycle pair agrees with the arithmetic of <span class="smallcaps">olm</span> 66, footnote 102; the Easter, Ascension, Pentecost, Monday-after-Pentecost and First-Sunday-of-Advent columns agree with the computus and the offsets above; and the two week numbers agree with the rule set out in Section [6](#sec:ot). Nineteen rows agree in every field without exception.
+- In all twenty-four rows the Sunday cycle pair agrees with the arithmetic of <span class="smallcaps">olm</span> 66, footnote 102; the Easter, Ascension, Pentecost, Monday-after-Pentecost and First-Sunday-of-Advent columns agree with the computus and the offsets above; and the two week numbers agree with the rule set out in Section [6](#sec:ot). Nineteen rows agree in every field without exception.
 
--   Five rows disagree, and they disagree in exactly one way. In 2004, 2008, 2012, 2016 and 2020 — the leap years of the range whose Ash Wednesday falls in February — the two February dates are each one day earlier than the norms require. For 2004 the table gives Ash Wednesday as *24 febr.* where Easter of *11 apr.* less forty-six days is 25 February, and gives the last day of Ordinary Time before Lent as *23 febr.* where <span class="smallcaps">nualc</span> 44 requires the Tuesday, 24 February. The pattern repeats identically in the other four, and in each of them the printed date for Ash Wednesday is a Tuesday, which no Ash Wednesday can be. The week numbers in the same rows are correct, as are the March, April, May, June and November columns.
+- Five rows disagree, and they disagree in exactly one way. In 2004, 2008, 2012, 2016 and 2020 — the leap years of the range whose Ash Wednesday falls in February — the two February dates are each one day earlier than the norms require. For 2004 the table gives Ash Wednesday as *24 febr.* where Easter of *11 apr.* less forty-six days is 25 February, and gives the last day of Ordinary Time before Lent as *23 febr.* where <span class="smallcaps">nualc</span> 44 requires the Tuesday, 24 February. The pattern repeats identically in the other four, and in each of them the printed date for Ash Wednesday is a Tuesday, which no Ash Wednesday can be. The week numbers in the same rows are correct, as are the March, April, May, June and November columns.
 
--   The sixth leap year in the range, 2000, agrees in every field. Its Ash Wednesday falls on 8 March, after the intercalated day.
+- The sixth leap year in the range, 2000, agrees in every field. Its Ash Wednesday falls on 8 March, after the intercalated day.
 
 Every affected row is a leap year, every unaffected row is not, and within the leap years only the dates preceding 29 February are wrong: this is a systematic defect in one arithmetic path, not a scattering of typographic slips. What cannot be settled from the evidence available here is where in the chain it arose. The artifact examined is a digitally typeset secondary reproduction of the 2002 edition, not a page-image facsimile of a licensed altar book, and in that artifact the table’s ruled columns have themselves been flattened into running lines. The defect may stand in the printed *editio typica*, may have been corrected in the 2008 *reimpressio emendata*, or may have been introduced in the reproduction. This reference reports what it read and does not resolve which. The practical consequence is unaffected either way: a February date taken from that table in a leap year must be recomputed, and the table’s week numbers may be relied on.
 
@@ -429,9 +429,9 @@ The two anchors of Ordinary Time are at opposite ends of the year, and the count
 
 Let
 
--   *L* be the number of the last week of Ordinary Time used before Lent — the week that contains Ash Wednesday, whose readings are suspended after the Tuesday under <span class="smallcaps">olm</span> 104.2, and whose Sunday was the last numbered Sunday before Lent; and
+- *L* be the number of the last week of Ordinary Time used before Lent — the week that contains Ash Wednesday, whose readings are suspended after the Tuesday under <span class="smallcaps">olm</span> 104.2, and whose Sunday was the last numbered Sunday before Lent; and
 
--   *R* be the number of the week resumed after Pentecost — the week whose Sunday is Pentecost Sunday, so that its weekdays are the first to resume on the Monday after Pentecost.
+- *R* be the number of the week resumed after Pentecost — the week whose Sunday is Pentecost Sunday, so that its weekdays are the first to resume on the Monday after Pentecost.
 
 Then, because week XXXIV is always the week whose Sunday is Christ the King and whose Saturday is the last day of the liturgical year,
 
@@ -439,9 +439,9 @@ Then, because week XXXIV is always the week whose Sunday is Christ the King and 
 
 Then:
 
--   *R* = *L* + 1: thirty-four weeks; nothing is omitted; the series resumes without a gap.
+- *R* = *L* + 1: thirty-four weeks; nothing is omitted; the series resumes without a gap.
 
--   *R* = *L* + 2: thirty-three weeks; week *L* + 1 never occurs.
+- *R* = *L* + 2: thirty-three weeks; week *L* + 1 never occurs.
 
 No other relation arises. Over the two centuries 1900–2100 the computation was carried out for every year for this reference: *L* takes values from four to nine, *R* from six to eleven, the difference *R* − *L* is always one or two, the omitted week is always one of weeks V to X, and 137 of the 201 years are thirty-three-week years against 64 of thirty-four. The short year is the normal case, not the exception.
 
@@ -449,13 +449,13 @@ No other relation arises. Over the two centuries 1900–2100 the computation was
 
 The word is *omittitur*, and both the Missal and the Lectionary use it. It carries no implication of transfer, anticipation, compression or substitution. In a thirty-three-week year:
 
--   there is no Sunday bearing the number *L* + 1 that year — the ordinal simply does not appear in the calendar;
+- there is no Sunday bearing the number *L* + 1 that year — the ordinal simply does not appear in the calendar;
 
--   the Sunday Mass formulary numbered *L* + 1 in the Missal is not used;
+- the Sunday Mass formulary numbered *L* + 1 in the Missal is not used;
 
--   the six weekday Lectionary sets of week *L* + 1 are not read;
+- the six weekday Lectionary sets of week *L* + 1 are not read;
 
--   and in addition, under <span class="smallcaps">olm</span> 104.2, the readings of week *L* from Wednesday to Saturday are suspended, because that week was cut short by Ash Wednesday.
+- and in addition, under <span class="smallcaps">olm</span> 104.2, the readings of week *L* from Wednesday to Saturday are suspended, because that week was cut short by Ash Wednesday.
 
 The last item is regularly missed. In a thirty-three-week year the Lectionary loses not six weekday sets but ten: four from the truncated pre-Lenten week and six from the omitted week. In a thirty-four-week year it still loses the four.
 
@@ -493,11 +493,11 @@ The rule: the letter C designates a year whose number is divisible into three eq
 
 Writing *Y* for the civil year that the footnote numbers — the year in which the liturgical year *ends*, that is the year of its January to November, not the year of its Advent:
 
--   remainder 1 on division of *Y* by 3 gives Year A;
+- remainder 1 on division of *Y* by 3 gives Year A;
 
--   remainder 2 gives Year B;
+- remainder 2 gives Year B;
 
--   remainder 0 — that is, exact divisibility — gives Year C.
+- remainder 0 — that is, exact divisibility — gives Year C.
 
 Equivalently, the cycle beginning at the First Sunday of Advent in civil year *y* is fixed by the remainder of *y* + 1 on division by 3. The footnote’s own series satisfies this: 1980 divides exactly, C; 1981 leaves 1, A; 1982 leaves 2, B; 1983 divides exactly, C.
 
@@ -547,11 +547,11 @@ The Sunday interval is bounded by Sundays: it ends on Christ the King, the last 
 
 Three rules of hygiene follow, and they are the ones this reference has found most often broken in secondary sources:
 
--   record a cycle letter with the exact interval it governs, never bare;
+- record a cycle letter with the exact interval it governs, never bare;
 
--   resolve the weekday numeral independently of the Sunday letter, from the parity of *Y*; and
+- resolve the weekday numeral independently of the Sunday letter, from the parity of *Y*; and
 
--   assign no cycle at all to a celebration whose readings are not cycle-governed.
+- assign no cycle at all to a celebration whose readings are not cycle-governed.
 
 ## The general calendar and the proper calendars {#sec:particular}
 
@@ -613,17 +613,17 @@ Neither removal nor a change of grade is within the local authority’s own comp
 
 <span class="smallcaps">nualc</span> 56 governs the date at which a proper celebration is inscribed, and its provisions are about calendar construction, not about resolving a particular year:
 
--   the Church’s custom is to celebrate saints on their *dies natalicius*, and this is to be kept in proper celebrations too (56, opening);
+- the Church’s custom is to celebrate saints on their *dies natalicius*, and this is to be kept in proper celebrations too (56, opening);
 
--   a celebration also found in the general calendar is inscribed on the same day, with the grade changed if necessary (56 a);
+- a celebration also found in the general calendar is inscribed on the same day, with the grade changed if necessary (56 a);
 
--   a celebration not in the general calendar is assigned to the *dies natalicius*; if that day is unknown, to some other day proper to the saint — ordination, finding, translation — and otherwise to a day free in the particular calendar (56 b);
+- a celebration not in the general calendar is assigned to the *dies natalicius*; if that day is unknown, to some other day proper to the saint — ordination, finding, translation — and otherwise to a day free in the particular calendar (56 b);
 
--   if the proper day is impeded by another obligatory celebration, even of lower grade, in the general or particular calendar, the celebration is assigned to the nearest day similarly unimpeded (56 c);
+- if the proper day is impeded by another obligatory celebration, even of lower grade, in the general or particular calendar, the celebration is assigned to the nearest day similarly unimpeded (56 c);
 
--   but if the celebration cannot for pastoral reasons be moved, the impeding celebration is moved instead (56 d);
+- but if the celebration cannot for pastoral reasons be moved, the impeding celebration is moved instead (56 d);
 
--   indult celebrations are inscribed on the day more suitable pastorally (56 e).
+- indult celebrations are inscribed on the day more suitable pastorally (56 e).
 
 Provision 56 c is the one most often misapplied. It is a rule for assigning a permanent date when a calendar is drawn up, and its trigger is a *permanent* impediment on a fixed date, not the occurrence of a movable celebration in one year. Nothing in it authorises moving a memorial in a given year because Easter fell early.
 
@@ -760,13 +760,13 @@ Section [5.3](#sec:tabella) reported the recomputation of the *Tabella temporar
 >
 > **What would change it.** Any of the following, and this reference would revise:
 >
-> -   the *Institutio generalis de Liturgia Horarum* stating the omission rule with a criterion of its own — this reference has not read that Instruction, which is a real and acknowledged gap in the argument’s evidence base rather than a rhetorical concession;
+> - the *Institutio generalis de Liturgia Horarum* stating the omission rule with a criterion of its own — this reference has not read that Instruction, which is a real and acknowledged gap in the argument’s evidence base rather than a rhetorical concession;
 >
-> -   an authentic interpretation, a decree of the competent dicastery, or a later typical edition of the Missal restating the rule with its criterion and reason;
+> - an authentic interpretation, a decree of the competent dicastery, or a later typical edition of the Missal restating the rule with its criterion and reason;
 >
-> -   evidence about the 1969 first typical edition of the *Ordo lectionum Missae*. The 1981 decree of promulgation, protocol CD 240/81 of 21 January 1981, states as the first of the second edition’s five differences from the first that *Textus “Praenotandorum” auctus est* — the text of the Praenotanda has been enlarged. Whether nn. 103–104 and their footnotes stood in 1969 or entered in 1981 is therefore genuinely open, and the 1969 edition was not examined here; or
+> - evidence about the 1969 first typical edition of the *Ordo lectionum Missae*. The 1981 decree of promulgation, protocol CD 240/81 of 21 January 1981, states as the first of the second edition’s five differences from the first that *Textus “Praenotandorum” auctus est* — the text of the Praenotanda has been enlarged. Whether nn. 103–104 and their footnotes stood in 1969 or entered in 1981 is therefore genuinely open, and the 1969 edition was not examined here; or
 >
-> -   a general permission, in force in some territory, to join the readings of an omitted week to an adjacent week, which would dissolve the practical asymmetry even if the textual argument survived.
+> - a general permission, in force in some territory, to join the readings of an omitted week to an adjacent week, which would dissolve the practical asymmetry even if the textual argument survived.
 
 > **Project synthesis: the leap-year dates in the *Tabella temporaria***
 >
@@ -815,17 +815,17 @@ It is a study reference. It is not an *Ordo*, not a liturgical book, not an act 
 
 ### What it deliberately does not contain
 
--   The fixed universal inventory — the dated entries of the General Roman Calendar — and the recurring national overlay for the United States. Individual entries appear only where a rule is being illustrated. No completeness is claimed for any list of celebrations in this document, and the term “complete calendar” is nowhere used of it.
+- The fixed universal inventory — the dated entries of the General Roman Calendar — and the recurring national overlay for the United States. Individual entries appear only where a rule is being illustrated. No completeness is claimed for any list of celebrations in this document, and the term “complete calendar” is nowhere used of it.
 
--   Any diocesan, parish, cathedral, titular, dedication, patronal or religious-family calendar.
+- Any diocesan, parish, cathedral, titular, dedication, patronal or religious-family calendar.
 
--   Any prayer, reading, antiphon, chant, preface or formulary. The rights position below explains why.
+- Any prayer, reading, antiphon, chant, preface or formulary. The rights position below explains why.
 
--   A resolved calendar for any year. Section [9](#sec:years) works three years to verify rules; a worked year is evidence for a rule, not an *Ordo* for use.
+- A resolved calendar for any year. Section [9](#sec:years) works three years to verify rules; a worked year is evidence for a rule, not an *Ordo* for use.
 
--   The Liturgy of the Hours beyond the points at which the Universal Norms themselves extend a calendar rule to it. The *Institutio generalis de Liturgia Horarum* was not read for this reference, and Section [10](#sec:synthesis) records that as a limit on one of its arguments.
+- The Liturgy of the Hours beyond the points at which the Universal Norms themselves extend a calendar rule to it. The *Institutio generalis de Liturgia Horarum* was not read for this reference, and Section [10](#sec:synthesis) records that as a limit on one of its arguments.
 
--   The history of the reform. The dated timeline in Section [11](#sec:timeline) is a list of governing acts, not a narrative of how the calendar came to be.
+- The history of the reform. The dated timeline in Section [11](#sec:timeline) is a list of governing acts, not a narrative of how the calendar came to be.
 
 ### Editions and witnesses actually used
 
@@ -892,43 +892,43 @@ Grouped by the role each source played. Loci cited in the body are to these edit
 
 ### Controlling books
 
--   *Missale Romanum, ex decreto Sacrosancti Oecumenici Concilii Vaticani II instauratum, auctoritate Pauli PP. VI promulgatum, Ioannis Pauli PP. II cura recognitum*, *editio typica tertia*. Civitas Vaticana: Typis Vaticanis, 2002. Containing, and cited here as:
+- *Missale Romanum, ex decreto Sacrosancti Oecumenici Concilii Vaticani II instauratum, auctoritate Pauli PP. VI promulgatum, Ioannis Pauli PP. II cura recognitum*, *editio typica tertia*. Civitas Vaticana: Typis Vaticanis, 2002. Containing, and cited here as:
 
-    -   *Institutio generalis Missalis Romani*, nn. 53, 68, 353–355, 357–358, 363, 372, 374–378, cited as <span class="smallcaps">igmr</span>;
+  - *Institutio generalis Missalis Romani*, nn. 53, 68, 353–355, 357–358, 363, 372, 374–378, cited as <span class="smallcaps">igmr</span>;
 
-    -   *Normae universales de anno liturgico et de calendario*, nn. 1–61 with the *Tabula dierum liturgicorum secundum ordinem praecedentiae disposita*, cited as <span class="smallcaps">nualc</span>;
+  - *Normae universales de anno liturgico et de calendario*, nn. 1–61 with the *Tabula dierum liturgicorum secundum ordinem praecedentiae disposita*, cited as <span class="smallcaps">nualc</span>;
 
-    -   *Calendarium Romanum Generale*, including the movable entries appended to December and June and the convention that an entry without a stated grade is an optional memorial;
+  - *Calendarium Romanum Generale*, including the movable entries appended to December and June and the convention that an entry without a stated grade is an optional memorial;
 
-    -   the rubrics *Tempus “per annum”* 1–6, and the formularies of *Hebdomada I* and *Hebdomada XXXIV “per annum”*;
+  - the rubrics *Tempus “per annum”* 1–6, and the formularies of *Hebdomada I* and *Hebdomada XXXIV “per annum”*;
 
-    -   the rubric *In Baptismate Domini*; the heading *In feriis temporis Nativitatis*; the rubric on the announcement of movable feasts at the Epiphany;
+  - the rubric *In Baptismate Domini*; the heading *In feriis temporis Nativitatis*; the rubric on the announcement of movable feasts at the Epiphany;
 
-    -   *Tabella temporaria praecipuarum celebrationum anni liturgici*, civil years 2000–2023.
+  - *Tabella temporaria praecipuarum celebrationum anni liturgici*, civil years 2000–2023.
 
--   *Ordo lectionum Missae*, *editio typica altera*. Civitas Vaticana: Libreria Editrice Vaticana, 1981. *Praenotanda* nn. 65, 66 with n. 102 of the notes, 69, 103, 104 with nn. 115–116 of the notes, cited as <span class="smallcaps">olm</span>; with the decree of promulgation of 25 May 1969 (prot. 106/69) and the decree *De editione typica altera* of 21 January 1981 (prot. CD 240/81) in the front matter.
+- *Ordo lectionum Missae*, *editio typica altera*. Civitas Vaticana: Libreria Editrice Vaticana, 1981. *Praenotanda* nn. 65, 66 with n. 102 of the notes, 69, 103, 104 with nn. 115–116 of the notes, cited as <span class="smallcaps">olm</span>; with the decree of promulgation of 25 May 1969 (prot. 106/69) and the decree *De editione typica altera* of 21 January 1981 (prot. CD 240/81) in the front matter.
 
 ### Promulgating and governing acts
 
--   Second Vatican Council, Constitution *Sacrosanctum Concilium*, 4 December 1963, arts. 102–111 and the appended *declaratio de calendario recognoscendo*. Acta Apostolicae Sedis 56 (1964) 97–138.
+- Second Vatican Council, Constitution *Sacrosanctum Concilium*, 4 December 1963, arts. 102–111 and the appended *declaratio de calendario recognoscendo*. Acta Apostolicae Sedis 56 (1964) 97–138.
 
--   Paul VI, *Litterae Apostolicae motu proprio datae* *Mysterii Paschalis*, 14 February 1969, approving the Universal Norms and the new General Roman Calendar with effect from 1 January 1970; read in the Latin reprint in the 2002 typical edition.
+- Paul VI, *Litterae Apostolicae motu proprio datae* *Mysterii Paschalis*, 14 February 1969, approving the Universal Norms and the new General Roman Calendar with effect from 1 January 1970; read in the Latin reprint in the 2002 typical edition.
 
--   Sacred Congregation for Divine Worship, Instruction *De calendariis particularibus atque Officiorum et Missarum Propriis recognoscendis* (*Calendaria particularia*), 24 June 1970. Acta Apostolicae Sedis 62 (1970) 651–663; cited at Chapter I nn. 1–6, Chapter II nn. 7–27, and Chapter III n. 36.
+- Sacred Congregation for Divine Worship, Instruction *De calendariis particularibus atque Officiorum et Missarum Propriis recognoscendis* (*Calendaria particularia*), 24 June 1970. Acta Apostolicae Sedis 62 (1970) 651–663; cited at Chapter I nn. 1–6, Chapter II nn. 7–27, and Chapter III n. 36.
 
--   *Codex Iuris Canonici*, 25 January 1983, can. 1246 §§1–2.
+- *Codex Iuris Canonici*, 25 January 1983, can. 1246 §§1–2.
 
 ### Territorial witnesses
 
--   United States Conference of Catholic Bishops, Secretariat of Divine Worship, *Liturgical Calendar for the Dioceses of the United States of America*, editions for 2026, 2027 and 2028. Washington, DC: USCCB. Used as the competent territorial witness to the resolution of those three liturgical years, to the provincial distribution of the Ascension, to the Hawaii holy-day decree of 23 March 1992, to the application of the complementary norm to canon 1246 §2 in 2026, to the 1998 notification on the Immaculate Heart, and to the identity of the current Missal and Lectionary editions in use. All rights in those documents are reserved by their publisher; they are cited, not reproduced.
+- United States Conference of Catholic Bishops, Secretariat of Divine Worship, *Liturgical Calendar for the Dioceses of the United States of America*, editions for 2026, 2027 and 2028. Washington, DC: USCCB. Used as the competent territorial witness to the resolution of those three liturgical years, to the provincial distribution of the Ascension, to the Hawaii holy-day decree of 23 March 1992, to the application of the complementary norm to canon 1246 §2 in 2026, to the 1998 notification on the Immaculate Heart, and to the identity of the current Missal and Lectionary editions in use. All rights in those documents are reserved by their publisher; they are cited, not reproduced.
 
 ### Sources consulted and not used for a published claim
 
--   The Holy See’s portal was queried on 25 July 2026 for the Latin text of the 2018 decree inscribing the Blessed Virgin Mary, Mother of the Church in the General Roman Calendar, and for the 1998 notification on the Immaculate Heart. Neither was reached at the paths tried; both are consequently reported in this work from the territorial calendar and are marked as such.
+- The Holy See’s portal was queried on 25 July 2026 for the Latin text of the 2018 decree inscribing the Blessed Virgin Mary, Mother of the Church in the General Roman Calendar, and for the 1998 notification on the Immaculate Heart. Neither was reached at the paths tried; both are consequently reported in this work from the territorial calendar and are marked as such.
 
--   The page of the United States Conference of Catholic Bishops carrying the complementary norm to canon 1246 §2 returned an access refusal to this session on 25 July 2026. Its effect is reported from the Secretariat’s calendar.
+- The page of the United States Conference of Catholic Bishops carrying the complementary norm to canon 1246 §2 returned an access refusal to this session on 25 July 2026. Its effect is reported from the Secretariat’s calendar.
 
--   No ecclesiastical statement of the ecclesiastical computation of Easter was located in the sources consulted; see the terminal appendix.
+- No ecclesiastical statement of the ecclesiastical computation of Easter was located in the sources consulted; see the terminal appendix.
 
 **Last revised (UTC):** 2026-07-26T09:45:30Z
 

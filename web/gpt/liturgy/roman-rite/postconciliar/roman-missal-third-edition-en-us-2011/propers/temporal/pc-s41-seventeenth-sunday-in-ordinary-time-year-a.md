@@ -216,9 +216,9 @@ Communion A commands the soul to bless and remember divine benefits. Communion B
 | Filial purpose | Rom. 8; acclamation | Providence works amid groaning toward conformity to the Son. | Evil remains evil; no fatalism or prosperity promise. |
 | Sacramental fruit | Offerings; Communion A/B; final prayer | Received bounty returns as offering, gratitude or mercy, and memorial. | Branches stay distinct; fruit is not mechanical. |
 
-<span id="triptych:brief-synthesis:end" label="triptych:brief-synthesis:end"></span>
+<span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
-<span id="triptych:brief-synthesis:next" label="triptych:brief-synthesis:next"></span>
+<span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
 
 ## Source-Grounded Synthesis Across the Propers
 
@@ -263,11 +263,11 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 
 ## The Propers: Notable and Quotable
 
--   **Matthew 13:45–46, both Gospel branches — Nathaniel Hawthorne, *The Scarlet Letter* (1850).** Hester’s language of a pearl “of great price” redirects the Gospel image toward the child understood as her costly and only treasure amid Puritan shame and exclusion. The chapter marks the purchase logic; the novel’s moral world is not made an interpretation of Matthew.
+- **Matthew 13:45–46, both Gospel branches — Nathaniel Hawthorne, *The Scarlet Letter* (1850).** Hester’s language of a pearl “of great price” redirects the Gospel image toward the child understood as her costly and only treasure amid Puritan shame and exclusion. The chapter marks the purchase logic; the novel’s moral world is not made an interpretation of Matthew.
 
--   **Matthew 13:45–46, both Gospel branches — *The Pearl of Great Price*.** Franklin D. Richards’s 1851 compilation and its later institutional reception turn the Gospel phrase into the title of a scriptural anthology. An official study manual explains the title dependence. This entry documents reception without adjudicating the collection’s religious claims.
+- **Matthew 13:45–46, both Gospel branches — *The Pearl of Great Price*.** Franklin D. Richards’s 1851 compilation and its later institutional reception turn the Gospel phrase into the title of a scriptural anthology. An official study manual explains the title dependence. This entry documents reception without adjudicating the collection’s religious claims.
 
--   **Romans 8:28, independent Second Reading — Margaret Murray Robertson, *Christie Redfern’s Troubles* (1866).** A chapter titled “The Secret of Peace” places the verse inside a dispute over trust, passivity, suffering, and who may rightly claim the promise. Narrative argument, not an isolated citation, supplies the transformation; the novel remains reception evidence rather than doctrinal authority.
+- **Romans 8:28, independent Second Reading — Margaret Murray Robertson, *Christie Redfern’s Troubles* (1866).** A chapter titled “The Secret of Peace” places the verse inside a dispute over trust, passivity, suffering, and who may rightly claim the promise. Narrative argument, not an isolated citation, supplies the transformation; the novel remains reception evidence rather than doctrinal authority.
 
 ## Appendix: Liturgical Resolution
 
@@ -307,47 +307,47 @@ The offerings prayer returns gifts already received from divine bounty, so the E
 
 **Liturgical and scriptural sources**
 
--   *Missale Romanum*, editio typica tertia (Vatican City, 2002), Week XVII, pp. 466–467; the shared owner records the checksum-matched witness and official 2008 variation-list result (Ordinary Time changes listed only at pp. 457 and 471). Direct 2008 images for pp. 466–467 remain unchecked.
+- *Missale Romanum*, editio typica tertia (Vatican City, 2002), Week XVII, pp. 466–467; the shared owner records the checksum-matched witness and official 2008 variation-list result (Ordinary Time changes listed only at pp. 457 and 471). Direct 2008 images for pp. 466–467 remain unchecked.
 
--   United States Conference of Catholic Bishops, [*2026 Liturgical Calendar*](https://www.usccb.org/resources/2026cal.pdf) and [Lectionary 109 occurrence page](https://bible.usccb.org/bible/readings/072626.cfm), checked 2026-07-20; boundaries, alternatives, color, date, and occurrence only, under the source site’s terms.
+- United States Conference of Catholic Bishops, [*2026 Liturgical Calendar*](https://www.usccb.org/resources/2026cal.pdf) and [Lectionary 109 occurrence page](https://bible.usccb.org/bible/readings/072626.cfm), checked 2026-07-20; boundaries, alternatives, color, date, and occurrence only, under the source site’s terms.
 
--   Bishops’ official [*Antiphonary*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), printed p. 75, corroborating the Entrance and Communion citations and dual Psalm numbering; protected antiphon wording is not reproduced.
+- Bishops’ official [*Antiphonary*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), printed p. 75, corroborating the Entrance and Communion citations and dual Psalm numbering; protected antiphon wording is not reproduced.
 
--   Holy Scripture: 1 Kings 3; Psalms 67 (68), 102 (103), and 119; Matthew 5, 11, and 13; Romans 8. Historical orientation used the corresponding *New American Bible, Revised Edition* introductions, texts, and notes at [First Kings](https://bible.usccb.org/bible/1kings/0), [Psalms](https://bible.usccb.org/bible/psalms/0), [Matthew](https://bible.usccb.org/bible/matthew/0), and [Romans](https://bible.usccb.org/bible/romans/0).
+- Holy Scripture: 1 Kings 3; Psalms 67 (68), 102 (103), and 119; Matthew 5, 11, and 13; Romans 8. Historical orientation used the corresponding *New American Bible, Revised Edition* introductions, texts, and notes at [First Kings](https://bible.usccb.org/bible/1kings/0), [Psalms](https://bible.usccb.org/bible/psalms/0), [Matthew](https://bible.usccb.org/bible/matthew/0), and [Romans](https://bible.usccb.org/bible/romans/0).
 
--   *General Instruction of the Roman Missal*, nn. 46–90 and 352–367; *General Introduction to the Lectionary*, nn. 65–69, 78–91, and 93–110; structural and relationship controls, cited bibliographically without a new Holy See link.
+- *General Instruction of the Roman Missal*, nn. 46–90 and 352–367; *General Introduction to the Lectionary*, nn. 65–69, 78–91, and 93–110; structural and relationship controls, cited bibliographically without a new Holy See link.
 
--   *Catechism of the Catholic Church*, nn. 121–123, 128–130, 311–312, and 541–546, [official Holy See text](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_4_the_creator.html); Second Vatican Council, [*Gaudium et spes*](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html), no. 22; doctrinal controls.
+- *Catechism of the Catholic Church*, nn. 121–123, 128–130, 311–312, and 541–546, [official Holy See text](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_4_the_creator.html); Second Vatican Council, [*Gaudium et spes*](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html), no. 22; doctrinal controls.
 
 **Reception and doctrinal illumination**
 
--   St. Ambrose, [*On the Duties of the Clergy* II.8, 44–49](https://www.newadvent.org/fathers/34012.htm), on Solomon’s prudent heart, hearing, and just judgment; and [*Expositio Psalmi CXVIII*](https://fgh.perseids.org/read/latinLit/stoa0022/stoa052/opp-lat1), VIII, 2–4 and IX, 21–22, Latin text in M. Petschenig, ed., CSEL 62 (1913), on the Lord as portion and the law above gold.
+- St. Ambrose, [*On the Duties of the Clergy* II.8, 44–49](https://www.newadvent.org/fathers/34012.htm), on Solomon’s prudent heart, hearing, and just judgment; and [*Expositio Psalmi CXVIII*](https://fgh.perseids.org/read/latinLit/stoa0022/stoa052/opp-lat1), VIII, 2–4 and IX, 21–22, Latin text in M. Petschenig, ed., CSEL 62 (1913), on the Lord as portion and the law above gold.
 
--   St. Augustine, [*Exposition on Psalm 68*](https://www.newadvent.org/fathers/1801068.htm); [*Exposition on Psalm 103*](https://www.newadvent.org/fathers/1801103.htm); and [*Exposition on Psalm 119*](https://www.newadvent.org/fathers/1801119.htm).
+- St. Augustine, [*Exposition on Psalm 68*](https://www.newadvent.org/fathers/1801068.htm); [*Exposition on Psalm 103*](https://www.newadvent.org/fathers/1801103.htm); and [*Exposition on Psalm 119*](https://www.newadvent.org/fathers/1801119.htm).
 
--   St. Robert Bellarmine, [*Commentary on the Psalms*](https://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml), Psalms 67, 102, and 118 at the appointed loci.
+- St. Robert Bellarmine, [*Commentary on the Psalms*](https://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml), Psalms 67, 102, and 118 at the appointed loci.
 
--   St. John Chrysostom, [*Homily 15 on Matthew*](https://www.newadvent.org/fathers/200115.htm), [*Homily 38*](https://www.newadvent.org/fathers/200138.htm), and [*Homily 47*](https://www.newadvent.org/fathers/200147.htm); St. Augustine, [*Sermon on the Mount* I](https://www.newadvent.org/fathers/16011.htm) and [*Sermon 24*](https://www.newadvent.org/fathers/160324.htm); Origen, [*Commentary on Matthew* X](https://www.newadvent.org/fathers/101610.htm).
+- St. John Chrysostom, [*Homily 15 on Matthew*](https://www.newadvent.org/fathers/200115.htm), [*Homily 38*](https://www.newadvent.org/fathers/200138.htm), and [*Homily 47*](https://www.newadvent.org/fathers/200147.htm); St. Augustine, [*Sermon on the Mount* I](https://www.newadvent.org/fathers/16011.htm) and [*Sermon 24*](https://www.newadvent.org/fathers/160324.htm); Origen, [*Commentary on Matthew* X](https://www.newadvent.org/fathers/101610.htm).
 
--   St. John Chrysostom, [*Homily 15 on Romans*](https://www.newadvent.org/fathers/210215.htm), direct treatment of Romans 8:28–30 within adversity and divine purpose.
+- St. John Chrysostom, [*Homily 15 on Romans*](https://www.newadvent.org/fathers/210215.htm), direct treatment of Romans 8:28–30 within adversity and divine purpose.
 
--   Benedict XVI, [Angelus, 24 July 2011](https://www.vatican.va/content/benedict-xvi/en/angelus/2011/documents/hf_ben-xvi_ang_20110724.html), on Solomon’s listening heart, conscience, truth, justice, and peace; Francis, [Angelus, 27 July 2014](https://www.vatican.va/content/francesco/en/angelus/2014/documents/papa-francesco_angelus_20140727.html), and [Angelus, 26 July 2020](https://www.vatican.va/content/francesco/en/angelus/2020/documents/papa-francesco_angelus_20200726.html), on discovery, search, grace, willingness, joy, and the Kingdom. These are exact-Sunday receptions, not compositional evidence.
+- Benedict XVI, [Angelus, 24 July 2011](https://www.vatican.va/content/benedict-xvi/en/angelus/2011/documents/hf_ben-xvi_ang_20110724.html), on Solomon’s listening heart, conscience, truth, justice, and peace; Francis, [Angelus, 27 July 2014](https://www.vatican.va/content/francesco/en/angelus/2014/documents/papa-francesco_angelus_20140727.html), and [Angelus, 26 July 2020](https://www.vatican.va/content/francesco/en/angelus/2020/documents/papa-francesco_angelus_20200726.html), on discovery, search, grace, willingness, joy, and the Kingdom. These are exact-Sunday receptions, not compositional evidence.
 
--   Giuseppe Ferraro, S.J., [*La colletta Protector in te sperantium, Deus: Commento Biblico*, *Notitiae* 49 (2013), 472–478](https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2010/notitiae-49-%282013%29/Notitiae-565-566-2013.pdf), a signed biblical study of the Week XVII Collect; used as scholarly illumination rather than a magisterial act.
+- Giuseppe Ferraro, S.J., [*La colletta Protector in te sperantium, Deus: Commento Biblico*, *Notitiae* 49 (2013), 472–478](https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2010/notitiae-49-%282013%29/Notitiae-565-566-2013.pdf), a signed biblical study of the Week XVII Collect; used as scholarly illumination rather than a magisterial act.
 
--   St. Thomas Aquinas, [*Super Romanos* VIII, lect. 6, nn. 686–713](https://aquinas.cc/la/en/~Rom.C8.L6); [*Super Matthaeum* V, lect. 2](https://www.corpusthomisticum.org/cma0500.html); [XI, lect. 3](https://www.corpusthomisticum.org/cml0619.html); and [XIII, lect. 4](https://www.corpusthomisticum.org/cml13.html). Latin loci controlled the paraphrases. His [*Catena aurea on Matthew 13*](https://www.corpusthomisticum.org/cmt13.html) was used as a medieval compilation, not made the original author of its patristic extracts.
+- St. Thomas Aquinas, [*Super Romanos* VIII, lect. 6, nn. 686–713](https://aquinas.cc/la/en/~Rom.C8.L6); [*Super Matthaeum* V, lect. 2](https://www.corpusthomisticum.org/cma0500.html); [XI, lect. 3](https://www.corpusthomisticum.org/cml0619.html); and [XIII, lect. 4](https://www.corpusthomisticum.org/cml13.html). Latin loci controlled the paraphrases. His [*Catena aurea on Matthew 13*](https://www.corpusthomisticum.org/cmt13.html) was used as a medieval compilation, not made the original author of its patristic extracts.
 
--   Peter Comestor, [*Historia scholastica*, III Kings, “De somnio Salomonis”](https://la.wikisource.org/wiki/Historia_Scholastica_%28III_Kings%29); medieval retelling, not an independent ancient-event witness.
+- Peter Comestor, [*Historia scholastica*, III Kings, “De somnio Salomonis”](https://la.wikisource.org/wiki/Historia_Scholastica_%28III_Kings%29); medieval retelling, not an independent ancient-event witness.
 
--   George Leo Haydock, later Catholic compilation on [1 Kings 3](https://www.studylight.org/commentaries/eng/hcc/1-kings-3.html) and [Romans 8](https://www.studylight.org/commentaries/eng/hcc/romans-8.html); not treated as an ancient witness or substitute for direct sources.
+- George Leo Haydock, later Catholic compilation on [1 Kings 3](https://www.studylight.org/commentaries/eng/hcc/1-kings-3.html) and [Romans 8](https://www.studylight.org/commentaries/eng/hcc/romans-8.html); not treated as an ancient witness or substitute for direct sources.
 
 **Literary and institutional afterlives**
 
--   Nathaniel Hawthorne, [*The Scarlet Letter*](https://www.gutenberg.org/files/25344/25344-h/25344-h.htm) (Boston, 1850), ch. VI; child, cost, and social exclusion in a direct “great price” reuse. Public domain in the United States.
+- Nathaniel Hawthorne, [*The Scarlet Letter*](https://www.gutenberg.org/files/25344/25344-h/25344-h.htm) (Boston, 1850), ch. VI; child, cost, and social exclusion in a direct “great price” reuse. Public domain in the United States.
 
--   Franklin D. Richards and later Latter-day Saint reception, [official *Pearl of Great Price* study manual](https://www.churchofjesuschrist.org/study/manual/the-pearl-of-great-price-student-manual-2018/the-pearl-of-great-price?lang=eng); title dependence and institutional history paraphrased without bulk quotation.
+- Franklin D. Richards and later Latter-day Saint reception, [official *Pearl of Great Price* study manual](https://www.churchofjesuschrist.org/study/manual/the-pearl-of-great-price-student-manual-2018/the-pearl-of-great-price?lang=eng); title dependence and institutional history paraphrased without bulk quotation.
 
--   Margaret Murray Robertson, [*Christie Redfern’s Troubles*](https://www.gutenberg.org/files/21226/21226-h/21226-h.htm) (1866), ch. XVII; Romans 8:28 within a narrative dispute over trust and suffering. Public domain in the United States.
+- Margaret Murray Robertson, [*Christie Redfern’s Troubles*](https://www.gutenberg.org/files/21226/21226-h/21226-h.htm) (1866), ch. XVII; Romans 8:28 within a narrative dispute over trust and suffering. Public domain in the United States.
 
 **Last revised (UTC):** 2026-07-27T12:03:33Z
 
