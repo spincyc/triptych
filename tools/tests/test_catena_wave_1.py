@@ -164,7 +164,12 @@ NODE = shutil.which("node")
 # repeat both went with them. The relocation's own cost is measured in the
 # durable records, where it is re-taken rather than going stale beside a
 # digest.
-MODEL_SHA256 = "451fde821ce882fb37ee1258e498fa2a1778350a57665853fc87f71695f36aec"
+# V8 changes the model alone, and only for the namespace closure the V7
+# review required: `TEXT_HOME`, `textTrail` and `textLeaf`, wired into the
+# prefix and the carried fallback, so a Catena text request resolves only
+# inside byte-exact `structure/catena/text/` and a whitespace-wrapped path is
+# refused rather than repaired. The page is untouched.
+MODEL_SHA256 = "ae5afaa3f093cdd492bb8bc998f213010cdc54bc74572beba14946111e89fd87"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -1062,6 +1067,88 @@ V7_TEXT_PATH_NO_PREFIX = _fixture({
         # A directory, not a file: `trail`'s grammar is not `leaf`'s.
         _voice_fragment(10, id="carried-dir",
                         text_path="structure/catena/text/"),
+    ],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
+# ==========================================================================
+# V8 §1 — the NAMESPACE, and the request sink it still reached
+#
+# The V7 review proved the remaining hole at `fetch`: `trail` and `leaf` state
+# what a path of this data root LOOKS like and neither states which directory
+# this route OWNS. So a spine prefix of `structure/paragraphs/` composed a
+# request outside the Catena holding, and a carried
+# `structure/paragraphs/text/<same-id>.json` — same identity-looking tail,
+# wrong namespace — passed the same-stem check and fetched a real Sources
+# text sharing that id. Whitespace-wrapped paths were also trimmed into
+# validity. The closure is `textTrail`/`textLeaf`: byte-exact
+# `structure/catena/text/`, no whitespace repair, for both the composed and
+# the carried form.
+#
+# Every path below is an ADVERSARIAL TEST INPUT, not a corpus claim: the
+# tracked corpus writes exactly one prefix, `structure/catena/text/`, and the
+# fixture corpus carries no other directory either.
+
+# The reviewer's first vector: a well-formed directory of this data root that
+# is not this route's. Every fragment id is readable, so V7 composed and
+# fetched `structure/paragraphs/<id>.json` for each.
+V8_WRONG_NAMESPACE_PREFIX = _fixture({
+    "token": "Gen", "chapter": 1, "text_prefix": "structure/paragraphs/",
+    "sources": {str(n): _voice_source(n) for n in range(1, 4)},
+    "fragments": [
+        _voice_fragment(1, id="same-stem-1"),
+        _voice_fragment(2, id="same-stem-2"),
+        _voice_fragment(3, id="same-stem-3"),
+    ],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
+# The byte-exact question, asked of the prefix: the RIGHT namespace wrapped in
+# whitespace was trimmed into validity, which is the page deciding what the
+# record meant and then requesting it.
+V8_PADDED_PREFIX = _fixture(dict(
+    V8_WRONG_NAMESPACE_PREFIX, text_prefix="  structure/catena/text/  "))
+
+# A text body PLANTED at the same-stem wrong-namespace address the reviewer's
+# reproduction fetched. If the closure leaks, this is served, rendered, and
+# caught by content as well as by the journal.
+V8_PLANTED_TEXT = _fixture({
+    "id": "same-stem-1",
+    "text": "PLANTED WRONG-NAMESPACE BODY — not this route's text."})
+
+# The reviewer's second vector and its family: carried paths whose tail looks
+# like an identity of this corpus while the namespace is someone else's. Only
+# the first fragment's path is inside `structure/catena/text/` byte-exactly.
+V8_WRONG_NAMESPACE_CARRIED = _fixture({
+    "token": "Gen", "chapter": 1,
+    "sources": {str(n): _voice_source(n) for n in range(1, 11)},
+    "fragments": [
+        _voice_fragment(1, id="ns-valid",
+                        text_path="structure/catena/text/ns-valid.json"),
+        # THE V7 REPRODUCTION EXACTLY: same stem, under the Paragraphs text
+        # directory, with no prefix to displace it.
+        _voice_fragment(2, id="ns-paragraphs-text",
+                        text_path="structure/paragraphs/text/ns-paragraphs-text.json"),
+        _voice_fragment(3, id="ns-paragraphs",
+                        text_path="structure/paragraphs/ns-paragraphs.json"),
+        _voice_fragment(4, id="ns-parent",
+                        text_path="structure/catena/ns-parent.json"),
+        _voice_fragment(5, id="ns-root",
+                        text_path="structure/ns-root.json"),
+        _voice_fragment(6, id="ns-sibling",
+                        text_path="douay-rheims/chapters/gen/ns-sibling.json"),
+        _voice_fragment(7, id="ns-traversal-in",
+                        text_path="../structure/catena/text/ns-traversal-in.json"),
+        _voice_fragment(8, id="ns-absolute",
+                        text_path="/structure/catena/text/ns-absolute.json"),
+        # `structure/catena/textual/` is another namespace, not a longer
+        # spelling of this one: the boundary is the closing slash.
+        _voice_fragment(9, id="ns-boundary",
+                        text_path="structure/catena/textual/ns-boundary.json"),
+        # The RIGHT namespace, wrapped in whitespace. Trimmed into validity is
+        # repair, and repair is the page deciding what the record meant.
+        _voice_fragment(10, id="ns-padded",
+                        text_path="  structure/catena/text/ns-padded.json  "),
     ],
     "leads": [], "blocked": [], "refusals": {},
 })
@@ -2075,6 +2162,25 @@ SCENARIOS = [
      "steps": [{"do": "openEveryFragment", "label": "opened"}]},
     {"name": "v7-text-path-no-prefix", "hash": GEN1,
      "files": {"structure/catena/01-gen/001.json": V7_TEXT_PATH_NO_PREFIX},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # =============================================================== V8 §1
+    # The NAMESPACE at the request sink. A body is PLANTED at the same-stem
+    # wrong-namespace address in each scenario, so a leak would be served and
+    # rendered rather than quietly 404ing — the journal and the content both
+    # have to stay clean.
+    {"name": "v8-wrong-namespace-prefix", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V8_WRONG_NAMESPACE_PREFIX,
+               "structure/paragraphs/same-stem-1.json": V8_PLANTED_TEXT},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v8-padded-prefix", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V8_PADDED_PREFIX,
+               "structure/catena/text/same-stem-1.json": V8_PLANTED_TEXT},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v8-wrong-namespace-carried", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V8_WRONG_NAMESPACE_CARRIED,
+               "structure/paragraphs/text/ns-paragraphs-text.json":
+                   V8_PLANTED_TEXT},
      "steps": [{"do": "openEveryFragment", "label": "opened"}]},
 
     # =============================================================== V7 §6
@@ -8236,6 +8342,88 @@ class V7TextPathRequestSinkTest(ReplayTest):
         self.assertEqual(page["fragmentTexts"][1:], [said] * 9)
         self.assertEqual(page["busy"], "false")
         self.assertEqual(page["tallyText"], "10 fragments held")
+
+
+class V8TextNamespaceRequestSinkTest(ReplayTest):
+    """V8 §1 — only the owned namespace reaches the request sink.
+
+    The V7 review proved the hole at `fetch`, twice: a well-formed prefix of
+    another directory composed `structure/paragraphs/<id>.json` and requested
+    it, and a carried `structure/paragraphs/text/<same-id>.json` passed the
+    same-stem check and fetched a real Sources text sharing that id. Both
+    scenarios plant a body at the wrong-namespace address, so a leak here is a
+    SERVED, RENDERED page — caught by the journal and by the words alike.
+
+    Every scenario opens every fragment, so `fetched` afterwards is the
+    complete set of requests the whole chapter can cause.
+    """
+
+    BOOTSTRAP = V7TextPathRequestSinkTest.BOOTSTRAP
+
+    NO_TEXT = "This fragment carries no text file, so nothing of it can be shown."
+
+    def opened(self, name):
+        return self.snapshot(name, "opened")
+
+    def test_a_wrong_namespace_prefix_composes_no_request(self):
+        # The whole journal, pinned entire: three readable ids under a
+        # `structure/paragraphs/` prefix compose nothing — not the carried
+        # form, not a same-stem fallback, not a rewritten one.
+        page = self.opened("v8-wrong-namespace-prefix")
+        self.assertEqual(page["fetched"], self.BOOTSTRAP)
+
+    def test_a_padded_right_namespace_prefix_is_not_repaired(self):
+        # `"  structure/catena/text/  "` trimmed into validity composed a
+        # VALID address, which is why the planted body sits at one: repair is
+        # the page deciding what the record meant, and it makes no request.
+        page = self.opened("v8-padded-prefix")
+        self.assertEqual(page["fetched"], self.BOOTSTRAP)
+
+    def test_a_carried_path_is_requested_only_inside_the_owned_namespace(self):
+        # Ten same-looking tails; one owned namespace. The journal holds the
+        # bootstrap and exactly one text request, and every post-bootstrap
+        # request begins with the byte-exact namespace.
+        page = self.opened("v8-wrong-namespace-carried")
+        self.assertEqual(page["fetched"],
+                         self.BOOTSTRAP + ["structure/catena/text/ns-valid.json"])
+        for one in page["fetched"][len(self.BOOTSTRAP):]:
+            self.assertTrue(one.startswith("structure/catena/text/"), one)
+
+    def test_the_planted_wrong_namespace_body_is_never_shown(self):
+        # The reviewer's reproduction rendered the other namespace's words.
+        # Here the same words are planted and must appear NOWHERE: not as a
+        # fragment's text, not as stale substitution, not as an absence claim.
+        for name in ("v8-wrong-namespace-prefix", "v8-padded-prefix",
+                     "v8-wrong-namespace-carried"):
+            with self.subTest(scenario=name):
+                page = self.opened(name)
+                self.assertFalse(
+                    [one for one in page["fetched"] if "PLANTED" in one])
+                for said in page["fragmentTexts"]:
+                    self.assertNotIn("PLANTED", said)
+                    self.assertNotIn("not this route's text", said)
+
+    def test_each_refused_fragment_says_it_carries_no_text(self):
+        # A refused address is not a fragment lost and not a claim invented:
+        # the row stands, says it carries no text file, and the route
+        # terminates — busy released, status written, no error section, no
+        # history write, nothing replaced.
+        prefixed = self.opened("v8-wrong-namespace-prefix")
+        self.assertEqual(prefixed["fragmentCount"], 3)
+        self.assertEqual(prefixed["fragmentTexts"], [self.NO_TEXT] * 3)
+        self.assertEqual(prefixed["tallyText"], "3 fragments held")
+        self.assertEqual(prefixed["statusWrites"],
+                         ["Genesis 1, Douay-Rheims (Challoner), 3 fragments held."])
+        carried = self.opened("v8-wrong-namespace-carried")
+        self.assertEqual(carried["fragmentCount"], 10)
+        self.assertEqual(carried["fragmentTexts"][1:], [self.NO_TEXT] * 9)
+        for page in (prefixed, carried):
+            self.assertEqual(page["busy"], "false")
+            self.assertEqual(page["errorSections"], [])
+            self.assertEqual(page["hash"], GEN1)
+            self.assertEqual(page["hashWrites"], [])
+            self.assertEqual(page["replaced"], [])
+            self.assertIsNone(page["failureText"])
 
 
 class V7HollowFragmentMemberTest(ReplayTest):

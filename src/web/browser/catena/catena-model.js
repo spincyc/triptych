@@ -286,6 +286,40 @@
   }
 
   /**
+   * THE ONE DIRECTORY CATENA TEXT LIVES IN. V8, and the namespace the V7
+   * review proved `trail` and `leaf` never asked about: both state what a path
+   * of this data root looks like, and neither states WHICH path this route
+   * owns, so `structure/paragraphs/` composed a request and a carried
+   * `structure/paragraphs/text/<same-id>.json` fetched a real Sources text
+   * sharing that id. A grammar names a shape; only the namespace names a
+   * holding. The trailing slash is load-bearing: with it, `startsWith` is a
+   * directory-boundary test, so `structure/catena/textual/` is another
+   * namespace and not a longer spelling of this one.
+   */
+  const TEXT_HOME = 'structure/catena/text/';
+
+  /**
+   * A DIRECTORY CATENA TEXT MAY BE REQUESTED FROM — `TEXT_HOME` or below — or
+   * ''. `trail`'s grammar, AND the byte-exact namespace, AND no whitespace
+   * repair: as with `ident`, `" structure/catena/text/"` trimmed into validity
+   * is the page deciding what the record meant and then requesting it.
+   */
+  function textTrail(value) {
+    return typeof value === 'string' && trail(value) === value
+      && value.startsWith(TEXT_HOME)
+      ? value
+      : '';
+  }
+
+  /** A CATENA TEXT FILE — a `leaf` inside `TEXT_HOME`, byte-exact — or ''. */
+  function textLeaf(value) {
+    return typeof value === 'string' && leaf(value) === value
+      && value.startsWith(TEXT_HOME)
+      ? value
+      : '';
+  }
+
+  /**
    * The members of a list that are RECORDS, and only those.
    *
    * A collection is validated member by member, because a malformed neighbour
@@ -487,16 +521,17 @@
       // live and the fragment states its own identity; the request is built
       // from those two validated values and from nothing else. Where the file
       // states no prefix — the sample corpus does not — a `text_path` the
-      // record itself carries may stand in, but only when it is a relative
-      // JSON file of this data root's own grammar AND its stem is this
-      // fragment's own validated id. So the path can address one thing: the
-      // text of the fragment that carried it. An injected path names some
-      // other file by definition, and is discarded here, before projection
-      // completes, rather than guarded at the fetch.
+      // record itself carries may stand in, but only when it is a Catena text
+      // file inside `TEXT_HOME` byte-exactly AND its stem is this fragment's
+      // own validated id. So the path can address one thing: the text, in this
+      // route's own holding, of the fragment that carried it. A same-stem file
+      // in another namespace names some other text by definition — that is the
+      // V7 finding — and is discarded here, before projection completes,
+      // rather than guarded at the fetch.
       text_path: id
         ? (prefix ? prefix + id + '.json'
-          : leaf(own.text_path).endsWith('/' + id + '.json')
-            ? leaf(own.text_path)
+          : textLeaf(own.text_path).endsWith('/' + id + '.json')
+            ? textLeaf(own.text_path)
             : '')
         : '',
       author: author,
@@ -596,8 +631,9 @@
   /** Every fragment of one chapter file that can be one, in the order given. */
   function chapterFragments(file) {
     const sources = bag(bag(file).sources);
-    // `trail`, not `sound`: the prefix is the head of a URL this page requests.
-    const prefix = trail(bag(file).text_prefix);
+    // `textTrail`, not `trail`: the prefix is the head of a URL this page
+    // requests, and only the route's own namespace may head one.
+    const prefix = textTrail(bag(file).text_prefix);
     const rows = [];
     // `records` rather than `file.fragments || []`: a spine whose `fragments`
     // is a record or a string is a broken record, and mapping over it threw out
@@ -1806,6 +1842,9 @@
     bookToken: bookToken,
     trail: trail,
     leaf: leaf,
+    TEXT_HOME: TEXT_HOME,
+    textTrail: textTrail,
+    textLeaf: textLeaf,
     records: records,
     ORIGINAL: ORIGINAL,
     TRANSLATION: TRANSLATION
