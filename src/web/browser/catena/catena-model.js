@@ -320,6 +320,22 @@
   }
 
   /**
+   * THE REFUSED REFERENCE, SAID. V10, the V9 review: the model projected
+   * `text_refused` and no production consumer read it, so the page sent the
+   * refused row's empty path through the same `ABSENT` sentinel as genuine
+   * absence and told the reader the fragment "carries no text file" — false
+   * of a fragment whose spine stated a reference this page declined to use.
+   * The sentence lives here, beside the projection that decides the refusal,
+   * because the page's own file has ninety-nine gzipped bytes of ceiling and
+   * this one has none. It says only what is established: a reference was
+   * stated, it is not usable as written, and no text is shown. It does not
+   * say the corpus lacks the text, the file is missing, a request failed, or
+   * anything was blocked — none of which the refusal establishes.
+   */
+  const TEXT_REFUSED = 'A text reference was supplied for this fragment, '
+    + 'but it cannot be used as written, so no text is shown.';
+
+  /**
    * The members of a list that are RECORDS, and only those.
    *
    * A collection is validated member by member, because a malformed neighbour
@@ -525,12 +541,19 @@
     const extent = bag(said('extent'));
     const voice = sound(said('voice'));
     // The claim is re-asked, not trusted: `stated` must be the boolean itself
-    // and the trail must still be the route's own namespace. Any other
-    // argument — the old string contract included — is neither the absent
-    // state nor a valid statement, and resolves no text: fail closed.
+    // and the trail must still be the route's own namespace. V10, the V9
+    // review: absence is ONE shape — `{stated: false, trail: ''}`, exactly
+    // what `chapterFragments` builds off a spine that never stated a prefix.
+    // The old absence arm asked only `stated === false`, so the contradictory
+    // direct claim `{stated: false, trail: <valid>}` — absence and a
+    // statement at once — opened the carried door the contract said was
+    // closed. Every shape that is neither that one absence nor a valid
+    // statement now projects as REFUSED: no text resolves, and the row says
+    // why. Fail closed means classified closed, not merely unresolved.
     const claim = bag(prefix);
     const stated = claim.stated;
     const head = textTrail(claim.trail);
+    const absent = claim.stated === false && claim.trail === '';
     return {
       id: id,
       // COMPOSED, NEVER CARRIED. The file states once where its fragment texts
@@ -551,7 +574,7 @@
       // door; refusal resolves no text at all.
       text_path: id
         ? (stated === true && head !== '' ? head + id + '.json'
-          : stated === false
+          : absent
             && textLeaf(own.text_path).endsWith('/' + id + '.json')
               ? textLeaf(own.text_path)
               : '')
@@ -559,8 +582,11 @@
       // THE REFUSAL, KEPT. The row is the only channel across the page
       // boundary, and '' alone reads "the record states no text location"
       // over "it stated one this page refused". The fact travels so no later
-      // reader has to re-derive it from the absence of a path.
-      text_refused: stated === true && head === '',
+      // reader has to re-derive it from the absence of a path. Everything
+      // that is not the one absence shape and not a valid statement is
+      // refused — the stated-and-declined prefix, and every contradictory
+      // or malformed claim alike.
+      text_refused: !absent && !(stated === true && head !== ''),
       author: author,
       work: work,
       date: say(said('date')),
@@ -1884,6 +1910,7 @@
     trail: trail,
     leaf: leaf,
     TEXT_HOME: TEXT_HOME,
+    TEXT_REFUSED: TEXT_REFUSED,
     textTrail: textTrail,
     textLeaf: textLeaf,
     records: records,

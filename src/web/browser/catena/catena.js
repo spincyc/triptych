@@ -281,6 +281,13 @@
     details.addEventListener('toggle', () => {
       if (!details.open || asked) return;
       asked = true;
+      // THE REFUSAL IS TERMINAL, consumed before the sink: no path —
+      // carried, cached or late — may answer a claim the page declined.
+      if (fragment.text_refused) {
+        text.className = 'fragment-text missing';
+        text.textContent = M.TEXT_REFUSED;
+        return;
+      }
       fragmentText(fragment.text_path).then(
         (loaded) => {
           // A completion for a rebuilt page mutates nothing here.
