@@ -480,8 +480,8 @@ which is the honest state rather than a rounding of it.
 
 <!-- promised-deliverable: gpt-mary-new-ark-journey-2026-08-15 -->
 
-**Corrected, reviewed, installed, and release-bound on 16 August 2026; push and
-live verification remain.** The two provider editions now share one catalog
+**Corrected, reviewed, installed, pushed, and verified live on 16 August
+2026.** The two provider editions now share one catalog
 row while retaining their different titles, provider-qualified routes, PDF
 bytes, the published GPT web reader, and each edition's own drawings. The GPT
 edition replaces its rough wavy-line schematics with a source-first two-panel
@@ -519,13 +519,24 @@ that distinguishes narrated, inferred, traditional, candidate, regional, and
 unknown geography. The Ark and sanctuary captions distinguish commanded or
 attested data from unrecoverable form and location.
 
+Content commit `2b9233978bcd8e798467bffaccf699b96031d97a` was pushed to
+`origin/main` without rewriting history. GitHub Pages run
+[`31957951080`](https://github.com/spincyc/triptych/actions/runs/31957951080)
+completed successfully for that exact head. The live
+[Mariology catalog](https://mystago.gy/library/mariology.html),
+[GPT web reader](https://mystago.gy/web/gpt/theology/mariology/ark-of-the-covenant.html),
+[GPT PDF](https://mystago.gy/pdf/gpt/theology/mariology/ark-of-the-covenant.pdf),
+and [Claude PDF](https://mystago.gy/pdf/claude/theology/mariology/ark-of-the-covenant.pdf)
+each returned HTTP 200. The two deployed PDFs matched the reviewed SHA-256
+identities above, and the live catalog contained exactly one shared Ark row
+with each distinct provider title and route. All twelve acceptance requirements
+pass.
+
 The earlier 42-page GPT artifact `a520adb39130bb3b65a3bd7d92926fbc77126650fdf593d0680fc10bee125843`,
 web artifact `3a5e96c2405e1d311acf65ef931a45ebee502e459817f5a744833858ce62d1bc`,
 commit `a35dc5cfb82be027256d74c6f2b256f830f1073e`, and Pages run
 [`31935618065`](https://github.com/spincyc/triptych/actions/runs/31935618065)
-are superseded baseline evidence, not evidence for this correction. Eleven of
-the twelve current acceptance requirements pass; exact commit, push, Pages run,
-and the current `mystago.gy` live-route identities remain to be recorded.
+are superseded baseline evidence, not evidence for this correction.
 
 ### Corpus browser foundation design
 

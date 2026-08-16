@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-mary-new-ark-journey-2026-08-15"
 owner = "src/gpt/theology/mariology/ark-of-the-covenant/research/scope.md"
 promise = "Publish a source-audited Catholic Marian study that tells the Ark's scriptural journey, presents Mary as its living New-Covenant fulfillment in Christ, synthesizes authenticated patristic and saintly reception, relates the four Marian dogmas, gives Joseph and Mary's true virginal marriage a positive and proper place in the typology, applies the requested spiritual pedagogy, and includes a source-controlled detailed graphite map and Ark/sanctuary plates in the reviewed GPT PDF and web edition."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "ark-narrative-and-scripture"
@@ -72,7 +72,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "validated-push-and-deployment"
   criterion = "Required source, metadata, PDF, web, catalog, release, public-site, and deployment gates pass; the intended exact commit is pushed to origin/main without rewriting history; and the resulting Pages run and affected live routes are verified."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
 
   [[deliverables.requirements]]
