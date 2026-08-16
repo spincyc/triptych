@@ -1,0 +1,66 @@
+2026-08-15T19:38:57<tz>
+START focused-catena
+CMD: python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+exit=0
+2026-08-15T19:39:00<tz>
+END focused-catena
+2026-08-15T19:39:00<tz>
+START catena-check
+CMD: python3 scripts/_catena.py check
+exit=0
+2026-08-15T19:39:03<tz>
+END catena-check
+2026-08-15T19:39:03<tz>
+START promised
+CMD: tools/tpt check-promised-deliverables
+exit=0
+2026-08-15T19:39:03<tz>
+END promised
+2026-08-15T19:39:03<tz>
+START full-discovery
+CMD: python3 -m unittest discover -s tools/tests
+exit=1
+2026-08-15T19:47:13<tz>
+END full-discovery
+2026-08-15T19:47:13<tz>
+START make-check
+CMD: make -k check
+exit=2
+2026-08-15T19:52:13<tz>
+END make-check
+2026-08-15T19:52:13<tz>
+START release-bindings
+CMD: make check-release-bindings
+exit=2
+2026-08-15T19:52:14<tz>
+END release-bindings
+2026-08-15T19:52:14<tz>
+START public-site
+CMD: make public-site
+exit=0
+2026-08-15T19:52:20<tz>
+END public-site
+2026-08-15T19:52:20<tz>
+START browser-gate
+CMD: node tools/tests/corpus_browser_gate.mjs --json-out '$SCRATCH/-home-<user>-git-worktrees-triptych-e1-catena-v3/<uuid>/scratchpad/v8-package-src/logs/browser-gate-head.json'
+exit=1
+2026-08-15T19:53:52<tz>
+END browser-gate
+2026-08-15T19:53:52<tz>
+START browser-static
+CMD: python3 -m unittest discover -s tools/tests -p 'test_browser_static.py'
+exit=0
+2026-08-15T19:53:53<tz>
+END browser-static
+2026-08-15T19:53:53<tz>
+START gzip-sizes
+CMD: python3 '$SCRATCH/-home-<user>-git-worktrees-triptych-e1-catena-v3/<uuid>/scratchpad/v8-package-src/logs/gzip-sizes.py' src/web/browser/catena
+exit=0
+2026-08-15T19:53:53<tz>
+END gzip-sizes
+2026-08-15T19:53:53<tz>
+START request-journals
+CMD: python3 '$SCRATCH/-home-<user>-git-worktrees-triptych-e1-catena-v3/<uuid>/scratchpad/v8-package-src/logs/journal-dump.py' tools/tests/test_catena_wave_1.py
+exit=0
+2026-08-15T19:53:55<tz>
+END request-journals

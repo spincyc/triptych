@@ -1,0 +1,66 @@
+2026-08-15T19:59:24<tz>
+START focused-catena
+CMD: python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+exit=0
+2026-08-15T19:59:28<tz>
+END focused-catena
+2026-08-15T19:59:28<tz>
+START catena-check
+CMD: python3 scripts/_catena.py check
+exit=0
+2026-08-15T19:59:31<tz>
+END catena-check
+2026-08-15T19:59:31<tz>
+START promised
+CMD: tools/tpt check-promised-deliverables
+exit=0
+2026-08-15T19:59:31<tz>
+END promised
+2026-08-15T19:59:31<tz>
+START full-discovery
+CMD: python3 -m unittest discover -s tools/tests
+exit=1
+2026-08-15T20:07:35<tz>
+END full-discovery
+2026-08-15T20:07:35<tz>
+START make-check
+CMD: make -k check
+exit=2
+2026-08-15T20:12:27<tz>
+END make-check
+2026-08-15T20:12:27<tz>
+START release-bindings
+CMD: make check-release-bindings
+exit=2
+2026-08-15T20:12:28<tz>
+END release-bindings
+2026-08-15T20:12:28<tz>
+START public-site
+CMD: make public-site
+exit=0
+2026-08-15T20:12:33<tz>
+END public-site
+2026-08-15T20:12:33<tz>
+START browser-gate
+CMD: node tools/tests/corpus_browser_gate.mjs --json-out '$SCRATCH/-home-<user>-git-worktrees-triptych-e1-catena-v3/<uuid>/scratchpad/v8-package-src/logs/browser-gate-parent.json'
+exit=1
+2026-08-15T20:14:10<tz>
+END browser-gate
+2026-08-15T20:14:10<tz>
+START gzip-sizes
+CMD: python3 '$SCRATCH/-home-<user>-git-worktrees-triptych-e1-catena-v3/<uuid>/scratchpad/v8-package-src/logs/gzip-sizes.py' src/web/browser/catena
+exit=0
+2026-08-15T20:14:10<tz>
+END gzip-sizes
+2026-08-15T20:14:10<tz>
+START v8-tests-against-parent
+CMD: cp '$HOME/git/worktrees/triptych/e1-catena-v3/spincyc/triptych-e1-catena-v8/tools/tests/test_catena_wave_1.py' tools/tests/test_catena_wave_1.py && python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py' -v
+exit=1
+2026-08-15T20:14:12<tz>
+END v8-tests-against-parent
+2026-08-15T20:14:12<tz>
+START request-journals
+CMD: python3 '$SCRATCH/-home-<user>-git-worktrees-triptych-e1-catena-v3/<uuid>/scratchpad/v8-package-src/logs/journal-dump.py' tools/tests/test_catena_wave_1.py
+exit=0
+2026-08-15T20:14:14<tz>
+END request-journals

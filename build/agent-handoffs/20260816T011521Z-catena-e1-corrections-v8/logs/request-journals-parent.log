@@ -1,0 +1,181 @@
+{
+  "v8-wrong-namespace-prefix": {
+    "fetched": [
+      "structure/catena/index.json",
+      "bibles.json",
+      "structure/paragraphs/index.json",
+      "structure/catena/01-gen/001.json",
+      "douay-rheims/chapters/Gen/1.json",
+      "structure/paragraphs/douay-rheims/01-gen/001.json",
+      "structure/paragraphs/same-stem-1.json",
+      "structure/paragraphs/same-stem-2.json",
+      "structure/paragraphs/same-stem-3.json"
+    ],
+    "fragmentCount": 3,
+    "tallyText": "3 fragments held",
+    "statusWrites": [
+      "Genesis 1, Douay-Rheims (Challoner), 3 fragments held."
+    ],
+    "busy": "false",
+    "errorSections": [],
+    "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+    "hashWrites": [],
+    "replaced": [],
+    "failureText": null,
+    "fragmentTexts": [
+      "PLANTED WRONG-NAMESPACE BODY \u2014 not this route's text.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page."
+    ]
+  },
+  "v8-padded-prefix": {
+    "fetched": [
+      "structure/catena/index.json",
+      "bibles.json",
+      "structure/paragraphs/index.json",
+      "structure/catena/01-gen/001.json",
+      "douay-rheims/chapters/Gen/1.json",
+      "structure/paragraphs/douay-rheims/01-gen/001.json",
+      "structure/catena/text/same-stem-1.json",
+      "structure/catena/text/same-stem-2.json",
+      "structure/catena/text/same-stem-3.json"
+    ],
+    "fragmentCount": 3,
+    "tallyText": "3 fragments held",
+    "statusWrites": [
+      "Genesis 1, Douay-Rheims (Challoner), 3 fragments held."
+    ],
+    "busy": "false",
+    "errorSections": [],
+    "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+    "hashWrites": [],
+    "replaced": [],
+    "failureText": null,
+    "fragmentTexts": [
+      "PLANTED WRONG-NAMESPACE BODY \u2014 not this route's text.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page."
+    ]
+  },
+  "v8-wrong-namespace-carried": {
+    "fetched": [
+      "structure/catena/index.json",
+      "bibles.json",
+      "structure/paragraphs/index.json",
+      "structure/catena/01-gen/001.json",
+      "douay-rheims/chapters/Gen/1.json",
+      "structure/paragraphs/douay-rheims/01-gen/001.json",
+      "structure/catena/text/ns-valid.json",
+      "structure/paragraphs/text/ns-paragraphs-text.json",
+      "structure/paragraphs/ns-paragraphs.json",
+      "structure/catena/ns-parent.json",
+      "structure/ns-root.json",
+      "douay-rheims/chapters/gen/ns-sibling.json",
+      "structure/catena/textual/ns-boundary.json",
+      "structure/catena/text/ns-padded.json"
+    ],
+    "fragmentCount": 10,
+    "tallyText": "10 fragments held",
+    "statusWrites": [
+      "Genesis 1, Douay-Rheims (Challoner), 10 fragments held."
+    ],
+    "busy": "false",
+    "errorSections": [],
+    "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+    "hashWrites": [],
+    "replaced": [],
+    "failureText": null,
+    "fragmentTexts": [
+      "The text of this fragment was not published beside the page.",
+      "PLANTED WRONG-NAMESPACE BODY \u2014 not this route's text.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "This fragment carries no text file, so nothing of it can be shown.",
+      "This fragment carries no text file, so nothing of it can be shown.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page."
+    ]
+  },
+  "v7-text-path": {
+    "fetched": [
+      "structure/catena/index.json",
+      "bibles.json",
+      "structure/paragraphs/index.json",
+      "structure/catena/01-gen/001.json",
+      "douay-rheims/chapters/Gen/1.json",
+      "structure/paragraphs/douay-rheims/01-gen/001.json",
+      "structure/catena/text/path-valid.json",
+      "structure/catena/text/path-object.json",
+      "structure/catena/text/path-array.json",
+      "structure/catena/text/path-number.json",
+      "structure/catena/text/path-null.json",
+      "structure/catena/text/path-empty.json",
+      "structure/catena/text/path-space.json",
+      "structure/catena/text/path-traversal.json",
+      "structure/catena/text/path-absolute.json",
+      "structure/catena/text/path-encoded.json",
+      "structure/catena/text/path-boolean.json"
+    ],
+    "fragmentCount": 12,
+    "tallyText": "12 fragments held",
+    "statusWrites": [
+      "Genesis 1, Douay-Rheims (Challoner), 12 fragments held."
+    ],
+    "busy": "false",
+    "errorSections": [],
+    "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+    "hashWrites": [],
+    "replaced": [],
+    "failureText": null,
+    "fragmentTexts": [
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "The text of this fragment was not published beside the page.",
+      "This fragment carries no text file, so nothing of it can be shown."
+    ]
+  },
+  "v7-text-path-no-prefix": {
+    "fetched": [
+      "structure/catena/index.json",
+      "bibles.json",
+      "structure/paragraphs/index.json",
+      "structure/catena/01-gen/001.json",
+      "douay-rheims/chapters/Gen/1.json",
+      "structure/paragraphs/douay-rheims/01-gen/001.json",
+      "structure/catena/text/carried-valid.json"
+    ],
+    "fragmentCount": 10,
+    "tallyText": "10 fragments held",
+    "statusWrites": [
+      "Genesis 1, Douay-Rheims (Challoner), 10 fragments held."
+    ],
+    "busy": "false",
+    "errorSections": [],
+    "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+    "hashWrites": [],
+    "replaced": [],
+    "failureText": null,
+    "fragmentTexts": [
+      "The text of this fragment was not published beside the page.",
+      "This fragment carries no text file, so nothing of it can be shown.",
+      "This fragment carries no text file, so nothing of it can be shown.",
+      "This fragment carries no text file, so nothing of it can be shown.",
+      "This fragment carries no text file, so nothing of it can be shown.",
+      "This fragment carries no text file, so nothing of it can be shown.",
+      "This fragment carries no text file, so nothing of it can be shown.",
+      "This fragment carries no text file, so nothing of it can be shown.",
+      "This fragment carries no text file, so nothing of it can be shown.",
+      "This fragment carries no text file, so nothing of it can be shown."
+    ]
+  }
+}
