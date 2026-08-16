@@ -178,6 +178,19 @@ review, installed-PDF review.
   the PDF only. Rebuilt clean at 66 pages (no overfull boxes, no undefined
   references); all pages visually reviewed.
 
+- 2026-08-16 (second pass) — voice and illustration revision, on review feedback
+  that the document discussed its own three-panel structure instead of living in
+  it, over-explained its method, and read as collated research. All meta-discourse
+  about panels and the "toll-gate" removed from the body (the structure is now
+  enacted, not narrated); the rules-of-typology chapter cut by roughly a third;
+  the overture's prospectus replaced with a compact statement of method; every
+  "this study prints/reports" tic reduced to an authorial voice. All quoted spans
+  and witness blocks verified byte-identical to the released text. The seven
+  drawings redrawn from the wobbled-line sketch register into a fine-line tonal
+  register: crisp graded strokes, clipped cross-hatching, hachured terrain on the
+  maps, poché walls on the temple plan, feathered cherubim on the ark. Rebuilt
+  clean at 65 pages; colophon shares the final content page.
+
 ## Review completed (internal only)
 
 - Draft review, 180-quotation Douay collation, full-page visual review, and the

@@ -44,29 +44,27 @@
 \renewcommand{\enoteformat}{%
   \noindent\footnotesize\makebox[1.8em][l]{\theenmark.}\hangindent=1.8em}
 
-% Hand-drawn figure program. All figures are monochrome line drawings in a
-% deliberate pencil-sketch register: wobbled strokes via path morphing, light
-% gray washes, no photographic pretension. The random-steps decoration is
-% seeded once with a fixed value so unchanged sources rebuild to identical
-% bytes; do not remove the seed.
-\usetikzlibrary{decorations.pathmorphing}
-\pgfmathsetseed{19620815}
+% Hand-drawn figure program. All figures are monochrome pencil illustrations
+% in a fine-line engraving register: crisp graded stroke weights, with tone
+% built by clipped hatching rather than by line decoration.
 \tikzset{
-  sketch/.style={draw=black, line width=0.55pt, decorate,
-    decoration={random steps, segment length=6pt, amplitude=0.35pt}},
-  sketchbold/.style={draw=black, line width=0.8pt, decorate,
-    decoration={random steps, segment length=6pt, amplitude=0.4pt}},
-  sketchthin/.style={draw=black, line width=0.35pt, decorate,
-    decoration={random steps, segment length=5pt, amplitude=0.3pt}},
-  sketchwash/.style={fill=black!7},
-  sketchdark/.style={fill=black!18},
+  sketch/.style={draw=black, line width=0.5pt},
+  sketchbold/.style={draw=black, line width=0.75pt},
+  sketchthin/.style={draw=black!85, line width=0.3pt},
+  sketchwash/.style={fill=black!6},
+  sketchdark/.style={fill=black!16},
   slabel/.style={font=\footnotesize, inner sep=1.5pt, align=center},
   stiny/.style={font=\scriptsize, inner sep=1pt, align=center},
   sroute/.style={draw=black, line width=0.7pt, dash pattern=on 4pt off 2.5pt,
-    decorate, decoration={random steps, segment length=7pt, amplitude=0.45pt},
     -{Stealth[length=2.4mm]}},
   slink/.style={draw=black, line width=0.4pt, dash pattern=on 1.6pt off 1.8pt,
     {Stealth[length=1.6mm]}-{Stealth[length=1.6mm]}},
+  pfine/.style={draw=black!75, line width=0.26pt},
+  pline/.style={draw=black!90, line width=0.4pt},
+  pbold/.style={draw=black, line width=0.58pt},
+  phatch/.style={draw=black!55, line width=0.18pt},
+  phatchdark/.style={draw=black!70, line width=0.2pt},
+  pwater/.style={draw=black!50, line width=0.24pt},
 }
 
 % A figure block: centered drawing with a numbered, self-identifying caption.
