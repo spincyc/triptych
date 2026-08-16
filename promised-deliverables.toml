@@ -1241,6 +1241,48 @@ state = "complete"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v8-2026-08-15"
+owner = "src/web/browser/catena"
+promise = "Answer the 2026-08-15 E1 Catena V7 independent review (d9ad5ec1a, CHANGES REQUIRED at e876b29e5) with exactly its stated first bounded commit: require the byte-exact structure/catena/text/ namespace for both composed and carried Catena text paths with no whitespace repair, prove the closure with same-stem wrong-namespace regressions at the actual request sink, preserve every valid corpus path byte-for-byte, record every other V7 finding open and untouched, issue one immutable exact-head V8 handoff, and return that head for fresh independent review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "byte-exact-text-namespace-closure"
+  criterion = "A Catena text request resolves only inside the byte-exact structure/catena/text/ namespace, for the prefix-composed and the carried fallback form alike: a same-stem or same-suffix path under structure/paragraphs/, a sibling or parent namespace, another corpus directory, an absolute path, traversal in or out, malformed encoding, a directory-boundary spoof such as structure/catena/textual/, and a whitespace-wrapped path are each refused with no trimming, stringifying, encoding, prefix-stripping, rewriting or same-stem fallback, and an invalid namespace means no request."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "same-stem-wrong-namespace-proved-at-the-sink"
+  criterion = "The proof pins the actual production request sink, not a helper return value: adversarial scenarios with a real body planted at the same-stem wrong-namespace address assert the entire fetched journal, zero requests to any invalid or rewritten path, that the planted words reach no visible or announced sink, and the terminal state of the rejected path — busy released, status written, rows standing and truthful, no error section, no history write, no stale substitution."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "valid-catena-text-requests-preserved"
+  criterion = "Every valid structure/catena/text/ request the corpus can cause still occurs byte-for-byte: all real tracked spines project their full text-path set unchanged, the fixture corpus's carried paths all stand, and the grammar is tightened no further than the exact owned namespace and the existing path-safety contract require."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "other-v7-findings-recorded-open"
+  criterion = "Every other finding of the V7 independent review remains open, untouched and recorded as such in the durable records; this micro-lane fixes none of them silently, regresses no passed V7 boundary, raises no ceiling, changes nothing under src/web/data/, and touches no release, common-gate, B0/shared-shell, protected Liturgy or PDF path."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
+
+  [[deliverables.requirements]]
+  id = "immutable-v8-handoff"
+  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V8 head, its parent e876b29e5, the review addressed d9ad5ec1a, the derived commit list and diff, the exact namespace contract, the valid-path and adversarial request-sink evidence kept distinct, fresh validation figures, budgets, release status, the open V7 blockers, a sanitization audit, a SHA-256 manifest and a package digest — without mutating any earlier sealed package and naming exactly what it supersedes, which is nothing."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "A fresh independent review of the exact V8 head and its new immutable package records a durable disposition, scoped first to the namespace closure. This lane does not review its own work and records no acceptance."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
+
+[[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v7-2026-08-15"
 owner = "src/web/browser/catena"
 promise = "Answer the 2026-08-14 E1 Catena V6 independent review (f183ed1b0, CHANGES REQUIRED at 4639b139f) with the smallest bounded correction that replaces raw fragment copying with an explicit typed projection, discards every unvalidated text_path before it can reach a request, refuses hollow fragment, absence and refusal members before they make rows, tallies or claims, stops an unreadable bootstrap root from manufacturing a domain claim, corrects the oracles that blessed each defect, issues one immutable exact-head handoff whose claims are machine-derived rather than typed, and returns that head for fresh independent review."

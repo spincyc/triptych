@@ -1139,6 +1139,93 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena route-owned correction lane, V8
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v8-2026-08-15 -->
+
+The disposition answered is **CHANGES REQUIRED** at exact candidate
+`e876b29e5797edcc6e86422daa807f4b1104ec81`, recorded by the independent review
+`d9ad5ec1ae35c308a0da5ed3456fd05fdad97cbd` on branch
+`review/catena-wave-1-e1-corrections-v7-independent`, which independently
+inspected evidence `92c88ab8c2d2b671009e8cf9f36aa5dd352f9b61` and verified
+package `build/agent-handoffs/20260815T174121Z-catena-e1-corrections-v7` with
+ZIP SHA-256
+`823ac17da5f0c0f79e11688f088638d73a453ecd4adb58cf46dcac01c275a5b8`. That
+review is a sibling of this line at the reviewed parent and is **not merged
+into it**: what follows records implementation-lane facts only.
+
+The review enumerated ten required production corrections, an architecture
+and combined-payload judgment, and a package-truthfulness correction, and
+gave **one exact next action**: start one V8 correction from the exact
+reviewed head and make its first bounded commit only the text namespace
+closure — byte-exact `structure/catena/text/` for both prefix and fallback
+paths, with same-stem wrong-namespace production request-sink regressions.
+This lane is that commit and nothing else, and it stops there deliberately:
+the review's continuation into the other enumerated blockers belongs to the
+next authorized pass, not to a micro-lane that would widen its own diff.
+
+The defect was a namespace nobody had stated. `trail` and `leaf` say what a
+path of this data root looks like; nothing said which directory this route
+owns, so a `text_prefix` of `structure/paragraphs/` composed and requested
+another namespace's file, a carried
+`structure/paragraphs/text/<same-id>.json` — same identity-looking tail,
+wrong namespace — passed the same-stem check and fetched a real Sources text
+sharing that id, and whitespace around either was trimmed into validity. The
+model now states the namespace once — `TEXT_HOME`, byte-exact
+`structure/catena/text/` — and `textTrail`/`textLeaf` require it at a
+directory boundary with no whitespace repair, for the composed and the
+carried form alike, before projection completes. An address outside the owned
+namespace becomes no request, no fallback, no rewritten path and no claim:
+the row stands and says it carries no text file, which is the truth about it.
+`catena.js` is untouched.
+
+The regressions are driven at the real sink. Three adversarial replay
+scenarios — the reviewer's prefix vector, the padded right-namespace prefix,
+and a ten-way carried matrix (same-stem `structure/paragraphs/text/`,
+sibling, parent, root, other-corpus, traversal in and out, absolute,
+`structure/catena/textual/` boundary spoof, padded) — each plant a real text
+body at the wrong-namespace address, so a leak would be served and rendered
+rather than quietly 404ing. Each pins the entire fetched journal, asserts
+the planted words appear at no sink, and holds the terminal state: `aria-busy`
+released, status written once, no error section, no history write, nothing
+replaced, no stale substitution. The adversarial paths are test fixtures
+stamped as such; the production corpus emits exactly one prefix,
+`structure/catena/text/`, and no hostile path — demonstrated, not assumed.
+
+Fresh figures at this head: focused Catena suite 510 (V7: 505), all green;
+`scripts/_catena.py check` passes at 1,351 fragments / 1 book / 73 canon
+entries, so all 1,356 real text paths and all 47 fixture carried paths stand
+unchanged; full discovery 1,861 tests with the same 14 failures / 13 errors /
+11 skips and the same 27-entry inherited name set; browser gate 2,290
+assertions, 1,836 / 226 / 228 with the same inherited 117/82/27 failure
+identity; `make -k check` exit and failing-target set unchanged; promise
+ledger valid; budgets unraised and unmoved — `catena.css` 7,629/8,000 whole
+and 2,676/2,700 stripped, `catena.js` 12,901/13,000 whole and 7,530/8,800
+stripped, both byte-identical to the reviewed head. The closure lives in
+`catena-model.js`, which carries no ceiling: gzipped it grows 27,832 to
+28,346 whole and 7,385 to 7,485 stripped, so the two files' combined payload
+is 41,247 gzipped against V7's 40,733 — disclosed, as the review requires,
+rather than presented as unchanged load. Four stale release bindings remain
+fail-closed, none re-signed; `src/web/data/` has zero changes.
+
+Every other V7 finding remains open and untouched here, recorded as the
+review left it: projection not yet the sole semantic source (orphan sources,
+scalar-translator coercion); source-only fragments still counting; absence
+members manufacturing rows and suppressing valid siblings; partial selection
+neither closed nor order-independent; refusal verse validation; unreadable
+roots becoming Catena claims; the locally suppressible unreadable
+`bibles.json` prose; the partial terminal proof and the missing full
+late-work sink vector; the oracles that still bless those defects; the
+CLI/web duplicated semantic model; the uncapped combined route payload
+question, asked again above and still awaiting its owner; and the package
+truthfulness and supersession corrections, which this lane answers only for
+its own new package.
+
+Status: **awaiting fresh independent review** of the exact V8 head and its
+immutable handoff archived on `evidence/catena-e1-corrections-v8-handoff`.
+This lane records no acceptance of its own work, marks no separately owned
+prerequisite complete, and does not review itself.
+
 ## Promised work
 
 ### Corpus browser foundation design
