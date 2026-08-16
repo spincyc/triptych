@@ -1261,7 +1261,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "cold-prewarmed-late-proved-at-the-sinks"
   criterion = "Production request-sink regressions prove the rejected branch cold (the whole fetched journal pinned to the bootstrap), prewarmed (a body legitimately cached under genuine absence is neither substituted into the refused route nor re-requested by it) and genuinely late (a held carried resolution released only after the refused route settles terminal, with its rows open, moves no guarded projection and the release is proved to have happened), asserting the complete terminal set: request journal, rendered body, row state, the announcement journal and the standing statusText, tally, aria-busy, URL and history, activeElement, error and failure sinks."
-  status = "pass"
+  status = "open"
   evidence = ["tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1285,8 +1285,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V9 head and its new immutable package records a durable disposition, scoped to the composed prefix and fallback closure and the package final-byte correctness. This lane does not review its own work and records no acceptance."
-  status = "open"
-  evidence = ["guidance/corpus-browser-roadmap.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
 
 [[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v8-2026-08-15"
@@ -1297,13 +1297,13 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "byte-exact-text-namespace-closure"
   criterion = "A Catena text request resolves only inside the byte-exact structure/catena/text/ namespace, for the prefix-composed and the carried fallback form alike: a same-stem or same-suffix path under structure/paragraphs/, a sibling or parent namespace, another corpus directory, an absolute path, traversal in or out, malformed encoding, a directory-boundary spoof such as structure/catena/textual/, and a whitespace-wrapped path are each refused with no trimming, stringifying, encoding, prefix-stripping, rewriting or same-stem fallback, and an invalid namespace means no request."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "same-stem-wrong-namespace-proved-at-the-sink"
   criterion = "The proof pins the actual production request sink, not a helper return value: adversarial scenarios with a real body planted at the same-stem wrong-namespace address assert the entire fetched journal, zero requests to any invalid or rewritten path, that the planted words reach no visible or announced sink, and the terminal state of the rejected path — busy released, status written, rows standing and truthful, no error section, no history write, no stale substitution."
-  status = "pass"
+  status = "open"
   evidence = ["tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1327,8 +1327,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V8 head and its new immutable package records a durable disposition, scoped first to the namespace closure. This lane does not review its own work and records no acceptance."
-  status = "open"
-  evidence = ["guidance/corpus-browser-roadmap.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
 
 [[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v7-2026-08-15"
@@ -1339,55 +1339,55 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "explicit-typed-fragment-projection"
   criterion = "A fragment or member entering semantic use is projected into a known internal record containing only validated fields, no arbitrary raw property is retained for later use, and that projection is the only source for rendering, tallies, rows, findings, refusals, paths, verse and paragraph identity, rights text, provenance and request identity; only the malformed unit is rejected and valid siblings survive in either listing order."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "unvalidated-text-path-reaches-no-request"
   criterion = "A text_path that is an object, array, number, boolean, null, empty, whitespace-only, traversal-like, absolute, outside the allowed Catena data namespace, malformed-encoded or otherwise unvalidated is discarded before semantic projection completes: it is not stringified, not URL-encoded into apparent safety, not preserved for fallback, not routed and not fetched, and no refusal claim is made from it. Proved by pinning the actual request sink for every fragment of the collection, not by a helper return value."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "hollow-members-make-no-rows-tallies-or-claims"
   criterion = "A fragment, absence or refusal member that cannot satisfy the minimum semantic shape its downstream use requires produces no blank row, no tally increment, no provenance row, no route identity, no refusal and no holdings or absence statement; a malformed member occupies no selection slot and suppresses no valid sibling; and the ordering of malformed members does not change the outcome at any sink."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "contradiction-and-partial-license-no-rights-prose"
   criterion = "Where recognised findings contradict each other the rights conclusion is declined and no selected rights prose is emitted — not the harsher claim, not the longest, not the first or last listed — and the same set reads identically in any order; and only a valid typed parent finding together with a partial value of the exact accepted representation produces partial-rights prose, with the accepted representation enforced at the generator as well as the route."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "scripts/_catena.py", "tools/tests/test_catena.py", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "unreadable-root-manufactures-no-domain-claim"
   criterion = "Where a bootstrap or root record cannot be validated sufficiently to support a domain claim the route renders a truthful unavailable or invalid terminal state and omits the unsupported claim: it does not say nothing is held, does not place a book outside the canon, does not identify an edition, and does not report paragraph or verse absence, distinguishing a corpus read and found empty from a corpus state that could not be established; and it composes no request from a record it could not read."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "terminal-state-proved-at-every-sink"
   criterion = "Every invalid-root and rejected-action path terminates coherently, and the proof asserts the exact final aria-busy, status, live-region contents, announcement journal, tally, visible rows, route, history behaviour, focus target and request ownership; work completing after a newer state has settled — including after a terminal transaction has invalidated the render in flight — alters none of them, and the late completion is counted rather than assumed."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "oracles-corrected-with-their-reasons"
   criterion = "No test fixture or oracle blesses permissive raw copying, hollow objects rendering rows, a malformed text_path surviving projection, contradictory rights selection, coerced partial metadata or an unreadable root becoming domain absence; each oracle that encoded incorrect behaviour is replaced with the truthful contract and the correction is recorded beside it; and the corrected and added classes are shown against the uncorrected parent with the decomposition derived from that run rather than asserted."
-  status = "pass"
+  status = "open"
   evidence = ["tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "package-claims-are-machine-derived"
   criterion = "Every package claim a machine can derive is derived and not transcribed — exact parent and head, commit list and count, changed-file list, diff stat, file sizes, CSS and JavaScript budget values, screenshot count, artifact paths, manifest member count, archive size and hash, test counts and failure identity sets — written from one pass so the machine-readable record and its rendering cannot disagree; every artifact claiming a candidate identity resolves to the same exact head, with no stale head string and no parent/head inversion; and a checker refuses a package whose prose disagrees."
-  status = "pass"
+  status = "open"
   evidence = ["guidance/external-review-handoffs.md"]
 
   [[deliverables.requirements]]
   id = "sealer-is-truthful-and-reusable"
   criterion = "The sealer derives what it can, verifies exact head consistency, verifies referenced artifacts exist, verifies manifest completeness, proves every archive member against the manifest, detects privacy leakage, reports unreferenced members, is idempotent, avoids false positives on ordinary numeric data, writes no package member in a mode documented as read-only, hard-codes no version-specific filename or head value in reusable logic, and every correction to it carries a focused test."
-  status = "pass"
+  status = "open"
   evidence = ["guidance/external-review-handoffs.md"]
 
   [[deliverables.requirements]]
@@ -1405,8 +1405,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V7 head and its new immutable package records a durable disposition. This lane does not review its own work and records no acceptance."
-  status = "open"
-  evidence = ["guidance/corpus-browser-roadmap.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
 
 [[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v6-2026-08-14"

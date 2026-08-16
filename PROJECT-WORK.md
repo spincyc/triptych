@@ -1242,6 +1242,202 @@ immutable handoff archived on `evidence/catena-e1-corrections-v9-handoff`.
 This lane records no acceptance of its own work, marks no separately owned
 prerequisite complete, and does not review itself.
 
+### E1 Catena route-owned correction lane, V9 independent review
+
+Disposition: **CHANGES REQUIRED** for exact candidate
+`3c5b78249193df065c4e1c2ee5a98e5989c6e582`, reviewed against exact parent
+`7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8`. This review addresses V8 review
+`611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f`, independently inspected branch
+`evidence/catena-e1-corrections-v9-handoff` at
+`eb1ee9987425339c2b5522987bee1fb862cd7d33`, and verified package
+`build/agent-handoffs/20260816T044924Z-catena-e1-corrections-v9` and its ZIP
+SHA-256 `4872b04ed47873d84e5a8090aff42d3e43b7a2c11653484d659205db5488d945`.
+Current `origin/main` was `cfe588f81c1c239341b48f82e1b27ab55f582fd3`;
+its merge base with the candidate is
+`9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`, with one main-only and 30
+candidate-only commits and no path overlap with the one main-only commit.
+The candidate branch was not modified; no production, release, integration,
+re-signing, or deployment file was modified by this review.
+
+The parent-to-candidate history is three linear, single-parent commits. Its
+exact five-path diff is 600 insertions / 14 deletions: `PROJECT-WORK.md`
+(+103), `guidance/corpus-browser-roadmap.md` (+36/-1),
+`promised-deliverables.toml` (+48),
+`src/web/browser/catena/catena-model.js` (+52/-11), and
+`tools/tests/test_catena_wave_1.py` (+361/-2). The model is the only
+production file. `catena.js`, `catena.css`, `index.html`,
+`scripts/_catena.py`, all `src/web/data/`, release records, the common browser
+gate, shared shell, Liturgy, PDFs, unrelated Catena files, and every configured
+budget ceiling are byte-identical to the parent.
+
+#### Composed state and request judgment
+
+The request-layer correction is real. `chapterFragments()` now distinguishes
+property absence from a carried-but-refused `text_prefix` as `{stated, trail}`;
+`fragmentRow()` composes a validated present prefix, consults a validated
+same-stem carried `text_path` only for `stated === false`, and projects a
+present-invalid claim as `text_path: ''` with `text_refused: true`. The
+thirteen invalid shapes in the required classification matrix stay refused.
+Genuine absence still makes exactly the carried request and renders its body;
+a present-valid prefix composes its own byte-exact address and does not ask the
+planted carried path. The exact V8 wrong-prefix-plus-valid-fallback escape
+requests and renders `PLANTED FALLBACK BODY` at the parent, while the V9 head
+makes no fallback request and leaks no planted body cold, prewarmed, or after
+the deliberately held request is released late. The V8 primitive namespace
+matrix remains green for wrong, padded, sibling, parent, traversal, absolute,
+encoded, malformed, `textual/`, carried, and valid paths. No V9 regression was
+found in request ownership or those preserved controls.
+
+The third state nevertheless does not reach the reader truthfully. The model
+projects `text_refused`, but no production consumer reads it. `catena.js`
+passes the empty `text_path` to `fragmentText()`, receives the same `ABSENT`
+sentinel as genuine absence, and renders: “This fragment carries no text file,
+so nothing of it can be shown.” In the reviewer's exact present-invalid
+fixtures the fragment does carry a valid same-stem text path, and in the
+prewarmed case that file was fetched successfully. The truthful terminal fact
+is that the stated prefix was refused and therefore no text location may be
+used, not that no file was carried. The committed tests bless that false
+absence sentence. This is a materially missing visible terminal sink and a
+state-classification collapse after the request decision. The exported
+`fragmentRow()` contract also accepts the contradictory direct claim
+`{stated: false, trail: <valid>}` as absence rather than failing closed, despite
+its stated “any other shape” contract; the ordinary JSON-to-projection path
+does not manufacture that shape, but the exported boundary is not as closed
+as claimed.
+
+The smallest production correction is to preserve the sound request-layer
+decision, consume `fragment.text_refused` before `fragmentText()`, and render a
+distinct neutral refused-location terminal row without requesting or reusing
+any text. The prefix claim boundary must treat absence only as
+`stated === false` with no trail and refuse every contradictory shape. The
+regression must prove all three states at the visible row as well as at
+`fetch`: genuine absence keeps the no-file state where appropriate,
+present-valid renders the composed body, and present-invalid with a real valid
+fallback renders the distinct refused state with zero request and zero cached
+or late substitution.
+
+#### Terminal-vector and regression judgment
+
+The cold exact escape proof pins the entire bootstrap-only journal, planted
+body exclusion, fragment row/count, tally, announcement writes and standing
+`statusText`, busy, hash and hash writes, replacement, failure, and error
+sinks. Its focus assertion compares against another scenario whose expected
+focus is not independently pinned, and the row's refused identity is not
+visible at the renderer. The prewarmed proof establishes one legitimate
+fallback fetch, no second Catena request, no body substitution, and the final
+text/tally/status/busy/hash/error/failure values, but it does not exact-pin the
+whole final journal, fragment identity/count, announcement-write journal,
+replacement journal, or `activeElement`; a substitute wrong-namespace request
+could pass its filtered journal assertion. The present-valid control asserts
+only request and body, not the required stable terminal vector.
+
+The genuinely-late proof is non-vacuous: A's request is held, B settles with
+its row open, release advances, and all 36 guarded replay fields plus the
+request journal compare equal before and after release. But it compares two
+states instead of exact-pinning B's complete terminal baseline: row identity
+and count, tally, announcement writes, hash/history/replacement journals,
+focus, and explicit request ownership can be identically wrong on both sides.
+`history.state` is not captured by the replay at all. Evidence dumps contain
+the expected values, but the V8 review already required them as regression
+assertions rather than prose or dumps. Thus the cold/prewarmed/late behavior
+observed at the head is correct, but the promised complete terminal-vector
+proof is materially incomplete. A correction must exact-pin the complete
+final journal and terminal row/vector for prewarmed B, late B before and after
+release, and the present-valid control, while retaining the full 36-field
+late immutability comparison and explicit release/ownership assertions.
+
+Focused Catena discovery is 519/519 green and the two V9 classes are 9/9
+green. The Catena structural check passes at 1,351 fragments / 1 book / 73
+canon entries. Full discovery reports 1,870 tests, 14 failures, 13 errors, and
+11 skips with the same inherited 27-entry failure/error identity set as the
+parent; none is Catena. The browser gate reports 2,290 assertions: 1,836 pass,
+226 fail, and 228 skip across 171 pages and 19 routes; the 226 remain 117
+single-main, 82 target-size, and 27 skip-link findings. Before this durable
+record, `make -k check` fails on the same three inherited targets,
+`check-release-bindings`, `check-tool-registry`, and `check-examples`; the
+post-record run additionally fails `check-web-editions-current`, because the
+required `PROJECT-WORK.md` edit makes its derived web editions stale. The
+promise ledger is valid.
+Four stale Catena release bindings remain fail-closed and none was re-signed.
+
+The formal CSS and JavaScript ceilings remain unraised:
+`catena.css` is 7,629/8,000 whole and 2,676/2,700 stripped; `catena.js` is
+12,901/13,000 whole and 7,530/8,800 stripped, both byte-identical to the
+parent. The unbudgeted model grows from 28,346 to 29,179 gzipped whole and
+7,485 to 7,571 stripped. Separately gzipped `catena.js` plus model grows from
+41,247 to 42,080 bytes (+833); one-stream combined growth is 835 bytes. No
+configured ceiling governs the model or combined route payload, so this is an
+open architecture/budget-owner judgment rather than a formal budget failure.
+
+#### Package and provenance judgment
+
+The final-byte arithmetic is correct. The ZIP is 272,005 bytes, has 59 unique
+safe members, passes CRC verification, and contains 3,202,934 uncompressed
+bytes. The 58-row manifest excludes only itself, covers every other member
+exactly once, and every digest matches the final ZIP bytes. The frozen
+inventory is 54 members / 3,162,581 bytes; the five derived members are
+exactly 40,353 bytes, so the two sets partition the archive and sum to the
+final total. The seven-check P8 replay passes read-only without changing the
+ZIP. The sidecar's ZIP name, size, and digest are correct. Sanitization records
+267 substitutions and the independent privacy search finds no private path,
+account, or timezone leak; all byte/control, path-safety, mode, and duplicate-
+member scans pass.
+
+The package protocol is not yet a complete independent handoff. The retained
+parent exact SHA, clean state, and cwd are asserted only in `PROVENANCE.md`,
+not contemporaneously in the order or battery logs that performed the run.
+The order ledgers repeat the `request-journals` slug and overwrite the same
+log with distinct parent commands, while the shipped battery contains only
+one of them, contradicting the index's claim that it ran each battery entry.
+The discarded `/tmp` run is explicitly identified, excluded, and used for no
+comparison, which passes that provenance requirement. The P8 transcript does
+not bind its successful checks to the ZIP basename, digest, or size; it would
+read identically for a different archive accepted by a matching sidecar. The
+verifier omits independent duplicate-row checks and does not derive/report the
+five final derived sizes or 3,202,934-byte total even though prose and claims
+describe complete final-byte derivation.
+
+`HANDOFF.md` omits required branch/head/base/uncommitted-state, focused-file,
+startup-command, and inventory fields; `REVIEW_REQUEST.md` lacks the required
+Blockers and Optional Feedback structure. The assembler deletes an existing
+target directory and overwrites its ZIP rather than refusing a reused
+timestamp. The archive's actual immutable Git artifact was not overwritten,
+but the reusable pipeline does not enforce the protocol. The parent
+decomposition is also described imprecisely: nine V9 methods run, three
+controls pass at the parent, and six methods yield nine failing subtest
+identities, rather than all nine methods failing. `DERIVED-CLAIMS.md` carries
+stale V8 labels for the V9 class/file. These do not invalidate the exact final
+ZIP bytes above, but they require correction in a new uniquely timestamped
+package rather than mutation of the sealed V9 artifact.
+
+The more-specific lane instruction authorizes
+`impl/catena-wave-1-e1-corrections-v9` over the workspace's generic feature
+branch, consistent with the prior correction lanes; the name is not a V9
+failure. The review itself is isolated on
+`review/catena-wave-1-e1-corrections-v9-independent`. Ownership stayed inside
+the requested review and record boundary. No main integration was attempted.
+
+The broader blockers remain open and are not reasons for this disposition:
+projection not sole semantic source; orphan raw sources; source-only fragments
+counting; scalar/nested translator coercion; malformed/padded absence
+findings; refusal verse validation; broader partial-selection ordering
+defects; unreadable roots / `bibles.json`; broader terminal proof; remaining
+bad oracles; CLI/web semantic duplication; uncapped combined/model payload;
+the historical data-seam contradiction; release bindings; common gate; shared
+shell; real-device/AT evidence; Liturgy; and PDFs.
+
+Exact next action: start one bounded V10 successor from exact V9 head
+`3c5b78249193df065c4e1c2ee5a98e5989c6e582`; preserve its request-layer
+closure; carry and render the distinct refused-prefix state truthfully and
+fail closed on contradictory prefix claims; exact-pin the complete cold,
+prewarmed, late, and present-valid request/terminal vectors; then create a new
+unique immutable package with clean exact-SHA/cwd preflights, unique
+non-overwriting logs and targets, accurate method/failure labels, complete
+handoff/request structure, and a P8 transcript bound to the ZIP name, digest,
+size, member partition, totals, and duplicate checks. Return that exact head
+and package for fresh independent review. Do not integrate, merge, re-sign,
+deploy, or enter another E1 blocker in that successor.
+
 ### E1 Catena route-owned correction lane, V8
 
 <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v8-2026-08-15 -->
