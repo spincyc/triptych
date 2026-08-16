@@ -85,6 +85,30 @@ retain their public-domain status and are not offered under Triptych's CC BY
 4.0 license. OCR errors must not be attributed to the historical translators,
 and Coxe's editorial matter must not be attributed to Irenaeus.
 
+The retained Luke and Revelation running-text files from [Faithlife's SBLGNT
+v1.2 repository](https://github.com/Faithlife/SBLGNT) reproduce *The Greek New
+Testament: SBL Edition*, edited by Michael W. Holmes, copyright 2010 Society of
+Biblical Literature and Logos Bible Software. They are distributed under the
+[Creative Commons Attribution 4.0 International
+License](https://creativecommons.org/licenses/by/4.0/), not Triptych's CC BY
+4.0 license. The retained files are unchanged: each was extracted byte for byte
+from the pinned upstream archive, without normalization or editorial
+modification. Their artifact records identify the exact upstream commit,
+source path, and hash.
+
+The retained lemma-field projection from [*MorphGNT: SBLGNT
+Edition*](https://github.com/morphgnt/sblgnt), by James Tauber and the MorphGNT
+contributors, is distributed under the [Creative Commons
+Attribution-ShareAlike 3.0 Unported
+License](https://creativecommons.org/licenses/by-sa/3.0/). It is a modified,
+project-created projection of the pinned MorphGNT 6.12 dataset: Triptych read
+the 27 canonical-order `*-morphgnt.txt` files, emitted the final
+whitespace-delimited lemma field from every nonblank token row in numeric book
+order, and placed one lemma on each line. The projection omits the separately
+licensed SBLGNT surface-text columns. Reusers must retain the MorphGNT
+attribution, this change notice, the license link, and ShareAlike treatment
+where the license requires them.
+
 ## Liturgical and Scriptural Texts
 
 Scripture, Missal formularies, Orders of Mass, rubrics, chants, and texts from

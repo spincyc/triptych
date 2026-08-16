@@ -42,7 +42,10 @@ default to eligible by silence.
 
 - **eligible** — the document's meaning survives reflow. No declared
   blocking construct, and none found by the scanner in the leaf or in the
-  shared trees it inputs.
+  web-active input closure. A construct confined to the true/print arm of an
+  explicit `\\ifdefined\\TriptychPrintEdition ... \\else ... \\fi` branch does
+  not enter that closure; the always-included source must provide its complete
+  textual equivalent, and the normal fidelity review must verify it.
 - **conditional** — renderable only once a named obstacle is solved
   (wide matrices, diagrams, paired-column bilingual text, gated answers,
   write-in forms). The record names the obstacle; it does not promise a

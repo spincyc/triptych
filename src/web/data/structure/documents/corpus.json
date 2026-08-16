@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name.",
  "counted": {
-  "documents": 178,
-  "issues": 186,
-  "pages": 5675,
+  "documents": 179,
+  "issues": 187,
+  "pages": 5717,
   "titles_unrecorded": 0,
-  "works": 133
+  "works": 134
  },
  "models": [
   {
@@ -13,7 +13,7 @@
    "id": "GPT-5-based Codex agent"
   },
   {
-   "documents": 52,
+   "documents": 53,
    "id": "gpt-5.6-sol"
   },
   {
@@ -32,7 +32,7 @@
    "label": "Claude"
   },
   {
-   "documents": 133,
+   "documents": 134,
    "id": "gpt",
    "label": "GPT"
   }
@@ -65,7 +65,7 @@
   },
   {
    "id": "theology",
-   "works": 15
+   "works": 16
   }
  ],
  "works": [
@@ -7801,6 +7801,38 @@
     }
    ],
    "leaf": "theology/mariology/apparitions",
+   "section": "theology"
+  },
+  {
+   "catalog": "library/mariology.md",
+   "catalog_page": "library/mariology.html",
+   "editions": [
+    {
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "gpt-5.6-sol",
+       "qualifiers": "effort=unexposed",
+       "runtime": "OpenAI Codex agents (biblical-itinerary, lexical, patristic, saintly, liturgical, dogmatic, virginal-marriage, pedagogy, cartographic, visual, sanity-review, source-audit, drafting, and repository-integration roles); Codex CLI 0.146.1; API workspace; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "gpt-5.6-sol"
+     ],
+     "pages": 42,
+     "pdf": "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+     "provider": "gpt",
+     "reviewed": "2026-08-15",
+     "revised": "2026-08-16T06:44:35Z",
+     "status": "alpha",
+     "subject": "The Ark's scriptural journey, its fulfillment in Mary, patristic and saintly reception, the four Marian dogmas, virginal marriage, and spiritual application",
+     "title": "The Ark and the Mother of the Lord: The Journey of the Covenant Presence",
+     "title_source": "src/gpt/theology/mariology/ark-of-the-covenant/main.tex",
+     "web": "web/gpt/theology/mariology/ark-of-the-covenant.html"
+    }
+   ],
+   "leaf": "theology/mariology/ark-of-the-covenant",
    "section": "theology"
   },
   {

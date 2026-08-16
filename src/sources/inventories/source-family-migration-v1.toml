@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-08-02"
+audited_on = "2026-08-16"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:7e47ae0e09188109b2ccc0e0608304d72386224f0504a2c8c7105d94b7de9a2d"
+inventory_snapshot = "sha256:083d02bd28e2c3302e1f8a54a6f0ec504540c5b69e4954e5fedf6e07a19a0f6c"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
-canonical_catalog_snapshot = "sha256:ecac44f6f699272b8000b76c847bef8642147f9f2064070a702b97987daf1feb"
+classification_snapshot = "sha256:6f0eaaa5f8da040978483ad4a82e63aaa18ffaadd92708f04d9fd2ff79887beb"
+canonical_catalog_snapshot = "sha256:c5ae9766986ad608e6724874a55dd5fe8b64f44262366fdb2668e9b9b196aa23"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:0152b5e7d70fdc1781bb30e5f73198f23afd08414edcf46968b2a4a55723064b"
+snapshot = "sha256:1305d4e029cdfac9826e9cf183d9a77516aebd593f3f26a5d7cc84dadc091d26"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -1796,6 +1796,48 @@ membership_snapshot = "sha256:6220c8554f5985767d99fc2e039710850a6e9c9086cfe04c19
 notes = "Reviewed as the distinct source family for The Catholic Encyclopedia, Volume 9. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers."
 
 [[families]]
+id = "family.catss.lxxm-morphology"
+label = "CATSS Septuagint Morphological Analysis"
+kind = "work"
+source_categories = ["dataset-survey", "scripture"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["restricted"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.catss.lxxm-morphology.unicode-fddec9b.github-archive-fddec9b-74c72484", "edition.catss.lxxm-morphology.unicode-fddec9b", "work.catss.lxxm-morphology"]
+trace_patterns = ["(?:CATSS|LXXM)", "catss\\.lxxm-morphology"]
+reviewed_on = "2026-08-15"
+membership_snapshot = "sha256:7c134ae42cfea83424999a34cd382c973f97d2a1497f08f69000abb0af752cc9"
+notes = "Reviewed as the distinct CATSS/LXXM morphology family. The immutable archive was acquired and hashed for bounded research, but CATSS registration, acknowledgment, noncommercial-study, and access-control conditions require restricted rather than tracked storage. The publication's corpus counts remain external-query results with pinned archive identity and recorded hit lists, not repository-replayable searches or a fresh critical Septuagint edition."
+
+[[families]]
+id = "family.centerblc.lxx-text-fabric"
+label = "CenterBLC LXX Text-Fabric Dataset"
+kind = "work"
+source_categories = ["dataset-survey", "scripture"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["restricted"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.centerblc.lxx-text-fabric.rlxx1935-4829f37.github-archive-4829f37-27cbb379", "edition.centerblc.lxx-text-fabric.rlxx1935-4829f37", "work.centerblc.lxx-text-fabric"]
+trace_patterns = ["(?:CenterBLC|LXX Text-Fabric)", "centerblc\\.lxx-text-fabric"]
+reviewed_on = "2026-08-15"
+membership_snapshot = "sha256:4fb9b592e32b3d9cf4ca399d9188f5a55863001055a42490db48f895e23c1e80"
+notes = "Reviewed as a distinct derivative dataset family. CenterBLC's software additions do not relicense the RLXX1935/CATSS-derived Greek data; the exact archive is therefore registered and hashed but kept restricted. It is used only as a normalization cross-check and never counted as an independent textual witness."
+
+[[families]]
 id = "family.champion.ecclesial-acts"
 label = "Ecclesial acts on the Champion (Robinsonville) apparitions of 1859"
 kind = "corpus-plan"
@@ -2550,6 +2592,27 @@ trace_patterns = ["(?:Destierro de sombras|destierro-de-sombras)"]
 reviewed_on = "2026-07-31"
 membership_snapshot = "sha256:8f8713bb2e70ea0475d0ceebfd4f9b40a2b5ddbb68d02ebafa5199372895ffd8"
 notes = "Edmundo O'Gorman's monograph on the origin of the image and cult of Guadalupe at Tepeyac, published in the Serie Historia Novohispana of the Instituto de Investigaciones Historicas of the Universidad Nacional Autonoma de Mexico, owns its catalog-level work and the UNAM-IIH open-access digital edition of the second edition published online on 17 June 2019, cited by part, chapter, and numbered appendix. It is a modern scholarly monograph by a named author with its own thesis, argued against the apparition tradition, and is used as such; it therefore stays per-work rather than joining any Guadalupe cluster with the 1649 Nahuatl imprint, the 1883 archiepiscopal report, and the 1999 apostolic exhortation, which share only a subject and the use one publication makes of them. Family membership records source identity rather than a consumer's reading list, and none of the four manifests records a relation to another, which is the test the ledger's corpus-plan rows such as family.holy-see.masonic-membership-acts and family.roman-missal.older-use-discipline-acts satisfy and these do not. The publisher authorizes non-commercial reproduction of the PDFs with attribution; no exact artifact is registered, so evidence stops at edition and chapter loci."
+
+[[families]]
+id = "family.eliran-wong.lxx-rahlfs-1935-dataset"
+label = "LXX-Rahlfs-1935 Electronic Dataset"
+kind = "work"
+source_categories = ["dataset-survey", "scripture"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["restricted"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.eliran-wong.lxx-rahlfs-1935-dataset.a1b5ff1.github-archive-a1b5ff1-113bbb98", "edition.eliran-wong.lxx-rahlfs-1935-dataset.a1b5ff1", "work.eliran-wong.lxx-rahlfs-1935-dataset"]
+trace_patterns = ["(?:Eliran Wong|LXX-Rahlfs-1935)", "eliran-wong\\.lxx-rahlfs-1935-dataset"]
+reviewed_on = "2026-08-15"
+membership_snapshot = "sha256:bf449a1cb9c31bd18e2054831ef3a8302b0b8e667b24adbcc0cd534c20436e84"
+notes = "Reviewed as a distinct electronic-dataset family in the derivative CATSS lineage. Wong's CC BY-NC-SA contribution does not remove CATSS registration and access-control conditions from inherited data, so the exact archive remains restricted. It is used to establish provenance and rights boundaries, not as a separately counted Greek witness."
 
 [[families]]
 id = "family.eliza-allen-starr.patron-saints"
@@ -4020,6 +4083,27 @@ trace_patterns = ["jacques\\-paul\\-migne\\.patrologia\\-latina\\-volume\\-56"]
 reviewed_on = "2026-07-31"
 membership_snapshot = "sha256:11c0c78839119661835ce8710fae56085b9a4dc7b32c4a38cb860b91fbf03588"
 notes = "Reviewed as the distinct source family for Patrologiae cursus completus, Series Latina, volume 56. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers."
+
+[[families]]
+id = "family.james-tauber.morphgnt-sblgnt"
+label = "MorphGNT: SBLGNT Edition"
+kind = "work"
+source_categories = ["dataset-survey", "scripture"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote", "tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "bounded-corpus"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e.github-archive-aaed91e-e760c941", "artifact.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e.lemma-field-projection-9135bfb2", "edition.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e", "work.james-tauber.morphgnt-sblgnt"]
+trace_patterns = ["(?:James Tauber|MorphGNT)", "james-tauber\\.morphgnt-sblgnt"]
+reviewed_on = "2026-08-15"
+membership_snapshot = "sha256:e38de42ad0dca5cc97e69bde4053891308fb2468135deac3fa6a0343c49ed635"
+notes = "Reviewed as a distinct morphology family aligned to, but not absorbed by, the SBL Greek New Testament. The full immutable archive is a remote mixed-rights artifact; the tracked deterministic projection retains only MorphGNT's CC BY-SA 3.0 lemma field and omits separately licensed SBLGNT surface text. That bounded corpus permits repository-replayable lemma counts without conflating the two licenses."
 
 [[families]]
 id = "family.jean-baptiste-saint-jure.de-la-connaissance-et-de-lamour-du-fils-de-dieu"
@@ -7242,18 +7326,18 @@ source_categories = ["scripture"]
 identity_confidence = "confirmed"
 identity_gaps = []
 artifact_availability = "canonicalized"
-storage_plan = ["remote"]
+storage_plan = ["remote", "tracked"]
 rights_review = "all-known-artifacts-reviewed"
 mutability = "fixed"
 freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
-disposition = "canonicalize"
+disposition = "bind-existing"
 priority = "p1"
-canonical_ids = ["artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.1cor-app-dfecc659", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.1cor-main-2a706bac", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.2cor-app-13f0f8d5", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.2cor-main-af6a60d5", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.eph-app-56baf78c", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.eph-main-c15837d2", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.luke-app-9b4b72d2", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.luke-main-102d65ec", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.mark-app-1c398496", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.mark-main-fe1b5a4c", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.matt-app-927dbf27", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.matt-main-4fa71854", "edition.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.1cor-10.20-21", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.2cor-6.14-16", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.eph-6.10-17", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.luke-13.10-17", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.luke-9.49-50", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.mark-9.29", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.mark-9.38-41", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.matt-7.22-23", "work.society-of-biblical-literature.sbl-greek-new-testament"]
+canonical_ids = ["artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.github-archive-c4d241a-cc1715f3", "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.luke-main-102d65ec", "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.revelation-main-61419de7", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.1cor-app-dfecc659", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.1cor-main-2a706bac", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.2cor-app-13f0f8d5", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.2cor-main-af6a60d5", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.eph-app-56baf78c", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.eph-main-c15837d2", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.luke-app-9b4b72d2", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.luke-main-102d65ec", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.mark-app-1c398496", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.mark-main-fe1b5a4c", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.matt-app-927dbf27", "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.matt-main-4fa71854", "edition.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a", "edition.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.1cor-10.20-21", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.2cor-6.14-16", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.eph-6.10-17", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.luke-13.10-17", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.luke-9.49-50", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.mark-9.29", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.mark-9.38-41", "passage.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.matt-7.22-23", "work.society-of-biblical-literature.sbl-greek-new-testament"]
 trace_patterns = ["society\\-of\\-biblical\\-literature\\.sbl\\-greek\\-new\\-testament"]
-reviewed_on = "2026-07-31"
-membership_snapshot = "sha256:d5369bae95ab580a30189003d6dc2a953be112753be22312f4e76e9417b4b71c"
-notes = "Reviewed as the distinct source family for The Greek New Testament: SBL Edition. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers."
+reviewed_on = "2026-08-15"
+membership_snapshot = "sha256:42df03d70ba2502ddeb9be03d9f2915e106eff7be406fbe41ebf2f25b730301e"
+notes = "Reviewed as the distinct source family for The Greek New Testament: SBL Edition. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers. The Faithlife v1.2 commit adds exact CC BY 4.0 Luke and Revelation surface-text artifacts for this publication's bounded form checks; it remains within the same intellectual-work family rather than becoming a new work."
 
 [[families]]
 id = "family.suetonius.de-vita-caesarum"
@@ -12890,6 +12974,11 @@ record_paths = ["src/gpt/theology/mariology/apparitions/sections/30-legacy-origi
 family_id = "family.vatican-ii.acts"
 basis = "trace-scan"
 record_paths = ["src/gpt/theology/mariology/apparitions/research/source-audit.md", "src/gpt/theology/mariology/apparitions/research/source-bindings.toml", "src/gpt/theology/mariology/apparitions/research/staleness-review-2026-07-29.md", "src/gpt/theology/mariology/apparitions/sections/10-doctrine-discernment.tex", "src/gpt/theology/mariology/apparitions/sections/80-comparative-synthesis.tex", "src/gpt/theology/mariology/apparitions/sections/99-references.tex"]
+
+[[review_units]]
+owner_id = "theology/mariology/ark-of-the-covenant"
+surface_snapshot = "sha256:8c745aee3fbdfb9c8bae90e6513960751d8d97cc499fb9f4ec07e191cf1ed94b"
+review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/mariology/champion"

@@ -1,0 +1,350 @@
+schema = 2
+record_type = "bindings"
+document = "theology/mariology/ark-of-the-covenant"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-02-exodus-56072879"
+claim_keys = ["ark-construction", "acacia", "overshadowing"]
+role = "context"
+states = ["cataloged"]
+context = "The retained Douay-Rheims Exodus witness supplies repository-local comparison for the Ark's construction, the acacia/shittim material, and the completed sanctuary. This binding records catalog identity and loci only; it does not promote the transcription into a critical Hebrew or Greek witness."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-04-numbers-3e5034d7"
+claim_keys = ["ark-handling", "ark-route"]
+role = "context"
+states = ["cataloged"]
+context = "The retained Numbers witness controls the English comparison for the sacred objects' handling, shoulder-bearing, departure formula, and wilderness movement. It cannot establish later geography or a Marian application by itself."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-06-josue-a1c1af78"
+claim_keys = ["ark-route"]
+role = "context"
+states = ["cataloged"]
+context = "The retained Josue witness supports repository-local comparison for the Jordan crossing, Jericho, the Ebal-Gerizim assembly, and Shiloh. Exact modern site identifications remain a separate geographic question."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-07-judges-2bb62acf"
+claim_keys = ["ark-route"]
+role = "context"
+states = ["cataloged"]
+context = "The retained Judges witness preserves the Douay/Vulgate Shiloh reading in the Benjaminite-war narrative. The source audit retains the Hebrew, Greek, and modern-English Bethel reading as a material versional difference."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-09-1-kings-7f8a0c63"
+claim_keys = ["ark-route", "ark-captivity"]
+role = "context"
+states = ["cataloged"]
+context = "This Douay First Kings artifact corresponds to modern 1 Samuel and supports repository-local comparison for Shiloh, the capture, Philistine cities, Beth-shemesh, and Kiriath-jearim. It does not resolve the unstable death count at Beth-shemesh."
+
+[[bindings]]
+source_id = "artifact.lancelot-brenton.septuagint-english-translation.ebible-eng-brenton.verse-text-09-1-samuel-040d3206"
+loci = ["1Sam.5.10-6.17"]
+claim_keys = ["ark-route", "ark-captivity"]
+role = "translation-control"
+states = ["cataloged"]
+context = "The registered Brenton English Septuagint witness preserves Ashkelon as the third narrated Philistine city at 1 Samuel 5:10 while still listing both Ashkelon and Ekron among the five lordships at 6:17. This catalog binding records the material versional branch without treating an English translation as a critical Greek edition or inheriting another lane's inspection event."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-10-2-kings-43e91e43"
+claim_keys = ["uzzah", "three-months", "david-john-leaping"]
+role = "context"
+states = ["cataloged"]
+context = "This Douay Second Kings artifact corresponds to modern 2 Samuel. Chapter 6 controls the failed transfer, Uzzah, Obed-edom's three months, David's joy, and the Ark's entrance into Zion."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-11-3-kings-d9087035"
+claim_keys = ["temple-rest"]
+role = "context"
+states = ["cataloged"]
+context = "This Douay Third Kings artifact corresponds to modern 1 Kings and supplies the English comparison for the Ark's entry into Solomon's Temple."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-13-1-paralipomenon-5919e86c"
+claim_keys = ["ark-handling", "uzzah", "three-months", "david-john-leaping"]
+role = "context"
+states = ["cataloged"]
+context = "The retained First Paralipomenon witness corresponds to modern 1 Chronicles. It provides the complementary canonical account of the failed and successful Davidic transfers, including Levitical bearing and cultic acclamation."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+claim_keys = ["overshadowing", "three-months", "david-john-leaping", "new-ark"]
+role = "context"
+states = ["cataloged"]
+context = "The retained Luke witness supplies repository-local English comparison for the Annunciation, Visitation, Nativity, Presentation, and return to Nazareth. Lexical claims are controlled separately by Greek witnesses."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-65-hebrews-78520956"
+claim_keys = ["ark-contents", "new-covenant"]
+role = "context"
+states = ["cataloged"]
+context = "The retained Hebrews witness supports the publication's canonical account of sanctuary, Ark, old covenant, and Christ's definitive priestly fulfillment."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-73-apocalypse-9ae5c352"
+claim_keys = ["heavenly-ark", "assumption"]
+role = "context"
+states = ["cataloged"]
+context = "The retained Apocalypse witness supports the adjacency of the heavenly Ark and the woman-sign. The publication preserves the woman's corporate Israel-Church sense and does not reduce the sign to a photographic Marian biography."
+
+[[bindings]]
+source_id = "artifact.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e.lemma-field-projection-9135bfb2"
+loci = ["Luke 1:42"]
+claim_keys = ["unique-verb"]
+role = "textual-control"
+states = ["cataloged", "acquired", "searched"]
+context = "The exact one-lemma-per-line projection of MorphGNT's complete SBLGNT-aligned New Testament boundary establishes the single anaphoneo lemma token. The projection contains only MorphGNT's CC BY-SA 3.0 lemma layer and no separately licensed SBLGNT surface text."
+search_scope = "All 27 canonical-order MorphGNT book files in commit aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d, projected as one exact final-field lemma per physical line."
+searched_on = "2026-08-15"
+search_mode = "raw-line-literal-case-sensitive-v1"
+query = "ἀναφωνέω"
+method = "Repository replay of the exact one-lemma-per-line projection; the originating audit used an exact final-field awk comparison and inspected the returned locus."
+matching_line_count = 1
+source_fingerprint = "sha256:0031ee993a421df3267bc35850b9d5d6555e0406d4dc13328abe37de3d92f7e1"
+
+[[bindings]]
+source_id = "artifact.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e.lemma-field-projection-9135bfb2"
+loci = ["Matthew 17:5", "Mark 9:7", "Luke 1:35", "Luke 9:34", "Acts 5:15"]
+claim_keys = ["overshadowing", "unique-verb"]
+role = "textual-control"
+states = ["cataloged", "acquired", "searched"]
+context = "The exact MorphGNT lemma projection establishes five episkiazo tokens in its complete SBLGNT-aligned New Testament boundary. This is a bounded corpus count, not a claim about every manuscript or Greek edition."
+search_scope = "All 27 canonical-order MorphGNT book files in commit aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d, projected as one exact final-field lemma per physical line."
+searched_on = "2026-08-15"
+search_mode = "raw-line-literal-case-sensitive-v1"
+query = "ἐπισκιάζω"
+method = "Repository replay of the exact one-lemma-per-line projection; the originating audit used an exact final-field awk comparison and inspected every returned locus."
+matching_line_count = 5
+source_fingerprint = "sha256:0031ee993a421df3267bc35850b9d5d6555e0406d4dc13328abe37de3d92f7e1"
+
+[[bindings]]
+source_id = "artifact.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e.lemma-field-projection-9135bfb2"
+loci = ["Luke 1:41", "Luke 1:44", "Luke 6:23"]
+claim_keys = ["david-john-leaping", "unique-verb"]
+role = "textual-control"
+states = ["cataloged", "acquired", "searched"]
+context = "The exact MorphGNT lemma projection establishes three skirtao tokens in its complete SBLGNT-aligned New Testament boundary, all in Luke. The exact loci and inflected forms remain in the lexical audit."
+search_scope = "All 27 canonical-order MorphGNT book files in commit aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d, projected as one exact final-field lemma per physical line."
+searched_on = "2026-08-15"
+search_mode = "raw-line-literal-case-sensitive-v1"
+query = "σκιρτάω"
+method = "Repository replay of the exact one-lemma-per-line projection; the originating audit used an exact final-field awk comparison and inspected every returned locus."
+matching_line_count = 3
+source_fingerprint = "sha256:0031ee993a421df3267bc35850b9d5d6555e0406d4dc13328abe37de3d92f7e1"
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.luke-main-102d65ec"
+loci = ["1:35"]
+claim_keys = ["overshadowing"]
+role = "textual-control"
+states = ["cataloged", "acquired", "searched"]
+context = "The official Faithlife SBLGNT v1.2 surface file supplies Luke 1:35 for the exact overshadowing-form check. It is CC BY 4.0 surface text and carries no MorphGNT morphology."
+search_scope = "Exact unmodified Luke.txt from Faithlife SBLGNT commit c4d241a9c1c479a55b989ba35a4976c1d0b8052c."
+searched_on = "2026-08-15"
+search_mode = "raw-line-literal-case-sensitive-v1"
+query = "Luke 1:35\t"
+method = "Repository exact verse-label raw-line replay followed by the lexical audit's surface-form comparison."
+matching_line_count = 1
+source_fingerprint = "sha256:c3c79e8b08ce2bf3117f3d480c4527f4fae6893718b86cb7011b79bc1db5bf81"
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.luke-main-102d65ec"
+loci = ["1:39"]
+claim_keys = ["new-ark"]
+role = "textual-control"
+states = ["cataloged", "acquired", "searched"]
+context = "The official Faithlife SBLGNT v1.2 surface file supplies Luke 1:39 for the arise-and-go comparison. It remains textually distinct from MorphGNT's analysis."
+search_scope = "Exact unmodified Luke.txt from Faithlife SBLGNT commit c4d241a9c1c479a55b989ba35a4976c1d0b8052c."
+searched_on = "2026-08-15"
+search_mode = "raw-line-literal-case-sensitive-v1"
+query = "Luke 1:39\t"
+method = "Repository exact verse-label raw-line replay followed by the lexical audit's surface-form comparison."
+matching_line_count = 1
+source_fingerprint = "sha256:c3c79e8b08ce2bf3117f3d480c4527f4fae6893718b86cb7011b79bc1db5bf81"
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.luke-main-102d65ec"
+loci = ["1:41"]
+claim_keys = ["david-john-leaping"]
+role = "textual-control"
+states = ["cataloged", "acquired", "searched"]
+context = "The official Faithlife SBLGNT v1.2 surface file supplies the first Lucan infant-leaping locus. Morphology and frequency remain separately bound to MorphGNT."
+search_scope = "Exact unmodified Luke.txt from Faithlife SBLGNT commit c4d241a9c1c479a55b989ba35a4976c1d0b8052c."
+searched_on = "2026-08-15"
+search_mode = "raw-line-literal-case-sensitive-v1"
+query = "Luke 1:41\t"
+method = "Repository exact verse-label raw-line replay followed by the lexical audit's surface-form comparison."
+matching_line_count = 1
+source_fingerprint = "sha256:c3c79e8b08ce2bf3117f3d480c4527f4fae6893718b86cb7011b79bc1db5bf81"
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.luke-main-102d65ec"
+loci = ["1:42"]
+claim_keys = ["unique-verb"]
+role = "textual-control"
+states = ["cataloged", "acquired", "searched"]
+context = "The official Faithlife SBLGNT v1.2 surface file supplies Elizabeth's anefonesen and krauge reading at Luke 1:42. Its text license is CC BY 4.0; lemma counting is a separate MorphGNT operation."
+search_scope = "Exact unmodified Luke.txt from Faithlife SBLGNT commit c4d241a9c1c479a55b989ba35a4976c1d0b8052c."
+searched_on = "2026-08-15"
+search_mode = "raw-line-literal-case-sensitive-v1"
+query = "Luke 1:42\t"
+method = "Repository exact verse-label raw-line replay followed by the lexical audit's surface-form comparison."
+matching_line_count = 1
+source_fingerprint = "sha256:c3c79e8b08ce2bf3117f3d480c4527f4fae6893718b86cb7011b79bc1db5bf81"
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.luke-main-102d65ec"
+loci = ["1:44"]
+claim_keys = ["david-john-leaping"]
+role = "textual-control"
+states = ["cataloged", "acquired", "searched"]
+context = "The official Faithlife SBLGNT v1.2 surface file supplies the second Lucan infant-leaping locus. The publication does not import this verb into the standard Septuagint account of David."
+search_scope = "Exact unmodified Luke.txt from Faithlife SBLGNT commit c4d241a9c1c479a55b989ba35a4976c1d0b8052c."
+searched_on = "2026-08-15"
+search_mode = "raw-line-literal-case-sensitive-v1"
+query = "Luke 1:44\t"
+method = "Repository exact verse-label raw-line replay followed by the lexical audit's surface-form comparison."
+matching_line_count = 1
+source_fingerprint = "sha256:c3c79e8b08ce2bf3117f3d480c4527f4fae6893718b86cb7011b79bc1db5bf81"
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.luke-main-102d65ec"
+loci = ["1:56"]
+claim_keys = ["three-months"]
+role = "textual-control"
+states = ["cataloged", "acquired", "searched"]
+context = "The official Faithlife SBLGNT v1.2 surface file supplies Luke's about-three-months clause and return-home cadence."
+search_scope = "Exact unmodified Luke.txt from Faithlife SBLGNT commit c4d241a9c1c479a55b989ba35a4976c1d0b8052c."
+searched_on = "2026-08-15"
+search_mode = "raw-line-literal-case-sensitive-v1"
+query = "Luke 1:56\t"
+method = "Repository exact verse-label raw-line replay followed by the lexical audit's surface-form comparison."
+matching_line_count = 1
+source_fingerprint = "sha256:c3c79e8b08ce2bf3117f3d480c4527f4fae6893718b86cb7011b79bc1db5bf81"
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.revelation-main-61419de7"
+loci = ["11:19"]
+claim_keys = ["heavenly-ark"]
+role = "textual-control"
+states = ["cataloged", "acquired", "searched"]
+context = "The official Faithlife SBLGNT v1.2 surface file supplies Revelation 11:19's heavenly Ark vision formula."
+search_scope = "Exact unmodified Rev.txt from Faithlife SBLGNT commit c4d241a9c1c479a55b989ba35a4976c1d0b8052c."
+searched_on = "2026-08-15"
+search_mode = "raw-line-literal-case-sensitive-v1"
+query = "Rev 11:19\t"
+method = "Repository exact verse-label raw-line replay followed by the lexical audit's surface-form comparison."
+matching_line_count = 1
+source_fingerprint = "sha256:22b3cc0155e96f4d1265c394958ff8c51bad5332b10dc0c72ab0b2c63b3802e4"
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.revelation-main-61419de7"
+loci = ["12:1"]
+claim_keys = ["heavenly-ark"]
+role = "textual-control"
+states = ["cataloged", "acquired", "searched"]
+context = "The official Faithlife SBLGNT v1.2 surface file supplies Revelation 12:1's immediately adjacent woman-sign vision formula."
+search_scope = "Exact unmodified Rev.txt from Faithlife SBLGNT commit c4d241a9c1c479a55b989ba35a4976c1d0b8052c."
+searched_on = "2026-08-15"
+search_mode = "raw-line-literal-case-sensitive-v1"
+query = "Rev 12:1\t"
+method = "Repository exact verse-label raw-line replay followed by the lexical audit's surface-form comparison."
+matching_line_count = 1
+source_fingerprint = "sha256:22b3cc0155e96f4d1265c394958ff8c51bad5332b10dc0c72ab0b2c63b3802e4"
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.revelation-main-61419de7"
+loci = ["12:3"]
+claim_keys = ["heavenly-ark"]
+role = "textual-control"
+states = ["cataloged", "acquired", "searched"]
+context = "The official Faithlife SBLGNT v1.2 surface file supplies Revelation 12:3's repeated vision formula, which prevents treating ōphthe as a unique Marian identifier."
+search_scope = "Exact unmodified Rev.txt from Faithlife SBLGNT commit c4d241a9c1c479a55b989ba35a4976c1d0b8052c."
+searched_on = "2026-08-15"
+search_mode = "raw-line-literal-case-sensitive-v1"
+query = "Rev 12:3\t"
+method = "Repository exact verse-label raw-line replay followed by the lexical audit's surface-form comparison."
+matching_line_count = 1
+source_fingerprint = "sha256:22b3cc0155e96f4d1265c394958ff8c51bad5332b10dc0c72ab0b2c63b3802e4"
+
+[[bindings]]
+source_id = "artifact.catss.lxxm-morphology.unicode-fddec9b.github-archive-fddec9b-74c72484"
+claim_keys = ["overshadowing", "david-john-leaping", "unique-verb"]
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "The exact restricted CATSS LXXM Unicode archive is documented only as a non-publication-controlling research lead. Its registration, User Declaration, and access-control conditions are not affirmatively recorded as satisfied for this research session, and the payload is not retained in this public repository. No published numerical or exclusivity claim depends on it, and this binding deliberately does not claim a replayable searched state."
+notes = "Exploratory method and hit lists are preserved transparently in lexical-parallels-audit.md, checked 2026-08-15, but are quarantined from release evidence. Reader-facing Greek Old Testament claims use individually identified loci and witnesses instead."
+source_fingerprint = "sha256:72d8dd57e164e5bf068d4c95765e9e4d2911136d962a2204c6ef44dd3f1a5a45"
+
+[[bindings]]
+source_id = "artifact.centerblc.lxx-text-fabric.rlxx1935-4829f37.github-archive-4829f37-27cbb379"
+claim_keys = ["david-john-leaping", "unique-verb"]
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "The exact CenterBLC Text-Fabric snapshot is documented as a quarantined normalization lead. It is derivative of the CATSS/Wong lineage and is neither an independent witness nor a repository-replayable publication boundary."
+notes = "The exploratory normalization check is recorded in lexical-parallels-audit.md, 2026-08-15, but carries no published count. The MIT license on software and additions is not treated as relicensing the inherited restricted Greek data."
+source_fingerprint = "sha256:3a7895657d8cbc17a9dc33abdf3f6b19867b7584b501696f6958f6dd3c255b14"
+
+[[bindings]]
+source_id = "artifact.eliran-wong.lxx-rahlfs-1935-dataset.a1b5ff1.github-archive-a1b5ff1-113bbb98"
+claim_keys = ["unique-verb"]
+role = "rights-control"
+states = ["cataloged", "acquired"]
+context = "The exact Wong LXX-Rahlfs-1935 snapshot was consulted to establish the provenance and rights chain behind the CenterBLC normalization dataset. It is not counted as an independent textual witness or a repository-replayable search."
+notes = "The snapshot declares CC BY-NC-SA 4.0 for Wong's contribution and retains CATSS registration and access-control conditions for inherited data."
+source_fingerprint = "sha256:ebde3719c168d7c053e0a80704c995d82b6dc71e5f2e9e627f73eb8679458b8e"
+
+[[bindings]]
+source_id = "edition.swete.old-testament-in-greek.cambridge-vol-1-1909"
+claim_keys = ["acacia", "overshadowing", "three-months", "unique-verb"]
+role = "context"
+states = ["cataloged"]
+context = "Swete's Greek Old Testament edition is cataloged as a lexical comparison witness. Reader-facing Old Testament lexical claims are limited to individually identified loci and witness-bounded comparisons; this catalog-only binding carries no corpus total."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.11-12"
+loci = ["11-12"]
+claim_keys = ["interpretive-method"]
+role = "official-control"
+states = ["cataloged"]
+context = "The official conciliar passage controls the study's Catholic account of inspiration, truth, literary attention, canonical unity, living Tradition, and the analogy of faith. This publication-level binding does not inherit another leaf's inspection event."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.52-69"
+loci = ["52-69"]
+claim_keys = ["divine-motherhood", "perpetual-virginity", "immaculate-conception", "assumption", "christological-boundary"]
+role = "official-control"
+states = ["cataloged"]
+context = "The complete official English Marian chapter supplies the broad conciliar frame for Mary's divine motherhood, holiness, virginal motherhood, pilgrimage of faith, Assumption, ecclesial typology, and wholly subordinate participation in Christ."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-archive-2003.970"
+loci = ["970"]
+claim_keys = ["christological-boundary"]
+role = "official-control"
+states = ["cataloged"]
+context = "The Catechism passage controls the necessary boundary that Mary's maternal role and saving influence depend entirely on Christ's unique mediation and draw all their power from it."
+
+[[bindings]]
+source_id = "edition.pius-ix.ineffabilis-deus.english-papal-encyclicals-web-2026-07-25"
+loci = ["definition"]
+claim_keys = ["immaculate-conception"]
+role = "official-control"
+states = ["cataloged"]
+context = "The cataloged English delivery state identifies the defining constitution. Its translator and translation rights remain unresolved; the publication therefore keeps quotation minimal and treats the Latin promulgated act as controlling."
+
+[[bindings]]
+source_id = "edition.pius-xii.munificentissimus-deus.english-vatican-web-2026-07-25"
+loci = ["44"]
+claim_keys = ["assumption"]
+role = "official-control"
+states = ["cataloged"]
+context = "The cataloged Holy See English state identifies paragraph 44 as the definition of Mary's bodily Assumption. The Ark imagery is used as received fittingness and not substituted for the definition's proper grounds."
+
+[[bindings]]
+source_id = "edition.john-of-damascus.homilies-on-the-dormition.english-allies-london-1898"
+loci = ["Second Homily on the Dormition"]
+claim_keys = ["patristic-ark", "assumption"]
+role = "reception"
+states = ["cataloged"]
+context = "The public-domain Allies translation is a catalog-level witness to John Damascene's mature living-Ark and Dormition synthesis. It has no registered exact passage artifact and therefore supports attribution and bibliography here, not a new verified quotation claim."

@@ -1,6 +1,80 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-mary-new-ark-journey-2026-08-15"
+owner = "src/gpt/theology/mariology/ark-of-the-covenant/research/scope.md"
+promise = "Publish a source-audited Catholic Marian study that tells the Ark's scriptural journey, presents Mary as its living New-Covenant fulfillment in Christ, synthesizes authenticated patristic and saintly reception, relates the four Marian dogmas, gives Joseph and Mary's true virginal marriage a positive and proper place in the typology, applies the requested spiritual pedagogy, and includes an evidence-controlled pencil map in reviewed PDF and web editions."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "ark-narrative-and-scripture"
+  criterion = "The publication gives a vivid source-bound account of the Ark from Sinai through its final scriptural and heavenly horizons, and distinguishes narrated movement, canonical tradition, vision, and geographic uncertainty."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant"]
+
+  [[deliverables.requirements]]
+  id = "new-ark-typology-and-lexical-audit"
+  criterion = "The Annunciation and Visitation synthesis checks the overshadowing, hill-country, household, blessing, question, leaping, three-month, and Greek or Septuagintal claims without weakening the Church's affirmative New-Ark reading or overstating verbal identity."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/lexical-parallels-audit.md"]
+
+  [[deliverables.requirements]]
+  id = "patristic-saintly-and-liturgical-reception"
+  criterion = "Every patristic, saintly, and liturgical Ark witness used in the publication has an exact locus, edition or checked witness, date and attribution status, while traditional pseudonymous reception is preserved under its honest name."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/patristic-typology-audit.md"]
+
+  [[deliverables.requirements]]
+  id = "four-dogma-synthesis"
+  criterion = "The four Marian dogmas are stated according to their exact objects and authorities and presented as the full unfolding of Mary's Ark vocation under Christ's definitive covenantal fulfillment, not as deductions from isolated details."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/dogma-and-typology-inventory.md"]
+
+  [[deliverables.requirements]]
+  id = "virginal-marriage-fulfillment"
+  criterion = "Joseph and Mary's true, freely shared virginal marriage receives a positive typological synthesis grounded in Joseph's obedient reception, guardianship, Davidic service, and the ordered custody of holy presence; Uzzah remains a bounded contrast rather than a claim that marriage is defiling or Mary physically dangerous."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/virginal-marriage-typology.md"]
+
+  [[deliverables.requirements]]
+  id = "spiritual-pedagogy"
+  criterion = "Original prose and exercises adapt the requested pedagogical movements from C. S. Lewis, Dom Chautard, and Réginald Garrigou-Lagrange while keeping them distinct from biblical, patristic, or dogmatic evidence and respecting rights."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/pedagogy-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "pencil-map"
+  criterion = "The reviewed PDF contains a project-created pencil map whose geography, labels, routes, uncertainties, typological overlay, accessibility equivalent, provenance, rights, and production checks reconcile to a tracked source matrix."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/map-provenance.md"]
+
+  [[deliverables.requirements]]
+  id = "ark-and-sanctuary-diagrams"
+  criterion = "The reviewed publication includes pencil-style, source-controlled diagrams of the Ark's commanded form and its attested placement in the wilderness Tabernacle, Shiloh, David's tent on Zion, and Solomon's Temple, with architectural or locational uncertainty made explicit and no generated pixel treated as factual evidence."
+  status = "pass"
+  evidence = [
+    "src/gpt/theology/mariology/ark-of-the-covenant/sections/57-ark-and-sanctuaries.tex",
+    "src/gpt/theology/mariology/ark-of-the-covenant/research/ark-diagram-audit.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "publication-installation"
+  criterion = "The settled PDF and faithful web edition are installed under the mirrored GPT Mariology paths, every PDF page and the web conversion are reviewed, and the owning catalog and alpha release record discover the work."
+  status = "pass"
+  evidence = [
+    "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+    "web/gpt/theology/mariology/ark-of-the-covenant.md",
+    "library/mariology.md",
+    "release/publications/gpt/theology/mariology/ark-of-the-covenant.json",
+  ]
+
+  [[deliverables.requirements]]
+  id = "validated-push-and-deployment"
+  criterion = "Required source, metadata, PDF, web, catalog, release, public-site, and deployment gates pass; the intended exact commit is pushed to origin/main without rewriting history; and the resulting Pages run and affected live routes are verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
+
+[[deliverables]]
 id = "corpus-browser-foundation-design-2026-08-08"
 owner = "guidance/corpus-browser-roadmap.md"
 promise = "Execute A0-A4 for the non-PDF Triptych corpus experience: complete the public-surface inventory and scholarly-interface research, define the governing site-wide product vision and three visual archetypes, specify shared navigation/search/context behavior, commit durable design memory, and produce one verified standard external-review ZIP without implementing production application logic or merging to main."

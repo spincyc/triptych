@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-08-01"
+audited_on = "2026-08-16"
 discovery_rule = "src/gpt/**/main.tex"
-publication_count = 133
-source_surface_file_count = 1963
-snapshot = "sha256:7e47ae0e09188109b2ccc0e0608304d72386224f0504a2c8c7105d94b7de9a2d"
+publication_count = 134
+source_surface_file_count = 1997
+snapshot = "sha256:083d02bd28e2c3302e1f8a54a6f0ec504540c5b69e4954e5fedf6e07a19a0f6c"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -1649,6 +1649,17 @@ inventory_state = "sources-categorized"
 source_categories = ["archival-material", "canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/apparitions"
+relationship = "local"
+
+[[documents]]
+id = "theology/mariology/ark-of-the-covenant"
+main = "src/gpt/theology/mariology/ark-of-the-covenant/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "theology/mariology/ark-of-the-covenant"
 relationship = "local"
 
 [[documents]]
@@ -12183,6 +12194,210 @@ path = "src/gpt/theology/mariology/apparitions/web-edition.toml"
 sha256 = "a5f94e6d9202f52cc0a4c43e049dc44101c68c7b8dcb15e4b2d0689fa999a0b4"
 kind = "rendered-content"
 owners = ["theology/mariology/apparitions"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/artwork/ark-journey-vector-map.tex"
+sha256 = "e1edb99ba30be4f06e356a6881e7ba0594f133ab3684e6200919fd9009793f64"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/main.tex"
+sha256 = "ee45555a3a3baa5a4d81d5252d870364d8a39681983df642d856e5f75123c1d2"
+kind = "publication-main"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/research/ark-diagram-audit.md"
+sha256 = "7af7f6cbd127646f56cdd3513cf10c190232257de56fa4bc42456bba520c4a20"
+kind = "research-record"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/research/ark-journey-audit.md"
+sha256 = "679d0199d628eaf29127f892918a5ab8ad690bd91103692953506270163765ad"
+kind = "research-record"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/research/dogma-and-typology-inventory.md"
+sha256 = "df166f670dd325f842faa0c367ad4f84ef463877255f7f7416290c9225790c07"
+kind = "research-record"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/research/lexical-parallels-audit.md"
+sha256 = "cfc4c66771c19a96dae0401d381b8becdce15c86872f1e8adadaa779b8808ab4"
+kind = "research-record"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/research/map-provenance.md"
+sha256 = "ae3188904421955a97b5a91441fa2b51de5c722cc6c2f02d02965c71192802b4"
+kind = "research-record"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/research/patristic-typology-audit.md"
+sha256 = "8e83c09a29ceb12854b0a77c8154696137e659ad03037e94e07c8938d01d2e8f"
+kind = "research-record"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/research/pedagogy-plan.md"
+sha256 = "4f5080e878d19ec99dbe244adee3f8ef97fc5745cb5a56a664fc56957051956f"
+kind = "research-record"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/research/sanity-review.md"
+sha256 = "3082ceb0acf2d5864636a31175a1d3f5e20adbd6ec71c2446c671acdbc55b63a"
+kind = "research-record"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/research/scope.md"
+sha256 = "28b29b8d0004680330111d51241332ed2e6a400626cc25d02f5011d06bfdbc8d"
+kind = "research-scope"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/research/source-audit.md"
+sha256 = "56baddacfcd53ac7ecd8082e4f3e15187f80fc5e9b29b80d4ef1a7fc5ff80a19"
+kind = "legacy-source-audit"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/research/source-bindings.toml"
+sha256 = "8994b40ad5c9ce7b1aeeb22eba0180ca2e56b4fc68ac1d665c5594a3c1b7056d"
+kind = "source-binding"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/research/virginal-marriage-typology.md"
+sha256 = "9230dd76907ac67653ae72c71d0e5fb04136be4f81782ea73830db68fe6f9349"
+kind = "research-record"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/00-prologue.tex"
+sha256 = "d0f13dfb88409d0fa4cc8c3a23174c3b4ad42a5e7479d77e07bef08ff5bbbe48"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/10-fashioned-for-presence.tex"
+sha256 = "026080ec9f640fec1e8332c1cdeb8fed01cb5a5836127e020c82587ff592a5fe"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/20-ark-goes-before.tex"
+sha256 = "0e30b8fcf5a0aeafb0e2ad183a767107d5ea5db470f919d05af2a309b7f560f7"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/30-glory-in-captivity.tex"
+sha256 = "672f69d49290c7647f6139ff85f59355c22ee1e7358dd5eb3ee20c26011a5b65"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/40-fear-blessing-dance.tex"
+sha256 = "f42814d6fca0a46cf2b0d4c1a93a4f6f9e1d9f50571ab3bfbd00fdf13c639e03"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/45-rest-hiddenness.tex"
+sha256 = "83dd8bd0b85c4ce57fb7ed8cc214274446226d920182ce46f3ed5e192d7e44ed"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/50-overshadowing-hill-country.tex"
+sha256 = "989a5edbc1830318b0a67a6f75738172993b8d51975b736de27ed3d249a0a545"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/55-map-text-equivalent.tex"
+sha256 = "890762aa5319bf73e2f1f8757b9546e7b4b5891ca41ce4e331ea63c64e7a4b39"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/55-map.tex"
+sha256 = "7d9a551ec1dde963e3cdbcfdac191854d343450706bc5b361e9c21d5b2b4b03c"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/57-ark-and-sanctuaries-text-equivalent.tex"
+sha256 = "5fd805e001e8cca26cff248a30c66871103f2c1eb7fd319c401780d43b28b9f1"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/57-ark-and-sanctuaries.tex"
+sha256 = "c1b6d86dbf43013aa3e7f2451becf6d86074c5d431b64696ec7d789a8a10f9d7"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/60-scripture-recognizes-scripture.tex"
+sha256 = "0f09ef08af9a29668518ec725d25b0883146f2214f8bd66720582e875557b4d0"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/70-choir-of-witnesses.tex"
+sha256 = "c8d6c8be264abcf392ffb658a9b7dcfc5a9f3a4a53f93432dd1d0564f6f473b6"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/75-virginal-marriage.tex"
+sha256 = "8035c1eb9fac560851b52bef195e3da2eff2788ccc12b46ff2952475f85f43df"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/80-four-dogmas.tex"
+sha256 = "1cec61702f9085245ae4d5cbc57150ca10d7332dce74981caab1c3600366a6e0"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/90-where-glory-dwells.tex"
+sha256 = "6b3faa7d5f0339026a7169b369fc1f4e300d956fe577ff92f803ff726264e27b"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/95-study-guide.tex"
+sha256 = "6bf9a4f80f1f1c1f0cb6fda70ff1be029222ce9ff238060b5effc778c815ef1a"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/96-synopsis.tex"
+sha256 = "64e852b390542adf082b2b9cf1ca3f72c3a3fe440bfe2c11a88dea3a67b73ad2"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/sections/99-references.tex"
+sha256 = "6221ca1fb58b0f1f44c2672718e27737928ea88d676705200fe213de89ea4758"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
+
+[[files]]
+path = "src/gpt/theology/mariology/ark-of-the-covenant/web-edition.toml"
+sha256 = "a5db5a2128ee89f6ef93bf74fe1a277dcc225eddebd46a3548e16da992b7fe2a"
+kind = "rendered-content"
+owners = ["theology/mariology/ark-of-the-covenant"]
 
 [[files]]
 path = "src/gpt/theology/mariology/champion/main.tex"

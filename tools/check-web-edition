@@ -58,6 +58,10 @@ BASIS_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 INPUT_RE = re.compile(r"\\(?:input|include)\{([^{}]+)\}")
 MACRO_RE = re.compile(r"\\newcommand\{\\([A-Za-z@]+)\}\{([^{}]*)\}")
 MACRO_REFERENCE_RE = re.compile(r"\\[A-Za-z@]+")
+PRINT_EDITION_BRANCH_RE = re.compile(
+    r"\\ifdefined\\TriptychPrintEdition(.*?)\\else(.*?)\\fi",
+    re.DOTALL,
+)
 
 # Constructs whose meaning is carried by the printed page rather than by the
 # text.  A leaf that uses any of them cannot be declared eligible.
@@ -89,7 +93,8 @@ class Finding:
 
 
 def active_tex(text: str) -> str:
-    """Remove TeX comments so a commented-out construct does not fail the gate."""
+    """Return the source branch the web converter actually assembles."""
+    text = PRINT_EDITION_BRANCH_RE.sub(lambda match: match.group(2), text)
     return "\n".join(re.sub(r"(?<!\\)%.*$", "", line) for line in text.splitlines())
 
 

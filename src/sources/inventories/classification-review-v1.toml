@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-07-27"
-publication_snapshot = "sha256:a2e536a99bca958dd103812148c416d8a9b84e2ee6adb2ee016addf658440f54"
-classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e80416cbe053074c94c"
+audited_on = "2026-08-15"
+publication_snapshot = "sha256:3474662a956356f8495f1e28c79c911a8cb22d70250060f4232d975c5b20d4e6"
+classification_snapshot = "sha256:6f0eaaa5f8da040978483ad4a82e63aaa18ffaadd92708f04d9fd2ff79887beb"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -487,6 +487,10 @@ source_categories = ["canon-law", "historical-primary", "institutional-current",
 [[classifications]]
 document = "theology/mariology/apparitions"
 source_categories = ["archival-material", "canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
+
+[[classifications]]
+document = "theology/mariology/ark-of-the-covenant"
+source_categories = ["dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "theology/mariology/champion"

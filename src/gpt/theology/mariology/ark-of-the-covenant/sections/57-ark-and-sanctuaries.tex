@@ -1,0 +1,181 @@
+\subsection{A pencil study of the commanded Ark}
+
+The first plate is a source-controlled study of the features commanded in
+Exodus, not a recovered portrait of the lost object.  Its roughened line is a
+visual convention; labels, proportions, and boundaries carry the evidence.
+
+\begin{center}
+\begin{tikzpicture}[
+  x=1cm,y=1cm,
+  ark pencil/.style={draw=black,line width=.72pt,decorate,
+    decoration={random steps,segment length=4pt,amplitude=.18pt}},
+  ark faint/.style={draw=black!55,line width=.48pt,decorate,
+    decoration={random steps,segment length=4pt,amplitude=.14pt}},
+  ark label/.style={font=\fontsize{7.5}{8.4}\selectfont,align=left,
+    fill=white,inner sep=1.2pt},
+  ark note/.style={font=\fontsize{6.8}{7.5}\selectfont,align=center}
+]
+  % Chest and cover: a deliberately schematic three-quarter study.
+  \path[fill=black!3] (2.3,1.25) -- (9.2,1.25) -- (10.45,2.03) --
+    (10.45,4.15) -- (3.55,4.15) -- (2.3,3.37) -- cycle;
+  \draw[ark pencil] (2.3,1.25) -- (9.2,1.25) -- (10.45,2.03) --
+    (10.45,4.15) -- (3.55,4.15) -- (2.3,3.37) -- cycle;
+  \draw[ark pencil] (2.3,3.37) -- (9.2,3.37) -- (10.45,4.15);
+  \draw[ark faint] (9.2,1.25) -- (9.2,3.37);
+  \draw[ark pencil] (2.06,3.53) -- (9.16,3.53) -- (10.72,4.48) --
+    (3.62,4.48) -- cycle;
+  \draw[ark faint] (2.06,3.53) -- (2.06,3.72) -- (9.16,3.72) --
+    (10.72,4.67) -- (10.72,4.48);
+
+  % Rings and permanent poles.
+  \draw[ark pencil] (3.0,1.58) circle (.19);
+  \draw[ark pencil] (8.45,1.58) circle (.19);
+  \draw[ark pencil] (9.84,2.34) circle (.17);
+  \draw[ark pencil] (4.12,4.01) circle (.16);
+  \draw[ark pencil,line width=1.05pt] (.45,1.30) -- (11.65,2.86);
+  \draw[ark faint,line width=1.05pt] (1.02,3.49) -- (11.88,4.88);
+
+  % Cherubim: symbolic outlines only; Scripture does not preserve their visual form.
+  \draw[ark pencil] (4.22,4.50) .. controls (4.12,5.20) and (4.42,5.55) ..
+    (4.82,5.68) .. controls (5.12,5.28) and (5.35,4.92) .. (5.64,4.69);
+  \draw[ark pencil] (4.76,5.65) .. controls (5.70,6.27) and (6.43,6.30) ..
+    (6.85,5.27);
+  \draw[ark faint] (4.89,5.56) .. controls (5.78,5.91) and (6.28,5.88) ..
+    (6.70,5.22);
+  \draw[ark pencil] (8.61,5.03) .. controls (8.91,5.47) and (9.00,5.84) ..
+    (8.72,6.11) .. controls (8.23,6.03) and (7.89,5.75) .. (7.70,5.12);
+  \draw[ark pencil] (8.70,6.08) .. controls (7.78,6.50) and (7.09,6.33) ..
+    (6.83,5.27);
+  \draw[ark faint] (8.57,6.00) .. controls (7.72,6.20) and (7.22,6.05) ..
+    (6.96,5.25);
+  \draw[ark faint] (5.62,4.70) .. controls (6.18,4.42) and (6.41,4.43) ..
+    (6.74,4.64);
+  \draw[ark faint] (7.69,5.12) .. controls (7.28,4.76) and (7.05,4.68) ..
+    (6.76,4.67);
+
+  % Dimension witness and live labels.
+  \draw[ark faint,{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]}]
+    (2.15,.68) -- (9.25,.68);
+  \node[ark note] at (5.70,.38) {length: $2\frac12$ cubits};
+  \draw[ark faint,{Stealth[length=1.6mm]}-{Stealth[length=1.6mm]}]
+    (10.98,2.02) -- (10.98,4.43);
+  \node[ark note,rotate=90] at (11.32,3.20) {height: $1\frac12$ cubits};
+  \node[ark note] at (9.98,1.08) {width: $1\frac12$ cubits};
+
+  \node[ark label,anchor=east] (wood) at (1.75,2.62)
+    {acacia/setim wood\\gold overlaid inside and out};
+  \draw[ark faint] (wood.east) -- (3.08,2.72);
+  \node[ark label,anchor=east] (poles) at (2.25,.07)
+    {wood poles overlaid with gold;\\left in the four rings};
+  \draw[ark faint] (poles.east) -- (3.28,1.70);
+  \node[ark label,anchor=west] (cover) at (11.15,4.31)
+    {pure-gold cover /\\mercy seat / propitiatory};
+  \draw[ark faint] (cover.west) -- (10.18,4.45);
+  \node[ark label,anchor=west] (cherub) at (9.72,5.86)
+    {two hammered-gold cherubim;\\wings overshadow the cover;\\faces turn toward it};
+  \draw[ark faint] (cherub.west) -- (8.78,5.90);
+  \node[ark note,anchor=west,text width=8.3cm,align=left] at (.55,6.55)
+    {Ex 25:10--22; 37:1--9. Proportions are relative. A cubit's modern length and the cherubim's appearance are not reconstructed.};
+\end{tikzpicture}
+\end{center}
+
+\begin{studybox}{What was within, before, and beside it}
+Exodus and Deuteronomy place the covenant tablets within the Ark.  The
+Pentateuch places the manna vessel and Aaron's rod before the Testimony and the
+book of the law beside the Ark.  Hebrews 9:4 gathers the golden manna vessel,
+Aaron's rod, and tablets within its retrospective sanctuary description.  At
+Solomon's dedication, 1 Kings 8:9 says that only the two tablets were inside.
+The drawing does not invent when or how any item entered or left.
+\end{studybox}
+
+\clearpage
+\subsection{Four sanctuary settings}
+
+These plan-like studies show what the biblical texts permit a reader to see and
+mark what they do not.  They are not archaeological reconstructions, and the
+four panels are not drawn to a common scale.
+
+\begin{center}
+\begin{tikzpicture}[
+  x=1cm,y=1cm,
+  sanct pencil/.style={draw=black,line width=.66pt,decorate,
+    decoration={random steps,segment length=4pt,amplitude=.17pt}},
+  sanct faint/.style={draw=black!55,line width=.45pt,decorate,
+    decoration={random steps,segment length=4pt,amplitude=.13pt}},
+  sanct unknown/.style={draw=black!65,line width=.55pt,dash pattern=on 3pt off 2pt},
+  sanct title/.style={font=\fontsize{8.2}{9}\selectfont\bfseries,align=center},
+  sanct text/.style={font=\fontsize{6.6}{7.2}\selectfont,align=center},
+  sanct ark/.style={draw=black,line width=.7pt,fill=black!10,minimum width=.52cm,
+    minimum height=.34cm,inner sep=0pt}
+]
+  % Wilderness Tabernacle.
+  \begin{scope}[shift={(0,4.75)}]
+    \node[sanct title,anchor=south] at (3.55,3.25) {Wilderness Tabernacle --- commanded arrangement};
+    \draw[sanct pencil] (.25,.15) rectangle (6.85,3.05);
+    \draw[sanct faint] (.25,1.28) -- (.25,1.90);
+    \node[sanct text,anchor=east] at (.17,1.59) {court\\entrance};
+    \draw[sanct pencil,fill=black!2] (3.55,.64) rectangle (6.32,2.55);
+    \draw[sanct pencil] (5.34,.64) -- (5.34,2.55);
+    \node[sanct text] at (4.43,1.60) {Holy\\Place};
+    \node[sanct text] at (5.83,2.73) {veil};
+    \node[sanct text] at (5.83,1.22) {Most Holy\\Place};
+    \node[sanct ark] at (5.83,1.85) {};
+    \node[sanct text,anchor=south] at (5.83,2.04) {Ark};
+    \node[sanct text,anchor=north] at (3.55,.52) {Tent within the court; Ark screened by the veil (Ex 26; 40:18--21)};
+  \end{scope}
+
+  % Shiloh.
+  \begin{scope}[shift={(8.0,4.75)}]
+    \node[sanct title,anchor=south] at (3.55,3.25) {Shiloh --- attested sanctuary, unrecovered form};
+    \draw[sanct unknown] (.35,.20) rectangle (6.75,3.00);
+    \node[sanct ark] at (3.55,1.38) {};
+    \node[sanct text,anchor=south] at (3.55,1.60) {Ark explicitly present};
+    \node[sanct text] at (3.55,.58) {Tent / house / temple language;\\doors and lamp are named};
+    \node[sanct text,align=center] at (3.55,2.35) {NO CLAIM OF EXACT PLAN,\\MATERIAL, OR FOOTPRINT};
+    \node[sanct text,anchor=north] at (3.55,.08) {Jos 18:1; 1 Sm 1:9; 3:3, 15; 4:3--4};
+  \end{scope}
+
+  % David's tent.
+  \begin{scope}[shift={(0,.05)}]
+    \node[sanct title,anchor=south] at (3.55,3.25) {David's tent on Zion --- a separate resting place};
+    \draw[sanct unknown] (.35,.20) rectangle (6.75,3.00);
+    \draw[sanct pencil] (1.34,.86) -- (2.00,2.48) -- (5.15,2.48) -- (5.80,.86);
+    \draw[sanct faint] (2.00,2.48) -- (2.00,.86);
+    \draw[sanct faint] (5.15,2.48) -- (5.15,.86);
+    \node[sanct ark] at (3.57,1.28) {};
+    \node[sanct text,anchor=south] at (3.57,1.50) {Ark};
+    \node[sanct text] at (3.57,.58) {A symbolic tent sign, not a reconstructed\\structure or site};
+    \node[sanct text,anchor=north] at (3.57,.08) {2 Sm 6:17; 1 Chr 16:1, 39--40};
+  \end{scope}
+
+  % Solomon's Temple.
+  \begin{scope}[shift={(8.0,.05)}]
+    \node[sanct title,anchor=south] at (3.55,3.25) {Solomon's Temple --- textual plan simplified};
+    \draw[sanct pencil,fill=black!2] (.45,.58) rectangle (6.65,2.72);
+    \draw[sanct pencil] (1.32,.58) -- (1.32,2.72);
+    \draw[sanct pencil] (4.70,.58) -- (4.70,2.72);
+    \node[sanct text] at (.88,1.65) {porch};
+    \node[sanct text] at (3.02,1.65) {Holy Place};
+    \node[sanct text] at (5.67,.91) {inner sanctuary};
+    \node[sanct ark] at (5.67,1.55) {};
+    \draw[sanct pencil] (4.95,2.28) .. controls (5.28,2.64) and (5.51,2.63) .. (5.67,2.04);
+    \draw[sanct pencil] (6.39,2.28) .. controls (6.06,2.64) and (5.83,2.63) .. (5.67,2.04);
+    \node[sanct text,anchor=south] at (5.67,2.66) {Ark beneath the great cherubim};
+    \node[sanct text,anchor=north] at (3.55,.44) {Ark brought up from Zion; cloud fills the house (1 Kgs 6:19--28; 8:1--11)};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{studyframe}
+\textbf{Continuity:} In every attested setting, the Ark belongs to divinely
+ordered covenant worship; no ruler or city turns it into a private talisman.
+\par
+\textbf{Change:} The commanded movable sanctuary, the textually complex Shiloh
+sanctuary, David's newly pitched tent, and Solomon's permanent house are not
+four interchangeable buildings.
+\par
+\textbf{Boundary:} Scripture securely identifies the Ark's presence and, in
+some cases, its liturgical relation to veil or inner sanctuary.  It does not
+preserve the Shiloh structure, David's tent, the Ark's artistic appearance, or
+the precise First-Temple footprint for modern reconstruction.
+\end{studyframe}

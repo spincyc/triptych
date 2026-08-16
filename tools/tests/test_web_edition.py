@@ -292,6 +292,51 @@ class WebEditionTreeTests(unittest.TestCase):
             self.audit("articles/faith/commented").eligibility, "eligible"
         )
 
+    def test_print_only_construct_with_web_equivalent_does_not_fail_gate(self) -> None:
+        self.write_leaf(
+            "articles/faith/illustrated",
+            main=(
+                "\\input{common/preamble}\n"
+                "\\def\\TriptychPrintEdition{}\n"
+                "\\begin{document}\n"
+                "\\input{articles/faith/illustrated/sections/wrapper}\n"
+                "\\end{document}\n"
+            ),
+            declaration=record("articles/faith/illustrated"),
+            files={
+                "sections/wrapper.tex": (
+                    "\\ifdefined\\TriptychPrintEdition\n"
+                    "  \\input{articles/faith/illustrated/sections/plate}\n"
+                    "\\else\n"
+                    "\\fi\n"
+                    "\\input{articles/faith/illustrated/sections/equivalent}\n"
+                ),
+                "sections/plate.tex": (
+                    "\\begin{tikzpicture}\\end{tikzpicture}\n"
+                ),
+                "sections/equivalent.tex": "A complete textual equivalent.\n",
+            },
+        )
+        self.assertEqual(
+            self.audit("articles/faith/illustrated").eligibility, "eligible"
+        )
+
+    def test_blocking_construct_in_web_arm_still_fails_gate(self) -> None:
+        self.write_leaf(
+            "articles/faith/web-diagram",
+            main=(
+                "\\input{common/preamble}\n"
+                "\\ifdefined\\TriptychPrintEdition\n"
+                "Printed equivalent.\n"
+                "\\else\n"
+                "\\begin{tikzpicture}\\end{tikzpicture}\n"
+                "\\fi\n"
+            ),
+            declaration=record("articles/faith/web-diagram"),
+        )
+        with self.assertRaisesRegex(ValueError, "tikzpicture"):
+            self.audit("articles/faith/web-diagram")
+
     def test_provider_defaults_to_the_environment_then_gpt(self) -> None:
         self.write_leaf("articles/faith/plain", declaration=record("articles/faith/plain"))
         self.write_leaf(
@@ -337,6 +382,59 @@ class DriverConversionTests(unittest.TestCase):
         self.assertIn("dossiertable", DRIVER.defined_names(
             DRIVER.local_definitions(preamble)
         ))
+
+    def test_assemble_selects_web_arm_in_nested_input(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            source = Path(temporary) / "src"
+            nested = source / "gpt" / "shared" / "plate.tex"
+            nested.parent.mkdir(parents=True)
+            nested.write_text(
+                "\\ifdefined\\TriptychPrintEdition\n"
+                "\\begin{tikzpicture}print only\\end{tikzpicture}\n"
+                "\\else\n"
+                "Complete textual equivalent.\n"
+                "\\fi\n",
+                encoding="utf-8",
+            )
+            with mock.patch.object(DRIVER, "SRC", source):
+                assembled = DRIVER.assemble(
+                    "\\input{shared/plate}", "gpt", {}
+                )
+            self.assertEqual(assembled.strip(), "Complete textual equivalent.")
+
+    def test_convert_selects_web_arm_before_auditing_nested_input(self) -> None:
+        if shutil.which("pandoc") is None:
+            self.skipTest("pandoc is not installed")
+        document = (
+            "\\input{common/preamble}\n"
+            "\\hypersetup{pdftitle={Nested print branch}}\n"
+            "\\def\\TriptychPrintEdition{}\n"
+            "\\begin{document}\n"
+            "\\input{shared/plate}\n"
+            "\\AIDocumentRevisionTimestamp{2026-08-16T00:00:00Z}\n"
+            "\\AIModelContribution{m}{q}{r}\n"
+            "\\end{document}\n"
+        )
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            leaf = root / "src" / "gpt" / "doc"
+            nested = root / "src" / "gpt" / "shared" / "plate.tex"
+            leaf.mkdir(parents=True)
+            nested.parent.mkdir(parents=True)
+            (leaf / "main.tex").write_text(document, encoding="utf-8")
+            nested.write_text(
+                "\\ifdefined\\TriptychPrintEdition\n"
+                "\\begin{tikzpicture}print only\\end{tikzpicture}\n"
+                "\\else\n"
+                "Complete textual equivalent.\n"
+                "\\fi\n",
+                encoding="utf-8",
+            )
+            with mock.patch.object(DRIVER, "SRC", root / "src"):
+                written = DRIVER.convert("gpt", "doc", out=root / "out")
+            output = written.read_text(encoding="utf-8")
+            self.assertIn("Complete textual equivalent.", output)
+            self.assertNotIn("print only", output)
 
     def test_a_row_of_empty_cells_fails_the_audit(self) -> None:
         markdown = (

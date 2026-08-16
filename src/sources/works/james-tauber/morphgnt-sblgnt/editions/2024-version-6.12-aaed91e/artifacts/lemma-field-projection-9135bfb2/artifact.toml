@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e.lemma-field-projection-9135bfb2"
+edition_id = "edition.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e"
+artifact_type = "lemma-field-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "This projection retains only MorphGNT's lemma field, whose parsing and lemmatization are distributed under CC BY-SA 3.0; it omits the separately licensed SBLGNT surface-text fields."
+license = "CC-BY-SA-3.0"
+provenance = "Deterministically projected from the 27 canonical-order *-morphgnt.txt files in the exact aaed91e57c8e4a8dc9a2383e129ca5e75fe6393d archive."
+retrieved = "2026-08-15"
+sha256 = "9135bfb25f50801c95f22392edc2b3dd5f76841297c160bb83ff00e0225206bf"
+byte_size = 1411444
+path = "src/sources/works/james-tauber/morphgnt-sblgnt/editions/2024-version-6.12-aaed91e/artifacts/lemma-field-projection-9135bfb2/lemma-field.txt"
+derived_from = "artifact.james-tauber.morphgnt-sblgnt.version-6.12-aaed91e.github-archive-aaed91e-e760c941"
+transformation = "Extract 61-Mt-morphgnt.txt through 87-Re-morphgnt.txt in numeric canonical order from the pinned archive; for every nonblank token row, emit the final whitespace-delimited lemma field followed by LF, preserving Unicode exactly."
+indexable = true
+encoding = "utf-8"
+notes = "One lemma occupies each physical line. Raw-line literal case-sensitive searches therefore replay exact lemma-token counts without distributing the SBLGNT surface text."

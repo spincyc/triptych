@@ -476,6 +476,39 @@ which is the honest state rather than a rounding of it.
 
 ## Promised work
 
+### Mary as the New Ark: journey, dogmas, and virginal marriage
+
+<!-- promised-deliverable: gpt-mary-new-ark-journey-2026-08-15 -->
+
+**Candidate for the qualified public alpha; commit, push to `origin/main`, and
+GitHub Pages verification remain.** The source-audited study gives a vivid
+account of the Ark's journey; receives Mary confidently as its living
+New-Covenant fulfillment because she bears Christ; synthesizes exact
+patristic, saintly, liturgical, and magisterial witnesses; and shows the four
+Marian dogmas as the full unfolding of that vocation without displacing Christ
+as the covenant's definitive fulfillment.
+
+Joseph and Mary's chastity is neither omitted nor reduced to a negative Uzzah
+analogy. Their true virginal marriage receives a positive synthesis centered
+on Joseph's commanded reception of Mary, Davidic fatherhood, spousal love, and
+ordered guardianship of the divine Presence. Uzzah remains only a bounded
+contrast between unappointed handling and obedient service; the study rejects
+any implication that marriage is defiling, Mary physically dangerous, or
+Joseph's continence terror-driven.
+
+The reviewed 42-page PDF and its installed copy are byte-identical at SHA-256
+`a520adb39130bb3b65a3bd7d92926fbc77126650fdf593d0680fc10bee125843`.
+The generated and installed web editions are byte-identical at SHA-256
+`3a5e96c2405e1d311acf65ef931a45ebee502e459817f5a744833858ce62d1bc`.
+Every page was reviewed; the map, Ark study, sanctuary settings, and dogma
+synopses received full-size checks; and the final independent Catholic sanity
+review passes. The pencil map distinguishes narrated, inferred, traditional,
+and unknown geography. The Ark and sanctuary plates distinguish commanded or
+attested data from unrecoverable form and location. The first nine acceptance
+requirements pass. `validated-push-and-deployment` remains open until the exact
+candidate is pushed without history rewriting and the resulting Pages run and
+affected live routes are verified.
+
 ### Corpus browser foundation design
 
 <!-- promised-deliverable: corpus-browser-foundation-design-2026-08-08 -->

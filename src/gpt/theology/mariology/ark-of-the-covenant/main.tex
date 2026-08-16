@@ -1,0 +1,167 @@
+\input{common/preamble}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usetikzlibrary{decorations.pathmorphing}
+
+\hypersetup{
+  pdftitle={The Ark and the Mother of the Lord: The Journey of the Covenant Presence},
+  pdfsubject={The Ark's scriptural journey, its fulfillment in Mary, patristic and saintly reception, the four Marian dogmas, virginal marriage, and spiritual application}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2.5em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\arkthesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\newcommand{\arkaxis}[3]{%
+  \begin{studyframe}
+  \textbf{Ark locus and movement:} #1\par
+  \textbf{New-Covenant correspondence:} #2\par
+  \textbf{Interpretive limit and spiritual fruit:} #3
+  \end{studyframe}}
+
+\newcommand{\arksourceboundary}[3]{%
+  \begin{studyframe}
+  \textbf{Witness:} #1\par
+  \textbf{What it establishes:} #2\par
+  \textbf{What it does not establish alone:} #3
+  \end{studyframe}}
+
+\newcommand{\sourceboundary}[3]{%
+  \begin{studyframe}
+  \textbf{Witness:} #1\par
+  \textbf{What it establishes:} #2\par
+  \textbf{What it cannot establish alone:} #3
+  \end{studyframe}}
+
+\newcommand{\interpretivekey}[2]{%
+  \begin{studybox}{Interpretive key: #1}
+  #2
+  \end{studybox}}
+
+\newcommand{\arkapparatusappendix}{%
+  \section{Scope, Status, and Qualifications}
+
+  \subsection{Catholic standpoint and governing confession}
+
+  This study is a faithful Catholic exposition.  It receives Sacred Scripture
+  as the inspired word of God, reads the two Testaments within the unity of
+  God's saving economy, and receives the Marian dogmas according to the
+  Church's authoritative teaching.  Christ is the New Covenant and definitive
+  divine Presence in person.  Mary is called the living Ark because the
+  eternal Son took flesh in her and was borne by her; her dignity is created,
+  graced, wholly dependent on Christ, and ordered to him.
+
+  \subsection{Kinds of evidence}
+
+  The exposition distinguishes the literal sense of a biblical passage,
+  canonical typology, patristic and liturgical reception, magisterial teaching,
+  later theological fittingness, project synthesis, and spiritual application.
+  These distinctions protect truthful Catholic reasoning and accurate
+  attribution; they do not impose a secular presumption against miracle,
+  providence, canonical unity, Tradition, or Marian doctrine.  A correspondence
+  may be theologically luminous without being a repeated word, an exact road,
+  or an independent proof of a dogma.
+
+  \subsection{Material limits}
+
+  The map presents narrative geography and explicitly graded site
+  identifications, not a recovered ancient itinerary.  The Ark image relates
+  to the four Marian dogmas in unequal ways and gathers their Christological
+  coherence without replacing their proper scriptural, traditional, and
+  magisterial grounds.  Uzzah is not treated as a canonical figure of Joseph;
+  Joseph's vocation is the positive obedience of a true husband who receives,
+  names, guards, and serves the incarnate Lord within a freely embraced
+  virginal marriage.  No Father, saint, lexical statistic, archaeological
+  identification, quotation, or motive is attributed beyond the source state
+  recorded in the research apparatus.
+
+  \subsection{Use and review status}
+
+  This publication is intended for study, catechesis, meditation, and adult
+  formation.  It supplies neither ecclesiastical approval nor independent
+  specialist review, and it should not be used as a substitute for the
+  biblical text, the Church's doctrinal documents, or competent pastoral and
+  theological judgment.  Source status, attribution controls, translation and
+  rights limits, and production review belong to the tracked research record.}
+
+% The PDF includes the pencil map. The web converter selects the empty branch
+% around only the TikZ construct in sections/55-map.tex; both editions retain
+% the introduction, interpretive caption, correspondences, and textual route
+% key.
+\def\TriptychPrintEdition{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.12\textheight}
+{\Huge\bfseries The Ark and the Mother of the Lord\par}
+\vspace{0.45em}
+{\Large\itshape The journey of the Covenant Presence\par}
+\vspace{0.8em}
+{\large From Sinai and Zion to the overshadowed Virgin\par}
+\vspace{0.12em}
+{\large Scripture, the Fathers, the Marian dogmas, and the interior life\par}
+\vfill
+{\small Scope, evidence, status, and use qualifications appear in the appendix.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/mariology/ark-of-the-covenant/sections/00-prologue}
+\input{theology/mariology/ark-of-the-covenant/sections/10-fashioned-for-presence}
+\input{theology/mariology/ark-of-the-covenant/sections/20-ark-goes-before}
+\input{theology/mariology/ark-of-the-covenant/sections/30-glory-in-captivity}
+\input{theology/mariology/ark-of-the-covenant/sections/40-fear-blessing-dance}
+\input{theology/mariology/ark-of-the-covenant/sections/45-rest-hiddenness}
+\input{theology/mariology/ark-of-the-covenant/sections/50-overshadowing-hill-country}
+\section{The journey on one page}
+\input{theology/mariology/ark-of-the-covenant/sections/55-map}
+\input{theology/mariology/ark-of-the-covenant/sections/55-map-text-equivalent}
+\section{The Ark and Its Sanctuaries}
+\ifdefined\TriptychPrintEdition
+  \input{theology/mariology/ark-of-the-covenant/sections/57-ark-and-sanctuaries}
+\else
+\fi
+\input{theology/mariology/ark-of-the-covenant/sections/57-ark-and-sanctuaries-text-equivalent}
+\input{theology/mariology/ark-of-the-covenant/sections/60-scripture-recognizes-scripture}
+\input{theology/mariology/ark-of-the-covenant/sections/70-choir-of-witnesses}
+\input{theology/mariology/ark-of-the-covenant/sections/75-virginal-marriage}
+\input{theology/mariology/ark-of-the-covenant/sections/80-four-dogmas}
+\input{theology/mariology/ark-of-the-covenant/sections/90-where-glory-dwells}
+\input{theology/mariology/ark-of-the-covenant/sections/95-study-guide}
+\input{theology/mariology/ark-of-the-covenant/sections/96-synopsis}
+\appendix
+\arkapparatusappendix
+\input{theology/mariology/ark-of-the-covenant/sections/99-references}
+
+\begingroup
+\footnotesize
+\input{theology/mariology/ark-of-the-covenant/generation-metadata}
+\endgroup
+\end{deepstudy}
+
+\end{document}

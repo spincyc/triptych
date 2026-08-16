@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.revelation-main-61419de7"
+edition_id = "edition.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a"
+artifact_type = "plain-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "SBLGNT v1.2 is copyright 2010 Society of Biblical Literature and Logos Bible Software and is distributed by Faithlife under CC BY 4.0."
+license = "CC-BY-4.0"
+source_url = "https://raw.githubusercontent.com/Faithlife/SBLGNT/c4d241a9c1c479a55b989ba35a4976c1d0b8052c/data/sblgnt/text/Rev.txt"
+provenance = "Exact unmodified Revelation running-text file extracted from and hash-checked against the pinned Faithlife repository archive."
+retrieved = "2026-08-15"
+sha256 = "61419de7970661f8c481975c35b50e7c1df0422db0c6400d1ce2c6ade35da9f0"
+byte_size = 118255
+path = "src/sources/works/society-of-biblical-literature/sbl-greek-new-testament/editions/2025-faithlife-v1.2-c4d241a/artifacts/revelation-main-61419de7/Rev.txt"
+derived_from = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.github-archive-c4d241a-cc1715f3"
+transformation = "Extract data/sblgnt/text/Rev.txt byte-for-byte from the pinned archive without normalization."
+indexable = true
+encoding = "utf-8"
