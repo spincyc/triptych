@@ -1,0 +1,378 @@
+Every command this lane ran, its exact invocation, its numeric exit,
+the log it wrote, the commit it ran at, and the state of the working
+tree read immediately before and immediately after it.
+
+COMPOSED, NOT TYPED. `logs/checks.py` reads the ordering ledgers the
+two batteries wrote as they ran and the logs those ledgers name. V6
+wrote this member by hand and its review found five counts wrong
+across the package; the answer for this one is that nobody writes it.
+
+THE TREE STATE ON A ROW IS THAT ROW'S. V10 read the porcelain result
+once, at preflight, and stamped it on every row -- including the two
+parent rows that run after a tracked file has been overwritten, both
+of which printed `clean`. Each row below carries the reading the
+battery took either side of that row's own command.
+
+parent  ea15d16d22d7ceaed989ed9907c236f967738a03
+head    0255b84996e1dc24da3ce75ac318c4f774b7957c
+
+======================================================================
+PARENT battery — logs/order-parent.txt
+======================================================================
+
+attempt    : parent-20260816T165256Z-02whnw23  (logs of this attempt are prefixed 02-)
+preflight  : sha=ea15d16d22d7ceaed989ed9907c236f967738a03  porcelain=clean  cwd=$REPO
+postflight : sha=ea15d16d22d7ceaed989ed9907c236f967738a03  porcelain=DIRTY: 1 entries, 36 bytes; NOT CLEAN  drift=none
+naming     : <attempt ordinal>-<slug>-<side>.log; the ordinal names THE ATTEMPT and comes from the attempt ledger outside this directory, so a rerun never reuses a name; the slug names the step, so a step means the same thing on both sides even though the two sides are two attempts with two ordinals
+
+--- focused-catena
+    command : python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+    exit    : 0
+    order   : 1
+    started : 2026-08-16T16:52:56Z
+    ended   : 2026-08-16T16:52:59Z
+    sha     : ea15d16d22d7ceaed989ed9907c236f967738a03
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : parent-20260816T165256Z-02whnw23
+    log     : logs/02-focused-catena-parent.log
+    result  : Ran 522 tests in 3.452s
+    result  : OK
+
+--- catena-check
+    command : python3 scripts/_catena.py check
+    exit    : 0
+    order   : 2
+    started : 2026-08-16T16:52:59Z
+    ended   : 2026-08-16T16:53:02Z
+    sha     : ea15d16d22d7ceaed989ed9907c236f967738a03
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : parent-20260816T165256Z-02whnw23
+    log     : logs/02-catena-check-parent.log
+    result  : catena valid: fragments=1351 books=1 canon=73
+
+--- promised
+    command : tools/tpt check-promised-deliverables
+    exit    : 0
+    order   : 3
+    started : 2026-08-16T16:53:03Z
+    ended   : 2026-08-16T16:53:03Z
+    sha     : ea15d16d22d7ceaed989ed9907c236f967738a03
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : parent-20260816T165256Z-02whnw23
+    log     : logs/02-promised-parent.log
+    result  : Promised-deliverable ledger valid: 35 tracked, 19 complete.
+
+--- full-discovery
+    command : python3 -m unittest discover -s tools/tests
+    exit    : 1
+    order   : 4
+    started : 2026-08-16T16:53:03Z
+    ended   : 2026-08-16T17:01:10Z
+    sha     : ea15d16d22d7ceaed989ed9907c236f967738a03
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : parent-20260816T165256Z-02whnw23
+    log     : logs/02-full-discovery-parent.log
+    result  : Ran 1873 tests in 486.895s
+    result  : FAILED (failures=14, errors=13, skipped=11)
+
+--- make-check
+    command : make -k check
+    exit    : 2
+    order   : 5
+    started : 2026-08-16T17:01:10Z
+    ended   : 2026-08-16T17:06:03Z
+    sha     : ea15d16d22d7ceaed989ed9907c236f967738a03
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : parent-20260816T165256Z-02whnw23
+    log     : logs/02-make-check-parent.log
+    result  : Ran 5 tests in 0.560s
+    result  : OK
+    result  : Promised-deliverable ledger valid: 35 tracked, 19 complete.
+    result  : catena valid: fragments=1351 books=1 canon=73
+    result  : replay-examples: 201 captured example(s); 192 replayed, 30 diverged, 35 known stale, 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+
+--- release-bindings
+    command : make check-release-bindings
+    exit    : 2
+    order   : 6
+    started : 2026-08-16T17:06:03Z
+    ended   : 2026-08-16T17:06:04Z
+    sha     : ea15d16d22d7ceaed989ed9907c236f967738a03
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : parent-20260816T165256Z-02whnw23
+    log     : logs/02-release-bindings-parent.log
+    result  : stale: 4 stale binding(s)
+
+--- public-site
+    command : make public-site
+    exit    : 0
+    order   : 7
+    started : 2026-08-16T17:06:05Z
+    ended   : 2026-08-16T17:06:09Z
+    sha     : ea15d16d22d7ceaed989ed9907c236f967738a03
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : parent-20260816T165256Z-02whnw23
+    log     : logs/02-public-site-parent.log
+    result  : (no headline line matched; read the log)
+
+--- browser-gate
+    command : node tools/tests/corpus_browser_gate.mjs --json-out '$WORKSPACE/$EVIDENCE/stage/logs/browser-gate-parent.json' > /dev/null && echo 'report written: browser-gate-parent.json (the gate prints the same JSON to stdout; discarded so the report ships once)'
+    exit    : 1
+    order   : 8
+    started : 2026-08-16T17:06:09Z
+    ended   : 2026-08-16T17:07:48Z
+    sha     : ea15d16d22d7ceaed989ed9907c236f967738a03
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : parent-20260816T165256Z-02whnw23
+    log     : logs/02-browser-gate-parent.log
+    report  : logs/browser-gate-parent.json
+    result  : assertions 2290, failed 226, pages 171, passed 1836, routes 19, skipped 228, states 9
+
+--- gzip-sizes
+    command : python3 '$WORKSPACE/$EVIDENCE/pkgtools/gzip-sizes.py' src/web/browser/catena
+    exit    : 0
+    order   : 9
+    started : 2026-08-16T17:07:48Z
+    ended   : 2026-08-16T17:07:48Z
+    sha     : ea15d16d22d7ceaed989ed9907c236f967738a03
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : parent-20260816T165256Z-02whnw23
+    log     : logs/02-gzip-sizes-parent.log
+    result  : catena.css whole 7629 stripped 2676
+    result  : catena.js whole 12987 stripped 7565
+
+--- head-tests-against-parent
+    command : cp '$REPO/tools/tests/test_catena_wave_1.py' tools/tests/test_catena_wave_1.py && python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py' -v
+    exit    : 1
+    order   : 10
+    started : 2026-08-16T17:07:48Z
+    ended   : 2026-08-16T17:07:50Z
+    sha     : ea15d16d22d7ceaed989ed9907c236f967738a03
+    clean   : before clean; after DIRTY: 1 entries, 36 bytes; NOT CLEAN
+    cwd     : $REPO
+    attempt : parent-20260816T165256Z-02whnw23
+    log     : logs/02-head-tests-against-parent.log
+    result  : Ran 478 tests in 2.021s
+    result  : FAILED (failures=5, errors=2)
+
+--- request-journals
+    command : python3 '$WORKSPACE/$EVIDENCE/pkgtools/journal-dump.py' tools/tests/test_catena_wave_1.py
+    exit    : 0
+    order   : 11
+    started : 2026-08-16T17:07:50Z
+    ended   : 2026-08-16T17:07:52Z
+    sha     : ea15d16d22d7ceaed989ed9907c236f967738a03
+    clean   : before DIRTY: 1 entries, 36 bytes; NOT CLEAN; after DIRTY: 1 entries, 36 bytes; NOT CLEAN
+    cwd     : $REPO
+    attempt : parent-20260816T165256Z-02whnw23
+    log     : logs/02-request-journals-parent.log
+    result  : (no headline line matched; read the log)
+
+======================================================================
+HEAD battery — logs/order-head.txt
+======================================================================
+
+attempt    : head-20260816T163721Z-01p59qj3  (logs of this attempt are prefixed 01-)
+preflight  : sha=0255b84996e1dc24da3ce75ac318c4f774b7957c  porcelain=clean  cwd=$REPO
+postflight : sha=0255b84996e1dc24da3ce75ac318c4f774b7957c  porcelain=clean  drift=none
+naming     : <attempt ordinal>-<slug>-<side>.log; the ordinal names THE ATTEMPT and comes from the attempt ledger outside this directory, so a rerun never reuses a name; the slug names the step, so a step means the same thing on both sides even though the two sides are two attempts with two ordinals
+
+--- focused-catena
+    command : python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+    exit    : 0
+    order   : 1
+    started : 2026-08-16T16:37:21Z
+    ended   : 2026-08-16T16:37:25Z
+    sha     : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : head-20260816T163721Z-01p59qj3
+    log     : logs/01-focused-catena-head.log
+    result  : Ran 534 tests in 3.642s
+    result  : OK
+
+--- catena-check
+    command : python3 scripts/_catena.py check
+    exit    : 0
+    order   : 2
+    started : 2026-08-16T16:37:25Z
+    ended   : 2026-08-16T16:37:28Z
+    sha     : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : head-20260816T163721Z-01p59qj3
+    log     : logs/01-catena-check-head.log
+    result  : catena valid: fragments=1351 books=1 canon=73
+
+--- promised
+    command : tools/tpt check-promised-deliverables
+    exit    : 0
+    order   : 3
+    started : 2026-08-16T16:37:28Z
+    ended   : 2026-08-16T16:37:29Z
+    sha     : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : head-20260816T163721Z-01p59qj3
+    log     : logs/01-promised-head.log
+    result  : Promised-deliverable ledger valid: 36 tracked, 19 complete.
+
+--- full-discovery
+    command : python3 -m unittest discover -s tools/tests
+    exit    : 1
+    order   : 4
+    started : 2026-08-16T16:37:29Z
+    ended   : 2026-08-16T16:45:34Z
+    sha     : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : head-20260816T163721Z-01p59qj3
+    log     : logs/01-full-discovery-head.log
+    result  : Ran 1885 tests in 485.406s
+    result  : FAILED (failures=14, errors=13, skipped=11)
+
+--- make-check
+    command : make -k check
+    exit    : 2
+    order   : 5
+    started : 2026-08-16T16:45:34Z
+    ended   : 2026-08-16T16:50:27Z
+    sha     : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : head-20260816T163721Z-01p59qj3
+    log     : logs/01-make-check-head.log
+    result  : Ran 5 tests in 0.557s
+    result  : OK
+    result  : Promised-deliverable ledger valid: 36 tracked, 19 complete.
+    result  : catena valid: fragments=1351 books=1 canon=73
+    result  : replay-examples: 201 captured example(s); 192 replayed, 28 diverged, 35 known stale, 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+
+--- release-bindings
+    command : make check-release-bindings
+    exit    : 2
+    order   : 6
+    started : 2026-08-16T16:50:27Z
+    ended   : 2026-08-16T16:50:28Z
+    sha     : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : head-20260816T163721Z-01p59qj3
+    log     : logs/01-release-bindings-head.log
+    result  : stale: 4 stale binding(s)
+
+--- public-site
+    command : make public-site
+    exit    : 0
+    order   : 7
+    started : 2026-08-16T16:50:28Z
+    ended   : 2026-08-16T16:50:33Z
+    sha     : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : head-20260816T163721Z-01p59qj3
+    log     : logs/01-public-site-head.log
+    result  : (no headline line matched; read the log)
+
+--- browser-gate
+    command : node tools/tests/corpus_browser_gate.mjs --json-out '$WORKSPACE/$EVIDENCE/stage/logs/browser-gate-head.json' > /dev/null && echo 'report written: browser-gate-head.json (the gate prints the same JSON to stdout; discarded so the report ships once)'
+    exit    : 1
+    order   : 8
+    started : 2026-08-16T16:50:34Z
+    ended   : 2026-08-16T16:52:12Z
+    sha     : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : head-20260816T163721Z-01p59qj3
+    log     : logs/01-browser-gate-head.log
+    report  : logs/browser-gate-head.json
+    result  : assertions 2290, failed 226, pages 171, passed 1836, routes 19, skipped 228, states 9
+
+--- browser-static
+    command : python3 -m unittest discover -s tools/tests -p 'test_browser_static.py'
+    exit    : 0
+    order   : 9
+    started : 2026-08-16T16:52:12Z
+    ended   : 2026-08-16T16:52:12Z
+    sha     : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : head-20260816T163721Z-01p59qj3
+    log     : logs/01-browser-static-head.log
+    result  : Ran 5 tests in 0.556s
+    result  : OK
+
+--- gzip-sizes
+    command : python3 '$WORKSPACE/$EVIDENCE/pkgtools/gzip-sizes.py' src/web/browser/catena
+    exit    : 0
+    order   : 10
+    started : 2026-08-16T16:52:12Z
+    ended   : 2026-08-16T16:52:12Z
+    sha     : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : head-20260816T163721Z-01p59qj3
+    log     : logs/01-gzip-sizes-head.log
+    result  : catena.css whole 7629 stripped 2676
+    result  : catena.js whole 12980 stripped 7554
+
+--- request-journals
+    command : python3 '$WORKSPACE/$EVIDENCE/pkgtools/journal-dump.py' tools/tests/test_catena_wave_1.py
+    exit    : 0
+    order   : 11
+    started : 2026-08-16T16:52:13Z
+    ended   : 2026-08-16T16:52:14Z
+    sha     : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+    clean   : before clean; after clean
+    cwd     : $REPO
+    attempt : head-20260816T163721Z-01p59qj3
+    log     : logs/01-request-journals-head.log
+    result  : (no headline line matched; read the log)
+
+======================================================================
+PIPELINE steps — assemble.sh's own recorded commands
+======================================================================
+
+attempt    : package-20260816T172726Z-08vvjhkw
+status     : unresolved: the ledger carries no terminal row for this attempt
+
+Rows appended after this member was composed at P1 are in the
+attempt ledger outside the package, which spans attempts.
+
+--- P1 gate comparison
+    command : python3 logs/compare-gate.py logs/browser-gate-parent.json logs/browser-gate-head.json
+    exit    : 0
+    order   : 1
+    started : 2026-08-16T17:27:26Z
+    ended   : 2026-08-16T17:27:26Z
+    result  : exit 0
+    log     : logs/gate-comparison.log
+
+======================================================================
+Not recorded in this file
+======================================================================
+
+The sealing and sanitization passes are their own transcripts —
+logs/seal-check.log and logs/seal.log — and the derivation and audit
+are logs/derive-claims.log and logs/head-consistency.log. They are
+not summarised here, because a summary of a transcript is the thing
+this file exists to stop being written.
+
+The roster of every log, and the attempt each belongs to, is
+logs/LOG-INDEX.md, derived in the same pass as this file.
+The attempt rows themselves — including the ones belonging to
+attempts that were discarded — are machine-readable in
+logs/attempts.json, copied in before the freeze from the
+append-only ledger outside the package that spans attempts.
+
+No judgement is recorded here either. What a result MEANS is argued
+in HANDOFF.md, LIMITATIONS.md and UNRESOLVED-BLOCKERS.md.

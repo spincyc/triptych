@@ -1,0 +1,26 @@
+SUPERSEDED PACKAGE — DO NOT REVIEW THIS ONE
+
+superseded : 20260816T172114Z-catena-e1-corrections-v11
+review     : 20260816T172726Z-catena-e1-corrections-v11
+head       : 0255b84996e1dc24da3ce75ac318c4f774b7957c (unchanged; the
+             implementation head did not move between the two packages)
+
+Why. This package sealed cleanly and its P8 verification passed, so it is
+retained unmodified rather than deleted. It is superseded because its own
+account of what was discarded was wrong in the way this lane exists to
+correct: PROVENANCE.md named two discarded assembly attempts where four had
+occurred, and logs/attempts.json named none of them at all, because the
+packaged ledger was filtered to "the attempts this package was built from"
+and a discarded assembly is by definition not one of those. Prose and
+machine-readable ledger therefore disagreed about exactly the thing the
+ledger exists to settle — the same defect class the V10 independent review
+found, and not one to ship twice.
+
+What changed in the successor. The filter now ships every assembly attempt
+under this lane's name, discarded ones included, each with its own terminal
+disposition and its one reason; PROVENANCE.md names all four discarded
+attempts with their phases and reasons; and the sentence naming the
+enumerated authority says which record wins where the two could disagree.
+
+Nothing else differs. The implementation head, the parent, the review
+addressed, the batteries and every measured figure are identical in both.

@@ -1,0 +1,1061 @@
+{
+ "byte_scan": {
+  "clean": true,
+  "findings": [],
+  "scanned": 67
+ },
+ "commit_count": 2,
+ "commits": [
+  {
+   "authored": "2026-08-16T16:05:51Z",
+   "files": [
+    "src/web/browser/catena/catena-model.js",
+    "src/web/browser/catena/catena.js",
+    "tools/tests/test_catena_wave_1.py"
+   ],
+   "sha": "3b93f74f032e74de9a50c1e2f1b35aa5b567f8d8",
+   "subject": "Ask the claim for its own members, and say no more than they establish"
+  },
+  {
+   "authored": "2026-08-16T16:36:31Z",
+   "files": [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-master-plan.md",
+    "guidance/corpus-browser-roadmap.md",
+    "promised-deliverables.toml"
+   ],
+   "sha": "0255b84996e1dc24da3ce75ac318c4f774b7957c",
+   "subject": "Record the V11 lane: the members asked, and the vectors said whole"
+  }
+ ],
+ "diff": {
+  "deletions": 47,
+  "files": 7,
+  "insertions": 1208,
+  "rows": [
+   {
+    "added": 173,
+    "path": "PROJECT-WORK.md",
+    "removed": 1
+   },
+   {
+    "added": 1,
+    "path": "guidance/corpus-browser-master-plan.md",
+    "removed": 1
+   },
+   {
+    "added": 90,
+    "path": "guidance/corpus-browser-roadmap.md",
+    "removed": 1
+   },
+   {
+    "added": 76,
+    "path": "promised-deliverables.toml",
+    "removed": 4
+   },
+   {
+    "added": 168,
+    "path": "src/web/browser/catena/catena-model.js",
+    "removed": 23
+   },
+   {
+    "added": 1,
+    "path": "src/web/browser/catena/catena.js",
+    "removed": 1
+   },
+   {
+    "added": 699,
+    "path": "tools/tests/test_catena_wave_1.py",
+    "removed": 16
+   }
+  ],
+  "status": {
+   "PROJECT-WORK.md": "M",
+   "guidance/corpus-browser-master-plan.md": "M",
+   "guidance/corpus-browser-roadmap.md": "M",
+   "promised-deliverables.toml": "M",
+   "src/web/browser/catena/catena-model.js": "M",
+   "src/web/browser/catena/catena.js": "M",
+   "tools/tests/test_catena_wave_1.py": "M"
+  }
+ },
+ "gate": {
+  "head": {
+   "browser": "Chrome/151.0.7922.137",
+   "failure_categories": {
+    "primary-controls-meet-target-size": 82,
+    "single-main-element": 117,
+    "skip-link-targets-existing-element": 27
+   },
+   "measured": {
+    "assertions": 2290,
+    "failures": 226,
+    "pages": 171,
+    "routes": 19,
+    "states": 9
+   },
+   "path": "browser-gate-head.json",
+   "totals": {
+    "assertions": 2290,
+    "failed": 226,
+    "pages": 171,
+    "passed": 1836,
+    "routes": 19,
+    "skipped": 228,
+    "states": 9
+   }
+  },
+  "parent": {
+   "browser": "Chrome/151.0.7922.137",
+   "failure_categories": {
+    "primary-controls-meet-target-size": 82,
+    "single-main-element": 117,
+    "skip-link-targets-existing-element": 27
+   },
+   "measured": {
+    "assertions": 2290,
+    "failures": 226,
+    "pages": 171,
+    "routes": 19,
+    "states": 9
+   },
+   "path": "browser-gate-parent.json",
+   "totals": {
+    "assertions": 2290,
+    "failed": 226,
+    "pages": 171,
+    "passed": 1836,
+    "routes": 19,
+    "skipped": 228,
+    "states": 9
+   }
+  }
+ },
+ "identity": {
+  "head": "0255b84996e1dc24da3ce75ac318c4f774b7957c",
+  "head_of_branch": "0255b84996e1dc24da3ce75ac318c4f774b7957c",
+  "parent": "ea15d16d22d7ceaed989ed9907c236f967738a03",
+  "parent_is_ancestor_of_head": true,
+  "review_addressed": "f7cad8b0219de8343a0b2cce95e89558ded6946e",
+  "worktree_clean_at_head": true
+ },
+ "inherited_identities": {
+  "count": 27,
+  "identical": true,
+  "mentioning_catena": [],
+  "only_at_head": [],
+  "only_at_parent": []
+ },
+ "lane": "V11",
+ "oracles": {
+  "against_parent": {
+   "classes": 3,
+   "failing_by_class": {
+    "FrozenContractTest": 1,
+    "V11InheritedClaimBoundaryTest": 4,
+    "V11UnestablishedPresentationTest": 2
+   },
+   "failing_method_count": 7,
+   "failing_methods": [
+    "test_catena_wave_1.FrozenContractTest.test_the_model_is_byte_identical",
+    "test_catena_wave_1.V11InheritedClaimBoundaryTest.test_no_inherited_or_accessor_claim_member_reopens_anything",
+    "test_catena_wave_1.V11InheritedClaimBoundaryTest.test_the_ordinary_claims_the_boundary_does_honour_are_unchanged",
+    "test_catena_wave_1.V11InheritedClaimBoundaryTest.test_the_projection_carries_only_own_data_properties",
+    "test_catena_wave_1.V11InheritedClaimBoundaryTest.test_the_spine_is_asked_for_its_own_prefix_too",
+    "test_catena_wave_1.V11UnestablishedPresentationTest.test_every_unestablished_prefix_says_only_that",
+    "test_catena_wave_1.V11UnestablishedPresentationTest.test_the_model_and_the_page_cannot_drift_apart"
+   ],
+   "identities": 7,
+   "log": "02-head-tests-against-parent.log",
+   "methods_run": 478,
+   "new_classes_that_do_not_fail": [
+    "V11RendererOrderTest"
+   ],
+   "new_classes_that_fail": [
+    "V11InheritedClaimBoundaryTest",
+    "V11UnestablishedPresentationTest"
+   ],
+   "passing_methods": 471,
+   "pre_existing_classes_that_fail": [
+    "FrozenContractTest"
+   ],
+   "subtest_identities": [
+    "ERROR: test_no_inherited_or_accessor_claim_member_reopens_anything (test_catena_wave_1.V11InheritedClaimBoundaryTest.test_no_inherited_or_accessor_claim_member_reopens_anything)",
+    "ERROR: test_the_model_and_the_page_cannot_drift_apart (test_catena_wave_1.V11UnestablishedPresentationTest.test_the_model_and_the_page_cannot_drift_apart)",
+    "FAIL: test_every_unestablished_prefix_says_only_that (test_catena_wave_1.V11UnestablishedPresentationTest.test_every_unestablished_prefix_says_only_that)",
+    "FAIL: test_the_model_is_byte_identical (test_catena_wave_1.FrozenContractTest.test_the_model_is_byte_identical)",
+    "FAIL: test_the_ordinary_claims_the_boundary_does_honour_are_unchanged (test_catena_wave_1.V11InheritedClaimBoundaryTest.test_the_ordinary_claims_the_boundary_does_honour_are_unchanged)",
+    "FAIL: test_the_projection_carries_only_own_data_properties (test_catena_wave_1.V11InheritedClaimBoundaryTest.test_the_projection_carries_only_own_data_properties)",
+    "FAIL: test_the_spine_is_asked_for_its_own_prefix_too (test_catena_wave_1.V11InheritedClaimBoundaryTest.test_the_spine_is_asked_for_its_own_prefix_too)"
+   ]
+  },
+  "classes_added": {
+   "tools/tests/test_catena.py": [],
+   "tools/tests/test_catena_wave_1.py": [
+    "V11InheritedClaimBoundaryTest",
+    "V11RendererOrderTest",
+    "V11UnestablishedPresentationTest"
+   ]
+  },
+  "classes_added_count": 3,
+  "corrected_blocks": 23,
+  "corrected_by_lane": {
+   "?": 1,
+   "V6": 8,
+   "V7": 14
+  },
+  "corrected_classes": [
+   "ActionPartialArrivalTerminalStateTest",
+   "FindingOrderIndependenceTest",
+   "FrozenContractTest",
+   "GenuinelyLateStaleWorkTest",
+   "MalformedLanguageAttributeTest",
+   "MalformedRecordRenderingTest",
+   "MixedCollectionMemberTest",
+   "NumericVerseAndPathTest",
+   "RenderedScriptureTruthTest",
+   "RoutableIdentityTest",
+   "TypedAbsenceFindingTest",
+   "UnsupportedVoiceTest",
+   "UntypedProvenanceTest",
+   "V7UnreadableRootDomainClaimTest"
+  ],
+  "corrected_sites": [
+   {
+    "class": "UnsupportedVoiceTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 4191
+   },
+   {
+    "class": "UntypedProvenanceTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 5044
+   },
+   {
+    "class": "MalformedRecordRenderingTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 5072
+   },
+   {
+    "class": "MalformedRecordRenderingTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "?",
+    "line": 5090
+   },
+   {
+    "class": "FrozenContractTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 5681
+   },
+   {
+    "class": "MalformedLanguageAttributeTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 5976
+   },
+   {
+    "class": "MalformedLanguageAttributeTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 5997
+   },
+   {
+    "class": "MixedCollectionMemberTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 6036
+   },
+   {
+    "class": "MixedCollectionMemberTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 6061
+   },
+   {
+    "class": "MixedCollectionMemberTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 6072
+   },
+   {
+    "class": "TypedAbsenceFindingTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 6139
+   },
+   {
+    "class": "NumericVerseAndPathTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 6182
+   },
+   {
+    "class": "NumericVerseAndPathTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 6198
+   },
+   {
+    "class": "NumericVerseAndPathTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 6221
+   },
+   {
+    "class": "RenderedScriptureTruthTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 6850
+   },
+   {
+    "class": "FindingOrderIndependenceTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 6978
+   },
+   {
+    "class": "FindingOrderIndependenceTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 7112
+   },
+   {
+    "class": "GenuinelyLateStaleWorkTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 7923
+   },
+   {
+    "class": "ActionPartialArrivalTerminalStateTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 8148
+   },
+   {
+    "class": "ActionPartialArrivalTerminalStateTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 8219
+   },
+   {
+    "class": "ActionPartialArrivalTerminalStateTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 8254
+   },
+   {
+    "class": "RoutableIdentityTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 8456
+   },
+   {
+    "class": "V7UnreadableRootDomainClaimTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 10164
+   }
+  ],
+  "marker": "CORRECTED ORACLE"
+ },
+ "package": {
+  "authority": "package totals and final bytes are proved by MANIFEST.sha256, the ZIP and its .zip.sha256 sidecar; this file sizes only members frozen before it was written",
+  "derived_members": [
+   {
+    "path": "claims.json",
+    "reason": "written by this derivation; it cannot inventory its own bytes"
+   },
+   {
+    "path": "DERIVED-CLAIMS.md",
+    "reason": "rendered from claims.json in the same pass that writes it"
+   },
+   {
+    "path": "logs/derive-claims.log",
+    "reason": "transcript of this derivation, written as the derivation prints"
+   },
+   {
+    "path": "logs/head-consistency.log",
+    "reason": "transcript of the consistency audit, which runs after this derivation"
+   },
+   {
+    "path": "MANIFEST.sha256",
+    "reason": "written by the manifest phase, after every other member is frozen"
+   }
+  ],
+  "evidence_bytes": 6878050,
+  "evidence_members": 90,
+  "rows": [
+   {
+    "bytes": 9899,
+    "path": "CLAIM-CLOSURE.md",
+    "sha256": "1edad4ef980aa68254054b7d7c9d1c3ccd34cf2e562f944d28d6e758820d0fb2"
+   },
+   {
+    "bytes": 20147,
+    "path": "EVIDENCE-INDEX.md",
+    "sha256": "1360f28ebb7f8fa0788a773bd749c7ee007282d2267fae84a8484246e46efecb"
+   },
+   {
+    "bytes": 25386,
+    "path": "HANDOFF.md",
+    "sha256": "bff6fcabbc7c850df81e8b5443bdb5f80f1bd7825603cebdc04ee5e8f189c978"
+   },
+   {
+    "bytes": 8874,
+    "path": "LIMITATIONS.md",
+    "sha256": "653561606a2841b752ca71d773653d3374896cbaa5f9afaec1df910e1ed3b8c1"
+   },
+   {
+    "bytes": 7610,
+    "path": "PRIVACY-AUDIT.md",
+    "sha256": "0d68e67b06cbb7ce6fe0494b34b0267345b74b71a0d434e29e106f1b10c22047"
+   },
+   {
+    "bytes": 10432,
+    "path": "PROVENANCE.md",
+    "sha256": "095ab756c6c6681e8cbe9dd30e2429989f48626ed3a4653f67bda9d88406a140"
+   },
+   {
+    "bytes": 5165,
+    "path": "REVIEW_REQUEST.md",
+    "sha256": "e224564278181649e296bf617c89750cd32c939aa9efe44b8b56d915c861bd49"
+   },
+   {
+    "bytes": 6309,
+    "path": "UNRESOLVED-BLOCKERS.md",
+    "sha256": "cb9e3c0e4526495239eda3b16e38a20ed9692ecef8d247f36916dee379314bb8"
+   },
+   {
+    "bytes": 785,
+    "path": "changed-files.txt",
+    "sha256": "d12b9542f6c99fe2f99f5cfcf07beec326d2e54d8e1e4aefc1b1ccf70c6bc0f9"
+   },
+   {
+    "bytes": 115309,
+    "path": "changes.patch",
+    "sha256": "9704b09d1e88777ef13932d1de7244bed4543cf76c58583769de1ca71c5e1617"
+   },
+   {
+    "bytes": 15456,
+    "path": "checks.txt",
+    "sha256": "cf0767d2d952e745d12ba0581fcd8f8bc0f0b2a6f7df8cdee86b55384237f4d4"
+   },
+   {
+    "bytes": 270,
+    "path": "commits.txt",
+    "sha256": "c74b1ba90e3819d76f6fabc753c410a7ce42df27bb7501fe2796b6d4b4d53fdb"
+   },
+   {
+    "bytes": 0,
+    "path": "logs/01-browser-gate-head.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "bytes": 103,
+    "path": "logs/01-browser-static-head.log",
+    "sha256": "18aff025cf6f138ff3bc471face7bdc724a145a2e43c8ff5a7980c731c21dd17"
+   },
+   {
+    "bytes": 46,
+    "path": "logs/01-catena-check-head.log",
+    "sha256": "d03e1dd1c8f512d2ec10bee4e308263f9c926ac22b163465a97be4ac8514d59a"
+   },
+   {
+    "bytes": 85724,
+    "path": "logs/01-focused-catena-head.log",
+    "sha256": "3e418410e402d0f6141b399a0d58a2782d428b988a23621307e5b736fbae24ac"
+   },
+   {
+    "bytes": 31687,
+    "path": "logs/01-full-discovery-head.log",
+    "sha256": "8615d171478473e91918f845ccae2eb7a989e59d09a8404dae123ca9af396a26"
+   },
+   {
+    "bytes": 114,
+    "path": "logs/01-gzip-sizes-head.log",
+    "sha256": "7a45584756f4ca96f67c56a531ea86b5c39f9e4b3a9de4fe0ad01a4001c749f9"
+   },
+   {
+    "bytes": 51095,
+    "path": "logs/01-make-check-head.log",
+    "sha256": "bb4221b8bded1064098071ddf0eea7de72fc50543e293e7134ce3fe71191043a"
+   },
+   {
+    "bytes": 60,
+    "path": "logs/01-promised-head.log",
+    "sha256": "84051ab96382dd593c82e7f68b5f5ee85d3187365bb40b4f8dc9918bbf8f4383"
+   },
+   {
+    "bytes": 97,
+    "path": "logs/01-public-site-head.log",
+    "sha256": "3cd191d29d2dd913cf59b47785cd17788caaac70cabcd2c9633b5be38302a283"
+   },
+   {
+    "bytes": 887,
+    "path": "logs/01-release-bindings-head.log",
+    "sha256": "721e6725e02596d7fd4ab2f8349abd273663beeb45a384a271da18af6a851c02"
+   },
+   {
+    "bytes": 140534,
+    "path": "logs/01-request-journals-head.log",
+    "sha256": "33ff1de03a2800aaf4ac6ec753cbe44e8e253f5435a720aaeec258a065e9ba41"
+   },
+   {
+    "bytes": 0,
+    "path": "logs/02-browser-gate-parent.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   {
+    "bytes": 46,
+    "path": "logs/02-catena-check-parent.log",
+    "sha256": "d03e1dd1c8f512d2ec10bee4e308263f9c926ac22b163465a97be4ac8514d59a"
+   },
+   {
+    "bytes": 83725,
+    "path": "logs/02-focused-catena-parent.log",
+    "sha256": "3b390d72ec4fd08ac275e4336258b9dc4c4dd8c76322c25970de291604d1c273"
+   },
+   {
+    "bytes": 33439,
+    "path": "logs/02-full-discovery-parent.log",
+    "sha256": "5d46a5137b3ab17996d7b53f758089131591dccaab71d97d3caee06e8222e08a"
+   },
+   {
+    "bytes": 114,
+    "path": "logs/02-gzip-sizes-parent.log",
+    "sha256": "2fe0c5309aa515ca3dd6da73e6e531c5bf38f5b0fb882c5d66532d2ba12e559d"
+   },
+   {
+    "bytes": 87422,
+    "path": "logs/02-head-tests-against-parent.log",
+    "sha256": "09daffef945945f635c2e91f56a213bd4b2c61aef1b5f675b3528a1ecb8af5ba"
+   },
+   {
+    "bytes": 51484,
+    "path": "logs/02-make-check-parent.log",
+    "sha256": "b4ffac73e1ebc9ac8ce85623aa3d323167342d3a1318821de4ed52cc229a52b5"
+   },
+   {
+    "bytes": 60,
+    "path": "logs/02-promised-parent.log",
+    "sha256": "07e77f302946b1d3447db897143ff57974b49bee10f8acb51417e05df915804e"
+   },
+   {
+    "bytes": 97,
+    "path": "logs/02-public-site-parent.log",
+    "sha256": "3cd191d29d2dd913cf59b47785cd17788caaac70cabcd2c9633b5be38302a283"
+   },
+   {
+    "bytes": 887,
+    "path": "logs/02-release-bindings-parent.log",
+    "sha256": "5a202881bb473a0013f0ae160c952c86e73312b09edadbcd76d7339daab8da50"
+   },
+   {
+    "bytes": 140751,
+    "path": "logs/02-request-journals-parent.log",
+    "sha256": "0b0d7ac200c6907f03451812c028eb38c441aefce587eb18943cf5f6f855b523"
+   },
+   {
+    "bytes": 7750,
+    "path": "logs/LOG-INDEX.md",
+    "sha256": "df5c19ab488dfdf54eb6843516b3643264bf7b62b57235dcad08c97ea9decd75"
+   },
+   {
+    "bytes": 29265,
+    "path": "logs/assemble.sh",
+    "sha256": "b90c79e26b51f8bc37aa1de5f6e4cc2578cb8a312bba2792de86fa010ebf812b"
+   },
+   {
+    "bytes": 30425,
+    "path": "logs/attempts.json",
+    "sha256": "704ad880c479ec644ef4e235aa279e0b853d2e939d30b8821bffae478b7098cf"
+   },
+   {
+    "bytes": 15196,
+    "path": "logs/battery.sh",
+    "sha256": "000b76f4b5f77a90a9b887ded48affb65e2fa5e6e577e518194cf8993e5dd5fa"
+   },
+   {
+    "bytes": 589686,
+    "path": "logs/browser-gate-head.json",
+    "sha256": "5ad4a1cbc90b178afa8db08a7d1537ac8319e5c1437980a96b430dad9eb40195"
+   },
+   {
+    "bytes": 589714,
+    "path": "logs/browser-gate-parent.json",
+    "sha256": "f11c8f7ba8012bd07df72a8ba4e565cce4b89c5dadaebe63e52eda9bc6890436"
+   },
+   {
+    "bytes": 32463,
+    "path": "logs/checks.py",
+    "sha256": "d36040ca3f21ab9559923b75904c3c1e0e4123a3a842db16bcd55c66f6e98a81"
+   },
+   {
+    "bytes": 3946,
+    "path": "logs/compare-gate.py",
+    "sha256": "448b0de87f7bf2abf825408cdd528011da06c98da0059719a1aefc93214efb92"
+   },
+   {
+    "bytes": 43998,
+    "path": "logs/derive-claims.py",
+    "sha256": "801507fe3d44a16d9cb112812ab628e1a74439124f367e98ca2a8c70d82ec6b3"
+   },
+   {
+    "bytes": 4314,
+    "path": "logs/gate-comparison.log",
+    "sha256": "bb8a954ab68307532e6c3c2ee110eecfa5040f0788b8c4bfbc5e57d84910ce9d"
+   },
+   {
+    "bytes": 1156,
+    "path": "logs/gzip-sizes.py",
+    "sha256": "c8f54536387a902f46e23cabc499f02817e599fc707ab386ff729c0d57816478"
+   },
+   {
+    "bytes": 31400,
+    "path": "logs/handoff-inventory.py",
+    "sha256": "338defc43b5fb392bdfeefd781be1174b3e4e1c79efcfac77f646ab3856b2301"
+   },
+   {
+    "bytes": 13637,
+    "path": "logs/head-consistency.py",
+    "sha256": "f91a22082d9324eae9bb674d5afeada35dde304376abbb624827259d5ab4e64e"
+   },
+   {
+    "bytes": 6910,
+    "path": "logs/journal-dump.py",
+    "sha256": "36946099ddf45b56443c183a3c0b4e94b6055b1bb9a6c30d1916f7ee24123364"
+   },
+   {
+    "bytes": 3012,
+    "path": "logs/named-commits.json",
+    "sha256": "4fabb4c5030c6c381291be22af63adbaf463dc4b7cf7d30b465540062698be68"
+   },
+   {
+    "bytes": 3298,
+    "path": "logs/order-head.txt",
+    "sha256": "d809592c0780ef1ad8eba4767930cdba480760c34211712a60e57df94090a24a"
+   },
+   {
+    "bytes": 3568,
+    "path": "logs/order-parent.txt",
+    "sha256": "6237289192116037dde965eb43b5b2a4fbab8cbd140c1ca5bfe47b4e6e4e2926"
+   },
+   {
+    "bytes": 65313,
+    "path": "logs/sanitize-and-seal.py",
+    "sha256": "c91146de2dccc43916c7a93c0d05a69b319126681124f41bac5f49548fe54a1d"
+   },
+   {
+    "bytes": 3116,
+    "path": "logs/seal-check.log",
+    "sha256": "059dbeb962c71ae4a6ac37bcae03b1adf3d4a14446581756e2eaa2cb6b6af61f"
+   },
+   {
+    "bytes": 10657,
+    "path": "logs/seal.log",
+    "sha256": "beefb28b80161b42417a3452fc41399f4eea815258a45383d6132f90a307ead5"
+   },
+   {
+    "bytes": 14104,
+    "path": "logs/sealer-tests.log",
+    "sha256": "4fbe455a4bf40a18308679700ddae526bd37a69b0985dff1bef482bf01464c01"
+   },
+   {
+    "bytes": 84178,
+    "path": "logs/test-sanitize-and-seal.py",
+    "sha256": "6741deed8dc6187b9dbaa94644365515d4a91243950c23eaf276b0c435bc7f9b"
+   },
+   {
+    "bytes": 39360,
+    "path": "logs/verify-final-package.py",
+    "sha256": "5bdcc5654cac1fcdba19868b1f81212c2c8f33a2f2f54cdf39125c75d950c0d6"
+   },
+   {
+    "bytes": 16585,
+    "path": "screenshots/INDEX.md",
+    "sha256": "99627ebc3b95ed58f13b7e7029a0a9e4d3a10e9aa99b668662d527679f51ff47"
+   },
+   {
+    "bytes": 151066,
+    "path": "screenshots/after--catena--fragment-absent--1440x900.png",
+    "sha256": "3ce8c02d98ba0f15e45a8fb65b19ca03a033b1892b9557be740d937036309a2d"
+   },
+   {
+    "bytes": 102406,
+    "path": "screenshots/after--catena--fragment-absent--393x852.png",
+    "sha256": "f509ea97efb80442caf3b6c4fc2ea67442a6b50ef8b8d4371a5d1279446e299b"
+   },
+   {
+    "bytes": 151502,
+    "path": "screenshots/after--catena--fragment-present-valid--1440x900.png",
+    "sha256": "b25db8b5561d60f5a8679c4df23c6a4129d156f6edbb3bac2337722265072075"
+   },
+   {
+    "bytes": 109774,
+    "path": "screenshots/after--catena--fragment-present-valid--393x852.png",
+    "sha256": "b8d989c093dfb58956fa9f35148166bc6c2e8001a112a0a3067c462bbd4e2ae3"
+   },
+   {
+    "bytes": 152215,
+    "path": "screenshots/after--catena--fragment-refused--1440x900.png",
+    "sha256": "9a3f22e97fbbb506b937d4c470061c6ad4a1d1d29774aac826efcd7a5b40c9cf"
+   },
+   {
+    "bytes": 105693,
+    "path": "screenshots/after--catena--fragment-refused--393x852.png",
+    "sha256": "b6c5b9239973682ff8db4272e309c0dd24d1a12ff174ea6417b56cf4af79192e"
+   },
+   {
+    "bytes": 152126,
+    "path": "screenshots/after--catena--fragment-unestablished--1440x900.png",
+    "sha256": "e7a1bdb9f6353d1870d3ab520143baf63f6ea28dc42f8bbd35b9248b39d34994"
+   },
+   {
+    "bytes": 103185,
+    "path": "screenshots/after--catena--fragment-unestablished--393x852.png",
+    "sha256": "af467f1f7447ee9e9c7e4dc794111338b8941b1f3c35db7138e1c73dd1b4b284"
+   },
+   {
+    "bytes": 151066,
+    "path": "screenshots/before--catena--fragment-absent--1440x900.png",
+    "sha256": "3ce8c02d98ba0f15e45a8fb65b19ca03a033b1892b9557be740d937036309a2d"
+   },
+   {
+    "bytes": 102406,
+    "path": "screenshots/before--catena--fragment-absent--393x852.png",
+    "sha256": "f509ea97efb80442caf3b6c4fc2ea67442a6b50ef8b8d4371a5d1279446e299b"
+   },
+   {
+    "bytes": 151502,
+    "path": "screenshots/before--catena--fragment-present-valid--1440x900.png",
+    "sha256": "b25db8b5561d60f5a8679c4df23c6a4129d156f6edbb3bac2337722265072075"
+   },
+   {
+    "bytes": 109774,
+    "path": "screenshots/before--catena--fragment-present-valid--393x852.png",
+    "sha256": "b8d989c093dfb58956fa9f35148166bc6c2e8001a112a0a3067c462bbd4e2ae3"
+   },
+   {
+    "bytes": 152215,
+    "path": "screenshots/before--catena--fragment-refused--1440x900.png",
+    "sha256": "9a3f22e97fbbb506b937d4c470061c6ad4a1d1d29774aac826efcd7a5b40c9cf"
+   },
+   {
+    "bytes": 105693,
+    "path": "screenshots/before--catena--fragment-refused--393x852.png",
+    "sha256": "b6c5b9239973682ff8db4272e309c0dd24d1a12ff174ea6417b56cf4af79192e"
+   },
+   {
+    "bytes": 151169,
+    "path": "screenshots/before--catena--fragment-unestablished--1440x900.png",
+    "sha256": "54424f23ca3b217b92526ad02353b8373cdfbf58ede503bde927b33ceba764a6"
+   },
+   {
+    "bytes": 104906,
+    "path": "screenshots/before--catena--fragment-unestablished--393x852.png",
+    "sha256": "40ed0d9187dec128d1b6be6719a33f8daafaac3ecb7d4c6745320d9c901c8d69"
+   },
+   {
+    "bytes": 58825,
+    "path": "screenshots/capture-metadata.json",
+    "sha256": "788463fbbfa9925da67826ee5702bad646fcfb57420d0fae2c059ec0538155bf"
+   },
+   {
+    "bytes": 256328,
+    "path": "screenshots/catena-index--desktop-1440x900--1440x900.png",
+    "sha256": "9dce539106cd2d88750be878e0519d159a0074f46c30b625ec5cff5a32e80b11"
+   },
+   {
+    "bytes": 135110,
+    "path": "screenshots/catena-index--handset-393x852--393x852.png",
+    "sha256": "c0ec5d1b8d73fbb9bace93a41d556c4ab8a3f924783282b51d26bf62e572caaf"
+   },
+   {
+    "bytes": 88414,
+    "path": "screenshots/catena-index--handset-393x852-forced-colors--393x852.png",
+    "sha256": "74a3b6dd31d5744e6e39cbfe3e4851bd859de0c2bfed6f4a7501ec6f1c8e0879"
+   },
+   {
+    "bytes": 63941,
+    "path": "screenshots/catena-index--handset-393x852-reduced-motion--393x852.png",
+    "sha256": "cfd9b54c29d0997c90e0e3f0c2260f02301e5681fe85a20ed73ba4de418078c9"
+   },
+   {
+    "bytes": 43536,
+    "path": "screenshots/catena-index--handset-393x852-scale-400--393x852.png",
+    "sha256": "553aea1fc89a2209b111dccaa202035b891132f6cc8919d3ec02217f39257225"
+   },
+   {
+    "bytes": 158381,
+    "path": "screenshots/catena-index--handset-393x852-text-200--393x852.png",
+    "sha256": "0e258f4195c40d1443342869f3888b8a9d39d234aa81bfecd9a04426f381f9fa"
+   },
+   {
+    "bytes": 172158,
+    "path": "screenshots/catena-index--laptop-1024x768--1024x768.png",
+    "sha256": "70633e65a11819cbac436fe94167cba2ce98c8d8b83e83d3a4ed8a46a574f2d1"
+   },
+   {
+    "bytes": 75990,
+    "path": "screenshots/catena-index--narrow-320x852--320x852.png",
+    "sha256": "1d290b9096edbb8d5f0ea3ef37f6683ca7a887c49a18f6f1832bf023a4c6c7cc"
+   },
+   {
+    "bytes": 228564,
+    "path": "screenshots/catena-index--tablet-768x1024--768x1024.png",
+    "sha256": "b3ca3cc0c705b2876d9c94ab89b36e339edb61cf0a865039d4e1028f135e5e2a"
+   },
+   {
+    "bytes": 149210,
+    "path": "screenshots/index--desktop-1440x900--1440x900.png",
+    "sha256": "a664d0f18625e36ca71b08f410485ccf79d61c55f14e2735b2c7838d2c1d55a8"
+   },
+   {
+    "bytes": 91053,
+    "path": "screenshots/index--handset-393x852--393x852.png",
+    "sha256": "64f941afcdef47a5d360cc562c46edcfa7ea2c34cac55af07be4a4066d3fdc96"
+   },
+   {
+    "bytes": 74778,
+    "path": "screenshots/index--narrow-320x852--320x852.png",
+    "sha256": "4f9fcbed8f92f334e17ad29c16b9d79de21b46635c21bc8f4a84de7ba30f97f0"
+   },
+   {
+    "bytes": 112900,
+    "path": "screenshots/liturgy-day-reader--desktop-1440x900--1440x900.png",
+    "sha256": "43fdab86eef28b88370abcae5693e97baa184ceee9e3f412015525bb3c0bf98c"
+   },
+   {
+    "bytes": 254090,
+    "path": "screenshots/sources-index--desktop-1440x900--1440x900.png",
+    "sha256": "2dc302eacc7b4939a78a5123b7ed60560892c213391ce52967afa95b4a33cb9a"
+   },
+   {
+    "bytes": 281009,
+    "path": "screenshots/texts-index--desktop-1440x900--1440x900.png",
+    "sha256": "df247d26abd3c4d5aa323654c13e52ff14663d281319319a7e28e26703a37efe"
+   }
+  ],
+  "screenshots": {
+   "png_count": 31,
+   "raster_pairs": 8,
+   "unpaired": []
+  }
+ },
+ "payload": {
+  "head": {
+   "_combined": {
+    "one_stream": 44643,
+    "summed": 45386
+   },
+   "catena-model.js": {
+    "comment_share": 0.754,
+    "sha256": "b4250ce672628ebee898c0c0c34a84ea3230ccbbf3256180657c3c607712ac7a",
+    "source_bytes": 101367,
+    "stripped": 7973,
+    "stripped_ceiling": null,
+    "whole": 32406,
+    "whole_ceiling": null
+   },
+   "catena.css": {
+    "comment_share": 0.649,
+    "sha256": "733e84909e0e8049629187352d3800be320e469da7be200e860378bcc28851c5",
+    "source_bytes": 26034,
+    "stripped": 2676,
+    "stripped_ceiling": 2700,
+    "whole": 7629,
+    "whole_ceiling": 8000
+   },
+   "catena.js": {
+    "comment_share": 0.418,
+    "sha256": "b635df0c438046f8bfc7d3cd7a271bb1a1179c66ef687cce85d703e1172e2e5d",
+    "source_bytes": 42030,
+    "stripped": 7554,
+    "stripped_ceiling": 8800,
+    "whole": 12980,
+    "whole_ceiling": 13000
+   }
+  },
+  "parent": {
+   "_combined": {
+    "one_stream": 42010,
+    "summed": 42728
+   },
+   "catena-model.js": {
+    "comment_share": 0.742,
+    "sha256": "08eeba7201313940e5026e2e05283a0b83f5bc7279e35a6fbce8c8c57fca1dfd",
+    "source_bytes": 92693,
+    "stripped": 7664,
+    "stripped_ceiling": null,
+    "whole": 29741,
+    "whole_ceiling": null
+   },
+   "catena.css": {
+    "comment_share": 0.649,
+    "sha256": "733e84909e0e8049629187352d3800be320e469da7be200e860378bcc28851c5",
+    "source_bytes": 26034,
+    "stripped": 2676,
+    "stripped_ceiling": 2700,
+    "whole": 7629,
+    "whole_ceiling": 8000
+   },
+   "catena.js": {
+    "comment_share": 0.417,
+    "sha256": "1e53ac55a357521940ef2e4d9e1414fc7e10eb15d23c56810360b96a63f1f6cf",
+    "source_bytes": 42026,
+    "stripped": 7565,
+    "stripped_ceiling": 8800,
+    "whole": 12987,
+    "whole_ceiling": 13000
+   }
+  }
+ },
+ "suites": {
+  "browser_static_head": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "01-browser-static-head.log",
+   "seconds": 0.556,
+   "skipped": 0,
+   "tests": 5
+  },
+  "focused_catena_head": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "01-focused-catena-head.log",
+   "seconds": 3.642,
+   "skipped": 0,
+   "tests": 534
+  },
+  "focused_catena_parent": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "02-focused-catena-parent.log",
+   "seconds": 3.452,
+   "skipped": 0,
+   "tests": 522
+  },
+  "full_discovery_head": {
+   "errors": 13,
+   "failures": 14,
+   "identities": [
+    "ERROR: test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter (test_index_bible.TrackedIndexTests.test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter)",
+    "ERROR: test_long_form_contents_marker_renders_linked_unique_anchors (test_public_alpha.PublicAlphaTest.test_long_form_contents_marker_renders_linked_unique_anchors)",
+    "ERROR: test_public_site_records_and_reaches_legacy_review_as_alpha (test_public_alpha.PublicAlphaTest.test_public_site_records_and_reaches_legacy_review_as_alpha)",
+    "ERROR: test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites (test_index_bible.CorrectedReadingTests.test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites)",
+    "ERROR: test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it (test_index_bible.CorrectedReadingTests.test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it)",
+    "ERROR: test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching (test_index_bible.CorrectedReadingTests.test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching)",
+    "ERROR: test_the_holy_family_sirach_opens_at_the_fathers_honour (test_index_bible.CorrectedReadingTests.test_the_holy_family_sirach_opens_at_the_fathers_honour)",
+    "ERROR: test_verifier_passes_when_every_site_source_matches_its_approved_hash (test_public_alpha.PublicAlphaTest.test_verifier_passes_when_every_site_source_matches_its_approved_hash)",
+    "ERROR: test_verifier_rejects_a_recognized_site_source_the_record_omits (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recognized_site_source_the_record_omits)",
+    "ERROR: test_verifier_rejects_a_recorded_site_source_nothing_renders (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recorded_site_source_nothing_renders)",
+    "ERROR: test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash)",
+    "ERROR: test_verifier_rejects_a_site_source_whose_file_is_gone (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_whose_file_is_gone)",
+    "ERROR: test_verifier_rejects_copied_pdf_without_owning_catalog_link (test_public_alpha.PublicAlphaTest.test_verifier_rejects_copied_pdf_without_owning_catalog_link)",
+    "FAIL: test_candidate_and_contract_fixtures_do_not_leak_into_generated_data (test_propers_reader_integration.PropersReaderIntegrationTests.test_candidate_and_contract_fixtures_do_not_leak_into_generated_data)",
+    "FAIL: test_candidate_does_not_leak_fixture_or_discovery_records (test_day_reader_integration.DayReaderIntegrationTests.test_candidate_does_not_leak_fixture_or_discovery_records)",
+    "FAIL: test_candidate_tracking_is_distinct_and_accepted (test_day_missal_integration.DayMissalIntegrationTests.test_candidate_tracking_is_distinct_and_accepted)",
+    "FAIL: test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated (test_propers_reader_integration.PropersReaderIntegrationTests.test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated)",
+    "FAIL: test_data_legacy_shell_css_and_visual_oracle_are_frozen (test_day_reader_integration.DayReaderIntegrationTests.test_data_legacy_shell_css_and_visual_oracle_are_frozen)",
+    "FAIL: test_day_alone_loads_placement_notes_before_its_renderer (test_mass_ordinary.ProperPlacementNotesPage.test_day_alone_loads_placement_notes_before_its_renderer)",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history check')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history commonality')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history emit')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history graph')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history structure')",
+    "FAIL: test_public_routes_renderer_data_and_accepted_oracles_are_isolated (test_day_missal_integration.DayMissalIntegrationTests.test_public_routes_renderer_data_and_accepted_oracles_are_isolated)",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='check-calendar-masses.test')",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='index-bible.test')"
+   ],
+   "identity_count": 27,
+   "outcome": "FAILED",
+   "path": "01-full-discovery-head.log",
+   "seconds": 485.406,
+   "skipped": 11,
+   "tests": 1885
+  },
+  "full_discovery_parent": {
+   "errors": 13,
+   "failures": 14,
+   "identities": [
+    "ERROR: test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter (test_index_bible.TrackedIndexTests.test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter)",
+    "ERROR: test_long_form_contents_marker_renders_linked_unique_anchors (test_public_alpha.PublicAlphaTest.test_long_form_contents_marker_renders_linked_unique_anchors)",
+    "ERROR: test_public_site_records_and_reaches_legacy_review_as_alpha (test_public_alpha.PublicAlphaTest.test_public_site_records_and_reaches_legacy_review_as_alpha)",
+    "ERROR: test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites (test_index_bible.CorrectedReadingTests.test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites)",
+    "ERROR: test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it (test_index_bible.CorrectedReadingTests.test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it)",
+    "ERROR: test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching (test_index_bible.CorrectedReadingTests.test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching)",
+    "ERROR: test_the_holy_family_sirach_opens_at_the_fathers_honour (test_index_bible.CorrectedReadingTests.test_the_holy_family_sirach_opens_at_the_fathers_honour)",
+    "ERROR: test_verifier_passes_when_every_site_source_matches_its_approved_hash (test_public_alpha.PublicAlphaTest.test_verifier_passes_when_every_site_source_matches_its_approved_hash)",
+    "ERROR: test_verifier_rejects_a_recognized_site_source_the_record_omits (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recognized_site_source_the_record_omits)",
+    "ERROR: test_verifier_rejects_a_recorded_site_source_nothing_renders (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recorded_site_source_nothing_renders)",
+    "ERROR: test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash)",
+    "ERROR: test_verifier_rejects_a_site_source_whose_file_is_gone (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_whose_file_is_gone)",
+    "ERROR: test_verifier_rejects_copied_pdf_without_owning_catalog_link (test_public_alpha.PublicAlphaTest.test_verifier_rejects_copied_pdf_without_owning_catalog_link)",
+    "FAIL: test_candidate_and_contract_fixtures_do_not_leak_into_generated_data (test_propers_reader_integration.PropersReaderIntegrationTests.test_candidate_and_contract_fixtures_do_not_leak_into_generated_data)",
+    "FAIL: test_candidate_does_not_leak_fixture_or_discovery_records (test_day_reader_integration.DayReaderIntegrationTests.test_candidate_does_not_leak_fixture_or_discovery_records)",
+    "FAIL: test_candidate_tracking_is_distinct_and_accepted (test_day_missal_integration.DayMissalIntegrationTests.test_candidate_tracking_is_distinct_and_accepted)",
+    "FAIL: test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated (test_propers_reader_integration.PropersReaderIntegrationTests.test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated)",
+    "FAIL: test_data_legacy_shell_css_and_visual_oracle_are_frozen (test_day_reader_integration.DayReaderIntegrationTests.test_data_legacy_shell_css_and_visual_oracle_are_frozen)",
+    "FAIL: test_day_alone_loads_placement_notes_before_its_renderer (test_mass_ordinary.ProperPlacementNotesPage.test_day_alone_loads_placement_notes_before_its_renderer)",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history check')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history commonality')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history emit')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history graph')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history structure')",
+    "FAIL: test_public_routes_renderer_data_and_accepted_oracles_are_isolated (test_day_missal_integration.DayMissalIntegrationTests.test_public_routes_renderer_data_and_accepted_oracles_are_isolated)",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='check-calendar-masses.test')",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='index-bible.test')"
+   ],
+   "identity_count": 27,
+   "outcome": "FAILED",
+   "path": "02-full-discovery-parent.log",
+   "seconds": 486.895,
+   "skipped": 11,
+   "tests": 1873
+  },
+  "head_tests_against_parent": {
+   "errors": 2,
+   "failures": 5,
+   "identities": [
+    "ERROR: test_no_inherited_or_accessor_claim_member_reopens_anything (test_catena_wave_1.V11InheritedClaimBoundaryTest.test_no_inherited_or_accessor_claim_member_reopens_anything)",
+    "ERROR: test_the_model_and_the_page_cannot_drift_apart (test_catena_wave_1.V11UnestablishedPresentationTest.test_the_model_and_the_page_cannot_drift_apart)",
+    "FAIL: test_every_unestablished_prefix_says_only_that (test_catena_wave_1.V11UnestablishedPresentationTest.test_every_unestablished_prefix_says_only_that)",
+    "FAIL: test_the_model_is_byte_identical (test_catena_wave_1.FrozenContractTest.test_the_model_is_byte_identical)",
+    "FAIL: test_the_ordinary_claims_the_boundary_does_honour_are_unchanged (test_catena_wave_1.V11InheritedClaimBoundaryTest.test_the_ordinary_claims_the_boundary_does_honour_are_unchanged)",
+    "FAIL: test_the_projection_carries_only_own_data_properties (test_catena_wave_1.V11InheritedClaimBoundaryTest.test_the_projection_carries_only_own_data_properties)",
+    "FAIL: test_the_spine_is_asked_for_its_own_prefix_too (test_catena_wave_1.V11InheritedClaimBoundaryTest.test_the_spine_is_asked_for_its_own_prefix_too)"
+   ],
+   "identity_count": 7,
+   "outcome": "FAILED",
+   "path": "02-head-tests-against-parent.log",
+   "seconds": 2.021,
+   "skipped": 0,
+   "tests": 478
+  },
+  "sealer": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "sealer-tests.log",
+   "seconds": 0.911,
+   "skipped": 0,
+   "tests": 106
+  }
+ },
+ "tool": "derive-claims.py"
+}

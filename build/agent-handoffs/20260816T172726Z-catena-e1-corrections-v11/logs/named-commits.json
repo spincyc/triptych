@@ -1,0 +1,19 @@
+{
+ "_why": "Commits this package legitimately DISCUSSES but was not produced from. head-consistency.py refuses any other SHA in a claim-bearing member, so a stale head from a superseded round cannot appear silently. Every entry here is a deliberate mention with its reason. The head, the parent, the review addressed and every commit of the range are entitled by claims.json and are NOT listed here.",
+ "commits": {
+  "ff49c83e4f26570bd4c07d8fc8703f94c331d92a": "The V10 evidence commit the answered review independently inspected. Named in HANDOFF.md and in the V11 durable records, and therefore in changes.patch.",
+  "e7f468e842727a817631d12f0854f8249556a8ff": "Current origin/main at the time of this lane, recorded so the reviewer can see this candidate is not integrated with it. Named in the V11 durable records, and therefore in changes.patch.",
+  "3c5b78249193df065c4e1c2ee5a98e5989c6e582": "The V9 head and this lane's parent's parent. Present as unified-diff context beside the V10 lane section the V11 records were inserted before.",
+  "55df5c236a1dfda12bb974efdbb9f46d0aeb3436": "The V9 independent review, a sibling record. Present as unified-diff context in the V10 sections neighbouring the V11 insertions, and in the V10 ledger row this lane reconciles.",
+  "4f00e04bdd1fd63702a51bfdafef256b468bef77": "The published head of the V9 independent review. Present as unified-diff context in the neighbouring V10 lane sections.",
+  "7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8": "The V8 head. Present as unified-diff context in the neighbouring lane sections carried by changes.patch.",
+  "611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f": "The V8 independent review, a sibling record. Present as unified-diff context in the neighbouring lane sections.",
+  "e876b29e5797edcc6e86422daa807f4b1104ec81": "The V7 head. Present as unified-diff context in the neighbouring lane sections carried by changes.patch.",
+  "d9ad5ec1ae35c308a0da5ed3456fd05fdad97cbd": "The V7 independent review, a sibling record. Present as unified-diff context in the neighbouring lane sections.",
+  "f183ed1b0afc6f14574a3507f6eaf3102dc999fa": "The V6 independent review. Present as unified-diff context in the test file's recorded correction history.",
+  "4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46": "The V6 head. Named in the reused audit tools' docstrings and the test file's history as part of the defect record those tools answer.",
+  "83cb63b61e366fac07b298fee77f63d1658086f7": "The head the V6 package wrongly named as its own. Carried in the reused audit tools' docstrings as the defect those tools exist to catch.",
+  "f93757854b54c19e50bdcb97ca0fed9b48d22bb7": "The V4.1 head. Present in changes.patch as a REMOVED line: the corpus browser master plan's E1 row still carried the stale V4.1 disposition, and this lane replaces it with the V10 one.",
+  "7f69575b982926e827974f2ed236b1c8bfd8aaad": "The V4.1 independent review. Present in changes.patch as a REMOVED line, beside the stale V4.1 disposition this lane replaces."
+ }
+}

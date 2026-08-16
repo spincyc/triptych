@@ -1,0 +1,1564 @@
+diff --git a/PROJECT-WORK.md b/PROJECT-WORK.md
+index 9ec43f768..513d19747 100644
+--- a/PROJECT-WORK.md
++++ b/PROJECT-WORK.md
+@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
+ handoff, and before reporting completion. “Published,” “built,” “committed,”
+ “pushed,” “review copy,” and “complete” are different states.
+ 
+-Last reconciled: 2026-08-08.
++Last reconciled: 2026-08-16.
+ 
+ ## Standing public-alpha authority
+ 
+@@ -1139,6 +1139,178 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
+ of its own work, marks no separately owned prerequisite complete, and does not
+ review itself.
+ 
++### E1 Catena route-owned correction lane, V11
++
++<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v11-2026-08-16 -->
++
++The disposition answered is **CHANGES REQUIRED** at exact candidate
++`ea15d16d22d7ceaed989ed9907c236f967738a03`, recorded by the independent
++review `f7cad8b0219de8343a0b2cce95e89558ded6946e` on branch
++`review/catena-wave-1-e1-corrections-v10-independent`, which independently
++inspected evidence `ff49c83e4f26570bd4c07d8fc8703f94c331d92a` and verified
++package `build/agent-handoffs/20260816T111714Z-catena-e1-corrections-v10`
++with ZIP SHA-256
++`4c71d1c15bd1f1992bf29a1d84342f11a8b671b5b5bd6bdcc4341de091e23e2f`. That
++review is a sibling of this line at the reviewed head and is **not merged
++in**; this record states its disposition rather than importing its commits.
++Current `origin/main` is `e7f468e842727a817631d12f0854f8249556a8ff`, and
++this lane is not integrated with it.
++
++The review passed what V10 got right and did not reopen it: ordinary
++normalized refusal consumption before the cache and request sink, genuine
++absence distinguished from ordinary refusal, the V9 request closure, the
++cold, present-valid and prewarmed terminal vectors, the representative
++primitive namespace matrix, the production ownership boundaries, and the
++existing CSS and JavaScript ceilings. It found five things, and this lane
++answers those five and nothing else.
++
++**The exported claim boundary closed only its shapes.** `bag()` established
++that a record arrived; ordinary property lookup then answered from wherever
++it found an answer. So `Object.create({stated: false, trail: ''})`
++presented itself as this route's own absence and opened the carried
++fallback door with `text_refused: false`, and an inherited
++`{stated: true, trail: 'structure/catena/text/deeper/'}` composed a usable
++text address the page never derived. Mixed own-and-inherited forms did the
++same and an accessor could throw. The committed matrix was eight plain
++object literals and probed no inherited, hybrid or accessor claim at all.
++Every semantic member is now read once, as own data, through its property
++descriptor: nothing inherited is seen, and an own accessor is **never
++invoked** — so a getter with a side effect does not run, and a getter that
++would answer differently on a second read has no second read to disagree
++with. Where the claim's own three-member contract is partly written above
++it — a valid own statement beside an inherited refusal marker — the claim
++fails closed rather than being adjudicated, because deciding which half of
++a contradiction to believe is not this page's to do. The same own-data
++reading now applies to the spine's own `text_prefix`, the carried
++`text_path`, the fragment's `id` and `source`, the edition join, and the
++extent members. This is a boundary correction, not a security rewrite: the
++wide fragment and edition contracts are still validated field by field, and
++that limit is stated in the handoff.
++
++**One sentence was doing the work of two.** `A text reference was supplied
++for this fragment, but it cannot be used as written` asserts two facts of
++its own — that a reference was supplied, and that it was written unusably —
++and V10 gave it to every state that resolved no text. A spine whose
++`text_prefix` was `null`, a record, a list, a number, a flag, `''` or
++whitespace establishes neither; nor does a bare, contradictory, inherited or
++accessor-backed direct claim. The projected claim now carries `said` —
++whether a non-empty textual value was supplied at all — and the weaker
++state gets the weaker sentence: `No text reference is established for this
++fragment, so no text is shown.` It makes no holdings claim, no
++file-existence claim, no request-failure claim and no accusation; it does
++not say a reference was supplied, and it does not say how anything was
++written. The two supplied-and-refused states — a real `structure/paragraphs/`
++prefix, and the right namespace wrapped in whitespace — keep the stronger
++sentence, because for them it is true. The model chooses and the row
++carries the result, because `catena.js` stood at 13 gzipped bytes of
++ceiling and this file has none; the page's whole diff is one line, and its
++whole-file headroom improves to 20 bytes.
++
++**The proof had three holes, and they are pinned shut.** A fourteen-case
++inherited and accessor matrix drives the exported boundary and pins that no
++such claim creates a request, reopens the carried door, composes a text
++path, changes the refusal or absence state, renders body text or alters
++ownership — and asserts the planted accessors were invoked **zero** times,
++which is stronger than reading them once and trusting the answer. The
++ordinary absent, valid and refused dispositions are asserted beside it as
++positive controls, and the projection is asserted to carry only own data
++properties. Every unestablished prefix is driven to the **visible and the
++request sink**, against the same planted carried body the V9 family uses:
++the V10 neutrality test blacklisted nine phrases inside the constant and
++drove no state anywhere. The genuinely-late terminal vector now states an
++expected value for **all 36** guarded fields rather than 13 of them, at
++both ends of the release, and a coverage test fails the moment a field
++joins the guard without joining the proof; the release is pinned as the one
++thing permitted to move, named by sequence and address. A `forceRow` hook
++pins the renderer's before-the-sink ordering with the normalized
++`{text_refused: true, text_path: <usable>}` row the model never emits,
++against a control that really does fetch — the V10 review's point being
++that moving the check below `fragmentText()` changed no journal and left
++all 466 wave-1 methods green.
++
++**The packaged evidence could not reproduce its own ownership claim.** The
++live harness recorded it and the dump threw it away: a fourteen-name
++whitelist kept the flat path list and dropped `requests`, `fragmentIds`,
++`historyState` and `replacedStates`. The journal row is now the five facts
++a reader needs without the harness — sequence, address, the kind of record
++that address holds, the step that owned the request, and what became of it:
++completed, held while parked, released once let go, or failed — printed as
++a human-readable table beside the JSON, and a name the harness stops
++emitting is now a hard failure instead of a silent `null`.
++
++**The package protocol was corrected where the review found it false.** The
++P8 verifier no longer imports or executes any Python extracted from the
++reviewed ZIP; it runs three tools from a trusted out-of-archive anchor,
++records each tool's trusted and shipped SHA-256, and fails hard on
++divergence rather than trusting the archive to audit itself. It recomputes
++the ZIP size and SHA-256 after every check and states pre-check and
++post-check values with an explicit equality verdict, closing the V10
++finding that P8 performed no final rehash; its escaping-path refusal is now
++a typed signal rather than a substring match on English prose. Provenance
++is read per command rather than once per battery, so a step that dirties
++the tree is recorded dirty on its own row instead of inheriting a
++preflight's `clean`. Log identity is allocated from an append-only attempt
++ledger outside the log directory, so a rerun cannot reproduce a previous
++attempt's filenames; a log index is derived mechanically; the final
++assembly writes an outer invocation log; the gate comparison is a recorded
++step; and every failure path marks the abandoned attempt non-authoritative
++with exactly one reason, so one attempt is one disposition. ZIP entries are
++written with a fixed DOS-epoch timestamp and suffix-derived mode bits, so
++the archive no longer discloses the builder's UTC offset or umask. The
++sanitizer gained rules for the workspace and lane-evidence path
++conventions — a reusable shape, not a V11-specific literal — and rewrites a
++local-offset timestamp to its UTC instant so ordering and elapsed time
++survive while the offset does not; one prior test that pinned the leak as
++correct behaviour is corrected and says so. A new handoff-inventory tool
++checks `HANDOFF.md` against the ten required contents of
++`guidance/external-review-handoffs.md` and reproduces the review's finding
++against the V10 package unaided.
++
++Fresh validation at this head. Focused Catena is **534** green, up from
++522. `scripts/_catena.py check` passes at 1,351 fragments / 1 book / 73
++canon entries. Full discovery is **1,885** tests with the inherited 14
++failures / 13 errors / 11 skips and the same 27-entry identity set, none of
++them a Catena identity. The browser gate is 2,290 assertions, 1,836 / 226 /
++228 across 171 pages and 19 routes — identical to the V10 report.
++`make -k check` exits 2 on **the same four targets at the parent and at
++this head** — `check-web-editions-current`, `check-release-bindings`,
++`check-tool-registry` and `check-examples` — measured at both endpoints;
++all four are inherited, and the V10 package's claim that the web-edition
++target was additional at its head was wrong and is not repeated here.
++Budgets unraised: `catena.css` byte-identical at 7,629/8,000 whole and
++2,676/2,700 stripped; `catena.js` **12,980**/13,000 whole and 7,554/8,800
++stripped — the page's code got smaller, not larger. The unbudgeted model
++grows 29,741 to 32,406 gzipped whole and 7,664 to 7,973 stripped;
++disclosed, not presented as unchanged load, and the standing question of
++whether the model and the combined route payload need a governed ceiling
++remains the budget owner's. Four stale release bindings remain fail-closed
++and unsigned, none re-signed; `src/web/data/` has zero changes.
++
++One measurement caution is recorded because it nearly became a false
++figure: running full discovery concurrently with `make -k check` reports
++250 errors rather than 13, because the make target builds and then removes
++`build/.web-current` and the public site underneath the tests. The batteries
++run them in sequence; the 1,885 / 14 / 13 / 11 figure above is from an
++isolated run, and the raced run is not used for any claim.
++
++Every other blocker remains open and untouched, as the V10 review left it:
++projection not yet the sole semantic source beyond this inherited-claim
++boundary; orphan raw sources; source-only fragments still counting; scalar
++and nested translator coercion; malformed and padded absence findings;
++refusal verse validation; the broader partial-selection ordering defects;
++unreadable roots and the unreadable `bibles.json` prose; the broader
++terminal and corrected-oracle proofs outside this lane's vectors; the
++CLI/web duplicated semantic model; the uncapped combined and model payload
++question, answered here only by accurate disclosure; and the historical
++data-seam contradiction. Release bindings, the common gate, B0/shared
++shell, real-device and assistive-technology evidence, protected Liturgy and
++PDFs remain separately owned. E1 is not integrated.
++
++Status: **awaiting fresh independent review** of the exact V11 head and its
++immutable handoff archived on `evidence/catena-e1-corrections-v11-handoff`.
++This lane records no acceptance of its own work, marks no separately owned
++prerequisite complete, and does not review itself.
++
+ ### E1 Catena route-owned correction lane, V10
+ 
+ <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v10-2026-08-16 -->
+diff --git a/guidance/corpus-browser-master-plan.md b/guidance/corpus-browser-master-plan.md
+index 08243d63f..009019035 100644
+--- a/guidance/corpus-browser-master-plan.md
++++ b/guidance/corpus-browser-master-plan.md
+@@ -299,7 +299,7 @@ them; it cannot close them.
+ | B0/B1 shared foundation and neutral browser gates | Authorized implementation work | One global owner; ingest the shell correction only after independent acceptance; do not enter protected Liturgy or invent surface composition. |
+ | C2 Home/Publications implementation | Eligible after clean shared-shell ownership | Implement the accepted C0/C1 contracts; do not duplicate global owners across branches. |
+ | D1 Reader implementation | Eligible after clean shared-shell ownership | Rendering and presentation only; preserve web-edition source ownership and canonical PDFs. |
+-| E1 Catena implementation | **Changes required** at V4.1 head `f93757854b54c19e50bdcb97ca0fed9b48d22bb7` (independent review `7f69575b982926e827974f2ed236b1c8bfd8aaad`, 2026-08-13); V5 correction candidate `impl/catena-wave-1-e1-corrections-v5` awaiting fresh independent review | The exact voice-key projection, the neutral refusal umbrella, route truth for supported and unsupported voices, the budgets, package integrity and the visual matrix pass and are not reopened. Typed presentation did not: raw language metadata, malformed collection members, absence findings, number-like values, verse and path data and malformed bootstrap records could still coerce, create false counts or closed claims, lose valid siblings, fetch an address composed by coercion, or leave the page unterminated. V5 corrects that boundary once, in the unbudgeted model, and adds route-completion regressions that begin canonical. The authorized Catena data seam is not a general ownership transfer; the historical Day-reader guard, release bindings, common gate, B0/shared shell, real device/AT evidence, protected Liturgy and PDFs remain separately owned. E1 stays off main; no merge, re-sign, deploy or cutover is authorized. |
++| E1 Catena implementation | **Changes required** at V10 head `ea15d16d22d7ceaed989ed9907c236f967738a03` (independent review `f7cad8b0219de8343a0b2cce95e89558ded6946e` on `review/catena-wave-1-e1-corrections-v10-independent`, 2026-08-16); V11 correction candidate `impl/catena-wave-1-e1-corrections-v11` awaiting fresh independent review | The ordinary refusal path, genuine absence, the V9 request closure, the cold, present-valid and prewarmed vectors, the primitive namespace matrix, production ownership boundaries and the existing CSS/JS ceilings pass and are not reopened. The exported claim boundary and the reader claim were both wider than those cases: inherited and accessor-backed claim members reopened carried and composed requests, malformed states received an unsupported supplied-reference sentence, 23 of 36 late-guard fields lacked expected values, the packaged journal dropped request ownership, and the immutable handoff's provenance, privacy, screenshot, inventory, run-log and read-only-verification claims were incorrect despite exact ZIP arithmetic. V11 corrects only those findings and returns a new immutable package. Projection/orphan-source, source-only-fragment, translator, absence, selection, refusal-typing, unreadable-root, broader-terminal/oracle, CLI/web, model-budget, data-seam, release, common-gate, B0/shared-shell, real-device/AT, protected Liturgy and PDF blockers remain open or separately owned. E1 stays off main; no merge, re-sign, deploy, or cutover is authorized. |
+ | F1 Sources implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by the disposition. |
+ | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires clean foundation plumbing and explicit authority. |
+ | G0/G1 History; H0/H1 Law; I0/I1 Scripture | Planned | Follow their owning guidance and accepted foundation. |
+diff --git a/guidance/corpus-browser-roadmap.md b/guidance/corpus-browser-roadmap.md
+index 327740470..dfcf1c0cc 100644
+--- a/guidance/corpus-browser-roadmap.md
++++ b/guidance/corpus-browser-roadmap.md
+@@ -728,6 +728,94 @@ Catena generator alone, and `catena.js` is smaller than V6 left it in both
+ measures. The `src/web/data/` contradiction is **preserved untouched** and
+ remains a separate owner's adjudication.
+ 
++### E1 Catena correction V11 — 2026-08-16
++
++Answers the fresh independent review `f7cad8b0219de8343a0b2cce95e89558ded6946e`
++on `review/catena-wave-1-e1-corrections-v10-independent` — **CHANGES
++REQUIRED** at exact V10 head `ea15d16d22d7ceaed989ed9907c236f967738a03`,
++which independently verified evidence
++`ff49c83e4f26570bd4c07d8fc8703f94c331d92a` and ZIP SHA-256
++`4c71d1c15bd1f1992bf29a1d84342f11a8b671b5b5bd6bdcc4341de091e23e2f` — with
++exactly its stated next action and nothing else. Current `origin/main` is
++`e7f468e842727a817631d12f0854f8249556a8ff`.
++
++The review closed nothing it had passed: ordinary refusal consumption
++before the cache and request sink, genuine absence against ordinary
++refusal, the V9 request closure, the cold, present-valid and prewarmed
++vectors, the primitive namespace matrix, ownership boundaries and the
++existing ceilings all stand and are not reopened here.
++
++V10 closed the exported claim boundary's SHAPES and not its MEMBERS.
++`bag()` proved a record had arrived and property lookup then answered from
++the prototype, so `Object.create({stated: false, trail: ''})` opened the
++carried fallback as though it were this route's own absence, and an
++inherited valid statement composed an address the page never derived; the
++committed matrix was eight plain literals. Every semantic member is now
++read once as own data through its descriptor — nothing inherited is seen,
++an own accessor is never invoked, and a claim whose three-member contract
++is partly written above it fails closed rather than being adjudicated. The
++same reading covers the spine's own prefix, the carried path, the
++fragment's id and source, the edition join and the extent members; the
++wider fragment and edition contracts stay field-validated, and that limit
++is stated rather than glossed.
++
++The shared refused sentence also asserted more than most states establish.
++`A text reference was supplied ... cannot be used as written` claims a
++supplied reference and a written form, and V10 gave it to `null`, a record,
++a list, a number, a flag, `''`, whitespace and every malformed direct
++claim. The claim now carries whether a non-empty textual value was supplied
++at all, and the weaker state says only `No text reference is established
++for this fragment, so no text is shown.` — no holdings, file-existence,
++request-failure or blame claim, and no assertion that anything was supplied
++or written. The two genuinely supplied-and-refused states keep the stronger
++sentence, because for them it is true.
++
++The proof is completed where it was thin. A fourteen-case inherited and
++accessor matrix pins that no such claim creates a request, reopens
++fallback, composes a path, changes refusal or absence state, renders a body
++or alters ownership, and asserts the planted accessors ran zero times.
++Every unestablished prefix is driven to the visible and request sinks
++against a planted carried body — V10's neutrality test inspected the
++constant and drove nothing. The genuinely-late vector states an expected
++value for all 36 guarded fields at both ends of the release instead of 13,
++with a coverage test that fails if the guard widens without the proof, and
++the release is pinned as the only thing permitted to move. A harness hook
++pins the renderer's before-the-sink order with the refused-plus-usable-path
++row the model never emits, against a control that really does fetch.
++
++The packaged journal now reproduces ownership without the harness: each row
++states sequence, address, record kind, owning step, and outcome —
++completed, held, released or failed. P8 no longer executes any Python from
++inside the reviewed ZIP; it runs trusted out-of-archive copies, records
++each tool's trusted and shipped digest, fails hard on divergence, and
++rehashes the archive after every check with an explicit pre/post equality
++verdict. Provenance is read per command, so a step that dirties the tree is
++recorded dirty. Log identity comes from an append-only attempt ledger, the
++index is derived mechanically, the assembly writes an outer invocation log,
++the gate comparison is a recorded step, and every failure path marks the
++abandoned attempt non-authoritative with one reason. ZIP entries carry a
++fixed DOS-epoch stamp and suffix-derived modes, so no builder offset or
++umask is disclosed. The sanitizer gained convention-shaped workspace and
++lane-evidence rules and rewrites local-offset timestamps to UTC so ordering
++survives and the offset does not. A new handoff-inventory tool checks
++`HANDOFF.md` against the protocol's ten required contents and reproduces
++the review's eight-of-ten finding against the V10 package unaided.
++
++Fresh checks: focused Catena 534 green, up from 522; catena check
++1,351/1/73; full discovery 1,885 with the inherited 14/13/11 and the same
++27-entry name set, none a Catena identity; browser gate 2,290 at
++1,836/226/228 over 171 pages and 19 routes, identical to V10;
++`make -k check` red on the same four targets at the parent and at this
++head, all inherited — V10's "additional at head" label was false and is not
++repeated; promise ledger valid; four stale bindings fail-closed and
++unsigned. Budgets unraised: `catena.css` byte-identical, `catena.js`
++12,980/13,000 whole and 7,554/8,800 stripped, the page's code smaller than
++V10's. The unbudgeted model's growth is disclosed and its governance
++remains the budget owner's.
++
++All other blockers remain open and untouched, and E1 is not integrated. No
++merge, re-signing, deployment or cutover is authorized.
++
+ ### E1 Catena correction V10 — 2026-08-16
+ 
+ Answers the fresh independent review `55df5c236a1dfda12bb974efdbb9f46d0aeb3436`
+@@ -835,7 +923,7 @@ fresh independent review.
+ | --- | --- | --- |
+ | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
+ | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
+-| E1 Catena production implementation | Eleventh correction candidate (V10) awaiting fresh independent review; the disposition it answers is **CHANGES REQUIRED** at V9 head `3c5b78249` (independent review `55df5c236`, published head `4f00e04bd`, 2026-08-16) | That review passed the V9 request-layer closure entire — the three-state prefix, the carried door opened only on genuine absence, the thirteen-shape matrix, the namespace regressions, ownership boundaries and budgets — and found the third state stopped at the model: `text_refused` was projected and never consumed, so a present-invalid prefix rendered the false absence sentence `carries no text file`; the exported claim boundary accepted the contradictory `{stated: false, trail: <valid>}` as absence; the cold/prewarmed/late/present-valid terminal proofs were materially incomplete with `history.state` uncaptured and ownership inferred from counts; and the V9 package needed unique logs, contemporaneous parent provenance, a P8 transcript bound to the exact ZIP, accurate labels, and the required handoff/review-request structure. Its exact next action: render the distinct neutral refused state, fail contradictory claims closed, exact-pin the four terminal vectors, and rebuild that protocol in a new timestamp. V10 is that correction alone; every other enumerated blocker remains open for the authorized continuation. Preserve accepted E0 and every sound V2–V9 correction. The exact Catena data seam is authorized but transfers no broader ownership; release, common-gate, B0/shared-shell, Day-reader guard, real-device/AT, protected Liturgy and PDF prerequisites remain separate. E1 stays off main. No merge, re-sign, deploy or cutover. |
++| E1 Catena production implementation | Twelfth correction candidate (V11) awaiting fresh independent review; the disposition it answers is **CHANGES REQUIRED** at exact V10 head `ea15d16d2` (independent review `f7cad8b02` on `review/catena-wave-1-e1-corrections-v10-independent`, 2026-08-16) | That review passed the ordinary refusal path entire — the normalized refusal consumed before the cache and request sink, genuine absence kept distinct, the V9 request closure, the cold, present-valid and prewarmed vectors, the primitive namespace matrix, ownership boundaries and the existing ceilings — and found the boundary and the reader claim both wider than those cases. `fragmentRow` trusted inherited and accessor-backed `stated` and `trail`, so an object inheriting the absence shape opened the carried fallback and an inherited valid statement composed a request; the shared refused sentence asserted a supplied, written reference for malformed states that establish neither; 23 of the 36 late-guard fields were held by before/after equality alone; the packaged journal dropped the ownership the harness recorded; and the package's provenance, privacy, screenshot, complete-inventory, unique-run and read-only-P8 claims were incorrect despite exact ZIP arithmetic. Its exact next action: require own non-accessor claim members, give malformed and unestablished claims truthful presentation, add the inherited/accessor/visible/request/cache regressions, exact-pin every material late sink, and issue a privacy-safe, visually evidenced, fully inventoried package with preserved unique run and discard logs and a non-executing P8 that rehashes after verification. V11 is that correction alone; every other enumerated blocker remains open for the authorized continuation. Preserve accepted E0 and every sound V2–V10 correction. The exact Catena data seam is authorized but transfers no broader ownership; release, common-gate, B0/shared-shell, Day-reader guard, real-device/AT, protected Liturgy and PDF prerequisites remain separate. E1 stays off main. No merge, re-sign, deploy or cutover. |
+ | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
+ | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
+ | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
+@@ -862,6 +950,7 @@ fresh independent review.
+ | 2026-08-15 | E1 Catena correction V7 | Answered independent review `f183ed1b0` (**CHANGES REQUIRED** at `4639b139f`) by replacing raw fragment copying with an explicit typed projection. `chapterFragments` had shallow-copied every own property and cleared `text_path` only when a composed form could be built, so a fragment whose id or whose file's prefix was unreadable kept the record's own `text_path` and the page requested it; `text_path` is now composed, and a carried one is accepted only where its stem is that fragment's own validated id, which is what keeps the sample corpus working. Hollow fragment, absence and refusal members make no row, tally or claim; an absence source is validated before it claims a work's row, so a hollow source no longer renders blank and masks the valid sibling behind it; a refusal needs the closed kind and the chapter matched against the chapter being read, which stops a chapter-1 record establishing chapter 2's boundary; a contradiction contributes no rights prose, where V6 declined the finding and then printed one side's reason chosen by length; `partial` stops being coerced in `scripts/_catena.py`, where `str(row.get("partial") or "")` turned a mapping into prose; and holdings, canon, voices, the edition manifest, the paragraph layer, the verses container and the chapter spine each distinguish a corpus read and found empty from a corpus state that could not be established. Ten oracles that blessed those defects are corrected with their reasons recorded, and the late-work guard grew from thirteen sinks to thirty-six after the review found it compared the announcement journal rather than the live region a stale write could replace. This lane attacked its own change twice: the first pass found five further defects, one introduced by the correction, all fixed with regressions, and one confirmed finding is recorded unfixed rather than settled by a lane that cannot settle it. Package claims are machine-derived from one pass and a checker refuses prose that disagrees with them; the sealer no longer deletes the manifest in its read-only mode and now proves every archive member against it. `catena.css`, `index.html` and all of `src/web/data/` byte-identical; no ceiling raised, and `catena.js` smaller than V6 left it in both measures. **Every figure is derived at the sealed head and recorded in the package's own claim record rather than restated here, which is the direct answer to the five counts this review found wrong.** | Branch `impl/catena-wave-1-e1-corrections-v7`; parent `4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46`; review addressed `f183ed1b0afc6f14574a3507f6eaf3102dc999fa`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ | 2026-08-15 | E1 Catena correction V8 | Answered independent review `d9ad5ec1a` (**CHANGES REQUIRED** at `e876b29e5`) with exactly its stated first bounded commit: the byte-exact `structure/catena/text/` namespace closure at the request sink, and nothing else. `trail` and `leaf` stated what a path of this data root looks like and nothing stated which directory the route owns, so `structure/paragraphs/` composed a request, a carried same-stem `structure/paragraphs/text/<id>.json` fetched a real Sources text sharing that id, and whitespace-wrapped paths were trimmed into validity. The model now states the namespace once — `TEXT_HOME` — and `textTrail`/`textLeaf` require it byte-exactly at a directory boundary with no whitespace repair, for the composed and the carried form alike, before projection completes; `catena.js` is untouched. Three adversarial replay scenarios plant a real body at the wrong-namespace address, pin the entire fetched journal, assert the planted words reach no sink, and hold the terminal state. Focused suite 510 green, up from 505; catena check 1,351/1/73 with all 1,356 real and 47 fixture paths unchanged; browser gate 2,290 assertions with the inherited 1,836/226/228 and 117/82/27 identity; budgets unraised with `catena.js` and `catena.css` byte-identical at 12,901/13,000, 7,530/8,800, 7,629/8,000 and 2,676/2,700; the unbudgeted model's growth is disclosed at +514 gzipped whole. All other V7 findings recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v8`; parent `e876b29e5797edcc6e86422daa807f4b1104ec81`; review addressed `d9ad5ec1ae35c308a0da5ed3456fd05fdad97cbd`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ | 2026-08-16 | E1 Catena correction V9 | Answered independent review `611b5eed8` (**CHANGES REQUIRED** at `7e4df42a2`) with exactly its stated next action: the composed prefix/fallback closure and a truthful final-byte package, and nothing else. `textTrail` collapsed a prefix the file never stated and a prefix the file stated and the page refused into the same `''`, and `fragmentRow`'s truthy test read that `''` as leave to consult the carried `text_path`, so the reviewer's refused `structure/paragraphs/` prefix still fetched a valid same-stem carried file and rendered its planted body. The prefix is now the statement `{stated, trail}`: absence is property absence on the spine record, every carried shape is a statement, a refused statement is terminal and kept on the row as `text_refused`, and the carried door opens only on genuine absence with a byte-exact own-stem path; `catena.js` is untouched. The regressions pin the exact vector cold, prewarmed and genuinely late at the production sinks — whole journal, body, rows, announcement journal and standing `statusText`, tally, busy, hash, history, focus — and fail nine ways at the uncorrected parent; a model-level matrix classifies thirteen refused shapes beside the absent and valid states. The handoff pipeline freezes its inventory before derivation, names derived members unsized, and verifies its claims read-only against the final ZIP, with the retained parent run and the discarded `/tmp` run ledgered. Focused suite 519 green, up from 510; catena check 1,351/1/73; browser gate 2,290 with the inherited 1,836/226/228 and 117/82/27 identity, whole report identical; budgets unraised with `catena.js` and `catena.css` byte-identical at 12,901/13,000, 7,530/8,800, 7,629/8,000 and 2,676/2,700; the unbudgeted model's growth is disclosed at +833 gzipped whole. All other V7 blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v9`; parent `7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8`; review addressed `611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
++| 2026-08-16 | E1 Catena correction V11 | Answered independent review `f7cad8b02` (**CHANGES REQUIRED** at `ea15d16d2`) with exactly its stated next action: the inherited/accessor claim closure, truthful malformed-state presentation, the complete late vector, and package/provenance/privacy correctness, and nothing else. `bag()` proved a record had arrived and property lookup then answered from the prototype, so `Object.create({stated: false, trail: ''})` opened the carried door as this route's own absence and an inherited valid statement composed an address; every semantic member is now read once as own data through its descriptor, an own accessor is never invoked, and a claim whose contract is partly written above it fails closed. The refused sentence asserted a supplied, written reference for states establishing neither, so the claim now carries whether a non-empty textual value was supplied and the weaker state says only that no text reference is established. A fourteen-case inherited and accessor matrix pins zero requests, zero fallback, zero body leak and zero accessor invocations; every unestablished prefix is driven to the visible and request sinks; the late vector states an expected value for all 36 guarded fields at both ends with a coverage test that fails if the guard widens without the proof; and a harness hook pins the renderer's before-the-sink order with the refused-plus-usable-path row the model never emits. The packaged journal gains each request's kind, owning step and outcome; P8 executes no archive code and rehashes the ZIP after every check; provenance is read per command; log identity comes from an append-only attempt ledger with mechanical index, an outer invocation log and explicit discard markers; ZIP entries carry a fixed epoch and derived modes; the sanitizer gained convention-shaped workspace and lane-evidence rules and rewrites local timestamps to UTC; a new handoff-inventory tool reproduces the review's eight-of-ten finding unaided. Focused suite 534 green, up from 522; catena check 1,351/1/73; full discovery 1,885 with the inherited 14/13/11 and the same 27-entry name set; browser gate 2,290 at 1,836/226/228, identical to V10; `make -k check` red on the same four targets at parent and head, all inherited; budgets unraised with `catena.css` byte-identical and `catena.js` 12,980/13,000 whole and 7,554/8,800 stripped; the unbudgeted model's growth disclosed. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v11`; parent `ea15d16d22d7ceaed989ed9907c236f967738a03`; review addressed `f7cad8b0219de8343a0b2cce95e89558ded6946e`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ | 2026-08-16 | E1 Catena correction V10 | Answered independent review `55df5c236` (**CHANGES REQUIRED** at `3c5b78249`, published head `4f00e04bd`) with exactly its stated next action: the refused-prefix presentation closure, the exact terminal vectors, and a protocol-correct package, and nothing else. The page now consumes `text_refused` before the request sink, so a present-invalid prefix renders one neutral model-stated sentence — a supplied text reference cannot be used as written — instead of the false `carries no text file`; genuine absence keeps its own sentence and the two claims are pinned visibly distinct with a positive control each way; absence at the exported claim boundary is the one shape `{stated: false, trail: ''}` and every contradictory direct claim projects as refused with no request, substitution, or body leak. The replay journals each request's owning step and captures `history.state`; cold, present-valid, prewarmed, and late are pinned to expected values at every material sink, the late vector pinning B's full terminal baseline before and after a release pinned at exactly zero-then-one over the retained 36-field guard. Against the uncorrected parent the V10 file yields nine failing subtest identities across seven behavioral methods while the neutrality sweep and the present-valid, genuine-absence, and late-non-vacuity controls pass. Focused suite 522 green, up from 519; catena check 1,351/1/73; full discovery 1,873 with the inherited 14/13/11 and the same 27-entry name set; browser gate 2,290 at 1,836/226/228; promise ledger 35 tracked / 19 complete; budgets unraised with `catena.css` byte-identical and `catena.js` 12,987/13,000 whole and 7,565/8,800 stripped; the unbudgeted model's growth disclosed at +562 gzipped whole. The package pipeline gains unique refusing logs, contemporaneous exact-SHA/clean/cwd provenance, a P8 transcript bound to the exact ZIP with duplicate-row checks and derived final-byte totals, a timestamp-refusing assembler, and accurate lane labels. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v10`; parent `3c5b78249193df065c4e1c2ee5a98e5989c6e582`; review addressed `55df5c236a1dfda12bb974efdbb9f46d0aeb3436`; published review head `4f00e04bdd1fd63702a51bfdafef256b468bef77`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ 
+ ## Next Codex tasks
+diff --git a/promised-deliverables.toml b/promised-deliverables.toml
+index c2b099acd..eb2f48cca 100644
+--- a/promised-deliverables.toml
++++ b/promised-deliverables.toml
+@@ -1240,6 +1240,78 @@ state = "complete"
+   status = "pass"
+   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
+ 
++[[deliverables]]
++id = "corpus-browser-catena-e1-corrections-v11-2026-08-16"
++owner = "src/web/browser/catena"
++promise = "Answer the 2026-08-16 E1 Catena V10 independent review (f7cad8b02 on review/catena-wave-1-e1-corrections-v10-independent, CHANGES REQUIRED at ea15d16d2) with exactly its stated next action: require own non-accessor claim members so no inherited, prototype or accessor-backed value can reopen a carried or composed text request, distinguish a genuinely supplied-and-refused reference from a malformed or unestablished state and give the second truthful conservative wording, add the inherited, hybrid, accessor, production-malformed, cache, visible-sink and request-sink regressions, state an expected value for every material field of the 36-field late guard, carry request ownership into the packaged journal, correct the package protocol defects — a genuinely read-only non-executing P8 that rehashes the ZIP after every check, contemporaneous per-command clean/dirty provenance, unique attempt-scoped logs with a mechanical index and explicit discard markers, ZIP metadata that discloses no builder offset, and a sanitizer that removes the workspace and lane-evidence identity by convention — issue one immutable exact-head V11 handoff with all ten required contents and the required screenshots, record every other blocker open and untouched, and return that head for fresh independent review."
++state = "in_progress"
++
++  [[deliverables.requirements]]
++  id = "own-claim-members-only"
++  criterion = "No inherited, prototype or accessor-backed property may create a request, reopen the carried fallback, compose a text path, change the refusal or absence state, render body text or alter request ownership. Every semantic member of the prefix claim, the spine's own text_prefix, the fragment's carried text_path, id and source, the edition join and the extent members is read once as an own DATA property through its descriptor, so an own accessor is never invoked and a getter that answers differently on a second read has no second read; a claim whose three-member contract is reachable above it fails closed rather than being adjudicated. An adversarial matrix covers inherited stated, inherited trail, both inherited, own-false-with-inherited-valid-trail, own-invalid-with-inherited-valid-trail, getters for each member, a throwing getter, a drifting getter, an inherited supplied marker, an inherited refusal marker, and inherited carried path and id — each pinned closed, with the accessor invocation count asserted at zero and the ordinary absent, valid and refused dispositions asserted beside them as positive controls."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "malformed-state-said-truthfully"
++  criterion = "The refused sentence, which asserts that a text reference was supplied and that it cannot be used as written, is used only where the normalized projection establishes both — a non-empty textual value supplied as an own property and rejected under the path and namespace contract. Every other no-text state that is not genuine absence — a text_prefix that is null, a record, a list, a number, a flag, empty text or whitespace, and every bare, contradictory, inherited or accessor-backed direct claim — receives a distinct conservative sentence that makes no holdings claim, no file-existence claim, no request-failure claim and no accusation, and does not assert that a reference was supplied or how it was written. The three no-text sentences are pinned as three distinct claims, and each malformed state is driven to the visible AND request sinks against a planted carried body, not merely inspected as a constant."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "complete-late-vector-expected-values"
++  criterion = "The genuinely-late terminal vector states an exact expected value for every one of the 36 guarded fields, asserted at both ends of the release rather than by before/after equality alone, and a coverage test fails if a field joins the guard without joining the expected-value table. The release is proved genuinely late — A issued and held with its row still loading, zero released while B settles, exactly one released afterwards — and is pinned as the only thing permitted to move, named by sequence and address. The renderer's before-the-sink ordering is independently pinned with a normalized refused row carrying a usable, plantable path that the model never emits, against a control on the same spine that really does fetch that address."
++  status = "pass"
++  evidence = ["tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "request-ownership-in-packaged-evidence"
++  criterion = "The packaged request journal is human- and machine-readable and sufficient to reproduce every ownership claim without rerunning the harness: each row states its sequence number, the requested path, the kind of record that address holds, the owning action or step, and whether the request completed, was held, was released or failed. The dump no longer drops the harness fields it records — requests, fragmentIds, historyState and replacedStates are all carried — and a field the harness stops emitting is a hard failure rather than a silent null. No private or session data is exposed."
++  status = "pass"
++  evidence = ["tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "read-only-p8-with-final-rehash"
++  criterion = "P8 imports and executes no Python extracted from the reviewed ZIP. Shared verification logic runs from a trusted copy outside the sealed artifact whose exact path and SHA-256 are recorded beside the archive's shipped copy, with divergence a hard failure rather than silent trust, and the archive's copies are read as bytes only. After all checks complete the ZIP byte size and SHA-256 are recomputed and compared with the values captured before them, and the transcript states pre-check size and hash, the checks performed, post-check size and hash, and the equality verdict. The transcript binds itself to one archive by basename, exact size, exact SHA-256, the V11 head, the package identity, the verifier's own identity and each check result, and its unsafe-layout refusal is a typed signal rather than a substring match on prose."
++  status = "pass"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "truthful-provenance-and-unique-attempts"
++  criterion = "Clean and dirty tree state is captured contemporaneously for each command rather than inherited from one preflight, so a step that dirties the tree is recorded dirty on its own row. Every authoritative execution attempt has a unique log identity that a rerun cannot reproduce, a log index is derived mechanically, the final assembly writes an outer invocation log, the gate comparison is a recorded step, and every discarded attempt is self-marked non-authoritative with exactly one reason so that no attempt reads as both authoritative and discarded. A compact attempt ledger records attempt id, exact SHA, parent and head, sanitized cwd identity, command or phase, start, end and order, exit or result, disposition, reason if discarded, and log path."
++  status = "pass"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "workspace-and-builder-privacy"
++  criterion = "The workspace and lane-evidence identity is removed by a reusable rule matching the naming convention rather than a lane-specific literal, applied to member bodies, member names, logs, metadata and packaged content, and backed by a matching detection rule so the scan cannot report clean while the identity survives. ZIP member metadata discloses no builder timezone, offset, umask or platform: entries carry a fixed timestamp and derived mode bits, verified by a test that inspects the archive metadata directly. Local-offset timestamps in packaged records are normalized so ordering and elapsed time survive while the offset does not. The final scan covers package members, member names, ZIP metadata, sidecars, the P8 transcript, screenshot metadata, logs and provenance, and records the scanner rules and version."
++  status = "pass"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "handoff-complete-and-evidenced"
++  criterion = "HANDOFF.md contains all ten required contents of guidance/external-review-handoffs.md as CONTENT — with known limitations and unresolved decisions stated inline rather than delegated to sibling files — and its artifact inventory names every package member and every package sibling including the evidence index, the ZIP, its SHA-256 sidecar and the P8 transcript, with a stated reason for any omitted conditional class. A machine-checkable handoff-section inventory verifies this and reproduces the V10 eight-of-ten finding against the V10 package unaided. The required screenshots for this correction-evidence class are produced from real headless Chromium with before and after pairs for the state whose copy changed, each labelled with route, state, viewport, adversarial-or-real-corpus provenance, originating commit, hash and capture tool, disclosing no local or session identifiers, and pairs that are identical by design are reported as identical rather than described as different."
++  status = "pass"
++  evidence = ["guidance/external-review-handoffs.md", "guidance/corpus-browser-master-plan.md"]
++
++  [[deliverables.requirements]]
++  id = "passed-behaviour-preserved"
++  criterion = "Nothing the V10 review passed is regressed: ordinary normalized refusal consumption before the cache and request sink, genuine absence against ordinary refusal, the V9 request closure, the cold, present-valid and prewarmed terminal vectors, the representative primitive namespace matrix, exact voices, language normalization, the neutral umbrella, padded verses, null termination, production ownership boundaries, and the CSS and JavaScript ceilings, which are not raised."
++  status = "pass"
++  evidence = ["tools/tests/test_catena_wave_1.py", "src/web/browser/catena/catena.css"]
++
++  [[deliverables.requirements]]
++  id = "immutable-v11-handoff"
++  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V11 head, its parent ea15d16d2, the review addressed f7cad8b02, the mechanically derived commit list and diff, the inherited and accessor adversarial matrix, the own-property normalization evidence, the malformed and unestablished wording evidence, the contradictory-claim closure, the exact 36-field late-vector expected-value table, the packaged request-ownership journal, the cold, present-valid and prewarmed preservation evidence, the attempt and log ledger, contemporaneous parent and head tree-state provenance, the read-only P8 verifier identity with pre and post ZIP hashes, the discarded-attempt ledger, the complete handoff-section inventory, the required screenshots with metadata and hashes, the sanitizer and ZIP-metadata privacy tests, the final privacy scan, fresh validation figures, budgets, release status, the open blockers, a byte and control scan, limitations, a SHA-256 manifest and a package digest — without mutating any earlier sealed package."
++  status = "open"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "fresh-independent-review"
++  criterion = "A fresh independent review of the exact V11 head and its new immutable package records a durable disposition, scoped to inherited and accessor semantic closure, truthful malformed-state presentation, complete late-vector proof, and package, provenance and privacy correctness. This lane does not review its own work and records no acceptance."
++  status = "open"
++  evidence = ["guidance/corpus-browser-roadmap.md"]
++
+ [[deliverables]]
+ id = "corpus-browser-catena-e1-corrections-v10-2026-08-16"
+ owner = "src/web/browser/catena"
+@@ -1249,19 +1321,19 @@ state = "in_progress"
+   [[deliverables.requirements]]
+   id = "refused-prefix-rendered-distinct"
+   criterion = "The renderer consumes the normalized text_refused projection before the request sink, never inferring refusal from raw input: a present-invalid text prefix renders one compact neutral sentence stating that a supplied text reference cannot be used as written — never the absence sentence, and never wording implying the corpus lacks the text, the file is missing, a request failed, or content is blocked — while a genuinely absent reference keeps the absence sentence, a valid prefix renders its composed body with neither sentence, and the two no-text states are pinned as visibly distinct claims with a positive control each way."
+-  status = "pass"
++  status = "open"
+   evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+ 
+   [[deliverables.requirements]]
+   id = "contradictory-prefix-claims-fail-closed"
+   criterion = "Absence at the exported fragmentRow claim boundary is exactly one shape — stated false with an empty trail — and every contradictory or malformed direct claim, the review's stated-false-beside-a-valid-trail included, resolves no text and projects as refused; the page reads the refusal before handing any path to the request sink, so no contradictory pairing of text_refused with a usable-looking path can compose a request, substitute a cached body, or leak body text."
+-  status = "pass"
++  status = "open"
+   evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+ 
+   [[deliverables.requirements]]
+   id = "exact-terminal-vectors-with-ownership"
+   criterion = "The cold, present-valid, prewarmed, and genuinely-late scenarios are each pinned to expected values — not equality between snapshots — at every material sink: the whole request journal with each request's owning step recorded by the harness, row identity and count, the rendered refused or composed body with the absence sentence proven absent where refusal stands, tally, the announcement journal and the standing statusText, aria-busy, URL, hash and history journals and the captured history.state, focus, error and failure sinks, and replacement state; the late vector pins B's complete terminal baseline both before and after the release, retains the full 36-field guarded comparison, and pins the release itself at exactly zero-then-one."
+-  status = "pass"
++  status = "open"
+   evidence = ["tools/tests/test_catena_wave_1.py"]
+ 
+   [[deliverables.requirements]]
+@@ -1291,7 +1363,7 @@ state = "in_progress"
+   [[deliverables.requirements]]
+   id = "fresh-independent-review"
+   criterion = "A fresh independent review of the exact V10 head and its new immutable package records a durable disposition, scoped to refused-prefix presentation truthfulness, exact terminal vectors, request-closure preservation, and package protocol correctness. This lane does not review its own work and records no acceptance."
+-  status = "open"
++  status = "pass"
+   evidence = ["guidance/corpus-browser-roadmap.md"]
+ 
+ [[deliverables]]
+diff --git a/src/web/browser/catena/catena-model.js b/src/web/browser/catena/catena-model.js
+index e8fec218f..23260f4ae 100644
+--- a/src/web/browser/catena/catena-model.js
++++ b/src/web/browser/catena/catena-model.js
+@@ -142,6 +142,67 @@
+     return value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+   }
+ 
++  /**
++   * THE OWN DATA VALUE OF ONE PROPERTY, or undefined.
++   *
++   * V11, the V10 review: `bag()` asks whether a record arrived, and property
++   * lookup then answers from the prototype chain, so
++   * `Object.create({stated: false, trail: ''})` presented itself as this
++   * route's own absence and opened the carried door, and an inherited
++   * `{stated: true, trail: 'structure/catena/text/…'}` composed a request the
++   * page never derived. A value a record does not itself carry states nothing
++   * about that record.
++   *
++   * The descriptor, not the lookup, for two reasons. It answers only from the
++   * record's own table, so nothing inherited crosses. And it hands back the
++   * stored value WITHOUT invoking anything: an own accessor — `get stated()`,
++   * a getter with a side effect, a getter that answers differently on the
++   * second read — has no `value` on its descriptor, so it reads as undefined
++   * and IS NEVER CALLED. That is stronger than reading it once and trusting
++   * the answer, and it is why every semantic member below is asked this way.
++   *
++   * Not exported. `Object.getOwnPropertyDescriptor` throws on `null` and on a
++   * name that will not become a property key, and this file's contract is
++   * that no export throws on a hostile argument. Every caller here hands it a
++   * `bag()`-guarded record and a literal name, so it cannot throw where it
++   * stands; and what the boundary owes a reviewer is proof that `fragmentRow`
++   * calls no getter, which is asked of `fragmentRow`.
++   */
++  function ownData(record, name) {
++    const spot = Object.getOwnPropertyDescriptor(record, name);
++    return spot && Object.hasOwn(spot, 'value') ? spot.value : undefined;
++  }
++
++  /**
++   * IS THIS RECORD'S CONTRACT ITS OWN? — no member of `names` reachable
++   * above it, and no prototype of its own.
++   *
++   * `ownData` alone makes an inherited member INVISIBLE, which closes every
++   * way a prototype could OPEN something: nothing inherited creates a
++   * request, composes an address, or reopens the carried door. It leaves one
++   * case open in the other direction. A claim carrying its own valid
++   * statement and an inherited refusal marker is a record whose semantic
++   * contract is partly written somewhere this page did not derive, and
++   * answering it as though the prototype were not there would be this page
++   * deciding which half of a contradiction to believe.
++   *
++   * So the small, fixed contract is asked once, whole: a claim is honoured
++   * only when its three members are its own and nothing above it names one.
++   * A contradiction fails closed rather than being adjudicated. This is
++   * asked of the CLAIM alone — three names on a record this page derives
++   * itself — and not of the fragment or the edition, whose wide contracts
++   * are validated field by field and cannot open an address that the
++   * fragment's own id and own path did not compose.
++   */
++  function ownContract(record, names) {
++    const above = Object.getPrototypeOf(record);
++    if (above !== null && above !== Object.prototype) return false;
++    return above === null || !names.some((name) => name in above);
++  }
++
++  /** The prefix statement's whole contract, asked as one. */
++  const CLAIM_MEMBERS = ['stated', 'said', 'trail'];
++
+   /**
+    * A number AS THE DATA CARRIES IT, or nothing.
+    *
+@@ -326,15 +387,41 @@
+    * absence and told the reader the fragment "carries no text file" — false
+    * of a fragment whose spine stated a reference this page declined to use.
+    * The sentence lives here, beside the projection that decides the refusal,
+-   * because the page's own file has ninety-nine gzipped bytes of ceiling and
+-   * this one has none. It says only what is established: a reference was
+-   * stated, it is not usable as written, and no text is shown. It does not
+-   * say the corpus lacks the text, the file is missing, a request failed, or
+-   * anything was blocked — none of which the refusal establishes.
++   * because the page's own file is at its gzipped ceiling and this one has
++   * none. It says only what is established: a reference was supplied, it is
++   * not usable as written, and no text is shown. It does not say the corpus
++   * lacks the text, the file is missing, a request failed, or anything was
++   * blocked — none of which the refusal establishes.
++   *
++   * V11 narrows what may say it. This sentence makes two claims of its own —
++   * that a text reference WAS SUPPLIED, and that it is unusable AS WRITTEN —
++   * and both need a supplied written value to be true of. Only a claim
++   * carrying a non-empty own textual value may use it.
+    */
+   const TEXT_REFUSED = 'A text reference was supplied for this fragment, '
+     + 'but it cannot be used as written, so no text is shown.';
+ 
++  /**
++   * THE UNESTABLISHED REFERENCE, SAID NO FURTHER. V11, the V10 review: every
++   * malformed claim was given the sentence above, so a spine whose
++   * `text_prefix` was `null`, a record, a list, a number, a flag, '' or
++   * whitespace — and a direct claim that was bare, contradictory, inherited
++   * or accessor-backed — each told the reader a text reference "was supplied"
++   * and was unusable "as written". None of those establishes that any textual
++   * reference value was ever supplied, and none establishes how it was
++   * written. The page was asserting the two facts its own state had failed to
++   * establish.
++   *
++   * So the weaker state gets the weaker sentence. It claims only that no text
++   * reference is established here and that no text is shown. It does not say
++   * a reference was supplied, does not say anything was written, does not
++   * name a reference or a file, does not say the corpus lacks the text, does
++   * not say a request failed, and blames nothing. It is what is left when the
++   * state cannot truthfully say more.
++   */
++  const TEXT_UNESTABLISHED = 'No text reference is established for this '
++    + 'fragment, so no text is shown.';
++
+   /**
+    * The members of a list that are RECORDS, and only those.
+    *
+@@ -503,22 +590,29 @@
+     // `chapterFragments`; inside, `records()` has already asked.
+     const own = bag(fragment);
+     const held = bag(sources);
+-    const key = own.source;
++    const key = ownData(own, 'source');
+     const shared = typeof key === 'string' && Object.hasOwn(held, key)
+-      ? bag(held[key])
++      ? bag(ownData(held, key))
+       : {};
+     // The fragment's own statement wins over its edition's, as the fold
+     // intends — and only a field the fold actually shares may be inherited.
++    //
++    // "Inherited" here means inherited FROM ITS EDITION, along the one seam
++    // the fold writes — never along a JavaScript prototype chain. V11: every
++    // read below is `ownData`, so a field a record does not itself carry is
++    // not that record's statement, and an own accessor is never invoked. The
++    // `Object.hasOwn` guards were already right about presence; the lookups
++    // after them were not right about value.
+     const said = (name) =>
+-      Object.hasOwn(own, name) ? own[name]
++      Object.hasOwn(own, name) ? ownData(own, name)
+         : SHARED_WITH_EDITION.includes(name) && Object.hasOwn(shared, name)
+-          ? shared[name] : undefined;
++          ? ownData(shared, name) : undefined;
+ 
+     // THE ID BECOMES A FETCHED PATH AND A LINK. A truthy test let a record
+     // through and composed `…/[object Object].json`, which the page then
+     // requested; sound text alone still let arbitrary prose and a path-like
+     // string through. Read off the fragment ALONE, never off its edition.
+-    const id = ident(own.id);
++    const id = ident(ownData(own, 'id'));
+     const author = sound(said('author'));
+     const work = sound(said('work'));
+     // THE LEAST A FRAGMENT MUST SAY. Not "is an object": a fragment row is the
+@@ -550,10 +644,34 @@
+     // closed. Every shape that is neither that one absence nor a valid
+     // statement now projects as REFUSED: no text resolves, and the row says
+     // why. Fail closed means classified closed, not merely unresolved.
++    //
++    // V11, the V10 review: the shapes were re-asked and the MEMBERS were not.
++    // `bag()` established that a record arrived, and `claim.stated` then
++    // answered from wherever property lookup found it, so
++    // `Object.create({stated: false, trail: ''})` — a record carrying no
++    // semantic member of its own — presented as this route's own absence and
++    // opened the carried door, while an inherited `{stated: true, trail:
++    // <valid>}` composed an address. Each member is now read once, as own
++    // data, through `ownData`: nothing inherited is seen, no accessor is
++    // invoked, and a second read cannot observe a different answer than the
++    // first. A claim whose members are not its own resolves the way a claim
++    // with no members resolves — closed.
+     const claim = bag(prefix);
+-    const stated = claim.stated;
+-    const head = textTrail(claim.trail);
+-    const absent = claim.stated === false && claim.trail === '';
++    const clean = ownContract(claim, CLAIM_MEMBERS);
++    const stated = ownData(claim, 'stated');
++    const written = ownData(claim, 'said');
++    const trail = ownData(claim, 'trail');
++    const head = textTrail(trail);
++    const absent = clean && stated === false && trail === '';
++    // WHAT THE STATE MAY TRUTHFULLY SAY. `absent` and `head` decide whether
++    // text resolves; this decides which sentence the reader is owed when it
++    // does not. `said` is the claim's own record that a NON-EMPTY TEXTUAL
++    // value was supplied — the one fact the refusal sentence asserts and the
++    // validated trail cannot hold, because a refused string and a value that
++    // was never a string both validate to ''. Only a claim that carries it
++    // may say a reference was supplied and say how it was written.
++    const supplied = clean && written === true;
++    const refused = !absent && !(clean && stated === true && head !== '');
+     return {
+       id: id,
+       // COMPOSED, NEVER CARRIED. The file states once where its fragment texts
+@@ -572,11 +690,15 @@
+       // and let the carried file stand in for a statement the page had just
+       // declined to request against. Only genuine absence opens the carried
+       // door; refusal resolves no text at all.
++      // V11: the carried path is own data too. It is a fallback ADDRESS —
++      // the one field of the fragment that becomes a request without being
++      // composed — so a prototype could otherwise hand this route a path it
++      // never derived, which is the same finding one field over.
+       text_path: id
+-        ? (stated === true && head !== '' ? head + id + '.json'
++        ? (clean && stated === true && head !== '' ? head + id + '.json'
+           : absent
+-            && textLeaf(own.text_path).endsWith('/' + id + '.json')
+-              ? textLeaf(own.text_path)
++            && textLeaf(ownData(own, 'text_path')).endsWith('/' + id + '.json')
++              ? textLeaf(ownData(own, 'text_path'))
+               : '')
+         : '',
+       // THE REFUSAL, KEPT. The row is the only channel across the page
+@@ -586,7 +708,17 @@
+       // that is not the one absence shape and not a valid statement is
+       // refused — the stated-and-declined prefix, and every contradictory
+       // or malformed claim alike.
+-      text_refused: !absent && !(stated === true && head !== ''),
++      text_refused: refused,
++      // WHICH REFUSAL IT IS. Both resolve no text and neither asks anything;
++      // they differ only in what the page may truthfully tell the reader, and
++      // that difference is decided here rather than re-derived at the sink.
++      text_unestablished: refused && !supplied,
++      // THE SENTENCE, CHOSEN WHERE THE STATE IS KNOWN. The page holds one
++      // branch and prints what the row hands it. V11 put the choice here for
++      // the reason V10 put the wording here: `catena.js` is at its gzipped
++      // ceiling and this file has none, and the model already knows which of
++      // the two facts it is entitled to assert. '' when text resolves.
++      text_note: refused ? (supplied ? TEXT_REFUSED : TEXT_UNESTABLISHED) : '',
+       author: author,
+       work: work,
+       date: say(said('date')),
+@@ -599,11 +731,11 @@
+       // The same four numbers the locus is printed from and the chapter
+       // membership is decided by, asked once so the two cannot disagree.
+       extent: {
+-        token: bookToken(extent.token),
+-        first_chapter: whole(extent.first_chapter),
+-        last_chapter: whole(extent.last_chapter),
+-        first_verse: whole(extent.first_verse),
+-        last_verse: whole(extent.last_verse)
++        token: bookToken(ownData(extent, 'token')),
++        first_chapter: whole(ownData(extent, 'first_chapter')),
++        last_chapter: whole(ownData(extent, 'last_chapter')),
++        first_verse: whole(ownData(extent, 'first_verse')),
++        last_verse: whole(ownData(extent, 'last_verse'))
+       },
+       locator: sound(said('locator')),
+       edition: sound(said('edition')),
+@@ -697,9 +829,21 @@
+     // statement this page refused, never an absence. `textTrail`, not
+     // `trail`: the prefix is the head of a URL this page requests, and only
+     // the route's own namespace may head one.
++    //
++    // V11 asks the spine record the same way `fragmentRow` asks the claim:
++    // `ownData`, once. An inherited `text_prefix` is not this file's
++    // statement — it resolves exactly as no statement resolves, which is the
++    // point — and an own accessor is never invoked to find out. `said` is the
++    // third fact the trail cannot hold: whether a NON-EMPTY TEXTUAL value was
++    // supplied at all. `textTrail` answers '' both for a string this page
++    // refused and for a value that was never a string, and only the first of
++    // those may be told to the reader as a reference supplied and unusable as
++    // written.
++    const value = ownData(record, 'text_prefix');
+     const prefix = {
+       stated: Object.hasOwn(record, 'text_prefix'),
+-      trail: textTrail(record.text_prefix)
++      said: sound(value) !== '',
++      trail: textTrail(value)
+     };
+     const rows = [];
+     // `records` rather than `file.fragments || []`: a spine whose `fragments`
+@@ -1911,6 +2055,7 @@
+     leaf: leaf,
+     TEXT_HOME: TEXT_HOME,
+     TEXT_REFUSED: TEXT_REFUSED,
++    TEXT_UNESTABLISHED: TEXT_UNESTABLISHED,
+     textTrail: textTrail,
+     textLeaf: textLeaf,
+     records: records,
+diff --git a/src/web/browser/catena/catena.js b/src/web/browser/catena/catena.js
+index 3d635ef92..a87052938 100644
+--- a/src/web/browser/catena/catena.js
++++ b/src/web/browser/catena/catena.js
+@@ -285,7 +285,7 @@
+       // carried, cached or late — may answer a claim the page declined.
+       if (fragment.text_refused) {
+         text.className = 'fragment-text missing';
+-        text.textContent = M.TEXT_REFUSED;
++        text.textContent = fragment.text_note;
+         return;
+       }
+       fragmentText(fragment.text_path).then(
+diff --git a/tools/tests/test_catena_wave_1.py b/tools/tests/test_catena_wave_1.py
+index e23c408c2..97f1dc100 100644
+--- a/tools/tests/test_catena_wave_1.py
++++ b/tools/tests/test_catena_wave_1.py
+@@ -183,7 +183,7 @@ NODE = shutil.which("node")
+ # projects as refused — while the page consumes `text_refused` BEFORE the
+ # request sink, so a refused row renders the refused sentence and can be
+ # answered by no path, carried, cached, or late.
+-MODEL_SHA256 = "08eeba7201313940e5026e2e05283a0b83f5bc7279e35a6fbce8c8c57fca1dfd"
++MODEL_SHA256 = "b4250ce672628ebee898c0c0c34a84ea3230ccbbf3256180657c3c607712ac7a"
+ 
+ # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
+ # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
+@@ -600,9 +600,55 @@ SEVERIAN_BASIS = SEVERIAN_EDITION["artifacts"][0]["rights_basis"]
+ # a fragment whose spine stated a reference. The refused sentence is pinned
+ # here byte-exactly against `M.TEXT_REFUSED`, the model's own export, so the
+ # page and the suite cannot drift apart.
++#
++# V11, the V10 review: there are THREE no-text claims, not two. The refused
++# sentence asserts that a reference WAS SUPPLIED and is unusable AS WRITTEN,
++# and the V10 lane gave that sentence to every malformed state — a spine whose
++# `text_prefix` was `null`, a record, a list, a number, a flag, '' or
++# whitespace, and a direct claim that was bare, contradictory, inherited or
++# accessor-backed. None of those establishes either fact. The third sentence
++# is what is left when the state cannot truthfully say more.
+ NO_TEXT_SAID = "This fragment carries no text file, so nothing of it can be shown."
+ REFUSED_SAID = ("A text reference was supplied for this fragment, "
+                 "but it cannot be used as written, so no text is shown.")
++UNESTABLISHED_SAID = ("No text reference is established for this fragment, "
++                      "so no text is shown.")
++
++
++# THE OWNED REQUEST JOURNAL, WRITTEN FROM THIS SIDE. V11, the V10 review:
++# the live harness recorded ownership and the packaged dump kept only the
++# flat path list, so the ownership claim could not be reproduced from the
++# package. A journal row is now the five facts a reader needs without the
++# harness — WHICH request, WHERE it went, WHAT KIND of record it asks for,
++# WHOSE step issued it, and WHAT BECAME of it — and this is the expected
++# side of the same rule the replay's `kindOf` states in JavaScript.
++def _request_kind(path):
++    if path == "bibles.json":
++        return "editions"
++    if path == "structure/catena/index.json":
++        return "catena-index"
++    if path == "structure/paragraphs/index.json":
++        return "paragraph-index"
++    if path.startswith("structure/catena/text/"):
++        return "text"
++    if path.startswith("structure/catena/"):
++        return "spine"
++    if path.startswith("structure/paragraphs/"):
++        return "paragraphs"
++    return "scripture"
++
++
++def request_journal(entries):
++    """Expected journal rows from `(path, phase)` or `(path, phase, outcome)`.
++
++    `completed` is the ordinary outcome; a parked request reads `held` until
++    it is let go and `released` afterwards, so a snapshot taken either side
++    of a release says which one it is.
++    """
++    return [{"seq": seq, "path": entry[0], "kind": _request_kind(entry[0]),
++             "phase": entry[1],
++             "outcome": entry[2] if len(entry) > 2 else "completed"}
++            for seq, entry in enumerate(entries)]
+ 
+ GEN1 = "#book=Gen&chapter=1&bible=douay-rheims"
+ GEN2 = "#book=Gen&chapter=2&bible=douay-rheims"
+@@ -1247,6 +1293,42 @@ V9_COMPOSED_DEEPER = _fixture({
+     "id": "fallback-owned",
+     "text": "Composed from the stated prefix and the fragment's own id."})
+ 
++# ==========================================================================
++# V11 §2 — the malformed prefix, said no further than it is established
++#
++# The V10 review: every one of these states was given the sentence "A text
++# reference was supplied for this fragment, but it cannot be used as
++# written". None of them establishes that any textual reference value was
++# supplied, and none establishes how it was written; the page was asserting
++# the two facts its own state had failed to establish. The V10 neutrality
++# test inspected the constant and never drove one of these to a sink.
++#
++# Each carries the SAME valid same-stem carried path and the same planted
++# body as the V9 family, so the wording claim and the request claim are
++# measured on one page at once. Every value here is an ADVERSARIAL TEST
++# INPUT; the tracked corpus states exactly one prefix, and it is a string.
++V11_UNESTABLISHED_PREFIXES = {
++    "null": None,
++    "record": {"trail": "structure/catena/text/"},
++    "list": ["structure/catena/text/"],
++    "number": 5,
++    "flag": True,
++    "empty": "",
++    "whitespace": "   ",
++}
++
++# The two that ARE supplied written references, refused under the namespace
++# contract: the reader is owed the stronger, still-neutral sentence for
++# these and only these. `v9-refused-prefix-carried` and
++# `v9-padded-prefix-carried` above are those two scenarios.
++V11_SUPPLIED_BUT_REFUSED = ("v9-refused-prefix-carried",
++                            "v9-padded-prefix-carried")
++
++
++def _unestablished_spine(value):
++    """The V9 refused spine with its prefix replaced by a malformed value."""
++    return _fixture(dict(V9_REFUSED_PREFIX_WITH_CARRIED, text_prefix=value))
++
+ # ==========================================================================
+ # V7 §6 — a fragment that can name NOTHING of itself
+ #
+@@ -2342,6 +2424,43 @@ SCENARIOS = [
+           "label": "a-late"},
+      ]},
+ 
++    # ============================================================== V11 §2
++    # Every unestablished prefix, driven to the VISIBLE and the REQUEST
++    # sink — the two places the V10 review found the wording claim was
++    # never tested.
++    *[{"name": "v11-unestablished-" + key, "hash": GEN1,
++       "files": {"structure/catena/01-gen/001.json":
++                     _unestablished_spine(value),
++                 "structure/catena/text/fallback-owned.json":
++                     V9_PLANTED_FALLBACK},
++       "steps": [{"do": "openEveryFragment", "label": "opened"}]}
++      for key, value in V11_UNESTABLISHED_PREFIXES.items()],
++
++    # ============================================================== V11 §3
++    # THE PAGE'S ORDER, ASKED WITHOUT THE MODEL. A normalized row the model
++    # never emits — refused, and carrying a usable, plantable address. The
++    # spine is the genuinely absent one, so without `forceRow` this exact
++    # page fetches that address and renders the planted body; with it, a
++    # page that consulted the sink before the refusal would do the same.
++    {"name": "v11-renderer-order", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json":
++                   V9_ABSENT_PREFIX_WITH_CARRIED,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "forceRow": {"text_refused": True,
++                  "text_unestablished": False,
++                  "text_note": REFUSED_SAID,
++                  "text_path": "structure/catena/text/fallback-owned.json"},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++    # The same page WITHOUT the override, so the pin above is not vacuous:
++    # this one must fetch the carried address and render the planted body.
++    {"name": "v11-renderer-order-control", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json":
++                   V9_ABSENT_PREFIX_WITH_CARRIED,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++
+     # =============================================================== V7 §6
+     # The same six members in both orders. A member's fate may not depend on
+     # where it stands, and neither may the page's.
+@@ -3046,7 +3165,8 @@ function inspect(page, document, location, fetched, hashWrites, replaced, status
+      * sequence and the step in force when it was made — 'start' is the
+      * bootstrap, before any step ran. */
+     requests: (requests || []).map(
+-      (one) => ({ seq: one.seq, path: one.path, phase: one.phase })),
++      (one) => ({ seq: one.seq, path: one.path, kind: one.kind,
++                  phase: one.phase, outcome: one.outcome })),
+     fetched: fetched.slice()
+   };
+ }
+@@ -3121,10 +3241,30 @@ async function run(scenario) {
+   global.window = window;
+   global.document = document;
+   global.location = location;
++  /* WHAT KIND OF REQUEST IT WAS. V11: the packaged journal has to be
++   * readable without the harness, so the type each address stands for is
++   * recorded beside it rather than inferred from a prefix by whoever reads
++   * the log. Derived from the address alone — no request may name its own
++   * kind. */
++  const kindOf = (path) =>
++    path === 'bibles.json' ? 'editions'
++      : path === 'structure/catena/index.json' ? 'catena-index'
++        : path === 'structure/paragraphs/index.json' ? 'paragraph-index'
++          : path.startsWith('structure/catena/text/') ? 'text'
++            : path.startsWith('structure/catena/') ? 'spine'
++              : path.startsWith('structure/paragraphs/') ? 'paragraphs'
++                : 'scripture';
+   global.fetch = async (url) => {
+     const path = String(url).replace(/^\.\.\/browse\//, '');
+     fetched.push(path);
+-    requests.push({ seq: requests.length, path: path, phase: phase.now });
++    /* The journal entry is MUTABLE ON PURPOSE: `outcome` is the one field
++     * that moves after the request is made, so a snapshot taken while a
++     * request is parked says `held` and the same entry says `released`
++     * once it is let go. That is what makes a genuinely-late proof
++     * readable from the journal alone. */
++    const record = { seq: requests.length, path: path, kind: kindOf(path),
++                     phase: phase.now, outcome: 'completed' };
++    requests.push(record);
+     const has = Object.prototype.hasOwnProperty.call(overrides, path);
+     const body = has ? overrides[path] : corpusFile(path);
+     const extra = (scenario.patch || {})[path];
+@@ -3142,9 +3282,13 @@ async function run(scenario) {
+         ? { ok: false, status: 404, json: async () => null }
+         : { ok: true, status: 200, json: async () => body };
+     if ((scenario.defer || []).some((piece) => path.includes(piece))) {
++      record.outcome = 'held';
+       return new Promise((resolve, reject) => {
+         if (!parked.has(path)) parked.set(path, []);
+-        parked.get(path).push({ resolve: () => resolve(response), reject: reject });
++        parked.get(path).push({
++          resolve: () => { record.outcome = 'released'; resolve(response); },
++          reject: (error) => { record.outcome = 'failed'; reject(error); }
++        });
+       });
+     }
+     return response;
+@@ -3155,6 +3299,24 @@ async function run(scenario) {
+     new Function('window', 'self', 'document', 'fetch', 'location', source)(
+       window, window, document, global.fetch, location);
+   }
++  /* THE RENDERER'S ORDER, PINNED WITHOUT THE MODEL'S HELP. V11, the V10
++   * review: every refused row the model can build carries an empty
++   * `text_path`, so a mutation moving the page's refusal check BELOW
++   * `fragmentText()` altered no journal and the whole wave stayed green —
++   * the ordering promise was not regression-pinned at all. A scenario
++   * naming `forceRow` rewrites the projected rows after the model has built
++   * them, into the normalized `{text_refused: true, text_path: <usable>}`
++   * shape the model itself never emits. A page that consulted the cache or
++   * the network before the refusal would now fetch a real, plantable
++   * address, and the owned journal would name it. This overrides only the
++   * page's own entry point; `spineUnreadable` keeps the model's binding, so
++   * readability is still decided by the production projection. */
++  if (scenario.forceRow) {
++    const model = window.CatenaModel;
++    const projected = model.chapterFragments;
++    model.chapterFragments = (file) => projected(file).map(
++      (row) => Object.assign(row, scenario.forceRow));
++  }
+   // Every spoken line, in order — the single announcement channel, so
+   // duplicate or missing announcements are visible, not just the last one.
+   // `fail` speaks through its own internal reference to statusLine, so it
+@@ -8660,9 +8822,10 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
+         # The OWNED journal a snapshot must hold, entire: each request's
+         # path beside the step that owns it, in sequence — V10, the V9
+         # review: ownership was inferred from counts, and a substitute
+-        # request could hide inside an equal count.
+-        return [{"seq": seq, "path": path, "phase": phase}
+-                for seq, (path, phase) in enumerate(pairs)]
++        # request could hide inside an equal count. V11 adds the kind each
++        # address asks for and what became of the request, so the packaged
++        # journal reproduces the ownership claim without the harness.
++        return request_journal(pairs)
+ 
+     @classmethod
+     def owned(cls, tail):
+@@ -8816,20 +8979,61 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
+         self.assertEqual(asked, [self.FALLBACK])
+         self.assertEqual(held["fragmentTexts"][0], "Loading…")
+ 
+-    def expected_b_terminal(self):
+-        # B'S TERMINAL BASELINE, AS EXPECTED VALUES. The V9 late guard
+-        # compared b-opened to a-late and could not see a sink identically
+-        # wrong on both sides; every material B sink is stated here once and
+-        # asserted at BOTH ends of the release.
++    def expected_b_terminal(self, fallback="held"):
++        # B'S WHOLE TERMINAL VECTOR, AS EXPECTED VALUES.
++        #
++        # `fallback` is what has become of A's parked request at the moment
++        # of the snapshot — `held` before the release, `released` after. It
++        # is the ONE fact the release is permitted to change, and pinning it
++        # explicitly at both ends is how the proof shows the release really
++        # happened while every other sink stood still.
++        #
++        # V11, the V10 review: the V10 lane pinned seventeen keys of which
++        # only thirteen were guarded, so twenty-three of the thirty-six
++        # guarded projections — the reference line, the selects, the
++        # headings, the data states, the refusal and absence sinks, the
++        # paragraph note, the counts, the verse numbers, the leads, the
++        # blocked list, the voice and its labels, the step buttons, the
++        # class vocabulary, the language attributes, the acknowledgements
++        # and the author groups — were held by `before == after` alone and
++        # could have been IDENTICALLY WRONG at both ends of the release.
++        #
++        # Every one of the thirty-six now has its expected value here, and
++        # `test_every_guarded_field_has_an_expected_value` fails the moment
++        # a field is added to the guard without being pinned here too. Four
++        # more keys are pinned beside them — `fetched`, `requests`,
++        # `replacedStates` and `historyState` — which the guard does not
++        # carry and the proof needs.
+         return {
++            # --- the request sinks -------------------------------------
+             "fetched": self.BOOTSTRAP + [self.FALLBACK] + self.GEN2_ARRIVAL,
+             "requests": self.owned(
+-                [(self.FALLBACK, "a-held")]
++                [(self.FALLBACK, "a-held", fallback)]
+                 + [(path, "b-settled") for path in self.GEN2_ARRIVAL]),
++            # --- the row, and what it says -----------------------------
+             "fragmentCount": 1,
+             "fragmentIds": ["fallback-owned"],
+             "fragmentTexts": [self.REFUSED],
++            "sectionHeadings": ["One fragment held here"],
++            "dataStates": ["held"],
++            "authorGroups": [{"author": "Author 1", "date": "301",
++                              "count": "1 fragment", "open": True,
++                              "hidden": False}],
++            "acknowledgements": [],
++            # --- the chapter around it ---------------------------------
++            "referenceText": "Genesis 2",
+             "tallyText": "1 fragment held",
++            "chapterCounts": ["31 verses", "3 paragraphs"],
++            "verseNumbers": [str(number) for number in range(1, 32)],
++            "paragraphNote": ("Paragraphs: 2 are projected from the "
++                              "witnesses that concur, and marked."),
++            # --- the controls ------------------------------------------
++            "selectValues": {"book": "Gen", "chapter": "2",
++                             "bible": "douay-rheims"},
++            "voice": "",
++            "voiceLabels": ["Everything held", "The author’s own language"],
++            "stepButtons": [False, False],
++            # --- announcement, busy, route, focus ----------------------
+             "statusWrites": [self.GEN1_SPOKEN, self.GEN2_SPOKEN],
+             "statusText": self.GEN2_SPOKEN,
+             "busy": "false",
+@@ -8839,10 +9043,54 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
+             "replacedStates": [],
+             "historyState": None,
+             "activeElement": "chapter-select",
++            # --- every sink that must stay EMPTY -----------------------
+             "errorSections": [],
+             "failureText": None,
++            "notices": [],
++            "asideNotes": [],
++            "leads": [],
++            "blocked": [],
++            "refusalCount": 0,
++            "refusal": None,
++            "absenceSummary": None,
++            "absenceReasons": [],
++            "absencePartials": [],
++            # --- the rendered vocabulary -------------------------------
++            # The whole class set, so a substituted, duplicated or dropped
++            # node is visible as a vocabulary change rather than only as a
++            # count. `fragment-text missing` is the refused row's own hook.
++            "classes": [
++                "author", "author-body", "author-count", "author-date",
++                "author-fragments", "author-head", "author-name", "chain",
++                "chain-column", "chapter", "chapter-body", "chapter-count",
++                "chapter-head", "chapter-name", "fragment",
++                "fragment-apparatus", "fragment-author", "fragment-body",
++                "fragment-date", "fragment-extent", "fragment-head",
++                "fragment-language", "fragment-length", "fragment-source",
++                "fragment-text missing", "fragment-whole", "fragment-work",
++                "paragraph-note", "passage", "passage-paragraph",
++                "passage-paragraph projected", "section-heading", "sep",
++                "verse", "verse-num"],
++            "langAttributes": ["passage=en", "fragment-text missing=la"],
+         }
+ 
++    def test_every_guarded_field_has_an_expected_value(self):
++        # THE COVERAGE PIN ITSELF. The V10 defect was not a wrong value; it
++        # was twenty-three fields with no expected value at all, invisible
++        # because the guard only compared. This asserts the arithmetic the
++        # review had to do by hand, so a later lane cannot widen the guard
++        # without widening the proof.
++        guarded = set(GenuinelyLateStaleWorkTest.GUARDED)
++        pinned = set(self.expected_b_terminal())
++        self.assertEqual(len(guarded), 36)
++        self.assertEqual(
++            sorted(guarded - pinned), [],
++            "guarded fields left to before/after equality alone")
++        # And the four the proof adds beyond the guard are really beyond it.
++        self.assertEqual(sorted(pinned - guarded),
++                         ["fetched", "historyState", "replacedStates",
++                          "requests"])
++
+     def test_a_late_fallback_cannot_touch_the_refused_terminal_state(self):
+         # B settled terminal with its rows open; A completes late. Every
+         # guarded projection of the settled route is still compared entire,
+@@ -8858,16 +9106,24 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
+         after = self.snapshot("v9-late-fallback", "a-late")
+         for key in GenuinelyLateStaleWorkTest.GUARDED:
+             self.assertEqual(after[key], before[key], f"{key} moved late")
+-        terminal = self.expected_b_terminal()
+-        for label, snap in (("b-opened", before), ("a-late", after)):
++        for label, snap, fallback in (("b-opened", before, "held"),
++                                      ("a-late", after, "released")):
+             with self.subTest(snapshot=label):
+-                for key, value in terminal.items():
++                for key, value in self.expected_b_terminal(fallback).items():
+                     self.assertEqual(snap[key], value, f"{label}: {key}")
+                 self.assertNotIn(self.NO_TEXT, snap["fragmentTexts"])
++                self.assertNotIn(UNESTABLISHED_SAID, snap["fragmentTexts"])
+                 for said in snap["fragmentTexts"]:
+                     self.assertNotIn("PLANTED", said)
++        # THE RELEASE, PINNED EXACTLY. Zero let go while B settled, one
++        # afterwards — and the journal names WHICH request moved and to
++        # what, so "something late happened" is not taken on the count.
+         self.assertEqual(before["released"], 0)
+         self.assertEqual(after["released"], 1)
++        moved = [(one["seq"], one["path"], one["outcome"])
++                 for one, then in zip(after["requests"], before["requests"])
++                 if one != then]
++        self.assertEqual(moved, [(6, self.FALLBACK, "released")])
+ 
+ 
+ class V9PrefixStateClassificationTest(unittest.TestCase):
+@@ -9034,6 +9290,433 @@ class V10RefusedPresentationTest(ReplayTest):
+         self.assertEqual(told["said"], REFUSED_SAID)
+ 
+ 
++class V11InheritedClaimBoundaryTest(ReplayTest):
++    """V11 §1 — a value a record does not carry states nothing about it.
++
++    The V10 review closed the shapes and left the MEMBERS open. `bag()`
++    established that a record arrived and ordinary property lookup then
++    answered from wherever it found an answer, so at the exported boundary:
++
++        Object.create({stated: false, trail: ''})   opened the carried door
++        Object.create({stated: true,  trail: <ok>}) composed a request
++
++    — neither claim carrying one own semantic member, both projecting as
++    this route's own derivation. The committed matrix was eight plain object
++    literals and probed no inherited, hybrid or accessor claim at all.
++
++    Every semantic member is now read once, as own data, through the
++    descriptor. Nothing inherited is seen; an own accessor is NEVER INVOKED,
++    which is stronger than reading it once and trusting the answer; and a
++    getter that answers differently on a second read has no second read to
++    answer. The disposition of a claim whose members are not its own is the
++    disposition of a claim with no members: closed, and said conservatively.
++    """
++
++    CARRIED = "structure/catena/text/fallback-owned.json"
++    VALID = "structure/catena/text/deeper/"
++    COMPOSED = "structure/catena/text/deeper/fallback-owned.json"
++
++    # The disposition every inherited or accessor-backed claim must reach:
++    # no path, refused, and — because no own textual value was supplied —
++    # the conservative sentence rather than the supplied-reference one.
++    CLOSED = {"path": "", "refused": True, "unestablished": True,
++              "note": UNESTABLISHED_SAID}
++
++    def drive(self, body):
++        """Run one node probe against the production model, return its JSON."""
++        script = ("const M = require(%r);\n"
++                  "const CARRIED = %r;\n"
++                  "const VALID = %r;\n"
++                  "const sources = {\"1\": {author: \"A\", work: \"W\"}};\n"
++                  "const base = {id: \"fallback-owned\", source: \"1\",\n"
++                  "              text_path: CARRIED};\n"
++                  "let calls = 0;\n"
++                  "const getter = (answer) => ({\n"
++                  "  get() { calls += 1; return answer(); },\n"
++                  "  enumerable: true, configurable: true});\n"
++                  "const accessors = (spec) => {\n"
++                  "  const made = {};\n"
++                  "  for (const name of Object.keys(spec)) {\n"
++                  "    Object.defineProperty(made, name, spec[name]);\n"
++                  "  }\n"
++                  "  return made;\n"
++                  "};\n"
++                  "const under = (proto, ownFields) =>\n"
++                  "  Object.assign(Object.create(proto), ownFields || {});\n"
++                  "const shot = (fragment, claim) => {\n"
++                  "  const one = M.fragmentRow(fragment, sources, claim);\n"
++                  "  return {path: one.text_path, refused: one.text_refused,\n"
++                  "          unestablished: one.text_unestablished,\n"
++                  "          note: one.text_note};\n"
++                  "};\n"
++                  "const row = (claim) => shot(base, claim);\n"
++                  + body) % (str(CATENA / "catena-model.js"),
++                             self.CARRIED, self.VALID)
++        done = subprocess.run(["node", "-e", script],
++                              capture_output=True, text=True, check=True)
++        return json.loads(done.stdout)
++
++    def test_no_inherited_or_accessor_claim_member_reopens_anything(self):
++        # THE MATRIX THE V10 MATRIX LACKED. Every claim here would have been
++        # answered by property lookup and is answered by no own member. Each
++        # must fail closed identically: no request composed, no fallback
++        # reopened, no body, and one truthful conservative sentence.
++        told = self.drive("""
++        const cases = {
++          "inherited-stated": row(Object.create({stated: true})),
++          "inherited-trail": row(Object.create({trail: VALID})),
++          "inherited-trail-is-a-file": row(Object.create({trail: CARRIED})),
++          "inherited-both": row(Object.create({stated: true, trail: VALID})),
++          "inherited-absence-shape":
++            row(Object.create({stated: false, trail: ""})),
++          "own-false-inherited-valid-trail":
++            row(under({trail: VALID}, {stated: false})),
++          "own-junk-trail-inherited-valid-trail":
++            row(under({trail: VALID}, {stated: true, trail: "junk"})),
++          "own-absence-inherited-refusal-marker":
++            row(under({text_refused: true}, {stated: false, trail: ""})),
++          "inherited-supplied-marker":
++            row(under({said: true}, {stated: true, trail: "junk"})),
++          "getter-stated": row(accessors({
++            stated: getter(() => true),
++            trail: {value: VALID, enumerable: true}})),
++          "getter-trail": row(accessors({
++            stated: {value: true, enumerable: true},
++            trail: getter(() => VALID)})),
++          "getter-both": row(accessors({
++            stated: getter(() => true), trail: getter(() => VALID)})),
++          "getter-throws": row(accessors({
++            stated: getter(() => { throw new Error("a getter ran"); }),
++            trail: getter(() => { throw new Error("a getter ran"); })})),
++          "getter-drifts": (() => {
++            let turn = 0;
++            return row(accessors({
++              stated: getter(() => (turn += 1) > 1),
++              trail: getter(() => ((turn += 1) > 1 ? VALID : ""))}));
++          })(),
++          "inherited-carried-path": shot(
++            under({text_path: CARRIED}, {id: "fallback-owned", source: "1"}),
++            {stated: false, said: false, trail: ""}),
++          "accessor-carried-path": shot(
++            Object.assign(accessors({
++              text_path: getter(() => CARRIED)}),
++              {id: "fallback-owned", source: "1"}),
++            {stated: false, said: false, trail: ""}),
++          "inherited-id": shot(
++            under({id: "fallback-owned"}, {source: "1"}),
++            {stated: true, said: true, trail: VALID})};
++        console.log(JSON.stringify({cases: cases, calls: calls}));
++        """)
++        cases = told["cases"]
++
++        # THE ACCESSORS WERE NEVER CALLED AT ALL. Not "called once and
++        # ignored" — the semantic boundary reads descriptors, so a getter
++        # with a side effect never runs, and the drifting getter has no
++        # second read to disagree with its first.
++        self.assertEqual(told["calls"], 0,
++                         "the projection invoked an accessor on a raw claim")
++
++        # Eleven claims whose members are inherited or accessor-backed.
++        for name in ("inherited-stated", "inherited-trail",
++                     "inherited-trail-is-a-file", "inherited-both",
++                     "inherited-absence-shape",
++                     "own-false-inherited-valid-trail",
++                     "own-junk-trail-inherited-valid-trail",
++                     "own-absence-inherited-refusal-marker",
++                     "inherited-supplied-marker", "getter-stated",
++                     "getter-trail", "getter-both", "getter-throws",
++                     "getter-drifts"):
++            self.assertEqual(cases[name], self.CLOSED, name)
++
++        # A path or an identity the fragment does not carry composes nothing
++        # either. `inherited-carried-path` and `accessor-carried-path` are
++        # GENUINE ABSENCE at the claim — the door the contract does open —
++        # and they still resolve no address, because the stem they would be
++        # matched against is not the fragment's own.
++        for name in ("inherited-carried-path", "accessor-carried-path"):
++            self.assertEqual(
++                cases[name],
++                {"path": "", "refused": False, "unestablished": False,
++                 "note": ""}, name)
++        # A valid statement composes from the fragment's OWN id or from
++        # nothing; an inherited id addresses no fragment.
++        self.assertEqual(
++            cases["inherited-id"],
++            {"path": "", "refused": False, "unestablished": False,
++             "note": ""})
++
++    def test_the_ordinary_claims_the_boundary_does_honour_are_unchanged(self):
++        # THE POSITIVE CONTROLS, so the closure above is not vacuous. The
++        # three ordinary dispositions V10 established still hold exactly.
++        told = self.drive("""
++        console.log(JSON.stringify({
++          absent: row({stated: false, said: false, trail: ""}),
++          valid: row({stated: true, said: true, trail: VALID}),
++          refused: row({stated: true, said: true, trail: ""})}));
++        """)
++        self.assertEqual(
++            told["absent"],
++            {"path": self.CARRIED, "refused": False,
++             "unestablished": False, "note": ""})
++        self.assertEqual(
++            told["valid"],
++            {"path": self.COMPOSED, "refused": False,
++             "unestablished": False, "note": ""})
++        self.assertEqual(
++            told["refused"],
++            {"path": "", "refused": True, "unestablished": False,
++             "note": REFUSED_SAID})
++
++    def test_the_spine_is_asked_for_its_own_prefix_too(self):
++        # `chapterFragments` derives the claim the page actually uses, and
++        # it read `record.text_prefix` by lookup. An inherited prefix is not
++        # this file's statement: it must resolve exactly as no statement
++        # resolves — which is what makes it invisible rather than trusted —
++        # and an own accessor must not be invoked to find out.
++        told = self.drive("""
++        let spineCalls = 0;
++        const spine = (extra) => Object.assign({
++          fragments: [{id: "fallback-owned", source: "1",
++                       text_path: CARRIED}],
++          sources: sources}, extra || {});
++        const only = (file) => {
++          const rows = M.chapterFragments(file);
++          return {path: rows[0].text_path, refused: rows[0].text_refused,
++                  unestablished: rows[0].text_unestablished,
++                  note: rows[0].text_note};
++        };
++        const inherited = Object.assign(
++          Object.create({text_prefix: VALID}), spine());
++        const accessed = spine();
++        Object.defineProperty(accessed, "text_prefix", {
++          get() { spineCalls += 1; return VALID; },
++          enumerable: true, configurable: true});
++        console.log(JSON.stringify({
++          stated: only(spine({text_prefix: VALID})),
++          absent: only(spine()),
++          inherited: only(inherited),
++          accessor: only(accessed),
++          refused: only(spine({text_prefix: "structure/paragraphs/"})),
++          empty: only(spine({text_prefix: ""})),
++          spineCalls: spineCalls}));
++        """)
++        self.assertEqual(told["spineCalls"], 0,
++                         "the spine's own accessor was invoked")
++        # An own valid prefix composes; genuine absence opens the own-stem
++        # carried door. Both unchanged.
++        self.assertEqual(
++            told["stated"],
++            {"path": self.COMPOSED, "refused": False,
++             "unestablished": False, "note": ""})
++        self.assertEqual(
++            told["absent"],
++            {"path": self.CARRIED, "refused": False,
++             "unestablished": False, "note": ""})
++        # AN INHERITED PREFIX RESOLVES AS NO PREFIX. It composes nothing of
++        # its own, and it does not alter the absence the record itself
++        # states — so the carried door stands or falls on the record's own
++        # bytes, exactly as if the prototype were not there.
++        self.assertEqual(told["inherited"], told["absent"])
++        self.assertEqual(told["accessor"],
++                         {"path": "", "refused": True,
++                          "unestablished": True, "note": UNESTABLISHED_SAID})
++        # A supplied string this page declines keeps the supplied sentence;
++        # a supplied empty string establishes no reference to speak of.
++        self.assertEqual(
++            told["refused"],
++            {"path": "", "refused": True, "unestablished": False,
++             "note": REFUSED_SAID})
++        self.assertEqual(
++            told["empty"],
++            {"path": "", "refused": True, "unestablished": True,
++             "note": UNESTABLISHED_SAID})
++
++    def test_the_projection_carries_only_own_data_properties(self):
++        # V11 §6 — what leaves the model is a trusted projection, and the
++        # renderer must never have to ask whether a field it reads is really
++        # there. Every semantic member is an own DATA property: no accessor
++        # to invoke, nothing reached through a prototype.
++        told = self.drive("""
++        const one = M.fragmentRow(base, sources,
++                                  {stated: true, said: true, trail: VALID});
++        const shape = {};
++        for (const name of Object.keys(one)) {
++          const spot = Object.getOwnPropertyDescriptor(one, name);
++          shape[name] = Object.hasOwn(spot, "value") ? "data" : "accessor";
++        }
++        console.log(JSON.stringify({
++          shape: shape,
++          proto: Object.getPrototypeOf(one) === Object.prototype,
++          extentShape: Object.keys(one.extent).every((name) => Object.hasOwn(
++            Object.getOwnPropertyDescriptor(one.extent, name), "value"))}));
++        """)
++        self.assertTrue(told["proto"])
++        self.assertTrue(told["extentShape"])
++        self.assertEqual(sorted(set(told["shape"].values())), ["data"])
++        # The three fields the request and the reader turn on are present by
++        # name, so a renderer reading them cannot be reading undefined.
++        for name in ("text_path", "text_refused", "text_unestablished",
++                     "text_note"):
++            self.assertIn(name, told["shape"], name)
++
++
++class V11UnestablishedPresentationTest(ReplayTest):
++    """V11 §2 — the page says no more than its own state established.
++
++    The refused sentence asserts two facts of its own: that a text reference
++    WAS SUPPLIED, and that it cannot be used AS WRITTEN. The V10 lane gave
++    it to every state that resolved no text, so a spine whose `text_prefix`
++    was `null`, a record, a list, a number, a flag, '' or whitespace told
++    the reader both — and neither is established by any of them. The V10
++    neutrality test blacklisted nine phrases inside the constant and never
++    drove one malformed state to the visible or the request sink, so nothing
++    caught it.
++
++    Three states now, three claims:
++
++        ABSENT         — no text reference was supplied;
++        REFUSED        — one was supplied, written so it cannot be used;
++        UNESTABLISHED  — no text reference is established at all.
++
++    Every scenario below carries the same valid same-stem carried path and
++    the same planted body as the V9 family, so the wording and the request
++    are asked on one page at once: a page that said the weaker sentence and
++    then fetched would be caught by the journal, and a page that fetched and
++    rendered would be caught by the body.
++    """
++
++    BOOTSTRAP = V7TextPathRequestSinkTest.BOOTSTRAP
++    CARRIED = "structure/catena/text/fallback-owned.json"
++    PLANTED = ("PLANTED FALLBACK BODY — "
++               "reachable only through genuine absence.")
++
++    def owned(self, tail=()):
++        return request_journal(
++            [(path, "start") for path in self.BOOTSTRAP] + list(tail))
++
++    def assert_no_text_was_asked_or_leaked(self, said, where):
++        # The three sinks a wrong answer would show in: the owned journal,
++        # the rendered body, and the flat path list.
++        self.assertEqual(said["requests"], self.owned(), where)
++        self.assertEqual(said["fetched"], self.BOOTSTRAP, where)
++        self.assertNotIn(self.CARRIED, said["fetched"], where)
++        for body in said["fragmentTexts"]:
++            self.assertNotIn("PLANTED", body, where)
++
++    def test_every_unestablished_prefix_says_only_that(self):
++        # SEVEN STATES, ONE TRUTHFUL SENTENCE. Each establishes neither a
++        # supplied reference nor a written form, so neither is claimed.
++        for key in V11_UNESTABLISHED_PREFIXES:
++            where = "v11-unestablished-" + key
++            said = self.snapshot(where, "opened")
++            self.assertEqual(said["fragmentTexts"], [UNESTABLISHED_SAID],
++                             where)
++            # Not the sentence that would assert what was never supplied,
++            # and not the sentence that would deny the corpus holds it.
++            self.assertNotIn(REFUSED_SAID, said["fragmentTexts"], where)
++            self.assertNotIn(NO_TEXT_SAID, said["fragmentTexts"], where)
++            self.assert_no_text_was_asked_or_leaked(said, where)
++            # One terminal state, and it is quiet: no error, no failure, no
++            # retry offered for a request that was never made.
++            self.assertEqual(said["errorSections"], [], where)
++            self.assertIsNone(said["failureText"], where)
++            self.assertEqual(said["busy"], "false", where)
++            self.assertEqual(said["tallyText"], "1 fragment held", where)
++
++    def test_a_supplied_reference_still_says_it_was_supplied(self):
++        # THE POSITIVE CONTROL. The distinction is only worth drawing if the
++        # stronger sentence survives where it is true: a spine that really
++        # did state `structure/paragraphs/`, and one that stated the right
++        # namespace wrapped in whitespace, each supplied a written textual
++        # reference this page declined — and each still says so.
++        for name in V11_SUPPLIED_BUT_REFUSED:
++            said = self.snapshot(name, "opened")
++            self.assertEqual(said["fragmentTexts"], [REFUSED_SAID], name)
++            self.assertNotIn(UNESTABLISHED_SAID, said["fragmentTexts"], name)
++            self.assert_no_text_was_asked_or_leaked(said, name)
++
++    def test_the_three_no_text_sentences_are_three_distinct_claims(self):
++        # None may stand in for another, on the page or in this suite.
++        said = [NO_TEXT_SAID, REFUSED_SAID, UNESTABLISHED_SAID]
++        self.assertEqual(len(set(said)), 3)
++        for one in said:
++            for other in said:
++                if one is not other:
++                    self.assertNotIn(one, other)
++
++    def test_the_unestablished_sentence_states_only_what_is_established(self):
++        # It may not convert "this page established nothing" into a holdings
++        # negative, a missing file, a transport fault or a block — the nine
++        # claims the V10 sweep already forbids — AND it may not make the two
++        # claims the refused sentence is entitled to make and it is not.
++        for claim in ("carries no text file", "no text file", "not published",
++                      "could not be loaded", "cannot read", "does not exist",
++                      "blocked", "failed", "missing",
++                      "was supplied", "supplied", "written",
++                      "the reference", "the file"):
++            self.assertNotIn(claim, UNESTABLISHED_SAID, claim)
++
++    def test_the_model_and_the_page_cannot_drift_apart(self):
++        # The sentence the page renders IS the model's own export, pinned
++        # byte-exactly in both directions.
++        script = ("const M = require(%r);\n"
++                  "console.log(JSON.stringify({"
++                  "refused: M.TEXT_REFUSED,"
++                  "unestablished: M.TEXT_UNESTABLISHED}));"
++                  % str(CATENA / "catena-model.js"))
++        done = subprocess.run(["node", "-e", script],
++                              capture_output=True, text=True, check=True)
++        told = json.loads(done.stdout)
++        self.assertEqual(told["refused"], REFUSED_SAID)
++        self.assertEqual(told["unestablished"], UNESTABLISHED_SAID)
++
++
++class V11RendererOrderTest(ReplayTest):
++    """V11 §3 — the refusal is consumed BEFORE the sink, pinned as such.
++
++    The V10 review: `catena.js` does return on `text_refused` before
++    `fragmentText()`, but nothing pinned it there. Every refused row the
++    model can build carries an empty `text_path`, so moving the check below
++    the request sink changed no journal, leaked no body, and left all 466
++    wave-1 methods green. The ordering promise was carried entirely by
++    reading the file.
++
++    `forceRow` rewrites the projected rows into the normalized shape the
++    model never emits — refused, and carrying a usable, plantable address —
++    on the one spine whose page really does fetch that address. The control
++    scenario is the same page without the override, so the pin cannot pass
++    by the address being unreachable.
++    """
++
++    BOOTSTRAP = V7TextPathRequestSinkTest.BOOTSTRAP
++    CARRIED = "structure/catena/text/fallback-owned.json"
++
++    def test_a_refused_row_with_a_usable_path_asks_nothing(self):
++        said = self.snapshot("v11-renderer-order", "opened")
++        # THE SINK, UNTOUCHED. Not one request beyond the bootstrap, and in
++        # particular not the address the row is carrying.
++        self.assertEqual(said["fetched"], self.BOOTSTRAP)
++        self.assertNotIn(self.CARRIED, said["fetched"])
++        # The reader gets the refusal, not the body waiting at that address.
++        self.assertEqual(said["fragmentTexts"], [REFUSED_SAID])
++        for body in said["fragmentTexts"]:
++            self.assertNotIn("PLANTED", body)
++        self.assertEqual(said["errorSections"], [])
++        self.assertIsNone(said["failureText"])
++        self.assertEqual(said["busy"], "false")
++
++    def test_the_same_page_without_the_override_really_does_fetch(self):
++        # NON-VACUITY. Identical spine, identical planted body, no override:
++        # this page asks the carried address and renders what it finds. So
++        # the assertion above is about the ORDER of the two statements in
++        # `catena.js` and nothing else.
++        said = self.snapshot("v11-renderer-order-control", "opened")
++        self.assertEqual(said["fetched"], self.BOOTSTRAP + [self.CARRIED])
++        self.assertEqual(len(said["fragmentTexts"]), 1)
++        self.assertIn("PLANTED", said["fragmentTexts"][0])
++        self.assertNotIn(REFUSED_SAID, said["fragmentTexts"])
++
++
+ class V7HollowFragmentMemberTest(ReplayTest):
+     """V7 §6 — a record that names nothing is not a thin fragment.
+ 
