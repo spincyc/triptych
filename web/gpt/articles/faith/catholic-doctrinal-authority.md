@@ -119,19 +119,19 @@ The official online witnesses are identified through 26 July 2026; exact acquisi
 
 ## References
 
--   Sacred Scripture: Acts 15; 1 Corinthians 15:1–5; 1 Timothy 3:15; 2 Timothy 1:13–14; 2 Peter 1:20–21.
+- Sacred Scripture: Acts 15; 1 Corinthians 15:1–5; 1 Timothy 3:15; 2 Timothy 1:13–14; 2 Peter 1:20–21.
 
--   First Vatican Council, *Dei Filius*, especially chapters 2–4; *Pastor aeternus*, chapter 4.
+- First Vatican Council, *Dei Filius*, especially chapters 2–4; *Pastor aeternus*, chapter 4.
 
--   Second Vatican Council, *Dei Verbum* 2–10; *Lumen gentium* 12, 20–25; *Unitatis redintegratio* 11.
+- Second Vatican Council, *Dei Verbum* 2–10; *Lumen gentium* 12, 20–25; *Unitatis redintegratio* 11.
 
--   Congregation for the Doctrine of the Faith, *Mysterium Ecclesiae* (1973); *Donum veritatis* (1990); doctrinal commentary on the concluding formula of the *Professio fidei* (1998).
+- Congregation for the Doctrine of the Faith, *Mysterium Ecclesiae* (1973); *Donum veritatis* (1990); doctrinal commentary on the concluding formula of the *Professio fidei* (1998).
 
--   John Paul II, apostolic letter *Ad tuendam fidem* (1998), especially the inserted CIC canon 750 §2 and CCEO canon 598 §2 and their parallel sanctioning provisions.
+- John Paul II, apostolic letter *Ad tuendam fidem* (1998), especially the inserted CIC canon 750 §2 and CCEO canon 598 §2 and their parallel sanctioning provisions.
 
--   Catechism of the Catholic Church, 74–95, 888–892, 2032–2040.
+- Catechism of the Catholic Church, 74–95, 888–892, 2032–2040.
 
--   Irenaeus, *Against Heresies* 1.10.1–3; 3.3.1–4, in the Roberts–Rambaut translation printed in *Ante-Nicene Fathers*, vol. 1 (Buffalo, 1887); exact retained OCR used only as a locating witness.
+- Irenaeus, *Against Heresies* 1.10.1–3; 3.3.1–4, in the Roberts–Rambaut translation printed in *Ante-Nicene Fathers*, vol. 1 (Buffalo, 1887); exact retained OCR used only as a locating witness.
 
 **Last revised (UTC):** 2026-07-26T19:56:24Z
 

@@ -303,9 +303,9 @@ Origen ends the same Gospel homily by summoning hearers to the Savior’s banque
 | **Visitation received** | Christ weeps, judges false worship, and remains to teach. | Tears, reform, and continued teaching remain one narrated movement. |
 | **Abiding embodied** | The memorial enacts redemption; received Communion is asked to bear purification and unity amid triune praise. | The Passion is not repeated, and sacramental fruit is not private possession. |
 
-<span id="triptych:brief-synthesis:end" label="triptych:brief-synthesis:end"></span>
+<span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
-<span id="triptych:brief-synthesis:next" label="triptych:brief-synthesis:next"></span>
+<span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
 
 ## Source-Grounded Synthesis Across the Propers
 
@@ -333,11 +333,11 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 ## The Propers: Notable and Quotable
 
--   **Gospel, Luke 19:42 — Constance Holme, *The Things Which Belong—* (1925).** Holme’s title lifts the unfinished cadence of “the things which belong unto thy peace.” Within the novel, domestic and marital conflict eventually turns the phrase toward what truly belongs to one woman’s peace. The biblical lament becomes a literary test of costly recognition rather than a decorative title.
+- **Gospel, Luke 19:42 — Constance Holme, *The Things Which Belong—* (1925).** Holme’s title lifts the unfinished cadence of “the things which belong unto thy peace.” Within the novel, domestic and marital conflict eventually turns the phrase toward what truly belongs to one woman’s peace. The biblical lament becomes a literary test of costly recognition rather than a decorative title.
 
--   **Gospel, Luke 19:44 — Washburn “A” Mill memorial, Minneapolis.** Documentation for the mill records the 1878 flour-dust explosion and a memorial inscription adapting “not one stone upon another.” Siege language is redirected to industrial catastrophe and public remembrance.
+- **Gospel, Luke 19:44 — Washburn “A” Mill memorial, Minneapolis.** Documentation for the mill records the 1878 flour-dust explosion and a memorial inscription adapting “not one stone upon another.” Siege language is redirected to industrial catastrophe and public remembrance.
 
--   **Gospel, Luke 19:46 — Harry Graham, *The Mother of Parliaments* (1910).** Graham recounts Judge David Jenkins calling the House of Commons a “den of thieves” during seventeenth-century political conflict. A prophetic Temple accusation becomes a dangerous parliamentary insult; the anecdote is political afterlife, not an endorsement of Jenkins’s cause.
+- **Gospel, Luke 19:46 — Harry Graham, *The Mother of Parliaments* (1910).** Graham recounts Judge David Jenkins calling the House of Commons a “den of thieves” during seventeenth-century political conflict. A prophetic Temple accusation becomes a dangerous parliamentary insult; the anecdote is political afterlife, not an endorsement of Jenkins’s cause.
 
 ## Appendix: Scope and Qualifications
 
@@ -347,55 +347,55 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 **Sources**
 
--   *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), *Dominica Nona post Pentecosten*, printed pp. 388–389, [facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf); visually collated 2026-07-20. Internet Archive [item](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin) and [OCR locating aid](https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin_djvu.txt); checksums: `propers/verified.md`.
+- *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), *Dominica Nona post Pentecosten*, printed pp. 388–389, [facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf); visually collated 2026-07-20. Internet Archive [item](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin) and [OCR locating aid](https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin_djvu.txt); checksums: `propers/verified.md`.
 
--   Holy Scripture: Psalms 8, 18 (19), 53 (54), and 58 (59); 1 Samuel 19, 23, 26; Exodus 12, 32; Numbers 11, 21, 25; Romans 9, 11; 1 Corinthians 8–10; Luke 19, 23; John 6; Isaiah 56; Jeremiah 7; Hebrews 2. *NABRE* [Psalms](https://bible.usccb.org/bible/psalms/0), [Luke](https://bible.usccb.org/bible/luke/0), [John](https://bible.usccb.org/bible/john/0), and [First Corinthians](https://bible.usccb.org/bible/1corinthians/0) introductions, texts, and notes; Psalm citations retain missal numbering.
+- Holy Scripture: Psalms 8, 18 (19), 53 (54), and 58 (59); 1 Samuel 19, 23, 26; Exodus 12, 32; Numbers 11, 21, 25; Romans 9, 11; 1 Corinthians 8–10; Luke 19, 23; John 6; Isaiah 56; Jeremiah 7; Hebrews 2. *NABRE* [Psalms](https://bible.usccb.org/bible/psalms/0), [Luke](https://bible.usccb.org/bible/luke/0), [John](https://bible.usccb.org/bible/john/0), and [First Corinthians](https://bible.usccb.org/bible/1corinthians/0) introductions, texts, and notes; Psalm citations retain missal numbering.
 
--   *Catholic Encyclopedia*: [Psalms](https://www.newadvent.org/cathen/12533a.htm), [Luke](https://www.newadvent.org/cathen/09420a.htm), [John](https://www.newadvent.org/cathen/08438a.htm), and [Temple of Jerusalem](https://www.newadvent.org/cathen/14530a.htm); traditional attributions are labeled as such.
+- *Catholic Encyclopedia*: [Psalms](https://www.newadvent.org/cathen/12533a.htm), [Luke](https://www.newadvent.org/cathen/09420a.htm), [John](https://www.newadvent.org/cathen/08438a.htm), and [Temple of Jerusalem](https://www.newadvent.org/cathen/14530a.htm); traditional attributions are labeled as such.
 
--   Theodoret of Cyrus, [*Interpretatio in Psalmos*](https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FTheodoretus_of_Cyrrhus__Interpretatio_in_Psalmos.en.html), Psalms 8 (PG 80, cols. 913–920), 18 (cols. 992–1000), 53 (cols. 1264–1268), and 58 (cols. 1304–1316); direct Greek and synchronized English checked.
+- Theodoret of Cyrus, [*Interpretatio in Psalmos*](https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FTheodoretus_of_Cyrrhus__Interpretatio_in_Psalmos.en.html), Psalms 8 (PG 80, cols. 913–920), 18 (cols. 992–1000), 53 (cols. 1264–1268), and 58 (cols. 1304–1316); direct Greek and synchronized English checked.
 
--   St. Augustine, *Expositions*: [Psalm 8](https://www.newadvent.org/fathers/1801008.htm); [Psalm 19](https://www.newadvent.org/fathers/1801019.htm); [Psalm 54](https://www.newadvent.org/fathers/1801054.htm); [Psalm 59](https://www.newadvent.org/fathers/1801059.htm); checked 2026-07-20.
+- St. Augustine, *Expositions*: [Psalm 8](https://www.newadvent.org/fathers/1801008.htm); [Psalm 19](https://www.newadvent.org/fathers/1801019.htm); [Psalm 54](https://www.newadvent.org/fathers/1801054.htm); [Psalm 59](https://www.newadvent.org/fathers/1801059.htm); checked 2026-07-20.
 
--   St. Augustine, [*Letter 130 to Proba*](https://www.newadvent.org/fathers/1102130.htm), 15–18, 21–29, on disciplined desire, the Lord’s Prayer, and merciful refusal of some temporal requests; doctrinal illumination of the Collect, not evidence for its origin.
+- St. Augustine, [*Letter 130 to Proba*](https://www.newadvent.org/fathers/1102130.htm), 15–18, 21–29, on disciplined desire, the Lord’s Prayer, and merciful refusal of some temporal requests; doctrinal illumination of the Collect, not evidence for its origin.
 
--   St. Hilary of Poitiers, [*Homily on Psalm 53*](https://www.newadvent.org/fathers/3303053.htm), 9–10. St. Robert Bellarmine, [*Commentary on the Psalms*](https://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml), Psalms 8, 18, 53, and 58; the nineteenth-century translator’s supplied chapter headings are not attributed to Bellarmine.
+- St. Hilary of Poitiers, [*Homily on Psalm 53*](https://www.newadvent.org/fathers/3303053.htm), 9–10. St. Robert Bellarmine, [*Commentary on the Psalms*](https://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml), Psalms 8, 18, 53, and 58; the nineteenth-century translator’s supplied chapter headings are not attributed to Bellarmine.
 
--   St. Thomas Aquinas, [*Super Psalmo 8*](https://aquinas.cc/la/en/~Psalm.Ps8), v. 2; [*Super Psalmo 18*](https://aquinas.cc/la/en/~Psalm.Ps18), vv. 9–12; [*Super Ioannem* VI, lect. 7](https://aquinas.cc/la/en/~Ioan.C6.L7.n969); [*Super I Corinthios* X, lect. 2](https://aquinas.cc/la/en/~1Cor.C10.L2), [lect. 3](https://aquinas.cc/la/en/~1Cor.C10.L3), and [lect. 4](https://aquinas.cc/la/en/~1Cor.C10.L4); Latin loci controlled the paraphrases.
+- St. Thomas Aquinas, [*Super Psalmo 8*](https://aquinas.cc/la/en/~Psalm.Ps8), v. 2; [*Super Psalmo 18*](https://aquinas.cc/la/en/~Psalm.Ps18), vv. 9–12; [*Super Ioannem* VI, lect. 7](https://aquinas.cc/la/en/~Ioan.C6.L7.n969); [*Super I Corinthios* X, lect. 2](https://aquinas.cc/la/en/~1Cor.C10.L2), [lect. 3](https://aquinas.cc/la/en/~1Cor.C10.L3), and [lect. 4](https://aquinas.cc/la/en/~1Cor.C10.L4); Latin loci controlled the paraphrases.
 
--   St. John Chrysostom, [*Homily 23 on First Corinthians*](https://www.newadvent.org/fathers/220123.htm) and [*Homily 24*](https://www.newadvent.org/fathers/220124.htm), on 1 Corinthians 10:6–22.
+- St. John Chrysostom, [*Homily 23 on First Corinthians*](https://www.newadvent.org/fathers/220123.htm) and [*Homily 24*](https://www.newadvent.org/fathers/220124.htm), on 1 Corinthians 10:6–22.
 
--   Ambrosiaster, [*Commentary on First Corinthians*](https://la.wikisource.org/wiki/Commentaria_in_Epistolam_ad_Corinthios_Primam_(Ambrosiaster)) 10:1–17, especially vv. 12–13; direct Latin checked with Heinrich J. Vogels, ed., *CSEL* 81/2 (Vienna, 1968), pp. 108–113.
+- Ambrosiaster, [*Commentary on First Corinthians*](https://la.wikisource.org/wiki/Commentaria_in_Epistolam_ad_Corinthios_Primam_(Ambrosiaster)) 10:1–17, especially vv. 12–13; direct Latin checked with Heinrich J. Vogels, ed., *CSEL* 81/2 (Vienna, 1968), pp. 108–113.
 
--   St. Cyril of Alexandria, [*Commentary on Luke*, Sermons 131–132](https://www.tertullian.org/fathers/cyril_on_luke_12_sermons_124_134.htm); St. Gregory the Great, [*Homily 39*](https://la.wikisource.org/wiki/Homiliarum_in_Evangelia/XXXIX), 1–7; St. Bonaventure, [*Luke* XIX, 63–74](https://catholiclibrary.org/library/view?chunk.id=00000051&docId=%2FMedieval-OR%2FBonaventuraSCommentariusInEvangeliumSLucae.00000165.la.html); St. Anthony of Padua, [*Tenth Sunday after Pentecost*](https://www.santantonio.org/it/sermoni/sermoni-domenicali/domenica-x-dopo-pentecoste), I.3–8.
+- St. Cyril of Alexandria, [*Commentary on Luke*, Sermons 131–132](https://www.tertullian.org/fathers/cyril_on_luke_12_sermons_124_134.htm); St. Gregory the Great, [*Homily 39*](https://la.wikisource.org/wiki/Homiliarum_in_Evangelia/XXXIX), 1–7; St. Bonaventure, [*Luke* XIX, 63–74](https://catholiclibrary.org/library/view?chunk.id=00000051&docId=%2FMedieval-OR%2FBonaventuraSCommentariusInEvangeliumSLucae.00000165.la.html); St. Anthony of Padua, [*Tenth Sunday after Pentecost*](https://www.santantonio.org/it/sermoni/sermoni-domenicali/domenica-x-dopo-pentecoste), I.3–8.
 
--   Origen, [*Homily 38 on Luke*](https://la.wikisource.org/wiki/Translatio_XXXIX_Homiliarum) (Jerome’s Latin translation), PL 26, cols. 363–366; St. Ambrose, [*Exposition of Luke* IX.17–19](https://la.wikisource.org/wiki/Expositio_evangelii_secundum_Lucam/IX), PL 15, cols. 1797C–1798B; direct exegesis of Luke 19:41–46.
+- Origen, [*Homily 38 on Luke*](https://la.wikisource.org/wiki/Translatio_XXXIX_Homiliarum) (Jerome’s Latin translation), PL 26, cols. 363–366; St. Ambrose, [*Exposition of Luke* IX.17–19](https://la.wikisource.org/wiki/Expositio_evangelii_secundum_Lucam/IX), PL 15, cols. 1797C–1798B; direct exegesis of Luke 19:41–46.
 
--   St. Bede, [*In Lucae Evangelium Expositio* V.19](https://www.documentacatholicaomnia.eu/02m/0627-0735,_Beda_Venerabilis,_In_Lucae_Evangelium_Expositio,_MLT.pdf), PL 92, cols. 570D–574A; direct Luke 19 exposition and adjacent Paschal synthesis, checked in the underlying scan at PDF pp. 137–139.
+- St. Bede, [*In Lucae Evangelium Expositio* V.19](https://www.documentacatholicaomnia.eu/02m/0627-0735,_Beda_Venerabilis,_In_Lucae_Evangelium_Expositio,_MLT.pdf), PL 92, cols. 570D–574A; direct Luke 19 exposition and adjacent Paschal synthesis, checked in the underlying scan at PDF pp. 137–139.
 
--   Pontifical Biblical Commission, [*The Jewish People and Their Sacred Scriptures in the Christian Bible*](https://www.vatican.va/roman_curia/congregations/cfaith/pcb_documents/rc_con_cfaith_doc_20020212_popolo-ebraico_en.html), no. 74, on Luke’s presentation of Jesus’ pain for Jerusalem.
+- Pontifical Biblical Commission, [*The Jewish People and Their Sacred Scriptures in the Christian Bible*](https://www.vatican.va/roman_curia/congregations/cfaith/pcb_documents/rc_con_cfaith_doc_20020212_popolo-ebraico_en.html), no. 74, on Luke’s presentation of Jesus’ pain for Jerusalem.
 
--   St. Augustine, [*Tractate 26 on John*](https://www.newadvent.org/fathers/1701026.htm), 11–19; St. John Chrysostom, [*Homily 47 on John*](https://www.newadvent.org/fathers/240147.htm); St. Cyril of Alexandria, [*Commentary on John* IV.3](https://www.tertullian.org/fathers/cyril_on_john_04_book4.htm).
+- St. Augustine, [*Tractate 26 on John*](https://www.newadvent.org/fathers/1701026.htm), 11–19; St. John Chrysostom, [*Homily 47 on John*](https://www.newadvent.org/fathers/240147.htm); St. Cyril of Alexandria, [*Commentary on John* IV.3](https://www.tertullian.org/fathers/cyril_on_john_04_book4.htm).
 
--   St. Thomas Aquinas, [*Summa theologiae* III, q. 83, a. 2](https://aquinas.cc/la/en/~ST.III.Q83.A2), which directly cites this Sunday’s Secret and distinguishes the once-for-all Passion from daily participation in its fruit.
+- St. Thomas Aquinas, [*Summa theologiae* III, q. 83, a. 2](https://aquinas.cc/la/en/~ST.III.Q83.A2), which directly cites this Sunday’s Secret and distinguishes the once-for-all Passion from daily participation in its fruit.
 
--   Second Vatican Council, [*Sacrosanctum Concilium* 2 and note 1](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_lt.html), [*Lumen gentium* 3 and 15](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_lt.html), and [*Presbyterorum ordinis* 13 and note 105](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651207_presbyterorum-ordinis_lt.html); the first and third notes explicitly identify this Sunday’s Secret, no. 3 joins its clause to 1 Corinthians 10:17, and no. 15 places purification and renewal within prayer and work for Christian unity.
+- Second Vatican Council, [*Sacrosanctum Concilium* 2 and note 1](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_lt.html), [*Lumen gentium* 3 and 15](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_lt.html), and [*Presbyterorum ordinis* 13 and note 105](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651207_presbyterorum-ordinis_lt.html); the first and third notes explicitly identify this Sunday’s Secret, no. 3 joins its clause to 1 Corinthians 10:17, and no. 15 places purification and renewal within prayer and work for Christian unity.
 
--   Jordi Pinell, OSB, [“I testi liturgici, voci di autorità, nella Costituzione *Sacrosanctum Concilium*,” *Notitiae* 15, no. 151 (1979): 77–107, especially 92–99](https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-15-%281979%29/Notitiae-151-1979.pdf); protected modern scholarship paraphrased from the official scan.
+- Jordi Pinell, OSB, [“I testi liturgici, voci di autorità, nella Costituzione *Sacrosanctum Concilium*,” *Notitiae* 15, no. 151 (1979): 77–107, especially 92–99](https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1970/notitiae-15-%281979%29/Notitiae-151-1979.pdf); protected modern scholarship paraphrased from the official scan.
 
--   Innocent Smith, [“United in Praise and in Penance: Prayers for the Unity of Christians in the Roman Missal,” *Studia Liturgica* (online 26 March 2026), § 5.3 and notes 80–81](https://doi.org/10.1177/00393207261415798); protected modern scholarship paraphrased.
+- Innocent Smith, [“United in Praise and in Penance: Prayers for the Unity of Christians in the Roman Missal,” *Studia Liturgica* (online 26 March 2026), § 5.3 and notes 80–81](https://doi.org/10.1177/00393207261415798); protected modern scholarship paraphrased.
 
--   Flavius Josephus, [*Jewish War* V.12.1–4](https://www.ccel.org/j/josephus/works/war-5.htm) and [VII.1.1](https://www.ccel.org/j/josephus/works/war-7.htm), William Whiston translation; bounded historical comparator for the AD 70 siege.
+- Flavius Josephus, [*Jewish War* V.12.1–4](https://www.ccel.org/j/josephus/works/war-5.htm) and [VII.1.1](https://www.ccel.org/j/josephus/works/war-7.htm), William Whiston translation; bounded historical comparator for the AD 70 siege.
 
--   Prosper Guéranger, [*The Liturgical Year*: The Time after Pentecost](https://archive.org/details/liturgicalyear11gura), vol. II, trans. Laurence Shepherd (Dublin: James Duffy & Sons, 1883), pp. 255–256; direct commentary on the Communion and Postcommunion only.
+- Prosper Guéranger, [*The Liturgical Year*: The Time after Pentecost](https://archive.org/details/liturgicalyear11gura), vol. II, trans. Laurence Shepherd (Dublin: James Duffy & Sons, 1883), pp. 255–256; direct commentary on the Communion and Postcommunion only.
 
--   Dom Dominic Johner, [*The Chants of the Vatican Gradual*](https://archive.ccwatershed.org/media/pdfs/13/08/19/15-40-55_0.pdf) (Collegeville, MN: St. John’s Abbey Press, 1940), pp. 279–282; historical chant commentary, used as qualified reception rather than recovered compositional intent.
+- Dom Dominic Johner, [*The Chants of the Vatican Gradual*](https://archive.ccwatershed.org/media/pdfs/13/08/19/15-40-55_0.pdf) (Collegeville, MN: St. John’s Abbey Press, 1940), pp. 279–282; historical chant commentary, used as qualified reception rather than recovered compositional intent.
 
--   Constance Holme, [*The Things Which Belong—*](https://www.gutenberg.org/files/70485/70485-h/70485-h.htm) (London: Mills & Boon, 1925), title epigraph and concluding thematic development checked in Project Gutenberg ebook 70485; public domain in the United States.
+- Constance Holme, [*The Things Which Belong—*](https://www.gutenberg.org/files/70485/70485-h/70485-h.htm) (London: Mills & Boon, 1925), title epigraph and concluding thematic development checked in Project Gutenberg ebook 70485; public domain in the United States.
 
--   Historic American Buildings Survey, [Washburn-Crosby “A” Mill complex documentation](https://tile.loc.gov/storage-services/master/pnp/habshaer/mn/mn0100/mn0161/data/mn0161data.pdf), memorial inscription and 1878 explosion context checked through the Library of Congress.
+- Historic American Buildings Survey, [Washburn-Crosby “A” Mill complex documentation](https://tile.loc.gov/storage-services/master/pnp/habshaer/mn/mn0100/mn0161/data/mn0161data.pdf), memorial inscription and 1878 explosion context checked through the Library of Congress.
 
--   Harry Graham, [*The Mother of Parliaments*](https://www.gutenberg.org/cache/epub/41304/pg41304-images.html) (London: Methuen, 1910), Judge Jenkins episode checked in Project Gutenberg ebook 41304; public domain in the United States.
+- Harry Graham, [*The Mother of Parliaments*](https://www.gutenberg.org/cache/epub/41304/pg41304-images.html) (London: Methuen, 1910), Judge Jenkins episode checked in Project Gutenberg ebook 41304; public domain in the United States.
 
 **Last revised (UTC):** 2026-07-26T20:01:14Z
 

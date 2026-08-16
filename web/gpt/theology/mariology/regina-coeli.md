@@ -183,33 +183,33 @@ Outstanding: independent human collation of the Latin and historical English; in
 
 ### Received prayer, liturgical use, and present discipline
 
--   Dom Gaspar Lefebvre, O.S.B., *Daily Missal with Vespers for Sundays and Feasts* (Lophem near Bruges: St. Andrew’s Abbey; St. Paul, Minnesota: E. M. Lohmann, 1925), printed pp. 13–14, [edition scan](https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf). Governing Latin and historical-English prayer witness; its seasonal, posture, and indulgence directions are historical only.
+- Dom Gaspar Lefebvre, O.S.B., *Daily Missal with Vespers for Sundays and Feasts* (Lophem near Bruges: St. Andrew’s Abbey; St. Paul, Minnesota: E. M. Lohmann, 1925), printed pp. 13–14, [edition scan](https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf). Governing Latin and historical-English prayer witness; its seasonal, posture, and indulgence directions are historical only.
 
--   Apostolic Penitentiary, *Enchiridion Indulgentiarum: Normae et Concessiones*, fourth edition (16 July 1999), norms 4, 17, and 22; concession 17 §2, 2^o^; and the printed Latin prayer: [Holy See Latin text](https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html). Governs the current universal indulgence claim as checked through 21 July 2026 and identifies the antiphon’s Easter-Time Liturgy of the Hours source.
+- Apostolic Penitentiary, *Enchiridion Indulgentiarum: Normae et Concessiones*, fourth edition (16 July 1999), norms 4, 17, and 22; concession 17 §2, 2^o^; and the printed Latin prayer: [Holy See Latin text](https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html). Governs the current universal indulgence claim as checked through 21 July 2026 and identifies the antiphon’s Easter-Time Liturgy of the Hours source.
 
--   Sacred Congregation for Divine Worship, *General Instruction of the Liturgy of the Hours*, second typical-edition context, no. 92, [English text published by the Liturgy Office of the Bishops’ Conference of England and Wales](https://www.liturgyoffice.org/Resources/Rites/GILH.pdf). Governs the Compline antiphon claim.
+- Sacred Congregation for Divine Worship, *General Instruction of the Liturgy of the Hours*, second typical-edition context, no. 92, [English text published by the Liturgy Office of the Bishops’ Conference of England and Wales](https://www.liturgyoffice.org/Resources/Rites/GILH.pdf). Governs the Compline antiphon claim.
 
--   Paul VI, apostolic constitution *Indulgentiarum doctrina* (1 January 1967), norms and concluding dispositions: [Holy See text](https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html). Governs the break with older quantified partial-indulgence discipline.
+- Paul VI, apostolic constitution *Indulgentiarum doctrina* (1 January 1967), norms and concluding dispositions: [Holy See text](https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html). Governs the break with older quantified partial-indulgence discipline.
 
 ### Doctrine, Scripture, and devotional ordering
 
--   Luke 1:26–38 and Matthew 28:1–10; Latin checked in the [*Nova Vulgata*, Luke 1](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-lucam_lt.html#1) and [Matthew 28](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-matthaeum_lt.html#28).
+- Luke 1:26–38 and Matthew 28:1–10; Latin checked in the [*Nova Vulgata*, Luke 1](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-lucam_lt.html#1) and [Matthew 28](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-matthaeum_lt.html#28).
 
--   Second Vatican Council, dogmatic constitution *Lumen gentium* (21 November 1964), 53, 56, 59–62: [Holy See text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html); and *Catechism of the Catholic Church*, 963–975, especially 966 and 970: [Holy See text](https://www.vatican.va/archive/ENG0015/_INDEX.HTM).
+- Second Vatican Council, dogmatic constitution *Lumen gentium* (21 November 1964), 53, 56, 59–62: [Holy See text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html); and *Catechism of the Catholic Church*, 963–975, especially 966 and 970: [Holy See text](https://www.vatican.va/archive/ENG0015/_INDEX.HTM).
 
--   Pius XII, encyclical *Ad caeli Reginam* (11 October 1954), especially 8–9, 30, 34, and 39: [Holy See text](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html). Governs the derived and analogous sense of Mary’s queenship under Christ the King.
+- Pius XII, encyclical *Ad caeli Reginam* (11 October 1954), especially 8–9, 30, 34, and 39: [Holy See text](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html). Governs the derived and analogous sense of Mary’s queenship under Christ the King.
 
--   Congregation for Divine Worship and the Discipline of the Sacraments, *Directory on Popular Piety and the Liturgy* (2001), 7, 183–186, and especially 196: [official English text](https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html); [official Italian text](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_it.html) for the correct date, 20 April 1742. Governs the seasonal substitution, likely date, theological architecture, and devotional suggestions.
+- Congregation for Divine Worship and the Discipline of the Sacraments, *Directory on Popular Piety and the Liturgy* (2001), 7, 183–186, and especially 196: [official English text](https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html); [official Italian text](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_it.html) for the correct date, 20 April 1742. Governs the seasonal substitution, likely date, theological architecture, and devotional suggestions.
 
--   Benedict XVI, Regina Cæli address for Easter Monday (24 March 2008), [Holy See text](https://www.vatican.va/content/benedict-xvi/en/angelus/2008/documents/hf_ben-xvi_reg_20080324_easter-monday.html), on the prayer as a new Easter announcement of joy to Mary.
+- Benedict XVI, Regina Cæli address for Easter Monday (24 March 2008), [Holy See text](https://www.vatican.va/content/benedict-xvi/en/angelus/2008/documents/hf_ben-xvi_reg_20080324_easter-monday.html), on the prayer as a new Easter announcement of joy to Mary.
 
--   United States Conference of Catholic Bishops, [“Easter,”](https://www.usccb.org/prayer-worship/liturgical-year/easter) presenting the Universal Norms’ current Easter-Time boundary. Used for the current calendar statement, not as the reproduced prayer witness.
+- United States Conference of Catholic Bishops, [“Easter,”](https://www.usccb.org/prayer-worship/liturgical-year/easter) presenting the Universal Norms’ current Easter-Time boundary. Used for the current calendar statement, not as the reproduced prayer witness.
 
 ### Historical witnesses and reception
 
--   Vatican Apostolic Library, Arch.Cap.S.Pietro.B.79, fol. 110r, [digital facsimile](https://digi.vatlib.it/view/MSS_Arch.Cap.S.Pietro.B.79/227); [Cantus Index record](https://cantusdatabase.org/chant/218556) and [source description](https://cantusdatabase.org/source/123661). Twelfth-century Old Roman antiphoner witness, used for date, liturgical placement, text, and the *ad Deum* variant; no image is reproduced.
+- Vatican Apostolic Library, Arch.Cap.S.Pietro.B.79, fol. 110r, [digital facsimile](https://digi.vatlib.it/view/MSS_Arch.Cap.S.Pietro.B.79/227); [Cantus Index record](https://cantusdatabase.org/chant/218556) and [source description](https://cantusdatabase.org/source/123661). Twelfth-century Old Roman antiphoner witness, used for date, liturgical placement, text, and the *ad Deum* variant; no image is reproduced.
 
--   Apostolic Penitentiary, decree of 20 February 1933, *Acta Apostolicae Sedis* 25 (1933): 70–71, in the [official volume scan](https://www.vatican.va/archive/aas/documents/AAS-25-1933-ocr.pdf). Historical survey of papal indulgence concessions and changes; its quantified grants are not current discipline.
+- Apostolic Penitentiary, decree of 20 February 1933, *Acta Apostolicae Sedis* 25 (1933): 70–71, in the [official volume scan](https://www.vatican.va/archive/aas/documents/AAS-25-1933-ocr.pdf). Historical survey of papal indulgence concessions and changes; its quantified grants are not current discipline.
 
 **Last revised (UTC):** 2026-07-21T17:37:01Z
 

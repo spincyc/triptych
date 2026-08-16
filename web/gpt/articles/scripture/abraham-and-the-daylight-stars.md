@@ -16,11 +16,11 @@ Genesis 15 opens “after these things” with a divine word to Abram “in a vi
 
 Three temporal statements control the immediate issue:
 
--   At verse 12, the sun is going down or about to set.
+- At verse 12, the sun is going down or about to set.
 
--   At verse 17, the sun has set and darkness has come.
+- At verse 17, the sun has set and darkness has come.
 
--   At verse 18, the covenant is made “in that day.”
+- At verse 18, the covenant is made “in that day.”
 
 No explicit night precedes verse 12. No formula says “on the next day” between the star promise and the animals. Read in narrated order as one continuous scene, verse 5 is before the chapter’s sunset. That is the daylight argument in its strongest form.
 
@@ -145,15 +145,15 @@ This is a study aid, not an official biblical commentary or an ecclesiastically 
 
 ## References
 
--   Genesis 15 and the star-promise recurrences, in the registered Douay–Rheims, Clementine Vulgate, Masoretic Hebrew delivery, and Swete Septuagint witnesses.
+- Genesis 15 and the star-promise recurrences, in the registered Douay–Rheims, Clementine Vulgate, Masoretic Hebrew delivery, and Swete Septuagint witnesses.
 
--   Abarbanel, commentary on Genesis 15, question 7, in the checked text derived from the Warsaw 1862 Hebrew printing.
+- Abarbanel, commentary on Genesis 15, question 7, in the checked text derived from the Warsaw 1862 Hebrew printing.
 
--   Philo, *Who Is the Heir of Divine Things*; Josephus, *Antiquities* I.10.3 in Whiston’s 1737 translation; Augustine, *City of God* XVI.23–24 in Hoffmann’s CSEL 40.2 (1899) Latin, consulted with the Dods 1871 English.
+- Philo, *Who Is the Heir of Divine Things*; Josephus, *Antiquities* I.10.3 in Whiston’s 1737 translation; Augustine, *City of God* XVI.23–24 in Hoffmann’s CSEL 40.2 (1899) Latin, consulted with the Dods 1871 English.
 
--   Romans 4, Galatians 3, and Hebrews 11 in the registered public-domain Douay–Rheims–Challoner witness.
+- Romans 4, Galatians 3, and Hebrews 11 in the registered public-domain Douay–Rheims–Challoner witness.
 
--   Cornelius a Lapide and Haydock on Genesis 15.
+- Cornelius a Lapide and Haydock on Genesis 15.
 
 **Last revised (UTC):** 2026-07-29T19:14:52Z
 

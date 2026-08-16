@@ -211,13 +211,13 @@ The same near-event record that strengthens the historical case also preserves i
 
 Four inadequate responses should be refused.
 
--   **Silent harmonization** replaces the 1917 document with the later wording and deprives the reader of evidence.
+- **Silent harmonization** replaces the 1917 document with the later wording and deprives the reader of evidence.
 
--   **Ad hoc fulfillment** invents an invisible sense in which the war ended that day, without historical warrant.
+- **Ad hoc fulfillment** invents an invisible sense in which the war ended that day, without historical warrant.
 
--   **Total collapse** treats one difficulty as though it erased every distinct witness, fruit, and ecclesial judgment.
+- **Total collapse** treats one difficulty as though it erased every distinct witness, fruit, and ecclesial judgment.
 
--   **Verbal inerrancy** assumes that approval of an interior vision guarantees perfect reception, memory, and expression of every sentence.
+- **Verbal inerrancy** assumes that approval of an interior vision guarantees perfect reception, memory, and expression of every sentence.
 
 Cardinal Ratzinger’s 2000 anthropology of vision provides a principled account rather than an excuse invented for this phrase. In interior vision, the recipient is touched by a reality beyond ordinary sense, but sees within the modes of representation and capacities available to the person. The image or word is received through a human subject, not downloaded around that subject. Even ordinary exterior perception includes translation; interior perception involves it more deeply. The child may hear, understand, remember, or report imperfectly without the entire experience becoming fraudulent.
 
@@ -570,11 +570,11 @@ Mary’s heart means her person as integrated around God’s Word. “Immaculate
 
 Three dimensions belong together:
 
--   **Interior:** reason, desire, affection, and will are healed into a single *fiat*.
+- **Interior:** reason, desire, affection, and will are healed into a single *fiat*.
 
--   **Maternal:** Mary intercedes for sinners and forms disciples without replacing their freedom.
+- **Maternal:** Mary intercedes for sinners and forms disciples without replacing their freedom.
 
--   **Ecclesial:** her heart images the Church receiving the Word, standing beneath the Cross, praying at Pentecost, and carrying Christ to the world.
+- **Ecclesial:** her heart images the Church receiving the Word, standing beneath the Cross, praying at Pentecost, and carrying Christ to the world.
 
 Consecration to this Heart means entering that form. It is false if it stops at sentiment, contempt for others, or dependence on secrets. It is genuine if it yields faith, hope, love, sacramental communion, and service.
 

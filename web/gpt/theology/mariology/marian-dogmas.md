@@ -731,93 +731,93 @@ Independent human Mariological, dogmatic, patristic, conciliar-historical, medie
 
 ### Sacred Scripture, councils, and catechism
 
--   Principal scriptural loci: Genesis 3:15; 2 Samuel 6; Psalms 45 and 132; Isaiah 7:14; Ezekiel 44:1–3; Zephaniah 3:14–17; Matthew 1–2 and 12–13; Mark 3 and 6; Luke 1–2; John 1–2 and 19; Acts 1; Romans 5 and 8; 1 Corinthians 15; Galatians 4; Ephesians 1 and 5; Philippians 2–3; 1 Timothy 2; Hebrews 7–10; 1 John 2; and Revelation 5, 6, and 12. Individual chapters distinguish direct assertion, canonical synthesis, and typology.
+- Principal scriptural loci: Genesis 3:15; 2 Samuel 6; Psalms 45 and 132; Isaiah 7:14; Ezekiel 44:1–3; Zephaniah 3:14–17; Matthew 1–2 and 12–13; Mark 3 and 6; Luke 1–2; John 1–2 and 19; Acts 1; Romans 5 and 8; 1 Corinthians 15; Galatians 4; Ephesians 1 and 5; Philippians 2–3; 1 Timothy 2; Hebrews 7–10; 1 John 2; and Revelation 5, 6, and 12. Individual chapters distinguish direct assertion, canonical synthesis, and typology.
 
--   Council of Ephesus (431), St. Cyril of Alexandria’s Second and Third Letters to Nestorius, including the first anathema: [working English conciliar text](https://www.newadvent.org/fathers/3810.htm). The doctrine is checked through the received Cyrillic texts rather than a free-standing modern slogan.
+- Council of Ephesus (431), St. Cyril of Alexandria’s Second and Third Letters to Nestorius, including the first anathema: [working English conciliar text](https://www.newadvent.org/fathers/3810.htm). The doctrine is checked through the received Cyrillic texts rather than a free-standing modern slogan.
 
--   Council of Chalcedon (451), Definition of Faith, especially the one-and-the-same-Son formula and “Mary the Virgin, Mother of God, according to the humanity”: quoted in the CDF’s [official doctrinal notification](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20061126_notification-sobrino_en.html); a [working English conciliar text](https://www.newadvent.org/fathers/3811.htm) was also consulted.
+- Council of Chalcedon (451), Definition of Faith, especially the one-and-the-same-Son formula and “Mary the Virgin, Mother of God, according to the humanity”: quoted in the CDF’s [official doctrinal notification](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20061126_notification-sobrino_en.html); a [working English conciliar text](https://www.newadvent.org/fathers/3811.htm) was also consulted.
 
--   Second Council of Constantinople (553), anathemas and conciliar confession of the holy, glorious Mother of God and ever-Virgin Mary; critical locus DS 422, 427, and related conciliar texts.
+- Second Council of Constantinople (553), anathemas and conciliar confession of the holy, glorious Mother of God and ever-Virgin Mary; critical locus DS 422, 427, and related conciliar texts.
 
--   Lateran Synod of 649, canon 3, under Pope Martin I, on virginal conception, birth without corruption, and enduring virginity; DS 503. The study paraphrases the critical conciliar locus rather than relying on an unattributed online translation.
+- Lateran Synod of 649, canon 3, under Pope Martin I, on virginal conception, birth without corruption, and enduring virginity; DS 503. The study paraphrases the critical conciliar locus rather than relying on an unattributed online translation.
 
--   Fourth Lateran Council (1215), constitution 1, *Firmiter credimus*; Second Council of Lyons (1274), profession of faith; received as subsequent conciliar confession of the Incarnation from the ever-Virgin.
+- Fourth Lateran Council (1215), constitution 1, *Firmiter credimus*; Second Council of Lyons (1274), profession of faith; received as subsequent conciliar confession of the Incarnation from the ever-Virgin.
 
--   Council of Trent, session V, Decree on Original Sin, including its express non-inclusion of Mary and renewal of Sixtus IV; session VI, canon 23, on lifelong avoidance of venial sin by special privilege. Cited by session, decree, and canon; exact doctrinal use is bounded in the text.
+- Council of Trent, session V, Decree on Original Sin, including its express non-inclusion of Mary and renewal of Sixtus IV; session VI, canon 23, on lifelong avoidance of venial sin by special privilege. Cited by session, decree, and canon; exact doctrinal use is bounded in the text.
 
--   First Vatican Council, *Dei Filius*, especially chapters 3–4, on faith and reason: [Holy See text](https://www.vatican.va/content/pius-ix/en/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html).
+- First Vatican Council, *Dei Filius*, especially chapters 3–4, on faith and reason: [Holy See text](https://www.vatican.va/content/pius-ix/en/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html).
 
--   Second Vatican Council, *Dei Verbum*, especially 2–4, 8, and 10: [Holy See text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html).
+- Second Vatican Council, *Dei Verbum*, especially 2–4, 8, and 10: [Holy See text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html).
 
--   Second Vatican Council, *Lumen gentium*, especially 8 and 52–69: [Holy See text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html).
+- Second Vatican Council, *Lumen gentium*, especially 8 and 52–69: [Holy See text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html).
 
--   *Catechism of the Catholic Church*, especially 396–421, 456–511, 668–682, 946–975, 1618–1620, and 2673–2679: [Holy See index](https://www.vatican.va/archive/ENG0015/_INDEX.HTM); [virginal conception and birth](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/artcile_3/paragraph_2_conceived_by_the_power_of_the_holy_spirit_and_born_of_the_virgin_mary.html); [Mary and the Church](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_9/paragraph_6_mary_-_mother_of_christ%2C_mother_of_the_church.html).
+- *Catechism of the Catholic Church*, especially 396–421, 456–511, 668–682, 946–975, 1618–1620, and 2673–2679: [Holy See index](https://www.vatican.va/archive/ENG0015/_INDEX.HTM); [virginal conception and birth](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/artcile_3/paragraph_2_conceived_by_the_power_of_the_holy_spirit_and_born_of_the_virgin_mary.html); [Mary and the Church](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_9/paragraph_6_mary_-_mother_of_christ%2C_mother_of_the_church.html).
 
 ### Defining and governing magisterial texts
 
--   Pius IX, apostolic constitution *Ineffabilis Deus* (8 December 1854), definition of the Immaculate Conception and historical survey: [Holy See Italian/Latin text](https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html). The defining clauses were checked at the constitution’s concluding definition.
+- Pius IX, apostolic constitution *Ineffabilis Deus* (8 December 1854), definition of the Immaculate Conception and historical survey: [Holy See Italian/Latin text](https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html). The defining clauses were checked at the constitution’s concluding definition.
 
--   Paul V, Holy Office decree *Sanctissimus*, 12 September 1617, *Bullarium Romanum* (Cocquelines), vol. 5, part 4, pp. 234–235; Gregory XV, Holy Office decree *Sanctissimus*, resolved in general congregation 24 May and affixed and published 2 June 1622, vol. 5, part 5, pp. 45–46, with the Dominican qualification of 28 July. The May and June dates identify the deliberative and publication stages rather than competing dates for one event.
+- Paul V, Holy Office decree *Sanctissimus*, 12 September 1617, *Bullarium Romanum* (Cocquelines), vol. 5, part 4, pp. 234–235; Gregory XV, Holy Office decree *Sanctissimus*, resolved in general congregation 24 May and affixed and published 2 June 1622, vol. 5, part 5, pp. 45–46, with the Dominican qualification of 28 July. The May and June dates identify the deliberative and publication stages rather than competing dates for one event.
 
--   Pius XII, apostolic constitution *Munificentissimus Deus* (1 November 1950), especially 12, 16–31, 39–40, and the definition at 44: [Holy See text](https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html).
+- Pius XII, apostolic constitution *Munificentissimus Deus* (1 November 1950), especially 12, 16–31, 39–40, and the definition at 44: [Holy See text](https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html).
 
--   Pius XII, encyclical *Fulgens corona* (8 September 1953), on the centenary of the Immaculate Conception definition: [Holy See text](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_08091953_fulgens-corona.html).
+- Pius XII, encyclical *Fulgens corona* (8 September 1953), on the centenary of the Immaculate Conception definition: [Holy See text](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_08091953_fulgens-corona.html).
 
--   Pius XII, encyclical *Ad caeli Reginam* (11 October 1954), especially 31, 34, and 39 on Mary’s limited and analogous Queenship: [Holy See text](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html).
+- Pius XII, encyclical *Ad caeli Reginam* (11 October 1954), especially 31, 34, and 39 on Mary’s limited and analogous Queenship: [Holy See text](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html).
 
--   Pius XI, encyclical *Lux veritatis* (25 December 1931), on Ephesus and the divine motherhood: [Holy See text](https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19311225_lux-veritatis.html).
+- Pius XI, encyclical *Lux veritatis* (25 December 1931), on Ephesus and the divine motherhood: [Holy See text](https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19311225_lux-veritatis.html).
 
--   John Paul II, apostolic letter *A Concilio Constantinopolitano I* (25 March 1981), on Ephesus, Cyril, and the Formula of Union: [Holy See text](https://www.vatican.va/content/john-paul-ii/en/apost_letters/1981/documents/hf_jp-ii_apl_25031981_a-concilio-constantinopolitano-i.html).
+- John Paul II, apostolic letter *A Concilio Constantinopolitano I* (25 March 1981), on Ephesus, Cyril, and the Formula of Union: [Holy See text](https://www.vatican.va/content/john-paul-ii/en/apost_letters/1981/documents/hf_jp-ii_apl_25031981_a-concilio-constantinopolitano-i.html).
 
--   John Paul II, catechesis of 28 August 1996, on the Church’s confession of perpetual virginity and its conciliar witnesses: [Holy See Spanish text](https://www.vatican.va/content/john-paul-ii/es/audiences/1996/documents/hf_jp-ii_aud_19960828.html).
+- John Paul II, catechesis of 28 August 1996, on the Church’s confession of perpetual virginity and its conciliar witnesses: [Holy See Spanish text](https://www.vatican.va/content/john-paul-ii/es/audiences/1996/documents/hf_jp-ii_aud_19960828.html).
 
--   John Paul II, catechesis of 19 June 1996, on Mary’s lifelong holiness and the historical limits of some patristic readings: [Holy See Spanish text](https://www.vatican.va/content/john-paul-ii/es/audiences/1996/documents/hf_jp-ii_aud_19960619.html).
+- John Paul II, catechesis of 19 June 1996, on Mary’s lifelong holiness and the historical limits of some patristic readings: [Holy See Spanish text](https://www.vatican.va/content/john-paul-ii/es/audiences/1996/documents/hf_jp-ii_aud_19960619.html).
 
--   John Paul II, Assumption catecheses of [25 June 1997](https://www.vatican.va/content/john-paul-ii/en/audiences/1997/documents/hf_jp-ii_aud_25061997.html), [2 July 1997](https://www.vatican.va/content/john-paul-ii/en/audiences/1997/documents/hf_jp-ii_aud_02071997.html), and [9 July 1997](https://www.vatican.va/content/john-paul-ii/en/audiences/1997/documents/hf_jp-ii_aud_09071997.html), on Mary’s death as a weighty tradition, the absence of an explicit New Testament statement, apocryphal reception, liturgical development, and mature patristic witness.
+- John Paul II, Assumption catecheses of [25 June 1997](https://www.vatican.va/content/john-paul-ii/en/audiences/1997/documents/hf_jp-ii_aud_25061997.html), [2 July 1997](https://www.vatican.va/content/john-paul-ii/en/audiences/1997/documents/hf_jp-ii_aud_02071997.html), and [9 July 1997](https://www.vatican.va/content/john-paul-ii/en/audiences/1997/documents/hf_jp-ii_aud_09071997.html), on Mary’s death as a weighty tradition, the absence of an explicit New Testament statement, apocryphal reception, liturgical development, and mature patristic witness.
 
--   Congregation for the Doctrine of the Faith, doctrinal commentary on the concluding formula of the *Professio fidei* (1998), 5–11, distinguishing levels of assent and giving examples: [Holy See text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_1998_professio-fidei_en.html).
+- Congregation for the Doctrine of the Faith, doctrinal commentary on the concluding formula of the *Professio fidei* (1998), 5–11, distinguishing levels of assent and giving examples: [Holy See text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_1998_professio-fidei_en.html).
 
--   Dicastery for the Doctrine of the Faith, *Mater Populi Fidelis* (4 November 2025), especially 4–15, 17–29, 34–55, and 65–70: [Holy See text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html). This is the controlling current source for Co-redemptrix, Mediatrix, Advocate, maternal cooperation, and causality of grace.
+- Dicastery for the Doctrine of the Faith, *Mater Populi Fidelis* (4 November 2025), especially 4–15, 17–29, 34–55, and 65–70: [Holy See text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html). This is the controlling current source for Co-redemptrix, Mediatrix, Advocate, maternal cooperation, and causality of grace.
 
 ### Patristic witnesses
 
--   St. Ignatius of Antioch, *Letter to the Ephesians* 18–19 and *Letter to the Smyrnaeans* 1–3, on Mary’s virginity and the real birth, suffering, and Resurrection of Christ: [Ephesians working translation](https://www.newadvent.org/fathers/0104.htm); [Smyrnaeans working translation](https://www.newadvent.org/fathers/0109.htm).
+- St. Ignatius of Antioch, *Letter to the Ephesians* 18–19 and *Letter to the Smyrnaeans* 1–3, on Mary’s virginity and the real birth, suffering, and Resurrection of Christ: [Ephesians working translation](https://www.newadvent.org/fathers/0104.htm); [Smyrnaeans working translation](https://www.newadvent.org/fathers/0109.htm).
 
--   St. Justin Martyr, *Dialogue with Trypho* 100, on the Eve–Mary contrast: [working English translation](https://www.newadvent.org/fathers/01287.htm).
+- St. Justin Martyr, *Dialogue with Trypho* 100, on the Eve–Mary contrast: [working English translation](https://www.newadvent.org/fathers/01287.htm).
 
--   St. Irenaeus of Lyons, *Against Heresies* III.21.10 and III.22.4, on real derivation from Mary, recapitulation, and the New Eve: [book III, chapter 21](https://www.newadvent.org/fathers/0103321.htm); [book III, chapter 22](https://www.newadvent.org/fathers/0103322.htm); V.19.1 on Mary as advocate of Eve: [working English translation](https://www.newadvent.org/fathers/0103519.htm).
+- St. Irenaeus of Lyons, *Against Heresies* III.21.10 and III.22.4, on real derivation from Mary, recapitulation, and the New Eve: [book III, chapter 21](https://www.newadvent.org/fathers/0103321.htm); [book III, chapter 22](https://www.newadvent.org/fathers/0103322.htm); V.19.1 on Mary as advocate of Eve: [working English translation](https://www.newadvent.org/fathers/0103519.htm).
 
--   St. Gregory Nazianzen, Epistle 101 to Cledonius, on *Theotokos*, the real formation of Christ in Mary, and the unity of the incarnate subject: cited by work and locus; online translations are used only as finding aids pending comparison with a critical Greek text.
+- St. Gregory Nazianzen, Epistle 101 to Cledonius, on *Theotokos*, the real formation of Christ in Mary, and the unity of the incarnate subject: cited by work and locus; online translations are used only as finding aids pending comparison with a critical Greek text.
 
--   St. Cyril of Alexandria, Second and Third Letters to Nestorius and First Anathema, received at Ephesus: [working English conciliar text](https://www.newadvent.org/fathers/3810.htm).
+- St. Cyril of Alexandria, Second and Third Letters to Nestorius and First Anathema, received at Ephesus: [working English conciliar text](https://www.newadvent.org/fathers/3810.htm).
 
--   St. Epiphanius of Salamis, *Ancoratus* 119.5 on *Aeiparthenos*; *Panarion* 78.11 on the historical uncertainty surrounding Mary’s end. These exact loci are used without claiming that a freely available English text is a critical edition.
+- St. Epiphanius of Salamis, *Ancoratus* 119.5 on *Aeiparthenos*; *Panarion* 78.11 on the historical uncertainty surrounding Mary’s end. These exact loci are used without claiming that a freely available English text is a critical edition.
 
--   St. Jerome, *Against Helvidius*, especially 5–17, on “brothers,” “until,” and continuing virginity: [working English translation](https://www.newadvent.org/fathers/3007.htm).
+- St. Jerome, *Against Helvidius*, especially 5–17, on “brothers,” “until,” and continuing virginity: [working English translation](https://www.newadvent.org/fathers/3007.htm).
 
--   St. Augustine, *On Nature and Grace* 36.42, on excluding Mary when discussing personal sin: [working English translation](https://www.newadvent.org/fathers/1503.htm); *Holy Virginity* 3, 4, and 6, respectively on believing discipleship, Mary’s prior purpose, and ecclesial motherhood: [working English translation](https://www.newadvent.org/fathers/1310.htm); Sermon 186.1, cited through CCC 510, on perpetual virginity.
+- St. Augustine, *On Nature and Grace* 36.42, on excluding Mary when discussing personal sin: [working English translation](https://www.newadvent.org/fathers/1503.htm); *Holy Virginity* 3, 4, and 6, respectively on believing discipleship, Mary’s prior purpose, and ecclesial motherhood: [working English translation](https://www.newadvent.org/fathers/1310.htm); Sermon 186.1, cited through CCC 510, on perpetual virginity.
 
--   St. Leo the Great, Sermon 22.2, on true nativity and preserved virginal integrity: [working English translation](https://www.newadvent.org/fathers/360322.htm).
+- St. Leo the Great, Sermon 22.2, on true nativity and preserved virginal integrity: [working English translation](https://www.newadvent.org/fathers/360322.htm).
 
--   St. John Damascene, *Second Homily on the Dormition* 14, on Mary’s bodily glorification; cited and located in *Munificentissimus Deus* 21 and note 17. St. Germanus of Constantinople, *Dormition Sermon I*, and Pseudo-Modestus, *Encomium* 14, are cited through the exact loci supplied in *Munificentissimus Deus* 22–23 and its notes.
+- St. John Damascene, *Second Homily on the Dormition* 14, on Mary’s bodily glorification; cited and located in *Munificentissimus Deus* 21 and note 17. St. Germanus of Constantinople, *Dormition Sermon I*, and Pseudo-Modestus, *Encomium* 14, are cited through the exact loci supplied in *Munificentissimus Deus* 22–23 and its notes.
 
--   St. Ephrem’s Marian holiness language is used as a bounded patristic lead through *Hymns on the Nativity*, with the need for comparison against *Sources Chrétiennes* 459 expressly retained; no disputed English line is quoted as a critical translation.
+- St. Ephrem’s Marian holiness language is used as a bounded patristic lead through *Hymns on the Nativity*, with the need for comparison against *Sources Chrétiennes* 459 expressly retained; no disputed English line is quoted as a critical translation.
 
 ### St. Thomas Aquinas and the scholastic question
 
--   *Summa theologiae* III, qq.2, 26–35, especially q.26, aa.1–2 on Christ’s unique mediation; q.27 on Mary’s sanctification and Thomas’s disagreement with the later Immaculate Conception; q.28 on threefold virginity; q.30, a.1 on consent; q.32, a.3 on the Holy Spirit and paternity; and q.35, a.4 on divine motherhood. Latin critical text: [Corpus Thomisticum, Tertia Pars](https://www.corpusthomisticum.org/sth4000.html); q.27 was checked at [the exact question](https://www.corpusthomisticum.org/sth4027.html).
+- *Summa theologiae* III, qq.2, 26–35, especially q.26, aa.1–2 on Christ’s unique mediation; q.27 on Mary’s sanctification and Thomas’s disagreement with the later Immaculate Conception; q.28 on threefold virginity; q.30, a.1 on consent; q.32, a.3 on the Holy Spirit and paternity; and q.35, a.4 on divine motherhood. Latin critical text: [Corpus Thomisticum, Tertia Pars](https://www.corpusthomisticum.org/sth4000.html); q.27 was checked at [the exact question](https://www.corpusthomisticum.org/sth4027.html).
 
--   *Compendium theologiae* I, cc.221–225, on virginity, divine motherhood, and Mary’s sanctification: [Corpus Thomisticum Latin text](https://www.corpusthomisticum.org/ott1185.html). Chapter 224 is used as an additional unambiguous witness that Thomas did not teach the 1854 formula.
+- *Compendium theologiae* I, cc.221–225, on virginity, divine motherhood, and Mary’s sanctification: [Corpus Thomisticum Latin text](https://www.corpusthomisticum.org/ott1185.html). Chapter 224 is used as an additional unambiguous witness that Thomas did not teach the 1854 formula.
 
--   *Quodlibet* VI, q.5, a.1, on Mary’s conception, original sin, redemption, and the feast: [Corpus Thomisticum Latin text](https://www.corpusthomisticum.org/q06.html).
+- *Quodlibet* VI, q.5, a.1, on Mary’s conception, original sin, redemption, and the feast: [Corpus Thomisticum Latin text](https://www.corpusthomisticum.org/q06.html).
 
--   ST I–II, q.114, a.6, on merit for another’s first grace; ST II–II, q.83, a.11, on heavenly intercession; ST III, q.64, a.1, on God as principal cause of the sacrament’s interior effect. These loci are used with MPF 47–55, which explicitly receives the same Thomistic distinctions.
+- ST I–II, q.114, a.6, on merit for another’s first grace; ST II–II, q.83, a.11, on heavenly intercession; ST III, q.64, a.1, on God as principal cause of the sacrament’s interior effect. These loci are used with MPF 47–55, which explicitly receives the same Thomistic distinctions.
 
--   Aquinas’s occasional Assumption loci are identified according to *Munificentissimus Deus* 31 and note 31: *Exposition of the Angelic Salutation*; *Exposition of the Apostles’ Creed*, art. 5; *In IV Sententiarum*, d.12, q.1, a.3, sol.3, and d.43, q.1, a.3, sols.1–2. No dedicated Thomistic proof is claimed.
+- Aquinas’s occasional Assumption loci are identified according to *Munificentissimus Deus* 31 and note 31: *Exposition of the Angelic Salutation*; *Exposition of the Apostles’ Creed*, art. 5; *In IV Sententiarum*, d.12, q.1, a.3, sol.3, and d.43, q.1, a.3, sols.1–2. No dedicated Thomistic proof is claimed.
 
--   Bl. John Duns Scotus, *Ordinatio* III, d.3, q.1, on preservative redemption and Christ’s perfect mediation. The study summarizes the argument and deliberately does not attribute the popular *potuit–decuit–fecit* slogan to Scotus as an exact quotation.
+- Bl. John Duns Scotus, *Ordinatio* III, d.3, q.1, on preservative redemption and Christ’s perfect mediation. The study summarizes the argument and deliberately does not attribute the popular *potuit–decuit–fecit* slogan to Scotus as an exact quotation.
 
--   St. Bernard of Clairvaux, Epistle 174 to the canons of Lyons, and Eadmer, *Tractatus de conceptione sanctae Mariae*, are used to locate opposed medieval stages in the conception controversy; their views are neither presented as magisterial judgments nor collapsed into the later definition.
+- St. Bernard of Clairvaux, Epistle 174 to the canons of Lyons, and Eadmer, *Tractatus de conceptione sanctae Mariae*, are used to locate opposed medieval stages in the conception controversy; their views are neither presented as magisterial judgments nor collapsed into the later definition.
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

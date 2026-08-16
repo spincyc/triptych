@@ -161,11 +161,11 @@ The Directory 195 names dawn, midday, and dusk. The Apostolic Penitentiary’s c
 
 Each pause gives the day back to the Incarnate Lord:
 
--   at dawn, receive the day and its vocation as gift;
+- at dawn, receive the day and its vocation as gift;
 
--   at midday, interrupt self-sufficiency and renew Mary’s obedient availability; and
+- at midday, interrupt self-sufficiency and renew Mary’s obedient availability; and
 
--   toward evening, entrust completed and unfinished work to the Word who dwelt among us and passed through the Cross to glory.
+- toward evening, entrust completed and unfinished work to the Word who dwelt among us and passed through the Cross to glory.
 
 Missing one time is not a sin against a universal precept. The devotion is recommended, not imposed on every Christian. Resume without superstition. A brief pause said attentively is better than anxious arithmetic.
 
@@ -219,33 +219,33 @@ Outstanding: independent human collation of the Latin and historical English; in
 
 ### Received prayer and present discipline
 
--   Dom Gaspar Lefebvre, O.S.B., *Daily Missal with Vespers for Sundays and Feasts* (Lophem near Bruges: St. Andrew’s Abbey; St. Paul, Minnesota: E. M. Lohmann, 1925), printed pp. 5 and 12–13, [edition scan](https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf). Governing Latin and historical-English prayer witness; the old indulgence and seasonal rubrics are historical only.
+- Dom Gaspar Lefebvre, O.S.B., *Daily Missal with Vespers for Sundays and Feasts* (Lophem near Bruges: St. Andrew’s Abbey; St. Paul, Minnesota: E. M. Lohmann, 1925), printed pp. 5 and 12–13, [edition scan](https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf). Governing Latin and historical-English prayer witness; the old indulgence and seasonal rubrics are historical only.
 
--   Apostolic Penitentiary, *Enchiridion Indulgentiarum: Normae et Concessiones*, fourth edition (16 July 1999), norms 4, 17, and 22; concession 17 §2, 2^o^; and the printed Latin prayers: [Holy See Latin text](https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html). Governs the current universal indulgence claim as checked through 21 July 2026.
+- Apostolic Penitentiary, *Enchiridion Indulgentiarum: Normae et Concessiones*, fourth edition (16 July 1999), norms 4, 17, and 22; concession 17 §2, 2^o^; and the printed Latin prayers: [Holy See Latin text](https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html). Governs the current universal indulgence claim as checked through 21 July 2026.
 
--   Paul VI, apostolic constitution *Indulgentiarum doctrina* (1 January 1967), norms and concluding dispositions: [Holy See text](https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html). Governs the break with older quantified partial-indulgence discipline.
+- Paul VI, apostolic constitution *Indulgentiarum doctrina* (1 January 1967), norms and concluding dispositions: [Holy See text](https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html). Governs the break with older quantified partial-indulgence discipline.
 
 ### Doctrine, Scripture, and devotional ordering
 
--   Luke 1:26–45 and John 1:1–18; Latin checked in the [*Nova Vulgata*, Luke 1](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-lucam_lt.html#1) and [John 1](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-ioannem_lt.html#1).
+- Luke 1:26–45 and John 1:1–18; Latin checked in the [*Nova Vulgata*, Luke 1](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-lucam_lt.html#1) and [John 1](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-ioannem_lt.html#1).
 
--   Second Vatican Council, dogmatic constitution *Lumen gentium* (21 November 1964), 53, 56, 60–62: [Holy See text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html).
+- Second Vatican Council, dogmatic constitution *Lumen gentium* (21 November 1964), 53, 56, 60–62: [Holy See text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html).
 
--   *Catechism of the Catholic Church*, 456–483, 484–511, 963–975, especially 970, on the Incarnation, virginal conception, Mary, and Christ’s unique mediation: [Holy See text](https://www.vatican.va/archive/ENG0015/_INDEX.HTM).
+- *Catechism of the Catholic Church*, 456–483, 484–511, 963–975, especially 970, on the Incarnation, virginal conception, Mary, and Christ’s unique mediation: [Holy See text](https://www.vatican.va/archive/ENG0015/_INDEX.HTM).
 
--   Paul VI, apostolic exhortation *Marialis cultus* (2 February 1974), 25–39 and especially 40–41: [Holy See text](https://www.vatican.va/content/paul-vi/en/apost_exhortations/documents/hf_p-vi_exh_19740202_marialis-cultus.html).
+- Paul VI, apostolic exhortation *Marialis cultus* (2 February 1974), 25–39 and especially 40–41: [Holy See text](https://www.vatican.va/content/paul-vi/en/apost_exhortations/documents/hf_p-vi_exh_19740202_marialis-cultus.html).
 
--   Congregation for Divine Worship and the Discipline of the Sacraments, *Directory on Popular Piety and the Liturgy* (2001), 7, 183–186, 192–196, especially 195: [official English text](https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html).
+- Congregation for Divine Worship and the Discipline of the Sacraments, *Directory on Popular Piety and the Liturgy* (2001), 7, 183–186, 192–196, especially 195: [official English text](https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html).
 
--   United States Conference of Catholic Bishops, [“Easter”](https://www.usccb.org/prayer-worship/liturgical-year/easter), presenting the Universal Norms’ current Easter-Time boundary. Used only for the current calendar statement, not as the reproduced prayer witness.
+- United States Conference of Catholic Bishops, [“Easter”](https://www.usccb.org/prayer-worship/liturgical-year/easter), presenting the Universal Norms’ current Easter-Time boundary. Used only for the current calendar statement, not as the reproduced prayer witness.
 
 ### Historical development
 
--   Paul VI, Angelus address for the Assumption (15 August 1975), [Holy See Italian text](https://www.vatican.va/content/paul-vi/it/angelus/1975/documents/hf_p-vi_ang_19750815.html); a papal historical reflection that preserves the difficulty of assigning a single origin.
+- Paul VI, Angelus address for the Assumption (15 August 1975), [Holy See Italian text](https://www.vatican.va/content/paul-vi/it/angelus/1975/documents/hf_p-vi_ang_19750815.html); a papal historical reflection that preserves the difficulty of assigning a single origin.
 
--   Herbert Thurston, S.J., [“Angelus,”](https://www.newadvent.org/cathen/01486b.htm) *The Catholic Encyclopedia*, vol. 1 (New York: Robert Appleton, 1907). A dated but source-critical secondary survey, used for staged development and qualified attributions rather than as present discipline.
+- Herbert Thurston, S.J., [“Angelus,”](https://www.newadvent.org/cathen/01486b.htm) *The Catholic Encyclopedia*, vol. 1 (New York: Robert Appleton, 1907). A dated but source-critical secondary survey, used for staged development and qualified attributions rather than as present discipline.
 
--   Pius XII, apostolic letter *Dum maerenti animo* (29 June 1956), [Holy See Italian text](https://www.vatican.va/content/pius-xii/it/apost_letters/documents/hf_p-xii_apl_19560629_dum-maerenti-animo.html), on Callistus III’s 1456 prayer-and-bell action; used as one peace-bell witness, not an origin certificate for the complete Angelus.
+- Pius XII, apostolic letter *Dum maerenti animo* (29 June 1956), [Holy See Italian text](https://www.vatican.va/content/pius-xii/it/apost_letters/documents/hf_p-xii_apl_19560629_dum-maerenti-animo.html), on Callistus III’s 1456 prayer-and-bell action; used as one peace-bell witness, not an origin certificate for the complete Angelus.
 
 **Last revised (UTC):** 2026-07-21T17:41:34Z
 

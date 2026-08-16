@@ -247,57 +247,57 @@ All web sources were accessed and checked on 2026-07-24. Ancient-work citations 
 
 ### Primary sources: Jerome
 
--   Jerome, letters and principal works in English translation: *A Select Library of Nicene and Post-Nicene Fathers*, series 2, vol. 6, ed. P. Schaff and H. Wace, trans. W. H. Fremantle, G. Lewis, and W. G. Martley (New York: Christian Literature Company, 1893). Quotations follow the transcriptions at New Advent (<https://www.newadvent.org/fathers/>): *Letters* 14 (<https://www.newadvent.org/fathers/3001014.htm>), 15, 22, 45, 48 (headnote), 70, 84, 102, 108, 112, 125, 127, 133, 136, 139 (same pattern, `3001NNN.htm`); Preface to the Four Gospels (<https://www.newadvent.org/fathers/3002.htm>); *The Perpetual Virginity of Blessed Mary (Against Helvidius)* (<https://www.newadvent.org/fathers/3007.htm>); *Against Jovinianus*, book 1 (<https://www.newadvent.org/fathers/30091.htm>); *Against Vigilantius* (<https://www.newadvent.org/fathers/3010.htm>); *To Pammachius Against John of Jerusalem* 41 (<https://www.newadvent.org/fathers/3004.htm>); and, at CCEL, the Preface to Samuel and Kings (<https://www.ccel.org/ccel/schaff/npnf206.vii.iii.iv.html>) and the prolegomena Life of Jerome by Fremantle (<https://ccel.org/ccel/schaff/npnf206.iv.iii.html>). The translation is public domain; the underlying Latin is ancient and public domain.
+- Jerome, letters and principal works in English translation: *A Select Library of Nicene and Post-Nicene Fathers*, series 2, vol. 6, ed. P. Schaff and H. Wace, trans. W. H. Fremantle, G. Lewis, and W. G. Martley (New York: Christian Literature Company, 1893). Quotations follow the transcriptions at New Advent (<https://www.newadvent.org/fathers/>): *Letters* 14 (<https://www.newadvent.org/fathers/3001014.htm>), 15, 22, 45, 48 (headnote), 70, 84, 102, 108, 112, 125, 127, 133, 136, 139 (same pattern, `3001NNN.htm`); Preface to the Four Gospels (<https://www.newadvent.org/fathers/3002.htm>); *The Perpetual Virginity of Blessed Mary (Against Helvidius)* (<https://www.newadvent.org/fathers/3007.htm>); *Against Jovinianus*, book 1 (<https://www.newadvent.org/fathers/30091.htm>); *Against Vigilantius* (<https://www.newadvent.org/fathers/3010.htm>); *To Pammachius Against John of Jerusalem* 41 (<https://www.newadvent.org/fathers/3004.htm>); and, at CCEL, the Preface to Samuel and Kings (<https://www.ccel.org/ccel/schaff/npnf206.vii.iii.iv.html>) and the prolegomena Life of Jerome by Fremantle (<https://ccel.org/ccel/schaff/npnf206.iv.iii.html>). The translation is public domain; the underlying Latin is ancient and public domain.
 
--   Jerome, *On Illustrious Men* 117 and 135, and *Apology Against Rufinus* 1.30–31, NPNF series 2, vol. 3 (trans. E. C. Richardson; W. H. Fremantle), at New Advent (<https://www.newadvent.org/fathers/2708.htm>; <https://www.newadvent.org/fathers/27101.htm>).
+- Jerome, *On Illustrious Men* 117 and 135, and *Apology Against Rufinus* 1.30–31, NPNF series 2, vol. 3 (trans. E. C. Richardson; W. H. Fremantle), at New Advent (<https://www.newadvent.org/fathers/2708.htm>; <https://www.newadvent.org/fathers/27101.htm>).
 
--   Jerome, prologues to Tobit and Judith, public-domain translations at the Tertullian Project (<https://www.tertullian.org/fathers/jerome_preface_tobit.htm>; <https://www.tertullian.org/fathers/jerome_preface_judith.htm>).
+- Jerome, prologues to Tobit and Judith, public-domain translations at the Tertullian Project (<https://www.tertullian.org/fathers/jerome_preface_tobit.htm>; <https://www.tertullian.org/fathers/jerome_preface_judith.htm>).
 
 ### Primary sources: other ancient witnesses
 
--   Augustine, *Letters* 71 and 82, NPNF series 1, vol. 1, at New Advent (<https://www.newadvent.org/fathers/1102071.htm>; <https://www.newadvent.org/fathers/1102082.htm>); Jerome’s replies are cited as *Letters* 102 and 112 (= Augustine *Letters* 68 and 75, <https://www.newadvent.org/fathers/1102068.htm>; <https://www.newadvent.org/fathers/1102075.htm>).
+- Augustine, *Letters* 71 and 82, NPNF series 1, vol. 1, at New Advent (<https://www.newadvent.org/fathers/1102071.htm>; <https://www.newadvent.org/fathers/1102082.htm>); Jerome’s replies are cited as *Letters* 102 and 112 (= Augustine *Letters* 68 and 75, <https://www.newadvent.org/fathers/1102068.htm>; <https://www.newadvent.org/fathers/1102075.htm>).
 
--   Augustine, *On the Proceedings of Pelagius* 66, NPNF series 1, vol. 5, at New Advent (<https://www.newadvent.org/fathers/1505.htm>).
+- Augustine, *On the Proceedings of Pelagius* 66, NPNF series 1, vol. 5, at New Advent (<https://www.newadvent.org/fathers/1505.htm>).
 
--   Rufinus of Aquileia, *Apology Against Jerome* 2.6–8, NPNF series 2, vol. 3, at New Advent (<https://www.newadvent.org/fathers/27052.htm>).
+- Rufinus of Aquileia, *Apology Against Jerome* 2.6–8, NPNF series 2, vol. 3, at New Advent (<https://www.newadvent.org/fathers/27052.htm>).
 
--   Sulpicius Severus, *Dialogue* 1.8–9, NPNF series 2, vol. 11, at New Advent (<https://www.newadvent.org/fathers/35031.htm>).
+- Sulpicius Severus, *Dialogue* 1.8–9, NPNF series 2, vol. 11, at New Advent (<https://www.newadvent.org/fathers/35031.htm>).
 
--   Innocent I, letters to Jerome and John of Jerusalem, printed as Jerome, *Letters* 136–137, NPNF series 2, vol. 6, at New Advent (<https://www.newadvent.org/fathers/3001136.htm>).
+- Innocent I, letters to Jerome and John of Jerusalem, printed as Jerome, *Letters* 136–137, NPNF series 2, vol. 6, at New Advent (<https://www.newadvent.org/fathers/3001136.htm>).
 
--   Prosper of Aquitaine, chronicle notices on Jerome’s birth and death: not inspected directly; used as reported in Fremantle’s prolegomena (above) and the ninth-edition Encyclopædia Britannica article “St Jerome” (1881), at 1902encyclopedia.com (<https://www.1902encyclopedia.com/J/JER/st-jerome.html>).
+- Prosper of Aquitaine, chronicle notices on Jerome’s birth and death: not inspected directly; used as reported in Fremantle’s prolegomena (above) and the ninth-edition Encyclopædia Britannica article “St Jerome” (1881), at 1902encyclopedia.com (<https://www.1902encyclopedia.com/J/JER/st-jerome.html>).
 
 ### Later tradition
 
--   *The Golden Legend* (Jacobus de Voragine, 13th c.), Life of S. Jerome, in Caxton’s English version, Temple Classics text at the Internet Medieval Sourcebook, Fordham University (<https://sourcebooks.fordham.edu/basis/goldenlegend/GoldenLegend-Volume5.asp>); source of the lion story, the cardinal-priest notice, and the retold dream.
+- *The Golden Legend* (Jacobus de Voragine, 13th c.), Life of S. Jerome, in Caxton’s English version, Temple Classics text at the Internet Medieval Sourcebook, Fordham University (<https://sourcebooks.fordham.edu/basis/goldenlegend/GoldenLegend-Volume5.asp>); source of the lion story, the cardinal-priest notice, and the retold dream.
 
--   Master of Grossgmain, *Saint Jerome as a Cardinal* (1498), catalogue entry, Museo Nacional Thyssen-Bornemisza (<https://www.museothyssen.org/en/collection/artists/master-grossgmain/saint-jerome-cardinal>); cited for the iconographic convention.
+- Master of Grossgmain, *Saint Jerome as a Cardinal* (1498), catalogue entry, Museo Nacional Thyssen-Bornemisza (<https://www.museothyssen.org/en/collection/artists/master-grossgmain/saint-jerome-cardinal>); cited for the iconographic convention.
 
--   E. F. Rice, *Saint Jerome in the Renaissance* (Baltimore, 1985): the Gerasimus-transfer explanation of the lion legend, cited as reported in museum and reference literature. Not independently inspected.
+- E. F. Rice, *Saint Jerome in the Renaissance* (Baltimore, 1985): the Gerasimus-transfer explanation of the lion legend, cited as reported in museum and reference literature. Not independently inspected.
 
 ### Ecclesial reception
 
--   *Catechism of the Catholic Church* 133, English text, Vatican website archive (<https://www.vatican.va/archive/ENG0015/__PS.HTM>); quoting *Dei Verbum* 25 and Jerome’s Isaiah-commentary prologue.
+- *Catechism of the Catholic Church* 133, English text, Vatican website archive (<https://www.vatican.va/archive/ENG0015/__PS.HTM>); quoting *Dei Verbum* 25 and Jerome’s Isaiah-commentary prologue.
 
--   Benedict XV, encyclical *Spiritus Paraclitus* (15 September 1920), English text, Vatican website (<https://www.vatican.va/content/benedict-xv/en/encyclicals/documents/hf_ben-xv_enc_15091920_spiritus-paraclitus.html>); quoted briefly and paraphrased.
+- Benedict XV, encyclical *Spiritus Paraclitus* (15 September 1920), English text, Vatican website (<https://www.vatican.va/content/benedict-xv/en/encyclicals/documents/hf_ben-xv_enc_15091920_spiritus-paraclitus.html>); quoted briefly and paraphrased.
 
--   Benedict XVI, General Audiences of 7 and 14 November 2007 (catecheses on St. Jerome), Vatican website (<https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20071107.html>; <https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20071114.html>); paraphrased.
+- Benedict XVI, General Audiences of 7 and 14 November 2007 (catecheses on St. Jerome), Vatican website (<https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20071107.html>; <https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20071114.html>); paraphrased.
 
--   Francis, apostolic letter *Scripturae Sacrae affectus* (30 September 2020), Vatican website (<https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20200930_scripturae-sacrae-affectus.html>); paraphrased.
+- Francis, apostolic letter *Scripturae Sacrae affectus* (30 September 2020), Vatican website (<https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20200930_scripturae-sacrae-affectus.html>); paraphrased.
 
--   “Doctors of the Church,” *The Catholic Encyclopedia*, vol. 5 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/05075a.htm>); source for Boniface VIII’s 1298 decretal *Gloriosus*.
+- “Doctors of the Church,” *The Catholic Encyclopedia*, vol. 5 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/05075a.htm>); source for Boniface VIII’s 1298 decretal *Gloriosus*.
 
--   “St. Jerome,” *The Catholic Encyclopedia*, vol. 8 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/08341a.htm>); cited for its dating (c. 340–2) as reception history.
+- “St. Jerome,” *The Catholic Encyclopedia*, vol. 8 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/08341a.htm>); cited for its dating (c. 340–2) as reception history.
 
 ### Modern scholarship and reference
 
--   J. N. D. Kelly, *Jerome: His Life, Writings, and Controversies* (London: Duckworth, 1975). Cited for its standing as the standard English biography and its retention of the 331–420 frame, at the level of publisher and review records. Not independently inspected.
+- J. N. D. Kelly, *Jerome: His Life, Writings, and Controversies* (London: Duckworth, 1975). Cited for its standing as the standard English biography and its retention of the 331–420 frame, at the level of publisher and review records. Not independently inspected.
 
--   S. Rebenich, *Jerome* (The Early Church Fathers; London: Routledge, 2002). Cited through the review by V. Hunink, *Bryn Mawr Classical Review* 2003.05.06 (<https://bmcr.brynmawr.edu/2003/2003.05.06>), from which the quoted phrases on Jerome’s Hebrew and the Maronia estate are taken. The book was not independently inspected.
+- S. Rebenich, *Jerome* (The Early Church Fathers; London: Routledge, 2002). Cited through the review by V. Hunink, *Bryn Mawr Classical Review* 2003.05.06 (<https://bmcr.brynmawr.edu/2003/2003.05.06>), from which the quoted phrases on Jerome’s Hebrew and the Maronia estate are taken. The book was not independently inspected.
 
--   S. Angus, “Latin Vulgate,” *International Standard Bible Encyclopedia* (1915), as presented at Bible Research (<https://www.bible-researcher.com/vulgate1.html>); public domain; source of the quoted judgments on the Vulgate’s composite character and the Psalter.
+- S. Angus, “Latin Vulgate,” *International Standard Bible Encyclopedia* (1915), as presented at Bible Research (<https://www.bible-researcher.com/vulgate1.html>); public domain; source of the quoted judgments on the Vulgate’s composite character and the Psalter.
 
--   “St Jerome,” *Encyclopædia Britannica*, 9th ed. (1881), at 1902encyclopedia.com (<https://www.1902encyclopedia.com/J/JER/st-jerome.html>); public domain; quoted on the birth-year traditions.
+- “St Jerome,” *Encyclopædia Britannica*, 9th ed. (1881), at 1902encyclopedia.com (<https://www.1902encyclopedia.com/J/JER/st-jerome.html>); public domain; quoted on the birth-year traditions.
 
 **Last revised (UTC):** 2026-07-25T04:01:43Z
 

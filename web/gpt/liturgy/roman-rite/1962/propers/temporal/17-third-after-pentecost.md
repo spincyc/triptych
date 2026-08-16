@@ -100,13 +100,13 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 
 > **Four guardrails — recoverable at a glance**
 >
-> -   **Mercy is not indifference.** Luke’s joy is joy over repentance under the just and patient Judge.
+> - **Mercy is not indifference.** Luke’s joy is joy over repentance under the just and patient Judge.
 >
-> -   **Grace is not passivity.** The seeker acts first; the found person repents, resists, offers, and receives.
+> - **Grace is not passivity.** The seeker acts first; the found person repents, resists, offers, and receives.
 >
-> -   **Dignity is not self-restoration.** The image grounds the search; incarnation, Cross, illumination, and cleansing accomplish recovery.
+> - **Dignity is not self-restoration.** The image grounds the search; incarnation, Cross, illumination, and cleansing accomplish recovery.
 >
-> -   **Reception is not automatic.** Secret and Postcommunion remain petitions.
+> - **Reception is not automatic.** Secret and Postcommunion remain petitions.
 
 ## The Propers: Detailed Commentary
 
@@ -240,13 +240,13 @@ The Collect is not a generic request for protection. Its clauses distinguish the
 
 > **Four verbal threads through the formulary**
 >
-> -   *Respice in me* becomes *Respice … munera*: the person under mercy enters the offering Church.
+> - *Respice in me* becomes *Respice … munera*: the person under mercy enters the offering Church.
 >
-> -   The Collect’s *sperantium* and the Secret’s *credentium* hold hope and faith within God’s protection.
+> - The Collect’s *sperantium* and the Secret’s *credentium* hold hope and faith within God’s protection.
 >
-> -   *perpetua sanctificatione* opens into the Postcommunion’s *Sancta tua*: sanctification is received in holy things, not reduced to an inward idea.
+> - *perpetua sanctificatione* opens into the Postcommunion’s *Sancta tua*: sanctification is received in holy things, not reduced to an inward idea.
 >
-> -   *sumenda* becomes *sumpta*: petition before reception becomes thanksgiving and a new petition for vivification afterward.
+> - *sumenda* becomes *sumpta*: petition before reception becomes thanksgiving and a new petition for vivification afterward.
 
 ### Sacramental completion: joy, life, and everlasting mercy (*Int., Gosp., Off., Sec., Comm., Postcomm.*)
 
@@ -263,11 +263,11 @@ The Communion repeats Luke 15:10 rather than choosing an unrelated sacramental v
 
 ## The Propers: Notable and Quotable
 
--   **“Publicans and sinners” — *Punch*, 27 Oct. 1877, p. 182.** In an argument about public houses, the magazine exploits *publican*’s newer sense, joking about “publicans and sinners, and sinners whom publicans give occasion to sin.” Luke’s formula for tax collectors and moral outsiders becomes a temperance pun linking tavern keepers to the drinkers they tempt.
+- **“Publicans and sinners” — *Punch*, 27 Oct. 1877, p. 182.** In an argument about public houses, the magazine exploits *publican*’s newer sense, joking about “publicans and sinners, and sinners whom publicans give occasion to sin.” Luke’s formula for tax collectors and moral outsiders becomes a temperance pun linking tavern keepers to the drinkers they tempt.
 
--   **“A lost sheep” — Harriet Beecher Stowe, *We and Our Neighbors*, ch. 19 (1875).** Stowe makes the Gospel image the chapter title and then gives it an urban body: a destitute young woman found in a doorway and taken to a refuge. The rural recovery parable becomes social-reform fiction about prostitution, class, and whether comfortable Christians will treat another’s ruin as their concern.
+- **“A lost sheep” — Harriet Beecher Stowe, *We and Our Neighbors*, ch. 19 (1875).** Stowe makes the Gospel image the chapter title and then gives it an urban body: a destitute young woman found in a doorway and taken to a refuge. The rural recovery parable becomes social-reform fiction about prostitution, class, and whether comfortable Christians will treat another’s ruin as their concern.
 
--   **“Be sober, be vigilant” — *The Temperance Text-Book*, p. 93 (1836).** Under “Testimony of Scripture,” the manual prints Peter’s phrase among warnings against drunkenness. Spiritual alertness before a prowling adversary is narrowed, with deliberate literal force, into an anti-alcohol proof text; the manual’s placement does not exhaust the Epistle’s devil-and-resistance context.
+- **“Be sober, be vigilant” — *The Temperance Text-Book*, p. 93 (1836).** Under “Testimony of Scripture,” the manual prints Peter’s phrase among warnings against drunkenness. Spiritual alertness before a prowling adversary is narrowed, with deliberate literal force, into an anti-alcohol proof text; the manual’s placement does not exhaust the Epistle’s devil-and-resistance context.
 
 ## The Propers: Interpretive Possibilities
 
@@ -291,45 +291,45 @@ The Communion repeats Luke 15:10 rather than choosing an unrelated sacramental v
 
 **Primary and inherited sources**
 
--   *Missale Romanum*, editio typica (Typis Polyglottis Vaticanis, 1962), *Dominica Tertia post Pentecosten*, pp. 380–382, [facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf); governing Latin witness for all ten elements and their boundaries; re-collated 2026-07-14.
+- *Missale Romanum*, editio typica (Typis Polyglottis Vaticanis, 1962), *Dominica Tertia post Pentecosten*, pp. 380–382, [facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf); governing Latin witness for all ten elements and their boundaries; re-collated 2026-07-14.
 
--   Dom Gaspar Lefebvre, O.S.B., *Daily Missal with Vespers for Sundays and Feasts* (St. Andrew’s Abbey / E. M. Lohmann Co., 1925), p. 1062, [scan](https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf); governing historical English witness only for the Secret; accessed 2026-07-14. United States public domain by publication date; no current approval or worldwide status is claimed.
+- Dom Gaspar Lefebvre, O.S.B., *Daily Missal with Vespers for Sundays and Feasts* (St. Andrew’s Abbey / E. M. Lohmann Co., 1925), p. 1062, [scan](https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf); governing historical English witness only for the Secret; accessed 2026-07-14. United States public domain by publication date; no current approval or worldwide status is claimed.
 
--   Internet Archive, [secondary image witness](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin) and [OCR locating aid](https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin_djvu.txt); neither governs a reading. Witness differences and checksums: `propers/verified.md`. Secret index: [Corpus Orationum](https://usuarium.elte.hu/corpusorationum/5085).
+- Internet Archive, [secondary image witness](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin) and [OCR locating aid](https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin_djvu.txt); neither governs a reading. Witness differences and checksums: `propers/verified.md`. Secret index: [Corpus Orationum](https://usuarium.elte.hu/corpusorationum/5085).
 
--   Holy Scripture: Psalms 7, 9–10, 24, and 54 in full; Luke 9:51–19:27, especially 13–15; 1 Peter in full, especially 1:1, 5:1–14. Psalm numbering follows the Vulgate and missal.
+- Holy Scripture: Psalms 7, 9–10, 24, and 54 in full; Luke 9:51–19:27, especially 13–15; 1 Peter in full, especially 1:1, 5:1–14. Psalm numbering follows the Vulgate and missal.
 
--   St. Cyril of Alexandria, *Commentary on Luke*, Homily 106, [R. Payne Smith English](https://www.tertullian.org/fathers/cyril_on_luke_10_sermons_99_109.htm); direct exegesis, paraphrased; accessed 2026-07-10.
+- St. Cyril of Alexandria, *Commentary on Luke*, Homily 106, [R. Payne Smith English](https://www.tertullian.org/fathers/cyril_on_luke_10_sermons_99_109.htm); direct exegesis, paraphrased; accessed 2026-07-10.
 
--   St. Gregory the Great, *Forty Gospel Homilies*, Homily 34, David Hurst, O.S.B., trans. and ed. (Gorgias Press, 2009), pp. 280–300; text checked in the volume; [bibliographic locator](https://www.degruyterbrill.com/document/doi/10.31826/9781463217716-035/html).
+- St. Gregory the Great, *Forty Gospel Homilies*, Homily 34, David Hurst, O.S.B., trans. and ed. (Gorgias Press, 2009), pp. 280–300; text checked in the volume; [bibliographic locator](https://www.degruyterbrill.com/document/doi/10.31826/9781463217716-035/html).
 
--   Tertullian, *On Patience* 12, [text](https://www.newadvent.org/fathers/0325.htm); explicit Luke 15 reuse, not Alleluia commentary; accessed 2026-07-10.
+- Tertullian, *On Patience* 12, [text](https://www.newadvent.org/fathers/0325.htm); explicit Luke 15 reuse, not Alleluia commentary; accessed 2026-07-10.
 
--   St. Ambrose, *Exposition of Luke* VII.207–212, [Latin](https://la.wikisource.org/wiki/Expositio_evangelii_secundum_Lucam/VII); direct exegesis, paraphrased; accessed 2026-07-10.
+- St. Ambrose, *Exposition of Luke* VII.207–212, [Latin](https://la.wikisource.org/wiki/Expositio_evangelii_secundum_Lucam/VII); direct exegesis, paraphrased; accessed 2026-07-10.
 
--   St. Gregory of Nyssa, *On Virginity* 12, [text](https://www.newadvent.org/fathers/2907.htm); ascetical reuse, not direct Luke commentary; accessed 2026-07-10.
+- St. Gregory of Nyssa, *On Virginity* 12, [text](https://www.newadvent.org/fathers/2907.htm); ascetical reuse, not direct Luke commentary; accessed 2026-07-10.
 
--   St. Augustine, *Confessions* VIII.3–4, [Luke’s joy](https://www.newadvent.org/fathers/110108.htm); *Expositions on Psalms* 7 §§8–11, [text](https://www.newadvent.org/fathers/1801007.htm); 9 §§9–12, [text](https://www.newadvent.org/fathers/1801009.htm); 24/25 §§1–2, 16, 18, [text](https://www.newadvent.org/fathers/1801025.htm); and 54/55 §23, [text](https://www.newadvent.org/fathers/1801055.htm); direct psalm exegesis, rechecked 2026-07-18.
+- St. Augustine, *Confessions* VIII.3–4, [Luke’s joy](https://www.newadvent.org/fathers/110108.htm); *Expositions on Psalms* 7 §§8–11, [text](https://www.newadvent.org/fathers/1801007.htm); 9 §§9–12, [text](https://www.newadvent.org/fathers/1801009.htm); 24/25 §§1–2, 16, 18, [text](https://www.newadvent.org/fathers/1801025.htm); and 54/55 §23, [text](https://www.newadvent.org/fathers/1801055.htm); direct psalm exegesis, rechecked 2026-07-18.
 
--   St. Anthony of Padua, *Sermon for the Third Sunday after Pentecost* §§2–15, [official Italian text with Latin option](https://www.santantonio.org/it/sermoni/sermoni-domenicali/domenica-iii-dopo-pentecoste); direct medieval reception of Luke 15:1–10 and 1 Peter 5:6–11, checked 2026-07-18.
+- St. Anthony of Padua, *Sermon for the Third Sunday after Pentecost* §§2–15, [official Italian text with Latin option](https://www.santantonio.org/it/sermoni/sermoni-domenicali/domenica-iii-dopo-pentecoste); direct medieval reception of Luke 15:1–10 and 1 Peter 5:6–11, checked 2026-07-18.
 
--   St. Irenaeus, *Against Heresies* IV.18.1–5, [text](https://www.newadvent.org/fathers/0103418.htm); related illumination, not Secret commentary; accessed 2026-07-10.
+- St. Irenaeus, *Against Heresies* IV.18.1–5, [text](https://www.newadvent.org/fathers/0103418.htm); related illumination, not Secret commentary; accessed 2026-07-10.
 
--   St. Cyril of Jerusalem, *Mystagogical Catechesis* 5.7, 19–21, [text](https://www.newadvent.org/fathers/310123.htm); related non-Roman mystagogy; accessed 2026-07-10.
+- St. Cyril of Jerusalem, *Mystagogical Catechesis* 5.7, 19–21, [text](https://www.newadvent.org/fathers/310123.htm); related non-Roman mystagogy; accessed 2026-07-10.
 
--   *Punch, or the London Charivari* 73 (27 Oct. 1877), p. 182, [Heidelberg public-domain scan and OCR](https://doi.org/10.11588/diglit.17731#0186); “publicans and sinners” used as a tavern-and-temperance pun, checked 2026-07-19.
+- *Punch, or the London Charivari* 73 (27 Oct. 1877), p. 182, [Heidelberg public-domain scan and OCR](https://doi.org/10.11588/diglit.17731#0186); “publicans and sinners” used as a tavern-and-temperance pun, checked 2026-07-19.
 
--   Harriet Beecher Stowe, *We and Our Neighbors; or, The Records of an Unfashionable Street* (New York: J. B. Ford, 1875), ch. 19, “A Lost Sheep,” pp. 197–201, [public-domain text](https://www.gutenberg.org/files/48603/48603-h/48603-h.htm); chapter title, encounter, refuge, and Good-Shepherd application checked 2026-07-19.
+- Harriet Beecher Stowe, *We and Our Neighbors; or, The Records of an Unfashionable Street* (New York: J. B. Ford, 1875), ch. 19, “A Lost Sheep,” pp. 197–201, [public-domain text](https://www.gutenberg.org/files/48603/48603-h/48603-h.htm); chapter title, encounter, refuge, and Good-Shepherd application checked 2026-07-19.
 
--   *The Temperance Text-Book: A Collection of Facts and Interesting Anecdotes, Illustrating the Evils of Intoxicating Drinks* (Philadelphia: Brown & Sinquet, 1836), p. 93, “Testimony of Scripture,” [public-domain scan](https://commons.wikimedia.org/wiki/File:The_temperance_text-book_-_a_collection_of_facts_and_interesting_anecdotes,_illustrating_the_evils_of_intoxicating_drinks_(IA_101588361.nlm.nih.gov).pdf); exact placement of “Be sober, be vigilant” checked 2026-07-19.
+- *The Temperance Text-Book: A Collection of Facts and Interesting Anecdotes, Illustrating the Evils of Intoxicating Drinks* (Philadelphia: Brown & Sinquet, 1836), p. 93, “Testimony of Scripture,” [public-domain scan](https://commons.wikimedia.org/wiki/File:The_temperance_text-book_-_a_collection_of_facts_and_interesting_anecdotes,_illustrating_the_evils_of_intoxicating_drinks_(IA_101588361.nlm.nih.gov).pdf); exact placement of “Be sober, be vigilant” checked 2026-07-19.
 
 **Biblical-historical orientation**
 
--   *New American Bible, Revised Edition*: introductions to [Psalms](https://bible.usccb.org/bible/psalms/0), [Luke](https://bible.usccb.org/bible/luke/0), and [1 Peter](https://bible.usccb.org/bible/1peter/0); texts and notes for [Psalms 7](https://bible.usccb.org/bible/psalms/7), [9](https://bible.usccb.org/bible/psalms/9), [25](https://bible.usccb.org/bible/psalms/25), and [55](https://bible.usccb.org/bible/psalms/55), [Luke 15](https://bible.usccb.org/bible/luke/15), and [1 Peter 5](https://bible.usccb.org/bible/1peter/5); USCCB online edition, accessed 2026-07-10.
+- *New American Bible, Revised Edition*: introductions to [Psalms](https://bible.usccb.org/bible/psalms/0), [Luke](https://bible.usccb.org/bible/luke/0), and [1 Peter](https://bible.usccb.org/bible/1peter/0); texts and notes for [Psalms 7](https://bible.usccb.org/bible/psalms/7), [9](https://bible.usccb.org/bible/psalms/9), [25](https://bible.usccb.org/bible/psalms/25), and [55](https://bible.usccb.org/bible/psalms/55), [Luke 15](https://bible.usccb.org/bible/luke/15), and [1 Peter 5](https://bible.usccb.org/bible/1peter/5); USCCB online edition, accessed 2026-07-10.
 
--   *Catholic Encyclopedia*: [“Psalms”](https://www.newadvent.org/cathen/12533a.htm), [“King David”](https://www.newadvent.org/cathen/04642b.htm), [“Gospel of Saint Luke”](https://www.newadvent.org/cathen/09420a.htm), [“Epistles of Saint Peter”](https://www.newadvent.org/cathen/11752a.htm), and [“Chronology of the Life of Jesus Christ”](https://www.newadvent.org/cathen/08377a.htm); witnesses to traditional authorship, place, and chronology, consulted 2026-07-10.
+- *Catholic Encyclopedia*: [“Psalms”](https://www.newadvent.org/cathen/12533a.htm), [“King David”](https://www.newadvent.org/cathen/04642b.htm), [“Gospel of Saint Luke”](https://www.newadvent.org/cathen/09420a.htm), [“Epistles of Saint Peter”](https://www.newadvent.org/cathen/11752a.htm), and [“Chronology of the Life of Jesus Christ”](https://www.newadvent.org/cathen/08377a.htm); witnesses to traditional authorship, place, and chronology, consulted 2026-07-10.
 
--   Septuagint/Vulgate titles and chapter context: [Psalm 7](https://www.newadvent.org/bible/psa007.htm), [Psalm 9/10](https://www.newadvent.org/bible/psa009.htm), [Psalm 24 (modern 25)](https://www.newadvent.org/bible/psa024.htm), [Psalm 54 (modern 55)](https://www.newadvent.org/bible/psa054.htm), [Luke 15](https://www.newadvent.org/bible/luk015.htm), and [1 Peter 5](https://www.newadvent.org/bible/1pe005.htm); contextual transcription aid, consulted 2026-07-10.
+- Septuagint/Vulgate titles and chapter context: [Psalm 7](https://www.newadvent.org/bible/psa007.htm), [Psalm 9/10](https://www.newadvent.org/bible/psa009.htm), [Psalm 24 (modern 25)](https://www.newadvent.org/bible/psa024.htm), [Psalm 54 (modern 55)](https://www.newadvent.org/bible/psa054.htm), [Luke 15](https://www.newadvent.org/bible/luk015.htm), and [1 Peter 5](https://www.newadvent.org/bible/1pe005.htm); contextual transcription aid, consulted 2026-07-10.
 
 **Last revised (UTC):** 2026-07-19T17:21:47Z
 

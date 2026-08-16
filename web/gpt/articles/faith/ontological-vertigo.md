@@ -90,17 +90,17 @@ An instrument may therefore disclose more and more of the created order without 
 
 > **Consequences of non-rival causality**
 >
-> -   The Creator is not merely a remote starter; creatures are presently conserved.
+> - The Creator is not merely a remote starter; creatures are presently conserved.
 >
-> -   Created causes possess and exercise real powers rather than serving as occasions for divine action alone.
+> - Created causes possess and exercise real powers rather than serving as occasions for divine action alone.
 >
-> -   Dependence does not make creatures parts, modes, or pieces of the divine substance.
+> - Dependence does not make creatures parts, modes, or pieces of the divine substance.
 >
-> -   Even a hypothetically beginningless creature would depend for being; the priority is not chronological alone.
+> - Even a hypothetically beginningless creature would depend for being; the priority is not chronological alone.
 >
-> -   Primary causality can ground an act precisely as voluntary rather than replace it with force.
+> - Primary causality can ground an act precisely as voluntary rather than replace it with force.
 >
-> -   Dependence on God does not suspend moral agency before injustice, error, or any particular evil.
+> - Dependence on God does not suspend moral agency before injustice, error, or any particular evil.
 
 The *Catechism* holds the two sides together. God upholds creatures “at every moment” and enables them to act; he also grants them the dignity of being causes and principles for one another. The same doctrine that denies creaturely aseity establishes creaturely agency.[^8]
 
@@ -258,43 +258,43 @@ The core online witnesses were checked through 20 July 2026; the added Augustine
 
 ### Authoritative Catholic witnesses
 
--   First Vatican Council, dogmatic constitution *Dei Filius* (24 April 1870), chs. 1 and 3 and canons 1.3–5: the simple God really distinct from the world, free creation from nothing, divine non-need, providence, and the creature’s total dependence; [official Latin](https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html).
+- First Vatican Council, dogmatic constitution *Dei Filius* (24 April 1870), chs. 1 and 3 and canons 1.3–5: the simple God really distinct from the world, free creation from nothing, divine non-need, providence, and the creature’s total dependence; [official Latin](https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700424_dei-filius_la.html).
 
--   *Catechism of the Catholic Church* 301 and 306–308, on sustaining action and genuine secondary causality; [official English](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_4_the_creator.html).
+- *Catechism of the Catholic Church* 301 and 306–308, on sustaining action and genuine secondary causality; [official English](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_4_the_creator.html).
 
 ### Ancient philosophical antecedents
 
--   Plato, *Republic* VI, 508e–509b, on the Good as source of intelligibility and being; *Timaeus* 27d–29b, on becoming, cause, and the cosmic craftsman. Benjamin Jowett’s public-domain English was used as a working witness at the [Internet Classics Archive](https://classics.mit.edu/Plato/republic.7.vi.html) and [Timaeus text](https://classics.mit.edu/Plato/timaeus.html). The article does not identify these doctrines with Christian creation.
+- Plato, *Republic* VI, 508e–509b, on the Good as source of intelligibility and being; *Timaeus* 27d–29b, on becoming, cause, and the cosmic craftsman. Benjamin Jowett’s public-domain English was used as a working witness at the [Internet Classics Archive](https://classics.mit.edu/Plato/republic.7.vi.html) and [Timaeus text](https://classics.mit.edu/Plato/timaeus.html). The article does not identify these doctrines with Christian creation.
 
--   Aristotle, *Metaphysics* XII.6–7, 1071b3–1072b30, on actuality, the unmoved mover, and the dependence of heaven and nature; W. D. Ross’s public-domain working English, [Internet Classics Archive](https://classics.mit.edu/Aristotle/metaphysics.12.xii.html). See also *Physics* VIII.5–6.
+- Aristotle, *Metaphysics* XII.6–7, 1071b3–1072b30, on actuality, the unmoved mover, and the dependence of heaven and nature; W. D. Ross’s public-domain working English, [Internet Classics Archive](https://classics.mit.edu/Aristotle/metaphysics.12.xii.html). See also *Physics* VIII.5–6.
 
 ### Patristic and late-patristic witnesses
 
--   St. Irenaeus of Lyons, *Against Heresies* II.34.2–4, on God alone unbegun, created duration according to divine will, and life by participation; Alexander Roberts and William Rambaut’s 1885 ANF working English, [online witness](https://www.newadvent.org/fathers/0103234.htm).
+- St. Irenaeus of Lyons, *Against Heresies* II.34.2–4, on God alone unbegun, created duration according to divine will, and life by participation; Alexander Roberts and William Rambaut’s 1885 ANF working English, [online witness](https://www.newadvent.org/fathers/0103234.htm).
 
--   St. Athanasius of Alexandria, *On the Incarnation of the Word* 3–5, on creation from nothing through the Word and creaturely mutability, [NPNF working English](https://www.newadvent.org/fathers/2802.htm); *Against the Heathen* 40–42, on the Word ordering and preserving the created whole, [working English](https://www.newadvent.org/fathers/2801.htm).
+- St. Athanasius of Alexandria, *On the Incarnation of the Word* 3–5, on creation from nothing through the Word and creaturely mutability, [NPNF working English](https://www.newadvent.org/fathers/2802.htm); *Against the Heathen* 40–42, on the Word ordering and preserving the created whole, [working English](https://www.newadvent.org/fathers/2801.htm).
 
--   St. Augustine of Hippo, *Confessions* I.2.2; III.6.11; VII.1.1–2, 10.16–11.17, 17.23, and 20.26–21.27; XI.9.11, on existence through divine presence, inwardness and transcendence, the changeable mind’s judgment by unchangeable truth, seeing without yet possessing the way, and *inhorresco et inardesco*; *On the Trinity* VIII.2.3, on the mind’s first flash of Truth and return to familiar images. Public-domain NPNF working English: [*Confessions* VII](https://www.newadvent.org/fathers/110107.htm), [*Confessions* XI](https://www.newadvent.org/fathers/110111.htm), and [*On the Trinity* VIII](https://www.newadvent.org/fathers/130108.htm).
+- St. Augustine of Hippo, *Confessions* I.2.2; III.6.11; VII.1.1–2, 10.16–11.17, 17.23, and 20.26–21.27; XI.9.11, on existence through divine presence, inwardness and transcendence, the changeable mind’s judgment by unchangeable truth, seeing without yet possessing the way, and *inhorresco et inardesco*; *On the Trinity* VIII.2.3, on the mind’s first flash of Truth and return to familiar images. Public-domain NPNF working English: [*Confessions* VII](https://www.newadvent.org/fathers/110107.htm), [*Confessions* XI](https://www.newadvent.org/fathers/110111.htm), and [*On the Trinity* VIII](https://www.newadvent.org/fathers/130108.htm).
 
--   St. Gregory Nazianzen, *Oration* 28.2–6, on longing and fear before the theological cloud, the failed attempt to grasp God directly, and knowledge of God’s existence from created order without comprehension of the divine nature; [NPNF working English](https://www.newadvent.org/fathers/310228.htm).
+- St. Gregory Nazianzen, *Oration* 28.2–6, on longing and fear before the theological cloud, the failed attempt to grasp God directly, and knowledge of God’s existence from created order without comprehension of the divine nature; [NPNF working English](https://www.newadvent.org/fathers/310228.htm).
 
--   Pseudo-Dionysius, *Divine Names* V.1–8, on the superessential cause from whom beings receive existence; *Mystical Theology* I.1–3, on affirmation, negation, and unknowing. John Parker, trans., *The Works of Dionysius the Areopagite*, vol. 1 (London: James Parker, 1897), [public-domain working edition](https://ccel.org/ccel/dionysius/works/works.toc.html).
+- Pseudo-Dionysius, *Divine Names* V.1–8, on the superessential cause from whom beings receive existence; *Mystical Theology* I.1–3, on affirmation, negation, and unknowing. John Parker, trans., *The Works of Dionysius the Areopagite*, vol. 1 (London: James Parker, 1897), [public-domain working edition](https://ccel.org/ccel/dionysius/works/works.toc.html).
 
 ### Thomistic framework
 
--   St. Thomas Aquinas, *Summa theologiae* I, q. 2, a. 3 (the First Way); q. 3, a. 4, q. 4, a. 2, q. 6, aa. 1–2, q. 13, a. 5, q. 14, aa. 1 and 8, and q. 19, aa. 1, 3–4 (subsistent being, goodness, analogy, intellect, free will, and willing creatures without need); q. 20, aa. 1–2 (divine love and its causation of created goodness); q. 21, a. 1, especially ad 2–3, and a. 4, ad 4 (divine justice, derivative created dues, and creation without an antecedent creaturely claim); q. 32, a. 1 (Trinity not demonstrable by natural reason).
+- St. Thomas Aquinas, *Summa theologiae* I, q. 2, a. 3 (the First Way); q. 3, a. 4, q. 4, a. 2, q. 6, aa. 1–2, q. 13, a. 5, q. 14, aa. 1 and 8, and q. 19, aa. 1, 3–4 (subsistent being, goodness, analogy, intellect, free will, and willing creatures without need); q. 20, aa. 1–2 (divine love and its causation of created goodness); q. 21, a. 1, especially ad 2–3, and a. 4, ad 4 (divine justice, derivative created dues, and creation without an antecedent creaturely claim); q. 32, a. 1 (Trinity not demonstrable by natural reason).
 
--   Aquinas, *Summa theologiae* I, q. 13, a. 7 (Creator–creature relational asymmetry); q. 44, aa. 1 and 4, q. 45, aa. 1–3, 5, and q. 46, a. 2 (participated being, creation, its finality, and the temporal-beginning limit); q. 83, a. 1, ad 3, q. 104, aa. 1–2, and q. 105, aa. 4–5 (freedom, conservation, and secondary causes); I–II, q. 10, a. 4 and q. 79, a. 2 (divine motion without coercion and the defect of sin); II–II, q. 129, a. 3, ad 4, and q. 161, aa. 1–5 (magnanimity and humility).
+- Aquinas, *Summa theologiae* I, q. 13, a. 7 (Creator–creature relational asymmetry); q. 44, aa. 1 and 4, q. 45, aa. 1–3, 5, and q. 46, a. 2 (participated being, creation, its finality, and the temporal-beginning limit); q. 83, a. 1, ad 3, q. 104, aa. 1–2, and q. 105, aa. 4–5 (freedom, conservation, and secondary causes); I–II, q. 10, a. 4 and q. 79, a. 2 (divine motion without coercion and the defect of sin); II–II, q. 129, a. 3, ad 4, and q. 161, aa. 1–5 (magnanimity and humility).
 
--   Aquinas, *De ente et essentia*, ch. 4, on created essence and existence and the first cause whose essence is existence; *De potentia*, q. 3, a. 7 and q. 5, a. 1; *Summa contra Gentiles* I.13, II.15–21, and III.65–70, for the First Way, creation, conservation, and secondary causes.
+- Aquinas, *De ente et essentia*, ch. 4, on created essence and existence and the first cause whose essence is existence; *De potentia*, q. 3, a. 7 and q. 5, a. 1; *Summa contra Gentiles* I.13, II.15–21, and III.65–70, for the First Way, creation, conservation, and secondary causes.
 
--   Latin loci checked in the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html) Leonine-text corpus; the [New Advent Summa](https://www.newadvent.org/summa/) was used as a working public English index. Work, question, article, chapter, and reply take precedence over either site’s wording.
+- Latin loci checked in the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html) Leonine-text corpus; the [New Advent Summa](https://www.newadvent.org/summa/) was used as a working public English index. Work, question, article, chapter, and reply take precedence over either site’s wording.
 
 ### Later witnesses
 
--   René Descartes, *Meditations on First Philosophy*, Third Meditation, on present conservation and the conceptual distinction between preservation and creation in the respect argued; public-domain Elizabeth S. Haldane translation, [online witness](https://en.wikisource.org/wiki/Meditations_on_First_Philosophy/Meditation_III).
+- René Descartes, *Meditations on First Philosophy*, Third Meditation, on present conservation and the conceptual distinction between preservation and creation in the respect argued; public-domain Elizabeth S. Haldane translation, [online witness](https://en.wikisource.org/wiki/Meditations_on_First_Philosophy/Meditation_III).
 
--   C. S. Lewis, *Mere Christianity*, III.8, “The Great Sin,” on genuine humility as freedom from self-occupation. The point is paraphrased; no Lewis wording is reproduced. The common aphorism about “thinking of yourself less” is not attributed to Lewis; see the [C. S. Lewis Foundation attribution record](https://www.cslewis.org/aboutus/faq/quotes-misattributed/).
+- C. S. Lewis, *Mere Christianity*, III.8, “The Great Sin,” on genuine humility as freedom from self-occupation. The point is paraphrased; no Lewis wording is reproduced. The common aphorism about “thinking of yourself less” is not attributed to Lewis; see the [C. S. Lewis Foundation attribution record](https://www.cslewis.org/aboutus/faq/quotes-misattributed/).
 
 **Last revised (UTC):** 2026-07-23T13:29:33Z
 

@@ -202,13 +202,13 @@ It is worth stating plainly, because the term is regularly misused. A society of
 
 Three consequences follow that the reader should carry through the rest of this account.
 
--   **The members take no religious vows.** They are bound by the common obligations of clerics and by the bond their own constitutions establish. Nothing about the Fraternity is monastic.
+- **The members take no religious vows.** They are bound by the common obligations of clerics and by the bond their own constitutions establish. Nothing about the Fraternity is monastic.
 
--   **“Pontifical right” is a statement about the supervising authority, not about exemption.** Canon 593 subjects such a body immediately and exclusively to the Apostolic See in internal governance and discipline. Canon 738 § 2 subjects the members to the diocesan bishop “in those matters which regard public worship, the care of souls, and other works of the apostolate, with attention to cann. 679–683”—which is exactly the block of canons the erection decree names.
+- **“Pontifical right” is a statement about the supervising authority, not about exemption.** Canon 593 subjects such a body immediately and exclusively to the Apostolic See in internal governance and discipline. Canon 738 § 2 subjects the members to the diocesan bishop “in those matters which regard public worship, the care of souls, and other works of the apostolate, with attention to cann. 679–683”—which is exactly the block of canons the erection decree names.
 
--   **A house requires the diocesan bishop’s previous written consent** (canon 733 § 1), and once erected it carries the canon 611 rights the decree expressly invokes. The Fraternity’s growth is therefore, at every step, a series of episcopal consents, not a series of Roman grants.
+- **A house requires the diocesan bishop’s previous written consent** (canon 733 § 1), and once erected it carries the canon 611 rights the decree expressly invokes. The Fraternity’s growth is therefore, at every step, a series of episcopal consents, not a series of Roman grants.
 
--   **Clerics are incardinated in the society itself** unless the constitutions provide otherwise (canon 736 § 1). The Fraternity’s published statistics distinguish incardinated members from those incorporated *ad annum*, postulants and associates, and this account keeps those categories distinct wherever it reports numbers.
+- **Clerics are incardinated in the society itself** unless the constitutions provide otherwise (canon 736 § 1). The Fraternity’s published statistics distinguish incardinated members from those incorporated *ad annum*, postulants and associates, and this account keeps those categories distinct wherever it reports numbers.
 
 > **Act or witness:** Decree of erection, Pontifical Commission *Ecclesia Dei*, 18 October 1988, Prot. N. 234/88, ratified in the papal audience of the same day.
 >
@@ -379,19 +379,19 @@ The chapter’s public declaration of 14 July 2000 does not conceal its reaction
 
 The recourse itself, lodged at the Commission on 13 July 2000 and signed by the chapter’s moderator and secretary, Fathers Jean-Marc Fournier and Sven Conrad, is available in Italian and in French. Its argument is constitutional and it is the best statement of the Fraternity’s own case ever made public:[^41]
 
--   The Commission received in the rescript *Quia peculiare munus* of 18 October 1988, at n. 3, the faculty to erect the Fraternity “according to the particular marks of the Motu Proprio *Ecclesia Dei* n. 6 a, and not merely according to n. 1 of the said rescript, by which the use of the Roman Missal of 1962 is granted to priests.”
+- The Commission received in the rescript *Quia peculiare munus* of 18 October 1988, at n. 3, the faculty to erect the Fraternity “according to the particular marks of the Motu Proprio *Ecclesia Dei* n. 6 a, and not merely according to n. 1 of the said rescript, by which the use of the Roman Missal of 1962 is granted to priests.”
 
--   Therefore “the society did not receive an indult after its creation; it was constituted by reason of that very indult, in order to realize it communally.” All members entered freely a society founded for and by reason of the ancient rite, and thereby accepted, at least implicitly, to limit the use of their right to celebrate according to the Missal of common use.
+- Therefore “the society did not receive an indult after its creation; it was constituted by reason of that very indult, in order to realize it communally.” All members entered freely a society founded for and by reason of the ancient rite, and thereby accepted, at least implicitly, to limit the use of their right to celebrate according to the Missal of common use.
 
--   The dissensions arose not from personal quarrels but from a difference of option about that proper characteristic; introducing such a diversity among the members on a point so essential to their common spirituality “will fatally entail the feared disintegration, whoever the superior chosen.”
+- The dissensions arose not from personal quarrels but from a difference of option about that proper characteristic; introducing such a diversity among the members on a point so essential to their common spirituality “will fatally entail the feared disintegration, whoever the superior chosen.”
 
--   On term limits: constitution n. 19 does not leave the question open—it provides that the number of terms is not limited, deliberately so drafted by the founders in August 1988 and accepted by the Commission in October. A change would be accepted respectfully but cannot be retroactive.
+- On term limits: constitution n. 19 does not leave the question open—it provides that the number of terms is not limited, deliberately so drafted by the founders in August 1988 and accepted by the Commission in October. A change would be accepted respectfully but cannot be retroactive.
 
--   On the appointment: the 1991 precedent is distinguishable, because Cardinal Innocenti’s decision was taken before the chapter and did not remove the chapter’s right to vote.
+- On the appointment: the 1991 precedent is distinguishable, because Cardinal Innocenti’s decision was taken before the chapter and did not remove the chapter’s right to vote.
 
--   On the seminaries: no enquiry had been held at the American seminary, and the canonical visitation of Wigratzbad had underlined the seriousness and devotion of the teaching body.
+- On the seminaries: no enquiry had been held at the American seminary, and the canonical visitation of Wigratzbad had underlined the seriousness and devotion of the teaching body.
 
--   On the fifth point, the chapter accepts the Roman reading if “value” means validity or legitimacy—“it is evident that we adhere to it fully”—but asks the Commission to state the sense intended, since to hold the older liturgy of greater value in the ordinary French sense of the word is to use the right that canon 212 § 3 recognizes in every one of the faithful.
+- On the fifth point, the chapter accepts the Roman reading if “value” means validity or legitimacy—“it is evident that we adhere to it fully”—but asks the Commission to state the sense intended, since to hold the older liturgy of greater value in the ordinary French sense of the word is to use the right that canon 212 § 3 recognizes in every one of the faithful.
 
 The recourse ends by proposing, in the alternative, “a separation of the society into two institutes, close in their mission but each with its own proper characteristic, as has happened many times in the history of institutes of consecrated life.”
 
@@ -401,11 +401,11 @@ The Commission answered by decree, protocol 823/2000, dated 12 October 2000 and 
 
 It **rejects** points 1 to 3, giving reasons:
 
--   on term limits: the Commission had already asked for the change, following a recommendation of the Congregation for Religious concerning canon 624 §§ 1–2, and the provisional text had been clearly marked as requiring change in that sense before it could be approved by the Holy See;
+- on term limits: the Commission had already asked for the change, following a recommendation of the Congregation for Religious concerning canon 624 §§ 1–2, and the provisional text had been clearly marked as requiring change in that sense before it could be approved by the Holy See;
 
--   on the removal of the chapter’s electoral right “for this occasion”: it was motivated by a crisis recognized by all and by the contested composition of the chapter, which failed to “represent the whole institute” or to be “a true sign of unity in charity” (canon 631 § 1), and because the internal government of institutes falls to the competence of the Holy See (canon 593);
+- on the removal of the chapter’s electoral right “for this occasion”: it was motivated by a crisis recognized by all and by the contested composition of the chapter, which failed to “represent the whole institute” or to be “a true sign of unity in charity” (canon 631 § 1), and because the internal government of institutes falls to the competence of the Holy See (canon 593);
 
--   on the person appointed: “the authority to which it belongs to erect, modify and suppress offices is competent to provide for them” (canon 148), and the objections raised against the choice of a determinate person “are not canonical.”
+- on the person appointed: “the authority to which it belongs to erect, modify and suppress offices is competent to provide for them” (canon 148), and the objections raised against the choice of a determinate person “are not canonical.”
 
 It **accepts** points 4 and 5: the recourse against the decision on the seminaries has become moot, the new superior having in fact had the opportunity to choose the superiors of the houses of formation; and the fifth request concerns an expression that requires proper interpretation.
 
@@ -685,15 +685,15 @@ That argument is serious and this account does not dismiss it. Two things can be
 
 The judgment above is falsifiable, and the following findings would falsify or substantially revise it.
 
--   **An act altering the erection or the object.** A decree of the Dicastery for Institutes of Consecrated Life and Societies of Apostolic Life amending article 8 of the constitutions, or imposing liturgical norms on the institute’s own houses, or suppressing or amalgamating the Fraternity, would show that the erection is not the stable tier and that the distinction drawn here is a distinction without a difference.
+- **An act altering the erection or the object.** A decree of the Dicastery for Institutes of Consecrated Life and Societies of Apostolic Life amending article 8 of the constitutions, or imposing liturgical norms on the institute’s own houses, or suppressing or amalgamating the Fraternity, would show that the erection is not the stable tier and that the distinction drawn here is a distinction without a difference.
 
--   **An express revocation or limitation of the 2022 faculty** without any accompanying change to the constitution would confirm the counterargument’s central claim—that the operative protection was always the discretionary grant—and would reduce the constitutional tier to a formality.
+- **An express revocation or limitation of the 2022 faculty** without any accompanying change to the constitution would confirm the counterargument’s central claim—that the operative protection was always the discretionary grant—and would reduce the constitutional tier to a formality.
 
--   **Publication of the decree of 11 February 2022 in *Acta Apostolicae Sedis*, or of an authentic interpretation of its final clause**, would settle in the other direction the question this account leaves open, especially if the *suadet* clause were restated in preceptive form or the decree were declared to derogate from *Traditionis custodes* art. 8.
+- **Publication of the decree of 11 February 2022 in *Acta Apostolicae Sedis*, or of an authentic interpretation of its final clause**, would settle in the other direction the question this account leaves open, especially if the *suadet* clause were restated in preceptive form or the decree were declared to derogate from *Traditionis custodes* art. 8.
 
--   **The unpublished text of *Notitiae* 35 (1999) 307–309**, or of the Commission’s letter of 13 July 1999, or of the constitutions beyond article 15, could change the account of 1999–2000 in ways this study cannot anticipate; the reading offered here rests on French, German and Italian texts of Roman acts published by interested parties, and a divergence between those and the originals would require it to be redone.
+- **The unpublished text of *Notitiae* 35 (1999) 307–309**, or of the Commission’s letter of 13 July 1999, or of the constitutions beyond article 15, could change the account of 1999–2000 in ways this study cannot anticipate; the reading offered here rests on French, German and Italian texts of Roman acts published by interested parties, and a divergence between those and the originals would require it to be redone.
 
--   **A concluded apostolic visitation** whose published outcome either reaffirmed the erection and the 2022 faculty, or restructured the institute, would resolve at a stroke the question this account must leave open at its cutoff.
+- **A concluded apostolic visitation** whose published outcome either reaffirmed the erection and the 2022 faculty, or restructured the institute, would resolve at a stroke the question this account must leave open at its cutoff.
 
 ## The Present Situation, Stated as the Acts State It
 
@@ -711,13 +711,13 @@ The dicastery competent for the Fraternity is the Dicastery for Institutes of Co
 
 ### Liturgical position
 
--   By the decree of Francis of 11 February 2022, each and every member holds the faculty to celebrate Mass, the sacraments and other sacred rites and to fulfil the Divine Office according to the typical editions of the Missal, Ritual, Pontifical and Roman Breviary in force in 1962.
+- By the decree of Francis of 11 February 2022, each and every member holds the faculty to celebrate Mass, the sacraments and other sacred rites and to fulfil the Divine Office according to the typical editions of the Missal, Ritual, Pontifical and Roman Breviary in force in 1962.
 
--   That faculty operates by itself in the Fraternity’s own churches and oratories; elsewhere it may be used only with the consent of the local Ordinary, private Masses excepted.
+- That faculty operates by itself in the Fraternity’s own churches and oratories; elsewhere it may be used only with the consent of the local Ordinary, private Masses excepted.
 
--   The decree adds, the foregoing being duly observed, that the Holy Father “also advises that careful thought be given, as far as can be done,” to the provisions of *Traditionis custodes*. That clause is hortatory in its verb and is not stated as a condition of the grant.
+- The decree adds, the foregoing being duly observed, that the Holy Father “also advises that careful thought be given, as far as can be done,” to the provisions of *Traditionis custodes*. That clause is hortatory in its verb and is not stated as a condition of the grant.
 
--   The general law remains *Traditionis custodes*: the reformed books are the unique expression of the *lex orandi* of the Roman Rite (art. 1); authorizing the 1962 Missal in a diocese is the exclusive competence of its bishop according to the guidelines of the Apostolic See (art. 2); the use of a parish church, the erection of a personal parish, and permission for priests ordained after 16 July 2021 are dispensations reserved in a special way to the Apostolic See (rescript of 20 February 2023); and a diocesan bishop may permit the 1952 Ritual only to canonically erected personal parishes and may not permit the pre-conciliar Pontifical (*Responsa* of 4 December 2021).
+- The general law remains *Traditionis custodes*: the reformed books are the unique expression of the *lex orandi* of the Roman Rite (art. 1); authorizing the 1962 Missal in a diocese is the exclusive competence of its bishop according to the guidelines of the Apostolic See (art. 2); the use of a parish church, the erection of a personal parish, and permission for priests ordained after 16 July 2021 are dispensations reserved in a special way to the Apostolic See (rescript of 20 February 2023); and a diocesan bishop may permit the 1952 Ritual only to canonically erected personal parishes and may not permit the pre-conciliar Pontifical (*Responsa* of 4 December 2021).
 
 ### Government and scale, as the institute reports them
 
@@ -725,17 +725,17 @@ The superior general is Father John Berg, elected on 9 July 2024 by the seventh 
 
 ### What the acts do not say
 
--   They do not say that *Traditionis custodes* does not bind the Fraternity. The proposition is reported by the Fraternity as something said in a private audience on 4 February 2022; the decree of 11 February 2022 does not state it, and no located act states it.
+- They do not say that *Traditionis custodes* does not bind the Fraternity. The proposition is reported by the Fraternity as something said in a private audience on 4 February 2022; the decree of 11 February 2022 does not state it, and no located act states it.
 
--   They do not say whether art. 8 of *Traditionis custodes* abrogated the liturgical concessions of 10 September and 18 October 1988. The 2022 decree re-grants the substance of the first without deciding the question, and says nothing about the second’s extension to guests and to non-member priests ministering in the Fraternity’s churches.
+- They do not say whether art. 8 of *Traditionis custodes* abrogated the liturgical concessions of 10 September and 18 October 1988. The 2022 decree re-grants the substance of the first without deciding the question, and says nothing about the second’s extension to guests and to non-member priests ministering in the Fraternity’s churches.
 
--   They do not resolve the relation between the 2022 faculty and art. 4 of *Traditionis custodes* on priests ordained after 16 July 2021.
+- They do not resolve the relation between the 2022 faculty and art. 4 of *Traditionis custodes* on priests ordained after 16 July 2021.
 
--   They do not state a term for the 2022 faculty, provide for its review, or promulgate it in *Acta Apostolicae Sedis*. Absence of a term is not an assurance of perpetuity.
+- They do not state a term for the 2022 faculty, provide for its review, or promulgate it in *Acta Apostolicae Sedis*. Absence of a term is not an assurance of perpetuity.
 
--   They do not say what the apostolic visitation opened in September 2024 has found. No report, decree or communiqué concluding it had been published by the Holy See or by the Fraternity at the cutoff.
+- They do not say what the apostolic visitation opened in September 2024 has found. No report, decree or communiqué concluding it had been published by the Holy See or by the Fraternity at the cutoff.
 
--   They do not settle whether the exclusive use of the 1962 books may be required of the Fraternity’s own members. The letter of 29 June 2000 says it may not be made the general rule of an institute; the decree of 11 February 2022 grants a faculty and imposes nothing; the published constitutions require “faithful observance” and do not use the word “exclusive.”
+- They do not settle whether the exclusive use of the 1962 books may be required of the Fraternity’s own members. The letter of 29 June 2000 says it may not be made the general rule of an institute; the decree of 11 February 2022 grants a faculty and imposes nothing; the published constitutions require “faithful observance” and do not use the word “exclusive.”
 
 > **Act or witness:** The acts in force at 25 July 2026: the erection decree of 18 October 1988 with the rescript *Quia peculiare munus*; the constitutions definitively approved 29 June 2003; *Traditionis custodes* of 16 July 2021 with the *Responsa* of 4 December 2021 and the rescript of 20 February 2023; and the papal decree of 11 February 2022.
 >
@@ -869,81 +869,81 @@ All sources were read on 2026-07-25; the exact bytes registered in this reposito
 
 ### Acts printed in *Acta Apostolicae Sedis*
 
--   Pontifical Commission *Ecclesia Dei*, *Rescriptum ex audientia Ss.mi quo Cardinali Praesidi Pontificiae Commissionis “Ecclesia Dei” speciales tribuuntur facultates, foras datur*, incipit *Quia peculiare munus*, audience of 18 October 1988, AAS 82 (1990) 533–534 (fascicle 5, 3 May 1990); Prot. N. 283/88; signed Augustinus card. Mayer, president. Read in the scanned volume.
+- Pontifical Commission *Ecclesia Dei*, *Rescriptum ex audientia Ss.mi quo Cardinali Praesidi Pontificiae Commissionis “Ecclesia Dei” speciales tribuuntur facultates, foras datur*, incipit *Quia peculiare munus*, audience of 18 October 1988, AAS 82 (1990) 533–534 (fascicle 5, 3 May 1990); Prot. N. 283/88; signed Augustinus card. Mayer, president. Read in the scanned volume.
 
--   Gazette loci taken from the canonical literature and not independently checked in the scanned volumes for this account: *Ecclesia Dei*, AAS 80 (1988) 1495–1498; *Summorum Pontificum*, AAS 99 (2007) 777–781; *Universae Ecclesiae*, AAS 103 (2011) 413–420; *Traditionis custodes*, AAS 113 (2021) 793–796. The Holy See’s whole-volume archive does not carry the 2011 or 2021 volumes, and the 1988 and 2007 loci are established in the companion volume of this series.
+- Gazette loci taken from the canonical literature and not independently checked in the scanned volumes for this account: *Ecclesia Dei*, AAS 80 (1988) 1495–1498; *Summorum Pontificum*, AAS 99 (2007) 777–781; *Universae Ecclesiae*, AAS 103 (2011) 413–420; *Traditionis custodes*, AAS 113 (2021) 793–796. The Holy See’s whole-volume archive does not carry the 2011 or 2021 volumes, and the 1988 and 2007 loci are established in the companion volume of this series.
 
--   A lead not pursued: the canonical literature gives the decree *Dominus Marcellus Lefebvre* of 1 July 1988, which was never printed in the gazette, a locus in the canonical periodical *Apollinaris* 61, 550–551. That periodical was not reached, and this account asserts nothing about the decree.
+- A lead not pursued: the canonical literature gives the decree *Dominus Marcellus Lefebvre* of 1 July 1988, which was never printed in the gazette, a locus in the canonical periodical *Apollinaris* 61, 550–551. That periodical was not reached, and this account asserts nothing about the decree.
 
 ### Official Holy See texts on vatican.va and in the press bulletin
 
--   John Paul II, motu proprio *Ecclesia Dei*, 2 July 1988 (English), <https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html>.
+- John Paul II, motu proprio *Ecclesia Dei*, 2 July 1988 (English), <https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html>.
 
--   Benedict XVI, motu proprio *Summorum Pontificum*, 7 July 2007 (English), <https://www.vatican.va/content/benedict-xvi/en/motu_proprio/documents/hf_ben-xvi_motu-proprio_20070707_summorum-pontificum.html>.
+- Benedict XVI, motu proprio *Summorum Pontificum*, 7 July 2007 (English), <https://www.vatican.va/content/benedict-xvi/en/motu_proprio/documents/hf_ben-xvi_motu-proprio_20070707_summorum-pontificum.html>.
 
--   Congregation for the Doctrine of the Faith—Pontifical Commission *Ecclesia Dei*, instruction *Universae Ecclesiae*, 30 April 2011 (English), <https://www.vatican.va/roman_curia/pontifical_commissions/ecclsdei/documents/rc_com_ecclsdei_doc_20110430_istr-universae-ecclesiae_en.html>.
+- Congregation for the Doctrine of the Faith—Pontifical Commission *Ecclesia Dei*, instruction *Universae Ecclesiae*, 30 April 2011 (English), <https://www.vatican.va/roman_curia/pontifical_commissions/ecclsdei/documents/rc_com_ecclsdei_doc_20110430_istr-universae-ecclesiae_en.html>.
 
--   Francis, apostolic letter given motu proprio on the Pontifical Commission *Ecclesia Dei*, 17 January 2019 (English), <https://www.vatican.va/content/francesco/en/motu_proprio/documents/papa-francesco-motu-proprio-20190117_ecclesia-dei.html>.
+- Francis, apostolic letter given motu proprio on the Pontifical Commission *Ecclesia Dei*, 17 January 2019 (English), <https://www.vatican.va/content/francesco/en/motu_proprio/documents/papa-francesco-motu-proprio-20190117_ecclesia-dei.html>.
 
--   Francis, apostolic letter given motu proprio *Traditionis custodes*, 16 July 2021 (English), <https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html>.
+- Francis, apostolic letter given motu proprio *Traditionis custodes*, 16 July 2021 (English), <https://www.vatican.va/content/francesco/en/motu_proprio/documents/20210716-motu-proprio-traditionis-custodes.html>.
 
--   Congregation for Divine Worship and the Discipline of the Sacraments, *Responsa ad dubia* on certain provisions of *Traditionis custodes*, 4 December 2021 (English), <https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html>.
+- Congregation for Divine Worship and the Discipline of the Sacraments, *Responsa ad dubia* on certain provisions of *Traditionis custodes*, 4 December 2021 (English), <https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html>.
 
--   Dicastery for Divine Worship and the Discipline of the Sacraments, *Rescriptum ex audientia Ss.mi*, 20 February 2023 (English), <https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20230220_rescriptum-traditioniscustodes_en.html>.
+- Dicastery for Divine Worship and the Discipline of the Sacraments, *Rescriptum ex audientia Ss.mi*, 20 February 2023 (English), <https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20230220_rescriptum-traditioniscustodes_en.html>.
 
--   Dicastery for the Doctrine of the Faith, *Decreto* and *Nota Esplicativa*, Prot. N. 99/2009, 2 July 2026, Holy See Press Office bulletin B0568, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/07/02/0568/01077.html> and <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/07/02/0568/01078.html>.
+- Dicastery for the Doctrine of the Faith, *Decreto* and *Nota Esplicativa*, Prot. N. 99/2009, 2 July 2026, Holy See Press Office bulletin B0568, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/07/02/0568/01077.html> and <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/07/02/0568/01078.html>.
 
 ### Canonical texts
 
--   *Codex Iuris Canonici* (1983), Book II, Latin: <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberII_la.html>; English page for cann. 731–746: <https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann731-746_en.html>. Registered in this repository’s source library as `work.catholic-church.codex-iuris-canonici-1983`.
+- *Codex Iuris Canonici* (1983), Book II, Latin: <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberII_la.html>; English page for cann. 731–746: <https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann731-746_en.html>. Registered in this repository’s source library as `work.catholic-church.codex-iuris-canonici-1983`.
 
 ### Documents published by the Priestly Fraternity of Saint Peter (interested party)
 
--   “Declaration of intention by the founders,” 2 July 1988, <https://www.fssp.org/en/declaration-of-intention-by-the-founders/>; “Act of Foundation,” 18 July 1988, <https://www.fssp.org/en/act-of-foundation/>; “Declaration of the Ecclesia Dei Commission,” 22 July 1988, <https://www.fssp.org/en/declaration-of-the-ecclesia-dei-commission/>; “Decree of the Ecclesia Dei Commission concerning the liturgical books of 1962,” 10 September 1988, <https://www.fssp.org/en/decree-of-the-ecclesia-dei-commission-on-the-liturgical-books-of-1962/>; “Decree erecting the Priestly Fraternity of Saint Peter,” 18 October 1988, <https://www.fssp.org/en/decree-erecting-the-priestly-fraternity-of-saint-peter/>.
+- “Declaration of intention by the founders,” 2 July 1988, <https://www.fssp.org/en/declaration-of-intention-by-the-founders/>; “Act of Foundation,” 18 July 1988, <https://www.fssp.org/en/act-of-foundation/>; “Declaration of the Ecclesia Dei Commission,” 22 July 1988, <https://www.fssp.org/en/declaration-of-the-ecclesia-dei-commission/>; “Decree of the Ecclesia Dei Commission concerning the liturgical books of 1962,” 10 September 1988, <https://www.fssp.org/en/decree-of-the-ecclesia-dei-commission-on-the-liturgical-books-of-1962/>; “Decree erecting the Priestly Fraternity of Saint Peter,” 18 October 1988, <https://www.fssp.org/en/decree-erecting-the-priestly-fraternity-of-saint-peter/>.
 
--   “Excerpt of the Constitutions of the Priestly Fraternity of Saint Peter,” 29 June 2003, <https://www.fssp.org/en/excerpt-of-the-constitutions-of-the-priestly-fraternity-of-saint-peter/>.
+- “Excerpt of the Constitutions of the Priestly Fraternity of Saint Peter,” 29 June 2003, <https://www.fssp.org/en/excerpt-of-the-constitutions-of-the-priestly-fraternity-of-saint-peter/>.
 
--   “Decree of Pope Francis confirming the use of the 1962 liturgical books,” 11 February 2022, English at <https://www.fssp.org/en/decree-of-pope-francis-confirming-the-use-of-the-1962-liturgical-books/>, Latin with English at <https://fssp.com/decree/>.
+- “Decree of Pope Francis confirming the use of the 1962 liturgical books,” 11 February 2022, English at <https://www.fssp.org/en/decree-of-pope-francis-confirming-the-use-of-the-1962-liturgical-books/>, Latin with English at <https://fssp.com/decree/>.
 
--   “Protocol between the Holy See and the Priestly Society of St. Pius X,” 5 May 1988, <https://www.fssp.org/en/protocol-between-the-holy-see-and-the-priestly-society-of-st-pius-x/>; “Conference of Cardinal Ratzinger on the 10th anniversary of the Motu proprio Ecclesia Dei,” 24 October 1998, <https://www.fssp.org/en/conference-of-cardinal-ratzinger-on-the-10th-anniversary-of-the-motu-proprio-ecclesia-dei/>.
+- “Protocol between the Holy See and the Priestly Society of St. Pius X,” 5 May 1988, <https://www.fssp.org/en/protocol-between-the-holy-see-and-the-priestly-society-of-st-pius-x/>; “Conference of Cardinal Ratzinger on the 10th anniversary of the Motu proprio Ecclesia Dei,” 24 October 1998, <https://www.fssp.org/en/conference-of-cardinal-ratzinger-on-the-10th-anniversary-of-the-motu-proprio-ecclesia-dei/>.
 
--   Communiqués: “Official communiqué following the publication of Traditionis Custodes,” 20 July 2021, <https://www.fssp.org/en/official-communique-following-the-publication-of-the-motu-proprio-traditionis-custodes/>; “Official communiqué of the Priestly Fraternity of St. Peter,” 21 February 2022, <https://www.fssp.org/en/official-communique-of-the-priestly-fraternity-of-st-peter/>; “Audience with Pope Francis,” 1 March 2024, <https://www.fssp.org/en/audience-with-pope-francis/>; “Apostolic visitation of the Fraternity,” 27 September 2024, <https://www.fssp.org/en/apostolic-visitation-of-the-fraternity/>; “Audience with Pope Leo XIV,” 20 January 2026, <https://www.fssp.org/en/audience-with-pope-leo-xiv/>.
+- Communiqués: “Official communiqué following the publication of Traditionis Custodes,” 20 July 2021, <https://www.fssp.org/en/official-communique-following-the-publication-of-the-motu-proprio-traditionis-custodes/>; “Official communiqué of the Priestly Fraternity of St. Peter,” 21 February 2022, <https://www.fssp.org/en/official-communique-of-the-priestly-fraternity-of-st-peter/>; “Audience with Pope Francis,” 1 March 2024, <https://www.fssp.org/en/audience-with-pope-francis/>; “Apostolic visitation of the Fraternity,” 27 September 2024, <https://www.fssp.org/en/apostolic-visitation-of-the-fraternity/>; “Audience with Pope Leo XIV,” 20 January 2026, <https://www.fssp.org/en/audience-with-pope-leo-xiv/>.
 
--   Government and scale: “Election of the Superior General of the Fraternity,” 11 July 2024, and “Closing of the General Chapter and nominations,” 18 July 2024; “A new Superior General for the Fraternity,” 10 July 2018; “Appointments and new structures within the FSSP,” 27 May 2021; the “Organization chart” and “Figures” pages, <https://www.fssp.org/en/presentation-2/organization-chart/> and <https://www.fssp.org/en/presentation-2/figures/>; and the annual “Statistics update” pages for 1 November 2017, 2019, 2021, 2023, 2024 and 2025.
+- Government and scale: “Election of the Superior General of the Fraternity,” 11 July 2024, and “Closing of the General Chapter and nominations,” 18 July 2024; “A new Superior General for the Fraternity,” 10 July 2018; “Appointments and new structures within the FSSP,” 27 May 2021; the “Organization chart” and “Figures” pages, <https://www.fssp.org/en/presentation-2/organization-chart/> and <https://www.fssp.org/en/presentation-2/figures/>; and the annual “Statistics update” pages for 1 November 2017, 2019, 2021, 2023, 2024 and 2025.
 
--   Seminaries: “The Seminary of Wigratzbad (Germany)” and “The Seminary of Denton (USA),” <https://www.fssp.org/en/our-seminaries/>.
+- Seminaries: “The Seminary of Wigratzbad (Germany)” and “The Seminary of Denton (USA),” <https://www.fssp.org/en/our-seminaries/>.
 
--   Josef Bisig, “Les origines de la Fraternité Saint-Pierre: le témoignage d’un fondateur,” *Tu es Petrus* 33 (2022) 36–43, reproduced at <https://claves.org/les-origines-de-la-fraternite-saint-pierre/>.
+- Josef Bisig, “Les origines de la Fraternité Saint-Pierre: le témoignage d’un fondateur,” *Tu es Petrus* 33 (2022) 36–43, reproduced at <https://claves.org/les-origines-de-la-fraternite-saint-pierre/>.
 
 ### Roman acts of 1999–2000 read in unofficial renderings hosted by interested third parties
 
--   Archive of the Association A.M.D.G., “Situation à la Fraternité Saint Pierre 1999–2001,” <http://www.amdg.asso.fr/archives/situation_fssp.htm>, with its constituent documents: “Données sur la crise” (<http://www.amdg.asso.fr/archives/donnees_crise.htm>); the recourse of sixteen priests of 29 June 1999 (<http://www.amdg.asso.fr/archives/recours_16.htm>); the responses Prot. 1411/99 of 3 July 1999 (<http://www.amdg.asso.fr/archives/protocole_1411.htm>); the “Éclaircissements” attributed to Monsignor Perl, November 1999 (<http://www.amdg.asso.fr/archives/eclaircissements.htm>); the Fraternity’s communiqué of 12 February 2000 (<http://www.amdg.asso.fr/archives/com_fssp_1302.htm>); the letter of Cardinal Castrillón Hoyos of 29 June 2000 in unofficial French (<http://www.amdg.asso.fr/archives/lettre_cardinal_castrillon.htm>); the chapter declaration of 14 July 2000 (<http://www.amdg.asso.fr/archives/com_chapitre_1407.htm>); the chapter’s recourse (<http://www.amdg.asso.fr/archives/recours_chap.htm>); and the decree 823/2000 of 12 October 2000 (<http://www.amdg.asso.fr/archives/rep_recours_chap.htm>).
+- Archive of the Association A.M.D.G., “Situation à la Fraternité Saint Pierre 1999–2001,” <http://www.amdg.asso.fr/archives/situation_fssp.htm>, with its constituent documents: “Données sur la crise” (<http://www.amdg.asso.fr/archives/donnees_crise.htm>); the recourse of sixteen priests of 29 June 1999 (<http://www.amdg.asso.fr/archives/recours_16.htm>); the responses Prot. 1411/99 of 3 July 1999 (<http://www.amdg.asso.fr/archives/protocole_1411.htm>); the “Éclaircissements” attributed to Monsignor Perl, November 1999 (<http://www.amdg.asso.fr/archives/eclaircissements.htm>); the Fraternity’s communiqué of 12 February 2000 (<http://www.amdg.asso.fr/archives/com_fssp_1302.htm>); the letter of Cardinal Castrillón Hoyos of 29 June 2000 in unofficial French (<http://www.amdg.asso.fr/archives/lettre_cardinal_castrillon.htm>); the chapter declaration of 14 July 2000 (<http://www.amdg.asso.fr/archives/com_chapitre_1407.htm>); the chapter’s recourse (<http://www.amdg.asso.fr/archives/recours_chap.htm>); and the decree 823/2000 of 12 October 2000 (<http://www.amdg.asso.fr/archives/rep_recours_chap.htm>).
 
--   Una Voce Italia archive: the letter of 29 June 2000 in German with Italian and French renderings, <http://www.unavox.it/doc18.htm>; the chapter’s recourse in Italian, <http://www.unavox.it/doc30.htm>.
+- Una Voce Italia archive: the letter of 29 June 2000 in German with Italian and French renderings, <http://www.unavox.it/doc18.htm>; the chapter’s recourse in Italian, <http://www.unavox.it/doc30.htm>.
 
--   District of France of the Society of Saint Pius X, “Lettre de l’abbé Bisig aux membres de la Fraternité Saint-Pierre—30 août 1999,” <https://laportelatine.org/formation/crise-eglise/rapports-rome-fsspx/lettre-de-labbe-bisig-aux-membres-de-la-fraternite-saint-pierre-30-aout-1999>.
+- District of France of the Society of Saint Pius X, “Lettre de l’abbé Bisig aux membres de la Fraternité Saint-Pierre—30 août 1999,” <https://laportelatine.org/formation/crise-eglise/rapports-rome-fsspx/lettre-de-labbe-bisig-aux-membres-de-la-fraternite-saint-pierre-30-aout-1999>.
 
 ### Canonical scholarship
 
--   Dawid Pietras, FSSP, “The Rightful Autonomy of the Priestly Fraternity of Saint Peter (can. 586, 732 CIC/83) (Part I),” *Prawo Kanoniczne* 69/1 (2026) 165–186, DOI 10.21697/pk.2026.69.1.07, open access under CC BY-ND 4.0, <https://czasopisma.uksw.edu.pl/pk/article/view/15902>. The author is a priest of the Fraternity and an official of the ecclesiastical court of Gorzów Wielkopolski; his institutional position is stated wherever he is used. A second part of the study, on the period of *Summorum Pontificum* and *Traditionis custodes*, is announced in the article and had not appeared when this account was written.
+- Dawid Pietras, FSSP, “The Rightful Autonomy of the Priestly Fraternity of Saint Peter (can. 586, 732 CIC/83) (Part I),” *Prawo Kanoniczne* 69/1 (2026) 165–186, DOI 10.21697/pk.2026.69.1.07, open access under CC BY-ND 4.0, <https://czasopisma.uksw.edu.pl/pk/article/view/15902>. The author is a priest of the Fraternity and an official of the ecclesiastical court of Gorzów Wielkopolski; his institutional position is stated wherever he is used. A second part of the study, on the period of *Summorum Pontificum* and *Traditionis custodes*, is announced in the article and had not appeared when this account was written.
 
 ### Reporting used at one remove
 
--   “Vatican announces apostolic visit to Priestly Fraternity of St. Peter,” Catholic News Agency, carried by the *National Catholic Register*, 1 October 2024, <https://www.ncregister.com/cna/vatican-announces-apostolic-visit-to-priestly-fraternity-of-st-peter>, used only for its quotations of the dicastery’s statement of 30 September 2024, which was not located in any Holy See channel.
+- “Vatican announces apostolic visit to Priestly Fraternity of St. Peter,” Catholic News Agency, carried by the *National Catholic Register*, 1 October 2024, <https://www.ncregister.com/cna/vatican-announces-apostolic-visit-to-priestly-fraternity-of-st-peter>, used only for its quotations of the dicastery’s statement of 30 September 2024, which was not located in any Holy See channel.
 
 ### Consequential negative results
 
--   No text of the protocol of 5 May 1988, of the decree of 10 September 1988, of the decree of erection of 18 October 1988, of the constitutions of 1988 or 2003 beyond the published excerpt, of the rescript of 24 March 1996, of the responses of 3 July 1999, of the Commission’s letter of 13 July 1999, of the letter of 29 June 2000, of the decree of 12 October 2000, or of the papal decree of 11 February 2022 was located in *Acta Apostolicae Sedis*, on vatican.va, or in the Holy See Press Office bulletin.
+- No text of the protocol of 5 May 1988, of the decree of 10 September 1988, of the decree of erection of 18 October 1988, of the constitutions of 1988 or 2003 beyond the published excerpt, of the rescript of 24 March 1996, of the responses of 3 July 1999, of the Commission’s letter of 13 July 1999, of the letter of 29 June 2000, of the decree of 12 October 2000, or of the papal decree of 11 February 2022 was located in *Acta Apostolicae Sedis*, on vatican.va, or in the Holy See Press Office bulletin.
 
--   *Notitiae* 35 (1999) 307–309, the printed locus of the 1999 responses, and *Archiv für katholisches Kirchenrecht* 157, the printed locus of the erection decree’s Latin, were not obtained; both are used only as cited by the canonical literature, which quotes the Latin of the second.
+- *Notitiae* 35 (1999) 307–309, the printed locus of the 1999 responses, and *Archiv für katholisches Kirchenrecht* 157, the printed locus of the erection decree’s Latin, were not obtained; both are used only as cited by the canonical literature, which quotes the Latin of the second.
 
--   John Paul II’s address of 26 October 1998 was not located on vatican.va or in *Acta Apostolicae Sedis*; it is used only as quoted in French by the canonical literature from *L’Osservatore Romano*.
+- John Paul II’s address of 26 October 1998 was not located on vatican.va or in *Acta Apostolicae Sedis*; it is used only as quoted in French by the canonical literature from *L’Osservatore Romano*.
 
--   No report, decree or communiqué concluding the apostolic visitation opened in September 2024 was located through 25 July 2026, in either the Holy See’s channels or the Fraternity’s.
+- No report, decree or communiqué concluding the apostolic visitation opened in September 2024 was located through 25 July 2026, in either the Holy See’s channels or the Fraternity’s.
 
--   The Fraternity’s English, French and German news feeds carry no item later than 16 February 2026, and therefore no communiqué on the episcopal consecrations of 1 July 2026 or on the acts of 2 July 2026.
+- The Fraternity’s English, French and German news feeds carry no item later than 16 February 2026, and therefore no communiqué on the episcopal consecrations of 1 July 2026 or on the acts of 2 July 2026.
 
--   Not searched, and recorded as limits: the diocesan archives of Augsburg, Scranton and Lincoln; the archives of the Dicastery for Institutes of Consecrated Life and Societies of Apostolic Life; the Fraternity’s *Vademecum*, *Ordo administrativus* and internal directories; *Notitiae*, *Communicationes*, *Apollinaris* and *Archiv für katholisches Kirchenrecht* in print; *La Documentation Catholique* 85 (1988); Philippe Levillain, *Rome n’est plus dans Rome* (2010); and the French, German and Italian monographic literature on the *Ecclesia Dei* communities.
+- Not searched, and recorded as limits: the diocesan archives of Augsburg, Scranton and Lincoln; the archives of the Dicastery for Institutes of Consecrated Life and Societies of Apostolic Life; the Fraternity’s *Vademecum*, *Ordo administrativus* and internal directories; *Notitiae*, *Communicationes*, *Apollinaris* and *Archiv für katholisches Kirchenrecht* in print; *La Documentation Catholique* 85 (1988); Philippe Levillain, *Rome n’est plus dans Rome* (2010); and the French, German and Italian monographic literature on the *Ecclesia Dei* communities.
 
 **Last revised (UTC):** 2026-07-26T00:41:32Z
 

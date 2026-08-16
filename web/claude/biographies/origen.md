@@ -144,9 +144,9 @@ Second: a separate series of fifteen anathemas against Origen circulates with th
 
 The resulting question—*was Origen himself condemned by an ecumenical council?*—has been argued for four centuries and is genuinely unresolved:
 
--   The older Catholic critical position, classically stated in Ferdinand Prat’s 1911 survey: “Were Origen and Origenism anathematized? Many learned writers believe so; an equal number deny that they were condemned; most modern authorities are either undecided or reply with reservations.” On this view the council was convoked exclusively for the Three Chapters; the fifteen anathemas belong to a pre-conciliar session whose acts the popes who confirmed the council never mention; papal confirmation covered the Three Chapters acts alone; and “it is easy to understand how this extra-conciliary sentence was mistaken at a later period for a decree of the actual ecumenical council.”
+- The older Catholic critical position, classically stated in Ferdinand Prat’s 1911 survey: “Were Origen and Origenism anathematized? Many learned writers believe so; an equal number deny that they were condemned; most modern authorities are either undecided or reply with reservations.” On this view the council was convoked exclusively for the Three Chapters; the fifteen anathemas belong to a pre-conciliar session whose acts the popes who confirmed the council never mention; papal confirmation covered the Three Chapters acts alone; and “it is easy to understand how this extra-conciliary sentence was mistaken at a later period for a decree of the actual ecumenical council.”
 
--   The contrary position, argued in recent scholarship (notably by Richard Price in his edition of the acts), takes anathema 11 at its word: the name is genuine, the council knowingly ratified the existing condemnation of Origen, and the distinction between “the council proper” and the emperor’s pre-conciliar process meant little to the sixth century, which promptly received the fifteen anathemas as conciliar. Later councils read 553 this way: the definition of Constantinople III (681) already describes “the Fifth holy Synod” as assembled “against Theodore of Mopsuestia, Origen, Didymus, and Evagrius” (Constantinople III, *Exposition of Faith*).
+- The contrary position, argued in recent scholarship (notably by Richard Price in his edition of the acts), takes anathema 11 at its word: the name is genuine, the council knowingly ratified the existing condemnation of Origen, and the distinction between “the council proper” and the emperor’s pre-conciliar process meant little to the sixth century, which promptly received the fifteen anathemas as conciliar. Later councils read 553 this way: the definition of Constantinople III (681) already describes “the Fifth holy Synod” as assembled “against Theodore of Mopsuestia, Origen, Didymus, and Evagrius” (Constantinople III, *Exposition of Faith*).
 
 > What is certain: Origen was anathematized by name by Justinian’s synodically adopted edict of 543, with papal assent; his name stands among condemned heretics in anathema 11 of Constantinople II; and the fifteen anathemas of 553 target theses of sixth-century Origenism, were subscribed by the gathered bishops, and do not appear in the council’s acts. What is disputed: whether anathema 11’s list, or the pre-conciliar fifteen, constitute a personal ecumenical-conciliar condemnation of the third-century Origen and his actual teaching. This study affirms the certainties, reports both readings of the disputed point, and decides nothing the sources do not decide. No judgment is offered on Origen’s eternal state, on the doctrinal correctness of the condemned propositions, or on the Church’s authority to have issued the condemnations.
 
@@ -248,47 +248,47 @@ All web sources were accessed and checked on 2026-07-24. Ancient-work citations 
 
 ### Primary sources: Origen
 
--   Origen, works in English translation: *The Ante-Nicene Fathers*, vol. 4, ed. A. Roberts, J. Donaldson, A. C. Coxe (Buffalo: Christian Literature Publishing Co., 1885), trans. F. Crombie. Quotations follow the transcriptions at New Advent: *On First Principles*, preface and book 1 (<https://www.newadvent.org/fathers/04120.htm>, <https://www.newadvent.org/fathers/04121.htm>), with Rufinus’s translator’s preface as printed in NPNF series 2, vol. 3 (<https://www.newadvent.org/fathers/2712.htm>); *Against Celsus*, preface and book 1 (<https://www.newadvent.org/fathers/04161.htm>); *Letter to Gregory* (<https://www.newadvent.org/fathers/0415.htm>). The translations are public domain; the underlying Greek and Latin are ancient and public domain.
+- Origen, works in English translation: *The Ante-Nicene Fathers*, vol. 4, ed. A. Roberts, J. Donaldson, A. C. Coxe (Buffalo: Christian Literature Publishing Co., 1885), trans. F. Crombie. Quotations follow the transcriptions at New Advent: *On First Principles*, preface and book 1 (<https://www.newadvent.org/fathers/04120.htm>, <https://www.newadvent.org/fathers/04121.htm>), with Rufinus’s translator’s preface as printed in NPNF series 2, vol. 3 (<https://www.newadvent.org/fathers/2712.htm>); *Against Celsus*, preface and book 1 (<https://www.newadvent.org/fathers/04161.htm>); *Letter to Gregory* (<https://www.newadvent.org/fathers/0415.htm>). The translations are public domain; the underlying Greek and Latin are ancient and public domain.
 
 ### Primary sources: other ancient witnesses
 
--   Eusebius of Caesarea, *Church History*, books 6 and 7.1, NPNF series 2, vol. 1 (trans. A. C. McGiffert), at New Advent (<https://www.newadvent.org/fathers/250106.htm>, <https://www.newadvent.org/fathers/250107.htm>). Loci quoted: 6.1; 6.2–5; 6.8; 6.14–16; 6.18–19; 6.21; 6.23–24; 6.26–28; 6.30; 6.32–33; 6.36–37; 6.39; 7.1.
+- Eusebius of Caesarea, *Church History*, books 6 and 7.1, NPNF series 2, vol. 1 (trans. A. C. McGiffert), at New Advent (<https://www.newadvent.org/fathers/250106.htm>, <https://www.newadvent.org/fathers/250107.htm>). Loci quoted: 6.1; 6.2–5; 6.8; 6.14–16; 6.18–19; 6.21; 6.23–24; 6.26–28; 6.30; 6.32–33; 6.36–37; 6.39; 7.1.
 
--   Gregory Thaumaturgus, *Oration and Panegyric Addressed to Origen* 6, 15, 16, ANF vol. 6 (trans. S. D. F. Salmond), at New Advent (<https://www.newadvent.org/fathers/0604.htm>).
+- Gregory Thaumaturgus, *Oration and Panegyric Addressed to Origen* 6, 15, 16, ANF vol. 6 (trans. S. D. F. Salmond), at New Advent (<https://www.newadvent.org/fathers/0604.htm>).
 
--   Porphyry, fragment of *Against the Christians*, as quoted in Eusebius, *Church History* 6.19 (same witness as above).
+- Porphyry, fragment of *Against the Christians*, as quoted in Eusebius, *Church History* 6.19 (same witness as above).
 
--   Jerome, *On Illustrious Men* 54 and 75, NPNF series 2, vol. 3, at New Advent (<https://www.newadvent.org/fathers/2708.htm>); *Letter* 33 (to Paula) (<https://www.newadvent.org/fathers/3001033.htm>); *Letter* 84 (to Pammachius and Oceanus) (<https://www.newadvent.org/fathers/3001084.htm>).
+- Jerome, *On Illustrious Men* 54 and 75, NPNF series 2, vol. 3, at New Advent (<https://www.newadvent.org/fathers/2708.htm>); *Letter* 33 (to Paula) (<https://www.newadvent.org/fathers/3001033.htm>); *Letter* 84 (to Pammachius and Oceanus) (<https://www.newadvent.org/fathers/3001084.htm>).
 
--   Photius, *Bibliotheca*, codex 118, trans. J. H. Freese (SPCK, 1920), at the Tertullian Project (<https://www.tertullian.org/fathers/photius_03bibliotheca.htm>).
+- Photius, *Bibliotheca*, codex 118, trans. J. H. Freese (SPCK, 1920), at the Tertullian Project (<https://www.tertullian.org/fathers/photius_03bibliotheca.htm>).
 
--   Vincent of Lérins, *Commonitorium* 17, NPNF series 2, vol. 11, at New Advent (<https://www.newadvent.org/fathers/3506.htm>).
+- Vincent of Lérins, *Commonitorium* 17, NPNF series 2, vol. 11, at New Advent (<https://www.newadvent.org/fathers/3506.htm>).
 
--   Second Council of Constantinople (553): extracts, the fourteen capitula (anathema 11), the fifteen “Anathemas Against Origen,” and the “Anathemas of the Emperor Justinian Against Origen” (543), in H. R. Percival, *The Seven Ecumenical Councils*, NPNF series 2, vol. 14, at New Advent (<https://www.newadvent.org/fathers/3812.htm>); Third Council of Constantinople, *Exposition of Faith*, same volume (<https://www.newadvent.org/fathers/3813.htm>).
+- Second Council of Constantinople (553): extracts, the fourteen capitula (anathema 11), the fifteen “Anathemas Against Origen,” and the “Anathemas of the Emperor Justinian Against Origen” (543), in H. R. Percival, *The Seven Ecumenical Councils*, NPNF series 2, vol. 14, at New Advent (<https://www.newadvent.org/fathers/3812.htm>); Third Council of Constantinople, *Exposition of Faith*, same volume (<https://www.newadvent.org/fathers/3813.htm>).
 
--   N. Tanner (ed.), *Decrees of the Ecumenical Councils*, vol. 1, Constantinople II text and introduction, as presented at Papal Encyclicals Online (<https://www.papalencyclicals.net/councils/ecum05.htm>); editorial note on the fifteen anathemas quoted briefly with attribution.
+- N. Tanner (ed.), *Decrees of the Ecumenical Councils*, vol. 1, Constantinople II text and introduction, as presented at Papal Encyclicals Online (<https://www.papalencyclicals.net/councils/ecum05.htm>); editorial note on the fifteen anathemas quoted briefly with attribution.
 
 ### Ecclesial reception
 
--   *Catechism of the Catholic Church* 2745 and 2847, English text, Vatican website (<https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iv_perservering_in_love.html>; <https://www.vatican.va/archive/ENG0015/__PAC.HTM>); cited for their footnoted quotations of Origen, *De oratione* 12 and 29; paraphrased.
+- *Catechism of the Catholic Church* 2745 and 2847, English text, Vatican website (<https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_2/iv_perservering_in_love.html>; <https://www.vatican.va/archive/ENG0015/__PAC.HTM>); cited for their footnoted quotations of Origen, *De oratione* 12 and 29; paraphrased.
 
--   Benedict XVI, General Audiences of 25 April 2007 and 2 May 2007 (catecheses on Origen), Vatican website (<https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070425.html>; <https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070502.html>); paraphrased throughout.
+- Benedict XVI, General Audiences of 25 April 2007 and 2 May 2007 (catecheses on Origen), Vatican website (<https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070425.html>; <https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070502.html>); paraphrased throughout.
 
--   F. Prat, “Origen and Origenism,” *The Catholic Encyclopedia*, vol. 11 (New York, 1911), at New Advent (<https://www.newadvent.org/cathen/11306b.htm>); public domain; quoted for the classic statement of the condemnation question and for the Tyre tomb tradition.
+- F. Prat, “Origen and Origenism,” *The Catholic Encyclopedia*, vol. 11 (New York, 1911), at New Advent (<https://www.newadvent.org/cathen/11306b.htm>); public domain; quoted for the classic statement of the condemnation question and for the Tyre tomb tradition.
 
 ### Modern scholarship
 
--   M. J. Edwards, “Origen,” *The Stanford Encyclopedia of Philosophy* (entry as revised 21 July 2026) (<https://plato.stanford.edu/entries/origen/>); consulted for the current critical consensus on the self-mutilation report (with its references to C. Markschies and to Epiphanius, *Panarion* 64.2), the death, and the fate of the corpus; quoted in brief attributed snippets.
+- M. J. Edwards, “Origen,” *The Stanford Encyclopedia of Philosophy* (entry as revised 21 July 2026) (<https://plato.stanford.edu/entries/origen/>); consulted for the current critical consensus on the self-mutilation report (with its references to C. Markschies and to Epiphanius, *Panarion* 64.2), the death, and the fate of the corpus; quoted in brief attributed snippets.
 
--   F. Diekamp, *Die origenistischen Streitigkeiten im sechsten Jahrhundert und das fünfte allgemeine Concil* (Münster, 1899); position cited as reported in Prat 1911 (above). Not independently inspected.
+- F. Diekamp, *Die origenistischen Streitigkeiten im sechsten Jahrhundert und das fünfte allgemeine Concil* (Münster, 1899); position cited as reported in Prat 1911 (above). Not independently inspected.
 
--   R. Price, *The Acts of the Council of Constantinople of 553* (Liverpool, 2009); position cited as reported in the survey literature on the council. Not independently inspected; no page-level claim is made.
+- R. Price, *The Acts of the Council of Constantinople of 553* (Liverpool, 2009); position cited as reported in the survey literature on the council. Not independently inspected; no page-level claim is made.
 
--   J. A. McGuckin (ed.), *The Westminster Handbook to Origen* (Louisville, 2004); skeptical judgment on the self-castration report cited as reported in the survey literature. Not independently inspected.
+- J. A. McGuckin (ed.), *The Westminster Handbook to Origen* (Louisville, 2004); skeptical judgment on the self-castration report cited as reported in the survey literature. Not independently inspected.
 
--   H. Crouzel, *Origène* (Paris, 1985; English trans. A. S. Worrall, *Origen*, Edinburgh, 1989); H. de Lubac, *Histoire et esprit: l’intelligence de l’Écriture d’après Origène* (Paris, 1950); J. Daniélou, *Origène* (Paris, 1948); H. U. von Balthasar, *Origenes: Geist und Feuer* (Salzburg, 1938). Cited for the shape of the twentieth-century rehabilitation at the level of publication facts and widely reported theses; none is quoted, and no page-level claim is made.
+- H. Crouzel, *Origène* (Paris, 1985; English trans. A. S. Worrall, *Origen*, Edinburgh, 1989); H. de Lubac, *Histoire et esprit: l’intelligence de l’Écriture d’après Origène* (Paris, 1950); J. Daniélou, *Origène* (Paris, 1948); H. U. von Balthasar, *Origenes: Geist und Feuer* (Salzburg, 1938). Cited for the shape of the twentieth-century rehabilitation at the level of publication facts and widely reported theses; none is quoted, and no page-level claim is made.
 
--   M. Molin Pradel and L. Perrone on Munich, Bayerische Staatsbibliothek, Cod. graec. 314: identification announced 2012; critical edition L. Perrone et al., *Origenes: Die neuen Psalmenhomilien* (GCS N.F. 19, Berlin, 2015); cited at the level of the published identification and edition record.
+- M. Molin Pradel and L. Perrone on Munich, Bayerische Staatsbibliothek, Cod. graec. 314: identification announced 2012; critical edition L. Perrone et al., *Origenes: Die neuen Psalmenhomilien* (GCS N.F. 19, Berlin, 2015); cited at the level of the published identification and edition record.
 
 **Last revised (UTC):** 2026-07-24T23:21:06Z
 

@@ -195,11 +195,11 @@ The tendency to reason from physical unity to single authorship becomes especial
 
 Three questions must remain separate:
 
--   Which books a particular writer considered canonical;
+- Which books a particular writer considered canonical;
 
--   which books a particular manuscript copied, and in what order;
+- which books a particular manuscript copied, and in what order;
 
--   which books an ecclesiastical act later received or placed in an appendix.
+- which books an ecclesiastical act later received or placed in an appendix.
 
 Jerome’s prologues, Augustine’s canon list, medieval pandects, Trent’s decree, and the Clementine appendix answer those questions at different dates. None should silently substitute for another. The received Vulgate’s broad contents were produced by ecclesial and material reception extending far beyond Jerome’s desk.
 
@@ -520,81 +520,81 @@ Dates before print often describe a range or the earliest secure attestation rat
 
 ### Late-antique primary witnesses
 
--   Augustine of Hippo. *De doctrina christiana*, 2.11–15. English translation by J. F. Shaw, *Nicene and Post-Nicene Fathers*, first series, vol. 2 (1887). [Online witness](https://www.newadvent.org/fathers/12022.htm).
+- Augustine of Hippo. *De doctrina christiana*, 2.11–15. English translation by J. F. Shaw, *Nicene and Post-Nicene Fathers*, first series, vol. 2 (1887). [Online witness](https://www.newadvent.org/fathers/12022.htm).
 
--   Augustine of Hippo. Letters 71 (to Jerome, 403) and 82 (to Jerome, about 405). English translation by J. G. Cunningham, *Nicene and Post-Nicene Fathers*, first series, vol. 1 (1887). [Letter 71](https://www.newadvent.org/fathers/1102071.htm); [Letter 82](https://www.newadvent.org/fathers/1102082.htm).
+- Augustine of Hippo. Letters 71 (to Jerome, 403) and 82 (to Jerome, about 405). English translation by J. G. Cunningham, *Nicene and Post-Nicene Fathers*, first series, vol. 1 (1887). [Letter 71](https://www.newadvent.org/fathers/1102071.htm); [Letter 82](https://www.newadvent.org/fathers/1102082.htm).
 
--   Augustine of Hippo. *City of God*, 18.43. English translation by Marcus Dods, *Nicene and Post-Nicene Fathers*, first series, vol. 2 (1887). [Online witness](https://www.newadvent.org/fathers/120118.htm).
+- Augustine of Hippo. *City of God*, 18.43. English translation by Marcus Dods, *Nicene and Post-Nicene Fathers*, first series, vol. 2 (1887). [Online witness](https://www.newadvent.org/fathers/120118.htm).
 
--   Jerome. *Praefatio in Evangelia* (*Novum opus*), addressed to Damasus. English translation in W. H. Fremantle, *Nicene and Post-Nicene Fathers*, second series, vol. 6 (1893). [Online witness](https://www.newadvent.org/fathers/3002.htm).
+- Jerome. *Praefatio in Evangelia* (*Novum opus*), addressed to Damasus. English translation in W. H. Fremantle, *Nicene and Post-Nicene Fathers*, second series, vol. 6 (1893). [Online witness](https://www.newadvent.org/fathers/3002.htm).
 
--   Jerome. Letters 27, 32, 57, and 106. English translation in Fremantle, *Nicene and Post-Nicene Fathers*, second series, vol. 6 (1893). [Letter 27](https://www.newadvent.org/fathers/3001027.htm); [Letter 32](https://www.newadvent.org/fathers/3001032.htm); [Letter 57](https://www.newadvent.org/fathers/3001057.htm); [Letter 106](https://www.newadvent.org/fathers/3001106.htm).
+- Jerome. Letters 27, 32, 57, and 106. English translation in Fremantle, *Nicene and Post-Nicene Fathers*, second series, vol. 6 (1893). [Letter 27](https://www.newadvent.org/fathers/3001027.htm); [Letter 32](https://www.newadvent.org/fathers/3001032.htm); [Letter 57](https://www.newadvent.org/fathers/3001057.htm); [Letter 106](https://www.newadvent.org/fathers/3001106.htm).
 
--   Jerome. Letter 112 to Augustine, transmitted in Augustine’s correspondence as Letter 75. English translation by Cunningham, *Nicene and Post-Nicene Fathers*, first series, vol. 1 (1887). [Letter 112/75](https://www.newadvent.org/fathers/1102075.htm).
+- Jerome. Letter 112 to Augustine, transmitted in Augustine’s correspondence as Letter 75. English translation by Cunningham, *Nicene and Post-Nicene Fathers*, first series, vol. 1 (1887). [Letter 112/75](https://www.newadvent.org/fathers/1102075.htm).
 
--   Jerome. “Helmeted” Prologue to Kings. Kevin P. Edgecomb, trans. (2006), public domain. [Online witness](https://www.tertullian.org/fathers/jerome_preface_kings.htm).
+- Jerome. “Helmeted” Prologue to Kings. Kevin P. Edgecomb, trans. (2006), public domain. [Online witness](https://www.tertullian.org/fathers/jerome_preface_kings.htm).
 
--   Jerome. Prologue to Tobit. Kevin P. Edgecomb, trans. (2006), public domain. [Online witness](https://www.tertullian.org/fathers/jerome_preface_tobit.htm).
+- Jerome. Prologue to Tobit. Kevin P. Edgecomb, trans. (2006), public domain. [Online witness](https://www.tertullian.org/fathers/jerome_preface_tobit.htm).
 
--   Jerome. Preface to Judith. Andrew S. Jacobs, trans. (2004), public domain. [Online witness](https://www.tertullian.org/fathers/jerome_preface_judith.htm).
+- Jerome. Preface to Judith. Andrew S. Jacobs, trans. (2004), public domain. [Online witness](https://www.tertullian.org/fathers/jerome_preface_judith.htm).
 
 ### Ecclesiastical acts and official editorial records
 
--   Council of Trent. Session IV, *Decretum de editione et usu sacrorum librorum*, 8 April 1546. [Official Latin text](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_appendix_decr-editione-usu_lt.html).
+- Council of Trent. Session IV, *Decretum de editione et usu sacrorum librorum*, 8 April 1546. [Official Latin text](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_appendix_decr-editione-usu_lt.html).
 
--   Council of Trent. Session IV, decree on the canon of Scripture, 8 April 1546. [Official Latin text](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_appendix_decretum-can-script_lt.html).
+- Council of Trent. Session IV, decree on the canon of Scripture, 8 April 1546. [Official Latin text](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_appendix_decretum-can-script_lt.html).
 
--   *Praefatio ad lectorem* of the three Clementine editions, 1592–1598. [Official Vatican archive text](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_appendix_praefatio-lectorem_lt.html).
+- *Praefatio ad lectorem* of the three Clementine editions, 1592–1598. [Official Vatican archive text](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_appendix_praefatio-lectorem_lt.html).
 
--   Benedict XV. *Cum Biblia Sacra*, 15 August 1916, on the Roman biblical institutes and the Benedictine Vulgate project. [Official Italian text](https://www.vatican.va/content/benedict-xv/it/briefs/documents/hf_ben-xv_briefs_19160815_biblia-sacra.html).
+- Benedict XV. *Cum Biblia Sacra*, 15 August 1916, on the Roman biblical institutes and the Benedictine Vulgate project. [Official Italian text](https://www.vatican.va/content/benedict-xv/it/briefs/documents/hf_ben-xv_briefs_19160815_biblia-sacra.html).
 
--   Pius XII. *Divino afflante Spiritu*, 30 September 1943, especially 20–22. [Official English text](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_30091943_divino-afflante-spiritu.html).
+- Pius XII. *Divino afflante Spiritu*, 30 September 1943, especially 20–22. [Official English text](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_30091943_divino-afflante-spiritu.html).
 
--   Second Vatican Council. *Sacrosanctum Concilium*, 4 December 1963, especially 91. [Official English text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html).
+- Second Vatican Council. *Sacrosanctum Concilium*, 4 December 1963, especially 91. [Official English text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html).
 
--   John Paul II. *Scripturarum thesaurus*, 25 April 1979. [Official English text](https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_19790425_scripturarum-thesaurus.html).
+- John Paul II. *Scripturarum thesaurus*, 25 April 1979. [Official English text](https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_19790425_scripturarum-thesaurus.html).
 
--   *Nova Vulgata Bibliorum Sacrorum Editio*. [*Praefatio ad lectorem*](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_praefatio_lt.html) and [*Praenotanda*](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_praenotanda_lt.html), second typical edition, 1986. Official Latin texts.
+- *Nova Vulgata Bibliorum Sacrorum Editio*. [*Praefatio ad lectorem*](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_praefatio_lt.html) and [*Praenotanda*](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_praenotanda_lt.html), second typical edition, 1986. Official Latin texts.
 
--   Francis. *Scripturae sacrae affectus*, 30 September 2020. [Official English text](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/09/30/200930d.html).
+- Francis. *Scripturae sacrae affectus*, 30 September 2020. [Official English text](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2020/09/30/200930d.html).
 
 ### Manuscripts, artifacts, and institutional resources
 
--   Vetus Latina Institute. [Manuscript register and edition project](https://vetus-latina.manuscriptroom.com/en).
+- Vetus Latina Institute. [Manuscript register and edition project](https://vetus-latina.manuscriptroom.com/en).
 
--   Library of Congress. [“Codex Amiatinus,” digitized World Digital Library record](https://www.loc.gov/item/2021668243/).
+- Library of Congress. [“Codex Amiatinus,” digitized World Digital Library record](https://www.loc.gov/item/2021668243/).
 
--   British Library. [Add MS 10546](https://searcharchives.bl.uk/catalog/032-002108347), a Tours Bible in the Alcuinian tradition; catalog record and full digital coverage.
+- British Library. [Add MS 10546](https://searcharchives.bl.uk/catalog/032-002108347), a Tours Bible in the Alcuinian tradition; catalog record and full digital coverage.
 
--   British Library. [Add MS 24142](https://searcharchives.bl.uk/catalog/032-002031425), Codex Hubertianus, a principal Theodulfian Bible; catalog record.
+- British Library. [Add MS 24142](https://searcharchives.bl.uk/catalog/032-002031425), Codex Hubertianus, a principal Theodulfian Bible; catalog record.
 
--   Library of Congress. [“The Gutenberg Bible,” Library of Congress Bible Collection](https://www.loc.gov/exhibits/bibles/the-gutenberg-bible.html).
+- Library of Congress. [“The Gutenberg Bible,” Library of Congress Bible Collection](https://www.loc.gov/exhibits/bibles/the-gutenberg-bible.html).
 
--   *Biblia Sacra Vulgatae editionis* (Rome: Typographia Apostolica Vaticana, 1590), [Bavarian State Library catalog and digital artifact](https://www.deutsche-digitale-bibliothek.de/item/NCVEOKADSEM5GAD4PDAMGH6G6MRDPZEK); and *Biblia Sacra Vulgatae editionis* (Rome: Typographia Apostolica Vaticana, 1592), [National Central Library of Rome digital artifact](https://books.google.co.uk/books?id=wtv21mSctwsC). These verify the two editions as artifacts, not the motives for replacement.
+- *Biblia Sacra Vulgatae editionis* (Rome: Typographia Apostolica Vaticana, 1590), [Bavarian State Library catalog and digital artifact](https://www.deutsche-digitale-bibliothek.de/item/NCVEOKADSEM5GAD4PDAMGH6G6MRDPZEK); and *Biblia Sacra Vulgatae editionis* (Rome: Typographia Apostolica Vaticana, 1592), [National Central Library of Rome digital artifact](https://books.google.co.uk/books?id=wtv21mSctwsC). These verify the two editions as artifacts, not the motives for replacement.
 
 ### Critical editions and modern reconstruction
 
--   Houghton, H. A. G. *The Latin New Testament: A Guide to Its Early History, Texts, and Manuscripts*. Oxford: Oxford University Press, 2016. [DOI](https://doi.org/10.1093/acprof:oso/9780198744733.001.0001); [open-access Library of Congress copy](https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/19/66/68/35/2019666835/2019666835.pdf).
+- Houghton, H. A. G. *The Latin New Testament: A Guide to Its Early History, Texts, and Manuscripts*. Oxford: Oxford University Press, 2016. [DOI](https://doi.org/10.1093/acprof:oso/9780198744733.001.0001); [open-access Library of Congress copy](https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/19/66/68/35/2019666835/2019666835.pdf).
 
--   Houghton, H. A. G., ed. *The Oxford Handbook of the Latin Bible*. Oxford: Oxford University Press, 2023. [DOI](https://doi.org/10.1093/oxfordhb/9780190886097.001.0001).
+- Houghton, H. A. G., ed. *The Oxford Handbook of the Latin Bible*. Oxford: Oxford University Press, 2023. [DOI](https://doi.org/10.1093/oxfordhb/9780190886097.001.0001).
 
--   Kamesar, Adam. *Jerome, Greek Scholarship, and the Hebrew Bible: A Study of the Quaestiones Hebraicae in Genesim*. Oxford Classical Monographs. Oxford: Clarendon Press, 1993.
+- Kamesar, Adam. *Jerome, Greek Scholarship, and the Hebrew Bible: A Study of the Quaestiones Hebraicae in Genesim*. Oxford Classical Monographs. Oxford: Clarendon Press, 1993.
 
--   Rodrigue, Paul. *Jerome’s Sources in His Translation of the Hebrew Bible*. Cambridge Semitic Languages and Cultures 38. Cambridge: Open Book Publishers, 2025. [DOI](https://doi.org/10.11647/OBP.0474); [open-access full text](https://thoth-arch.lib.cam.ac.uk/bitstreams/8694cfb4-dc00-4a3d-a6bf-969f0c0e49c9/download).
+- Rodrigue, Paul. *Jerome’s Sources in His Translation of the Hebrew Bible*. Cambridge Semitic Languages and Cultures 38. Cambridge: Open Book Publishers, 2025. [DOI](https://doi.org/10.11647/OBP.0474); [open-access full text](https://thoth-arch.lib.cam.ac.uk/bitstreams/8694cfb4-dc00-4a3d-a6bf-969f0c0e49c9/download).
 
--   Gallagher, Edmon L. “Why Did Jerome Translate Tobit and Judith?” *Harvard Theological Review* 108, no. 3 (2015): 356–375. [DOI](https://doi.org/10.1017/S0017816015000231).
+- Gallagher, Edmon L. “Why Did Jerome Translate Tobit and Judith?” *Harvard Theological Review* 108, no. 3 (2015): 356–375. [DOI](https://doi.org/10.1017/S0017816015000231).
 
--   Graves, Michael. *Jerome, Epistle 106 (On the Psalms)*. Writings from the Greco-Roman World 47. Atlanta: SBL Press, 2022.
+- Graves, Michael. *Jerome, Epistle 106 (On the Psalms)*. Writings from the Greco-Roman World 47. Atlanta: SBL Press, 2022.
 
--   Norris, Oliver. “The Latin Psalter.” In Houghton, *Oxford Handbook of the Latin Bible*, 65–76. 2023. [DOI](https://doi.org/10.1093/oxfordhb/9780190886097.013.5).
+- Norris, Oliver. “The Latin Psalter.” In Houghton, *Oxford Handbook of the Latin Bible*, 65–76. 2023. [DOI](https://doi.org/10.1093/oxfordhb/9780190886097.013.5).
 
--   Light, Laura. “The Thirteenth Century and the Paris Bible.” In Richard Marsden and E. Ann Matter, eds., *The New Cambridge History of the Bible*, vol. 2, 380–391. Cambridge: Cambridge University Press, 2012. [DOI](https://doi.org/10.1017/CHOL9780521860062.023).
+- Light, Laura. “The Thirteenth Century and the Paris Bible.” In Richard Marsden and E. Ann Matter, eds., *The New Cambridge History of the Bible*, vol. 2, 380–391. Cambridge: Cambridge University Press, 2012. [DOI](https://doi.org/10.1017/CHOL9780521860062.023).
 
--   Wordsworth, John; Henry Julian White; and successors, eds. *Nouum Testamentum Domini nostri Iesu Christi latine secundum editionem sancti Hieronymi*. 3 parts. Oxford: Clarendon Press, 1889–1954.
+- Wordsworth, John; Henry Julian White; and successors, eds. *Nouum Testamentum Domini nostri Iesu Christi latine secundum editionem sancti Hieronymi*. 3 parts. Oxford: Clarendon Press, 1889–1954.
 
--   Quentin, Henri, and successors, eds. *Biblia Sacra iuxta latinam vulgatam versionem ad codicum fidem*. 18 vols. Rome: Typis Polyglottis Vaticanis / Libreria Editrice Vaticana, 1926–1995. [American Academy in Rome catalog record](https://library.aarome.org/bib/8406).
+- Quentin, Henri, and successors, eds. *Biblia Sacra iuxta latinam vulgatam versionem ad codicum fidem*. 18 vols. Rome: Typis Polyglottis Vaticanis / Libreria Editrice Vaticana, 1926–1995. [American Academy in Rome catalog record](https://library.aarome.org/bib/8406).
 
--   Weber, Robert, and Roger Gryson, eds. *Biblia Sacra iuxta vulgatam versionem*. 5th revised edition. Stuttgart: Deutsche Bibelgesellschaft, 2007.
+- Weber, Robert, and Roger Gryson, eds. *Biblia Sacra iuxta vulgatam versionem*. 5th revised edition. Stuttgart: Deutsche Bibelgesellschaft, 2007.
 
 **Last revised (UTC):** 2026-07-19T03:44:17Z
 

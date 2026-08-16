@@ -92,17 +92,17 @@ This independent article treats the existence, eternity, principal punishment, j
 
 ## References
 
--   Sacred Scripture: Ezekiel 18; Matthew 7, 10, 13, 18, and 25; Mark 9; Luke 13; Romans 5; 1 Timothy 2.
+- Sacred Scripture: Ezekiel 18; Matthew 7, 10, 13, 18, and 25; Mark 9; Luke 13; Romans 5; 1 Timothy 2.
 
--   Second Council of Lyons, *Profession of Faith of Michael Palaeologus* (1274), DS 858; Council of Florence, *Laetentur caeli* (1439), DS 1306.
+- Second Council of Lyons, *Profession of Faith of Michael Palaeologus* (1274), DS 858; Council of Florence, *Laetentur caeli* (1439), DS 1306.
 
--   *Catechism of the Catholic Church* 1033–1037, 1056–1058, 1854–1861.
+- *Catechism of the Catholic Church* 1033–1037, 1056–1058, 1854–1861.
 
--   Benedict XVI, encyclical *Spe salvi* 44–48.
+- Benedict XVI, encyclical *Spe salvi* 44–48.
 
--   St. Augustine, *City of God* XXI; St. Thomas Aquinas, *Summa theologiae* I, q. 19, a. 6; Supplement, qq. 97–99. The Supplement is a posthumous compilation principally from Aquinas’s *Scriptum super Sententiis*.
+- St. Augustine, *City of God* XXI; St. Thomas Aquinas, *Summa theologiae* I, q. 19, a. 6; Supplement, qq. 97–99. The Supplement is a posthumous compilation principally from Aquinas’s *Scriptum super Sententiis*.
 
--   *Missale Romanum*, the final Sundays of the liturgical year and Masses for the Dead, cited at source-family level without reproducing a territorial vernacular.
+- *Missale Romanum*, the final Sundays of the liturgical year and Masses for the Dead, cited at source-family level without reproducing a territorial vernacular.
 
 **Last revised (UTC):** 2026-07-24T20:52:18Z
 

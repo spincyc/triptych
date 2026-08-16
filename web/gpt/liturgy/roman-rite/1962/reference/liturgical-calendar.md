@@ -579,33 +579,33 @@ The United States section is deliberately separate. A national calendar, diocesa
 
 ### Primary and official sources
 
--   *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica, 1962. Calendar and *Proprium de tempore*; digitized facsimile used for collation: [Church Music Association of America mirror](https://media.churchmusicassociation.org/pdf/missale62.pdf).
+- *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica, 1962. Calendar and *Proprium de tempore*; digitized facsimile used for collation: [Church Music Association of America mirror](https://media.churchmusicassociation.org/pdf/missale62.pdf).
 
--   John XXIII, *Rubricarum instructum*, 25 July 1960, *Acta Apostolicae Sedis* 52 (1960), 593–595; [Holy See Latin text](https://www.vatican.va/content/john-xxiii/la/motu_proprio/documents/hf_j-xxiii_motu-proprio_19600725_rubricarum-instructum.html).
+- John XXIII, *Rubricarum instructum*, 25 July 1960, *Acta Apostolicae Sedis* 52 (1960), 593–595; [Holy See Latin text](https://www.vatican.va/content/john-xxiii/la/motu_proprio/documents/hf_j-xxiii_motu-proprio_19600725_rubricarum-instructum.html).
 
--   Sacred Congregation of Rites, *Codex rubricarum*, *Acta Apostolicae Sedis* 52 (1960), 597–729, especially General Rubrics nn. 1–57 and the table of precedence; the Mass rubrics at 643–685.
+- Sacred Congregation of Rites, *Codex rubricarum*, *Acta Apostolicae Sedis* 52 (1960), 597–729, especially General Rubrics nn. 1–57 and the table of precedence; the Mass rubrics at 643–685.
 
--   Sacred Congregation of Rites, *Instructio de calendariis particularibus et Officiorum ac Missarum propriis ad normam et mentem codicis rubricarum revisendis*, *Acta Apostolicae Sedis* 53 (1961), 168–180; [official AAS volume](https://www.vatican.va/archive/aas/documents/AAS-53-1961-ocr.pdf).
+- Sacred Congregation of Rites, *Instructio de calendariis particularibus et Officiorum ac Missarum propriis ad normam et mentem codicis rubricarum revisendis*, *Acta Apostolicae Sedis* 53 (1961), 168–180; [official AAS volume](https://www.vatican.va/archive/aas/documents/AAS-53-1961-ocr.pdf).
 
--   Desclée & Co., *Proper Feasts Kept in the Dioceses of the United States of America*, imprimatur 28 September 1961, appended to a chant edition; [digitized composite PDF](https://s9.imslp.org/files/imglnks/usimg/a/ad/IMSLP52084-PMLP29410-LU13_Supplement_for_certain_religious_congregations.pdf), U.S. section beginning at PDF p. 39. Used only for calendar headings and jurisdiction labels, not reproduced prayer texts.
+- Desclée & Co., *Proper Feasts Kept in the Dioceses of the United States of America*, imprimatur 28 September 1961, appended to a chant edition; [digitized composite PDF](https://s9.imslp.org/files/imglnks/usimg/a/ad/IMSLP52084-PMLP29410-LU13_Supplement_for_certain_religious_congregations.pdf), U.S. section beginning at PDF p. 39. Used only for calendar headings and jurisdiction labels, not reproduced prayer texts.
 
--   Congregation for the Doctrine of the Faith, decree *Cum sanctissima*, 22 February 2020, effective 19 March 2020; [official English text and annex](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html).
+- Congregation for the Doctrine of the Faith, decree *Cum sanctissima*, 22 February 2020, effective 19 March 2020; [official English text and annex](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html).
 
--   Congregation for the Doctrine of the Faith, [official presentation note for *Cum sanctissima*](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_nota-decreto-cumsanctissima_en.html), 22 February 2020.
+- Congregation for the Doctrine of the Faith, [official presentation note for *Cum sanctissima*](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_nota-decreto-cumsanctissima_en.html), 22 February 2020.
 
 ### Earlier and successor reforms
 
--   Pius V, apostolic constitutions *Quod a nobis* (9 July 1568) and *Quo primum* (14 July 1570), promulgating the reformed Roman Breviary and Missal.
+- Pius V, apostolic constitutions *Quod a nobis* (9 July 1568) and *Quo primum* (14 July 1570), promulgating the reformed Roman Breviary and Missal.
 
--   Pius X, apostolic constitution *Divino afflatu*, 1 November 1911, *Acta Apostolicae Sedis* 3 (1911), 633–638, with the accompanying rubrical changes.
+- Pius X, apostolic constitution *Divino afflatu*, 1 November 1911, *Acta Apostolicae Sedis* 3 (1911), 633–638, with the accompanying rubrical changes.
 
--   Sacred Congregation of Rites, general decree *Cum hac nostra aetate*, 23 March 1955, *Acta Apostolicae Sedis* 47 (1955), 218–224; and general decree *Maxima redemptionis nostrae mysteria*, 16 November 1955, *Acta Apostolicae Sedis* 47 (1955), 838–847.
+- Sacred Congregation of Rites, general decree *Cum hac nostra aetate*, 23 March 1955, *Acta Apostolicae Sedis* 47 (1955), 218–224; and general decree *Maxima redemptionis nostrae mysteria*, 16 November 1955, *Acta Apostolicae Sedis* 47 (1955), 838–847.
 
--   Paul VI, apostolic letter *Mysterii Paschalis*, 14 February 1969, and the *Calendarium Romanum* (1969), for the successor postconciliar calendar. They are comparative boundary sources, not inputs to the 1962 tables.
+- Paul VI, apostolic letter *Mysterii Paschalis*, 14 February 1969, and the *Calendarium Romanum* (1969), for the successor postconciliar calendar. They are comparative boundary sources, not inputs to the 1962 tables.
 
 ### Historical synthesis
 
--   Thomas J. Talley, *The Origins of the Liturgical Year*, 2nd ed. (Collegeville, MN: Liturgical Press, 1991). Used for the long formation of the weekly and annual cycles, not as a substitute for edition-specific calendar evidence.
+- Thomas J. Talley, *The Origins of the Liturgical Year*, 2nd ed. (Collegeville, MN: Liturgical Press, 1991). Used for the long formation of the weekly and annual cycles, not as a substitute for edition-specific calendar evidence.
 
 **Last revised (UTC):** 2026-07-27T23:02:25Z
 

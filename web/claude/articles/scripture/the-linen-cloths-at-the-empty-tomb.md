@@ -712,17 +712,17 @@ The study does not argue for or against the Resurrection, does not assess any re
 
 ### Terminology fixed for this study
 
--   **The claim under test** means the sentence quoted at the head of section 1, in the maintainer’s own words. It is treated as an object of examination throughout and is nowhere assumed.
+- **The claim under test** means the sentence quoted at the head of section 1, in the maintainer’s own words. It is treated as an object of examination throughout and is nowhere assumed.
 
--   **The other disciple** is used throughout for the figure John calls *ho allos mathētēs*. The traditional identification with John son of Zebedee is not required by any argument here and is not assumed; where a source makes it, the source’s language is preserved.
+- **The other disciple** is used throughout for the figure John calls *ho allos mathētēs*. The traditional identification with John son of Zebedee is not required by any argument here and is not assumed; where a source makes it, the source’s language is preserved.
 
--   **Gloss** marks an explanation of a word’s range from a named lexical authority or from its occurrences. It is never a translation of Scripture. No translation of Scripture has been composed for this study.
+- **Gloss** marks an explanation of a word’s range from a named lexical authority or from its occurrences. It is never a translation of Scripture. No translation of Scripture has been composed for this study.
 
--   **Working translation** marks an English rendering of a Latin or Greek clause supplied by this study where no public-domain published translation of that clause was consulted. Every such rendering is labelled at its own place; none is offered for recitation or as a version of Scripture.
+- **Working translation** marks an English rendering of a Latin or Greek clause supplied by this study where no public-domain published translation of that clause was consulted. Every such rendering is labelled at its own place; none is offered for recitation or as a version of Scripture.
 
--   **Transliteration** is mechanical and is not a translation. Greek long vowels are marked *ē* and *ō*; chi is *ch*; upsilon is *y* outside diphthongs. Hebrew and Aramaic are transliterated without scholarly diacritics because this document carries no Hebrew face.
+- **Transliteration** is mechanical and is not a translation. Greek long vowels are marked *ē* and *ō*; chi is *ch*; upsilon is *y* outside diphthongs. Hebrew and Aramaic are transliterated without scholarly diacritics because this document carries no Hebrew face.
 
--   **Material negative result** means a case in which a witness that had the occasion to make an argument, and would be expected to make it, does not. Such results are reported as findings.
+- **Material negative result** means a case in which a witness that had the occasion to make an argument, and would be expected to make it, does not. Such results are reported as findings.
 
 ### Source hierarchy and evidence classes
 
@@ -788,91 +788,91 @@ This is an internally source-audited working study produced by an AI-assisted pr
 
 ### Scripture
 
--   **Greek.** *The New Testament in the Original Greek: Byzantine Textform*, ed. Maurice A. Robinson and William G. Pierpont (2018), in the byztxt Unicode CSV form of Robinson’s CCAT files with variant apparatus, repository state 27a45ff1b7be6c17ccbfeac414f3f55732ae8e28. Verses used: Jn 11:44; 19:38–42; 20:1–18; Lk 19:20; 23:53; 24:1–14, 41; Mt 27:59–60; Acts 10:11; 11:5; 19:12. Registered in the repository source library; artifacts for John, Luke, Matthew and Acts consulted directly.
+- **Greek.** *The New Testament in the Original Greek: Byzantine Textform*, ed. Maurice A. Robinson and William G. Pierpont (2018), in the byztxt Unicode CSV form of Robinson’s CCAT files with variant apparatus, repository state 27a45ff1b7be6c17ccbfeac414f3f55732ae8e28. Verses used: Jn 11:44; 19:38–42; 20:1–18; Lk 19:20; 23:53; 24:1–14, 41; Mt 27:59–60; Acts 10:11; 11:5; 19:12. Registered in the repository source library; artifacts for John, Luke, Matthew and Acts consulted directly.
 
--   **Latin.** *Biblia Sacra Vulgatae Editionis*, ed. Michael Hetzenauer, O.F.M. Cap. (Ratisbon, Rome, New York and Cincinnati: Friedrich Pustet, 1914). Jn 20:3–10 and Jn 19:39–40 read on numbered scan pages 1063 and 1062; Jn 11:44 on 1054; Lk 23:53 and 24:12 on 1038. Page images from SacredBible’s photographed copy, [sacredbible.org](https://www.sacredbible.org/hetzenauer1914/), retrieved 25 July 2026 and registered in the repository source library. The site’s technical record states that its images and files are in the public domain.
+- **Latin.** *Biblia Sacra Vulgatae Editionis*, ed. Michael Hetzenauer, O.F.M. Cap. (Ratisbon, Rome, New York and Cincinnati: Friedrich Pustet, 1914). Jn 20:3–10 and Jn 19:39–40 read on numbered scan pages 1063 and 1062; Jn 11:44 on 1054; Lk 23:53 and 24:12 on 1038. Page images from SacredBible’s photographed copy, [sacredbible.org](https://www.sacredbible.org/hetzenauer1914/), retrieved 25 July 2026 and registered in the repository source library. The site’s technical record states that its images and files are in the public domain.
 
--   **English.** *The Holy Bible, Douay–Rheims*, Challoner revision, in the Project Gutenberg electronic edition (eBook 1581), registered in the repository source library. Verse numbering is the Vulgate numbering throughout. The translation is an identified working witness, not a critical edition.
+- **English.** *The Holy Bible, Douay–Rheims*, Challoner revision, in the Project Gutenberg electronic edition (eBook 1581), registered in the repository source library. Verse numbering is the Vulgate numbering throughout. The translation is an identified working witness, not a critical edition.
 
--   **Authorized Version**, quoted only at Jn 20:7 to establish the English wording “wrapped together in a place by itself”; Project Gutenberg eBook 10, consulted 25 July 2026.
+- **Authorized Version**, quoted only at Jn 20:7 to establish the English wording “wrapped together in a place by itself”; Project Gutenberg eBook 10, consulted 25 July 2026.
 
 ### Lexical authority
 
--   Joseph Henry Thayer, *A Greek-English Lexicon of the New Testament, being Grimm’s Wilke’s Clavis Novi Testamenti*, corrected edition (New York, Cincinnati, Chicago: American Book Company; title page undated, Internet Archive record dated 1889), s.v. *entylissō* (p. 219), *othonion* (p. 439), *soudarion* (p. 581). Read at those pages in the Internet Archive facsimile of the copy digitized as `greekenglishlex00grim`.
+- Joseph Henry Thayer, *A Greek-English Lexicon of the New Testament, being Grimm’s Wilke’s Clavis Novi Testamenti*, corrected edition (New York, Cincinnati, Chicago: American Book Company; title page undated, Internet Archive record dated 1889), s.v. *entylissō* (p. 219), *othonion* (p. 439), *soudarion* (p. 581). Read at those pages in the Internet Archive facsimile of the copy digitized as `greekenglishlex00grim`.
 
 ### Textual criticism
 
--   B. F. Westcott and F. J. A. Hort, *The New Testament in the Original Greek: Introduction, Appendix* (Cambridge and London: Macmillan, 1882), Appendix, “Notes on Select Readings,” p. 71, on Luke xxiv 12. Read in the Internet Archive facsimile `newtestamentinor82west`.
+- B. F. Westcott and F. J. A. Hort, *The New Testament in the Original Greek: Introduction, Appendix* (Cambridge and London: Macmillan, 1882), Appendix, “Notes on Select Readings,” p. 71, on Luke xxiv 12. Read in the Internet Archive facsimile `newtestamentinor82west`.
 
 ### Patristic and medieval witnesses
 
--   St. John Chrysostom, *Homilies on the Gospel of St. John*, Homily LXXXV.4 (the argument against theft, and “from this they believed in the Resurrection”), Homily LXXXVI.1 (p. 323), Homily LXXXVII (p. 327); English by Charles Marriott in *A Select Library of the Nicene and Post-Nicene Fathers*, first series, vol. 14 (New York: Christian Literature Co.), pp. 320–321, 323, 327. Read in the Internet Archive facsimile `selectlibraryofn14auguuoft`. The Greek of PG 59 was not reached.
+- St. John Chrysostom, *Homilies on the Gospel of St. John*, Homily LXXXV.4 (the argument against theft, and “from this they believed in the Resurrection”), Homily LXXXVI.1 (p. 323), Homily LXXXVII (p. 327); English by Charles Marriott in *A Select Library of the Nicene and Post-Nicene Fathers*, first series, vol. 14 (New York: Christian Literature Co.), pp. 320–321, 323, 327. Read in the Internet Archive facsimile `selectlibraryofn14auguuoft`. The Greek of PG 59 was not reached.
 
--   St. Ambrose, *Expositio evangelii secundum Lucam* X.136, 152, 179; Latin read in the Corpus Corporum transcription of Migne at [la.wikisource.org](https://la.wikisource.org/wiki/Expositio_Evangelii_secundum_Lucam_(Ambrosius)/10), 25 July 2026. Book X has no lemma on Lk 24:12; this material negative was established by inspecting the book’s own sequence of verse headings and by counting the stems *linteam-*, *sudari-* and *cucurr-*, none of which occurs.
+- St. Ambrose, *Expositio evangelii secundum Lucam* X.136, 152, 179; Latin read in the Corpus Corporum transcription of Migne at [la.wikisource.org](https://la.wikisource.org/wiki/Expositio_Evangelii_secundum_Lucam_(Ambrosius)/10), 25 July 2026. Book X has no lemma on Lk 24:12; this material negative was established by inspecting the book’s own sequence of verse headings and by counting the stems *linteam-*, *sudari-* and *cucurr-*, none of which occurs.
 
--   St. Augustine, *In Iohannis Evangelium Tractatus* CXX.8–9; English by John Gibb and James Innes in *A Select Library of the Nicene and Post-Nicene Fathers*, first series, vol. 7 (New York: Christian Literature Co.), p. 436, read in the Internet Archive facsimile `selectlibraryofn07auguuoft`; Latin read at [augustinus.it](https://www.augustinus.it/latino/commento_vsg/omelia_120_testo.htm), 25 July 2026, a dated web state.
+- St. Augustine, *In Iohannis Evangelium Tractatus* CXX.8–9; English by John Gibb and James Innes in *A Select Library of the Nicene and Post-Nicene Fathers*, first series, vol. 7 (New York: Christian Literature Co.), p. 436, read in the Internet Archive facsimile `selectlibraryofn07auguuoft`; Latin read at [augustinus.it](https://www.augustinus.it/latino/commento_vsg/omelia_120_testo.htm), 25 July 2026, a dated web state.
 
--   St. Cyril of Alexandria, *Commentary on the Gospel according to S. John*, book 12, on Jn 20:1–9 and 20:10–11; English by T. Randell, Library of Fathers vols. 43 and 48 (Oxford, 1874 and 1885), read in the transcription at [tertullian.org](https://www.tertullian.org/fathers/cyril_on_john_12_book12.htm), 25 July 2026, at the pages marked \|<!-- -->650–651. Not read in the printed volume.
+- St. Cyril of Alexandria, *Commentary on the Gospel according to S. John*, book 12, on Jn 20:1–9 and 20:10–11; English by T. Randell, Library of Fathers vols. 43 and 48 (Oxford, 1874 and 1885), read in the transcription at [tertullian.org](https://www.tertullian.org/fathers/cyril_on_john_12_book12.htm), 25 July 2026, at the pages marked \|<!-- -->650–651. Not read in the printed volume.
 
--   St. Gregory the Great, *Homiliae in Evangelia* XXII.2–5, preached in the Lateran basilica on the Saturday after Easter on Jn 20:1–9; Latin read in the Corpus Corporum transcription of Migne at [la.wikisource.org](https://la.wikisource.org/wiki/Homiliarum_in_Evangelia/XXII), 25 July 2026. English renderings in the text are labelled working translations.
+- St. Gregory the Great, *Homiliae in Evangelia* XXII.2–5, preached in the Lateran basilica on the Saturday after Easter on Jn 20:1–9; Latin read in the Corpus Corporum transcription of Migne at [la.wikisource.org](https://la.wikisource.org/wiki/Homiliarum_in_Evangelia/XXII), 25 July 2026. English renderings in the text are labelled working translations.
 
--   St. Bede, *In Lucae evangelium expositio* VI, on Lk 23:53 and Lk 24:12 (PL 92, cols. 621B and 625A–B); Latin read in the Corpus Corporum transcription of Migne at [la.wikisource.org](https://la.wikisource.org/wiki/In_Evangelium_S._Lucae_(Beda)), 25 July 2026, with Migne column markers embedded in the transcription. No page image of these columns was reachable. The related negative result about Migne’s Bede homiliary is reported at a delegated ceiling in section 7.
+- St. Bede, *In Lucae evangelium expositio* VI, on Lk 23:53 and Lk 24:12 (PL 92, cols. 621B and 625A–B); Latin read in the Corpus Corporum transcription of Migne at [la.wikisource.org](https://la.wikisource.org/wiki/In_Evangelium_S._Lucae_(Beda)), 25 July 2026, with Migne column markers embedded in the transcription. No page image of these columns was reachable. The related negative result about Migne’s Bede homiliary is reported at a delegated ceiling in section 7.
 
--   Theophylact of Ohrid, *Enarratio in Evangelium Ioannis*, on Jn 20 (PG 124, cols. 289–292), and *Enarratio in Evangelium Lucae*, on Lk 24 (PG 123); Migne’s facing Latin column read in the Internet Archive OCR of the Patrologia Graeca volume 124, the item whose identifier ends `patrologiae-cursus-completus-_1864_124`. Reported at an OCR ceiling; the Greek column was not collated. The modern English translation is under copyright and was not consulted.
+- Theophylact of Ohrid, *Enarratio in Evangelium Ioannis*, on Jn 20 (PG 124, cols. 289–292), and *Enarratio in Evangelium Lucae*, on Lk 24 (PG 123); Migne’s facing Latin column read in the Internet Archive OCR of the Patrologia Graeca volume 124, the item whose identifier ends `patrologiae-cursus-completus-_1864_124`. Reported at an OCR ceiling; the Greek column was not collated. The modern English translation is under copyright and was not consulted.
 
--   St. Thomas Aquinas, *Super Evangelium S. Ioannis lectura*, cap. 20, lect. 1 (Busa–Alarcón section 87552); Latin read at [corpusthomisticum.org](https://www.corpusthomisticum.org/cih20.html), 25 July 2026. The *Catena aurea* on Jn 20:1–10 is identified in the text as a quotation collection.
+- St. Thomas Aquinas, *Super Evangelium S. Ioannis lectura*, cap. 20, lect. 1 (Busa–Alarcón section 87552); Latin read at [corpusthomisticum.org](https://www.corpusthomisticum.org/cih20.html), 25 July 2026. The *Catena aurea* on Jn 20:1–10 is identified in the text as a quotation collection.
 
--   St. Jerome, *De viris illustribus* 2, on the *Gospel according to the Hebrews*; Ernest Cushing Richardson’s public-domain translation in the Nicene and Post-Nicene Fathers, second series, vol. 3, read at [newadvent.org](https://www.newadvent.org/fathers/2708.htm), 25 July 2026.
+- St. Jerome, *De viris illustribus* 2, on the *Gospel according to the Hebrews*; Ernest Cushing Richardson’s public-domain translation in the Nicene and Post-Nicene Fathers, second series, vol. 3, read at [newadvent.org](https://www.newadvent.org/fathers/2708.htm), 25 July 2026.
 
--   *Gospel of Peter*, Akhmim fragment, VI.24 and XIII.55–57; M. R. James’s public-domain 1924 translation, read at earlychristianwritings.com. A delegated reading, reported at that ceiling; no Greek was collated.
+- *Gospel of Peter*, Akhmim fragment, VI.24 and XIII.55–57; M. R. James’s public-domain 1924 translation, read at earlychristianwritings.com. A delegated reading, reported at that ceiling; no Greek was collated.
 
 ### Rabbinic and Second Temple sources
 
--   Mishnah Berakhot 8:1–8, Hebrew, Torat Emet 357 text, licence recorded as public domain; retrieved through the Sefaria text API, 25 July 2026.
+- Mishnah Berakhot 8:1–8, Hebrew, Torat Emet 357 text, licence recorded as public domain; retrieved through the Sefaria text API, 25 July 2026.
 
--   Babylonian Talmud, Berakhot 42a and 52b; A. Cohen, *Tractate Berakot* (Cambridge University Press, 1921), licence recorded as public domain; retrieved through the Sefaria text API, 25 July 2026.
+- Babylonian Talmud, Berakhot 42a and 52b; A. Cohen, *Tractate Berakot* (Cambridge University Press, 1921), licence recorded as public domain; retrieved through the Sefaria text API, 25 July 2026.
 
--   Mishnah Sanhedrin 6:1, Hebrew (Torat Emet 357, public domain) and English (Sefaria Community Translation, CC0); retrieved 25 July 2026. The *sudarin* waved to halt an execution.
+- Mishnah Sanhedrin 6:1, Hebrew (Torat Emet 357, public domain) and English (Sefaria Community Translation, CC0); retrieved 25 July 2026. The *sudarin* waved to halt an execution.
 
--   Sefaria phrase searches over the indexed corpus, 25 July 2026, reported with their totals and boundaries in section 8.
+- Sefaria phrase searches over the indexed corpus, 25 July 2026, reported with their totals and boundaries in section 8.
 
--   John Lightfoot, *Horae Hebraicae et Talmudicae: Hebrew and Talmudical Exercitations upon the Gospels*, ed. Robert Gandell (Oxford: University Press, 1859), 4 vols.; full text of all four volumes retrieved from the Internet Archive and searched 25 July 2026. Two occurrences of “napkin” in the whole work, both at Jn 11:44; no note on Jn 20:7.
+- John Lightfoot, *Horae Hebraicae et Talmudicae: Hebrew and Talmudical Exercitations upon the Gospels*, ed. Robert Gandell (Oxford: University Press, 1859), 4 vols.; full text of all four volumes retrieved from the Internet Archive and searched 25 July 2026. Two occurrences of “napkin” in the whole work, both at Jn 11:44; no note on Jn 20:7.
 
 ### Greco-Roman dining
 
--   William Smith, ed., *A Dictionary of Greek and Roman Antiquities* (1875), s.v. “Mantele”; read 25 July 2026 at the LacusCurtius transcription, `penelope.uchicago.edu`.
+- William Smith, ed., *A Dictionary of Greek and Roman Antiquities* (1875), s.v. “Mantele”; read 25 July 2026 at the LacusCurtius transcription, `penelope.uchicago.edu`.
 
--   Suetonius, *Nero* 22.2; J. C. Rolfe’s public-domain Loeb translation, read 25 July 2026 at the LacusCurtius transcription.
+- Suetonius, *Nero* 22.2; J. C. Rolfe’s public-domain Loeb translation, read 25 July 2026 at the LacusCurtius transcription.
 
 ### Modern discussion of the passage
 
--   B. F. Westcott, *The Gospel according to St. John: The Greek Text with Introduction and Notes*, 2 vols. (London: John Murray, 1908), vol. 2, pp. 339–341, with the editorial footnotes of Arthur Westcott recording his father’s marginal notes and a private letter. Read in the Internet Archive facsimile `gospelaccordingt02west`.
+- B. F. Westcott, *The Gospel according to St. John: The Greek Text with Introduction and Notes*, 2 vols. (London: John Murray, 1908), vol. 2, pp. 339–341, with the editorial footnotes of Arthur Westcott recording his father’s marginal notes and a private letter. Read in the Internet Archive facsimile `gospelaccordingt02west`.
 
--   Henry Latham, *The Risen Master: A Sequel to Pastor Pastorum*, sixth thousand (Cambridge: Deighton Bell and Co.; London: George Bell and Sons, 1905), ch. 2–3, especially pp. 34–38 and 43–45. Latham credits the central idea to a pamphlet by the Rev. Arthur Beard of St John’s College, Cambridge, which was not located. Read in the Internet Archive facsimile `risenmaster01lath`.
+- Henry Latham, *The Risen Master: A Sequel to Pastor Pastorum*, sixth thousand (Cambridge: Deighton Bell and Co.; London: George Bell and Sons, 1905), ch. 2–3, especially pp. 34–38 and 43–45. Latham credits the central idea to a pamphlet by the Rev. Arthur Beard of St John’s College, Cambridge, which was not located. Read in the Internet Archive facsimile `risenmaster01lath`.
 
 ### The modern folded-napkin claim: dated witnesses
 
--   “Christ’s Linen Napkin (John 20:7)…”, *JerusalemPerspective.com*, site metadata date 7 October 2006, with the reader’s question quoting the claim and David Bivin’s response. Read 25 July 2026 in the Internet Archive capture of 7 March 2013; the live page was unreachable.
+- “Christ’s Linen Napkin (John 20:7)…”, *JerusalemPerspective.com*, site metadata date 7 October 2006, with the reader’s question quoting the claim and David Bivin’s response. Read 25 July 2026 in the Internet Archive capture of 7 March 2013; the live page was unreachable.
 
--   “\[RecipesAndMore\] Fwd: Interesting viewpoint!”, mailing-list message of 21 May 2007, carrying the standard wording; read 25 July 2026 at `mail-archive.com`. The scriptural text quoted within the email is from a modern copyrighted version reading “folded up”; it is described, not reproduced.
+- “\[RecipesAndMore\] Fwd: Interesting viewpoint!”, mailing-list message of 21 May 2007, carrying the standard wording; read 25 July 2026 at `mail-archive.com`. The scriptural text quoted within the email is from a modern copyrighted version reading “folded up”; it is described, not reproduced.
 
--   “The meaning of the folded napkin in Jesus’ tomb—Fiction!”, TruthOrFiction, assessment dated 28 January 2008, page consulted 25 July 2026. Source of the widely copied “originated in 2007” estimate.
+- “The meaning of the folded napkin in Jesus’ tomb—Fiction!”, TruthOrFiction, assessment dated 28 January 2008, page consulted 25 July 2026. Source of the widely copied “originated in 2007” estimate.
 
--   “What is the significance of the folded napkin in Christ’s tomb after the resurrection?”, GotQuestions.org, page consulted 25 July 2026.
+- “What is the significance of the folded napkin in Christ’s tomb after the resurrection?”, GotQuestions.org, page consulted 25 July 2026.
 
 These four are cited as dated evidence of what the claim says and when it circulated. They are under their own rights and are quoted only in short attributed clauses.
 
 ### Not reached
 
--   The Greek of Chrysostom’s homilies in Patrologia Graeca 59.
+- The Greek of Chrysostom’s homilies in Patrologia Graeca 59.
 
--   The Corpus Christianorum numbering and contents of Bede’s homilies.
+- The Corpus Christianorum numbering and contents of Bede’s homilies.
 
--   Modern copyrighted Johannine commentaries (Brown, Barrett, Bultmann, Keener, Beasley-Murray) and the two specialist articles on this verse by W. E. Reiser and B. Osborne, *Heythrop Journal* 14 (1973). None is relied on for any claim in this study.
+- Modern copyrighted Johannine commentaries (Brown, Barrett, Bultmann, Keener, Beasley-Murray) and the two specialist articles on this verse by W. E. Reiser and B. Osborne, *Heythrop Journal* 14 (1973). None is relied on for any claim in this study.
 
--   Google Books, HathiTrust and the Usenet archives, which were unavailable during the research and would have been the route to any pre-2006 print circulation of the folded-napkin claim.
+- Google Books, HathiTrust and the Usenet archives, which were unavailable during the research and would have been the route to any pre-2006 print circulation of the folded-napkin claim.
 
--   The Rev. Arthur Beard’s pamphlet, Latham’s acknowledged source.
+- The Rev. Arthur Beard’s pamphlet, Latham’s acknowledged source.
 
 **Last revised (UTC):** 2026-07-26T03:45:54Z
 

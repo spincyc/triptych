@@ -769,57 +769,57 @@ Every web source below was fetched over HTTPS, hashed (SHA-256), and read on 202
 
 ### Law
 
--   *Codex Iuris Canonici* (1983). Latin: Holy See web deliveries, one page per book, <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberI_la.html> through `cic_liberVII_la.html` (Books I, II, IV, VI used). English: Holy See web deliveries by canon range under <https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/>. Canons quoted: 18, 32, 33, 194, 266, 273, 277, 285, 288, 290–293, 599, 691–693, 976, 1024, 1025, 1029, 1031, 1036, 1037, 1040, 1042, 1047, 1050, 1055, 1078–1080, 1087, 1088, 1135, 1191, 1196–1197, 1394, 1395, 1398.
+- *Codex Iuris Canonici* (1983). Latin: Holy See web deliveries, one page per book, <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberI_la.html> through `cic_liberVII_la.html` (Books I, II, IV, VI used). English: Holy See web deliveries by canon range under <https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/>. Canons quoted: 18, 32, 33, 194, 266, 273, 277, 285, 288, 290–293, 599, 691–693, 976, 1024, 1025, 1029, 1031, 1036, 1037, 1040, 1042, 1047, 1050, 1055, 1078–1080, 1087, 1088, 1135, 1191, 1196–1197, 1394, 1395, 1398.
 
--   *Codex Canonum Ecclesiarum Orientalium* (1990), promulgated by John Paul II, apostolic constitution *Sacri canones*, 18 October 1990: *Acta Apostolicae Sedis* 82 (1990) 1033–1363, at <https://www.vatican.va/archive/aas/documents/AAS-82-1990-ocr.pdf>. Canons quoted: 1, 2, 27, 28, 55, 151, 155, 174, 180, 285, 373–375, 390, 394–398, 758–762, 795–796, 804, 1453. Latin web presentation of the same text (used for cc. 27–28 and for control): <https://www.vatican.va/content/john-paul-ii/la/apost_constitutions/documents/hf_jp-ii_apc_19901018_codex-can-eccl-orient-1.html>.
+- *Codex Canonum Ecclesiarum Orientalium* (1990), promulgated by John Paul II, apostolic constitution *Sacri canones*, 18 October 1990: *Acta Apostolicae Sedis* 82 (1990) 1033–1363, at <https://www.vatican.va/archive/aas/documents/AAS-82-1990-ocr.pdf>. Canons quoted: 1, 2, 27, 28, 55, 151, 155, 174, 180, 285, 373–375, 390, 394–398, 758–762, 795–796, 804, 1453. Latin web presentation of the same text (used for cc. 27–28 and for control): <https://www.vatican.va/content/john-paul-ii/la/apost_constitutions/documents/hf_jp-ii_apc_19901018_codex-can-eccl-orient-1.html>.
 
--   *Codex Iuris Canonici* (1917), c. 132 §1: Typis Polyglottis Vaticanis, Rome 1918, printed p. 31; Internet Archive item `codexiuriscanoni00cath`, leaf 85, IIIF service <https://iiif.archive.org/iiif/>.
+- *Codex Iuris Canonici* (1917), c. 132 §1: Typis Polyglottis Vaticanis, Rome 1918, printed p. 31; Internet Archive item `codexiuriscanoni00cath`, leaf 85, IIIF service <https://iiif.archive.org/iiif/>.
 
--   John Paul II, apostolic constitution *Sacrae disciplinae leges* (25 January 1983), and Francis, apostolic constitution *Pascite gregem Dei* (23 May 2021), for the promulgation and revision facts, at their official pages under <https://www.vatican.va/content/>.
+- John Paul II, apostolic constitution *Sacrae disciplinae leges* (25 January 1983), and Francis, apostolic constitution *Pascite gregem Dei* (23 May 2021), for the promulgation and revision facts, at their official pages under <https://www.vatican.va/content/>.
 
--   Congregation for the Eastern Churches, *Pontificia Praecepta de clero uxorato orientali* (14 June 2014; papal approval 23 December 2013), *AAS* 106 (2014) 496–499: <https://www.vatican.va/archive/aas/documents/2014/acta-giugno2014.pdf>.
+- Congregation for the Eastern Churches, *Pontificia Praecepta de clero uxorato orientali* (14 June 2014; papal approval 23 December 2013), *AAS* 106 (2014) 496–499: <https://www.vatican.va/archive/aas/documents/2014/acta-giugno2014.pdf>.
 
--   Francis, apostolic constitution *In Erythraea nova constituitur Ecclesia Metropolitana Asmarensis* (19 January 2015), *AAS* 107 (2015) 246, with the *Erectio Ecclesiarum* record at *AAS* 107 (2015) 1075–1078: <https://www.vatican.va/archive/aas/documents/2015/acta-marzo2015.pdf> and `acta-ottobre2015.pdf`. Holy See Press Office bulletin B0048 of 19 January 2015.
+- Francis, apostolic constitution *In Erythraea nova constituitur Ecclesia Metropolitana Asmarensis* (19 January 2015), *AAS* 107 (2015) 246, with the *Erectio Ecclesiarum* record at *AAS* 107 (2015) 1075–1078: <https://www.vatican.va/archive/aas/documents/2015/acta-marzo2015.pdf> and `acta-ottobre2015.pdf`. Holy See Press Office bulletin B0048 of 19 January 2015.
 
--   Benedict XVI, apostolic constitution *Anglicanorum coetibus* (4 November 2009), Latin and English: <https://www.vatican.va/content/benedict-xvi/en/apost_constitutions/documents/hf_ben-xvi_apc_20091104_anglicanorum-coetibus.html> (and its `/la/` counterpart). Congregation for the Doctrine of the Faith, *Complementary Norms* of the same date, as amended 31 May 2013: <https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20091104_norme-anglicanorum-coetibus_en.html>.
+- Benedict XVI, apostolic constitution *Anglicanorum coetibus* (4 November 2009), Latin and English: <https://www.vatican.va/content/benedict-xvi/en/apost_constitutions/documents/hf_ben-xvi_apc_20091104_anglicanorum-coetibus.html> (and its `/la/` counterpart). Congregation for the Doctrine of the Faith, *Complementary Norms* of the same date, as amended 31 May 2013: <https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20091104_norme-anglicanorum-coetibus_en.html>.
 
--   Dicastery for Legislative Texts, *Interpretationes authenticae*: <https://www.vatican.va/roman_curia/pontifical_councils/intrptxt/documents/rc_pc_intrptxt_doc_20020604_interpretationes-authenticae_lt.html>, with the dicastery index page.
+- Dicastery for Legislative Texts, *Interpretationes authenticae*: <https://www.vatican.va/roman_curia/pontifical_councils/intrptxt/documents/rc_pc_intrptxt_doc_20020604_interpretationes-authenticae_lt.html>, with the dicastery index page.
 
--   Congregation for Catholic Education and Congregation for the Clergy, *Basic Norms for the Formation of Permanent Deacons* and *Directory for the Ministry and Life of Permanent Deacons* (22 February 1998): <https://www.vatican.va/roman_curia/congregations/cclergy/documents/rc_con_ccatheduc_doc_19980331_directorium-diaconi_en.html>.
+- Congregation for Catholic Education and Congregation for the Clergy, *Basic Norms for the Formation of Permanent Deacons* and *Directory for the Ministry and Life of Permanent Deacons* (22 February 1998): <https://www.vatican.va/roman_curia/congregations/cclergy/documents/rc_con_ccatheduc_doc_19980331_directorium-diaconi_en.html>.
 
 ### Councils and magisterial teaching
 
--   Second Vatican Council: *Lumen gentium* 29; *Orientalium Ecclesiarum* 5–6; *Optatam totius* 10; *Presbyterorum ordinis* 16. Latin and English at <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/>.
+- Second Vatican Council: *Lumen gentium* 29; *Orientalium Ecclesiarum* 5–6; *Optatam totius* 10; *Presbyterorum ordinis* 16. Latin and English at <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/>.
 
--   Paul VI, encyclical *Sacerdotalis caelibatus* (24 June 1967), nn. 2, 14, 17, 19–42; English and Latin at <https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_24061967_sacerdotalis.html> (and its `/la/` counterpart); n. 42 also at *AAS* 59 (1967) 674, <https://www.vatican.va/archive/aas/documents/AAS-59-1967-ocr.pdf>.
+- Paul VI, encyclical *Sacerdotalis caelibatus* (24 June 1967), nn. 2, 14, 17, 19–42; English and Latin at <https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_24061967_sacerdotalis.html> (and its `/la/` counterpart); n. 42 also at *AAS* 59 (1967) 674, <https://www.vatican.va/archive/aas/documents/AAS-59-1967-ocr.pdf>.
 
--   John Paul II, post-synodal apostolic exhortation *Pastores dabo vobis* (25 March 1992), nn. 29, 50: <https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_25031992_pastores-dabo-vobis.html>.
+- John Paul II, post-synodal apostolic exhortation *Pastores dabo vobis* (25 March 1992), nn. 29, 50: <https://www.vatican.va/content/john-paul-ii/en/apost_exhortations/documents/hf_jp-ii_exh_25031992_pastores-dabo-vobis.html>.
 
--   Synod of Bishops, Special Assembly for the Pan-Amazon Region, *Documento final* (26 October 2019), nn. 110–111, in Holy See Press Office bulletin B0820: <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2019/10/26/0820/01706.html>.
+- Synod of Bishops, Special Assembly for the Pan-Amazon Region, *Documento final* (26 October 2019), nn. 110–111, in Holy See Press Office bulletin B0820: <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2019/10/26/0820/01706.html>.
 
--   Francis, post-synodal apostolic exhortation *Querida Amazonia* (2 February 2020), nn. 2–4, 85–93: <https://www.vatican.va/content/francesco/en/apost_exhortations/documents/papa-francesco_esortazione-ap_20200202_querida-amazonia.html>.
+- Francis, post-synodal apostolic exhortation *Querida Amazonia* (2 February 2020), nn. 2–4, 85–93: <https://www.vatican.va/content/francesco/en/apost_exhortations/documents/papa-francesco_esortazione-ap_20200202_querida-amazonia.html>.
 
--   *Catechism of the Catholic Church* 2337, 2348–2350. Latin: <https://www.vatican.va/archive/catechism_lt/p3s2c2a6_lt.htm>; English: <https://www.vatican.va/archive/ENG0015/__P85.HTM>.
+- *Catechism of the Catholic Church* 2337, 2348–2350. Latin: <https://www.vatican.va/archive/catechism_lt/p3s2c2a6_lt.htm>; English: <https://www.vatican.va/archive/ENG0015/__P85.HTM>.
 
--   Holy See Press Office, bulletin B0602 of 7 October 2010, *Scheda informativa sulle Chiese cattoliche orientali* and the companion sheet on particular law: <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.html>.
+- Holy See Press Office, bulletin B0602 of 7 October 2010, *Scheda informativa sulle Chiese cattoliche orientali* and the companion sheet on particular law: <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.html>.
 
 ### Historical acts, at their witnesses
 
--   J. D. Mansi, *Sacrorum conciliorum nova et amplissima collectio*, tomus II (Florence 1759; Welter reprint, Paris 1901), coll. 11–12, 245–246, 669–670: Elvira c. 33 and Nicaea c. 3. Internet Archive item `sacrorumconcilio0002phil`, leaves 21, 138, 350.
+- J. D. Mansi, *Sacrorum conciliorum nova et amplissima collectio*, tomus II (Florence 1759; Welter reprint, Paris 1901), coll. 11–12, 245–246, 669–670: Elvira c. 33 and Nicaea c. 3. Internet Archive item `sacrorumconcilio0002phil`, leaves 21, 138, 350.
 
--   Mansi, *Collectio*, tomus XXI (Venice 1776; Welter reprint, Paris 1903), coll. 281–286 (Lateran I), 489–490 (Pisa 1135), 527–528 (Lateran II). Internet Archive item `sacrorumconcilio0021joan`, leaves 154, 156, 258, 277.
+- Mansi, *Collectio*, tomus XXI (Venice 1776; Welter reprint, Paris 1903), coll. 281–286 (Lateran I), 489–490 (Pisa 1135), 527–528 (Lateran II). Internet Archive item `sacrorumconcilio0021joan`, leaves 154, 156, 258, 277.
 
--   H. R. Percival (ed.), *The Seven Ecumenical Councils of the Undivided Church* (*Nicene and Post-Nicene Fathers*, second series, vol. XIV; New York 1900), pp. 11, 51–52, 356, 364–388, 365–368. Internet Archive item `sevenecumenicalc00perc`.
+- H. R. Percival (ed.), *The Seven Ecumenical Councils of the Undivided Church* (*Nicene and Post-Nicene Fathers*, second series, vol. XIV; New York 1900), pp. 11, 51–52, 356, 364–388, 365–368. Internet Archive item `sevenecumenicalc00perc`.
 
--   *Nicene and Post-Nicene Fathers*, second series, vol. II (New York 1890), pp. 18 and 256: Socrates, *Historia ecclesiastica* I.11; Sozomen, *Historia ecclesiastica* I.23. Internet Archive item `selectlibraryofn02scha`.
+- *Nicene and Post-Nicene Fathers*, second series, vol. II (New York 1890), pp. 18 and 256: Socrates, *Historia ecclesiastica* I.11; Sozomen, *Historia ecclesiastica* I.23. Internet Archive item `selectlibraryofn02scha`.
 
--   J.-P. Migne, *Patrologia Latina* 13 (Paris 1845), coll. 1131–1140: Siricius, *Epistola I ad Himerium*, reprinting Coustant. Internet Archive item `patrologiaecur13mign`.
+- J.-P. Migne, *Patrologia Latina* 13 (Paris 1845), coll. 1131–1140: Siricius, *Epistola I ad Himerium*, reprinting Coustant. Internet Archive item `patrologiaecur13mign`.
 
--   *Canones et decreta sacrosancti oecumenici Concilii Tridentini*, editio stereotypa undecima (Leipzig: Tauchnitz, 1887), p. 147; and *The Canons and Decrees of the Sacred and Œcumenical Council of Trent*, trans. J. Waterworth (London: Burns and Oates, Ld.), p. 195. Internet Archive items `canonesetdecreta00coun_0` and `cu31924029369760`.
+- *Canones et decreta sacrosancti oecumenici Concilii Tridentini*, editio stereotypa undecima (Leipzig: Tauchnitz, 1887), p. 147; and *The Canons and Decrees of the Sacred and Œcumenical Council of Trent*, trans. J. Waterworth (London: Burns and Oates, Ld.), p. 195. Internet Archive items `canonesetdecreta00coun_0` and `cu31924029369760`.
 
 ### Reported literature (not consulted at source)
 
--   C. Cochini, *Origines apostoliques du célibat sacerdotal* (Paris: Lethielleux, 1981); A. M. Stickler, *The Case for Clerical Celibacy* (San Francisco: Ignatius, 1995); R. Cholij, *Clerical Celibacy in East and West* (Leominster: Fowler Wright, 1988); S. Heid, *Zölibat in der frühen Kirche* (Paderborn: Schöningh, 1997); R. Gryson, *Les origines du célibat ecclésiastique du premier au septième siècle* (Gembloux: Duculot, 1970). Cited only as the named positions in the reported historiographic dispute of sections 10 and 13.
+- C. Cochini, *Origines apostoliques du célibat sacerdotal* (Paris: Lethielleux, 1981); A. M. Stickler, *The Case for Clerical Celibacy* (San Francisco: Ignatius, 1995); R. Cholij, *Clerical Celibacy in East and West* (Leominster: Fowler Wright, 1988); S. Heid, *Zölibat in der frühen Kirche* (Paderborn: Schöningh, 1997); R. Gryson, *Les origines du célibat ecclésiastique du premier au septième siècle* (Gembloux: Duculot, 1970). Cited only as the named positions in the reported historiographic dispute of sections 10 and 13.
 
 **Last revised (UTC):** 2026-07-25T20:12:38Z
 

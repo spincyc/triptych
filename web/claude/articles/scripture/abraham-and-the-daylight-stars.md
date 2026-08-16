@@ -86,7 +86,7 @@ The four witnesses relevant to a Catholic reader are the Masoretic Hebrew, the S
 | 15:17 | sun gone in; *thick darkness* | sun *going* toward setting; *a flame arose* — no darkness | *cum ergo occubuisset sol*; *caligo tenebrosa* |
 | 15:18 | *bayyom hahu* — in that day | *ekei* — *there* | *in illo die* — in that day |
 
-Read the Septuagint column downward and a different chapter appears. Its sun never finishes setting: at verse 12 it is “about the setting”, and at verse 17 it is still *egineto pros dusmais*, becoming toward its setting.[^4] It has no thick darkness at all. And at verse 18 it says not “in that day” but “there” — a marker of place where the Hebrew and Latin have a marker of time.
+Read the Septuagint column downward and a different chapter appears. Its sun never finishes setting: at verse 12 it is “about the setting”, and at verse 17 it is still *eginet*­*o pros dusmais*, becoming toward its setting.[^4] It has no thick darkness at all. And at verse 18 it says not “in that day” but “there” — a marker of place where the Hebrew and Latin have a marker of time.
 
 Swete’s printed Greek therefore makes the close less temporally insistent: it omits the Hebrew darkness phrase and prints a spatial marker at verse 18. That is a finding about this identified base text, not about every Septuagint witness and not an explanation of Christian reception.
 
@@ -825,71 +825,71 @@ Editions are identified as they were used. Where a work was read in a digital tr
 
 ### Scripture and versions
 
--   *The Holy Bible, Douay–Rheims*, Bishop Richard Challoner’s revision (1749–1752), in the electronic form registered in this repository. All English scriptural quotations; Vulgate chapter and verse numbering throughout. Public domain.
+- *The Holy Bible, Douay–Rheims*, Bishop Richard Challoner’s revision (1749–1752), in the electronic form registered in this repository. All English scriptural quotations; Vulgate chapter and verse numbering throughout. Public domain.
 
--   *The Holie Bible faithfully translated into English, out of the authentical Latin*, volume 1 (Douay, 1609). Read in the archive.org text layer of the Princeton Theological Seminary copy. Public domain.
+- *The Holie Bible faithfully translated into English, out of the authentical Latin*, volume 1 (Douay, 1609). Read in the archive.org text layer of the Princeton Theological Seminary copy. Public domain.
 
--   *Biblia Sacra Vulgatae Editionis*, ed. Michael Hetzenauer, O.F.M. Cap. (Ratisbon and Rome: Pustet, 1914). Genesis 15 read from a 200 dpi image of numbered scan page 0012. Public domain.
+- *Biblia Sacra Vulgatae Editionis*, ed. Michael Hetzenauer, O.F.M. Cap. (Ratisbon and Rome: Pustet, 1914). Genesis 15 read from a 200 dpi image of numbered scan page 0012. Public domain.
 
--   Henry Barclay Swete, ed., *The Old Testament in Greek according to the Septuagint*, volume I, 4th ed. (Cambridge University Press, 1909; reprinted 1925). Genesis 15 text and apparatus read in the archive.org text layer. Public domain.
+- Henry Barclay Swete, ed., *The Old Testament in Greek according to the Septuagint*, volume I, 4th ed. (Cambridge University Press, 1909; reprinted 1925). Genesis 15 text and apparatus read in the archive.org text layer. Public domain.
 
--   Targum Onkelos and Targum Pseudo-Jonathan on Genesis 15. Aramaic read at Sefaria; Pseudo-Jonathan also in J. W. Etheridge, *The Targums of Onkelos and Jonathan Ben Uzziel on the Pentateuch* (London, 1862). Public domain.
+- Targum Onkelos and Targum Pseudo-Jonathan on Genesis 15. Aramaic read at Sefaria; Pseudo-Jonathan also in J. W. Etheridge, *The Targums of Onkelos and Jonathan Ben Uzziel on the Pentateuch* (London, 1862). Public domain.
 
--   Rudolf Kittel and Paul Kahle, eds., *Biblia Hebraica*, Genesis 15, Kittel–Beer 1909 printing. The controlling loci were checked against the identified page images. Public domain.
+- Rudolf Kittel and Paul Kahle, eds., *Biblia Hebraica*, Genesis 15, Kittel–Beer 1909 printing. The controlling loci were checked against the identified page images. Public domain.
 
--   Syriac Peshitta Genesis 15, dated peshitta.eu delivery. The textual base is unidentified; used only as delivery-specific comparison evidence.
+- Syriac Peshitta Genesis 15, dated peshitta.eu delivery. The textual base is unidentified; used only as delivery-specific comparison evidence.
 
 ### Ancient witnesses
 
--   Philo of Alexandria, *Quis rerum divinarum heres sit*, in *The Works of Philo Judaeus*, trans. C. D. Yonge, volume II (London: Bohn, 1854). Read in the archive.org text layer. Public domain.
+- Philo of Alexandria, *Quis rerum divinarum heres sit*, in *The Works of Philo Judaeus*, trans. C. D. Yonge, volume II (London: Bohn, 1854). Read in the archive.org text layer. Public domain.
 
--   Flavius Josephus, *Antiquitates Judaicae* I.10.3, trans. William Whiston, read in the University of Chicago (Penelope) transcription. Public domain.
+- Flavius Josephus, *Antiquitates Judaicae* I.10.3, trans. William Whiston, read in the University of Chicago (Penelope) transcription. Public domain.
 
--   *Babylonian Talmud*, tractates Shabbat and Pesachim. Vocalized Aramaic and facing English of the William Davidson edition, at Sefaria. The translation is licensed CC BY-NC and is not offered under this project’s licence.
+- *Babylonian Talmud*, tractates Shabbat and Pesachim. Vocalized Aramaic and facing English of the William Davidson edition, at Sefaria. The translation is licensed CC BY-NC and is not offered under this project’s licence.
 
--   *Bereshit Rabbah* 44:10 and 44:12. English of *The Sefaria Midrash Rabbah* (2022), licensed CC BY; Hebrew of the Torat Emet text.
+- *Bereshit Rabbah* 44:10 and 44:12. English of *The Sefaria Midrash Rabbah* (2022), licensed CC BY; Hebrew of the Torat Emet text.
 
--   Augustine, *De civitate Dei* XVI.23–24. Latin in Emanuel Hoffmann, ed., *CSEL* 40 (Vienna, 1899–1900); English in Marcus Dods, trans., *The City of God* (Edinburgh, 1871). Both registered in this repository; both public domain.
+- Augustine, *De civitate Dei* XVI.23–24. Latin in Emanuel Hoffmann, ed., *CSEL* 40 (Vienna, 1899–1900); English in Marcus Dods, trans., *The City of God* (Edinburgh, 1871). Both registered in this repository; both public domain.
 
--   Ambrose, *De Abraham* II.8.48, Latin in *Patrologia Latina* 14. Exact locus inspected; public domain.
+- Ambrose, *De Abraham* II.8.48, Latin in *Patrologia Latina* 14. Exact locus inspected; public domain.
 
--   John Chrysostom, *Homilies on Genesis* 36.13 and 37.3–6. Copyrighted English consulted for verification only; no wording reproduced.
+- John Chrysostom, *Homilies on Genesis* 36.13 and 37.3–6. Copyrighted English consulted for verification only; no wording reproduced.
 
--   Ephrem the Syrian, *Commentary on Genesis* XII.2–5. Copyrighted English consulted for verification only; no wording reproduced.
+- Ephrem the Syrian, *Commentary on Genesis* XII.2–5. Copyrighted English consulted for verification only; no wording reproduced.
 
--   Theodoret of Cyrus, *Questions on Genesis* 66–67. Consulted only for the bounded local negative reported in the text.
+- Theodoret of Cyrus, *Questions on Genesis* 66–67. Consulted only for the bounded local negative reported in the text.
 
--   *Jubilees* 14, in R. H. Charles’s 1913 public-domain English; treated as rewritten Scripture, not as a version of Genesis.
+- *Jubilees* 14, in R. H. Charles’s 1913 public-domain English; treated as rewritten Scripture, not as a version of Genesis.
 
 ### Jewish commentary
 
--   Rashi on Genesis. *Pentateuch with Rashi’s Commentary*, trans. M. Rosenbaum and A. M. Silbermann (1929–1934). Public domain.
+- Rashi on Genesis. *Pentateuch with Rashi’s Commentary*, trans. M. Rosenbaum and A. M. Silbermann (1929–1934). Public domain.
 
--   Abraham Ibn Ezra on Genesis. Hebrew of the Piotrkow edition (1907–1911), public domain; English of H. Norman Strickman and Arthur M. Silver (Menorah, 1988–2004), licensed CC BY-NC and not offered under this project’s licence.
+- Abraham Ibn Ezra on Genesis. Hebrew of the Piotrkow edition (1907–1911), public domain; English of H. Norman Strickman and Arthur M. Silver (Menorah, 1988–2004), licensed CC BY-NC and not offered under this project’s licence.
 
--   Moses Nahmanides (Ramban) on Genesis. *Commentary on the Torah*, trans. Charles B. Chavel (New York: Shilo, 1971–1976), licensed CC BY.
+- Moses Nahmanides (Ramban) on Genesis. *Commentary on the Torah*, trans. Charles B. Chavel (New York: Shilo, 1971–1976), licensed CC BY.
 
--   David Kimhi (Radak) on Genesis, in Eliyahu Munk, *HaChut Hameshulash*, licensed CC BY.
+- David Kimhi (Radak) on Genesis, in Eliyahu Munk, *HaChut Hameshulash*, licensed CC BY.
 
--   Hezekiah ben Manoah (Chizkuni) on Genesis. Hebrew public domain; English of Eliyahu Munk, licensed CC BY.
+- Hezekiah ben Manoah (Chizkuni) on Genesis. Hebrew public domain; English of Eliyahu Munk, licensed CC BY.
 
--   Bahya ben Asher, *Midrash Rabbeinu Bachya* (Warsaw, 1878). Hebrew public domain; English of Eliyahu Munk, licensed CC BY.
+- Bahya ben Asher, *Midrash Rabbeinu Bachya* (Warsaw, 1878). Hebrew public domain; English of Eliyahu Munk, licensed CC BY.
 
--   Jacob ben Asher, *Tur HaArokh* on Genesis (Hanover, 1838). Hebrew public domain.
+- Jacob ben Asher, *Tur HaArokh* on Genesis (Hanover, 1838). Hebrew public domain.
 
--   Meir Leibush ben Yehiel Michel (Malbim) on Genesis, Hebrew Wikisource text. Public domain.
+- Meir Leibush ben Yehiel Michel (Malbim) on Genesis, Hebrew Wikisource text. Public domain.
 
--   Naftali Zvi Yehuda Berlin (Netziv), *Haamek Davar*, in *Sefer Torat Elohim* (Vilna, 1879). Public domain.
+- Naftali Zvi Yehuda Berlin (Netziv), *Haamek Davar*, in *Sefer Torat Elohim* (Vilna, 1879). Public domain.
 
--   Isaac Abarbanel, *Perush al ha-Torah*, on Genesis (Warsaw, 1862). Read in two independent digital transcriptions, at Sefaria and at Hebrew Wikisource, and collated between them for the passage quoted. Public domain.
+- Isaac Abarbanel, *Perush al ha-Torah*, on Genesis (Warsaw, 1862). Read in two independent digital transcriptions, at Sefaria and at Hebrew Wikisource, and collated between them for the passage quoted. Public domain.
 
--   Moses Maimonides, *The Guide for the Perplexed*, trans. M. Friedländer, 2nd ed. (London, 1903). Public domain.
+- Moses Maimonides, *The Guide for the Perplexed*, trans. M. Friedländer, 2nd ed. (London, 1903). Public domain.
 
 ### Catholic commentary
 
--   Cornelius a Lapide, S.J., *Commentaria in Pentateuchum Mosis*, on Genesis. Read in the archive.org text layer of a 1700 printing. Public domain.
+- Cornelius a Lapide, S.J., *Commentaria in Pentateuchum Mosis*, on Genesis. Read in the archive.org text layer of a 1700 printing. Public domain.
 
--   George Leo Haydock, notes to *The Douay–Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary*. Read in the archive.org text layer. Public domain.
+- George Leo Haydock, notes to *The Douay–Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary*. Read in the archive.org text layer. Public domain.
 
 ### On the digital transcriptions used
 

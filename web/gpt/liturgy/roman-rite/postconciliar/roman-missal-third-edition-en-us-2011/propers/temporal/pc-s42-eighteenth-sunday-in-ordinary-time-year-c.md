@@ -51,7 +51,7 @@ PC-S42-C
 | Communion B | John 6:35 | Capernaum in the narrated discourse | Canonical John commonly placed late first century |
 | Jesus identifies himself as the bread of life. This alternative remains distinct from the Wisdom antiphon. |  |  |  |
 
-<span id="triptych:brief-synthesis:start" label="triptych:brief-synthesis:start"></span>
+<span id="triptych:brief-synthesis:start" data-label="triptych:brief-synthesis:start"></span>
 
 ## The Propers: Themes and Movement
 
@@ -77,9 +77,9 @@ Augustine reads the psalm’s return to dust, numbered days, mercy, and work of 
 
 The acclamation’s poverty of spirit concerns humble dependence; it must not erase the material and economic force of the Gospel warning or romanticize involuntary poverty. Francis’s 2019 Angelus makes the enduring pastoral application concrete in inheritance conflict, enslavement to possessions, sharing, and the legacy a life leaves.
 
-Prudent provision, agriculture, saving, retirement planning, ownership, and care for dependents are not condemned as such. The controlling question is whether goods serve responsible love or become the imagined ground of life and the rival of God. <span id="triptych:brief-synthesis:end" label="triptych:brief-synthesis:end"></span>
+Prudent provision, agriculture, saving, retirement planning, ownership, and care for dependents are not condemned as such. The controlling question is whether goods serve responsible love or become the imagined ground of life and the rival of God. <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
-<span id="triptych:brief-synthesis:next" label="triptych:brief-synthesis:next"></span>
+<span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
 
 ## The Propers: Detailed Commentary
 
@@ -228,15 +228,15 @@ The barns store food, while either Communion alternative presents food as divine
 
 ## The Propers: Notable and Quotable
 
--   The 2014 *Homiletic Directory* 145–149 identifies the rich fool with this Sunday and explains the Old Testament–Gospel harmony while preserving the Apostle’s semi-continuous course.
+- The 2014 *Homiletic Directory* 145–149 identifies the rich fool with this Sunday and explains the Old Testament–Gospel harmony while preserving the Apostle’s semi-continuous course.
 
--   Francis’s Angelus of 4 August 2019 redirects the inheritance dispute toward wealth’s power to enslave and the obligation to share.
+- Francis’s Angelus of 4 August 2019 redirects the inheritance dispute toward wealth’s power to enslave and the obligation to share.
 
--   Basil’s homily *I Will Pull Down My Barns*, especially §7 (PG 31, 276B–277A), turns surplus into a question of stewardship toward the poor; this is direct ancient reception, not Luke’s narrated circumstance.
+- Basil’s homily *I Will Pull Down My Barns*, especially §7 (PG 31, 276B–277A), turns surplus into a question of stewardship toward the poor; this is direct ancient reception, not Luke’s narrated circumstance.
 
--   Rembrandt’s 1627 *Parable of the Rich Man* relocates the barns into a nocturnal scene of solitary money-accounting (Gemäldegalerie Berlin, inv. 828 D).
+- Rembrandt’s 1627 *Parable of the Rich Man* relocates the barns into a nocturnal scene of solitary money-accounting (Gemäldegalerie Berlin, inv. 828 D).
 
--   Charles Ives’s *Psalm 90* (1923–24) gives musical afterlife to the psalm’s petition to number our days; score and recordings are not reproduced.
+- Charles Ives’s *Psalm 90* (1923–24) gives musical afterlife to the psalm’s petition to number our days; score and recordings are not reproduced.
 
 ## Appendix: Liturgical Resolution
 
@@ -262,19 +262,19 @@ This source-first guide treats the recurring U.S. Year C formula, not a parish r
 
 ## References
 
--   U.S. Lectionary no. 114, official USCCB occurrence page, 3 August 2025.
+- U.S. Lectionary no. 114, official USCCB occurrence page, 3 August 2025.
 
--   *Missale Romanum* (2002), Week XVIII, printed pp. 467–468; official 2008 variation-list control.
+- *Missale Romanum* (2002), Week XVIII, printed pp. 467–468; official 2008 variation-list control.
 
--   Augustine, *Exposition on Psalm 90*, §§4–17; *Sermon 57* (Benedictine 107), §§2–6.
+- Augustine, *Exposition on Psalm 90*, §§4–17; *Sermon 57* (Benedictine 107), §§2–6.
 
--   John Chrysostom, *Homilies on Colossians* 7–8.
+- John Chrysostom, *Homilies on Colossians* 7–8.
 
--   Ambrose, *On Duties* III.6.41–44.
+- Ambrose, *On Duties* III.6.41–44.
 
--   Francis, Angelus, 4 August 2019.
+- Francis, Angelus, 4 August 2019.
 
--   Dicastery for Divine Worship, *Homiletic Directory* 145–149.
+- Dicastery for Divine Worship, *Homiletic Directory* 145–149.
 
 **Last revised (UTC):** 2026-07-29T18:04:07Z
 

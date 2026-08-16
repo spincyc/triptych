@@ -688,95 +688,95 @@ This source-audited Catholic study instrument is not an act of the Magisterium, 
 
 ### Scripture, councils, and catechism
 
--   The biblical loci are identified within each mystery study. The principal narrative sources are Luke 1–2; Matthew 3, 17, and 26–28; Mark 1, 8–9, and 14–16; Luke 3, 9, and 22–24; John 2, 6, and 18–21; Acts 1–2; 1 Corinthians 10–11 and 15; and Revelation 12.
+- The biblical loci are identified within each mystery study. The principal narrative sources are Luke 1–2; Matthew 3, 17, and 26–28; Mark 1, 8–9, and 14–16; Luke 3, 9, and 22–24; John 2, 6, and 18–21; Acts 1–2; 1 Corinthians 10–11 and 15; and Revelation 12.
 
--   Second Vatican Council, *Dei Verbum*, especially 2–4: [Holy See text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html).
+- Second Vatican Council, *Dei Verbum*, especially 2–4: [Holy See text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html).
 
--   Second Vatican Council, *Lumen gentium*, especially 52–69: [Holy See text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html).
+- Second Vatican Council, *Lumen gentium*, especially 52–69: [Holy See text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html).
 
--   *Catechism of the Catholic Church*, 65–67, 244–248, 484–511, 522–560, 571–623, 638–667, 731–741, 963–972, 1213–1284, 1322–1419, 1427–1429, 1471–1479, 2617–2619, 2673–2679, and 2705–2708. Principal online divisions: [Holy See index](https://www.vatican.va/archive/ENG0015/_INDEX.HTM); [Mary in Christian prayer](https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_2.html); [meditation](https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_1/ii_meditation.html).
+- *Catechism of the Catholic Church*, 65–67, 244–248, 484–511, 522–560, 571–623, 638–667, 731–741, 963–972, 1213–1284, 1322–1419, 1427–1429, 1471–1479, 2617–2619, 2673–2679, and 2705–2708. Principal online divisions: [Holy See index](https://www.vatican.va/archive/ENG0015/_INDEX.HTM); [Mary in Christian prayer](https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_two/article_2.html); [meditation](https://www.vatican.va/content/catechism/en/part_four/section_one/chapter_three/article_1/ii_meditation.html).
 
--   Council of Trent, session XXII, chapter 2, on the sacramental presence of the one sacrifice, and session XIII, chapter 4, on transubstantiation; cited through CCC 1366–1377 and the conciliar decrees.
+- Council of Trent, session XXII, chapter 2, on the sacramental presence of the one sacrifice, and session XIII, chapter 4, on transubstantiation; cited through CCC 1366–1377 and the conciliar decrees.
 
--   Third Council of Constantinople, exposition of faith on Christ’s two natural wills; cited through CCC 475.
+- Third Council of Constantinople, exposition of faith on Christ’s two natural wills; cited through CCC 475.
 
 ### Magisterial and ecclesial sources on the Rosary and Mary
 
--   Leo XIII, *Supremi apostolatus officio* (1883), 3–8: [Holy See text](https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01091883_supremi-apostolatus-officio.html).
+- Leo XIII, *Supremi apostolatus officio* (1883), 3–8: [Holy See text](https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_01091883_supremi-apostolatus-officio.html).
 
--   Leo XIII, *Magnae Dei Matris* (1892), especially 8 and 16–17, for the received Dominic attribution and the traditional mystery sequence: [Holy See text](https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_08091892_magnae-dei-matris.html).
+- Leo XIII, *Magnae Dei Matris* (1892), especially 8 and 16–17, for the received Dominic attribution and the traditional mystery sequence: [Holy See text](https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_08091892_magnae-dei-matris.html).
 
--   Pius V, *Consueverunt Romani Pontifices* (17 September 1569), checked in *Magnum Bullarium Romanum* II (Lyon, 1655), 285–286: [digitized Latin primary text](https://books.google.com/books?id=GvstxXBO8zUC&pg=PA285). Used according to its exact confraternity and indulgence context; it describes the prayer but does not list fifteen fixed mysteries.
+- Pius V, *Consueverunt Romani Pontifices* (17 September 1569), checked in *Magnum Bullarium Romanum* II (Lyon, 1655), 285–286: [digitized Latin primary text](https://books.google.com/books?id=GvstxXBO8zUC&pg=PA285). Used according to its exact confraternity and indulgence context; it describes the prayer but does not list fifteen fixed mysteries.
 
--   *Catechismus ex decreto Concilii Tridentini ad parochos* (Rome: Paulus Manutius, 1566), 300, on the Church’s addition of petition to the biblical salutation: [digitized Latin primary text](https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb11204733-1).
+- *Catechismus ex decreto Concilii Tridentini ad parochos* (Rome: Paulus Manutius, 1566), 300, on the Church’s addition of petition to the biblical salutation: [digitized Latin primary text](https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb11204733-1).
 
--   Pius XII, *Munificentissimus Deus* (1950), especially 26–27 and the definition at 44: [Holy See text](https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html).
+- Pius XII, *Munificentissimus Deus* (1950), especially 26–27 and the definition at 44: [Holy See text](https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html).
 
--   Pius XII, *Ad caeli Reginam* (1954), especially 31, 34, and 39: [Holy See text](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html).
+- Pius XII, *Ad caeli Reginam* (1954), especially 31, 34, and 39: [Holy See text](https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_11101954_ad-caeli-reginam.html).
 
--   Paul VI, *Marialis cultus* (1974), 38–39 and 42–55: [Holy See text](https://www.vatican.va/content/paul-vi/en/apost_exhortations/documents/hf_p-vi_exh_19740202_marialis-cultus.html).
+- Paul VI, *Marialis cultus* (1974), 38–39 and 42–55: [Holy See text](https://www.vatican.va/content/paul-vi/en/apost_exhortations/documents/hf_p-vi_exh_19740202_marialis-cultus.html).
 
--   John Paul II, *Rosarium Virginis Mariae* (2002), especially 1, 10–25, and 27–38: [Holy See text](https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html).
+- John Paul II, *Rosarium Virginis Mariae* (2002), especially 1, 10–25, and 27–38: [Holy See text](https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html).
 
--   John Paul II, *Ecclesia de Eucharistia* (2003), especially 55, on the analogy between Mary’s fiat and the communicant’s amen: [Holy See text](https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html).
+- John Paul II, *Ecclesia de Eucharistia* (2003), especially 55, on the analogy between Mary’s fiat and the communicant’s amen: [Holy See text](https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html).
 
--   Congregation for Divine Worship and the Discipline of the Sacraments, *Directory on Popular Piety and the Liturgy* (2001), 197–202: [Holy See text](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html).
+- Congregation for Divine Worship and the Discipline of the Sacraments, *Directory on Popular Piety and the Liturgy* (2001), 197–202: [Holy See text](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html).
 
--   Congregation for the Doctrine of the Faith, *The Message of Fatima*, including the theological commentary (2000): [Holy See text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000626_message-fatima_en.html).
+- Congregation for the Doctrine of the Faith, *The Message of Fatima*, including the theological commentary (2000): [Holy See text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000626_message-fatima_en.html).
 
--   Dicastery for the Doctrine of the Faith, *Norms for Proceeding in the Discernment of Alleged Supernatural Phenomena* (2024), especially 11–12, 16–23: [Holy See text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html).
+- Dicastery for the Doctrine of the Faith, *Norms for Proceeding in the Discernment of Alleged Supernatural Phenomena* (2024), especially 11–12, 16–23: [Holy See text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html).
 
--   Dicastery for the Doctrine of the Faith, *Mater Populi Fidelis* (2025), especially 27–33, 38–47, and 53–55, on Mary’s maternal cooperation, intercession, and the unique mediation of Christ: [Holy See text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html).
+- Dicastery for the Doctrine of the Faith, *Mater Populi Fidelis* (2025), especially 27–33, 38–47, and 53–55, on Mary’s maternal cooperation, intercession, and the unique mediation of Christ: [Holy See text](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html).
 
--   Shrine of Fatima, “Narrative of the Apparitions,” authority-owned presentation of Lucia’s IV Memoir and early canonical interrogations, for the reported daily-Rosary requests from May through October 1917 and the July post-decade invocation: [Shrine text](https://www.fatima.pt/en/pages/narrative-of-the-apparitions-).
+- Shrine of Fatima, “Narrative of the Apparitions,” authority-owned presentation of Lucia’s IV Memoir and early canonical interrogations, for the reported daily-Rosary requests from May through October 1917 and the July post-decade invocation: [Shrine text](https://www.fatima.pt/en/pages/narrative-of-the-apparitions-).
 
--   Apostolic Penitentiary, *Enchiridion Indulgentiarum*, fourth edition (1999), general norms 18 and 20 and concession 17 §1: [Holy See Latin text](https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html).
+- Apostolic Penitentiary, *Enchiridion Indulgentiarum*, fourth edition (1999), general norms 18 and 20 and concession 17 §1: [Holy See Latin text](https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html).
 
--   Holy See Press Office, scriptural presentations of the [Joyful](https://press.vatican.va/special/rosary/documents/misteri_gaudiosi_en.html), [Luminous](https://press.vatican.va/special/rosary/documents/misteri_luminosi_en.html), [Sorrowful](https://press.vatican.va/special/rosary/documents/misteri_dolorosi_en.html), and [Glorious Mysteries](https://press.vatican.va/special/rosary/documents/misteri_gloriosi_en.html).
+- Holy See Press Office, scriptural presentations of the [Joyful](https://press.vatican.va/special/rosary/documents/misteri_gaudiosi_en.html), [Luminous](https://press.vatican.va/special/rosary/documents/misteri_luminosi_en.html), [Sorrowful](https://press.vatican.va/special/rosary/documents/misteri_dolorosi_en.html), and [Glorious Mysteries](https://press.vatican.va/special/rosary/documents/misteri_gloriosi_en.html).
 
 ### Patristic witnesses
 
--   St. Irenaeus, *Against Heresies* III.22.4, on Annunciation and New Eve: [working English translation](https://www.newadvent.org/fathers/0103322.htm); III.17.2, on Pentecost, languages, and the unity of nations: [working English translation](https://www.newadvent.org/fathers/0103317.htm).
+- St. Irenaeus, *Against Heresies* III.22.4, on Annunciation and New Eve: [working English translation](https://www.newadvent.org/fathers/0103322.htm); III.17.2, on Pentecost, languages, and the unity of nations: [working English translation](https://www.newadvent.org/fathers/0103317.htm).
 
--   St. Ambrose, *Exposition of the Gospel of Luke* II.19, 22–23, 26–27, on the Visitation, used through a [working liturgical excerpt](https://divineoffice.org/1221-adv-w04-sun-or/).
+- St. Ambrose, *Exposition of the Gospel of Luke* II.19, 22–23, 26–27, on the Visitation, used through a [working liturgical excerpt](https://divineoffice.org/1221-adv-w04-sun-or/).
 
--   St. Cyril of Alexandria, *Commentary on Luke*, Sermons IV and V, on the Presentation and Finding in the Temple: [working English translation](https://www.tertullian.org/fathers/cyril_on_luke_01_sermons_01_11.htm); Sermon XII, on Christ’s proclamation of Isaiah’s acceptable year: [working English translation](https://www.tertullian.org/fathers/cyril_on_luke_02_sermons_12_25.htm).
+- St. Cyril of Alexandria, *Commentary on Luke*, Sermons IV and V, on the Presentation and Finding in the Temple: [working English translation](https://www.tertullian.org/fathers/cyril_on_luke_01_sermons_01_11.htm); Sermon XII, on Christ’s proclamation of Isaiah’s acceptable year: [working English translation](https://www.tertullian.org/fathers/cyril_on_luke_02_sermons_12_25.htm).
 
--   St. Leo the Great, Sermon 22.2, 4, on the Nativity: [working English translation](https://www.newadvent.org/fathers/360322.htm); Sermon 51.2–5, on the Transfiguration: [working English translation](https://www.newadvent.org/fathers/360351.htm); Sermon 73.4, on the Ascension: [working English translation](https://www.newadvent.org/fathers/360373.htm).
+- St. Leo the Great, Sermon 22.2, 4, on the Nativity: [working English translation](https://www.newadvent.org/fathers/360322.htm); Sermon 51.2–5, on the Transfiguration: [working English translation](https://www.newadvent.org/fathers/360351.htm); Sermon 73.4, on the Ascension: [working English translation](https://www.newadvent.org/fathers/360373.htm).
 
--   St. Gregory Nazianzen, Oration 39.14–15, on the Baptism of the Lord: [working English translation](https://www.newadvent.org/fathers/310239.htm).
+- St. Gregory Nazianzen, Oration 39.14–15, on the Baptism of the Lord: [working English translation](https://www.newadvent.org/fathers/310239.htm).
 
--   St. John Damascene, *Exposition of the Orthodox Faith* III.23–24, on Christ’s natural fear and two wills: [working English translation](https://www.newadvent.org/fathers/33043.htm); IV.14, on Mary’s derived Queenship: [working English translation](https://www.newadvent.org/fathers/33044.htm); *Second Homily on the Dormition* 14, as reproduced and located in *Munificentissimus Deus* 21 and note 17.
+- St. John Damascene, *Exposition of the Orthodox Faith* III.23–24, on Christ’s natural fear and two wills: [working English translation](https://www.newadvent.org/fathers/33043.htm); IV.14, on Mary’s derived Queenship: [working English translation](https://www.newadvent.org/fathers/33044.htm); *Second Homily on the Dormition* 14, as reproduced and located in *Munificentissimus Deus* 21 and note 17.
 
--   St. Cyril of Jerusalem, *Catechetical Lecture* XIII.13, 17–18, on the Scourging and Genesis-thorn typology: [working English translation](https://www.newadvent.org/fathers/310113.htm).
+- St. Cyril of Jerusalem, *Catechetical Lecture* XIII.13, 17–18, on the Scourging and Genesis-thorn typology: [working English translation](https://www.newadvent.org/fathers/310113.htm).
 
--   St. Augustine, *Tractates on the Gospel of John* 8, on Cana: [working English translation](https://www.newadvent.org/fathers/1701008.htm); 117.3, on Christ bearing the Cross: [working English translation](https://www.newadvent.org/fathers/1701117.htm); 120.2, on Christ’s opened side: [working English translation](https://www.newadvent.org/fathers/1701120.htm).
+- St. Augustine, *Tractates on the Gospel of John* 8, on Cana: [working English translation](https://www.newadvent.org/fathers/1701008.htm); 117.3, on Christ bearing the Cross: [working English translation](https://www.newadvent.org/fathers/1701117.htm); 120.2, on Christ’s opened side: [working English translation](https://www.newadvent.org/fathers/1701120.htm).
 
--   St. Ignatius of Antioch, *Letter to the Smyrnaeans* 2–3, on the bodily risen Christ: [working English translation](https://www.newadvent.org/fathers/0109.htm).
+- St. Ignatius of Antioch, *Letter to the Smyrnaeans* 2–3, on the bodily risen Christ: [working English translation](https://www.newadvent.org/fathers/0109.htm).
 
--   St. Justin Martyr, *First Apology* 65–67, on Eucharistic worship. The Dods–Reith English as printed in ANF volume 1 (Buffalo, 1887) was checked in the exact facsimile; [New Advent](https://www.newadvent.org/fathers/0126.htm) supplies a distinct Kevin Knight–revised web presentation.
+- St. Justin Martyr, *First Apology* 65–67, on Eucharistic worship. The Dods–Reith English as printed in ANF volume 1 (Buffalo, 1887) was checked in the exact facsimile; [New Advent](https://www.newadvent.org/fathers/0126.htm) supplies a distinct Kevin Knight–revised web presentation.
 
 These Fathers are witnesses to the mysteries and their reception, not authors of the later Rosary form.
 
 ### Historical study
 
--   Robert of Ostrevant, *Vita Aiberti*, in *Acta Sanctorum*, April I, 673–680: [digitized Bollandist volume](https://www.documentacatholicaomnia.eu/04z/z_1643-1925__Societe_des_Bollandistes__Acta_Sanctorum_04_Aprilis_Tomus_01_1675__LT.pdf.html). Used with Thurston’s historical analysis for Aibert’s pre-Dominican counted-Ave discipline, not as evidence of the later complete Rosary.
+- Robert of Ostrevant, *Vita Aiberti*, in *Acta Sanctorum*, April I, 673–680: [digitized Bollandist volume](https://www.documentacatholicaomnia.eu/04z/z_1643-1925__Societe_des_Bollandistes__Acta_Sanctorum_04_Aprilis_Tomus_01_1675__LT.pdf.html). Used with Thurston’s historical analysis for Aibert’s pre-Dominican counted-Ave discipline, not as evidence of the later complete Rosary.
 
--   *Ancrene Wisse*, part I, lines 300 and 332–337, ed. Robert Hasenfratz: [critical Middle English text](https://metseditions.org/read/DP6mDZVUzAY1uNLwU70zrhMQdQ09XGa). Used for the early-thirteenth-century direction to pray fifty or a hundred Aves and to order a fifty in five tens with distinct postures.
+- *Ancrene Wisse*, part I, lines 300 and 332–337, ed. Robert Hasenfratz: [critical Middle English text](https://metseditions.org/read/DP6mDZVUzAY1uNLwU70zrhMQdQ09XGa). Used for the early-thirteenth-century direction to pray fifty or a hundred Aves and to order a fifty in five tens with distinct postures.
 
--   Girolamo Savonarola, *Esposizione sopra l’Ave Maria* (Florence: Bartolommeo di Libri, c. 1495–1496), first printed leaf: [digitized primary text](https://commons.wikimedia.org/wiki/File:Esposizione_sopra_l%27Ave_Maria_%28IA_ita-bnc-in2-00000229-001%29.pdf). The near-modern petition omits *nostrae*; it is not mislabeled the exact final formula.
+- Girolamo Savonarola, *Esposizione sopra l’Ave Maria* (Florence: Bartolommeo di Libri, c. 1495–1496), first printed leaf: [digitized primary text](https://commons.wikimedia.org/wiki/File:Esposizione_sopra_l%27Ave_Maria_%28IA_ita-bnc-in2-00000229-001%29.pdf). The near-modern petition omits *nostrae*; it is not mislabeled the exact final formula.
 
--   *Breviarium Romanum: Editio princeps* (1568), anastatic ed. Manlio Sodi and Achille Maria Triacca (Vatican City: Libreria Editrice Vaticana, 1999), facsimile 31: [digitized liturgical primary text](https://books.google.com/books?id=NTbZAAAAMAAJ&pg=PA31). Used for the complete familiar Latin form of the Hail Mary.
+- *Breviarium Romanum: Editio princeps* (1568), anastatic ed. Manlio Sodi and Achille Maria Triacca (Vatican City: Libreria Editrice Vaticana, 1999), facsimile 31: [digitized liturgical primary text](https://books.google.com/books?id=NTbZAAAAMAAJ&pg=PA31). Used for the complete familiar Latin form of the Hail Mary.
 
--   Herbert Thurston, “Hail Mary,” *Catholic Encyclopedia* 7 (1910): [documented historical synthesis](https://www.newadvent.org/cathen/07110b.htm). Used for the joined biblical greetings, pre-Dominic counted Aves, variable petition stage, and 1568 liturgical stabilization; its dated judgments remain subject to the checked primary witnesses and later scholarship.
+- Herbert Thurston, “Hail Mary,” *Catholic Encyclopedia* 7 (1910): [documented historical synthesis](https://www.newadvent.org/cathen/07110b.htm). Used for the joined biblical greetings, pre-Dominic counted Aves, variable petition stage, and 1568 liturgical stabilization; its dated judgments remain subject to the checked primary witnesses and later scholarship.
 
--   Riccardo Barile, O.P., “The Rosary in History: From the Beginning to the Consolidation of Its Actual Structure,” *L’Osservatore Romano*, English edition, 22 January 2003, 8–9; accessible in [English reprint](https://www.catholicculture.org/culture/library/view.cfm?recnum=4728). Used for the medieval sequence, Dominic of Prussia, Alain de la Roche, confraternities, printed-mystery consolidation, and exact limits of Pius V’s description.
+- Riccardo Barile, O.P., “The Rosary in History: From the Beginning to the Consolidation of Its Actual Structure,” *L’Osservatore Romano*, English edition, 22 January 2003, 8–9; accessible in [English reprint](https://www.catholicculture.org/culture/library/view.cfm?recnum=4728). Used for the medieval sequence, Dominic of Prussia, Alain de la Roche, confraternities, printed-mystery consolidation, and exact limits of Pius V’s description.
 
--   Nicola Sinclair, “En Route to the Ave: Rogier van der Weyden’s Miraflores Altarpiece and the Nascent Rosary” (M.A. thesis, Temple University, 2012), especially 37: [institutional PDF](https://scholarshare.temple.edu/server/api/core/bitstreams/01abacb7-4dbd-4999-8a33-3641cf0951b0/content). Used for Dominic of Prussia’s clause cycle and transmission.
+- Nicola Sinclair, “En Route to the Ave: Rogier van der Weyden’s Miraflores Altarpiece and the Nascent Rosary” (M.A. thesis, Temple University, 2012), especially 37: [institutional PDF](https://scholarshare.temple.edu/server/api/core/bitstreams/01abacb7-4dbd-4999-8a33-3641cf0951b0/content). Used for Dominic of Prussia’s clause cycle and transmission.
 
--   Klara H. Broekhuijsen, “The Institution of the Rosary: Establishing the Context for a Recently Discovered Copy after a Lost Panel by Geertgen tot Sint Jans in the Pommersfelden Book of Hours, Ms. 343,” *Oud Holland* 123 (2010), 220–234, especially 223–225: [peer-reviewed PDF](https://rkddb.rkd.nl/rkddb/digital_book/18750176_123_03-04_s003_text.pdf). Used for the distinction between Dominic’s *vita* and Alain’s stories, Dominic of Prussia, Alain, Cologne, confraternal print, and late-medieval visual reception.
+- Klara H. Broekhuijsen, “The Institution of the Rosary: Establishing the Context for a Recently Discovered Copy after a Lost Panel by Geertgen tot Sint Jans in the Pommersfelden Book of Hours, Ms. 343,” *Oud Holland* 123 (2010), 220–234, especially 223–225: [peer-reviewed PDF](https://rkddb.rkd.nl/rkddb/digital_book/18750176_123_03-04_s003_text.pdf). Used for the distinction between Dominic’s *vita* and Alain’s stories, Dominic of Prussia, Alain, Cologne, confraternal print, and late-medieval visual reception.
 
--   Rita George Tvrtković, “Our Lady of Victory or Our Lady of Beauty?: The Virgin Mary in Early Modern Dominican and Jesuit Approaches to Islam,” *Journal of Jesuit Studies* 7 (2020), 403–416, especially 405: [peer-reviewed PDF](https://brill.com/view/journals/jjs/7/3/article-p403_403.pdf). Used to corroborate Alain’s fifteenth-century Dominic linkage and Sprenger’s 1475 Cologne confraternity.
+- Rita George Tvrtković, “Our Lady of Victory or Our Lady of Beauty?: The Virgin Mary in Early Modern Dominican and Jesuit Approaches to Islam,” *Journal of Jesuit Studies* 7 (2020), 403–416, especially 405: [peer-reviewed PDF](https://brill.com/view/journals/jjs/7/3/article-p403_403.pdf). Used to corroborate Alain’s fifteenth-century Dominic linkage and Sprenger’s 1475 Cologne confraternity.
 
 **Last revised (UTC):** 2026-07-23T21:12:55Z
 

@@ -119,11 +119,11 @@ This stratum supplies the crown of stars, white garments, yellow sash, flowing g
 
 These are real variations, not merely three paraphrases of an identical outline. The wrong response is to invent an itinerary that makes every interval simultaneously true. The better response is graded confidence:
 
--   **High confidence within the transmitted historical core:** Adele reported repeated encounters; at least one occurred in connection with Sunday Mass; companions were associated with a later encounter; the command centered on children’s religious instruction and sacramental preparation; Adele built her life around that work.
+- **High confidence within the transmitted historical core:** Adele reported repeated encounters; at least one occurred in connection with Sunday Mass; companions were associated with a later encounter; the command centered on children’s religious instruction and sacramental preparation; Adele built her life around that work.
 
--   **Received but later-documented material:** the October 9 synthesis, gristmill setting, full appearance, priest’s exact instruction, and extended dialogue.
+- **Received but later-documented material:** the October 9 synthesis, gristmill setting, full appearance, priest’s exact instruction, and extended dialogue.
 
--   **Unwarranted claim:** that the surviving evidence supplies a word-for-word 1859 transcript or permits every chronological difference to be solved.
+- **Unwarranted claim:** that the surviving evidence supplies a word-for-word 1859 transcript or permits every chronological difference to be solved.
 
 ### Memory, translation, and genre
 
@@ -341,19 +341,19 @@ Theologically responsible gratitude says: those at the chapel survived, they pra
 
 ### Pastoral rules for recounting the fire
 
--   Say *preservation tradition* or *reported providential preservation* unless discussing a formally declared miracle.
+- Say *preservation tradition* or *reported providential preservation* unless discussing a formally declared miracle.
 
--   Identify Pernin as an early reporter, not a Champion eyewitness, and retain his disclaimer.
+- Identify Pernin as an early reporter, not a Champion eyewitness, and retain his disclaimer.
 
--   State that portions of the fence were charred and that surrounding land burned.
+- State that portions of the fence were charred and that surrounding land burned.
 
--   Do not collapse Peshtigo and Champion into one continuous fire front across Green Bay.
+- Do not collapse Peshtigo and Champion into one continuous fire front across Green Bay.
 
--   Do not turn the 1859 warning into a dated fire prediction.
+- Do not turn the 1859 warning into a dated fire prediction.
 
--   Do not use prayer as a substitute for evacuation orders, emergency services, defensible-space practices, insurance, or care for victims.
+- Do not use prayer as a substitute for evacuation orders, emergency services, defensible-space practices, insurance, or care for victims.
 
--   Let thanksgiving issue in preparedness and mercy.
+- Let thanksgiving issue in preparedness and mercy.
 
 > **Interpretive key: A sign that remains under the Cross**
 >
@@ -395,19 +395,19 @@ The decree’s statement that no reported healing or favor had been officially d
 
 Every component does work:
 
--   **Events, apparitions, and locutions** includes more than a permission to use a title; it is a positive judgment concerning the alleged experiences and speech.
+- **Events, apparitions, and locutions** includes more than a permission to use a title; it is a positive judgment concerning the alleged experiences and speech.
 
--   **Given to Adele Brise** identifies the recipient and prevents the clause from becoming a blanket certification of later visionary claims at the site.
+- **Given to Adele Brise** identifies the recipient and prevents the clause from becoming a blanket certification of later visionary claims at the site.
 
--   **October 1859** supplies a temporal boundary even though the historical witnesses differ on the season and exact sequence.
+- **October 1859** supplies a temporal boundary even though the historical witnesses differ on the season and exact sequence.
 
--   **Substance** names the level at which the decree locates supernatural character. This study infers that the word is compatible with a positive judgment of the transmitted whole without making every descriptive detail equally early or exact; the decree does not itself define a source-critical theory of “substance.”
+- **Substance** names the level at which the decree locates supernatural character. This study infers that the word is compatible with a positive judgment of the transmitted whole without making every descriptive detail equally early or exact; the decree does not itself define a source-critical theory of “substance.”
 
--   **Supernatural character** makes the act more than a finding of harmless devotion.
+- **Supernatural character** makes the act more than a finding of harmless devotion.
 
--   **Worthy of belief** proposes credibility; it does not impose divine and Catholic faith.
+- **Worthy of belief** proposes credibility; it does not impose divine and Catholic faith.
 
--   **Not obligatory** protects the distinction between public Revelation and private revelation and the faithful’s freedom.
+- **Not obligatory** protects the distinction between public Revelation and private revelation and the faithful’s freedom.
 
 “Substance” should not be used as a solvent that allows an editor to discard any inconvenient evidence. As an explicitly editorial interpretation, it is best read as an appropriately bounded judgment amid imperfect documentation: the bishop positively receives the apparition tradition in its essential character while the historian continues to mark the sources. Another reader should be free to distinguish the decree’s words from this study’s account of how they bear upon textual variation.
 
@@ -415,23 +415,23 @@ Every component does work:
 
 The 2010 act does not:
 
--   define a Marian doctrine or add a truth to the deposit of faith;
+- define a Marian doctrine or add a truth to the deposit of faith;
 
--   impose belief in Champion as a condition of Catholic orthodoxy;
+- impose belief in Champion as a condition of Catholic orthodoxy;
 
--   certify every word of the developed dialogue as a verbatim utterance;
+- certify every word of the developed dialogue as a verbatim utterance;
 
--   reconcile Starr’s, Pernin’s, and the later chronology;
+- reconcile Starr’s, Pernin’s, and the later chronology;
 
--   declare the 1871 preservation, a healing, or any other favor miraculous;
+- declare the 1871 preservation, a healing, or any other favor miraculous;
 
--   approve future messages attributed to Adele, Mary, or the site;
+- approve future messages attributed to Adele, Mary, or the site;
 
--   canonize Adele or decide heroic virtue;
+- canonize Adele or decide heroic virtue;
 
--   establish a universal liturgical feast or a universal Marian title; or
+- establish a universal liturgical feast or a universal Marian title; or
 
--   function as a scientific ruling on psychology, weather, or fire behavior.
+- function as a scientific ruling on psychology, weather, or fire behavior.
 
 These are not defects. A juridical-pastoral act is strong when it decides the question within its competence and leaves other questions to their proper processes.
 
@@ -494,11 +494,11 @@ Title change is not message change. The apparition’s developed dialogue does n
 
 In scholarly writing, the title should follow the date and object:
 
--   use *Our Lady of Good Help* when quoting or identifying older institutions and documents;
+- use *Our Lady of Good Help* when quoting or identifying older institutions and documents;
 
--   use *Our Lady of Champion* for the shrine and official title after the 2023 act;
+- use *Our Lady of Champion* for the shrine and official title after the 2023 act;
 
--   use *Champion apparitions* as a convenient event label, not as a quotation from Adele.
+- use *Champion apparitions* as a convenient event label, not as a quotation from Adele.
 
 ### The cause of Adele Brice
 
@@ -572,17 +572,17 @@ Children are not important because they symbolize innocence for adults. They are
 
 A contemporary reception of Adele’s mission therefore includes:
 
--   truthful doctrine presented without terrorizing imagery or coercive apparition claims;
+- truthful doctrine presented without terrorizing imagery or coercive apparition claims;
 
--   respect for parents’ rights and for the child’s questions, conscience, culture, and developmental capacity;
+- respect for parents’ rights and for the child’s questions, conscience, culture, and developmental capacity;
 
--   inclusion of children with disabilities and accessible forms of prayer and learning;
+- inclusion of children with disabilities and accessible forms of prayer and learning;
 
--   current safe-environment training, visibility, supervision, screening, and reporting;
+- current safe-environment training, visibility, supervision, screening, and reporting;
 
--   sacramental preparation that discerns readiness without humiliating or excluding; and
+- sacramental preparation that discerns readiness without humiliating or excluding; and
 
--   formation of catechists who know the limits of their role.
+- formation of catechists who know the limits of their role.
 
 No private revelation can suspend these duties. An adult who invokes Mary to demand secrecy, private access, money, obedience, or silence from a child contradicts the ecclesial mission and should be reported through the appropriate safeguarding channels.
 
@@ -667,23 +667,23 @@ Writers should cite the signed decree rather than a headline, and the early page
 
 Because official presentation shapes later memory, institutional accuracy is itself pastoral care. A mature presentation should:
 
--   make the signed 2010 and 2023 decrees easy to locate;
+- make the signed 2010 and 2023 decrees easy to locate;
 
--   identify the source stratum of the full narrative and preserve early variants;
+- identify the source stratum of the full narrative and preserve early variants;
 
--   distinguish favors from canonically declared miracles;
+- distinguish favors from canonically declared miracles;
 
--   explain that the 9 October solemnity is local to the shrine grounds;
+- explain that the 9 October solemnity is local to the shrine grounds;
 
--   explain the former and current titles without implying two different devotions;
+- explain the former and current titles without implying two different devotions;
 
--   state the exact procedural stage of Adele’s cause;
+- state the exact procedural stage of Adele’s cause;
 
--   publish corrections when a chronology or oral-chain assertion proves impossible;
+- publish corrections when a chronology or oral-chain assertion proves impossible;
 
--   maintain transparent safeguarding and financial accountability; and
+- maintain transparent safeguarding and financial accountability; and
 
--   invest visibly in catechesis, especially for underserved families.
+- invest visibly in catechesis, especially for underserved families.
 
 Such candor does not weaken pilgrimage. It gives pilgrims a devotion that can survive serious questions.
 

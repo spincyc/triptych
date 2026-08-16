@@ -90,17 +90,17 @@ This independent theological article distinguishes particular and final judgment
 
 ## References
 
--   Sacred Scripture: Matthew 25; Luke 16 and 23; John 3 and 5; Acts 17; Romans 2, 3, and 8; 2 Corinthians 5; Ephesians 2; 1 Timothy 2; James 2; Hebrews 9; Revelation 20.
+- Sacred Scripture: Matthew 25; Luke 16 and 23; John 3 and 5; Acts 17; Romans 2, 3, and 8; 2 Corinthians 5; Ephesians 2; 1 Timothy 2; James 2; Hebrews 9; Revelation 20.
 
--   Second Council of Lyons, *Profession of Faith of Michael Palaeologus* (1274), DS 857–859; Council of Trent, Decree on Justification, chs. 5–16 and canons 4, 9, 16, 30–32.
+- Second Council of Lyons, *Profession of Faith of Michael Palaeologus* (1274), DS 857–859; Council of Trent, Decree on Justification, chs. 5–16 and canons 4, 9, 16, 30–32.
 
--   *Catechism of the Catholic Church* 678–679, 1021–1022, 1030–1041, 1058, 1735, 1750–1756, 1776–1794, 1860, 2006–2011.
+- *Catechism of the Catholic Church* 678–679, 1021–1022, 1030–1041, 1058, 1735, 1750–1756, 1776–1794, 1860, 2006–2011.
 
--   Second Vatican Council, pastoral constitution *Gaudium et spes* 16, 22, and 39; Benedict XVI, encyclical *Spe salvi* 44–48.
+- Second Vatican Council, pastoral constitution *Gaudium et spes* 16, 22, and 39; Benedict XVI, encyclical *Spe salvi* 44–48.
 
--   St. Augustine, *City of God* XX; St. Thomas Aquinas, *Summa theologiae* I, q. 21, aa. 3–4; I–II, qq. 109–114; Supplement, q. 88.
+- St. Augustine, *City of God* XX; St. Thomas Aquinas, *Summa theologiae* I, q. 21, aa. 3–4; I–II, qq. 109–114; Supplement, q. 88.
 
--   Roman Rite: the Creed and Eucharistic liturgy’s expectation of Christ’s coming. No territorial vernacular is reproduced.
+- Roman Rite: the Creed and Eucharistic liturgy’s expectation of Christ’s coming. No territorial vernacular is reproduced.
 
 **Last revised (UTC):** 2026-07-24T20:52:18Z
 

@@ -174,11 +174,11 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 
 ## The Propers: Notable and Quotable
 
--   **“Take up his cross” — from discipleship to lawn-mowing. (*Gospel*)** The English idiom “a cross to bear” now names any stubborn burden or trial. It can remain grave, but dictionaries also illustrate deliberately light uses. A saying about allegiance unto suffering has become elastic enough to dignify an oversized weekly lawn.
+- **“Take up his cross” — from discipleship to lawn-mowing. (*Gospel*)** The English idiom “a cross to bear” now names any stubborn burden or trial. It can remain grave, but dictionaries also illustrate deliberately light uses. A saying about allegiance unto suffering has become elastic enough to dignify an oversized weekly lawn.
 
--   **“Let us arrange a little room on the roof” — the Prophet’s Chamber. (*First Reading*)** At Trewint in Cornwall, Digory Isbell read the Shunammite’s story and resolved to imitate it. He added two rooms for John Wesley and itinerant preachers; the upper room held the biblical bed, table, stool, and candlestick. A prophet’s lodging became an architectural institution for the next travelling preacher.
+- **“Let us arrange a little room on the roof” — the Prophet’s Chamber. (*First Reading*)** At Trewint in Cornwall, Digory Isbell read the Shunammite’s story and resolved to imitate it. He added two rooms for John Wesley and itinerant preachers; the upper room held the biblical bed, table, stool, and candlestick. A prophet’s lodging became an architectural institution for the next travelling preacher.
 
--   **“A cup of cold water” — Edith Wharton’s title without the water. (*Gospel*)** Wharton’s 1899 story gives the phrase to a compromised bank clerk who interrupts a stranger’s suicide, pays her lodging and train fare, and then abandons his own flight to face those he has defrauded. No literal cup appears. The tiny Gospel gift becomes a title for one mercy that redirects two lives, while the giver’s guilt keeps the moral reversal sharply ironic.
+- **“A cup of cold water” — Edith Wharton’s title without the water. (*Gospel*)** Wharton’s 1899 story gives the phrase to a compromised bank clerk who interrupts a stranger’s suicide, pays her lodging and train fare, and then abandons his own flight to face those he has defrauded. No literal cup appears. The tiny Gospel gift becomes a title for one mercy that redirects two lives, while the giver’s guilt keeps the moral reversal sharply ironic.
 
 ## The Propers: Interpretive Possibilities
 
@@ -218,35 +218,35 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 
 ## References
 
--   USCCB, [Thirteenth Sunday in Ordinary Time, 28 June 2026](https://bible.usccb.org/bible/readings/062826.cfm), U.S. Lectionary 97; and [2026 Liturgical Calendar](https://www.usccb.org/resources/2026cal.pdf), accessed 2026-07-15.
+- USCCB, [Thirteenth Sunday in Ordinary Time, 28 June 2026](https://bible.usccb.org/bible/readings/062826.cfm), U.S. Lectionary 97; and [2026 Liturgical Calendar](https://www.usccb.org/resources/2026cal.pdf), accessed 2026-07-15.
 
--   *Missale Romanum*, editio typica tertia (2002), p. 463; reimpressio emendata (2008); and *Roman Missal, Third Edition*, U.S. English edition implemented 2011.
+- *Missale Romanum*, editio typica tertia (2002), p. 463; reimpressio emendata (2008); and *Roman Missal, Third Edition*, U.S. English edition implemented 2011.
 
--   Bishops’ Conference of England and Wales, [*Antiphonary: Excerpted from the Roman Missal*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf) (ICEL, 2010), p. 73, used as official corroboration of the common ICEL antiphons, not as a substitute U.S. altar book.
+- Bishops’ Conference of England and Wales, [*Antiphonary: Excerpted from the Roman Missal*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf) (ICEL, 2010), p. 73, used as official corroboration of the common ICEL antiphons, not as a substitute U.S. altar book.
 
--   *General Instruction of the Roman Missal* 46–90; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
+- *General Instruction of the Roman Missal* 46–90; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
 
--   Holy See, *Nova Vulgata Bibliorum Sacrorum Editio*, editio typica altera (1986), [Matthew 10:42](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-matthaeum_lt.html), official Latin wording checked 2026-07-18.
+- Holy See, *Nova Vulgata Bibliorum Sacrorum Editio*, editio typica altera (1986), [Matthew 10:42](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-matthaeum_lt.html), official Latin wording checked 2026-07-18.
 
--   St. John Chrysostom, [*Homily 35 on Matthew*](https://www.newadvent.org/fathers/200135.htm); [*Homily 10 on Romans*](https://www.newadvent.org/fathers/210210.htm); [*Homily 11 on Romans*](https://www.newadvent.org/fathers/210211.htm).
+- St. John Chrysostom, [*Homily 35 on Matthew*](https://www.newadvent.org/fathers/200135.htm); [*Homily 10 on Romans*](https://www.newadvent.org/fathers/210210.htm); [*Homily 11 on Romans*](https://www.newadvent.org/fathers/210211.htm).
 
--   St. John Chrysostom, [*Homily 31 on Hebrews*](https://www.newadvent.org/fathers/240231.htm); St. Cyprian, [*Testimonies* III.42](https://www.newadvent.org/fathers/050712c.htm); St. John Cassian, [*Conference 1*, ch. 10](https://www.newadvent.org/fathers/350801.htm).
+- St. John Chrysostom, [*Homily 31 on Hebrews*](https://www.newadvent.org/fathers/240231.htm); St. Cyprian, [*Testimonies* III.42](https://www.newadvent.org/fathers/050712c.htm); St. John Cassian, [*Conference 1*, ch. 10](https://www.newadvent.org/fathers/350801.htm).
 
--   St. Jerome, [*Against Jovinianus* I.26](https://www.newadvent.org/fathers/30091.htm); Origen, [*Philocalia* XXVI](https://www.tertullian.org/fathers/origen_philocalia_02_text.htm); [pseudo-Clementine *Two Epistles on Virginity* II.15](https://www.newadvent.org/fathers/0803.htm), direct early reuse of the Shunammite’s lodging and support.
+- St. Jerome, [*Against Jovinianus* I.26](https://www.newadvent.org/fathers/30091.htm); Origen, [*Philocalia* XXVI](https://www.tertullian.org/fathers/origen_philocalia_02_text.htm); [pseudo-Clementine *Two Epistles on Virginity* II.15](https://www.newadvent.org/fathers/0803.htm), direct early reuse of the Shunammite’s lodging and support.
 
--   St. Augustine, [*Exposition on Psalm 47*](https://www.newadvent.org/fathers/1801047.htm), [*Exposition on Psalm 89*](https://www.newadvent.org/fathers/1801089.htm), [*Exposition on Psalm 103*](https://www.newadvent.org/fathers/1801103.htm), [*Exposition on Psalm 122*, sec. 10](https://www.newadvent.org/fathers/1801122.htm), [*On the Soul and Its Origin* III.7](https://www.newadvent.org/fathers/15083.htm), and [*Tractate 109*](https://www.newadvent.org/fathers/1701109.htm) and [*Tractate 110 on John*](https://www.newadvent.org/fathers/1701110.htm).
+- St. Augustine, [*Exposition on Psalm 47*](https://www.newadvent.org/fathers/1801047.htm), [*Exposition on Psalm 89*](https://www.newadvent.org/fathers/1801089.htm), [*Exposition on Psalm 103*](https://www.newadvent.org/fathers/1801103.htm), [*Exposition on Psalm 122*, sec. 10](https://www.newadvent.org/fathers/1801122.htm), [*On the Soul and Its Origin* III.7](https://www.newadvent.org/fathers/15083.htm), and [*Tractate 109*](https://www.newadvent.org/fathers/1701109.htm) and [*Tractate 110 on John*](https://www.newadvent.org/fathers/1701110.htm).
 
--   Clement of Alexandria, [*Fragments* on 1 Peter](https://www.newadvent.org/fathers/0211.htm); [*Apostolic Constitutions* III.2](https://www.newadvent.org/fathers/07153.htm); St. Gregory the Great, [*Pastoral Rule* II](https://www.newadvent.org/fathers/36012.htm); St. Augustine, [*City of God* XVII](https://www.newadvent.org/fathers/120117.htm).
+- Clement of Alexandria, [*Fragments* on 1 Peter](https://www.newadvent.org/fathers/0211.htm); [*Apostolic Constitutions* III.2](https://www.newadvent.org/fathers/07153.htm); St. Gregory the Great, [*Pastoral Rule* II](https://www.newadvent.org/fathers/36012.htm); St. Augustine, [*City of God* XVII](https://www.newadvent.org/fathers/120117.htm).
 
--   St. Thomas Aquinas, [*Commentary on Romans* VI, lect. 1](https://aquinas.cc/en/la/~Rom.C6.L1); *Catechism of the Catholic Church* 1213, 1227, 1265–1270.
+- St. Thomas Aquinas, [*Commentary on Romans* VI, lect. 1](https://aquinas.cc/en/la/~Rom.C6.L1); *Catechism of the Catholic Church* 1213, 1227, 1265–1270.
 
--   Christine Ammer, [“cross to bear”](https://www.dictionary.com/browse/cross-to-bear), *The American Heritage Dictionary of Idioms*, as reproduced by Dictionary.com, checked 2026-07-19.
+- Christine Ammer, [“cross to bear”](https://www.dictionary.com/browse/cross-to-bear), *The American Heritage Dictionary of Idioms*, as reproduced by Dictionary.com, checked 2026-07-19.
 
--   Methodist Heritage, [“Wesley Cottage, Trewint (aka Digory Isbell’s Cottage)”](https://www.methodistheritage.org.uk/visit/wesley-college-trewint/), checked 2026-07-19.
+- Methodist Heritage, [“Wesley Cottage, Trewint (aka Digory Isbell’s Cottage)”](https://www.methodistheritage.org.uk/visit/wesley-college-trewint/), checked 2026-07-19.
 
--   Stanley Sowton, [“Digory Isbell’s Cottage at Trewint,” *Proceedings of the Wesley Historical Society* 27, no. 6 (1950)](https://biblicalstudies.gospelstudies.org.uk/pdf/whs/27-6.pdf), pp. 143–144; the explicit Shunammite-story derivation and room inventory were checked 2026-07-19. No scan image or extended prose is reproduced.
+- Stanley Sowton, [“Digory Isbell’s Cottage at Trewint,” *Proceedings of the Wesley Historical Society* 27, no. 6 (1950)](https://biblicalstudies.gospelstudies.org.uk/pdf/whs/27-6.pdf), pp. 143–144; the explicit Shunammite-story derivation and room inventory were checked 2026-07-19. No scan image or extended prose is reproduced.
 
--   Edith Wharton, [“A Cup of Cold Water”](https://www.gutenberg.org/cache/epub/9190/pg9190-images.html), in *The Greater Inclination* (New York: Charles Scribner’s Sons, 1899), Project Gutenberg eBook 9190; story and U.S. public-domain status checked 2026-07-19.
+- Edith Wharton, [“A Cup of Cold Water”](https://www.gutenberg.org/cache/epub/9190/pg9190-images.html), in *The Greater Inclination* (New York: Charles Scribner’s Sons, 1899), Project Gutenberg eBook 9190; story and U.S. public-domain status checked 2026-07-19.
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

@@ -771,15 +771,15 @@ Set beside that, the change the following decade made to the same prayer’s nei
 >
 > **The reasons.**
 >
-> -   *The diversity is visible in the sources, not inferred from a theory.* *De sacramentis* IV, 5–6, read at the page images, has *ascriptam, ratam, rationabilem, acceptabilem* and *memores* with the same three genitives while differing at the compared loci; Fortescue dates the offertory prayers to the fourteenth century at Rome and the last Gospel’s admission to 1570; Berno’s report dates the Creed at Rome to 1014; the *Liber Pontificalis* attributes the *Agnus Dei* to Sergius I. These are four independent kinds of evidence pointing the same way.
+> - *The diversity is visible in the sources, not inferred from a theory.* *De sacramentis* IV, 5–6, read at the page images, has *ascriptam, ratam, rationabilem, acceptabilem* and *memores* with the same three genitives while differing at the compared loci; Fortescue dates the offertory prayers to the fourteenth century at Rome and the last Gospel’s admission to 1570; Berno’s report dates the Creed at Rome to 1014; the *Liber Pontificalis* attributes the *Agnus Dei* to Sergius I. These are four independent kinds of evidence pointing the same way.
 >
-> -   *The register changes within the sequence.* Some prayers are plural, others singular; their addressees and ritual functions also differ. *Perceptio Corporis tui … non mihi proveniat in iudicium* and *Te igitur, clementissime Pater … supplices rogamus ac petimus* are not two moods of one voice.
+> - *The register changes within the sequence.* Some prayers are plural, others singular; their addressees and ritual functions also differ. *Perceptio Corporis tui … non mihi proveniat in iudicium* and *Te igitur, clementissime Pater … supplices rogamus ac petimus* are not two moods of one voice.
 >
-> -   *The unifying devices are the book’s own and are checkable.* The numbering runs 1013–1139 unbroken; nn. 511–512 define the silence and its two exceptions; the interleaved rubric appears in every appointed block quoted in this study. None of these is an editorial construction.
+> - *The unifying devices are the book’s own and are checkable.* The numbering runs 1013–1139 unbroken; nn. 511–512 define the silence and its two exceptions; the interleaved rubric appears in every appointed block quoted in this study. None of these is an editorial construction.
 >
-> -   *The law orders unlike texts in one celebration.* The rubrics decide when the psalm is said, when the *Gloria* and Creed are said, which preface is used, whether there is a last Gospel, and whether the people’s *Confiteor* is said before their Communion. Change the code and the celebration changes without a word of the Ordinary changing — which is exactly what happened in 1960.
+> - *The law orders unlike texts in one celebration.* The rubrics decide when the psalm is said, when the *Gloria* and Creed are said, which preface is used, whether there is a last Gospel, and whether the people’s *Confiteor* is said before their Communion. Change the code and the celebration changes without a word of the Ordinary changing — which is exactly what happened in 1960.
 >
-> -   *The 1962 insertion is a controlled case.* Seven Latin words entered the Canon by decree. The 1861 witness lacks them and the amended facsimile prints them. This bounded comparison establishes that textual change, not a complete collation of every substantive difference between the books.
+> - *The 1962 insertion is a controlled case.* Seven Latin words entered the Canon by decree. The 1861 witness lacks them and the amended facsimile prints them. This bounded comparison establishes that textual change, not a complete collation of every substantive difference between the books.
 >
 > **The strongest counterargument, at full strength.** The account above is an archaeologist’s, and a rite is not an archaeological object. Every serious liturgical text can be stratified — as can the Divine Office and the Bible — and pointing this out establishes nothing about identity. The Church itself says the Canon is made of the Lord’s words, apostolic traditions and papal institutions, and says so in the act of declaring it free from error; on the Catholic account the composite origin is not a tension to be explained but the ordinary manner in which a living rite grows. Worse, by locating the unity in the 1962 book’s numbering, typography and rules of voice, this study has made an accident of one printing into the principle of the rite. Priests who used the typical editions of 1884 or 1920 had different pagination, no continuous marginal numbering of this kind and a different code of rubrics, and they celebrated the same Ordinary; a Dominican or a Carmelite of the same date, with a different *Confiteor*, a different offertory and different rubrics, was also offering the Roman Mass in the sense that matters. If the identity of the rite survives all that, then it cannot be constituted by the devices this study has named, and the real unity of the Ordinary is what the counterargument says it is: a single sacrificial act, whose texts are its instruments and whose printing is merely how one century handed it on. On that view the Ordinary is the stable textual and rubrical form through which the sacrificial action is celebrated, and the stratigraphy is secondary.
 >
@@ -805,15 +805,15 @@ Excluded: the temporal and sanctoral propers except where quoted as context; the
 
 ### The editions and witnesses
 
--   **Controlling text:** *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, Vatican typical edition of 1962, read in the 1,088-page facsimile hosted by the Church Music Association of America and registered in this repository’s source library by its exact SHA-256. The facsimile’s exact bytes are recorded but not retained: the audit located no artifact-level statement establishing redistribution rights for that scan, so the record is remote and no payload is installed. Every Latin block printed in this study, and every rubric reported in it, was read on that facsimile’s page images or, where expressly noted, in its embedded text layer.
+- **Controlling text:** *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, Vatican typical edition of 1962, read in the 1,088-page facsimile hosted by the Church Music Association of America and registered in this repository’s source library by its exact SHA-256. The facsimile’s exact bytes are recorded but not retained: the audit located no artifact-level statement establishing redistribution rights for that scan, so the record is remote and no payload is installed. Every Latin block printed in this study, and every rubric reported in it, was read on that facsimile’s page images or, where expressly noted, in its embedded text layer.
 
--   **Language and territory:** Latin, and the universal Roman Rite. No territorial adaptation, indult or particular custom is described.
+- **Language and territory:** Latin, and the universal Roman Rite. No territorial adaptation, indult or particular custom is described.
 
--   **English witness:** *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), whose Ordinary and Canon occupy printed pp. xv–xlvi in facing Latin and English columns, read in the Internet Archive scan registered by exact hash. This is a pre-1955 lay hand missal. It is *not* an official or approved liturgical translation, it is not the translation of any typical edition current in 1962, and at several points its Latin is not the Latin of 1962. Those points are collated rather than smoothed.
+- **English witness:** *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), whose Ordinary and Canon occupy printed pp. xv–xlvi in facing Latin and English columns, read in the Internet Archive scan registered by exact hash. This is a pre-1955 lay hand missal. It is *not* an official or approved liturgical translation, it is not the translation of any typical edition current in 1962, and at several points its Latin is not the Latin of 1962. Those points are collated rather than smoothed.
 
--   **Scripture:** the Douay-Rheims Bible in the Challoner revision, quoted for the biblical loci the Ordinary uses. Psalm numbering throughout this study is the Vulgate numbering the Missal itself prints, which is also the Douay-Rheims numbering; a citation such as Psalm 42 or Psalm 115, 12–13 must not be resolved against a Hebrew-numbered psalter.
+- **Scripture:** the Douay-Rheims Bible in the Challoner revision, quoted for the biblical loci the Ordinary uses. Psalm numbering throughout this study is the Vulgate numbering the Missal itself prints, which is also the Douay-Rheims numbering; a citation such as Psalm 42 or Psalm 115, 12–13 must not be resolved against a Hebrew-numbered psalter.
 
--   **Historical and doctrinal witnesses:** Ambrose or the author of *De sacramentis* in *Patrologia Latina* 16 (Paris, 1880); the *Canones et decreta* of the Council of Trent in the Tauchnitz stereotype of 1887 and in Waterworth’s English; Adrian Fortescue, *The Mass: A Study of the Roman Liturgy* (Longmans, 1922); *Acta Apostolicae Sedis* 54 (1962) for the decree inserting Saint Joseph’s name. Each is identified at its exact locus in the references.
+- **Historical and doctrinal witnesses:** Ambrose or the author of *De sacramentis* in *Patrologia Latina* 16 (Paris, 1880); the *Canones et decreta* of the Council of Trent in the Tauchnitz stereotype of 1887 and in Waterworth’s English; Adrian Fortescue, *The Mass: A Study of the Roman Liturgy* (Longmans, 1922); *Acta Apostolicae Sedis* 54 (1962) for the decree inserting Saint Joseph’s name. Each is identified at its exact locus in the references.
 
 ### Translation, quotation, and rights
 
@@ -827,29 +827,29 @@ Rights: no public-domain conclusion is claimed for the 1962 liturgical text mere
 
 Four classes are kept visibly distinct and can be told apart on the page.
 
--   **Verified source text** — the framed *appointed* blocks, and the rubrics reported in the framed *rubric* blocks. Every one was read at the identified page of the identified edition.
+- **Verified source text** — the framed *appointed* blocks, and the rubrics reported in the framed *rubric* blocks. Every one was read at the identified page of the identified edition.
 
--   **Checked quotation** — the framed witness cards and the *English witness* blocks, each carrying its author, edition and page.
+- **Checked quotation** — the framed witness cards and the *English witness* blocks, each carrying its author, edition and page.
 
--   **Source-grounded synthesis** — the running exposition. It draws conclusions from the checked evidence and is answerable to it.
+- **Source-grounded synthesis** — the running exposition. It draws conclusions from the checked evidence and is answerable to it.
 
--   **Editorial proposal** — the blocks headed *Editorial reading*, *Collation* or *A textual detail worth recording*, and the terminal *Project synthesis*. These are original applications and inferences by an AI contributor, labelled locally, and none of them is offered as established fact.
+- **Editorial proposal** — the blocks headed *Editorial reading*, *Collation* or *A textual detail worth recording*, and the terminal *Project synthesis*. These are original applications and inferences by an AI contributor, labelled locally, and none of them is offered as established fact.
 
 Reported historical reconstructions are attributed to the scholar who made them and are not converted into project claims. Fortescue’s datings of the offertory prayers, of the *Agnus Dei*, of the last Gospel and of the Creed’s arrival at Rome are the clearest cases: they rest on manuscript arguments this study has not itself examined, they are reported as his, and the synthesis names the offertory dating as the load-bearing external claim on which its own conclusion depends.
 
 ### Known limits, and consequential negative results
 
--   Only one copy of one typical edition was collated. Where this study says that the 1962 book prints something, it means that this facsimile prints it. The insertion of Saint Joseph’s name took effect on 8 December 1962 and the volume’s own promulgating decree is dated 23 June 1962; an impression of the same typical edition made between those dates would not carry the clause, and this study says so at the place where it matters.
+- Only one copy of one typical edition was collated. Where this study says that the 1962 book prints something, it means that this facsimile prints it. The insertion of Saint Joseph’s name took effect on 8 December 1962 and the volume’s own promulgating decree is dated 23 June 1962; an impression of the same typical edition made between those dates would not carry the clause, and this study says so at the place where it matters.
 
--   The *Ritus servandus* was consulted at the points where the *Ordo Missae* depends on it and was not read entire. Nothing in this study rests on its sections I–IV or IX–XIII.
+- The *Ritus servandus* was consulted at the points where the *Ordo Missae* depends on it and was not read entire. Nothing in this study rests on its sections I–IV or IX–XIII.
 
--   The proper *Communicantes* of nn. 1093–1097 were read and described but are not quoted in full, and their five Latin texts are not printed here.
+- The proper *Communicantes* of nn. 1093–1097 were read and described but are not quoted in full, and their five Latin texts are not printed here.
 
--   The chant of the Ordinary was treated only as evidence about rank and season. No musical claim is made, and where a chant setting is counted or described the description is of the book’s own headings, not of the music.
+- The chant of the Ordinary was treated only as evidence about rank and season. No musical claim is made, and where a chant setting is counted or described the description is of the book’s own headings, not of the music.
 
--   The 1962 book’s own internal disagreement about the date of *Rubricarum instructum* — 23 July 1960 in the 1962 promulgating decree, 25 July 1960 in the Congregation’s decree of 26 July printed later in the same volume — is recorded in the source library and is not resolved here.
+- The 1962 book’s own internal disagreement about the date of *Rubricarum instructum* — 23 July 1960 in the 1962 promulgating decree, 25 July 1960 in the Congregation’s decree of 26 July printed later in the same volume — is recorded in the source library and is not resolved here.
 
--   Two questions were pursued and left open because the sources consulted do not settle them: the identity of the *sanctus Angelus tuus* of *Supplices*, on which the tradition has never agreed and on which the Milanese parallel’s plural is a datum and not a solution; and the reason for the presence of Andrew, alone beside Peter and Paul, in the embolism *Libera nos*. Both are reported as unresolved rather than filled by inference.
+- Two questions were pursued and left open because the sources consulted do not settle them: the identity of the *sanctus Angelus tuus* of *Supplices*, on which the tradition has never agreed and on which the Milanese parallel’s plural is a datum and not a solution; and the reason for the presence of Andrew, alone beside Peter and Paul, in the embolism *Libera nos*. Both are reported as unresolved rather than filled by inference.
 
 ### Review state
 

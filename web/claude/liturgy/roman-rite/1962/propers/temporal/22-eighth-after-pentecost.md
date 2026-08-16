@@ -272,13 +272,13 @@ The practical question underneath — may alms be given out of ill-gotten goods?
 
 *Recípiant vos in ætérna tabernácula.* The Latin does not say *whose* dwellings, and the tradition divides on the omission.
 
--   **Angels and saints.** Ambrose: *ut largiendo pauperibus, Angelorum ceterorumque sanctorum gratiam comparemus* — by giving to the poor we procure the favour of the angels and the other saints.
+- **Angels and saints.** Ambrose: *ut largiendo pauperibus, Angelorum ceterorumque sanctorum gratiam comparemus* — by giving to the poor we procure the favour of the angels and the other saints.
 
--   **The least of Christ’s.** Augustine: “who are they that shall have everlasting habitations, but the Saints of God? And who are they who are to be received by them … but they who serve their need?” He identifies the receivers with the *minimi* of Matthew 25, those who left all and followed; and he rules out one reading expressly — those who receive us are not to be understood as God’s own debtors.
+- **The least of Christ’s.** Augustine: “who are they that shall have everlasting habitations, but the Saints of God? And who are they who are to be received by them … but they who serve their need?” He identifies the receivers with the *minimi* of Matthew 25, those who left all and followed; and he rules out one reading expressly — those who receive us are not to be understood as God’s own debtors.
 
--   **Patrons, not beneficiaries.** Gregory: *si autem eorum amicitiis aeterna tabernacula acquirimus, dantes pensare debemus quia patronis potius munera offerimus quam egenis dona largimur* — if we acquire eternal dwellings by their friendship, we who give must reckon that we are offering gifts to patrons rather than bestowing presents on the needy. The social direction of almsgiving is inverted.
+- **Patrons, not beneficiaries.** Gregory: *si autem eorum amicitiis aeterna tabernacula acquirimus, dantes pensare debemus quia patronis potius munera offerimus quam egenis dona largimur* — if we acquire eternal dwellings by their friendship, we who give must reckon that we are offering gifts to patrons rather than bestowing presents on the needy. The social direction of almsgiving is inverted.
 
--   **Not the friends at all.** Chrysostom argues from the wording: *attende etiam, quod non dixit: ut suscipiant vos in suis mansionibus: non enim ipsi sunt qui suscipiunt* — observe that he did not say “into *their* dwellings”; it is not they who receive us, but our own work. He makes a parallel point elsewhere about the adjective: the text says not simply “tabernacles” but “*eternal* tabernacles.”[^20]
+- **Not the friends at all.** Chrysostom argues from the wording: *attende etiam, quod non dixit: ut suscipiant vos in suis mansionibus: non enim ipsi sunt qui suscipiunt* — observe that he did not say “into *their* dwellings”; it is not they who receive us, but our own work. He makes a parallel point elsewhere about the adjective: the text says not simply “tabernacles” but “*eternal* tabernacles.”[^20]
 
 Jerome adds a restriction that sits badly with Augustine’s practice. He concludes that we should make friends “not of any poor whatever, but of those who are able to receive us into their houses and into eternal dwellings” — *non quoslibet pauperes; sed eos qui nos possint recipere*. Augustine, in a sermon on the same verse, counsels the opposite: do not be too selective, because we cannot examine hearts; when you do it with all, then you will reach the few who are worthy.
 
@@ -555,59 +555,59 @@ Only sources actually used for a published claim are listed. Loci are given at t
 
 ### Liturgical books
 
--   *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962). *Controlling witness for every appointed Latin form.* Formulary at printed pp. 387–388 (nos. 1512–1521); *Rubricæ generales* nn. 10–18 at printed p. XII; Fourth Sunday after Pentecost at printed p. 382; Purification of the B.V.M. at printed p. 467 (no. 2107). Read as 300-dpi page images of the CMAA facsimile, <https://media.churchmusicassociation.org/pdf/missale62.pdf>, SHA-256 `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`, 2026-07-25.
+- *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962). *Controlling witness for every appointed Latin form.* Formulary at printed pp. 387–388 (nos. 1512–1521); *Rubricæ generales* nn. 10–18 at printed p. XII; Fourth Sunday after Pentecost at printed p. 382; Purification of the B.V.M. at printed p. 467 (no. 2107). Read as 300-dpi page images of the CMAA facsimile, <https://media.churchmusicassociation.org/pdf/missale62.pdf>, SHA-256 `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`, 2026-07-25.
 
--   *The Roman Missal translated into the English language for the use of the laity* (Philadelphia: Eugene Cummiskey, 1861). *Identified public-domain English witness for every appointed text quoted in English.* Printed pp. 411–413 = scan leaves 419–421, read as page images at <https://archive.org/details/romanmissaltran00churgoog>, 2026-07-25.
+- *The Roman Missal translated into the English language for the use of the laity* (Philadelphia: Eugene Cummiskey, 1861). *Identified public-domain English witness for every appointed text quoted in English.* Printed pp. 411–413 = scan leaves 419–421, read as page images at <https://archive.org/details/romanmissaltran00churgoog>, 2026-07-25.
 
 ### Scripture
 
--   Clementine Vulgate and Douay–Rheims (Challoner), as presented at <https://www.drbo.org/>. *Canonical-context control and the standard of comparison for every collation.* Ps 17; Ps 30; Ps 33; Ps 47; Ps 70; Luke 16; Romans 8; 1 Kings (1 Samuel) 21:10–15; 2 Kings (2 Samuel) 22:1. Read 2026-07-25.
+- Clementine Vulgate and Douay–Rheims (Challoner), as presented at <https://www.drbo.org/>. *Canonical-context control and the standard of comparison for every collation.* Ps 17; Ps 30; Ps 33; Ps 47; Ps 70; Luke 16; Romans 8; 1 Kings (1 Samuel) 21:10–15; 2 Kings (2 Samuel) 22:1. Read 2026-07-25.
 
 ### Patristic and medieval witnesses
 
--   Ambrose, *Expositio Evangelii secundum Lucam*, lib. VII, §245 (PL 15, col. 1764). Latin read in the *Patrologia Latina* text at Corpus Corporum, <https://mlat.uzh.ch/>, 2026-07-25. *The steward is not censured; the allurement reading of *mammona iniquitatis*; angels and saints as the receivers.*
+- Ambrose, *Expositio Evangelii secundum Lucam*, lib. VII, §245 (PL 15, col. 1764). Latin read in the *Patrologia Latina* text at Corpus Corporum, <https://mlat.uzh.ch/>, 2026-07-25. *The steward is not censured; the allurement reading of *mammona iniquitatis*; angels and saints as the receivers.*
 
--   Augustine, *Quaestiones Evangeliorum* II.34, as transmitted verbatim in Aquinas, *Catena aurea in Lucam*, cap. 16, lect. 2 (Corpus Thomisticum, 2026-07-25). *Fraud excluded from imitation; the *e contrario* structure; riches only to the wicked; the receivers are the just and holy, not God’s debtors.*
+- Augustine, *Quaestiones Evangeliorum* II.34, as transmitted verbatim in Aquinas, *Catena aurea in Lucam*, cap. 16, lect. 2 (Corpus Thomisticum, 2026-07-25). *Fraud excluded from imitation; the *e contrario* structure; riches only to the wicked; the receivers are the just and holy, not God’s debtors.*
 
--   Augustine, *Sermo* 113 (NPNF: Sermon 63 on the New Testament), §§1–2, <https://www.newadvent.org/fathers/160363.htm>, 2026-07-25. *The saints and the *minimi* as receivers; mammon as a Hebrew word cognate to Punic; the refutation of “plunder and then give.”*
+- Augustine, *Sermo* 113 (NPNF: Sermon 63 on the New Testament), §§1–2, <https://www.newadvent.org/fathers/160363.htm>, 2026-07-25. *The saints and the *minimi* as receivers; mammon as a Hebrew word cognate to Punic; the refutation of “plunder and then give.”*
 
--   Augustine, *De spiritu et littera* 32.56, <https://www.newadvent.org/fathers/1502.htm>, 2026-07-25. *“Abba, Father” as the two peoples in one cry.*
+- Augustine, *De spiritu et littera* 32.56, <https://www.newadvent.org/fathers/1502.htm>, 2026-07-25. *“Abba, Father” as the two peoples in one cry.*
 
--   Augustine, *Enarrationes in Psalmos* 17.28 and 17.32; 30 (Enarratio I) §§1 and 3; 33 (sermo 2) §§1 and 11; 47 §§2, 8 and 9; 70 (sermo 1) §§3 and 5. NPNF 1st ser. vol. 8, at New Advent, which numbers the expositions by the Hebrew psalm number (18, 31, 34, 48, 71) and whose inline verse numbers run one lower than the Vulgate. Read 2026-07-25.
+- Augustine, *Enarrationes in Psalmos* 17.28 and 17.32; 30 (Enarratio I) §§1 and 3; 33 (sermo 2) §§1 and 11; 47 §§2, 8 and 9; 70 (sermo 1) §§3 and 5. NPNF 1st ser. vol. 8, at New Advent, which numbers the expositions by the Hebrew psalm number (18, 31, 34, 48, 71) and whose inline verse numbers run one lower than the Vulgate. Read 2026-07-25.
 
--   John Chrysostom, *Homilies on the Epistle to the Romans*, Homily XIV (opening on Rom 8:12–13), NPNF 1st ser. vol. 11, <https://www.newadvent.org/fathers/210214.htm>, 2026-07-25. *Debtors to the Spirit; the spirit of bondage as the letter; “Abba” as the initiate’s word; joint-heirship.*
+- John Chrysostom, *Homilies on the Epistle to the Romans*, Homily XIV (opening on Rom 8:12–13), NPNF 1st ser. vol. 11, <https://www.newadvent.org/fathers/210214.htm>, 2026-07-25. *Debtors to the Spirit; the spirit of bondage as the letter; “Abba” as the initiate’s word; joint-heirship.*
 
--   John Chrysostom, *Homily* I *on Hebrews*, NPNF 1st ser. vol. 14, <https://www.newadvent.org/fathers/240201.htm>, 2026-07-25; Latin form as in the *Catena aurea*, cap. 16, lect. 2. *“It is not they who receive us, but our own work.”*
+- John Chrysostom, *Homily* I *on Hebrews*, NPNF 1st ser. vol. 14, <https://www.newadvent.org/fathers/240201.htm>, 2026-07-25; Latin form as in the *Catena aurea*, cap. 16, lect. 2. *“It is not they who receive us, but our own work.”*
 
--   Jerome, *Epistola* 121 *ad Algasiam*, q. 6 (PL 22, coll. 1018–1021). Latin read in the *Patrologia Latina* text at Corpus Corporum, 2026-07-25. *The defrauded master’s praise; fraud toward the master and prudence for himself; *mamona* as Syriac; the parable as an exhortation to remit debts; the restriction to those able to receive; the report of Theophilus of Antioch’s allegory; the negative result on Origen and Didymus.*
+- Jerome, *Epistola* 121 *ad Algasiam*, q. 6 (PL 22, coll. 1018–1021). Latin read in the *Patrologia Latina* text at Corpus Corporum, 2026-07-25. *The defrauded master’s praise; fraud toward the master and prudence for himself; *mamona* as Syriac; the parable as an exhortation to remit debts; the restriction to those able to receive; the report of Theophilus of Antioch’s allegory; the negative result on Origen and Didymus.*
 
--   Gregory the Great, *Moralia in Iob* XXI.19.29, as transmitted in the *Catena aurea*, cap. 16, lect. 2 (Corpus Thomisticum, 2026-07-25). *The poor as *patroni*.*
+- Gregory the Great, *Moralia in Iob* XXI.19.29, as transmitted in the *Catena aurea*, cap. 16, lect. 2 (Corpus Thomisticum, 2026-07-25). *The poor as *patroni*.*
 
--   Bede, *In Lucae Evangelium Expositio*, lib. V, on Luke 16 (PL 92, coll. 528–531). Latin read in the *Patrologia Latina* text at Corpus Corporum, 2026-07-25. *Every possessor of money is a steward; the excuses eschatologised; *prudentiores in generatione sua* limited; “whose works a man does, of him he is called a son.”*
+- Bede, *In Lucae Evangelium Expositio*, lib. V, on Luke 16 (PL 92, coll. 528–531). Latin read in the *Patrologia Latina* text at Corpus Corporum, 2026-07-25. *Every possessor of money is a steward; the excuses eschatologised; *prudentiores in generatione sua* limited; “whose works a man does, of him he is called a son.”*
 
--   Basil, as transmitted in the *Catena aurea*, cap. 16, lect. 2, and cited by Aquinas at *ST* II-II q. 32 a. 7 ad 1. *Inherited injustice in a patrimony.* Cited at the level of transmission; the underlying Basilian work was not verified for this guide.
+- Basil, as transmitted in the *Catena aurea*, cap. 16, lect. 2, and cited by Aquinas at *ST* II-II q. 32 a. 7 ad 1. *Inherited injustice in a patrimony.* Cited at the level of transmission; the underlying Basilian work was not verified for this guide.
 
--   “Origen,” as transmitted in the *Catena aurea*, cap. 16, lect. 2. *The commendation as *abusive dictum*.* Attribution unverified and expressly bounded in the commentary; Jerome reports that he could not find Origen on this parable.
+- “Origen,” as transmitted in the *Catena aurea*, cap. 16, lect. 2. *The commendation as *abusive dictum*.* Attribution unverified and expressly bounded in the commentary; Jerome reports that he could not find Origen on this parable.
 
--   Cyril of Alexandria, *Commentary on the Gospel of St Luke*, Sermon 108, tr. R. Payne Smith (Oxford), pp. 507–510, read in the Internet Archive scan `p2commentaryupon00cyriuoft`, 2026-07-25. *The refusal to allegorise; the rich man as the steward; “when it has failed”; the translator’s note on the tense.*
+- Cyril of Alexandria, *Commentary on the Gospel of St Luke*, Sermon 108, tr. R. Payne Smith (Oxford), pp. 507–510, read in the Internet Archive scan `p2commentaryupon00cyriuoft`, 2026-07-25. *The refusal to allegorise; the rich man as the steward; “when it has failed”; the translator’s note on the tense.*
 
 ### Thomas Aquinas
 
--   *Super Epistolam ad Romanos*, cap. 8, lect. 2 (on *ergo debitores*) and lect. 3 (on vv. 14–17), Corpus Thomisticum, <https://www.corpusthomisticum.org/cro05.html>, 2026-07-25. *Debtors to the Holy Spirit; the Spirit’s leading and free will with Phil 2:13; *abba* and *pater* as the two peoples; *clamamus* as intensity of heart; God himself as the principal good inherited; the objection from the father’s death; *cohaeredes*; the necessity of *si tamen compatimur*.*
+- *Super Epistolam ad Romanos*, cap. 8, lect. 2 (on *ergo debitores*) and lect. 3 (on vv. 14–17), Corpus Thomisticum, <https://www.corpusthomisticum.org/cro05.html>, 2026-07-25. *Debtors to the Holy Spirit; the Spirit’s leading and free will with Phil 2:13; *abba* and *pater* as the two peoples; *clamamus* as intensity of heart; God himself as the principal good inherited; the objection from the father’s death; *cohaeredes*; the necessity of *si tamen compatimur*.*
 
--   *Summa theologiae* II-II q. 32 a. 7 (whether alms may be given from ill-gotten goods), with its *sed contra* from Augustine and its *ad 1* stacking five readings of *mammona iniquitatis*; and III q. 23 aa. 1–4 on adoption, especially a. 1 ad 3 citing the Gloss on Rom 8. Corpus Thomisticum, <https://www.corpusthomisticum.org/sth3027.html> and <https://www.corpusthomisticum.org/sth4016.html>, 2026-07-25.
+- *Summa theologiae* II-II q. 32 a. 7 (whether alms may be given from ill-gotten goods), with its *sed contra* from Augustine and its *ad 1* stacking five readings of *mammona iniquitatis*; and III q. 23 aa. 1–4 on adoption, especially a. 1 ad 3 citing the Gloss on Rom 8. Corpus Thomisticum, <https://www.corpusthomisticum.org/sth3027.html> and <https://www.corpusthomisticum.org/sth4016.html>, 2026-07-25.
 
--   *Catena aurea in Lucam*, cap. 16, lect. 1–2, Corpus Thomisticum, <https://www.corpusthomisticum.org/clc14.html>, 2026-07-25. *Used as the checked Latin transmission of Augustine, Ambrose, Gregory, Chrysostom, Basil, Theophylact, and “Origen” on this pericope; each retained witness is identified as transmitted, and the underlying work is named where it was separately verified.*
+- *Catena aurea in Lucam*, cap. 16, lect. 1–2, Corpus Thomisticum, <https://www.corpusthomisticum.org/clc14.html>, 2026-07-25. *Used as the checked Latin transmission of Augustine, Ambrose, Gregory, Chrysostom, Basil, Theophylact, and “Origen” on this pericope; each retained witness is identified as transmitted, and the underlying work is named where it was separately verified.*
 
 ### Documented later uses (Notable and Quotable)
 
--   Anthony Trollope, *The Way We Live Now* (1875), ch. LXXXI; and *Barchester Towers* (1857), ch. XXXIX. Project Gutenberg ebooks 5231 and 3409, read 2026-07-25.
+- Anthony Trollope, *The Way We Live Now* (1875), ch. LXXXI; and *Barchester Towers* (1857), ch. XXXIX. Project Gutenberg ebooks 5231 and 3409, read 2026-07-25.
 
--   Charles Kingsley, *Westward Ho!* (1855), ch. XVIII. Project Gutenberg ebook 1860, read 2026-07-25.
+- Charles Kingsley, *Westward Ho!* (1855), ch. XVIII. Project Gutenberg ebook 1860, read 2026-07-25.
 
--   John Ruskin, *Sesame and Lilies* (1865), lecture I, “Of Kings’ Treasuries.” Project Gutenberg ebook 1293, read 2026-07-25.
+- John Ruskin, *Sesame and Lilies* (1865), lecture I, “Of Kings’ Treasuries.” Project Gutenberg ebook 1293, read 2026-07-25.
 
--   United Kingdom, House of Commons, Representation of the People (No. 2) Bill, 3 February 1931, HC Deb vol. 247, cc. 1662–1664. Historic Hansard, <https://api.parliament.uk/historic-hansard/commons/1931/feb/03/representation-of-the-people-no-2-bill>, read 2026-07-25. Parliamentary copyright; quoted under the Open Parliament Licence.
+- United Kingdom, House of Commons, Representation of the People (No. 2) Bill, 3 February 1931, HC Deb vol. 247, cc. 1662–1664. Historic Hansard, <https://api.parliament.uk/historic-hansard/commons/1931/feb/03/representation-of-the-people-no-2-bill>, read 2026-07-25. Parliamentary copyright; quoted under the Open Parliament Licence.
 
 **Last revised (UTC):** 2026-08-02T05:22:00Z
 

@@ -130,11 +130,11 @@ The Naples story—the sacristan’s vision of the friar raised in the air befor
 
 The posthumous history of Thomas’s body is documented in layers of very unequal strength.
 
--   **Secure core.** Death and burial at Fossanova, 1274; the Cistercians’ jealous custody of so valuable a grave; and the translation of the remains to the Dominicans of Toulouse, arriving 28 January 1369 (the 1912 Encyclopedia; the medieval custody conflicts and the 1369 ceremonies are the subject of Räsänen’s 2017 monograph, cited at record level). The canonization-era sources already tell of exhumations and translations within Fossanova, and later accounts of the Cistercian custody include grim expedients—separation of the head, even boiling of the remains—which this study reports only as tradition-history at the reported level of the modern scholarship, not as verified events.
+- **Secure core.** Death and burial at Fossanova, 1274; the Cistercians’ jealous custody of so valuable a grave; and the translation of the remains to the Dominicans of Toulouse, arriving 28 January 1369 (the 1912 Encyclopedia; the medieval custody conflicts and the 1369 ceremonies are the subject of Räsänen’s 2017 monograph, cited at record level). The canonization-era sources already tell of exhumations and translations within Fossanova, and later accounts of the Cistercian custody include grim expedients—separation of the head, even boiling of the remains—which this study reports only as tradition-history at the reported level of the modern scholarship, not as verified events.
 
--   **Reported extensions.** During the French Revolution the relics are reported to have been moved from the suppressed Jacobins church to the basilica of Saint-Sernin, and in 1974, for the seventh centenary, returned to the Jacobins, where the shrine now stands (current public accounts checked 2026-07-25; no official custodial document was checked, and no current authentication is asserted).
+- **Reported extensions.** During the French Revolution the relics are reported to have been moved from the suppressed Jacobins church to the basilica of Saint-Sernin, and in 1974, for the seventh centenary, returned to the Jacobins, where the shrine now stands (current public accounts checked 2026-07-25; no official custodial document was checked, and no current authentication is asserted).
 
--   **Competing claims.** Head and arm relics are claimed elsewhere—the checked modern account names San Domenico Maggiore in Naples; other head traditions attach to Priverno, near Fossanova. This study adjudicates none of them. The cult, it should be said plainly, does not depend on the adjudication: the Church honors the saint, not a forensically certified skeleton.
+- **Competing claims.** Head and arm relics are claimed elsewhere—the checked modern account names San Domenico Maggiore in Naples; other head traditions attach to Priverno, near Fossanova. This study adjudicates none of them. The cult, it should be said plainly, does not depend on the adjudication: the Church honors the saint, not a forensically certified skeleton.
 
 ### Iconography
 
@@ -247,71 +247,71 @@ All web sources were accessed and checked on 2026-07-25. Citations in the text u
 
 ### Primary sources: Thomas Aquinas
 
--   *Summa theologiae* I.1.1, corpus opening, Latin: *Sancti Thomae Aquinatis Opera omnia*, tomus quartus (Leonine edition; Rome: Typographia Polyglotta, 1888), p. 6; wording as centrally verified in this repository’s source library (`passage.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening`, verified 2026-07-23) and re-read in the Corpus Thomisticum web presentation of the Leonine text (<https://www.corpusthomisticum.org/sth1001.html>; database presentation © 2019 Fundación Tomás de Aquino).
+- *Summa theologiae* I.1.1, corpus opening, Latin: *Sancti Thomae Aquinatis Opera omnia*, tomus quartus (Leonine edition; Rome: Typographia Polyglotta, 1888), p. 6; wording as centrally verified in this repository’s source library (`passage.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening`, verified 2026-07-23) and re-read in the Corpus Thomisticum web presentation of the Leonine text (<https://www.corpusthomisticum.org/sth1001.html>; database presentation © 2019 Fundación Tomás de Aquino).
 
--   *Summa theologiae*, English: *The Summa Theologica of St. Thomas Aquinas*, literally translated by Fathers of the English Dominican Province, 2nd rev. ed. (1920; public domain), as transcribed at New Advent (<https://www.newadvent.org/summa/1001.htm> for I.1); the general prologue is paraphrased in this study, not quoted (see appendix).
+- *Summa theologiae*, English: *The Summa Theologica of St. Thomas Aquinas*, literally translated by Fathers of the English Dominican Province, 2nd rev. ed. (1920; public domain), as transcribed at New Advent (<https://www.newadvent.org/summa/1001.htm> for I.1); the general prologue is paraphrased in this study, not quoted (see appendix).
 
--   *Summa contra Gentiles* I.2, Latin, at Corpus Thomisticum (<https://www.corpusthomisticum.org/scg1001.html>); brief quotation with attribution.
+- *Summa contra Gentiles* I.2, Latin, at Corpus Thomisticum (<https://www.corpusthomisticum.org/scg1001.html>); brief quotation with attribution.
 
--   *Summa theologiae* I.2 prologue (plan of the work), English as quoted in Benedict XVI’s General Audience of 23 June 2010 (below).
+- *Summa theologiae* I.2 prologue (plan of the work), English as quoted in Benedict XVI’s General Audience of 23 June 2010 (below).
 
--   Works cited by title only (*Scriptum super Sententiis*, *De ente et essentia*, *Contra impugnantes*, *De veritate*, *Catena aurea*, *Contra errores Graecorum*, *De unitate intellectus*, *De malo*, *De virtutibus*, *De perfectione spiritualis vitae*, *Contra retrahentes*): identified through the reference literature below; no locus-level claim rests on an uninspected text.
+- Works cited by title only (*Scriptum super Sententiis*, *De ente et essentia*, *Contra impugnantes*, *De veritate*, *Catena aurea*, *Contra errores Graecorum*, *De unitate intellectus*, *De malo*, *De virtutibus*, *De perfectione spiritualis vitae*, *Contra retrahentes*): identified through the reference literature below; no locus-level claim rests on an uninspected text.
 
 ### Early biographical witnesses (identified; not inspected)
 
--   *Fontes vitae S. Thomae Aquinatis, notis historicis et criticis illustrati*, ed. D. Prümmer and M.-H. Laurent (Toulouse / Revue Thomiste, 1911–1937): the canonization processes (Naples 1319; Fossanova 1321) and the Lives of William of Tocco, Bernard Gui, and Peter Calo. Scan located at the Internet Archive (<https://archive.org/details/prummerfontesvitaestho>; <https://archive.org/details/fontesvitaesthom00pr>); catalog-level identification only; not page-inspected.
+- *Fontes vitae S. Thomae Aquinatis, notis historicis et criticis illustrati*, ed. D. Prümmer and M.-H. Laurent (Toulouse / Revue Thomiste, 1911–1937): the canonization processes (Naples 1319; Fossanova 1321) and the Lives of William of Tocco, Bernard Gui, and Peter Calo. Scan located at the Internet Archive (<https://archive.org/details/prummerfontesvitaestho>; <https://archive.org/details/fontesvitaesthom00pr>); catalog-level identification only; not page-inspected.
 
--   William of Tocco, *Ystoria sancti Thome de Aquino* (1318–1323), critical edition: Claire Le Brun-Gouanvic (Toronto: PIMS, Studies and Texts 127, 1996; ISBN 978-0-88844-127-0) (<https://pims.ca/publication/isbn-978-0-88844-127-0/>); publisher record only.
+- William of Tocco, *Ystoria sancti Thome de Aquino* (1318–1323), critical edition: Claire Le Brun-Gouanvic (Toronto: PIMS, Studies and Texts 127, 1996; ISBN 978-0-88844-127-0) (<https://pims.ca/publication/isbn-978-0-88844-127-0/>); publisher record only.
 
--   Kenelm Foster, O.P. (ed., trans.), *The Life of Saint Thomas Aquinas: Biographical Documents* (London: Longmans, Green; Baltimore: Helicon, 1959). In copyright; identified through publisher and review records (<https://openlibrary.org/books/OL6269895M/The_life_of_Saint_Thomas_Aquinas>); not quoted.
+- Kenelm Foster, O.P. (ed., trans.), *The Life of Saint Thomas Aquinas: Biographical Documents* (London: Longmans, Green; Baltimore: Helicon, 1959). In copyright; identified through publisher and review records (<https://openlibrary.org/books/OL6269895M/The_life_of_Saint_Thomas_Aquinas>); not quoted.
 
 ### Reception-era reference (public domain; checked)
 
--   D. J. Kennedy, “St. Thomas Aquinas,” *The Catholic Encyclopedia*, vol. 14 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/14663b.htm>); principal biographical frame and the quoted renderings of the canonization-era traditions.
+- D. J. Kennedy, “St. Thomas Aquinas,” *The Catholic Encyclopedia*, vol. 14 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/14663b.htm>); principal biographical frame and the quoted renderings of the canonization-era traditions.
 
--   D. J. Kennedy, “Thomism,” *The Catholic Encyclopedia*, vol. 14 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/14698b.htm>); 1277 censures, Dominican defense, Bourret revocation quotation.
+- D. J. Kennedy, “Thomism,” *The Catholic Encyclopedia*, vol. 14 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/14698b.htm>); 1277 censures, Dominican defense, Bourret revocation quotation.
 
--   “Corpus Christi, Feast of,” *The Catholic Encyclopedia*, vol. 4 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/04390b.htm>); Juliana of Liège, *Transiturus*, 1912-era attribution of the office.
+- “Corpus Christi, Feast of,” *The Catholic Encyclopedia*, vol. 4 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/04390b.htm>); Juliana of Liège, *Transiturus*, 1912-era attribution of the office.
 
 ### Modern scholarship and reference
 
--   “Thomas Aquinas,” *Stanford Encyclopedia of Philosophy* (first published 7 December 2022), checked at <https://plato.stanford.edu/entries/aquinas/>; chronology and the 1277 relation.
+- “Thomas Aquinas,” *Stanford Encyclopedia of Philosophy* (first published 7 December 2022), checked at <https://plato.stanford.edu/entries/aquinas/>; chronology and the 1277 relation.
 
--   J. M. M. H. Thijssen, “Condemnation of 1277,” *Stanford Encyclopedia of Philosophy* (substantive revision 18 December 2023), checked at <https://plato.stanford.edu/entries/condemnation/>; Tempier’s acts, Wippel/Hissette debate, Giles of Rome, Wielockx thesis, Kilwardby.
+- J. M. M. H. Thijssen, “Condemnation of 1277,” *Stanford Encyclopedia of Philosophy* (substantive revision 18 December 2023), checked at <https://plato.stanford.edu/entries/condemnation/>; Tempier’s acts, Wippel/Hissette debate, Giles of Rome, Wielockx thesis, Kilwardby.
 
--   J.-P. Torrell, O.P., *Saint Thomas Aquinas*, vol. 1: *The Person and His Work*, trans. R. Royal (Washington: CUA Press, rev. ed. 2005; 3rd ed. trans. Royal and Minerd, ISBN 978-0-8132-3560-8, <https://www.cuapress.org/9780813235608/saint-thomas-aquinas/>). Publisher-record level; not independently inspected.
+- J.-P. Torrell, O.P., *Saint Thomas Aquinas*, vol. 1: *The Person and His Work*, trans. R. Royal (Washington: CUA Press, rev. ed. 2005; 3rd ed. trans. Royal and Minerd, ISBN 978-0-8132-3560-8, <https://www.cuapress.org/9780813235608/saint-thomas-aquinas/>). Publisher-record level; not independently inspected.
 
--   M. Grabmann, *Thomas Aquinas: His Personality and Thought*, trans. V. Michel (New York: Longmans, Green, 1928; repr. 1963). Catalog-record level; not independently inspected.
+- M. Grabmann, *Thomas Aquinas: His Personality and Thought*, trans. V. Michel (New York: Longmans, Green, 1928; repr. 1963). Catalog-record level; not independently inspected.
 
--   M. Räsänen, *Thomas Aquinas’s Relics as Focus for Conflict and Cult in the Late Middle Ages: The Restless Corpse* (Amsterdam: Amsterdam University Press, 2017; ISBN 978-90-8964-873-0, <https://www.aup.nl/en/book/9789089648730/thomas-aquinas-s-relics-as-focus-for-conflict-and-cult-in-the-late-middle-ages>). Publisher-record level; not independently inspected.
+- M. Räsänen, *Thomas Aquinas’s Relics as Focus for Conflict and Cult in the Late Middle Ages: The Restless Corpse* (Amsterdam: Amsterdam University Press, 2017; ISBN 978-90-8964-873-0, <https://www.aup.nl/en/book/9789089648730/thomas-aquinas-s-relics-as-focus-for-conflict-and-cult-in-the-late-middle-ages>). Publisher-record level; not independently inspected.
 
--   C. Lambot, “L’office de la Fête-Dieu. Aperçus nouveaux sur ses origines,” *Revue bénédictine* (1942), and P.-M. Gy, “L’office du Corpus Christi et la théologie des accidents eucharistiques,” *Revue des sciences philosophiques et théologiques* (1982). Bibliographic identification only; frame of the office-attribution debate.
+- C. Lambot, “L’office de la Fête-Dieu. Aperçus nouveaux sur ses origines,” *Revue bénédictine* (1942), and P.-M. Gy, “L’office du Corpus Christi et la théologie des accidents eucharistiques,” *Revue des sciences philosophiques et théologiques* (1982). Bibliographic identification only; frame of the office-attribution debate.
 
--   Commissio Leonina, site checked at <https://www.commissio-leonina.org/>; the commission’s continuing critical-edition charge.
+- Commissio Leonina, site checked at <https://www.commissio-leonina.org/>; the commission’s continuing critical-edition charge.
 
--   “The Relics of the Angelic Doctor,” Prime Matters (University of Mary), checked at <https://primematters.com/foundations/enrichment/relics-angelic-doctor>; reported level for the Revolution-era transfer, 1974 return, and Naples relic claims.
+- “The Relics of the Angelic Doctor,” Prime Matters (University of Mary), checked at <https://primematters.com/foundations/enrichment/relics-angelic-doctor>; reported level for the Revolution-era transfer, 1974 return, and Naples relic claims.
 
 ### Ecclesial reception (checked at the Holy See’s site except as noted)
 
--   Leo XIII, encyclical *Aeterni Patris* (4 August 1879), English text (<https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_04081879_aeterni-patris.html>); quoted briefly. Distinct from Pius IX’s 1868 bull *Aeterni Patris* convoking the First Vatican Council, which is not used here.
+- Leo XIII, encyclical *Aeterni Patris* (4 August 1879), English text (<https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_04081879_aeterni-patris.html>); quoted briefly. Distinct from Pius IX’s 1868 bull *Aeterni Patris* convoking the First Vatican Council, which is not used here.
 
--   Sacred Congregation of Studies, decree approving twenty-four Thomistic theses (27 July 1914), English at the Franciscan Archive (<https://franciscan-archive.org/thomas/24theses.html>); preamble reporting Pius X’s motu proprio *Doctoris Angelici* (29 June 1914), which is otherwise cited at reported level only.
+- Sacred Congregation of Studies, decree approving twenty-four Thomistic theses (27 July 1914), English at the Franciscan Archive (<https://franciscan-archive.org/thomas/24theses.html>); preamble reporting Pius X’s motu proprio *Doctoris Angelici* (29 June 1914), which is otherwise cited at reported level only.
 
--   Pius XI, encyclical *Studiorum Ducem* (29 June 1923), Latin text (<https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19230629_studiorum-ducem.html>); “Doctor Communis” and the 1917 canon 1366 §2 quotation.
+- Pius XI, encyclical *Studiorum Ducem* (29 June 1923), Latin text (<https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19230629_studiorum-ducem.html>); “Doctor Communis” and the 1917 canon 1366 §2 quotation.
 
--   Second Vatican Council, decree *Optatam totius* (28 October 1965) 16, English text (<https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651028_optatam-totius_en.html>).
+- Second Vatican Council, decree *Optatam totius* (28 October 1965) 16, English text (<https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651028_optatam-totius_en.html>).
 
--   Paul VI, apostolic letter *Lumen Ecclesiae* (20 November 1974), Italian text (<https://www.vatican.va/content/paul-vi/it/apost_letters/documents/hf_p-vi_apl_19741205_lumen-ecclesiae.html>); paraphrased.
+- Paul VI, apostolic letter *Lumen Ecclesiae* (20 November 1974), Italian text (<https://www.vatican.va/content/paul-vi/it/apost_letters/documents/hf_p-vi_apl_19741205_lumen-ecclesiae.html>); paraphrased.
 
--   *Code of Canon Law* (1983), canon 252 §3, English text (<https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html>).
+- *Code of Canon Law* (1983), canon 252 §3, English text (<https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann208-329_en.html>).
 
--   *Catechism of the Catholic Church* 460, 1381, 2763, English text, Vatican website archive (<https://www.vatican.va/archive/ENG0015/__P1J.HTM>; <https://www.vatican.va/archive/ENG0015/__P41.HTM>; <https://www.vatican.va/archive/ENG0015/__P9X.HTM>).
+- *Catechism of the Catholic Church* 460, 1381, 2763, English text, Vatican website archive (<https://www.vatican.va/archive/ENG0015/__P1J.HTM>; <https://www.vatican.va/archive/ENG0015/__P41.HTM>; <https://www.vatican.va/archive/ENG0015/__P9X.HTM>).
 
--   John Paul II, encyclical *Fides et ratio* (14 September 1998) 43–44, English text (<https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html>).
+- John Paul II, encyclical *Fides et ratio* (14 September 1998) 43–44, English text (<https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html>).
 
--   Benedict XVI, General Audiences of 2, 16, and 23 June 2010 (three catecheses on Saint Thomas Aquinas), English texts (<https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100602.html>; …`20100616.html`; …`20100623.html`); paraphrased, with the Summa plan quotation as cited there.
+- Benedict XVI, General Audiences of 2, 16, and 23 June 2010 (three catecheses on Saint Thomas Aquinas), English texts (<https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100602.html>; …`20100616.html`; …`20100623.html`); paraphrased, with the Summa plan quotation as cited there.
 
--   Leo XIV’s declaration of John Henry Newman as Doctor of the Church and co-patron, with Thomas Aquinas, of the Church’s educational mission (1 November 2025): reported from G. O’Connell, America Magazine, 1 November 2025 (<https://www.americamagazine.org/vatican-dispatch/2025/11/01/pope-leo-declares-st-john-henry-newman-a-doctor-of-the-church-and-co-patron-of-catholic-education/>); the formal act’s text was not checked.
+- Leo XIV’s declaration of John Henry Newman as Doctor of the Church and co-patron, with Thomas Aquinas, of the Church’s educational mission (1 November 2025): reported from G. O’Connell, America Magazine, 1 November 2025 (<https://www.americamagazine.org/vatican-dispatch/2025/11/01/pope-leo-declares-st-john-henry-newman-a-doctor-of-the-church-and-co-patron-of-catholic-education/>); the formal act’s text was not checked.
 
 **Last revised (UTC):** 2026-07-25T06:00:28Z
 

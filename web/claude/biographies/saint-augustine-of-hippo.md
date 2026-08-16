@@ -300,47 +300,47 @@ All web sources were accessed and checked on 2026-07-24/25. Ancient-work citatio
 
 ### Primary sources: Augustine
 
--   Augustine, *Confessions*, trans. J. G. Pilkington, in *A Select Library of Nicene and Post-Nicene Fathers*, series 1, vol. 1, ed. P. Schaff (New York: Christian Literature Company, 1886). Quotations follow the transcriptions at New Advent, books 1–10 (<https://www.newadvent.org/fathers/110101.htm> through `110110.htm`). The translation is public domain; the underlying Latin is ancient and public domain. A catalog-level source-library record for this volume is bound in `research/source-bindings.toml`.
+- Augustine, *Confessions*, trans. J. G. Pilkington, in *A Select Library of Nicene and Post-Nicene Fathers*, series 1, vol. 1, ed. P. Schaff (New York: Christian Literature Company, 1886). Quotations follow the transcriptions at New Advent, books 1–10 (<https://www.newadvent.org/fathers/110101.htm> through `110110.htm`). The translation is public domain; the underlying Latin is ancient and public domain. A catalog-level source-library record for this volume is bound in `research/source-bindings.toml`.
 
--   Augustine, *Letters* 21 (A.D. 391), 93 (A.D. 408), 133 (A.D. 412), and 213 (the acta of 26 September 426), trans. J. G. Cunningham, NPNF series 1, vol. 1, at New Advent (<https://www.newadvent.org/fathers/1102021.htm>; <https://www.newadvent.org/fathers/1102093.htm>; <https://www.newadvent.org/fathers/1102133.htm>; <https://www.newadvent.org/fathers/1102213.htm>). *Letters* 169 and 229 are cited only as quoted in Benedict XVI’s audiences (below).
+- Augustine, *Letters* 21 (A.D. 391), 93 (A.D. 408), 133 (A.D. 412), and 213 (the acta of 26 September 426), trans. J. G. Cunningham, NPNF series 1, vol. 1, at New Advent (<https://www.newadvent.org/fathers/1102021.htm>; <https://www.newadvent.org/fathers/1102093.htm>; <https://www.newadvent.org/fathers/1102133.htm>; <https://www.newadvent.org/fathers/1102213.htm>). *Letters* 169 and 229 are cited only as quoted in Benedict XVI’s audiences (below).
 
--   Augustine, *On the Gift of Perseverance* 53, NPNF series 1, vol. 5, at New Advent (<https://www.newadvent.org/fathers/15122.htm>); source of the report of Pelagius’s reaction to *Confessions* 10.29.40.
+- Augustine, *On the Gift of Perseverance* 53, NPNF series 1, vol. 5, at New Advent (<https://www.newadvent.org/fathers/15122.htm>); source of the report of Pelagius’s reaction to *Confessions* 10.29.40.
 
--   Augustine, *The City of God*, trans. M. Dods, G. Wilson, and J. J. Smith (Edinburgh: T. & T. Clark, 1871), 2 vols. Quotations (1 preface; 14.28; 15.22; 19.13; 22.30) were verified against the exact tracked text artifacts of Project Gutenberg eBooks 45304–45305 registered in this repository’s source library (`src/sources/works/augustine/de-civitate-dei/editions/dods-1871/`), including the registered passage records for 15.22 and 19.13.
+- Augustine, *The City of God*, trans. M. Dods, G. Wilson, and J. J. Smith (Edinburgh: T. & T. Clark, 1871), 2 vols. Quotations (1 preface; 14.28; 15.22; 19.13; 22.30) were verified against the exact tracked text artifacts of Project Gutenberg eBooks 45304–45305 registered in this repository’s source library (`src/sources/works/augustine/de-civitate-dei/editions/dods-1871/`), including the registered passage records for 15.22 and 19.13.
 
 ### Primary sources: other ancient witnesses
 
--   Possidius of Calama, *Life of Saint Augustine*, trans. H. T. Weiskotten, *Sancti Augustini Vita Scripta a Possidio Episcopo* (Princeton: Princeton University Press, 1919), public-domain transcription at the Tertullian Project (<https://www.tertullian.org/fathers/possidius_life_of_augustine_02_text.htm>; introduction at `..._01_intro.htm`, source of the c. 432 dating). Cited by chapter. A catalog-level source-library record for this edition is bound in `research/source-bindings.toml`.
+- Possidius of Calama, *Life of Saint Augustine*, trans. H. T. Weiskotten, *Sancti Augustini Vita Scripta a Possidio Episcopo* (Princeton: Princeton University Press, 1919), public-domain transcription at the Tertullian Project (<https://www.tertullian.org/fathers/possidius_life_of_augustine_02_text.htm>; introduction at `..._01_intro.htm`, source of the c. 432 dating). Cited by chapter. A catalog-level source-library record for this edition is bound in `research/source-bindings.toml`.
 
--   Paul the Deacon, *History of the Langobards* 6.48, trans. W. D. Foulke (New York, 1907), at elfinspell.com (<https://elfinspell.com/MedievalMatter/PaultheDeacon-PaulusDiaconus/HistoryOfTheLangobards/PaulTheDeacon-Book6.html>); the eighth-century witness to both relic translations.
+- Paul the Deacon, *History of the Langobards* 6.48, trans. W. D. Foulke (New York, 1907), at elfinspell.com (<https://elfinspell.com/MedievalMatter/PaultheDeacon-PaulusDiaconus/HistoryOfTheLangobards/PaulTheDeacon-Book6.html>); the eighth-century witness to both relic translations.
 
 ### Later tradition
 
--   *The Golden Legend* (Jacobus de Voragine, 13th c.), Life of S. Austin, in Caxton’s English version (1483), Temple Classics text at the Internet Medieval Sourcebook, Fordham University (<https://sourcebooks.fordham.edu/basis/goldenlegend/GoldenLegend-Volume5.asp>); source of the seashore-child addition (with Caxton’s own disclaimer), the *Te Deum* legend, and the elaborated relic-translation narrative.
+- *The Golden Legend* (Jacobus de Voragine, 13th c.), Life of S. Austin, in Caxton’s English version (1483), Temple Classics text at the Internet Medieval Sourcebook, Fordham University (<https://sourcebooks.fordham.edu/basis/goldenlegend/GoldenLegend-Volume5.asp>); source of the seashore-child addition (with Caxton’s own disclaimer), the *Te Deum* legend, and the elaborated relic-translation narrative.
 
--   “The Te Deum,” *The Catholic Encyclopedia*, vol. 14 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/14468c.htm>); hymnological status of the alternating-composition legend.
+- “The Te Deum,” *The Catholic Encyclopedia*, vol. 14 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/14468c.htm>); hymnological status of the alternating-composition legend.
 
 ### Ecclesial reception
 
--   *Catechism of the Catholic Church* 30, English text, Vatican website archive (<https://www.vatican.va/archive/ENG0015/__P9.HTM>); quoting *Confessions* 1.1.1.
+- *Catechism of the Catholic Church* 30, English text, Vatican website archive (<https://www.vatican.va/archive/ENG0015/__P9.HTM>); quoting *Confessions* 1.1.1.
 
--   John Paul II, apostolic letter *Augustinum Hipponensem* (28 August 1986), English text, Vatican website (<https://www.vatican.va/content/john-paul-ii/en/apost_letters/1986/documents/hf_jp-ii_apl_26081986_augustinum-hipponensem.html>); quoted briefly and paraphrased.
+- John Paul II, apostolic letter *Augustinum Hipponensem* (28 August 1986), English text, Vatican website (<https://www.vatican.va/content/john-paul-ii/en/apost_letters/1986/documents/hf_jp-ii_apl_26081986_augustinum-hipponensem.html>); quoted briefly and paraphrased.
 
--   Benedict XVI, General Audiences of 9 and 16 January, 30 January, 20 and 27 February 2008 (catecheses on St. Augustine), Vatican website (<https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html> and sibling pages `20080116`, `20080130`, `20080220`, `20080227`); quoted briefly and paraphrased.
+- Benedict XVI, General Audiences of 9 and 16 January, 30 January, 20 and 27 February 2008 (catecheses on St. Augustine), Vatican website (<https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html> and sibling pages `20080116`, `20080130`, `20080220`, `20080227`); quoted briefly and paraphrased.
 
--   Benedict XVI, Homily at Pavia (22 April 2007), Vatican website (<https://www.vatican.va/content/benedict-xvi/en/homilies/2007/documents/hf_ben-xvi_hom_20070422_pavia.html>); current official statement of the Pavia relics.
+- Benedict XVI, Homily at Pavia (22 April 2007), Vatican website (<https://www.vatican.va/content/benedict-xvi/en/homilies/2007/documents/hf_ben-xvi_hom_20070422_pavia.html>); current official statement of the Pavia relics.
 
--   “Doctors of the Church,” *The Catholic Encyclopedia*, vol. 5 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/05075a.htm>); source for Boniface VIII’s 1298 decretal.
+- “Doctors of the Church,” *The Catholic Encyclopedia*, vol. 5 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/05075a.htm>); source for Boniface VIII’s 1298 decretal.
 
 ### Modern scholarship and reference
 
--   J. J. O’Donnell, *Augustine: Confessions. Text and Commentary* (Oxford, 1992), online electronic edition at Georgetown University (<https://faculty.georgetown.edu/jod/conf/>; commentary on books 8–9 at `comm8.html` and `comm9.html`). Source of the garden-scene historicity discussion (Courcelle, Sizoo) and the *Monnica* manuscript spelling; quoted in brief attributed snippets.
+- J. J. O’Donnell, *Augustine: Confessions. Text and Commentary* (Oxford, 1992), online electronic edition at Georgetown University (<https://faculty.georgetown.edu/jod/conf/>; commentary on books 8–9 at `comm8.html` and `comm9.html`). Source of the garden-scene historicity discussion (Courcelle, Sizoo) and the *Monnica* manuscript spelling; quoted in brief attributed snippets.
 
--   C. Tornau, “Saint Augustine,” *Stanford Encyclopedia of Philosophy* (2019, rev. 2024) (<https://plato.stanford.edu/entries/augustine/>); used for the conversion date (summer 386) and *Confessions* dating (ca. 396–400). The author attribution follows the entry’s own record.
+- C. Tornau, “Saint Augustine,” *Stanford Encyclopedia of Philosophy* (2019, rev. 2024) (<https://plato.stanford.edu/entries/augustine/>); used for the conversion date (summer 386) and *Confessions* dating (ca. 396–400). The author attribution follows the entry’s own record.
 
--   P. Brown, *Augustine of Hippo: A Biography*, new edition with epilogue (Berkeley: University of California Press, 2000; original 1967). Cited only at the level of the publisher’s catalogue record (<https://www.ucpress.edu/books/augustine-of-hippo/paper>), including its description of the epilogue occasioned by the newly discovered letters and sermons. The book was not independently inspected.
+- P. Brown, *Augustine of Hippo: A Biography*, new edition with epilogue (Berkeley: University of California Press, 2000; original 1967). Cited only at the level of the publisher’s catalogue record (<https://www.ucpress.edu/books/augustine-of-hippo/paper>), including its description of the epilogue occasioned by the newly discovered letters and sermons. The book was not independently inspected.
 
--   “Life of St. Augustine of Hippo,” “Teaching of St. Augustine of Hippo,” “Donatists,” “Pelagius and Pelagianism,” and “St. Monica,” *The Catholic Encyclopedia*, vols. 1–11 (New York, 1907–1911), at New Advent (<https://www.newadvent.org/cathen/02084a.htm>; <https://www.newadvent.org/cathen/02091a.htm>; <https://www.newadvent.org/cathen/05121a.htm>; <https://www.newadvent.org/cathen/11604a.htm>; <https://www.newadvent.org/cathen/10482a.htm>); public domain; used as identified reporting witnesses for the ordination and consecration dates, the “Doctor of Grace” usage, the Reformation-era judgments, the Donatist and Pelagian sequences, and Monica’s dates and 1430 translation.
+- “Life of St. Augustine of Hippo,” “Teaching of St. Augustine of Hippo,” “Donatists,” “Pelagius and Pelagianism,” and “St. Monica,” *The Catholic Encyclopedia*, vols. 1–11 (New York, 1907–1911), at New Advent (<https://www.newadvent.org/cathen/02084a.htm>; <https://www.newadvent.org/cathen/02091a.htm>; <https://www.newadvent.org/cathen/05121a.htm>; <https://www.newadvent.org/cathen/11604a.htm>; <https://www.newadvent.org/cathen/10482a.htm>); public domain; used as identified reporting witnesses for the ordination and consecration dates, the “Doctor of Grace” usage, the Reformation-era judgments, the Donatist and Pelagian sequences, and Monica’s dates and 1430 translation.
 
 **Last revised (UTC):** 2026-07-25T05:13:00Z
 

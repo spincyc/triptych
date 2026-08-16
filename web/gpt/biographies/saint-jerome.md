@@ -316,13 +316,13 @@ The responsible claim is collaborative production with differentiated roles and 
 
 Several genuine sayings need their loci.
 
--   The claim that ignorance of Scripture is ignorance of Christ belongs to the prologue to the Isaiah commentary. It concerns encounter with Christ through Scripture, not information as a substitute for charity.
+- The claim that ignorance of Scripture is ignorance of Christ belongs to the prologue to the Isaiah commentary. It concerns encounter with Christ through Scripture, not information as a substitute for charity.
 
--   Letter 57.5’s preference for sense over word in ordinary translation is immediately qualified for Scripture. It cannot be cited as proof that Jerome always paraphrased or always translated literally.
+- Letter 57.5’s preference for sense over word in ordinary translation is immediately qualified for Scripture. It cannot be cited as proof that Jerome always paraphrased or always translated literally.
 
--   Letter 52.7’s instruction that a priest’s conduct agree with his speech is genuine ascetic counsel, not evidence that Jerome always met his own test.
+- Letter 52.7’s instruction that a priest’s conduct agree with his speech is genuine ascetic counsel, not evidence that Jerome always met his own test.
 
--   Attractive sayings assigned to Jerome without work, section, edition, and translation remain unverified. The saint’s reputation is not a locus.
+- Attractive sayings assigned to Jerome without work, section, edition, and translation remain unverified. The saint’s reputation is not a locus.
 
 ### Paul as the “first hermit”
 
@@ -447,39 +447,39 @@ This working biography has internal source, chronology, tradition, and productio
 
 ### Jerome and late-antique witnesses actually inspected
 
--   Jerome. Letters 3, 5, 7, 14–16, 19–22, 35–39, 45, 49, 51–52, 57, 84, 108, 125, 127, 130, 138–139; *De viris illustribus* 135; biblical prefaces; *Against Rufinus* 3.22; *Against John of Jerusalem*; *Against Jovinian*; *Against Helvidius*; *Against Vigilantius*; and the *Dialogue against the Pelagians*. English research text: W. H. Fremantle, G. Lewis, and W. G. Martley, trans., in Philip Schaff and Henry Wace, eds., *Nicene and Post-Nicene Fathers*, second series, vol. 6 (Buffalo, 1893), through [New Advent’s Jerome index](https://www.newadvent.org/fathers/3001.htm); accessed 2026-07-16. The translation is public domain; the publication mostly paraphrases it. The short wording from Letter 22.30 is identified as its rendering.
+- Jerome. Letters 3, 5, 7, 14–16, 19–22, 35–39, 45, 49, 51–52, 57, 84, 108, 125, 127, 130, 138–139; *De viris illustribus* 135; biblical prefaces; *Against Rufinus* 3.22; *Against John of Jerusalem*; *Against Jovinian*; *Against Helvidius*; *Against Vigilantius*; and the *Dialogue against the Pelagians*. English research text: W. H. Fremantle, G. Lewis, and W. G. Martley, trans., in Philip Schaff and Henry Wace, eds., *Nicene and Post-Nicene Fathers*, second series, vol. 6 (Buffalo, 1893), through [New Advent’s Jerome index](https://www.newadvent.org/fathers/3001.htm); accessed 2026-07-16. The translation is public domain; the publication mostly paraphrases it. The short wording from Letter 22.30 is identified as its rendering.
 
--   Jerome. *Prefaces*, especially the Gospel preface to Damasus and the Old Testament prologues, [public-domain NPNF translation](https://www.newadvent.org/fathers/3002.htm); accessed 2026-07-16. Prefaces are claims by the translator and are tested against textual history.
+- Jerome. *Prefaces*, especially the Gospel preface to Damasus and the Old Testament prologues, [public-domain NPNF translation](https://www.newadvent.org/fathers/3002.htm); accessed 2026-07-16. Prefaces are claims by the translator and are tested against textual history.
 
--   Augustine and Jerome. Letters 28/56, 40/67, 71/75, 73/76, and 82/116, with ancient dual numbering preserved. Public-domain NPNF translation, including [Augustine Letter 82 / Jerome 116](https://www.newadvent.org/fathers/1102082.htm); accessed 2026-07-16.
+- Augustine and Jerome. Letters 28/56, 40/67, 71/75, 73/76, and 82/116, with ancient dual numbering preserved. Public-domain NPNF translation, including [Augustine Letter 82 / Jerome 116](https://www.newadvent.org/fathers/1102082.htm); accessed 2026-07-16.
 
--   Augustine. *On the Proceedings of Pelagius* 66, [public-domain NPNF translation](https://www.newadvent.org/fathers/1505.htm); Innocent I, Letters [136](https://www.newadvent.org/fathers/3001136.htm)– [137](https://www.newadvent.org/fathers/3001137.htm); and Jerome, Letters [138](https://www.newadvent.org/fathers/3001138.htm)– [139](https://www.newadvent.org/fathers/3001139.htm); accessed 2026-07-17. Used for the reported 416 attack; their convergence does not supply a casualty register, complete legal dossier, or neutral attribution of perpetrators and command.
+- Augustine. *On the Proceedings of Pelagius* 66, [public-domain NPNF translation](https://www.newadvent.org/fathers/1505.htm); Innocent I, Letters [136](https://www.newadvent.org/fathers/3001136.htm)– [137](https://www.newadvent.org/fathers/3001137.htm); and Jerome, Letters [138](https://www.newadvent.org/fathers/3001138.htm)– [139](https://www.newadvent.org/fathers/3001139.htm); accessed 2026-07-17. Used for the reported 416 attack; their convergence does not supply a casualty register, complete legal dossier, or neutral attribution of perpetrators and command.
 
--   Rufinus of Aquileia. *Apology against Jerome* 2.5–6, 32–44, trans. William Henry Fremantle, in NPNF, second series, vol. 3, [public-domain research text](https://www.newadvent.org/fathers/27052.htm); accessed 2026-07-17. Used as a partisan reciprocal witness to the Ciceronian dream, ascetic rhetoric, Hebrew project, and Origenist dispute.
+- Rufinus of Aquileia. *Apology against Jerome* 2.5–6, 32–44, trans. William Henry Fremantle, in NPNF, second series, vol. 3, [public-domain research text](https://www.newadvent.org/fathers/27052.htm); accessed 2026-07-17. Used as a partisan reciprocal witness to the Ciceronian dream, ascetic rhetoric, Hebrew project, and Origenist dispute.
 
--   Jerome. *Life of Paul* 1; *Life of Hilarion* 1; and *Life of Malchus* 1–2, trans. W. H. Fremantle in NPNF, second series, vol. 6, [Paul](https://www.newadvent.org/fathers/3008.htm), [Hilarion](https://www.newadvent.org/fathers/3003.htm), and [Malchus](https://www.newadvent.org/fathers/3006.htm); accessed 2026-07-17. Used for Jerome’s literary programs and report-frames, not as uncorroborated event history of their subjects.
+- Jerome. *Life of Paul* 1; *Life of Hilarion* 1; and *Life of Malchus* 1–2, trans. W. H. Fremantle in NPNF, second series, vol. 6, [Paul](https://www.newadvent.org/fathers/3008.htm), [Hilarion](https://www.newadvent.org/fathers/3003.htm), and [Malchus](https://www.newadvent.org/fathers/3006.htm); accessed 2026-07-17. Used for Jerome’s literary programs and report-frames, not as uncorroborated event history of their subjects.
 
--   Adomnán. *De locis sanctis* 2.5, trans. Denis Meehan, [CELT edition](https://celt.ucc.ie/published/T201090.html); accessed 2026-07-17. Used for Arculf’s late-seventh-century report of a Jerome tomb at Bethlehem, not a burial or relic-custody chain.
+- Adomnán. *De locis sanctis* 2.5, trans. Denis Meehan, [CELT edition](https://celt.ucc.ie/published/T201090.html); accessed 2026-07-17. Used for Arculf’s late-seventh-century report of a Jerome tomb at Bethlehem, not a burial or relic-custody chain.
 
--   John Moschus, *Spiritual Meadow* 107; the ninth-century Jerome life *Plerosque nimirum*; and Jacobus de Voragine, *Golden Legend*, life of Jerome, in William Caxton’s public-domain rendering, [online text](https://ccel.org/ccel/voragine/goldleg5/goldleg5.xxix.html). Transmission was checked through Filomena Giannotti, “Saint Jerome’s Posthumous Life: Aspects of His Reception in the Twentieth Century,” *Clotho* 3, no. 2 (2021): 115–127, [article DOI](https://doi.org/10.4312/clotho.3.2.115-127); accessed 2026-07-17. Used to show that the *Golden Legend* transmitted rather than invented the Jerome lion cycle; the proposed name-confusion route remains a reconstruction. The modern analysis is paraphrased; no reuse license is inferred from online access.
+- John Moschus, *Spiritual Meadow* 107; the ninth-century Jerome life *Plerosque nimirum*; and Jacobus de Voragine, *Golden Legend*, life of Jerome, in William Caxton’s public-domain rendering, [online text](https://ccel.org/ccel/voragine/goldleg5/goldleg5.xxix.html). Transmission was checked through Filomena Giannotti, “Saint Jerome’s Posthumous Life: Aspects of His Reception in the Twentieth Century,” *Clotho* 3, no. 2 (2021): 115–127, [article DOI](https://doi.org/10.4312/clotho.3.2.115-127); accessed 2026-07-17. Used to show that the *Golden Legend* transmitted rather than invented the Jerome lion cycle; the proposed name-confusion route remains a reconstruction. The modern analysis is paraphrased; no reuse license is inferred from online access.
 
--   Sulpicius Severus. *Dialogue* 1.8–9, [public-domain NPNF translation](https://www.newadvent.org/fathers/35031.htm); accessed 2026-07-16. Used for a visitor’s praise of the Bethlehem scholar, not a neutral work diary.
+- Sulpicius Severus. *Dialogue* 1.8–9, [public-domain NPNF translation](https://www.newadvent.org/fathers/35031.htm); accessed 2026-07-16. Used for a visitor’s praise of the Bethlehem scholar, not a neutral work diary.
 
--   Palladius. *Lausiac History* 36.6–7 and 41.2. Trans. W. K. Lowther Clarke (London: SPCK, 1918), [public-domain English text](https://www.tertullian.org/fathers/palladius_lausiac_02_text.htm); accessed 2026-07-16. Used as hostile Origenist counter-witness, not transparent access to Jerome’s motives.
+- Palladius. *Lausiac History* 36.6–7 and 41.2. Trans. W. K. Lowther Clarke (London: SPCK, 1918), [public-domain English text](https://www.tertullian.org/fathers/palladius_lausiac_02_text.htm); accessed 2026-07-16. Used as hostile Origenist counter-witness, not transparent access to Jerome’s motives.
 
 ### Official Catholic reception actually inspected
 
--   Benedict XVI. General Audiences, [7 November 2007](https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20071107.html) and [14 November 2007](https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20071114.html); accessed 2026-07-15. These catecheses are M and themselves preserve a 419–420 death range.
+- Benedict XVI. General Audiences, [7 November 2007](https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20071107.html) and [14 November 2007](https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20071114.html); accessed 2026-07-15. These catecheses are M and themselves preserve a 419–420 death range.
 
--   Francis. Apostolic Letter [*Scripturae Sacrae affectus*](https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20200930_scripturae-sacrae-affectus.html) (30 September 2020); accessed 2026-07-16. Used for current Catholic reception, its exact ancient loci, collaborative emphasis, official 420 commemoration, and explicit identification of cardinal dress as anachronistic. Vatican English remains third-party wording and is paraphrased.
+- Francis. Apostolic Letter [*Scripturae Sacrae affectus*](https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20200930_scripturae-sacrae-affectus.html) (30 September 2020); accessed 2026-07-16. Used for current Catholic reception, its exact ancient loci, collaborative emphasis, official 420 commemoration, and explicit identification of cardinal dress as anachronistic. Vatican English remains third-party wording and is paraphrased.
 
 ### Modern critical work actually used
 
--   Houghton, H. A. G. *The Latin New Testament: A Guide to Its Early History, Texts, and Manuscripts*. Oxford: Oxford University Press, 2016, pp. 31–35. Open-access edition under CC BY-NC-ND 4.0; [book DOI](https://doi.org/10.1093/acprof:oso/9780198744733.001.0001). Relevant pages were inspected on 2026-07-15 and are paraphrased, not reproduced. They control the Gospel-revision and non-Jerome New Testament claims.
+- Houghton, H. A. G. *The Latin New Testament: A Guide to Its Early History, Texts, and Manuscripts*. Oxford: Oxford University Press, 2016, pp. 31–35. Open-access edition under CC BY-NC-ND 4.0; [book DOI](https://doi.org/10.1093/acprof:oso/9780198744733.001.0001). Relevant pages were inspected on 2026-07-15 and are paraphrased, not reproduced. They control the Gospel-revision and non-Jerome New Testament claims.
 
--   Salvesen, Alison G. “Deuterocanonical and Apocryphal Books.” In Alison G. Salvesen and Timothy Michael Law, eds., *The Oxford Handbook of the Septuagint* (Oxford University Press, 2021), pp. 384–402, [chapter DOI](https://doi.org/10.1093/oxfordhb/9780199665716.013.21). The chapter was inspected on 2026-07-15 for Jerome’s prologues and the larger Greek/Latin canon setting; copyrighted prose is not reproduced.
+- Salvesen, Alison G. “Deuterocanonical and Apocryphal Books.” In Alison G. Salvesen and Timothy Michael Law, eds., *The Oxford Handbook of the Septuagint* (Oxford University Press, 2021), pp. 384–402, [chapter DOI](https://doi.org/10.1093/oxfordhb/9780199665716.013.21). The chapter was inspected on 2026-07-15 for Jerome’s prologues and the larger Greek/Latin canon setting; copyrighted prose is not reproduced.
 
--   Canellis, Aline. “L’héritage du latin chrétien: la réception de Jérôme à la Renaissance,” teaching handout (École de Néolatin, 2016), [PDF](https://neolatinlyon.sciencesconf.org/conference/neolatinlyon/pages/A._Canellis_Neolatin_2016_Exemplier.pdf). Accessible chronology consulted 2026-07-16 only for the explicitly qualified 347/419–420 scheme and late-418/early-419 placement of Eustochium’s death.
+- Canellis, Aline. “L’héritage du latin chrétien: la réception de Jérôme à la Renaissance,” teaching handout (École de Néolatin, 2016), [PDF](https://neolatinlyon.sciencesconf.org/conference/neolatinlyon/pages/A._Canellis_Neolatin_2016_Exemplier.pdf). Accessible chronology consulted 2026-07-16 only for the explicitly qualified 347/419–420 scheme and late-418/early-419 placement of Eustochium’s death.
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

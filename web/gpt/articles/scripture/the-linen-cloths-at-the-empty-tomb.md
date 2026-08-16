@@ -212,15 +212,15 @@ Three conclusions survive either decision. First, John independently attributes 
 
 The modern-custom negative is reproducible only if its boundary is explicit. This edition tested:
 
--   the directly relevant rabbinic loci Mishnah Berakhot 8:3, Babylonian Talmud Berakhot 52b, and Mishnah Sanhedrin 6:1;
+- the directly relevant rabbinic loci Mishnah Berakhot 8:3, Babylonian Talmud Berakhot 52b, and Mishnah Sanhedrin 6:1;
 
--   Greek and Roman dining terminology and known cloth signals;
+- Greek and Roman dining terminology and known cloth signals;
 
--   patristic and medieval exegesis of John 20:7 and Luke 24:12;
+- patristic and medieval exegesis of John 20:7 and Luke 24:12;
 
--   early-modern rabbinic-background commentary, especially Lightfoot;
+- early-modern rabbinic-background commentary, especially Lightfoot;
 
--   dated modern print, email, web, and preaching appearances.
+- dated modern print, email, web, and preaching appearances.
 
 That is an enumerated-witness investigation, not a Toseftan, Jerusalem Talmudic, midrashic, minor-tractate, or whole-rabbinic-corpus search. A future broader search would need to test conjunctions as well as single terms: folded cloth, crumpled cloth, master, servant, meal finished, return, and their relevant Hebrew, Aramaic, Greek, and Latin equivalents. A zero English phrase count could not exclude a differently worded source. Every positive “napkin” hit would still need classification by object, setting, action, actor, and communicated meaning.
 
@@ -248,25 +248,25 @@ The final PDF and generated web edition received internal source, quotation, the
 
 ## Working References
 
--   Scripture: Jn 11:44; 19:38–42; 20:1–18; Lk 23:50–24:49; Mt 27:57–28:20; Mk 15:42–16:8.
+- Scripture: Jn 11:44; 19:38–42; 20:1–18; Lk 23:50–24:49; Mt 27:57–28:20; Mk 15:42–16:8.
 
--   John Chrysostom, *Homily 85 on John*; Augustine, *Tractate 120 on John*; Cyril of Alexandria, *Commentary on John*, book 12; Gregory the Great, *Homily 22 on the Gospels*; Bede, *Commentary on Luke*, book 6.
+- John Chrysostom, *Homily 85 on John*; Augustine, *Tractate 120 on John*; Cyril of Alexandria, *Commentary on John*, book 12; Gregory the Great, *Homily 22 on the Gospels*; Bede, *Commentary on Luke*, book 6.
 
--   Thomas Aquinas, *Super Evangelium Ioannis*, chapter 20, lecture 1; *Catena aurea* on John 20.
+- Thomas Aquinas, *Super Evangelium Ioannis*, chapter 20, lecture 1; *Catena aurea* on John 20.
 
--   Theophylact of Ohrid, *Enarratio in Evangelium Ioannis*, on John 20, read at an OCR Latin-column ceiling; John Lightfoot, *Horae Hebraicae et Talmudicae*, vol. 3, on John 20.
+- Theophylact of Ohrid, *Enarratio in Evangelium Ioannis*, on John 20, read at an OCR Latin-column ceiling; John Lightfoot, *Horae Hebraicae et Talmudicae*, vol. 3, on John 20.
 
--   Joseph Henry Thayer, *Greek-English Lexicon*, s.vv. *entylissō*, *othonion*, *soudarion*.
+- Joseph Henry Thayer, *Greek-English Lexicon*, s.vv. *entylissō*, *othonion*, *soudarion*.
 
--   B. F. Westcott, *The Gospel according to St John*, vol. 2, pp. 339–341; B. F. Westcott and F. J. A. Hort, *Introduction and Appendix*, p. 71 on Lk 24:12; Michael W. Holmes, ed., *SBL Greek New Testament*, v1.2 (2023), Lk 24:12 running text and edition-comparison apparatus.
+- B. F. Westcott, *The Gospel according to St John*, vol. 2, pp. 339–341; B. F. Westcott and F. J. A. Hort, *Introduction and Appendix*, p. 71 on Lk 24:12; Michael W. Holmes, ed., *SBL Greek New Testament*, v1.2 (2023), Lk 24:12 running text and edition-comparison apparatus.
 
--   Henry Barclay Swete, ed., *The Old Testament in Greek according to the Septuagint*, vol. 1, 4th ed. (Cambridge, 1909), Judg 14:12–13 and apparatus.
+- Henry Barclay Swete, ed., *The Old Testament in Greek according to the Septuagint*, vol. 1, 4th ed. (Cambridge, 1909), Judg 14:12–13 and apparatus.
 
--   Jodi Magness, “Ancient Jewish Tombs and Burial Customs (to 70 C.E.),” in *The Archaeology of the Holy Land* (Cambridge University Press, 2012), pp. 230–255; Salima Ikram, “Mummification,” *UCLA Encyclopedia of Egyptology* (2010).
+- Jodi Magness, “Ancient Jewish Tombs and Burial Customs (to 70 C.E.),” in *The Archaeology of the Holy Land* (Cambridge University Press, 2012), pp. 230–255; Salima Ikram, “Mummification,” *UCLA Encyclopedia of Egyptology* (2010).
 
--   Mishnah Berakhot 8:3 and Sanhedrin 6:1; Babylonian Talmud Berakhot 42a and 52b; William Smith, *Dictionary of Greek and Roman Antiquities*, s.v. “Mantele”; Suetonius, *Nero* 22.2.
+- Mishnah Berakhot 8:3 and Sanhedrin 6:1; Babylonian Talmud Berakhot 42a and 52b; William Smith, *Dictionary of Greek and Roman Antiquities*, s.v. “Mantele”; Suetonius, *Nero* 22.2.
 
--   Henry Latham, *The Risen Master*, pp. 34, 43; the dated *Jerusalem Perspective* reader question and response (7 October 2006); the archived *Recipes and More* forward (21 May 2007); and the later TruthOrFiction and GotQuestions assessments, used only as modern reception.
+- Henry Latham, *The Risen Master*, pp. 34, 43; the dated *Jerusalem Perspective* reader question and response (7 October 2006); the archived *Recipes and More* forward (21 May 2007); and the later TruthOrFiction and GotQuestions assessments, used only as modern reception.
 
 **Last revised (UTC):** 2026-07-29T15:32:00Z
 

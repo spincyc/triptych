@@ -559,9 +559,9 @@ The Secret then states, in a causal clause, what is happening on the altar: *qui
 
 The Communion says how that work reaches one person: by eating and drinking, in a clause whose halves run in opposite directions — “abideth in me: and I in him.” The Postcommunion asks that a single act bear two fruits, one personal and one corporate: that it “both purify us, and unite us.” The Sunday that began by asking God to form our desires ends by asking that what has been received make us clean and make us one. Neither is described as finished.
 
-<span id="triptych:brief-synthesis:end" label="triptych:brief-synthesis:end"></span>
+<span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
-<span id="triptych:brief-synthesis:next" label="triptych:brief-synthesis:next"></span>
+<span id="triptych:brief-synthesis:next" data-label="triptych:brief-synthesis:next"></span>
 
 ## Source-Grounded Synthesis Across the Propers
 
@@ -709,77 +709,77 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 ### Liturgical witnesses
 
--   *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), pp. 388–389, marginal nos. 1522–1531. Facsimile: <https://media.churchmusicassociation.org/pdf/missale62.pdf>, PDF pp. 469–470. *Controlling text for every Latin form printed above.*
+- *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), pp. 388–389, marginal nos. 1522–1531. Facsimile: <https://media.churchmusicassociation.org/pdf/missale62.pdf>, PDF pp. 469–470. *Controlling text for every Latin form printed above.*
 
--   *Missale Romanum*, editio iuxta typicam (New York: Benziger Brothers, 1962), pp. 382–383. Page images in Internet Archive item `MissaleRomanum1962RomanMissalColorLatin`, leaves `n458`–`n460`: <https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin>. *Second 1962 edition, collated for the discrepancy table.*
+- *Missale Romanum*, editio iuxta typicam (New York: Benziger Brothers, 1962), pp. 382–383. Page images in Internet Archive item `MissaleRomanum1962RomanMissalColorLatin`, leaves `n458`–`n460`: <https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin>. *Second 1962 edition, collated for the discrepancy table.*
 
--   *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), Collect, Secret and Postcommunion of the Ninth Sunday after Pentecost, printed pp. 414–415. Anonymous translation, published with the approbation of the Bishop of Philadelphia; public domain in the United States. *Source of the English of all three orations.* Registered in the repository’s source library as `edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861`.
+- *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), Collect, Secret and Postcommunion of the Ninth Sunday after Pentecost, printed pp. 414–415. Anonymous translation, published with the approbation of the Bishop of Philadelphia; public domain in the United States. *Source of the English of all three orations.* Registered in the repository’s source library as `edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861`.
 
--   Prosper Guéranger, *The Liturgical Year* … *Time after Pentecost*, vol. II, 2nd ed., tr. Laurence Shepherd (Stanbrook Abbey: Burns & Oates, 1909), pp. 224, 227, 230. <https://archive.org/details/V11TheLiturgicalYear>. *Cited only for its own commentary as a witness to the devotional reception of this formulary; it supplies no English printed in this guide.*
+- Prosper Guéranger, *The Liturgical Year* … *Time after Pentecost*, vol. II, 2nd ed., tr. Laurence Shepherd (Stanbrook Abbey: Burns & Oates, 1909), pp. 224, 227, 230. <https://archive.org/details/V11TheLiturgicalYear>. *Cited only for its own commentary as a witness to the devotional reception of this formulary; it supplies no English printed in this guide.*
 
--   Dominic Johner, *The Chants of the Vatican Gradual* (Collegeville: St. John’s Abbey Press, 1940), pp. 134–135 and 279–282. <https://archive.org/details/chantsofvaticang00john>.
+- Dominic Johner, *The Chants of the Vatican Gradual* (Collegeville: St. John’s Abbey Press, 1940), pp. 134–135 and 279–282. <https://archive.org/details/chantsofvaticang00john>.
 
 ### Scripture
 
--   *The Holy Bible, Douay–Rheims*, the Challoner revision (1749–1752), in the Project Gutenberg e-text of that revision (eBook 1581). Quoted for Ps. 8:2; 18:9–12; 53:3, 6–7; 58:2; Lk. 19:41–47; Jn. 6:57; 1 Cor. 10:6–13. *Source of the English of every scriptural proper.* Public domain by age. Registered in the repository’s source library as `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581`, with its book index, Vulgate/Hebrew/English psalm-numbering concordance, verse-alias table, and collation against the 1899 American edition. None of the verses quoted above appears in that collation, so the printed American Douay–Rheims agrees with the text quoted here at every one of them. Three psalm inscriptions do differ — Ps. 8:1, 53:2 and 58:1 — but this guide cites them only in Latin, in the page-2 dossiers.
+- *The Holy Bible, Douay–Rheims*, the Challoner revision (1749–1752), in the Project Gutenberg e-text of that revision (eBook 1581). Quoted for Ps. 8:2; 18:9–12; 53:3, 6–7; 58:2; Lk. 19:41–47; Jn. 6:57; 1 Cor. 10:6–13. *Source of the English of every scriptural proper.* Public domain by age. Registered in the repository’s source library as `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581`, with its book index, Vulgate/Hebrew/English psalm-numbering concordance, verse-alias table, and collation against the 1899 American edition. None of the verses quoted above appears in that collation, so the printed American Douay–Rheims agrees with the text quoted here at every one of them. Three psalm inscriptions do differ — Ps. 8:1, 53:2 and 58:1 — but this guide cites them only in Latin, in the page-2 dossiers.
 
--   Clementine Vulgate, consulted for Ps. 8, 18, 53, 58; Ex. 32:6; Num. 21, 25; Is. 56; Jer. 7; Mk. 11:15–18; Lk. 19:41–48; Jn. 6; 1 Cor. 10:6–13; Heb. 2:6–8; Rom. 10:18. <https://www.drbo.org/lvb/>
+- Clementine Vulgate, consulted for Ps. 8, 18, 53, 58; Ex. 32:6; Num. 21, 25; Is. 56; Jer. 7; Mk. 11:15–18; Lk. 19:41–48; Jn. 6; 1 Cor. 10:6–13; Heb. 2:6–8; Rom. 10:18. <https://www.drbo.org/lvb/>
 
--   Nova Vulgata, Jn. 6, for the verse-numbering demonstration. <https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-ioannem_lt.html>
+- Nova Vulgata, Jn. 6, for the verse-numbering demonstration. <https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-ioannem_lt.html>
 
 ### Patristic, medieval and later reception
 
--   Ambrose, *Expositio Evangelii secundum Lucam* IX.16–22 (PL 15). <https://la.wikisource.org/wiki/Expositio_Evangelii_secundum_Lucam_(Ambrosius)/9>
+- Ambrose, *Expositio Evangelii secundum Lucam* IX.16–22 (PL 15). <https://la.wikisource.org/wiki/Expositio_Evangelii_secundum_Lucam_(Ambrosius)/9>
 
--   Ambrosiaster, *Commentaria in Epistolam ad Corinthios Primam*, ad 10:6–13 (PL 17, 1845 printing, coll. 144–145). <https://la.wikisource.org/wiki/Commentaria_in_Epistolam_ad_Corinthios_Primam_(Ambrosiaster)>
+- Ambrosiaster, *Commentaria in Epistolam ad Corinthios Primam*, ad 10:6–13 (PL 17, 1845 printing, coll. 144–145). <https://la.wikisource.org/wiki/Commentaria_in_Epistolam_ad_Corinthios_Primam_(Ambrosiaster)>
 
--   Augustine, *Enarrationes in Psalmos* 8 §4; 18, Sermo I §§9–12 and Sermo II §§9–12; 53 §§4, 8–9; 58, Sermo I §§1–4; 130 (LXX) §§1–3. English (Pss. 8, 53, 58 and Ps. 18 Sermo I) in NPNF first series, vol. 8: <https://www.newadvent.org/fathers/1801.htm>. Latin, including Ps. 18 Sermo II: <https://www.augustinus.it/latino/esposizioni_salmi/>
+- Augustine, *Enarrationes in Psalmos* 8 §4; 18, Sermo I §§9–12 and Sermo II §§9–12; 53 §§4, 8–9; 58, Sermo I §§1–4; 130 (LXX) §§1–3. English (Pss. 8, 53, 58 and Ps. 18 Sermo I) in NPNF first series, vol. 8: <https://www.newadvent.org/fathers/1801.htm>. Latin, including Ps. 18 Sermo II: <https://www.augustinus.it/latino/esposizioni_salmi/>
 
--   Augustine, *Tractatus in Iohannis Evangelium* 26 §§11–18 and 27 §§1, 6. NPNF first series, vol. 7, tr. John Gibb. <https://www.newadvent.org/fathers/1701026.htm>, <https://www.newadvent.org/fathers/1701027.htm>
+- Augustine, *Tractatus in Iohannis Evangelium* 26 §§11–18 and 27 §§1, 6. NPNF first series, vol. 7, tr. John Gibb. <https://www.newadvent.org/fathers/1701026.htm>, <https://www.newadvent.org/fathers/1701027.htm>
 
--   Augustine, *De sancta virginitate* 28 and 47; *De bono viduitatis* 17; *Epistula* 199 (*De fine saeculi*) IV.12; *De consensu evangelistarum* II.66–67; *Quaestiones Evangeliorum* II, unnumbered question on Lk. 19:45–46.
+- Augustine, *De sancta virginitate* 28 and 47; *De bono viduitatis* 17; *Epistula* 199 (*De fine saeculi*) IV.12; *De consensu evangelistarum* II.66–67; *Quaestiones Evangeliorum* II, unnumbered question on Lk. 19:45–46.
 
--   Bede, *In Lucae Evangelium Expositio* V (PL 92, 570C–574B). <https://la.wikisource.org/wiki/In_Evangelium_S._Lucae_(Beda)>
+- Bede, *In Lucae Evangelium Expositio* V (PL 92, 570C–574B). <https://la.wikisource.org/wiki/In_Evangelium_S._Lucae_(Beda)>
 
--   Robert Bellarmine, *Explanatio in Psalmos*, Pss. VIII, XVIII, LIII, LVIII, tr. John O’Sullivan (Dublin, 1866). <https://archive.org/details/commentaryonpsal0000bell>
+- Robert Bellarmine, *Explanatio in Psalmos*, Pss. VIII, XVIII, LIII, LVIII, tr. John O’Sullivan (Dublin, 1866). <https://archive.org/details/commentaryonpsal0000bell>
 
--   John Chrysostom, *Homilies on First Corinthians* 23–24, and *Homilies on John* 47. NPNF first series, vols. 12 and 14. <https://www.newadvent.org/fathers/220123.htm>, <https://www.newadvent.org/fathers/220124.htm>, <https://www.newadvent.org/fathers/240147.htm>
+- John Chrysostom, *Homilies on First Corinthians* 23–24, and *Homilies on John* 47. NPNF first series, vols. 12 and 14. <https://www.newadvent.org/fathers/220123.htm>, <https://www.newadvent.org/fathers/220124.htm>, <https://www.newadvent.org/fathers/240147.htm>
 
--   Cyril of Alexandria, *Commentary on Luke*, Sermons 131–132, tr. R. Payne Smith (Oxford, 1859). <https://www.tertullian.org/fathers/cyril_on_luke_12_sermons_124_134.htm>; *Commentary on John* IV.2, tr. P. E. Pusey. <https://www.tertullian.org/fathers/cyril_on_john_04_book4.htm>
+- Cyril of Alexandria, *Commentary on Luke*, Sermons 131–132, tr. R. Payne Smith (Oxford, 1859). <https://www.tertullian.org/fathers/cyril_on_luke_12_sermons_124_134.htm>; *Commentary on John* IV.2, tr. P. E. Pusey. <https://www.tertullian.org/fathers/cyril_on_john_04_book4.htm>
 
--   Gregory the Great, *Homiliae in Evangelia* 39 (PL 76, 1293–1301). <https://la.wikisource.org/wiki/Homiliarum_in_Evangelia/XXXIX>
+- Gregory the Great, *Homiliae in Evangelia* 39 (PL 76, 1293–1301). <https://la.wikisource.org/wiki/Homiliarum_in_Evangelia/XXXIX>
 
--   Origen, *Homiliae in Lucam* 38, in Jerome’s Latin (PL 26, coll. 302B–303D). <https://la.wikisource.org/wiki/Translatio_XXXIX_Homiliarum>
+- Origen, *Homiliae in Lucam* 38, in Jerome’s Latin (PL 26, coll. 302B–303D). <https://la.wikisource.org/wiki/Translatio_XXXIX_Homiliarum>
 
--   Peter of Tarantaise, exposition of 1 Cor. 10 as transmitted in the Thomistic corpus, cap. 10 lect. 2–3. Editorial note: <https://www.corpusthomisticum.org/c1cn.html>; text: <https://www.corpusthomisticum.org/x1c.html>; English bracket in Larcher’s translation: <https://isidore.co/aquinas/english/SS1Cor.htm>
+- Peter of Tarantaise, exposition of 1 Cor. 10 as transmitted in the Thomistic corpus, cap. 10 lect. 2–3. Editorial note: <https://www.corpusthomisticum.org/c1cn.html>; text: <https://www.corpusthomisticum.org/x1c.html>; English bracket in Larcher’s translation: <https://isidore.co/aquinas/english/SS1Cor.htm>
 
--   Theodoret of Cyrus, *Interpretatio in Psalmos* 8, 18, 53, 58 (PG 80). Consulted in Robert C. Hill’s English translation, *Fathers of the Church* 101, which is in copyright; summarised only.
+- Theodoret of Cyrus, *Interpretatio in Psalmos* 8, 18, 53, 58 (PG 80). Consulted in Robert C. Hill’s English translation, *Fathers of the Church* 101, which is in copyright; summarised only.
 
--   Thomas Aquinas, *Super Psalmos*, Pss. 8 n. 1, 18 nn. 5–7, 53 nn. 1, 3–4 <https://www.corpusthomisticum.org/cps02.html>, <https://www.corpusthomisticum.org/cps11.html>, <https://www.corpusthomisticum.org/cps52.html>; *Super Ioannem* c. 6 lect. 7, n. 976 <https://www.corpusthomisticum.org/cih06.html>; *Summa theologiae* III q. 15 aa. 6, 9 and II–II q. 100, checked and cited for a negative result; *Catena aurea* on Lk. 19, lect. 5–6, in the Oxford edition of 1843, vol. III pt. I, pp. 645–650.
+- Thomas Aquinas, *Super Psalmos*, Pss. 8 n. 1, 18 nn. 5–7, 53 nn. 1, 3–4 <https://www.corpusthomisticum.org/cps02.html>, <https://www.corpusthomisticum.org/cps11.html>, <https://www.corpusthomisticum.org/cps52.html>; *Super Ioannem* c. 6 lect. 7, n. 976 <https://www.corpusthomisticum.org/cih06.html>; *Summa theologiae* III q. 15 aa. 6, 9 and II–II q. 100, checked and cited for a negative result; *Catena aurea* on Lk. 19, lect. 5–6, in the Oxford edition of 1843, vol. III pt. I, pp. 645–650.
 
 ### Magisterial and official texts
 
--   Second Vatican Council, *Sacrosanctum Concilium* 2 and note 1 (official Latin). <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_lt.html>
+- Second Vatican Council, *Sacrosanctum Concilium* 2 and note 1 (official Latin). <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_lt.html>
 
--   Second Vatican Council, *Presbyterorum ordinis* 13 and note 105 (official Latin). <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651207_presbyterorum-ordinis_lt.html>
+- Second Vatican Council, *Presbyterorum ordinis* 13 and note 105 (official Latin). <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19651207_presbyterorum-ordinis_lt.html>
 
--   Second Vatican Council, *Nostra aetate* 4 and note 9 (official English). <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html>
+- Second Vatican Council, *Nostra aetate* 4 and note 9 (official English). <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html>
 
--   Commission for Religious Relations with the Jews, *Notes on the Correct Way to Present the Jews and Judaism in Preaching and Catechesis* (1985), VI.1. <https://www.christianunity.va/content/unitacristiani/en/commissione-per-i-rapporti-religiosi-con-l-ebraismo/commissione-per-i-rapporti-religiosi-con-l-ebraismo-crre/documenti-della-commissione/en2.html>
+- Commission for Religious Relations with the Jews, *Notes on the Correct Way to Present the Jews and Judaism in Preaching and Catechesis* (1985), VI.1. <https://www.christianunity.va/content/unitacristiani/en/commissione-per-i-rapporti-religiosi-con-l-ebraismo/commissione-per-i-rapporti-religiosi-con-l-ebraismo-crre/documenti-della-commissione/en2.html>
 
--   Pontifical Biblical Commission, *The Jewish People and Their Sacred Scriptures in the Christian Bible* (2001/2002), §§51, 53, 71, 74. <https://www.vatican.va/roman_curia/congregations/cfaith/pcb_documents/rc_con_cfaith_doc_20020212_popolo-ebraico_en.html>
+- Pontifical Biblical Commission, *The Jewish People and Their Sacred Scriptures in the Christian Bible* (2001/2002), §§51, 53, 71, 74. <https://www.vatican.va/roman_curia/congregations/cfaith/pcb_documents/rc_con_cfaith_doc_20020212_popolo-ebraico_en.html>
 
 ### Historical orientation and cultural afterlives
 
--   *The Catholic Encyclopedia* (New York, 1907–1913), articles “Psalms” (<https://www.newadvent.org/cathen/12533a.htm>), “Gospel of Saint Luke” (<https://www.newadvent.org/cathen/09420a.htm>), “Gospel of Saint John” (<https://www.newadvent.org/cathen/08438a.htm>), “Chronology of the Life of Jesus Christ” (<https://www.newadvent.org/cathen/08377a.htm>), and “Revision of the Vulgate” (<https://www.newadvent.org/cathen/15515b.htm>).
+- *The Catholic Encyclopedia* (New York, 1907–1913), articles “Psalms” (<https://www.newadvent.org/cathen/12533a.htm>), “Gospel of Saint Luke” (<https://www.newadvent.org/cathen/09420a.htm>), “Gospel of Saint John” (<https://www.newadvent.org/cathen/08438a.htm>), “Chronology of the Life of Jesus Christ” (<https://www.newadvent.org/cathen/08377a.htm>), and “Revision of the Vulgate” (<https://www.newadvent.org/cathen/15515b.htm>).
 
--   *New American Bible, Revised Edition*, introductions to Luke and John, at <https://bible.usccb.org/bible/>. Summarised; protected text is not reproduced.
+- *New American Bible, Revised Edition*, introductions to Luke and John, at <https://bible.usccb.org/bible/>. Summarised; protected text is not reproduced.
 
--   Ambrose Bierce, *The Devil’s Dictionary* (1911), s.v. <span class="smallcaps">wall street</span>. <https://www.gutenberg.org/ebooks/972>
+- Ambrose Bierce, *The Devil’s Dictionary* (1911), s.v. <span class="smallcaps">wall street</span>. <https://www.gutenberg.org/ebooks/972>
 
--   Francis Blomefield, *An Essay towards a Topographical History of the County of Norfolk*, vol. 4, printed p. 469 (St. George Colegate, Norwich). <https://www.british-history.ac.uk/topographical-hist-norfolk/vol4/pp466-479>
+- Francis Blomefield, *An Essay towards a Topographical History of the County of Norfolk*, vol. 4, printed p. 469 (St. George Colegate, Norwich). <https://www.british-history.ac.uk/topographical-hist-norfolk/vol4/pp466-479>
 
--   Molière, *Le Misanthrope* (1666), Act V, in the French of the Louandre edition (<https://fr.wikisource.org/wiki/Le_Misanthrope>) and in the English of Curtis Hidden Page (1908), <https://en.wikisource.org/wiki/The_Misanthrope_(Moli%C3%A8re)>.
+- Molière, *Le Misanthrope* (1666), Act V, in the French of the Louandre edition (<https://fr.wikisource.org/wiki/Le_Misanthrope>) and in the English of Curtis Hidden Page (1908), <https://en.wikisource.org/wiki/The_Misanthrope_(Moli%C3%A8re)>.
 
 **Last revised (UTC):** 2026-08-02T05:22:00Z
 

@@ -163,11 +163,11 @@ The appointed John verse asks preservation in the Father’s name before it stat
 
 ## The Propers: Notable and Quotable
 
--   **“I bore you up on eagle wings” — an airlift becomes the metaphor. (*First Reading*)** Israel’s 1949–1950 evacuation of Yemenite Jews was also called *Operation On Wings of Eagles*. The aircraft made Exodus’ remembered rescue startlingly concrete: a scriptural image supplied the public name for a modern journey to Israel.
+- **“I bore you up on eagle wings” — an airlift becomes the metaphor. (*First Reading*)** Israel’s 1949–1950 evacuation of Yemenite Jews was also called *Operation On Wings of Eagles*. The aircraft made Exodus’ remembered rescue startlingly concrete: a scriptural image supplied the public name for a modern journey to Israel.
 
--   **“The names of the twelve apostles are these” — except at an Australian landmark. (*Gospel*)** Victoria’s limestone stacks were advertised as the “Twelve Apostles” by the 1920s. A commissioned heritage study later contradicts that evidence by placing the probable renaming in the 1950s, so the exact date remains unresolved. Parks Victoria now dryly notes that there were never actually twelve. Matthew’s apostolic count became a memorable tourist brand whose joke is its geographical inaccuracy.
+- **“The names of the twelve apostles are these” — except at an Australian landmark. (*Gospel*)** Victoria’s limestone stacks were advertised as the “Twelve Apostles” by the 1920s. A commissioned heritage study later contradicts that evidence by placing the probable renaming in the 1950s, so the exact date remains unresolved. Parks Victoria now dryly notes that there were never actually twelve. Matthew’s apostolic count became a memorable tourist brand whose joke is its geographical inaccuracy.
 
--   **“Without cost you have received; without cost you are to give” — a software-license epigraph. (*Gospel*)** The Bible SuperSearch client places the King James form, “freely ye have received, freely give,” beneath its GPL notice and immediately before detailed commercial-use restrictions. Missionary instruction becomes a slogan for distributable code; the adjacent price and licensing qualifications make “free” do unexpectedly technical—and faintly ironic—work.
+- **“Without cost you have received; without cost you are to give” — a software-license epigraph. (*Gospel*)** The Bible SuperSearch client places the King James form, “freely ye have received, freely give,” beneath its GPL notice and immediately before detailed commercial-use restrictions. Missionary instruction becomes a slogan for distributable code; the adjacent price and licensing qualifications make “free” do unexpectedly technical—and faintly ironic—work.
 
 ## The Propers: Interpretive Possibilities
 
@@ -209,33 +209,33 @@ The appointed John verse asks preservation in the Father’s name before it stat
 
 ## References
 
--   USCCB, [Eleventh Sunday in Ordinary Time, 14 June 2026](https://bible.usccb.org/bible/readings/061426.cfm), U.S. Lectionary 91; and [2026 Liturgical Calendar](https://www.usccb.org/resources/2026cal.pdf), accessed 2026-07-15.
+- USCCB, [Eleventh Sunday in Ordinary Time, 14 June 2026](https://bible.usccb.org/bible/readings/061426.cfm), U.S. Lectionary 91; and [2026 Liturgical Calendar](https://www.usccb.org/resources/2026cal.pdf), accessed 2026-07-15.
 
--   *Missale Romanum*, editio typica tertia (2002), p. 461; reimpressio emendata (2008); and *Roman Missal, Third Edition*, U.S. English edition implemented 2011. Exact source roles and collation limits are in the owner and leaf audits.
+- *Missale Romanum*, editio typica tertia (2002), p. 461; reimpressio emendata (2008); and *Roman Missal, Third Edition*, U.S. English edition implemented 2011. Exact source roles and collation limits are in the owner and leaf audits.
 
--   Bishops’ Conference of England and Wales, [*Antiphonary: Excerpted from the Roman Missal*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf) (ICEL, 2010), p. 72, used as official corroboration of the common ICEL antiphons, not as a substitute U.S. altar book.
+- Bishops’ Conference of England and Wales, [*Antiphonary: Excerpted from the Roman Missal*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf) (ICEL, 2010), p. 72, used as official corroboration of the common ICEL antiphons, not as a substitute U.S. altar book.
 
--   *General Instruction of the Roman Missal* 46–90; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
+- *General Instruction of the Roman Missal* 46–90; *General Introduction to the Lectionary* 65–69, 78–91, 93–110.
 
--   Holy See, *Nova Vulgata Bibliorum Sacrorum Editio*, editio typica altera (1986), [Exodus 19:6](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_exodus_lt.html), official Latin wording checked 2026-07-18.
+- Holy See, *Nova Vulgata Bibliorum Sacrorum Editio*, editio typica altera (1986), [Exodus 19:6](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_exodus_lt.html), official Latin wording checked 2026-07-18.
 
--   St. John Chrysostom, [*Homily 32 on Matthew*](https://www.newadvent.org/fathers/200132.htm) and [*Homily 9 on Romans*](https://www.newadvent.org/fathers/210209.htm).
+- St. John Chrysostom, [*Homily 32 on Matthew*](https://www.newadvent.org/fathers/200132.htm) and [*Homily 9 on Romans*](https://www.newadvent.org/fathers/210209.htm).
 
--   St. John Chrysostom, [*Homily 81 on John*](https://www.newadvent.org/fathers/240181.htm); St. Thomas Aquinas, [*Commentary on Romans* V, lect. 2](https://aquinas.cc/en/la/~Rom.C5.L2) and [*Commentary on John* IV, lect. 4](https://aquinas.cc/la/en/~Ioan.C4.L4.v4.37) (the latter an illuminating harvest parallel).
+- St. John Chrysostom, [*Homily 81 on John*](https://www.newadvent.org/fathers/240181.htm); St. Thomas Aquinas, [*Commentary on Romans* V, lect. 2](https://aquinas.cc/en/la/~Rom.C5.L2) and [*Commentary on John* IV, lect. 4](https://aquinas.cc/la/en/~Ioan.C4.L4.v4.37) (the latter an illuminating harvest parallel).
 
--   St. Augustine, [*Exposition on Psalm 27*](https://www.newadvent.org/fathers/1801027.htm), [*Exposition on Psalm 100*](https://www.newadvent.org/fathers/1801100.htm), [*Letter 55*, sec. 30](https://www.newadvent.org/fathers/1102055.htm), [*Against Two Letters of the Pelagians* IV.8](https://www.newadvent.org/fathers/15094.htm), and [*Tractate 110 on John*](https://www.newadvent.org/fathers/1701110.htm).
+- St. Augustine, [*Exposition on Psalm 27*](https://www.newadvent.org/fathers/1801027.htm), [*Exposition on Psalm 100*](https://www.newadvent.org/fathers/1801100.htm), [*Letter 55*, sec. 30](https://www.newadvent.org/fathers/1102055.htm), [*Against Two Letters of the Pelagians* IV.8](https://www.newadvent.org/fathers/15094.htm), and [*Tractate 110 on John*](https://www.newadvent.org/fathers/1701110.htm).
 
--   [*Apostolic Constitutions* II.25](https://www.newadvent.org/fathers/07152.htm), illuminating ecclesial reuse of Exodus 19’s priestly-people language.
+- [*Apostolic Constitutions* II.25](https://www.newadvent.org/fathers/07152.htm), illuminating ecclesial reuse of Exodus 19’s priestly-people language.
 
--   Tatian, [*Diatessaron*, sec. 5](https://www.newadvent.org/fathers/100205.htm), early harmonized reception of Mark 1:15.
+- Tatian, [*Diatessaron*, sec. 5](https://www.newadvent.org/fathers/100205.htm), early harmonized reception of Mark 1:15.
 
--   Second Vatican Council, *Lumen gentium* 9; *Catechism of the Catholic Church* 781–786.
+- Second Vatican Council, *Lumen gentium* 9; *Catechism of the Catholic Church* 781–786.
 
--   Israel Defense Forces, [“Journeys to Freedom: IDF Rescue Operations”](https://www.idf.il/en/mini-sites/wars-and-operations/journeys-to-freedom-idf-rescue-operations/), “Operation Magic Carpet,” published 25 April 2016, checked 2026-07-19.
+- Israel Defense Forces, [“Journeys to Freedom: IDF Rescue Operations”](https://www.idf.il/en/mini-sites/wars-and-operations/journeys-to-freedom-idf-rescue-operations/), “Operation Magic Carpet,” published 25 April 2016, checked 2026-07-19.
 
--   Parks Victoria, [“Fly over the Twelve Apostles”](https://www.parks.vic.gov.au/get-into-nature/conservation-and-science/our-amazing-diversity/virtual-exploration/fly-over-the-twelve-apostles); Helen Doyle with Heritage Matters Pty Ltd, [*Corangamite Heritage Study Stage 2*, vol. 3](https://www.corangamite.vic.gov.au/files/assets/public/v/1/documents/planning/planning-scheme-amendments/c36-heritage-study/final-report-corangamite-heritage-study-stage2-volume-3-reviewed-and-revised-thematic-environmental-history-2013.pdf) (Corangamite Shire, 2013), pp. 102–103; its internally inconsistent dating is retained, not harmonized; checked 2026-07-19.
+- Parks Victoria, [“Fly over the Twelve Apostles”](https://www.parks.vic.gov.au/get-into-nature/conservation-and-science/our-amazing-diversity/virtual-exploration/fly-over-the-twelve-apostles); Helen Doyle with Heritage Matters Pty Ltd, [*Corangamite Heritage Study Stage 2*, vol. 3](https://www.corangamite.vic.gov.au/files/assets/public/v/1/documents/planning/planning-scheme-amendments/c36-heritage-study/final-report-corangamite-heritage-study-stage2-volume-3-reviewed-and-revised-thematic-environmental-history-2013.pdf) (Corangamite Shire, 2013), pp. 102–103; its internally inconsistent dating is retained, not harmonized; checked 2026-07-19.
 
--   Bible SuperSearch, [*Universal Client*, repository readme at revision 041936](https://sourceforge.net/p/biblesuper/ui-standalone/ci/master/tree/), GPL and commercial-use notice, checked 2026-07-19.
+- Bible SuperSearch, [*Universal Client*, repository readme at revision 041936](https://sourceforge.net/p/biblesuper/ui-standalone/ci/master/tree/), GPL and commercial-use notice, checked 2026-07-19.
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

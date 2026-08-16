@@ -404,57 +404,57 @@ All web sources were accessed and checked on 2026-07-25. Ancient-work citations 
 
 ### Scripture
 
--   The Holy Bible, Douay–Rheims version, Challoner revision, as transcribed at drbo.org (public domain). Chapters retrieved and checked verbatim for this study: Acts 7–9, 11, 13–28; Rom 1, 11, 15, 16; 1 Cor 1, 9, 11, 15, 16; 2 Cor 2, 8, 10, 11, 12; Gal 1, 2, 6; Eph 3; Phil 1, 3; Col 4; 1 Thess 1, 2, 4; 2 Thess 2, 3; 1 Tim 1; 2 Tim 1, 4; Titus 3; Phlm; 2 Pet 3 (chapter pages under <https://drbo.org/chapter/51009.htm> and the same numbering pattern, e.g. `55001` for Galatians 1, `64001` for Philemon).
+- The Holy Bible, Douay–Rheims version, Challoner revision, as transcribed at drbo.org (public domain). Chapters retrieved and checked verbatim for this study: Acts 7–9, 11, 13–28; Rom 1, 11, 15, 16; 1 Cor 1, 9, 11, 15, 16; 2 Cor 2, 8, 10, 11, 12; Gal 1, 2, 6; Eph 3; Phil 1, 3; Col 4; 1 Thess 1, 2, 4; 2 Thess 2, 3; 1 Tim 1; 2 Tim 1, 4; Titus 3; Phlm; 2 Pet 3 (chapter pages under <https://drbo.org/chapter/51009.htm> and the same numbering pattern, e.g. `55001` for Galatians 1, `64001` for Philemon).
 
 ### Ancient witnesses
 
--   Clement of Rome (attributed), *First Epistle to the Corinthians* 5–6, 36, 47, in the translation presented at New Advent and there attributed to John Keith, *Ante-Nicene Fathers*, vol. 9 (<https://www.newadvent.org/fathers/1010.htm>). Conventional dating c. 95–96 as reported in the 1912 Catholic Encyclopedia, “Pope St. Clement I” (<https://www.newadvent.org/cathen/04012c.htm>).
+- Clement of Rome (attributed), *First Epistle to the Corinthians* 5–6, 36, 47, in the translation presented at New Advent and there attributed to John Keith, *Ante-Nicene Fathers*, vol. 9 (<https://www.newadvent.org/fathers/1010.htm>). Conventional dating c. 95–96 as reported in the 1912 Catholic Encyclopedia, “Pope St. Clement I” (<https://www.newadvent.org/cathen/04012c.htm>).
 
--   Ignatius of Antioch, *Epistle to the Ephesians* 12 and *Epistle to the Romans* 4, middle (“shorter”) recension, trans. A. Roberts and J. Donaldson, ANF vol. 1 (Buffalo, 1885/1887), at New Advent (<https://www.newadvent.org/fathers/0104.htm>; <https://www.newadvent.org/fathers/0107.htm>). A catalog-level source-library record of ANF vol. 1 exists in the repository and is bound in `research/source-bindings.toml`.
+- Ignatius of Antioch, *Epistle to the Ephesians* 12 and *Epistle to the Romans* 4, middle (“shorter”) recension, trans. A. Roberts and J. Donaldson, ANF vol. 1 (Buffalo, 1885/1887), at New Advent (<https://www.newadvent.org/fathers/0104.htm>; <https://www.newadvent.org/fathers/0107.htm>). A catalog-level source-library record of ANF vol. 1 exists in the repository and is bound in `research/source-bindings.toml`.
 
--   Polycarp of Smyrna, *Epistle to the Philippians* 3 and 9, trans. Roberts–Donaldson, ANF vol. 1, at New Advent (<https://www.newadvent.org/fathers/0136.htm>).
+- Polycarp of Smyrna, *Epistle to the Philippians* 3 and 9, trans. Roberts–Donaldson, ANF vol. 1, at New Advent (<https://www.newadvent.org/fathers/0136.htm>).
 
--   The Muratorian fragment (canon list, Rome?, conventionally c. 170–200), ANF vol. 5 translation as transcribed at Early Christian Writings (<https://www.earlychristianwritings.com/text/muratorian.html>); lines on Luke’s omission of “the journey of Paul, when he went from the city—Rome—to Spain,” the seven churches, and the Marcionite forgeries.
+- The Muratorian fragment (canon list, Rome?, conventionally c. 170–200), ANF vol. 5 translation as transcribed at Early Christian Writings (<https://www.earlychristianwritings.com/text/muratorian.html>); lines on Luke’s omission of “the journey of Paul, when he went from the city—Rome—to Spain,” the seven churches, and the Marcionite forgeries.
 
--   Irenaeus, *Against Heresies* 3.14.1, trans. A. Roberts and W. Rambaut, ANF vol. 1, at New Advent (<https://www.newadvent.org/fathers/0103314.htm>).
+- Irenaeus, *Against Heresies* 3.14.1, trans. A. Roberts and W. Rambaut, ANF vol. 1, at New Advent (<https://www.newadvent.org/fathers/0103314.htm>).
 
--   Tertullian, *The Prescription Against Heretics* 36, trans. P. Holmes, ANF vol. 3, at New Advent (<https://www.newadvent.org/fathers/0311.htm>).
+- Tertullian, *The Prescription Against Heretics* 36, trans. P. Holmes, ANF vol. 3, at New Advent (<https://www.newadvent.org/fathers/0311.htm>).
 
--   Eusebius of Caesarea, *Church History* 2.22, 2.25, 3.1, 3.4, trans. A. C. McGiffert, NPNF series 2, vol. 1 (New York, 1890), at New Advent (<https://www.newadvent.org/fathers/250102.htm>; <https://www.newadvent.org/fathers/250103.htm>); preserving Dionysius of Corinth, Gaius, and Origen at the loci cited in the text. A catalog-level source-library record of NPNF2 vol. 1 was created for this study and is bound in `research/source-bindings.toml`.
+- Eusebius of Caesarea, *Church History* 2.22, 2.25, 3.1, 3.4, trans. A. C. McGiffert, NPNF series 2, vol. 1 (New York, 1890), at New Advent (<https://www.newadvent.org/fathers/250102.htm>; <https://www.newadvent.org/fathers/250103.htm>); preserving Dionysius of Corinth, Gaius, and Origen at the loci cited in the text. A catalog-level source-library record of NPNF2 vol. 1 was created for this study and is bound in `research/source-bindings.toml`.
 
--   Jerome, *De viris illustribus* 5 (Paul) and 12 (Seneca), trans. E. C. Richardson, NPNF series 2, vol. 3, at New Advent (<https://www.newadvent.org/fathers/2708.htm>).
+- Jerome, *De viris illustribus* 5 (Paul) and 12 (Seneca), trans. E. C. Richardson, NPNF series 2, vol. 3, at New Advent (<https://www.newadvent.org/fathers/2708.htm>).
 
--   John Chrysostom, *Homilies on the Epistle to the Romans*, Homily 32 (conclusion), Oxford translation revised in NPNF series 1, vol. 11, at New Advent (<https://www.newadvent.org/fathers/210232.htm>).
+- John Chrysostom, *Homilies on the Epistle to the Romans*, Homily 32 (conclusion), Oxford translation revised in NPNF series 1, vol. 11, at New Advent (<https://www.newadvent.org/fathers/210232.htm>).
 
--   Tacitus, *Annals* 15.44, trans. A. J. Church and W. J. Brodribb (1876), at Wikisource (<https://en.wikisource.org/wiki/The_Annals_(Tacitus)/Book_15>).
+- Tacitus, *Annals* 15.44, trans. A. J. Church and W. J. Brodribb (1876), at Wikisource (<https://en.wikisource.org/wiki/The_Annals_(Tacitus)/Book_15>).
 
--   Suetonius, *Claudius* 25, trans. J. C. Rolfe (1914), at Wikisource (<https://en.wikisource.org/wiki/The_Lives_of_the_Twelve_Caesars/Claudius>).
+- Suetonius, *Claudius* 25, trans. J. C. Rolfe (1914), at Wikisource (<https://en.wikisource.org/wiki/The_Lives_of_the_Twelve_Caesars/Claudius>).
 
 ### Apocrypha and later tradition
 
--   *The Acts of Paul* (apocryphal; per the translator’s headnote, composed by a presbyter of Asia and datable c. A.D. 160 from Tertullian’s notice), including the *Acts of Paul and Thecla* and the *Martyrdom*, in M. R. James, *The Apocryphal New Testament* (Oxford: Clarendon, 1924), as transcribed at Early Christian Writings (<https://www.earlychristianwritings.com/text/actspaul.html>).
+- *The Acts of Paul* (apocryphal; per the translator’s headnote, composed by a presbyter of Asia and datable c. A.D. 160 from Tertullian’s notice), including the *Acts of Paul and Thecla* and the *Martyrdom*, in M. R. James, *The Apocryphal New Testament* (Oxford: Clarendon, 1924), as transcribed at Early Christian Writings (<https://www.earlychristianwritings.com/text/actspaul.html>).
 
--   Ferdinand Prat, “St. Paul,” *The Catholic Encyclopedia*, vol. 11 (New York, 1911), at New Advent (<https://www.newadvent.org/cathen/11567b.htm>); source for the Aquae Salviae/Tre Fontane execution tradition, the Nero-regnal death-year variants (Epiphanius, Euthalius, Jerome), the *kata ton auton kairon* judgment, and the feast history (29 June; 30 June commemoration; 25 January conversion feast). A catalog-level source-library record of CE vol. 11 was created for this study and is bound in `research/source-bindings.toml`.
+- Ferdinand Prat, “St. Paul,” *The Catholic Encyclopedia*, vol. 11 (New York, 1911), at New Advent (<https://www.newadvent.org/cathen/11567b.htm>); source for the Aquae Salviae/Tre Fontane execution tradition, the Nero-regnal death-year variants (Epiphanius, Euthalius, Jerome), the *kata ton auton kairon* judgment, and the feast history (29 June; 30 June commemoration; 25 January conversion feast). A catalog-level source-library record of CE vol. 11 was created for this study and is bound in `research/source-bindings.toml`.
 
--   Pseudo-Marcellus, *Acts of Peter and Paul* (fifth century), and Pseudo-Abdias, *Passion of Paul* (fourth century): cited only at the reported level from Benedict XVI’s General Audience of 4 February 2009 (below); not independently inspected.
+- Pseudo-Marcellus, *Acts of Peter and Paul* (fifth century), and Pseudo-Abdias, *Passion of Paul* (fourth century): cited only at the reported level from Benedict XVI’s General Audience of 4 February 2009 (below); not independently inspected.
 
 ### The Gallio anchor
 
--   Adolf Deissmann, *St. Paul: A Study in Social and Religious History*, trans. L. R. M. Strachan (London: Hodder and Stoughton, 1912), Appendix I, “The Proconsulate of L. Junius Gallio,” pp. 235–260, with phototype facsimile of the Delphi inscription; read in full in the public scan at the Internet Archive (<https://archive.org/details/stpaulstudyinsoc00deis>, plain text at `stpaulstudyinsoc00deis_djvu.txt`). Basis for the dating of Claudius’s 26th imperatorial acclamation (with Dessau’s collation) and of Gallio’s proconsulship from the summer of 51.
+- Adolf Deissmann, *St. Paul: A Study in Social and Religious History*, trans. L. R. M. Strachan (London: Hodder and Stoughton, 1912), Appendix I, “The Proconsulate of L. Junius Gallio,” pp. 235–260, with phototype facsimile of the Delphi inscription; read in full in the public scan at the Internet Archive (<https://archive.org/details/stpaulstudyinsoc00deis>, plain text at `stpaulstudyinsoc00deis_djvu.txt`). Basis for the dating of Claudius’s 26th imperatorial acclamation (with Dessau’s collation) and of Gallio’s proconsulship from the summer of 51.
 
--   Benedict XVI, General Audience of 27 August 2008 (English), Vatican website (<https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080827.html>); the modern official statement of the anchor (“Gallio was Proconsul in Corinth between the years 51 and 53”) and of the c. AD 8 birth convention.
+- Benedict XVI, General Audience of 27 August 2008 (English), Vatican website (<https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080827.html>); the modern official statement of the anchor (“Gallio was Proconsul in Corinth between the years 51 and 53”) and of the c. AD 8 birth convention.
 
 ### Tomb, basilica, and ecclesial reception
 
--   “The Tomb of the Apostle,” “The Constantine Building,” and “The Fire in July 1823,” official presentation of the Papal Basilica of St. Paul Outside-the-Walls, English pages hosted at vatican.va (<https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm>; `costantino.htm`; `incendio.htm`); source for the <span class="smallcaps">Paulo Apostolo Mart</span> slab, sarcophagus dimensions and position, Lucina and Aquae Salviae traditions as officially stated, and the 324/395/1823/1854 building history.
+- “The Tomb of the Apostle,” “The Constantine Building,” and “The Fire in July 1823,” official presentation of the Papal Basilica of St. Paul Outside-the-Walls, English pages hosted at vatican.va (<https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm>; `costantino.htm`; `incendio.htm`); source for the <span class="smallcaps">Paulo Apostolo Mart</span> slab, sarcophagus dimensions and position, Lucina and Aquae Salviae traditions as officially stated, and the 324/395/1823/1854 building history.
 
--   Benedict XVI, Homily at First Vespers of Sts. Peter and Paul, opening of the Pauline Year, 28 June 2008 (<https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080628_vespri.html>).
+- Benedict XVI, Homily at First Vespers of Sts. Peter and Paul, opening of the Pauline Year, 28 June 2008 (<https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080628_vespri.html>).
 
--   Benedict XVI, General Audience of 28 January 2009 (the Pastoral Letters; “Pauline School” statement) (<https://www.vatican.va/content/benedict-xvi/en/audiences/2009/documents/hf_ben-xvi_aud_20090128.html>); General Audience of 14 January 2009 (Colossians/Ephesians as twins) (<https://www.vatican.va/content/benedict-xvi/en/audiences/2009/documents/hf_ben-xvi_aud_20090114.html>); General Audience of 4 February 2009 (martyrdom and heritage: 1 Clement quoted; Spain “open to discussion”; *Acts of Paul* beheading; Tre Fontane “most legendary”; Lucina; basilica history) (<https://www.vatican.va/content/benedict-xvi/en/audiences/2009/documents/hf_ben-xvi_aud_20090204.html>).
+- Benedict XVI, General Audience of 28 January 2009 (the Pastoral Letters; “Pauline School” statement) (<https://www.vatican.va/content/benedict-xvi/en/audiences/2009/documents/hf_ben-xvi_aud_20090128.html>); General Audience of 14 January 2009 (Colossians/Ephesians as twins) (<https://www.vatican.va/content/benedict-xvi/en/audiences/2009/documents/hf_ben-xvi_aud_20090114.html>); General Audience of 4 February 2009 (martyrdom and heritage: 1 Clement quoted; Spain “open to discussion”; *Acts of Paul* beheading; Tre Fontane “most legendary”; Lucina; basilica history) (<https://www.vatican.va/content/benedict-xvi/en/audiences/2009/documents/hf_ben-xvi_aud_20090204.html>).
 
--   Benedict XVI, Homily at First Vespers for the closing of the Pauline Year, Basilica of St. Paul Outside-the-Walls, 28 June 2009; the sarcophagus-probe announcement quoted in full in the text (<https://www.vatican.va/content/benedict-xvi/en/homilies/2009/documents/hf_ben-xvi_hom_20090628_chius-anno-paolino.html>).
+- Benedict XVI, Homily at First Vespers for the closing of the Pauline Year, Basilica of St. Paul Outside-the-Walls, 28 June 2009; the sarcophagus-probe announcement quoted in full in the text (<https://www.vatican.va/content/benedict-xvi/en/homilies/2009/documents/hf_ben-xvi_hom_20090628_chius-anno-paolino.html>).
 
--   General Roman Calendar: current observances (29 June solemnity; 25 January Conversion; 18 November Dedication of the basilicas) stated per the repository’s source-library record of the *Calendarium Romanum Generale* (Missale Romanum, ed. typica tertia, 2002), with the cult’s history from the Catholic Encyclopedia articles above; mutable facts carry the 2026-07-25 cutoff.
+- General Roman Calendar: current observances (29 June solemnity; 25 January Conversion; 18 November Dedication of the basilicas) stated per the repository’s source-library record of the *Calendarium Romanum Generale* (Missale Romanum, ed. typica tertia, 2002), with the cult’s history from the Catholic Encyclopedia articles above; mutable facts carry the 2026-07-25 cutoff.
 
 **Last revised (UTC):** 2026-07-25T09:23:26Z
 

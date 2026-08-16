@@ -190,13 +190,13 @@ The Prayer after Communion asks that receiving gifts and frequenting the mystery
 
 ## The Propers: Notable and Quotable
 
--   **“A sower went out to sow” — Earthseed after social collapse. (*both Gospel forms*)** Octavia E. Butler’s 1993 *Parable of the Sower* turns the biblical title into dystopian science fiction: a young Black woman crosses a climate-ravaged California while cultivating a new community and the change-centered religion Earthseed. The seed is no longer only a preached word; it is a portable social experiment whose reception remains dangerously uncertain.
+- **“A sower went out to sow” — Earthseed after social collapse. (*both Gospel forms*)** Octavia E. Butler’s 1993 *Parable of the Sower* turns the biblical title into dystopian science fiction: a young Black woman crosses a climate-ravaged California while cultivating a new community and the change-centered religion Earthseed. The seed is no longer only a preached word; it is a portable social experiment whose reception remains dangerously uncertain.
 
--   **The sower — from Gospel notebook to blazing modern image. (*both Gospel forms*)** Vincent van Gogh recorded that the parable made a deep impression, copied Gospel parables in several languages, later called Christ a supreme artist of spoken parable, and returned to the sower in more than thirty visual variations. In the best-known setting-sun images, an agricultural laborer becomes a haloed figure of life, death, and artistic vocation—without becoming a mere illustration of Matthew.
+- **The sower — from Gospel notebook to blazing modern image. (*both Gospel forms*)** Vincent van Gogh recorded that the parable made a deep impression, copied Gospel parables in several languages, later called Christ a supreme artist of spoken parable, and returned to the sower in more than thirty visual variations. In the best-known setting-sun images, an agricultural laborer becomes a haloed figure of life, death, and artistic vocation—without becoming a mere illustration of Matthew.
 
--   **“The seed fell on stony ground” — while the boy digs into limestone. (*both Gospel forms*)** In William Allen White’s 1909 novel *A Certain Rich Man*, a mother’s attempts to interest young John in Beecher’s sermons fail because bees, birds, and butterflies hold his attention, “so the seed fell on stony ground.” The next sentences place him above a limestone ledge, digging into a spring: spiritual idiom and literal geology quietly collide.
+- **“The seed fell on stony ground” — while the boy digs into limestone. (*both Gospel forms*)** In William Allen White’s 1909 novel *A Certain Rich Man*, a mother’s attempts to interest young John in Beecher’s sermons fail because bees, birds, and butterflies hold his attention, “so the seed fell on stony ground.” The next sentences place him above a limestone ledge, digging into a spring: spiritual idiom and literal geology quietly collide.
 
--   **“Creation is groaning” — climate-policy pressure. (*Second Reading*)** The Lutheran World Federation’s climate-justice statement says creation groans under the weight of human action and inaction, then presses for a binding international climate agreement. Paul’s woman-in-labor image becomes institutional advocacy: the groan is treated not as passive doom but as evidence demanding political action.
+- **“Creation is groaning” — climate-policy pressure. (*Second Reading*)** The Lutheran World Federation’s climate-justice statement says creation groans under the weight of human action and inaction, then presses for a binding international climate agreement. Paul’s woman-in-labor image becomes institutional advocacy: the groan is treated not as passive doom but as evidence demanding political action.
 
 ## The Propers: Interpretive Possibilities
 
@@ -242,49 +242,49 @@ The Prayer after Communion asks that receiving gifts and frequenting the mystery
 
 **Liturgical and scriptural sources**
 
--   *Missale Romanum*, editio typica tertia (Vatican City, 2002), Week XV, pp. 464–465; the shared audit records exact owner evidence and the official 2008 variation-list result (Ordinary Time changes only at pp. 457 and 471; none at pp. 464–466).
+- *Missale Romanum*, editio typica tertia (Vatican City, 2002), Week XV, pp. 464–465; the shared audit records exact owner evidence and the official 2008 variation-list result (Ordinary Time changes only at pp. 457 and 471; none at pp. 464–466).
 
--   United States Conference of Catholic Bishops, [*2026 Liturgical Calendar*](https://www.usccb.org/resources/2026cal.pdf) and [Lectionary 103 occurrence page](https://bible.usccb.org/bible/readings/071226.cfm), checked 2026-07-15.
+- United States Conference of Catholic Bishops, [*2026 Liturgical Calendar*](https://www.usccb.org/resources/2026cal.pdf) and [Lectionary 103 occurrence page](https://bible.usccb.org/bible/readings/071226.cfm), checked 2026-07-15.
 
--   Bishops’ official [*Antiphonary*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), p. 74, corroborating the ICEL antiphon assignments; protected wording is not reproduced.
+- Bishops’ official [*Antiphonary*](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), p. 74, corroborating the ICEL antiphon assignments; protected wording is not reproduced.
 
--   Holy See, [*General Instruction of the Roman Missal*](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html), especially 46–90; approved [*General Introduction to the Lectionary*](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf), especially 65–69, 78–91, and 93–110.
+- Holy See, [*General Instruction of the Roman Missal*](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html), especially 46–90; approved [*General Introduction to the Lectionary*](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf), especially 65–69, 78–91, and 93–110.
 
--   Holy Scripture: Psalms 17, 65, and 84; Isaiah 55; Matthew 13; Luke 8; John 6; Romans 8. Historical orientation used the corresponding *New American Bible, Revised Edition* introductions, texts, and notes at [Isaiah](https://bible.usccb.org/bible/isaiah/0), [Matthew](https://bible.usccb.org/bible/matthew/0), [Luke](https://bible.usccb.org/bible/luke/0), [John](https://bible.usccb.org/bible/john/0), and [Romans](https://bible.usccb.org/bible/romans/0).
+- Holy Scripture: Psalms 17, 65, and 84; Isaiah 55; Matthew 13; Luke 8; John 6; Romans 8. Historical orientation used the corresponding *New American Bible, Revised Edition* introductions, texts, and notes at [Isaiah](https://bible.usccb.org/bible/isaiah/0), [Matthew](https://bible.usccb.org/bible/matthew/0), [Luke](https://bible.usccb.org/bible/luke/0), [John](https://bible.usccb.org/bible/john/0), and [Romans](https://bible.usccb.org/bible/romans/0).
 
--   Holy See, *Nova Vulgata Bibliorum Sacrorum Editio*, editio typica altera (1986), [Isaiah 55:11](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_isaiae_lt.html), official Latin wording checked 2026-07-18.
+- Holy See, *Nova Vulgata Bibliorum Sacrorum Editio*, editio typica altera (1986), [Isaiah 55:11](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_isaiae_lt.html), official Latin wording checked 2026-07-18.
 
 **Cultural, literary, visual, and institutional afterlives**
 
--   Octavia E. Butler, *Parable of the Sower* (1993); [Seven Stories Press description](https://www.penguinrandomhouse.com/books/539893/parable-of-the-sower-by-octavia-e-butler/) of the post-apocalyptic journey and cultivated community; and the Huntington Library’s [“Octavia E. Butler’s Seeds of Change”](https://www.huntington.org/watch-read-listen/news/octavia-e-butlers-seeds-change), on Earthseed as Lauren Olamina’s response to upheaval.
+- Octavia E. Butler, *Parable of the Sower* (1993); [Seven Stories Press description](https://www.penguinrandomhouse.com/books/539893/parable-of-the-sower-by-octavia-e-butler/) of the post-apocalyptic journey and cultivated community; and the Huntington Library’s [“Octavia E. Butler’s Seeds of Change”](https://www.huntington.org/watch-read-listen/news/octavia-e-butlers-seeds-change), on Earthseed as Lauren Olamina’s response to upheaval.
 
--   Vincent van Gogh, [letter 120 to Theo](https://vangoghletters.org/vg/letters/let120/letter.html), June 12, 1877, and [letter 632 to Emile Bernard](https://vangoghletters.org/vg/letters/let632/translation.html), June 26, 1888; Van Gogh Museum, [letter sketch of *Sower with Setting Sun*](https://www.vangoghmuseum.nl/en/collection/b0604V1968v) and [permanent-collection gallery text](https://www.vangoghmuseum.nl/download/21788126-4cd1-4292-bbf8-cb45110e04c6.pdf), p. 23.
+- Vincent van Gogh, [letter 120 to Theo](https://vangoghletters.org/vg/letters/let120/letter.html), June 12, 1877, and [letter 632 to Emile Bernard](https://vangoghletters.org/vg/letters/let632/translation.html), June 26, 1888; Van Gogh Museum, [letter sketch of *Sower with Setting Sun*](https://www.vangoghmuseum.nl/en/collection/b0604V1968v) and [permanent-collection gallery text](https://www.vangoghmuseum.nl/download/21788126-4cd1-4292-bbf8-cb45110e04c6.pdf), p. 23.
 
--   William Allen White, [*A Certain Rich Man*](https://www.gutenberg.org/files/18684/18684-h/18684-h.htm) (1909), opening of chapter II, public-domain Project Gutenberg transcription.
+- William Allen White, [*A Certain Rich Man*](https://www.gutenberg.org/files/18684/18684-h/18684-h.htm) (1909), opening of chapter II, public-domain Project Gutenberg transcription.
 
--   Lutheran World Federation, [“Advocacy and Action for Climate Justice”](https://lutheranworld.org/sites/default/files/2022-02/Public%20Statement%20-%20Advocacy%20and%20Action%20for%20Climate%20Justice_0.pdf), public statement recalling its 2014 Romans 8:22 appeal before COP21.
+- Lutheran World Federation, [“Advocacy and Action for Climate Justice”](https://lutheranworld.org/sites/default/files/2022-02/Public%20Statement%20-%20Advocacy%20and%20Action%20for%20Climate%20Justice_0.pdf), public statement recalling its 2014 Romans 8:22 appeal before COP21.
 
 **Reception and doctrinal illumination**
 
--   St. Aphrahat, *Demonstration VIII* 6 and 15, use of Isaiah 55:10–11 within an early Syriac argument about the effective word and resurrection, [working English text](https://www.newadvent.org/fathers/370108.htm); illuminating reuse rather than continuous Isaiah exposition.
+- St. Aphrahat, *Demonstration VIII* 6 and 15, use of Isaiah 55:10–11 within an early Syriac argument about the effective word and resurrection, [working English text](https://www.newadvent.org/fathers/370108.htm); illuminating reuse rather than continuous Isaiah exposition.
 
--   St. John Chrysostom, *Homilies 44–45 on Matthew*, direct treatment of Matthew 13:1–23, [Homily 44](https://www.newadvent.org/fathers/200144.htm) and [Homily 45](https://www.newadvent.org/fathers/200145.htm).
+- St. John Chrysostom, *Homilies 44–45 on Matthew*, direct treatment of Matthew 13:1–23, [Homily 44](https://www.newadvent.org/fathers/200144.htm) and [Homily 45](https://www.newadvent.org/fathers/200145.htm).
 
--   St. John Chrysostom, *Homily 14 on Romans*, direct treatment of Romans 8:18–23, [working English text](https://www.newadvent.org/fathers/210214.htm).
+- St. John Chrysostom, *Homily 14 on Romans*, direct treatment of Romans 8:18–23, [working English text](https://www.newadvent.org/fathers/210214.htm).
 
--   St. Gregory of Nyssa, *Against Eunomius* IV, reception of Romans 8:19–23 within a Christological argument about creation’s expectation, [working English text](https://www.newadvent.org/fathers/290104.htm); illuminating reuse rather than continuous Pauline exposition.
+- St. Gregory of Nyssa, *Against Eunomius* IV, reception of Romans 8:19–23 within a Christological argument about creation’s expectation, [working English text](https://www.newadvent.org/fathers/290104.htm); illuminating reuse rather than continuous Pauline exposition.
 
--   St. Cyril of Alexandria, *Commentary on Luke*, Sermon XLI on Luke 8:4–15, direct treatment of the Lukan source of the Psalm response and explicit comparison with Matthew’s yields, [working English text](https://www.tertullian.org/fathers/cyril_on_luke_04_sermons_39_46.htm).
+- St. Cyril of Alexandria, *Commentary on Luke*, Sermon XLI on Luke 8:4–15, direct treatment of the Lukan source of the Psalm response and explicit comparison with Matthew’s yields, [working English text](https://www.tertullian.org/fathers/cyril_on_luke_04_sermons_39_46.htm).
 
--   Origen, *On First Principles* III.1.17, use of the rocky-soil image for patient divine pedagogy, [working English text](https://www.newadvent.org/fathers/04123.htm); illuminating reuse rather than continuous Matthean commentary.
+- Origen, *On First Principles* III.1.17, use of the rocky-soil image for patient divine pedagogy, [working English text](https://www.newadvent.org/fathers/04123.htm); illuminating reuse rather than continuous Matthean commentary.
 
--   St. Augustine, *Expositions on the Psalms* 16.14, 64.14–16, and 83.7–8 (Vulgate/LXX numbering), reception of the Entrance, Responsorial, and first Communion-branch sources, [Psalm 16](https://www.newadvent.org/fathers/1801017.htm), [Psalm 64](https://www.newadvent.org/fathers/1801065.htm), and [Psalm 83](https://www.newadvent.org/fathers/1801084.htm).
+- St. Augustine, *Expositions on the Psalms* 16.14, 64.14–16, and 83.7–8 (Vulgate/LXX numbering), reception of the Entrance, Responsorial, and first Communion-branch sources, [Psalm 16](https://www.newadvent.org/fathers/1801017.htm), [Psalm 64](https://www.newadvent.org/fathers/1801065.htm), and [Psalm 83](https://www.newadvent.org/fathers/1801084.htm).
 
--   St. Augustine, *Tractates on John* 26.11–18, direct reception of John 6 and branch-specific illumination of Communion Antiphon B, [working English text](https://www.newadvent.org/fathers/1701026.htm).
+- St. Augustine, *Tractates on John* 26.11–18, direct reception of John 6 and branch-specific illumination of Communion Antiphon B, [working English text](https://www.newadvent.org/fathers/1701026.htm).
 
--   St. Thomas Aquinas, *Commentary on John* 6, lect. 7, direct later reception of John 6:57 and worthy abiding, [Latin–English working text](https://aquinas.cc/la/en/~Ioan.C6.L7).
+- St. Thomas Aquinas, *Commentary on John* 6, lect. 7, direct later reception of John 6:57 and worthy abiding, [Latin–English working text](https://aquinas.cc/la/en/~Ioan.C6.L7).
 
--   *Catechism of the Catholic Church* 541–550, [the Kingdom and its parables](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html); doctrinal context, not direct formula commentary.
+- *Catechism of the Catholic Church* 541–550, [the Kingdom and its parables](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_3/paragraph_3_the_mysteries_of_christs_public_life.html); doctrinal context, not direct formula commentary.
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

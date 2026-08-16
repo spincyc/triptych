@@ -82,19 +82,19 @@ This independent article addresses serious general Catholic readers. It treats h
 
 ## References
 
--   Sacred Scripture: Genesis 2–3; Psalm 90; John 9 and 11; Romans 5, 6, and 14; 1 Corinthians 15; Philippians 1; 1 Thessalonians 4; Hebrews 2.
+- Sacred Scripture: Genesis 2–3; Psalm 90; John 9 and 11; Romans 5, 6, and 14; 1 Corinthians 15; Philippians 1; 1 Thessalonians 4; Hebrews 2.
 
--   *Catechism of the Catholic Church* 988–1019, 1020–1022, 2276–2279.
+- *Catechism of the Catholic Church* 988–1019, 1020–1022, 2276–2279.
 
--   Second Vatican Council, pastoral constitution *Gaudium et spes* 18 and 22.
+- Second Vatican Council, pastoral constitution *Gaudium et spes* 18 and 22.
 
--   Fifth Lateran Council, *Apostolici regiminis* (1513), DS 1440; Benedict XII, *Benedictus Deus* (1336), DS 1000–1002.
+- Fifth Lateran Council, *Apostolici regiminis* (1513), DS 1440; Benedict XII, *Benedictus Deus* (1336), DS 1000–1002.
 
--   St. Ignatius of Antioch, *Letter to the Romans* 4–7; St. Irenaeus, *Against Heresies* V.6–14; St. Athanasius, *On the Incarnation* 8–10, 20–29.
+- St. Ignatius of Antioch, *Letter to the Romans* 4–7; St. Irenaeus, *Against Heresies* V.6–14; St. Athanasius, *On the Incarnation* 8–10, 20–29.
 
--   St. Thomas Aquinas, *Summa theologiae* I, q. 75; q. 97, a. 1; Supplement, qq. 75–86.
+- St. Thomas Aquinas, *Summa theologiae* I, q. 75; q. 97, a. 1; Supplement, qq. 75–86.
 
--   *Ordo Exsequiarum* (1969), general introduction and rites of committal. Liturgical allusions identify the Roman Rite source family and do not reproduce a territorial vernacular.
+- *Ordo Exsequiarum* (1969), general introduction and rites of committal. Liturgical allusions identify the Roman Rite source family and do not reproduce a territorial vernacular.
 
 **Last revised (UTC):** 2026-07-24T20:52:18Z
 

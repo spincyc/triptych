@@ -125,21 +125,21 @@ Stable doctrine is not artificially dated. The treatment of mutable DDF norms an
 
 ## References
 
--   Scripture: Genesis 3:15; Luke 1–2; John 2:1–11; 19:25–27; Acts 1:14; Galatians 4:4–7; 1 Corinthians 15; Revelation 12.
+- Scripture: Genesis 3:15; Luke 1–2; John 2:1–11; 19:25–27; Acts 1:14; Galatians 4:4–7; 1 Corinthians 15; Revelation 12.
 
--   Second Vatican Council, *Dei Verbum* 2–10; *Lumen gentium* 52–69.
+- Second Vatican Council, *Dei Verbum* 2–10; *Lumen gentium* 52–69.
 
--   Council of Ephesus, received letters and Formula of Union; Council of Chalcedon, Definition; Lateran Synod of 649, canon 3.
+- Council of Ephesus, received letters and Formula of Union; Council of Chalcedon, Definition; Lateran Synod of 649, canon 3.
 
--   Pius IX, *Ineffabilis Deus*; Pius XII, *Munificentissimus Deus*; Catechism of the Catholic Church, 65–67, 484–511, 963–975.
+- Pius IX, *Ineffabilis Deus*; Pius XII, *Munificentissimus Deus*; Catechism of the Catholic Church, 65–67, 484–511, 963–975.
 
--   DDF, *Mater Populi Fidelis* (2025); *Norms for Proceeding in the Discernment of Alleged Supernatural Phenomena* (2024).
+- DDF, *Mater Populi Fidelis* (2025); *Norms for Proceeding in the Discernment of Alleged Supernatural Phenomena* (2024).
 
--   Justin Martyr, *Dialogue with Trypho* 100; Irenaeus, *Against Heresies* 3.22.4; Ignatius, *Ephesians* 18–19; Cyril of Alexandria, Second Letter to Nestorius; Augustine, *On Nature and Grace* 36.42; Epiphanius, *Panarion* 78.11, 23–24.
+- Justin Martyr, *Dialogue with Trypho* 100; Irenaeus, *Against Heresies* 3.22.4; Ignatius, *Ephesians* 18–19; Cyril of Alexandria, Second Letter to Nestorius; Augustine, *On Nature and Grace* 36.42; Epiphanius, *Panarion* 78.11, 23–24.
 
--   Thomas Aquinas, *Summa theologiae* III, qq. 26–29, 35; *Compendium theologiae* I, 221–225.
+- Thomas Aquinas, *Summa theologiae* III, qq. 26–29, 35; *Compendium theologiae* I, 221–225.
 
--   Triptych, *How the Catholic Church Teaches*; Triptych, *The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed*.
+- Triptych, *How the Catholic Church Teaches*; Triptych, *The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed*.
 
 **Last revised (UTC):** 2026-07-26T00:00:00Z
 

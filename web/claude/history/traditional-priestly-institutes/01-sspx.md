@@ -54,11 +54,11 @@ The text of Charrière’s decree was not located in any official witness for th
 
 Three cautions belong with that letter, and they matter later.
 
--   A letter of a Roman congregation acknowledging statutes and praising a work is an act of encouragement. It is not an approval of an institute of pontifical right, and the letter as published claims no such thing.
+- A letter of a Roman congregation acknowledging statutes and praising a work is an act of encouragement. It is not an approval of an institute of pontifical right, and the letter as published claims no such thing.
 
--   The exact canonical figure created on 1 November 1970—whether a pious union of the faithful, an association of clergy, or another form available under the 1917 Code then in force, and on what terms or for what period—is not established by any witness reached for this account. The Society describes the body as erected as a pious union; the Roman acts of 1975–1976 speak simply of a *Fraternitas* and of its suppression.
+- The exact canonical figure created on 1 November 1970—whether a pious union of the faithful, an association of clergy, or another form available under the 1917 Code then in force, and on what terms or for what period—is not established by any witness reached for this account. The Society describes the body as erected as a pious union; the Roman acts of 1975–1976 speak simply of a *Fraternitas* and of its suppression.
 
--   Whatever the figure, it was diocesan. That is the hinge of the 1975 controversy: a body erected by a diocesan bishop is, on the ordinary principle, subject to the authority that erected it and to its successor.
+- Whatever the figure, it was diocesan. That is the hinge of the 1975 controversy: a body erected by a diocesan bishop is, on the ordinary principle, subject to the authority that erected it and to its successor.
 
 > **Act or witness:** Letter of Cardinal John Wright, Prefect of the Congregation for the Clergy, 18 February 1971, in the Society’s published English text.
 >
@@ -190,7 +190,7 @@ The October letter is the most complete statement the Holy See ever made of what
 
 6.  **An undertaking to abstain** from initiatives contrary to that declaration and to disavow publicly those undertaken in his name.[^27]
 
-Section III B added the institutional demand: the pope could not revoke the juridical suppression of the Society, and Lefebvre was to commit to the Holy See the responsibility and direction of his works and above all of his seminaries—which, the letter says, “have no canonical status in the Church”—so that they might one day find a place in it. For the priests already ordained, the sanctions incurred under canons 985, 7 and 2374 of the 1917 Code could be lifted if they showed repentance and signed the same declaration.[^28]
+Section III B added the institutional demand: the pope could not revoke the juridical suppression of the Society, and Lefebvre was to commit to the Holy See the responsibility and direction of his works and above all of his seminaries—which, the letter says, “have no canonical status in the Church”—so that they might one day find a place in it. For the priests already ordained, the sanctions incurred under canons 985, 7° and 2374 of the 1917 Code could be lifted if they showed repentance and signed the same declaration.[^28]
 
 > **Act or witness:** Paul VI, letter to Archbishop Lefebvre, 11 October 1976 (Latin, Holy See website).
 >
@@ -253,9 +253,9 @@ On 30 June 1988, at Écône, Archbishop Lefebvre consecrated four bishops: Berna
 
 The Holy See responded in two acts on successive days, and the difference between them is important.
 
--   On **1 July 1988** the Prefect of the Congregation for Bishops issued a decree—known from its opening words as *Dominus Marcellus Lefebvre*—formally declaring the excommunication *latae sententiae* already incurred. Its existence, date, author, and declaratory character are attested by three later Roman documents; its text was never printed in *Acta Apostolicae Sedis* and was not located in any official witness here.[^38]
+- On **1 July 1988** the Prefect of the Congregation for Bishops issued a decree—known from its opening words as *Dominus Marcellus Lefebvre*—formally declaring the excommunication *latae sententiae* already incurred. Its existence, date, author, and declaratory character are attested by three later Roman documents; its text was never printed in *Acta Apostolicae Sedis* and was not located in any official witness here.[^38]
 
--   On **2 July 1988** John Paul II issued the motu proprio *Ecclesia Dei*, which is not primarily a penal act at all. It declares the act schismatic, records the penalty, diagnoses its doctrinal root, and then institutes a commission and orders a generous application of the 1984 indult.
+- On **2 July 1988** John Paul II issued the motu proprio *Ecclesia Dei*, which is not primarily a penal act at all. It declares the act schismatic, records the penalty, diagnoses its doctrinal root, and then institutes a commission and orders a generous application of the 1984 indult.
 
 ### What *Ecclesia Dei* decided, in its own words
 
@@ -373,13 +373,13 @@ That the Preamble’s text remains unpublished is the central evidentiary fact o
 
 The sequence that followed is documented meeting by meeting in the Holy See’s press bulletins.
 
--   **January 2012.** The Society’s response to the Preamble arrived. It was examined by the Congregation and then submitted to the judgment of Benedict XVI.
+- **January 2012.** The Society’s response to the Preamble arrived. It was examined by the Congregation and then submitted to the judgment of Benedict XVI.
 
--   **16 March 2012.** At a meeting that day, in execution of the pope’s decision, a letter was handed to Bishop Fellay communicating the evaluation of his response: the position he had expressed “is not sufficient to overcome the doctrinal problems which are at the foundation of the fracture between the Holy See and the said Fraternity.” Guided by the concern to avoid an ecclesial rupture of painful and incalculable consequences, the Congregation invited him to clarify his position in order to heal the existing fracture.[^52]
+- **16 March 2012.** At a meeting that day, in execution of the pope’s decision, a letter was handed to Bishop Fellay communicating the evaluation of his response: the position he had expressed “is not sufficient to overcome the doctrinal problems which are at the foundation of the fracture between the Holy See and the said Fraternity.” Guided by the concern to avoid an ecclesial rupture of painful and incalculable consequences, the Congregation invited him to clarify his position in order to heal the existing fracture.[^52]
 
--   **13 June 2012.** Cardinal Levada met Bishop Fellay and an assistant, with Archbishop Ladaria and Monsignor Pozzo present, to present the Holy See’s evaluation of a further text the Society had delivered in April. At that meeting a draft document was handed over proposing a **Personal Prelature** as the instrument most suited to an eventual canonical recognition of the Society. The communiqué also confirms, referring to a press communiqué of 16 May 2012, that the situation of the other three bishops of the Society would be treated separately and individually. Bishop Fellay promised to make his answer known within a reasonable time.[^53]
+- **13 June 2012.** Cardinal Levada met Bishop Fellay and an assistant, with Archbishop Ladaria and Monsignor Pozzo present, to present the Holy See’s evaluation of a further text the Society had delivered in April. At that meeting a draft document was handed over proposing a **Personal Prelature** as the instrument most suited to an eventual canonical recognition of the Society. The communiqué also confirms, referring to a press communiqué of 16 May 2012, that the situation of the other three bishops of the Society would be treated separately and individually. Bishop Fellay promised to make his answer known within a reasonable time.[^53]
 
--   **July 2012.** The Society’s general chapter published a declaration about a possible canonical normalization. The Holy See Press Office responded on 19 July 2012 that the Holy See had taken note of the declaration—which, though made public, remained primarily an internal document for study and discussion among the Society’s members—but awaited the announced official communication of the Society for the continuation of the dialogue with the Commission *Ecclesia Dei*.[^54]
+- **July 2012.** The Society’s general chapter published a declaration about a possible canonical normalization. The Holy See Press Office responded on 19 July 2012 that the Holy See had taken note of the declaration—which, though made public, remained primarily an internal document for study and discussion among the Society’s members—but awaited the announced official communication of the Society for the continuation of the dialogue with the Commission *Ecclesia Dei*.[^54]
 
 No agreement followed. The Society’s chapter of July 2012 also removed Bishop Williamson from its ranks later that year, an internal act of the Society reported by it and not the subject of any Roman act reached here.
 
@@ -477,15 +477,15 @@ Two differences from 1988 are worth marking. The consecrator is penalized under 
 
 The note, published with the decree and under the same protocol number, is the document with the wider reach. It opens by observing that from the time of Saint Paul VI to the most recent conversations held at the Dicastery, the many attempts to bring the adherents of the movement begun by Archbishop Lefebvre to full communion have proved vain, and that the situation has been further aggravated by the recent consecrations; the Dicastery therefore judges it necessary to note that the act has constituted the delict of schism, with canonical consequences for sacred ministers and lay faithful, recalling *Ecclesia Dei* n. 3 on disobedience that carries a practical rejection of the Roman primacy. Then, “from now on”:[^67]
 
--   the sacred ministers belonging to the Society “are in schism and must therefore be considered schismatics,” and are subject to the excommunication provided by law in canon 1364 § 1;
+- the sacred ministers belonging to the Society “are in schism and must therefore be considered schismatics,” and are subject to the excommunication provided by law in canon 1364 § 1;
 
--   lay faithful who formally adhere to the Society under the conditions established in the 1996 note of the Pontifical Council for Legislative Texts—“still in force, which this Dicastery makes its own”—are to be held schismatic and excommunicated;
+- lay faithful who formally adhere to the Society under the conditions established in the 1996 note of the Pontifical Council for Legislative Texts—“still in force, which this Dicastery makes its own”—are to be held schismatic and excommunicated;
 
--   the holy People of God is warned that the Society’s sacred ministers administer the sacraments illicitly, and that “the sacrament of penance administered by them and the marriage at which they assist are invalid”;
+- the holy People of God is warned that the Society’s sacred ministers administer the sacraments illicitly, and that “the sacrament of penance administered by them and the marriage at which they assist are invalid”;
 
--   the Church will welcome with sincere affection those who wish to return to full communion, and the apostolic nuncios will make available the procedures that ordinaries may use in the various cases;
+- the Church will welcome with sincere affection those who wish to return to full communion, and the apostolic nuncios will make available the procedures that ordinaries may use in the various cases;
 
--   all the faithful are exhorted to remain firm in communion with the Roman Pontiff, with the bishops in communion with him and with the whole Church, and to abstain from taking part in the celebrations and activities promoted by the Society.
+- all the faithful are exhorted to remain firm in communion with the Roman Pontiff, with the bishops in communion with him and with the whole Church, and to abstain from taking part in the celebrations and activities promoted by the Society.
 
 The note thereby does two things the decree does not. It adopts the 1996 consultative note as the Dicastery’s own—which converts a curial council’s opinion into the operative standard of a competent dicastery, including its case-by-case test for lay adherence. And it states the sacramental consequences that follow when a minister has no faculty: penance and marriage, the two sacraments whose validity depends on faculty or delegation, are declared invalid, while the note conspicuously does not say the same of the Eucharist, confirmation or orders, which it describes only as illicitly administered.
 
@@ -525,15 +525,15 @@ The note holds schismatic and excommunicated those lay faithful who *formally ad
 
 ### What the acts do not say
 
--   They do not declare any lay person excommunicated by name, and they do not replace the case-by-case judgment the adopted 1996 note requires.
+- They do not declare any lay person excommunicated by name, and they do not replace the case-by-case judgment the adopted 1996 note requires.
 
--   They do not state that the Eucharist, confirmation or holy orders conferred by the Society’s ministers are invalid; the note calls the administration of the sacraments illicit and specifies invalidity only for penance and marriage—the two sacraments whose validity depends on a faculty or delegation from competent authority.
+- They do not state that the Eucharist, confirmation or holy orders conferred by the Society’s ministers are invalid; the note calls the administration of the sacraments illicit and specifies invalidity only for penance and marriage—the two sacraments whose validity depends on a faculty or delegation from competent authority.
 
--   They do not expressly revoke the confession faculty extended indefinitely by *Misericordia et misera* 12 (2016) or the marriage provision of 27 March 2017. The note’s statement that penance and marriage are invalid cannot stand together with those grants remaining in force, and the natural reading is that the Dicastery regards them as spent or superseded; but no act located for this account revokes them in terms. That is an unresolved question of positive law, and this account does not resolve it.
+- They do not expressly revoke the confession faculty extended indefinitely by *Misericordia et misera* 12 (2016) or the marriage provision of 27 March 2017. The note’s statement that penance and marriage are invalid cannot stand together with those grants remaining in force, and the natural reading is that the Dicastery regards them as spent or superseded; but no act located for this account revokes them in terms. That is an unresolved question of positive law, and this account does not resolve it.
 
--   They do not address the two other bishops consecrated in 1988, Bernard Tissier de Mallerais and Richard Williamson, whose situations were declared in 2012 to be matters for separate and individual treatment and who are not named in any 2026 act reached here.
+- They do not address the two other bishops consecrated in 1988, Bernard Tissier de Mallerais and Richard Williamson, whose situations were declared in 2012 to be matters for separate and individual treatment and who are not named in any 2026 act reached here.
 
--   They do not adjudicate the suppression of 1975, the recourse the Society says it lodged then, or the Society’s contention that a state of necessity justifies its acts—though the 1996 note, now adopted by the Dicastery, states that such a state must be objectively verified and that there is never a necessity to consecrate bishops against the will of the Roman Pontiff.
+- They do not adjudicate the suppression of 1975, the recourse the Society says it lodged then, or the Society’s contention that a state of necessity justifies its acts—though the 1996 note, now adopted by the Dicastery, states that such a state must be objectively verified and that there is never a necessity to consecrate bishops against the will of the Roman Pontiff.
 
 ### The pending recourse
 
@@ -577,7 +577,7 @@ Excluded: a general history of the Second Vatican Council, of the liturgical ref
 |:------|:-----------------------------------------------------------|
 | A | Acts printed in *Acta Apostolicae Sedis*, read in the Holy See’s own scanned fascicles: appointment entries of 1947–1962; the consistory allocution of 1976; *Quattuor abhinc annos* (1984); the papal letter of 8 April 1988 and *Ecclesia Dei* (1988); the Secretariat of State note, the decree of remission, the papal letter of 10 March and *Ecclesiae unitatem* (2009); the letter of 1 September 2015; *Misericordia et misera* 12 (2016); the *Ecclesia Dei* Commission’s marriage letter (2017). |
 | H | Official Holy See texts published on vatican.va or in the Holy See Press Office bulletin, not (or not yet) in the gazette: Paul VI’s letters of 15 August and 11 October 1976; the 1996 note of the Pontifical Council for Legislative Texts; the press communiqués of 2011–2012; Cardinal Fernández’s declaration of 13 May 2026; Leo XIV’s letter of 29 June 2026; the decree and explanatory note of 2 July 2026. |
-| L | Canonical texts read in the Holy See’s official web presentation of the 1983 Code as revised in 2021 (cann. 751, 1353, 1364, 1387, 1734, 1737, 1739), and the 1917 Code in the registered 1918 Vatican Polyglot printing (cann. 985, 7 and 2374, located through the registered optical transcription only). |
+| L | Canonical texts read in the Holy See’s official web presentation of the 1983 Code as revised in 2021 (cann. 751, 1353, 1364, 1387, 1734, 1737, 1739), and the 1917 Code in the registered 1918 Vatican Polyglot printing (cann. 985, 7° and 2374, located through the registered optical transcription only). |
 | P | Documents published by the Society of Saint Pius X on its own information services: the 1974 Declaration, the 1971 Wright letter in translation, institutional histories and statistics, the 2026 communiqués, declarations and letters. Interested-party sources, labelled as such wherever used. |
 | N | Bounded negative results: acts sought and not found in a named corpus on a named date, recorded so that the search can be repeated and corrected. |
 | S | Project synthesis, drawn from the classes above and never attributed to a witness. |
@@ -671,83 +671,83 @@ All sources were read on 2026-07-25. *Acta Apostolicae Sedis* volumes and fascic
 
 ### Acts printed in *Acta Apostolicae Sedis*
 
--   Sacred Congregation de Propaganda Fide, *Provisio Ecclesiarum*: 12 June 1947 (Marcel Lefebvre, titular bishop of Anthedon, Vicar Apostolic of Dakar), AAS 39 (1947) 639; 22 September 1948 (titular archbishop of Arcadiopolis, Apostolic Delegate for Dakar), AAS 40 (1948) 560–561.
+- Sacred Congregation de Propaganda Fide, *Provisio Ecclesiarum*: 12 June 1947 (Marcel Lefebvre, titular bishop of Anthedon, Vicar Apostolic of Dakar), AAS 39 (1947) 639; 22 September 1948 (titular archbishop of Arcadiopolis, Apostolic Delegate for Dakar), AAS 40 (1948) 560–561.
 
--   Sacred Consistorial Congregation, provisions of 23 January 1962 (Tulle) and 7 August 1962 (Synnada in Phrygia), AAS 54 (1962) 107 and 735; *Diarium Romanae Curiae*, appointment as consultor of Propaganda Fide, 4 April 1962, AAS 54 (1962) 301.
+- Sacred Consistorial Congregation, provisions of 23 January 1962 (Tulle) and 7 August 1962 (Synnada in Phrygia), AAS 54 (1962) 107 and 735; *Diarium Romanae Curiae*, appointment as consultor of Propaganda Fide, 4 April 1962, AAS 54 (1962) 301.
 
--   Paul VI, allocution in the secret consistory, 24 May 1976, AAS 68 (1976) 369–378 (Lefebvre named at 373); Italian text at <https://www.vatican.va/content/paul-vi/it/speeches/1976/documents/hf_p-vi_spe_19760524_concistoro.html>.
+- Paul VI, allocution in the secret consistory, 24 May 1976, AAS 68 (1976) 369–378 (Lefebvre named at 373); Italian text at <https://www.vatican.va/content/paul-vi/it/speeches/1976/documents/hf_p-vi_spe_19760524_concistoro.html>.
 
--   Congregation for Divine Worship, letter *De usu Missalis Romani iuxta editionem typicam anni MCMLXII* (*Quattuor abhinc annos*), 3 October 1984, AAS 76 (1984) 1088–1089.
+- Congregation for Divine Worship, letter *De usu Missalis Romani iuxta editionem typicam anni MCMLXII* (*Quattuor abhinc annos*), 3 October 1984, AAS 76 (1984) 1088–1089.
 
--   John Paul II, letter to Cardinal Joseph Ratzinger, 8 April 1988, AAS 80 (1988) 1121–1125.
+- John Paul II, letter to Cardinal Joseph Ratzinger, 8 April 1988, AAS 80 (1988) 1121–1125.
 
--   John Paul II, motu proprio *Ecclesia Dei*, 2 July 1988, AAS 80 (1988) 1495–1498; official English at <https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html>.
+- John Paul II, motu proprio *Ecclesia Dei*, 2 July 1988, AAS 80 (1988) 1495–1498; official English at <https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html>.
 
--   Secretariat of State, note *Notandum circa excommunicationem quattuor Praesulum Fraternitatis Sancti Pii X*, 4 February 2009, AAS 101 (2009) 145–146.
+- Secretariat of State, note *Notandum circa excommunicationem quattuor Praesulum Fraternitatis Sancti Pii X*, 4 February 2009, AAS 101 (2009) 145–146.
 
--   Congregation for Bishops, decree remitting the excommunication of the four bishops, 21 January 2009, AAS 101 (2009) 150–151.
+- Congregation for Bishops, decree remitting the excommunication of the four bishops, 21 January 2009, AAS 101 (2009) 150–151.
 
--   Benedict XVI, letter to the bishops of the Catholic Church concerning the remission of the excommunication, 10 March 2009, AAS 101 (2009) 270–276; official English at <https://www.vatican.va/content/benedict-xvi/en/letters/2009/documents/hf_ben-xvi_let_20090310_remissione-scomunica.html>.
+- Benedict XVI, letter to the bishops of the Catholic Church concerning the remission of the excommunication, 10 March 2009, AAS 101 (2009) 270–276; official English at <https://www.vatican.va/content/benedict-xvi/en/letters/2009/documents/hf_ben-xvi_let_20090310_remissione-scomunica.html>.
 
--   Benedict XVI, motu proprio *Ecclesiae unitatem*, 2 July 2009, AAS 101 (2009) 710–711; official English at <https://www.vatican.va/content/benedict-xvi/en/apost_letters/documents/hf_ben-xvi_apl_20090702_ecclesiae-unitatem.html>.
+- Benedict XVI, motu proprio *Ecclesiae unitatem*, 2 July 2009, AAS 101 (2009) 710–711; official English at <https://www.vatican.va/content/benedict-xvi/en/apost_letters/documents/hf_ben-xvi_apl_20090702_ecclesiae-unitatem.html>.
 
--   Francis, letter to Archbishop Rino Fisichella on the Jubilee indulgence, 1 September 2015, AAS 107 (2015) 974–976; official English at <https://www.vatican.va/content/francesco/en/letters/2015/documents/papa-francesco_20150901_lettera-indulgenza-giubileo-misericordia.html>.
+- Francis, letter to Archbishop Rino Fisichella on the Jubilee indulgence, 1 September 2015, AAS 107 (2015) 974–976; official English at <https://www.vatican.va/content/francesco/en/letters/2015/documents/papa-francesco_20150901_lettera-indulgenza-giubileo-misericordia.html>.
 
--   Francis, apostolic letter *Misericordia et misera*, 20 November 2016, n. 12, AAS 108 (2016) 1319–1320; official English at <https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20161120_misericordia-et-misera.html>.
+- Francis, apostolic letter *Misericordia et misera*, 20 November 2016, n. 12, AAS 108 (2016) 1319–1320; official English at <https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20161120_misericordia-et-misera.html>.
 
--   Pontifical Commission *Ecclesia Dei*, letter to the presidents of the episcopal conferences concerned on the licence for marriages of faithful of the Society, 27 March 2017, AAS 109 (2017) 426–427.
+- Pontifical Commission *Ecclesia Dei*, letter to the presidents of the episcopal conferences concerned on the licence for marriages of faithful of the Society, 27 March 2017, AAS 109 (2017) 426–427.
 
 ### Official Holy See texts and press bulletins
 
--   Paul VI, letter to Archbishop Marcel Lefebvre, 15 August 1976 (French), <https://www.vatican.va/content/paul-vi/fr/letters/1976/documents/hf_p-vi_let_19760815_mons-lefebvre.html>.
+- Paul VI, letter to Archbishop Marcel Lefebvre, 15 August 1976 (French), <https://www.vatican.va/content/paul-vi/fr/letters/1976/documents/hf_p-vi_let_19760815_mons-lefebvre.html>.
 
--   Paul VI, letter to Archbishop Marcel Lefebvre, 11 October 1976 (Latin), <https://www.vatican.va/content/paul-vi/la/letters/1976/documents/hf_p-vi_let_19761011_arc-lefebvre.html>.
+- Paul VI, letter to Archbishop Marcel Lefebvre, 11 October 1976 (Latin), <https://www.vatican.va/content/paul-vi/la/letters/1976/documents/hf_p-vi_let_19761011_arc-lefebvre.html>.
 
--   Pontifical Council for Legislative Texts, explanatory note *Sulla scomunica per scisma in cui incorrono gli aderenti al movimento del Vescovo Marcel Lefebvre*, 24 August 1996 (*Communicationes* 29 \[1997\] 239–243), <https://www.vatican.va/roman_curia/pontifical_councils/intrptxt/documents/rc_pc_intrptxt_doc_19960824_vescovo-lefebvre_it.html>.
+- Pontifical Council for Legislative Texts, explanatory note *Sulla scomunica per scisma in cui incorrono gli aderenti al movimento del Vescovo Marcel Lefebvre*, 24 August 1996 (*Communicationes* 29 \[1997\] 239–243), <https://www.vatican.va/roman_curia/pontifical_councils/intrptxt/documents/rc_pc_intrptxt_doc_19960824_vescovo-lefebvre_it.html>.
 
--   Holy See Press Office, communiqué on the meeting between the Congregation for the Doctrine of the Faith and the Society, 14 September 2011, bulletin B0532, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2011/09/14/0532/01275.html>.
+- Holy See Press Office, communiqué on the meeting between the Congregation for the Doctrine of the Faith and the Society, 14 September 2011, bulletin B0532, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2011/09/14/0532/01275.html>.
 
--   Holy See Press Office, communiqué of 16 March 2012, bulletin B0158, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2012/03/16/0158/00366.html>; communiqué of 14 June 2012 on the meeting of 13 June, bulletin B0355, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2012/06/14/0355/00833.html>; communiqué of 19 July 2012 on the Society’s general chapter declaration, bulletin B0427, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2012/07/19/0427/00994.html>.
+- Holy See Press Office, communiqué of 16 March 2012, bulletin B0158, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2012/03/16/0158/00366.html>; communiqué of 14 June 2012 on the meeting of 13 June, bulletin B0355, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2012/06/14/0355/00833.html>; communiqué of 19 July 2012 on the Society’s general chapter declaration, bulletin B0427, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2012/07/19/0427/00994.html>.
 
--   Pontifical Commission *Ecclesia Dei*, marriage letter of 27 March 2017, English text in bulletin B0218 of 4 April 2017, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2017/04/04/0218/00485.html>.
+- Pontifical Commission *Ecclesia Dei*, marriage letter of 27 March 2017, English text in bulletin B0218 of 4 April 2017, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2017/04/04/0218/00485.html>.
 
--   Declaration of Cardinal Víctor Manuel Fernández, Prefect of the Dicastery for the Doctrine of the Faith, 13 May 2026, bulletin B0403, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/05/13/0403/00788.html>.
+- Declaration of Cardinal Víctor Manuel Fernández, Prefect of the Dicastery for the Doctrine of the Faith, 13 May 2026, bulletin B0403, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/05/13/0403/00788.html>.
 
--   Leo XIV, letter to the Reverend Father Davide Pagliarani, Superior General of the Priestly Fraternity of Saint Pius X, 29 June 2026 (French original; official English used here), bulletin B0563 of 30 June 2026, <https://www.vatican.va/content/leo-xiv/en/letters/2026/documents/20260629-lettera-fraternita-sanpiox.html>.
+- Leo XIV, letter to the Reverend Father Davide Pagliarani, Superior General of the Priestly Fraternity of Saint Pius X, 29 June 2026 (French original; official English used here), bulletin B0563 of 30 June 2026, <https://www.vatican.va/content/leo-xiv/en/letters/2026/documents/20260629-lettera-fraternita-sanpiox.html>.
 
--   Dicastery for the Doctrine of the Faith, *Decreto*, Prot. N. 99/2009, 2 July 2026, bulletin B0568, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/07/02/0568/01077.html>; and *Nota Esplicativa*, same protocol and bulletin, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/07/02/0568/01078.html>.
+- Dicastery for the Doctrine of the Faith, *Decreto*, Prot. N. 99/2009, 2 July 2026, bulletin B0568, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/07/02/0568/01077.html>; and *Nota Esplicativa*, same protocol and bulletin, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/07/02/0568/01078.html>.
 
 ### Canonical texts
 
--   *Codex Iuris Canonici* (1983), Book VI as revised by *Pascite gregem Dei* (23 May 2021, effective 8 December 2021), Latin: cann. 1353, 1364, 1387 at <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberVI_la.html>; Book VII, cann. 1734, 1737, 1739 at <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberVII_la.html>. Registered in this repository’s source library as `work.catholic-church.codex-iuris-canonici-1983`.
+- *Codex Iuris Canonici* (1983), Book VI as revised by *Pascite gregem Dei* (23 May 2021, effective 8 December 2021), Latin: cann. 1353, 1364, 1387 at <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberVI_la.html>; Book VII, cann. 1734, 1737, 1739 at <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberVII_la.html>. Registered in this repository’s source library as `work.catholic-church.codex-iuris-canonici-1983`.
 
--   *Codex Iuris Canonici* (1917), Typis Polyglottis Vaticanis 1918: cann. 985, 7 and 2374, located in the registered uncorrected optical transcription of that printing (page images of these canons not inspected). Registered as `work.catholic-church.codex-iuris-canonici-1917`.
+- *Codex Iuris Canonici* (1917), Typis Polyglottis Vaticanis 1918: cann. 985, 7° and 2374, located in the registered uncorrected optical transcription of that printing (page images of these canons not inspected). Registered as `work.catholic-church.codex-iuris-canonici-1917`.
 
 ### Documents published by the Society of Saint Pius X (interested party)
 
--   “Cardinal Wright’s letter of approval for the SSPX,” 18 February 1971 (English translation, translator unnamed), <https://sspx.org/en/cardinal-wrights-letter-approval-sspx-30125>; and the notice “Joyful consequence of November 1, 1970,” <https://sspx.org/en/news/joyful-consequence-november-1-1970-4816>.
+- “Cardinal Wright’s letter of approval for the SSPX,” 18 February 1971 (English translation, translator unnamed), <https://sspx.org/en/cardinal-wrights-letter-approval-sspx-30125>; and the notice “Joyful consequence of November 1, 1970,” <https://sspx.org/en/news/joyful-consequence-november-1-1970-4816>.
 
--   “Archbishop Marcel Lefebvre’s 1974 Declaration,” <https://sspx.org/en/news/archbishop-marcel-lefebvres-1974-declaration-48902>.
+- “Archbishop Marcel Lefebvre’s 1974 Declaration,” <https://sspx.org/en/news/archbishop-marcel-lefebvres-1974-declaration-48902>.
 
--   “A Beautiful Mystery: The History of the Society of St. Pius X,” <https://sspx.org/en/beautiful-mystery-history-society-st-pius-x-30949>.
+- “A Beautiful Mystery: The History of the Society of St. Pius X,” <https://sspx.org/en/beautiful-mystery-history-society-st-pius-x-30949>.
 
--   “SSPX Statistics 2025” (as of 1 November 2025), <https://fsspx.news/en/news/sspx-statistics-2025-56151>.
+- “SSPX Statistics 2025” (as of 1 November 2025), <https://fsspx.news/en/news/sspx-statistics-2025-56151>.
 
--   “Communiqué from the General House: the Society’s response to Rome,” 19 February 2026, <https://fsspx.news/en/news/communique-general-house-societys-response-rome-57308>; “Episcopal Consecrations: Updated Dossier,” <https://fsspx.news/en/news/episcopal-consecrations-updated-dossier-57964>.
+- “Communiqué from the General House: the Society’s response to Rome,” 19 February 2026, <https://fsspx.news/en/news/communique-general-house-societys-response-rome-57308>; “Episcopal Consecrations: Updated Dossier,” <https://fsspx.news/en/news/episcopal-consecrations-updated-dossier-57964>.
 
--   “General House Statement Following the Episcopal Consecrations,” 1 July 2026, <https://fsspx.news/en/news/general-house-statement-following-episcopal-consecrations-59913>; “«Habetis mandatum apostolicum? » Declaration read before the episcopal consecrations,” 2 July 2026, <https://fsspx.news/en/news/habetis-mandatum-apostolicum-declaration-read-episcopal-consecrations-59936>.
+- “General House Statement Following the Episcopal Consecrations,” 1 July 2026, <https://fsspx.news/en/news/general-house-statement-following-episcopal-consecrations-59913>; “«Habetis mandatum apostolicum? » Declaration read before the episcopal consecrations,” 2 July 2026, <https://fsspx.news/en/news/habetis-mandatum-apostolicum-declaration-read-episcopal-consecrations-59936>.
 
--   “Letter to the Holy Father regarding the Decree of the Dicastery for the Doctrine of the Faith,” 3 July 2026, <https://fsspx.news/en/news/letter-holy-father-regarding-decree-dicastery-doctrine-faith-59956>; “General House Communiqué: The Society Files a Recourse Against the Decree of 2 July 2026,” 13 July 2026, <https://fsspx.news/en/news/general-house-communique-society-files-recourse-against-decree-2-july-2026-60112>; “Letter from the Superior General to all the faithful,” 19 July 2026, <https://fsspx.news/en/news/letter-superior-general-all-faithful-society-saint-pius-x-60210>; “A Timeline of the Society of Saint Pius X’s July 1, 2026, Episcopal Consecrations,” 14 July 2026, <https://sspx.org/en/news/timeline-society-saint-pius-xs-july-1-2026-episcopal-consecrations-60126>.
+- “Letter to the Holy Father regarding the Decree of the Dicastery for the Doctrine of the Faith,” 3 July 2026, <https://fsspx.news/en/news/letter-holy-father-regarding-decree-dicastery-doctrine-faith-59956>; “General House Communiqué: The Society Files a Recourse Against the Decree of 2 July 2026,” 13 July 2026, <https://fsspx.news/en/news/general-house-communique-society-files-recourse-against-decree-2-july-2026-60112>; “Letter from the Superior General to all the faithful,” 19 July 2026, <https://fsspx.news/en/news/letter-superior-general-all-faithful-society-saint-pius-x-60210>; “A Timeline of the Society of Saint Pius X’s July 1, 2026, Episcopal Consecrations,” 14 July 2026, <https://sspx.org/en/news/timeline-society-saint-pius-xs-july-1-2026-episcopal-consecrations-60126>.
 
 ### Consequential negative results
 
--   No decree of erection (1970), decree of suppression (1975), Cardinals’ Commission letter (1975), decree of suspension (1976), protocol (1988), information note of 16 June 1988, decree *Dominus Marcellus Lefebvre* (1988), Gagnon report, or Doctrinal Preamble (2011) was located in *Acta Apostolicae Sedis*, on vatican.va, or in the Holy See Press Office bulletin.
+- No decree of erection (1970), decree of suppression (1975), Cardinals’ Commission letter (1975), decree of suspension (1976), protocol (1988), information note of 16 June 1988, decree *Dominus Marcellus Lefebvre* (1988), Gagnon report, or Doctrinal Preamble (2011) was located in *Acta Apostolicae Sedis*, on vatican.va, or in the Holy See Press Office bulletin.
 
--   Literal searches of the text layer of the scanned *Acta* volumes for 1971, 1974 and 1975 return no occurrence of Archbishop Lefebvre’s name; the 1976 volume contains only the consistory allocution; the 1988 volume only the papal letter of 8 April and *Ecclesia Dei*.
+- Literal searches of the text layer of the scanned *Acta* volumes for 1971, 1974 and 1975 return no occurrence of Archbishop Lefebvre’s name; the 1976 volume contains only the consistory allocution; the 1988 volume only the papal letter of 8 April and *Ecclesia Dei*.
 
--   No item concerning the Society appears in the Holy See Press Office bulletins for February 2026, although the Society’s communiqué of 19 February refers to a Holy See statement of 12 February.
+- No item concerning the Society appears in the Holy See Press Office bulletins for February 2026, although the Society’s communiqué of 19 February refers to a Holy See statement of 12 February.
 
--   No Holy See response to the recourse of 11 July 2026 appears in the bulletins through 25 July 2026.
+- No Holy See response to the recourse of 11 July 2026 appears in the bulletins through 25 July 2026.
 
 **Last revised (UTC):** 2026-07-26T02:03:00Z
 

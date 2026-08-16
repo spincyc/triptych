@@ -358,23 +358,23 @@ The local imprimatur means that permission to print was given under the discipli
 
 The expanded secret is not merely a stylistic copy of the 1851 document. It begins by saying the material may be published in 1858—a release date absent from the July 1851 manuscript—and contains extensive new matter:
 
--   a sweeping and graphic indictment of priests for corrupt life, money, honors, pleasure, and irreverent celebration;
+- a sweeping and graphic indictment of priests for corrupt life, money, honors, pleasure, and irreverent celebration;
 
--   warnings to Pius IX, Napoleon, Italy, and rulers, with specified political and ecclesial conflicts;
+- warnings to Pius IX, Napoleon, Italy, and rulers, with specified political and ecclesial conflicts;
 
--   dates such as 1859, 1864, and 1865, and a sequence extending for decades;
+- dates such as 1859, 1864, and 1865, and a sequence extending for decades;
 
--   demonic wonders, false resurrections, religious houses losing faith, and ecclesiastical crisis;
+- demonic wonders, false resurrections, religious houses losing faith, and ecclesiastical crisis;
 
--   international wars, destruction of Paris and Marseille, earthquakes, slaughter, a short era of peace, and ten kings;
+- international wars, destruction of Paris and Marseille, earthquakes, slaughter, a short era of peace, and ten kings;
 
--   an elaborate parentage and childhood of Antichrist, cosmic disruptions, Enoch and Elijah, and final purification;
+- an elaborate parentage and childhood of Antichrist, cosmic disruptions, Enoch and Elijah, and final purification;
 
--   the statements that Rome will lose the faith and become the seat of Antichrist, and that the Church will be eclipsed;
+- the statements that Rome will lose the faith and become the seat of Antichrist, and that the Church will be eclipsed;
 
--   an appeal to “apostles of the last times”; and
+- an appeal to “apostles of the last times”; and
 
--   the assertion that a rule for a new order was separately dictated.
+- the assertion that a rule for a new order was separately dictated.
 
 Many themes have loose analogues in the 1851 text: persecution, clerical disorder, famine, a ruler, relapse after prosperity, and Antichrist. Continuity of motif is not identity of document. The scale, tone, chronology, political names, ecclesial accusations, and new-order claim are materially different. The famous Rome sentence belongs to this expanded layer; it must never be quoted as if it were in the public message or the sealed 1851 manuscript.
 
@@ -511,15 +511,15 @@ Ginoulhiac’s 1854 principle remains wise. An event in 1846 is not retroactivel
 
 The later lives remain relevant in proportion:
 
--   sustained affirmation bears on sincerity, but not directly on supernatural cause;
+- sustained affirmation bears on sincerity, but not directly on supernatural cause;
 
--   changing texts bear on confidence in exact wording and later claims;
+- changing texts bear on confidence in exact wording and later claims;
 
--   responses to legitimate authority bear on prudence, but require exact orders and circumstances;
+- responses to legitimate authority bear on prudence, but require exact orders and circumstances;
 
--   financial or political exploitation can explain distortions, but must be proved rather than insinuated;
+- financial or political exploitation can explain distortions, but must be proved rather than insinuated;
 
--   spiritual fruit in others may support pastoral reception, but does not validate every source layer.
+- spiritual fruit in others may support pastoral reception, but does not validate every source layer.
 
 The Church’s mission begins precisely because the witnesses cannot remain the permanent managers of a worldwide devotion. The public message enters preaching, sacrament, scholarship, and ecclesial oversight. The children are honored by telling the truth about their humanity, not by forcing them to carry an impossible charism of lifelong inerrancy.
 

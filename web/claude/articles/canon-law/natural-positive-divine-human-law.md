@@ -521,32 +521,32 @@ All web sources were fetched over HTTPS, hashed (SHA-256), and read on 2026-07-2
 
 ### Law
 
--   *Codex Iuris Canonici* (1983), Latin: Holy See web deliveries, one page per book, <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberI_la.html> through `cic_liberVII_la.html`. English: Holy See web deliveries by canon range under <https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/>. Canons quoted: 1, 6, 11, 17, 19, 22, 23–28, 85–93, 98, 113, 129, 145, 199, 207, 375, 748, 750, 751, 1008, 1059, 1075, 1084, 1163, 1165, 1249, 1290, 1315, 1399.
+- *Codex Iuris Canonici* (1983), Latin: Holy See web deliveries, one page per book, <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberI_la.html> through `cic_liberVII_la.html`. English: Holy See web deliveries by canon range under <https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/>. Canons quoted: 1, 6, 11, 17, 19, 22, 23–28, 85–93, 98, 113, 129, 145, 199, 207, 375, 748, 750, 751, 1008, 1059, 1075, 1084, 1163, 1165, 1249, 1290, 1315, 1399.
 
--   John Paul II, apostolic constitution *Sacrae disciplinae leges* (25 January 1983), English: <https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_25011983_sacrae-disciplinae-leges.html>.
+- John Paul II, apostolic constitution *Sacrae disciplinae leges* (25 January 1983), English: <https://www.vatican.va/content/john-paul-ii/en/apost_constitutions/documents/hf_jp-ii_apc_25011983_sacrae-disciplinae-leges.html>.
 
--   Francis, apostolic constitution *Pascite gregem Dei* (23 May 2021), English: <https://www.vatican.va/content/francesco/en/apost_constitutions/documents/papa-francesco_costituzione-ap_20210523_pascite-gregem-dei.html>.
+- Francis, apostolic constitution *Pascite gregem Dei* (23 May 2021), English: <https://www.vatican.va/content/francesco/en/apost_constitutions/documents/papa-francesco_costituzione-ap_20210523_pascite-gregem-dei.html>.
 
 ### Classical sources
 
--   Isidore of Seville, *Etymologiarum sive Originum libri XX*, ed. W. M. Lindsay, vol. 1 (Oxford: Clarendon Press, 1911); scan of the University of Toronto exemplar, Internet Archive item `isidori01isiduoft`; Book V chapters ii–vi and xxi read at retained page images (leaves 192, 193, 196), IIIF service <https://iiif.archive.org/iiif/>.
+- Isidore of Seville, *Etymologiarum sive Originum libri XX*, ed. W. M. Lindsay, vol. 1 (Oxford: Clarendon Press, 1911); scan of the University of Toronto exemplar, Internet Archive item `isidori01isiduoft`; Book V chapters ii–vi and xxi read at retained page images (leaves 192, 193, 196), IIIF service <https://iiif.archive.org/iiif/>.
 
--   Gratian, *Decretum* (Concordia discordantium canonum), Distinctions 1, 4, 8, 9, in the text of Aemilius Friedberg, *Corpus iuris canonici*, editio Lipsiensis secunda, vol. 1 (Leipzig: Tauchnitz, 1879), as transcribed by the Münchener DigitalisierungsZentrum online edition, <https://geschichte.digitale-sammlungen.de/decretum-gratiani/>.
+- Gratian, *Decretum* (Concordia discordantium canonum), Distinctions 1, 4, 8, 9, in the text of Aemilius Friedberg, *Corpus iuris canonici*, editio Lipsiensis secunda, vol. 1 (Leipzig: Tauchnitz, 1879), as transcribed by the Münchener DigitalisierungsZentrum online edition, <https://geschichte.digitale-sammlungen.de/decretum-gratiani/>.
 
--   Thomas Aquinas, *Summa theologiae* I-II qq. 90–97. Latin: Corpus Thomisticum (site presents the Leonine text), pages `sth2090`, `sth2093`, `sth2094`, and `sth2095` under <https://www.corpusthomisticum.org/>. English: Fathers of the English Dominican Province translation, New Advent, pages `2090.htm` through `2097.htm` under <https://www.newadvent.org/summa/>.
+- Thomas Aquinas, *Summa theologiae* I-II qq. 90–97. Latin: Corpus Thomisticum (site presents the Leonine text), pages `sth2090`, `sth2093`, `sth2094`, and `sth2095` under <https://www.corpusthomisticum.org/>. English: Fathers of the English Dominican Province translation, New Advent, pages `2090.htm` through `2097.htm` under <https://www.newadvent.org/summa/>.
 
 ### Magisterial teaching
 
--   *Catechism of the Catholic Church* 1954–1960. English: <https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_1/i_the_natural_moral_law.html>; Latin (typical-edition text): <https://www.vatican.va/archive/catechism_lt/p3s1c3a1_lt.htm>.
+- *Catechism of the Catholic Church* 1954–1960. English: <https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_1/i_the_natural_moral_law.html>; Latin (typical-edition text): <https://www.vatican.va/archive/catechism_lt/p3s1c3a1_lt.htm>.
 
--   John Paul II, encyclical *Veritatis splendor* (6 August 1993), nn. 12, 40–45, English:  
-    <https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html>; Latin text AAS 85 (1993) 1133–1228 (not collated).
+- John Paul II, encyclical *Veritatis splendor* (6 August 1993), nn. 12, 40–45, English:  
+  <https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html>; Latin text AAS 85 (1993) 1133–1228 (not collated).
 
--   Second Vatican Council, declaration *Dignitatis humanae* (7 December 1965), n. 3, English: <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html>.
+- Second Vatican Council, declaration *Dignitatis humanae* (7 December 1965), n. 3, English: <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html>.
 
 ### Reported literature (not consulted at source)
 
--   G. Grisez, “The First Principle of Practical Reason: A Commentary on the *Summa theologiae*, 1-2, Question 94, Article 2,” *Natural Law Forum* 10 (1965) 168–201; J. Finnis, *Natural Law and Natural Rights* (Oxford: Clarendon Press, 1980); R. Hittinger, *A Critique of the New Natural Law Theory* (Notre Dame, 1987); R. McInerny, *Aquinas on Human Action* (Washington, 1992). Cited only as the named positions in the reported debate of section 12.
+- G. Grisez, “The First Principle of Practical Reason: A Commentary on the *Summa theologiae*, 1-2, Question 94, Article 2,” *Natural Law Forum* 10 (1965) 168–201; J. Finnis, *Natural Law and Natural Rights* (Oxford: Clarendon Press, 1980); R. Hittinger, *A Critique of the New Natural Law Theory* (Notre Dame, 1987); R. McInerny, *Aquinas on Human Action* (Washington, 1992). Cited only as the named positions in the reported debate of section 12.
 
 **Last revised (UTC):** 2026-07-25T09:42:30Z
 
