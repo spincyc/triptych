@@ -169,7 +169,14 @@ NODE = shutil.which("node")
 # prefix and the carried fallback, so a Catena text request resolves only
 # inside byte-exact `structure/catena/text/` and a whitespace-wrapped path is
 # refused rather than repaired. The page is untouched.
-MODEL_SHA256 = "ae5afaa3f093cdd492bb8bc998f213010cdc54bc74572beba14946111e89fd87"
+# V9 changes the model alone, and only for the composed closure the V8
+# review required: the spine's `text_prefix` now carries three states —
+# absent, stated-and-valid, stated-and-refused — instead of the two a bare
+# `textTrail` string could hold, and the carried `text_path` may stand in
+# ONLY when the prefix is genuinely absent. A refused statement is terminal:
+# it composes no request and opens no carried door, and the row keeps the
+# refusal as `text_refused`. The page is again untouched.
+MODEL_SHA256 = "9514afb1c09de02438513651e8828d4ac30620e13b6402295ca6199fa452f488"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -5385,7 +5392,7 @@ class FrozenContractTest(ReplayTest):
         self.assertEqual(
             digest, MODEL_SHA256,
             "catena-model.js moved; it is UMD, DOM-free, replayed by `catena check`, "
-            "and no part of this correction touches it")
+            "and this correction pins the exact bytes it reviewed")
 
     def test_the_model_names_no_part_of_a_document(self):
         source = without_comments(held(CATENA / "catena-model.js"), script=True)

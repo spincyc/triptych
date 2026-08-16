@@ -466,7 +466,16 @@
     'edition_published', 'translators', 'container', 'rights', 'attribution',
     'rights_basis', 'acknowledgement'];
 
-  /** One fragment as this page may use it, or null. */
+  /**
+   * One fragment as this page may use it, or null.
+   *
+   * `prefix` is the spine's `text_prefix` STATEMENT, not a string: `{stated,
+   * trail}`, where `stated` says whether the file carried the property at all
+   * and `trail` is its `textTrail`-validated value or ''. V9: a string here
+   * was two states doing the work of three. This is an exported entry point,
+   * so both members are re-asked inside — a claim this function did not
+   * derive composes nothing, and any other shape resolves no text at all.
+   */
   function fragmentRow(fragment, sources, prefix) {
     // THE SOURCE KEY IS A PROPERTY LOOKUP, and V6's review proved a lookup is a
     // coercion: `sources[["1"]]` is `sources["1"]`, so a one-member LIST
@@ -515,25 +524,43 @@
 
     const extent = bag(said('extent'));
     const voice = sound(said('voice'));
+    // The claim is re-asked, not trusted: `stated` must be the boolean itself
+    // and the trail must still be the route's own namespace. Any other
+    // argument — the old string contract included — is neither the absent
+    // state nor a valid statement, and resolves no text: fail closed.
+    const claim = bag(prefix);
+    const stated = claim.stated;
+    const head = textTrail(claim.trail);
     return {
       id: id,
       // COMPOSED, NEVER CARRIED. The file states once where its fragment texts
       // live and the fragment states its own identity; the request is built
       // from those two validated values and from nothing else. Where the file
-      // states no prefix — the sample corpus does not — a `text_path` the
+      // states NO prefix — the sample corpus does not — a `text_path` the
       // record itself carries may stand in, but only when it is a Catena text
       // file inside `TEXT_HOME` byte-exactly AND its stem is this fragment's
       // own validated id. So the path can address one thing: the text, in this
       // route's own holding, of the fragment that carried it. A same-stem file
       // in another namespace names some other text by definition — that is the
       // V7 finding — and is discarded here, before projection completes,
-      // rather than guarded at the fetch.
+      // rather than guarded at the fetch. V9: a prefix the file stated and
+      // this page refused is the THIRD state, and it is terminal — the V8
+      // finding was `prefix ?`, a truthy test that read refusal as absence
+      // and let the carried file stand in for a statement the page had just
+      // declined to request against. Only genuine absence opens the carried
+      // door; refusal resolves no text at all.
       text_path: id
-        ? (prefix ? prefix + id + '.json'
-          : textLeaf(own.text_path).endsWith('/' + id + '.json')
-            ? textLeaf(own.text_path)
-            : '')
+        ? (stated === true && head !== '' ? head + id + '.json'
+          : stated === false
+            && textLeaf(own.text_path).endsWith('/' + id + '.json')
+              ? textLeaf(own.text_path)
+              : '')
         : '',
+      // THE REFUSAL, KEPT. The row is the only channel across the page
+      // boundary, and '' alone reads "the record states no text location"
+      // over "it stated one this page refused". The fact travels so no later
+      // reader has to re-derive it from the absence of a path.
+      text_refused: stated === true && head === '',
       author: author,
       work: work,
       date: say(said('date')),
@@ -630,10 +657,24 @@
 
   /** Every fragment of one chapter file that can be one, in the order given. */
   function chapterFragments(file) {
-    const sources = bag(bag(file).sources);
-    // `textTrail`, not `trail`: the prefix is the head of a URL this page
-    // requests, and only the route's own namespace may head one.
-    const prefix = textTrail(bag(file).text_prefix);
+    const record = bag(file);
+    const sources = bag(record.sources);
+    // THE PREFIX HAS THREE STATES, and `textTrail` alone carries two. V9, the
+    // V8 finding: a prefix the file never stated and a prefix the file stated
+    // and this page refused both left `textTrail` as '', and `fragmentRow`
+    // read that one '' as leave to consult the carried `text_path` — so a
+    // refused `structure/paragraphs/` prefix still fetched a valid same-stem
+    // carried file. Whether the file SAID anything is a fact the validated
+    // trail cannot hold, so it travels beside it: `stated` is property
+    // presence on the spine record itself — `null`, a record, a list, a
+    // number, a flag, '', whitespace and a wrong namespace are each a
+    // statement this page refused, never an absence. `textTrail`, not
+    // `trail`: the prefix is the head of a URL this page requests, and only
+    // the route's own namespace may head one.
+    const prefix = {
+      stated: Object.hasOwn(record, 'text_prefix'),
+      trail: textTrail(record.text_prefix)
+    };
     const rows = [];
     // `records` rather than `file.fragments || []`: a spine whose `fragments`
     // is a record or a string is a broken record, and mapping over it threw out
