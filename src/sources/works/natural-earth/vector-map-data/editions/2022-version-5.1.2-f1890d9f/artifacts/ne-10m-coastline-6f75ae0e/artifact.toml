@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-coastline-6f75ae0e"
+edition_id = "edition.natural-earth.vector-map-data.version-5.1.2-f1890d9f"
+artifact_type = "geojson-vector-layer"
+media_type = "application/geo+json"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "Natural Earth's official Terms of Use, https://www.naturalearthdata.com/about/terms-of-use/, state that all versions of its raster and vector map data are in the public domain and may be used and modified in any manner."
+rights_jurisdiction = "United States"
+source_url = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/f1890d9f152c896d250a77557a5751a93d494776/geojson/ne_10m_coastline.geojson"
+provenance = "Exact whole GeoJSON file fetched directly from the Natural Earth Vector repository at commit f1890d9f152c896d250a77557a5751a93d494776 and hashed without transformation."
+retrieved = "2026-08-16"
+sha256 = "6f75ae0e0de157b14946e2255eb1f5486d9a13819032e26d4610852d296788f6"
+byte_size = 10110735
+indexable = false
+notes = "The complete Natural Earth 1:10m coastline line layer. It is recorded remotely because the publication retains its exact acquisition and crop receipt rather than duplicating the 10 MB world layer in Git."

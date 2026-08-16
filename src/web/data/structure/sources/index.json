@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 1475,
-  "editions": 660,
+  "artifacts": 1485,
+  "editions": 664,
   "passages": 2751,
   "readable": 1630,
-  "works": 495
+  "works": 498
  },
  "facets": {
   "authors": [
@@ -678,6 +678,10 @@
     "works": 1
    },
    {
+    "id": "Mapzen, a Linux Foundation project",
+    "works": 1
+   },
+   {
     "id": "Martin Gerbert",
     "works": 1
    },
@@ -751,6 +755,14 @@
    },
    {
     "id": "National Shrine of Our Lady of Champion, Champion, Wisconsin",
+    "works": 1
+   },
+   {
+    "id": "Natural Earth",
+    "works": 1
+   },
+   {
+    "id": "Natural Earth; Tom Patterson, Nathaniel Vaughn Kelso, and contributors",
     "works": 1
    },
    {
@@ -1316,6 +1328,10 @@
     "works": 2
    },
    {
+    "id": "cartographic-dataset",
+    "works": 2
+   },
+   {
     "id": "catechism",
     "works": 2
    },
@@ -1397,6 +1413,10 @@
    },
    {
     "id": "post-synodal-apostolic-exhortation",
+    "works": 2
+   },
+   {
+    "id": "rights-policy",
     "works": 2
    },
    {
@@ -2064,10 +2084,6 @@
     "works": 1
    },
    {
-    "id": "rights-policy",
-    "works": 1
-   },
-   {
     "id": "satirical-dialogue",
     "works": 1
    },
@@ -2154,7 +2170,7 @@
   ],
   "languages": [
    {
-    "editions": 330,
+    "editions": 333,
     "id": "en"
    },
    {
@@ -2232,6 +2248,10 @@
    {
     "editions": 1,
     "id": "syr"
+   },
+   {
+    "editions": 1,
+    "id": "und"
    }
   ],
   "periods": [
@@ -2286,14 +2306,14 @@
     "label": "20th century"
    },
    {
-    "editions": 350,
+    "editions": 354,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 961,
+    "artifacts": 965,
     "id": "public-domain"
    },
    {
@@ -2301,11 +2321,11 @@
     "id": "restricted"
    },
    {
-    "artifacts": 84,
+    "artifacts": 86,
     "id": "unresolved"
    },
    {
-    "artifacts": 51,
+    "artifacts": 55,
     "id": "licensed"
    },
    {
@@ -10647,6 +10667,47 @@
    "title": "Introduction to Rituale Romanum: Editio typica 1952"
   },
   {
+   "alternate_titles": [
+    "Terrain Tiles",
+    "Tilezen terrain tiles"
+   ],
+   "author": "Mapzen, a Linux Foundation project",
+   "category": "cartographic-dataset",
+   "directory": "editions/mapzen/terrain-tiles/",
+   "editions": [
+    {
+     "date": "2017-11-21",
+     "file": "2017-2017-joerd-docs-0b867651.json",
+     "id": "edition.mapzen.terrain-tiles.joerd-docs-0b867651",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "year": 2017
+    },
+    {
+     "date": "2026-08-16",
+     "file": "2026-2026-aws-open-data-registry-web-2026-08-16.json",
+     "id": "edition.mapzen.terrain-tiles.aws-open-data-registry-web-2026-08-16",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "year": 2026
+    }
+   ],
+   "id": "work.mapzen.terrain-tiles",
+   "languages": [
+    "und",
+    "en"
+   ],
+   "title": "Mapzen Terrain Tiles"
+  },
+  {
    "alternate_titles": [],
    "author": "Martin Gerbert",
    "category": "liturgical-source-collection",
@@ -11194,6 +11255,58 @@
     "en"
    ],
    "title": "National Shrine of Our Lady of Champion: apparition narrative, historical timeline, and solemnity pages"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Natural Earth",
+   "category": "rights-policy",
+   "directory": "editions/natural-earth/terms-of-use/",
+   "editions": [
+    {
+     "date": "2026-08-16",
+     "file": "2026-2026-web-2026-08-16.json",
+     "id": "edition.natural-earth.terms-of-use.web-2026-08-16",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "year": 2026
+    }
+   ],
+   "id": "work.natural-earth.terms-of-use",
+   "languages": [
+    "en"
+   ],
+   "title": "Natural Earth Terms of Use"
+  },
+  {
+   "alternate_titles": [
+    "Natural Earth vector data"
+   ],
+   "author": "Natural Earth; Tom Patterson, Nathaniel Vaughn Kelso, and contributors",
+   "category": "cartographic-dataset",
+   "directory": "editions/natural-earth/vector-map-data/",
+   "editions": [
+    {
+     "date": "2022-05-13",
+     "file": "2022-2022-version-5.1.2-f1890d9f.json",
+     "id": "edition.natural-earth.vector-map-data.version-5.1.2-f1890d9f",
+     "language": "und",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "year": 2022
+    }
+   ],
+   "id": "work.natural-earth.vector-map-data",
+   "languages": [
+    "und"
+   ],
+   "title": "Natural Earth Vector Map Data"
   },
   {
    "alternate_titles": [],

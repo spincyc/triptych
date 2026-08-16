@@ -1,0 +1,48 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "html",
+   "byte_size": 12673,
+   "id": "artifact.mapzen.terrain-tiles.aws-open-data-registry-web-2026-08-16.terrain-tiles-html-5ac8eee4",
+   "media_type": "text/html; charset=utf-8",
+   "notes": "The page describes a global bare-earth elevation dataset, identifies Mapzen as manager, directs rights questions to Tilezen's attribution document, and records the public elevation-tiles-prod and elevation-tiles-prod-eu S3 buckets. It is an authority for delivery identity, not a manifest of the publication's 88 selected tiles.",
+   "page_count": null,
+   "retrieved": "2026-08-16",
+   "rights": "unresolved",
+   "rights_basis": "The public registry page supplies dataset identity and access information but no license permitting republication of the page's own HTML. The exact response is hashed and not redistributed.",
+   "rights_jurisdiction": null,
+   "source_url": "https://registry.opendata.aws/terrain-tiles/",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": "Registry of Open Data on AWS",
+  "date": "2026-08-16",
+  "editors": [],
+  "id": "edition.mapzen.terrain-tiles.aws-open-data-registry-web-2026-08-16",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "A dated state of the mutable AWS registry entry. It identifies Mapzen as manager, the public S3 resources, and the Tilezen attribution document as the license route. It does not enumerate or freeze the tile objects in either bucket.",
+  "publication": "Registry of Open Data on AWS, https://registry.opendata.aws/terrain-tiles/",
+  "title": "Terrain Tiles, AWS Registry of Open Data web state of 16 August 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Terrain Tiles",
+   "Tilezen terrain tiles"
+  ],
+  "author": "Mapzen, a Linux Foundation project",
+  "category": "cartographic-dataset",
+  "description": "A worldwide tiled bare-earth elevation dataset published in Terrarium, normal-map, GeoTIFF, and Skadi formats. The exact documentation and AWS registry states are separately manifested. Because a cartographic crop may comprise many independently addressable tile objects and upstream source regions, no single source-library artifact is used to stand for a multi-tile acquisition.",
+  "id": "work.mapzen.terrain-tiles",
+  "languages": [
+   "und",
+   "en"
+  ],
+  "title": "Mapzen Terrain Tiles"
+ }
+}

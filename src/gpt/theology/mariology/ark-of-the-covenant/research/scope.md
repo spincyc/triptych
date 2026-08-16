@@ -49,12 +49,14 @@ proper grounds.
   bounded pastoral synthesis of ordered and commanded reception before God's
   embodied Presence, with Joseph's Davidic sonship, obedient reception,
   naming, guardianship, and household headship kept visible;
-- an original pencil map with a textual route equivalent and complete evidence,
+- a source-first cartographic map with Natural Earth physical geography,
+  version-pinned Mapzen Terrarium relief, a separately authored semantic
+  overlay, and a textual route equivalent, together with complete evidence,
   uncertainty, provenance, rights, and accessibility records;
-- pencil-style, source-controlled diagrams of the Ark's commanded construction
-  and of its attested placement in the wilderness Tabernacle, Shiloh, David's
-  tent on Zion, and Solomon's Temple, with uncertain sanctuary form and exact
-  location stated rather than reconstructed as fact;
+- five finely detailed, source-controlled graphite plates of the Ark's
+  commanded features and its attested settings in the wilderness Tabernacle,
+  Shiloh, David's tent on Zion, and Solomon's Temple, with uncertain sanctuary
+  form and exact location stated rather than reconstructed as fact;
 - spiritual pedagogy adapted in original prose from C. S. Lewis's movement
   from wonder to clarified supernatural reason, Dom Chautard's priority of the
   interior life for apostolic fruit, and Réginald Garrigou-Lagrange's
@@ -89,10 +91,23 @@ specialist review.
 
 ## Review state
 
-The research, source bindings, drafting, map and diagram production, final
-two-pass 42-page PDF build, every-page visual review, PDF/web equivalence
-review, installation, catalogue entry, and alpha release record are complete.
-The publication is a release candidate. External specialist and ecclesiastical
-review remain unclaimed; they do not block the qualified alpha. Release-binding
-refresh, repository gates, commit, push, and deployed-route verification remain
-to be recorded in the work register.
+The research, source bindings, argument, and catalogue entry remain established.
+A 16 August 2026 correction replaces the superseded map and diagram treatment
+with source-controlled, finely detailed graphite plates, reconciles the paired
+provider links, and normalizes biblical book nomenclature. The current GPT
+candidate is a 46-page PDF, SHA-256
+`0d995ac1d447f53cc55496fa8907c16a7940639b986fee02579b16e87d7164da`;
+the final review run records the same 46-page identity. The
+generated GPT web candidate has SHA-256
+`8083f51e35ce1d72fdd306d23c378361e70f778ee27f1a7acaeb915c1e27a2d4`.
+The separately authored Claude companion candidate is 65 pages, SHA-256
+`7877add8a640a9d2f237eb149e35440bc8c392ce84fe30a24e16a03b54c3d7d0`.
+
+Internal every-page PDF review, map and original-resolution artwork review,
+and PDF-to-web equivalence review pass for these candidates. The GPT PDF,
+Claude PDF, and GPT web edition are installed and byte-identical to the
+reviewed candidates at the identities above. Repository release gates, commit,
+push, and deployed-route verification remain
+subsequent work and are not claimed here. External specialist and
+ecclesiastical review also remain unclaimed; they do not block a qualified
+alpha once the repository's internal release gates pass.

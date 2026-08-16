@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.data-sources-md-dcf07b15"
+edition_id = "edition.mapzen.terrain-tiles.joerd-docs-0b867651"
+artifact_type = "markdown-document"
+media_type = "text/markdown; charset=utf-8"
+storage = "remote"
+rights_status = "licensed"
+rights_basis = "The sibling docs/LICENSE.md at the same commit states that Mapzen's documentation text and diagrams are licensed under Creative Commons Attribution 4.0 International."
+license = "CC-BY-4.0"
+source_url = "https://raw.githubusercontent.com/tilezen/joerd/0b86765156d0612d837548c2cf70376c43b3405c/docs/data-sources.md"
+provenance = "Exact whole Markdown document fetched directly from the Tilezen joerd repository at commit 0b86765156d0612d837548c2cf70376c43b3405c and hashed without transformation."
+retrieved = "2026-08-16"
+sha256 = "dcf07b156bc25930dfe3e1a55d8efd4a2e3b5376393d23bf24d1fc1dd02c5948"
+byte_size = 12162
+encoding = "utf-8"
+indexable = false
+notes = "Identifies the terrain source families, their geographic and zoom-level roles, and the per-tile X-Imagery-Sources response-header grammar. It is the authority for interpreting the publication receipt's SRTM, GMTED2010, and ETOPO1 lineage strings, not a substitute for the exact headers recorded for each selected tile."

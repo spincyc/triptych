@@ -3,8 +3,8 @@ schema_version = 1
 [[deliverables]]
 id = "gpt-mary-new-ark-journey-2026-08-15"
 owner = "src/gpt/theology/mariology/ark-of-the-covenant/research/scope.md"
-promise = "Publish a source-audited Catholic Marian study that tells the Ark's scriptural journey, presents Mary as its living New-Covenant fulfillment in Christ, synthesizes authenticated patristic and saintly reception, relates the four Marian dogmas, gives Joseph and Mary's true virginal marriage a positive and proper place in the typology, applies the requested spiritual pedagogy, and includes an evidence-controlled pencil map in reviewed PDF and web editions."
-state = "complete"
+promise = "Publish a source-audited Catholic Marian study that tells the Ark's scriptural journey, presents Mary as its living New-Covenant fulfillment in Christ, synthesizes authenticated patristic and saintly reception, relates the four Marian dogmas, gives Joseph and Mary's true virginal marriage a positive and proper place in the typology, applies the requested spiritual pedagogy, and includes a source-controlled detailed graphite map and Ark/sanctuary plates in the reviewed GPT PDF and web edition."
+state = "in_progress"
 
   [[deliverables.requirements]]
   id = "ark-narrative-and-scripture"
@@ -44,13 +44,13 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "pencil-map"
-  criterion = "The reviewed PDF contains a project-created pencil map whose geography, labels, routes, uncertainties, typological overlay, accessibility equivalent, provenance, rights, and production checks reconcile to a tracked source matrix."
+  criterion = "The reviewed PDF contains a very finely detailed graphite cartographic composition—not rough wavy-line diagram styling—built from pinned Natural Earth and Mapzen inputs with a project-authored semantic overlay whose geography, routes, uncertainties, typological correspondences, accessibility equivalent, provenance, rights, and production checks reconcile to a tracked source matrix."
   status = "pass"
   evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/map-provenance.md"]
 
   [[deliverables.requirements]]
   id = "ark-and-sanctuary-diagrams"
-  criterion = "The reviewed publication includes pencil-style, source-controlled diagrams of the Ark's commanded form and its attested placement in the wilderness Tabernacle, Shiloh, David's tent on Zion, and Solomon's Temple, with architectural or locational uncertainty made explicit and no generated pixel treated as factual evidence."
+  criterion = "The reviewed publication includes very finely detailed graphite illustrations of the Ark's commanded form and its attested placement in the wilderness Tabernacle, Shiloh, David's tent on Zion, and Solomon's Temple, replacing rough wavy-line schematics while keeping architectural or locational uncertainty explicit and treating no generated pixel as factual evidence."
   status = "pass"
   evidence = [
     "src/gpt/theology/mariology/ark-of-the-covenant/sections/57-ark-and-sanctuaries.tex",
@@ -66,13 +66,35 @@ state = "complete"
     "web/gpt/theology/mariology/ark-of-the-covenant.md",
     "library/mariology.md",
     "release/publications/gpt/theology/mariology/ark-of-the-covenant.json",
+    "src/gpt/theology/mariology/ark-of-the-covenant/research/sanity-review.md",
   ]
 
   [[deliverables.requirements]]
   id = "validated-push-and-deployment"
   criterion = "Required source, metadata, PDF, web, catalog, release, public-site, and deployment gates pass; the intended exact commit is pushed to origin/main without rewriting history; and the resulting Pages run and affected live routes are verified."
-  status = "pass"
+  status = "open"
   evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
+
+  [[deliverables.requirements]]
+  id = "provider-distinct-ark-catalog"
+  criterion = "The ChatGPT and Claude Ark studies appear in one Mariology catalog row with their distinct titles visible in the provider link labels; both provider PDFs remain distinct, the GPT web reader remains current, every published provider-qualified route carries the intended edition and artwork, and regression coverage prevents either edition from replacing the other."
+  status = "pass"
+  evidence = [
+    "library/mariology.md",
+    "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+    "pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+    "web/gpt/theology/mariology/ark-of-the-covenant.md",
+    "tools/tests/test_public_alpha.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "reader-facing-bible-nomenclature"
+  criterion = "Reader-facing prose identifies the biblical scene as 2 Samuel 6; the title 2 Reigns appears only where it is explicitly explained as the Septuagint name for 2 Samuel rather than as an unexplained English book title."
+  status = "pass"
+  evidence = [
+    "src/gpt/theology/mariology/ark-of-the-covenant/sections/60-scripture-recognizes-scripture.tex",
+    "src/gpt/theology/mariology/ark-of-the-covenant/sections/99-references.tex",
+  ]
 
 [[deliverables]]
 id = "corpus-browser-foundation-design-2026-08-08"

@@ -345,7 +345,11 @@ page; navigation must never imply that an interim edition fulfills the
 promised final scope.
 
 A leaf ID keeps exactly one owning catalog page no matter how many provider
-editions exist. Ordinary catalogs use named `ChatGPT` and `Claude` columns.
+editions exist. Outside profile-authorized provider-specific subsections, its
+provider editions occupy one row even when their titles differ. In that case,
+use a neutral shared-work label in the first cell and preserve each exact title
+in its provider cell's publication link. Ordinary catalogs use named `ChatGPT`
+and `Claude` columns.
 The complete Sunday-propers calendars instead use the cycles needed to scan
 the series: the 1962 calendar keeps provider columns, while the postconciliar
 calendar uses `A`, `B`, and `C`. A hidden stable-publication marker may own an

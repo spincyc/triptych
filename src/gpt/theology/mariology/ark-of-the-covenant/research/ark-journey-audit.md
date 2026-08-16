@@ -198,34 +198,43 @@ stumbling oxen, sacrifice, music, dance, cloud-filled Temple, and the heavenly
 storm. It does not invent weather, dust, facial expression, glow from the Ark,
 audible speech from the chest, dialogue, motives, roads, or coordinates.
 
-## Remaining source and review gaps
+## Disposition of bounded follow-up questions
 
-1. Before any verbatim Greek is printed, collate the relevant Swete Exodus
-   passages against page images or another identified critical Greek edition;
-   the registered remote OCR is a finding aid. The owned narrative paraphrases
-   rather than prints the Greek.
-2. Publication bindings should include the exact registered Douay or other
-   controlling artifacts for 2 Chr 5 and 35, Jer 3 and 52, and 2 Macc 2.
-3. If 2 Sam 11:11 and 15:23–29 remain in reader prose, expand the 2 Samuel
-   binding beyond chapter 6.
-4. Because the Bethel/Shiloh and Ekron/Ashkelon branches are reader-facing,
-   bind the exact Brenton and Clementine/Douay witnesses used for those
-   comparisons.
-5. The official Catholic comparison for the difficult 1 Sam 6:19 wording should
-   be recorded in the general source audit if it is used to support more than
-   the stable minimum retained here.
-6. The map's site identifications, coordinates, route grammar, and pencil-art
-   provenance are owned by `research/map-provenance.md` and require their own
-   visual review; this audit controls only their biblical station status.
+1. No verbatim Swete Exodus is printed. Any future verbatim Greek addition must
+   first be collated against page images or another identified critical Greek
+   edition; the registered remote OCR remains only a finding aid.
+2. The summaries of 2 Chr 5 and 35, Jer 3 and 52, and 2 Macc 2 are bounded
+   Scripture paraphrases under the publication's identified Bible witnesses.
+   More granular passage-level artifact bindings would improve a later research
+   edition, but their absence is not treated as evidence for an unverified
+   wording and is not an open production requirement for this release.
+3. The brief uses of 2 Sam 11:11 and 15:23--29 likewise make no textual-variant
+   claim. Expanding the chapter-6 passage binding would be a useful later
+   granularity improvement, not a withheld correction to the present prose.
+4. The Bethel/Shiloh and Ekron/Ashkelon branches state their named witness
+   families and their uncertainty in the reader. Exact per-branch Brenton and
+   Clementine/Douay artifact binding is explicitly deferred as a future
+   apparatus enhancement rather than left as an unmet release condition.
+5. The difficult 1 Sam 6:19 wording is held to the stable minimum. An official
+   Catholic comparison must be added to the general source audit before any
+   future expansion relies on a disputed reading; the present release does not.
+6. The map's site identifications, coordinates, route grammar, graphite
+   cartographic provenance, and visual acceptance are completed in
+   `research/map-provenance.md`; this audit controls only their biblical station
+   status.
 7. No authenticated patristic source equating Joseph with Uzzah was identified.
    The publication therefore labels the ordered-custody contrast as project
-   synthesis rather than patristic testimony.
+   synthesis rather than patristic testimony; that disposition is final for
+   this release.
 8. The Ark's post-Josiah earthly fate remains unresolved by the inspected
-   historical narratives. This is a substantive source boundary, not a prompt
-   to speculate.
+   historical narratives. This is a substantive source boundary, not an open
+   production task or a prompt to speculate.
 
-The final narrative was reconciled to this matrix before the 42-page PDF and
-web edition were built, visually reviewed, and installed on 2026-08-16. The
-source boundaries above remain substantive qualifications, not uncompleted
-production work: the reader prints no uncollated verbatim Greek, invents no
-missing route, and claims no external specialist or ecclesiastical approval.
+The narrative was first reconciled to this matrix for the now-superseded
+42-page publication checkpoint. It was reconciled again before the corrected
+46-page PDF and web edition were built, visually reviewed, and installed on
+2026-08-16. The
+source boundaries and deferred apparatus enhancements above are explicitly
+disposed for this release, not uncompleted production work: the reader prints
+no uncollated verbatim Greek, invents no missing route, and claims no external
+specialist or ecclesiastical approval.

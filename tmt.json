@@ -351,6 +351,17 @@
       "stage": "draft",
       "usage": "source-family-migration [--root DIR] {check,bootstrap,refresh}"
     },
+    "source-first-cartographic-artwork": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Validate source-first cartography against its audited build receipt.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "source-first-cartographic-artwork check --recipe PATH --receipt PATH --output PATH [--json]"
+    },
     "source-inventory": {
       "idempotent": true,
       "json": false,

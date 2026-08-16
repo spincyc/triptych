@@ -348,3 +348,99 @@ claim_keys = ["patristic-ark", "assumption"]
 role = "reception"
 states = ["cataloged"]
 context = "The public-domain Allies translation is a catalog-level witness to John Damascene's mature living-Ark and Dormition synthesis. It has no registered exact passage artifact and therefore supports attribution and bibliography here, not a new verified quotation claim."
+
+[[bindings]]
+source_id = "artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-coastline-6f75ae0e"
+loci = ["geojson/ne_10m_coastline.geojson"]
+claim_keys = ["map-cartography"]
+role = "direct-witness"
+states = ["cataloged", "acquired"]
+context = "The exact Natural Earth 1:10m coastline GeoJSON supplies coastline geometry for the map's geographic base. The publication-local map receipt records the crop, projection, and transformation; this binding fixes the upstream bytes and does not treat the generalized layer as evidence for a disputed biblical site."
+source_fingerprint = "sha256:382f0a05d92594102c725508e1abac261b027d516873c12e19e791591811e57f"
+
+[[bindings]]
+source_id = "artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-lakes-2d036f53"
+loci = ["geojson/ne_10m_lakes.geojson"]
+claim_keys = ["map-cartography"]
+role = "direct-witness"
+states = ["cataloged", "acquired"]
+context = "The exact Natural Earth 1:10m lakes GeoJSON supplies lake geometry for the map's geographic base. The publication-local map receipt records the crop, projection, and transformation; this binding fixes the upstream bytes and makes no claim that small or ancient water features are exhaustively represented."
+source_fingerprint = "sha256:6642cf02ad62bed62cae38f0c4036ca3d9f62ed99c6e8460020151911cc87363"
+
+[[bindings]]
+source_id = "artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-land-1ac90796"
+loci = ["geojson/ne_10m_land.geojson"]
+claim_keys = ["map-cartography"]
+role = "direct-witness"
+states = ["cataloged", "acquired"]
+context = "The exact Natural Earth 1:10m land GeoJSON supplies land polygons for the map's geographic base. The publication-local map receipt records the crop, projection, and transformation; this binding fixes the upstream bytes rather than elevating modern generalized cartography into a historical-site authority."
+source_fingerprint = "sha256:e5d50dd9ddc39207bba9e0698acb2b4e1b8c974f42c68ca7d36de04696a51b75"
+
+[[bindings]]
+source_id = "artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-rivers-lake-centerlines-bb854a90"
+loci = ["geojson/ne_10m_rivers_lake_centerlines.geojson"]
+claim_keys = ["map-cartography"]
+role = "direct-witness"
+states = ["cataloged", "acquired"]
+context = "The exact Natural Earth 1:10m rivers and lake centerlines GeoJSON supplies modern hydrographic linework for the map's geographic base. The publication-local map receipt records the crop, projection, and transformation; the layer is not used to reconstruct ancient watercourses."
+source_fingerprint = "sha256:fa4ca4401f393bef5fdc904881b2a10512680247b3f1dba0211736828a029749"
+
+[[bindings]]
+source_id = "artifact.natural-earth.terms-of-use.web-2026-08-16.natural-earth-terms-html-e5ca9cd3"
+loci = ["Terms of Use"]
+claim_keys = ["map-cartography"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Natural Earth's official policy is the rights control for the four vector layers: it expressly places all Natural Earth raster and vector map data on the site in the public domain and permits modification and publication without permission. This does not transfer that status to the policy page's own HTML."
+verified_on = "2026-08-16"
+source_fingerprint = "sha256:0909b18a92860ae037442c8ac9af3610bc8073cf7a97ab5d1ca7ab79ded61eb0"
+
+[[bindings]]
+source_id = "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.formats-md-f37b923b"
+loci = ["Terrarium"]
+claim_keys = ["map-terrain-base"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact Tilezen format document controls the decoding of the publication's Terrain Tiles inputs: Terrarium PNG values are Web Mercator elevation samples decoded by (red * 256 + green + blue / 256) - 32768. It defines the pixel format but does not identify the selected tile objects."
+verified_on = "2026-08-16"
+source_fingerprint = "sha256:a24544be97d862e5ab29599a6199f0cac04bdcca736c9a9deb66d0a0d2cd3048"
+
+[[bindings]]
+source_id = "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.attribution-md-2ce4d341"
+loci = ["Attribution", "The fine print"]
+claim_keys = ["map-terrain-base"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact Tilezen attribution document is the rights and acknowledgement control for Terrain Tiles. It records mixed upstream sources and conditions and expressly leaves users responsible for each provider's terms, so it does not support one blanket license assertion for the publication's 88 selected tile objects."
+verified_on = "2026-08-16"
+source_fingerprint = "sha256:e25762670f61becdb67943a5e90ea984d7f3973bbd9506cf5969fe552c76af53"
+
+[[bindings]]
+source_id = "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.documentation-license-md-b91b121a"
+loci = ["Creative Commons Attribution 4.0 International"]
+claim_keys = ["map-terrain-base"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "This exact license document establishes CC BY 4.0 for Mapzen's documentation text and diagrams. It is bound to keep the documentation's own license distinct from the heterogeneous rights of the elevation data described in the attribution document."
+verified_on = "2026-08-16"
+source_fingerprint = "sha256:230f0149953cb4ae085a8476fe4cf7cffc658ed39b2b6c2792024759ac37e97f"
+
+[[bindings]]
+source_id = "artifact.mapzen.terrain-tiles.aws-open-data-registry-web-2026-08-16.terrain-tiles-html-5ac8eee4"
+loci = ["Description", "License", "Resources on AWS"]
+claim_keys = ["map-terrain-base"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The dated AWS Registry page verifies the public Terrain Tiles delivery identity, Mapzen management, the elevation-tiles-prod bucket, and the registry's direction to Tilezen's attribution document for license information. It is not a tile manifest and therefore cannot stand for the 88 exact PNG objects recorded in the publication-local receipt."
+verified_on = "2026-08-16"
+source_fingerprint = "sha256:20cf13eed97e52014c06c46c39ef37e5d18b6e64ebc0dd8ecdd8c008f229845d"
+
+[[bindings]]
+source_id = "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.data-sources-md-dcf07b15"
+loci = ["Source headers", "What is sourced at what zooms?", "Sources native resolution"]
+claim_keys = ["map-terrain-base"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact Tilezen data-sources document controls interpretation of the publication receipt's per-tile X-Imagery-Sources headers. It defines those headers as comma-separated source/filename.tif lineage and documents the roles of SRTM, GMTED2010, and ETOPO1 by zoom and surface type; the receipt, not this general authority, fixes which lineages occurred in each selected tile."
+verified_on = "2026-08-16"
+source_fingerprint = "sha256:f265ed13da70715284f323ec172865e463ebffe9771a2f2eb0e61f96b36ece7f"

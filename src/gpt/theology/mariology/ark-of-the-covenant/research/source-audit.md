@@ -5,8 +5,8 @@
 - **Document:** `theology/mariology/ark-of-the-covenant`
 - **Provider:** GPT
 - **Profile:** `guidance/theology/mariology.md`
-- **Audit date:** 2026-08-15
-- **As-of date for mutable sources:** 2026-08-15
+- **Audit date:** 2026-08-16
+- **As-of date for mutable sources:** 2026-08-16
 
 This audit governs the rendered study together with `scope.md`,
 `source-bindings.toml`, and the focused research records in this leaf. It is a
@@ -241,17 +241,17 @@ fittingness.
 The publication adapts these techniques in original prose. They are not
 patristic witnesses, dogmatic authorities, or sources for a Marian definition.
 
-## Map, diagrams, and geography
+## Map, plates, and geography
 
-The map is a composite project-created figure derived from the audited
-geographic evidence. Its nonsemantic pencil-and-paper raster texture is
-AI-generated; its geography, route geometry, station symbols, labels, textual
-content, confidence encoding, and Old/New overlays are deterministic vector
-layers assembled from the controlled evidence. It is not an external map
-redrawn without attribution, and the AI texture carries no geographic or
-theological claim. Solid site markers, approximate areas, candidate sites,
-uncertain event corridors, traditional locations, and purely typological
-connectors must remain visually distinct. Specific controls include:
+The current map is a source-first v3 relief composition built from Natural
+Earth 5.1.2 vector data and pinned Mapzen Terrarium terrain tiles. The project-created
+semantic overlay supplies the route geometry, station symbols, labels, textual
+content, confidence encoding, and Old/New Testament correspondence layers from
+the controlled evidence. The underlying cartographic sources remain identified
+and attributed rather than being presented as an unaudited external map or as
+project-created geography. Solid site markers, approximate areas, candidate
+sites, uncertain event corridors, traditional locations, and purely
+typological connectors remain visually distinct. Specific controls include:
 
 - no exact route between named termini unless the biblical text supplies it;
 - no pins for Perez-uzzah or Obed-edom's house;
@@ -267,14 +267,18 @@ connectors must remain visually distinct. Specific controls include:
 - Old Testament and New Testament routes shown as separate layers, not one
   geographically coincident road;
 - a complete textual route and correspondence key present in both PDF and web;
-- sanctuary diagrams distinguish biblical prescription, schematic editorial
-  reconstruction, and typological overlay.
+- five fine graphite interpretive plates---the Ark, the wilderness Tabernacle,
+  Shiloh, David's tent, and Solomon's Temple---distinguish biblical
+  prescription from editorial reconstruction and typological overlay.
 
-`map-provenance.md` owns the exact coordinates, source URLs, AI-generation
-prompt and output history for the nonsemantic texture, deterministic vector
-assembly, artwork dimensions, mode, bytes, hash, effective resolution,
-accessibility text, and visual review. `ark-diagram-audit.md` owns the
-sanctuary-diagram geometry and visual-claim controls.
+`map-provenance.md` owns the exact coordinates, Natural Earth 5.1.2 and Mapzen
+source records, pinned terrain receipt, deterministic assembly script, source
+and output hashes, artwork dimensions, mode, bytes, effective resolution,
+accessibility text, and visual review. `ark-diagram-audit.md` owns the five
+AI-generated graphite plates' prompts, output identities, interpretive limits,
+source geometry, and visual-claim controls. Earlier AI-texture and vector-only
+map prototypes remain historical provenance in their owning records; they are
+not the current publication artwork or evidence.
 
 ## Translation, quotation, and rights limits
 
@@ -292,12 +296,14 @@ sanctuary-diagram geometry and visual-claim controls.
   translations, Constas, Aubineau, Beck, Kotter, Trypanis, and Hansbury remain
   third-party works. Quotation is short and attribution-specific; nothing is
   vendored or reproduced at chapter length.
-- The prose and deterministic vector map/diagram layers are project-created
-  contributions under the repository's license boundary. The map's
-  nonsemantic raster texture is AI-generated and disclosed with its prompt and
-  output history in `map-provenance.md`; it supplies no evidence. Source data,
-  received texts, translations, fonts, and third-party scholarship retain
-  their own status.
+- The prose, cartographic composition, and semantic overlay are project-created
+  contributions under the repository's license boundary. Natural Earth 5.1.2,
+  the pinned Mapzen terrain tiles and their incorporated source data, received
+  texts, translations, fonts, and third-party scholarship retain their own
+  status. The five AI-generated graphite plates are disclosed with their
+  prompts and output histories in `ark-diagram-audit.md`; they are interpretive
+  illustrations and supply no independent historical, geographic, or
+  theological evidence.
 
 ## Consequential negative results
 
@@ -323,20 +329,24 @@ sanctuary-diagram geometry and visual-claim controls.
 ## Production state
 
 The source and reader claims were reconciled against the focused audits on
-2026-08-16. The final two-pass build is 42 letter-size pages. Its log has no
-fatal error, undefined reference, rerun request, or overflow warning; the one
-remaining underfull box belongs to the generation-metadata paragraph. PDF
-metadata, structure, embedding, Unicode maps, and extracted text pass, with no
-replacement character. Every final page raster and bounded contact sheet was
-inspected, with full-size review of the map, Ark plate, four-sanctuary plate,
-and all four dogma synopses. The reviewed build and installed PDF are
+2026-08-16. The final reviewed build is 46 letter-size pages. Its log has no
+fatal error, undefined reference, rerun request, or overflow warning; its only
+two underfull-box warnings were located, inspected in the page rasters, and
+visually accepted. PDF metadata, structure, embedding, Unicode maps, and
+extracted text pass, with no replacement character. The 6.83 MB output crossed
+the size-investigation trigger; the investigation found the intended
+high-resolution relief-map and graphite-plate rasters rather than an
+unexplained payload or rasterized body text. Every final page raster and the
+bounded contact sheets were inspected, with full-size review of both map
+panels, all five graphite plates, and all four dogma synopses. The reviewed PDF
+recorded by `build/pdf-review/gpt-ark-postff-2026-08-16/review-run.json` and the installed PDF are
 byte-identical at SHA-256
-`a520adb39130bb3b65a3bd7d92926fbc77126650fdf593d0680fc10bee125843`.
+`0d995ac1d447f53cc55496fa8907c16a7940639b986fee02579b16e87d7164da`.
 
-The generated and installed web edition is byte-identical at SHA-256
-`3a5e96c2405e1d311acf65ef931a45ebee502e459817f5a744833858ce62d1bc`;
-the owning catalogue and alpha release record exist. External specialist and
+The generated and installed web editions are byte-identical at SHA-256
+`8083f51e35ce1d72fdd306d23c378361e70f778ee27f1a7acaeb915c1e27a2d4`.
+This audit does not anticipate commit, push, release-binding refresh,
+public-site gates, or deployed-route verification; those states are recorded
+in the work register only after they occur. External specialist and
 ecclesiastical review remain unclaimed and nonblocking for this explicitly
-qualified alpha publication. Commit, push, release-binding refresh, public-site
-gates, and deployed-route verification are recorded in the work register as
-they occur rather than anticipated here.
+qualified alpha publication.

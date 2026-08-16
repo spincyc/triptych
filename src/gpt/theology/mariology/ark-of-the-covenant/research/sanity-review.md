@@ -4,124 +4,160 @@ Checked through: 2026-08-16.
 
 ## Mandate and artifact identity
 
-This is the controlling independent execution review of *The Ark and the
-Mother of the Lord*. It reconciles the prior Scripture, dogma, patristic,
-virginal-marriage, map, rights, and publication lanes against the current
-source tree, installed artifacts, final review rasters, tracked web edition,
-rights records, and worktree diff.
+This is the controlling internal execution review of *The Ark and the Mother
+of the Lord*. It reconciles the Scripture, dogma, patristic,
+virginal-marriage, cartography, artwork, rights, and web-equivalence lanes
+against the current source tree, final review rasters, generated and installed
+web edition, rights records, and worktree diff.
 
-The settled artifacts reviewed are:
+The reviewed and installed artifacts are:
 
-- build and installed PDF: 42 letter-size pages, byte-identical, SHA-256
-  `a520adb39130bb3b65a3bd7d92926fbc77126650fdf593d0680fc10bee125843`;
-- generated and installed web edition: byte-identical, SHA-256
-  `3a5e96c2405e1d311acf65ef931a45ebee502e459817f5a744833858ce62d1bc`;
+- GPT PDF: 46 letter-size pages, with build and installed copies
+  byte-identical at SHA-256
+  `0d995ac1d447f53cc55496fa8907c16a7940639b986fee02579b16e87d7164da`;
+- final GPT PDF review run:
+  `build/pdf-review/gpt-ark-postff-2026-08-16/review-run.json`, recording the
+  same 46-page PDF identity;
+- GPT web edition: generated and installed copies byte-identical at SHA-256
+  `8083f51e35ce1d72fdd306d23c378361e70f778ee27f1a7acaeb915c1e27a2d4`;
   and
-- final PDF review run: `build/pdf-review/ark-final-2/review-run.json`, 42 pages,
-  matching the PDF hash above.
+- separately authored Claude companion PDF: 65 pages, with build and installed
+  copies byte-identical at SHA-256
+  `7877add8a640a9d2f237eb149e35440bc8c392ce84fe30a24e16a03b54c3d7d0`.
+
+Installation and byte identity pass. Release-binding refresh, commit, push,
+deployment, and live-route verification are not asserted by this review.
 
 ## Executive verdict
 
-**PASS.** Every prior content, theological, source, rights, map, web,
-production-record, and visual hold is repaired. The raised endpoints of the
-David's-tent lines leave the two-line caution unobscured on physical page 16;
-the full-size final raster contains no line/label collision.
+**PASS.** The installed artifacts pass the internal every-page, map, artwork,
+Catholic-claims, and PDF-to-web-equivalence reviews. The superseded 42-page
+artifact and its pencil-texture/TikZ-only map treatment are not the artifacts
+reviewed here.
 
-Commit, push, promised-deliverable transition, release-binding refresh, and
-deployed-route verification are intentionally subsequent release-process gates.
-They do not create a second content blocker and are not claimed complete here.
+## Reconciliation of the substantive holds
 
-## Reconciliation of the prior holds
+### Scripture and Catholic synthesis: pass
 
-### Scripture and synthesis: pass
-
-- The Visitation chapter now distinguishes Samuel's household blessing from
-  Luke's blessings of Mary and her child and expressly labels sustained service
-  during the three-month stay as Catholic contemplation rather than a recovered
-  diary.
-- The journey synopsis now says David's *dancing* joy while reserving leaping
-  for John.
-- The standard-Septuagint verbs remain distinct from the qualified Symmachus
-  lemma; the New Testament hapax claim is reproducibly bounded to MorphGNT.
-- CATSS/CenterBLC/Wong results are quarantined as restricted exploratory leads.
-  The records say that CATSS registration compliance was not established, and
-  no reader-facing total, exclusivity, or consequential claim depends on those
-  results.
-- The Uzzah/Joseph material consistently contrasts unappointed handling with
+- The Visitation chapter distinguishes Samuel's household blessing from
+  Luke's blessings of Mary and her child and labels sustained service during
+  the three-month stay as Catholic contemplation rather than a recovered diary.
+- David's *dancing* joy is kept distinct from the infant John's leaping. The
+  standard-Septuagint verbs remain distinct from the qualified Symmachus lemma,
+  and the New Testament hapax claim is reproducibly bounded to MorphGNT.
+- The publication explains that Septuagint *2 Reigns* is modern *2 Samuel* and
+  also explains older Douay-Rheims/Vulgate four-Kings numbering where needed.
+  Reader prose otherwise uses the modern book names. The Claude companion's
+  corresponding nomenclature now correctly spans modern 1--2 Samuel and 1--2
+  Kings.
+- Restricted exploratory lexical leads remain quarantined; no reader-facing
+  total, exclusivity, or consequential claim depends on them.
+- The Uzzah/Joseph material contrasts unappointed cultic handling with
   commanded personal reception. It does not make Mary dangerous, marriage
-  defiling, or continence fear-driven.
+  defiling, or continence fear-driven, and it does not cast Joseph as a second
+  Uzzah.
 
-### Dogma and marriage: pass
+### Dogma and virginal marriage: pass
 
 - Christ remains the Covenant, sole Mediator, and salvific cause; Mary remains
   the created and graced Mother of the incarnate Son.
-- The exact objects, authorities, assent, limits, and unequal Ark fittingness
-  of divine motherhood, perpetual virginity, the Immaculate Conception, and the
-  Assumption pass. All four page-bounded synopses are complete; physical page 37
-  is unclipped.
+- The exact objects, authorities, assent, limits, and unequal but real Ark
+  fittingness of divine motherhood, perpetual virginity, the Immaculate
+  Conception, and the Assumption pass.
 - Joseph and Mary's marriage is presented as true, reciprocal, tender, and
-  freely virginal, with positive marital and paternal service controlling the
-  treatment.
+  freely virginal. Joseph's Davidic sonship, obedient reception, naming,
+  guardianship, and household service positively control the synthesis.
+- The exposition proceeds from Catholic faith in miracle, providence,
+  canonical unity, typology, Tradition, and Marian doctrine. Its source
+  distinctions discipline the argument without adopting secular skepticism as
+  its governing posture.
 
-### Patristic and liturgical control: pass
+### Patristic, saintly, liturgical, and pedagogical control: pass
 
-- Ephrem's image now says "pure tablet," without the unsupported added
-  "living." The unverified *Nativity* 4.149--156 affection claim is quarantined
-  and carries no reader claim.
+- Ephrem's image says "pure tablet" without the unsupported added "living."
+  The unverified *Nativity* 4.149--156 affection lead remains quarantined and
+  carries no reader claim.
 - The Chrysippus homily is consistently a qualified transmitted witness whose
   attribution Jugie defended, not an unqualified authenticity anchor.
-- The publication makes no direct English quotation from Beck or Ephrem. A
-  future Syriac specialist collation is identified as desirable but is not an
-  alpha gate for the independently worded paraphrase.
-- The former direct English quotation "marital and virginal love" is now an
-  unquoted project paraphrase of the Roman liturgical synthesis.
-- Exact loci, attribution states, and reception limits for the patristic,
-  saintly, Byzantine, and Roman witnesses reconcile across the reader,
-  bibliography, and focused audits.
+- The publication makes no direct English quotation from Beck or Ephrem. The
+  former direct English phrase "marital and virginal love" is an unquoted
+  project paraphrase of the Roman liturgical synthesis.
+- Exact loci, attribution states, and reception limits reconcile across the
+  reader, bibliography, and focused audits. Original pedagogical adaptations
+  of C. S. Lewis, Dom Chautard, and Réginald Garrigou-Lagrange are identified as
+  adaptations rather than attributed quotations.
 
-### Map, web, and rights: pass
+## Source-first cartography: pass
 
-- Physical page 13 is repaired: the line key is below the map panel, all route
-  stations and termini are unobscured, witness differences and uncertainty
-  classes remain readable, and the text equivalent preserves the same meaning.
-- The web edition retains the map introduction, line key, interpretive caption,
-  five-correspondence box, and full numbered text equivalent while excluding
-  only the print TikZ. The targeted web fidelity result and installed/generated
-  byte identity pass.
-- The AI texture remains nonsemantic; the deterministic vector owns every
-  geographic and typological claim. The provenance record now identifies the
-  applicable OpenAI Services Agreement, effective date, output allocation,
-  non-uniqueness, and copyrightability limitation.
-- `THIRD_PARTY.md` now gives direct SBLGNT CC BY 4.0 and MorphGNT CC BY-SA 3.0
-  links, attribution, unchanged/modified status, transformation details, and
-  the ShareAlike boundary.
-- Build/installed identities, web identities, catalog/release integration,
-  log/metadata/font/extraction results, and final production states reconcile in
-  the tracked audits.
+The two-panel journey map now rests on reproducible physical geography rather
+than an AI paper texture or a diagrammatic pseudo-map. Natural Earth 5.1.2
+supplies the declared land, coastline, lake, and river geometry. Relief derives
+from exactly 88 version-pinned Mapzen Terrarium tiles whose per-tile hashes and
+imagery lineages are retained in the tracked receipt. The deterministic recipe
+verifies its inputs and produces the 3800-by-2436 grayscale base.
 
-## Final visual recheck: pass
+The raster owns no station, route, label, uncertainty class, traditional-site
+symbol, or theological claim. A separately authored semantic overlay owns
+those claims; the numbered text equivalent preserves the same route sequence,
+witness differences, uncertainty bounds, and Old/New-Covenant relationship.
+Both north-up panels, all termini, the line key, Tell el-Qudeirat's candidate
+status, and the distinction between Luke's unnamed hill-country town and the
+later Ein Karem tradition pass composed-page and equivalence review.
 
-Physical PDF page 16 (printed page 14) was rechecked at full size in
-`build/pdf-review/ark-final-2/build/gpt/theology/mariology/ark-of-the-covenant/pages/page-16.png`.
-The left and right David's-tent endpoints now terminate above the caution
-"A symbolic tent sign, not a reconstructed structure or site." Neither line
-touches the word "reconstructed," the second caption line, or any other label.
-The prior sole line/label collision is gone, and the rendered plate now agrees
-with the accepted no-collision criterion in `research/ark-diagram-audit.md`.
+## Fine graphite plates: pass
 
-The final page-16 raster has SHA-256
-`0b2ec0b10045414fdbd97623caaac1f8e59b115cc4324f2f93fa4b123e737d73`.
-The review-run record identifies the same 42-page PDF SHA-256 as the byte-
-identical build and installed copies. The generated and installed web copies
-remain byte-identical at SHA-256
-`3a5e96c2405e1d311acf65ef931a45ebee502e459817f5a744833858ce62d1bc`.
+Five publication plates replace the rejected rough, wavy, random-step studies:
+the commanded features of the Ark, the wilderness Tabernacle, the unresolved
+Shiloh setting, David's tent on Zion, and Solomon's Temple. Original-resolution
+inspection confirms controlled fine linework, cross-hatching, coherent
+perspective, and intentional white-paper fields. The consistent hairline frame
+makes each field an intentional study plate rather than an accidental raster
+boundary.
+
+The accompanying captions and text equivalents control what each image may and
+may not claim. In particular, Shiloh is not presented as a recovered building;
+David's tent is an interpretive sign rather than a site reconstruction; and
+the Temple plate is a bounded textual teaching reconstruction with exactly two
+monumental cherubim whose four wings span the inner sanctuary over the smaller
+Ark. Full-size artwork and composed-PDF review found no clipping, collision,
+pseudo-label, extra figure, or architecture asserted beyond those limits.
+
+## Every-page and web-equivalence review: pass
+
+All 46 GPT PDF pages represented by
+`build/pdf-review/gpt-ark-postff-2026-08-16/review-run.json` were
+reviewed, including the two full-width map pages, all five graphite plates, the
+four dogmatic synopses, references, metadata, and final-page pagination. No
+fatal error, undefined reference, overfull text, clipped content, accidental
+blank page, stranded heading, or sparse continuation spill remains.
+
+The generated and byte-identical installed GPT web edition preserves the
+journey, map introduction and line key, full numbered map text equivalent,
+typological correspondences, five-plate facts and nonclaims,
+virginal-marriage synthesis, dogmatic limits, Catholic framing, and explained
+*Reigns* nomenclature. It excludes only print-specific composition. Internal
+PDF-to-web equivalence review passes.
+
+The Claude companion remains a distinct 65-page provider edition with its own
+title and artwork; its installed identity above was reviewed separately. Its
+catalogue pairing does not imply byte or editorial identity with the GPT work.
+
+## Rights and records: pass
+
+The map receipt and provenance distinguish Natural Earth, the Mapzen delivery
+layer, and the recorded SRTM/GMTED2010/ETOPO1 imagery lineages. The five
+generated graphite plates remain illustrations rather than evidence, and their
+generation and selection records identify that boundary. `THIRD_PARTY.md`
+continues to state the direct SBLGNT and MorphGNT license and transformation
+boundaries. No source, visual, or rights blocker remains in the reviewed and
+installed artifacts.
 
 ## Release decision
 
-**Current decision: PASS for the qualified alpha publication.** The Catholic
-thesis, Scripture, patristic reception, four Marian dogmas,
-virginal-marriage synthesis, requested pedagogy, map, Ark and sanctuary
-diagrams, web edition, rights posture, and tracked source apparatus pass
-independent sanity review. No content, visual, source, or rights blocker
-remains; commit, push, and deployed-route verification remain ordinary release
-process steps rather than sanity-review holds.
+**Current decision: PASS for installed qualified-alpha readiness.** The Catholic
+thesis, Scripture, patristic and saintly reception, four Marian dogmas,
+virginal-marriage synthesis, requested pedagogy, source-first map, fine graphite
+plates, web equivalent, rights posture, and tracked source apparatus pass this
+sanity review. Repository gates, commit, push, and
+deployed-route verification remain ordinary subsequent release work and are
+deliberately not claimed complete here.

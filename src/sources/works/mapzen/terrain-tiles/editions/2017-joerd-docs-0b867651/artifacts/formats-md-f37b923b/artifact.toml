@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.formats-md-f37b923b"
+edition_id = "edition.mapzen.terrain-tiles.joerd-docs-0b867651"
+artifact_type = "markdown-document"
+media_type = "text/markdown; charset=utf-8"
+storage = "remote"
+rights_status = "licensed"
+rights_basis = "The sibling docs/LICENSE.md at the same commit states that Mapzen's documentation text and diagrams are licensed under Creative Commons Attribution 4.0 International."
+license = "CC-BY-4.0"
+source_url = "https://raw.githubusercontent.com/tilezen/joerd/0b86765156d0612d837548c2cf70376c43b3405c/docs/formats.md"
+provenance = "Exact whole Markdown document fetched directly from the Tilezen joerd repository at commit 0b86765156d0612d837548c2cf70376c43b3405c and hashed without transformation."
+retrieved = "2026-08-16"
+sha256 = "f37b923b033ddb90ed454902c20a248b0f75985df1129dc2899c8ddf14459c8c"
+byte_size = 5392
+encoding = "utf-8"
+indexable = false
+notes = "Defines the Terrarium PNG elevation formula as (red * 256 + green + blue / 256) - 32768 and identifies its Web Mercator projection and tile sizes. It is the format authority for decoding, not an artifact containing terrain pixels."

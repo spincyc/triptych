@@ -1756,6 +1756,42 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn("pdf/gpt/work.pdf", expected_files)
         self.assertIn("pdf/claude/work.pdf", expected_files)
 
+    def test_ark_editions_share_one_catalog_row_and_keep_their_titles(self) -> None:
+        catalog = (REPOSITORY_ROOT / "library/mariology.md").read_text(
+            encoding="utf-8"
+        )
+        rows = [
+            line
+            for line in catalog.splitlines()
+            if "theology/mariology/ark-of-the-covenant.pdf" in line
+        ]
+
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        gpt_link = (
+            "[*The Ark and the Mother of the Lord: The Journey of the Covenant "
+            "Presence*](../pdf/gpt/theology/mariology/ark-of-the-covenant.pdf)"
+        )
+        claude_link = (
+            "[*The Ark of the Covenant: From Sinai to the Woman Clothed with the "
+            "Sun*](../pdf/claude/theology/mariology/ark-of-the-covenant.pdf)"
+        )
+        self.assertEqual(row.count(gpt_link), 1)
+        self.assertEqual(row.count(claude_link), 1)
+
+        gpt_pdf = (
+            REPOSITORY_ROOT
+            / "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf"
+        )
+        claude_pdf = (
+            REPOSITORY_ROOT
+            / "pdf/claude/theology/mariology/ark-of-the-covenant.pdf"
+        )
+        self.assertNotEqual(
+            gpt_pdf.read_bytes(),
+            claude_pdf.read_bytes(),
+        )
+
     def test_released_claude_edition_requires_catalog_link(self) -> None:
         self.add_claude_publication("work", "release")
         self.authorize_current_inputs()

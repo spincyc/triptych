@@ -1,0 +1,113 @@
+#!/bin/sh
+# Sandboxed tests for tools/source-first-cartographic-artwork.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="source-first-cartographic-artwork"
+
+run_tool() {
+    "$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+
+recipe='map recipe.py'
+output='finished map.png'
+receipt='build receipt.json'
+printf '%s\n' 'render source-first map' > "$recipe"
+printf '%s\n' 'deterministic cartographic pixels' > "$output"
+
+sha256() {
+    python3 -c 'import hashlib,sys; print(hashlib.sha256(open(sys.argv[1], "rb").read()).hexdigest())' "$1"
+}
+
+recipe_sha=$(sha256 "$recipe")
+output_sha=$(sha256 "$output")
+
+write_receipt() {
+    declared_output=$1
+    declared_recipe=$2
+    printf '%s\n' \
+        "{\"schema\":\"triptych-cartographic-input-receipt/v1\",\"output\":{\"sha256\":\"$declared_output\"},\"recipe\":{\"sha256\":\"$declared_recipe\"}}" \
+        > "$receipt"
+}
+
+expect_status() {
+    expected=$1
+    shift
+    if "$@"; then
+        actual=0
+    else
+        actual=$?
+    fi
+    test "$actual" -eq "$expected"
+}
+
+write_receipt "$output_sha" "$recipe_sha"
+run_tool check --recipe "$recipe" --receipt "$receipt" --output "$output" \
+    > result.txt
+grep -qx 'source-first-cartographic-artwork: clean' result.txt
+run_tool check --output "$output" --json --receipt "$receipt" --recipe "$recipe" \
+    > result.json
+python3 -c '
+import json
+d = json.load(open("result.json", encoding="utf-8"))
+assert d == {
+    "problems": [],
+    "result": "clean",
+    "schema": "triptych-cartographic-input-receipt/v1",
+    "v": 1,
+}, d
+'
+test "$(wc -l < result.json)" -eq 1
+
+printf '%s\n' \
+    "{\"schema\":\"triptych-cartographic-input-receipt/v1\",\"output\":{\"sha256\":\"$output_sha\"}}" \
+    > "$receipt"
+run_tool check --recipe "$recipe" --receipt "$receipt" --output "$output" \
+    >/dev/null
+
+wrong_sha=0000000000000000000000000000000000000000000000000000000000000000
+write_receipt "$wrong_sha" "$recipe_sha"
+expect_status 1 run_tool check --recipe "$recipe" --receipt "$receipt" \
+    --output "$output" --json > mismatch.json
+python3 -c '
+import json
+d = json.load(open("mismatch.json", encoding="utf-8"))
+assert d["result"] == "findings", d
+assert any("output SHA-256 mismatch" in item for item in d["problems"]), d
+'
+
+write_receipt "$output_sha" "$wrong_sha"
+expect_status 1 run_tool check --recipe "$recipe" --receipt "$receipt" \
+    --output "$output" > mismatch.txt
+grep -q 'recipe SHA-256 mismatch' mismatch.txt
+
+printf '%s\n' '{not json' > "$receipt"
+expect_status 1 run_tool check --recipe "$recipe" --receipt "$receipt" \
+    --output "$output" >/dev/null
+
+printf '%s\n' "{\"output\":{\"sha256\":\"$output_sha\"}}" > "$receipt"
+expect_status 1 run_tool check --recipe "$recipe" --receipt "$receipt" \
+    --output "$output" >/dev/null
+
+printf '%s\n' \
+    '{"schema":"triptych-cartographic-input-receipt/v1","output":{}}' \
+    > "$receipt"
+expect_status 1 run_tool check --recipe "$recipe" --receipt "$receipt" \
+    --output "$output" >/dev/null
+
+write_receipt "$output_sha" "$recipe_sha"
+expect_status 1 run_tool check --recipe missing --receipt "$receipt" \
+    --output "$output" >/dev/null
+
+expect_status 2 run_tool check --recipe "$recipe" --receipt "$receipt" \
+    >/dev/null 2>&1
+expect_status 2 run_tool frobnicate >/dev/null 2>&1
+
+echo ok

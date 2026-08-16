@@ -1723,7 +1723,7 @@ release attachment, announcement, or promotion.
 | `library/history.md` | `4e4c2937c01991d04211b83f911bb4c0f79ca3688d45b38fd30c0fc8133bbc1b` |
 | `library/law-and-church-discipline.md` | `23c168cb77e2efd6735778a57500f1b1b287f785c1bc7baf57a461dd96a7a744` |
 | `library/liturgy.md` | `ceddcd0f3e4c3c164917299ad7fc4fcedea6552d835687f55747787dc338a334` |
-| `library/mariology.md` | `05fe403f6cbb9d449cd6f122a755e2facbf6d9c2c0814c9016e703f2ba4dc7cf` |
+| `library/mariology.md` | `01b55285b49898753023f97480dd32577bed1174684bc257fbfdc84f1c73362e` |
 | `library/novus-ordo-liturgy.md` | `1ee4283e83bb4971ef934e7da646b6fc23dde4992e877ea9d88e3ffc4a4a65cd` |
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
@@ -2068,7 +2068,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/theology/heresies/heresies-in-catholic-history.md` | `8d5e8c176b819b9c13cf4e3f949b83a949633940df3217733b5629c0632690da` |
 | `web/gpt/theology/mariology/angelus.md` | `897d10c1eaf0b66028e5d3696594f67377cd41e1b5b7834da5dedeade314ac78` |
 | `web/gpt/theology/mariology/apparitions.md` | `60d85f74a210c3d071128af8a827f8a03ddfc5820419cfd59bcd2b57f69d2eae` |
-| `web/gpt/theology/mariology/ark-of-the-covenant.md` | `3a5e96c2405e1d311acf65ef931a45ebee502e459817f5a744833858ce62d1bc` |
+| `web/gpt/theology/mariology/ark-of-the-covenant.md` | `8083f51e35ce1d72fdd306d23c378361e70f778ee27f1a7acaeb915c1e27a2d4` |
 | `web/gpt/theology/mariology/champion.md` | `c77ad8a54515f10bc2566d2f8597c931cd32e2efb6150b93cd29a17020182c6d` |
 | `web/gpt/theology/mariology/doctrinal-authority.md` | `a1ce9553c5f8cc4841639f64497fdef5db54eaa872b4b30675a4d27a7a2a0f30` |
 | `web/gpt/theology/mariology/fatima.md` | `6d2b8f1606899fa38a01e3dd649e5217be3c95f7feb26de1b1fe80a520347ce1` |

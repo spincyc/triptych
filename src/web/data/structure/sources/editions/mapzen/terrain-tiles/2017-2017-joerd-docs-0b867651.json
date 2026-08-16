@@ -1,0 +1,90 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "markdown-document",
+   "byte_size": 12300,
+   "id": "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.attribution-md-2ce4d341",
+   "media_type": "text/markdown; charset=utf-8",
+   "notes": "Lists required acknowledgements and source-specific rights conditions for the upstream terrain providers. Its own warning that users remain responsible for each provider's terms prevents collapsing a mixed tile selection into one blanket license.",
+   "page_count": null,
+   "retrieved": "2026-08-16",
+   "rights": "licensed",
+   "rights_basis": "The sibling docs/LICENSE.md at the same commit states that Mapzen's documentation text and diagrams are licensed under Creative Commons Attribution 4.0 International.",
+   "rights_jurisdiction": null,
+   "source_url": "https://raw.githubusercontent.com/tilezen/joerd/0b86765156d0612d837548c2cf70376c43b3405c/docs/attribution.md",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "markdown-document",
+   "byte_size": 12162,
+   "id": "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.data-sources-md-dcf07b15",
+   "media_type": "text/markdown; charset=utf-8",
+   "notes": "Identifies the terrain source families, their geographic and zoom-level roles, and the per-tile X-Imagery-Sources response-header grammar. It is the authority for interpreting the publication receipt's SRTM, GMTED2010, and ETOPO1 lineage strings, not a substitute for the exact headers recorded for each selected tile.",
+   "page_count": null,
+   "retrieved": "2026-08-16",
+   "rights": "licensed",
+   "rights_basis": "The sibling docs/LICENSE.md at the same commit states that Mapzen's documentation text and diagrams are licensed under Creative Commons Attribution 4.0 International.",
+   "rights_jurisdiction": null,
+   "source_url": "https://raw.githubusercontent.com/tilezen/joerd/0b86765156d0612d837548c2cf70376c43b3405c/docs/data-sources.md",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "license-document",
+   "byte_size": 17267,
+   "id": "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.documentation-license-md-b91b121a",
+   "media_type": "text/markdown; charset=utf-8",
+   "notes": "The file contains Mapzen's CC BY 4.0 notice and the complete license text. It governs the documentation, not all upstream elevation sources represented in terrain tiles.",
+   "page_count": null,
+   "retrieved": "2026-08-16",
+   "rights": "licensed",
+   "rights_basis": "The file itself identifies Mapzen as copyright holder and applies the Creative Commons Attribution 4.0 International license to the documentation.",
+   "rights_jurisdiction": null,
+   "source_url": "https://raw.githubusercontent.com/tilezen/joerd/0b86765156d0612d837548c2cf70376c43b3405c/docs/LICENSE.md",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "markdown-document",
+   "byte_size": 5392,
+   "id": "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.formats-md-f37b923b",
+   "media_type": "text/markdown; charset=utf-8",
+   "notes": "Defines the Terrarium PNG elevation formula as (red * 256 + green + blue / 256) - 32768 and identifies its Web Mercator projection and tile sizes. It is the format authority for decoding, not an artifact containing terrain pixels.",
+   "page_count": null,
+   "retrieved": "2026-08-16",
+   "rights": "licensed",
+   "rights_basis": "The sibling docs/LICENSE.md at the same commit states that Mapzen's documentation text and diagrams are licensed under Creative Commons Attribution 4.0 International.",
+   "rights_jurisdiction": null,
+   "source_url": "https://raw.githubusercontent.com/tilezen/joerd/0b86765156d0612d837548c2cf70376c43b3405c/docs/formats.md",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": "Mapzen / Tilezen",
+  "date": "2017-11-21",
+  "editors": [],
+  "id": "edition.mapzen.terrain-tiles.joerd-docs-0b867651",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "The commit is the repository's current master state as checked on 2026-08-16. The registered documents identify the terrain formats, the mixed upstream attribution requirements, and the CC BY 4.0 license governing the documentation itself. That documentation license must not be mistaken for a single license over every terrain-data tile.",
+  "publication": "Tilezen joerd GitHub repository, documentation tree at commit 0b86765156d0612d837548c2cf70376c43b3405c",
+  "title": "Mapzen Terrain Tiles documentation at Tilezen joerd commit 0b86765156d0612d837548c2cf70376c43b3405c",
+  "translators": [],
+  "year": 2017
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Terrain Tiles",
+   "Tilezen terrain tiles"
+  ],
+  "author": "Mapzen, a Linux Foundation project",
+  "category": "cartographic-dataset",
+  "description": "A worldwide tiled bare-earth elevation dataset published in Terrarium, normal-map, GeoTIFF, and Skadi formats. The exact documentation and AWS registry states are separately manifested. Because a cartographic crop may comprise many independently addressable tile objects and upstream source regions, no single source-library artifact is used to stand for a multi-tile acquisition.",
+  "id": "work.mapzen.terrain-tiles",
+  "languages": [
+   "und",
+   "en"
+  ],
+  "title": "Mapzen Terrain Tiles"
+ }
+}

@@ -1,0 +1,9 @@
+schema = 1
+record_type = "work"
+id = "work.mapzen.terrain-tiles"
+title = "Mapzen Terrain Tiles"
+responsible = "Mapzen, a Linux Foundation project"
+work_type = "cartographic-dataset"
+alternate_titles = ["Terrain Tiles", "Tilezen terrain tiles"]
+languages = ["und", "en"]
+description = "A worldwide tiled bare-earth elevation dataset published in Terrarium, normal-map, GeoTIFF, and Skadi formats. The exact documentation and AWS registry states are separately manifested. Because a cartographic crop may comprise many independently addressable tile objects and upstream source regions, no single source-library artifact is used to stand for a multi-tile acquisition."

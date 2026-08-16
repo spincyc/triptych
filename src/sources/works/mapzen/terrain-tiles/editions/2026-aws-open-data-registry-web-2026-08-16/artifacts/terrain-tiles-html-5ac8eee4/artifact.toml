@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.mapzen.terrain-tiles.aws-open-data-registry-web-2026-08-16.terrain-tiles-html-5ac8eee4"
+edition_id = "edition.mapzen.terrain-tiles.aws-open-data-registry-web-2026-08-16"
+artifact_type = "html"
+media_type = "text/html; charset=utf-8"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The public registry page supplies dataset identity and access information but no license permitting republication of the page's own HTML. The exact response is hashed and not redistributed."
+source_url = "https://registry.opendata.aws/terrain-tiles/"
+provenance = "Exact whole HTTPS response fetched directly from the AWS Registry of Open Data and hashed without transformation."
+retrieved = "2026-08-16"
+sha256 = "5ac8eee49fda74a85f32faf347ad88990305ff99f32d482e897e7dfaaa5da896"
+byte_size = 12673
+indexable = false
+notes = "The page describes a global bare-earth elevation dataset, identifies Mapzen as manager, directs rights questions to Tilezen's attribution document, and records the public elevation-tiles-prod and elevation-tiles-prod-eu S3 buckets. It is an authority for delivery identity, not a manifest of the publication's 88 selected tiles."

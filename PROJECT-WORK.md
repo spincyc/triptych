@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-08.
+Last reconciled: 2026-08-16.
 
 ## Standing public-alpha authority
 
@@ -480,8 +480,17 @@ which is the honest state rather than a rounding of it.
 
 <!-- promised-deliverable: gpt-mary-new-ark-journey-2026-08-15 -->
 
-**Complete in the qualified public alpha and verified live.** The
-source-audited study gives a vivid account of the Ark's journey; receives Mary
+**Corrected, reviewed, installed, and release-bound on 16 August 2026; push and
+live verification remain.** The two provider editions now share one catalog
+row while retaining their different titles, provider-qualified routes, PDF
+bytes, the published GPT web reader, and each edition's own drawings. The GPT
+edition replaces its rough wavy-line schematics with a source-first two-panel
+graphite atlas and five finely detailed graphite Ark/sanctuary plates.
+Reader-facing prose calls the scene 2 Samuel 6 and uses ``2 Reigns'' only when
+it explicitly explains the Septuagint title; the older Douay ``2 Kings'' name
+is likewise identified rather than silently mixed with modern numbering.
+
+The source-audited study gives a vivid account of the Ark's journey; receives Mary
 confidently as its living New-Covenant fulfillment because she bears Christ;
 synthesizes exact patristic, saintly, liturgical, and magisterial witnesses;
 and shows the four Marian dogmas as the full unfolding of that vocation without
@@ -495,25 +504,28 @@ contrast between unappointed handling and obedient service; the study rejects
 any implication that marriage is defiling, Mary physically dangerous, or
 Joseph's continence terror-driven.
 
-The reviewed 42-page PDF and its installed copy are byte-identical at SHA-256
-`a520adb39130bb3b65a3bd7d92926fbc77126650fdf593d0680fc10bee125843`.
-The generated and installed web editions are byte-identical at SHA-256
-`3a5e96c2405e1d311acf65ef931a45ebee502e459817f5a744833858ce62d1bc`.
-Every page was reviewed; the map, Ark study, sanctuary settings, and dogma
-synopses received full-size checks; and the final independent Catholic sanity
-review passes. The pencil map distinguishes narrated, inferred, traditional,
-and unknown geography. The Ark and sanctuary plates distinguish commanded or
-attested data from unrecoverable form and location. Content commit
-`51862cf78` was integrated with the then-current public main at
-`a35dc5cfb82be027256d74c6f2b256f830f1073e` without history rewriting and
-pushed to `origin/main`. GitHub Pages run
+The reviewed and installed GPT PDF is 46 letter-size pages at SHA-256
+`0d995ac1d447f53cc55496fa8907c16a7940639b986fee02579b16e87d7164da`;
+the generated and installed GPT web edition is byte-identical at SHA-256
+`8083f51e35ce1d72fdd306d23c378361e70f778ee27f1a7acaeb915c1e27a2d4`.
+The rebuilt and installed 65-page Claude PDF is byte-identical at SHA-256
+`7877add8a640a9d2f237eb149e35440bc8c392ce84fe30a24e16a03b54c3d7d0`.
+All 46 GPT pages and all 65 Claude pages were reviewed; the atlas and the five
+GPT graphite plates received original-resolution checks; the GPT web
+equivalence and independent Catholic sanity review pass; and the installed
+provider PDFs remain distinct. The current source-first map uses pinned Natural
+Earth 5.1.2 and Mapzen Terrain Tiles beneath a project-authored semantic overlay
+that distinguishes narrated, inferred, traditional, candidate, regional, and
+unknown geography. The Ark and sanctuary captions distinguish commanded or
+attested data from unrecoverable form and location.
+
+The earlier 42-page GPT artifact `a520adb39130bb3b65a3bd7d92926fbc77126650fdf593d0680fc10bee125843`,
+web artifact `3a5e96c2405e1d311acf65ef931a45ebee502e459817f5a744833858ce62d1bc`,
+commit `a35dc5cfb82be027256d74c6f2b256f830f1073e`, and Pages run
 [`31935618065`](https://github.com/spincyc/triptych/actions/runs/31935618065)
-completed successfully for that exact head. The live
-[Mariology catalog](https://spincyc.github.io/triptych/library/mariology.html),
-[web reader](https://spincyc.github.io/triptych/web/gpt/theology/mariology/ark-of-the-covenant.html),
-and [PDF](https://spincyc.github.io/triptych/pdf/gpt/theology/mariology/ark-of-the-covenant.pdf)
-each returned HTTP 200; the deployed PDF matched the reviewed SHA-256 above.
-All ten acceptance requirements pass.
+are superseded baseline evidence, not evidence for this correction. Eleven of
+the twelve current acceptance requirements pass; exact commit, push, Pages run,
+and the current `mystago.gy` live-route identities remain to be recorded.
 
 ### Corpus browser foundation design
 

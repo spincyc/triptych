@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-08-16"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:083d02bd28e2c3302e1f8a54a6f0ec504540c5b69e4954e5fedf6e07a19a0f6c"
+inventory_snapshot = "sha256:1c7ec7c85212467354f1b1e187c736d1031eaef98c226f0035d2ffb79d3e428e"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:6f0eaaa5f8da040978483ad4a82e63aaa18ffaadd92708f04d9fd2ff79887beb"
-canonical_catalog_snapshot = "sha256:c5ae9766986ad608e6724874a55dd5fe8b64f44262366fdb2668e9b9b196aa23"
+canonical_catalog_snapshot = "sha256:d80e84722421afc0b8218af2fca0589b29d022a70b3310ce86a1fc691c78a9b8"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:1305d4e029cdfac9826e9cf183d9a77516aebd593f3f26a5d7cc84dadc091d26"
+snapshot = "sha256:d34701b451c828430a70c0a275b1d71efbb94cef9bad8a600d5f6444cf57ef27"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -5156,6 +5156,27 @@ membership_snapshot = "sha256:dfc7af68d0e8330b8ae48bf77ea9a083333567f792ceac5328
 notes = "Mansi's eighteenth-century collection of conciliar acts, cited by volume and column, owns its container work and the two tomi registered so far: tomus II (Florence 1759, in the Welter photo-reprint) carrying Elvira and Nicaea, and tomus XXI (Venice 1776, likewise reprinted) carrying the First and Second Lateran Councils and the Council of Pisa of 1135, with seven exact remote public-domain page images and seven verified column passages. Mansi is not joined to family.patristics.anf-npnf-schaff. That family's identity is Schaff's English Ante-Nicene and Nicene and Post-Nicene translation series, and the ledger's container precedent is that a container family owns its own volumes while constituent works keep their own families; it does not merge unrelated series. Mansi is a different collection by a different editor in a different century, Latin rather than English, conciliar acts rather than patristic translations, with its own apparatus and its own printing history, so it takes its own container family on the same precedent that gives family.ante-nicene-fathers.volume-1-buffalo-1887 a bounded row of its own. The collection is a container witness: the councils and papal acts printed within it retain their own identity and remain unregistered, as do its other tomi, and its apparatus records variant recensions that consumers must not collapse. Mansi prints Elvira canon 33 twice, at coll. 11-12 and again at coll. 245-246 in parallel Vulgatus and Emendatus columns whose addressees and wording differ, prints two Latin recensions of Nicaea canon 3, and records in the Lateran I headnote that Baluze printed those canons from the Anianum manuscript in a different order and with variant readings. Every registered page image is a mechanical reproduction of a pre-1930 printing with its United States public-domain basis reviewed and recorded, and none is retained in the repository."
 
 [[families]]
+id = "family.mapzen.terrain-tiles"
+label = "Mapzen Terrain Tiles"
+kind = "work"
+source_categories = ["dataset-survey"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "mixed"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "mixed"
+freshness_rule = "Treat the commit-pinned Tilezen documentation as fixed; pin a dated AWS registry state and exact version IDs, hashes, and imagery-source headers whenever a consumer depends on current delivery or selected tile bytes."
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.mapzen.terrain-tiles.aws-open-data-registry-web-2026-08-16.terrain-tiles-html-5ac8eee4", "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.attribution-md-2ce4d341", "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.data-sources-md-dcf07b15", "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.documentation-license-md-b91b121a", "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.formats-md-f37b923b", "edition.mapzen.terrain-tiles.aws-open-data-registry-web-2026-08-16", "edition.mapzen.terrain-tiles.joerd-docs-0b867651", "work.mapzen.terrain-tiles"]
+trace_patterns = ["(?:Mapzen|Terrain Tiles|Terrarium|mapzen\\.terrain-tiles)"]
+reviewed_on = "2026-08-16"
+membership_snapshot = "sha256:1532aaad9a627bf1091faf6e6e5f61bfa14e12fce86b9a302f7c70dca35e419f"
+notes = "The Mapzen Terrain Tiles dataset owns two distinct registered editions: the fixed Tilezen joerd documentation at commit 0b867651, with exact remote format, data-source, attribution, and documentation-license artifacts, and the dated 2026-08-16 AWS Registry delivery state with its exact remote HTML artifact. The documentation license is CC BY 4.0, while the AWS page's own HTML has no established republication license; both rights positions have been reviewed and the bytes remain remote. Neither license is projected onto the heterogeneous elevation pixels. The consuming Ark publication instead pins its 88 Terrarium PNG objects by S3 version ID, hash, size, and server-supplied imagery-source header in a publication-local receipt, because the selected tiles are independently addressable objects with mixed SRTM, GMTED2010, and ETOPO1 lineage and no single source-library artifact can truthfully stand for the acquisition. Artifact availability is therefore mixed even though every currently registered canonical artifact is exact. The family identifies the dataset, delivery states, decoding authority, and attribution boundary; it supplies modern relief only and no biblical site, route, or theological evidence."
+
+[[families]]
 id = "family.martin-gerbert.monumenta-veteris-liturgiae-alemannicae"
 label = "Monumenta veteris liturgiae Alemannicae"
 kind = "work"
@@ -5952,6 +5973,48 @@ trace_patterns = ["(?:National Shrine of Our Lady of Champion|championshrine\\.o
 reviewed_on = "2026-07-31"
 membership_snapshot = "sha256:16f8af9f290f93e72a64f4aa2a435f1d9f17edc8f1d999176ee0562234dbce6d"
 notes = "The custodian's own published presentation of the Champion events - the narrative, the historical timeline, and the solemnity pages - registered as one work with a single dated web state of 2026-07-25. It is a family of its own and not part of family.champion.ecclesial-acts because a custodial institution's self-description is not an ecclesial act, the same boundary that keeps the Fatima sanctuary's documentation distinct from the Fatima acts. Its evidentiary ceiling is institutional self-description and nothing higher: the narrative page states its own method, that Adele Brise never learned to read or write and that the account was compiled from oral history, historical documents, and second and third-hand accounts in the shrine's archives, so it is never an independent historical witness to 1859 or 1871. Two internal inconsistencies are recorded rather than harmonized - the timeline's five acres against Pernin's six in both 1874 printings, and its placing of the beginning of the 15 August devotions in 1871 although Starr describes the August procession as already annual in a volume copyright-entered that year - and the fire section attributes to Pernin a paragraph that the consuming publication collated against both printings and found is not his text. Storage is restricted because the pages are the publisher's copyright with no redistribution permission, so exact bytes are not retained and the artifact gap stands; the date gap is the mutability itself, the three pages carrying different stamps of April 2026, January 2026, and July 2026 within one retrieval state."
+
+[[families]]
+id = "family.natural-earth.terms-of-use"
+label = "Natural Earth Terms of Use"
+kind = "work"
+source_categories = ["institutional-current"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "officially-mutable"
+freshness_rule = "Pin a new dated web state before relying on the current rights policy or attribution language; never edit the registered 2026-08-16 state in place."
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.natural-earth.terms-of-use.web-2026-08-16.natural-earth-terms-html-e5ca9cd3", "edition.natural-earth.terms-of-use.web-2026-08-16", "work.natural-earth.terms-of-use"]
+trace_patterns = ["(?:Natural Earth(?:'s)? (?:official )?(?:Terms of Use|policy)|Natural Earth identifies its data as public domain|natural-earth\\.terms-of-use)"]
+reviewed_on = "2026-08-16"
+membership_snapshot = "sha256:c16e90610f5eb667878a8dcadd97f1e1285e29b0cc4d325172bc8b480a7be59d"
+notes = "Natural Earth's official rights policy is a distinct mutable work rather than part of the fixed vector-data release. The family owns the dated 2026-08-16 web edition and its exact remote HTML artifact. That artifact was acquired and hashed, but the policy places Natural Earth map data in the public domain rather than licensing the page's own HTML, so the unresolved HTML redistribution status is recorded and its bytes are not retained. The Ark publication binds this artifact as the rights control for its four Natural Earth vector inputs; it does not use the policy page as geographic evidence or transfer the data's public-domain status to the page's layout and text."
+
+[[families]]
+id = "family.natural-earth.vector-map-data"
+label = "Natural Earth Vector Map Data"
+kind = "work"
+source_categories = ["dataset-survey"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-coastline-6f75ae0e", "artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-lakes-2d036f53", "artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-land-1ac90796", "artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-rivers-lake-centerlines-bb854a90", "edition.natural-earth.vector-map-data.version-5.1.2-f1890d9f", "work.natural-earth.vector-map-data"]
+trace_patterns = ["(?:Natural Earth|natural-earth\\.vector-map-data)"]
+reviewed_on = "2026-08-16"
+membership_snapshot = "sha256:424144442c3917c92a29973080ef23c76b4c2dfd7d8017788c65de1d730160f1"
+notes = "Natural Earth Vector Map Data remains its own fixed dataset family, separate from Natural Earth's mutable rights-policy work. It owns the version 5.1.2 edition at commit f1890d9f and the four exact remote 1:10m GeoJSON artifacts used by the Ark map: land, coastline, lakes, and rivers with lake centerlines. The complete upstream files are individually hashed and their public-domain basis is reviewed; they remain remote because the publication retains an exact acquisition and transformation receipt rather than duplicating roughly 33 MB of world layers in Git. The publication crops and styles these generalized modern layers only as a physical orientation base. They do not establish an ancient road, reconstruct an ancient watercourse, settle a disputed biblical site, or supply any route or theological claim."
 
 [[families]]
 id = "family.netherlands-broadcasting-foundation.operation-manna-liberation-year-dossier"
@@ -12977,8 +13040,20 @@ record_paths = ["src/gpt/theology/mariology/apparitions/research/source-audit.md
 
 [[review_units]]
 owner_id = "theology/mariology/ark-of-the-covenant"
-surface_snapshot = "sha256:8c745aee3fbdfb9c8bae90e6513960751d8d97cc499fb9f4ec07e191cf1ed94b"
+surface_snapshot = "sha256:75be5e6176e9c3ebdd37bde565a41f9d2838233c7cad55bece2f0f6384c170c2"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.mapzen.terrain-tiles"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/ark-of-the-covenant/research/map-provenance.md", "src/gpt/theology/mariology/ark-of-the-covenant/research/sanity-review.md", "src/gpt/theology/mariology/ark-of-the-covenant/research/scope.md", "src/gpt/theology/mariology/ark-of-the-covenant/research/source-audit.md", "src/gpt/theology/mariology/ark-of-the-covenant/research/source-bindings.toml", "src/gpt/theology/mariology/ark-of-the-covenant/sections/55-map-text-equivalent.tex", "src/gpt/theology/mariology/ark-of-the-covenant/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.natural-earth.terms-of-use"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/ark-of-the-covenant/research/map-provenance.md", "src/gpt/theology/mariology/ark-of-the-covenant/research/source-bindings.toml", "src/gpt/theology/mariology/ark-of-the-covenant/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.natural-earth.vector-map-data"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/ark-of-the-covenant/research/map-provenance.md", "src/gpt/theology/mariology/ark-of-the-covenant/research/sanity-review.md", "src/gpt/theology/mariology/ark-of-the-covenant/research/scope.md", "src/gpt/theology/mariology/ark-of-the-covenant/research/source-audit.md", "src/gpt/theology/mariology/ark-of-the-covenant/research/source-bindings.toml", "src/gpt/theology/mariology/ark-of-the-covenant/sections/55-map-text-equivalent.tex", "src/gpt/theology/mariology/ark-of-the-covenant/sections/99-references.tex"]
 
 [[review_units]]
 owner_id = "theology/mariology/champion"

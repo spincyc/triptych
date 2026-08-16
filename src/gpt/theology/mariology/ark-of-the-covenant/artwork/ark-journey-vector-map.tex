@@ -1,213 +1,347 @@
-% Deterministic semantic layer for the Ark/New-Ark map.
-% The optional PNG below is texture only.  Every place, route, status,
-% number, label, and typological relation remains editable TeX/TikZ.
-\begin{tikzpicture}[x=1cm,y=1cm,line cap=round,line join=round]
-  \path[use as bounding box] (0,0) rectangle (15.6,10);
+% Deterministic semantic layer for the Ark/New-Ark atlas plates.
+% The cartographic graphite plate supplies geography and relief only.  Every
+% place, route, status, number, label, and typological relation remains TeX.
+%
+% The source raster is one 3800x2436 composite.  Both commands below place it
+% at 31.2x20 cm and clip to one full-width panel at approximately 309 dpi.  The
+% projection rectangles and formulas therefore remain the exact v3 Web
+% Mercator registration while each panel becomes a full-width atlas plate.
 
-  % A missing generated texture must not remove any information.
-  \IfFileExists{theology/mariology/ark-of-the-covenant/artwork/ark-journey-pencil-base.png}{%
-    \node[anchor=south west,inner sep=0pt,opacity=.18] at (0,0) {%
-      \pgfimage[width=15.6cm,height=10cm]{%
-        theology/mariology/ark-of-the-covenant/artwork/ark-journey-pencil-base.png}};
-  }{}
-
+\newcommand{\ArkMapStyles}{%
   \tikzset{
-    arkmap panel/.style={draw=black,line width=.55pt,rounded corners=2pt},
-    arkmap coast/.style={draw=black!55,line width=.45pt},
-    arkmap water/.style={draw=black!42,line width=.4pt},
-    arkmap explicit/.style={draw=black,line width=1.15pt,
-      -{Stealth[length=2.3mm,width=1.6mm]}},
-    arkmap inferred/.style={draw=black,line width=1.05pt,
-      dash pattern=on 5pt off 3pt,-{Stealth[open,length=2.2mm,width=1.5mm]}},
-    arkmap sequence/.style={draw=black!75,line width=.9pt,densely dotted},
-    arkmap corridor/.style={draw=black!25,line width=3.2pt},
-    arkmap uncertain/.style={draw=black!70,line width=.65pt,densely dotted},
-    arkmap nt/.style={draw=black,line width=1.35pt,double=white,
-      double distance=.85pt,dash pattern=on 7pt off 2.5pt,
-      -{Stealth[open,length=2.4mm,width=1.6mm]}},
-    arkmap secure/.style={circle,draw=black,fill=black,inner sep=1.7pt},
-    arkmap probable/.style={circle,draw=black,fill=white,line width=.7pt,
-      inner sep=2.0pt},
+    arkmap frame/.style={draw=black!62,line width=.55pt},
+    arkmap explicit/.style={draw=black,line width=1.2pt,
+      -{Stealth[length=2.4mm,width=1.7mm]}},
+    arkmap inferred/.style={draw=black,line width=1.1pt,
+      dash pattern=on 5pt off 3pt,-{Stealth[open,length=2.3mm,width=1.6mm]}},
+    arkmap sequence/.style={draw=black!78,line width=.95pt,densely dotted},
+    arkmap corridor/.style={draw=black!26,line width=3.3pt},
+    arkmap uncertain/.style={draw=black!72,line width=.7pt,densely dotted},
+    arkmap nt/.style={draw=black,line width=1.4pt,double=white,
+      double distance=.9pt,dash pattern=on 7pt off 2.5pt,
+      -{Stealth[open,length=2.5mm,width=1.7mm]}},
+    arkmap secure/.style={circle,draw=black,fill=black,inner sep=1.8pt},
+    arkmap probable/.style={circle,draw=black,fill=white,line width=.75pt,
+      inner sep=2.1pt},
     arkmap traditional/.style={rectangle,rounded corners=.5pt,draw=black,
-      double=white,double distance=.75pt,fill=white,inner sep=2.0pt},
-    arkmap label/.style={fill=white,fill opacity=.91,text opacity=1,
-      inner sep=1.25pt,font=\fontsize{7.4}{8.1}\selectfont,align=left},
-    arkmap tiny/.style={fill=white,fill opacity=.91,text opacity=1,
-      inner sep=1pt,font=\fontsize{6.7}{7.3}\selectfont,align=left},
-    arkmap number/.style={circle,draw=black,fill=white,line width=.65pt,
-      minimum size=4.2mm,inner sep=.35pt,
-      font=\fontsize{6.1}{6.1}\selectfont\bfseries},
-    arkmap callout/.style={draw=black,line width=.5pt,rounded corners=1.5pt,
-      fill=white,fill opacity=.93,text opacity=1,inner sep=3pt,
-      font=\fontsize{6.7}{7.4}\selectfont,align=left},
-    arkmap region/.style={draw=black!70,line width=.65pt,densely dotted,
-      fill=black!6}
-  }
+      double=white,double distance=.8pt,fill=white,inner sep=2.1pt},
+    arkmap label/.style={fill=white,fill opacity=.94,text opacity=1,
+      inner sep=1.4pt,font=\fontsize{8}{8.7}\selectfont,align=left},
+    arkmap tiny/.style={fill=white,fill opacity=.94,text opacity=1,
+      inner sep=1.1pt,font=\fontsize{7}{7.65}\selectfont,align=left},
+    arkmap number/.style={circle,draw=black,fill=white,line width=.7pt,
+      minimum size=4.5mm,inner sep=.35pt,
+      font=\fontsize{6.3}{6.3}\selectfont\bfseries},
+    arkmap callout/.style={draw=black!72,line width=.5pt,
+      rounded corners=1.2pt,fill=white,fill opacity=.95,text opacity=1,
+      inner sep=3.2pt,font=\fontsize{6.8}{7.5}\selectfont,align=left},
+    arkmap ledger/.style={draw=black!62,line width=.45pt,
+      rounded corners=1pt,fill=white,fill opacity=.96,text opacity=1,
+      inner sep=2.7pt,font=\fontsize{6.4}{7.05}\selectfont,align=left},
+    arkmap key/.style={draw=black!65,line width=.45pt,
+      rounded corners=1pt,fill=white,fill opacity=.97,text opacity=1,
+      inner sep=2.8pt,font=\fontsize{6.15}{6.8}\selectfont,align=left},
+    arkmap region/.style={draw=black!74,line width=.75pt,densely dotted,
+      fill=white,fill opacity=.34},
+    arkmap leader/.style={draw=black!72,line width=.5pt}
+  }%
+}
 
-  % Whole-journey locator: deliberately schematic, because the wilderness
-  % stations and biblical Sinai cannot be geocoded as one recovered route.
-  \draw[arkmap panel] (.2,.45) rectangle (5.15,9.55);
-  \node[arkmap label,font=\fontsize{7.4}{8}\selectfont\bfseries,
-    anchor=north west] at (.38,9.42) {WHOLE JOURNEY\\schematic locator};
-  \draw[arkmap coast] (1.0,8.7) .. controls (.65,7.3) and (1.35,6.1) ..
-    (1.0,4.8) .. controls (.6,3.4) and (.8,2.1) .. (1.35,.8);
-  \draw[arkmap water] (4.45,7.5) .. controls (4.65,6.8) and (4.5,6.2) ..
-    (4.55,5.55);
-  \draw[arkmap water] (4.57,5.25) ellipse (.16 and .58);
-  \node[arkmap tiny,rotate=90] at (.72,4.8) {Mediterranean};
-  \node[arkmap tiny,rotate=90] at (4.78,6.55) {Jordan};
+\newcommand{\ArkMapBase}{%
+  \node[anchor=south west,inner sep=0pt,opacity=.94] at (0,0) {%
+    \pgfimage[width=31.2cm,height=20cm]{%
+      theology/mariology/ark-of-the-covenant/artwork/ark-journey-cartographic-graphite-v3.png}};%
+}
 
-  \node[arkmap probable] (sinai) at (1.75,1.35) {};
-  \node[arkmap number] at (1.48,1.62) {1};
-  \node[arkmap label,anchor=west] at (2.02,1.35)
-    {Sinai/Horeb\\\emph{location disputed}};
-  \draw[arkmap uncertain] (1.75,1.35) ellipse (1.02 and .62);
+% Formulaic EPSG:3857 projection into the source-first regional panel.
+% Longitude is linear.  For latitude phi, M(phi)=ln(tan(45 degrees+phi/2));
+% north-up y is bottom+height*[M(phi)-M(south)]/[M(north)-M(south)].
+\newcommand{\ArkRegionalPoint}[3]{%
+  \pgfmathsetmacro{\arkProjectedX}{%
+    .344842 + 7.141970*((#2)-31.0)/(36.5-31.0)}%
+  \pgfmathsetmacro{\arkMercatorPoint}{ln(tan(45+(#3)/2))}%
+  \pgfmathsetmacro{\arkMercatorSouth}{ln(tan(45+27.4/2))}%
+  \pgfmathsetmacro{\arkMercatorNorth}{ln(tan(45+33.5/2))}%
+  \pgfmathsetmacro{\arkProjectedY}{%
+    .402299 + 9.195402*(\arkMercatorPoint-\arkMercatorSouth)/%
+    (\arkMercatorNorth-\arkMercatorSouth)}%
+  \coordinate (#1) at (\arkProjectedX,\arkProjectedY);%
+}
 
-  \node[arkmap probable] (kadesh) at (2.35,3.15) {};
-  \node[arkmap number] at (2.06,3.43) {2};
-  \node[arkmap tiny,anchor=west] at (2.62,3.15)
-    {Kadesh region\\candidate only};
-  \node[arkmap probable] (moab) at (3.67,4.72) {};
-  \node[arkmap number] at (3.39,5.01) {3};
-  \node[arkmap tiny,anchor=east] at (3.42,4.69) {Moab / Shittim};
-  \node[arkmap probable] (gilgal) at (4.1,5.72) {};
-  \node[arkmap number] at (4.36,5.98) {4};
-  \node[arkmap tiny,anchor=east] at (3.84,5.70)
-    {Jordan / Gilgal\\\emph{exact sites unknown}};
-  \node[arkmap secure] (shiloh-loc) at (3.35,7.12) {};
-  \node[arkmap number] at (3.06,7.39) {7};
-  \node[arkmap tiny,anchor=west] at (3.59,7.11) {Shiloh};
-  \node[arkmap secure] (nazareth) at (3.55,8.72) {};
-  \node[arkmap number] at (3.27,8.98) {N1};
-  \node[arkmap tiny,anchor=west] at (3.80,8.72) {Nazareth};
-  \coordinate (hillcountry) at (3.45,6.25);
-  \node[arkmap number] at (3.16,6.49) {N2};
-  \node[arkmap tiny,anchor=east] at (3.18,6.24)
-    {town in Judah's\\hill country};
-  \draw[arkmap region] (3.45,6.25) ellipse (.68 and .45);
+% Formulaic EPSG:3857 projection into the source-first Levant panel.
+\newcommand{\ArkLevantPoint}[3]{%
+  \pgfmathsetmacro{\arkProjectedX}{%
+    7.865684 + 7.389474*((#2)-33.1)/(36.2-33.1)}%
+  \pgfmathsetmacro{\arkMercatorPoint}{ln(tan(45+(#3)/2))}%
+  \pgfmathsetmacro{\arkMercatorSouth}{ln(tan(45+31.2/2))}%
+  \pgfmathsetmacro{\arkMercatorNorth}{ln(tan(45+33.5/2))}%
+  \pgfmathsetmacro{\arkProjectedY}{%
+    1.754867 + 6.490266*(\arkMercatorPoint-\arkMercatorSouth)/%
+    (\arkMercatorNorth-\arkMercatorSouth)}%
+  \coordinate (#1) at (\arkProjectedX,\arkProjectedY);%
+}
 
-  \draw[arkmap explicit] (sinai) -- +(0,.62);
-  \draw[arkmap inferred] ($(sinai)+(0,.62)$) .. controls (1.75,2.2) and
-    (2.0,2.65) .. (kadesh);
-  \draw[arkmap inferred] (kadesh) .. controls (2.75,3.8) and (3.2,4.2) ..
-    (moab);
-  \draw[arkmap explicit] (moab) -- (gilgal);
-  \draw[arkmap sequence] (gilgal) .. controls (4.0,6.35) and (3.65,6.75) ..
-    (shiloh-loc);
-  \draw[arkmap nt] (nazareth) .. controls (3.85,7.95) and (3.8,7.0) ..
-    (hillcountry);
+\newcommand{\ArkJourneyRegionalMap}{%
+\begin{tikzpicture}[x=2cm,y=2cm,line cap=round,line join=round]
+  \ArkMapStyles
+  \coordinate (regional-sw) at (.344842,.402299);
+  \coordinate (regional-ne) at (7.486812,9.597701);
+  \path[use as bounding box] (regional-sw) rectangle (regional-ne);
 
-  % Central enlargement: source-attested stations and schematic sequence.
-  \draw[arkmap panel] (5.45,.45) rectangle (15.4,9.55);
-  \node[arkmap label,font=\fontsize{7.4}{8}\selectfont\bfseries,
-    anchor=north west] at (5.62,9.42) {CENTRAL JOURNEY\\stations, not recovered roads};
-  \draw[arkmap coast] (6.12,9.15) .. controls (5.9,7.5) and (6.3,5.8) ..
-    (6.08,4.1) .. controls (5.92,2.9) and (6.25,1.6) .. (6.1,.82);
-  \draw[arkmap water] (14.35,8.75) .. controls (14.58,7.15) and
-    (14.40,5.8) .. (14.50,4.95);
-  \draw[arkmap water] (14.50,4.20) ellipse (.16 and .62);
-  \node[arkmap tiny,rotate=90] at (5.8,5.2) {Mediterranean};
-  \node[arkmap tiny,rotate=90] at (14.72,6.3) {Jordan};
+  % Exact point proxies from the registered source record.  The Shittim/Moab
+  % centroid is only a broad-area layout centroid north/east of the Dead Sea.
+  \ArkRegionalPoint{r-sinai}{33.98}{28.56}
+  \ArkRegionalPoint{r-kadesh}{34.42}{30.65}
+  \ArkRegionalPoint{r-shiloh}{35.290}{32.056}
+  \ArkRegionalPoint{r-moab}{35.70}{31.80}
+  \ArkRegionalPoint{r-gilgal}{35.43}{31.86}
+  \ArkRegionalPoint{r-judah}{35.20}{31.65}
+  \ArkRegionalPoint{r-nazareth}{35.30}{32.70}
 
-  \coordinate (gilgal-central) at (13.63,3.93);
-  \draw[arkmap region] (gilgal-central) ellipse (.55 and .31);
-  \node[arkmap number] at (13.24,3.68) {4};
-  \node[arkmap tiny,anchor=east] at (13.02,3.92) {Gilgal};
+  % The biblical mountain remains a disputed region.  Jebel Musa is a separate
+  % traditional locator and is not used as the route's evidentiary origin.
+  \coordinate (r-sinai-region) at ($(r-sinai)+(-.22,.18)$);
+  \coordinate (r-sinai-rest) at ($(r-sinai-region)+(.18,.52)$);
 
-  \node[arkmap secure] (jericho) at (14.08,4.62) {};
-  \node[arkmap number] at (14.32,4.88) {5};
-  \node[arkmap tiny,anchor=south east] at (13.86,4.74) {Jericho};
-  \draw[arkmap explicit] (13.75,4.42) arc[start angle=205,end angle=520,
-    x radius=.38,y radius=.26];
+  \begin{scope}
+    \clip (regional-sw) rectangle (regional-ne);
+    \ArkMapBase
 
-  \coordinate (ebal) at (13.12,7.82);
-  \draw[arkmap region] (ebal) ellipse (.61 and .38);
-  \node[arkmap number] at (13.38,8.08) {6};
-  \node[arkmap tiny,anchor=west] at (13.72,7.82) {Ebal /\\Gerizim};
-  \draw[arkmap sequence] (gilgal-central) .. controls (14.15,6.0) and
-    (13.55,7.0) .. (ebal);
+    \draw[arkmap uncertain] (r-sinai-region) ellipse (.52 and .38);
+    \draw[arkmap region] (r-moab) ellipse (.38 and .50);
+    \draw[arkmap region] (r-gilgal) ellipse (.26 and .22);
+    \draw[arkmap region] (r-judah) ellipse (.43 and .36);
+    \draw[arkmap region] (r-nazareth) ellipse (.24 and .20);
 
-  \node[arkmap secure] (shiloh) at (12.45,6.88) {};
-  \node[arkmap number] at (12.17,7.15) {7};
-  \node[arkmap label,anchor=west] at (12.70,6.88) {Shiloh};
-  \draw[arkmap sequence] (ebal) -- (shiloh);
+    \draw[arkmap explicit] (r-sinai-region) -- (r-sinai-rest);
+    \draw[arkmap inferred] (r-sinai-rest) -- (r-kadesh);
+    \draw[arkmap inferred] (r-kadesh) -- (r-moab);
+    \draw[arkmap explicit] (r-moab) -- (r-gilgal);
+    \draw[arkmap sequence] (r-gilgal) -- (r-shiloh);
+    \draw[arkmap nt] (r-nazareth) -- (r-judah);
 
-  \node[arkmap callout,anchor=north west,text width=2.75cm]
-    at (9.55,8.72)
-    {\textbf{Witness difference.}\\
-     Jgs 20: Bethel in the Hebrew/Greek and modern witnesses; Shiloh in the
-     Vulgate/Douay. No side route is drawn.};
+    \node[arkmap traditional] at (r-sinai) {};
+    \node[arkmap number] at ($(r-sinai-region)+(-.27,.25)$) {1};
+    \node[arkmap probable] at (r-kadesh) {};
+    \node[arkmap number] at ($(r-kadesh)+(-.25,.25)$) {2};
+    \node[arkmap number] at ($(r-moab)+(.27,-.25)$) {3};
+    \node[arkmap number] at ($(r-gilgal)+(.25,-.18)$) {4};
+    \node[arkmap secure] at (r-shiloh) {};
+    \node[arkmap number] at ($(r-shiloh)+(-.23,.24)$) {7};
+    \node[arkmap number] at ($(r-nazareth)+(-.23,.23)$) {N1};
+    \node[arkmap number] at ($(r-judah)+(-.28,-.24)$) {N2};
+  \end{scope}
 
-  \node[arkmap probable] (ebenezer) at (9.12,6.62) {};
-  \node[arkmap number] at (8.83,6.89) {8};
-  \node[arkmap tiny,anchor=north west] at (9.35,6.51)
-    {Ebenezer?\\candidate area};
-  \draw[arkmap inferred] (shiloh) .. controls (11.2,6.75) and
-    (10.05,6.65) .. (ebenezer);
+  \draw[arkmap frame] (regional-sw) rectangle (regional-ne);
+  \node[arkmap label,font=\fontsize{10}{10.8}\selectfont\bfseries,
+    anchor=north west] at (.50,9.46) {WHOLE JOURNEY};
+  \node[arkmap tiny,anchor=north west] at (.50,9.19)
+    {Sinai, the Jordan approach, and the New-Ark overlay};
 
-  \node[arkmap secure] (ashdod) at (6.68,2.15) {};
-  \node[arkmap number] at (6.43,2.43) {9};
-  \node[arkmap tiny,anchor=west] at (6.92,2.14) {Ashdod};
-  \node[arkmap secure] (gath) at (8.05,1.72) {};
-  \node[arkmap number] at (7.79,1.98) {10};
-  \node[arkmap tiny,anchor=west] at (8.28,1.72) {Gath};
-  \node[arkmap secure] (ekron) at (8.48,2.74) {};
-  \node[arkmap number] at (8.22,3.02) {11};
-  \node[arkmap tiny,anchor=west] at (8.72,2.74) {Ekron};
-  \node[arkmap secure] (bethshemesh) at (9.73,3.28) {};
-  \node[arkmap number] at (9.47,3.56) {12};
-  \node[arkmap tiny,anchor=west] at (9.97,3.28) {Beth-shemesh};
-  \node[arkmap secure] (kj) at (11.12,3.83) {};
-  \node[arkmap number] at (10.86,4.12) {13};
-  \node[arkmap tiny,anchor=south west] at (11.30,3.90)
-    {Kiriath-jearim};
-  \draw[arkmap inferred] (ebenezer) .. controls (7.8,5.2) and
-    (6.8,3.5) .. (ashdod);
-  \draw[arkmap explicit] (ashdod) -- (gath);
-  \draw[arkmap explicit] (gath) -- (ekron);
-  \draw[arkmap inferred] (ekron) -- (bethshemesh);
-  \draw[arkmap explicit] (bethshemesh) -- (kj);
+  % A single ledger keeps every word away from the route.  Its placement has
+  % no geographical meaning; numbered badges retain the source geometry.
+  \node[arkmap ledger,anchor=north west,text width=4.05cm] at (.51,8.83)
+    {\textbf{REGIONAL STATIONS}\\
+     \textbf{1} Sinai/Horeb region\\
+     \quad\raisebox{-.25ex}{\tikz\node[arkmap traditional,minimum size=2.4mm,
+       inner sep=.5pt] {};} Jebel Musa, traditional\\
+     \textbf{2} Kadesh region; Tell el-Qudeirat candidate\\
+     \textbf{3} Moab/Shittim textual region\\
+     \textbf{4} Jordan/Gilgal broad area\\
+     \textbf{7} Shiloh, registered site\\
+     \textbf{N1} Nazareth city-area proxy\\
+     \textbf{N2} unnamed town in Judah's hill country};
 
-  \coordinate (david) at (12.45,2.42);
-  \coordinate (temple) at (13.28,2.76);
-  \draw[arkmap corridor] (kj) .. controls (11.65,3.25) and
-    (11.95,2.70) .. (david);
-  \draw[arkmap explicit] (kj) .. controls (11.65,3.25) and
-    (11.95,2.70) .. (david);
-  \draw[arkmap explicit] (david) -- (temple);
-  \draw[arkmap region] (david) ellipse (.27 and .20);
-  \node[arkmap number] at (12.18,2.68) {16};
-  \node[arkmap tiny,anchor=north] at (12.42,2.15)
-    {City of David\\biblical Zion};
-  \draw[arkmap region] (temple) ellipse (.28 and .19);
-  \node[arkmap number] at (13.57,3.03) {17};
-  \node[arkmap tiny,anchor=south west] at (13.52,2.78) {Temple};
-  \draw[line width=1.1pt] ($(temple)+(.32,-.17)$) --
-    ($(temple)+(.32,.17)$);
-  \node[arkmap tiny,anchor=north west] at (13.73,2.55)
-    {earthly route ends};
+  \node[arkmap callout,anchor=south west,text width=4.4cm] at (.51,.55)
+    {\textbf{Location discipline.}  The route begins in the disputed
+     Sinai/Horeb region, not at the traditional Jebel Musa marker.  Dotted
+     areas are not event pins.  Connectors show narrative order, not recovered
+     roads.};
+\end{tikzpicture}%
+}
 
-  \node[arkmap callout,anchor=north west,text width=3.55cm] at (5.68,8.78)
-    {\textbf{14  Perez-uzzah: unlocated.}\\
-     Nacon/Nachon--Chidon threshing floor; no map pin.\\[1pt]
-     \textbf{15  Obed-edom: unlocated.}\\
-     Three-month household pause; ``Gittite'' is not a coordinate.};
+\newcommand{\ArkJourneyLevantMap}{%
+\begin{tikzpicture}[x=2cm,y=2cm,line cap=round,line join=round]
+  \ArkMapStyles
+  \coordinate (levant-sw) at (7.865684,1.754867);
+  \coordinate (levant-ne) at (15.255158,8.245133);
+  % Extra bands above and below the map hold witness and evidence keys without
+  % consuming or colliding with geography.
+  \path[use as bounding box] (7.865684,.38) rectangle (15.255158,9.44);
 
-  % New-Ark overlay.  Luke's town receives an area, while Ein Karem receives
-  % a separate traditional marker rather than inheriting the Gospel's status.
-  \node[arkmap tiny,anchor=south] (nazareth-edge) at (14.30,8.78)
-    {N1 Nazareth (north)};
-  \coordinate (judah-town) at (11.65,5.02);
-  \coordinate (judah-entry) at (12.12,5.30);
-  \node[arkmap number] at (11.30,5.31) {N2};
-  \draw[arkmap region] (judah-town) ellipse (.70 and .44);
-  \node[arkmap tiny,anchor=east] at (10.90,5.02)
-    {unnamed town in\\Judah's hill country};
-  \draw[arkmap nt] (nazareth-edge.south) .. controls (14.1,7.5) and
-    (13.2,5.8) .. (judah-entry);
-  \node[arkmap traditional] (einkarem) at (11.18,4.48) {};
-  \node[arkmap tiny,anchor=east] at (10.92,4.41)
-    {Ein Karem\\\emph{traditional}};
-  \draw[dash dot,line width=.65pt] (einkarem) -- (11.36,4.70);
+  \ArkLevantPoint{jericho}{35.44}{31.87}
+  \ArkLevantPoint{shiloh}{35.290}{32.056}
+  \ArkLevantPoint{ashdod}{34.6561}{31.7560}
+  \ArkLevantPoint{gath}{34.8468}{31.7013}
+  \ArkLevantPoint{ekron}{34.8484}{31.7797}
+  \ArkLevantPoint{bethshemesh}{34.9747}{31.7505}
+  \ArkLevantPoint{kj}{35.1036}{31.8094}
 
-\end{tikzpicture}
+  % Region-only or city/sacred-area proxies: no point symbol is used.
+  \ArkLevantPoint{moab}{35.70}{31.80}
+  \ArkLevantPoint{gilgal}{35.43}{31.86}
+  \ArkLevantPoint{ebal}{35.25}{32.22}
+  \ArkLevantPoint{ebenezer}{34.98}{32.10}
+  \ArkLevantPoint{david}{35.230}{31.774}
+  \ArkLevantPoint{temple}{35.235}{31.778}
+  \ArkLevantPoint{nazareth}{35.30}{32.70}
+  \ArkLevantPoint{judah-town}{35.20}{31.65}
+  \ArkLevantPoint{judah-entry}{35.22}{31.72}
+  \ArkLevantPoint{einkarem}{35.16}{31.77}
+
+  \begin{scope}
+    \clip (levant-sw) rectangle (levant-ne);
+    \ArkMapBase
+
+    \draw[arkmap region] (moab) ellipse (.42 and .46);
+    \draw[arkmap region] (gilgal) ellipse (.28 and .24);
+    \draw[arkmap region] (ebal) ellipse (.38 and .30);
+    \draw[arkmap region] (ebenezer) ellipse (.34 and .26);
+    \draw[arkmap region] (david) ellipse (.24 and .18);
+    \draw[arkmap region] (temple) ellipse (.24 and .18);
+    \draw[arkmap region] (nazareth) ellipse (.25 and .21);
+    \draw[arkmap region] (judah-town) ellipse (.52 and .40);
+
+    % Shittim lies east of the lower Jordan, north/east of the Dead Sea.  The
+    % broad-region origin lets the explicit crossing reach Gilgal without
+    % drawing through the lake and remains neither a pin nor an event claim.
+    \draw[arkmap explicit] (moab) -- (gilgal);
+    \draw[arkmap explicit] ($(jericho)+(-.22,-.05)$)
+      arc[start angle=205,end angle=520,x radius=.26,y radius=.19];
+    \draw[arkmap sequence] (gilgal) -- (ebal);
+    \draw[arkmap sequence] (ebal) -- (shiloh);
+    \draw[arkmap inferred] (shiloh) -- (ebenezer);
+    \draw[arkmap inferred] (ebenezer) -- (ashdod);
+    \draw[arkmap explicit] (ashdod) -- (gath);
+    \draw[arkmap explicit] (gath) -- (ekron);
+    \draw[arkmap inferred] (ekron) -- (bethshemesh);
+    \draw[arkmap explicit] (bethshemesh) -- (kj);
+    \draw[arkmap corridor] (kj) -- (david);
+    \draw[arkmap explicit] (kj) -- (david);
+    \draw[arkmap explicit] (david) -- (temple);
+    \draw[arkmap nt] (nazareth) -- (judah-entry);
+
+    \node[arkmap traditional] at (einkarem) {};
+    \node[arkmap secure] at (jericho) {};
+    \node[arkmap secure] at (shiloh) {};
+    \node[arkmap secure] at (ashdod) {};
+    \node[arkmap secure] at (gath) {};
+    \node[arkmap secure] at (ekron) {};
+    \node[arkmap secure] at (bethshemesh) {};
+    \node[arkmap secure] at (kj) {};
+
+    % Compact numbered badges keep the registered points and routes visible.
+    \draw[arkmap leader] (nazareth) -- ($(nazareth)+(-.30,.27)$);
+    \node[arkmap number] at ($(nazareth)+(-.30,.27)$) {N1};
+    \draw[arkmap leader] (ebal) -- ($(ebal)+(-.35,.30)$);
+    \node[arkmap number] at ($(ebal)+(-.35,.30)$) {6};
+    \draw[arkmap leader] (shiloh) -- ($(shiloh)+(.38,.12)$);
+    \node[arkmap number] at ($(shiloh)+(.38,.12)$) {7};
+    \draw[arkmap leader] (ebenezer) -- ($(ebenezer)+(-.42,.12)$);
+    \node[arkmap number] at ($(ebenezer)+(-.42,.12)$) {8};
+    \draw[arkmap leader] (moab) -- ($(moab)+(.36,-.27)$);
+    \node[arkmap number] at ($(moab)+(.36,-.27)$) {3};
+    \draw[arkmap leader] (gilgal) -- ($(gilgal)+(.39,.04)$);
+    \node[arkmap number] at ($(gilgal)+(.39,.04)$) {4};
+    \draw[arkmap leader] (jericho) -- ($(jericho)+(.35,.29)$);
+    \node[arkmap number] at ($(jericho)+(.35,.29)$) {5};
+    \draw[arkmap leader] (ashdod) -- ($(ashdod)+(-.38,.34)$);
+    \node[arkmap number] at ($(ashdod)+(-.38,.34)$) {9};
+    \draw[arkmap leader] (gath) -- ($(gath)+(-.48,-.31)$);
+    \node[arkmap number] at ($(gath)+(-.48,-.31)$) {10};
+    \draw[arkmap leader] (ekron) -- ($(ekron)+(-.08,.45)$);
+    \node[arkmap number] at ($(ekron)+(-.08,.45)$) {11};
+    \draw[arkmap leader] (bethshemesh) -- ($(bethshemesh)+(.06,-.43)$);
+    \node[arkmap number] at ($(bethshemesh)+(.06,-.43)$) {12};
+    \draw[arkmap leader] (kj) -- ($(kj)+(.31,.39)$);
+    \node[arkmap number] at ($(kj)+(.31,.39)$) {13};
+    \draw[arkmap leader] (judah-town) -- ($(judah-town)+(-.12,-.48)$);
+    \node[arkmap number] at ($(judah-town)+(-.12,-.48)$) {N2};
+  \end{scope}
+
+  \draw[arkmap frame] (levant-sw) rectangle (levant-ne);
+  \node[arkmap label,font=\fontsize{10}{10.8}\selectfont\bfseries,
+    anchor=north west] at (7.98,9.33)
+    {THE ARK'S JOURNEY \quad\textbar\quad THE NEW-ARK OVERLAY};
+  \node[arkmap callout,anchor=north west,text width=13.6cm,
+    font=\fontsize{6.4}{7}\selectfont] at (7.98,9.03)
+    {\textbf{Witness variants; no alternate roads drawn.}
+     Judges 20: Bethel in the Hebrew and registered Brenton Septuagint
+     witnesses and most modern translations; Shiloh in the Vulgate/Douay.
+     Philistine terminus: Ekron in Hebrew/Vulgate/Douay; Ashkelon in
+     Brenton's Septuagint.};
+
+  \node[arkmap label,font=\fontsize{9}{9.7}\selectfont\bfseries,
+    anchor=north west] at (7.98,8.12) {LEVANT ENLARGEMENT};
+  \node[arkmap tiny,anchor=north west] at (7.98,7.86)
+    {Registered sites and broad areas; connectors are not recovered roads};
+
+  % Three atlas columns decode the badges in the otherwise empty northern band.
+  \node[arkmap ledger,anchor=north west,text width=3.55cm] at (8.00,7.58)
+    {\textbf{STATIONS}\\
+     \textbf{3} Moab/Shittim region\\
+     \textbf{4} Jordan/Gilgal region\\
+     \textbf{5} Jericho\\
+     \textbf{6} Ebal/Gerizim zone\\
+     \textbf{7} Shiloh};
+  \node[arkmap ledger,anchor=north west,text width=3.55cm] at (10.40,7.58)
+    {\textbf{STATIONS}\\
+     \textbf{8} Ebenezer? candidate area\\
+     \textbf{9} Ashdod\\
+     \textbf{10} Gath\\
+     \textbf{11} Ekron\\
+     \textbf{12} Beth-shemesh};
+  \node[arkmap ledger,anchor=north west,text width=3.75cm] at (12.80,7.58)
+    {\textbf{STATIONS}\\
+     \textbf{13} Kiriath-jearim\\
+     \textbf{N1} Nazareth city proxy\\
+     \textbf{N2} unnamed Judah hill town\\
+     \raisebox{-.25ex}{\tikz\node[arkmap traditional,minimum size=2.4mm,
+       inner sep=.5pt] {};} Ein Karem, traditional};
+
+  % Jerusalem is below useful station-separation scale.  The leader ties a
+  % schematic sequence to the true city/sacred-area proxies without inventing
+  % geographic distance.
+  \draw[arkmap leader] (david) -- (14.03,2.40);
+  \node[arkmap callout,anchor=north east,text width=3.25cm] at (15.07,2.52)
+    {\textbf{16} City of David\\[-1pt]
+     \tikz[baseline=-.55ex]{\draw[arkmap explicit] (0,0)--(.65,0);}
+     \textbf{17} Temple\\[-1pt]
+     \emph{earthly route ends}};
+
+  % The text-equivalent's stations 14--15 box belongs over this broad corridor.
+  \coordinate (kj-david-corridor) at ($(kj)!.50!(david)$);
+  \draw[arkmap leader] (kj-david-corridor) -- (10.65,2.37);
+  \node[arkmap callout,anchor=north east,text width=5.05cm] at (10.65,2.50)
+    {\textbf{14} Perez-uzzah: unlocated; no pin.\\[-1pt]
+     \textbf{15} Obed-edom: unlocated; three-month household pause.\\[-1pt]
+     Broad Kiriath-jearim--Jerusalem corridor only; ``Gittite'' is not a
+     coordinate.};
+
+  \node[arkmap key,anchor=south west,text width=8.0cm] at (7.98,.43)
+    {\textbf{ROUTE KEY}\\[-1pt]
+      \tikz[baseline=-.5ex]{\draw[arkmap explicit] (0,0)--(.62,0);}
+      narrated movement\quad
+      \tikz[baseline=-.5ex]{\draw[arkmap inferred] (0,0)--(.62,0);}
+      \mbox{inferred / continuity}\\[-1pt]
+      \tikz[baseline=-.5ex]{\draw[arkmap sequence] (0,0)--(.62,0);}
+      \mbox{attested-place link}\quad
+      \tikz[baseline=-.5ex]{\draw[arkmap corridor] (0,0)--(.62,0);
+        \draw[arkmap explicit] (0,0)--(.62,0);}
+      \mbox{unlocated-road corridor}\\[-1pt]
+      \tikz[baseline=-.5ex]{\draw[arkmap nt] (0,0)--(.62,0);}
+      \mbox{Mary into named region}};
+  \node[arkmap key,anchor=south east,text width=5.15cm] at (15.14,.43)
+    {\textbf{EVIDENCE KEY}\\[-1pt]
+      \tikz[baseline=-.65ex]{\node[arkmap secure] {};}
+      \mbox{registered site}\quad
+      \tikz[baseline=-.65ex]{\node[arkmap probable] {};}
+      \mbox{candidate point}\\[-1pt]
+      \tikz[baseline=-.65ex]{\node[arkmap traditional,minimum size=2.4mm,
+        inner sep=.5pt] {};}
+      \mbox{Christian tradition}\quad
+      \tikz[baseline=-.6ex]{\draw[arkmap region] (0,0) ellipse (.15 and .09);}
+      \mbox{broad area / proxy}\\[-1pt]
+      \textbf{14--15} unlocated; no pin};
+\end{tikzpicture}%
+}
