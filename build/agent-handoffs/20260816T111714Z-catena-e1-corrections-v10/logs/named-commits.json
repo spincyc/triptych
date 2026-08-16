@@ -1,0 +1,14 @@
+{
+ "_why": "Commits this package legitimately DISCUSSES but was not produced from. head-consistency.py refuses any other SHA in a claim-bearing member, so a stale head from a superseded round cannot appear silently. Every entry here is a deliberate mention with its reason.",
+ "commits": {
+  "4f00e04bdd1fd63702a51bfdafef256b468bef77": "The published head of the V9 independent review this lane answers. Named in HANDOFF.md and in the V10 durable records, and therefore in changes.patch.",
+  "eb1ee9987425339c2b5522987bee1fb862cd7d33": "The V9 evidence commit the review independently inspected. Named in the V10 durable records, and therefore in changes.patch.",
+  "611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f": "The V8 independent review, a sibling record. Present as unified-diff context in the V9 sections neighbouring the V10 insertions.",
+  "7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8": "The V8 head and the parent's parent. Present as unified-diff context beside the V9 records the V10 records were inserted before.",
+  "e876b29e5797edcc6e86422daa807f4b1104ec81": "The V7 head. Present as unified-diff context in the neighbouring lane sections carried by changes.patch.",
+  "d9ad5ec1ae35c308a0da5ed3456fd05fdad97cbd": "The V7 independent review, a sibling record. Present as unified-diff context in the neighbouring lane sections.",
+  "f183ed1b0afc6f14574a3507f6eaf3102dc999fa": "The V6 independent review. Present as unified-diff context in the test file's recorded correction history.",
+  "4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46": "The V6 head. Named in the reused audit tools' docstrings and the test file's history as part of the defect record those tools answer.",
+  "83cb63b61e366fac07b298fee77f63d1658086f7": "The head the V6 package wrongly named as its own. Carried in the reused audit tools' docstrings as the defect those tools exist to catch."
+ }
+}

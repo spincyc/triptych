@@ -1,0 +1,86 @@
+PREFLIGHT battery=parent
+2026-08-16T06:00:07<tz>
+sha=3c5b78249193df065c4e1c2ee5a98e5989c6e582
+porcelain=clean
+cwd=$REPO
+2026-08-16T06:00:07<tz>
+START focused-catena
+LOG: logs/01-focused-catena-parent.log
+CMD: python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+exit=0
+2026-08-16T06:00:11<tz>
+END focused-catena
+2026-08-16T06:00:11<tz>
+START catena-check
+LOG: logs/02-catena-check-parent.log
+CMD: python3 scripts/_catena.py check
+exit=0
+2026-08-16T06:00:14<tz>
+END catena-check
+2026-08-16T06:00:14<tz>
+START promised
+LOG: logs/03-promised-parent.log
+CMD: tools/tpt check-promised-deliverables
+exit=0
+2026-08-16T06:00:14<tz>
+END promised
+2026-08-16T06:00:14<tz>
+START full-discovery
+LOG: logs/04-full-discovery-parent.log
+CMD: python3 -m unittest discover -s tools/tests
+exit=1
+2026-08-16T06:08:24<tz>
+END full-discovery
+2026-08-16T06:08:24<tz>
+START make-check
+LOG: logs/05-make-check-parent.log
+CMD: make -k check
+exit=2
+2026-08-16T06:13:23<tz>
+END make-check
+2026-08-16T06:13:23<tz>
+START release-bindings
+LOG: logs/06-release-bindings-parent.log
+CMD: make check-release-bindings
+exit=2
+2026-08-16T06:13:24<tz>
+END release-bindings
+2026-08-16T06:13:24<tz>
+START public-site
+LOG: logs/07-public-site-parent.log
+CMD: make public-site
+exit=0
+2026-08-16T06:13:29<tz>
+END public-site
+2026-08-16T06:13:29<tz>
+START browser-gate
+LOG: logs/08-browser-gate-parent.log
+CMD: node tools/tests/corpus_browser_gate.mjs --json-out '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v10-evidence/stage/logs/browser-gate-parent.json' > /dev/null && echo 'report written: browser-gate-parent.json (the gate prints the same JSON to stdout; discarded so the report ships once)'
+exit=1
+2026-08-16T06:15:03<tz>
+END browser-gate
+2026-08-16T06:15:03<tz>
+START gzip-sizes
+LOG: logs/09-gzip-sizes-parent.log
+CMD: python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v10-evidence/pkgtools/gzip-sizes.py' src/web/browser/catena
+exit=0
+2026-08-16T06:15:03<tz>
+END gzip-sizes
+2026-08-16T06:15:03<tz>
+START head-tests-against-parent
+LOG: logs/10-head-tests-against-parent.log
+CMD: cp '$REPO/tools/tests/test_catena_wave_1.py' tools/tests/test_catena_wave_1.py && python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py' -v
+exit=1
+2026-08-16T06:15:05<tz>
+END head-tests-against-parent
+2026-08-16T06:15:05<tz>
+START request-journals
+LOG: logs/11-request-journals-parent.log
+CMD: python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v10-evidence/pkgtools/journal-dump.py' tools/tests/test_catena_wave_1.py
+exit=0
+2026-08-16T06:15:07<tz>
+END request-journals
+POSTFLIGHT battery=parent
+2026-08-16T06:15:07<tz>
+sha=3c5b78249193df065c4e1c2ee5a98e5989c6e582
+sha-drift=none

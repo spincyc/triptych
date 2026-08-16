@@ -1,0 +1,86 @@
+PREFLIGHT battery=head
+2026-08-16T06:00:04<tz>
+sha=ea15d16d22d7ceaed989ed9907c236f967738a03
+porcelain=clean
+cwd=$REPO
+2026-08-16T06:00:04<tz>
+START focused-catena
+LOG: logs/01-focused-catena-head.log
+CMD: python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+exit=0
+2026-08-16T06:00:07<tz>
+END focused-catena
+2026-08-16T06:00:07<tz>
+START catena-check
+LOG: logs/02-catena-check-head.log
+CMD: python3 scripts/_catena.py check
+exit=0
+2026-08-16T06:00:10<tz>
+END catena-check
+2026-08-16T06:00:10<tz>
+START promised
+LOG: logs/03-promised-head.log
+CMD: tools/tpt check-promised-deliverables
+exit=0
+2026-08-16T06:00:10<tz>
+END promised
+2026-08-16T06:00:10<tz>
+START full-discovery
+LOG: logs/04-full-discovery-head.log
+CMD: python3 -m unittest discover -s tools/tests
+exit=1
+2026-08-16T06:08:20<tz>
+END full-discovery
+2026-08-16T06:08:20<tz>
+START make-check
+LOG: logs/05-make-check-head.log
+CMD: make -k check
+exit=2
+2026-08-16T06:13:19<tz>
+END make-check
+2026-08-16T06:13:19<tz>
+START release-bindings
+LOG: logs/06-release-bindings-head.log
+CMD: make check-release-bindings
+exit=2
+2026-08-16T06:13:20<tz>
+END release-bindings
+2026-08-16T06:13:20<tz>
+START public-site
+LOG: logs/07-public-site-head.log
+CMD: make public-site
+exit=0
+2026-08-16T06:13:25<tz>
+END public-site
+2026-08-16T06:13:25<tz>
+START browser-gate
+LOG: logs/08-browser-gate-head.log
+CMD: node tools/tests/corpus_browser_gate.mjs --json-out '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v10-evidence/stage/logs/browser-gate-head.json' > /dev/null && echo 'report written: browser-gate-head.json (the gate prints the same JSON to stdout; discarded so the report ships once)'
+exit=1
+2026-08-16T06:15:00<tz>
+END browser-gate
+2026-08-16T06:15:00<tz>
+START browser-static
+LOG: logs/09-browser-static-head.log
+CMD: python3 -m unittest discover -s tools/tests -p 'test_browser_static.py'
+exit=0
+2026-08-16T06:15:00<tz>
+END browser-static
+2026-08-16T06:15:00<tz>
+START gzip-sizes
+LOG: logs/10-gzip-sizes-head.log
+CMD: python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v10-evidence/pkgtools/gzip-sizes.py' src/web/browser/catena
+exit=0
+2026-08-16T06:15:00<tz>
+END gzip-sizes
+2026-08-16T06:15:00<tz>
+START request-journals
+LOG: logs/11-request-journals-head.log
+CMD: python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v10-evidence/pkgtools/journal-dump.py' tools/tests/test_catena_wave_1.py
+exit=0
+2026-08-16T06:15:02<tz>
+END request-journals
+POSTFLIGHT battery=head
+2026-08-16T06:15:02<tz>
+sha=ea15d16d22d7ceaed989ed9907c236f967738a03
+sha-drift=none

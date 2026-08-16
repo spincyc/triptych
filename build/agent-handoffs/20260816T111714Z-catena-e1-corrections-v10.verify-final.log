@@ -1,0 +1,37 @@
+== P8 final verification, bound to the exact archive
+   archive : 20260816T111714Z-catena-e1-corrections-v10.zip
+   bytes   : 256210
+   sha256  : 4c71d1c15bd1f1992bf29a1d84342f11a8b671b5b5bd6bdcc4341de091e23e2f
+   root    : 20260816T111714Z-catena-e1-corrections-v10
+   verified: 2026-08-16T11:17:20Z (UTC)
+[1 sidecar] ok
+[2 layout] ok
+[3 manifest] ok
+[4 claims rows] ok
+[5 partition] ok
+--- final bytes, derived from the archive alone
+    members            : 59
+    frozen rows        : 54 row(s), 2060250 bytes
+    derived claims.json: 34914 bytes
+    derived DERIVED-CLAIMS.md: 8139 bytes
+    derived logs/derive-claims.log: 92 bytes
+    derived logs/head-consistency.log: 1923 bytes
+    derived MANIFEST.sha256: 5245 bytes
+    derived members    : 5 member(s), 50313 bytes
+    total uncompressed : 2110563 bytes across 59 member(s) (= frozen 2060250 + derived 50313)
+[6 rendering] ok
+--- head-consistency over the extraction (exit 0)
+head consistency: 31 text member(s) scanned
+  entitled SHAs: 78bf44b784e1 (commit in range), c51d0535366b (commit in range), 4639b139f217 (declared: The V6 head. Named in the reused audit tools' docstrings and the test file's history as part of the defect record those tools answer.), f183ed1b0afc (declared: The V6 independent review. Present as unified-diff context in the test file's recorded correction history.), e876b29e5797 (declared: The V7 head. Present as unified-diff context in the neighbouring lane sections carried by changes.patch.), d9ad5ec1ae35 (declared: The V7 independent review, a sibling record. Present as unified-diff context in the neighbouring lane sections.), 7e4df42a21bc (declared: The V8 head and the parent's parent. Present as unified-diff context beside the V9 records the V10 records were inserted before.), 611b5eed8128 (declared: The V8 independent review, a sibling record. Present as unified-diff context in the V9 sections neighbouring the V10 insertions.), eb1ee9987425 (declared: The V9 evidence commit the review independently inspected. Named in the V10 durable records, and therefore in changes.patch.), 83cb63b61e36 (declared: The head the V6 package wrongly named as its own. Carried in the reused audit tools' docstrings as the defect those tools exist to catch.), 4f00e04bdd1f (declared: The published head of the V9 independent review this lane answers. Named in HANDOFF.md and in the V10 durable records, and therefore in changes.patch.), ea15d16d22d7 (head), 3c5b78249193 (parent), 55df5c236a1d (review addressed)
+  package members: 59; referenced: 59; unreferenced: 0
+  frozen rows in claims.json: 54; declared derived members: 5; pending: 0
+  residue (present without a frozen row): 5 (DERIVED-CLAIMS.md, MANIFEST.sha256, claims.json, logs/derive-claims.log, logs/head-consistency.log) -- every one must be a declared derived member
+  frozen members that drifted: 0
+  problems: 0
+--- sanitizer check-only over the extraction (exit 0)
+check-only: 0 file(s) would change, 0 would-be substitution(s)
+sanitization scan: 0 private-token hit(s)
+evidence-index check: 0 missing reference(s), 0 unreferenced member(s), 0 deferred reference(s)
+screenshot pair audit: 0 before/after pair(s), 0 byte-identical, 0 differing
+[7 shipped audits] ok
+P8 verification: PASS (0 problem(s))
