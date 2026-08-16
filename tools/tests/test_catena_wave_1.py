@@ -176,7 +176,14 @@ NODE = shutil.which("node")
 # ONLY when the prefix is genuinely absent. A refused statement is terminal:
 # it composes no request and opens no carried door, and the row keeps the
 # refusal as `text_refused`. The page is again untouched.
-MODEL_SHA256 = "9514afb1c09de02438513651e8828d4ac30620e13b6402295ca6199fa452f488"
+# V10 changes the model and the page together, for the presentation closure
+# the V9 review required: the model states the refused sentence once as
+# `TEXT_REFUSED` and closes the exported claim boundary — absence is the one
+# shape `{stated: false, trail: ''}`, and every contradictory direct claim
+# projects as refused — while the page consumes `text_refused` BEFORE the
+# request sink, so a refused row renders the refused sentence and can be
+# answered by no path, carried, cached, or late.
+MODEL_SHA256 = "08eeba7201313940e5026e2e05283a0b83f5bc7279e35a6fbce8c8c57fca1dfd"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -586,6 +593,16 @@ SEVERIAN_EDITION = json.loads(
      "src/web/data/structure/sources/editions/severian-of-gabala/"
      "in-cosmogoniam-homiliae/2018-pta-grc1-2018.json").read_text(encoding="utf-8"))
 SEVERIAN_BASIS = SEVERIAN_EDITION["artifacts"][0]["rights_basis"]
+
+# THE TWO TERMINAL SENTENCES, AND THEY ARE DIFFERENT CLAIMS. V10, the V9
+# review: absence — no text reference stated — and refusal — a reference
+# stated and declined — collapsed into the first sentence, which is false of
+# a fragment whose spine stated a reference. The refused sentence is pinned
+# here byte-exactly against `M.TEXT_REFUSED`, the model's own export, so the
+# page and the suite cannot drift apart.
+NO_TEXT_SAID = "This fragment carries no text file, so nothing of it can be shown."
+REFUSED_SAID = ("A text reference was supplied for this fragment, "
+                "but it cannot be used as written, so no text is shown.")
 
 GEN1 = "#book=Gen&chapter=1&bible=douay-rheims"
 GEN2 = "#book=Gen&chapter=2&bible=douay-rheims"
@@ -2823,7 +2840,7 @@ function mergeInto(base, extra) {
   }
 }
 
-function inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released) {
+function inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, history) {
   const reading = page.reading;
   const nodes = reading.descendants();
   const withClass = (name) => nodes.filter((one) => new ClassList(one).contains(name));
@@ -3017,6 +3034,19 @@ function inspect(page, document, location, fetched, hashWrites, replaced, status
     statusWrites: (statusWrites || []).slice(),
     hashWrites: (hashWrites || []).slice(),
     replaced: (replaced || []).slice(),
+    /* THE STATE ARGUMENT OF EVERY history WRITE, and the standing
+     * history.state. V10, the V9 review: "history.state is not captured by
+     * the replay at all" — so a late completion writing state could not be
+     * seen, and no vector could pin it. */
+    replacedStates: (replacedStates || []).slice(),
+    historyState: history && history.state !== undefined ? history.state : null,
+    /* THE JOURNAL, OWNED. V10, the V9 review: ownership was inferred by
+     * slicing `fetched` against a prior snapshot's length, so a substitute
+     * request could hide inside an equal count. Each request carries its
+     * sequence and the step in force when it was made — 'start' is the
+     * bootstrap, before any step ran. */
+    requests: (requests || []).map(
+      (one) => ({ seq: one.seq, path: one.path, phase: one.phase })),
     fetched: fetched.slice()
   };
 }
@@ -3037,6 +3067,10 @@ async function run(scenario) {
   let hashValue = scenario.hash || '';
   const hashWrites = [];
   const replaced = [];
+  /* Every state argument handed to replaceState, in order, and a standing
+   * `history.state` the projection can read — the sink the V9 review found
+   * the replay did not capture at all. */
+  const replacedStates = [];
   const location = {
     search: '',
     pathname: '/catena/',
@@ -3046,11 +3080,14 @@ async function run(scenario) {
   const window = {
     location: location,
     history: {
+      state: null,
       replaceState: (state, title, url) => {
         const target = String(url);
         const cut = target.indexOf('#');
         hashValue = cut >= 0 ? target.slice(cut) : '';
         replaced.push(target);
+        replacedStates.push(state === undefined ? null : state);
+        window.history.state = state === undefined ? null : state;
       }
     },
     listeners: Object.create(null),
@@ -3065,6 +3102,11 @@ async function run(scenario) {
   const page = buildPage(document);
   const overrides = scenario.files || {};
   const fetched = [];
+  /* THE OWNED JOURNAL. Beside the flat path list, each request records its
+   * sequence and the step in force when it was made, so a test asserts WHOSE
+   * request each one is rather than slicing counts. */
+  const requests = [];
+  const phase = { now: 'start' };
 
   /* Requests parked in flight: a scenario naming path fragments in `defer`
    * holds every matching response until a `release` step resolves it (or
@@ -3082,6 +3124,7 @@ async function run(scenario) {
   global.fetch = async (url) => {
     const path = String(url).replace(/^\.\.\/browse\//, '');
     fetched.push(path);
+    requests.push({ seq: requests.length, path: path, phase: phase.now });
     const has = Object.prototype.hasOwnProperty.call(overrides, path);
     const body = has ? overrides[path] : corpusFile(path);
     const extra = (scenario.patch || {})[path];
@@ -3130,9 +3173,12 @@ async function run(scenario) {
   await settle();
 
   const snapshots = {};
-  snapshots.start = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released);
+  snapshots.start = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, window.history);
 
   for (const step of scenario.steps || []) {
+    // The step's label is in force BEFORE it runs, so every request it
+    // causes is journalled under the step that owns it.
+    phase.now = step.label || step.do;
     if (step.do === 'hash') {
       // The browser: Back, Forward, or a typed hash — the URL changes and a
       // hashchange event fires. The raw assignment bypasses the recording
@@ -3230,10 +3276,10 @@ async function run(scenario) {
       }
       await settle();
     }
-    snapshots[step.label || step.do] = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released);
+    snapshots[step.label || step.do] = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, window.history);
   }
 
-  const report = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released);
+  const report = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, window.history);
   report.snapshots = snapshots;
   return report;
 }
@@ -3317,7 +3363,7 @@ class ReplayTest(unittest.TestCase):
         for one URL + data whatever the arrival path — with the per-session
         history/network journals left out."""
         journals = {"fetched", "hashWrites", "replaced", "statusWrites",
-                    "snapshots", "released"}
+                    "snapshots", "released", "requests", "replacedStates"}
         return {key: value for key, value in snap.items() if key not in journals}
 
 
@@ -7523,12 +7569,13 @@ class UnsafeTextPrefixTest(ReplayTest):
 
     def test_the_reader_is_told_rather_than_left_loading(self):
         # The refusal is stated in the fragment's own body, and only in the
-        # fragment the reader opened; the second is untouched.
+        # fragment the reader opened; the second is untouched. V10: the
+        # stated-and-refused prefix says so — the absence sentence was false
+        # of a fragment whose spine stated a reference.
         self.assertEqual(self.snapshot("unsafe-prefix", "start")["fragmentTexts"],
                          ["Loading…", "Loading…"])
         self.assertEqual(self.page("unsafe-prefix")["fragmentTexts"],
-                         ["This fragment carries no text file, so nothing of it "
-                          "can be shown.", "Loading…"])
+                         [REFUSED_SAID, "Loading…"])
 
     def test_the_prefix_costs_the_fragments_nothing_they_state(self):
         # The ids are sound, so both fragments keep their identity, their
@@ -7666,7 +7713,7 @@ class NullBootstrapTerminalStateTest(ReplayTest):
         # failures, one shell, differing ONLY in the reason given and in the
         # address the reader arrived with.
         journals = {"fetched", "hashWrites", "replaced", "statusWrites",
-                    "snapshots", "released"}
+                    "snapshots", "released", "requests", "replacedStates"}
         base = {key: value for key, value in self.page("null-index").items()
                 if key not in journals
                      and key not in ("hash", "statusText", "failureText")}
@@ -8502,7 +8549,8 @@ class V8TextNamespaceRequestSinkTest(ReplayTest):
 
     BOOTSTRAP = V7TextPathRequestSinkTest.BOOTSTRAP
 
-    NO_TEXT = "This fragment carries no text file, so nothing of it can be shown."
+    NO_TEXT = NO_TEXT_SAID
+    REFUSED = REFUSED_SAID
 
     def opened(self, name):
         return self.snapshot(name, "opened")
@@ -8545,14 +8593,17 @@ class V8TextNamespaceRequestSinkTest(ReplayTest):
                     self.assertNotIn("PLANTED", said)
                     self.assertNotIn("not this route's text", said)
 
-    def test_each_refused_fragment_says_it_carries_no_text(self):
+    def test_each_refused_fragment_states_its_own_terminal_claim(self):
         # A refused address is not a fragment lost and not a claim invented:
-        # the row stands, says it carries no text file, and the route
-        # terminates — busy released, status written, no error section, no
-        # history write, nothing replaced.
+        # the row stands and the route terminates — busy released, status
+        # written, no error section, no history write, nothing replaced. V10:
+        # the two no-text states say different things, because they ARE
+        # different things. A STATED wrong-namespace prefix is a refusal, and
+        # the row says so; a carried path discarded under a spine that stated
+        # NO prefix is genuine absence, and the absence sentence stands.
         prefixed = self.opened("v8-wrong-namespace-prefix")
         self.assertEqual(prefixed["fragmentCount"], 3)
-        self.assertEqual(prefixed["fragmentTexts"], [self.NO_TEXT] * 3)
+        self.assertEqual(prefixed["fragmentTexts"], [self.REFUSED] * 3)
         self.assertEqual(prefixed["tallyText"], "3 fragments held")
         self.assertEqual(prefixed["statusWrites"],
                          ["Genesis 1, Douay-Rheims (Challoner), 3 fragments held."])
@@ -8587,15 +8638,36 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
 
     BOOTSTRAP = V7TextPathRequestSinkTest.BOOTSTRAP
 
-    NO_TEXT = V8TextNamespaceRequestSinkTest.NO_TEXT
+    NO_TEXT = NO_TEXT_SAID
+    REFUSED = REFUSED_SAID
 
     FALLBACK = "structure/catena/text/fallback-owned.json"
+
+    # What walking to Genesis 2 costs, exactly: the spine, the Scripture,
+    # and the paragraph layer — never a text body.
+    GEN2_ARRIVAL = ["structure/catena/01-gen/002.json",
+                    "douay-rheims/chapters/Gen/2.json",
+                    "structure/paragraphs/douay-rheims/01-gen/002.json"]
 
     GEN1_SPOKEN = "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
     GEN2_SPOKEN = "Genesis 2, Douay-Rheims (Challoner), 1 fragment held."
 
     def opened(self, name):
         return self.snapshot(name, "opened")
+
+    @staticmethod
+    def journal(pairs):
+        # The OWNED journal a snapshot must hold, entire: each request's
+        # path beside the step that owns it, in sequence — V10, the V9
+        # review: ownership was inferred from counts, and a substitute
+        # request could hide inside an equal count.
+        return [{"seq": seq, "path": path, "phase": phase}
+                for seq, (path, phase) in enumerate(pairs)]
+
+    @classmethod
+    def owned(cls, tail):
+        return cls.journal(
+            [(path, "start") for path in cls.BOOTSTRAP] + tail)
 
     def test_the_v8_escape_composes_no_request_cold(self):
         # THE CENTRAL ACCEPTANCE REGRESSION: the reviewer's exact vector and
@@ -8621,16 +8693,24 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
                     self.assertNotIn("genuine absence", said)
 
     def test_the_refused_route_terminates_truthfully_cold(self):
-        # Every terminal sink, enumerated: the row stands and says it
-        # carries no text file, the tally counts it, the status is written
-        # and STANDING, busy is released, the route and history are the
-        # reader's own, focus moved nowhere, and nothing failed.
-        anchor = self.opened("v8-wrong-namespace-prefix")
+        # Every terminal sink, enumerated and pinned to its EXPECTED value:
+        # the row stands under its own identity and says its stated
+        # reference was refused — not that it carries no file — the tally
+        # counts it, the status is written once and STANDING, busy is
+        # released, the route, history and history.state are the reader's
+        # own, focus stayed on the body a cold arrival leaves it on, every
+        # request is the bootstrap's, and nothing failed. V10: the V9 focus
+        # assertion compared another scenario whose own focus was unpinned,
+        # and the refused row still spoke the absence sentence.
         for name in ("v9-refused-prefix-carried", "v9-padded-prefix-carried"):
             with self.subTest(scenario=name):
                 page = self.opened(name)
+                self.assertEqual(page["fetched"], self.BOOTSTRAP)
+                self.assertEqual(page["requests"], self.owned([]))
                 self.assertEqual(page["fragmentCount"], 1)
-                self.assertEqual(page["fragmentTexts"], [self.NO_TEXT])
+                self.assertEqual(page["fragmentIds"], ["fallback-owned"])
+                self.assertEqual(page["fragmentTexts"], [self.REFUSED])
+                self.assertNotIn(self.NO_TEXT, page["fragmentTexts"])
                 self.assertEqual(page["tallyText"], "1 fragment held")
                 self.assertEqual(page["statusWrites"], [self.GEN1_SPOKEN])
                 self.assertEqual(page["statusText"], self.GEN1_SPOKEN)
@@ -8638,16 +8718,19 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
                 self.assertEqual(page["hash"], GEN1)
                 self.assertEqual(page["hashWrites"], [])
                 self.assertEqual(page["replaced"], [])
+                self.assertEqual(page["replacedStates"], [])
+                self.assertIsNone(page["historyState"])
                 self.assertEqual(page["errorSections"], [])
                 self.assertIsNone(page["failureText"])
-                self.assertEqual(page["activeElement"],
-                                 anchor["activeElement"])
+                self.assertEqual(page["activeElement"], "body")
 
     def test_genuine_absence_still_opens_the_carried_door(self):
         # The door this closure must NOT close: no prefix stated, a valid
         # same-stem carried path — exactly one request, and the body shows.
         page = self.opened("v9-absent-prefix-carried")
         self.assertEqual(page["fetched"], self.BOOTSTRAP + [self.FALLBACK])
+        self.assertEqual(page["requests"],
+                         self.owned([(self.FALLBACK, "opened")]))
         self.assertEqual(len(page["fragmentTexts"]), 1)
         self.assertIn("PLANTED FALLBACK BODY", page["fragmentTexts"][0])
         self.assertEqual(page["busy"], "false")
@@ -8656,37 +8739,72 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
     def test_a_valid_prefix_composes_its_own_address_and_asks_no_fallback(self):
         # PRESENT-VALID: the prefix determines text identity, so the one
         # request is the composed address — the carried address, planted and
-        # valid, goes unasked.
+        # valid, goes unasked — and the WHOLE terminal vector is pinned,
+        # because the V9 review found this control asserted only request and
+        # body. No refused sentence and no absence sentence stands anywhere
+        # on a row whose reference was honoured.
         page = self.opened("v9-valid-prefix-carried")
-        self.assertEqual(
-            page["fetched"],
-            self.BOOTSTRAP
-            + ["structure/catena/text/deeper/fallback-owned.json"])
+        composed = "structure/catena/text/deeper/fallback-owned.json"
+        self.assertEqual(page["fetched"], self.BOOTSTRAP + [composed])
+        self.assertEqual(page["requests"], self.owned([(composed, "opened")]))
+        self.assertEqual(page["fragmentCount"], 1)
+        self.assertEqual(page["fragmentIds"], ["fallback-owned"])
         self.assertEqual(
             page["fragmentTexts"],
             ["Composed from the stated prefix and the fragment's own id."])
+        self.assertNotIn(self.REFUSED, page["fragmentTexts"])
+        self.assertNotIn(self.NO_TEXT, page["fragmentTexts"])
+        self.assertEqual(page["tallyText"], "1 fragment held")
+        self.assertEqual(page["statusWrites"], [self.GEN1_SPOKEN])
+        self.assertEqual(page["statusText"], self.GEN1_SPOKEN)
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["hash"], GEN1)
+        self.assertEqual(page["hashWrites"], [])
+        self.assertEqual(page["replaced"], [])
+        self.assertEqual(page["replacedStates"], [])
+        self.assertIsNone(page["historyState"])
+        self.assertEqual(page["errorSections"], [])
+        self.assertIsNone(page["failureText"])
+        self.assertEqual(page["activeElement"], "body")
 
     def test_a_prewarmed_fallback_is_not_substituted_into_the_refused_route(self):
         # The cache is keyed by path, so a body already fetched under
         # genuine absence could be substituted WITHOUT a request. The
-        # refused route must neither ask again nor reuse: one fallback
-        # request ever, and the refused rows show the no-file terminal.
+        # refused route must neither ask again nor reuse. V10: the WHOLE
+        # final journal is pinned with each request's owner — the V9 filter
+        # over a slice would have passed a substitute wrong-namespace
+        # request — and the terminal vector is pinned entire: row identity,
+        # refused sentence, announcement journal, history, history.state,
+        # focus on the select the reader walked with, and no stale body.
         prewarmed = self.snapshot("v9-prewarmed-fallback", "prewarmed")
         self.assertEqual(prewarmed["fetched"], self.BOOTSTRAP + [self.FALLBACK])
         self.assertIn("PLANTED FALLBACK BODY", prewarmed["fragmentTexts"][0])
         page = self.snapshot("v9-prewarmed-fallback", "opened")
-        self.assertEqual(page["fetched"].count(self.FALLBACK), 1)
-        self.assertFalse(
-            [one for one in page["fetched"][len(prewarmed["fetched"]):]
-             if one.startswith("structure/catena/text/")])
-        self.assertEqual(page["fragmentTexts"], [self.NO_TEXT])
+        self.assertEqual(page["fetched"],
+                         self.BOOTSTRAP + [self.FALLBACK] + self.GEN2_ARRIVAL)
+        self.assertEqual(
+            page["requests"],
+            self.owned([(self.FALLBACK, "prewarmed")]
+                       + [(path, "refused") for path in self.GEN2_ARRIVAL]))
+        self.assertEqual(page["fragmentCount"], 1)
+        self.assertEqual(page["fragmentIds"], ["fallback-owned"])
+        self.assertEqual(page["fragmentTexts"], [self.REFUSED])
+        self.assertNotIn(self.NO_TEXT, page["fragmentTexts"])
+        for said in page["fragmentTexts"]:
+            self.assertNotIn("PLANTED", said)
         self.assertEqual(page["tallyText"], "1 fragment held")
+        self.assertEqual(page["statusWrites"],
+                         [self.GEN1_SPOKEN, self.GEN2_SPOKEN])
         self.assertEqual(page["statusText"], self.GEN2_SPOKEN)
         self.assertEqual(page["busy"], "false")
         self.assertEqual(page["hash"], GEN2)
         self.assertEqual(page["hashWrites"], [GEN2])
+        self.assertEqual(page["replaced"], [])
+        self.assertEqual(page["replacedStates"], [])
+        self.assertIsNone(page["historyState"])
         self.assertEqual(page["errorSections"], [])
         self.assertIsNone(page["failureText"])
+        self.assertEqual(page["activeElement"], "chapter-select")
 
     def test_the_late_fallback_is_really_late(self):
         # Without this the late guard is vacuous: A's request really went
@@ -8698,26 +8816,58 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
         self.assertEqual(asked, [self.FALLBACK])
         self.assertEqual(held["fragmentTexts"][0], "Loading…")
 
+    def expected_b_terminal(self):
+        # B'S TERMINAL BASELINE, AS EXPECTED VALUES. The V9 late guard
+        # compared b-opened to a-late and could not see a sink identically
+        # wrong on both sides; every material B sink is stated here once and
+        # asserted at BOTH ends of the release.
+        return {
+            "fetched": self.BOOTSTRAP + [self.FALLBACK] + self.GEN2_ARRIVAL,
+            "requests": self.owned(
+                [(self.FALLBACK, "a-held")]
+                + [(path, "b-settled") for path in self.GEN2_ARRIVAL]),
+            "fragmentCount": 1,
+            "fragmentIds": ["fallback-owned"],
+            "fragmentTexts": [self.REFUSED],
+            "tallyText": "1 fragment held",
+            "statusWrites": [self.GEN1_SPOKEN, self.GEN2_SPOKEN],
+            "statusText": self.GEN2_SPOKEN,
+            "busy": "false",
+            "hash": GEN2,
+            "hashWrites": [GEN2],
+            "replaced": [],
+            "replacedStates": [],
+            "historyState": None,
+            "activeElement": "chapter-select",
+            "errorSections": [],
+            "failureText": None,
+        }
+
     def test_a_late_fallback_cannot_touch_the_refused_terminal_state(self):
         # B settled terminal with its rows open; A completes late. Every
-        # guarded projection of the settled route — route, history,
-        # announcement journal AND standing status, tally, busy, focus, and
-        # everything rendered — is compared entire, and the release really
-        # happened.
+        # guarded projection of the settled route is still compared entire,
+        # and on top of the comparison — which cannot see a value
+        # identically wrong on both sides — every material B sink is pinned
+        # to its EXPECTED value before AND after the release: the owned
+        # journal, the row under its own identity, the refused sentence, the
+        # announcement journal and the standing status, tally, busy, route,
+        # history and history.state, focus, and the error and failure sinks.
+        # The release itself is pinned exactly: zero let go before, one
+        # after, and the late request stays owned by A's own step.
         before = self.snapshot("v9-late-fallback", "b-opened")
         after = self.snapshot("v9-late-fallback", "a-late")
         for key in GenuinelyLateStaleWorkTest.GUARDED:
             self.assertEqual(after[key], before[key], f"{key} moved late")
-        self.assertEqual(after["fetched"], before["fetched"])
-        self.assertGreater(after["released"], before["released"])
-        self.assertEqual(after["fragmentTexts"], [self.NO_TEXT])
-        for said in after["fragmentTexts"]:
-            self.assertNotIn("PLANTED", said)
-        self.assertEqual(after["statusText"], self.GEN2_SPOKEN)
-        self.assertEqual(after["busy"], "false")
-        self.assertEqual(after["hash"], GEN2)
-        self.assertEqual(after["errorSections"], [])
-        self.assertIsNone(after["failureText"])
+        terminal = self.expected_b_terminal()
+        for label, snap in (("b-opened", before), ("a-late", after)):
+            with self.subTest(snapshot=label):
+                for key, value in terminal.items():
+                    self.assertEqual(snap[key], value, f"{label}: {key}")
+                self.assertNotIn(self.NO_TEXT, snap["fragmentTexts"])
+                for said in snap["fragmentTexts"]:
+                    self.assertNotIn("PLANTED", said)
+        self.assertEqual(before["released"], 0)
+        self.assertEqual(after["released"], 1)
 
 
 class V9PrefixStateClassificationTest(unittest.TestCase):
@@ -8783,6 +8933,105 @@ class V9PrefixStateClassificationTest(unittest.TestCase):
         # PRESENT-INVALID, thirteen ways: terminal, and the refusal kept.
         self.assertEqual(told["refused"],
                          [{"path": "", "refused": True}] * 13)
+
+
+class V10RefusedPresentationTest(ReplayTest):
+    """V10 §1 — the refusal reaches the reader, and reaches them truthfully.
+
+    The V9 review proved the model's third state stopped at the model:
+    `catena.js` never read `text_refused`, sent the refused row's empty path
+    through the same `ABSENT` sentinel as genuine absence, and told the
+    reader the fragment "carries no text file" — false of a fragment whose
+    spine stated a reference this page declined, and doubly false in the
+    prewarmed replay, where that exact file had already been fetched. The
+    page now consumes the projection before the request sink, and the two
+    no-text states carry two different sentences because they make two
+    different claims:
+
+        ABSENT   — no text reference was supplied;
+        REFUSED  — a reference was supplied, and was declined before use.
+
+    The exported claim boundary is closed with it: absence is ONE shape,
+    `{stated: false, trail: ''}`, and every contradictory direct claim —
+    the V9 review's `{stated: false, trail: <valid>}` included — resolves
+    no text and projects as refused.
+    """
+
+    CARRIED = "structure/catena/text/fallback-owned.json"
+
+    def test_the_two_no_text_states_are_visibly_distinct(self):
+        # THE POSITIVE CONTROL, both ways: a genuinely absent reference
+        # keeps the absence sentence, a present-invalid reference carries
+        # the refused sentence, and the two sentences are different claims
+        # on the same page shape — never one wording standing for both.
+        absent = self.snapshot("v7-text-path-no-prefix", "opened")
+        self.assertEqual(absent["fragmentTexts"][1:], [NO_TEXT_SAID] * 9)
+        self.assertNotIn(REFUSED_SAID, absent["fragmentTexts"])
+        refused = self.snapshot("v9-refused-prefix-carried", "opened")
+        self.assertEqual(refused["fragmentTexts"], [REFUSED_SAID])
+        self.assertNotIn(NO_TEXT_SAID, refused["fragmentTexts"])
+        self.assertNotEqual(NO_TEXT_SAID, REFUSED_SAID)
+
+    def test_the_refused_sentence_states_only_what_is_established(self):
+        # The refusal establishes exactly one fact: a stated reference is
+        # not usable as written. The sentence may not convert that into a
+        # holdings negative, a missing file, a transport fault, or a block —
+        # each a claim the refusal does not establish.
+        for claim in ("carries no text file", "no text file", "not published",
+                      "could not be loaded", "cannot read", "does not exist",
+                      "blocked", "failed", "missing"):
+            self.assertNotIn(claim, REFUSED_SAID, claim)
+
+    def test_every_contradictory_direct_claim_fails_closed(self):
+        # THE EXPORTED BOUNDARY, asked directly. `chapterFragments` builds
+        # only three claim shapes, but `fragmentRow` is exported, and the V9
+        # review proved its absence arm asked only `stated === false` — so
+        # the contradictory claim `{stated: false, trail: <valid>}` opened
+        # the carried door the contract said was closed. Absence is now the
+        # one shape `{stated: false, trail: ''}`; a valid statement is
+        # `stated === true` with its validated trail; EVERY other claim
+        # resolves no text and is kept on the row as refused.
+        script = """
+        const M = require(%r);
+        const carried = %r;
+        const fragment = {id: "fallback-owned", source: "1",
+                          text_path: carried};
+        const sources = {"1": {author: "A", work: "W"}};
+        const row = (claim) => {
+          const one = M.fragmentRow(fragment, sources, claim);
+          return {path: one.text_path, refused: one.text_refused};
+        };
+        const contradictory = [
+          {stated: false, trail: "structure/catena/text/"},
+          {stated: false, trail: "structure/catena/text/deeper/"},
+          {stated: false, trail: "junk"},
+          {stated: false},
+          {},
+          {stated: "false", trail: ""},
+          {stated: 1, trail: ""},
+          {stated: null, trail: ""}];
+        console.log(JSON.stringify({
+          absent: row({stated: false, trail: ""}),
+          valid: row({stated: true, trail: "structure/catena/text/deeper/"}),
+          contradictory: contradictory.map(row),
+          said: M.TEXT_REFUSED}));
+        """ % (str(CATENA / "catena-model.js"), self.CARRIED)
+        done = subprocess.run(["node", "-e", script],
+                              capture_output=True, text=True, check=True)
+        told = json.loads(done.stdout)
+        # The two honest claims keep their doors.
+        self.assertEqual(told["absent"],
+                         {"path": self.CARRIED, "refused": False})
+        self.assertEqual(
+            told["valid"],
+            {"path": "structure/catena/text/deeper/fallback-owned.json",
+             "refused": False})
+        # Eight contradictory claims, one disposition: closed, and said.
+        self.assertEqual(told["contradictory"],
+                         [{"path": "", "refused": True}] * 8)
+        # The sentence the page renders IS the model's own export — pinned
+        # byte-exactly so the suite and the production copy cannot drift.
+        self.assertEqual(told["said"], REFUSED_SAID)
 
 
 class V7HollowFragmentMemberTest(ReplayTest):
