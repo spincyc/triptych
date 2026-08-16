@@ -1,0 +1,65 @@
+schema = 1
+record_type = "bindings"
+document = "theology/mariology/ark-of-the-covenant"
+
+# Claude edition. Bindings are catalog-level: the passage checks were
+# performed against live web transcriptions, scans, and page images (URLs,
+# dates, and evidence states in research/source-audit.md), not against
+# registered artifact bytes, so no acquisition/inspection/verification state
+# is claimed against the source-library records themselves. Most of this
+# publication's witnesses (the drbo.org Douay-Rheims chapter pages, the
+# archive.org Patrologia scans, the ANF/NPNF transcriptions, the FOTC
+# lending volumes, Field's Hexapla, the 1942 Breviarium scan, and the other
+# public-domain scans named in the References) are not registered in the
+# source library; they are identified in the publication's References and
+# audited in research/source-audit.md. The bindings below cover the sources
+# actually used for which registered edition records already exist.
+
+[[bindings]]
+source_id = "edition.pius-xii.munificentissimus-deus.english-vatican-web-2026-07-25"
+loci = ["17-18", "21-23", "26-29", "34-35", "44"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Principal magisterial witness: the English constitution read in full 2026-08-15, including the complete endnote block (notes 17-28); the ark passages located by full-text search at paragraphs 26, 29, and 34 and there only; two defects of the English edition (endnote 20 dropping the Latin's '2'; endnote 27 printing 'Is 61:13' for Is 60:13) recorded in the publication's notes. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.pius-xii.munificentissimus-deus.latin-vatican-web-2026-07-25"
+loci = ["26-29"]
+role = "official-control"
+states = ["cataloged"]
+context = "The study's Latin quotations of paragraph 26 and its footnotes (with footnotes 20-22 and 27-28, at AAS 42 (1950) 762-764) were read 2026-08-15 in the Holy See's scanned Acta Apostolicae Sedis archive (AAS-42-1950-ocr.pdf), a delivery state of the same AAS 42 (1950) text this edition records; the registered Vatican Latin web state itself was not re-read. Catalog-level binding recording the official-control relationship."
+
+[[bindings]]
+source_id = "edition.paul-vi.marialis-cultus.english-vatican-web-2026-07-25"
+loci = ["6", "7", "26"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Read in full 2026-08-15 in English and Latin at vatican.va: the 'vera Foederis Arca' clause of MC 6, the ark titles and, in the note apparatus appended to MC 26, the curated patristic dossier (Severus of Antioch, Hesychius, Chrysippus, Andrew of Crete, John Damascene; the Akathist in the companion note), and the negatives (no Litany of Loreto by name, no 2 Kings 6, no ark language in the Visitation paragraph MC 7). Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.pius-ix.ineffabilis-deus.english-papal-encyclicals-web-2026-07-25"
+loci = ["the Fathers' figures passage (ark of Noah; 'the ark and house of holiness')"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "English text searched in full 2026-08-15 at papalencyclicals.net; both ark phrases verified verbatim there; the Latin not checked against the Acta of Pius IX, as the publication's note discloses. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.john-of-damascus.homilies-on-the-dormition.english-allies-london-1898"
+loci = ["Homily II, nn. 2, 11, 14"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The circulating English of Homily II section 2 ('Today the sacred and living ark of the living God...') read 2026-08-15 at a derivative web transcription (malankaraworld.com) that appears to reproduce this Allies 1898 translation; the identification is flagged in the publication as not confirmed line by line. The Latin of the same sentence was verified in the 1942 Breviarium Romanum scan. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.josephus.antiquitates-judaicae.whiston-1737"
+loci = ["6.16", "18.85-89"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Antiquities 6.1.4 (Niese 6.16) and 18.85-89 (Whiston 18.4.1-2): Whiston's translation read 2026-08-15 in two delivery states: Project Gutenberg ebook 2848 (the Bethsames seventy, with Whiston's note 4) and the Lexundria presentation (the Samaritan sacred-vessels episode of AD 36). Catalog-level binding to the registered translation; the delivery states are named in the publication's notes."
+
+[[bindings]]
+source_id = "edition.josephus.antiquitates-judaicae.niese-greek-perseus-grc2-github-2026-07-27"
+loci = ["6.16"]
+role = "official-control"
+states = ["cataloged"]
+context = "The Greek of the Bethsames notice (Ant. 6.16, hebdomekonta) read 2026-08-15 via the Scaife Viewer's CTS delivery (urn:cts:greekLit:tlg0526.tlg001.perseus-grc2:6.16) of the same Perseus Greek text this edition records; verifies the 'seventy' against the translation. The parallel Greek of Jewish War 5.219 was read the same way (tlg0526.tlg004) and is audited in research/source-audit.md; no War work record is registered. Catalog-level binding."

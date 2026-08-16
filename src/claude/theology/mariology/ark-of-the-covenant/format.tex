@@ -1,0 +1,45 @@
+% Claude Ark of the Covenant study: leaf-local typesetting primitives. This
+% file owns only presentation. Every doctrinal, historical, and evidentiary
+% judgment remains in the section files and research records.
+
+\usepackage{endnotes}
+% Long archival URLs in the references must break freely rather than
+% overflowing the measure.
+\usepackage{xurl}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2.2em}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% Work titles and transliterated Hebrew, Greek, or Latin technical terms are
+% set through semantic commands so a later style change never requires editing
+% the prose.
+\newcommand{\work}[1]{\textit{#1}}
+\newcommand{\term}[1]{\textit{#1}}
+
+% The governing thesis is substantive content and may open the body.
+\newcommand{\arkthesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+% Witness block: a primary text quoted from one identified witness, named in
+% the frame title. The framed border marks quoted source text that is not
+% project-owned expression.
+\newenvironment{witnessbox}[1]{%
+  \begin{massbox}{Witness --- #1}}{\end{massbox}}
+
+% Labeled-synthesis block: a reading the project proposes or reports as
+% synthesis rather than as attested exegesis, kept visually distinct so the
+% evidence boundary is structural, not only verbal.
+\newenvironment{synthesisbox}{%
+  \begin{massbox}{Source-grounded synthesis --- the project's reading}}{\end{massbox}}
+
+% Endnotes carry citations and subordinate evidence detail; the heading joins
+% the table of contents as an ordinary numbered section.
+\renewcommand{\enoteheading}{\section{Notes}}
+\renewcommand{\enoteformat}{%
+  \noindent\footnotesize\makebox[1.8em][l]{\theenmark.}\hangindent=1.8em}

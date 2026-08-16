@@ -1,6 +1,6 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-08-02"
+audited_on = "2026-08-15"
 inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:7e47ae0e09188109b2ccc0e0608304d72386224f0504a2c8c7105d94b7de9a2d"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
@@ -8,7 +8,7 @@ classification_snapshot = "sha256:9b6667e7bb1c1f88127f91b46877107706a96bcde49a3e
 canonical_catalog_snapshot = "sha256:ecac44f6f699272b8000b76c847bef8642147f9f2064070a702b97987daf1feb"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:0152b5e7d70fdc1781bb30e5f73198f23afd08414edcf46968b2a4a55723064b"
+snapshot = "sha256:a54f0d2239ebf64b2b9fec3c7e7e2506d34600b47b7ab8c8475915f772679688"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"

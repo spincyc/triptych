@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name.",
  "counted": {
-  "documents": 178,
-  "issues": 186,
-  "pages": 5675,
+  "documents": 179,
+  "issues": 187,
+  "pages": 5738,
   "titles_unrecorded": 0,
-  "works": 133
+  "works": 134
  },
  "models": [
   {
@@ -18,16 +18,16 @@
   },
   {
    "documents": 24,
-   "id": "claude-opus-5[1m]"
+   "id": "claude-fable-5"
   },
   {
-   "documents": 23,
-   "id": "claude-fable-5"
+   "documents": 24,
+   "id": "claude-opus-5[1m]"
   }
  ],
  "providers": [
   {
-   "documents": 45,
+   "documents": 46,
    "id": "claude",
    "label": "Claude"
   },
@@ -65,7 +65,7 @@
   },
   {
    "id": "theology",
-   "works": 15
+   "works": 16
   }
  ],
  "works": [
@@ -7801,6 +7801,38 @@
     }
    ],
    "leaf": "theology/mariology/apparitions",
+   "section": "theology"
+  },
+  {
+   "catalog": "library/mariology.md",
+   "catalog_page": "library/mariology.html",
+   "editions": [
+    {
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "claude-fable-5",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.220; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "claude-fable-5"
+     ],
+     "pages": 63,
+     "pdf": "pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+     "provider": "claude",
+     "reviewed": "2026-08-15",
+     "revised": "2026-08-16T03:47:13Z",
+     "status": "alpha",
+     "subject": "A source-audited study of the ark of the covenant: its canonical journey from Sinai to its disappearance, the theology of presence and holiness it teaches, and the Church's reading of the Virgin Mary as the ark of the new covenant, with every parallel graded by attestation and reception",
+     "title": "The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun",
+     "title_source": "src/claude/theology/mariology/ark-of-the-covenant/main.tex",
+     "web": "web/claude/theology/mariology/ark-of-the-covenant.html"
+    }
+   ],
+   "leaf": "theology/mariology/ark-of-the-covenant",
    "section": "theology"
   },
   {
