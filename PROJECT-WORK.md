@@ -480,13 +480,12 @@ which is the honest state rather than a rounding of it.
 
 <!-- promised-deliverable: gpt-mary-new-ark-journey-2026-08-15 -->
 
-**Candidate for the qualified public alpha; commit, push to `origin/main`, and
-GitHub Pages verification remain.** The source-audited study gives a vivid
-account of the Ark's journey; receives Mary confidently as its living
-New-Covenant fulfillment because she bears Christ; synthesizes exact
-patristic, saintly, liturgical, and magisterial witnesses; and shows the four
-Marian dogmas as the full unfolding of that vocation without displacing Christ
-as the covenant's definitive fulfillment.
+**Complete in the qualified public alpha and verified live.** The
+source-audited study gives a vivid account of the Ark's journey; receives Mary
+confidently as its living New-Covenant fulfillment because she bears Christ;
+synthesizes exact patristic, saintly, liturgical, and magisterial witnesses;
+and shows the four Marian dogmas as the full unfolding of that vocation without
+displacing Christ as the covenant's definitive fulfillment.
 
 Joseph and Mary's chastity is neither omitted nor reduced to a negative Uzzah
 analogy. Their true virginal marriage receives a positive synthesis centered
@@ -504,10 +503,17 @@ Every page was reviewed; the map, Ark study, sanctuary settings, and dogma
 synopses received full-size checks; and the final independent Catholic sanity
 review passes. The pencil map distinguishes narrated, inferred, traditional,
 and unknown geography. The Ark and sanctuary plates distinguish commanded or
-attested data from unrecoverable form and location. The first nine acceptance
-requirements pass. `validated-push-and-deployment` remains open until the exact
-candidate is pushed without history rewriting and the resulting Pages run and
-affected live routes are verified.
+attested data from unrecoverable form and location. Content commit
+`51862cf78` was integrated with the then-current public main at
+`a35dc5cfb82be027256d74c6f2b256f830f1073e` without history rewriting and
+pushed to `origin/main`. GitHub Pages run
+[`31935618065`](https://github.com/spincyc/triptych/actions/runs/31935618065)
+completed successfully for that exact head. The live
+[Mariology catalog](https://spincyc.github.io/triptych/library/mariology.html),
+[web reader](https://spincyc.github.io/triptych/web/gpt/theology/mariology/ark-of-the-covenant.html),
+and [PDF](https://spincyc.github.io/triptych/pdf/gpt/theology/mariology/ark-of-the-covenant.pdf)
+each returned HTTP 200; the deployed PDF matched the reviewed SHA-256 above.
+All ten acceptance requirements pass.
 
 ### Corpus browser foundation design
 
