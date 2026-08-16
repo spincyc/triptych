@@ -1139,6 +1139,109 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena route-owned correction lane, V9
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v9-2026-08-16 -->
+
+The disposition answered is **CHANGES REQUIRED** at exact candidate
+`7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8`, recorded by the independent review
+`611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f` on branch
+`review/catena-wave-1-e1-corrections-v8-independent`, which independently
+inspected evidence `60122b472c3f9a09aff5f8663eb3b062c585a557` and verified
+package `build/agent-handoffs/20260816T011521Z-catena-e1-corrections-v8` with
+ZIP SHA-256
+`002a75d587a3535d7df9d2b3239d71d811cc7948e9d219e5d9118edcb21e4ff7`. That
+review is a sibling of this line at the reviewed parent and is **not merged
+into it**: what follows records implementation-lane facts only.
+
+The review passed every isolated V8 namespace case and found the COMPOSED
+rule open: `textTrail` maps a prefix the file never stated and a prefix the
+file stated and the page refused to the same `''`, and `fragmentRow`'s
+`prefix ?` read that one `''` as leave to consult the carried `text_path` —
+so a refused `structure/paragraphs/` prefix still fetched the valid
+same-stem `structure/catena/text/fallback-owned.json` it carried and
+rendered its planted body as an ordinary success. The review also found the
+package's machine inventory was not a record of the final sealed bytes —
+`claims.json` understated the final uncompressed total by 1,822 bytes with
+five stale member rows — and gave one exact next action: preserve the
+absent / valid / present-invalid distinction, permit a carried path only on
+genuine absence, prove it cold, prewarmed and late at the production sinks
+with complete terminal assertions, and rebuild a truthful immutable
+package. This lane is that correction and nothing else.
+
+The prefix is now a statement, not a string. `chapterFragments` derives
+`{stated, trail}` — `stated` is property presence on the spine record
+itself, so `null`, a record, a list, a number, a flag, `''`, whitespace and
+a wrong namespace are each a statement this page refused, never an absence
+— and `fragmentRow` re-asks both members, composes from a valid statement,
+opens the carried door only on `stated === false`, and keeps the refusal on
+the row as `text_refused`. A refused statement is terminal: no composed
+request, no carried fallback, no rewrite, no claim beyond the truthful
+no-text row. `catena.js` is untouched; the decision closes inside the model
+before projection completes.
+
+The regressions drive the reviewer's exact vector at the real sinks and
+fail nine ways at the uncorrected parent. Cold, the whole fetched journal
+is pinned to the bootstrap and the planted body reaches no sink, with every
+terminal projection asserted — rows, tally, the announcement journal AND
+the standing `statusText` the review found unasserted, `aria-busy`, hash,
+history, `activeElement`, error and failure sinks. Prewarmed, a body
+legitimately cached under genuine absence is neither substituted into the
+refused route nor re-requested by it. Genuinely late, a held carried
+resolution released only after the refused route settled terminal moves no
+guarded projection, and the release is proved to have happened. Both doors
+the closure must not close are pinned from their own side: genuine absence
+still opens the carried path, and a valid prefix composes its own address
+while a planted body at the carried address goes unasked. A model-level
+classification matrix drives the exported `chapterFragments` through
+thirteen refused shapes, the absent state and the valid state.
+
+The package correction is answered in the sealing protocol, not by patching
+rows: the member inventory is frozen before derivation; members written at
+or after derivation are named, never sized or hashed; claimed rows and
+derived members partition the member set exactly; the manifest is written
+after the last member write; the archive digest and byte size live only in
+the external sidecar; and a read-only post-seal verification re-derives
+member list, sizes, totals, manifest and archive digest from the final ZIP
+alone. The provenance ledger explicitly records the retained clean
+exact-SHA parent run and the `/tmp` run the V8 lane discarded for its
+environment-caused `pdf-review.test` failure, which is used in no
+comparison or claim.
+
+Fresh figures at this head: focused Catena suite 519 (V8: 510), all green;
+`scripts/_catena.py check` passes at 1,351 fragments / 1 book / 73 canon
+entries; full discovery 1,870 tests with the same inherited 14 failures /
+13 errors / 11 skips and the same 27-entry name set; browser gate 2,290
+assertions, 1,836 / 226 / 228, the whole report identical to the reviewed
+V8 baseline including the 117/82/27 identity; `make -k check` fails on the
+same three inherited targets; promise ledger valid; budgets unraised and
+unmoved — `catena.css` 7,629/8,000 whole and 2,676/2,700 stripped,
+`catena.js` 12,901/13,000 whole and 7,530/8,800 stripped, both
+byte-identical to the reviewed head. The closure lives in
+`catena-model.js`, which carries no ceiling: gzipped it grows 28,346 to
+29,179 whole and 7,485 to 7,571 stripped, so the two files' combined
+payload is 42,080 gzipped against V8's 41,247 — disclosed, as the review
+requires, rather than presented as unchanged load. Four stale release
+bindings remain fail-closed, none re-signed; `src/web/data/` has zero
+changes.
+
+Every other V7 finding remains open and untouched here, recorded as the V8
+review left it: projection not yet the sole semantic source (orphan
+sources, scalar-translator coercion); source-only fragments still counting;
+absence members manufacturing rows and suppressing valid siblings; partial
+selection neither closed nor order-independent beyond this prefix
+composition; refusal verse validation; unreadable roots and the unreadable
+`bibles.json` prose; the broader terminal and corrected-oracle proofs; the
+CLI/web duplicated semantic model; and the uncapped combined route payload
+question, answered here only by accurate disclosure. Release bindings, the
+common gate, B0/shared shell, real-device/AT evidence, protected Liturgy
+and PDFs remain separately owned.
+
+Status: **awaiting fresh independent review** of the exact V9 head and its
+immutable handoff archived on `evidence/catena-e1-corrections-v9-handoff`.
+This lane records no acceptance of its own work, marks no separately owned
+prerequisite complete, and does not review itself.
+
 ### E1 Catena route-owned correction lane, V8
 
 <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v8-2026-08-15 -->

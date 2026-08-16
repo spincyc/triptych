@@ -1241,6 +1241,54 @@ state = "complete"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v9-2026-08-16"
+owner = "src/web/browser/catena"
+promise = "Answer the 2026-08-16 E1 Catena V8 independent review (611b5eed8, CHANGES REQUIRED at 7e4df42a2) with exactly its stated next action: preserve the absent / present-valid / present-invalid text_prefix distinction through composition to the request decision, permit the carried fallback only on genuine absence, prove the closure cold, prewarmed and genuinely late at the production request sinks with complete terminal assertions, correct the handoff pipeline so machine claims describe the final sealed bytes with the retained parent run and the discarded /tmp run explicitly ledgered, record every other V7 blocker open and untouched, issue one immutable exact-head V9 handoff, and return that head for fresh independent review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "three-state-prefix-composition"
+  criterion = "The spine's text_prefix carries three states through composition all the way to the request decision — absent (the property is not carried), present-valid (textTrail-validated), and present-invalid (carried and refused: null, a record, a list, a number, a flag, an empty string, whitespace, a wrong namespace, the padded right namespace, traversal, an absolute path, malformed encoding, and the directory-boundary spoof) — with no truthiness collapse; a refused statement is terminal for that text resolution: no composed request, no carried fallback, no rewrite into the owned namespace, and the refusal is kept on the projected row."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "carried-fallback-only-on-genuine-absence"
+  criterion = "A carried text_path is consulted only when the prefix is genuinely absent AND the carried path itself validates byte-exactly inside structure/catena/text/ with the fragment's own stem. The reviewer's exact vector — a structure/paragraphs/ prefix beside a valid same-stem carried fallback-owned.json with a planted marker body — composes zero requests and the planted body reaches no sink, and the same tests fail at the uncorrected parent; genuine absence still opens the carried door and a valid prefix composes its own address while the planted carried body goes unasked."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "cold-prewarmed-late-proved-at-the-sinks"
+  criterion = "Production request-sink regressions prove the rejected branch cold (the whole fetched journal pinned to the bootstrap), prewarmed (a body legitimately cached under genuine absence is neither substituted into the refused route nor re-requested by it) and genuinely late (a held carried resolution released only after the refused route settles terminal, with its rows open, moves no guarded projection and the release is proved to have happened), asserting the complete terminal set: request journal, rendered body, row state, the announcement journal and the standing statusText, tally, aria-busy, URL and history, activeElement, error and failure sinks."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "package-claims-describe-final-sealed-bytes"
+  criterion = "The handoff pipeline freezes the member inventory before derivation, names members written at or after derivation without claiming their bytes or hashes, partitions claimed rows and derived members exactly over the member set, writes the manifest after the last member write, seals the archive once, records the archive digest and byte size only in the external sidecar, and passes a read-only post-seal verification that re-derives member list, sizes, totals, manifest and archive digest from the final ZIP alone; the provenance ledger explicitly records the retained clean exact-SHA parent run and the discarded /tmp run."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "other-v7-blockers-recorded-open"
+  criterion = "Every other blocker of the V7 and V8 independent reviews remains open, untouched and recorded as such in the durable records; this lane fixes none of them silently, regresses no passed boundary, raises no ceiling, changes nothing under src/web/data/, and touches no release, common-gate, B0/shared-shell, protected Liturgy or PDF path."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
+
+  [[deliverables.requirements]]
+  id = "immutable-v9-handoff"
+  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V9 head, its parent 7e4df42a2, the review addressed 611b5eed8, the derived commit list and diff, the three-state prefix contract, the exact V8 escape reproduction at parent and head, the cold, prewarmed and late request-sink evidence, fresh validation figures, budgets, release status, the open V7 blockers, a sanitization audit, a byte and control scan, a SHA-256 manifest and a package digest whose machine claims match the final sealed bytes under a read-only post-seal verification — without mutating any earlier sealed package."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "A fresh independent review of the exact V9 head and its new immutable package records a durable disposition, scoped to the composed prefix and fallback closure and the package final-byte correctness. This lane does not review its own work and records no acceptance."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
+
+[[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v8-2026-08-15"
 owner = "src/web/browser/catena"
 promise = "Answer the 2026-08-15 E1 Catena V7 independent review (d9ad5ec1a, CHANGES REQUIRED at e876b29e5) with exactly its stated first bounded commit: require the byte-exact structure/catena/text/ namespace for both composed and carried Catena text paths with no whitespace repair, prove the closure with same-stem wrong-namespace regressions at the actual request sink, preserve every valid corpus path byte-for-byte, record every other V7 finding open and untouched, issue one immutable exact-head V8 handoff, and return that head for fresh independent review."
