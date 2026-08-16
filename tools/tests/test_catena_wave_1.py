@@ -1161,6 +1161,76 @@ V8_WRONG_NAMESPACE_CARRIED = _fixture({
 })
 
 # ==========================================================================
+# V9 §1 — the composed escape: a REFUSED prefix beside a VALID carried path
+#
+# The V8 review proved the primitives compose into a hole neither has alone:
+# `textTrail` answers '' for a prefix the file never stated AND for a prefix
+# the file stated and this page refused, and the carried door opened on that
+# one ''. So a spine saying `structure/paragraphs/` — refused — still
+# fetched the valid same-stem `structure/catena/text/fallback-owned.json` it
+# carried, and the planted body rendered as an ordinary success. Absence may
+# open the carried door; refusal may not. Every prefix below is an
+# ADVERSARIAL TEST INPUT; the tracked corpus states exactly one.
+
+V9_REFUSED_PREFIX_WITH_CARRIED = _fixture({
+    "token": "Gen", "chapter": 1, "text_prefix": "structure/paragraphs/",
+    "sources": {"1": _voice_source(1)},
+    "fragments": [
+        _voice_fragment(1, id="fallback-owned",
+                        text_path="structure/catena/text/fallback-owned.json"),
+    ],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
+# The RIGHT namespace wrapped in whitespace, beside the same valid carried
+# path: a statement refused for needing repair is still a statement, and it
+# opens no carried door either.
+V9_PADDED_PREFIX_WITH_CARRIED = _fixture(dict(
+    V9_REFUSED_PREFIX_WITH_CARRIED, text_prefix="  structure/catena/text/  "))
+
+# The same fragment under NO prefix at all — the one state whose carried
+# path may stand, so the closure is measured against the door it must not
+# close.
+V9_ABSENT_PREFIX_WITH_CARRIED = _fixture({
+    key: value for key, value in V9_REFUSED_PREFIX_WITH_CARRIED.items()
+    if key != "text_prefix"})
+
+# A VALID prefix beside the same valid same-stem carried path: the prefix
+# already determines text identity, so the carried address is never asked —
+# and a planted body waits there to catch the page if it is.
+V9_VALID_PREFIX_WITH_CARRIED = _fixture(dict(
+    V9_REFUSED_PREFIX_WITH_CARRIED,
+    text_prefix="structure/catena/text/deeper/"))
+
+# The refused spine again, on Genesis 2, so a prewarmed or held chapter 1
+# can walk into it: same carried path, same planted body, other chapter.
+V9_REFUSED_PREFIX_GEN2 = _fixture({
+    "token": "Gen", "chapter": 2, "text_prefix": "structure/paragraphs/",
+    "sources": {"1": _voice_source(1)},
+    "fragments": [
+        _voice_fragment(1, id="fallback-owned",
+                        text_path="structure/catena/text/fallback-owned.json",
+                        extent={"token": "Gen", "first_chapter": 2,
+                                "first_verse": 1, "last_chapter": 2,
+                                "last_verse": 1}),
+    ],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
+# The body PLANTED at the carried address: reachable through genuine absence
+# and through nothing else. If refusal, repair, prewarming or late work ever
+# serves it, content catches what the journal catches.
+V9_PLANTED_FALLBACK = _fixture({
+    "id": "fallback-owned",
+    "text": "PLANTED FALLBACK BODY — reachable only through genuine absence."})
+
+# What the VALID prefix composes for the same fragment, so the valid route
+# stays a rendering route while the carried address goes unasked.
+V9_COMPOSED_DEEPER = _fixture({
+    "id": "fallback-owned",
+    "text": "Composed from the stated prefix and the fragment's own id."})
+
+# ==========================================================================
 # V7 §6 — a fragment that can name NOTHING of itself
 #
 # `{}` rendered an `<li class="fragment">` with an empty author, an empty
@@ -2189,6 +2259,71 @@ SCENARIOS = [
                "structure/paragraphs/text/ns-paragraphs-text.json":
                    V8_PLANTED_TEXT},
      "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # =============================================================== V9 §1
+    # The composed escape, cold: a REFUSED prefix beside a valid carried
+    # path composes nothing — not the refused form, not the carried form.
+    {"name": "v9-refused-prefix-carried", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_REFUSED_PREFIX_WITH_CARRIED,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v9-padded-prefix-carried", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_PADDED_PREFIX_WITH_CARRIED,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # The door itself, from the two sides that keep it: genuine absence
+    # opens it, and a valid prefix never needs it.
+    {"name": "v9-absent-prefix-carried", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_ABSENT_PREFIX_WITH_CARRIED,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v9-valid-prefix-carried", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_VALID_PREFIX_WITH_CARRIED,
+               "structure/catena/text/deeper/fallback-owned.json":
+                   V9_COMPOSED_DEEPER,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # PREWARMED: chapter 1 loads the carried body legitimately, under no
+    # prefix; chapter 2 states a prefix this page refuses while carrying the
+    # SAME path. The cached body must not be substituted, and the refused
+    # route must cause no new request.
+    {"name": "v9-prewarmed-fallback", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_ABSENT_PREFIX_WITH_CARRIED,
+               "structure/catena/01-gen/002.json": V9_REFUSED_PREFIX_GEN2,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [
+         {"do": "openEveryFragment", "label": "prewarmed"},
+         {"do": "selectChapter", "value": "2", "label": "refused"},
+         {"do": "openEveryFragment", "label": "opened"},
+     ]},
+    # GENUINELY LATE: A opens the carried body under genuine absence and is
+    # HELD; B walks into the refused chapter, opens its rows and settles
+    # terminal; only then does A complete. The refused route owns nothing A
+    # can move.
+    {"name": "v9-late-fallback", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_ABSENT_PREFIX_WITH_CARRIED,
+               "structure/catena/01-gen/002.json": V9_REFUSED_PREFIX_GEN2,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "defer": ["structure/catena/text/"],
+     "steps": [
+         {"do": "openFirstFragment", "label": "a-held"},
+         {"do": "selectChapter", "value": "2", "label": "b-settled"},
+         {"do": "openEveryFragment", "label": "b-opened"},
+         {"do": "release", "path": "structure/catena/text/",
+          "label": "a-late"},
+     ]},
 
     # =============================================================== V7 §6
     # The same six members in both orders. A member's fate may not depend on
@@ -8431,6 +8566,223 @@ class V8TextNamespaceRequestSinkTest(ReplayTest):
             self.assertEqual(page["hashWrites"], [])
             self.assertEqual(page["replaced"], [])
             self.assertIsNone(page["failureText"])
+
+
+class V9ComposedPrefixFallbackClosureTest(ReplayTest):
+    """V9 §1 — refusal opens no carried door; only genuine absence does.
+
+    The V8 review proved the composed escape the primitive validators could
+    not see: a prefix the file stated and the page REFUSED collapsed into the
+    same '' as a prefix the file never stated, and the carried `text_path`
+    door opened on that one ''. The reviewer's exact vector — a
+    `structure/paragraphs/` prefix beside a valid carried
+    `structure/catena/text/fallback-owned.json` — fetched the carried file
+    and rendered its planted body as an ordinary success.
+
+    Three states, each pinned at the production sinks: ABSENT may consult a
+    validated carried path; PRESENT-VALID composes from the prefix and asks
+    no fallback; PRESENT-INVALID is terminal — no request, no substitution,
+    no stale body, cold, prewarmed, or late.
+    """
+
+    BOOTSTRAP = V7TextPathRequestSinkTest.BOOTSTRAP
+
+    NO_TEXT = V8TextNamespaceRequestSinkTest.NO_TEXT
+
+    FALLBACK = "structure/catena/text/fallback-owned.json"
+
+    GEN1_SPOKEN = "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+    GEN2_SPOKEN = "Genesis 2, Douay-Rheims (Challoner), 1 fragment held."
+
+    def opened(self, name):
+        return self.snapshot(name, "opened")
+
+    def test_the_v8_escape_composes_no_request_cold(self):
+        # THE CENTRAL ACCEPTANCE REGRESSION: the reviewer's exact vector and
+        # its padded twin, from a cold page. The whole journal, pinned
+        # entire: no refused-prefix request, no carried-fallback request, no
+        # other text-body request.
+        for name in ("v9-refused-prefix-carried", "v9-padded-prefix-carried"):
+            with self.subTest(scenario=name):
+                page = self.opened(name)
+                self.assertEqual(page["fetched"], self.BOOTSTRAP)
+
+    def test_the_planted_fallback_body_reaches_no_sink(self):
+        # The reviewer's reproduction rendered the carried body. Here the
+        # same body must appear NOWHERE: not in the journal, not as a
+        # fragment's text, not as an absence claim.
+        for name in ("v9-refused-prefix-carried", "v9-padded-prefix-carried"):
+            with self.subTest(scenario=name):
+                page = self.opened(name)
+                self.assertFalse(
+                    [one for one in page["fetched"] if "PLANTED" in one])
+                for said in page["fragmentTexts"]:
+                    self.assertNotIn("PLANTED", said)
+                    self.assertNotIn("genuine absence", said)
+
+    def test_the_refused_route_terminates_truthfully_cold(self):
+        # Every terminal sink, enumerated: the row stands and says it
+        # carries no text file, the tally counts it, the status is written
+        # and STANDING, busy is released, the route and history are the
+        # reader's own, focus moved nowhere, and nothing failed.
+        anchor = self.opened("v8-wrong-namespace-prefix")
+        for name in ("v9-refused-prefix-carried", "v9-padded-prefix-carried"):
+            with self.subTest(scenario=name):
+                page = self.opened(name)
+                self.assertEqual(page["fragmentCount"], 1)
+                self.assertEqual(page["fragmentTexts"], [self.NO_TEXT])
+                self.assertEqual(page["tallyText"], "1 fragment held")
+                self.assertEqual(page["statusWrites"], [self.GEN1_SPOKEN])
+                self.assertEqual(page["statusText"], self.GEN1_SPOKEN)
+                self.assertEqual(page["busy"], "false")
+                self.assertEqual(page["hash"], GEN1)
+                self.assertEqual(page["hashWrites"], [])
+                self.assertEqual(page["replaced"], [])
+                self.assertEqual(page["errorSections"], [])
+                self.assertIsNone(page["failureText"])
+                self.assertEqual(page["activeElement"],
+                                 anchor["activeElement"])
+
+    def test_genuine_absence_still_opens_the_carried_door(self):
+        # The door this closure must NOT close: no prefix stated, a valid
+        # same-stem carried path — exactly one request, and the body shows.
+        page = self.opened("v9-absent-prefix-carried")
+        self.assertEqual(page["fetched"], self.BOOTSTRAP + [self.FALLBACK])
+        self.assertEqual(len(page["fragmentTexts"]), 1)
+        self.assertIn("PLANTED FALLBACK BODY", page["fragmentTexts"][0])
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["errorSections"], [])
+
+    def test_a_valid_prefix_composes_its_own_address_and_asks_no_fallback(self):
+        # PRESENT-VALID: the prefix determines text identity, so the one
+        # request is the composed address — the carried address, planted and
+        # valid, goes unasked.
+        page = self.opened("v9-valid-prefix-carried")
+        self.assertEqual(
+            page["fetched"],
+            self.BOOTSTRAP
+            + ["structure/catena/text/deeper/fallback-owned.json"])
+        self.assertEqual(
+            page["fragmentTexts"],
+            ["Composed from the stated prefix and the fragment's own id."])
+
+    def test_a_prewarmed_fallback_is_not_substituted_into_the_refused_route(self):
+        # The cache is keyed by path, so a body already fetched under
+        # genuine absence could be substituted WITHOUT a request. The
+        # refused route must neither ask again nor reuse: one fallback
+        # request ever, and the refused rows show the no-file terminal.
+        prewarmed = self.snapshot("v9-prewarmed-fallback", "prewarmed")
+        self.assertEqual(prewarmed["fetched"], self.BOOTSTRAP + [self.FALLBACK])
+        self.assertIn("PLANTED FALLBACK BODY", prewarmed["fragmentTexts"][0])
+        page = self.snapshot("v9-prewarmed-fallback", "opened")
+        self.assertEqual(page["fetched"].count(self.FALLBACK), 1)
+        self.assertFalse(
+            [one for one in page["fetched"][len(prewarmed["fetched"]):]
+             if one.startswith("structure/catena/text/")])
+        self.assertEqual(page["fragmentTexts"], [self.NO_TEXT])
+        self.assertEqual(page["tallyText"], "1 fragment held")
+        self.assertEqual(page["statusText"], self.GEN2_SPOKEN)
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["hash"], GEN2)
+        self.assertEqual(page["hashWrites"], [GEN2])
+        self.assertEqual(page["errorSections"], [])
+        self.assertIsNone(page["failureText"])
+
+    def test_the_late_fallback_is_really_late(self):
+        # Without this the late guard is vacuous: A's request really went
+        # out before B was chosen, and it had NOT completed — the opened
+        # fragment still stands at "Loading…".
+        held = self.snapshot("v9-late-fallback", "a-held")
+        asked = [one for one in held["fetched"]
+                 if one.startswith("structure/catena/text/")]
+        self.assertEqual(asked, [self.FALLBACK])
+        self.assertEqual(held["fragmentTexts"][0], "Loading…")
+
+    def test_a_late_fallback_cannot_touch_the_refused_terminal_state(self):
+        # B settled terminal with its rows open; A completes late. Every
+        # guarded projection of the settled route — route, history,
+        # announcement journal AND standing status, tally, busy, focus, and
+        # everything rendered — is compared entire, and the release really
+        # happened.
+        before = self.snapshot("v9-late-fallback", "b-opened")
+        after = self.snapshot("v9-late-fallback", "a-late")
+        for key in GenuinelyLateStaleWorkTest.GUARDED:
+            self.assertEqual(after[key], before[key], f"{key} moved late")
+        self.assertEqual(after["fetched"], before["fetched"])
+        self.assertGreater(after["released"], before["released"])
+        self.assertEqual(after["fragmentTexts"], [self.NO_TEXT])
+        for said in after["fragmentTexts"]:
+            self.assertNotIn("PLANTED", said)
+        self.assertEqual(after["statusText"], self.GEN2_SPOKEN)
+        self.assertEqual(after["busy"], "false")
+        self.assertEqual(after["hash"], GEN2)
+        self.assertEqual(after["errorSections"], [])
+        self.assertIsNone(after["failureText"])
+
+
+class V9PrefixStateClassificationTest(unittest.TestCase):
+    """V9 §1 — the model itself holds three states, not a truthy two.
+
+    Driven through the exported production model, because the page's replay
+    can only see the states the composition lets out. ABSENT means the spine
+    record does not carry the `text_prefix` property; everything carried —
+    null, a record, a list, a number, a flag, '', whitespace, the wrong
+    namespace, traversal, an absolute path, a malformed encoding, the padded
+    right namespace, the `textual/` boundary spoof — is a statement, and a
+    statement that fails `textTrail` is REFUSED: terminal, fallback
+    forbidden, and kept on the row as `text_refused`.
+    """
+
+    CARRIED = "structure/catena/text/fallback-owned.json"
+
+    def classified(self):
+        script = """
+        const M = require(%r);
+        const carried = %r;
+        const base = () => ({
+          sources: {"1": {author: "A", work: "W"}},
+          fragments: [{id: "fallback-owned", source: "1",
+                       text_path: carried}]});
+        const row = (file) => {
+          const one = M.chapterFragments(file)[0];
+          return {path: one.text_path, refused: one.text_refused};
+        };
+        const valid = base();
+        valid.text_prefix = "structure/catena/text/deeper/";
+        const refusedValues = [
+          null, {}, [], 5, true, "", "   ",
+          "structure/paragraphs/",
+          "  structure/catena/text/  ",
+          "../structure/catena/text/",
+          "/structure/catena/text/",
+          "structure/catena/%%2e%%2e/text/",
+          "structure/catena/textual/"];
+        console.log(JSON.stringify({
+          absent: row(base()),
+          valid: row(valid),
+          refused: refusedValues.map((value) => {
+            const file = base();
+            file.text_prefix = value;
+            return row(file);
+          })}));
+        """ % (str(CATENA / "catena-model.js"), self.CARRIED)
+        done = subprocess.run(["node", "-e", script],
+                              capture_output=True, text=True, check=True)
+        return json.loads(done.stdout)
+
+    def test_absent_valid_and_refused_are_three_states(self):
+        told = self.classified()
+        # ABSENT: the carried door may open, and nothing was refused.
+        self.assertEqual(told["absent"],
+                         {"path": self.CARRIED, "refused": False})
+        # PRESENT-VALID: composed from the statement, carried door unasked.
+        self.assertEqual(
+            told["valid"],
+            {"path": "structure/catena/text/deeper/fallback-owned.json",
+             "refused": False})
+        # PRESENT-INVALID, thirteen ways: terminal, and the refusal kept.
+        self.assertEqual(told["refused"],
+                         [{"path": "", "refused": True}] * 13)
 
 
 class V7HollowFragmentMemberTest(ReplayTest):
