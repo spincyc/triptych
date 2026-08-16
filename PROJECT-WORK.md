@@ -1226,6 +1226,159 @@ immutable handoff archived on `evidence/catena-e1-corrections-v8-handoff`.
 This lane records no acceptance of its own work, marks no separately owned
 prerequisite complete, and does not review itself.
 
+### E1 Catena route-owned correction lane, V8 independent review
+
+Disposition: **CHANGES REQUIRED** for exact candidate
+`7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8`, reviewed against exact parent
+`e876b29e5797edcc6e86422daa807f4b1104ec81`. This review addresses V7 review
+`d9ad5ec1ae35c308a0da5ed3456fd05fdad97cbd`, independently inspected branch
+`evidence/catena-e1-corrections-v8-handoff` at
+`60122b472c3f9a09aff5f8663eb3b062c585a557`, and verified package
+`build/agent-handoffs/20260816T011521Z-catena-e1-corrections-v8` and its ZIP
+SHA-256 `002a75d587a3535d7df9d2b3239d71d811cc7948e9d219e5d9118edcb21e4ff7`.
+Current `origin/main` was `9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`, the exact merge base and an
+ancestor, with zero main-only and 27 candidate-only commits. The candidate
+branch was not modified; no production, release, integration, or deployment
+file was modified by this review.
+
+The parent-to-candidate history is two linear, single-parent commits. Its
+exact five-path diff is 398 insertions / 12 deletions:
+`src/web/browser/catena/catena-model.js` (+49/-10),
+`tools/tests/test_catena_wave_1.py` (+189/-1), `PROJECT-WORK.md` (+87),
+`guidance/corpus-browser-roadmap.md` (+31/-1), and
+`promised-deliverables.toml` (+42). The model is the only production file.
+`catena.js`, `catena.css`, `index.html`, `scripts/_catena.py`, all
+`src/web/data/`, release records, the common browser gate, shared shell,
+Liturgy, PDFs, unrelated Catena files, and every configured budget ceiling
+are byte-identical to the parent.
+
+#### Namespace and request-sink judgment
+
+`TEXT_HOME`, `textTrail()`, and `textLeaf()` correctly impose the
+slash-terminated `structure/catena/text/` directory boundary and byte equality
+after the existing path grammar. In isolation they refuse objects, arrays,
+numbers, booleans, null, empty and whitespace values, traversal, encoded
+traversal, absolute paths, malformed encoding, duplicate separators, sibling
+and parent namespaces, `structure/paragraphs/`, and the
+`structure/catena/textual/` boundary spoof without trimming, decoding,
+basename recovery, prefix stripping, or namespace rewriting. Valid paths at
+the namespace root and below are preserved byte-for-byte. The real corpus has
+562 `text_prefix` fields, all exactly `structure/catena/text/`, and no carried
+`text_path`; projection yields 1,356 path occurrences / 1,351 unique payloads,
+with an exact parent/head sequence and no outside-namespace value. The 44
+pre-V8 fixture roots preserve 47 unique paths across 132 occurrences with the
+same exact parent/head sequence, and the independently replayed V8 carried
+control makes exactly one owned request. The real and adversarial inventories
+remain distinctly labelled.
+
+The composed rule nevertheless is not closed. `chapterFragments()` maps both
+an absent `text_prefix` and a present-but-rejected one to `prefix === ''`.
+`fragmentRow()` then treats that falsy value as permission to use a validated
+same-stem carried path. An exact-head production replay supplied
+`text_prefix: "structure/paragraphs/"`, carried
+`structure/catena/text/fallback-owned.json`, and served the words
+`PLANTED FALLBACK BODY` there. The actual `fetch` journal contained the six
+bootstrap requests plus that carried path; the page rendered the planted body
+and completed as an ordinary success with one fragment, one success status
+write, `aria-busy="false"`, and no error, history write, or replacement. This
+is the exact zero-same-stem-fallback and no-substitution failure the review
+brief forbids: the invalid prefix causes a request even though the request is
+to the owned namespace.
+
+The shipped V8 scenarios do prove the isolated parent defect. At the parent,
+the wrong prefix makes three `structure/paragraphs/` requests, the padded
+prefix makes three whitespace-repaired Catena requests, and the carried matrix
+makes six wrong-namespace requests plus one padding-repaired request; the
+planted bodies render. At V8 those isolated scenarios make zero, zero, and
+zero prohibited requests, while the valid carried control stands. The head's
+test file against the parent has seven behavioral namespace failures plus the
+expected model-byte-pin failure, so the difference is not fixture
+incompatibility. But the prefix fixtures carry no fallback and the carried
+fixture carries no prefix, omitting the cross-field escape above. No V8 test
+prewarms or delays that accepted fallback path, so persistent-cache and late
+substitution are also unproved.
+
+The terminal claims overstate the committed assertions. No V8 method asserts
+the requested final `statusText`; only the plain wrong-prefix scenario pins
+the status-write journal and full tally, while the padded-prefix scenario pins
+only the request journal and fragment body. The package's journal dumps show
+truthful cold-run terminal values for its three fixtures, but dumps are not
+regression assertions. The combined escaping case is more decisive: it never
+enters the claimed rejected/no-file terminal state at all.
+
+#### Regression, budget, and evidence judgment
+
+Focused Catena discovery is 510/510 green and the exact V8 namespace class is
+5/5 green. The Catena structural check passes at 1,351 fragments / 1 book / 73
+canon entries, and the V7 language-normalization, no-guessed-English, exact-
+voice, neutral-refusal, padded-verse, null-bootstrap, encoding, and control-
+byte boundaries remain green. Full discovery reports 1,861 tests, 14 failures,
+13 errors, and 11 skips; its 27 failure/error identities equal the parent's
+and none names Catena. The browser gate remains 2,290 assertions with 1,836
+pass, 226 fail, and 228 skip; the inherited failures remain 117 single-main,
+82 target-size, and 27 skip-link findings. `make -k check` has the same three
+inherited failing targets: release bindings, tool registry, and examples.
+The promise ledger is valid at 33 tracked / 19 complete before this review's
+status reconciliation. Four release bindings remain stale and none was
+re-signed.
+
+The formal budgets are unraised: CSS is 7,629/8,000 whole and 2,676/2,700
+stripped; `catena.js` is 12,901/13,000 whole and 7,530/8,800 stripped. Both
+files are byte-identical to the parent. The uncapped model grows 27,832 to
+28,346 gzipped whole (+514) and 7,385 to 7,485 stripped (+100); separately
+gzipped route JavaScript grows 40,733 to 41,247 whole. That disclosed growth
+violates no existing cap and is not a V8 failure.
+
+The ZIP transport is intact: one safe root, 57 files, valid CRCs, 56 manifest
+rows covering every member except the manifest, zero sanitization hits, zero
+unreferenced members, and zero manifest or head-consistency verification
+errors. The archive is 244,979 bytes and its computed SHA-256 is the expected
+digest above. Its machine package inventory is not a record of the final
+sealed bytes, however. `claims.json` reports 3,058,709 uncompressed bytes while
+the final members total 3,060,531. Five claimed member identities are stale:
+`DERIVED-CLAIMS.md` and `MANIFEST.sha256` have different final hashes;
+`claims.json` is 26,834 rather than 26,405 bytes and has a different hash; and
+`logs/derive-claims.log` and `logs/head-consistency.log` are 92 and 1,301 bytes
+rather than empty, with different hashes. This repeats the final-byte
+truthfulness defect the addressed review required the handoff to correct and
+is a material V8 evidence blocker even though the manifest itself verifies.
+
+The retained parent logs reproduce the 505-test V7 baseline and contain no
+result from the discarded environment-contaminated `/tmp` run. Their
+workspace-named source provenance supports use of the replacement run, but
+the package never explicitly records the discarded run, the retained parent's
+cwd, exact checked-out SHA, or contemporaneous clean state. That is a
+secondary provenance gap, not a reason to treat the discarded PDF-location
+failure as a product regression.
+
+Every other V7 blocker remains open: the projection is not the sole semantic
+source; orphan sources still create voices and absences; source-only fragments
+still count; scalar translators are coerced; malformed or padded absence
+findings still create or suppress claims; refusal verse shapes remain
+unvalidated; partial selection remains unclosed and order-dependent;
+unreadable roots and unreadable `bibles.json` still manufacture claims; the
+broader terminal and corrected-oracle proofs remain incomplete; the CLI/web
+semantic model remains duplicated; the combined/model payload remains
+uncapped; and the historical data-seam contradiction, release bindings,
+common gate, shared shell, real-device/AT evidence, protected Liturgy, and PDFs
+remain with their separate owners. This disposition is only about V8 and is
+not an E1 disposition.
+
+**Exact next action:** start one bounded V9 correction from exact
+`7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8`. Preserve the absent / valid /
+present-invalid `text_prefix` distinction and permit a carried path only when
+the prefix is genuinely absent. Add production request-sink regressions that
+combine wrong and padded prefixes with a planted valid same-stem carried body,
+including prewarmed or delayed work, and pin the exact request journal,
+`statusText`, status-write journal, row/no-file state, tally, busy state,
+visible and announced sinks, errors, history, replacement, and post-release
+immutability. Then create a new immutable package whose machine inventory is
+derived or externally verified against every final sealed byte and whose
+parent-run ledger explicitly records the retained clean exact-SHA workspace
+run and the discarded `/tmp` run. Return that exact head and package for fresh
+independent review. Do not merge, re-sign, deploy, or start another
+master-plan lane.
+
 ## Promised work
 
 ### Corpus browser foundation design
