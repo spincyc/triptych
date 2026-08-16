@@ -1252,10 +1252,10 @@ Disposition: **CHANGES REQUIRED** for exact candidate
 `eb1ee9987425339c2b5522987bee1fb862cd7d33`, and verified package
 `build/agent-handoffs/20260816T044924Z-catena-e1-corrections-v9` and its ZIP
 SHA-256 `4872b04ed47873d84e5a8090aff42d3e43b7a2c11653484d659205db5488d945`.
-Current `origin/main` was `cfe588f81c1c239341b48f82e1b27ab55f582fd3`;
+Current `origin/main` was `1127c6d66fd5b898f1c77b671651b5162564f6ba`;
 its merge base with the candidate is
-`9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`, with one main-only and 30
-candidate-only commits and no path overlap with the one main-only commit.
+`9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`, with three main-only and 30
+candidate-only commits and no path overlap between those ranges.
 The candidate branch was not modified; no production, release, integration,
 re-signing, or deployment file was modified by this review.
 
