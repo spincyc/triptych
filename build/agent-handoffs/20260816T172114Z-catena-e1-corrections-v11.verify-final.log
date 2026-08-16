@@ -1,0 +1,83 @@
+== P8 final verification, bound to the exact archive
+   archive : 20260816T172114Z-catena-e1-corrections-v11.zip
+   bytes   : 4460391
+   sha256  : a82d027a87fcf8f822b14b099af25f21b267baa872f5fde1467a47a4f8a1aeea
+   root    : 20260816T172114Z-catena-e1-corrections-v11
+   verified: 2026-08-16T17:21:24Z (UTC)
+   verifier        : $WORKSPACE/$EVIDENCE/pkgtools/verify-final-package.py
+   verifier sha256 : 5bdcc5654cac1fcdba19868b1f81212c2c8f33a2f2f54cdf39125c75d950c0d6
+   tools           : $WORKSPACE/$EVIDENCE/pkgtools
+   tools at        : (not a git checkout)
+   head            : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+   parent          : ea15d16d22d7ceaed989ed9907c236f967738a03
+   review          : f7cad8b0219de8343a0b2cce95e89558ded6946e
+   lane            : V11 (claims tool: derive-claims.py)
+   claims          : 90 frozen row(s), 6862487 byte(s), 5 derived member(s), as claims.json declares
+   pre-check bytes : 4460391
+   pre-check sha256: a82d027a87fcf8f822b14b099af25f21b267baa872f5fde1467a47a4f8a1aeea
+[1 sidecar] ok
+[2 layout] ok
+[3 manifest] ok
+[4 claims rows] ok
+[5 partition] ok
+--- final bytes, derived from the archive alone
+    members            : 95
+    frozen rows        : 90 row(s), 6862487 bytes
+    derived claims.json: 39935 bytes
+    derived DERIVED-CLAIMS.md: 7466 bytes
+    derived logs/derive-claims.log: 92 bytes
+    derived logs/head-consistency.log: 2797 bytes
+    derived MANIFEST.sha256: 9572 bytes
+    derived members    : 5 member(s), 59862 bytes
+    total uncompressed : 6922349 bytes across 95 member(s) (= frozen 6862487 + derived 59862)
+--- check 6 trust anchor
+    tool derive-claims.py
+      trusted : $WORKSPACE/$EVIDENCE/pkgtools/derive-claims.py
+      trusted sha256: 801507fe3d44a16d9cb112812ab628e1a74439124f367e98ca2a8c70d82ec6b3
+      shipped : logs/derive-claims.py (read as bytes, never run)
+      shipped sha256: 801507fe3d44a16d9cb112812ab628e1a74439124f367e98ca2a8c70d82ec6b3
+      agreement: identical bytes -- running the trusted copy is running the shipped one
+[6 rendering] ok
+--- check 7 trust anchors
+    tool head-consistency.py
+      trusted : $WORKSPACE/$EVIDENCE/pkgtools/head-consistency.py
+      trusted sha256: f91a22082d9324eae9bb674d5afeada35dde304376abbb624827259d5ab4e64e
+      shipped : logs/head-consistency.py (read as bytes, never run)
+      shipped sha256: f91a22082d9324eae9bb674d5afeada35dde304376abbb624827259d5ab4e64e
+      agreement: identical bytes -- running the trusted copy is running the shipped one
+    tool sanitize-and-seal.py
+      trusted : $WORKSPACE/$EVIDENCE/pkgtools/sanitize-and-seal.py
+      trusted sha256: c91146de2dccc43916c7a93c0d05a69b319126681124f41bac5f49548fe54a1d
+      shipped : logs/sanitize-and-seal.py (read as bytes, never run)
+      shipped sha256: c91146de2dccc43916c7a93c0d05a69b319126681124f41bac5f49548fe54a1d
+      agreement: identical bytes -- running the trusted copy is running the shipped one
+--- head-consistency.py (trusted copy) over the extraction (exit 0)
+head consistency: 36 text member(s) scanned
+  entitled SHAs: 3b93f74f032e (commit in range), e7f468e84272 (declared: Current origin/main at the time of this lane, recorded so the reviewer can see this candidate is not integrated with it. Named in the V11 durable records, and therefore in changes.patch.), ff49c83e4f26 (declared: The V10 evidence commit the answered review independently inspected. Named in HANDOFF.md and in the V11 durable records, and therefore in changes.patch.), f93757854b54 (declared: The V4.1 head. Present in changes.patch as a REMOVED line: the corpus browser master plan's E1 row still carried the stale V4.1 disposition, and this lane replaces it with the V10 one.), 7f69575b9829 (declared: The V4.1 independent review. Present in changes.patch as a REMOVED line, beside the stale V4.1 disposition this lane replaces.), 4639b139f217 (declared: The V6 head. Named in the reused audit tools' docstrings and the test file's history as part of the defect record those tools answer.), f183ed1b0afc (declared: The V6 independent review. Present as unified-diff context in the test file's recorded correction history.), e876b29e5797 (declared: The V7 head. Present as unified-diff context in the neighbouring lane sections carried by changes.patch.), d9ad5ec1ae35 (declared: The V7 independent review, a sibling record. Present as unified-diff context in the neighbouring lane sections.), 7e4df42a21bc (declared: The V8 head. Present as unified-diff context in the neighbouring lane sections carried by changes.patch.), 611b5eed8128 (declared: The V8 independent review, a sibling record. Present as unified-diff context in the neighbouring lane sections.), 3c5b78249193 (declared: The V9 head and this lane's parent's parent. Present as unified-diff context beside the V10 lane section the V11 records were inserted before.), 55df5c236a1d (declared: The V9 independent review, a sibling record. Present as unified-diff context in the V10 sections neighbouring the V11 insertions, and in the V10 ledger row this lane reconciles.), 83cb63b61e36 (declared: The head the V6 package wrongly named as its own. Carried in the reused audit tools' docstrings as the defect those tools exist to catch.), 4f00e04bdd1f (declared: The published head of the V9 independent review. Present as unified-diff context in the neighbouring V10 lane sections.), 0255b84996e1 (head), ea15d16d22d7 (parent), f7cad8b0219d (review addressed)
+  package members: 95; referenced: 95; unreferenced: 0
+  frozen rows in claims.json: 90; declared derived members: 5; pending: 0
+  residue (present without a frozen row): 5 (DERIVED-CLAIMS.md, MANIFEST.sha256, claims.json, logs/derive-claims.log, logs/head-consistency.log) -- every one must be a declared derived member
+  frozen members that drifted: 0
+  problems: 0
+--- sanitize-and-seal.py (trusted copy) over the extraction (exit 0)
+check-only: 0 file(s) would change, 0 would-be substitution(s)
+sanitization scan: 0 private-token hit(s)
+evidence-index check: 0 missing reference(s), 0 unreferenced member(s), 0 deferred reference(s)
+screenshot pair audit: 8 before/after pair(s), 6 byte-identical, 2 differing
+  identical  screenshots/catena--fragment-absent--1440x900.png (screenshots/before--catena--fragment-absent--1440x900.png vs screenshots/after--catena--fragment-absent--1440x900.png)
+  identical  screenshots/catena--fragment-absent--393x852.png (screenshots/before--catena--fragment-absent--393x852.png vs screenshots/after--catena--fragment-absent--393x852.png)
+  identical  screenshots/catena--fragment-present-valid--1440x900.png (screenshots/before--catena--fragment-present-valid--1440x900.png vs screenshots/after--catena--fragment-present-valid--1440x900.png)
+  identical  screenshots/catena--fragment-present-valid--393x852.png (screenshots/before--catena--fragment-present-valid--393x852.png vs screenshots/after--catena--fragment-present-valid--393x852.png)
+  identical  screenshots/catena--fragment-refused--1440x900.png (screenshots/before--catena--fragment-refused--1440x900.png vs screenshots/after--catena--fragment-refused--1440x900.png)
+  identical  screenshots/catena--fragment-refused--393x852.png (screenshots/before--catena--fragment-refused--393x852.png vs screenshots/after--catena--fragment-refused--393x852.png)
+  differing  screenshots/catena--fragment-unestablished--1440x900.png (screenshots/before--catena--fragment-unestablished--1440x900.png vs screenshots/after--catena--fragment-unestablished--1440x900.png)
+  differing  screenshots/catena--fragment-unestablished--393x852.png (screenshots/before--catena--fragment-unestablished--393x852.png vs screenshots/after--catena--fragment-unestablished--393x852.png)
+[7 shipped audits] ok
+--- post-verification rehash of the archive bytes
+    checks performed : 1 sidecar, 2 layout, 3 manifest, 4 claims rows, 5 partition, 6 rendering, 7 shipped audits
+    pre-check bytes  : 4460391
+    pre-check sha256 : a82d027a87fcf8f822b14b099af25f21b267baa872f5fde1467a47a4f8a1aeea
+    post-check bytes : 4460391
+    post-check sha256: a82d027a87fcf8f822b14b099af25f21b267baa872f5fde1467a47a4f8a1aeea
+    result           : UNCHANGED -- every check above read the archive named in the header
+P8 verification: PASS (0 problem(s))
