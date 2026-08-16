@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-08.
+Last reconciled: 2026-08-16.
 
 ## Standing public-alpha authority
 
@@ -1271,6 +1271,186 @@ Status: **awaiting fresh independent review** of the exact V10 head and its
 immutable handoff archived on `evidence/catena-e1-corrections-v10-handoff`.
 This lane records no acceptance of its own work, marks no separately owned
 prerequisite complete, and does not review itself.
+
+### E1 Catena route-owned correction lane, V10 independent review
+
+Disposition: **CHANGES REQUIRED** for exact candidate
+`ea15d16d22d7ceaed989ed9907c236f967738a03`, reviewed against exact parent
+`3c5b78249193df065c4e1c2ee5a98e5989c6e582`. This review addresses V9
+independent review `55df5c236a1dfda12bb974efdbb9f46d0aeb3436` and its
+published head `4f00e04bdd1fd63702a51bfdafef256b468bef77`, independently
+inspected branch `evidence/catena-e1-corrections-v10-handoff` at
+`ff49c83e4f26570bd4c07d8fc8703f94c331d92a`, and verified package
+`build/agent-handoffs/20260816T111714Z-catena-e1-corrections-v10` and ZIP
+SHA-256 `4c71d1c15bd1f1992bf29a1d84342f11a8b671b5b5bd6bdcc4341de091e23e2f`.
+
+Current `origin/main` was
+`e7f468e842727a817631d12f0854f8249556a8ff`. Its merge base with the
+candidate is `9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`, with eight
+main-only and 33 candidate-only commits. The candidate's 13-path divergence
+and main's 216-path divergence overlap only in `PROJECT-WORK.md` and
+`promised-deliverables.toml`; a no-write three-way check found no conflict,
+but no integrated tree was built or tested. The exact V10 parent-to-head
+history is three linear commits and six paths, 567 insertions / 58 deletions:
+two Catena production files, one Catena test file, and three durable records.
+No data, release binding, common gate, shared shell, Liturgy, PDF, CLI, CSS,
+budget-ceiling, merge, re-signing, or deployment path changed in that V10
+range.
+
+The ordinary production refusal path is correctly ordered. For normalized
+own-property claims, `catena.js` consumes `text_refused` and returns before
+the cache/request sink; cold and prewarmed source-backed refused prefixes
+render the new sentence rather than the absence sentence or a planted body.
+Genuine prefix absence still opens only a byte-exact own-stem carried path,
+and a present-valid prefix composes its own address, asks no fallback, and
+renders its body with neither no-text sentence. The V9 request closure and
+representative primitive namespace matrix remain green. These passes do not
+close V10 because the boundary and the reader claim are wider than those
+ordinary cases.
+
+The exported claim boundary is still open. `fragmentRow()` accepts any
+non-array object and reads `claim.stated` and `claim.trail` through its
+prototype. `Object.create({stated: false, trail: ''})` therefore opens the
+carried fallback with `text_refused: false`, while inherited
+`{stated: true, trail: 'structure/catena/text/deeper/'}` composes a usable
+text path; mixed own/inherited forms do the same, and an accessor may throw.
+That directly contradicts the V10 promise that absence is exactly one direct
+shape and every malformed direct claim composes nothing. The committed matrix
+contains only eight plain object literals and does not probe inherited,
+accessor, or hybrid claims.
+
+The eight literals do resolve to no path, but one shared reader sentence is
+not internally truthful for them. Bare `{}`, `{stated: false}`, malformed
+flags, and production `text_prefix` values such as `null`, a record, a list,
+a number, a flag, empty text, or whitespace establish neither that a text
+reference was supplied nor that it was “written”; nevertheless every one is
+projected to `A text reference was supplied ... cannot be used as written`.
+The neutrality test merely blacklists nine phrases in the constant and never
+drives each malformed state through the visible and request sinks. Thus the
+source-backed string refusal is neutral and distinct, but the promised
+absence/refusal and contradictory-state closure is not truthful across the
+accepted boundary.
+
+The cold, present-valid, and prewarmed vectors pin their owned requests,
+row/body, status, tally, busy state, route/history, focus, and failure sinks,
+and request ownership is recorded at issue time rather than inferred from a
+count. The genuinely-late timing is real and its release is exactly `0 -> 1`,
+but its claimed complete expected baseline is not complete: the 36-field
+guard is compared before/after while `expected_b_terminal()` names only 17
+fields and overlaps only 13 guarded fields. Twenty-three guarded projections,
+including reference text, selectors, headings, data states, refusal fields,
+classes, language attributes, voices, and author groups, may be identically
+wrong at both ends. The renderer-order promise is likewise not regression-
+pinned with a normalized `{text_refused: true, text_path: <usable>}` row; a
+mutation that moves the refusal below `fragmentText()` still passes all 466
+wave-1 tests. The packaged journal dumps further omit `requests`,
+`fragmentIds`, `historyState`, and `replacedStates`, despite prose saying the
+logs expose the complete owned vectors.
+
+Fresh validation at the exact head confirms the producer's headline results.
+Focused Catena is 522/522 and Catena structure is 1,351 fragments / one book /
+73 canon entries. The parent overlay runs 466 wave-1 methods: 458 pass and
+eight methods produce ten FAIL identities; nine identities across seven
+methods exercise V10 behavior and one is the expected digest guard. Calling
+all ten “subtest identities” is inaccurate because only four are unittest
+subtest instances. Full discovery is 1,873 tests with the inherited 14
+failures / 13 errors / 11 skips and no Catena identity. The browser gate is
+2,290 assertions, 1,836 passed / 226 failed / 228 skipped over 171 pages and
+19 routes, matching the packaged parent/head result. `make -k check` exits 2
+at both endpoints on the same four targets: `check-web-editions-current`,
+`check-release-bindings`, `check-tool-registry`, and `check-examples`; the
+package's claim that the web-edition target is additional at the head is
+false. The candidate promise ledger is valid at 35 tracked / 19 complete,
+and four Catena release bindings remain stale and unsigned.
+
+All configured budgets hold without a raised ceiling: `catena.css` is
+7,629/8,000 whole and 2,676/2,700 stripped; `catena.js` is 12,987/13,000
+whole and 7,565/8,800 stripped. The unbudgeted model is 29,741 whole and
+7,664 stripped. The two JavaScript files are 42,728 separately summed and
+42,010 as one stream, against V9's 42,080 and 41,392. No model/combined cap
+exists, so that growth remains an owner judgment rather than a V10 failure;
+the new model comment saying the page has 99 bytes of ceiling is stale because
+only 13 bytes now remain under the `catena.js` whole-file cap.
+
+The exact ZIP's mechanics pass: 256,210 archive bytes, 59 unique safe regular
+members, CRC/extraction success, 58 unique manifest rows excluding only the
+manifest, 54 frozen rows / 2,060,250 bytes plus five unique derived members /
+50,313 bytes, and 2,110,563 final uncompressed bytes. Every manifest and
+claims digest checked against the delivered bytes. The P8 transcript names
+the exact ZIP, byte size, SHA-256, seven checks, and PASS result. It does not,
+however, establish its stronger read-only protocol claim: it imports and
+executes Python from the extracted archive after the binding hash, lacks a
+post-execution rehash, and the package's statement that it ran twice is not
+backed by a second transcript.
+
+Package and provenance closure therefore remains open. The 22 authoritative
+head/parent battery commands each have a distinct existing ledger-named log,
+and both preflights contemporaneously record exact SHA, clean porcelain,
+sanitized cwd, command, order, exit, and path. But the parent overlay copies
+the head test into the parent clone, the next command runs dirty, and the
+per-command rendering still repeats the one preflight `clean` value; no
+sealed post-restoration porcelain exists. Two failed assembly attempts are
+retrospectively named at different timestamps, but no actual reused-timestamp
+invocation is shipped, neither failed directory is self-marked
+non-authoritative, and `HANDOFF.md`/`EVIDENCE-INDEX.md` say nothing was
+discarded while `PROVENANCE.md` records two discarded assemblies and smoke
+runs. The final assembly has no outer invocation log, the comparison run has
+no ledger row, two browser transcripts are empty, and repeated check-only
+sealer passes collapse into one path. Refusal capability is tested; the
+reported historical reuse/discard proof is not.
+
+The handoff protocol is also incomplete. `HANDOFF.md` contains eight of ten
+required contents: limitations and unresolved decisions are only links, its
+inventory omits its own index and sibling ZIP/sidecar/P8 artifacts, and the
+visible browser-copy change has no required before/after screenshots.
+`REVIEW_REQUEST.md` does contain four Blockers and two Optional questions.
+`checks.txt` excludes several package-blocking checks and does not qualify its
+red commands fully. Prose further misuses generic “baseline,” claims an
+uncaptured raster would be identical, mislabels inherited web-edition
+staleness, carries one unknown corrected-oracle lane, and publishes invalid
+reviewer invocations.
+
+Privacy and bytes divide the same way: every member is UTF-8, with zero NUL,
+forbidden-control, unsafe-path, credential, raw account, raw home, or host
+hits. But the exact workspace/session suffix `triptych/e1-catena-v3` survives
+89 times under tokenized `$HOME/git/worktrees/...`, 88 times beside
+`.agents/v10-evidence`, contradicting the package's claim that no
+un-normalized identity survived; ZIP member times also disclose the builder's
+UTC-05:00 offset. The immutable artifact is internally consistent, but its
+privacy, prose, handoff, logging, and verifier protocol are not correct.
+
+The promise ledger is reconciled fail-closed with prior published review
+facts: completed V2/V3/V5/V6/V7/V8/V9 review requirements are marked passed;
+the nine V7, two V8, and one V9 criteria reopened by published V9 review head
+`4f00e04bd` remain open; and V10's false-rendering, contradictory-boundary,
+and complete-vector criteria are reopened while this fresh review itself is
+passed. This does not reopen the already demonstrated V9 request-layer
+behavior and does not accept E1.
+
+The broader blockers remain open and are not reasons for this disposition:
+projection is not the sole semantic source; orphan raw sources and source-only
+fragments; scalar/nested translator coercion; malformed/padded absence rows;
+partial-selection ordering; refusal verse typing; unreadable roots and
+`bibles.json` prose; terminal vectors and bad oracles outside this narrow
+lane; CLI/web semantic duplication; model/combined budget governance; the
+historical data-seam contradiction; release bindings; common gate; B0/shared
+shell; real-device/AT; protected Liturgy; and PDFs. The V7 #2 request-layer
+namespace behavior remains demonstrated, but its full terminal/presentation
+proof stays open with the V10 defects above.
+
+Exact next action: start one bounded V11 successor from exact V10 head
+`ea15d16d22d7ceaed989ed9907c236f967738a03` and address only these V10
+findings. Require own non-accessor claim members; distinguish truthful
+source-backed refusal from malformed/unestablished claims; add inherited,
+hybrid, accessor, production-malformed, normalized usable-path, cache, and
+visible-sink regressions; pin expected values for every material member of the
+36-field late guard. Then correct the labels and historical ledgers and create
+a fresh timestamped immutable package with required screenshots, all ten
+handoff contents, unique preserved run/attempt logs and explicit discard
+markers, repository-relative privacy-safe paths and deterministic timestamps,
+and a non-executing canonical-path P8 that rehashes the ZIP after all checks.
+Return that exact head and package for fresh independent review. Do not enter
+another E1 blocker, integrate, merge, re-sign, deploy, or cut over.
 
 ### E1 Catena route-owned correction lane, V9
 

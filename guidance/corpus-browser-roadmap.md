@@ -766,6 +766,65 @@ unbudgeted model's growth is disclosed at +562 gzipped whole. All other
 blockers remain open and untouched, and the lane returns for fresh
 independent review.
 
+### E1 Catena correction V10 independent review — 2026-08-16
+
+**CHANGES REQUIRED** at exact candidate
+`ea15d16d22d7ceaed989ed9907c236f967738a03`, parent
+`3c5b78249193df065c4e1c2ee5a98e5989c6e582`. The review independently
+verified evidence commit `ff49c83e4f26570bd4c07d8fc8703f94c331d92a`
+and ZIP SHA-256
+`4c71d1c15bd1f1992bf29a1d84342f11a8b671b5b5bd6bdcc4341de091e23e2f`,
+and addressed V9 disposition `55df5c236` / published head `4f00e04bd`.
+
+The ordinary production path is correctly ordered: a normalized refused row
+returns before the cache/request sink, genuine prefix absence retains the
+validated carried door, and a valid prefix asks only its composed address.
+The V9 request closure, cold/present-valid/prewarmed behavior, request-owner
+journal, and primitive namespace matrix remain green. The exported boundary
+is not closed, however: inherited `stated` and `trail` properties are trusted,
+so an object inheriting `{stated: false, trail: ''}` opens the carried fallback
+and an inherited valid statement composes a request. The eight committed
+direct shapes are plain objects and do not cover inherited, hybrid, or
+accessor claims.
+
+The shared refused sentence also asserts too much. Malformed production
+prefixes and bare or contradictory direct claims establish neither that a
+text reference was supplied nor that it was written, yet all say one “was
+supplied” and “cannot be used as written.” The neutrality test inspects only
+the constant. The late proof is materially incomplete as well: its 36-field
+guard is compared before/after, but only 17 fields are pinned to expected
+values and just 13 overlap the guard, leaving 23 projections able to be
+identically wrong. No normalized refused-plus-usable-path test independently
+pins the renderer's before-cache ordering.
+
+Fresh checks reproduce 522/522 focused Catena, 1,351/1/73 Catena structure,
+1,873 full tests with inherited 14 failures / 13 errors / 11 skips, browser
+gate 2,290 at 1,836/226/228, promise ledger 35/19, and four stale unsigned
+Catena bindings. `make -k check` has the same four failing targets at parent
+and head, including `check-web-editions-current`; the package's additional-
+head label is false. All CSS and `catena.js` ceilings hold; model/combined
+growth remains uncapped and separately owned.
+
+The exact ZIP's 59 members, CRC, 58 manifest rows, 54 frozen / five derived
+partition, and 2,110,563-byte arithmetic pass, and P8 binds its header to the
+right archive. Package protocol does not: the verifier executes extracted
+Python without a final rehash, discarded attempts are contradicted and not
+self-marked, late parent commands are mislabeled clean, several run outputs
+are missing or collapsed, required screenshots are absent, `HANDOFF.md`
+contains only eight of ten required contents, and the package leaks the
+workspace/session suffix 89 times plus the builder timezone in ZIP metadata.
+The immutable bytes are internally consistent; the claimed privacy,
+provenance, handoff, and read-only protocol are not.
+
+One bounded V11 must start from exact V10 head and address only these V10
+findings: require own non-accessor claim members; give malformed/unestablished
+claims truthful presentation; add inherited/accessor/visible/request/cache
+regressions; exact-pin every material late sink; and issue a new privacy-safe,
+visually evidenced, fully inventoried package with preserved unique run and
+discard logs and a non-executing P8 that rehashes after verification. E1 and
+the broader V7, release, gate, shell, device/AT, Liturgy, and PDF blockers stay
+open. No merge, re-sign, deployment, or cutover is authorized.
+
 ### E1 Catena correction V9 — 2026-08-16
 
 Answers the fresh independent review `611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f`
@@ -835,7 +894,7 @@ fresh independent review.
 | --- | --- | --- |
 | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
 | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
-| E1 Catena production implementation | Eleventh correction candidate (V10) awaiting fresh independent review; the disposition it answers is **CHANGES REQUIRED** at V9 head `3c5b78249` (independent review `55df5c236`, published head `4f00e04bd`, 2026-08-16) | That review passed the V9 request-layer closure entire — the three-state prefix, the carried door opened only on genuine absence, the thirteen-shape matrix, the namespace regressions, ownership boundaries and budgets — and found the third state stopped at the model: `text_refused` was projected and never consumed, so a present-invalid prefix rendered the false absence sentence `carries no text file`; the exported claim boundary accepted the contradictory `{stated: false, trail: <valid>}` as absence; the cold/prewarmed/late/present-valid terminal proofs were materially incomplete with `history.state` uncaptured and ownership inferred from counts; and the V9 package needed unique logs, contemporaneous parent provenance, a P8 transcript bound to the exact ZIP, accurate labels, and the required handoff/review-request structure. Its exact next action: render the distinct neutral refused state, fail contradictory claims closed, exact-pin the four terminal vectors, and rebuild that protocol in a new timestamp. V10 is that correction alone; every other enumerated blocker remains open for the authorized continuation. Preserve accepted E0 and every sound V2–V9 correction. The exact Catena data seam is authorized but transfers no broader ownership; release, common-gate, B0/shared-shell, Day-reader guard, real-device/AT, protected Liturgy and PDF prerequisites remain separate. E1 stays off main. No merge, re-sign, deploy or cutover. |
+| E1 Catena production implementation | **Changes required** at exact V10 head `ea15d16d22d7ceaed989ed9907c236f967738a03` (fresh independent review on `review/catena-wave-1-e1-corrections-v10-independent`, 2026-08-16) | V10 correctly carries an ordinary source-backed refused state to the renderer before the cache/request sink and preserves V9 request closure, but the exported claim boundary trusts inherited members and can reopen a carried or composed request; malformed states receive an unsupported “reference was supplied” sentence; 23 of 36 late-guard fields lack expected values; and the package's provenance, handoff, privacy, visual-evidence, and read-only-verifier claims remain incorrect despite exact ZIP arithmetic. Make one bounded V11 from exact V10 head that closes only those defects and returns a new immutable package. Preserve accepted E0 and every sound V2–V10 behavior. Broader V7 production/oracle/architecture blockers and the historical data-seam contradiction remain open; release, common-gate, B0/shared-shell, Day-reader guard, real-device/AT, protected Liturgy, and PDFs remain separate. E1 stays off main. No merge, re-sign, deploy, or cutover. |
 | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
 | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
 | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
@@ -863,6 +922,7 @@ fresh independent review.
 | 2026-08-15 | E1 Catena correction V8 | Answered independent review `d9ad5ec1a` (**CHANGES REQUIRED** at `e876b29e5`) with exactly its stated first bounded commit: the byte-exact `structure/catena/text/` namespace closure at the request sink, and nothing else. `trail` and `leaf` stated what a path of this data root looks like and nothing stated which directory the route owns, so `structure/paragraphs/` composed a request, a carried same-stem `structure/paragraphs/text/<id>.json` fetched a real Sources text sharing that id, and whitespace-wrapped paths were trimmed into validity. The model now states the namespace once — `TEXT_HOME` — and `textTrail`/`textLeaf` require it byte-exactly at a directory boundary with no whitespace repair, for the composed and the carried form alike, before projection completes; `catena.js` is untouched. Three adversarial replay scenarios plant a real body at the wrong-namespace address, pin the entire fetched journal, assert the planted words reach no sink, and hold the terminal state. Focused suite 510 green, up from 505; catena check 1,351/1/73 with all 1,356 real and 47 fixture paths unchanged; browser gate 2,290 assertions with the inherited 1,836/226/228 and 117/82/27 identity; budgets unraised with `catena.js` and `catena.css` byte-identical at 12,901/13,000, 7,530/8,800, 7,629/8,000 and 2,676/2,700; the unbudgeted model's growth is disclosed at +514 gzipped whole. All other V7 findings recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v8`; parent `e876b29e5797edcc6e86422daa807f4b1104ec81`; review addressed `d9ad5ec1ae35c308a0da5ed3456fd05fdad97cbd`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
 | 2026-08-16 | E1 Catena correction V9 | Answered independent review `611b5eed8` (**CHANGES REQUIRED** at `7e4df42a2`) with exactly its stated next action: the composed prefix/fallback closure and a truthful final-byte package, and nothing else. `textTrail` collapsed a prefix the file never stated and a prefix the file stated and the page refused into the same `''`, and `fragmentRow`'s truthy test read that `''` as leave to consult the carried `text_path`, so the reviewer's refused `structure/paragraphs/` prefix still fetched a valid same-stem carried file and rendered its planted body. The prefix is now the statement `{stated, trail}`: absence is property absence on the spine record, every carried shape is a statement, a refused statement is terminal and kept on the row as `text_refused`, and the carried door opens only on genuine absence with a byte-exact own-stem path; `catena.js` is untouched. The regressions pin the exact vector cold, prewarmed and genuinely late at the production sinks — whole journal, body, rows, announcement journal and standing `statusText`, tally, busy, hash, history, focus — and fail nine ways at the uncorrected parent; a model-level matrix classifies thirteen refused shapes beside the absent and valid states. The handoff pipeline freezes its inventory before derivation, names derived members unsized, and verifies its claims read-only against the final ZIP, with the retained parent run and the discarded `/tmp` run ledgered. Focused suite 519 green, up from 510; catena check 1,351/1/73; browser gate 2,290 with the inherited 1,836/226/228 and 117/82/27 identity, whole report identical; budgets unraised with `catena.js` and `catena.css` byte-identical at 12,901/13,000, 7,530/8,800, 7,629/8,000 and 2,676/2,700; the unbudgeted model's growth is disclosed at +833 gzipped whole. All other V7 blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v9`; parent `7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8`; review addressed `611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
 | 2026-08-16 | E1 Catena correction V10 | Answered independent review `55df5c236` (**CHANGES REQUIRED** at `3c5b78249`, published head `4f00e04bd`) with exactly its stated next action: the refused-prefix presentation closure, the exact terminal vectors, and a protocol-correct package, and nothing else. The page now consumes `text_refused` before the request sink, so a present-invalid prefix renders one neutral model-stated sentence — a supplied text reference cannot be used as written — instead of the false `carries no text file`; genuine absence keeps its own sentence and the two claims are pinned visibly distinct with a positive control each way; absence at the exported claim boundary is the one shape `{stated: false, trail: ''}` and every contradictory direct claim projects as refused with no request, substitution, or body leak. The replay journals each request's owning step and captures `history.state`; cold, present-valid, prewarmed, and late are pinned to expected values at every material sink, the late vector pinning B's full terminal baseline before and after a release pinned at exactly zero-then-one over the retained 36-field guard. Against the uncorrected parent the V10 file yields nine failing subtest identities across seven behavioral methods while the neutrality sweep and the present-valid, genuine-absence, and late-non-vacuity controls pass. Focused suite 522 green, up from 519; catena check 1,351/1/73; full discovery 1,873 with the inherited 14/13/11 and the same 27-entry name set; browser gate 2,290 at 1,836/226/228; promise ledger 35 tracked / 19 complete; budgets unraised with `catena.css` byte-identical and `catena.js` 12,987/13,000 whole and 7,565/8,800 stripped; the unbudgeted model's growth disclosed at +562 gzipped whole. The package pipeline gains unique refusing logs, contemporaneous exact-SHA/clean/cwd provenance, a P8 transcript bound to the exact ZIP with duplicate-row checks and derived final-byte totals, a timestamp-refusing assembler, and accurate lane labels. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v10`; parent `3c5b78249193df065c4e1c2ee5a98e5989c6e582`; review addressed `55df5c236a1dfda12bb974efdbb9f46d0aeb3436`; published review head `4f00e04bdd1fd63702a51bfdafef256b468bef77`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+| 2026-08-16 | E1 Catena correction V10 independent review | **CHANGES REQUIRED** at exact candidate `ea15d16d22d7ceaed989ed9907c236f967738a03`. Ordinary renderer ordering and V9 request closure pass. Inherited direct-claim properties reopen requests; malformed states receive unsupported supplied-reference prose; the late terminal vector leaves 23 guarded fields without expected values; and the handoff's provenance, privacy, screenshot, complete-inventory, unique-run, and read-only-P8 claims remain incorrect. Exact ZIP identity, manifest, CRC, and 2,110,563-byte partition arithmetic pass. One bounded V11 must close only these findings and return a fresh package. | Review branch `review/catena-wave-1-e1-corrections-v10-independent`; evidence `ff49c83e4f26570bd4c07d8fc8703f94c331d92a`; package `20260816T111714Z-catena-e1-corrections-v10.zip`, SHA-256 `4c71d1c15bd1f1992bf29a1d84342f11a8b671b5b5bd6bdcc4341de091e23e2f`; current main `e7f468e842727a817631d12f0854f8249556a8ff`. No candidate modification, merge, re-signing, deployment, or outside-owner work occurred. |
 
 ## Next Codex tasks
 
