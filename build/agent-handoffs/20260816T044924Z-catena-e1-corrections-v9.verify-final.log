@@ -1,0 +1,21 @@
+[1 sidecar] ok
+[2 layout] ok
+[3 manifest] ok
+[4 claims rows] ok
+[5 partition] ok
+[6 rendering] ok
+--- head-consistency over the extraction (exit 0)
+head consistency: 31 text member(s) scanned
+  entitled SHAs: 6c651782479a (commit in range), 6c160bf01037 (commit in range), 4639b139f217 (declared: The V6 head. Named in the reused tools' docstrings as part of the defect history those tools answer.), 92c88ab8c2d2 (declared: The V7 evidence commit. Present as unified-diff context where the V9 durable-record insertions neighbour the V8 lane section that names it.), e876b29e5797 (declared: The V7 head and the parent's parent. Present as unified-diff context beside the V8 lane records the V9 records were inserted before.), d9ad5ec1ae35 (declared: The V7 independent review, a sibling record. Present as unified-diff context in the V8 sections neighbouring the V9 insertions.), 60122b472c3f (declared: The V8 evidence commit. Named in the V9 durable records, and therefore in changes.patch, as the independently inspected evidence of the review this lane answers.), 83cb63b61e36 (declared: The head the V6 package wrongly named as its own. Carried in the reused audit tools' docstrings as the defect those tools exist to catch.), 3c5b78249193 (head), 7e4df42a21bc (parent), 611b5eed8128 (review addressed)
+  package members: 59; referenced: 59; unreferenced: 0
+  frozen rows in claims.json: 54; declared derived members: 5; pending: 0
+  residue (present without a frozen row): 5 (DERIVED-CLAIMS.md, MANIFEST.sha256, claims.json, logs/derive-claims.log, logs/head-consistency.log) -- every one must be a declared derived member
+  frozen members that drifted: 0
+  problems: 0
+--- sanitizer check-only over the extraction (exit 0)
+check-only: 0 file(s) would change, 0 would-be substitution(s)
+sanitization scan: 0 private-token hit(s)
+evidence-index check: 0 missing reference(s), 0 unreferenced member(s), 0 deferred reference(s)
+screenshot pair audit: 0 before/after pair(s), 0 byte-identical, 0 differing
+[7 shipped audits] ok
+P8 verification: PASS (0 problem(s))

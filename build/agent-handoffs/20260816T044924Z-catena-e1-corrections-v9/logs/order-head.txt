@@ -1,0 +1,72 @@
+2026-08-15T23:30:55<tz>
+START focused-catena
+CMD: python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+exit=0
+2026-08-15T23:30:59<tz>
+END focused-catena
+2026-08-15T23:30:59<tz>
+START catena-check
+CMD: python3 scripts/_catena.py check
+exit=0
+2026-08-15T23:31:02<tz>
+END catena-check
+2026-08-15T23:31:02<tz>
+START promised
+CMD: tools/tpt check-promised-deliverables
+exit=0
+2026-08-15T23:31:02<tz>
+END promised
+2026-08-15T23:31:02<tz>
+START full-discovery
+CMD: python3 -m unittest discover -s tools/tests
+exit=1
+2026-08-15T23:39:21<tz>
+END full-discovery
+2026-08-15T23:39:21<tz>
+START make-check
+CMD: make -k check
+exit=2
+2026-08-15T23:44:26<tz>
+END make-check
+2026-08-15T23:44:26<tz>
+START release-bindings
+CMD: make check-release-bindings
+exit=2
+2026-08-15T23:44:27<tz>
+END release-bindings
+2026-08-15T23:44:27<tz>
+START public-site
+CMD: make public-site
+exit=0
+2026-08-15T23:44:32<tz>
+END public-site
+2026-08-15T23:44:32<tz>
+START browser-gate
+CMD: node tools/tests/corpus_browser_gate.mjs --json-out '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v9-evidence/logs/browser-gate-head.json'
+exit=1
+2026-08-15T23:46:04<tz>
+END browser-gate
+2026-08-15T23:46:04<tz>
+START browser-static
+CMD: python3 -m unittest discover -s tools/tests -p 'test_browser_static.py'
+exit=0
+2026-08-15T23:46:05<tz>
+END browser-static
+2026-08-15T23:46:05<tz>
+START gzip-sizes
+CMD: python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v9-evidence/pkgtools/gzip-sizes.py' src/web/browser/catena
+exit=0
+2026-08-15T23:46:05<tz>
+END gzip-sizes
+2026-08-15T23:46:05<tz>
+START request-journals
+CMD: python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v9-evidence/pkgtools/journal-dump.py' tools/tests/test_catena_wave_1.py
+exit=0
+2026-08-15T23:46:07<tz>
+END request-journals
+2026-08-15T23:47:23<tz>
+START request-journals
+CMD: python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v9-evidence/pkgtools/journal-dump.py' tools/tests/test_catena_wave_1.py
+exit=0
+2026-08-15T23:47:25<tz>
+END request-journals

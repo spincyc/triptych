@@ -1,0 +1,694 @@
+{
+ "byte_scan": {
+  "clean": true,
+  "findings": [],
+  "scanned": 60
+ },
+ "commit_count": 3,
+ "commits": [
+  {
+   "authored": "2026-08-15T23:11:08<tz>",
+   "files": [
+    "src/web/browser/catena/catena-model.js",
+    "tools/tests/test_catena_wave_1.py"
+   ],
+   "sha": "6c651782479a2ff1a5df4c87aaafcf913dd2568d",
+   "subject": "Give the stated prefix its third state, and close the carried door behind it"
+  },
+  {
+   "authored": "2026-08-15T23:16:37<tz>",
+   "files": [
+    "tools/tests/test_catena_wave_1.py"
+   ],
+   "sha": "6c160bf01037381ab1e9f89edf64d0cc5150f4b2",
+   "subject": "Pin the three states at the sinks, cold, prewarmed, and late"
+  },
+  {
+   "authored": "2026-08-15T23:28:32<tz>",
+   "files": [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+    "promised-deliverables.toml"
+   ],
+   "sha": "3c5b78249193df065c4e1c2ee5a98e5989c6e582",
+   "subject": "Record the V9 lane: the composed closure, and the package told the truth"
+  }
+ ],
+ "diff": {
+  "deletions": 14,
+  "files": 5,
+  "insertions": 600,
+  "rows": [
+   {
+    "added": 103,
+    "path": "PROJECT-WORK.md",
+    "removed": 0
+   },
+   {
+    "added": 36,
+    "path": "guidance/corpus-browser-roadmap.md",
+    "removed": 1
+   },
+   {
+    "added": 48,
+    "path": "promised-deliverables.toml",
+    "removed": 0
+   },
+   {
+    "added": 52,
+    "path": "src/web/browser/catena/catena-model.js",
+    "removed": 11
+   },
+   {
+    "added": 361,
+    "path": "tools/tests/test_catena_wave_1.py",
+    "removed": 2
+   }
+  ],
+  "status": {
+   "PROJECT-WORK.md": "M",
+   "guidance/corpus-browser-roadmap.md": "M",
+   "promised-deliverables.toml": "M",
+   "src/web/browser/catena/catena-model.js": "M",
+   "tools/tests/test_catena_wave_1.py": "M"
+  }
+ },
+ "gate": {
+  "head": {
+   "browser": "Chrome/151.0.7922.108",
+   "failure_categories": {
+    "primary-controls-meet-target-size": 82,
+    "single-main-element": 117,
+    "skip-link-targets-existing-element": 27
+   },
+   "measured": {
+    "assertions": 2290,
+    "failures": 226,
+    "pages": 171,
+    "routes": 19,
+    "states": 9
+   },
+   "path": "browser-gate-head.json",
+   "totals": {
+    "assertions": 2290,
+    "failed": 226,
+    "pages": 171,
+    "passed": 1836,
+    "routes": 19,
+    "skipped": 228,
+    "states": 9
+   }
+  },
+  "parent": {
+   "browser": "Chrome/151.0.7922.108",
+   "failure_categories": {
+    "primary-controls-meet-target-size": 82,
+    "single-main-element": 117,
+    "skip-link-targets-existing-element": 27
+   },
+   "measured": {
+    "assertions": 2290,
+    "failures": 226,
+    "pages": 171,
+    "routes": 19,
+    "states": 9
+   },
+   "path": "browser-gate-parent.json",
+   "totals": {
+    "assertions": 2290,
+    "failed": 226,
+    "pages": 171,
+    "passed": 1836,
+    "routes": 19,
+    "skipped": 228,
+    "states": 9
+   }
+  }
+ },
+ "identity": {
+  "head": "3c5b78249193df065c4e1c2ee5a98e5989c6e582",
+  "head_of_branch": "3c5b78249193df065c4e1c2ee5a98e5989c6e582",
+  "parent": "7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8",
+  "parent_is_ancestor_of_head": true,
+  "review_addressed": "611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f",
+  "worktree_clean_at_head": true
+ },
+ "inherited_identities": {
+  "count": 27,
+  "identical": true,
+  "mentioning_catena": [],
+  "only_at_head": [],
+  "only_at_parent": []
+ },
+ "oracles": {
+  "against_parent": {
+   "classes": 3,
+   "failing_by_class": {
+    "FrozenContractTest": 1,
+    "V9ComposedPrefixFallbackClosureTest": 8,
+    "V9PrefixStateClassificationTest": 1
+   },
+   "identities": 10,
+   "log": "v8-tests-against-parent.log",
+   "new_classes_that_do_not_fail": [],
+   "new_classes_that_fail": [
+    "V9ComposedPrefixFallbackClosureTest",
+    "V9PrefixStateClassificationTest"
+   ],
+   "pre_existing_classes_that_fail": [
+    "FrozenContractTest"
+   ]
+  },
+  "classes_added": {
+   "tools/tests/test_catena.py": [],
+   "tools/tests/test_catena_wave_1.py": [
+    "V9ComposedPrefixFallbackClosureTest",
+    "V9PrefixStateClassificationTest"
+   ]
+  },
+  "classes_added_count": 2,
+  "corrected_blocks": 0,
+  "corrected_classes": [],
+  "corrected_sites": [],
+  "marker": "CORRECTED ORACLE (V8)"
+ },
+ "package": {
+  "authority": "package totals and final bytes are proved by MANIFEST.sha256, the ZIP and its .zip.sha256 sidecar; this file sizes only members frozen before it was written",
+  "derived_members": [
+   {
+    "path": "claims.json",
+    "reason": "written by this derivation; it cannot inventory its own bytes"
+   },
+   {
+    "path": "DERIVED-CLAIMS.md",
+    "reason": "rendered from claims.json in the same pass that writes it"
+   },
+   {
+    "path": "logs/derive-claims.log",
+    "reason": "transcript of this derivation, written as the derivation prints"
+   },
+   {
+    "path": "logs/head-consistency.log",
+    "reason": "transcript of the consistency audit, which runs after this derivation"
+   },
+   {
+    "path": "MANIFEST.sha256",
+    "reason": "written by the manifest phase, after every other member is frozen"
+   }
+  ],
+  "evidence_bytes": 3162581,
+  "evidence_members": 54,
+  "rows": [
+   {
+    "bytes": 6050,
+    "path": "COMPOSED-CLOSURE.md",
+    "sha256": "27e0e6a3307a05336383261f829129e52d5db6a2b6a9d7d883b3c0b6c2ae0160"
+   },
+   {
+    "bytes": 8751,
+    "path": "EVIDENCE-INDEX.md",
+    "sha256": "0d367529db6548783347ac4866c92c63570d5c5f21dfc9b0b68771303de5752d"
+   },
+   {
+    "bytes": 4521,
+    "path": "HANDOFF.md",
+    "sha256": "42fe7122df0b7c0ddea887bf2d314953b57a8d4f979e92bfa37d87db2aee40c2"
+   },
+   {
+    "bytes": 3242,
+    "path": "LIMITATIONS.md",
+    "sha256": "1ac5729d5e05cf3287a6a4961ab4597a484a220a0c43a24a14ea292172b5d78f"
+   },
+   {
+    "bytes": 2411,
+    "path": "PRIVACY-AUDIT.md",
+    "sha256": "a8252cdd8905d38689523a0f7807ddcc0fb7237b16e498ce2196b315de6732f8"
+   },
+   {
+    "bytes": 2155,
+    "path": "PROVENANCE.md",
+    "sha256": "a566cad67380dbafff14591933b9000c0107d9dcba5adae4fa2aec0505966e81"
+   },
+   {
+    "bytes": 4164,
+    "path": "REVIEW_REQUEST.md",
+    "sha256": "1ef2ddad2cc8a47d3909aebd7deff1cf790d941e8377390e484ea895f3134e4d"
+   },
+   {
+    "bytes": 3853,
+    "path": "UNRESOLVED-BLOCKERS.md",
+    "sha256": "14d8c49d9cbeebcee9ff7081e11323cc99786598c894ad3b1bbfc93bb168b2a0"
+   },
+   {
+    "bytes": 609,
+    "path": "changed-files.txt",
+    "sha256": "83ce558853454ee170fdb8a6cdf57177fd2f3af72065bd844336861d1e62d5d8"
+   },
+   {
+    "bytes": 55318,
+    "path": "changes.patch",
+    "sha256": "f8e71341e782d7bea54c4fac0a24f0574223012d72cf994dcd870b00d6dd46c3"
+   },
+   {
+    "bytes": 9539,
+    "path": "checks.txt",
+    "sha256": "c08817760ed96e1cc7e0b20f0a0a946b18c3f802d9a7d1fdd9fffacd793eba50"
+   },
+   {
+    "bytes": 418,
+    "path": "commits.txt",
+    "sha256": "50980072e0efc6e9b486aa197ae7cde63a6e64e14a0a91ce8065a918fdfffbf0"
+   },
+   {
+    "bytes": 9785,
+    "path": "logs/assemble.sh",
+    "sha256": "a2d3b524742b3c7cd8b19c5de4b90cac54edafd54804d70b04e89e80f3825592"
+   },
+   {
+    "bytes": 2722,
+    "path": "logs/battery.sh",
+    "sha256": "64ecbcdcb9cfbffeab57422d0772f1696e4a744d65a6cae4192fdb96596d0b19"
+   },
+   {
+    "bytes": 589875,
+    "path": "logs/browser-gate-head.json",
+    "sha256": "337bf8fbebf44b7f003b96197a78bfce2a8c147c16ffa6158e3959be6610c6f0"
+   },
+   {
+    "bytes": 589875,
+    "path": "logs/browser-gate-head.log",
+    "sha256": "337bf8fbebf44b7f003b96197a78bfce2a8c147c16ffa6158e3959be6610c6f0"
+   },
+   {
+    "bytes": 589941,
+    "path": "logs/browser-gate-parent.json",
+    "sha256": "51db1964f5b96df0e42cd6ca11b18e2cca608b347e966f88d1a1c6982f81579c"
+   },
+   {
+    "bytes": 589941,
+    "path": "logs/browser-gate-parent.log",
+    "sha256": "51db1964f5b96df0e42cd6ca11b18e2cca608b347e966f88d1a1c6982f81579c"
+   },
+   {
+    "bytes": 103,
+    "path": "logs/browser-static-head.log",
+    "sha256": "1b310e77b3abd2cc54d14c2569c296f97e990939fc97a3da7594a6b029cde04d"
+   },
+   {
+    "bytes": 46,
+    "path": "logs/catena-check-head.log",
+    "sha256": "d03e1dd1c8f512d2ec10bee4e308263f9c926ac22b163465a97be4ac8514d59a"
+   },
+   {
+    "bytes": 46,
+    "path": "logs/catena-check-parent.log",
+    "sha256": "d03e1dd1c8f512d2ec10bee4e308263f9c926ac22b163465a97be4ac8514d59a"
+   },
+   {
+    "bytes": 8477,
+    "path": "logs/checks.py",
+    "sha256": "550aa08c07cc068e4ba3f8b0d7b1690f46bbef85d0b10da2f4a02ba8dd744770"
+   },
+   {
+    "bytes": 3714,
+    "path": "logs/compare-gate.py",
+    "sha256": "05ef7ed09768598d4116087cb4918d342ce7e77e1b5893788b97163a08118acd"
+   },
+   {
+    "bytes": 38976,
+    "path": "logs/derive-claims.py",
+    "sha256": "20899c940320d4162ebce464adb9e462c2c4cff54d93ca01ba09fc10d7b0cfc0"
+   },
+   {
+    "bytes": 83232,
+    "path": "logs/focused-catena-head.log",
+    "sha256": "7f4cc6801f4a97ffec77ded2e615b2cb952907a7ed1674e499d0360d1870dea6"
+   },
+   {
+    "bytes": 81718,
+    "path": "logs/focused-catena-parent.log",
+    "sha256": "753f139efbdd0e21c6d3d0be5ef988b77a9eebd841cd515f57a99e9bcd077ac0"
+   },
+   {
+    "bytes": 31672,
+    "path": "logs/full-discovery-head.log",
+    "sha256": "96b6f3a6b8d3acae1d56d19d11f503784aa4b14e7739ce7e3877f1736465cd71"
+   },
+   {
+    "bytes": 35821,
+    "path": "logs/full-discovery-parent.log",
+    "sha256": "c143cbb40967b0c23b50312c5ab03dcae1b3f5ef671b53a7bd3aa84d4dccf2b2"
+   },
+   {
+    "bytes": 4257,
+    "path": "logs/gate-comparison.log",
+    "sha256": "f2095b2f22fd5edcb3c2a640787a3f119ecbfa1befc00e8c32b7c9d4e14167f8"
+   },
+   {
+    "bytes": 114,
+    "path": "logs/gzip-sizes-head.log",
+    "sha256": "232d894ab1d5981c04f188f5809c74a12e391fd87f16abcc7ece7d34356def50"
+   },
+   {
+    "bytes": 114,
+    "path": "logs/gzip-sizes-parent.log",
+    "sha256": "74eda67e6a9c3e431628d17cf7ebf209c87c5ba3f32b776f43262e9d6087e50e"
+   },
+   {
+    "bytes": 1156,
+    "path": "logs/gzip-sizes.py",
+    "sha256": "c8f54536387a902f46e23cabc499f02817e599fc707ab386ff729c0d57816478"
+   },
+   {
+    "bytes": 13637,
+    "path": "logs/head-consistency.py",
+    "sha256": "f91a22082d9324eae9bb674d5afeada35dde304376abbb624827259d5ab4e64e"
+   },
+   {
+    "bytes": 2724,
+    "path": "logs/journal-dump.py",
+    "sha256": "6a9f8aa7d5ec126f457fe2ac2ea82bb1bbd314356fed49575a4a7ce31b090338"
+   },
+   {
+    "bytes": 41310,
+    "path": "logs/make-check-head.log",
+    "sha256": "b28a3537b7d388541eb86f97e9113038ecff06970c23d43986c89066aff1d66f"
+   },
+   {
+    "bytes": 41376,
+    "path": "logs/make-check-parent.log",
+    "sha256": "76acf4a82c7b7648401a160f9a3ab8510b7941ecd17fc127fed9d85e532f8891"
+   },
+   {
+    "bytes": 1390,
+    "path": "logs/named-commits.json",
+    "sha256": "56951f41f75cd9c06634ec104cb4792b13a7ba020755a467af5ac5b794ba63f7"
+   },
+   {
+    "bytes": 2008,
+    "path": "logs/order-head.txt",
+    "sha256": "92a1f6d474b570518a6ce729044eb084e26a8a44d4960c965e0f0da9714439c1"
+   },
+   {
+    "bytes": 2194,
+    "path": "logs/order-parent.txt",
+    "sha256": "43f0a1e1e34af22418c7f51a981dac0bc5e00138a14d21da939daa534916376c"
+   },
+   {
+    "bytes": 60,
+    "path": "logs/promised-head.log",
+    "sha256": "983e0ccb58dba23b39a831586947b58b6f3ce079ebe9f7f19d8f2a8a40d393c2"
+   },
+   {
+    "bytes": 60,
+    "path": "logs/promised-parent.log",
+    "sha256": "d6df9e6e6753adc7ae841d4db08a9f5f1801e1188b1c9380243d4584c737aa38"
+   },
+   {
+    "bytes": 97,
+    "path": "logs/public-site-head.log",
+    "sha256": "3cd191d29d2dd913cf59b47785cd17788caaac70cabcd2c9633b5be38302a283"
+   },
+   {
+    "bytes": 97,
+    "path": "logs/public-site-parent.log",
+    "sha256": "3cd191d29d2dd913cf59b47785cd17788caaac70cabcd2c9633b5be38302a283"
+   },
+   {
+    "bytes": 887,
+    "path": "logs/release-bindings-head.log",
+    "sha256": "e7ed5d9b04f0871db2a9e8f272338c3eb020fff61405ef72824ddf179312d3c9"
+   },
+   {
+    "bytes": 887,
+    "path": "logs/release-bindings-parent.log",
+    "sha256": "b6be3291580a64f7d09fff014282604ea7312f55ad843398ea6d1d53861f1c6e"
+   },
+   {
+    "bytes": 29371,
+    "path": "logs/request-journals-head.log",
+    "sha256": "aa7be76cc8b67ed55f146f7064fba0018a9c3ff234149f31d0810d1a9f5d503a"
+   },
+   {
+    "bytes": 29432,
+    "path": "logs/request-journals-parent.log",
+    "sha256": "93aea2e084d44ba8677eff8d7b1f09c5ce7ffac6ce9346f364c7b6d68850b504"
+   },
+   {
+    "bytes": 55868,
+    "path": "logs/sanitize-and-seal.py",
+    "sha256": "5498eb78a22bf7b0f7faa33d0e8eb55d5502c27cf3d7c9b1616e1c4bd6e097d8"
+   },
+   {
+    "bytes": 1462,
+    "path": "logs/seal-check.log",
+    "sha256": "644d14829647b1fcbc954360571ff09de6635edd7c803b408897197e2c8cfc6b"
+   },
+   {
+    "bytes": 5159,
+    "path": "logs/seal.log",
+    "sha256": "7784ff18da8229025cb6cb3095eea9f8effffe976c282627d6fffbdc2effd846"
+   },
+   {
+    "bytes": 10537,
+    "path": "logs/sealer-tests.log",
+    "sha256": "e69c8724aa9f07799a8c8eacc1a594c4017edf5a10f0a16f86feecf460086280"
+   },
+   {
+    "bytes": 59076,
+    "path": "logs/test-sanitize-and-seal.py",
+    "sha256": "c83dca872df9c64c3e72aad599137249279daf0de7586d321c2504bfd7fdd502"
+   },
+   {
+    "bytes": 86621,
+    "path": "logs/v8-tests-against-parent.log",
+    "sha256": "8222a75229f171de2d5085c54cc30fe442012ae7c1ce492fbd1323f4e5b3ffba"
+   },
+   {
+    "bytes": 15712,
+    "path": "logs/verify-final-package.py",
+    "sha256": "1ac7dddb131dcd6489cb175e6d13b02108a6ce8727844d527bdd9d6d01ef6334"
+   }
+  ],
+  "screenshots": {
+   "png_count": 0,
+   "raster_pairs": 0,
+   "unpaired": []
+  }
+ },
+ "payload": {
+  "head": {
+   "_combined": {
+    "one_stream": 41392,
+    "summed": 42080
+   },
+   "catena-model.js": {
+    "comment_share": 0.741,
+    "sha256": "9514afb1c09de02438513651e8828d4ac30620e13b6402295ca6199fa452f488",
+    "source_bytes": 90954,
+    "stripped": 7571,
+    "stripped_ceiling": null,
+    "whole": 29179,
+    "whole_ceiling": null
+   },
+   "catena.css": {
+    "comment_share": 0.649,
+    "sha256": "733e84909e0e8049629187352d3800be320e469da7be200e860378bcc28851c5",
+    "source_bytes": 26034,
+    "stripped": 2676,
+    "stripped_ceiling": 2700,
+    "whole": 7629,
+    "whole_ceiling": 8000
+   },
+   "catena.js": {
+    "comment_share": 0.416,
+    "sha256": "6bb4009ee3b836cb7d14b14eefb746062b3c37f67ce2d92d79d65ed6c87fe8c8",
+    "source_bytes": 41727,
+    "stripped": 7530,
+    "stripped_ceiling": 8800,
+    "whole": 12901,
+    "whole_ceiling": 13000
+   }
+  },
+  "parent": {
+   "_combined": {
+    "one_stream": 40557,
+    "summed": 41247
+   },
+   "catena-model.js": {
+    "comment_share": 0.736,
+    "sha256": "ae5afaa3f093cdd492bb8bc998f213010cdc54bc74572beba14946111e89fd87",
+    "source_bytes": 88452,
+    "stripped": 7485,
+    "stripped_ceiling": null,
+    "whole": 28346,
+    "whole_ceiling": null
+   },
+   "catena.css": {
+    "comment_share": 0.649,
+    "sha256": "733e84909e0e8049629187352d3800be320e469da7be200e860378bcc28851c5",
+    "source_bytes": 26034,
+    "stripped": 2676,
+    "stripped_ceiling": 2700,
+    "whole": 7629,
+    "whole_ceiling": 8000
+   },
+   "catena.js": {
+    "comment_share": 0.416,
+    "sha256": "6bb4009ee3b836cb7d14b14eefb746062b3c37f67ce2d92d79d65ed6c87fe8c8",
+    "source_bytes": 41727,
+    "stripped": 7530,
+    "stripped_ceiling": 8800,
+    "whole": 12901,
+    "whole_ceiling": 13000
+   }
+  }
+ },
+ "suites": {
+  "browser_static_head": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "browser-static-head.log",
+   "seconds": 0.586,
+   "skipped": 0,
+   "tests": 5
+  },
+  "focused_catena_head": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "focused-catena-head.log",
+   "seconds": 3.662,
+   "skipped": 0,
+   "tests": 519
+  },
+  "focused_catena_parent": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "focused-catena-parent.log",
+   "seconds": 3.591,
+   "skipped": 0,
+   "tests": 510
+  },
+  "full_discovery_head": {
+   "errors": 13,
+   "failures": 14,
+   "identities": [
+    "ERROR: test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter (test_index_bible.TrackedIndexTests.test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter)",
+    "ERROR: test_long_form_contents_marker_renders_linked_unique_anchors (test_public_alpha.PublicAlphaTest.test_long_form_contents_marker_renders_linked_unique_anchors)",
+    "ERROR: test_public_site_records_and_reaches_legacy_review_as_alpha (test_public_alpha.PublicAlphaTest.test_public_site_records_and_reaches_legacy_review_as_alpha)",
+    "ERROR: test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites (test_index_bible.CorrectedReadingTests.test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites)",
+    "ERROR: test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it (test_index_bible.CorrectedReadingTests.test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it)",
+    "ERROR: test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching (test_index_bible.CorrectedReadingTests.test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching)",
+    "ERROR: test_the_holy_family_sirach_opens_at_the_fathers_honour (test_index_bible.CorrectedReadingTests.test_the_holy_family_sirach_opens_at_the_fathers_honour)",
+    "ERROR: test_verifier_passes_when_every_site_source_matches_its_approved_hash (test_public_alpha.PublicAlphaTest.test_verifier_passes_when_every_site_source_matches_its_approved_hash)",
+    "ERROR: test_verifier_rejects_a_recognized_site_source_the_record_omits (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recognized_site_source_the_record_omits)",
+    "ERROR: test_verifier_rejects_a_recorded_site_source_nothing_renders (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recorded_site_source_nothing_renders)",
+    "ERROR: test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash)",
+    "ERROR: test_verifier_rejects_a_site_source_whose_file_is_gone (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_whose_file_is_gone)",
+    "ERROR: test_verifier_rejects_copied_pdf_without_owning_catalog_link (test_public_alpha.PublicAlphaTest.test_verifier_rejects_copied_pdf_without_owning_catalog_link)",
+    "FAIL: test_candidate_and_contract_fixtures_do_not_leak_into_generated_data (test_propers_reader_integration.PropersReaderIntegrationTests.test_candidate_and_contract_fixtures_do_not_leak_into_generated_data)",
+    "FAIL: test_candidate_does_not_leak_fixture_or_discovery_records (test_day_reader_integration.DayReaderIntegrationTests.test_candidate_does_not_leak_fixture_or_discovery_records)",
+    "FAIL: test_candidate_tracking_is_distinct_and_accepted (test_day_missal_integration.DayMissalIntegrationTests.test_candidate_tracking_is_distinct_and_accepted)",
+    "FAIL: test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated (test_propers_reader_integration.PropersReaderIntegrationTests.test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated)",
+    "FAIL: test_data_legacy_shell_css_and_visual_oracle_are_frozen (test_day_reader_integration.DayReaderIntegrationTests.test_data_legacy_shell_css_and_visual_oracle_are_frozen)",
+    "FAIL: test_day_alone_loads_placement_notes_before_its_renderer (test_mass_ordinary.ProperPlacementNotesPage.test_day_alone_loads_placement_notes_before_its_renderer)",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history check')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history commonality')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history emit')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history graph')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history structure')",
+    "FAIL: test_public_routes_renderer_data_and_accepted_oracles_are_isolated (test_day_missal_integration.DayMissalIntegrationTests.test_public_routes_renderer_data_and_accepted_oracles_are_isolated)",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='check-calendar-masses.test')",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='index-bible.test')"
+   ],
+   "identity_count": 27,
+   "outcome": "FAILED",
+   "path": "full-discovery-head.log",
+   "seconds": 498.25,
+   "skipped": 11,
+   "tests": 1870
+  },
+  "full_discovery_parent": {
+   "errors": 13,
+   "failures": 14,
+   "identities": [
+    "ERROR: test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter (test_index_bible.TrackedIndexTests.test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter)",
+    "ERROR: test_long_form_contents_marker_renders_linked_unique_anchors (test_public_alpha.PublicAlphaTest.test_long_form_contents_marker_renders_linked_unique_anchors)",
+    "ERROR: test_public_site_records_and_reaches_legacy_review_as_alpha (test_public_alpha.PublicAlphaTest.test_public_site_records_and_reaches_legacy_review_as_alpha)",
+    "ERROR: test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites (test_index_bible.CorrectedReadingTests.test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites)",
+    "ERROR: test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it (test_index_bible.CorrectedReadingTests.test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it)",
+    "ERROR: test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching (test_index_bible.CorrectedReadingTests.test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching)",
+    "ERROR: test_the_holy_family_sirach_opens_at_the_fathers_honour (test_index_bible.CorrectedReadingTests.test_the_holy_family_sirach_opens_at_the_fathers_honour)",
+    "ERROR: test_verifier_passes_when_every_site_source_matches_its_approved_hash (test_public_alpha.PublicAlphaTest.test_verifier_passes_when_every_site_source_matches_its_approved_hash)",
+    "ERROR: test_verifier_rejects_a_recognized_site_source_the_record_omits (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recognized_site_source_the_record_omits)",
+    "ERROR: test_verifier_rejects_a_recorded_site_source_nothing_renders (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recorded_site_source_nothing_renders)",
+    "ERROR: test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash)",
+    "ERROR: test_verifier_rejects_a_site_source_whose_file_is_gone (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_whose_file_is_gone)",
+    "ERROR: test_verifier_rejects_copied_pdf_without_owning_catalog_link (test_public_alpha.PublicAlphaTest.test_verifier_rejects_copied_pdf_without_owning_catalog_link)",
+    "FAIL: test_candidate_and_contract_fixtures_do_not_leak_into_generated_data (test_propers_reader_integration.PropersReaderIntegrationTests.test_candidate_and_contract_fixtures_do_not_leak_into_generated_data)",
+    "FAIL: test_candidate_does_not_leak_fixture_or_discovery_records (test_day_reader_integration.DayReaderIntegrationTests.test_candidate_does_not_leak_fixture_or_discovery_records)",
+    "FAIL: test_candidate_tracking_is_distinct_and_accepted (test_day_missal_integration.DayMissalIntegrationTests.test_candidate_tracking_is_distinct_and_accepted)",
+    "FAIL: test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated (test_propers_reader_integration.PropersReaderIntegrationTests.test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated)",
+    "FAIL: test_data_legacy_shell_css_and_visual_oracle_are_frozen (test_day_reader_integration.DayReaderIntegrationTests.test_data_legacy_shell_css_and_visual_oracle_are_frozen)",
+    "FAIL: test_day_alone_loads_placement_notes_before_its_renderer (test_mass_ordinary.ProperPlacementNotesPage.test_day_alone_loads_placement_notes_before_its_renderer)",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history check')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history commonality')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history emit')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history graph')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history structure')",
+    "FAIL: test_public_routes_renderer_data_and_accepted_oracles_are_isolated (test_day_missal_integration.DayMissalIntegrationTests.test_public_routes_renderer_data_and_accepted_oracles_are_isolated)",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='check-calendar-masses.test')",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='index-bible.test')"
+   ],
+   "identity_count": 27,
+   "outcome": "FAILED",
+   "path": "full-discovery-parent.log",
+   "seconds": 499.494,
+   "skipped": 11,
+   "tests": 1861
+  },
+  "sealer": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "sealer-tests.log",
+   "seconds": 0.219,
+   "skipped": 0,
+   "tests": 82
+  },
+  "v8_tests_against_parent": {
+   "errors": 0,
+   "failures": 10,
+   "identities": [
+    "FAIL: test_a_late_fallback_cannot_touch_the_refused_terminal_state (test_catena_wave_1.V9ComposedPrefixFallbackClosureTest.test_a_late_fallback_cannot_touch_the_refused_terminal_state)",
+    "FAIL: test_a_prewarmed_fallback_is_not_substituted_into_the_refused_route (test_catena_wave_1.V9ComposedPrefixFallbackClosureTest.test_a_prewarmed_fallback_is_not_substituted_into_the_refused_route)",
+    "FAIL: test_absent_valid_and_refused_are_three_states (test_catena_wave_1.V9PrefixStateClassificationTest.test_absent_valid_and_refused_are_three_states)",
+    "FAIL: test_the_model_is_byte_identical (test_catena_wave_1.FrozenContractTest.test_the_model_is_byte_identical)",
+    "FAIL: test_the_planted_fallback_body_reaches_no_sink (test_catena_wave_1.V9ComposedPrefixFallbackClosureTest.test_the_planted_fallback_body_reaches_no_sink) (scenario='v9-padded-prefix-carried')",
+    "FAIL: test_the_planted_fallback_body_reaches_no_sink (test_catena_wave_1.V9ComposedPrefixFallbackClosureTest.test_the_planted_fallback_body_reaches_no_sink) (scenario='v9-refused-prefix-carried')",
+    "FAIL: test_the_refused_route_terminates_truthfully_cold (test_catena_wave_1.V9ComposedPrefixFallbackClosureTest.test_the_refused_route_terminates_truthfully_cold) (scenario='v9-padded-prefix-carried')",
+    "FAIL: test_the_refused_route_terminates_truthfully_cold (test_catena_wave_1.V9ComposedPrefixFallbackClosureTest.test_the_refused_route_terminates_truthfully_cold) (scenario='v9-refused-prefix-carried')",
+    "FAIL: test_the_v8_escape_composes_no_request_cold (test_catena_wave_1.V9ComposedPrefixFallbackClosureTest.test_the_v8_escape_composes_no_request_cold) (scenario='v9-padded-prefix-carried')",
+    "FAIL: test_the_v8_escape_composes_no_request_cold (test_catena_wave_1.V9ComposedPrefixFallbackClosureTest.test_the_v8_escape_composes_no_request_cold) (scenario='v9-refused-prefix-carried')"
+   ],
+   "identity_count": 10,
+   "outcome": "FAILED",
+   "path": "v8-tests-against-parent.log",
+   "seconds": 1.915,
+   "skipped": 0,
+   "tests": 463
+  }
+ },
+ "tool": "derive-claims.py"
+}

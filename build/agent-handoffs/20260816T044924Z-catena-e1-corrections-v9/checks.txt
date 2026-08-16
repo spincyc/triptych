@@ -1,0 +1,239 @@
+Every command this lane ran, its exact invocation, its numeric exit,
+the log it wrote, and the commit it ran at.
+
+COMPOSED, NOT TYPED. `logs/checks.py` reads the ordering ledgers the
+two batteries wrote as they ran and the logs those ledgers name. V6
+wrote this member by hand and its review found five counts wrong
+across the package; the answer for this one is that nobody writes it.
+
+parent  7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8
+head    3c5b78249193df065c4e1c2ee5a98e5989c6e582
+
+======================================================================
+PARENT battery — logs/order-parent.txt
+======================================================================
+
+--- focused-catena
+    command : python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+    exit    : 0
+    started : 2026-08-15T23:30:57<tz>
+    ended   : 2026-08-15T23:31:01<tz>
+    log     : logs/focused-catena-parent.log
+    result  : Ran 510 tests in 3.591s
+    result  : OK
+
+--- catena-check
+    command : python3 scripts/_catena.py check
+    exit    : 0
+    started : 2026-08-15T23:31:01<tz>
+    ended   : 2026-08-15T23:31:04<tz>
+    log     : logs/catena-check-parent.log
+    result  : catena valid: fragments=1351 books=1 canon=73
+
+--- promised
+    command : tools/tpt check-promised-deliverables
+    exit    : 0
+    started : 2026-08-15T23:31:04<tz>
+    ended   : 2026-08-15T23:31:04<tz>
+    log     : logs/promised-parent.log
+    result  : Promised-deliverable ledger valid: 33 tracked, 19 complete.
+
+--- full-discovery
+    command : python3 -m unittest discover -s tools/tests
+    exit    : 1
+    started : 2026-08-15T23:31:04<tz>
+    ended   : 2026-08-15T23:39:24<tz>
+    log     : logs/full-discovery-parent.log
+    result  : Ran 1861 tests in 499.494s
+    result  : FAILED (failures=14, errors=13, skipped=11)
+
+--- make-check
+    command : make -k check
+    exit    : 2
+    started : 2026-08-15T23:39:24<tz>
+    ended   : 2026-08-15T23:44:29<tz>
+    log     : logs/make-check-parent.log
+    result  : Ran 5 tests in 0.564s
+    result  : OK
+    result  : Promised-deliverable ledger valid: 33 tracked, 19 complete.
+    result  : catena valid: fragments=1351 books=1 canon=73
+    result  : replay-examples: 201 captured example(s); 192 replayed, 28 diverged, 35 known stale, 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+
+--- release-bindings
+    command : make check-release-bindings
+    exit    : 2
+    started : 2026-08-15T23:44:29<tz>
+    ended   : 2026-08-15T23:44:30<tz>
+    log     : logs/release-bindings-parent.log
+    result  : stale: 4 stale binding(s)
+
+--- public-site
+    command : make public-site
+    exit    : 0
+    started : 2026-08-15T23:44:30<tz>
+    ended   : 2026-08-15T23:44:35<tz>
+    log     : logs/public-site-parent.log
+    result  : (no headline line matched; read the log)
+
+--- browser-gate
+    command : node tools/tests/corpus_browser_gate.mjs --json-out '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v9-evidence/logs/browser-gate-parent.json'
+    exit    : 1
+    started : 2026-08-15T23:44:35<tz>
+    ended   : 2026-08-15T23:46:07<tz>
+    log     : logs/browser-gate-parent.json
+    result  : assertions 2290, failed 226, pages 171, passed 1836, routes 19, skipped 228, states 9
+
+--- gzip-sizes
+    command : python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v9-evidence/pkgtools/gzip-sizes.py' src/web/browser/catena
+    exit    : 0
+    started : 2026-08-15T23:46:07<tz>
+    ended   : 2026-08-15T23:46:07<tz>
+    log     : logs/gzip-sizes-parent.log
+    result  : catena.css whole 7629 stripped 2676
+    result  : catena.js whole 12901 stripped 7530
+
+--- v8-tests-against-parent
+    command : cp '$REPO/tools/tests/test_catena_wave_1.py' tools/tests/test_catena_wave_1.py && python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py' -v
+    exit    : 1
+    started : 2026-08-15T23:46:07<tz>
+    ended   : 2026-08-15T23:46:09<tz>
+    log     : logs/v8-tests-against-parent.log
+    result  : Ran 463 tests in 1.915s
+    result  : FAILED (failures=10)
+
+--- request-journals
+    command : python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v9-evidence/pkgtools/journal-dump.py' tools/tests/test_catena_wave_1.py
+    exit    : 0
+    started : 2026-08-15T23:46:09<tz>
+    ended   : 2026-08-15T23:46:11<tz>
+    log     : logs/request-journals-parent.log
+    result  : (no headline line matched; read the log)
+
+--- request-journals
+    command : cp '$REPO/tools/tests/test_catena_wave_1.py' tools/tests/test_catena_wave_1.py && python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v9-evidence/pkgtools/journal-dump.py' tools/tests/test_catena_wave_1.py
+    exit    : 0
+    started : 2026-08-15T23:47:25<tz>
+    ended   : 2026-08-15T23:47:27<tz>
+    log     : logs/request-journals-parent.log
+    result  : (no headline line matched; read the log)
+
+======================================================================
+HEAD battery — logs/order-head.txt
+======================================================================
+
+--- focused-catena
+    command : python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+    exit    : 0
+    started : 2026-08-15T23:30:55<tz>
+    ended   : 2026-08-15T23:30:59<tz>
+    log     : logs/focused-catena-head.log
+    result  : Ran 519 tests in 3.662s
+    result  : OK
+
+--- catena-check
+    command : python3 scripts/_catena.py check
+    exit    : 0
+    started : 2026-08-15T23:30:59<tz>
+    ended   : 2026-08-15T23:31:02<tz>
+    log     : logs/catena-check-head.log
+    result  : catena valid: fragments=1351 books=1 canon=73
+
+--- promised
+    command : tools/tpt check-promised-deliverables
+    exit    : 0
+    started : 2026-08-15T23:31:02<tz>
+    ended   : 2026-08-15T23:31:02<tz>
+    log     : logs/promised-head.log
+    result  : Promised-deliverable ledger valid: 34 tracked, 19 complete.
+
+--- full-discovery
+    command : python3 -m unittest discover -s tools/tests
+    exit    : 1
+    started : 2026-08-15T23:31:02<tz>
+    ended   : 2026-08-15T23:39:21<tz>
+    log     : logs/full-discovery-head.log
+    result  : Ran 1870 tests in 498.250s
+    result  : FAILED (failures=14, errors=13, skipped=11)
+
+--- make-check
+    command : make -k check
+    exit    : 2
+    started : 2026-08-15T23:39:21<tz>
+    ended   : 2026-08-15T23:44:26<tz>
+    log     : logs/make-check-head.log
+    result  : Ran 5 tests in 0.576s
+    result  : OK
+    result  : Promised-deliverable ledger valid: 34 tracked, 19 complete.
+    result  : catena valid: fragments=1351 books=1 canon=73
+    result  : replay-examples: 201 captured example(s); 192 replayed, 28 diverged, 35 known stale, 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+
+--- release-bindings
+    command : make check-release-bindings
+    exit    : 2
+    started : 2026-08-15T23:44:26<tz>
+    ended   : 2026-08-15T23:44:27<tz>
+    log     : logs/release-bindings-head.log
+    result  : stale: 4 stale binding(s)
+
+--- public-site
+    command : make public-site
+    exit    : 0
+    started : 2026-08-15T23:44:27<tz>
+    ended   : 2026-08-15T23:44:32<tz>
+    log     : logs/public-site-head.log
+    result  : (no headline line matched; read the log)
+
+--- browser-gate
+    command : node tools/tests/corpus_browser_gate.mjs --json-out '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v9-evidence/logs/browser-gate-head.json'
+    exit    : 1
+    started : 2026-08-15T23:44:32<tz>
+    ended   : 2026-08-15T23:46:04<tz>
+    log     : logs/browser-gate-head.json
+    result  : assertions 2290, failed 226, pages 171, passed 1836, routes 19, skipped 228, states 9
+
+--- browser-static
+    command : python3 -m unittest discover -s tools/tests -p 'test_browser_static.py'
+    exit    : 0
+    started : 2026-08-15T23:46:04<tz>
+    ended   : 2026-08-15T23:46:05<tz>
+    log     : logs/browser-static-head.log
+    result  : Ran 5 tests in 0.586s
+    result  : OK
+
+--- gzip-sizes
+    command : python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v9-evidence/pkgtools/gzip-sizes.py' src/web/browser/catena
+    exit    : 0
+    started : 2026-08-15T23:46:05<tz>
+    ended   : 2026-08-15T23:46:05<tz>
+    log     : logs/gzip-sizes-head.log
+    result  : catena.css whole 7629 stripped 2676
+    result  : catena.js whole 12901 stripped 7530
+
+--- request-journals
+    command : python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v9-evidence/pkgtools/journal-dump.py' tools/tests/test_catena_wave_1.py
+    exit    : 0
+    started : 2026-08-15T23:46:05<tz>
+    ended   : 2026-08-15T23:46:07<tz>
+    log     : logs/request-journals-head.log
+    result  : (no headline line matched; read the log)
+
+--- request-journals
+    command : python3 '$HOME/git/worktrees/triptych/e1-catena-v3/.agents/v9-evidence/pkgtools/journal-dump.py' tools/tests/test_catena_wave_1.py
+    exit    : 0
+    started : 2026-08-15T23:47:23<tz>
+    ended   : 2026-08-15T23:47:25<tz>
+    log     : logs/request-journals-head.log
+    result  : (no headline line matched; read the log)
+
+======================================================================
+Not recorded in this file
+======================================================================
+
+The sealing and sanitization passes are their own transcripts —
+logs/seal-check.log and logs/seal.log — and the derivation and audit
+are logs/derive-claims.log and logs/head-consistency.log. They are
+not summarised here, because a summary of a transcript is the thing
+this file exists to stop being written.
+
+No judgement is recorded here either. What a result MEANS is argued
+in HANDOFF.md, LIMITATIONS.md and UNRESOLVED-BLOCKERS.md.

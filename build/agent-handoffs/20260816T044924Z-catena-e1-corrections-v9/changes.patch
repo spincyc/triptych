@@ -1,0 +1,738 @@
+diff --git a/PROJECT-WORK.md b/PROJECT-WORK.md
+index b60346a18..4c776d419 100644
+--- a/PROJECT-WORK.md
++++ b/PROJECT-WORK.md
+@@ -1139,6 +1139,109 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
+ of its own work, marks no separately owned prerequisite complete, and does not
+ review itself.
+ 
++### E1 Catena route-owned correction lane, V9
++
++<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v9-2026-08-16 -->
++
++The disposition answered is **CHANGES REQUIRED** at exact candidate
++`7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8`, recorded by the independent review
++`611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f` on branch
++`review/catena-wave-1-e1-corrections-v8-independent`, which independently
++inspected evidence `60122b472c3f9a09aff5f8663eb3b062c585a557` and verified
++package `build/agent-handoffs/20260816T011521Z-catena-e1-corrections-v8` with
++ZIP SHA-256
++`002a75d587a3535d7df9d2b3239d71d811cc7948e9d219e5d9118edcb21e4ff7`. That
++review is a sibling of this line at the reviewed parent and is **not merged
++into it**: what follows records implementation-lane facts only.
++
++The review passed every isolated V8 namespace case and found the COMPOSED
++rule open: `textTrail` maps a prefix the file never stated and a prefix the
++file stated and the page refused to the same `''`, and `fragmentRow`'s
++`prefix ?` read that one `''` as leave to consult the carried `text_path` —
++so a refused `structure/paragraphs/` prefix still fetched the valid
++same-stem `structure/catena/text/fallback-owned.json` it carried and
++rendered its planted body as an ordinary success. The review also found the
++package's machine inventory was not a record of the final sealed bytes —
++`claims.json` understated the final uncompressed total by 1,822 bytes with
++five stale member rows — and gave one exact next action: preserve the
++absent / valid / present-invalid distinction, permit a carried path only on
++genuine absence, prove it cold, prewarmed and late at the production sinks
++with complete terminal assertions, and rebuild a truthful immutable
++package. This lane is that correction and nothing else.
++
++The prefix is now a statement, not a string. `chapterFragments` derives
++`{stated, trail}` — `stated` is property presence on the spine record
++itself, so `null`, a record, a list, a number, a flag, `''`, whitespace and
++a wrong namespace are each a statement this page refused, never an absence
++— and `fragmentRow` re-asks both members, composes from a valid statement,
++opens the carried door only on `stated === false`, and keeps the refusal on
++the row as `text_refused`. A refused statement is terminal: no composed
++request, no carried fallback, no rewrite, no claim beyond the truthful
++no-text row. `catena.js` is untouched; the decision closes inside the model
++before projection completes.
++
++The regressions drive the reviewer's exact vector at the real sinks and
++fail nine ways at the uncorrected parent. Cold, the whole fetched journal
++is pinned to the bootstrap and the planted body reaches no sink, with every
++terminal projection asserted — rows, tally, the announcement journal AND
++the standing `statusText` the review found unasserted, `aria-busy`, hash,
++history, `activeElement`, error and failure sinks. Prewarmed, a body
++legitimately cached under genuine absence is neither substituted into the
++refused route nor re-requested by it. Genuinely late, a held carried
++resolution released only after the refused route settled terminal moves no
++guarded projection, and the release is proved to have happened. Both doors
++the closure must not close are pinned from their own side: genuine absence
++still opens the carried path, and a valid prefix composes its own address
++while a planted body at the carried address goes unasked. A model-level
++classification matrix drives the exported `chapterFragments` through
++thirteen refused shapes, the absent state and the valid state.
++
++The package correction is answered in the sealing protocol, not by patching
++rows: the member inventory is frozen before derivation; members written at
++or after derivation are named, never sized or hashed; claimed rows and
++derived members partition the member set exactly; the manifest is written
++after the last member write; the archive digest and byte size live only in
++the external sidecar; and a read-only post-seal verification re-derives
++member list, sizes, totals, manifest and archive digest from the final ZIP
++alone. The provenance ledger explicitly records the retained clean
++exact-SHA parent run and the `/tmp` run the V8 lane discarded for its
++environment-caused `pdf-review.test` failure, which is used in no
++comparison or claim.
++
++Fresh figures at this head: focused Catena suite 519 (V8: 510), all green;
++`scripts/_catena.py check` passes at 1,351 fragments / 1 book / 73 canon
++entries; full discovery 1,870 tests with the same inherited 14 failures /
++13 errors / 11 skips and the same 27-entry name set; browser gate 2,290
++assertions, 1,836 / 226 / 228, the whole report identical to the reviewed
++V8 baseline including the 117/82/27 identity; `make -k check` fails on the
++same three inherited targets; promise ledger valid; budgets unraised and
++unmoved — `catena.css` 7,629/8,000 whole and 2,676/2,700 stripped,
++`catena.js` 12,901/13,000 whole and 7,530/8,800 stripped, both
++byte-identical to the reviewed head. The closure lives in
++`catena-model.js`, which carries no ceiling: gzipped it grows 28,346 to
++29,179 whole and 7,485 to 7,571 stripped, so the two files' combined
++payload is 42,080 gzipped against V8's 41,247 — disclosed, as the review
++requires, rather than presented as unchanged load. Four stale release
++bindings remain fail-closed, none re-signed; `src/web/data/` has zero
++changes.
++
++Every other V7 finding remains open and untouched here, recorded as the V8
++review left it: projection not yet the sole semantic source (orphan
++sources, scalar-translator coercion); source-only fragments still counting;
++absence members manufacturing rows and suppressing valid siblings; partial
++selection neither closed nor order-independent beyond this prefix
++composition; refusal verse validation; unreadable roots and the unreadable
++`bibles.json` prose; the broader terminal and corrected-oracle proofs; the
++CLI/web duplicated semantic model; and the uncapped combined route payload
++question, answered here only by accurate disclosure. Release bindings, the
++common gate, B0/shared shell, real-device/AT evidence, protected Liturgy
++and PDFs remain separately owned.
++
++Status: **awaiting fresh independent review** of the exact V9 head and its
++immutable handoff archived on `evidence/catena-e1-corrections-v9-handoff`.
++This lane records no acceptance of its own work, marks no separately owned
++prerequisite complete, and does not review itself.
++
+ ### E1 Catena route-owned correction lane, V8
+ 
+ <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v8-2026-08-15 -->
+diff --git a/guidance/corpus-browser-roadmap.md b/guidance/corpus-browser-roadmap.md
+index 11dbb2439..618cd677d 100644
+--- a/guidance/corpus-browser-roadmap.md
++++ b/guidance/corpus-browser-roadmap.md
+@@ -728,6 +728,40 @@ Catena generator alone, and `catena.js` is smaller than V6 left it in both
+ measures. The `src/web/data/` contradiction is **preserved untouched** and
+ remains a separate owner's adjudication.
+ 
++### E1 Catena correction V9 — 2026-08-16
++
++Answers the fresh independent review `611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f`
++(**CHANGES REQUIRED** at exact candidate
++`7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8`, evidence
++`60122b472c3f9a09aff5f8663eb3b062c585a557`) with exactly the review's stated
++next action: the composed prefix/fallback closure and a truthful final-byte
++package, and nothing else.
++
++The review passed every isolated namespace case and proved the COMPOSED rule
++open: a prefix the file never stated and a prefix the file stated and the
++page refused both left `textTrail` as `''`, and the carried-fallback door
++opened on that one `''` — so a refused `structure/paragraphs/` prefix still
++fetched the valid same-stem carried `structure/catena/text/` file and
++rendered its planted body. The prefix is now a statement, `{stated, trail}`:
++absence is property absence on the spine record, everything carried is a
++statement, and a statement that fails validation is REFUSED — terminal, no
++composed request, no carried fallback, kept on the row as `text_refused`.
++Only genuine absence opens the carried door, and only for a path that
++validates byte-exactly with the fragment's own stem.
++
++The regressions pin the reviewer's exact vector cold, prewarmed and
++genuinely late at the production sinks — whole journal, rendered body, rows,
++announcement journal and standing `statusText`, tally, busy, hash, history,
++focus, error and failure sinks — and fail nine ways at the uncorrected
++parent. The package pipeline now freezes its inventory before derivation,
++names derived members without sizing or hashing them, and proves its claims
++against the final sealed bytes by a read-only post-seal verification from
++the ZIP alone, with the retained parent run and the discarded `/tmp` run
++explicitly ledgered. The focused suite goes 510 to 519; every ceiling holds
++byte-identical; the unbudgeted model's growth is disclosed at +833 gzipped
++whole. All other V7 blockers remain open and untouched, and the lane
++returns for fresh independent review.
++
+ ### E1 Catena correction V8 — 2026-08-15
+ 
+ Answers the fresh independent review `d9ad5ec1ae35c308a0da5ed3456fd05fdad97cbd`
+@@ -763,7 +797,7 @@ fresh independent review.
+ | --- | --- | --- |
+ | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
+ | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
+-| E1 Catena production implementation | Ninth correction candidate (V8) awaiting fresh independent review; the disposition it answers is **CHANGES REQUIRED** at V7 head `e876b29e5` (independent review `d9ad5ec1a`, 2026-08-15) | That review passed the typed projection's valid-corpus behavior, the preserved V6 boundaries and the unraised ceilings, found ten remaining production defects with the text namespace open at the request sink first among them — `structure/paragraphs/` composed a request and a carried same-stem `structure/paragraphs/text/` path fetched a real Sources text — and gave one exact next action: a V8 whose first bounded commit is only the byte-exact `structure/catena/text/` closure for prefix and fallback paths with same-stem wrong-namespace request-sink regressions. V8 is that commit alone; the review's other enumerated blockers remain open for the authorized continuation. Preserve accepted E0 and every sound V2–V7 correction. The exact Catena data seam is authorized but transfers no broader ownership; release, common-gate, B0/shared-shell, Day-reader guard, real-device/AT, protected Liturgy and PDF prerequisites remain separate. E1 stays off main. No merge, re-sign, deploy or cutover. |
++| E1 Catena production implementation | Tenth correction candidate (V9) awaiting fresh independent review; the disposition it answers is **CHANGES REQUIRED** at V8 head `7e4df42a2` (independent review `611b5eed8`, 2026-08-15) | That review passed every isolated namespace case and the preserved boundaries, and found the composed rule open — a prefix the file stated and the page refused collapsed into the same `''` as genuine absence, so a valid same-stem carried `structure/catena/text/` file was fetched and its planted body rendered — beside a package whose machine inventory understated the final sealed bytes. Its exact next action: preserve the absent / valid / present-invalid distinction, permit a carried path only on genuine absence, prove it cold, prewarmed and genuinely late at the production sinks with complete terminal assertions, and rebuild a truthful immutable package. V9 is that correction alone; the review's other enumerated blockers remain open for the authorized continuation. Preserve accepted E0 and every sound V2–V8 correction. The exact Catena data seam is authorized but transfers no broader ownership; release, common-gate, B0/shared-shell, Day-reader guard, real-device/AT, protected Liturgy and PDF prerequisites remain separate. E1 stays off main. No merge, re-sign, deploy or cutover. |
+ | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
+ | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
+ | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
+@@ -789,6 +823,7 @@ fresh independent review.
+ | 2026-08-14 | E1 Catena correction V6 | Answered independent review `fa5b2f601` (**CHANGES REQUIRED** at `19982ab43`) by validating every semantic root, collection member, textual identity and bootstrap payload into an accepted typed representation before rendering, routing, counting or state derivation. `{}` no longer counts itself as a work this project holds and cannot name, nor refuses a boundary in Scripture's own numbering; a one-member list no longer resolves a real edition by property-key coercion; `../../../etc/passwd.json` is no longer composed or requested; an unreadable language is omitted rather than answered with `en`, and an unreadable testament rather than answered with `New Testament`; findings are read as a set, so the same records listed the other way round no longer make a different claim about a work's rights, and a self-contradicting record is declined rather than resolved to the harsher claim; a stray `partial` licenses nothing; `"01"` no longer renders verse 1 a second time; and JSON `null` no longer throws past the bootstrap's request catch — at the parent it still kills the whole replay process, which ships unfiltered. One defect the review did not name was found by writing its required regression: judged against an empty canon the page answered `Gen is not a book of this canon`, a claim about the canon drawn from a parse failure. Eight oracles that expected the defects are corrected with their reasons recorded; the harness now reads the rendered Scripture, the uncounted tally chips, the edition options and their route values, the testament line, the absence rows' own identity, the visible failure paragraph and a count of parked requests actually released. Focused suite 423 green, up from 306; full discovery 1,774 against 1,657 with 14 failures, 13 errors and 11 skips at both ends and an identical 27-entry name set; browser gate 2,290 assertions deep-equal excluding four volatile fields; promise ledger valid at 31 tracked / 19 complete AT THIS HEAD; `catena.css`, `index.html` and all of `src/web/data/` byte-identical; `catena.js` 12,993/13,000 whole and 8,202/8,800 stripped, 161 bytes lighter in composition, no ceiling raised. Every V6 test class fails at the uncorrected parent. | Branch `impl/catena-wave-1-e1-corrections-v6`; parent `19982ab433dd25704ed60b1ac6ddb678bc3a98f9`; review addressed `fa5b2f601565508acee2b1b236b0c69138af07a3`; package `20260814T182026Z-catena-e1-corrections-v6`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ | 2026-08-15 | E1 Catena correction V7 | Answered independent review `f183ed1b0` (**CHANGES REQUIRED** at `4639b139f`) by replacing raw fragment copying with an explicit typed projection. `chapterFragments` had shallow-copied every own property and cleared `text_path` only when a composed form could be built, so a fragment whose id or whose file's prefix was unreadable kept the record's own `text_path` and the page requested it; `text_path` is now composed, and a carried one is accepted only where its stem is that fragment's own validated id, which is what keeps the sample corpus working. Hollow fragment, absence and refusal members make no row, tally or claim; an absence source is validated before it claims a work's row, so a hollow source no longer renders blank and masks the valid sibling behind it; a refusal needs the closed kind and the chapter matched against the chapter being read, which stops a chapter-1 record establishing chapter 2's boundary; a contradiction contributes no rights prose, where V6 declined the finding and then printed one side's reason chosen by length; `partial` stops being coerced in `scripts/_catena.py`, where `str(row.get("partial") or "")` turned a mapping into prose; and holdings, canon, voices, the edition manifest, the paragraph layer, the verses container and the chapter spine each distinguish a corpus read and found empty from a corpus state that could not be established. Ten oracles that blessed those defects are corrected with their reasons recorded, and the late-work guard grew from thirteen sinks to thirty-six after the review found it compared the announcement journal rather than the live region a stale write could replace. This lane attacked its own change twice: the first pass found five further defects, one introduced by the correction, all fixed with regressions, and one confirmed finding is recorded unfixed rather than settled by a lane that cannot settle it. Package claims are machine-derived from one pass and a checker refuses prose that disagrees with them; the sealer no longer deletes the manifest in its read-only mode and now proves every archive member against it. `catena.css`, `index.html` and all of `src/web/data/` byte-identical; no ceiling raised, and `catena.js` smaller than V6 left it in both measures. **Every figure is derived at the sealed head and recorded in the package's own claim record rather than restated here, which is the direct answer to the five counts this review found wrong.** | Branch `impl/catena-wave-1-e1-corrections-v7`; parent `4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46`; review addressed `f183ed1b0afc6f14574a3507f6eaf3102dc999fa`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ | 2026-08-15 | E1 Catena correction V8 | Answered independent review `d9ad5ec1a` (**CHANGES REQUIRED** at `e876b29e5`) with exactly its stated first bounded commit: the byte-exact `structure/catena/text/` namespace closure at the request sink, and nothing else. `trail` and `leaf` stated what a path of this data root looks like and nothing stated which directory the route owns, so `structure/paragraphs/` composed a request, a carried same-stem `structure/paragraphs/text/<id>.json` fetched a real Sources text sharing that id, and whitespace-wrapped paths were trimmed into validity. The model now states the namespace once — `TEXT_HOME` — and `textTrail`/`textLeaf` require it byte-exactly at a directory boundary with no whitespace repair, for the composed and the carried form alike, before projection completes; `catena.js` is untouched. Three adversarial replay scenarios plant a real body at the wrong-namespace address, pin the entire fetched journal, assert the planted words reach no sink, and hold the terminal state. Focused suite 510 green, up from 505; catena check 1,351/1/73 with all 1,356 real and 47 fixture paths unchanged; browser gate 2,290 assertions with the inherited 1,836/226/228 and 117/82/27 identity; budgets unraised with `catena.js` and `catena.css` byte-identical at 12,901/13,000, 7,530/8,800, 7,629/8,000 and 2,676/2,700; the unbudgeted model's growth is disclosed at +514 gzipped whole. All other V7 findings recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v8`; parent `e876b29e5797edcc6e86422daa807f4b1104ec81`; review addressed `d9ad5ec1ae35c308a0da5ed3456fd05fdad97cbd`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
++| 2026-08-16 | E1 Catena correction V9 | Answered independent review `611b5eed8` (**CHANGES REQUIRED** at `7e4df42a2`) with exactly its stated next action: the composed prefix/fallback closure and a truthful final-byte package, and nothing else. `textTrail` collapsed a prefix the file never stated and a prefix the file stated and the page refused into the same `''`, and `fragmentRow`'s truthy test read that `''` as leave to consult the carried `text_path`, so the reviewer's refused `structure/paragraphs/` prefix still fetched a valid same-stem carried file and rendered its planted body. The prefix is now the statement `{stated, trail}`: absence is property absence on the spine record, every carried shape is a statement, a refused statement is terminal and kept on the row as `text_refused`, and the carried door opens only on genuine absence with a byte-exact own-stem path; `catena.js` is untouched. The regressions pin the exact vector cold, prewarmed and genuinely late at the production sinks — whole journal, body, rows, announcement journal and standing `statusText`, tally, busy, hash, history, focus — and fail nine ways at the uncorrected parent; a model-level matrix classifies thirteen refused shapes beside the absent and valid states. The handoff pipeline freezes its inventory before derivation, names derived members unsized, and verifies its claims read-only against the final ZIP, with the retained parent run and the discarded `/tmp` run ledgered. Focused suite 519 green, up from 510; catena check 1,351/1/73; browser gate 2,290 with the inherited 1,836/226/228 and 117/82/27 identity, whole report identical; budgets unraised with `catena.js` and `catena.css` byte-identical at 12,901/13,000, 7,530/8,800, 7,629/8,000 and 2,676/2,700; the unbudgeted model's growth is disclosed at +833 gzipped whole. All other V7 blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v9`; parent `7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8`; review addressed `611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ 
+ ## Next Codex tasks
+ 
+diff --git a/promised-deliverables.toml b/promised-deliverables.toml
+index d53019d4a..28ac20553 100644
+--- a/promised-deliverables.toml
++++ b/promised-deliverables.toml
+@@ -1240,6 +1240,54 @@ state = "complete"
+   status = "pass"
+   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
+ 
++[[deliverables]]
++id = "corpus-browser-catena-e1-corrections-v9-2026-08-16"
++owner = "src/web/browser/catena"
++promise = "Answer the 2026-08-16 E1 Catena V8 independent review (611b5eed8, CHANGES REQUIRED at 7e4df42a2) with exactly its stated next action: preserve the absent / present-valid / present-invalid text_prefix distinction through composition to the request decision, permit the carried fallback only on genuine absence, prove the closure cold, prewarmed and genuinely late at the production request sinks with complete terminal assertions, correct the handoff pipeline so machine claims describe the final sealed bytes with the retained parent run and the discarded /tmp run explicitly ledgered, record every other V7 blocker open and untouched, issue one immutable exact-head V9 handoff, and return that head for fresh independent review."
++state = "in_progress"
++
++  [[deliverables.requirements]]
++  id = "three-state-prefix-composition"
++  criterion = "The spine's text_prefix carries three states through composition all the way to the request decision — absent (the property is not carried), present-valid (textTrail-validated), and present-invalid (carried and refused: null, a record, a list, a number, a flag, an empty string, whitespace, a wrong namespace, the padded right namespace, traversal, an absolute path, malformed encoding, and the directory-boundary spoof) — with no truthiness collapse; a refused statement is terminal for that text resolution: no composed request, no carried fallback, no rewrite into the owned namespace, and the refusal is kept on the projected row."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "carried-fallback-only-on-genuine-absence"
++  criterion = "A carried text_path is consulted only when the prefix is genuinely absent AND the carried path itself validates byte-exactly inside structure/catena/text/ with the fragment's own stem. The reviewer's exact vector — a structure/paragraphs/ prefix beside a valid same-stem carried fallback-owned.json with a planted marker body — composes zero requests and the planted body reaches no sink, and the same tests fail at the uncorrected parent; genuine absence still opens the carried door and a valid prefix composes its own address while the planted carried body goes unasked."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "cold-prewarmed-late-proved-at-the-sinks"
++  criterion = "Production request-sink regressions prove the rejected branch cold (the whole fetched journal pinned to the bootstrap), prewarmed (a body legitimately cached under genuine absence is neither substituted into the refused route nor re-requested by it) and genuinely late (a held carried resolution released only after the refused route settles terminal, with its rows open, moves no guarded projection and the release is proved to have happened), asserting the complete terminal set: request journal, rendered body, row state, the announcement journal and the standing statusText, tally, aria-busy, URL and history, activeElement, error and failure sinks."
++  status = "pass"
++  evidence = ["tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "package-claims-describe-final-sealed-bytes"
++  criterion = "The handoff pipeline freezes the member inventory before derivation, names members written at or after derivation without claiming their bytes or hashes, partitions claimed rows and derived members exactly over the member set, writes the manifest after the last member write, seals the archive once, records the archive digest and byte size only in the external sidecar, and passes a read-only post-seal verification that re-derives member list, sizes, totals, manifest and archive digest from the final ZIP alone; the provenance ledger explicitly records the retained clean exact-SHA parent run and the discarded /tmp run."
++  status = "open"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "other-v7-blockers-recorded-open"
++  criterion = "Every other blocker of the V7 and V8 independent reviews remains open, untouched and recorded as such in the durable records; this lane fixes none of them silently, regresses no passed boundary, raises no ceiling, changes nothing under src/web/data/, and touches no release, common-gate, B0/shared-shell, protected Liturgy or PDF path."
++  status = "pass"
++  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
++
++  [[deliverables.requirements]]
++  id = "immutable-v9-handoff"
++  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V9 head, its parent 7e4df42a2, the review addressed 611b5eed8, the derived commit list and diff, the three-state prefix contract, the exact V8 escape reproduction at parent and head, the cold, prewarmed and late request-sink evidence, fresh validation figures, budgets, release status, the open V7 blockers, a sanitization audit, a byte and control scan, a SHA-256 manifest and a package digest whose machine claims match the final sealed bytes under a read-only post-seal verification — without mutating any earlier sealed package."
++  status = "open"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "fresh-independent-review"
++  criterion = "A fresh independent review of the exact V9 head and its new immutable package records a durable disposition, scoped to the composed prefix and fallback closure and the package final-byte correctness. This lane does not review its own work and records no acceptance."
++  status = "open"
++  evidence = ["guidance/corpus-browser-roadmap.md"]
++
+ [[deliverables]]
+ id = "corpus-browser-catena-e1-corrections-v8-2026-08-15"
+ owner = "src/web/browser/catena"
+diff --git a/src/web/browser/catena/catena-model.js b/src/web/browser/catena/catena-model.js
+index f33fa6908..82d4ee61e 100644
+--- a/src/web/browser/catena/catena-model.js
++++ b/src/web/browser/catena/catena-model.js
+@@ -466,7 +466,16 @@
+     'edition_published', 'translators', 'container', 'rights', 'attribution',
+     'rights_basis', 'acknowledgement'];
+ 
+-  /** One fragment as this page may use it, or null. */
++  /**
++   * One fragment as this page may use it, or null.
++   *
++   * `prefix` is the spine's `text_prefix` STATEMENT, not a string: `{stated,
++   * trail}`, where `stated` says whether the file carried the property at all
++   * and `trail` is its `textTrail`-validated value or ''. V9: a string here
++   * was two states doing the work of three. This is an exported entry point,
++   * so both members are re-asked inside — a claim this function did not
++   * derive composes nothing, and any other shape resolves no text at all.
++   */
+   function fragmentRow(fragment, sources, prefix) {
+     // THE SOURCE KEY IS A PROPERTY LOOKUP, and V6's review proved a lookup is a
+     // coercion: `sources[["1"]]` is `sources["1"]`, so a one-member LIST
+@@ -515,25 +524,43 @@
+ 
+     const extent = bag(said('extent'));
+     const voice = sound(said('voice'));
++    // The claim is re-asked, not trusted: `stated` must be the boolean itself
++    // and the trail must still be the route's own namespace. Any other
++    // argument — the old string contract included — is neither the absent
++    // state nor a valid statement, and resolves no text: fail closed.
++    const claim = bag(prefix);
++    const stated = claim.stated;
++    const head = textTrail(claim.trail);
+     return {
+       id: id,
+       // COMPOSED, NEVER CARRIED. The file states once where its fragment texts
+       // live and the fragment states its own identity; the request is built
+       // from those two validated values and from nothing else. Where the file
+-      // states no prefix — the sample corpus does not — a `text_path` the
++      // states NO prefix — the sample corpus does not — a `text_path` the
+       // record itself carries may stand in, but only when it is a Catena text
+       // file inside `TEXT_HOME` byte-exactly AND its stem is this fragment's
+       // own validated id. So the path can address one thing: the text, in this
+       // route's own holding, of the fragment that carried it. A same-stem file
+       // in another namespace names some other text by definition — that is the
+       // V7 finding — and is discarded here, before projection completes,
+-      // rather than guarded at the fetch.
++      // rather than guarded at the fetch. V9: a prefix the file stated and
++      // this page refused is the THIRD state, and it is terminal — the V8
++      // finding was `prefix ?`, a truthy test that read refusal as absence
++      // and let the carried file stand in for a statement the page had just
++      // declined to request against. Only genuine absence opens the carried
++      // door; refusal resolves no text at all.
+       text_path: id
+-        ? (prefix ? prefix + id + '.json'
+-          : textLeaf(own.text_path).endsWith('/' + id + '.json')
+-            ? textLeaf(own.text_path)
+-            : '')
++        ? (stated === true && head !== '' ? head + id + '.json'
++          : stated === false
++            && textLeaf(own.text_path).endsWith('/' + id + '.json')
++              ? textLeaf(own.text_path)
++              : '')
+         : '',
++      // THE REFUSAL, KEPT. The row is the only channel across the page
++      // boundary, and '' alone reads "the record states no text location"
++      // over "it stated one this page refused". The fact travels so no later
++      // reader has to re-derive it from the absence of a path.
++      text_refused: stated === true && head === '',
+       author: author,
+       work: work,
+       date: say(said('date')),
+@@ -630,10 +657,24 @@
+ 
+   /** Every fragment of one chapter file that can be one, in the order given. */
+   function chapterFragments(file) {
+-    const sources = bag(bag(file).sources);
+-    // `textTrail`, not `trail`: the prefix is the head of a URL this page
+-    // requests, and only the route's own namespace may head one.
+-    const prefix = textTrail(bag(file).text_prefix);
++    const record = bag(file);
++    const sources = bag(record.sources);
++    // THE PREFIX HAS THREE STATES, and `textTrail` alone carries two. V9, the
++    // V8 finding: a prefix the file never stated and a prefix the file stated
++    // and this page refused both left `textTrail` as '', and `fragmentRow`
++    // read that one '' as leave to consult the carried `text_path` — so a
++    // refused `structure/paragraphs/` prefix still fetched a valid same-stem
++    // carried file. Whether the file SAID anything is a fact the validated
++    // trail cannot hold, so it travels beside it: `stated` is property
++    // presence on the spine record itself — `null`, a record, a list, a
++    // number, a flag, '', whitespace and a wrong namespace are each a
++    // statement this page refused, never an absence. `textTrail`, not
++    // `trail`: the prefix is the head of a URL this page requests, and only
++    // the route's own namespace may head one.
++    const prefix = {
++      stated: Object.hasOwn(record, 'text_prefix'),
++      trail: textTrail(record.text_prefix)
++    };
+     const rows = [];
+     // `records` rather than `file.fragments || []`: a spine whose `fragments`
+     // is a record or a string is a broken record, and mapping over it threw out
+diff --git a/tools/tests/test_catena_wave_1.py b/tools/tests/test_catena_wave_1.py
+index 7b4336599..bd92aed00 100644
+--- a/tools/tests/test_catena_wave_1.py
++++ b/tools/tests/test_catena_wave_1.py
+@@ -169,7 +169,14 @@ NODE = shutil.which("node")
+ # prefix and the carried fallback, so a Catena text request resolves only
+ # inside byte-exact `structure/catena/text/` and a whitespace-wrapped path is
+ # refused rather than repaired. The page is untouched.
+-MODEL_SHA256 = "ae5afaa3f093cdd492bb8bc998f213010cdc54bc74572beba14946111e89fd87"
++# V9 changes the model alone, and only for the composed closure the V8
++# review required: the spine's `text_prefix` now carries three states —
++# absent, stated-and-valid, stated-and-refused — instead of the two a bare
++# `textTrail` string could hold, and the carried `text_path` may stand in
++# ONLY when the prefix is genuinely absent. A refused statement is terminal:
++# it composes no request and opens no carried door, and the row keeps the
++# refusal as `text_refused`. The page is again untouched.
++MODEL_SHA256 = "9514afb1c09de02438513651e8828d4ac30620e13b6402295ca6199fa452f488"
+ 
+ # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
+ # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
+@@ -1153,6 +1160,76 @@ V8_WRONG_NAMESPACE_CARRIED = _fixture({
+     "leads": [], "blocked": [], "refusals": {},
+ })
+ 
++# ==========================================================================
++# V9 §1 — the composed escape: a REFUSED prefix beside a VALID carried path
++#
++# The V8 review proved the primitives compose into a hole neither has alone:
++# `textTrail` answers '' for a prefix the file never stated AND for a prefix
++# the file stated and this page refused, and the carried door opened on that
++# one ''. So a spine saying `structure/paragraphs/` — refused — still
++# fetched the valid same-stem `structure/catena/text/fallback-owned.json` it
++# carried, and the planted body rendered as an ordinary success. Absence may
++# open the carried door; refusal may not. Every prefix below is an
++# ADVERSARIAL TEST INPUT; the tracked corpus states exactly one.
++
++V9_REFUSED_PREFIX_WITH_CARRIED = _fixture({
++    "token": "Gen", "chapter": 1, "text_prefix": "structure/paragraphs/",
++    "sources": {"1": _voice_source(1)},
++    "fragments": [
++        _voice_fragment(1, id="fallback-owned",
++                        text_path="structure/catena/text/fallback-owned.json"),
++    ],
++    "leads": [], "blocked": [], "refusals": {},
++})
++
++# The RIGHT namespace wrapped in whitespace, beside the same valid carried
++# path: a statement refused for needing repair is still a statement, and it
++# opens no carried door either.
++V9_PADDED_PREFIX_WITH_CARRIED = _fixture(dict(
++    V9_REFUSED_PREFIX_WITH_CARRIED, text_prefix="  structure/catena/text/  "))
++
++# The same fragment under NO prefix at all — the one state whose carried
++# path may stand, so the closure is measured against the door it must not
++# close.
++V9_ABSENT_PREFIX_WITH_CARRIED = _fixture({
++    key: value for key, value in V9_REFUSED_PREFIX_WITH_CARRIED.items()
++    if key != "text_prefix"})
++
++# A VALID prefix beside the same valid same-stem carried path: the prefix
++# already determines text identity, so the carried address is never asked —
++# and a planted body waits there to catch the page if it is.
++V9_VALID_PREFIX_WITH_CARRIED = _fixture(dict(
++    V9_REFUSED_PREFIX_WITH_CARRIED,
++    text_prefix="structure/catena/text/deeper/"))
++
++# The refused spine again, on Genesis 2, so a prewarmed or held chapter 1
++# can walk into it: same carried path, same planted body, other chapter.
++V9_REFUSED_PREFIX_GEN2 = _fixture({
++    "token": "Gen", "chapter": 2, "text_prefix": "structure/paragraphs/",
++    "sources": {"1": _voice_source(1)},
++    "fragments": [
++        _voice_fragment(1, id="fallback-owned",
++                        text_path="structure/catena/text/fallback-owned.json",
++                        extent={"token": "Gen", "first_chapter": 2,
++                                "first_verse": 1, "last_chapter": 2,
++                                "last_verse": 1}),
++    ],
++    "leads": [], "blocked": [], "refusals": {},
++})
++
++# The body PLANTED at the carried address: reachable through genuine absence
++# and through nothing else. If refusal, repair, prewarming or late work ever
++# serves it, content catches what the journal catches.
++V9_PLANTED_FALLBACK = _fixture({
++    "id": "fallback-owned",
++    "text": "PLANTED FALLBACK BODY — reachable only through genuine absence."})
++
++# What the VALID prefix composes for the same fragment, so the valid route
++# stays a rendering route while the carried address goes unasked.
++V9_COMPOSED_DEEPER = _fixture({
++    "id": "fallback-owned",
++    "text": "Composed from the stated prefix and the fragment's own id."})
++
+ # ==========================================================================
+ # V7 §6 — a fragment that can name NOTHING of itself
+ #
+@@ -2183,6 +2260,71 @@ SCENARIOS = [
+                    V8_PLANTED_TEXT},
+      "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+ 
++    # =============================================================== V9 §1
++    # The composed escape, cold: a REFUSED prefix beside a valid carried
++    # path composes nothing — not the refused form, not the carried form.
++    {"name": "v9-refused-prefix-carried", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json":
++                   V9_REFUSED_PREFIX_WITH_CARRIED,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++    {"name": "v9-padded-prefix-carried", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json":
++                   V9_PADDED_PREFIX_WITH_CARRIED,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++    # The door itself, from the two sides that keep it: genuine absence
++    # opens it, and a valid prefix never needs it.
++    {"name": "v9-absent-prefix-carried", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json":
++                   V9_ABSENT_PREFIX_WITH_CARRIED,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++    {"name": "v9-valid-prefix-carried", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json":
++                   V9_VALID_PREFIX_WITH_CARRIED,
++               "structure/catena/text/deeper/fallback-owned.json":
++                   V9_COMPOSED_DEEPER,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++    # PREWARMED: chapter 1 loads the carried body legitimately, under no
++    # prefix; chapter 2 states a prefix this page refuses while carrying the
++    # SAME path. The cached body must not be substituted, and the refused
++    # route must cause no new request.
++    {"name": "v9-prewarmed-fallback", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json":
++                   V9_ABSENT_PREFIX_WITH_CARRIED,
++               "structure/catena/01-gen/002.json": V9_REFUSED_PREFIX_GEN2,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "steps": [
++         {"do": "openEveryFragment", "label": "prewarmed"},
++         {"do": "selectChapter", "value": "2", "label": "refused"},
++         {"do": "openEveryFragment", "label": "opened"},
++     ]},
++    # GENUINELY LATE: A opens the carried body under genuine absence and is
++    # HELD; B walks into the refused chapter, opens its rows and settles
++    # terminal; only then does A complete. The refused route owns nothing A
++    # can move.
++    {"name": "v9-late-fallback", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json":
++                   V9_ABSENT_PREFIX_WITH_CARRIED,
++               "structure/catena/01-gen/002.json": V9_REFUSED_PREFIX_GEN2,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "defer": ["structure/catena/text/"],
++     "steps": [
++         {"do": "openFirstFragment", "label": "a-held"},
++         {"do": "selectChapter", "value": "2", "label": "b-settled"},
++         {"do": "openEveryFragment", "label": "b-opened"},
++         {"do": "release", "path": "structure/catena/text/",
++          "label": "a-late"},
++     ]},
++
+     # =============================================================== V7 §6
+     # The same six members in both orders. A member's fate may not depend on
+     # where it stands, and neither may the page's.
+@@ -5385,7 +5527,7 @@ class FrozenContractTest(ReplayTest):
+         self.assertEqual(
+             digest, MODEL_SHA256,
+             "catena-model.js moved; it is UMD, DOM-free, replayed by `catena check`, "
+-            "and no part of this correction touches it")
++            "and this correction pins the exact bytes it reviewed")
+ 
+     def test_the_model_names_no_part_of_a_document(self):
+         source = without_comments(held(CATENA / "catena-model.js"), script=True)
+@@ -8426,6 +8568,223 @@ class V8TextNamespaceRequestSinkTest(ReplayTest):
+             self.assertIsNone(page["failureText"])
+ 
+ 
++class V9ComposedPrefixFallbackClosureTest(ReplayTest):
++    """V9 §1 — refusal opens no carried door; only genuine absence does.
++
++    The V8 review proved the composed escape the primitive validators could
++    not see: a prefix the file stated and the page REFUSED collapsed into the
++    same '' as a prefix the file never stated, and the carried `text_path`
++    door opened on that one ''. The reviewer's exact vector — a
++    `structure/paragraphs/` prefix beside a valid carried
++    `structure/catena/text/fallback-owned.json` — fetched the carried file
++    and rendered its planted body as an ordinary success.
++
++    Three states, each pinned at the production sinks: ABSENT may consult a
++    validated carried path; PRESENT-VALID composes from the prefix and asks
++    no fallback; PRESENT-INVALID is terminal — no request, no substitution,
++    no stale body, cold, prewarmed, or late.
++    """
++
++    BOOTSTRAP = V7TextPathRequestSinkTest.BOOTSTRAP
++
++    NO_TEXT = V8TextNamespaceRequestSinkTest.NO_TEXT
++
++    FALLBACK = "structure/catena/text/fallback-owned.json"
++
++    GEN1_SPOKEN = "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
++    GEN2_SPOKEN = "Genesis 2, Douay-Rheims (Challoner), 1 fragment held."
++
++    def opened(self, name):
++        return self.snapshot(name, "opened")
++
++    def test_the_v8_escape_composes_no_request_cold(self):
++        # THE CENTRAL ACCEPTANCE REGRESSION: the reviewer's exact vector and
++        # its padded twin, from a cold page. The whole journal, pinned
++        # entire: no refused-prefix request, no carried-fallback request, no
++        # other text-body request.
++        for name in ("v9-refused-prefix-carried", "v9-padded-prefix-carried"):
++            with self.subTest(scenario=name):
++                page = self.opened(name)
++                self.assertEqual(page["fetched"], self.BOOTSTRAP)
++
++    def test_the_planted_fallback_body_reaches_no_sink(self):
++        # The reviewer's reproduction rendered the carried body. Here the
++        # same body must appear NOWHERE: not in the journal, not as a
++        # fragment's text, not as an absence claim.
++        for name in ("v9-refused-prefix-carried", "v9-padded-prefix-carried"):
++            with self.subTest(scenario=name):
++                page = self.opened(name)
++                self.assertFalse(
++                    [one for one in page["fetched"] if "PLANTED" in one])
++                for said in page["fragmentTexts"]:
++                    self.assertNotIn("PLANTED", said)
++                    self.assertNotIn("genuine absence", said)
++
++    def test_the_refused_route_terminates_truthfully_cold(self):
++        # Every terminal sink, enumerated: the row stands and says it
++        # carries no text file, the tally counts it, the status is written
++        # and STANDING, busy is released, the route and history are the
++        # reader's own, focus moved nowhere, and nothing failed.
++        anchor = self.opened("v8-wrong-namespace-prefix")
++        for name in ("v9-refused-prefix-carried", "v9-padded-prefix-carried"):
++            with self.subTest(scenario=name):
++                page = self.opened(name)
++                self.assertEqual(page["fragmentCount"], 1)
++                self.assertEqual(page["fragmentTexts"], [self.NO_TEXT])
++                self.assertEqual(page["tallyText"], "1 fragment held")
++                self.assertEqual(page["statusWrites"], [self.GEN1_SPOKEN])
++                self.assertEqual(page["statusText"], self.GEN1_SPOKEN)
++                self.assertEqual(page["busy"], "false")
++                self.assertEqual(page["hash"], GEN1)
++                self.assertEqual(page["hashWrites"], [])
++                self.assertEqual(page["replaced"], [])
++                self.assertEqual(page["errorSections"], [])
++                self.assertIsNone(page["failureText"])
++                self.assertEqual(page["activeElement"],
++                                 anchor["activeElement"])
++
++    def test_genuine_absence_still_opens_the_carried_door(self):
++        # The door this closure must NOT close: no prefix stated, a valid
++        # same-stem carried path — exactly one request, and the body shows.
++        page = self.opened("v9-absent-prefix-carried")
++        self.assertEqual(page["fetched"], self.BOOTSTRAP + [self.FALLBACK])
++        self.assertEqual(len(page["fragmentTexts"]), 1)
++        self.assertIn("PLANTED FALLBACK BODY", page["fragmentTexts"][0])
++        self.assertEqual(page["busy"], "false")
++        self.assertEqual(page["errorSections"], [])
++
++    def test_a_valid_prefix_composes_its_own_address_and_asks_no_fallback(self):
++        # PRESENT-VALID: the prefix determines text identity, so the one
++        # request is the composed address — the carried address, planted and
++        # valid, goes unasked.
++        page = self.opened("v9-valid-prefix-carried")
++        self.assertEqual(
++            page["fetched"],
++            self.BOOTSTRAP
++            + ["structure/catena/text/deeper/fallback-owned.json"])
++        self.assertEqual(
++            page["fragmentTexts"],
++            ["Composed from the stated prefix and the fragment's own id."])
++
++    def test_a_prewarmed_fallback_is_not_substituted_into_the_refused_route(self):
++        # The cache is keyed by path, so a body already fetched under
++        # genuine absence could be substituted WITHOUT a request. The
++        # refused route must neither ask again nor reuse: one fallback
++        # request ever, and the refused rows show the no-file terminal.
++        prewarmed = self.snapshot("v9-prewarmed-fallback", "prewarmed")
++        self.assertEqual(prewarmed["fetched"], self.BOOTSTRAP + [self.FALLBACK])
++        self.assertIn("PLANTED FALLBACK BODY", prewarmed["fragmentTexts"][0])
++        page = self.snapshot("v9-prewarmed-fallback", "opened")
++        self.assertEqual(page["fetched"].count(self.FALLBACK), 1)
++        self.assertFalse(
++            [one for one in page["fetched"][len(prewarmed["fetched"]):]
++             if one.startswith("structure/catena/text/")])
++        self.assertEqual(page["fragmentTexts"], [self.NO_TEXT])
++        self.assertEqual(page["tallyText"], "1 fragment held")
++        self.assertEqual(page["statusText"], self.GEN2_SPOKEN)
++        self.assertEqual(page["busy"], "false")
++        self.assertEqual(page["hash"], GEN2)
++        self.assertEqual(page["hashWrites"], [GEN2])
++        self.assertEqual(page["errorSections"], [])
++        self.assertIsNone(page["failureText"])
++
++    def test_the_late_fallback_is_really_late(self):
++        # Without this the late guard is vacuous: A's request really went
++        # out before B was chosen, and it had NOT completed — the opened
++        # fragment still stands at "Loading…".
++        held = self.snapshot("v9-late-fallback", "a-held")
++        asked = [one for one in held["fetched"]
++                 if one.startswith("structure/catena/text/")]
++        self.assertEqual(asked, [self.FALLBACK])
++        self.assertEqual(held["fragmentTexts"][0], "Loading…")
++
++    def test_a_late_fallback_cannot_touch_the_refused_terminal_state(self):
++        # B settled terminal with its rows open; A completes late. Every
++        # guarded projection of the settled route — route, history,
++        # announcement journal AND standing status, tally, busy, focus, and
++        # everything rendered — is compared entire, and the release really
++        # happened.
++        before = self.snapshot("v9-late-fallback", "b-opened")
++        after = self.snapshot("v9-late-fallback", "a-late")
++        for key in GenuinelyLateStaleWorkTest.GUARDED:
++            self.assertEqual(after[key], before[key], f"{key} moved late")
++        self.assertEqual(after["fetched"], before["fetched"])
++        self.assertGreater(after["released"], before["released"])
++        self.assertEqual(after["fragmentTexts"], [self.NO_TEXT])
++        for said in after["fragmentTexts"]:
++            self.assertNotIn("PLANTED", said)
++        self.assertEqual(after["statusText"], self.GEN2_SPOKEN)
++        self.assertEqual(after["busy"], "false")
++        self.assertEqual(after["hash"], GEN2)
++        self.assertEqual(after["errorSections"], [])
++        self.assertIsNone(after["failureText"])
++
++
++class V9PrefixStateClassificationTest(unittest.TestCase):
++    """V9 §1 — the model itself holds three states, not a truthy two.
++
++    Driven through the exported production model, because the page's replay
++    can only see the states the composition lets out. ABSENT means the spine
++    record does not carry the `text_prefix` property; everything carried —
++    null, a record, a list, a number, a flag, '', whitespace, the wrong
++    namespace, traversal, an absolute path, a malformed encoding, the padded
++    right namespace, the `textual/` boundary spoof — is a statement, and a
++    statement that fails `textTrail` is REFUSED: terminal, fallback
++    forbidden, and kept on the row as `text_refused`.
++    """
++
++    CARRIED = "structure/catena/text/fallback-owned.json"
++
++    def classified(self):
++        script = """
++        const M = require(%r);
++        const carried = %r;
++        const base = () => ({
++          sources: {"1": {author: "A", work: "W"}},
++          fragments: [{id: "fallback-owned", source: "1",
++                       text_path: carried}]});
++        const row = (file) => {
++          const one = M.chapterFragments(file)[0];
++          return {path: one.text_path, refused: one.text_refused};
++        };
++        const valid = base();
++        valid.text_prefix = "structure/catena/text/deeper/";
++        const refusedValues = [
++          null, {}, [], 5, true, "", "   ",
++          "structure/paragraphs/",
++          "  structure/catena/text/  ",
++          "../structure/catena/text/",
++          "/structure/catena/text/",
++          "structure/catena/%%2e%%2e/text/",
++          "structure/catena/textual/"];
++        console.log(JSON.stringify({
++          absent: row(base()),
++          valid: row(valid),
++          refused: refusedValues.map((value) => {
++            const file = base();
++            file.text_prefix = value;
++            return row(file);
++          })}));
++        """ % (str(CATENA / "catena-model.js"), self.CARRIED)
++        done = subprocess.run(["node", "-e", script],
++                              capture_output=True, text=True, check=True)
++        return json.loads(done.stdout)
++
++    def test_absent_valid_and_refused_are_three_states(self):
++        told = self.classified()
++        # ABSENT: the carried door may open, and nothing was refused.
++        self.assertEqual(told["absent"],
++                         {"path": self.CARRIED, "refused": False})
++        # PRESENT-VALID: composed from the statement, carried door unasked.
++        self.assertEqual(
++            told["valid"],
++            {"path": "structure/catena/text/deeper/fallback-owned.json",
++             "refused": False})
++        # PRESENT-INVALID, thirteen ways: terminal, and the refusal kept.
++        self.assertEqual(told["refused"],
++                         [{"path": "", "refused": True}] * 13)
++
++
+ class V7HollowFragmentMemberTest(ReplayTest):
+     """V7 §6 — a record that names nothing is not a thin fragment.
+ 
